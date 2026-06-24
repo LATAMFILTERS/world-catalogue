@@ -183,7 +183,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)', fontFamily: 'Outfit, sans-serif', maxWidth: '640px' }}
           >
-            ELIMFILTERS® supports industrial operators, equipment managers, and distribution partners with asset protection system specification, contamination control strategy, and OEM compatibility validation across mining, marine, oil &amp; gas, agriculture, power generation, and heavy industry sectors.
+            ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> supports industrial operators, equipment managers, and distribution partners with asset protection system specification, contamination control strategy, and OEM compatibility validation across mining, marine, oil &amp; gas, agriculture, power generation, and heavy industry sectors.
           </motion.p>
         </div>
       </section>
@@ -234,7 +234,7 @@ export default function Contact() {
                       lineHeight: 1.6,
                     }}
                   >
-                    ELIMFILTERS® LLC
+                    ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> LLC
                     <br />
                     Frisco, Texas 75034
                     <br />
@@ -584,7 +584,7 @@ export default function Contact() {
                 { title: 'ISO Standard Spec Matching', body: 'Filter specification matching to ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), and ISO 5011 (air filtration) for air, fuel, hydraulic, and lube oil systems.' },
                 { title: 'Distributor Applications', body: 'Distributor partnership applications reviewed for regional coverage fit. Include your company profile, service territory, and current product lines. Response within 5 business days.' },
                 { title: 'Fleet Filtration Optimization', body: 'Fleet-level filtration strategy including extended service interval planning, multi-system coverage across air, fuel, hydraulic, lube, cabin, and coolant domains.' },
-                { title: 'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™', body: 'Technical inquiries for proprietary ELIMFILTERS® filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
+                { title: 'SYNTRAX™ / NANOFORCE™ / HYDROCORE™', body: 'Technical inquiries for proprietary ELIMFILTERS® filter lines including application engineering, performance data, and system compatibility for all 12 industrial sectors.' },
                 { title: 'Response Times', body: 'Technical inquiries: within 2 business days. Distributor applications: within 5 business days. Provide equipment details and application context for faster response.' },
               ].map(({ title, body }) => (
                 <div key={title} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>

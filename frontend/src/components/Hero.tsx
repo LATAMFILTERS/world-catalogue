@@ -67,6 +67,7 @@ export function Hero({
     >
       {/* Background image */}
       <div
+        className="industry-hero-bg"
         style={{
           position: 'absolute',
           inset: 0,
@@ -100,6 +101,7 @@ export function Hero({
 
       {/* Content */}
       <div
+        className="industry-hero-content"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -139,6 +141,7 @@ export function Hero({
 
         <h1
           ref={titleRef}
+          className="industry-hero-title"
           style={{
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: 900,
@@ -156,6 +159,7 @@ export function Hero({
         {subtitle && (
           <p
             ref={subtitleRef}
+            className="industry-hero-subtitle"
             style={{
               fontFamily: 'Montserrat, sans-serif',
               fontWeight: 900,
@@ -186,7 +190,7 @@ export function Hero({
           </p>
         )}
 
-        <div ref={ctaRef} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+        <div ref={ctaRef} className="industry-hero-cta" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
           <a
             href={ctaHref}
             target={ctaHref.startsWith('http') ? '_blank' : undefined}

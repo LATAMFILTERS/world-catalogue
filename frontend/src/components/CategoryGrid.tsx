@@ -28,9 +28,9 @@ const CATEGORY_NUMBERS: Record<string, string[]> = {
 
 const CATEGORY_ACCENT: Record<string, string[]> = {
   industries: [
-    '#3B82F6', '#8B5CF6', '#10B981', '#F59E0B',
-    '#EF4444', '#06B6D4', '#F97316', '#84CC16',
-    '#EC4899', '#14B8A6', '#6366F1', '#A855F7'
+    '#FFF12D', '#FFF12D', '#FFF12D', '#FFF12D',
+    '#FFF12D', '#FFF12D', '#FFF12D', '#FFF12D',
+    '#FFF12D', '#FFF12D', '#FFF12D', '#FFF12D'
   ],
   products: [
     '#FFF12D', '#FFF12D', '#FFF12D', '#FFF12D',

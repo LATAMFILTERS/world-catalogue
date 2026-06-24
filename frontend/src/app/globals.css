@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+/* Inter removed — consolidated to Outfit + JetBrains Mono */
 
 @tailwind base;
 @tailwind components;
@@ -29,20 +29,24 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-outfit), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Typography */
-.font-heading {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
-  font-weight: 700;
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
-.font-montserrat {
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+p {
+  font-size: 0.9rem;
+}
+
+/* Typography */
+.font-heading {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .font-mono {
@@ -144,7 +148,7 @@ body {
 
 /* Number display */
 .stat-number {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-weight: 700;
   color: var(--volt);
   line-height: 1;
@@ -238,12 +242,66 @@ body {
   .product-specs-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
 }
-/* Hero responsive height */
+/* ── Industry hero ─────────────────────────────────────────────────── */
 .industry-hero-section { min-height: 100vh; }
+
 @media (max-width: 1024px) {
   .industry-hero-section { min-height: 70vh !important; }
 }
+
 @media (max-width: 768px) {
-  .industry-hero-section { min-height: 60vh !important; }
+  /* Section */
+  .industry-hero-section {
+    min-height: 58vh !important;
+    justify-content: flex-end !important;
+  }
+  /* Background image */
+  .industry-hero-bg {
+    background-position: center top !important;
+    transform: none !important;
+  }
+  /* Inner content padding */
+  .industry-hero-content {
+    padding-top: 72px !important;
+    padding-bottom: 2.5rem !important;
+  }
+  /* Title */
+  .industry-hero-title {
+    font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
+    margin-bottom: 0.25rem !important;
+  }
+  /* Subtitle */
+  .industry-hero-subtitle {
+    font-size: clamp(1rem, 4.5vw, 1.5rem) !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.2 !important;
+  }
+  /* CTA buttons row */
+  .industry-hero-cta {
+    margin-top: 1rem !important;
+    gap: 0.625rem !important;
+  }
+  .industry-hero-cta a {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+/* ── Technologies hero ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tech-hero-section {
+    background-position: 20% 55% !important;
+    padding-top: 4rem !important;
+    padding-bottom: 2.5rem !important;
+    min-height: 56vh !important;
+  }
+  .tech-hero-h1 {
+    font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .tech-hero-p {
+    font-size: 0.82rem !important;
+    line-height: 1.6 !important;
+  }
 }
 /* ─────────────────────────────────────────────────────────────────── */

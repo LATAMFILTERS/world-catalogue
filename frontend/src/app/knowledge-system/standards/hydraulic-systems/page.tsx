@@ -15,7 +15,7 @@ const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media achieving 99.9% efficiency for proportional valve protection, maintaining ISO 16/14/11 cleanliness under high-flow conditions.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: 'Advanced synthetic fluids with +40% oxidation resistance, providing 4,000+ hour service life while maintaining contamination resistance.' },
   { name: 'MICROKAPPA', slug: 'microkappa', role: 'Precision micro-filtration for coolant and specialty fluid systems addressing proportional control contamination in machine tools.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water removal technology preventing hydrolysis and seal degradation in hydraulic systems, maintaining fluid integrity across operating life.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water removal technology preventing hydrolysis and seal degradation in hydraulic systems, maintaining fluid integrity across operating life.' },
 ];
 
 const IMPACTS = [
@@ -162,7 +162,7 @@ export default function HydraulicSystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
@@ -230,21 +230,46 @@ export default function HydraulicSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=hydraulic-efficiency | standards=ISO-16889, NFPA-T2.14</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, DIN 51524, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX, MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/hydraulic-systems</p>
-        <p>&nbsp;&nbsp;concept_id: hydraulic-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Hydraulic Filtration Systems</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Hydraulic filtration systems maintain measured cleanliness codes (ISO 4406) in hydraulic fluid through multi-stage filtration targeting particle removal at 3–25µm thresholds to protect proportional control valves, pumps, and actuators operating within 1–5µm clearance tolerances.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Hydraulic power units, proportional/servo valve circuits, mobile hydraulic machinery, industrial presses, construction equipment, mining hydraulics, marine hydraulic systems</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Particle contamination exceeds ISO 4406 cleanliness target → abrasive wear of proportional valve spool surfaces → spool clearance increases from 1–3µm to 5–15µm → control signal deviation and stiction → erratic actuator response → catastrophic valve failure. Measured impact: proportional valve service life reduction from 15,000+ hours to 2,000–5,000 hours without ISO 17/15/12 cleanliness maintenance.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 16889: Multi-pass filter test defining Beta ratio efficiency at specific micron thresholds | ISO 4406: Particle cleanliness code classification for hydraulic and lube fluids | NFPA T2.14: Hydraulic system contamination control standard for North American mobile equipment | DIN 51524: German hydraulic fluid specification defining contamination limits by application type</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>NANOFORCE: Sub-micron particle removal targeting 3µm absolute for proportional valve protection | SYNTRAX: Synthetic media with high dirt-holding capacity for continuous hydraulic system operation | MACROCORE: High-efficiency particulate capture for return-line and pressure filtration stages</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Hydraulic contamination control is the primary determinant of proportional valve service life — systems maintaining ISO 17/15/12 targets achieve 3–5x longer valve service intervals versus systems operating at ISO 19/17/14, directly determining hydraulic system availability and component replacement costs.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/hydraulic-systems | concept: Hydraulic Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Hydraulic Filtration Systems — Industrial Standards",
+        "description": "Hydraulic filtration maintains ISO 4406 cleanliness codes protecting proportional valves, pumps, and actuators from particle contamination-induced wear failure.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["hydraulic filtration", "ISO 16889", "ISO 4406", "NFPA T2.14", "contamination control", "proportional valve protection"],
+        "about": { "@type": "Thing", "name": "Hydraulic Filtration Systems", "description": "Multi-stage filtration maintaining cleanliness codes in hydraulic fluid circuits" },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 4406", "NFPA T2.14", "DIN 51524"],
+          "technologies": ["NANOFORCE", "SYNTRAX", "MACROCORE"],
+          "contaminationModes": ["particle wear", "valve spool erosion", "hydraulic contamination"]
+        }
+      })}} />
     </main>
   );
 }

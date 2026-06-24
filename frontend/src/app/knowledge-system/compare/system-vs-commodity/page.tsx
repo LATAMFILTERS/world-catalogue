@@ -347,7 +347,7 @@ export default function SystemVsCommodityPage() {
                 marginBottom: '0.75rem',
                 textTransform: 'uppercase',
               }}>
-                System Approach (ELIMFILTERS®)
+                System Approach (ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>)
               </p>
               <ul style={{
                 fontSize: '0.9rem',
@@ -434,21 +434,45 @@ export default function SystemVsCommodityPage() {
       </div>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
-        <p>CONCEPT_TAXONOMY: type=framework | domain=asset-protection | approach=system-vs-commodity</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/system-vs-commodity</p>
-        <p>&nbsp;&nbsp;concept_id: system-vs-commodity-filtration</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: System vs. Commodity Filtration</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>System vs. commodity filtration describes two fundamentally different approaches to industrial filter selection: commodity thinking starts from filter product specifications and purchase price; system thinking starts from contamination targets (ISO 4406 cleanliness codes) and works backward to the filtration technology required to achieve and maintain those targets across all fluid circuits.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Industrial procurement processes, fleet maintenance programs, OEM specification compliance, aftermarket filter selection, maintenance contract design, contamination control program implementation</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Commodity approach selects filter meeting OEM part number equivalence without verifying ISO 16889 Beta ratio → actual filter efficiency may be 85–92% vs. required 99.5% → ISO 4406 cleanliness target unachievable → equipment wear rate 3–5x above design → component service life halved → maintenance budget 2–3x above plan. The problem is invisible until failure: commodity filters meet visual and dimensional OEM specs while failing the only metric that matters — the particle count downstream of the filter measured against the ISO 4406 target code.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 16889: Beta ratio certification — the measurement that separates system-approach filters from commodity filters | ISO 4406: Cleanliness code targets — the contamination goals that system approach is designed to achieve | ISO 9001: Quality management standard for filter manufacturers — the process quality baseline for system-approach suppliers</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>All ELIMFILTERS technologies are ISO 16889 Beta ratio certified — this is the minimum requirement for system-approach filtration specification | MACROCORE, NANOFORCE, SYNTRAX, DURATECH: Representative technologies with documented Beta ratios enabling ISO 4406 target achievement verification</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>The system vs. commodity distinction is the most important conceptual shift available to industrial maintenance decision-makers — OEM specification compliance verifies dimensional fit but cannot verify contamination control effectiveness, making ISO 16889 Beta ratio the only meaningful filter selection criterion for protecting high-value equipment components.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/compare/system-vs-commodity | concept: System vs. Commodity Filtration | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "System vs. Commodity Filtration — Decision Framework",
+        "description": "System filtration approach starts from ISO 4406 cleanliness targets; commodity approach starts from price. The difference determines whether equipment lasts 15,000 hours or 3,000 hours between major overhauls.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["system vs commodity filtration", "filter selection framework", "ISO 16889 certification", "contamination target approach", "OEM filter replacement", "filter procurement"],
+        "about": { "@type": "Thing", "name": "System vs. Commodity Filtration", "description": "Conceptual framework for contamination-target-based filter selection versus product-specification selection" },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 4406", "ISO 9001"],
+          "technologies": ["MACROCORE", "NANOFORCE", "SYNTRAX", "DURATECH"],
+          "contaminationModes": ["particle wear", "contamination target failure", "ISO 4406 cleanliness target breach"]
+        }
+      })}} />
     </main>
   );
 }

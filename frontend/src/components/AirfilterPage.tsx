@@ -169,7 +169,7 @@ export function AirfilterPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS® air intake protection is engineered under progressive density gradient principles. High-purity cellulose fibers reinforced with structural synthetic resins deliver absolute contamination control for intake systems in internal combustion engines and rotating machinery.
+                  ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> air intake protection is engineered under progressive density gradient principles. High-purity cellulose fibers reinforced with structural synthetic resins deliver absolute contamination control for intake systems in internal combustion engines and rotating machinery.
                 </p>
 
                 <div

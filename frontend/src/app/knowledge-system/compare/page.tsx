@@ -123,7 +123,7 @@ export default function ComparisonHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            ELIMFILTERS® reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
+            ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -221,21 +221,54 @@ export default function ComparisonHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=asset-protection | scope=system-oem-tco-evaluation</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare</p>
-        <p>&nbsp;&nbsp;concept_id: filtration-comparison-hub</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Filtration Decision Frameworks</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Filtration decision frameworks provide structured evaluation tools for industrial filter procurement, maintenance program design, and total cost of ownership analysis — replacing brand loyalty, price comparison, and OEM equivalence as selection criteria with ISO 16889 Beta ratio certification, ISO 4406 cleanliness target achievement, and equipment lifecycle economics.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Industrial procurement decision-making, fleet maintenance program design, OEM vs. aftermarket selection, total cost of ownership analysis, system vs. commodity filtration evaluation</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DECISION_FRAMEWORKS</p>
+        <p>System vs. Commodity: starts from ISO 4406 cleanliness target rather than purchase price | Filter Evaluation Framework: Beta ratio → dirt capacity → collapse pressure → dimensional fit hierarchy | OEM Comparison: warranty-period vs. post-warranty selection criteria split | TCO Analysis: filter price is 1–5% of ownership cost; contamination-triggered replacements are 95–99%</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 16889: Beta ratio — the primary selection criterion in all evaluation frameworks | ISO 4406: Cleanliness targets — the outcome metric all frameworks are designed to achieve | ISO 9001: Supplier quality management — the process baseline for aftermarket qualification</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Filtration decision frameworks close the gap between contamination control knowledge and procurement behavior — they give maintenance engineers and fleet managers the structured criteria to select filters that actually achieve ISO 4406 targets rather than filters that look equivalent on a purchase order.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/compare | concept: Filtration Decision Frameworks Hub | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for Search Engines & LLMs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Filtration Decision Frameworks — System vs Commodity Evaluation Hub",
+        "description": "Structured evaluation tools replacing brand loyalty and price comparison with ISO 16889 Beta ratio certification and ISO 4406 cleanliness target achievement.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["filtration decision framework", "system vs commodity filtration", "OEM vs aftermarket", "total cost of ownership", "ISO 16889 Beta ratio", "ISO 4406"],
+        "about": {
+          "@type": "Thing",
+          "name": "Industrial Filtration Decision Frameworks",
+          "description": "Structured tools for industrial filter procurement and maintenance program design based on contamination control metrics"
+        },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 4406", "ISO 9001"],
+          "technologies": ["MACROCORE", "NANOFORCE"],
+          "frameworks": ["system-vs-commodity", "evaluation-framework", "total-cost-ownership", "oem-comparison"]
+        },
+        "relatedLink": [
+          { "url": "/knowledge-system/compare/system-vs-commodity", "title": "System vs Commodity Filtration" },
+          { "url": "/knowledge-system/compare/evaluation-framework", "title": "Filter Evaluation Framework" },
+          { "url": "/knowledge-system/compare/total-cost-ownership", "title": "Total Cost of Ownership Analysis" },
+          { "url": "/knowledge-system/compare/oem-comparison", "title": "OEM vs Aftermarket Positioning" }
+        ]
+      }) }} />
+
     </main>
   );
 }

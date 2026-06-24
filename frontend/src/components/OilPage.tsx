@@ -169,7 +169,7 @@ export function OilPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Engine wear happens between oil changes, not during them. ELIMFILTERS® oil filters deploy high-density synthetic media that holds four times the dirt load of standard cellulose elements — maintaining stable restriction levels across the full drain interval without bypass events. The integrated anti-drain-back valve prevents dry starts and the calibrated bypass valve opens only under cold-start high-viscosity conditions, never under contamination load. Dual-certified to ISO 16889 (hydraulic and lube filter performance) and ISO 19438 (diesel fuel filter and engine oil filter efficiency).
+                  Engine wear happens between oil changes, not during them. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> oil filters deploy high-density synthetic media that holds four times the dirt load of standard cellulose elements — maintaining stable restriction levels across the full drain interval without bypass events. The integrated anti-drain-back valve prevents dry starts and the calibrated bypass valve opens only under cold-start high-viscosity conditions, never under contamination load. Dual-certified to ISO 16889 (hydraulic and lube filter performance) and ISO 19438 (diesel fuel filter and engine oil filter efficiency).
                 </p>
 
                 <div
@@ -266,7 +266,7 @@ export function OilPage() {
               <div>
                 <AnimateIn direction="left" delay={0.05}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', marginBottom: '1.5rem' }}>
-                    ELIMFILTERS® Synthetic Media
+                    ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> Synthetic Media
                   </h3>
                 </AnimateIn>
                 <StaggerContainer>

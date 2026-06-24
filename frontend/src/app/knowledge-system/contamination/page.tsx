@@ -212,21 +212,53 @@ export default function ContaminationHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=contamination-failure | scope=particle-water-hydraulic</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D6304</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination</p>
-        <p>&nbsp;&nbsp;concept_id: contamination-failure-hub</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Contamination Failure Mechanisms</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Contamination failure mechanism analysis identifies the specific physical pathways by which particles, water, and chemical degradation products in industrial fluids cause predictable, quantifiable equipment component failures — providing the root cause knowledge that transforms filtration from reactive maintenance to proactive contamination control.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Engine lube oil circuits, HPCR fuel injection systems, hydraulic power units, air intake systems, compressed air circuits, cabin HVAC systems — all industrial fluid systems where contamination accelerates component degradation</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CONTAMINATION_MODES</p>
+        <p>Particle wear: hard particles &gt;3µm in oil cause abrasive wear at bearing clearances (5–25µm) — root cause of 70–80% of hydraulic and engine failures | Diesel water contamination: free water &gt;200 ppm causes HPCR injector needle seat scoring and microbial growth | Hydraulic system contamination: particle counts above ISO 4406 targets cause proportional valve spool erosion and stiction</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 4406: Cleanliness codes — measurement of particle contamination levels | ASTM D6304: Water content measurement in diesel fuel | ISO 16889: Beta ratio — filter efficiency against contamination particles | ISO 11500: Automatic particle counting for hydraulic fluids</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Contamination failure mechanism knowledge is the foundation for all filtration system design decisions — understanding which contamination type causes which failure mode at which concentration threshold allows maintenance programs to specify measurable contamination targets rather than relying on filter brand equivalence or fixed service intervals.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/contamination | concept: Contamination Failure Mechanisms Hub | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for Search Engines & LLMs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Contamination Failure Mechanisms — Industrial Filtration Knowledge Hub",
+        "description": "Root cause analysis of contamination-induced failures in industrial filtration systems — particles, water, and hydraulic contamination pathways.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["contamination failure mechanisms", "particle wear", "diesel water contamination", "hydraulic contamination", "ISO 4406", "ISO 16889", "ASTM D6304"],
+        "about": {
+          "@type": "Thing",
+          "name": "Industrial Contamination Failure Analysis",
+          "description": "Physical pathways by which particles, water, and chemical degradants cause predictable equipment component failures"
+        },
+        "mentions": {
+          "standards": ["ISO 4406", "ISO 16889", "ASTM D6304", "ISO 11500"],
+          "technologies": ["MACROCORE", "NANOFORCE", "HYDROCORE", "SYNTRAX"],
+          "contaminationModes": ["particle wear", "diesel water contamination", "hydraulic system contamination"]
+        },
+        "relatedLink": [
+          { "url": "/knowledge-system/contamination/particle-wear", "title": "Particle Wear in Engines" },
+          { "url": "/knowledge-system/contamination/diesel-water", "title": "Diesel Water Contamination" },
+          { "url": "/knowledge-system/contamination/hydraulic-system", "title": "Hydraulic System Contamination" },
+          { "url": "/knowledge-system/standards/lube-oil-systems", "title": "Lube Oil Filtration Systems" }
+        ]
+      }) }} />
 
     </main>
   );

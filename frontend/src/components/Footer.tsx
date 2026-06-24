@@ -76,7 +76,7 @@ export function Footer() {
             <div key={col.title}>
               <div
                 style={{
-                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontFamily: "'Outfit', sans-serif",
                   fontWeight: 700,
                   fontSize: '12px',
                   color: '#fff',
@@ -160,7 +160,7 @@ export function Footer() {
                   color: '#888',
                   textDecoration: 'none',
                   fontSize: '10px',
-                  fontFamily: "'Barlow Condensed', sans-serif",
+                  fontFamily: "'Outfit', sans-serif",
                   fontWeight: 700,
                   letterSpacing: '0.5px',
                   transition: 'all 0.25s ease',
@@ -205,7 +205,7 @@ export function Footer() {
           >
             <div
               style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontSize: '12px',
                 color: '#666',
                 letterSpacing: '1.5px',
@@ -216,7 +216,7 @@ export function Footer() {
             </div>
             <div
               style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontSize: '11px',
                 color: '#444',
                 letterSpacing: '0.5px',
@@ -237,6 +237,6 @@ const linkStyle: React.CSSProperties = {
   textDecoration: 'none',
   color: '#888',
   display: 'block',
-  fontFamily: 'Barlow, sans-serif',
+  fontFamily: 'Outfit, sans-serif',
   transition: 'color 0.25s ease',
 };

@@ -18,8 +18,8 @@ const TECHNOLOGIES = [
     role: 'Nano-fiber coalescent media achieving ISO 8573-1 Class 1-2 particle removal at rated flow conditions, capturing sub-micron aerosols and oil mist before downstream instrumentation.',
   },
   {
-    name: 'AQUAGUARD',
-    slug: 'aquaguard-series',
+    name: 'HYDROCORE',
+    slug: 'hydrocore-series',
     role: 'Coalescing element technology engineered for water and oil aerosol separation in compressed air distribution, achieving bulk liquid removal and maintaining dew point stability across operating pressure ranges.',
   },
 ];
@@ -189,7 +189,7 @@ export default function CompressedAirSystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
@@ -269,21 +269,46 @@ export default function CompressedAirSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: compressed_air, pneumatic, air_dryer, instrument_air</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=contamination | standards=ISO-8573-1, ISO-8573-2</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 8573-1, ISO 8573-2, ISO 8573-3</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: DRYCORE, COOLTECH, MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/compressed-air-systems</p>
-        <p>&nbsp;&nbsp;concept_id: compressed-air-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Compressed Air Filtration Systems</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Compressed air filtration systems remove oil aerosols, solid particles, and water content from pressurized air circuits to achieve ISO 8573-1 purity classes — protecting pneumatic actuators, instrumentation, food processing equipment, and breathing air systems that fail on contact with contaminated compressed air.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Pneumatic control circuits, instrument air systems, food and pharmaceutical process air, breathing air supply systems, industrial spray applications, air dryer circuits, compressor discharge treatment</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Oil aerosol contamination above ISO 8573-1 Class 1 (0.01 mg/m³) in food process air → product contamination and regulatory shutdown → production halt. In pneumatic actuators: oil/water mixture in valve solenoids → solenoid coil insulation failure → control circuit failure → process stoppage. Water in instrument air above pressure dew point → moisture accumulation in control tubing → freeze blockage in cold environments → instrument signal loss → false process shutdowns.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 8573-1: Compressed air purity classes defining allowable particle, water, and oil content by application type | ISO 8573-2: Test methods for aerosol oil content measurement in compressed air | ISO 8573-3: Test methods for moisture and water content measurement | ISO 8573-9: Liquid water content test method for compressed air</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>DRYCORE: Coalescing and desiccant technology for moisture and oil aerosol removal achieving ISO 8573-1 Class 1-2 | THERMACORE: Thermal management for compressed air dew point control and freeze protection | MACROCORE: Bulk particulate removal at compressor discharge for downstream protection</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Compressed air purity is non-negotiable in food, pharmaceutical, and instrument air applications — ISO 8573-1 Class 1 oil content (0.01 mg/m³) is a regulatory threshold, not a performance target, and failure to maintain purity results in product recalls, regulatory inspection, and process shutdown costs that vastly exceed the cost of proper filtration systems.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/compressed-air-systems | concept: Compressed Air Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Compressed Air Filtration Systems — Industrial Standards",
+        "description": "Compressed air filtration removes oil aerosols, particles, and moisture to achieve ISO 8573-1 purity classes protecting pneumatic systems, instrumentation, and food processing applications.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["compressed air filtration", "ISO 8573-1", "ISO 8573-2", "compressed air purity", "pneumatic system protection", "instrument air quality"],
+        "about": { "@type": "Thing", "name": "Compressed Air Filtration Systems", "description": "Multi-stage filtration achieving ISO 8573-1 purity classes for pneumatic and process applications" },
+        "mentions": {
+          "standards": ["ISO 8573-1", "ISO 8573-2", "ISO 8573-3", "ISO 8573-9"],
+          "technologies": ["DRYCORE", "THERMACORE", "MACROCORE"],
+          "contaminationModes": ["oil aerosol contamination", "moisture ingress", "particle contamination", "pressure dew point failure"]
+        }
+      })}} />
     </main>
   );
 }

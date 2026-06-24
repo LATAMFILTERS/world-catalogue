@@ -193,7 +193,7 @@ export default function CabinSafetySystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS® TECHNOLOGIES</p>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
@@ -273,21 +273,46 @@ export default function CabinSafetySystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: cabin, hvac, operator_environment, recirculation</p>
-        <p>CONCEPT_TAXONOMY: type=safety | domain=contamination | standards=ISO-11155, DIN-71220</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 11155, DIN 71220, ISO 5011</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MICROKAPPA, SYNTEPORE, INTEKCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/cabin-safety-systems</p>
-        <p>&nbsp;&nbsp;concept_id: cabin-safety-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Cabin Air Safety Filtration</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Cabin air filtration systems maintain breathable air quality for machine operators by removing respirable dust (PM10, PM2.5), chemical vapors, and bioaerosols from HVAC intake and recirculation circuits in agricultural, mining, and construction equipment cab environments.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>Cab pressurization systems, HVAC recirculation circuits, agricultural equipment cabs, mining vehicle operator environments, construction machinery enclosures, industrial operator stations</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Unfiltered cab air allows PM10 particle ingress above WHO occupational exposure limits (50µg/m³ 24h average) → cumulative operator respiratory exposure during 10+ hour shifts → silicosis risk in mining/construction (crystalline silica above 0.05 mg/m³) → long-term pulmonary function reduction → regulatory liability for equipment operators. Secondary: chemical vapor infiltration (pesticides, exhaust gases) → operator cognitive impairment → safety incident risk.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ISO 11155: Road vehicle HVAC system air filtration test methods and performance requirements | DIN 71220: German standard for vehicle cabin air filter classification and test procedures | ISO 5011: Air filter efficiency test standard applicable to cabin intake systems | OSHA 1910.1000: Occupational exposure limits for airborne contaminants relevant to operator cab environments</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>MICROKAPPA: Multi-layer cabin air filtration capturing PM10 and PM2.5 particulate from operator environment | AQUAGUARD SERIES: Carbon-activated chemical vapor adsorption for pesticide and exhaust vapor removal | INTEKCORE: Housing system maintaining seal integrity for cab pressurization systems</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Cabin air filtration is a regulatory compliance requirement and operator health protection measure — operators in agriculture, mining, and construction without ISO 11155-compliant cab filtration face cumulative exposure to PM10, PM2.5, and chemical vapors above occupational health limits during routine 10-hour shifts, creating employer liability and long-term workforce health costs.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/standards/cabin-safety-systems | concept: Cabin Air Safety Filtration | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Cabin Air Safety Filtration Systems — Industrial Standards",
+        "description": "Cabin air filtration systems maintain operator health and regulatory compliance by removing PM10, PM2.5, and chemical vapors from HVAC circuits in agricultural, mining, and construction equipment.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["cabin air filtration", "ISO 11155", "DIN 71220", "operator safety", "PM10 protection", "HVAC filtration"],
+        "about": { "@type": "Thing", "name": "Cabin Air Safety Filtration", "description": "HVAC and cab air filtration for operator health protection in industrial machinery" },
+        "mentions": {
+          "standards": ["ISO 11155", "DIN 71220", "ISO 5011"],
+          "technologies": ["MICROKAPPA", "AQUAGUARD SERIES", "INTEKCORE"],
+          "contaminationModes": ["PM10 particulate", "PM2.5 fine dust", "chemical vapor infiltration", "bioaerosols"]
+        }
+      })}} />
     </main>
   );
 }

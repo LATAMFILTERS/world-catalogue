@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     absolute: 'ELIMFILTERS® Proprietary Filtration Technologies — 12 Engineered Systems',
   },
   description: "ELIMFILTERS®' 12 proprietary technologies achieve up to 99.98% contamination interception across fuel, air, hydraulic, coolant, and cabin systems for mining, marine, and heavy industry.",
-  keywords: ['SYNTRAX filter technology', 'NANOFORCE filtration', 'AQUAGUARD fuel filter', 'MACROCORE air filter', 'proprietary filtration technology', 'ELIMFILTERS®'],
+  keywords: ['SYNTRAX filter technology', 'NANOFORCE filtration', 'HYDROCORE fuel filter', 'MACROCORE air filter', 'proprietary filtration technology', 'ELIMFILTERS®'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
   },

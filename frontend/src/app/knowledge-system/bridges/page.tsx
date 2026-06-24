@@ -221,21 +221,52 @@ export default function BridgesHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, fleet</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=filtration-decision-bridge | scope=oem-aftermarket-fleet</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/bridges</p>
-        <p>&nbsp;&nbsp;concept_id: filtration-decision-bridges</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Filtration Knowledge Bridges</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Filtration knowledge bridges are structured educational pathways that connect practitioner search intent (OEM replacement, aftermarket selection, fleet maintenance, industrial filtration overview) with the contamination control framework — translating product-centric questions into system-level filtration engineering understanding.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>OEM replacement decision pathways, aftermarket filter selection, fleet maintenance optimization, industrial filtration system design — practitioners approaching filtration from any starting point</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>BRIDGE_PAGES</p>
+        <p>Industrial Filtration Bridge: systems-level introduction to contamination control for practitioners new to filtration engineering | OEM Replacement Bridge: from "which filter replaces mine" to ISO 16889 Beta ratio selection | Aftermarket Selection Bridge: from "cheapest equivalent" to ISO 4406 target achievement | Fleet Solutions Bridge: from "filter catalog" to contamination control program design</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Knowledge bridges serve practitioners entering filtration decisions from product familiarity rather than contamination engineering — they provide the conceptual path from "I need to replace this filter" to "I need to achieve this cleanliness code," which is the most important reframe available for improving industrial equipment maintenance outcomes.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/bridges | concept: Filtration Knowledge Bridges Hub | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for Search Engines & LLMs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Filtration Knowledge Bridges — From Product Selection to System Design",
+        "description": "Structured educational pathways translating OEM replacement, aftermarket selection, and fleet maintenance questions into contamination control system-level understanding.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["filtration knowledge bridge", "OEM filter replacement", "aftermarket filter strategy", "fleet filtration solutions", "industrial filtration selection", "contamination control"],
+        "about": {
+          "@type": "Thing",
+          "name": "Filtration Knowledge Bridges",
+          "description": "Educational pathways connecting product-centric practitioner questions to system-level contamination control engineering understanding"
+        },
+        "mentions": {
+          "standards": ["ISO 16889", "ISO 4406"],
+          "technologies": ["MACROCORE", "NANOFORCE", "DURATECH"],
+          "bridges": ["industrial-filtration", "oem-replacement", "aftermarket-selection", "fleet-solutions"]
+        },
+        "relatedLink": [
+          { "url": "/knowledge-system/bridges/industrial-filtration", "title": "Industrial Filtration Selection" },
+          { "url": "/knowledge-system/bridges/oem-replacement", "title": "OEM Filter Replacement" },
+          { "url": "/knowledge-system/bridges/aftermarket-selection", "title": "Aftermarket Filter Strategy" },
+          { "url": "/knowledge-system/bridges/fleet-solutions", "title": "Fleet Filtration Solutions" },
+          { "url": "/knowledge-system/fleet/reducing-downtime", "title": "Reducing Fleet Downtime" }
+        ]
+      }) }} />
+
     </main>
   );
 }

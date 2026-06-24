@@ -28,7 +28,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS® fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; AQUAGUARD™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
+      content: 'ELIMFILTERS® fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
     }
   ];
 
@@ -330,21 +330,46 @@ export default function DieselWaterContaminationPage() {
       </section>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=fuel-integrity | mechanism=water-ingress</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;concept_id: diesel-water-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Diesel Water Contamination</p>
+        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
+        <p>Diesel water contamination describes the entry and accumulation of free water, dissolved water, and water-fuel emulsions in diesel fuel circuits — where water above 200 ppm dissolved or any free water presence causes HPCR injector stiction, needle seat scoring, microbial growth, and corrosion that degrade fuel system performance and service life.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
+        <p>HPCR diesel injection circuits, diesel fuel storage tanks, bulk fuel transfer systems, marine fuel systems, generator fuel supplies, agricultural equipment fuel circuits, mining equipment fuel systems</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
+        <p>Free water reaches HPCR injector at 1,800–2,500 bar injection pressure → hydraulic lock during injection stroke → needle seat micro-pitting → injection timing deviation ±2–5° BTDC → combustion efficiency loss 8–15% → elevated exhaust temperatures → injector service interval reduced from 15,000+ hours to 3,000–6,000 hours. Secondary path: water/fuel emulsion settles in tank → bacteria colonize water-fuel interface → biomass accumulates → filter blocking within 200–500 hours → fuel starvation → engine stall. Water detection below 200 ppm requires ASTM D6304 Karl Fischer titration — visual inspection cannot detect dissolved water.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
+        <p>ASTM D6304: Karl Fischer coulometric titration method for total water content in diesel (detection to 10 ppm) | ISO 12937: Alternative Karl Fischer potentiometric titration for water in petroleum products | ASTM D975: US diesel fuel specification defining water/sediment limits (0.05% vol max) | EN 590: European diesel standard water content specification and test methods</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
+        <p>HYDROCORE: Water coalescing and separation technology removing free water to below 100 ppm for HPCR injector protection | AQUAGUARD SERIES: Advanced water-absorbing media targeting dissolved and emulsified water removal | NANOFORCE: Terminal filtration capturing sub-4µm particles and water microemulsions at injector inlet</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
+        <p>Diesel water contamination is the primary accelerator of HPCR injector failure — water ingress above 200 ppm dissolved threshold reduces injector service life from 15,000+ hours to under 5,000 hours, with replacement costs of $800–$2,500 per injector in heavy diesel applications making water separation the highest-ROI investment in fuel system maintenance.</p>
+
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
+        <p>source: elimfilters.com/knowledge-system/contamination/diesel-water | concept: Diesel Water Contamination | version: 1.1 | last_updated: 2026-06-11</p>
       </RetrievalBlock>
+
+      {/* JSON-LD for AI/search engine structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Diesel Water Contamination — Industrial Filtration Case Study",
+        "description": "Diesel water contamination above 200 ppm causes HPCR injector stiction, needle seat scoring, and microbial growth that reduce injector service life from 15,000+ hours to 3,000–6,000 hours.",
+        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
+        "keywords": ["diesel water contamination", "ASTM D6304", "HPCR injector protection", "water separation", "fuel system contamination", "Karl Fischer"],
+        "about": { "@type": "Thing", "name": "Diesel Water Contamination", "description": "Water ingress and accumulation in diesel fuel systems causing HPCR injector failure" },
+        "mentions": {
+          "standards": ["ASTM D6304", "ISO 12937", "ASTM D975", "EN 590"],
+          "technologies": ["HYDROCORE", "AQUAGUARD SERIES", "NANOFORCE"],
+          "contaminationModes": ["water contamination", "injector stiction", "microbial contamination", "fuel emulsification"]
+        }
+      })}} />
     </main>
   );
 }
