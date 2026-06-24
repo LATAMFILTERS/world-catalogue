@@ -1,5 +1,5 @@
 {
-  "type_count": 11,
+  "type_count": 12,
   "types": [
     {
       "type": "architecture",
@@ -37,8 +37,13 @@
       "href": "/api/citation/type/product-family.json"
     },
     {
+      "type": "protection-domain",
+      "count": 4,
+      "href": "/api/citation/type/protection-domain.json"
+    },
+    {
       "type": "standard",
-      "count": 9,
+      "count": 10,
       "href": "/api/citation/type/standard.json"
     },
     {

@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-06-24T04:49:39.016Z",
-    "entity_count": 49,
+    "generated": "2026-06-24T05:02:42.273Z",
+    "entity_count": 54,
     "endpoint_base": "/api/citation",
     "query_patterns": {
       "entity_lookup": "/api/citation/[KEY].json",
@@ -1110,6 +1110,134 @@
       },
       "vault_path": "elimfilters-vault/03-systems/product-line/AIRFILTER.md"
     },
+    "CABIN": {
+      "key": "CABIN",
+      "type": "protection-domain",
+      "name": "Cabin Air Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "concept": "CABIN — Cabin Air Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:3005ac733581826cb53ba0abd82643a38f11e42adc814780238fd35a95a81089"
+      },
+      "canonical": {
+        "definition": "The cabin air filtration domain covers operator cab air quality systems in mobile equipment, protecting personnel from PM10, PM2.5, and chemical vapor exposure in mining, agriculture, construction, and commercial transport operating environments.",
+        "systems": "Operator cabs in agricultural machinery, construction equipment, mining vehicles, commercial transport, and industrial vehicles operating in dusty or chemically active environments",
+        "failure_impact": "Inadequate cabin filtration → operator exposure to respirable PM2.5 dust → occupational silicosis, coal workers' pneumoconiosis, or chemical toxicity | Regulatory impact: exceeding OSHA/NIOSH PEL thresholds creates occupational health liability and equipment operator health risk.",
+        "related_standards": "ISO 11155: Road vehicle cabin air filtration test methodology | DIN 71220: Cabin air filter classification and performance requirements",
+        "related_technologies": "MICROKAPPA: Cabin air filter elements for PM10/PM2.5 capture with activated carbon variants for chemical vapor environments",
+        "industrial_role": "Cabin air filtration is a mandatory safety system for mobile equipment operators working in environments with silica dust, coal dust, grain dust, or pesticide exposure — failure to maintain effective filtration creates direct occupational health risk."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_11155",
+          "DIN_71220"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md"
+    },
+    "FUEL": {
+      "key": "FUEL",
+      "type": "protection-domain",
+      "name": "Fuel Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/fuel-systems",
+        "concept": "FUEL — Fuel Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:53a1ad7ff1077bbbfa5d812df1e3ad84bc76e06f3f20b058b3612204895a7287"
+      },
+      "canonical": {
+        "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
+        "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
+        "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
+        "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
+        "related_technologies": "SYNTEPORE: HPCR-rated fuel filter elements for sub-4 µm particle removal | HYDROCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments",
+        "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
+      },
+      "relationships": {
+        "related_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md"
+    },
+    "HYDRAULIC": {
+      "key": "HYDRAULIC",
+      "type": "protection-domain",
+      "name": "Hydraulic Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/hydraulic-systems",
+        "concept": "HYDRAULIC — Hydraulic Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:2c401bb35a048afe1a7e407a5d5246e07f2be3dc0b899d0f0460fc2f21117e21"
+      },
+      "canonical": {
+        "definition": "The hydraulic filtration domain covers particle cleanliness control in hydraulic circuits protecting proportional valves, piston pumps, and actuators from particle-induced wear, spool stiction, and flow degradation caused by contamination above ISO 4406 target codes.",
+        "systems": "Mobile hydraulic systems (excavators, loaders, cranes), stationary hydraulic power units, servo and proportional valve circuits, hydrostatic transmission systems",
+        "failure_impact": "Particle contamination above ISO 4406 17/15/12 → spool valve silting in proportional valves (1–4 µm silt) → erratic actuator response → valve replacement | Hard particles → piston pump barrel wear → internal leakage → system pressure loss | Particle contamination accounts for 70–80% of premature hydraulic component failures.",
+        "related_standards": "ISO 16889: Multi-pass filter efficiency test methodology (Beta ratio) | ISO 4406: Particle cleanliness code classification; target 17/15/12 to 16/14/11 | NFPA T2.14: Hydraulic fluid power contamination control guidelines",
+        "related_technologies": "NANOFORCE: High-Beta hydraulic filter elements for inline and return-line applications targeting ISO 4406 16/14/11 to 17/15/12 cleanliness",
+        "industrial_role": "Hydraulic filtration maintains the cleanliness codes required for proportional valve and piston pump reliability — particle contamination above cleanliness targets is the leading cause of unplanned hydraulic system downtime in mobile and industrial equipment."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/HYDRAULIC.md"
+    },
+    "OIL": {
+      "key": "OIL",
+      "type": "protection-domain",
+      "name": "Lube Oil Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "concept": "OIL — Lube Oil Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:bf03800238ecd6cb32d39a7e9982c17ae9f86ac1c88e1f9738cee70876438dbd"
+      },
+      "canonical": {
+        "definition": "The lube oil filtration domain covers all engine oil and transmission oil circuits where particle contamination causes abrasive wear of bearing journals, piston rings, and gear surfaces, reducing component life measurably below design specifications.",
+        "systems": "Engine crankcase circuits, transmission fluid circuits, bearing lubrication systems across diesel engines, gas engines, and on/off-highway mobile equipment",
+        "failure_impact": "Particle contamination in oil above ISO 4406 16/14/11 → abrasive micro-cutting at bearing journal surfaces → progressive clearance increase → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours to 3,000–5,000 hours with uncontrolled contamination.",
+        "related_standards": "ISO 4406: Particle cleanliness code classification; target 16/14/11 for engine bearings | ISO 16889: Multi-pass filter efficiency test (Beta ratio) | DIN 51524: Lube and hydraulic oil specification; defines fluid compatibility requirements for filtration media",
+        "related_technologies": "SYNTRAX: Full-flow lube oil filter elements targeting ISO 4406 16/14/11 engine bearing cleanliness",
+        "industrial_role": "Lube oil filtration is the single largest controllable factor in engine bearing lifespan — maintaining ISO 4406 16/14/11 cleanliness extends bearing life 3–5× compared to commodity filtration approaches."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/OIL.md"
+    },
     "ASTM_D6304": {
       "key": "ASTM_D6304",
       "type": "standard",
@@ -1161,6 +1289,33 @@
         ]
       },
       "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
+    },
+    "DIN_51524": {
+      "key": "DIN_51524",
+      "type": "standard",
+      "name": "DIN 51524 — Hydraulic and Lube Oil Specification",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "concept": "DIN 51524 — Hydraulic and Lube Oil Specification",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:f10cf8cb86fe2a3bf301272da48bc125aca2e3445900617aa2f439ba9f66720e"
+      },
+      "canonical": {
+        "definition": "DIN 51524 is a German industrial standard specifying minimum performance requirements for hydraulic and lube oils (viscosity classes, oxidation stability, anti-wear additives, foam resistance), ensuring lubricant compatibility with filtration media and system components.",
+        "systems": "Engine lube oil circuits, hydraulic power circuits, industrial gear lubrication — all systems using DIN 51524 HL, HLP, or HVLP class fluids",
+        "failure_impact": "Non-compliant or incompatible fluids → filtration media degradation or additive stripping → loss of anti-wear protection → accelerated component wear | Compatibility verification prevents media breakdown and ensures filtration efficiency is maintained across fluid service life.",
+        "related_standards": "ISO 4406: Particle cleanliness code used alongside DIN 51524 fluid quality requirements | ISO 16889: Filter efficiency test methodology; SYNTRAX rated to ISO 16889 in DIN 51524 compatible fluids",
+        "related_technologies": "SYNTRAX: Lube oil filter elements qualified for DIN 51524 HLP and HVLP fluid compatibility",
+        "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
     },
     "DIN_71220": {
       "key": "DIN_71220",
@@ -2468,19 +2623,19 @@
         "metrology"
       ],
       "citation": {
-        "source_url": null,
-        "concept": null,
-        "version": null,
-        "last_updated": null,
-        "content_hash": null
+        "source_url": "elimfilters.com",
+        "concept": "ELIMFILTERS AI Reasoning Engine",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:f7e01e19eacfaea9f46e5c195890f702d8eddb69935c42e6dbfcb4ead41a0a72"
       },
       "canonical": {
-        "definition": null,
-        "systems": null,
-        "failure_impact": null,
-        "related_standards": null,
-        "related_technologies": null,
-        "industrial_role": null
+        "definition": "The ELIMFILTERS AI Reasoning Engine is the cognitive layer of the ELIMFILTERS platform that transforms standard parts search queries into consultative Asset Protection Engineering interactions through structured contamination-to-solution reasoning chains.",
+        "systems": "Digital customer interaction layer — parts search, dealer consultation, fleet diagnostic queries, cross-reference evaluation, and contamination problem diagnosis across all ELIMFILTERS product domains",
+        "failure_impact": "Without a structured reasoning engine → customers default to commodity filter selection by price or brand → incorrect filtration specifications → premature equipment failure | Operational impact: AI-guided selection ensures contamination targets are defined before products are specified.",
+        "related_standards": "ISO 4406: Cleanliness code targets used as primary decision criteria in reasoning chains | ISO 16889: Beta ratio efficiency thresholds applied in technology recommendation logic",
+        "related_technologies": "All ELIMFILTERS technologies — the AI Reasoning Engine maps contamination problems to the appropriate technology domain for each query",
+        "industrial_role": "The AI Reasoning Engine repositions the filtration selection conversation from product price comparison to contamination control system design — shifting customer decision criteria from commodity purchasing to asset protection engineering."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault/09-artificial-intelligence/AI_REASONING_ENGINE.md"
@@ -2500,19 +2655,19 @@
         "consolidation"
       ],
       "citation": {
-        "source_url": null,
-        "concept": null,
-        "version": null,
-        "last_updated": null,
-        "content_hash": null
+        "source_url": "elimfilters.com/technologies/duratech",
+        "concept": "DURATECH Consolidated Filter Kit System",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:4d2eaa8af3e2ed09fcc3528fb0adbe0fa958a0dedd8dda27808fae8e2d3e434a"
       },
       "canonical": {
-        "definition": null,
-        "systems": null,
-        "failure_impact": null,
-        "related_standards": null,
-        "related_technologies": null,
-        "industrial_role": null
+        "definition": "DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering the complete filtration requirement for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters simultaneously.",
+        "systems": "Heavy-duty on-highway and off-highway fleet maintenance — trucks, buses, construction equipment, agricultural machinery requiring coordinated multi-system filter replacement",
+        "failure_impact": "Incomplete filter replacement (replacing only primary filters while leaving secondary filters in service) → extended contamination exposure in non-replaced systems → accelerated wear in overlooked circuits | Operational impact: DURATECH kits prevent selective maintenance, ensuring all filtration systems are renewed simultaneously.",
+        "related_standards": "ISO 4406: Particle cleanliness codes maintained across all circuits covered by DURATECH kit | ISO 16889: Filter efficiency ratings applicable to kit components",
+        "related_technologies": "MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTEPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)",
+        "industrial_role": "DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault/10-commercial/DURATECH.md"
@@ -2531,19 +2686,19 @@
         "fleet"
       ],
       "citation": {
-        "source_url": null,
-        "concept": null,
-        "version": null,
-        "last_updated": null,
-        "content_hash": null
+        "source_url": "elimfilters.com/technologies/marineclean",
+        "concept": "MARINECLEAN Marine Filtration System",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:e40f3660c2990a1087893d0f4e36906e89ed2702f5861fe67e7658433f041f83"
       },
       "canonical": {
-        "definition": null,
-        "systems": null,
-        "failure_impact": null,
-        "related_standards": null,
-        "related_technologies": null,
-        "industrial_role": null
+        "definition": "MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments with full traceability.",
+        "systems": "Marine diesel engines (recreational to commercial cargo), hydraulic steering and deck machinery systems, fuel transfer systems on vessels including jet skis, recreational boats, and heavy-duty cargo ships",
+        "failure_impact": "Uncontrolled contamination on vessels → engine or hydraulic failure at sea → vessel immobilization with no immediate service access | High-salinity environments accelerate corrosion in fuel and lube circuits — consolidated MARINECLEAN maintenance prevents catastrophic failure in remote maritime operations.",
+        "related_standards": "IMO marine equipment certification requirements | ISO 16889: Filter efficiency applicable to marine lube and hydraulic circuits | ASTM D6304: Water content testing for marine diesel fuel",
+        "related_technologies": "SYNTRAX: Marine engine lube oil filtration | HYDROCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTEPORE: HPCR marine diesel fuel filtration",
+        "industrial_role": "MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md"
@@ -2563,19 +2718,19 @@
         "catalog"
       ],
       "citation": {
-        "source_url": null,
-        "concept": null,
-        "version": null,
-        "last_updated": null,
-        "content_hash": null
+        "source_url": "elimfilters.com",
+        "concept": "ELIMFILTERS SKU Nomenclature Architecture",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:7823ef36481f962404d62f390b8ffcd4b6a1382d956a932279093d9a559d5c2e"
       },
       "canonical": {
-        "definition": null,
-        "systems": null,
-        "failure_impact": null,
-        "related_standards": null,
-        "related_technologies": null,
-        "industrial_role": null
+        "definition": "The ELIMFILTERS SKU Nomenclature Architecture is a technical taxonomy system that encodes fluid domain, application class (Heavy Duty vs Light Duty), and cross-reference origin into each part number, enabling immediate identification of contamination control scope within the Asset Protection System.",
+        "systems": "All ELIMFILTERS product catalogue references — air intake, fuel, lube oil, hydraulic, cabin, coolant, compressed air, marine product families across Heavy Duty and Light Duty application classes",
+        "failure_impact": "Without a structured SKU taxonomy → incorrect part substitution across fluid domains → mismatched filtration specifications → potential equipment failure from wrong filter application | Structured nomenclature prevents cross-domain substitution errors.",
+        "related_standards": "ISO 4406: Cleanliness class encoded in product specification families | ISO 16889: Beta ratio efficiency class referenced in product naming for hydraulic and lube oil families",
+        "related_technologies": "All ELIMFILTERS technologies — nomenclature directly maps each SKU to its technology domain (air, fuel, oil, hydraulic, cabin, coolant, compressed air, marine)",
+        "industrial_role": "The SKU nomenclature architecture enables fleet managers, dealers, and AI systems to immediately identify the contamination domain and application class of any ELIMFILTERS part number without requiring catalogue lookup."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault/11-sku-architecture/ELIMFILTERS_NOMENCLATURE.md"

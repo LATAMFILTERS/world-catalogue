@@ -1,13 +1,7 @@
 {
-  "edge_count": 505,
-  "node_count": 49,
-  "dangling_keys": [
-    "CABIN",
-    "DIN_51524",
-    "FUEL",
-    "HYDRAULIC",
-    "OIL"
-  ],
+  "edge_count": 513,
+  "node_count": 54,
+  "dangling_keys": [],
   "edges": [
     {
       "from": "HYDROCORE",
@@ -1418,6 +1412,46 @@
       "from": "AIRFILTER",
       "to": "TURBOCHARGER_BEARING",
       "relation": "related_components"
+    },
+    {
+      "from": "CABIN",
+      "to": "ISO_11155",
+      "relation": "related_standards"
+    },
+    {
+      "from": "CABIN",
+      "to": "DIN_71220",
+      "relation": "related_standards"
+    },
+    {
+      "from": "FUEL",
+      "to": "ASTM_D6304",
+      "relation": "related_standards"
+    },
+    {
+      "from": "FUEL",
+      "to": "ISO_12937",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "OIL",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "OIL",
+      "to": "ISO_4406",
+      "relation": "related_standards"
     },
     {
       "from": "ASTM_D6304",
