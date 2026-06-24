@@ -2345,6 +2345,98 @@ app.get('/api/audit/report', async (req, res) => {
   }
 });
 
+// ─── POST /api/admin/resolve-orphan-skus ─────────────────────────────────────
+// ONE-TIME: Assigns ELIMFILTERS SKUs to fleetguard_orphans records.
+// Remove this endpoint after successful run.
+app.post('/api/admin/resolve-orphan-skus', adminLimiter, requireAdmin, async (req, res) => {
+  const dryRun = req.query.dry === '1';
+  const FG_TYPE = { LF:'oil', FF:'fuel', HF:'hydraulic', FS:'fuel', WF:'oil' };
+  const MANN_TYPE = {
+    WP:'oil',HU:'oil',W:'oil',WK:'fuel',WD:'fuel',WDK:'fuel',
+    H:'hydraulic',HD:'hydraulic',P:'air',C:'air',AU:'air',
+    PU:'cabin',PF:'cabin',CF:'cabin',
+  };
+  const TYPE_PREFIX = { oil:'EL8', fuel:'EF9', hydraulic:'EH6', air:'EA1', cabin:'EC1' };
+
+  const getType = (r) => {
+    const fg = (r.fleetguard_part||'').match(/^[A-Z]+/)?.[0];
+    if (fg && FG_TYPE[fg]) return FG_TYPE[fg];
+    const mn = (r.mann_part||'').replace('_MANN-FILTER','').match(/^[A-Z]+/)?.[0];
+    return mn && MANN_TYPE[mn] ? MANN_TYPE[mn] : null;
+  };
+
+  const fs = require('fs'), path = require('path');
+  const orphansPath = path.join(__dirname, 'fleetguard_orphans.json');
+  const orphans = JSON.parse(fs.readFileSync(orphansPath, 'utf8'));
+
+  const client = await pool.connect();
+  try {
+    // Get max existing suffix per prefix
+    const existing = await client.query(`SELECT sku FROM elimfilters_catalog WHERE sku ~ '^E[A-Z][0-9][0-9]+$'`);
+    const maxBy = {};
+    for (const { sku } of existing.rows) {
+      const pfx = sku.slice(0,3), sfx = parseInt(sku.slice(3),10);
+      if (!isNaN(sfx) && (!maxBy[pfx] || sfx > maxBy[pfx])) maxBy[pfx] = sfx;
+    }
+
+    let reused = 0, created = 0, skipped = 0;
+    const log = [];
+
+    for (const rec of orphans) {
+      if (rec.elimfilters_sku) continue;
+      const type = getType(rec);
+      if (!type) { skipped++; continue; }
+      const pfx = TYPE_PREFIX[type];
+      const mann = (rec.mann_part||'').replace('_MANN-FILTER','').trim();
+
+      // Check existing catalog for this OEM / MANN / FG code
+      let existSku = null;
+      for (const col of ['oem_codes','competitor_codes']) {
+        if (existSku) break;
+        const candidates = [rec.oem_normalized, mann, rec.fleetguard_part].filter(Boolean);
+        for (const code of candidates) {
+          const r = await client.query(`SELECT sku FROM elimfilters_catalog WHERE ${col} @> $1::jsonb LIMIT 1`, [JSON.stringify([code])]);
+          if (r.rows.length) { existSku = r.rows[0].sku; break; }
+        }
+      }
+
+      let sku;
+      if (existSku) { sku = existSku; reused++; }
+      else {
+        const next = (maxBy[pfx] || 0) + 1;
+        maxBy[pfx] = next;
+        sku = `${pfx}${String(next).padStart(4,'0')}`;
+        created++;
+        if (!dryRun) {
+          const oem = rec.oem_normalized ? [rec.oem_normalized] : [];
+          const comp = rec.fleetguard_part ? [rec.fleetguard_part] : [];
+          const xref = {};
+          if (mann) xref['MANN'] = mann;
+          if (rec.fleetguard_part) xref['FLEETGUARD'] = rec.fleetguard_part;
+          const equip = rec.oem_brand ? [{brand:rec.oem_brand,part:rec.oem_normalized}] : [];
+          await client.query(`
+            INSERT INTO elimfilters_catalog (sku,codigo_base,filter_type,oem_codes,competitor_codes,brand_crossrefs,equipment_applications)
+            VALUES ($1,$2,$3,$4::jsonb,$5::jsonb,$6::jsonb,$7::jsonb)
+            ON CONFLICT (sku) DO NOTHING
+          `, [sku, sku, type, JSON.stringify(oem), JSON.stringify(comp), JSON.stringify(xref), JSON.stringify(equip)]);
+        }
+      }
+      rec.elimfilters_sku = sku;
+      log.push({ sku, type, new: !existSku, oem: rec.oem_normalized, oem_brand: rec.oem_brand, mann, fleetguard: rec.fleetguard_part });
+    }
+
+    if (!dryRun) fs.writeFileSync(orphansPath, JSON.stringify(orphans, null, 2));
+
+    res.json({
+      dry_run: dryRun,
+      total: orphans.length,
+      reused, created, skipped,
+      max_suffixes_after: maxBy,
+      sample: log.slice(0, 30),
+    });
+  } finally { client.release(); }
+});
+
 // ────────────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 8080;
