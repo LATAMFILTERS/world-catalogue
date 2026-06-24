@@ -554,7 +554,9 @@ app.use((req, res, next) => {
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production'
+  // Render PostgreSQL uses a self-signed cert — rejectUnauthorized must stay false.
+  // For Neon/Supabase with verified certs, set DB_SSL_VERIFY=true in env.
+  ssl: process.env.DB_SSL_VERIFY === 'true'
     ? { rejectUnauthorized: true }
     : { rejectUnauthorized: false },
 };
