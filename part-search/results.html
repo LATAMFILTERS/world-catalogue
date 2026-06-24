@@ -923,6 +923,9 @@ detectLang().then(lang => {
 const API = '';
 const app = document.getElementById('app');
 
+// ─── HTML escape — prevents XSS from URL parameters injected into innerHTML ───
+const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
+
 // ─── Parse URL parameters ───
 const params = new URLSearchParams(window.location.search);
 const query = (params.get('q') || '').trim();
@@ -937,14 +940,14 @@ const eqType = params.get('type') || '';
   if (el && (query || model)) {
     el.innerHTML = `
       <span class="search-summary-mode">PART NUMBER</span>
-      <span class="search-summary-main"><strong>${(query || model).toUpperCase()}</strong></span>`;
+      <span class="search-summary-main"><strong>${_esc((query || model).toUpperCase())}</strong></span>`;
   }
 })();
 
 function showLoading(term) {
   app.innerHTML = `
     <div class="loading-container">
-      <p class="loading-text">${T.loading}: ${(term || '').toUpperCase()}</p>
+      <p class="loading-text">${T.loading}: ${_esc((term || '').toUpperCase())}</p>
       <div class="loading-bar"><div class="loading-bar-fill"></div></div>
     </div>`;
 }
@@ -954,7 +957,7 @@ function startWarmupTimer(term) {
   return setTimeout(() => {
     const msg = document.getElementById('loading-msg');
     if (msg) {
-      msg.innerHTML = `SEARCHING: ${(term || '').toUpperCase()}<br>
+      msg.innerHTML = `SEARCHING: ${_esc((term || '').toUpperCase())}<br>
         <span style="font-size:0.7rem;color:rgba(255,241,45,0.8);letter-spacing:0.06em;display:block;margin-top:0.6rem">
           SERVER WARMING UP — FREE TIER · PLEASE WAIT ~60s
         </span>`;
@@ -968,7 +971,7 @@ function showEmpty(term) {
     <div class="status-container">
       <div class="status-icon">⌕</div>
       <p class="status-title">${T.noResultsTitle}</p>
-      <p class="status-desc">${T.noResultsDesc.replace('%s', (term || '').toUpperCase())}</p>
+      <p class="status-desc">${T.noResultsDesc.replace('%s', _esc((term || '').toUpperCase()))}</p>
       <div style="
         margin: 1.5rem auto 0;
         max-width: 480px;
@@ -1306,7 +1309,7 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
   if (summaryEl) {
     summaryEl.innerHTML = `
       <span class="search-summary-mode">${count} ${count !== 1 ? T.labelResults_pl : T.labelResults} · ${searchMode}</span>
-      <span class="search-summary-main"><strong>${searchTerm.toUpperCase()}</strong></span>`;
+      <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
   }
 
   app.innerHTML = `

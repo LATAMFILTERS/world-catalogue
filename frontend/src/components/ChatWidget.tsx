@@ -3,106 +3,82 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const API_BASE = 'https://part-search.elimfilters.com';
 const SUPPORT_EMAIL = 'support@elimfilters.com';
-const MAX_QUESTIONS = 3;
+const PART_SEARCH_BASE = 'https://part-search.elimfilters.com';
 
-// ── i18n strings ─────────────────────────────────────────────────────────────
+// ── i18n ─────────────────────────────────────────────────────────────────────
 const T: Record<string, Record<string, string>> = {
   welcome: {
-    es: '¡Hola! Soy el asistente de ELIMFILTERS.\n¿Cómo puedo ayudarte?',
-    en: 'Hello! I\'m the ELIMFILTERS assistant.\nHow can I help you?',
-    pt: 'Olá! Sou o assistente ELIMFILTERS.\nComo posso ajudá-lo?',
-    fr: 'Bonjour! Je suis l\'assistant ELIMFILTERS.\nComment puis-je vous aider?',
-    it: 'Ciao! Sono l\'assistente ELIMFILTERS.\nCome posso aiutarti?',
-    nl: 'Hallo! Ik ben de ELIMFILTERS assistent.\nHoe kan ik u helpen?',
-    ru: 'Здравствуйте! Я ассистент ELIMFILTERS.\nЧем могу помочь?',
-    zh: '您好！我是ELIMFILTERS助手。\n有什么可以帮助您的？',
-    de: 'Hallo! Ich bin der ELIMFILTERS-Assistent.\nWie kann ich Ihnen helfen?',
-    ar: 'مرحباً! أنا مساعد ELIMFILTERS.\nكيف يمكنني مساعدتك؟',
-  },
-  opt_part: {
-    es: '🔍 Buscar número de parte', en: '🔍 Search part number',
-    pt: '🔍 Buscar número de peça', fr: '🔍 Rechercher une référence',
-    it: '🔍 Cercare codice parte', de: '🔍 Teilenummer suchen',
-    nl: '🔍 Onderdeelnummer zoeken', ru: '🔍 Поиск номера детали',
-    zh: '🔍 搜索零件编号', ar: '🔍 البحث عن رقم القطعة',
-  },
-  opt_tech: {
-    es: '⚙️ Consulta técnica', en: '⚙️ Technical question',
-    pt: '⚙️ Consulta técnica', fr: '⚙️ Question technique',
-    it: '⚙️ Domanda tecnica', de: '⚙️ Technische Frage',
-    nl: '⚙️ Technische vraag', ru: '⚙️ Технический вопрос',
-    zh: '⚙️ 技术咨询', ar: '⚙️ استفسار تقني',
-  },
-  opt_dist: {
-    es: '🤝 Quiero ser distribuidor', en: '🤝 Become a distributor',
-    pt: '🤝 Quero ser distribuidor', fr: '🤝 Devenir distributeur',
-    it: '🤝 Diventare distributore', de: '🤝 Distributor werden',
-    nl: '🤝 Distributeur worden', ru: '🤝 Стать дистрибьютором',
-    zh: '🤝 成为经销商', ar: '🤝 أريد أن أصبح موزعاً',
-  },
-  ask_part: {
-    es: 'Escribe el número de parte y te redirijo a la búsqueda:',
-    en: 'Enter the part number and I\'ll redirect you to search:',
-    pt: 'Digite o número da peça e vou redirecioná-lo para a busca:',
-    fr: 'Entrez la référence et je vous redirige vers la recherche:',
-    it: 'Inserisci il codice parte e ti reindirizzerò alla ricerca:',
-    de: 'Geben Sie die Teilenummer ein und ich leite Sie zur Suche weiter:',
-    nl: 'Voer het onderdeelnummer in en ik verwijs u door naar de zoekopdracht:',
-    ru: 'Введите номер детали, и я перенаправлю вас на поиск:',
-    zh: '请输入零件编号，我将为您跳转到搜索页面：',
-    ar: 'أدخل رقم القطعة وسأوجهك إلى البحث:',
-  },
-  redirecting: {
-    es: '¡Perfecto! Abriendo la búsqueda para', en: 'Opening search for',
-    pt: 'Abrindo busca para', fr: 'Ouverture de la recherche pour',
-    it: 'Apertura della ricerca per', de: 'Suche wird geöffnet für',
-    nl: 'Zoekopdracht openen voor', ru: 'Открываю поиск для',
-    zh: '正在打开搜索：', ar: 'فتح البحث عن',
-  },
-  dist_redirect: {
-    es: 'Te redirijo al formulario de distribuidores. ¡Bienvenido a la red ELIMFILTERS!',
-    en: 'Redirecting you to the distributor application form. Welcome to the ELIMFILTERS network!',
-    pt: 'Redirecionando para o formulário de distribuidores. Bem-vindo à rede ELIMFILTERS!',
-    fr: 'Redirection vers le formulaire distributeur. Bienvenue dans le réseau ELIMFILTERS!',
-    it: 'Reindirizzamento al modulo distributore. Benvenuto nella rete ELIMFILTERS!',
-    de: 'Weiterleitung zum Distributor-Formular. Willkommen im ELIMFILTERS-Netzwerk!',
-    nl: 'U wordt doorverwezen naar het distributeurformulier. Welkom bij het ELIMFILTERS-netwerk!',
-    ru: 'Перенаправляю на форму дистрибьютора. Добро пожаловать в сеть ELIMFILTERS!',
-    zh: '正在跳转到经销商申请表。欢迎加入ELIMFILTERS网络！',
-    ar: 'إعادة التوجيه إلى نموذج الموزع. مرحباً بكم في شبكة ELIMFILTERS!',
-  },
-  ask_tech: {
-    es: 'Cuéntame tu consulta técnica:',
-    en: 'Tell me your technical question:',
-    pt: 'Diga-me sua consulta técnica:',
-    fr: 'Dites-moi votre question technique:',
-    it: 'Dimmi la tua domanda tecnica:',
-    de: 'Sagen Sie mir Ihre technische Frage:',
-    nl: 'Vertel me uw technische vraag:',
-    ru: 'Расскажите мне свой технический вопрос:',
-    zh: '请告诉我您的技术问题：',
-    ar: 'أخبرني باستفسارك التقني:',
-  },
-  limit_reached: {
-    es: 'Has alcanzado el límite de 3 preguntas.\n\nTu consulta ha sido enviada a nuestro equipo técnico. Recibirás una respuesta en menos de 24 horas a través de nuestro equipo de soporte.\n\n📧 support@elimfilters.com',
-    en: 'You\'ve reached the 3-question limit.\n\nYour inquiry has been sent to our technical team. You will receive a response within 24 hours from our support team.\n\n📧 support@elimfilters.com',
-    pt: 'Você atingiu o limite de 3 perguntas.\n\nSua consulta foi enviada à nossa equipe técnica. Você receberá uma resposta em 24 horas.\n\n📧 support@elimfilters.com',
-    fr: 'Vous avez atteint la limite de 3 questions.\n\nVotre demande a été envoyée à notre équipe technique. Vous recevrez une réponse dans les 24 heures.\n\n📧 support@elimfilters.com',
-    it: 'Hai raggiunto il limite di 3 domande.\n\nLa tua richiesta è stata inviata al nostro team tecnico. Riceverai una risposta entro 24 ore.\n\n📧 support@elimfilters.com',
-    de: 'Sie haben das Limit von 3 Fragen erreicht.\n\nIhre Anfrage wurde an unser technisches Team gesendet. Sie erhalten innerhalb von 24 Stunden eine Antwort.\n\n📧 support@elimfilters.com',
-    nl: 'U heeft de limiet van 3 vragen bereikt.\n\nUw vraag is verzonden naar ons technisch team. U ontvangt binnen 24 uur een antwoord.\n\n📧 support@elimfilters.com',
-    ru: 'Вы достигли лимита в 3 вопроса.\n\nВаш запрос отправлен нашей технической команде. Вы получите ответ в течение 24 часов.\n\n📧 support@elimfilters.com',
-    zh: '您已达到3个问题的限制。\n\n您的咨询已发送至我们的技术团队。您将在24小时内收到回复。\n\n📧 support@elimfilters.com',
-    ar: 'لقد وصلت إلى حد 3 أسئلة.\n\nتم إرسال استفسارك إلى فريقنا التقني. ستتلقى رداً خلال 24 ساعة.\n\n📧 support@elimfilters.com',
+    es: '¿En qué puedo ayudarte hoy?',
+    en: 'How can I help you today?',
+    pt: 'Como posso ajudá-lo hoje?',
+    fr: 'Comment puis-je vous aider aujourd\'hui?',
+    it: 'Come posso aiutarti oggi?',
+    nl: 'Hoe kan ik u vandaag helpen?',
+    ru: 'Чем могу помочь сегодня?',
+    zh: '今天我能帮您什么？',
+    de: 'Wie kann ich Ihnen heute helfen?',
+    ar: 'كيف يمكنني مساعدتك اليوم؟',
   },
   placeholder: {
-    es: 'Escribe tu mensaje...', en: 'Type your message...',
-    pt: 'Digite sua mensagem...', fr: 'Écrivez votre message...',
-    it: 'Scrivi il tuo messaggio...', de: 'Schreiben Sie Ihre Nachricht...',
-    nl: 'Typ uw bericht...', ru: 'Напишите ваше сообщение...',
-    zh: '输入您的消息...', ar: 'اكتب رسالتك...',
+    es: 'Escribe tu consulta o número de parte…',
+    en: 'Type your question or part number…',
+    pt: 'Digite sua dúvida ou número da peça…',
+    fr: 'Écrivez votre question ou référence…',
+    it: 'Scrivi la tua domanda o codice parte…',
+    de: 'Frage oder Teilenummer eingeben…',
+    nl: 'Typ uw vraag of onderdeelnummer…',
+    ru: 'Напишите вопрос или номер детали…',
+    zh: '输入问题或零件编号…',
+    ar: 'اكتب سؤالك أو رقم القطعة…',
+  },
+  redirect_part: {
+    es: 'Buscando',
+    en: 'Searching for',
+    pt: 'Buscando',
+    fr: 'Recherche de',
+    it: 'Ricerca di',
+    de: 'Suche nach',
+    nl: 'Zoeken naar',
+    ru: 'Поиск',
+    zh: '搜索',
+    ar: 'البحث عن',
+  },
+  redirect_dist: {
+    es: 'Te redirigimos al formulario de distribuidores ELIMFILTERS.',
+    en: 'Redirecting you to the ELIMFILTERS distributor application form.',
+    pt: 'Redirecionando para o formulário de distribuidores ELIMFILTERS.',
+    fr: 'Redirection vers le formulaire distributeur ELIMFILTERS.',
+    it: 'Reindirizzamento al modulo distributore ELIMFILTERS.',
+    de: 'Weiterleitung zum ELIMFILTERS Distributor-Formular.',
+    nl: 'Doorverwijzing naar het ELIMFILTERS distributeurformulier.',
+    ru: 'Перенаправляю на форму дистрибьютора ELIMFILTERS.',
+    zh: '正在跳转到ELIMFILTERS经销商申请表。',
+    ar: 'إعادة التوجيه إلى نموذج موزع ELIMFILTERS.',
+  },
+  escalated: {
+    es: 'Tu consulta fue recibida. Nuestro equipo técnico te responderá en menos de 24 horas.\n\n📧 ' + SUPPORT_EMAIL,
+    en: 'Your inquiry was received. Our technical team will respond within 24 hours.\n\n📧 ' + SUPPORT_EMAIL,
+    pt: 'Sua consulta foi recebida. Nossa equipe técnica responderá em 24 horas.\n\n📧 ' + SUPPORT_EMAIL,
+    fr: 'Votre demande a été reçue. Notre équipe technique répondra dans les 24 heures.\n\n📧 ' + SUPPORT_EMAIL,
+    it: 'La tua richiesta è stata ricevuta. Il nostro team tecnico risponderà entro 24 ore.\n\n📧 ' + SUPPORT_EMAIL,
+    de: 'Ihre Anfrage wurde erhalten. Unser technisches Team antwortet innerhalb von 24 Stunden.\n\n📧 ' + SUPPORT_EMAIL,
+    nl: 'Uw vraag is ontvangen. Ons technisch team reageert binnen 24 uur.\n\n📧 ' + SUPPORT_EMAIL,
+    ru: 'Ваш запрос получен. Наша техническая команда ответит в течение 24 часов.\n\n📧 ' + SUPPORT_EMAIL,
+    zh: '您的咨询已收到。我们的技术团队将在24小时内回复。\n\n📧 ' + SUPPORT_EMAIL,
+    ar: 'تم استلام استفسارك. سيرد فريقنا التقني خلال 24 ساعة.\n\n📧 ' + SUPPORT_EMAIL,
+  },
+  error_send: {
+    es: 'Error al enviar. Escríbenos directamente a ' + SUPPORT_EMAIL,
+    en: 'Failed to send. Please write to us at ' + SUPPORT_EMAIL,
+    pt: 'Falha ao enviar. Escreva-nos em ' + SUPPORT_EMAIL,
+    fr: 'Échec de l\'envoi. Écrivez-nous à ' + SUPPORT_EMAIL,
+    it: 'Invio fallito. Scrivici a ' + SUPPORT_EMAIL,
+    de: 'Senden fehlgeschlagen. Schreiben Sie uns: ' + SUPPORT_EMAIL,
+    nl: 'Verzenden mislukt. Schrijf ons op ' + SUPPORT_EMAIL,
+    ru: 'Ошибка отправки. Напишите нам: ' + SUPPORT_EMAIL,
+    zh: '发送失败。请直接写信至 ' + SUPPORT_EMAIL,
+    ar: 'فشل الإرسال. اكتب إلينا على ' + SUPPORT_EMAIL,
   },
 };
 
@@ -112,132 +88,126 @@ function t(key: string, lang: string): string {
 
 function getLang(): string {
   if (typeof navigator === 'undefined') return 'en';
-  const lang = navigator.language?.slice(0, 2).toLowerCase();
-  return T.welcome[lang] ? lang : 'en';
+  const l = navigator.language?.slice(0, 2).toLowerCase();
+  return T.welcome[l] ? l : 'en';
 }
 
 function genSessionId() {
   return `chat-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
-type Stage = 'menu' | 'part_input' | 'technical' | 'done';
-interface Msg { role: 'user' | 'assistant'; text: string; isMenu?: boolean; }
+// Part number: 5-20 alphanumeric chars, may contain dashes (e.g. EF-AF-1234, P550039, LF16035)
+const PART_RE = /^[A-Z0-9][A-Z0-9\-]{3,19}$/i;
 
-// ── Send escalation email via server ─────────────────────────────────────────
-async function sendEscalationEmail(sessionId: string, lang: string, history: Msg[]) {
+// Distributor intent keywords per language
+const DIST_KEYWORDS: Record<string, string[]> = {
+  en: ['distributor', 'dealer', 'reseller', 'wholesale', 'distribute'],
+  es: ['distribuidor', 'revendedor', 'mayorista', 'distribuir', 'dealer'],
+  pt: ['distribuidor', 'revendedor', 'atacado', 'distribuir'],
+  fr: ['distributeur', 'revendeur', 'grossiste', 'distribuer'],
+  it: ['distributore', 'rivenditore', 'grossista', 'distribuire'],
+  de: ['distributor', 'händler', 'großhändler', 'verteilen'],
+  nl: ['distributeur', 'dealer', 'groothandel', 'verdelen'],
+  ru: ['дистрибьютор', 'дилер', 'оптовик', 'распространять'],
+  zh: ['经销商', '分销商', '批发'],
+  ar: ['موزع', 'تاجر', 'بالجملة'],
+};
+
+function detectIntent(text: string, lang: string): 'part' | 'dist' | 'tech' {
+  const clean = text.trim().replace(/\s+/g, ' ');
+
+  // Single token that looks like a part number
+  if (/^\S+$/.test(clean) && PART_RE.test(clean)) return 'part';
+
+  // Distributor keywords
+  const distWords = [
+    ...(DIST_KEYWORDS[lang] || []),
+    ...DIST_KEYWORDS.en,
+  ];
+  const lower = clean.toLowerCase();
+  if (distWords.some(w => lower.includes(w))) return 'dist';
+
+  return 'tech';
+}
+
+interface Msg { role: 'user' | 'assistant'; text: string; }
+
+async function escalate(sessionId: string, lang: string, history: Msg[]) {
   const transcript = history
-    .filter(m => !m.isMenu)
-    .map(m => `${m.role === 'user' ? 'CLIENT' : 'AI'}: ${m.text}`)
+    .map(m => `${m.role === 'user' ? 'CLIENT' : 'BOT'}: ${m.text}`)
     .join('\n\n');
-  try {
-    await fetch(`${API_BASE}/api/ai/escalate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ session_id: sessionId, lang, transcript }),
-    });
-  } catch { /* silent */ }
+  await fetch(`${PART_SEARCH_BASE}/api/ai/escalate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ session_id: sessionId, lang, transcript }),
+  });
 }
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [done, setDone] = useState(false);
   const [sessionId] = useState(genSessionId);
   const [lang] = useState(getLang);
-  const [stage, setStage] = useState<Stage>('menu');
-  const [techCount, setTechCount] = useState(0);
   const [started, setStarted] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, loading]);
+  }, [messages, sending]);
 
   useEffect(() => {
     if (open && !started) {
-      setMessages([{ role: 'assistant', text: t('welcome', lang), isMenu: true }]);
+      setMessages([{ role: 'assistant', text: t('welcome', lang) }]);
       setStarted(true);
+      setTimeout(() => inputRef.current?.focus(), 150);
     }
   }, [open, started, lang]);
 
   const addMsg = (msg: Msg) => setMessages(prev => [...prev, msg]);
 
-  const handleMenu = (option: 'part' | 'tech' | 'dist') => {
-    if (option === 'part') {
-      addMsg({ role: 'user', text: t('opt_part', lang) });
-      addMsg({ role: 'assistant', text: t('ask_part', lang) });
-      setStage('part_input');
-    } else if (option === 'dist') {
-      addMsg({ role: 'user', text: t('opt_dist', lang) });
-      addMsg({ role: 'assistant', text: t('dist_redirect', lang) });
-      setStage('done');
-      setTimeout(() => window.open('/distributor-application', '_blank'), 1200);
-    } else {
-      addMsg({ role: 'user', text: t('opt_tech', lang) });
-      addMsg({ role: 'assistant', text: t('ask_tech', lang) });
-      setStage('technical');
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
-  };
-
-  const handlePartInput = (text: string) => {
-    addMsg({ role: 'user', text });
-    const msg = `${t('redirecting', lang)} "${text}"`;
-    addMsg({ role: 'assistant', text: msg });
-    setStage('done');
-    setTimeout(() => window.open(`https://part-search.elimfilters.com?q=${encodeURIComponent(text)}`, '_blank'), 1000);
-  };
-
-  const handleTechnical = async (text: string) => {
-    const newCount = techCount + 1;
-    setTechCount(newCount);
-    addMsg({ role: 'user', text });
-    setLoading(true);
-
-    try {
-      const res = await fetch(`${API_BASE}/api/ai/consult`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: `[Language: ${lang}] ${text}`,
-          agent: 'technical',
-          session_id: sessionId,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Error');
-      addMsg({ role: 'assistant', text: data.answer });
-
-      if (newCount >= MAX_QUESTIONS) {
-        setTimeout(async () => {
-          addMsg({ role: 'assistant', text: t('limit_reached', lang) });
-          setStage('done');
-          await sendEscalationEmail(sessionId, lang, [...messages, { role: 'user', text }, { role: 'assistant', text: data.answer }]);
-        }, 600);
-      }
-    } catch {
-      addMsg({ role: 'assistant', text: '⚠️ Error. Please try again.' });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const send = async () => {
     const text = input.trim();
-    if (!text || loading || stage === 'done' || stage === 'menu') return;
+    if (!text || sending || done) return;
     setInput('');
-    if (stage === 'part_input') handlePartInput(text);
-    else if (stage === 'technical') await handleTechnical(text);
-    else {
-      // Fallback: if somehow input shows in wrong stage, go to menu
-      setStage('menu');
+    addMsg({ role: 'user', text });
+
+    const intent = detectIntent(text, lang);
+
+    if (intent === 'part') {
+      addMsg({ role: 'assistant', text: `${t('redirect_part', lang)} "${text.toUpperCase()}"…` });
+      setDone(true);
+      setTimeout(() => window.open(`${PART_SEARCH_BASE}?q=${encodeURIComponent(text)}`, '_blank'), 900);
+      return;
+    }
+
+    if (intent === 'dist') {
+      addMsg({ role: 'assistant', text: t('redirect_dist', lang) });
+      setDone(true);
+      setTimeout(() => window.open('/dealer', '_blank'), 1000);
+      return;
+    }
+
+    // Technical / general — escalate to human team
+    setSending(true);
+    try {
+      await escalate(sessionId, lang, [
+        ...messages,
+        { role: 'user', text },
+      ]);
+      addMsg({ role: 'assistant', text: t('escalated', lang) });
+      setDone(true);
+    } catch {
+      addMsg({ role: 'assistant', text: t('error_send', lang) });
+    } finally {
+      setSending(false);
     }
   };
 
   const isRTL = ['ar', 'fa'].includes(lang);
-  const showInput = stage === 'part_input' || stage === 'technical';
 
   return (
     <>
@@ -291,27 +261,24 @@ export function ChatWidget() {
                 <img src="/assets/elimfilters-e.png" alt="ELIMFILTERS" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                 <span style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.8rem', color: '#000' }}>ELIMFILTERS</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                {stage !== 'menu' && stage !== 'done' && (
-                  <button
-                    onClick={() => { setStage('menu'); setTechCount(0); addMsg({ role: 'assistant', text: t('welcome', lang), isMenu: true }); }}
-                    style={{ background: 'rgba(0,0,0,0.15)', border: 'none', cursor: 'pointer', color: '#000', fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace', padding: '0.2rem 0.4rem', borderRadius: '2px' }}
-                  >
-                    ← menu
-                  </button>
-                )}
-                <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem', lineHeight: 1 }}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M1 1L17 17M17 1L1 17" stroke="#000" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </button>
-              </div>
+              <button
+                onClick={() => setOpen(false)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem', lineHeight: 1 }}
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M1 1L17 17M17 1L1 17" stroke="#000" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </button>
             </div>
 
             {/* Messages */}
-            <div style={{ maxHeight: '320px', overflowY: 'auto', padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            <div style={{ maxHeight: '340px', overflowY: 'auto', padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {messages.map((m, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.18 }}
                   style={{ alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '88%' }}
                 >
                   <div style={{
@@ -320,47 +287,22 @@ export function ChatWidget() {
                     borderRadius: m.role === 'user' ? '10px 10px 2px 10px' : '10px 10px 10px 2px',
                     padding: '0.5rem 0.75rem', fontSize: '0.8rem', lineHeight: 1.5,
                     whiteSpace: 'pre-wrap', fontFamily: 'Inter, sans-serif',
-                    maxHeight: '7.5rem', overflowY: 'auto',
                   }}>
                     {m.text}
                   </div>
-
-                  {/* Menu options — shown on last message when stage is menu */}
-                  {stage === 'menu' && i === messages.length - 1 && (
-                    <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                      style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginTop: '0.6rem' }}
-                    >
-                      {(['part', 'tech', 'dist'] as const).map((opt) => (
-                        <button key={opt} onClick={() => handleMenu(opt)} style={{
-                          background: 'rgba(255,241,45,0.08)', border: '1px solid rgba(255,241,45,0.25)',
-                          borderRadius: '6px', padding: '0.45rem 0.75rem', color: '#FFF12D',
-                          fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', cursor: 'pointer',
-                          textAlign: isRTL ? 'right' : 'left', transition: 'background 0.15s',
-                        }}
-                          onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,241,45,0.15)')}
-                          onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,241,45,0.08)')}
-                        >
-                          {t(opt === 'part' ? 'opt_part' : opt === 'tech' ? 'opt_tech' : 'opt_dist', lang)}
-                        </button>
-                      ))}
-                    </motion.div>
-                  )}
                 </motion.div>
               ))}
 
-              {/* Tech question counter */}
-              {stage === 'technical' && techCount > 0 && (
-                <div style={{ alignSelf: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>
-                  {techCount}/{MAX_QUESTIONS}
-                </div>
-              )}
-
-              {loading && (
+              {sending && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ alignSelf: 'flex-start' }}>
                   <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: '12px 12px 12px 2px', padding: '0.65rem 0.9rem', display: 'flex', gap: '4px', alignItems: 'center' }}>
                     {[0, 1, 2].map(i => (
-                      <motion.div key={i} animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                        style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FFF12D' }} />
+                      <motion.div
+                        key={i}
+                        animate={{ opacity: [0.3, 1, 0.3] }}
+                        transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                        style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FFF12D' }}
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -369,7 +311,7 @@ export function ChatWidget() {
             </div>
 
             {/* Input */}
-            {showInput && (
+            {!done && (
               <div style={{ padding: '0.5rem 0.6rem', borderTop: '1px solid rgba(255,255,255,0.08)', display: 'flex', gap: '0.4rem', flexShrink: 0, background: '#0a0a0a' }}>
                 <textarea
                   ref={inputRef}
@@ -384,12 +326,16 @@ export function ChatWidget() {
                     padding: '0.6rem 0.75rem', outline: 'none', resize: 'none', lineHeight: 1.5,
                   }}
                 />
-                <button onClick={send} disabled={loading || !input.trim()} style={{
-                  background: loading || !input.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D',
-                  border: 'none', borderRadius: '4px', width: '40px',
-                  cursor: loading || !input.trim() ? 'not-allowed' : 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.15s',
-                }}>
+                <button
+                  onClick={send}
+                  disabled={sending || !input.trim()}
+                  style={{
+                    background: sending || !input.trim() ? 'rgba(255,241,45,0.3)' : '#FFF12D',
+                    border: 'none', borderRadius: '4px', width: '40px',
+                    cursor: sending || !input.trim() ? 'not-allowed' : 'pointer',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.15s',
+                  }}
+                >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M14 8L2 2L5 8L2 14L14 8Z" fill="#000"/>
                   </svg>
