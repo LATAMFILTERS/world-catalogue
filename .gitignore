@@ -1,5 +1,8 @@
 node_modules
 .env
+.env.*
+!.env.example
+!.env.*.example
 scrape_reports/
 fleetguard-catalog*.json
 
@@ -28,3 +31,46 @@ elimfilters-vault/.obsidian/
 # frontend/out/ is tracked intentionally for Windows local serving
 frontend/.next/
 .next/
+
+# Development/investigation scripts — never deploy
+audit_*.js
+count_*.js
+check_*.js
+check-*.js
+inspect_*.js
+sample_*.js
+export_*.js
+find_*.js
+deep_*.js
+seed_*.js
+verify_*.js
+build_*.js
+fix_*.js
+compare_*.js
+classify_*.js
+clean_*.js
+create_*.js
+delete_*.js
+recover*.js
+research_*.js
+review_*.js
+migrate_*.js
+match_*.js
+normalize_*.js
+phase*.js
+search_*.js
+tls_*.js
+db_*.js
+test_*.js
+top_*.js
+technology_*.js
+master_*.js
+inventory_*.js
+investigate_*.js
+high_impact_*.js
+homologate_*.js
+fleetguard_*.js
+inject_*.js
+*_audit.js
+*_stats.js
+*_capacity.js
