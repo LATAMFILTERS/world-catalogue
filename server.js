@@ -61,6 +61,7 @@ app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }
 
 // ─── POST /api/admin/resolve-orphan-skus ─────────────────────────────────────
 // ONE-TIME endpoint — registered before all middleware to guarantee routing.
+// Uses 3 bulk DB queries instead of per-record queries to stay within timeouts.
 // Remove after successful execution.
 app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
   // Auth inline — cannot rely on middleware order here
@@ -90,17 +91,47 @@ app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
   let client;
   try {
     const orphans = JSON.parse(fs.readFileSync(orphansPath, 'utf8'));
-    client = await pool.connect();
 
-    const existing = await client.query(`SELECT sku FROM elimfilters_catalog WHERE sku ~ '^E[A-Z][0-9][0-9]+$'`);
+    // ── QUERY 1: connect + wake DB (with up to 45s retry for sleeping Render DB) ──
+    let dbReady = false;
+    for (let attempt = 1; attempt <= 5; attempt++) {
+      try {
+        client = await pool.connect();
+        await client.query('SELECT 1');
+        dbReady = true;
+        break;
+      } catch (e) {
+        if (client) { try { client.release(); } catch(_){} client = null; }
+        if (attempt < 5) await new Promise(r => setTimeout(r, attempt * 2000));
+      }
+    }
+    if (!dbReady) throw new Error('DB unavailable after 5 attempts');
+
+    // ── QUERY 2: load ALL existing SKUs + their codes in one bulk fetch ──
+    const bulkR = await client.query(`
+      SELECT sku, oem_codes, competitor_codes
+      FROM elimfilters_catalog
+      WHERE sku ~ '^E[A-Z][0-9][0-9]+$'
+    `);
+
+    // Build: code → sku  AND  max suffix per prefix
+    const codeToSku = new Map();
     const maxBy = {};
-    for (const { sku } of existing.rows) {
-      const pfx = sku.slice(0,3), sfx = parseInt(sku.slice(3),10);
+    for (const row of bulkR.rows) {
+      const pfx = row.sku.slice(0,3);
+      const sfx = parseInt(row.sku.slice(3), 10);
       if (!isNaN(sfx) && (!maxBy[pfx] || sfx > maxBy[pfx])) maxBy[pfx] = sfx;
+      const allCodes = [
+        ...(Array.isArray(row.oem_codes) ? row.oem_codes : []),
+        ...(Array.isArray(row.competitor_codes) ? row.competitor_codes : []),
+      ];
+      for (const c of allCodes) if (c) codeToSku.set(String(c).trim().toUpperCase(), row.sku);
     }
 
+    // ── PROCESS all orphans in-memory ──
     let reused = 0, created = 0, skipped = 0;
     const log = [];
+    const newRows = [];
 
     for (const rec of orphans) {
       if (rec.elimfilters_sku) continue;
@@ -109,14 +140,12 @@ app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
       const pfx = TYPE_PREFIX[type];
       const mann = (rec.mann_part||'').replace('_MANN-FILTER','').trim();
 
+      // Check all candidate codes against in-memory map
+      const candidates = [rec.oem_normalized, mann, rec.fleetguard_part].filter(Boolean);
       let existSku = null;
-      for (const col of ['oem_codes','competitor_codes']) {
+      for (const c of candidates) {
+        existSku = codeToSku.get(String(c).trim().toUpperCase());
         if (existSku) break;
-        const candidates = [rec.oem_normalized, mann, rec.fleetguard_part].filter(Boolean);
-        for (const code of candidates) {
-          const r = await client.query(`SELECT sku FROM elimfilters_catalog WHERE ${col} @> $1::jsonb LIMIT 1`, [JSON.stringify([code])]);
-          if (r.rows.length) { existSku = r.rows[0].sku; break; }
-        }
       }
 
       let sku;
@@ -126,6 +155,8 @@ app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
         maxBy[pfx] = next;
         sku = `${pfx}${String(next).padStart(4,'0')}`;
         created++;
+        // Register new codes in map so subsequent orphans can match
+        for (const c of candidates) codeToSku.set(String(c).trim().toUpperCase(), sku);
         if (!dryRun) {
           const oem = rec.oem_normalized ? [rec.oem_normalized] : [];
           const comp = rec.fleetguard_part ? [rec.fleetguard_part] : [];
@@ -133,25 +164,33 @@ app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
           if (mann) xref['MANN'] = mann;
           if (rec.fleetguard_part) xref['FLEETGUARD'] = rec.fleetguard_part;
           const equip = rec.oem_brand ? [{brand:rec.oem_brand,part:rec.oem_normalized}] : [];
-          await client.query(`
-            INSERT INTO elimfilters_catalog (sku,codigo_base,filter_type,oem_codes,competitor_codes,brand_crossrefs,equipment_applications)
-            VALUES ($1,$2,$3,$4::jsonb,$5::jsonb,$6::jsonb,$7::jsonb)
-            ON CONFLICT (sku) DO NOTHING
-          `, [sku, sku, type, JSON.stringify(oem), JSON.stringify(comp), JSON.stringify(xref), JSON.stringify(equip)]);
+          newRows.push([sku, sku, type, JSON.stringify(oem), JSON.stringify(comp), JSON.stringify(xref), JSON.stringify(equip)]);
         }
       }
       rec.elimfilters_sku = sku;
       log.push({ sku, type, new: !existSku, oem: rec.oem_normalized, oem_brand: rec.oem_brand, mann, fleetguard: rec.fleetguard_part });
     }
 
-    if (!dryRun) fs.writeFileSync(orphansPath, JSON.stringify(orphans, null, 2));
+    // ── QUERY 3: batch INSERT all new rows in one statement ──
+    if (!dryRun && newRows.length > 0) {
+      const vals = newRows.map((_, i) => {
+        const b = i * 7;
+        return `($${b+1},$${b+2},$${b+3},$${b+4}::jsonb,$${b+5}::jsonb,$${b+6}::jsonb,$${b+7}::jsonb)`;
+      }).join(',');
+      await client.query(
+        `INSERT INTO elimfilters_catalog (sku,codigo_base,filter_type,oem_codes,competitor_codes,brand_crossrefs,equipment_applications)
+         VALUES ${vals} ON CONFLICT (sku) DO NOTHING`,
+        newRows.flat()
+      );
+      fs.writeFileSync(orphansPath, JSON.stringify(orphans, null, 2));
+    }
 
     res.json({ dry_run: dryRun, total: orphans.length, reused, created, skipped, max_suffixes_after: maxBy, sample: log.slice(0, 30) });
   } catch (err) {
     console.error('[resolve-orphan-skus]', err.message);
     res.status(500).json({ error: err.message });
   } finally {
-    if (client) client.release();
+    if (client) { try { client.release(); } catch(_){} }
   }
 });
 
