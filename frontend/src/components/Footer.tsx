@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 
 const SOCIAL = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/133064152/', letter: 'in' },
+  { label: 'Facebook', href: 'https://www.facebook.com/elimfilters/', letter: 'Fb' },
   { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
 ];
 
 const NAV_COLUMNS = [
