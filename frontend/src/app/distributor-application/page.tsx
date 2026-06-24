@@ -123,26 +123,23 @@ export default function DistributorApplication() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const form = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      form.append(key, value);
-    });
-
-    fetch('https://formspree.io/f/mbjekqwb', {
-      method: 'POST',
-      body: form,
-    })
-      .then(() => {
-        setSubmitted(true);
-        setFormData({
-          companyName: '',
-          legalName: '',
-          contactName: '',
-          email: '',
-          phone: '',
-          country: '',
+    try {
+      const res = await fetch('/api/distributor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+      setFormData({
+        companyName: '',
+        legalName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        country: '',
           state: '',
           employees: '',
           yearsInBusiness: '',
@@ -151,10 +148,9 @@ export default function DistributorApplication() {
           message: '',
         });
         setTimeout(() => setSubmitted(false), 5000);
-      })
-      .catch(() => {
-        alert('Error sending application. Please try again.');
-      });
+    } catch {
+      alert('Error sending application. Please try again.');
+    }
   };
 
   const inputStyle: React.CSSProperties = {

@@ -148,6 +148,60 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
 });
 
 
+// Distributor application endpoint
+app.post('/api/distributor', searchLimiter, async (req, res) => {
+  const {
+    companyName, legalName, contactName, email, phone,
+    country, state, employees, yearsInBusiness,
+    currentProducts, serviceArea, message,
+  } = req.body || {};
+
+  if (!companyName || !contactName || !email || !country) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  if (email.length > 254 || companyName.length > 200 || contactName.length > 200 ||
+      (phone && phone.length > 30) || (message && message.length > 5000)) {
+    return res.status(400).json({ error: 'Input exceeds maximum length' });
+  }
+
+  const esc = _escHtml;
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
+      to: 'info@elimfilters.com',
+      replyTo: esc(email),
+      subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
+      html: `
+        <h2 style="color:#000">New distributor application — elimfilters.com</h2>
+        <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
+          <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
+          <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
+          <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
+          <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
+          <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
+          <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
+        </table>
+        ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
+      `,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[distributor]', err.code || 'SMTP error');
+    res.status(500).json({ error: 'Failed to send application' });
+  }
+});
+
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) {
