@@ -554,11 +554,12 @@ app.use((req, res, next) => {
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  // Render PostgreSQL uses a self-signed cert — rejectUnauthorized must stay false.
-  // For Neon/Supabase with verified certs, set DB_SSL_VERIFY=true in env.
   ssl: process.env.DB_SSL_VERIFY === 'true'
     ? { rejectUnauthorized: true }
     : { rejectUnauthorized: false },
+  connectionTimeoutMillis: 10000,
+  idleTimeoutMillis: 30000,
+  max: 10,
 };
 const pool = new Pool(dbConfig);
 
@@ -2358,6 +2359,7 @@ app.get('/api/audit/report', async (req, res) => {
 // ONE-TIME: Assigns ELIMFILTERS SKUs to fleetguard_orphans records.
 // Remove this endpoint after successful run.
 app.post('/api/admin/resolve-orphan-skus', adminLimiter, requireAdmin, async (req, res) => {
+  res.setTimeout(60000, () => res.status(503).json({ error: 'timeout' }));
   const dryRun = req.query.dry === '1';
   const FG_TYPE = { LF:'oil', FF:'fuel', HF:'hydraulic', FS:'fuel', WF:'oil' };
   const MANN_TYPE = {
