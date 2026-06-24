@@ -6,7 +6,7 @@ import '@/i18n';
 import { useTranslation } from 'react-i18next';
 
 const SOCIAL = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/elimfilters', letter: 'in' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/133064152/', letter: 'in' },
   { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
   { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
 ];

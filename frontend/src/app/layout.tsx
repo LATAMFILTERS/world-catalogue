@@ -101,7 +101,7 @@ const organizationSchema = {
     name: 'Kleo Technologies',
     description: 'Industrial Research & Engineering Division',
   },
-  sameAs: ['https://www.linkedin.com/company/elimfilters', 'https://www.instagram.com/elimfilters.global'],
+  sameAs: ['https://www.linkedin.com/company/133064152/', 'https://www.instagram.com/elimfilters.global'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'ELIMFILTERS World Catalogue',
