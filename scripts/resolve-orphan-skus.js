@@ -71,13 +71,25 @@ async function main() {
 
   const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.NODE_ENV === 'production'
-      ? { rejectUnauthorized: true }
-      : { rejectUnauthorized: false },
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 15000,
+    idleTimeoutMillis: 30000,
   });
 
   console.log('Connecting to database...');
-  await pool.query('SELECT 1'); // test connection
+  // Render free tier can reset first connection — retry up to 3 times
+  let connected = false;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      await pool.query('SELECT 1');
+      connected = true;
+      break;
+    } catch (e) {
+      console.log(`  Attempt ${attempt}/3 failed: ${e.message} — retrying in 3s...`);
+      await new Promise(r => setTimeout(r, 3000));
+    }
+  }
+  if (!connected) throw new Error('Could not connect after 3 attempts');
   console.log('Connected ✓\n');
 
   const orphans = JSON.parse(fs.readFileSync(ORPHANS_FILE, 'utf8'));
