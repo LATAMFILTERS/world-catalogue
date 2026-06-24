@@ -33,19 +33,6 @@ export default function MarinecleanPage() {
         }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '860px' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <Link href="/commercial-lines" style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem',
-              letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)',
-              textDecoration: 'none', textTransform: 'uppercase',
-              display: 'inline-block', marginBottom: '1.5rem',
-            }}>← COMMERCIAL LINES</Link>
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-              letterSpacing: '0.25em', color: 'rgba(255,241,45,0.7)',
-              textTransform: 'uppercase', marginBottom: '1rem',
-            }}>
-              // MARINE · OFFSHORE · COASTAL INFRASTRUCTURE
-            </p>
             <h1 style={{
               fontFamily: 'Outfit, sans-serif', fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 1,
@@ -115,6 +102,31 @@ export default function MarinecleanPage() {
           ))}
         </motion.section>
 
+        {/* Canonical Knowledge Block */}
+        <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ marginBottom: '2rem' }}>
+          <div style={{
+            background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)',
+            padding: '2rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem',
+            lineHeight: 1.8, color: 'rgba(255,255,255,0.65)',
+          }}>
+            <p style={{ color: '#FFF12D', fontWeight: 700, marginBottom: '1.25rem', fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              CANONICAL KNOWLEDGE BLOCK: MARINECLEAN™
+            </p>
+            <p><strong>DEFINITION</strong><br />
+            MARINECLEAN™ is a salt-resistant commercial filtration line applying epoxy brine-rejection coating to housings and elements for marine environments. IMO certified. Protects diesel fuel filtration, hydraulic circuits, and lube oil systems against saltwater aerosol ingress, brine penetration, and corrosion from wet-dry cycling.</p>
+            <p style={{ marginTop: '1rem' }}><strong>SYSTEMS</strong><br />
+            Diesel fuel filtration · Hydraulic steering and deck machinery · Lube oil circuits · Marine generator fuel systems · Hydraulic BOP and wellhead control circuits</p>
+            <p style={{ marginTop: '1rem' }}><strong>CONTAMINATION_TARGETS</strong><br />
+            Saltwater aerosol ingress through housing seals | Brine penetration at element interface | Accelerated corrosion from wet-dry cycling | Seawater intrusion into fuel and hydraulic circuits</p>
+            <p style={{ marginTop: '1rem' }}><strong>ENGINEERING_FEATURES</strong><br />
+            Epoxy barrier coating: marine-grade, continuous saltwater aerosol rated | Brine rejection geometry: prevents salt ingress at element interface | Corrosion-shield internals: corrosion-resistant alloys for wet-dry cycling | IMO certification: International Maritime Organization commercial marine standard</p>
+            <p style={{ marginTop: '1rem' }}><strong>CLASSIFICATION</strong><br />
+            Commercial product line (marine-rated housing and element system). Not a filtration technology. Integrates ELIMFILTERS® protection technologies (fuel, hydraulic, lube) into marine-rated assemblies. Listed under /commercial-lines/, not /technologies/.</p>
+            <p style={{ marginTop: '1rem' }}><strong>CITATION_REFERENCE</strong><br />
+            source: elimfilters.com/commercial-lines/marineclean | concept: MARINECLEAN Commercial Line | version: 1.0 | last_updated: 2026-06-24</p>
+          </div>
+        </motion.section>
+
         {/* Back link */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
           <Link href="/commercial-lines" style={{
@@ -127,6 +139,32 @@ export default function MarinecleanPage() {
         </div>
 
       </div>
+      {/* JSON-LD structured data */}
+      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'MARINECLEAN™',
+        description: 'Salt-resistant filtration line for commercial marine, offshore, and coastal operations. Epoxy barrier coating, brine rejection geometry, and corrosion-shield internals. IMO certified for diesel fuel, hydraulic, and lube oil systems.',
+        brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
+        manufacturer: { '@type': 'Organization', name: 'Kleo Technologies LLC', url: 'https://elimfilters.com' },
+        url: 'https://elimfilters.com/commercial-lines/marineclean/',
+        category: 'Industrial Filtration — Marine',
+        additionalProperty: [
+          { '@type': 'PropertyValue', name: 'Certification', value: 'IMO (International Maritime Organization)' },
+          { '@type': 'PropertyValue', name: 'Coating', value: 'Marine-grade epoxy barrier' },
+          { '@type': 'PropertyValue', name: 'Systems Protected', value: 'Diesel fuel · Hydraulic · Lube oil' },
+          { '@type': 'PropertyValue', name: 'Environments', value: 'Harbor · Offshore · Deep-sea' },
+        ],
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS®', item: 'https://elimfilters.com' },
+            { '@type': 'ListItem', position: 2, name: 'Commercial Lines', item: 'https://elimfilters.com/commercial-lines/' },
+            { '@type': 'ListItem', position: 3, name: 'MARINECLEAN™', item: 'https://elimfilters.com/commercial-lines/marineclean/' },
+          ],
+        },
+      }) }} />
+
       <Footer />
     </main>
   );

@@ -11,7 +11,7 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Air intake protection preventing abrasive ingestion that accelerates component wear between service intervals.' },
-  { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration capturing wear debris before recirculation extends time between unplanned oil failures.' },
+  { name: 'DURATECH', slug: 'duratech', href: '/commercial-lines/duratech', role: 'Fleet master kit system consolidating all filtration elements per service cycle — oil, fuel, air, and cabin — reducing wrong-element installations and unplanned downtime in mixed-model fleets.' },
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Fuel system contamination control reducing injector stiction events that trigger unscheduled engine shutdowns.' },
   { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
 ];
@@ -324,7 +324,7 @@ export default function ReducingDowntimePage() {
           }}>Filtration Systems Supporting Availability</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
-              <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
+              <Link key={tech.slug} href={tech.href || `/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
                   whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }}
                   style={{

@@ -266,8 +266,11 @@ export default function FuelSystemsPage() {
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
         <p>HPCR injector protection via fuel contamination control is the single largest determinant of fuel system lifecycle cost — maintaining water below 200 ppm and particles below 10µm extends injector service intervals from 3,000 to 15,000+ hours, with injector replacement costs averaging $800–2,500 per unit in heavy diesel applications.</p>
 
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_COMMERCIAL_LINES</p>
+        <p>MARINECLEAN™ (/commercial-lines/marineclean): Salt-resistant marine filtration line with epoxy barrier coating and brine rejection geometry. IMO certified for diesel fuel filtration systems aboard commercial vessels, offshore platforms, and coastal equipment subject to continuous saltwater aerosol exposure.</p>
+
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/standards/fuel-systems | concept: Diesel Fuel Filtration Systems | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>source: elimfilters.com/knowledge-system/standards/fuel-systems | concept: Diesel Fuel Filtration Systems | version: 1.2 | last_updated: 2026-06-24</p>
       </RetrievalBlock>
 
       {/* JSON-LD for AI/search engine structured data */}

@@ -114,35 +114,15 @@ export default function CommercialLinesPage() {
 
             {/* Content */}
             <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.6rem',
-                letterSpacing: '0.2em',
-                color: 'rgba(255,241,45,0.5)',
-                textTransform: 'uppercase',
-                marginBottom: '1rem',
-              }}>
-                {line.domains}
-              </p>
               <h2 style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(1.8rem, 3vw, 2.8rem)',
                 letterSpacing: '-0.02em',
-                marginBottom: '0.3rem',
+                marginBottom: '1.5rem',
               }}>
                 {line.name}
               </h2>
-              <p style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.8rem',
-                color: 'rgba(255,255,255,0.35)',
-                marginBottom: '1.5rem',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-              }}>
-                {line.tagline}
-              </p>
               <p style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontSize: '0.95rem',
@@ -202,6 +182,27 @@ export default function CommercialLinesPage() {
           }
         }
       `}</style>
+
+      {/* JSON-LD structured data */}
+      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Commercial Lines — MARINECLEAN™ & DURATECH™',
+        description: 'ELIMFILTERS® integrated product lines engineered for specific operational contexts: MARINECLEAN™ for marine and offshore environments, DURATECH™ for mixed-model fleet maintenance.',
+        url: 'https://elimfilters.com/commercial-lines/',
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS®', item: 'https://elimfilters.com' },
+            { '@type': 'ListItem', position: 2, name: 'Commercial Lines', item: 'https://elimfilters.com/commercial-lines/' },
+          ],
+        },
+        hasPart: [
+          { '@type': 'WebPage', name: 'MARINECLEAN™', url: 'https://elimfilters.com/commercial-lines/marineclean/' },
+          { '@type': 'WebPage', name: 'DURATECH™', url: 'https://elimfilters.com/commercial-lines/duratech/' },
+        ],
+      }) }} />
 
       <Footer />
     </main>
