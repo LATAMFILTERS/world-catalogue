@@ -462,6 +462,7 @@ const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
 
 app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
   const host = req.get('host') || req.hostname || '';
   if (host.includes('part-search')) {
     partSearchStatic(req, res, next);
@@ -469,8 +470,14 @@ app.use((req, res, next) => {
     frontendStatic(req, res, next);
   }
 });
-app.use(express.static('public'));
-app.use(express.static('www'));
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  express.static('public')(req, res, next);
+});
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  express.static('www')(req, res, next);
+});
 
 const _escHtml = (str) => String(str ?? '')
   .replace(/&/g, '&amp;')
