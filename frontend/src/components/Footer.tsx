@@ -2,241 +2,239 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import '@/i18n';
+import { useTranslation } from 'react-i18next';
+
+const SOCIAL = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/133064152/', letter: 'in' },
+  { label: 'Facebook', href: 'https://www.facebook.com/elimfilters/', letter: 'Fb' },
+  { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
+  { label: 'X', href: 'https://x.com/elimfilters', letter: 'X' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
+];
 
 const NAV_COLUMNS = [
   {
-    title: 'Company',
+    title: 'COMPANY',
     links: [
       { label: 'About Us', href: '/about', external: false },
       { label: 'Industries', href: '/industries', external: false },
+      { label: 'Systems', href: '/systems', external: false },
       { label: 'Contact', href: '/contact', external: false },
     ],
   },
   {
-    title: 'Products',
+    title: 'PRODUCTS',
     links: [
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },
-      { label: 'Systems', href: '/systems', external: false },
-    ],
-  },
-  {
-    title: 'Support',
-    links: [
-      { label: 'Technical Support', href: '/contact', external: false },
       { label: 'Become a Dealer', href: '/distributor-application', external: false },
       { label: 'Warranty', href: '/warranty', external: false },
     ],
   },
   {
-    title: 'Knowledge',
+    title: 'SUPPORT',
     links: [
+      { label: 'Technical Support', href: '/contact', external: false },
       { label: 'Knowledge System', href: '/knowledge-system', external: false },
-      { label: 'Standards', href: '/knowledge-system/standards', external: false },
+      { label: 'Standards Library', href: '/knowledge-system/standards', external: false },
       { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
+    ],
+  },
+  {
+    title: 'KNOWLEDGE',
+    links: [
+      { label: 'Contamination', href: '/knowledge-system/contamination', external: false },
+      { label: 'Compare & Select', href: '/knowledge-system/compare', external: false },
+      { label: 'Filtration Science', href: '/knowledge-system/science', external: false },
+      { label: 'Industrial Bridges', href: '/knowledge-system/bridges', external: false },
+    ],
+  },
+  {
+    title: 'LEGAL',
+    links: [
+      { label: 'Terms of Service', href: '/legal/terms', external: false },
+      { label: 'Privacy Policy', href: '/legal/privacy', external: false },
+      { label: 'AI Use Policy', href: '/legal/ai-policy', external: false },
+      { label: 'Copyright & DMCA', href: '/legal/copyright', external: false },
+      { label: 'Cross Reference Policy', href: '/legal/cross-reference', external: false },
+      { label: 'Legal Disclaimer', href: '/legal/disclaimer', external: false },
     ],
   },
 ];
 
-const SOCIAL = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/elimfilters', letter: 'in' },
-  { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
-];
-
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <footer
-      style={{
-        background: '#0a0a0a',
-        borderTop: '1px solid rgba(255,255,255,0.04)',
-        padding: '60px 0 50px',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          padding: '0 40px',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '80px',
-          alignItems: 'start',
-        }}
-      >
-        {/* LEFT: Navigation columns */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '40px',
-          }}
-        >
+    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+
+      {/* ── MAIN BODY ── */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
+        <div className="footer-main-grid">
+
+          {/* Brand column */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+            {/* Logo */}
+            <div>
+              <img
+                src="/images/KLEO-TECHNOLOGY-fn.avif"
+                alt="Kleo Technologies"
+                style={{ maxHeight: '40px', maxWidth: '130px', objectFit: 'contain', display: 'block' }}
+              />
+            </div>
+
+            {/* Tagline */}
+            <p style={{
+              fontFamily: 'Barlow, sans-serif',
+              fontSize: '13px',
+              color: 'rgba(255,255,255,0.35)',
+              lineHeight: 1.7,
+              maxWidth: '220px',
+              margin: 0,
+            }}>
+              {t('footer.tagline', 'Asset protection through industrial contamination control.')}
+            </p>
+
+            {/* Contact details */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {[
+                { icon: '✉', text: 'info@elimfilters.com', href: 'mailto:info@elimfilters.com' },
+                { icon: '◎', text: 'Frisco, Texas — United States', href: null },
+                { icon: '◎', text: 'Caracas, Distrito Capital — Venezuela', href: null },
+              ].map((item) => (
+                <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ fontSize: '11px', color: 'rgba(255,241,45,0.4)', flexShrink: 0 }}>{item.icon}</span>
+                  {item.href ? (
+                    <a href={item.href} style={{
+                      fontFamily: 'Barlow, sans-serif', fontSize: '12px',
+                      color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
+                      transition: 'color 0.2s',
+                    }}
+                      onMouseEnter={e => (e.currentTarget.style.color = '#FFF12D')}
+                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span style={{ fontFamily: 'Barlow, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
+                      {item.text}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Social icons */}
+            <div style={{ display: 'flex', gap: '8px' }}>
+              {SOCIAL.map((s) => (
+                <motion.a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={s.label}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.18 }}
+                  style={{
+                    width: '34px', height: '34px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'rgba(255,255,255,0.35)',
+                    textDecoration: 'none',
+                    fontSize: '10px',
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 700, letterSpacing: '0.5px',
+                    transition: 'border-color 0.2s, color 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#FFF12D';
+                    e.currentTarget.style.color = '#FFF12D';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.35)';
+                  }}
+                >
+                  {s.letter}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          {/* Nav columns */}
           {NAV_COLUMNS.map((col) => (
             <div key={col.title}>
-              <div
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 700,
-                  fontSize: '12px',
-                  color: '#fff',
-                  textTransform: 'uppercase',
-                  letterSpacing: '3px',
-                  marginBottom: '24px',
-                }}
-              >
+              <div style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontWeight: 700, fontSize: '11px',
+                color: 'rgba(255,255,255,0.55)',
+                textTransform: 'uppercase', letterSpacing: '2.5px',
+                marginBottom: '20px',
+              }}>
                 {col.title}
               </div>
               {col.links.map((link) =>
                 link.external ? (
-                  <motion.div
-                    key={link.label}
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ marginBottom: '14px' }}
-                  >
+                  <div key={link.label} style={{ marginBottom: '12px' }}>
                     <a
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={linkStyle}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
                     >
                       {link.label}
                     </a>
-                  </motion.div>
+                  </div>
                 ) : (
-                  <motion.div
-                    key={link.label}
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ marginBottom: '14px' }}
-                  >
+                  <div key={link.label} style={{ marginBottom: '12px' }}>
                     <Link
                       href={link.href}
                       style={linkStyle}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
                     >
                       {link.label}
                     </Link>
-                  </motion.div>
+                  </div>
                 )
               )}
             </div>
           ))}
-        </div>
 
-        {/* RIGHT: Social + Logo + Address */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
-            gap: '24px',
-            minWidth: '180px',
-          }}
-        >
-          {/* Social icons row */}
-          <div style={{ display: 'flex', gap: '10px' }}>
-            {SOCIAL.map((s) => (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={s.label}
-                whileHover={{ scale: 1.15 }}
-                transition={{ duration: 0.2 }}
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  color: '#888',
-                  textDecoration: 'none',
-                  fontSize: '10px',
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 700,
-                  letterSpacing: '0.5px',
-                  transition: 'all 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#FFF12D';
-                  e.currentTarget.style.color = '#FFF12D';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
-                  e.currentTarget.style.color = '#888';
-                }}
-              >
-                {s.letter}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Kleo Logo */}
-          <motion.div
-            whileHover={{ opacity: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src="/images/Leo-fn.avif"
-              alt="Kleo Technologies"
-              style={{
-                maxHeight: '55px',
-                maxWidth: '160px',
-                objectFit: 'contain',
-                display: 'block',
-              }}
-            />
-          </motion.div>
-
-          {/* Address */}
-          <div
-            style={{
-              textAlign: 'right',
-              lineHeight: '1.6',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: '12px',
-                color: '#666',
-                letterSpacing: '1.5px',
-                textTransform: 'uppercase',
-              }}
-            >
-              Frisco, Texas
-            </div>
-            <div
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: '11px',
-                color: '#444',
-                letterSpacing: '0.5px',
-                marginTop: '4px',
-              }}
-            >
-              © 2015–2026 Kleo Technologies
-            </div>
-          </div>
         </div>
       </div>
+
+      {/* ── LEGAL BAR ── */}
+      <div style={{
+        maxWidth: '1400px', margin: '0 auto',
+        padding: '28px clamp(1.25rem, 5vw, 48px)',
+        marginTop: '48px',
+        borderTop: '1px solid rgba(255,255,255,0.05)',
+        display: 'flex', flexWrap: 'wrap',
+        alignItems: 'center', justifyContent: 'space-between',
+        gap: '8px 24px',
+      }}>
+        <span style={{ fontFamily: 'Barlow, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.2px' }}>
+          © 2015–2026 Kleo Technologies LLC · ELIMFILTERS® is a registered trademark. All rights reserved.
+        </span>
+        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '10px', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.1em' }}>
+          Kleo Technologies LLC · Frisco, Texas · Caracas, Venezuela · info@elimfilters.com
+        </span>
+      </div>
+
     </footer>
   );
 }
 
 const linkStyle: React.CSSProperties = {
-  fontSize: '14px',
+  fontSize: '13px',
   textDecoration: 'none',
-  color: '#888',
+  color: 'rgba(255,255,255,0.4)',
   display: 'block',
-  fontFamily: 'Outfit, sans-serif',
-  transition: 'color 0.25s ease',
+  fontFamily: 'Barlow, sans-serif',
+  lineHeight: 1.5,
+  transition: 'color 0.2s ease',
 };
