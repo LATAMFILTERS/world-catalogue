@@ -1,6 +1,16 @@
 {
-  "type_count": 8,
+  "type_count": 11,
   "types": [
+    {
+      "type": "architecture",
+      "count": 1,
+      "href": "/api/citation/type/architecture.json"
+    },
+    {
+      "type": "commercial-system",
+      "count": 2,
+      "href": "/api/citation/type/commercial-system.json"
+    },
     {
       "type": "component",
       "count": 3,
@@ -35,6 +45,11 @@
       "type": "system",
       "count": 1,
       "href": "/api/citation/type/system.json"
+    },
+    {
+      "type": "taxonomy",
+      "count": 1,
+      "href": "/api/citation/type/taxonomy.json"
     },
     {
       "type": "technology",

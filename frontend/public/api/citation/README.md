@@ -8,7 +8,7 @@ Knowledge Vault citation index. Files are regenerated automatically on every
 
 | Pattern | File | Description |
 |---------|------|-------------|
-| `/api/citation/index.json` | index.json | All 45 entity records |
+| `/api/citation/index.json` | index.json | All 49 entity records |
 | `/api/citation/[KEY].json` | MACROCORE.json etc | Single entity lookup with _links |
 | `/api/citation/graph.json` | graph.json | Full edge list (505 edges) |
 | `/api/citation/type/index.json` | type/index.json | All entity types list |
@@ -34,4 +34,4 @@ Generated from:
 - `elimfilters-vault/00-meta/PART_SEARCH_MAP.json`
 
 Generator: `scripts/generate-citation-api.js`
-Last generated: 2026-06-24T04:42:55.201Z
+Last generated: 2026-06-24T04:49:39.016Z
