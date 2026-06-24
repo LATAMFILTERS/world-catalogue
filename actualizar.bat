@@ -8,9 +8,10 @@ echo.
 cd /d "%~dp0"
 
 echo [1/4] Descargando cambios del servidor...
-git pull origin main
+git stash
+git pull --no-rebase origin main
 if %errorlevel% neq 0 (
-    echo ERROR: No se pudo conectar. Verifica tu conexion a internet.
+    echo ERROR: No se pudo descargar. Verifica tu conexion a internet.
     pause
     exit /b 1
 )
