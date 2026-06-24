@@ -13,6 +13,16 @@ sesion_*/
 debug*.py
 scraper_debug*.py
 __pycache__/
+scripts/*.py
+scripts/audio/
+
+# Scraping result artifacts
+scripts/donaldson_*.json
+scripts/*_competitor_matrix.json
+scripts/scrape_*_progress.json
+
+# .bak files
+*.bak
 
 # Media files (large assets — exclude by default)
 *.mp4
