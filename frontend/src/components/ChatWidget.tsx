@@ -136,10 +136,11 @@ async function escalate(sessionId: string, lang: string, history: Msg[]) {
   const transcript = history
     .map(m => `${m.role === 'user' ? 'CLIENT' : 'BOT'}: ${m.text}`)
     .join('\n\n');
+  const turnstileToken = typeof window !== 'undefined' ? (window as any).__turnstileToken || '' : '';
   await fetch(`${PART_SEARCH_BASE}/api/ai/escalate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ session_id: sessionId, lang, transcript }),
+    body: JSON.stringify({ session_id: sessionId, lang, transcript, turnstileToken }),
   });
 }
 

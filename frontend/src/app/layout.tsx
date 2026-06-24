@@ -131,6 +131,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${manrope.variable} ${outfit.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
+        {/* Cloudflare Turnstile — loaded globally, used by contact/distributor forms and chat widget */}
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

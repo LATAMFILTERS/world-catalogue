@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 import RetrievalBlock from '@/components/RetrievalBlock';
@@ -115,6 +115,13 @@ export default function DistributorApplication() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+
+  useEffect(() => {
+    const handler = (e: Event) => setTurnstileToken((e as CustomEvent).detail);
+    document.addEventListener('turnstile-verified', handler);
+    return () => document.removeEventListener('turnstile-verified', handler);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -129,7 +136,7 @@ export default function DistributorApplication() {
       const res = await fetch('/api/distributor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
       if (!res.ok) throw new Error();
       setSubmitted(true);
@@ -1001,9 +1008,19 @@ export default function DistributorApplication() {
                     />
                   </div>
 
+                  {/* Turnstile captcha */}
+                  <div
+                    className="cf-turnstile"
+                    data-sitekey="0x4AAAAAAAAADqjDbXIBhXQVtSY"
+                    data-callback="onTurnstileSuccess"
+                    data-theme="dark"
+                    style={{ margin: '1rem 0' }}
+                  />
+
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.02, boxShadow: '0 0 28px rgba(255,241,45,0.35)' }}
+                    disabled={!turnstileToken}
+                    whileHover={{ scale: turnstileToken ? 1.02 : 1, boxShadow: turnstileToken ? '0 0 28px rgba(255,241,45,0.35)' : 'none' }}
                     style={{
                       width: '100%',
                       padding: '0.875rem',

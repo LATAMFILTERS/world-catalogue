@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 import RetrievalBlock from '@/components/RetrievalBlock';
@@ -82,6 +82,13 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
+
+  useEffect(() => {
+    const handler = (e: Event) => setTurnstileToken((e as CustomEvent).detail);
+    document.addEventListener('turnstile-verified', handler);
+    return () => document.removeEventListener('turnstile-verified', handler);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -102,6 +109,7 @@ export default function Contact() {
           phone: formData.phone || '',
           company: formData.company || '',
           message: formData.message,
+          turnstileToken,
         }),
       });
       if (!res.ok) throw new Error('Server error');
@@ -540,9 +548,24 @@ export default function Contact() {
                       />
                     </div>
 
+                    {/* Turnstile captcha */}
+                    <div
+                      className="cf-turnstile"
+                      data-sitekey="0x4AAAAAAAAADqjDbXIBhXQVtSY"
+                      data-callback="onTurnstileSuccess"
+                      data-theme="dark"
+                      style={{ margin: '1rem 0' }}
+                    />
+                    <script dangerouslySetInnerHTML={{ __html: `
+                      function onTurnstileSuccess(token) {
+                        window.__turnstileToken = token;
+                        document.dispatchEvent(new CustomEvent('turnstile-verified', { detail: token }));
+                      }
+                    `}} />
+
                     <motion.button
                       type="submit"
-                      disabled={sending}
+                      disabled={sending || !turnstileToken}
                       whileHover={{ scale: sending ? 1 : 1.03, boxShadow: sending ? 'none' : '0 0 32px rgba(255,241,45,0.4)' }}
                       style={{
                         width: '100%',

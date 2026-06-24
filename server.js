@@ -98,9 +98,25 @@ const _escHtml = (str) => String(str ?? '')
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&#x27;');
 
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
+async function _verifyTurnstile(token, ip) {
+  if (!TURNSTILE_SECRET) return true; // skip if not configured
+  try {
+    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: TURNSTILE_SECRET, response: token, remoteip: ip }),
+    });
+    const data = await r.json();
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 // Contact form endpoint
 app.post('/api/contact', searchLimiter, async (req, res) => {
-  const { name, email, phone, company, message } = req.body;
+  const { name, email, phone, company, message, turnstileToken } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
@@ -110,6 +126,9 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Invalid email address' });
+  }
+  if (!await _verifyTurnstile(turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
   }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
@@ -168,6 +187,9 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Invalid email address' });
+  }
+  if (!await _verifyTurnstile(req.body.turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
   }
 
   const esc = _escHtml;
@@ -1416,9 +1438,12 @@ app.get('/api/audit/report', adminLimiter, requireAdmin, async (req, res) => {
 
 // ─── POST /api/ai/escalate ───────────────────────────────────────────────────
 app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
-  const { session_id, lang, transcript } = req.body || {};
+  const { session_id, lang, transcript, turnstileToken } = req.body || {};
   if (!transcript || typeof transcript !== 'string') {
     return res.status(400).json({ error: 'transcript required' });
+  }
+  if (!await _verifyTurnstile(turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
   }
   const safeTranscript = _escHtml(transcript.slice(0, 8000)).replace(/\n/g, '<br>');
   const safeLang = _escHtml(String(lang || 'en').slice(0, 8));
