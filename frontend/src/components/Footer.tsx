@@ -9,6 +9,7 @@ const SOCIAL = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/133064152/', letter: 'in' },
   { label: 'Facebook', href: 'https://www.facebook.com/elimfilters/', letter: 'Fb' },
   { label: 'Instagram', href: 'https://www.instagram.com/elimfilters.global', letter: 'Ig' },
+  { label: 'X', href: 'https://x.com/elimfilters', letter: 'X' },
   { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
 ];
 
