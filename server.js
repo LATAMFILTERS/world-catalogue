@@ -27,17 +27,12 @@ if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
 const _extractAdminKey = (req) => {
   const authHeader = req.get('authorization') || '';
   if (authHeader.startsWith('Bearer ')) return authHeader.slice(7).trim();
-  return req.body?.key || '';
+  return '';
 };
 const requireAdmin = (req, res, next) => {
   const key = _extractAdminKey(req);
   if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
   next();
-};
-const checkAdmin = (req, res) => {
-  const key = _extractAdminKey(req);
-  if (!key || key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
-  return true;
 };
 
 // Prevent unhandled errors from crashing the process
@@ -73,9 +68,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
 
@@ -586,13 +580,13 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
             SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem(val)
             WHERE UPPER(val->>'code') = $1
                OR UPPER(val->>'partNumber') = $1
-               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND TRIM(UPPER(split_part(val#>>'{}', '|', 2))) = $1)
           )
           OR EXISTS (
             SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem(val)
             WHERE UPPER(val->>'code') = $1
                OR UPPER(val->>'partNumber') = $1
-               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND TRIM(UPPER(split_part(val#>>'{}', '|', 2))) = $1)
                OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') = $1)
           )
         ORDER BY
@@ -620,6 +614,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  if(model.length > 200 || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -657,6 +652,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  if(model.length > 200 || (type && type.length > 100) || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -721,8 +717,7 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
 
 
 
-app.get('/api/catalog/stats', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/catalog/stats', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const [total, byType, completeness, recent] = await Promise.all([
@@ -769,8 +764,7 @@ app.get('/api/catalog/stats', async (req, res) => {
 
 
 // Audit: Find incomplete products
-app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/audit/incomplete-products', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -801,8 +795,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 // ─── GET /api/admin/suspects-equipment ──────────────────────────────────────
 // Returns products with ≤N equipment entries — feed to scrape_equipment.py batch mode.
 // Query params: key (required), max_entries (default 5), filter_type (optional), limit (default 2000)
-app.get('/api/admin/suspects-equipment', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/admin/suspects-equipment', adminLimiter, requireAdmin, async (req, res) => {
   const maxEntries = parseInt(req.query.max_entries) || 5;
   const limitRows  = parseInt(req.query.limit) || 2000;
   const filterType = req.query.filter_type || null;
@@ -832,9 +825,8 @@ app.get('/api/admin/suspects-equipment', async (req, res) => {
 
 // ─── GET /api/pending-donaldson ──────────────────────────────────────────────
 // Returns pending Donaldson products that need metadata enrichment.
-app.get('/api/pending-donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
-  const limit = parseInt(req.query.limit) || 100;
+app.get('/api/pending-donaldson', adminLimiter, requireAdmin, async (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit) || 100, 1000);
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -882,8 +874,7 @@ const _validateImportRow = (row) => {
   return null;
 };
 
-app.post('/api/import/donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.post('/api/import/donaldson', adminLimiter, requireAdmin, async (req, res) => {
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
@@ -980,9 +971,8 @@ app.post('/api/import/donaldson', async (req, res) => {
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
-app.get('/api/recheck-donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
-  const limit = parseInt(req.query.limit) || 200;
+app.get('/api/recheck-donaldson', adminLimiter, requireAdmin, async (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit) || 200, 1000);
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -1015,8 +1005,7 @@ app.get('/api/recheck-donaldson', async (req, res) => {
 
 // ─── GET /api/import/existing-skus ───────────────────────────────────────────
 // Returns all existing SKUs so the client can avoid collisions.
-app.get('/api/import/existing-skus', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/import/existing-skus', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
@@ -1040,21 +1029,10 @@ try {
 
 
 
-// ─── GET /api/status ─────────────────────────────────────────────────────────
-// Health and version status for deployment verification
-app.get('/api/status', (req, res) => {
-  res.json({
-    status: 'ok',
-    version: '3.7.0',
-    time: new Date().toISOString()
-  });
-});
-
 // ── UNIFIED SEARCH ──────────────────────────────────────────────────────────
 
 // ─── GET /api/catalog/export ──────────────────────────────────────────────────
-app.get('/api/catalog/export', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/catalog/export', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -1075,7 +1053,7 @@ app.get('/api/catalog/export', async (req, res) => {
     res.setHeader('Content-Disposition', 'attachment; filename="elimfilters_catalog.csv"');
     res.send(lines.join('\r\n'));
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1298,8 +1276,7 @@ app.get('/api/stats', async (req, res) => {
 });
 // ─── GET /api/audit/report ───────────────────────────────────────────────────
 // Full catalog data quality audit. Returns stats on completeness.
-app.get('/api/audit/report', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/audit/report', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
 
