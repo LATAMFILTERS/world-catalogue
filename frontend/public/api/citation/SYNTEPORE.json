@@ -1,0 +1,102 @@
+{
+  "key": "SYNTEPORE",
+  "type": "technology",
+  "name": "SYNTEPORE — All-Synthetic Intake Media",
+  "slug": "syntepore",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "SYNTEPORE",
+  "tags": [
+    "technology",
+    "active",
+    "air-intake",
+    "synthetic-media",
+    "marine",
+    "humid-environments",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/technologies/syntepore",
+    "concept": "SYNTEPORE All-Synthetic Intake Media",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:6c0aeb6b9911c4514a407ff36067f782d6fbbc50832f83cb5b21785fd19339d3"
+  },
+  "canonical": {
+    "definition": "SYNTEPORE is an all-synthetic air intake filter media that maintains rated particle capture efficiency (ISO 5011, SAE J1539) across the full humidity operating range — from 0% to 100% relative humidity — by eliminating moisture absorption, structural degradation, and efficiency loss inherent in cellulose-based intake media.",
+    "systems": "Diesel engine air intake systems in marine, offshore, coastal, tropical, and high-humidity terrestrial operating environments",
+    "failure_impact": "Cellulose media moisture absorption in humid environments → pressure differential increase → structural integrity loss → potential bypass → particle ingestion → piston ring and cylinder bore abrasive wear → compression loss 10–25% | SYNTEPORE eliminates moisture-induced failure mode by using hydrophobic synthetic fiber construction.",
+    "related_standards": "ISO 5011: Inlet air cleaning equipment test methodology (performance qualification standard) | SAE J1539: Air intake cleanliness specification for diesel engines (North American performance criterion)",
+    "related_technologies": "MACROCORE: Primary air intake particle capture technology; SYNTEPORE and MACROCORE address complementary aspects of air-side contamination control | NANOFORCE: Downstream sub-micron lube oil polishing after any air-side ingestion",
+    "industrial_role": "SYNTEPORE extends reliable air intake filtration performance into marine, coastal, and high-humidity environments where cellulose media failure would otherwise create scheduled replacement intervals as short as 100–200 hours or risk undetected bypass contamination."
+  },
+  "relationships": {
+    "applicable_industries": [
+      "MARINE",
+      "OIL_GAS",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL",
+      "POWER_GENERATION"
+    ],
+    "related_standards": [
+      "ISO_5011",
+      "SAE_J1539"
+    ],
+    "addresses_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault/01-technologies/active/SYNTEPORE.md",
+  "_links": {
+    "self": "/api/citation/SYNTEPORE.json",
+    "type_index": "/api/citation/type/technology.json",
+    "related": [
+      {
+        "key": "MARINE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "applicable_industries",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "applicable_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "ISO_5011",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "SAE_J1539",
+        "relation": "related_standards",
+        "href": "/api/citation/SAE_J1539.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "addresses_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}

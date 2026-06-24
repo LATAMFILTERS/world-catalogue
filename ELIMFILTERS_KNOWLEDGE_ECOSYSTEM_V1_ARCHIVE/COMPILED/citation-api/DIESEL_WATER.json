@@ -1,0 +1,61 @@
+{
+  "key": "DIESEL_WATER",
+  "type": "contamination-mode",
+  "name": "Diesel Water Contamination",
+  "slug": "diesel-water",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "DIESEL_WATER",
+  "tags": [
+    "contamination-mode",
+    "active",
+    "fuel",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+    "concept": "Diesel Water Contamination",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:4d19f133e8b1e464058d974a77e23a94e8e66766e0fe854c293c8bf4c4cc39aa"
+  },
+  "canonical": {
+    "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
+    "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
+    "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
+    "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
+    "related_technologies": "HYDROCORE: Primary coalescing water separation technology; separates free and emulsified water from diesel before injector delivery",
+    "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
+  },
+  "relationships": {
+    "related_standards": [
+      "ASTM_D6304",
+      "ISO_12937"
+    ],
+    "resolved_by": [
+      "HYDROCORE"
+    ]
+  },
+  "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md",
+  "_links": {
+    "self": "/api/citation/DIESEL_WATER.json",
+    "type_index": "/api/citation/type/contamination-mode.json",
+    "related": [
+      {
+        "key": "ASTM_D6304",
+        "relation": "related_standards",
+        "href": "/api/citation/ASTM_D6304.json"
+      },
+      {
+        "key": "ISO_12937",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_12937.json"
+      },
+      {
+        "key": "HYDROCORE",
+        "relation": "resolved_by",
+        "href": "/api/citation/HYDROCORE.json"
+      }
+    ]
+  }
+}

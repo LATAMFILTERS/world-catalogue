@@ -1,0 +1,41 @@
+[2026-06-18T23:49:14.897Z] ====================================================
+[2026-06-18T23:49:14.900Z] FASE 4C — INICIANDO CARGA POSTGRESQL EN MODO SEGURO
+[2026-06-18T23:49:14.901Z] ====================================================
+[2026-06-18T23:49:15.421Z] Conexión exitosa a PostgreSQL.
+[2026-06-18T23:49:15.422Z] Tomando snapshot pre-carga...
+[2026-06-18T23:49:15.825Z] Conteo actual: {"ld_product_catalog":0,"ld_production_readiness":0,"ld_competitor_cross_references":0,"ld_oem_cross_references":0,"ld_vehicle_applications":0,"ld_product_specifications":0}
+[2026-06-18T23:49:15.825Z] Aplicando phase4b_table_schema.sql...
+[2026-06-18T23:49:16.097Z] Schema aplicado exitosamente.
+[2026-06-18T23:49:16.119Z] Cargando ld_product_catalog...
+[2026-06-18T23:49:17.840Z] Carga de ld_product_catalog completa. Procesados: 6306
+[2026-06-18T23:49:17.841Z] Cargando ld_production_readiness...
+[2026-06-18T23:49:21.265Z] Carga de ld_production_readiness completa. Procesados: 6306
+[2026-06-18T23:49:21.266Z] Cargando ld_competitor_cross_references...
+[2026-06-18T23:49:30.928Z] ... procesados 20000 registros en ld_competitor_cross_references
+[2026-06-18T23:49:46.021Z] ... procesados 40000 registros en ld_competitor_cross_references
+[2026-06-18T23:49:57.359Z] ... procesados 60000 registros en ld_competitor_cross_references
+[2026-06-18T23:49:59.023Z] Carga de ld_competitor_cross_references completa. Procesados unicos: 63528
+[2026-06-18T23:49:59.024Z] Cargando ld_oem_cross_references...
+[2026-06-18T23:50:02.079Z] Carga de ld_oem_cross_references completa. Procesados unicos: 5843
+[2026-06-18T23:50:02.080Z] Cargando ld_vehicle_applications (MASTER)...
+[2026-06-18T23:50:19.654Z] ... procesados 20000 registros en ld_vehicle_applications
+[2026-06-18T23:50:39.853Z] ... procesados 40000 registros en ld_vehicle_applications
+[2026-06-18T23:51:04.852Z] ... procesados 60000 registros en ld_vehicle_applications
+[2026-06-18T23:51:21.526Z] ... procesados 80000 registros en ld_vehicle_applications
+[2026-06-18T23:51:44.952Z] ... procesados 100000 registros en ld_vehicle_applications
+[2026-06-18T23:52:03.726Z] ... procesados 120000 registros en ld_vehicle_applications
+[2026-06-18T23:52:23.219Z] ... procesados 140000 registros en ld_vehicle_applications
+[2026-06-18T23:52:46.921Z] ... procesados 160000 registros en ld_vehicle_applications
+[2026-06-18T23:53:05.222Z] ... procesados 180000 registros en ld_vehicle_applications
+[2026-06-18T23:53:24.153Z] ... procesados 200000 registros en ld_vehicle_applications
+[2026-06-18T23:53:45.056Z] ... procesados 220000 registros en ld_vehicle_applications
+[2026-06-18T23:54:06.021Z] ... procesados 240000 registros en ld_vehicle_applications
+[2026-06-18T23:54:24.719Z] ... procesados 260000 registros en ld_vehicle_applications
+[2026-06-18T23:54:29.030Z] Carga de app_master completa. Procesados unicos: 265856
+[2026-06-18T23:54:29.032Z] Cargando ld_vehicle_applications (EXTERNAL)...
+[2026-06-18T23:54:50.030Z] Carga de app_ext completa. Procesados unicos: 16396
+[2026-06-18T23:54:50.032Z] Cargando ld_product_specifications...
+[2026-06-18T23:54:50.525Z] Carga de ld_product_specifications completa. Procesados unicos: 1124
+[2026-06-18T23:54:50.527Z] Carga finalizada. Tomando snapshot post-carga...
+[2026-06-18T23:54:52.427Z] Conteo Final: {"ld_product_catalog":6306,"ld_production_readiness":6306,"ld_competitor_cross_references":63528,"ld_oem_cross_references":5843,"ld_vehicle_applications":282252,"ld_product_specifications":1124}
+[2026-06-18T23:54:52.431Z] Proceso terminado en 337.005 segundos. Reporte escrito en C:\Users\VICTOR ABREU\Documents\world-catalogue\phase4c_execution_report.json

@@ -1,0 +1,85 @@
+{
+  "key": "DIN_71220",
+  "type": "standard",
+  "name": "Road Vehicles — Cabin Air Filters — Requirements and Testing",
+  "slug": "din-71220",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "standard",
+    "active",
+    "cabin",
+    "din",
+    "performance-test",
+    "not-in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-system/standards/din-71220",
+    "concept": "DIN 71220 Cabin Air Filter Testing",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:e0702631d880b6f38e9260076bfa9f7a2bfd1c1d69a43764b61c58eea476c21c"
+  },
+  "canonical": {
+    "definition": "DIN 71220 is the German DIN standard for road vehicle cabin air filter requirements and testing, specifying particle filtration efficiency (>80%), odour removal performance, and activated carbon layer testing for road vehicle passenger compartment filters — a predecessor to ISO 11155 that remains referenced in European OEM supplier specifications, particularly in German automotive supply chains.",
+    "systems": "Road vehicle passenger compartment and operator cab air filtration in European automotive, bus, and truck applications where German OEM specifications require DIN 71220 qualification alongside or in place of ISO 11155",
+    "failure_impact": "Cabin filter below DIN 71220 particle efficiency threshold → elevated PM10 and PM2.5 in vehicle cabin supply air → operator and passenger inhalation exposure above occupational and public health guidelines in dusty operating environments | DIN 71220 failure impacts are identical to ISO 11155 failures: inadequate cabin air quality creating respiratory exposure risk | Operational Impact: OEM supply chain qualification failure if DIN 71220 compliance not demonstrated where specified; same health exposure consequences as ISO 11155 non-compliance.",
+    "related_standards": "ISO 11155: International harmonised successor to DIN 71220; ISO 11155-1 particle efficiency methodology builds on DIN 71220 framework; dual qualification required in some European OEM supply chains where both standards are cited",
+    "related_technologies": "MICROKAPPA: Cabin filtration media qualified to DIN 71220 particle efficiency and odour removal criteria for European OEM supply chain compliance in automotive, bus, and truck applications",
+    "industrial_role": "DIN 71220 is the legacy German standard that established the particle filtration efficiency framework subsequently adopted in ISO 11155 — its continued citation in European OEM supplier qualification documents means cabin filter products targeting German automotive, bus, and truck supply chains require DIN 71220 compliance verification in addition to ISO 11155 testing."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_11155"
+    ],
+    "applicable_to_technologies": [
+      "MICROKAPPA"
+    ],
+    "applicable_to_industries": [
+      "AUTOMOTIVE",
+      "BUS_COACH",
+      "TRUCKS_FLEETS"
+    ],
+    "related_contamination": [
+      "CABIN_AIR_CONTAMINATION"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/DIN_71220.md",
+  "_links": {
+    "self": "/api/citation/DIN_71220.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "ISO_11155",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_11155.json"
+      },
+      {
+        "key": "MICROKAPPA",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/MICROKAPPA.json"
+      },
+      {
+        "key": "AUTOMOTIVE",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/AUTOMOTIVE.json"
+      },
+      {
+        "key": "BUS_COACH",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/BUS_COACH.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "CABIN_AIR_CONTAMINATION",
+        "relation": "related_contamination",
+        "href": "/api/citation/CABIN_AIR_CONTAMINATION.json"
+      }
+    ]
+  }
+}

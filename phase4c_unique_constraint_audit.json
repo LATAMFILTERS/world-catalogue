@@ -1,0 +1,1430 @@
+{
+  "generated_at": "2026-06-18T15:21:13.742Z",
+  "ld_competitor_cross_references": {
+    "exact_unique_used_in_dryrun": "elimfilters_sku, undefined, undefined (Bug de mapeo de headers en el script anterior)",
+    "top_100_collapsed_groups": [
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "COMLINE",
+        "part_number": "EOF137",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "FILTRON",
+        "part_number": "OP576",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "HENGST",
+        "part_number": "H10W03",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "JC-PREMIUM",
+        "part_number": "B1Z059PR",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "KNECHT",
+        "part_number": "OC63",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "LUBERFINER",
+        "part_number": "PH253",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "MAGNETI-MARELLI",
+        "part_number": "154020144470",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "MAHLE",
+        "part_number": "OC63",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "OPEN-PARTS",
+        "part_number": "EOF414420",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "OPTIMAL",
+        "part_number": "FO00202",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "QUINTON-HAZELL",
+        "part_number": "QFL0025",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "WILMINK-GROUP",
+        "part_number": "WG1104011",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "WILMINK-GROUP",
+        "part_number": "WG1217218",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL59147",
+        "brand": "WIX",
+        "part_number": "WL7135",
+        "cantidad_original": 3,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "3F-QUALITY",
+        "part_number": "1439",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "AC-DELCO",
+        "part_number": "PU1019E",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "ALCO",
+        "part_number": "MS6111",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "BOSCH",
+        "part_number": "1987431023",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CHAMP",
+        "part_number": "AC54",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CHAMPION",
+        "part_number": "CCF0066",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CHAMPION",
+        "part_number": "N131",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CLEAN",
+        "part_number": "MC1260",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CLEAN",
+        "part_number": "NC2149",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "COOPERS",
+        "part_number": "ACE013",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "COOPERSFIAAM",
+        "part_number": "PC8021",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CORTECO",
+        "part_number": "21651900",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CORTECO",
+        "part_number": "80000753",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CORTECO",
+        "part_number": "CC1025",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CORTECO",
+        "part_number": "CP1025",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "CROSLAND",
+        "part_number": "E321",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "DELPHI",
+        "part_number": "TSP0325089",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "DENCKERMANN",
+        "part_number": "M110343",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "FIL",
+        "part_number": "HC7101",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "FILTRON",
+        "part_number": "K1021",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "FISPA",
+        "part_number": "035",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "FRAM",
+        "part_number": "CF5847",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "HIFI-FILTER",
+        "part_number": "SC4008",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "HOFFER",
+        "part_number": "17172F",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "KNECHT",
+        "part_number": "LA10",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MAGNETI-MARELLI",
+        "part_number": "154064173070",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MAGNETI-MARELLI",
+        "part_number": "BCF120",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MAHLE",
+        "part_number": "LA10",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MAPCO",
+        "part_number": "65108",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MEAT-DORIA",
+        "part_number": "17172F",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MECAFILTER",
+        "part_number": "ELR7031",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MECAFILTER",
+        "part_number": "R56",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "MICRONAIR",
+        "part_number": "MP035",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "OPEN-PARTS",
+        "part_number": "CAF213601",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "PBR",
+        "part_number": "AH7031",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "PURFLUX",
+        "part_number": "AH118",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "PUROLATOR",
+        "part_number": "C28154",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "QUINTON-HAZELL",
+        "part_number": "QAP131",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "QUINTON-HAZELL",
+        "part_number": "QAP231",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "QUINTON-HAZELL",
+        "part_number": "QFC0269",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "SIDAT",
+        "part_number": "035",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "SOFIMA",
+        "part_number": "S3085C",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "TECNOCAR",
+        "part_number": "E321",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "UFI",
+        "part_number": "5308500",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "UNIFLUX",
+        "part_number": "XC187",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "UNIFLUX",
+        "part_number": "XCK187",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "UNIPART",
+        "part_number": "GFE2918",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "WILMINK-GROUP",
+        "part_number": "WG1215239",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "WIX",
+        "part_number": "WP6842",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "ZAFFO",
+        "part_number": "358",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "ZAFFO",
+        "part_number": "Z358",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52531",
+        "brand": "ZAFFO",
+        "part_number": "ZF358",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC58971",
+        "brand": "MAHLE",
+        "part_number": "LA37%2F1",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC58971",
+        "brand": "PURFLUX",
+        "part_number": "AHC138",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "ACR",
+        "part_number": "320487",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "ACR",
+        "part_number": "320520",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "ACR",
+        "part_number": "321487",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "DELPHI",
+        "part_number": "TSP0325303",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "FIRST-AUTOMOTIVE",
+        "part_number": "C302192",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "FISPA",
+        "part_number": "1002",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "HOFFER",
+        "part_number": "17038X2",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "MEAT-DORIA",
+        "part_number": "17038X2",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "MULLER-FILTER",
+        "part_number": "FC219x2",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "SIDAT",
+        "part_number": "1002",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "VALEO",
+        "part_number": "698790",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "VALEO",
+        "part_number": "698791",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "ZAFFO",
+        "part_number": "Z399",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC52949",
+        "brand": "ZAFFO",
+        "part_number": "ZF399",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "ACR",
+        "part_number": "3214021",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "FIRST-AUTOMOTIVE",
+        "part_number": "C30116",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "FIRST-AUTOMOTIVE",
+        "part_number": "K30116",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "FISPA",
+        "part_number": "011",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "HOFFER",
+        "part_number": "17087",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "LUCAS",
+        "part_number": "LFCP117",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "MEAT-DORIA",
+        "part_number": "17087",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "MECAFILTER",
+        "part_number": "R17",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "MGA",
+        "part_number": "FAH5041",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "MULLER-FILTER",
+        "part_number": "FC116",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "MULLER-FILTER",
+        "part_number": "FK116",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EC53979",
+        "brand": "SIDAT",
+        "part_number": "011",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL52005",
+        "brand": "HIFI-FILTER",
+        "part_number": "SO15008",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL51261",
+        "brand": "MOPAR",
+        "part_number": "L-519",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "AC-DELCO",
+        "part_number": "PF1032",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "AC-DELCO",
+        "part_number": "PF1803",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "AC-DELCO",
+        "part_number": "PF1806",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "ALCO-LOCOMOTIVE",
+        "part_number": "SP855",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      }
+    ]
+  },
+  "ld_oem_cross_references": {
+    "exact_unique_used_in_dryrun": "elimfilters_sku, undefined, undefined (Bug de mapeo de headers)",
+    "top_100_collapsed_groups": [
+      {
+        "elimfilters_sku": "EL52005",
+        "brand": "MERCEDES-BENZ",
+        "part_number": "4571840225",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL52005",
+        "brand": "MERCEDES-BENZ",
+        "part_number": "A4571840225",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "FORD",
+        "part_number": "D5NN-6714-A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "FORD",
+        "part_number": "D8NN-6714-LA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "FORD",
+        "part_number": "D9NN-6714-CA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL54022",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "25011619",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "BMW",
+        "part_number": "11 42 1 266 773",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "BMW",
+        "part_number": "11 42 9 061 198",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "3232126",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "3250334",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "5203217",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "72674028",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "8127168",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "J3232126",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "J3250334",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CHRYSLER",
+        "part_number": "J8127168",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CITROEN",
+        "part_number": "MLS000-155",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "CITROEN",
+        "part_number": "MLS000155",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1457512",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1462805",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1498014",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1536304",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1553370",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1555370",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "1559937",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "2735E-6714-B",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5002530",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5003329",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5003331",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5003930",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5003968",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5004926",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5011780",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5011782",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5013143",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "5013319",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "6041176",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "691M-6714A/A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "77BM-6714-AA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "77BM-6714-C1A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "A700X6714AA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "A760X6714KA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "D0RY-6731-A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "D1PJ-6714-AA",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "FORD",
+        "part_number": "D1PZ-6731-A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "19160691",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "19160694",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "2-866-477",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "6438162",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "6439109",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "650352",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "7965051",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "7976051",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "7984225",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "7984256",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "90027778",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "93156299",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "GENERAL-MOTORS",
+        "part_number": "93156958",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "MITSUBISHI",
+        "part_number": "J3232126",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "MITSUBISHI",
+        "part_number": "J3250334",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "MITSUBISHI",
+        "part_number": "N152H1010",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "NISSAN",
+        "part_number": "15208-H1010",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "NISSAN",
+        "part_number": "15208-H1011",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "09281199",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "2-866-477",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "2866477/VP",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "2866477VP",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650352",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650364",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650365",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650370",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650371",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650373",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "650400",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "7976051",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "90027778",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "9281199",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OPEL",
+        "part_number": "VOF136",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OE",
+        "part_number": "OF-1055",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OE",
+        "part_number": "OF-1065",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "OE",
+        "part_number": "OF-250",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "PEUGEOT",
+        "part_number": "1109C5",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "650364",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "650365",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "6696776",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "7884256",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "7965051",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "7973235",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "7973429",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "7984256",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "90027778",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "93156299",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VAUXHALL",
+        "part_number": "VOF136",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "034 115 561A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "035 115 561",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "037 115 561",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "056 115 561",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "056 115 561A",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "056 115 561B",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      },
+      {
+        "elimfilters_sku": "EL57121",
+        "brand": "VW",
+        "part_number": "056 115 561C",
+        "cantidad_original": 2,
+        "cantidad_resultante": 1
+      }
+    ]
+  },
+  "scenarios": {
+    "Escenario_A": {
+      "description": "UNIQUE actual usada en el Dry-Run (Solo elimfilters_sku por bug de variable)",
+      "competitor_refs": 773,
+      "oem_refs": 219
+    },
+    "Escenario_B": {
+      "description": "UNIQUE (elimfilters_sku, brand, code)",
+      "competitor_refs": 63528,
+      "oem_refs": 5843
+    },
+    "Escenario_C": {
+      "description": "UNIQUE (elimfilters_sku, brand, code, source_sku)",
+      "competitor_refs": 66663,
+      "oem_refs": 6213
+    }
+  }
+}

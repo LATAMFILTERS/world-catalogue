@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-18T15:02:10.202Z",
+  "total_ld_skus": 7833,
+  "production_tiers": {
+    "TIER_P1": {
+      "count": 1150,
+      "pct": "14.68",
+      "description": "OEM + Competitor + Apps + Specs"
+    },
+    "TIER_P2": {
+      "count": 2,
+      "pct": "0.03",
+      "description": "OEM + Competitor + Apps"
+    },
+    "TIER_P3": {
+      "count": 129,
+      "pct": "1.65",
+      "description": "OEM + Competitor"
+    },
+    "TIER_P4": {
+      "count": 867,
+      "pct": "11.07",
+      "description": "Competitor Only"
+    },
+    "TIER_P5": {
+      "count": 5685,
+      "pct": "72.58",
+      "description": "No Commercial Data / Partial Non-Compliant"
+    }
+  },
+  "cumulative_coverage": {
+    "ready_for_production_P1": "14.68",
+    "acceptable_for_production_P1_P2": "14.71",
+    "needs_enrichment_P3_P4_P5": "85.29"
+  },
+  "gap_analysis_totals": {
+    "skus_missing_oem": 3324,
+    "skus_missing_competitor": 5685,
+    "skus_missing_applications": 2374,
+    "skus_missing_specifications": 1725
+  },
+  "top_segments_ready": [
+    {
+      "segment": "Cabin Filter",
+      "total_skus": 1598,
+      "production_ready_skus": 455,
+      "readiness_pct": "28.47",
+      "gap_score": 2696
+    },
+    {
+      "segment": "Oil Filter",
+      "total_skus": 1620,
+      "production_ready_skus": 329,
+      "readiness_pct": "20.31",
+      "gap_score": 2301
+    },
+    {
+      "segment": "Air Filter",
+      "total_skus": 3397,
+      "production_ready_skus": 346,
+      "readiness_pct": "10.19",
+      "gap_score": 6172
+    },
+    {
+      "segment": "Fuel Filter",
+      "total_skus": 1218,
+      "production_ready_skus": 20,
+      "readiness_pct": "1.64",
+      "gap_score": 1939
+    }
+  ],
+  "top_segments_with_gap": [
+    {
+      "segment": "Air Filter",
+      "total_skus": 3397,
+      "production_ready_skus": 346,
+      "readiness_pct": "10.19",
+      "gap_score": 6172
+    },
+    {
+      "segment": "Cabin Filter",
+      "total_skus": 1598,
+      "production_ready_skus": 455,
+      "readiness_pct": "28.47",
+      "gap_score": 2696
+    },
+    {
+      "segment": "Oil Filter",
+      "total_skus": 1620,
+      "production_ready_skus": 329,
+      "readiness_pct": "20.31",
+      "gap_score": 2301
+    },
+    {
+      "segment": "Fuel Filter",
+      "total_skus": 1218,
+      "production_ready_skus": 20,
+      "readiness_pct": "1.64",
+      "gap_score": 1939
+    }
+  ]
+}

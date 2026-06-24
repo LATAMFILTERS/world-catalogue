@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELIMFILTERS® — Knowledge System Reading Experience Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 1400px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 2rem;
+    }
+    .page-header .file-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #FFF12D;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+    .page-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .page-header p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.06em;
+    }
+
+    /* PANEL LABELS */
+    .panel-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .panel-label.before {
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .panel-label.after {
+      background: rgba(255,241,45,0.08);
+      color: #FFF12D;
+      border: 1px solid rgba(255,241,45,0.3);
+    }
+
+    .section-divider {
+      max-width: 1400px;
+      margin: 4.5rem auto 3rem;
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .section-heading {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.16em;
+    }
+
+    /* COMPARISON GRID */
+    .comparison-row {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* ============================================
+       BEFORE PANEL
+    ============================================ */
+    .panel-before {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .before-breadcrumb {
+      background: #0c0c0c;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 0.7rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.08em;
+    }
+    .before-content {
+      background: #090909;
+      padding: 2rem 1.75rem;
+    }
+    .before-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.45rem;
+    }
+    .before-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1rem;
+    }
+    .before-content p {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .before-next-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 0.1em;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .annotation-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,90,70,0.65);
+      background: rgba(255,70,50,0.05);
+      border: 1px solid rgba(255,70,50,0.15);
+      border-radius: 3px;
+      padding: 0.25rem 0.55rem;
+      margin-bottom: 1.25rem;
+    }
+    .before-link-row {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .before-link-stub {
+      flex: 1;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 4px;
+      padding: 0.65rem 0.75rem;
+    }
+    .bls-label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: rgba(255,255,255,0.18); margin-bottom: 0.2rem; }
+    .bls-title { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    /* ============================================
+       AFTER PANEL
+    ============================================ */
+    .panel-after {
+      border: 1px solid rgba(255,241,45,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .after-breadcrumb {
+      background: #0a0a0a;
+      border-bottom: 1px solid rgba(255,241,45,0.08);
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+    }
+    .bc-link  { color: #FFF12D; }
+    .bc-sep   { color: rgba(255,255,255,0.2); }
+    .bc-curr  { color: rgba(255,255,255,0.5); }
+
+    /* Two-column reading layout: main content + progress rail */
+    .after-reading-layout {
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      background: #060606;
+    }
+
+    /* Main reading content */
+    .after-main-content {
+      padding: 2rem 1.5rem 2rem 1.75rem;
+      border-right: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .section-num-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      color: #FFF12D;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.65rem;
+    }
+    .after-main-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    /* Body text with inline metric highlight */
+    .body-text {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.78;
+      margin-bottom: 1.25rem;
+    }
+    .metric-highlight {
+      color: #FFF12D;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+
+    /* Pullquote */
+    .pullquote {
+      border-left: 4px solid #FFF12D;
+      background: rgba(255,241,45,0.04);
+      border-radius: 0 5px 5px 0;
+      padding: 1rem 1.1rem;
+      margin: 1.25rem 0;
+    }
+    .pullquote p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    /* Next section preview (dimmed) */
+    .next-section-preview {
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      opacity: 0.4;
+    }
+    .next-section-preview .nsp-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.35rem;
+    }
+    .next-section-preview h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Section progress rail */
+    .section-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.75rem 0;
+      gap: 0.6rem;
+    }
+    .rail-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+    }
+    .rail-num.active {
+      background: #FFF12D;
+      color: #000;
+    }
+    .rail-num.done {
+      background: rgba(255,241,45,0.12);
+      color: rgba(255,241,45,0.55);
+    }
+    .rail-num.upcoming {
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.2);
+    }
+    .rail-connector {
+      width: 1px;
+      height: 8px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    /* Related content row */
+    .related-content {
+      background: #040404;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 1.25rem 1.75rem;
+    }
+    .rc-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.85rem;
+    }
+    .rc-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+    .rc-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 5px;
+      padding: 0.7rem 0.8rem;
+    }
+    .rc-card-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.54rem;
+      color: rgba(255,241,45,0.6);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+    .rc-card-title {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    /* ============================================
+       KNOWLEDGE NETWORK VISUALIZATION
+    ============================================ */
+    .network-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #030303;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 2.5rem;
+      overflow: hidden;
+    }
+    .network-header {
+      margin-bottom: 0.4rem;
+    }
+    .network-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.14em;
+      margin-bottom: 0.5rem;
+    }
+    .network-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+    }
+    .network-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 0.25rem;
+      margin-bottom: 2rem;
+    }
+
+    /* SVG network diagram */
+    .network-svg-wrapper {
+      display: flex;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    /* Node fade-in animation */
+    @keyframes nodeAppear {
+      from { opacity: 0; transform: scale(0.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes lineGrow {
+      from { stroke-dashoffset: 200; }
+      to   { stroke-dashoffset: 0; }
+    }
+    @keyframes lineFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Node circles */
+    .node-g { animation: nodeAppear 0.4s ease-out both; }
+    .node-g.n-contamination { animation-delay: 0.0s; }
+    .node-g.n-particle      { animation-delay: 0.2s; }
+    .node-g.n-water         { animation-delay: 0.4s; }
+    .node-g.n-hydraulic     { animation-delay: 0.6s; }
+    .node-g.n-iso16889      { animation-delay: 0.8s; }
+    .node-g.n-iso4406       { animation-delay: 1.0s; }
+    .node-g.n-iso5011       { animation-delay: 1.2s; }
+    .node-g.n-macrocore     { animation-delay: 1.5s; }
+    .node-g.n-nanoforce     { animation-delay: 1.7s; }
+    .node-g.n-aquaguard     { animation-delay: 1.9s; }
+
+    /* Lines */
+    .conn-line {
+      stroke-dasharray: 200;
+      animation: lineGrow 0.5s ease-out both;
+    }
+    .cl-1  { animation-delay: 0.15s; }
+    .cl-2  { animation-delay: 0.35s; }
+    .cl-3  { animation-delay: 0.55s; }
+    .cl-4  { animation-delay: 0.95s; }
+    .cl-5  { animation-delay: 1.15s; }
+    .cl-6  { animation-delay: 1.35s; }
+    .cl-7  { animation-delay: 1.65s; }
+    .cl-8  { animation-delay: 1.85s; }
+    .cl-9  { animation-delay: 2.05s; }
+
+    .legend-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-dot.yellow  { background: #FFF12D; }
+    .legend-dot.blue    { background: #4a9eff; }
+    .legend-dot.green   { background: #4affaa; }
+    .legend-dot.orange  { background: #ffaa4a; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="file-label">// FILE 05 — KNOWLEDGE SYSTEM READING EXPERIENCE · BEFORE VS AFTER + NETWORK VISUALIZATION</span>
+    <h1>Knowledge System: Reading Experience & Network</h1>
+    <p>READING LAYOUT COMPARISON + KNOWLEDGE NETWORK VISUALIZATION (PALANTIR-INSPIRED)</p>
+  </div>
+
+  <!-- ============================================
+       READING EXPERIENCE: BEFORE vs AFTER
+  ============================================ -->
+  <div class="comparison-row">
+
+    <!-- BEFORE -->
+    <div>
+      <span class="panel-label before">BEFORE — Current State</span>
+      <div class="panel-before">
+        <div class="before-breadcrumb">STANDARDS / LUBE OIL FILTRATION SYSTEMS</div>
+        <div class="before-content">
+          <div class="before-section-label">01 / SYSTEM OVERVIEW</div>
+          <h2>Lube Oil Filtration Systems</h2>
+          <span class="annotation-tag">↑ No visual hierarchy — reads like Wikipedia</span>
+          <p>Lube oil filtration systems maintain engine oil cleanliness by removing particulate contamination throughout the operating cycle. ISO 4406 cleanliness codes define target contamination levels for various equipment types and operating conditions.</p>
+          <p>Multi-stage filtration removes particles of varying sizes. Primary filters handle large particles while secondary and bypass filters address finer contamination. Oil analysis programs monitor filter effectiveness and remaining oil life.</p>
+          <p>ISO 16889 defines the standard test method for determining filter element performance characteristics including Beta ratio efficiency ratings for filter media evaluation and selection.</p>
+          <div class="before-next-label">02 / CONTAMINATION CHALLENGES</div>
+          <div class="before-link-row">
+            <div class="before-link-stub">
+              <div class="bls-label">SEE ALSO</div>
+              <div class="bls-title">Hydraulic Systems</div>
+            </div>
+            <div class="before-link-stub">
+              <div class="bls-label">SEE ALSO</div>
+              <div class="bls-title">Fuel Filtration</div>
+            </div>
+            <div class="before-link-stub">
+              <div class="bls-label">SEE ALSO</div>
+              <div class="bls-title">ISO 16889</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div>
+      <span class="panel-label after">AFTER — Enhanced Reading Experience</span>
+      <div class="panel-after">
+        <!-- Breadcrumb -->
+        <div class="after-breadcrumb">
+          <span class="bc-link">← STANDARDS</span>
+          <span class="bc-sep">/</span>
+          <span class="bc-curr">LUBE OIL FILTRATION SYSTEMS</span>
+        </div>
+
+        <!-- Reading layout: content + rail -->
+        <div class="after-reading-layout">
+
+          <!-- Main content -->
+          <div class="after-main-content">
+            <div class="section-num-label">01 / SYSTEM OVERVIEW</div>
+            <h2>Lube Oil Filtration Systems</h2>
+
+            <!-- Body with inline metric highlight -->
+            <p class="body-text">
+              Lube oil filtration maintains measurable cleanliness codes (ISO 4406) in engine oil through multi-stage filtration targeting specific particle size removal. When contamination is controlled to ISO 16/14/11 targets, bearing life extends
+              <span class="metric-highlight"> 3–5×</span>
+              compared to unmanaged systems operating at 19/17/14 or worse.
+            </p>
+
+            <!-- Pullquote -->
+            <div class="pullquote">
+              <p>Optimal ISO 16/14/11 cleanliness targets extend bearing life 3–5× compared to commodity approach at 19/17/14. Every two-code step in particle count represents a 4× change in contamination level.</p>
+            </div>
+
+            <p class="body-text">
+              Hard particles — silica, metallic oxides, and wear debris — trapped between bearing surfaces create micro-cutting damage. Cumulative abrasive wear reduces bearing clearances until friction increases beyond thermal tolerance, initiating seizure.
+            </p>
+
+            <!-- Next section preview (dimmed) -->
+            <div class="next-section-preview">
+              <div class="nsp-label">02 / CONTAMINATION CHALLENGES</div>
+              <h3>Particle Wear Mechanisms in Engine Lube Circuits</h3>
+            </div>
+          </div>
+
+          <!-- Section progress rail -->
+          <div class="section-rail">
+            <div class="rail-num active">01</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">02</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">03</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">04</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">05</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">06</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">07</div>
+            <div class="rail-connector"></div>
+            <div class="rail-num upcoming">08</div>
+          </div>
+
+        </div><!-- /after-reading-layout -->
+
+        <!-- Related content row -->
+        <div class="related-content">
+          <div class="rc-heading">RELATED CONTENT</div>
+          <div class="rc-cards">
+            <div class="rc-card">
+              <div class="rc-card-type">CONTAMINATION</div>
+              <div class="rc-card-title">Particle Wear in Engines</div>
+            </div>
+            <div class="rc-card">
+              <div class="rc-card-type">STANDARDS</div>
+              <div class="rc-card-title">ISO 4406 Cleanliness Codes</div>
+            </div>
+            <div class="rc-card">
+              <div class="rc-card-type">TECHNOLOGY</div>
+              <div class="rc-card-title">MACROCORE™ System</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================
+       KNOWLEDGE NETWORK VISUALIZATION
+  ============================================ -->
+  <hr class="section-divider" />
+  <p class="section-heading">// KNOWLEDGE NETWORK VISUALIZATION — PALANTIR-INSPIRED NODE DIAGRAM</p>
+
+  <div class="network-section">
+    <div class="network-header">
+      <div class="network-label">// KNOWLEDGE GRAPH · ELIMFILTERS INDUSTRIAL INTELLIGENCE</div>
+      <div class="network-title">KNOWLEDGE NETWORK</div>
+      <p class="network-sub">Building connections between contamination, standards, and technologies</p>
+    </div>
+
+    <div class="network-svg-wrapper">
+      <svg
+        viewBox="0 0 900 480"
+        width="100%"
+        style="max-width:900px; overflow:visible;"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <!-- Glow filter for central node -->
+          <filter id="yellowGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="blueGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- ─── CONNECTION LINES ─── -->
+        <!-- Central → Contamination children -->
+        <line class="conn-line cl-1" x1="450" y1="240" x2="270" y2="140" stroke="rgba(255,241,45,0.25)" stroke-width="1.5"/>
+        <line class="conn-line cl-2" x1="450" y1="240" x2="450" y2="90"  stroke="rgba(255,241,45,0.25)" stroke-width="1.5"/>
+        <line class="conn-line cl-3" x1="450" y1="240" x2="630" y2="140" stroke="rgba(255,241,45,0.25)" stroke-width="1.5"/>
+
+        <!-- Contamination children → Standards -->
+        <line class="conn-line cl-4" x1="270" y1="140" x2="130" y2="280" stroke="rgba(74,158,255,0.2)" stroke-width="1.2"/>
+        <line class="conn-line cl-5" x1="450" y1="90"  x2="450" y2="280" stroke="rgba(74,158,255,0.2)" stroke-width="1.2"/>
+        <line class="conn-line cl-6" x1="630" y1="140" x2="770" y2="280" stroke="rgba(74,158,255,0.2)" stroke-width="1.2"/>
+
+        <!-- Standards → Technologies -->
+        <line class="conn-line cl-7" x1="130" y1="280" x2="130" y2="400" stroke="rgba(74,255,170,0.18)" stroke-width="1.2"/>
+        <line class="conn-line cl-8" x1="450" y1="280" x2="450" y2="400" stroke="rgba(74,255,170,0.18)" stroke-width="1.2"/>
+        <line class="conn-line cl-9" x1="770" y1="280" x2="770" y2="400" stroke="rgba(74,255,170,0.18)" stroke-width="1.2"/>
+
+        <!-- ─── TIER LABELS ─── -->
+        <text x="18" y="248" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.18)" letter-spacing="1">CONTAMINATION</text>
+        <text x="18" y="295" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.18)" letter-spacing="1">STANDARDS</text>
+        <text x="18" y="415" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.18)" letter-spacing="1">TECHNOLOGIES</text>
+
+        <!-- ─── CENTRAL NODE: CONTAMINATION ─── -->
+        <g class="node-g n-contamination" style="transform-origin:450px 240px">
+          <circle cx="450" cy="240" r="48" fill="rgba(255,241,45,0.08)" stroke="#FFF12D" stroke-width="2" filter="url(#yellowGlow)"/>
+          <circle cx="450" cy="240" r="36" fill="rgba(255,241,45,0.12)" stroke="#FFF12D" stroke-width="1"/>
+          <text x="450" y="235" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFF12D" font-weight="500" letter-spacing="0.5">CONTAM-</text>
+          <text x="450" y="249" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFF12D" font-weight="500" letter-spacing="0.5">INATION</text>
+        </g>
+
+        <!-- ─── TIER 1: CONTAMINATION TYPES ─── -->
+        <!-- Particle Wear -->
+        <g class="node-g n-particle" style="transform-origin:270px 140px">
+          <circle cx="270" cy="140" r="34" fill="rgba(255,170,74,0.08)" stroke="rgba(255,170,74,0.6)" stroke-width="1.5"/>
+          <text x="270" y="135" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">PARTICLE</text>
+          <text x="270" y="148" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">WEAR</text>
+        </g>
+        <!-- Water Contamination -->
+        <g class="node-g n-water" style="transform-origin:450px 90px">
+          <circle cx="450" cy="90" r="34" fill="rgba(255,170,74,0.08)" stroke="rgba(255,170,74,0.6)" stroke-width="1.5"/>
+          <text x="450" y="85" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">WATER</text>
+          <text x="450" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">CONTAM.</text>
+        </g>
+        <!-- Hydraulic Contamination -->
+        <g class="node-g n-hydraulic" style="transform-origin:630px 140px">
+          <circle cx="630" cy="140" r="34" fill="rgba(255,170,74,0.08)" stroke="rgba(255,170,74,0.6)" stroke-width="1.5"/>
+          <text x="630" y="135" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">HYDRAULIC</text>
+          <text x="630" y="148" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="rgba(255,170,74,0.9)" letter-spacing="0.3">SYSTEM</text>
+        </g>
+
+        <!-- ─── TIER 2: STANDARDS ─── -->
+        <!-- ISO 16889 -->
+        <g class="node-g n-iso16889" style="transform-origin:130px 280px">
+          <circle cx="130" cy="280" r="32" fill="rgba(74,158,255,0.07)" stroke="rgba(74,158,255,0.55)" stroke-width="1.5" filter="url(#blueGlow)"/>
+          <text x="130" y="275" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">ISO</text>
+          <text x="130" y="287" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">16889</text>
+        </g>
+        <!-- ISO 4406 -->
+        <g class="node-g n-iso4406" style="transform-origin:450px 280px">
+          <circle cx="450" cy="280" r="32" fill="rgba(74,158,255,0.07)" stroke="rgba(74,158,255,0.55)" stroke-width="1.5" filter="url(#blueGlow)"/>
+          <text x="450" y="275" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">ISO</text>
+          <text x="450" y="287" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">4406</text>
+        </g>
+        <!-- ISO 5011 -->
+        <g class="node-g n-iso5011" style="transform-origin:770px 280px">
+          <circle cx="770" cy="280" r="32" fill="rgba(74,158,255,0.07)" stroke="rgba(74,158,255,0.55)" stroke-width="1.5" filter="url(#blueGlow)"/>
+          <text x="770" y="275" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">ISO</text>
+          <text x="770" y="287" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(74,158,255,0.9)" letter-spacing="0.3">5011</text>
+        </g>
+
+        <!-- ─── TIER 3: TECHNOLOGIES ─── -->
+        <!-- MACROCORE -->
+        <g class="node-g n-macrocore" style="transform-origin:130px 400px">
+          <circle cx="130" cy="400" r="30" fill="rgba(74,255,170,0.06)" stroke="rgba(74,255,170,0.5)" stroke-width="1.5"/>
+          <text x="130" y="395" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">MACRO-</text>
+          <text x="130" y="407" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">CORE™</text>
+        </g>
+        <!-- NANOFORCE -->
+        <g class="node-g n-nanoforce" style="transform-origin:450px 400px">
+          <circle cx="450" cy="400" r="30" fill="rgba(74,255,170,0.06)" stroke="rgba(74,255,170,0.5)" stroke-width="1.5"/>
+          <text x="450" y="395" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">NANO-</text>
+          <text x="450" y="407" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">FORCE™</text>
+        </g>
+        <!-- AQUAGUARD -->
+        <g class="node-g n-aquaguard" style="transform-origin:770px 400px">
+          <circle cx="770" cy="400" r="30" fill="rgba(74,255,170,0.06)" stroke="rgba(74,255,170,0.5)" stroke-width="1.5"/>
+          <text x="770" y="395" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">AQUA-</text>
+          <text x="770" y="407" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="rgba(74,255,170,0.85)" letter-spacing="0.3">GUARD™</text>
+        </g>
+
+      </svg>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot yellow"></div>ROOT CONCEPT</div>
+      <div class="legend-item"><div class="legend-dot orange"></div>CONTAMINATION MODES</div>
+      <div class="legend-item"><div class="legend-dot blue"></div>ISO STANDARDS</div>
+      <div class="legend-item"><div class="legend-dot green"></div>ELIMFILTERS TECHNOLOGIES</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

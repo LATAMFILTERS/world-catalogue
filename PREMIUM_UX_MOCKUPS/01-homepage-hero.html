@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELIMFILTERS® · Premium UX Mockups · 01 — Homepage Hero</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --yellow: #FFF12D;
+      --black: #000000;
+      --white: #ffffff;
+      --amber-dark: #1a0e00;
+      --gray-1: rgba(255,255,255,0.55);
+      --gray-2: rgba(255,255,255,0.30);
+      --gray-3: rgba(255,255,255,0.10);
+      --gray-4: rgba(255,255,255,0.06);
+      --yellow-dim: rgba(255,241,45,0.18);
+      --yellow-border: rgba(255,241,45,0.35);
+      --font-head: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html {
+      background: #0a0a0a;
+      color: var(--white);
+      font-family: var(--font-body);
+      min-height: 100vh;
+    }
+
+    body {
+      background: #0a0a0a;
+      padding: 0 0 80px;
+    }
+
+    /* ============================
+       PAGE HEADER
+    ============================ */
+    .page-header {
+      width: 100%;
+      background: #000;
+      border-bottom: 1px solid rgba(255,241,45,0.25);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .page-header-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .page-header-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--yellow);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .page-header-badge {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-1);
+      background: var(--gray-4);
+      border: 1px solid var(--gray-3);
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    /* ============================
+       MAIN WRAPPER
+    ============================ */
+    .page-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 48px 40px 0;
+    }
+
+    /* ============================
+       SECTION LABEL
+    ============================ */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--gray-1);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-3);
+    }
+
+    /* ============================
+       BEFORE / AFTER BAR
+    ============================ */
+    .comparison-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .comparison-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .comparison-label.before {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .comparison-label.after {
+      background: rgba(255,241,45,0.06);
+      border: 1px solid rgba(255,241,45,0.22);
+    }
+
+    .comparison-label-pill {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .comparison-label.before .comparison-label-pill {
+      background: rgba(255,255,255,0.10);
+      color: var(--white);
+    }
+
+    .comparison-label.after .comparison-label-pill {
+      background: rgba(255,241,45,0.20);
+      color: var(--yellow);
+    }
+
+    .comparison-label-text {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--gray-1);
+    }
+
+    /* ============================
+       DESKTOP PANELS
+    ============================ */
+    .desktop-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    /* SHARED PANEL SHELL */
+    .panel {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    .panel.after {
+      border-color: rgba(255,241,45,0.20);
+      box-shadow: 0 0 60px rgba(255,241,45,0.05), 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    /* ============================
+       BEFORE PANEL
+    ============================ */
+    .before-panel {
+      background: #0d0d0d;
+    }
+
+    /* BEFORE: Nav */
+    .before-nav {
+      display: flex;
+      align-items: center;
+      padding: 14px 24px;
+      background: #0d0d0d;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      gap: 28px;
+    }
+
+    .before-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .before-nav-links {
+      display: flex;
+      gap: 20px;
+      margin-left: auto;
+    }
+
+    .before-nav-link {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* BEFORE: Hero */
+    .before-hero {
+      background: linear-gradient(160deg, #111 0%, #0a0a0a 100%);
+      padding: 52px 32px 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .before-hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .before-hero-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .before-hero-sub {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .before-cta {
+      display: inline-block;
+      padding: 10px 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* BEFORE: Stats */
+    .before-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .before-stat {
+      padding: 18px 16px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .before-stat:last-child { border-right: none; }
+
+    .before-stat-num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .before-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* BEFORE: Content note */
+    .before-content-note {
+      padding: 20px 24px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.18);
+      text-align: center;
+      letter-spacing: 0.06em;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    /* ============================
+       AFTER PANEL
+    ============================ */
+    .after-panel {
+      background: #000;
+    }
+
+    /* AFTER: Nav */
+    .after-nav {
+      display: flex;
+      align-items: center;
+      padding: 14px 24px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,241,45,0.10);
+      gap: 28px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .after-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .after-logo-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .after-nav-links {
+      display: flex;
+      gap: 20px;
+      margin-left: auto;
+    }
+
+    .after-nav-link {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .after-nav-link:hover { color: var(--yellow); }
+
+    .after-nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--yellow);
+      border: 1px solid rgba(255,241,45,0.35);
+      padding: 5px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+    }
+
+    /* AFTER: Hero */
+    .after-hero {
+      position: relative;
+      padding: 52px 32px 56px;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 70% at 10% 100%, #1a0e00 0%, #0d0800 35%, #000 70%);
+    }
+
+    /* Particle canvas area */
+    .particle-field {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255,255,255,0.45);
+      border-radius: 50%;
+      animation: drift linear infinite;
+    }
+
+    @keyframes drift {
+      0% { transform: translateX(0) translateY(0); opacity: 0; }
+      10% { opacity: var(--p-opacity, 0.4); }
+      90% { opacity: var(--p-opacity, 0.4); }
+      100% { transform: translateX(120px) translateY(-30px); opacity: 0; }
+    }
+
+    /* Individual particle overrides */
+    .p1  { width:1px;  height:1px;  left:5%;  top:20%; --p-opacity:0.35; animation-duration:14s; animation-delay:-2s; }
+    .p2  { width:2px;  height:2px;  left:12%; top:65%; --p-opacity:0.55; animation-duration:19s; animation-delay:-7s; }
+    .p3  { width:1px;  height:1px;  left:20%; top:40%; --p-opacity:0.30; animation-duration:11s; animation-delay:-1s; }
+    .p4  { width:2px;  height:2px;  left:28%; top:75%; --p-opacity:0.50; animation-duration:16s; animation-delay:-9s; }
+    .p5  { width:1px;  height:1px;  left:35%; top:15%; --p-opacity:0.40; animation-duration:13s; animation-delay:-3s; }
+    .p6  { width:2px;  height:2px;  left:42%; top:50%; --p-opacity:0.60; animation-duration:20s; animation-delay:-5s; }
+    .p7  { width:1px;  height:1px;  left:50%; top:80%; --p-opacity:0.35; animation-duration:15s; animation-delay:-11s; }
+    .p8  { width:2px;  height:2px;  left:58%; top:30%; --p-opacity:0.45; animation-duration:12s; animation-delay:-4s; }
+    .p9  { width:1px;  height:1px;  left:65%; top:60%; --p-opacity:0.55; animation-duration:18s; animation-delay:-8s; }
+    .p10 { width:2px;  height:2px;  left:73%; top:10%; --p-opacity:0.30; animation-duration:10s; animation-delay:-6s; }
+    .p11 { width:1px;  height:1px;  left:80%; top:45%; --p-opacity:0.50; animation-duration:17s; animation-delay:-2s; }
+    .p12 { width:2px;  height:2px;  left:88%; top:70%; --p-opacity:0.40; animation-duration:14s; animation-delay:-10s; }
+    .p13 { width:1px;  height:1px;  left:8%;  top:85%; --p-opacity:0.35; animation-duration:21s; animation-delay:-1s; }
+    .p14 { width:2px;  height:2px;  left:17%; top:55%; --p-opacity:0.60; animation-duration:13s; animation-delay:-7s; }
+    .p15 { width:1px;  height:1px;  left:25%; top:25%; --p-opacity:0.45; animation-duration:16s; animation-delay:-5s; }
+    .p16 { width:2px;  height:2px;  left:55%; top:90%; --p-opacity:0.30; animation-duration:22s; animation-delay:-3s; }
+    .p17 { width:1px;  height:1px;  left:62%; top:35%; --p-opacity:0.55; animation-duration:11s; animation-delay:-9s; }
+    .p18 { width:2px;  height:2px;  left:78%; top:55%; --p-opacity:0.40; animation-duration:19s; animation-delay:-4s; }
+    .p19 { width:1px;  height:1px;  left:92%; top:20%; --p-opacity:0.50; animation-duration:15s; animation-delay:-6s; }
+    .p20 { width:2px;  height:2px;  left:45%; top:5%;  --p-opacity:0.35; animation-duration:12s; animation-delay:-8s; }
+
+    /* Warm haze overlay */
+    .after-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 0% 100%, rgba(180,90,0,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 20% 80%, rgba(255,150,0,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Amber horizon line */
+    .after-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,241,45,0.6), rgba(255,241,45,0.15), transparent);
+    }
+
+    .after-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .after-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--yellow);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    .after-hero-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 2.6rem;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.25s;
+    }
+
+    .after-hero-sub {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: var(--yellow);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .after-hero-body {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      max-width: 400px;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.55s;
+    }
+
+    .after-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.7s;
+    }
+
+    .after-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border: 1.5px solid rgba(255,241,45,0.7);
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      background: transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .after-cta-primary:hover {
+      background: rgba(255,241,45,0.08);
+      border-color: var(--yellow);
+    }
+
+    .after-cta-arrow {
+      font-size: 0.75rem;
+      color: var(--yellow);
+    }
+
+    .after-cta-secondary {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.40);
+      letter-spacing: 0.06em;
+      cursor: pointer;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 0;
+      left: 32px;
+      width: 60px;
+      height: 2px;
+      background: rgba(255,241,45,0.25);
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .scroll-indicator-bar {
+      width: 30px;
+      height: 100%;
+      background: var(--yellow);
+      animation: scroll-pulse 2.4s ease-in-out infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes scroll-pulse {
+      0%   { transform: translateX(-100%); opacity: 0.3; }
+      50%  { opacity: 1; }
+      100% { transform: translateX(200%); opacity: 0.3; }
+    }
+
+    /* AFTER: Stats */
+    .after-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,241,45,0.10);
+      background: rgba(0,0,0,0.9);
+    }
+
+    .after-stat {
+      padding: 18px 14px;
+      border-right: 1px solid rgba(255,241,45,0.08);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .after-stat:nth-child(1) { animation-delay: 0.9s; }
+    .after-stat:nth-child(2) { animation-delay: 1.0s; }
+    .after-stat:nth-child(3) { animation-delay: 1.1s; }
+    .after-stat:nth-child(4) { animation-delay: 1.2s; border-right: none; }
+
+    .after-stat-num {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 3px;
+      letter-spacing: -0.02em;
+    }
+
+    .after-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.40);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .after-stat-context {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      color: var(--yellow);
+      line-height: 1.4;
+      border-left: 1.5px solid rgba(255,241,45,0.35);
+      padding-left: 7px;
+    }
+
+    /* ============================
+       MOBILE SECTION
+    ============================ */
+    .mobile-section {
+      margin-top: 20px;
+    }
+
+    .mobile-panels {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .mobile-panel-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mobile-panel-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-1);
+      text-align: center;
+    }
+
+    .mobile-panel-label span {
+      display: block;
+      font-size: 0.55rem;
+      color: var(--gray-2);
+      margin-top: 3px;
+    }
+
+    .mobile-panel {
+      width: 375px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0d0d0d;
+    }
+
+    .mobile-panel.after {
+      border-color: rgba(255,241,45,0.20);
+      background: #000;
+      box-shadow: 0 0 40px rgba(255,241,45,0.05);
+    }
+
+    /* Mobile notch bar */
+    .mobile-notch {
+      height: 28px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-notch-bar {
+      width: 80px;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+    }
+
+    /* MOBILE BEFORE: Nav */
+    .mb-before-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mb-before-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--white);
+    }
+
+    .mb-before-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mb-before-hamburger span {
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 2px;
+    }
+
+    /* MOBILE BEFORE: Hero */
+    .mb-before-hero {
+      background: linear-gradient(170deg, #111 0%, #0a0a0a 100%);
+      padding: 36px 20px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mb-before-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.30);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .mb-before-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .mb-before-sub {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .mb-before-cta {
+      display: inline-block;
+      padding: 9px 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+
+    /* MOBILE BEFORE: Stats */
+    .mb-before-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mb-before-stat {
+      padding: 12px 8px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mb-before-stat:last-child { border-right: none; }
+
+    .mb-before-stat-num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .mb-before-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.48rem;
+      color: rgba(255,255,255,0.30);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ==================
+       MOBILE AFTER
+    ================== */
+    .mb-after-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,241,45,0.10);
+      background: rgba(0,0,0,0.9);
+      position: relative;
+      z-index: 2;
+    }
+
+    .mb-after-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mb-after-logo-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    .mb-after-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mb-after-hamburger span {
+      display: block;
+      border-radius: 2px;
+    }
+
+    .mb-after-hamburger span:nth-child(1) { width: 18px; height: 1.5px; background: var(--yellow); }
+    .mb-after-hamburger span:nth-child(2) { width: 12px; height: 1.5px; background: rgba(255,241,45,0.5); }
+    .mb-after-hamburger span:nth-child(3) { width: 8px;  height: 1.5px; background: rgba(255,241,45,0.25); }
+
+    .mb-after-hero {
+      position: relative;
+      padding: 40px 20px 44px;
+      overflow: hidden;
+      background: radial-gradient(ellipse 90% 80% at 0% 100%, #1a0e00 0%, #0c0600 40%, #000 70%);
+    }
+
+    .mb-after-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 0% 100%, rgba(200,100,0,0.09) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .mb-after-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,241,45,0.55), transparent);
+    }
+
+    .mb-after-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .mb-particle {
+      position: absolute;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: drift linear infinite;
+    }
+
+    .mbp1 { width:1px; height:1px; left:8%;  top:25%; animation-duration:16s; animation-delay:-3s; }
+    .mbp2 { width:2px; height:2px; left:22%; top:60%; animation-duration:20s; animation-delay:-7s; }
+    .mbp3 { width:1px; height:1px; left:40%; top:35%; animation-duration:12s; animation-delay:-2s; }
+    .mbp4 { width:1px; height:1px; left:55%; top:75%; animation-duration:18s; animation-delay:-10s; }
+    .mbp5 { width:2px; height:2px; left:70%; top:20%; animation-duration:14s; animation-delay:-5s; }
+    .mbp6 { width:1px; height:1px; left:85%; top:55%; animation-duration:22s; animation-delay:-1s; }
+    .mbp7 { width:2px; height:2px; left:15%; top:80%; animation-duration:15s; animation-delay:-8s; }
+    .mbp8 { width:1px; height:1px; left:60%; top:45%; animation-duration:11s; animation-delay:-4s; }
+
+    .mb-after-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mb-after-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--yellow);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .mb-after-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.9rem;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .mb-after-sub {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--yellow);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .mb-after-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border: 1.5px solid rgba(255,241,45,0.65);
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .mb-after-cta-arrow {
+      color: var(--yellow);
+      font-size: 0.7rem;
+    }
+
+    .mb-scroll-indicator {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 40px;
+      height: 2px;
+      background: rgba(255,241,45,0.20);
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .mb-scroll-indicator-bar {
+      width: 20px;
+      height: 100%;
+      background: var(--yellow);
+      animation: scroll-pulse 2.4s ease-in-out infinite;
+      animation-delay: 0.8s;
+      border-radius: 2px;
+    }
+
+    /* MOBILE AFTER: Stats 2x2 grid */
+    .mb-after-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(255,241,45,0.10);
+    }
+
+    .mb-after-stat {
+      padding: 14px 12px;
+      border-right: 1px solid rgba(255,241,45,0.08);
+      border-bottom: 1px solid rgba(255,241,45,0.08);
+    }
+
+    .mb-after-stat:nth-child(2) { border-right: none; }
+    .mb-after-stat:nth-child(3) { border-bottom: none; }
+    .mb-after-stat:nth-child(4) { border-right: none; border-bottom: none; }
+
+    .mb-after-stat-num {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 2px;
+      letter-spacing: -0.02em;
+    }
+
+    .mb-after-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .mb-after-stat-context {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      color: var(--yellow);
+      line-height: 1.45;
+      border-left: 1.5px solid rgba(255,241,45,0.35);
+      padding-left: 6px;
+    }
+
+    /* ============================
+       FADE UP ANIMATION
+    ============================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================
+       ANNOTATION CALLOUTS
+    ============================ */
+    .annotation-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 14px;
+      margin-bottom: 60px;
+    }
+
+    .annotation-block {
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.03);
+      border-left: 2px solid rgba(255,255,255,0.12);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .annotation-block.after-note {
+      background: rgba(255,241,45,0.04);
+      border-left-color: rgba(255,241,45,0.35);
+    }
+
+    .annotation-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+    }
+
+    .annotation-block.after-note .annotation-title {
+      color: rgba(255,241,45,0.60);
+    }
+
+    .annotation-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 7px;
+    }
+
+    .annotation-bullet {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .annotation-block.after-note .annotation-bullet {
+      background: rgba(255,241,45,0.55);
+    }
+
+    .annotation-text {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+
+    .annotation-block.after-note .annotation-text {
+      color: rgba(255,255,255,0.60);
+    }
+
+    /* ============================
+       FOOTER NOTE
+    ============================ */
+    .page-footer-note {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .page-footer-note p {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.20);
+      letter-spacing: 0.08em;
+    }
+
+    .page-footer-note strong {
+      color: rgba(255,241,45,0.50);
+    }
+
+    /* ============================
+       DIVIDER
+    ============================ */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 48px 0 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-dot"></div>
+    <div class="page-header-title">ELIMFILTERS® &nbsp;·&nbsp; PREMIUM UX MOCKUPS &nbsp;·&nbsp; 01 — HOMEPAGE HERO</div>
+    <div class="page-header-badge">DESKTOP + MOBILE &nbsp;·&nbsp; BEFORE vs AFTER</div>
+  </header>
+
+  <div class="page-wrap">
+
+    <!-- DESKTOP SECTION HEADER -->
+    <div class="section-label">DESKTOP — 1440px VIEWPORT · TWO-PANEL COMPARISON</div>
+
+    <!-- BEFORE / AFTER LABEL BAR -->
+    <div class="comparison-bar">
+      <div class="comparison-label before">
+        <div class="comparison-label-pill">BEFORE</div>
+        <div class="comparison-label-text">Current · Well-structured industrial catalog</div>
+      </div>
+      <div class="comparison-label after">
+        <div class="comparison-label-pill">AFTER</div>
+        <div class="comparison-label-text">Premium UX Layer · Apple meets Palantir · Asset Protection</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP PANELS -->
+    <div class="desktop-panels">
+
+      <!-- ======== BEFORE PANEL ======== -->
+      <div class="panel before-panel">
+
+        <!-- Nav -->
+        <nav class="before-nav">
+          <div class="before-logo">ELIMFILTERS</div>
+          <div class="before-nav-links">
+            <a class="before-nav-link" href="#">Systems</a>
+            <a class="before-nav-link" href="#">Industries</a>
+            <a class="before-nav-link" href="#">Technologies</a>
+            <a class="before-nav-link" href="#">Contact</a>
+          </div>
+        </nav>
+
+        <!-- Hero -->
+        <div class="before-hero">
+          <div class="before-hero-eyebrow">Industrial Filtration Solutions</div>
+          <h1 class="before-hero-title">ENGINE FILTRATION</h1>
+          <p class="before-hero-sub">Heavy-Duty and Light-Duty Filtration Systems<br>for Global Industrial Applications</p>
+          <div class="before-cta">EXPLORE SYSTEMS</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="before-stats">
+          <div class="before-stat">
+            <div class="before-stat-num">99.9%</div>
+            <div class="before-stat-label">Filtration Efficiency</div>
+          </div>
+          <div class="before-stat">
+            <div class="before-stat-num">+45%</div>
+            <div class="before-stat-label">Engine Life</div>
+          </div>
+          <div class="before-stat">
+            <div class="before-stat-num">20K+</div>
+            <div class="before-stat-label">Part Numbers</div>
+          </div>
+          <div class="before-stat">
+            <div class="before-stat-num">GLOBAL</div>
+            <div class="before-stat-label">Distribution</div>
+          </div>
+        </div>
+
+        <div class="before-content-note">// content continues below — products, systems, industries</div>
+      </div>
+
+      <!-- ======== AFTER PANEL ======== -->
+      <div class="panel after-panel after">
+
+        <!-- Nav -->
+        <nav class="after-nav">
+          <div class="after-logo">
+            <div class="after-logo-dot"></div>
+            ELIMFILTERS®
+          </div>
+          <div class="after-nav-links">
+            <a class="after-nav-link" href="#">Systems</a>
+            <a class="after-nav-link" href="#">Industries</a>
+            <a class="after-nav-link" href="#">Knowledge</a>
+            <a class="after-nav-link" href="#">Technologies</a>
+          </div>
+          <div class="after-nav-cta">CONTACT →</div>
+        </nav>
+
+        <!-- Hero -->
+        <div class="after-hero">
+          <!-- Particle field -->
+          <div class="particle-field">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+            <div class="particle p5"></div>
+            <div class="particle p6"></div>
+            <div class="particle p7"></div>
+            <div class="particle p8"></div>
+            <div class="particle p9"></div>
+            <div class="particle p10"></div>
+            <div class="particle p11"></div>
+            <div class="particle p12"></div>
+            <div class="particle p13"></div>
+            <div class="particle p14"></div>
+            <div class="particle p15"></div>
+            <div class="particle p16"></div>
+            <div class="particle p17"></div>
+            <div class="particle p18"></div>
+            <div class="particle p19"></div>
+            <div class="particle p20"></div>
+          </div>
+
+          <div class="after-hero-content">
+            <div class="after-hero-eyebrow">// ELIMFILTERS® · INDUSTRIAL FILTRATION SYSTEMS</div>
+            <h1 class="after-hero-title">PROTECTING INDUSTRIAL<br>ASSETS</h1>
+            <div class="after-hero-sub">THROUGH CONTAMINATION CONTROL</div>
+            <p class="after-hero-body">
+              Equipment failure is not random. Contamination drives 80% of premature wear across engine, hydraulic, fuel, and cabin systems. ELIMFILTERS engineers measurable cleanliness targets at the system level — not the product level.
+            </p>
+            <div class="after-cta-row">
+              <div class="after-cta-primary">
+                EXPLORE SYSTEMS
+                <span class="after-cta-arrow">→</span>
+              </div>
+              <div class="after-cta-secondary">VIEW KNOWLEDGE SYSTEM ↗</div>
+            </div>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div class="scroll-indicator">
+            <div class="scroll-indicator-bar"></div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="after-stats">
+          <div class="after-stat">
+            <div class="after-stat-num">99.9%</div>
+            <div class="after-stat-label">Filtration Efficiency</div>
+            <div class="after-stat-context">Beta₁₅ ≥ 200 per ISO 16889 absolute rating</div>
+          </div>
+          <div class="after-stat">
+            <div class="after-stat-num">+45%</div>
+            <div class="after-stat-label">Engine Life Extension</div>
+            <div class="after-stat-context">8,000 → 11,600+ hours per overhaul cycle</div>
+          </div>
+          <div class="after-stat">
+            <div class="after-stat-num">20K+</div>
+            <div class="after-stat-label">Part Numbers</div>
+            <div class="after-stat-context">Cross-referenced to OEM specs &amp; ISO codes</div>
+          </div>
+          <div class="after-stat">
+            <div class="after-stat-num">6</div>
+            <div class="after-stat-label">Protection Domains</div>
+            <div class="after-stat-context">Air · Fuel · Lube · Hydraulic · Cabin · Compressed</div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /desktop-panels -->
+
+    <!-- ANNOTATION CALLOUTS -->
+    <div class="annotation-row">
+      <div class="annotation-block">
+        <div class="annotation-title">// BEFORE — What works, what's missing</div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Clear product catalog structure — easy to navigate by system type</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Stats present but lack contextual meaning — "+45%" with no reference point</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Hero communicates product category, not the industrial problem being solved</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">No brand differentiation from commodity filter suppliers at the hero level</div>
+        </div>
+      </div>
+      <div class="annotation-block after-note">
+        <div class="annotation-title">// AFTER — Premium UX layer additions</div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Particle simulation creates industrial depth — mine/dusty ambient environment</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Stats gain context lines: "+45%" becomes "8,000 → 11,600+ hours per overhaul"</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Hero anchors on asset protection narrative — positions against commoditization</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Staggered fade-up animations create cadence — eyebrow → headline → CTA</div>
+        </div>
+        <div class="annotation-item">
+          <div class="annotation-bullet"></div>
+          <div class="annotation-text">Yellow accent dot in logo + pulsing scroll bar = brand language consistency</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- MOBILE SECTION HEADER -->
+    <div class="section-label">MOBILE — 375px VIEWPORT · TWO-PANEL COMPARISON</div>
+
+    <!-- MOBILE PANELS -->
+    <div class="mobile-section">
+      <div class="mobile-panels">
+
+        <!-- MOBILE BEFORE -->
+        <div class="mobile-panel-wrap">
+          <div class="mobile-panel-label">
+            BEFORE — Current Mobile
+            <span>375px portrait · stacked layout</span>
+          </div>
+          <div class="mobile-panel">
+            <div class="mobile-notch"><div class="mobile-notch-bar"></div></div>
+
+            <nav class="mb-before-nav">
+              <div class="mb-before-logo">ELIMFILTERS</div>
+              <div class="mb-before-hamburger">
+                <span></span><span></span><span></span>
+              </div>
+            </nav>
+
+            <div class="mb-before-hero">
+              <div class="mb-before-eyebrow">Industrial Filtration Solutions</div>
+              <h1 class="mb-before-title">ENGINE<br>FILTRATION</h1>
+              <p class="mb-before-sub">Heavy-Duty and Light-Duty Filtration Systems for Global Industrial Applications</p>
+              <div class="mb-before-cta">EXPLORE SYSTEMS</div>
+            </div>
+
+            <div class="mb-before-stats">
+              <div class="mb-before-stat">
+                <div class="mb-before-stat-num">99.9%</div>
+                <div class="mb-before-stat-label">Efficiency</div>
+              </div>
+              <div class="mb-before-stat">
+                <div class="mb-before-stat-num">+45%</div>
+                <div class="mb-before-stat-label">Engine Life</div>
+              </div>
+              <div class="mb-before-stat">
+                <div class="mb-before-stat-num">20K+</div>
+                <div class="mb-before-stat-label">Parts</div>
+              </div>
+              <div class="mb-before-stat">
+                <div class="mb-before-stat-num">GLOBAL</div>
+                <div class="mb-before-stat-label">Network</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOBILE AFTER -->
+        <div class="mobile-panel-wrap">
+          <div class="mobile-panel-label" style="color: var(--yellow);">
+            AFTER — Premium Mobile
+            <span style="color: rgba(255,241,45,0.50);">375px portrait · 2×2 stats grid · context lines</span>
+          </div>
+          <div class="mobile-panel after">
+            <div class="mobile-notch" style="background:#000;"><div class="mobile-notch-bar" style="background:rgba(255,241,45,0.20);"></div></div>
+
+            <nav class="mb-after-nav">
+              <div class="mb-after-logo">
+                <div class="mb-after-logo-dot"></div>
+                ELIMFILTERS®
+              </div>
+              <div class="mb-after-hamburger">
+                <span></span><span></span><span></span>
+              </div>
+            </nav>
+
+            <div class="mb-after-hero">
+              <div class="mb-after-particles">
+                <div class="mb-particle mbp1"></div>
+                <div class="mb-particle mbp2"></div>
+                <div class="mb-particle mbp3"></div>
+                <div class="mb-particle mbp4"></div>
+                <div class="mb-particle mbp5"></div>
+                <div class="mb-particle mbp6"></div>
+                <div class="mb-particle mbp7"></div>
+                <div class="mb-particle mbp8"></div>
+              </div>
+
+              <div class="mb-after-hero-content">
+                <div class="mb-after-eyebrow">// ELIMFILTERS® · INDUSTRIAL FILTRATION</div>
+                <h1 class="mb-after-title">PROTECTING<br>INDUSTRIAL<br>ASSETS</h1>
+                <div class="mb-after-sub">THROUGH CONTAMINATION<br>CONTROL</div>
+                <div class="mb-after-cta">
+                  EXPLORE SYSTEMS
+                  <span class="mb-after-cta-arrow">→</span>
+                </div>
+              </div>
+
+              <div class="mb-scroll-indicator">
+                <div class="mb-scroll-indicator-bar"></div>
+              </div>
+            </div>
+
+            <div class="mb-after-stats">
+              <div class="mb-after-stat">
+                <div class="mb-after-stat-num">99.9%</div>
+                <div class="mb-after-stat-label">Filtration Efficiency</div>
+                <div class="mb-after-stat-context">Beta₁₅ ≥ 200 per ISO 16889</div>
+              </div>
+              <div class="mb-after-stat">
+                <div class="mb-after-stat-num">+45%</div>
+                <div class="mb-after-stat-label">Engine Life Extension</div>
+                <div class="mb-after-stat-context">8,000 → 11,600+ hrs per overhaul</div>
+              </div>
+              <div class="mb-after-stat">
+                <div class="mb-after-stat-num">20K+</div>
+                <div class="mb-after-stat-label">Part Numbers</div>
+                <div class="mb-after-stat-context">OEM cross-refs &amp; ISO codes</div>
+              </div>
+              <div class="mb-after-stat">
+                <div class="mb-after-stat-num">6</div>
+                <div class="mb-after-stat-label">Protection Domains</div>
+                <div class="mb-after-stat-context">Air · Fuel · Lube · Hydraulic · Cabin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /mobile-panels -->
+    </div><!-- /mobile-section -->
+
+    <!-- FOOTER NOTE -->
+    <div class="page-footer-note">
+      <p>
+        <strong>ELIMFILTERS® · PREMIUM UX MOCKUPS · FILE 01 OF SERIES</strong>
+        &nbsp;·&nbsp; Single self-contained HTML · No external dependencies except Google Fonts CDN
+        &nbsp;·&nbsp; CSS animations: particle drift · scroll indicator pulse · staggered stat card entrance
+      </p>
+      <p style="margin-top: 8px;">
+        Next: <strong>02-knowledge-system-hub.html</strong> &nbsp;·&nbsp;
+        Design system: Outfit 700 · Inter 400 · JetBrains Mono 400 &nbsp;·&nbsp;
+        Theme: #000 background · #FFF12D accent · Dark industrial aesthetic
+      </p>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+</body>
+</html>

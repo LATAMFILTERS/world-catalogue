@@ -1,0 +1,71 @@
+{
+  "P584764": [],
+  "P951413": [
+    {
+      "manufacturer": "ALCO",
+      "code": "SP8005"
+    }
+  ],
+  "P953571": [
+    {
+      "manufacturer": "ALCO",
+      "code": "SP800"
+    },
+    {
+      "manufacturer": "CROSLAND",
+      "code": "9107"
+    },
+    {
+      "manufacturer": "FIAAM",
+      "code": "FT5315"
+    },
+    {
+      "manufacturer": "KNECHT",
+      "code": "AL12"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "K006116"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "K061460"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II34979"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II39878F"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "40100F"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "I85127004"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "272897SP"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II19770"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II31482"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II17793"
+    },
+    {
+      "manufacturer": "KNORR-BREMSE",
+      "code": "II17793004"
+    }
+  ]
+}

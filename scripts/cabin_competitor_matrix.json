@@ -1,0 +1,41 @@
+{
+  "P627122": [
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A650C"
+    },
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A936C"
+    },
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A310C"
+    },
+    {
+      "manufacturer": "BIG A",
+      "code": "93554"
+    }
+  ],
+  "P158333": [
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A650C"
+    },
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A936C"
+    }
+  ],
+  "P121036": [
+    {
+      "manufacturer": "AC DELCO",
+      "code": "A310C"
+    },
+    {
+      "manufacturer": "BIG A",
+      "code": "93554"
+    }
+  ],
+  "P951372": []
+}

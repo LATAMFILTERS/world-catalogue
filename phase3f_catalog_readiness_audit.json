@@ -1,0 +1,837 @@
+{
+  "generated_at": "2026-06-18T14:55:25.695Z",
+  "base_metrics": {
+    "total_ld_catalog_skus": 7833,
+    "target_tier_e_skus": 2430,
+    "skus_evaluated_in_this_phase": 775
+  },
+  "readiness_categories": {
+    "1_competitor_only": {
+      "count": 453,
+      "pct_of_total_catalog": "5.78",
+      "pct_of_recovered": "18.64"
+    },
+    "2_competitor_and_specs": {
+      "count": 89,
+      "pct_of_total_catalog": "1.14",
+      "pct_of_recovered": "3.66"
+    },
+    "3_competitor_and_apps": {
+      "count": 3,
+      "pct_of_total_catalog": "0.04",
+      "pct_of_recovered": "0.12"
+    },
+    "4_competitor_apps_specs": {
+      "count": 11,
+      "pct_of_total_catalog": "0.14",
+      "pct_of_recovered": "0.45"
+    },
+    "5_oem_competitor_apps_specs": {
+      "count": 113,
+      "pct_of_total_catalog": "1.44",
+      "pct_of_recovered": "4.65"
+    }
+  },
+  "top_100_readiness_skus": [
+    {
+      "elimfilters_sku": "EA52659",
+      "oem_refs": 9,
+      "competitor_refs": 102,
+      "applications": 26,
+      "specifications": 4,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EA52675",
+      "oem_refs": 7,
+      "competitor_refs": 69,
+      "applications": 79,
+      "specifications": 4,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EC52531",
+      "oem_refs": 1,
+      "competitor_refs": 130,
+      "applications": 15,
+      "specifications": 3,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EC54260",
+      "oem_refs": 3,
+      "competitor_refs": 74,
+      "applications": 14,
+      "specifications": 3,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50111",
+      "oem_refs": 1,
+      "competitor_refs": 59,
+      "applications": 12,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50181",
+      "oem_refs": 3,
+      "competitor_refs": 28,
+      "applications": 19,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50211",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50214",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50220",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50224",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50243",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50248",
+      "oem_refs": 1,
+      "competitor_refs": 99,
+      "applications": 49,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50510",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50773",
+      "oem_refs": 34,
+      "competitor_refs": 353,
+      "applications": 63,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL50793",
+      "oem_refs": 30,
+      "competitor_refs": 128,
+      "applications": 279,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51022",
+      "oem_refs": 3,
+      "competitor_refs": 213,
+      "applications": 49,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51211",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51212",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51214",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51218",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51219",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51222",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51223",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51224",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51226",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51234",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51235",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51237",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51239",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51253",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51260",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51261",
+      "oem_refs": 127,
+      "competitor_refs": 926,
+      "applications": 392,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51273",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51275",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51281",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51283",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51290",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51292",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51294",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL51408",
+      "oem_refs": 24,
+      "competitor_refs": 215,
+      "applications": 60,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL52510",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL52610",
+      "oem_refs": 21,
+      "competitor_refs": 543,
+      "applications": 222,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL52810",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL53001",
+      "oem_refs": 13,
+      "competitor_refs": 230,
+      "applications": 20,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL53014",
+      "oem_refs": 29,
+      "competitor_refs": 411,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL53019",
+      "oem_refs": 29,
+      "competitor_refs": 411,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL53410",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54011",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54012",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54015",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54016",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54017",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54022",
+      "oem_refs": 59,
+      "competitor_refs": 731,
+      "applications": 125,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54023",
+      "oem_refs": 35,
+      "competitor_refs": 516,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54025",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54032",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54048",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54053",
+      "oem_refs": 24,
+      "competitor_refs": 215,
+      "applications": 60,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54070",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL54310",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL55015",
+      "oem_refs": 3,
+      "competitor_refs": 211,
+      "applications": 61,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL55040",
+      "oem_refs": 3,
+      "competitor_refs": 211,
+      "applications": 61,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL55042",
+      "oem_refs": 3,
+      "competitor_refs": 211,
+      "applications": 61,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL55110",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL56213",
+      "oem_refs": 21,
+      "competitor_refs": 543,
+      "applications": 222,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL56232",
+      "oem_refs": 21,
+      "competitor_refs": 543,
+      "applications": 222,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL56271",
+      "oem_refs": 21,
+      "competitor_refs": 543,
+      "applications": 222,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL56780",
+      "oem_refs": 3,
+      "competitor_refs": 68,
+      "applications": 15,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL56781",
+      "oem_refs": 3,
+      "competitor_refs": 68,
+      "applications": 15,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57121",
+      "oem_refs": 204,
+      "competitor_refs": 1294,
+      "applications": 782,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57122",
+      "oem_refs": 204,
+      "competitor_refs": 1294,
+      "applications": 782,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57123",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57125",
+      "oem_refs": 204,
+      "competitor_refs": 1294,
+      "applications": 782,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57126",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL57127",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59203",
+      "oem_refs": 60,
+      "competitor_refs": 890,
+      "applications": 16,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59210",
+      "oem_refs": 102,
+      "competitor_refs": 647,
+      "applications": 391,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59301",
+      "oem_refs": 29,
+      "competitor_refs": 411,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59302",
+      "oem_refs": 29,
+      "competitor_refs": 419,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59304",
+      "oem_refs": 29,
+      "competitor_refs": 411,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59308",
+      "oem_refs": 29,
+      "competitor_refs": 411,
+      "applications": 14,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59407",
+      "oem_refs": 56,
+      "competitor_refs": 780,
+      "applications": 130,
+      "specifications": 12,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59409",
+      "oem_refs": 28,
+      "competitor_refs": 390,
+      "applications": 65,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EL59627",
+      "oem_refs": 21,
+      "competitor_refs": 543,
+      "applications": 222,
+      "specifications": 6,
+      "readiness_score": 100
+    },
+    {
+      "elimfilters_sku": "EA52323",
+      "oem_refs": 2,
+      "competitor_refs": 22,
+      "applications": 5,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EA52685",
+      "oem_refs": 3,
+      "competitor_refs": 24,
+      "applications": 4,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EA52758",
+      "oem_refs": 3,
+      "competitor_refs": 43,
+      "applications": 8,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EA53051",
+      "oem_refs": 3,
+      "competitor_refs": 57,
+      "applications": 4,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EA54117",
+      "oem_refs": 1,
+      "competitor_refs": 37,
+      "applications": 5,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EA56122",
+      "oem_refs": 3,
+      "competitor_refs": 51,
+      "applications": 1,
+      "specifications": 4,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL50610",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL51262",
+      "oem_refs": 25,
+      "competitor_refs": 279,
+      "applications": 1,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL51265",
+      "oem_refs": 25,
+      "competitor_refs": 279,
+      "applications": 1,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL51701",
+      "oem_refs": 4,
+      "competitor_refs": 144,
+      "applications": 2,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL51702",
+      "oem_refs": 4,
+      "competitor_refs": 144,
+      "applications": 2,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL52012",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL52013",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL52015",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL52016",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    },
+    {
+      "elimfilters_sku": "EL52018",
+      "oem_refs": 30,
+      "competitor_refs": 445,
+      "applications": 8,
+      "specifications": 6,
+      "readiness_score": 85
+    }
+  ]
+}

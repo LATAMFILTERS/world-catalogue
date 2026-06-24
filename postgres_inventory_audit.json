@@ -1,0 +1,439 @@
+{
+  "generated_at": "2026-06-19T00:07:06.157Z",
+  "tables": [
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "row_count": 278038,
+      "size_bytes": 98459648,
+      "size_pretty": "94 MB"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "row_count": 6643,
+      "size_bytes": 94232576,
+      "size_pretty": "90 MB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "row_count": 135157,
+      "size_bytes": 22405120,
+      "size_pretty": "21 MB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "row_count": 63528,
+      "size_bytes": 13017088,
+      "size_pretty": "12 MB"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "row_count": 44192,
+      "size_bytes": 11714560,
+      "size_pretty": "11 MB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "row_count": 0,
+      "size_bytes": 7618560,
+      "size_pretty": "7440 kB"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "row_count": 5423,
+      "size_bytes": 3776512,
+      "size_pretty": "3688 kB"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "row_count": 2347,
+      "size_bytes": 1818624,
+      "size_pretty": "1776 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "row_count": 5843,
+      "size_bytes": 1286144,
+      "size_pretty": "1256 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_catalog",
+      "row_count": 6306,
+      "size_bytes": 917504,
+      "size_pretty": "896 kB"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "row_count": 2364,
+      "size_bytes": 868352,
+      "size_pretty": "848 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "row_count": 0,
+      "size_bytes": 835584,
+      "size_pretty": "816 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "row_count": 0,
+      "size_bytes": 827392,
+      "size_pretty": "808 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_production_readiness",
+      "row_count": 6306,
+      "size_bytes": 819200,
+      "size_pretty": "800 kB"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "row_count": 2333,
+      "size_bytes": 638976,
+      "size_pretty": "624 kB"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "row_count": 2347,
+      "size_bytes": 548864,
+      "size_pretty": "536 kB"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "row_count": 1963,
+      "size_bytes": 548864,
+      "size_pretty": "536 kB"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master",
+      "row_count": 1439,
+      "size_bytes": 417792,
+      "size_pretty": "408 kB"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "row_count": 903,
+      "size_bytes": 368640,
+      "size_pretty": "360 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "row_count": 1124,
+      "size_bytes": 319488,
+      "size_pretty": "312 kB"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "row_count": 1189,
+      "size_bytes": 286720,
+      "size_pretty": "280 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "row_count": 0,
+      "size_bytes": 212992,
+      "size_pretty": "208 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "row_count": 0,
+      "size_bytes": 81920,
+      "size_pretty": "80 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_systems",
+      "row_count": 0,
+      "size_bytes": 65536,
+      "size_pretty": "64 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_industries",
+      "row_count": 6,
+      "size_bytes": 49152,
+      "size_pretty": "48 kB"
+    },
+    {
+      "schema": "public",
+      "table": "product_family",
+      "row_count": 10,
+      "size_bytes": 49152,
+      "size_pretty": "48 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problems",
+      "row_count": 12,
+      "size_bytes": 49152,
+      "size_pretty": "48 kB"
+    },
+    {
+      "schema": "public",
+      "table": "fleetguard_true_cross",
+      "row_count": 5,
+      "size_bytes": 32768,
+      "size_pretty": "32 kB"
+    },
+    {
+      "schema": "public",
+      "table": "ai_usage_log",
+      "row_count": 4,
+      "size_bytes": 32768,
+      "size_pretty": "32 kB"
+    },
+    {
+      "schema": "public",
+      "table": "equipment_vin",
+      "row_count": 0,
+      "size_bytes": 24576,
+      "size_pretty": "24 kB"
+    },
+    {
+      "schema": "public",
+      "table": "ai_content_pages",
+      "row_count": 0,
+      "size_bytes": 24576,
+      "size_pretty": "24 kB"
+    },
+    {
+      "schema": "public",
+      "table": "ai_messages",
+      "row_count": 0,
+      "size_bytes": 24576,
+      "size_pretty": "24 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_make_industries",
+      "row_count": 73,
+      "size_bytes": 24576,
+      "size_pretty": "24 kB"
+    },
+    {
+      "schema": "public",
+      "table": "ai_sessions",
+      "row_count": 0,
+      "size_bytes": 16384,
+      "size_pretty": "16 kB"
+    },
+    {
+      "schema": "public",
+      "table": "v_unmatched_makes",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problem_systems",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    },
+    {
+      "schema": "public",
+      "table": "v_products_total",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    },
+    {
+      "schema": "public",
+      "table": "v_makes_with_models",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    },
+    {
+      "schema": "public",
+      "table": "v_flagged_count",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    },
+    {
+      "schema": "public",
+      "table": "v_products_with_eq",
+      "row_count": 0,
+      "size_bytes": 8192,
+      "size_pretty": "8192 bytes"
+    }
+  ],
+  "top_20_largest": [
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "row_count": 278038,
+      "size_bytes": 98459648,
+      "size_pretty": "94 MB"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "row_count": 6643,
+      "size_bytes": 94232576,
+      "size_pretty": "90 MB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "row_count": 135157,
+      "size_bytes": 22405120,
+      "size_pretty": "21 MB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "row_count": 63528,
+      "size_bytes": 13017088,
+      "size_pretty": "12 MB"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "row_count": 44192,
+      "size_bytes": 11714560,
+      "size_pretty": "11 MB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "row_count": 0,
+      "size_bytes": 7618560,
+      "size_pretty": "7440 kB"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "row_count": 5423,
+      "size_bytes": 3776512,
+      "size_pretty": "3688 kB"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "row_count": 2347,
+      "size_bytes": 1818624,
+      "size_pretty": "1776 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "row_count": 5843,
+      "size_bytes": 1286144,
+      "size_pretty": "1256 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_catalog",
+      "row_count": 6306,
+      "size_bytes": 917504,
+      "size_pretty": "896 kB"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "row_count": 2364,
+      "size_bytes": 868352,
+      "size_pretty": "848 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "row_count": 0,
+      "size_bytes": 835584,
+      "size_pretty": "816 kB"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "row_count": 0,
+      "size_bytes": 827392,
+      "size_pretty": "808 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_production_readiness",
+      "row_count": 6306,
+      "size_bytes": 819200,
+      "size_pretty": "800 kB"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "row_count": 2333,
+      "size_bytes": 638976,
+      "size_pretty": "624 kB"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "row_count": 2347,
+      "size_bytes": 548864,
+      "size_pretty": "536 kB"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "row_count": 1963,
+      "size_bytes": 548864,
+      "size_pretty": "536 kB"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master",
+      "row_count": 1439,
+      "size_bytes": 417792,
+      "size_pretty": "408 kB"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "row_count": 903,
+      "size_bytes": 368640,
+      "size_pretty": "360 kB"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "row_count": 1124,
+      "size_bytes": 319488,
+      "size_pretty": "312 kB"
+    }
+  ],
+  "inventory_columns": [],
+  "identified_tables": {
+    "master_product_table": "ld_catalog.ld_product_catalog",
+    "inventory_table": null,
+    "oem_table": "ld_catalog.ld_oem_cross_references",
+    "competitor_cross_references_table": "public.fleetguard_true_cross",
+    "vehicle_applications_table": "ld_catalog.ld_vehicle_applications"
+  },
+  "queries_used": [
+    "\n    SELECT \n      schemaname, \n      relname as tablename, \n      n_live_tup as row_count, \n      pg_total_relation_size(relid) as table_size_bytes,\n      pg_size_pretty(pg_total_relation_size(relid)) as table_size_pretty\n    FROM pg_stat_user_tables\n    ORDER BY pg_total_relation_size(relid) DESC;\n  ",
+    "\n    SELECT \n      table_schema as schema, \n      table_name as table, \n      column_name as column, \n      data_type \n    FROM information_schema.columns \n    WHERE table_schema NOT IN ('information_schema', 'pg_catalog')\n    AND (\n      column_name ILIKE '%inventory%' OR\n      column_name ILIKE '%stock%' OR\n      column_name ILIKE '%quantity%' OR\n      column_name ILIKE '%qty%' OR\n      column_name ILIKE '%warehouse%' OR\n      column_name ILIKE '%availability%'\n    )\n    ORDER BY table_schema, table_name, column_name;\n  "
+  ]
+}

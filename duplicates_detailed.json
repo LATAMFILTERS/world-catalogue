@@ -1,0 +1,274 @@
+[
+  {
+    "codigo_base": "3904840S",
+    "sku": "EA14840",
+    "created_at": "2026-06-11T08:23:07.364Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 6
+  },
+  {
+    "codigo_base": "3904840S",
+    "sku": "EF94840",
+    "created_at": "2026-06-11T18:49:52.314Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 5
+  },
+  {
+    "codigo_base": "CV50304",
+    "sku": "EF90304",
+    "created_at": "2026-06-11T08:25:40.592Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 191
+  },
+  {
+    "codigo_base": "CV50304",
+    "sku": "EL80304",
+    "created_at": "2026-06-11T18:50:23.975Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 45
+  },
+  {
+    "codigo_base": "CV50840",
+    "sku": "EF90840",
+    "created_at": "2026-06-11T08:25:40.584Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 28
+  },
+  {
+    "codigo_base": "CV50840",
+    "sku": "EL80840",
+    "created_at": "2026-06-11T18:50:23.977Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 22
+  },
+  {
+    "codigo_base": "CV50841",
+    "sku": "EF90841",
+    "created_at": "2026-06-11T08:25:40.541Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 140
+  },
+  {
+    "codigo_base": "CV50841",
+    "sku": "EL80841",
+    "created_at": "2026-06-11T18:50:23.979Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 10
+  },
+  {
+    "codigo_base": "CV50842",
+    "sku": "EF90842",
+    "created_at": "2026-06-11T08:25:40.524Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 218
+  },
+  {
+    "codigo_base": "CV50842",
+    "sku": "EL80842",
+    "created_at": "2026-06-11T18:50:23.981Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 133
+  },
+  {
+    "codigo_base": "CV50843",
+    "sku": "EF90843",
+    "created_at": "2026-06-11T08:25:40.538Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 13
+  },
+  {
+    "codigo_base": "CV50843",
+    "sku": "EL80843",
+    "created_at": "2026-06-11T18:50:23.984Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 7
+  },
+  {
+    "codigo_base": "CV50850",
+    "sku": "EF90850",
+    "created_at": "2026-06-11T08:25:40.566Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 254
+  },
+  {
+    "codigo_base": "CV50850",
+    "sku": "EL80850",
+    "created_at": "2026-06-11T18:50:23.989Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 109
+  },
+  {
+    "codigo_base": "CV50854",
+    "sku": "EF90854",
+    "created_at": "2026-06-11T08:25:40.576Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 29
+  },
+  {
+    "codigo_base": "CV50854",
+    "sku": "EL80854",
+    "created_at": "2026-06-11T18:50:24.061Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 6
+  },
+  {
+    "codigo_base": "CV50855",
+    "sku": "EF90855",
+    "created_at": "2026-06-11T08:25:40.569Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 14
+  },
+  {
+    "codigo_base": "CV50855",
+    "sku": "EL80855",
+    "created_at": "2026-06-11T18:50:24.659Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 12
+  },
+  {
+    "codigo_base": "SP1480",
+    "sku": "EF91480",
+    "created_at": "2026-06-11T08:31:07.770Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP1480",
+    "sku": "EA11480",
+    "created_at": "2026-06-11T18:51:11.165Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP1490",
+    "sku": "EF94901",
+    "created_at": "2026-06-11T08:31:11.706Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP1490",
+    "sku": "EA11490",
+    "created_at": "2026-06-11T18:51:11.167Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP1623",
+    "sku": "EF91623",
+    "created_at": "2026-06-11T08:31:10.364Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP1623",
+    "sku": "EA11623",
+    "created_at": "2026-06-11T18:51:11.669Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 1
+  },
+  {
+    "codigo_base": "SP72196",
+    "sku": "EF92196",
+    "created_at": "2026-06-11T08:30:57.061Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 3
+  },
+  {
+    "codigo_base": "SP72196",
+    "sku": "EA12196",
+    "created_at": "2026-06-11T18:51:11.676Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 3
+  },
+  {
+    "codigo_base": "SP72197",
+    "sku": "EF92197",
+    "created_at": "2026-06-11T08:31:06.281Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 3
+  },
+  {
+    "codigo_base": "SP72197",
+    "sku": "EA12197",
+    "created_at": "2026-06-11T18:51:11.678Z",
+    "oem": 0,
+    "cross": 0,
+    "equip": 3
+  },
+  {
+    "codigo_base": "ST2006HH",
+    "sku": "EF92006",
+    "created_at": "2026-05-31T09:24:00.831Z",
+    "oem": 5,
+    "cross": 87,
+    "equip": 2448
+  },
+  {
+    "codigo_base": "ST2006HH",
+    "sku": "EF90062",
+    "created_at": "2026-06-11T08:32:56.173Z",
+    "oem": 2,
+    "cross": 82,
+    "equip": 0
+  },
+  {
+    "codigo_base": "TF15006",
+    "sku": "EF95006",
+    "created_at": "2026-05-31T09:24:03.463Z",
+    "oem": 43,
+    "cross": 366,
+    "equip": 29
+  },
+  {
+    "codigo_base": "TF15006",
+    "sku": "EF90065",
+    "created_at": "2026-06-11T08:29:02.656Z",
+    "oem": 159,
+    "cross": 296,
+    "equip": 820
+  },
+  {
+    "codigo_base": "TF15017",
+    "sku": "EF95017",
+    "created_at": "2026-06-11T08:25:40.581Z",
+    "oem": 193,
+    "cross": 352,
+    "equip": 1923
+  },
+  {
+    "codigo_base": "TF15017",
+    "sku": "EF90175",
+    "created_at": "2026-06-11T08:30:10.382Z",
+    "oem": 17,
+    "cross": 278,
+    "equip": 0
+  }
+]

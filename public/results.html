@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELIMFILTERS — Search Results & AI Consultation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --y: #FFF12D;
+      --y2: rgba(255,241,45,0.12);
+      --bg: #000;
+      --border: rgba(255,255,255,0.07);
+      --muted: rgba(255,255,255,0.35);
+    }
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-text img { height: 32px; }
+    .back-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--y);
+      text-decoration: none;
+      border: 1px solid rgba(255,241,45,0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(255,241,45,0.1); }
+
+    /* Layout — full width results */
+    .layout {
+      flex: 1;
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Results Panel */
+    .results-panel {
+      width: 100%;
+    }
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .results-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .status-msg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      padding: 3rem 0;
+    }
+
+    /* ── FLOATING AI WIDGET ── */
+    #ai-widget {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    /* Toggle button */
+    #ai-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0d0d0d;
+      border: 1px solid rgba(255,241,45,0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      flex-shrink: 0;
+    }
+    #ai-toggle:hover { border-color: var(--y); box-shadow: 0 0 12px rgba(255,241,45,0.2); }
+    #ai-toggle img { width: 24px; height: 24px; object-fit: contain; }
+    #ai-toggle .pulse {
+      width: 6px; height: 6px;
+      background: var(--y);
+      border-radius: 50%;
+      position: absolute;
+      top: 6px; right: 6px;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+    /* Chat drawer */
+    #ai-drawer {
+      width: 300px;
+      max-height: 420px;
+      background: rgba(8,8,8,0.96);
+      border: 1px solid rgba(255,241,45,0.18);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      backdrop-filter: blur(20px);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      transform: scale(0.92);
+      opacity: 0;
+      pointer-events: none;
+    }
+    #ai-drawer.open {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Drawer header */
+    .ai-header {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(12,12,12,0.9);
+    }
+    .ai-header img.e-logo {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+    .ai-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.14em;
+      color: var(--y);
+      flex: 1;
+    }
+    .ai-dot {
+      width: 5px; height: 5px;
+      background: var(--y);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: blink 2s infinite;
+    }
+
+    /* Chat messages */
+    .ai-chat {
+      flex: 1;
+      padding: 0.75rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .msg {
+      max-width: 90%;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px;
+    }
+    .msg.user { background: #191919; align-self: flex-end; border: 1px solid rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); }
+    .msg.ai { background: rgba(255,241,45,0.03); align-self: flex-start; border: 1px solid rgba(255,241,45,0.1); color: rgba(255,255,255,0.8); }
+    .msg.ai .ai-signature { display: block; margin-top: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.42rem; color: rgba(255,241,45,0.5); letter-spacing: 0.1em; }
+
+    /* Input area */
+    .ai-input-area {
+      padding: 0.6rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(10,10,10,0.9);
+      display: flex;
+      gap: 0.4rem;
+    }
+    .ai-input {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: #fff;
+      padding: 0.5rem 0.65rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      outline: none;
+      min-width: 0;
+    }
+    .ai-input:focus { border-color: rgba(255,241,45,0.4); }
+    .ai-btn {
+      background: var(--y);
+      border: none;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 0 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .ai-btn:hover { background: #ffe800; }
+    
+    /* Result Cards */
+    .result-card { border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.5rem; margin-bottom: 0.65rem; background: rgba(255,255,255,0.012); position: relative; transition: border-color 0.2s; }
+    .result-card:hover { border-color: rgba(255,241,45,0.22); }
+    .card-sku { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: var(--y); letter-spacing: 0.07em; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+    .ctag { font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; padding: 0.18rem 0.5rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); text-transform: uppercase; }
+    .ctag.tech { border-color: rgba(255,241,45,0.22); color: rgba(255,241,45,0.7); background: rgba(255,241,45,0.04); }
+    .ctag.sys { border-color: rgba(100,200,255,0.2); color: rgba(100,200,255,0.7); background: rgba(100,200,255,0.04); }
+    .ctag.ld { border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.3); }
+    .card-specs { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.7rem 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.04); }
+    .spec-l { font-family: 'JetBrains Mono', monospace; font-size: 0.48rem; color: rgba(255,255,255,0.25); text-transform: uppercase; margin-bottom: 0.15rem; }
+    .spec-v { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: rgba(255,255,255,0.82); }
+    .card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 0.5rem; line-height: 1.5; }
+    .card-refs { margin-top: 0.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: rgba(255,255,255,0.25); line-height: 1.8; }
+    .ref-brand { color: rgba(255,255,255,0.45); margin-right: 0.4rem; }
+    .group-header { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.18em; color: rgba(100,200,255,0.5); text-transform: uppercase; margin: 1.5rem 0 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(100,200,255,0.1); }
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/" class="logo-text">
+      <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS">
+      <span>PART SEARCH</span>
+    </a>
+    <a href="/" class="back-btn">← NEW SEARCH</a>
+  </nav>
+
+  <div class="layout">
+    <main class="results-panel" id="results-container">
+      <div class="status-msg" id="loading-indicator">// ANALYZING DATABASE...</div>
+    </main>
+  </div>
+
+  <!-- ── FLOATING AI WIDGET ── -->
+  <div id="ai-widget">
+    <div id="ai-drawer">
+      <div class="ai-header">
+        <img class="e-logo" src="/e.png" alt="ELIMFILTERS">
+        <span class="ai-title">ASSET PROTECTION AI</span>
+        <span class="ai-dot"></span>
+      </div>
+      <div class="ai-chat" id="chat-window">
+        <div class="msg ai">
+          Sistema activo. Soy el Ingeniero de Confiabilidad ELIMFILTERS. Consulta sobre TCO, agua en combustible, Ratio Beta o contaminación.
+          <span class="ai-signature">ELIMFILTERS AI · TERMINAL V3.8</span>
+        </div>
+      </div>
+      <div class="ai-input-area">
+        <input type="text" id="ai-input" class="ai-input" placeholder="Consulta técnica..." autocomplete="off">
+        <button id="ai-btn" class="ai-btn">↑</button>
+      </div>
+    </div>
+    <button id="ai-toggle" aria-label="Toggle AI">
+      <span class="pulse"></span>
+      <img src="/e.png" alt="AI">
+    </button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get('mode') || 'part';
+    const q = urlParams.get('q');
+    const model = urlParams.get('model');
+    const type = urlParams.get('type');
+    const engine = urlParams.get('engine');
+
+    const resultsContainer = document.getElementById('results-container');
+    const chatWindow = document.getElementById('chat-window');
+    const aiInput = document.getElementById('ai-input');
+    const aiBtn = document.getElementById('ai-btn');
+
+    let currentContext = { searchedPart: q, model: model, equipment: type };
+
+    async function executeSearch() {
+      try {
+        let url = '';
+        if (mode === 'part' && q) {
+          url = \`/api/search?q=\${encodeURIComponent(q)}\`;
+        } else if (mode === 'vin' && model) {
+          url = \`/api/filters/search/vin?model=\${encodeURIComponent(model)}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+        } else if (mode === 'equip' && model) {
+          url = \`/api/filters/search/equipment?model=\${encodeURIComponent(model)}\${type ? '&type='+encodeURIComponent(type) : ''}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+        }
+
+        if (!url) {
+          resultsContainer.innerHTML = '<div class="status-msg">// INVALID SEARCH PARAMETERS</div>';
+          return;
+        }
+
+        const res = await fetch(url);
+        const data = await res.json();
+        
+        const items = data.products || data.filters || [];
+        renderResults(items);
+        
+        if (items.length > 0) {
+          const sku = items[0].elimfilters_sku || items[0].sku;
+          currentContext.primaryResult = sku;
+        }
+      } catch (err) {
+        resultsContainer.innerHTML = '<div class="status-msg">// ERROR FETCHING CATALOG DATA</div>';
+      }
+    }
+
+    function renderResults(items) {
+      if (!items || items.length === 0) {
+        resultsContainer.innerHTML = '<div class="status-msg">// NO ASSETS FOUND MATCHING PARAMETERS</div>';
+        return;
+      }
+      
+      let html = \`<div class="results-header"><span class="results-count">// \${items.length} MATCHES DETECTED</span></div>\`;
+      
+      html += items.map(p => {
+        const sku = p.elimfilters_sku || p.sku;
+        const specs = [
+          p.height_mm && ['HEIGHT', p.height_mm + ' mm'],
+          p.outer_diameter_mm && ['OD', p.outer_diameter_mm + ' mm'],
+          p.micron_rating && ['MICRON', p.micron_rating + ' µm'],
+          p.nominal_efficiency && ['EFFICIENCY', p.nominal_efficiency + '%']
+        ].filter(Boolean);
+
+        return \`
+          <div class="result-card">
+            <div class="card-sku">\${sku}</div>
+            <div class="card-tags">
+              \${p.filter_type ? \`<span class="ctag">\${p.filter_type}</span>\` : ''}
+              \${p.technology ? \`<span class="ctag tech">\${p.technology}</span>\` : ''}
+            </div>
+            \${p.description ? \`<div class="card-desc">\${p.description}</div>\` : ''}
+            <div class="card-specs">
+              \${specs.map(([l, v]) => \`<div><div class="spec-l">\${l}</div><div class="spec-v">\${v}</div></div>\`).join('')}
+            </div>
+          </div>
+        \`;
+      }).join('');
+      
+      resultsContainer.innerHTML = html;
+    }
+
+    async function sendMessage() {
+      const text = aiInput.value.trim();
+      if (!text) return;
+      
+      aiInput.value = '';
+      
+      chatWindow.innerHTML += \`<div class="msg user">\${text}</div>\`;
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      
+      const loadingId = 'loading-' + Date.now();
+      chatWindow.innerHTML += \`<div id="\${loadingId}" class="msg ai"><span class="loading-dots">// ENGINEERING ANALYSIS IN PROGRESS</span></div>\`;
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+
+      try {
+        const payload = {
+          messages: [{ role: 'user', content: text }],
+          context: currentContext
+        };
+
+        const res = await fetch('/api/ai/consult-v2', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        document.getElementById(loadingId).remove();
+        
+        let aiHtml = marked.parse(data.answer || '// ANALYSIS FAILED');
+        chatWindow.innerHTML += \`<div class="msg ai">\${aiHtml}<span class="ai-signature">ELIMFILTERS AI · \${data.specialist || 'SYSTEM'}</span></div>\`;
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      } catch (err) {
+        document.getElementById(loadingId).innerHTML = '// CONNECTION DROPPED';
+      }
+    }
+
+    aiBtn.addEventListener('click', sendMessage);
+    aiInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+    // Toggle AI drawer
+    const aiToggle = document.getElementById('ai-toggle');
+    const aiDrawer = document.getElementById('ai-drawer');
+    aiToggle.addEventListener('click', () => {
+      aiDrawer.classList.toggle('open');
+      if (aiDrawer.classList.contains('open')) {
+        document.getElementById('ai-input').focus();
+      }
+    });
+
+    executeSearch();
+  </script>
+</body>
+</html>
