@@ -1,0 +1,44 @@
+name: Resolve Orphan SKUs
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no DB writes)?'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call resolve-orphan-skus endpoint
+        run: |
+          DRY_PARAM=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_PARAM="?dry=1"
+          fi
+
+          echo "Running with dry_run=${{ github.event.inputs.dry_run }}"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            --max-time 120 \
+            -X POST \
+            -H "Authorization: Bearer ${{ secrets.ADMIN_KEY }}" \
+            "https://elimfilters-search-pro.onrender.com/api/admin/resolve-orphan-skus${DRY_PARAM}")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response:"
+          echo "$BODY" | python3 -m json.tool || echo "$BODY"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::Endpoint returned HTTP $HTTP_CODE"
+            exit 1
+          fi
