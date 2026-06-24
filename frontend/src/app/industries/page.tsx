@@ -1,486 +1,176 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { catalogue, getSlug } from '@/lib/catalogue';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const gridVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
-};
-
-function IndustryCard({
-  industry,
-  index,
-}: {
-  industry: (typeof catalogue.industries)[number];
-  index: number;
-}) {
-  const slug = getSlug(industry.name);
-  const ref = useRef<HTMLDivElement>(null);
-  const [spot, setSpot] = useState({ x: 50, y: 50, opacity: 0 });
-  const [hovered, setHovered] = useState(false);
-
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const r = ref.current.getBoundingClientRect();
-    setSpot({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100, opacity: 1 });
-  };
-
-  return (
-    <motion.div
-      variants={cardVariants}
-      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -5 }}
-    >
-      <Link href={`/industries/${slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-        <div
-          ref={ref}
-          onMouseMove={onMove}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => { setSpot(s => ({ ...s, opacity: 0 })); setHovered(false); }}
-          style={{
-            position: 'relative',
-            background: '#050505',
-            border: `1px solid ${hovered ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.07)'}`,
-            borderRadius: '2px',
-            padding: '2.25rem',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            overflow: 'hidden',
-            transition: 'border-color 0.3s ease',
-          }}
-        >
-          {/* Spotlight glow */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: `radial-gradient(280px circle at ${spot.x}% ${spot.y}%, rgba(255,241,45,0.06), transparent 70%)`,
-              opacity: spot.opacity,
-              transition: 'opacity 0.3s ease',
-              pointerEvents: 'none',
-            }}
-          />
-
-          {/* Animated yellow top bar */}
-          <motion.div
-            animate={{ scaleX: hovered ? 1 : 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              position: 'absolute',
-              top: 0, left: 0, right: 0,
-              height: '2px',
-              background: '#FFF12D',
-              transformOrigin: 'left',
-            }}
-          />
-
-          {/* Index */}
-          <span
-            style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              color: hovered ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.15)',
-              letterSpacing: '0.1em',
-              marginBottom: '1.75rem',
-              transition: 'color 0.3s ease',
-            }}
-          >
-            {String(index + 1).padStart(2, '0')}
-          </span>
-
-          {/* Subtitle tag */}
-          {industry.subtitle && (
-            <p
-              style={{
-                fontSize: '0.65rem',
-                color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontWeight: 500,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                margin: '0 0 0.6rem',
-              }}
-            >
-              {industry.subtitle}
-            </p>
-          )}
-
-          {/* Industry name */}
-          <h3
-            style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
-              fontWeight: 700,
-              fontFamily: 'Space Grotesk, sans-serif',
-              color: hovered ? '#fff' : 'rgba(255,255,255,0.85)',
-              margin: '0 0 1.25rem',
-              lineHeight: 1.2,
-              textTransform: 'uppercase',
-              letterSpacing: '0.03em',
-              transition: 'color 0.3s ease',
-            }}
-          >
-            {industry.name}
-          </h3>
-
-          {/* Description excerpt */}
-          <p
-            style={{
-              fontSize: '0.82rem',
-              lineHeight: 1.65,
-              color: 'rgba(255,255,255,0.45)',
-              fontFamily: 'Outfit, sans-serif',
-              margin: 0,
-              flexGrow: 1,
-              display: '-webkit-box',
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-            }}
-          >
-            {industry.description}
-          </p>
-
-          {/* CTA */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              marginTop: '1.75rem',
-              paddingTop: '1.25rem',
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-            }}
-          >
-            <motion.span
-              animate={{ x: hovered ? 4 : 0 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontSize: '0.7rem',
-                fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
-                letterSpacing: '0.12em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-              }}
-            >
-              LEARN MORE →
-            </motion.span>
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  );
-}
+const INDUSTRIES = [
+  { slug: 'mining',           label: 'Mining',            src: '/images/mineria-1.avif' },
+  { slug: 'agriculture',      label: 'Agriculture',       src: '/images/agricultor-1.avif' },
+  { slug: 'oil-gas',          label: 'Oil & Gas',         src: '/images/ingpetrolero.avif' },
+  { slug: 'marine',           label: 'Marine',            src: '/images/ingmarine.avif' },
+  { slug: 'power-generation', label: 'Power Generation',  src: '/images/generatorsupervisor.avif' },
+  { slug: 'heavy-transport',  label: 'Heavy Transport',   src: '/images/transport.avif' },
+  { slug: 'construction',     label: 'Construction',      src: '/images/chino-construction.avif' },
+  { slug: 'automotive',       label: 'Automotive',        src: '/images/Automotive-1.avif' },
+  { slug: 'bus-coach',        label: 'Bus & Coach',       src: '/images/bus-hero.avif' },
+  { slug: 'manufacturing',    label: 'Manufacturing',     src: '/images/manufactura.avif' },
+  { slug: 'railway',          label: 'Railway',           src: '/images/ing-railway.avif' },
+  { slug: 'waste-municipal',  label: 'Waste & Municipal', src: '/images/wasted-municipal.avif' },
+];
 
 export default function IndustriesPage() {
-  const industriesSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Industrial Filtration Systems by Industry',
-    url: 'https://elimfilters.com/industries/',
-    itemListElement: catalogue.industries.map((industry, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: industry.title,
-      url: `https://elimfilters.com/industries/${getSlug(industry.name)}`,
-      description: industry.description,
-    })),
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
-    ],
-  };
-
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Industrial Filtration Systems by Industry',
-    description: 'ELIMFILTERS® serves 12 critical industries with engineered asset protection filtration systems engineered to ISO and SAE specification.',
-    url: 'https://elimfilters.com/industries/',
-    datePublished: '2026-01-15',
-    dateModified: '2026-05-25',
-    author: {
-      '@type': 'Organization',
-      name: 'ELIMFILTERS®',
-      url: 'https://elimfilters.com',
-    },
-  };
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What industries require industrial filtration systems?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Every heavy-equipment and process industry requires filtration. Mining, agriculture, marine, oil & gas, power generation, construction, manufacturing, transportation, and waste management all depend on asset protection filtration to prevent contamination-related failures in engines, hydraulic systems, fuel circuits, and pneumatic systems.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is asset protection filtration?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Asset protection filtration is a system-level approach that targets contamination control via ISO and SAE standards, not product commodity selection. It maintains measurable cleanliness codes (ISO 4406, ISO 16889) across all fluid circuits—oil, fuel, hydraulic, coolant, and air—to extend equipment lifespan 30-50% and reduce unplanned downtime.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does mining filtration differ from standard industrial filtration?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Mining environments expose equipment to dust concentrations exceeding 5,000 mg/m³—far above ISO 5011 test standards. Mining filtration systems must handle bypass-protected air intakes, fuel circuit water removal (H2O intrusion from rain and humidity), and hydraulic system contamination control for high-pressure hoist and crush systems.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What filtration standards does ELIMFILTERS® comply with?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'ELIMFILTERS® systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Does ELIMFILTERS® serve offshore oil and gas platforms?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. ELIMFILTERS® marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the typical equipment lifespan extension from system-level filtration?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'System-level filtration targeting ISO 16/14/11 cleanliness codes (vs. commodity approaches at 19/17/14) extends bearing and engine component life 3-5x. In mining equipment, this translates to 15,000-25,000 operational hours vs. 2,000-3,000 hours under poor contamination control.',
-        },
-      },
-    ],
-  };
-
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/" style={{
-        position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
-        display: 'flex', alignItems: 'center', gap: '0.4rem',
-        background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
-        borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
-        letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
-        backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
-        transition: 'background 0.2s, border-color 0.2s',
-      }}>← HOME</Link>
+    <main style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'ELIMFILTERS Industrial Sectors',
+            url: 'https://elimfilters.com/industries/',
+            numberOfItems: INDUSTRIES.length,
+            itemListElement: INDUSTRIES.map((ind, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              item: { '@type': 'Thing', name: ind.label, url: `https://elimfilters.com/industries/${ind.slug}` },
+            })),
+          }),
+        }}
+      />
 
+      <Navigation />
+
+      {/* Hero */}
       <section style={{
-        paddingTop: '4rem',
-        background: '#000',
-        position: 'relative',
-        overflow: 'hidden',
+        paddingTop: '140px',
+        paddingBottom: '60px',
+        textAlign: 'center',
+        padding: '140px 2rem 60px',
       }}>
-        {/* Hero background image */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            color: '#fff',
+            margin: '0 auto 1rem',
+            maxWidth: '700px',
+          }}
+        >
+          Industries We Serve
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
+            color: 'rgba(255,255,255,0.45)',
+            maxWidth: '520px',
+            margin: '0 auto',
+            lineHeight: 1.7,
+          }}
+        >
+          Contamination control solutions engineered for the specific demands of each industrial sector.
+        </motion.p>
+      </section>
+
+      {/* Grid */}
+      <section style={{ maxWidth: '1300px', margin: '0 auto', padding: '0 1.5rem 6rem' }}>
         <div style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'url(/images/operador1_converted.avif)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.18,
-          zIndex: 0,
-        }} />
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '4rem 2rem 1rem', position: 'relative', zIndex: 1 }}>
-          <motion.p
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              textTransform: 'uppercase',
-              marginBottom: '0.75rem',
-            }}
-          >
-            // INDUSTRIES
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 900,
-              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
-              color: 'rgba(255,255,255,0.85)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.03em',
-              lineHeight: 1.1,
-              marginBottom: '3rem',
-            }}
-          >
-            Industrial Filtration Systems by Industry
-          </motion.h1>
-
-          {/* Direct Answer Block — GEO Optimization */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              background: 'rgba(255,241,45,0.04)',
-              border: '1px solid rgba(255,241,45,0.15)',
-              borderRadius: '4px',
-              padding: '1.75rem',
-              marginBottom: '3rem',
-              lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.8)',
-              fontSize: '0.95rem',
-              fontFamily: 'Outfit, sans-serif',
-            }}
-          >
-            <p style={{ margin: 0 }}>
-              <strong>ELIMFILTERS® serves 12 critical industries with engineered asset protection filtration systems.</strong> Each sector deployment is calibrated to its specific contamination profile — from sub-Saharan mine dust exceeding 5,000 mg/m³ to offshore salt-mist environments that corrode standard filters within months. ELIMFILTERS® systems cover air, oil, fuel, hydraulic, and coolant circuits to ISO and SAE specification, targeting zero unplanned downtime caused by particulate ingress, fluid contamination, or filtration bypass.
-            </p>
-            <p style={{ margin: '0.75rem 0 0', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)' }}>
-              Industries served include agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, trucks & fleets, and municipal waste management — across operations in over 50 countries.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Industry Cards Grid */}
-      <section style={{ background: '#000', padding: '0 0 5rem' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            variants={gridVariants}
-            initial="hidden"
-            animate="visible"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: '1px',
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.05)',
-            }}
-          >
-            {catalogue.industries.map((industry, i) => (
-              <IndustryCard key={industry.name} industry={industry} index={i} />
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FAQ Section — GEO High-Impact */}
-      <section style={{ padding: '5rem 2rem', background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: '-100px' }}
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-              color: '#fff',
-              marginBottom: '2.5rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.02em',
-            }}
-          >
-            Frequently Asked Questions
-          </motion.h2>
-
-          <div style={{ display: 'grid', gap: '1.5rem' }}>
-            {[
-              {
-                q: 'What industries require industrial filtration systems?',
-                a: 'Every heavy-equipment and process industry requires filtration. Mining, agriculture, marine, oil & gas, power generation, construction, manufacturing, transportation, and waste management all depend on asset protection filtration to prevent contamination-related failures in engines, hydraulic systems, fuel circuits, and pneumatic systems.',
-              },
-              {
-                q: 'What is asset protection filtration?',
-                a: 'Asset protection filtration is a system-level approach that targets contamination control via ISO and SAE standards, not product commodity selection. It maintains measurable cleanliness codes (ISO 4406, ISO 16889) across all fluid circuits—oil, fuel, hydraulic, coolant, and air—to extend equipment lifespan 30-50% and reduce unplanned downtime.',
-              },
-              {
-                q: 'How does mining filtration differ from standard industrial filtration?',
-                a: 'Mining environments expose equipment to dust concentrations exceeding 5,000 mg/m³—far above ISO 5011 test standards. Mining filtration systems must handle bypass-protected air intakes, fuel circuit water removal (H2O intrusion from rain and humidity), and hydraulic system contamination control for high-pressure hoist and crush systems.',
-              },
-              {
-                q: 'What filtration standards does ELIMFILTERS® comply with?',
-                a: 'ELIMFILTERS® systems are engineered to ISO 16889 (Beta ratio filter testing), ISO 4406 (cleanliness codes), ISO 5011 (air filter testing), SAE J1539 (air filter performance), ASTM D6304 (fuel water removal), and ISO 11155 (cabin air safety). Specific certifications vary by industry and circuit type.',
-              },
-              {
-                q: 'Does ELIMFILTERS® serve offshore oil and gas platforms?',
-                a: 'Yes. ELIMFILTERS® marine and offshore systems protect against salt-mist corrosion (ASTM B117), H2S and CO2 contamination, high-pressure fuel injection systems, and seawater-based cooling circuits. All systems are rated for ATEX/IECEx hazardous-area environments where applicable.',
-              },
-              {
-                q: 'What is the typical equipment lifespan extension from system-level filtration?',
-                a: 'System-level filtration targeting ISO 16/14/11 cleanliness codes (vs. commodity commodity approaches at 19/17/14) extends bearing and engine component life 3-5x. In mining equipment, this translates to 15,000-25,000 operational hours vs. 2,000-3,000 hours under poor contamination control.',
-              },
-            ].map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true, margin: '-50px' }}
-                style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  borderRadius: '4px',
-                  padding: '1.5rem',
-                  borderLeft: '3px solid #FFF12D',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: '1.5px',
+        }}>
+          {INDUSTRIES.map((industry, i) => (
+            <motion.div
+              key={industry.slug}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+            >
+              <Link
+                href={`/industries/${industry.slug}`}
+                style={{ display: 'block', textDecoration: 'none', position: 'relative', overflow: 'hidden', aspectRatio: '4/3' }}
+                onMouseEnter={e => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  const overlay = e.currentTarget.querySelector('.overlay') as HTMLElement;
+                  if (img) img.style.transform = 'scale(1.06)';
+                  if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)';
+                }}
+                onMouseLeave={e => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  const overlay = e.currentTarget.querySelector('.overlay') as HTMLElement;
+                  if (img) img.style.transform = 'scale(1)';
+                  if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)';
                 }}
               >
-                <p
+                <img
+                  src={industry.src}
+                  alt={industry.label}
                   style={{
-                    margin: '0 0 0.75rem',
-                    fontWeight: 700,
-                    fontSize: '0.95rem',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    transition: 'transform 0.5s ease',
+                  }}
+                />
+                <div
+                  className="overlay"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)',
+                    transition: 'background 0.3s ease',
+                  }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '1.2rem',
+                  left: '1.2rem',
+                  right: '1.2rem',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-between',
+                }}>
+                  <span style={{
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 800,
+                    fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    color: '#fff',
+                  }}>
+                    {industry.label}
+                  </span>
+                  <span style={{
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 600,
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.15em',
                     color: '#FFF12D',
-                    fontFamily: 'Outfit, sans-serif',
-                  }}
-                >
-                  {faq.q}
-                </p>
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: '0.9rem',
-                    lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
-                  }}
-                >
-                  {faq.a}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+                    textTransform: 'uppercase',
+                  }}>
+                    EXPLORE →
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Footer />
     </main>
   );
 }
