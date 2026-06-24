@@ -17,8 +17,6 @@ const GEO_DEFINITIONS: Record<string, string> = {
   'syntepore': 'SYNTEPORE™ is a precision fuel injection protection technology engineered as the terminal barrier for Common Rail HPCR diesel systems operating above 2,000 bar. Three progressive layers — capture zone (40µm), intermediate band (10–4µm), and zero-migration barrier (4µm absolute) — prevent sub-micron particle contamination from reaching injector needle seats with clearances below 1 micron. Validated for Euro IV–VI injection systems.',
   'syntrax': 'SYNTRAX™ is a four-layer AI-calibrated lubrication protection architecture for engine oil circuits. The density gradient matrix targets contamination from 40µm (outer macro zone) down to 3µm (turbo custody barrier), with thermal bonding that locks layer position across the full service interval. Designed specifically to protect turbocharger shaft bearings operating on oil films of 2–4 microns.',
   'thermacore': 'THERMACORE™ is an SCA (Supplemental Coolant Additive) gradual-release technology for diesel engine cooling systems. Controlled passive dosing maintains SCA concentration within the protection corridor across the full service interval — preventing cylinder liner cavitation erosion and electrochemical corrosion on aluminum, copper, iron, steel, and brass cooling circuit components without operator intervention.',
-  'marineclean': 'MARINECLEAN™ is a salt-resistant marine filtration architecture combining epoxy barrier coating, brine rejection geometry, and corrosion-shield internal components. IMO certified for commercial marine use, it protects diesel fuel and hydraulic systems against continuous saltwater aerosol exposure, seawater ingress, and the accelerated corrosion of wet-dry cycling in harbor, offshore, and deep-sea operating environments.',
-  'duratech': 'DURATECH™ is a fleet maintenance master kit system that consolidates all filtration elements required for a complete vehicle service event — oil, fuel, air, and cabin — into a single OEM-interchangeable package. Platform-specific kits eliminate wrong-element installations in mixed-model fleets, convert filter inventory to a predictable kit-based structure, and standardize sourcing to a single order per service cycle.',
 };
 
 const TECH_COMPARISON = [
@@ -31,8 +29,6 @@ const TECH_COMPARISON = [
   { name: 'THERMACORE™', slug: 'thermacore', system: 'Cooling System Protection', func: 'SCA gradual-release for cylinder liner cavitation prevention', metric: 'Passive dosing · 5 metals · full service interval', industries: 'Heavy Transport, Power Gen, Agriculture, Mining' },
   { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air Protection', func: 'Molecular sieve desiccant for pneumatic systems', metric: 'Zero moisture breakthrough · −40°C rated', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
   { name: 'INTEKCORE™', slug: 'intekcore', system: 'Housing Systems', func: 'High-pressure filter housings for trucks & machinery', metric: 'Zero-bypass seal · OEM-compatible threads', industries: 'Heavy Trucks, Mining, Construction, Agriculture' },
-  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Marine Protection', func: 'Salt-resistant fuel and hydraulic filtration', metric: 'IMO certified · epoxy coating · brine rejection', industries: 'Marine, Offshore, Coastal infrastructure' },
-  { name: 'DURATECH™', slug: 'duratech', system: 'Fleet Maintenance Systems', func: 'Master kit consolidation for mixed-model fleets', metric: 'OEM-interchangeable · single-source per service', industries: 'Trucks & Fleets, Mining, Construction, Agriculture' },
   { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Air Protection', func: 'Electrostatic + carbon + HEPA cabin occupant protection', metric: 'PM2.5 99% · VOC 95% · HEPA 99.97% at 0.3µm', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
@@ -116,22 +112,6 @@ const SCROLL_ITEMS: iCardItem[] = [
     system: 'Cabin Air Quality',
     src: '/assets/MICROKAPPA.avif',
     href: '/technologies/microkappa',
-  },
-  {
-    title: 'MARINECLEAN™',
-    subtitle: 'Salt-Resistant Marine Filtration',
-    description: 'Epoxy coating, brine rejection geometry, and corrosion-shield internals. IMO certified for continuous saltwater aerosol exposure in fuel and hydraulic systems.',
-    system: 'Marine · Offshore',
-    src: '/assets/MARINECLEAN.avif',
-    href: '/technologies/marineclean',
-  },
-  {
-    title: 'DURATECH™',
-    subtitle: 'Fleet Master Kit System',
-    description: 'Consolidated service kits with oil, fuel, air, and cabin elements per vehicle platform. OEM-interchangeable, single-source per service cycle for mixed-model fleets.',
-    system: 'Fleet Maintenance',
-    src: '/assets/Duratech.avif',
-    href: '/technologies/duratech',
   },
 ];
 
@@ -467,6 +447,51 @@ export default function TechnologiesPage() {
             }}
           >
             Open Part Search →
+          </a>
+        </motion.div>
+      </section>
+
+      {/* Commercial Lines callout */}
+      <section style={{
+        maxWidth: '1200px', margin: '0 auto',
+        padding: '4rem clamp(1.5rem, 6vw, 4rem)',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            background: 'rgba(255,241,45,0.04)',
+            border: '1px solid rgba(255,241,45,0.15)',
+            padding: '2.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '2rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          <div>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.6)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              Commercial Lines
+            </p>
+            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+              MARINECLEAN™ & DURATECH™
+            </h3>
+            <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.45)', maxWidth: '480px', lineHeight: 1.6 }}>
+              Marine filtration and fleet master kit lines are available as integrated commercial solutions — see Commercial Lines for full product specifications.
+            </p>
+          </div>
+          <a href="/commercial-lines" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+            fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem',
+            letterSpacing: '0.1em', textTransform: 'uppercase',
+            color: '#FFF12D', textDecoration: 'none',
+            border: '1px solid rgba(255,241,45,0.3)', padding: '0.75rem 1.5rem',
+            whiteSpace: 'nowrap',
+          }}>
+            View Commercial Lines →
           </a>
         </motion.div>
       </section>

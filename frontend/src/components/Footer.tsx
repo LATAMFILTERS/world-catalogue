@@ -28,6 +28,7 @@ const NAV_COLUMNS = [
     links: [
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },
+      { label: 'Commercial Lines', href: '/commercial-lines', external: false },
       { label: 'Become a Dealer', href: '/distributor-application', external: false },
       { label: 'Warranty', href: '/warranty', external: false },
     ],
