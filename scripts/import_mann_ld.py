@@ -35,7 +35,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
 API_BASE = "https://elimfilters-search-pro.onrender.com"
-API_KEY  = "elim2026"
+API_KEY  = None  # set via --api-key argument
 BATCH    = 50
 
 # Maps scraper filter_type strings → server-side filter_type_raw key
@@ -210,6 +210,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Import Mann LD JSONL into elimfilters_catalog')
     parser.add_argument('--file',        default=r'C:\mann\mann_master.jsonl',
                         help='Path to mann_master.jsonl (default: C:\\mann\\mann_master.jsonl)')
+    parser.add_argument('--api-key',     default=None,
+                        help='ADMIN_KEY from Render environment (required for live import)')
     parser.add_argument('--dry-run',     action='store_true',
                         help='Parse and map rows but do not POST to API')
     parser.add_argument('--filter-type', default=None,
@@ -217,6 +219,12 @@ if __name__ == '__main__':
     parser.add_argument('--start',       default=None,
                         help='Resume from this MANN code (e.g. ML1003)')
     args = parser.parse_args()
+
+    if not args.dry_run and not args.api_key:
+        print('ERROR: --api-key is required for live import. Use --dry-run to test without it.')
+        sys.exit(1)
+
+    API_KEY = args.api_key  # set globally before run()
 
     run(
         jsonl_path=Path(args.file),
