@@ -36,7 +36,7 @@ log = logging.getLogger(__name__)
 
 API_BASE = "https://elimfilters-search-pro.onrender.com"
 API_KEY  = None  # set via --api-key argument
-BATCH    = 50
+BATCH    = 20
 
 # Maps scraper filter_type strings → server-side filter_type_raw key
 FILTER_TYPE_ALIASES = {
@@ -118,6 +118,20 @@ def post_batch(rows: list, dry_run: bool) -> dict:
         headers={'Authorization': f'Bearer {API_KEY}', 'Content-Type': 'application/json'},
         timeout=120,
     )
+    # If payload too large, split in half and retry recursively
+    if resp.status_code == 413 and len(rows) > 1:
+        mid = len(rows) // 2
+        log.warning(f"  413 payload too large — splitting {len(rows)} rows into {mid}+{len(rows)-mid}")
+        r1 = post_batch(rows[:mid], dry_run)
+        r2 = post_batch(rows[mid:], dry_run)
+        return {
+            'success': True,
+            'total':    r1['total']    + r2['total'],
+            'inserted': r1['inserted'] + r2['inserted'],
+            'updated':  r1['updated']  + r2['updated'],
+            'errors':   r1['errors']   + r2['errors'],
+            'skipped':  r1.get('skipped', []) + r2.get('skipped', []),
+        }
     resp.raise_for_status()
     return resp.json()
 
