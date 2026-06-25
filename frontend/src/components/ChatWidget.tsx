@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const SUPPORT_EMAIL = 'support@elimfilters.com';
@@ -96,10 +96,8 @@ function genSessionId() {
   return `chat-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
-// Part number: 5-20 alphanumeric chars, may contain dashes (e.g. EF-AF-1234, P550039, LF16035)
 const PART_RE = /^[A-Z0-9][A-Z0-9\-]{3,19}$/i;
 
-// Distributor intent keywords per language
 const DIST_KEYWORDS: Record<string, string[]> = {
   en: ['distributor', 'dealer', 'reseller', 'wholesale', 'distribute'],
   es: ['distribuidor', 'revendedor', 'mayorista', 'distribuir', 'dealer'],
@@ -113,21 +111,173 @@ const DIST_KEYWORDS: Record<string, string[]> = {
   ar: ['موزع', 'تاجر', 'بالجملة'],
 };
 
-function detectIntent(text: string, lang: string): 'part' | 'dist' | 'tech' {
+function detectIntent(text: string, lang: string): 'part' | 'dist' | 'tech' | 'oil' | 'fuel' | 'hydraulic' | 'cabin' | 'air' | 'warranty' | 'contact' {
   const clean = text.trim().replace(/\s+/g, ' ');
+  const lower = clean.toLowerCase();
 
-  // Single token that looks like a part number
   if (/^\S+$/.test(clean) && PART_RE.test(clean)) return 'part';
 
-  // Distributor keywords
-  const distWords = [
-    ...(DIST_KEYWORDS[lang] || []),
-    ...DIST_KEYWORDS.en,
-  ];
-  const lower = clean.toLowerCase();
+  const distWords = [...(DIST_KEYWORDS[lang] || []), ...DIST_KEYWORDS.en];
   if (distWords.some(w => lower.includes(w))) return 'dist';
 
+  if (/oil|lube|aceite|lubric|huile|öl|olio|oleo/.test(lower)) return 'oil';
+  if (/fuel|diesel|combustib|gasoil|kraftstoff|carburant|carburante/.test(lower)) return 'fuel';
+  if (/hydraul|hidraul/.test(lower)) return 'hydraulic';
+  if (/cabin|cab[iî]ne|habitaculo|innenraum|cabina|salon/.test(lower)) return 'cabin';
+  if (/air|aire|luft|aria|ar |intake/.test(lower)) return 'air';
+  if (/warrant|garant|garantie|garanzia|garantia/.test(lower)) return 'warranty';
+  if (/contact|soporte|support|help|ayuda|hilfe|aide|aiuto|ajuda/.test(lower)) return 'contact';
+
   return 'tech';
+}
+
+// ── Dynamic suggestion engine ─────────────────────────────────────────────────
+// Each context maps to language → suggestions array (max 4 chips).
+// Suggestions are shown BELOW the last assistant message as clickable chips.
+
+type SuggestionContext =
+  | 'initial' | 'after_part' | 'after_dist' | 'after_oil' | 'after_fuel'
+  | 'after_hydraulic' | 'after_cabin' | 'after_air' | 'after_warranty'
+  | 'after_escalated' | 'after_tech';
+
+const SUGGESTIONS: Record<SuggestionContext, Record<string, string[]>> = {
+  initial: {
+    en: ['Find a filter by part number', 'Oil filtration question', 'Hydraulic filter help', 'Become a distributor'],
+    es: ['Buscar filtro por número de parte', 'Pregunta sobre filtros de aceite', 'Ayuda con filtros hidráulicos', 'Ser distribuidor'],
+    pt: ['Buscar filtro por número', 'Filtração de óleo', 'Filtros hidráulicos', 'Ser distribuidor'],
+    fr: ['Trouver un filtre par référence', 'Question filtre huile', 'Aide filtre hydraulique', 'Devenir distributeur'],
+    it: ['Trovare un filtro per codice', 'Domanda filtro olio', 'Aiuto filtro idraulico', 'Diventare distributore'],
+    de: ['Filter nach Teilenummer suchen', 'Ölfilter-Frage', 'Hydraulikfilter-Hilfe', 'Distributor werden'],
+    nl: ['Filter zoeken op nummer', 'Oliefilter vraag', 'Hydraulisch filter hulp', 'Distributeur worden'],
+    ru: ['Найти фильтр по номеру', 'Вопрос о масляном фильтре', 'Гидравлический фильтр', 'Стать дистрибьютором'],
+    zh: ['按零件号查找滤芯', '机油滤清器问题', '液压滤清器帮助', '成为经销商'],
+    ar: ['البحث بالرقم', 'سؤال عن فلتر الزيت', 'مساعدة فلتر هيدروليك', 'أصبح موزعاً'],
+  },
+  after_part: {
+    en: ['Search a different part number', 'What does this filter fit?', 'Find equivalent filters', 'Contact technical support'],
+    es: ['Buscar otro número de parte', '¿Para qué vehículo es este filtro?', 'Buscar filtros equivalentes', 'Contactar soporte técnico'],
+    pt: ['Buscar outro número', 'Para qual veículo é este filtro?', 'Filtros equivalentes', 'Suporte técnico'],
+    fr: ['Rechercher autre référence', 'Ce filtre convient à quel véhicule?', 'Filtres équivalents', 'Support technique'],
+    it: ['Cercare altro codice', 'Per quale veicolo è questo filtro?', 'Filtri equivalenti', 'Supporto tecnico'],
+    de: ['Andere Teilenummer suchen', 'Für welches Fahrzeug?', 'Gleichwertige Filter', 'Technischer Support'],
+    nl: ['Ander nummer zoeken', 'Voor welk voertuig?', 'Equivalente filters', 'Technische ondersteuning'],
+    ru: ['Найти другой номер', 'Для какого авто?', 'Эквивалентные фильтры', 'Техническая поддержка'],
+    zh: ['搜索其他零件号', '这个滤芯适合什么车？', '查找等效滤芯', '技术支持'],
+    ar: ['البحث بكود آخر', 'لأي سيارة هذا الفلتر؟', 'فلاتر مماثلة', 'الدعم الفني'],
+  },
+  after_dist: {
+    en: ['Learn about ELIMFILTERS products', 'Technical support for distributors', 'Download product catalog', 'Contact us directly'],
+    es: ['Conocer productos ELIMFILTERS', 'Soporte técnico para distribuidores', 'Descargar catálogo', 'Contacto directo'],
+    pt: ['Produtos ELIMFILTERS', 'Suporte técnico distribuidores', 'Baixar catálogo', 'Contato direto'],
+    fr: ['Produits ELIMFILTERS', 'Support distributeurs', 'Télécharger catalogue', 'Contact direct'],
+    it: ['Prodotti ELIMFILTERS', 'Supporto distributori', 'Scarica catalogo', 'Contatto diretto'],
+    de: ['ELIMFILTERS Produkte', 'Distributor-Support', 'Katalog herunterladen', 'Direktkontakt'],
+    nl: ['ELIMFILTERS producten', 'Support voor distributeurs', 'Catalogus downloaden', 'Direct contact'],
+    ru: ['Продукты ELIMFILTERS', 'Поддержка дистрибьюторов', 'Скачать каталог', 'Прямой контакт'],
+    zh: ['ELIMFILTERS产品', '经销商技术支持', '下载产品目录', '直接联系'],
+    ar: ['منتجات ELIMFILTERS', 'دعم الموزعين', 'تحميل الكتالوج', 'تواصل مباشر'],
+  },
+  after_oil: {
+    en: ['ISO 4406 cleanliness codes explained', 'Oil filter selection for heavy duty', 'How often to change oil filter?', 'SYNTRAX technology details'],
+    es: ['Códigos de limpieza ISO 4406', 'Selección de filtro de aceite heavy duty', '¿Cada cuánto cambiar el filtro?', 'Tecnología SYNTRAX'],
+    pt: ['Códigos ISO 4406', 'Filtro de óleo heavy duty', 'Intervalo de troca do filtro', 'Tecnologia SYNTRAX'],
+    fr: ['Codes propreté ISO 4406', 'Filtre huile heavy duty', 'Fréquence de remplacement', 'Technologie SYNTRAX'],
+    it: ['Codici pulizia ISO 4406', 'Filtro olio heavy duty', 'Frequenza sostituzione', 'Tecnologia SYNTRAX'],
+    de: ['ISO 4406 Reinheitscodes', 'Ölfilter Heavy Duty', 'Wechselintervalle', 'SYNTRAX Technologie'],
+    nl: ['ISO 4406 reinheids codes', 'Oliefilter heavy duty', 'Wisseltijden', 'SYNTRAX technologie'],
+    ru: ['Коды чистоты ISO 4406', 'Масляный фильтр heavy duty', 'Интервалы замены', 'Технология SYNTRAX'],
+    zh: ['ISO 4406清洁度代码', 'Heavy duty机油滤清器', '更换频率', 'SYNTRAX技术'],
+    ar: ['رموز نظافة ISO 4406', 'فلتر الزيت heavy duty', 'تكرار التغيير', 'تقنية SYNTRAX'],
+  },
+  after_fuel: {
+    en: ['Water contamination in diesel fuel', 'SYNTEPORE vs HYDROCORE technology', 'Fuel filter for HPCR injectors', 'Fuel filter selection guide'],
+    es: ['Contaminación por agua en diésel', 'Tecnología SYNTEPORE vs HYDROCORE', 'Filtro combustible para inyectores HPCR', 'Guía de selección'],
+    pt: ['Contaminação de água no diesel', 'SYNTEPORE vs HYDROCORE', 'Filtro para injetores HPCR', 'Guia de seleção'],
+    fr: ['Contamination eau diesel', 'SYNTEPORE vs HYDROCORE', 'Filtre carburant injecteurs HPCR', 'Guide sélection'],
+    it: ['Contaminazione acqua diesel', 'SYNTEPORE vs HYDROCORE', 'Filtro carburante iniettori HPCR', 'Guida selezione'],
+    de: ['Wasserverunreinigung Diesel', 'SYNTEPORE vs HYDROCORE', 'Kraftstofffilter HPCR', 'Auswahlhilfe'],
+    nl: ['Waterverontreiniging diesel', 'SYNTEPORE vs HYDROCORE', 'Brandstoffilter HPCR', 'Selectiegids'],
+    ru: ['Вода в дизельном топливе', 'SYNTEPORE vs HYDROCORE', 'Фильтр для HPCR форсунок', 'Руководство по выбору'],
+    zh: ['柴油水污染', 'SYNTEPORE vs HYDROCORE', 'HPCR喷油嘴燃油滤清器', '选型指南'],
+    ar: ['تلوث الماء في الديزل', 'SYNTEPORE vs HYDROCORE', 'فلتر وقود ل HPCR', 'دليل الاختيار'],
+  },
+  after_hydraulic: {
+    en: ['ISO 16889 beta ratio explained', 'NANOFORCE technology for hydraulics', 'Hydraulic cleanliness targets', 'Proportional valve protection'],
+    es: ['Razón beta ISO 16889', 'Tecnología NANOFORCE hidráulica', 'Objetivos de limpieza hidráulica', 'Protección válvula proporcional'],
+    pt: ['Razão beta ISO 16889', 'NANOFORCE para hidráulica', 'Metas de limpeza hidráulica', 'Proteção válvula proporcional'],
+    fr: ['Bêta ratio ISO 16889', 'NANOFORCE hydraulique', 'Objectifs propreté hydraulique', 'Protection vanne proportionnelle'],
+    it: ['Rapporto beta ISO 16889', 'NANOFORCE idraulica', 'Target pulizia idraulica', 'Protezione valvola proporzionale'],
+    de: ['ISO 16889 Beta-Verhältnis', 'NANOFORCE Hydraulik', 'Hydraulikreinheit', 'Proportionalventil-Schutz'],
+    nl: ['ISO 16889 bèta verhouding', 'NANOFORCE hydrauliek', 'Hydraulische reinheid', 'Proportioneel ventiel'],
+    ru: ['Бета-отношение ISO 16889', 'NANOFORCE для гидравлики', 'Чистота гидравлики', 'Защита пропорционального клапана'],
+    zh: ['ISO 16889 β值', '液压NANOFORCE技术', '液压清洁度目标', '比例阀保护'],
+    ar: ['نسبة بيتا ISO 16889', 'NANOFORCE للهيدروليك', 'أهداف نظافة الهيدروليك', 'حماية الصمام النسبي'],
+  },
+  after_cabin: {
+    en: ['ISO 11155 cabin air standards', 'MICROKAPPA technology details', 'PM10 and operator health', 'Cabin filter replacement interval'],
+    es: ['Norma ISO 11155 cabina', 'Tecnología MICROKAPPA', 'PM10 y salud del operador', 'Intervalo de cambio cabina'],
+    pt: ['Norma ISO 11155 cabine', 'Tecnologia MICROKAPPA', 'PM10 e saúde do operador', 'Intervalo de troca cabine'],
+    fr: ['Norme ISO 11155 cabine', 'Technologie MICROKAPPA', 'PM10 santé opérateur', 'Remplacement filtre cabine'],
+    it: ['Norma ISO 11155 cabina', 'Tecnologia MICROKAPPA', 'PM10 salute operatore', 'Sostituzione filtro cabina'],
+    de: ['ISO 11155 Kabinenluft', 'MICROKAPPA Technologie', 'PM10 Betriebsgesundheit', 'Kabinenwechselintervall'],
+    nl: ['ISO 11155 cabinelucht', 'MICROKAPPA technologie', 'PM10 bedrijfsgezondheidszorg', 'Cabinefilter interval'],
+    ru: ['ISO 11155 кабинный воздух', 'Технология MICROKAPPA', 'PM10 и здоровье оператора', 'Интервал замены'],
+    zh: ['ISO 11155驾驶室空气标准', 'MICROKAPPA技术', 'PM10与操作员健康', '更换间隔'],
+    ar: ['معيار ISO 11155 للكابينة', 'تقنية MICROKAPPA', 'PM10 وصحة المشغل', 'فترة تغيير فلتر الكابينة'],
+  },
+  after_air: {
+    en: ['SAE J726 air filter standards', 'MACROCORE technology details', 'Air filter efficiency for engines', 'Bypass valve behavior'],
+    es: ['Norma SAE J726 filtro de aire', 'Tecnología MACROCORE', 'Eficiencia filtro de aire motores', 'Comportamiento válvula bypass'],
+    pt: ['Norma SAE J726', 'Tecnologia MACROCORE', 'Eficiência filtro de ar motores', 'Válvula bypass'],
+    fr: ['Norme SAE J726', 'Technologie MACROCORE', 'Efficacité filtre air moteurs', 'Clapet de dérivation'],
+    it: ['Norma SAE J726', 'Tecnologia MACROCORE', 'Efficienza filtro aria motori', 'Valvola bypass'],
+    de: ['SAE J726 Luftfilter', 'MACROCORE Technologie', 'Luftfiltereffizienz', 'Bypass-Ventil'],
+    nl: ['SAE J726 luchtfilter', 'MACROCORE technologie', 'Luchtfilter efficiëntie', 'Bypassklep'],
+    ru: ['SAE J726 воздушный фильтр', 'Технология MACROCORE', 'Эффективность воздушного фильтра', 'Обходной клапан'],
+    zh: ['SAE J726空气滤清器标准', 'MACROCORE技术', '发动机空气过滤效率', '旁通阀行为'],
+    ar: ['معيار SAE J726', 'تقنية MACROCORE', 'كفاءة فلتر الهواء', 'صمام التجاوز'],
+  },
+  after_warranty: {
+    en: ['Submit a warranty claim', 'Warranty coverage details', 'Contact technical support', 'Find nearest authorized dealer'],
+    es: ['Enviar reclamación de garantía', 'Detalles de cobertura', 'Contactar soporte técnico', 'Distribuidor autorizado'],
+    pt: ['Enviar reclamação de garantia', 'Detalhes da cobertura', 'Suporte técnico', 'Distribuidor autorizado'],
+    fr: ['Déposer une réclamation garantie', 'Détails de la couverture', 'Support technique', 'Distributeur agréé'],
+    it: ['Inviare reclamo garanzia', 'Dettagli copertura', 'Supporto tecnico', 'Distributore autorizzato'],
+    de: ['Garantiefall einreichen', 'Abdeckungsdetails', 'Technischer Support', 'Autorisierter Händler'],
+    nl: ['Garantieclaim indienen', 'Dekkingsdetails', 'Technische ondersteuning', 'Geautoriseerde dealer'],
+    ru: ['Подать гарантийную претензию', 'Условия гарантии', 'Техническая поддержка', 'Авторизованный дилер'],
+    zh: ['提交保修索赔', '保修覆盖详情', '技术支持', '授权经销商'],
+    ar: ['تقديم مطالبة ضمان', 'تفاصيل التغطية', 'الدعم الفني', 'وكيل معتمد'],
+  },
+  after_escalated: {
+    en: ['Ask another question', 'Find a part number', 'View product catalog', 'Contact by email'],
+    es: ['Hacer otra pregunta', 'Buscar número de parte', 'Ver catálogo de productos', 'Contactar por correo'],
+    pt: ['Fazer outra pergunta', 'Buscar número de peça', 'Ver catálogo', 'Contato por e-mail'],
+    fr: ['Poser une autre question', 'Trouver une référence', 'Voir le catalogue', 'Contact par email'],
+    it: ['Fare un\'altra domanda', 'Trovare codice parte', 'Vedere catalogo', 'Contatto via email'],
+    de: ['Weitere Frage stellen', 'Teilenummer suchen', 'Katalog ansehen', 'Per E-Mail kontaktieren'],
+    nl: ['Nog een vraag stellen', 'Onderdeel nummer zoeken', 'Catalogus bekijken', 'Contact per email'],
+    ru: ['Задать другой вопрос', 'Найти номер детали', 'Просмотреть каталог', 'Написать на email'],
+    zh: ['再问一个问题', '查找零件号', '查看产品目录', '发送邮件联系'],
+    ar: ['طرح سؤال آخر', 'البحث عن رقم قطعة', 'عرض الكتالوج', 'التواصل عبر البريد'],
+  },
+  after_tech: {
+    en: ['Oil filtration systems', 'Hydraulic filter selection', 'Fuel contamination control', 'Find a specific part'],
+    es: ['Sistemas de filtración de aceite', 'Selección filtros hidráulicos', 'Control contaminación combustible', 'Buscar parte específica'],
+    pt: ['Sistemas de filtração de óleo', 'Seleção filtros hidráulicos', 'Controle contaminação combustível', 'Buscar peça específica'],
+    fr: ['Systèmes filtration huile', 'Sélection filtres hydrauliques', 'Contrôle contamination carburant', 'Trouver une référence'],
+    it: ['Sistemi filtrazione olio', 'Selezione filtri idraulici', 'Controllo contaminazione carburante', 'Trovare pezzo specifico'],
+    de: ['Ölfiltrationssysteme', 'Hydraulikfilter-Auswahl', 'Kraftstoffkontamination', 'Teil suchen'],
+    nl: ['Oliefiltratiesystemen', 'Hydraulisch filter selectie', 'Brandstof contaminatie', 'Onderdeel zoeken'],
+    ru: ['Системы масляной фильтрации', 'Выбор гидравлических фильтров', 'Контроль загрязнения топлива', 'Найти деталь'],
+    zh: ['机油过滤系统', '液压滤清器选型', '燃油污染控制', '查找特定零件'],
+    ar: ['أنظمة ترشيح الزيت', 'اختيار فلاتر هيدروليك', 'التحكم في تلوث الوقود', 'البحث عن قطعة'],
+  },
+};
+
+function getSuggestions(context: SuggestionContext, lang: string): string[] {
+  const map = SUGGESTIONS[context];
+  return map[lang] || map.en || [];
 }
 
 interface Msg { role: 'user' | 'assistant'; text: string; }
@@ -153,16 +303,18 @@ export function ChatWidget() {
   const [sessionId] = useState(genSessionId);
   const [lang] = useState(getLang);
   const [started, setStarted] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, sending]);
+  }, [messages, sending, suggestions]);
 
   useEffect(() => {
     if (open && !started) {
       setMessages([{ role: 'assistant', text: t('welcome', lang) }]);
+      setSuggestions(getSuggestions('initial', lang));
       setStarted(true);
       setTimeout(() => inputRef.current?.focus(), 150);
     }
@@ -170,29 +322,38 @@ export function ChatWidget() {
 
   const addMsg = (msg: Msg) => setMessages(prev => [...prev, msg]);
 
-  const send = async () => {
-    const text = input.trim();
-    if (!text || sending || done) return;
+  const handleSend = useCallback(async (text: string) => {
+    if (!text.trim() || sending || done) return;
     setInput('');
+    setSuggestions([]);
     addMsg({ role: 'user', text });
 
     const intent = detectIntent(text, lang);
 
     if (intent === 'part') {
       addMsg({ role: 'assistant', text: `${t('redirect_part', lang)} "${text.toUpperCase()}"…` });
-      setDone(true);
+      setSuggestions(getSuggestions('after_part', lang));
       setTimeout(() => window.open(`${PART_SEARCH_BASE}?q=${encodeURIComponent(text)}`, '_blank'), 900);
       return;
     }
 
     if (intent === 'dist') {
       addMsg({ role: 'assistant', text: t('redirect_dist', lang) });
-      setDone(true);
+      setSuggestions(getSuggestions('after_dist', lang));
       setTimeout(() => window.open('/dealer', '_blank'), 1000);
       return;
     }
 
-    // Technical / general — escalate to human team
+    // Map intent to post-response suggestion context
+    const suggestionContext: SuggestionContext =
+      intent === 'oil'       ? 'after_oil'       :
+      intent === 'fuel'      ? 'after_fuel'       :
+      intent === 'hydraulic' ? 'after_hydraulic'  :
+      intent === 'cabin'     ? 'after_cabin'      :
+      intent === 'air'       ? 'after_air'        :
+      intent === 'warranty'  ? 'after_warranty'   :
+      'after_tech';
+
     setSending(true);
     try {
       await escalate(sessionId, lang, [
@@ -200,12 +361,21 @@ export function ChatWidget() {
         { role: 'user', text },
       ]);
       addMsg({ role: 'assistant', text: t('escalated', lang) });
+      setSuggestions(getSuggestions('after_escalated', lang));
       setDone(true);
     } catch {
       addMsg({ role: 'assistant', text: t('error_send', lang) });
+      setSuggestions(getSuggestions(suggestionContext, lang));
     } finally {
       setSending(false);
     }
+  }, [sending, done, lang, messages, sessionId]);
+
+  const send = () => handleSend(input);
+
+  const clickSuggestion = (s: string) => {
+    setSuggestions([]);
+    handleSend(s);
   };
 
   const isRTL = ['ar', 'fa'].includes(lang);
@@ -247,7 +417,7 @@ export function ChatWidget() {
             dir={isRTL ? 'rtl' : 'ltr'}
             style={{
               position: 'fixed', bottom: '1.5rem', right: '1.5rem',
-              width: '300px', maxWidth: 'calc(100vw - 2rem)',
+              width: '310px', maxWidth: 'calc(100vw - 2rem)',
               background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '4px', display: 'flex', flexDirection: 'column',
               zIndex: 9999, boxShadow: '0 8px 40px rgba(0,0,0,0.6)', overflow: 'hidden',
@@ -272,8 +442,8 @@ export function ChatWidget() {
               </button>
             </div>
 
-            {/* Messages */}
-            <div style={{ maxHeight: '340px', overflowY: 'auto', padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            {/* Messages + suggestions */}
+            <div style={{ maxHeight: '360px', overflowY: 'auto', padding: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {messages.map((m, i) => (
                 <motion.div
                   key={i}
@@ -308,6 +478,45 @@ export function ChatWidget() {
                   </div>
                 </motion.div>
               )}
+
+              {/* Dynamic suggestion chips */}
+              <AnimatePresence>
+                {suggestions.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.2rem' }}
+                  >
+                    {suggestions.map((s, i) => (
+                      <motion.button
+                        key={s}
+                        initial={{ opacity: 0, scale: 0.92 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.15, delay: i * 0.05 }}
+                        onClick={() => clickSuggestion(s)}
+                        whileHover={{ background: 'rgba(255,241,45,0.18)', borderColor: 'rgba(255,241,45,0.6)' }}
+                        style={{
+                          background: 'rgba(255,241,45,0.08)',
+                          border: '1px solid rgba(255,241,45,0.3)',
+                          borderRadius: '20px',
+                          color: '#FFF12D',
+                          fontFamily: 'Inter, sans-serif',
+                          fontSize: '0.7rem',
+                          padding: '0.3rem 0.65rem',
+                          cursor: 'pointer',
+                          lineHeight: 1.4,
+                          textAlign: 'left',
+                        }}
+                      >
+                        {s}
+                      </motion.button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <div ref={bottomRef} />
             </div>
 
@@ -317,7 +526,7 @@ export function ChatWidget() {
                 <textarea
                   ref={inputRef}
                   value={input}
-                  onChange={e => setInput(e.target.value)}
+                  onChange={e => { setInput(e.target.value); if (e.target.value.trim()) setSuggestions([]); }}
                   onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } }}
                   placeholder={t('placeholder', lang)}
                   rows={1}
