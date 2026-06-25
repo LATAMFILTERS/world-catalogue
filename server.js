@@ -1056,10 +1056,10 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
 // duty is always LIGHT_DUTY. codigo_base = last 4 digits of MANN code.
 // Accepts batches of up to 500 rows. Skips rows with colliding SKUs (returns them).
 const MANN_FILTER_TYPE_MAP = {
-  'oil filter':   { prefix: 'EL3', filter_type: 'lube' },
-  'fuel filter':  { prefix: 'EF3', filter_type: 'fuel' },
-  'air filter':   { prefix: 'EA3', filter_type: 'air' },
-  'cabin filter': { prefix: 'EC3', filter_type: 'cabin' },
+  'oil filter':   { prefix: 'EL3', filter_type: 'Oil Filter' },
+  'fuel filter':  { prefix: 'EF3', filter_type: 'Fuel Filter' },
+  'air filter':   { prefix: 'EA3', filter_type: 'Air Filter' },
+  'cabin filter': { prefix: 'EC3', filter_type: 'Cabin Filter' },
 };
 
 function mannCodeToBase(mannCode) {
@@ -1085,15 +1085,22 @@ function mannOeNumbersToOemCodes(oeNumbers) {
   return result;
 }
 
+// Remove null bytes and control chars that PostgreSQL JSONB rejects
+function sanitizeStr(v) {
+  if (typeof v !== 'string') return v;
+  // eslint-disable-next-line no-control-regex
+  return v.replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, '').trim();
+}
+
 function mannFitmentToEquipmentApplications(fitment) {
   return (fitment || []).map(f => ({
-    make:         f.make         || '',
-    model:        [f.model_family, f.model_type].filter(Boolean).join(' ').trim(),
-    engine_code:  f.engine_code  || '',
-    year_range:   f.year         || '',
-    ccm:          f.ccm          || '',
-    kw:           f.kw           || '',
-    hp:           f.hp           || '',
+    make:         sanitizeStr(f.make         || ''),
+    model:        sanitizeStr([f.model_family, f.model_type].filter(Boolean).join(' ').trim()),
+    engine_code:  sanitizeStr(f.engine_code  || ''),
+    year_range:   sanitizeStr(String(f.year  || '')),
+    ccm:          sanitizeStr(String(f.ccm   || '')),
+    kw:           sanitizeStr(String(f.kw    || '')),
+    hp:           sanitizeStr(String(f.hp    || '')),
   })).filter(a => a.make || a.model);
 }
 
