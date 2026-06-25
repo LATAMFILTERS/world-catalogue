@@ -20,6 +20,14 @@ const adminLimiter = rateLimit({
   legacyHeaders: false,
   message: { error: 'Too many admin requests.' },
 });
+// Higher limit for bulk import endpoints (Mann LD: ~100+ batches of 20)
+const importLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 500,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many import requests.' },
+});
 // ─── Admin key middleware ─────────────────────────────────────────────────────
 const ADMIN_KEY = process.env.ADMIN_KEY;
 if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
@@ -944,7 +952,7 @@ const _validateImportRow = (row) => {
   return null;
 };
 
-app.post('/api/import/donaldson', adminLimiter, requireAdmin, async (req, res) => {
+app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) => {
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
@@ -1087,7 +1095,7 @@ function mannFitmentToEquipmentApplications(fitment) {
   })).filter(a => a.make || a.model);
 }
 
-app.post('/api/import/mann', adminLimiter, requireAdmin, async (req, res) => {
+app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
