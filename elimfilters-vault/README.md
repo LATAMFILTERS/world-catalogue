@@ -20,7 +20,7 @@ A structured Obsidian knowledge graph connecting 11 entity types:
 | Component | `06-components/` | `TURBOCHARGER_BEARING` |
 | Problem | `07-problems/` | `DUST_INGESTION` |
 | ProductFamily | `08-product-families/` | `AIRFILTER_PRIMARY` |
-| Product (SKU) | `09-products/` | `HYDROCORE_SERIES_900FH` |
+| Product (SKU) | `09-products/` | `TURBOCORE_SERIES_900FH` |
 | CaseStudy | `10-case-studies/` | `CS_DIESEL_WATER` |
 | TechnicalArticle | `11-articles/` | `TA_AIR_INTAKE_SYSTEMS` |
 

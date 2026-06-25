@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -11,7 +12,7 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Air intake protection preventing abrasive ingestion that accelerates component wear between service intervals.' },
-  { name: 'DURATECH', slug: 'duratech', href: '/commercial-lines/duratech', role: 'Fleet master kit system consolidating all filtration elements per service cycle — oil, fuel, air, and cabin — reducing wrong-element installations and unplanned downtime in mixed-model fleets.' },
+  { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration capturing wear debris before recirculation extends time between unplanned oil failures.' },
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Fuel system contamination control reducing injector stiction events that trigger unscheduled engine shutdowns.' },
   { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
 ];
@@ -45,13 +46,15 @@ const FAQS = [
 export default function ReducingDowntimePage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Navigation */}
-      <Link href="/knowledge-system/fleet" style={{
+      <Link href="/knowledge-system/fleet"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← FLEET</Link>
@@ -70,14 +73,8 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · FLEET OPTIMIZATION · DOWNTIME
-          </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>
@@ -86,6 +83,7 @@ export default function ReducingDowntimePage() {
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
             color: 'rgba(255,255,255,0.5)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7,
+            textAlign: 'justify',
           }}>
             Unplanned mechanical failure is the primary driver of availability loss in industrial fleets. Filtration discipline is one of the highest-leverage variables within an operator's direct control.
           </p>
@@ -106,18 +104,18 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>01 / DEFINITION</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>What Is Fleet Downtime</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem', textAlign: 'justify',
           }}>
             Fleet downtime refers to any period during which a piece of industrial equipment is unavailable for productive operation. It encompasses both planned maintenance windows and unplanned mechanical failures requiring repair before resuming service.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             In contamination engineering, downtime is primarily driven by accelerated component degradation: bearing surfaces worn beyond tolerance, injectors losing calibration, hydraulic valves developing stiction from particulate accumulation. These failure pathways share a common origin - fluid contamination that exceeds the protection capacity of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems</Link>.
           </p>
@@ -136,24 +134,24 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>The Cumulative Contamination Problem</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             Industrial equipment operates in contamination-intensive environments. A combine harvester working in field conditions ingests dust at concentrations exceeding 2,000 mg/m3. A mining haul truck operating on unpaved haul roads encounters silica particulate at levels the air filtration system must reduce by a factor of 10,000 or more before air enters the combustion chamber.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             The challenge is not that contamination exists - it is that contamination accumulates invisibly. Wear debris generated by early-stage abrasion recirculates and accelerates further wear. Water ingress triggers corrosion and microbial growth that blocks fuel systems over weeks, not hours. Hydraulic valve tolerances tighten progressively as particle deposits accumulate in spool clearances of 3 to 10 microns.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             Without systematic contamination monitoring, failure arrives without warning. An operator may observe no performance change until a threshold is crossed and a component fails completely. <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Particle wear in engines and hydraulics</Link> is the most common root mechanism linking contamination accumulation to unplanned mechanical failure. This is the fundamental operational challenge: contamination-induced failure is predictable in mechanism but difficult to detect without dedicated measurement programs.
           </p>
@@ -172,7 +170,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>03 / COST IMPACT</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Quantified Downtime Costs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
@@ -200,7 +198,7 @@ export default function ReducingDowntimePage() {
           </div>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, textAlign: 'justify',
           }}>
             Beyond direct repair costs, downtime cascades into secondary losses: missed production targets, contractual penalties for delayed deliveries, emergency logistics for parts procurement, and technician overtime. Fluid cleanliness verification against <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889 Beta Ratio standards</Link> is the primary measurement tool used to establish and maintain contamination control thresholds that prevent these costs. In remote operations such as mining or offshore, secondary costs often exceed the primary repair expense by a factor of two or more.
           </p>
@@ -219,12 +217,12 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Contamination Control as Downtime Prevention</h2>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem',
+            color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1.25rem', textAlign: 'justify',
           }}>
             An effective contamination control program addresses three system boundaries: ingression points where contamination enters the system, recirculation paths where existing contamination amplifies damage, and monitoring points where fluid condition is measured to predict intervention requirements.
           </p>
@@ -252,12 +250,12 @@ export default function ReducingDowntimePage() {
               marginBottom: '1.5rem',
             }}>
               <p style={{
-                fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                 fontWeight: 600, color: '#fff', marginBottom: '0.5rem',
               }}>{item.title}</p>
               <p style={{
                 fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, textAlign: 'justify',
               }}>{item.body}</p>
             </div>
           ))}
@@ -276,7 +274,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Measured Outcomes in Industrial Operations</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
@@ -319,12 +317,12 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Filtration Systems Supporting Availability</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
-              <Link key={tech.slug} href={tech.href || `/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
+              <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
                   whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }}
                   style={{
@@ -361,7 +359,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>07 / RELATED STANDARDS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
           }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -399,7 +397,7 @@ export default function ReducingDowntimePage() {
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
           }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
           }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -409,12 +407,12 @@ export default function ReducingDowntimePage() {
                 padding: '1.5rem',
               }}>
                 <p style={{
-                  fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem',
+                  fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
-                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75,
+                  color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, textAlign: 'justify',
                 }}>{faq.a}</p>
               </div>
             ))}
@@ -426,7 +424,7 @@ export default function ReducingDowntimePage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem',
-          }}>// CONTINUE IN FLEET OPTIMIZATION</p>
+          }}>CONTINUE IN FLEET OPTIMIZATION</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_PAGES.map((page) => (
               <Link key={page.code} href={page.href} style={{ textDecoration: 'none' }}>
@@ -443,7 +441,7 @@ export default function ReducingDowntimePage() {
                     color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em',
                   }}>{page.code}</span>
                   <span style={{
-                    fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem',
+                    fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem',
                     fontWeight: 600, color: '#fff',
                   }}>{page.title}</span>
                   <span style={{
@@ -459,44 +457,54 @@ export default function ReducingDowntimePage() {
       </div>
 
       <RetrievalBlock>
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Reducing Fleet Downtime Through Filtration</p>
-  <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, air_intake, lube</p>
+        <p>CONCEPT_TAXONOMY: type=strategy | domain=fleet-operations | goal=downtime-reduction</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership, /knowledge-system/fleet/fuel-efficiency</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/reducing-downtime</p>
+        <p>&nbsp;&nbsp;concept_id: fleet-downtime-reduction</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+      </RetrievalBlock>
 
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-  <p>Fleet downtime reduction through filtration system optimization addresses how contamination-triggered component failures generate unplanned maintenance stops — and how proactive filtration system design, condition-based monitoring, and ISO 4406 cleanliness targets convert reactive breakdown maintenance into predictable planned service intervals.</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-  <p>Heavy truck fleets, construction equipment fleets, mining vehicle fleets, agricultural machinery fleets, transit bus fleets, industrial power unit fleets, marine vessel maintenance programs</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-  <p>Commodity filtration selection without ISO 4406 monitoring → undetected contamination accumulation → catastrophic bearing or valve failure → unplanned downtime 8–72 hours per incident → lost production revenue $1,500–$25,000/day for construction and mining equipment → emergency parts procurement premium 40–80% above planned maintenance cost. Reactive maintenance pattern: equipment fails without warning → emergency repair → root cause unknown → failure recurs within 1,000–3,000 hours. System approach: ISO 4406 monitoring detects deteriorating cleanliness 200–500 hours before component failure → planned repair during scheduled downtime → zero unplanned stops.</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-  <p>ISO 4406: Cleanliness code monitoring — the early warning system for contamination-triggered failure prediction | ISO 16889: Beta ratio certification ensuring selected filters can achieve maintenance targets | SAE J1211: Crankcase ventilation requirements for engine contamination control in fleet applications</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-  <p>MACROCORE: Primary contamination control across air and lube circuits — foundation of downtime prevention strategy | DURATECH: Extended service interval capability reducing planned service frequency without compromising cleanliness | NANOFORCE: Precision contamination control for hydraulic systems enabling longer valve and actuator service intervals</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-  <p>Filtration system design is the primary lever for converting reactive fleet maintenance into planned-interval maintenance — fleets operating at ISO 4406 target cleanliness codes experience 60–80% reduction in unplanned downtime events compared to fleets using commodity filtration without cleanliness monitoring.</p>
-
-  <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-  <p>source: elimfilters.com/knowledge-system/fleet/reducing-downtime | concept: Fleet Downtime Reduction Through Filtration | version: 1.1 | last_updated: 2026-06-11</p>
-</RetrievalBlock>
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Reducing Fleet Downtime Through Filtration System Optimization",
-        "description": "Filtration system optimization converts reactive fleet maintenance into planned-interval maintenance — fleets at ISO 4406 targets experience 60–80% reduction in unplanned downtime versus commodity filtration.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["fleet downtime reduction", "contamination monitoring", "ISO 4406", "predictive maintenance", "filtration system design", "maintenance optimization"],
-        "about": { "@type": "Thing", "name": "Fleet Downtime Reduction", "description": "Filtration system approach to converting reactive maintenance into planned service intervals" },
-        "mentions": {
-          "standards": ["ISO 4406", "ISO 16889", "SAE J1211"],
-          "technologies": ["MACROCORE", "DURATECH", "NANOFORCE"],
-          "contaminationModes": ["particle wear", "hydraulic contamination", "lube oil contamination"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Reducing Fleet Downtime',
+        description: 'Unplanned mechanical failure is the primary driver of availability loss in industrial fleets. Filtration discipline is one of the highest-leverage variables within an operator\'s direct control.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'contamination control', 'fleet downtime', 'unplanned maintenance', 'ISO 16889', 'oil cleanliness', 'predictive maintenance'],
+        about: { '@type': 'Thing', name: 'Fleet Downtime Reduction', description: 'Contamination control strategies that prevent unplanned mechanical failures and extend equipment availability in industrial fleet operations.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Fleet Optimization', item: 'https://elimfilters.com/knowledge-system/fleet' },
+          { '@type': 'ListItem', position: 4, name: 'Reducing Fleet Downtime', item: 'https://elimfilters.com/knowledge-system/fleet/reducing-downtime' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is the difference between planned and unplanned downtime in fleet operations?', acceptedAnswer: { '@type': 'Answer', text: 'Planned downtime occurs during scheduled maintenance windows where work scope, parts, and technician availability are pre-coordinated. Unplanned downtime results from component failure without prior warning, requiring emergency mobilization of resources. The cost differential between the two is typically 3 to 8 times higher for unplanned events due to emergency parts procurement, overtime labor, and production losses that compound while equipment sits idle.' } },
+          { '@type': 'Question', name: 'How does filter bypass affect unplanned failure rates?', acceptedAnswer: { '@type': 'Answer', text: 'Bypass events occur when differential pressure across a filter element exceeds the bypass valve opening threshold, typically between 3 and 6 bar for engine oil filters. During bypass, unfiltered fluid circulates through the system carrying accumulated wear debris directly to precision clearance surfaces. A single sustained bypass event can introduce enough abrasive material to reduce bearing service life by 20 to 40%, often without producing immediate symptoms visible in routine inspection.' } },
+          { '@type': 'Question', name: 'At what oil contamination level should an operator intervene before failure occurs?', acceptedAnswer: { '@type': 'Answer', text: 'ISO cleanliness code 18/16/13 is typically the intervention threshold for critical engine oil systems. Above this level, wear particle concentration accelerates abrasive mechanisms in a compounding pattern. For hydraulic systems with proportional control valves, ISO 16/14/11 is the maximum acceptable operating level. Exceeding these thresholds by even one ISO scale code represents a doubling of particle concentration and a measurable increase in component degradation rate.' } },
+          { '@type': 'Question', name: 'Can extended oil drain intervals increase unplanned downtime risk?', acceptedAnswer: { '@type': 'Answer', text: 'Extended drain intervals reduce planned maintenance frequency but increase contamination accumulation risk when filter element capacity is not proportionally upgraded. Oil oxidation byproducts and wear metal concentration both rise monotonically with service hours. When drain extensions are implemented without corresponding changes to filtration specification - higher efficiency elements or bypass filtration - the probability of in-service fluid degradation reaching critical thresholds increases significantly.' } },
+        ],
+      }) }} />
     </main>
   );
 }

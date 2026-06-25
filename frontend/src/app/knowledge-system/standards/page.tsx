@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -52,13 +53,15 @@ const FILTRATION_SYSTEMS = [
 export default function StandardsHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
       {/* Back */}
-      <Link href="/knowledge-system" style={{
+      <Link href="/knowledge-system"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← KNOWLEDGE</Link>
@@ -77,18 +80,8 @@ export default function StandardsHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // KNOWLEDGE SYSTEM · INDUSTRIAL STANDARDS
-          </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -103,7 +96,7 @@ export default function StandardsHubPage() {
             color: 'rgba(255,255,255,0.5)',
             maxWidth: '540px',
             margin: '0 auto',
-            lineHeight: 1.65,
+            textAlign: 'justify', lineHeight: 1.65,
           }}>
             Standards organized by industrial filtration system domain. Each domain integrates applicable ISO, ASTM, SAE, and DIN specifications with their contamination challenges, operational impact, and engineering solutions.
           </p>
@@ -126,7 +119,7 @@ export default function StandardsHubPage() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
+            textAlign: 'justify', lineHeight: 1.8,
           }}>
             Each domain integrates applicable measurement standards as tools for assessing contamination, not as isolated specifications. <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Oil cleanliness standards</Link> such as <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link> define the particle cleanliness codes that determine whether engine oil is within safe operating limits—and what filtration action is required when it is not.
           </p>
@@ -141,7 +134,7 @@ export default function StandardsHubPage() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
           gap: '1.75rem',
         }}>
           {FILTRATION_SYSTEMS.map((system, i) => (
@@ -169,17 +162,11 @@ export default function StandardsHubPage() {
                   {/* Icon + Code */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                     <div style={{
-                      width: '36px',
-                      height: '36px',
-                      border: '1px solid rgba(255,241,45,0.25)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#FFF12D',
-                      fontSize: '1rem',
+                      width: '16px',
+                      height: '16px',
+                      background: '#FFF12D',
                       flexShrink: 0,
                     }}>
-                      {system.icon}
                     </div>
                     <span style={{
                       fontFamily: 'JetBrains Mono, monospace',
@@ -194,7 +181,7 @@ export default function StandardsHubPage() {
 
                   {/* Title */}
                   <h2 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1.05rem',
                     fontWeight: 600,
                     color: '#fff',
@@ -209,7 +196,7 @@ export default function StandardsHubPage() {
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
-                    lineHeight: 1.6,
+                    textAlign: 'justify', lineHeight: 1.6,
                     marginTop: 'auto',
                   }}>
                     {system.description}
@@ -233,35 +220,43 @@ export default function StandardsHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Industrial Filtration Standards</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>Industrial filtration standards define the measurement methods, performance benchmarks, and cleanliness targets that provide objective verification of filtration system effectiveness — ISO 16889 for filter efficiency, ISO 4406 for fluid cleanliness measurement, ISO 5011 for air filter structural integrity, ASTM D6304 for fuel water content, and ISO 8573-1 for compressed air purity.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Lube oil systems, air intake systems, cabin safety systems, fuel systems, hydraulic systems, compressed air systems — all major industrial fluid and air filtration domains</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>STANDARDS_INDEX</p>
-        <p>ISO 16889: Multi-pass filter efficiency test (Beta ratio) | ISO 4406: Particle cleanliness codes for lube and hydraulic fluids | ISO 5011: Air filter efficiency and collapse pressure test | ISO 8573-1: Compressed air purity classification | SAE J1539: Diesel engine air intake contamination limits | ASTM D6304: Diesel fuel water content by Karl Fischer titration | ISO 11155: Cabin air filter test methods | NFPA T2.14: Hydraulic contamination control</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>Industrial filtration standards are the measurement infrastructure for contamination control — they convert the abstract goal of "clean fluid" into measurable numbers (Beta ratio, cleanliness code, ppm water) that can be specified, tested, verified, and included in maintenance contracts, equipment warranties, and supplier qualifications.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/standards | concept: Industrial Filtration Standards Hub | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=industrial-standards | scope=all-filtration-domains</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ISO 11155, ASTM D6304</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DRYCORE, HYDROCORE, MICROKAPPA</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards</p>
+        <p>&nbsp;&nbsp;concept_id: industrial-standards-hub</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
 
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "name": "Industrial Filtration Standards",
-        "description": "Standards organized by industrial filtration system domain — ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1 — integrating measurement methods, performance benchmarks, and cleanliness targets.",
-        "url": "https://elimfilters.com/knowledge-system/standards",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["industrial filtration standards", "ISO 16889", "ISO 4406", "ISO 5011", "ASTM D6304", "ISO 8573-1", "contamination control", "cleanliness codes"],
-        "about": { "@type": "Thing", "name": "Industrial Filtration Standards", "description": "Measurement methods and performance benchmarks for all major industrial filtration domains" }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Industrial Filtration Standards',
+        description: 'Industrial filtration standards hub covering ISO, ASTM, SAE, and DIN specifications across lube oil, air intake, cabin safety, fuel, hydraulic, and compressed air filtration system domains.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration standards', 'ISO 16889', 'ISO 4406', 'ISO 5011', 'ISO 8573', 'ASTM D6304', 'SAE J1539', 'contamination control', 'asset protection'],
+        about: { '@type': 'Thing', name: 'Industrial Filtration Standards', description: 'ISO, ASTM, SAE, and DIN standards organized by filtration system domain for contamination measurement and control.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Industrial Filtration Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+        ],
+      }) }} />
 
     </main>
   );

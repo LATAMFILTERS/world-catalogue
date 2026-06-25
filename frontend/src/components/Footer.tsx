@@ -20,6 +20,7 @@ const NAV_COLUMNS = [
       { label: 'About Us', href: '/about', external: false },
       { label: 'Industries', href: '/industries', external: false },
       { label: 'Systems', href: '/systems', external: false },
+      { label: 'Distributors', href: '/distributors', external: false },
       { label: 'Contact', href: '/contact', external: false },
     ],
   },
@@ -28,7 +29,6 @@ const NAV_COLUMNS = [
     links: [
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },
-      { label: 'Commercial Lines', href: '/commercial-lines', external: false },
       { label: 'Become a Dealer', href: '/distributor-application', external: false },
       { label: 'Warranty', href: '/warranty', external: false },
     ],
@@ -72,12 +72,7 @@ export function Footer() {
 
       {/* ── MAIN BODY ── */}
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr repeat(5, auto)',
-          gap: '48px',
-          alignItems: 'start',
-        }} className="footer-main-grid">
+        <div className="footer-main-grid">
 
           {/* Brand column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>

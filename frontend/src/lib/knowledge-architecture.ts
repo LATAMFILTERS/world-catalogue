@@ -1,5 +1,5 @@
 /**
- * ELIMFILTERS® Knowledge Architecture Map
+ * ELIMFILTERS Knowledge Architecture Map
  *
  * Defines relational structure between:
  * - Technologies (product systems)
@@ -150,14 +150,14 @@ export const TECHNOLOGIES: TechnologyRecord = {
     description: 'High-performance synthetic fluids with superior contamination resistance'
   },
 
-  AQUAGUARD: {
-    id: 'aquaguard',
-    name: 'AQUAGUARD™',
+  HYDROCORE: {
+    id: 'hydrocore',
+    name: 'HYDROCORE™',
     category: 'Water Removal Technology',
     tagline: 'Integrated Water Extraction System',
-    slug: 'aquaguard',
+    slug: 'hydrocore',
     relatedStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_12937'],
-    addressesContamination: ['DIESEL_WATER', 'HYDRAULIC_CONTAMINATION'],
+    addressesContamination: ['DIESEL_WATER'],
     applicableIndustries: ['MARINE', 'AGRICULTURE', 'OUTDOOR_EQUIPMENT', 'POWER_GEN'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
@@ -200,7 +200,7 @@ export const STANDARDS: StandardRecord = {
     name: 'Cleanliness Coding System',
     description: 'Particle cleanliness classification with 4-digit code',
     slug: 'iso-16889',
-    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'AQUAGUARD', 'DURATECH'],
+    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'HYDROCORE', 'DURATECH'],
     relevantIndustries: ['ALL'],
     relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
     criticality: 'PRIMARY'
@@ -224,7 +224,7 @@ export const STANDARDS: StandardRecord = {
     name: 'Filter Integrity Testing',
     description: 'Collapse and integrity verification procedures',
     slug: 'iso-5011',
-    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'AQUAGUARD', 'DURATECH'],
+    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'HYDROCORE', 'DURATECH'],
     relevantIndustries: ['ALL'],
     relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
     criticality: 'PRIMARY'
@@ -236,7 +236,7 @@ export const STANDARDS: StandardRecord = {
     name: 'Karl Fischer Titration',
     description: 'Water content measurement in fuels',
     slug: 'astm-d6304',
-    applicableTo: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX'],
+    applicableTo: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
     relevantIndustries: ['DIESEL', 'MARINE', 'AGRICULTURE'],
     relatedContamination: ['DIESEL_WATER'],
     criticality: 'PRIMARY'
@@ -285,7 +285,7 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
       injectorCleaningFrequency: '2000-3000 hours',
       equipmentAvailability: '-12-18%'
     },
-    resolvedBy: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX'],
+    resolvedBy: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
     relatedStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_4406'],
     applicableIndustries: ['MARINE', 'AGRICULTURAL', 'OUTDOOR_EQUIPMENT']
   },
@@ -323,7 +323,7 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
       equipmentAvailability: '-15-30%',
       unplannedMaintenance: '1-2 per 500 hours'
     },
-    resolvedBy: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'MICROKAPPA'],
+    resolvedBy: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX', 'MICROKAPPA'],
     relatedStandards: ['ISO_16889', 'ISO_4406', 'NFPA_T214', 'DIN_51524'],
     applicableIndustries: ['CONSTRUCTION', 'MANUFACTURING', 'MINING', 'MARINE']
   }
@@ -392,7 +392,7 @@ export const INDUSTRIES: IndustryRecord = {
     contaminationExposure: 'MEDIUM-HIGH',
     primaryEquipment: ['FISHING_VESSELS', 'CARGO_SHIPS', 'NAVAL_EQUIPMENT'],
     relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableTechnologies: ['NANOFORCE', 'AQUAGUARD', 'DURATECH', 'SYNTRAX'],
+    applicableTechnologies: ['NANOFORCE', 'HYDROCORE', 'DURATECH', 'SYNTRAX'],
     applicableStandards: ['ASTM_D6304', 'ISO_16889', 'ISO_14540'],
     operatingConditions: {
       environment: 'High humidity, salt spray, thermal cycling',
@@ -443,7 +443,7 @@ export const INDUSTRIES: IndustryRecord = {
     contaminationExposure: 'MEDIUM',
     primaryEquipment: ['DIESEL_GENERATORS', 'TURBINES', 'COMPRESSORS'],
     relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'AQUAGUARD', 'SYNTRAX'],
+    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
     applicableStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_5011'],
     operatingConditions: {
       environment: 'Industrial sites, variable exposure',
@@ -464,7 +464,7 @@ export const COMPARISON_TOPICS = {
     name: 'OEM vs Aftermarket Logic',
     slug: 'oem-vs-aftermarket',
     description: 'Performance analysis and specification alignment',
-    relevantTechnologies: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'DURATECH', 'AQUAGUARD'],
+    relevantTechnologies: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'DURATECH', 'HYDROCORE'],
     coverageAreas: [
       'Performance equivalence',
       'Specification compliance',
@@ -583,7 +583,7 @@ export function getIndustriesBySeverity() {
 
 export function getAllTechnologiesByFeature(feature: 'waterRemoval' | 'particleCapture' | 'wearProtection' | 'costEffective') {
   const features = {
-    waterRemoval: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX'],
+    waterRemoval: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
     particleCapture: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'MICROKAPPA'],
     wearProtection: ['DURATECH', 'SYNTRAX'],
     costEffective: ['MACROCORE', 'DURATECH']

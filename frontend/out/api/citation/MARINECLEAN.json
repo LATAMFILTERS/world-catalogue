@@ -1,0 +1,36 @@
+{
+  "key": "MARINECLEAN",
+  "type": "commercial-system",
+  "name": "MARINECLEAN",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "marine",
+    "consolidation",
+    "fleet"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/technologies/marineclean",
+    "concept": "MARINECLEAN Marine Filtration System",
+    "version": "1.0",
+    "last_updated": "2026-06-24",
+    "content_hash": "sha256:e40f3660c2990a1087893d0f4e36906e89ed2702f5861fe67e7658433f041f83"
+  },
+  "canonical": {
+    "definition": "MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments with full traceability.",
+    "systems": "Marine diesel engines (recreational to commercial cargo), hydraulic steering and deck machinery systems, fuel transfer systems on vessels including jet skis, recreational boats, and heavy-duty cargo ships",
+    "failure_impact": "Uncontrolled contamination on vessels → engine or hydraulic failure at sea → vessel immobilization with no immediate service access | High-salinity environments accelerate corrosion in fuel and lube circuits — consolidated MARINECLEAN maintenance prevents catastrophic failure in remote maritime operations.",
+    "related_standards": "IMO marine equipment certification requirements | ISO 16889: Filter efficiency applicable to marine lube and hydraulic circuits | ASTM D6304: Water content testing for marine diesel fuel",
+    "related_technologies": "SYNTRAX: Marine engine lube oil filtration | HYDROCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTEPORE: HPCR marine diesel fuel filtration",
+    "industrial_role": "MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations."
+  },
+  "relationships": {},
+  "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md",
+  "_links": {
+    "self": "/api/citation/MARINECLEAN.json",
+    "type_index": "/api/citation/type/commercial-system.json",
+    "related": []
+  }
+}

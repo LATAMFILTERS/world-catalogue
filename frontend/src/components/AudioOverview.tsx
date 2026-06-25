@@ -149,7 +149,7 @@ export function AudioOverview({ pageSlug, title }: AudioOverviewProps) {
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
             <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D' }}>
-              // AUDIO OVERVIEW
+              AUDIO OVERVIEW
             </span>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
               {/* Language toggle */}

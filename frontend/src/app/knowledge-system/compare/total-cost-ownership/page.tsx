@@ -1,18 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function TCOPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← COMPARISON</Link>
@@ -25,23 +28,6 @@ export default function TCOPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              // SYSTEM ECONOMICS
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +35,7 @@ export default function TCOPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +51,7 @@ export default function TCOPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -100,7 +86,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -111,6 +97,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Commodity filtration purchasing focuses on per-unit filter cost. A Donaldson, Fleetguard, or Mann filter might cost $35-$75 depending on type. Aftermarket alternatives cost $15-$35. Price competition drives purchasing decisions.
           </p>
@@ -119,6 +106,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             But total cost of ownership includes hidden costs that commodity pricing completely ignores. The foundations of a sound TCO model are explained through the lens of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link>, where contamination control is treated as an engineering measurable rather than a procurement variable:
           </p>
@@ -193,7 +181,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -204,6 +192,7 @@ export default function TCOPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Total cost of ownership includes all costs associated with equipment operation over its useful life:
           </p>
@@ -423,7 +412,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -477,7 +466,7 @@ export default function TCOPage() {
                 color: '#FFF12D',
                 marginBottom: '1rem',
               }}>
-                SYSTEM APPROACH (ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup>)
+                SYSTEM APPROACH (ELIMFILTERS)
               </p>
               <ul style={{
                 fontSize: '0.85rem',
@@ -540,7 +529,7 @@ export default function TCOPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -573,45 +562,44 @@ export default function TCOPage() {
       </div>
 
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: TCO Comparison — System vs. Commodity Filtration</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>TCO comparison between system and commodity filtration quantifies the 10–15 year ownership cost difference between contamination-target-driven filter selection (system approach) and purchase-price-driven filter selection (commodity approach) — where a $200–$600 annual per-unit filtration premium in the system approach generates $50,000–$200,000 in avoided component replacement costs per equipment unit over its service life.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Heavy equipment lifecycle economics, mining equipment fleet cost modeling, construction machinery ownership analysis, agricultural equipment maintenance budgeting, truck fleet total operating cost optimization</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Commodity filtration over 15,000-hour equipment lifecycle: engine overhaul at 5,000 hours ($40,000–$150,000) vs. 15,000+ hours → 2 additional overhauls per lifecycle. Hydraulic valve replacement at 2,000 hours ($3,000–$15,000 per valve, 4–8 valves per machine) vs. 15,000 hours → 5–7 additional valve replacements. Unplanned downtime: 6–12 events/year at $1,500–$8,000/day → $9,000–$96,000/year vs. 0–2 events with system approach. Total 10-year cost difference: $100,000–$500,000 per equipment unit. System filtration investment to prevent this: $200–$800/year additional = $2,000–$8,000 over 10 years. ROI: 12–250x.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 4406: Cleanliness monitoring — the operational measurement that determines which cost curve equipment follows | ISO 16889: Beta ratio certification — verifies that selected filter can achieve the cleanliness codes that drive TCO difference | ISO 5011: Collapse pressure certification — prevents the most expensive single-event failure in the comparison</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>DURATECH: Extended service interval reduction in labor cost — reduces annual service events from 4 to 2 per circuit | NANOFORCE: Precision protection for highest-unit-cost components (injectors $800–$2,500, proportional valves $3,000–$15,000) driving the largest single-item TCO impact | MACROCORE: Multi-circuit coverage addressing the full component portfolio at risk in TCO analysis</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>The TCO comparison is the business case for system filtration investment — it translates contamination control theory into financial terms that procurement and fleet management decision-makers can evaluate against capital budgets, demonstrating that the correct comparison is not "system filter cost vs. commodity filter cost" but "system filtration program cost vs. commodity filtration + component replacement + downtime cost."</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/compare/total-cost-ownership | concept: TCO Comparison — System vs. Commodity | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
+        <p>CONCEPT_TAXONOMY: type=analysis | domain=asset-protection | approach=tco-analysis</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/total-cost-ownership</p>
+        <p>&nbsp;&nbsp;concept_id: filtration-tco-analysis</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
 
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Total Cost of Ownership — System vs. Commodity Filtration Comparison",
-        "description": "TCO analysis shows $200–$800 annual system filtration premium generates $50,000–$200,000 in avoided component replacement costs per equipment unit, delivering 12–250x ROI over 10-year equipment lifecycle.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["total cost of ownership filtration", "system vs commodity TCO", "filter ROI analysis", "equipment lifecycle cost", "filtration investment return", "maintenance economics"],
-        "about": { "@type": "Thing", "name": "TCO Comparison — Filtration Systems", "description": "10–15 year ownership cost comparison between system-approach and commodity-approach filtration programs" },
-        "mentions": {
-          "standards": ["ISO 4406", "ISO 16889", "ISO 5011"],
-          "technologies": ["DURATECH", "NANOFORCE", "MACROCORE"],
-          "contaminationModes": ["bearing wear", "valve failure", "engine overhaul triggers"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Total Cost of Ownership',
+        description: 'Total cost of ownership analysis showing how system-level filtration reduces equipment lifecycle costs through contamination control, extended component life, and reduced unplanned downtime.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['total cost of ownership', 'filtration TCO', 'contamination control', 'fleet economics', 'ISO 16889', 'ISO 4406', 'asset protection', 'equipment lifecycle cost'],
+        about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Economic framework for evaluating filtration decisions based on equipment lifecycle cost rather than filter purchase price.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'Total Cost of Ownership', item: 'https://elimfilters.com/knowledge-system/compare/total-cost-ownership' },
+        ],
+      }) }} />
     </main>
   );
 }

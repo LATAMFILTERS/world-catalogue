@@ -1,66 +1,21 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
-import { detectGeoLanguage } from '@/lib/geoLanguage';
-
-const LANGUAGES = [
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Español' },
-  { code: 'pt', label: 'Português' },
-  { code: 'fr', label: 'Français' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'nl', label: 'Nederlands' },
-  { code: 'ru', label: 'Русский' },
-  { code: 'zh', label: '中文' },
-  { code: 'ja', label: '日本語' },
-  { code: 'ar', label: 'العربية' },
-  { code: 'fa', label: 'فارسی' },
-];
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [showSwitcher, setShowSwitcher] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language?.slice(0, 2) || 'en';
-
-  // Geo-detect language on first load
-  useEffect(() => {
-    detectGeoLanguage().then(({ language, showSwitcher: show }) => {
-      i18n.changeLanguage(language);
-      setShowSwitcher(show);
-    });
-  }, []);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
-
-  // Close lang dropdown on outside click
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
-
-  const handleLangChange = (code: string) => {
-    i18n.changeLanguage(code);
-    setLangOpen(false);
-    setMenuOpen(false);
-  };
 
   return (
     <nav
@@ -80,8 +35,7 @@ export function Navigation() {
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 2rem',
-          height: '72px',
+          padding: '1.4rem 2rem 0.9rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -89,113 +43,23 @@ export function Navigation() {
       >
         {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image
+          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
+            <img
               src="/assets/logo-elimfilters.png"
-              alt="ELIMFILTERS®"
-              width={220}
-              height={220}
-              style={{ objectFit: 'contain' }}
+              alt="ELIMFILTERS"
+              className="nav-logo"
+              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'brightness(0) invert(1)' }}
             />
           </Link>
         </motion.div>
 
         {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
-          <NavLink href="/industries">{t('nav.industries')}</NavLink>
-          <NavLink href="/systems">{t('nav.systems')}</NavLink>
-          <NavLink href="/technologies">{t('nav.technologies')}</NavLink>
-          <NavLink href="/commercial-lines">Commercial Lines</NavLink>
-          <NavLink href="/knowledge-system">{t('nav.knowledge')}</NavLink>
-          <NavLink href="/contact">{t('nav.contact')}</NavLink>
-
-          {/* Language switcher — shown for all non-US/CA users */}
-          {showSwitcher && (
-            <div ref={langRef} style={{ position: 'relative' }}>
-              <motion.button
-                onClick={() => setLangOpen(!langOpen)}
-                whileHover={{ borderColor: '#FFF12D', color: '#FFF12D' }}
-                transition={{ duration: 0.18 }}
-                style={{
-                  background: 'none',
-                  border: '1px solid rgba(255,255,255,0.3)',
-                  color: 'rgba(255,255,255,0.75)',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: 600,
-                  fontSize: '0.68rem',
-                  letterSpacing: '0.1em',
-                  padding: '0.35rem 0.65rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  borderRadius: '2px',
-                }}
-              >
-                {currentLang.toUpperCase()}
-                <span style={{ fontSize: '0.55rem', opacity: 0.6 }}>{langOpen ? '▲' : '▼'}</span>
-              </motion.button>
-
-              <AnimatePresence>
-                {langOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.97 }}
-                    transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                    style={{
-                      position: 'absolute',
-                      top: 'calc(100% + 8px)',
-                      right: 0,
-                      background: '#0a0a0a',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                      borderRadius: '4px',
-                      minWidth: '150px',
-                      overflow: 'hidden',
-                      boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
-                      zIndex: 200,
-                    }}
-                  >
-                    {LANGUAGES.map(({ code, label }) => (
-                      <button
-                        key={code}
-                        onClick={() => handleLangChange(code)}
-                        style={{
-                          display: 'block',
-                          width: '100%',
-                          padding: '0.6rem 1rem',
-                          background: currentLang === code ? 'rgba(255,241,45,0.08)' : 'none',
-                          border: 'none',
-                          borderBottom: '1px solid rgba(255,255,255,0.05)',
-                          color: currentLang === code ? '#FFF12D' : 'rgba(255,255,255,0.65)',
-                          fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Outfit, sans-serif',
-                          fontSize: '0.82rem',
-                          textAlign: 'left',
-                          cursor: 'pointer',
-                          transition: 'background 0.15s, color 0.15s',
-                          direction: code === 'ar' || code === 'fa' ? 'rtl' : 'ltr',
-                        }}
-                        onMouseEnter={(e) => {
-                          if (currentLang !== code) {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                            e.currentTarget.style.color = '#fff';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          if (currentLang !== code) {
-                            e.currentTarget.style.background = 'none';
-                            e.currentTarget.style.color = 'rgba(255,255,255,0.65)';
-                          }
-                        }}
-                      >
-                        {label}
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          )}
+          <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
+          <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
+          <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
+          <NavLink href="/knowledge-system">{t('nav.knowledge', 'Knowledge')}</NavLink>
+          <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a
             href="https://part-search.elimfilters.com"
@@ -207,16 +71,16 @@ export function Navigation() {
             style={{
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
-              fontSize: '0.75rem',
+              fontSize: '0.82rem',
               letterSpacing: '0.1em',
-              padding: '0.5rem 1.25rem',
+              padding: '0.55rem 1.35rem',
               textDecoration: 'none',
               display: 'inline-block',
             }}
           >
-            {t('nav.findMyFilter')}
+            {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
         </div>
 
@@ -265,12 +129,11 @@ export function Navigation() {
               style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
             >
               {[
-                { href: '/industries', label: t('nav.industries') },
-                { href: '/systems', label: t('nav.systems') },
-                { href: '/technologies', label: t('nav.technologies') },
-                { href: '/commercial-lines', label: 'Commercial Lines' },
-                { href: '/knowledge-system', label: t('nav.knowledge') },
-                { href: '/contact', label: t('nav.contact') },
+                { href: '/industries', label: t('nav.industries', 'Industries') },
+                { href: '/systems', label: t('nav.systems', 'Systems') },
+                { href: '/technologies', label: t('nav.technologies', 'Technologies') },
+                { href: '/knowledge-system', label: t('nav.knowledge', 'Knowledge') },
+                { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div
                   key={item.href}
@@ -286,45 +149,15 @@ export function Navigation() {
               <motion.div
                 variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
               >
                 <a
                   href="https://part-search.elimfilters.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
+                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
                 >
-                  {t('nav.findMyFilter')} →
+                  {t('nav.findMyFilter', 'FIND MY FILTER')} →
                 </a>
-
-                {/* Mobile language picker — non-US/CA only */}
-                {showSwitcher && (
-                  <div>
-                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.6rem', textTransform: 'uppercase' }}>
-                      Language / Idioma
-                    </p>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                      {LANGUAGES.map(({ code, label }) => (
-                        <button
-                          key={code}
-                          onClick={() => handleLangChange(code)}
-                          style={{
-                            background: currentLang === code ? 'rgba(255,241,45,0.15)' : 'rgba(255,255,255,0.04)',
-                            border: `1px solid ${currentLang === code ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.1)'}`,
-                            color: currentLang === code ? '#FFF12D' : 'rgba(255,255,255,0.55)',
-                            fontFamily: code === 'ar' || code === 'fa' ? 'system-ui, sans-serif' : 'Outfit, sans-serif',
-                            fontSize: '0.78rem',
-                            padding: '0.35rem 0.65rem',
-                            cursor: 'pointer',
-                            borderRadius: '2px',
-                          }}
-                        >
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </motion.div>
             </motion.div>
           </motion.div>
@@ -359,9 +192,9 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
           fontFamily: 'Inter, sans-serif',
-          fontSize: '0.875rem',
+          fontSize: '0.95rem',
           fontWeight: 500,
-          letterSpacing: '0.05em',
+          letterSpacing: '0.04em',
           transition: 'color 0.2s ease',
           display: 'block',
           paddingBottom: '3px',
@@ -390,7 +223,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 const mobileLinkStyle: React.CSSProperties = {
   color: 'rgba(255,255,255,0.85)',
   textDecoration: 'none',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'Titillium Web, sans-serif',
   fontSize: '1rem',
   fontWeight: 500,
 };

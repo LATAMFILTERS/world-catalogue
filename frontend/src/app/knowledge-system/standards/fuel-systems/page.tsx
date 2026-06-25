@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -12,8 +13,9 @@ const STANDARDS = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Electrostatic synthetic media removing sub-10 micron water droplets and particles from fuel before injection, achieving 99.9% efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extracting 99.2% of free water from fuel, preventing injector stiction and microbial growth in storage tanks.' },
+  { name: 'SYNTEPORE', slug: 'syntepore', role: '3-layer progressive capture with 4µm zero-migration terminal barrier for HPCR injector protection at 2,000+ bar Common Rail pressure. Prevents injector nozzle erosion from particle contamination.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: '3-phase fuel water separator with 99.8% separation efficiency. Captures free, emulsified, and dissolved water via hydrophobic barrier minimum 2µm. Prevents corrosive injector failure above 500 ppm water threshold.' },
+  { name: 'TURBOCORE', slug: 'turbocore', role: '3-stage fuel protection system ISO 16332 certified for high-volume diesel applications: turbine inertia separation (stage 1) + coalescence (stage 2) + hydrophobic barrier (stage 3).' },
 ];
 
 const IMPACTS = [
@@ -51,12 +53,13 @@ const RELATED_SYSTEMS = [
 export default function FuelSystemsPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← STANDARDS</Link>
@@ -68,17 +71,13 @@ export default function FuelSystemsPage() {
       }}>
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>// INDUSTRIAL STANDARDS · FUEL SYSTEMS</p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.2rem)',
+            fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
           }}>Fuel Filtration Systems</h1>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
-            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', textAlign: 'justify', lineHeight: 1.7,
           }}>
             Diesel and fuel system filtration protecting injection precision against water contamination, particle loading, and microbial growth that degrade fuel delivery accuracy and equipment availability.
           </p>
@@ -89,11 +88,11 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>01 / SYSTEM OVERVIEW</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Fuel Filtration Domain</h2>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '1rem' }}>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Fuel Filtration Domain</h2>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8, marginBottom: '1rem' }}>
             Fuel systems are unique in that they carry two distinct contamination types: particles that cause injector mechanical damage and water that triggers corrosion and microbial growth. A fuel filter must simultaneously address both threats while maintaining flow rates sufficient for engine power output.
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8 }}>
             Two-stage fuel filtration (coarse primary + fine secondary) is standard in heavy equipment. Primary stages remove bulk sediment and free water. Secondary stages provide final cleanliness protection. In marine and agricultural applications, separator elements that remove free water are equally critical as particle removal elements.
           </p>
         </motion.section>
@@ -102,7 +101,7 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>02 / CONTAMINATION CHALLENGES</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Water and Particle Ingestion Sources</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Water and Particle Ingestion Sources</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {[
               { title: 'Atmospheric Water Breathing', desc: 'Fuel tanks breathe during thermal cycling - warm fuel expands and pushes air out, cool fuel contracts and draws air in. Humid air entering the tank deposits moisture that condenses on tank walls. Over weeks, this produces measurable water accumulation independent of fuel quality at delivery.' },
@@ -111,12 +110,12 @@ export default function FuelSystemsPage() {
               { title: 'Microbial Tank Proliferation', desc: 'Bacteria and fungi establish colonies at the fuel-water interface above 500 ppm water concentration. Biomass production blocks filters and produces acids that corrode tanks and accelerate fuel oxidation.' },
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{item.desc}</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7 }}>{item.desc}</p>
               </div>
             ))}
           </div>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginTop: '1.5rem' }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8, marginTop: '1.5rem' }}>
             Water contamination is the dominant fuel system failure pathway. The corrosion mechanisms, microbial proliferation chain, and injector damage progression are examined in detail in the <Link href="/knowledge-system/contamination/diesel-water" style={{ color: '#FFF12D', textDecoration: 'underline' }}>diesel water contamination case study</Link>.
           </p>
         </motion.section>
@@ -125,7 +124,7 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>03 / ASSOCIATED STANDARDS</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Specifications</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Specifications</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {STANDARDS.map((std) => (
               <div key={std.code} style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '1.25rem', padding: '1rem 1.25rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
@@ -146,7 +145,7 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>04 / OPERATIONAL IMPACT & COST</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Fuel Contamination Cost Impact</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Fuel Contamination Cost Impact</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.75rem' }}>
             {IMPACTS.map((impact) => (
               <div key={impact.metric} style={{ background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.12)', padding: '1.25rem' }}>
@@ -155,7 +154,7 @@ export default function FuelSystemsPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', textAlign: 'justify', lineHeight: 1.8 }}>
             Fuel system contamination directly reduces equipment availability and increases unplanned maintenance costs. Fleet operators managing contamination proactively through two-stage filtration and water separation can extend injector service intervals 3-5x. For fleet-level strategies on reducing fuel-related downtime, see the <Link href="/knowledge-system/fleet/fuel-efficiency" style={{ color: '#FFF12D', textDecoration: 'underline' }}>filtration and fuel efficiency optimization guide</Link>.
           </p>
         </motion.section>
@@ -164,11 +163,11 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>05 / RELATED CONTAMINATION MODES</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Primary Failure Mechanism</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Primary Failure Mechanism</h2>
           <Link href="/knowledge-system/contamination/diesel-water" style={{ textDecoration: 'none' }}>
             <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', margin: 0 }}>Diesel Water Contamination</p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>Water is the dominant contamination challenge in fuel systems. Explore the three water states (free, emulsified, sedimentary), corrosion pathways, and microbial proliferation mechanisms.</p>
+              <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', margin: 0 }}>Diesel Water Contamination</p>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6, margin: 0 }}>Water is the dominant contamination challenge in fuel systems. Explore the three water states (free, emulsified, sedimentary), corrosion pathways, and microbial proliferation mechanisms.</p>
               <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,241,45,0.4)', marginTop: '0.25rem' }}>VIEW ANALYSIS →</span>
             </motion.div>
           </Link>
@@ -177,14 +176,14 @@ export default function FuelSystemsPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} style={{ marginBottom: '3.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> TECHNOLOGIES</p>
+          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>06 / ELIMFILTERS TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Applicable Filtration Systems</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech) => (
               <Link key={tech.slug} href={`/technologies/${tech.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem', height: '100%' }}>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.6rem' }}>{tech.name}</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{tech.role}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textAlign: 'justify', lineHeight: 1.6 }}>{tech.role}</p>
                 </motion.div>
               </Link>
             ))}
@@ -195,7 +194,7 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>07 / SYSTEM DESIGN CONSIDERATIONS</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Engineering Factors</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Engineering Factors</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {[
               { title: 'Two-Stage Filtration Requirement', body: 'Coarse primary (25-40 micron) removes bulk contaminant. Fine secondary (2-5 micron absolute) provides final protection before injection circuits.' },
@@ -204,8 +203,8 @@ export default function FuelSystemsPage() {
               { title: 'Microbial Prevention Strategy', body: 'Keeping water content below 300 ppm prevents bacterial and fungal colony establishment in fuel tanks.' },
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{item.body}</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.7 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -215,25 +214,24 @@ export default function FuelSystemsPage() {
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }} style={{ marginBottom: '3.5rem' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>08 / FREQUENTLY ASKED QUESTIONS</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Technical Questions</h2>
+          <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Technical Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {FAQS.map((faq, i) => (
               <div key={i} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem' }}>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5 }}>{faq.q}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75 }}>{faq.a}</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5 }}>{faq.q}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', textAlign: 'justify', lineHeight: 1.75 }}>{faq.a}</p>
               </div>
             ))}
           </div>
         </motion.section>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>// EXPLORE OTHER FILTRATION SYSTEMS</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>
                 <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.35)' }} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', opacity: 0.6, letterSpacing: '0.1em' }}>{sys.code}</span>
-                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>{sys.title}</span>
+                  <span style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>{sys.title}</span>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,241,45,0.4)', marginTop: '0.25rem' }}>EXPLORE →</span>
                 </motion.div>
               </Link>
@@ -245,49 +243,47 @@ export default function FuelSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Diesel Fuel Filtration Systems</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>Diesel fuel filtration systems remove water contamination, particulate matter, and microbial growth from fuel circuits serving HPCR injection systems operating at 1,800–2,500 bar, where sub-10µm particle contamination and free water above 200 ppm cause injector stiction, needle seat scoring, and injection timing failure.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>HPCR fuel injection circuits, diesel fuel storage tanks, transfer pump circuits, bulk fuel handling systems, marine fuel systems, generator fuel supply</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Free water exceeds 200 ppm dissolved threshold → water/fuel emulsion reaches injector needle seat → hydraulic lock during injection stroke → needle seat scoring and micro-pitting → injection timing deviation ±2–5° → combustion efficiency loss 8–15% → injector replacement intervals reduced from 15,000+ hours to 3,000–6,000 hours. Microbial contamination route: water ingress → bacterial growth → biomass accumulation → filter plugging → fuel starvation → engine stall.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ASTM D6304: Karl Fischer titration method for measuring total water content in diesel fuel | ISO 12937: Petroleum product water determination by Coulometric Karl Fischer titration | ASTM D975: Diesel fuel specification defining particulate and water contamination limits | EN 590: European diesel fuel standard with water and sediment specifications</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>HYDROCORE: Water separation and coalescing technology targeting free water removal to below 100 ppm | SYNTEPORE: Sub-4µm terminal filtration protecting HPCR injector needle seats | NANOFORCE: Sub-micron water-absorbing media for last-stage fuel protection</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>HPCR injector protection via fuel contamination control is the single largest determinant of fuel system lifecycle cost — maintaining water below 200 ppm and particles below 10µm extends injector service intervals from 3,000 to 15,000+ hours, with injector replacement costs averaging $800–2,500 per unit in heavy diesel applications.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_COMMERCIAL_LINES</p>
-        <p>MARINECLEAN™ (/commercial-lines/marineclean): Salt-resistant marine filtration line with epoxy barrier coating and brine rejection geometry. IMO certified for diesel fuel filtration systems aboard commercial vessels, offshore platforms, and coastal equipment subject to continuous saltwater aerosol exposure.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/standards/fuel-systems | concept: Diesel Fuel Filtration Systems | version: 1.2 | last_updated: 2026-06-24</p>
+        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage_tank</p>
+        <p>CONCEPT_TAXONOMY: type=control | domain=fuel-integrity | standards=ASTM-D6304, ISO-12937</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406, ASTM D975</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
+        <p>&nbsp;&nbsp;Related_Technologies: SYNTEPORE, HYDROCORE, TURBOCORE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/fuel-systems</p>
+        <p>&nbsp;&nbsp;concept_id: diesel-fuel-filtration-systems</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
-
-      {/* JSON-LD for AI/search engine structured data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Diesel Fuel Filtration Systems — Industrial Standards",
-        "description": "Diesel fuel filtration removes water and particulate contamination protecting HPCR injection systems operating at 1,800–2,500 bar injection pressure.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["diesel fuel filtration", "ASTM D6304", "ISO 12937", "HPCR injector protection", "water contamination", "fuel filtration"],
-        "about": { "@type": "Thing", "name": "Diesel Fuel Filtration Systems", "description": "Multi-stage fuel filtration targeting water removal and particle capture for HPCR injection system protection" },
-        "mentions": {
-          "standards": ["ASTM D6304", "ISO 12937", "ASTM D975", "EN 590"],
-          "technologies": ["HYDROCORE", "SYNTEPORE", "NANOFORCE"],
-          "contaminationModes": ["water contamination", "injector stiction", "microbial growth", "particle contamination"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Fuel Filtration Systems',
+        description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['fuel filtration', 'ASTM D6304', 'ISO 12937', 'Karl Fischer', 'diesel contamination', 'common rail injection', 'water contamination fuel', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'Fuel Filtration Systems', description: 'Engineering domain governing particle and water contamination control in diesel fuel systems to protect common rail injectors and fuel delivery components.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'Fuel Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/fuel-systems' },
+        ],
+      }) }} />
     </main>
   );
 }

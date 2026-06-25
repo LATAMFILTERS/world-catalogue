@@ -73,7 +73,7 @@ export function AirfilterPage() {
                   fontFamily: 'JetBrains Mono, monospace',
                 }}
               >
-                // AIR INTAKE FILTRATION
+                AIR INTAKE FILTRATION
               </span>
             </motion.div>
             <motion.h1
@@ -83,7 +83,7 @@ export function AirfilterPage() {
               style={{
                 fontSize: 'clamp(2.5rem, 7vw, 5rem)',
                 fontWeight: 900,
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 marginBottom: '1rem',
                 lineHeight: 1.1,
               }}
@@ -97,7 +97,7 @@ export function AirfilterPage() {
               style={{
                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 fontWeight: 700,
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Titillium Web, sans-serif',
                 color: '#FFF12D',
                 marginBottom: '2rem',
               }}
@@ -152,7 +152,7 @@ export function AirfilterPage() {
                   style={{
                     fontSize: '2rem',
                     fontWeight: 700,
-                    fontFamily: 'Space Grotesk, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     marginBottom: '1.5rem',
                     color: 'rgba(255,255,255,0.9)',
                   }}
@@ -169,7 +169,7 @@ export function AirfilterPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> air intake protection is engineered under progressive density gradient principles. High-purity cellulose fibers reinforced with structural synthetic resins deliver absolute contamination control for intake systems in internal combustion engines and rotating machinery.
+                  ELIMFILTERS air intake protection is engineered under progressive density gradient principles. High-purity cellulose fibers reinforced with structural synthetic resins deliver absolute contamination control for intake systems in internal combustion engines and rotating machinery.
                 </p>
 
                 <div
@@ -270,7 +270,7 @@ export function AirfilterPage() {
               }}
             >
               <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Space Grotesk, sans-serif' }}>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Titillium Web, sans-serif' }}>
                   +45%
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
@@ -282,7 +282,7 @@ export function AirfilterPage() {
               </motion.div>
 
               <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Space Grotesk, sans-serif' }}>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Titillium Web, sans-serif' }}>
                   -60%
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
@@ -294,7 +294,7 @@ export function AirfilterPage() {
               </motion.div>
 
               <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
-                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Space Grotesk, sans-serif' }}>
+                <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Titillium Web, sans-serif' }}>
                   99.9%
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
@@ -392,7 +392,7 @@ export function AirfilterPage() {
         <section style={{ padding: '6rem 2rem', background: '#FFF12D', textAlign: 'center' }}>
           <AnimateIn direction="up">
             <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Space Grotesk, sans-serif' }}>
+              <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#000', marginBottom: '1rem', fontFamily: 'Titillium Web, sans-serif' }}>
                 Ready to Deploy?
               </h2>
               <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6 }}>

@@ -658,10 +658,7 @@
 
 <button id="skip-btn">SKIP INTRO ›</button>
 
-<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
-  <img src="/Leo-fn.avif" alt="KLEO Technology">
-  <span class="kleo-label">Powered by KLEO</span>
-</a>
+
 
 <div id="ui">
   <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
@@ -703,14 +700,14 @@
     <form class="search-form" data-form="vin" autocomplete="off">
       <div class="field-row cols-2">
         <div class="field-group">
-          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">Vehicle / Model</label>
+          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">VIN or Vehicle Model</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
               type="text"
               id="inp-vin-model"
               name="model"
-              placeholder="Enter model..."
+              placeholder="Enter 17-char VIN or Model..."
               spellcheck="false"
             />
           </div>
@@ -1259,17 +1256,18 @@ document.querySelectorAll('.hint-pill[data-fill]').forEach(pill => {
 // ─────────────────────────────────────────────────────────────────────────────
 const resultsEl = document.getElementById('results');
 let debounce;
+const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
 function clearResults() { resultsEl.innerHTML = ''; }
 
 function setLoading(query) {
-  resultsEl.innerHTML = `<p class="status-msg"><span class="loading-dots">// SEARCHING</span><em>${query.toUpperCase()}</em></p>`;
+  resultsEl.innerHTML = `<p class="status-msg"><span class="loading-dots">// SEARCHING</span><em>${_esc(query.toUpperCase())}</em></p>`;
 }
 
 function setEmpty(query) {
   resultsEl.innerHTML = `
     <p class="status-msg">// NO RESULTS
-      <em>No filters found for "${query.toUpperCase()}" — try a different reference or check the spelling</em>
+      <em>No filters found for "${_esc(query.toUpperCase())}" — try a different reference or check the spelling</em>
     </p>`;
 }
 
@@ -1433,8 +1431,8 @@ function renderCard(p) {
 function renderResults(items, count, mode, query) {
   resultsEl.innerHTML = `
     <div class="results-header">
-      <span class="results-count">// ${count} RESULT${count !== 1 ? 'S' : ''} — "${query.toUpperCase()}"</span>
-      <span class="results-mode">${mode}</span>
+      <span class="results-count">// ${count} RESULT${count !== 1 ? 'S' : ''} — "${_esc(query.toUpperCase())}"</span>
+      <span class="results-mode">${_esc(mode)}</span>
     </div>
     ${items.map(renderCard).join('')}`;
 }
@@ -1471,10 +1469,11 @@ if (inpPartCode && acDropdown) {
         const regex = new RegExp(`(${safeQ})`, 'gi');
         
         acDropdown.innerHTML = data.map(item => {
-          const highlighted = item.text.replace(regex, '<span class="ac-match">$1</span>');
-          return `<div class="ac-item" data-val="${item.text}">
+          const safeText = _esc(item.text);
+          const highlighted = safeText.replace(regex, '<span class="ac-match">$1</span>');
+          return `<div class="ac-item" data-val="${safeText}">
                     <span class="ac-val">${highlighted}</span>
-                    <span class="ac-type">${item.type}</span>
+                    <span class="ac-type">${_esc(item.type)}</span>
                   </div>`;
         }).join('');
         

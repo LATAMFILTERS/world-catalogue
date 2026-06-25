@@ -1276,4 +1276,153 @@ npx serve@latest -l 3001 -s out
 
 ---
 
+## CORE-EEAT GEO Audit Results (2026-06-23)
+
+### Audit Methodology
+Performed a CORE-EEAT (Contextual Clarity, Organization, Referenceability, Exclusivity, Experience, Expertise, Authority, Trust) audit on all knowledge-system pages to optimize for Generative Engine Optimization (GEO) — making content citable by AI systems (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews).
+
+### Scores (Before Fixes)
+- **Total**: 52/100
+- C (Contextual Clarity): 60/100
+- O (Organization): 65/100
+- R (Referenceability): 55/100 — RetrievalBlocks had incorrect technology references
+- E (Exclusivity): 45/100 — Missing canonical `@id` for ELIMFILTERS as citable entity
+- Exp (Experience): 50/100
+- Ept (Expertise): 60/100
+- A (Authority): 40/100 — No Organization schema with `sameAs`
+- T (Trust): 50/100
+
+### Fixes Implemented
+
+#### Fix 1: RetrievalBlock Technology Audit (All Pages)
+All RetrievalBlocks audited against `techPagesData.ts` as authoritative source.
+
+**Correct technology → system mappings (authoritative):**
+| Technology | Primary System | Domain |
+|---|---|---|
+| MACROCORE | Air intake | ISO 5011, SAE J726, ASTM D202 |
+| SYNTRAX | Engine lube oil | ISO 16889, ISO 4406 |
+| NANOFORCE | Hydraulic | ISO 16889, NFPA T2.14 |
+| SYNTEPORE | Fuel / HPCR injectors | ASTM D6304, ISO 12937 |
+| HYDROCORE | Fuel water separator | ASTM D6304 |
+| TURBOCORE | Fuel 3-stage | ISO 16332 |
+| THERMACORE | Cooling SCA additive | — |
+| DRYCORE | Compressed air/pneumatic | ISO 8573-1/2/3 |
+| INTEKCORE | Filter housing systems | — |
+| DURATECH | Fleet maintenance master kit | — |
+| MARINECLEAN | Marine diesel + hydraulic | IMO certified |
+| MICROKAPPA | Cabin air occupant health | ISO 11155, DIN 71220 |
+
+**Pages corrected:**
+- `standards/lube-oil-systems`: DURATECH, NANOFORCE, MACROCORE → SYNTRAX
+- `standards/fuel-systems`: HYDROCORE, MACROCORE, NANOFORCE → SYNTEPORE, HYDROCORE, TURBOCORE
+- `standards/hydraulic-systems`: NANOFORCE, SYNTRAX, MACROCORE → NANOFORCE
+- `standards/compressed-air-systems`: DRYCORE, THERMACORE, MACROCORE → DRYCORE
+- `standards/cabin-safety-systems`: SYNTRAX, DURATECH → MICROKAPPA
+- `standards/iso-16889`: removed MACROCORE (air intake, not fluid cleanliness)
+- `standards/iso-4406`: MACROCORE, NANOFORCE → NANOFORCE, SYNTRAX
+- `contamination/hydraulic-system`: NANOFORCE, SYNTRAX, MACROCORE → NANOFORCE
+- `contamination/particle-wear`: MACROCORE, NANOFORCE, DURATECH → MACROCORE, SYNTRAX, NANOFORCE
+- `contamination/diesel-water`: HYDROCORE, MACROCORE, NANOFORCE → HYDROCORE, SYNTEPORE, TURBOCORE
+- `fleet/fuel-efficiency`: HYDROCORE, MACROCORE, NANOFORCE → SYNTEPORE, HYDROCORE, MACROCORE, SYNTRAX
+- `fleet/reducing-downtime`: fixed NANOFORCE role (hydraulic, not fuel)
+- `fleet/total-cost-ownership`: fixed MICROKAPPA role (cabin air, not coolant)
+
+#### Fix 2: Organization Schema with @id (knowledge-system/layout.tsx)
+Added canonical Organization schema injected once for all knowledge-system child pages via `layout.tsx`.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://elimfilters.com/#organization",
+  "name": "ELIMFILTERS",
+  "url": "https://elimfilters.com",
+  "sameAs": ["https://elimfilters.com"],
+  "knowsAbout": ["Industrial filtration systems", "ISO 16889 beta ratio", ...]
+}
+```
+
+This enables AI systems to identify ELIMFILTERS as a citable entity with a stable canonical identifier.
+
+### Rules Going Forward
+- **Never use MACROCORE** in RetrievalBlocks for non-air-intake pages
+- **Never use NANOFORCE** for fuel or lube systems (hydraulic only)
+- **Never use SYNTRAX** for hydraulic or fuel systems (lube oil only)
+- **Never use SYNTEPORE** for air or hydraulic systems (fuel HPCR only)
+- All technology references must match `techPagesData.ts` before committing
+
+---
+
+## SEO & GEO Full Audit Results (2026-06-23)
+
+### SEO Score: 82/100 | GEO Score: 78/100
+
+### Fixes Applied (Session 2026-06-23)
+
+#### SEO/GEO Fixes — 4 Critical Issues Resolved
+1. **BreadcrumbList schema** added to `bridges/industrial-filtration/page.tsx` (was missing, only detail page without it)
+2. **`@id` added to all Organization schemas** — 28 `page.tsx` files updated; `author` and `publisher` now include `'@id': 'https://elimfilters.com/#organization'` enabling AI entity resolution
+3. **Science page GEO metadata** completed — added `SEMANTIC_DOMAINS`, `SYSTEMS_AFFECTED`, `CONCEPT_TAXONOMY`, `INTERNAL_REFERENCES`, `CITATION_METADATA` to `science/page.tsx` RetrievalBlock
+4. **Organization schema in `layout.tsx`** — verified `@id` already present from prior session
+
+#### Translation Audit — Critical Issues Fixed (All 10 Non-English Locales)
+
+**Fabricated FAQ content removed:** All 10 languages had completely invented product performance claims not present in the English source:
+- "MACROCORE™ and NANOFORCE™ achieve 99.9% particle capture efficiency" — fabricated
+- "HYDROCORE™ extends intervals with 99.8% water separation" — fabricated
+- Replaced with faithful translations of the 4 approved English FAQ questions
+
+**Brand name corruption fixed (8 languages):**
+| Language | Was | Now |
+|---|---|---|
+| FR | ELIMFILTRES / ÉLIMFILTRES | ELIMFILTERS |
+| IT | ELIMFILTRI / ELIMFILTER | ELIMFILTERS |
+| ZH | ELIMILTERS | ELIMFILTERS |
+| PT | ELIMFILTROS | ELIMFILTERS |
+| FA | ELIMFILTER | ELIMFILTERS |
+| AR | "المرشحات" (translated to Arabic) | ELIMFILTERS |
+| JA | "エリフィルター" (different transliteration) | ELIMFILTERS |
+| RU | ЭЛИМФИЛЬТРЫ / ЭЛИМФИЛЬТЕРС | ELIMFILTERS |
+
+**`home.heroDesc` aligned to English approved source** — all 10 languages were describing "air, fuel, hydraulic systems for 12 sectors. ISO 5011 · ISO 16889..." instead of the approved English: "Advanced contamination control systems engineered to reduce wear, minimize downtime..."
+
+**`home.statsLabels` aligned to English** — all 10 languages had ["Filtration Efficiency", "Life Extension", "OEM References", "Distribution Network"] instead of approved: ["Engine Bearing Lifespan", "Asset Life Extension", "Failures from Contamination", "Avg. Event Cost Prevented"]
+
+**Duplicate CTA button fixed:** `home.ctaFilter` was set to "Protect my assets" in EN locale, causing a visual duplicate of the yellow "Protect My Assets" button. Fixed to "Find My Part" (matching its actual link to `part-search.elimfilters.com`). Added `home.ctaProtect` key to all 11 locales.
+
+#### Content Cleanup — Knowledge-System Pages
+- Removed all `//` monospace comment labels (e.g., `// INTERNATIONAL FILTRATION STANDARD`, `// INDUSTRIAL STANDARDS · HYDRAULIC SYSTEMS`) — these appeared AI-generated and unprofessional
+- Applied `textAlign: 'justify'` to all body paragraphs across knowledge-system pages
+- Fixed duplicate text/button elements
+- Humanized overly mechanical AI phrasing
+- Corrected technology domain descriptions where mismatched
+
+#### Contamination Pages — Full English Rewrite
+Three contamination pages were rewritten with detailed, accurate technical content in English:
+- `contamination/hydraulic-system` — full failure modes, ISO codes, prevention procedures, commissioning flushing protocol
+- `contamination/particle-wear` — 3-mechanism wear analysis (two-body, three-body, adhesive), particle size damage thresholds
+- `contamination/diesel-water` — water ingress pathways, microbial growth mechanisms, Karl Fischer testing protocol
+
+### Rules Going Forward
+
+**Translation Rules (ENFORCED):**
+- Brand names NEVER translated: ELIMFILTERS, MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, HYDROCORE, TURBOCORE, THERMACORE, DRYCORE, INTEKCORE, DURATECH, MARINECLEAN, MICROKAPPA
+- ISO/ASTM/SAE/NFPA codes NEVER modified across languages (ISO 16889 stays ISO 16889 in all languages)
+- Numerical values NEVER changed in translation (micron ratings, percentages, temperatures)
+- All translations must be EXACT faithful translations of approved English — no additions, no inventions
+- `techPagesData.ts` is the authoritative source for all technology descriptions
+
+**UI Rules (ENFORCED):**
+- NO `//` monospace comment labels anywhere on any page (removed from hero sections, card tags, section tags)
+- All body paragraphs use `textAlign: 'justify'`
+- No duplicate CTA buttons or text elements
+- Homepage (`page.tsx`) is NO LONGER frozen — it is included in all future audits
+
+**Page Unlock Status:**
+- All pages are now available for audit and modification
+- The previous "homepage frozen" restriction has been lifted by the user (2026-06-23)
+
+---
+
 **Questions?** Check the specific section in CLAUDE.md or review the Git commit history for implementation examples.

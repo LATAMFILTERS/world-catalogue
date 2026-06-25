@@ -1,18 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function EvaluationFrameworkPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← COMPARISON</Link>
@@ -25,23 +28,6 @@ export default function EvaluationFrameworkPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              // FILTER EVALUATION
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +35,7 @@ export default function EvaluationFrameworkPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +51,7 @@ export default function EvaluationFrameworkPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -100,7 +86,7 @@ export default function EvaluationFrameworkPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -111,6 +97,7 @@ export default function EvaluationFrameworkPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Traditional filter evaluation focuses on:
           </p>
@@ -131,6 +118,7 @@ export default function EvaluationFrameworkPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             All OEM-compliant filters meet these specifications. Yet equipment failure rates vary dramatically. Why? Because specifications define minimum requirements, not system-level performance. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design framework</Link> provides the foundation for understanding what measurable contamination control actually requires.
           </p>
@@ -157,7 +145,7 @@ export default function EvaluationFrameworkPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -168,6 +156,7 @@ export default function EvaluationFrameworkPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             System-level filter evaluation focuses on measurable contamination control. The <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 particle cleanliness code</Link> is the primary classification tool that quantifies whether a filter system is actually achieving its target in operating equipment:
           </p>
@@ -339,7 +328,7 @@ export default function EvaluationFrameworkPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -478,7 +467,7 @@ export default function EvaluationFrameworkPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -516,45 +505,44 @@ export default function EvaluationFrameworkPage() {
       </div>
 
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Filter Evaluation Framework</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>The filter evaluation framework replaces OEM part number equivalence as the primary filter selection criterion with a contamination-control performance hierarchy: (1) ISO 16889 Beta ratio at the relevant micron threshold, (2) dirt-holding capacity for the intended service interval, (3) collapse pressure certification per ISO 5011, and (4) dimensional fit compliance — in that priority order.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Filter procurement processes, fleet maintenance programs, OEM specification compliance assessment, aftermarket filter qualification, maintenance contract specification writing, contamination control auditing</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Selecting filters based solely on OEM part number equivalence without Beta ratio verification: filters certified as "equivalent" may have β10 = 20 (95% efficiency) vs. original β10 = 200 (99.5% efficiency) → 10x more particles pass downstream → ISO 4406 cleanliness target unachievable → contamination control system fails without any observable filter defect → component wear accelerates silently → failure occurs 2,000–5,000 hours after wrong filter selection decision with no direct traceability to the root cause.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 16889: Beta ratio filter efficiency test — criterion 1 in the evaluation framework | ISO 5011: Air filter collapse pressure test — criterion 3 for air filter structural integrity | ISO 4406: Cleanliness code targets — the outcome criteria that the evaluation framework is designed to achieve | ISO 9001: Quality management for filter manufacturers — process quality baseline for supplier qualification</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>MACROCORE: ISO 16889 certified — demonstrated Beta ratio, dirt capacity, and collapse pressure data for framework-compliant selection | NANOFORCE: Sub-3µm Beta ratio certified — enabling ISO 4406 cleanliness codes tighter than 17/15/12 | SYNTRAX, DURATECH: Extended lifecycle certified elements with documented service interval performance data</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>The filter evaluation framework is the operational tool for converting contamination control theory into procurement decisions — it eliminates the "equivalent OEM" selection path that systematically underperforms on contamination control while appearing compliant, replacing it with measurable performance criteria that can be verified against ISO standards.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/compare/evaluation-framework | concept: Filter Evaluation Framework | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube</p>
+        <p>CONCEPT_TAXONOMY: type=framework | domain=asset-protection | approach=evaluation-methodology</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, SAE J1211</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/evaluation-framework</p>
+        <p>&nbsp;&nbsp;concept_id: filter-evaluation-framework</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
 
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Filter Evaluation Framework — Contamination-Based Selection Criteria",
-        "description": "Filter evaluation framework replaces OEM part number equivalence with ISO 16889 Beta ratio, dirt capacity, collapse pressure, and dimensional fit as the performance-based selection hierarchy.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["filter evaluation framework", "ISO 16889 selection criteria", "filter procurement", "Beta ratio certification", "filter qualification", "contamination control selection"],
-        "about": { "@type": "Thing", "name": "Filter Evaluation Framework", "description": "Performance-based filter selection framework using ISO standards as qualification criteria" },
-        "mentions": {
-          "standards": ["ISO 16889", "ISO 5011", "ISO 4406", "ISO 9001"],
-          "technologies": ["MACROCORE", "NANOFORCE", "SYNTRAX", "DURATECH"],
-          "contaminationModes": ["particle contamination", "contamination target failure", "filter bypass"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'Filter Evaluation Framework',
+        description: 'Technical framework for evaluating industrial filters using contamination control metrics—ISO 16889 Beta ratios, ISO 4406 cleanliness codes, and bypass thresholds—rather than product specifications alone.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['filter evaluation framework', 'ISO 16889', 'Beta ratio', 'ISO 4406', 'contamination control', 'filter selection', 'industrial filtration', 'asset protection'],
+        about: { '@type': 'Thing', name: 'Filter Evaluation Framework', description: 'Methodology for selecting industrial filters based on measured contamination control performance rather than product brand or OEM specification compliance.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'Filter Evaluation Framework', item: 'https://elimfilters.com/knowledge-system/compare/evaluation-framework' },
+        ],
+      }) }} />
     </main>
   );
 }

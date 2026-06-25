@@ -1,10 +1,10 @@
-/* Inter removed — consolidated to Outfit + JetBrains Mono */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design Tokens ──────────────────────────────────────────────────── */
 :root {
+  /* Colors */
   --volt: #FFF12D;
   --bg: #000000;
   --surface: #050505;
@@ -13,10 +13,31 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-2: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
-  --text-muted: #aaaaaa;
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-subtle: rgba(255, 255, 255, 0.35);
+
+  /* Typography — font stacks via CSS variables from next/font */
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Type scale — fluid, mobile-first */
+  --text-xs:   clamp(0.7rem,  1.5vw, 0.75rem);   /* labels, tags, monospace */
+  --text-sm:   clamp(0.85rem, 1.8vw, 0.9rem);    /* captions, secondary */
+  --text-base: clamp(0.95rem, 2vw,   1rem);       /* body — min 15px */
+  --text-lg:   clamp(1.05rem, 2.2vw, 1.15rem);   /* lead text */
+  --text-xl:   clamp(1.2rem,  2.5vw, 1.4rem);    /* subheadings */
+  --text-2xl:  clamp(1.4rem,  3vw,   1.9rem);    /* section headings */
+  --text-3xl:  clamp(1.7rem,  3.5vw, 2.5rem);    /* page headings */
+  --text-4xl:  clamp(2rem,    4vw,   3.2rem);    /* hero headings */
+
+  /* Spacing */
+  --section-px: clamp(1.25rem, 6vw, 6rem);
+  --section-py: clamp(3rem, 7vw, 6rem);
 }
 
-* {
+/* ── Reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -24,33 +45,84 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Prevent layout shift from scrollbar */
+  scrollbar-gutter: stable;
 }
 
+/* ── Base ───────────────────────────────────────────────────────────── */
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3 {
-  text-wrap: balance;
-}
-
+/* Paragraphs — left-aligned, never justified (kills mobile readability) */
 p {
-  font-size: 0.9rem;
+  text-align: left;
+  line-height: 1.75;
+  font-size: var(--text-base);
 }
 
-/* Typography */
-.font-heading {
-  font-family: var(--font-outfit), system-ui, sans-serif;
-  font-weight: 700;
+/* Headings use display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+}
+
+/* ® in headings — reduce to superscript size so it doesn't look oversized */
+h1 .reg-sup,
+h2 .reg-sup,
+h3 .reg-sup,
+h4 .reg-sup {
+  font-size: 0.38em;
+  vertical-align: super;
+  line-height: 0;
+  font-weight: inherit;
+  letter-spacing: 0;
+}
+
+/* ── Typography utility classes ─────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
+}
+
+/* Friendly readable sizes */
+.text-readable {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.text-lead {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* Volt glow effect */
@@ -148,7 +220,7 @@ p {
 
 /* Number display */
 .stat-number {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-weight: 700;
   color: var(--volt);
   line-height: 1;
@@ -242,66 +314,203 @@ p {
   .product-specs-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
 }
-/* ── Industry hero ─────────────────────────────────────────────────── */
+/* Hero responsive height */
 .industry-hero-section { min-height: 100vh; }
-
 @media (max-width: 1024px) {
   .industry-hero-section { min-height: 70vh !important; }
 }
-
 @media (max-width: 768px) {
-  /* Section */
-  .industry-hero-section {
-    min-height: 58vh !important;
-    justify-content: flex-end !important;
-  }
-  /* Background image */
-  .industry-hero-bg {
-    background-position: center top !important;
-    transform: none !important;
-  }
-  /* Inner content padding */
-  .industry-hero-content {
-    padding-top: 72px !important;
-    padding-bottom: 2.5rem !important;
-  }
-  /* Title */
-  .industry-hero-title {
-    font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
-    margin-bottom: 0.25rem !important;
-  }
-  /* Subtitle */
-  .industry-hero-subtitle {
-    font-size: clamp(1rem, 4.5vw, 1.5rem) !important;
-    margin-bottom: 0.75rem !important;
-    line-height: 1.2 !important;
-  }
-  /* CTA buttons row */
-  .industry-hero-cta {
-    margin-top: 1rem !important;
-    gap: 0.625rem !important;
-  }
-  .industry-hero-cta a {
-    padding: 0.75rem 1.5rem !important;
-    font-size: 0.72rem !important;
-  }
-}
-
-/* ── Technologies hero ─────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .tech-hero-section {
-    background-position: 20% 55% !important;
-    padding-top: 4rem !important;
-    padding-bottom: 2.5rem !important;
-    min-height: 56vh !important;
-  }
-  .tech-hero-h1 {
-    font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
-    margin-bottom: 0.75rem !important;
-  }
-  .tech-hero-p {
-    font-size: 0.82rem !important;
-    line-height: 1.6 !important;
-  }
+  .industry-hero-section { min-height: 60vh !important; }
 }
 /* ─────────────────────────────────────────────────────────────────── */
+
+/* ── Skip to content (accessibility) ──────────────────────────────── */
+.skip-to-content {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 99999;
+  background: var(--volt);
+  color: #000;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid #000;
+  outline-offset: 0;
+}
+
+/* ── Focus-visible styles (keyboard navigation) ───────────────────── */
+:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--volt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Suppress focus ring on mouse clicks, keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Back nav button — mobile responsive ──────────────────────────── */
+.back-nav-btn {
+  /* Desktop: already positioned correctly via inline style */
+}
+
+@media (max-width: 768px) {
+  .back-nav-btn {
+    /* Move to left side on mobile to avoid hamburger menu collision */
+    right: auto !important;
+    left: 1rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* ── Industries strip grid ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .industries-strip { grid-template-columns: repeat(4, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .industries-strip { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 400px) {
+  .industries-strip { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── Footer responsive grid ───────────────────────────────────────── */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(5, 1fr);
+  gap: 24px 32px;
+  align-items: start;
+}
+
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+}
+
+.footer-outer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 1280px) {
+  .footer-main-grid {
+    grid-template-columns: 1.2fr repeat(5, 1fr);
+    gap: 20px 24px;
+  }
+  .footer-nav-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2.5rem 1.5rem !important;
+  }
+  .footer-nav-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem 1.5rem !important;
+  }
+  .footer-outer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .footer-right-col {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.25rem !important;
+  }
+  .footer-nav-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.25rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.75rem 0.75rem !important;
+  }
+  .footer-nav-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.75rem 0.75rem !important;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .footer-nav-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ── Performance Metrics KPI grid — responsive ────────────────────── */
+@media (max-width: 768px) {
+  .stat-counter-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .stat-counter-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Footer right-col mobile visibility ──────────────────────────── */
+@media (max-width: 768px) {
+  .footer-right-col {
+    align-items: flex-start !important;
+  }
+  .footer-address {
+    text-align: left !important;
+  }
+}
+
+/* ── Nav header mobile height ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 52px !important;
+  }
+}
+@media (max-width: 480px) {
+  .nav-logo {
+    height: 46px !important;
+  }
+}

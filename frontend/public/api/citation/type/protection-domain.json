@@ -1,0 +1,134 @@
+{
+  "type": "protection-domain",
+  "count": 4,
+  "entities": [
+    {
+      "key": "CABIN",
+      "type": "protection-domain",
+      "name": "Cabin Air Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "concept": "CABIN — Cabin Air Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:3005ac733581826cb53ba0abd82643a38f11e42adc814780238fd35a95a81089"
+      },
+      "canonical": {
+        "definition": "The cabin air filtration domain covers operator cab air quality systems in mobile equipment, protecting personnel from PM10, PM2.5, and chemical vapor exposure in mining, agriculture, construction, and commercial transport operating environments.",
+        "systems": "Operator cabs in agricultural machinery, construction equipment, mining vehicles, commercial transport, and industrial vehicles operating in dusty or chemically active environments",
+        "failure_impact": "Inadequate cabin filtration → operator exposure to respirable PM2.5 dust → occupational silicosis, coal workers' pneumoconiosis, or chemical toxicity | Regulatory impact: exceeding OSHA/NIOSH PEL thresholds creates occupational health liability and equipment operator health risk.",
+        "related_standards": "ISO 11155: Road vehicle cabin air filtration test methodology | DIN 71220: Cabin air filter classification and performance requirements",
+        "related_technologies": "MICROKAPPA: Cabin air filter elements for PM10/PM2.5 capture with activated carbon variants for chemical vapor environments",
+        "industrial_role": "Cabin air filtration is a mandatory safety system for mobile equipment operators working in environments with silica dust, coal dust, grain dust, or pesticide exposure — failure to maintain effective filtration creates direct occupational health risk."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_11155",
+          "DIN_71220"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md"
+    },
+    {
+      "key": "FUEL",
+      "type": "protection-domain",
+      "name": "Fuel Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/fuel-systems",
+        "concept": "FUEL — Fuel Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:53a1ad7ff1077bbbfa5d812df1e3ad84bc76e06f3f20b058b3612204895a7287"
+      },
+      "canonical": {
+        "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
+        "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
+        "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
+        "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
+        "related_technologies": "SYNTEPORE: HPCR-rated fuel filter elements for sub-4 µm particle removal | HYDROCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments",
+        "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
+      },
+      "relationships": {
+        "related_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md"
+    },
+    {
+      "key": "HYDRAULIC",
+      "type": "protection-domain",
+      "name": "Hydraulic Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/hydraulic-systems",
+        "concept": "HYDRAULIC — Hydraulic Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:2c401bb35a048afe1a7e407a5d5246e07f2be3dc0b899d0f0460fc2f21117e21"
+      },
+      "canonical": {
+        "definition": "The hydraulic filtration domain covers particle cleanliness control in hydraulic circuits protecting proportional valves, piston pumps, and actuators from particle-induced wear, spool stiction, and flow degradation caused by contamination above ISO 4406 target codes.",
+        "systems": "Mobile hydraulic systems (excavators, loaders, cranes), stationary hydraulic power units, servo and proportional valve circuits, hydrostatic transmission systems",
+        "failure_impact": "Particle contamination above ISO 4406 17/15/12 → spool valve silting in proportional valves (1–4 µm silt) → erratic actuator response → valve replacement | Hard particles → piston pump barrel wear → internal leakage → system pressure loss | Particle contamination accounts for 70–80% of premature hydraulic component failures.",
+        "related_standards": "ISO 16889: Multi-pass filter efficiency test methodology (Beta ratio) | ISO 4406: Particle cleanliness code classification; target 17/15/12 to 16/14/11 | NFPA T2.14: Hydraulic fluid power contamination control guidelines",
+        "related_technologies": "NANOFORCE: High-Beta hydraulic filter elements for inline and return-line applications targeting ISO 4406 16/14/11 to 17/15/12 cleanliness",
+        "industrial_role": "Hydraulic filtration maintains the cleanliness codes required for proportional valve and piston pump reliability — particle contamination above cleanliness targets is the leading cause of unplanned hydraulic system downtime in mobile and industrial equipment."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/HYDRAULIC.md"
+    },
+    {
+      "key": "OIL",
+      "type": "protection-domain",
+      "name": "Lube Oil Filtration Domain",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "concept": "OIL — Lube Oil Filtration Domain",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:bf03800238ecd6cb32d39a7e9982c17ae9f86ac1c88e1f9738cee70876438dbd"
+      },
+      "canonical": {
+        "definition": "The lube oil filtration domain covers all engine oil and transmission oil circuits where particle contamination causes abrasive wear of bearing journals, piston rings, and gear surfaces, reducing component life measurably below design specifications.",
+        "systems": "Engine crankcase circuits, transmission fluid circuits, bearing lubrication systems across diesel engines, gas engines, and on/off-highway mobile equipment",
+        "failure_impact": "Particle contamination in oil above ISO 4406 16/14/11 → abrasive micro-cutting at bearing journal surfaces → progressive clearance increase → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours to 3,000–5,000 hours with uncontrolled contamination.",
+        "related_standards": "ISO 4406: Particle cleanliness code classification; target 16/14/11 for engine bearings | ISO 16889: Multi-pass filter efficiency test (Beta ratio) | DIN 51524: Lube and hydraulic oil specification; defines fluid compatibility requirements for filtration media",
+        "related_technologies": "SYNTRAX: Full-flow lube oil filter elements targeting ISO 4406 16/14/11 engine bearing cleanliness",
+        "industrial_role": "Lube oil filtration is the single largest controllable factor in engine bearing lifespan — maintaining ISO 4406 16/14/11 cleanliness extends bearing life 3–5× compared to commodity filtration approaches."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/OIL.md"
+    }
+  ]
+}

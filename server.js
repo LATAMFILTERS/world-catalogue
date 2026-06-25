@@ -27,17 +27,12 @@ if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
 const _extractAdminKey = (req) => {
   const authHeader = req.get('authorization') || '';
   if (authHeader.startsWith('Bearer ')) return authHeader.slice(7).trim();
-  return req.body?.key || '';
+  return '';
 };
 const requireAdmin = (req, res, next) => {
   const key = _extractAdminKey(req);
   if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
   next();
-};
-const checkAdmin = (req, res) => {
-  const key = _extractAdminKey(req);
-  if (!key || key !== ADMIN_KEY) { res.status(403).json({ error: 'forbidden' }); return false; }
-  return true;
 };
 
 // Prevent unhandled errors from crashing the process
@@ -63,140 +58,6 @@ app.use((req, res, next) => {
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
-// ─── POST /api/admin/resolve-orphan-skus ─────────────────────────────────────
-// ONE-TIME endpoint — registered before all middleware to guarantee routing.
-// Uses 3 bulk DB queries instead of per-record queries to stay within timeouts.
-// Remove after successful execution.
-app.post('/api/admin/resolve-orphan-skus', async (req, res) => {
-  // Auth inline — cannot rely on middleware order here
-  const authHeader = req.get('authorization') || '';
-  const key = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
-
-  const dryRun = req.query.dry === '1';
-  const FG_TYPE = { LF:'oil', FF:'fuel', HF:'hydraulic', FS:'fuel', WF:'oil' };
-  const MANN_TYPE = {
-    WP:'oil',HU:'oil',W:'oil',WK:'fuel',WD:'fuel',WDK:'fuel',
-    H:'hydraulic',HD:'hydraulic',P:'air',C:'air',AU:'air',
-    PU:'cabin',PF:'cabin',CF:'cabin',
-  };
-  const TYPE_PREFIX = { oil:'EL8', fuel:'EF9', hydraulic:'EH6', air:'EA1', cabin:'EC1' };
-
-  const getType = (r) => {
-    const fg = (r.fleetguard_part||'').match(/^[A-Z]+/)?.[0];
-    if (fg && FG_TYPE[fg]) return FG_TYPE[fg];
-    const mn = (r.mann_part||'').replace('_MANN-FILTER','').match(/^[A-Z]+/)?.[0];
-    return mn && MANN_TYPE[mn] ? MANN_TYPE[mn] : null;
-  };
-
-  const fs = require('fs'), path = require('path');
-  const orphansPath = path.join(__dirname, 'fleetguard_orphans.json');
-
-  let client;
-  try {
-    const orphans = JSON.parse(fs.readFileSync(orphansPath, 'utf8'));
-
-    // ── QUERY 1: connect + wake DB (with up to 45s retry for sleeping Render DB) ──
-    let dbReady = false;
-    for (let attempt = 1; attempt <= 5; attempt++) {
-      try {
-        client = await pool.connect();
-        await client.query('SELECT 1');
-        dbReady = true;
-        break;
-      } catch (e) {
-        if (client) { try { client.release(); } catch(_){} client = null; }
-        if (attempt < 5) await new Promise(r => setTimeout(r, attempt * 2000));
-      }
-    }
-    if (!dbReady) throw new Error('DB unavailable after 5 attempts');
-
-    // ── QUERY 2: load ALL existing SKUs + their codes in one bulk fetch ──
-    const bulkR = await client.query(`
-      SELECT sku, oem_codes, competitor_codes
-      FROM elimfilters_catalog
-      WHERE sku ~ '^E[A-Z][0-9][0-9]+$'
-    `);
-
-    // Build: code → sku  AND  max suffix per prefix
-    const codeToSku = new Map();
-    const maxBy = {};
-    for (const row of bulkR.rows) {
-      const pfx = row.sku.slice(0,3);
-      const sfx = parseInt(row.sku.slice(3), 10);
-      if (!isNaN(sfx) && (!maxBy[pfx] || sfx > maxBy[pfx])) maxBy[pfx] = sfx;
-      const allCodes = [
-        ...(Array.isArray(row.oem_codes) ? row.oem_codes : []),
-        ...(Array.isArray(row.competitor_codes) ? row.competitor_codes : []),
-      ];
-      for (const c of allCodes) if (c) codeToSku.set(String(c).trim().toUpperCase(), row.sku);
-    }
-
-    // ── PROCESS all orphans in-memory ──
-    let reused = 0, created = 0, skipped = 0;
-    const log = [];
-    const newRows = [];
-
-    for (const rec of orphans) {
-      if (rec.elimfilters_sku) continue;
-      const type = getType(rec);
-      if (!type) { skipped++; continue; }
-      const pfx = TYPE_PREFIX[type];
-      const mann = (rec.mann_part||'').replace('_MANN-FILTER','').trim();
-
-      // Check all candidate codes against in-memory map
-      const candidates = [rec.oem_normalized, mann, rec.fleetguard_part].filter(Boolean);
-      let existSku = null;
-      for (const c of candidates) {
-        existSku = codeToSku.get(String(c).trim().toUpperCase());
-        if (existSku) break;
-      }
-
-      let sku;
-      if (existSku) { sku = existSku; reused++; }
-      else {
-        const next = (maxBy[pfx] || 0) + 1;
-        maxBy[pfx] = next;
-        sku = `${pfx}${String(next).padStart(4,'0')}`;
-        created++;
-        // Register new codes in map so subsequent orphans can match
-        for (const c of candidates) codeToSku.set(String(c).trim().toUpperCase(), sku);
-        if (!dryRun) {
-          const oem = rec.oem_normalized ? [rec.oem_normalized] : [];
-          const comp = rec.fleetguard_part ? [rec.fleetguard_part] : [];
-          const xref = {};
-          if (mann) xref['MANN'] = mann;
-          if (rec.fleetguard_part) xref['FLEETGUARD'] = rec.fleetguard_part;
-          const equip = rec.oem_brand ? [{brand:rec.oem_brand,part:rec.oem_normalized}] : [];
-          newRows.push([sku, sku, type, JSON.stringify(oem), JSON.stringify(comp), JSON.stringify(xref), JSON.stringify(equip)]);
-        }
-      }
-      rec.elimfilters_sku = sku;
-      log.push({ sku, type, new: !existSku, oem: rec.oem_normalized, oem_brand: rec.oem_brand, mann, fleetguard: rec.fleetguard_part });
-    }
-
-    // ── QUERY 3: batch INSERT all new rows in one statement ──
-    if (!dryRun && newRows.length > 0) {
-      const vals = newRows.map((_, i) => {
-        const b = i * 7;
-        return `($${b+1},$${b+2},$${b+3},$${b+4}::jsonb,$${b+5}::jsonb,$${b+6}::jsonb,$${b+7}::jsonb)`;
-      }).join(',');
-      await client.query(
-        `INSERT INTO elimfilters_catalog (sku,codigo_base,filter_type,oem_codes,competitor_codes,brand_crossrefs,equipment_applications)
-         VALUES ${vals} ON CONFLICT (sku) DO NOTHING`,
-        newRows.flat()
-      );
-      fs.writeFileSync(orphansPath, JSON.stringify(orphans, null, 2));
-    }
-
-    res.json({ dry_run: dryRun, total: orphans.length, reused, created, skipped, max_suffixes_after: maxBy, sample: log.slice(0, 30) });
-  } catch (err) {
-    console.error('[resolve-orphan-skus]', err.message);
-    res.status(500).json({ error: err.message });
-  } finally {
-    if (client) { try { client.release(); } catch(_){} }
-  }
-});
 
 app.use(cors({
   origin: [
@@ -207,9 +68,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.set('trust proxy', 1);
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out');
 const partSearchStatic = express.static('part-search');
 
@@ -238,15 +98,37 @@ const _escHtml = (str) => String(str ?? '')
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&#x27;');
 
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
+async function _verifyTurnstile(token, ip) {
+  if (!TURNSTILE_SECRET) return true; // skip if not configured
+  try {
+    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: TURNSTILE_SECRET, response: token, remoteip: ip }),
+    });
+    const data = await r.json();
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 // Contact form endpoint
 app.post('/api/contact', searchLimiter, async (req, res) => {
-  const { name, email, phone, company, message } = req.body;
+  const { name, email, phone, company, message, turnstileToken } = req.body;
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
   if (name.length > 200 || email.length > 254 || message.length > 5000 ||
       (phone && phone.length > 30) || (company && company.length > 200)) {
     return res.status(400).json({ error: 'Input exceeds maximum length' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' });
+  }
+  if (!await _verifyTurnstile(turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
   }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
@@ -287,18 +169,66 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
   }
 });
 
-// Import routes (with fallback if file is missing)
-let knowledgeRoutes;
-try {
-  knowledgeRoutes = require('./routes/knowledge.routes');
-  console.log('[routes] Knowledge routes loaded ✅');
-} catch (err) {
-  console.error('[routes] Failed to load knowledge routes:', err.message);
-  // Create dummy router if knowledge routes fail
-  const express = require('express');
-  knowledgeRoutes = express.Router();
-  knowledgeRoutes.get('/', (req, res) => res.json({ status: 'knowledge-api-unavailable' }));
-}
+
+// Distributor application endpoint
+app.post('/api/distributor', searchLimiter, async (req, res) => {
+  const {
+    companyName, legalName, contactName, email, phone,
+    country, state, employees, yearsInBusiness,
+    currentProducts, serviceArea, message,
+  } = req.body || {};
+
+  if (!companyName || !contactName || !email || !country) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  if (email.length > 254 || companyName.length > 200 || contactName.length > 200 ||
+      (phone && phone.length > 30) || (message && message.length > 5000)) {
+    return res.status(400).json({ error: 'Input exceeds maximum length' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' });
+  }
+  if (!await _verifyTurnstile(req.body.turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
+  }
+
+  const esc = _escHtml;
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
+      to: 'distribution_network@elimfilters.com',
+      replyTo: esc(email),
+      subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
+      html: `
+        <h2 style="color:#000">New distributor application — elimfilters.com</h2>
+        <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
+          <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
+          <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
+          <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
+          <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
+          <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
+          <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
+        </table>
+        ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
+      `,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[distributor]', err.code || 'SMTP error');
+    res.status(500).json({ error: 'Failed to send application' });
+  }
+});
 
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
@@ -720,13 +650,13 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
             SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem(val)
             WHERE UPPER(val->>'code') = $1
                OR UPPER(val->>'partNumber') = $1
-               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND TRIM(UPPER(split_part(val#>>'{}', '|', 2))) = $1)
           )
           OR EXISTS (
             SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem(val)
             WHERE UPPER(val->>'code') = $1
                OR UPPER(val->>'partNumber') = $1
-               OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') ~ ('^[^|]+\\|\\s*' || $1 || '$'))
+               OR (jsonb_typeof(val) = 'string' AND TRIM(UPPER(split_part(val#>>'{}', '|', 2))) = $1)
                OR (jsonb_typeof(val) = 'string' AND UPPER(val#>>'{}') = $1)
           )
         ORDER BY
@@ -754,6 +684,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  if(model.length > 200 || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -791,6 +722,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
   const engine = req.query.engine ? req.query.engine.trim().toUpperCase() : null;
 
   if(!model) return res.json({success: false, filters: []});
+  if(model.length > 200 || (type && type.length > 100) || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -855,8 +787,7 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
 
 
 
-app.get('/api/catalog/stats', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/catalog/stats', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const [total, byType, completeness, recent] = await Promise.all([
@@ -903,8 +834,7 @@ app.get('/api/catalog/stats', async (req, res) => {
 
 
 // Audit: Find incomplete products
-app.get('/api/audit/incomplete-products', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/audit/incomplete-products', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -935,8 +865,7 @@ app.get('/api/audit/incomplete-products', async (req, res) => {
 // ─── GET /api/admin/suspects-equipment ──────────────────────────────────────
 // Returns products with ≤N equipment entries — feed to scrape_equipment.py batch mode.
 // Query params: key (required), max_entries (default 5), filter_type (optional), limit (default 2000)
-app.get('/api/admin/suspects-equipment', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/admin/suspects-equipment', adminLimiter, requireAdmin, async (req, res) => {
   const maxEntries = parseInt(req.query.max_entries) || 5;
   const limitRows  = parseInt(req.query.limit) || 2000;
   const filterType = req.query.filter_type || null;
@@ -966,9 +895,8 @@ app.get('/api/admin/suspects-equipment', async (req, res) => {
 
 // ─── GET /api/pending-donaldson ──────────────────────────────────────────────
 // Returns pending Donaldson products that need metadata enrichment.
-app.get('/api/pending-donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
-  const limit = parseInt(req.query.limit) || 100;
+app.get('/api/pending-donaldson', adminLimiter, requireAdmin, async (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit) || 100, 1000);
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -1016,8 +944,7 @@ const _validateImportRow = (row) => {
   return null;
 };
 
-app.post('/api/import/donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.post('/api/import/donaldson', adminLimiter, requireAdmin, async (req, res) => {
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
     return res.status(400).json({ error: 'rows array required' });
@@ -1114,9 +1041,8 @@ app.post('/api/import/donaldson', async (req, res) => {
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
-app.get('/api/recheck-donaldson', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
-  const limit = parseInt(req.query.limit) || 200;
+app.get('/api/recheck-donaldson', adminLimiter, requireAdmin, async (req, res) => {
+  const limit = Math.min(parseInt(req.query.limit) || 200, 1000);
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -1149,8 +1075,7 @@ app.get('/api/recheck-donaldson', async (req, res) => {
 
 // ─── GET /api/import/existing-skus ───────────────────────────────────────────
 // Returns all existing SKUs so the client can avoid collisions.
-app.get('/api/import/existing-skus', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/import/existing-skus', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query('SELECT sku FROM elimfilters_catalog ORDER BY sku');
@@ -1162,33 +1087,15 @@ app.get('/api/import/existing-skus', async (req, res) => {
   }
 });
 
-// Register knowledge API for AI agents
-try {
-  app.use('/api/knowledge', knowledgeRoutes);
-  console.log('[middleware] Knowledge API registered ✅');
-} catch (err) {
-  console.error('[middleware] Failed to register knowledge API:', err.message);
-}
 
 
 
 
-
-// ─── GET /api/status ─────────────────────────────────────────────────────────
-// Health and version status for deployment verification
-app.get('/api/status', (req, res) => {
-  res.json({
-    status: 'ok',
-    version: '3.7.0',
-    time: new Date().toISOString()
-  });
-});
 
 // ── UNIFIED SEARCH ──────────────────────────────────────────────────────────
 
 // ─── GET /api/catalog/export ──────────────────────────────────────────────────
-app.get('/api/catalog/export', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/catalog/export', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const result = await client.query(`
@@ -1209,7 +1116,7 @@ app.get('/api/catalog/export', async (req, res) => {
     res.setHeader('Content-Disposition', 'attachment; filename="elimfilters_catalog.csv"');
     res.send(lines.join('\r\n'));
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1432,8 +1339,7 @@ app.get('/api/stats', async (req, res) => {
 });
 // ─── GET /api/audit/report ───────────────────────────────────────────────────
 // Full catalog data quality audit. Returns stats on completeness.
-app.get('/api/audit/report', async (req, res) => {
-  if (!checkAdmin(req, res)) return;
+app.get('/api/audit/report', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
 
@@ -1529,6 +1435,40 @@ app.get('/api/audit/report', async (req, res) => {
   }
 });
 
+
+// ─── POST /api/ai/escalate ───────────────────────────────────────────────────
+app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
+  const { session_id, lang, transcript, turnstileToken } = req.body || {};
+  if (!transcript || typeof transcript !== 'string') {
+    return res.status(400).json({ error: 'transcript required' });
+  }
+  if (!await _verifyTurnstile(turnstileToken, req.ip)) {
+    return res.status(400).json({ error: 'Captcha verification failed' });
+  }
+  const safeTranscript = _escHtml(transcript.slice(0, 8000)).replace(/\n/g, '<br>');
+  const safeLang = _escHtml(String(lang || 'en').slice(0, 8));
+  const safeSession = _escHtml(String(session_id || '—').slice(0, 64));
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtpout.secureserver.net',
+      port: 465,
+      secure: true,
+      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
+    });
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
+      to: 'support@elimfilters.com',
+      subject: `[Chat] Consulta técnica — sesión ${safeSession} (${safeLang})`,
+      html: `<h2>Chat escalation</h2>
+             <p><b>Session:</b> ${safeSession} &nbsp;|&nbsp; <b>Lang:</b> ${safeLang}</p>
+             <hr><pre style="background:#f5f5f5;padding:1rem;white-space:pre-wrap">${safeTranscript}</pre>`,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[escalate]', err.code || 'SMTP error');
+    res.status(500).json({ error: 'mail error' });
+  }
+});
 
 // ────────────────────────────────────────────────────────────────────────────
 

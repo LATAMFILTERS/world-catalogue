@@ -2,24 +2,24 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Filtration Science — Engineering Principles & Media Technology | ELIMFILTERS®',
+    absolute: 'The Physics of Industrial Failure — The Science of Asset Protection™ | ELIMFILTERS',
   },
-  description: 'Engineering principles behind industrial filtration: Beta ratio, multi-layer media, bypass valves, collapse ratings, and the science of particle size distribution in contamination control systems.',
+  description: 'Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control science that prevents it.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-system/science/',
   },
   openGraph: {
-    title: 'Filtration Science — Engineering Principles & Media Technology | ELIMFILTERS®',
-    description: 'Beta ratio, multi-layer media, bypass valves, collapse ratings, and particle size distribution in contamination control.',
+    title: 'The Physics of Industrial Failure — The Science of Asset Protection™ | ELIMFILTERS',
+    description: 'ISO 281:2007 data: bearing life decreases 20× between ISO 4406 14/12/09 and ≥22. Abrasive wear, surface fatigue, adhesive wear, corrosive wear — and the contamination control framework that prevents all four.',
     url: 'https://elimfilters.com/knowledge-system/science/',
     type: 'website',
-    siteName: 'ELIMFILTERS® World Catalogue',
+    siteName: 'ELIMFILTERS World Catalogue',
     images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Filtration Science — Engineering Principles & Media Technology | ELIMFILTERS®',
-    description: 'Beta ratio, media layers, bypass valves, collapse ratings, and particle size distribution in filtration.',
+    title: 'The Physics of Industrial Failure | ELIMFILTERS',
+    description: 'Bearing life drops 20× between ISO 4406 14/12/09 and ≥22. Four wear mechanisms. Ten protection technologies. The science of industrial asset protection.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };

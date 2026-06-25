@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -38,12 +39,14 @@ const FRAMEWORK_SECTIONS = [
 export default function ComparisonHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system" style={{
+
+      <Link href="/knowledge-system"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← KNOWLEDGE SYSTEM</Link>
@@ -62,18 +65,8 @@ export default function ComparisonHubPage() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // FILTRATION EVALUATION
-          </p>
-          <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+                    <h1 style={{
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -123,7 +116,7 @@ export default function ComparisonHubPage() {
             lineHeight: 1.8,
             marginBottom: '1.5rem',
           }}>
-            ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
+            ELIMFILTERS reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -169,22 +162,9 @@ export default function ComparisonHubPage() {
                     gap: '1.2rem',
                   }}
                 >
-                  <div style={{
-                    width: '36px',
-                    height: '36px',
-                    border: '1px solid rgba(255,241,45,0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#FFF12D',
-                    fontSize: '1rem',
-                    flexShrink: 0,
-                  }}>
-                    {section.icon}
-                  </div>
 
                   <h2 style={{
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: 'Titillium Web, sans-serif',
                     fontSize: '1.1rem',
                     fontWeight: 600,
                     color: '#fff',
@@ -221,54 +201,43 @@ export default function ComparisonHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: Filtration Decision Frameworks</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>Filtration decision frameworks provide structured evaluation tools for industrial filter procurement, maintenance program design, and total cost of ownership analysis — replacing brand loyalty, price comparison, and OEM equivalence as selection criteria with ISO 16889 Beta ratio certification, ISO 4406 cleanliness target achievement, and equipment lifecycle economics.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Industrial procurement decision-making, fleet maintenance program design, OEM vs. aftermarket selection, total cost of ownership analysis, system vs. commodity filtration evaluation</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DECISION_FRAMEWORKS</p>
-        <p>System vs. Commodity: starts from ISO 4406 cleanliness target rather than purchase price | Filter Evaluation Framework: Beta ratio → dirt capacity → collapse pressure → dimensional fit hierarchy | OEM Comparison: warranty-period vs. post-warranty selection criteria split | TCO Analysis: filter price is 1–5% of ownership cost; contamination-triggered replacements are 95–99%</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 16889: Beta ratio — the primary selection criterion in all evaluation frameworks | ISO 4406: Cleanliness targets — the outcome metric all frameworks are designed to achieve | ISO 9001: Supplier quality management — the process baseline for aftermarket qualification</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>Filtration decision frameworks close the gap between contamination control knowledge and procurement behavior — they give maintenance engineers and fleet managers the structured criteria to select filters that actually achieve ISO 4406 targets rather than filters that look equivalent on a purchase order.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/compare | concept: Filtration Decision Frameworks Hub | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=asset-protection | scope=system-oem-tco-evaluation</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare</p>
+        <p>&nbsp;&nbsp;concept_id: filtration-comparison-hub</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
 
-      {/* JSON-LD for Search Engines & LLMs */}
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Filtration Decision Frameworks — System vs Commodity Evaluation Hub",
-        "description": "Structured evaluation tools replacing brand loyalty and price comparison with ISO 16889 Beta ratio certification and ISO 4406 cleanliness target achievement.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["filtration decision framework", "system vs commodity filtration", "OEM vs aftermarket", "total cost of ownership", "ISO 16889 Beta ratio", "ISO 4406"],
-        "about": {
-          "@type": "Thing",
-          "name": "Industrial Filtration Decision Frameworks",
-          "description": "Structured tools for industrial filter procurement and maintenance program design based on contamination control metrics"
-        },
-        "mentions": {
-          "standards": ["ISO 16889", "ISO 4406", "ISO 9001"],
-          "technologies": ["MACROCORE", "NANOFORCE"],
-          "frameworks": ["system-vs-commodity", "evaluation-framework", "total-cost-ownership", "oem-comparison"]
-        },
-        "relatedLink": [
-          { "url": "/knowledge-system/compare/system-vs-commodity", "title": "System vs Commodity Filtration" },
-          { "url": "/knowledge-system/compare/evaluation-framework", "title": "Filter Evaluation Framework" },
-          { "url": "/knowledge-system/compare/total-cost-ownership", "title": "Total Cost of Ownership Analysis" },
-          { "url": "/knowledge-system/compare/oem-comparison", "title": "OEM vs Aftermarket Positioning" }
-        ]
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'System vs Commodity Thinking',
+        description: 'Reframes industrial filtration evaluation from product-based commodity selection to system-level contamination control strategy, covering OEM comparison, filter evaluation frameworks, and total cost of ownership analysis.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['system vs commodity filtration', 'OEM filter comparison', 'filter evaluation', 'total cost of ownership', 'contamination control', 'ISO 16889', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'System vs Commodity Filtration Thinking', description: 'Framework for evaluating industrial filtration decisions based on contamination control system performance rather than product price or brand.' },
       }) }} />
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'System vs Commodity Thinking', item: 'https://elimfilters.com/knowledge-system/compare' },
+        ],
+      }) }} />
     </main>
   );
 }

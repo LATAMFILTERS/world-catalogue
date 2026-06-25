@@ -9,7 +9,7 @@
  * Platform declaration (2026-06-10):
  *   Active Technologies:  MACROCORE · SYNTEPORE · INTEKCORE · DRYCORE ·
  *                         HYDROCORE · SYNTRAX · NANOFORCE · THERMACORE · MICROKAPPA
- *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE) · COOLTECH (→ THERMACORE)
+ *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE)
  *   Ecosystems:           MARINECLEAN · DURATECH
  *
  * Migration status: Phase 2 Task 1 — file created, not yet consumed by any page.
@@ -51,7 +51,7 @@ export type IndustryKey =
 
 export type SystemKey =
   | 'AIRFILTER'
-  | 'HYDROCORE_SERIES'
+  | 'TURBOCORE_SERIES'
   | 'CABIN'
   | 'COOLANT'
   | 'DRYER'
@@ -453,23 +453,6 @@ export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, Deprecated
     comparisonIndustries: 'Marine, Oil & Gas, Power Gen, Agriculture',
   },
 
-  /** @deprecated Replaced by THERMACORE. Existing product pages remain live pending sunset. */
-  COOLTECH: {
-    key: 'COOLTECH',
-    name: 'THERMACORE™',
-    slug: 'cooltech',
-    replacedBy: 'THERMACORE',
-    replacedByName: 'THERMACORE™',
-    domain: 'Cooling System',
-    logoFile: 'logo-cooltech.png',
-    geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation.',
-    deprecatedDate: '2026-06-02',
-    sunsetNote: 'COOLTECH product pages remain live. New content and canonical blocks reference THERMACORE. Remove from TechnologyKey union after full consumer migration.',
-    comparisonFunction: 'DCA-replenishing coolant protection',
-    comparisonMetric: 'SCA restoration · liner cavitation prevention',
-    comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
-  },
-
 };
 
 // ============================================================================
@@ -725,14 +708,14 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
     supportingTechnologies: [],
   },
 
-  HYDROCORE_SERIES: {
-    key: 'HYDROCORE_SERIES',
+  TURBOCORE_SERIES: {
+    key: 'TURBOCORE_SERIES',
     name: 'Hydrocore Series',
-    slug: 'hydrocore-series',
+    slug: 'turbocore-series',
     domain: 'Fuel Cleanliness',
     primaryTechnology: 'HYDROCORE',
     supportingTechnologies: [],
-    description: "HYDROCORE/SERIES™ is ELIMFILTERS’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+    description: "TURBOCORE™ is ELIMFILTERS’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
   },
 
   CABIN: {

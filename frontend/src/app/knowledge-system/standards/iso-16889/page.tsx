@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -37,13 +38,15 @@ export default function ISO16889Page() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       {/* Back Button */}
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← STANDARDS</Link>
@@ -62,18 +65,8 @@ export default function ISO16889Page() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // INTERNATIONAL FILTRATION STANDARD
-          </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -88,7 +81,7 @@ export default function ISO16889Page() {
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '500px',
             margin: '0 auto',
-            lineHeight: 1.65,
+            textAlign: 'justify', lineHeight: 1.65,
           }}>
             Hydraulic Fluid Power — Fluids — Method for coding the degree of contamination by solid particles
           </p>
@@ -113,7 +106,7 @@ export default function ISO16889Page() {
           }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.3rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -126,7 +119,7 @@ export default function ISO16889Page() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
+            textAlign: 'justify', lineHeight: 1.8,
           }}>
             ISO 16889 es el estándar internacional que define el método de codificación de la limpieza de fluidos hidráulicos según el grado de contaminación por partículas sólidas. Es la herramienta de medición central dentro de cualquier{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>estrategia de filtración industrial</Link>.{' '}
@@ -150,7 +143,7 @@ export default function ISO16889Page() {
             }}
           >
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: '1.3rem',
               fontWeight: 700,
               color: '#FFF12D',
@@ -163,7 +156,7 @@ export default function ISO16889Page() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
+              textAlign: 'justify', lineHeight: 1.8,
             }}>
               {section.content}
             </p>
@@ -183,7 +176,7 @@ export default function ISO16889Page() {
           transition={{ duration: 0.5, delay: sections.length * 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.5rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -208,7 +201,7 @@ export default function ISO16889Page() {
                 }}
               >
                 <h3 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#FFF12D',
@@ -220,7 +213,7 @@ export default function ISO16889Page() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
-                  lineHeight: 1.7,
+                  textAlign: 'justify', lineHeight: 1.7,
                 }}>
                   {faq.answer}
                 </p>
@@ -232,46 +225,54 @@ export default function ISO16889Page() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: ISO 16889 — Filter Testing Standard</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>ISO 16889 defines the multi-pass filter test method for measuring hydraulic and lube filter element efficiency (Beta ratio) and dirt-holding capacity using calibrated ISO 12103-1 A3 medium test dust in a controlled single-element test circuit — the universal benchmark for filter performance claims in industrial applications.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Hydraulic filter testing laboratories, lube filter certification, industrial fluid power component qualification, filter procurement specifications, OEM filtration requirement documentation</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Filter elements without ISO 16889 certification have unmeasured Beta ratios → purchaser cannot verify actual particle capture efficiency at critical micron thresholds → system contamination targets (ISO 4406) are unachievable → equipment component wear accelerates beyond predicted rates → maintenance interval planning becomes unreliable → unplanned downtime occurs when predicted filter performance does not match actual field behavior.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 12103-1: Test dust specification (A1 fine, A2 fine, A3 medium, A4 coarse) used in ISO 16889 multi-pass test | ISO 4406: Cleanliness code standard that uses Beta ratio data to define achievable cleanliness targets | ISO 16889:2022: Current revision including updated test procedures and Beta ratio calculation methods | NFPA T2.14: References ISO 16889 Beta ratios as the basis for hydraulic system filtration specification</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>NANOFORCE: Certified to ISO 16889 Beta ratio at 3µm absolute (β3 ≥200) for sub-micron hydraulic protection | SYNTRAX: ISO 16889 certified synthetic media with documented dirt-holding capacity for service interval planning | MACROCORE: ISO 16889 multi-pass test certified at 10µm absolute for primary filtration stages</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>ISO 16889 Beta ratio certification is the minimum verifiable performance claim for industrial hydraulic and lube filters — without it, filter efficiency is a manufacturer claim rather than a measured value, making it impossible to verify that contamination targets (ISO 4406 cleanliness codes) are achievable with the selected element.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/standards/iso-16889 | concept: ISO 16889 Filter Testing Standard | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Hydraulic Efficiency Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: hydraulic, lube, fuel, industrial_fluid</p>
+        <p>CONCEPT_TAXONOMY: type=standard | domain=filter-testing | standards=ISO-16889, ISO-4406</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 4406, ISO 16889, NFPA T2.14</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
+        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-16889</p>
+        <p>&nbsp;&nbsp;concept_id: iso-16889-filter-testing</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
       </RetrievalBlock>
 
-      {/* JSON-LD for AI/search engine structured data */}
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "ISO 16889 — Filter Testing Standard and Beta Ratio",
-        "description": "ISO 16889 multi-pass filter test method measures filter element efficiency (Beta ratio) and dirt-holding capacity — the universal benchmark for hydraulic and lube filter performance certification.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["ISO 16889", "Beta ratio", "filter efficiency test", "multi-pass test", "hydraulic filter certification", "ISO 12103-1"],
-        "about": { "@type": "Thing", "name": "ISO 16889 Filter Testing Standard", "description": "Multi-pass test method for measuring filter element efficiency and dirt-holding capacity" },
-        "mentions": {
-          "standards": ["ISO 16889", "ISO 12103-1", "ISO 4406", "NFPA T2.14"],
-          "technologies": ["NANOFORCE", "SYNTRAX", "MACROCORE"],
-          "contaminationModes": ["particle contamination", "hydraulic system contamination", "lube oil contamination"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'ISO 16889 — Multi-Pass Filter Performance Testing Standard',
+        description: 'ISO 16889 specifies the multi-pass method for evaluating filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic fluid power filter elements. Beta ratio quantifies filter efficiency at specific particle sizes, enabling system designers to specify target cleanliness codes for critical components.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['ISO 16889', 'Beta ratio', 'filter efficiency', 'multi-pass test', 'hydraulic filtration', 'ISO 4406', 'contamination control', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'ISO 16889 Filter Testing', description: 'International standard for measuring filtration efficiency (Beta ratio) and dirt-holding capacity of hydraulic filter elements using the multi-pass method.' },
+        inLanguage: 'es',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'ISO 16889', item: 'https://elimfilters.com/knowledge-system/standards/iso-16889' },
+        ],
+      }) }} />
     </main>
   );
 }

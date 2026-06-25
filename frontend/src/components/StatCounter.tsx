@@ -126,6 +126,7 @@ export function StatCounter({ stats, title }: StatCounterProps) {
         )}
 
         <div
+          className="stat-counter-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: `repeat(${Math.min(stats.length, 4)}, 1fr)`,

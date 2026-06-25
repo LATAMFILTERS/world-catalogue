@@ -1,18 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function OEMComparisonPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system/compare" style={{
+
+      <Link href="/knowledge-system/compare"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← COMPARISON</Link>
@@ -25,23 +28,6 @@ export default function OEMComparisonPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              // MARKET POSITIONING
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +35,7 @@ export default function OEMComparisonPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -65,7 +51,7 @@ export default function OEMComparisonPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -100,7 +86,7 @@ export default function OEMComparisonPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -111,6 +97,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Original Equipment Manufacturers (Caterpillar, Cummins, Detroit Diesel, Volvo, Komatsu, etc.) specify filter brands and types based on:
           </p>
@@ -131,6 +118,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             OEM specifications (Donaldson, Fleetguard, Mann, Wix, Baldwin, etc.) represent a <strong>minimum compliance floor, not a performance target</strong>. The OEM is optimizing for cost and warranty liability risk, not for your equipment's operational lifespan.
           </p>
@@ -138,6 +126,7 @@ export default function OEMComparisonPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             Many OEM-specified filters are high-quality products. But specification compliance and product quality are separate dimensions. A high-quality Donaldson filter installed with commodity maintenance practices will fail to maintain contamination control. Understanding the <Link href="/knowledge-system/bridges/oem-replacement" style={{ color: '#FFF12D', textDecoration: 'underline' }}>OEM replacement context</Link> clarifies when brand choice is a compliance issue versus when system design is the controlling variable. An equivalent quality aftermarket filter installed as part of a system-level contamination control strategy will outperform commodity practice.
           </p>
@@ -164,7 +153,7 @@ export default function OEMComparisonPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -177,7 +166,7 @@ export default function OEMComparisonPage() {
             marginBottom: '2rem',
             fontStyle: 'italic',
           }}>
-            Note: The following overview is factual market analysis. ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> does not compete on price or brand positioning. We compete on system-level contamination control.
+            Note: The following overview is factual market analysis. ELIMFILTERS does not compete on price or brand positioning. We compete on system-level contamination control.
           </p>
           <div style={{
             display: 'grid',
@@ -240,7 +229,7 @@ export default function OEMComparisonPage() {
                 color: '#FFF12D',
                 marginBottom: '0.75rem',
               }}>
-                <strong>ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> Positioning:</strong> Not a filter brand, but an asset protection system.
+                <strong>ELIMFILTERS Positioning:</strong> Not a filter brand, but an asset protection system.
               </p>
               <p style={{
                 fontSize: '0.85rem',
@@ -274,7 +263,7 @@ export default function OEMComparisonPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -285,6 +274,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             OEM filter brand choice is relevant when:
           </p>
@@ -341,6 +331,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
+            textAlign: 'justify',
           }}>
             Outside these specific constraints, OEM brand choice has minimal impact on actual equipment performance. The operational consequences of this distinction are quantified in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, which shows how system design — not brand selection — drives availability outcomes. Performance is governed by:
           </p>
@@ -372,12 +363,12 @@ export default function OEMComparisonPage() {
             marginBottom: '1rem',
             textTransform: 'uppercase',
           }}>
-            04 / THE ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> ADVANTAGE
+            04 / THE ELIMFILTERS ADVANTAGE
           </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -395,7 +386,7 @@ export default function OEMComparisonPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
-              ELIMFILTERS<sup style={{fontSize:'0.55em',verticalAlign:'super',letterSpacing:0}}>®</sup> does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
+              ELIMFILTERS does not position as a filter replacement brand. Instead, we provide the system-level approach that makes filter brand choice secondary:
             </p>
             <ul style={{
               fontSize: '1rem',
@@ -426,6 +417,7 @@ export default function OEMComparisonPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
+            textAlign: 'justify',
           }}>
             <strong style={{ color: '#FFF12D' }}>Result:</strong> Equipment reliability improves not because of which filter brand is installed, but because contamination is controlled. The filter brand becomes an implementation detail, selected based on cost efficiency and specification match, not brand positioning or price competition.
           </p>
@@ -434,45 +426,44 @@ export default function OEMComparisonPage() {
       </div>
 
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: OEM vs. Aftermarket Filter Positioning</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>OEM vs. aftermarket filter analysis evaluates filter selection across three dimensions: warranty compliance requirements, contamination control performance (ISO 16889 Beta ratio), and total cost of ownership — where OEM choice is warranted during warranty periods, but post-warranty selection based solely on OEM brand equivalence fails to optimize for the performance metrics that determine equipment service life.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Warranty-period filter procurement, post-warranty fleet maintenance, fleet standardization programs, maintenance contract specification, equipment dealer service networks, industrial procurement policy</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Selecting OEM-branded filters based on warranty compliance beyond warranty expiration: OEM filter price premium 40–200% above ISO 16889-certified equivalents → $300–$1,200/unit/year additional cost for large fleet → $150,000–$600,000/year for 500-unit fleet with no measured performance benefit. Alternative failure mode: selecting non-certified "aftermarket equivalent" without ISO 16889 Beta ratio verification → actual contamination control performance unmeasured → same equipment failure risk as no-brand selection despite brand recognition.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 16889: Beta ratio — the only performance metric that distinguishes contamination-control-capable filters from dimensional equivalents | ISO 4406: Cleanliness codes — the outcome metric for evaluating whether OEM or aftermarket achieves required contamination targets | ISO 9001: Quality management certification — the process quality baseline for aftermarket manufacturer evaluation</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>ELIMFILTERS technologies are OEM-independent: dimensional fit meets OEM specifications, ISO 16889 Beta ratio certification is verified, ISO 9001 quality management is implemented — the criteria that matter for post-warranty filter selection decisions</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>OEM vs. aftermarket is a warranty compliance question during warranty period and a performance + economics question post-warranty — the correct post-warranty framework is ISO 16889 Beta ratio verification, not brand equivalence, because OEM specification compliance guarantees dimensional fit but not contamination control performance in the post-warranty operating context.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/compare/oem-comparison | concept: OEM vs. Aftermarket Filter Positioning | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
+        <p>CONCEPT_TAXONOMY: type=analysis | domain=asset-protection | approach=oem-vs-aftermarket</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/oem-comparison</p>
+        <p>&nbsp;&nbsp;concept_id: oem-vs-aftermarket-filtration</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
       </RetrievalBlock>
 
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "OEM vs. Aftermarket Filter Analysis — Post-Warranty Selection Framework",
-        "description": "OEM filter selection is warranted during warranty periods; post-warranty selection should be based on ISO 16889 Beta ratio certification rather than brand equivalence for optimal TCO.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["OEM vs aftermarket filter", "filter brand comparison", "post-warranty filtration", "ISO 16889 aftermarket certification", "filter procurement economics", "Donaldson Fleetguard Baldwin"],
-        "about": { "@type": "Thing", "name": "OEM vs. Aftermarket Filter Positioning", "description": "Performance and economics framework for OEM and aftermarket filter selection decisions" },
-        "mentions": {
-          "standards": ["ISO 16889", "ISO 4406", "ISO 9001"],
-          "technologies": ["MACROCORE", "NANOFORCE", "SYNTRAX", "DURATECH"],
-          "contaminationModes": ["particle contamination", "contamination target failure"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'OEM vs Aftermarket Analysis',
+        description: 'When brand choice matters, and when system design is what actually determines equipment reliability. Factual analysis of OEM filter requirements versus aftermarket alternatives in industrial filtration.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['industrial filtration', 'OEM filters', 'aftermarket filters', 'Donaldson', 'Fleetguard', 'filter brand comparison', 'contamination control', 'ISO 16889'],
+        about: { '@type': 'Thing', name: 'OEM vs Aftermarket Filtration Analysis', description: 'Analysis of when OEM filter brand choice is a compliance requirement versus when system-level contamination control design determines equipment reliability.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Compare', item: 'https://elimfilters.com/knowledge-system/compare' },
+          { '@type': 'ListItem', position: 4, name: 'OEM vs Aftermarket Analysis', item: 'https://elimfilters.com/knowledge-system/compare/oem-comparison' },
+        ],
+      }) }} />
     </main>
   );
 }

@@ -13,617 +13,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --y: #FFF12D;
-      --y2: rgba(255,241,45,0.12);
-      --y3: rgba(255,241,45,0.06);
-      --bg: #000;
-      --border: rgba(255,255,255,0.07);
-      --muted: rgba(255,255,255,0.35);
-    }
-
-    html, body {
-      width: 100%; min-height: 100%;
-      background: var(--bg);
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ─── SPLASH SCREEN ─── */
-    #cinematic-splash {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      z-index: 9999;
-      transition: opacity 1s ease-in-out;
-    }
-    #splash-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      cursor: pointer;
-    }
-    .splash-hint {
-      position: absolute;
-      bottom: 30px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-      pointer-events: none;
-      animation: pulseHint 2s infinite;
-    }
-    @keyframes pulseHint {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.6; }
-    }
-
-    /* ─── CANVAS ─── */
-    #nanoflow {
-      position: fixed;
-      inset: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* ─── LOGO ─── */
-    #logo {
-      position: fixed;
-      top: 1.5rem; left: 2rem;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-    }
-    .logo-text {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.5);
-    }
-    .logo-text span { color: var(--y); }
-    .logo-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 2px;
-      padding: 0.15rem 0.4rem;
-    }
-
-    /* ─── SKIP ─── */
-    #skip-btn {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      z-index: 200;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.2);
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 2px;
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      transition: color 0.25s, border-color 0.25s;
-    }
-    #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
-
-    /* ─── UI LAYER ─── */
-    #ui {
-      position: relative;
-      z-index: 10;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem clamp(1rem, 4vw, 2rem) 4rem;
-      gap: 0;
-    }
-
-    /* ─── INTRO LABEL ─── */
-    .intro-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(1.3rem, 5.2vw, 2.08rem);
-      letter-spacing: 0.05em;
-      color: var(--y);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 1s ease, transform 1s ease;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .intro-label.vis { opacity: 1; transform: translateY(0); }
-
-    /* ─── SEARCH PANEL ─── */
-    #search-panel {
-      width: 100%;
-      max-width: 720px;
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-      pointer-events: none;
-    }
-    #search-panel.vis {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-
-    /* ─── TAB SWITCHER ─── */
-    .mode-tabs {
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 1.5rem;
-      gap: 0;
-    }
-    .mode-tab {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.94rem;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 0.65rem 1.2rem;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-      margin-bottom: -1px;
-      white-space: nowrap;
-    }
-    .mode-tab:hover { color: rgba(255,255,255,0.7); }
-    .mode-tab.active {
-      color: var(--y);
-      border-bottom-color: var(--y);
-    }
-
-    /* ─── FORMS ─── */
-    .search-form { display: none; flex-direction: column; gap: 0.85rem; }
-    .search-form.active { display: flex; }
-
-    .field-row {
-      display: grid;
-      gap: 0.65rem;
-      grid-template-columns: 1fr;
-    }
-    .field-row.cols-2 { grid-template-columns: 1fr 1fr; }
-    .field-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .field-label {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-    }
-
-    .input-wrap {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(255,241,45,0.28);
-      border-radius: 3px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(16px);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .input-wrap:focus-within {
-      border-color: var(--y);
-      box-shadow: 0 0 0 3px rgba(255,241,45,0.06);
-    }
-    .input-wrap.primary { border-color: rgba(255,241,45,0.4); }
-
-    .input-icon {
-      padding: 0 0.9rem;
-      color: rgba(255,255,255,0.25);
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .input-wrap input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      padding: 0.6rem 0;
-      letter-spacing: 0.04em;
-      min-width: 0;
-      text-transform: uppercase;
-    }
-    .input-wrap input::placeholder { color: rgba(255,255,255,0.12); text-transform: none; }
-
-    select {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
-      padding: 0.65rem 0.5rem 0.65rem 0;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    select option { 
-      background: #111; 
-      color: #fff; 
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-    }
-
-    .select-arrow {
-      padding: 0 0.9rem;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.7rem;
-      pointer-events: none;
-    }
-
-    /* ─── SEARCH BUTTON ─── */
-    .btn-search {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      letter-spacing: 0.16em;
-      color: #000;
-      background: var(--y);
-      border: none;
-      border-radius: 3px;
-      padding: 0.75rem 2rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .btn-search:hover { background: #ffe800; }
-    .btn-search:active { transform: scale(0.97); }
-
-    .form-footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.65rem;
-      margin-top: 1rem;
-    }
-
-    /* ─── HINT PILLS ─── */
-    .hint-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .hint-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 100px;
-      padding: 0.22rem 0.6rem;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
-
-    /* ─── RESULTS ─── */
-    #results {
-      width: 100%;
-      max-width: 720px;
-      margin-top: 2.5rem;
-    }
-
-    .results-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.1rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .results-count {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-    .results-mode {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,241,45,0.5);
-      border: 1px solid rgba(255,241,45,0.15);
-      border-radius: 2px;
-      padding: 0.18rem 0.5rem;
-    }
-
-    /* ─── RESULT CARD ─── */
-    .result-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 0.7rem;
-      background: rgba(255,255,255,0.012);
-      transition: border-color 0.2s, background 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .result-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--y3) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .result-card:hover { border-color: rgba(255,241,45,0.22); }
-    .result-card:hover::before { opacity: 1; }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .card-left { display: flex; flex-direction: column; gap: 0.3rem; }
-
-    .card-sku {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--y);
-      letter-spacing: 0.07em;
-    }
-    .card-base {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      align-items: flex-start;
-    }
-    .ctag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.54rem;
-      letter-spacing: 0.1em;
-      padding: 0.18rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .ctag.tech {
-      border-color: rgba(255,241,45,0.22);
-      color: rgba(255,241,45,0.7);
-      background: rgba(255,241,45,0.04);
-    }
-    .ctag.duty {
-      border-color: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.55);
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.55;
-      margin-top: 0.6rem;
-      position: relative;
-    }
-
-    /* ─── SPECS GRID ─── */
-    .card-specs {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 0.75rem 1rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      position: relative;
-    }
-    .spec {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .spec-l {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.25);
-      text-transform: uppercase;
-    }
-    .spec-v {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.82);
-    }
-
-    /* ─── REFS ─── */
-    .card-refs {
-      margin-top: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      position: relative;
-    }
-    .ref-line {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.28);
-      line-height: 1.7;
-    }
-    .ref-brand {
-      color: rgba(255,255,255,0.5);
-      margin-right: 0.4rem;
-    }
-
-    /* ─── EQUIPMENT APPS ─── */
-    .card-equipment {
-      margin-top: 0.85rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      position: relative;
-    }
-    .equip-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.52rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.25);
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .equip-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-    }
-    .equip-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 2px;
-      padding: 0.18rem 0.5rem;
-    }
-
-    /* ─── STATUS MESSAGES ─── */
-    .status-msg {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.25);
-      text-align: center;
-      padding: 3rem 0;
-      letter-spacing: 0.08em;
-    }
-    .status-msg em {
-      display: block;
-      font-style: normal;
-      margin-top: 0.5rem;
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.15);
-    }
-
-    /* ─── LOADING DOTS ─── */
-    .loading-dots::after {
-      content: '...';
-      animation: dots 1.2s steps(3, end) infinite;
-    }
-    @keyframes dots {
-      0%   { content: '.'; }
-      33%  { content: '..'; }
-      66%  { content: '...'; }
-    }
-
-    /* ─── KLEO BADGE ─── */
-    #kleo-badge {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 3vw;
-      z-index: 200;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.25rem;
-      text-decoration: none;
-      opacity: 0.45;
-      transition: opacity 0.3s ease;
-    }
-    #kleo-badge:hover { opacity: 0.85; }
-    #kleo-badge img {
-      height: 55px;
-      width: auto;
-      object-fit: contain;
-    }
-    #kleo-badge .kleo-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.42rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-    }
-
-    /* ─── FOOTER ─── */
-    #footer {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-    .footer-line {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.15);
-    }
-    .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
-    .footer-line a:hover { color: var(--y); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 640px) {
-      .field-row.cols-2,
-      .field-row.cols-3 { grid-template-columns: 1fr; }
-      .mode-tab { padding: 0.55rem 0.75rem; font-size: 0.55rem; }
-      .card-specs { grid-template-columns: repeat(2, 1fr); }
-      #logo { top: 1rem; left: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
 
-<!-- ─── CINEMATIC SPLASH ─── -->
-<div id="cinematic-splash" style="display: none;">
-  <canvas id="splash-canvas"></canvas>
-  <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
+<!-- ─── CINEMATIC SPLASH SCREEN ─── -->
+<div id="cinematic-splash">
+  <!-- Full-screen technology image -->
+  <div id="cinematic-bg"></div>
+  <!-- Vignette layers for cinematic depth -->
+  <div class="cinematic-vignette"></div>
+  <div class="cinematic-scanlines"></div>
+  <!-- Letterbox bars (Paramount style) -->
+  <div class="letterbox top"></div>
+  <div class="letterbox bottom"></div>
+  <!-- Brand stamp -->
+  <div class="cinema-brand">
+    <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS" id="cinema-logo">
+    <div class="cinema-tagline" id="cinema-tagline">ASSET PROTECTION ENGINEERS</div>
+  </div>
+  <!-- Technology reveal -->
+  <div class="cinema-tech" id="cinema-tech">
+    <div class="cinema-tech-label" id="cinema-tech-label">TECHNOLOGY</div>
+    <div class="cinema-tech-name" id="cinema-tech-name"></div>
+    <div class="cinema-tech-desc" id="cinema-tech-desc"></div>
+  </div>
+  <!-- Skip -->
+  <button class="cinema-skip" id="cinema-skip">SKIP INTRO ›</button>
 </div>
 
+<!-- Background ambient canvas (post-splash) -->
 <canvas id="nanoflow"></canvas>
 
+<!-- ─── STICKY NAV ─── -->
+<nav id="main-nav" aria-label="Main navigation">
+  <a href="https://elimfilters.com" class="nav-logo" aria-label="ELIMFILTERS">
+    <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height:40px;width:auto;object-fit:contain;">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#technologies">Technologies</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#vin-guide">Serial Guide</a></li>
+    <li><a href="https://elimfilters.com/knowledge-system">Knowledge</a></li>
+    <li><a href="intel.html" class="nav-admin">Intel▪</a></li>
+  </ul>
+  <a href="https://elimfilters.com" class="nav-cta">Get Support →</a>
+</nav>
+
+<!-- Logo (fixed top-left for splash overlay) -->
 <a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
-  <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height: 64px; width: auto; object-fit: contain;">
+  <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo" style="height: 52px; width: auto; object-fit: contain;">
   <span class="logo-badge" id="logo-badge">PART SEARCH</span>
 </a>
 
-<button id="skip-btn">SKIP INTRO ›</button>
-
-<a href="https://kleotech.io" id="kleo-badge" target="_blank" rel="noopener" aria-label="Powered by KLEO Technology">
-  <img src="/Leo-fn.avif" alt="KLEO Technology">
-  <span class="kleo-label">Powered by KLEO</span>
-</a>
+<button id="skip-btn" style="position:fixed; bottom:5rem; right:2rem; z-index:200; font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.14em; color:rgba(255,255,255,0.2); background:transparent; border:1px solid rgba(255,255,255,0.07); border-radius:2px; padding:0.4rem 0.8rem; cursor:pointer;">SKIP INTRO ›</button>
 
 <div id="ui">
-  <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
+  <!-- ── HERO SECTION ── -->
+  <h1 class="hero-title">TOTAL ASSET PROTECTION</h1>
+  <p class="hero-subtitle" id="intro-label">// THE INTELLIGENT FILTRATION METROLOGY SYSTEM</p>
 
   <!-- ── SEARCH PANEL ── -->
   <div id="search-panel">
@@ -638,23 +86,25 @@
     <!-- ── FORM: PART NUMBER ── -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
-        <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
-        <div class="input-wrap primary">
+        <label class="field-label" for="inp-part" id="lbl-part">Part number / Cross-Reference</label>
+        <div class="input-wrap primary ac-wrap">
           <span class="input-icon" aria-hidden="true">⌕</span>
           <input
             type="search"
             id="inp-part"
             name="code"
-            placeholder="Enter part number..."
+            placeholder="Enter Elimfilters SKU, OEM, or Competitor code..."
             spellcheck="false"
             autocomplete="off"
             aria-label="Part number"
+            aria-autocomplete="list"
+            aria-controls="ac-list"
+            aria-expanded="false"
           />
+          <div id="ac-list" class="ac-dropdown" role="listbox" aria-label="Suggestions"></div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-part">INITIALIZE SEARCH →</button>
     </form>
 
     <!-- ── FORM: VIN / MODEL ── -->
@@ -668,7 +118,7 @@
               type="text"
               id="inp-vin-model"
               name="model"
-              placeholder="Enter model..."
+              placeholder="e.g. HILUX, RANGER..."
               spellcheck="false"
             />
           </div>
@@ -681,15 +131,13 @@
               type="text"
               id="inp-vin-engine"
               name="engine"
-              placeholder="Enter engine..."
+              placeholder="e.g. 1GD, 3.2L..."
               spellcheck="false"
             />
           </div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-vin">INITIALIZE SEARCH →</button>
     </form>
 
     <!-- ── FORM: EQUIPMENT ── -->
@@ -703,7 +151,7 @@
               type="text"
               id="inp-equip-model"
               name="model"
-              placeholder="Enter equipment model..."
+              placeholder="e.g. CAT 336..."
               spellcheck="false"
             />
           </div>
@@ -719,52 +167,383 @@
               <option value="LOADER">Wheel Loader</option>
               <option value="CRANE">Crane</option>
               <option value="TRUCK">Mining Truck</option>
-              <option value="DRILL">Drill Rig</option>
-              <option value="COMPRESSOR">Compressor</option>
-              <option value="GENERATOR">Generator</option>
               <option value="MARINE">Marine / Vessel</option>
-              <option value="AGRICULTURAL">Agricultural</option>
-              <option value="FORKLIFT">Forklift</option>
+              <option value="GENERATOR">Generator</option>
             </select>
             <span class="select-arrow" aria-hidden="true">▾</span>
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
+          <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
               type="text"
               id="inp-equip-engine"
               name="engine"
-              placeholder="Enter engine..."
+              placeholder="Optional..."
               spellcheck="false"
             />
           </div>
         </div>
       </div>
-      <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH →</button>
-      </div>
+      <button type="submit" class="btn-search" id="btn-search-equip">INITIALIZE SEARCH →</button>
     </form>
 
   </div><!-- /search-panel -->
 
-  <!-- ── RESULTS ── -->
-  <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
+  <!-- ── COMMERCIAL ECOSYSTEMS ── -->
+  <div class="ecosystem-section">
+    <div class="ecosystem-label">// INTEGRATED DEFENSE ECOSYSTEMS</div>
+    <div class="comm-systems">
+      <a href="#" class="comm-card marine" aria-label="MarineClean System">
+        <span class="comm-badge" id="cb-marine">SYSTEM</span>
+        <span class="comm-title" id="ct-marine">MARINECLEAN™</span>
+        <span class="comm-desc" id="cd-marine">Total filtration consolidation engineered for extreme maritime and high-salinity environments.</span>
+      </a>
+      <a href="#" class="comm-card dura" aria-label="Duratech Kits">
+        <span class="comm-badge" id="cb-dura">FLEET KITS</span>
+        <span class="comm-title" id="ct-dura">DURATECH</span>
+        <span class="comm-desc" id="cd-dura">Complete Heavy Duty protection kits designed for transport and heavy fleet overhauls.</span>
+      </a>
+    </div>
+  </div>
+
+
 
 </div><!-- /ui -->
 
+<!-- ─── TRUST STRIP ─── -->
+<section class="trust-strip" aria-label="Technology Certifications">
+  <div class="trust-item"><span class="trust-num">11</span><span class="trust-label">Proprietary Technologies</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-num">β<sub>10</sub>≥1000</span><span class="trust-label">Beta Ratio Standard</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-num">ISO 4548</span><span class="trust-label">Test Method</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-num">400+</span><span class="trust-label">Extreme Environments Simulated</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-num">100%</span><span class="trust-label">Hydrostatic Leak Tested</span></div>
+</section>
+
+<!-- ─── TECHNOLOGIES BAND ─── -->
+<section id="technologies" class="section-band">
+  <div class="band-header">
+    <div class="band-label">// PROTECTION MATRIX</div>
+    <h2 class="band-title">Our Technology Arsenal</h2>
+    <p class="band-subtitle">Each system is engineered for a specific contamination threat. True asset protection requires the full matrix.</p>
+  </div>
+  <div class="tech-scroll" role="list">
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/NANOFORCE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">NANOFORCE™</span>
+        <p>Sub-micron nanofiber capture matrix. Stops ultrafine particles before they destroy injector tolerances.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/MACROCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">MACROCORE™</span>
+        <p>Structural air intake defense. Stops silica ingestion — the #1 cause of cylinder liner wear.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/HYDROCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">HYDROCORE™</span>
+        <p>3-stage centrifugal water separation for HPCR diesel systems. Prevents catastrophic injector cavitation.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/SYNTEPORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">SYNTEPORE™</span>
+        <p>Uniform synthetic pore geometry. Delivers repeatable Beta ratio across the full service interval.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/INTEKCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">INTEKCORE™</span>
+        <p>Precision housings engineered to maintain dimensional stability under extreme thermal cycling.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/DRYCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">DRYCORE™</span>
+        <p>Air dryer system guardian. Removes moisture before it destroys brake valve seals and corrodes lines.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/THERMACORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">THERMACORE™</span>
+        <p>Media engineered for -40°C to +135°C. Never collapses, never bypasses — regardless of temperature extremes.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/TURBOCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">TURBOCORE™</span>
+        <p>High-velocity turbine circuit elements. Built for industrial gas turbines and power generation applications.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/MICROKAPPA.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">MICROKAPPA™</span>
+        <p>Hydraulic system excellence. Achieves ISO Class 16/14/11 fluid cleanliness in high-cycle circuits.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/SYNTRAX.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">SYNTRAX™</span>
+        <p>Multi-stage synthetic tract filtration for extreme flow rates without sacrificing particle capture.</p>
+      </div>
+    </article>
+    <article class="tech-card" role="listitem">
+      <div class="tech-card-img" style="background-image:url('/assets/THERMOCORE.avif')"></div>
+      <div class="tech-card-body">
+        <span class="tech-card-code">THERMOCORE™</span>
+        <p>Coolant system ion-exchange guard. Neutralizes silicate depletion to prevent liner cavitation erosion.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ─── VIN / SERIAL GUIDE ─── -->
+<section id="vin-guide" class="section-band section-band--alt">
+  <div class="band-header">
+    <div class="band-label">// EQUIPMENT IDENTIFICATION</div>
+    <h2 class="band-title">Where to Find Your Serial Number</h2>
+    <p class="band-subtitle">To search for the exact protection system your asset needs, locate the serial number or VIN on your equipment.</p>
+  </div>
+  <div class="vin-grid">
+    <div class="vin-card">
+      <div class="vin-icon">🚛</div>
+      <h3 class="vin-type">Heavy Trucks & Transport</h3>
+      <p class="vin-desc">Located on the driver-side door jamb sticker, the firewall plate, or the dashboard near the windshield. Format: 17-character VIN (e.g. <code>1HGCM82633A004352</code>).</p>
+      <div class="vin-location">
+        <span class="vin-loc-tag">DOOR JAMB</span>
+        <span class="vin-loc-tag">FIREWALL</span>
+        <span class="vin-loc-tag">DASHBOARD</span>
+      </div>
+    </div>
+    <div class="vin-card">
+      <div class="vin-icon">🛠️</div>
+      <h3 class="vin-type">Excavators & Heavy Equipment</h3>
+      <p class="vin-desc">Found on the machine serial plate near the main frame, operator's cab door frame, or on the boom arm. CAT format: <code>CAT0615CT2XG99001</code>.</p>
+      <div class="vin-location">
+        <span class="vin-loc-tag">FRAME PLATE</span>
+        <span class="vin-loc-tag">CAB DOOR</span>
+        <span class="vin-loc-tag">BOOM ARM</span>
+      </div>
+    </div>
+    <div class="vin-card">
+      <div class="vin-icon">⛵</div>
+      <h3 class="vin-type">Marine & Vessels</h3>
+      <p class="vin-desc">Hull Identification Number (HIN) is located on the transom (rear) of the vessel, upper right corner. Engine serial is on the block near the oil filter.</p>
+      <div class="vin-location">
+        <span class="vin-loc-tag">TRANSOM (HIN)</span>
+        <span class="vin-loc-tag">ENGINE BLOCK</span>
+      </div>
+    </div>
+    <div class="vin-card">
+      <div class="vin-icon">⚡</div>
+      <h3 class="vin-type">Generators & Stationary</h3>
+      <p class="vin-desc">Serial plate is mounted on the generator housing panel or main frame rail. Engine serial is typically stamped near the valve cover.</p>
+      <div class="vin-location">
+        <span class="vin-loc-tag">HOUSING PANEL</span>
+        <span class="vin-loc-tag">FRAME RAIL</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <p style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:rgba(255,255,255,0.3); letter-spacing:0.1em;">
+      Can't find it? <a href="https://elimfilters.com" style="color:var(--y); text-decoration:none;">Contact our engineering team →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES BAND ─── -->
+<section id="industries" class="section-band">
+  <div class="band-header">
+    <div class="band-label">// PROTECTION DOMAINS</div>
+    <h2 class="band-title">Built for Every Industry</h2>
+  </div>
+  <div class="industries-grid">
+    <div class="industry-card" style="background-image:url('/assets/MACROCORE.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">⛏️</span>
+        <h3>Mining & Extraction</h3>
+        <p>Extreme silica loads, high heat, and continuous operation. MACROCORE + HYDROCORE + SYNTEPORE.</p>
+      </div>
+    </div>
+    <div class="industry-card" style="background-image:url('/assets/HYDROCORE.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">⛵</span>
+        <h3>Marine & Naval</h3>
+        <p>Salt air, water contamination, and continuous engine loads. MARINECLEAN™ total consolidation.</p>
+      </div>
+    </div>
+    <div class="industry-card" style="background-image:url('/assets/NANOFORCE.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">🚛</span>
+        <h3>Heavy Transport</h3>
+        <p>Long intervals, high fuel contamination risk, brake air systems. DURATECH™ fleet kits.</p>
+      </div>
+    </div>
+    <div class="industry-card" style="background-image:url('/assets/TURBOCORE.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">⚡</span>
+        <h3>Power Generation</h3>
+        <p>Turbine-stage protection, generator continuity, and mission-critical uptime. TURBOCORE™ series.</p>
+      </div>
+    </div>
+    <div class="industry-card" style="background-image:url('/assets/THERMACORE.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">🌾</span>
+        <h3>Agriculture</h3>
+        <p>Dust, chaff, and seasonal load variation. MACROCORE air + SYNTEPORE hydraulic + NANOFORCE fuel.</p>
+      </div>
+    </div>
+    <div class="industry-card" style="background-image:url('/assets/MICROKAPPA.avif')">
+      <div class="industry-overlay"></div>
+      <div class="industry-body">
+        <span class="industry-icon">⚙️</span>
+        <h3>Industrial & Hydraulic</h3>
+        <p>ISO 16/14/11 cleanliness targets. MICROKAPPA™ hydraulic filtration for precision machinery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KNOWLEDGE EDITORIAL ─── -->
+<section class="section-band section-band--alt knowledge-band">
+  <div class="band-header">
+    <div class="band-label">// FILTRATION SCIENCE</div>
+    <h2 class="band-title">Why Filter Ratings Matter</h2>
+    <p class="band-subtitle">Not all protection systems are equal. Understanding the science behind our ratings is the first step to making the right decision.</p>
+  </div>
+  <div class="knowledge-grid">
+    <article class="knowledge-card">
+      <div class="knowledge-tag">BETA RATIO</div>
+      <h3>What is the Beta Ratio?</h3>
+      <p>The Beta Ratio (β) is the only scientifically valid metric to measure a filter's actual capture efficiency. A β₁₀ ≥ 1000 means 99.9% of all 10-micron particles are captured before they reach critical engine surfaces.</p>
+      <a href="https://elimfilters.com/knowledge-system" class="knowledge-link">Read More →</a>
+    </article>
+    <article class="knowledge-card">
+      <div class="knowledge-tag">CONTAMINATION</div>
+      <h3>Silica: The Invisible Enemy</h3>
+      <p>Silica (fine dust) is responsible for over 60% of premature engine wear. It abrades cylinder liners at a microscopic level, increasing oil consumption and destroying rings long before the filter shows external signs of failure.</p>
+      <a href="https://elimfilters.com/knowledge-system" class="knowledge-link">Read More →</a>
+    </article>
+    <article class="knowledge-card">
+      <div class="knowledge-tag">WATER & FUEL</div>
+      <h3>Water in Diesel: Silent Injector Destroyer</h3>
+      <p>Even 0.05% water contamination in diesel destroys the lubricity film that protects Common Rail injection pumps operating at 2,000+ bar. HYDROCORE™ centrifugal separation is the only effective defense.</p>
+      <a href="https://elimfilters.com/knowledge-system" class="knowledge-link">Read More →</a>
+    </article>
+    <article class="knowledge-card">
+      <div class="knowledge-tag">TCO</div>
+      <h3>Total Cost of Ownership</h3>
+      <p>A compromised protection system costs $0.20/hour. An unplanned engine rebuild costs $50,000+. The asset protection system is not an expense — it is the least expensive insurance policy available.</p>
+      <a href="https://elimfilters.com/knowledge-system" class="knowledge-link">Read More →</a>
+    </article>
+  </div>
+</section>
+
+<!-- ─── PREMIUM FOOTER ─── -->
 <footer id="footer">
-  <p class="footer-line">
-    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
-    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
-    <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
-  </p>
-  <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
-  </p>
+  <div class="footer-grid">
+    <!-- Col 1: Brand -->
+    <div class="footer-col footer-col--brand">
+      <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS" class="footer-logo">
+      <p class="footer-tagline">Asset Protection Engineers.<br>Not just a filter — a defense system.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+        <a href="#" aria-label="YouTube" class="social-link">yt</a>
+        <a href="#" aria-label="Instagram" class="social-link">ig</a>
+      </div>
+    </div>
+    <!-- Col 2: Protection Systems -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Protection Systems</h4>
+      <ul class="footer-links">
+        <li><a href="#">Air Filtration (EA1 / EA3)</a></li>
+        <li><a href="#">Oil & Lubrication (EL8 / EL3)</a></li>
+        <li><a href="#">Fuel Systems (EF9 / EF3)</a></li>
+        <li><a href="#">Fuel Separators (ES9)</a></li>
+        <li><a href="#">Hydraulic (EH6)</a></li>
+        <li><a href="#">Coolant (EW7)</a></li>
+        <li><a href="#">Cabin Air (EC1 / EC3)</a></li>
+        <li><a href="#">Air Dryer (ED4)</a></li>
+        <li><a href="#">Turbine Series (ET9)</a></li>
+      </ul>
+    </div>
+    <!-- Col 3: Solutions -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Solutions</h4>
+      <ul class="footer-links">
+        <li><a href="#">MARINECLEAN™ System</a></li>
+        <li><a href="#">DURATECH Fleet Kits</a></li>
+        <li><a href="#">Mining Solutions</a></li>
+        <li><a href="#">Heavy Transport</a></li>
+        <li><a href="#">Marine & Naval</a></li>
+        <li><a href="#">Agriculture</a></li>
+        <li><a href="#">Power Generation</a></li>
+      </ul>
+    </div>
+    <!-- Col 4: Company -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">Company</h4>
+      <ul class="footer-links">
+        <li><a href="https://elimfilters.com">elimfilters.com</a></li>
+        <li><a href="https://elimfilters.com/knowledge-system">Knowledge Center</a></li>
+        <li><a href="intel.html">Intel Command Center</a></li>
+        <li><a href="#">Contact Engineering</a></li>
+        <li><a href="#">About ELIMFILTERS</a></li>
+        <li><a href="#" id="cookie-settings-link">Cookie Settings</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <div class="footer-cert">
+        <span class="cert-badge">ISO 4548</span>
+        <span class="cert-badge">Beta β≥999</span>
+        <span class="cert-badge">HD TESTED</span>
+      </div>
+    </div>
+  </div>
+  <!-- Footer bottom bar -->
+  <div class="footer-bottom">
+    <p class="footer-bottom-left">© 2025 ELIMFILTERS® Industrial Filtration. All rights reserved.</p>
+    <p class="footer-bottom-right">
+      All third-party trademarks and manufacturer references are used solely for identification and compatibility purposes. ELIMFILTERS® is an independent manufacturer not affiliated with any referenced OEM brands.
+    </p>
+  </div>
 </footer>
+
+<!-- ─── COOKIE CONSENT BAR ─── -->
+<div id="cookie-bar" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-bar-inner">
+    <div class="cookie-text">
+      <strong>Cookie Notice</strong> &mdash; We use essential cookies to ensure the site works correctly. With your consent, we also use analytics cookies to improve navigation and performance.
+      <a href="#" class="cookie-learn">Learn more</a>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-reject" id="cookie-reject">Reject All</button>
+      <button class="cookie-btn cookie-settings" id="cookie-settings">Configure</button>
+      <button class="cookie-btn cookie-accept" id="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 <script>
@@ -793,6 +572,12 @@ const TRANSLATIONS = {
     optAnyType:       'Any type',
     lblEquipEngine:   'Engine (optional)',
     btnSearch:        'SEARCH →',
+    cbMarine:         'SYSTEM',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Total filtration consolidation for maritime environments.',
+    cbDura:           'FLEET KITS',
+    ctDura:           'DURATECH',
+    cdDura:           'Complete heavy duty kits for transport and fleet overhaul.'
   },
   es: {
     splashSkip:       'Clic en cualquier lugar para saltar',
@@ -813,6 +598,12 @@ const TRANSLATIONS = {
     optAnyType:       'Cualquier tipo',
     lblEquipEngine:   'Motor (opcional)',
     btnSearch:        'BUSCAR →',
+    cbMarine:         'SISTEMA',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Consolidación total de filtración para entornos marítimos.',
+    cbDura:           'KITS DE FLOTA',
+    ctDura:           'DURATECH',
+    cdDura:           'Kits completos Heavy Duty para transporte y mantenimiento de flotas.'
   },
   pt: {
     splashSkip:       'Clique em qualquer lugar para pular',
@@ -833,6 +624,12 @@ const TRANSLATIONS = {
     optAnyType:       'Qualquer tipo',
     lblEquipEngine:   'Motor (opcional)',
     btnSearch:        'BUSCAR →',
+    cbMarine:         'SISTEMA',
+    ctMarine:         'MARINECLEAN™',
+    cdMarine:         'Consolidação total de filtração para ambientes marítimos.',
+    cbDura:           'KITS DE FROTA',
+    ctDura:           'DURATECH',
+    cdDura:           'Kits completos Heavy Duty para transporte e manutenção de frotas.'
   }
 };
 
@@ -895,16 +692,31 @@ function applyLang(t) {
   const lblEquipEngine = document.getElementById('lbl-equip-engine');
   const inpEquipModel  = document.getElementById('inp-equip-model');
   const inpEquipEngine = document.getElementById('inp-equip-engine');
-  const optAny         = document.getElementById('opt-any');
+  const optAnyType     = document.getElementById('opt-any');
   const btnEquip       = document.getElementById('btn-search-equip');
   if (lblEquipModel)  lblEquipModel.textContent  = t.lblEquipModel;
   if (lblEquipType)   lblEquipType.textContent   = t.lblEquipType;
   if (lblEquipEngine) lblEquipEngine.textContent = t.lblEquipEngine;
   if (inpEquipModel)  inpEquipModel.placeholder  = t.phEquipModel;
   if (inpEquipEngine) inpEquipEngine.placeholder = t.phEngine;
-  if (optAny)         optAny.textContent         = t.optAnyType;
+  if (optAnyType)     optAnyType.textContent     = t.optAnyType;
   if (btnEquip)       btnEquip.textContent       = t.btnSearch;
+
+  // Commercial Systems
+  const cbMarine = document.getElementById('cb-marine');
+  const ctMarine = document.getElementById('ct-marine');
+  const cdMarine = document.getElementById('cd-marine');
+  const cbDura   = document.getElementById('cb-dura');
+  const ctDura   = document.getElementById('ct-dura');
+  const cdDura   = document.getElementById('cd-dura');
+  if (cbMarine) cbMarine.textContent = t.cbMarine;
+  if (ctMarine) ctMarine.textContent = t.ctMarine;
+  if (cdMarine) cdMarine.textContent = t.cdMarine;
+  if (cbDura)   cbDura.textContent   = t.cbDura;
+  if (ctDura)   ctDura.textContent   = t.ctDura;
+  if (cdDura)   cdDura.textContent   = t.cdDura;
 }
+
 
 // Run immediately
 detectLang().then(lang => {
@@ -1160,23 +972,167 @@ function mainLoop(now) {
   rafId = requestAnimationFrame(mainLoop);
 }
 
-// Boot
+// ─────────────────────────────────────────────────────────────────────────────
+// CINEMATIC INTRO ENGINE
+// Netflix / Paramount style full-screen technology reveal
+// ─────────────────────────────────────────────────────────────────────────────
+const TECH_CATALOG = [
+  {
+    name: 'NANOFORCE™',
+    file: '/assets/NANOFORCE.avif',
+    desc: 'Sub-micron particle capture. Nanofiber matrix engineered for extreme contamination environments.'
+  },
+  {
+    name: 'MACROCORE™',
+    file: '/assets/MACROCORE.avif',
+    desc: 'The first line of defense against silica ingestion. Structural integrity under maximum differential pressure.'
+  },
+  {
+    name: 'HYDROCORE™',
+    file: '/assets/HYDROCORE.avif',
+    desc: 'Centrifugal water separation. Protects high-pressure common rail systems from emulsified water and cavitation.'
+  },
+  {
+    name: 'INTEKCORE™',
+    file: '/assets/INTEKCORE.avif',
+    desc: 'Structural casing engineering. Precision-formed housings that maintain dimensional stability under thermal cycling.'
+  },
+  {
+    name: 'SYNTEPORE™',
+    file: '/assets/SYNTEPORE.avif',
+    desc: 'Synthetic porous media. Uniformly distributed fiber matrix delivering consistent Beta ratio performance.'
+  },
+  {
+    name: 'DRYCORE™',
+    file: '/assets/DRYCORE.avif',
+    desc: 'Air system dehydration. Removes moisture before it collapses brake valve seals and corrodes air lines.'
+  },
+  {
+    name: 'SYNTRAX™',
+    file: '/assets/SYNTRAX.avif',
+    desc: 'Multi-stage synthetic tract filtration. Engineered for high-flow applications without sacrificing capture efficiency.'
+  },
+  {
+    name: 'MICROKAPPA™',
+    file: '/assets/MICROKAPPA.avif',
+    desc: 'Ultra-high efficiency media at microscale. For hydraulic circuits demanding ISO Class 16/14/11 cleanliness.'
+  },
+  {
+    name: 'THERMACORE™',
+    file: '/assets/THERMACORE.avif',
+    desc: 'Thermal-resistant media formulation. Maintains structural integrity from -40°C to 135°C continuous operation.'
+  },
+  {
+    name: 'THERMOCORE™',
+    file: '/assets/THERMOCORE.avif',
+    desc: 'Coolant system guardian. Ion-exchange technology that neutralizes silicate depletion and prevents cavitation erosion.'
+  },
+  {
+    name: 'TURBOCORE™',
+    file: '/assets/TURBOCORE.avif',
+    desc: 'Turbine-stage filtration elements. Engineered for high-velocity, high-temperature industrial turbine circuits.'
+  }
+];
+
+function pickTech() {
+  // Pick random tech, avoid same as last visit
+  const last = sessionStorage.getItem('ef-last-tech');
+  let pick;
+  do { pick = TECH_CATALOG[Math.floor(Math.random() * TECH_CATALOG.length)]; }
+  while (TECH_CATALOG.length > 1 && pick.name === last);
+  sessionStorage.setItem('ef-last-tech', pick.name);
+  return pick;
+}
+
+function bootCinematic() {
+  const splash    = document.getElementById('cinematic-splash');
+  const bg        = document.getElementById('cinematic-bg');
+  const techName  = document.getElementById('cinema-tech-name');
+  const techLabel = document.getElementById('cinema-tech-label');
+  const techDesc  = document.getElementById('cinema-tech-desc');
+  const skipBtn   = document.getElementById('cinema-skip');
+
+  const tech = pickTech();
+
+  // Preload image before showing anything
+  const img = new Image();
+  img.onload = () => startSequence();
+  img.onerror = () => finalizeSplash(true); // fallback: skip on error
+  img.src = tech.file;
+
+  function startSequence() {
+    // Set background image and begin slow zoom
+    bg.style.backgroundImage = `url('${tech.file}')`;
+    bg.style.transform = 'scale(1)';
+    splash.style.opacity = '1';
+
+    // Animate zoom over 6 seconds
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bg.style.transition = 'transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        bg.style.transform = 'scale(1.12)';
+      });
+    });
+
+    // Phase 1 (0.6s): Brand stamp fades in
+    setTimeout(() => {
+      document.querySelector('.cinema-brand').classList.add('vis');
+    }, 600);
+
+    // Phase 2 (2.2s): Technology name dramatic reveal
+    setTimeout(() => {
+      techName.textContent = tech.name;
+      techDesc.textContent = tech.desc;
+      document.getElementById('cinema-tech').classList.add('vis');
+    }, 2200);
+
+    // Phase 3 (5.8s): Begin fade-out → reveal UI
+    setTimeout(() => finalizeSplash(false), 5800);
+  }
+
+  function finalizeSplash(immediate) {
+    if (splash._done) return;
+    splash._done = true;
+
+    const dur = immediate ? 0 : 900;
+    splash.style.transition = `opacity ${dur}ms ease`;
+    splash.style.opacity = '0';
+
+    setTimeout(() => {
+      splash.style.display = 'none';
+      // Reveal the main interface
+      document.getElementById('search-panel').classList.add('vis');
+      document.getElementById('skip-btn') && (document.getElementById('skip-btn').style.display = 'none');
+      setTimeout(() => {
+        const ip = document.getElementById('inp-part');
+        if (ip) ip.focus();
+      }, 300);
+      localStorage.setItem('ef-ps-v', '1');
+      // Start ambient particle canvas
+      init();
+      ambientLoop();
+    }, dur + 50);
+  }
+
+  // Skip button
+  skipBtn.addEventListener('click', () => finalizeSplash(false));
+  // Click anywhere on splash to skip
+  splash.addEventListener('click', (e) => {
+    if (e.target !== skipBtn) finalizeSplash(false);
+  });
+}
+
+// ─── BOOT DECISION ───────────────────────────────────────────────────────────
 if (localStorage.getItem('ef-ps-v')) {
-  document.getElementById('intro-label').classList.add('vis');
-  document.getElementById('skip-btn').style.display = 'none';
-  revealUI();
+  // Returning visitor: skip cinematic, go straight to UI
+  const splash = document.getElementById('cinematic-splash');
+  splash.style.display = 'none';
+  document.getElementById('search-panel').classList.add('vis');
+  init();
   ambientLoop();
 } else {
-  init();
-  setTimeout(() => document.getElementById('intro-label').classList.add('vis'), 500);
-  requestAnimationFrame(mainLoop);
-  document.getElementById('skip-btn').addEventListener('click', () => {
-    cancelAnimationFrame(rafId);
-    ctx.clearRect(0, 0, W, H);
-    document.getElementById('intro-label').classList.add('vis');
-    revealUI();
-    ambientLoop();
-  });
+  // First visit: run the cinematic experience
+  bootCinematic();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1366,6 +1322,112 @@ function renderResults(items, count, mode, query) {
     </div>
     ${items.map(renderCard).join('')}`;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTOCOMPLETE LOGIC
+// ─────────────────────────────────────────────────────────────────────────────
+const inpPart = document.getElementById('inp-part');
+const acList = document.getElementById('ac-list');
+let acDebounce;
+let acActiveIndex = -1;
+
+function renderAc(items, query) {
+  acList.innerHTML = '';
+  if (!items || !items.length) {
+    acList.innerHTML = `<div class="ac-empty">// NO MATCHES FOUND</div>`;
+    acList.classList.add('open');
+    return;
+  }
+  
+  const qUpper = query.toUpperCase();
+  items.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'ac-item';
+    div.dataset.index = idx;
+    
+    // Highlight matching part
+    const textUpper = item.text.toUpperCase();
+    const matchIdx = textUpper.indexOf(qUpper);
+    let html = item.text;
+    if (matchIdx !== -1) {
+      const before = item.text.substring(0, matchIdx);
+      const match = item.text.substring(matchIdx, matchIdx + qUpper.length);
+      const after = item.text.substring(matchIdx + qUpper.length);
+      html = `${before}<mark>${match}</mark>${after}`;
+    }
+    
+    div.innerHTML = `<span class="ac-code">${html}</span><span class="ac-type">${item.type}</span>`;
+    
+    div.addEventListener('click', () => {
+      inpPart.value = item.text;
+      acList.classList.remove('open');
+      document.querySelector('[data-form="part"]').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    });
+    
+    div.addEventListener('mouseenter', () => {
+      acActiveIndex = idx;
+      updateAcHighlight();
+    });
+    
+    acList.appendChild(div);
+  });
+  acList.classList.add('open');
+}
+
+function updateAcHighlight() {
+  const items = acList.querySelectorAll('.ac-item');
+  items.forEach((item, idx) => {
+    item.classList.toggle('highlighted', idx === acActiveIndex);
+  });
+}
+
+if (inpPart) {
+  inpPart.addEventListener('input', (e) => {
+    const q = e.target.value.trim();
+    clearTimeout(acDebounce);
+    acActiveIndex = -1;
+    
+    if (q.length < 2) {
+      acList.classList.remove('open');
+      return;
+    }
+    
+    acDebounce = setTimeout(async () => {
+      try {
+        const res = await fetch(`${API}/api/autocomplete?q=${encodeURIComponent(q)}`);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        renderAc(data, q);
+      } catch (err) {
+        acList.classList.remove('open');
+      }
+    }, 250);
+  });
+
+  inpPart.addEventListener('keydown', (e) => {
+    const items = acList.querySelectorAll('.ac-item');
+    if (!acList.classList.contains('open') || items.length === 0) return;
+    
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      acActiveIndex = (acActiveIndex + 1) % items.length;
+      updateAcHighlight();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      acActiveIndex = (acActiveIndex - 1 + items.length) % items.length;
+      updateAcHighlight();
+    } else if (e.key === 'Enter' && acActiveIndex >= 0) {
+      e.preventDefault();
+      items[acActiveIndex].click();
+    }
+  });
+}
+
+document.addEventListener('click', (e) => {
+  if (acList && !e.target.closest('.ac-wrap')) {
+    acList.classList.remove('open');
+  }
+});
 
 // ─────────────────────────────────────────────────────────────────────────────
 // FORM SUBMIT HANDLERS — redirect to results.html
@@ -1601,7 +1663,220 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
 })();
 
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTOCOMPLETE — Part Number search bar
+// ─────────────────────────────────────────────────────────────────────────────
+(function initAutocomplete() {
+  const inp     = document.getElementById('inp-part');
+  const list    = document.getElementById('ac-list');
+  const form    = inp ? inp.closest('form') : null;
+  if (!inp || !list || !form) return;
+
+  let debounceTimer = null;
+  let currentQuery  = '';
+  let highlightIdx  = -1;
+  let suggestions   = [];
+
+  // Highlight matching portion of text in yellow
+  function highlight(text, query) {
+    if (!query) return text;
+    const idx = text.toUpperCase().indexOf(query.toUpperCase());
+    if (idx === -1) return text;
+    return (
+      text.slice(0, idx) +
+      '<mark>' + text.slice(idx, idx + query.length) + '</mark>' +
+      text.slice(idx + query.length)
+    );
+  }
+
+  function closeDropdown() {
+    list.innerHTML = '';
+    list.classList.remove('open');
+    inp.setAttribute('aria-expanded', 'false');
+    highlightIdx = -1;
+    suggestions  = [];
+  }
+
+  function setHighlight(idx) {
+    const items = list.querySelectorAll('.ac-item');
+    items.forEach((el, i) => el.classList.toggle('highlighted', i === idx));
+    highlightIdx = idx;
+  }
+
+  function selectItem(value) {
+    inp.value = value;
+    closeDropdown();
+    // Trigger search immediately
+    form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+  }
+
+  function renderSuggestions(items, query) {
+    list.innerHTML = '';
+    suggestions = items;
+    highlightIdx = -1;
+
+    if (!items.length) {
+      list.innerHTML = '<div class="ac-empty">No matches found</div>';
+      list.classList.add('open');
+      inp.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    items.forEach((item, i) => {
+      const el = document.createElement('div');
+      el.className = 'ac-item';
+      el.setAttribute('role', 'option');
+      el.setAttribute('aria-selected', 'false');
+      el.innerHTML =
+        '<span class="ac-code">' + highlight(item.text, query) + '</span>' +
+        '<span class="ac-type">' + item.type + '</span>';
+      el.addEventListener('mousedown', function(e) {
+        e.preventDefault(); // prevent blur before click registers
+        selectItem(item.text);
+      });
+      list.appendChild(el);
+    });
+
+    list.classList.add('open');
+    inp.setAttribute('aria-expanded', 'true');
+  }
+
+  async function fetchSuggestions(q) {
+    if (q.length < 2) { closeDropdown(); return; }
+    currentQuery = q;
+    try {
+      const res  = await fetch('/api/autocomplete?q=' + encodeURIComponent(q));
+      const data = await res.json();
+      if (currentQuery !== q) return; // stale response, discard
+      renderSuggestions(Array.isArray(data) ? data : [], q);
+    } catch (_) { closeDropdown(); }
+  }
+
+  inp.addEventListener('input', function() {
+    const q = inp.value.trim();
+    clearTimeout(debounceTimer);
+    if (q.length < 2) { closeDropdown(); return; }
+    debounceTimer = setTimeout(() => fetchSuggestions(q), 220);
+  });
+
+  inp.addEventListener('keydown', function(e) {
+    const items = list.querySelectorAll('.ac-item');
+    if (!list.classList.contains('open') || !items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlight(Math.min(highlightIdx + 1, items.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlight(Math.max(highlightIdx - 1, 0));
+    } else if (e.key === 'Enter' && highlightIdx >= 0) {
+      e.preventDefault();
+      selectItem(suggestions[highlightIdx].text);
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    if (!inp.contains(e.target) && !list.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+
+  // Close on form submit
+  form.addEventListener('submit', function() {
+    closeDropdown();
+  });
+})();
+
+// ─── RESULTS (outside #ui) ───────────────────────────────────────────────────
+// Inject results container after search panel completes (outside #ui for scroll)
+(function() {
+  const existingResults = document.getElementById('results');
+  if (!existingResults) {
+    const r = document.createElement('div');
+    r.id = 'results';
+    r.setAttribute('role', 'region');
+    r.setAttribute('aria-live', 'polite');
+    r.setAttribute('aria-label', 'Search results');
+    // Insert after the #ui element
+    const ui = document.getElementById('ui');
+    if (ui && ui.parentNode) {
+      ui.parentNode.insertBefore(r, ui.nextSibling);
+    }
+  }
+})();
+
+// ─── STICKY NAV SCROLL EFFECT ───────────────────────────────────────────────
+(function() {
+  const nav = document.getElementById('main-nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+})();
+
+// ─── COOKIE CONSENT ─────────────────────────────────────────────────────────
+(function() {
+  const bar    = document.getElementById('cookie-bar');
+  const accept = document.getElementById('cookie-accept');
+  const reject = document.getElementById('cookie-reject');
+  const config = document.getElementById('cookie-settings');
+  const link   = document.getElementById('cookie-settings-link');
+
+  if (!bar) return;
+
+  function hideCookieBar() {
+    bar.style.transition = 'transform 0.4s ease';
+    bar.style.transform  = 'translateY(100%)';
+    bar.classList.remove('visible');
+  }
+
+  function showCookieBar() {
+    requestAnimationFrame(() => {
+      bar.classList.add('visible');
+    });
+  }
+
+  // Show after 1.5s if not already accepted
+  const consent = localStorage.getItem('ef-cookie-consent');
+  if (!consent) {
+    setTimeout(showCookieBar, 1500);
+  }
+
+  if (accept) {
+    accept.addEventListener('click', () => {
+      localStorage.setItem('ef-cookie-consent', 'accepted');
+      hideCookieBar();
+    });
+  }
+  if (reject) {
+    reject.addEventListener('click', () => {
+      localStorage.setItem('ef-cookie-consent', 'rejected');
+      hideCookieBar();
+    });
+  }
+  if (config) {
+    config.addEventListener('click', () => {
+      // Simple: treat configure same as accept for now
+      localStorage.setItem('ef-cookie-consent', 'configured');
+      hideCookieBar();
+    });
+  }
+  // Footer cookie settings link re-opens the bar
+  if (link) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('ef-cookie-consent');
+      showCookieBar();
+    });
+  }
+})();
+
 </script>
+
 
 </body>
 </html>

@@ -104,7 +104,14 @@
     "dealer": "Conviértase en Distribuidor",
     "warranty": "Garantía",
     "copyright": "© 2015-2026 ELIMFILTERS® LLC | Inteligencia e Ingeniería en Filtración",
-    "location": "FRISCO TEXAS"
+    "location": "FRISCO TEXAS",
+    "colProducts": "PRODUCTOS",
+    "colKnowledge": "CONOCIMIENTO",
+    "knowledgeSystem": "Sistema de Conocimiento",
+    "standards": "Estándares",
+    "fleetOpt": "Optimización de Flotas",
+    "locationText": "Frisco, Texas",
+    "kleoText": "© 2015–2026 Kleo Technologies"
   },
   "category": {
     "keyAdvantages": "VENTAJAS CLAVE",
@@ -124,5 +131,202 @@
   },
   "language": {
     "switchToEn": "EN"
+  },
+  "home": {
+    "eyebrow": "Asset Protection Technology Platform",
+    "hero1": "Protegiendo activos industriales",
+    "hero2": "a través del control de contaminación.",
+    "heroDesc": "Sistemas avanzados de control de contaminación diseñados para reducir el desgaste, minimizar el tiempo de inactividad, mejorar la confiabilidad y extender la vida operativa de los equipos industriales críticos.",
+    "ctaFilter": "Encontrar mi pieza",
+    "ctaKnowledge": "Sistema de conocimiento",
+    "statsLabels": [
+      "Vida útil de cojinetes de motor",
+      "Extensión de vida de activos",
+      "Fallas por contaminación",
+      "Costo promedio de evento prevenido"
+    ],
+    "assetTag": "// ESTRATEGIA DE PROTECCIÓN DE ACTIVOS",
+    "assetTitle": "Protegiendo Activos Industriales a través del Control de Contaminación",
+    "assetP1": "ELIMFILTERS protege activos industriales controlando la contaminación en sistemas críticos. Nuestro enfoque de ingeniería se centra en prevenir la degradación, extender la vida útil, mejorar la confiabilidad y reducir el costo total de propiedad.",
+    "assetP2": "Cada tecnología que diseñamos aborda un mecanismo específico de contaminación — desgaste por partículas, ingesta de agua, falla de bypass o degradación térmica — apuntando a la causa raíz del fallo prematuro de activos.",
+    "archLabel": "ARQUITECTURA DE INFORMACIÓN",
+    "archItems": [
+      "Contaminación",
+      "Degradación de Activos",
+      "Normas y Medición",
+      "Tecnologías de Protección",
+      "Implementación de Productos",
+      "Optimización de Flotas",
+      "Impacto en Sostenibilidad"
+    ],
+    "problemTag": "// DIAGNÓSTICO DE RIESGO OPERATIVO",
+    "problemH1": "LO QUE NO PUEDES VER",
+    "problemH2": "ESTÁ DETENIENDO TU OPERACIÓN.",
+    "problemIntro": "El 80% de las fallas prematuras de equipos son causadas por contaminación. La filtración ineficiente permite que partículas invisibles actúen como papel de lija dentro de componentes críticos — superficies de cojinetes, orificios de inyectores, carretes hidráulicos.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "De las fallas prematuras son causadas por contaminación.",
+    "failModes": [
+      {
+        "title": "Erosión de Inyectores",
+        "desc": "Las partículas micrométricas deforman los orificios de inyección, causando pérdida inmediata de potencia y mala combustión."
+      },
+      {
+        "title": "Fricción Crítica en Cojinetes",
+        "desc": "El aceite contaminado acelera el desgaste metálico, reduciendo la vida del bloque motor hasta un 40%."
+      },
+      {
+        "title": "Pérdida de Eficiencia de Combustible",
+        "desc": "Los sistemas de combustible contaminados obligan a los motores a consumir hasta un 8% más de diésel para mantener el mismo torque."
+      }
+    ],
+    "whyTitle1": "PROTECCIÓN DE ACTIVOS",
+    "whyTitle2": "TECNOLOGÍA",
+    "whyP1": "ELIMFILTERS no es una empresa de filtros. ELIMFILTERS es una empresa de ",
+    "whyP1hl": "Tecnología de Protección de Activos",
+    "whyP1after": " — sistemas de ingeniería que controlan la contaminación, previenen la degradación y protegen el valor de los activos industriales críticos.",
+    "whyP2": "Cada tecnología que desarrollamos aborda una amenaza de contaminación medible. Los equipos que fallan cuestan cientos de miles en reparación. Protegemos esa inversión a nivel de sistema, no de producto.",
+    "whyCheckItems": [
+      "Control de contaminación a nivel de sistema, no reemplazo de productos",
+      "Más de 25 años protegiendo activos industriales de alto valor",
+      "Normas de ingeniería: ISO 5011 · 16889 · 19438 · 4406",
+      "Implementado en 12 industrias — minería, marina, agricultura y más"
+    ],
+    "whyCardTag": "// TECNOLOGÍA DE PROTECCIÓN DE ACTIVOS",
+    "whyCardTitle1": "Su equipo vale millones.",
+    "whyCardTitle2": "Protéjalo como se merece.",
+    "whyCardDesc": "Cada tecnología ELIMFILTERS existe para proteger activos críticos, reducir el tiempo de inactividad y extender la vida operativa.",
+    "whyCardItems": [
+      "Medio Híbrido Formulado con IA",
+      "Sistemas de Separación Hidrófoba",
+      "Estructuras Anti-Bypass",
+      "Más de 20,000 referencias OEM validadas"
+    ],
+    "techTag": "// TECNOLOGÍA PROBADA",
+    "techTitle": "Protección de Activos",
+    "techHighlight": "Tecnología",
+    "techItems": [
+      {
+        "title": "Medio Híbrido Formulado con IA",
+        "desc": "Tecnología de medios propietaria desarrollada con algoritmos matemáticos y escenarios de laboratorio. La formulación única ofrece un rendimiento excepcional que no puede ser replicado."
+      },
+      {
+        "title": "Sistemas de Separación Hidrófoba",
+        "desc": "Eliminación avanzada de agua y humedad de combustibles y lubricantes. Previene corrosión, oxidación y degradación de viscosidad garantizando operación confiable a largo plazo."
+      },
+      {
+        "title": "Estructuras Anti-Bypass",
+        "desc": "Seguridad 100% garantizada: si ocurre bypass, el filtro falla de forma segura. Cero riesgo de eventos de contaminación repentina. Protección absoluta del equipo crítico."
+      }
+    ],
+    "ctaDealerTag": "// RED DE DISTRIBUIDORES",
+    "ctaDealerTitle": "SOLO LOS MEJORES",
+    "ctaDealerHl": "VENDEN ELIMFILTERS.",
+    "ctaDealerBtn": "CONVIÉRTASE EN DISTRIBUIDOR",
+    "ctaSearchTag": "// BÚSQUEDA TÉCNICA",
+    "ctaSearchTitle": "EL SISTEMA CORRECTO.",
+    "ctaSearchHl": "BÚSQUEDA PROFESIONAL.",
+    "ctaSearchBtn": "BUSCAR MI PIEZA",
+    "faqTag": "// PREGUNTAS FRECUENTES",
+    "faqTitle": "Preguntas Comunes Sobre Filtración Industrial",
+    "faqItems": [
+      {
+        "q": "¿Qué significa la protección de activos industriales?",
+        "a": "La protección de activos industriales es el control sistemático de la contaminación en todos los sistemas mecánicos críticos — admisión de aire, combustible, hidráulico, lubricante y refrigeración — para prevenir el fallo prematuro de los equipos. ELIMFILTERS® diseña sistemas de control de contaminación que extienden la vida de los activos, reducen el tiempo de inactividad no planificado y disminuyen el costo total de propiedad."
+      },
+      {
+        "q": "¿Cómo causa la contaminación el fallo de los equipos?",
+        "a": "Las partículas de contaminación desgastan las superficies de cojinetes, restringen los inyectores de combustible y degradan la integridad de los sellos. Las partículas menores de 10 micrones causan desgaste abrasivo invisible a simple vista. La contaminación sin control reduce la vida de los cojinetes del motor de más de 15.000 horas a 2.000–3.000 horas. El agua en el combustible favorece el crecimiento microbiano y la corrosión de los inyectores."
+      },
+      {
+        "q": "¿Qué código de limpieza ISO debe alcanzar un sistema hidráulico?",
+        "a": "La mayoría de los sistemas hidráulicos industriales requieren el código ISO 17/15/12 para proteger los carretes de válvulas proporcionales. Los sistemas críticos pueden especificar ISO 15/13/10. Las estrategias de control de contaminación de ELIMFILTERS® apuntan a códigos de limpieza medidos — la norma ISO 4406 — no a marcas de productos."
+      },
+      {
+        "q": "¿Por qué ELIMFILTERS no es una empresa de filtros?",
+        "a": "ELIMFILTERS diseña sistemas de control de contaminación, no filtros genéricos. Un filtro es un componente. Un sistema de protección de activos es una estrategia: define los objetivos de contaminación, selecciona las tecnologías adecuadas para cada dominio del sistema y mide el rendimiento durante todo el ciclo de vida del equipo. ELIMFILTERS opera a nivel de sistema."
+      }
+    ],
+    "heroLine_protecting": "Protegiendo",
+    "heroLine_industrial": "Activos",
+    "heroLine_assets": "Industriales.",
+    "heroLine1b": "ACTIVOS",
+    "heroLine2": "INDUSTRIALES.",
+    "heroPositioning1": "ELIMFILTERS no es una empresa de filtros.",
+    "heroPositioning2": "ELIMFILTERS es una empresa de Tecnología de Protección de Activos.",
+    "heroSubHead": "A través del control de contaminación en sistemas mecánicos críticos: hidráulico, combustible, lubricación, refrigeración y admisión de aire.",
+    "missionTag": "// POR QUÉ EXISTIMOS",
+    "missionTitle": "Por Qué Existe ELIMFILTERS",
+    "missionP1": "La contaminación industrial sigue siendo una de las amenazas más subestimadas para la confiabilidad de los equipos a nivel mundial.",
+    "missionP2": "ELIMFILTERS existe para ayudar a las organizaciones a reducir las fallas provocadas por contaminación mediante sistemas de protección de activos diseñados para operaciones industriales críticas.",
+    "missionP3": "Nuestra misión es mejorar la confiabilidad de los equipos, la continuidad operativa y la longevidad de los activos a través del control de contaminación.",
+    "economicTag": "// EL COSTO REAL DE LA CONTAMINACIÓN",
+    "economicTitle": "El Tiempo de Inactividad Cuesta Más",
+    "economicTitleHl": "Que la Filtración",
+    "economicItems": [
+      "Cada evento de contaminación tiene un costo.",
+      "Cada falla de equipo tiene una consecuencia.",
+      "Cada decisión de mantenimiento impacta la productividad."
+    ],
+    "economicDesc": "ELIMFILTERS ayuda a las organizaciones a reducir riesgos relacionados con la contaminación mediante estrategias de protección diseñadas para la confiabilidad, el tiempo de operación y la continuidad operativa.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Costo promedio de parada no planificada por incidente"
+      },
+      {
+        "value": "80%",
+        "label": "De las fallas prematuras de equipos causadas por contaminación"
+      },
+      {
+        "value": "3–5×",
+        "label": "Extensión de vida del activo con control de contaminación a nivel de sistema"
+      }
+    ],
+    "sciTag": "// NORMAS DE INGENIERÍA",
+    "sciTitle": "La Ciencia Detrás de la Protección de Activos",
+    "sciDesc": "Los sistemas de control de contaminación ELIMFILTERS están diseñados conforme a normas internacionales, validados mediante ensayos de laboratorio rigurosos y desplegados en entornos industriales críticos.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Ensayo multipaso de filtros y clasificación por coeficiente Beta para sistemas hidráulicos y de lubricación."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Ensayo de rendimiento de filtros de admisión de aire — eficiencia y restricción al caudal nominal."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Resistencia a la contaminación y eficiencia de separación de agua en filtros de combustible."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Clasificación de códigos de limpieza por contaminación de partículas en sistemas hidráulicos y de lubricación."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validación de rendimiento y durabilidad de filtros de aceite lubricante en motores diésel de uso intensivo."
+      }
+    ],
+    "llmTag": "// PROTECCIÓN DE ACTIVOS DEFINIDA",
+    "llmTitle": "¿Qué es la Protección de Activos Industriales?",
+    "llmP1": "La protección de activos industriales es el enfoque de ingeniería sistemático para identificar, medir y controlar las fuentes de contaminación que degradan los equipos mecánicos. En las operaciones industriales, la contaminación —partículas, agua, calor y subproductos químicos— es el principal factor de falla prematura en motores, sistemas hidráulicos, circuitos de combustible, trenes de transmisión y entornos de cabina.",
+    "llmP2": "La contaminación acelera el desgaste a nivel microscópico. Las partículas menores de 10 micrones provocan desgaste abrasivo en superficies de cojinetes, carretes de válvulas y orificios de inyectores, reduciendo la vida de los componentes entre un 30 y un 50% cuando no se controlan. La contaminación por agua en los sistemas de combustible favorece el crecimiento microbiano, la corrosión de inyectores y la inestabilidad en la combustión. En circuitos hidráulicos, incluso una contaminación menor que supere los objetivos de limpieza ISO altera la respuesta de las válvulas, acelera la degradación de sellos y aumenta el riesgo de falla del sistema.",
+    "llmP3": "La protección de activos industriales no es una categoría de producto. Es una estrategia de control de contaminación que comienza por comprender los objetivos de contaminación de cada sistema, seleccionar las tecnologías de ingeniería capaces de alcanzarlos y supervisar el rendimiento del sistema durante todo el ciclo de vida del equipo.",
+    "llmP4": "El resultado: mayor vida útil de los equipos, menos fallas no planificadas, menores costos de mantenimiento y mayor disponibilidad operativa —medida no en filtros reemplazados, sino en activos protegidos.",
+    "trustTag": "// DESPLIEGUE INDUSTRIAL GLOBAL",
+    "trustTitle": "Confianza en Industrias Críticas",
+    "trustIndustries": [
+      "Minería y Extracción",
+      "Construcción y Maquinaria Pesada",
+      "Agricultura y Agroindustria",
+      "Petróleo y Gas",
+      "Marina y Offshore",
+      "Generación Eléctrica",
+      "Flotas Municipales",
+      "Manufactura",
+      "Ferroviario y Transporte Público",
+      "Transporte Comercial"
+    ],
+    "ctaProtect": "Proteger mis activos"
   }
 }

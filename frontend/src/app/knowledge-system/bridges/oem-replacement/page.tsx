@@ -1,17 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+
 import { motion } from 'motion/react';
 
 export default function OEMReplacementPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system/bridges" style={{
+
+      <Link href="/knowledge-system/bridges"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← BRIDGES</Link>
@@ -24,23 +27,6 @@ export default function OEMReplacementPage() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ marginBottom: '1.5rem' }}
-          >
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}>
-              // FILTRATION DECISION BRIDGE
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,7 +34,7 @@ export default function OEMReplacementPage() {
             style={{
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 900,
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
               color: 'rgba(255,255,255,0.9)',
@@ -64,7 +50,7 @@ export default function OEMReplacementPage() {
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.75)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -101,7 +87,7 @@ export default function OEMReplacementPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -112,6 +98,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Equipment manufacturers specify filters for warranty compliance, system design compatibility, and performance targets. But OEM requirements represent minimum compliance thresholds, not optimal contamination control.
           </p>
@@ -120,6 +107,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             When warranty is active or contracts mandate OEM compliance, filtration can still be optimized within those constraints. When warranty expires, filter selection can shift from compliance to asset protection.
           </p>
@@ -127,6 +115,7 @@ export default function OEMReplacementPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
+            textAlign: 'justify',
           }}>
             This page clarifies when OEM compliance is non-negotiable, when optimization is possible, and how to achieve system-level performance within whatever constraints apply.
           </p>
@@ -156,7 +145,7 @@ export default function OEMReplacementPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -167,6 +156,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             OEM-specified filters are mandatory in these scenarios:
           </p>
@@ -213,7 +203,7 @@ export default function OEMReplacementPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -224,6 +214,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Once warranty expires or for out-of-warranty equipment, filter selection can be optimized around contamination control and cost:
           </p>
@@ -240,6 +231,7 @@ export default function OEMReplacementPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Specification-Equivalent Alternatives:</strong> Select non-OEM filters that meet or exceed OEM specifications. Key metrics: micron rating, flow capacity, pressure drop, bypass setting. If equivalent, performance is equivalent.
             </p>
@@ -249,6 +241,7 @@ export default function OEMReplacementPage() {
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Performance-Enhanced Selection:</strong> Choose filters with superior contamination control metrics (higher Beta ratio, greater dirt holding capacity) while maintaining specification compatibility. Result: extended service intervals, lower TCO.
             </p>
@@ -257,6 +250,7 @@ export default function OEMReplacementPage() {
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
+              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Cost Optimization:</strong> High-quality aftermarket filters meeting OEM specs often cost 30-50% less than OEM-branded equivalents. Cost savings with no performance penalty when specification requirements are identical.
             </p>
@@ -284,7 +278,7 @@ export default function OEMReplacementPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -295,6 +289,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             When comparing non-OEM filters to OEM specifications, verify these critical dimensions:
           </p>
@@ -486,7 +481,7 @@ export default function OEMReplacementPage() {
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
           }}>
@@ -497,6 +492,7 @@ export default function OEMReplacementPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             When OEM filters are required, contamination control can still be optimized:
           </p>
@@ -730,6 +726,29 @@ export default function OEMReplacementPage() {
         </motion.section>
 
       </div>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'OEM Filter Requirements Strategy',
+        description: 'Technical framework for understanding when OEM filters are required, optional, or replaceable—covering warranty compliance, specification matching, and post-warranty optimization using ISO 16889 equivalent aftermarket alternatives.',
+        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['OEM filter requirements', 'OEM vs aftermarket', 'ISO 16889', 'filter specification matching', 'warranty compliance', 'contamination control', 'asset protection', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'OEM Filter Requirements Strategy', description: 'Framework for evaluating OEM filter compliance requirements across warranty and post-warranty equipment lifecycle phases.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Bridges', item: 'https://elimfilters.com/knowledge-system/bridges' },
+          { '@type': 'ListItem', position: 4, name: 'OEM Filter Requirements Strategy', item: 'https://elimfilters.com/knowledge-system/bridges/oem-replacement' },
+        ],
+      }) }} />
     </main>
   );
 }

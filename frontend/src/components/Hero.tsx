@@ -67,7 +67,6 @@ export function Hero({
     >
       {/* Background image */}
       <div
-        className="industry-hero-bg"
         style={{
           position: 'absolute',
           inset: 0,
@@ -101,7 +100,6 @@ export function Hero({
 
       {/* Content */}
       <div
-        className="industry-hero-content"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -141,16 +139,15 @@ export function Hero({
 
         <h1
           ref={titleRef}
-          className="industry-hero-title"
           style={{
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: 900,
-            fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-            lineHeight: 1.0,
-            letterSpacing: '-0.02em',
-            color: '#ffffff',
-            maxWidth: '900px',
-            marginBottom: '0.5rem',
+            fontFamily: 'Titillium Web, sans-serif',
+            fontWeight: 300,
+            fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
+            lineHeight: 1.1,
+            letterSpacing: '-0.01em',
+            color: 'rgba(255,255,255,0.92)',
+            maxWidth: '820px',
+            marginBottom: subtitle ? '0.25rem' : '1.5rem',
           }}
         >
           {title}
@@ -159,14 +156,14 @@ export function Hero({
         {subtitle && (
           <p
             ref={subtitleRef}
-            className="industry-hero-subtitle"
             style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontWeight: 900,
-              fontSize: 'clamp(2rem, 5vw, 4.5rem)',
+              fontFamily: 'Titillium Web, sans-serif',
+              fontWeight: 600,
+              fontSize: 'clamp(1.8rem, 4vw, 3.5rem)',
               lineHeight: 1.1,
               color: '#FFF12D',
               marginBottom: '1.5rem',
+              letterSpacing: '-0.01em',
             }}
           >
             {subtitle}
@@ -177,20 +174,21 @@ export function Hero({
           <p
             ref={taglineRef}
             style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
-              color: 'rgba(255,255,255,0.65)',
+              fontFamily: 'Titillium Web, sans-serif',
+              fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+              color: 'rgba(255,255,255,0.62)',
               maxWidth: '560px',
-              lineHeight: 1.65,
+              lineHeight: 1.75,
               marginBottom: '2.5rem',
-              fontStyle: 'italic',
+              borderLeft: '3px solid #FFF12D',
+              paddingLeft: '1.25rem',
             }}
           >
             {tagline}
           </p>
         )}
 
-        <div ref={ctaRef} className="industry-hero-cta" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+        <div ref={ctaRef} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
           <a
             href={ctaHref}
             target={ctaHref.startsWith('http') ? '_blank' : undefined}
@@ -199,17 +197,18 @@ export function Hero({
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
-              fontSize: '0.8rem',
+              fontSize: '0.78rem',
               letterSpacing: '0.12em',
-              padding: '1rem 2.5rem',
+              padding: '0.85rem 2rem',
               textDecoration: 'none',
               transition: 'all 0.25s ease',
+              borderRadius: '2px',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 0 36px rgba(255,241,45,0.55)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 0 32px rgba(255,241,45,0.45)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow = 'none';
@@ -222,23 +221,26 @@ export function Hero({
             href="#features"
             style={{
               display: 'inline-block',
-              border: '1px solid rgba(255,255,255,0.3)',
-              color: 'rgba(255,255,255,0.8)',
-              fontFamily: 'Montserrat, sans-serif',
+              border: '1px solid rgba(255,241,45,0.35)',
+              color: 'rgba(255,241,45,0.8)',
+              fontFamily: 'Titillium Web, sans-serif',
               fontWeight: 700,
-              fontSize: '0.8rem',
+              fontSize: '0.78rem',
               letterSpacing: '0.12em',
-              padding: '1rem 2rem',
+              padding: '0.85rem 1.75rem',
               textDecoration: 'none',
               transition: 'all 0.25s ease',
+              borderRadius: '2px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = '#FFF12D';
               e.currentTarget.style.color = '#FFF12D';
+              e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)';
-              e.currentTarget.style.color = 'rgba(255,255,255,0.8)';
+              e.currentTarget.style.borderColor = 'rgba(255,241,45,0.35)';
+              e.currentTarget.style.color = 'rgba(255,241,45,0.8)';
+              e.currentTarget.style.background = 'transparent';
             }}
           >
             EXPLORE
@@ -282,8 +284,8 @@ export function Hero({
               >
                 <div
                   style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontWeight: 900,
+                    fontFamily: 'Titillium Web, sans-serif',
+                    fontWeight: 700,
                     fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                     color: '#FFF12D',
                     lineHeight: 1,

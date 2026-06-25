@@ -50,18 +50,6 @@ export default function SystemPageClient({ product, displayName, industries, slu
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span style={{
-              display: 'block',
-              fontSize: '0.7rem',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-              marginBottom: '1.5rem',
-            }}>
-              // FILTRATION SYSTEM
-            </span>
-
             <h1 style={{
               fontSize: 'clamp(2rem, 4vw, 3.5rem)',
               fontWeight: 900,
@@ -79,9 +67,9 @@ export default function SystemPageClient({ product, displayName, industries, slu
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '800px',
-            }}>
-              {product.description}
-            </p>
+            }}
+              dangerouslySetInnerHTML={{ __html: product.description.replace(/®/g, '<sup style="font-size:0.55em;vertical-align:super;line-height:0">®</sup>') }}
+            />
           </motion.div>
         </div>
       </section>

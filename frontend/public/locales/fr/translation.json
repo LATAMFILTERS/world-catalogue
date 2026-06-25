@@ -80,7 +80,7 @@
     "dealer": {
       "tag": "// RÉSEAU DE REVENDEURS",
       "title": "SEULEMENT LE MEILLEUR",
-      "highlight": "VENDRE DES ELIMFILTRES.",
+      "highlight": "VEND DES ELIMFILTERS®.",
       "button": "DEVENEZ REVENDEUR"
     },
     "search": {
@@ -104,7 +104,14 @@
     "dealer": "Devenez revendeur",
     "warranty": "Garantie",
     "copyright": "© 2015-2026 ELIMFILTERS® LLC | Intelligence et ingénierie en filtration",
-    "location": "FRISCO-TEXAS"
+    "location": "FRISCO-TEXAS",
+    "colProducts": "PRODUITS",
+    "colKnowledge": "CONNAISSANCE",
+    "knowledgeSystem": "Système de Connaissances",
+    "standards": "Normes",
+    "fleetOpt": "Optimisation de Flotte",
+    "locationText": "Frisco, Texas",
+    "kleoText": "© 2015–2026 Kleo Technologies"
   },
   "category": {
     "keyAdvantages": "AVANTAGES CLÉS",
@@ -114,7 +121,7 @@
     "systemSpecs": "SPÉCIFICATIONS DU SYSTÈME",
     "active": "✓ ACTIF",
     "operationalAdvantages": "AVANTAGES OPÉRATIONNELS",
-    "whyElimfilters": "POURQUOI DES ÉLIMFILTRES",
+    "whyElimfilters": "POURQUOI ELIMFILTERS®",
     "technologiesIncluded": "Technologies incluses",
     "performanceMetrics": "MESURES DE PERFORMANCE",
     "readyToUpgrade": "Prêt à mettre à niveau ?",
@@ -124,5 +131,202 @@
   },
   "language": {
     "switchToEn": "FR"
+  },
+  "home": {
+    "eyebrow": "Asset Protection Technology Platform",
+    "hero1": "Protection des actifs industriels",
+    "hero2": "grâce au contrôle de la contamination.",
+    "heroDesc": "Systèmes avancés de contrôle de la contamination conçus pour réduire l'usure, minimiser les temps d'arrêt, améliorer la fiabilité et prolonger la durée de vie opérationnelle des équipements industriels critiques.",
+    "ctaFilter": "Trouver ma pièce",
+    "ctaKnowledge": "Système de connaissances",
+    "statsLabels": [
+      "Durée de vie des paliers moteur",
+      "Extension de vie des actifs",
+      "Défaillances dues à la contamination",
+      "Coût moyen d'événement évité"
+    ],
+    "assetTag": "// STRATÉGIE DE PROTECTION DES ACTIFS",
+    "assetTitle": "Protéger les Actifs Industriels par le Contrôle de la Contamination",
+    "assetP1": "ELIMFILTERS protège les actifs industriels en contrôlant la contamination dans les systèmes critiques. Notre approche d'ingénierie vise à prévenir la dégradation, prolonger la durée de vie, améliorer la fiabilité et réduire le coût total de possession.",
+    "assetP2": "Chaque technologie que nous concevons traite un mécanisme de contamination spécifique — usure par particules, ingestion d'eau, défaillance de bypass ou dégradation thermique — ciblant la cause profonde de la défaillance prématurée des actifs.",
+    "archLabel": "ARCHITECTURE DE L'INFORMATION",
+    "archItems": [
+      "Contamination",
+      "Dégradation des Actifs",
+      "Normes et Mesure",
+      "Technologies de Protection",
+      "Mise en Œuvre des Produits",
+      "Optimisation de Flotte",
+      "Impact sur la Durabilité"
+    ],
+    "problemTag": "// DIAGNOSTIC DES RISQUES OPÉRATIONNELS",
+    "problemH1": "CE QUE VOUS NE VOYEZ PAS",
+    "problemH2": "ARRÊTE VOTRE OPÉRATION.",
+    "problemIntro": "80 % des pannes prématurées des équipements sont causées par la contamination. Une filtration inefficace permet à des particules invisibles d'agir comme du papier de verre à l'intérieur des composants critiques — surfaces de paliers, orifices d'injecteurs, tiroirs hydrauliques.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "Des pannes prématurées sont causées par la contamination.",
+    "failModes": [
+      {
+        "title": "Érosion des Injecteurs",
+        "desc": "Les particules microniques déforment les orifices de pulvérisation, provoquant une perte de puissance immédiate et une mauvaise combustion."
+      },
+      {
+        "title": "Friction Critique des Paliers",
+        "desc": "L'huile contaminée accélère l'usure du métal, réduisant la durée de vie du bloc moteur jusqu'à 40%."
+      },
+      {
+        "title": "Perte d'Efficacité du Carburant",
+        "desc": "Les systèmes de carburant contaminés obligent les moteurs à consommer jusqu'à 8% de diesel en plus pour maintenir le même couple."
+      }
+    ],
+    "whyTitle1": "PROTECTION DES ACTIFS",
+    "whyTitle2": "TECHNOLOGIE",
+    "whyP1": "ELIMFILTERS n'est pas une entreprise de filtres. ELIMFILTERS est une entreprise de ",
+    "whyP1hl": "Technologie de Protection des Actifs",
+    "whyP1after": " — systèmes d'ingénierie qui contrôlent la contamination, préviennent la dégradation et protègent la valeur des actifs industriels critiques.",
+    "whyP2": "Chaque technologie que nous développons s'attaque à une menace de contamination mesurable. Les équipements défaillants coûtent des centaines de milliers à réparer. Nous protégeons cet investissement au niveau du système, pas du produit.",
+    "whyCheckItems": [
+      "Contrôle de contamination au niveau du système, pas remplacement de produit",
+      "25+ ans de protection des actifs industriels à haute valeur",
+      "Normes d'ingénierie : ISO 5011 · 16889 · 19438 · 4406",
+      "Déployé dans 12 industries — mines, marine, agriculture et plus"
+    ],
+    "whyCardTag": "// TECHNOLOGIE DE PROTECTION DES ACTIFS",
+    "whyCardTitle1": "Votre équipement vaut des millions.",
+    "whyCardTitle2": "Protégez-le en conséquence.",
+    "whyCardDesc": "Chaque technologie ELIMFILTERS existe pour protéger les actifs critiques, réduire les temps d'arrêt et prolonger la durée de vie opérationnelle.",
+    "whyCardItems": [
+      "Médias Hybrides Formulés par IA",
+      "Systèmes de Séparation Hydrophobes",
+      "Structures Anti-Bypass",
+      "20 000+ références OEM validées"
+    ],
+    "techTag": "// TECHNOLOGIE ÉPROUVÉE",
+    "techTitle": "Protection des Actifs",
+    "techHighlight": "Technologie",
+    "techItems": [
+      {
+        "title": "Médias Hybrides Formulés par IA",
+        "desc": "Technologie de médias propriétaire développée avec des algorithmes mathématiques et des scénarios testés en laboratoire. La formulation unique offre des performances exceptionnelles qui ne peuvent pas être reproduites."
+      },
+      {
+        "title": "Systèmes de Séparation Hydrophobes",
+        "desc": "Élimination avancée de l'eau et de l'humidité des carburants et lubrifiants. Prévient la corrosion, l'oxydation et la dégradation de la viscosité tout en garantissant un fonctionnement fiable à long terme."
+      },
+      {
+        "title": "Structures Anti-Bypass",
+        "desc": "Sécurité 100% garantie : en cas de bypass, le filtre tombe en panne en toute sécurité. Risque zéro d'événements soudains de contamination. Protection absolue des équipements critiques."
+      }
+    ],
+    "ctaDealerTag": "// RÉSEAU DE REVENDEURS",
+    "ctaDealerTitle": "SEULEMENT LE MEILLEUR",
+    "ctaDealerHl": "VEND DES ELIMFILTERS.",
+    "ctaDealerBtn": "DEVENEZ REVENDEUR",
+    "ctaSearchTag": "// RECHERCHE TECHNIQUE",
+    "ctaSearchTitle": "LE BON FILTRE.",
+    "ctaSearchHl": "RECHERCHEZ COMME UN PRO.",
+    "ctaSearchBtn": "TROUVER MA PIÈCE",
+    "faqTag": "// QUESTIONS FRÉQUENTES",
+    "faqTitle": "Questions Courantes sur la Filtration Industrielle",
+    "faqItems": [
+      {
+        "q": "Que signifie la protection des actifs industriels ?",
+        "a": "La protection des actifs industriels est le contrôle systématique de la contamination dans tous les systèmes mécaniques critiques — admission d'air, carburant, hydraulique, lubrification et refroidissement — pour prévenir la défaillance prématurée des équipements. ELIMFILTERS® conçoit des systèmes de contrôle de contamination qui prolongent la durée de vie des actifs, réduisent les temps d'arrêt non planifiés et diminuent le coût total de possession."
+      },
+      {
+        "q": "Comment la contamination provoque-t-elle la défaillance des équipements ?",
+        "a": "Les particules de contamination usent les surfaces des paliers, obstruent les injecteurs de carburant et dégradent l'intégrité des joints. Les particules inférieures à 10 microns provoquent une usure abrasive invisible à l'œil nu. La contamination non contrôlée réduit la durée de vie des paliers moteur de 15 000+ heures à 2 000–3 000 heures. L'eau dans le carburant favorise la croissance microbienne et la corrosion des injecteurs."
+      },
+      {
+        "q": "Quel code de propreté ISO un système hydraulique doit-il cibler ?",
+        "a": "La plupart des systèmes hydrauliques industriels nécessitent le code ISO 17/15/12 pour protéger les tiroirs de vannes proportionnelles. Les systèmes critiques peuvent spécifier ISO 15/13/10. Les stratégies de contrôle de contamination d'ELIMFILTERS® ciblent des codes de propreté mesurés — la norme ISO 4406 — et non des marques de produits."
+      },
+      {
+        "q": "Pourquoi ELIMFILTERS n'est-il pas une entreprise de filtres ?",
+        "a": "ELIMFILTERS conçoit des systèmes de contrôle de la contamination, non des filtres génériques. Un filtre est un composant. Un système de protection des actifs est une stratégie : il définit les objectifs de contamination, sélectionne les technologies adaptées à chaque domaine du système et mesure les performances tout au long du cycle de vie de l'équipement. ELIMFILTERS opère au niveau du système."
+      }
+    ],
+    "heroLine_protecting": "Protection",
+    "heroLine_industrial": "des Actifs",
+    "heroLine_assets": "Industriels.",
+    "heroLine1b": "ACTIFS",
+    "heroLine2": "INDUSTRIELS.",
+    "heroPositioning1": "ELIMFILTERS n'est pas une entreprise de filtres.",
+    "heroPositioning2": "ELIMFILTERS est une entreprise de Technologie de Protection des Actifs.",
+    "heroSubHead": "Par le contrôle de la contamination dans les systèmes mécaniques critiques : hydraulique, carburant, lubrification, refroidissement et admission d'air.",
+    "missionTag": "// POURQUOI NOUS EXISTONS",
+    "missionTitle": "Pourquoi ELIMFILTERS Existe",
+    "missionP1": "La contamination industrielle reste l'une des menaces les plus sous-estimées pour la fiabilité des équipements dans le monde.",
+    "missionP2": "ELIMFILTERS aide les organisations à réduire les pannes liées à la contamination grâce à des systèmes de protection des actifs conçus pour les opérations industrielles critiques.",
+    "missionP3": "Notre mission est d'améliorer la fiabilité des équipements, la continuité opérationnelle et la longévité des actifs grâce au contrôle de la contamination.",
+    "economicTag": "// LE COÛT RÉEL DE LA CONTAMINATION",
+    "economicTitle": "Les Arrêts Coûtent Plus Cher",
+    "economicTitleHl": "Que la Filtration",
+    "economicItems": [
+      "Chaque événement de contamination a un coût.",
+      "Chaque panne d'équipement a une conséquence.",
+      "Chaque décision de maintenance impacte la productivité."
+    ],
+    "economicDesc": "ELIMFILTERS aide les organisations à réduire les risques liés à la contamination grâce à des stratégies de protection conçues pour la fiabilité, la disponibilité et la continuité opérationnelle.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "Coût moyen d'un arrêt non planifié par incident"
+      },
+      {
+        "value": "80%",
+        "label": "Des pannes prématurées d'équipements causées par la contamination"
+      },
+      {
+        "value": "3–5×",
+        "label": "Extension de la durée de vie des actifs par le contrôle systémique de la contamination"
+      }
+    ],
+    "sciTag": "// NORMES D'INGÉNIERIE",
+    "sciTitle": "La Science derrière la Protection des Actifs",
+    "sciDesc": "Les systèmes de contrôle de contamination ELIMFILTERS sont conçus selon des normes internationales, validés par des essais en laboratoire rigoureux et déployés dans des environnements industriels critiques.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "Essai multipass de filtres et classification par rapport Beta pour systèmes hydrauliques et de lubrification."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "Essai de performance des filtres à air d'admission — efficacité et restriction au débit nominal."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "Résistance à la contamination et efficacité de séparation eau-carburant des filtres à carburant."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "Classification des codes de propreté par contamination particulaire pour systèmes hydrauliques et de lubrification."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "Validation des performances et de la durabilité des filtres à huile moteur diesel lourds."
+      }
+    ],
+    "llmTag": "// PROTECTION DES ACTIFS DÉFINIE",
+    "llmTitle": "Qu'est-ce que la Protection des Actifs Industriels ?",
+    "llmP1": "La protection des actifs industriels est l'approche d'ingénierie systématique visant à identifier, mesurer et contrôler les sources de contamination qui dégradent les équipements mécaniques. Dans les opérations industrielles, la contamination — particules, eau, chaleur et sous-produits chimiques — est le principal facteur de défaillance prématurée des moteurs, systèmes hydrauliques, circuits carburant, transmissions et cabines.",
+    "llmP2": "La contamination accélère l'usure à l'échelle microscopique. Les particules inférieures à 10 microns provoquent une usure abrasive sur les surfaces de paliers, les tiroirs de distributeurs et les orifices d'injecteurs — réduisant la durée de vie des composants de 30 à 50 % lorsqu'elles ne sont pas maîtrisées. La contamination par l'eau dans les systèmes carburant favorise la croissance microbienne, la corrosion des injecteurs et l'instabilité de la combustion. Dans les circuits hydrauliques, même une contamination légère dépassant les cibles de propreté ISO altère la réponse des distributeurs, accélère la dégradation des joints et augmente le risque de défaillance système.",
+    "llmP3": "La protection des actifs industriels n'est pas une catégorie de produit. C'est une stratégie de contrôle de la contamination qui commence par la compréhension des objectifs de contamination de chaque système, la sélection des technologies d'ingénierie capables de les atteindre, et la surveillance des performances tout au long du cycle de vie de l'équipement.",
+    "llmP4": "Le résultat : une durée de vie des équipements plus longue, moins de pannes non planifiées, des coûts de maintenance réduits et une disponibilité opérationnelle accrue — mesurée non en filtres remplacés, mais en actifs protégés.",
+    "trustTag": "// DÉPLOIEMENT INDUSTRIEL MONDIAL",
+    "trustTitle": "Fiabilité dans les Industries Critiques",
+    "trustIndustries": [
+      "Mines et Extraction",
+      "Construction et Équipements Lourds",
+      "Agriculture et Agro-industrie",
+      "Pétrole et Gaz",
+      "Marine et Offshore",
+      "Production d'Énergie",
+      "Flottes Municipales",
+      "Industrie Manufacturière",
+      "Ferroviaire et Transport Public",
+      "Transport Commercial"
+    ],
+    "ctaProtect": "Protéger mes actifs"
   }
 }

@@ -1,36 +1,16 @@
 @echo off
-echo.
-echo ==============================================
-echo  ELIMFILTERS — Actualizando proyecto local
-echo ==============================================
-echo.
+echo Cerrando servidor...
+taskkill /F /IM node.exe 2>nul
+timeout /t 2 /nobreak >nul
 
-cd /d "%~dp0"
+echo Actualizando repositorio...
+cd /d "C:\Users\VICTOR ABREU\Documents\world-catalogue"
+git fetch origin claude/ecstatic-fermi-rqhwq2
+git checkout -B claude/ecstatic-fermi-rqhwq2 origin/claude/ecstatic-fermi-rqhwq2
+git clean -fd frontend/out/
 
-echo [1/4] Descargando cambios del servidor...
-git stash
-git pull --no-rebase origin main
-if %errorlevel% neq 0 (
-    echo ERROR: No se pudo descargar. Verifica tu conexion a internet.
-    pause
-    exit /b 1
-)
+echo Iniciando servidor...
+start cmd /k "cd /d "C:\Users\VICTOR ABREU\Documents\world-catalogue\frontend\out" && npx serve@latest -l 3000 ."
 
-echo.
-echo [2/4] Instalando dependencias del servidor...
-call npm install
-
-echo.
-echo [3/4] Instalando dependencias del frontend...
-cd frontend
-call npm install
-cd ..
-
-echo.
-echo [4/4] Iniciando servidor local...
-echo.
-echo  El sitio estara disponible en: http://localhost:3000
-echo  Presiona Ctrl+C para detener el servidor.
-echo.
-cd frontend
-call npm run dev -- --port 3000
+echo Listo. Abre http://localhost:3000/technologies/ en modo incognito
+pause

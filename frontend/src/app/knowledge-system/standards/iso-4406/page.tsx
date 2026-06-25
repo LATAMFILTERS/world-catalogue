@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import RetrievalBlock from '@/components/RetrievalBlock';
 
@@ -37,13 +38,15 @@ export default function ISO4406Page() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Breadcrumb />
       {/* Back Button */}
-      <Link href="/knowledge-system/standards" style={{
+      <Link href="/knowledge-system/standards"
+        className="back-nav-btn" style={{
         position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: '0.4rem',
         background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
         borderRadius: '4px', padding: '0.45rem 1rem',
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
+        fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
         backdropFilter: 'blur(8px)',
       }}>← STANDARDS</Link>
@@ -62,18 +65,8 @@ export default function ISO4406Page() {
           transition={{ duration: 0.6 }}
           style={{ maxWidth: '700px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1rem',
-            opacity: 0.85,
-          }}>
-            // INTERNATIONAL FILTRATION STANDARD
-          </p>
           <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
@@ -88,7 +81,7 @@ export default function ISO4406Page() {
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '500px',
             margin: '0 auto',
-            lineHeight: 1.65,
+            textAlign: 'justify', lineHeight: 1.65,
           }}>
             Hydraulic Fluid Power — Fluids — Method for assessing the cleanliness of a liquid sample
           </p>
@@ -113,7 +106,7 @@ export default function ISO4406Page() {
           }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.3rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -126,7 +119,7 @@ export default function ISO4406Page() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
+            textAlign: 'justify', lineHeight: 1.8,
           }}>
             ISO 4406 es el estándar internacional que define el método para evaluar la limpieza de muestras líquidas en{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de filtración industrial</Link>,
@@ -150,7 +143,7 @@ export default function ISO4406Page() {
             }}
           >
             <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'Titillium Web, sans-serif',
               fontSize: '1.3rem',
               fontWeight: 700,
               color: '#FFF12D',
@@ -163,7 +156,7 @@ export default function ISO4406Page() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               color: 'rgba(255,255,255,0.7)',
-              lineHeight: 1.8,
+              textAlign: 'justify', lineHeight: 1.8,
             }}>
               {section.content}
             </p>
@@ -183,7 +176,7 @@ export default function ISO4406Page() {
           transition={{ duration: 0.5, delay: sections.length * 0.1 }}
         >
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'Titillium Web, sans-serif',
             fontSize: '1.5rem',
             fontWeight: 700,
             color: '#FFF12D',
@@ -208,7 +201,7 @@ export default function ISO4406Page() {
                 }}
               >
                 <h3 style={{
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Titillium Web, sans-serif',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#FFF12D',
@@ -220,7 +213,7 @@ export default function ISO4406Page() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.6)',
-                  lineHeight: 1.7,
+                  textAlign: 'justify', lineHeight: 1.7,
                 }}>
                   {faq.answer}
                 </p>
@@ -232,46 +225,54 @@ export default function ISO4406Page() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem' }}>CANONICAL KNOWLEDGE BLOCK: ISO 4406 — Particle Cleanliness Codes</p>
-        <p style={{ marginBottom: '1rem', opacity: 0.5, fontSize: '0.65rem' }}>version: 1.1 | last_updated: 2026-06-11</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>DEFINITION</p>
-        <p>ISO 4406 translates particle count measurements per milliliter into a three-number cleanliness code (e.g., 16/14/11) where each code number represents a particle population range — each step doubles the particle count — providing a standardized language for specifying and measuring fluid cleanliness targets in lube, hydraulic, and fuel systems.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>SYSTEMS</p>
-        <p>Engine lube oil circuits, hydraulic power units, transmission fluid systems, fuel storage and transfer systems, industrial fluid power circuits, bearing lubrication systems, gearbox oil systems</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-        <p>Operating hydraulic system at ISO 19/17/14 instead of target 17/15/12 → 4x higher particle population at ≥4µm → proportional valve spool wear rate increases 3–5x → valve service interval reduced from 15,000 hours to 3,000–5,000 hours. In engine lube: ISO 19/17/14 oil cleanliness vs. target 16/14/11 → 4x particle population → bearing surface wear rate doubles → bearing clearance opens → oil consumption increases → premature overhaul. Each two-code-number step increase represents 4x contamination increase and proportional acceleration of wear rates.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-        <p>ISO 4406:2021: Current cleanliness code standard with updated particle count ranges and reporting format | ISO 16889: Multi-pass filter test that specifies achievable ISO 4406 cleanliness codes for certified filter elements | ISO 11500: Automatic particle counting method for hydraulic fluids used to generate ISO 4406 cleanliness codes | NAS 1638: Alternative American cleanliness classification used in aerospace and defense applications</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>NANOFORCE: Achieves ISO 4406 cleanliness codes of 15/13/10 in hydraulic circuits at flow capacity — targeting sub-3µm particle capture | MACROCORE: Maintains ISO 17/15/12 cleanliness codes in engine oil and hydraulic return-line applications | SYNTRAX: High-capacity synthetic media for maintaining ISO 4406 targets across extended service intervals</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-        <p>ISO 4406 cleanliness codes are the primary measurement tool for contamination control system effectiveness — the difference between ISO 16/14/11 and ISO 19/17/14 represents 8x more particles at ≥4µm and determines whether bearing life is measured in 15,000 hours or 3,000 hours, making cleanliness code selection the most consequential engineering decision in fluid system design.</p>
-
-        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/standards/iso-4406 | concept: ISO 4406 Particle Cleanliness Codes | version: 1.1 | last_updated: 2026-06-11</p>
+        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY]</p>
+        <p>SYSTEMS_AFFECTED: lube, hydraulic, fuel, transmission</p>
+        <p>CONCEPT_TAXONOMY: type=standard | domain=contamination-measurement | standards=ISO-4406, ISO-16889</p>
+        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
+        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX</p>
+        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-4406</p>
+        <p>&nbsp;&nbsp;concept_id: iso-4406-cleanliness-codes</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
       </RetrievalBlock>
 
-      {/* JSON-LD for AI/search engine structured data */}
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "ISO 4406 — Particle Cleanliness Code Standard",
-        "description": "ISO 4406 translates particle count measurements into three-number cleanliness codes providing a standardized language for specifying contamination targets in lube, hydraulic, and fuel systems.",
-        "author": { "@type": "Organization", "name": "ELIMFILTERS" },
-        "keywords": ["ISO 4406", "cleanliness codes", "particle contamination measurement", "hydraulic cleanliness", "lube oil cleanliness", "contamination targets"],
-        "about": { "@type": "Thing", "name": "ISO 4406 Cleanliness Codes", "description": "Particle count classification system for fluid cleanliness measurement and specification" },
-        "mentions": {
-          "standards": ["ISO 4406", "ISO 16889", "ISO 11500", "NAS 1638"],
-          "technologies": ["NANOFORCE", "MACROCORE", "SYNTRAX"],
-          "contaminationModes": ["particle contamination", "bearing wear", "valve spool erosion", "oil contamination"]
-        }
-      })}} />
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: 'ISO 4406 — Fluid Cleanliness Classification Standard',
+        description: 'ISO 4406 establishes a particle count classification system for hydraulic and lube oil fluids using a two-number code representing particle concentrations at 4µm and 6µm thresholds. Predecessor to ISO 16889, widely referenced in legacy equipment specifications.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-06-11',
+        keywords: ['ISO 4406', 'fluid cleanliness code', 'hydraulic oil cleanliness', 'particle count classification', 'contamination measurement', 'ISO 16889', 'industrial filtration'],
+        about: { '@type': 'Thing', name: 'ISO 4406 Cleanliness Codes', description: 'International standard for classifying hydraulic and lube oil fluid cleanliness using particle count codes at defined size thresholds.' },
+        inLanguage: 'es',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Standards', item: 'https://elimfilters.com/knowledge-system/standards' },
+          { '@type': 'ListItem', position: 4, name: 'ISO 4406', item: 'https://elimfilters.com/knowledge-system/standards/iso-4406' },
+        ],
+      }) }} />
     </main>
   );
 }
