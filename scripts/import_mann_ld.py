@@ -36,7 +36,8 @@ log = logging.getLogger(__name__)
 
 API_BASE = "https://elimfilters-search-pro.onrender.com"
 API_KEY  = None  # set via --api-key argument
-BATCH    = 20
+BATCH    = 10    # conservative: some products have 300+ fitment rows
+MAX_FITMENT = 150  # truncate to avoid 413 on large products
 
 # Maps scraper filter_type strings → server-side filter_type_raw key
 FILTER_TYPE_ALIASES = {
@@ -95,12 +96,16 @@ def map_row(record: dict) -> dict | None:
 
     dims = record.get('dimensions') or {}
 
+    fitment = record.get('fitment') or []
+    if len(fitment) > MAX_FITMENT:
+        fitment = fitment[:MAX_FITMENT]
+
     return {
         'mann_code':       record['sku'],
         'filter_type_raw': ft_raw,
         'description':     (record.get('description') or '')[:600] or None,
         'oe_numbers':      record.get('oe_numbers') or {},
-        'fitment':         record.get('fitment') or [],
+        'fitment':         fitment,
         'outer_diameter_mm': parse_dim_mm(dims.get('A') or dims.get('OD') or dims.get('Outer Diameter')),
         'height_mm':       parse_dim_mm(dims.get('H') or dims.get('Height')),
     }
@@ -195,8 +200,10 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
                     f"  Batch {total_read}: +{result.get('inserted',0)} ins "
                     f"+{result.get('updated',0)} upd {result.get('errors',0)} err"
                 )
+                for ed in result.get('errorDetails', [])[:3]:
+                    log.warning(f"    ERR {ed.get('sku')}: {ed.get('error')}")
                 batch = []
-                time.sleep(0.5)
+                time.sleep(0.3)
 
     # flush remaining
     if batch:

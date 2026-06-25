@@ -76,6 +76,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+// Import endpoints need larger body limit (Mann fitment can be 300+ rows per product)
+app.use('/api/import', express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out');
@@ -1104,7 +1106,7 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    let inserted = 0, updated = 0, errors = 0, skipped = [];
+    let inserted = 0, updated = 0, errors = 0, skipped = [], errorDetails = [];
 
     for (const row of rows) {
       const mannCode = (row.mann_code || '').trim();
@@ -1170,11 +1172,12 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
         else updated++;
       } catch (rowErr) {
         errors++;
+        errorDetails.push({ sku, error: rowErr.message });
         console.error('[mann-import-err]', sku, rowErr.message);
       }
     }
 
-    res.json({ success: true, total: rows.length, inserted, updated, errors, skipped });
+    res.json({ success: true, total: rows.length, inserted, updated, errors, skipped, errorDetails });
   } catch (e) {
     console.error('[mann-import-fatal]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
