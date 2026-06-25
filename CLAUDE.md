@@ -1276,6 +1276,104 @@ npx serve@latest -l 3001 -s out
 
 ---
 
+## Product Catalog SKU Architecture
+
+### HD vs LD Duty Classification
+
+Products are classified as **Heavy Duty (HD)** or **Light Duty (LD)** based on two factors:
+1. **OEM manufacturer** of the vehicle/equipment (HD = trucks, industrial equipment, agriculture; LD = passenger cars, light commercial vehicles)
+2. **Filter technical specifications** — physical dimensions, thread size, bypass pressure
+
+Search results must respect this classification: an HD query must return an HD SKU and an LD query must return an LD SKU. Never cross HD and LD results.
+
+### SKU Prefix Convention
+
+#### Heavy Duty (HD) — Donaldson-based
+| Filter Type | SKU Prefix | Example |
+|---|---|---|
+| Air Filter | EA1 | EA10695 |
+| Air Housing | EA2 | — |
+| Air Dryer | ED4 | — |
+| Hydraulic Filter | EH6 | EH60222 |
+| Oil Filter | EL8 | EL80047 |
+| Marine Filter | EM9 | — |
+| Fuel/Water Separator | ES9 | — |
+| Cabin Air Filter | EC1 | — |
+| Fuel Filter | EF9 | EF984001 |
+| Coolant Filter | EW7 | — |
+
+#### Light Duty (LD) — Mann Filter-based
+| Filter Type | SKU Prefix | Example |
+|---|---|---|
+| Oil Filter | EL3 | EL31003 |
+| Air Filter | EA3 | EA31040 |
+| Cabin Filter | EC3 | EC35001 |
+| Fuel Filter | EF3 | EF31060 |
+
+### LD SKU Generation Rules (ENFORCED)
+
+**Format:** `[3-char prefix][4 digits]` — total 7 characters, no dashes, no spaces, no symbols.
+
+**Step-by-step:**
+1. Take the raw MANN part number (e.g., `ML 1003`, `W 940/21`, `HU 711/51`)
+2. Strip all non-digit characters: `1003`, `94021`, `71151`
+3. Take the **last 4 digits** as `codigo_base`: `1003`, `4021`, `1151`
+4. Prepend the 3-char prefix for the filter type
+5. `duty` = `LIGHT_DUTY`
+
+**Examples:**
+```
+MANN ML 1003  → digits=1003  → EL31003  (Oil Filter LD)
+MANN W 940/21 → digits=94021 → EL34021  (Oil Filter LD)
+MANN HU 711/51→ digits=71151 → EL31151  (Oil Filter LD)
+MANN CF 500/1 → digits=5001  → EC35001  (Cabin Filter LD)
+MANN C 1040/2 → digits=10402 → EA30402  (Air Filter LD)
+MANN WK 1060/6→ digits=10606 → EF30606  (Fuel Filter LD)
+```
+
+**Collision rule:** If two MANN codes produce the same last 4 digits, the second import is **rejected** (not auto-incremented). The collision must be resolved manually by reviewing which MANN code is the canonical product.
+
+### LD Import Pipeline
+
+1. **Scrape**: Run `scraper_mann_master.py` on Windows → outputs `C:\mann\mann_master.jsonl`
+2. **Import**: Run `scripts/import_mann_ld.py --file C:\mann\mann_master.jsonl`
+3. **Endpoint**: `POST /api/import/mann` in server.js processes each batch
+4. **Verify**: Query DB for `duty='LIGHT_DUTY'` products, check SKU prefixes
+
+```bash
+# Import all LD products
+python3 scripts/import_mann_ld.py --file C:\mann\mann_master.jsonl
+
+# Dry run first
+python3 scripts/import_mann_ld.py --file C:\mann\mann_master.jsonl --dry-run
+
+# Import only oil filters
+python3 scripts/import_mann_ld.py --file C:\mann\mann_master.jsonl --filter-type "Oil Filter"
+
+# Resume from a specific MANN code
+python3 scripts/import_mann_ld.py --file C:\mann\mann_master.jsonl --start ML1003
+```
+
+### OE Numbers (oem_codes for LD products)
+
+MANN products use **OE numbers** — Original Equipment codes from vehicle manufacturers (FIAT, OPEL, VW, BMW, etc.). These are stored in `oem_codes` as:
+```json
+[{"manufacturer": "FIAT", "code": "4119015"}, {"manufacturer": "OPEL", "code": "3448991"}]
+```
+
+Cross-brand codes (FRAM, Bosch, Mahle, etc.) from oilfilter-crossreference.com are added separately to `competitor_codes`. Never mix OE codes with competitor cross-refs in the same field.
+
+### Rules
+
+- **NO duplicate SKUs** — import_mann_ld.py and the server endpoint both check for conflicts
+- **NO invented SKUs** — all SKUs are generated algorithmically from the MANN part number
+- **NO HD/LD mixing** — EL8xxxx is always HD; EL3xxxx is always LD
+- **4 LD filter types only**: Oil, Air, Cabin, Fuel. Hydraulic and Coolant LD are not supported.
+- `codigo_base` for LD = last 4 digits only (no prefix letters, no separators)
+- All brand names in `oem_codes.manufacturer` should match the vehicle/equipment OEM (FIAT, OPEL, VW, etc.) — not filter brands (FRAM goes in `competitor_codes`)
+
+---
+
 ## CORE-EEAT GEO Audit Results (2026-06-23)
 
 ### Audit Methodology

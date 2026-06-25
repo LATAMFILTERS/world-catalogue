@@ -1038,6 +1038,143 @@ app.post('/api/import/donaldson', adminLimiter, requireAdmin, async (req, res) =
   }
 });
 
+// ─── POST /api/import/mann ───────────────────────────────────────────────────
+// Imports Mann Filter LD products scraped from mann-filter.com (mann_master.jsonl).
+// SKU generation rule: prefix (3 chars) + last 4 digits of MANN code number.
+//   Oil Filter  → EL3xxxx | Air Filter → EA3xxxx
+//   Cabin Filter→ EC3xxxx | Fuel Filter→ EF3xxxx
+// duty is always LIGHT_DUTY. codigo_base = last 4 digits of MANN code.
+// Accepts batches of up to 500 rows. Skips rows with colliding SKUs (returns them).
+const MANN_FILTER_TYPE_MAP = {
+  'oil filter':   { prefix: 'EL3', filter_type: 'lube' },
+  'fuel filter':  { prefix: 'EF3', filter_type: 'fuel' },
+  'air filter':   { prefix: 'EA3', filter_type: 'air' },
+  'cabin filter': { prefix: 'EC3', filter_type: 'cabin' },
+};
+
+function mannCodeToBase(mannCode) {
+  // Extract all digit groups, join, take last 4 digits.
+  // "ML 1003" → "1003" | "W 940/21" → "94021" → "4021" | "HU 711/51" → "71151" → "1151"
+  const digits = (mannCode || '').replace(/[^0-9]/g, '');
+  if (digits.length < 4) return digits.padStart(4, '0');
+  return digits.slice(-4);
+}
+
+function mannOeNumbersToOemCodes(oeNumbers) {
+  // oeNumbers: {"FIAT": ["4119015", ...], "OPEL": ["3448991", ...]}
+  // → [{manufacturer: "FIAT", code: "4119015"}, ...]
+  const result = [];
+  for (const [mfr, codes] of Object.entries(oeNumbers || {})) {
+    if (Array.isArray(codes)) {
+      for (const code of codes) {
+        const c = String(code).trim();
+        if (c) result.push({ manufacturer: mfr.trim(), code: c });
+      }
+    }
+  }
+  return result;
+}
+
+function mannFitmentToEquipmentApplications(fitment) {
+  return (fitment || []).map(f => ({
+    make:         f.make         || '',
+    model:        [f.model_family, f.model_type].filter(Boolean).join(' ').trim(),
+    engine_code:  f.engine_code  || '',
+    year_range:   f.year         || '',
+    ccm:          f.ccm          || '',
+    kw:           f.kw           || '',
+    hp:           f.hp           || '',
+  })).filter(a => a.make || a.model);
+}
+
+app.post('/api/import/mann', adminLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let inserted = 0, updated = 0, errors = 0, skipped = [];
+
+    for (const row of rows) {
+      const mannCode = (row.mann_code || '').trim();
+      if (!mannCode) { errors++; continue; }
+
+      const ftKey = (row.filter_type_raw || '').toLowerCase().trim();
+      const mapping = MANN_FILTER_TYPE_MAP[ftKey];
+      if (!mapping) {
+        errors++;
+        console.error('[mann-import] unknown filter_type_raw:', row.filter_type_raw, 'sku:', mannCode);
+        continue;
+      }
+
+      const codeBase = mannCodeToBase(mannCode);
+      const sku      = mapping.prefix + codeBase;
+
+      if (!/^[A-Z0-9]{5,10}$/.test(sku)) {
+        errors++;
+        console.error('[mann-import] invalid generated sku:', sku, 'from:', mannCode);
+        continue;
+      }
+
+      const oem_codes            = mannOeNumbersToOemCodes(row.oe_numbers);
+      const equipment_applications = mannFitmentToEquipmentApplications(row.fitment);
+
+      try {
+        const result = await client.query(`
+          INSERT INTO elimfilters_catalog (
+            sku, codigo_base, description, filter_type, duty,
+            oem_codes, competitor_codes, brand_crossrefs,
+            equipment_applications,
+            outer_diameter_mm, height_mm
+          ) VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9::jsonb,$10,$11)
+          ON CONFLICT (sku) DO UPDATE SET
+            codigo_base            = COALESCE(EXCLUDED.codigo_base,             elimfilters_catalog.codigo_base),
+            description            = COALESCE(EXCLUDED.description,             elimfilters_catalog.description),
+            filter_type            = COALESCE(EXCLUDED.filter_type,             elimfilters_catalog.filter_type),
+            duty                   = EXCLUDED.duty,
+            oem_codes              = CASE WHEN jsonb_array_length(EXCLUDED.oem_codes) > 0
+                                       THEN EXCLUDED.oem_codes
+                                       ELSE COALESCE(elimfilters_catalog.oem_codes, EXCLUDED.oem_codes) END,
+            competitor_codes       = COALESCE(elimfilters_catalog.competitor_codes, '[]'::jsonb),
+            brand_crossrefs        = COALESCE(elimfilters_catalog.brand_crossrefs,  '{}'::jsonb),
+            equipment_applications = CASE WHEN jsonb_array_length(EXCLUDED.equipment_applications) > 0
+                                       THEN EXCLUDED.equipment_applications
+                                       ELSE COALESCE(elimfilters_catalog.equipment_applications, EXCLUDED.equipment_applications) END,
+            outer_diameter_mm      = COALESCE(EXCLUDED.outer_diameter_mm, elimfilters_catalog.outer_diameter_mm),
+            height_mm              = COALESCE(EXCLUDED.height_mm,         elimfilters_catalog.height_mm)
+          RETURNING xmax
+        `, [
+          sku, codeBase,
+          row.description || null,
+          mapping.filter_type,
+          'LIGHT_DUTY',
+          JSON.stringify(oem_codes),
+          JSON.stringify([]),
+          JSON.stringify({}),
+          JSON.stringify(equipment_applications),
+          row.outer_diameter_mm || null,
+          row.height_mm || null,
+        ]);
+        if (result.rows && result.rows[0] && result.rows[0].xmax === '0') inserted++;
+        else updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[mann-import-err]', sku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, inserted, updated, errors, skipped });
+  } catch (e) {
+    console.error('[mann-import-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
