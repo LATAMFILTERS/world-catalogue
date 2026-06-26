@@ -279,7 +279,7 @@ def post_batch(rows: list, dry_run: bool) -> dict:
         json={'rows': rows},
         headers={
             'Content-Type': 'application/json',
-            'x-api-key': API_KEY,
+            'Authorization': f'Bearer {API_KEY}',
         },
         timeout=120,
     )
