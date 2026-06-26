@@ -36,7 +36,8 @@ log = logging.getLogger(__name__)
 
 API_BASE = "https://elimfilters-search-pro.onrender.com"
 API_KEY  = None  # set via --api-key argument
-BATCH    = 20
+BATCH    = 10    # conservative: some products have 300+ fitment rows
+MAX_FITMENT = 150  # truncate to avoid 413 on large products
 
 # Maps scraper filter_type strings → server-side filter_type_raw key
 FILTER_TYPE_ALIASES = {
@@ -95,12 +96,16 @@ def map_row(record: dict) -> dict | None:
 
     dims = record.get('dimensions') or {}
 
+    fitment = record.get('fitment') or []
+    if len(fitment) > MAX_FITMENT:
+        fitment = fitment[:MAX_FITMENT]
+
     return {
         'mann_code':       record['sku'],
         'filter_type_raw': ft_raw,
         'description':     (record.get('description') or '')[:600] or None,
         'oe_numbers':      record.get('oe_numbers') or {},
-        'fitment':         record.get('fitment') or [],
+        'fitment':         fitment,
         'outer_diameter_mm': parse_dim_mm(dims.get('A') or dims.get('OD') or dims.get('Outer Diameter')),
         'height_mm':       parse_dim_mm(dims.get('H') or dims.get('Height')),
     }
@@ -136,7 +141,7 @@ def post_batch(rows: list, dry_run: bool) -> dict:
     return resp.json()
 
 
-def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: str | None):
+def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: str | None, errors_file: Path | None = None):
     if not jsonl_path.exists():
         log.error(f"File not found: {jsonl_path}")
         sys.exit(1)
@@ -148,6 +153,7 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
     total_updated = 0
     total_errors = 0
     all_server_skipped = []
+    all_error_details = []
 
     batch = []
     started = start_from is None
@@ -191,12 +197,16 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
                 total_updated  += result.get('updated', 0)
                 total_errors   += result.get('errors', 0)
                 all_server_skipped.extend(result.get('skipped', []))
+                batch_errors = result.get('errorDetails', [])
+                all_error_details.extend(batch_errors)
                 log.info(
                     f"  Batch {total_read}: +{result.get('inserted',0)} ins "
                     f"+{result.get('updated',0)} upd {result.get('errors',0)} err"
                 )
+                for ed in batch_errors[:5]:
+                    log.warning(f"    ERR {ed.get('sku')}: {ed.get('error')}")
                 batch = []
-                time.sleep(0.5)
+                time.sleep(0.3)
 
     # flush remaining
     if batch:
@@ -205,6 +215,7 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
         total_updated  += result.get('updated', 0)
         total_errors   += result.get('errors', 0)
         all_server_skipped.extend(result.get('skipped', []))
+        all_error_details.extend(result.get('errorDetails', []))
 
     log.info(f"\n{'='*55}")
     log.info(f"Mann LD Import Summary {'(DRY RUN)' if dry_run else ''}")
@@ -219,6 +230,15 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
         for s in all_server_skipped[:10]:
             log.info(f"    {s}")
 
+    if all_error_details:
+        log.info(f"\n  First 20 errors:")
+        for ed in all_error_details[:20]:
+            log.warning(f"    {ed.get('sku')}: {ed.get('error')}")
+        if errors_file:
+            import json as _json
+            errors_file.write_text(_json.dumps(all_error_details, indent=2), encoding='utf-8')
+            log.info(f"\n  All {len(all_error_details)} error details saved to: {errors_file}")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Import Mann LD JSONL into elimfilters_catalog')
@@ -232,6 +252,8 @@ if __name__ == '__main__':
                         help='Import only this type: "Oil Filter", "Air Filter", etc.')
     parser.add_argument('--start',       default=None,
                         help='Resume from this MANN code (e.g. ML1003)')
+    parser.add_argument('--errors-file', default=None,
+                        help='Save all error details to this JSON file (e.g. C:\\mann\\errors.json)')
     args = parser.parse_args()
 
     if not args.dry_run and not args.api_key:
@@ -245,4 +267,5 @@ if __name__ == '__main__':
         dry_run=args.dry_run,
         filter_type=args.filter_type,
         start_from=args.start,
+        errors_file=Path(args.errors_file) if args.errors_file else None,
     )
