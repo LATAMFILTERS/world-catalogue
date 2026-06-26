@@ -39,8 +39,9 @@ INPUT_FILE    = Path(r"C:\mann\wix_crossrefs.jsonl")
 OUTPUT_FILE   = Path(r"C:\mann\wix_reverse.jsonl")
 PROG_FILE     = Path(r"C:\mann\wix_reverse_progress.json")
 
-# NewCompetitor with WIX number — WIX maps its own numbers to competitors
-WIX_REVERSE_URL = "https://www2.wixfilters.com/Lookup/NewCompetitor.aspx?PartNo={}"
+# Competitor.aspx — takes ANY part number (WIX or competitor) and returns
+# all cross-references: Part Number | Manufacturer | Wix Part Number
+WIX_REVERSE_URL = "https://www2.wixfilters.com/Lookup/Competitor.aspx?PartNo={}"
 WIX_COMP_URL    = WIX_REVERSE_URL
 
 PAUSE = 0.5
