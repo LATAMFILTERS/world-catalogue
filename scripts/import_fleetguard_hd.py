@@ -6,15 +6,15 @@ Reads the output of scraper_fleetguard_CORREGIDO.py (fleetguard_*_results.json o
 fleetguard_*_progress.json) and POSTs batches to /api/import/fleetguard.
 
 SKU generation rules (enforced server-side):
-  Air Filter      → EA1 + 5-digit Fleetguard code suffix  (e.g. AF25551 → EA125551)
-  Lube/Oil Filter → EL8 + 5-digit suffix                  (e.g. LF3706  → EL83706x)
-  Fuel Filter     → EF9 + 5-digit suffix                  (e.g. FS1000  → EF91000x)
-  Hydraulic       → EH6 + 5-digit suffix                  (e.g. HF35308 → EH635308)
+  Air Filter      → EA1 + last 4 digits  (e.g. AF25551 → EA15551, AF26412 → EA16412)
+  Lube/Oil Filter → EL8 + last 4 digits  (e.g. LF3706  → EL83706)
+  Fuel Filter     → EF9 + last 4 digits  (e.g. FS1000  → EF91000)
+  Hydraulic       → EH6 + last 4 digits  (e.g. HF35308 → EH65308)
   duty = HEAVY_DUTY for all records.
 
 Fleetguard part number → SKU mapping:
   1. Strip the letter prefix (AF, LF, FS, HF, etc.)
-  2. Take the numeric suffix as codigo_base (up to 6 digits)
+  2. Take the LAST 4 digits as codigo_base (same rule as LD)
   3. Prepend the 3-char type prefix
 
 Usage:
@@ -99,16 +99,14 @@ def resolve_filter_type(part_number: str, name: str) -> dict | None:
 def fleetguard_code_base(part_number: str) -> str:
     """
     Extract the numeric suffix from a Fleetguard part number.
-    AF25551 → '25551' | LF3706 → '3706' | HF35308 → '35308'
-    Pads to 4 chars minimum, keeps up to 6.
+    AF25551 → '5551' | AF26412 → '6412' | LF3706 → '3706' | HF35308 → '5308'
+    Always last 4 digits — same rule as LD codigo_base.
     """
     digits = re.sub(r'^[A-Za-z]+', '', part_number.strip())
     digits = re.sub(r'[^0-9]', '', digits)
     if not digits:
         return '0000'
-    # Keep up to 6 digits (most Fleetguard codes are 4-6 digits)
-    digits = digits[-6:]
-    return digits.zfill(4)
+    return digits[-4:].zfill(4)
 
 
 def cross_refs_to_competitor_codes(cross_references: list) -> list:
