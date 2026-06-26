@@ -1316,6 +1316,77 @@ app.post('/api/import/fleetguard', importLimiter, requireAdmin, async (req, res)
   }
 });
 
+// ─── POST /api/update/wix-crossrefs ──────────────────────────────────────────
+// Adds WIX cross-reference numbers to existing LD products' competitor_codes.
+// Merges new WIX entries without removing existing competitor codes.
+// Body: { rows: [{ mann_sku: "W940/21", wix_numbers: ["51452"], filter_type: "Oil Filter" }] }
+app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const wixNums  = Array.isArray(row.wix_numbers) ? row.wix_numbers : [];
+      if (!mannSku || wixNums.length === 0) { skipped++; continue; }
+
+      // Build the ELIMFILTERS SKU from the Mann part number
+      // Mann code → codigo_base (last 4 digits) → find matching LD SKU
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      // Find the LD product by codigo_base and duty
+      const found = await client.query(
+        `SELECT sku, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build new WIX entries, skip duplicates
+      const existingWix = new Set(
+        existing.filter(c => c.manufacturer === 'WIX').map(c => c.code)
+      );
+      const newEntries = wixNums
+        .map(w => String(w).trim())
+        .filter(w => w && !existingWix.has(w))
+        .map(w => ({ manufacturer: 'WIX', code: w }));
+
+      if (newEntries.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...newEntries];
+
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[wix-crossref-err]', sku, mannSku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[wix-crossref-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
