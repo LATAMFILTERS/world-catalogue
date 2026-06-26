@@ -150,7 +150,8 @@ def _parse_page(html: str, part_num: str) -> dict | None:
 
     wix_nums = []
     other    = []
-    seen     = set()
+    seen_wix = set()
+    seen_other = set()
 
     i = data_start
     while i + 2 < len(texts):
@@ -158,29 +159,38 @@ def _parse_page(html: str, part_num: str) -> dict | None:
         brand   = texts[i + 1].strip().upper()
         wix_pn  = texts[i + 2].strip().upper()
 
-        if comp_pn in STOP_TOKENS or brand in STOP_TOKENS:
+        if comp_pn in STOP_TOKENS or brand in STOP_TOKENS or wix_pn in STOP_TOKENS:
+            break
+        # Stop on legal disclaimer text
+        if len(comp_pn) > 40:
             break
 
-        key = f"{brand}|{comp_pn}"
-        if key not in seen and brand and comp_pn and len(comp_pn) <= 30:
-            seen.add(key)
-            if brand in ('WIX', 'WIX XP', 'WIX EUROPE'):
-                # comp_pn IS the WIX part number (the table shows "what is equiv to your part")
-                if comp_pn not in wix_nums:
-                    wix_nums.append(comp_pn)
-            elif brand not in ('WIX', 'WIX XP', 'WIX EUROPE'):
-                other.append({'brand': brand, 'code': comp_pn})
-
-            # Also capture from the Wix Part Number column
-            if wix_pn and wix_pn not in wix_nums and wix_pn.isdigit():
+        # Column 3 always has the WIX number
+        if wix_pn and wix_pn not in seen_wix and len(wix_pn) <= 12:
+            # WIX numbers: digits only or digits+XP/MP suffix
+            clean = wix_pn.replace('XP', '').replace('MP', '')
+            if clean.isdigit():
+                seen_wix.add(wix_pn)
                 wix_nums.append(wix_pn)
+
+        # comp_pn + brand = other competitor cross-refs (non-WIX brands)
+        key = f"{brand}|{comp_pn}"
+        if (key not in seen_other and brand and comp_pn
+                and len(comp_pn) <= 30
+                and brand not in ('WIX', 'WIX XP', 'WIX EUROPE', 'WIX FILTERS')):
+            seen_other.add(key)
+            other.append({'brand': brand, 'code': comp_pn})
 
         i += 4
 
     if not wix_nums:
         return None
 
-    return {'wix': sorted(set(wix_nums)), 'other': other}
+    # Only FRAM codes from other cross-refs
+    fram_codes = [o['code'] for o in other
+                  if 'FRAM' in o['brand'] and o['code'].upper().startswith(('PH', 'CA', 'CF', 'G'))]
+
+    return {'wix': sorted(set(wix_nums)), 'fram': sorted(set(fram_codes))}
 
 
 def generate_part_numbers(filter_types: list[str]) -> list[str]:
@@ -237,7 +247,7 @@ def run(filter_types: list[str], dry_run: bool = False):
             continue
 
         if result:
-            record = {'fram': part_num, 'wix': result['wix'], 'other': result['other']}
+            record = {'fram': part_num, 'wix': result['wix'], 'fram_variants': result['fram']}
             with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
             found_total += 1
@@ -298,10 +308,8 @@ def test_single(part_num: str):
         print(f"\n{part_num} → NOT FOUND in WIX database")
         return
     print(f"\n{part_num} → WIX {result['wix']}")
-    if result['other']:
-        print(f"  Other cross-refs ({len(result['other'])}):")
-        for o in result['other'][:10]:
-            print(f"    {o['brand']:<30} {o['code']}")
+    if result['fram']:
+        print(f"  FRAM variants: {result['fram']}")
 
 
 if __name__ == "__main__":
