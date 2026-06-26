@@ -1193,6 +1193,201 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   }
 });
 
+
+// ─── POST /api/import/fleetguard ─────────────────────────────────────────────
+// Imports Fleetguard HD products scraped from fleetguard.com.
+// SKU generation rule: prefix (3 chars) + numeric suffix of Fleetguard code.
+//   Air Filter   → EA1 + digits  (AF25551 → EA125551)
+//   Oil Filter   → EL8 + digits  (LF3706  → EL83706)
+//   Fuel Filter  → EF9 + digits  (FS1000  → EF91000)
+//   Hydraulic    → EH6 + digits  (HF35308 → EH635308)
+// duty is always HEAVY_DUTY.
+const FLEETGUARD_PREFIX_MAP = {
+  'Air Filter':      { prefix: 'EA1' },
+  'Oil Filter':      { prefix: 'EL8' },
+  'Fuel Filter':     { prefix: 'EF9' },
+  'Hydraulic Filter':{ prefix: 'EH6' },
+};
+
+app.post('/api/import/fleetguard', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let inserted = 0, updated = 0, errors = 0, skipped = [], errorDetails = [];
+
+    for (const row of rows) {
+      const fgCode = (row.fleetguard_code || '').trim().toUpperCase();
+      if (!fgCode) { errors++; continue; }
+
+      const ftRaw = (row.filter_type_raw || '').trim();
+      const mapping = FLEETGUARD_PREFIX_MAP[ftRaw];
+      if (!mapping) {
+        errors++;
+        console.error('[fg-import] unknown filter_type_raw:', ftRaw, 'code:', fgCode);
+        continue;
+      }
+
+      const codeBase = (row.codigo_base || '').replace(/[^0-9]/g, '');
+      if (!codeBase || codeBase.length < 3) {
+        errors++;
+        console.error('[fg-import] invalid codigo_base:', row.codigo_base, 'from:', fgCode);
+        continue;
+      }
+
+      const sku = mapping.prefix + codeBase;
+      if (!/^[A-Z0-9]{5,10}$/.test(sku)) {
+        errors++;
+        console.error('[fg-import] invalid generated sku:', sku, 'from:', fgCode);
+        continue;
+      }
+
+      // Check for SKU collision with existing non-Fleetguard product
+      const existing = await client.query(
+        `SELECT sku FROM elimfilters_catalog WHERE sku = $1`, [sku]
+      );
+      if (existing.rows.length > 0) {
+        // Already exists — update is fine (ON CONFLICT handles it)
+      }
+
+      const competitor_codes = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const equipment_applications = Array.isArray(row.equipment_applications)
+        ? row.equipment_applications : [];
+
+      // Add Fleetguard itself as a competitor_code so it's searchable by FG part number
+      const fg_self = { manufacturer: 'FLEETGUARD', code: fgCode };
+      const all_competitor_codes = [fg_self, ...competitor_codes.filter(
+        c => !(c.manufacturer === 'FLEETGUARD' && c.code === fgCode)
+      )];
+
+      try {
+        const result = await client.query(`
+          INSERT INTO elimfilters_catalog (
+            sku, codigo_base, description, filter_type, duty,
+            oem_codes, competitor_codes, brand_crossrefs,
+            equipment_applications,
+            outer_diameter_mm, height_mm
+          ) VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9::jsonb,$10,$11)
+          ON CONFLICT (sku) DO UPDATE SET
+            codigo_base            = COALESCE(EXCLUDED.codigo_base,             elimfilters_catalog.codigo_base),
+            description            = COALESCE(EXCLUDED.description,             elimfilters_catalog.description),
+            filter_type            = COALESCE(EXCLUDED.filter_type,             elimfilters_catalog.filter_type),
+            duty                   = EXCLUDED.duty,
+            competitor_codes       = CASE WHEN jsonb_array_length(EXCLUDED.competitor_codes) > 0
+                                       THEN EXCLUDED.competitor_codes
+                                       ELSE COALESCE(elimfilters_catalog.competitor_codes, '[]'::jsonb) END,
+            brand_crossrefs        = COALESCE(elimfilters_catalog.brand_crossrefs, '{}'::jsonb),
+            equipment_applications = CASE WHEN jsonb_array_length(EXCLUDED.equipment_applications) > 0
+                                       THEN EXCLUDED.equipment_applications
+                                       ELSE COALESCE(elimfilters_catalog.equipment_applications, EXCLUDED.equipment_applications) END,
+            outer_diameter_mm      = COALESCE(EXCLUDED.outer_diameter_mm, elimfilters_catalog.outer_diameter_mm),
+            height_mm              = COALESCE(EXCLUDED.height_mm,         elimfilters_catalog.height_mm)
+          RETURNING xmax
+        `, [
+          sku, codeBase,
+          row.description || null,
+          ftRaw,
+          'HEAVY_DUTY',
+          JSON.stringify([]),
+          JSON.stringify(all_competitor_codes),
+          JSON.stringify({}),
+          JSON.stringify(equipment_applications),
+          row.outer_diameter_mm || null,
+          row.height_mm || null,
+        ]);
+        if (result.rows && result.rows[0] && result.rows[0].xmax === '0') inserted++;
+        else updated++;
+      } catch (rowErr) {
+        errors++;
+        errorDetails.push({ sku, fgCode, error: rowErr.message });
+        console.error('[fg-import-err]', sku, fgCode, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, inserted, updated, errors, skipped, errorDetails });
+  } catch (e) {
+    console.error('[fg-import-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/update/wix-crossrefs ──────────────────────────────────────────
+// Adds WIX cross-reference numbers to existing LD products' competitor_codes.
+// Merges new WIX entries without removing existing competitor codes.
+// Body: { rows: [{ mann_sku: "W940/21", wix_numbers: ["51452"], filter_type: "Oil Filter" }] }
+app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const wixNums  = Array.isArray(row.wix_numbers) ? row.wix_numbers : [];
+      if (!mannSku || wixNums.length === 0) { skipped++; continue; }
+
+      // Build the ELIMFILTERS SKU from the Mann part number
+      // Mann code → codigo_base (last 4 digits) → find matching LD SKU
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      // Find the LD product by codigo_base and duty
+      const found = await client.query(
+        `SELECT sku, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build new WIX entries, skip duplicates
+      const existingWix = new Set(
+        existing.filter(c => c.manufacturer === 'WIX').map(c => c.code)
+      );
+      const newEntries = wixNums
+        .map(w => String(w).trim())
+        .filter(w => w && !existingWix.has(w))
+        .map(w => ({ manufacturer: 'WIX', code: w }));
+
+      if (newEntries.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...newEntries];
+
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[wix-crossref-err]', sku, mannSku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[wix-crossref-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.

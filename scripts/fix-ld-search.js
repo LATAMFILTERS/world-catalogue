@@ -33,6 +33,7 @@ async function run() {
   console.log(`  Found ${badRows.rows.length} affected SKUs`);
   for (const row of badRows.rows) {
     const orig = row.brand_crossrefs;
+    // Convert any non-array value to a single-element array
     const fixed = {};
     for (const [k, v] of Object.entries(orig)) {
       if (Array.isArray(v)) {
@@ -74,7 +75,7 @@ async function run() {
   }
   console.log('  Fix 2 done ✓\n');
 
-  // Fix 2b: Check EL87780
+  // Also remove PH3614 from EL87780 if it's there incorrectly (it appeared in oem_codes too)
   console.log('=== Fix 2b: Check EL87780 for PH3614 ===');
   const el87 = await client.query(
     `SELECT sku, filter_type, oem_codes FROM elimfilters_catalog WHERE sku = 'EL87780'`
@@ -101,9 +102,11 @@ async function run() {
   console.log('  Fix 2b done ✓\n');
 
   // ── Fix 3: Add missing FRAM codes to EL80047 and EL82016 ──────────────────
+  // Source: donaldson_lube_results.json (authoritative)
   const corrections = [
     {
       sku: 'EL80047',
+      // FRAM codes from donaldson_lube_results.json P550047
       newCodes: [
         {manufacturer:'FRAM',code:'DG3387A'},{manufacturer:'FRAM',code:'PH2862C'},
         {manufacturer:'FRAM',code:'PH3354'},{manufacturer:'FRAM',code:'PH3387'},
@@ -114,6 +117,7 @@ async function run() {
     },
     {
       sku: 'EL82016',
+      // FRAM codes from donaldson_lube_results.json P502016
       newCodes: [
         {manufacturer:'FRAM',code:'PH2964'},{manufacturer:'FRAM',code:'PH3614'},
       ]
@@ -139,7 +143,7 @@ async function run() {
   }
   console.log('  Fix 3 done ✓\n');
 
-  // ── Verify ────────────────────────────────────────────────────────────────
+  // ── Verify fixes ─────────────────────────────────────────────────────────
   if (!DRY) {
     console.log('=== Verification ===');
     const v1 = await client.query(
@@ -150,7 +154,7 @@ async function run() {
     const v2 = await client.query(
       `SELECT sku FROM elimfilters_catalog,jsonb_array_elements(COALESCE(oem_codes,'[]')) AS elem WHERE UPPER(elem->>'code') IN ('PH3387A','PH3614') ORDER BY sku`
     );
-    console.log(`  PH3387A/PH3614 now in oem_codes:`);
+    console.log(`  PH3387A/PH3614 in oem_codes:`);
     v2.rows.forEach(r => console.log(`    ${r.sku}`));
   }
 

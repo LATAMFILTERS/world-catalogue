@@ -22,6 +22,7 @@ async function run() {
   await client.connect();
   console.log('Connected ✓\n');
 
+  // 1. Check if EL80047 and EL82016 exist
   console.log('=== 1. Check target SKUs exist ===');
   const skus = await client.query(
     `SELECT sku, codigo_base, filter_type,
@@ -36,6 +37,7 @@ async function run() {
     `  ${r.sku}  base=${r.codigo_base}  type=${r.filter_type}  oem_codes=${r.oem_count}  competitor_codes=${r.comp_count}  brand_crossrefs=${r.br_status}`
   ));
 
+  // 2. Search oem_codes for PH3387A
   console.log('\n=== 2. oem_codes containing PH3387A ===');
   const oem387 = await client.query(
     `SELECT sku, codigo_base, elem->>'code' AS code, elem->>'manufacturer' AS mfr
@@ -46,6 +48,7 @@ async function run() {
   if (oem387.rows.length === 0) console.log('  NONE');
   else oem387.rows.forEach(r => console.log(`  ${r.sku} (${r.codigo_base}) ${r.mfr} ${r.code}`));
 
+  // 3. Search competitor_codes for PH3387A
   console.log('\n=== 3. competitor_codes containing PH3387A ===');
   const comp387 = await client.query(
     `SELECT sku, codigo_base, elem->>'code' AS code, elem->>'manufacturer' AS mfr
@@ -56,6 +59,7 @@ async function run() {
   if (comp387.rows.length === 0) console.log('  NONE');
   else comp387.rows.forEach(r => console.log(`  ${r.sku} (${r.codigo_base}) ${r.mfr} ${r.code}`));
 
+  // 4. Search brand_crossrefs for PH3387A
   console.log('\n=== 4. brand_crossrefs containing PH3387A ===');
   try {
     const br387 = await client.query(
@@ -71,6 +75,7 @@ async function run() {
     console.log('  ERROR (brand_crossrefs query failed):', e.message);
   }
 
+  // 5. Search oem_codes for PH3614
   console.log('\n=== 5. oem_codes containing PH3614 ===');
   const oem3614 = await client.query(
     `SELECT sku, codigo_base, elem->>'code' AS code, elem->>'manufacturer' AS mfr
@@ -81,6 +86,7 @@ async function run() {
   if (oem3614.rows.length === 0) console.log('  NONE');
   else oem3614.rows.forEach(r => console.log(`  ${r.sku} (${r.codigo_base}) ${r.mfr} ${r.code}`));
 
+  // 6. Search competitor_codes for PH3614
   console.log('\n=== 6. competitor_codes containing PH3614 ===');
   const comp3614 = await client.query(
     `SELECT sku, codigo_base, elem->>'code' AS code, elem->>'manufacturer' AS mfr
@@ -91,7 +97,8 @@ async function run() {
   if (comp3614.rows.length === 0) console.log('  NONE');
   else comp3614.rows.forEach(r => console.log(`  ${r.sku} (${r.codigo_base}) ${r.mfr} ${r.code}`));
 
-  console.log('\n=== 7. Malformed brand_crossrefs (non-array values) ===');
+  // 7. Check if any brand_crossrefs has non-array values (would crash Tier 5)
+  console.log('\n=== 7. Checking for malformed brand_crossrefs (non-array values) ===');
   try {
     const bad = await client.query(
       `SELECT sku, codigo_base
@@ -109,6 +116,7 @@ async function run() {
     console.log('  ERROR:', e.message);
   }
 
+  // 8. Count products per category
   console.log('\n=== 8. Catalog overview ===');
   const cats = await client.query(
     `SELECT filter_type, COUNT(*) as n FROM elimfilters_catalog GROUP BY filter_type ORDER BY n DESC`
