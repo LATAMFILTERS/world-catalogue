@@ -41,19 +41,22 @@ PROG_FILE     = Path(r"C:\mann\wix_reverse_progress.json")
 
 # Competitor.aspx — takes ANY part number (WIX or competitor) and returns
 # all cross-references: Part Number | Manufacturer | Wix Part Number
-WIX_REVERSE_URL = "https://www2.wixfilters.com/Lookup/Competitor.aspx?PartNo={}"
+WIX_REVERSE_URL = "https://www2.wixfilters.com/Lookup/NewCompetitor.aspx?PartNo={}"
 WIX_COMP_URL    = WIX_REVERSE_URL
 
 PAUSE = 0.5
 
 # Brands to capture (filter out equipment OEMs and noise)
 FILTER_BRANDS = {
-    'FRAM', 'BALDWIN', 'DONALDSON', 'FLEETGUARD', 'MANN', 'MANN+HUMMEL',
+    'FRAM', 'FRAM EXTRAGUARD', 'FRAM ULTRA', 'FRAM TOUGH GUARD',
+    'BALDWIN', 'DONALDSON', 'FLEETGUARD', 'MANN', 'MANN+HUMMEL',
     'MANN-HUMMEL', 'MANN FILTER', 'PUROLATOR', 'NAPA', 'AC DELCO', 'ACDELCO',
     'BOSCH', 'MAHLE', 'HENGST', 'SAKURA', 'LUBER-FINER', 'LUBERFINER',
     'PARKER', 'PALL', 'HYDAC', 'UFI', 'CHAMPION', 'HASTINGS', 'COOPERSFILTERS',
     'COOPERS', 'MOTORCRAFT', 'CHAMPION LABS', 'PREMIUM GUARD', 'STP',
     'CARQUEST', 'PRONTO', 'CHAMP', 'SUPERTECH', 'MOBIL 1',
+    'SAFEWAY', 'ROCKHILL FILTERS', 'ROCKHILL FILTERS (OLD)',
+    'PENNZOIL', 'QUAKER STATE', 'CASTROL', 'VALVOLINE', 'HAVOLINE',
 }
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -93,7 +96,11 @@ def fetch_wix_reverse(wix_num: str) -> list[dict]:
 
 
 def _parse_crossref_table(html: str, wix_num: str) -> list[dict]:
-    """Parse the cross-reference table from WIX product/competitor page."""
+    """
+    Parse the cross-reference table from Competitor.aspx.
+    Table structure: Part Number | Manufacturer | Wix Part Number | LeadTime
+    Rows after 4-column header contain: comp_pn | brand | wix_pn | leadtime
+    """
     parser = TextExtractor()
     parser.feed(html)
     texts = [x for x in parser.data
@@ -106,66 +113,41 @@ def _parse_crossref_table(html: str, wix_num: str) -> list[dict]:
     if any("no information available" in t.lower() for t in texts):
         return []
 
-    # Find header: "Part Number" | "Manufacturer" | "Wix Part Number"
-    # or "Brand" | "Part Number" (cross-ref table format)
     refs = []
     seen = set()
 
-    # Format 1: WIXProduct page — table: Brand | Competitor Part Number
-    # Header: "Brand" then "Part Number" or "Competitor Part Number"
-    brand_header_idx = None
-    for i, t in enumerate(texts):
-        if t.lower() in ('brand', 'manufacturer') and i + 1 < len(texts):
-            next_t = texts[i + 1].lower()
-            if 'part' in next_t or 'number' in next_t:
-                brand_header_idx = i
-                break
-
-    if brand_header_idx is not None:
-        # Count header columns
-        headers = []
-        j = brand_header_idx
-        while j < len(texts) and len(headers) < 5:
-            t = texts[j].lower()
-            if any(kw in t for kw in ('brand', 'manufacturer', 'part', 'number', 'wix', 'lead')):
-                headers.append(texts[j])
-                j += 1
-            else:
-                break
-        ncols = len(headers)
-        data_start = brand_header_idx + ncols
-        i = data_start
-        while i + 1 < len(texts):
-            brand = texts[i].strip().upper()
-            code  = texts[i + 1].strip().upper()
-            key   = f"{brand}|{code}"
-            if brand and code and key not in seen:
-                seen.add(key)
-                refs.append({'brand': brand, 'code': code})
-            i += ncols if ncols >= 2 else 2
-        return refs
-
-    # Format 2: NewCompetitor page used with WIX number — returns rows:
-    # competitor_pn | manufacturer | wix_pn
-    # Find "Part Number" header
+    # Find header: "Part Number" (first column header)
     try:
         start = next(i for i, t in enumerate(texts) if t == "Part Number")
     except StopIteration:
         return []
 
-    data_start = start + 4  # skip 4 header columns
+    data_start = start + 4  # skip: Part Number | Manufacturer | Wix Part Number | LeadTime
     i = data_start
+    # Footer sentinel — stop when we hit legal disclaimer text
+    STOP_TOKENS = {'FOR REFERENCE ONLY', 'APPLICATIONS ARE VERIFIED',
+                   'ENTER A COMPETING', 'ADVANCED SEARCH', 'WIX CONNECT',
+                   'PRODUCTS', 'WIX MOTORSPORTS', 'SITEMAP', 'WARRANTY'}
+
     while i + 2 < len(texts):
         comp_pn = texts[i].strip().upper()
         brand   = texts[i + 1].strip().upper()
         wix_pn  = texts[i + 2].strip().upper()
-        key     = f"{brand}|{comp_pn}"
-        if brand and comp_pn and wix_pn and key not in seen:
-            # Only keep if wix_pn matches or brand is a known filter brand
-            if wix_pn == wix_num.upper() or brand in FILTER_BRANDS:
-                seen.add(key)
-                refs.append({'brand': brand, 'code': comp_pn})
-        i += 3
+
+        # Stop at footer
+        if comp_pn in STOP_TOKENS or brand in STOP_TOKENS:
+            break
+
+        # Skip WIX's own entries and non-filter brands
+        key = f"{brand}|{comp_pn}"
+        if (brand and comp_pn and len(comp_pn) <= 25
+                and key not in seen
+                and brand not in ('WIX', 'WIX EUROPE', 'WIX XP')
+                and brand in FILTER_BRANDS):
+            seen.add(key)
+            refs.append({'brand': brand, 'code': comp_pn})
+
+        i += 4  # 4 columns per row (including LeadTime)
 
     return refs
 

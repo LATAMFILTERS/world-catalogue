@@ -1388,6 +1388,71 @@ app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, r
   }
 });
 
+// ─── POST /api/update/competitor-codes ───────────────────────────────────────
+// Merges FRAM/Bosch/ACDelco codes from WIX reverse lookup into competitor_codes.
+// Finds product by mann_sku (codigo_base match, LIGHT_DUTY).
+// Body: { rows: [{ mann_sku: "W940/21", competitor_codes: [{manufacturer:"FRAM",code:"PH3387A"},...] }] }
+app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const newCodes = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      if (!mannSku || newCodes.length === 0) { skipped++; continue; }
+
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      const found = await client.query(
+        `SELECT sku, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build dedup key set from existing entries
+      const existingKeys = new Set(existing.map(c => `${c.manufacturer}|${c.code}`));
+      const toAdd = newCodes.filter(c => {
+        const k = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
+        return c.manufacturer && c.code && !existingKeys.has(k);
+      }).map(c => ({ manufacturer: c.manufacturer.toUpperCase(), code: c.code.toUpperCase() }));
+
+      if (toAdd.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...toAdd];
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[competitor-codes-err]', sku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[competitor-codes-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
