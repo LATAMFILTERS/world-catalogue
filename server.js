@@ -1442,8 +1442,10 @@ app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req
       const toAdd = newCodes.filter(c => {
         const k = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
         if (!c.manufacturer || !c.code || existingKeys.has(k)) return false;
-        // Cross-type guard: FRAM PH (oil) must not go to Air/Cabin/Fuel SKUs
+        // FRAM = LD consumer brand only — never insert on HD SKUs
         if ((c.manufacturer||'').toUpperCase() === 'FRAM') {
+          if (!sku.startsWith('EL3') && !sku.startsWith('EA3') &&
+              !sku.startsWith('EC3') && !sku.startsWith('EF3')) return false;
           const expectedType = framCodeFilterType(c.code);
           if (expectedType && filter_type && expectedType !== filter_type) return false;
         }
@@ -1483,10 +1485,10 @@ app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req,
   try {
     // FRAM prefix → allowed SKU prefixes
     const FRAM_TYPE_MAP = {
-      'PH': ['EL3', 'EL8'],          // oil
-      'CA': ['EA3', 'EA1'],          // air
-      'CF': ['EC3', 'EC1'],          // cabin
-      'G':  ['EF3', 'EF9'],          // fuel
+      'PH': ['EL3'],   // FRAM oil = LD only (EL8 is HD Donaldson-based)
+      'CA': ['EA3'],   // FRAM air = LD only
+      'CF': ['EC3'],   // FRAM cabin = LD only
+      'G':  ['EF3'],   // FRAM fuel = LD only
     };
 
     const rows = await client.query(
