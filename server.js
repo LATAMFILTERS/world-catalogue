@@ -1483,39 +1483,57 @@ app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req
 app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
-    // FRAM prefix → allowed SKU prefixes
+    // FRAM prefix → ONLY allowed SKU prefixes (LD consumer brand — never on HD)
     const FRAM_TYPE_MAP = {
-      'PH': ['EL3'],   // FRAM oil = LD only (EL8 is HD Donaldson-based)
-      'CA': ['EA3'],   // FRAM air = LD only
-      'CF': ['EC3'],   // FRAM cabin = LD only
-      'G':  ['EF3'],   // FRAM fuel = LD only
+      'PH': ['EL3'],   // FRAM Extra Guard / oil
+      'XG': ['EL3'],   // FRAM Ultra Synthetic oil
+      'TG': ['EL3'],   // FRAM Tough Guard oil
+      'DG': ['EL3'],   // FRAM Double Guard oil
+      'CA': ['EA3'],   // FRAM air
+      'CF': ['EC3'],   // FRAM cabin
+      'G':  ['EF3'],   // FRAM fuel
     };
 
+    // Scan ALL products that have any competitor_codes (objects OR plain strings)
     const rows = await client.query(
       `SELECT sku, competitor_codes FROM elimfilters_catalog
        WHERE competitor_codes IS NOT NULL
-         AND jsonb_array_length(competitor_codes) > 0
-         AND EXISTS (
-           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
-           WHERE e->>'manufacturer' = 'FRAM'
-         )`
+         AND jsonb_array_length(competitor_codes) > 0`
     );
 
     let cleaned = 0;
+    const debugRemoved = [];
     for (const row of rows.rows) {
       const { sku, competitor_codes } = row;
       const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
       const skuPrefix = sku.slice(0, 3).toUpperCase();
 
       const filtered = existing.filter(c => {
-        if ((c.manufacturer || '').toUpperCase() !== 'FRAM') return true;
-        const code = (c.code || '').toUpperCase();
-        for (const [framPrefix, allowedSkuPrefixes] of Object.entries(FRAM_TYPE_MAP)) {
-          if (code.startsWith(framPrefix)) {
-            return allowedSkuPrefixes.some(p => skuPrefix === p);
-          }
+        let isFram = false;
+        let code = '';
+
+        if (typeof c === 'string') {
+          // Plain string format — treat as code with unknown manufacturer
+          code = c.toUpperCase().trim();
+          // Check if it matches any known FRAM prefix pattern
+          isFram = Object.keys(FRAM_TYPE_MAP).some(pfx =>
+            code.startsWith(pfx) && /^\d/.test(code.slice(pfx.length))
+          );
+        } else if (c && typeof c === 'object') {
+          const mfr = (c.manufacturer || '').toUpperCase().trim();
+          code = (c.code || '').toUpperCase().trim();
+          isFram = (mfr === 'FRAM');
         }
-        return true; // unknown FRAM prefix, keep
+
+        if (!isFram) return true; // keep non-FRAM
+
+        // FRAM code: only keep if SKU prefix is in the allowed list
+        const allowedPrefixes = FRAM_TYPE_MAP[
+          Object.keys(FRAM_TYPE_MAP).find(pfx => code.startsWith(pfx))
+        ] || [];
+        const keep = allowedPrefixes.some(p => skuPrefix === p);
+        if (!keep && debugRemoved.length < 10) debugRemoved.push({ sku, code });
+        return keep;
       });
 
       if (filtered.length !== existing.length) {
@@ -1527,7 +1545,7 @@ app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req,
       }
     }
 
-    res.json({ success: true, skus_cleaned: cleaned, rows_scanned: rows.rows.length });
+    res.json({ success: true, skus_cleaned: cleaned, rows_scanned: rows.rows.length, debug_removed: debugRemoved });
   } catch (e) {
     console.error('[cleanup-fram]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
