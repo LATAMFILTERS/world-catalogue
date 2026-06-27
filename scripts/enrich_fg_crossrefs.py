@@ -136,7 +136,7 @@ def run(args):
         product = search_sku_by_code(code, args.api_key)
         if not product:
             stats['sku_not_found'] += 1
-            truly_missing.append({'af': af_code, 'reason': 'sku_not_found', 'donaldson': code})
+            truly_missing.append({'af': af_code, 'reason': 'sku_not_found', 'brand': brand, 'code': code})
             if (i + 1) % 50 == 0:
                 log.info(f"  [{i+1}/{len(records)}] linked={stats['linked']} not_found={stats['sku_not_found']}")
             time.sleep(0.2)
