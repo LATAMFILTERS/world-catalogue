@@ -46,20 +46,27 @@ def find_donaldson_code(cross_refs: list) -> str | None:
 
 def search_sku_by_code(code: str, api_key: str) -> dict | None:
     """Search DB for a SKU that has this code as competitor_code."""
-    r = requests.get(
-        f"{API_BASE}/api/search",
-        params={'q': code, 'limit': 5},
-        headers=get_headers(api_key),
-        timeout=30,
-    )
-    if r.status_code != 200:
-        return None
-    products = r.json().get('products', [])
-    for p in products:
-        for c in (p.get('competitor_codes') or []):
-            if isinstance(c, dict) and c.get('code', '').upper() == code.upper():
-                return p
-    return None
+    for attempt in range(3):
+        try:
+            r = requests.get(
+                f"{API_BASE}/api/search",
+                params={'q': code, 'limit': 5},
+                headers=get_headers(api_key),
+                timeout=45,
+            )
+            if r.status_code != 200:
+                return None
+            products = r.json().get('products', [])
+            for p in products:
+                for c in (p.get('competitor_codes') or []):
+                    if isinstance(c, dict) and c.get('code', '').upper() == code.upper():
+                        return p
+            return None
+        except requests.RequestException:
+            if attempt < 2:
+                time.sleep(5 * (attempt + 1))
+            else:
+                return None
 
 
 def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: str, dry_run: bool) -> bool:
