@@ -1536,6 +1536,29 @@ app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req,
   }
 });
 
+// ─── POST /api/update/sku-codes ──────────────────────────────────────────────
+// Direct overwrite of competitor_codes by exact SKU — works for HD and LD.
+// Body: { sku: "EL80047", competitor_codes: [...] }
+app.post('/api/update/sku-codes', importLimiter, requireAdmin, async (req, res) => {
+  const { sku, competitor_codes } = req.body || {};
+  if (!sku || !Array.isArray(competitor_codes)) {
+    return res.status(400).json({ error: 'sku and competitor_codes[] required' });
+  }
+  const client = await pool.connect();
+  try {
+    const r = await client.query(
+      `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2 RETURNING sku`,
+      [JSON.stringify(competitor_codes), sku.trim().toUpperCase()]
+    );
+    if (r.rowCount === 0) return res.status(404).json({ error: 'SKU not found' });
+    res.json({ success: true, sku: r.rows[0].sku, codes_count: competitor_codes.length });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/cleanup/fram-hd-force ─────────────────────────────────────────
 // Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
 // Handles any manufacturer key format (uppercase, lowercase, missing).

@@ -72,7 +72,12 @@ def remove_fram_from_hd(product: dict, dry_run: bool, api_key: str) -> bool:
             cleaned.append(c)
             continue
 
-        is_fram = (mfr == 'FRAM') or (not mfr and FRAM_CODE_RE.match(code))
+        # XG = FRAM Ultra Synthetic, TG = FRAM Tough Guard, DG = FRAM Double Guard
+        FRAM_STRING_PREFIXES = ('PH', 'CA', 'CF', 'XG', 'TG', 'DG')
+        is_fram = (mfr == 'FRAM') or (not mfr and (
+            FRAM_CODE_RE.match(code) or any(code.startswith(p) and code[len(p):len(p)+1].isdigit()
+                                             for p in FRAM_STRING_PREFIXES)
+        ))
         if is_fram:
             removed.append(c)
         else:
@@ -86,8 +91,7 @@ def remove_fram_from_hd(product: dict, dry_run: bool, api_key: str) -> bool:
     if dry_run:
         return True
 
-    url = f"{API_BASE}/api/update/product-codes"
-    # Try the direct update endpoint
+    url = f"{API_BASE}/api/update/sku-codes"
     resp = requests.post(
         url,
         json={'sku': sku, 'competitor_codes': cleaned},
@@ -95,21 +99,9 @@ def remove_fram_from_hd(product: dict, dry_run: bool, api_key: str) -> bool:
         timeout=30,
     )
     if resp.status_code == 200:
-        log.info(f"  {sku}: cleaned OK")
+        log.info(f"  {sku}: cleaned OK → {resp.json()}")
         return True
-    # Fallback: try PATCH or PUT
-    log.warning(f"  {sku}: update-product-codes failed ({resp.status_code}), trying patch-codes...")
-    url2 = f"{API_BASE}/api/patch/competitor-codes"
-    resp2 = requests.post(
-        url2,
-        json={'sku': sku, 'competitor_codes': cleaned},
-        headers=get_headers(api_key),
-        timeout=30,
-    )
-    if resp2.status_code == 200:
-        log.info(f"  {sku}: patched OK via patch endpoint")
-        return True
-    log.error(f"  {sku}: all update attempts failed. Last: {resp2.status_code} {resp2.text[:150]}")
+    log.error(f"  {sku}: update failed ({resp.status_code}): {resp.text[:200]}")
     return False
 
 
@@ -127,50 +119,40 @@ def run_single_sku(sku: str, api_key: str, dry_run: bool):
 
 
 def run_batch(api_key: str, dry_run: bool):
-    """Fetch all HD products page by page and clean FRAM codes."""
-    page = 1
-    page_size = 100
+    """Search for HD SKUs with known FRAM code patterns and clean them."""
+    # FRAM oil codes that leaked into HD SKUs — search by known FRAM part numbers
+    FRAM_SEARCH_TERMS = ['PH3387A', 'PH3387', 'PH4722', 'PH2862', 'PH3354', 'PH3614']
     total_cleaned = 0
+    seen = set()
 
-    while True:
-        url = f"{API_BASE}/api/products"
-        resp = requests.get(
-            url,
-            params={'duty': 'HEAVY_DUTY', 'page': page, 'limit': page_size},
-            headers=get_headers(api_key),
-            timeout=60,
-        )
+    for term in FRAM_SEARCH_TERMS:
+        url = f"{API_BASE}/api/search"
+        resp = requests.get(url, params={'q': term, 'limit': 20}, headers=get_headers(api_key), timeout=30)
         if resp.status_code != 200:
-            log.error(f"Products endpoint failed: {resp.status_code} {resp.text[:200]}")
-            break
-
-        data = resp.json()
-        items = data if isinstance(data, list) else data.get('products', data.get('results', []))
-        if not items:
-            break
-
-        log.info(f"Page {page}: {len(items)} HD products")
-        for product in items:
-            sku = product.get('sku', '')
+            log.warning(f"Search for {term} failed: {resp.status_code}")
+            continue
+        results = resp.json()
+        items = results if isinstance(results, list) else results.get('results', results.get('products', []))
+        for item in items:
+            sku = (item.get('sku') or '').upper()
+            if sku in seen:
+                continue
             if not any(sku.startswith(p) for p in HD_PREFIXES):
                 continue
-            codes = product.get('competitor_codes') or []
+            seen.add(sku)
+            codes = item.get('competitor_codes') or []
             has_fram = any(
-                (isinstance(c, dict) and (c.get('manufacturer','').upper() == 'FRAM' or
-                 (not c.get('manufacturer') and FRAM_CODE_RE.match(c.get('code','')))))
-                or (isinstance(c, str) and FRAM_CODE_RE.match(c))
+                (isinstance(c, dict) and c.get('manufacturer', '').upper() == 'FRAM')
+                or (isinstance(c, str) and (FRAM_CODE_RE.match(c) or c[:2] in ('XG', 'TG', 'DG')))
                 for c in codes
             )
             if has_fram:
-                remove_fram_from_hd(product, dry_run=dry_run, api_key=api_key)
-                total_cleaned += 1
+                log.info(f"Found HD SKU with FRAM codes: {sku}")
+                if remove_fram_from_hd(item, dry_run=dry_run, api_key=api_key):
+                    total_cleaned += 1
                 time.sleep(0.1)
 
-        if len(items) < page_size:
-            break
-        page += 1
-
-    log.info(f"\nBatch cleanup done. HD SKUs with FRAM codes found: {total_cleaned}")
+    log.info(f"\nBatch cleanup done. HD SKUs cleaned: {total_cleaned}")
 
 
 if __name__ == '__main__':
