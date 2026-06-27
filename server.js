@@ -1392,6 +1392,21 @@ app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, r
 // Merges FRAM/Bosch/ACDelco codes from WIX reverse lookup into competitor_codes.
 // Finds product by mann_sku (codigo_base match, LIGHT_DUTY).
 // Body: { rows: [{ mann_sku: "W940/21", competitor_codes: [{manufacturer:"FRAM",code:"PH3387A"},...] }] }
+// FRAM prefix → allowed filter types (cross-type guard)
+const FRAM_CODE_TO_FILTER_TYPE = {
+  PH: 'Oil Filter',
+  CA: 'Air Filter',
+  CF: 'Cabin Filter',
+  G:  'Fuel Filter',
+};
+function framCodeFilterType(code) {
+  const c = (code || '').toUpperCase();
+  for (const [prefix, ftype] of Object.entries(FRAM_CODE_TO_FILTER_TYPE)) {
+    if (c.startsWith(prefix)) return ftype;
+  }
+  return null;
+}
+
 app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req, res) => {
   const rows = req.body.rows;
   if (!Array.isArray(rows) || rows.length === 0)
@@ -1413,20 +1428,26 @@ app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req
       const codeBase = mannDigits.slice(-4);
 
       const found = await client.query(
-        `SELECT sku, competitor_codes FROM elimfilters_catalog
+        `SELECT sku, filter_type, competitor_codes FROM elimfilters_catalog
          WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
         [codeBase]
       );
       if (found.rows.length === 0) { skipped++; continue; }
 
-      const { sku, competitor_codes } = found.rows[0];
+      const { sku, filter_type, competitor_codes } = found.rows[0];
       const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
 
       // Build dedup key set from existing entries
       const existingKeys = new Set(existing.map(c => `${c.manufacturer}|${c.code}`));
       const toAdd = newCodes.filter(c => {
         const k = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
-        return c.manufacturer && c.code && !existingKeys.has(k);
+        if (!c.manufacturer || !c.code || existingKeys.has(k)) return false;
+        // Cross-type guard: FRAM PH (oil) must not go to Air/Cabin/Fuel SKUs
+        if ((c.manufacturer||'').toUpperCase() === 'FRAM') {
+          const expectedType = framCodeFilterType(c.code);
+          if (expectedType && filter_type && expectedType !== filter_type) return false;
+        }
+        return true;
       }).map(c => ({ manufacturer: c.manufacturer.toUpperCase(), code: c.code.toUpperCase() }));
 
       if (toAdd.length === 0) { skipped++; continue; }
