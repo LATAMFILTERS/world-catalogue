@@ -1536,6 +1536,88 @@ app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req,
   }
 });
 
+// ─── POST /api/cleanup/fram-hd-force ─────────────────────────────────────────
+// Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
+// Handles any manufacturer key format (uppercase, lowercase, missing).
+app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // Step 1: find all HD SKUs that have any entry with a FRAM-pattern code
+    const rows = await client.query(`
+      SELECT sku, competitor_codes
+      FROM elimfilters_catalog
+      WHERE (
+        sku LIKE 'EL8%' OR sku LIKE 'EA1%' OR sku LIKE 'EC1%' OR sku LIKE 'EF9%'
+      )
+      AND competitor_codes IS NOT NULL
+      AND jsonb_array_length(competitor_codes) > 0
+    `);
+
+    const FRAM_CODE_PATTERN = /^(PH|CA|CF|G)\d/i;
+
+    let cleaned = 0;
+    let debug_sample = [];
+    for (const row of rows.rows) {
+      const { sku, competitor_codes } = row;
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      const filtered = existing.filter(c => {
+        const mfr = (c.manufacturer || '').toUpperCase().trim();
+        const code = (c.code || c.partNumber || c.part_number || '').toUpperCase().trim();
+        // Remove if manufacturer is FRAM or code matches FRAM pattern
+        if (mfr === 'FRAM') return false;
+        if (!mfr && FRAM_CODE_PATTERN.test(code)) return false;
+        return true;
+      });
+
+      if (filtered.length !== existing.length) {
+        if (debug_sample.length < 5) {
+          debug_sample.push({
+            sku,
+            removed: existing.length - filtered.length,
+            sample_removed: existing.filter(c => !filtered.includes(c)).slice(0,3),
+          });
+        }
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({
+      success: true,
+      hd_rows_scanned: rows.rows.length,
+      skus_cleaned: cleaned,
+      debug_sample,
+    });
+  } catch (e) {
+    console.error('[cleanup-fram-hd-force]', e.message);
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── GET /api/debug/sku-codes ─────────────────────────────────────────────────
+// Debug endpoint: return raw competitor_codes for a specific SKU.
+app.get('/api/debug/sku-codes', adminLimiter, requireAdmin, async (req, res) => {
+  const sku = (req.query.sku || '').trim().toUpperCase();
+  if (!sku) return res.status(400).json({ error: 'sku param required' });
+  const client = await pool.connect();
+  try {
+    const r = await client.query(
+      `SELECT sku, duty, filter_type, competitor_codes FROM elimfilters_catalog WHERE sku = $1`,
+      [sku]
+    );
+    if (r.rows.length === 0) return res.status(404).json({ error: 'SKU not found' });
+    res.json(r.rows[0]);
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.
