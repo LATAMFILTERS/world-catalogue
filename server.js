@@ -1453,6 +1453,66 @@ app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req
   }
 });
 
+// ─── POST /api/cleanup/fram-crosstype ────────────────────────────────────────
+// Remove FRAM codes that were assigned to wrong filter type SKUs.
+// FRAM PH (oil) must not appear on Air/Cabin/Fuel SKUs.
+// Runs a full-table scan and strips mismatched FRAM entries.
+app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // FRAM prefix → allowed SKU prefixes
+    const FRAM_TYPE_MAP = {
+      'PH': ['EL3', 'EL8'],          // oil
+      'CA': ['EA3', 'EA1'],          // air
+      'CF': ['EC3', 'EC1'],          // cabin
+      'G':  ['EF3', 'EF9'],          // fuel
+    };
+
+    const rows = await client.query(
+      `SELECT sku, competitor_codes FROM elimfilters_catalog
+       WHERE competitor_codes IS NOT NULL
+         AND jsonb_array_length(competitor_codes) > 0
+         AND EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS e
+           WHERE e->>'manufacturer' = 'FRAM'
+         )`
+    );
+
+    let cleaned = 0;
+    for (const row of rows.rows) {
+      const { sku, competitor_codes } = row;
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+      const skuPrefix = sku.slice(0, 3).toUpperCase();
+
+      const filtered = existing.filter(c => {
+        if ((c.manufacturer || '').toUpperCase() !== 'FRAM') return true;
+        const code = (c.code || '').toUpperCase();
+        for (const [framPrefix, allowedSkuPrefixes] of Object.entries(FRAM_TYPE_MAP)) {
+          if (code.startsWith(framPrefix)) {
+            return allowedSkuPrefixes.some(p => skuPrefix === p);
+          }
+        }
+        return true; // unknown FRAM prefix, keep
+      });
+
+      if (filtered.length !== existing.length) {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({ success: true, skus_cleaned: cleaned, rows_scanned: rows.rows.length });
+  } catch (e) {
+    console.error('[cleanup-fram]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.

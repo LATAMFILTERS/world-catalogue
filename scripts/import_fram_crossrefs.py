@@ -37,6 +37,45 @@ FRAM_FILE          = Path(r"C:\mann\fram_to_wix.jsonl")
 WIX_CROSSREFS_FILE = Path(r"C:\mann\wix_crossrefs.jsonl")
 BATCH              = 50
 
+# FRAM prefix → filter type (for cross-type rejection)
+FRAM_PREFIX_TO_TYPE = {
+    'PH': 'Oil Filter',
+    'CA': 'Air Filter',
+    'CF': 'Cabin Filter',
+    'G':  'Fuel Filter',
+}
+
+# Mann SKU prefix letters → filter type
+MANN_PN_TO_TYPE = {
+    'W':  'Oil Filter',
+    'HU': 'Oil Filter',
+    'ML': 'Oil Filter',
+    'OX': 'Oil Filter',
+    'C':  'Air Filter',   # C xxxx = air (NOT CU which is cabin)
+    'CU': 'Cabin Filter',
+    'CF': 'Cabin Filter',
+    'FP': 'Cabin Filter',
+    'WK': 'Fuel Filter',
+    'PU': 'Fuel Filter',
+    'KC': 'Fuel Filter',
+}
+
+
+def fram_filter_type(fram_code: str) -> str | None:
+    code = fram_code.upper()
+    for prefix, ftype in sorted(FRAM_PREFIX_TO_TYPE.items(), key=lambda x: -len(x[0])):
+        if code.startswith(prefix):
+            return ftype
+    return None
+
+
+def mann_filter_type(mann_sku: str) -> str | None:
+    pn = mann_sku.upper().strip()
+    for prefix, ftype in sorted(MANN_PN_TO_TYPE.items(), key=lambda x: -len(x[0])):
+        if pn.startswith(prefix):
+            return ftype
+    return None
+
 
 def load_jsonl(path: Path) -> list[dict]:
     records = []
@@ -129,8 +168,12 @@ def run(args):
             no_match += 1
             continue
 
+        fram_type = fram_filter_type(fram_code)
         matched += 1
         for sku in skus_found:
+            # Reject cross-type assignments (PH=oil must not go to air/cabin/fuel SKU)
+            if fram_type and mann_filter_type(sku) and fram_type != mann_filter_type(sku):
+                continue
             key = f"FRAM|{fram_code}"
             sku_codes[sku][key] = {'manufacturer': 'FRAM', 'code': fram_code}
 
