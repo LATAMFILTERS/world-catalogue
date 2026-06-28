@@ -1,0 +1,50 @@
+{
+  "ET92010P": [
+    { "manufacturer": "RACOR", "code": "2010PM" },
+    { "manufacturer": "PARKER", "code": "2010PM-OR" }
+  ],
+  "ET92010T": [
+    { "manufacturer": "RACOR", "code": "2010TM" },
+    { "manufacturer": "RACOR", "code": "500FG" },
+    { "manufacturer": "RACOR", "code": "500FF" },
+    { "manufacturer": "RACOR", "code": "500FE" },
+    { "manufacturer": "RACOR", "code": "500FGSS" },
+    { "manufacturer": "RACOR", "code": "500SERIES" }
+  ],
+  "ET92010S": [
+    { "manufacturer": "RACOR", "code": "2010SM" },
+    { "manufacturer": "RACOR", "code": "2010SM30" },
+    { "manufacturer": "RACOR", "code": "2010SMOR" }
+  ],
+  "ET92020P": [
+    { "manufacturer": "RACOR", "code": "2020PM" },
+    { "manufacturer": "RACOR", "code": "2020PMOR" },
+    { "manufacturer": "PARKER", "code": "2020PM-OR" }
+  ],
+  "ET92020T": [
+    { "manufacturer": "RACOR", "code": "2020TM" },
+    { "manufacturer": "RACOR", "code": "2020TMOR" },
+    { "manufacturer": "RACOR", "code": "1000FH" },
+    { "manufacturer": "RACOR", "code": "1000FG" },
+    { "manufacturer": "RACOR", "code": "1000FE" }
+  ],
+  "ET92020S": [
+    { "manufacturer": "RACOR", "code": "2020SM" },
+    { "manufacturer": "RACOR", "code": "2020SM10" },
+    { "manufacturer": "RACOR", "code": "2020SMOR" }
+  ],
+  "ET92040P": [
+    { "manufacturer": "RACOR", "code": "2040PM" }
+  ],
+  "ET92040T": [
+    { "manufacturer": "RACOR", "code": "2040TMOR" },
+    { "manufacturer": "RACOR", "code": "900FG" },
+    { "manufacturer": "RACOR", "code": "900FC" },
+    { "manufacturer": "RACOR", "code": "900FE" },
+    { "manufacturer": "RACOR", "code": "900SERIES" }
+  ],
+  "ET92040S": [
+    { "manufacturer": "RACOR", "code": "2040SM" },
+    { "manufacturer": "RACOR", "code": "2040SMOR" }
+  ]
+}

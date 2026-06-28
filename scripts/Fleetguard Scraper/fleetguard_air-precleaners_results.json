@@ -1,0 +1,3431 @@
+[
+  {
+    "url": "https://www.fleetguard.com/product/AP3000",
+    "part_number": "AP3000",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:17:31.103103"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3939406S",
+    "part_number": "3939406S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:17:58.832070"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85152",
+    "part_number": "AP85152",
+    "name": "",
+    "attributes": {
+      "Largest OD": "16.60 inch / 421.64 mm",
+      "Outlet Diameter": "6.00 inch / 152.40 mm",
+      "Height": "43.39 inch / 1102.15 mm",
+      "Applicable Region": "North America, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8405",
+      "3953535S",
+      "3946107S",
+      "3952353S",
+      "3952334S",
+      "3946109S",
+      "3953529S",
+      "3946089S",
+      "3953522S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "16.60 inch / 421.64 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "6.00 inch / 152.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "43.39 inch / 1102.15 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:18:29.155557"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3946095S",
+    "part_number": "3946095S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South America, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South America, South East Asia",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:18:55.254877"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85053",
+    "part_number": "AP85053",
+    "name": "",
+    "attributes": {
+      "Largest OD": "16.60 inch / 421.64 mm",
+      "Outlet Diameter": "7.00 inch / 177.80 mm",
+      "Height": "41.30 inch / 1049.06 mm",
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8405",
+      "3952353S",
+      "3953524S",
+      "3946105S",
+      "3953535S",
+      "3952350S",
+      "3946089S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "16.60 inch / 421.64 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "7.00 inch / 177.80 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "41.30 inch / 1049.06 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:19:25.913646"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8421",
+    "part_number": "AP8421",
+    "name": "",
+    "attributes": {
+      "Largest OD": "10.63 inch / 270.00 mm",
+      "Outlet Diameter": "5.04 inch / 128.10 mm",
+      "Height": "7.98 inch / 202.70 mm",
+      "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "10.63 inch / 270.00 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "5.04 inch / 128.10 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "7.98 inch / 202.70 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, China, Europe, South America, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:19:57.081247"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3946056S",
+    "part_number": "3946056S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:20:27.954994"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8405",
+    "part_number": "AP8405",
+    "name": "",
+    "attributes": {
+      "Height": "14.60 inch / 370.90 mm",
+      "Outlet Diameter": "8.05 inch / 204.50 mm",
+      "Largest OD": "16.29 inch / 413.70 mm",
+      "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP85152",
+      "AP85054",
+      "AP85051",
+      "AP85055",
+      "AP85058",
+      "AP85057",
+      "AP85053",
+      "AP85052",
+      "AP85154",
+      "3904842S",
+      "3905075S"
+    ],
+    "equipment": [
+      {
+        "equipment": "John Deere - 844",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:20:57.459973"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3939413S",
+    "part_number": "3939413S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:21:36.725973"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8400",
+    "part_number": "AP8400",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:22:03.524303"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8408",
+    "part_number": "AP8408",
+    "name": "",
+    "attributes": {
+      "Height": "4.22 inch / 107.19 mm",
+      "Outlet Diameter": "3.03 inch / 76.90 mm",
+      "Largest OD": "6.69 inch / 169.90 mm",
+      "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine",
+      "John Deere - 2255": "3179D",
+      "John Deere - 2250": "4239D",
+      "John Deere - 2450": "4239D",
+      "John Deere - 2440": "Diesel",
+      "John Deere - 2520": "GAS",
+      "John Deere - 4030": "329 DIESEL",
+      "John Deere - 2150": "3179D"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "3918240S"
+    ],
+    "equipment": [
+      {
+        "equipment": "John Deere - 190E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 344E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2550",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 800",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2255",
+        "engine": "3179D",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2640",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2250",
+        "engine": "4239D",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 480C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 490",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2450",
+        "engine": "4239D",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 290D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 880",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2440",
+        "engine": "Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 1530",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2940",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 1520",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 482C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 3020",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2040 DUBUQUE-BUILT",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 450C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2350",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 1050",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 1020",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2840",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2520",
+        "engine": "GAS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4030",
+        "engine": "329 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2240 DUBUQUE BUILT",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 830",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2150",
+        "engine": "3179D",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:22:34.408881"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8401",
+    "part_number": "AP8401",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:23:17.185167"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP4500",
+    "part_number": "AP4500",
+    "name": "",
+    "attributes": {
+      "Equipment": "Engine",
+      "Manitou - MT625T COMFORT": "V3307",
+      "Manitou - MT1440 PRIVILEGE": "PERKINS",
+      "Manitou - MLT633TWLS": "1004-40TW",
+      "Manitou - MLT730T LS": "1004-40TW",
+      "Manitou - MLT633T LS": "1004-40TW",
+      "Manitou - MT1030ST SERIE 4-E3": "PERKINS",
+      "Manitou - MLT731 TURBO SERIE F-E3": "PERKINS",
+      "Manitou - MT932 SERIE D-E3": "PERKINS",
+      "Manitou - MT732 SERIE D-E3": "PERKINS",
+      "Manitou - MT728 SERIE D-E3": "PERKINS",
+      "Manitou - MT1030ST SERIE 2-E2": "PERKINS",
+      "Manitou - MLT625-75H": "V3307-T-E3B",
+      "Manitou - MT928 SERIE D-E3": "PERKINS",
+      "Manitou - MT1030S SERIE 4-E3": "PERKINS"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "3910450S"
+    ],
+    "equipment": [
+      {
+        "equipment": "John Deere - 3640S",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT625T COMFORT",
+        "engine": "V3307",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1440 PRIVILEGE",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT731T",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT730T",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT633TWLS",
+        "engine": "1004-40TW",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT629T",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT730T LS",
+        "engine": "1004-40TW",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT633T LS",
+        "engine": "1004-40TW",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT633",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT730",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT932",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT732",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT629",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MC60",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MC70",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1330",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1337SL",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1240",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1233",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1637SL",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M50-4",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M26-2",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M30-2",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M26-4",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M30-4",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - M40-4",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT526T",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT629.120LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT633.120LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1030ST SERIE 4-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT731 TURBO SERIE F-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT932 SERIE D-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT732 SERIE D-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT629T LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1637H SL",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT845H",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT526",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT728 SERIE D-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1030ST SERIE 2-E2",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT845/940L",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT730.120LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1332H SL",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT625-75H",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT625-75H",
+        "engine": "V3307-T-E3B",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT928 SERIE D-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT940HL",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT730T LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MT1030S SERIE 4-E3",
+        "engine": "PERKINS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Manitou - MLT633T LS",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:23:44.672703"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85047",
+    "part_number": "AP85047",
+    "name": "",
+    "attributes": {
+      "Height": "31.54 inch / 801.23 mm",
+      "Outlet Diameter": "6.00 inch / 152.40 mm",
+      "Largest OD": "9.00 inch / 228.60 mm",
+      "Applicable Region": "North America, Europe, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8404",
+      "3953525S",
+      "3946090S",
+      "3939412S",
+      "3939411S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Height",
+        "engine": "31.54 inch / 801.23 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "6.00 inch / 152.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Largest OD",
+        "engine": "9.00 inch / 228.60 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:24:24.931200"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3939404S",
+    "part_number": "3939404S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:24:51.772697"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8403",
+    "part_number": "AP8403",
+    "name": "",
+    "attributes": {
+      "Height": "6.31 inch / 160.40 mm",
+      "Outlet Diameter": "4.08 inch / 103.60 mm",
+      "Largest OD": "8.25 inch / 209.50 mm",
+      "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine",
+      "Caterpillar - 320C": "3066",
+      "John Deere - 6602": "362 GAS",
+      "John Deere - 6600 LEVEL LAND": "6-329 GAS",
+      "John Deere - 5300": "JDEERE",
+      "John Deere - 4050": "6076A",
+      "John Deere - 6600": "6-404 DIESEL",
+      "John Deere - 2950": "CD4239T",
+      "John Deere - 5200": "JDEERE",
+      "John Deere - 6620": "6-466 DIESEL",
+      "John Deere - 6600 SIDE HILL": "6-404 DIESEL",
+      "John Deere - 2750": "CD4239T",
+      "John Deere - 4400": "6-329 (DH-02) DIESEL",
+      "John Deere - 5010": "Diesel",
+      "John Deere - 4230": "404 DIESEL",
+      "John Deere - 5020": "Diesel",
+      "John Deere - 4240": "Diesel",
+      "Lebrero - CNL824": "4BT3.9C",
+      "Lebrero - VM3": "1004-40T",
+      "Europactor - COMPACTORS RANGE": "4BTA3.9",
+      "Lebrero - VM4": "1004-40T",
+      "Lebrero - VM2": "1004-40T"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP85036",
+      "AP85035",
+      "3904839S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Caterpillar - 320C",
+        "engine": "3066",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 448D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 555B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6602",
+        "engine": "362 GAS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 444D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6602",
+        "engine": "6-466 TURBO",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 455G",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 444E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 450G",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600 LEVEL LAND",
+        "engine": "6-329 GAS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600 LEVEL LAND",
+        "engine": "303 GAS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4020",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 450D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 540E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 760A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600 LEVEL LAND",
+        "engine": "6-404 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 5300",
+        "engine": "JDEERE",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 495D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 550G",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 450E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 540D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4420",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 550B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 444CH",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4040S",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4050",
+        "engine": "6076A",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6602",
+        "engine": "6-404 TURBO",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 650G",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600",
+        "engine": "6-404 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 544",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 540B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 550A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 555",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 595",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 548D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2950",
+        "engine": "CD4239T",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 5200",
+        "engine": "JDEERE",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2280",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6800",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 544A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 548E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 455E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600 LEVEL LAND",
+        "engine": "6-329 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6620",
+        "engine": "6-466 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 755B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6620",
+        "engine": "6-466 TURBO",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 570A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 6600 SIDE HILL",
+        "engine": "6-404 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 444C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 655",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 2750",
+        "engine": "CD4239T",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 5400N",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 595D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 440D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 455D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 555G",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4400",
+        "engine": "6-329 (DH-02) DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 755A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 5010",
+        "engine": "Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4230",
+        "engine": "404 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 5020",
+        "engine": "Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4400",
+        "engine": "6-329 (DH-03) DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 570",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4240",
+        "engine": "Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 444",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - CNL824",
+        "engine": "4BT3.9C",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - VM3",
+        "engine": "1004-40T",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Europactor - COMPACTORS RANGE",
+        "engine": "4BTA3.9",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - VM4",
+        "engine": "1004-40T",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - VM2",
+        "engine": "1004-40T",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:25:22.768445"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8407",
+    "part_number": "AP8407",
+    "name": "",
+    "attributes": {
+      "Largest OD": "4.43 inch / 112.60 mm",
+      "Outlet Diameter": "2.03 inch / 51.60 mm",
+      "Height": "2.96 inch / 75.18 mm",
+      "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine",
+      "Lebrero - PVR2190G": "GX160",
+      "Lebrero - PV2": "1D41S",
+      "Lebrero - PVR2215": "1D41S",
+      "Lebrero - PVR2325": "1D41S"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "3918239S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Lebrero - PVR2190G",
+        "engine": "GX160",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - PV2",
+        "engine": "1D41S",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - PVR2215",
+        "engine": "1D41S",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - PVR2325",
+        "engine": "1D41S",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:26:04.288186"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP15914",
+    "part_number": "AP15914",
+    "name": "",
+    "attributes": {
+      "Height": "6.69 inch / 170.00 mm",
+      "Length": "6.18 inch / 157.00 mm",
+      "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Height",
+        "engine": "6.69 inch / 170.00 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "6.18 inch / 157.00 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, China, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:26:44.282724"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AH24374",
+    "part_number": "AH24374",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:27:11.651038"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3946100S",
+    "part_number": "3946100S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:27:41.845027"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8410",
+    "part_number": "AP8410",
+    "name": "",
+    "attributes": {
+      "Height": "11.04 inch / 280.50 mm",
+      "Outlet Diameter": "6.04 inch / 153.40 mm",
+      "Largest OD": "12.38 inch / 314.40 mm",
+      "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine",
+      "John Deere - 8960": "JDEERE",
+      "John Deere - 8850": "JDEERE",
+      "John Deere - 8760": "JDEERE"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "3904841S",
+      "3904840S",
+      "AP85105",
+      "AP85104",
+      "AP85102",
+      "AP85101"
+    ],
+    "equipment": [
+      {
+        "equipment": "John Deere - 8960",
+        "engine": "JDEERE",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 8850",
+        "engine": "JDEERE",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 990",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 8760",
+        "engine": "JDEERE",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 744E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Bourgoin - JLD407 CORN PICKER",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:28:10.249459"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3904840S",
+    "part_number": "3904840S",
+    "name": "",
+    "attributes": {
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8410",
+      "AP8404"
+    ],
+    "equipment": [
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Largest OD",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:28:54.052979"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85046",
+    "part_number": "AP85046",
+    "name": "",
+    "attributes": {
+      "Height": "30.83 inch / 783.16 mm",
+      "Outlet Diameter": "6.00 inch / 152.40 mm",
+      "Largest OD": "12.50 inch / 317.50 mm",
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8404",
+      "3953526S",
+      "3939412S",
+      "3939411S",
+      "3946090S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Height",
+        "engine": "30.83 inch / 783.16 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "6.00 inch / 152.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Largest OD",
+        "engine": "12.50 inch / 317.50 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:29:23.944771"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85104",
+    "part_number": "AP85104",
+    "name": "",
+    "attributes": {
+      "Largest OD": "12.50 inch / 317.50 mm",
+      "Outlet Diameter": "6.00 inch / 152.40 mm",
+      "Height": "32.95 inch / 836.90 mm",
+      "Applicable Region": "North America, Europe, South America, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8410",
+      "3946090S",
+      "3939411S",
+      "3953525S",
+      "3939412S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "12.50 inch / 317.50 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "6.00 inch / 152.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "32.95 inch / 836.90 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South America, South East Asia",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:29:54.601453"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8404",
+    "part_number": "AP8404",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:30:25.504111"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/3920523S",
+    "part_number": "3920523S",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [
+      "AH19068"
+    ],
+    "equipment": [
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Largest OD",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:30:51.807544"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AF1844",
+    "part_number": "AF1844",
+    "name": "",
+    "attributes": {
+      "Equipment": "Engine",
+      "Ford - F-4000": "D226-4",
+      "Autocar Llc. - 65T SERIES": "390A GAS",
+      "Autocar Llc. -": "390A",
+      "Rolls-Royce -": "C6NFR",
+      "Hyster - HC180E": "JXD",
+      "Hyster - H300E": "P6",
+      "Hyster - SC-180": "V6-305",
+      "Hyster - TC-200": "D-320",
+      "Hyster - H150E": "P6",
+      "Hyster - H225E": "JXD",
+      "Hyster - TC-225": "JXD",
+      "Hyster - M-200F": "P6",
+      "Hyster - RC-160": "D-320",
+      "Hyster - M-300F": "V6-305",
+      "Hyster - H200E": "IND-53",
+      "Cerlist Diesel -": "V6",
+      "Hyster - SC-150": "IND-53",
+      "Hyster - M-200E": "V6-305",
+      "Brockway -": "42BXD",
+      "Hyster - TC-160": "V6-305",
+      "Hyster - RC-180E": "IND-53",
+      "Hyster - H250F": "V6-305",
+      "Hyster - M-300E": "V6-305",
+      "Hyster - RC-150": "P6",
+      "Hyster - TC-180": "IND-53",
+      "Hyster - SC-200": "D-320",
+      "Hyster - H185E": "JXD",
+      "Hyster - SC-160": "P6",
+      "Hyster - RC-200": "P6",
+      "Hyster - RC-180": "IND-53",
+      "Hyster - TC-150": "IND-53",
+      "Gradall - G-1000": "NHC-4-B1",
+      "Hyster - TC-165": "JXD"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AF1893",
+      "AF252",
+      "AF1894M"
+    ],
+    "equipment": [
+      {
+        "equipment": "Ford - F-4000",
+        "engine": "D226-4",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - FB4000",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-4000",
+        "engine": "Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-4000",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Autocar Llc. - 65T SERIES",
+        "engine": "390A GAS",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Autocar Llc. - 65T SERIES",
+        "engine": "490A",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Autocar Llc. -",
+        "engine": "390A",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Autocar Llc. -",
+        "engine": "490A",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Rolls-Royce -",
+        "engine": "C6NFR",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - HC180E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H300E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-180",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-200",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H150E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H225E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - HC180E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-225",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200F",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-160",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300F",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-160",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200F",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H200E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Cerlist Diesel -",
+        "engine": "V6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-150",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H300E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Brockway -",
+        "engine": "42BXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Brockway -",
+        "engine": "48BD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-160",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-180",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H200E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H250F",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - HC180E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-225",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-150",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-180",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-200",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H300E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-200",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H185E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H300E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - HC180E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-180",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Brockway -",
+        "engine": "44BD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H250F",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-160",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-150",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-160",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H225E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-225",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-200",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-160",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H185E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-150",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Cerlist Diesel -",
+        "engine": "3",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H150E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-150",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-180",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-160",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Gradall - G-1000",
+        "engine": "NHC-4-B1",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-225",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-160",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H225E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-200",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H150E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-180",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-150",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200F",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-150",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-200",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-165",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200F",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H185E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H200E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H185E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-165",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-200",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-150",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-160",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-165",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-150",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Brockway -",
+        "engine": "46BD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-150",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H185E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H200E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-180",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-160",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H250F",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-150",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-200",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H300E",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-180",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-200",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H150E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-200",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H200E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-200",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-180",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-160",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-160",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H225E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-160",
+        "engine": "D-320",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-150",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200F",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-180",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-165",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-180",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H150E",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-200",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - RC-150",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H250F",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-225",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-200",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H225E",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - H250F",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-150",
+        "engine": "V6-305",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-300E",
+        "engine": "JXD",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-200",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - M-200E",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - TC-165",
+        "engine": "P6",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Hyster - SC-200",
+        "engine": "IND-53",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:31:26.339856"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP5000",
+    "part_number": "AP5000",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:32:08.839050"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP2000",
+    "part_number": "AP2000",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:32:36.560905"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8402",
+    "part_number": "AP8402",
+    "name": "",
+    "attributes": {},
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [],
+    "error": null,
+    "scraped_at": "2026-05-28 22:33:05.685868"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85154",
+    "part_number": "AP85154",
+    "name": "",
+    "attributes": {
+      "Largest OD": "16.60 inch / 421.64 mm",
+      "Outlet Diameter": "11.00 inch / 279.40 mm",
+      "Height": "38.06 inch / 966.79 mm",
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8405",
+      "3952350S",
+      "3953530S",
+      "3952360S",
+      "3953519S",
+      "3946089S",
+      "3946105S",
+      "3952361S",
+      "3953535S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "16.60 inch / 421.64 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "11.00 inch / 279.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "38.06 inch / 966.79 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:33:36.280102"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8409",
+    "part_number": "AP8409",
+    "name": "",
+    "attributes": {
+      "Largest OD": "8.25 inch / 209.50 mm",
+      "Outlet Diameter": "4.08 inch / 103.60 mm",
+      "Height": "6.31 inch / 160.40 mm",
+      "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific",
+      "Equipment": "Engine",
+      "John Deere - 4055": "6 CYL 7.6L DIESEL",
+      "John Deere - 4520": "404 DIESEL",
+      "Lebrero - VM5": "1006-60T",
+      "Lebrero - VM6": "1006-60T"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP85038",
+      "AP85037",
+      "3904839S"
+    ],
+    "equipment": [
+      {
+        "equipment": "John Deere - 648E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 544D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 690C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 544C",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4055",
+        "engine": "6 CYL 7.6L DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 640D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 544E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 640E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 690D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 670B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 672A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 672B",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 643D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 670A",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 643",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 640",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 4520",
+        "engine": "404 DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 648D",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "John Deere - 624E",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - VM5",
+        "engine": "1006-60T",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Lebrero - VM6",
+        "engine": "1006-60T",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:34:03.733161"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP15918",
+    "part_number": "AP15918",
+    "name": "",
+    "attributes": {
+      "Largest OD": "11.33 inch / 287.90 mm",
+      "Height": "11.10 inch / 282.00 mm",
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "11.33 inch / 287.90 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "11.10 inch / 282.00 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:34:47.315812"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85058",
+    "part_number": "AP85058",
+    "name": "",
+    "attributes": {
+      "Height": "39.74 inch / 1009.34 mm",
+      "Outlet Diameter": "7.00 inch / 177.80 mm",
+      "Largest OD": "16.60 inch / 421.64 mm",
+      "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8405",
+      "3952350S",
+      "3946089S",
+      "3946105S",
+      "3953527S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Height",
+        "engine": "39.74 inch / 1009.34 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "7.00 inch / 177.80 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Largest OD",
+        "engine": "16.60 inch / 421.64 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:35:15.506103"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP85042",
+    "part_number": "AP85042",
+    "name": "",
+    "attributes": {
+      "Largest OD": "12.50 inch / 317.50 mm",
+      "Outlet Diameter": "6.00 inch / 152.40 mm",
+      "Height": "34.68 inch / 880.97 mm",
+      "Applicable Region": "North America, Europe, South East Asia"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AP8404",
+      "3953530S",
+      "3953521S",
+      "3952334S",
+      "3939411S",
+      "3952353S",
+      "3939412S",
+      "3946090S"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "12.50 inch / 317.50 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "6.00 inch / 152.40 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "34.68 inch / 880.97 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, Europe, South East Asia",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:35:44.710064"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AF25133",
+    "part_number": "AF25133",
+    "name": "",
+    "attributes": {
+      "Height": "7.38 inch / 187.50 mm",
+      "Overall Width": "6.40 inch / 162.50 mm",
+      "Applicable Region": "North America, Europe, South East Asia",
+      "Equipment": "Engine",
+      "Ford - F750": "V8",
+      "Ford - F-650": "V8",
+      "Ford - F450": "B6.7",
+      "Ford - F-450 Super Duty": "6.7L",
+      "Ford - F-550 Super Duty": "V8",
+      "Ford - F550": "6.7L",
+      "Ford - F-350 Super Duty": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+      "Ford - F-250 Super Duty": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+      "Ford - SUPER DUTY": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+      "Ford - F650": "B6.7",
+      "Ford - F-750": "V8-445 (7.3L)",
+      "Ford - F-650 Super Duty": "ISB 6.7"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "AF27882"
+    ],
+    "equipment": [
+      {
+        "equipment": "Ford - F750",
+        "engine": "V8",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-650",
+        "engine": "V8",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F450",
+        "engine": "B6.7",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F750",
+        "engine": "6.7L",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F450",
+        "engine": "6.7L",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-650",
+        "engine": "6.7L",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-450 Super Duty",
+        "engine": "6.7L",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-450 Super Duty",
+        "engine": "V8",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-450 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-550 Super Duty",
+        "engine": "V8",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-650",
+        "engine": "V8 406 6.7L FI TURBO DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-550 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F750",
+        "engine": "V8 406 6.7L FI TURBO DIESEL",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F550",
+        "engine": "6.7L",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-450 Super Duty",
+        "engine": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-350 Super Duty",
+        "engine": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-250 Super Duty",
+        "engine": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-550 Super Duty",
+        "engine": "V8 406 6.7L DI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - SUPER DUTY",
+        "engine": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-450 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-550 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-250 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-350 Super Duty",
+        "engine": "V8 406 6.7L FI TURBO DIESEL (VIN T)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F750",
+        "engine": "ISB 6.7",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-650",
+        "engine": "ISB 6.7",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F650",
+        "engine": "B6.7",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-750",
+        "engine": "V8-445 (7.3L)",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-350 Super Duty",
+        "engine": "V8-406 (6.7L) FI Turbo Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-250 Super Duty",
+        "engine": "V8-406 (6.7L) Turbo Diesel",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Ford - F-650 Super Duty",
+        "engine": "ISB 6.7",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:36:14.587635"
+  },
+  {
+    "url": "https://www.fleetguard.com/product/AP8406",
+    "part_number": "AP8406",
+    "name": "",
+    "attributes": {
+      "Largest OD": "16.29 inch / 413.70 mm",
+      "Outlet Diameter": "8.05 inch / 204.50 mm",
+      "Height": "14.60 inch / 370.90 mm",
+      "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+    },
+    "cross_references": [],
+    "alternatives": [
+      "3905075S",
+      "3904842S",
+      "3918243S",
+      "AP85062",
+      "AP85063",
+      "AP85061",
+      "AP85163",
+      "AP85064"
+    ],
+    "equipment": [
+      {
+        "equipment": "Largest OD",
+        "engine": "16.29 inch / 413.70 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Outlet Diameter",
+        "engine": "8.05 inch / 204.50 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Height",
+        "engine": "14.60 inch / 370.90 mm",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Applicable Region",
+        "engine": "North America, China, Europe, South America, South East Asia, South Pacific",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Product Description",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Media Type",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Length",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      },
+      {
+        "equipment": "Thread Size",
+        "engine": "",
+        "year": "",
+        "qty": ""
+      }
+    ],
+    "error": null,
+    "scraped_at": "2026-05-28 22:36:56.158009"
+  }
+]
