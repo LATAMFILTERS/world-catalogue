@@ -5,6 +5,26 @@ Last updated: 2026-06-28
 
 ---
 
+## TECHNICAL DOCTRINE
+
+### Master Doctrine (technical/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ELIMFILTERS_TECHNICAL_DOCTRINE_MASTER]] | ✅ MASTER v1.0 — Permanent Doctrine | 2026-06-28 |
+
+**Technical doctrine coverage (19 sections):**
+- Engineering Philosophy: Asset Protection Engineering, Contamination Control, Reliability Engineering
+- Media Science: Cellulose, Synthetic, Nanofiber, Activated Carbon, Multi-layer
+- Systems: Air Intake, Fuel, Lube Oil, Hydraulic, Cooling, Cabin Air, Compressed Air (7 domains)
+- Technology Registry: MACROCORE™, MICROKAPPA™, SYNTEPORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, HYDROCORE™, DRYCORE™, INTEKCORE™ (9 platforms)
+- Standards: ISO 16889, ISO 5011, SAE J1858, ISO 4406, NAS 1638, ISO 29463, ISO 11171
+- Industries: Mining, Construction, Agriculture, Manufacturing, Marine, Truck Fleets, Oil & Gas, Power Generation
+- Failure Analysis: Collapse, Bypass, Improper Installation, Seal Failure, Media Failure, Water Ingress
+- Cross-reference: ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0
+
+---
+
 ## COMMERCIAL DOCTRINE
 
 ### Master Doctrine (commercial/)

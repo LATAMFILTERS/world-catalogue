@@ -10,6 +10,8 @@ const NAV = [
   { href: '/knowledge-center/systems', label: 'Systems' },
   { href: '/knowledge-center/industries', label: 'Industries' },
   { href: '/knowledge-center/technical-library', label: 'Library' },
+  { href: '/knowledge-center/technical-doctrine', label: 'Tech Doctrine' },
+  { href: '/knowledge-center/commercial-doctrine', label: 'Commercial' },
 ];
 
 export default function KnowledgeCenterLayout({ children }: { children: React.ReactNode }) {
