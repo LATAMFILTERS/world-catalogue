@@ -10,7 +10,7 @@ const SEGMENTS = [
     role: 'Primary profitability engine',
     allocation: '80%',
     target: '7%–10% market share',
-    sectors: ['Mining', 'Construction', 'Agriculture', 'Transportation Fleets', 'Oil & Gas', 'Power Generation', 'Marine', 'Railway', 'Waste Municipal', 'Industrial Manufacturing'],
+    sectors: ['Mining', 'Construction', 'Agriculture', 'Transportation & Fleet Ops (incl. Aviation GSE)', 'Oil & Gas', 'Power Generation', 'Marine', 'Railway', 'Waste Municipal', 'Industrial Manufacturing'],
     objectives: ['Profitability', 'Strategic Account Development', 'Technology Deployment', 'Asset Protection Programs', 'Industrial Market Penetration'],
   },
   {
@@ -39,8 +39,8 @@ const STRATEGIC_ACCOUNTS = [
   'Power Generation Operators',
   'Oil & Gas Operators',
   'Railway Operators',
-  'Port Authorities',
-  'Airport Operators',
+  'Port Authorities & Terminal Operators',
+  'Transportation & Aviation GSE Fleet Operators',
   'National Transportation Fleets',
   'Industrial Manufacturing Groups',
 ];
@@ -81,12 +81,12 @@ export default function CommercialDoctrinePage() {
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
             style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.12em', color: '#FFF12D', marginBottom: '1rem' }}>
-            COMMERCIAL DOCTRINE · v1.0 · 2026-06-28
+            COMMERCIAL DOCTRINE · v2.0 · 2026-06-28
           </motion.p>
 
           <motion.h1 initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.08 }}
             style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 3rem)', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Market Architecture &<br />Profitability Strategy
+            Commercial Architecture<br />Master Doctrine
           </motion.h1>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.15 }}
@@ -250,8 +250,8 @@ export default function CommercialDoctrinePage() {
               04 / DISTRIBUTION MODEL
             </p>
             <div style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1.75rem' }}>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.05rem', color: '#fff', marginBottom: '0.5rem' }}>
-                Distributors are regional extensions of the organization.
+              <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.05rem', color: '#fff', marginBottom: '0.75rem', lineHeight: 1.45 }}>
+                Distributors are considered regional extensions of ELIMFILTERS®, representing our engineering standards, asset protection philosophy, and long-term commitment to every market they serve.
               </p>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, marginBottom: '1.25rem', textAlign: 'justify' }}>
                 Selection is not based on purchase volume. Selection prioritizes asset access, industry access, technical capability, and long-term growth potential.
@@ -319,7 +319,7 @@ export default function CommercialDoctrinePage() {
             This document establishes the commercial doctrine of ELIMFILTERS. The principles herein govern market prioritization, resource allocation, distribution development, strategic account acquisition, commercial intelligence, and profitability objectives. Amendments require explicit authorization and formal version update. All commercial strategies, content, digital assets, and go-to-market activities shall be consistent with these principles.
           </p>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,255,255,0.25)', marginTop: '1rem' }}>
-            Source: elimfilters-vault/10-commercial/MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY.md · v1.0 · 2026-06-28
+            Source: elimfilters-vault/commercial/ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER.md · v2.0 · 2026-06-28
           </p>
         </section>
 
@@ -350,8 +350,8 @@ export default function CommercialDoctrinePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
-        headline: 'Market Architecture and Profitability Strategy — ELIMFILTERS Commercial Doctrine',
-        description: 'ELIMFILTERS commercial doctrine defining market architecture, resource allocation, distribution model, and asset protection strategy across Heavy Duty and Light Duty segments.',
+        headline: 'ELIMFILTERS Commercial Architecture Master Doctrine v2.0',
+        description: 'Master commercial doctrine of ELIMFILTERS® defining business objective, market architecture, industry strategy, systems strategy, distribution philosophy, resource allocation, and governance across Heavy Duty and Light Duty segments.',
         url: 'https://elimfilters.com/knowledge-center/commercial-doctrine',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         about: { '@type': 'Thing', name: 'Industrial Asset Protection Strategy', description: 'Commercial framework for contamination control across critical mechanical systems.' },

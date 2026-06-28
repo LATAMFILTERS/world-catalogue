@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-06-28T14:06:33.190Z",
-    "note_count": 55,
+    "generated": "2026-06-28T14:24:04.700Z",
+    "note_count": 56,
     "entity_types": [
       "architecture",
       "commercial-system",
@@ -17,7 +17,7 @@
       "taxonomy",
       "technology"
     ],
-    "resolution_ratio": 0.982,
+    "resolution_ratio": 0.964,
     "generator": "scripts/build-citation-index.js"
   },
   "entities": {

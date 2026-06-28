@@ -1,6 +1,13 @@
 # MARKET ARCHITECTURE AND PROFITABILITY STRATEGY
 ## ELIMFILTERS — Commercial Doctrine v1.0
-### Effective: 2026-06-28 | Status: MASTER — Permanent Doctrine
+### Effective: 2026-06-28 | Status: SUPERSEDED
+
+> **⚠ SUPERSEDED — Historical Reference Only**
+> This document has been superseded by:
+> **ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0**
+> Location: `elimfilters-vault/commercial/ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER.md`
+> Superseded on: 2026-06-28
+> Do not use this document for commercial decisions. Retained for historical record only.
 
 ---
 

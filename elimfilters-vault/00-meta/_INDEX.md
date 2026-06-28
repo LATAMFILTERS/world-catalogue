@@ -5,22 +5,31 @@ Last updated: 2026-06-28
 
 ---
 
-## COMMERCIAL DOCTRINE (10-commercial/)
+## COMMERCIAL DOCTRINE
+
+### Master Doctrine (commercial/)
 
 | Document | Status | Date |
 |----------|--------|------|
-| [[MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY]] | ✅ MASTER — Permanent Doctrine | 2026-06-28 |
+| [[ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER]] | ✅ MASTER v2.0 — Permanent Doctrine | 2026-06-28 |
+
+### Historical (10-commercial/) — Superseded
+
+| Document | Status | Superseded By |
+|----------|--------|---------------|
+| [[MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY]] | ⚠ SUPERSEDED v1.0 | ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0 |
 | DURATECH | ✅ Commercial Sheet | — |
 | MARINECLEAN | ✅ Commercial Sheet | — |
 
-**Core principles (doctrine summary):**
-- ELIMFILTERS = Asset Protection Company, not filter supplier
-- HD (80% resources) = profitability engine → Mining, Construction, Agriculture, Oil&Gas, Marine, Power, Railway
+**Core principles (doctrine summary) — from MASTER v2.0:**
+- ELIMFILTERS® = Asset Protection Company, not filter supplier
+- HD (80% resources) = profitability engine → Mining, Construction, Agriculture, Oil&Gas, Marine, Power, Railway, Transportation & GSE, Waste, Industrial Manufacturing
 - LD (20% resources) = market participation engine → Automotive, Fleets, Service Centers
 - Target: HD 7–10% market share | LD minimum 8% regional
 - Economic unit = Protected Asset, not the filter
-- Distributor = regional extension of the organization, selected by asset access — not volume
+- Distributor = regional extension of ELIMFILTERS®, representing our engineering standards, asset protection philosophy, and long-term commitment to every market they serve
 - Commercial Intelligence = permanent corporate asset
+- Airport/GSE operations → integrated under Transportation & Fleet Operations (not standalone industry)
 
 ---
 
