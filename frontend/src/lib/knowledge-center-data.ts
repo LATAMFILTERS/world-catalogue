@@ -847,4 +847,838 @@ export const KC_INDUSTRIES = [
   { slug: 'oil-gas', title: 'Oil & Gas', icon: '🛢️', dust: 'High', description: 'Sand, H₂S, drilling mud contamination in upstream and midstream oil and gas assets.' },
   { slug: 'manufacturing', title: 'Manufacturing', icon: '🏭', dust: 'Moderate', description: 'Metalworking fluid contamination, compressor intake filtration, and hydraulic press protection.' },
   { slug: 'power-generation', title: 'Power Generation', icon: '⚡', dust: 'Moderate', description: 'Turbine air intake filtration, generator lube systems, and continuous operation requirements.' },
+  { slug: 'railway', title: 'Railway', icon: '🚂', dust: 'Moderate', description: 'Diesel soot, brake dust, and extended service interval requirements for locomotive and rail fleet operations.' },
+  { slug: 'waste-municipal', title: 'Waste & Municipal', icon: '🗑️', dust: 'High', description: 'Extreme duty cycles, organic decomposition dust, and hydraulic system demands in refuse collection and compaction equipment.' },
+];
+
+// ─── TECHNOLOGIES ─────────────────────────────────────────────────────────────
+
+export interface KCTechnology {
+  slug: string;
+  name: string;
+  domain: string;
+  tagline: string;
+  engineeringPrinciple: string;
+  contamination: string[];
+  performanceSpecs: { label: string; value: string }[];
+  standards: string[];
+  relatedSystems: string[];
+  relatedIndustries: string[];
+  worksWith: string[];
+}
+
+export const KC_TECHNOLOGIES: KCTechnology[] = [
+  {
+    slug: 'macrocore',
+    name: 'MACROCORE™',
+    domain: 'Air Intake Protection',
+    tagline: 'Multi-layer synthetic air filtration for extreme-duty diesel engine protection.',
+    engineeringPrinciple: 'MACROCORE™ uses multi-layer synthetic microfiber media engineered for high dust holding capacity (DHC) and consistent Beta efficiency throughout the service life. The element structure combines an outer pre-filter layer for coarse particle capture, a primary synthetic microfiber layer for sub-10 µm efficiency, and a structural wire support to maintain pleat geometry under anti-collapse loading. Designed for air intake filtration in mining, construction, and agriculture environments where airborne silica concentrations reach 5,000–15,000 mg/m³.',
+    contamination: ['Airborne silica', 'Rock fines', 'Grain dust and chaff', 'Carbon soot', 'Cement particulate', 'Coal dust'],
+    performanceSpecs: [
+      { label: 'Gravimetric efficiency (ISO 5011)', value: '≥99.5%' },
+      { label: 'Particulate efficiency at 5 µm', value: '≥99.9%' },
+      { label: 'Anti-collapse rating', value: '62 PSI (4.3 bar)' },
+      { label: 'Thermal limit (continuous)', value: '120°C' },
+    ],
+    standards: ['ISO 5011', 'SAE J1539'],
+    relatedSystems: ['air-intake-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'oil-gas', 'power-generation', 'truck-fleets'],
+    worksWith: ['INTEKCORE™'],
+  },
+  {
+    slug: 'syntrax',
+    name: 'SYNTRAX™',
+    domain: 'Engine Lubrication Protection',
+    tagline: 'Synthetic lube oil filtration for extended drain and bearing life extension.',
+    engineeringPrinciple: 'SYNTRAX™ uses synthetic microfiber media for engine lube oil filtration, achieving β₁₀(c) ≥200 efficiency (99.5% at 10 µm) with 2–3× the dirt holding capacity of equivalent cellulose elements. The anti-drain back valve prevents oil column drain-down during engine shutdown, eliminating dry-start bearing exposure. Cold start differential pressure remains below 0.5 bar at –20°C with synthetic oil formulations, keeping the bypass valve closed during cold crank.',
+    contamination: ['Metallic wear particles', 'Silica ingress via air intake', 'Carbon soot from combustion', 'Oxidation products', 'Coolant contamination'],
+    performanceSpecs: [
+      { label: 'Beta efficiency β₁₀(c)', value: '≥200 (99.5%)' },
+      { label: 'DHC vs cellulose', value: '2–3× capacity' },
+      { label: 'Thermal limit (continuous)', value: '150°C' },
+      { label: 'Cold start ΔP at –20°C', value: '<0.5 bar' },
+    ],
+    standards: ['ISO 16889', 'ISO 4406', 'SAE J1858'],
+    relatedSystems: ['lubrication-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'railway', 'power-generation'],
+    worksWith: [],
+  },
+  {
+    slug: 'nanoforce',
+    name: 'NANOFORCE™',
+    domain: 'Hydraulic System Protection',
+    tagline: 'High-Beta hydraulic filtration for proportional valve and servo valve protection.',
+    engineeringPrinciple: 'NANOFORCE™ achieves β₁₀(c) ≥200 for standard hydraulic applications and β₄(c) ≥1000 for precision servo valve protection. The element collapse resistance of ≥3,000 kPa prevents structural failure under pressure surges. Available in pressure line (rated to 420 bar system pressure), return line, and offline kidney loop configurations. Target ISO 4406 cleanliness of 16/14/11 is achievable with proper system design combining NANOFORCE™ elements with breather protection and commissioning flush procedures.',
+    contamination: ['Hard particles 5–15 µm (proportional valve clearance range)', 'Metallic wear debris', 'Silica ingress via breathers', 'Water contamination', 'Varnish precursors'],
+    performanceSpecs: [
+      { label: 'Beta efficiency β₁₀(c)', value: '≥200 (99.5%)' },
+      { label: 'Precision grade β₄(c)', value: '≥1000 (99.9%)' },
+      { label: 'Element collapse resistance', value: '≥3,000 kPa' },
+      { label: 'Pressure line rating', value: 'To 420 bar' },
+    ],
+    standards: ['ISO 16889', 'ISO 4406', 'NAS 1638', 'NFPA T2.14'],
+    relatedSystems: ['hydraulic-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'manufacturing', 'oil-gas', 'marine'],
+    worksWith: [],
+  },
+  {
+    slug: 'syntepore',
+    name: 'SYNTEPORE™',
+    domain: 'Fuel Cleanliness — HPCR Injector Protection',
+    tagline: 'Nanofiber fuel filtration for high-pressure common rail injector protection.',
+    engineeringPrinciple: 'SYNTEPORE™ uses nanofiber surface-loading media to achieve β₄(c) ≥200 particle efficiency in diesel fuel filtration. Surface-loading (as opposed to depth-loading cellulose) prevents media fiber collapse and migration under pulsating pressure. Compatible with B20 biodiesel blends and designed for water tolerance to 500 ppm emulsified water without media degradation or efficiency loss. Target protection for HPCR injectors requires fuel cleanliness at ISO 12/10/8 — achievable with SYNTEPORE™ in a properly designed two-stage fuel system.',
+    contamination: ['Hard particles >4 µm (injector needle clearance)', 'Silica particles', 'Metallic particles from fuel system wear', 'Emulsified water (tolerance only — free water removal via HYDROCORE™)'],
+    performanceSpecs: [
+      { label: 'Beta efficiency β₄(c)', value: '≥200 (99.5%)' },
+      { label: 'Biodiesel compatibility', value: 'B20 certified' },
+      { label: 'Water tolerance', value: 'No degradation to 500 ppm emulsified' },
+      { label: 'Target fuel cleanliness', value: 'ISO 12/10/8' },
+    ],
+    standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
+    relatedSystems: ['fuel-cleanliness-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'power-generation'],
+    worksWith: ['HYDROCORE™'],
+  },
+  {
+    slug: 'hydrocore',
+    name: 'HYDROCORE™',
+    domain: 'Fuel Water Separation',
+    tagline: 'Coalescing fuel water separator for free water removal from diesel fuel.',
+    engineeringPrinciple: 'HYDROCORE™ uses a coalescing mechanism — hydrophobic media attracts and aggregates small water droplets into larger droplets that fall by gravity into a drain sump. Free water removal efficiency ≥96% per ISO 16332. Coalescing is paired with 10 µm particulate capability to address both contamination modes simultaneously. The drain sump requires periodic manual drain or an automated sump drain valve. HYDROCORE™ is complementary to SYNTEPORE™ — HYDROCORE™ removes free and coalesced water; SYNTEPORE™ provides particle protection for HPCR injectors.',
+    contamination: ['Free water in diesel fuel', 'Emulsified water', 'Entrained water from fuel storage', 'Microbial growth (removed via water elimination)'],
+    performanceSpecs: [
+      { label: 'Free water removal (ISO 16332)', value: '≥96%' },
+      { label: 'Particulate capability', value: '10 µm' },
+      { label: 'Mechanism', value: 'Hydrophobic coalescing + gravity sump' },
+    ],
+    standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
+    relatedSystems: ['fuel-cleanliness-protection'],
+    relatedIndustries: ['marine', 'mining', 'agriculture', 'truck-fleets', 'oil-gas', 'power-generation'],
+    worksWith: ['SYNTEPORE™'],
+  },
+  {
+    slug: 'thermacore',
+    name: 'THERMACORE™',
+    domain: 'Cooling System Protection',
+    tagline: 'SCA conditioner for diesel engine cooling system inhibitor management.',
+    engineeringPrinciple: 'THERMACORE™ controls supplemental coolant additive (SCA) concentration through a controlled-release media that depletes SCA linearly across the service interval. This maintains inhibitor concentration in the 0.5–1.0 units SCA/L target band without overdose or underdose conditions. The element also provides >80% particulate capture at 20 µm in coolant, removing corrosion products, scale particles, and silicate gel. Compatible with OAT (organic acid technology), HOAT, and conventional silicate coolants. Cooling system contamination control prevents cavitation erosion of wet cylinder liners, a primary failure mode in heavy diesel engines.',
+    contamination: ['Scale deposits', 'Cavitation erosion products', 'Corrosion products', 'Silicate gel precipitation', 'SCA inhibitor depletion'],
+    performanceSpecs: [
+      { label: 'SCA release mechanism', value: 'Linear controlled release' },
+      { label: 'Particulate capture at 20 µm', value: '>80%' },
+      { label: 'Coolant compatibility', value: 'OAT, HOAT, conventional' },
+    ],
+    standards: ['ASTM D6210', 'ASTM D3306'],
+    relatedSystems: ['cooling-system-protection'],
+    relatedIndustries: ['mining', 'construction', 'truck-fleets', 'agriculture', 'power-generation'],
+    worksWith: [],
+  },
+  {
+    slug: 'drycore',
+    name: 'DRYCORE™',
+    domain: 'Compressed Air Protection',
+    tagline: 'Multi-stage compressed air filtration achieving ISO 8573-1 Class 1 purity.',
+    engineeringPrinciple: 'DRYCORE™ addresses all three compressed air contamination categories defined by ISO 8573-1: solid particles, water (liquid and vapor), and oil (liquid, aerosol, and vapor). The multi-stage system consists of a pre-filter for bulk liquid removal, a coalescing filter for aerosol capture (≥99.9% liquid oil removal), an activated carbon stage for oil vapor and odor, and a post-filter for final particulate polish. ISO 8573-1 Class 1:4:1 is achievable — representing particle class 1 (≤0.1 mg/m³ at ≥0.5 µm), water class 4 (pressure dewpoint ≤+3°C), and oil class 1 (≤0.01 mg/m³). Applied in precision manufacturing, pharmaceutical production, food processing, and instrument air systems.',
+    contamination: ['Water vapor and liquid water', 'Compressor oil aerosol', 'Oil vapor', 'Solid particles from compressor wear', 'Rust from distribution piping'],
+    performanceSpecs: [
+      { label: 'Liquid oil removal', value: '≥99.9%' },
+      { label: 'ISO 8573-1 class achievable', value: '1:4:1' },
+      { label: 'Stages', value: 'Pre-filter, coalescing, carbon, post-filter' },
+    ],
+    standards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
+    relatedSystems: [],
+    relatedIndustries: ['manufacturing', 'oil-gas', 'power-generation'],
+    worksWith: [],
+  },
+  {
+    slug: 'intekcore',
+    name: 'INTEKCORE™',
+    domain: 'Air Intake Housing Systems',
+    tagline: 'Air intake housing and pre-cleaner system for primary element life extension.',
+    engineeringPrinciple: 'INTEKCORE™ provides the system housing around the MACROCORE™ primary element, including pre-cleaner integration, restriction monitoring port, and service access design. Centrifugal pre-cleaners integrated into INTEKCORE™ housings remove 80–95% of dust before it reaches the primary element, extending primary element service life 3–5× in high-dust environments. The integrated restriction indicator port accepts mechanical or electronic restriction indicators for condition-based service scheduling. Housing seals are precision-engineered to eliminate bypass at the housing-to-engine interface.',
+    contamination: ['Pre-cleaner stage: coarse particles >50 µm removed by centrifugal separation', 'Housing bypass prevention: zero-leak seal design', 'Restriction monitoring: prevents service-limit exceedance'],
+    performanceSpecs: [
+      { label: 'Pre-cleaner dust removal', value: '80–95% coarse particles' },
+      { label: 'Primary element life extension', value: '3–5× in high-dust' },
+      { label: 'Restriction port', value: 'Mechanical and electronic indicator compatible' },
+    ],
+    standards: ['ISO 5011'],
+    relatedSystems: ['air-intake-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'oil-gas'],
+    worksWith: ['MACROCORE™'],
+  },
+  {
+    slug: 'microkappa',
+    name: 'MICROKAPPA™',
+    domain: 'Cabin Air Protection',
+    tagline: 'H13-class cabin air filtration for operator health in heavy equipment cabs.',
+    engineeringPrinciple: 'MICROKAPPA™ addresses operator occupational health exposure to PM₁₀, PM₂.₅, PM₁.₀, crystalline silica, and chemical vapors in heavy equipment operator cabs. The dual-function element combines H13-class particulate filtration (≥95% PM₂.₅ efficiency) with an activated carbon layer for VOC, NO₂, and diesel exhaust vapor control. Initial restriction ≤50 Pa allows installation in HVAC systems with standard fan capacity. Respirable silica occupational limits (OSHA PEL: 0.025 mg/m³) require effective cabin filtration in mining, construction, and agriculture environments where ambient silica concentrations exceed limits by 100–1000×.',
+    contamination: ['PM₁₀, PM₂.₅, PM₁.₀ particulates', 'Crystalline silica (respirable fraction)', 'Diesel exhaust particulate (DPM)', 'Volatile organic compounds (VOCs)', 'NO₂ and combustion gases', 'Biological agents'],
+    performanceSpecs: [
+      { label: 'PM₂.₅ efficiency', value: '≥95%' },
+      { label: 'Classification', value: 'H13-class (HEPA-adjacent)' },
+      { label: 'Initial restriction', value: '≤50 Pa at rated flow' },
+      { label: 'Activated carbon layer', value: 'VOC + NO₂ adsorption' },
+    ],
+    standards: ['ISO 11155-1', 'ISO 11155-2', 'DIN 71220', 'ISO 16890'],
+    relatedSystems: ['cabin-air-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'oil-gas', 'waste-municipal'],
+    worksWith: [],
+  },
+];
+
+// ─── SYSTEM DETAILS ───────────────────────────────────────────────────────────
+
+export interface KCSystemDetail {
+  slug: string;
+  failureMechanism: string;
+  contaminationTarget: string;
+  targetCleanliness: string;
+  keyMetrics: { label: string; value: string }[];
+  sections: { heading: string; body: string; callout?: { label: string; value: string }[] }[];
+}
+
+export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
+  'air-intake-protection': {
+    slug: 'air-intake-protection',
+    failureMechanism: 'Unfiltered air ingests silica and abrasive particles through the combustion air system → particles embed in piston ring/cylinder bore interface → two-body abrasive wear → oil consumption increase → ring land collapse → engine overhaul required.',
+    contaminationTarget: 'Airborne particulate — silica, carbon, grain dust, cement — at concentrations from 100 mg/m³ (highway) to 15,000 mg/m³ (mining blast areas).',
+    targetCleanliness: '≥99.5% gravimetric efficiency (ISO 5011); ≤625 mm H₂O restriction for turbocharged; ≤250 mm H₂O for naturally aspirated.',
+    keyMetrics: [
+      { label: 'Mining dust concentration', value: '5,000–15,000 mg/m³' },
+      { label: 'Efficiency target (ISO 5011)', value: '≥99.5% gravimetric' },
+      { label: 'Service limit (turbo)', value: '625 mm H₂O' },
+      { label: 'Engine life extension', value: '3–5× with system approach' },
+    ],
+    sections: [
+      {
+        heading: 'Protection Domain',
+        body: 'Air intake filtration is the first and most critical protection barrier for diesel engines in heavy-duty applications. Every kilogram of dust that reaches the combustion chamber contributes directly to cylinder and ring wear. In mining environments, dust concentrations exceed 5,000 mg/m³ during blasting operations — compared to highway environments at 0.1–1 mg/m³. The filtration system must remove ≥99.5% of incoming particulate mass while maintaining restriction below the engine manufacturer\'s service limit.',
+      },
+      {
+        heading: 'Restriction and Service Interval',
+        body: 'Filter restriction increases as the element loads with contaminant. Service is required when restriction reaches the threshold set by the engine manufacturer — typically 375–625 mm H₂O for turbocharged diesel engines. Condition-based service (using restriction indicators) maximizes element DHC utilization and avoids premature replacement. In high-dust environments, service intervals can range from 50 hours (extreme mining blast areas) to 2,000+ hours (highway truck operations).',
+        callout: [
+          { label: 'Typical highway interval', value: '1,000–2,000 hrs' },
+          { label: 'Mining interval', value: '50–250 hrs' },
+          { label: 'Agriculture (harvest)', value: '8–24 hrs' },
+        ],
+      },
+      {
+        heading: 'Pre-Cleaner Systems',
+        body: 'Centrifugal pre-cleaners installed upstream of the primary element remove 80–95% of coarse dust (>50 µm) before it reaches the filter media. INTEKCORE™ housings integrate pre-cleaner functionality, extending primary MACROCORE™ element life by 3–5× in high-dust environments. Pre-cleaners require automatic evacuation of the separated dust through a scavenging air ejector or manual drain.',
+      },
+      {
+        heading: 'Failure Analysis',
+        body: 'Air intake filter failures occur in three modes: media failure (breach in filter media allowing unfiltered air bypass), seal failure (leak at the housing-to-engine interface), and service limit exceedance (continued operation after restriction threshold is reached). Of these, seal failure is most common in field conditions — improper installation torque, damaged gaskets, or distorted housing seating surfaces allow unfiltered air to bypass the element entirely.',
+      },
+    ],
+  },
+  'fuel-cleanliness-protection': {
+    slug: 'fuel-cleanliness-protection',
+    failureMechanism: 'Water above 200 ppm in HPCR fuel → corrosion of injector needle and valve seat → micro-pitting → stiction → increased injection timing variability → rough running → injector replacement. Hard particles >4 µm → abrasive wear of injector needle and orifice → spray pattern distortion → combustion degradation → power loss.',
+    contaminationTarget: 'Water (<200 ppm for HPCR protection), hard particles (ISO 12/10/8 cleanliness for HPCR injectors at 2,000+ bar injection pressure).',
+    targetCleanliness: 'ISO 12/10/8 particle cleanliness; <200 ppm water content (ISO 12937 / ASTM D6304).',
+    keyMetrics: [
+      { label: 'HPCR injector clearance', value: '1–3 µm needle/seat' },
+      { label: 'Water limit for HPCR', value: '<200 ppm' },
+      { label: 'Particle target', value: 'ISO 12/10/8' },
+      { label: 'Injector service cost', value: '$800–$2,500 per injector' },
+    ],
+    sections: [
+      {
+        heading: 'HPCR Injector Sensitivity',
+        body: 'High-pressure common rail (HPCR) fuel systems operate at injection pressures from 1,600 to 2,500 bar. Injector needle-to-seat clearances are 1–3 µm — smaller than many fuel contaminant particles. At these clearances, even sub-5 µm particles cause abrasive wear and dimensional change. Water above 200 ppm in fuel causes corrosion of precision-ground injector surfaces and promotes microbial growth in fuel storage.',
+        callout: [
+          { label: 'Injection pressure', value: '1,600–2,500 bar' },
+          { label: 'Needle clearance', value: '1–3 µm' },
+          { label: 'Water damage threshold', value: '>200 ppm' },
+        ],
+      },
+      {
+        heading: 'Two-Stage Protection Strategy',
+        body: 'Fuel protection requires two complementary technologies: SYNTEPORE™ for particle removal (β₄(c) ≥200) and HYDROCORE™ for free water removal (≥96%). The pre-filter/coarse separator (HYDROCORE™) is installed upstream to remove bulk water and coarse particles. The final element (SYNTEPORE™) provides fine particle protection at the injection pump inlet. This sequence protects both the lift pump (10–15 µm clearances) and the high-pressure pump and injectors (1–3 µm clearances).',
+      },
+      {
+        heading: 'Water Contamination Pathways',
+        body: 'Water enters diesel fuel through atmospheric breathing of storage tanks (condensation), transport container contamination, fuel depot cross-contamination, and worn fill-point seals. Coastal marine environments and high-humidity climates accelerate tank condensation. Microbial growth (Hormoconis resinae, Pseudomonas aeruginosa) occurs at the water/fuel interface above 60–70°F and can block filters within 72 hours.',
+      },
+    ],
+  },
+  'lubrication-protection': {
+    slug: 'lubrication-protection',
+    failureMechanism: 'Particle contamination in lube oil → abrasive wear of bearing journals and piston rings → bearing clearance opens → oil film breakdown at reduced clearance → bearing seizure. Bypass valve opening during cold start → unfiltered oil to bearings during first 30–60 seconds.',
+    contaminationTarget: 'Solid particles (ISO 4406 target 16/14/11 for system approach), water (from coolant leak or condensation), fuel dilution, and oxidation soot.',
+    targetCleanliness: 'ISO 4406 code 16/14/11 for system-approach protection; OEM specification for minimum compliance.',
+    keyMetrics: [
+      { label: 'Bearing life at 16/14/11', value: '3–5× vs 19/17/14' },
+      { label: 'Typical lube filter β₁₀(c)', value: 'SYNTRAX™: ≥200' },
+      { label: 'Bypass valve cracking ΔP', value: '0.8–1.0 bar' },
+      { label: 'Cold start ADB spec', value: '<1 mL/min drain-back' },
+    ],
+    sections: [
+      {
+        heading: 'Bearing Clearance and Contamination',
+        body: 'Engine bearing journals operate with clearances of 5–25 µm depending on bearing size and design. Particles in this size range — most prevalent in used engine oil — cause two-body and three-body abrasive wear that progressively increases clearance. Increased clearance reduces oil film pressure, which in turn increases bearing operating temperature. ISO 4406 cleanliness code 16/14/11 — achievable with SYNTRAX™ — extends bearing life 3–5× versus the commodity approach at 19/17/14.',
+      },
+      {
+        heading: 'Bypass Valve Design',
+        body: 'Lube filter bypass valves open at 0.8–1.0 bar differential pressure to protect the engine from oil starvation if the filter becomes severely restricted. During bypass, unfiltered oil bypasses the filter media and enters the lubrication circuit. This is acceptable for brief cold-start conditions but represents a failure mode if sustained. Bypass valve spring rate must be calibrated to maintain closure across the full operating temperature range — spring relaxation at elevated temperature can cause partial bypass below the rated threshold.',
+      },
+      {
+        heading: 'Extended Drain Intervals',
+        body: 'Extended drain interval programs require oil analysis to monitor oil condition and contamination level throughout the interval. SYNTRAX™ elements provide higher dirt holding capacity than cellulose, enabling longer intervals in terms of filter restriction. However, lube oil replacement interval is governed by oil oxidation, additive depletion, and TAN (total acid number) — not filter restriction alone. Extended drain programs without oil analysis risk cumulative bearing wear from contaminated oil.',
+      },
+    ],
+  },
+  'hydraulic-protection': {
+    slug: 'hydraulic-protection',
+    failureMechanism: 'Particles in the 5–15 µm clearance range of proportional valve spools → spool stiction → valve position error → pressure and flow control instability → machine motion faults → unexpected movement. Hard particles >3 µm in high-pressure pump clearances → abrasive wear → pump efficiency loss → heat generation → seal failure.',
+    contaminationTarget: 'Hard particles in the 1–15 µm range, targeting ISO 4406 16/14/11 for proportional systems and ISO 18/16/13 minimum per NFPA T2.14.',
+    targetCleanliness: 'ISO 4406 16/14/11 for proportional valve systems; ISO 18/16/13 minimum (NFPA T2.14); ISO 15/13/10 for servo valve systems.',
+    keyMetrics: [
+      { label: 'Proportional valve clearance', value: '5–10 µm' },
+      { label: 'NFPA T2.14 minimum', value: 'ISO 18/16/13' },
+      { label: 'NANOFORCE™ β₁₀(c)', value: '≥200 (99.5%)' },
+      { label: 'Equipment availability impact', value: '–15–30% without control' },
+    ],
+    sections: [
+      {
+        heading: 'Proportional Valve Protection',
+        body: 'Proportional valves and servo valves control hydraulic flow and pressure in direct proportion to an electrical input signal. Spool-to-bore clearances of 5–10 µm make these valves highly sensitive to particle contamination. Hard particles trap between spool and bore, increasing breakout friction (stiction) and causing position hysteresis — the actual valve position lags the commanded position. NFPA T2.14 mandates ISO 18/16/13 minimum cleanliness for systems containing proportional control valves.',
+        callout: [
+          { label: 'Servo valve clearance', value: '2–5 µm' },
+          { label: 'Proportional valve clearance', value: '5–10 µm' },
+          { label: 'Gear pump clearance', value: '10–25 µm' },
+        ],
+      },
+      {
+        heading: 'Commissioning Flush Protocol',
+        body: 'New hydraulic systems contain manufacturing residue (machining chips, pipe scale, welding slag, sealing compound). Commissioning flush — circulating filtered oil at elevated flow rate through dedicated flush circuits before first operation — is essential to achieve target cleanliness. System cleanliness should be verified by particle counting (ISO 11171 calibrated APC) before connecting servo or proportional valves.',
+      },
+      {
+        heading: 'Offline Kidney Loop Filtration',
+        body: 'Offline kidney loop filters — independent filtration circuits that draw from and return to the reservoir — provide continuous particulate removal independent of system operation. Unlike pressure and return line filters that only filter during machine operation, kidney loops maintain reservoir cleanliness during standby. Recommended flow rate: 10–15% of reservoir volume per hour for steady-state maintenance filtration.',
+      },
+    ],
+  },
+  'cooling-system-protection': {
+    slug: 'cooling-system-protection',
+    failureMechanism: 'SCA inhibitor depletion → liner wall cavitation erosion → coolant contamination with cast iron particles → coolant jacket corrosion → head gasket failure. Scale formation → reduced heat transfer coefficient → elevated coolant temperature → overheating events.',
+    contaminationTarget: 'SCA concentration maintained in 0.5–1.0 units/L band; scale, corrosion products, and silicate gel below 20 µm threshold.',
+    targetCleanliness: 'SCA concentration 0.5–1.0 units per liter; pH 8.5–10.5; coolant change interval per ASTM D6210.',
+    keyMetrics: [
+      { label: 'SCA target concentration', value: '0.5–1.0 units/L' },
+      { label: 'THERMACORE™ particle capture', value: '>80% at 20 µm' },
+      { label: 'Liner erosion mechanism', value: 'Cavitation from vapor bubble collapse' },
+    ],
+    sections: [
+      {
+        heading: 'Cavitation Erosion Mechanism',
+        body: 'Diesel engine wet cylinder liners vibrate due to combustion pressure pulses. This vibration creates low-pressure zones on the coolant side of the liner — when pressure drops below the vapor pressure of the coolant, vapor bubbles form. When these bubbles collapse, micro-jets of liquid impact the liner surface at velocities that erode cast iron at a rate that can penetrate a liner wall in 2,000–5,000 hours without adequate SCA protection. Supplemental coolant additives (SCA) form a protective film on the liner surface that absorbs the impact energy of bubble collapse.',
+      },
+      {
+        heading: 'SCA Management',
+        body: 'SCA concentration must remain within the 0.5–1.0 units/L range. Below 0.5, cavitation erosion protection is insufficient. Above 1.5, SCA precipitation can cause gel formation and clogging. THERMACORE™ releases SCA linearly across the service interval, maintaining concentration without overdose. SCA concentration is verified using test strips or refractometer measurement at each coolant service interval.',
+      },
+    ],
+  },
+  'cabin-air-protection': {
+    slug: 'cabin-air-protection',
+    failureMechanism: 'Unfiltered cabin air → occupational exposure to respirable silica (PM₁.₀) → cumulative lung dose → silicosis (irreversible fibrotic lung disease) — a permanently disabling occupational illness. PM₂.₅ → cardiovascular and respiratory disease. VOC/diesel exhaust → carcinogenic exposure.',
+    contaminationTarget: 'PM₁₀, PM₂.₅, PM₁.₀ particulates below occupational exposure limits; respirable silica below 0.025 mg/m³ (OSHA PEL).',
+    targetCleanliness: 'Cabin air quality below OEL: respirable silica <0.025 mg/m³, PM₂.₅ <35 µg/m³ (8-hr TWA), total diesel particulate below relevant national limits.',
+    keyMetrics: [
+      { label: 'OSHA PEL — respirable silica', value: '0.025 mg/m³' },
+      { label: 'MICROKAPPA™ PM₂.₅ efficiency', value: '≥95%' },
+      { label: 'Mining ambient silica vs OEL', value: '100–1,000× above limit' },
+    ],
+    sections: [
+      {
+        heading: 'Occupational Exposure Framework',
+        body: 'Operators of mining, construction, and agricultural equipment face chronic exposure to airborne crystalline silica at concentrations 100–1,000× above the OSHA Permissible Exposure Limit (PEL) of 0.025 mg/m³ for respirable silica. Silicosis is a progressively disabling fibrotic lung disease with no cure — once silica deposits are established in lung tissue, the inflammation continues regardless of subsequent exposure reduction. Cabin air filtration is the primary engineering control for operator protection in environments where atmospheric controls are impractical.',
+        callout: [
+          { label: 'OSHA silica PEL', value: '0.025 mg/m³' },
+          { label: 'Mine ambient concentration', value: 'Up to 25 mg/m³ respirable fraction' },
+          { label: 'Protection factor needed', value: '1,000×' },
+        ],
+      },
+      {
+        heading: 'Cabin Filtration Design',
+        body: 'MICROKAPPA™ H13-class elements provide ≥95% PM₂.₅ efficiency and ≥99.95% efficiency at 0.3 µm (MPPS for HEPA-class media). The activated carbon layer adsorbs VOCs, NO₂, diesel exhaust gases, and agricultural chemicals. Proper cabin filtration requires positive pressurization of the cab relative to the exterior — air must flow outward through any gap, preventing unfiltered exterior air from entering through door seals, cable penetrations, or HVAC ducts.',
+      },
+      {
+        heading: 'Filter Replacement Protocol',
+        body: 'Cabin air filter service intervals in mining and construction environments range from 100 to 500 hours depending on ambient dust concentration and cab pressurization integrity. Restriction should be checked at each scheduled service. Activated carbon saturation occurs independently of particulate loading — in high-VOC environments (diesel exhaust, paint fumes), carbon may saturate before particulate capacity is reached. Carbon saturation is indicated by odor breakthrough.',
+      },
+    ],
+  },
+};
+
+// ─── INDUSTRY DETAILS ─────────────────────────────────────────────────────────
+
+export interface KCIndustryDetail {
+  slug: string;
+  contaminationEnvironment: string;
+  primaryRisks: string[];
+  serviceIntervalNote: string;
+  keyMetrics: { label: string; value: string }[];
+  technologies: string[];
+  standards: string[];
+  systems: string[];
+  sections: { heading: string; body: string }[];
+}
+
+export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
+  mining: {
+    slug: 'mining',
+    contaminationEnvironment: 'Extreme — silica dust 5,000–15,000 mg/m³ during blasting; coal dust, rock fines, explosive gases, and process water contamination across surface and underground operations.',
+    primaryRisks: [
+      'Air intake silica ingestion → engine abrasive wear',
+      'Operator silicosis risk (respirable fraction)',
+      'Hydraulic valve stiction from fine silica particles',
+      'Bearing wear from lube oil contamination',
+      'Fuel water contamination in remote storage',
+    ],
+    serviceIntervalNote: 'Air filter: 50–250 hours depending on blast proximity and dust suppression. Lube oil: per oil analysis program, typically 250–500 hours with synthetic media. Hydraulic: 500–1,000 hours with kidney loop systems.',
+    keyMetrics: [
+      { label: 'Dust concentration (blast area)', value: '5,000–15,000 mg/m³' },
+      { label: 'Primary element service (extreme)', value: '50–100 hrs' },
+      { label: 'MICROKAPPA™ required', value: 'Yes — silicosis risk' },
+      { label: 'ISO 4406 hydraulic target', value: '16/14/11' },
+    ],
+    technologies: ['MACROCORE™', 'INTEKCORE™', 'MICROKAPPA™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    standards: ['ISO 5011', 'ISO 4406', 'ISO 16889', 'ISO 11155-1'],
+    systems: ['Air Intake Protection', 'Cabin Air Protection', 'Hydraulic Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection'],
+    sections: [
+      {
+        heading: 'Contamination Profile',
+        body: 'Mining operations generate contamination across all protection domains simultaneously. Blasting and drilling produce silica concentrations that can render primary air filters unserviceable in 50–100 hours. Underground operations add diesel exhaust particulate (DPM) to the cabin air load. Hydraulic systems on haul trucks and loaders are exposed to dust ingress through worn cylinder seal wipers and breather contamination. Fuel storage in remote locations accumulates water contamination from tank condensation over weeks of thermal cycling.',
+      },
+      {
+        heading: 'Equipment Applications',
+        body: 'Mining equipment requiring ELIMFILTERS system protection includes surface haul trucks (150–400 tonne payload, CAT 793, Komatsu 930E class), underground loaders (LHDs), drill rigs, crushing and screening plant, and conveyor drive systems. Each equipment class has different duty cycles, contamination exposure levels, and service access constraints that determine the filtration strategy.',
+      },
+      {
+        heading: 'Cabin Air Priority',
+        body: 'Operator silicosis risk in mining is classified as an occupational health emergency in most jurisdictions. Ambient respirable silica in active mining areas exceeds the OSHA PEL (0.025 mg/m³) by 100–1,000×. MICROKAPPA™ H13-class cabin filtration is mandatory from an occupational health standpoint — not optional equipment. Cab pressurization integrity must be verified at each major service to prevent unfiltered air ingress through door seals and cable penetrations.',
+      },
+    ],
+  },
+  construction: {
+    slug: 'construction',
+    contaminationEnvironment: 'High — concrete dust, soil, sand, demolition debris; hydraulic circuit contamination from attachment changes; seasonal variation between dry (summer/high dust) and wet (winter/water ingress) conditions.',
+    primaryRisks: [
+      'Air intake concrete and silica dust — abrasive wear',
+      'Hydraulic contamination during quick-coupler attachment changes',
+      'Lube oil contamination in high-cycle excavators',
+      'Water contamination in fuel storage on site',
+    ],
+    serviceIntervalNote: 'Air filter: 250–500 hours in typical conditions; 100–200 hours during demolition work. Hydraulic: 500–1,000 hours, with attention to quick-coupler attachment changes as ingress points.',
+    keyMetrics: [
+      { label: 'Dust concentration (demolition)', value: 'Up to 2,000 mg/m³' },
+      { label: 'Air filter service interval', value: '250–500 hrs' },
+      { label: 'Quick-coupler ingress risk', value: 'HIGH at every attachment change' },
+    ],
+    technologies: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'MICROKAPPA™'],
+    standards: ['ISO 5011', 'ISO 4406', 'ISO 16889'],
+    systems: ['Air Intake Protection', 'Hydraulic Protection', 'Lubrication Protection', 'Cabin Air Protection'],
+    sections: [
+      {
+        heading: 'Contamination Profile',
+        body: 'Construction sites generate silica-containing dust from concrete cutting, demolition, earthmoving, and road base work. Hydraulic circuits face a specific ingress risk at quick-coupler attachment changes — each connection exposes hydraulic ports to ambient contamination for 5–30 seconds. Over a typical excavator\'s working day (8–10 attachment changes), cumulative ingress can significantly degrade hydraulic cleanliness.',
+      },
+      {
+        heading: 'Equipment Applications',
+        body: 'Construction equipment includes excavators (CAT 320–395, Komatsu PC200–800 class), wheel loaders, crawler dozers, graders, compaction equipment, and off-road dump trucks. Excavators are the highest-value asset requiring hydraulic protection, with complex multi-circuit systems controlling boom, arm, bucket, travel, and swing simultaneously.',
+      },
+    ],
+  },
+  agriculture: {
+    slug: 'agriculture',
+    contaminationEnvironment: 'High (seasonally extreme during harvest) — grain dust, chaff, crop residue, and organic matter. Harvest windows create extreme air intake loading that may require daily filter service. Soil dust from tillage operations.',
+    primaryRisks: [
+      'Air intake saturation during harvest — daily or more frequent service required',
+      'Cabin operator health — grain dust and agrochemical exposure',
+      'Hydraulic system contamination from high-cycle operations',
+      'Fuel water contamination in seasonal storage',
+    ],
+    serviceIntervalNote: 'Air filter during harvest: as frequent as 8–24 hours depending on crop type and humidity. Off-season: 250–500 hours. Lube oil: per oil analysis. Pre-cleaner systems extend primary element life significantly during harvest.',
+    keyMetrics: [
+      { label: 'Harvest air filter interval', value: '8–24 hrs (crop dependent)' },
+      { label: 'Pre-cleaner life extension', value: '3–5× primary element' },
+      { label: 'Season length', value: '6–12 weeks (high dust)' },
+    ],
+    technologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'NANOFORCE™', 'HYDROCORE™'],
+    standards: ['ISO 5011', 'ISO 4406', 'ISO 16889'],
+    systems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Cabin Air Protection', 'Fuel Cleanliness Protection'],
+    sections: [
+      {
+        heading: 'Harvest Season Contamination',
+        body: 'Combine harvesters and grain carts operate in concentrated grain dust during harvest season. Grain dust is highly combustible (explosion risk) and saturates air filter elements rapidly. Dust concentrations around operating combines can reach 500–2,000 mg/m³. Pre-cleaner systems with ejection hoppers are essential — without them, primary element service intervals may drop to 4–8 hours, creating unacceptable machine downtime during time-critical harvest windows.',
+      },
+      {
+        heading: 'Equipment Applications',
+        body: 'Agricultural equipment includes combine harvesters, tractors (100–500+ HP), sprayers, planters, and grain carts. Combines have the highest filtration demand due to the combination of crop dust generation at the header and engine proximity to the threshing and cleaning systems. Tractors pulling grain carts or tillage implements face high dust loads from disturbed soil.',
+      },
+    ],
+  },
+  'truck-fleets': {
+    slug: 'truck-fleets',
+    contaminationEnvironment: 'Moderate — highway dust, diesel soot from EGR systems, oil dilution from DPF post-injection. Long-haul routes have lower dust but high-cycle urban delivery generates higher soot loads.',
+    primaryRisks: [
+      'Engine oil contamination from EGR soot and DPF post-injection fuel dilution',
+      'Cabin air quality (urban diesel exhaust)',
+      'Extended drain interval compliance',
+      'Air restriction from accumulated highway dust',
+    ],
+    serviceIntervalNote: 'Air filter: 60,000–150,000 km highway; 30,000–80,000 km urban. Lube oil: per oil analysis program, typically 30,000–50,000 km long-haul with synthetic media.',
+    keyMetrics: [
+      { label: 'Highway air filter interval', value: '60,000–150,000 km' },
+      { label: 'Urban interval', value: '30,000–80,000 km' },
+      { label: 'EGR soot contamination', value: 'Up to 5% soot in lube oil' },
+    ],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'SYNTEPORE™'],
+    standards: ['ISO 5011', 'ISO 16889', 'SAE J1858'],
+    systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cabin Air Protection'],
+    sections: [
+      {
+        heading: 'Modern Diesel Engine Contamination',
+        body: 'Modern Euro VI/EPA EPA2010 diesel engines use EGR (exhaust gas recirculation) and DPF (diesel particulate filter) aftertreatment systems that introduce new contamination modes. EGR recirculates soot-laden exhaust into the intake manifold, depositing carbon soot in the engine oil at rates of 1–5% by mass. DPF regeneration uses post-injection fuel to burn accumulated soot — residual unburned fuel dilutes the lube oil, reducing viscosity and accelerating oxidation.',
+      },
+      {
+        heading: 'Extended Drain Programs',
+        body: 'Fleet operators pursue extended drain intervals to reduce per-vehicle maintenance costs. SYNTRAX™ elements support extended intervals by providing higher dirt holding capacity versus cellulose elements. However, interval extension requires oil analysis monitoring — filter capacity and oil condition must be evaluated together. Blind interval extension without monitoring risks bearing wear from degraded oil.',
+      },
+    ],
+  },
+  marine: {
+    slug: 'marine',
+    contaminationEnvironment: 'Medium-High — saltwater intrusion, marine diesel water contamination from tank condensation and fuel transfer, microbial growth in fuel tanks, IMO compliance requirements for vessel systems.',
+    primaryRisks: [
+      'Fuel water contamination — microbial growth, corrosion, injector damage',
+      'Saltwater intrusion into engine and hydraulic systems',
+      'IMO compliance for vessel filtration systems',
+      'Corrosion of metallic filter components from salt atmosphere',
+    ],
+    serviceIntervalNote: 'Fuel filter and water separator: monitor water sump at each refueling; replace per restriction or manufacturer interval. Lube oil: extended intervals with oil analysis typical for main propulsion engines.',
+    keyMetrics: [
+      { label: 'Fuel water contamination risk', value: 'HIGH — condensation in marine tanks' },
+      { label: 'IMO compliance', value: 'Required for international voyages' },
+      { label: 'MARINECLEAN™', value: 'IMO-certified ecosystem' },
+    ],
+    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™'],
+    standards: ['ISO 12937', 'ASTM D6304', 'ISO 16889', 'ISO 4406'],
+    systems: ['Fuel Cleanliness Protection', 'Lubrication Protection', 'Hydraulic Protection'],
+    sections: [
+      {
+        heading: 'Marine Fuel Contamination',
+        body: 'Marine fuel tanks are particularly susceptible to water contamination due to large tank volumes with significant atmospheric breathing, long dwell times between fuel consumption cycles, and temperature differentials between sea temperature and ambient air that drive condensation. Microbial growth at the water/fuel interface can produce biomass that blocks filters within days under warm conditions.',
+      },
+      {
+        heading: 'IMO Compliance and MARINECLEAN™',
+        body: 'Vessels operating on international routes must comply with International Maritime Organization (IMO) requirements for environmental protection — including fuel treatment standards and bilge water treatment. The MARINECLEAN™ ecosystem provides IMO-certified filtration solutions for marine diesel and hydraulic systems. Reference Technical Doctrine for MARINECLEAN™ commercial program details.',
+      },
+    ],
+  },
+  'oil-gas': {
+    slug: 'oil-gas',
+    contaminationEnvironment: 'High — drilling fluid, barite dust, H₂S sour gas, produced water, sand and formation particles in upstream operations; refinery process contamination in downstream applications.',
+    primaryRisks: [
+      'Drilling fluid (mud) contamination of air intake systems',
+      'H₂S sour gas requiring FKM elastomer seal material',
+      'Compressed air quality for instrument air and control systems',
+      'Produced water and sand in fluid handling systems',
+    ],
+    serviceIntervalNote: 'Drilling environment air filters: 100–300 hours depending on drilling activity. Instrument air: continuous monitoring per ISO 8573-1. Well completion fluid service as required.',
+    keyMetrics: [
+      { label: 'Seal material requirement', value: 'FKM (Viton) for H₂S service' },
+      { label: 'Instrument air class', value: 'ISO 8573-1 Class 1:4:1' },
+      { label: 'Drilling dust type', value: 'Barite, silica, formation minerals' },
+    ],
+    technologies: ['MACROCORE™', 'DRYCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    standards: ['ISO 5011', 'ISO 8573-1', 'ISO 16889', 'ISO 4406'],
+    systems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
+    sections: [
+      {
+        heading: 'Drilling Environment',
+        body: 'Active drilling operations generate airborne barite (BaSO₄) and formation dust in concentrations that rapidly saturate primary air filters. Rig engines powering drill strings and mud pumps require frequent air filter service during active drilling phases. H₂S service requires FKM (Viton) elastomers for all seals — standard NBR degrades rapidly in sour gas environments.',
+      },
+      {
+        heading: 'Instrument Air Quality',
+        body: 'Process control instrumentation and pneumatic valve actuators in upstream and refinery applications require instrument-grade compressed air per ISO 8573-1. Contaminated instrument air causes instrument calibration drift, valve actuator stiction, and positioner failure — contributing to process upsets. DRYCORE™ multi-stage systems achieve Class 1:4:1 for precision instrument air applications.',
+      },
+    ],
+  },
+  manufacturing: {
+    slug: 'manufacturing',
+    contaminationEnvironment: 'Low-Medium — metalworking fluid mist, grinding dust, machining particulate; precision manufacturing requires ISO 8573-1 Class 1 compressed air; hydraulic servo valve protection critical for CNC accuracy.',
+    primaryRisks: [
+      'Compressed air contamination affecting pneumatic actuators and instruments',
+      'Hydraulic servo valve stiction in CNC equipment',
+      'Metalworking fluid mist in machining environments',
+    ],
+    serviceIntervalNote: 'Compressed air filtration: continuous monitoring per ISO 8573-1; element replacement per restriction or contamination breakthrough. Hydraulic: 1,000–2,000 hours for industrial equipment.',
+    keyMetrics: [
+      { label: 'Compressed air class required', value: 'ISO 8573-1 Class 1:4:1' },
+      { label: 'Hydraulic cleanliness target', value: 'ISO 15/13/10 for servo valves' },
+      { label: 'CNC hydraulic sensitivity', value: 'Sub-5 µm particle damage' },
+    ],
+    technologies: ['DRYCORE™', 'NANOFORCE™', 'SYNTRAX™'],
+    standards: ['ISO 8573-1', 'ISO 16889', 'ISO 4406'],
+    systems: ['Hydraulic Protection', 'Lubrication Protection'],
+    sections: [
+      {
+        heading: 'Precision Manufacturing Requirements',
+        body: 'CNC machining centers, coordinate measuring machines, and industrial robots use hydraulic servo systems with clearances as small as 2–5 µm. At these tolerances, particles passing through conventional filters can cause servo position errors, hysteresis, and axis hunting. ISO 4406 15/13/10 target requires NANOFORCE™ precision-grade elements (β₄(c) ≥1000) and commissioning flush procedures.',
+      },
+      {
+        heading: 'Compressed Air Quality',
+        body: 'Pneumatic assembly tools, spray painting, pharmaceutical packaging, and food processing all require different compressed air purity classes per ISO 8573-1. DRYCORE™ multi-stage systems are configured for each application class. Class 1:4:1 (food/pharma) requires sub-0.1 mg/m³ particle concentration, pressure dewpoint ≤+3°C, and oil concentration ≤0.01 mg/m³.',
+      },
+    ],
+  },
+  'power-generation': {
+    slug: 'power-generation',
+    contaminationEnvironment: 'Medium-High — coastal installations face salt aerosol ingress into turbine air intake; diesel gensets face standard fuel and lube contamination; continuous operation requirements make unplanned shutdowns extremely costly.',
+    primaryRisks: [
+      'Turbine inlet fouling from salt aerosol (coastal)',
+      'Standby fuel polishing for emergency diesel gensets',
+      'Lube oil contamination in continuous-operation gensets',
+      'Air intake reliability for gas turbine performance',
+    ],
+    serviceIntervalNote: 'Gas turbine air filters: monitor pressure drop; pulse-cleaning systems extend intervals. Standby diesel lube filters: replace on calendar interval to maintain readiness; fuel polish per ISO 12937 water testing.',
+    keyMetrics: [
+      { label: 'Turbine air filter role', value: 'Direct impact on turbine efficiency' },
+      { label: 'Standby diesel readiness', value: 'Fuel polishing required' },
+      { label: 'Typical genset lube interval', value: '250–500 hrs or calendar' },
+    ],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'HYDROCORE™', 'THERMACORE™'],
+    standards: ['ISO 5011', 'ISO 16889', 'SAE J1858', 'ISO 12937', 'ASTM D6304'],
+    systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cooling System Protection'],
+    sections: [
+      {
+        heading: 'Gas Turbine Air Intake',
+        body: 'Gas turbine air filters must remove airborne contaminants without causing turbine inlet pressure drop above design limits — excessive restriction reduces compressor efficiency and turbine output. Coastal installations face salt aerosol that causes turbine blade erosion and compressor fouling. Self-cleaning pulse systems maintain air filters in service longer by periodically back-pulsing compressed air through the media to dislodge accumulated dust.',
+      },
+      {
+        heading: 'Standby Diesel Readiness',
+        body: 'Emergency diesel generators (hospital, data center, critical infrastructure) must start and reach full load within 10–30 seconds. Fuel stored in standby tanks accumulates water over months of thermal cycling and atmospheric breathing. HYDROCORE™ fuel polishing — circulating standby fuel through a water separator and fine filter at regular intervals — maintains fuel quality and ensures injector readiness without draining and refilling tanks.',
+      },
+    ],
+  },
+  railway: {
+    slug: 'railway',
+    contaminationEnvironment: 'Moderate — diesel soot from locomotive engines, brake dust from disc and tread brakes, traction motor bearing grease, tunnel environments (high soot concentration).',
+    primaryRisks: [
+      'Lube oil contamination from diesel soot accumulation',
+      'Extended service intervals — maintenance windows are constrained by operating schedules',
+      'Traction motor cooling air filtration (tunnel soot)',
+      'Fleet standardization across heterogeneous locomotive classes',
+    ],
+    serviceIntervalNote: 'Locomotive air filter: 60–200 operating hours depending on route type (tunnel/surface). Lube oil: per oil analysis program, often extended intervals with synthetic media to reduce maintenance window frequency.',
+    keyMetrics: [
+      { label: 'Tunnel soot concentration', value: 'Elevated vs surface routes' },
+      { label: 'Lube oil soot content (typical)', value: '1–3% by mass at change interval' },
+      { label: 'Fleet standardization value', value: 'High — reduces parts complexity' },
+    ],
+    technologies: ['MACROCORE™', 'SYNTRAX™'],
+    standards: ['ISO 5011', 'ISO 16889', 'SAE J1858'],
+    systems: ['Air Intake Protection', 'Lubrication Protection'],
+    sections: [
+      {
+        heading: 'Railway Contamination Profile',
+        body: 'Diesel locomotives generate significant exhaust soot that recirculates into engine air intake systems. Tunnel operations concentrate soot in enclosed environments, reducing air filter service intervals substantially versus surface-only routes. Brake dust from wheel tread and disc brakes adds metallic particulate to the locomotive environment.',
+      },
+      {
+        heading: 'Fleet Standardization',
+        body: 'Rail fleet operators benefit significantly from standardized filtration across locomotive classes — reducing SKU complexity, enabling bulk purchasing, and simplifying maintenance technician training. ELIMFILTERS commercial doctrine classifies railway under HD (Heavy Duty) with allocation priority consistent with other high-value asset protection verticals.',
+      },
+    ],
+  },
+  'waste-municipal': {
+    slug: 'waste-municipal',
+    contaminationEnvironment: 'High — extreme duty cycles (stop-start, high PTO hours), organic decomposition dust and bioaerosols, hydraulic contamination from high-cycle refuse compaction circuits, water contamination in all fluid systems.',
+    primaryRisks: [
+      'Hydraulic compaction circuit contamination from extreme duty cycles',
+      'Air intake organic dust and bioaerosol exposure',
+      'Engine oil contamination from short-trip, high-idle operations',
+      'Operator health — bioaerosol and organic dust exposure',
+    ],
+    serviceIntervalNote: 'Air filter: 100–250 hours due to high organic dust and stop-start operation. Hydraulic: 500–1,000 hours with attention to compaction circuit pressure spikes. Lube oil: per oil analysis — stop-start duty cycles accelerate oil degradation.',
+    keyMetrics: [
+      { label: 'Duty cycle classification', value: 'Extreme — continuous stop-start' },
+      { label: 'Hydraulic circuit demand', value: 'HIGH — compaction at 250+ bar' },
+      { label: 'Organic dust classification', value: 'Bioaerosol risk' },
+    ],
+    technologies: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'MICROKAPPA™'],
+    standards: ['ISO 5011', 'ISO 4406', 'ISO 16889'],
+    systems: ['Air Intake Protection', 'Hydraulic Protection', 'Lubrication Protection', 'Cabin Air Protection'],
+    sections: [
+      {
+        heading: 'Refuse Collection Duty Cycle',
+        body: 'Refuse collection vehicles operate with extreme stop-start duty cycles — a typical route involves 100–200 stops per shift with engine idle periods, PTO operation for compaction at 250+ bar, and full engine load during transit. This duty cycle accelerates oil oxidation (high idle periods), lube oil contamination (short trip condensation), and hydraulic component wear (high-cycle compaction circuits).',
+      },
+      {
+        heading: 'Bioaerosol and Organic Dust',
+        body: 'Refuse handling generates bioaerosols — airborne viable microorganisms, fungal spores, and endotoxins — from decomposing organic waste. Operator cabin filtration (MICROKAPPA™) addresses both particulate and biological exposure. Pending Engineering Documentation: specific bioaerosol quantification and relevant occupational exposure standards for municipal waste sector are not yet documented in the ELIMFILTERS Technical Doctrine.',
+      },
+    ],
+  },
+};
+
+// ─── ADDITIONAL STANDARDS ─────────────────────────────────────────────────────
+
+export const KC_STANDARDS_ADDITIONAL: KCStandard[] = [
+  {
+    slug: 'iso-8573-1',
+    code: 'ISO 8573-1',
+    title: 'Compressed Air — Contaminant Classes and Purity Requirements',
+    metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
+    scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
+    year: '2010',
+    sections: [
+      {
+        heading: 'Purity Class Structure',
+        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <0.1 mg/m³ at ≥0.5 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
+      },
+      {
+        heading: 'Application Requirements',
+        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), ISO 8573-4 (solid particle content), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
+      },
+    ],
+    keyParams: [
+      { label: 'Format', value: 'Particle:Water:Oil class numbers' },
+      { label: 'Instrument air minimum', value: 'Class 2:4:1' },
+      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
+    ],
+    relatedTopics: ['testing-and-validation', 'contamination-control'],
+    relatedTechnologies: ['DRYCORE™'],
+  },
+  {
+    slug: 'sae-j1539',
+    code: 'SAE J1539',
+    title: 'Air Cleaner Test Code — Heavy Duty Diesel Engines',
+    metaDescription: 'SAE J1539 defines test procedures for evaluating air cleaner performance on heavy-duty diesel engines, covering restriction, efficiency, dust capacity, and element replacement protocols.',
+    scope: 'Test code for air cleaner performance evaluation on heavy-duty diesel engines, including restriction measurement, filtration efficiency, and service life determination.',
+    year: '1986',
+    sections: [
+      {
+        heading: 'Test Parameters',
+        body: 'SAE J1539 establishes standardized test conditions for evaluating air cleaner assemblies installed on heavy-duty diesel engines. Key parameters include airflow rate (matched to engine displacement and rated speed), test dust specification (ISO fine or coarse test dust per SAE J726), restriction measurement method, and efficiency calculation basis. The test enables comparison of air cleaner performance across different configurations under controlled conditions.',
+      },
+      {
+        heading: 'Relationship to ISO 5011',
+        body: 'SAE J1539 and ISO 5011 address similar test objectives — air cleaner performance evaluation. ISO 5011 is the international standard widely used in European and international specifications. SAE J1539 is referenced in North American heavy-duty engine applications. MACROCORE™ elements are tested and characterized against both standards to provide performance documentation for global equipment OEM specifications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Application', value: 'Heavy-duty diesel engine air cleaners' },
+      { label: 'Key measurements', value: 'Restriction, efficiency, dust capacity' },
+      { label: 'Related standard', value: 'ISO 5011 (international equivalent)' },
+    ],
+    relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
+  },
+  {
+    slug: 'iso-12937',
+    code: 'ISO 12937',
+    title: 'Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration',
+    metaDescription: 'ISO 12937 defines the Karl Fischer coulometric titration method for determining water content in petroleum products, establishing the analytical basis for diesel fuel water contamination assessment.',
+    scope: 'Determination of water content in petroleum products with water content between 5 mg/kg and 2,000 mg/kg using coulometric Karl Fischer titration.',
+    year: '2000',
+    sections: [
+      {
+        heading: 'Karl Fischer Titration Principle',
+        body: 'ISO 12937 uses coulometric Karl Fischer titration to quantitatively determine water content in petroleum products. In coulometric titration, iodine is electrochemically generated at an anode; iodine reacts stoichiometrically with water in the Karl Fischer reaction. The amount of charge required to generate sufficient iodine to consume all water in the sample is proportional to water content. The method is accurate to ±5 ppm at concentrations below 200 ppm — the threshold relevant for HPCR injector protection.',
+      },
+      {
+        heading: 'HPCR Fuel Quality Target',
+        body: 'High-pressure common rail injectors require fuel water content below 200 ppm to prevent injector seat corrosion and micro-pitting. ISO 12937 is the analytical method used to verify that treated fuel meets this target. Water above 500 ppm causes visible free water phases that interfere with fuel metering. Verification using ISO 12937 is performed at fuel depot acceptance, during storage monitoring, and as part of commissioning flush verification for marine vessels.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '5–2,000 mg/kg (ppm)' },
+      { label: 'Analytical accuracy', value: '±5 ppm at low concentrations' },
+      { label: 'HPCR protection threshold', value: '<200 ppm' },
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
+  },
+  {
+    slug: 'nfpa-t2-14',
+    code: 'NFPA T2.14',
+    title: 'Hydraulic Fluid Power — Fluid Cleanliness Guidelines for Use of Industrial Hydraulic Equipment',
+    metaDescription: 'NFPA T2.14 establishes minimum fluid cleanliness levels for hydraulic system components, defining ISO 4406 cleanliness requirements for pumps, valves, cylinders, and servo/proportional valve systems.',
+    scope: 'Minimum fluid cleanliness requirements for industrial hydraulic equipment components, expressed as ISO 4406 cleanliness codes correlated to component type and sensitivity.',
+    year: '2005',
+    sections: [
+      {
+        heading: 'Component Sensitivity Classification',
+        body: 'NFPA T2.14 classifies hydraulic components by cleanliness sensitivity based on internal clearances. Servo valves (clearance 2–5 µm): ISO 15/13/10 minimum. Proportional valves (5–10 µm clearance): ISO 16/14/11 minimum. Vane and piston pumps: ISO 18/16/13 minimum. Gear pumps and cylinders: ISO 19/17/14 minimum. These represent minimum targets — not system design targets. NANOFORCE™ system design targets exceed NFPA T2.14 minimums for sensitive proportional and servo valve systems.',
+      },
+      {
+        heading: 'System Cleanliness vs Component Cleanliness',
+        body: 'NFPA T2.14 minimum cleanliness levels are based on the most sensitive component in the system. If a system contains any proportional valve, the entire system fluid must meet ISO 16/14/11 minimum — not just the valve circuit. System design must account for ingress through breathers, cylinder rod seal wear, and maintenance-induced contamination at all service points.',
+      },
+    ],
+    keyParams: [
+      { label: 'Servo valve minimum', value: 'ISO 15/13/10' },
+      { label: 'Proportional valve minimum', value: 'ISO 16/14/11' },
+      { label: 'Gear pump minimum', value: 'ISO 19/17/14' },
+    ],
+    relatedTopics: ['contamination-control', 'fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['NANOFORCE™'],
+  },
+  {
+    slug: 'iso-11155-1',
+    code: 'ISO 11155-1',
+    title: 'Road Vehicles — Air Conditioning and Ventilation for the Passenger Compartment — Part 1: Vocabulary',
+    metaDescription: 'ISO 11155-1 establishes terminology for road vehicle air conditioning and ventilation systems; Part 2 covers cabin air filter test methods relevant to operator health protection.',
+    scope: 'Vocabulary and definitions for road vehicle air conditioning and ventilation systems; Part 2 defines cabin air filter test methodology for particulate and gas-phase filtration performance.',
+    year: '2001',
+    sections: [
+      {
+        heading: 'Cabin Air Filter Standards Framework',
+        body: 'ISO 11155 comprises two parts: Part 1 (vocabulary) and Part 2 (test methods for cabin air filtration). ISO 11155-2 defines test procedures for measuring cabin air filter performance against particulate (dust) and gas-phase (activated carbon) contamination. For heavy equipment cabin applications, ISO 11155-2 provides the test framework while DIN 71220 provides complementary cabin filter quality classification. MICROKAPPA™ elements are characterized against ISO 11155-2 test methods for PM₂.₅ efficiency, initial pressure drop, and dust holding capacity.',
+      },
+      {
+        heading: 'Heavy Equipment Application',
+        body: 'ISO 11155 was developed for road vehicle passenger compartments, but the test methodology is applicable to heavy equipment operator cabs where the contamination environment is far more aggressive. In mining and construction cabs, ambient silica concentrations exceed 100× the OSHA PEL. Cabin air filters must maintain ≥95% PM₂.₅ efficiency throughout their service life — not just at the clean element condition.',
+      },
+    ],
+    keyParams: [
+      { label: 'Parts', value: 'Part 1: vocabulary; Part 2: test methods' },
+      { label: 'Primary technology', value: 'MICROKAPPA™ (H13-class PM₂.₅ efficiency)' },
+      { label: 'Application context', value: 'Road vehicles and heavy equipment cabs' },
+    ],
+    relatedTopics: ['filter-media-science', 'testing-and-validation'],
+    relatedTechnologies: ['MICROKAPPA™'],
+  },
+  {
+    slug: 'astm-d6304',
+    code: 'ASTM D6304',
+    title: 'Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration',
+    metaDescription: 'ASTM D6304 is the North American equivalent of ISO 12937, defining coulometric Karl Fischer titration for water content determination in petroleum products and lubricating oils.',
+    scope: 'Water content determination in petroleum products, lubricating oils, and additives with water content from 10 ppm to 25,000 ppm using coulometric Karl Fischer titration.',
+    year: '2007',
+    sections: [
+      {
+        heading: 'ASTM vs ISO Relationship',
+        body: 'ASTM D6304 and ISO 12937 both use coulometric Karl Fischer titration for water content determination and produce equivalent results. ASTM D6304 is referenced in North American specifications and by ASTM-citing engine and equipment manufacturers. ISO 12937 is used in European and international specifications. Both standards are acceptable for fuel quality verification against the <200 ppm water target for HPCR injector protection. HYDROCORE™ and SYNTEPORE™ performance is validated against both standards.',
+      },
+      {
+        heading: 'Lubricating Oil Application',
+        body: 'ASTM D6304 is also applicable to lubricating oil water content — important for detecting coolant leaks (water in oil above 0.1% indicates head gasket or liner leakage) and for monitoring oil condition in extended drain programs. Water in lube oil above 0.5% accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '10–25,000 ppm' },
+      { label: 'Equivalent to', value: 'ISO 12937' },
+      { label: 'Applications', value: 'Fuel and lubricating oil water analysis' },
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
+  },
 ];

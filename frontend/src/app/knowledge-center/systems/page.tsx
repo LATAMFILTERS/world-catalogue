@@ -90,6 +90,9 @@ export default function SystemsPage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.07 }}
+          >
+          <Link href={`/knowledge-center/systems/${system.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+          <div
             style={{
               background: '#000',
               padding: '2rem',
@@ -210,6 +213,8 @@ export default function SystemsPage() {
                 ))}
               </div>
             </div>
+          </div>
+          </Link>
           </motion.div>
         ))}
       </section>

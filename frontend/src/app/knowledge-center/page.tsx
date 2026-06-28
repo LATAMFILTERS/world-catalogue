@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES } from '@/lib/knowledge-center-data';
+import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
 
 const SECTIONS = [
   {
@@ -38,8 +38,16 @@ const SECTIONS = [
     accent: '#FFF12D',
   },
   {
+    href: '/knowledge-center/technologies',
+    label: '05 / TECHNOLOGIES',
+    title: 'Technology Registry',
+    description: 'Nine proprietary filtration technologies mapped to contamination domains, ISO standards, and protection systems. Each technology is engineered for a specific failure mechanism.',
+    count: `${KC_TECHNOLOGIES.length} technologies`,
+    accent: '#FFF12D',
+  },
+  {
     href: '/knowledge-center/technical-library',
-    label: '05 / LIBRARY',
+    label: '06 / LIBRARY',
     title: 'Technical Library',
     description: 'Specification guides, selection frameworks, failure mode analysis, and maintenance procedures for field engineering teams.',
     count: '6 guides',
@@ -47,7 +55,7 @@ const SECTIONS = [
   },
   {
     href: '/knowledge-center/commercial-doctrine',
-    label: '06 / DOCTRINE',
+    label: '07 / DOCTRINE',
     title: 'Commercial Doctrine',
     description: 'Market architecture, profitability model, resource allocation, distribution strategy, and asset protection penetration framework.',
     count: 'v2.0 — Permanent',
@@ -55,7 +63,7 @@ const SECTIONS = [
   },
   {
     href: '/knowledge-center/technical-doctrine',
-    label: '07 / TECHNICAL',
+    label: '08 / TECHNICAL',
     title: 'Technical Doctrine',
     description: '19-section engineering reference covering contamination control principles, media science, failure analysis, 9 technologies, 7 systems, 8 industries, and 7 validation standards.',
     count: 'v1.0 — Permanent',

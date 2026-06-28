@@ -9,6 +9,7 @@ const NAV = [
   { href: '/knowledge-center/standards', label: 'Standards' },
   { href: '/knowledge-center/systems', label: 'Systems' },
   { href: '/knowledge-center/industries', label: 'Industries' },
+  { href: '/knowledge-center/technologies', label: 'Technologies' },
   { href: '/knowledge-center/technical-library', label: 'Library' },
   { href: '/knowledge-center/technical-doctrine', label: 'Tech Doctrine' },
   { href: '/knowledge-center/commercial-doctrine', label: 'Commercial' },

@@ -97,6 +97,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.06 }}
           >
+            <Link href={`/knowledge-center/industries/${industry.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
             <motion.div
               whileHover={{ borderColor: 'rgba(255,241,45,0.25)', background: 'rgba(255,255,255,0.015)' }}
               style={{
@@ -143,6 +144,7 @@ export default function IndustriesPage() {
                 {industry.description}
               </p>
             </motion.div>
+            </Link>
           </motion.div>
         ))}
       </section>
