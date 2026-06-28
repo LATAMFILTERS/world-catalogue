@@ -46,8 +46,16 @@ const SECTIONS = [
     accent: '#FFF12D',
   },
   {
+    href: '/knowledge-center/commercial-doctrine',
+    label: '06 / DOCTRINE',
+    title: 'Commercial Doctrine',
+    description: 'Market architecture, profitability model, resource allocation, distribution strategy, and asset protection penetration framework.',
+    count: 'v1.0 — Permanent',
+    accent: '#FFF12D',
+  },
+  {
     href: '/knowledge-center/search',
-    label: '06 / SEARCH',
+    label: '07 / SEARCH',
     title: 'Knowledge Search',
     description: 'Search by symptom, equipment type, industry, standard code, or technology to find relevant engineering documentation.',
     count: 'AI-indexed',

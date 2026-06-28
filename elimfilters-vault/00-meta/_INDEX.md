@@ -1,7 +1,28 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-06-03
+Last updated: 2026-06-28
+
+---
+
+## COMMERCIAL DOCTRINE (10-commercial/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY]] | ✅ MASTER — Permanent Doctrine | 2026-06-28 |
+| DURATECH | ✅ Commercial Sheet | — |
+| MARINECLEAN | ✅ Commercial Sheet | — |
+
+**Core principles (doctrine summary):**
+- ELIMFILTERS = Asset Protection Company, not filter supplier
+- HD (80% resources) = profitability engine → Mining, Construction, Agriculture, Oil&Gas, Marine, Power, Railway
+- LD (20% resources) = market participation engine → Automotive, Fleets, Service Centers
+- Target: HD 7–10% market share | LD minimum 8% regional
+- Economic unit = Protected Asset, not the filter
+- Distributor = regional extension of the organization, selected by asset access — not volume
+- Commercial Intelligence = permanent corporate asset
+
+---
 
 ---
 
