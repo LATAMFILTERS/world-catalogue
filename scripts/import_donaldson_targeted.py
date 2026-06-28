@@ -54,28 +54,27 @@ def get_headers(api_key):
 
 
 # Donaldson product type detection based on description keywords
+# filter_type must match server enum: 'oil','fuel','air','cabin','hydraulic','compressed-air','water','other'
+# duty must match server enum: 'light','standard','heavy','extreme'
 DONALDSON_TYPE_MAP = [
     (['FILTRO DE AIRE', 'AIR FILTER', 'PRIMARY', 'SECONDARY', 'PRIMARIO',
-      'RADIALSEAL', 'KONEPAC', 'DURALITE', 'PANEL', 'REDONDO', 'ALETAS'],
-     {'sku_prefix': 'EA1', 'filter_type': 'Air Filter', 'duty': 'HEAVY_DUTY'}),
+      'RADIALSEAL', 'KONEPAC', 'DURALITE', 'PANEL', 'REDONDO', 'ALETAS',
+      'RESPIRADERO', 'BREATHER', 'CRANKCASE', 'SECADOR', 'AIR DRYER'],
+     {'sku_prefix': 'EA1', 'filter_type': 'air', 'duty': 'heavy'}),
     (['AIR FILTER HOUSING', 'CARCASA', 'HOUSING', 'AIR CLEANER ASSEMBLY'],
-     {'sku_prefix': 'EA2', 'filter_type': 'Air Filter Housing', 'duty': 'HEAVY_DUTY'}),
+     {'sku_prefix': 'EA2', 'filter_type': 'air', 'duty': 'heavy'}),
     (['CABIN', 'CABINA', 'HABITACULO'],
-     {'sku_prefix': 'EC1', 'filter_type': 'Cabin Air Filter', 'duty': 'HEAVY_DUTY'}),
-    (['SECADOR', 'AIR DRYER', 'DESICCANT'],
-     {'sku_prefix': 'ED4', 'filter_type': 'Air Dryer', 'duty': 'HEAVY_DUTY'}),
-    (['RESPIRADERO', 'BREATHER', 'CRANKCASE'],
-     {'sku_prefix': 'EA1', 'filter_type': 'Breather', 'duty': 'HEAVY_DUTY'}),
+     {'sku_prefix': 'EC1', 'filter_type': 'cabin', 'duty': 'heavy'}),
 ]
 
 
 def resolve_donaldson_type(description: str, name: str) -> dict:
-    """Detect filter type from description/name. Default to EA1 Air Filter."""
+    """Detect filter type from description/name. Default to EA1 air."""
     text = f"{description} {name}".upper()
     for keywords, mapping in DONALDSON_TYPE_MAP:
         if any(kw in text for kw in keywords):
             return mapping
-    return {'sku_prefix': 'EA1', 'filter_type': 'Air Filter', 'duty': 'HEAVY_DUTY'}
+    return {'sku_prefix': 'EA1', 'filter_type': 'air', 'duty': 'heavy'}
 
 
 def donaldson_codigo_base(part_number: str) -> str:
@@ -172,23 +171,22 @@ def map_donaldson_record(prod: dict) -> dict | None:
             equipment.append({'make': make, 'model': model, 'engine_code': eng, 'year_range': yr})
 
     codigo_base = donaldson_codigo_base(code)
+    sku = type_info['sku_prefix'] + codigo_base
     od_mm = parse_mm(specs.get('Largest OD') or specs.get('OD') or specs.get('Outer Diameter'))
     h_mm  = parse_mm(specs.get('Height') or specs.get('Length'))
 
     return {
-        'donaldson_code':  code,
-        'filter_type_raw': type_info['filter_type'],
-        'sku_prefix':      type_info['sku_prefix'],
-        'duty':            type_info['duty'],
+        'sku':             sku,
         'codigo_base':     codigo_base,
-        'name':            name[:200] or None,
-        'description':     desc[:600] or None,
-        'specs':           specs,
-        'competitor_codes':         cross_refs,
-        'alternatives':             [p for p in (prod.get('alternatives') or []) if isinstance(p, str)],
-        'equipment_applications':   equipment,
-        'outer_diameter_mm':        od_mm,
-        'height_mm':                h_mm,
+        'description':     (name or desc)[:600] or None,
+        'filter_type':     type_info['filter_type'],
+        'duty':            type_info['duty'],
+        'oem_codes':       cross_refs,          # server moves competitor_codes→oem_codes anyway
+        'competitor_codes': [],
+        'alternatives':    [p for p in (prod.get('alternatives') or []) if isinstance(p, str)],
+        'equipment_applications': equipment,
+        'outer_diameter_mm': od_mm,
+        'height_mm':         h_mm,
     }
 
 
@@ -198,7 +196,7 @@ def post_batch(batch: list, api_key: str) -> tuple[int, int]:
         try:
             r = requests.post(
                 f"{API_BASE}/api/import/donaldson",
-                json={'products': batch},
+                json={'rows': batch},
                 headers=get_headers(api_key),
                 timeout=60,
             )
@@ -286,7 +284,7 @@ def run(args):
     if args.dry_run:
         log.info(f"\n[DRY-RUN] Would import {len(rows)} Donaldson EA1 SKUs:")
         for r in rows[:10]:
-            log.info(f"  {r['sku_prefix']}{r['codigo_base']} ← {r['donaldson_code']} ({r['filter_type_raw']})")
+            log.info(f"  {r['sku']} ({r['filter_type']}/{r['duty']})  oem_codes={len(r.get('oem_codes',[]))}  equip={len(r.get('equipment_applications',[]))}")
         if len(rows) > 10:
             log.info(f"  ... and {len(rows)-10} more")
         return
