@@ -14,6 +14,14 @@ const STD_SLUG_MAP: Record<string, string> = {
   'ISO 29463': 'iso-29463',
   'SAE J1858': 'sae-j1858',
   'ISO 11171': 'iso-11171',
+  'ISO 8573-1': 'iso-8573-1',
+  'SAE J1539': 'sae-j1539',
+  'ISO 12937': 'iso-12937',
+  'NFPA T2.14': 'nfpa-t2-14',
+  'ISO 11155': 'iso-11155-1',
+  'ISO 11155-1': 'iso-11155-1',
+  'ASTM D6304': 'astm-d6304',
+  'ISO 16332': 'iso-16332',
 };
 
 const TECH_SLUG_MAP: Record<string, string> = {
@@ -26,6 +34,9 @@ const TECH_SLUG_MAP: Record<string, string> = {
   'DRYCORE™': 'drycore',
   'INTEKCORE™': 'intekcore',
   'MICROKAPPA™': 'microkappa',
+  'TURBOCORE™': 'turbocore',
+  'DURATECH™': 'duratech',
+  'MARINECLEAN™': 'marineclean',
 };
 
 const DUST_COLORS: Record<string, string> = {

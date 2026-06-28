@@ -775,6 +775,201 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'contamination-control'],
     relatedTechnologies: ['NANOFORCE™'],
   },
+  {
+    slug: 'iso-8573-1',
+    code: 'ISO 8573-1',
+    title: 'Compressed Air — Contaminant Classes and Purity Requirements',
+    metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
+    scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
+    year: '2010',
+    sections: [
+      {
+        heading: 'Purity Class Structure',
+        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
+      },
+      {
+        heading: 'Application Requirements',
+        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
+      },
+      {
+        heading: 'Treatment Stage Requirements',
+        body: 'Achieving Class 1:4:1 requires a multi-stage compressed air treatment train: pre-filter (bulk liquid and >3 µm particles), refrigeration dryer (pressure dewpoint 2–5°C), coalescing filter (oil aerosol to 0.01 mg/m³), activated carbon (oil vapor to 0.005 mg/m³), and post-filter (carbon fines removal). Each stage is tested and classified individually against the applicable ISO 8573 part.',
+      },
+    ],
+    keyParams: [
+      { label: 'Format', value: 'Particle:Water:Oil class numbers' },
+      { label: 'Instrument air minimum', value: 'Class 2:4:1' },
+      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
+      { label: 'Class 1 particles', value: '<20,000/m³ at ≥0.1 µm' },
+    ],
+    relatedTopics: ['testing-and-validation', 'contamination-control'],
+    relatedTechnologies: ['DRYCORE™'],
+  },
+  {
+    slug: 'sae-j1539',
+    code: 'SAE J1539',
+    title: 'Air Cleaner Test Code — Heavy Duty Diesel Engines',
+    metaDescription: 'SAE J1539 defines test procedures for evaluating air cleaner performance on heavy-duty diesel engines, covering restriction, efficiency, dust capacity, and element replacement protocols.',
+    scope: 'Test code for air cleaner performance evaluation on heavy-duty diesel engines, including restriction measurement, filtration efficiency, and service life determination.',
+    year: '1986',
+    sections: [
+      {
+        heading: 'Test Parameters',
+        body: 'SAE J1539 establishes standardized test conditions for evaluating air cleaner assemblies installed on heavy-duty diesel engines. Key parameters include airflow rate matched to engine displacement and rated speed, test dust specification using ISO fine or coarse test dust (ISO 12103-1), restriction measurement method using calibrated differential pressure transducers, and efficiency calculation. The test enables comparison of air cleaner performance across different configurations under controlled conditions.',
+      },
+      {
+        heading: 'Relationship to ISO 5011',
+        body: 'SAE J1539 and ISO 5011 address similar test objectives — air cleaner performance evaluation for internal combustion engines. ISO 5011 is the international standard widely referenced in European and international OEM specifications. SAE J1539 is the North American counterpart referenced in North American heavy-duty diesel engine applications. MACROCORE™ elements are characterized against both standards to provide performance documentation for global equipment OEM specifications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Application', value: 'Heavy-duty diesel engine air cleaners' },
+      { label: 'Key measurements', value: 'Restriction, efficiency, dust capacity' },
+      { label: 'Related standard', value: 'ISO 5011 (international equivalent)' },
+    ],
+    relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
+  },
+  {
+    slug: 'iso-12937',
+    code: 'ISO 12937',
+    title: 'Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration',
+    metaDescription: 'ISO 12937 defines the Karl Fischer coulometric titration method for determining water content in petroleum products, the European and international equivalent of ASTM D6304.',
+    scope: 'Determination of water content in petroleum products with water content between 5 mg/kg and 2,000 mg/kg using coulometric Karl Fischer titration.',
+    year: '2000',
+    sections: [
+      {
+        heading: 'Karl Fischer Titration Principle',
+        body: 'ISO 12937 uses coulometric Karl Fischer titration to quantitatively determine water content in petroleum products. Iodine is electrochemically generated at an anode and reacts stoichiometrically with water in the Karl Fischer reaction; the charge required to generate sufficient iodine to consume all sample water is proportional to water content. Results are expressed as mg/kg (ppm by mass). ISO 12937 and ASTM D6304 use the same electrochemical principle and produce equivalent results — ISO 12937 is the European and international market reference; ASTM D6304 is the North American equivalent.',
+      },
+      {
+        heading: 'HPCR Fuel Quality Target',
+        body: 'ISO 12937 is the measurement method cited in EN 590 (European diesel fuel specification) with a limit of 200 mg/kg water. High-pressure common rail injectors require fuel water content below this threshold to prevent injector seat corrosion, micro-pitting, and stiction. Water above 500 mg/kg causes visible free water phases. ISO 12937 analysis is performed at fuel depot acceptance, during storage monitoring, and as commissioning flush verification for marine vessels under ISO 8217.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '5–2,000 mg/kg (ppm)' },
+      { label: 'EN 590 water limit', value: '200 mg/kg' },
+      { label: 'Equivalent standard', value: 'ASTM D6304 (North American)' },
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+  },
+  {
+    slug: 'nfpa-t2-14',
+    code: 'NFPA T2.14',
+    title: 'Fluid Power Systems — Hydraulic Filters — Method for Verifying Collapse/Burst Resistance',
+    metaDescription: 'NFPA T2.14 specifies test methods for verifying the structural integrity of hydraulic filter elements under differential pressure, defining collapse and burst resistance ratings for high-pressure hydraulic applications.',
+    scope: 'Test methods for verifying collapse pressure rating and burst resistance of hydraulic filter elements operating in high-pressure hydraulic systems.',
+    year: '2005',
+    sections: [
+      {
+        heading: 'Collapse and Burst Testing',
+        body: 'NFPA T2.14 specifies the test methodology for verifying hydraulic filter element structural integrity by measuring collapse pressure (failure under differential pressure from the upstream side) and burst pressure (failure from downstream positive pressure). NFPA T2.14-qualified elements specify collapse ratings greater than 10× the nominal operating differential pressure and burst ratings greater than 2× the collapse rating. These margins accommodate hydraulic system cold-start transients and end-of-life differential pressures without structural failure.',
+      },
+      {
+        heading: 'Complementary Role with ISO 16889',
+        body: 'NFPA T2.14 is a structural integrity standard that operates alongside ISO 16889 (filtration efficiency) and ISO 4406 (cleanliness code targets). A hydraulic filter element requires both: ISO 16889 Beta efficiency to demonstrate particle capture performance, and NFPA T2.14 collapse/burst ratings to demonstrate structural survival under the differential pressures encountered in high-pressure hydraulic systems. NANOFORCE™ elements satisfy both standards for construction and mining applications operating at 200–350 bar.',
+      },
+      {
+        heading: 'Failure Mode Prevention',
+        body: 'Filter element collapse is a critical failure mode: when a loaded element collapses under excess differential pressure, accumulated contamination is released into the downstream hydraulic circuit — converting a controlled contamination state into a contamination surge event affecting proportional valves, servo valves, and actuators. Structural integrity testing per NFPA T2.14 prevents this failure mode by verifying adequate collapse pressure margin before installation.',
+      },
+    ],
+    keyParams: [
+      { label: 'Collapse rating minimum', value: '>10× operating differential pressure' },
+      { label: 'Burst rating minimum', value: '>2× collapse rating' },
+      { label: 'Servo valve minimum cleanliness', value: 'ISO 15/13/10' },
+      { label: 'Proportional valve minimum', value: 'ISO 16/14/11' },
+    ],
+    relatedTopics: ['contamination-control', 'fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['NANOFORCE™'],
+  },
+  {
+    slug: 'iso-11155-1',
+    code: 'ISO 11155-1',
+    title: 'Road Vehicles — Air Filters for Passenger Compartments — Particle Filtration Performance',
+    metaDescription: 'ISO 11155-1 defines particle filtration efficiency and airflow resistance test methods for cabin air filters in road vehicles and heavy equipment operator cabs.',
+    scope: 'Performance testing of cabin air filter elements for particle filtration efficiency (PM10, PM2.5) and airflow resistance in road vehicle passenger compartments and heavy equipment operator cabs.',
+    year: '2001',
+    sections: [
+      {
+        heading: 'Particle Efficiency Testing',
+        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency, exceeding the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
+      },
+      {
+        heading: 'ISO 11155-2 Complement',
+        body: 'ISO 11155-1 addresses particle filtration; ISO 11155-2 addresses gaseous contaminant removal efficiency for activated carbon layers against odour compounds, aromatic hydrocarbons, and NOx species. Together, Parts 1 and 2 provide the full performance framework for cabin air filtration. DIN 71220 is the German predecessor standard, harmonised into ISO 11155 methodology, still referenced in European OEM cabin filter qualification documents.',
+      },
+      {
+        heading: 'Heavy Equipment Application',
+        body: 'ISO 11155 was developed for road vehicle passenger compartments, but the test methodology applies to heavy equipment operator cabs where contamination environments are significantly more aggressive. In mining and construction operations, ambient PM2.5 concentrations can reach 150–500 µg/m³ during active operations — 10–30× the WHO 24-hour guideline of 15 µg/m³. Cabin filtration compliant with ISO 11155-1 PM2.5 efficiency targets reduces in-cab concentrations to below occupational exposure limits.',
+      },
+    ],
+    keyParams: [
+      { label: 'PM10 efficiency minimum', value: '>80%' },
+      { label: 'PM2.5 efficiency minimum', value: '>60%' },
+      { label: 'MICROKAPPA™ PM2.5', value: '≥95%' },
+      { label: 'Parts', value: 'Part 1: particles; Part 2: gas phase' },
+    ],
+    relatedTopics: ['filter-media-science', 'testing-and-validation'],
+    relatedTechnologies: ['MICROKAPPA™'],
+  },
+  {
+    slug: 'astm-d6304',
+    code: 'ASTM D6304',
+    title: 'Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration',
+    metaDescription: 'ASTM D6304 is the North American coulometric Karl Fischer titration method for water content in petroleum products and lubricating oils, equivalent to ISO 12937.',
+    scope: 'Water content determination in petroleum products, lubricating oils, and additives with water content from 10 ppm to 25,000 ppm using coulometric Karl Fischer titration.',
+    year: '2007',
+    sections: [
+      {
+        heading: 'Coulometric Karl Fischer Method',
+        body: 'ASTM D6304 measures total water content in petroleum products using coulometric Karl Fischer titration — iodine generated electrochemically reacts stoichiometrically with sample water, with the charge passed proportional to water concentration. Sensitivity range covers 10–25,000 mg/kg, making it appropriate for fuel quality management and lubricating oil condition monitoring. ASTM D6304 and ISO 12937 are technically equivalent, producing the same results from the same sample material; ASTM D6304 is referenced in North American OEM and regulatory specifications where ISO 12937 is cited in European and international frameworks.',
+      },
+      {
+        heading: 'Fuel and Lube Oil Applications',
+        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations, with target outlet below 50–100 mg/kg dissolved saturation.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '10–25,000 ppm' },
+      { label: 'Equivalent to', value: 'ISO 12937' },
+      { label: 'HPCR protection threshold', value: '<200 ppm' },
+      { label: 'Lube coolant leak indicator', value: '>0.1% water' },
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+  },
+  {
+    slug: 'iso-16332',
+    code: 'ISO 16332',
+    title: 'Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency',
+    metaDescription: 'ISO 16332 defines test methods for measuring water separation efficiency of diesel fuel filters, establishing the performance benchmark for coalescing fuel water separators.',
+    scope: 'Test methodology for determining the water separation efficiency of diesel fuel filter elements using standardized test conditions and water concentration measurement.',
+    year: '2015',
+    sections: [
+      {
+        heading: 'Water Separation Efficiency Test',
+        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. HYDROCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 test conditions.',
+      },
+      {
+        heading: 'HPCR Fuel System Application',
+        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the three-stage ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) is positioned after SYNTEPORE™ (primary >10 µm particle removal) and before TURBOCORE™ (final <4 µm stage). Together, these achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
+      },
+      {
+        heading: 'Relationship to Fuel Water Standards',
+        body: 'ISO 16332 defines the filter performance test; ISO 12937 and ASTM D6304 define the water content measurement methods used both within the ISO 16332 test protocol and for field monitoring of fuel water content. Together, these three standards form the measurement and performance framework for diesel fuel water contamination control: ISO 12937/ASTM D6304 measure water concentration in fuel; ISO 16332 verifies that filtration equipment removes water to below the HPCR protection threshold.',
+      },
+    ],
+    keyParams: [
+      { label: 'HYDROCORE™ water separation', value: '≥96% (ISO 16332)' },
+      { label: 'Test method for water content', value: 'ISO 12937 / ASTM D6304' },
+      { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+  },
 ];
 
 // ─── SYSTEMS ─────────────────────────────────────────────────────────────────
@@ -1025,6 +1220,60 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['cabin-air-protection'],
     relatedIndustries: ['mining', 'construction', 'agriculture', 'oil-gas', 'waste-municipal'],
     worksWith: [],
+  },
+  {
+    slug: 'turbocore',
+    name: 'TURBOCORE™',
+    domain: 'Fuel Cleanliness — HPCR Final Stage',
+    tagline: 'Final-stage sub-4 µm fuel filter for high-pressure common rail injector protection in three-stage fuel systems.',
+    engineeringPrinciple: 'TURBOCORE™ is the final stage in the ELIMFILTERS three-stage fuel protection strategy: after SYNTEPORE™ removes >10 µm primary particulate and HYDROCORE™ separates free water, TURBOCORE™ provides <4 µm final particle removal to achieve HPCR fuel cleanliness at ISO 12/10/8. Operating at rated injection system fuel flow, TURBOCORE™ media is engineered to capture residual fine particles that survive upstream stages — particles in the 2–4 µm range that cause abrasive wear of injector needle seats and solenoid actuator components operating at 1,600–2,500 bar injection pressure.',
+    contamination: ['Hard particles 2–4 µm (injector actuator clearance range)', 'Residual silica fines from primary stage bypass', 'Metallic particles from fuel system wear', 'Carbon particles from fuel degradation'],
+    performanceSpecs: [
+      { label: 'Final stage particle removal', value: '<4 µm absolute' },
+      { label: 'Water separation efficiency', value: '≥96% free water (ISO 16332)' },
+      { label: 'Target fuel cleanliness', value: 'ISO 12/10/8' },
+      { label: 'System position', value: 'Stage 3 — after SYNTEPORE™ + HYDROCORE™' },
+    ],
+    standards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
+    relatedSystems: ['fuel-cleanliness-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'power-generation'],
+    worksWith: ['SYNTEPORE™', 'HYDROCORE™'],
+  },
+  {
+    slug: 'duratech',
+    name: 'DURATECH™',
+    domain: 'Fleet Maintenance — Consolidated Kit System',
+    tagline: 'Consolidated filter kits for heavy-duty fleet maintenance covering all filtration systems in a single service kit.',
+    engineeringPrinciple: 'DURATECH™ is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering the complete filtration requirement for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters simultaneously. Instead of sourcing individual filtration components, DURATECH™ bundles all system-specific elements required for a full service event. The kit architecture eliminates the common malpractice of extending service intervals on secondary filters when primary elements are changed — guaranteeing that all contamination control systems are renewed simultaneously at each maintenance event.',
+    contamination: ['Cross-system contamination from incomplete maintenance', 'Metallic wear particles (oil circuit)', 'Airborne silica (air intake)', 'Fuel water contamination', 'Hydraulic particle contamination'],
+    performanceSpecs: [
+      { label: 'Coverage', value: 'Air, oil, fuel, hydraulic — single kit' },
+      { label: 'Application scope', value: 'Equipment-specific kit configuration' },
+      { label: 'TCO model', value: 'Fixed maintenance cost per service event' },
+      { label: 'Inventory reduction', value: 'One kit number per equipment model' },
+    ],
+    standards: ['ISO 4406', 'ISO 16889'],
+    relatedSystems: ['air-intake-protection', 'lubrication-protection', 'fuel-cleanliness-protection', 'hydraulic-protection'],
+    relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets'],
+    worksWith: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'NANOFORCE™'],
+  },
+  {
+    slug: 'marineclean',
+    name: 'MARINECLEAN™',
+    domain: 'Marine Filtration — Consolidated Marine System',
+    tagline: 'Consolidated filtration system for maritime vessels covering all on-board filtration circuits in high-salinity environments.',
+    engineeringPrinciple: 'MARINECLEAN™ is the ELIMFILTERS comprehensive commercial system dedicated to the maritime sector, consolidating all marine filtration requirements — engine lube, fuel, hydraulic — for vessels operating in high-humidity and high-salinity environments where uncontrolled contamination can result in vessel immobilization without immediate service access. The system spans recreational marine (jet skis, outboard and inboard engines from Yamaha, Evinrude, Mercruiser) through commercial heavy-duty cargo vessels (MTU, CAT, ONAN marine diesel engines). Full traceability of filtration across all on-board circuits is the core operating principle, reflecting IMO and classification society maintenance documentation requirements.',
+    contamination: ['Salt water ingress into lube and fuel systems', 'Marine diesel water contamination', 'Hydraulic contamination in deck machinery', 'Corrosion products from high-humidity environments', 'Microbial growth in stored marine diesel fuel'],
+    performanceSpecs: [
+      { label: 'Coverage', value: 'Engine lube, fuel, hydraulic — full vessel' },
+      { label: 'Sector range', value: 'Recreational to heavy-duty cargo' },
+      { label: 'Environmental rating', value: 'High-salinity, high-humidity certification' },
+      { label: 'Traceability', value: 'Full circuit documentation for survey compliance' },
+    ],
+    standards: ['ISO 16889', 'ASTM D6304', 'ISO 12937'],
+    relatedSystems: ['lubrication-protection', 'fuel-cleanliness-protection', 'hydraulic-protection'],
+    relatedIndustries: ['marine'],
+    worksWith: ['SYNTRAX™', 'HYDROCORE™', 'NANOFORCE™', 'SYNTEPORE™'],
   },
 ];
 
@@ -1528,9 +1777,9 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
   },
 };
 
-// ─── ADDITIONAL STANDARDS ─────────────────────────────────────────────────────
+// ─── ADDITIONAL STANDARDS (deprecated — merged into KC_STANDARDS above) ────────
 
-export const KC_STANDARDS_ADDITIONAL: KCStandard[] = [
+const KC_STANDARDS_ADDITIONAL_DEPRECATED: KCStandard[] = [
   {
     slug: 'iso-8573-1',
     code: 'ISO 8573-1',
