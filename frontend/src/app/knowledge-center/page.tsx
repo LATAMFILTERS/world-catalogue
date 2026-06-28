@@ -62,8 +62,16 @@ const SECTIONS = [
     accent: '#FFF12D',
   },
   {
+    href: '/knowledge-center/corporate-constitution',
+    label: '09 / CONSTITUTION',
+    title: 'Corporate Constitution',
+    description: 'Supreme governing document establishing the doctrine hierarchy, 7 core principles, 5-question decision framework, and institutional governance of ELIMFILTERS®.',
+    count: 'v1.0 — Supreme',
+    accent: '#FFF12D',
+  },
+  {
     href: '/knowledge-center/search',
-    label: '08 / SEARCH',
+    label: '10 / SEARCH',
     title: 'Knowledge Search',
     description: 'Search by symptom, equipment type, industry, standard code, or technology to find relevant engineering documentation.',
     count: 'AI-indexed',

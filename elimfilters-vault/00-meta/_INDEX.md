@@ -5,6 +5,43 @@ Last updated: 2026-06-28
 
 ---
 
+## CORPORATE DOCTRINE [SUPREME]
+
+### Governing Document (corporate/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ELIMFILTERS_CORPORATE_CONSTITUTION]] | ✅ SUPREME v1.0 — Constitutional Authority | 2026-06-28 |
+
+**Doctrine hierarchy established:**
+```
+ELIMFILTERS® CORPORATE CONSTITUTION  [SUPREME]
+    ├── Commercial Architecture Master  [commercial/]
+    ├── Technical Doctrine Master       [technical/]
+    ├── Technology Registry             [01-technologies/]
+    ├── System Registry                 [03-systems/]
+    ├── Industry Registry               [02-industries/]
+    ├── Product Registry                [09-products/]
+    └── Brand Registry                  [brand/]
+```
+
+**Constitutional provisions (13 sections):**
+- Purpose: Define mission, vision, and principles of ELIMFILTERS® as an asset protection company
+- Mission: Extend industrial asset lifespan through engineering-grade contamination control
+- Vision: Global reference standard for industrial asset protection through contamination control
+- 7 Core Principles: I. Protect Assets, II. Refuse Commodity, III. Engineer Always, IV. Know the System, V. Measure Everything, VI. Long-Term Value, VII. Integrity
+- Corporate Philosophy: "We do not sell filters. We engineer asset protection systems."
+- Business Model: 6 channels — OEM, Distribution, Fleet, Industrial, Digital, AI
+- Strategic Pillars: 6 institutional commitments
+- Engineering Doctrine: References ELIMFILTERS_TECHNICAL_DOCTRINE_MASTER v1.0
+- Commercial Doctrine: References ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0
+- Brand Doctrine: ELIMFILTERS® / German Quality / Asset Protection Technologies
+- Decision Framework: 5 yes/no constitutional questions
+- Governance: Revision protocol, authority hierarchy
+- Amendment Process: 5-step amendment protocol with version tracking
+
+---
+
 ## TECHNICAL DOCTRINE
 
 ### Master Doctrine (technical/)
