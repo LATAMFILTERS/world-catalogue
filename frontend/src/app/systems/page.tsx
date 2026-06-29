@@ -55,6 +55,14 @@ export default function SystemsPage() {
       />
 
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+
+        {/* ── Top nav ────────────────────────────────────────────────── */}
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1.25rem clamp(1.5rem, 5vw, 4rem)', display: 'flex', justifyContent: 'flex-end' }}>
+          <Link href="/" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>
+            ← HOME
+          </Link>
+        </div>
+
         {/* ── Header ─────────────────────────────────────────────────── */}
         <section
           style={{
@@ -145,18 +153,6 @@ export default function SystemsPage() {
                     }}
                   />
                   <div style={{ position: 'relative', padding: '1.5rem 1.75rem' }}>
-                    <p
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: '0.6rem',
-                        letterSpacing: '0.2em',
-                        color: '#FFF12D',
-                        textTransform: 'uppercase',
-                        marginBottom: '0.4rem',
-                      }}
-                    >
-                      {sys.hdPrefix}{sys.ldPrefix ? ` · ${sys.ldPrefix}` : ''}
-                    </p>
                     <h2
                       style={{
                         fontFamily: "'Outfit', sans-serif",

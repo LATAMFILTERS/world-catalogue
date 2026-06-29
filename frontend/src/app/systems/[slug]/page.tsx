@@ -65,15 +65,6 @@ export default function ProtectionSystemPage({ params }: Props) {
     manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: BASE_URL },
   };
 
-  const label: React.CSSProperties = {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.62rem',
-    letterSpacing: '0.22em',
-    color: '#FFF12D',
-    textTransform: 'uppercase' as const,
-    marginBottom: '1rem',
-  };
-
   const h2Style: React.CSSProperties = {
     fontFamily: "'Outfit', sans-serif",
     fontWeight: 700,
@@ -87,6 +78,7 @@ export default function ProtectionSystemPage({ params }: Props) {
     fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
     color: 'rgba(255,255,255,0.55)',
     lineHeight: 1.85,
+    textAlign: 'justify',
   };
 
   const section: React.CSSProperties = {
@@ -140,18 +132,6 @@ export default function ProtectionSystemPage({ params }: Props) {
             <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', color: 'rgba(255,255,255,0.6)', maxWidth: '540px', lineHeight: 1.65 }}>
               {sys.tagline}
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem', flexWrap: 'wrap' as const }}>
-              {sys.hdPrefix && (
-                <span style={{ background: 'rgba(255,241,45,0.12)', border: '1px solid rgba(255,241,45,0.3)', borderRadius: '3px', padding: '0.3rem 0.75rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: '#FFF12D' }}>
-                  HD: {sys.hdPrefix}XXXX
-                </span>
-              )}
-              {sys.ldPrefix && (
-                <span style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '3px', padding: '0.3rem 0.75rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.6)' }}>
-                  LD: {sys.ldPrefix}XXXX
-                </span>
-              )}
-            </div>
           </div>
         </header>
 
@@ -239,46 +219,20 @@ export default function ProtectionSystemPage({ params }: Props) {
           )}
         </section>
 
-        {/* ── Products ─────────────────────────────────────────────────── */}
-        <section style={section}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
-            {sys.hdPrefix && (
-              <div>
-                <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '0.5rem' }}>
-                  HEAVY DUTY — {sys.hdPrefix}XXXX
-                </p>
-                <Link href={`/products?system=${sys.slug}&duty=HD`} style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
-                  Browse HD Products →
-                </Link>
-              </div>
-            )}
-            {sys.ldPrefix && (
-              <div>
-                <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.5)', marginBottom: '0.5rem' }}>
-                  LIGHT DUTY — {sys.ldPrefix}XXXX
-                </p>
-                <Link href={`/products?system=${sys.slug}&duty=LD`} style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>
-                  Browse LD Products →
-                </Link>
-              </div>
-            )}
-          </div>
-        </section>
-
         {/* ── Standards ────────────────────────────────────────────────── */}
         <section style={section}>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
+          <h2 style={h2Style}>Applicable Standards</h2>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
             {sys.relatedStandards.map((std) => (
               <span
                 key={std}
                 style={{
-                  border: '1px solid rgba(255,255,255,0.15)',
-                  borderRadius: '3px',
-                  padding: '0.35rem 0.85rem',
+                  border: '1px solid rgba(255,255,255,0.18)',
+                  padding: '0.45rem 1rem',
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '0.7rem',
+                  fontSize: '0.78rem',
                   letterSpacing: '0.06em',
-                  color: 'rgba(255,255,255,0.6)',
+                  color: 'rgba(255,255,255,0.75)',
                 }}
               >
                 {std}
@@ -289,20 +243,19 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Related Industries ───────────────────────────────────────── */}
         <section style={section}>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
+          <h2 style={h2Style}>Industries Served</h2>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
             {sys.relatedIndustries.map((ind) => (
               <Link
                 key={ind}
                 href={`/industries/${ind}`}
                 style={{
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  borderRadius: '3px',
-                  padding: '0.35rem 0.85rem',
+                  border: '1px solid rgba(255,241,45,0.25)',
+                  padding: '0.45rem 1rem',
                   fontFamily: "'Outfit', sans-serif",
                   fontWeight: 500,
-                  fontSize: '0.78rem',
-                  letterSpacing: '0.06em',
-                  color: 'rgba(255,255,255,0.7)',
+                  fontSize: '0.85rem',
+                  color: 'rgba(255,255,255,0.8)',
                   textDecoration: 'none',
                   textTransform: 'capitalize' as const,
                 }}
@@ -315,7 +268,8 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Cross-links ──────────────────────────────────────────────── */}
         <section style={{ ...section, borderBottom: 'none' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+          <h2 style={h2Style}>Explore Further</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', marginTop: '0.5rem' }}>
             {[
               { href: '/technologies', label: 'All Technologies' },
               { href: '/knowledge-system', label: 'Knowledge Center' },
@@ -327,14 +281,13 @@ export default function ProtectionSystemPage({ params }: Props) {
                 href={link.href}
                 style={{
                   display: 'block',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '4px',
-                  padding: '1rem 1.25rem',
+                  background: '#000',
+                  padding: '1.25rem 1.5rem',
                   textDecoration: 'none',
                   fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 500,
-                  fontSize: '0.85rem',
-                  color: 'rgba(255,255,255,0.6)',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  color: 'rgba(255,255,255,0.75)',
                 }}
               >
                 {link.label} →
