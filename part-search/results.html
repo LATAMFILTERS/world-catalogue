@@ -1301,7 +1301,7 @@ function renderCard(p, index) {
 }
 
 // ─── Render Results ───
-function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null, limitReached = false) {
+function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null, limitReached = false, dutyData = null) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
 
   // Update header summary with real count
@@ -1312,6 +1312,33 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
       <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
   }
 
+  // ── Mixed HD/LD: render two separate sections ─────────────────────────
+  if (dutyData && dutyData.mixed_duty) {
+    const hdItems = dutyData.hd_products || [];
+    const ldItems = dutyData.ld_products || [];
+
+    const dutyWarning = `<div style="background:rgba(255,241,45,0.08);border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1rem 1.25rem;margin-bottom:2rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;">
+      <span style="color:#FFF12D;font-weight:600;">⚠ MULTIPLE DUTY CLASSES FOUND</span><br>
+      This reference code appears in both Heavy Duty and Light Duty filters. These are <strong>not interchangeable</strong> — different thread sizes, diameters and bypass pressures. Select your equipment class below.
+    </div>`;
+
+    const hdSection = hdItems.length ? `
+      <div style="margin-bottom:2.5rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:1rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,241,45,0.2);">HEAVY DUTY — ${hdItems.length} RESULT${hdItems.length !== 1 ? 'S' : ''}</div>
+        <div class="products">${hdItems.map((p, i) => renderCard(p, i)).join('')}</div>
+      </div>` : '';
+
+    const ldSection = ldItems.length ? `
+      <div style="margin-bottom:2.5rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;color:rgba(255,255,255,0.5);margin-bottom:1rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08);">LIGHT DUTY — ${ldItems.length} RESULT${ldItems.length !== 1 ? 'S' : ''}</div>
+        <div class="products">${ldItems.map((p, i) => renderCard(p, hdItems.length + i)).join('')}</div>
+      </div>` : '';
+
+    app.innerHTML = dutyWarning + hdSection + ldSection;
+    return;
+  }
+
+  // ── Standard render (single duty class) ──────────────────────────────
   app.innerHTML = `
     <div class="products">
       ${items.map((p, i) => renderCard(p, i)).join('')}
@@ -1350,7 +1377,8 @@ async function executeSearch() {
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
-      renderResults(data.products, data.count, 'PART NUMBER', query, null, data.total_catalog);
+      const dutyData = data.mixed_duty ? { mixed_duty: true, hd_products: data.hd_products, ld_products: data.ld_products } : null;
+      renderResults(data.products, data.count, 'PART NUMBER', query, null, data.total_catalog, false, dutyData);
     } catch { clearTimeout(warmupTimer); showError(); }
 
   } else if (mode === 'vin' && model) {

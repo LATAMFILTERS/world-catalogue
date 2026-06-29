@@ -1929,8 +1929,32 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     await enrichAlternatives(products, client);
 
+    // ── HD/LD duty separation ─────────────────────────────────────────────
+    // When cross-reference search (Tier 3-6) returns mixed HD + LD results,
+    // always separate them into distinct groups. HD and LD filters are never
+    // interchangeable — mixing them in a single list is a safety risk.
+    const hasHD = products.some(p => p.duty === 'HEAVY_DUTY');
+    const hasLD = products.some(p => p.duty === 'LIGHT_DUTY');
+    const mixed_duty = hasHD && hasLD;
+
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
-    res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
+
+    if (mixed_duty) {
+      const hd_products = products.filter(p => p.duty === 'HEAVY_DUTY');
+      const ld_products = products.filter(p => p.duty === 'LIGHT_DUTY');
+      res.json({
+        products,
+        count: products.length,
+        total_catalog: parseInt(totalCatalog, 10),
+        mixed_duty: true,
+        hd_products,
+        ld_products,
+        hd_count: hd_products.length,
+        ld_count: ld_products.length,
+      });
+    } else {
+      res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10), mixed_duty: false });
+    }
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: 'Search unavailable', products: [] });
