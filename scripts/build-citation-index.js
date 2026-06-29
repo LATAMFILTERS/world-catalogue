@@ -327,7 +327,8 @@ function extractAiRetrievalBlock(bodyText) {
 // ─── Note Parser ──────────────────────────────────────────────────────────────
 
 function parseNote(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8');
+  let content = fs.readFileSync(filePath, 'utf8');
+  content = content.replace(/\r\n/g, '\n');
   const relPath = path.relative(PROJECT_ROOT, filePath);
 
   // Split frontmatter from body

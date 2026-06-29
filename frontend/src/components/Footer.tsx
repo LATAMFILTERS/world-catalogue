@@ -19,7 +19,7 @@ const NAV_COLUMNS = [
     links: [
       { label: 'About Us', href: '/about', external: false },
       { label: 'Industries', href: '/industries', external: false },
-      { label: 'Systems', href: '/systems', external: false },
+      { label: 'Protection Systems', href: '/systems', external: false },
       { label: 'Distributors', href: '/distributors', external: false },
       { label: 'Contact', href: '/contact', external: false },
     ],
@@ -27,10 +27,10 @@ const NAV_COLUMNS = [
   {
     title: 'PRODUCTS',
     links: [
+      { label: 'Product Registry', href: '/products', external: false },
+      { label: 'Product Families', href: '/families', external: false },
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },
-      { label: 'Become a Dealer', href: '/distributor-application', external: false },
-      { label: 'Warranty', href: '/warranty', external: false },
     ],
   },
   {
