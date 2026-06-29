@@ -70,7 +70,7 @@ export function validateRegistry(): ValidationResult {
     if (sku !== product.partNumber) errors.push(`Product key [${sku}] mismatch [${product.partNumber}]`);
     errors.push(...validatePartNumberFormat(product.partNumber, product.duty));
     
-    if (product.productFamily !== PENDING && !PRODUCT_FAMILY_REGISTRY[product.productFamily as any]) {
+    if (product.productFamily !== PENDING && !PRODUCT_FAMILY_REGISTRY[product.productFamily as keyof typeof PRODUCT_FAMILY_REGISTRY]) {
       // Currently PRODUCT_FAMILY_REGISTRY might be empty, just note it if it's missing in a populated state
       // errors.push(`Product ${sku} has missing Family ${product.productFamily}`);
     }
