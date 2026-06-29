@@ -26,6 +26,7 @@ export type TechnologyKey =
   | 'INTEKCORE'
   | 'DRYCORE'
   | 'HYDROCORE'
+  | 'TURBOCORE'
   | 'SYNTRAX'
   | 'NANOFORCE'
   | 'THERMACORE'
@@ -428,6 +429,35 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     },
   },
 
+  // ── Promoted from EcosystemKey → TechnologyKey (2026-06-29) ───────────────
+
+  TURBOCORE: {
+    key: 'TURBOCORE',
+    name: 'TURBOCORE™',
+    slug: 'turbocore-series',
+    domain: 'Fuel Cleanliness',
+    logoFile: '/assets/TURBOCORE.avif',
+    category: 'Fuel Water Separation System',
+    tagline: 'Three-Stage Graduated Fuel Asset Protection',
+    geoDefinition: 'TURBOCORE™ is a three-stage graduated fuel protection architecture for high-volume turbine fuel systems. Stage 1 deploys HYDROCORE™ turbine rotation for inertial macro-particle and free-water separation. Stage 2 uses graduated coalescence to remove emulsified water. Stage 3 applies a HYDROCORE™ hydrophobic precision barrier to intercept sub-micron contamination and dissolved water before the injection circuit. Available in 900FH (90 GPH) and 1000FH (180 GPH) flow ratings.',
+    comparisonFunction: 'Three-stage turbine fuel protection',
+    comparisonMetric: '99% water separation efficiency · ISO 16332',
+    comparisonIndustries: 'Power Generation, Mining, Marine, Agriculture',
+    applicableIndustries: [
+      'AGRICULTURE', 'MARINE', 'POWER_GENERATION', 'OIL_GAS',
+      'CONSTRUCTION', 'MINING', 'RAILWAY',
+    ],
+    relatedStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_16889'],
+    addressesContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
+    keyMetrics: {
+      waterSeparationEfficiency: '99%',
+      flow900FH: '90 GPH (340 LPH)',
+      flow1000FH: '180 GPH (681 LPH)',
+      certifiedStandard: 'ISO 16332',
+      barrierOptions: '2 µm · 10 µm · 30 µm',
+    },
+  },
+
 };
 
 // ============================================================================
@@ -710,12 +740,12 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
 
   TURBOCORE_SERIES: {
     key: 'TURBOCORE_SERIES',
-    name: 'Hydrocore Series',
+    name: 'TURBOCORE™ Series',
     slug: 'turbocore-series',
     domain: 'Fuel Cleanliness',
-    primaryTechnology: 'HYDROCORE',
-    supportingTechnologies: [],
-    description: "TURBOCORE™ is ELIMFILTERS’ heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations.",
+    primaryTechnology: 'TURBOCORE',
+    supportingTechnologies: ['HYDROCORE'],
+    description: "TURBOCORE™ is ELIMFILTERS' heavy-duty three-stage turbine fuel protection system delivering graduated contamination interception: Stage 1 (inertial separation via turbine rotation), Stage 2 (graduated coalescence for emulsified water), Stage 3 (HYDROCORE™ hydrophobic precision barrier). Models: 900FH (90 GPH) and 1000FH (180 GPH).",
   },
 
   CABIN: {

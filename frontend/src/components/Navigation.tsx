@@ -59,6 +59,8 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-system">{t('nav.knowledge', 'Knowledge')}</NavLink>
+          <NavLink href="/products">{t('nav.products', 'Products')}</NavLink>
+          <NavLink href="/company">{t('nav.company', 'Company')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a
@@ -133,6 +135,8 @@ export function Navigation() {
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-system', label: t('nav.knowledge', 'Knowledge') },
+                { href: '/products', label: t('nav.products', 'Products') },
+                { href: '/company', label: t('nav.company', 'Company') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div
