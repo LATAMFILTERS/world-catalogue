@@ -344,7 +344,7 @@ export default function SciencePage() {
               gap: '0.75rem',
               userSelect: 'none',
             }}>
-              <span>// JUMP TO SECTION</span>
+              <span>JUMP TO SECTION</span>
               <span style={{ opacity: 0.4, fontSize: '0.6rem' }}>▼</span>
             </summary>
             <div style={{

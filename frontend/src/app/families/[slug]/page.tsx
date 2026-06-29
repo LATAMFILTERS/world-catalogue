@@ -83,7 +83,6 @@ export default function FamilyPage({ params }: Props) {
           <img src={fam.heroImage} alt={fam.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 40%, transparent 100%)' }} />
           <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <p style={label}>// PRODUCT FAMILY CENTER</p>
             <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
               {fam.name}
             </h1>
@@ -98,15 +97,12 @@ export default function FamilyPage({ params }: Props) {
         <section style={section}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             <div>
-              <p style={label}>// PURPOSE</p>
               <p style={prose}>{fam.purpose}</p>
             </div>
             <div>
-              <p style={label}>// ENGINEERING</p>
               <p style={prose}>{fam.engineering}</p>
             </div>
             <div>
-              <p style={label}>// CONSTRUCTION</p>
               <p style={{ ...prose, ...(fam.construction === 'DOCUMENTATION PENDING' ? { color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em' } : {}) }}>
                 {fam.construction}
               </p>
@@ -119,7 +115,6 @@ export default function FamilyPage({ params }: Props) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {sys && (
               <div>
-                <p style={label}>// PROTECTION SYSTEM</p>
                 <Link href={`/systems/${sys.slug}`} style={{ display: 'block', textDecoration: 'none', background: 'rgba(255,255,255,0.04)', padding: '1.5rem', borderRadius: '4px' }}>
                   <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1.1rem', color: '#fff', marginBottom: '0.5rem' }}>{sys.name}</p>
                   <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>View System →</p>
@@ -127,7 +122,6 @@ export default function FamilyPage({ params }: Props) {
               </div>
             )}
             <div>
-              <p style={label}>// ANCHOR TECHNOLOGY</p>
               <Link href={`/technologies/${fam.primaryTechnology}`} style={{ display: 'block', textDecoration: 'none', background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.1)', padding: '1.5rem', borderRadius: '4px' }}>
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1.1rem', color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>{fam.primaryTechnology.replace(/-/g, ' ')}</p>
                 <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>View Technology →</p>
@@ -141,7 +135,6 @@ export default function FamilyPage({ params }: Props) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
             {fam.hdPrefix && (
               <div>
-                <p style={label}>// HEAVY DUTY PRODUCTS</p>
                 {fam.hdProducts.length > 0 && fam.hdProducts[0] !== 'DOCUMENTATION PENDING' ? (
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {fam.hdProducts.map(pn => (
@@ -155,7 +148,6 @@ export default function FamilyPage({ params }: Props) {
             )}
             {fam.ldPrefix && (
               <div>
-                <p style={label}>// LIGHT DUTY PRODUCTS</p>
                 {fam.ldProducts.length > 0 && fam.ldProducts[0] !== 'DOCUMENTATION PENDING' ? (
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {fam.ldProducts.map(pn => (
@@ -172,7 +164,6 @@ export default function FamilyPage({ params }: Props) {
 
         {/* Standards */}
         <section style={section}>
-          <p style={label}>// ENGINEERING STANDARDS</p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
             {fam.applicableStandards.map((std) => (
               <span key={std} style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: '3px', padding: '0.35rem 0.85rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.6)' }}>

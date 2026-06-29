@@ -64,18 +64,6 @@ export default function SystemsPage() {
             borderBottom: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          <p
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '0.65rem',
-              letterSpacing: '0.22em',
-              color: '#FFF12D',
-              textTransform: 'uppercase',
-              marginBottom: '1.5rem',
-            }}
-          >
-            // ELIMFILTERS · PROTECTION SYSTEMS
-          </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",

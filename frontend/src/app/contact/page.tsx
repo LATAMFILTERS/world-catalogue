@@ -668,9 +668,6 @@ export default function Contact() {
       <section style={{ padding: '3rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <AnimateIn>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>
-              // KNOWLEDGE RESOURCES
-            </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
               {[
                 { label: 'Industrial Standards Library', href: '/knowledge-system/standards' },

@@ -123,16 +123,6 @@ export default function AboutPage() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            marginBottom: '1.25rem',
-            opacity: 0.85,
-          }}>
-            // INDUSTRIAL ASSET PROTECTION COMPANY
-          </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
             fontSize: 'clamp(2.2rem, 5.5vw, 3.8rem)',

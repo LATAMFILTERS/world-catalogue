@@ -34,9 +34,6 @@ export default function FamiliesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
         <section style={{ padding: 'clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem)', maxWidth: '1200px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.22em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-            // ELIMFILTERS · PRODUCT FAMILY CENTERS
-          </p>
           <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: '1.25rem', maxWidth: '680px' }}>
             Product Families
           </h1>

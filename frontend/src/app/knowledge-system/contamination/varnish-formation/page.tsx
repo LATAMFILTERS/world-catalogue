@@ -73,10 +73,6 @@ export default function VarnishFormationPage() {
           transition={{ duration: 0.5 }}
           style={{ maxWidth: '720px', margin: '0 auto', padding: '0 2rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem',
-            letterSpacing: '0.18em', color: '#FFF12D', marginBottom: '1rem', opacity: 0.85,
-          }}>// CONTAMINATION CASE STUDY · VARNISH FORMATION</p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em',
@@ -198,7 +194,6 @@ export default function VarnishFormationPage() {
 
         {/* Related Systems */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.3)', marginBottom: '1.25rem' }}>// EXPLORE RELATED SYSTEMS</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {RELATED_SYSTEMS.map((sys) => (
               <Link key={sys.code} href={sys.href} style={{ textDecoration: 'none' }}>

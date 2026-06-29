@@ -134,7 +134,6 @@ export default function ProtectionSystemPage({ params }: Props) {
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 40%, transparent 100%)' }} />
           <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <p style={label}>// PROTECTION SYSTEM</p>
             <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
               {sys.name}
             </h1>
@@ -158,7 +157,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Overview ─────────────────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// OVERVIEW</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             <p style={prose}>{sys.overview}</p>
             <div>
@@ -172,7 +170,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Technology Center ────────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// TECHNOLOGY CENTER</p>
           <h2 style={h2Style}>Primary Technologies</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {sys.primaryTechnologies.map((slug) => (
@@ -206,7 +203,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Product Families ─────────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// PRODUCT FAMILIES</p>
           <h2 style={h2Style}>Product Families</h2>
           {families.length === 0 ? (
             <p style={prose}>DOCUMENTATION PENDING</p>
@@ -245,7 +241,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Products ─────────────────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// PRODUCTS</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
             {sys.hdPrefix && (
               <div>
@@ -272,7 +267,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Standards ────────────────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// ENGINEERING STANDARDS</p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
             {sys.relatedStandards.map((std) => (
               <span
@@ -295,7 +289,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Related Industries ───────────────────────────────────────── */}
         <section style={section}>
-          <p style={label}>// RELATED INDUSTRIES</p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
             {sys.relatedIndustries.map((ind) => (
               <Link
@@ -322,7 +315,6 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         {/* ── Cross-links ──────────────────────────────────────────────── */}
         <section style={{ ...section, borderBottom: 'none' }}>
-          <p style={label}>// EXPLORE FURTHER</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
             {[
               { href: '/technologies', label: 'All Technologies' },

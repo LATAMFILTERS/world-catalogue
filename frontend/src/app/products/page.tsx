@@ -18,9 +18,6 @@ export default function ProductsIndexPage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       
       <section style={{ padding: 'clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem)', maxWidth: '1200px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.22em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-          // ELIMFILTERS · PRODUCT REGISTRY
-        </p>
         <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: '1.25rem', maxWidth: '680px' }}>
           Product Registry
         </h1>
@@ -41,7 +38,6 @@ export default function ProductsIndexPage() {
       </section>
 
       <section style={section}>
-        <p style={label}>// NAVIGATION</p>
         <h2 style={h2Style}>Explore by Hierarchy</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
           <Link href="/systems" style={{ display: 'block', textDecoration: 'none', background: 'rgba(255,255,255,0.04)', padding: '1.5rem', borderRadius: '4px' }}>

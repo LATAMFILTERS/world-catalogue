@@ -90,7 +90,6 @@ export default function V2ConsultPage() {
           ← CUSTOMER INTELLIGENCE
         </Link>
 
-        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>// AI ENGINE V2</p>
         <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           Multi-Agent Technical Reasoning
         </h1>
