@@ -12,7 +12,7 @@ const FAILURE_CHAIN = [
 ];
 
 const ECOSYSTEM = [
-  { code: '01', title: 'Proprietary Technologies', body: '10 engineered filtration technologies, each mapped to a specific contamination failure mechanism — not generic product lines.', href: '/technologies' },
+  { code: '01', title: 'Proprietary Technologies', body: '12 engineered filtration technologies, each mapped to a specific contamination failure mechanism — not generic product lines.', href: '/technologies' },
   { code: '02', title: 'Systems Architecture', body: '12 fluid system domains: air intake, fuel, hydraulic, lube oil, cabin, compressed air, transmission, and more.', href: '/systems' },
   { code: '03', title: 'Industry Protection Strategies', body: '12 industrial sectors with specific contamination profiles, ISO cleanliness targets, and protection frameworks.', href: '/industries' },
   { code: '04', title: 'Knowledge System', body: 'Industrial contamination library: standards, failure mode analysis, fleet optimization, and contamination physics across 30+ documents.', href: '/knowledge-system' },
@@ -21,16 +21,18 @@ const ECOSYSTEM = [
 ];
 
 const TECHNOLOGIES = [
-  { code: 'MACROCORE™', href: '/technologies/macrocore', domain: 'Engine | Lube | Hydraulic' },
-  { code: 'MICROKAPPA™', href: '/technologies/microkappa', domain: 'Precision Hydraulic | Fuel' },
-  { code: 'DRYCORE™', href: '/technologies/drycore', domain: 'Air Intake | Engine' },
-  { code: 'INTEKCORE™', href: '/technologies/intekcore', domain: 'Fuel | Diesel | Injection' },
-  { code: 'SYNTEPORE™', href: '/technologies/syntepore', domain: 'Hydraulic | High-Temperature' },
+  { code: 'MACROCORE™', href: '/technologies/macrocore', domain: 'Air Intake | Engine' },
+  { code: 'MICROKAPPA™', href: '/technologies/microkappa', domain: 'Cabin Air | Occupant Health' },
+  { code: 'DRYCORE™', href: '/technologies/drycore', domain: 'Compressed Air | Pneumatic' },
+  { code: 'INTEKCORE™', href: '/technologies/intekcore', domain: 'Filter Housing Systems' },
+  { code: 'SYNTEPORE™', href: '/technologies/syntepore', domain: 'Fuel | HPCR Injection' },
   { code: 'HYDROCORE™', href: '/technologies/hydrocore', domain: 'Fuel | Water Separation' },
-  { code: 'TURBOCORE™', href: '/technologies/turbocore-series', domain: 'Bulk Fuel | Marine' },
-  { code: 'SYNTRAX™', href: '/technologies/syntrax', domain: 'Transmission | Drivetrain' },
+  { code: 'TURBOCORE™', href: '/technologies/turbocore-series', domain: 'Bulk Fuel | 3-Stage' },
+  { code: 'SYNTRAX™', href: '/technologies/syntrax', domain: 'Engine Lube Oil' },
   { code: 'NANOFORCE™', href: '/technologies/nanoforce', domain: 'Hydraulic | Servo Systems' },
-  { code: 'THERMACORE™', href: '/technologies/thermacore', domain: 'High-Temperature | Diesel' },
+  { code: 'THERMACORE™', href: '/technologies/thermacore', domain: 'Coolant | SCA Additive' },
+  { code: 'DURATECH™', href: '/commercial-lines/duratech', domain: 'Fleet Maintenance Kits' },
+  { code: 'MARINECLEAN™', href: '/commercial-lines/marineclean', domain: 'Marine Diesel | Hydraulic' },
 ];
 
 const INDUSTRIES = [
@@ -77,10 +79,10 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About ELIMFILTERS — Industrial Asset Protection Company',
-    description: 'ELIMFILTERS is not a filter manufacturer. It is an industrial asset protection company focused on contamination control, failure prevention, and equipment reliability across 12 industrial sectors and 10 proprietary technologies.',
+    description: 'ELIMFILTERS is not a filter manufacturer. It is an industrial asset protection company focused on contamination control, failure prevention, and equipment reliability across 12 industrial sectors and 12 proprietary technologies.',
     url: 'https://elimfilters.com/about',
     author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-    dateModified: '2026-06-11',
+    dateModified: '2026-06-29',
   };
 
   const schemaBreadcrumb = {
@@ -111,17 +113,18 @@ export default function AboutPage() {
       }}>← HOME</Link>
 
       {/* HERO */}
-      <section style={{
-        paddingTop: 'clamp(5rem, 12vw, 9rem)',
-        paddingBottom: '5rem',
-        background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
+      <header style={{ position: 'relative', height: 'clamp(320px, 48vh, 560px)', overflow: 'hidden' }}>
+        <img
+          src="/images/grupo-filters.jpg"
+          alt="ELIMFILTERS Industrial Asset Protection"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.38 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.4) 100%)' }} />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}
+          style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
         >
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',
@@ -129,25 +132,26 @@ export default function AboutPage() {
             fontWeight: 700,
             letterSpacing: '-0.02em',
             lineHeight: 1.1,
-            marginBottom: '1.5rem',
+            marginBottom: '1.25rem',
+            maxWidth: '680px',
           }}>
             We Don&apos;t Sell Filters.<br />We Protect Assets.
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+            fontSize: 'clamp(0.92rem, 1.6vw, 1.05rem)',
             color: 'rgba(255,255,255,0.58)',
-            maxWidth: '620px',
+            maxWidth: '560px',
             lineHeight: 1.8,
           }}>
             Industrial equipment does not fail because a filter is missing. It fails because contamination creates wear, wear creates damage, damage creates downtime, and downtime destroys asset value. ELIMFILTERS was built to address the problem — not the product.
           </p>
         </motion.div>
-      </section>
+      </header>
 
-      {/* 01 — WHY ELIMFILTERS EXISTS */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      {/* WHY ELIMFILTERS EXISTS */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,24 +159,21 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '2.5rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              01 / WHY ELIMFILTERS EXISTS
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.5rem' }}>
               The Problem Is Contamination. Not Filters.
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.97rem', color: 'rgba(255,255,255,0.68)', lineHeight: 1.8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', maxWidth: '720px' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.97rem', color: 'rgba(255,255,255,0.68)', lineHeight: 1.8, textAlign: 'justify' }}>
                 Contamination is the root cause of 70–80% of hydraulic and lubrication system failures in heavy equipment. Not age. Not hours. Not mechanical chance. Particles at or near the clearance tolerance of bearings, valve spools, and fuel injectors accumulate beyond their ISO 4406 cleanliness targets — initiating a wear cascade that progresses at a rate directly proportional to contamination level.
               </p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.97rem', color: 'rgba(255,255,255,0.68)', lineHeight: 1.8 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.97rem', color: 'rgba(255,255,255,0.68)', lineHeight: 1.8, textAlign: 'justify' }}>
                 The filter industry has spent decades building better products. ELIMFILTERS was built to address a different question: why do assets fail even when filters are present? The answer is system design — contamination targets, technology selection, protection architecture, and operational strategy. That is what ELIMFILTERS engineers.
               </p>
             </div>
           </motion.div>
 
           {/* Failure chain */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', maxWidth: '640px' }}>
             {FAILURE_CHAIN.map((item, i) => (
               <motion.div
                 key={item.step}
@@ -209,9 +210,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 02 — THE DIFFERENT APPROACH */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+      {/* THE DIFFERENT APPROACH */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,9 +220,6 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              02 / A DIFFERENT APPROACH
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               Most Companies Focus on the Filter. We Focus on the Asset.
             </h2>
@@ -285,9 +283,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 03 — THE ECOSYSTEM */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      {/* THE ECOSYSTEM */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -295,9 +293,6 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '2.5rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              03 / THE ECOSYSTEM
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               An Asset Protection Platform. Not a Product Catalog.
             </h2>
@@ -331,9 +326,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 04 — TECHNOLOGIES */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      {/* TECHNOLOGIES */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,11 +336,8 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '2.5rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              04 / PROPRIETARY TECHNOLOGIES
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.6rem' }}>
-              10 Technologies. Each Engineered for a Specific Failure Mechanism.
+              12 Technologies. Each Engineered for a Specific Failure Mechanism.
             </h2>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
               Every ELIMFILTERS technology exists to address an identified contamination failure pathway. The failure mechanism determines the technology requirement.
@@ -384,9 +376,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 05 — INDUSTRIES */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      {/* INDUSTRIES */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -394,9 +386,6 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '2.5rem' }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              05 / INDUSTRIES PROTECTED
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               12 Industrial Sectors. One Asset Protection Standard.
             </h2>
@@ -425,18 +414,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 06 — COMPANY IDENTITY */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      {/* COMPANY IDENTITY */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6 }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              06 / COMPANY IDENTITY
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '2rem' }}>
               Built on Engineering. Positioned on Asset Protection.
             </h2>
@@ -459,7 +445,7 @@ export default function AboutPage() {
                 },
                 {
                   label: 'PLATFORM SCOPE',
-                  value: '10 Technologies · 12 Industries',
+                  value: '12 Technologies · 12 Industries',
                   note: '30+ Knowledge System documents. AI-readable contamination intelligence framework.',
                 },
               ].map((item) => (
@@ -474,25 +460,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 07 — NEXT STEPS */}
-      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      {/* NEXT STEPS */}
+      <section style={{ padding: 'clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              07 / EXPLORE THE PLATFORM
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '2rem' }}>
               Where to Go Next
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '1rem' }}>
               {[
                 { label: 'THE SCIENCE', desc: 'Why contamination destroys industrial assets — the physics and the data', href: '/knowledge-system/science', tag: 'KNOWLEDGE' },
-                { label: 'TECHNOLOGIES', desc: '10 proprietary technologies, each mapped to a failure mechanism', href: '/technologies', tag: 'PORTFOLIO' },
+                { label: 'TECHNOLOGIES', desc: '12 proprietary technologies, each mapped to a failure mechanism', href: '/technologies', tag: 'PORTFOLIO' },
                 { label: 'KNOWLEDGE SYSTEM', desc: '30+ industrial contamination and asset protection documents', href: '/knowledge-system', tag: 'LIBRARY' },
                 { label: 'BECOME A PARTNER', desc: 'Authorized distributor program — asset protection ecosystem', href: '/distributor-application', tag: 'PARTNERS' },
                 { label: 'CONTACT ENGINEERING', desc: 'Technical consultation, OEM cross-reference, fleet strategy', href: '/contact', tag: 'CONTACT' },
@@ -514,9 +497,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CANONICAL KNOWLEDGE BLOCK */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
-      </div>
     </main>
   );
 }
