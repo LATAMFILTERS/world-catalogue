@@ -91,9 +91,16 @@ registerMapping({
   fromOemId: 'donaldson', fromPartNumber: 'P550000', toPartNumber: 'EL80001',
   confidenceInput: { sources: ['OEM_CATALOG'], dimensionMatch: false, specMatch: false, multiOemAgreement: false, engineeringReview: false, sourceCount: 1 },
 });
-// Low confidence — below 70
+// Low confidence — below 70, but wait we need it ACTIVE to trigger conflict.
+// Let's make it 70 so it's ACTIVE, triggering the ONE_TO_MANY conflict.
 const lowConfEdge = registerMapping({
   fromOemId: 'donaldson', fromPartNumber: 'P550000', toPartNumber: 'EL80002',
+  confidenceInput: { sources: ['OEM_CATALOG'], dimensionMatch: false, specMatch: false, multiOemAgreement: false, engineeringReview: false, sourceCount: 1 },
+});
+
+// Let's add a REAL low confidence one to trigger gap detector
+registerMapping({
+  fromOemId: 'donaldson', fromPartNumber: 'XBADPART', toPartNumber: 'EA13001',
   confidenceInput: { sources: [], dimensionMatch: false, specMatch: false, multiOemAgreement: false, engineeringReview: false, sourceCount: 0 },
 });
 

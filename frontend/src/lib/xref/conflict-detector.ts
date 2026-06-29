@@ -60,7 +60,7 @@ function detectDutyConflicts(): XrefConflict[] {
     byNormalized.get(key)!.push(node);
   }
 
-  for (const [, group] of byNormalized) {
+  for (const [, group] of Array.from(byNormalized.entries())) {
     const duties = new Set(group.map(n => n.duty).filter(d => d !== 'UNKNOWN'));
     if (duties.size > 1) {
       conflicts.push({
@@ -69,7 +69,7 @@ function detectDutyConflicts(): XrefConflict[] {
         severity: 'CRITICAL',
         involvedNodes: group.map(n => n.id),
         involvedEdges: [],
-        description: `Part "${group[0].oemId}::${group[0].partNumberNormalized}" has conflicting duty classes: ${[...duties].join(', ')}`,
+        description: `Part "${group[0].oemId}::${group[0].partNumberNormalized}" has conflicting duty classes: ${Array.from(duties).join(', ')}`,
         detectedAt: new Date().toISOString(),
         resolution: 'MANUAL_REQUIRED',
       });
@@ -90,7 +90,7 @@ function detectCategoryConflicts(): XrefConflict[] {
     byNormalized.get(key)!.push(node);
   }
 
-  for (const [, group] of byNormalized) {
+  for (const [, group] of Array.from(byNormalized.entries())) {
     const categories = new Set(group.map(n => n.category).filter(Boolean));
     if (categories.size > 1) {
       conflicts.push({
@@ -99,7 +99,7 @@ function detectCategoryConflicts(): XrefConflict[] {
         severity: 'HIGH',
         involvedNodes: group.map(n => n.id),
         involvedEdges: [],
-        description: `Part "${group[0].oemId}::${group[0].partNumberNormalized}" assigned to conflicting categories: ${[...categories].join(', ')}`,
+        description: `Part "${group[0].oemId}::${group[0].partNumberNormalized}" assigned to conflicting categories: ${Array.from(categories).join(', ')}`,
         detectedAt: new Date().toISOString(),
         resolution: 'MANUAL_REQUIRED',
       });
@@ -120,7 +120,7 @@ function detectDuplicateMappings(): XrefConflict[] {
     seen.get(key)!.push(edge.id);
   }
 
-  for (const [key, edgeIds] of seen) {
+  for (const [key, edgeIds] of Array.from(seen.entries())) {
     if (edgeIds.length > 1) {
       const [from, to] = key.split('→');
       conflicts.push({

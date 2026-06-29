@@ -40,11 +40,11 @@ export function buildBidirectionalIndex(): BidirectionalIndex {
 
   // Build equivalences: for each ELIMFILTERS part, all OEM parts pointing to it
   // are considered equivalent to each other
-  for (const [elimPart, oemSet] of elimToOem) {
-    for (const oemPartId of oemSet) {
+  for (const [elimPart, oemSet] of Array.from(elimToOem.entries())) {
+    for (const oemPartId of Array.from(oemSet)) {
       if (!oemEquivalences.has(oemPartId)) oemEquivalences.set(oemPartId, new Set());
       const eq = oemEquivalences.get(oemPartId)!;
-      for (const otherOemPartId of oemSet) {
+      for (const otherOemPartId of Array.from(oemSet)) {
         if (otherOemPartId !== oemPartId) eq.add(otherOemPartId);
       }
     }

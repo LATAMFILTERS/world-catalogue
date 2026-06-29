@@ -30,7 +30,7 @@ export function findDuplicateNodes(): DuplicateGroup[] {
     byKey.get(key)!.push(node.id);
   }
 
-  for (const [, nodeIds] of byKey) {
+  for (const [, nodeIds] of Array.from(byKey.entries())) {
     if (nodeIds.length < 2) continue;
 
     // Choose canonical: the one added earliest (first ID alphabetically as proxy)
@@ -61,7 +61,7 @@ export function findDuplicateEdges(): DuplicateGroup[] {
     byKey.get(key)!.push(edge.id);
   }
 
-  for (const [, edgeIds] of byKey) {
+  for (const [, edgeIds] of Array.from(byKey.entries())) {
     if (edgeIds.length < 2) continue;
 
     // Canonical = highest confidence edge

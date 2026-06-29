@@ -41,7 +41,7 @@ export function buildEquivalenceGroups(): OemEquivalenceGroup[] {
   }
 
   // Only create groups where 2+ OEM parts map to the same ELIMFILTERS part
-  for (const [elimPart, oemPartIds] of elimToOemParts) {
+  for (const [elimPart, oemPartIds] of Array.from(elimToOemParts.entries())) {
     if (oemPartIds.length < 2) continue;
 
     const confidences = elimEdgeConfidence.get(elimPart) ?? [];
@@ -49,9 +49,9 @@ export function buildEquivalenceGroups(): OemEquivalenceGroup[] {
       ? Math.round(confidences.reduce((s, c) => s + c, 0) / confidences.length)
       : 0;
 
-    const oems = [...new Set(
+    const oems = Array.from(new Set(
       oemPartIds.map(id => XREF_GRAPH.getNode(id)?.oemId ?? 'unknown')
-    )];
+    ));
 
     groups.push({
       groupId: newGroupId(),
@@ -104,7 +104,7 @@ export function getEquivalenceStats(groups: OemEquivalenceGroup[]): {
       oemCount.set(oem, (oemCount.get(oem) ?? 0) + 1);
     }
   }
-  const topOems = [...oemCount.entries()]
+  const topOems = Array.from(oemCount.entries())
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
     .map(([oem]) => oem);

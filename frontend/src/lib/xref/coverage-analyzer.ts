@@ -34,7 +34,7 @@ function buildByOem(): CoverageByDimension[] {
   }
 
   const results: CoverageByDimension[] = [];
-  for (const [oemId, stats] of oemStats) {
+  for (const [oemId, stats] of Array.from(oemStats.entries())) {
     const avgConf = stats.confidence.length
       ? Math.round(stats.confidence.reduce((s, c) => s + c, 0) / stats.confidence.length)
       : 0;
@@ -73,7 +73,7 @@ function buildByDutyClass(): CoverageByDimension[] {
     stats[from.duty].confidence.push(edge.confidenceScore);
   }
 
-  return Object.entries(stats).map(([duty, s]) => ({
+  return Array.from(Object.entries(stats)).map(([duty, s]) => ({
     dimension: 'Duty Class',
     key: duty,
     oemParts: s.oemParts,
