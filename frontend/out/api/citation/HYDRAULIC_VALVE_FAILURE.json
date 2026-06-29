@@ -54,7 +54,7 @@
       "POWER_GENERATION"
     ]
   },
-  "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md",
+  "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md",
   "_links": {
     "self": "/api/citation/HYDRAULIC_VALVE_FAILURE.json",
     "type_index": "/api/citation/type/problem.json",

@@ -1,4 +1,65 @@
 {
-  "type_count": 0,
-  "types": []
+  "type_count": 12,
+  "types": [
+    {
+      "type": "architecture",
+      "count": 1,
+      "href": "/api/citation/type/architecture.json"
+    },
+    {
+      "type": "commercial-system",
+      "count": 2,
+      "href": "/api/citation/type/commercial-system.json"
+    },
+    {
+      "type": "component",
+      "count": 3,
+      "href": "/api/citation/type/component.json"
+    },
+    {
+      "type": "contamination-mode",
+      "count": 4,
+      "href": "/api/citation/type/contamination-mode.json"
+    },
+    {
+      "type": "industry",
+      "count": 11,
+      "href": "/api/citation/type/industry.json"
+    },
+    {
+      "type": "problem",
+      "count": 5,
+      "href": "/api/citation/type/problem.json"
+    },
+    {
+      "type": "product-family",
+      "count": 5,
+      "href": "/api/citation/type/product-family.json"
+    },
+    {
+      "type": "protection-domain",
+      "count": 4,
+      "href": "/api/citation/type/protection-domain.json"
+    },
+    {
+      "type": "standard",
+      "count": 10,
+      "href": "/api/citation/type/standard.json"
+    },
+    {
+      "type": "system",
+      "count": 1,
+      "href": "/api/citation/type/system.json"
+    },
+    {
+      "type": "taxonomy",
+      "count": 1,
+      "href": "/api/citation/type/taxonomy.json"
+    },
+    {
+      "type": "technology",
+      "count": 7,
+      "href": "/api/citation/type/technology.json"
+    }
+  ]
 }

@@ -51,7 +51,7 @@
       "FUEL"
     ]
   },
-  "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md",
+  "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md",
   "_links": {
     "self": "/api/citation/FUEL_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",

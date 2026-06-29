@@ -59,7 +59,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md",
+  "vault_path": "elimfilters-vault\\02-industries\\AGRICULTURE.md",
   "_links": {
     "self": "/api/citation/AGRICULTURE.json",
     "type_index": "/api/citation/type/industry.json",

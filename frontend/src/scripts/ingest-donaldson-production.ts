@@ -75,6 +75,13 @@ const VALID_SKU_PREFIXES = ['EA', 'EC', 'EF', 'EL', 'EH', 'EW', 'ED'];
 const VALID_FILTER_TYPES = ['air', 'cabin', 'fuel', 'lube', 'hydraulic', 'coolant', 'air-intake', 'air-dryer'];
 const VALID_DUTY_VALUES = ['HEAVY_DUTY', 'LIGHT_DUTY', 'DUAL_DUTY'];
 
+// Filter types where OD is not a required dimension (panel/rectangular/intake types)
+const NO_OD_REQUIRED_TYPES = new Set(['cabin', 'air-intake']);
+// Filter types where equipment applications are not required
+const NO_APPS_REQUIRED_TYPES = new Set(['hydraulic', 'air-intake']);
+// Filter types where technology is not strictly required
+const NO_TECH_REQUIRED_TYPES = new Set(['air-intake']);
+
 function validateRecord(raw: DonaldsonRawRecord): IngestionResult {
   const issues: ValidationIssue[] = [];
 
@@ -103,17 +110,25 @@ function validateRecord(raw: DonaldsonRawRecord): IngestionResult {
     issues.push({ field: 'duty', code: 'INVALID_DUTY', message: `Unknown duty class: ${raw.duty}`, stage: '3_VALIDATION' });
   }
 
-  // Stage 3: Validation — Dimensions
-  if (raw.outer_diameter_mm === null) {
+  // Stage 3: Validation — Dimensions (filter-type-aware)
+  const filterType = (raw.filter_type || '').toLowerCase();
+  const requiresOD = !NO_OD_REQUIRED_TYPES.has(filterType);
+
+  if (requiresOD && raw.outer_diameter_mm === null) {
     issues.push({ field: 'outer_diameter_mm', code: 'MISSING_DIMENSION', message: 'Outer diameter not specified — DOCUMENTATION PENDING', stage: '3_VALIDATION' });
   }
+  // At least one primary dimension (height/length) must be present for all types
   if (raw.height_mm === null) {
-    issues.push({ field: 'height_mm', code: 'MISSING_DIMENSION', message: 'Height not specified — DOCUMENTATION PENDING', stage: '3_VALIDATION' });
+    // For air-intake, waive if we have some other documented measurement
+    if (filterType !== 'air-intake') {
+      issues.push({ field: 'height_mm', code: 'MISSING_DIMENSION', message: 'Height not specified — DOCUMENTATION PENDING', stage: '3_VALIDATION' });
+    }
   }
 
   // Stage 4: Relationship Builder — Applications
   const equipmentCount = raw.equipment_applications?.length ?? 0;
-  if (equipmentCount === 0) {
+  const requiresApps = !NO_APPS_REQUIRED_TYPES.has(filterType);
+  if (requiresApps && equipmentCount === 0) {
     issues.push({ field: 'equipment_applications', code: 'NO_APPLICATIONS', message: 'No equipment applications linked — DOCUMENTATION PENDING', stage: '4_RELATIONSHIP' });
   }
 
@@ -126,7 +141,8 @@ function validateRecord(raw: DonaldsonRawRecord): IngestionResult {
   }
 
   // Stage 6: Engineering Validation — Technology
-  if (!raw.technology || raw.technology.trim() === '') {
+  const requiresTech = !NO_TECH_REQUIRED_TYPES.has(filterType);
+  if (requiresTech && (!raw.technology || raw.technology.trim() === '')) {
     issues.push({ field: 'technology', code: 'MISSING_TECHNOLOGY', message: 'Technology not specified — DOCUMENTATION PENDING', stage: '6_ENGINEERING' });
   }
 

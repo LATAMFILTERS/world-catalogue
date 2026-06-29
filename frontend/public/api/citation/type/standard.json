@@ -52,7 +52,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md"
     },
     {
       "key": "DIN_51524",
@@ -79,7 +79,7 @@
         "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_51524.md"
     },
     {
       "key": "DIN_71220",
@@ -128,7 +128,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/DIN_71220.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md"
     },
     {
       "key": "ISO_11155",
@@ -180,7 +180,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_11155.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md"
     },
     {
       "key": "ISO_12937",
@@ -229,7 +229,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_12937.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md"
     },
     {
       "key": "ISO_16889",
@@ -280,7 +280,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_16889.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md"
     },
     {
       "key": "ISO_4406",
@@ -327,7 +327,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_4406.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md"
     },
     {
       "key": "ISO_5011",
@@ -383,7 +383,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_5011.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md"
     },
     {
       "key": "NFPA_T214",
@@ -432,7 +432,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md"
+      "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md"
     },
     {
       "key": "SAE_J1539",
@@ -477,7 +477,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md"
+      "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md"
     }
   ]
 }

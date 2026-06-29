@@ -62,7 +62,7 @@
       "AUTOMOTIVE"
     ]
   },
-  "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md",
+  "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md",
   "_links": {
     "self": "/api/citation/ENGINE_OIL_CONTAMINATION.json",
     "type_index": "/api/citation/type/problem.json",
