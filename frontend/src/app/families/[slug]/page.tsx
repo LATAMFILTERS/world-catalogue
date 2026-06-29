@@ -50,9 +50,8 @@ export default function FamilyPage({ params }: Props) {
     ],
   };
 
-  const label: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.22em', color: '#FFF12D', textTransform: 'uppercase' as const, marginBottom: '1rem' };
   const h2Style: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', lineHeight: 1.2, marginBottom: '1rem' };
-  const prose: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.9rem, 1.3vw, 1rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85 };
+  const prose: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.9rem, 1.3vw, 1rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85, textAlign: 'justify' };
   const section: React.CSSProperties = { maxWidth: '1200px', margin: '0 auto', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 
   return (
@@ -86,10 +85,6 @@ export default function FamilyPage({ params }: Props) {
             <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
               {fam.name}
             </h1>
-            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' as const }}>
-              {fam.hdPrefix && <span style={{ background: 'rgba(255,241,45,0.12)', border: '1px solid rgba(255,241,45,0.3)', borderRadius: '3px', padding: '0.3rem 0.75rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: '#FFF12D' }}>HD: {fam.hdPrefix}XXXX</span>}
-              {fam.ldPrefix && <span style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '3px', padding: '0.3rem 0.75rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.6)' }}>LD: {fam.ldPrefix}XXXX</span>}
-            </div>
           </div>
         </header>
 
@@ -164,11 +159,33 @@ export default function FamilyPage({ params }: Props) {
 
         {/* Standards */}
         <section style={section}>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const }}>
+          <h2 style={h2Style}>Applicable Standards</h2>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
             {fam.applicableStandards.map((std) => (
-              <span key={std} style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: '3px', padding: '0.35rem 0.85rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.6)' }}>
+              <span key={std} style={{ border: '1px solid rgba(255,255,255,0.18)', padding: '0.45rem 1rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.75)' }}>
                 {std}
               </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Cross-links */}
+        <section style={{ ...section, borderBottom: 'none' }}>
+          <h2 style={h2Style}>Explore Further</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', marginTop: '0.5rem' }}>
+            {[
+              { href: '/families', label: 'All Product Families' },
+              { href: sys ? `/systems/${sys.slug}` : '/systems', label: sys ? sys.name : 'Protection Systems' },
+              { href: '/technologies', label: 'All Technologies' },
+              { href: '/products', label: 'Product Registry' },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ display: 'block', background: '#000', padding: '1.25rem 1.5rem', textDecoration: 'none', fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)' }}
+              >
+                {link.label} →
+              </Link>
             ))}
           </div>
         </section>
