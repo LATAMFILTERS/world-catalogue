@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
+import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
 
 const SECTIONS = [
   {
@@ -54,8 +55,16 @@ const SECTIONS = [
     accent: '#FFF12D',
   },
   {
+    href: '/knowledge-center/engineering-reference',
+    label: '07 / REFERENCE',
+    title: 'Engineering Reference Library',
+    description: '20-section structured reference covering filtration standards, filtration science, particle science, contamination mechanisms, test methods, performance metrics, and reliability analysis.',
+    count: `${ERL_SECTIONS.length} sections`,
+    accent: '#FFF12D',
+  },
+  {
     href: '/knowledge-center/search',
-    label: '07 / SEARCH',
+    label: '08 / SEARCH',
     title: 'Knowledge Search',
     description: 'Search by symptom, equipment type, industry, standard code, or technology to find relevant engineering documentation.',
     count: 'AI-indexed',

@@ -11,6 +11,7 @@ const NAV = [
   { href: '/knowledge-center/industries', label: 'Industries' },
   { href: '/knowledge-center/technologies', label: 'Technologies' },
   { href: '/knowledge-center/technical-library', label: 'Library' },
+  { href: '/knowledge-center/engineering-reference', label: 'Reference' },
 ];
 
 export default function ClientNav() {
