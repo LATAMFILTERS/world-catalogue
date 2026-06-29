@@ -12,7 +12,7 @@ const FAILURE_CHAIN = [
 ];
 
 const ECOSYSTEM = [
-  { code: '01', title: 'Proprietary Technologies', body: '12 engineered filtration technologies, each mapped to a specific contamination failure mechanism — not generic product lines.', href: '/technologies' },
+  { code: '01', title: 'Proprietary Technologies', body: '10 engineered filtration technologies, each mapped to a specific contamination failure mechanism — not generic product lines.', href: '/technologies' },
   { code: '02', title: 'Systems Architecture', body: '12 fluid system domains: air intake, fuel, hydraulic, lube oil, cabin, compressed air, transmission, and more.', href: '/systems' },
   { code: '03', title: 'Industry Protection Strategies', body: '12 industrial sectors with specific contamination profiles, ISO cleanliness targets, and protection frameworks.', href: '/industries' },
   { code: '04', title: 'Knowledge System', body: 'Industrial contamination library: standards, failure mode analysis, fleet optimization, and contamination physics across 30+ documents.', href: '/knowledge-system' },
@@ -31,8 +31,6 @@ const TECHNOLOGIES = [
   { code: 'SYNTRAX™', href: '/technologies/syntrax', domain: 'Engine Lube Oil' },
   { code: 'NANOFORCE™', href: '/technologies/nanoforce', domain: 'Hydraulic | Servo Systems' },
   { code: 'THERMACORE™', href: '/technologies/thermacore', domain: 'Coolant | SCA Additive' },
-  { code: 'DURATECH™', href: '/commercial-lines/duratech', domain: 'Fleet Maintenance Kits' },
-  { code: 'MARINECLEAN™', href: '/commercial-lines/marineclean', domain: 'Marine Diesel | Hydraulic' },
 ];
 
 const INDUSTRIES = [
@@ -79,7 +77,7 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About ELIMFILTERS — Industrial Asset Protection Company',
-    description: 'ELIMFILTERS is not a filter manufacturer. It is an industrial asset protection company focused on contamination control, failure prevention, and equipment reliability across 12 industrial sectors and 12 proprietary technologies.',
+    description: 'ELIMFILTERS is not a filter manufacturer. It is an industrial asset protection company focused on contamination control, failure prevention, and equipment reliability across 12 industrial sectors and 10 proprietary technologies.',
     url: 'https://elimfilters.com/about',
     author: { '@type': 'Organization', name: 'ELIMFILTERS' },
     dateModified: '2026-06-29',
@@ -337,7 +335,7 @@ export default function AboutPage() {
             style={{ marginBottom: '2.5rem' }}
           >
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.6rem' }}>
-              12 Technologies. Each Engineered for a Specific Failure Mechanism.
+              10 Technologies. Each Engineered for a Specific Failure Mechanism.
             </h2>
             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
               Every ELIMFILTERS technology exists to address an identified contamination failure pathway. The failure mechanism determines the technology requirement.
@@ -445,7 +443,7 @@ export default function AboutPage() {
                 },
                 {
                   label: 'PLATFORM SCOPE',
-                  value: '12 Technologies · 12 Industries',
+                  value: '10 Technologies · 12 Industries',
                   note: '30+ Knowledge System documents. AI-readable contamination intelligence framework.',
                 },
               ].map((item) => (
@@ -475,7 +473,7 @@ export default function AboutPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '1rem' }}>
               {[
                 { label: 'THE SCIENCE', desc: 'Why contamination destroys industrial assets — the physics and the data', href: '/knowledge-system/science', tag: 'KNOWLEDGE' },
-                { label: 'TECHNOLOGIES', desc: '12 proprietary technologies, each mapped to a failure mechanism', href: '/technologies', tag: 'PORTFOLIO' },
+                { label: 'TECHNOLOGIES', desc: '10 proprietary technologies, each mapped to a failure mechanism', href: '/technologies', tag: 'PORTFOLIO' },
                 { label: 'KNOWLEDGE SYSTEM', desc: '30+ industrial contamination and asset protection documents', href: '/knowledge-system', tag: 'LIBRARY' },
                 { label: 'BECOME A PARTNER', desc: 'Authorized distributor program — asset protection ecosystem', href: '/distributor-application', tag: 'PARTNERS' },
                 { label: 'CONTACT ENGINEERING', desc: 'Technical consultation, OEM cross-reference, fleet strategy', href: '/contact', tag: 'CONTACT' },
