@@ -1571,7 +1571,59 @@ app.post('/api/update/sku-codes', importLimiter, requireAdmin, async (req, res) 
     if (r.rowCount === 0) return res.status(404).json({ error: 'SKU not found' });
     res.json({ success: true, sku: r.rows[0].sku, codes_count: competitor_codes.length });
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    console.error('[update/sku-codes]', e.message);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/cleanup/fram-ld-duty ──────────────────────────────────────────
+// Remove FRAM codes from LD products (EL3/EA3/EC3/EF3) where the FRAM code is
+// known to be HD-only (thread 3/4"-16 or 1-1/8"-16 used on Caterpillar/Cummins/
+// Mack/Volvo/etc.). These were imported via WIX reverse lookup without duty
+// validation, causing mixed results when searching by that FRAM code.
+// Removes entries with manufacturer='FRAM' (any case) from LD SKUs only when
+// the code matches HD FRAM patterns: PH3xxx, PH4xxx, PH5xxx, PH8xxx, PH9xxx.
+app.post('/api/cleanup/fram-ld-duty', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // HD FRAM oil filter prefixes by number range (3/4"-16 and 1-1/8"-16 threads)
+    // These ranges appear on Cummins/Cat/Mack/Volvo — never on passenger car LD.
+    const HD_FRAM_PATTERNS = /^PH(3\d{3}|4\d{3}|5\d{3}|6\d{3}|8\d{3}|9\d{3})/i;
+
+    const rows = await client.query(
+      `SELECT sku, competitor_codes FROM elimfilters_catalog
+       WHERE duty = 'LIGHT_DUTY'
+         AND competitor_codes IS NOT NULL
+         AND jsonb_array_length(competitor_codes) > 0`
+    );
+
+    let cleaned = 0;
+    const removed = [];
+    for (const row of rows.rows) {
+      const existing = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const filtered = existing.filter(c => {
+        const mfr = (c?.manufacturer || '').toUpperCase();
+        const code = (c?.code || (typeof c === 'string' ? c : '')).toUpperCase().trim();
+        if (mfr !== 'FRAM' && !HD_FRAM_PATTERNS.test(code)) return true;
+        const isHdFram = mfr === 'FRAM' && HD_FRAM_PATTERNS.test(code);
+        if (isHdFram && removed.length < 20) removed.push({ sku: row.sku, code });
+        return !isHdFram;
+      });
+      if (filtered.length !== existing.length) {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), row.sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({ success: true, ld_rows_scanned: rows.rows.length, skus_cleaned: cleaned, sample_removed: removed });
+  } catch (e) {
+    console.error('[cleanup-fram-ld-duty]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1635,7 +1687,7 @@ app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, 
     });
   } catch (e) {
     console.error('[cleanup-fram-hd-force]', e.message);
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1987,7 +2039,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-app.get('/api/stats', async (req, res) => {
+app.get('/api/stats', searchLimiter, async (req, res) => {
   const client = await pool.connect();
   try {
     const r = await client.query(
@@ -2140,6 +2192,14 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
 });
 
 // ────────────────────────────────────────────────────────────────────────────
+
+// ─── Global error handler ─────────────────────────────────────────────────────
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  console.error('[unhandled-error]', err.message);
+  if (res.headersSent) return next(err);
+  res.status(500).json({ error: 'Internal server error' });
+});
 
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
