@@ -394,44 +394,6 @@ export default function FleetSolutionsPage() {
           </div>
         </motion.section>
 
-        {/* POINT 10: Canonical Block */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            padding: '2rem',
-            borderRadius: '8px',
-          }}
-        >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            10 / CANONICAL SUMMARY
-          </p>
-          <div style={{
-            background: 'rgba(255,241,45,0.05)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            padding: '1.5rem',
-            borderRadius: '4px',
-          }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
-              Technical Summary
-            </p>
-            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
-              <strong>Domain:</strong> Fleet-Level Filtration Strategy | <strong>Challenge:</strong> Managing diverse equipment in varied environments with unified contamination control | <strong>Framework:</strong> Standardized contamination targets (ISO 4406 codes) across all equipment types | <strong>Implementation:</strong> Supplier standardization (2-3 options per domain), condition-based replacement, particle counting across fleet | <strong>Optimization Phases:</strong> Assess → Standardize → Deploy → Optimize | <strong>Fleet Benefits:</strong> 30-40% downtime reduction, 25-35% maintenance cost savings, 40-50% SKU reduction, unified visibility | <strong>Impact:</strong> Simplified supply chain, easier maintenance, measurable contamination control across entire fleet
-            </p>
-          </div>
-        </motion.section>
-
       </div>
 
       {/* JSON-LD Structured Data */}

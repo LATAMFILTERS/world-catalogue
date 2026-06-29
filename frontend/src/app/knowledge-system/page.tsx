@@ -173,18 +173,6 @@ export default function KnowledgeSystemPage() {
           }}>
             Industrial Asset Protection Knowledge System
           </h1>
-          {/* Change 2 */}
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.72rem',
-            color: 'rgba(255,255,255,0.45)',
-            letterSpacing: '0.06em',
-            marginBottom: '1.75rem',
-            lineHeight: 1.8,
-          }}>
-            Industries · Assets · Problems · Systems · Technologies · Products<br />
-            <span style={{ color: 'rgba(255,241,45,0.6)' }}>One objective: protect industrial assets through contamination control.</span>
-          </p>
           {/* Direct Answer Block */}
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -198,15 +186,6 @@ export default function KnowledgeSystemPage() {
             paddingLeft: '1.25rem',
           }}>
             Industrial assets fail when contamination is not measured, monitored, and controlled. This knowledge system documents the contamination mechanisms, engineering standards (ISO 4406, ISO 16889, ASTM D6304), and operational strategies that determine whether industrial equipment runs reliably or fails prematurely.
-          </p>
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.62rem',
-            color: 'rgba(255,255,255,0.28)',
-            letterSpacing: '0.08em',
-          }}>
-            Technical content by the ELIMFILTERS Engineering Team ·{' '}
-            <time dateTime="2026-05-25">Updated May 2026</time>
           </p>
         </motion.div>
       </section>
@@ -223,18 +202,6 @@ export default function KnowledgeSystemPage() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ maxWidth: '900px', margin: '0 auto' }}
         >
-          {/* Change 5 — Asset Protection Knowledge label */}
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.18em',
-            color: '#FFF12D',
-            opacity: 0.6,
-            textTransform: 'uppercase',
-            marginBottom: '1rem',
-          }}>
-            // Asset Protection Knowledge
-          </p>
           {/* Change 4 — updated narrative with ontology hierarchy */}
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -292,15 +259,6 @@ export default function KnowledgeSystemPage() {
             ))}
           </div>
 
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.75rem',
-            color: 'rgba(255,241,45,0.5)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}>
-            // Information Architecture: Industries → Assets → Problems → Protection Systems → Technologies → Products → Operational Outcomes
-          </p>
         </motion.div>
       </section>
 
@@ -379,13 +337,6 @@ export default function KnowledgeSystemPage() {
             transition={{ duration: 0.6 }}
             style={{ marginBottom: '3rem' }}
           >
-            <span style={{
-              display: 'block', fontSize: '0.7rem', fontWeight: 700,
-              letterSpacing: '0.25em', color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem',
-            }}>
-              // FREQUENTLY ASKED QUESTIONS
-            </span>
             <h2 style={{
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800,
               fontFamily: 'Space Grotesk, sans-serif', color: '#fff', margin: '0 0 0.75rem',

@@ -72,7 +72,7 @@ export default function BridgesHubPage() {
             lineHeight: 1.15,
             marginBottom: '1rem',
           }}>
-            From Product Selection to System Design
+            Filter Selection Technical Guides
           </h1>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -82,51 +82,7 @@ export default function BridgesHubPage() {
             margin: '0 auto',
             lineHeight: 1.65,
           }}>
-            Framework pages for evaluating filtration solutions from a system-level asset protection perspective.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Context Section */}
-      <section style={{
-        padding: '4rem 2rem',
-        background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ maxWidth: '900px', margin: '0 auto', padding: '0 0' }}
-        >
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
-            marginBottom: '1.5rem',
-            textAlign: 'justify',
-          }}>
-            Industrial filter selection typically begins with a product-focused question: "Which filter brand should we use?" or "What's the OEM requirement?" or "What aftermarket filters are available?"
-          </p>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
-            marginBottom: '1.5rem',
-            textAlign: 'justify',
-          }}>
-            These pages bridge that product-selection thinking into system-level design. They reframe the filtration decision from "which filter product" into "how do we achieve contamination control and equipment asset protection?" The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Industrial Filtration Selection</Link> framework provides the foundational model for evaluating filtration across all application domains.
-          </p>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.7)',
-            lineHeight: 1.8,
-            textAlign: 'justify',
-          }}>
-            Each page follows the same decision model: understand the traditional approach, identify its limitations, introduce system-level thinking, map technologies to application domains, and integrate relevant standards. The result is a framework for filtration decision-making that optimizes for equipment reliability and lifecycle cost, not product commodity selection. Fleet operations applying this approach can achieve measurable reductions in unplanned stoppages—see <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Reducing Fleet Downtime</Link> for operational impact analysis.
+            Technical reference guides for industrial filtration selection across OEM, aftermarket, and fleet operation contexts.
           </p>
         </motion.div>
       </section>
@@ -206,8 +162,8 @@ export default function BridgesHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
-        headline: 'From Product Selection to System Design',
-        description: 'Decision bridge hub connecting product-based filtration selection to system-level contamination control design—covering OEM requirements, aftermarket selection, and fleet standardization strategies.',
+        headline: 'Filter Selection Technical Guides',
+        description: 'Technical reference guides for industrial filtration selection covering OEM requirements, aftermarket evaluation, and fleet standardization strategies based on ISO 16889 and ISO 4406 criteria.',
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',

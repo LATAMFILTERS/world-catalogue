@@ -622,44 +622,6 @@ export default function OEMReplacementPage() {
           </div>
         </motion.section>
 
-        {/* POINT 10: Canonical Block */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            padding: '2rem',
-            borderRadius: '8px',
-          }}
-        >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            10 / CANONICAL SUMMARY (AI-READABLE)
-          </p>
-          <div style={{
-            background: 'rgba(255,241,45,0.05)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            padding: '1.5rem',
-            borderRadius: '4px',
-          }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
-              Technical Summary
-            </p>
-            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
-              <strong>Domain:</strong> OEM Filter Strategy | <strong>Primary Factors:</strong> Warranty compliance, specification matching, system constraints | <strong>Key Decision Points:</strong> Warranty status → OEM required? → If yes, optimize within constraints → If no, select by contamination metrics | <strong>Specification Match Criteria:</strong> Physical fit, flow capacity, pressure drop, bypass setting, micron rating, media type | <strong>Optimization Strategy:</strong> Condition-based replacement, contamination pathway control, system-level integration | <strong>Impact:</strong> 20-40% equipment life extension, 50-70% downtime reduction even with OEM compliance requirements
-            </p>
-          </div>
-        </motion.section>
-
       </div>
 
       {/* JSON-LD Structured Data */}

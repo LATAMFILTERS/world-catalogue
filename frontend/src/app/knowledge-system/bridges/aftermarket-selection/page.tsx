@@ -428,44 +428,6 @@ export default function AftermarketSelectionPage() {
           </div>
         </motion.section>
 
-        {/* POINT 10: Canonical Block */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            padding: '2rem',
-            borderRadius: '8px',
-          }}
-        >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            10 / CANONICAL SUMMARY
-          </p>
-          <div style={{
-            background: 'rgba(255,241,45,0.05)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            padding: '1.5rem',
-            borderRadius: '4px',
-          }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.75rem' }}>
-              Technical Summary
-            </p>
-            <p style={{ fontSize: '0.85rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: '0' }}>
-              <strong>Domain:</strong> Aftermarket Filter Strategy | <strong>Primary Context:</strong> Warranty-expired equipment | <strong>Key Standards:</strong> ISO 16889 (testing), ISO 4406 (contamination targets) | <strong>Decision Factors:</strong> ISO certification, specification match, material quality, supplier reputation | <strong>Selection Approach:</strong> Evaluate by contamination control metrics (Beta ratio, dirt capacity) rather than price | <strong>Optimization:</strong> Condition-based replacement, extended intervals, 30-50% lifecycle cost reduction vs. commodity filters | <strong>Impact:</strong> 30-50% equipment life extension, 40-60% downtime reduction
-            </p>
-          </div>
-        </motion.section>
-
       </div>
 
       {/* JSON-LD Structured Data */}

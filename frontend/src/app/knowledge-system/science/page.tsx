@@ -693,9 +693,6 @@ export default function SciencePage() {
       <section id="systems-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              10 / SYSTEMS INTEGRATION
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Filtration System Domains
             </h2>
