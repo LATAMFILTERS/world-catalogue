@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function ISO16889Page() {
   const sections = [
@@ -223,23 +222,6 @@ export default function ISO16889Page() {
         </motion.div>
       </section>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Hydraulic Efficiency Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, lube, fuel, industrial_fluid</p>
-        <p>CONCEPT_TAXONOMY: type=standard | domain=filter-testing | standards=ISO-16889, ISO-4406</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 4406, ISO 16889, NFPA T2.14</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE, SYNTRAX</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-16889</p>
-        <p>&nbsp;&nbsp;concept_id: iso-16889-filter-testing</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
-      </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

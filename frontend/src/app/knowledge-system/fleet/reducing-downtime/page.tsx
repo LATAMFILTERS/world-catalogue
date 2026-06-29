@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const RELATED_PAGES = [
   { code: 'FUEL', title: 'Filtration and Fuel Efficiency', href: '/knowledge-system/fleet/fuel-efficiency' },
@@ -456,22 +455,6 @@ export default function ReducingDowntimePage() {
 
       </div>
 
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, air_intake, lube</p>
-        <p>CONCEPT_TAXONOMY: type=strategy | domain=fleet-operations | goal=downtime-reduction</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership, /knowledge-system/fleet/fuel-efficiency</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/reducing-downtime</p>
-        <p>&nbsp;&nbsp;concept_id: fleet-downtime-reduction</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

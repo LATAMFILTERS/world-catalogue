@@ -391,11 +391,6 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         keywords: [industry.title, industry.dust + ' contamination exposure', ...(detail?.technologies ?? [])].join(', '),
         about: { '@type': 'Thing', name: industry.title + ' Filtration', description: industry.description },
-        mentions: {
-          technologies: detail?.technologies ?? [],
-          standards: detail?.standards ?? [],
-          systems: detail?.systems ?? [],
-        },
       })}} />
     </main>
   );

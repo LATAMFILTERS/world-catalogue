@@ -162,7 +162,6 @@ export default function StandardContent({ std }: { std: KCStandard }) {
         url: `https://elimfilters.com/knowledge-center/standards/${std.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         about: { '@type': 'Thing', name: std.code, description: std.scope },
-        mentions: std.relatedTechnologies.map((t) => ({ '@type': 'Thing', name: t })),
       })}} />
     </main>
   );

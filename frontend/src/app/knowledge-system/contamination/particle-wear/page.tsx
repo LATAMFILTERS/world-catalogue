@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function ParticleWearPage() {
   const sections = [
@@ -360,22 +359,6 @@ export default function ParticleWearPage() {
           { '@type': 'Question', name: 'How does oil change frequency affect particle accumulation?', acceptedAnswer: { '@type': 'Answer', text: 'Oil change interval directly controls particle concentration trajectory: Normal interval (500 hours) with premium filtration maintains 20-40 mg/L wear debris until 1500-2000 hours; extended interval (1000 hours) with same filtration accumulates 60-120 mg/L by 2000 hours, accelerating wear rates 2-3x; extended interval (1000 hours) with standard filtration reaches 150-300 mg/L, causing engine damage by 1500 hours. Optimal strategy depends on contamination environment: Clean environment supports 1000-hour intervals with on-board filtration; Severe environment (mining, desert) requires 250-hour intervals with primary-secondary filtration plus oil conditioning systems.' } },
         ],
       }) }} />
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Air Intake Filtration Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, lube, air_intake, bearing</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=contamination | mechanism=abrasive-wear</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;concept_id: particle-wear-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
     </main>
   );
 }

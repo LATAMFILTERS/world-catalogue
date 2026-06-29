@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },
@@ -263,23 +262,6 @@ export default function CabinSafetySystemsPage() {
 
       </div>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: cabin, hvac, operator_environment, recirculation</p>
-        <p>CONCEPT_TAXONOMY: type=safety | domain=contamination | standards=ISO-11155, DIN-71220</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 11155, DIN 71220, ISO 5011</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MICROKAPPA, INTEKCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/cabin-safety-systems</p>
-        <p>&nbsp;&nbsp;concept_id: cabin-safety-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',

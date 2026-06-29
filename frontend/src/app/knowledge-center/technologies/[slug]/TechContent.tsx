@@ -428,11 +428,6 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
           name: tech.name,
           description: tech.engineeringPrinciple,
         },
-        mentions: {
-          standards: tech.standards,
-          systems: tech.relatedSystems,
-          industries: tech.relatedIndustries,
-        },
       })}} />
     </main>
   );

@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function TCOPage() {
   return (
@@ -561,22 +560,6 @@ export default function TCOPage() {
 
       </div>
 
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
-        <p>CONCEPT_TAXONOMY: type=analysis | domain=asset-protection | approach=tco-analysis</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/total-cost-ownership</p>
-        <p>&nbsp;&nbsp;concept_id: filtration-tco-analysis</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

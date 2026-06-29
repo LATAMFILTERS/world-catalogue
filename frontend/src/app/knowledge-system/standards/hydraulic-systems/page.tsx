@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
@@ -225,23 +224,6 @@ export default function HydraulicSystemsPage() {
 
       </div>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=hydraulic-efficiency | standards=ISO-16889, NFPA-T2.14</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, DIN 51524, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/hydraulic-systems</p>
-        <p>&nbsp;&nbsp;concept_id: hydraulic-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',

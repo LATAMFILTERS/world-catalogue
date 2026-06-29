@@ -348,7 +348,6 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         keywords: article.keywords.join(', '),
         about: { '@type': 'Thing', name: article.title, description: article.intro },
-        mentions: { standards: article.relatedStandards, technologies: article.relatedTechnologies, systems: article.relatedSystems },
       })}} />
     </main>
   );

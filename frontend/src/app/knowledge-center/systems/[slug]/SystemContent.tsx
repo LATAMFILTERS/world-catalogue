@@ -362,11 +362,6 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         keywords: [...system.technologies, ...system.standards, ...system.challenges.slice(0, 3)].join(', '),
         about: { '@type': 'Thing', name: system.title, description: system.description },
-        mentions: {
-          technologies: system.technologies,
-          standards: system.standards,
-          challenges: system.challenges,
-        },
       })}} />
     </main>
   );

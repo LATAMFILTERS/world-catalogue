@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function HydraulicSystemContaminationPage() {
   const sections = [
@@ -358,22 +357,6 @@ export default function HydraulicSystemContaminationPage() {
           { '@type': 'Question', name: 'How do valve spools become stuck and can they be cleaned?', acceptedAnswer: { '@type': 'Answer', text: 'Valve spool stiction results from: (1) Particle lodging in radial clearance (10-20 microns) between spool and housing bore; (2) Varnish film deposit forming an adhesive layer; (3) Corrosion product layer from water-induced oxidation. In-situ cleaning is unreliable - circulating high-pressure flush does not dislodge embedded particles or varnish; success rate <30%. Spool replacement is necessary: Remove valve cartridge (0.5-2 hour labor), soak original spool in hydraulic system cleaner for 24 hours (may recover 50%), test cleaned spool actuation with pilot pressure. Prevention through contamination control is far more cost-effective than spool replacement: maintain ISO 16889 16/14/11 maximum cleanliness.' } },
         ],
       }) }} />
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=hydraulic-efficiency | mechanism=particle-contamination</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: NANOFORCE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;concept_id: hydraulic-system-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
     </main>
   );
 }

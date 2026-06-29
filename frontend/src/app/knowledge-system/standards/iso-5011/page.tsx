@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function ISO5011Page() {
   const sections = [
@@ -223,23 +222,6 @@ export default function ISO5011Page() {
         </motion.div>
       </section>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Air Intake Filtration Systems [PRIMARY]</p>
-        <p>SYSTEMS_AFFECTED: air_intake, engine, turbocharger</p>
-        <p>CONCEPT_TAXONOMY: type=standard | domain=air-filtration-testing | standards=ISO-5011, SAE-J726</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 5011, SAE J726, SAE J1539</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/iso-5011</p>
-        <p>&nbsp;&nbsp;concept_id: iso-5011-air-filter-testing</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-06-11</p>
-      </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

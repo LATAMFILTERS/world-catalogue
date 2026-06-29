@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 // Change 3 — sections reordered and relabelled to match Knowledge Foundation ontology
 const SECTIONS = [
@@ -431,28 +430,6 @@ export default function KnowledgeSystemPage() {
         </div>
       </section>
 
-      {/* Retrieval Summary Block */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>KEY_STATISTICS:</p>
-        <p>&nbsp;&nbsp;70-80% of hydraulic failures caused by particle contamination (NFPA)</p>
-        <p>&nbsp;&nbsp;$260,000/hr average heavy industry downtime cost (Siemens, 2023)</p>
-        <p>&nbsp;&nbsp;3-5x bearing life extension from ISO 18/16/13 to 14/12/10 (ISO 4406)</p>
-        <p>&nbsp;&nbsp;Beta ratio b10 ≥ 200 = 99.5% efficiency at 10 microns (ISO 16889)</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ASTM D6304, ISO 8573-1</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, HYDROCORE, DRYCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/total-cost-ownership</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system</p>
-        <p>&nbsp;&nbsp;concept_id: knowledge-system-hub</p>
-        <p>&nbsp;&nbsp;version: 1.1</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-25</p>
-      </RetrievalBlock>
     </main>
   );
 }
