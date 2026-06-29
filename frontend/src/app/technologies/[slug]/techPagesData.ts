@@ -472,7 +472,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'BARRIER TYPE', value: 'HYDROPHOBIC' },
       { key: 'PROTECTION', value: 'WATER REPULSION' },
     ],
-    logoSrc: '/assets/logo-hydrocore.png',
+    logoSrc: '',
     systemHeadline: 'HYDROPHOBIC DEFENSE.\nWATER CANNOT PASS.',
     systemParagraphs: [
       'Water contamination in fuel systems operates across three phases: free water that settles and can be drained, emulsified water suspended in micro-droplets that conventional filters cannot intercept, and dissolved water that forms free phase when temperature changes. Each phase causes a different failure mode — microbial growth, injector corrosion, and cavitation erosion respectively.',
