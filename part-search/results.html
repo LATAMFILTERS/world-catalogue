@@ -933,6 +933,8 @@ const mode  = params.get('mode') || 'part';
 const model  = params.get('model') || '';
 const engine = params.get('engine') || '';
 const eqType = params.get('type') || '';
+// duty: passed from index.html when user picks HD or LD before searching
+const dutyParam = (params.get('duty') || '').trim().toUpperCase();
 
 // Init header summary with query (count updated after search)
 (function() {
@@ -943,6 +945,37 @@ const eqType = params.get('type') || '';
       <span class="search-summary-main"><strong>${_esc((query || model).toUpperCase())}</strong></span>`;
   }
 })();
+
+function showMixedDutyPrompt(data, searchTerm) {
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+  const summaryEl = document.getElementById('search-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <span class="search-summary-mode">SELECT EQUIPMENT CLASS</span>
+      <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
+  }
+  const hd = data.hd_count || 0;
+  const ld = data.ld_count || 0;
+  app.innerHTML = `
+    <div style="border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1.75rem;background:rgba(255,241,45,0.04);max-width:600px;margin:0 auto;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.85rem;">⚠ MULTIPLE EQUIPMENT CLASSES FOUND</div>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:1.5rem;">
+        The reference <strong style="color:#fff;">${_esc(searchTerm.toUpperCase())}</strong> appears in both Heavy Duty industrial filters and Light Duty passenger/light vehicle filters.
+        These are <strong style="color:#fff;">not interchangeable</strong> — different thread sizes, diameters and bypass pressures apply.
+        Select your equipment class:
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="/results.html?q=${encodeURIComponent(searchTerm)}&duty=HEAVY_DUTY"
+           style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.75rem 1.4rem;border:1px solid #FFF12D;background:rgba(255,241,45,0.1);color:#FFF12D;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;">
+          ▶ HEAVY DUTY<br><span style="font-size:0.6rem;opacity:0.7">${hd} RESULT${hd !== 1 ? 'S' : ''} · TRUCKS, INDUSTRIAL, AGRICULTURE</span>
+        </a>
+        <a href="/results.html?q=${encodeURIComponent(searchTerm)}&duty=LIGHT_DUTY"
+           style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.75rem 1.4rem;border:1px solid rgba(100,200,255,0.5);background:rgba(100,200,255,0.06);color:rgba(100,200,255,0.9);cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;">
+          ▶ LIGHT DUTY<br><span style="font-size:0.6rem;opacity:0.7">${ld} RESULT${ld !== 1 ? 'S' : ''} · PASSENGER &amp; LIGHT COMMERCIAL</span>
+        </a>
+      </div>
+    </div>`;
+}
 
 function showLoading(term) {
   app.innerHTML = `
@@ -1372,12 +1405,20 @@ async function executeSearch() {
     showLoading(query);
     const warmupTimer = startWarmupTimer(query);
     try {
-      const r = await fetch(`${API}/api/search?q=${encodeURIComponent(query)}&lang=${currentLang}`);
+      let searchUrl = `${API}/api/search?q=${encodeURIComponent(query)}&lang=${currentLang}`;
+      if (dutyParam) searchUrl += `&duty=${encodeURIComponent(dutyParam)}`;
+      const r = await fetch(searchUrl);
       clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
       if (!data.products?.length) { showEmpty(query); return; }
-      const dutyData = data.mixed_duty ? { mixed_duty: true, hd_products: data.hd_products, ld_products: data.ld_products } : null;
+
+      // mixed_duty: API found both HD and LD — show duty selection prompt
+      if (data.mixed_duty) {
+        showMixedDutyPrompt(data, query);
+        return;
+      }
+      const dutyData = null; // results are already clean (single duty or duty-filtered)
       renderResults(data.products, data.count, 'PART NUMBER', query, null, data.total_catalog, false, dutyData);
     } catch { clearTimeout(warmupTimer); showError(); }
 

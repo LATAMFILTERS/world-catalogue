@@ -1810,15 +1810,25 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
+
+  // duty filter: 'HEAVY_DUTY' | 'LIGHT_DUTY' | null (no filter)
+  const rawDuty = (req.query.duty || '').trim().toUpperCase();
+  const dutyFilter = (rawDuty === 'HEAVY_DUTY' || rawDuty === 'HD') ? 'HEAVY_DUTY'
+                   : (rawDuty === 'LIGHT_DUTY'  || rawDuty === 'LD') ? 'LIGHT_DUTY'
+                   : null;
+
   const client = await pool.connect();
   try {
 
     // ── Tiered search with match_type labels ──────────────────────────────
+    // Duty clause applied to every tier — HD/LD must never mix in results.
+    const dutyClause = dutyFilter ? `AND duty = '${dutyFilter}'` : '';
+
     // Tier 1: Exact SKU or Donaldson base code match
     let result = await client.query(
       `SELECT *, 'sku' AS match_type, 0 AS match_rank
        FROM elimfilters_catalog
-       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
+       WHERE (UPPER(sku) = $1 OR UPPER(codigo_base) = $1) ${dutyClause}
        LIMIT 20`,
       [q]
     );
@@ -1828,7 +1838,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       result = await client.query(
         `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
          FROM elimfilters_catalog
-         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         WHERE (UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q + '%']
@@ -1836,20 +1846,22 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     }
 
     // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
-    // Cross-reference codes must match precisely; prefix matching causes false positives
-    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
+    // Cross-reference codes must match precisely; prefix matching causes false positives.
+    // Duty filter enforced: HD and LD results never mixed (CLAUDE.md rule).
     if (result.rows.length === 0) {
       result = await client.query(
         `SELECT *, 'ref' AS match_type, 2 AS match_rank
          FROM elimfilters_catalog
-         WHERE EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
+         WHERE (
+           EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           OR EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+         ) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q]
@@ -1863,7 +1875,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
          FROM elimfilters_catalog,
               jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
               jsonb_array_elements_text(kv.value) AS code_val
-         WHERE UPPER(code_val) = $1
+         WHERE UPPER(code_val) = $1 ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q]
@@ -1881,9 +1893,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
                 5 AS match_rank
          FROM elimfilters_catalog,
               jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
-         WHERE UPPER(sku) LIKE $1
-            OR UPPER(codigo_base) LIKE $1
-            OR UPPER(oem_elem->>'code') LIKE $1
+         WHERE (
+           UPPER(sku) LIKE $1
+           OR UPPER(codigo_base) LIKE $1
+           OR UPPER(oem_elem->>'code') LIKE $1
+         ) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         ['%' + q + '%']
@@ -1929,13 +1943,16 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     await enrichAlternatives(products, client);
 
-    // ── HD/LD duty separation ─────────────────────────────────────────────
-    // When cross-reference search (Tier 3-6) returns mixed HD + LD results,
-    // always separate them into distinct groups. HD and LD filters are never
-    // interchangeable — mixing them in a single list is a safety risk.
+    // ── HD/LD duty enforcement ────────────────────────────────────────────
+    // Per CLAUDE.md: "an HD query must return an HD SKU and an LD query must
+    // return an LD SKU. Never cross HD and LD results."
+    //
+    // If duty was specified in the request, results are already filtered.
+    // If not specified and results contain both, flag mixed_duty so the
+    // frontend can prompt the user to pick a duty class and retry.
     const hasHD = products.some(p => p.duty === 'HEAVY_DUTY');
     const hasLD = products.some(p => p.duty === 'LIGHT_DUTY');
-    const mixed_duty = hasHD && hasLD;
+    const mixed_duty = !dutyFilter && hasHD && hasLD;
 
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
 
@@ -1947,13 +1964,20 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         count: products.length,
         total_catalog: parseInt(totalCatalog, 10),
         mixed_duty: true,
+        duty_filter_applied: null,
         hd_products,
         ld_products,
         hd_count: hd_products.length,
         ld_count: ld_products.length,
       });
     } else {
-      res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10), mixed_duty: false });
+      res.json({
+        products,
+        count: products.length,
+        total_catalog: parseInt(totalCatalog, 10),
+        mixed_duty: false,
+        duty_filter_applied: dutyFilter || null,
+      });
     }
   } catch (e) {
     console.error('[api/search]', e.message);

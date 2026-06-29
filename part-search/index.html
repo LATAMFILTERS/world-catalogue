@@ -473,6 +473,25 @@
       color: rgba(255,255,255,0.55);
     }
 
+    /* ── Duty selector chips ── */
+    .duty-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      background: transparent;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.15s;
+    }
+    .duty-chip:hover { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.7); }
+    .duty-chip.active[data-duty=""] { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.8); }
+    .duty-chip.active[data-duty="HEAVY_DUTY"] { border-color: #FFF12D; color: #FFF12D; background: rgba(255,241,45,0.08); }
+    .duty-chip.active[data-duty="LIGHT_DUTY"] { border-color: rgba(100,200,255,0.6); color: rgba(100,200,255,0.9); background: rgba(100,200,255,0.06); }
+
     .card-desc {
       font-size: 0.875rem;
       color: rgba(255,255,255,0.55);
@@ -690,6 +709,13 @@
           />
           <div id="ac-dropdown" class="autocomplete-dropdown"></div>
         </div>
+      </div>
+      <!-- Duty selector — HD/LD must never mix per system rules -->
+      <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Equipment class:</span>
+        <button type="button" class="duty-chip active" data-duty="" id="duty-all">ALL</button>
+        <button type="button" class="duty-chip" data-duty="HEAVY_DUTY" id="duty-hd">HEAVY DUTY</button>
+        <button type="button" class="duty-chip" data-duty="LIGHT_DUTY" id="duty-ld">LIGHT DUTY</button>
       </div>
       <div class="form-footer">
         <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
@@ -1275,17 +1301,66 @@ function setError() {
   resultsEl.innerHTML = `<p class="status-msg">// CONNECTION ERROR<em>Cannot reach API — verify endpoint configuration</em></p>`;
 }
 
+// ─── DUTY CHIP SELECTOR ─────────────────────────────────────────────────────
+let selectedDuty = '';
+document.querySelectorAll('.duty-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.duty-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    selectedDuty = chip.dataset.duty || '';
+  });
+});
+
 // ─── PART NUMBER ────────────────────────────────────────────────────────────
 async function searchPart(code) {
   if (code.length < 2) { clearResults(); return; }
   setLoading(code);
   try {
-    const r = await fetch(`${API}/api/search?q=${encodeURIComponent(code)}`);
+    let url = `${API}/api/search?q=${encodeURIComponent(code)}`;
+    if (selectedDuty) url += `&duty=${encodeURIComponent(selectedDuty)}`;
+    const r = await fetch(url);
     if (!r.ok) throw new Error();
     const data = await r.json();
     if (!data.products?.length) { setEmpty(code); return; }
+
+    // mixed_duty: true → show duty selector prompt instead of mixed results
+    if (data.mixed_duty) {
+      renderMixedDuty(data, code);
+      return;
+    }
     renderResults(data.products, data.count, 'PART', code);
   } catch { setError(); }
+}
+
+function renderMixedDuty(data, code) {
+  const hd = data.hd_count || 0;
+  const ld = data.ld_count || 0;
+  resultsEl.innerHTML = `
+    <div style="border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1.5rem;background:rgba(255,241,45,0.05);margin-bottom:1rem;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.75rem;">⚠ MULTIPLE EQUIPMENT CLASSES FOUND</div>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:1.25rem;">
+        The reference <strong style="color:#fff;">${_esc(code.toUpperCase())}</strong> appears in both Heavy Duty and Light Duty filters.
+        These are <strong>not interchangeable</strong> — different thread sizes, diameters and bypass pressures.
+        Select your equipment class to see the correct filters:
+      </p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <button onclick="filterByDuty('${_esc(code)}','HEAVY_DUTY')" style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.6rem 1.2rem;border:1px solid #FFF12D;background:rgba(255,241,45,0.1);color:#FFF12D;cursor:pointer;border-radius:2px;">
+          HEAVY DUTY — ${hd} RESULT${hd !== 1 ? 'S' : ''}
+        </button>
+        <button onclick="filterByDuty('${_esc(code)}','LIGHT_DUTY')" style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.6rem 1.2rem;border:1px solid rgba(100,200,255,0.5);background:rgba(100,200,255,0.06);color:rgba(100,200,255,0.9);cursor:pointer;border-radius:2px;">
+          LIGHT DUTY — ${ld} RESULT${ld !== 1 ? 'S' : ''}
+        </button>
+      </div>
+    </div>`;
+}
+
+async function filterByDuty(code, duty) {
+  // Activate the corresponding chip
+  document.querySelectorAll('.duty-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.duty === duty);
+  });
+  selectedDuty = duty;
+  await searchPart(code);
 }
 
 // ─── VIN / MODEL ────────────────────────────────────────────────────────────
