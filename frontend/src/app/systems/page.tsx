@@ -100,6 +100,24 @@ export default function SystemsPage() {
           </p>
         </section>
 
+        {/* ── Part Search Callout ─────────────────────────────────────── */}
+        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem) 0' }}>
+          <div style={{ background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.1)', padding: '1.75rem 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
+            <div>
+              <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1rem', color: '#fff', marginBottom: '0.35rem' }}>Search by Part Number or OEM Cross-Reference</p>
+              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>Real-time dimension queries, application lookups, and OEM cross-referencing.</p>
+            </div>
+            <a
+              href="https://part-search.elimfilters.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF12D', color: '#000', textDecoration: 'none', padding: '0.65rem 1.35rem', fontFamily: "'Titillium Web', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}
+            >
+              PART SEARCH ↗
+            </a>
+          </div>
+        </section>
+
         {/* ── Grid ───────────────────────────────────────────────────── */}
         <section
           style={{

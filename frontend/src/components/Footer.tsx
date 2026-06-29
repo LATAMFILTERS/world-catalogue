@@ -27,7 +27,7 @@ const NAV_COLUMNS = [
   {
     title: 'PRODUCTS',
     links: [
-      { label: 'Product Registry', href: '/products', external: false },
+      { label: 'Protection Systems', href: '/systems', external: false },
       { label: 'Product Families', href: '/families', external: false },
       { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
       { label: 'Technologies', href: '/technologies', external: false },

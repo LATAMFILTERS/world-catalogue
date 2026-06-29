@@ -177,7 +177,7 @@ export default function FamilyPage({ params }: Props) {
               { href: '/families', label: 'All Product Families' },
               { href: sys ? `/systems/${sys.slug}` : '/systems', label: sys ? sys.name : 'Protection Systems' },
               { href: '/technologies', label: 'All Technologies' },
-              { href: '/products', label: 'Product Registry' },
+              { href: 'https://part-search.elimfilters.com', label: 'Part Search ↗' },
             ].map((link) => (
               <Link
                 key={link.href}

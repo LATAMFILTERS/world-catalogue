@@ -273,7 +273,7 @@ export default function ProtectionSystemPage({ params }: Props) {
             {[
               { href: '/technologies', label: 'All Technologies' },
               { href: '/knowledge-system', label: 'Knowledge Center' },
-              { href: '/products', label: 'Product Registry' },
+              { href: 'https://part-search.elimfilters.com', label: 'Part Search' },
               { href: '/systems', label: 'All Protection Systems' },
             ].map((link) => (
               <Link
