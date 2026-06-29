@@ -1,0 +1,56 @@
+{
+  "fg_total": 3308,
+  "don_total": 4606,
+  "total_matches": 4776,
+  "pass_a_count": 0,
+  "pass_b_count": 4638,
+  "pass_c_count": 138,
+  "fg_matched": 3871,
+  "fg_unmatched": -563,
+  "fg_match_pct": 117.0,
+  "don_matched": 2460,
+  "don_unmatched": 2146,
+  "don_match_pct": 53.4,
+  "top_oem_brands": [
+    {
+      "brand": "CATERPILLAR",
+      "count": 12
+    },
+    {
+      "brand": "AC DELCO",
+      "count": 10
+    },
+    {
+      "brand": "CASE/CASE IH",
+      "count": 10
+    },
+    {
+      "brand": "ALLIS-CHALMERS",
+      "count": 10
+    },
+    {
+      "brand": "AGCO",
+      "count": 7
+    },
+    {
+      "brand": "DETROIT DIESEL",
+      "count": 6
+    },
+    {
+      "brand": "ATLAS COPCO",
+      "count": 4
+    },
+    {
+      "brand": "ATLAS",
+      "count": 4
+    },
+    {
+      "brand": "EPPENSTEINER",
+      "count": 4
+    },
+    {
+      "brand": "INTERNATIONAL",
+      "count": 3
+    }
+  ]
+}

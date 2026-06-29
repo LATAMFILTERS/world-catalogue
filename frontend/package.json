@@ -6,6 +6,7 @@
     "prebuild": "node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js",
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node ../scripts/generate-kc-sitemap.mjs",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",

@@ -27,7 +27,10 @@ const dbConfig = {
 };
 
 // Canonical filter_type → expected SKU prefix
+// HD (Heavy Duty, Donaldson-based): EL8, EA1, EH6, EF9, EC1, EW7
+// LD (Light Duty, Mann-based):      EL3, EA3, EF3, EC3
 const PREFIX_MAP = {
+  // ── Heavy Duty (HD) ──────────────────────────────────────────────────────
   'Air Filter':              'EA1',
   'Air Housing':             'EA2',
   'Air Dryer':               'ED4',
@@ -39,6 +42,14 @@ const PREFIX_MAP = {
   'Cabin Air Filter':        'EC1',
   'Fuel Filter':             'EF9',
   'Coolant Filter':          'EW7',
+  // ── Light Duty (LD) — Mann Filter ────────────────────────────────────────
+  // SKU format: prefix (3 chars) + last 4 digits of Mann part number
+  // codigo_base = last 4 digits only (no dashes, spaces, or symbols)
+  // Example: MANN ML 1003 → codigo_base=1003 → SKU=EL31003
+  'Oil Filter LD':           'EL3',
+  'Air Filter LD':           'EA3',
+  'Cabin Filter LD':         'EC3',
+  'Fuel Filter LD':          'EF3',
 };
 
 // Non-canonical filter_type values seen in DB (must be normalized)

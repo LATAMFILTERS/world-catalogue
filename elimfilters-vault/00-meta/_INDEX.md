@@ -1,7 +1,94 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-06-03
+Last updated: 2026-06-28
+
+---
+
+## CORPORATE DOCTRINE [SUPREME]
+
+### Governing Document (corporate/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ELIMFILTERS_CORPORATE_CONSTITUTION]] | ✅ SUPREME v1.0 — Constitutional Authority | 2026-06-28 |
+
+**Doctrine hierarchy established:**
+```
+ELIMFILTERS® CORPORATE CONSTITUTION  [SUPREME]
+    ├── Commercial Architecture Master  [commercial/]
+    ├── Technical Doctrine Master       [technical/]
+    ├── Technology Registry             [01-technologies/]
+    ├── System Registry                 [03-systems/]
+    ├── Industry Registry               [02-industries/]
+    ├── Product Registry                [09-products/]
+    └── Brand Registry                  [brand/]
+```
+
+**Constitutional provisions (13 sections):**
+- Purpose: Define mission, vision, and principles of ELIMFILTERS® as an asset protection company
+- Mission: Extend industrial asset lifespan through engineering-grade contamination control
+- Vision: Global reference standard for industrial asset protection through contamination control
+- 7 Core Principles: I. Protect Assets, II. Refuse Commodity, III. Engineer Always, IV. Know the System, V. Measure Everything, VI. Long-Term Value, VII. Integrity
+- Corporate Philosophy: "We do not sell filters. We engineer asset protection systems."
+- Business Model: 6 channels — OEM, Distribution, Fleet, Industrial, Digital, AI
+- Strategic Pillars: 6 institutional commitments
+- Engineering Doctrine: References ELIMFILTERS_TECHNICAL_DOCTRINE_MASTER v1.0
+- Commercial Doctrine: References ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0
+- Brand Doctrine: ELIMFILTERS® / German Quality / Asset Protection Technologies
+- Decision Framework: 5 yes/no constitutional questions
+- Governance: Revision protocol, authority hierarchy
+- Amendment Process: 5-step amendment protocol with version tracking
+
+---
+
+## TECHNICAL DOCTRINE
+
+### Master Doctrine (technical/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ELIMFILTERS_TECHNICAL_DOCTRINE_MASTER]] | ✅ MASTER v1.0 — Permanent Doctrine | 2026-06-28 |
+
+**Technical doctrine coverage (19 sections):**
+- Engineering Philosophy: Asset Protection Engineering, Contamination Control, Reliability Engineering
+- Media Science: Cellulose, Synthetic, Nanofiber, Activated Carbon, Multi-layer
+- Systems: Air Intake, Fuel, Lube Oil, Hydraulic, Cooling, Cabin Air, Compressed Air (7 domains)
+- Technology Registry: MACROCORE™, MICROKAPPA™, SYNTEPORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, HYDROCORE™, DRYCORE™, INTEKCORE™ (9 platforms)
+- Standards: ISO 16889, ISO 5011, SAE J1858, ISO 4406, NAS 1638, ISO 29463, ISO 11171
+- Industries: Mining, Construction, Agriculture, Manufacturing, Marine, Truck Fleets, Oil & Gas, Power Generation
+- Failure Analysis: Collapse, Bypass, Improper Installation, Seal Failure, Media Failure, Water Ingress
+- Cross-reference: ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0
+
+---
+
+## COMMERCIAL DOCTRINE
+
+### Master Doctrine (commercial/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER]] | ✅ MASTER v2.0 — Permanent Doctrine | 2026-06-28 |
+
+### Historical (10-commercial/) — Superseded
+
+| Document | Status | Superseded By |
+|----------|--------|---------------|
+| [[MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY]] | ⚠ SUPERSEDED v1.0 | ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER v2.0 |
+| DURATECH | ✅ Commercial Sheet | — |
+| MARINECLEAN | ✅ Commercial Sheet | — |
+
+**Core principles (doctrine summary) — from MASTER v2.0:**
+- ELIMFILTERS® = Asset Protection Company, not filter supplier
+- HD (80% resources) = profitability engine → Mining, Construction, Agriculture, Oil&Gas, Marine, Power, Railway, Transportation & GSE, Waste, Industrial Manufacturing
+- LD (20% resources) = market participation engine → Automotive, Fleets, Service Centers
+- Target: HD 7–10% market share | LD minimum 8% regional
+- Economic unit = Protected Asset, not the filter
+- Distributor = regional extension of ELIMFILTERS®, representing our engineering standards, asset protection philosophy, and long-term commitment to every market they serve
+- Commercial Intelligence = permanent corporate asset
+- Airport/GSE operations → integrated under Transportation & Fleet Operations (not standalone industry)
+
+---
 
 ---
 

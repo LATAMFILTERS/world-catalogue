@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
@@ -241,23 +240,6 @@ export default function FuelSystemsPage() {
 
       </div>
 
-      {/* Retrieval Summary Block — machine-readable knowledge index */}
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage_tank</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=fuel-integrity | standards=ASTM-D6304, ISO-12937</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406, ASTM D975</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;Related_Technologies: SYNTEPORE, HYDROCORE, TURBOCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/fuel-systems</p>
-        <p>&nbsp;&nbsp;concept_id: diesel-fuel-filtration-systems</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',

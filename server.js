@@ -1193,6 +1193,472 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   }
 });
 
+
+// ─── POST /api/import/fleetguard ─────────────────────────────────────────────
+// Imports Fleetguard HD products scraped from fleetguard.com.
+// SKU generation rule: prefix (3 chars) + numeric suffix of Fleetguard code.
+//   Air Filter   → EA1 + digits  (AF25551 → EA125551)
+//   Oil Filter   → EL8 + digits  (LF3706  → EL83706)
+//   Fuel Filter  → EF9 + digits  (FS1000  → EF91000)
+//   Hydraulic    → EH6 + digits  (HF35308 → EH635308)
+// duty is always HEAVY_DUTY.
+const FLEETGUARD_PREFIX_MAP = {
+  'Air Filter':      { prefix: 'EA1' },
+  'Oil Filter':      { prefix: 'EL8' },
+  'Fuel Filter':     { prefix: 'EF9' },
+  'Hydraulic Filter':{ prefix: 'EH6' },
+};
+
+app.post('/api/import/fleetguard', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let inserted = 0, updated = 0, errors = 0, skipped = [], errorDetails = [];
+
+    for (const row of rows) {
+      const fgCode = (row.fleetguard_code || '').trim().toUpperCase();
+      if (!fgCode) { errors++; continue; }
+
+      const ftRaw = (row.filter_type_raw || '').trim();
+      const mapping = FLEETGUARD_PREFIX_MAP[ftRaw];
+      if (!mapping) {
+        errors++;
+        console.error('[fg-import] unknown filter_type_raw:', ftRaw, 'code:', fgCode);
+        continue;
+      }
+
+      const codeBase = (row.codigo_base || '').replace(/[^0-9]/g, '');
+      if (!codeBase || codeBase.length < 3) {
+        errors++;
+        console.error('[fg-import] invalid codigo_base:', row.codigo_base, 'from:', fgCode);
+        continue;
+      }
+
+      const sku = mapping.prefix + codeBase;
+      if (!/^[A-Z0-9]{5,10}$/.test(sku)) {
+        errors++;
+        console.error('[fg-import] invalid generated sku:', sku, 'from:', fgCode);
+        continue;
+      }
+
+      // Check for SKU collision with existing non-Fleetguard product
+      const existing = await client.query(
+        `SELECT sku FROM elimfilters_catalog WHERE sku = $1`, [sku]
+      );
+      if (existing.rows.length > 0) {
+        // Already exists — update is fine (ON CONFLICT handles it)
+      }
+
+      const competitor_codes = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const equipment_applications = Array.isArray(row.equipment_applications)
+        ? row.equipment_applications : [];
+
+      // Add Fleetguard itself as a competitor_code so it's searchable by FG part number
+      const fg_self = { manufacturer: 'FLEETGUARD', code: fgCode };
+      const all_competitor_codes = [fg_self, ...competitor_codes.filter(
+        c => !(c.manufacturer === 'FLEETGUARD' && c.code === fgCode)
+      )];
+
+      try {
+        const result = await client.query(`
+          INSERT INTO elimfilters_catalog (
+            sku, codigo_base, description, filter_type, duty,
+            oem_codes, competitor_codes, brand_crossrefs,
+            equipment_applications,
+            outer_diameter_mm, height_mm
+          ) VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb,$8::jsonb,$9::jsonb,$10,$11)
+          ON CONFLICT (sku) DO UPDATE SET
+            codigo_base            = COALESCE(EXCLUDED.codigo_base,             elimfilters_catalog.codigo_base),
+            description            = COALESCE(EXCLUDED.description,             elimfilters_catalog.description),
+            filter_type            = COALESCE(EXCLUDED.filter_type,             elimfilters_catalog.filter_type),
+            duty                   = EXCLUDED.duty,
+            competitor_codes       = CASE WHEN jsonb_array_length(EXCLUDED.competitor_codes) > 0
+                                       THEN EXCLUDED.competitor_codes
+                                       ELSE COALESCE(elimfilters_catalog.competitor_codes, '[]'::jsonb) END,
+            brand_crossrefs        = COALESCE(elimfilters_catalog.brand_crossrefs, '{}'::jsonb),
+            equipment_applications = CASE WHEN jsonb_array_length(EXCLUDED.equipment_applications) > 0
+                                       THEN EXCLUDED.equipment_applications
+                                       ELSE COALESCE(elimfilters_catalog.equipment_applications, EXCLUDED.equipment_applications) END,
+            outer_diameter_mm      = COALESCE(EXCLUDED.outer_diameter_mm, elimfilters_catalog.outer_diameter_mm),
+            height_mm              = COALESCE(EXCLUDED.height_mm,         elimfilters_catalog.height_mm)
+          RETURNING xmax
+        `, [
+          sku, codeBase,
+          row.description || null,
+          ftRaw,
+          'HEAVY_DUTY',
+          JSON.stringify([]),
+          JSON.stringify(all_competitor_codes),
+          JSON.stringify({}),
+          JSON.stringify(equipment_applications),
+          row.outer_diameter_mm || null,
+          row.height_mm || null,
+        ]);
+        if (result.rows && result.rows[0] && result.rows[0].xmax === '0') inserted++;
+        else updated++;
+      } catch (rowErr) {
+        errors++;
+        errorDetails.push({ sku, fgCode, error: rowErr.message });
+        console.error('[fg-import-err]', sku, fgCode, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, inserted, updated, errors, skipped, errorDetails });
+  } catch (e) {
+    console.error('[fg-import-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/update/wix-crossrefs ──────────────────────────────────────────
+// Adds WIX cross-reference numbers to existing LD products' competitor_codes.
+// Merges new WIX entries without removing existing competitor codes.
+// Body: { rows: [{ mann_sku: "W940/21", wix_numbers: ["51452"], filter_type: "Oil Filter" }] }
+app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const wixNums  = Array.isArray(row.wix_numbers) ? row.wix_numbers : [];
+      if (!mannSku || wixNums.length === 0) { skipped++; continue; }
+
+      // Build the ELIMFILTERS SKU from the Mann part number
+      // Mann code → codigo_base (last 4 digits) → find matching LD SKU
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      // Find the LD product by codigo_base and duty
+      const found = await client.query(
+        `SELECT sku, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build new WIX entries, skip duplicates
+      const existingWix = new Set(
+        existing.filter(c => c.manufacturer === 'WIX').map(c => c.code)
+      );
+      const newEntries = wixNums
+        .map(w => String(w).trim())
+        .filter(w => w && !existingWix.has(w))
+        .map(w => ({ manufacturer: 'WIX', code: w }));
+
+      if (newEntries.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...newEntries];
+
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[wix-crossref-err]', sku, mannSku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[wix-crossref-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/update/competitor-codes ───────────────────────────────────────
+// Merges FRAM/Bosch/ACDelco codes from WIX reverse lookup into competitor_codes.
+// Finds product by mann_sku (codigo_base match, LIGHT_DUTY).
+// Body: { rows: [{ mann_sku: "W940/21", competitor_codes: [{manufacturer:"FRAM",code:"PH3387A"},...] }] }
+// FRAM prefix → allowed filter types (cross-type guard)
+const FRAM_CODE_TO_FILTER_TYPE = {
+  PH: 'Oil Filter',
+  CA: 'Air Filter',
+  CF: 'Cabin Filter',
+  G:  'Fuel Filter',
+};
+function framCodeFilterType(code) {
+  const c = (code || '').toUpperCase();
+  for (const [prefix, ftype] of Object.entries(FRAM_CODE_TO_FILTER_TYPE)) {
+    if (c.startsWith(prefix)) return ftype;
+  }
+  return null;
+}
+
+app.post('/api/update/competitor-codes', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const newCodes = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      if (!mannSku || newCodes.length === 0) { skipped++; continue; }
+
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      const found = await client.query(
+        `SELECT sku, filter_type, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, filter_type, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build dedup key set from existing entries
+      const existingKeys = new Set(existing.map(c => `${c.manufacturer}|${c.code}`));
+      const toAdd = newCodes.filter(c => {
+        const k = `${(c.manufacturer||'').toUpperCase()}|${(c.code||'').toUpperCase()}`;
+        if (!c.manufacturer || !c.code || existingKeys.has(k)) return false;
+        // FRAM = LD consumer brand only — never insert on HD SKUs
+        if ((c.manufacturer||'').toUpperCase() === 'FRAM') {
+          if (!sku.startsWith('EL3') && !sku.startsWith('EA3') &&
+              !sku.startsWith('EC3') && !sku.startsWith('EF3')) return false;
+          const expectedType = framCodeFilterType(c.code);
+          if (expectedType && filter_type && expectedType !== filter_type) return false;
+        }
+        return true;
+      }).map(c => ({ manufacturer: c.manufacturer.toUpperCase(), code: c.code.toUpperCase() }));
+
+      if (toAdd.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...toAdd];
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[competitor-codes-err]', sku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[competitor-codes-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/cleanup/fram-crosstype ────────────────────────────────────────
+// Remove FRAM codes that were assigned to wrong filter type SKUs.
+// FRAM PH (oil) must not appear on Air/Cabin/Fuel SKUs.
+// Runs a full-table scan and strips mismatched FRAM entries.
+app.post('/api/cleanup/fram-crosstype', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // FRAM prefix → ONLY allowed SKU prefixes (LD consumer brand — never on HD)
+    const FRAM_TYPE_MAP = {
+      'PH': ['EL3'],   // FRAM Extra Guard / oil
+      'XG': ['EL3'],   // FRAM Ultra Synthetic oil
+      'TG': ['EL3'],   // FRAM Tough Guard oil
+      'DG': ['EL3'],   // FRAM Double Guard oil
+      'CA': ['EA3'],   // FRAM air
+      'CF': ['EC3'],   // FRAM cabin
+      'G':  ['EF3'],   // FRAM fuel
+    };
+
+    // Scan ALL products that have any competitor_codes (objects OR plain strings)
+    const rows = await client.query(
+      `SELECT sku, competitor_codes FROM elimfilters_catalog
+       WHERE competitor_codes IS NOT NULL
+         AND jsonb_array_length(competitor_codes) > 0`
+    );
+
+    let cleaned = 0;
+    const debugRemoved = [];
+    for (const row of rows.rows) {
+      const { sku, competitor_codes } = row;
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+      const skuPrefix = sku.slice(0, 3).toUpperCase();
+
+      const filtered = existing.filter(c => {
+        let isFram = false;
+        let code = '';
+
+        if (typeof c === 'string') {
+          // Plain string format — treat as code with unknown manufacturer
+          code = c.toUpperCase().trim();
+          // Check if it matches any known FRAM prefix pattern
+          isFram = Object.keys(FRAM_TYPE_MAP).some(pfx =>
+            code.startsWith(pfx) && /^\d/.test(code.slice(pfx.length))
+          );
+        } else if (c && typeof c === 'object') {
+          const mfr = (c.manufacturer || '').toUpperCase().trim();
+          code = (c.code || '').toUpperCase().trim();
+          isFram = (mfr === 'FRAM');
+        }
+
+        if (!isFram) return true; // keep non-FRAM
+
+        // FRAM code: only keep if SKU prefix is in the allowed list
+        const allowedPrefixes = FRAM_TYPE_MAP[
+          Object.keys(FRAM_TYPE_MAP).find(pfx => code.startsWith(pfx))
+        ] || [];
+        const keep = allowedPrefixes.some(p => skuPrefix === p);
+        if (!keep && debugRemoved.length < 10) debugRemoved.push({ sku, code });
+        return keep;
+      });
+
+      if (filtered.length !== existing.length) {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({ success: true, skus_cleaned: cleaned, rows_scanned: rows.rows.length, debug_removed: debugRemoved });
+  } catch (e) {
+    console.error('[cleanup-fram]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/update/sku-codes ──────────────────────────────────────────────
+// Direct overwrite of competitor_codes by exact SKU — works for HD and LD.
+// Body: { sku: "EL80047", competitor_codes: [...] }
+app.post('/api/update/sku-codes', importLimiter, requireAdmin, async (req, res) => {
+  const { sku, competitor_codes } = req.body || {};
+  if (!sku || !Array.isArray(competitor_codes)) {
+    return res.status(400).json({ error: 'sku and competitor_codes[] required' });
+  }
+  const client = await pool.connect();
+  try {
+    const r = await client.query(
+      `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2 RETURNING sku`,
+      [JSON.stringify(competitor_codes), sku.trim().toUpperCase()]
+    );
+    if (r.rowCount === 0) return res.status(404).json({ error: 'SKU not found' });
+    res.json({ success: true, sku: r.rows[0].sku, codes_count: competitor_codes.length });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/cleanup/fram-hd-force ─────────────────────────────────────────
+// Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
+// Handles any manufacturer key format (uppercase, lowercase, missing).
+app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // Step 1: find all HD SKUs that have any entry with a FRAM-pattern code
+    const rows = await client.query(`
+      SELECT sku, competitor_codes
+      FROM elimfilters_catalog
+      WHERE (
+        sku LIKE 'EL8%' OR sku LIKE 'EA1%' OR sku LIKE 'EC1%' OR sku LIKE 'EF9%'
+      )
+      AND competitor_codes IS NOT NULL
+      AND jsonb_array_length(competitor_codes) > 0
+    `);
+
+    const FRAM_CODE_PATTERN = /^(PH|CA|CF|G)\d/i;
+
+    let cleaned = 0;
+    let debug_sample = [];
+    for (const row of rows.rows) {
+      const { sku, competitor_codes } = row;
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      const filtered = existing.filter(c => {
+        const mfr = (c.manufacturer || '').toUpperCase().trim();
+        const code = (c.code || c.partNumber || c.part_number || '').toUpperCase().trim();
+        // Remove if manufacturer is FRAM or code matches FRAM pattern
+        if (mfr === 'FRAM') return false;
+        if (!mfr && FRAM_CODE_PATTERN.test(code)) return false;
+        return true;
+      });
+
+      if (filtered.length !== existing.length) {
+        if (debug_sample.length < 5) {
+          debug_sample.push({
+            sku,
+            removed: existing.length - filtered.length,
+            sample_removed: existing.filter(c => !filtered.includes(c)).slice(0,3),
+          });
+        }
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({
+      success: true,
+      hd_rows_scanned: rows.rows.length,
+      skus_cleaned: cleaned,
+      debug_sample,
+    });
+  } catch (e) {
+    console.error('[cleanup-fram-hd-force]', e.message);
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── GET /api/debug/sku-codes ─────────────────────────────────────────────────
+// Debug endpoint: return raw competitor_codes for a specific SKU.
+app.get('/api/debug/sku-codes', adminLimiter, requireAdmin, async (req, res) => {
+  const sku = (req.query.sku || '').trim().toUpperCase();
+  if (!sku) return res.status(400).json({ error: 'sku param required' });
+  const client = await pool.connect();
+  try {
+    const r = await client.query(
+      `SELECT sku, duty, filter_type, competitor_codes FROM elimfilters_catalog WHERE sku = $1`,
+      [sku]
+    );
+    if (r.rows.length === 0) return res.status(404).json({ error: 'SKU not found' });
+    res.json(r.rows[0]);
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/recheck-donaldson ──────────────────────────────────────────────
 // Returns products that were scraped (have spec data) but are missing
 // oem_codes AND/OR equipment_applications — second-pass recheck queue.

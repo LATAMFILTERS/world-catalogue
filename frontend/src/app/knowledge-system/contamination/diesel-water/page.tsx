@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 export default function DieselWaterContaminationPage() {
   const sections = [
@@ -358,22 +357,6 @@ export default function DieselWaterContaminationPage() {
           { '@type': 'Question', name: 'How does microbial growth affect fuel systems?', acceptedAnswer: { '@type': 'Answer', text: 'Microbes thrive at water-fuel interfaces where moisture provides the growth medium. Bacterial colonies (Pseudomonas, Bacillus) produce enzymes that degrade fuel hydrocarbons into organic acids, lowering fuel pH and accelerating corrosion. Fungal hyphae (Aspergillus, Cladosporium) penetrate fuel filter media, causing rapid plugging within days. Biofilm accumulation forms a slime layer on tank interior and fuel system components, causing fuel flow restriction and injector stiction. Biocide treatment kills planktonic (free-floating) microbes within hours but is less effective against established biofilm colonies.' } },
         ],
       }) }} />
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
-        <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=fuel-integrity | mechanism=water-ingress</p>
-        <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
-        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: HYDROCORE, SYNTEPORE, TURBOCORE</p>
-        <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/fuel-efficiency</p>
-        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
-        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/diesel-water</p>
-        <p>&nbsp;&nbsp;concept_id: diesel-water-contamination</p>
-        <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
-      </RetrievalBlock>
     </main>
   );
 }

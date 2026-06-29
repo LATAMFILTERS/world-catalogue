@@ -1,10 +1,30 @@
 {
   "meta": {
     "version": "1.0",
+<<<<<<< HEAD
     "generated": "2026-06-29T03:23:59.642Z",
     "note_count": 54,
     "entity_types": [],
     "resolution_ratio": 0,
+=======
+    "generated": "2026-06-29T01:56:13.848Z",
+    "note_count": 58,
+    "entity_types": [
+      "architecture",
+      "commercial-system",
+      "component",
+      "contamination-mode",
+      "industry",
+      "problem",
+      "product-family",
+      "protection-domain",
+      "standard",
+      "system",
+      "taxonomy",
+      "technology"
+    ],
+    "resolution_ratio": 0.931,
+>>>>>>> f771672f1ee0450463c2e91c803e18f272517838
     "generator": "scripts/build-citation-index.js"
   },
   "entities": {},

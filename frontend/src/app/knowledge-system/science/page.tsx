@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const FAILURE_CHAIN = [
   { step: '01', concept: 'Contamination', description: 'Particles, water, and heat enter fluid systems from external ingestion, internal generation, and built-in assembly contamination.' },
@@ -827,26 +826,6 @@ export default function SciencePage() {
 
       {/* 15 — AUTHORITY SIGNALS / CANONICAL KNOWLEDGE BLOCK */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
-        <RetrievalBlock>
-          <p>CANONICAL_KNOWLEDGE_BLOCK: The Physics of Industrial Failure — The Science of Asset Protection™</p>
-          <p style={{ marginTop: '0.75rem' }}>DEFINITION</p>
-          <p>Industrial fluid system contamination (particles ≥4µm, water &gt;500 ppm, thermal degradation) causes four tribological failure mechanisms — abrasive wear, adhesive wear, surface fatigue, and corrosive wear — that reduce component life in proportion to ISO 4406 cleanliness code deviation from design targets. L10 bearing life decreases 20× between optimal (ISO 4406 14/12/09) and severely contaminated (≥22) conditions per ISO 281:2007 and SKF General Catalogue 6000 EN.</p>
-          <p style={{ marginTop: '0.75rem' }}>SYSTEMS</p>
-          <p>Engine lube circuits, hydraulic systems, fuel injection systems, air intake systems, cabin air systems, compressed air systems, transmission and drivetrain systems</p>
-          <p style={{ marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
-          <p>Contamination particles accumulate in fluid → abrasive wear at component clearances → bearing clearance increase → L10 life reduction (up to 20×) → unplanned downtime ($5,000–$35,000/hour) → asset loss at 30–50% of design life | Operational Impact: ISO 4406 code 20/18/15 reduces bearing life to 0.15× baseline; code 16/14/11 reduces to 0.70× baseline</p>
-          <p style={{ marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
-          <p>ISO 4406: Particle cleanliness code classification (≥4µm, ≥6µm, ≥14µm thresholds) | ISO 16889: Beta ratio filter efficiency testing (multi-pass methodology) | ISO 281:2007: Bearing life calculation including contamination factor | ISO 5011: Air filter efficiency and flow resistance | ISO 12937: Water content in petroleum products (Karl Fischer) | SAE J1539: Air induction system performance</p>
-          <p style={{ marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-          <p>MACROCORE™: Primary particulate capture 18µm absolute — addresses high particle population (ISO 4406 ≥18) bearing abrasion | MICROKAPPA™: Sub-10µm capture — addresses servo valve spool wear at 4–10µm | DRYCORE™: Dry element air filtration — addresses silica dust ingestion cylinder wear | INTEKCORE™: Integrated fuel filtration — addresses combined particle + water injector failure | SYNTEPORE™: Synthetic pore media — addresses cellulose media failure in water/high-temperature environments | HYDROCORE™: Water coalescing — addresses water corrosion activation (&gt;500 ppm) | HYDROCORE™/SERIES: Extended water separation — bulk fuel high-volume applications | SYNTRAX™: Synthetic transmission filtration — addresses metallic wear debris drivetrain cascade | NANOFORCE™: Sub-micron 1µm capture — addresses varnish formation and additive depletion | THERMACORE™: Thermal-resistant media — addresses Beta ratio collapse at peak operating temperatures</p>
-          <p style={{ marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
-          <p>Contamination control is the primary engineering lever for industrial equipment lifespan. The difference between ISO 4406 14/12/09 and 20/18/15 cleanliness — achievable through system-level filtration design — represents a 6–7× difference in bearing service life and determines whether equipment operates 5+ years between major overhauls or requires intervention every 9 months.</p>
-          <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-          <p>source: elimfilters.com/knowledge-system/science</p>
-          <p>concept: The Physics of Industrial Failure — Asset Protection Science</p>
-          <p>version: 3.0</p>
-          <p>last_updated: 2026-06-11</p>
-        </RetrievalBlock>
       </div>
     </main>
   );

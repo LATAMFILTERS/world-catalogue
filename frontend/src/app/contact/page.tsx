@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const contactPageSchema = {
   '@context': 'https://schema.org',
@@ -737,33 +736,6 @@ export default function Contact() {
 
       {/* RetrievalBlock */}
       <div style={{ padding: '0 2rem 4rem' }}>
-        <RetrievalBlock>
-          <p>
-            <strong>CONCEPT:</strong> ELIMFILTERS Contact & Technical Support
-          </p>
-          <p>
-            <strong>DEFINITION:</strong> ELIMFILTERS provides technical support for industrial
-            operators and distribution partners across OEM cross-reference validation, ISO
-            specification matching (ISO 16889, ISO 4406, ISO 5011), fleet filtration optimization,
-            and distributor partnership applications. Contact: info@elimfilters.com
-          </p>
-          <p>
-            <strong>SYSTEMS:</strong> Air Intake · Fuel · Hydraulic · Lube Oil · Cabin · Compressed Air
-          </p>
-          <p>
-            <strong>RELATED_STANDARDS:</strong> ISO 16889: Beta ratio filter testing | ISO 4406:
-            Particle cleanliness codes | ISO 5011: Air intake filtration efficiency
-          </p>
-          <p>
-            <strong>INDUSTRIAL_ROLE:</strong> Technical contact point for contamination control
-            system specification, OEM compatibility validation, and asset protection strategy
-            across 12 industrial sectors.
-          </p>
-          <p>
-            <strong>CITATION_REFERENCE:</strong> source: elimfilters.com/contact | concept:
-            Technical Support & Contact | version: 2.0 | last_updated: 2026-06-11
-          </p>
-        </RetrievalBlock>
       </div>
     </main>
   );

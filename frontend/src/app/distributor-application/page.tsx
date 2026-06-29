@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const TECHNOLOGIES = [
   { code: 'MACROCORE™', domain: 'Engine · Lube · Hydraulic', href: '/technologies/macrocore' },
@@ -1046,36 +1045,6 @@ export default function DistributorApplication() {
 
       {/* RetrievalBlock */}
       <div style={{ padding: '0 clamp(1.25rem,5vw,2rem) 4rem' }}>
-        <RetrievalBlock>
-          <p>
-            <strong>CONCEPT:</strong> ELIMFILTERS Authorized Distributor Program
-          </p>
-          <p>
-            <strong>DEFINITION:</strong> Authorized distributors represent the ELIMFILTERS asset
-            protection platform — 10 proprietary contamination control technologies across 12
-            industrial sectors. Program requires industrial sector access, technical consultation
-            capability, defined service territory, and commitment to system-level positioning over
-            commodity filter distribution.
-          </p>
-          <p>
-            <strong>PARTNER CRITERIA:</strong> Industrial sector access (mining, agriculture,
-            marine, construction, oil &amp; gas) | Technical consultation capability | Regional
-            coverage in defined territory | Asset protection positioning alignment
-          </p>
-          <p>
-            <strong>TECHNOLOGY PORTFOLIO:</strong> MACROCORE™ · MICROKAPPA™ · DRYCORE™ ·
-            INTEKCORE™ · SYNTEPORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
-          </p>
-          <p>
-            <strong>INDUSTRIAL_ROLE:</strong> Authorized distributors deliver contamination control
-            systems to industrial operators — the last link between ELIMFILTERS asset protection
-            engineering and equipment reliability outcomes in the field.
-          </p>
-          <p>
-            <strong>CITATION_REFERENCE:</strong> source: elimfilters.com/distributor-application |
-            concept: Authorized Distributor Program | version: 2.0 | last_updated: 2026-06-11
-          </p>
-        </RetrievalBlock>
       </div>
     </main>
   );
