@@ -1,0 +1,386 @@
+/**
+ * pep-data.ts — Product Experience Platform Data
+ *
+ * Defines the 7 Protection Systems and 12 Product Families for the PEP.
+ * Content sourced exclusively from documented ELIMFILTERS technical knowledge.
+ * All technology detail content is referenced from KC_TECHNOLOGIES and
+ * KC_SYSTEM_DETAILS in knowledge-center-data.ts.
+ */
+
+// ============================================================================
+// INTERFACES
+// ============================================================================
+
+export interface PEPSystem {
+  slug: string;
+  number: string;
+  name: string;
+  tagline: string;
+  /** Maps to KC_SYSTEM_DETAILS key. Null for compressed-air (not in KC). */
+  kcDetailSlug: string | null;
+  technologySlugs: string[];
+  familySlugs: string[];
+  applicableStandards: string[];
+  industrieSlugs: string[];
+  /** Engineering Center content for systems not in KC_SYSTEM_DETAILS */
+  inlineEngineering?: {
+    failureMechanism: string;
+    contaminationTarget: string;
+    targetCleanliness: string;
+    keyMetrics: { label: string; value: string }[];
+    sections: { heading: string; body: string; callout?: { label: string; value: string }[] }[];
+  };
+  relatedKCArticleSlugs: string[];
+  relatedERLSlugs: string[];
+}
+
+export interface PEPFamily {
+  slug: string;
+  name: string;
+  systemSlug: string;
+  purpose: string;
+  engineering: string;
+  applications: string[];
+  construction: string;
+  technologySlugs: string[];
+  standards: string[];
+  /** SKU prefix for Heavy Duty products (null if no HD family) */
+  hdPrefix: string | null;
+  /** SKU prefix for Light Duty products (null if no LD family) */
+  ldPrefix: string | null;
+  relatedKCArticleSlugs: string[];
+}
+
+// ============================================================================
+// PROTECTION SYSTEMS (7)
+// ============================================================================
+
+export const PEP_SYSTEMS: PEPSystem[] = [
+  {
+    slug: 'air-intake',
+    number: '01',
+    name: 'Air Intake Protection',
+    tagline: 'Preventing abrasive particles and moisture from entering combustion and pneumatic air supply systems.',
+    kcDetailSlug: 'air-intake-protection',
+    technologySlugs: ['macrocore', 'intekcore', 'syntepore'],
+    familySlugs: ['primary-air', 'secondary-air', 'safety-elements', 'air-cleaner-housings'],
+    applicableStandards: ['ISO 5011', 'SAE J1539', 'ISO 29463'],
+    industrieSlugs: ['mining', 'construction', 'agriculture', 'oil-gas', 'power-generation', 'truck-fleets', 'railway'],
+    relatedKCArticleSlugs: ['airflow-engineering', 'contamination-control', 'seal-integrity'],
+    relatedERLSlugs: ['filtration-standards-framework', 'filtration-science', 'particle-science'],
+  },
+  {
+    slug: 'fuel-cleanliness',
+    number: '02',
+    name: 'Fuel Cleanliness Protection',
+    tagline: 'Removing water and particles from diesel fuel to protect high-pressure common rail injectors.',
+    kcDetailSlug: 'fuel-cleanliness-protection',
+    technologySlugs: ['hydrocore', 'syntepore', 'turbocore'],
+    familySlugs: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
+    applicableStandards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
+    industrieSlugs: ['marine', 'mining', 'agriculture', 'truck-fleets', 'oil-gas', 'power-generation', 'construction'],
+    relatedKCArticleSlugs: ['contamination-control'],
+    relatedERLSlugs: ['filtration-standards-framework', 'contamination-mechanisms'],
+  },
+  {
+    slug: 'lubrication',
+    number: '03',
+    name: 'Lubrication Protection',
+    tagline: 'Maintaining ISO 4406 cleanliness codes in engine and drivetrain lube circuits.',
+    kcDetailSlug: 'lubrication-protection',
+    technologySlugs: ['syntrax'],
+    familySlugs: ['oil-filters'],
+    applicableStandards: ['ISO 16889', 'ISO 4406', 'SAE J1858', 'DIN 51524'],
+    industrieSlugs: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'railway', 'power-generation'],
+    relatedKCArticleSlugs: ['seal-integrity', 'contamination-control'],
+    relatedERLSlugs: ['filtration-standards-framework', 'filtration-science', 'performance-metrics'],
+  },
+  {
+    slug: 'hydraulic',
+    number: '04',
+    name: 'Hydraulic Protection',
+    tagline: 'Maintaining cleanliness targets for proportional valves and servo valve circuits.',
+    kcDetailSlug: 'hydraulic-protection',
+    technologySlugs: ['nanoforce'],
+    familySlugs: ['hydraulic-filters'],
+    applicableStandards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524', 'NAS 1638'],
+    industrieSlugs: ['construction', 'mining', 'manufacturing', 'marine', 'agriculture', 'oil-gas', 'power-generation'],
+    relatedKCArticleSlugs: ['seal-integrity', 'contamination-control'],
+    relatedERLSlugs: ['filtration-standards-framework', 'performance-metrics', 'reliability-analysis'],
+  },
+  {
+    slug: 'cooling-system',
+    number: '05',
+    name: 'Cooling System Protection',
+    tagline: 'Controlling cavitation erosion and scale buildup through SCA filtration and coolant conditioning.',
+    kcDetailSlug: 'cooling-system-protection',
+    technologySlugs: ['thermacore'],
+    familySlugs: ['coolant-filters'],
+    applicableStandards: ['ASTM D6210', 'ASTM D3306'],
+    industrieSlugs: ['truck-fleets', 'mining', 'construction', 'agriculture', 'power-generation'],
+    relatedKCArticleSlugs: ['contamination-control'],
+    relatedERLSlugs: ['contamination-mechanisms', 'materials-engineering'],
+  },
+  {
+    slug: 'cabin-air',
+    number: '06',
+    name: 'Cabin Air Protection',
+    tagline: 'Protecting operators from PM2.5, silica dust, and chemical vapors in heavy equipment cabs.',
+    kcDetailSlug: 'cabin-air-protection',
+    technologySlugs: ['microkappa'],
+    familySlugs: ['cabin-filters'],
+    applicableStandards: ['ISO 11155-1', 'ISO 11155-2', 'DIN 71220', 'ISO 16890', 'ISO 29463'],
+    industrieSlugs: ['mining', 'construction', 'agriculture', 'oil-gas', 'waste-municipal'],
+    relatedKCArticleSlugs: ['contamination-control'],
+    relatedERLSlugs: ['filtration-science', 'particle-science', 'contamination-mechanisms'],
+  },
+  {
+    slug: 'compressed-air',
+    number: '07',
+    name: 'Compressed Air Protection',
+    tagline: 'Multi-stage compressed air purity achieving ISO 8573-1 Class 1 for precision industrial and pneumatic systems.',
+    kcDetailSlug: null,
+    technologySlugs: ['drycore'],
+    familySlugs: ['air-dryer-filters'],
+    applicableStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
+    industrieSlugs: ['manufacturing', 'oil-gas', 'power-generation', 'railway'],
+    inlineEngineering: {
+      failureMechanism: 'Water vapor in compressed air condenses downstream → corrosion in distribution piping → rust particles contaminate pneumatic valves and actuators → seal degradation → actuator stiction and position errors → production downtime. Oil aerosol from compressor → oil film on valve spool → varnish formation → valve failure.',
+      contaminationTarget: 'Water vapor (pressure dew point target), liquid water, compressor oil aerosol (≤0.01 mg/m³ oil class), solid particles (≤0.1 mg/m³ at ≥0.5 µm).',
+      targetCleanliness: 'ISO 8573-1 Class 1:4:1 — particle class 1 (≤0.1 mg/m³), water class 4 (dew point ≤+3°C), oil class 1 (≤0.01 mg/m³).',
+      keyMetrics: [
+        { label: 'Liquid oil removal (DRYCORE™)', value: '≥99.9%' },
+        { label: 'ISO 8573-1 class achievable', value: '1:4:1' },
+        { label: 'Pressure dew point target', value: '≤+3°C (class 4)' },
+        { label: 'Filtration stages', value: 'Pre-filter → Coalescing → Carbon → Post-filter' },
+      ],
+      sections: [
+        {
+          heading: 'Compressed Air Contamination Categories',
+          body: 'ISO 8573-1 defines three contamination categories in compressed air: solid particles, water (liquid and vapor), and oil (liquid aerosol and vapor). Each category is independently classified by purity class from 0 (highest) to 9 (lowest). Class 1 in all categories represents the highest purity level and is required for instrument air, pharmaceutical process air, food contact, and precision pneumatic control systems.',
+          callout: [
+            { label: 'Particle class 1', value: '≤0.1 mg/m³ at ≥0.5 µm' },
+            { label: 'Water class 4 dew point', value: '≤+3°C' },
+            { label: 'Oil class 1', value: '≤0.01 mg/m³' },
+          ],
+        },
+        {
+          heading: 'Multi-Stage Filtration Architecture',
+          body: 'DRYCORE™ achieves ISO 8573-1 Class 1:4:1 through four sequential stages: Stage 1 — pre-filter removes bulk liquid water and particles >40 µm. Stage 2 — coalescing filter captures oil aerosol down to 0.01 mg/m³ and fine particles. Stage 3 — activated carbon adsorber captures oil vapor, odors, and chemical contaminants. Stage 4 — post-filter provides final particle capture to prevent carbon migration into the air line. Each stage requires periodic service based on condensate volume and operating hours.',
+        },
+        {
+          heading: 'Dew Point and Moisture Control',
+          body: 'Pressure dew point (PDP) is the temperature at which water vapor begins to condense in the compressed air system at operating pressure. A PDP of +3°C (ISO 8573-1 Water Class 4) prevents condensation in distribution systems operating above +3°C. For cold climate installations, lower PDP classes (Class 1: −70°C PDP) require desiccant dryer technology upstream of the coalescing filter. DRYCORE™ molecular sieve desiccant achieves PDP below −40°C in vehicle air brake and pneumatic suspension applications.',
+        },
+        {
+          heading: 'Mobile vs Stationary Applications',
+          body: 'Stationary compressed air systems (manufacturing, process plants) use large-format coalescing and activated carbon vessels. Mobile vehicle applications (air brake systems, pneumatic suspension, instrument air on construction and mining equipment) use compact DRYCORE™ cartridge elements within air dryer housings mounted on the vehicle chassis. Vehicle air dryers purge accumulated moisture periodically using a control valve that exhausts condensate to atmosphere.',
+        },
+      ],
+    },
+    relatedKCArticleSlugs: [],
+    relatedERLSlugs: ['filtration-standards-framework', 'filtration-science'],
+  },
+];
+
+// ============================================================================
+// PRODUCT FAMILIES (12)
+// ============================================================================
+
+export const PEP_FAMILIES: PEPFamily[] = [
+  {
+    slug: 'primary-air',
+    name: 'Primary Air Filters',
+    systemSlug: 'air-intake',
+    purpose: 'Primary air filter elements provide the main particle separation barrier between the atmosphere and the engine combustion air system. Primary elements capture the majority of incoming particulate mass — typically >98% — before air enters the intake manifold.',
+    engineering: 'Primary air elements use pleated synthetic microfiber media (MACROCORE™) or all-synthetic media (SYNTEPORE™) arranged in cylindrical, panel, or conical geometries. Pleat depth and count determine dirt holding capacity. Anti-collapse wire or structural outer shell prevents media deformation under restriction loads.',
+    applications: ['Diesel engine air intake systems', 'Turbocharged on-highway and off-highway vehicles', 'Stationary diesel generators', 'Agricultural combines, tractors, harvesters', 'Mining haul trucks and drill rigs', 'Construction excavators and loaders'],
+    construction: 'Pleated synthetic microfiber media with outer pre-filter layer, inner structural support, end caps bonded with polyurethane, radial seal gasket. Anti-collapse protection via steel wire winding or outer structural shell.',
+    technologySlugs: ['macrocore', 'syntepore'],
+    standards: ['ISO 5011', 'SAE J1539'],
+    hdPrefix: 'EA1',
+    ldPrefix: 'EA3',
+    relatedKCArticleSlugs: ['airflow-engineering'],
+  },
+  {
+    slug: 'secondary-air',
+    name: 'Secondary Air Filters',
+    systemSlug: 'air-intake',
+    purpose: 'Secondary (safety) elements provide a second filtration stage as a dust indicator for primary element media failures. The secondary element protects the engine during primary element change events and signals when primary element integrity is compromised.',
+    engineering: 'Secondary elements are installed inside the primary element in a co-axial arrangement. They are not serviced simultaneously with the primary element — secondary elements are replaced only when they show visible dust loading or after a defined number of primary element changes. Efficiency is typically lower than the primary to allow dust indicator function.',
+    applications: ['Inner safety position of two-stage air cleaner housings', 'High-dust mining and agriculture applications', 'Critical engine protection where primary element integrity must be monitored'],
+    construction: 'Lightweight pleated cellulose or synthetic media, closed at one end. Installed co-axially inside primary element. End cap color-coded for identification. Typically shorter than primary element.',
+    technologySlugs: ['macrocore'],
+    standards: ['ISO 5011'],
+    hdPrefix: 'EA1',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['airflow-engineering'],
+  },
+  {
+    slug: 'safety-elements',
+    name: 'Safety / Inner Elements',
+    systemSlug: 'air-intake',
+    purpose: 'Safety inner elements protect the engine against unfiltered air ingress during primary element service intervals and serve as a dust indicator for primary element bypass or media failure events.',
+    engineering: 'Safety elements use cellulose or synthetic media with high structural rigidity for installation stability. Closed-end design prevents air bypass around the element end cap. Safety elements are inspected at each primary element change and replaced at defined intervals or when dust contamination is visible.',
+    applications: ['High-dust mining, agriculture, and construction applications', 'Any installation requiring dual protection for engine integrity'],
+    construction: 'Rigid pleated media construction with closed inner end cap. Radial seal for housing fit. Color-coded end caps distinguish safety element from primary element during service.',
+    technologySlugs: ['macrocore'],
+    standards: ['ISO 5011'],
+    hdPrefix: 'EA1',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['airflow-engineering'],
+  },
+  {
+    slug: 'air-cleaner-housings',
+    name: 'Air Cleaner Housings',
+    systemSlug: 'air-intake',
+    purpose: 'Air cleaner housings provide the structural enclosure for primary and secondary filter elements, integrate pre-cleaner functionality, and manage the air flow path from atmosphere to engine intake. Housing design determines sealing integrity, service accessibility, and restriction indicator port location.',
+    engineering: 'INTEKCORE™ housings are precision-formed from corrosion-resistant alloy with zero-bypass radial sealing surfaces. Integrated centrifugal pre-cleaners remove 80–95% of coarse particles before they reach the primary element, extending primary element service life 3–5× in high-dust environments.',
+    applications: ['Heavy-duty truck and bus air intake systems', 'Mining and construction heavy equipment', 'Agricultural machinery with high pre-cleaner requirements', 'Stationary engine enclosures'],
+    construction: 'Corrosion-resistant alloy housing body with precision-machined element seating surfaces. Centrifugal pre-cleaner integrated into inlet duct. Restriction indicator port (SAE J1086 thread). Service access via removable end cap or clamp band. Automatic dust ejector valve for pre-cleaner discharge.',
+    technologySlugs: ['intekcore'],
+    standards: ['ISO 5011', 'SAE J1086'],
+    hdPrefix: 'EA2',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['airflow-engineering'],
+  },
+  {
+    slug: 'primary-fuel',
+    name: 'Primary Fuel Filters',
+    systemSlug: 'fuel-cleanliness',
+    purpose: 'Primary fuel filters provide coarse particle removal and water separation upstream of the injection pump and HPCR injectors. Installed between the fuel tank and lift pump, primary filters protect the fuel system from bulk contamination and large water slugs.',
+    engineering: 'Primary fuel elements combine particulate media with water separation capability. SYNTEPORE™ nanofiber media achieves β₄(c) ≥200 particle efficiency. Compatible with B20 biodiesel. Water separation via coalescing media or integrated HYDROCORE™ separator stage.',
+    applications: ['Pre-lift pump fuel system position', 'Inline fuel filter on diesel truck and bus applications', 'Generator set fuel inlet protection', 'Marine diesel primary fuel protection'],
+    construction: 'Nanofiber surface-loading media, spiral wound or pleated configuration. Polyurethane end caps. NBR gasket for fuel compatibility. Water separator bowl with drain valve for collected water removal.',
+    technologySlugs: ['syntepore', 'hydrocore'],
+    standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
+    hdPrefix: 'EF9',
+    ldPrefix: 'EF3',
+    relatedKCArticleSlugs: ['contamination-control'],
+  },
+  {
+    slug: 'secondary-fuel',
+    name: 'Secondary Fuel Filters',
+    systemSlug: 'fuel-cleanliness',
+    purpose: 'Secondary fuel filters provide final-stage fine particle removal between the lift pump and HPCR fuel rail. Operating at higher fuel pressure than primary filters, secondary elements provide the last particle barrier before injection.',
+    engineering: 'TURBOCORE™ provides <4 µm absolute final stage filtration at system fuel flow rates. Designed to remove residual fine particles (2–4 µm) that survive primary and separator stages. Target fuel cleanliness at ISO 12/10/8 for HPCR injector protection at 1,600–2,500 bar injection pressure.',
+    applications: ['Between lift pump and HPCR pump (final filtration position)', 'High-pressure common rail fuel systems on trucks, buses, and off-highway equipment', 'Three-stage fuel protection systems on mining and marine applications'],
+    construction: 'Sub-4 µm absolute nanofiber media. High-pressure rated housing (typically 20–30 bar working pressure). Integral water indicator sensor port. NBR gasket for fuel service.',
+    technologySlugs: ['turbocore', 'syntepore'],
+    standards: ['ISO 12937', 'ASTM D6304', 'ISO 16332'],
+    hdPrefix: 'EF9',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['contamination-control'],
+  },
+  {
+    slug: 'fuel-water-separators',
+    name: 'Fuel Water Separators',
+    systemSlug: 'fuel-cleanliness',
+    purpose: 'Fuel water separators remove free and emulsified water from diesel fuel before it reaches the injection system. Water above 200 ppm in HPCR fuel causes corrosion of injector needle seats, microbial growth, and injector stiction.',
+    engineering: 'HYDROCORE™ uses hydrophobic coalescing media that attracts and aggregates small water droplets into larger droplets that fall by gravity into the collection sump. Free water removal ≥96% per ISO 16332. Sump drain valve allows periodic removal of collected water. Diesel/water interface detection available via float-type water-in-fuel indicator.',
+    applications: ['Diesel fuel systems in marine, mining, and agriculture applications', 'Bulk fuel tank installations and mobile fuel tankers', 'Generator set fuel pre-treatment', 'High-water-risk environments: coastal, tropical, high humidity'],
+    construction: 'Hydrophobic coalescing media element with collection sump bowl. Clear or translucent sump bowl for water level visibility. Manual drain valve or automatic drain option. Water-in-fuel sensor port. NBR seals for diesel compatibility.',
+    technologySlugs: ['hydrocore'],
+    standards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
+    hdPrefix: 'ES9',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['contamination-control'],
+  },
+  {
+    slug: 'oil-filters',
+    name: 'Oil Filters',
+    systemSlug: 'lubrication',
+    purpose: 'Engine oil filters maintain ISO 4406 particle cleanliness in lube circuits, capturing metallic wear particles, combustion soot, silica ingress, and oxidation products that degrade oil film strength and accelerate bearing wear.',
+    engineering: 'SYNTRAX™ uses synthetic microfiber media achieving β₁₀(c) ≥200 (99.5% efficiency at 10 µm) with 2–3× the dirt holding capacity of cellulose elements. Anti-drain back valve prevents oil drain-down during engine shutdown. Bypass valve opens at 0.8–1.0 bar ΔP to prevent oil starvation during cold starts.',
+    applications: ['On-highway diesel truck engines (Euro VI / EPA10)', 'Off-highway mining, construction, and agricultural engine lube circuits', 'Bus and coach long-drain applications', 'Stationary diesel generator lube systems', 'Marine diesel engine lube protection'],
+    construction: 'Synthetic microfiber pleated media. Steel outer shell (spin-on) or cartridge with paper/plastic canister. NBR anti-drain back valve and bypass valve. Gasket material: NBR standard, FKM for high-temperature applications. Spin-on thread or cartridge-type installation.',
+    technologySlugs: ['syntrax'],
+    standards: ['ISO 16889', 'ISO 4406', 'SAE J1858', 'DIN 51524'],
+    hdPrefix: 'EL8',
+    ldPrefix: 'EL3',
+    relatedKCArticleSlugs: ['seal-integrity', 'contamination-control'],
+  },
+  {
+    slug: 'hydraulic-filters',
+    name: 'Hydraulic Filters',
+    systemSlug: 'hydraulic',
+    purpose: 'Hydraulic filters maintain ISO 4406 cleanliness targets in hydraulic circuits to protect proportional valves, servo valves, and high-pressure pumps with clearance tolerances of 1–25 µm.',
+    engineering: 'NANOFORCE™ achieves β₁₀(c) ≥200 for standard hydraulic applications and β₄(c) ≥1000 for precision servo valve circuits. Collapse resistance ≥3,000 kPa prevents structural failure under pressure surges. Available in pressure line, return line, and kidney loop configurations.',
+    applications: ['Construction excavator, wheel loader, and crane hydraulic circuits', 'Mining dump truck and drill rig hydraulic systems', 'Industrial hydraulic presses and machine tools', 'Marine deck machinery hydraulic systems', 'Agricultural tractor and harvester hydraulic circuits'],
+    construction: 'Multi-layer synthetic nanofiber media with structural collapse protection. Pressure line elements: rated to 420 bar. Return line elements: low ΔP design. Kidney loop elements: high dirt capacity. End caps welded or bonded with polyurethane. Seal materials: NBR standard, FKM for phosphate ester fluids.',
+    technologySlugs: ['nanoforce'],
+    standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'NAS 1638', 'ISO 11171'],
+    hdPrefix: 'EH6',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['seal-integrity', 'contamination-control'],
+  },
+  {
+    slug: 'coolant-filters',
+    name: 'Coolant Filters',
+    systemSlug: 'cooling-system',
+    purpose: 'Coolant filters extend diesel engine cooling system service life by removing corrosion products and scale particles while delivering controlled-release supplemental coolant additive (SCA) to maintain inhibitor concentration in the 0.5–1.0 units/L target band.',
+    engineering: 'THERMACORE™ uses controlled-release SCA media that depletes additives linearly across the service interval, preventing liner cavitation erosion without overdose or underdose conditions. Particulate capture >80% at 20 µm removes scale, corrosion products, and silicate gel that reduce heat transfer and clog coolant passages.',
+    applications: ['Heavy-duty diesel truck and bus cooling systems', 'Stationary diesel generator cooling circuits', 'Mining and construction equipment cooling systems', 'Bus and coach cooling systems with extended service intervals'],
+    construction: 'Controlled-release SCA media element in spin-on canister or cartridge format. Bypass valve. Seal compatible with OAT, HOAT, and conventional silicate coolant formulations. SCA charge encapsulated in media matrix for controlled linear release.',
+    technologySlugs: ['thermacore'],
+    standards: ['ASTM D6210', 'ASTM D3306'],
+    hdPrefix: 'EW7',
+    ldPrefix: null,
+    relatedKCArticleSlugs: ['contamination-control'],
+  },
+  {
+    slug: 'cabin-filters',
+    name: 'Cabin Air Filters',
+    systemSlug: 'cabin-air',
+    purpose: 'Cabin air filters protect equipment operators from occupational exposure to PM₁₀, PM₂.₅, crystalline silica, diesel particulate, volatile organic compounds, and biological aerosols in heavy equipment operator cabs.',
+    engineering: 'MICROKAPPA™ combines H13-class particulate filtration (≥95% PM₂.₅ efficiency) with an activated carbon layer for VOC, NO₂, and diesel exhaust vapor adsorption. Initial restriction ≤50 Pa at rated HVAC flow. Respirable silica exposure below OSHA PEL (0.025 mg/m³) requires effective cabin filtration in mining, construction, and agriculture environments.',
+    applications: ['Mining excavator, haul truck, and drill rig operator cabs', 'Construction excavator and wheel loader operator environments', 'Agricultural combine and tractor cabs during harvest operations', 'Industrial vehicle cabs in high-dust manufacturing environments'],
+    construction: 'Dual-layer construction: H13-class synthetic microfiber particulate layer bonded with activated carbon adsorption layer. Panel configuration for HVAC filter slot installation. Available in single or dual-layer activated carbon options for high-VOC environments. Seal gasket for cab HVAC housing fit.',
+    technologySlugs: ['microkappa'],
+    standards: ['ISO 11155-1', 'ISO 11155-2', 'DIN 71220', 'ISO 16890', 'ISO 29463'],
+    hdPrefix: 'EC1',
+    ldPrefix: 'EC3',
+    relatedKCArticleSlugs: ['contamination-control'],
+  },
+  {
+    slug: 'air-dryer-filters',
+    name: 'Air Dryer Cartridges',
+    systemSlug: 'compressed-air',
+    purpose: 'Air dryer cartridges remove moisture from compressed air in vehicle air brake and pneumatic suspension systems, and in stationary industrial compressed air distribution systems, preventing corrosion and freeze events in downstream pneumatic components.',
+    engineering: 'DRYCORE™ molecular sieve desiccant adsorbs water vapor to achieve pressure dew points below −40°C in vehicle applications, and ISO 8573-1 Class 4 water purity (≤+3°C PDP) in stationary applications. Multi-stage architecture addresses particles, liquid water, oil aerosol, and water vapor in sequence.',
+    applications: ['Vehicle air brake system air dryers (trucks, buses, railway)', 'Pneumatic suspension systems', 'Stationary compressed air distribution for manufacturing and process plants', 'Instrument air systems requiring low dew point', 'Pharmaceutical and food process air supply'],
+    construction: 'Molecular sieve desiccant granules in rigid canister with pre-filter and post-filter layers. Cartridge format for installation in air dryer housing. Purge orifice for automatic moisture ejection. Available in integrated housing units or replacement cartridge format.',
+    technologySlugs: ['drycore'],
+    standards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
+    hdPrefix: 'ED4',
+    ldPrefix: null,
+    relatedKCArticleSlugs: [],
+  },
+];
+
+// ============================================================================
+// UTILITY FUNCTIONS
+// ============================================================================
+
+export function getPEPSystem(slug: string): PEPSystem | undefined {
+  return PEP_SYSTEMS.find((s) => s.slug === slug);
+}
+
+export function getPEPFamily(slug: string): PEPFamily | undefined {
+  return PEP_FAMILIES.find((f) => f.slug === slug);
+}
+
+export function getFamiliesBySystem(systemSlug: string): PEPFamily[] {
+  return PEP_FAMILIES.filter((f) => f.systemSlug === systemSlug);
+}
+
+export function getSystemByFamily(familySlug: string): PEPSystem | undefined {
+  const family = getPEPFamily(familySlug);
+  if (!family) return undefined;
+  return getPEPSystem(family.systemSlug);
+}
+
+/** All technology slugs appearing in the PEP (from all systems) */
+export const PEP_TECHNOLOGY_SLUGS: string[] = Array.from(
+  new Set(PEP_SYSTEMS.flatMap((s) => s.technologySlugs))
+);
