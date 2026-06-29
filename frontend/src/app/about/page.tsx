@@ -371,6 +371,31 @@ export default function AboutPage() {
           }}>
             EXPLORE ALL TECHNOLOGIES →
           </Link>
+
+          {/* Commercial Lines */}
+          <div style={{ marginTop: '2.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '1rem' }}>
+              COMMERCIAL LINES
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: '0.75rem' }}>
+              {[
+                { code: 'DURATECH™', href: '/commercial-lines/duratech', domain: 'Fleet Maintenance Kits', body: 'Pre-configured filter kits for scheduled fleet maintenance across heavy-duty truck and equipment applications.' },
+                { code: 'MARINECLEAN™', href: '/commercial-lines/marineclean', domain: 'Marine Diesel & Hydraulic', body: 'Marine-certified filtration solutions for diesel propulsion and hydraulic systems in commercial and recreational marine vessels.' },
+              ].map((item) => (
+                <Link key={item.code} href={item.href} style={{ textDecoration: 'none', display: 'block' }}>
+                  <motion.div
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.18)' }}
+                    transition={{ duration: 0.15 }}
+                    style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.3rem', background: 'rgba(255,255,255,0.01)' }}
+                  >
+                    <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.82rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.03em' }}>{item.code}</span>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.57rem', color: 'rgba(255,255,255,0.28)', letterSpacing: '0.06em' }}>{item.domain}</span>
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.55, marginTop: '0.25rem' }}>{item.body}</span>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
