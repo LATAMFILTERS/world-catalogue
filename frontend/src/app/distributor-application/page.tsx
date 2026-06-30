@@ -223,6 +223,7 @@ export default function DistributorApplication() {
           textDecoration: 'none',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
+          transition: 'background 0.2s, border-color 0.2s',
         }}
       >
         ← HOME

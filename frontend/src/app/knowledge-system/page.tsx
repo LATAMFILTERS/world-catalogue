@@ -147,7 +147,8 @@ export default function KnowledgeSystemPage() {
         borderRadius: '4px', padding: '0.45rem 1rem',
         fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
         letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
-        backdropFilter: 'blur(8px)',
+        backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+        transition: 'background 0.2s, border-color 0.2s',
       }}>← HOME</Link>
 
       {/* Hero */}
