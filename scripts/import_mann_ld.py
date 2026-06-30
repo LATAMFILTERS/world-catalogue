@@ -50,6 +50,11 @@ FILTER_TYPE_ALIASES = {
     'kraftstofffilter': 'Fuel Filter',
     'luftfilter':    'Air Filter',
     'innenraumfilter': 'Cabin Filter',
+    # Short-form aliases from mann_ld_import_ready.jsonl
+    'air':   'Air Filter',
+    'cabin': 'Cabin Filter',
+    'fuel':  'Fuel Filter',
+    'lube':  'Oil Filter',
 }
 
 # Only these 4 LD types are supported

@@ -198,7 +198,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           tagline={item.description}
           ctaText={item.cta}
           backgroundImage={industryImage || bgImage}
-          category={`// ${categoryLabel}_ENGINEERING`}
+          category={`${categoryLabel} ENGINEERING`}
         />
 
         {/* Direct Answer / Industrial Context Block */}
