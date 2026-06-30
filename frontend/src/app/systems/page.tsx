@@ -63,42 +63,93 @@ export default function SystemsPage() {
           </Link>
         </div>
 
-        {/* ── Header ─────────────────────────────────────────────────── */}
+        {/* ── Hero Image ─────────────────────────────────────────────── */}
         <section
           style={{
-            padding: 'clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem)',
+            position: 'relative',
+            width: '100%',
+            height: 'clamp(320px, 45vw, 580px)',
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src="/assets/hero-systems.avif"
+            alt="ELIMFILTERS Protection Systems — Industrial Contamination Control"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              display: 'block',
+            }}
+          />
+          {/* Gradient overlay for text readability */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 70%, #000 100%)',
+            }}
+          />
+          {/* Hero text overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 'clamp(2rem, 5vw, 3.5rem)',
+              left: 'clamp(1.5rem, 5vw, 4rem)',
+              right: 'clamp(1.5rem, 5vw, 4rem)',
+              maxWidth: '1200px',
+              margin: '0 auto',
+            }}
+          >
+            <h1
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                marginBottom: '0.75rem',
+                color: '#fff',
+                maxWidth: '680px',
+              }}
+            >
+              Protection Systems
+            </h1>
+            <p
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
+                color: 'rgba(255,255,255,0.65)',
+                lineHeight: 1.7,
+                maxWidth: '520px',
+              }}
+            >
+              Seven contamination control domains — each engineered to protect a specific
+              asset system.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Subheading ─────────────────────────────────────────────── */}
+        <section
+          style={{
+            padding: 'clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem)',
             maxWidth: '1200px',
             margin: '0 auto',
             borderBottom: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          <h1
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-              lineHeight: 1.1,
-              textAlign: 'justify',
-              letterSpacing: '-0.02em',
-              marginBottom: '1.25rem',
-              maxWidth: '680px',
-            }}
-          >
-            Protection Systems
-          </h1>
           <p
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
-              color: 'rgba(255,255,255,0.5)',
+              fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)',
+              color: 'rgba(255,255,255,0.45)',
               lineHeight: 1.75,
-              textAlign: 'justify',
               maxWidth: '560px',
             }}
           >
-            Seven contamination control domains — each engineered to protect a specific
-            asset system. Select a domain to explore its technology architecture,
-            product families, and engineering reference.
+            Select a domain to explore its technology architecture, product families, and engineering reference.
           </p>
         </section>
 
@@ -179,7 +230,6 @@ export default function SystemsPage() {
                         fontWeight: 700,
                         fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
                         lineHeight: 1.2,
-                        textAlign: 'justify',
                         color: '#fff',
                         marginBottom: '0.5rem',
                       }}

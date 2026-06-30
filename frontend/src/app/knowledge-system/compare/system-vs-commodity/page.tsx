@@ -79,8 +79,7 @@ export default function SystemVsCommodityPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             How Filtration Became a Fungible Product
           </h2>
           <p style={{
@@ -128,8 +127,7 @@ export default function SystemVsCommodityPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Equipment Performance Depends on Contamination Control
           </h2>
           <p style={{
@@ -187,8 +185,7 @@ export default function SystemVsCommodityPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             From Product Selection to System Design
           </h2>
           <p style={{
@@ -249,8 +246,7 @@ export default function SystemVsCommodityPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why OEM Spec Compliance ≠ Equipment Reliability
           </h2>
           <div style={{
@@ -338,8 +334,7 @@ export default function SystemVsCommodityPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             The Cost of Commodity Thinking
           </h2>
           <div style={{

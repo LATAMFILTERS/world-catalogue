@@ -81,8 +81,7 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Understanding OEM Filter Requirements
           </h2>
           <p style={{
@@ -130,8 +129,7 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             When OEM Filters Are Non-Negotiable
           </h2>
           <p style={{
@@ -180,8 +178,7 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             When OEM Compliance is Optional
           </h2>
           <p style={{
@@ -245,8 +242,7 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Equivalent Filter Evaluation Criteria
           </h2>
           <p style={{
@@ -445,8 +441,7 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             System-Level Performance with OEM Compliance
           </h2>
           <p style={{

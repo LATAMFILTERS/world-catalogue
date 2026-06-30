@@ -77,8 +77,7 @@ export default function ReducingDowntimePage() {
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
-            textAlign: 'justify',
-          }}>
+            }}>
             Reducing Fleet Downtime
           </h1>
           <p style={{

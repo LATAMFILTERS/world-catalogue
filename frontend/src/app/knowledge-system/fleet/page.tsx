@@ -64,7 +64,6 @@ export default function FleetHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Fleet Optimization
@@ -159,8 +158,7 @@ export default function FleetHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
-                    textAlign: 'justify',
-                  }}>
+                    }}>
                     {topic.title}
                   </h2>
 

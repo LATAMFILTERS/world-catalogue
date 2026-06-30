@@ -70,7 +70,6 @@ export default function ISO4406Page() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             ISO 4406

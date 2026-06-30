@@ -74,8 +74,7 @@ export default function FuelSystemsPage() {
           <h1 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
-            textAlign: 'justify',
-          }}>Fuel Filtration Systems</h1>
+            }}>Fuel Filtration Systems</h1>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: '1rem',
             color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', textAlign: 'justify', lineHeight: 1.7,

@@ -170,8 +170,7 @@ export default function KnowledgeSystemPage() {
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em',
             lineHeight: 1.15, marginBottom: '1rem',
-            textAlign: 'justify',
-          }}>
+            }}>
             Industrial Asset Protection Knowledge System
           </h1>
           {/* Direct Answer Block */}
@@ -304,7 +303,6 @@ export default function KnowledgeSystemPage() {
                     fontFamily: 'Outfit, sans-serif',
                     fontSize: '1.05rem', fontWeight: 600,
                     color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.4,
-                    textAlign: 'justify',
                     marginTop: '-0.5rem',
                   }}>
                     {section.title}
@@ -370,8 +368,7 @@ export default function KnowledgeSystemPage() {
                   fontSize: '0.975rem', fontWeight: 700,
                   fontFamily: 'Outfit, sans-serif', color: '#fff',
                   margin: '0 0 0.875rem', lineHeight: 1.5,
-                  textAlign: 'justify',
-                }}>
+                  }}>
                   {faq.q}
                 </h3>
                 <p style={{

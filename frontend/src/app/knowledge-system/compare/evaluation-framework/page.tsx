@@ -79,8 +79,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why Meeting Specs Is Not Enough
           </h2>
           <p style={{
@@ -129,8 +128,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             What Actually Matters: Measurable Cleanliness
           </h2>
           <p style={{
@@ -308,8 +306,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             System-Level Selection Process
           </h2>
           <div style={{
@@ -442,8 +439,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Measurement-Based Equipment Protection
           </h2>
           <div style={{

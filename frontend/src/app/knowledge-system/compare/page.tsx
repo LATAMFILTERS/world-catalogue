@@ -70,7 +70,6 @@ export default function ComparisonHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             System vs Commodity Thinking
@@ -174,8 +173,7 @@ export default function ComparisonHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
-                    textAlign: 'justify',
-                  }}>
+                    }}>
                     {section.title}
                   </h2>
 

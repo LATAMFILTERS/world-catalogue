@@ -80,8 +80,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why Industrial Filtration Decisions Matter
           </h2>
           <p style={{
@@ -129,8 +128,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             The Equipment-Brand-Interval Model
           </h2>
           <p style={{
@@ -217,8 +215,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why OEM Intervals and Specifications Fall Short
           </h2>
           <ul style={{
@@ -264,8 +261,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             From Filter Selection to Contamination Control Strategy
           </h2>
           <p style={{
@@ -344,8 +340,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Integrated Contamination Control Across All Domains
           </h2>
           <p style={{
@@ -530,8 +525,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Measurement-Based Equipment Protection
           </h2>
           <p style={{
@@ -596,8 +590,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Real-World Equipment Lifespan & Cost Savings
           </h2>
           <p style={{
@@ -728,8 +721,7 @@ export default function IndustrialFiltrationPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Explore the Complete Contamination Control Framework
           </h2>
           <div style={{

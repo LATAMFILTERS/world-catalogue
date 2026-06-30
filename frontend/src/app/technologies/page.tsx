@@ -483,7 +483,7 @@ export default function TechnologiesPage() {
                   padding: 'clamp(1.25rem,3vw,2rem)',
                 }}
               >
-                <h3 style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1rem)', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 1rem', lineHeight: 1.5, textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>
+                <h3 style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1rem)', fontWeight: 700, fontFamily: 'Outfit, sans-serif', color: '#fff', margin: '0 0 1rem', lineHeight: 1.5, hyphens: 'none' } as React.CSSProperties}>
                   {faq.q}
                 </h3>
                 <p style={{ fontSize: 'clamp(0.85rem, 1.3vw, 0.9rem)', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', lineHeight: 1.85, margin: '0', textAlign: 'justify', hyphens: 'none' } as React.CSSProperties}>

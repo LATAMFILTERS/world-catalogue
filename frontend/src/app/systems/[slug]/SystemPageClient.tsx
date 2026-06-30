@@ -56,7 +56,6 @@ export default function SystemPageClient({ product, displayName, industries, slu
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.95)',
             }}>
               {displayName} Systems

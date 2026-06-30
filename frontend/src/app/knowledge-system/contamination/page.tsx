@@ -64,7 +64,6 @@ export default function ContaminationHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Contamination & Failure Modes
@@ -161,8 +160,7 @@ export default function ContaminationHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
-                    textAlign: 'justify',
-                  }}>
+                    }}>
                     {contam.title}
                   </h2>
 
