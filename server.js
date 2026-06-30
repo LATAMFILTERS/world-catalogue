@@ -2353,6 +2353,113 @@ app.get('/api/product/:sku', searchLimiter, async (req, res) => {
   }
 });
 
+// ─── Chat API (Claude Haiku) ──────────────────────────────────────────────────
+const chatLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many chat requests.' },
+});
+
+// In-memory session store: sessionId → { count, lastActivity }
+const chatSessions = new Map();
+const CHAT_MAX_MESSAGES = 5;
+const CHAT_SESSION_TTL = 30 * 60 * 1000; // 30 min
+
+// Clean up stale sessions every 10 min
+setInterval(() => {
+  const now = Date.now();
+  for (const [id, s] of chatSessions) {
+    if (now - s.lastActivity > CHAT_SESSION_TTL) chatSessions.delete(id);
+  }
+}, 10 * 60 * 1000);
+
+const CHAT_SYSTEM_PROMPT = `You are the ELIMFILTERS Asset Protection Assistant — a concise technical assistant for industrial filtration questions.
+
+ELIMFILTERS makes contamination control systems for 12 industries: Mining, Agriculture, Marine, Construction, Oil & Gas, Power Generation, Heavy Transport, Forestry, Military, Industrial Equipment, Rail, Stationary Engines.
+
+Core technologies:
+- MACROCORE: Air intake filtration (ISO 5011, SAE J726)
+- SYNTRAX: Engine lube oil (ISO 16889, ISO 4406)
+- NANOFORCE: Hydraulic systems (ISO 16889, NFPA T2.14)
+- SYNTEPORE: Fuel/HPCR injectors (ASTM D6304, ISO 12937)
+- HYDROCORE: Fuel water separation (ASTM D6304)
+- TURBOCORE: 3-stage fuel filtration (ISO 16332)
+- THERMACORE: Cooling/SCA additive
+- DRYCORE: Compressed air/pneumatic (ISO 8573)
+- MICROKAPPA: Cabin air/occupant health (ISO 11155, DIN 71220)
+- MARINECLEAN: Marine diesel + hydraulic (IMO certified)
+- INTEKCORE: Filter housing systems
+- DURATECH: Fleet maintenance master kit
+
+Key knowledge: Contamination causes 70-80% of equipment failures. ISO 4406 codes measure fluid cleanliness. ISO 16889 defines filter Beta ratios. System-level filtration extends equipment life 30-50%.
+
+Part search: part-search.elimfilters.com (20,000+ OEM cross-references)
+Knowledge system: elimfilters.com/knowledge-system
+Contact: elimfilters.com/contact | support@elimfilters.com
+
+RULES:
+- Answer in 2-3 sentences maximum
+- Be technical and precise, no marketing language
+- Always end with a relevant link when applicable
+- Never invent product specs or part numbers`;
+
+app.post('/api/chat', chatLimiter, async (req, res) => {
+  try {
+    const { message, sessionId } = req.body;
+    if (!message || typeof message !== 'string' || message.length > 500) {
+      return res.status(400).json({ error: 'Invalid message.' });
+    }
+    if (!sessionId || typeof sessionId !== 'string' || sessionId.length > 64) {
+      return res.status(400).json({ error: 'Invalid session.' });
+    }
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return res.status(503).json({ error: 'Chat unavailable.' });
+    }
+
+    // Check session message count
+    const session = chatSessions.get(sessionId) || { count: 0, lastActivity: Date.now() };
+    if (session.count >= CHAT_MAX_MESSAGES) {
+      return res.json({ reply: null, limitReached: true });
+    }
+
+    // Call Anthropic API directly (no SDK needed)
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 150,
+        system: CHAT_SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: message.trim() }],
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('[api/chat] Anthropic error:', response.status);
+      return res.status(502).json({ error: 'AI service unavailable.' });
+    }
+
+    const data = await response.json();
+    const reply = data.content?.[0]?.text || 'I could not generate a response. Please contact support@elimfilters.com.';
+
+    // Update session count
+    session.count += 1;
+    session.lastActivity = Date.now();
+    chatSessions.set(sessionId, session);
+
+    res.json({ reply, messagesLeft: CHAT_MAX_MESSAGES - session.count, limitReached: false });
+  } catch (e) {
+    console.error('[api/chat]', e.message);
+    res.status(500).json({ error: 'Internal error.' });
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {

@@ -7,41 +7,36 @@ type Message = {
   from: "bot" | "user";
   text: string;
   time: string;
+  isLimit?: boolean;
 };
 
 const now = () =>
   new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-const QUICK_REPLIES = [
-  "Find my filter",
-  "What is contamination control?",
-  "Industries served",
-  "Contact a specialist",
-];
-
-const RESPONSES: Record<string, string> = {
-  "find my filter":
-    "Use our Part Search tool at part-search.elimfilters.com — cross-references 20,000+ OEM codes by part number or equipment model.",
-  "what is contamination control?":
-    "Contamination control is a system-level approach to maintaining measurable fluid cleanliness codes (ISO 4406) across all critical circuits — oil, fuel, hydraulic, and air — to prevent wear-driven equipment failure.",
-  "industries served":
-    "We serve 12 industries: Mining, Agriculture, Marine, Construction, Oil & Gas, Power Generation, Heavy Transport, Forestry, Military, Industrial Equipment, Rail, and Stationary Engines.",
-  "contact a specialist":
-    "Send us a message at elimfilters.com/contact or email info@elimfilters.com. Our engineering team responds within 24 hours.",
-};
-
 const WELCOME: Message = {
   id: 0,
   from: "bot",
-  text: "Hello. I'm the ELIMFILTERS Asset Protection assistant. How can I help you today?",
+  text: "Hello. I'm the ELIMFILTERS Asset Protection Assistant. How can I help you today?",
   time: now(),
 };
+
+// Generate or retrieve a stable session ID for this browser session
+function getSessionId(): string {
+  if (typeof window === "undefined") return "ssr";
+  let id = sessionStorage.getItem("elim_chat_sid");
+  if (!id) {
+    id = crypto.randomUUID();
+    sessionStorage.setItem("elim_chat_sid", id);
+  }
+  return id;
+}
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const [limitReached, setLimitReached] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -53,23 +48,67 @@ export default function ChatBot() {
     if (open) setTimeout(() => inputRef.current?.focus(), 300);
   }, [open]);
 
-  const send = (text: string) => {
-    if (!text.trim()) return;
+  const send = async (text: string) => {
+    if (!text.trim() || typing || limitReached) return;
     const userMsg: Message = { id: Date.now(), from: "user", text: text.trim(), time: now() };
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setTyping(true);
 
-    const key = text.trim().toLowerCase();
-    const reply =
-      RESPONSES[key] ||
-      Object.entries(RESPONSES).find(([k]) => key.includes(k.split(" ")[0]))?.[1] ||
-      "I don't have a specific answer for that yet. Please visit elimfilters.com/contact to speak with our engineering team directly.";
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ message: text.trim(), sessionId: getSessionId() }),
+      });
+      const data = await res.json();
 
-    setTimeout(() => {
       setTyping(false);
-      setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: reply, time: now() }]);
-    }, 900 + Math.random() * 400);
+
+      if (data.limitReached || data.messagesLeft === 0) {
+        setLimitReached(true);
+        setMessages((m) => [
+          ...m,
+          {
+            id: Date.now() + 1,
+            from: "bot",
+            text: "You've reached the limit for this session. For further assistance, please email our engineering team at support@elimfilters.com.",
+            time: now(),
+            isLimit: true,
+          },
+        ]);
+        return;
+      }
+
+      if (data.reply) {
+        setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: data.reply, time: now() }]);
+        if (data.messagesLeft === 1) {
+          // Warn on last message
+          setTimeout(() => {
+            setMessages((m) => [
+              ...m,
+              {
+                id: Date.now() + 2,
+                from: "bot",
+                text: "This is your last question for this session.",
+                time: now(),
+              },
+            ]);
+          }, 200);
+        }
+      } else {
+        setMessages((m) => [
+          ...m,
+          { id: Date.now() + 1, from: "bot", text: "Something went wrong. Please try again or contact support@elimfilters.com.", time: now() },
+        ]);
+      }
+    } catch {
+      setTyping(false);
+      setMessages((m) => [
+        ...m,
+        { id: Date.now() + 1, from: "bot", text: "Connection error. Please try again.", time: now() },
+      ]);
+    }
   };
 
   return (
@@ -110,16 +149,7 @@ export default function ChatBot() {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
-                <div
-                  style={{
-                    width: 34,
-                    height: 34,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
+                <div style={{ width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <img src="/images/e.png" alt="E" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                 </div>
                 <div>
@@ -168,8 +198,16 @@ export default function ChatBot() {
                       maxWidth: "82%",
                       padding: "0.65rem 0.9rem",
                       borderRadius: msg.from === "user" ? "12px 12px 2px 12px" : "2px 12px 12px 12px",
-                      background: msg.from === "user" ? "#FFF12D" : "rgba(255,255,255,0.05)",
-                      border: msg.from === "user" ? "none" : "1px solid rgba(255,255,255,0.07)",
+                      background: msg.isLimit
+                        ? "rgba(255,68,68,0.08)"
+                        : msg.from === "user"
+                        ? "#FFF12D"
+                        : "rgba(255,255,255,0.05)",
+                      border: msg.isLimit
+                        ? "1px solid rgba(255,68,68,0.25)"
+                        : msg.from === "user"
+                        ? "none"
+                        : "1px solid rgba(255,255,255,0.07)",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.83rem",
                       lineHeight: 1.6,
@@ -177,7 +215,24 @@ export default function ChatBot() {
                       fontWeight: msg.from === "user" ? 500 : 400,
                     }}
                   >
-                    {msg.text}
+                    {msg.isLimit ? (
+                      <>
+                        {msg.text.split("support@elimfilters.com").map((part, i, arr) =>
+                          i < arr.length - 1 ? (
+                            <span key={i}>
+                              {part}
+                              <a href="mailto:support@elimfilters.com" style={{ color: "#FFF12D", textDecoration: "underline" }}>
+                                support@elimfilters.com
+                              </a>
+                            </span>
+                          ) : (
+                            <span key={i}>{part}</span>
+                          )
+                        )}
+                      </>
+                    ) : (
+                      msg.text
+                    )}
                   </div>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", color: "rgba(255,255,255,0.2)", letterSpacing: "0.05em" }}>
                     {msg.time}
@@ -213,100 +268,91 @@ export default function ChatBot() {
               <div ref={bottomRef} />
             </div>
 
-            {/* Quick replies */}
-            <div
-              style={{
-                padding: "0.6rem 1rem",
-                display: "flex",
-                gap: "0.4rem",
-                flexWrap: "wrap",
-                borderTop: "1px solid rgba(255,255,255,0.04)",
-              }}
-            >
-              {QUICK_REPLIES.map((r) => (
-                <button
-                  key={r}
-                  onClick={() => send(r)}
-                  style={{
-                    background: "rgba(255,241,45,0.06)",
-                    border: "1px solid rgba(255,241,45,0.15)",
-                    borderRadius: "20px",
-                    padding: "0.3rem 0.75rem",
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.72rem",
-                    color: "rgba(255,241,45,0.8)",
-                    cursor: "pointer",
-                    transition: "all 0.18s ease",
-                    whiteSpace: "nowrap",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.target as HTMLButtonElement).style.background = "rgba(255,241,45,0.14)";
-                    (e.target as HTMLButtonElement).style.color = "#FFF12D";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.target as HTMLButtonElement).style.background = "rgba(255,241,45,0.06)";
-                    (e.target as HTMLButtonElement).style.color = "rgba(255,241,45,0.8)";
-                  }}
-                >
-                  {r}
-                </button>
-              ))}
-            </div>
-
-            {/* Input */}
-            <div
-              style={{
-                padding: "0.75rem 1rem",
-                borderTop: "1px solid rgba(255,255,255,0.06)",
-                display: "flex",
-                gap: "0.5rem",
-                alignItems: "center",
-                background: "#0a0a0a",
-              }}
-            >
-              <input
-                ref={inputRef}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(input); } }}
-                placeholder="Ask about filters, standards, industries..."
+            {/* Input — replaced with support CTA when limit reached */}
+            {limitReached ? (
+              <div
                 style={{
-                  flex: 1,
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "8px",
-                  padding: "0.6rem 0.85rem",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.83rem",
-                  color: "#fff",
-                  outline: "none",
-                  transition: "border-color 0.2s",
-                }}
-                onFocus={(e) => { e.target.style.borderColor = "rgba(255,241,45,0.35)"; }}
-                onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; }}
-              />
-              <button
-                onClick={() => send(input)}
-                disabled={!input.trim()}
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: "8px",
-                  background: input.trim() ? "#FFF12D" : "rgba(255,255,255,0.06)",
-                  border: "none",
-                  cursor: input.trim() ? "pointer" : "default",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  transition: "all 0.18s ease",
+                  padding: "0.75rem 1rem",
+                  borderTop: "1px solid rgba(255,255,255,0.06)",
+                  background: "#0a0a0a",
+                  textAlign: "center",
                 }}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() ? "#000" : "rgba(255,255,255,0.3)"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
+                <a
+                  href="mailto:support@elimfilters.com"
+                  style={{
+                    display: "inline-block",
+                    background: "#FFF12D",
+                    color: "#000",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
+                    fontSize: "0.78rem",
+                    padding: "0.5rem 1.25rem",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  Email Support →
+                </a>
+              </div>
+            ) : (
+              <div
+                style={{
+                  padding: "0.75rem 1rem",
+                  borderTop: "1px solid rgba(255,255,255,0.06)",
+                  display: "flex",
+                  gap: "0.5rem",
+                  alignItems: "center",
+                  background: "#0a0a0a",
+                }}
+              >
+                <input
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(input); } }}
+                  placeholder="Ask about filters, standards, industries..."
+                  disabled={typing}
+                  style={{
+                    flex: 1,
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: "8px",
+                    padding: "0.6rem 0.85rem",
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.83rem",
+                    color: "#fff",
+                    outline: "none",
+                    transition: "border-color 0.2s",
+                    opacity: typing ? 0.5 : 1,
+                  }}
+                  onFocus={(e) => { e.target.style.borderColor = "rgba(255,241,45,0.35)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                />
+                <button
+                  onClick={() => send(input)}
+                  disabled={!input.trim() || typing}
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: "8px",
+                    background: input.trim() && !typing ? "#FFF12D" : "rgba(255,255,255,0.06)",
+                    border: "none",
+                    cursor: input.trim() && !typing ? "pointer" : "default",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    transition: "all 0.18s ease",
+                  }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() && !typing ? "#000" : "rgba(255,255,255,0.3)"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            )}
 
             {/* Brand footer */}
             <div
