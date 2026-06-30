@@ -1866,9 +1866,15 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
   // duty filter: 'HEAVY_DUTY' | 'LIGHT_DUTY' | null (no filter)
   const rawDuty = (req.query.duty || '').trim().toUpperCase();
-  const dutyFilter = (rawDuty === 'HEAVY_DUTY' || rawDuty === 'HD') ? 'HEAVY_DUTY'
-                   : (rawDuty === 'LIGHT_DUTY'  || rawDuty === 'LD') ? 'LIGHT_DUTY'
-                   : null;
+  let dutyFilter = (rawDuty === 'HEAVY_DUTY' || rawDuty === 'HD') ? 'HEAVY_DUTY'
+                 : (rawDuty === 'LIGHT_DUTY'  || rawDuty === 'LD') ? 'LIGHT_DUTY'
+                 : null;
+
+  // Auto-detect LD-only FRAM codes: PH/XG/TG/DG prefix codes are light-duty
+  // passenger/light-commercial filters — they can never match HD products.
+  if (!dutyFilter && /^(PH|XG|TG|DG)\d/i.test(q)) {
+    dutyFilter = 'LIGHT_DUTY';
+  }
 
   const client = await pool.connect();
   try {
@@ -2201,6 +2207,54 @@ app.use((err, req, res, next) => {
   if (res.headersSent) return next(err);
   res.status(500).json({ error: 'Internal server error' });
 });
+
+// ── Startup migration: strip LD-only FRAM codes from HD competitor_codes ──────
+// FRAM PH/XG/TG/DG codes are light-duty only and must never appear on HD SKUs.
+// This runs once at startup to fix any contamination introduced by bulk imports.
+(async () => {
+  try {
+    const client = await pool.connect();
+    const LD_FRAM = /^(PH|XG|TG|DG)\d/i;
+    const rows = await client.query(`
+      SELECT sku, competitor_codes
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND competitor_codes IS NOT NULL
+        AND jsonb_array_length(competitor_codes) > 0
+        AND EXISTS (
+          SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem
+          WHERE (UPPER(elem->>'manufacturer') = 'FRAM' OR elem->>'manufacturer' IS NULL)
+            AND (
+              UPPER(elem->>'code') LIKE 'PH%'
+              OR UPPER(elem->>'code') LIKE 'XG%'
+              OR UPPER(elem->>'code') LIKE 'TG%'
+              OR UPPER(elem->>'code') LIKE 'DG%'
+            )
+        )
+    `);
+    let cleaned = 0;
+    for (const row of rows.rows) {
+      const original = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const filtered = original.filter(c => {
+        const mfr = (c.manufacturer || '').toUpperCase().trim();
+        const code = (c.code || c.partNumber || '').toUpperCase().trim();
+        if ((mfr === 'FRAM' || mfr === '') && LD_FRAM.test(code)) return false;
+        return true;
+      });
+      if (filtered.length !== original.length) {
+        await client.query(
+          'UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2',
+          [JSON.stringify(filtered), row.sku]
+        );
+        cleaned++;
+      }
+    }
+    client.release();
+    if (cleaned > 0) console.log(`[startup] Cleaned LD FRAM codes from ${cleaned} HD SKUs`);
+  } catch (e) {
+    console.error('[startup-migration]', e.message);
+  }
+})();
 
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
