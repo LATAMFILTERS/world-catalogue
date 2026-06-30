@@ -109,6 +109,7 @@ export default function CommercialLinesPage() {
               <img
                 src={line.src}
                 alt={line.name}
+                loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
               />
             </div>

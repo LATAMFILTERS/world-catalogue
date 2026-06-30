@@ -79,6 +79,7 @@ export default function SystemsPage() {
           <img
             src="/assets/hero-systems.avif"
             alt="ELIMFILTERS Protection Systems — Industrial Contamination Control"
+            fetchPriority="high"
             style={{
               width: '100%',
               height: '100%',
