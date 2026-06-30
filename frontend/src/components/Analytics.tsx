@@ -35,6 +35,11 @@ const DOMAIN_MAP: Record<string, string> = {
   'oem-replacement': 'Asset Protection Systems',
   'aftermarket-selection': 'Asset Protection Systems',
   'fleet-solutions': 'Asset Protection Systems',
+  'roi-calculator': 'Asset Protection Systems',
+  'coolant-contamination': 'Contamination Control Systems',
+  'compressed-air-contamination': 'Contamination Control Systems',
+  'fuel-injector-wear': 'Diesel Fuel Integrity Systems',
+  'varnish-formation': 'Contamination Control Systems',
 };
 
 function resolveDomain(path: string): string {
