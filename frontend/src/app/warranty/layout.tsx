@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Warranty & Quality Guarantee | ELIMFILTERS',
-  description: 'ELIMFILTERS warranty program and quality guarantee for all industrial filtration systems. ISO-certified manufacturing with zero-bypass performance standards.',
+  title: 'Warranty & Support',
+  description: 'ELIMFILTERS warranty covers equipment protection with comprehensive support and immediate replacement guarantee. 10K km / 1000 hr minimum coverage, 100% non-prorated, 24H response.',
   alternates: {
     canonical: 'https://elimfilters.com/warranty',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Warranty & Quality Guarantee | ELIMFILTERS',
-    description: 'ELIMFILTERS warranty program and quality guarantee for all industrial filtration systems.',
+    title: 'Warranty & Support',
+    description: 'ELIMFILTERS warranty covers equipment protection with comprehensive support and immediate replacement guarantee. 10K km / 1000 hr minimum coverage, 100% non-prorated, 24H response.',
     url: 'https://elimfilters.com/warranty',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',

@@ -39,12 +39,20 @@ const _extractAdminKey = (req) => {
 };
 const requireAdmin = (req, res, next) => {
   const key = _extractAdminKey(req);
-  if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (!key || !ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  const keyBuf    = Buffer.from(key);
+  const adminBuf  = Buffer.from(ADMIN_KEY);
+  if (keyBuf.length !== adminBuf.length || !require('crypto').timingSafeEqual(keyBuf, adminBuf)) {
+    return res.status(403).json({ error: 'forbidden' });
+  }
   next();
 };
 
 // Prevent unhandled errors from crashing the process
-process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
+process.on('uncaughtException', (err) => {
+  const msg = (err.message || '').replace(/postgresql:\/\/[^@]+@[^/]+/gi, 'postgresql://[redacted]');
+  console.error('[uncaughtException]', msg);
+});
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
@@ -76,8 +84,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-// Import endpoints need larger body limit (Mann fitment can be 300+ rows per product)
-app.use('/api/import', express.json({ charset: 'utf-8', limit: '10mb' }));
+// Import endpoints need larger body limit (max 500 rows/batch per CLAUDE.md)
+app.use('/api/import', express.json({ charset: 'utf-8', limit: '2mb' }));
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out');
@@ -141,7 +149,7 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
     return res.status(400).json({ error: 'Captcha verification failed' });
   }
   const safeName    = _escHtml(name);
-  const safeEmail   = _escHtml(email);
+  const safeEmail   = _escHtml(email).replace(/[\r\n]/g, '');
   const safePhone   = _escHtml(phone || '—');
   const safeCompany = _escHtml(company || '—');
   const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
@@ -213,7 +221,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'distribution_network@elimfilters.com',
-      replyTo: esc(email),
+      replyTo: esc(email).replace(/[\r\n]/g, ''),
       subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
       html: `
         <h2 style="color:#000">New distributor application — elimfilters.com</h2>
@@ -250,9 +258,9 @@ app.use((req, res, next) => {
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DB_SSL_VERIFY === 'true'
-    ? { rejectUnauthorized: true }
-    : { rejectUnauthorized: false },
+  ssl: process.env.DB_SSL_BYPASS === 'true'
+    ? { rejectUnauthorized: false }
+    : { rejectUnauthorized: true },
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
   max: 10,
@@ -696,6 +704,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
 
   if(!model) return res.json({success: false, filters: []});
   if(model.length > 200 || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
+  if(/^[%_]+$/.test(model)) return res.status(400).json({success: false, error: 'Invalid search term'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -707,7 +716,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
     const params = [];
 
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    params.push('%' + model.replace(/[%_]/g, '\\$&') + '%');
 
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
@@ -734,6 +743,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
 
   if(!model) return res.json({success: false, filters: []});
   if(model.length > 200 || (type && type.length > 100) || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
+  if(/^[%_]+$/.test(model)) return res.status(400).json({success: false, error: 'Invalid search term'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -745,16 +755,16 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
     const params = [];
 
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    params.push('%' + model.replace(/[%_]/g, '\\$&') + '%');
 
     if(type) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + type + '%');
+      params.push('%' + type.replace(/[%_]/g, '\\$&') + '%');
     }
 
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + engine + '%');
+      params.push('%' + engine.replace(/[%_]/g, '\\$&') + '%');
     }
 
     query += ' LIMIT 10';
@@ -2340,6 +2350,113 @@ app.get('/api/product/:sku', searchLimiter, async (req, res) => {
     res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
+  }
+});
+
+// ─── Chat API (Claude Haiku) ──────────────────────────────────────────────────
+const chatLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many chat requests.' },
+});
+
+// In-memory session store: sessionId → { count, lastActivity }
+const chatSessions = new Map();
+const CHAT_MAX_MESSAGES = 5;
+const CHAT_SESSION_TTL = 30 * 60 * 1000; // 30 min
+
+// Clean up stale sessions every 10 min
+setInterval(() => {
+  const now = Date.now();
+  for (const [id, s] of chatSessions) {
+    if (now - s.lastActivity > CHAT_SESSION_TTL) chatSessions.delete(id);
+  }
+}, 10 * 60 * 1000);
+
+const CHAT_SYSTEM_PROMPT = `You are the ELIMFILTERS Asset Protection Assistant — a concise technical assistant for industrial filtration questions.
+
+ELIMFILTERS makes contamination control systems for 12 industries: Mining, Agriculture, Marine, Construction, Oil & Gas, Power Generation, Heavy Transport, Forestry, Military, Industrial Equipment, Rail, Stationary Engines.
+
+Core technologies:
+- MACROCORE: Air intake filtration (ISO 5011, SAE J726)
+- SYNTRAX: Engine lube oil (ISO 16889, ISO 4406)
+- NANOFORCE: Hydraulic systems (ISO 16889, NFPA T2.14)
+- SYNTEPORE: Fuel/HPCR injectors (ASTM D6304, ISO 12937)
+- HYDROCORE: Fuel water separation (ASTM D6304)
+- TURBOCORE: 3-stage fuel filtration (ISO 16332)
+- THERMACORE: Cooling/SCA additive
+- DRYCORE: Compressed air/pneumatic (ISO 8573)
+- MICROKAPPA: Cabin air/occupant health (ISO 11155, DIN 71220)
+- MARINECLEAN: Marine diesel + hydraulic (IMO certified)
+- INTEKCORE: Filter housing systems
+- DURATECH: Fleet maintenance master kit
+
+Key knowledge: Contamination causes 70-80% of equipment failures. ISO 4406 codes measure fluid cleanliness. ISO 16889 defines filter Beta ratios. System-level filtration extends equipment life 30-50%.
+
+Part search: part-search.elimfilters.com (20,000+ OEM cross-references)
+Knowledge system: elimfilters.com/knowledge-system
+Contact: elimfilters.com/contact | support@elimfilters.com
+
+RULES:
+- Answer in 2-3 sentences maximum
+- Be technical and precise, no marketing language
+- Always end with a relevant link when applicable
+- Never invent product specs or part numbers`;
+
+app.post('/api/chat', chatLimiter, async (req, res) => {
+  try {
+    const { message, sessionId } = req.body;
+    if (!message || typeof message !== 'string' || message.length > 500) {
+      return res.status(400).json({ error: 'Invalid message.' });
+    }
+    if (!sessionId || typeof sessionId !== 'string' || sessionId.length > 64) {
+      return res.status(400).json({ error: 'Invalid session.' });
+    }
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return res.status(503).json({ error: 'Chat unavailable.' });
+    }
+
+    // Check session message count
+    const session = chatSessions.get(sessionId) || { count: 0, lastActivity: Date.now() };
+    if (session.count >= CHAT_MAX_MESSAGES) {
+      return res.json({ reply: null, limitReached: true });
+    }
+
+    // Call Anthropic API directly (no SDK needed)
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 150,
+        system: CHAT_SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: message.trim() }],
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('[api/chat] Anthropic error:', response.status);
+      return res.status(502).json({ error: 'AI service unavailable.' });
+    }
+
+    const data = await response.json();
+    const reply = data.content?.[0]?.text || 'I could not generate a response. Please contact support@elimfilters.com.';
+
+    // Update session count
+    session.count += 1;
+    session.lastActivity = Date.now();
+    chatSessions.set(sessionId, session);
+
+    res.json({ reply, messagesLeft: CHAT_MAX_MESSAGES - session.count, limitReached: false });
+  } catch (e) {
+    console.error('[api/chat]', e.message);
+    res.status(500).json({ error: 'Internal error.' });
   }
 });
 

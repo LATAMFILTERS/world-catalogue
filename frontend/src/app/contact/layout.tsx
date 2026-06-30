@@ -3,11 +3,9 @@ import type { Metadata } from 'next';
 const CANONICAL = 'https://elimfilters.com/contact/';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Contact ELIMFILTERS | Industrial Filtration Support',
-  },
+  title: 'Contact & Technical Support',
   description:
-    'Contact ELIMFILTERS for filtration support across 12 industrial sectors — mining, agriculture, marine, and more. ISO-compliant OEM cross-references and technical support. We respond within 2 business days.',
+    'Contact ELIMFILTERS for technical validation, dealer inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
   alternates: {
     canonical: CANONICAL,
     languages: {
@@ -16,9 +14,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Contact ELIMFILTERS | Industrial Filtration Support',
+    title: 'Contact & Technical Support',
     description:
-      'Contact ELIMFILTERS for industrial filtration solutions, OEM cross-references, and technical support.',
+      'Contact ELIMFILTERS for technical validation, dealer inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
     url: CANONICAL,
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
