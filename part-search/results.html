@@ -798,6 +798,7 @@ const TRANSLATIONS = {
     oemTitle:          'OEM Cross-References',
     compTitle:         'Competitor Cross-References',
     equipTitle:        'Equipment Applications',
+    vehicleTitle:      'Vehicle Applications',
     decodedLabel:      'DECODED',
     decodingVin:       'DECODING VIN',
     // Technical spec translations
@@ -834,6 +835,7 @@ const TRANSLATIONS = {
     oemTitle:          'Referencias OEM',
     compTitle:         'Referencias de Competencia',
     equipTitle:        'Aplicaciones de Equipo',
+    vehicleTitle:      'Aplicaciones de Vehículo',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
     // Technical spec translations
@@ -870,6 +872,7 @@ const TRANSLATIONS = {
     oemTitle:          'Referências OEM',
     compTitle:         'Referências de Concorrentes',
     equipTitle:        'Aplicações de Equipamento',
+    vehicleTitle:      'Aplicações de Veículo',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
     // Technical spec translations
@@ -1213,7 +1216,11 @@ function renderCard(p, index) {
   const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
 
   const { oem, comp } = splitCrossReferences(p.oem_codes, p.competitor_codes);
-  const apps = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
+  const isLD = p.duty === 'LIGHT_DUTY';
+  const vehicleApps = Array.isArray(p.vehicle_applications) ? p.vehicle_applications : [];
+  const equipApps   = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
+  // LD products show vehicle fitment; HD products show equipment applications
+  const apps = isLD && vehicleApps.length ? vehicleApps : equipApps;
 
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
@@ -1274,16 +1281,25 @@ function renderCard(p, index) {
               </div>
             </div>
 
-            <!-- Equipment Column -->
+            <!-- Equipment / Vehicle Column -->
             <div>
-              <p class="equip-title">${T.equipTitle}</p>
+              <p class="equip-title">${isLD ? (T.vehicleTitle || 'Vehicle Applications') : T.equipTitle}</p>
               <div class="equip-grid">
-                ${apps.length 
+                ${apps.length
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        const fullName = a.equipment || a.model || a.machine || '';
+                        // LD vehicle format: { make, model, engine, year, kw, hp }
+                        // HD equipment format: { equipment, engine, year, type }
+                        const fullName = a.make
+                          ? (a.make + (a.model ? ' ' + a.model : ''))
+                          : (a.equipment || a.model || a.machine || '');
                         let eng = a.engine || '';
                         if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
+                        // For LD: show engine + power + year; for HD: show engine + type + year
+                        const power = (a.kw || a.hp) ? [(a.kw ? a.kw + ' kW' : ''), (a.hp ? a.hp + ' hp' : '')].filter(Boolean).join('/') : '';
+                        const yearType = isLD
+                          ? [power, a.year].filter(Boolean).join(' · ')
+                          : [a.year, a.type].filter(Boolean).join(' · ');
                         const yearType = [a.year, a.type].filter(Boolean).join(' · ');
                         if (!fullName) return '';
 

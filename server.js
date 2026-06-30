@@ -463,7 +463,8 @@ function buildFilterData(row, lang = 'en'){
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
-    equipment_applications: row.equipment_applications || []
+    equipment_applications: row.equipment_applications || [],
+    vehicle_applications: row.vehicle_applications || []
   };
 }
 
