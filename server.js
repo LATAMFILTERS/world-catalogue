@@ -463,7 +463,8 @@ function buildFilterData(row, lang = 'en'){
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
-    equipment_applications: row.equipment_applications || []
+    equipment_applications: row.equipment_applications || [],
+    vehicle_applications: row.vehicle_applications || []
   };
 }
 
@@ -1571,7 +1572,59 @@ app.post('/api/update/sku-codes', importLimiter, requireAdmin, async (req, res) 
     if (r.rowCount === 0) return res.status(404).json({ error: 'SKU not found' });
     res.json({ success: true, sku: r.rows[0].sku, codes_count: competitor_codes.length });
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    console.error('[update/sku-codes]', e.message);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/cleanup/fram-ld-duty ──────────────────────────────────────────
+// Remove FRAM codes from LD products (EL3/EA3/EC3/EF3) where the FRAM code is
+// known to be HD-only (thread 3/4"-16 or 1-1/8"-16 used on Caterpillar/Cummins/
+// Mack/Volvo/etc.). These were imported via WIX reverse lookup without duty
+// validation, causing mixed results when searching by that FRAM code.
+// Removes entries with manufacturer='FRAM' (any case) from LD SKUs only when
+// the code matches HD FRAM patterns: PH3xxx, PH4xxx, PH5xxx, PH8xxx, PH9xxx.
+app.post('/api/cleanup/fram-ld-duty', importLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    // HD FRAM oil filter prefixes by number range (3/4"-16 and 1-1/8"-16 threads)
+    // These ranges appear on Cummins/Cat/Mack/Volvo — never on passenger car LD.
+    const HD_FRAM_PATTERNS = /^PH(3\d{3}|4\d{3}|5\d{3}|6\d{3}|8\d{3}|9\d{3})/i;
+
+    const rows = await client.query(
+      `SELECT sku, competitor_codes FROM elimfilters_catalog
+       WHERE duty = 'LIGHT_DUTY'
+         AND competitor_codes IS NOT NULL
+         AND jsonb_array_length(competitor_codes) > 0`
+    );
+
+    let cleaned = 0;
+    const removed = [];
+    for (const row of rows.rows) {
+      const existing = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const filtered = existing.filter(c => {
+        const mfr = (c?.manufacturer || '').toUpperCase();
+        const code = (c?.code || (typeof c === 'string' ? c : '')).toUpperCase().trim();
+        if (mfr !== 'FRAM' && !HD_FRAM_PATTERNS.test(code)) return true;
+        const isHdFram = mfr === 'FRAM' && HD_FRAM_PATTERNS.test(code);
+        if (isHdFram && removed.length < 20) removed.push({ sku: row.sku, code });
+        return !isHdFram;
+      });
+      if (filtered.length !== existing.length) {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(filtered), row.sku]
+        );
+        cleaned++;
+      }
+    }
+
+    res.json({ success: true, ld_rows_scanned: rows.rows.length, skus_cleaned: cleaned, sample_removed: removed });
+  } catch (e) {
+    console.error('[cleanup-fram-ld-duty]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1635,7 +1688,7 @@ app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, 
     });
   } catch (e) {
     console.error('[cleanup-fram-hd-force]', e.message);
-    res.status(500).json({ success: false, error: e.message });
+    res.status(500).json({ success: false, error: 'Internal server error' });
   } finally {
     client.release();
   }
@@ -1810,15 +1863,31 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 2) return res.status(400).json({ error: 'min 2 chars', products: [] });
   const lang = detectLang(req);
+
+  // duty filter: 'HEAVY_DUTY' | 'LIGHT_DUTY' | null (no filter)
+  const rawDuty = (req.query.duty || '').trim().toUpperCase();
+  let dutyFilter = (rawDuty === 'HEAVY_DUTY' || rawDuty === 'HD') ? 'HEAVY_DUTY'
+                 : (rawDuty === 'LIGHT_DUTY'  || rawDuty === 'LD') ? 'LIGHT_DUTY'
+                 : null;
+
+  // Auto-detect LD-only FRAM codes: PH/XG/TG/DG prefix codes are light-duty
+  // passenger/light-commercial filters — they can never match HD products.
+  if (!dutyFilter && /^(PH|XG|TG|DG)\d/i.test(q)) {
+    dutyFilter = 'LIGHT_DUTY';
+  }
+
   const client = await pool.connect();
   try {
 
     // ── Tiered search with match_type labels ──────────────────────────────
+    // Duty clause applied to every tier — HD/LD must never mix in results.
+    const dutyClause = dutyFilter ? `AND duty = '${dutyFilter}'` : '';
+
     // Tier 1: Exact SKU or Donaldson base code match
     let result = await client.query(
       `SELECT *, 'sku' AS match_type, 0 AS match_rank
        FROM elimfilters_catalog
-       WHERE UPPER(sku) = $1 OR UPPER(codigo_base) = $1
+       WHERE (UPPER(sku) = $1 OR UPPER(codigo_base) = $1) ${dutyClause}
        LIMIT 20`,
       [q]
     );
@@ -1828,7 +1897,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       result = await client.query(
         `SELECT *, 'sku_prefix' AS match_type, 1 AS match_rank
          FROM elimfilters_catalog
-         WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+         WHERE (UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q + '%']
@@ -1836,20 +1905,22 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     }
 
     // Tier 3+4 combined: OEM + competitor codes — EXACT match only.
-    // Cross-reference codes must match precisely; prefix matching causes false positives
-    // (e.g. searching "B76" must not return products with "B76-MPG" or "B7600").
+    // Cross-reference codes must match precisely; prefix matching causes false positives.
+    // Duty filter enforced: HD and LD results never mixed (CLAUDE.md rule).
     if (result.rows.length === 0) {
       result = await client.query(
         `SELECT *, 'ref' AS match_type, 2 AS match_rank
          FROM elimfilters_catalog
-         WHERE EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
-           WHERE UPPER(elem->>'code') = $1
-         )
+         WHERE (
+           EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+           OR EXISTS (
+             SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes, '[]'::jsonb)) AS elem
+             WHERE UPPER(elem->>'code') = $1
+           )
+         ) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q]
@@ -1863,7 +1934,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
          FROM elimfilters_catalog,
               jsonb_each(COALESCE(brand_crossrefs, '{}'::jsonb)) AS kv,
               jsonb_array_elements_text(kv.value) AS code_val
-         WHERE UPPER(code_val) = $1
+         WHERE UPPER(code_val) = $1 ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         [q]
@@ -1881,9 +1952,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
                 5 AS match_rank
          FROM elimfilters_catalog,
               jsonb_array_elements(COALESCE(oem_codes, '[]'::jsonb)) AS oem_elem
-         WHERE UPPER(sku) LIKE $1
-            OR UPPER(codigo_base) LIKE $1
-            OR UPPER(oem_elem->>'code') LIKE $1
+         WHERE (
+           UPPER(sku) LIKE $1
+           OR UPPER(codigo_base) LIKE $1
+           OR UPPER(oem_elem->>'code') LIKE $1
+         ) ${dutyClause}
          ORDER BY sku
          LIMIT 20`,
         ['%' + q + '%']
@@ -1929,8 +2002,42 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     await enrichAlternatives(products, client);
 
+    // ── HD/LD duty enforcement ────────────────────────────────────────────
+    // Per CLAUDE.md: "an HD query must return an HD SKU and an LD query must
+    // return an LD SKU. Never cross HD and LD results."
+    //
+    // If duty was specified in the request, results are already filtered.
+    // If not specified and results contain both, flag mixed_duty so the
+    // frontend can prompt the user to pick a duty class and retry.
+    const hasHD = products.some(p => p.duty === 'HEAVY_DUTY');
+    const hasLD = products.some(p => p.duty === 'LIGHT_DUTY');
+    const mixed_duty = !dutyFilter && hasHD && hasLD;
+
     const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
-    res.json({ products, count: products.length, total_catalog: parseInt(totalCatalog, 10) });
+
+    if (mixed_duty) {
+      const hd_products = products.filter(p => p.duty === 'HEAVY_DUTY');
+      const ld_products = products.filter(p => p.duty === 'LIGHT_DUTY');
+      res.json({
+        products,
+        count: products.length,
+        total_catalog: parseInt(totalCatalog, 10),
+        mixed_duty: true,
+        duty_filter_applied: null,
+        hd_products,
+        ld_products,
+        hd_count: hd_products.length,
+        ld_count: ld_products.length,
+      });
+    } else {
+      res.json({
+        products,
+        count: products.length,
+        total_catalog: parseInt(totalCatalog, 10),
+        mixed_duty: false,
+        duty_filter_applied: dutyFilter || null,
+      });
+    }
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: 'Search unavailable', products: [] });
@@ -1939,7 +2046,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-app.get('/api/stats', async (req, res) => {
+app.get('/api/stats', searchLimiter, async (req, res) => {
   const client = await pool.connect();
   try {
     const r = await client.query(
@@ -2092,6 +2199,70 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
 });
 
 // ────────────────────────────────────────────────────────────────────────────
+
+// ─── Global error handler ─────────────────────────────────────────────────────
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  console.error('[unhandled-error]', err.message);
+  if (res.headersSent) return next(err);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
+// ── Startup migration: strip LD-only FRAM codes from HD oem_codes + competitor_codes ──
+// FRAM PH/XG/TG/DG codes are light-duty only and must never appear on HD SKUs.
+// Cleans both columns since bulk imports mixed LD FRAM codes into oem_codes.
+(async () => {
+  try {
+    const client = await pool.connect();
+    const LD_FRAM = /^(PH|XG|TG|DG)\d/i;
+
+    function cleanFram(arr) {
+      return (Array.isArray(arr) ? arr : []).filter(c => {
+        const mfr = (c.manufacturer || '').toUpperCase().trim();
+        const code = (c.code || c.partNumber || '').toUpperCase().trim();
+        if ((mfr === 'FRAM' || mfr === '') && LD_FRAM.test(code)) return false;
+        return true;
+      });
+    }
+
+    const rows = await client.query(`
+      SELECT sku, oem_codes, competitor_codes
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND (
+          (oem_codes IS NOT NULL AND jsonb_array_length(oem_codes) > 0
+           AND EXISTS (SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem
+                       WHERE UPPER(elem->>'manufacturer') = 'FRAM'
+                       AND (UPPER(elem->>'code') LIKE 'PH%' OR UPPER(elem->>'code') LIKE 'XG%'
+                            OR UPPER(elem->>'code') LIKE 'TG%' OR UPPER(elem->>'code') LIKE 'DG%')))
+          OR
+          (competitor_codes IS NOT NULL AND jsonb_array_length(competitor_codes) > 0
+           AND EXISTS (SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem
+                       WHERE (UPPER(elem->>'manufacturer') = 'FRAM' OR elem->>'manufacturer' IS NULL)
+                       AND (UPPER(elem->>'code') LIKE 'PH%' OR UPPER(elem->>'code') LIKE 'XG%'
+                            OR UPPER(elem->>'code') LIKE 'TG%' OR UPPER(elem->>'code') LIKE 'DG%')))
+        )
+    `);
+    let cleaned = 0;
+    for (const row of rows.rows) {
+      const origOem = Array.isArray(row.oem_codes) ? row.oem_codes : [];
+      const origComp = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const filtered = cleanFram(origOem);
+      const filteredComp = cleanFram(origComp);
+      if (filtered.length !== origOem.length || filteredComp.length !== origComp.length) {
+        await client.query(
+          'UPDATE elimfilters_catalog SET oem_codes = $1::jsonb, competitor_codes = $2::jsonb WHERE sku = $3',
+          [JSON.stringify(filtered), JSON.stringify(filteredComp), row.sku]
+        );
+        cleaned++;
+      }
+    }
+    client.release();
+    if (cleaned > 0) console.log(`[startup] Cleaned LD FRAM codes from ${cleaned} HD SKUs`);
+  } catch (e) {
+    console.error('[startup-migration]', e.message);
+  }
+})();
 
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
