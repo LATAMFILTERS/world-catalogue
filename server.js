@@ -1880,11 +1880,8 @@ app.get('/api/search', searchLimiter, async (req, res) => {
                  : (rawDuty === 'LIGHT_DUTY'  || rawDuty === 'LD') ? 'LIGHT_DUTY'
                  : null;
 
-  // Auto-detect LD-only FRAM codes: PH/XG/TG/DG prefix codes are light-duty
-  // passenger/light-commercial filters — they can never match HD products.
-  if (!dutyFilter && /^(PH|XG|TG|DG)\d/i.test(q)) {
-    dutyFilter = 'LIGHT_DUTY';
-  }
+  // Note: PH/XG/TG/DG codes can appear as competitor_codes on both HD and LD products.
+  // Do NOT auto-force LIGHT_DUTY — let the cross-reference search find the correct product.
 
   const client = await pool.connect();
   try {
