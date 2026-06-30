@@ -2264,6 +2264,82 @@ app.use((err, req, res, next) => {
   }
 })();
 
+// ─── GET /api/product/:sku ───────────────────────────────────────────────────
+// Public product page endpoint — returns full SKU data + knowledge-system links.
+// Used by elimfilters.com/product/[sku] pages and AI citation layer.
+const KNOWLEDGE_MAP = {
+  air:        { standards: ['air-intake-systems'],   contamination: ['particle-wear'],           technologies: ['macrocore'],            fleet: ['reducing-downtime'] },
+  lube:       { standards: ['lube-oil-systems'],     contamination: ['particle-wear'],           technologies: ['syntrax'],              fleet: ['reducing-downtime','total-cost-ownership'] },
+  oil:        { standards: ['lube-oil-systems'],     contamination: ['particle-wear'],           technologies: ['syntrax'],              fleet: ['reducing-downtime','total-cost-ownership'] },
+  hydraulic:  { standards: ['hydraulic-systems'],    contamination: ['hydraulic-system'],        technologies: ['nanoforce'],            fleet: ['reducing-downtime','total-cost-ownership'] },
+  fuel:       { standards: ['fuel-systems'],         contamination: ['diesel-water'],            technologies: ['syntepore','hydrocore'], fleet: ['fuel-efficiency'] },
+  cabin:      { standards: ['cabin-safety-systems'], contamination: [],                          technologies: ['microkappa'],           fleet: [] },
+  coolant:    { standards: [],                       contamination: [],                          technologies: ['thermacore'],           fleet: ['total-cost-ownership'] },
+  turbine:    { standards: ['compressed-air-systems'], contamination: ['particle-wear'],         technologies: ['drycore'],              fleet: ['reducing-downtime'] },
+  compressed: { standards: ['compressed-air-systems'], contamination: [],                       technologies: ['drycore'],              fleet: [] },
+};
+
+function getKnowledgeLinks(filterType) {
+  if (!filterType) return null;
+  const ft = filterType.toLowerCase();
+  for (const [key, links] of Object.entries(KNOWLEDGE_MAP)) {
+    if (ft.includes(key)) {
+      const base = 'https://elimfilters.com/knowledge-system';
+      return {
+        standards:     links.standards.map(s => ({ title: s, url: `${base}/standards/${s}` })),
+        contamination: links.contamination.map(c => ({ title: c, url: `${base}/contamination/${c}` })),
+        technologies:  links.technologies.map(t => ({ title: t, url: `${base}/technologies/${t}` })),
+        fleet:         links.fleet.map(f => ({ title: f, url: `${base}/fleet/${f}` })),
+      };
+    }
+  }
+  return null;
+}
+
+app.get('/api/product/:sku', searchLimiter, async (req, res) => {
+  const sku = req.params.sku.trim().toUpperCase();
+  if (!/^[A-Z]{2,3}[0-9]{4,8}[A-Z0-9]?$/.test(sku))
+    return res.status(400).json({ success: false, error: 'Invalid SKU format' });
+
+  const lang = detectLang(req);
+  const client = await pool.connect();
+  try {
+    await client.query("SET client_encoding = 'UTF8'");
+    const result = await client.query(
+      'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1', [sku]
+    );
+    if (result.rows.length === 0)
+      return res.status(404).json({ success: false, error: 'SKU not found' });
+
+    const row = result.rows[0];
+    const product = buildFilterData(row, lang);
+    const knowledge_links = getKnowledgeLinks(row.filter_type);
+
+    res.json({
+      success: true,
+      product: {
+        ...product,
+        sku,
+        duty: row.duty,
+        name: row.name || null,
+        url: `https://part-search.elimfilters.com/product/${sku}`,
+        knowledge_links,
+        canonical: {
+          concept: `${row.filter_type || 'Filter'} — ${row.duty === 'HEAVY_DUTY' ? 'Heavy Duty' : 'Light Duty'}`,
+          source: `https://part-search.elimfilters.com/api/product/${sku}`,
+          version: '1.0',
+          last_updated: new Date().toISOString().split('T')[0],
+        }
+      }
+    });
+  } catch (e) {
+    console.error('[api/product]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
 app.listen(PORT, '0.0.0.0', () => {

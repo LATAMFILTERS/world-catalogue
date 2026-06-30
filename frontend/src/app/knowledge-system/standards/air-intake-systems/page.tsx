@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'SAE J1539', desc: 'Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air to preserve engine efficiency and bearing life.' },
@@ -248,6 +249,11 @@ export default function AirIntakeSystemsPage() {
         '@type': 'FAQPage',
         mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
       }) }} />
+      {/* Related Products — defensive widget, renders only if API returns valid data */}
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="air filter" duty="HEAVY_DUTY" searchQuery="air filter heavy duty" label="VER TODOS LOS FILTROS DE AIRE" />
+      </div>
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
@@ -250,6 +251,9 @@ export default function HydraulicSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Hydraulic Systems', item: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="hydraulic filter" duty="HEAVY_DUTY" searchQuery="hydraulic filter heavy duty" label="VER TODOS LOS FILTROS HIDRÁULICOS" />
+      </div>
     </main>
   );
 }

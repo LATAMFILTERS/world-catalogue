@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 export default function DieselWaterContaminationPage() {
   const sections = [
@@ -357,6 +358,9 @@ export default function DieselWaterContaminationPage() {
           { '@type': 'Question', name: 'How does microbial growth affect fuel systems?', acceptedAnswer: { '@type': 'Answer', text: 'Microbes thrive at water-fuel interfaces where moisture provides the growth medium. Bacterial colonies (Pseudomonas, Bacillus) produce enzymes that degrade fuel hydrocarbons into organic acids, lowering fuel pH and accelerating corrosion. Fungal hyphae (Aspergillus, Cladosporium) penetrate fuel filter media, causing rapid plugging within days. Biofilm accumulation forms a slime layer on tank interior and fuel system components, causing fuel flow restriction and injector stiction. Biocide treatment kills planktonic (free-floating) microbes within hours but is less effective against established biofilm colonies.' } },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+        <RelatedProducts filterType="fuel filter" duty="HEAVY_DUTY" searchQuery="fuel filter heavy duty" label="VER FILTROS DE COMBUSTIBLE RELACIONADOS" />
+      </div>
     </main>
   );
 }

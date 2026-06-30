@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ISO 8573-1', desc: 'Compressed air purity classification system (Classes 0-9) defining maximum particle concentration, water content (dew point), and oil content for different industrial applications.' },
@@ -284,6 +285,9 @@ export default function CompressedAirSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Compressed Air Systems', item: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="air dryer filter" duty="HEAVY_DUTY" searchQuery="air dryer filter heavy duty" label="VER TODOS LOS FILTROS DE AIRE COMPRIMIDO" />
+      </div>
     </main>
   );
 }
