@@ -76,7 +76,6 @@ export default function VarnishFormationPage() {
           <h1 style={{
             fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em',
-            textAlign: 'justify',
             marginBottom: '1.25rem',
           }}>Varnish Formation in Hydraulic Systems</h1>
           <p style={{

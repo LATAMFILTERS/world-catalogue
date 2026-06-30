@@ -306,7 +306,6 @@ export default function SciencePage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
-            textAlign: 'justify',
             marginBottom: '1.25rem',
           }}>
             The Physics of Industrial Failure
@@ -566,7 +565,7 @@ export default function SciencePage() {
                 style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)', padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3, textAlign: 'justify' }}>{w.type}</h3>
+                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3, }}>{w.type}</h3>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.1em', marginLeft: '1rem', flexShrink: 0 }}>{w.code}</span>
                 </div>
                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{w.mechanism}</p>

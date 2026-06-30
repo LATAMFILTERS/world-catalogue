@@ -230,7 +230,6 @@ export default function SystemsPage() {
                         fontWeight: 700,
                         fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
                         lineHeight: 1.2,
-                        textAlign: 'justify',
                         color: '#fff',
                         marginBottom: '0.5rem',
                       }}

@@ -81,8 +81,7 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why Aftermarket Filter Decisions Matter
           </h2>
           <p style={{
@@ -121,8 +120,7 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Cost Optimization Without Performance Compromise
           </h2>
           <p style={{
@@ -204,8 +202,7 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Specification Verification & Performance Testing
           </h2>
           <p style={{
@@ -283,8 +280,7 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Total Cost of Ownership, Not Unit Price
           </h2>
           <p style={{

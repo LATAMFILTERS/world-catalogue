@@ -81,8 +81,7 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why Fleet Filtration Strategy Matters
           </h2>
           <p style={{
@@ -121,8 +120,7 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Managing Diversity at Scale
           </h2>
           <p style={{
@@ -172,8 +170,7 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             From Equipment Diversity to System Standardization
           </h2>
           <p style={{
@@ -228,8 +225,7 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Phased Rollout for Fleet-Level Contamination Control
           </h2>
           <p style={{

@@ -79,8 +79,7 @@ export default function TCOPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Purchase Price vs Operating Reality
           </h2>
           <p style={{
@@ -167,8 +166,7 @@ export default function TCOPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             System-Level Cost Analysis
           </h2>
           <p style={{
@@ -400,8 +398,7 @@ export default function TCOPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Heavy-Duty Diesel Engine Over 10-Year Lifespan
           </h2>
           <div style={{
@@ -510,8 +507,7 @@ export default function TCOPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why TCO Analysis Changes Everything
           </h2>
           <ul style={{

@@ -85,7 +85,6 @@ export default function StandardsHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Industrial Filtration Standards
@@ -187,8 +186,7 @@ export default function StandardsHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
-                    textAlign: 'justify',
-                  }}>
+                    }}>
                     {system.title}
                   </h2>
 

@@ -79,8 +79,7 @@ export default function OEMComparisonPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Why "OEM-Specified" Doesn't Mean Optimized
           </h2>
           <p style={{
@@ -137,8 +136,7 @@ export default function OEMComparisonPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Understanding the Competitive Landscape
           </h2>
           <p style={{
@@ -241,8 +239,7 @@ export default function OEMComparisonPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Specification Alignment and System Integration
           </h2>
           <p style={{
@@ -340,8 +337,7 @@ export default function OEMComparisonPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
-            textAlign: 'justify',
-          }}>
+            }}>
             Moving Beyond Brand Comparison
           </h2>
           <div style={{
