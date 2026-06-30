@@ -754,6 +754,7 @@ function Technology() {
             <div style={{ height:140, overflow:'hidden', position:'relative', background:'#0a0a0a' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={t.img} alt={t.id}
+                loading="lazy"
                 style={{ width:'100%', height:'100%', objectFit:'cover', opacity:0.55, transition:'opacity 0.3s' }}
                 onMouseEnter={e => (e.currentTarget.style.opacity='0.8')}
                 onMouseLeave={e => (e.currentTarget.style.opacity='0.55')}
@@ -809,7 +810,7 @@ function Technology() {
               }}>
                 {/* bg image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={tech.img} alt="" aria-hidden
+                <img src={tech.img} alt="" aria-hidden loading="lazy"
                   style={{ position:'absolute', inset:0, width:'100%', height:'100%',
                     objectFit:'cover', opacity: active === i ? 0.18 : 0.07, transition:'opacity 0.2s',
                     pointerEvents:'none' }}

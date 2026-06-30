@@ -115,6 +115,7 @@ export default function AboutPage() {
         <img
           src="/images/grupo-filters.avif"
           alt="ELIMFILTERS Industrial Asset Protection"
+          fetchPriority="high"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.38 }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 45%, rgba(0,0,0,0.4) 100%)' }} />
