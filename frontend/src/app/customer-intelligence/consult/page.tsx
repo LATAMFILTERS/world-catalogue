@@ -93,7 +93,7 @@ export default function ConsultPage() {
         <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           ELIMFILTERS Expert AI
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '2rem', lineHeight: 1.6, textAlign: 'justify' }}>
           Specialized sub-agents for technical, sales, support, and marketing consultations.
         </p>
 
@@ -154,6 +154,7 @@ export default function ConsultPage() {
                   padding: '0.85rem 1rem',
                   fontSize: '0.9rem',
                   lineHeight: 1.65,
+                  textAlign: 'justify',
                   whiteSpace: 'pre-wrap',
                 }}>
                   {m.content}

@@ -46,6 +46,7 @@ export default function Warranty() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
             }}
           >
             PROTECTION ENGINEERING WITH ABSOLUTE SUPPORT
@@ -57,6 +58,7 @@ export default function Warranty() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.6,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -207,6 +209,7 @@ export default function Warranty() {
                   style={{
                     fontSize: '0.95rem',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Titillium Web, sans-serif',
                   }}
@@ -236,6 +239,7 @@ export default function Warranty() {
               marginBottom: '2.5rem',
               color: 'rgba(255,255,255,0.75)',
               lineHeight: 1.2,
+              textAlign: 'justify',
             }}
           >
             WHAT'S COVERED
@@ -313,6 +317,7 @@ export default function Warranty() {
                 marginBottom: '1.5rem',
                 color: '#000',
                 lineHeight: 1.2,
+                textAlign: 'justify',
               }}
             >
               REQUEST TECHNICAL VALIDATION
@@ -324,6 +329,7 @@ export default function Warranty() {
                 color: '#000',
                 fontFamily: 'Titillium Web, sans-serif',
                 lineHeight: 1.6,
+                textAlign: 'justify',
               }}
             >
               Need to validate your equipment against our warranty coverage? Our technical team is ready to help.

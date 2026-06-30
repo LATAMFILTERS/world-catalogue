@@ -40,6 +40,7 @@ export default function EngineeringReferencePage() {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.2rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -54,9 +55,9 @@ export default function EngineeringReferencePage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             Twenty structured reference sections covering filtration standards, filtration science, particle science, contamination mechanisms, test methods, performance metrics, materials engineering, and reliability analysis. Content is sourced exclusively from documented ELIMFILTERS technical knowledge and applicable ISO, ASTM, SAE, and NFPA standards.
@@ -146,6 +147,7 @@ export default function EngineeringReferencePage() {
                       color: '#fff',
                       marginBottom: '0.6rem',
                       lineHeight: 1.2,
+                      textAlign: 'justify',
                     }}>
                       {section.title}
                     </h2>
@@ -153,6 +155,7 @@ export default function EngineeringReferencePage() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '0.8rem',
                       lineHeight: 1.6,
+                      textAlign: 'justify',
                       color: 'rgba(255,255,255,0.5)',
                       marginBottom: '1rem',
                       display: '-webkit-box',
@@ -206,6 +209,7 @@ export default function EngineeringReferencePage() {
             letterSpacing: '0.08em',
             color: 'rgba(255,255,255,0.3)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             SOURCE NOTE — All content in this Engineering Reference Library is derived exclusively from ELIMFILTERS documented technical knowledge base and applicable international standards (ISO, ASTM, SAE, NFPA, DIN). Content gaps are explicitly identified as &ldquo;PENDING ENGINEERING DOCUMENTATION&rdquo; — these entries require additional documentation before formal definition can be published.
           </p>

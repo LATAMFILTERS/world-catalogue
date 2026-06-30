@@ -126,6 +126,7 @@ export default function PEPSearchPage() {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.2rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '2.5rem',
             }}
           >
@@ -377,6 +378,7 @@ export default function PEPSearchPage() {
                             fontFamily: 'Inter, sans-serif',
                             fontSize: '0.8rem',
                             lineHeight: 1.5,
+                            textAlign: 'justify',
                             color: 'rgba(255,255,255,0.4)',
                             display: '-webkit-box',
                             WebkitLineClamp: 2,

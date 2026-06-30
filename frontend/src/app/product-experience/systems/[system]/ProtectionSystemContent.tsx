@@ -53,6 +53,7 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.2rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1rem',
             }}
           >
@@ -67,9 +68,9 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             {system.tagline}
@@ -162,6 +163,7 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
                       fontSize: '0.875rem',
                       color: 'rgba(255,255,255,0.65)',
                       lineHeight: 1.5,
+                      textAlign: 'justify',
                     }}>
                       {c}
                     </div>
@@ -191,8 +193,8 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.9rem',
                 lineHeight: 1.75,
-                color: 'rgba(255,255,255,0.65)',
                 textAlign: 'justify',
+                color: 'rgba(255,255,255,0.65)',
               }}>
                 {engineering.failureMechanism}
               </div>
@@ -363,6 +365,7 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
                     fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.5)',
                     lineHeight: 1.5,
+                    textAlign: 'justify',
                     marginBottom: '0.75rem',
                   }}>
                     {tech.tagline}
@@ -412,7 +415,7 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
                     <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#fff', marginBottom: '0.2rem' }}>
                       {family.name}
                     </p>
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
                       {family.purpose.slice(0, 90)}...
                     </p>
                   </div>
@@ -489,7 +492,7 @@ export default function ProtectionSystemContent({ system, prev, next }: Props) {
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.35)', marginBottom: '0.5rem' }}>
             RELATED KNOWLEDGE CENTER
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem', lineHeight: 1.6 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem', lineHeight: 1.6, textAlign: 'justify' }}>
             Full system documentation including contamination studies, standards frameworks, and fleet optimization strategies.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

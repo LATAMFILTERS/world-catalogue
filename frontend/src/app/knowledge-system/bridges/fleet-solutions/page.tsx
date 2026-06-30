@@ -37,6 +37,7 @@ export default function FleetSolutionsPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function FleetSolutionsPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -79,23 +81,24 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why Fleet Filtration Strategy Matters
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Fleet operations manage dozens or hundreds of diverse equipment types operating across varied environments. Individual filter selection decisions compound into massive operational and cost impacts across the fleet.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             This page guides fleet-level filtration strategy—standardizing contamination control across diverse equipment types while optimizing supply chain, maintenance coordination, and total cost of ownership.
           </p>
@@ -118,21 +121,23 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Managing Diversity at Scale
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Fleet operations face unique challenges:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
           }}>
@@ -167,15 +172,16 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             From Equipment Diversity to System Standardization
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Fleet-level strategy standardizes contamination control across diverse equipment by applying universal contamination targets and measurable filtration frameworks:
           </p>
@@ -188,6 +194,7 @@ export default function FleetSolutionsPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginLeft: '1.5rem',
               marginBottom: '0',
@@ -221,15 +228,16 @@ export default function FleetSolutionsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Phased Rollout for Fleet-Level Contamination Control
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Implementation across fleet equipment:
           </p>
@@ -275,6 +283,7 @@ export default function FleetSolutionsPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -298,6 +307,7 @@ export default function FleetSolutionsPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>

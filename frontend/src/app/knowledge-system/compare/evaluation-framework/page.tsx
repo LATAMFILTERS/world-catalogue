@@ -37,6 +37,7 @@ export default function EvaluationFrameworkPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function EvaluationFrameworkPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -77,21 +79,23 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why Meeting Specs Is Not Enough
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Traditional filter evaluation focuses on:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1rem',
@@ -105,8 +109,8 @@ export default function EvaluationFrameworkPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             All OEM-compliant filters meet these specifications. Yet equipment failure rates vary dramatically. Why? Because specifications define minimum requirements, not system-level performance. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design framework</Link> provides the foundation for understanding what measurable contamination control actually requires.
           </p>
@@ -125,15 +129,16 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             What Actually Matters: Measurable Cleanliness
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             System-level filter evaluation focuses on measurable contamination control. The <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 particle cleanliness code</Link> is the primary classification tool that quantifies whether a filter system is actually achieving its target in operating equipment:
           </p>
@@ -161,6 +166,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Percentage of particles above filter micron rating that are captured. Higher beta = better contamination control. Example: β10≥75 means 75% of 10µm+ particles are removed.
@@ -184,6 +190,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Cleanliness targets for specific equipment (engine oil: 16/14/11, hydraulic: 17/15/12). Measured via particle counting. Direct indicator of contamination control effectiveness.
@@ -207,6 +214,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Pressure differential at which unfiltered flow bypasses the element. Higher threshold = more contamination captured before bypass. Critical for real-world conditions.
@@ -230,6 +238,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Total contaminant mass the filter can capture before reaching bypass threshold. Higher capacity = longer service life under actual contamination loads.
@@ -253,6 +262,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Particle counts measured in operating equipment, not just laboratory conditions. Reveals if contamination targets are actually achieved in deployment.
@@ -276,6 +286,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Frequency and duration of unfiltered flow due to high pressure differential or valve failure. Directly correlates to equipment wear acceleration.
@@ -297,6 +308,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             System-Level Selection Process
           </h2>
@@ -318,6 +330,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Determine the ISO 4406 cleanliness code required for equipment type and application (engine oil: 16/14/11, hydraulic: 17/15/12, fuel: 15/13/10, etc.)
@@ -340,6 +353,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Assess actual particle ingestion rate: air intake volume, fuel water content, oil change interval, system condition. Not theoretical—measured from operating conditions.
@@ -362,6 +376,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Choose filter based on contamination load and target: Micron rating must be finer than contamination source size. Beta ratio must be high (≥75 minimum) for target cleanliness. Bypass threshold must exceed expected pressure conditions.
@@ -384,6 +399,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Calculate replacement interval based on: (Dirt Holding Capacity) / (Actual Contamination Load). Not OEM interval—actual measured condition. Monitor pressure differential to verify target is maintained.
@@ -405,6 +421,7 @@ export default function EvaluationFrameworkPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Verify target cleanliness is achieved: Monthly particle counts confirm ISO 4406 target maintained. Adjust interval if contamination target drifts. Use data to optimize cycle time and cost.
@@ -425,6 +442,7 @@ export default function EvaluationFrameworkPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Measurement-Based Equipment Protection
           </h2>
@@ -437,6 +455,7 @@ export default function EvaluationFrameworkPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
@@ -445,6 +464,7 @@ export default function EvaluationFrameworkPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginLeft: '1.5rem',
             }}>

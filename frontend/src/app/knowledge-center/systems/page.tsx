@@ -50,6 +50,7 @@ export default function SystemsPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
+              textAlign: 'justify',
               marginBottom: '1.25rem',
             }}
           >
@@ -64,9 +65,9 @@ export default function SystemsPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '600px',
-              textAlign: 'justify',
             }}
           >
             Six asset protection domains covering air intake, fuel, lubrication, hydraulics, cooling, and cabin air. Each domain maps contamination targets, applicable standards, and the ELIMFILTERS technologies engineered to address specific failure mechanisms.
@@ -117,6 +118,7 @@ export default function SystemsPage() {
               color: '#fff',
               marginBottom: '0.75rem',
               lineHeight: 1.2,
+              textAlign: 'justify',
             }}>
               {system.title}
             </h2>
@@ -125,9 +127,9 @@ export default function SystemsPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.875rem',
               lineHeight: 1.65,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.55)',
               marginBottom: '1.5rem',
-              textAlign: 'justify',
             }}>
               {system.description}
             </p>

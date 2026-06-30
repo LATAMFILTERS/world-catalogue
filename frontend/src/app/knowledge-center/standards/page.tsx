@@ -50,6 +50,7 @@ export default function StandardsHubPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
+              textAlign: 'justify',
               marginBottom: '1.25rem',
             }}
           >
@@ -64,9 +65,9 @@ export default function StandardsHubPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '600px',
-              textAlign: 'justify',
             }}
           >
             ISO, ASTM, SAE, and NAS filtration standards explained with test methodology, acceptance criteria, parameter tables, and industrial application context. Standards are not isolated specifications — each entry explains how the standard functions within a contamination control system.
@@ -130,6 +131,7 @@ export default function StandardsHubPage() {
                       color: '#fff',
                       marginBottom: '0.35rem',
                       lineHeight: 1.25,
+                      textAlign: 'justify',
                     }}>
                       {std.title.split('—')[0].trim()}
                     </p>
@@ -138,6 +140,7 @@ export default function StandardsHubPage() {
                       fontSize: '0.8rem',
                       color: 'rgba(255,255,255,0.4)',
                       lineHeight: 1.5,
+                      textAlign: 'justify',
                     }}>
                       {std.scope}
                     </p>

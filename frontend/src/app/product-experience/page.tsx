@@ -40,6 +40,7 @@ export default function ProductExperiencePage() {
               fontWeight: 700,
               fontSize: 'clamp(2.2rem, 5vw, 3.6rem)',
               lineHeight: 1.08,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -54,9 +55,9 @@ export default function ProductExperiencePage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '660px',
-              textAlign: 'justify',
             }}
           >
             The Product Experience Platform is the navigation layer between engineering knowledge and commercial filtration products. Select a protection system to access the engineering center, technology specifications, product families, and individual product references.
@@ -185,6 +186,7 @@ export default function ProductExperiencePage() {
                       color: '#fff',
                       marginBottom: '0.75rem',
                       lineHeight: 1.2,
+                      textAlign: 'justify',
                     }}>
                       {system.name}
                     </h2>
@@ -192,9 +194,9 @@ export default function ProductExperiencePage() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '0.82rem',
                       lineHeight: 1.65,
+                      textAlign: 'justify',
                       color: 'rgba(255,255,255,0.5)',
                       marginBottom: '1.25rem',
-                      textAlign: 'justify',
                     }}>
                       {system.tagline}
                     </p>
@@ -340,6 +342,7 @@ export default function ProductExperiencePage() {
             color: 'rgba(255,255,255,0.5)',
             marginBottom: '1.5rem',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Navigate by part number, OEM number, machine, engine, industry, technology, protection system, product family, or standard.
           </p>

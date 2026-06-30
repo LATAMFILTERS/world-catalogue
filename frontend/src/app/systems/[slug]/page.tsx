@@ -70,6 +70,7 @@ export default function ProtectionSystemPage({ params }: Props) {
     fontWeight: 700,
     fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
     lineHeight: 1.2,
+    textAlign: 'justify',
     marginBottom: '1rem',
   };
 
@@ -129,7 +130,7 @@ export default function ProtectionSystemPage({ params }: Props) {
             <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
               {sys.name}
             </h1>
-            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', color: 'rgba(255,255,255,0.6)', maxWidth: '540px', lineHeight: 1.65 }}>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', color: 'rgba(255,255,255,0.6)', maxWidth: '540px', lineHeight: 1.65, textAlign: 'justify' }}>
               {sys.tagline}
             </p>
           </div>
@@ -207,7 +208,7 @@ export default function ProtectionSystemPage({ params }: Props) {
                     )}
                   </div>
                   <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '0.95rem', color: '#fff' }}>{fam.name}</p>
-                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.5, textAlign: 'justify' }}>
                     {fam.purpose.slice(0, 100)}…
                   </p>
                   <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginTop: '0.25rem' }}>

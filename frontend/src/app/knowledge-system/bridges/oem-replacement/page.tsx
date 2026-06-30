@@ -37,6 +37,7 @@ export default function OEMReplacementPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function OEMReplacementPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -79,32 +81,33 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Understanding OEM Filter Requirements
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Equipment manufacturers specify filters for warranty compliance, system design compatibility, and performance targets. But OEM requirements represent minimum compliance thresholds, not optimal contamination control.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             When warranty is active or contracts mandate OEM compliance, filtration can still be optimized within those constraints. When warranty expires, filter selection can shift from compliance to asset protection.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             This page clarifies when OEM compliance is non-negotiable, when optimization is possible, and how to achieve system-level performance within whatever constraints apply.
           </p>
@@ -127,21 +130,23 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             When OEM Filters Are Non-Negotiable
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             OEM-specified filters are mandatory in these scenarios:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1rem',
@@ -175,15 +180,16 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             When OEM Compliance is Optional
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Once warranty expires or for out-of-warranty equipment, filter selection can be optimized around contamination control and cost:
           </p>
@@ -197,29 +203,29 @@ export default function OEMReplacementPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Specification-Equivalent Alternatives:</strong> Select non-OEM filters that meet or exceed OEM specifications. Key metrics: micron rating, flow capacity, pressure drop, bypass setting. If equivalent, performance is equivalent.
             </p>
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Performance-Enhanced Selection:</strong> Choose filters with superior contamination control metrics (higher Beta ratio, greater dirt holding capacity) while maintaining specification compatibility. Result: extended service intervals, lower TCO.
             </p>
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Cost Optimization:</strong> High-quality aftermarket filters meeting OEM specs often cost 30-50% less than OEM-branded equivalents. Cost savings with no performance penalty when specification requirements are identical.
             </p>
@@ -239,15 +245,16 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Equivalent Filter Evaluation Criteria
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             When comparing non-OEM filters to OEM specifications, verify these critical dimensions:
           </p>
@@ -275,6 +282,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -299,6 +307,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -323,6 +332,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -347,6 +357,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -371,6 +382,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -395,6 +407,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -411,6 +424,7 @@ export default function OEMReplacementPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
             }}>
               <strong style={{ color: '#FFF12D' }}>Decision Framework:</strong> Specification-equivalent filters provide equal protection. When OEM compliance is required, verify specification match. When optional, enhancement beyond specifications (higher Beta ratio, greater dirt capacity) extends intervals and improves system performance.
@@ -431,15 +445,16 @@ export default function OEMReplacementPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             System-Level Performance with OEM Compliance
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             When OEM filters are required, contamination control can still be optimized:
           </p>
@@ -453,6 +468,7 @@ export default function OEMReplacementPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginLeft: '1.5rem',
               marginBottom: '0',
@@ -493,6 +509,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -516,6 +533,7 @@ export default function OEMReplacementPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>

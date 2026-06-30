@@ -130,6 +130,7 @@ export default function AboutPage() {
             fontWeight: 700,
             letterSpacing: '-0.02em',
             lineHeight: 1.1,
+            textAlign: 'justify',
             marginBottom: '1.25rem',
             maxWidth: '680px',
           }}>
@@ -141,6 +142,7 @@ export default function AboutPage() {
             color: 'rgba(255,255,255,0.58)',
             maxWidth: '560px',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             Industrial equipment does not fail because a filter is missing. It fails because contamination creates wear, wear creates damage, damage creates downtime, and downtime destroys asset value. ELIMFILTERS was built to address the problem — not the product.
           </p>
@@ -221,7 +223,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               Most Companies Focus on the Filter. We Focus on the Asset.
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', maxWidth: '600px', lineHeight: 1.7 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', maxWidth: '600px', lineHeight: 1.7, textAlign: 'justify' }}>
               The distinction is not about product quality. It is about what the company believes the problem is.
             </p>
           </motion.div>
@@ -294,7 +296,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               An Asset Protection Platform. Not a Product Catalog.
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', maxWidth: '640px', lineHeight: 1.7 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', maxWidth: '640px', lineHeight: 1.7, textAlign: 'justify' }}>
               ELIMFILTERS combines proprietary technologies, industry-specific protection strategies, contamination control frameworks, and industrial knowledge into a single platform engineered around one objective: protecting assets.
             </p>
           </motion.div>
@@ -315,7 +317,7 @@ export default function AboutPage() {
                   >
                     <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.4)', letterSpacing: '0.1em' }}>{item.code}</span>
                     <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>{item.title}</h3>
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>{item.body}</p>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, textAlign: 'justify' }}>{item.body}</p>
                   </motion.div>
                 </Link>
               </motion.div>
@@ -337,7 +339,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.6rem' }}>
               10 Technologies. Each Engineered for a Specific Failure Mechanism.
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, textAlign: 'justify' }}>
               Every ELIMFILTERS technology exists to address an identified contamination failure pathway. The failure mechanism determines the technology requirement.
             </p>
           </motion.div>
@@ -475,7 +477,7 @@ export default function AboutPage() {
                 <div key={item.label} style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.07)' }}>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>{item.label}</p>
                   <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>{item.value}</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.38)', lineHeight: 1.6 }}>{item.note}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.38)', lineHeight: 1.6, textAlign: 'justify' }}>{item.note}</p>
                 </div>
               ))}
             </div>
@@ -511,7 +513,7 @@ export default function AboutPage() {
                   >
                     <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.57rem', color: 'rgba(255,241,45,0.45)', letterSpacing: '0.1em' }}>{cta.tag}</span>
                     <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.9rem', fontWeight: 700, color: '#fff' }}>{cta.label}</span>
-                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>{cta.desc}</span>
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5, textAlign: 'justify' }}>{cta.desc}</span>
                   </motion.div>
                 </Link>
               ))}

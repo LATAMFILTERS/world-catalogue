@@ -102,6 +102,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '0.75rem',
               color: '#FFF12D',
               letterSpacing: '0.01em',
@@ -133,9 +134,9 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               maxWidth: '660px',
-              textAlign: 'justify',
             }}
           >
             {tech.engineeringPrinciple}
@@ -180,10 +181,11 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                     color: '#FFF12D',
                     marginBottom: '0.3rem',
                     lineHeight: 1.1,
+                    textAlign: 'justify',
                   }}>
                     {spec.value}
                   </p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
                     {spec.label}
                   </p>
                 </div>
@@ -227,7 +229,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                   border: '1px solid rgba(255,255,255,0.05)',
                 }}>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', marginTop: '0.1rem', flexShrink: 0 }}>→</span>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>{c}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5, textAlign: 'justify' }}>{c}</p>
                 </div>
               ))}
             </div>

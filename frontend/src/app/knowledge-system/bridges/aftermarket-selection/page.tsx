@@ -37,6 +37,7 @@ export default function AftermarketSelectionPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function AftermarketSelectionPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -79,21 +81,23 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why Aftermarket Filter Decisions Matter
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Once equipment warranty expires, filtration decisions shift from OEM compliance to asset protection optimization. This creates both risk and opportunity: choosing poorly compromises equipment reliability and TCO, but selecting strategically can extend equipment life 30-50% while reducing costs.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
           }}>
             This page guides aftermarket filter selection through system-level contamination control, not price minimization or brand recognition.
@@ -117,15 +121,16 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Cost Optimization Without Performance Compromise
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Once warranty expires, aftermarket filters offer significant opportunity:
           </p>
@@ -152,6 +157,7 @@ export default function AftermarketSelectionPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -175,6 +181,7 @@ export default function AftermarketSelectionPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -197,15 +204,16 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Specification Verification & Performance Testing
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Evaluate aftermarket filters using these criteria:
           </p>
@@ -219,10 +227,10 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. ISO 16889 Certification</strong><br/>
               Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β₁₀≥75 means 75% of 10µm particles are captured.
@@ -230,10 +238,10 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>2. Specification Matching</strong><br/>
               Confirm physical dimensions (bowl thread, element length, diameter), flow capacity, pressure drop, and bypass setting match or exceed OEM requirements.
@@ -241,10 +249,10 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>3. Material Quality</strong><br/>
               <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Synthetic media lasts longer in extreme temperatures</Link>. Verify media type and construction quality. Low-cost filters use cheap fiberglass media with short lifespan.
@@ -252,9 +260,9 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>4. Supplier Reputation</strong><br/>
               Research manufacturer: how long in business, certification (ISO, SAE, ASTM), customer reviews, warranty policy. Established aftermarket suppliers have performance history and accountability.
@@ -275,15 +283,16 @@ export default function AftermarketSelectionPage() {
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Total Cost of Ownership, Not Unit Price
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             When selecting aftermarket filters, optimize for total cost of ownership:
           </p>
@@ -297,10 +306,10 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Cheap Filters ($10-15 per unit)</strong><br/>
               Lower initial cost, but short service life, high pressure drop, low dirt capacity. Require frequent replacement. Total 10-year cost: high due to labor and downtime frequency.
@@ -308,9 +317,9 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Quality Aftermarket ($20-35 per unit)</strong><br/>
               Moderate cost, good service life, low pressure drop, high dirt capacity. Extended replacement intervals, reduced downtime frequency. Total 10-year cost: lower due to fewer replacements and less downtime.
@@ -333,6 +342,7 @@ export default function AftermarketSelectionPage() {
             <p style={{
               fontSize: '0.85rem',
               lineHeight: 1.6,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
             }}>

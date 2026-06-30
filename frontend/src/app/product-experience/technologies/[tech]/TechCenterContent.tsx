@@ -49,6 +49,7 @@ export default function TechCenterContent({ tech, relatedFamilies }: Props) {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.2rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '0.5rem',
               color: '#FFF12D',
             }}
@@ -79,9 +80,9 @@ export default function TechCenterContent({ tech, relatedFamilies }: Props) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             {tech.tagline}

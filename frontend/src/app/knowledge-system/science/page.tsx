@@ -306,6 +306,7 @@ export default function SciencePage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
+            textAlign: 'justify',
             marginBottom: '1.25rem',
           }}>
             The Physics of Industrial Failure
@@ -441,7 +442,7 @@ export default function SciencePage() {
                   <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 700, color: i === 5 ? '#f87171' : '#fff', marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
                     {item.concept}
                   </h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>
                     {item.description}
                   </p>
                 </div>
@@ -477,7 +478,7 @@ export default function SciencePage() {
                   <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 700, color: i === 4 ? '#4ade80' : '#fff', marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
                     {item.concept}
                   </h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>
                     {item.description}
                   </p>
                 </div>
@@ -565,13 +566,13 @@ export default function SciencePage() {
                 style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)', padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{w.type}</h3>
+                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3, textAlign: 'justify' }}>{w.type}</h3>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.1em', marginLeft: '1rem', flexShrink: 0 }}>{w.code}</span>
                 </div>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{w.mechanism}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{w.mechanism}</p>
                 <div style={{ background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.12)', padding: '0.75rem', marginTop: 'auto' }}>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,241,45,0.7)', letterSpacing: '0.06em', marginBottom: '0.3rem' }}>OPERATIONAL IMPACT</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{w.impact}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' }}>{w.impact}</p>
                 </div>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.06em' }}>SYSTEMS: {w.systems}</p>
               </motion.div>
@@ -639,11 +640,11 @@ export default function SciencePage() {
                     <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#FFF12D', letterSpacing: '0.05em' }}>{tech.code}</span>
                     <div>
                       <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.08em', marginBottom: '0.3rem' }}>ADDRESSES</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{tech.failureMechanism}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, textAlign: 'justify' }}>{tech.failureMechanism}</p>
                     </div>
                     <div>
                       <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.08em', marginBottom: '0.3rem' }}>PROTECTION</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{tech.protection}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>{tech.protection}</p>
                     </div>
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.57rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em' }}>{tech.system}</span>
@@ -763,7 +764,7 @@ export default function SciencePage() {
                 >
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.1em' }}>{link.section}</span>
                   <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', fontWeight: 600, color: '#fff' }}>{link.title}</span>
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>{link.desc}</span>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5, textAlign: 'justify' }}>{link.desc}</span>
                 </motion.div>
               </Link>
             ))}

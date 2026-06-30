@@ -44,6 +44,7 @@ export default function MarinecleanPage() {
             <p style={{
               fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
               color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '560px',
+              textAlign: 'justify',
             }}>
               Salt-resistant filtration line for commercial marine, offshore, and coastal operations.
               IMO certified for continuous saltwater aerosol exposure.
@@ -61,7 +62,7 @@ export default function MarinecleanPage() {
           <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '1rem' }}>
             MARINECLEAN™ is a salt-resistant filtration line that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.
           </p>
-          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8 }}>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, textAlign: 'justify' }}>
             Standard industrial filtration degrades rapidly in marine environments — salt aerosol penetrates seals, corrodes housings, and compromises element integrity within months. MARINECLEAN™ is engineered from the ground up for wet-dry cycling in harbor, offshore, and deep-sea operating environments.
           </p>
         </motion.section>
@@ -78,7 +79,7 @@ export default function MarinecleanPage() {
             ].map(f => (
               <div key={f.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem' }}>
                 <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.6rem', color: '#FFF12D' }}>{f.title}</h3>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{f.body}</p>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{f.body}</p>
               </div>
             ))}
           </div>
@@ -94,7 +95,7 @@ export default function MarinecleanPage() {
           ].map(a => (
             <div key={a.sector} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem', marginBottom: '1.5rem' }}>
               <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.4rem' }}>{a.sector}</h3>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{a.desc}</p>
+              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{a.desc}</p>
             </div>
           ))}
         </motion.section>
@@ -105,6 +106,7 @@ export default function MarinecleanPage() {
             background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)',
             padding: '2rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem',
             lineHeight: 1.8, color: 'rgba(255,255,255,0.65)',
+            textAlign: 'justify',
           }}>
             <p style={{ color: '#FFF12D', fontWeight: 700, marginBottom: '1.25rem', fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               CANONICAL KNOWLEDGE BLOCK: MARINECLEAN™

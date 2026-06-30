@@ -388,7 +388,7 @@ export default function Home() {
                   <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
                   <p style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '0.4rem' }}>{item.label}</p>
                   <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.4rem', color: '#f87171', marginBottom: '0.75rem' }}>{item.cost}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>{item.desc}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.65, textAlign: 'justify' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -405,7 +405,7 @@ export default function Home() {
                 <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>
                   4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
                   <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
                 </p>
@@ -444,7 +444,7 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
                 <SpotlightCard style={{ background: '#050505', padding: '2.5rem', border: '1px solid #1a1a1a', borderRadius: '12px' }}>
 
-                  <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+                  <h3 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3, textAlign: 'justify' }}>
                     {t('home.whyCardTitle1', 'Your equipment is worth millions.')}<br />{t('home.whyCardTitle2', 'Protect it accordingly.')}
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
@@ -639,6 +639,7 @@ export default function Home() {
                     color: '#FFF12D',
                     marginBottom: '0.75rem',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {item.q}
                   </h3>
@@ -647,6 +648,7 @@ export default function Home() {
                     fontSize: '0.9rem',
                     color: 'rgba(255,255,255,0.7)',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     margin: 0,
                   }}>
                     {item.a}
