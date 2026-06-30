@@ -218,6 +218,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
       secure: true,
       auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
     });
+    // Internal notification to distribution team
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'distribution_network@elimfilters.com',
@@ -241,6 +242,88 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
         ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
       `,
     });
+
+    // Confirmation email to applicant
+    await transporter.sendMail({
+      from: '"ELIMFILTERS Distribution" <info@elimfilters.com>',
+      to: esc(email).replace(/[\r\n]/g, ''),
+      subject: `Application received — ELIMFILTERS Authorized Distributor Program`,
+      html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+        <body style="margin:0;padding:0;background:#000;font-family:'Helvetica Neue',Arial,sans-serif">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#000;padding:40px 20px">
+            <tr><td align="center">
+              <table width="580" cellpadding="0" cellspacing="0" style="max-width:580px;width:100%">
+
+                <!-- Header -->
+                <tr><td style="background:#000;border-bottom:2px solid #FFF12D;padding:32px 40px 24px">
+                  <p style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:0.2em;color:#FFF12D;text-transform:uppercase">ELIMFILTERS® · AUTHORIZED DISTRIBUTION NETWORK</p>
+                </td></tr>
+
+                <!-- Body -->
+                <tr><td style="background:#0a0a0a;border:1px solid #1a1a1a;border-top:none;padding:40px">
+
+                  <h1 style="margin:0 0 24px;font-size:22px;font-weight:700;color:#fff;letter-spacing:-0.02em">
+                    Application Received
+                  </h1>
+
+                  <p style="margin:0 0 16px;font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65)">
+                    Dear ${esc(contactName)},
+                  </p>
+                  <p style="margin:0 0 24px;font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65)">
+                    We have received your application for the ELIMFILTERS Authorized Distributor Program on behalf of <strong style="color:#fff">${esc(companyName)}</strong>.
+                    Our commercial team will review your application and respond within <strong style="color:#fff">5 business days</strong>.
+                  </p>
+
+                  <!-- Application summary -->
+                  <div style="background:#111;border:1px solid #222;border-left:3px solid #FFF12D;padding:20px 24px;margin:0 0 28px">
+                    <p style="margin:0 0 12px;font-size:10px;letter-spacing:0.16em;color:#FFF12D;text-transform:uppercase">APPLICATION SUMMARY</p>
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                      <tr><td style="font-size:12px;color:rgba(255,255,255,0.4);padding:4px 0;width:140px">Company</td><td style="font-size:12px;color:#fff;padding:4px 0">${esc(companyName)}</td></tr>
+                      <tr><td style="font-size:12px;color:rgba(255,255,255,0.4);padding:4px 0">Country</td><td style="font-size:12px;color:#fff;padding:4px 0">${esc(country)}</td></tr>
+                      ${state ? `<tr><td style="font-size:12px;color:rgba(255,255,255,0.4);padding:4px 0">Region</td><td style="font-size:12px;color:#fff;padding:4px 0">${esc(state)}</td></tr>` : ''}
+                      <tr><td style="font-size:12px;color:rgba(255,255,255,0.4);padding:4px 0">Contact</td><td style="font-size:12px;color:#fff;padding:4px 0">${esc(contactName)}</td></tr>
+                    </table>
+                  </div>
+
+                  <p style="margin:0 0 12px;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.5)">
+                    While your application is under review, you can explore our technical documentation:
+                  </p>
+                  <table cellpadding="0" cellspacing="0" style="margin:0 0 28px">
+                    <tr>
+                      <td style="padding-right:12px">
+                        <a href="https://elimfilters.com/knowledge-system" style="display:inline-block;background:#FFF12D;color:#000;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px">KNOWLEDGE SYSTEM →</a>
+                      </td>
+                      <td>
+                        <a href="https://part-search.elimfilters.com" style="display:inline-block;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px">PART SEARCH →</a>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.65">
+                    Questions? Reply directly to this email or contact us at
+                    <a href="mailto:distribution_network@elimfilters.com" style="color:#FFF12D;text-decoration:none">distribution_network@elimfilters.com</a>
+                  </p>
+                </td></tr>
+
+                <!-- Footer -->
+                <tr><td style="padding:24px 40px;border:1px solid #1a1a1a;border-top:none">
+                  <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.08em">
+                    ELIMFILTERS® · Industrial Asset Protection · elimfilters.com<br>
+                    This is an automated confirmation. Do not reply to this address directly.
+                  </p>
+                </td></tr>
+
+              </table>
+            </td></tr>
+          </table>
+        </body>
+        </html>
+      `,
+    });
+
     res.json({ ok: true });
   } catch (err) {
     console.error('[distributor]', err.code || 'SMTP error');
