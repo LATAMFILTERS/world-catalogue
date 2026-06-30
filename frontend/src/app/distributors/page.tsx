@@ -7,6 +7,33 @@ import { Footer } from '@/components/Footer';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
+const PARTNER_VALUE = [
+  {
+    title: 'Proprietary Technology Portfolio',
+    body: '10 proprietary technologies covering all critical filtration domains: air, fuel, hydraulic, lube oil, cabin, and compressed air. No commodity product dependence.',
+  },
+  {
+    title: 'Knowledge System Access',
+    body: 'Full access to the ELIMFILTERS Knowledge System — ISO standards library, contamination case studies, fleet optimization frameworks — tools to sell by engineering value, not price.',
+  },
+  {
+    title: 'Technical Support Infrastructure',
+    body: 'Dedicated engineering support for OEM cross-reference validation, application specification, and fleet filtration system design.',
+  },
+  {
+    title: 'Warranty Coverage',
+    body: 'Non-prorated warranty with immediate replacement guarantee. Full asset protection warranty language supports distributor credibility with industrial clients.',
+  },
+  {
+    title: 'LATAM Operations Proximity',
+    body: 'Operations center in Barquisimeto, Venezuela provides regional support for LATAM distributors. Spanish-language support, proximity to key mining and agricultural markets.',
+  },
+  {
+    title: 'Category Leadership Positioning',
+    body: 'Represent a platform that defines a new category: industrial asset protection vs commodity filtration. A defensible competitive position beyond price competition.',
+  },
+];
+
 const DISTRIBUTORS = [
   {
     country: 'Dominican Republic',
@@ -223,6 +250,50 @@ export default function DistributorsPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* Partner Value */}
+        <section style={{ padding: '5rem 8%', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}
+            >
+              WHAT AUTHORIZED DISTRIBUTORS RECEIVE
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: '#fff', marginBottom: '3rem', letterSpacing: '-0.01em' }}
+            >
+              Partnership Benefits
+            </motion.h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+              {PARTNER_VALUE.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: '4px',
+                    padding: '1.75rem',
+                    background: 'rgba(255,255,255,0.02)',
+                  }}
+                >
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.6rem' }}>{item.title}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, textAlign: 'justify' }}>{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

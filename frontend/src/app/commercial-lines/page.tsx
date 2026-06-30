@@ -49,7 +49,7 @@ export default function CommercialLinesPage() {
             textTransform: 'uppercase',
             marginBottom: '1.5rem',
           }}>
-            // COMMERCIAL LINES · ELIMFILTERS®
+            COMMERCIAL LINES · ELIMFILTERS®
           </p>
           <h1 style={{
             fontFamily: 'Outfit, sans-serif',

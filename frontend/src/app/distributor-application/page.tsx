@@ -252,7 +252,7 @@ export default function DistributorApplication() {
               marginBottom: '1.25rem',
             }}
           >
-            // AUTHORIZED DISTRIBUTION PROGRAM
+            AUTHORIZED DISTRIBUTION PROGRAM
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

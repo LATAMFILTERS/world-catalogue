@@ -173,7 +173,7 @@ export default function Contact() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', color: '#FFF12D', fontFamily: 'Outfit, sans-serif', display: 'inline-block', marginBottom: '1rem' }}
           >
-            // GLOBAL OPERATIONS CENTER
+            GLOBAL OPERATIONS CENTER
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -597,7 +597,7 @@ export default function Contact() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <AnimateIn>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
-              // WHAT WE HANDLE
+              WHAT WE HANDLE
             </p>
             <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2.5rem' }}>
               Technical Support Scope
@@ -716,7 +716,7 @@ export default function Contact() {
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <AnimateIn>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
-              // COMMON QUESTIONS
+              COMMON QUESTIONS
             </p>
             <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '3rem' }}>
               Frequently Asked Questions

@@ -33,7 +33,7 @@ export default function Warranty() {
                 display: 'inline-block',
               }}
             >
-              // WARRANTY AND SUPPORT
+              WARRANTY AND SUPPORT
             </motion.span>
           </div>
           <motion.h1

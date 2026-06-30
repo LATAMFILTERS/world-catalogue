@@ -113,7 +113,7 @@ export default function AboutPage() {
       {/* HERO */}
       <header style={{ position: 'relative', height: 'clamp(320px, 48vh, 560px)', overflow: 'hidden' }}>
         <img
-          src="/images/grupo-filters.jpg"
+          src="/images/grupo-filters.avif"
           alt="ELIMFILTERS Industrial Asset Protection"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.38 }}
         />
