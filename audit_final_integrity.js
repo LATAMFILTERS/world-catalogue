@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 // Valid SKU prefixes per duty
-const HD_PREFIXES = ['EA1','EA2','ED4','EH6','EL8','EM9','ES9','EC1','EF9','EW7'];
+const HD_PREFIXES = ['EA1','EA2','ED4','EH6','EL8','EM9','ES9','EC1','EF9','EW7','ET9'];
 const LD_PREFIXES = ['EL3','EA3','EC3','EF3'];
 
 async function main() {
