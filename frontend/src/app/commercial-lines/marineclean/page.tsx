@@ -57,7 +57,6 @@ export default function MarinecleanPage() {
 
         {/* Section 01 */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>01 / PRODUCT LINE</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.25rem' }}>Marine-Grade Asset Protection</h2>
           <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '1rem' }}>
             MARINECLEAN™ is a salt-resistant filtration line that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.
@@ -69,7 +68,6 @@ export default function MarinecleanPage() {
 
         {/* Section 02 — Key specifications */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>02 / ENGINEERING FEATURES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>Construction & Certification</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
             {[
@@ -88,7 +86,6 @@ export default function MarinecleanPage() {
 
         {/* Section 03 — Applications */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>03 / APPLICATIONS</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>Operational Contexts</h2>
           {[
             { sector: 'Commercial Vessels', desc: 'Main engine fuel filtration, hydraulic steering and deck machinery, lube oil circuits aboard cargo ships, ferries, and workboats.' },

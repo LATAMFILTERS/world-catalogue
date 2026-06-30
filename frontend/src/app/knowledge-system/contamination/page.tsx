@@ -64,6 +64,7 @@ export default function ContaminationHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Contamination & Failure Modes
@@ -75,6 +76,7 @@ export default function ContaminationHubPage() {
             maxWidth: '500px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Root cause analysis of contamination-induced failures in industrial filtration systems.
           </p>
@@ -159,6 +161,7 @@ export default function ContaminationHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {contam.title}
                   </h2>
@@ -169,6 +172,7 @@ export default function ContaminationHubPage() {
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
                     lineHeight: 1.6,
+                    textAlign: 'justify',
                     marginTop: 'auto',
                   }}>
                     {contam.description}

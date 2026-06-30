@@ -173,13 +173,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>01 / PURPOSE</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -208,13 +201,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>02 / ENGINEERING DESIGN</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -243,13 +229,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>03 / APPLICATIONS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -299,13 +278,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>04 / CONSTRUCTION</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -334,13 +306,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>05 / TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -439,13 +404,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>06 / APPLICABLE STANDARDS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -479,13 +437,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>07 / HEAVY DUTY PRODUCTS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
@@ -555,13 +506,6 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>08 / LIGHT DUTY PRODUCTS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,

@@ -35,7 +35,11 @@ Generated from:
 
 Generator: `scripts/generate-citation-api.js`
 <<<<<<< HEAD
+<<<<<<< HEAD
 Last generated: 2026-06-29T14:08:03.253Z
 =======
 Last generated: 2026-06-30T06:20:54.225Z
 >>>>>>> main
+=======
+Last generated: 2026-06-30T06:45:00.125Z
+>>>>>>> 20f9f5d6 (design: Remove numbered section label <p> elements from knowledge-system pages)

@@ -369,15 +369,7 @@ export default function SectionContent({ section, prev, next }: Props) {
           transition={{ duration: 0.4, delay: 0.45 }}
           style={{ marginBottom: '3rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.6rem',
-            letterSpacing: '0.12em',
-            color: 'rgba(255,255,255,0.3)',
-            marginBottom: '0.75rem',
-          }}>
-            08 / REFERENCES
-          </p>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {section.references.map((ref, i) => (
               <p key={i} style={{

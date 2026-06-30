@@ -70,6 +70,7 @@ export default function BridgesHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Filter Selection Technical Guides
@@ -81,6 +82,7 @@ export default function BridgesHubPage() {
             maxWidth: '600px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Technical reference guides for industrial filtration selection across OEM, aftermarket, and fleet operation contexts.
           </p>
@@ -128,6 +130,7 @@ export default function BridgesHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {page.title}
                   </h2>
@@ -137,6 +140,7 @@ export default function BridgesHubPage() {
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
                     lineHeight: 1.6,
+                    textAlign: 'justify',
                     marginTop: 'auto',
                   }}>
                     {page.description}

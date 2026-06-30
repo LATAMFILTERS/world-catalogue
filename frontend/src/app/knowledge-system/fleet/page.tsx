@@ -64,6 +64,7 @@ export default function FleetHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             Fleet Optimization
@@ -75,6 +76,7 @@ export default function FleetHubPage() {
             maxWidth: '520px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Operational strategies for reducing unplanned downtime, optimizing fuel consumption, and modeling filtration investment against total lifecycle cost.
           </p>
@@ -157,6 +159,7 @@ export default function FleetHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {topic.title}
                   </h2>
@@ -166,6 +169,7 @@ export default function FleetHubPage() {
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
                     lineHeight: 1.6,
+                    textAlign: 'justify',
                     marginTop: 'auto',
                   }}>
                     {topic.description}
