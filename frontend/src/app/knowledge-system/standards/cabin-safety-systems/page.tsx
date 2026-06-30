@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },
@@ -288,6 +289,9 @@ export default function CabinSafetySystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Cabin Air Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="cabin filter" duty="LIGHT_DUTY" searchQuery="cabin filter" label="VER TODOS LOS FILTROS DE CABINA" />
+      </div>
     </main>
   );
 }

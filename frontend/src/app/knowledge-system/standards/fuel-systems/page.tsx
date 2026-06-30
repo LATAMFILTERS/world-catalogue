@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
@@ -266,6 +267,9 @@ export default function FuelSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Fuel Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/fuel-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="fuel filter" duty="HEAVY_DUTY" searchQuery="fuel filter heavy duty" label="VER TODOS LOS FILTROS DE COMBUSTIBLE" />
+      </div>
     </main>
   );
 }

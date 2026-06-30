@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { AudioOverview } from '@/components/AudioOverview';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
@@ -494,6 +495,9 @@ export default function LubeOilSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Lube / Oil Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="lube oil filter" duty="HEAVY_DUTY" searchQuery="lube oil filter heavy duty" label="VER TODOS LOS FILTROS DE ACEITE" />
+      </div>
     </main>
   );
 }
