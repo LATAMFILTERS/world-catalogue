@@ -39,12 +39,20 @@ const _extractAdminKey = (req) => {
 };
 const requireAdmin = (req, res, next) => {
   const key = _extractAdminKey(req);
-  if (!key || key !== ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (!key || !ADMIN_KEY) return res.status(403).json({ error: 'forbidden' });
+  const keyBuf    = Buffer.from(key);
+  const adminBuf  = Buffer.from(ADMIN_KEY);
+  if (keyBuf.length !== adminBuf.length || !require('crypto').timingSafeEqual(keyBuf, adminBuf)) {
+    return res.status(403).json({ error: 'forbidden' });
+  }
   next();
 };
 
 // Prevent unhandled errors from crashing the process
-process.on('uncaughtException', (err) => console.error('[uncaughtException]', err.message));
+process.on('uncaughtException', (err) => {
+  const msg = (err.message || '').replace(/postgresql:\/\/[^@]+@[^/]+/gi, 'postgresql://[redacted]');
+  console.error('[uncaughtException]', msg);
+});
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
@@ -76,8 +84,8 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-// Import endpoints need larger body limit (Mann fitment can be 300+ rows per product)
-app.use('/api/import', express.json({ charset: 'utf-8', limit: '10mb' }));
+// Import endpoints need larger body limit (max 500 rows/batch per CLAUDE.md)
+app.use('/api/import', express.json({ charset: 'utf-8', limit: '2mb' }));
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out');
@@ -141,7 +149,7 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
     return res.status(400).json({ error: 'Captcha verification failed' });
   }
   const safeName    = _escHtml(name);
-  const safeEmail   = _escHtml(email);
+  const safeEmail   = _escHtml(email).replace(/[\r\n]/g, '');
   const safePhone   = _escHtml(phone || '—');
   const safeCompany = _escHtml(company || '—');
   const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
@@ -213,7 +221,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'distribution_network@elimfilters.com',
-      replyTo: esc(email),
+      replyTo: esc(email).replace(/[\r\n]/g, ''),
       subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
       html: `
         <h2 style="color:#000">New distributor application — elimfilters.com</h2>
@@ -250,9 +258,9 @@ app.use((req, res, next) => {
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DB_SSL_VERIFY === 'true'
-    ? { rejectUnauthorized: true }
-    : { rejectUnauthorized: false },
+  ssl: process.env.DB_SSL_BYPASS === 'true'
+    ? { rejectUnauthorized: false }
+    : { rejectUnauthorized: true },
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
   max: 10,
@@ -696,6 +704,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
 
   if(!model) return res.json({success: false, filters: []});
   if(model.length > 200 || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
+  if(/^[%_]+$/.test(model)) return res.status(400).json({success: false, error: 'Invalid search term'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -707,7 +716,7 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
     const params = [];
 
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    params.push('%' + model.replace(/[%_]/g, '\\$&') + '%');
 
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
@@ -734,6 +743,7 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
 
   if(!model) return res.json({success: false, filters: []});
   if(model.length > 200 || (type && type.length > 100) || (engine && engine.length > 200)) return res.status(400).json({success: false, error: 'Input exceeds maximum length'});
+  if(/^[%_]+$/.test(model)) return res.status(400).json({success: false, error: 'Invalid search term'});
   const lang = detectLang(req);
 
   const client = await pool.connect();
@@ -745,16 +755,16 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
     const params = [];
 
     query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-    params.push('%' + model + '%');
+    params.push('%' + model.replace(/[%_]/g, '\\$&') + '%');
 
     if(type) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + type + '%');
+      params.push('%' + type.replace(/[%_]/g, '\\$&') + '%');
     }
 
     if(engine) {
       query += ` AND equipment_applications::text ILIKE $${params.length + 1}`;
-      params.push('%' + engine + '%');
+      params.push('%' + engine.replace(/[%_]/g, '\\$&') + '%');
     }
 
     query += ' LIMIT 10';
