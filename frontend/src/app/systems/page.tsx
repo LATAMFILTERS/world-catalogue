@@ -78,6 +78,7 @@ export default function SystemsPage() {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               letterSpacing: '-0.02em',
               marginBottom: '1.25rem',
               maxWidth: '680px',
@@ -91,6 +92,7 @@ export default function SystemsPage() {
               fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
               color: 'rgba(255,255,255,0.5)',
               lineHeight: 1.75,
+              textAlign: 'justify',
               maxWidth: '560px',
             }}
           >
@@ -105,7 +107,7 @@ export default function SystemsPage() {
           <div style={{ background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.1)', padding: '1.75rem 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
             <div>
               <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1rem', color: '#fff', marginBottom: '0.35rem' }}>Search by Part Number or OEM Cross-Reference</p>
-              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>Real-time dimension queries, application lookups, and OEM cross-referencing.</p>
+              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, textAlign: 'justify' }}>Real-time dimension queries, application lookups, and OEM cross-referencing.</p>
             </div>
             <a
               href="https://part-search.elimfilters.com"
@@ -177,6 +179,7 @@ export default function SystemsPage() {
                         fontWeight: 700,
                         fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
                         lineHeight: 1.2,
+                        textAlign: 'justify',
                         color: '#fff',
                         marginBottom: '0.5rem',
                       }}
@@ -189,6 +192,7 @@ export default function SystemsPage() {
                         fontSize: '0.8rem',
                         color: 'rgba(255,255,255,0.5)',
                         lineHeight: 1.5,
+                        textAlign: 'justify',
                       }}
                     >
                       {sys.tagline}

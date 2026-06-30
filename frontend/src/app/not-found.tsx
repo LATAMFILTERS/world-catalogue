@@ -66,6 +66,7 @@ export default function NotFound() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.95rem',
                 lineHeight: 1.75,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.45)',
                 marginBottom: '3rem',
                 maxWidth: '460px',

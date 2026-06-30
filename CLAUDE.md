@@ -1301,6 +1301,7 @@ Search results must respect this classification: an HD query must return an HD S
 | Cabin Air Filter | EC1 | — |
 | Fuel Filter | EF9 | EF984001 |
 | Coolant Filter | EW7 | — |
+| Turbine Filter | ET9 | ET90900 |
 
 #### Light Duty (LD) — Mann Filter-based
 | Filter Type | SKU Prefix | Example |

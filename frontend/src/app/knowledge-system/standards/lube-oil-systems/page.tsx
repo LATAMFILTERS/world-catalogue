@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { AudioOverview } from '@/components/AudioOverview';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (17/15/12) for hydraulic and industrial fluids, primary classification system for modern equipment.' },
@@ -82,6 +83,7 @@ export default function LubeOilSystemsPage() {
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Lube / Oil Filtration Systems
           </h1>
@@ -104,10 +106,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>01 / SYSTEM OVERVIEW</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -134,10 +132,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.15 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>02 / CONTAMINATION CHALLENGES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -186,10 +180,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>03 / ASSOCIATED STANDARDS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -219,6 +209,7 @@ export default function LubeOilSystemsPage() {
                 <span style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.55,
+                  textAlign: 'justify',
                 }}>{std.desc}</span>
               </div>
             ))}
@@ -233,10 +224,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.25 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>04 / OPERATIONAL IMPACT & COST</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -255,6 +242,7 @@ export default function LubeOilSystemsPage() {
                 <div style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{impact.label}</div>
               </div>
             ))}
@@ -275,10 +263,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>05 / RELATED CONTAMINATION MODES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -326,10 +310,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.35 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>06 / ELIMFILTERS TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -368,10 +348,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>07 / SYSTEM DESIGN CONSIDERATIONS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -408,10 +384,6 @@ export default function LubeOilSystemsPage() {
           transition={{ duration: 0.5, delay: 0.45 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
@@ -425,6 +397,7 @@ export default function LubeOilSystemsPage() {
                 <p style={{
                   fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
@@ -494,6 +467,9 @@ export default function LubeOilSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Lube / Oil Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems' },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+        <RelatedProducts filterType="lube oil filter" duty="HEAVY_DUTY" searchQuery="lube oil filter heavy duty" label="VER TODOS LOS FILTROS DE ACEITE" />
+      </div>
     </main>
   );
 }

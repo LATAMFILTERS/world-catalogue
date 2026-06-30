@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 export default function DieselWaterContaminationPage() {
   const sections = [
@@ -90,6 +91,7 @@ export default function DieselWaterContaminationPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Diesel Water Contamination
@@ -297,7 +299,7 @@ export default function DieselWaterContaminationPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>⚙ PARTICLE WEAR</p>
-                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Abrasive contamination and three-body wear</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, textAlign: 'justify' }}>Abrasive contamination and three-body wear</p>
               </div>
             </Link>
             <Link href="/knowledge-system/contamination/hydraulic-system" style={{ textDecoration: 'none' }}>
@@ -318,7 +320,7 @@ export default function DieselWaterContaminationPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>⚡ HYDRAULIC</p>
-                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Pressurized fluid system contamination</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, textAlign: 'justify' }}>Pressurized fluid system contamination</p>
               </div>
             </Link>
           </div>
@@ -357,6 +359,9 @@ export default function DieselWaterContaminationPage() {
           { '@type': 'Question', name: 'How does microbial growth affect fuel systems?', acceptedAnswer: { '@type': 'Answer', text: 'Microbes thrive at water-fuel interfaces where moisture provides the growth medium. Bacterial colonies (Pseudomonas, Bacillus) produce enzymes that degrade fuel hydrocarbons into organic acids, lowering fuel pH and accelerating corrosion. Fungal hyphae (Aspergillus, Cladosporium) penetrate fuel filter media, causing rapid plugging within days. Biofilm accumulation forms a slime layer on tank interior and fuel system components, causing fuel flow restriction and injector stiction. Biocide treatment kills planktonic (free-floating) microbes within hours but is less effective against established biofilm colonies.' } },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+        <RelatedProducts filterType="fuel filter" duty="HEAVY_DUTY" searchQuery="fuel filter heavy duty" label="VER FILTROS DE COMBUSTIBLE RELACIONADOS" />
+      </div>
     </main>
   );
 }

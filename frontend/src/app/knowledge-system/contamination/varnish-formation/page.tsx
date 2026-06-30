@@ -76,11 +76,13 @@ export default function VarnishFormationPage() {
           <h1 style={{
             fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             fontWeight: 700, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.02em',
+            textAlign: 'justify',
             marginBottom: '1.25rem',
           }}>Varnish Formation in Hydraulic Systems</h1>
           <p style={{
             fontFamily: 'Inter, sans-serif', fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
             color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '600px', margin: '0 auto',
+            textAlign: 'justify',
           }}>
             Thermal oxidation of hydraulic fluid produces insoluble polar compounds that deposit as varnish on servo valve spools, heat exchangers, and pump surfaces — detectable 200–500 hours before failure via ASTM D7527 Membrane Patch Colorimetry.
           </p>
@@ -94,7 +96,6 @@ export default function VarnishFormationPage() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>01 / CONTAMINATION MECHANISM</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1rem', letterSpacing: '-0.01em' }}>How Varnish Forms</h2>
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: '1rem' }}>
             Varnish forms through thermal oxidation of hydraulic fluid hydrocarbons above 60°C. Oxygen dissolved in the fluid reacts with hydrocarbon chains producing polar oxidation products — aldehydes, organic acids, and high-molecular-weight resins. These products are initially dissolved in the fluid (invisible), but precipitate as the fluid cools during equipment shutdowns. Temperature cycling between operating temperature (70–85°C) and ambient (20–30°C) accelerates precipitation with each cycle.
@@ -102,7 +103,7 @@ export default function VarnishFormationPage() {
           <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: '1rem' }}>
             Three catalysts accelerate varnish formation: (1) Iron contamination above 100 ppm from wear debris catalyzes oxidation 3–5×; (2) Water ingress above 200 ppm destabilizes fluid additive packages; (3) Fluid age above 3,000 operating hours depletes antioxidant additives, leaving base oil unprotected.
           </p>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, textAlign: 'justify' }}>
             The critical failure pathway: servo valve spools operate at surface temperatures of 120–180°C during high-frequency actuation — far above the 60°C bulk fluid temperature. This temperature differential concentrates precipitation directly onto spool surfaces. The 1–3µm spool clearance geometry traps deposits in a self-reinforcing cycle that is invisible to particle counters until advanced stages.
           </p>
         </motion.section>
@@ -114,7 +115,6 @@ export default function VarnishFormationPage() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }} style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>02 / OPERATIONAL IMPACT</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Quantified Failure Consequences</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {CHALLENGE_IMPACTS.map((item, i) => (
@@ -122,7 +122,7 @@ export default function VarnishFormationPage() {
                 display: 'flex', alignItems: 'flex-start', gap: '1.5rem',
                 borderLeft: '2px solid rgba(255,241,45,0.25)', paddingLeft: '1.25rem',
               }}>
-                <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 700, color: '#FFF12D', minWidth: '80px', lineHeight: 1.2 }}>{item.metric}</span>
+                <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 700, color: '#FFF12D', minWidth: '80px', lineHeight: 1.2, textAlign: 'justify' }}>{item.metric}</span>
                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{item.label}</p>
               </div>
             ))}
@@ -136,13 +136,12 @@ export default function VarnishFormationPage() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }} style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>03 / MEASUREMENT STANDARDS</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Detection and Monitoring Standards</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '1rem' }}>
             {STANDARDS.map((s, i) => (
               <div key={i} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem 1.5rem' }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>{s.code}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{s.desc}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -155,7 +154,6 @@ export default function VarnishFormationPage() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }} style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>04 / PROTECTION TECHNOLOGIES</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>ELIMFILTERS® Technologies</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {TECHNOLOGIES.map((tech, i) => (
@@ -165,7 +163,7 @@ export default function VarnishFormationPage() {
                   style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem 1.5rem' }}
                 >
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>{tech.name}™</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>{tech.role}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65, textAlign: 'justify' }}>{tech.role}</p>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,241,45,0.4)', marginTop: '0.5rem' }}>EXPLORE →</p>
                 </motion.div>
               </Link>
@@ -180,13 +178,12 @@ export default function VarnishFormationPage() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }} style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem' }}>05 / TECHNICAL QUESTIONS</p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Frequently Asked Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {FAQS.map((faq, i) => (
               <div key={i} style={{ border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem' }}>
                 <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5 }}>{faq.q}</p>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75 }}>{faq.a}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, textAlign: 'justify' }}>{faq.a}</p>
               </div>
             ))}
           </div>

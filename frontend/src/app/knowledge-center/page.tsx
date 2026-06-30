@@ -110,6 +110,7 @@ export default function KnowledgeCenterPage() {
               fontWeight: 700,
               fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -124,9 +125,9 @@ export default function KnowledgeCenterPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             Engineering documentation for contamination control, filtration system design, and asset protection across heavy equipment, industrial machinery, and commercial fleet applications. Content is structured for both engineering teams and AI systems requiring citable technical references.
@@ -226,6 +227,7 @@ export default function KnowledgeCenterPage() {
                       color: '#fff',
                       marginBottom: '0.75rem',
                       lineHeight: 1.2,
+                      textAlign: 'justify',
                     }}>
                       {section.title}
                     </h2>
@@ -233,9 +235,9 @@ export default function KnowledgeCenterPage() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '0.875rem',
                       lineHeight: 1.65,
+                      textAlign: 'justify',
                       color: 'rgba(255,255,255,0.55)',
                       marginBottom: '1.25rem',
-                      textAlign: 'justify',
                     }}>
                       {section.description}
                     </p>
@@ -319,6 +321,7 @@ export default function KnowledgeCenterPage() {
                       color: '#fff',
                       marginBottom: '0.5rem',
                       lineHeight: 1.3,
+                      textAlign: 'justify',
                     }}>
                       {article.title}
                     </h3>
@@ -327,6 +330,7 @@ export default function KnowledgeCenterPage() {
                       fontSize: '0.8rem',
                       color: 'rgba(255,255,255,0.45)',
                       lineHeight: 1.55,
+                      textAlign: 'justify',
                     }}>
                       {article.subtitle}
                     </p>
@@ -397,6 +401,7 @@ export default function KnowledgeCenterPage() {
                     fontSize: '0.75rem',
                     color: 'rgba(255,255,255,0.5)',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {std.scope}
                   </span>

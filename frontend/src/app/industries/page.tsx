@@ -59,6 +59,7 @@ export default function IndustriesPage() {
             fontWeight: 700,
             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
             lineHeight: 1.1,
+            textAlign: 'justify',
             letterSpacing: '-0.02em',
             color: '#fff',
             margin: '0 auto 1rem',
@@ -78,6 +79,7 @@ export default function IndustriesPage() {
             maxWidth: '520px',
             margin: '0 auto',
             lineHeight: 1.7,
+            textAlign: 'justify',
           }}
         >
           Contamination control solutions engineered for the specific demands of each industrial sector.

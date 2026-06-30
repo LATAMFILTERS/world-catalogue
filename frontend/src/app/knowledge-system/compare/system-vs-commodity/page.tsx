@@ -37,6 +37,7 @@ export default function SystemVsCommodityPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function SystemVsCommodityPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -64,45 +66,36 @@ export default function SystemVsCommodityPage() {
       {/* Content Sections */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / The Commodity Paradigm */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            01 / THE COMMODITY PARADIGM
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             How Filtration Became a Fungible Product
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             For decades, industrial filtration has been treated as a commodity product. Purchase decisions center on:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1rem',
@@ -115,61 +108,52 @@ export default function SystemVsCommodityPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             In this model, filter performance is binary: it either meets OEM specifications or it doesn't. All compliant filters are treated as functionally equivalent. Equipment reliability is assumed to flow automatically from OEM specification compliance.
           </p>
         </motion.section>
 
-        {/* 02 / The System Reality */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            02 / THE SYSTEM REALITY
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Equipment Performance Depends on Contamination Control
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             OEM specification compliance is a minimum floor, not a performance ceiling. Two vehicles, two hydraulic systems, or two compressed air networks can both use OEM-compliant filters while experiencing dramatically different equipment reliability based on how well contamination is actually controlled.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Real-world equipment failure is not caused by filter brand choice. It is caused by contamination entering the system because:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1rem',
@@ -183,46 +167,36 @@ export default function SystemVsCommodityPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             Equipment reliability is determined by the effectiveness of the total contamination control system, not by which branded filter element is installed. Understanding <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration as an integrated system</Link> is the prerequisite for moving beyond commodity thinking.
           </p>
         </motion.section>
 
-        {/* 03 / System Thinking Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            03 / SYSTEM THINKING FRAMEWORK
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             From Product Selection to System Design
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             System-level filtration design addresses all contamination pathways:
           </p>
@@ -255,37 +229,27 @@ export default function SystemVsCommodityPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             Each system is designed around specific contamination challenges and measurement standards, with <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889 Beta Ratio testing</Link> providing the core measurement basis for evaluating how well any filter actually controls contamination. The filter product is an implementation detail, not the strategy.
           </p>
         </motion.section>
 
-        {/* 04 / Performance vs Specification */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            04 / PERFORMANCE VS SPECIFICATION
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why OEM Spec Compliance ≠ Equipment Reliability
           </h2>
@@ -313,6 +277,7 @@ export default function SystemVsCommodityPage() {
               <ul style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 listStyle: 'none',
                 padding: 0,
@@ -344,6 +309,7 @@ export default function SystemVsCommodityPage() {
               <ul style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 listStyle: 'none',
                 padding: 0,
@@ -360,29 +326,19 @@ export default function SystemVsCommodityPage() {
           </div>
         </motion.section>
 
-        {/* 05 / Why This Matters */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            05 / WHY THIS MATTERS
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             The Cost of Commodity Thinking
           </h2>
@@ -395,6 +351,7 @@ export default function SystemVsCommodityPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
@@ -403,6 +360,7 @@ export default function SystemVsCommodityPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginLeft: '1.5rem',
             }}>
@@ -416,9 +374,9 @@ export default function SystemVsCommodityPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
-            textAlign: 'justify',
           }}>
             System-level filtration design eliminates these preventable failures by treating contamination control as a measurable engineering problem, not a commodity purchase decision.
           </p>

@@ -179,7 +179,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1 }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, fontFamily: 'Space Grotesk, sans-serif', marginBottom: '1rem', lineHeight: 1.1, textAlign: 'justify' }}
           >
             Engineering Consultation, Asset Protection Strategy &amp; Industrial Partnerships
           </motion.h1>
@@ -238,6 +238,7 @@ export default function Contact() {
                       color: 'rgba(255,255,255,0.75)',
                       fontFamily: 'Outfit, sans-serif',
                       lineHeight: 1.6,
+                      textAlign: 'justify',
                     }}
                   >
                     KLEO TECHNOLOGIES
@@ -266,6 +267,7 @@ export default function Contact() {
                       color: 'rgba(255,255,255,0.75)',
                       fontFamily: 'Outfit, sans-serif',
                       lineHeight: 1.6,
+                      textAlign: 'justify',
                     }}
                   >
                     LATAM Operations Center

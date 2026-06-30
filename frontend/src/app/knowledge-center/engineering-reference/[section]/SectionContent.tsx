@@ -59,6 +59,7 @@ export default function SectionContent({ section, prev, next }: Props) {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -72,8 +73,8 @@ export default function SectionContent({ section, prev, next }: Props) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.65)',
               textAlign: 'justify',
+              color: 'rgba(255,255,255,0.65)',
             }}
           >
             {section.definition}
@@ -104,8 +105,8 @@ export default function SectionContent({ section, prev, next }: Props) {
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             lineHeight: 1.75,
-            color: 'rgba(255,255,255,0.75)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.75)',
           }}>
             {section.engineeringPurpose}
           </p>
@@ -184,8 +185,8 @@ export default function SectionContent({ section, prev, next }: Props) {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.85rem',
                   lineHeight: 1.65,
-                  color: 'rgba(255,255,255,0.6)',
                   textAlign: 'justify',
+                  color: 'rgba(255,255,255,0.6)',
                 }}>
                   {concept.definition}
                 </p>
@@ -271,6 +272,7 @@ export default function SectionContent({ section, prev, next }: Props) {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.875rem',
                 lineHeight: 1.65,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
               }}>
                 {fc}
@@ -369,15 +371,7 @@ export default function SectionContent({ section, prev, next }: Props) {
           transition={{ duration: 0.4, delay: 0.45 }}
           style={{ marginBottom: '3rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.6rem',
-            letterSpacing: '0.12em',
-            color: 'rgba(255,255,255,0.3)',
-            marginBottom: '0.75rem',
-          }}>
-            08 / REFERENCES
-          </p>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {section.references.map((ref, i) => (
               <p key={i} style={{
@@ -385,6 +379,7 @@ export default function SectionContent({ section, prev, next }: Props) {
                 fontSize: '0.7rem',
                 color: 'rgba(255,255,255,0.3)',
                 lineHeight: 1.6,
+                textAlign: 'justify',
               }}>
                 {ref}
               </p>

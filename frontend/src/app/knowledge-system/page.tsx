@@ -170,6 +170,7 @@ export default function KnowledgeSystemPage() {
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em',
             lineHeight: 1.15, marginBottom: '1rem',
+            textAlign: 'justify',
           }}>
             Industrial Asset Protection Knowledge System
           </h1>
@@ -208,8 +209,8 @@ export default function KnowledgeSystemPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
-            marginBottom: '2.5rem',
             textAlign: 'justify',
+            marginBottom: '2.5rem',
           }}>
             The ELIMFILTERS Knowledge System is structured around the asset protection ontology: industry context defines which{' '}
             <Link href="/knowledge-system/science" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
@@ -246,6 +247,7 @@ export default function KnowledgeSystemPage() {
                 <p style={{
                   fontSize: '0.83rem', color: 'rgba(255,255,255,0.7)',
                   fontFamily: 'Inter, sans-serif', lineHeight: 1.5, margin: '0 0 0.5rem',
+                  textAlign: 'justify',
                 }}>
                   {item.label}
                 </p>
@@ -302,6 +304,7 @@ export default function KnowledgeSystemPage() {
                     fontFamily: 'Outfit, sans-serif',
                     fontSize: '1.05rem', fontWeight: 600,
                     color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.4,
+                    textAlign: 'justify',
                     marginTop: '-0.5rem',
                   }}>
                     {section.title}
@@ -311,6 +314,7 @@ export default function KnowledgeSystemPage() {
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.55)',
                     lineHeight: 1.65, marginTop: 'auto',
+                    textAlign: 'justify',
                   }}>
                     {section.description}
                   </p>
@@ -366,6 +370,7 @@ export default function KnowledgeSystemPage() {
                   fontSize: '0.975rem', fontWeight: 700,
                   fontFamily: 'Outfit, sans-serif', color: '#fff',
                   margin: '0 0 0.875rem', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>
                   {faq.q}
                 </h3>

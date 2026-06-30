@@ -70,6 +70,7 @@ export default function ComparisonHubPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1rem',
           }}>
             System vs Commodity Thinking
@@ -81,6 +82,7 @@ export default function ComparisonHubPage() {
             maxWidth: '600px',
             margin: '0 auto',
             lineHeight: 1.65,
+            textAlign: 'justify',
           }}>
             Move beyond filter product selection to integrated asset protection system design.
           </p>
@@ -104,6 +106,7 @@ export default function ComparisonHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Industrial filtration has been marketed as a commodity product category. Purchase decisions are driven by brand name recognition, OEM specification alignment, and price competition between Donaldson, Fleetguard, Mann, Wix, Baldwin, and aftermarket suppliers. The <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration selection</Link> framework explains why this product-first approach systematically underperforms a system-level contamination control strategy.
@@ -113,6 +116,7 @@ export default function ComparisonHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             ELIMFILTERS reframes this conversation: <strong style={{ color: '#FFF12D' }}>Filtration is not a product selection problem. It is a contamination control system problem.</strong> The performance of your equipment is determined not by the filter brand, but by how effectively your total filtration system controls contamination across all critical domains—air, fuel, hydraulic, cabin, lube, and compressed air.
@@ -122,6 +126,7 @@ export default function ComparisonHubPage() {
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.8,
+            textAlign: 'justify',
           }}>
             This framework explains why <Link href="/knowledge-system/compare/system-vs-commodity" style={{ color: '#FFF12D', textDecoration: 'underline' }}>system vs commodity thinking</Link> changes equipment reliability, extends asset lifespan, and reduces total cost of ownership—regardless of which physical filter products are installed.
           </p>
@@ -169,6 +174,7 @@ export default function ComparisonHubPage() {
                     color: '#fff',
                     letterSpacing: '-0.01em',
                     lineHeight: 1.4,
+                    textAlign: 'justify',
                   }}>
                     {section.title}
                   </h2>
@@ -178,6 +184,7 @@ export default function ComparisonHubPage() {
                     fontSize: '0.875rem',
                     color: 'rgba(255,255,255,0.45)',
                     lineHeight: 1.6,
+                    textAlign: 'justify',
                     marginTop: 'auto',
                   }}>
                     {section.description}

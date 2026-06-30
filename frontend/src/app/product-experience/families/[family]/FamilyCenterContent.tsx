@@ -94,6 +94,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3.2rem)',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -108,9 +109,9 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             {family.purpose}
@@ -173,19 +174,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>01 / PURPOSE</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.25rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Filtration Role in {system.name}
           </h2>
@@ -193,8 +188,8 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.75)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.75)',
           }}>
             {family.purpose}
           </p>
@@ -208,19 +203,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>02 / ENGINEERING DESIGN</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.25rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Media Architecture and Construction Principles
           </h2>
@@ -228,8 +217,8 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.75)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.75)',
           }}>
             {family.engineering}
           </p>
@@ -243,19 +232,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>03 / APPLICATIONS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Primary Equipment Applications
           </h2>
@@ -282,6 +265,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.9rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.75)',
                 }}>
                   {app}
@@ -299,19 +283,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>04 / CONSTRUCTION</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.25rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Physical Construction and Materials
           </h2>
@@ -319,8 +297,8 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.75)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.75)',
           }}>
             {family.construction}
           </p>
@@ -334,19 +312,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>05 / TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Filtration Technologies Applied
           </h2>
@@ -398,6 +370,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
                           fontFamily: 'Inter, sans-serif',
                           fontSize: '0.85rem',
                           lineHeight: 1.65,
+                          textAlign: 'justify',
                           color: 'rgba(255,255,255,0.6)',
                         }}>
                           {tech.engineeringPrinciple}
@@ -439,19 +412,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>06 / APPLICABLE STANDARDS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Testing and Classification Standards
           </h2>
@@ -479,19 +446,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>07 / HEAVY DUTY PRODUCTS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             HD Series — {family.hdPrefix ? `${family.hdPrefix}XXXX` : 'Not Available'}
           </h2>
@@ -515,6 +476,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
                 fontSize: '0.85rem',
                 color: 'rgba(255,255,255,0.4)',
                 lineHeight: 1.6,
+                textAlign: 'justify',
               }}>
                 Individual Heavy Duty product specifications, dimensions, cross-references, and vehicle application listings are not yet available in this documentation system. Use the product search to find specific {family.hdPrefix} part numbers.
               </p>
@@ -555,19 +517,13 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
           viewport={{ once: true }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: '#FFF12D',
-            letterSpacing: '0.12em',
-            marginBottom: '1rem',
-          }}>08 / LIGHT DUTY PRODUCTS</p>
           <h2 style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 600,
             fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             LD Series — {family.ldPrefix ? `${family.ldPrefix}XXXX` : 'Not Available'}
           </h2>
@@ -591,6 +547,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
                 fontSize: '0.85rem',
                 color: 'rgba(255,255,255,0.4)',
                 lineHeight: 1.6,
+                textAlign: 'justify',
               }}>
                 Individual Light Duty product specifications, dimensions, cross-references, and vehicle application listings are not yet available in this documentation system. Use the product search to find specific {family.ldPrefix} part numbers.
               </p>
@@ -628,6 +585,7 @@ export default function FamilyCenterContent({ family, system, prev, next }: Prop
                 fontSize: '0.85rem',
                 color: 'rgba(255,255,255,0.25)',
                 lineHeight: 1.6,
+                textAlign: 'justify',
               }}>
                 The {family.name} family is a Heavy Duty classification only. Light Duty equivalents in this category are not documented in the ELIMFILTERS product range.
               </p>

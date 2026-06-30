@@ -122,6 +122,7 @@ export default function SearchPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
+              textAlign: 'justify',
               marginBottom: '2rem',
             }}
           >
@@ -319,6 +320,7 @@ export default function SearchPage() {
                           color: '#fff',
                           marginBottom: '0.25rem',
                           lineHeight: 1.25,
+                          textAlign: 'justify',
                         }}>
                           {item.title}
                         </p>
@@ -327,6 +329,7 @@ export default function SearchPage() {
                           fontSize: '0.8rem',
                           color: 'rgba(255,255,255,0.4)',
                           lineHeight: 1.5,
+                          textAlign: 'justify',
                         }}>
                           {item.subtitle.length > 120 ? item.subtitle.slice(0, 120) + '…' : item.subtitle}
                         </p>

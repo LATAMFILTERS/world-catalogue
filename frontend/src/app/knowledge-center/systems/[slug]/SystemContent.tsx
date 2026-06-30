@@ -79,6 +79,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.12,
+              textAlign: 'justify',
               marginBottom: '0.75rem',
             }}
           >
@@ -117,7 +118,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
                 FAILURE MECHANISM
               </p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, textAlign: 'justify' }}>
                 {detail.failureMechanism}
               </p>
             </motion.div>
@@ -164,7 +165,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                   }}>
                     {m.value}
                   </p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
                     {m.label}
                   </p>
                 </div>

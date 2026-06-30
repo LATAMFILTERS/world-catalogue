@@ -50,6 +50,7 @@ export default function TechnologiesPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
+              textAlign: 'justify',
               marginBottom: '1.25rem',
             }}
           >
@@ -64,9 +65,9 @@ export default function TechnologiesPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '620px',
-              textAlign: 'justify',
             }}
           >
             Nine proprietary filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the ISO standards that govern performance measurement, and the industrial systems it protects.
@@ -128,9 +129,9 @@ export default function TechnologiesPage() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.55)',
                   marginBottom: '1.25rem',
-                  textAlign: 'justify',
                 }}>
                   {tech.tagline}
                 </p>

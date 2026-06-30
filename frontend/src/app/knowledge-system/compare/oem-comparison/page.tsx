@@ -37,6 +37,7 @@ export default function OEMComparisonPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function OEMComparisonPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -64,45 +66,36 @@ export default function OEMComparisonPage() {
       {/* Content Sections */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / The OEM Requirement Myth */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            01 / THE OEM REQUIREMENT MYTH
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why "OEM-Specified" Doesn't Mean Optimized
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Original Equipment Manufacturers (Caterpillar, Cummins, Detroit Diesel, Volvo, Komatsu, etc.) specify filter brands and types based on:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1rem',
@@ -115,52 +108,43 @@ export default function OEMComparisonPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             OEM specifications (Donaldson, Fleetguard, Mann, Wix, Baldwin, etc.) represent a <strong>minimum compliance floor, not a performance target</strong>. The OEM is optimizing for cost and warranty liability risk, not for your equipment's operational lifespan.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             Many OEM-specified filters are high-quality products. But specification compliance and product quality are separate dimensions. A high-quality Donaldson filter installed with commodity maintenance practices will fail to maintain contamination control. Understanding the <Link href="/knowledge-system/bridges/oem-replacement" style={{ color: '#FFF12D', textDecoration: 'underline' }}>OEM replacement context</Link> clarifies when brand choice is a compliance issue versus when system design is the controlling variable. An equivalent quality aftermarket filter installed as part of a system-level contamination control strategy will outperform commodity practice.
           </p>
         </motion.section>
 
-        {/* 02 / OEM Brand Landscape */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            02 / MAJOR MARKET BRANDS
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Understanding the Competitive Landscape
           </h2>
           <p style={{
             fontSize: '0.95rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.65)',
             marginBottom: '2rem',
             fontStyle: 'italic',
@@ -189,6 +173,7 @@ export default function OEMComparisonPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
               }}>
                 Strength: Brand recognition, integration with OEM systems, proven field reliability. Weakness: High cost, standardized intervals (not contamination-responsive), commodity market positioning.
@@ -211,6 +196,7 @@ export default function OEMComparisonPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
               }}>
                 Strength: Cost advantage, specification compatibility, availability. Weakness: Less integrated with OEM systems, variable quality across product lines, limited system-level approach.
@@ -233,6 +219,7 @@ export default function OEMComparisonPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
               }}>
                 Strength: System-level contamination control across all domains (air, fuel, hydraulic, cabin, lube, compressed air), measurement-based service intervals, TCO optimization, measurable equipment reliability improvement. Focus: Contamination control strategy, not product commodity.
@@ -241,39 +228,29 @@ export default function OEMComparisonPage() {
           </div>
         </motion.section>
 
-        {/* 03 / When OEM Choice Matters */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            03 / WHEN OEM CHOICE MATTERS
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Specification Alignment and System Integration
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             OEM filter brand choice is relevant when:
           </p>
@@ -287,6 +264,7 @@ export default function OEMComparisonPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -303,6 +281,7 @@ export default function OEMComparisonPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -319,6 +298,7 @@ export default function OEMComparisonPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -328,15 +308,16 @@ export default function OEMComparisonPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
-            textAlign: 'justify',
           }}>
             Outside these specific constraints, OEM brand choice has minimal impact on actual equipment performance. The operational consequences of this distinction are quantified in the <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fleet downtime reduction analysis</Link>, which shows how system design — not brand selection — drives availability outcomes. Performance is governed by:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
           }}>
@@ -347,29 +328,19 @@ export default function OEMComparisonPage() {
           </ul>
         </motion.section>
 
-        {/* 04 / System Perspective */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            04 / THE ELIMFILTERS ADVANTAGE
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Moving Beyond Brand Comparison
           </h2>
@@ -382,6 +353,7 @@ export default function OEMComparisonPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
             }}>
@@ -390,6 +362,7 @@ export default function OEMComparisonPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginLeft: '1.5rem',
               marginBottom: '0',
@@ -414,9 +387,9 @@ export default function OEMComparisonPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginTop: '1.5rem',
-            textAlign: 'justify',
           }}>
             <strong style={{ color: '#FFF12D' }}>Result:</strong> Equipment reliability improves not because of which filter brand is installed, but because contamination is controlled. The filter brand becomes an implementation detail, selected based on cost efficiency and specification match, not brand positioning or price competition.
           </p>

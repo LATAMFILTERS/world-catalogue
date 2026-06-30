@@ -93,7 +93,7 @@ export default function V2ConsultPage() {
         <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>
           Multi-Agent Technical Reasoning
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '0.5rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginBottom: '0.5rem', lineHeight: 1.6, textAlign: 'justify' }}>
           Chief Reasoning Engine routes your query to specialist agents: Hydraulic, Filtration, Tribology, Contamination, Standards, and more.
           Every response requires traceability — physical principle, standard applied, confidence level.
         </p>
@@ -162,6 +162,7 @@ export default function V2ConsultPage() {
                   padding: '1rem 1.1rem',
                   fontSize: '0.88rem',
                   lineHeight: 1.7,
+                  textAlign: 'justify',
                   whiteSpace: 'pre-wrap',
                   fontFamily: m.blocked ? 'JetBrains Mono, monospace' : 'Inter, sans-serif',
                 }}>

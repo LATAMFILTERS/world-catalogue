@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 export default function HydraulicSystemContaminationPage() {
   const sections = [
@@ -90,6 +91,7 @@ export default function HydraulicSystemContaminationPage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
+            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Hydraulic System Contamination
@@ -297,7 +299,7 @@ export default function HydraulicSystemContaminationPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>💧 WATER</p>
-                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Water ingress and microbial growth</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, textAlign: 'justify' }}>Water ingress and microbial growth</p>
               </div>
             </Link>
             <Link href="/knowledge-system/contamination/particle-wear" style={{ textDecoration: 'none' }}>
@@ -318,7 +320,7 @@ export default function HydraulicSystemContaminationPage() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', margin: '0 0 0.5rem 0' }}>⚙ PARTICLE WEAR</p>
-                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5 }}>Abrasive contamination and wear</p>
+                <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, textAlign: 'justify' }}>Abrasive contamination and wear</p>
               </div>
             </Link>
           </div>
@@ -357,6 +359,9 @@ export default function HydraulicSystemContaminationPage() {
           { '@type': 'Question', name: 'How do valve spools become stuck and can they be cleaned?', acceptedAnswer: { '@type': 'Answer', text: 'Valve spool stiction results from: (1) Particle lodging in radial clearance (10-20 microns) between spool and housing bore; (2) Varnish film deposit forming an adhesive layer; (3) Corrosion product layer from water-induced oxidation. In-situ cleaning is unreliable - circulating high-pressure flush does not dislodge embedded particles or varnish; success rate <30%. Spool replacement is necessary: Remove valve cartridge (0.5-2 hour labor), soak original spool in hydraulic system cleaner for 24 hours (may recover 50%), test cleaned spool actuation with pilot pressure. Prevention through contamination control is far more cost-effective than spool replacement: maintain ISO 16889 16/14/11 maximum cleanliness.' } },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+        <RelatedProducts filterType="hydraulic filter" duty="HEAVY_DUTY" searchQuery="hydraulic filter heavy duty" label="VER FILTROS HIDRÁULICOS RELACIONADOS" />
+      </div>
     </main>
   );
 }

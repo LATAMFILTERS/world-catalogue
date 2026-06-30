@@ -37,6 +37,7 @@ export default function TCOPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -49,6 +50,7 @@ export default function TCOPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -64,48 +66,38 @@ export default function TCOPage() {
       {/* Content Sections */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
 
-        {/* 01 / The Hidden Cost Problem */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            01 / THE HIDDEN COST PROBLEM
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Purchase Price vs Operating Reality
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Commodity filtration purchasing focuses on per-unit filter cost. A Donaldson, Fleetguard, or Mann filter might cost $35-$75 depending on type. Aftermarket alternatives cost $15-$35. Price competition drives purchasing decisions.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             But total cost of ownership includes hidden costs that commodity pricing completely ignores. The foundations of a sound TCO model are explained through the lens of <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration system design</Link>, where contamination control is treated as an engineering measurable rather than a procurement variable:
           </p>
@@ -119,6 +111,7 @@ export default function TCOPage() {
             <p style={{
               fontSize: '0.9rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -135,6 +128,7 @@ export default function TCOPage() {
             <p style={{
               fontSize: '0.9rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -151,6 +145,7 @@ export default function TCOPage() {
             <p style={{
               fontSize: '0.9rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: 0,
             }}>
@@ -159,39 +154,29 @@ export default function TCOPage() {
           </div>
         </motion.section>
 
-        {/* 02 / TCO Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            02 / TCO CALCULATION FRAMEWORK
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             System-Level Cost Analysis
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Total cost of ownership includes all costs associated with equipment operation over its useful life:
           </p>
@@ -219,6 +204,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -227,6 +213,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 Commodity approach: lowest per-unit cost
@@ -250,6 +237,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -258,6 +246,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 System approach: optimized interval reduces frequency
@@ -281,6 +270,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -289,6 +279,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 Commodity approach: ignores; System approach: eliminated via prevention
@@ -312,6 +303,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -320,6 +312,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 Commodity approach: not prevented; System approach: eliminated or deferred
@@ -343,6 +336,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -351,6 +345,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 Commodity approach: not prevented; System approach: eliminated via cleanliness
@@ -374,6 +369,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 marginBottom: '0.5rem',
               }}>
@@ -382,6 +378,7 @@ export default function TCOPage() {
               <p style={{
                 fontSize: '0.8rem',
                 lineHeight: 1.4,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 Commodity approach: occurs early; System approach: deferred 30-50%
@@ -390,30 +387,20 @@ export default function TCOPage() {
           </div>
         </motion.section>
 
-        {/* 03 / Real-World Example */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            03 / REAL-WORLD EXAMPLE
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Heavy-Duty Diesel Engine Over 10-Year Lifespan
           </h2>
@@ -440,6 +427,7 @@ export default function TCOPage() {
               <ul style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 listStyle: 'none',
                 padding: 0,
@@ -470,6 +458,7 @@ export default function TCOPage() {
               <ul style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 listStyle: 'none',
                 padding: 0,
@@ -501,6 +490,7 @@ export default function TCOPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
             }}>
               System-level filtration costs 10% more per service cycle but saves 89% in total equipment ownership cost. The difference is generated by preventing contamination-driven failures before they occur.
@@ -508,35 +498,26 @@ export default function TCOPage() {
           </div>
         </motion.section>
 
-        {/* 04 / Key Insights */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            04 / KEY INSIGHTS
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why TCO Analysis Changes Everything
           </h2>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
           }}>

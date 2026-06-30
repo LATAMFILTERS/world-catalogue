@@ -89,6 +89,7 @@ export default function DistributorsPage() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.95rem',
                 lineHeight: 1.75,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.45)',
                 maxWidth: '520px',
               }}
@@ -156,6 +157,7 @@ export default function DistributorsPage() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.85rem',
                   lineHeight: 1.65,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.5)',
                   margin: 0,
                 }}>
@@ -249,6 +251,7 @@ export default function DistributorsPage() {
                 color: '#fff',
                 margin: 0,
                 lineHeight: 1.2,
+                textAlign: 'justify',
               }}>
                 Become an Authorized Distributor
               </h2>
@@ -259,6 +262,7 @@ export default function DistributorsPage() {
                 marginTop: '0.75rem',
                 maxWidth: '420px',
                 lineHeight: 1.7,
+                textAlign: 'justify',
               }}>
                 Join the ELIMFILTERS distribution network and provide industrial asset protection systems to your region.
               </p>

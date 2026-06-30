@@ -466,13 +466,13 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroSubtitle: 'WATER SEPARATOR',
     heroTagline: 'Hydrophobic protection technology achieving 99.8% water separation efficiency from fuel systems. Three-phase water interception — free, emulsified and dissolved — before contamination reaches the injection circuit.',
 
-    heroImage: '/images/hydrocore-hero.avif',
+    heroImage: '/assets/HYDROCORE.avif',
     heroStats: [
       { key: 'EFFICIENCY', value: '99.8%' },
       { key: 'BARRIER TYPE', value: 'HYDROPHOBIC' },
       { key: 'PROTECTION', value: 'WATER REPULSION' },
     ],
-    logoSrc: '/images/hydrocore(fn).avif',
+    logoSrc: '',
     systemHeadline: 'HYDROPHOBIC DEFENSE.\nWATER CANNOT PASS.',
     systemParagraphs: [
       'Water contamination in fuel systems operates across three phases: free water that settles and can be drained, emulsified water suspended in micro-droplets that conventional filters cannot intercept, and dissolved water that forms free phase when temperature changes. Each phase causes a different failure mode — microbial growth, injector corrosion, and cavitation erosion respectively.',

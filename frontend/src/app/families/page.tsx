@@ -68,7 +68,7 @@ export default function FamiliesPage() {
                       <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: '1.05rem', color: '#fff' }}>
                         {fam.name}
                       </p>
-                      <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>
+                      <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.5, textAlign: 'justify' }}>
                         {fam.purpose.slice(0, 90)}…
                       </p>
                       <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em', marginTop: '0.5rem' }}>

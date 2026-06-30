@@ -31,8 +31,6 @@ const TECH_COMPARISON = [
   { name: 'THERMACORE™', slug: 'thermacore', system: 'Cooling System Protection', func: 'SCA gradual-release for cylinder liner cavitation prevention', metric: 'Passive dosing · 5 metals · full service interval', industries: 'Heavy Transport, Power Gen, Agriculture, Mining' },
   { name: 'DRYCORE™', slug: 'drycore', system: 'Compressed Air Protection', func: 'Molecular sieve desiccant for pneumatic systems', metric: 'Zero moisture breakthrough · −40°C rated', industries: 'Railway, Bus & Coach, Industrial pneumatics' },
   { name: 'INTEKCORE™', slug: 'intekcore', system: 'Housing Systems', func: 'High-pressure filter housings for trucks & machinery', metric: 'Zero-bypass seal · OEM-compatible threads', industries: 'Heavy Trucks, Mining, Construction, Agriculture' },
-  { name: 'MARINECLEAN™', slug: 'marineclean', system: 'Marine Protection', func: 'Salt-resistant fuel and hydraulic filtration', metric: 'IMO certified · epoxy coating · brine rejection', industries: 'Marine, Offshore, Coastal infrastructure' },
-  { name: 'DURATECH™', slug: 'duratech', system: 'Fleet Maintenance Systems', func: 'Master kit consolidation for mixed-model fleets', metric: 'OEM-interchangeable · single-source per service', industries: 'Trucks & Fleets, Mining, Construction, Agriculture' },
   { name: 'MICROKAPPA™', slug: 'microkappa', system: 'Cabin Air Protection', func: 'Electrostatic + carbon + HEPA cabin occupant protection', metric: 'PM2.5 99% · VOC 95% · HEPA 99.97% at 0.3µm', industries: 'Trucks, Bus & Coach, Construction, Mining' },
 ];
 
@@ -117,22 +115,6 @@ const SCROLL_ITEMS: iCardItem[] = [
     src: '/assets/MICROKAPPA.avif',
     href: '/technologies/microkappa',
   },
-  {
-    title: 'MARINECLEAN™',
-    subtitle: 'Salt-Resistant Marine Filtration',
-    description: 'Epoxy coating, brine rejection geometry, and corrosion-shield internals. IMO certified for continuous saltwater aerosol exposure in fuel and hydraulic systems.',
-    system: 'Marine · Offshore',
-    src: '/assets/MARINECLEAN.avif',
-    href: '/technologies/marineclean',
-  },
-  {
-    title: 'DURATECH™',
-    subtitle: 'Fleet Master Kit System',
-    description: 'Consolidated service kits with oil, fuel, air, and cabin elements per vehicle platform. OEM-interchangeable, single-source per service cycle for mixed-model fleets.',
-    system: 'Fleet Maintenance',
-    src: '/assets/Duratech.avif',
-    href: '/technologies/duratech',
-  },
 ];
 
 const FAQS = [
@@ -195,9 +177,9 @@ export default function TechnologiesPage() {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: 'ELIMFILTERS Proprietary Technologies — Asset Protection Platform',
-        description: 'Twelve proprietary technologies organized within five protection systems: Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Protection, Hydraulic Protection, and Cooling System Protection.',
+        description: 'Ten proprietary technologies organized within five protection systems: Air Intake & Airflow Protection, Fuel Cleanliness Protection, Lubrication Protection, Hydraulic Protection, and Cooling System Protection.',
         url: 'https://elimfilters.com/technologies/',
-        numberOfItems: 12,
+        numberOfItems: 10,
         itemListElement: itemListData,
       }) }} />
 
@@ -262,7 +244,7 @@ export default function TechnologiesPage() {
             lineHeight: 1.75,
             margin: 0,
           }}>
-            Twelve proprietary architectures. Each engineered to control a specific contamination mechanism that causes equipment failure.
+            Ten proprietary architectures. Each engineered to control a specific contamination mechanism that causes equipment failure.
           </p>
         </motion.div>
 
@@ -294,8 +276,84 @@ export default function TechnologiesPage() {
         </motion.div>
       </section>
 
-      {/* Scroll Cards — 12 Technologies */}
+      {/* Scroll Cards — 10 Technologies */}
       <ScrollCards items={SCROLL_ITEMS} />
+
+      {/* Commercial Lines */}
+      <section style={{
+        padding: 'clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,3rem)',
+        background: '#000',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{ marginBottom: '2.5rem' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem' }}>
+              COMMERCIAL LINES
+            </p>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', color: '#fff', letterSpacing: '-0.01em', marginBottom: '0.6rem' }}>
+              Specialized Product Lines
+            </h2>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: '560px' }}>
+              Sector-specific and application-packaged product lines built on ELIMFILTERS filtration technologies.
+            </p>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(400px, 100%), 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
+            {[
+              {
+                title: 'MARINECLEAN™',
+                subtitle: 'Salt-Resistant Marine Filtration',
+                body: 'Epoxy coating, brine rejection geometry, and corrosion-shield internals. IMO certified for continuous saltwater aerosol exposure in diesel fuel and hydraulic systems operating in harbor, offshore, and deep-sea environments.',
+                tag: 'Marine · Offshore',
+                src: '/assets/MARINECLEAN.avif',
+                href: '/commercial-lines/marineclean',
+              },
+              {
+                title: 'DURATECH™',
+                subtitle: 'Fleet Master Kit System',
+                body: 'Consolidated service kits with oil, fuel, air, and cabin elements per vehicle platform. OEM-interchangeable, single-source per service cycle for mixed-model fleet operations.',
+                tag: 'Fleet Maintenance',
+                src: '/assets/Duratech.avif',
+                href: '/commercial-lines/duratech',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Link href={item.href} style={{ textDecoration: 'none', display: 'block' }}>
+                  <motion.div
+                    whileHover={{ background: 'rgba(255,255,255,0.03)' }}
+                    transition={{ duration: 0.15 }}
+                    style={{ background: '#000', padding: '2.5rem', display: 'flex', gap: '2rem', alignItems: 'flex-start' }}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      style={{ width: '100px', height: '100px', objectFit: 'contain', flexShrink: 0, filter: 'brightness(0) invert(1)', opacity: 0.85 }}
+                    />
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>{item.tag}</p>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>{item.title}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', fontWeight: 500, color: 'rgba(255,255,255,0.45)', marginBottom: '0.25rem' }}>{item.subtitle}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.65 }}>{item.body}</p>
+                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.08em', marginTop: '0.5rem' }}>EXPLORE →</p>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Asset Protection Narrative */}
       <section style={{

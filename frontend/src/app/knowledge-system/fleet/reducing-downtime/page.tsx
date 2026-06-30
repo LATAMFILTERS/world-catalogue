@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const RELATED_PAGES = [
   { code: 'FUEL', title: 'Filtration and Fuel Efficiency', href: '/knowledge-system/fleet/fuel-efficiency' },
@@ -76,6 +77,7 @@ export default function ReducingDowntimePage() {
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Reducing Fleet Downtime
           </h1>
@@ -98,10 +100,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>01 / DEFINITION</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -128,10 +126,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.15 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -164,10 +158,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>03 / COST IMPACT</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -191,6 +181,7 @@ export default function ReducingDowntimePage() {
                 <div style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{item.label}</div>
               </div>
             ))}
@@ -211,10 +202,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.25 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -268,10 +255,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -297,6 +280,7 @@ export default function ReducingDowntimePage() {
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
                   color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, margin: 0,
+                  textAlign: 'justify',
                 }}>{benefit}</p>
               </div>
             ))}
@@ -311,10 +295,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.35 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -338,6 +318,7 @@ export default function ReducingDowntimePage() {
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.5)', lineHeight: 1.6,
+                    textAlign: 'justify',
                   }}>{tech.role}</p>
                 </motion.div>
               </Link>
@@ -353,10 +334,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>07 / RELATED STANDARDS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -377,6 +354,7 @@ export default function ReducingDowntimePage() {
                 <span style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.55,
+                  textAlign: 'justify',
                 }}>{std.desc}</span>
               </div>
             ))}
@@ -391,10 +369,6 @@ export default function ReducingDowntimePage() {
           transition={{ duration: 0.5, delay: 0.45 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
@@ -408,6 +382,7 @@ export default function ReducingDowntimePage() {
                 <p style={{
                   fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
@@ -488,6 +463,9 @@ export default function ReducingDowntimePage() {
           { '@type': 'Question', name: 'Can extended oil drain intervals increase unplanned downtime risk?', acceptedAnswer: { '@type': 'Answer', text: 'Extended drain intervals reduce planned maintenance frequency but increase contamination accumulation risk when filter element capacity is not proportionally upgraded. Oil oxidation byproducts and wear metal concentration both rise monotonically with service hours. When drain extensions are implemented without corresponding changes to filtration specification - higher efficiency elements or bypass filtration - the probability of in-service fluid degradation reaching critical thresholds increases significantly.' } },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+        <RelatedProducts filterType="oil filter" duty="HEAVY_DUTY" searchQuery="oil filter heavy duty" label="VER FILTROS RELACIONADOS" />
+      </div>
     </main>
   );
 }

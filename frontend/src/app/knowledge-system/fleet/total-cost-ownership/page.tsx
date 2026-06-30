@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { motion } from 'motion/react';
+import { RelatedProducts } from '@/components/RelatedProducts';
 
 const RELATED_PAGES = [
   { code: 'DOWNTIME', title: 'Reducing Fleet Downtime', href: '/knowledge-system/fleet/reducing-downtime' },
@@ -101,6 +102,7 @@ export default function TotalCostOwnershipPage() {
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, marginBottom: '1.5rem',
+            textAlign: 'justify',
           }}>
             Total Cost of Ownership in Filtration
           </h1>
@@ -123,10 +125,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>01 / DEFINITION</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -153,10 +151,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.15 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>02 / OPERATIONAL CHALLENGE</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -189,10 +183,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>03 / COST IMPACT</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -213,6 +203,7 @@ export default function TotalCostOwnershipPage() {
                     <li key={item} style={{
                       fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                       color: 'rgba(255,255,255,0.55)', lineHeight: 1.5,
+                      textAlign: 'justify',
                       paddingBottom: '0.4rem', display: 'flex', gap: '0.5rem', alignItems: 'flex-start',
                     }}>
                       <span style={{ color: '#FFF12D', opacity: 0.4, flexShrink: 0 }}>-</span>
@@ -246,6 +237,7 @@ export default function TotalCostOwnershipPage() {
                 <div style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{item.label}</div>
               </div>
             ))}
@@ -260,10 +252,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.25 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>04 / FILTRATION STRATEGY</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -311,10 +299,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>05 / OPERATIONAL BENEFITS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -340,6 +324,7 @@ export default function TotalCostOwnershipPage() {
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
                   color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, margin: 0,
+                  textAlign: 'justify',
                 }}>{benefit}</p>
               </div>
             ))}
@@ -354,10 +339,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.35 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>06 / RELATED TECHNOLOGIES</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -381,6 +362,7 @@ export default function TotalCostOwnershipPage() {
                   <p style={{
                     fontFamily: 'Inter, sans-serif', fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.5)', lineHeight: 1.6,
+                    textAlign: 'justify',
                   }}>{tech.role}</p>
                 </motion.div>
               </Link>
@@ -396,10 +378,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>07 / RELATED STANDARDS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -420,6 +398,7 @@ export default function TotalCostOwnershipPage() {
                 <span style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.5)', lineHeight: 1.55,
+                  textAlign: 'justify',
                 }}>{std.desc}</span>
               </div>
             ))}
@@ -434,10 +413,6 @@ export default function TotalCostOwnershipPage() {
           transition={{ duration: 0.5, delay: 0.45 }}
           style={{ marginBottom: '3.5rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
-            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>08 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',
@@ -451,6 +426,7 @@ export default function TotalCostOwnershipPage() {
                 <p style={{
                   fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem',
                   fontWeight: 600, color: '#fff', marginBottom: '0.85rem', lineHeight: 1.5,
+                  textAlign: 'justify',
                 }}>{faq.q}</p>
                 <p style={{
                   fontFamily: 'Inter, sans-serif', fontSize: '0.875rem',
@@ -531,6 +507,9 @@ export default function TotalCostOwnershipPage() {
           { '@type': 'Question', name: 'How should filtration specifications change when equipment is operating beyond design lifespan?', acceptedAnswer: { '@type': 'Answer', text: 'Equipment operating beyond original design lifespan - typically defined as hours exceeding the first major overhaul interval - experiences accelerated wear particle generation from clearance growth in worn components. Worn engine cylinders generate more blow-by gas carrying oil-soluble contaminants. Worn hydraulic pump internals generate higher wear debris loads. In these conditions, upgrading to higher-efficiency filter elements (lower beta ratio) and shortening sampling intervals for oil analysis is justified. The additional filtration cost delays further component degradation and extends economic service life, deferring capital replacement expenditure.' } },
         ],
       }) }} />
+      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+        <RelatedProducts filterType="oil filter" duty="HEAVY_DUTY" searchQuery="oil filter heavy duty" label="VER FILTROS RELACIONADOS" />
+      </div>
     </main>
   );
 }

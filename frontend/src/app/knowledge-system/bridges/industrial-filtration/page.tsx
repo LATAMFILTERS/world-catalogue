@@ -36,6 +36,7 @@ export default function IndustrialFiltrationPage() {
               fontFamily: 'Titillium Web, sans-serif',
               marginBottom: '1.5rem',
               lineHeight: 1.1,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.9)',
             }}
           >
@@ -48,6 +49,7 @@ export default function IndustrialFiltrationPage() {
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'Titillium Web, sans-serif',
               maxWidth: '700px',
@@ -72,49 +74,39 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ maxWidth: '860px', margin: '0 auto' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            CONTEXT
-          </p>
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why Industrial Filtration Decisions Matter
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Industrial equipment operates across extreme environments—dusty construction sites, marine salt air, high-temperature manufacturing facilities, sub-zero climates. Equipment reliability depends entirely on how effectively filtration systems control contamination across all critical domains: air intake, fuel, lube oil, hydraulic, cabin, and compressed air.
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             A single filtration decision—which filter to install—impacts equipment lifespan (30-50% difference), operational downtime (emergency repairs vs. planned maintenance), and total cost of ownership (factor of 8-10x difference over equipment lifetime).
           </p>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             Yet most industrial operations approach filtration as a commodity product selection problem: "Which brand?" "What's the OEM spec?" "What's the cheapest option?" This page bridges that product-focused thinking into system-level asset protection.
           </p>
@@ -130,32 +122,23 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            01 / TRADITIONAL INDUSTRIAL FILTRATION SELECTION
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             The Equipment-Brand-Interval Model
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             Traditional industrial filtration selection follows a structured but product-focused approach:
           </p>
@@ -169,10 +152,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Step 1: Identify Equipment Type</strong><br/>
               Determine the specific equipment model (diesel engine, hydraulic pump, air compressor, transmission, etc.)
@@ -180,10 +163,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Step 2: Check OEM Specification</strong><br/>
               Consult the equipment manual for the OEM-specified filter brand, part number, micron rating, and replacement interval
@@ -191,10 +174,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Step 3: Select Filter Product</strong><br/>
               Purchase a filter matching the OEM specification (from OEM supplier, authorized distributor, or aftermarket equivalent)
@@ -202,9 +185,9 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>Step 4: Replace at Interval</strong><br/>
               Install the filter and schedule replacement based on OEM interval (e.g., 250 hours, 6 months, 15,000 km)
@@ -213,8 +196,8 @@ export default function IndustrialFiltrationPage() {
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
-            color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify',
+            color: 'rgba(255,255,255,0.7)',
           }}>
             This approach is straightforward, compliant with warranty requirements, and universally understood. However, it optimizes for OEM compliance and schedule predictability, not for actual equipment protection or cost optimization.
           </p>
@@ -227,29 +210,21 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.35 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            02 / LIMITATIONS OF PRODUCT-BASED THINKING
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Why OEM Intervals and Specifications Fall Short
           </h2>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '0',
@@ -282,32 +257,23 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            03 / ASSET PROTECTION SYSTEM APPROACH
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             From Filter Selection to Contamination Control Strategy
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             System-level filtration design reframes the decision from "which filter product" to "how do we achieve measurable contamination control?" This requires four foundational shifts:
           </p>
@@ -321,10 +287,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. Measure Contamination Targets</strong><br/>
               Define the specific ISO 4406 cleanliness code required for each system type: <Link href="/knowledge-system/standards/lube-oil-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>engine lube (16/14/11)</Link>, <Link href="/knowledge-system/standards/hydraulic-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>hydraulic (17/15/12)</Link>, <Link href="/knowledge-system/standards/fuel-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>fuel (15/13/10)</Link>. This becomes the measurable objective, not OEM spec compliance.
@@ -332,10 +298,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>2. Assess Real Contamination Loads</strong><br/>
               Quantify actual particle ingestion: air intake volume and quality, fuel water content, oil condition, system pressure spikes. Real-world conditions, not theoretical.
@@ -343,10 +309,10 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               marginBottom: '1rem',
               margin: '0 0 1rem 0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>3. Select Filters by Contamination Control Metrics</strong><br/>
               Choose filters based on ISO 16889 Beta Ratio (capture efficiency), dirt holding capacity, and bypass threshold—not just micron rating and OEM brand.
@@ -354,9 +320,9 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '0.95rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               margin: '0',
-              textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>4. Replace Based on Contamination Condition</strong><br/>
               Use particle counting to measure actual cleanliness. Replace filters when contamination approaches limits, not on fixed schedules. Adjust intervals based on real data.
@@ -371,32 +337,23 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.45 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            04 / SYSTEM DOMAINS & TECHNOLOGY MAPPING
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Integrated Contamination Control Across All Domains
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             Industrial equipment contains multiple critical systems, each requiring contamination control:
           </p>
@@ -424,6 +381,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -448,6 +406,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -472,6 +431,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -496,6 +456,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -520,6 +481,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -544,6 +506,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.6)',
                 margin: '0',
               }}>
@@ -560,38 +523,30 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.5 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            06 / STANDARDS & CONTAMINATION FRAMEWORK
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Measurement-Based Equipment Protection
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1rem',
-            textAlign: 'justify',
           }}>
             System-level filtration selection integrates three key standards frameworks:
           </p>
           <ul style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginLeft: '1.5rem',
             marginBottom: '1.5rem',
@@ -619,6 +574,7 @@ export default function IndustrialFiltrationPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: 1.8,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
             }}>
               <strong style={{ color: '#FFF12D' }}>Outcome:</strong> Filtration decision-making shifts from "Is this the OEM-specified filter?" to "Does this filter system maintain our target contamination codes?" The difference is the difference between compliance and equipment protection.
@@ -633,32 +589,23 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.55 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            08 / OPERATIONAL & FLEET IMPACT
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Real-World Equipment Lifespan & Cost Savings
           </h2>
           <p style={{
             fontSize: '1rem',
             lineHeight: 1.8,
+            textAlign: 'justify',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: '1.5rem',
-            textAlign: 'justify',
           }}>
             System-level filtration design delivers quantifiable operational improvements:
           </p>
@@ -685,6 +632,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -708,6 +656,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -731,6 +680,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -754,6 +704,7 @@ export default function IndustrialFiltrationPage() {
               <p style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.6,
+                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.7)',
                 margin: '0',
               }}>
@@ -770,23 +721,14 @@ export default function IndustrialFiltrationPage() {
           transition={{ duration: 0.6, delay: 0.6 }}
           style={{ marginBottom: '4rem' }}
         >
-          <p style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            color: '#FFF12D',
-            fontFamily: 'JetBrains Mono, monospace',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-          }}>
-            09 / RELATED KNOWLEDGE SYSTEM PAGES
-          </p>
+
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
             fontWeight: 700,
             fontFamily: 'Titillium Web, sans-serif',
             marginBottom: '1.5rem',
             lineHeight: 1.2,
+            textAlign: 'justify',
           }}>
             Explore the Complete Contamination Control Framework
           </h2>
@@ -828,6 +770,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>
@@ -868,6 +811,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>
@@ -908,6 +852,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>
@@ -948,6 +893,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>
@@ -988,6 +934,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>
@@ -1028,6 +975,7 @@ export default function IndustrialFiltrationPage() {
                 <p style={{
                   fontSize: '0.85rem',
                   lineHeight: 1.6,
+                  textAlign: 'justify',
                   color: 'rgba(255,255,255,0.6)',
                   margin: '0',
                 }}>

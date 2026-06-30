@@ -80,6 +80,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.12,
+              textAlign: 'justify',
               marginBottom: '0.75rem',
             }}
           >
@@ -109,9 +110,9 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1rem',
               lineHeight: 1.75,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}
           >
             {article.intro}
@@ -190,6 +191,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                 color: '#fff',
                 marginBottom: '1rem',
                 lineHeight: 1.2,
+                textAlign: 'justify',
               }}>
                 {section.heading}
               </h2>
@@ -197,8 +199,8 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.95rem',
                 lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.7)',
                 textAlign: 'justify',
+                color: 'rgba(255,255,255,0.7)',
               }}>
                 {section.body}
               </p>

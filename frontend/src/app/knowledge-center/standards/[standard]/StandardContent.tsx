@@ -84,7 +84,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
                 {String(i + 1).padStart(2, '0')} /
               </p>
-              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.2rem', color: '#fff', marginBottom: '0.875rem', lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.2rem', color: '#fff', marginBottom: '0.875rem', lineHeight: 1.2, textAlign: 'justify' }}>
                 {section.heading}
               </h2>
               <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.93rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.68)', textAlign: 'justify' }}>
@@ -103,7 +103,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
                   <Link key={art.slug} href={`/knowledge-center/engineering/${art.slug}`} style={{ textDecoration: 'none' }}>
                     <motion.div whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }}
                       style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '1.1rem', transition: 'border-color 0.2s', cursor: 'pointer' }}>
-                      <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.25rem', lineHeight: 1.25 }}>{art.title}</p>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.25rem', lineHeight: 1.25, textAlign: 'justify' }}>{art.title}</p>
                       <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>{art.readTime} read</p>
                     </motion.div>
                   </Link>

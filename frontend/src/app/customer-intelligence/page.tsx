@@ -14,7 +14,7 @@ export default function CustomerIntelligencePage() {
           <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem' }}>
             Customer Intelligence
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1rem', marginBottom: '3rem', lineHeight: 1.7 }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1rem', marginBottom: '3rem', lineHeight: 1.7, textAlign: 'justify' }}>
             Capture and analyze field events — equipment installs, service intervals, and part usage — to build operational intelligence across your distributor network.
           </p>
 

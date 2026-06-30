@@ -287,7 +287,6 @@ export default function SciencePage() {
         ← KNOWLEDGE
       </Link>
 
-      {/* 01 — HERO */}
       <section style={{
         paddingTop: 'clamp(5rem, 10vw, 8rem)',
         paddingBottom: '4rem',
@@ -307,6 +306,7 @@ export default function SciencePage() {
             fontWeight: 700,
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
+            textAlign: 'justify',
             marginBottom: '1.25rem',
           }}>
             The Physics of Industrial Failure
@@ -388,7 +388,6 @@ export default function SciencePage() {
         </div>
       </nav>
 
-      {/* 02 — CORE SCIENTIFIC THESIS */}
       <section id="core-thesis" style={{
         padding: 'clamp(3rem, 6vw, 5rem) 2rem',
         background: 'rgba(255,241,45,0.015)',
@@ -400,9 +399,6 @@ export default function SciencePage() {
           transition={{ duration: 0.6, delay: 0.15 }}
           style={{ maxWidth: '860px', margin: '0 auto' }}
         >
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-            02 / CORE SCIENTIFIC THESIS
-          </p>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>
             Industrial Equipment Does Not Fail Randomly
           </h2>
@@ -420,13 +416,9 @@ export default function SciencePage() {
         </motion.div>
       </section>
 
-      {/* 03 — FAILURE CHAIN FRAMEWORK */}
       <section id="failure-chain" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              03 / FAILURE CHAIN FRAMEWORK
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               How Contamination Destroys Industrial Assets
             </h2>
@@ -450,7 +442,7 @@ export default function SciencePage() {
                   <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 700, color: i === 5 ? '#f87171' : '#fff', marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
                     {item.concept}
                   </h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>
                     {item.description}
                   </p>
                 </div>
@@ -460,13 +452,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 04 — PROTECTION CHAIN FRAMEWORK */}
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.02)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              04 / PROTECTION CHAIN FRAMEWORK
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Contamination Control → Asset Life Extension
             </h2>
@@ -490,7 +478,7 @@ export default function SciencePage() {
                   <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1rem', fontWeight: 700, color: i === 4 ? '#4ade80' : '#fff', marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
                     {item.concept}
                   </h3>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>
                     {item.description}
                   </p>
                 </div>
@@ -500,13 +488,10 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 05 — ISO 4406 / BEARING LIFE EVIDENCE */}
       <section id="bearing-life" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              05 / EVIDENCE EXHIBIT — ISO 4406 BEARING LIFE
-            </p>
+
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1rem' }}>
               Cleanliness Code vs. L10 Bearing Life Multiplier
             </h2>
@@ -543,13 +528,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 06 — CONTAMINATION PHYSICS */}
       <section id="contamination-physics" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              06 / CONTAMINATION PHYSICS
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Particle Capture Mechanics and Media Efficiency
             </h2>
@@ -568,13 +549,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 07 — WEAR MECHANISMS */}
       <section id="wear-mechanisms" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              07 / WEAR MECHANISMS
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Four Tribological Failure Pathways
             </h2>
@@ -589,13 +566,13 @@ export default function SciencePage() {
                 style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.07)', padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{w.type}</h3>
+                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', fontWeight: 700, color: '#fff', lineHeight: 1.3, textAlign: 'justify' }}>{w.type}</h3>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.1em', marginLeft: '1rem', flexShrink: 0 }}>{w.code}</span>
                 </div>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{w.mechanism}</p>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{w.mechanism}</p>
                 <div style={{ background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.12)', padding: '0.75rem', marginTop: 'auto' }}>
                   <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', color: 'rgba(255,241,45,0.7)', letterSpacing: '0.06em', marginBottom: '0.3rem' }}>OPERATIONAL IMPACT</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{w.impact}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' }}>{w.impact}</p>
                 </div>
                 <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.06em' }}>SYSTEMS: {w.systems}</p>
               </motion.div>
@@ -604,13 +581,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 08 — FAILURE MODES BY SYSTEM */}
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              08 / FAILURE MODES BY SYSTEM
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Contamination Failure Pathways in Industrial Fluid Systems
             </h2>
@@ -645,13 +618,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 09 — TECHNOLOGY INTEGRATION */}
       <section id="technology-map" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              09 / TECHNOLOGY INTEGRATION
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
               ELIMFILTERS Technologies: Why Each Exists
             </h2>
@@ -671,11 +640,11 @@ export default function SciencePage() {
                     <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#FFF12D', letterSpacing: '0.05em' }}>{tech.code}</span>
                     <div>
                       <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.08em', marginBottom: '0.3rem' }}>ADDRESSES</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{tech.failureMechanism}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, textAlign: 'justify' }}>{tech.failureMechanism}</p>
                     </div>
                     <div>
                       <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.08em', marginBottom: '0.3rem' }}>PROTECTION</p>
-                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{tech.protection}</p>
+                      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>{tech.protection}</p>
                     </div>
                     <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.57rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em' }}>{tech.system}</span>
@@ -689,7 +658,6 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 10 — SYSTEMS INTEGRATION */}
       <section id="systems-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
@@ -721,13 +689,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 11 — INDUSTRY INTEGRATION */}
       <section id="industry-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              11 / INDUSTRY INTEGRATION
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Industrial Sectors Where Failure Physics Apply
             </h2>
@@ -757,13 +721,9 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 12 — FAQ */}
       <section id="faq" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '3rem' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              12 / TECHNICAL QUESTIONS
-            </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Engineering Q&amp;A — Science and Business Impact
             </h2>
@@ -785,12 +745,8 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 13 — INTERNAL KNOWLEDGE LINKS */}
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '2rem' }}>
-            13 / INTERNAL KNOWLEDGE LINKS
-          </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {[
               { section: 'STANDARDS', title: 'ISO Filtration Standards', href: '/knowledge-system/standards', desc: 'Measurement frameworks and cleanliness targets' },
@@ -808,7 +764,7 @@ export default function SciencePage() {
                 >
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.1em' }}>{link.section}</span>
                   <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.88rem', fontWeight: 600, color: '#fff' }}>{link.title}</span>
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>{link.desc}</span>
+                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5, textAlign: 'justify' }}>{link.desc}</span>
                 </motion.div>
               </Link>
             ))}
@@ -816,12 +772,10 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 14 — STRUCTURED DATA LAYER */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaTechArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQPage) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
-      {/* 15 — AUTHORITY SIGNALS / CANONICAL KNOWLEDGE BLOCK */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
       </div>
     </main>

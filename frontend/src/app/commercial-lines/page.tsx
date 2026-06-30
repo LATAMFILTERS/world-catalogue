@@ -69,6 +69,7 @@ export default function CommercialLinesPage() {
             color: 'rgba(255,255,255,0.5)',
             maxWidth: '560px',
             lineHeight: 1.7,
+            textAlign: 'justify',
           }}>
             Integrated product lines engineered for specific operational contexts —
             marine environments and mixed-model fleet maintenance.
@@ -128,6 +129,7 @@ export default function CommercialLinesPage() {
                 fontSize: '0.95rem',
                 color: 'rgba(255,255,255,0.55)',
                 lineHeight: 1.75,
+                textAlign: 'justify',
                 marginBottom: '2rem',
               }}>
                 {line.description}

@@ -262,6 +262,7 @@ export default function DistributorApplication() {
               fontWeight: 900,
               fontFamily: 'Outfit, sans-serif',
               lineHeight: 1.1,
+              textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
@@ -275,6 +276,7 @@ export default function DistributorApplication() {
             style={{
               fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
               lineHeight: 1.7,
+              textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
               fontFamily: 'Outfit, sans-serif',
               maxWidth: '680px',
@@ -311,6 +313,7 @@ export default function DistributorApplication() {
                 color: '#fff',
                 marginBottom: '1.5rem',
                 lineHeight: 1.25,
+                textAlign: 'justify',
               }}
             >
               Most filter distributors sell SKUs. ELIMFILTERS distributors sell outcomes.
@@ -346,6 +349,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.9rem',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     color: 'rgba(255,255,255,0.55)',
                     fontFamily: 'Outfit, sans-serif',
                   }}
@@ -378,6 +382,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.9rem',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     color: 'rgba(255,255,255,0.75)',
                     fontFamily: 'Outfit, sans-serif',
                   }}
@@ -421,6 +426,7 @@ export default function DistributorApplication() {
                 color: '#fff',
                 marginBottom: '2rem',
                 lineHeight: 1.25,
+                textAlign: 'justify',
               }}
             >
               Who We're Looking For
@@ -466,6 +472,7 @@ export default function DistributorApplication() {
                       style={{
                         fontSize: '0.875rem',
                         lineHeight: 1.65,
+                        textAlign: 'justify',
                         color: 'rgba(255,255,255,0.6)',
                         fontFamily: 'Outfit, sans-serif',
                         margin: 0,
@@ -510,6 +517,7 @@ export default function DistributorApplication() {
                 color: '#fff',
                 marginBottom: '0.75rem',
                 lineHeight: 1.25,
+                textAlign: 'justify',
               }}
             >
               The Technology Portfolio
@@ -625,6 +633,7 @@ export default function DistributorApplication() {
                 color: '#fff',
                 marginBottom: '2rem',
                 lineHeight: 1.25,
+                textAlign: 'justify',
               }}
             >
               What the Partnership Provides
@@ -661,6 +670,7 @@ export default function DistributorApplication() {
                     style={{
                       fontSize: '0.85rem',
                       lineHeight: 1.65,
+                      textAlign: 'justify',
                       color: 'rgba(255,255,255,0.6)',
                       fontFamily: 'Outfit, sans-serif',
                       margin: 0,
@@ -714,6 +724,7 @@ export default function DistributorApplication() {
                     color: '#fff',
                     marginBottom: '1.25rem',
                     lineHeight: 1.25,
+                    textAlign: 'justify',
                   }}
                 >
                   Apply for Authorized Distributor Status
@@ -722,6 +733,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.9rem',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     color: 'rgba(255,255,255,0.6)',
                     fontFamily: 'Outfit, sans-serif',
                     marginBottom: '2rem',
@@ -736,6 +748,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.85rem',
                     lineHeight: 1.7,
+                    textAlign: 'justify',
                     color: 'rgba(255,255,255,0.5)',
                     fontFamily: 'Outfit, sans-serif',
                     marginBottom: '2rem',

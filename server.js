@@ -110,7 +110,7 @@ const _escHtml = (str) => String(str ?? '')
 
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
 async function _verifyTurnstile(token, ip) {
-  if (!TURNSTILE_SECRET) return true; // skip if not configured
+  if (!TURNSTILE_SECRET) return false; // reject if secret not configured
   try {
     const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
@@ -1881,7 +1881,10 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // ── Tiered search with match_type labels ──────────────────────────────
     // Duty clause applied to every tier — HD/LD must never mix in results.
-    const dutyClause = dutyFilter ? `AND duty = '${dutyFilter}'` : '';
+    // dutyFilter is validated above to only be 'HEAVY_DUTY' or 'LIGHT_DUTY'.
+    const dutyClause = dutyFilter === 'HEAVY_DUTY' ? "AND duty = 'HEAVY_DUTY'"
+                     : dutyFilter === 'LIGHT_DUTY'  ? "AND duty = 'LIGHT_DUTY'"
+                     : '';
 
     // Tier 1: Exact SKU or Donaldson base code match
     let result = await client.query(
