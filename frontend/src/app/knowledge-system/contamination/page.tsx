@@ -26,6 +26,27 @@ const CONTAMINATION_TYPES = [
     description: 'Component stiction, seal degradation, and catastrophic failure modes in pressurized fluid systems.',
     icon: '⚡',
   },
+  {
+    code: 'COOLANT',
+    title: 'Coolant System Contamination',
+    href: '/knowledge-system/contamination/coolant-contamination',
+    description: 'Silicate depletion, cavitation erosion on cylinder liners, and electrolytic corrosion in engine cooling circuits.',
+    icon: '🌡',
+  },
+  {
+    code: 'AIR',
+    title: 'Compressed Air Contamination',
+    href: '/knowledge-system/contamination/compressed-air-contamination',
+    description: 'Oil carryover, moisture condensation, and particulate contamination in pneumatic systems classified per ISO 8573-1.',
+    icon: '💨',
+  },
+  {
+    code: 'INJECTOR',
+    title: 'Fuel Injector Wear from Contamination',
+    href: '/knowledge-system/contamination/fuel-injector-wear',
+    description: 'HPCR injector stiction, abrasive seat wear, and water emulsification at 1,600-2,500 bar injection pressures.',
+    icon: '🔧',
+  },
 ];
 
 export default function ContaminationHubPage() {
