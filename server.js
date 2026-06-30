@@ -2208,43 +2208,51 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// ── Startup migration: strip LD-only FRAM codes from HD competitor_codes ──────
+// ── Startup migration: strip LD-only FRAM codes from HD oem_codes + competitor_codes ──
 // FRAM PH/XG/TG/DG codes are light-duty only and must never appear on HD SKUs.
-// This runs once at startup to fix any contamination introduced by bulk imports.
+// Cleans both columns since bulk imports mixed LD FRAM codes into oem_codes.
 (async () => {
   try {
     const client = await pool.connect();
     const LD_FRAM = /^(PH|XG|TG|DG)\d/i;
-    const rows = await client.query(`
-      SELECT sku, competitor_codes
-      FROM elimfilters_catalog
-      WHERE duty = 'HEAVY_DUTY'
-        AND competitor_codes IS NOT NULL
-        AND jsonb_array_length(competitor_codes) > 0
-        AND EXISTS (
-          SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem
-          WHERE (UPPER(elem->>'manufacturer') = 'FRAM' OR elem->>'manufacturer' IS NULL)
-            AND (
-              UPPER(elem->>'code') LIKE 'PH%'
-              OR UPPER(elem->>'code') LIKE 'XG%'
-              OR UPPER(elem->>'code') LIKE 'TG%'
-              OR UPPER(elem->>'code') LIKE 'DG%'
-            )
-        )
-    `);
-    let cleaned = 0;
-    for (const row of rows.rows) {
-      const original = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
-      const filtered = original.filter(c => {
+
+    function cleanFram(arr) {
+      return (Array.isArray(arr) ? arr : []).filter(c => {
         const mfr = (c.manufacturer || '').toUpperCase().trim();
         const code = (c.code || c.partNumber || '').toUpperCase().trim();
         if ((mfr === 'FRAM' || mfr === '') && LD_FRAM.test(code)) return false;
         return true;
       });
-      if (filtered.length !== original.length) {
+    }
+
+    const rows = await client.query(`
+      SELECT sku, oem_codes, competitor_codes
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND (
+          (oem_codes IS NOT NULL AND jsonb_array_length(oem_codes) > 0
+           AND EXISTS (SELECT 1 FROM jsonb_array_elements(oem_codes) AS elem
+                       WHERE UPPER(elem->>'manufacturer') = 'FRAM'
+                       AND (UPPER(elem->>'code') LIKE 'PH%' OR UPPER(elem->>'code') LIKE 'XG%'
+                            OR UPPER(elem->>'code') LIKE 'TG%' OR UPPER(elem->>'code') LIKE 'DG%')))
+          OR
+          (competitor_codes IS NOT NULL AND jsonb_array_length(competitor_codes) > 0
+           AND EXISTS (SELECT 1 FROM jsonb_array_elements(competitor_codes) AS elem
+                       WHERE (UPPER(elem->>'manufacturer') = 'FRAM' OR elem->>'manufacturer' IS NULL)
+                       AND (UPPER(elem->>'code') LIKE 'PH%' OR UPPER(elem->>'code') LIKE 'XG%'
+                            OR UPPER(elem->>'code') LIKE 'TG%' OR UPPER(elem->>'code') LIKE 'DG%')))
+        )
+    `);
+    let cleaned = 0;
+    for (const row of rows.rows) {
+      const origOem = Array.isArray(row.oem_codes) ? row.oem_codes : [];
+      const origComp = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+      const filtered = cleanFram(origOem);
+      const filteredComp = cleanFram(origComp);
+      if (filtered.length !== origOem.length || filteredComp.length !== origComp.length) {
         await client.query(
-          'UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2',
-          [JSON.stringify(filtered), row.sku]
+          'UPDATE elimfilters_catalog SET oem_codes = $1::jsonb, competitor_codes = $2::jsonb WHERE sku = $3',
+          [JSON.stringify(filtered), JSON.stringify(filteredComp), row.sku]
         );
         cleaned++;
       }
