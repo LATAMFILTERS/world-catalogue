@@ -1,25 +1,23 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Fleet Filtration Optimization — Downtime, TCO & Fuel Efficiency | ELIMFILTERS',
-  },
-  description: 'Industrial fleet optimization through system-level filtration: reducing unplanned downtime, lowering total cost of ownership, and improving fuel efficiency in mining, agriculture, and heavy industry.',
+  title: 'Fleet Optimization Strategies',
+  description: 'Industrial fleet optimization through contamination control: reducing downtime, improving fuel efficiency, and total cost of ownership analysis for heavy equipment fleets.',
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-system/fleet/',
+    canonical: 'https://elimfilters.com/knowledge-system/fleet',
   },
   openGraph: {
-    title: 'Fleet Filtration Optimization — Downtime, TCO & Fuel Efficiency | ELIMFILTERS',
-    description: 'Industrial fleet optimization: reducing unplanned downtime, lowering TCO, and improving fuel efficiency through system-level filtration.',
-    url: 'https://elimfilters.com/knowledge-system/fleet/',
+    title: 'Fleet Optimization Strategies',
+    description: 'Industrial fleet optimization through contamination control: reducing downtime, improving fuel efficiency, and total cost of ownership analysis for heavy equipment fleets.',
+    url: 'https://elimfilters.com/knowledge-system/fleet',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
     images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fleet Filtration Optimization — Downtime, TCO & Fuel Efficiency | ELIMFILTERS',
-    description: 'Industrial fleet optimization: reducing downtime, lowering TCO, improving fuel efficiency through filtration.',
+    title: 'Fleet Optimization Strategies',
+    description: 'Industrial fleet optimization through contamination control: reducing downtime, improving fuel efficiency, and total cost of ownership analysis for heavy equipment fleets.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
