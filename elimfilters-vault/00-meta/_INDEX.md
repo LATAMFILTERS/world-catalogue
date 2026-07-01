@@ -1,7 +1,7 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-06-28
+Last updated: 2026-07-01
 
 ---
 
@@ -12,6 +12,7 @@ Last updated: 2026-06-28
 | Document | Status | Date |
 |----------|--------|------|
 | [[ELIMFILTERS_CORPORATE_CONSTITUTION]] | ✅ SUPREME v1.0 — Constitutional Authority | 2026-06-28 |
+| [[ENGINEERING_EXPERIENCE_PRINCIPLES]] | ✅ FROZEN v1.1 — Constitutional Reference, Experience Layer | 2026-07-01 |
 
 **Doctrine hierarchy established:**
 ```
