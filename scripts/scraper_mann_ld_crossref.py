@@ -44,7 +44,8 @@ PROGRESS_FILE    = Path(r"C:\mann\mann_ld_crossrefs_progress.json")
 
 # ── Sites ──────────────────────────────────────────────────────────────────
 # Primary URLs use /MANN/ (shorter path, broader coverage).
-# Fallback URLs use /MANN-FILTER/ — tried when primary returns 0 results.
+# Fallback1 uses /MANN-FILTER/ — tried when primary returns 0 results.
+# Fallback2 uses /MANN-HUMMEL/ — tried when both primary and fallback1 return 0 results.
 SITES = {
     "oil":  "https://www.oilfilter-crossreference.com/convert/MANN/{part}",
     "fuel": "https://www.fuelfilter-crossreference.com/convert/MANN/{part}",
@@ -54,6 +55,11 @@ SITES_FALLBACK = {
     "oil":  "https://www.oilfilter-crossreference.com/convert/MANN-FILTER/{part}",
     "fuel": "https://www.fuelfilter-crossreference.com/convert/MANN-FILTER/{part}",
     "air":  "https://www.airfilter-crossreference.com/convert/MANN-FILTER/{part}",
+}
+SITES_FALLBACK2 = {
+    "oil":  "https://www.oilfilter-crossreference.com/convert/MANN-HUMMEL/{part}",
+    "fuel": "https://www.fuelfilter-crossreference.com/convert/MANN-HUMMEL/{part}",
+    "air":  "https://www.airfilter-crossreference.com/convert/MANN-HUMMEL/{part}",
 }
 
 PROFILE_DIRS = {
@@ -221,10 +227,10 @@ def make_context(pw, site="oil"):
 
 
 def scrape_one(page, sku: str, site: str) -> dict:
-    """Scrape crossrefs for one SKU. Tries /MANN/ first, falls back to /MANN-FILTER/ if empty."""
+    """Scrape crossrefs for one SKU. Tries /MANN/ → /MANN-FILTER/ → /MANN-HUMMEL/ until results found."""
     encoded = quote(sku, safe="")
 
-    for url_template in (SITES[site], SITES_FALLBACK[site]):
+    for url_template in (SITES[site], SITES_FALLBACK[site], SITES_FALLBACK2[site]):
         url = url_template.format(part=encoded)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=25000)
