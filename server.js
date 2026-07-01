@@ -1482,6 +1482,81 @@ app.post('/api/update/wix-crossrefs', importLimiter, requireAdmin, async (req, r
   }
 });
 
+// ─── POST /api/update/mann-crossrefs ─────────────────────────────────────────
+// Applies multi-brand competitor cross-references from scraper_mann_ld_crossref.py.
+// Finds LD product by mann_sku and merges all brands into competitor_codes.
+// Body: { rows: [{ mann_sku: "W940/21", crossrefs: { "FRAM": ["PH5316"], "WIX": ["51452"] } }] }
+app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+  if (rows.length > 500)
+    return res.status(400).json({ error: 'batch size exceeds 500' });
+
+  const client = await pool.connect();
+  try {
+    let updated = 0, skipped = 0, errors = 0;
+
+    for (const row of rows) {
+      const mannSku  = (row.mann_sku || '').trim().toUpperCase();
+      const crossrefs = row.crossrefs || {};
+      if (!mannSku || !Object.keys(crossrefs).length) { skipped++; continue; }
+
+      // Derive codigo_base from Mann part number (last 4 digits)
+      const mannDigits = mannSku.replace(/[^0-9]/g, '');
+      if (mannDigits.length < 3) { skipped++; continue; }
+      const codeBase = mannDigits.slice(-4);
+
+      // Find the LD product by codigo_base
+      const found = await client.query(
+        `SELECT sku, competitor_codes FROM elimfilters_catalog
+         WHERE codigo_base = $1 AND duty = 'LIGHT_DUTY' LIMIT 1`,
+        [codeBase]
+      );
+      if (found.rows.length === 0) { skipped++; continue; }
+
+      const { sku, competitor_codes } = found.rows[0];
+      const existing = Array.isArray(competitor_codes) ? competitor_codes : [];
+
+      // Build set of existing {manufacturer,code} pairs to avoid duplicates
+      const existingSet = new Set(existing.map(c => `${c.manufacturer}::${c.code}`));
+
+      const newEntries = [];
+      for (const [brand, codes] of Object.entries(crossrefs)) {
+        const mfr = brand.trim().toUpperCase();
+        for (const code of (Array.isArray(codes) ? codes : [])) {
+          const c = String(code).trim();
+          if (c && !existingSet.has(`${mfr}::${c}`)) {
+            newEntries.push({ manufacturer: mfr, code: c });
+            existingSet.add(`${mfr}::${c}`);
+          }
+        }
+      }
+
+      if (newEntries.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...newEntries];
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE sku = $2`,
+          [JSON.stringify(merged), sku]
+        );
+        updated++;
+      } catch (rowErr) {
+        errors++;
+        console.error('[mann-crossref-err]', sku, mannSku, rowErr.message);
+      }
+    }
+
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[mann-crossref-fatal]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/update/competitor-codes ───────────────────────────────────────
 // Merges FRAM/Bosch/ACDelco codes from WIX reverse lookup into competitor_codes.
 // Finds product by mann_sku (codigo_base match, LIGHT_DUTY).
