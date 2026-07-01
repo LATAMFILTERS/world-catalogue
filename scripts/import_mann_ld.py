@@ -63,33 +63,28 @@ SUPPORTED_TYPES = {'Oil Filter', 'Fuel Filter', 'Air Filter', 'Cabin Filter'}
 # Mann part-number prefix → filter type (fallback when scraper couldn't detect type)
 # Used for the ~149 records where filter_type is empty in mann_master.jsonl
 MANN_PREFIX_TYPE = {
-    # Oil filters
-    'W ':    'Oil Filter',   # W 940/21, W 712/75, etc.
-    'W712':  'Oil Filter',
-    'W940':  'Oil Filter',
-    'ML ':   'Oil Filter',   # ML 1003
-    'ML1':   'Oil Filter',
-    'HU ':   'Oil Filter',   # HU 711/51
-    'HU7':   'Oil Filter',
-    'SP ':   'Oil Filter',   # SP filter
-    # Fuel filters
-    'WK ':   'Fuel Filter',  # WK 1060/6
-    'PU ':   'Fuel Filter',  # PU 999/1
-    'KC ':   'Fuel Filter',  # KC 64
-    'KL ':   'Fuel Filter',  # KL 174
-    'P ':    'Fuel Filter',  # P 945/2
-    # Air filters
-    'C ':    'Air Filter',   # C 1040/2
-    'CU ':   'Air Filter',   # CU 2028
-    'CF ':   'Air Filter',   # CF ... (some models)
-    'CP ':   'Air Filter',
-    # Cabin filters
-    'CUK ':  'Cabin Filter', # CUK 2028
-    'CUK1':  'Cabin Filter',
-    'FP ':   'Cabin Filter', # FP 21 000-2 (FreciousPlus)
-    'FP2':   'Cabin Filter',
-    'LA ':   'Cabin Filter', # LA 157
-    'LC ':   'Cabin Filter',
+    # Oil filters (longest prefixes first to avoid false matches)
+    'CUK':  'Cabin Filter',  # CUK 2028, CUK1000 — must come before 'CU' and 'C'
+    'FP':   'Cabin Filter',  # FP 21 000-2 (FreciousPlus cabin)
+    'CU':   'Air Filter',    # CU 2028 — before 'C'
+    'WK':   'Fuel Filter',   # WK 1060/6 — before 'W'
+    'ML':   'Oil Filter',    # ML 1003, ML1003
+    'HU':   'Oil Filter',    # HU 711/51, HU6013Y, HU7048Z (with or without space)
+    'MW':   'Oil Filter',    # MW68, MW65, MW713 (motorcycle oil filters)
+    'MH':   'Oil Filter',    # MH66, MH68, MH69 (motorcycle)
+    'LC':   'Cabin Filter',  # LC8003X, LC8100, LC5001X (cabin)
+    'LA':   'Cabin Filter',  # LA 157
+    'KC':   'Fuel Filter',   # KC 64
+    'KL':   'Fuel Filter',   # KL 174
+    'PU':   'Fuel Filter',   # PU 999/1
+    'CF':   'Air Filter',    # CF series
+    'CP':   'Air Filter',    # CP series
+    'SP':   'Oil Filter',    # SP series
+    # Single-letter prefixes (catch-all, lowest priority)
+    'W':    'Oil Filter',    # W 940/21, W7069, W6031 — after WK
+    'C':    'Air Filter',    # C 1040/2, C6010, C118 — after CUK/CU/CF/CP
+    'H':    'Oil Filter',    # H4001X
+    'P':    'Fuel Filter',   # P 945/2 — after PU
 }
 
 
