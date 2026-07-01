@@ -1,6 +1,6 @@
 # ELIMFILTERS® Engineering Experience Principles
 ## Constitutional Reference for Customer-Facing Engineering Intelligence
-### Version 1.1 | Ratified: 2026-07-01 | Last amended: 2026-07-01 | Status: FROZEN
+### Version 1.2 | Ratified: 2026-07-01 | Last amended: 2026-07-01 | Status: FROZEN
 
 ---
 
@@ -23,10 +23,10 @@
 | Field | Value |
 |---|---|
 | Document | ENGINEERING_EXPERIENCE_PRINCIPLES |
-| Version | 1.1 |
+| Version | 1.2 |
 | Status | FROZEN — Constitutional Reference |
 | Ratified | 2026-07-01 |
-| Last amended | 2026-07-01 — Amendment A1: Added Principle 11 (Customer Question → Knowledge Graph Entity Mapping) |
+| Last amended | 2026-07-01 — Amendment A2: Principle 11 redefined to remove implementation-specific language; principle now implementation-agnostic |
 | Authority Level | Constitutional — subordinate only to ELIMFILTERS_CORPORATE_CONSTITUTION |
 | Location | elimfilters-vault/corporate/ |
 | Scope | All customer-facing interfaces, journeys, pages, AI assistants, and navigation |
@@ -455,93 +455,121 @@ modification. Pages are renderers, not authors.
 
 ---
 
-### Principle 11 — Customer Question → Knowledge Graph Entity Mapping
+### Principle 11 — Customer Questions Drive Engineering Knowledge
 
-> Every generated page begins with a customer question.
-> The Knowledge Graph provides the answer.
-> The URL represents the customer's mental model.
-> The entity provides the engineering evidence.
-> Internal entities are never the customer's entry point.
+> The platform always begins with the customer's question and translates it
+> into governed engineering knowledge before presenting recommendations.
+>
+> The customer never needs to understand internal engineering classifications,
+> entity identifiers, graph structures, or system architecture.
+>
+> The customer expresses a question, a symptom, a risk, or an objective.
+> The platform is responsible for the translation.
 
-**The canonical relationship:**
+**The canonical statement:**
+
+The platform always begins with the customer's question and translates it into
+governed engineering knowledge before presenting recommendations.
+
+The customer operates in their language: systems, problems, symptoms, equipment,
+risks, and operational objectives. The platform operates in engineering language:
+contamination mechanisms, failure modes, cleanliness standards, technology
+architectures, and protection strategies. The Experience Layer is the translator.
+The customer never crosses into the platform's internal vocabulary.
+
+**What the customer expresses. What the platform translates.**
+
+| Customer Expression | Platform Translation |
+|---|---|
+| "Which contamination mechanisms affect hydraulic systems?" | Contamination modes, failure chains, ISO targets, protection technologies |
+| "What happens when water enters diesel fuel?" | Water ingress pathways, injector erosion mechanics, ASTM D6304, water separation technologies |
+| "How does dust ingestion damage engines?" | Abrasive wear mechanism, Mohs hardness differential, ISO 5011, intake filtration specification |
+| "My actuators are drifting" | Hydraulic contamination diagnosis, ISO 4406 deviation, spool stiction failure mode |
+| "I want to reduce unplanned downtime" | Fleet contamination control strategy, CBM intervals, TCO framework |
+| "Which standards apply to my fuel system?" | ASTM D6304, ISO 12937, ISO 16332 — each explained in context |
+
+The customer never encounters entity identifiers, graph traversal outputs, internal
+classification codes, or implementation terminology. These are the platform's
+internal instruments. They produce the answer. They are not the answer.
+
+**Scope — this principle applies to every customer interaction surface:**
+
+- **Generated Pages** — URL and H1 heading encode the customer's question; governed
+  engineering knowledge answers it
+- **Search** — customer queries in natural language return engineering knowledge,
+  not entity lists
+- **Customer Journeys** — each step asks about the customer's situation in their
+  own language; engineering reasoning is produced internally
+- **AI Assistant** — the assistant receives customer language and translates
+  through governed engineering knowledge before responding
+- **Recommendations** — every recommendation is expressed as an engineering
+  answer to the customer's question, not as an entity match
+- **Engineering Consultations** — the structured diagnostic process operates
+  in customer language throughout; internal classifications are used to drive
+  reasoning, not presented to the customer
+
+**The required translation architecture:**
 
 ```
-URL (customer language)        →   /engineering/hydraulic-contamination
-Customer Question              →   Which contamination mechanisms affect hydraulic systems?
-Knowledge Graph Entity         →   CONT-WEAR-PARTICLE-HYD
-Engineering Evidence Source    →   recommendFromContamination('CONT-WEAR-PARTICLE-HYD')
+Customer Question / Symptom / Risk / Objective
+    ↓  [Experience Layer — translation]
+Governed Engineering Knowledge
+    (contamination mechanism, failure mode, standard, technology, protection strategy)
+    ↓  [Experience Layer — rendering]
+Engineering Explanation in customer language
+    ↓
+Technology Architecture (named, not identified)
+    ↓
+Protection Strategy
+    ↓
+Recommended Products
+    ↓
+Related Engineering Topics in customer language
 ```
 
-**The rule in full:**
+The translation step is non-negotiable. No customer-facing surface may skip it
+and present governed engineering knowledge in its internal form.
 
-Every generated page is defined by a customer question in natural language.
-That question determines the URL. The URL is the customer's entry point.
+**Implementation independence:**
 
-The Knowledge Graph entity is the evidence source — it provides the engineering
-content that answers the question. The entity is never the entry point.
-The entity is never visible in the customer-facing URL.
+This principle does not prescribe the mechanism used to translate customer
+questions into engineering knowledge. The current implementation uses a
+Knowledge Graph with entity-relationship traversal. Future implementations
+may use different technical approaches. The principle governs the experience
+contract — what the customer encounters — not the technical means of fulfilling it.
 
-The customer thinks in systems, applications, problems, and outcomes.
-The Knowledge Graph thinks in entities, relationships, and properties.
-The Experience Layer translates between these two vocabularies — presenting
-the entity's engineering evidence as the answer to the customer's question.
-
-**What this means for every domain:**
-
-This principle applies across all engineering knowledge domains. In every case,
-the customer question defines the page. The Knowledge Graph entity provides the answer.
-
-| Domain | Customer Question (URL) | Knowledge Graph Entity |
-|---|---|---|
-| Technologies | How does NANOFORCE protect hydraulic valves? | `TECH-NANOFORCE` |
-| Standards | Which standards govern air intake filtration? | `STD-ISO-5011` |
-| Contamination | What happens when water enters diesel fuel? | `CONT-WATER-FUEL` |
-| Failure Modes | How does spool valve silting develop? | `FM-HYD-001` |
-| Industries | Which contamination threats affect mining equipment? | Industry node |
-| Equipment | How do I protect a haul truck engine? | Asset + contamination nodes |
-| Engineering Principles | Why does Beta ratio matter for hydraulic filtration? | `EP-BETA-RATIO` |
-
-**The required page architecture for all domains:**
-
-```
-Customer Question (H1 heading, URL)
-    ↓
-Engineering Explanation (from Knowledge Graph entity properties)
-    ↓
-Engineering Evidence (recommendations from Engineering Services)
-    ↓
-Technology Architecture (recommendFromContamination / recommendFromFailureMode)
-    ↓
-Protection Strategy (engineered actions, not product suggestions)
-    ↓
-Recommended Products (CTACard — always last)
-    ↓
-Related Engineering Topics (Knowledge Graph edges → cross-links)
-```
-
-This architecture applies to pages about contamination, technologies, standards,
-failure modes, industries, applications, equipment types, and engineering principles.
-No exception.
+Any successor system must preserve this contract: customer language in,
+engineering knowledge out, internal classification invisible.
 
 **What this prohibits:**
 
-- Any page where the entity ID appears in the URL as the primary identifier
-- Any page where the entity is presented without translating it into a customer question first
-- Any page whose H1 heading is the entity label rather than a customer question
-- Entity explorer pages (which use entity IDs in URLs) being promoted as canonical
-  customer-facing content or indexed as primary pages
-- Any generated page that does not have a clearly answerable customer question
-  as its single purpose
+- URLs containing internal entity identifiers as the primary customer-facing path
+- Page headings that are entity labels rather than customer questions
+- Search results that surface internal classification codes without translation
+- AI assistant responses that reference internal entity IDs or graph terminology
+- Recommendation outputs that present entity matches without engineering explanation
+- Any customer-facing surface that requires the customer to understand internal
+  system architecture to interpret what they are seeing
 
 **The test:**
 
-For any generated page: state the engineering question the page answers in one sentence.
-If the question cannot be stated without reference to the entity ID (e.g., "This page
-is about CONT-WEAR-PARTICLE-HYD"), the page violates this principle.
+Show any customer-facing surface to a reliability engineer who has never used
+the platform. If they encounter a term, identifier, or classification that
+belongs to the platform's internal architecture rather than to the engineering
+domain itself, the surface violates this principle.
 
-**Amendment record:** A1 — Added 2026-07-01. Approved as explicit governing rule
-for the Customer Question → Knowledge Graph Entity pattern observed across all
-Phase 4 page implementations and approved for permanent constitutional status.
+Note: ISO codes, Beta ratios, and ISO 4406 particle counts are engineering
+domain language — they are not internal platform identifiers. They are permitted
+and required. Entity IDs such as CONT-*, TECH-*, FM-* are internal platform
+identifiers. They are prohibited in customer-facing surfaces.
+
+**Amendment record:** A1 — Added 2026-07-01 as Principle 11 with implementation-
+specific language. A2 — Redefined 2026-07-01: principle rewritten to be
+implementation-agnostic. "Knowledge Graph" removed as a named dependency;
+principle now governs the experience contract independent of the underlying
+technology mechanism. Scope expanded to cover all six customer interaction
+surfaces: generated pages, search, customer journeys, AI assistant,
+recommendations, and engineering consultations.
 
 ---
 
@@ -681,9 +709,10 @@ to this document through the Constitution amendment process can change them.
 | Engineering content flows exclusively from Vault → Graph → Services → Experience | 10 |
 | The 10-point page architecture ordering | Architecture |
 | The trust sequence (sections 01–06 precede section 07) | Architecture |
-| Every page defined by a customer question; entity provides evidence, not entry point | 11 |
-| Customer-facing URL derived from customer question, never from entity identifier | 11 |
-| Customer Question → Knowledge Graph Entity mapping as standard for all domains | 11 |
+| Customer questions always translated into governed engineering knowledge before recommendations | 11 |
+| Customer never encounters internal entity identifiers, graph terminology, or system architecture | 11 |
+| All six customer interaction surfaces (pages, search, journeys, AI, recommendations, consultations) begin with customer language | 11 |
+| The translation contract is preserved independent of underlying technical implementation | 11 |
 
 ---
 
@@ -748,11 +777,12 @@ For every new page, journey, AI assistant, or navigation pattern:
 - [ ] No hardcoded engineering knowledge in page component
 - [ ] All engineering content routed through Engineering Services
 
-**Principle 11 — Customer Question → Knowledge Graph Entity Mapping**
-- [ ] H1 heading is a customer question in natural language (not an entity label)
-- [ ] URL contains customer language derived from the question (not the entity ID)
-- [ ] The Knowledge Graph entity used as evidence source is documented (not surfaced in URL)
-- [ ] The engineering question the page answers can be stated in one sentence without referencing an entity ID
+**Principle 11 — Customer Questions Drive Engineering Knowledge**
+- [ ] The customer interaction begins with a question, symptom, risk, or objective in customer language
+- [ ] No internal entity identifiers, graph terminology, or system architecture terms appear in any customer-facing surface
+- [ ] The engineering answer is expressed in customer language (engineering domain terms permitted; internal platform identifiers prohibited)
+- [ ] The engineering question the surface answers can be stated in one sentence without referencing an internal identifier
+- [ ] This applies across all six surfaces: generated page, search, journey step, AI response, recommendation, consultation
 
 **Architecture**
 - [ ] 10-point section structure present and in correct order
@@ -826,7 +856,7 @@ ELEVEN PRINCIPLES (FROZEN)
 08: Trust Before Conversion
 09: Engineering Conversations
 10: Single Source of Engineering Truth
-11: Customer Question → Knowledge Graph Entity Mapping
+11: Customer Questions Drive Engineering Knowledge
 
 ARCHITECTURE
 10-point page structure required on all topic pages.
@@ -849,7 +879,7 @@ status: FROZEN
 
 ---
 
-*ELIMFILTERS® Engineering Experience Principles v1.1*
-*Ratified: 2026-07-01 | Amended: 2026-07-01 (A1 — Principle 11)*
+*ELIMFILTERS® Engineering Experience Principles v1.2*
+*Ratified: 2026-07-01 | Amended: 2026-07-01 (A1 — Principle 11 added; A2 — Principle 11 redefined, implementation-agnostic)*
 *Status: FROZEN — Constitutional Reference*
 *Authority: Subordinate only to ELIMFILTERS_CORPORATE_CONSTITUTION (Supreme v1.0)*
