@@ -56,7 +56,8 @@ export default function ChatBot() {
     setTyping(true);
 
     try {
-      const res = await fetch("/api/chat", {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
+      const res = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ message: text.trim(), sessionId: getSessionId() }),
