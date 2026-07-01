@@ -75,6 +75,7 @@ _PREFIX_ROUTES = [
     ("CU",  "air"),
     ("FP",  "air"),
     ("LA",  "air"),
+    ("WDK", "fuel"),  # WDK = water-separating diesel fuel filter — before WK and W
     ("WK",  "fuel"),
     ("KC",  "fuel"),
     ("KL",  "oil"),
@@ -91,7 +92,7 @@ _PREFIX_ROUTES = [
 # LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
 # Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
 # WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
-_SKIP_PREFIXES = {"LE", "LB"}
+_SKIP_PREFIXES = {"LE", "LB", "DI"}  # DI = industrial diesel injector filters, no aftermarket crossrefs
 
 def should_skip(sku: str) -> bool:
     """True if this SKU is known to return 0 crossref results on all sites."""
