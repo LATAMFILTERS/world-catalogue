@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 const STANDARDS = [
   { code: 'ASTM D6304', desc: 'Karl Fischer titration method for water content measurement in diesel fuel, providing quantitative water concentration in ppm for contamination verification.' },
@@ -230,6 +231,12 @@ export default function FuelSystemsPage() {
             ))}
           </div>
         </div>
+
+        <EngineeringRecommendationsSection
+          primaryEntityId="CONT-PARTICLE-FUEL"
+          queryType="contamination"
+          label="ENGINEERING RECOMMENDATIONS — FUEL SYSTEMS"
+        />
 
       </div>
 

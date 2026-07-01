@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 export default function ParticleWearPage() {
   const sections = [
@@ -326,6 +327,14 @@ export default function ParticleWearPage() {
             </Link>
           </div>
         </motion.div>
+
+        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+          <EngineeringRecommendationsSection
+            primaryEntityId="CONT-WEAR-PARTICLE-OIL"
+            queryType="contamination"
+            label="ENGINEERING RECOMMENDATIONS — PARTICLE WEAR IN ENGINES"
+          />
+        </div>
       </section>
 
       {/* JSON-LD Structured Data */}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 const STANDARDS = [
   { code: 'ISO 8573-1', desc: 'Compressed air purity classification system (Classes 0-9) defining maximum particle concentration, water content (dew point), and oil content for different industrial applications.' },
@@ -248,6 +249,12 @@ export default function CompressedAirSystemsPage() {
             ))}
           </div>
         </div>
+
+        <EngineeringRecommendationsSection
+          primaryEntityId="TECH-DRYCORE"
+          queryType="technology"
+          label="ENGINEERING RECOMMENDATIONS — COMPRESSED AIR SYSTEMS"
+        />
 
       </div>
 

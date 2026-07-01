@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 const STANDARDS = [
   { code: 'ISO 16889', href: '/knowledge-system/standards/iso-16889', desc: '4-digit cleanliness code (16/14/11 minimum for proportional valves) defining particle concentration thresholds for hydraulic system protection.' },
@@ -214,6 +215,12 @@ export default function HydraulicSystemsPage() {
             ))}
           </div>
         </div>
+
+        <EngineeringRecommendationsSection
+          primaryEntityId="TECH-NANOFORCE"
+          queryType="technology"
+          label="ENGINEERING RECOMMENDATIONS — HYDRAULIC SYSTEMS"
+        />
 
       </div>
 

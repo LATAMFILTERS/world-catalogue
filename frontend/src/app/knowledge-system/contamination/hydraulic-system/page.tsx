@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 export default function HydraulicSystemContaminationPage() {
   const sections = [
@@ -324,6 +325,14 @@ export default function HydraulicSystemContaminationPage() {
             </Link>
           </div>
         </motion.div>
+
+        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+          <EngineeringRecommendationsSection
+            primaryEntityId="CONT-WEAR-PARTICLE-HYD"
+            queryType="contamination"
+            label="ENGINEERING RECOMMENDATIONS — HYDRAULIC SYSTEM CONTAMINATION"
+          />
+        </div>
       </section>
 
       {/* JSON-LD Structured Data */}

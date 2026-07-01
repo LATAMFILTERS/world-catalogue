@@ -14,3 +14,4 @@ export { StandardCard } from './StandardCard';
 export { EngineeringReasoningChain } from './EngineeringReasoningChain';
 export type { ChainStep } from './EngineeringReasoningChain';
 export { JourneyProgressBar } from './JourneyProgressBar';
+export { EngineeringRecommendationsSection } from './EngineeringRecommendationsSection';
