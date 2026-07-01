@@ -77,7 +77,7 @@ function makeRel(
 
 function buildEngineeringPrincipleNodes(): GraphNode[] {
   return Object.values(ENGINEERING_PRINCIPLES).map((ep) => {
-    const isAlias = ep.id !== ep.code && ep.definition.startsWith('Canonical alias');
+    const isAlias = ep.definition.startsWith('Canonical alias');
     const provenance: NodeProvenance = {
       sourceRegistry: 'engineering-principles.ts',
       entityVersion: ep.versionHistory.at(-1)?.version ?? '1.0.0',
@@ -87,7 +87,7 @@ function buildEngineeringPrincipleNodes(): GraphNode[] {
       memoryEntryIds: memoryEntriesFor(ep.id),
       edrRefs: edrRefsFor(ep.id),
       isDeprecated: false,
-      aliasFor: isAlias ? ep.id.replace('EP-SEP-005', 'EP-TRB-002') : undefined,
+      aliasFor: isAlias ? (ep.definition.match(/Canonical alias for (EP-\S+)\./)?.[1] ?? undefined) : undefined,
     };
     return {
       nodeId: nodeId(ep.id),
