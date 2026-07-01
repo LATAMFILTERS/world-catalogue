@@ -16,6 +16,8 @@
 
 import { runAllValidations } from '../src/lib/registry/validation';
 import type { ValidationReport } from '../src/lib/registry/validation';
+import { buildKnowledgeGraph, validateGraph } from '../src/lib/graph';
+import type { GraphValidationReport } from '../src/lib/graph';
 
 function printReport(report: ValidationReport): void {
   console.log('\n═══════════════════════════════════════════════════════════════');
@@ -45,6 +47,33 @@ function printReport(report: ValidationReport): void {
   console.log('═══════════════════════════════════════════════════════════════\n');
 }
 
+function printGraphReport(report: GraphValidationReport): void {
+  console.log('');
+  console.log('═══════════════════════════════════════════════════════════════');
+  console.log(' Phase 2 Knowledge Graph Validation Report');
+  console.log('═══════════════════════════════════════════════════════════════');
+  console.log(`  Nodes: ${report.nodeCount}  |  Relationships: ${report.relationshipCount}`);
+  console.log('');
+  const errors = report.issues.filter((i) => i.severity === 'ERROR');
+  const warnings = report.issues.filter((i) => i.severity === 'WARNING');
+  const infos = report.issues.filter((i) => i.severity === 'INFO');
+  if (errors.length === 0 && warnings.length === 0) {
+    console.log('  ✓  All graph checks passed');
+  }
+  for (const e of errors)   console.log(`  ✗  ERROR [${e.code}]: ${e.message}`);
+  for (const w of warnings) console.log(`  ⚠  WARN  [${w.code}]: ${w.message}`);
+  for (const i of infos)    console.log(`     INFO  [${i.code}]: ${i.message}`);
+  console.log('');
+  console.log(`  Errors: ${report.errorCount}  |  Warnings: ${report.warningCount}`);
+  console.log(`  Graph: ${report.passed ? 'PASS ✓' : 'FAIL ✗'}`);
+  console.log('═══════════════════════════════════════════════════════════════\n');
+}
+
 const report = runAllValidations();
 printReport(report);
-process.exit(report.overallPassed ? 0 : 1);
+
+const graph = buildKnowledgeGraph();
+const graphReport = validateGraph(graph);
+printGraphReport(graphReport);
+
+process.exit(report.overallPassed && graphReport.passed ? 0 : 1);
