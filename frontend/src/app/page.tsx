@@ -8,6 +8,10 @@ import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import TestimonialsSection from '@/components/ui/TestimonialsSection';
 import CinematicHero from '@/components/ui/CinematicHero';
+import { ConversionProvider } from '@/components/conversion';
+import { EngineeringSearchBar } from '@/components/engineering';
+import type { CustomerIntent } from '@/components/conversion';
+import type { SearchResult } from '@/lib/services';
 
 // ─── Static structural data ───────────────────────────────────────────────────
 
@@ -156,6 +160,153 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   );
 }
 
+// ─── Engineering Entry Section ────────────────────────────────────────────────
+
+const JOURNEY_CARDS = [
+  {
+    id: 'PART_NUMBER',
+    label: 'Find a Part',
+    description: 'Know the part number or OEM reference? Locate it instantly.',
+    icon: '🔎',
+    accent: 'rgba(255,241,45,0.08)',
+    border: 'rgba(255,241,45,0.2)',
+    href: 'https://part-search.elimfilters.com',
+    external: true,
+  },
+  {
+    id: 'ASSET_PROTECTION',
+    label: 'Protect Your Assets',
+    description: 'Select your industry. We identify contamination risks for your equipment.',
+    icon: '🛡',
+    accent: 'rgba(134,239,172,0.06)',
+    border: 'rgba(134,239,172,0.18)',
+    href: '/engineering/asset-protection',
+    external: false,
+  },
+  {
+    id: 'PROBLEM_DIAGNOSIS',
+    label: 'Diagnose a Problem',
+    description: 'Describe the symptom. We trace it to the failure mode and root cause.',
+    icon: '⚠',
+    accent: 'rgba(252,165,165,0.06)',
+    border: 'rgba(252,165,165,0.18)',
+    href: '/engineering/diagnosis',
+    external: false,
+  },
+  {
+    id: 'LEARNING',
+    label: 'Explore Engineering',
+    description: 'Study contamination mechanisms, standards, and technology architectures.',
+    icon: '📐',
+    accent: 'rgba(125,211,252,0.06)',
+    border: 'rgba(125,211,252,0.18)',
+    href: '/knowledge-system',
+    external: false,
+  },
+] as const;
+
+function EngineeringEntrySection() {
+  function handleResult(results: SearchResult[], intent: CustomerIntent) {
+    if (intent === 'KNOWN_PART' && results.length > 0) {
+      window.location.href = `https://part-search.elimfilters.com?q=${encodeURIComponent(results[0].label)}`;
+    }
+  }
+
+  return (
+    <section style={{
+      background: '#000',
+      padding: '4rem 8% 5rem',
+      borderBottom: '1px solid rgba(255,255,255,0.05)',
+    }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          style={{ marginBottom: '2rem' }}
+        >
+          <div style={{
+            fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)',
+            fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.15em',
+            marginBottom: '0.6rem',
+          }}>
+            ENGINEERING INTELLIGENCE PLATFORM
+          </div>
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif', fontWeight: 700,
+            fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
+            color: '#fff', margin: 0,
+          }}>
+            What is putting your operation at risk?
+          </h2>
+        </motion.div>
+
+        {/* Search bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ marginBottom: '2.5rem', maxWidth: '680px' }}
+        >
+          <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standard…" />
+        </motion.div>
+
+        {/* Journey cards — 2×2 grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1rem',
+        }}>
+          {JOURNEY_CARDS.map((card, i) => (
+            <motion.a
+              key={card.id}
+              href={card.href}
+              target={card.external ? '_blank' : undefined}
+              rel={card.external ? 'noopener noreferrer' : undefined}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              whileHover={{ borderColor: card.border.replace(/[\d.]+\)$/, '0.45)') }}
+              style={{
+                display: 'block', padding: '1.5rem',
+                background: card.accent,
+                border: `1px solid ${card.border}`,
+                borderRadius: '8px', textDecoration: 'none',
+                transition: 'border-color 0.2s',
+              }}
+            >
+              <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{card.icon}</div>
+              <div style={{
+                fontFamily: 'Outfit, sans-serif', fontWeight: 700,
+                color: '#fff', fontSize: '1rem', marginBottom: '0.4rem',
+              }}>
+                {card.label}
+              </div>
+              <div style={{
+                color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.6,
+              }}>
+                {card.description}
+              </div>
+              <div style={{
+                marginTop: '1rem', fontSize: '0.75rem',
+                color: 'rgba(255,255,255,0.25)',
+              }}>
+                {card.external ? 'part-search.elimfilters.com →' : 'Explore →'}
+              </div>
+            </motion.a>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -198,7 +349,7 @@ export default function Home() {
   }, [activeSlide]);
 
   return (
-    <>
+    <ConversionProvider>
       <Navigation />
       <main>
         {/* ── DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) ── */}
@@ -228,6 +379,9 @@ export default function Home() {
 
         {/* ── HERO ── */}
         <CinematicHero />
+
+        {/* ── ENGINEERING ENTRY ── */}
+        <EngineeringEntrySection />
 
         {/* ── STRATEGIC MISSION ── */}
         <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
@@ -660,6 +814,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </>
+    </ConversionProvider>
   );
 }
