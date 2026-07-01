@@ -11,7 +11,6 @@ import {
 } from '@/lib/services';
 import { useConversion } from '@/components/conversion/ConversionContext';
 import { CTACard } from '@/components/conversion/CTACard';
-import type { Recommendation } from '@/lib/services';
 
 // ─── Stage definitions ─────────────────────────────────────────────────────────
 
@@ -46,29 +45,29 @@ function getStage(step: number) {
 // ─── Industry data ─────────────────────────────────────────────────────────────
 
 const INDUSTRIES = [
-  { id: 'agriculture',    label: 'Agriculture',          icon: '🌾', assetType: 'Tractors & Harvesters',      risk: 'Mineral dust ingestion' },
-  { id: 'mining',         label: 'Mining',               icon: '⛏', assetType: 'Excavators & Haul Trucks',    risk: 'Silica & coal dust' },
-  { id: 'marine',         label: 'Marine',               icon: '⚓', assetType: 'Vessels & Generators',        risk: 'Catalytic fines & water' },
-  { id: 'construction',   label: 'Construction',         icon: '🏗', assetType: 'Cranes & Loaders',            risk: 'Particle wear & water' },
-  { id: 'oil-gas',        label: 'Oil & Gas',            icon: '🛢', assetType: 'Pumps & Compressors',         risk: 'Contamination & corrosion' },
-  { id: 'power',          label: 'Power Generation',     icon: '⚡', assetType: 'Turbines & Generators',       risk: 'Air & lube contamination' },
-  { id: 'transport',      label: 'Transport & Logistics',icon: '🚛', assetType: 'Fleet Trucks',                risk: 'Air intake & fuel quality' },
-  { id: 'manufacturing',  label: 'Manufacturing',        icon: '🏭', assetType: 'CNC & Hydraulic Presses',    risk: 'Hydraulic particle wear' },
-  { id: 'forestry',       label: 'Forestry',             icon: '🌲', assetType: 'Harvesters & Forwarders',    risk: 'Extreme dust & debris' },
-  { id: 'food',           label: 'Food & Beverage',      icon: '🥫', assetType: 'Processing Equipment',       risk: 'Compressed air purity' },
-  { id: 'military',       label: 'Defence',              icon: '🎖', assetType: 'Tactical Vehicles',           risk: 'Extreme dust & reliability' },
-  { id: 'rail',           label: 'Rail',                 icon: '🚂', assetType: 'Locomotives',                 risk: 'Diesel & lube contamination' },
+  { id: 'agriculture',    label: 'Agriculture',           icon: '🌾', assetType: 'Tractors & Harvesters',     risk: 'Mineral dust ingestion' },
+  { id: 'mining',         label: 'Mining',                icon: '⛏', assetType: 'Excavators & Haul Trucks',   risk: 'Silica & coal dust' },
+  { id: 'marine',         label: 'Marine',                icon: '⚓', assetType: 'Vessels & Generators',       risk: 'Catalytic fines & water' },
+  { id: 'construction',   label: 'Construction',          icon: '🏗', assetType: 'Cranes & Loaders',           risk: 'Particle wear & water' },
+  { id: 'oil-gas',        label: 'Oil & Gas',             icon: '🛢', assetType: 'Pumps & Compressors',        risk: 'Contamination & corrosion' },
+  { id: 'power',          label: 'Power Generation',      icon: '⚡', assetType: 'Turbines & Generators',      risk: 'Air & lube contamination' },
+  { id: 'transport',      label: 'Transport & Logistics', icon: '🚛', assetType: 'Fleet Trucks',               risk: 'Air intake & fuel quality' },
+  { id: 'manufacturing',  label: 'Manufacturing',         icon: '🏭', assetType: 'CNC & Hydraulic Presses',   risk: 'Hydraulic particle wear' },
+  { id: 'forestry',       label: 'Forestry',              icon: '🌲', assetType: 'Harvesters & Forwarders',   risk: 'Extreme dust & debris' },
+  { id: 'food',           label: 'Food & Beverage',       icon: '🥫', assetType: 'Processing Equipment',      risk: 'Compressed air purity' },
+  { id: 'military',       label: 'Defence',               icon: '🎖', assetType: 'Tactical Vehicles',          risk: 'Extreme dust & reliability' },
+  { id: 'rail',           label: 'Rail',                  icon: '🚂', assetType: 'Locomotives',                risk: 'Diesel & lube contamination' },
 ] as const;
 
 type IndustryId = typeof INDUSTRIES[number]['id'];
 
 const OPERATING_CONDITIONS = [
-  { id: 'dusty',       label: 'High dust / airborne particles',    icon: '🌪' },
-  { id: 'wet',         label: 'Water / moisture exposure',          icon: '💧' },
-  { id: 'extreme-temp',label: 'Extreme temperature ranges',         icon: '🌡' },
-  { id: 'heavy-load',  label: 'Continuous heavy load cycles',       icon: '⚙️' },
-  { id: 'vibration',   label: 'High vibration environment',         icon: '📳' },
-  { id: 'intermittent',label: 'Intermittent / seasonal operation',  icon: '🔄' },
+  { id: 'dusty',        label: 'High dust / airborne particles',   icon: '🌪' },
+  { id: 'wet',          label: 'Water / moisture exposure',         icon: '💧' },
+  { id: 'extreme-temp', label: 'Extreme temperature ranges',        icon: '🌡' },
+  { id: 'heavy-load',   label: 'Continuous heavy load cycles',      icon: '⚙️' },
+  { id: 'vibration',    label: 'High vibration environment',        icon: '📳' },
+  { id: 'intermittent', label: 'Intermittent / seasonal operation', icon: '🔄' },
 ] as const;
 
 type ConditionId = typeof OPERATING_CONDITIONS[number]['id'];
@@ -127,47 +126,192 @@ const INITIAL_STATE: ConsultationState = {
   selectedTechIds: [],
 };
 
-// ─── Stage Progress Header ─────────────────────────────────────────────────────
+// ─── Live Assessment Panel ─────────────────────────────────────────────────────
+// Renders a persistent card summarising everything established so far.
+// Appears from step 2 onward; updates after every interaction.
+
+interface LiveAssessmentPanelProps {
+  state: ConsultationState;
+  contaminationNodes: Array<{ entityId: string; label: string }>;
+  failureModeNodes:   Array<{ entityId: string; label: string }>;
+  techNodes:          Array<{ entityId: string; label: string }>;
+}
+
+function LiveAssessmentPanel({
+  state, contaminationNodes, failureModeNodes, techNodes,
+}: LiveAssessmentPanelProps) {
+  const ind   = INDUSTRIES.find((i) => i.id === state.industryId);
+  const conts = contaminationNodes.filter((n) => state.selectedContaminationIds.includes(n.entityId));
+  const fms   = failureModeNodes.filter((n) => state.selectedFailureModeIds.includes(n.entityId));
+  const techs = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
+
+  const filledFields = [
+    state.assetDescription,
+    state.industryId,
+    state.selectedConditions.length,
+    state.selectedContaminationIds.length,
+    state.selectedFailureModeIds.length,
+    state.selectedTechIds.length,
+  ].filter(Boolean).length;
+
+  const confidence =
+    filledFields >= 5 ? 'HIGH'
+    : filledFields >= 3 ? 'BUILDING'
+    : 'INITIAL';
+
+  const confColor =
+    confidence === 'HIGH'     ? '#86efac'
+    : confidence === 'BUILDING' ? '#fdba74'
+    : 'rgba(255,255,255,0.25)';
+
+  const condLabels = state.selectedConditions
+    .map((c) => OPERATING_CONDITIONS.find((o) => o.id === c)?.label)
+    .filter(Boolean);
+
+  // Nothing to show yet
+  if (state.step <= 1) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      style={{
+        marginBottom: '1.75rem',
+        padding: '1rem 1.1rem',
+        background: 'rgba(255,255,255,0.02)',
+        border: '1px solid rgba(255,255,255,0.07)',
+        borderRadius: '8px',
+      }}
+    >
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        marginBottom: '0.75rem',
+      }}>
+        <span style={{
+          fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace',
+          color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em',
+        }}>
+          CONSULTATION PROGRESS SUMMARY
+        </span>
+        <span style={{
+          fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700,
+          color: confColor, padding: '0.15rem 0.5rem',
+          background: `${confColor}10`, border: `1px solid ${confColor}28`,
+          borderRadius: '3px', letterSpacing: '0.08em',
+        }}>
+          {confidence}
+        </span>
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
+        gap: '0.65rem',
+      }}>
+        <SummaryRow
+          label="Asset"
+          value={state.assetDescription || '—'}
+          filled={!!state.assetDescription}
+        />
+        <SummaryRow
+          label="Operating Environment"
+          value={ind ? `${ind.label} · ${ind.assetType}` : '—'}
+          filled={!!ind}
+        />
+        <SummaryRow
+          label="Conditions"
+          value={condLabels.length > 0 ? condLabels.join(', ') : '—'}
+          filled={condLabels.length > 0}
+        />
+        <SummaryRow
+          label="Current Risk Profile"
+          value={
+            conts.length > 0
+              ? conts.map((n) => n.label).join(', ')
+              : ind
+              ? `${ind.risk} — awaiting confirmation`
+              : '—'
+          }
+          filled={conts.length > 0}
+          valueColor="rgba(253,186,116,0.8)"
+        />
+        <SummaryRow
+          label="Most Probable Failure Modes"
+          value={fms.length > 0 ? fms.map((n) => n.label).join(', ') : '—'}
+          filled={fms.length > 0}
+          valueColor="rgba(252,165,165,0.75)"
+        />
+        <SummaryRow
+          label="Protection Strategy"
+          value={techs.length > 0 ? techs.map((n) => n.label).join(', ') : 'Being built…'}
+          filled={techs.length > 0}
+          valueColor="rgba(255,241,45,0.8)"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
+function SummaryRow({
+  label, value, filled, valueColor,
+}: { label: string; value: string; filled: boolean; valueColor?: string }) {
+  return (
+    <div>
+      <p style={{
+        fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace',
+        color: filled ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.15)',
+        marginBottom: '0.2rem', letterSpacing: '0.07em',
+      }}>
+        {label}
+      </p>
+      <p style={{
+        fontSize: '0.72rem', color: filled ? (valueColor ?? 'rgba(255,255,255,0.65)') : 'rgba(255,255,255,0.2)',
+        margin: 0, lineHeight: 1.45,
+        fontStyle: filled ? 'normal' : 'italic',
+      }}>
+        {value}
+      </p>
+    </div>
+  );
+}
+
+// ─── Stage progress header ─────────────────────────────────────────────────────
 
 function StageHeader({ currentStep }: { currentStep: number }) {
   const currentStage = getStage(currentStep);
 
   return (
-    <div style={{ marginBottom: '2.5rem' }}>
-      {/* Three stage pills */}
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+    <div style={{ marginBottom: '1.5rem' }}>
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
         {STAGES.map((stage) => {
           const isActive = stage.id === currentStage.id;
-          const isDone = stage.id < currentStage.id;
+          const isDone   = stage.id < currentStage.id;
           return (
             <div
               key={stage.id}
               style={{
                 display: 'flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.45rem 0.85rem',
-                background: isActive
-                  ? `${stage.color}12`
-                  : isDone ? 'rgba(134,239,172,0.06)' : 'rgba(255,255,255,0.02)',
-                border: `1px solid ${isActive ? stage.color + '35' : isDone ? 'rgba(134,239,172,0.2)' : 'rgba(255,255,255,0.07)'}`,
-                borderRadius: '20px',
-                transition: 'all 0.3s',
+                padding: '0.4rem 0.8rem',
+                background: isActive ? `${stage.color}12` : isDone ? 'rgba(134,239,172,0.06)' : 'rgba(255,255,255,0.02)',
+                border: `1px solid ${isActive ? stage.color + '35' : isDone ? 'rgba(134,239,172,0.2)' : 'rgba(255,255,255,0.06)'}`,
+                borderRadius: '20px', transition: 'all 0.3s',
               }}
             >
               <span style={{
                 width: '16px', height: '16px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace',
-                background: isActive ? stage.color : isDone ? '#86efac' : 'rgba(255,255,255,0.08)',
-                color: isActive || isDone ? '#000' : 'rgba(255,255,255,0.3)',
+                fontSize: '0.52rem', fontFamily: 'JetBrains Mono, monospace',
+                background: isActive ? stage.color : isDone ? '#86efac' : 'rgba(255,255,255,0.07)',
+                color: isActive || isDone ? '#000' : 'rgba(255,255,255,0.25)',
                 fontWeight: 700, flexShrink: 0,
               }}>
                 {isDone ? '✓' : stage.id}
               </span>
               <span style={{
-                fontSize: '0.72rem',
-                fontFamily: 'Outfit, sans-serif',
+                fontSize: '0.7rem', fontFamily: 'Outfit, sans-serif',
                 fontWeight: isActive ? 600 : 400,
-                color: isActive ? stage.color : isDone ? 'rgba(134,239,172,0.7)' : 'rgba(255,255,255,0.28)',
+                color: isActive ? stage.color : isDone ? 'rgba(134,239,172,0.65)' : 'rgba(255,255,255,0.25)',
                 whiteSpace: 'nowrap',
               }}>
                 {stage.label}
@@ -177,22 +321,17 @@ function StageHeader({ currentStep }: { currentStep: number }) {
         })}
       </div>
 
-      {/* Active stage bar */}
       <div style={{
-        padding: '0.85rem 1.1rem',
-        background: `${currentStage.color}08`,
-        border: `1px solid ${currentStage.color}20`,
+        padding: '0.75rem 1rem',
+        background: `${currentStage.color}07`,
+        border: `1px solid ${currentStage.color}18`,
         borderLeft: `3px solid ${currentStage.color}`,
         borderRadius: '0 6px 6px 0',
       }}>
-        <p style={{
-          margin: 0, fontSize: '0.72rem',
-          fontFamily: 'Outfit, sans-serif', fontWeight: 600,
-          color: currentStage.color, marginBottom: '0.2rem',
-        }}>
+        <p style={{ margin: 0, fontSize: '0.7rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: currentStage.color, marginBottom: '0.15rem' }}>
           {currentStage.label}
         </p>
-        <p style={{ margin: 0, fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)' }}>
+        <p style={{ margin: 0, fontSize: '0.7rem', color: 'rgba(255,255,255,0.38)' }}>
           {currentStage.description}
         </p>
       </div>
@@ -200,17 +339,19 @@ function StageHeader({ currentStep }: { currentStep: number }) {
   );
 }
 
-// ─── Step question block ───────────────────────────────────────────────────────
+// ─── Question block ────────────────────────────────────────────────────────────
 
 interface QuestionProps {
   label: string;
   title: string;
-  rationale: string;
-  learned?: string;
+  // "Why this question is being asked" — the engineering justification for asking
+  why: string;
+  // "What we learned from the previous answer" — uncertainty eliminated so far
+  established?: string;
   children: React.ReactNode;
 }
 
-function Question({ label, title, rationale, learned, children }: QuestionProps) {
+function Question({ label, title, why, established, children }: QuestionProps) {
   return (
     <motion.div
       key={label}
@@ -222,58 +363,56 @@ function Question({ label, title, rationale, learned, children }: QuestionProps)
       <div style={{ marginBottom: '1.5rem' }}>
         <p style={{
           fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace',
-          color: 'rgba(255,255,255,0.25)', letterSpacing: '0.12em', marginBottom: '0.4rem',
+          color: 'rgba(255,255,255,0.22)', letterSpacing: '0.12em', marginBottom: '0.4rem',
         }}>
           {label}
         </p>
         <h2 style={{
           fontFamily: 'Outfit, sans-serif', fontWeight: 700,
-          fontSize: 'clamp(1.05rem, 2vw, 1.4rem)',
+          fontSize: 'clamp(1.05rem, 2vw, 1.35rem)',
           color: '#fff', margin: '0 0 0.85rem',
         }}>
           {title}
         </h2>
 
-        {/* Engineering rationale */}
+        {/* Why this question matters */}
         <div style={{
-          display: 'flex', gap: '0.65rem', alignItems: 'flex-start',
+          display: 'flex', gap: '0.65rem',
           padding: '0.7rem 0.9rem',
           background: 'rgba(255,241,45,0.03)',
-          border: '1px solid rgba(255,241,45,0.08)',
+          border: '1px solid rgba(255,241,45,0.07)',
           borderRadius: '6px',
-          marginBottom: learned ? '0.6rem' : '1.5rem',
+          marginBottom: established ? '0.55rem' : '1.5rem',
         }}>
           <span style={{
-            fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace',
-            color: 'rgba(255,241,45,0.45)', letterSpacing: '0.08em',
-            paddingTop: '1px', flexShrink: 0,
+            fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace',
+            color: 'rgba(255,241,45,0.4)', letterSpacing: '0.08em', paddingTop: '1px', flexShrink: 0,
           }}>
             WHY
           </span>
-          <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)', margin: 0, lineHeight: 1.65 }}>
-            {rationale}
+          <p style={{ fontSize: '0.77rem', color: 'rgba(255,255,255,0.48)', margin: 0, lineHeight: 1.65 }}>
+            {why}
           </p>
         </div>
 
-        {/* What was learned */}
-        {learned && (
+        {/* What we learned — uncertainty eliminated */}
+        {established && (
           <div style={{
-            display: 'flex', gap: '0.65rem', alignItems: 'flex-start',
+            display: 'flex', gap: '0.65rem',
             padding: '0.6rem 0.9rem',
             background: 'rgba(134,239,172,0.03)',
-            border: '1px solid rgba(134,239,172,0.1)',
+            border: '1px solid rgba(134,239,172,0.09)',
             borderRadius: '6px',
             marginBottom: '1.5rem',
           }}>
             <span style={{
-              fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace',
-              color: 'rgba(134,239,172,0.4)', letterSpacing: '0.08em',
-              paddingTop: '1px', flexShrink: 0,
+              fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace',
+              color: 'rgba(134,239,172,0.38)', letterSpacing: '0.08em', paddingTop: '1px', flexShrink: 0,
             }}>
               ✓
             </span>
-            <p style={{ fontSize: '0.76rem', color: 'rgba(134,239,172,0.65)', margin: 0, lineHeight: 1.6 }}>
-              {learned}
+            <p style={{ fontSize: '0.76rem', color: 'rgba(134,239,172,0.6)', margin: 0, lineHeight: 1.6 }}>
+              {established}
             </p>
           </div>
         )}
@@ -291,15 +430,15 @@ function SelectBtn({ selected, onClick, children }: {
 }) {
   return (
     <motion.button
-      whileHover={{ borderColor: 'rgba(255,241,45,0.35)' }}
+      whileHover={{ borderColor: 'rgba(255,241,45,0.3)' }}
       onClick={onClick}
       style={{
         padding: '0.7rem 1rem', textAlign: 'left', cursor: 'pointer',
         background: selected ? 'rgba(255,241,45,0.07)' : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${selected ? 'rgba(255,241,45,0.38)' : 'rgba(255,255,255,0.07)'}`,
+        border: `1px solid ${selected ? 'rgba(255,241,45,0.35)' : 'rgba(255,255,255,0.07)'}`,
         borderRadius: '6px',
-        color: selected ? '#FFF12D' : 'rgba(255,255,255,0.6)',
-        fontFamily: 'Inter, sans-serif', fontSize: '0.83rem', lineHeight: 1.4,
+        color: selected ? '#FFF12D' : 'rgba(255,255,255,0.58)',
+        fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.4,
         transition: 'all 0.12s',
       }}
     >
@@ -329,47 +468,67 @@ function NextBtn({ onClick, label = 'Continue' }: { onClick: () => void; label?:
 // ─── Stage transition card ─────────────────────────────────────────────────────
 
 function StageTransition({
-  stageId, title, description, onClick,
-}: { stageId: number; title: string; description: string; onClick: () => void }) {
+  stageId, title, whatWeKnow, whatComesNext, onClick,
+}: {
+  stageId: number; title: string;
+  whatWeKnow: string;   // what uncertainty was eliminated
+  whatComesNext: string; // why the next stage is necessary
+  onClick: () => void;
+}) {
   const stage = STAGES.find((s) => s.id === stageId)!;
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.97 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.35 }}
+      transition={{ duration: 0.3 }}
       style={{
-        padding: '2rem',
+        padding: '1.5rem',
         background: `${stage.color}07`,
-        border: `1px solid ${stage.color}25`,
+        border: `1px solid ${stage.color}22`,
         borderRadius: '10px',
-        textAlign: 'center',
       }}
     >
       <div style={{
-        width: '40px', height: '40px', borderRadius: '50%',
-        background: `${stage.color}18`, border: `1px solid ${stage.color}35`,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        margin: '0 auto 1.25rem',
-        fontFamily: 'JetBrains Mono, monospace', fontSize: '0.8rem',
-        color: stage.color, fontWeight: 700,
+        display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem',
       }}>
-        {stageId}
+        <div style={{
+          width: '32px', height: '32px', borderRadius: '50%', flexShrink: 0,
+          background: `${stage.color}15`, border: `1px solid ${stage.color}30`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem',
+          color: stage.color, fontWeight: 700,
+        }}>
+          {stageId}
+        </div>
+        <div>
+          <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: `${stage.color}70`, letterSpacing: '0.1em', margin: 0, marginBottom: '0.15rem' }}>
+            MOVING TO STAGE {stageId}
+          </p>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#fff', margin: 0 }}>
+            {title}
+          </p>
+        </div>
       </div>
-      <p style={{
-        fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace',
-        color: `${stage.color}80`, letterSpacing: '0.12em', marginBottom: '0.6rem',
-      }}>
-        MOVING TO STAGE {stageId}
-      </p>
-      <h3 style={{
-        fontFamily: 'Outfit, sans-serif', fontWeight: 700,
-        fontSize: '1.15rem', color: '#fff', margin: '0 0 0.5rem',
-      }}>
-        {title}
-      </h3>
-      <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', margin: '0 0 1.5rem', lineHeight: 1.6 }}>
-        {description}
-      </p>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
+        <div style={{
+          padding: '0.65rem 0.9rem',
+          background: 'rgba(134,239,172,0.04)', border: '1px solid rgba(134,239,172,0.1)',
+          borderRadius: '6px', display: 'flex', gap: '0.6rem',
+        }}>
+          <span style={{ fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(134,239,172,0.45)', paddingTop: '1px', flexShrink: 0, letterSpacing: '0.06em' }}>ESTABLISHED</span>
+          <p style={{ fontSize: '0.78rem', color: 'rgba(134,239,172,0.65)', margin: 0, lineHeight: 1.6 }}>{whatWeKnow}</p>
+        </div>
+        <div style={{
+          padding: '0.65rem 0.9rem',
+          background: `${stage.color}06`, border: `1px solid ${stage.color}18`,
+          borderRadius: '6px', display: 'flex', gap: '0.6rem',
+        }}>
+          <span style={{ fontSize: '0.55rem', fontFamily: 'JetBrains Mono, monospace', color: `${stage.color}60`, paddingTop: '1px', flexShrink: 0, letterSpacing: '0.06em' }}>NEXT</span>
+          <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', margin: 0, lineHeight: 1.6 }}>{whatComesNext}</p>
+        </div>
+      </div>
+
       <NextBtn onClick={onClick} label={`Begin ${title}`} />
     </motion.div>
   );
@@ -383,7 +542,6 @@ export function AssetProtectionConsultation() {
 
   const selectedIndustry = INDUSTRIES.find((i) => i.id === state.industryId) ?? null;
 
-  // Nodes from services
   const contaminationNodes = listEntitiesWithProvenance('CONTAMINATION').map(({ node }) => node);
   const failureModeNodes   = listEntitiesWithProvenance('FAILURE_MODE').map(({ node }) => node);
   const principleNodes     = listEntitiesWithProvenance('ENGINEERING_PRINCIPLE').map(({ node }) => node);
@@ -402,21 +560,20 @@ export function AssetProtectionConsultation() {
 
   // ─── Stage 1: Understand the Asset ──────────────────────────────────────────
 
-  // Step 1 — Asset
   function renderStep1() {
     return (
       <Question
         label="STAGE 1 · UNDERSTAND THE ASSET"
         title="Which asset are you protecting?"
-        rationale="Asset type determines which systems are at risk. A diesel excavator, a marine generator, and a hydraulic press face different contamination pathways. The more specifically you describe the asset, the more precisely the consultation can be tailored."
+        why="Asset type determines which systems are at risk and which contamination pathways are physically possible. A diesel excavator, a marine generator, and a hydraulic press face entirely different failure modes — the asset is the starting point for every decision that follows."
       >
         <textarea
           value={state.assetDescription}
           onChange={(e) => setState((s) => ({ ...s, assetDescription: e.target.value }))}
           placeholder="e.g. Caterpillar 390F excavator, MAN TGX 18.500 fleet truck, Grundfos centrifugal pump station, Cummins QSK60 generator set…"
           style={{
-            width: '100%', minHeight: '90px', padding: '0.9rem 1rem',
-            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)',
+            width: '100%', minHeight: '88px', padding: '0.9rem 1rem',
+            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)',
             borderRadius: '6px', color: '#fff', fontFamily: 'Inter, sans-serif',
             fontSize: '0.88rem', lineHeight: 1.65, resize: 'vertical', boxSizing: 'border-box',
           }}
@@ -434,15 +591,15 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 2 — Industry
   function renderStep2() {
-    const assetLabel = state.assetDescription;
     return (
       <Question
         label="STAGE 1 · UNDERSTAND THE ASSET"
         title="What industry does this asset operate in?"
-        rationale="Industry defines the dominant contamination sources. Mining operations introduce crystalline silica from rock dust. Marine environments expose fuel systems to catalytic fines. Manufacturing hydraulics face fine metallic debris. The industry context determines which contamination risks are most probable."
-        learned={assetLabel ? `Asset identified: ${assetLabel}.` : undefined}
+        why="Industry is the single most reliable predictor of contamination type. Mining introduces crystalline silica from blasting and haul roads. Marine operations expose fuel systems to catalytic fines from bunker fuel. Food and beverage operations require compressed air free of moisture and particulates. Each industry creates a distinct contamination signature — knowing it eliminates an entire class of irrelevant recommendations."
+        established={state.assetDescription
+          ? `Asset identified: ${state.assetDescription}. This establishes the physical systems under consultation.`
+          : undefined}
       >
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(175px, 1fr))', gap: '0.6rem' }}>
           {INDUSTRIES.map((ind, i) => (
@@ -451,7 +608,7 @@ export function AssetProtectionConsultation() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.025 }}
-              whileHover={{ borderColor: 'rgba(125,211,252,0.35)', background: 'rgba(125,211,252,0.04)' }}
+              whileHover={{ borderColor: 'rgba(125,211,252,0.32)', background: 'rgba(125,211,252,0.04)' }}
               onClick={() => {
                 setJourneySelection('industryId', ind.id);
                 setJourneySelection('assetType', ind.assetType);
@@ -461,15 +618,14 @@ export function AssetProtectionConsultation() {
               style={{
                 padding: '0.85rem 0.9rem', background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.07)',
-                borderRadius: '8px', cursor: 'pointer', textAlign: 'left',
-                transition: 'all 0.12s',
+                borderRadius: '8px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.12s',
               }}
             >
               <div style={{ fontSize: '1.2rem', marginBottom: '0.4rem' }}>{ind.icon}</div>
               <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: '#fff', fontSize: '0.82rem', marginBottom: '0.2rem' }}>
                 {ind.label}
               </div>
-              <div style={{ fontSize: '0.65rem', color: 'rgba(253,186,116,0.65)', fontFamily: 'JetBrains Mono, monospace' }}>
+              <div style={{ fontSize: '0.65rem', color: 'rgba(253,186,116,0.62)', fontFamily: 'JetBrains Mono, monospace' }}>
                 ⚠ {ind.risk}
               </div>
             </motion.button>
@@ -479,17 +635,18 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 3 — Operating conditions
   function renderStep3() {
     const ind = selectedIndustry;
     return (
       <Question
         label="STAGE 1 · UNDERSTAND THE ASSET"
         title="What operating conditions does this asset face?"
-        rationale="Conditions determine contamination load severity. High-dust environments accelerate air filter blinding and can introduce abrasive particles into lube systems. Wet conditions create water contamination risk in fuel and hydraulic circuits. Select all that apply — each condition adjusts the weighting of failure mode probability."
-        learned={ind ? `${ind.label} confirmed. Primary risk profile: ${ind.risk}. Typical asset: ${ind.assetType}.` : undefined}
+        why="Conditions determine contamination load intensity, not just contamination type. The same asset operated in a dusty open-cut mine and a climate-controlled workshop faces completely different particle ingestion rates and filter service life. Each condition selected here adjusts the failure mode probability weighting — conditions with no confirmed impact will not drive recommendations."
+        established={ind
+          ? `${ind.label} confirmed as operating industry. This narrows contamination risk to: ${ind.risk}. Typical asset class: ${ind.assetType}.`
+          : undefined}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '0.55rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(248px, 1fr))', gap: '0.55rem' }}>
           {OPERATING_CONDITIONS.map((cond) => (
             <SelectBtn
               key={cond.id}
@@ -504,38 +661,30 @@ export function AssetProtectionConsultation() {
         <NextBtn
           onClick={() => {
             dispatchTrustSignal('T-3');
-            // Stage transition before entering stage 2
             advance(3.5 as never);
           }}
-          label="Analyse the risk"
+          label="Diagnose the risk"
         />
       </Question>
     );
   }
 
-  // Stage 2 transition card
   function renderStage2Transition() {
+    const ind = selectedIndustry;
     const condLabels = state.selectedConditions
       .map((c) => OPERATING_CONDITIONS.find((o) => o.id === c)?.label)
-      .filter(Boolean)
-      .join(', ');
+      .filter(Boolean).join('; ');
     return (
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-        {condLabels && (
-          <div style={{
-            padding: '0.6rem 0.9rem', marginBottom: '1.25rem',
-            background: 'rgba(134,239,172,0.03)', border: '1px solid rgba(134,239,172,0.1)',
-            borderRadius: '6px', fontSize: '0.76rem', color: 'rgba(134,239,172,0.65)',
-            display: 'flex', gap: '0.6rem',
-          }}>
-            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', color: 'rgba(134,239,172,0.4)', paddingTop: '1px', flexShrink: 0 }}>✓</span>
-            Operating conditions confirmed: {condLabels}.
-          </div>
-        )}
         <StageTransition
           stageId={2}
           title="Diagnose the Risk"
-          description="We have mapped your asset and operational context. Now we identify the contamination sources most probable in your environment, trace them to specific failure modes, and establish the engineering principles that govern your protection strategy."
+          whatWeKnow={[
+            ind ? `Asset operating in ${ind.label}.` : null,
+            condLabels ? `Conditions confirmed: ${condLabels}.` : null,
+            `These inputs have narrowed the contamination scope from all possible sources to the subset probable for this operating profile.`,
+          ].filter(Boolean).join(' ')}
+          whatComesNext="We will now identify which contamination sources are active, trace them to the failure modes they create, and establish the engineering principles that govern the protection strategy. Each step eliminates an additional category of uncertainty from the recommendation."
           onClick={() => advance(4)}
         />
       </motion.div>
@@ -544,7 +693,6 @@ export function AssetProtectionConsultation() {
 
   // ─── Stage 2: Diagnose the Risk ─────────────────────────────────────────────
 
-  // Step 4 — Symptoms
   function renderStep4() {
     const condLabels = state.selectedConditions
       .map((c) => OPERATING_CONDITIONS.find((o) => o.id === c)?.label)
@@ -553,8 +701,10 @@ export function AssetProtectionConsultation() {
       <Question
         label="STAGE 2 · DIAGNOSE THE RISK"
         title="Have you observed any of these operational symptoms?"
-        rationale="Symptoms are diagnostic signals. Premature wear suggests particle contamination in lube or hydraulic circuits. Hydraulic drift points to particle-damaged proportional valves. Shortened filter intervals indicate contamination loads that exceed standard service assumptions. Symptoms help confirm which contamination mechanisms are already active."
-        learned={condLabels ? `Operating conditions established: ${condLabels}.` : undefined}
+        why="Symptoms are evidence that contamination is already active. Premature wear confirms particle contamination is transiting bearing or ring clearances. Hydraulic drift indicates particle damage to proportional valves or spool bores. Shortened filter intervals reveal contamination loads exceeding baseline design assumptions. Symptoms do not change the contamination source — they confirm which mechanisms are already producing measurable consequences."
+        established={condLabels
+          ? `Operating conditions established: ${condLabels}. This confirms the environmental load severity.`
+          : undefined}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
           {SYMPTOMS.map((sym) => (
@@ -572,7 +722,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 5 — Contamination
   function renderStep5() {
     const candidateIds = state.industryId ? INDUSTRY_CONTAMINATION_MAP[state.industryId] : [];
     const candidates = contaminationNodes.filter((n) => candidateIds.includes(n.entityId));
@@ -582,9 +731,11 @@ export function AssetProtectionConsultation() {
     return (
       <Question
         label="STAGE 2 · DIAGNOSE THE RISK"
-        title="Which contamination risks are active in your environment?"
-        rationale="Every failure mode traces to a contamination source. Identifying the contamination at this stage ensures the technology recommendation targets the root cause, not just the symptom. Review the contamination types identified for your industry and confirm which are most relevant to your operation."
-        learned={symptomLabels ? `Symptoms observed: ${symptomLabels}.` : undefined}
+        title="Which contamination sources are active in your environment?"
+        why="The contamination source — not the product — is what damages equipment. Recommending a technology without first identifying the contamination source produces a solution that may address the wrong failure mechanism. This step ensures every technology recommendation that follows is justified by a specific, confirmed contamination input."
+        established={symptomLabels
+          ? `Observed symptoms: ${symptomLabels}. These confirm that contamination mechanisms are already producing measurable operational consequences.`
+          : undefined}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
           {candidates.map((node) => {
@@ -593,34 +744,34 @@ export function AssetProtectionConsultation() {
             return (
               <motion.div
                 key={node.entityId}
-                whileHover={{ borderColor: selected ? 'rgba(253,186,116,0.5)' : 'rgba(255,255,255,0.15)' }}
+                whileHover={{ borderColor: selected ? 'rgba(253,186,116,0.5)' : 'rgba(255,255,255,0.14)' }}
                 onClick={() => toggle('selectedContaminationIds', node.entityId)}
                 style={{
                   padding: '0.85rem 1rem', cursor: 'pointer',
-                  background: selected ? 'rgba(253,186,116,0.06)' : 'rgba(255,255,255,0.02)',
-                  border: `1px solid ${selected ? 'rgba(253,186,116,0.38)' : 'rgba(255,255,255,0.07)'}`,
+                  background: selected ? 'rgba(253,186,116,0.05)' : 'rgba(255,255,255,0.02)',
+                  border: `1px solid ${selected ? 'rgba(253,186,116,0.35)' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: '7px', transition: 'all 0.12s',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                   <div style={{
-                    width: '18px', height: '18px', borderRadius: '4px', flexShrink: 0, marginTop: '1px',
-                    background: selected ? '#fdba74' : 'rgba(255,255,255,0.07)',
-                    border: `1px solid ${selected ? '#fdba74' : 'rgba(255,255,255,0.12)'}`,
+                    width: '17px', height: '17px', borderRadius: '4px', flexShrink: 0, marginTop: '2px',
+                    background: selected ? '#fdba74' : 'rgba(255,255,255,0.06)',
+                    border: `1px solid ${selected ? '#fdba74' : 'rgba(255,255,255,0.1)'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '0.6rem', color: '#000', transition: 'all 0.12s',
+                    fontSize: '0.58rem', color: '#000', transition: 'all 0.12s',
                   }}>
                     {selected && '✓'}
                   </div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: '#fff', fontSize: '0.86rem', marginBottom: '0.25rem' }}>
+                    <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: '#fff', fontSize: '0.85rem', marginBottom: '0.25rem' }}>
                       {node.label}
                     </div>
-                    <div style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', marginBottom: !!p['phaseState'] ? '0.25rem' : 0 }}>
+                    <div style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', marginBottom: !!p['phaseState'] ? '0.2rem' : 0 }}>
                       {node.entityId}
                     </div>
                     {!!p['phaseState'] && (
-                      <div style={{ fontSize: '0.73rem', color: 'rgba(255,255,255,0.4)' }}>
+                      <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.38)' }}>
                         {String(p['phaseState'])}
                       </div>
                     )}
@@ -630,8 +781,8 @@ export function AssetProtectionConsultation() {
             );
           })}
           {candidates.length === 0 && (
-            <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.83rem' }}>
-              Return to step 2 and select your industry to surface contamination risks.
+            <p style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.82rem' }}>
+              Return to step 2 and select your industry to surface contamination sources.
             </p>
           )}
         </div>
@@ -639,8 +790,8 @@ export function AssetProtectionConsultation() {
           onClick={() => {
             dispatchTrustSignal('T-4');
             const fmIds = new Set<string>();
-            state.selectedContaminationIds.forEach((contId) => {
-              recommendFromContamination(contId)
+            state.selectedContaminationIds.forEach((cId) => {
+              recommendFromContamination(cId)
                 .filter((r) => r.targetEntityType === 'FAILURE_MODE')
                 .forEach((r) => { fmIds.add(r.targetEntityId); receiveRecommendation(r); });
             });
@@ -652,7 +803,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 6 — Failure modes
   function renderStep6() {
     const contLabels = state.selectedContaminationIds
       .map((id) => contaminationNodes.find((n) => n.entityId === id)?.label).filter(Boolean).join(', ');
@@ -660,12 +810,14 @@ export function AssetProtectionConsultation() {
     return (
       <Question
         label="STAGE 2 · DIAGNOSE THE RISK"
-        title="Failure modes derived from your contamination profile"
-        rationale="Each contamination source activates one or more failure modes. Understanding the failure modes translates contamination data into engineering consequences — bearing lifespan reduction, overhaul cost, and unplanned downtime. This is the evidence base for the protection strategy that follows."
-        learned={contLabels ? `Contamination sources confirmed: ${contLabels}.` : undefined}
+        title="Failure modes produced by your contamination profile"
+        why="Failure modes translate contamination into engineering consequences — bearing lifespan reduction, overhaul cost, unplanned downtime. Knowing the failure modes converts a contamination observation into a quantified operational risk. This is the evidence base that justifies the investment in the protection strategy that follows."
+        established={contLabels
+          ? `Contamination sources confirmed: ${contLabels}. The failure modes below are the engineering consequences of these contamination inputs in your operating environment.`
+          : undefined}
       >
         {fmCandidates.length === 0 ? (
-          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.83rem', marginBottom: '1.5rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.82rem', marginBottom: '1.5rem' }}>
             Select contamination sources in the previous step to derive failure modes.
           </p>
         ) : (
@@ -678,24 +830,24 @@ export function AssetProtectionConsultation() {
                   style={{
                     padding: '0.9rem 1rem',
                     background: 'rgba(252,165,165,0.04)',
-                    border: '1px solid rgba(252,165,165,0.13)',
+                    border: '1px solid rgba(252,165,165,0.12)',
                     borderRadius: '7px',
                   }}
                 >
-                  <div style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: '#fca5a5', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
+                  <div style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: '#fca5a5', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
                     {node.entityId}
                   </div>
                   <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: '#fff', fontSize: '0.86rem', marginBottom: '0.45rem' }}>
                     {node.label}
                   </div>
                   {!!p['measurableConsequence'] && (
-                    <p style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.5)', margin: '0 0 0.4rem', lineHeight: 1.6 }}>
+                    <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.48)', margin: '0 0 0.4rem', lineHeight: 1.6 }}>
                       {String(p['measurableConsequence'])}
                     </p>
                   )}
                   {!!p['industrialImpact'] && (
-                    <p style={{ fontSize: '0.72rem', color: 'rgba(253,186,116,0.6)', margin: 0, lineHeight: 1.5 }}>
-                      <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.55rem', marginRight: '0.4rem', opacity: 0.7 }}>COST IMPACT</span>
+                    <p style={{ fontSize: '0.71rem', color: 'rgba(253,186,116,0.58)', margin: 0, lineHeight: 1.5 }}>
+                      <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.54rem', marginRight: '0.4rem', opacity: 0.65 }}>COST IMPACT</span>
                       {String(p['industrialImpact'])}
                     </p>
                   )}
@@ -720,7 +872,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 7 — Engineering principles
   function renderStep7() {
     const fmLabels = state.selectedFailureModeIds
       .map((id) => failureModeNodes.find((n) => n.entityId === id)?.label).filter(Boolean).join(', ');
@@ -728,16 +879,18 @@ export function AssetProtectionConsultation() {
       recommendFromFailureMode(fmId).filter((r) => r.targetEntityType === 'ENGINEERING_PRINCIPLE'),
     );
     const uniqueIds = Array.from(new Set(principleRecs.map((r) => r.targetEntityId)));
-    const shown = (uniqueIds.length > 0
+    const shown = uniqueIds.length > 0
       ? principleNodes.filter((n) => uniqueIds.includes(n.entityId))
-      : principleNodes.slice(0, 4)
-    );
+      : principleNodes.slice(0, 4);
+
     return (
       <Question
         label="STAGE 2 · DIAGNOSE THE RISK"
-        title="Engineering principles governing your protection strategy"
-        rationale="Engineering principles are the physical laws and design rules that explain why a technology works — not just what it does. Understanding the principles builds justified confidence in the recommendation. If the principles hold for your operating conditions, the technology will perform as predicted."
-        learned={fmLabels ? `Failure modes mapped: ${fmLabels}.` : undefined}
+        title="Engineering principles that govern this protection strategy"
+        why="Engineering principles are the physical laws that determine whether a technology can actually prevent the identified failure modes. A technology recommendation without a matching engineering principle is an opinion. A recommendation grounded in a verified engineering principle is a defensible engineering decision — one a reliability engineer, purchasing manager, or operations director can justify internally."
+        established={fmLabels
+          ? `${state.selectedFailureModeIds.length} failure mode${state.selectedFailureModeIds.length > 1 ? 's' : ''} mapped from confirmed contamination sources: ${fmLabels}.`
+          : undefined}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
           {shown.map((node) => {
@@ -752,14 +905,14 @@ export function AssetProtectionConsultation() {
                   borderRadius: '7px',
                 }}
               >
-                <div style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: '#7dd3fc', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
+                <div style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: '#7dd3fc', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
                   {node.entityId}
                 </div>
                 <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, color: '#fff', fontSize: '0.86rem', marginBottom: '0.35rem' }}>
                   {node.label}
                 </div>
                 {!!p['definition'] && (
-                  <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', margin: 0, lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '0.74rem', color: 'rgba(255,255,255,0.43)', margin: 0, lineHeight: 1.6 }}>
                     {String(p['definition'])}
                   </p>
                 )}
@@ -792,36 +945,34 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Stage 3 transition card
   function renderStage3Transition() {
-    const contCount = state.selectedContaminationIds.length;
-    const fmCount = state.selectedFailureModeIds.length;
-    const principleCount = state.selectedPrincipleIds.length;
+    const contCount  = state.selectedContaminationIds.length;
+    const fmCount    = state.selectedFailureModeIds.length;
+    const prinCount  = state.selectedPrincipleIds.length;
     return (
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-        <div style={{
-          display: 'flex', gap: '1rem', flexWrap: 'wrap',
-          marginBottom: '1.25rem',
-        }}>
+        {/* Evidence summary chips */}
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
           {[
-            { label: 'Contamination risks', value: contCount, color: '#fdba74' },
-            { label: 'Failure modes', value: fmCount, color: '#fca5a5' },
-            { label: 'Engineering principles', value: principleCount, color: '#7dd3fc' },
+            { label: 'Contamination sources', value: contCount, color: '#fdba74' },
+            { label: 'Failure modes',          value: fmCount,  color: '#fca5a5' },
+            { label: 'Engineering principles', value: prinCount, color: '#7dd3fc' },
           ].map(({ label, value, color }) => (
             <div key={label} style={{
-              padding: '0.65rem 1rem', flex: '1 1 140px',
-              background: `${color}07`, border: `1px solid ${color}18`,
+              padding: '0.6rem 0.9rem', flex: '1 1 130px',
+              background: `${color}06`, border: `1px solid ${color}16`,
               borderRadius: '6px', textAlign: 'center',
             }}>
-              <div style={{ fontSize: '1.3rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, color }}>{value}</div>
-              <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)', fontFamily: 'JetBrains Mono, monospace' }}>{label}</div>
+              <div style={{ fontSize: '1.2rem', fontFamily: 'Outfit, sans-serif', fontWeight: 700, color }}>{value}</div>
+              <div style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.32)', fontFamily: 'JetBrains Mono, monospace' }}>{label}</div>
             </div>
           ))}
         </div>
         <StageTransition
           stageId={3}
           title="Build the Protection Strategy"
-          description="The diagnostic phase is complete. We now map your contamination profile and engineering principles to the technology architectures that control them, validate against published standards, and produce your Engineering Assessment Summary."
+          whatWeKnow={`Risk diagnosis is complete. ${contCount} contamination source${contCount !== 1 ? 's' : ''} confirmed, ${fmCount} failure mode${fmCount !== 1 ? 's' : ''} mapped, and the engineering principles that govern the required protection have been identified.`}
+          whatComesNext="The final stage maps these findings to the technology architectures that control them, validates the recommendation against published standards, and produces an Engineering Assessment Summary — a defensible, explainable justification for the protection strategy."
           onClick={() => advance(8)}
         />
       </motion.div>
@@ -830,19 +981,18 @@ export function AssetProtectionConsultation() {
 
   // ─── Stage 3: Build the Protection Strategy ─────────────────────────────────
 
-  // Step 8 — Technologies
   function renderStep8() {
-    const techCandidates = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
-    const shown = techCandidates.length > 0 ? techCandidates : techNodes.slice(0, 3);
+    const shown = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
+    const fallback = shown.length === 0 ? techNodes.slice(0, 3) : shown;
     return (
       <Question
         label="STAGE 3 · PROTECTION STRATEGY"
-        title="Technology architectures that address your contamination profile"
-        rationale="Each technology architecture controls contamination through a specific engineering mechanism — particle interception, water separation, coalescing, adsorption. The technologies shown are selected because they directly address the failure modes identified in Stage 2. Understanding the mechanism builds justified confidence that the recommendation will work."
-        learned={`Engineering principles identified. Risk diagnosis complete.`}
+        title="Technology architectures that control your confirmed risks"
+        why="Each technology architecture controls contamination through a specific engineering mechanism — depth filtration, water coalescing, adsorption, surface interception. A technology is included here only because it directly addresses a failure mode identified in Stage 2. Understanding the control mechanism is what makes this a recommendation you can defend, not just a product you were sold."
+        established="Engineering principles identified. The technologies below are selected because they implement those principles against the confirmed contamination sources."
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
-          {shown.map((node) => {
+          {fallback.map((node) => {
             const p = node.properties as Record<string, unknown>;
             return (
               <div
@@ -856,14 +1006,14 @@ export function AssetProtectionConsultation() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,241,45,0.4)', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
+                    <div style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,241,45,0.38)', marginBottom: '0.3rem', letterSpacing: '0.07em' }}>
                       {node.entityId}
                     </div>
                     <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, color: '#FFF12D', fontSize: '0.92rem', marginBottom: '0.35rem' }}>
                       {node.label}
                     </div>
                     {!!p['engineeringDescription'] && (
-                      <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0, lineHeight: 1.6 }}>
+                      <p style={{ fontSize: '0.74rem', color: 'rgba(255,255,255,0.48)', margin: 0, lineHeight: 1.6 }}>
                         {String(p['engineeringDescription'])}
                       </p>
                     )}
@@ -871,9 +1021,9 @@ export function AssetProtectionConsultation() {
                   <Link
                     href={`/engineering/technologies/${node.entityId}`}
                     style={{
-                      fontSize: '0.62rem', fontFamily: 'JetBrains Mono, monospace',
-                      color: 'rgba(255,241,45,0.5)', textDecoration: 'none',
-                      border: '1px solid rgba(255,241,45,0.15)', padding: '0.28rem 0.55rem',
+                      fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace',
+                      color: 'rgba(255,241,45,0.45)', textDecoration: 'none',
+                      border: '1px solid rgba(255,241,45,0.13)', padding: '0.25rem 0.5rem',
                       borderRadius: '4px', whiteSpace: 'nowrap', flexShrink: 0,
                     }}
                   >
@@ -892,7 +1042,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 9 — Standards
   function renderStep9() {
     const seenStds = new Set<string>();
     state.selectedTechIds.forEach((techId) => {
@@ -905,15 +1054,18 @@ export function AssetProtectionConsultation() {
       .filter((n) => seenStds.has(n.entityId));
     const techLabels = state.selectedTechIds
       .map((id) => techNodes.find((n) => n.entityId === id)?.label).filter(Boolean).join(', ');
+
     return (
       <Question
         label="STAGE 3 · PROTECTION STRATEGY"
-        title="Standards validating this recommendation"
-        rationale="Engineering recommendations must be traceable to published test standards. The standards below define the test methods and performance thresholds that confirm a technology achieves the required contamination control target. They are the independent evidence base for the recommendation."
-        learned={techLabels ? `Technologies identified: ${techLabels}.` : undefined}
+        title="Standards that validate this recommendation"
+        why="Standards are the independent evidence base that separates engineering decisions from commercial claims. The standards listed below define the test methods and performance thresholds against which these technology architectures have been verified. If a purchasing manager or auditor asks why this system was specified, the answer is not 'the supplier recommended it' — it is 'it was selected because it meets the requirements defined in ISO XXXX for this contamination target.'"
+        established={techLabels
+          ? `Technologies identified: ${techLabels}. The standards below are the test frameworks that validate their performance against your contamination targets.`
+          : undefined}
       >
         {stdNodes.length > 0 ? (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: '0.55rem', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(228px, 1fr))', gap: '0.55rem', marginBottom: '1.5rem' }}>
             {stdNodes.map((node) => {
               const p = node.properties as Record<string, unknown>;
               return (
@@ -922,7 +1074,7 @@ export function AssetProtectionConsultation() {
                   style={{
                     padding: '0.8rem 0.9rem',
                     background: 'rgba(196,181,253,0.04)',
-                    border: '1px solid rgba(196,181,253,0.1)',
+                    border: '1px solid rgba(196,181,253,0.09)',
                     borderRadius: '6px',
                   }}
                 >
@@ -930,11 +1082,11 @@ export function AssetProtectionConsultation() {
                     {node.label}
                   </div>
                   {!!p['scope'] && (
-                    <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
+                    <p style={{ fontSize: '0.69rem', color: 'rgba(255,255,255,0.38)', margin: '0 0 0.4rem', lineHeight: 1.5 }}>
                       {String(p['scope']).slice(0, 110)}…
                     </p>
                   )}
-                  <Link href={`/engineering/standards/${node.entityId}`} style={{ fontSize: '0.58rem', color: 'rgba(196,181,253,0.45)', textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace' }}>
+                  <Link href={`/engineering/standards/${node.entityId}`} style={{ fontSize: '0.57rem', color: 'rgba(196,181,253,0.42)', textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace' }}>
                     VIEW STANDARD →
                   </Link>
                 </div>
@@ -942,8 +1094,8 @@ export function AssetProtectionConsultation() {
             })}
           </div>
         ) : (
-          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.83rem', marginBottom: '1.5rem' }}>
-            Standards are referenced within each technology specification.
+          <p style={{ color: 'rgba(255,255,255,0.32)', fontSize: '0.82rem', marginBottom: '1.5rem' }}>
+            Standards are referenced within each technology specification page.
           </p>
         )}
         <NextBtn onClick={() => advance(10)} label="View engineering assessment" />
@@ -951,7 +1103,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 10 — Assessment summary
   function renderStep10() {
     const techShown  = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
     const contShown  = contaminationNodes.filter((n) => state.selectedContaminationIds.includes(n.entityId));
@@ -961,58 +1112,52 @@ export function AssetProtectionConsultation() {
     const condLabels = state.selectedConditions
       .map((c) => OPERATING_CONDITIONS.find((o) => o.id === c)?.label).filter(Boolean).join(', ');
 
-    // Confidence derived from how many steps produced data
-    const filledSteps = [
-      state.assetDescription,
-      state.industryId,
+    const filledFields = [
+      state.assetDescription, state.industryId,
       state.selectedConditions.length,
       state.selectedContaminationIds.length,
       state.selectedFailureModeIds.length,
       state.selectedTechIds.length,
     ].filter(Boolean).length;
-    const confidence = filledSteps >= 5 ? 'HIGH' : filledSteps >= 3 ? 'MEDIUM' : 'LOW';
+    const confidence = filledFields >= 5 ? 'HIGH' : filledFields >= 3 ? 'MEDIUM' : 'LOW';
     const confColor  = confidence === 'HIGH' ? '#86efac' : confidence === 'MEDIUM' ? '#fdba74' : '#fca5a5';
 
     return (
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-        {/* Heading */}
-        <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.12em', marginBottom: '0.4rem' }}>
+        <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.12em', marginBottom: '0.4rem' }}>
           STAGE 3 · ENGINEERING ASSESSMENT
         </p>
-        <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#fff', margin: '0 0 0.5rem' }}>
+        <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', color: '#fff', margin: '0 0 0.5rem' }}>
           Engineering Assessment Summary
         </h2>
-        <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', margin: '0 0 1.5rem', lineHeight: 1.65 }}>
-          Based on the operating conditions described, the following protection system provides the best engineering fit for reducing the identified operational risks in {indLabel} applications.
+        <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.42)', margin: '0 0 1.5rem', lineHeight: 1.65 }}>
+          Based on the operating conditions described, the protection system below provides the best engineering fit for reducing the identified operational risks in {indLabel} applications.
         </p>
 
         {/* Assessment card */}
         <div style={{
-          padding: '1.5rem', marginBottom: '1.5rem',
-          background: 'rgba(255,241,45,0.04)',
-          border: '2px solid rgba(255,241,45,0.18)',
+          padding: '1.4rem', marginBottom: '1.5rem',
+          background: 'rgba(255,241,45,0.03)',
+          border: '2px solid rgba(255,241,45,0.15)',
           borderRadius: '10px',
         }}>
-          {/* Summary grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(185px, 1fr))', gap: '1rem', marginBottom: '1.1rem' }}>
             <SummaryField label="ASSET" value={assetLabel} />
             <SummaryField label="INDUSTRY" value={indLabel} />
-            <SummaryField label="CONTAMINATION RISKS" value={`${contShown.length} identified`} valueColor="#fdba74" />
+            <SummaryField label="CONTAMINATION RISKS" value={`${contShown.length} confirmed`} valueColor="#fdba74" />
             <SummaryField label="FAILURE MODES MAPPED" value={`${fmShown.length} failure modes`} valueColor="#fca5a5" />
-            <SummaryField label="TECHNOLOGIES" value={`${techShown.length} architectures`} valueColor="#FFF12D" />
+            <SummaryField label="TECHNOLOGIES SELECTED" value={`${techShown.length} architectures`} valueColor="#FFF12D" />
             <div>
-              <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.28)', marginBottom: '0.3rem', letterSpacing: '0.08em' }}>ENGINEERING CONFIDENCE</p>
+              <p style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', marginBottom: '0.28rem', letterSpacing: '0.07em' }}>ENGINEERING CONFIDENCE</p>
               <span style={{
-                fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700,
-                color: confColor, padding: '0.2rem 0.55rem',
-                background: `${confColor}12`, border: `1px solid ${confColor}30`,
-                borderRadius: '4px',
+                fontSize: '0.73rem', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700,
+                color: confColor, padding: '0.2rem 0.5rem',
+                background: `${confColor}10`, border: `1px solid ${confColor}28`, borderRadius: '4px',
               }}>
                 {confidence}
               </span>
             </div>
           </div>
-
           {condLabels && (
             <div style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
               <SummaryField label="OPERATING CONDITIONS" value={condLabels} />
@@ -1020,41 +1165,46 @@ export function AssetProtectionConsultation() {
           )}
         </div>
 
-        {/* Reasoning chain */}
-        <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
-          ENGINEERING REASONING
+        {/* Why this protection strategy is recommended */}
+        <p style={{
+          fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace',
+          color: 'rgba(255,255,255,0.22)', letterSpacing: '0.1em', marginBottom: '0.75rem',
+        }}>
+          WHY THIS PROTECTION STRATEGY IS RECOMMENDED
+        </p>
+        <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, margin: '0 0 1rem', textAlign: 'justify' }}>
+          The following decision path traces every step from the confirmed contamination sources in your environment through to the recommended protection technologies. Each link in this chain eliminates a specific category of engineering uncertainty. The final recommendation is the logical conclusion of the evidence gathered — not a default selection.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', marginBottom: '1.5rem' }}>
-          {contShown.map((node, i) => (
-            <div key={node.entityId} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-              <div style={{ width: '1px', background: 'rgba(253,186,116,0.3)', alignSelf: 'stretch', marginTop: '4px', marginLeft: '7px', display: i === contShown.length - 1 ? 'none' : 'block' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: 'rgba(253,186,116,0.15)', border: '1px solid rgba(253,186,116,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.45rem', color: '#fdba74' }}>●</span>
-                  <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.65)' }}>{node.label}</span>
-                  <span style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(253,186,116,0.45)' }}>contamination source</span>
-                </div>
-              </div>
+          {contShown.map((node) => (
+            <div key={node.entityId} style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+              <span style={{ width: '13px', height: '13px', borderRadius: '50%', background: 'rgba(253,186,116,0.12)', border: '1px solid rgba(253,186,116,0.28)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.42rem', color: '#fdba74' }}>●</span>
+              <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.62)' }}>{node.label}</span>
+              <span style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(253,186,116,0.42)' }}>contamination source</span>
             </div>
           ))}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginLeft: '0px' }}>
-            <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)', fontFamily: 'JetBrains Mono, monospace' }}>↓ activates</span>
-          </div>
+          {contShown.length > 0 && (
+            <div style={{ marginLeft: '6px', paddingLeft: '0.85rem', borderLeft: '1px dashed rgba(255,255,255,0.1)' }}>
+              <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.22)', fontFamily: 'JetBrains Mono, monospace' }}>activates</span>
+            </div>
+          )}
           {fmShown.map((node) => (
-            <div key={node.entityId} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: 'rgba(252,165,165,0.1)', border: '1px solid rgba(252,165,165,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.45rem', color: '#fca5a5' }}>●</span>
-              <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)' }}>{node.label}</span>
-              <span style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(252,165,165,0.4)' }}>failure mode</span>
+            <div key={node.entityId} style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+              <span style={{ width: '13px', height: '13px', borderRadius: '50%', background: 'rgba(252,165,165,0.1)', border: '1px solid rgba(252,165,165,0.24)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.42rem', color: '#fca5a5' }}>●</span>
+              <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.58)' }}>{node.label}</span>
+              <span style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(252,165,165,0.38)' }}>failure mode</span>
             </div>
           ))}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)', fontFamily: 'JetBrains Mono, monospace' }}>↓ controlled by</span>
-          </div>
+          {fmShown.length > 0 && (
+            <div style={{ marginLeft: '6px', paddingLeft: '0.85rem', borderLeft: '1px dashed rgba(255,255,255,0.1)' }}>
+              <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.22)', fontFamily: 'JetBrains Mono, monospace' }}>controlled by</span>
+            </div>
+          )}
           {techShown.map((node) => (
-            <div key={node.entityId} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ width: '14px', height: '14px', borderRadius: '50%', background: 'rgba(255,241,45,0.1)', border: '1px solid rgba(255,241,45,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.45rem', color: '#FFF12D' }}>●</span>
+            <div key={node.entityId} style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+              <span style={{ width: '13px', height: '13px', borderRadius: '50%', background: 'rgba(255,241,45,0.1)', border: '1px solid rgba(255,241,45,0.24)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.42rem', color: '#FFF12D' }}>●</span>
               <span style={{ fontSize: '0.78rem', color: '#FFF12D', fontWeight: 600 }}>{node.label}</span>
-              <span style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,241,45,0.4)' }}>protection technology</span>
+              <span style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,241,45,0.38)' }}>protection technology</span>
             </div>
           ))}
         </div>
@@ -1067,7 +1217,6 @@ export function AssetProtectionConsultation() {
     );
   }
 
-  // Step 11 — Implementation
   function renderStep11() {
     const techShown = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
     const indLabel  = selectedIndustry?.label ?? 'your industry';
@@ -1084,19 +1233,19 @@ export function AssetProtectionConsultation() {
 
     return (
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-        <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.12em', marginBottom: '0.4rem' }}>
+        <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.12em', marginBottom: '0.4rem' }}>
           STAGE 3 · IMPLEMENTATION
         </p>
-        <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#fff', margin: '0 0 0.5rem' }}>
+        <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', color: '#fff', margin: '0 0 0.5rem' }}>
           Product Implementation
         </h2>
-        <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', margin: '0 0 1.5rem', lineHeight: 1.65 }}>
-          The protection technologies recommended for your {indLabel} operation are deployed through the following filtration media and product configurations.
+        <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.42)', margin: '0 0 1.5rem', lineHeight: 1.65 }}>
+          The protection technologies recommended in the Engineering Assessment are implemented through the following filtration media and product configurations. These are the physical elements that deploy the contamination control strategy designed for your {indLabel} operation.
         </p>
 
         {mediaNodes.length > 0 && (
           <div style={{ marginBottom: '1.75rem' }}>
-            <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', marginBottom: '0.7rem' }}>
+            <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.1em', marginBottom: '0.65rem' }}>
               PROTECTION MEDIA
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: '0.5rem' }}>
@@ -1108,7 +1257,7 @@ export function AssetProtectionConsultation() {
                     href={`/engineering/media/${node.entityId}`}
                     style={{
                       display: 'block', padding: '0.75rem 0.9rem',
-                      background: 'rgba(134,239,172,0.04)', border: '1px solid rgba(134,239,172,0.1)',
+                      background: 'rgba(134,239,172,0.04)', border: '1px solid rgba(134,239,172,0.09)',
                       borderRadius: '6px', textDecoration: 'none',
                     }}
                   >
@@ -1116,7 +1265,7 @@ export function AssetProtectionConsultation() {
                       {node.label}
                     </div>
                     {!!p['baseConstruction'] && (
-                      <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)' }}>
+                      <div style={{ fontSize: '0.64rem', color: 'rgba(255,255,255,0.33)' }}>
                         {String(p['baseConstruction'])}
                       </div>
                     )}
@@ -1129,7 +1278,7 @@ export function AssetProtectionConsultation() {
 
         {techShown.length > 0 && (
           <div style={{ marginBottom: '1.75rem' }}>
-            <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', marginBottom: '0.7rem' }}>
+            <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.1em', marginBottom: '0.65rem' }}>
               TECHNOLOGY SPECIFICATIONS
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
@@ -1138,9 +1287,9 @@ export function AssetProtectionConsultation() {
                   key={node.entityId}
                   href={`/engineering/technologies/${node.entityId}`}
                   style={{
-                    padding: '0.38rem 0.85rem', fontSize: '0.75rem',
+                    padding: '0.38rem 0.85rem', fontSize: '0.74rem',
                     fontFamily: 'JetBrains Mono, monospace',
-                    background: 'rgba(255,241,45,0.05)', border: '1px solid rgba(255,241,45,0.18)',
+                    background: 'rgba(255,241,45,0.05)', border: '1px solid rgba(255,241,45,0.16)',
                     borderRadius: '4px', color: '#FFF12D', textDecoration: 'none',
                   }}
                 >
@@ -1151,7 +1300,6 @@ export function AssetProtectionConsultation() {
           </div>
         )}
 
-        {/* Next recommended action + CTA */}
         <div style={{
           padding: '1.25rem',
           background: 'rgba(255,255,255,0.02)',
@@ -1159,19 +1307,18 @@ export function AssetProtectionConsultation() {
           borderRadius: '8px',
           marginBottom: '1.5rem',
         }}>
-          <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
+          <p style={{ fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
             NEXT RECOMMENDED ACTION
           </p>
           <CTACard onLeadCapture={() => {}} />
         </div>
 
-        {/* Restart */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.25rem' }}>
           <button
             onClick={() => setState(INITIAL_STATE)}
             style={{
-              fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace',
-              color: 'rgba(255,255,255,0.28)', background: 'none',
+              fontSize: '0.73rem', fontFamily: 'JetBrains Mono, monospace',
+              color: 'rgba(255,255,255,0.26)', background: 'none',
               border: '1px solid rgba(255,255,255,0.07)',
               padding: '0.38rem 0.85rem', borderRadius: '4px', cursor: 'pointer',
             }}
@@ -1187,26 +1334,24 @@ export function AssetProtectionConsultation() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      {/* Back nav */}
       <div style={{ padding: '1.5rem 2rem 0', maxWidth: '860px', margin: '0 auto' }}>
         <Link href="/search" style={{
           fontSize: '0.68rem', fontFamily: 'JetBrains Mono, monospace',
-          color: 'rgba(255,255,255,0.3)', textDecoration: 'none', letterSpacing: '0.08em',
+          color: 'rgba(255,255,255,0.28)', textDecoration: 'none', letterSpacing: '0.08em',
         }}>
           ← ENGINEERING INTELLIGENCE
         </Link>
       </div>
 
-      {/* Hero */}
       <section style={{
         padding: 'clamp(2rem, 5vw, 3.5rem) 2rem 2rem',
-        borderBottom: '1px solid rgba(255,241,45,0.07)',
+        borderBottom: '1px solid rgba(255,241,45,0.06)',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <p style={{
               fontSize: '0.6rem', fontFamily: 'JetBrains Mono, monospace',
-              color: 'rgba(255,241,45,0.5)', letterSpacing: '0.12em', marginBottom: '0.6rem',
+              color: 'rgba(255,241,45,0.48)', letterSpacing: '0.12em', marginBottom: '0.6rem',
             }}>
               ENGINEERING CONSULTATION · ASSET PROTECTION
             </p>
@@ -1217,45 +1362,53 @@ export function AssetProtectionConsultation() {
             }}>
               Asset Protection Engineering Consultation
             </h1>
-            <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0, maxWidth: '580px' }}>
-              A structured consultation that maps your operating conditions to contamination risks, failure modes, and the protection system that best fits your equipment.
+            <p style={{ color: 'rgba(255,255,255,0.42)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0, maxWidth: '580px' }}>
+              A structured consultation that maps your operating conditions to contamination risks, failure modes, and the protection system engineered to reduce those risks.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Consultation body */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 2rem 4rem' }}>
         <StageHeader currentStep={Math.floor(state.step)} />
+
+        {/* Persistent live assessment — always reflects current state */}
+        <LiveAssessmentPanel
+          state={state}
+          contaminationNodes={contaminationNodes}
+          failureModeNodes={failureModeNodes}
+          techNodes={techNodes}
+        />
+
         <AnimatePresence mode="wait">
-          {state.step === 1    && renderStep1()}
-          {state.step === 2    && renderStep2()}
-          {state.step === 3    && renderStep3()}
+          {state.step === 1             && renderStep1()}
+          {state.step === 2             && renderStep2()}
+          {state.step === 3             && renderStep3()}
           {state.step === (3.5 as never) && renderStage2Transition()}
-          {state.step === 4    && renderStep4()}
-          {state.step === 5    && renderStep5()}
-          {state.step === 6    && renderStep6()}
-          {state.step === 7    && renderStep7()}
+          {state.step === 4             && renderStep4()}
+          {state.step === 5             && renderStep5()}
+          {state.step === 6             && renderStep6()}
+          {state.step === 7             && renderStep7()}
           {state.step === (7.5 as never) && renderStage3Transition()}
-          {state.step === 8    && renderStep8()}
-          {state.step === 9    && renderStep9()}
-          {state.step === 10   && renderStep10()}
-          {state.step === 11   && renderStep11()}
+          {state.step === 8             && renderStep8()}
+          {state.step === 9             && renderStep9()}
+          {state.step === 10            && renderStep10()}
+          {state.step === 11            && renderStep11()}
         </AnimatePresence>
       </div>
     </main>
   );
 }
 
-// ─── Small helper ──────────────────────────────────────────────────────────────
+// ─── Summary field ─────────────────────────────────────────────────────────────
 
 function SummaryField({ label, value, valueColor }: { label: string; value: string; valueColor?: string }) {
   return (
     <div>
-      <p style={{ fontSize: '0.58rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.25)', marginBottom: '0.25rem', letterSpacing: '0.08em' }}>
+      <p style={{ fontSize: '0.57rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.22)', marginBottom: '0.25rem', letterSpacing: '0.07em' }}>
         {label}
       </p>
-      <p style={{ fontSize: '0.83rem', color: valueColor ?? '#fff', margin: 0 }}>{value}</p>
+      <p style={{ fontSize: '0.82rem', color: valueColor ?? '#fff', margin: 0 }}>{value}</p>
     </div>
   );
 }
