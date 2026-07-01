@@ -13,12 +13,73 @@ type Message = {
 const now = () =>
   new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-const WELCOME: Message = {
-  id: 0,
-  from: "bot",
-  text: "Hello. I'm the ELIMFILTERS Asset Protection Assistant. How can I help you today?",
-  time: now(),
+const WELCOME_TEXT: Record<string, string> = {
+  es: "Hola. Soy el Asistente de Protección de Activos de ELIMFILTERS. ¿En qué puedo ayudarte hoy?",
+  pt: "Olá. Sou o Assistente de Proteção de Ativos da ELIMFILTERS. Como posso ajudá-lo hoje?",
+  fr: "Bonjour. Je suis l'Assistant Protection des Actifs ELIMFILTERS. Comment puis-je vous aider aujourd'hui ?",
+  it: "Ciao. Sono l'Assistente di Protezione degli Asset di ELIMFILTERS. Come posso aiutarti oggi?",
+  nl: "Hallo. Ik ben de ELIMFILTERS Asset Protection Assistent. Hoe kan ik u vandaag helpen?",
+  ru: "Здравствуйте. Я Ассистент по защите активов ELIMFILTERS. Чем могу помочь сегодня?",
+  zh: "您好。我是ELIMFILTERS资产保护助手。今天有什么可以帮助您的？",
+  ja: "こんにちは。ELIMFILTERSアセットプロテクションアシスタントです。本日はどのようなご用件でしょうか？",
+  ar: "مرحباً. أنا مساعد حماية الأصول من ELIMFILTERS. كيف يمكنني مساعدتك اليوم؟",
+  fa: "سلام. من دستیار حفاظت از دارایی‌های ELIMFILTERS هستم. چطور می‌توانم امروز کمکتان کنم؟",
+  en: "Hello. I'm the ELIMFILTERS Asset Protection Assistant. How can I help you today?",
 };
+
+const LIMIT_TEXT: Record<string, string> = {
+  es: "Has alcanzado el límite de esta sesión. Para más ayuda, escribe a support@elimfilters.com.",
+  pt: "Você atingiu o limite desta sessão. Para mais assistência, envie um e-mail para support@elimfilters.com.",
+  fr: "Vous avez atteint la limite de cette session. Pour plus d'aide, écrivez à support@elimfilters.com.",
+  it: "Hai raggiunto il limite per questa sessione. Per ulteriore assistenza, scrivi a support@elimfilters.com.",
+  nl: "U heeft de sessielimiet bereikt. Voor verdere hulp, e-mail support@elimfilters.com.",
+  ru: "Вы достигли лимита сессии. Для дальнейшей помощи напишите на support@elimfilters.com.",
+  zh: "您已达到本次会话的限制。如需进一步帮助，请发送邮件至 support@elimfilters.com。",
+  ja: "このセッションの上限に達しました。詳細はsupport@elimfilters.comまでご連絡ください。",
+  ar: "لقد وصلت إلى حد هذه الجلسة. للمزيد من المساعدة، راسلنا على support@elimfilters.com.",
+  fa: "به حد این نشست رسیده‌اید. برای کمک بیشتر با support@elimfilters.com تماس بگیرید.",
+  en: "You've reached the limit for this session. For further assistance, please email our engineering team at support@elimfilters.com.",
+};
+
+const LAST_MSG_TEXT: Record<string, string> = {
+  es: "Esta es tu última pregunta de esta sesión.",
+  pt: "Esta é sua última pergunta desta sessão.",
+  fr: "C'est votre dernière question pour cette session.",
+  it: "Questa è la tua ultima domanda per questa sessione.",
+  nl: "Dit is uw laatste vraag voor deze sessie.",
+  ru: "Это ваш последний вопрос в этой сессии.",
+  zh: "这是您本次会话的最后一个问题。",
+  ja: "これがこのセッションの最後の質問です。",
+  ar: "هذا هو سؤالك الأخير في هذه الجلسة.",
+  fa: "این آخرین سوال شما در این نشست است.",
+  en: "This is your last question for this session.",
+};
+
+const ERROR_TEXT: Record<string, string> = {
+  es: "Error de conexión. Por favor inténtalo de nuevo.",
+  pt: "Erro de conexão. Por favor, tente novamente.",
+  fr: "Erreur de connexion. Veuillez réessayer.",
+  it: "Errore di connessione. Riprova.",
+  nl: "Verbindingsfout. Probeer het opnieuw.",
+  ru: "Ошибка соединения. Попробуйте ещё раз.",
+  zh: "连接错误，请重试。",
+  ja: "接続エラーが発生しました。もう一度お試しください。",
+  ar: "خطأ في الاتصال. يرجى المحاولة مرة أخرى.",
+  fa: "خطای اتصال. لطفاً دوباره تلاش کنید.",
+  en: "Connection error. Please try again.",
+};
+
+function detectLang(): string {
+  if (typeof window === "undefined") return "en";
+  const nav = navigator.language || "en";
+  const code = nav.toLowerCase().split("-")[0];
+  return WELCOME_TEXT[code] ? code : "en";
+}
+
+function getWelcome(): Message {
+  const lang = detectLang();
+  return { id: 0, from: "bot", text: WELCOME_TEXT[lang] || WELCOME_TEXT.en, time: now() };
+}
 
 // Generate or retrieve a stable session ID for this browser session
 function getSessionId(): string {
@@ -33,7 +94,8 @@ function getSessionId(): string {
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([WELCOME]);
+  const [lang] = useState<string>(() => detectLang());
+  const [messages, setMessages] = useState<Message[]>(() => [getWelcome()]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const [limitReached, setLimitReached] = useState(false);
@@ -56,10 +118,11 @@ export default function ChatBot() {
     setTyping(true);
 
     try {
-      const res = await fetch("/api/chat", {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
+      const res = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ message: text.trim(), sessionId: getSessionId() }),
+        body: JSON.stringify({ message: text.trim(), sessionId: getSessionId(), lang }),
       });
       const data = await res.json();
 
@@ -72,7 +135,7 @@ export default function ChatBot() {
           {
             id: Date.now() + 1,
             from: "bot",
-            text: "You've reached the limit for this session. For further assistance, please email our engineering team at support@elimfilters.com.",
+            text: LIMIT_TEXT[lang] || LIMIT_TEXT.en,
             time: now(),
             isLimit: true,
           },
@@ -90,7 +153,7 @@ export default function ChatBot() {
               {
                 id: Date.now() + 2,
                 from: "bot",
-                text: "This is your last question for this session.",
+                text: LAST_MSG_TEXT[lang] || LAST_MSG_TEXT.en,
                 time: now(),
               },
             ]);
@@ -99,14 +162,14 @@ export default function ChatBot() {
       } else {
         setMessages((m) => [
           ...m,
-          { id: Date.now() + 1, from: "bot", text: "Something went wrong. Please try again or contact support@elimfilters.com.", time: now() },
+          { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[lang] || ERROR_TEXT.en, time: now() },
         ]);
       }
     } catch {
       setTyping(false);
       setMessages((m) => [
         ...m,
-        { id: Date.now() + 1, from: "bot", text: "Connection error. Please try again.", time: now() },
+        { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[lang] || ERROR_TEXT.en, time: now() },
       ]);
     }
   };

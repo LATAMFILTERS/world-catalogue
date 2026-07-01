@@ -7,7 +7,8 @@ Busca cross-references FRAM/PUROLATOR/WIX para filtros MANN LD (light-duty).
 Fuentes:
   W*              → oilfilter-crossreference.com   (aceite)
   WK*, PU*, KC*, KL* → fuelfilter-crossreference.com  (combustible)
-  C*, CU*, CUK*, FP*, LA* → airfilter-crossreference.com  (aire / cabina)
+  C*, FP*, LA*, LC* → airfilter-crossreference.com  (aire)
+  CU*, CUK*           → SKIP (filtros de cabina, no tienen crossrefs en estos sites)
 
 Flujo:
   1. Lee C:\\mann\\mann_classified.jsonl → extrae SKUs con segment=LD
@@ -95,7 +96,7 @@ _PREFIX_ROUTES = [
 # LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
 # Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
 # WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
-_SKIP_PREFIXES = {"LE", "LB", "DI"}  # DI = industrial diesel injector filters, no aftermarket crossrefs
+_SKIP_PREFIXES = {"LE", "LB", "DI", "CU", "CUK"}  # DI = industrial diesel; CU/CUK = cabin air (not on crossref sites)
 
 def should_skip(sku: str) -> bool:
     """True if this SKU is known to return 0 crossref results on all sites."""
