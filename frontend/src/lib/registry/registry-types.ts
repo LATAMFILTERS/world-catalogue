@@ -333,7 +333,7 @@ export interface EngineeringMemoryEntry {
   readonly entityId: string;
   readonly entityVersion: string;
   readonly archivedDate: string;
-  readonly archivedReason: 'SUPERSEDED' | 'DEPRECATED' | 'VERSION_SNAPSHOT';
+  readonly archivedReason: 'SUPERSEDED' | 'DEPRECATED' | 'VERSION_SNAPSHOT' | 'VERSION_UPDATE' | 'ALIAS_CREATED';
   /** Complete entity snapshot at time of archival */
   readonly snapshot: unknown;
   /** EDR that governed the transition, if applicable */
