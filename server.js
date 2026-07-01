@@ -2648,11 +2648,12 @@ RULES:
 - Answer in 2-3 sentences maximum
 - Be technical and precise, no marketing language
 - Always end with a relevant link when applicable
-- Never invent product specs or part numbers`;
+- Never invent product specs or part numbers
+- ALWAYS respond in the same language specified by the lang parameter. If lang=es respond in Spanish, lang=pt in Portuguese, lang=fr in French, lang=it in Italian, lang=nl in Dutch, lang=ru in Russian, lang=zh in Chinese, lang=ja in Japanese, lang=ar in Arabic, lang=fa in Persian. Default is English.`;
 
 app.post('/api/chat', chatLimiter, async (req, res) => {
   try {
-    const { message, sessionId } = req.body;
+    const { message, sessionId, lang } = req.body;
     if (!message || typeof message !== 'string' || message.length > 500) {
       return res.status(400).json({ error: 'Invalid message.' });
     }
@@ -2680,7 +2681,7 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 150,
-        system: CHAT_SYSTEM_PROMPT,
+        system: CHAT_SYSTEM_PROMPT + (lang ? `\n- lang=${lang}` : ''),
         messages: [{ role: 'user', content: message.trim() }],
       }),
     });
