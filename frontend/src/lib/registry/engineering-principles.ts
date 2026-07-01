@@ -33,7 +33,12 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Three capture mechanisms operate simultaneously: (1) Interception — particles following a fluid streamline contact a fiber and adhere; (2) Inertial impaction — heavier particles deviate from streamlines due to inertia and impact fibers; (3) Diffusion — sub-micron Brownian-motion particles contact fibers through random displacement. Depth media leverages all three across multiple fiber layers.',
     standardRefs: ['ISO 16889', 'ISO 4406', 'SAE J1858'],
-    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-MACROCORE'],
+    implementedByTechnologies: [
+      'TECH-MACROCORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE',
+      'TECH-HYDROCORE', 'TECH-MICROKAPPA', 'TECH-SYNTEPORE',
+      'TECH-TURBOCORE', 'TECH-THERMACORE', 'TECH-DRYCORE',
+      'TECH-INTEKCORE', 'TECH-MARINECLEAN',
+    ],
     versionHistory: [
       {
         version: '1.0.0',
@@ -58,7 +63,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'The medium acts as a mechanical sieve. Particles larger than the pore opening are physically blocked at the surface. Surface loading increases pressure drop and eventually reaches terminal differential pressure, requiring element replacement. Suitable when particle distribution is narrow and above the surface rating.',
     standardRefs: ['ISO 2941', 'ISO 3723', 'ISO 3724'],
-    implementedByTechnologies: ['TECH-NANOFORCE'],
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTEPORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -83,7 +88,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'In cyclonic or turbine-rotation configurations, the fluid is set into rotational motion. Centrifugal acceleration drives denser contaminants (particles, water droplets) radially outward against the collection chamber wall, where they accumulate and settle. The clean fluid exits from the center of the rotation pattern. Separation efficiency increases with rotational velocity and contaminant-to-fluid density ratio.',
     standardRefs: ['ISO 16332', 'SAE J905'],
-    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-HYDROCORE'],
+    implementedByTechnologies: ['TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -108,7 +113,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Single-density media concentrates particle loading at the upstream face, causing rapid pressure-drop rise and premature blinding. Progressive density spreads capture events volumetrically: each zone captures the size class it is optimized for without exposing inner precision zones to macro-particles that the outer zones should intercept. Result: longer service life and more stable differential pressure profile over the service interval.',
     standardRefs: ['ISO 16889', 'ISO 19438', 'SAE J1858'],
-    implementedByTechnologies: ['TECH-MACROCORE', 'TECH-SYNTRAX'],
+    implementedByTechnologies: ['TECH-MACROCORE', 'TECH-SYNTRAX', 'TECH-TURBOCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -135,7 +140,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Dispersed water droplets (<20 µm) in diesel fuel cannot settle by gravity alone in normal service conditions — surface tension and flow turbulence keep them suspended. A coalescing medium provides high surface area where droplets repeatedly contact fibers. Each contact event causes partial merging (coalescence). As merged droplets grow above ~100 µm, gravitational settling force exceeds suspension forces and water drops fall to the collection sump. The principle operates independently of flow rate within design limits.',
     standardRefs: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE'],
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-SYNTEPORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -160,7 +165,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Surface energy of the medium is below the surface tension of water (~72 mN/m at 20°C). Water droplets arriving at the hydrophobic surface form high-contact-angle beads (>90°) and cannot spread or penetrate. The critical breakthrough pressure — the minimum differential pressure required to force water through — exceeds design operating pressures. At higher differential pressures, the barrier integrity must be verified by the manufacturer against operating conditions.',
     standardRefs: ['ASTM D6304', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTEPORE', 'TECH-TURBOCORE'],
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -187,7 +192,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Desiccant materials (activated alumina, silica gel, molecular sieves) present enormous internal surface area (hundreds of m²/g). Gas molecules passing through the adsorbent bed contact the surface and adhere. Adsorption capacity is finite — breakthrough occurs when the adsorbent is saturated and additional contaminant molecules pass through unimpeded. Thermal regeneration or pressure swing restores capacity.',
     standardRefs: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
-    implementedByTechnologies: ['TECH-DRYCORE'],
+    implementedByTechnologies: ['TECH-DRYCORE', 'TECH-MICROKAPPA', 'TECH-THERMACORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -239,7 +244,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Optical particle counters illuminate a fluid sample and detect light extinction events caused by particles passing through the measurement zone. The counter tallies particles by size class. The ISO 4406 reporting format compresses raw counts into codes: code 17 = 640–1,300 particles/mL; code 16 = 320–640 particles/mL, etc. The three-code format enables specification of cleanliness targets for different system sensitivities. Proportional valve systems targeting ISO 17/15/12 require finer filtration than systems tolerating ISO 19/17/14.',
     standardRefs: ['ISO 4406', 'ISO 11500', 'ISO 16889'],
-    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX'],
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-SYNTEPORE', 'TECH-DURATECH'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -266,7 +271,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Hard particles (silica, iron oxides, carbides) suspended in lubrication or hydraulic fluid transit bearing clearances. When a particle diameter approaches or exceeds the bearing oil film thickness (typically 2–8 µm for engine bearings, 0.5–3 µm for hydraulic valve bores), it contacts both bearing surfaces. Each contact event removes a microscopic volume of material. Cumulative material loss increases bearing clearance, reduces oil film integrity, accelerates wear rate non-linearly, and eventually causes bearing failure. Particle contamination above the ISO 4406 target is the primary controllable variable in abrasive wear rate.',
     standardRefs: ['ISO 4406', 'ASTM G40', 'ISO 15243'],
-    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-MACROCORE'],
+    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-MACROCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',

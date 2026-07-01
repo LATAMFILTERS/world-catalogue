@@ -114,6 +114,56 @@ export interface ProtectionMedia {
   readonly mediaConstruction?: string;
 }
 
+// ============================================================================
+// PROTECTION MEDIA RECORD — governed canonical media type
+// ============================================================================
+
+export type MediaFunction =
+  | 'DEPTH_FILTRATION'
+  | 'SURFACE_FILTRATION'
+  | 'COALESCENCE'
+  | 'HYDROPHOBIC_REPULSION'
+  | 'ADSORPTION'
+  | 'DESICCATION'
+  | 'SCA_DELIVERY'
+  | 'STRUCTURAL_SUPPORT';
+
+export interface ProtectionMediaRecord extends BaseEntity {
+  readonly entityType: 'PROTECTION_MEDIA';
+  /** Canonical ID, e.g. PM-GLASS-MICROFIBER-DEPTH */
+  readonly id: string;
+  readonly name: string;
+  readonly mediaFunction: MediaFunction;
+  /**
+   * Neutral technical definition of the media type.
+   * Describes physical/chemical mechanism — no marketing language.
+   */
+  readonly definition: string;
+  readonly baseConstruction: string;
+  readonly micronRatingRange?: string;
+  readonly operatingTempRange?: string;
+  readonly compatibleFluidTypes: readonly string[];
+  /** Technology Architecture IDs that employ this media type */
+  readonly employedByTechnologyIds: readonly string[];
+  /** Engineering Principle IDs this media type implements */
+  readonly implementsPrincipleIds: readonly string[];
+}
+
+// ============================================================================
+// VERSION REGISTRY ENTRY — cross-registry version timeline
+// ============================================================================
+
+export interface VersionRegistryEntry {
+  readonly entryId: string;
+  readonly entityId: string;
+  readonly entityType: string;
+  readonly version: string;
+  readonly publishedDate: string;
+  readonly approvedBy: string;
+  readonly changeNote: string;
+  readonly edrRef?: string;
+}
+
 export interface MaterialSpec {
   readonly component: string;
   readonly material: string;

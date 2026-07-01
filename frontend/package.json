@@ -11,6 +11,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "verify": "npm run type-check && npm run lint && npm run build",
+    "validate:foundation": "npx tsx scripts/validate-foundation.ts",
     "validate:vault": "node ../scripts/build-citation-index.js --validate",
     "validate:map": "node ../scripts/build-part-search-map.js --validate",
     "validate:citation-api": "node ../scripts/generate-citation-api.js --validate"

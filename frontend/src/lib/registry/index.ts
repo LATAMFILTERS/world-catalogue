@@ -19,11 +19,14 @@ export type {
   MaturityLevel,
   ScienceDomain,
   SystemDomain,
+  MediaFunction,
   RelationshipType,
   VersionRecord,
+  VersionRegistryEntry,
   BaseEntity,
   EngineeringPrinciple,
   TechnologyArchitecture,
+  ProtectionMediaRecord,
   StandardRecord,
   FailureModeRecord,
   ContaminationRecord,
@@ -78,6 +81,38 @@ export {
   getContaminationForFailureMode,
 } from './contamination-registry';
 
+// ── Protection Media Registry ────────────────────────────────────────────────
+export {
+  PROTECTION_MEDIA_REGISTRY,
+  getMediaByFunction,
+  getMediaForTechnology,
+  getMediaForPrinciple,
+} from './protection-media-registry';
+
+// ── Version Registry ─────────────────────────────────────────────────────────
+export {
+  getVersionTimeline,
+  getEntityVersionHistory,
+  getVersionsByDate,
+  getVersionsByEntityType,
+  getVersionsByEdr,
+  getVersionSummary,
+} from './version-registry';
+
+// ── Validation ───────────────────────────────────────────────────────────────
+export {
+  runAllValidations,
+  checkOrphanedReferences,
+  checkTechnologyDomainMapping,
+  checkEightComponentCompleteness,
+  checkProhibitedLanguage,
+  checkBidirectionalIntegrity,
+  checkEngineeringMemoryCoverage,
+  checkProtectionMediaCoverage,
+  checkFoundationGate,
+} from './validation';
+export type { ValidationResult, ValidationReport } from './validation';
+
 // ── Engineering Memory ───────────────────────────────────────────────────────
 export {
   ENGINEERING_MEMORY,
@@ -95,6 +130,7 @@ import { ENGINEERING_PRINCIPLES } from './engineering-principles';
 import { FAILURE_MODES_REGISTRY } from './failure-modes-registry';
 import { CONTAMINATION_REGISTRY } from './contamination-registry';
 import { STANDARDS_REGISTRY } from './standards-registry';
+import { PROTECTION_MEDIA_REGISTRY } from './protection-media-registry';
 import { MATURITY } from './registry-types';
 import type { TechnologyArchitecture, EngineeringPrinciple } from './registry-types';
 
@@ -141,6 +177,7 @@ export function getKnowledgeGraphSummary() {
     },
     systemDomainsCovered: Array.from(new Set(technologies.map((t) => t.systemDomain))).sort(),
     scienceDomainsCovered: Array.from(new Set(principles.map((p) => p.scienceDomain))).sort(),
+    protectionMediaTypes: Object.keys(PROTECTION_MEDIA_REGISTRY).length,
     phase1Complete: technologies.length === 12 && principles.length >= 11,
   };
 }
