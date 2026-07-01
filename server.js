@@ -354,22 +354,55 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
-// ─── In-memory TTL cache ──────────────────────────────────────────────────────
-// Avoids repeated identical DB queries (catalog count, search results, stats).
-const _cache = new Map();
-function cacheGet(key) {
-  const entry = _cache.get(key);
-  if (!entry) return undefined;
-  if (Date.now() > entry.exp) { _cache.delete(key); return undefined; }
-  return entry.val;
+// ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
+// Switching from in-memory to Redis requires only setting REDIS_URL in Render env.
+// In-memory cache works for single-process deployments (up to ~150 concurrent users).
+// Redis is required when running PM2 cluster mode (multiple workers) or 300+ users.
+let _redis = null;
+if (process.env.REDIS_URL) {
+  const Redis = require('ioredis');
+  _redis = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: 2,
+    connectTimeout: 3000,
+    lazyConnect: true,
+    enableOfflineQueue: false, // don't queue if Redis is down — fall through to DB
+  });
+  _redis.on('error', (e) => console.error('[redis]', e.message));
+  _redis.connect().then(() => console.log('[cache] Redis connected')).catch(() => {
+    console.warn('[cache] Redis unavailable — falling back to in-memory cache');
+    _redis = null;
+  });
 }
-function cacheSet(key, val, ttlMs) {
-  _cache.set(key, { val, exp: Date.now() + ttlMs });
-}
+
+// In-memory fallback
+const _memCache = new Map();
 setInterval(() => {
   const now = Date.now();
-  for (const [k, v] of _cache) if (now > v.exp) _cache.delete(k);
+  for (const [k, v] of _memCache) if (now > v.exp) _memCache.delete(k);
 }, 5 * 60 * 1000);
+
+async function cacheGet(key) {
+  if (_redis) {
+    try {
+      const raw = await _redis.get(key);
+      return raw ? JSON.parse(raw) : undefined;
+    } catch { /* fall through */ }
+  }
+  const entry = _memCache.get(key);
+  if (!entry) return undefined;
+  if (Date.now() > entry.exp) { _memCache.delete(key); return undefined; }
+  return entry.val;
+}
+
+async function cacheSet(key, val, ttlMs) {
+  if (_redis) {
+    try {
+      await _redis.set(key, JSON.stringify(val), 'PX', ttlMs);
+      return;
+    } catch { /* fall through */ }
+  }
+  _memCache.set(key, { val, exp: Date.now() + ttlMs });
+}
 
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
@@ -1983,7 +2016,7 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 3) return res.json([]);
 
-  const cached = cacheGet(`autocomplete:${q}`);
+  const cached = await cacheGet(`autocomplete:${q}`);
   if (cached) return res.json(cached);
 
   const client = await pool.connect();
@@ -2058,7 +2091,7 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
     });
 
     const output = Array.from(suggestions.values());
-    cacheSet(`autocomplete:${q}`, output, 60 * 1000);
+    await cacheSet(`autocomplete:${q}`, output, 60 * 1000);
     res.json(output);
   } catch(e) {
     res.status(500).json([]);
@@ -2083,7 +2116,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
   // Serve from cache for identical queries (30s TTL)
   const cacheKey = `search:${q}:${dutyFilter || ''}:${lang}`;
-  const cached = cacheGet(cacheKey);
+  const cached = await cacheGet(cacheKey);
   if (cached) return res.json(cached);
 
   const client = await pool.connect();
@@ -2226,11 +2259,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const hasLD = products.some(p => p.duty === 'LIGHT_DUTY');
     const mixed_duty = !dutyFilter && hasHD && hasLD;
 
-    let totalCatalog = cacheGet('catalog_count');
+    let totalCatalog = await cacheGet('catalog_count');
     if (totalCatalog === undefined) {
       const r = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
       totalCatalog = r.rows[0].count;
-      cacheSet('catalog_count', totalCatalog, 5 * 60 * 1000);
+      await cacheSet('catalog_count', totalCatalog, 5 * 60 * 1000);
     }
 
     let responseBody;
@@ -2257,7 +2290,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         duty_filter_applied: dutyFilter || null,
       };
     }
-    cacheSet(cacheKey, responseBody, 30 * 1000);
+    await cacheSet(cacheKey, responseBody, 30 * 1000);
     res.json(responseBody);
   } catch (e) {
     console.error('[api/search]', e.message);
@@ -2268,7 +2301,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 });
 
 app.get('/api/stats', searchLimiter, async (req, res) => {
-  const cached = cacheGet('api_stats');
+  const cached = await cacheGet('api_stats');
   if (cached) return res.json(cached);
 
   const client = await pool.connect();
@@ -2282,7 +2315,7 @@ app.get('/api/stats', searchLimiter, async (req, res) => {
       technologies: parseInt(r.rows[0].technologies) || 0,
       timestamp: new Date().toISOString()
     };
-    cacheSet('api_stats', body, 2 * 60 * 1000);
+    await cacheSet('api_stats', body, 2 * 60 * 1000);
     res.json(body);
   } catch (e) {
     console.error('[api/stats]', e.message);
