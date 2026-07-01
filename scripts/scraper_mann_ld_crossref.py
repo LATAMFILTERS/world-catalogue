@@ -43,7 +43,14 @@ OUTPUT_FILE      = Path(r"C:\mann\mann_ld_crossrefs.jsonl")
 PROGRESS_FILE    = Path(r"C:\mann\mann_ld_crossrefs_progress.json")
 
 # ── Sites ──────────────────────────────────────────────────────────────────
+# Primary URLs use /MANN/ (shorter path, broader coverage).
+# Fallback URLs use /MANN-FILTER/ — tried when primary returns 0 results.
 SITES = {
+    "oil":  "https://www.oilfilter-crossreference.com/convert/MANN/{part}",
+    "fuel": "https://www.fuelfilter-crossreference.com/convert/MANN/{part}",
+    "air":  "https://www.airfilter-crossreference.com/convert/MANN/{part}",
+}
+SITES_FALLBACK = {
     "oil":  "https://www.oilfilter-crossreference.com/convert/MANN-FILTER/{part}",
     "fuel": "https://www.fuelfilter-crossreference.com/convert/MANN-FILTER/{part}",
     "air":  "https://www.airfilter-crossreference.com/convert/MANN-FILTER/{part}",
@@ -214,21 +221,28 @@ def make_context(pw, site="oil"):
 
 
 def scrape_one(page, sku: str, site: str) -> dict:
+    """Scrape crossrefs for one SKU. Tries /MANN/ first, falls back to /MANN-FILTER/ if empty."""
     encoded = quote(sku, safe="")
-    url     = SITES[site].format(part=encoded)
-    try:
-        page.goto(url, wait_until="domcontentloaded", timeout=25000)
+
+    for url_template in (SITES[site], SITES_FALLBACK[site]):
+        url = url_template.format(part=encoded)
         try:
-            page.wait_for_selector("ul.compat-list", timeout=8000)
+            page.goto(url, wait_until="domcontentloaded", timeout=25000)
+            try:
+                page.wait_for_selector("ul.compat-list", timeout=8000)
+            except PWTimeout:
+                pass
+            time.sleep(0.8)
+            result = page.evaluate(_EXTRACT_JS)
+            if result:
+                return result
         except PWTimeout:
-            pass
-        time.sleep(0.8)
-        return page.evaluate(_EXTRACT_JS)
-    except PWTimeout:
-        return {}
-    except Exception as e:
-        log.warning(f"  Error {sku}: {e}")
-        return {}
+            continue
+        except Exception as e:
+            log.warning(f"  Error {sku} ({url}): {e}")
+            continue
+
+    return {}
 
 
 # ── FRAM code extractor (for SKU generation) ───────────────────────────────
