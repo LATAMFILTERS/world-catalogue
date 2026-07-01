@@ -346,9 +346,63 @@ const dbConfig = {
     : { rejectUnauthorized: true },
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
-  max: 10,
+  max: 20,                    // raised from 10 — handles 50-100 concurrent users
+  statement_timeout: 8000,    // kill runaway queries after 8s
 };
 const pool = new Pool(dbConfig);
+pool.on('connect', client => {
+  client.query("SET statement_timeout = '8000'").catch(() => {});
+});
+
+// ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
+// Switching from in-memory to Redis requires only setting REDIS_URL in Render env.
+// In-memory cache works for single-process deployments (up to ~150 concurrent users).
+// Redis is required when running PM2 cluster mode (multiple workers) or 300+ users.
+let _redis = null;
+if (process.env.REDIS_URL) {
+  const Redis = require('ioredis');
+  _redis = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: 2,
+    connectTimeout: 3000,
+    lazyConnect: true,
+    enableOfflineQueue: false, // don't queue if Redis is down — fall through to DB
+  });
+  _redis.on('error', (e) => console.error('[redis]', e.message));
+  _redis.connect().then(() => console.log('[cache] Redis connected')).catch(() => {
+    console.warn('[cache] Redis unavailable — falling back to in-memory cache');
+    _redis = null;
+  });
+}
+
+// In-memory fallback
+const _memCache = new Map();
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, v] of _memCache) if (now > v.exp) _memCache.delete(k);
+}, 5 * 60 * 1000);
+
+async function cacheGet(key) {
+  if (_redis) {
+    try {
+      const raw = await _redis.get(key);
+      return raw ? JSON.parse(raw) : undefined;
+    } catch { /* fall through */ }
+  }
+  const entry = _memCache.get(key);
+  if (!entry) return undefined;
+  if (Date.now() > entry.exp) { _memCache.delete(key); return undefined; }
+  return entry.val;
+}
+
+async function cacheSet(key, val, ttlMs) {
+  if (_redis) {
+    try {
+      await _redis.set(key, JSON.stringify(val), 'PX', ttlMs);
+      return;
+    } catch { /* fall through */ }
+  }
+  _memCache.set(key, { val, exp: Date.now() + ttlMs });
+}
 
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
@@ -627,7 +681,6 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   const lang = detectLang(req);
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
 
     const kit = await client.query(
       'SELECT * FROM maintenance_kits WHERE kit_sku = $1',
@@ -690,7 +743,6 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
 
     const src = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1', [sku]);
     if (!src.rows.length) return res.json({success: true, alternatives: []});
@@ -729,7 +781,6 @@ app.get('/api/filters/search/part', searchLimiter, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
 
     let result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE codigo_base = $1 LIMIT 1',
@@ -792,7 +843,6 @@ app.get('/api/filters/search/vin', searchLimiter, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
 
     let query = `SELECT * FROM elimfilters_catalog
                  WHERE equipment_applications IS NOT NULL`;
@@ -831,7 +881,6 @@ app.get('/api/filters/search/equipment', searchLimiter, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
 
     let query = `SELECT * FROM elimfilters_catalog
                  WHERE equipment_applications IS NOT NULL`;
@@ -870,7 +919,6 @@ app.get('/api/filters/search/homologous', searchLimiter, async (req, res) => {
 
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
     const result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1',
       [code]
@@ -1967,16 +2015,39 @@ app.get('/api/catalog/export', adminLimiter, requireAdmin, async (req, res) => {
 app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   const q = (req.query.q || '').trim().toUpperCase();
   if (q.length < 3) return res.json([]);
-  
+
+  const cached = await cacheGet(`autocomplete:${q}`);
+  if (cached) return res.json(cached);
+
   const client = await pool.connect();
   try {
-    const result = await client.query(`
+    // Tier 1: SKU/codigo_base prefix — uses btree indexes, very fast
+    const r1 = await client.query(`
       SELECT sku, codigo_base, oem_codes, competitor_codes
       FROM elimfilters_catalog
-      WHERE sku ILIKE $1 OR codigo_base ILIKE $1 
-         OR oem_codes::text ILIKE $1 OR competitor_codes::text ILIKE $1
-      LIMIT 40
-    `, [`%${q}%`]);
+      WHERE UPPER(sku) LIKE $1 OR UPPER(codigo_base) LIKE $1
+      LIMIT 20
+    `, [q + '%']);
+
+    // Tier 2: Exact code match in JSONB arrays — uses GIN indexes
+    const r2 = await client.query(`
+      SELECT sku, codigo_base, oem_codes, competitor_codes
+      FROM elimfilters_catalog
+      WHERE EXISTS (
+        SELECT 1 FROM jsonb_array_elements(COALESCE(oem_codes,'[]'::jsonb)) AS e
+        WHERE UPPER(e->>'code') = $1
+      ) OR EXISTS (
+        SELECT 1 FROM jsonb_array_elements(COALESCE(competitor_codes,'[]'::jsonb)) AS e
+        WHERE UPPER(e->>'code') = $1
+      )
+      LIMIT 20
+    `, [q]);
+
+    const seen = new Set();
+    const result = { rows: [] };
+    for (const row of [...r1.rows, ...r2.rows]) {
+      if (!seen.has(row.sku)) { seen.add(row.sku); result.rows.push(row); }
+    }
 
     const suggestions = new Map();
     const addMatch = (text, type) => {
@@ -2019,7 +2090,9 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
       checkRefs(r.competitor_codes);
     });
 
-    res.json(Array.from(suggestions.values()));
+    const output = Array.from(suggestions.values());
+    await cacheSet(`autocomplete:${q}`, output, 60 * 1000);
+    res.json(output);
   } catch(e) {
     res.status(500).json([]);
   } finally {
@@ -2040,6 +2113,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
   // Note: PH/XG/TG/DG codes can appear as competitor_codes on both HD and LD products.
   // Do NOT auto-force LIGHT_DUTY — let the cross-reference search find the correct product.
+
+  // Serve from cache for identical queries (30s TTL)
+  const cacheKey = `search:${q}:${dutyFilter || ''}:${lang}`;
+  const cached = await cacheGet(cacheKey);
+  if (cached) return res.json(cached);
 
   const client = await pool.connect();
   try {
@@ -2181,12 +2259,18 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const hasLD = products.some(p => p.duty === 'LIGHT_DUTY');
     const mixed_duty = !dutyFilter && hasHD && hasLD;
 
-    const { rows: [{ count: totalCatalog }] } = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+    let totalCatalog = await cacheGet('catalog_count');
+    if (totalCatalog === undefined) {
+      const r = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+      totalCatalog = r.rows[0].count;
+      await cacheSet('catalog_count', totalCatalog, 5 * 60 * 1000);
+    }
 
+    let responseBody;
     if (mixed_duty) {
       const hd_products = products.filter(p => p.duty === 'HEAVY_DUTY');
       const ld_products = products.filter(p => p.duty === 'LIGHT_DUTY');
-      res.json({
+      responseBody = {
         products,
         count: products.length,
         total_catalog: parseInt(totalCatalog, 10),
@@ -2196,16 +2280,18 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         ld_products,
         hd_count: hd_products.length,
         ld_count: ld_products.length,
-      });
+      };
     } else {
-      res.json({
+      responseBody = {
         products,
         count: products.length,
         total_catalog: parseInt(totalCatalog, 10),
         mixed_duty: false,
         duty_filter_applied: dutyFilter || null,
-      });
+      };
     }
+    await cacheSet(cacheKey, responseBody, 30 * 1000);
+    res.json(responseBody);
   } catch (e) {
     console.error('[api/search]', e.message);
     res.status(500).json({ error: 'Search unavailable', products: [] });
@@ -2215,17 +2301,22 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 });
 
 app.get('/api/stats', searchLimiter, async (req, res) => {
+  const cached = await cacheGet('api_stats');
+  if (cached) return res.json(cached);
+
   const client = await pool.connect();
   try {
     const r = await client.query(
       `SELECT COUNT(*) AS total, COUNT(DISTINCT technology) AS technologies
        FROM elimfilters_catalog`
     );
-    res.json({
+    const body = {
       total: parseInt(r.rows[0].total) || 0,
       technologies: parseInt(r.rows[0].technologies) || 0,
       timestamp: new Date().toISOString()
-    });
+    };
+    await cacheSet('api_stats', body, 2 * 60 * 1000);
+    res.json(body);
   } catch (e) {
     console.error('[api/stats]', e.message);
     res.status(500).json({ error: 'Internal server error' });
@@ -2472,7 +2563,6 @@ app.get('/api/product/:sku', searchLimiter, async (req, res) => {
   const lang = detectLang(req);
   const client = await pool.connect();
   try {
-    await client.query("SET client_encoding = 'UTF8'");
     const result = await client.query(
       'SELECT * FROM elimfilters_catalog WHERE sku = $1 LIMIT 1', [sku]
     );
