@@ -2542,7 +2542,30 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 console.log(`[server] Starting on PORT=${PORT} (env PORT=${process.env.PORT || 'not set'})`);
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', async () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
   console.log(`[server] ✅ ELIMFILTERS API ready`);
+
+  // Ensure search indexes exist — runs once on startup, safe to re-run (CONCURRENTLY + IF NOT EXISTS)
+  try {
+    const idxClient = await pool.connect();
+    await idxClient.query(`
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_sku_upper
+        ON elimfilters_catalog (UPPER(sku));
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_codigo_base_upper
+        ON elimfilters_catalog (UPPER(codigo_base));
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_duty
+        ON elimfilters_catalog (duty);
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_oem_codes_gin
+        ON elimfilters_catalog USING GIN (oem_codes jsonb_path_ops);
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_competitor_codes_gin
+        ON elimfilters_catalog USING GIN (competitor_codes jsonb_path_ops);
+      CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_catalog_brand_crossrefs_gin
+        ON elimfilters_catalog USING GIN (brand_crossrefs jsonb_path_ops);
+    `);
+    idxClient.release();
+    console.log('[server] ✅ Search indexes verified');
+  } catch (e) {
+    console.warn('[server] ⚠️ Index creation skipped:', e.message);
+  }
 });

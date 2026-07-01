@@ -1583,7 +1583,9 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   e.preventDefault();
   const q = document.getElementById('inp-part').value.trim();
   if (q.length >= 2) {
-    window.location.href = `results.html?q=${encodeURIComponent(q)}&mode=part`;
+    let url = `results.html?q=${encodeURIComponent(q)}&mode=part`;
+    if (selectedDuty) url += `&duty=${encodeURIComponent(selectedDuty)}`;
+    window.location.href = url;
   }
 });
 
@@ -1594,6 +1596,7 @@ document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
   if (model) {
     let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
     if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    if (selectedDuty) url += `&duty=${encodeURIComponent(selectedDuty)}`;
     window.location.href = url;
   }
 });
@@ -1607,6 +1610,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     let url = `results.html?mode=equip&model=${encodeURIComponent(model)}`;
     if (type) url += `&type=${encodeURIComponent(type)}`;
     if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+    if (selectedDuty) url += `&duty=${encodeURIComponent(selectedDuty)}`;
     window.location.href = url;
   }
 });
