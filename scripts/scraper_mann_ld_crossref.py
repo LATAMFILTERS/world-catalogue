@@ -74,11 +74,12 @@ _PREFIX_ROUTES = [
     ("CUK", "air"),
     ("CU",  "air"),
     ("FP",  "air"),
-    ("LA",  "air"),
     ("WDK", "fuel"),  # WDK = water-separating diesel fuel filter — before WK and W
     ("WK",  "fuel"),
     ("KC",  "fuel"),
-    ("KL",  "oil"),
+    ("KL",  "fuel"),  # KL = Kraftstofffilter (fuel filter) — was wrongly set to oil
+    ("LC",  "air"),   # LC = cabin filter — before single-letter L fallthrough
+    ("LA",  "air"),
     ("PU",  "fuel"),
     ("PL",  "air"),   # PL = Luftfilter/air filter variant — before P
     ("P",   "fuel"),  # P = Kraftstofffilter (fuel filter) — consistent with import_mann_ld.py
