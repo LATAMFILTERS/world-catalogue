@@ -80,6 +80,8 @@ _PREFIX_ROUTES = [
     ("KC",  "fuel"),
     ("KL",  "oil"),
     ("PU",  "fuel"),
+    ("PL",  "air"),   # PL = Luftfilter/air filter variant — before P
+    ("P",   "fuel"),  # P = Kraftstofffilter (fuel filter) — consistent with import_mann_ld.py
     ("W",   "oil"),
     ("C",   "air"),
     ("H",   "oil"),   # H = hydraulic, still worth trying oil
