@@ -60,13 +60,61 @@ FILTER_TYPE_ALIASES = {
 # Only these 4 LD types are supported
 SUPPORTED_TYPES = {'Oil Filter', 'Fuel Filter', 'Air Filter', 'Cabin Filter'}
 
+# Mann part-number prefix → filter type (fallback when scraper couldn't detect type)
+# Used for the ~149 records where filter_type is empty in mann_master.jsonl
+MANN_PREFIX_TYPE = {
+    # Oil filters
+    'W ':    'Oil Filter',   # W 940/21, W 712/75, etc.
+    'W712':  'Oil Filter',
+    'W940':  'Oil Filter',
+    'ML ':   'Oil Filter',   # ML 1003
+    'ML1':   'Oil Filter',
+    'HU ':   'Oil Filter',   # HU 711/51
+    'HU7':   'Oil Filter',
+    'SP ':   'Oil Filter',   # SP filter
+    # Fuel filters
+    'WK ':   'Fuel Filter',  # WK 1060/6
+    'PU ':   'Fuel Filter',  # PU 999/1
+    'KC ':   'Fuel Filter',  # KC 64
+    'KL ':   'Fuel Filter',  # KL 174
+    'P ':    'Fuel Filter',  # P 945/2
+    # Air filters
+    'C ':    'Air Filter',   # C 1040/2
+    'CU ':   'Air Filter',   # CU 2028
+    'CF ':   'Air Filter',   # CF ... (some models)
+    'CP ':   'Air Filter',
+    # Cabin filters
+    'CUK ':  'Cabin Filter', # CUK 2028
+    'CUK1':  'Cabin Filter',
+    'FP ':   'Cabin Filter', # FP 21 000-2 (FreciousPlus)
+    'FP2':   'Cabin Filter',
+    'LA ':   'Cabin Filter', # LA 157
+    'LC ':   'Cabin Filter',
+}
 
-def normalize_filter_type(raw: str) -> str | None:
-    """Normalise scraper filterType string to one of the 4 supported LD types."""
-    if not raw:
-        return None
-    key = raw.strip().lower()
-    return FILTER_TYPE_ALIASES.get(key)
+
+def infer_type_from_prefix(mann_code: str) -> str | None:
+    """Infer filter type from Mann part number prefix when scraper didn't detect it."""
+    code = mann_code.strip().upper()
+    # Try longest prefix first to avoid false matches
+    for prefix, ftype in sorted(MANN_PREFIX_TYPE.items(), key=lambda x: -len(x[0])):
+        if code.startswith(prefix.upper()):
+            return ftype
+    return None
+
+
+def normalize_filter_type(raw: str, mann_code: str = '') -> str | None:
+    """Normalise scraper filterType string to one of the 4 supported LD types.
+    Falls back to prefix-based inference when raw is empty."""
+    if raw:
+        key = raw.strip().lower()
+        result = FILTER_TYPE_ALIASES.get(key)
+        if result:
+            return result
+    # Fallback: infer from part number prefix
+    if mann_code:
+        return infer_type_from_prefix(mann_code)
+    return None
 
 
 def parse_dim_mm(val) -> float | None:
@@ -95,7 +143,7 @@ def map_row(record: dict) -> dict | None:
     if not record.get('oe_count') and not record.get('fitment_count'):
         return None
 
-    ft_raw = normalize_filter_type(record.get('filter_type', ''))
+    ft_raw = normalize_filter_type(record.get('filter_type', ''), record.get('sku', ''))
     if ft_raw not in SUPPORTED_TYPES:
         return None
 
@@ -184,7 +232,9 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
 
             mapped = map_row(record)
             if mapped is None:
-                if normalize_filter_type(record.get('filter_type', '')) not in SUPPORTED_TYPES:
+                sku_code = record.get('sku', '')
+                ft = normalize_filter_type(record.get('filter_type', ''), sku_code)
+                if ft not in SUPPORTED_TYPES:
                     total_skipped_type += 1
                 else:
                     total_skipped_empty += 1
