@@ -77,7 +77,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 2: Engineering Principles
-    engineeringPrincipleIds: ['EP-SEP-004', 'EP-SEP-001'],
+    engineeringPrincipleIds: ['EP-SEP-004', 'EP-SEP-001', 'EP-TRB-001'],
 
     // Component Class 3: Materials
     materials: [
@@ -276,7 +276,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 2: Engineering Principles
-    engineeringPrincipleIds: ['EP-SEP-004', 'EP-SEP-001', 'EP-CHE-002', 'EP-TRB-001'],
+    engineeringPrincipleIds: ['EP-SEP-004', 'EP-SEP-001', 'EP-CHE-002', 'EP-TRB-001', 'EP-INS-001'],
 
     // Component Class 3: Materials
     materials: [
@@ -949,7 +949,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-PHS-001', 'EP-INS-001'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-PHS-001', 'EP-INS-001', 'EP-CHE-002'],
 
     materials: [
       {
@@ -1858,7 +1858,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001', 'EP-CHE-001', 'EP-TRB-001'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-003', 'EP-PHS-001', 'EP-CHE-001', 'EP-TRB-001'],
 
     materials: [
       {
