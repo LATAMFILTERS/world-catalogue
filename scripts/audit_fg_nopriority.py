@@ -2,8 +2,14 @@
 """
 audit_fg_nopriority.py
 =======================
-Analyzes the 63 Fleetguard AF codes that have cross-refs but no priority brand.
-For each, tries to find an existing EA1/EA2 SKU via OEM brands.
+Analyzes the 63 Fleetguard AF codes that have cross-refs but no priority brand
+(DONALDSON, BALDWIN, WIX, MANN, MANN-HUMMEL).
+
+For each code, tries to find an existing EA1/EA2 SKU via available OEM brands:
+  CUMMINS, KOMATSU, CATERPILLAR, CAT, MOTORCRAFT, FORD, GMC,
+  MITSUBISHI, NEW-HOLLAND, CASE-IH, JOHN-DEERE, DEERE
+
+Also groups and reports all brands present in the no-priority set.
 
 Usage:
     python audit_fg_nopriority.py \\
@@ -32,6 +38,7 @@ API_BASE = "https://elimfilters-search-pro.onrender.com"
 
 PRIORITY_BRANDS = {'DONALDSON', 'BALDWIN', 'WIX', 'MANN', 'MANN-HUMMEL', 'MANN+HUMMEL'}
 
+# OEM equipment brands that might appear as oem_codes or competitor_codes on EA1 SKUs
 OEM_BRANDS = [
     'CUMMINS', 'CATERPILLAR', 'CAT', 'KOMATSU', 'JOHN DEERE', 'DEERE',
     'MOTORCRAFT', 'FORD', 'GMC', 'MITSUBISHI', 'NEW HOLLAND', 'NEW-HOLLAND',
@@ -41,7 +48,7 @@ OEM_BRANDS = [
 
 FRAM_BRANDS = {'FRAM', 'CA', 'PH', 'CF', 'G', 'FILTERS'}
 
-# AF codes are Fleetguard air filters - only link to EA1/EA2 SKUs
+# AF codes are Fleetguard air filters -- only link to EA1/EA2 SKUs
 AIR_FILTER_PREFIXES = ('EA1', 'EA2')
 
 
@@ -52,7 +59,7 @@ def get_headers(api_key):
     }
 
 
-def search_by_competitor_code(code, api_key, limit=20):
+def search_by_competitor_code(code: str, api_key: str, limit: int = 20) -> list:
     for attempt in range(3):
         try:
             r = requests.get(
@@ -77,7 +84,7 @@ def search_by_competitor_code(code, api_key, limit=20):
     return []
 
 
-def add_competitor_code(sku, existing_codes, af_code, api_key, dry_run):
+def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: str, dry_run: bool) -> bool:
     already = any(
         isinstance(c, dict) and c.get('code', '').upper() == af_code.upper()
         for c in existing_codes
@@ -281,6 +288,7 @@ def _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, bran
         'db_linkable': linkable,
         'db_not_found': not_found,
     }
+
     report_path = out_dir / 'fg_nopriority_report.json'
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
@@ -306,12 +314,12 @@ def _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, bran
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--crossrefs',    required=True)
-    parser.add_argument('--audit-report', required=True)
+    parser = argparse.ArgumentParser(description='Audit and link Fleetguard NO_PRIORITY codes via OEM brands')
+    parser.add_argument('--crossrefs',    required=True, help='fg_missing_crossrefs.jsonl')
+    parser.add_argument('--audit-report', required=True, help='fg_audit_report.json')
     parser.add_argument('--api-key',      required=True)
     parser.add_argument('--out-dir',      default=r'C:\mann')
     parser.add_argument('--dry-run',      action='store_true')
-    parser.add_argument('--report-only',  action='store_true')
+    parser.add_argument('--report-only',  action='store_true', help='Only analyze/group, no DB search')
     args = parser.parse_args()
     run(args)
