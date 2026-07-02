@@ -1643,6 +1643,22 @@ app.post('/api/admin/rename-sku', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
+// ─── POST /api/admin/delete-sku ──────────────────────────────────────────────
+// Permanently deletes a single SKU from the catalog.
+// Body: { sku: "EA200003" }
+app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) => {
+  const { sku } = req.body || {};
+  if (!sku) return res.status(400).json({ error: 'sku required' });
+  const norm = sku.trim().toUpperCase();
+  try {
+    const result = await pool.query(`DELETE FROM elimfilters_catalog WHERE sku = $1`, [norm]);
+    if (result.rowCount === 0) return res.status(404).json({ error: `SKU not found: ${norm}` });
+    res.json({ success: true, deleted: norm });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 // ─── POST /api/cleanup/fram-hd-force ─────────────────────────────────────────
 // Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
 // Handles any manufacturer key format (uppercase, lowercase, missing).
