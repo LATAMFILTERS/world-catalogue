@@ -99,10 +99,14 @@ const ERROR_TEXT: Record<string, string> = {
 
 function detectLang(): string {
   if (typeof window === "undefined") return "en";
-  // Use i18next resolved language (same source as the rest of the site)
-  const i18nLang = localStorage.getItem("i18nextLng") || "";
-  const code = (i18nLang || navigator.language || "en").toLowerCase().split("-")[0];
-  return WELCOME_TEXT[code] ? code : "en";
+  // 1. Geo-detection result (same source as the rest of the site — set by LanguageDetector)
+  const geoLang = localStorage.getItem("ef_geo_lang") || "";
+  if (geoLang && WELCOME_TEXT[geoLang]) return geoLang;
+  // 2. i18next persisted choice (manual language switch by user)
+  const i18nLang = (localStorage.getItem("i18nextLng") || "").toLowerCase().split("-")[0];
+  if (i18nLang && WELCOME_TEXT[i18nLang]) return i18nLang;
+  // 3. Default: English
+  return "en";
 }
 
 function getWelcome(): Message {
