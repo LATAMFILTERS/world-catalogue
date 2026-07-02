@@ -29,7 +29,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://eu.i.posthog.com https://eu-assets.i.posthog.com https://www.clarity.ms https://c.bing.com https://formspree.io https://formsubmit.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://eu.i.posthog.com https://eu-assets.i.posthog.com https://www.clarity.ms https://formspree.io https://formsubmit.co https://api.ipify.org; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io https://formsubmit.co;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://eu.i.posthog.com https://eu-assets.i.posthog.com https://www.clarity.ms https://c.bing.com https://formspree.io https://formsubmit.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://eu.i.posthog.com https://eu-assets.i.posthog.com https://www.clarity.ms https://formspree.io https://formsubmit.co https://api.ipify.org https://part-search.elimfilters.com https://elimfilters-search-pro.onrender.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io https://formsubmit.co;"
         }
       ]
     }
