@@ -2828,7 +2828,7 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     if (!sessionId || typeof sessionId !== 'string' || sessionId.length > 64) {
       return res.status(400).json({ error: 'Invalid session.' });
     }
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return res.status(503).json({ error: 'Chat unavailable.' });
     }
 
@@ -2852,29 +2852,30 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     // Build system prompt with language directive appended
     const systemPrompt = CHAT_SYSTEM_PROMPT + (lang ? `\n\nLANGUAGE: Respond in the language identified by lang="${lang}". Keep all technical codes (ISO, ASTM, SAE) in their original form.` : '');
 
-    // Call Anthropic API with conversation history
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    // Call Groq API (OpenAI-compatible)
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: 'llama-3.3-70b-versatile',
         max_tokens: 600,
-        system: systemPrompt,
-        messages: messagesPayload,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          ...messagesPayload,
+        ],
       }),
     });
 
     if (!response.ok) {
-      console.error('[api/chat] Anthropic error:', response.status);
+      console.error('[api/chat] Groq error:', response.status);
       return res.status(502).json({ error: 'AI service unavailable.' });
     }
 
     const data = await response.json();
-    const reply = data.content?.[0]?.text || 'I could not generate a response. Please contact support@elimfilters.com.';
+    const reply = data.choices?.[0]?.message?.content || 'I could not generate a response. Please contact support@elimfilters.com.';
 
     // Update session: increment count, store history for multi-turn gate context
     session.count += 1;
