@@ -10,6 +10,8 @@ import {
 } from '@/lib/services';
 import { useConversion } from '@/components/conversion/ConversionContext';
 import { CTACard } from '@/components/conversion/CTACard';
+import { evaluate } from '@/lib/decision-engine';
+import type { EvaluationInput, ContaminationDomain } from '@/lib/decision-engine';
 
 // ─── Phase definitions ─────────────────────────────────────────────────────────
 // Three customer-facing phases framing the investigation.
@@ -1314,7 +1316,41 @@ export function ProblemDiagnosisConsultation() {
     const conts      = contaminationNodes.filter((n) => state.selectedContaminationIds.includes(n.entityId));
     const fms        = failureModeNodes.filter((n) => state.selectedFailureModeIds.includes(n.entityId));
     const techs      = techNodes.filter((n) => state.selectedTechIds.includes(n.entityId));
-    const confidence = 'HIGH';
+
+    // Derive contamination domain from selected entity IDs
+    function deriveDomain(): ContaminationDomain {
+      const ids = state.selectedContaminationIds;
+      if (ids.some(id => id.includes('HYD'))) return 'HYDRAULIC';
+      if (ids.some(id => id.includes('FUEL') || id.includes('PARTICLE-FUEL') || id.includes('WATER-FUEL'))) return 'FUEL';
+      if (ids.some(id => id.includes('OIL') || id.includes('WEAR-PARTICLE-OIL'))) return 'LUBE_OIL';
+      if (ids.some(id => id.includes('DUST') || id.includes('RCS') || id.includes('MINERAL'))) return 'AIR_INTAKE';
+      if (ids.some(id => id.includes('COMPRESSED-AIR'))) return 'COMPRESSED_AIR';
+      if (ids.some(id => id.includes('CABIN'))) return 'CABIN_AIR';
+      return 'UNKNOWN';
+    }
+
+    // Run Decision Engine evaluation (Step 3 → Step 5a → Step 5 → Step 6)
+    const evaluationInput: EvaluationInput = {
+      intentClass: 'FAILURE_DIAGNOSIS',
+      domain: deriveDomain(),
+      assetId: state.assetId,
+      assetDescription: state.assetDescription || null,
+      contaminationEntityIds: state.selectedContaminationIds,
+      failureModeEntityIds: state.selectedFailureModeIds,
+      principleEntityIds: state.selectedPrincipleIds,
+      technologyEntityIds: state.selectedTechIds,
+      symptomIds: state.selectedSymptoms,
+      environmentIds: state.selectedEnvironments,
+      onsetId: state.onsetId,
+      operatingConditionsKnown: state.selectedEnvironments.length > 0 || state.onsetId !== null,
+      draftClaims: [],
+    };
+
+    const decisionResult = evaluate(evaluationInput);
+    const confidence = decisionResult.decisionState === 'HIGH' ? 'HIGH'
+      : decisionResult.decisionState === 'MEDIUM' ? 'MEDIUM'
+      : decisionResult.decisionState === 'PROHIBITED' ? 'LOW'
+      : 'LOW';
 
     return (
       <motion.div
