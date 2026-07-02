@@ -1,7 +1,7 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-07-01
+Last updated: 2026-07-02
 
 ---
 
@@ -12,7 +12,7 @@ Last updated: 2026-07-01
 | Document | Status | Date |
 |----------|--------|------|
 | [[ELIMFILTERS_CORPORATE_CONSTITUTION]] | ✅ SUPREME v1.0 — Constitutional Authority | 2026-06-28 |
-| [[ENGINEERING_EXPERIENCE_PRINCIPLES]] | ✅ FROZEN v1.1 — Constitutional Reference, Experience Layer | 2026-07-01 |
+| [[ENGINEERING_EXPERIENCE_PRINCIPLES]] | ✅ FROZEN v1.2 — Constitutional Reference, Experience Layer | 2026-07-01 |
 
 **Doctrine hierarchy established:**
 ```
@@ -25,6 +25,44 @@ ELIMFILTERS® CORPORATE CONSTITUTION  [SUPREME]
     ├── Product Registry                [09-products/]
     └── Brand Registry                  [brand/]
 ```
+
+---
+
+## ENGINEERING DECISION ENGINE [FROZEN]
+
+### Decision Engine (decision-engine/)
+
+| Document | Status | Date |
+|----------|--------|------|
+| [[ENGINEERING_DECISION_ENGINE]] | ✅ FROZEN v1.0 — Master Governing Document | 2026-07-02 |
+| [[DECISION_EVALUATION_MODEL]] | ✅ FROZEN v1.0 — Step-by-Step Evaluation Specification | 2026-07-02 |
+| [[CONFIDENCE_SCORING_MODEL]] | ✅ FROZEN v1.0 — Evidence-Based Confidence Calculation | 2026-07-02 |
+| [[EVIDENCE_REQUIREMENTS]] | ✅ FROZEN v1.0 — Domain-Specific Evidence Thresholds | 2026-07-02 |
+| [[DIAGNOSTIC_QUESTION_STRATEGY]] | ✅ FROZEN v1.0 — Minimum Effective Questioning | 2026-07-02 |
+| [[RECOMMENDATION_GOVERNANCE]] | ✅ FROZEN v1.0 — Recommendation Permission and Structure | 2026-07-02 |
+| [[IMPLEMENTATION_PLAN]] | ✅ FROZEN v1.0 — Integration with Engineering Services Layer | 2026-07-02 |
+
+**Decision Engine position in platform architecture:**
+```
+ENGINEERING FOUNDATION (immutable — vault, Knowledge Graph, Engineering Services)
+    │
+    ▼
+ENGINEERING DECISION ENGINE [FROZEN]
+    │  Evaluates whether evidence justifies an answer
+    │  Six-step gate: Understanding → Coverage → Evidence → Inference → Confidence → Decision
+    │
+    ▼
+ENGINEERING EXPERIENCE LAYER [FROZEN]
+    │  Renders engineering knowledge in customer language
+    │
+    ▼
+CUSTOMER
+```
+
+**Decision Engine authority chain:**
+- Subordinate to: ENGINEERING_EXPERIENCE_PRINCIPLES v1.2
+- Governs: All recommendations, diagnoses, and engineering conclusions
+- Safety principle: Always prefers "insufficient evidence" over unjustified recommendation
 
 **Constitutional provisions (13 sections):**
 - Purpose: Define mission, vision, and principles of ELIMFILTERS® as an asset protection company
