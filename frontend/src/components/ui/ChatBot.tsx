@@ -55,6 +55,20 @@ const LAST_MSG_TEXT: Record<string, string> = {
   en: "This is your last question for this session.",
 };
 
+const PLACEHOLDER_TEXT: Record<string, string> = {
+  es: "Pregunta sobre filtros, normas, industrias...",
+  pt: "Pergunte sobre filtros, normas, indústrias...",
+  fr: "Posez une question sur les filtres, normes, industries...",
+  it: "Chiedi di filtri, norme, industrie...",
+  nl: "Vraag over filters, normen, industrieën...",
+  ru: "Спросите о фильтрах, стандартах, отраслях...",
+  zh: "询问过滤器、标准、行业...",
+  ja: "フィルター、規格、産業について質問...",
+  ar: "اسأل عن المرشحات والمعايير والصناعات...",
+  fa: "درباره فیلترها، استانداردها، صنایع بپرسید...",
+  en: "Ask about filters, standards, industries...",
+};
+
 const ERROR_TEXT: Record<string, string> = {
   es: "Error de conexión. Por favor inténtalo de nuevo.",
   pt: "Erro de conexão. Por favor, tente novamente.",
@@ -71,8 +85,9 @@ const ERROR_TEXT: Record<string, string> = {
 
 function detectLang(): string {
   if (typeof window === "undefined") return "en";
-  const nav = navigator.language || "en";
-  const code = nav.toLowerCase().split("-")[0];
+  // Use i18next resolved language (same source as the rest of the site)
+  const i18nLang = localStorage.getItem("i18nextLng") || "";
+  const code = (i18nLang || navigator.language || "en").toLowerCase().split("-")[0];
   return WELCOME_TEXT[code] ? code : "en";
 }
 
@@ -375,7 +390,7 @@ export default function ChatBot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(input); } }}
-                  placeholder="Ask about filters, standards, industries..."
+                  placeholder={PLACEHOLDER_TEXT[lang] || PLACEHOLDER_TEXT.en}
                   disabled={typing}
                   style={{
                     flex: 1,
