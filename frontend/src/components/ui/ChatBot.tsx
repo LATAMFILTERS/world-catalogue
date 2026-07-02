@@ -118,7 +118,7 @@ export default function ChatBot() {
     setTyping(true);
 
     try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://part-search.elimfilters.com";
       const res = await fetch(`${apiBase}/api/chat`, {
         method: "POST",
         headers: { "content-type": "application/json" },
