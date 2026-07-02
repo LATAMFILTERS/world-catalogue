@@ -1353,18 +1353,16 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       }
       if (newCodes.length === 0) { skipped++; continue; }
 
-      // Find the LD product by Mann part number in oem_codes
-      const mannNorm = mannSku.toUpperCase().replace(/[\s\-]/g, '');
+      // Find the LD product by codigo_base (last 4 digits of Mann part number)
+      // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
+      const digits = mannSku.replace(/\D/g, '');
+      const codigoBase = digits.slice(-4);
+      if (!codigoBase || codigoBase.length < 4) { skipped++; continue; }
       const find = await client.query(
         `SELECT id, competitor_codes FROM elimfilters_catalog
-         WHERE duty = 'LIGHT_DUTY'
-           AND EXISTS (
-             SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
-             WHERE UPPER(REPLACE(ref->>'code', '-', '')) = $1
-                OR UPPER(REPLACE(ref->>'code', ' ', '')) = $1
-           )
+         WHERE duty = 'LIGHT_DUTY' AND codigo_base = $1
          LIMIT 1`,
-        [mannNorm]
+        [codigoBase]
       );
       if (!find.rows.length) { skipped++; continue; }
 
