@@ -1328,6 +1328,67 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
   }
 });
 
+// ─── POST /api/update/mann-crossrefs ──────────────────────────────────────────
+// Bulk-apply competitor cross-reference codes to LD products via Mann part number.
+// Body: { rows: [{ sku: "W940/21", crossrefs: { FRAM: ["PH5316"], WIX: ["51452"] } }] }
+app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = req.body?.rows;
+  if (!Array.isArray(rows) || rows.length === 0)
+    return res.status(400).json({ error: 'rows array required' });
+
+  const client = await pool.connect();
+  let updated = 0, skipped = 0, errors = 0;
+  try {
+    for (const row of rows) {
+      const mannSku = (row.sku || '').trim();
+      const crossrefs = row.crossrefs || {};
+      if (!mannSku || Object.keys(crossrefs).length === 0) { skipped++; continue; }
+
+      // Build competitor_codes array from crossrefs object
+      const newCodes = [];
+      for (const [manufacturer, codes] of Object.entries(crossrefs)) {
+        for (const code of (Array.isArray(codes) ? codes : [])) {
+          if (code) newCodes.push({ manufacturer: manufacturer.toUpperCase(), code: code.trim() });
+        }
+      }
+      if (newCodes.length === 0) { skipped++; continue; }
+
+      // Find the LD product by Mann part number in oem_codes
+      const mannNorm = mannSku.toUpperCase().replace(/[\s\-]/g, '');
+      const find = await client.query(
+        `SELECT id, competitor_codes FROM elimfilters_catalog
+         WHERE duty = 'LIGHT_DUTY'
+           AND EXISTS (
+             SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
+             WHERE UPPER(REPLACE(ref->>'code', '-', '')) = $1
+                OR UPPER(REPLACE(ref->>'code', ' ', '')) = $1
+           )
+         LIMIT 1`,
+        [mannNorm]
+      );
+      if (!find.rows.length) { skipped++; continue; }
+
+      const existing = find.rows[0].competitor_codes || [];
+      const existingSet = new Set(existing.map(c => `${c.manufacturer}|${c.code}`));
+      const toAdd = newCodes.filter(c => !existingSet.has(`${c.manufacturer}|${c.code}`));
+      if (toAdd.length === 0) { skipped++; continue; }
+
+      const merged = [...existing, ...toAdd];
+      await client.query(
+        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+        [JSON.stringify(merged), find.rows[0].id]
+      );
+      updated++;
+    }
+    res.json({ success: true, total: rows.length, updated, skipped, errors });
+  } catch (e) {
+    console.error('[update/mann-crossrefs]', e.message);
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/lookup-competitor ─────────────────────────────────────────
 app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
