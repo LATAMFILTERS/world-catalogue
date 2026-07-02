@@ -17,7 +17,8 @@
     "validate:map": "node ../scripts/build-part-search-map.js --validate",
     "validate:citation-api": "node ../scripts/generate-citation-api.js --validate",
     "test": "vitest run",
-    "test:engine": "vitest run src/lib/decision-engine/__tests__/decision-engine.test.ts"
+    "test:engine": "vitest run src/lib/decision-engine/__tests__/decision-engine.test.ts",
+    "test:engineering": "vitest run src/lib/decision-engine/__tests__/engineering-validation.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.14",
