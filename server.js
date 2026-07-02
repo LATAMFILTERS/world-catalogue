@@ -80,8 +80,8 @@ app.use(cors({
 app.use('/api/import', express.json({ charset: 'utf-8', limit: '10mb' }));
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
-const frontendStatic = express.static('frontend/out');
-const partSearchStatic = express.static('part-search');
+const frontendStatic = express.static('frontend/out', { maxAge: '1h', etag: true, lastModified: true });
+const partSearchStatic = express.static('part-search', { maxAge: '1h', etag: true, lastModified: true });
 
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) return next();
@@ -258,6 +258,59 @@ const dbConfig = {
   max: 10,
 };
 const pool = new Pool(dbConfig);
+pool.on('connect', client => {
+  client.query("SET statement_timeout = '8000'").catch(() => {});
+});
+
+// ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
+let _redis = null;
+if (process.env.REDIS_URL) {
+  const Redis = require('ioredis');
+  _redis = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: 2,
+    connectTimeout: 3000,
+    lazyConnect: true,
+    enableOfflineQueue: false,
+  });
+  _redis.on('error', (e) => console.error('[redis]', e.message));
+  _redis.connect().then(() => console.log('[cache] Redis connected')).catch(() => {
+    console.warn('[cache] Redis unavailable — falling back to in-memory cache');
+    _redis = null;
+  });
+}
+
+const _memCache = new Map();
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, v] of _memCache) if (now > v.exp) _memCache.delete(k);
+}, 5 * 60 * 1000);
+
+async function cacheGet(key) {
+  if (_redis) {
+    try {
+      const raw = await _redis.get(key);
+      return raw ? JSON.parse(raw) : undefined;
+    } catch { /* fall through */ }
+  }
+  const entry = _memCache.get(key);
+  if (!entry) return undefined;
+  if (Date.now() > entry.exp) { _memCache.delete(key); return undefined; }
+  return entry.val;
+}
+
+const MEM_CACHE_MAX = 200;
+async function cacheSet(key, val, ttlMs) {
+  if (_redis) {
+    try {
+      await _redis.set(key, JSON.stringify(val), 'PX', ttlMs);
+      return;
+    } catch { /* fall through */ }
+  }
+  if (_memCache.size >= MEM_CACHE_MAX) {
+    _memCache.delete(_memCache.keys().next().value);
+  }
+  _memCache.set(key, { val, exp: Date.now() + ttlMs });
+}
 
 // Filter brands (competitors) — everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
