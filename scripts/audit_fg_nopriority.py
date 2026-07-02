@@ -95,16 +95,29 @@ def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: s
         log.info(f"    [DRY] {sku} ← FLEETGUARD {af_code}")
         return True
 
-    r = requests.post(
-        f"{API_BASE}/api/update/sku-codes",
-        json={'sku': sku, 'competitor_codes': new_codes},
-        headers=get_headers(api_key),
-        timeout=30,
-    )
-    if r.status_code == 200:
-        log.info(f"    {sku} ← FLEETGUARD {af_code} ✓")
-        return True
-    log.error(f"    {sku} update failed ({r.status_code}): {r.text[:100]}")
+    for attempt in range(4):
+        try:
+            r = requests.post(
+                f"{API_BASE}/api/update/sku-codes",
+                json={'sku': sku, 'competitor_codes': new_codes},
+                headers=get_headers(api_key),
+                timeout=60,
+            )
+            if r.status_code == 200:
+                log.info(f"    {sku} <- FLEETGUARD {af_code} OK")
+                return True
+            if r.status_code in (502, 503, 504):
+                wait = 20 * (attempt + 1)
+                log.warning(f"    {sku} {r.status_code} cold start — retrying in {wait}s ({attempt+1}/4)")
+                time.sleep(wait)
+                continue
+            log.error(f"    {sku} update failed ({r.status_code}): {r.text[:100]}")
+            return False
+        except requests.RequestException as e:
+            wait = 20 * (attempt + 1)
+            log.warning(f"    {sku} request error: {e} — retrying in {wait}s")
+            time.sleep(wait)
+    log.error(f"    {sku} failed after 4 attempts")
     return False
 
 
