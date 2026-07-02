@@ -88,8 +88,8 @@ app.use(cors({
 app.use('/api/import', express.json({ charset: 'utf-8', limit: '2mb' }));
 app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
-const frontendStatic = express.static('frontend/out');
-const partSearchStatic = express.static('part-search');
+const frontendStatic = express.static('frontend/out', { maxAge: '1h', etag: true, lastModified: true });
+const partSearchStatic = express.static('part-search', { maxAge: '1h', etag: true, lastModified: true });
 
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) return next();
@@ -394,12 +394,17 @@ async function cacheGet(key) {
   return entry.val;
 }
 
+const MEM_CACHE_MAX = 200;
 async function cacheSet(key, val, ttlMs) {
   if (_redis) {
     try {
       await _redis.set(key, JSON.stringify(val), 'PX', ttlMs);
       return;
     } catch { /* fall through */ }
+  }
+  if (_memCache.size >= MEM_CACHE_MAX) {
+    // Evict oldest entry
+    _memCache.delete(_memCache.keys().next().value);
   }
   _memCache.set(key, { val, exp: Date.now() + ttlMs });
 }
