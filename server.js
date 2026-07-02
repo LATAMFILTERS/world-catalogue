@@ -666,7 +666,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'exact_sku' });
     }
 
-    // 2. OEM / competitor cross-reference
+    // 2. OEM / competitor cross-reference (exact match)
     const oem = await client.query(
       `SELECT * FROM elimfilters_catalog
        WHERE EXISTS (
@@ -684,6 +684,28 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       const products = oem.rows.map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
       return res.json({ success: true, results: products, source: 'oem_crossref' });
+    }
+
+    // 2b. OEM / competitor prefix match (e.g. PH3387 matches PH3387A, PH3387AAZ)
+    if (q.length >= 4) {
+      const prefix = await client.query(
+        `SELECT * FROM elimfilters_catalog
+         WHERE EXISTS (
+           SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
+           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
+         )
+         OR EXISTS (
+           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
+           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
+         )
+         LIMIT 10`,
+        [q + '%']
+      );
+      if (prefix.rows.length > 0) {
+        const products = prefix.rows.map(r => buildFilterData(r, lang));
+        await enrichAlternatives(products, client);
+        return res.json({ success: true, results: products, source: 'oem_prefix' });
+      }
     }
 
     // 3. Description full-text search
