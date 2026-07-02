@@ -1306,6 +1306,30 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
   }
 });
 
+// ─── GET /api/admin/lookup-competitor ─────────────────────────────────────────
+app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, res) => {
+  const code = (req.query.code || '').trim().toUpperCase();
+  if (!code) return res.status(400).json({ error: 'code required' });
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(
+      `SELECT sku, duty, competitor_codes
+       FROM elimfilters_catalog
+       WHERE EXISTS (
+         SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
+         WHERE UPPER(ref->>'code') = $1
+       )
+       LIMIT 20`,
+      [code.replace(/[-\s]/g, '')]
+    );
+    res.json({ found: rows.length, rows });
+  } catch(e) {
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/cleanup/fram-hd-force ───────────────────────────────────────────────────────────────────────────────
 // Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
 // Handles any manufacturer key format (uppercase, lowercase, missing).
