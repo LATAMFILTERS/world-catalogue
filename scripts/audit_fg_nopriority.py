@@ -92,7 +92,7 @@ def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: s
     new_codes = existing_codes + [{'manufacturer': 'FLEETGUARD', 'code': af_code}]
 
     if dry_run:
-        log.info(f"    [DRY] {sku} <- FLEETGUARD {af_code}")
+        log.info(f"    [DRY] {sku} ← FLEETGUARD {af_code}")
         return True
 
     r = requests.post(
@@ -102,7 +102,7 @@ def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: s
         timeout=30,
     )
     if r.status_code == 200:
-        log.info(f"    {sku} <- FLEETGUARD {af_code} OK")
+        log.info(f"    {sku} ← FLEETGUARD {af_code} ✓")
         return True
     log.error(f"    {sku} update failed ({r.status_code}): {r.text[:100]}")
     return False
@@ -134,8 +134,8 @@ def run(args):
             if af:
                 crossrefs_map[af] = rec.get('cross_refs', [])
 
-    # Brand frequency analysis
-    brand_freq  = defaultdict(list)  # brand -> [af_codes]
+    # ── Brand frequency analysis ──────────────────────────────────────────────
+    brand_freq  = defaultdict(list)  # brand → [af_codes]
     oem_hits    = []   # (af, brand, code) for OEM-searchable codes
     sakura_hifi = []   # aftermarket Asian brands
     mahle_group = []   # European car brands (likely LD)
@@ -170,7 +170,7 @@ def run(args):
             else:
                 unclassified.append({'af': af, 'brands': list(all_brands)[:6]})
 
-    # Print grouping summary
+    # ── Print grouping summary ────────────────────────────────────────────────
     log.info(f"\n{'='*65}")
     log.info(f"NO_PRIORITY GROUP ANALYSIS ({len(no_priority)} codes)")
     log.info(f"{'='*65}")
@@ -193,7 +193,7 @@ def run(args):
         _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, brand_freq, [], [])
         return
 
-    # Search DB for OEM-searchable codes
+    # ── Search DB for OEM-searchable codes ───────────────────────────────────
     log.info(f"\nSearching DB for {len(oem_hits)} OEM-searchable codes...")
     linkable  = []
     not_found = []
@@ -215,6 +215,11 @@ def run(args):
             time.sleep(0.25)
 
         if found_sku:
+            # AF codes are air filters — only link to EA1/EA2 SKUs (air filter prefixes)
+            if not (found_sku.startswith('EA1') or found_sku.startswith('EA2')):
+                log.warning(f"  [{i}/{len(oem_hits)}] {af} -> SKIP {found_sku} (wrong type — AF must link to EA1/EA2 only)")
+                not_found.append(item)
+                continue
             already = any(
                 isinstance(c, dict) and c.get('code', '').upper() == af
                 for c in existing
@@ -232,7 +237,7 @@ def run(args):
 
     log.info(f"\nOEM search results: {len(linkable)} found | {len(not_found)} not found")
 
-    # Apply links
+    # ── Apply links ───────────────────────────────────────────────────────────
     to_link = [l for l in linkable if l['status'] == 'linkable']
     if to_link:
         log.info(f"\nLinking {len(to_link)} AF codes via OEM cross-refs...")
@@ -276,26 +281,26 @@ def _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, bran
     report_path = out_dir / 'fg_nopriority_report.json'
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
-    log.info(f"\nReport -> {report_path}")
+    log.info(f"\nReport → {report_path}")
 
     # Plain text groups for easy reading
     groups_path = out_dir / 'fg_nopriority_groups.txt'
     with open(groups_path, 'w', encoding='utf-8') as f:
         f.write(f"NO_PRIORITY GROUP BREAKDOWN\n{'='*60}\n\n")
-        f.write(f"OEM-SEARCHABLE ({len(oem_hits)}) -- CUMMINS, CAT, KOMATSU, FORD, etc.\n")
+        f.write(f"OEM-SEARCHABLE ({len(oem_hits)}) — CUMMINS, CAT, KOMATSU, FORD, etc.\n")
         for item in oem_hits:
             refs = ', '.join(f"{r['brand']}:{r['code']}" for r in item['oem_refs'][:4])
             f.write(f"  {item['af']:<15} {refs}\n")
-        f.write(f"\nAFTERMARKET ASIAN ({len(sakura_hifi)}) -- SAKURA, HIFI-FILTER, RYCO\n")
+        f.write(f"\nAFTERMARKET ASIAN ({len(sakura_hifi)}) — SAKURA, HIFI-FILTER, RYCO\n")
         for item in sakura_hifi:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
-        f.write(f"\nEUROPEAN CAR BRANDS ({len(mahle_group)}) -- MAHLE, KNECHT, HENGST (likely LD)\n")
+        f.write(f"\nEUROPEAN CAR BRANDS ({len(mahle_group)}) — MAHLE, KNECHT, HENGST (likely LD)\n")
         for item in mahle_group:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
         f.write(f"\nUNCLASSIFIED ({len(unclassified)})\n")
         for item in unclassified:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
-    log.info(f"Groups  -> {groups_path}")
+    log.info(f"Groups  → {groups_path}")
 
 
 if __name__ == '__main__':
