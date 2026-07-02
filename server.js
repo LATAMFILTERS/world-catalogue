@@ -2846,7 +2846,8 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     if (!sessionId || typeof sessionId !== 'string' || sessionId.length > 64) {
       return res.status(400).json({ error: 'Invalid session.' });
     }
-    if (!process.env.GROQ_API_KEY) {
+    const useDeepSeek = !!process.env.DEEPSEEK_API_KEY;
+    if (!useDeepSeek && !process.env.GROQ_API_KEY) {
       return res.status(503).json({ error: 'Chat unavailable.' });
     }
 
@@ -2870,15 +2871,21 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     // Build system prompt with language directive appended
     const systemPrompt = CHAT_SYSTEM_PROMPT + (lang ? `\n\nLANGUAGE: Respond in the language identified by lang="${lang}". Keep all technical codes (ISO, ASTM, SAE) in their original form.` : '');
 
-    // Call Groq API (OpenAI-compatible)
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    // Call DeepSeek API directly if key available, otherwise fall back to Groq
+    const apiUrl = useDeepSeek
+      ? 'https://api.deepseek.com/v1/chat/completions'
+      : 'https://api.groq.com/openai/v1/chat/completions';
+    const apiKey = useDeepSeek ? process.env.DEEPSEEK_API_KEY : process.env.GROQ_API_KEY;
+    const model = useDeepSeek ? 'deepseek-chat' : 'llama-3.3-70b-versatile';
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+        'Authorization': `Bearer ${apiKey}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'deepseek-r1-distill-llama-70b',
+        model,
         max_tokens: 600,
         temperature: 0,
         messages: [
@@ -2889,7 +2896,7 @@ app.post('/api/chat', chatLimiter, async (req, res) => {
     });
 
     if (!response.ok) {
-      console.error('[api/chat] Groq error:', response.status);
+      console.error('[api/chat] AI error:', response.status, await response.text().catch(() => ''));
       return res.status(502).json({ error: 'AI service unavailable.' });
     }
 
