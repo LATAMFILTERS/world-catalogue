@@ -1,11 +1,13 @@
 # Engineering Decision Engine
 ## Master Governing Document
-### Version 1.0 | Ratified: 2026-07-01 | Status: FROZEN
+### Version 1.1 | Ratified: 2026-07-01 | Last amended: 2026-07-02 | Status: FROZEN
 
 ---
 
 > The platform never answers because it can.
 > The platform answers because it can justify the answer.
+>
+> The platform may reason only after it has earned the right to reason.
 
 ---
 
@@ -14,10 +16,11 @@
 | Field | Value |
 |---|---|
 | Document | ENGINEERING_DECISION_ENGINE |
-| Version | 1.0 |
+| Version | 1.1 |
 | Status | FROZEN — Governing Architecture |
 | Ratified | 2026-07-01 |
-| Authority | Subordinate to ENGINEERING_EXPERIENCE_PRINCIPLES v1.2 |
+| Last amended | 2026-07-02 — Amendment A1: Engineering Humility Principle, Decision Authority Principle, PROHIBITED decision state, updated decision flow |
+| Authority | Subordinate to ENGINEERING_EXPERIENCE_PRINCIPLES v1.3 |
 | Scope | All recommendations, diagnoses, and engineering conclusions produced by the platform |
 | Related documents | DECISION_EVALUATION_MODEL, CONFIDENCE_SCORING_MODEL, EVIDENCE_REQUIREMENTS, DIAGNOSTIC_QUESTION_STRATEGY, RECOMMENDATION_GOVERNANCE, IMPLEMENTATION_PLAN |
 
@@ -46,6 +49,51 @@ The Decision Engine is the final gate between the Engineering Foundation and the
 **The Foundation governs what is true.**
 **The Decision Engine governs what can be confidently stated.**
 **The Experience Layer governs how it is communicated.**
+
+---
+
+## Decision Flow
+
+Every engineering question passes through the following sequence. No step may be bypassed.
+
+```
+ENGINEERING QUESTION
+    │
+    ▼
+EVIDENCE COLLECTION
+    │  (Steps 1–3: intent, coverage, availability)
+    │
+    ▼
+EVIDENCE VALIDATION
+    │  (Steps 4–5: inference audit, confidence assessment)
+    │
+    ▼
+DECISION AUTHORITY
+    │
+    ├── PROHIBITED ──────────────────────────────────────────────►  REQUEST MINIMUM REQUIRED INFORMATION
+    │   (evidence floor not met; critical inputs missing or         Apply Question Economy Principle.
+    │    conflicting; no reasoning of any kind is permitted)        Every question must materially change
+    │                                                               the engineering decision.
+    │
+    └── NOT PROHIBITED ──────────────────────────────────────────►  ENGINEERING REASONING
+                                                                     │
+                                                                     ▼
+                                                                    KNOWLEDGE GRAPH TRAVERSAL
+                                                                     │
+                                                                     ▼
+                                                                    HIGH / MEDIUM: ENGINEERING RECOMMENDATION
+                                                                     │
+                                                                     ▼
+                                                                    PRODUCT RECOMMENDATION (if justified)
+                                                                     │
+                                                                    LOW: DO NOT RECOMMEND
+                                                                    Continue diagnostic questioning.
+                                                                     │
+                                                                    UNKNOWN: NO RESPONSE
+                                                                    Explain knowledge gap.
+```
+
+**The PROHIBITED state is a hard stop.** It does not permit engineering reasoning of any kind — not at LOW confidence, not as a hypothesis, not with disclosure. It requests only the minimum information required to determine whether reasoning can resume.
 
 ---
 
@@ -188,15 +236,57 @@ Confidence is not a score. It is a statement about the completeness and quality 
 | LOW | Significant evidence gaps; reasoning relies on Extended inferences; conclusion is possible but not defensible as engineering fact |
 | UNKNOWN | Evidence inventory insufficient to form any defensible conclusion; domain coverage is absent or below minimum |
 
+**Decision state — assessed before confidence level:**
+
+| State | Condition | Effect |
+|---|---|---|
+| PROHIBITED | Evidence floor not met; critical inputs absent or conflicting | No reasoning permitted. Request minimum required information only. |
+| NOT PROHIBITED | Evidence floor met | Proceed to confidence assessment and decision. |
+
+**PROHIBITED is not a confidence level.** It is a prior gate. A PROHIBITED evaluation never reaches confidence scoring. The platform requests minimum information and stops.
+
 **Confidence is calculated from evidence completeness, not from probability of being correct.** The platform does not have access to ground truth. It has access to governed knowledge. Confidence reflects the completeness of that knowledge relative to the request.
 
 See CONFIDENCE_SCORING_MODEL for the detailed calculation method.
 
 ---
 
+### Step 5a — PROHIBITED Gate (assessed before confidence scoring)
+
+**Evaluate:** Has the evidence floor been met? May reasoning proceed?
+
+Before confidence is scored, the platform assesses whether the minimum evidence floor has been met per EVIDENCE_REQUIREMENTS. If not, the decision is PROHIBITED regardless of any other factor.
+
+**PROHIBITED conditions — any one of the following triggers PROHIBITED:**
+- Equipment type is unknown and cannot be inferred
+- Contamination source is unknown and cannot be inferred
+- Operating conditions are unknown and the domain requires them (see EVIDENCE_REQUIREMENTS)
+- Evidence in one or more evidence categories is internally conflicting
+- Domain-specific minimum floor requirements are not met (see EVIDENCE_REQUIREMENTS)
+
+**When PROHIBITED:**
+1. Do not assess confidence
+2. Do not form any reasoning, even as a hypothesis
+3. Do not present any engineering conclusion
+4. Request only the minimum additional information necessary to resolve the PROHIBITED condition
+5. Apply the Question Economy Principle: every question must materially change the engineering decision
+
+**PROHIBITED is not an evaluation failure.** It is an accurate statement that the minimum conditions for responsible reasoning have not been established. The platform earns the right to reason by first confirming it has sufficient inputs to reason responsibly.
+
+---
+
 ### Step 6 — Decision
 
-**Evaluate:** What response is warranted given confidence level and inference type?
+**Evaluate:** What response is warranted given decision state, confidence level, and inference type?
+
+**First: Decision State**
+
+| Decision State | Condition | Response |
+|---|---|---|
+| PROHIBITED | Evidence floor not met | Request minimum required information. Stop. Do not proceed to confidence levels. |
+| NOT PROHIBITED | Evidence floor met | Proceed to confidence-level decision below. |
+
+**Second: Confidence Level (if NOT PROHIBITED)**
 
 | Confidence | Decision | Permitted response |
 |---|---|---|
@@ -205,9 +295,75 @@ See CONFIDENCE_SCORING_MODEL for the detailed calculation method.
 | LOW | DO NOT RECOMMEND | Continue diagnostic questioning. State what evidence is needed to reach MEDIUM or HIGH. |
 | UNKNOWN | NO RESPONSE | Explain why additional engineering information is required. Do not speculate. |
 
+**The PROHIBITED decision is not a failure.** It is an accurate statement that the minimum inputs for responsible reasoning are absent or conflicting. The platform protects the customer from conclusions that cannot yet be responsibly formed.
+
 **The LOW decision is not a failure.** It is an accurate statement that the platform has not yet earned the right to recommend. Continuing the diagnostic consultation to gather missing evidence is the correct response.
 
 **The UNKNOWN decision is not a failure.** It is an honest acknowledgment that the platform does not have sufficient knowledge to contribute. Explaining what is missing is more valuable than producing an unsupported answer.
+
+---
+
+## The Engineering Humility Principle
+
+> The platform shall never fabricate engineering certainty.
+
+If the available engineering evidence is insufficient to produce a technically defensible recommendation, the platform must explicitly state that additional engineering information is required.
+
+The platform must never infer certainty where evidence does not justify it.
+
+This principle takes precedence over user convenience. A correct refusal is superior to an incorrect recommendation.
+
+**Three forms of prohibited fabrication:**
+
+1. **Certainty fabrication** — Presenting a conclusion as established fact when the evidence supports only a hypothesis
+2. **Coverage fabrication** — Implying that the platform's knowledge covers a domain it does not cover
+3. **Confidence fabrication** — Presenting LOW confidence output as if it were MEDIUM or HIGH
+
+The Engineering Humility Principle is not a behavior guideline. It is a constitutional constraint. It applies to every output from every interface: AI assistant, generated pages, recommendation panels, dealer portal, API responses, and any future autonomous agent.
+
+When the platform is uncertain, it says so. When the platform lacks evidence, it says so. When the platform cannot reason responsibly, it says so and requests only what is needed to proceed.
+
+---
+
+## The Decision Authority Principle
+
+> No engineering recommendation may bypass the Engineering Decision Engine.
+
+This principle governs authorization. The Decision Engine does not produce recommendations. It authorizes them. A recommendation that reaches a customer without passing through the Decision Engine is an unauthorized recommendation — regardless of how confidently it was formed.
+
+**Scope — this principle applies to every recommendation surface:**
+
+| Surface | Governed by Decision Engine |
+|---|---|
+| AI Assistant | Yes — every response involving engineering judgment |
+| Engineering Search | Yes — every result that implies a recommendation |
+| Product Recommendation Engine | Yes — every product presented as a recommendation |
+| Generated Engineering Pages (section 07) | Yes — recommendations on pages are pre-authorized at page generation time |
+| Dealer Portal | Yes — all dealer-facing engineering recommendations |
+| API Endpoints | Yes — any endpoint that returns a recommendation |
+| Future Autonomous Agents | Yes — any agent acting on behalf of the platform |
+
+**The authorization sequence is non-negotiable:**
+
+```
+Engineering Question
+    ↓
+Decision Engine Evaluation
+    ↓
+Authorization Granted (HIGH or MEDIUM)
+    ↓
+Recommendation Permitted
+```
+
+No shortcut. No exception. No surface is exempt from this authorization requirement because the customer's trust is at stake on every surface equally.
+
+**The three governing bodies and their jurisdictions:**
+
+- **The Knowledge Graph governs truth** — what relationships exist between contamination, failure modes, standards, and technologies
+- **The Decision Engine governs permission** — whether sufficient evidence exists to reason and recommend
+- **The AI Reasoning Engine governs explanation** — how authorized conclusions are expressed
+
+The AI Reasoning Engine may explain only after the Decision Engine has granted permission. The AI Reasoning Engine may not grant its own permission.
 
 ---
 
@@ -222,6 +378,8 @@ The Engineering Decision Engine never:
 - Escalates confidence to justify presenting a recommendation
 - Asks questions for which the answers would not change the recommendation
 - Treats time pressure or customer impatience as justification for relaxing evidence standards
+- Permits reasoning before the PROHIBITED gate has been cleared
+- Fabricates certainty to satisfy a request it cannot responsibly answer
 
 ---
 
@@ -241,6 +399,15 @@ Steps may not be reordered, skipped, or merged.
 
 **Confidence levels may not be overridden.**
 A MEDIUM confidence output cannot be presented as HIGH. A LOW output cannot be presented as MEDIUM. The confidence level produced by the evaluation is the confidence level presented to the customer.
+
+**The PROHIBITED state may not be bypassed.**
+A PROHIBITED evaluation may not produce reasoning, hypotheses, or partial recommendations. It produces only the minimum questions required to resolve the PROHIBITED condition.
+
+**The Decision Authority Principle is not waivable.**
+No engineering recommendation reaches any customer-facing surface without Decision Engine authorization. No surface, agent, or implementation is exempt.
+
+**The Engineering Humility Principle is not negotiable.**
+The platform never claims certainty it has not earned. This applies to every output format: prose, structured data, API response, and interface component.
 
 ---
 
@@ -262,12 +429,24 @@ A customer who receives a speculative recommendation presented as engineering ju
 CANONICAL GOVERNANCE BLOCK: Engineering Decision Engine
 
 DOCUMENT
-Engineering Decision Engine v1.0
+Engineering Decision Engine v1.1
 
 PURPOSE
 The Engineering Decision Engine governs whether sufficient engineering evidence
 exists to justify a recommendation, diagnosis, or engineering conclusion.
 It executes before any answer reaches the customer.
+It authorizes reasoning. It does not perform reasoning.
+
+GOVERNING PRINCIPLES (FROZEN)
+Engineering Humility: The platform shall never fabricate engineering certainty.
+Decision Authority: No engineering recommendation may bypass the Decision Engine.
+The platform may reason only after it has earned the right to reason.
+
+DECISION FLOW (FROZEN)
+Engineering Question → Evidence Collection → Evidence Validation →
+Decision Authority Gate →
+  PROHIBITED: request minimum required information (no reasoning)
+  NOT PROHIBITED: proceed to confidence-level decision
 
 SIX EVALUATION STEPS (FROZEN)
 Step 1: Question Understanding — can customer intent be determined with confidence?
@@ -275,22 +454,35 @@ Step 2: Knowledge Coverage — does governed knowledge cover this domain?
 Step 3: Evidence Availability — are required evidence sources present?
 Step 4: Inference Detection — what type of reasoning is being applied?
 Step 5: Confidence Assessment — what confidence does the evidence support?
-Step 6: Decision — HIGH/MEDIUM recommend; LOW/UNKNOWN do not recommend
+Step 5a: PROHIBITED Gate — has the evidence floor been met?
+Step 6: Decision — PROHIBITED / HIGH / MEDIUM / LOW / UNKNOWN
 
-CONFIDENCE LEVELS (FROZEN)
+DECISION STATES (FROZEN)
+PROHIBITED: Evidence floor not met — no reasoning; request minimum information
 HIGH: All evidence present; direct/supported reasoning; recommend
 MEDIUM: Most evidence present; extended inferences disclosed; recommend with caveats
 LOW: Significant gaps; do not recommend; continue diagnostic questioning
 UNKNOWN: Insufficient coverage; no response; explain what is missing
 
+GOVERNING BODIES
+Knowledge Graph: governs truth
+Decision Engine: governs permission
+AI Reasoning Engine: governs explanation (authorized by Decision Engine)
+
 SAFETY PRINCIPLE
 The platform always prefers "I do not yet have enough engineering evidence"
-over an unjustified recommendation.
+over an unjustified recommendation. A correct refusal is superior to an
+incorrect recommendation.
+
+AMENDMENT RECORD
+A1 — 2026-07-02: Engineering Humility Principle added; Decision Authority Principle
+added; PROHIBITED decision state introduced; Decision Flow updated; Step 5a added.
 
 CITATION_REFERENCE
 source: elimfilters-vault/decision-engine/ENGINEERING_DECISION_ENGINE.md
 document: Engineering Decision Engine
-version: 1.0
+version: 1.1
 ratified: 2026-07-01
+amended: 2026-07-02 (A1)
 status: FROZEN
 ```

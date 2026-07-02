@@ -1,6 +1,6 @@
 # Decision Evaluation Model
 ## Engineering Decision Engine — Step Specification
-### Version 1.0 | Ratified: 2026-07-01 | Status: FROZEN
+### Version 1.1 | Ratified: 2026-07-01 | Last amended: 2026-07-02 | Status: FROZEN
 
 ---
 
@@ -9,10 +9,11 @@
 | Field | Value |
 |---|---|
 | Document | DECISION_EVALUATION_MODEL |
-| Version | 1.0 |
+| Version | 1.1 |
 | Status | FROZEN — Governing Architecture |
 | Ratified | 2026-07-01 |
-| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.0 |
+| Last amended | 2026-07-02 — Amendment A1: Step 5a (PROHIBITED Gate) added; Step 6 updated with PROHIBITED decision path |
+| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.1 |
 | Scope | Detailed specification of each evaluation step in the six-step sequence |
 
 ---
@@ -338,13 +339,87 @@ Confidence levels may only be upgraded when additional evidence is obtained that
 
 ---
 
+## Step 5a — PROHIBITED Gate: Detailed Model
+
+### Objective
+
+Before confidence is scored, assess whether the minimum conditions for responsible reasoning have been established. This gate is binary: PROHIBITED or NOT PROHIBITED.
+
+### PROHIBITED Conditions
+
+The evaluation is PROHIBITED if any one of the following conditions is true:
+
+**Condition 1 — Unknown Equipment**
+The equipment type cannot be determined from available evidence and cannot be reasonably inferred from operating context. Example: customer has described a symptom but not the equipment on which the symptom is occurring.
+
+**Condition 2 — Unknown Contamination Source**
+The contamination type, source, or mode cannot be identified even at a PARTIAL level. Example: in the fuel domain, neither water contamination nor particulate contamination can be determined from available evidence.
+
+**Condition 3 — Unknown Operating Conditions (domain-specific)**
+For domains where operating conditions are CRITICAL-CONTEXTUAL (see CONFIDENCE_SCORING_MODEL):
+- Cabin Safety domain: operating environment is unknown — PROHIBITED
+- Compressed Air domain: end-use application is unknown — PROHIBITED
+- Fuel domain (FAILURE_DIAGNOSIS intent): contamination type is unknown — PROHIBITED
+
+**Condition 4 — Conflicting Evidence**
+Two or more evidence sources provide contradictory information about the same engineering fact. Example: symptom correlation suggests hydraulic valve stiction, but the documented oil analysis shows contamination consistent with bearing wear rather than valve contamination. The conflict must be resolved before reasoning can proceed.
+
+**Condition 5 — Evidence Floor Not Met**
+The domain-specific evidence floor requirements (per EVIDENCE_REQUIREMENTS) have not been met. The categories designated as "non-negotiable" for the domain are ABSENT.
+
+### PROHIBITED Response
+
+When PROHIBITED:
+
+1. **Do not assess confidence.** Skip Step 5 (confidence scoring) entirely.
+2. **Do not form any reasoning.** No engineering hypothesis, no tentative direction, no "it's probably X."
+3. **Do not present any engineering conclusion.** No partial answers.
+4. **Request minimum required information only.** Apply the Question Economy Principle from DIAGNOSTIC_QUESTION_STRATEGY:
+   - Identify exactly which PROHIBITED condition is triggered
+   - Produce only the questions that resolve that specific condition
+   - Do not ask questions unrelated to the PROHIBITED condition
+
+**PROHIBITED response format:**
+
+```
+ENGINEERING EVALUATION — PROHIBITED
+
+The platform cannot form a responsible engineering conclusion at this time.
+
+REASON: [Specific PROHIBITED condition: e.g., "The contamination type in the
+fuel system has not been determined. Water contamination and particulate
+contamination require different protection strategies. Proceeding without this
+information would produce a recommendation that may not address the actual
+failure mechanism."]
+
+INFORMATION REQUIRED:
+[Minimum questions — one per unresolved PROHIBITED condition]
+[Every question materially changes the engineering decision if answered differently]
+```
+
+### NOT PROHIBITED — Proceed to Step 5
+
+If none of the five PROHIBITED conditions is triggered, the evaluation proceeds to Step 5 (Confidence Assessment). The PROHIBITED gate is cleared.
+
+---
+
 ## Step 6 — Decision: Detailed Model
 
 ### Objective
 
-Determine the permitted response given confidence level and inference types. Produce the response in the correct format.
+Determine the permitted response given decision state, confidence level, and inference types.
 
-### Decision Rules
+### Decision Rules — Part A: PROHIBITED State
+
+**If the PROHIBITED gate triggered in Step 5a:**
+
+The evaluation stops here. The response is the PROHIBITED response format defined in Step 5a. Step 6 produces no further output.
+
+**PROHIBITED → REQUEST MINIMUM INFORMATION**
+
+---
+
+### Decision Rules — Part B: Confidence Level (if NOT PROHIBITED)
 
 **HIGH confidence → RECOMMEND**
 
@@ -425,7 +500,7 @@ Required elements:
 
 ## Evaluation Integrity
 
-The six steps are executed in sequence for every request. This model does not change based on:
+The six steps plus the PROHIBITED gate are executed in sequence for every request. This model does not change based on:
 - The complexity of the request (simple requests get full evaluation)
 - The expertise of the customer (domain experts get the same evaluation standard)
 - The urgency of the situation (urgency does not relax evidence requirements)

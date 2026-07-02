@@ -1,6 +1,6 @@
 # Recommendation Governance
 ## Engineering Decision Engine — Rules for When and How Recommendations Are Produced
-### Version 1.0 | Ratified: 2026-07-01 | Status: FROZEN
+### Version 1.1 | Ratified: 2026-07-01 | Last amended: 2026-07-02 | Status: FROZEN
 
 ---
 
@@ -9,10 +9,11 @@
 | Field | Value |
 |---|---|
 | Document | RECOMMENDATION_GOVERNANCE |
-| Version | 1.0 |
+| Version | 1.1 |
 | Status | FROZEN — Governing Architecture |
 | Ratified | 2026-07-01 |
-| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.0 |
+| Last amended | 2026-07-02 — Amendment A1: Decision Authority Principle added; PROHIBITED state integrated into permission model |
+| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.1 |
 | Scope | All recommendations produced by the platform — technology recommendations, product recommendations, and engineering conclusions |
 
 ---
@@ -44,13 +45,38 @@ All three of the above are permitted at any confidence level. A recommendation r
 
 ---
 
+## The Decision Authority Requirement
+
+Every engineering recommendation requires authorization from the Engineering Decision Engine before it reaches any customer-facing surface. This is not a procedural requirement — it is a constitutional one (Engineering Experience Principles, Principle 13).
+
+**Authorization means:** The Decision Engine evaluation has completed, the PROHIBITED gate has been cleared, and Step 6 has produced RECOMMEND or RECOMMEND WITH DISCLOSURE.
+
+**No surface is exempt.** AI Assistant, Engineering Search, Product Recommendation Engine, Generated Pages, Dealer Portal, API Endpoints, and future autonomous agents all require Decision Engine authorization before producing a recommendation. There is no "simple enough to skip" threshold. Authorization is required for all recommendations.
+
+**The authorization sequence:**
+```
+Engineering Question
+    ↓
+Decision Engine Evaluation (Steps 1–5a–5–6)
+    ↓
+PROHIBITED? → Stop. Request information. No recommendation.
+NOT PROHIBITED + LOW/UNKNOWN? → Stop. Continue diagnostic consultation. No recommendation.
+NOT PROHIBITED + HIGH/MEDIUM? → Authorization granted.
+    ↓
+Recommendation permitted.
+```
+
+---
+
 ## What Permits a Recommendation
 
 ### Conditions That Must All Be True
 
-1. **The six-step evaluation has completed.** A recommendation produced before all six steps have executed is not governed. Steps may not be skipped.
+1. **The six-step evaluation (including Step 5a PROHIBITED gate) has completed.** A recommendation produced before the evaluation is complete is unauthorized. Steps may not be skipped.
 
-2. **Step 6 produced RECOMMEND or RECOMMEND WITH DISCLOSURE.** No other Step 6 output permits a recommendation.
+2. **Step 5a returned NOT PROHIBITED.** If PROHIBITED, the evaluation stops at Step 5a. No recommendation is permitted regardless of any other factor.
+
+3. **Step 6 produced RECOMMEND or RECOMMEND WITH DISCLOSURE.** No other Step 6 output permits a recommendation.
 
 3. **Every claim in the recommendation has a corresponding evidence source.** Claims without evidence sources have been excluded by Step 4.
 
@@ -60,6 +86,7 @@ All three of the above are permitted at any confidence level. A recommendation r
 
 ### Conditions That Never Permit a Recommendation
 
+- The PROHIBITED gate triggered in Step 5a
 - A matching product exists in the catalogue
 - A related recommendation was made successfully for a similar customer
 - The customer appears to expect a recommendation
