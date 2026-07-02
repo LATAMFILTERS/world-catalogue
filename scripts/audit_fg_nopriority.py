@@ -5,7 +5,7 @@ audit_fg_nopriority.py
 Analyzes the 63 Fleetguard AF codes that have cross-refs but no priority brand
 (DONALDSON, BALDWIN, WIX, MANN, MANN-HUMMEL).
 
-For each code, tries to find an existing EA1 SKU via available OEM brands:
+For each code, tries to find an existing EA1/EA2 SKU via available OEM brands:
   CUMMINS, KOMATSU, CATERPILLAR, CAT, MOTORCRAFT, FORD, GMC,
   MITSUBISHI, NEW-HOLLAND, CASE-IH, JOHN-DEERE, DEERE
 
@@ -48,6 +48,7 @@ OEM_BRANDS = [
 
 FRAM_BRANDS = {'FRAM', 'CA', 'PH', 'CF', 'G', 'FILTERS'}
 
+# AF codes are Fleetguard air filters -- only link to EA1/EA2 SKUs
 AIR_FILTER_PREFIXES = ('EA1', 'EA2')
 
 
@@ -58,7 +59,7 @@ def get_headers(api_key):
     }
 
 
-def search_by_competitor_code(code: str, api_key: str, limit: int = 10) -> list:
+def search_by_competitor_code(code: str, api_key: str, limit: int = 20) -> list:
     for attempt in range(3):
         try:
             r = requests.get(
@@ -94,19 +95,32 @@ def add_competitor_code(sku: str, existing_codes: list, af_code: str, api_key: s
     new_codes = existing_codes + [{'manufacturer': 'FLEETGUARD', 'code': af_code}]
 
     if dry_run:
-        log.info(f"    [DRY] {sku} ← FLEETGUARD {af_code}")
+        log.info(f"    [DRY] {sku} <- FLEETGUARD {af_code}")
         return True
 
-    r = requests.post(
-        f"{API_BASE}/api/update/sku-codes",
-        json={'sku': sku, 'competitor_codes': new_codes},
-        headers=get_headers(api_key),
-        timeout=30,
-    )
-    if r.status_code == 200:
-        log.info(f"    {sku} ← FLEETGUARD {af_code} ✓")
-        return True
-    log.error(f"    {sku} update failed ({r.status_code}): {r.text[:100]}")
+    for attempt in range(4):
+        try:
+            r = requests.post(
+                f"{API_BASE}/api/update/sku-codes",
+                json={'sku': sku, 'competitor_codes': new_codes},
+                headers=get_headers(api_key),
+                timeout=60,
+            )
+            if r.status_code == 200:
+                log.info(f"    {sku} <- FLEETGUARD {af_code} OK")
+                return True
+            if r.status_code in (502, 503, 504):
+                wait = 20 * (attempt + 1)
+                log.warning(f"    {sku} {r.status_code} cold start -- retrying in {wait}s ({attempt+1}/4)")
+                time.sleep(wait)
+                continue
+            log.error(f"    {sku} update failed ({r.status_code}): {r.text[:120]}")
+            return False
+        except requests.RequestException as e:
+            wait = 20 * (attempt + 1)
+            log.warning(f"    {sku} request error: {e} -- retrying in {wait}s")
+            time.sleep(wait)
+    log.error(f"    {sku} failed after 4 attempts")
     return False
 
 
@@ -116,15 +130,12 @@ def run(args):
     out_dir        = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load audit report to get NO_PRIORITY list
     with open(audit_path, encoding='utf-8') as f:
         audit = json.load(f)
 
     no_priority = audit.get('details', {}).get('NO_PRIORITY', [])
-    no_priority_af = {r['af'].upper() for r in no_priority}
-    log.info(f"NO_PRIORITY codes from audit: {len(no_priority_af)}")
+    log.info(f"NO_PRIORITY codes from audit: {len(no_priority)}")
 
-    # Load cross-refs for all AF codes
     crossrefs_map = {}
     with open(crossrefs_path, encoding='utf-8') as f:
         for line in f:
@@ -136,22 +147,20 @@ def run(args):
             if af:
                 crossrefs_map[af] = rec.get('cross_refs', [])
 
-    # ── Brand frequency analysis ──────────────────────────────────────────────
-    brand_freq  = defaultdict(list)  # brand → [af_codes]
-    oem_hits    = []   # (af, brand, code) for OEM-searchable codes
-    sakura_hifi = []   # aftermarket Asian brands
-    mahle_group = []   # European car brands (likely LD)
+    brand_freq   = defaultdict(list)
+    oem_hits     = []
+    sakura_hifi  = []
+    mahle_group  = []
     unclassified = []
 
     for rec in no_priority:
-        af    = rec['af'].upper()
+        af     = rec['af'].upper()
         brands = rec.get('brands', [])
         refs   = crossrefs_map.get(af, [])
 
         for b in brands:
             brand_freq[b].append(af)
 
-        # Collect OEM-searchable codes
         oem_refs = []
         for ref in refs:
             brand = ref.get('brand', '').upper().strip()
@@ -172,7 +181,6 @@ def run(args):
             else:
                 unclassified.append({'af': af, 'brands': list(all_brands)[:6]})
 
-    # ── Print grouping summary ────────────────────────────────────────────────
     log.info(f"\n{'='*65}")
     log.info(f"NO_PRIORITY GROUP ANALYSIS ({len(no_priority)} codes)")
     log.info(f"{'='*65}")
@@ -191,25 +199,36 @@ def run(args):
         log.info(f"  {item['af']:<15} {refs_str}")
 
     if args.report_only:
-        # Save grouping report and exit
         _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, brand_freq, [], [])
         return
 
-    # ── Search DB for OEM-searchable codes ───────────────────────────────────
     log.info(f"\nSearching DB for {len(oem_hits)} OEM-searchable codes...")
     linkable  = []
     not_found = []
 
     for i, item in enumerate(oem_hits, 1):
-        af   = item['af']
+        af        = item['af']
         found_sku = None
         via_ref   = None
+        existing  = []
 
         for ref in item['oem_refs']:
             matched = search_by_competitor_code(ref['code'], args.api_key)
             if matched:
-                product = matched[0]
-                sku = product.get('sku') or product.get('elimfilters_sku', '')
+                # Only accept EA1/EA2 (air filter) SKUs
+                air_match = next(
+                    (p for p in matched
+                     if any((p.get('sku') or p.get('elimfilters_sku', '')).startswith(pfx)
+                            for pfx in AIR_FILTER_PREFIXES)),
+                    None,
+                )
+                if air_match is None:
+                    skus = [p.get('sku') or p.get('elimfilters_sku', '') for p in matched]
+                    log.warning(f"  [{i}/{len(oem_hits)}] {af} -> {ref['brand']}:{ref['code']} matched {skus} -- none are EA1/EA2, trying next ref")
+                    time.sleep(0.25)
+                    continue
+                product   = air_match
+                sku       = product.get('sku') or product.get('elimfilters_sku', '')
                 found_sku = sku
                 via_ref   = ref
                 existing  = product.get('competitor_codes') or []
@@ -217,11 +236,6 @@ def run(args):
             time.sleep(0.25)
 
         if found_sku:
-            # AF codes are air filters — only link to EA1/EA2 SKUs (air filter prefixes)
-            if not (found_sku.startswith('EA1') or found_sku.startswith('EA2')):
-                log.warning(f"  [{i}/{len(oem_hits)}] {af} -> SKIP {found_sku} (wrong type — AF must link to EA1/EA2 only)")
-                not_found.append(item)
-                continue
             already = any(
                 isinstance(c, dict) and c.get('code', '').upper() == af
                 for c in existing
@@ -239,18 +253,13 @@ def run(args):
 
     log.info(f"\nOEM search results: {len(linkable)} found | {len(not_found)} not found")
 
-    # ── Apply links ───────────────────────────────────────────────────────────
     to_link = [l for l in linkable if l['status'] == 'linkable']
     if to_link:
         log.info(f"\nLinking {len(to_link)} AF codes via OEM cross-refs...")
         link_ok = 0
         for item in to_link:
             ok = add_competitor_code(
-                item['sku'],
-                item['existing'],
-                item['af'],
-                args.api_key,
-                args.dry_run,
+                item['sku'], item['existing'], item['af'], args.api_key, args.dry_run,
             )
             if ok:
                 link_ok += 1
@@ -283,26 +292,25 @@ def _save_report(out_dir, oem_hits, sakura_hifi, mahle_group, unclassified, bran
     report_path = out_dir / 'fg_nopriority_report.json'
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
-    log.info(f"\nReport → {report_path}")
+    log.info(f"\nReport -> {report_path}")
 
-    # Plain text groups for easy reading
     groups_path = out_dir / 'fg_nopriority_groups.txt'
     with open(groups_path, 'w', encoding='utf-8') as f:
         f.write(f"NO_PRIORITY GROUP BREAKDOWN\n{'='*60}\n\n")
-        f.write(f"OEM-SEARCHABLE ({len(oem_hits)}) — CUMMINS, CAT, KOMATSU, FORD, etc.\n")
+        f.write(f"OEM-SEARCHABLE ({len(oem_hits)}) -- CUMMINS, CAT, KOMATSU, FORD, etc.\n")
         for item in oem_hits:
             refs = ', '.join(f"{r['brand']}:{r['code']}" for r in item['oem_refs'][:4])
             f.write(f"  {item['af']:<15} {refs}\n")
-        f.write(f"\nAFTERMARKET ASIAN ({len(sakura_hifi)}) — SAKURA, HIFI-FILTER, RYCO\n")
+        f.write(f"\nAFTERMARKET ASIAN ({len(sakura_hifi)}) -- SAKURA, HIFI-FILTER, RYCO\n")
         for item in sakura_hifi:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
-        f.write(f"\nEUROPEAN CAR BRANDS ({len(mahle_group)}) — MAHLE, KNECHT, HENGST (likely LD)\n")
+        f.write(f"\nEUROPEAN CAR BRANDS ({len(mahle_group)}) -- MAHLE, KNECHT, HENGST (likely LD)\n")
         for item in mahle_group:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
         f.write(f"\nUNCLASSIFIED ({len(unclassified)})\n")
         for item in unclassified:
             f.write(f"  {item['af']:<15} {', '.join(item['brands'][:4])}\n")
-    log.info(f"Groups  → {groups_path}")
+    log.info(f"Groups  -> {groups_path}")
 
 
 if __name__ == '__main__':
