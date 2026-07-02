@@ -666,6 +666,17 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'exact_sku' });
     }
 
+    // 1b. codigo_base match (Donaldson base code e.g. P552100)
+    const byBase = await client.query(
+      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10`,
+      [q]
+    );
+    if (byBase.rows.length > 0) {
+      const products = byBase.rows.map(r => buildFilterData(r, lang));
+      await enrichAlternatives(products, client);
+      return res.json({ success: true, results: products, source: 'codigo_base' });
+    }
+
     // 2. OEM / competitor cross-reference (exact match)
     const oem = await client.query(
       `SELECT * FROM elimfilters_catalog
