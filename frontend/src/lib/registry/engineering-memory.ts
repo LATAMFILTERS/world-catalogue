@@ -535,6 +535,68 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
     edrRef: 'EDR-C-011-v1.0',
   },
 
+  // ── Queue A Foundation Patch Entries (2026-07-01) ─────────────────────────
+
+  {
+    memoryId: 'MEM-2026-07-01-029',
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    entityId: 'TECH-MACROCORE',
+    entityVersion: '1.0.1',
+    archivedDate: '2026-07-01',
+    archivedReason: 'VERSION_UPDATE',
+    snapshot: {
+      id: 'TECH-MACROCORE',
+      name: 'MACROCORE',
+      systemDomain: 'Air Intake',
+      primaryStandards: ['ISO 5011', 'SAE J726', 'ASTM D2986'],
+      engineeringPrincipleIds: ['EP-SEP-004', 'EP-SEP-001', 'EP-TRB-001'],
+      componentClasses: 8,
+      maturity: 3,
+      changeContext:
+        'EP-TRB-001 (Abrasive Wear Mechanism) added during Phase 1 bidirectional integrity correction. MACROCORE addresses abrasive wear via cylinder bore protection — the Tribochemistry principle applies to the failure mode the technology prevents, consistent with the eight-component class schema requirement that engineeringPrincipleIds covers both filtration mechanism principles and the failure mechanism principles the technology controls.',
+    },
+    edrRef: 'EDR-C-001-v1.1',
+  },
+
+  {
+    memoryId: 'MEM-2026-07-01-030',
+    entityType: 'ENGINEERING_PRINCIPLE',
+    entityId: 'EP-TRB-002',
+    entityVersion: '1.0.1',
+    archivedDate: '2026-07-01',
+    archivedReason: 'ALIAS_CREATED',
+    snapshot: {
+      id: 'EP-TRB-002',
+      aliasId: 'EP-SEP-005',
+      name: 'Cabin Air Filtration — Particulate and Chemical Protection',
+      scienceDomain: 'Separation Science',
+      maturity: 3,
+      governanceDecision:
+        'Queue A-01 Foundation Patch: EP-TRB-002 was classified under the TRB (Tribochemistry) prefix at initial registration due to a classification error — the scienceDomain field was already correctly set to Separation Science at publication. Per Foundation identity preservation rule (user instruction 2026-07-01), entity identifiers are permanent and may not be renamed or deleted. Resolution: EP-SEP-005 created as canonical preferred identifier; EP-TRB-002 preserved as permanent backward-compatible identifier. Technology relationships tracked under EP-TRB-002. EP-SEP-005 carries no independent technology relationships. Both IDs are valid and resolve to the same principle.',
+    },
+    edrRef: 'EDR-B-001-v1.1',
+  },
+
+  {
+    memoryId: 'MEM-2026-07-01-031',
+    entityType: 'ENGINEERING_PRINCIPLE',
+    entityId: 'EP-SEP-005',
+    entityVersion: '1.0.0',
+    archivedDate: '2026-07-01',
+    archivedReason: 'VERSION_SNAPSHOT',
+    snapshot: {
+      id: 'EP-SEP-005',
+      name: 'Cabin Air Filtration — Particulate and Chemical Protection (Canonical Alias)',
+      scienceDomain: 'Separation Science',
+      aliasFor: 'EP-TRB-002',
+      implementedByTechnologies: [],
+      maturity: 3,
+      governanceNote:
+        'Alias entry only. Technology relationships tracked under EP-TRB-002. See MEM-2026-07-01-030.',
+    },
+    edrRef: 'EDR-B-001-v1.1',
+  },
+
 ] as const;
 
 // ============================================================================

@@ -140,7 +140,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Dispersed water droplets (<20 µm) in diesel fuel cannot settle by gravity alone in normal service conditions — surface tension and flow turbulence keep them suspended. A coalescing medium provides high surface area where droplets repeatedly contact fibers. Each contact event causes partial merging (coalescence). As merged droplets grow above ~100 µm, gravitational settling force exceeds suspension forces and water drops fall to the collection sump. The principle operates independently of flow rate within design limits.',
     standardRefs: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-SYNTEPORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -192,7 +192,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Desiccant materials (activated alumina, silica gel, molecular sieves) present enormous internal surface area (hundreds of m²/g). Gas molecules passing through the adsorbent bed contact the surface and adhere. Adsorption capacity is finite — breakthrough occurs when the adsorbent is saturated and additional contaminant molecules pass through unimpeded. Thermal regeneration or pressure swing restores capacity.',
     standardRefs: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
-    implementedByTechnologies: ['TECH-DRYCORE', 'TECH-MICROKAPPA', 'TECH-THERMACORE', 'TECH-MARINECLEAN'],
+    implementedByTechnologies: ['TECH-DRYCORE', 'TECH-MICROKAPPA'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -304,6 +304,46 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
         approvedBy: 'Engineering Authority',
         changeNote: 'Initial publication — Engineering Foundation Phase 1',
         edrRef: 'EDR-B-001-v1.0',
+      },
+      {
+        version: '1.0.1',
+        publishedDate: '2026-07-01',
+        approvedBy: 'Engineering Authority',
+        changeNote:
+          'Alias governance: EP-SEP-005 created as canonical preferred ID for this principle. EP-TRB-002 is preserved as permanent backward-compatible identifier per Foundation identity preservation rule. The TRB prefix is a historical artefact of initial classification; the scienceDomain field correctly reads Separation Science. Both IDs reference this entity. See MEM-2026-07-01-030.',
+        edrRef: 'EDR-B-001-v1.1',
+      },
+    ],
+  },
+
+  // ── EP-SEP-005 — Canonical Alias for EP-TRB-002 ─────────────────────────
+  // Identity preservation: EP-TRB-002 is the permanent backward-compatible ID.
+  // EP-SEP-005 is the canonical preferred ID reflecting correct science domain.
+  // Technology relationships are tracked under EP-TRB-002 (the source entity).
+  // This alias entry exists for governance documentation only.
+
+  'EP-SEP-005': {
+    entityType: 'ENGINEERING_PRINCIPLE',
+    id: 'EP-SEP-005',
+    code: 'EP-SEP-005',
+    name: 'Cabin Air Filtration — Particulate and Chemical Protection (Canonical Alias)',
+    scienceDomain: 'Separation Science',
+    maturity: MATURITY.PUBLISHED,
+    createdDate: '2026-07-01',
+    definition:
+      'Canonical alias for EP-TRB-002. See EP-TRB-002 for the authoritative definition and all technology relationships. This entry exists to provide a Separation Science-prefixed identifier consistent with the EP-SEP-XXX naming convention used for all other Separation Science principles. EP-TRB-002 is the permanent backward-compatible ID and must never be deleted or renamed.',
+    phenomenonDescription:
+      'See EP-TRB-002 — Cabin Air Filtration — Particulate and Chemical Protection. This alias entry carries no independent phenomenonDescription; the canonical description is at EP-TRB-002.',
+    standardRefs: ['ISO 11155-1', 'ISO 11155-2', 'DIN 71220', 'EN 779'],
+    implementedByTechnologies: [],
+    versionHistory: [
+      {
+        version: '1.0.0',
+        publishedDate: '2026-07-01',
+        approvedBy: 'Engineering Authority',
+        changeNote:
+          'Alias entry created — Queue A-01 Foundation Patch. Canonical preferred ID for the principle previously registered only as EP-TRB-002. Technology relationships remain under EP-TRB-002. See MEM-2026-07-01-030.',
+        edrRef: 'EDR-B-001-v1.1',
       },
     ],
   },

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 const STANDARDS = [
   { code: 'SAE J1539', desc: 'Diesel engine air intake contamination classification defining maximum allowable dust concentration in combustion air to preserve engine efficiency and bearing life.' },
@@ -222,6 +223,12 @@ export default function AirIntakeSystemsPage() {
             ))}
           </div>
         </div>
+
+        <EngineeringRecommendationsSection
+          primaryEntityId="TECH-MACROCORE"
+          queryType="technology"
+          label="ENGINEERING RECOMMENDATIONS — AIR INTAKE SYSTEMS"
+        />
 
       </div>
 

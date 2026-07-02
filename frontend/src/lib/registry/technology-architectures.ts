@@ -949,7 +949,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-PHS-001', 'EP-INS-001', 'EP-CHE-002'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-INS-001', 'EP-CHE-002'],
 
     materials: [
       {
@@ -1260,7 +1260,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    engineeringPrincipleIds: ['EP-CHE-001', 'EP-SEP-001'],
+    engineeringPrincipleIds: ['EP-SEP-001'],
 
     materials: [
       {
@@ -1858,7 +1858,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-003', 'EP-PHS-001', 'EP-CHE-001', 'EP-TRB-001'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-003', 'EP-PHS-001', 'EP-TRB-001'],
 
     materials: [
       {

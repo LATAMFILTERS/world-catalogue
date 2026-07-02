@@ -43,7 +43,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'TECH-HYDROCORE',
       'TECH-DRYCORE',
     ],
-    implementsPrincipleIds: ['EP-SEP-001', 'EP-SEP-004'],
+    implementsPrincipleIds: ['EP-SEP-001'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
     versionHistory: [
@@ -60,11 +60,11 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     entityType: 'PROTECTION_MEDIA',
     id: 'PM-SYNTHETIC-MICROFIBER-ABSOLUTE',
     name: 'Synthetic Polyester Microfiber — Absolute-Rated',
-    mediaFunction: 'SURFACE_FILTRATION',
+    mediaFunction: 'DEPTH_FILTRATION',
     definition:
-      'Wet-laid synthetic polyester microfiber medium constructed to provide an absolute filtration rating: a defined maximum particle size that will not transit the medium regardless of operating pressure within the rated range. Unlike depth media, the absolute rating is consistent across the service life. Used where a minimum particle size guarantee is required (HPCR fuel systems, precision hydraulics).',
-    baseConstruction: 'Synthetic polyester microfiber, wet-laid, controlled fiber diameter and packing density for absolute rating',
-    micronRatingRange: '3–10 µm absolute (depends on fiber specification)',
+      'Wet-laid synthetic polyester microfiber medium providing depth filtration with a consistent absolute particle size retention guarantee across service life. Fiber chemistry and controlled packing density produce stable pore geometry that maintains its rated particle retention from installation through end of service, unlike progressive-loading glass microfiber media where effective rating changes as loading progresses. Used where a minimum particle size guarantee is required throughout service life (HPCR fuel systems, precision hydraulics).',
+    baseConstruction: 'Synthetic polyester microfiber, wet-laid, controlled fiber diameter and packing density for consistent depth retention rating',
+    micronRatingRange: '3–10 µm rated (depth filtration with stable retention characteristic)',
     operatingTempRange: '-20°C to +80°C continuous (polyester thermal stability)',
     compatibleFluidTypes: [
       'Diesel fuel (all grades including VLSFO, ULSD)',
@@ -75,7 +75,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'TECH-SYNTEPORE',
       'TECH-TURBOCORE',
     ],
-    implementsPrincipleIds: ['EP-SEP-001', 'EP-SEP-002'],
+    implementsPrincipleIds: ['EP-SEP-001'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
     versionHistory: [
@@ -286,7 +286,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'Extended life coolant (OAT, HOAT formulations)',
     ],
     employedByTechnologyIds: ['TECH-THERMACORE'],
-    implementsPrincipleIds: ['EP-CHE-001'],
+    implementsPrincipleIds: [],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
     versionHistory: [
@@ -295,6 +295,13 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
         publishedDate: '2026-07-01',
         approvedBy: 'Technology Authority',
         changeNote: 'Initial publication — Engineering Foundation Phase 1',
+      },
+      {
+        version: '1.0.1',
+        publishedDate: '2026-07-01',
+        approvedBy: 'Engineering Authority',
+        changeNote:
+          'Queue A-07: Removed EP-CHE-001 from implementsPrincipleIds. SCA delivery is a controlled chemical release mechanism (additive management), not an adsorption phenomenon. Adsorption (EP-CHE-001) describes gas-phase or dissolved-contaminant adhesion to adsorbent surfaces — the inverse direction. SCA_DELIVERY mediaFunction captures the correct classification. No Engineering Principle in the current registry describes the controlled-release additive delivery mechanism; this is documented as Research Candidate RC-002.',
       },
     ],
   },

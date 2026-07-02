@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 export default function DieselWaterContaminationPage() {
   const sections = [
@@ -324,6 +325,14 @@ export default function DieselWaterContaminationPage() {
             </Link>
           </div>
         </motion.div>
+
+        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+          <EngineeringRecommendationsSection
+            primaryEntityId="CONT-WATER-FUEL"
+            queryType="contamination"
+            label="ENGINEERING RECOMMENDATIONS — DIESEL WATER CONTAMINATION"
+          />
+        </div>
       </section>
 
       {/* JSON-LD Structured Data */}

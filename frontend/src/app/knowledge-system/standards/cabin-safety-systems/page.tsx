@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { motion } from 'motion/react';
 import { RelatedProducts } from '@/components/RelatedProducts';
+import { EngineeringRecommendationsSection } from '@/components/engineering';
 
 const STANDARDS = [
   { code: 'ISO 11155-1', desc: 'Particle filtration efficiency testing for cabin air filter elements using synthetic dust at controlled concentrations, defining minimum 85% efficiency at PM10 particle size class.' },
@@ -252,6 +253,12 @@ export default function CabinSafetySystemsPage() {
             ))}
           </div>
         </div>
+
+        <EngineeringRecommendationsSection
+          primaryEntityId="TECH-MICROKAPPA"
+          queryType="technology"
+          label="ENGINEERING RECOMMENDATIONS — CABIN SAFETY SYSTEMS"
+        />
 
       </div>
 
