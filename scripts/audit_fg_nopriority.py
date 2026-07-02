@@ -215,15 +215,20 @@ def run(args):
             time.sleep(0.25)
 
         if found_sku:
+            # AF codes are air filters — only link to EA1/EA2 SKUs (air filter prefixes)
+            if not (found_sku.startswith('EA1') or found_sku.startswith('EA2')):
+                log.warning(f"  [{i}/{len(oem_hits)}] {af} -> SKIP {found_sku} (wrong type — AF must link to EA1/EA2 only)")
+                not_found.append(item)
+                continue
             already = any(
                 isinstance(c, dict) and c.get('code', '').upper() == af
                 for c in existing
             )
             if already:
-                log.info(f"  [{i}/{len(oem_hits)}] {af} → already linked to {found_sku}")
+                log.info(f"  [{i}/{len(oem_hits)}] {af} -> already linked to {found_sku}")
                 linkable.append({'af': af, 'sku': found_sku, 'via': via_ref, 'status': 'already_linked', 'existing': existing})
             else:
-                log.info(f"  [{i}/{len(oem_hits)}] {af} → {found_sku} via {via_ref['brand']}:{via_ref['code']}")
+                log.info(f"  [{i}/{len(oem_hits)}] {af} -> {found_sku} via {via_ref['brand']}:{via_ref['code']}")
                 linkable.append({'af': af, 'sku': found_sku, 'via': via_ref, 'status': 'linkable', 'existing': existing})
         else:
             not_found.append(item)
