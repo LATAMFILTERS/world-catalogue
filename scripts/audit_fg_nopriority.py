@@ -48,6 +48,8 @@ OEM_BRANDS = [
 
 FRAM_BRANDS = {'FRAM', 'CA', 'PH', 'CF', 'G', 'FILTERS'}
 
+AIR_FILTER_PREFIXES = ('EA1', 'EA2')
+
 
 def get_headers(api_key):
     return {
