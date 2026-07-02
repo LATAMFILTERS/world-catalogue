@@ -147,7 +147,7 @@ export default function ChatBot() {
     setTyping(true);
 
     const doFetch = async (attempt: number): Promise<Response> => {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://elimfilters-search-pro.onrender.com";
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://part-search.elimfilters.com";
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 90000);
       try {
