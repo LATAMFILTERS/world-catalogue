@@ -645,7 +645,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   const SEARCH_KEY = process.env.SEARCH_API_KEY;
   const authHeader = req.get('authorization') || '';
   const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!SEARCH_KEY || providedKey !== SEARCH_KEY) {
+  if (SEARCH_KEY && providedKey !== SEARCH_KEY) {
     return res.status(403).json({ error: 'forbidden' });
   }
 
@@ -716,7 +716,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
   const SEARCH_KEY = process.env.SEARCH_API_KEY;
   const authHeader = req.get('authorization') || '';
   const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!SEARCH_KEY || providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
 
   const lang = detectLang(req);
   const client = await pool.connect();
@@ -749,7 +749,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   const SEARCH_KEY = process.env.SEARCH_API_KEY;
   const authHeader = req.get('authorization') || '';
   const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!SEARCH_KEY || providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
 
   const lang = detectLang(req);
   const client = await pool.connect();
@@ -1443,7 +1443,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
   const SEARCH_KEY = process.env.SEARCH_API_KEY;
   const authHeader = req.get('authorization') || '';
   const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!SEARCH_KEY || providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
 
   const lang = detectLang(req);
   const client = await pool.connect();
