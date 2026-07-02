@@ -98,12 +98,21 @@ _PREFIX_ROUTES = [
 # WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
 _SKIP_PREFIXES = {"LE", "LB", "DI", "CU", "CUK"}  # DI = industrial diesel; CU/CUK = cabin air (not on crossref sites)
 
+# HD Mann prefixes — truck/bus/industrial, no LD consumer crossrefs
+_HD_PREFIXES = {"TB", "HD", "HF", "DF", "TFP", "TF", "WA", "FP2", "DB"}
+
 def should_skip(sku: str) -> bool:
-    """True if this SKU is known to return 0 crossref results on all sites."""
+    """True if this SKU is HD or known to return 0 crossref results on all sites."""
     u = sku.upper().strip()
     if u and u[0].isdigit():
         return True
     for pfx in _SKIP_PREFIXES:
+        if u.startswith(pfx):
+            return True
+    # Skip HD Mann filters — H* without U (H4001 = hydraulic HD; HU711 = oil LD)
+    if u.startswith("H") and not u.startswith("HU"):
+        return True
+    for pfx in _HD_PREFIXES:
         if u.startswith(pfx):
             return True
     return False
