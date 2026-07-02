@@ -97,20 +97,45 @@ const ERROR_TEXT: Record<string, string> = {
   en: "Connection error. Please try again.",
 };
 
-function detectLang(): string {
+function detectLangSync(): string {
   if (typeof window === "undefined") return "en";
-  // 1. Geo-detection result (same source as the rest of the site — set by LanguageDetector)
+  // Only use cached geo result — never browser/i18next language (causes Spanish for US users)
   const geoLang = localStorage.getItem("ef_geo_lang") || "";
   if (geoLang && WELCOME_TEXT[geoLang]) return geoLang;
-  // 2. i18next persisted choice (manual language switch by user)
-  const i18nLang = (localStorage.getItem("i18nextLng") || "").toLowerCase().split("-")[0];
-  if (i18nLang && WELCOME_TEXT[i18nLang]) return i18nLang;
-  // 3. Default: English
-  return "en";
+  return "en"; // Default English until geo-detection completes
 }
 
-function getWelcome(): Message {
-  const lang = detectLang();
+async function detectLangAsync(): Promise<string> {
+  if (typeof window === "undefined") return "en";
+  // If geo cache already exists, return immediately
+  const cached = localStorage.getItem("ef_geo_lang") || "";
+  if (cached && WELCOME_TEXT[cached]) return cached;
+  // Otherwise call ip-api.com (same as LanguageDetector component)
+  try {
+    const ctrl = new AbortController();
+    setTimeout(() => ctrl.abort(), 3000);
+    const res = await fetch("https://ip-api.com/json/?fields=countryCode", { signal: ctrl.signal });
+    const data = await res.json();
+    const COUNTRY_LANG: Record<string, string> = {
+      ES: "es", MX: "es", AR: "es", CL: "es", CO: "es", PE: "es", VE: "es",
+      EC: "es", BO: "es", PY: "es", UY: "es", DO: "es", GT: "es", HN: "es",
+      SV: "es", NI: "es", CR: "es", PA: "es", CU: "es", PR: "es",
+      BR: "pt", PT: "pt", FR: "fr", BE: "fr", CH: "fr",
+      IT: "it", NL: "nl", RU: "ru", BY: "ru", KZ: "ru", UA: "ru",
+      CN: "zh", TW: "zh", HK: "zh", JP: "ja",
+      SA: "ar", AE: "ar", EG: "ar", MA: "ar", DZ: "ar", TN: "ar",
+      IR: "fa",
+    };
+    const lang = COUNTRY_LANG[data.countryCode || "US"] || "en";
+    localStorage.setItem("ef_geo_lang", lang);
+    localStorage.setItem("ef_geo_ts", String(Date.now()));
+    return lang;
+  } catch {
+    return "en";
+  }
+}
+
+function getWelcome(lang: string): Message {
   return { id: 0, from: "bot", text: WELCOME_TEXT[lang] || WELCOME_TEXT.en, time: now() };
 }
 
@@ -127,8 +152,25 @@ function getSessionId(): string {
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
-  const [lang] = useState<string>(() => detectLang());
-  const [messages, setMessages] = useState<Message[]>(() => [getWelcome()]);
+  const [lang, setLang] = useState<string>(() => detectLangSync());
+  const [messages, setMessages] = useState<Message[]>(() => [getWelcome(detectLangSync())]);
+
+  // Resolve geo-language async — updates welcome message if lang changes after detection
+  useEffect(() => {
+    detectLangAsync().then((resolved) => {
+      if (resolved !== lang) {
+        setLang(resolved);
+        setMessages((prev) => {
+          // Only update the welcome message (id === 0), leave user messages untouched
+          if (prev.length === 1 && prev[0].id === 0) {
+            return [getWelcome(resolved)];
+          }
+          return prev;
+        });
+      }
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const [limitReached, setLimitReached] = useState(false);
