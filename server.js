@@ -944,7 +944,7 @@ const VALID_FILTER_TYPES = new Set(['oil','fuel','air','cabin','hydraulic','comp
 const VALID_DUTIES = new Set(['light','standard','heavy','extreme',null,undefined,'']);
 const _validateImportRow = (row) => {
   if (!row || typeof row !== 'object') return 'row must be an object';
-  if (!row.sku || typeof row.sku !== 'string' || !/^[A-Z]{2,3}[0-9]{4}$/.test(row.sku)) return `invalid sku: ${row.sku} (must be 2-3 letter prefix + exactly 4 digits)`;
+  if (!row.sku || typeof row.sku !== 'string' || !/^[A-Z0-9]{2,4}[0-9]{4}$/.test(row.sku) || row.sku.length !== 7) return `invalid sku: ${row.sku} (must be 7 chars: prefix + 4 digits)`;
   if (!row.codigo_base || typeof row.codigo_base !== 'string' || row.codigo_base.length > 100) return `invalid codigo_base: ${row.codigo_base}`;
   if (row.filter_type && !VALID_FILTER_TYPES.has(row.filter_type)) return `invalid filter_type: ${row.filter_type}`;
   if (row.duty !== undefined && !VALID_DUTIES.has(row.duty)) return `invalid duty: ${row.duty}`;
@@ -1584,7 +1584,7 @@ app.post('/api/update/sku-codes', importLimiter, requireAdmin, async (req, res) 
 app.post('/api/admin/rename-sku', importLimiter, requireAdmin, async (req, res) => {
   const { old_sku, new_sku } = req.body || {};
   if (!old_sku || !new_sku) return res.status(400).json({ error: 'old_sku and new_sku required' });
-  if (!/^[A-Z]{2,3}[0-9]{4}$/.test(new_sku)) return res.status(400).json({ error: `new_sku invalid format: ${new_sku}` });
+  if (new_sku.length !== 7) return res.status(400).json({ error: `new_sku must be exactly 7 characters: ${new_sku}` });
 
   const oldNorm = old_sku.trim().toUpperCase();
   const newNorm = new_sku.trim().toUpperCase();
