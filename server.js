@@ -1091,7 +1091,7 @@ const VALID_FILTER_TYPES = new Set(['oil','fuel','air','cabin','hydraulic','comp
 const VALID_DUTIES = new Set(['light','standard','heavy','extreme',null,undefined,'']);
 const _validateImportRow = (row) => {
   if (!row || typeof row !== 'object') return 'row must be an object';
-  if (!row.sku || typeof row.sku !== 'string' || !/^[A-Z0-9\-]{2,40}$/.test(row.sku)) return `invalid sku: ${row.sku}`;
+  if (!row.sku || typeof row.sku !== 'string' || !/^[A-Z]{2,3}[0-9]{4}$/.test(row.sku)) return `invalid sku: ${row.sku} (must be 2-3 letter prefix + exactly 4 digits)`;
   if (!row.codigo_base || typeof row.codigo_base !== 'string' || row.codigo_base.length > 100) return `invalid codigo_base: ${row.codigo_base}`;
   if (row.filter_type && !VALID_FILTER_TYPES.has(row.filter_type)) return `invalid filter_type: ${row.filter_type}`;
   if (row.duty !== undefined && !VALID_DUTIES.has(row.duty)) return `invalid duty: ${row.duty}`;
@@ -1846,6 +1846,72 @@ app.post('/api/cleanup/fram-ld-duty', importLimiter, requireAdmin, async (req, r
   } catch (e) {
     console.error('[cleanup-fram-ld-duty]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/admin/rename-sku ──────────────────────────────────────────────
+// Renames a SKU: copies all data to new_sku, deletes old_sku.
+// Body: { old_sku: "EA200003", new_sku: "EA20003" }
+// Both must match /^[A-Z]{2,3}[0-9]{4}$/ (3-char prefix + 4 digits).
+app.post('/api/admin/rename-sku', importLimiter, requireAdmin, async (req, res) => {
+  const { old_sku, new_sku } = req.body || {};
+  if (!old_sku || !new_sku) return res.status(400).json({ error: 'old_sku and new_sku required' });
+  if (!/^[A-Z]{2,3}[0-9]{4}$/.test(new_sku)) return res.status(400).json({ error: `new_sku invalid format: ${new_sku}` });
+
+  const oldNorm = old_sku.trim().toUpperCase();
+  const newNorm = new_sku.trim().toUpperCase();
+  if (oldNorm === newNorm) return res.status(400).json({ error: 'old_sku and new_sku are identical' });
+
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    const src = await client.query(`SELECT * FROM elimfilters_catalog WHERE sku = $1`, [oldNorm]);
+    if (src.rows.length === 0) {
+      await client.query('ROLLBACK');
+      return res.status(404).json({ error: `SKU not found: ${oldNorm}` });
+    }
+
+    const conflict = await client.query(`SELECT sku FROM elimfilters_catalog WHERE sku = $1`, [newNorm]);
+    if (conflict.rows.length > 0) {
+      await client.query('ROLLBACK');
+      return res.status(409).json({ error: `new_sku already exists: ${newNorm}` });
+    }
+
+    const row = src.rows[0];
+    await client.query(`
+      INSERT INTO elimfilters_catalog (
+        sku, codigo_base, description, filter_type, sub_type, technology,
+        installation_type, thread_size,
+        outer_diameter_mm, height_mm, gasket_od_mm, gasket_id_mm,
+        iso_test_method, micron_rating, nominal_efficiency,
+        burst_pressure_psi, collapse_pressure_psi,
+        duty, oem_codes, competitor_codes, brand_crossrefs, alternatives, equipment_applications
+      ) VALUES (
+        $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,
+        $19::jsonb,$20::jsonb,$21::jsonb,$22::jsonb,$23::jsonb
+      )
+    `, [
+      newNorm, row.codigo_base, row.description, row.filter_type, row.sub_type, row.technology,
+      row.installation_type, row.thread_size,
+      row.outer_diameter_mm, row.height_mm, row.gasket_od_mm, row.gasket_id_mm,
+      row.iso_test_method, row.micron_rating, row.nominal_efficiency,
+      row.burst_pressure_psi, row.collapse_pressure_psi,
+      row.duty,
+      JSON.stringify(row.oem_codes || []), JSON.stringify(row.competitor_codes || []),
+      JSON.stringify(row.brand_crossrefs || {}), JSON.stringify(row.alternatives || []),
+      JSON.stringify(row.equipment_applications || []),
+    ]);
+
+    await client.query(`DELETE FROM elimfilters_catalog WHERE sku = $1`, [oldNorm]);
+    await client.query('COMMIT');
+
+    res.json({ success: true, renamed: { from: oldNorm, to: newNorm } });
+  } catch (e) {
+    await client.query('ROLLBACK');
+    res.status(500).json({ error: e.message });
   } finally {
     client.release();
   }
