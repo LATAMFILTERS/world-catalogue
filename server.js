@@ -649,6 +649,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     return res.status(403).json({ error: 'forbidden' });
   }
 
+  res.set('Cache-Control', 'no-store');
   const lang = detectLang(req);
   const client = await pool.connect();
   try {
