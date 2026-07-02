@@ -69,6 +69,20 @@ const PLACEHOLDER_TEXT: Record<string, string> = {
   en: "Ask about filters, standards, industries...",
 };
 
+const WARMUP_TEXT: Record<string, string> = {
+  es: "Iniciando el motor de ingeniería... un momento.",
+  pt: "Iniciando o motor de engenharia... um momento.",
+  fr: "Démarrage du moteur d'ingénierie... un instant.",
+  it: "Avvio del motore di ingegneria... un momento.",
+  nl: "Technische motor starten... even geduld.",
+  ru: "Запуск инженерного модуля... подождите.",
+  zh: "正在启动工程引擎...请稍候。",
+  ja: "エンジニアリングエンジンを起動中...少々お待ちください。",
+  ar: "جاري تشغيل محرك الهندسة... لحظة.",
+  fa: "در حال راه‌اندازی موتور مهندسی... لطفاً صبر کنید.",
+  en: "Starting the engineering engine... one moment.",
+};
+
 const ERROR_TEXT: Record<string, string> = {
   es: "Error de conexión. Por favor inténtalo de nuevo.",
   pt: "Erro de conexão. Por favor, tente novamente.",
@@ -132,13 +146,33 @@ export default function ChatBot() {
     setInput("");
     setTyping(true);
 
-    try {
+    const doFetch = async (attempt: number): Promise<Response> => {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://elimfilters-search-pro.onrender.com";
-      const res = await fetch(`${apiBase}/api/chat`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ message: text.trim(), sessionId: getSessionId(), lang }),
-      });
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 90000);
+      try {
+        const res = await fetch(`${apiBase}/api/chat`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ message: text.trim(), sessionId: getSessionId(), lang }),
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        return res;
+      } catch (e) {
+        clearTimeout(timeout);
+        if (attempt === 0) {
+          // Show warm-up message and retry once
+          setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: WARMUP_TEXT[lang] || WARMUP_TEXT.en, time: now() }]);
+          await new Promise((r) => setTimeout(r, 3000));
+          return doFetch(1);
+        }
+        throw e;
+      }
+    };
+
+    try {
+      const res = await doFetch(0);
       const data = await res.json();
 
       setTyping(false);
