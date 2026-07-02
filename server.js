@@ -969,7 +969,7 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
               nominal_efficiency = COALESCE($15, nominal_efficiency),
               burst_pressure_psi = COALESCE($16, burst_pressure_psi),
               collapse_pressure_psi = COALESCE($17, collapse_pressure_psi),
-              duty = COALESCE($18, duty),
+              duty = CASE WHEN duty = 'LIGHT_DUTY' THEN 'LIGHT_DUTY' ELSE COALESCE($18, duty) END,
               oem_codes = CASE WHEN $19::jsonb IS NOT NULL
                 THEN (
                   SELECT jsonb_agg(DISTINCT elem)
@@ -1283,6 +1283,26 @@ app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) 
     res.json({ success: true, deleted: norm });
   } catch (e) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// ─── POST /api/admin/fix-ld-duty ─────────────────────────────────────────────
+// Bulk-corrects EL3/EA3/EC3/EF3 records that have wrong duty value.
+app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(`
+      UPDATE elimfilters_catalog
+      SET duty = 'LIGHT_DUTY'
+      WHERE (sku ~ '^EL3' OR sku ~ '^EA3' OR sku ~ '^EC3' OR sku ~ '^EF3')
+        AND duty IS DISTINCT FROM 'LIGHT_DUTY'
+      RETURNING sku
+    `);
+    res.json({ success: true, fixed: result.rowCount, skus: result.rows.map(r => r.sku) });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
   }
 });
 
