@@ -15,7 +15,10 @@
     "validate:services": "npx tsx scripts/validate-services.ts",
     "validate:vault": "node ../scripts/build-citation-index.js --validate",
     "validate:map": "node ../scripts/build-part-search-map.js --validate",
-    "validate:citation-api": "node ../scripts/generate-citation-api.js --validate"
+    "validate:citation-api": "node ../scripts/generate-citation-api.js --validate",
+    "test": "vitest run",
+    "test:engine": "vitest run src/lib/decision-engine/__tests__/decision-engine.test.ts",
+    "test:engineering": "vitest run src/lib/decision-engine/__tests__/engineering-validation.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.14",
@@ -45,6 +48,7 @@
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.9"
   }
 }
