@@ -1,6 +1,6 @@
 # ELIMFILTERS® Engineering Experience Principles
 ## Constitutional Reference for Customer-Facing Engineering Intelligence
-### Version 1.2 | Ratified: 2026-07-01 | Last amended: 2026-07-01 | Status: FROZEN
+### Version 1.3 | Ratified: 2026-07-01 | Last amended: 2026-07-02 | Status: FROZEN
 
 ---
 
@@ -23,10 +23,10 @@
 | Field | Value |
 |---|---|
 | Document | ENGINEERING_EXPERIENCE_PRINCIPLES |
-| Version | 1.2 |
+| Version | 1.3 |
 | Status | FROZEN — Constitutional Reference |
 | Ratified | 2026-07-01 |
-| Last amended | 2026-07-01 — Amendment A2: Principle 11 redefined to remove implementation-specific language; principle now implementation-agnostic |
+| Last amended | 2026-07-02 — Amendment A3: Principles 12 and 13 added (Engineering Humility; Decision Authority) |
 | Authority Level | Constitutional — subordinate only to ELIMFILTERS_CORPORATE_CONSTITUTION |
 | Location | elimfilters-vault/corporate/ |
 | Scope | All customer-facing interfaces, journeys, pages, AI assistants, and navigation |
@@ -80,7 +80,7 @@ These principles exist to make the erosion impossible.
 
 ---
 
-## The Ten Permanent Principles
+## The Thirteen Permanent Principles
 
 ---
 
@@ -573,6 +573,120 @@ recommendations, and engineering consultations.
 
 ---
 
+### Principle 12 — Engineering Humility
+
+> The platform shall never fabricate engineering certainty.
+>
+> If the available engineering evidence is insufficient to produce a technically
+> defensible recommendation, the platform must explicitly state that additional
+> engineering information is required.
+>
+> A correct refusal is superior to an incorrect recommendation.
+
+**What this means:**
+
+The platform's authority derives from its engineering credibility. That credibility
+is built over time by being reliably accurate when it speaks and reliably honest
+when it cannot. A platform that speculates in order to appear confident is more
+dangerous than one that acknowledges the limits of its knowledge.
+
+When evidence is insufficient, the platform says so. When evidence is conflicting,
+the platform says so. When the minimum conditions for responsible reasoning have
+not been established, the platform requests only what is needed to proceed — and
+nothing more.
+
+**Three forms of fabrication that are permanently prohibited:**
+
+| Form | Description |
+|---|---|
+| Certainty fabrication | Presenting a hypothesis as an established fact |
+| Coverage fabrication | Implying knowledge of a domain the platform does not cover |
+| Confidence fabrication | Presenting a LOW or PROHIBITED output as if it were MEDIUM or HIGH |
+
+**The precedence rule:**
+
+This principle takes precedence over user convenience, time pressure, commercial
+opportunity, and any implicit expectation that the platform will always have an
+answer. The platform earns trust through accuracy and honesty about its limits —
+not through the appearance of competence.
+
+**What this prohibits:**
+
+- Any hedging language that obscures the actual evidence state ("probably," "likely,"
+  "in most cases" used to present unsupported conclusions as approximate facts)
+- Any response that produces a recommendation while omitting required disclosure
+  about the confidence level or inference type
+- Confidence levels assigned to satisfy a request rather than to reflect evidence
+- Any response that provides partial engineering content framed as if it were complete
+
+**The test:**
+
+For any response: if the evidence state were PROHIBITED or LOW, would this response
+still appear confident? If yes, it violates this principle.
+
+---
+
+### Principle 13 — Decision Authority
+
+> No engineering recommendation may bypass the Engineering Decision Engine.
+>
+> The platform may reason only after it has earned the right to reason.
+
+**What this means:**
+
+The Engineering Decision Engine is the authorization layer for all engineering
+reasoning. It does not perform reasoning. It authorizes it. A recommendation
+that reaches a customer without Decision Engine authorization is unauthorized
+— regardless of how confidently or correctly it was formed.
+
+This principle governs every surface on which the platform makes or implies
+an engineering recommendation.
+
+**Governed surfaces:**
+
+| Surface | Requirement |
+|---|---|
+| AI Assistant | Every engineering judgment requires Decision Engine authorization |
+| Engineering Search | Results that imply a recommendation require authorization |
+| Product Recommendation Engine | Every product presented as a recommendation requires authorization |
+| Generated Engineering Pages | Section 07 recommendations are authorized at page generation time |
+| Dealer Portal | All dealer-facing engineering recommendations require authorization |
+| API Endpoints | Any endpoint returning a recommendation requires authorization |
+| Future Autonomous Agents | All agents acting on behalf of the platform require authorization |
+
+**The three governing bodies and their distinct jurisdictions:**
+
+```
+The Knowledge Graph governs truth.
+    ↓ (what relationships exist)
+The Decision Engine governs permission.
+    ↓ (whether reasoning is authorized)
+The AI Reasoning Engine governs explanation.
+    ↓ (how authorized conclusions are expressed)
+```
+
+The AI Reasoning Engine does not grant its own permission. It receives
+authorization from the Decision Engine and explains what the Decision Engine
+has authorized. This separation is permanent.
+
+**What this prohibits:**
+
+- Any engineering recommendation produced without a completed Decision Engine evaluation
+- Any system, agent, or interface that bypasses the Decision Engine to produce recommendations faster
+- Any product recommendation that is not preceded by an authorized engineering recommendation
+- Treating the Decision Engine as an optional layer for "simple" or "obvious" requests
+
+**The boundary between Principles 12 and 13:**
+
+Principle 12 (Engineering Humility) governs what the platform claims to know.
+Principle 13 (Decision Authority) governs who may authorize what is claimed.
+
+Both are constitutional constraints. Neither is waivable.
+
+**Amendment record:** A3 — Added 2026-07-02.
+
+---
+
 ## The 10-Point Page Architecture
 
 Every Engineering Intelligence topic page must implement the following structure
@@ -713,6 +827,11 @@ to this document through the Constitution amendment process can change them.
 | Customer never encounters internal entity identifiers, graph terminology, or system architecture | 11 |
 | All six customer interaction surfaces (pages, search, journeys, AI, recommendations, consultations) begin with customer language | 11 |
 | The translation contract is preserved independent of underlying technical implementation | 11 |
+| The platform never fabricates engineering certainty | 12 |
+| A correct refusal is superior to an incorrect recommendation | 12 |
+| No engineering recommendation bypasses the Engineering Decision Engine | 13 |
+| The AI Reasoning Engine does not grant its own authorization | 13 |
+| The platform may reason only after it has earned the right to reason | 13 |
 
 ---
 
@@ -784,6 +903,17 @@ For every new page, journey, AI assistant, or navigation pattern:
 - [ ] The engineering question the surface answers can be stated in one sentence without referencing an internal identifier
 - [ ] This applies across all six surfaces: generated page, search, journey step, AI response, recommendation, consultation
 
+**Principle 12 — Engineering Humility**
+- [ ] No conclusion is presented at a higher confidence level than the evidence supports
+- [ ] Any PROHIBITED or UNKNOWN state produces an explicit statement that reasoning cannot proceed
+- [ ] No hedging language obscures the actual evidence state
+- [ ] Every recommendation disclosure is complete — no inference is hidden
+
+**Principle 13 — Decision Authority**
+- [ ] The Engineering Decision Engine evaluation has been completed before any recommendation is rendered
+- [ ] No recommendation surface bypasses the Decision Engine
+- [ ] Products are not recommended without an authorized engineering recommendation preceding them
+
 **Architecture**
 - [ ] 10-point section structure present and in correct order
 
@@ -845,7 +975,7 @@ All customer-facing interfaces, journeys, pages, AI assistants, recommendation
 engines, and navigation structures produced for the ELIMFILTERS® Engineering
 Intelligence Platform.
 
-ELEVEN PRINCIPLES (FROZEN)
+THIRTEEN PRINCIPLES (FROZEN)
 01: Customer Intent Before Products
 02: Engineering Before Commerce
 03: Products Are Conclusions
@@ -857,6 +987,8 @@ ELEVEN PRINCIPLES (FROZEN)
 09: Engineering Conversations
 10: Single Source of Engineering Truth
 11: Customer Questions Drive Engineering Knowledge
+12: Engineering Humility
+13: Decision Authority
 
 ARCHITECTURE
 10-point page structure required on all topic pages.
@@ -871,15 +1003,15 @@ may evolve without EDR.
 CITATION_REFERENCE
 source: elimfilters-vault/corporate/ENGINEERING_EXPERIENCE_PRINCIPLES.md
 document: Engineering Experience Principles
-version: 1.1
+version: 1.3
 ratified: 2026-07-01
-amended: 2026-07-01 (A1 — Principle 11 added)
+amended: 2026-07-02 (A3 — Principles 12 and 13 added)
 status: FROZEN
 ```
 
 ---
 
-*ELIMFILTERS® Engineering Experience Principles v1.2*
-*Ratified: 2026-07-01 | Amended: 2026-07-01 (A1 — Principle 11 added; A2 — Principle 11 redefined, implementation-agnostic)*
+*ELIMFILTERS® Engineering Experience Principles v1.3*
+*Ratified: 2026-07-01 | Amended: 2026-07-02 (A3 — Principles 12 and 13 added: Engineering Humility, Decision Authority)*
 *Status: FROZEN — Constitutional Reference*
 *Authority: Subordinate only to ELIMFILTERS_CORPORATE_CONSTITUTION (Supreme v1.0)*

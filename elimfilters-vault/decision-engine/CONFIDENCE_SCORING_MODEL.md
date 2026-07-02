@@ -1,6 +1,6 @@
 # Confidence Scoring Model
 ## Engineering Decision Engine — Evidence-Based Confidence Calculation
-### Version 1.0 | Ratified: 2026-07-01 | Status: FROZEN
+### Version 1.1 | Ratified: 2026-07-01 | Last amended: 2026-07-02 | Status: FROZEN
 
 ---
 
@@ -9,11 +9,22 @@
 | Field | Value |
 |---|---|
 | Document | CONFIDENCE_SCORING_MODEL |
-| Version | 1.0 |
+| Version | 1.1 |
 | Status | FROZEN — Governing Architecture |
 | Ratified | 2026-07-01 |
-| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.0 |
+| Last amended | 2026-07-02 — Amendment A1: PROHIBITED pre-gate documented; scoring model applies only when PROHIBITED gate is cleared |
+| Authority | Subordinate to ENGINEERING_DECISION_ENGINE v1.1 |
 | Scope | Evidence-based method for determining confidence level output |
+
+---
+
+## Scope of This Model
+
+This model applies only after the PROHIBITED gate (Step 5a) has been cleared. If Step 5a returns PROHIBITED, confidence scoring does not execute. The evaluation stops at Step 5a and requests minimum required information.
+
+Confidence scoring begins only when:
+- The PROHIBITED gate is NOT triggered
+- The evaluation has passed through Steps 1–4
 
 ---
 

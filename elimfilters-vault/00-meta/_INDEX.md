@@ -1,7 +1,7 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-07-02
+Last updated: 2026-07-02 (amended)
 
 ---
 
@@ -12,7 +12,7 @@ Last updated: 2026-07-02
 | Document | Status | Date |
 |----------|--------|------|
 | [[ELIMFILTERS_CORPORATE_CONSTITUTION]] | ✅ SUPREME v1.0 — Constitutional Authority | 2026-06-28 |
-| [[ENGINEERING_EXPERIENCE_PRINCIPLES]] | ✅ FROZEN v1.2 — Constitutional Reference, Experience Layer | 2026-07-01 |
+| [[ENGINEERING_EXPERIENCE_PRINCIPLES]] | ✅ FROZEN v1.3 — Constitutional Reference, Experience Layer | 2026-07-02 |
 
 **Doctrine hierarchy established:**
 ```
@@ -34,12 +34,12 @@ ELIMFILTERS® CORPORATE CONSTITUTION  [SUPREME]
 
 | Document | Status | Date |
 |----------|--------|------|
-| [[ENGINEERING_DECISION_ENGINE]] | ✅ FROZEN v1.0 — Master Governing Document | 2026-07-02 |
-| [[DECISION_EVALUATION_MODEL]] | ✅ FROZEN v1.0 — Step-by-Step Evaluation Specification | 2026-07-02 |
-| [[CONFIDENCE_SCORING_MODEL]] | ✅ FROZEN v1.0 — Evidence-Based Confidence Calculation | 2026-07-02 |
+| [[ENGINEERING_DECISION_ENGINE]] | ✅ FROZEN v1.1 — Master Governing Document | 2026-07-02 |
+| [[DECISION_EVALUATION_MODEL]] | ✅ FROZEN v1.1 — Step-by-Step Evaluation Specification | 2026-07-02 |
+| [[CONFIDENCE_SCORING_MODEL]] | ✅ FROZEN v1.1 — Evidence-Based Confidence Calculation | 2026-07-02 |
 | [[EVIDENCE_REQUIREMENTS]] | ✅ FROZEN v1.0 — Domain-Specific Evidence Thresholds | 2026-07-02 |
 | [[DIAGNOSTIC_QUESTION_STRATEGY]] | ✅ FROZEN v1.0 — Minimum Effective Questioning | 2026-07-02 |
-| [[RECOMMENDATION_GOVERNANCE]] | ✅ FROZEN v1.0 — Recommendation Permission and Structure | 2026-07-02 |
+| [[RECOMMENDATION_GOVERNANCE]] | ✅ FROZEN v1.1 — Recommendation Permission and Structure | 2026-07-02 |
 | [[IMPLEMENTATION_PLAN]] | ✅ FROZEN v1.0 — Integration with Engineering Services Layer | 2026-07-02 |
 
 **Decision Engine position in platform architecture:**
@@ -60,9 +60,12 @@ CUSTOMER
 ```
 
 **Decision Engine authority chain:**
-- Subordinate to: ENGINEERING_EXPERIENCE_PRINCIPLES v1.2
+- Subordinate to: ENGINEERING_EXPERIENCE_PRINCIPLES v1.3
 - Governs: All recommendations, diagnoses, and engineering conclusions
+- Governing principles (A1): Engineering Humility, Decision Authority
+- New decision state (A1): PROHIBITED — no reasoning; request minimum information
 - Safety principle: Always prefers "insufficient evidence" over unjustified recommendation
+- Core statement: "The platform may reason only after it has earned the right to reason."
 
 **Constitutional provisions (13 sections):**
 - Purpose: Define mission, vision, and principles of ELIMFILTERS® as an asset protection company
