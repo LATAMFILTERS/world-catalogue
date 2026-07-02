@@ -202,24 +202,32 @@ def run(args):
         af   = item['af']
         found_sku = None
         via_ref   = None
+        existing  = []
 
         for ref in item['oem_refs']:
             matched = search_by_competitor_code(ref['code'], args.api_key)
             if matched:
-                product = matched[0]
-                sku = product.get('sku') or product.get('elimfilters_sku', '')
+                # Prefer EA1/EA2 among all results; skip if none qualify
+                air_match = next(
+                    (p for p in matched
+                     if any((p.get('sku') or p.get('elimfilters_sku', '')).startswith(pfx)
+                            for pfx in AIR_FILTER_PREFIXES)),
+                    None,
+                )
+                if air_match is None:
+                    skus = [p.get('sku') or p.get('elimfilters_sku', '') for p in matched]
+                    log.warning(f"  [{i}/{len(oem_hits)}] {af} -> {ref['brand']}:{ref['code']} matched {skus} — none are EA1/EA2, trying next ref")
+                    time.sleep(0.25)
+                    continue
+                product  = air_match
+                sku      = product.get('sku') or product.get('elimfilters_sku', '')
                 found_sku = sku
-                via_ref   = ref
-                existing  = product.get('competitor_codes') or []
+                via_ref  = ref
+                existing = product.get('competitor_codes') or []
                 break
             time.sleep(0.25)
 
         if found_sku:
-            # AF codes are air filters — only link to EA1/EA2 SKUs (air filter prefixes)
-            if not (found_sku.startswith('EA1') or found_sku.startswith('EA2')):
-                log.warning(f"  [{i}/{len(oem_hits)}] {af} -> SKIP {found_sku} (wrong type — AF must link to EA1/EA2 only)")
-                not_found.append(item)
-                continue
             already = any(
                 isinstance(c, dict) and c.get('code', '').upper() == af
                 for c in existing
