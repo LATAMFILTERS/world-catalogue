@@ -87,7 +87,7 @@ export default function CabinSafetySystemsPage() {
         </motion.div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}>
           <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Cabin Air Filtration Domain</h2>
@@ -288,7 +288,7 @@ export default function CabinSafetySystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Cabin Air Filtration Systems', item: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems' },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 4rem' }}>
         <RelatedProducts filterType="cabin filter" duty="LIGHT_DUTY" searchQuery="cabin filter" label="VER TODOS LOS FILTROS DE CABINA" />
       </div>
     </main>

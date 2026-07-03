@@ -7,31 +7,35 @@ import { motion } from 'motion/react';
 export default function ISO5011Page() {
   const sections = [
     {
-      title: '¿Para qué sirve ISO 5011?',
-      content: 'ISO 5011 sirve como el estándar de prueba que garantiza la calidad y la confiabilidad de los elementos de filtro hidráulico. Su propósito es proporcionar un método reproducible y estandarizado para verificar que un elemento de filtro puede retener adecuadamente las partículas bajo presiones diferenciales extremas sin colapsar o desarrollar fugas. Los fabricantes de filtros utilizan ISO 5011 para certificar que sus productos cumplen con las especificaciones de retención, y los compradores utilizan este estándar para validar que los filtros que adquieren proporcionarán la protección esperada. Los procedimientos de prueba ISO 5011 incluyen la "prueba de integridad", donde se aplica aire comprimido para detectar puntos de fuga, y la "prueba de colapso", donde se incrementa gradualmente la presión diferencial hasta que el elemento falla.'
+      title: 'What ISO 5011 Tests',
+      content: 'ISO 5011 defines the test methods for measuring the performance of air intake filter elements used in internal combustion engines and compressors. The standard specifies three principal test procedures: (1) Initial efficiency test — measures the filter\'s particle capture efficiency at the start of service life, using AC Fine Test Dust (ACFTD) of defined particle size distribution. (2) Dust capacity test — measures the total mass of dust the element can hold before reaching the specified maximum permissible differential pressure, defining service interval. (3) Collapse/integrity test — verifies the element\'s structural integrity under severe differential pressure: the element must survive without leaking or collapsing at three to five times the rated operating pressure differential. These tests are conducted under standardised airflow conditions and document filter performance using consistent, reproducible methodology that allows direct comparison between competing elements.'
     },
     {
-      title: '¿Por qué importa en filtración industrial?',
-      content: 'En filtración industrial, ISO 5011 es absolutamente crítico porque conecta la especificación de limpieza (ISO 16889 o ISO 4406) con la realidad física de la retención de partículas. Un elemento de filtro podría estar diseñado para retener partículas de 10 µm, pero sin las pruebas ISO 5011, no hay forma confiable de verificar que realmente lo hace. Cuando un filtro falla en servicio sin colapsar visiblemente, a menudo es porque no pasó adequadamente las pruebas ISO 5011. La contaminación particularada que escapa a través de un elemento de filtro defectuoso es una de las causas más comunes de daño catastrófico en sistemas hidráulicos. ISO 5011 previene esto asegurando que solo los filtros que han demostrado su capacidad de retención se coloquen en servicio crítico.'
+      title: 'Why It Matters for Engine Protection',
+      content: 'Air intake filtration is the first and most critical defence for combustion engine reliability. Diesel engines ingest 10,000–30,000 litres of air per litre of fuel burned; all contamination in that air — silica dust, carbon particles, pollen, industrial particulate — enters the combustion chamber unless the air filter intercepts it. A single particle of silica dust (hardness 7 Mohs) larger than the oil film thickness on a piston ring (typically 3–10 µm) can initiate abrasive wear that propagates across the full service interval. ISO 5011 provides the measurement framework that guarantees an air filter element will capture particles above its rated efficiency threshold under defined operating conditions. An element that passes ISO 5011 integrity testing at 3× rated differential pressure will not develop bypass leaks in normal service. Without ISO 5011 certification, there is no engineering basis for assuming an air filter will perform as labelled during its full service life.'
     },
     {
-      title: 'Aplicación en motores y sistemas',
-      content: 'Cuando un fabricante de equipos OEM diseña un sistema hidráulico con un requisito ISO 16889 16/14/11, especifica también un elemento de filtro que ha sido certificado bajo ISO 5011 para retener partículas de ese tamaño crítico. En maquinaria de construcción con presiones de operación de 210 bar, el filtro debe demostrar que puede mantener la integridad hasta presiones diferenciales de 350+ bar en las pruebas ISO 5011. En sistemas agrícolas con ciclos de operación largos, los elementos de filtro certificados ISO 5011 garantizan que el fluido permanece limpio durante miles de horas de funcionamiento. En equipos marinos, donde el acceso para cambiar filtros es limitado, la certificación ISO 5011 es especialmente importante para garantizar que el elemento funcionará de manera confiable durante el intervalo completo de servicio especificado.'
+      title: 'Application in Engine Specifications',
+      content: 'OEM engine manufacturers specify air filter elements by ISO 5011 performance parameters: minimum initial efficiency (typically 99.5%–99.9% at the test particle size), minimum dust capacity (in grams of ACFTD per unit airflow), and minimum collapse pressure. When an agricultural tractor OEM specifies an air filter element for a 150 kW diesel engine, the element must meet the ISO 5011 performance parameters validated for that engine\'s airflow rate (typically 600–900 m³/h) and operating environment (high ambient dust concentration in agricultural applications requires higher dust capacity than urban construction equipment). Aftermarket elements must demonstrate equivalent ISO 5011 performance — not just dimensional compatibility — to provide equivalent engine protection. An element that fits physically but holds 30% less dust will require 30% more frequent replacement intervals to prevent performance degradation from restriction or failure from collapse.'
     }
   ];
 
   const faqs = [
     {
-      question: '¿Cuál es la diferencia entre "colapso" e "integridad" en ISO 5011?',
-      answer: 'La prueba de integridad (ISO 5011-1) utiliza aire comprimido a baja presión para detectar fugas o puntos débiles en el medio filtrante, usando un detector de burbujas. La prueba de colapso (ISO 5011-2) incrementa gradualmente la presión diferencial (típicamente con agua) hasta que el elemento cede estructuralmente o desarrolla una fuga significativa. La prueba de integridad detecta pequeñas imperfecciones, mientras que la prueba de colapso verifica que el elemento puede soportar presiones extremas antes de fallar estructuralmente.'
+      question: 'What is the difference between the collapse test and the integrity test in ISO 5011?',
+      answer: 'The integrity test (bubble point test) applies low-pressure air to the clean filter element while the outlet side is submerged in liquid; bubbles indicate leaks in the filter media or gasket seals. It detects manufacturing defects and small perforations that would allow particle bypass in service. The collapse test applies increasing differential pressure (with liquid) until the element either develops a sustained leak or deforms structurally. The collapse test verifies the element can withstand pressure spikes from cold start conditions, clogged filter operation, and blocked service intervals without catastrophic bypass. ISO 5011 requires elements to survive at least 3× their rated operating differential pressure without collapse.'
     },
     {
-      question: '¿Qué presión diferencial debe soportar un elemento de filtro según ISO 5011?',
-      answer: 'Los requisitos varían según el tipo de filtro y el tamaño de partículas de retención. Un filtro típico de presión media (retención de 10-25 µm) debe soportar una presión diferencial de colapso de al menos 350 kPa (3.5 bar). Los filtros de alta presión pueden requerir 1000+ kPa. Los fabricantes también especifican presiones diferenciales nominales de operación (típicamente 70-140 kPa) que son significativamente inferiores a la presión de colapso para proporcionar margen de seguridad.'
+      question: 'What differential pressure rating should a heavy-duty air filter element have?',
+      answer: 'Heavy-duty air filter elements for diesel engines typically have rated service differential pressures of 3–7 kPa (30–70 mbar) at maximum rated airflow. Service restriction indicators (visual or electronic) typically trigger at 6–10 kPa. ISO 5011 collapse testing requires the element to survive 20–35 kPa without failure — providing a 3–5× safety margin above the service restriction trigger point. Mining and construction equipment operating in extremely dusty environments may use lower restriction triggers (4–5 kPa) to prevent ingestion of dust through a bypassing clogged element. High-performance industrial compressors may specify collapse ratings up to 100 kPa for catastrophic-failure prevention in process-critical applications.'
     },
     {
-      question: '¿Con qué frecuencia debe realizarse la prueba ISO 5011?',
-      answer: 'Para los fabricantes de filtros, ISO 5011 es una prueba de validación que se realiza durante el desarrollo del producto y durante el control de calidad en lotes de producción (típicamente un número estadístico de muestras por lote). Para los usuarios finales, ISO 5011 no es una prueba que se realice regularmente. En cambio, los usuarios especifican filtros que han sido certificados bajo ISO 5011 y confían en esa certificación previa. Si hay sospecha de elemento defectuoso en servicio, se pueden realizar pruebas ISO 5011 en laboratorio para investigar fallos.'
+      question: 'How does ISO 5011 relate to SAE J726 and SAE J1539?',
+      answer: 'SAE J726 (Air Cleaner Test Code) and ISO 5011 are technically equivalent standards that were harmonised through the international standardisation process. SAE J726 is the North American version; ISO 5011 is the international version. They specify the same test procedures, the same test dusts, and produce comparable results. Equipment sold globally may reference either standard. SAE J1539 (Air Cleaner Element Test Code for Crankcase Breathers) covers a related but distinct application: crankcase ventilation filter elements that prevent engine oil mist and blowby gases from entering the air intake. ELIMFILTERS MACROCORE™ elements are tested and certified under both ISO 5011 and SAE J726 for primary air intake applications.'
+    },
+    {
+      question: 'Does ISO 5011 certification on an element guarantee compatibility with my engine?',
+      answer: 'ISO 5011 certification guarantees the element meets the specified efficiency, dust capacity, and structural integrity values under the standard\'s test conditions — it does not guarantee dimensional fit or compatibility with a specific engine\'s airflow system. An element must also match the engine\'s housing inlet/outlet dimensions, sealing geometry (radial seal, axial seal, or flat panel), and airflow resistance characteristics to the OEM specification. When sourcing replacement elements, verify both the ISO 5011 performance data (efficiency ≥ OEM spec, dust capacity ≥ OEM spec, collapse pressure ≥ OEM spec) and the dimensional specification against the original element part number.'
     }
   ];
 
@@ -82,18 +86,18 @@ export default function ISO5011Page() {
             margin: '0 auto',
             textAlign: 'justify', lineHeight: 1.65,
           }}>
-            Hydraulic Fluid Power — Filters — Test Procedure for Verification of Collapse/Integrity
+            Intake Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing
           </p>
         </motion.div>
       </section>
 
       {/* Content Sections */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
-        {/* Section: Definition (with internal links) */}
+        {/* Definition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +116,7 @@ export default function ISO5011Page() {
             marginBottom: '1rem',
             letterSpacing: '-0.01em',
           }}>
-            ¿Qué es ISO 5011?
+            What is ISO 5011?
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -120,12 +124,13 @@ export default function ISO5011Page() {
             color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify', lineHeight: 1.8,
           }}>
-            ISO 5011 es el estándar internacional que define el procedimiento de prueba para la verificación de la integridad y el colapso del medio filtrante en filtros de aire industriales, complementando los requisitos del dominio de{' '}
-            <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de admisión de aire</Link>.{' '}
-            Este estándar especifica métodos precisos para probar que un elemento de filtro puede retener partículas de un tamaño específico sin permitir que el fluido pase alrededor de los lados del elemento (bypass) bajo condiciones de presión diferencial extrema. ISO 5011 es crucial porque garantiza que los elementos de filtro cumplan con sus especificaciones de retención de partículas y no fallarán catastróficamente cuando se exponen a presiones diferenciales elevadas que pueden ocurrir durante la operación normal o en situaciones de emergencia. La clasificación de tamaño de partículas retenidas sigue el marco de{' '}
+            ISO 5011 is the international standard specifying the test methods for evaluating the performance of air intake filter elements used in internal combustion engines and industrial compressors. It defines standardised procedures for measuring three critical performance parameters: filtration efficiency (what percentage of particles are captured), dust capacity (how much contaminant the element holds before requiring replacement), and structural integrity (resistance to collapse under extreme differential pressure). ISO 5011 is the counterpart to{' '}
             <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
-            para asegurar coherencia entre los distintos dominios de filtración. Los filtros que no superan las pruebas ISO 5011 permiten el paso de partículas abrasivas que causan{' '}
-            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>desgaste acelerado en componentes internos de motores</Link>.
+            in the air intake domain, providing the same measurement rigour for air filtration that ISO 16889 provides for hydraulic and lube fluid filtration. Elements certified under ISO 5011 complement the broader{' '}
+            <Link href="/knowledge-system/standards/air-intake-systems" style={{ color: '#FFF12D', textDecoration: 'underline' }}>air intake filtration system domain</Link>.
+            {' '}Particles that bypass an uncertified or sub-performing air filter element cause the same{' '}
+            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>abrasive wear on engine components</Link>{' '}
+            as particles entering through hydraulic system contamination.
           </p>
         </motion.div>
 
@@ -165,7 +170,7 @@ export default function ISO5011Page() {
 
       {/* FAQ Section */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -183,7 +188,7 @@ export default function ISO5011Page() {
             textAlign: 'center',
             letterSpacing: '-0.01em',
           }}>
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (
@@ -222,19 +227,18 @@ export default function ISO5011Page() {
         </motion.div>
       </section>
 
-
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
-        headline: 'ISO 5011 — Air Filter Element Test Standard for Internal Combustion Engines',
-        description: 'ISO 5011 specifies test methods for evaluating air filter element performance including initial efficiency, dust capacity, and element integrity testing. Defines standardized procedures for measuring filtration efficiency and structural durability of air intake filter elements.',
+        headline: 'ISO 5011 — Air Filter Element Test Standard for Internal Combustion Engines and Compressors',
+        description: 'ISO 5011 specifies test methods for evaluating air intake filter element performance including initial filtration efficiency, dust capacity, and structural integrity under collapse testing. Defines standardised procedures for measuring and comparing air filter element performance in internal combustion engines and industrial compressors.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        dateModified: '2026-06-11',
-        keywords: ['ISO 5011', 'air filter testing', 'filter element integrity', 'dust capacity test', 'air intake filtration', 'SAE J726', 'SAE J1539', 'engine air filter'],
-        about: { '@type': 'Thing', name: 'ISO 5011 Air Filter Testing', description: 'International standard for measuring air filter element performance including efficiency, dust holding capacity, and structural integrity under test conditions.' },
-        inLanguage: 'es',
+        dateModified: '2026-07-03',
+        keywords: ['ISO 5011', 'air filter testing', 'filter element integrity', 'dust capacity test', 'air intake filtration', 'SAE J726', 'SAE J1539', 'engine air filter', 'MACROCORE'],
+        about: { '@type': 'Thing', name: 'ISO 5011 Air Filter Testing', description: 'International standard for measuring air intake filter element performance including efficiency, dust holding capacity, and structural integrity under defined test conditions.' },
+        inLanguage: 'en',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

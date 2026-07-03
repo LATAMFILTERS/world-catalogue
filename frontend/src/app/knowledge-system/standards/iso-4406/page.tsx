@@ -7,31 +7,35 @@ import { motion } from 'motion/react';
 export default function ISO4406Page() {
   const sections = [
     {
-      title: '¿Para qué sirve ISO 4406?',
-      content: 'ISO 4406 sirve como un sistema de clasificación simplificado para comunicar el estado de limpieza de un fluido hidráulico entre proveedores y usuarios. Su propósito es permitir que diferentes partes identifiquen rápidamente si un fluido cumple con los requisitos mínimos de limpieza para una aplicación específica. El estándar proporciona una metodología para el conteo de partículas y la clasificación de fluidos según dos categorías de tamaño de partículas, facilitando una comunicación consistente sobre la calidad del fluido. Aunque menos preciso que ISO 16889, ISO 4406 sigue siendo útil para propósitos generales de mantenimiento y comparación de fluidos.'
+      title: 'What ISO 4406 Measures',
+      content: 'ISO 4406 classifies particle contamination in hydraulic and lubricating fluids using a two- or three-number cleanliness code. Each number in the code is a Range Number corresponding to a particle count threshold per millilitre: the first number covers particles larger than 4 µm, the second covers particles larger than 6 µm, and a third number (when included) covers particles larger than 14 µm. Range Numbers are logarithmic: Range Number 18 means a maximum of 1,300 particles per mL; Range Number 16 means a maximum of 320 particles per mL. Each increment of one Range Number represents a doubling of the particle count. A code such as 18/16/13 means the fluid contains up to 1,300 particles >4 µm, up to 320 particles >6 µm, and up to 40 particles >14 µm per millilitre of fluid. The 4 µm channel captures the fine contamination that causes the most damage to tight-tolerance components; the 14 µm channel captures larger wear debris indicating ongoing component damage.'
     },
     {
-      title: '¿Por qué importa en filtración industrial?',
-      content: 'ISO 4406 es importante en filtración industrial porque estableció los principios fundamentales de la codificación de limpieza que la industria sigue utilizando hoy. Fue el primer estándar ampliamente adoptado que permitió a los fabricantes de sistemas de filtración establecer objetivos cuantificables para la limpieza del fluido. Aunque ISO 16889 ha mejorado la precisión con la adición de un tercer dígito de clasificación (para partículas >14µm), los conceptos básicos de ISO 4406 permanecen válidos. Comprender ISO 4406 es esencial para los profesionales de filtración que trabajan con equipos heredados o que necesitan traducir especificaciones antiguas a estándares modernos.'
+      title: 'Industrial Application',
+      content: 'ISO 4406 codes appear in OEM service manuals, hydraulic component datasheets, and oil analysis laboratory reports. When a hydraulic system specifies a target cleanliness of ISO 4406 16/14/11, it defines the maximum allowable particle concentrations at which the system will operate without accelerated wear. Proportional control valves with spool clearances of 1–4 µm require target codes of 16/14/11 or tighter; industrial hydraulic cylinders typically specify 18/16/13. Particle counters calibrated to ISO 11171 measure fluid samples and report the code automatically. Oil analysis programs use ISO 4406 codes to trend contamination over time — a shift from 16/14/11 to 18/16/13 indicates contamination ingress or filter degradation and triggers maintenance action before component failure occurs.'
     },
     {
-      title: 'Aplicación en motores y sistemas',
-      content: 'En sistemas hidráulicos más antiguos de maquinaria industrial, transmisiones hidráulicas de vehículos de construcción fabricados antes de 2010, y sistemas de aviación heredados, ISO 4406 sigue siendo la especificación de referencia. Un código ISO 4406 típico como 18/16 significa: máximo 1300 partículas mayores a 4 µm y máximo 320 partículas mayores a 6 µm por mililitro. Los operadores de equipos antiguos aún deben verificar regularmente sus fluidos contra estas especificaciones ISO 4406. Para equipos nuevos, aunque la especificación puede originarse en ISO 4406, generalmente se traduce a equivalentes ISO 16889 para una evaluación más precisa (por ejemplo, ISO 4406 18/16 es aproximadamente equivalente a ISO 16889 17/15/12).'
+      title: 'Relationship to ISO 16889',
+      content: 'ISO 4406 predates ISO 16889 and used slightly different counting methods, which created measurement inconsistencies between laboratories. ISO 16889 (published 1999, revised 2022) standardised the multi-pass filter test methodology and the automatic particle counter calibration protocol under ISO 11171, replacing the earlier manual counting methods that ISO 4406 permitted. Modern equipment specifications typically reference ISO 16889 cleanliness codes rather than ISO 4406 codes, but the Range Number framework and the 4 µm / 6 µm / 14 µm particle size channels are identical. Legacy equipment built before 2000 frequently specifies ISO 4406 two-number codes such as 18/16; these translate directly to ISO 16889 codes by adding the 14 µm channel: 18/16 is approximately equivalent to 18/16/13. Equipment operating under legacy ISO 4406 specifications can still be monitored using modern particle counters reporting ISO 16889 codes — the numerical values are compatible.'
     }
   ];
 
   const faqs = [
     {
-      question: '¿Cómo se relaciona ISO 4406 con ISO 16889?',
-      answer: 'ISO 16889 fue desarrollado como una mejora a ISO 4406, añadiendo un tercer nivel de clasificación para partículas mayores a 14 µm, lo que proporciona mayor precisión. ISO 16889 también especifica métodos de conteo más rigurosos. Los códigos ISO 4406 pueden ser aproximadamente convertidos a ISO 16889 (p.ej., 18/16 ≈ 17/15/12), pero no es una conversión exacta. ISO 16889 es ahora el estándar preferido para equipos nuevos, pero ISO 4406 sigue siendo válido y ampliamente utilizado.'
+      question: 'What does an ISO 4406 code of 18/16 mean?',
+      answer: 'ISO 4406 18/16 means the fluid contains: up to 1,300 particles larger than 4 µm per mL (Range Number 18 = 640–1,300 particles/mL) and up to 320 particles larger than 6 µm per mL (Range Number 16 = 160–320 particles/mL). This is a relatively contaminated condition typically acceptable for low-pressure return lines and reservoirs, but not for servo valves or pump circuits. For comparison, a clean hydraulic servo system typically targets 16/14 (up to 320 particles >4 µm / up to 80 particles >6 µm per mL).'
     },
     {
-      question: '¿Qué significa el código 19/17 en ISO 4406?',
-      answer: 'Un código ISO 4406 19/17 significa que el fluido contiene máximo 2560 partículas mayores a 4 µm por mililitro (19 = 2^19/4 = 2560) y máximo 640 partículas mayores a 6 µm por mililitro (17 = 2^17/4 = 640). Este es un código relativamente "sucio" utilizado para sistemas no críticos o aplicaciones de servicio pesado donde la contaminación se espera y se puede tolerar.'
+      question: 'How does ISO 4406 differ from ISO 16889?',
+      answer: 'ISO 4406 established the Range Number cleanliness code system and the particle size thresholds (4 µm, 6 µm, 14 µm). ISO 16889 updated the underlying test methodology: it standardised multi-pass filter testing, mandated automatic particle counters calibrated per ISO 11171, and eliminated the older manual counting methods that allowed inter-laboratory variation. The cleanliness code format and Range Number values are identical between the two standards. When a specification references "ISO 4406 18/16/13," the numbers mean the same thing as "ISO 16889 18/16/13." The practical difference is in how labs measure the sample to arrive at that code.'
     },
     {
-      question: '¿Todavía se utiliza ISO 4406 en equipos modernos?',
-      answer: 'Aunque ISO 16889 es ahora el estándar preferido para especificaciones nuevas, ISO 4406 aún aparece en muchos contextos: equipos OEM más antiguos que aún operan, especificaciones heredadas en manuales de servicio, y en algunos casos se utiliza junto con ISO 16889 para compatibilidad histórica. Los técnicos de filtración modernos deben estar familiarizados con ambos estándares para interpretar especificaciones de una amplia gama de equipos.'
+      question: 'Why do some hydraulic systems still specify ISO 4406 codes?',
+      answer: 'Many legacy systems, imported machines, and OEM service manuals written before 2000 reference ISO 4406 codes. Maintenance teams working on these systems encounter two-number codes (e.g., 18/16) without a 14 µm channel. This is fully compatible with modern ISO 16889-based oil analysis — modern particle counters report all three channels automatically. A legacy ISO 4406 18/16 specification means the third channel (14 µm) was not originally measured; when monitoring the system today, target 18/16/13 or tighter. The 14 µm channel provides early warning of catastrophic wear events that the two-channel code would miss.'
+    },
+    {
+      question: 'What particle counter should be used to measure ISO 4406 cleanliness?',
+      answer: 'Automatic optical particle counters (OPCs) calibrated to ISO 11171 using NIST-traceable AC Fine Test Dust (ACFTD) reference material are the required measurement instrument. Older manual counting methods (light microscopy on filter membranes) are no longer acceptable for ISO 16889 reporting but may still appear in older ISO 4406 procedures. For field sampling, bottles must be clean to ISO 4406 14/12/10 or better and filled under clean conditions to prevent sampling contamination. Sample volume is typically 10–100 mL. Laboratory results report Range Numbers for each particle size channel; counts are corrected for background contamination per ISO 11171 procedures.'
     }
   ];
 
@@ -89,11 +93,11 @@ export default function ISO4406Page() {
 
       {/* Content Sections */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
-        {/* Section: Definition (with internal links) */}
+        {/* Definition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +116,7 @@ export default function ISO4406Page() {
             marginBottom: '1rem',
             letterSpacing: '-0.01em',
           }}>
-            ¿Qué es ISO 4406?
+            What is ISO 4406?
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -120,12 +124,12 @@ export default function ISO4406Page() {
             color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify', lineHeight: 1.8,
           }}>
-            ISO 4406 es el estándar internacional que define el método para evaluar la limpieza de muestras líquidas en{' '}
-            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>sistemas de filtración industrial</Link>,
-            desarrollado en la década de 1970. Utiliza un código de limpieza de 2-3 dígitos que clasifica la contaminación particularada en un fluido según el número de partículas mayores a 4 µm y 6 µm por cada mililitro. Aunque ha sido ampliamente reemplazado por{' '}
+            ISO 4406 is the international standard that defines the method for assessing the cleanliness of liquid samples in{' '}
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration systems</Link>.
+            {' '}Developed in the 1970s, it established the Range Number cleanliness code system still in use today. ISO 4406 classifies particle contamination by counting particles above defined size thresholds per millilitre of fluid and assigning each count a Range Number on a logarithmic scale. Although largely superseded by{' '}
             <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>{' '}
-            en aplicaciones modernas, ISO 4406 sigue siendo un estándar importante en la industria y es fundamental para comprender la historia de la clasificación de limpieza de fluidos hidráulicos. Muchos equipos más antiguos aún especifican sus requisitos de limpieza usando códigos ISO 4406. La contaminación particularada que este estándar cuantifica es la causa primaria del{' '}
-            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>desgaste abrasivo en motores y componentes hidráulicos</Link>.
+            in modern equipment, ISO 4406 codes remain the reference in countless legacy specifications, service manuals, and oil analysis reports. The contamination it quantifies is the same particulate contamination that drives{' '}
+            <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>abrasive wear in hydraulic components and engine bearings</Link>.
           </p>
         </motion.div>
 
@@ -165,7 +169,7 @@ export default function ISO4406Page() {
 
       {/* FAQ Section */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -183,7 +187,7 @@ export default function ISO4406Page() {
             textAlign: 'center',
             letterSpacing: '-0.01em',
           }}>
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (
@@ -222,19 +226,18 @@ export default function ISO4406Page() {
         </motion.div>
       </section>
 
-
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
         headline: 'ISO 4406 — Fluid Cleanliness Classification Standard',
-        description: 'ISO 4406 establishes a particle count classification system for hydraulic and lube oil fluids using a two-number code representing particle concentrations at 4µm and 6µm thresholds. Predecessor to ISO 16889, widely referenced in legacy equipment specifications.',
+        description: 'ISO 4406 establishes a particle count classification system for hydraulic and lube oil fluids using a two- or three-number Range Number cleanliness code representing particle concentrations at 4 µm, 6 µm, and 14 µm thresholds. Predecessor to ISO 16889, widely referenced in legacy equipment specifications.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        dateModified: '2026-06-11',
-        keywords: ['ISO 4406', 'fluid cleanliness code', 'hydraulic oil cleanliness', 'particle count classification', 'contamination measurement', 'ISO 16889', 'industrial filtration'],
-        about: { '@type': 'Thing', name: 'ISO 4406 Cleanliness Codes', description: 'International standard for classifying hydraulic and lube oil fluid cleanliness using particle count codes at defined size thresholds.' },
-        inLanguage: 'es',
+        dateModified: '2026-07-03',
+        keywords: ['ISO 4406', 'fluid cleanliness code', 'hydraulic oil cleanliness', 'particle count classification', 'contamination measurement', 'ISO 16889', 'industrial filtration', 'Range Number'],
+        about: { '@type': 'Thing', name: 'ISO 4406 Cleanliness Codes', description: 'International standard for classifying hydraulic and lube oil fluid cleanliness using particle count Range Numbers at defined size thresholds.' },
+        inLanguage: 'en',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

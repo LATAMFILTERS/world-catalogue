@@ -81,7 +81,7 @@ export default function AirIntakeSystemsPage() {
         </motion.div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}>
           <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Engine Air Intake Filtration Domain</h2>
@@ -249,7 +249,7 @@ export default function AirIntakeSystemsPage() {
         mainEntity: FAQS.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })),
       }) }} />
       {/* Related Products — defensive widget, renders only if API returns valid data */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 4rem' }}>
         <RelatedProducts filterType="air filter" duty="HEAVY_DUTY" searchQuery="air filter heavy duty" label="VER TODOS LOS FILTROS DE AIRE" />
       </div>
 

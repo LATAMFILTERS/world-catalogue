@@ -171,7 +171,7 @@ export default function ROICalculatorPage() {
         </section>
 
         {/* Methodology note */}
-        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '2.5rem 2rem 0' }}>
+        <section style={{ maxWidth: '1060px', margin: '0 auto', padding: '2.5rem 2rem 0' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -304,7 +304,7 @@ export default function ROICalculatorPage() {
         </section>
 
         {/* Related links */}
-        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 5rem' }}>
+        <section style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 5rem' }}>
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.25)', marginBottom: '1.5rem' }}>
               RELATED ANALYSIS

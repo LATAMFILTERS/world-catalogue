@@ -112,7 +112,7 @@ export default function ParticleWearPage() {
 
       {/* Content Sections */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -202,7 +202,7 @@ export default function ParticleWearPage() {
 
       {/* FAQ Section */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -262,7 +262,7 @@ export default function ParticleWearPage() {
 
       {/* Navigation to Other Contamination Pages */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -328,7 +328,7 @@ export default function ParticleWearPage() {
           </div>
         </motion.div>
 
-        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+        <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem' }}>
           <EngineeringRecommendationsSection
             primaryEntityId="CONT-WEAR-PARTICLE-OIL"
             queryType="contamination"
@@ -369,7 +369,7 @@ export default function ParticleWearPage() {
           { '@type': 'Question', name: 'How does oil change frequency affect particle accumulation?', acceptedAnswer: { '@type': 'Answer', text: 'Oil change interval directly controls particle concentration trajectory: Normal interval (500 hours) with premium filtration maintains 20-40 mg/L wear debris until 1500-2000 hours; extended interval (1000 hours) with same filtration accumulates 60-120 mg/L by 2000 hours, accelerating wear rates 2-3x; extended interval (1000 hours) with standard filtration reaches 150-300 mg/L, causing engine damage by 1500 hours. Optimal strategy depends on contamination environment: Clean environment supports 1000-hour intervals with on-board filtration; Severe environment (mining, desert) requires 250-hour intervals with primary-secondary filtration plus oil conditioning systems.' } },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 2rem' }}>
         <RelatedProducts filterType="oil filter" duty="HEAVY_DUTY" searchQuery="oil filter heavy duty" label="VER FILTROS DE ACEITE RELACIONADOS" />
       </div>
     </main>

@@ -87,7 +87,7 @@ export default function CompressedAirSystemsPage() {
         </motion.div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '3.5rem' }}>
           <h2 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600, color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em' }}>Compressed Air Purity Domain</h2>
@@ -284,7 +284,7 @@ export default function CompressedAirSystemsPage() {
           { '@type': 'ListItem', position: 4, name: 'Compressed Air Systems', item: 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems' },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 4rem' }}>
         <RelatedProducts filterType="air dryer filter" duty="HEAVY_DUTY" searchQuery="air dryer filter heavy duty" label="VER TODOS LOS FILTROS DE AIRE COMPRIMIDO" />
       </div>
     </main>
