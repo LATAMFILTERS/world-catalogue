@@ -179,6 +179,7 @@ export default function HydraulicSystemsPage() {
               { title: 'Pre-Commissioning Flush Procedures', body: 'New systems must be flushed to ISO 16/14/11 before proportional valve installation. Flush flow rates must exceed normal operating flow.' },
               { title: 'Desiccant Breather Usage', body: 'Sealed reservoir breathers prevent water ingress. Breather cartridge replacement schedules depend on ambient humidity and seasonal variations.' },
               { title: 'Fluid Sampling and Analysis', body: 'Quarterly ISO cleanliness codes confirm whether filter specifications are maintaining target cleanliness. Elemental spectroscopy identifies accelerating wear rates.' },
+              { title: 'Differential Pressure and Bypass Protection', body: 'Filter differential pressure (ΔP) rises as the element loads with contaminant; hydraulic elements are specified with a bypass valve that opens at a defined ΔP to protect pump supply if the element blocks, but every bypass event sends unfiltered fluid directly to proportional and servo valves with 1-3µm clearances. ΔP indicators or gauges should trigger element replacement well before the bypass threshold is reached, not after bypass events begin.' },
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
                 <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
@@ -227,6 +228,7 @@ export default function HydraulicSystemsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems',
         headline: 'Hydraulic Systems',
         description: 'Hydraulic system filtration engineering: ISO 16889 beta ratio, NFPA T2.14 cleanliness targets, proportional valve protection, and DIN 51524 oil specification for industrial machinery.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

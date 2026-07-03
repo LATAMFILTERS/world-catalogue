@@ -202,6 +202,7 @@ export default function StandardsHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards',
         headline: 'Industrial Filtration Standards',
         description: 'Industrial filtration standards hub covering ISO, ASTM, SAE, and DIN specifications across lube oil, air intake, cabin safety, fuel, hydraulic, and compressed air filtration system domains.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

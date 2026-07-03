@@ -265,6 +265,7 @@ export default function CabinSafetySystemsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems',
         headline: 'Cabin Air Filtration Systems',
         description: 'Cabin air filtration for operator safety: ISO 11155 test standard, DIN 71220 classification, PM10/PM2.5 exposure limits, and electrostatic filtration for mining and agricultural vehicles.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

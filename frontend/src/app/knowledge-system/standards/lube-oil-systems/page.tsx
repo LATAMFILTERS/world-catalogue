@@ -450,6 +450,7 @@ export default function LubeOilSystemsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems',
         headline: 'Lube / Oil Filtration Systems',
         description: 'Lube oil filtration system engineering: ISO 16889 beta ratio, ISO 4406 cleanliness codes, particle wear mechanisms, and contamination control targets for engine and bearing protection.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

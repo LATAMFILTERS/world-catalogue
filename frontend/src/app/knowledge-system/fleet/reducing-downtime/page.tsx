@@ -434,10 +434,11 @@ export default function ReducingDowntimePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/fleet/reducing-downtime',
         headline: 'Reducing Fleet Downtime',
         description: 'Unplanned mechanical failure is the primary driver of availability loss in industrial fleets. Filtration discipline is one of the highest-leverage variables within an operator\'s direct control.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'fleet downtime', 'unplanned maintenance', 'ISO 16889', 'oil cleanliness', 'predictive maintenance'],
         about: { '@type': 'Thing', name: 'Fleet Downtime Reduction', description: 'Contamination control strategies that prevent unplanned mechanical failures and extend equipment availability in industrial fleet operations.' },

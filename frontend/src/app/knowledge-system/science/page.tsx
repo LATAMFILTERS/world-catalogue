@@ -233,11 +233,12 @@ export default function SciencePage() {
   const schemaTechArticle = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/science',
     headline: 'The Physics of Industrial Failure',
     description:
       'Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control science that prevents it.',
-    author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-    publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     dateModified: '2026-06-11',
     keywords: [
       'industrial filtration', 'contamination control', 'ISO 4406', 'ISO 16889',
@@ -654,6 +655,47 @@ export default function SciencePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="media-engineering" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
+              Media Engineering &amp; Computational Design
+            </h2>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '680px', textAlign: 'justify' }}>
+              How filter media performance is modeled and optimized before physical validation.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>PRESSURE DROP MODELING</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Flow through a porous filter medium follows Darcy&apos;s Law: ΔP = µ × Q × L / (k × A), where pressure drop (ΔP) scales with fluid viscosity (µ), flow rate (Q), and media thickness (L), and scales inversely with permeability (k) and flow area (A). Permeability is the primary design variable a media engineer controls through fiber diameter, packing density, and layer structure. Denser media raises particle capture efficiency but lowers permeability, which raises ΔP at a given flow rate — a trade-off resolved for each application&apos;s target flow, efficiency, and service-life requirements before a physical prototype is built.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>PROGRESSIVE-DENSITY MEDIA STRUCTURE</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Multi-layer gradient media stages capture by particle size instead of relying on a single uniform layer: a coarse upstream layer captures large particles in its depth, preventing them from blinding the surface of finer layers downstream, while progressively finer layers toward the outlet capture smaller particles. This structure achieves higher dirt-holding capacity and lower restriction growth over service life than a single-density medium at equivalent efficiency, because contaminant loading is distributed through the depth of the media rather than concentrated at one surface.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>COMPUTATIONAL FLOW ANALYSIS</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Computational Fluid Dynamics (CFD) simulates the velocity field, pressure distribution, and particle trajectories through a candidate media geometry before a physical sample is produced. A CFD model solves the governing flow equations across a discretized mesh of the media structure, or an equivalent porous-media approximation, to predict where flow will concentrate, where local velocity could re-entrain captured particles, and how pressure drop will evolve as the media loads with contaminant. This allows a media design to be screened against multiple candidate fiber structures and layer configurations computationally, narrowing the field before physical testing under the applicable standard confirms performance.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>DATA-DRIVEN CAPACITY PREDICTION</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Because dirt-holding capacity depends on the interaction of several media parameters at once — fiber diameter distribution, grammage, layer count, and the particle size distribution of the target test dust — statistical and machine-learning models trained on prior test results can predict how a new media configuration will perform before that configuration is physically tested. This narrows the design space requiring physical validation, but does not replace it: published efficiency, restriction, and capacity figures always trace back to physical testing under the applicable standard.
+            </p>
+          </motion.div>
         </div>
       </section>
 

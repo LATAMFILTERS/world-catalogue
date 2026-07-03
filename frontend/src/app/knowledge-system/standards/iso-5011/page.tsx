@@ -231,6 +231,7 @@ export default function ISO5011Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/iso-5011',
         headline: 'ISO 5011 — Air Filter Element Test Standard for Internal Combustion Engines and Compressors',
         description: 'ISO 5011 specifies test methods for evaluating air intake filter element performance including initial filtration efficiency, dust capacity, and structural integrity under collapse testing. Defines standardised procedures for measuring and comparing air filter element performance in internal combustion engines and industrial compressors.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

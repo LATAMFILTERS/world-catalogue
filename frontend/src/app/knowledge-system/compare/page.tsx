@@ -208,6 +208,7 @@ export default function ComparisonHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/compare',
         headline: 'System vs Commodity Thinking',
         description: 'Reframes industrial filtration evaluation from product-based commodity selection to system-level contamination control strategy, covering OEM comparison, filter evaluation frameworks, and total cost of ownership analysis.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

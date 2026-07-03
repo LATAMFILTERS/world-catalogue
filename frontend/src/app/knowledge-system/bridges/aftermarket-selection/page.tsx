@@ -387,10 +387,11 @@ export default function AftermarketSelectionPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges/aftermarket-selection',
         headline: 'Aftermarket Filter Selection Strategy',
         description: 'Technical framework for evaluating aftermarket filtration options using system-level contamination control criteria—ISO 16889 Beta ratios, dirt capacity, and bypass thresholds—when warranty has expired or OEM is optional.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['aftermarket filter selection', 'ISO 16889', 'Beta ratio', 'filter evaluation', 'contamination control', 'OEM alternative', 'asset protection', 'industrial filtration'],
         about: { '@type': 'Thing', name: 'Aftermarket Filter Selection Strategy', description: 'Methodology for selecting aftermarket industrial filters based on verified ISO 16889 performance and contamination control metrics.' },
