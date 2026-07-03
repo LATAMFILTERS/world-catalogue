@@ -18,6 +18,7 @@ const NAV_COLUMNS = [
     title: 'COMPANY',
     links: [
       { label: 'About Us', href: '/about', external: false },
+      { label: 'Our Philosophy', href: '/about/philosophy', external: false },
       { label: 'Industries', href: '/industries', external: false },
       { label: 'Protection Systems', href: '/systems', external: false },
       { label: 'Distributors', href: '/distributors', external: false },

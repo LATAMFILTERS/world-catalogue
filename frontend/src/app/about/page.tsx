@@ -500,6 +500,7 @@ export default function AboutPage() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '1rem' }}>
               {[
+                { label: 'OUR PHILOSOPHY', desc: 'The official engineering philosophy and 7 guiding principles of ELIMFILTERS', href: '/about/philosophy', tag: 'DOCTRINE' },
                 { label: 'THE SCIENCE', desc: 'Why contamination destroys industrial assets — the physics and the data', href: '/knowledge-system/science', tag: 'KNOWLEDGE' },
                 { label: 'TECHNOLOGIES', desc: '10 proprietary technologies, each mapped to a failure mechanism', href: '/technologies', tag: 'PORTFOLIO' },
                 { label: 'KNOWLEDGE SYSTEM', desc: '30+ industrial contamination and asset protection documents', href: '/knowledge-system', tag: 'LIBRARY' },
