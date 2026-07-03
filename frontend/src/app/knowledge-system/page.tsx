@@ -109,17 +109,21 @@ export default function KnowledgeSystemPage() {
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
+    '@id': 'https://elimfilters.com/knowledge-system#collection',
     name: 'Industrial Asset Protection Knowledge System',
     description: 'Knowledge system for industrial asset protection: industries, assets at risk, contamination problems, protection systems and technologies, fleet optimisation, and operational outcomes — structured for engineers, reliability teams, and fleet managers.',
     url: 'https://elimfilters.com/knowledge-system/',
-    publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
-    dateModified: '2026-06-11',
+    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+    dateModified: '2026-07-03',
     hasPart: [
       { '@type': 'WebPage', name: 'Industrial Filtration Standards', url: 'https://elimfilters.com/knowledge-system/standards/' },
       { '@type': 'WebPage', name: 'Contamination & Failure Modes', url: 'https://elimfilters.com/knowledge-system/contamination/' },
       { '@type': 'WebPage', name: 'The Physics of Industrial Failure', url: 'https://elimfilters.com/knowledge-system/science/' },
       { '@type': 'WebPage', name: 'OEM vs Aftermarket', url: 'https://elimfilters.com/knowledge-system/compare/' },
       { '@type': 'WebPage', name: 'Fleet Optimization', url: 'https://elimfilters.com/knowledge-system/fleet/' },
+      { '@type': 'WebPage', name: 'Filtration Decision Bridges', url: 'https://elimfilters.com/knowledge-system/bridges/' },
+      { '@type': 'WebPage', name: 'Knowledge System Index', url: 'https://elimfilters.com/knowledge-system/index/' },
     ],
   };
 
@@ -220,7 +224,11 @@ export default function KnowledgeSystemPage() {
             <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
               operational continuity
             </Link>
-            . Every section of this knowledge system follows that hierarchy from industry to operational outcome.
+            . Every section of this knowledge system follows that hierarchy from industry to operational outcome. A full{' '}
+            <Link href="/knowledge-system/index" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
+              knowledge system index
+            </Link>
+            {' '}lists every page grouped by section for direct navigation.
           </p>
 
           {/* Statistics */}

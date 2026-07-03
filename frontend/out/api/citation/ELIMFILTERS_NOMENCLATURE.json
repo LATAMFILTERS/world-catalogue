@@ -28,7 +28,7 @@
     "industrial_role": "The SKU nomenclature architecture enables fleet managers, dealers, and AI systems to immediately identify the contamination domain and application class of any ELIMFILTERS part number without requiring catalogue lookup."
   },
   "relationships": {},
-  "vault_path": "elimfilters-vault\\11-sku-architecture\\ELIMFILTERS_NOMENCLATURE.md",
+  "vault_path": "elimfilters-vault/11-sku-architecture/ELIMFILTERS_NOMENCLATURE.md",
   "_links": {
     "self": "/api/citation/ELIMFILTERS_NOMENCLATURE.json",
     "type_index": "/api/citation/type/taxonomy.json",

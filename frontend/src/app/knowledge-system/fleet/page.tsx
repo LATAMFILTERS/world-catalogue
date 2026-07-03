@@ -204,6 +204,19 @@ export default function FleetHubPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/fleet#collection',
+        name: 'Fleet Optimization',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: FLEET_TOPICS.map((f) => ({
+          '@type': 'WebPage',
+          name: f.title,
+          description: f.description,
+          url: `https://elimfilters.com${f.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },

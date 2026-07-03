@@ -229,6 +229,19 @@ export default function ContaminationHubPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination#collection',
+        name: 'Industrial Contamination & Failure Modes',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: CONTAMINATION_TYPES.map((c) => ({
+          '@type': 'WebPage',
+          name: c.title,
+          description: c.description,
+          url: `https://elimfilters.com${c.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },

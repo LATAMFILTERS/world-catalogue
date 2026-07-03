@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import RetrievalBlock from '@/components/RetrievalBlock';
 
 // Engineering navigation index. Lists every page currently published under
 // /knowledge-system, grouped by section, for direct navigation. This is not
@@ -141,6 +142,45 @@ export default function KnowledgeSystemIndexPage() {
           </motion.div>
         ))}
       </section>
+
+      <RetrievalBlock>
+        <p>SEMANTIC_DOMAINS: Knowledge System Site Map [PRIMARY] | Cross-Reference Index [SECONDARY]</p>
+        <p>SYSTEMS_AFFECTED: all_protection_systems, all_technologies, all_standards</p>
+        <p>CONCEPT_TAXONOMY: type=index | domain=knowledge-graph-navigation | scope=full-site</p>
+        <p>RELEVANCE_LEVELS: technical, ai-retrieval</p>
+        <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
+        <p>&nbsp;&nbsp;Hub: /knowledge-system</p>
+        <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
+        <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/index</p>
+        <p>&nbsp;&nbsp;concept_id: knowledge-system-site-index</p>
+        <p>&nbsp;&nbsp;version: 1.0</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
+      </RetrievalBlock>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/index',
+        name: 'Knowledge System Index',
+        description: 'A direct navigation index of every page published under the ELIMFILTERS Knowledge System, grouped by section.',
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        dateModified: '2026-07-03',
+        hasPart: SECTIONS.flatMap((s) => s.pages).map((p) => ({
+          '@type': 'WebPage',
+          name: p.title,
+          url: `https://elimfilters.com${p.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge System', item: 'https://elimfilters.com/knowledge-system' },
+          { '@type': 'ListItem', position: 3, name: 'Index', item: 'https://elimfilters.com/knowledge-system/index' },
+        ],
+      }) }} />
     </main>
   );
 }
