@@ -240,6 +240,86 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   }
 });
 
+// ─── Chat API (Groq / Llama-3.3-70b) ────────────────────────────────────────
+const _chatSessions = new Map(); // sessionId → { count, lastActivity }
+const CHAT_LIMIT = 5;
+const CHAT_SYSTEM_PROMPT = `You are the ELIMFILTERS Asset Protection Assistant, an expert in industrial filtration engineering. Help engineers and fleet managers with contamination control, ISO standards, and asset protection.
+
+Knowledge base:
+- ISO 16889: Beta ratio / multi-pass filter test for hydraulic elements. β10(c)=200 → 99.5% efficiency.
+- ISO 4406: Cleanliness codes (Range Numbers). 16/14/11 = servo valves; 18/16/13 = cylinders.
+- ISO 5011 / SAE J726: Air intake filter testing — efficiency, dust capacity, collapse integrity.
+- ISO 8573: Compressed air purity classes (particles, water, oil).
+- ISO 11155 / DIN 71220: Cabin air filtration — PM10, allergens, operator health.
+- ASTM D6304 / ISO 12937: Karl Fischer water content in fuel.
+Technologies: MACROCORE (air intake), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTEPORE (fuel HPCR), HYDROCORE (fuel water sep), TURBOCORE (fuel 3-stage), MICROKAPPA (cabin air), DRYCORE (compressed air), THERMACORE (cooling), DURATECH (fleet kits).
+Contamination → failure chains: particles → abrasive wear → clearance reduction → seizure. Water in diesel → injector stiction → HPCR failure. Varnish → valve stiction → control loss.
+
+Rules: Technical and precise. Use ISO codes, micron ratings, Beta ratios. No marketing language. Max 3 paragraphs. Respond in the same language as the user.`;
+
+// Cleanup sessions older than 24 h (run every hour)
+setInterval(() => {
+  const cutoff = Date.now() - 86400000;
+  for (const [id, s] of _chatSessions) {
+    if (s.lastActivity < cutoff) _chatSessions.delete(id);
+  }
+}, 3600000);
+
+app.post('/api/chat', searchLimiter, async (req, res) => {
+  try {
+    const { message, sessionId } = req.body || {};
+    if (!message || typeof message !== 'string' || !sessionId || typeof sessionId !== 'string') {
+      return res.status(400).json({ error: 'Missing message or sessionId' });
+    }
+    if (message.length > 1000) return res.status(400).json({ error: 'Message too long' });
+
+    const session = _chatSessions.get(sessionId) || { count: 0, lastActivity: Date.now() };
+    if (session.count >= CHAT_LIMIT) {
+      return res.json({ limitReached: true, messagesLeft: 0 });
+    }
+    session.count++;
+    session.lastActivity = Date.now();
+    _chatSessions.set(sessionId, session);
+    const messagesLeft = CHAT_LIMIT - session.count;
+
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) {
+      console.error('[chat] GROQ_API_KEY not set');
+      return res.status(503).json({ error: 'Chat service not configured' });
+    }
+
+    const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          { role: 'system', content: CHAT_SYSTEM_PROMPT },
+          { role: 'user', content: message.trim() },
+        ],
+        max_tokens: 450,
+        temperature: 0.25,
+      }),
+    });
+
+    if (!groqRes.ok) {
+      const err = await groqRes.text();
+      console.error('[chat] Groq error:', groqRes.status, err.slice(0, 200));
+      return res.status(502).json({ error: 'LLM service error' });
+    }
+
+    const data = await groqRes.json();
+    const reply = data.choices?.[0]?.message?.content?.trim();
+    if (!reply) throw new Error('Empty Groq response');
+
+    return res.json({ reply, messagesLeft, limitReached: messagesLeft === 0 });
+  } catch (err) {
+    console.error('[chat]', err.message);
+    return res.status(500).json({ error: 'Internal error' });
+  }
+});
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) {
