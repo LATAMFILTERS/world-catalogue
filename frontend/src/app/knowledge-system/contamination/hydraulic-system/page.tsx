@@ -339,10 +339,11 @@ export default function HydraulicSystemContaminationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/hydraulic-system',
         headline: 'Hydraulic System Contamination',
         description: 'Particle and water contamination in hydraulic systems causes proportional valve stiction, pump swashplate failure, and fluid varnish formation. Complete system failure occurs within 200-500 operating hours in severely contaminated baseline conditions above ISO 16889 22/20/18.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'kidney loop filtration'],
         about: { '@type': 'Thing', name: 'Hydraulic System Contamination', description: 'Particle contamination failure mechanism in hydraulic systems causing valve spool stiction, orifice blockage, and fluid varnish that degrades system response and availability.' },

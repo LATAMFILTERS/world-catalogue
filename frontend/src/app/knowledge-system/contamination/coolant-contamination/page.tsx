@@ -351,6 +351,7 @@ export default function CoolantContaminationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/coolant-contamination',
         headline: 'Coolant System Contamination',
         description: 'Silicate depletion, cavitation erosion, and electrolytic corrosion failure mechanisms in engine cooling systems. Cylinder liner cavitation creates 70-140 MPa pressure transients causing liner perforation within 3,000-8,000 hours without inhibitor protection.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

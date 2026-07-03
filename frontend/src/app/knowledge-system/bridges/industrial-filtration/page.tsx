@@ -511,6 +511,72 @@ export default function IndustrialFiltrationPage() {
           </div>
         </motion.section>
 
+        {/* Commodity vs System Evaluation Matrix */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{ marginBottom: '4rem' }}
+        >
+          <h2 style={{
+            fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+            fontWeight: 700,
+            fontFamily: 'Titillium Web, sans-serif',
+            marginBottom: '1.5rem',
+            lineHeight: 1.2,
+          }}>
+            Commodity vs System Evaluation Matrix
+          </h2>
+          <p style={{
+            fontSize: '1rem',
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '1.5rem',
+            textAlign: 'justify',
+          }}>
+            The commodity approach and the system approach ask different questions of the same filter. The table below contrasts the evaluation criteria each approach uses.
+          </p>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Inter, sans-serif', fontSize: '0.85rem' }}>
+              <thead>
+                <tr>
+                  <th style={{ textAlign: 'left', padding: '0.75rem 1rem', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.08em', borderBottom: '1px solid rgba(255,241,45,0.3)' }}>Evaluation Criterion</th>
+                  <th style={{ textAlign: 'left', padding: '0.75rem 1rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.08em', borderBottom: '1px solid rgba(255,241,45,0.3)' }}>Commodity Evaluation</th>
+                  <th style={{ textAlign: 'left', padding: '0.75rem 1rem', color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.08em', borderBottom: '1px solid rgba(255,241,45,0.3)' }}>System-Level Evaluation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { criterion: 'Primary decision input', commodity: 'Purchase price', system: 'Target cleanliness code (ISO 4406) required by the protected component' },
+                  { criterion: 'Filter performance metric', commodity: 'Micron rating on the label', system: 'Beta ratio at the relevant particle size (ISO 16889)' },
+                  { criterion: 'Fit verification', commodity: 'Dimensional / part-number match to OEM', system: 'Dimensional match plus verified Beta ratio and dirt-holding capacity for the application flow rate' },
+                  { criterion: 'Service interval basis', commodity: 'Fixed calendar or hour interval from the manual', system: 'Condition-based: measured differential pressure trend and periodic cleanliness sampling' },
+                  { criterion: 'Bypass valve consideration', commodity: 'Assumed adequate if the element fits', system: 'Bypass pressure verified against the protected component’s clearance sensitivity' },
+                  { criterion: 'Cost basis compared', commodity: 'Filter unit price only', system: 'Filter price plus downtime risk, component wear rate, and fluid/oil life' },
+                ].map((row) => (
+                  <tr key={row.criterion}>
+                    <td style={{ padding: '0.65rem 1rem', color: 'rgba(255,255,255,0.85)', borderBottom: '1px solid rgba(255,255,255,0.06)', fontWeight: 600 }}>{row.criterion}</td>
+                    <td style={{ padding: '0.65rem 1rem', color: 'rgba(255,255,255,0.5)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>{row.commodity}</td>
+                    <td style={{ padding: '0.65rem 1rem', color: 'rgba(255,255,255,0.75)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>{row.system}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{
+            fontSize: '0.9rem',
+            lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.55)',
+            marginTop: '1.25rem',
+            textAlign: 'justify',
+          }}>
+            This matrix is developed in full in{' '}
+            <Link href="/knowledge-system/compare/evaluation-framework" style={{ color: '#FFF12D', textDecoration: 'underline' }}>the Filter Evaluation Framework</Link>
+            {' '}and{' '}
+            <Link href="/knowledge-system/compare/system-vs-commodity" style={{ color: '#FFF12D', textDecoration: 'underline' }}>System vs Commodity Filtration</Link>.
+          </p>
+        </motion.section>
+
         {/* POINT 6: Contamination → Standards → Technology Framework */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}

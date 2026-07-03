@@ -351,6 +351,7 @@ export default function CompressedAirContaminationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/compressed-air-contamination',
         headline: 'Compressed Air Contamination',
         description: 'Oil carryover (1-25 mg/m³), moisture condensation, and particulate contamination in compressed air systems per ISO 8573-1 classification. Oil contamination of desiccant dryer beds reduces water adsorption capacity 50-80%.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
