@@ -213,6 +213,19 @@ export default function StandardsHubPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/standards#collection',
+        name: 'Industrial Filtration Standards',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: FILTRATION_SYSTEMS.map((s) => ({
+          '@type': 'WebPage',
+          name: s.title,
+          description: s.description,
+          url: `https://elimfilters.com${s.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },

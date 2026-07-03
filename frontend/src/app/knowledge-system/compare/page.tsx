@@ -219,6 +219,19 @@ export default function ComparisonHubPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/compare#collection',
+        name: 'System vs Commodity Filtration Thinking',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: FRAMEWORK_SECTIONS.map((f) => ({
+          '@type': 'WebPage',
+          name: f.title,
+          description: f.description,
+          url: `https://elimfilters.com${f.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },

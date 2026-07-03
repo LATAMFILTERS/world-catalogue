@@ -175,6 +175,19 @@ export default function BridgesHubPage() {
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges#collection',
+        name: 'Filtration Decision Bridges',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: BRIDGE_PAGES.map((b) => ({
+          '@type': 'WebPage',
+          name: b.title,
+          description: b.description,
+          url: `https://elimfilters.com${b.href}`,
+        })),
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
