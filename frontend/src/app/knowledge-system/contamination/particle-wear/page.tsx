@@ -337,7 +337,7 @@ export default function ParticleWearPage() {
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
-        keywords: ['particle wear', 'engine contamination', 'abrasive wear', 'ISO 4406', 'wear debris analysis', 'MACROCORE', 'NANOFORCE', 'DURATECH', 'bearing wear', 'engine filtration'],
+        keywords: ['particle wear', 'engine contamination', 'abrasive wear', 'ISO 4406', 'wear debris analysis', 'MACROCORE', 'SYNTRAX', 'NANOFORCE', 'bearing wear', 'engine filtration'],
         about: { '@type': 'Thing', name: 'Particle Wear in Engines', description: 'Abrasive wear mechanism in engines caused by particle contamination in lube oil and combustion air, resulting in bearing surface damage and accelerated component failure.' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -368,7 +368,7 @@ export default function ParticleWearPage() {
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, SYNTRAX, NANOFORCE</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/particle-wear</p>
