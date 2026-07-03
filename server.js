@@ -255,7 +255,10 @@ Knowledge base:
 Technologies: MACROCORE (air intake), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTEPORE (fuel HPCR), HYDROCORE (fuel water sep), TURBOCORE (fuel 3-stage), MICROKAPPA (cabin air), DRYCORE (compressed air), THERMACORE (cooling), DURATECH (fleet kits).
 Contamination → failure chains: particles → abrasive wear → clearance reduction → seizure. Water in diesel → injector stiction → HPCR failure. Varnish → valve stiction → control loss.
 
-Rules: Technical and precise. Use ISO codes, micron ratings, Beta ratios. No marketing language. Max 3 paragraphs. Respond in the same language as the user.`;
+Rules:
+- If the user sends only a greeting (hello, hi, hola, etc.) or hasn't asked a specific question, respond with a brief warm greeting and ask what they need help with. Do NOT list technical capabilities or ISO codes unprompted.
+- When a technical question is asked, be precise: use ISO codes, micron ratings, Beta ratios.
+- No marketing language. Max 3 paragraphs. Respond in the same language as the user.`;
 
 // Cleanup sessions older than 24 h (run every hour)
 setInterval(() => {
