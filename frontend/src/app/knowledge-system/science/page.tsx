@@ -239,12 +239,13 @@ export default function SciencePage() {
       'Bearing life decreases 20× when fluid contamination rises from ISO 4406 14/12/09 to ≥22. The physics of how particles, water, and heat destroy industrial assets — and the contamination control science that prevents it.',
     author: { '@type': 'Organization', name: 'ELIMFILTERS' },
     publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
-    dateModified: '2026-06-11',
+    dateModified: '2026-07-03',
     keywords: [
       'industrial filtration', 'contamination control', 'ISO 4406', 'ISO 16889',
       'bearing life', 'particle wear', 'hydraulic contamination', 'asset protection',
       'filtration physics', 'wear mechanisms', 'L10 bearing life', 'abrasive wear',
-      'filter efficiency', 'Beta ratio',
+      'filter efficiency', 'Beta ratio', 'Darcy\'s Law pressure drop',
+      'progressive density gradient media', 'computational fluid dynamics filtration',
     ],
     about: {
       '@type': 'Thing',
@@ -690,12 +691,54 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 10 — SYSTEMS INTEGRATION */}
+      {/* 10 — MEDIA ENGINEERING & COMPUTATIONAL DESIGN */}
+      <section id="media-engineering" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2.5rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
+              10 / MEDIA ENGINEERING &amp; COMPUTATIONAL DESIGN
+            </p>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '0.75rem' }}>
+              How Filter Media Is Modeled Before It Is Manufactured
+            </h2>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>PRESSURE DROP MODELING</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Flow through a porous filter medium follows Darcy&apos;s Law: ΔP = µ × Q × L / (k × A), where pressure drop (ΔP) scales with fluid viscosity (µ), flow rate (Q), and media thickness (L), and scales inversely with permeability (k) and flow area (A). Permeability is the primary design variable a media engineer controls through fiber diameter, packing density, and layer structure. Denser media raises particle capture efficiency but lowers permeability, which raises ΔP at a given flow rate — a trade-off that has to be resolved for each application&apos;s target flow, efficiency, and service-life requirements before a physical prototype is built.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>PROGRESSIVE-DENSITY MEDIA STRUCTURE</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Multi-layer gradient media stages capture by particle size instead of relying on a single uniform layer: a coarse upstream layer captures large particles in its depth (preventing them from blinding the surface of finer layers downstream), while progressively finer layers toward the outlet capture smaller particles. This structure achieves higher dirt-holding capacity and lower restriction growth over service life than a single-density medium at equivalent efficiency, because contaminant loading is distributed through the depth of the media rather than concentrated at one surface. MACROCORE&apos;s Progressive Density Gradient architecture and SYNTRAX&apos;s multi-layer lubrication media both apply this structural principle, tuned to their respective particle size distributions and flow regimes.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>COMPUTATIONAL FLOW ANALYSIS</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Computational Fluid Dynamics (CFD) simulates the velocity field, pressure distribution, and particle trajectories through a candidate media geometry before a physical sample is produced. A CFD model solves the Navier-Stokes equations across a discretized mesh of the media structure (or an equivalent porous-media approximation) to predict where flow will concentrate, where local velocity will be high enough to re-entrain captured particles, and how pressure drop will evolve as the media loads with contaminant. This lets a media design be screened against multiple candidate fiber structures and layer configurations computationally, narrowing the field before physical testing under ISO 5011 (air) or ISO 16889 (liquid) protocols confirms performance.
+            </p>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,241,45,0.5)', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>DATA-DRIVEN CAPACITY PREDICTION</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'justify' }}>
+              Because dirt-holding capacity depends on the interaction of several media parameters at once — fiber diameter distribution, grammage (media mass per unit area), layer count, and the particle size distribution of the target test dust — statistical and machine-learning models trained on prior ISO 5011 and ISO 16889 test results can predict how a new media configuration will perform before that configuration is physically tested. This narrows the design space that requires physical validation, but does not replace it: published efficiency, restriction, and capacity figures always trace back to physical testing under the applicable standard, consistent with the citation discipline established on this page for the L10 bearing life model (ISO 281:2007 / SKF General Catalogue 6000 EN).
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 11 — SYSTEMS INTEGRATION */}
       <section id="systems-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              10 / SYSTEMS INTEGRATION
+              11 / SYSTEMS INTEGRATION
             </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Filtration System Domains
@@ -725,12 +768,12 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 11 — INDUSTRY INTEGRATION */}
+      {/* 12 — INDUSTRY INTEGRATION */}
       <section id="industry-integration" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '2rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              11 / INDUSTRY INTEGRATION
+              12 / INDUSTRY INTEGRATION
             </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Industrial Sectors Where Failure Physics Apply
@@ -761,12 +804,12 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 12 — FAQ */}
+      {/* 13 — FAQ */}
       <section id="faq" style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', background: 'rgba(255,241,45,0.015)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ marginBottom: '3rem' }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.75rem' }}>
-              12 / TECHNICAL QUESTIONS
+              13 / TECHNICAL QUESTIONS
             </p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.3rem, 3vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.01em' }}>
               Engineering Q&amp;A — Science and Business Impact
@@ -789,11 +832,11 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 13 — INTERNAL KNOWLEDGE LINKS */}
+      {/* 14 — INTERNAL KNOWLEDGE LINKS */}
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'rgba(255,241,45,0.6)', marginBottom: '2rem' }}>
-            13 / INTERNAL KNOWLEDGE LINKS
+            14 / INTERNAL KNOWLEDGE LINKS
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1rem' }}>
             {[
@@ -820,12 +863,12 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* 14 — STRUCTURED DATA LAYER */}
+      {/* 15 — STRUCTURED DATA LAYER */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaTechArticle) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQPage) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
-      {/* 15 — AUTHORITY SIGNALS / CANONICAL KNOWLEDGE BLOCK */}
+      {/* 16 — AUTHORITY SIGNALS / CANONICAL KNOWLEDGE BLOCK */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 4rem' }}>
         <RetrievalBlock>
           <p>CANONICAL_KNOWLEDGE_BLOCK: The Physics of Industrial Failure — The Science of Asset Protection™</p>
@@ -844,8 +887,8 @@ export default function SciencePage() {
           <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
           <p>source: elimfilters.com/knowledge-system/science</p>
           <p>concept: The Physics of Industrial Failure — Asset Protection Science</p>
-          <p>version: 3.0</p>
-          <p>last_updated: 2026-06-11</p>
+          <p>version: 3.1</p>
+          <p>last_updated: 2026-07-03</p>
         </RetrievalBlock>
       </div>
     </main>
