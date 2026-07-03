@@ -249,9 +249,12 @@ export default function VarnishFormationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/varnish-formation',
         'headline': 'Varnish Formation in Hydraulic Systems — Contamination Case Study',
         'description': 'Thermal oxidation of hydraulic fluid above 60°C produces varnish deposits on servo valve spools, causing spool stiction and flow control failure. ASTM D7527 MPC monitoring provides 200–500 hour advance warning.',
-        'author': { '@type': 'Organization', 'name': 'ELIMFILTERS' },
+        'author': { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', 'name': 'ELIMFILTERS' },
+        'publisher': { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', 'name': 'ELIMFILTERS' },
+        'dateModified': '2026-07-03',
         'keywords': ['varnish formation', 'ASTM D7527', 'membrane patch colorimetry', 'servo valve stiction', 'hydraulic fluid oxidation', 'MPC delta-E'],
         'about': { '@type': 'Thing', 'name': 'Varnish Formation', 'description': 'Thermal oxidation mechanism producing insoluble deposits on hydraulic servo valve surfaces' },
         'mentions': {

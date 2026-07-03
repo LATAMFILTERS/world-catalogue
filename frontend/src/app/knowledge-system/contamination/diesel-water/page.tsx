@@ -330,10 +330,11 @@ export default function DieselWaterContaminationPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/diesel-water',
         headline: 'Diesel Water Contamination',
         description: 'Water contamination in diesel fuel causes injector stiction, microbial growth, and fuel system corrosion. Above 500 ppm water concentration, microbial colonies establish at the fuel-water interface, and above 1,000 ppm visible biomass accumulation occurs within days.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
         about: { '@type': 'Thing', name: 'Diesel Water Contamination', description: 'Water ingress failure mechanism in diesel fuel systems causing injector precision degradation, corrosion, and microbial colonization through atmospheric moisture, condensation, and handling.' },

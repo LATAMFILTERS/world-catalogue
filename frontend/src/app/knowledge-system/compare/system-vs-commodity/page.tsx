@@ -448,10 +448,11 @@ export default function SystemVsCommodityPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/compare/system-vs-commodity',
         headline: 'System vs Commodity Filtration',
         description: 'Why filtration performance is a system design problem, not a product commodity selection problem. Equipment reliability is determined by contamination control effectiveness, not filter brand choice.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'system filtration', 'commodity filtration', 'ISO 16889', 'OEM specification', 'equipment reliability'],
         about: { '@type': 'Thing', name: 'System vs Commodity Filtration', description: 'Framework distinguishing system-level contamination control from commodity filter product selection, showing why OEM specification compliance does not equal equipment reliability.' },

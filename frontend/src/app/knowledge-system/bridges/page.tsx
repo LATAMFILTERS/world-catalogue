@@ -224,10 +224,11 @@ export default function BridgesHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges',
         headline: 'From Product Selection to System Design',
         description: 'Decision bridge hub connecting product-based filtration selection to system-level contamination control design—covering OEM requirements, aftermarket selection, and fleet standardization strategies.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['filtration decision bridge', 'OEM filter requirements', 'aftermarket filter selection', 'fleet filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
         about: { '@type': 'Thing', name: 'Filtration Decision Bridges', description: 'Bridge framework connecting product-based filtration decisions to system-level contamination control across OEM, aftermarket, and fleet operation contexts.' },

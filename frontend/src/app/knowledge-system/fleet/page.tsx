@@ -209,10 +209,11 @@ export default function FleetHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/fleet',
         headline: 'Fleet Optimization',
         description: 'Operational strategies for reducing unplanned fleet downtime, optimizing fuel consumption, and modeling filtration investment against total lifecycle cost through system-level contamination control.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['fleet optimization', 'fleet downtime reduction', 'fuel efficiency', 'total cost of ownership', 'filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
         about: { '@type': 'Thing', name: 'Fleet Optimization', description: 'Operational strategies for industrial fleet management using system-level filtration to reduce downtime, improve fuel efficiency, and optimize total cost of ownership.' },

@@ -559,10 +559,11 @@ export default function TotalCostOwnershipPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/fleet/total-cost-ownership',
         headline: 'Total Cost of Ownership in Filtration',
         description: 'Filter element unit cost represents a fraction of the economic decision. The complete TCO model accounts for service labor, component longevity, fluid waste, downtime exposure, and the quantifiable value of failures that did not occur.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'total cost of ownership', 'filtration TCO', 'ISO 16889', 'maintenance economics', 'equipment lifecycle cost'],
         about: { '@type': 'Thing', name: 'Filtration Total Cost of Ownership', description: 'Lifecycle economic model for industrial filtration programs encompassing filter procurement, service labor, component longevity, and avoided failure costs.' },

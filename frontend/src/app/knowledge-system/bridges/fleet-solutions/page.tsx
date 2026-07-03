@@ -503,10 +503,11 @@ export default function FleetSolutionsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges/fleet-solutions',
         headline: 'Fleet Filtration Solutions Framework',
         description: 'Operational framework for designing standardized contamination control strategies across multi-equipment fleet operations, covering unified cleanliness targets, supplier qualification, and condition-based maintenance intervals.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['fleet filtration strategy', 'fleet contamination control', 'ISO 4406', 'ISO 16889', 'fleet standardization', 'condition-based maintenance', 'asset protection', 'industrial fleet'],
         about: { '@type': 'Thing', name: 'Fleet Filtration Solutions Framework', description: 'Standardized contamination control strategy for multi-equipment fleet operations reducing downtime through unified cleanliness targets and simplified maintenance logistics.' },

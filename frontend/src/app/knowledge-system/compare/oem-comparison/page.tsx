@@ -446,10 +446,11 @@ export default function OEMComparisonPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/compare/oem-comparison',
         headline: 'OEM vs Aftermarket Analysis',
         description: 'When brand choice matters, and when system design is what actually determines equipment reliability. Factual analysis of OEM filter requirements versus aftermarket alternatives in industrial filtration.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'OEM filters', 'aftermarket filters', 'Donaldson', 'Fleetguard', 'filter brand comparison', 'contamination control', 'ISO 16889'],
         about: { '@type': 'Thing', name: 'OEM vs Aftermarket Filtration Analysis', description: 'Analysis of when OEM filter brand choice is a compliance requirement versus when system-level contamination control design determines equipment reliability.' },
