@@ -1,7 +1,7 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-07-02 (amended)
+Last updated: 2026-07-03 (DD-2026-07-03-006)
 
 ---
 
@@ -147,7 +147,7 @@ CUSTOMER
 | HYDROCORE | HYDROCORE™ | Fuel Cleanliness Protection | VALIDATED |
 | [[SYNTRAX]] | SYNTRAX™ | Lubrication Protection | PUBLIC |
 | [[NANOFORCE]] | NANOFORCE™ | Hydraulic Protection | PUBLIC |
-| THERMACORE | THERMACORE™ | Cooling System Protection | Decision Pending |
+| THERMACORE | THERMACORE™ | Cooling System Protection | PUBLIC PREVIEW |
 | MICROKAPPA | MICROKAPPA™ | Cabin Air Protection | CONCEPT |
 | TURBOCORE | TURBOCORE™ | Fuel Cleanliness Protection | INTERNAL DEVELOPMENT |
 
