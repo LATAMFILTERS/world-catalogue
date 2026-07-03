@@ -13,10 +13,10 @@ const RELATED_PAGES = [
 const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Long-service-life air elements with capacity designed for full service intervals reduce element replacement frequency and labor costs in high-dust environments.' },
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Sub-3µm hydraulic precision filtration extends hydraulic pump and valve service life by maintaining ISO 16889 16/14/11 cleanliness, deferring proportional valve replacement events that represent major maintenance cost items.' },
-  { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration reduces engine reconditioning frequency, extending the interval between major overhauls that represent the largest single maintenance cost events.' },
+  { name: 'DURATECH', slug: 'duratech', role: 'Master kit consolidation with OEM interchangeability lowers per-event service costs through single-source parts supply and standardized service procedures across mixed-model fleets.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: '4-layer AI-calibrated engine lube oil filtration extends drain intervals by maintaining ISO 4406 cleanliness in engine circuits, reducing fluid replacement frequency and associated labor costs.' },
   { name: 'HYDROCORE', slug: 'hydrocore', role: 'Preventing injector damage from water contamination defers injector replacement events that typically cost 800 to 2,500 USD per set for heavy diesel applications.' },
-  { name: 'MICROKAPPA', slug: 'microkappa', role: 'Coolant system contamination control extends coolant service life and prevents thermal system degradation that leads to costly head gasket and heat exchanger failures.' },
+  { name: 'MICROKAPPA', slug: 'microkappa', role: 'Cabin air filtration protects operator health and prevents HVAC evaporator fouling, avoiding climate system service costs in high-dust operations.' },
 ];
 
 const STANDARDS = [

@@ -511,7 +511,7 @@ export default function AftermarketSelectionPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_TECHNOLOGIES</p>
-              <p style={{ margin: '0' }}>MACROCORE, NANOFORCE, SYNTRAX (Aftermarket-equivalent quality), DURATECH (Extended aftermarket lifecycle)</p>
+              <p style={{ margin: '0' }}>MACROCORE (Air intake elements), NANOFORCE (Hydraulic elements), SYNTRAX (Engine lube oil elements), DURATECH (Master kit consolidation with OEM interchangeability)</p>
             </div>
 
             <div>

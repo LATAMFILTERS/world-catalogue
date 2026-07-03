@@ -29,7 +29,7 @@ export default function HydraulicSystemContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS hydraulic filtration technologies provide multi-stage contamination control: NANOFORCE™ main circuit filters achieve ISO 16889 15/13/10 particle removal with synthetic media that resists varnish deposit formation and maintains permeability across service life; 10-micron absolute with beta-10>200 ensures 99%+ capture of particles >10 microns; DURATECH™ return line filters (25-micron) capture gross contamination and prevent tank bottom accumulation, extending kidney-loop filter life 2-3×; HYDROCORE™ water-removal cartridges integrate superabsorbent polymer cores that trap free water and prevent emulsification, reducing water content from 500-1000 ppm to <100 ppm in single-pass operation through offline kidney-loop; integrated desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage filtration (main circuit 10-micron, return line 25-micron, kidney-loop 3-5 micron) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage), reducing commissioning time and cost while achieving sustained cleanliness ISO 16889 16/14/11 throughout equipment operational life.'
+      content: 'ELIMFILTERS hydraulic protection is delivered by NANOFORCE™ multi-layer filtration engineered for high-pressure circuits (200–450 bar sustained pulsation): main circuit elements achieve ISO 4406 cleanliness targets in the 15/13/10 range with media that resists varnish deposit formation and maintains permeability across service life, with Beta ratios verified under ISO 16889 multi-pass testing (β10(c) ≥ 200 corresponds to 99.5% capture at 10 µm). System-level contamination control complements the main circuit element: coarse return-line filtration (typically 25 µm) captures gross contamination and prevents tank bottom accumulation, extending kidney-loop element life 2-3×; offline kidney-loop filtration (3-5 µm) polishes the reservoir independently of duty cycle; desiccant breathers maintain tank air quality while blocking atmospheric moisture and dust. Three-stage architecture (main circuit, return line, kidney loop) enables initial flushing to ISO 4406 15/13/10 within 6-8 hours (versus 16+ hours with single-stage) and sustains target cleanliness throughout equipment operational life.'
     }
   ];
 
@@ -335,7 +335,7 @@ export default function HydraulicSystemContaminationPage() {
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
-        keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'SYNTRAX', 'kidney loop filtration'],
+        keywords: ['hydraulic system contamination', 'valve stiction', 'hydraulic varnish', 'ISO 16889', 'NFPA T2.14', 'hydraulic flushing', 'NANOFORCE', 'kidney loop filtration'],
         about: { '@type': 'Thing', name: 'Hydraulic System Contamination', description: 'Particle contamination failure mechanism in hydraulic systems causing valve spool stiction, orifice blockage, and fluid varnish that degrades system response and availability.' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -1186,7 +1186,7 @@ export default function IndustrialFiltrationPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_TECHNOLOGIES</p>
-              <p style={{ margin: '0' }}>MACROCORE (Particulate capture, 18µm absolute, extends intervals 20-30%) | NANOFORCE (Sub-micron filtration, 1µm efficiency, reduces abrasive wear 40-60%) | SYNTRAX (Synthetic media, extended lifecycle 50-100% longer than cellulose) | DURATECH (High dirt capacity media, extends replacement intervals 35-50%) | THERMACORE (Temperature-resistant media for extreme conditions)</p>
+              <p style={{ margin: '0' }}>MACROCORE (Progressive Density Gradient air intake filtration, 99.9%–99.98% efficiency per ISO 5011) | NANOFORCE (Multi-layer hydraulic filtration for 200–450 bar circuits, servo and proportional valve protection) | SYNTRAX (Multi-layer engine lube oil filtration protecting turbocharger bearings and valve train) | SYNTEPORE (Multi-layer fuel filtration for Common Rail injection systems above 2,000 bar) | HYDROCORE (Fuel water separation, 99.8% efficiency across free, emulsified and dissolved phases)</p>
             </div>
 
             <div>
@@ -1260,8 +1260,8 @@ export default function IndustrialFiltrationPage() {
                 "MACROCORE",
                 "NANOFORCE",
                 "SYNTRAX",
-                "DURATECH",
-                "THERMACORE"
+                "SYNTEPORE",
+                "HYDROCORE"
               ]
             },
             "relatedLink": [

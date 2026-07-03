@@ -19,9 +19,8 @@ const CHALLENGE_IMPACTS = [
 ];
 
 const TECHNOLOGIES = [
-  { name: 'SYNTRAX', slug: 'syntrax', role: 'High-capacity synthetic media targeting varnish precursor particle capture in hydraulic return and kidney-loop circuits, removing agglomerated oxidation products before thermal cycling bakes them onto spool surfaces.' },
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Sub-micron filtration removing 0.1–3µm oxidation products — the particle size range responsible for varnish deposit nucleation on hot servo valve surfaces at 120–180°C.' },
-  { name: 'THERMACORE', slug: 'thermacore', role: 'Thermal management for hydraulic systems maintaining fluid below 60°C — the temperature threshold above which oxidation rate doubles for each 10°C increase.' },
+  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Multi-layer hydraulic filtration removing agglomerated oxidation products from high-pressure circuits — capturing varnish precursor particles before thermal cycling bakes them onto servo and proportional valve spool surfaces.' },
+  { name: 'SYNTRAX', slug: 'syntrax', role: 'Multi-layer engine lubrication filtration intercepting oxidation products and sub-micron contamination in lube oil circuits, where the same thermal-oxidative varnish mechanism deposits on turbocharger bearings and valve train surfaces.' },
 ];
 
 const FAQS = [
@@ -235,7 +234,7 @@ export default function VarnishFormationPage() {
         <p>ASTM D7527: Membrane Patch Colorimetry (MPC) — varnish potential measurement, 200–500 hour advance warning | ASTM D7214: Oxidation stability test for hydraulic fluids | ISO 4406: Cleanliness codes for hydraulic fluid particle monitoring | DIN 51524: Hydraulic fluid specification including oxidation stability requirements</p>
 
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-        <p>SYNTRAX: High-capacity synthetic media capturing varnish precursor particles in hydraulic return and kidney-loop circuits | NANOFORCE: Sub-micron filtration removing 0.1–3µm oxidation products before thermal precipitation | THERMACORE: Thermal management maintaining hydraulic fluid below 60°C oxidation acceleration threshold</p>
+        <p>NANOFORCE: Multi-layer hydraulic filtration capturing varnish precursor particles in high-pressure circuits before thermal precipitation onto valve spool surfaces | SYNTRAX: Multi-layer engine lubrication filtration intercepting oxidation products in lube oil circuits subject to the same thermal-oxidative varnish mechanism</p>
 
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
         <p>Varnish formation is the primary contamination failure mode in high-cycle hydraulic systems operating above 60°C — ASTM D7527 MPC monitoring at 250-hour intervals detects varnish potential 200–500 hours before valve stiction, enabling fluid changeout ($200–$600) rather than valve replacement ($3,000–$15,000 per valve, 4–8 valves per machine) at 15–75x cost differential.</p>
@@ -254,7 +253,7 @@ export default function VarnishFormationPage() {
         'about': { '@type': 'Thing', 'name': 'Varnish Formation', 'description': 'Thermal oxidation mechanism producing insoluble deposits on hydraulic servo valve surfaces' },
         'mentions': {
           'standards': ['ASTM D7527', 'ASTM D7214', 'ISO 4406', 'DIN 51524'],
-          'technologies': ['SYNTRAX', 'NANOFORCE', 'THERMACORE'],
+          'technologies': ['NANOFORCE', 'SYNTRAX'],
           'contaminationModes': ['thermal oxidation', 'spool stiction', 'varnish deposits', 'hydraulic fluid degradation']
         }
       })}} />

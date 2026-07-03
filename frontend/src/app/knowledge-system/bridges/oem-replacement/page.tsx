@@ -705,7 +705,7 @@ export default function OEMReplacementPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>RELATED_TECHNOLOGIES</p>
-              <p style={{ margin: '0' }}>MACROCORE (Specification-equivalent capture), NANOFORCE (Performance enhancement while maintaining spec compliance), SYNTRAX (Media quality matching or exceeding OEM), DURATECH (Extended life within spec)</p>
+              <p style={{ margin: '0' }}>MACROCORE (Air intake elements meeting OEM specification, ISO 5011 verified), NANOFORCE (Hydraulic elements maintaining spec compliance in high-pressure circuits), SYNTRAX (Engine lube oil elements matching or exceeding OEM media specification), DURATECH (Master kit consolidation with OEM interchangeability)</p>
             </div>
 
             <div>

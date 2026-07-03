@@ -12,9 +12,9 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'SYNTEPORE', slug: 'syntepore', role: '3-layer progressive capture with 4µm zero-migration terminal barrier protects HPCR Common Rail injectors (2,000+ bar), preserving spray pattern geometry and injection timing accuracy critical for combustion efficiency.' },
-  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Superabsorbent polymer cores extract free and emulsified water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
+  { name: 'HYDROCORE', slug: 'hydrocore', role: 'Hydrophobic water separation (99.8% across free, emulsified and dissolved phases) extracts water from fuel before it reaches injection circuits, preventing combustion irregularities.' },
   { name: 'MACROCORE', slug: 'macrocore', role: 'Progressive density gradient air filtration ensures combustion air-fuel ratio accuracy by maintaining intake volumetric efficiency throughout the filter service life.' },
-  { name: 'DURATECH', slug: 'duratech', role: 'Engine oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
+  { name: 'SYNTRAX', slug: 'syntrax', role: 'Multi-layer engine lube oil filtration suppresses internal friction increase from wear particle accumulation, preserving mechanical efficiency at the friction interface level.' },
 ];
 
 const STANDARDS = [

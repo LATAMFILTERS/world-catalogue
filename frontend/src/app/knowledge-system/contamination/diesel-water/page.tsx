@@ -29,7 +29,7 @@ export default function DieselWaterContaminationPage() {
     },
     {
       title: 'Related Technologies',
-      content: 'ELIMFILTERS fuel filtration technologies address water contamination through complementary mechanisms: MACROCORE™ progressive density gradient architecture captures water droplets in the coarse outer zone through coalescent action, channeling free water into the lowest point of the filter housing for gravity separation and removal via drain valve; NANOFORCE™ synthetic media actively rejects water molecules through polarity-differential absorption, allowing hydrocarbon fuel to pass while accumulating water in a gel matrix that can be back-flushed during maintenance; HYDROCORE™ series incorporates integrated water-removal cartridges with superabsorbent polymer cores that encapsulate free water molecules, preventing emulsification and blocking microbial access to aqueous microhabitats. When specified as primary-secondary filter pairs, these technologies reduce water content from raw fuel (500-2000 ppm) to finished fuel specification (<100 ppm) in single-pass operation.'
+      content: 'ELIMFILTERS fuel filtration technologies address water contamination through complementary mechanisms: HYDROCORE™ hydrophobic water separation achieves 99.8% efficiency across all three water phases — free, emulsified and dissolved — intercepting water before it reaches the injection circuit and channeling separated water to the housing drain for removal; SYNTEPORE™ progressive multi-layer synthetic media provides the final particulate barrier for Common Rail injectors operating above 2,000 bar, where water-degraded fuel lubricity and hard particles combine to erode injector seats and control valves; TURBOCORE™ Series FH three-stage graduated protection separates water, captures sediment and polishes sub-micron contamination in sequence for high-demand fuel systems with continuous water ingress from storage or transfer. When specified as a staged system, these technologies reduce water content from contaminated fuel (500-2000 ppm) toward finished fuel specification (<100 ppm) before the fuel reaches the injection circuit.'
     }
   ];
 
@@ -335,7 +335,7 @@ export default function DieselWaterContaminationPage() {
         author: { '@type': 'Organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
-        keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'MACROCORE', 'NANOFORCE'],
+        keywords: ['diesel water contamination', 'fuel water removal', 'ASTM D6304', 'ISO 12937', 'Karl Fischer titration', 'injector stiction', 'microbial growth fuel', 'HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
         about: { '@type': 'Thing', name: 'Diesel Water Contamination', description: 'Water ingress failure mechanism in diesel fuel systems causing injector precision degradation, corrosion, and microbial colonization through atmospheric moisture, condensation, and handling.' },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

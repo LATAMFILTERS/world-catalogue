@@ -112,72 +112,72 @@ const TECHNOLOGIES = [
   {
     code: 'MACROCORE™',
     href: '/technologies/macrocore',
-    failureMechanism: 'High particle population (ISO 4406 ≥18/16/13) causing bearing abrasion',
-    protection: 'Primary particulate capture at 18µm absolute in engine lube and hydraulic systems. Reduces cleanliness code by 2–4 ISO steps, extending L10 bearing life 2–5×.',
-    system: 'Engine | Hydraulic | Lube',
+    failureMechanism: 'Airborne silica and mineral dust ingestion causing abrasive cylinder and ring wear',
+    protection: 'Progressive Density Gradient air intake filtration achieving 99.9%–99.98% interception efficiency (ISO 5011). Three-zone media architecture captures coarse dust in depth and fine particles at the downstream barrier without the restriction penalty of uniform-density media.',
+    system: 'Air Intake | Engine Protection',
   },
   {
     code: 'MICROKAPPA™',
     href: '/technologies/microkappa',
-    failureMechanism: 'Fine particle wear at 4–10µm causing servo valve spool erosion and stiction',
-    protection: 'Sub-10µm particle capture for precision hydraulic and fuel injection systems. Addresses the critical particle population driving proportional valve failure at 1–3µm clearance.',
-    system: 'Hydraulic | Fuel | Precision Systems',
+    failureMechanism: 'Operator exposure to PM2.5/PM10 particulate, allergens and odors inside vehicle cabins',
+    protection: 'Three-mechanism cabin air filtration: electrostatic capture plus activated carbon plus HEPA media (ISO 11155, DIN 71220). Protects occupant health in heavy-duty and passenger vehicle cabins operating in high-dust environments.',
+    system: 'Cabin Air | Occupant Health',
   },
   {
     code: 'DRYCORE™',
     href: '/technologies/drycore',
-    failureMechanism: 'Airborne silica and mineral dust ingestion causing abrasive cylinder and ring wear',
-    protection: 'Dry element air filtration for extreme dust environments (2,000–15,000 mg/m³ silica). Captures 99.9%+ of particles above the critical ingestion threshold without oil carryover risk.',
-    system: 'Air Intake | Engine Protection',
+    failureMechanism: 'Compressed-air moisture condensation causing air brake corrosion and valve freezing',
+    protection: 'Molecular sieve desiccant technology removing moisture from pneumatic systems. Prevents corrosion and extends service life of air brake, suspension and control circuits.',
+    system: 'Compressed Air | Air Brake | Pneumatic',
   },
   {
     code: 'INTEKCORE™',
     href: '/technologies/intekcore',
-    failureMechanism: 'Combined particle and water contamination in fuel causing injector erosion and corrosion',
-    protection: 'Integrated fuel filtration addressing dual contamination mode: particulate capture + water separation in single assembly. Prevents both particle erosion and water-corrosion failure pathways.',
-    system: 'Fuel | Diesel | Injection Systems',
+    failureMechanism: 'Housing integrity failure or seal bypass allowing unfiltered flow around the element',
+    protection: 'Engineered filter housing systems for heavy-duty trucks and industrial machinery. High-pressure rated, OEM-compatible housings that maintain sealing integrity so the filter element performs to its rated specification.',
+    system: 'Filter Housings | Heavy-Duty Circuits',
   },
   {
     code: 'SYNTEPORE™',
     href: '/technologies/syntepore',
-    failureMechanism: 'Cellulose media degradation in water-contaminated or high-temperature fluids causing Beta ratio collapse',
-    protection: 'Synthetic pore-structure media with dimensional stability from −40°C to +150°C. Maintains rated Beta ratio when cellulose media fails under thermal or water exposure.',
-    system: 'Hydraulic | Lube | High-Temperature',
+    failureMechanism: 'Sub-micron particle contamination eroding Common Rail injector seats and control valves above 2,000 bar',
+    protection: 'Progressive multi-layer synthetic fuel filtration intercepting sub-micron contamination before high-pressure Common Rail injectors — the last line of defense for HPCR injection circuits.',
+    system: 'Fuel | Common Rail | Injection Systems',
   },
   {
     code: 'HYDROCORE™',
     href: '/technologies/hydrocore',
-    failureMechanism: 'Free and emulsified water above 500 ppm activating corrosive wear and injector failure',
-    protection: 'Hydrophilic coalescing media grows water droplets to gravity-separation threshold. Reduces water content to <100 ppm — below the corrosion activation threshold for ferrous components.',
-    system: 'Fuel | Hydraulic | Water Separation',
+    failureMechanism: 'Free, emulsified and dissolved water in fuel activating corrosive wear and injector failure',
+    protection: 'Hydrophobic water separation achieving 99.8% efficiency across all three water phases. Intercepts water contamination before it reaches the injection circuit.',
+    system: 'Fuel | Water Separation',
   },
   {
-    code: 'HYDROCORE™/SERIES',
-    href: '/technologies/hydrocore-series',
-    failureMechanism: 'High-volume water contamination in large-displacement fuel systems exceeding single-stage coalescer capacity',
-    protection: 'Extended-capacity HYDROCORE configuration for bulk fuel and marine applications. Multi-stage coalescing for high-flow systems with continuous water ingress from storage or transfer.',
-    system: 'Bulk Fuel | Large Equipment | Marine',
+    code: 'TURBOCORE™',
+    href: '/technologies/turbocore-series',
+    failureMechanism: 'Combined water, sediment and sub-micron contamination overwhelming single-stage fuel filtration in high-demand systems',
+    protection: 'Three-stage graduated fuel protection (Series FH): water separation, sediment capture and sub-micron polishing in sequence, intercepting each contaminant class before the high-pressure injection circuit.',
+    system: 'Fuel | Three-Stage | High-Pressure Injection',
   },
   {
     code: 'SYNTRAX™',
     href: '/technologies/syntrax',
-    failureMechanism: 'Transmission fluid metallic wear debris causing gear-to-gear contact propagation and additive depletion',
-    protection: 'Synthetic transmission filtration with high dirt-holding capacity. Removes metallic wear debris before the self-reinforcing wear cascade propagates through the drivetrain.',
-    system: 'Transmission | Drivetrain | Gearbox',
+    failureMechanism: 'Sub-micron particle contamination in engine oil abrading turbocharger bearings, crankshaft journals and valve train surfaces',
+    protection: 'Multi-layer engine lubrication filtration calibrated by AI algorithms to intercept sub-micron contamination before it reaches precision bearing surfaces. Maintains oil cleanliness through the full drain interval.',
+    system: 'Engine Lube Oil | Bearings | Valve Train',
   },
   {
     code: 'NANOFORCE™',
     href: '/technologies/nanoforce',
-    failureMechanism: 'Sub-micron particles (0.5–3µm) causing varnish formation and additive depletion in modern hydraulic oils',
-    protection: 'Sub-micron capture to 1µm efficiency. Addresses the particle population below standard ISO 4406 measurement resolution but responsible for modern hydraulic fluid accelerated degradation.',
+    failureMechanism: 'Particle contamination in high-pressure hydraulic circuits causing servo and proportional valve stiction',
+    protection: 'Multi-layer hydraulic filtration engineered for sustained 200–450 bar pulsation cycles, with vapor control and structural integrity systems that hold rated performance under high-pressure operation.',
     system: 'Hydraulic | High-Precision | Servo Systems',
   },
   {
     code: 'THERMACORE™',
     href: '/technologies/thermacore',
-    failureMechanism: 'Thermal cycling causing media structural failure and contamination bypass at peak operating temperatures',
-    protection: 'Thermal-resistant media structure maintains Beta ratio integrity at high operating temperatures. Prevents contamination bypass events during hot-cycle operation that defeat primary protection.',
-    system: 'High-Temperature | Diesel | Industrial',
+    failureMechanism: 'SCA depletion and coolant chemistry drift enabling liner cavitation, pitting and cooling circuit corrosion',
+    protection: 'Supplemental Coolant Additive (SCA) release technology with controlled gradual dosing. Maintains coolant chemistry within the protection corridor across the full service interval, preventing cavitation erosion.',
+    system: 'Cooling System | SCA | Liner Protection',
   },
 ];
 
@@ -254,7 +254,7 @@ export default function SciencePage() {
     },
     mentions: {
       standards: ['ISO 4406', 'ISO 16889', 'ISO 5011', 'ISO 12937', 'ISO 281', 'SAE J1539'],
-      technologies: ['MACROCORE', 'MICROKAPPA', 'DRYCORE', 'INTEKCORE', 'SYNTEPORE', 'HYDROCORE', 'SYNTRAX', 'NANOFORCE', 'THERMACORE'],
+      technologies: ['MACROCORE', 'MICROKAPPA', 'DRYCORE', 'INTEKCORE', 'SYNTEPORE', 'HYDROCORE', 'TURBOCORE', 'SYNTRAX', 'NANOFORCE', 'THERMACORE'],
       failureMechanisms: ['abrasive wear', 'adhesive wear', 'surface fatigue', 'corrosive wear', 'bearing spalling', 'valve stiction', 'injector erosion'],
     },
   };
@@ -832,13 +832,13 @@ export default function SciencePage() {
           <p style={{ marginTop: '0.75rem' }}>DEFINITION</p>
           <p>Industrial fluid system contamination (particles ≥4µm, water &gt;500 ppm, thermal degradation) causes four tribological failure mechanisms — abrasive wear, adhesive wear, surface fatigue, and corrosive wear — that reduce component life in proportion to ISO 4406 cleanliness code deviation from design targets. L10 bearing life decreases 20× between optimal (ISO 4406 14/12/09) and severely contaminated (≥22) conditions per ISO 281:2007 and SKF General Catalogue 6000 EN.</p>
           <p style={{ marginTop: '0.75rem' }}>SYSTEMS</p>
-          <p>Engine lube circuits, hydraulic systems, fuel injection systems, air intake systems, cabin air systems, compressed air systems, transmission and drivetrain systems</p>
+          <p>Engine lube circuits, hydraulic systems, fuel injection systems, air intake systems, cabin air systems, compressed air systems, cooling systems</p>
           <p style={{ marginTop: '0.75rem' }}>FAILURE_IMPACT</p>
           <p>Contamination particles accumulate in fluid → abrasive wear at component clearances → bearing clearance increase → L10 life reduction (up to 20×) → unplanned downtime ($5,000–$35,000/hour) → asset loss at 30–50% of design life | Operational Impact: ISO 4406 code 20/18/15 reduces bearing life to 0.15× baseline; code 16/14/11 reduces to 0.70× baseline</p>
           <p style={{ marginTop: '0.75rem' }}>RELATED_STANDARDS</p>
           <p>ISO 4406: Particle cleanliness code classification (≥4µm, ≥6µm, ≥14µm thresholds) | ISO 16889: Beta ratio filter efficiency testing (multi-pass methodology) | ISO 281:2007: Bearing life calculation including contamination factor | ISO 5011: Air filter efficiency and flow resistance | ISO 12937: Water content in petroleum products (Karl Fischer) | SAE J1539: Air induction system performance</p>
           <p style={{ marginTop: '0.75rem' }}>RELATED_TECHNOLOGIES</p>
-          <p>MACROCORE™: Primary particulate capture 18µm absolute — addresses high particle population (ISO 4406 ≥18) bearing abrasion | MICROKAPPA™: Sub-10µm capture — addresses servo valve spool wear at 4–10µm | DRYCORE™: Dry element air filtration — addresses silica dust ingestion cylinder wear | INTEKCORE™: Integrated fuel filtration — addresses combined particle + water injector failure | SYNTEPORE™: Synthetic pore media — addresses cellulose media failure in water/high-temperature environments | HYDROCORE™: Water coalescing — addresses water corrosion activation (&gt;500 ppm) | HYDROCORE™/SERIES: Extended water separation — bulk fuel high-volume applications | SYNTRAX™: Synthetic transmission filtration — addresses metallic wear debris drivetrain cascade | NANOFORCE™: Sub-micron 1µm capture — addresses varnish formation and additive depletion | THERMACORE™: Thermal-resistant media — addresses Beta ratio collapse at peak operating temperatures</p>
+          <p>MACROCORE™: Progressive Density Gradient air intake filtration 99.9%–99.98% (ISO 5011) — addresses silica dust ingestion cylinder and ring wear | MICROKAPPA™: Electrostatic + activated carbon + HEPA cabin air filtration (ISO 11155, DIN 71220) — addresses operator PM2.5/PM10 exposure | DRYCORE™: Molecular sieve desiccant air dryer — addresses compressed-air moisture corrosion in brake and control circuits | INTEKCORE™: Heavy-duty filter housing systems — addresses housing integrity and seal bypass failure | SYNTEPORE™: Multi-layer synthetic fuel filtration — addresses sub-micron injector erosion in Common Rail systems above 2,000 bar | HYDROCORE™: Hydrophobic fuel water separation 99.8% — addresses free, emulsified and dissolved water corrosion activation | TURBOCORE™: Three-stage graduated fuel protection (water, sediment, sub-micron) — addresses combined contamination in high-demand fuel systems | SYNTRAX™: Multi-layer engine lube oil filtration — addresses sub-micron abrasion of turbocharger bearings, crankshaft journals and valve train | NANOFORCE™: Multi-layer hydraulic filtration for 200–450 bar circuits — addresses servo and proportional valve stiction | THERMACORE™: SCA additive release technology — addresses coolant chemistry drift, liner cavitation and pitting</p>
           <p style={{ marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
           <p>Contamination control is the primary engineering lever for industrial equipment lifespan. The difference between ISO 4406 14/12/09 and 20/18/15 cleanliness — achievable through system-level filtration design — represents a 6–7× difference in bearing service life and determines whether equipment operates 5+ years between major overhauls or requires intervention every 9 months.</p>
           <p style={{ marginTop: '0.75rem' }}>CITATION_REFERENCE</p>

@@ -12,14 +12,14 @@ const RELATED_PAGES = [
 
 const TECHNOLOGIES = [
   { name: 'MACROCORE', slug: 'macrocore', role: 'Air intake protection preventing abrasive ingestion that accelerates component wear between service intervals.' },
-  { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration capturing wear debris before recirculation extends time between unplanned oil failures.' },
-  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Fuel system contamination control reducing injector stiction events that trigger unscheduled engine shutdowns.' },
+  { name: 'DURATECH', slug: 'duratech', role: 'Master kit consolidation standardizes multi-system service events across mixed-model fleets, reducing service bay time and parts-sourcing delays during planned maintenance windows.' },
+  { name: 'NANOFORCE', slug: 'nanoforce', role: 'Hydraulic filtration maintaining servo and proportional valve cleanliness in high-pressure circuits, preventing valve stiction events that trigger unscheduled shutdowns.' },
   { name: 'HYDROCORE', slug: 'hydrocore', role: 'Water extraction from fuel preventing hard-start conditions and microbial blockages in storage or remote equipment.' },
 ];
 
 const STANDARDS = [
-  { code: 'ISO 16889', desc: 'Cleanliness classification for hydraulic and fuel system fluids - baseline for maintenance interval justification.' },
-  { code: 'ISO 5011', desc: 'Filter element integrity verification ensuring installed elements perform to specified efficiency ratings.' },
+  { code: 'ISO 16889', desc: 'Multi-pass filter performance testing (Beta ratio) - verifies that installed liquid filtration can achieve and hold target cleanliness between service intervals.' },
+  { code: 'ISO 5011', desc: 'Air filter element performance testing (efficiency, restriction, dust-holding capacity) ensuring installed elements perform to specified ratings.' },
   { code: 'SAE J1539', desc: 'Air induction system contamination standard defining acceptable ingestion levels for engine protection.' },
   { code: 'ASTM D7085', desc: 'Particle counting method for in-service oil analysis supporting predictive maintenance programs.' },
 ];
