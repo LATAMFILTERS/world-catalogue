@@ -52,7 +52,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md"
     },
     {
       "key": "DIN_51524",
@@ -79,7 +79,7 @@
         "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_51524.md"
     },
     {
       "key": "DIN_71220",
@@ -128,7 +128,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/DIN_71220.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md"
     },
     {
       "key": "ISO_11155",
@@ -180,7 +180,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_11155.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md"
     },
     {
       "key": "ISO_12937",
@@ -229,7 +229,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_12937.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md"
     },
     {
       "key": "ISO_16889",
@@ -254,14 +254,14 @@
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:df017dbfddf4beef40dd713d378cc5bc3164a12e0fb3d6bbe0b1498899142fa7"
+        "content_hash": "sha256:bb0e49d4cd81c3a74b66b51d41fd0631e60e406084f1c5e995d4cbcf9077ed2e"
       },
       "canonical": {
         "definition": "ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil systems, using ISO Medium Test Dust (ISO 12103-1 A3) to calculate particle capture efficiency across defined size classes (β₆, β₁₀, β₁₆, β₂₅).",
         "systems": "Hydraulic fluid power systems, engine lube oil circuits, fuel filtration systems",
         "failure_impact": "Filters without ISO 16889 certified Beta ratios cannot be verified for actual particle capture efficiency → assumed performance diverges from actual → ISO 4406 cleanliness targets are not met → particles above 10–15 µm remain in oil → abrasive bearing wear → clearance loss → seizure at 3,000–5,000 hours instead of 15,000–25,000 hours.",
         "related_standards": "ISO 4406: Three-number cleanliness code (≥4/≥6/≥14 µm) that ISO 16889 Beta ratio performance enables and validates | SAE J1539: Air intake cleanliness standard (parallel domain — air-side particle control)",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal rated at 1 µm efficiency under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal rated at Beta(x[c]) ≥ 1000 at 5 µm absolute under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
         "industrial_role": "ISO 16889 Beta ratio is the only quantitative performance metric that converts a filter product specification into a verifiable contamination control capability — it is the engineering basis for achieving and maintaining ISO 4406 cleanliness targets in hydraulic and lube systems."
       },
       "relationships": {
@@ -280,7 +280,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_16889.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md"
     },
     {
       "key": "ISO_4406",
@@ -305,10 +305,10 @@
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:1a84dfd2603115b9a058eee1c98db6ad3cdc6ff5540b8be12d3e877a8201cccf"
+        "content_hash": "sha256:62bd09ac6104511ae50473726f86f3be40aaf826667033430324d53867904ed4"
       },
       "canonical": {
-        "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 100 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
+        "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 1 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
         "systems": "Hydraulic fluid power systems, engine lube oil circuits, transmission circuits — any fluid system requiring measurable particle contamination control",
         "failure_impact": "Lube oil or hydraulic fluid at ISO 4406 19/17/14 (typical commodity filtration outcome) has 8× the particle count at ≥4 µm compared to 16/14/11 (system filtration target) → proportional hydraulic valve sticktion and bearing surface abrasive wear → valve replacement ($5,000–$25,000) and engine bearing seizure at 3,000–5,000 hours versus 15,000–25,000 hours at target code.",
         "related_standards": "ISO 16889: Multi-pass filter test method that generates the Beta ratios used to select filters achieving ISO 4406 target codes | SAE J1539: Air intake standard (parallel domain — air-side particle control feeding lube circuit contamination)",
@@ -327,7 +327,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_4406.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md"
     },
     {
       "key": "ISO_5011",
@@ -383,7 +383,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_5011.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md"
     },
     {
       "key": "NFPA_T214",
@@ -432,7 +432,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md"
+      "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md"
     },
     {
       "key": "SAE_J1539",
@@ -477,7 +477,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md"
+      "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md"
     }
   ]
 }

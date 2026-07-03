@@ -54,7 +54,7 @@
           "AIRFILTER"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\AIRFILTER_PRIMARY.md"
     },
     {
       "key": "CABIN_PRIMARY",
@@ -110,7 +110,7 @@
           "CABIN"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/CABIN_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\CABIN_PRIMARY.md"
     },
     {
       "key": "FUEL_PRIMARY",
@@ -165,7 +165,7 @@
           "FUEL"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md"
     },
     {
       "key": "HYDRAULIC_PRIMARY",
@@ -220,7 +220,7 @@
           "HYDRAULIC"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/HYDRAULIC_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\HYDRAULIC_PRIMARY.md"
     },
     {
       "key": "LUBE_PRIMARY",
@@ -280,7 +280,7 @@
           "OIL"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/LUBE_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\LUBE_PRIMARY.md"
     }
   ]
 }

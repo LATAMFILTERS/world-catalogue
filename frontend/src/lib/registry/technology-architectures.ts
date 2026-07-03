@@ -1211,8 +1211,12 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
   // ── DRYCORE — Compressed Air Filtration ──────────────────────────────
 
-    id: technologyName: 'DRYCORE',
+  'TECH-DRYCORE': {
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    id: 'TECH-DRYCORE',
+    technologyName: 'DRYCORE',
     commercialName: 'DRYCORE™',
+
     systemDomain: 'Compressed Air',
     primaryStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
     maturity: MATURITY.PUBLISHED,
@@ -1650,8 +1654,12 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
   // ── MARINECLEAN — Marine Diesel & Hydraulic Filtration ───────────────
 
-    id: technologyName: 'MARINECLEAN',
+  'TECH-MARINECLEAN': {
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    id: 'TECH-MARINECLEAN',
+    technologyName: 'MARINECLEAN',
     commercialName: 'MARINECLEAN™',
+
     systemDomain: 'Marine Diesel & Hydraulic',
     primaryStandards: ['IMO MARPOL Annex VI', 'ISO 8217', 'ISO 4406', 'ISO 16889'],
     maturity: MATURITY.PUBLISHED,

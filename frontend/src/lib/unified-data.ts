@@ -25,11 +25,12 @@ export type TechnologyKey =
   | 'SYNTEPORE'
   | 'INTEKCORE'
   | 'HYDROCORE'
-
   | 'SYNTRAX'
   | 'NANOFORCE'
   | 'THERMACORE'
-  | 'MICROKAPPA';
+  | 'MICROKAPPA'
+  | 'DRYCORE'
+  | 'MARINECLEAN';
 
 export type DeprecatedTechnologyKey = never;
 
@@ -91,7 +92,9 @@ export type SystemDomain =
   | 'Hydraulic'
   | 'Compressed Air'
   | 'Cooling System'
-  | 'Cabin Protection';
+  | 'Cabin Protection'
+  | 'Filter Kit Platform'
+  | 'Marine Commercial Platform';
 
 export type ExposureLevel = 'EXTREME' | 'HIGH' | 'MEDIUM-HIGH' | 'MEDIUM' | 'LOW-MEDIUM' | 'LOW';
 
@@ -271,29 +274,8 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
       construction: 'Corrosion-resistant alloy',
       vibrationRated: 'Heavy-duty industrial',
     },
-  }: {
-    key: 'DRYCORE',
-    name: 'DRYCORE™',
-    slug: 'drycore',
-    domain: 'Compressed Air',
-    logoFile: 'logo-drycore.png',
-    category: 'Desiccant Air Drying',
-    tagline: 'Molecular Sieve Desiccant — Zero Dew Point',
-    geoDefinition: 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
-    comparisonFunction: 'Molecular sieve desiccant dryer',
-    comparisonMetric: 'ISO 8573-1 Class 1–2 dew point',
-    comparisonIndustries: 'Railway, Bus & Coach, Industrial pneumatics',
-    applicableIndustries: [
-      'RAILWAY', 'BUS_COACH', 'MANUFACTURING', 'OIL_GAS', 'POWER_GENERATION',
-    ],
-    relatedStandards: ['ISO_8573_1'],
-    addressesContamination: ['COMPRESSED_AIR_MOISTURE'],
-    keyMetrics: {
-      dewPointClass: 'ISO 8573-1 Class 1–2',
-      mediaType: 'Molecular sieve desiccant',
-      operatingPressure: 'Variable',
-    },
   },
+
 
   // TODO: verify HYDROCORE performance data, logo asset, and product specifications.
   // HYDROCORE replaces HYDROCORE (deprecated 2026-06-02). Functional domain: fuel water separation.
@@ -426,9 +408,49 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     },
   },
 
-  // ── Promoted from EcosystemKey → TechnologyKey (2026-06-29) ───────────────
+  // ── Commercial Lines ────────────────────────────────────────────────────────
+  // DRYCORE and MARINECLEAN are Commercial Lines, not proprietary filtration
+  // technologies. They do not define filtration media, Beta ratios, or ISO
+  // performance. Those belong to the technologies contained within each offering.
 
+  DRYCORE: {
+    key: 'DRYCORE',
+    name: 'DRYCORE™',
+    slug: 'drycore',
+    domain: 'Filter Kit Platform',
+    logoFile: 'logo-drycore.png',
+    category: 'Commercial Line — Filter Kit',
+    tagline: 'Multi-Technology Filter Kit Platform',
+    geoDefinition: 'DRYCORE™ is a Commercial Line filter kit platform that integrates multiple proprietary ELIMFILTERS technologies into a single maintenance package according to the equipment application.',
+    comparisonFunction: 'Filter kit platform',
+    comparisonMetric: 'N/A — commercial platform',
+    comparisonIndustries: 'All industries',
+    applicableIndustries: [
+      'RAILWAY', 'BUS_COACH', 'MANUFACTURING', 'OIL_GAS', 'POWER_GENERATION',
+      'CONSTRUCTION', 'MINING', 'TRUCKS_FLEETS', 'AGRICULTURE',
+    ],
+    relatedStandards: [],
+    addressesContamination: [],
+    keyMetrics: {},
+  },
 
+  MARINECLEAN: {
+    key: 'MARINECLEAN',
+    name: 'MARINECLEAN™',
+    slug: 'marineclean',
+    domain: 'Marine Commercial Platform',
+    logoFile: 'logo-marineclean.png',
+    category: 'Commercial Line — Marine',
+    tagline: 'Marine Filtration Commercial Platform',
+    geoDefinition: 'MARINECLEAN™ is a Commercial Line dedicated to marine filtration solutions. It combines proprietary ELIMFILTERS technologies into marine-specific maintenance packages.',
+    comparisonFunction: 'Marine filtration commercial platform',
+    comparisonMetric: 'N/A — commercial platform',
+    comparisonIndustries: 'Marine',
+    applicableIndustries: ['MARINE', 'OIL_GAS'],
+    relatedStandards: [],
+    addressesContamination: [],
+    keyMetrics: {},
+  },
 
 };
 

@@ -45,7 +45,7 @@
       "CABIN_AIR_CONTAMINATION"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md",
   "_links": {
     "self": "/api/citation/MICROKAPPA.json",
     "type_index": "/api/citation/type/technology.json",

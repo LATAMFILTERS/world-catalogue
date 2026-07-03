@@ -46,7 +46,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault/06-components/ENGINE_BEARING_JOURNAL.md"
+      "vault_path": "elimfilters-vault\\06-components\\ENGINE_BEARING_JOURNAL.md"
     },
     {
       "key": "PISTON_RING_ASSEMBLY",
@@ -93,7 +93,7 @@
           "ISO_5011"
         ]
       },
-      "vault_path": "elimfilters-vault/06-components/PISTON_RING_ASSEMBLY.md"
+      "vault_path": "elimfilters-vault\\06-components\\PISTON_RING_ASSEMBLY.md"
     },
     {
       "key": "TURBOCHARGER_BEARING",
@@ -144,7 +144,7 @@
           "ISO_5011"
         ]
       },
-      "vault_path": "elimfilters-vault/06-components/TURBOCHARGER_BEARING.md"
+      "vault_path": "elimfilters-vault\\06-components\\TURBOCHARGER_BEARING.md"
     }
   ]
 }

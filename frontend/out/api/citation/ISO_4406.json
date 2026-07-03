@@ -21,10 +21,10 @@
     "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:1a84dfd2603115b9a058eee1c98db6ad3cdc6ff5540b8be12d3e877a8201cccf"
+    "content_hash": "sha256:62bd09ac6104511ae50473726f86f3be40aaf826667033430324d53867904ed4"
   },
   "canonical": {
-    "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 100 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
+    "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 1 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
     "systems": "Hydraulic fluid power systems, engine lube oil circuits, transmission circuits — any fluid system requiring measurable particle contamination control",
     "failure_impact": "Lube oil or hydraulic fluid at ISO 4406 19/17/14 (typical commodity filtration outcome) has 8× the particle count at ≥4 µm compared to 16/14/11 (system filtration target) → proportional hydraulic valve sticktion and bearing surface abrasive wear → valve replacement ($5,000–$25,000) and engine bearing seizure at 3,000–5,000 hours versus 15,000–25,000 hours at target code.",
     "related_standards": "ISO 16889: Multi-pass filter test method that generates the Beta ratios used to select filters achieving ISO 4406 target codes | SAE J1539: Air intake standard (parallel domain — air-side particle control feeding lube circuit contamination)",
@@ -43,7 +43,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ISO_4406.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md",
   "_links": {
     "self": "/api/citation/ISO_4406.json",
     "type_index": "/api/citation/type/standard.json",
