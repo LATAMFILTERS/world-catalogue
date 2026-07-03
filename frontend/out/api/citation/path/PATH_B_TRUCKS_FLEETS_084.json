@@ -69,7 +69,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md"
+        "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
       }
     },
     {
@@ -140,7 +140,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -190,7 +190,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
       }
     },
     {
@@ -250,7 +250,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
       }
     }
   ],
