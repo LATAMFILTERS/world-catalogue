@@ -141,7 +141,8 @@ export default function ISO4406Page() {
           }}>
             ISO 4406 is the international standard for expressing the solid particle contamination level of a fluid sample as a three-number cleanliness code — for example 18/16/13 — counting particles ≥4 µm, ≥6 µm and ≥14 µm per milliliter. It is the universal measurement language of{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration strategy</Link>:{' '}
-            equipment manufacturers specify required codes for their components, oil analysis laboratories report measured codes, and filtration systems are designed to achieve them. Filter capability is qualified separately under{' '}
+            equipment manufacturers specify required codes for their components, oil analysis laboratories report measured codes, and filtration systems are designed to achieve them. The particle counts behind every code are produced by counters calibrated per{' '}
+            <Link href="/knowledge-system/standards/iso-11171" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 11171</Link>. Filter capability is qualified separately under{' '}
             <Link href="/knowledge-system/standards/iso-16889" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 16889</Link>, which measures the Beta ratios needed to reach a given cleanliness target. The particle contamination that ISO 4406 quantifies is the primary driver of{' '}
             <Link href="/knowledge-system/contamination/particle-wear" style={{ color: '#FFF12D', textDecoration: 'underline' }}>abrasive wear in engines and hydraulic components</Link>.
           </p>

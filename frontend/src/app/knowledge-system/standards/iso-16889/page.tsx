@@ -127,7 +127,9 @@ export default function ISO16889Page() {
           }}>
             ISO 16889 is the international standard defining the multi-pass laboratory method for evaluating the filtration performance of hydraulic and lubrication filter elements. It is the measurement foundation of any{' '}
             <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration strategy</Link>:{' '}
-            it produces the Beta ratio (filtration ratio), which quantifies how many particles of a given size a filter element removes in sustained operation, together with the element&apos;s retained contaminant capacity. ISO 16889 results are what make it possible to select a filter that can achieve and hold a target{' '}
+            it produces the Beta ratio (filtration ratio), which quantifies how many particles of a given size a filter element removes in sustained operation, together with the element&apos;s retained contaminant capacity. Particle sizes are measured with counters calibrated per{' '}
+            <Link href="/knowledge-system/standards/iso-11171" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 11171</Link>{' '}
+            — the traceability chain behind every &quot;(c)&quot; designation. ISO 16889 results are what make it possible to select a filter that can achieve and hold a target{' '}
             <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406 cleanliness code</Link>.{' '}
             The particle contamination that ISO 16889-rated elements remove is the same contamination that drives{' '}
             <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>accelerated degradation in high-pressure hydraulic systems</Link>.
