@@ -27,6 +27,13 @@ const CONTAMINATION_TYPES = [
     description: 'Component stiction, seal degradation, and catastrophic failure modes in pressurized fluid systems.',
     icon: '⚡',
   },
+  {
+    code: 'VARNISH',
+    title: 'Varnish Formation',
+    href: '/knowledge-system/contamination/varnish-formation',
+    description: 'Thermal and oxidative fluid degradation producing insoluble deposits on valve and bearing surfaces, diagnosed via ASTM D7527 Membrane Patch Colorimetry.',
+    icon: '🔥',
+  },
 ];
 
 export default function ContaminationHubPage() {
@@ -199,7 +206,7 @@ export default function ContaminationHubPage() {
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D6304</p>
-        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system</p>
+        <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear, /knowledge-system/contamination/diesel-water, /knowledge-system/contamination/hydraulic-system, /knowledge-system/contamination/varnish-formation</p>
         <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, HYDROCORE, SYNTRAX</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>

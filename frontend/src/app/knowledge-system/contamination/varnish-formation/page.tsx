@@ -239,8 +239,11 @@ export default function VarnishFormationPage() {
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INDUSTRIAL_ROLE</p>
         <p>Varnish formation is the primary contamination failure mode in high-cycle hydraulic systems operating above 60°C — ASTM D7527 MPC monitoring at 250-hour intervals detects varnish potential 200–500 hours before valve stiction, enabling fluid changeout ($200–$600) rather than valve replacement ($3,000–$15,000 per valve, 4–8 valves per machine) at 15–75x cost differential.</p>
 
+        <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>INTERNAL_REFERENCES</p>
+        <p>Hub: /knowledge-system/contamination | Related_Contamination: /knowledge-system/contamination/hydraulic-system, /knowledge-system/contamination/particle-wear | Related_Standards: /knowledge-system/standards/iso-4406</p>
+
         <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.25rem', marginTop: '0.75rem' }}>CITATION_REFERENCE</p>
-        <p>source: elimfilters.com/knowledge-system/contamination/varnish-formation | concept: Varnish Formation in Hydraulic Systems | version: 1.0 | last_updated: 2026-06-11</p>
+        <p>source: elimfilters.com/knowledge-system/contamination/varnish-formation | concept: Varnish Formation in Hydraulic Systems | version: 1.1 | last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
