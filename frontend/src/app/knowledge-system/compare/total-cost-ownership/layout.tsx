@@ -5,8 +5,9 @@ export const metadata: Metadata = {
     absolute: 'Total Cost of Ownership — Filtration Investment Analysis | ELIMFILTERS',
   },
   description: 'Filtration investment TCO analysis: upfront filter cost vs downtime prevention value, component replacement avoidance, fleet standardisation economics, and long-term asset protection returns.',
+  robots: { index: false, follow: true },
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-system/compare/total-cost-ownership/',
+    canonical: 'https://elimfilters.com/knowledge-system/fleet/total-cost-ownership/',
   },
   openGraph: {
     title: 'Total Cost of Ownership — Filtration Investment Analysis | ELIMFILTERS',

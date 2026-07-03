@@ -379,7 +379,7 @@ export default function FleetSolutionsPage() {
                 <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Fleet maintenance strategies</p>
               </div>
             </Link>
-            <Link href="/knowledge-system/compare/total-cost-ownership" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link href="/knowledge-system/fleet/total-cost-ownership" style={{ textDecoration: 'none', display: 'block' }}>
               <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '8px', cursor: 'pointer' }}>
                 <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>TCO Analysis</p>
                 <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.6)', margin: '0' }}>Financial impact analysis</p>

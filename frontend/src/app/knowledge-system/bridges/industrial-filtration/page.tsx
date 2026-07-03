@@ -995,7 +995,7 @@ export default function IndustrialFiltrationPage() {
                 </p>
               </div>
             </Link>
-            <Link href="/knowledge-system/compare/total-cost-ownership" style={{
+            <Link href="/knowledge-system/fleet/total-cost-ownership" style={{
               textDecoration: 'none',
               display: 'block',
             }}>
@@ -1101,7 +1101,7 @@ export default function IndustrialFiltrationPage() {
   "relatedPages": [
     {"url": "/knowledge-system/standards/lube-oil-systems", "title": "Lube Oil Systems"},
     {"url": "/knowledge-system/standards/hydraulic-systems", "title": "Hydraulic Systems"},
-    {"url": "/knowledge-system/compare/total-cost-ownership", "title": "Total Cost of Ownership"}
+    {"url": "/knowledge-system/fleet/total-cost-ownership", "title": "Total Cost of Ownership"}
   ]
 }`}
           </div>

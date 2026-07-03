@@ -392,6 +392,45 @@ export default function TotalCostOwnershipPage() {
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
 
         {/* 7. Related Standards */}
+        {/* Commodity vs System framing — migrated from /knowledge-system/compare/total-cost-ownership (R10 merge) */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.38 }}
+          style={{ marginBottom: '3.5rem' }}
+        >
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
+            letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
+          }}>07 / COMMODITY VS SYSTEM COST FRAMING</p>
+          <h2 style={{
+            fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
+            color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
+          }}>Purchase Price vs Operating Reality</h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif', fontSize: '0.9rem',
+            color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, textAlign: 'justify', marginBottom: '1rem',
+          }}>
+            Filter purchase price represents only 1–5% of the total cost that filtration decisions control. The remaining 95%+ is carried by downtime events, premature component replacement, fluid life, fuel consumption and labor — none of which appear on the purchase order. This is why commodity purchasing (selecting the cheapest element that fits) systematically produces the highest total cost: it optimizes the only line item that is economically trivial.
+          </p>
+          <p style={{
+            fontFamily: 'Inter, sans-serif', fontSize: '0.9rem',
+            color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, textAlign: 'justify', marginBottom: '1rem',
+          }}>
+            The system framing inverts the decision: define the cleanliness target each circuit requires (ISO 4406 code), select elements whose ISO 16889 performance can hold that target, and let the purchase price follow from the protection requirement. Over a 10-year heavy-duty equipment lifecycle, the modeled difference between the two approaches is dominated by avoided overhauls and downtime — not by the filter spend itself.
+          </p>
+          <p style={{
+            fontFamily: 'Inter, sans-serif', fontSize: '0.9rem',
+            color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, textAlign: 'justify',
+          }}>
+            The decision framework for evaluating filters on contamination control metrics instead of price is developed in{' '}
+            <Link href="/knowledge-system/compare/system-vs-commodity" style={{ color: '#FFF12D', textDecoration: 'underline' }}>System vs Commodity Filtration</Link>{' '}
+            and{' '}
+            <Link href="/knowledge-system/compare/evaluation-framework" style={{ color: '#FFF12D', textDecoration: 'underline' }}>the Filter Evaluation Framework</Link>.
+          </p>
+        </motion.section>
+
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginBottom: '3.5rem' }} />
+
         <motion.section
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -400,7 +439,7 @@ export default function TotalCostOwnershipPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>07 / RELATED STANDARDS</p>
+          }}>08 / RELATED STANDARDS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.25rem', letterSpacing: '-0.01em',
@@ -438,7 +477,7 @@ export default function TotalCostOwnershipPage() {
           <p style={{
             fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
             letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem',
-          }}>08 / FREQUENTLY ASKED QUESTIONS</p>
+          }}>09 / FREQUENTLY ASKED QUESTIONS</p>
           <h2 style={{
             fontFamily: 'Titillium Web, sans-serif', fontSize: '1.4rem', fontWeight: 600,
             color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.01em',

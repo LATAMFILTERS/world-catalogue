@@ -25,7 +25,7 @@ const FRAMEWORK_SECTIONS = [
     slug: 'total-cost-ownership',
     description: 'Moving beyond purchase price to system-level economics. How contamination control affects downtime, maintenance, and equipment lifespan.',
     icon: '💰',
-    href: '/knowledge-system/compare/total-cost-ownership',
+    href: '/knowledge-system/fleet/total-cost-ownership',
   },
   {
     title: 'OEM vs Aftermarket Positioning',
