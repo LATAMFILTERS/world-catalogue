@@ -108,7 +108,7 @@ export default function IndustrialFiltrationPage() {
             marginBottom: '1rem',
             textAlign: 'justify',
           }}>
-            A single filtration decision—which filter to install—impacts equipment lifespan (30-50% difference), operational downtime (emergency repairs vs. planned maintenance), and total cost of ownership (factor of 8-10x difference over equipment lifetime).
+            A single filtration decision—which filter to install—impacts equipment lifespan (30-50% difference, modeled from ISO 281 L10 contamination-life factors between commodity and system-level cleanliness codes), operational downtime (emergency repairs vs. planned maintenance), and total cost of ownership over the equipment lifetime.
           </p>
           <p style={{
             fontSize: '1rem',
@@ -1126,7 +1126,7 @@ export default function IndustrialFiltrationPage() {
               margin: '0',
               textAlign: 'justify',
             }}>
-              <strong>Domain:</strong> Multi-System Industrial Filtration | <strong>Primary Standard:</strong> ISO 4406 (Cleanliness Codes) + ISO 16889 (Filter Testing) | <strong>Key Concept:</strong> Shift from product selection (OEM-based) to system design (contamination control-based) | <strong>Measurement Framework:</strong> Contamination targets (ISO codes) → Load assessment → Filter selection by contamination metrics → Condition-based replacement | <strong>Impact Range:</strong> 30-50% equipment lifespan extension, 60-80% downtime reduction, 89% TCO improvement over 10-year lifecycle | <strong>Integration:</strong> All six critical contamination domains addressed through unified system design
+              <strong>Domain:</strong> Multi-System Industrial Filtration | <strong>Primary Standard:</strong> ISO 4406 (Cleanliness Codes) + ISO 16889 (Filter Testing) | <strong>Key Concept:</strong> Shift from product selection (OEM-based) to system design (contamination control-based) | <strong>Measurement Framework:</strong> Contamination targets (ISO codes) → Load assessment → Filter selection by contamination metrics → Condition-based replacement | <strong>Impact Range:</strong> 30-50% equipment lifespan extension (basis: ISO 281 L10 contamination-life factor model), 60-80% downtime reduction, 89% TCO improvement over 10-year lifecycle (modeled scenario) | <strong>Integration:</strong> All six critical contamination domains addressed through unified system design
             </p>
           </div>
         </motion.section>

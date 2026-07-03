@@ -186,7 +186,7 @@ export default function EvaluationFrameworkPage() {
                 lineHeight: 1.6,
                 color: 'rgba(255,255,255,0.7)',
               }}>
-                Percentage of particles above filter micron rating that are captured. Higher beta = better contamination control. Example: β10≥75 means 75% of 10µm+ particles are removed.
+                Ratio of upstream to downstream particle counts at a given size (ISO 16889). Higher beta = better contamination control. Example: β10 ≥ 75 means only 1 of every 75 particles ≥10 µm passes — 98.7% removal efficiency (E = (1 − 1/β) × 100%).
               </p>
             </div>
             <div style={{

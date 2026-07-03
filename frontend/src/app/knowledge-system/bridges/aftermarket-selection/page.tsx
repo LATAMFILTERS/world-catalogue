@@ -100,7 +100,7 @@ export default function AftermarketSelectionPage() {
             marginBottom: '1rem',
             textAlign: 'justify',
           }}>
-            Once equipment warranty expires, filtration decisions shift from OEM compliance to asset protection optimization. This creates both risk and opportunity: choosing poorly compromises equipment reliability and TCO, but selecting strategically can extend equipment life 30-50% while reducing costs.
+            Once equipment warranty expires, filtration decisions shift from OEM compliance to asset protection optimization. This creates both risk and opportunity: choosing poorly compromises equipment reliability and TCO, but selecting strategically can extend equipment life 30-50% while reducing costs (modeled from ISO 281 L10 contamination-life factors between commodity and system-level cleanliness codes — see the Science page).
           </p>
           <p style={{
             fontSize: '1rem',
@@ -257,7 +257,7 @@ export default function AftermarketSelectionPage() {
               textAlign: 'justify',
             }}>
               <strong style={{ color: '#FFF12D' }}>1. ISO 16889 Certification</strong><br/>
-              Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β₁₀≥75 means 75% of 10µm particles are captured.
+              Verify Beta ratio testing per ISO 16889. Published test reports confirm capture efficiency at rated micron rating. Example: β₁₀ ≥ 75 means at most 1 of every 75 particles ≥10 µm passes the element — a capture efficiency of 98.7% (E = (1 − 1/β) × 100%).
             </p>
             <p style={{
               fontSize: '0.95rem',

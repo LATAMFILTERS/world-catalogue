@@ -35,7 +35,7 @@ const WEAR_MECHANISMS = [
     type: 'Abrasive Wear',
     code: 'ABR',
     mechanism: 'Hard particles (silica, iron oxide, carbides) trapped between moving surfaces create micro-cutting. Maximum damage occurs when particle size is 0.5–3× the component clearance gap. Particles smaller than the gap pass through; particles much larger ride on the surface. The critical zone drives exponential wear rate increases.',
-    impact: 'Primary cause of bearing journal failure, piston ring wear, and cylinder liner scoring. Accounts for 70–80% of contamination-related equipment failures in off-highway equipment.',
+    impact: 'Primary cause of bearing journal failure, piston ring wear, and cylinder liner scoring. Industry contamination studies (e.g., Parker Hannifin, The Handbook of Hydraulic Filtration) attribute 70–80% of fluid system failures to particle contamination in off-highway equipment.',
     systems: 'Engine | Hydraulic | Lube | Fuel',
   },
   {
