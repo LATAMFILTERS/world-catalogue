@@ -116,7 +116,7 @@ export default function TotalCostOwnershipPage() {
       </section>
 
       {/* Body */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* 1. Short Definition */}
         <motion.section
@@ -506,7 +506,7 @@ export default function TotalCostOwnershipPage() {
           { '@type': 'Question', name: 'How should filtration specifications change when equipment is operating beyond design lifespan?', acceptedAnswer: { '@type': 'Answer', text: 'Equipment operating beyond original design lifespan - typically defined as hours exceeding the first major overhaul interval - experiences accelerated wear particle generation from clearance growth in worn components. Worn engine cylinders generate more blow-by gas carrying oil-soluble contaminants. Worn hydraulic pump internals generate higher wear debris loads. In these conditions, upgrading to higher-efficiency filter elements (lower beta ratio) and shortening sampling intervals for oil analysis is justified. The additional filtration cost delays further component degradation and extends economic service life, deferring capital replacement expenditure.' } },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 2rem' }}>
         <RelatedProducts filterType="oil filter" duty="HEAVY_DUTY" searchQuery="oil filter heavy duty" label="VER FILTROS RELACIONADOS" />
       </div>
     </main>

@@ -112,7 +112,7 @@ export default function HydraulicSystemContaminationPage() {
 
       {/* Content Sections */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -200,7 +200,7 @@ export default function HydraulicSystemContaminationPage() {
 
       {/* FAQ Section */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -260,7 +260,7 @@ export default function HydraulicSystemContaminationPage() {
 
       {/* Navigation to Other Contamination Pages */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -326,7 +326,7 @@ export default function HydraulicSystemContaminationPage() {
           </div>
         </motion.div>
 
-        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+        <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem' }}>
           <EngineeringRecommendationsSection
             primaryEntityId="CONT-WEAR-PARTICLE-HYD"
             queryType="contamination"
@@ -367,7 +367,7 @@ export default function HydraulicSystemContaminationPage() {
           { '@type': 'Question', name: 'How do valve spools become stuck and can they be cleaned?', acceptedAnswer: { '@type': 'Answer', text: 'Valve spool stiction results from: (1) Particle lodging in radial clearance (10-20 microns) between spool and housing bore; (2) Varnish film deposit forming an adhesive layer; (3) Corrosion product layer from water-induced oxidation. In-situ cleaning is unreliable - circulating high-pressure flush does not dislodge embedded particles or varnish; success rate <30%. Spool replacement is necessary: Remove valve cartridge (0.5-2 hour labor), soak original spool in hydraulic system cleaner for 24 hours (may recover 50%), test cleaned spool actuation with pilot pressure. Prevention through contamination control is far more cost-effective than spool replacement: maintain ISO 16889 16/14/11 maximum cleanliness.' } },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 2rem' }}>
         <RelatedProducts filterType="hydraulic filter" duty="HEAVY_DUTY" searchQuery="hydraulic filter heavy duty" label="VER FILTROS HIDRÁULICOS RELACIONADOS" />
       </div>
     </main>

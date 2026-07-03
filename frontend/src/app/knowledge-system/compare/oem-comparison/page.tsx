@@ -64,7 +64,7 @@ export default function OEMComparisonPage() {
       </section>
 
       {/* Content Sections */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}

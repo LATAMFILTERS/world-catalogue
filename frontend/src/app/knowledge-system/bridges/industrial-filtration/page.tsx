@@ -72,7 +72,7 @@ export default function IndustrialFiltrationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ maxWidth: '860px', margin: '0 auto' }}
+          style={{ maxWidth: '1060px', margin: '0 auto' }}
         >
           <h2 style={{
             fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
@@ -112,7 +112,7 @@ export default function IndustrialFiltrationPage() {
         </motion.div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* POINT 3: Traditional Product-Based Approach */}
         <motion.section

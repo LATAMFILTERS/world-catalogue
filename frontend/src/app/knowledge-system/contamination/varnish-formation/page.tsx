@@ -88,7 +88,7 @@ export default function VarnishFormationPage() {
         </motion.div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* 01 Contamination Overview */}
         <motion.section

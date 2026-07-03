@@ -105,7 +105,7 @@ export default function FuelInjectorWearPage() {
 
       {/* Content Sections */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -187,7 +187,7 @@ export default function FuelInjectorWearPage() {
 
       {/* FAQ Section */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
@@ -247,7 +247,7 @@ export default function FuelInjectorWearPage() {
 
       {/* Navigation to Other Contamination Pages */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '4rem 2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -303,7 +303,7 @@ export default function FuelInjectorWearPage() {
 
       {/* Canonical Knowledge Block */}
       <section style={{
-        maxWidth: '900px',
+        maxWidth: '1060px',
         margin: '0 auto',
         padding: '0 2rem 4rem',
       }}>

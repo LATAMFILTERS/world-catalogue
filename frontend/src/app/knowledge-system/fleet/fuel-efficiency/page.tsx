@@ -91,7 +91,7 @@ export default function FuelEfficiencyPage() {
       </section>
 
       {/* Body */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* 1. Short Definition */}
         <motion.section
@@ -452,7 +452,7 @@ export default function FuelEfficiencyPage() {
           { '@type': 'Question', name: 'How should filtration specifications change for biodiesel blends compared to petroleum diesel?', acceptedAnswer: { '@type': 'Answer', text: 'Biodiesel blends above B10 (10% biodiesel content) require more aggressive water management due to biodiesel\'s higher hygroscopicity. Biodiesel absorbs atmospheric moisture at rates 3 to 5 times higher than petroleum diesel, making water saturation at the fuel-air interface a chronic condition rather than an episodic one. Filter elements with higher water absorption capacity and more frequent separator bowl drainage are required. Additionally, biodiesel degrades elastomeric seals in older filter housings, so seal material compatibility must be verified before transitioning to higher blend ratios.' } },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 2rem' }}>
         <RelatedProducts filterType="fuel filter" duty="HEAVY_DUTY" searchQuery="fuel filter heavy duty" label="VER FILTROS DE COMBUSTIBLE RELACIONADOS" />
       </div>
     </main>

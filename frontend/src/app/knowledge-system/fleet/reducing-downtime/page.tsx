@@ -91,7 +91,7 @@ export default function ReducingDowntimePage() {
       </section>
 
       {/* Body */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* 1. Short Definition */}
         <motion.section
@@ -462,7 +462,7 @@ export default function ReducingDowntimePage() {
           { '@type': 'Question', name: 'Can extended oil drain intervals increase unplanned downtime risk?', acceptedAnswer: { '@type': 'Answer', text: 'Extended drain intervals reduce planned maintenance frequency but increase contamination accumulation risk when filter element capacity is not proportionally upgraded. Oil oxidation byproducts and wear metal concentration both rise monotonically with service hours. When drain extensions are implemented without corresponding changes to filtration specification - higher efficiency elements or bypass filtration - the probability of in-service fluid degradation reaching critical thresholds increases significantly.' } },
         ],
       }) }} />
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem 2rem' }}>
+      <div style={{ maxWidth: '1060px', margin: '0 auto', padding: '0 2rem 2rem' }}>
         <RelatedProducts filterType="oil filter" duty="HEAVY_DUTY" searchQuery="oil filter heavy duty" label="VER FILTROS RELACIONADOS" />
       </div>
     </main>
