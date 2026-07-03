@@ -253,7 +253,11 @@ export default function KnowledgeSystemPage() {
             <Link href="/knowledge-system/fleet/reducing-downtime" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
               operational continuity
             </Link>
-            . Every section of this knowledge system follows that hierarchy from industry to operational outcome.
+            . Every section of this knowledge system follows that hierarchy from industry to operational outcome. A full{' '}
+            <Link href="/knowledge-system/index" style={{ color: '#FFF12D', textDecoration: 'underline' }}>
+              machine-readable index
+            </Link>
+            {' '}of every page, standard, and technology cross-reference is available for systematic navigation.
           </p>
 
           {/* Statistics */}
