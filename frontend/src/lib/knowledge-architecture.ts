@@ -3,11 +3,14 @@
  *
  * Defines relational structure between:
  * - Technologies (product systems)
- * - Standards (ISO, ASTM, SAE, DIN)
+ * - Standards (ISO, ASTM, SAE, DIN, NFPA)
  * - Contamination modes (failure mechanisms)
  * - Industries (application verticals)
  * - Comparison topics (OEM vs Aftermarket)
  * - Fleet optimization strategies
+ *
+ * AUTHORITATIVE SOURCE: technology domains, taglines and metrics must stay
+ * consistent with frontend/src/app/technologies/[slug]/techPagesData.ts.
  *
  * This structure enables:
  * 1. Cross-linking between Knowledge System sections
@@ -71,121 +74,213 @@ type IndustryRecord = Record<string, {
 
 // ============================================================================
 // TECHNOLOGY SYSTEMS
+// Domains match techPagesData.ts — one primary protection domain per technology.
 // ============================================================================
 
 export const TECHNOLOGIES: TechnologyRecord = {
   MACROCORE: {
     id: 'macrocore',
     name: 'MACROCORE™',
-    category: 'Air Filtration',
+    category: 'Air Intake Protection',
     tagline: 'Progressive Density Gradient Air Protection',
     slug: 'macrocore',
-    relatedStandards: ['ISO_5011', 'SAE_J726', 'ASTM_D202', 'ISO_16889'],
+    relatedStandards: ['ISO_5011', 'SAE_J726', 'SAE_J1539'],
     addressesContamination: ['PARTICLE_WEAR'],
-    applicableIndustries: ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'POWER_GEN', 'MARINE'],
+    applicableIndustries: ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'POWER_GENERATION', 'AUTOMOTIVE'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
-      efficiency: '99.98%',
-      pressureDrop: '62 PSI',
-      thermalRating: '120C',
-      particleCaptureSize: '5-25 microns'
+      efficiency: '99.9%–99.98%',
+      testStandard: 'ISO 5011',
+      mediaArchitecture: 'Progressive Density Gradient (3 zones)',
     },
-    description: 'Three-zone progressive density gradient architecture for air intake protection'
-  },
-
-  NANOFORCE: {
-    id: 'nanoforce',
-    name: 'NANOFORCE™',
-    category: 'Fuel & Hydraulic Filtration',
-    tagline: 'Electrostatic Particle & Water Rejection',
-    slug: 'nanoforce',
-    relatedStandards: ['ISO_16889', 'ISO_4406', 'ASTM_D975', 'ISO_11158'],
-    addressesContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableIndustries: ['AGRICULTURE', 'CONSTRUCTION', 'MARINE', 'POWER_GEN', 'AUTOMOTIVE'],
-    comparisonTopics: ['OEM_VS_AFTERMARKET'],
-    keyMetrics: {
-      efficiency: '99.9%',
-      waterRemoval: '98%',
-      particleSize: '3-5 microns',
-      fluidCompatibility: 'Universal'
-    },
-    description: 'Electrostatic synthetic media for fuel and hydraulic fluid contamination control'
+    description: 'Progressive density gradient multi-layer air intake filtration protecting engines from abrasive dust ingestion'
   },
 
   MICROKAPPA: {
     id: 'microkappa',
     name: 'MICROKAPPA™',
-    category: 'Coolant & Specialty Filtration',
-    tagline: 'Precision Coolant System Protection',
+    category: 'Cabin Air Protection',
+    tagline: 'Electrostatic HEPA Cabin Air Protection',
     slug: 'microkappa',
-    relatedStandards: ['ISO_16889', 'ASTM_D6595', 'DIN_51525'],
-    addressesContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableIndustries: ['MANUFACTURING', 'AUTOMOTIVE', 'MARINE'],
+    relatedStandards: ['ISO_11155', 'DIN_71220'],
+    addressesContamination: ['CABIN_AIR_EXPOSURE'],
+    applicableIndustries: ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'AUTOMOTIVE'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
-      efficiency: '99.95%',
-      particleSize: '2-10 microns',
-      fluidLife: '+40%',
-      costPerHour: '-15%'
+      mechanisms: 'Electrostatic + activated carbon + HEPA',
+      targets: 'Allergens, odors, particulate (PM2.5/PM10)',
     },
-    description: 'Micro-filtration for machine tool coolants and specialty fluids'
+    description: 'Three-mechanism cabin air filtration for occupant health protection in heavy-duty and passenger vehicle cabins'
+  },
+
+  SYNTEPORE: {
+    id: 'syntepore',
+    name: 'SYNTEPORE™',
+    category: 'Fuel Cleanliness Protection',
+    tagline: 'Precision Injector Guard for HPCR Systems',
+    slug: 'syntepore',
+    relatedStandards: ['ISO_12937', 'ASTM_D6304', 'ISO_4406'],
+    addressesContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
+    applicableIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'CONSTRUCTION', 'POWER_GENERATION'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      application: 'Common Rail injection above 2,000 bar',
+      mediaArchitecture: 'Progressive multi-layer synthetic',
+    },
+    description: 'Multi-layer fuel filtration intercepting sub-micron contamination before high-pressure Common Rail injectors'
   },
 
   SYNTRAX: {
     id: 'syntrax',
     name: 'SYNTRAX™',
-    category: 'Synthetic Fluid Technology',
-    tagline: 'Advanced Hydraulic & Industrial Fluids',
+    category: 'Lubrication Protection',
+    tagline: 'AI-Engineered Engine Lube Oil Protection',
     slug: 'syntrax',
-    relatedStandards: ['ISO_16889', 'ISO_11158', 'DIN_51524', 'NFPA_T214'],
-    addressesContamination: ['DIESEL_WATER', 'HYDRAULIC_CONTAMINATION'],
-    applicableIndustries: ['MINING', 'CONSTRUCTION', 'MARINE', 'POWER_GEN'],
+    relatedStandards: ['ISO_16889', 'ISO_4406', 'ISO_11171'],
+    addressesContamination: ['PARTICLE_WEAR', 'VARNISH_FORMATION'],
+    applicableIndustries: ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'AUTOMOTIVE', 'POWER_GENERATION'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
-      viscosityStability: '+25%',
-      oxidationResistance: '+40%',
-      lowTempPerformance: '-40C',
-      fluidLife: '4000+ hours'
+      protects: 'Turbocharger bearings, crankshaft journals, valve train',
+      mediaArchitecture: 'Multi-layer AI-calibrated matrix',
     },
-    description: 'High-performance synthetic fluids with superior contamination resistance'
+    description: 'Multi-layer engine lubrication filtration intercepting sub-micron contamination before precision bearing surfaces'
+  },
+
+  NANOFORCE: {
+    id: 'nanoforce',
+    name: 'NANOFORCE™',
+    category: 'Hydraulic Protection',
+    tagline: 'Hydraulic Precision Guard',
+    slug: 'nanoforce',
+    relatedStandards: ['ISO_16889', 'ISO_4406', 'ISO_11171', 'NFPA_T2_14', 'DIN_51524'],
+    addressesContamination: ['HYDRAULIC_CONTAMINATION', 'PARTICLE_WEAR', 'VARNISH_FORMATION'],
+    applicableIndustries: ['CONSTRUCTION', 'MINING', 'MANUFACTURING', 'MARINE', 'AGRICULTURE'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      operatingPressure: '200–450 bar sustained pulsation',
+      mediaArchitecture: 'Multi-layer with vapor control and structural integrity systems',
+    },
+    description: 'Multi-layer hydraulic filtration engineered for high-pressure circuits, servo and proportional valve protection'
   },
 
   HYDROCORE: {
     id: 'hydrocore',
     name: 'HYDROCORE™',
-    category: 'Water Removal Technology',
-    tagline: 'Integrated Water Extraction System',
+    category: 'Fuel Cleanliness Protection',
+    tagline: 'Fuel Water Separator',
     slug: 'hydrocore',
-    relatedStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_12937'],
+    relatedStandards: ['ASTM_D6304', 'ISO_12937'],
     addressesContamination: ['DIESEL_WATER'],
-    applicableIndustries: ['MARINE', 'AGRICULTURE', 'OUTDOOR_EQUIPMENT', 'POWER_GEN'],
+    applicableIndustries: ['MARINE', 'AGRICULTURE', 'POWER_GENERATION', 'AUTOMOTIVE'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
-      waterRemoval: '99.2%',
-      freeWaterCapacity: '5-10 liters',
-      responseTime: 'Real-time',
-      backflushInterval: '500 hours'
+      waterSeparation: '99.8%',
+      phases: 'Free, emulsified and dissolved water interception',
     },
-    description: 'Superabsorbent polymer cores for water encapsulation and removal'
+    description: 'Hydrophobic water separation technology removing three-phase water contamination from fuel systems'
+  },
+
+  TURBOCORE: {
+    id: 'turbocore',
+    name: 'TURBOCORE™',
+    category: 'Fuel Cleanliness Protection',
+    tagline: 'Three-Stage Graduated Fuel Protection (Series FH)',
+    slug: 'turbocore-series',
+    relatedStandards: ['ISO_16332', 'ASTM_D6304', 'ISO_12937'],
+    addressesContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
+    applicableIndustries: ['MARINE', 'POWER_GENERATION', 'MINING', 'AGRICULTURE'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      stages: 'Water separation, sediment, sub-micron polishing',
+      application: 'High-pressure fuel injection systems',
+    },
+    description: 'Three-stage graduated fuel protection intercepting water, sediment and sub-micron contamination before the injection circuit'
+  },
+
+  THERMACORE: {
+    id: 'thermacore',
+    name: 'THERMACORE™',
+    category: 'Cooling System Protection',
+    tagline: 'SCA Additive Release for Thermal Systems',
+    slug: 'thermacore',
+    relatedStandards: ['ASTM_D6210', 'ASTM_D3306'],
+    addressesContamination: ['COOLANT_DEGRADATION'],
+    applicableIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'MINING', 'POWER_GENERATION'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      mechanism: 'Controlled gradual SCA dosing',
+      prevents: 'Liner cavitation, coolant chemistry drift',
+    },
+    description: 'Supplemental Coolant Additive release technology maintaining coolant chemistry and preventing cavitation erosion across the service interval'
+  },
+
+  DRYCORE: {
+    id: 'drycore',
+    name: 'DRYCORE™',
+    category: 'Air Dryer Protection',
+    tagline: 'Molecular Sieve Desiccant Dryer',
+    slug: 'drycore',
+    relatedStandards: ['ISO_8573_1'],
+    addressesContamination: ['COMPRESSED_AIR_MOISTURE'],
+    applicableIndustries: ['AUTOMOTIVE', 'MANUFACTURING', 'MINING', 'CONSTRUCTION'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      mechanism: 'Molecular sieve desiccant',
+      protects: 'Air brake, suspension and control circuits',
+    },
+    description: 'Desiccant moisture removal for pneumatic systems preventing corrosion in air brake and control circuits'
+  },
+
+  INTEKCORE: {
+    id: 'intekcore',
+    name: 'INTEKCORE™',
+    category: 'Filter Housing Systems',
+    tagline: 'Heavy-Duty Filter Housing Systems',
+    slug: 'intekcore',
+    relatedStandards: [],
+    addressesContamination: [],
+    applicableIndustries: ['AUTOMOTIVE', 'MINING', 'CONSTRUCTION', 'AGRICULTURE'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      rating: 'High-pressure rated, OEM-compatible',
+      application: 'Heavy-duty trucks and industrial machinery',
+    },
+    description: 'Engineered filter housing systems protecting critical engine circuits in heavy-duty applications'
   },
 
   DURATECH: {
     id: 'duratech',
     name: 'DURATECH™',
-    category: 'Engine Oil Filtration',
-    tagline: 'Dual-Stage Wear Debris Capture',
+    category: 'Fleet Maintenance Systems',
+    tagline: 'Master Kit Consolidation',
     slug: 'duratech',
-    relatedStandards: ['ISO_4406', 'ISO_16889', 'SAE_J1211', 'ISO_11158'],
-    addressesContamination: ['PARTICLE_WEAR'],
-    applicableIndustries: ['AGRICULTURE', 'CONSTRUCTION', 'AUTOMOTIVE', 'MARINE'],
+    relatedStandards: [],
+    addressesContamination: [],
+    applicableIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'CONSTRUCTION', 'MINING'],
     comparisonTopics: ['OEM_VS_AFTERMARKET'],
     keyMetrics: {
-      efficiency: '98%',
-      particleSize: '10-20 microns',
-      bypassPrevention: '3-5 bar',
-      serviceLife: '500 hours'
+      model: 'Master kit with OEM interchangeability',
+      application: 'Standardized multi-system service events across mixed-model fleets',
     },
-    description: 'Coarse + precision stage architecture for engine oil wear protection'
+    description: 'Master kit consolidation delivering single-source, fleet-ready filtration for standardized maintenance operations'
+  },
+
+  MARINECLEAN: {
+    id: 'marineclean',
+    name: 'MARINECLEAN™',
+    category: 'Marine Filtration Systems',
+    tagline: 'Salt-Resistant Marine Protection',
+    slug: 'marineclean',
+    relatedStandards: [],
+    addressesContamination: ['DIESEL_WATER', 'HYDRAULIC_CONTAMINATION'],
+    applicableIndustries: ['MARINE'],
+    comparisonTopics: ['OEM_VS_AFTERMARKET'],
+    keyMetrics: {
+      coating: 'Salt-resistant epoxy with brine rejection',
+      certification: 'IMO certified for commercial marine',
+    },
+    description: 'Salt-resistant filtration for marine diesel fuel and hydraulic systems operating in saltwater environments'
   }
 };
 
@@ -197,10 +292,10 @@ export const STANDARDS: StandardRecord = {
   ISO_16889: {
     id: 'iso_16889',
     code: 'ISO 16889',
-    name: 'Cleanliness Coding System',
-    description: 'Particle cleanliness classification with 4-digit code',
+    name: 'Multi-Pass Filter Performance Test',
+    description: 'Multi-pass method measuring filtration ratio (Beta ratio) and retained capacity of hydraulic and lubrication filter elements',
     slug: 'iso-16889',
-    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'HYDROCORE', 'DURATECH'],
+    applicableTo: ['NANOFORCE', 'SYNTRAX'],
     relevantIndustries: ['ALL'],
     relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
     criticality: 'PRIMARY'
@@ -209,61 +304,181 @@ export const STANDARDS: StandardRecord = {
   ISO_4406: {
     id: 'iso_4406',
     code: 'ISO 4406',
-    name: 'Legacy Cleanliness Code',
-    description: 'Historic 2-3 digit particle count classification',
+    name: 'Fluid Cleanliness Code',
+    description: 'Three-number cleanliness code counting particles ≥4µm, ≥6µm and ≥14µm per milliliter of fluid',
     slug: 'iso-4406',
-    applicableTo: ['DURATECH', 'NANOFORCE'],
-    relevantIndustries: ['AUTOMOTIVE', 'INDUSTRIAL'],
-    relatedContamination: ['PARTICLE_WEAR'],
-    criticality: 'SECONDARY'
+    applicableTo: ['NANOFORCE', 'SYNTRAX', 'SYNTEPORE'],
+    relevantIndustries: ['ALL'],
+    relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
+    criticality: 'PRIMARY'
+  },
+
+  ISO_11171: {
+    id: 'iso_11171',
+    code: 'ISO 11171',
+    name: 'Particle Counter Calibration',
+    description: 'Calibration of automatic particle counters for liquids — the measurement traceability chain underlying ISO 4406 codes and ISO 16889 Beta ratios',
+    slug: 'iso-11171',
+    applicableTo: ['NANOFORCE', 'SYNTRAX'],
+    relevantIndustries: ['ALL'],
+    relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
+    criticality: 'PRIMARY'
   },
 
   ISO_5011: {
     id: 'iso_5011',
     code: 'ISO 5011',
-    name: 'Filter Integrity Testing',
-    description: 'Collapse and integrity verification procedures',
+    name: 'Air Filter Element Performance Test',
+    description: 'Test methods for inlet air cleaning equipment: initial restriction, efficiency with ISO 12103-1 test dust, and dust-holding capacity',
     slug: 'iso-5011',
-    applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'HYDROCORE', 'DURATECH'],
+    applicableTo: ['MACROCORE'],
     relevantIndustries: ['ALL'],
-    relatedContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
+    relatedContamination: ['PARTICLE_WEAR'],
     criticality: 'PRIMARY'
+  },
+
+  ISO_11155: {
+    id: 'iso_11155',
+    code: 'ISO 11155',
+    name: 'Cabin Air Filter Test',
+    description: 'Test methods for road vehicle cabin air filters: particulate (Part 1) and gaseous (Part 2) filtration performance',
+    slug: 'iso-11155',
+    applicableTo: ['MICROKAPPA'],
+    relevantIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'MINING', 'CONSTRUCTION'],
+    relatedContamination: ['CABIN_AIR_EXPOSURE'],
+    criticality: 'PRIMARY'
+  },
+
+  DIN_71220: {
+    id: 'din_71220',
+    code: 'DIN 71220',
+    name: 'Cabin Filter Test Method',
+    description: 'German standard for testing motor vehicle cabin filters — particulate filtration performance',
+    slug: 'din-71220',
+    applicableTo: ['MICROKAPPA'],
+    relevantIndustries: ['AUTOMOTIVE'],
+    relatedContamination: ['CABIN_AIR_EXPOSURE'],
+    criticality: 'SECONDARY'
   },
 
   ASTM_D6304: {
     id: 'astm_d6304',
     code: 'ASTM D6304',
     name: 'Karl Fischer Titration',
-    description: 'Water content measurement in fuels',
+    description: 'Determination of water content in petroleum products by coulometric Karl Fischer titration',
     slug: 'astm-d6304',
-    applicableTo: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
-    relevantIndustries: ['DIESEL', 'MARINE', 'AGRICULTURE'],
+    applicableTo: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+    relevantIndustries: ['MARINE', 'AGRICULTURE', 'POWER_GENERATION'],
     relatedContamination: ['DIESEL_WATER'],
     criticality: 'PRIMARY'
+  },
+
+  ISO_12937: {
+    id: 'iso_12937',
+    code: 'ISO 12937',
+    name: 'Water in Petroleum Products',
+    description: 'Determination of water in petroleum products by coulometric Karl Fischer titration',
+    slug: 'iso-12937',
+    applicableTo: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+    relevantIndustries: ['MARINE', 'AGRICULTURE', 'POWER_GENERATION'],
+    relatedContamination: ['DIESEL_WATER'],
+    criticality: 'PRIMARY'
+  },
+
+  ISO_16332: {
+    id: 'iso_16332',
+    code: 'ISO 16332',
+    name: 'Fuel Filter Water Separation Test',
+    description: 'Diesel engine fuel filter test method for water separation efficiency',
+    slug: 'iso-16332',
+    applicableTo: ['TURBOCORE', 'HYDROCORE'],
+    relevantIndustries: ['MARINE', 'POWER_GENERATION', 'MINING'],
+    relatedContamination: ['DIESEL_WATER'],
+    criticality: 'PRIMARY'
+  },
+
+  SAE_J726: {
+    id: 'sae_j726',
+    code: 'SAE J726',
+    name: 'Air Cleaner Test Code',
+    description: 'SAE test code for air cleaner assemblies, companion to ISO 5011 element testing',
+    slug: 'sae-j726',
+    applicableTo: ['MACROCORE'],
+    relevantIndustries: ['AGRICULTURE', 'CONSTRUCTION', 'AUTOMOTIVE'],
+    relatedContamination: ['PARTICLE_WEAR'],
+    criticality: 'SECONDARY'
   },
 
   SAE_J1539: {
     id: 'sae_j1539',
     code: 'SAE J1539',
-    name: 'Air Intake Cleanliness',
-    description: 'Diesel engine air intake contamination classification',
+    name: 'Air Induction System Integrity',
+    description: 'Air induction system leak integrity — leaks downstream of the filter bypass even a perfect element',
     slug: 'sae-j1539',
-    applicableTo: ['MACROCORE'],
-    relevantIndustries: ['AGRICULTURAL', 'CONSTRUCTION', 'AUTOMOTIVE'],
+    applicableTo: ['MACROCORE', 'INTEKCORE'],
+    relevantIndustries: ['AGRICULTURE', 'CONSTRUCTION', 'AUTOMOTIVE'],
     relatedContamination: ['PARTICLE_WEAR'],
+    criticality: 'SECONDARY'
+  },
+
+  NFPA_T2_14: {
+    id: 'nfpa_t2_14',
+    code: 'NFPA T2.14',
+    name: 'Hydraulic Fluid Power Cleanliness',
+    description: 'NFPA (National Fluid Power Association) recommended practice for hydraulic system cleanliness in proportional and servo applications',
+    slug: 'nfpa-t2-14',
+    applicableTo: ['NANOFORCE'],
+    relevantIndustries: ['MANUFACTURING', 'CONSTRUCTION', 'MINING'],
+    relatedContamination: ['HYDRAULIC_CONTAMINATION'],
     criticality: 'PRIMARY'
   },
 
-  NFPA_T214: {
-    id: 'nfpa_t214',
-    code: 'NFPA T2.14',
-    name: 'Machine Tool Hydraulic Fluids',
-    description: 'Minimum cleanliness ISO 18/16/13 for proportional systems',
-    slug: 'nfpa-t214',
-    applicableTo: ['NANOFORCE', 'SYNTRAX'],
-    relevantIndustries: ['MANUFACTURING', 'INDUSTRIAL'],
+  DIN_51524: {
+    id: 'din_51524',
+    code: 'DIN 51524',
+    name: 'Hydraulic Fluid Requirements',
+    description: 'German standard specifying minimum requirements for hydraulic pressure fluids (HL, HLP, HVLP)',
+    slug: 'din-51524',
+    applicableTo: ['NANOFORCE'],
+    relevantIndustries: ['MANUFACTURING', 'CONSTRUCTION'],
     relatedContamination: ['HYDRAULIC_CONTAMINATION'],
+    criticality: 'SECONDARY'
+  },
+
+  ISO_8573_1: {
+    id: 'iso_8573_1',
+    code: 'ISO 8573-1',
+    name: 'Compressed Air Purity Classes',
+    description: 'Compressed air purity classification for particles, water (pressure dew point) and oil content',
+    slug: 'iso-8573-1',
+    applicableTo: ['DRYCORE'],
+    relevantIndustries: ['MANUFACTURING', 'AUTOMOTIVE'],
+    relatedContamination: ['COMPRESSED_AIR_MOISTURE'],
     criticality: 'PRIMARY'
+  },
+
+  ASTM_D6210: {
+    id: 'astm_d6210',
+    code: 'ASTM D6210',
+    name: 'Fully Formulated Coolant Specification',
+    description: 'Specification for fully formulated glycol-based engine coolant for heavy-duty engines',
+    slug: 'astm-d6210',
+    applicableTo: ['THERMACORE'],
+    relevantIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'MINING'],
+    relatedContamination: ['COOLANT_DEGRADATION'],
+    criticality: 'PRIMARY'
+  },
+
+  ASTM_D3306: {
+    id: 'astm_d3306',
+    code: 'ASTM D3306',
+    name: 'Engine Coolant Specification',
+    description: 'Specification for glycol-based engine coolants for automotive and light-duty service',
+    slug: 'astm-d3306',
+    applicableTo: ['THERMACORE'],
+    relevantIndustries: ['AUTOMOTIVE'],
+    relatedContamination: ['COOLANT_DEGRADATION'],
+    criticality: 'SECONDARY'
   }
 };
 
@@ -276,7 +491,7 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
     id: 'diesel_water',
     name: 'Diesel Water Contamination',
     slug: 'diesel-water',
-    description: 'Free, emulsified, and sedimentary water in fuel systems',
+    description: 'Free, emulsified, and dissolved water in fuel systems',
     rootCauses: ['ATMOSPHERIC_BREATHING', 'CONDENSATION', 'STORAGE_CORROSION', 'TRANSFER_CONTAMINATION'],
     failureModes: ['INJECTOR_STICTION', 'FUEL_DELIVERY_CORROSION', 'MICROBIAL_GROWTH', 'FUEL_GUM_FORMATION', 'LUBRICITY_LOSS'],
     impacts: {
@@ -285,16 +500,16 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
       injectorCleaningFrequency: '2000-3000 hours',
       equipmentAvailability: '-12-18%'
     },
-    resolvedBy: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
-    relatedStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_4406'],
-    applicableIndustries: ['MARINE', 'AGRICULTURAL', 'OUTDOOR_EQUIPMENT']
+    resolvedBy: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+    relatedStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_16332'],
+    applicableIndustries: ['MARINE', 'AGRICULTURE', 'POWER_GENERATION']
   },
 
   PARTICLE_WEAR: {
     id: 'particle_wear',
     name: 'Particle Wear in Engines',
     slug: 'particle-wear',
-    description: 'Abrasive particle-induced wear through three mechanisms',
+    description: 'Abrasive particle-induced wear through two-body, three-body and adhesive mechanisms',
     rootCauses: ['AIR_INTAKE_INGESTION', 'FUEL_CONTAMINATION', 'INTERNAL_GENERATION', 'OIL_CIRCULATION'],
     failureModes: ['TWO_BODY_WEAR', 'THREE_BODY_WEAR', 'ADHESIVE_WEAR', 'BEARING_SPALLING', 'RING_STICKING'],
     impacts: {
@@ -304,16 +519,16 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
       compressionDrop: '-10-25%',
       equipmentAvailability: '-15-25%'
     },
-    resolvedBy: ['MACROCORE', 'NANOFORCE', 'DURATECH'],
-    relatedStandards: ['ISO_16889', 'ISO_4406', 'SAE_J1539', 'ASTM_D7085'],
-    applicableIndustries: ['AGRICULTURAL', 'CONSTRUCTION', 'AUTOMOTIVE', 'MINING']
+    resolvedBy: ['MACROCORE', 'SYNTRAX', 'NANOFORCE'],
+    relatedStandards: ['ISO_16889', 'ISO_4406', 'ISO_11171', 'ISO_5011', 'SAE_J1539'],
+    applicableIndustries: ['AGRICULTURE', 'CONSTRUCTION', 'AUTOMOTIVE', 'MINING']
   },
 
   HYDRAULIC_CONTAMINATION: {
     id: 'hydraulic_contamination',
     name: 'Hydraulic System Contamination',
     slug: 'hydraulic-system',
-    description: 'Pressurized fluid system failures from contamination',
+    description: 'Pressurized fluid system failures from particle, water and thermal contamination',
     rootCauses: ['MANUFACTURING_RESIDUE', 'SEAL_DEGRADATION', 'EXTERNAL_INGESTION', 'INTERNAL_GENERATION', 'PUMP_WEAR'],
     failureModes: ['VALVE_SPOOL_STICTION', 'ORIFICE_BLOCKAGE', 'PUMP_SWASHPLATE_STICTION', 'SEAL_EXTRUSION', 'HEAT_EXCHANGER_BLOCKAGE'],
     impacts: {
@@ -323,9 +538,74 @@ export const CONTAMINATION_MODES: ContaminationRecord = {
       equipmentAvailability: '-15-30%',
       unplannedMaintenance: '1-2 per 500 hours'
     },
-    resolvedBy: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX', 'MICROKAPPA'],
-    relatedStandards: ['ISO_16889', 'ISO_4406', 'NFPA_T214', 'DIN_51524'],
+    resolvedBy: ['NANOFORCE'],
+    relatedStandards: ['ISO_16889', 'ISO_4406', 'ISO_11171', 'NFPA_T2_14', 'DIN_51524'],
     applicableIndustries: ['CONSTRUCTION', 'MANUFACTURING', 'MINING', 'MARINE']
+  },
+
+  VARNISH_FORMATION: {
+    id: 'varnish_formation',
+    name: 'Varnish Formation in Lube and Hydraulic Oil',
+    slug: 'varnish-formation',
+    description: 'Thermal and oxidative degradation producing insoluble deposits on bearing and valve surfaces',
+    rootCauses: ['THERMAL_CYCLING', 'OXIDATION', 'ADDITIVE_DEPLETION', 'MICRO_DIESELING'],
+    failureModes: ['SERVO_VALVE_STICTION', 'BEARING_DEPOSIT_BUILDUP', 'HEAT_EXCHANGER_FOULING', 'FILTER_PLUGGING'],
+    impacts: {
+      valveResponseDegradation: 'Progressive stiction',
+      heatTransferLoss: 'Deposit-insulated surfaces',
+      oilLifeReduction: 'Accelerated oxidation cascade'
+    },
+    resolvedBy: ['NANOFORCE', 'SYNTRAX'],
+    relatedStandards: ['ISO_4406'],
+    applicableIndustries: ['MANUFACTURING', 'POWER_GENERATION', 'CONSTRUCTION']
+  },
+
+  CABIN_AIR_EXPOSURE: {
+    id: 'cabin_air_exposure',
+    name: 'Cabin Air Particulate Exposure',
+    slug: 'cabin-safety-systems',
+    description: 'Operator exposure to particulate matter, allergens and gaseous contaminants inside vehicle cabins',
+    rootCauses: ['AMBIENT_DUST', 'EXHAUST_INFILTRATION', 'POLLEN_ALLERGENS', 'RECIRCULATION_LOAD'],
+    failureModes: ['OPERATOR_HEALTH_IMPACT', 'HVAC_FOULING', 'VISIBILITY_REDUCTION'],
+    impacts: {
+      pmExposure: 'PM2.5/PM10 above occupational thresholds without filtration',
+      hvacLoad: 'Fouled evaporators reduce cooling capacity'
+    },
+    resolvedBy: ['MICROKAPPA'],
+    relatedStandards: ['ISO_11155', 'DIN_71220'],
+    applicableIndustries: ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'AUTOMOTIVE']
+  },
+
+  COOLANT_DEGRADATION: {
+    id: 'coolant_degradation',
+    name: 'Coolant Chemistry Degradation',
+    slug: 'cooling-systems',
+    description: 'SCA depletion and coolant chemistry drift enabling cavitation erosion and liner pitting',
+    rootCauses: ['SCA_DEPLETION', 'THERMAL_CYCLING', 'TOPPING_DILUTION', 'ELECTROCHEMICAL_ACTIVITY'],
+    failureModes: ['LINER_CAVITATION', 'LINER_PITTING', 'SILICATE_GEL_FORMATION', 'COOLANT_OIL_CROSS_CONTAMINATION'],
+    impacts: {
+      linerPerforation: 'Cavitation pitting can perforate liners between service intervals',
+      crossContamination: 'Coolant-in-oil events cascade to bearing failure'
+    },
+    resolvedBy: ['THERMACORE'],
+    relatedStandards: ['ASTM_D6210', 'ASTM_D3306'],
+    applicableIndustries: ['AUTOMOTIVE', 'AGRICULTURE', 'MINING', 'POWER_GENERATION']
+  },
+
+  COMPRESSED_AIR_MOISTURE: {
+    id: 'compressed_air_moisture',
+    name: 'Compressed Air Moisture Contamination',
+    slug: 'compressed-air-systems',
+    description: 'Water vapor condensation in pneumatic circuits causing corrosion and valve failure',
+    rootCauses: ['AMBIENT_HUMIDITY_COMPRESSION', 'THERMAL_CYCLING', 'DESICCANT_SATURATION'],
+    failureModes: ['AIR_BRAKE_CORROSION', 'VALVE_FREEZING', 'CONTROL_CIRCUIT_FAILURE'],
+    impacts: {
+      brakeSystemRisk: 'Corroded air brake components compromise stopping performance',
+      winterFailures: 'Condensed moisture freezes in valves below 0°C'
+    },
+    resolvedBy: ['DRYCORE'],
+    relatedStandards: ['ISO_8573_1'],
+    applicableIndustries: ['AUTOMOTIVE', 'MANUFACTURING', 'MINING']
   }
 };
 
@@ -340,9 +620,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'agriculture',
     contaminationExposure: 'HIGH',
     primaryEquipment: ['COMBINES', 'TRACTORS', 'HARVESTERS', 'IRRIGATION_SYSTEMS'],
-    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'SYNTRAX'],
-    applicableStandards: ['SAE_J1539', 'ISO_16889', 'ISO_5011'],
+    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'CABIN_AIR_EXPOSURE'],
+    applicableTechnologies: ['MACROCORE', 'SYNTRAX', 'SYNTEPORE', 'HYDROCORE', 'MICROKAPPA', 'DURATECH'],
+    applicableStandards: ['ISO_5011', 'SAE_J1539', 'ISO_16889', 'ASTM_D6304'],
     operatingConditions: {
       environment: 'Outdoor, dust-heavy, seasonal',
       temperature: '-10C to +40C',
@@ -357,9 +637,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'construction',
     contaminationExposure: 'HIGH',
     primaryEquipment: ['EXCAVATORS', 'BULLDOZERS', 'LOADERS', 'COMPACTORS'],
-    relevantContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'NANOFORCE_HYDRAULIC', 'DURATECH'],
-    applicableStandards: ['SAE_J1539', 'ISO_16889', 'ISO_5011'],
+    relevantContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION', 'CABIN_AIR_EXPOSURE'],
+    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'MICROKAPPA', 'DURATECH'],
+    applicableStandards: ['ISO_5011', 'SAE_J1539', 'ISO_16889', 'ISO_4406'],
     operatingConditions: {
       environment: 'High-dust earthwork sites, unpaved roads',
       temperature: '-20C to +50C',
@@ -374,9 +654,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'mining',
     contaminationExposure: 'EXTREME',
     primaryEquipment: ['HAUL_TRUCKS', 'DRILL_RIGS', 'LOADERS', 'CRUSHERS'],
-    relevantContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'SYNTRAX'],
-    applicableStandards: ['ISO_16889', 'ISO_5011'],
+    relevantContamination: ['PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION', 'CABIN_AIR_EXPOSURE'],
+    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'MICROKAPPA', 'THERMACORE', 'DURATECH'],
+    applicableStandards: ['ISO_5011', 'ISO_16889', 'ISO_4406'],
     operatingConditions: {
       environment: '24/7 operation, extreme dust',
       temperature: '-30C to +60C',
@@ -392,8 +672,8 @@ export const INDUSTRIES: IndustryRecord = {
     contaminationExposure: 'MEDIUM-HIGH',
     primaryEquipment: ['FISHING_VESSELS', 'CARGO_SHIPS', 'NAVAL_EQUIPMENT'],
     relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'HYDRAULIC_CONTAMINATION'],
-    applicableTechnologies: ['NANOFORCE', 'HYDROCORE', 'DURATECH', 'SYNTRAX'],
-    applicableStandards: ['ASTM_D6304', 'ISO_16889', 'ISO_14540'],
+    applicableTechnologies: ['HYDROCORE', 'TURBOCORE', 'NANOFORCE', 'MARINECLEAN'],
+    applicableStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_16332', 'ISO_16889'],
     operatingConditions: {
       environment: 'High humidity, salt spray, thermal cycling',
       temperature: '-10C to +40C',
@@ -408,9 +688,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'automotive',
     contaminationExposure: 'MEDIUM',
     primaryEquipment: ['HEAVY_TRUCKS', 'BUSES', 'COMMERCIAL_VEHICLES'],
-    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'DURATECH'],
-    applicableStandards: ['SAE_J1539', 'ISO_4406', 'ISO_16889'],
+    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'COMPRESSED_AIR_MOISTURE', 'COOLANT_DEGRADATION'],
+    applicableTechnologies: ['MACROCORE', 'SYNTRAX', 'SYNTEPORE', 'HYDROCORE', 'DRYCORE', 'THERMACORE', 'MICROKAPPA', 'INTEKCORE', 'DURATECH'],
+    applicableStandards: ['ISO_5011', 'ISO_4406', 'ISO_16889', 'ISO_8573_1', 'ASTM_D6210'],
     operatingConditions: {
       environment: 'Mixed urban/highway, seasonal',
       temperature: '-20C to +50C',
@@ -425,9 +705,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'manufacturing',
     contaminationExposure: 'LOW-MEDIUM',
     primaryEquipment: ['MACHINE_TOOLS', 'PRESSES', 'INJECTION_MOLDING', 'HYDRAULIC_SYSTEMS'],
-    relevantContamination: ['HYDRAULIC_CONTAMINATION', 'PARTICLE_WEAR'],
-    applicableTechnologies: ['NANOFORCE', 'MICROKAPPA', 'SYNTRAX'],
-    applicableStandards: ['NFPA_T214', 'ISO_16889', 'DIN_51524'],
+    relevantContamination: ['HYDRAULIC_CONTAMINATION', 'VARNISH_FORMATION', 'COMPRESSED_AIR_MOISTURE'],
+    applicableTechnologies: ['NANOFORCE', 'DRYCORE'],
+    applicableStandards: ['NFPA_T2_14', 'ISO_16889', 'DIN_51524', 'ISO_8573_1'],
     operatingConditions: {
       environment: 'Climate-controlled, clean facilities',
       temperature: '15C to +30C',
@@ -442,9 +722,9 @@ export const INDUSTRIES: IndustryRecord = {
     slug: 'power-generation',
     contaminationExposure: 'MEDIUM',
     primaryEquipment: ['DIESEL_GENERATORS', 'TURBINES', 'COMPRESSORS'],
-    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
-    applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
-    applicableStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_5011'],
+    relevantContamination: ['DIESEL_WATER', 'PARTICLE_WEAR', 'VARNISH_FORMATION', 'COOLANT_DEGRADATION'],
+    applicableTechnologies: ['MACROCORE', 'SYNTRAX', 'SYNTEPORE', 'HYDROCORE', 'TURBOCORE', 'THERMACORE'],
+    applicableStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_5011', 'ASTM_D6210'],
     operatingConditions: {
       environment: 'Industrial sites, variable exposure',
       temperature: '0C to +45C',
@@ -464,7 +744,7 @@ export const COMPARISON_TOPICS = {
     name: 'OEM vs Aftermarket Logic',
     slug: 'oem-vs-aftermarket',
     description: 'Performance analysis and specification alignment',
-    relevantTechnologies: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'DURATECH', 'HYDROCORE'],
+    relevantTechnologies: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'SYNTEPORE', 'HYDROCORE', 'MICROKAPPA', 'DURATECH'],
     coverageAreas: [
       'Performance equivalence',
       'Specification compliance',
@@ -581,12 +861,12 @@ export function getIndustriesBySeverity() {
   });
 }
 
-export function getAllTechnologiesByFeature(feature: 'waterRemoval' | 'particleCapture' | 'wearProtection' | 'costEffective') {
+export function getAllTechnologiesByFeature(feature: 'waterRemoval' | 'particleCapture' | 'wearProtection' | 'moistureControl') {
   const features = {
-    waterRemoval: ['NANOFORCE', 'HYDROCORE', 'SYNTRAX'],
-    particleCapture: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'MICROKAPPA'],
-    wearProtection: ['DURATECH', 'SYNTRAX'],
-    costEffective: ['MACROCORE', 'DURATECH']
+    waterRemoval: ['HYDROCORE', 'TURBOCORE', 'SYNTEPORE'],
+    particleCapture: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'SYNTEPORE', 'MICROKAPPA'],
+    wearProtection: ['SYNTRAX', 'NANOFORCE', 'MACROCORE'],
+    moistureControl: ['DRYCORE', 'HYDROCORE']
   };
   return (features[feature] || []).map(id => TECHNOLOGIES[id]);
 }
