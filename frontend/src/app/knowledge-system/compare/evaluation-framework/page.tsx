@@ -505,9 +505,9 @@ export default function EvaluationFrameworkPage() {
       </div>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Filter Evaluation Methodology [PRIMARY] | Contamination Control Metrics [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube</p>
-        <p>CONCEPT_TAXONOMY: type=framework | domain=asset-protection | approach=evaluation-methodology</p>
+        <p>CONCEPT_TAXONOMY: type=decision-framework | domain=filter-evaluation-methodology | approach=beta-ratio-cleanliness-metrics</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, SAE J1211</p>
@@ -518,7 +518,7 @@ export default function EvaluationFrameworkPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/evaluation-framework</p>
         <p>&nbsp;&nbsp;concept_id: filter-evaluation-framework</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}

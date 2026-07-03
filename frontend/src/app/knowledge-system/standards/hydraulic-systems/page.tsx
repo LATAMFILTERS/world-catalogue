@@ -227,9 +227,9 @@ export default function HydraulicSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Hydraulic Proportional Control Cleanliness [PRIMARY] | Servo Valve Protection [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=hydraulic-efficiency | standards=ISO-16889, NFPA-T2.14</p>
+        <p>CONCEPT_TAXONOMY: type=protection-system | domain=hydraulic-cleanliness | standards=ISO-16889, ISO-4406, NFPA-T2.14</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, DIN 51524, ISO 4406</p>
@@ -240,7 +240,7 @@ export default function HydraulicSystemsPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/hydraulic-systems</p>
         <p>&nbsp;&nbsp;concept_id: hydraulic-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

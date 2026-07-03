@@ -471,9 +471,9 @@ export default function LubeOilSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Engine Bearing Lubrication [PRIMARY] | Abrasive Wear Prevention [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: lube, engine, hydraulic, transmission</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=contamination | standards=ISO-16889, ISO-4406</p>
+        <p>CONCEPT_TAXONOMY: type=protection-system | domain=lube-oil-cleanliness | standards=ISO-16889, ISO-4406, ISO-11171</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, SAE J1211, ASTM D7085</p>
@@ -484,7 +484,7 @@ export default function LubeOilSystemsPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/lube-oil-systems</p>
         <p>&nbsp;&nbsp;concept_id: lube-oil-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

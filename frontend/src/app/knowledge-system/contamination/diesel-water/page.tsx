@@ -359,9 +359,9 @@ export default function DieselWaterContaminationPage() {
         ],
       }) }} />
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Water Ingress Failure Modes [PRIMARY] | Microbial Diesel Contamination [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=fuel-integrity | mechanism=water-ingress</p>
+        <p>CONCEPT_TAXONOMY: type=failure-case-study | domain=fuel-water-failure | mechanism=water-ingress-microbial</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406</p>
@@ -372,7 +372,7 @@ export default function DieselWaterContaminationPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/diesel-water</p>
         <p>&nbsp;&nbsp;concept_id: diesel-water-contamination</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
     </main>
   );

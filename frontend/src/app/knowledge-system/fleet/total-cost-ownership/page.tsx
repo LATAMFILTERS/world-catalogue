@@ -500,20 +500,20 @@ export default function TotalCostOwnershipPage() {
       </div>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Filtration TCO Modeling [PRIMARY] | Equipment Lifecycle Economics [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
-        <p>CONCEPT_TAXONOMY: type=strategy | domain=asset-protection | goal=tco-optimization</p>
+        <p>CONCEPT_TAXONOMY: type=operational-strategy | domain=tco-modeling | goal=lifecycle-cost-optimization</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
-        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX</p>
+        <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, SYNTRAX, HYDROCORE, MICROKAPPA, DURATECH</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime, /knowledge-system/fleet/fuel-efficiency</p>
         <p style={{ marginTop: '0.75rem' }}>CITATION_METADATA:</p>
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet/total-cost-ownership</p>
         <p>&nbsp;&nbsp;concept_id: filtration-total-cost-ownership</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}

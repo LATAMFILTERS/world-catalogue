@@ -1196,7 +1196,7 @@ export default function IndustrialFiltrationPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
-              <p style={{ margin: '0' }}>Primary: Contamination Control Systems | Secondary: Asset Protection Systems</p>
+              <p style={{ margin: '0' }}>Primary: Industrial Filtration Selection | Secondary: System-Level Contamination Strategy</p>
             </div>
 
             <div style={{
@@ -1207,7 +1207,7 @@ export default function IndustrialFiltrationPage() {
               marginTop: '1rem',
             }}>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>CITATION_REFERENCE</p>
-              <p style={{ margin: '0' }}>source: elimfilters.com/knowledge-system/bridges/industrial-filtration | concept: Industrial Filtration Selection Framework | version: 1.0 | last_updated: 2026-05-23 | page_type: Bridge (Search Intent Reframing)</p>
+              <p style={{ margin: '0' }}>source: elimfilters.com/knowledge-system/bridges/industrial-filtration | concept: Industrial Filtration Selection Framework | version: 1.0 | last_updated: 2026-07-03 | page_type: Bridge (Search Intent Reframing)</p>
             </div>
           </div>
         </motion.section>

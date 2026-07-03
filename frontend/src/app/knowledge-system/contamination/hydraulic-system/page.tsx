@@ -359,9 +359,9 @@ export default function HydraulicSystemContaminationPage() {
         ],
       }) }} />
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Hydraulic Efficiency Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: High-Pressure Hydraulic Degradation [PRIMARY] | Valve Stiction Failure Analysis [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: hydraulic, proportional_valve, pump, actuator</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=hydraulic-efficiency | mechanism=particle-contamination</p>
+        <p>CONCEPT_TAXONOMY: type=failure-case-study | domain=hydraulic-failure | mechanism=particle-stiction-varnish</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, NFPA T2.14, ISO 4406</p>
@@ -372,7 +372,7 @@ export default function HydraulicSystemContaminationPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/hydraulic-system</p>
         <p>&nbsp;&nbsp;concept_id: hydraulic-system-contamination</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
     </main>
   );

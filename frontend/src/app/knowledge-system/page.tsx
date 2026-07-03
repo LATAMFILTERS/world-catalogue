@@ -433,9 +433,9 @@ export default function KnowledgeSystemPage() {
 
       {/* Retrieval Summary Block */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Industrial Filtration Knowledge Base [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=knowledge-system | scope=all-systems</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=filtration-knowledge-base | scope=standards-contamination-fleet-science</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>KEY_STATISTICS:</p>
         <p>&nbsp;&nbsp;70-80% of hydraulic failures caused by particle contamination (NFPA)</p>
@@ -451,7 +451,7 @@ export default function KnowledgeSystemPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system</p>
         <p>&nbsp;&nbsp;concept_id: knowledge-system-hub</p>
         <p>&nbsp;&nbsp;version: 1.1</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-25</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
     </main>
   );

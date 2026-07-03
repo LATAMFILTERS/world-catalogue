@@ -243,9 +243,9 @@ export default function FuelSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Diesel Fuel Integrity Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: HPCR Injector Protection [PRIMARY] | Water-in-Diesel Control [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: fuel, injector, pump, storage_tank</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=fuel-integrity | standards=ASTM-D6304, ISO-12937</p>
+        <p>CONCEPT_TAXONOMY: type=protection-system | domain=fuel-injection-protection | standards=ASTM-D6304, ISO-12937, ISO-16332</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ASTM D6304, ISO 12937, ISO 4406, ASTM D975</p>
@@ -256,7 +256,7 @@ export default function FuelSystemsPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/fuel-systems</p>
         <p>&nbsp;&nbsp;concept_id: diesel-fuel-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

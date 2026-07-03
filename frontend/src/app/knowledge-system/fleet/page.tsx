@@ -189,9 +189,9 @@ export default function FleetHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Fleet Maintenance Economics [PRIMARY] | Operational Reliability Strategy [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=fleet-operations | scope=downtime-efficiency-tco</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=fleet-maintenance-economics | scope=downtime-fuel-tco</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
@@ -202,7 +202,7 @@ export default function FleetHubPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/fleet</p>
         <p>&nbsp;&nbsp;concept_id: fleet-optimization-hub</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}

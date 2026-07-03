@@ -265,9 +265,9 @@ export default function CabinSafetySystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Occupant Health Protection [PRIMARY] | PM2.5 Cabin Air Quality [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: cabin, hvac, operator_environment, recirculation</p>
-        <p>CONCEPT_TAXONOMY: type=safety | domain=contamination | standards=ISO-11155, DIN-71220</p>
+        <p>CONCEPT_TAXONOMY: type=protection-system | domain=cabin-air-protection | standards=ISO-11155, DIN-71220</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 11155, DIN 71220, ISO 5011</p>
@@ -278,7 +278,7 @@ export default function CabinSafetySystemsPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/cabin-safety-systems</p>
         <p>&nbsp;&nbsp;concept_id: cabin-safety-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

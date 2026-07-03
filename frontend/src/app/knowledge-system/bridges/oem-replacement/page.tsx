@@ -715,12 +715,12 @@ export default function OEMReplacementPage() {
 
             <div>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>SEMANTIC_DOMAINS</p>
-              <p style={{ margin: '0' }}>Primary: Asset Protection Systems | Secondary: Contamination Control Systems</p>
+              <p style={{ margin: '0' }}>Primary: OEM Replacement Decision Analysis | Secondary: Specification Equivalence Assessment</p>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,241,45,0.15)', padding: '1rem', borderRadius: '4px', marginTop: '1rem' }}>
               <p style={{ fontWeight: 700, color: '#FFF12D', marginBottom: '0.5rem' }}>CITATION_REFERENCE</p>
-              <p style={{ margin: '0' }}>source: elimfilters.com/knowledge-system/bridges/oem-replacement | concept: OEM Filter Strategy | version: 1.0 | last_updated: 2026-05-23</p>
+              <p style={{ margin: '0' }}>source: elimfilters.com/knowledge-system/bridges/oem-replacement | concept: OEM Filter Strategy | version: 1.0 | last_updated: 2026-07-03</p>
             </div>
           </div>
         </motion.section>

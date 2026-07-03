@@ -361,9 +361,9 @@ export default function ParticleWearPage() {
         ],
       }) }} />
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Air Intake Filtration Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Abrasive Wear Mechanics [PRIMARY] | Two-Body & Three-Body Wear [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, lube, air_intake, bearing</p>
-        <p>CONCEPT_TAXONOMY: type=failure | domain=contamination | mechanism=abrasive-wear</p>
+        <p>CONCEPT_TAXONOMY: type=failure-case-study | domain=abrasive-wear-mechanics | mechanism=two-body-three-body-adhesive</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D7085</p>
@@ -374,7 +374,7 @@ export default function ParticleWearPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination/particle-wear</p>
         <p>&nbsp;&nbsp;concept_id: particle-wear-contamination</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
     </main>
   );

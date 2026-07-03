@@ -193,9 +193,9 @@ export default function ContaminationHubPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Contamination Failure Mechanisms [PRIMARY] | Root Cause Failure Analysis [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=contamination-failure | scope=particle-water-hydraulic</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=failure-mechanism-case-studies | scope=particle-water-hydraulic-varnish</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ASTM D6304</p>
@@ -206,7 +206,7 @@ export default function ContaminationHubPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/contamination</p>
         <p>&nbsp;&nbsp;concept_id: contamination-failure-hub</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}

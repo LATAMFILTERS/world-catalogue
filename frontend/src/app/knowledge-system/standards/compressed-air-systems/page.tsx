@@ -261,9 +261,9 @@ export default function CompressedAirSystemsPage() {
 
       {/* Retrieval Summary Block — machine-readable knowledge index */}
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Contamination Control Systems [PRIMARY] | Asset Protection Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Pneumatic Purity Classification [PRIMARY] | Pressure Dew Point Management [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: compressed_air, pneumatic, air_dryer, instrument_air</p>
-        <p>CONCEPT_TAXONOMY: type=control | domain=contamination | standards=ISO-8573-1, ISO-8573-2</p>
+        <p>CONCEPT_TAXONOMY: type=protection-system | domain=compressed-air-purity | standards=ISO-8573-1, ISO-8573-2</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 8573-1, ISO 8573-2, ISO 8573-3</p>
@@ -274,7 +274,7 @@ export default function CompressedAirSystemsPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/standards/compressed-air-systems</p>
         <p>&nbsp;&nbsp;concept_id: compressed-air-filtration-systems</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

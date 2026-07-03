@@ -428,9 +428,9 @@ export default function SystemVsCommodityPage() {
       </div>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: System vs Commodity Filtration Thinking [PRIMARY] | Reliability-Driven Selection [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake</p>
-        <p>CONCEPT_TAXONOMY: type=framework | domain=asset-protection | approach=system-vs-commodity</p>
+        <p>CONCEPT_TAXONOMY: type=decision-framework | domain=system-vs-commodity | approach=reliability-driven-selection</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
@@ -441,7 +441,7 @@ export default function SystemVsCommodityPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/system-vs-commodity</p>
         <p>&nbsp;&nbsp;concept_id: system-vs-commodity-filtration</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}

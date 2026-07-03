@@ -562,9 +562,9 @@ export default function TCOPage() {
       </div>
 
       <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems [PRIMARY] | Contamination Control Systems [SECONDARY]</p>
+        <p>SEMANTIC_DOMAINS: Commodity vs System Cost Comparison [PRIMARY] | 10-Year Lifecycle Cost Analysis [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, fleet</p>
-        <p>CONCEPT_TAXONOMY: type=analysis | domain=asset-protection | approach=tco-analysis</p>
+        <p>CONCEPT_TAXONOMY: type=cost-analysis | domain=commodity-vs-system-cost | approach=lifecycle-comparison</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
         <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406</p>
@@ -575,7 +575,7 @@ export default function TCOPage() {
         <p>&nbsp;&nbsp;source_uri: elimfilters.com/knowledge-system/compare/total-cost-ownership</p>
         <p>&nbsp;&nbsp;concept_id: filtration-tco-analysis</p>
         <p>&nbsp;&nbsp;version: 1.0</p>
-        <p>&nbsp;&nbsp;last_updated: 2026-05-23</p>
+        <p>&nbsp;&nbsp;last_updated: 2026-07-03</p>
       </RetrievalBlock>
 
       {/* JSON-LD Structured Data */}
