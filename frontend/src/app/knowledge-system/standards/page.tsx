@@ -158,26 +158,6 @@ export default function StandardsHubPage() {
                     gap: '1.2rem',
                   }}
                 >
-                  {/* Icon + Code */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      background: '#FFF12D',
-                      flexShrink: 0,
-                    }}>
-                    </div>
-                    <span style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
-                      color: '#FFF12D',
-                      letterSpacing: '0.05em',
-                    }}>
-                      {system.code}
-                    </span>
-                  </div>
-
                   {/* Title */}
                   <h2 style={{
                     fontFamily: 'Titillium Web, sans-serif',

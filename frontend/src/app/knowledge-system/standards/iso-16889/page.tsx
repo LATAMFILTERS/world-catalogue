@@ -7,31 +7,35 @@ import { motion } from 'motion/react';
 export default function ISO16889Page() {
   const sections = [
     {
-      title: '¿Para qué sirve ISO 16889?',
-      content: 'ISO 16889 sirve como herramienta de comunicación universal entre proveedores de fluidos, fabricantes de equipos y operadores de máquinas. Su propósito es establecer un lenguaje común para especificar, verificar y documentar la limpieza de fluidos hidráulicos. Permite a las organizaciones definir requisitos precisos de calidad del fluido, monitorear la contaminación durante la operación, y garantizar que el fluido cumple con las especificaciones necesarias para proteger los componentes del sistema hidráulico de la degradación y el desgaste prematuro.'
+      title: 'What ISO 16889 Measures',
+      content: 'ISO 16889 defines the multi-pass method for evaluating the filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic filter elements. The Beta ratio (βx) quantifies a filter\'s efficiency at a specific particle size: β10(c) = 200 means the filter captures 200 contaminated particles per 1 clean particle that passes through at the 10 µm(c) size — equivalent to 99.5% efficiency at that size. The cleanliness code produced by ISO 16889-based testing uses three Range Numbers representing particle counts per millilitre at >4 µm, >6 µm, and >14 µm thresholds. A code of 16/14/11 means: up to 320 particles >4 µm, up to 80 particles >6 µm, and up to 10 particles >14 µm per mL. Particle counting must be performed with an automatic particle counter (APC) calibrated to ISO 11171 using NIST-traceable calibration fluid — this eliminated inter-laboratory variation that existed under older ISO 4406 manual counting methods.'
     },
     {
-      title: '¿Por qué importa en filtración industrial?',
-      content: 'En filtración industrial, ISO 16889 es fundamental porque establece el objetivo cuantificable que debe alcanzar un sistema de filtración. Sin este estándar, no existiría una forma consistente de medir si un filtro o sistema de filtración está cumpliendo su función. ISO 16889 define exactamente qué nivel de limpieza es necesario para diferentes aplicaciones, permitiendo que los ingenieros diseñen sistemas de filtración que mantengan el fluido dentro de los rangos especificados. Esto es crítico porque la contaminación particularada es la causa principal del desgaste en componentes hidráulicos, siendo responsable del 50-75% de las fallas de sistemas hidráulicos en la industria.'
+      title: 'Why It Matters for Industrial Filtration',
+      content: 'ISO 16889 is the foundational measurement standard for specifying and verifying hydraulic system cleanliness. Without it, there is no consistent way to define what "clean enough" means for a specific hydraulic circuit, or to verify that a filter element actually performs as specified. The standard enables engineers to: (1) specify target cleanliness codes for each circuit based on the most sensitive component (e.g., ISO 16/14/11 for proportional valves with 1–4 µm spool clearances); (2) select filter elements with Beta ratios proven to achieve those targets; (3) verify actual fluid condition through periodic oil analysis. Particle contamination is responsible for 70–80% of hydraulic system failures. ISO 16889 provides the measurement framework that transforms contamination control from a qualitative guideline into a verifiable engineering specification. Contamination exceeding target codes accelerates the same wear mechanisms that drive hydraulic system failure.'
     },
     {
-      title: 'Aplicación en motores y sistemas',
-      content: 'En sistemas hidráulicos de maquinaria pesada, equipos de construcción, sistemas agrícolas, maquinaria marina y equipos de minería, ISO 16889 determina las especificaciones de limpieza requeridas. Por ejemplo, un sistema hidráulico servo-controlado puede requerir ISO 16889 16/14/11 (máximo de 1300 partículas >4µm, 160 partículas >6µm, 20 partículas >14µm por mL), mientras que un sistema de transmisión puede especificar ISO 16889 18/16/13. Los fabricantes de equipos OEM utilizan estos códigos en sus manuales de servicio para indicar el fluido correcto, y los operadores monitorean regularmente el fluido para asegurar que permanece dentro de la clasificación especificada mediante pruebas de conteo de partículas.'
+      title: 'Cleanliness Codes for Common Hydraulic Systems',
+      content: 'Target cleanliness codes vary by component sensitivity. Proportional and servo control valves (spool clearances 1–4 µm): ISO 16/14/11 or 15/13/10. Pressure-compensated variable displacement pumps: ISO 17/15/12. Standard directional control valves: ISO 18/16/13. Hydraulic cylinders and motors: ISO 19/17/14. Return line and reservoir circuits: ISO 20/18/15. These targets are derived from empirical wear data: maintaining 16/14/11 in a servo system extends valve spool life by 3–5× compared to uncontrolled contamination at 20/18/15. Filter selection must account for the system\'s highest-pressure circuit, the most sensitive component, and the expected ingression rate from ambient contamination, system wear particles, and new oil contamination. New oil from drums typically measures ISO 21/19/16 — it must be filtered before use if the system target is tighter than 20/18/15.'
     }
   ];
 
   const faqs = [
     {
-      question: '¿Cuál es la diferencia entre ISO 16889 e ISO 4406?',
-      answer: 'ISO 4406 utilizaba un código de 2-3 dígitos menos preciso, mientras que ISO 16889 utiliza 4 dígitos para medir partículas en tres tamaños diferentes (>4µm, >6µm, >14µm). ISO 16889 también especifica métodos de prueba más rigurosos y utiliza tamaños de partículas más estándar. ISO 16889 ofrece mayor precisión y es ahora el estándar preferido en la industria.'
+      question: 'What is a Beta ratio and how is it read?',
+      answer: 'A Beta ratio (β) expresses how many particles of a given size the filter captures for every one that passes through. β10(c) = 200 means 200 particles >10 µm are captured for every 1 that bypasses — 99.5% efficiency. The (c) suffix indicates the particle size was measured using the ISO 11171 calibration standard (c = calibrated). Common Beta ratios and their efficiencies: β3(c) = 200 → 99.5% at 3 µm; β6(c) = 10 → 90% at 6 µm; β10(c) = 1000 → 99.9% at 10 µm. Higher Beta ratio means higher efficiency at that particle size. A filter element labelled "10 µm absolute" typically means β10(c) ≥ 200.'
     },
     {
-      question: '¿Qué significa el código 17/15/12 en ISO 16889?',
-      answer: 'Un código ISO 16889 17/15/12 significa que el fluido contiene: máximo 1300 partículas mayores a 4 micrones por mililitro (17 = 2^17/4 = 1300), máximo 320 partículas mayores a 6 micrones por mililitro (15 = 2^15/4 = 320), y máximo 20 partículas mayores a 14 micrones por mililitro (12 = 2^12/4 = 20). Los números son exponentes matemáticos que representan umbrales de contaminación aceptables.'
+      question: 'What is the difference between ISO 4406 and ISO 16889?',
+      answer: 'ISO 4406 defined the Range Number cleanliness code system. ISO 16889 defines how to measure the fluid to arrive at that code — specifically the multi-pass filter test, the Beta ratio measurement protocol, and the requirement for automatic particle counters calibrated to ISO 11171. The cleanliness code format is identical: both use three Range Numbers at 4 µm, 6 µm, and 14 µm. The difference is measurement precision: ISO 4406 permitted manual microscopic counting that varied between laboratories; ISO 16889 mandated calibrated APCs that produce consistent, reproducible results. When a service manual specifies "ISO 4406 18/16/13," the numbers mean exactly the same as "ISO 16889 18/16/13."'
     },
     {
-      question: '¿Con qué frecuencia debo verificar la limpieza del fluido según ISO 16889?',
-      answer: 'La frecuencia depende del tipo de equipo y las condiciones de operación. Los sistemas críticos como maquinaria servocontrolada requieren verificación mensual o trimestral. Equipos de construcción en ambientes polvorientos pueden requerir verificación cada 50-100 horas de operación. Los fabricantes OEM especifican intervalos en sus manuales de servicio. Las pruebas se realizan mediante contadores de partículas ópticos o de luz bloqueada calibrados según ISO 11171.'
+      question: 'How often should fluid cleanliness be measured?',
+      answer: 'Measurement frequency depends on system criticality and operating environment. Servo and proportional valve systems in clean environments: quarterly or every 500 operating hours. Mobile construction equipment in dusty environments: every 250 hours or when filter differential pressure indicators signal approaching bypass. Fixed industrial systems with continuous monitoring: inline particle counters can provide real-time cleanliness data. After maintenance events (filter change, seal replacement, component repair): always sample before returning to service to confirm the circuit was not contaminated during maintenance. Oil analysis programs typically combine particle counting (ISO 16889), water content (Karl Fischer per ASTM D6304), and wear metal spectrometry (ICP-OES) to provide a complete picture of fluid condition.'
+    },
+    {
+      question: 'What does "absolute" versus "nominal" filtration rating mean under ISO 16889?',
+      answer: '"Absolute" filtration rating means the filter achieves a specified Beta ratio at the stated particle size: a 10 µm absolute filter has β10(c) ≥ 200 (99.5% efficiency). "Nominal" ratings are not standardised and carry no guaranteed efficiency — a filter marked "10 µm nominal" might allow 30–50% of 10 µm particles to pass in service. ISO 16889 only recognises Beta ratio values as valid efficiency descriptors. When specifying replacement filter elements, always request the manufacturer\'s ISO 16889 test report with Beta ratio data, not just a nominal micron rating. Nominal ratings are a legacy marketing convention with no engineering basis under modern filtration standards.'
     }
   ];
 
@@ -82,7 +86,7 @@ export default function ISO16889Page() {
             margin: '0 auto',
             textAlign: 'justify', lineHeight: 1.65,
           }}>
-            Hydraulic Fluid Power — Fluids — Method for coding the degree of contamination by solid particles
+            Hydraulic Fluid Power — Filters — Multi-pass method for evaluating filtration performance of a filter element
           </p>
         </motion.div>
       </section>
@@ -93,7 +97,7 @@ export default function ISO16889Page() {
         margin: '0 auto',
         padding: '4rem 2rem',
       }}>
-        {/* Section: Definition (with internal links) */}
+        {/* Definition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +116,7 @@ export default function ISO16889Page() {
             marginBottom: '1rem',
             letterSpacing: '-0.01em',
           }}>
-            ¿Qué es ISO 16889?
+            What is ISO 16889?
           </h2>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -120,12 +124,12 @@ export default function ISO16889Page() {
             color: 'rgba(255,255,255,0.7)',
             textAlign: 'justify', lineHeight: 1.8,
           }}>
-            ISO 16889 es el estándar internacional que define el método de codificación de la limpieza de fluidos hidráulicos según el grado de contaminación por partículas sólidas. Es la herramienta de medición central dentro de cualquier{' '}
-            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>estrategia de filtración industrial</Link>.{' '}
-            Establece un sistema estandarizado de clasificación de 4 dígitos que identifica el número de partículas mayores a 4 µm, 6 µm y 14 µm por cada mililitro de fluido. Este estándar reemplazó a{' '}
+            ISO 16889 is the international standard defining the multi-pass method for measuring the filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic filter elements. It is the central measurement tool within any{' '}
+            <Link href="/knowledge-system/bridges/industrial-filtration" style={{ color: '#FFF12D', textDecoration: 'underline' }}>industrial filtration strategy</Link>.
+            {' '}The standard establishes a three-number cleanliness code system — identical in format to{' '}
             <Link href="/knowledge-system/standards/iso-4406" style={{ color: '#FFF12D', textDecoration: 'underline' }}>ISO 4406</Link>{' '}
-            como el código de limpieza preferido en la industria moderna, ofreciendo una metodología más precisa y confiable para la evaluación de la calidad del fluido. La contaminación que ISO 16889 cuantifica es la misma que impulsa el{' '}
-            <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>deterioro acelerado en sistemas hidráulicos de alta presión</Link>.
+            — that classifies particle concentrations at 4 µm, 6 µm, and 14 µm thresholds per millilitre of fluid. What distinguishes ISO 16889 is its mandated test methodology: all particle counting must use automatic particle counters calibrated to ISO 11171, eliminating the measurement variability that existed under older manual counting methods. The contamination that ISO 16889 quantifies is the same contamination driving{' '}
+            <Link href="/knowledge-system/contamination/hydraulic-system" style={{ color: '#FFF12D', textDecoration: 'underline' }}>accelerated degradation in high-pressure hydraulic circuits</Link>.
           </p>
         </motion.div>
 
@@ -183,7 +187,7 @@ export default function ISO16889Page() {
             textAlign: 'center',
             letterSpacing: '-0.01em',
           }}>
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (
@@ -222,7 +226,6 @@ export default function ISO16889Page() {
         </motion.div>
       </section>
 
-
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -231,10 +234,10 @@ export default function ISO16889Page() {
         description: 'ISO 16889 specifies the multi-pass method for evaluating filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic fluid power filter elements. Beta ratio quantifies filter efficiency at specific particle sizes, enabling system designers to specify target cleanliness codes for critical components.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        dateModified: '2026-06-11',
-        keywords: ['ISO 16889', 'Beta ratio', 'filter efficiency', 'multi-pass test', 'hydraulic filtration', 'ISO 4406', 'contamination control', 'industrial filtration'],
-        about: { '@type': 'Thing', name: 'ISO 16889 Filter Testing', description: 'International standard for measuring filtration efficiency (Beta ratio) and dirt-holding capacity of hydraulic filter elements using the multi-pass method.' },
-        inLanguage: 'es',
+        dateModified: '2026-07-03',
+        keywords: ['ISO 16889', 'Beta ratio', 'filter efficiency', 'multi-pass test', 'hydraulic filtration', 'ISO 4406', 'contamination control', 'industrial filtration', 'ISO 11171'],
+        about: { '@type': 'Thing', name: 'ISO 16889 Filter Testing', description: 'International standard for measuring filtration efficiency (Beta ratio) and dirt-holding capacity of hydraulic filter elements using the multi-pass method with ISO 11171 calibrated particle counters.' },
+        inLanguage: 'en',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
