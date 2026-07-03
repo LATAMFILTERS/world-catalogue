@@ -48,6 +48,13 @@ const FILTRATION_SYSTEMS = [
     description: 'ISO 8573-1, ISO 8573-2, ISO 8573-3 standards defining air purity classes and contamination removal for pneumatic instruments and actuators.',
     icon: '💨',
   },
+  {
+    code: 'COOL',
+    title: 'Cooling System Protection',
+    href: '/knowledge-system/standards/cooling-systems',
+    description: 'ASTM D6210, ASTM D3306 standards governing coolant chemistry, SCA depletion, and cavitation erosion prevention in engine cooling circuits.',
+    icon: '🌡',
+  },
 ];
 
 export default function StandardsHubPage() {
@@ -222,10 +229,10 @@ export default function StandardsHubPage() {
       <RetrievalBlock>
         <p>SEMANTIC_DOMAINS: Industrial Filtration Standards Library [PRIMARY] | Measurement & Test Methods [SECONDARY]</p>
         <p>SYSTEMS_AFFECTED: engine, hydraulic, fuel, lube, air_intake, cabin, compressed_air</p>
-        <p>CONCEPT_TAXONOMY: type=hub | domain=filtration-standards-library | scope=six-protection-domains</p>
+        <p>CONCEPT_TAXONOMY: type=hub | domain=filtration-standards-library | scope=seven-protection-domains</p>
         <p>RELEVANCE_LEVELS: industrial, fleet, technical</p>
         <p style={{ marginTop: '0.75rem' }}>INTERNAL_REFERENCES:</p>
-        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ISO 11155, ASTM D6304</p>
+        <p>&nbsp;&nbsp;Related_Standards: ISO 16889, ISO 4406, ISO 5011, ISO 8573-1, ISO 11155, ASTM D6304, ASTM D6210</p>
         <p>&nbsp;&nbsp;Related_Contamination: /knowledge-system/contamination/particle-wear</p>
         <p>&nbsp;&nbsp;Related_Technologies: MACROCORE, NANOFORCE, DRYCORE, HYDROCORE, MICROKAPPA</p>
         <p>&nbsp;&nbsp;Related_Fleet: /knowledge-system/fleet/reducing-downtime</p>
