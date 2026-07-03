@@ -17,12 +17,10 @@
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
  *   SYNTEPORE   → Fuel HPCR               (ASTM D6304, ISO 12937)
  *   HYDROCORE   → Fuel Water Separation   (ASTM D6304)
- *   TURBOCORE   → Fuel 3-Stage            (ISO 16332)
+
  *   THERMACORE  → Cooling System          (ASTM D3306)
- *   DRYCORE     → Compressed Air          (ISO 8573-1/2/3)
  *   INTEKCORE   → Filter Housing Systems
  *   DURATECH    → Fleet Maintenance
- *   MARINECLEAN → Marine Diesel & Hydraulic (IMO)
  *   MICROKAPPA  → Cabin Air               (ISO 11155, DIN 71220)
  */
 
@@ -1060,167 +1058,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── TURBOCORE — Fuel 3-Stage Filtration ──────────────────────────────
 
-  'TECH-TURBOCORE': {
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-TURBOCORE',
-    technologyName: 'TURBOCORE',
-    commercialName: 'TURBOCORE™',
-    systemDomain: 'Fuel 3-Stage',
-    primaryStandards: ['ISO 16332', 'ISO 19438', 'EN 590'],
-    maturity: MATURITY.PUBLISHED,
-    createdDate: '2026-07-01',
-
-    canonicalDefinition:
-      'TURBOCORE is the three-stage fuel filtration technology integrating water separation, primary particulate filtration, and final absolute-rated filtration in a single system designed for large-displacement diesel engines in mining, power generation, and marine applications. The three-stage architecture addresses all fuel contamination classes — water, coarse particulate, and fine particulate — in a defined sequence that prevents each stage from being overwhelmed by contamination classes outside its design specification.',
-
-    systemContext:
-      'Applies to large diesel engines (>500 kW) in stationary power generation, mining haul trucks, large marine auxiliary engines, and locomotive applications where fuel quality is variable and fuel system protection requires the complete three-stage sequence. Typical fuel consumption rates of 100–500 L/h require high-capacity filtration elements with extended service intervals.',
-
-    industrialRole:
-      'Large-displacement engines in remote operations face compounded fuel contamination challenges: stored fuel with accumulated water and particulate, variable fuel supplier quality, and high fuel volume throughput that rapidly loads single-stage filtration. TURBOCORE three-stage architecture provides redundant protection layers so that a failure of primary water separation does not expose the final-stage filter to bulk water, and a failure of primary particulate filtration does not expose the HPCR injection circuit to coarse particles.',
-
-    protectionMedia: [
-      {
-        type: 'Stage 1 — Water Separation',
-        description:
-          'Coalescing and hydrophobic medium for free and emulsified water removal. Identical engineering principles to HYDROCORE but scaled for high fuel flow rates.',
-        micronRating: '30 µm primary particle filtration',
-        mediaConstruction: 'Glass microfiber coalescing + PTFE hydrophobic barrier',
-      },
-      {
-        type: 'Stage 2 — Primary Particulate',
-        description:
-          'High-capacity depth medium for coarse particle removal (>10 µm) and protection of Stage 3 from rapid loading.',
-        micronRating: '10 µm nominal',
-        mediaConstruction: 'Cellulose / synthetic blend, high dirt-holding capacity',
-      },
-      {
-        type: 'Stage 3 — Final Absolute Filtration',
-        description:
-          'Absolute-rated synthetic medium providing final cleanliness target before the injection system inlet.',
-        micronRating: '4 µm absolute',
-        mediaConstruction: 'Synthetic polyester microfiber, absolute-rated',
-      },
-    ],
-
-    engineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001', 'EP-SEP-004'],
-
-    materials: [
-      {
-        component: 'Stage 1 coalescing element',
-        material: 'Glass microfiber (hydrophilic) + PTFE (hydrophobic)',
-        justification:
-          'Same materials basis as HYDROCORE — borosilicate glass for coalescence, PTFE for final water repulsion. Scaled element size for high-flow applications.',
-      },
-      {
-        component: 'Stage 2 primary element',
-        material: 'Cellulose / polyester blend',
-        justification:
-          'High dirt-holding capacity of cellulosic media provides extended service intervals for Stage 2 at the coarse-particle contamination levels typical of bulk stored fuel.',
-      },
-      {
-        component: 'Stage 3 final element',
-        material: 'Absolute-rated synthetic polyester microfiber',
-        justification:
-          'Absolute rating at 4 µm provides consistent final-stage protection to the injection system. Stage 3 is protected from premature loading by Stages 1 and 2.',
-      },
-    ],
-
-    construction: [
-      {
-        feature: 'Sequential three-stage architecture',
-        description:
-          'Stages in fixed sequence: water removal first, coarse particle second, fine particle third. No stage bypass.',
-        engineeringBasis:
-          'Stage sequence matches contamination removal difficulty: water is removed by phase separation (Stage 1), coarse particles by high-capacity depth filtration (Stage 2), fine particles by absolute-rated precision medium (Stage 3). Reversed sequence would result in fine-particle medium rapidly loading with coarse contamination intended for Stage 2.',
-      },
-      {
-        feature: 'Independent service access per stage',
-        description:
-          'Each stage can be serviced independently, allowing Stage 2 replacement at high-contamination intervals without disturbing Stage 1 (water separator) or Stage 3 (final element).',
-        engineeringBasis:
-          'Stages have different service intervals in the field: Stage 2 primary element may require replacement at 200–500 hours in contaminated fuel environments while Stage 3 final element remains within service limits. Independent access prevents unnecessary replacement of stages that are not at service limits.',
-      },
-    ],
-
-    flowDynamics: [
-      {
-        parameter: 'Rated fuel flow (3-stage assembly)',
-        value: '100–500',
-        unit: 'L/h depending on configuration',
-        standardRef: 'ISO 16332',
-      },
-      {
-        parameter: 'System water separation efficiency',
-        value: '>95',
-        unit: '% (Stages 1 + 2 combined)',
-        standardRef: 'ISO 16332',
-      },
-    ],
-
-    captureMechanisms: [
-      {
-        contaminantClass: 'Free and emulsified water',
-        mechanism: 'Stage 1: coalescence + hydrophobic repulsion',
-        efficiency: '>95% free water per ISO 16332',
-        particleSizeRange: '>5 µm water droplets',
-      },
-      {
-        contaminantClass: 'Coarse fuel particulate (>10 µm)',
-        mechanism: 'Stage 2: depth filtration — high dirt-holding capacity medium',
-        efficiency: '>90% at 10 µm (nominal)',
-        particleSizeRange: '10–500 µm',
-      },
-      {
-        contaminantClass: 'Fine fuel particulate (>4 µm)',
-        mechanism: 'Stage 3: absolute surface filtration on synthetic medium',
-        efficiency: 'β4(c) ≥ 200 (absolute)',
-        particleSizeRange: '4–10 µm',
-      },
-    ],
-
-    performanceProfile: [
-      {
-        metric: 'Stage 3 absolute rating',
-        value: '4',
-        unit: 'µm (absolute)',
-        evidenceSource: 'ISO 19438 multi-pass test on Stage 3 element independently',
-        standardRef: 'ISO 19438',
-      },
-      {
-        metric: 'System water separation efficiency',
-        value: '>95',
-        unit: '% combined Stages 1+2',
-        evidenceSource: 'ISO 16332 test on complete 3-stage assembly',
-        standardRef: 'ISO 16332',
-      },
-    ],
-
-    failureModes: [
-      {
-        id: 'FM-FUEL3-001',
-        rootCauseChain:
-          'Bulk water ingress overwhelming single-stage primary water separator → water passes Stage 1 → Stage 2 (non-water-rated) becomes emulsion trap → Stage 3 final element exposed to water slugs → bypass valve opens → unfiltered fuel water slug reaches HPCR injection circuit',
-        measuredConsequence:
-          'HPCR injector hydraulic fracture from water-at-pressure event. Full injector set replacement (6-cylinder: USD 2,400–12,000). Engine off-service 2–5 days.',
-        operationalImpact:
-          'Single-stage primary filters in high-contamination fuel environments fail at this sequence approximately 3–5 times per year in remote mining operations per reported field data. TURBOCORE three-stage redundancy prevents the failure cascade by providing dedicated water removal (Stage 1) before particulate stages.',
-        preventedByThisTechnology: true,
-      },
-    ],
-
-    versionHistory: [
-      {
-        version: '1.0.0',
-        publishedDate: '2026-07-01',
-        approvedBy: 'Technology Authority + Quality Authority',
-        changeNote: 'Initial publication — Engineering Foundation Phase 1',
-        edrRef: 'EDR-C-006-v1.0',
-      },
-    ],
-  },
 
   // ── THERMACORE — Cooling System Filtration ────────────────────────────
 
@@ -1373,10 +1211,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
   // ── DRYCORE — Compressed Air Filtration ──────────────────────────────
 
-  'TECH-DRYCORE': {
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-DRYCORE',
-    technologyName: 'DRYCORE',
+    id: technologyName: 'DRYCORE',
     commercialName: 'DRYCORE™',
     systemDomain: 'Compressed Air',
     primaryStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
@@ -1571,7 +1406,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'N/A — structural housing system',
         description:
-          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, SYNTEPORE, TURBOCORE, DRYCORE).',
+          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, SYNTEPORE).',
         micronRating: 'Defined by installed element technology',
         mediaConstruction: 'Cast aluminum, ductile iron, or stainless steel housing body',
       },
@@ -1815,10 +1650,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
   // ── MARINECLEAN — Marine Diesel & Hydraulic Filtration ───────────────
 
-  'TECH-MARINECLEAN': {
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-MARINECLEAN',
-    technologyName: 'MARINECLEAN',
+    id: technologyName: 'MARINECLEAN',
     commercialName: 'MARINECLEAN™',
     systemDomain: 'Marine Diesel & Hydraulic',
     primaryStandards: ['IMO MARPOL Annex VI', 'ISO 8217', 'ISO 4406', 'ISO 16889'],

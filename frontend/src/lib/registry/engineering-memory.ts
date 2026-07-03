@@ -421,24 +421,7 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
     edrRef: 'EDR-C-005-v1.0',
   },
 
-  {
-    memoryId: 'MEM-2026-07-01-023',
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-TURBOCORE',
-    entityVersion: '1.0.0',
-    archivedDate: '2026-07-01',
-    archivedReason: 'VERSION_SNAPSHOT',
-    snapshot: {
-      id: 'TECH-TURBOCORE',
-      name: 'TURBOCORE',
-      systemDomain: 'Fuel 3-Stage',
-      primaryStandards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
-      engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-004', 'EP-PHS-001', 'EP-PHS-002'],
-      componentClasses: 8,
-      maturity: 3,
-    },
-    edrRef: 'EDR-C-006-v1.0',
-  },
+
 
   {
     memoryId: 'MEM-2026-07-01-024',
@@ -462,13 +445,11 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-01-025',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-DRYCORE',
-    entityVersion: '1.0.0',
+    entityId: entityVersion: '1.0.0',
     archivedDate: '2026-07-01',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-DRYCORE',
-      name: 'DRYCORE',
+      id: name: 'DRYCORE',
       systemDomain: 'Compressed Air',
       primaryStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
       engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001', 'EP-CHE-001'],
@@ -519,13 +500,11 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-01-028',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-MARINECLEAN',
-    entityVersion: '1.0.0',
+    entityId: entityVersion: '1.0.0',
     archivedDate: '2026-07-01',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-MARINECLEAN',
-      name: 'MARINECLEAN',
+      id: name: 'MARINECLEAN',
       systemDomain: 'Marine Diesel & Hydraulic',
       primaryStandards: ['ISO 16889', 'ISO 4406', 'IMO MARPOL 73/78'],
       engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-003', 'EP-PHS-001', 'EP-CHE-001', 'EP-TRB-001'],

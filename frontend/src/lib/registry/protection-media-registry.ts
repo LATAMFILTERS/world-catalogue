@@ -41,7 +41,6 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'TECH-SYNTRAX',
       'TECH-NANOFORCE',
       'TECH-HYDROCORE',
-      'TECH-DRYCORE',
     ],
     implementsPrincipleIds: ['EP-SEP-001'],
     maturity: MATURITY.PUBLISHED,
@@ -73,7 +72,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-SYNTEPORE',
-      'TECH-TURBOCORE',
+
     ],
     implementsPrincipleIds: ['EP-SEP-001'],
     maturity: MATURITY.PUBLISHED,
@@ -135,9 +134,6 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-HYDROCORE',
-      'TECH-TURBOCORE',
-      'TECH-DRYCORE',
-      'TECH-MARINECLEAN',
     ],
     implementsPrincipleIds: ['EP-PHS-001'],
     maturity: MATURITY.PUBLISHED,
@@ -169,7 +165,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-HYDROCORE',
-      'TECH-TURBOCORE',
+
     ],
     implementsPrincipleIds: ['EP-PHS-002'],
     maturity: MATURITY.PUBLISHED,
@@ -202,7 +198,6 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-MICROKAPPA',
-      'TECH-DRYCORE',
     ],
     implementsPrincipleIds: ['EP-CHE-001'],
     maturity: MATURITY.PUBLISHED,

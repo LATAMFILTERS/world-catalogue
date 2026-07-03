@@ -87,7 +87,7 @@ FAILURE_IMPACT
 Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.
 
 RELATED_STANDARDS
-ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 100 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements
+ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 1 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements
 
 RELATED_TECHNOLOGIES
 NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by
