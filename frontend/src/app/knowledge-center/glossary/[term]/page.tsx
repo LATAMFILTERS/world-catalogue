@@ -15,11 +15,16 @@ export async function generateMetadata({
   const id = slugToTermId(params.term);
   const entry = TERMINOLOGY_REGISTRY[id];
   if (!entry) return {};
+  const isPublished = entry.status === 'published';
   return {
     title: `${entry.term} — Glossary | ELIMFILTERS`,
     description: entry.definition.slice(0, 160),
     alternates: {
       canonical: `https://elimfilters.com/knowledge-center/glossary/${params.term}`,
+    },
+    robots: {
+      index: isPublished,
+      follow: true,
     },
   };
 }
