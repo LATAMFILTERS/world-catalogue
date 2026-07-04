@@ -34,7 +34,7 @@ import requests
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
-API_BASE = "https://elimfilters-search-pro.onrender.com"
+API_BASE = "https://part-search.elimfilters.com"
 API_KEY  = None  # set via --api-key argument
 BATCH    = 10    # conservative: some products have 300+ fitment rows
 MAX_FITMENT = 150  # truncate to avoid 413 on large products
