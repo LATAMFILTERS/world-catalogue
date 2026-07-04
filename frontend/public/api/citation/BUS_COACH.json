@@ -54,7 +54,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault\\02-industries\\BUS_COACH.md",
+  "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md",
   "_links": {
     "self": "/api/citation/BUS_COACH.json",
     "type_index": "/api/citation/type/industry.json",

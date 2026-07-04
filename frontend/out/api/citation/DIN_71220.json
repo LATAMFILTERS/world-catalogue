@@ -45,7 +45,7 @@
       "CABIN_AIR_CONTAMINATION"
     ]
   },
-  "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md",
+  "vault_path": "elimfilters-vault/04-standards/DIN_71220.md",
   "_links": {
     "self": "/api/citation/DIN_71220.json",
     "type_index": "/api/citation/type/standard.json",

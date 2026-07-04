@@ -64,7 +64,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault\\02-industries\\CONSTRUCTION.md",
+  "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md",
   "_links": {
     "self": "/api/citation/CONSTRUCTION.json",
     "type_index": "/api/citation/type/industry.json",

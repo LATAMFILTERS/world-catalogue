@@ -67,7 +67,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault\\02-industries\\OIL_GAS.md"
+        "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md"
       }
     },
     {
@@ -138,7 +138,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -188,7 +188,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
       }
     },
     {
@@ -249,7 +249,7 @@
             "HYDRAULIC_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
       }
     }
   ],

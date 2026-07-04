@@ -75,6 +75,9 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  // Canonical @id anchor — all page-level schemas reference this node.
+  // Unifies the entity graph across the root layout and knowledge-system/layout.tsx.
+  '@id': `${BASE_URL}/#organization`,
   name: 'ELIMFILTERS',
   url: BASE_URL,
   logo: `${BASE_URL}/assets/logo-elimfilters.png`,

@@ -68,7 +68,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
+        "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
       }
     },
     {
@@ -131,7 +131,7 @@
             "POWER_GENERATION"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
+        "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
       }
     },
     {
@@ -180,7 +180,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
       }
     },
     {
@@ -241,7 +241,7 @@
             "HYDRAULIC_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
       }
     }
   ],

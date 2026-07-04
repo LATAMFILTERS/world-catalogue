@@ -52,7 +52,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
     },
     {
       "key": "INTEKCORE",
@@ -101,7 +101,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\INTEKCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/INTEKCORE.md"
     },
     {
       "key": "MACROCORE",
@@ -156,7 +156,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
     },
     {
       "key": "MICROKAPPA",
@@ -205,7 +205,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
     },
     {
       "key": "NANOFORCE",
@@ -261,7 +261,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
     },
     {
       "key": "SYNTEPORE",
@@ -312,7 +312,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTEPORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/SYNTEPORE.md"
     },
     {
       "key": "SYNTRAX",
@@ -369,7 +369,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
     }
   ]
 }

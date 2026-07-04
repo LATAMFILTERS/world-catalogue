@@ -48,7 +48,7 @@
       "DIESEL_WATER"
     ]
   },
-  "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md",
+  "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md",
   "_links": {
     "self": "/api/citation/ASTM_D6304.json",
     "type_index": "/api/citation/type/standard.json",
