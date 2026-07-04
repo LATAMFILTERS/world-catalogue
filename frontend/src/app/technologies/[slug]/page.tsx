@@ -43,17 +43,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, etc.) are proprietary
+// engineering architectures — not standalone purchasable products. Using `Product`
+// here would mislead Google into expecting offer/pricing data and misrepresent
+// the nature of the entity. `TechArticle` correctly signals technical documentation
+// for a named engineering methodology, consistent with how Donaldson, Parker Hannifin,
+// and other industrial leaders structure technology knowledge pages.
 function productSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
   if (!item) return null;
   return {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'TechArticle',
+    '@id': `${BASE_URL}/technologies/${slug}#article`,
+    headline: item.title,
     name: item.title,
-    brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
     description: item.description,
     url: `${BASE_URL}/technologies/${slug}`,
-    category: 'Industrial Filtration Technology',
-    manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: BASE_URL },
+    author: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'ELIMFILTERS',
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'ELIMFILTERS',
+    },
+    about: {
+      '@type': 'Thing',
+      name: item.title,
+      description: item.description,
+    },
+    keywords: [
+      item.title,
+      'industrial filtration technology',
+      'contamination control',
+      'asset protection',
+      'ELIMFILTERS',
+    ],
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'ELIMFILTERS World Catalogue',
+      url: BASE_URL,
+    },
   };
 }
 

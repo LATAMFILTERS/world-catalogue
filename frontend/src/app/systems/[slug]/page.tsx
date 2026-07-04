@@ -54,15 +54,28 @@ export default function ProtectionSystemPage({ params }: Props) {
     ],
   };
 
-  const productSchema = {
+  // Protection systems (Air Intake, Fuel Cleanliness, Hydraulic, etc.) are integrated
+  // contamination control solutions — not standalone purchasable products. Each system
+  // is a combination of product families, technologies, and protocols that ELIMFILTERS
+  // provides as an engineered service offering for a specific fluid domain.
+  // `Service` correctly represents this: it has a provider, a service type, and an
+  // area served. `Product` would require offer/pricing data and misrepresent these
+  // as discrete SKUs. Consistent with how /industries/[slug] schemas are structured.
+  const systemSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
+    '@id': `${BASE_URL}/systems/${sys.slug}#service`,
     name: sys.name,
-    brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
     description: sys.overview,
     url: `${BASE_URL}/systems/${sys.slug}`,
-    category: 'Industrial Filtration Protection System',
-    manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: BASE_URL },
+    serviceType: 'Industrial Asset Protection',
+    provider: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'ELIMFILTERS',
+    },
+    areaServed: 'Worldwide',
+    category: 'Industrial Filtration',
   };
 
   const h2Style: React.CSSProperties = {
@@ -92,7 +105,7 @@ export default function ProtectionSystemPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(systemSchema) }} />
 
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 

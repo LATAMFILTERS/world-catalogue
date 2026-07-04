@@ -12,20 +12,25 @@ export const metadata: Metadata = {
 };
 
 export default function FamiliesPage() {
+  // CollectionPage + hasPart avoids triggering ProductGroup validation rules
+  // (hasVariant/offers requirements) on the hub. Individual family detail pages
+  // carry their own ProductGroup schema with hasVariant + Offer.
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
+    '@type': 'CollectionPage',
     name: 'ELIMFILTERS Product Families',
     url: `${BASE_URL}/families`,
-    numberOfItems: PRODUCT_FAMILY_LIST.length,
-    itemListElement: PRODUCT_FAMILY_LIST.map((fam, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@type': 'ProductGroup',
-        name: fam.name,
-        url: `${BASE_URL}/families/${fam.slug}`,
-      },
+    description: 'Industrial filtration product families organized by Protection System and Duty Class. HD and LD architectures for contamination control across all ELIMFILTERS application domains.',
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'ELIMFILTERS',
+    },
+    hasPart: PRODUCT_FAMILY_LIST.map((fam) => ({
+      '@type': 'WebPage',
+      name: fam.name,
+      url: `${BASE_URL}/families/${fam.slug}`,
+      description: fam.purpose.slice(0, 160),
     })),
   };
 

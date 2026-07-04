@@ -50,6 +50,71 @@ export default function FamilyPage({ params }: Props) {
     ],
   };
 
+  // ProductGroup: represents the full product family across all duty classes.
+  // hasVariant entries use duty class (HD/LD) as the variation axis.
+  // Individual SKU-level variants will replace these entries when product
+  // documentation is complete (PHASE 2: expand to full engineering documentation).
+  // Each variant carries a minimal Offer to satisfy Schema.org ProductGroup validation
+  // and resolve GSC hasVariant.offers errors. No price is declared — products are
+  // sold through authorized distributors and part-search.elimfilters.com.
+  const productGroupSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProductGroup',
+    '@id': `${BASE_URL}/families/${fam.slug}#productgroup`,
+    name: `${fam.name} Filters`,
+    description: fam.purpose,
+    url: `${BASE_URL}/families/${fam.slug}`,
+    brand: {
+      '@type': 'Brand',
+      name: 'ELIMFILTERS',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: 'ELIMFILTERS',
+    },
+    category: 'Industrial Filtration',
+    // variesBy: the axis along which products in this group differ
+    variesBy: ['Duty Class'],
+    // hasVariant: one entry per duty class currently defined
+    hasVariant: [
+      ...(fam.hdPrefix ? [{
+        '@type': 'Product',
+        '@id': `${BASE_URL}/families/${fam.slug}#variant-hd`,
+        name: `${fam.name} — Heavy Duty (HD)`,
+        description: `Heavy Duty ${fam.name.toLowerCase()} filter series. SKU prefix: ${fam.hdPrefix}.`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'USD',
+          url: 'https://part-search.elimfilters.com',
+          seller: {
+            '@type': 'Organization',
+            '@id': `${BASE_URL}/#organization`,
+            name: 'ELIMFILTERS',
+          },
+        },
+      }] : []),
+      ...(fam.ldPrefix ? [{
+        '@type': 'Product',
+        '@id': `${BASE_URL}/families/${fam.slug}#variant-ld`,
+        name: `${fam.name} — Light Duty (LD)`,
+        description: `Light Duty ${fam.name.toLowerCase()} filter series. SKU prefix: ${fam.ldPrefix}.`,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'USD',
+          url: 'https://part-search.elimfilters.com',
+          seller: {
+            '@type': 'Organization',
+            '@id': `${BASE_URL}/#organization`,
+            name: 'ELIMFILTERS',
+          },
+        },
+      }] : []),
+    ],
+  };
+
   const h2Style: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', lineHeight: 1.2, marginBottom: '1rem' };
   const prose: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.9rem, 1.3vw, 1rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85, textAlign: 'justify' };
   const section: React.CSSProperties = { maxWidth: '1200px', margin: '0 auto', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
@@ -57,6 +122,7 @@ export default function FamilyPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productGroupSchema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
         
         {/* Breadcrumb */}
@@ -168,6 +234,30 @@ export default function FamilyPage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        {/*
+          PHASE 2 — Future Engineering Documentation Sections
+          =====================================================
+          This page is a strategic knowledge asset and future SEO landing page
+          for category searches (e.g., "Primary Air Filters", "Hydraulic Filters").
+
+          When documentation is ready, add sections in this order:
+          1. Operating Principle — filtration mechanism, media construction diagrams
+          2. Contamination Mechanisms — what particles/water/vapour this family stops
+          3. Filtration Media — media type, Beta rating, dirt capacity
+          4. Applicable Technologies — which ELIMFILTERS technologies this family uses
+          5. Standards Compliance — ISO/SAE/ASTM test methods and pass criteria
+          6. Maintenance Guidance — service intervals, replacement indicators
+          7. Troubleshooting — bypass valve opening, early blockage, media collapse
+          8. Applications — equipment types, duty cycles, environments
+          9. Related Products — cross-reference to complementary families
+          10. FAQs — operator and engineering questions
+          11. Downloadable Documentation — datasheets, installation guides, white papers
+          12. Videos / Case Studies — embed links when available
+
+          When individual SKUs are confirmed, replace hasVariant duty-class placeholders
+          in productGroupSchema with proper Product entries (one per SKU).
+        */}
 
         {/* Cross-links */}
         <section style={{ ...section, borderBottom: 'none' }}>

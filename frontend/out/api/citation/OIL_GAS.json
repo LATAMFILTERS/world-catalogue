@@ -55,7 +55,7 @@
       "HYDRAULIC_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault\\02-industries\\OIL_GAS.md",
+  "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md",
   "_links": {
     "self": "/api/citation/OIL_GAS.json",
     "type_index": "/api/citation/type/industry.json",

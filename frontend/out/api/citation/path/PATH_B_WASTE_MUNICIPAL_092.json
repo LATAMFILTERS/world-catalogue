@@ -67,7 +67,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md"
+        "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
       }
     },
     {
@@ -130,7 +130,7 @@
             "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
+        "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
@@ -175,7 +175,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
@@ -229,7 +229,7 @@
             "CABIN_AIR_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
       }
     }
   ],

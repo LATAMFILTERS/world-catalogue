@@ -71,7 +71,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault\\02-industries\\AGRICULTURE.md"
+        "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
       }
     },
     {
@@ -134,7 +134,7 @@
             "POWER_GENERATION"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
+        "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
       }
     },
     {
@@ -183,7 +183,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
       }
     },
     {
@@ -245,7 +245,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
       }
     }
   ],
