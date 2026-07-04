@@ -653,6 +653,11 @@
 
 
 
+
+
+
+
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
@@ -781,6 +786,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/air-intake-system-design</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/air-restriction</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -823,6 +834,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/diesel-fuel-filtration</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/dust-holding-capacity</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -853,6 +870,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/hydraulic-power-unit-design</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -877,6 +900,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/lubrication-system-filtration</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/materials-engineering</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -890,6 +919,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/oil-analysis-methods</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/particle-ingress-prevention</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

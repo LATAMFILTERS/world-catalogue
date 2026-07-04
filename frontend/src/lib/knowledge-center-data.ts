@@ -19,6 +19,30 @@ export interface KCArticle {
   relatedTechnologies: string[];
   relatedSystems: string[];
   keywords: string[];
+  // ── Extended template fields (Phase 4 Batch 3+) ─────────────────────────
+  /** Objective troubleshooting guide — symptoms, causes, inspection, actions. */
+  fieldDiagnostics?: {
+    symptoms: string[];
+    probableCauses: string[];
+    inspectionMethods: string[];
+    correctiveActions: string[];
+  };
+  /** Engineering decision chain: Problem → Standard → System → Technology → Articles. */
+  decisionMatrix?: Array<{
+    problem: string;
+    standard: string;
+    protectionSystem: string;
+    technology: string;
+    relatedArticles: string[];
+  }>;
+  /** Governance metadata sourced from the Engineering Data Layer. */
+  revisionHistory?: {
+    version: string;
+    lastEngineeringReview: string;
+    nextScheduledReview: string;
+    responsibleRegistry: string;
+    evidenceStatus: string;
+  };
 }
 
 export interface KCStandard {
@@ -1271,6 +1295,704 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['MICROKAPPA™'],
     relatedSystems: ['Cabin Air Protection'],
     keywords: ['cabin air filtration', 'ISO 11155', 'DIN 71220', 'PM10', 'PM2.5', 'activated carbon', 'cab pressurisation', 'operator health', 'MICROKAPPA'],
+  },
+
+  // ── Phase 4 Batch 3 — Extended Template (Field Diagnostics + Decision Matrix + Revision History) ───
+
+  {
+    slug: 'diesel-fuel-filtration',
+    title: 'Diesel Fuel Filtration',
+    subtitle: 'Three-Stage System Design, ISO 4020, and HPCR Cleanliness Requirements',
+    metaDescription: 'Engineering reference for diesel fuel filtration system design: three-stage pre-filter, primary, and secondary architecture; ISO 4020 test methods; HPCR cleanliness requirements; water separation; and condition-based service intervals.',
+    category: 'Engineering',
+    readTime: '12 min',
+    intro: 'Diesel fuel filtration protects injection systems from the dual contamination threats of particulate matter and free water. Modern high-pressure common rail (HPCR) injection systems — operating at 1,600–2,500 bar with injector nozzle clearances of 1–3 µm — require multi-stage fuel filtration designed to specified particle removal efficiency and water separation rates. The three-stage architecture (coarse pre-filter, primary particle filter, coalescing water separator/secondary filter) addresses each contamination mode with the appropriate technology at the appropriate location in the fuel circuit.',
+    sections: [
+      {
+        heading: 'Three-Stage Fuel Filtration Architecture',
+        body: 'A complete diesel fuel filtration system consists of three stages installed in series in the fuel supply line upstream of the injection pump. Stage 1 — Coarse Pre-Filter (tank-to-lift-pump): removes particles ≥30–100 µm and separates bulk free water accumulated in the tank. Typically a gravity-fed bowl-type separator with a 30 µm strainer screen. Protects the lift pump from abrasive wear by coarse particles. Stage 2 — Primary Fuel Filter (lift-pump to injection pump): removes particles ≥5–10 µm and emulsified water. This is the main particle barrier and the principal water coalescing stage. Rated at β₅(c) ≥ 20–200 depending on the injection system sensitivity. Houses the water-in-fuel (WIF) sensor and manual drain valve. Stage 3 — Secondary (Final) Fuel Filter (injection pump to rail): removes particles ≥2–5 µm for HPCR applications. Not present in all systems — it is added for injection systems operating above 1,600 bar where final-stage cleanliness is critical. Rating: β₂(c) ≥ 75 or better. Total water content at the rail entry for HPCR: ≤50 ppm dissolved; zero free water.',
+        callout: [
+          { label: 'Stage 1 (pre-filter) cut size', value: '30–100 µm strainer' },
+          { label: 'Stage 2 (primary) rating', value: 'β₅(c) ≥ 20–200 (application dependent)' },
+          { label: 'Stage 3 (final) for HPCR', value: 'β₂(c) ≥ 75 (≥1,600 bar systems)' },
+        ],
+      },
+      {
+        heading: 'ISO 4020 Fuel Filter Test Methods',
+        body: 'ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines — Test Methods) is the primary standard for evaluating diesel fuel filter performance on road vehicles. The standard covers: filtration efficiency (gravimetric and particle-count methods), initial restriction (pressure drop at rated flow), terminal restriction, burst pressure (minimum 6× maximum working pressure for housings), compatibility with diesel fuel types, cold-start restriction (restriction at −20°C to confirm flow during cold cranking), and water separation efficiency. Water separation is measured as percentage of injected water volume separated to the water bowl, typically at a fixed flow rate and with controlled droplet size distribution of injected water. ISO 4020 test conditions use standard diesel fuel (similar to EN 590 specification) at specified flow rates and temperatures. Efficiency reporting: gravimetric (total mass capture percentage) for primary filter specifications; particle-count efficiency for HPCR-grade secondary filters. ISO 19438 (Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Characteristics) extends ISO 4020 with fractional efficiency measurement at discrete particle sizes, equivalent to the ISO 5011 approach for air filters.',
+        callout: [
+          { label: 'Housing burst pressure minimum', value: '6× maximum working pressure' },
+          { label: 'Cold restriction test temperature', value: '−20°C' },
+          { label: 'Water separation measurement', value: '% of injected water recovered' },
+        ],
+      },
+      {
+        heading: 'HPCR Injection System Cleanliness Requirements',
+        body: 'High-pressure common rail injection system manufacturers specify maximum particle contamination and water content at the injector inlet. Representative cleanliness targets from OEM data: particles ≥4 µm: ≤500/mL; particles ≥6 µm: ≤50/mL; particles ≥14 µm: ≤5/mL — equivalent to approximately ISO 15/12/9. Water content at injector: ≤50 ppm dissolved. Some OEMs specify even tighter limits for piezo-actuated injectors (≤200 particles ≥4 µm/mL). These targets are set by the injector nozzle needle guidance clearance (1–3 µm) and the solenoid or piezo actuation element geometry. Particles at the critical-clearance size (1–5 µm) entering the nozzle at 2,000 bar do not simply pass through — they are driven into the metallic surfaces at high velocity, causing erosive wear and altering injection timing. Nozzle flow rate changes of 2–5% are detectable in modern ECU diagnostics as injection correction drift; changes exceeding 10% trigger a fault code. Water in the nozzle at high pressure causes microspalling of carbide-coated nozzle surfaces through hydraulic impact on pit edges.',
+        callout: [
+          { label: 'HPCR target (typical OEM)', value: 'ISO 15/12/9 at injector inlet' },
+          { label: 'Water limit at injector', value: '≤50 ppm dissolved' },
+          { label: 'Nozzle flow drift alert', value: '±10% triggers ECU fault code' },
+        ],
+      },
+      {
+        heading: 'Water Separation Coalescing Elements',
+        body: 'The coalescing function in the primary fuel filter is performed by a hydrophilic glass fiber or treated synthetic media layer that causes emulsified water droplets to migrate to fiber surfaces and merge. Coalescence efficiency depends on face velocity (lower velocity allows more contact time — maximum effective face velocity typically 0.05–0.10 m/s), droplet size distribution of incoming emulsified water (smaller droplets are harder to coalesce), and media surface energy (hydrophilic media attracts water droplets preferentially over fuel). After coalescence, water droplets in the 100–500 µm range settle by gravity to the transparent water bowl at the filter base. Water-in-fuel sensors — capacitance-type (dielectric constant change) or optical (refractivity change) — mounted in the water bowl trigger a cab warning when free water accumulation exceeds approximately 50 mL. Most OEMs recommend daily inspection and drain of the water bowl in high-humidity operating environments. In biodiesel blends (B7, B20), water separation is more difficult because biodiesel has higher affinity for water and emulsification stability is greater.',
+        callout: [
+          { label: 'Coalescence face velocity limit', value: '≤0.10 m/s' },
+          { label: 'Coalescent droplet size (settled)', value: '100–500 µm' },
+          { label: 'WIF sensor trigger volume', value: '≈50 mL free water' },
+        ],
+      },
+      {
+        heading: 'Cold Weather Fuel Filtration Challenges',
+        body: 'Paraffin wax crystallisation in diesel fuel at temperatures below the cold filter plugging point (CFPP) blocks primary filter elements rapidly — a healthy element can become fully restricted within minutes in extreme cold. EN 590 specifies CFPP limits by climate zone: Class F (winter Arctic): CFPP ≤ −44°C; Class E: ≤ −34°C; Class D: ≤ −26°C; Class B (temperate winter): ≤ −20°C. Fuel filter heated housings (using engine coolant or electric heaters) maintain fuel above the CFPP by warming the fuel before it contacts the filter media, preventing wax precipitation in the filter. Filter housing heaters are factory-fitted on Arctic and subarctic equipment; retrofit kits are available for temperate-climate equipment operating in severe cold events. Wax-modified fuel (winterised diesel) contains pour point depressants and wax crystal modifiers that lower the CFPP without requiring heated filtration — verify fuel grade is appropriate for the ambient temperature before attributing cold-weather filter plugging to the filter element.',
+        callout: [
+          { label: 'CFPP (Arctic grade, EN 590 Class F)', value: '≤ −44°C' },
+          { label: 'CFPP (temperate winter, Class B)', value: '≤ −20°C' },
+          { label: 'Cold-weather mitigation', value: 'Heated filter housing + correct fuel grade' },
+        ],
+      },
+      {
+        heading: 'Service Intervals and Condition-Based Management',
+        body: 'Fuel filter service intervals are primarily mileage/hour-based in most OEM schedules: 500–1,000 hours or 20,000–40,000 km for primary filters; 1,000–2,000 hours for secondary filters in HPCR applications. Condition-based triggers: primary fuel filter pressure differential sensor (restriction indicator) signals service when pressure drop across the element exceeds the threshold (typically 0.3–0.7 bar at operating temperature and flow). Water-in-fuel warning requires immediate attention — drain, inspect, and if water persists after draining, replace the element and investigate the ingress source. Contaminated fuel events (bad batch, microbial growth, high sediment) require element replacement immediately, regardless of service hours, followed by tank inspection, sedimentation sampling, and possible biocide treatment. Secondary filter replacement on HPCR systems should never be deferred — a secondary element near its service interval is the last line of defence between fuel system contamination and injector damage at 2,000+ bar.',
+      },
+      {
+        heading: 'Fuel Cleanliness Monitoring and Sampling',
+        body: 'Fuel system cleanliness can be assessed at three points: tank (representative of ingress history), primary filter outlet (system treatment effectiveness), and injector rail (final protection level). Sampling from the rail or secondary filter outlet is done with a calibrated syringe and pre-cleaned sample bottle into an automatic particle counter or laboratory KFT instrument. ISO 11171-calibrated particle counts at the rail outlet should meet the OEM-specified HPCR cleanliness target. KFT water measurement per ASTM D6304 of tank samples identifies water accumulation before it reaches the injection system; target: ≤200 ppm at tank, ≤50 ppm at rail. Analytical ferrography of primary filter element residue (after service) identifies particle morphology: metallic injection pump wear particles indicate pump damage; rubber or elastomeric particles indicate seal degradation in fuel system connections.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'HPCR rail pressure', value: '1,600–2,500 bar' },
+      { label: 'Stage 2 primary filter rating', value: 'β₅(c) ≥ 20–200' },
+      { label: 'Water at injector limit', value: '≤50 ppm dissolved' },
+      { label: 'Housing burst safety factor', value: '6× working pressure (ISO 4020)' },
+    ],
+    relatedStandards: ['ASTM D6304', 'ISO 12937'],
+    relatedTechnologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    relatedSystems: ['Fuel Cleanliness Protection'],
+    keywords: ['diesel fuel filtration', 'ISO 4020', 'HPCR', 'water separation', 'coalescing filter', 'fuel cleanliness', 'cold filter plugging point', 'EN 590'],
+    fieldDiagnostics: {
+      symptoms: [
+        'Rapid primary filter restriction — element reaching terminal ΔP within 50–70% of normal service interval',
+        'White or grey exhaust smoke at operating temperature — indicates water or fuel quality issue reaching combustion',
+        'Water-in-fuel warning lamp illuminated — free water exceeding sensor threshold in primary filter bowl',
+        'Hard starting, hunting, or misfiring — fuel supply starvation or injector flow deviation from wax or contamination',
+        'Injector balance rate faults in ECU — individual cylinder fuel correction exceeding ±3 mg/stroke indicates nozzle wear or blockage',
+      ],
+      probableCauses: [
+        'Microbial biofilm (Cladosporium resinae) in tank generating biomass particles that rapidly plug primary element media',
+        'Wax crystallisation below cold filter plugging point — fuel grade not matched to ambient temperature',
+        'Tank water ingress through condensation (vented tank), contaminated tanker delivery, or damaged filler cap seal',
+        'Fuel batch contamination — sediment, dye particles, or incompatible additive package from incorrect product',
+        'Secondary filter over-service allowing injector inlet cleanliness to degrade beyond OEM specification',
+      ],
+      inspectionMethods: [
+        'Cut open primary element and inspect media cake: grey-brown = normal particulate loading; black threads = microbial hyphae; metallic sheen = injection pump wear particles',
+        'Karl Fischer titration (ASTM D6304) of tank bottom sample: ≥500 ppm indicates free water layer present',
+        'Drain water bowl into clear container: cloudy grey water = microbial growth; clear water = condensation ingress; rust-red water = tank corrosion',
+        'ISO 4406 particle count at primary filter outlet: result should meet OEM-specified cleanliness code',
+        'Cold weather: measure fuel CFPP per EN 116 and compare to ambient temperature; CFPP within 5°C of ambient indicates wax risk',
+      ],
+      correctiveActions: [
+        'Replace primary element immediately on any contamination event — do not wait for the scheduled interval',
+        'Drain water bowl daily in humid climates; investigate and seal all tank ingress pathways (filler cap, breather, body seals) if water recurs',
+        'Treat tank with ASTM D4054-approved biocide at correct dosage; physically clean tank after biocide treatment (dead biomass remains and replugs fresh elements)',
+        'For cold-weather wax plugging: switch to correct EN 590 climate grade fuel; fit coolant-heated filter housing; do not blend kerosene without OEM approval',
+        'After contamination events, sample at secondary filter outlet per ISO 4406 and confirm HPCR cleanliness target is met before returning to normal operation',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'HPCR injector nozzle wear and flow deviation',
+        standard: 'ISO 4020, ASTM D6304',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Two-stage particle filtration: primary β₅(c) ≥ 75 + secondary β₂(c) ≥ 75 for ≥1,600 bar systems',
+        relatedArticles: ['beta-ratio', 'water-contamination-fuel', 'iso-16889'],
+      },
+      {
+        problem: 'Free water accumulation causing injector corrosion and lubrication loss',
+        standard: 'ASTM D6304, ISO 12937',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Coalescing water separator element in primary filter housing; daily water bowl inspection and drain',
+        relatedArticles: ['water-contamination-fuel', 'service-intervals'],
+      },
+      {
+        problem: 'Rapid primary filter plugging from microbial biofilm',
+        standard: 'ASTM D6304',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Three-stage filtration with coarse tank pre-filter removing bulk biomass before primary element; biocide treatment',
+        relatedArticles: ['water-contamination-fuel', 'service-intervals'],
+      },
+      {
+        problem: 'Cold weather wax crystallisation blocking primary element',
+        standard: 'ISO 4020 (cold restriction test at −20°C), EN 116 (CFPP test)',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Coolant-heated filter housing maintaining fuel above CFPP; correct EN 590 climate fuel grade',
+        relatedArticles: ['service-intervals', 'filter-media-science'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-04',
+      nextScheduledReview: '2027-01-04',
+      responsibleRegistry: 'EDL-STANDARDS (STD-ASTM-D6304, STD-ISO-12937)',
+      evidenceStatus: 'ISO 4020:2001 verified; ISO 19438:2003 verified; ASTM D6304:2022 verified; EN 590:2022 verified',
+    },
+  },
+
+  {
+    slug: 'air-intake-system-design',
+    title: 'Air Intake System Design',
+    subtitle: 'Pre-Cleaner Selection, Two-Stage Filtration, and Service Indicator Engineering',
+    metaDescription: 'Engineering reference for engine air intake system design: pre-cleaner technology, primary and safety element specification, service indicator calibration, airflow sizing methodology, and multi-stage system integration per ISO 5011.',
+    category: 'Engineering',
+    readTime: '11 min',
+    intro: 'An engine air intake filtration system must remove airborne particles to the engine manufacturer\'s specified restriction limit and cleanliness level across the full service interval in the operating environment. System design — not element selection alone — determines whether both objectives are met simultaneously. A correctly designed system sizes the housing for face velocity, specifies the pre-cleaner to extend primary element service life, configures the safety element as a backup protection layer, and installs a service indicator calibrated to the engine\'s restriction threshold.',
+    sections: [
+      {
+        heading: 'Two-Stage Air Intake Architecture',
+        body: 'A complete air intake system consists of a minimum of two filtration stages operating in series. Stage 1 — Primary Element: the main particle capture element, typically pleated cellulose or synthetic media in a cylindrical or panel configuration. It removes particles ≥1 µm at high efficiency (per ISO 5011 fractional efficiency curve) and is designed to be replaced at the service interval. Stage 2 — Safety Element (Secondary): a smaller element installed inside or downstream of the primary element, visible only when the primary element is removed. It protects the engine during primary element replacement (installation gap) and catches particles released if the primary element is damaged or incorrectly seated. The safety element is not a serviceable high-capacity filter — it has low dirt capacity and high restriction. It must be replaced on OEM-specified intervals (typically every third primary element change) regardless of apparent condition. In high-dust mining and construction applications, a pre-cleaner stage upstream of the primary element extends primary element life by 3–10× by removing coarse particles (≥10–30 µm) before they reach the primary media.',
+        callout: [
+          { label: 'Primary element function', value: 'Main particle barrier; serviceable' },
+          { label: 'Safety element function', value: 'Backup protection; non-serviceable capacity' },
+          { label: 'Pre-cleaner benefit', value: '3–10× primary element life extension' },
+        ],
+      },
+      {
+        heading: 'Pre-Cleaner Technology and Selection',
+        body: 'Pre-cleaners remove large particles (typically ≥10–30 µm) by inertial separation before they reach the primary element. Three technology types: centrifugal (cyclone) pre-cleaners use radial airflow to centrifuge particles to the housing wall, where they fall into a dust ejection chamber or pre-cleaner bowl. Efficiency: 80–99% at ≥10 µm depending on design and airflow rate — efficiency drops sharply below the rated airflow and design particle size. Pre-cleaner tube arrays: multiple small-diameter cyclone tubes in parallel, used on large-airflow industrial applications where single-cyclone size would be excessive. Rain cap deflectors: direct rain and large-debris impacts away from the primary element — not particle separators, but prevent water entrainment and large-particle impact damage. Pre-cleaner selection requires matching the rated airflow to the engine\'s peak air demand and verifying that the pre-cleaner\'s minimum efficient particle size is appropriate for the ambient dust — a cyclone rated at 95% efficiency at ≥20 µm does not protect against the 5–15 µm particle fraction responsible for abrasive engine wear.',
+        callout: [
+          { label: 'Cyclone pre-cleaner efficiency', value: '80–99% at ≥10 µm' },
+          { label: 'Pre-cleaner sizing criterion', value: 'Matched to engine peak airflow' },
+          { label: 'Limitation', value: 'Low efficiency for particles <10 µm' },
+        ],
+      },
+      {
+        heading: 'Primary Element Specification',
+        body: 'Primary element specification requires matching four parameters to the application: (1) Airflow capacity — the element must pass the engine\'s rated airflow at initial restriction below 500 Pa (5 mbar) for naturally aspirated and below 1,250 Pa (12.5 mbar) for turbocharged engines. Face velocity at rated airflow should remain within 0.05–0.15 m/s across the full media face. (2) Dust holding capacity — DHC at the site-specific ambient dust concentration must provide the required service interval. Formula: interval (h) = DHC (g) / [dust concentration (g/m³) × airflow (m³/h)]. (3) Fractional efficiency — the element must meet or exceed the engine OEM\'s required particle removal efficiency at the critical particle sizes (typically ≥5 µm for diesel engines, ≥3 µm for turbine-intake applications). (4) Dimensional compatibility — gasket geometry, housing seat, and element orientation must match the air cleaner housing without creating bypass paths around the gasket perimeter. ISO 5011 provides the test framework; the element data sheet must specify the test airflow, test dust, and efficiency sizes.',
+        callout: [
+          { label: 'Initial restriction limit (NA engine)', value: '<500 Pa at rated airflow' },
+          { label: 'Initial restriction limit (turbo)', value: '<1,250 Pa at rated airflow' },
+          { label: 'Service interval formula', value: 'DHC(g) / (dust conc × airflow)' },
+        ],
+      },
+      {
+        heading: 'Safety Element Engineering',
+        body: 'The safety element is a protection element only — it is not designed to function as a long-term filtration element. Its engineering requirements: (1) Restriction when clean: must be low enough that the restriction indicator does not trigger during normal operation with the primary element in place. Typically safety element initial restriction ≤ 10–15% of total system initial restriction. (2) Restriction when primary element is removed: the safety element alone must provide enough restriction resistance to limit airflow and prevent unfiltered air from entering the engine — while simultaneously remaining low enough that the engine can idle for emergency repositioning. (3) Particle efficiency: the safety element must capture particles that the primary element would normally capture during its brief exposure to unfiltered or partially filtered air. High-efficiency glass fiber media is typically used for safety elements specifically because initial efficiency is high (≥99.9% at ≥10 µm) without needing dust cake formation. (4) Service interval: replace per OEM schedule — typically every 2–4 primary element changes. Inspect visually but do not clean; cleaning damages the glass fiber structure and compromises efficiency.',
+        callout: [
+          { label: 'Safety element initial restriction', value: '≤10–15% of total system restriction' },
+          { label: 'Safety element efficiency', value: '≥99.9% at ≥10 µm (glass fiber)' },
+          { label: 'Service interval', value: 'Every 2–4 primary element changes' },
+        ],
+      },
+      {
+        heading: 'Service Indicator Engineering',
+        body: 'Service indicators signal when the primary element has reached terminal restriction — protecting against both under-service (operating with an over-restricted element, causing power loss) and over-service (replacing elements before they reach capacity, wasting filtration margin). Mechanical service indicators (Magnahelic-type or Vacuator-type): spring-loaded piston behind a transparent sight glass. As restriction increases, the piston compresses the spring and migrates to expose a red indicator band. These indicators latch at maximum restriction — they remain triggered after the engine stops, requiring manual reset after element replacement. They are rated for a specific restriction threshold; verify the indicator set point matches the engine OEM\'s maximum intake restriction specification. Electronic restriction sensors: differential pressure transducers or absolute pressure sensors at the air filter outlet connected to the engine ECU or a standalone monitoring unit. They provide real-time restriction logging, enabling trending analysis and predictive service scheduling. Condition-based service using electronic sensors typically extends average element service intervals 15–40% versus fixed-time replacement in variable-dust environments.',
+        callout: [
+          { label: 'NA engine restriction limit', value: '25 mbar (2,500 Pa) / 10 inH₂O' },
+          { label: 'Turbo engine restriction limit', value: '37.5–62.5 mbar / 15–25 inH₂O' },
+          { label: 'Condition-based service benefit', value: '15–40% interval extension' },
+        ],
+      },
+      {
+        heading: 'Airflow Sizing and Housing Design',
+        body: 'Air cleaner housing sizing determines whether the primary element operates within its design face velocity range across the full ambient temperature and altitude operating envelope. Engine airflow demand increases at lower altitude (denser air, higher mass flow per unit volume) and decreases at high altitude — but the volumetric flow for air cleaner sizing is based on maximum engine airflow at rated speed and boost. Standard sizing practice: the air cleaner housing\'s internal cross-sectional area should produce a face velocity of 0.05–0.12 m/s at maximum engine airflow through the installed element. Housing volume also determines the time-average face velocity through the element — larger volume housings allow flow buffering during turbocharger transients. Pipe sizing between housing and turbocharger inlet: pipe cross-section should limit air velocity to ≤15 m/s at maximum airflow to prevent acceleration-induced pressure drop that adds to element restriction. Housing orientation: horizontal element axis with end-cap facing down is preferred in rain — prevents pooling of rain water on the primary element upstream face.',
+        callout: [
+          { label: 'Housing face velocity target', value: '0.05–0.12 m/s' },
+          { label: 'Inlet pipe velocity limit', value: '≤15 m/s at maximum airflow' },
+          { label: 'Preferred housing orientation', value: 'Horizontal axis, end-cap down' },
+        ],
+      },
+      {
+        heading: 'Maintenance Protocol and Inspection',
+        body: 'Air intake system maintenance must preserve the gasket seal between the primary element and the housing seat — this is the most critical installation parameter. Gasket compression: spin-on and axial-push element installations require the gasket to be seated fully before closure. Inspect the housing seat for nicks, corrosion, or deformation that would create a partial bypass channel. After element installation, attempt to rotate the element by hand — any rotation indicates incomplete seating. Housing interior cleaning: wipe with a clean damp cloth before installing the replacement element. Do not use compressed air inside the housing while the safety element is absent — particles will be driven downstream. Element cleaning (blowing out with compressed air): only permitted for elements specifically rated as cleanable (polyurethane foam pre-cleaners, some panel pre-filters). Pleated paper or synthetic primary elements must not be cleaned — compressed air drives particles deeper into the media, increases restriction, and creates micro-perforations. Element disposal inspection: before discarding the used primary element, cut the end cap and inspect the upstream media face — irregular loading patterns, holes, or metallic deposits indicate housing or installation problems that must be corrected before the new element is installed.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Face velocity design target', value: '0.05–0.12 m/s' },
+      { label: 'NA engine service limit', value: '25 mbar / 2,500 Pa' },
+      { label: 'Turbo engine service limit', value: '37.5–62.5 mbar' },
+      { label: 'Pre-cleaner life extension', value: '3–10× primary element life' },
+    ],
+    relatedStandards: ['ISO 5011', 'ISO 29463'],
+    relatedTechnologies: ['MACROCORE™'],
+    relatedSystems: ['Air Intake Protection'],
+    keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration'],
+    fieldDiagnostics: {
+      symptoms: [
+        'Black exhaust smoke at full load — fuel-rich combustion from reduced air mass flow due to over-restricted element',
+        'Silicon (Si) detected in engine oil ICP analysis — silica particles bypassing the air intake and entering the lubrication circuit through combustion',
+        'Abnormal liner and ring wear at early oil analysis — abrasive wear particles present before normal service interval',
+        'Restriction indicator triggered ahead of schedule — element dust holding capacity being consumed faster than expected for the environment',
+        'Loss of turbocharger boost pressure — compressor operating on wrong map point due to elevated restriction',
+      ],
+      probableCauses: [
+        'Air intake housing gasket failure or primary element not fully seated — creating a bypass path for unfiltered air',
+        'Primary element over-serviced (replaced too late) — element restriction exceeding engine design limit',
+        'Incorrect element installed — wrong dimensions creating clearance at housing seat',
+        'Safety element removed and not replaced after primary element service',
+        'Pre-cleaner blockage or absent — full ambient dust loading primary element at 3–10× normal rate',
+      ],
+      inspectionMethods: [
+        'Check restriction indicator: triggered = element at service limit; verify indicator set point matches OEM restriction specification',
+        'Remove primary element, inspect upstream face for uniform brown dust loading (normal) vs. localised loading patterns (bypass) or media perforations (damage)',
+        'With primary element removed, inspect housing seat for deformation, corrosion, or debris that prevents full gasket compression',
+        'Oil analysis: silicon content ≥20 ppm (ICP) in engine lube oil indicates air intake breach — isolate to air filter system vs. cylinder liner wear (different Si compounds)',
+        'Visual pre-cleaner inspection: blocked ejection tube or bowl overflow indicates service interval exceeded; cyclone efficiency drops sharply when bowl is full',
+      ],
+      correctiveActions: [
+        'If air intake bypass confirmed: replace primary element, clean housing seat, verify new element rotates 0° (no movement = full seal), re-check Si level at next oil analysis interval',
+        'If restriction triggered early: identify dust concentration at installation point and recalculate interval using DHC formula; install pre-cleaner if not present or upgrade to higher DHC element',
+        'If safety element missing: install correct specification safety element immediately; primary element alone provides no protection during installation gap and no backup if primary is breached',
+        'After any air intake breach (oil Si > 20 ppm): increase oil analysis frequency to every 100 hours until Si returns to baseline; assess liner wear against bore gauge measurement',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Silicon contamination in engine oil (silica ingestion)',
+        standard: 'ISO 5011 (element efficiency), ASTM D5185 (oil Si measurement)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'Full housing inspection + correct-specification primary element with verified gasket seal + safety element in place',
+        relatedArticles: ['iso-5011', 'oil-analysis-methods', 'contamination-control'],
+      },
+      {
+        problem: 'Rapid primary element restriction in high-dust environment',
+        standard: 'ISO 5011 (DHC testing)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'Pre-cleaner addition (centrifugal, ≥80% efficiency at ≥10 µm) + high-DHC synthetic primary element',
+        relatedArticles: ['dust-holding-capacity', 'iso-5011', 'service-intervals'],
+      },
+      {
+        problem: 'Turbocharger compressor efficiency loss from elevated restriction',
+        standard: 'ISO 5011 (initial restriction), engine OEM specification',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'Correctly sized air cleaner housing (face velocity 0.05–0.12 m/s) with low-restriction primary element and calibrated restriction indicator',
+        relatedArticles: ['airflow-engineering', 'air-restriction', 'iso-5011'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-04',
+      nextScheduledReview: '2027-01-04',
+      responsibleRegistry: 'EDL-STANDARDS (STD-ISO-5011)',
+      evidenceStatus: 'ISO 5011:2014 verified; ISO 29463-1:2011 verified; engine OEM restriction limits from published service data',
+    },
+  },
+
+  {
+    slug: 'lubrication-system-filtration',
+    title: 'Lubrication System Filtration',
+    subtitle: 'Full-Flow and Bypass Architecture, Bypass Valve Engineering, and Oil Analysis Integration',
+    metaDescription: 'Engineering reference for engine and gearbox lubrication system filtration: full-flow vs bypass filter architecture, cold-start bypass valve behaviour, centrifugal filtration, oil condition monitoring integration, and extended drain interval validation.',
+    category: 'Engineering',
+    readTime: '12 min',
+    intro: 'Lubrication system filtration protects engine bearings, cylinder liners, valve train components, and gearbox gears from particle contamination generated by normal wear, ingested from the air intake, and introduced during maintenance. The filtration architecture — full-flow filter, bypass filter, and centrifugal separator — is designed around two competing requirements: maintaining adequate oil flow to all lubrication points under all operating conditions, and removing particles before they recirculate and cause further wear.',
+    sections: [
+      {
+        heading: 'Full-Flow Filtration Architecture',
+        body: 'A full-flow oil filter is installed in series with the main oil gallery — all oil delivered by the pump passes through the filter before reaching bearings and other lubrication points. Full-flow filter location: between the pump outlet and the main oil rail, downstream of the pressure relief valve. Operating pressure: 3–7 bar at operating temperature and full flow; cold start can produce momentary pressure spikes to 15–20 bar on the upstream side. Full-flow filter specification: the element must pass the full pump delivery (typically 60–200 L/min on a diesel engine) at clean restriction ≤ 0.3 bar at operating temperature and rated flow. Beta ratio for full-flow engine filters: ISO 16889 test at equivalent flow and viscosity. Typical specification: β₁₀(c) ≥ 25–75 for standard passenger/commercial engines; β₅(c) ≥ 75 for precision lube circuits and turbocharger bearing circuits. Service interval: coincides with oil change interval (set by oil degradation, not just filter loading). In engines where oil life monitoring is used (General Motors Oil Life System, Ford Intelligent Oil Life Monitor), the filter change interval follows the oil life calculation.',
+        callout: [
+          { label: 'Full-flow filter location', value: 'Pump outlet → filter → main oil rail' },
+          { label: 'Operating pressure', value: '3–7 bar at operating temperature' },
+          { label: 'Cold start pressure spike', value: 'Up to 15–20 bar' },
+        ],
+      },
+      {
+        heading: 'Bypass Filtration',
+        body: 'A bypass filter is connected in parallel with the main oil flow — it draws a portion of the oil (typically 5–10% of total flow) from the pump outlet, passes it through a high-efficiency fine filter, and returns it to the sump. The bypass element operates at the full pump delivery pressure but passes only a fraction of the flow, allowing it to have a much finer media rating (β₂–₅(c) ≥ 1000) without creating a restriction problem in the main oil circuit. The bypass filter does not protect against oil starvation during cold starts — it supplements the full-flow filter by continuously removing fine particles that pass through the full-flow media. Bypass elements have high DHC (several hundred grams versus 30–80 g for typical spin-on full-flow elements) because they are not restricted by pressure drop constraints. Extended drain interval programs using bypass filtration: some OEM programs allow oil drain intervals to be doubled or tripled (e.g., from 500 to 1,500 hours) when a bypass filter with high-efficiency fine media is installed and oil analysis trending confirms TAN, viscosity, and wear metal values remain within specification.',
+        callout: [
+          { label: 'Bypass flow fraction', value: '5–10% of total oil flow' },
+          { label: 'Bypass filter Beta rating', value: 'β₂–₅(c) ≥ 1000' },
+          { label: 'Bypass element DHC advantage', value: '5–10× full-flow element DHC' },
+        ],
+      },
+      {
+        heading: 'Bypass Valve Engineering and Cold-Start Behaviour',
+        body: 'The bypass valve in a full-flow filter housing prevents oil starvation when the filter element is severely restricted — either at cold start (high oil viscosity) or when the element is over-serviced. Bypass valves are spring-loaded poppets set to open at a specified differential pressure across the element (typically 0.8–1.5 bar). When the bypass valve opens, unfiltered oil from the pump outlet flows directly to the main oil rail, bypassing the filter element. Cold-start bypass: SAE 15W-40 engine oil at −20°C has a kinematic viscosity of approximately 3,000–5,000 cSt (versus ~100 cSt at 80°C). The restriction through a clean filter element at cold viscosity can easily exceed the bypass valve cracking pressure during the first seconds of cold cranking — meaning the engine runs on unfiltered oil for 5–30 seconds at start-up until oil temperature rises. This is not a failure condition; it is expected behaviour. Using the correct oil viscosity grade for the ambient temperature (SAE J300 viscosity specification: 0W-20 for Arctic, 15W-40 for moderate climates) minimises the cold-start bypass duration.',
+        callout: [
+          { label: 'Bypass valve cracking pressure', value: '0.8–1.5 bar ΔP' },
+          { label: 'SAE 15W-40 viscosity at −20°C', value: '~3,000–5,000 cSt' },
+          { label: 'Cold-start bypass duration', value: '5–30 seconds (temperature dependent)' },
+        ],
+      },
+      {
+        heading: 'Oil Condition and API Service Classification',
+        body: 'Engine oil must be selected to match both the engine design specification and the fuel sulphur content. API (American Petroleum Institute) service categories for diesel engine oil: API CK-4 (current category, introduced 2016) — formulated for high-speed four-stroke diesel engines; compatible with biodiesel blends up to B20; meets exhaust aftertreatment compatibility requirements. API FA-4 — XW-30 viscosity category for engines specifically designed for it; not backward-compatible with older engines requiring 15W-40. SAE J300 viscosity grades define the temperature range for each grade: 0W-20, 5W-30, 10W-30, 15W-40, 20W-50 etc. — the W number specifies cold viscosity limit (cranking and pumping); the high-temperature number specifies kinematic viscosity at 100°C. Mixing API CJ-4 oil (previous generation) with CK-4 is acceptable in an emergency; mixing with older API CI-4 or CH-4 should be minimised as the additive packages differ. Using oil with insufficient alkaline reserve (TBN) for the fuel sulphur content causes acid-induced wear of bearing overlays.',
+        callout: [
+          { label: 'Current diesel oil category', value: 'API CK-4 (2016+)' },
+          { label: 'Biodiesel compatibility', value: 'API CK-4: B20 rated' },
+          { label: 'SAE J300 scope', value: 'Engine oil viscosity grade classification' },
+        ],
+      },
+      {
+        heading: 'Centrifugal Filtration',
+        body: 'Centrifugal separators (power-driven oil centrifuges) remove particles by centrifugal force rather than media filtration, operating without a disposable element. Oil from the bypass circuit enters a spinning rotor at 4,000–7,000 RPM (driven by the reaction force of oil jets exiting the rotor base, or by an electric motor in some designs). At 6,000 RPM, the centrifugal acceleration at the rotor wall is approximately 2,000 g — sufficient to separate particles ≥1–2 µm in oil at operating temperature. Accumulated particles build up as a hard cake on the rotor inner wall, which is removed by disassembling and wiping the rotor at service. Centrifugal advantages: no element disposables; effective against soft carbon agglomerates and soot that can plug depth media; effective against particles ≤2 µm that bypass conventional media filters. Centrifugal limitations: does not remove water; efficiency depends on maintaining design RPM (verify rotor spin speed by observing coasting time after engine stop); does not provide media-verified beta ratio data for specification comparison. Centrifugal filtration is commonly used in heavy-duty diesel engines as a supplement to full-flow spin-on filtration, not as a replacement.',
+        callout: [
+          { label: 'Centrifuge rotor speed', value: '4,000–7,000 RPM' },
+          { label: 'Centrifugal acceleration', value: '~2,000 g at rotor wall' },
+          { label: 'Effective particle size', value: '≥1–2 µm at operating temperature' },
+        ],
+      },
+      {
+        heading: 'Extended Drain Interval Engineering',
+        body: 'Extended drain intervals are engineered through the combination of high-quality oil, bypass filtration, and oil analysis trending — not simply through elapsed time. The engineering basis for extension: (1) Oil analysis at the existing interval must confirm TAN ≤ 2× new oil TAN, TBN ≥ 50% of new oil TBN, viscosity within ±20% of new oil grade, wear metals (Fe, Cu, Al) below individual alarm limits, and water ≤ 0.1%. (2) Bypass filter must be serviced at the existing interval or more frequently. (3) Oil and filter combination must be validated at the proposed extended drain length using sequential oil analysis at 20–30% increments of the extended interval. Regulatory and warranty considerations: OEM warranty in many markets requires oil changes at specified intervals regardless of oil condition; exceeding OEM intervals without OEM-approved extension documentation may void warranty. Fleet operators should obtain written OEM approval or use an OEM-approved extended drain oil programme before extending beyond the base drain interval.',
+      },
+      {
+        heading: 'Gearbox and Final Drive Lubrication',
+        body: 'Gearbox and final drive lubrication systems use gear oil (SAE J306 classification: 70W, 75W, 80W-90, 85W-140 etc.) rather than engine oil, with different cleanliness requirements and filtration approaches. API GL-5 is the most common heavy-duty hypoid gear oil specification. Cleanliness targets for gearboxes: ISO 18/16/13 for standard helical gearboxes; ISO 17/15/12 for high-precision gear trains with fine pitch and close clearances. Gearbox filtration: typically magnetic drain plugs (capturing ferrous particles ≥50–100 µm by magnetic retention), supplemented by full-flow or bypass gear oil filters in large industrial gearboxes. Oil analysis for gearboxes: lead (Pb) indicates hypoid gear copper-lead bearing overlay wear; iron (Fe) indicates gear tooth and bearing wear; silicon (Si) indicates gasket seal failure and external ingress. Gearbox oil change intervals are typically mileage- or hour-based (not condition-based) in most OEM schedules because the smaller oil volume means degradation reaches the service limit more predictably.',
+        callout: [
+          { label: 'Gear oil standard', value: 'SAE J306 (viscosity grades)' },
+          { label: 'Gear oil specification', value: 'API GL-5 (hypoid gears)' },
+          { label: 'Gearbox cleanliness target', value: 'ISO 18/16/13 (standard helical)' },
+        ],
+      },
+    ],
+    keyMetrics: [
+      { label: 'Full-flow filter Beta rating', value: 'β₁₀(c) ≥ 25–75' },
+      { label: 'Bypass valve cracking pressure', value: '0.8–1.5 bar' },
+      { label: 'Centrifuge acceleration', value: '~2,000 g at rotor wall' },
+      { label: 'Extended drain TBN limit', value: '≥50% of new oil TBN' },
+    ],
+    relatedStandards: ['ISO 16889', 'ISO 4406', 'ASTM D6304'],
+    relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: ['lubrication system', 'full-flow filter', 'bypass filtration', 'bypass valve', 'centrifugal filtration', 'API CK-4', 'SAE J300', 'extended drain interval'],
+    fieldDiagnostics: {
+      symptoms: [
+        'Oil pressure warning lamp at normal operating temperature — filter element at or beyond terminal restriction forcing full bypass valve operation',
+        'Elevated iron (Fe) in ICP oil analysis — bearing overlay wear or liner wear generating metallic particles circulating through lube circuit',
+        'TAN rising across sequential samples — oil oxidation rate exceeding TBN alkaline reserve depletion, indicating accelerated degradation',
+        'Metallic debris visible on magnetic drain plug — large wear particles (>100 µm) not captured by depth media, indicating acute wear event',
+        'Oil consumption increase >0.5 L/1,000 km — liner wear or turbocharger seal failure allowing oil into combustion or exhaust circuit',
+      ],
+      probableCauses: [
+        'Filter element over-service interval — media loaded beyond DHC, bypass valve open for extended periods passing unfiltered oil',
+        'Incorrect bypass valve specification — valve cracking pressure too low relative to cold viscosity, causing extended cold-start bypass duration',
+        'Oil-to-filter viscosity mismatch — incorrect SAE grade oil causing excessive cold restriction or inadequate film at high temperature',
+        'Coolant ingress from head gasket failure — water in oil confirmed by FTIR glycol peak (866 cm⁻¹) and ASTM D6304 water content rise',
+        'TBN depletion from high fuel sulphur content (off-road diesel) — acidic sulphur combustion products consuming alkaline reserve faster than OEM drain interval accounts for',
+      ],
+      inspectionMethods: [
+        'Cut open used full-flow element and examine media: metallic sheen on upstream face = bearing or liner wear; carbonaceous cake = normal soot loading; copper-coloured deposits = bearing overlay failure',
+        'Measure TAN (ASTM D664) and TBN (ASTM D2896) on used oil sample: TBN:TAN ratio ≥1 is minimum acceptable; ratio <1 indicates over-service',
+        'FTIR of used oil: glycol peak at 866 cm⁻¹ confirms coolant ingress; oxidation peak at 1,700–1,760 cm⁻¹ at >25 AU indicates accelerated oxidation',
+        'ICP wear metal trending: rising Fe + Cr = liner/ring wear; rising Fe alone = crankshaft or camshaft; rising Cu = bronze bearing; rising Al = piston or gear case',
+        'Magnetic drain plug inspection every oil change: quantify and characterise debris — increasing mass per interval indicates accelerating wear event',
+      ],
+      correctiveActions: [
+        'If bypass valve open continuously: replace element immediately; investigate whether service interval exceeded or whether element was under-specified for the application flow rate',
+        'If coolant ingress confirmed (FTIR glycol): do not run engine — drain oil, flush circuit, identify and repair head gasket or oil cooler, refill with fresh oil and new element; oil analysis at 50 hours',
+        'If TBN:TAN ratio <1: oil drain required regardless of hours elapsed; switch to oil with higher initial TBN if using high-sulphur fuel (off-road diesel >500 ppm S requires TBN ≥30 new oil)',
+        'If acute wear event (large metallic particles on drain plug): extend bypass filter service to 50% of normal interval; increase oil analysis frequency to every 100 hours until stabilised',
+        'For extended drain programme: establish minimum 3 sequential oil analysis data points at existing interval before extending; do not extend without TAN, TBN, viscosity, and wear metal confirmation at each step',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Premature bearing wear (elevated Fe and Cu in oil analysis)',
+        standard: 'ISO 16889 (filter efficiency), ISO 4406 (lube cleanliness)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Full-flow filter β₁₀(c) ≥ 75 + bypass filter β₂(c) ≥ 1000 at 5–10% bypass flow',
+        relatedArticles: ['iso-16889', 'beta-ratio', 'oil-analysis-methods', 'contamination-control'],
+      },
+      {
+        problem: 'Oil degradation (TAN rise, TBN depletion before drain interval)',
+        standard: 'ASTM D664 (TAN), ASTM D2896 (TBN)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Oil analysis programme with drain-at-limit protocol; switch to API CK-4 oil with higher TBN for high-sulphur fuel applications',
+        relatedArticles: ['oil-analysis-methods', 'service-intervals'],
+      },
+      {
+        problem: 'Extended cold-start bypass allowing unfiltered oil to reach bearings',
+        standard: 'ISO 16889 (bypass valve pressure specification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Correct SAE J300 viscosity grade for ambient temperature; verify bypass cracking pressure matches element restriction at cold viscosity',
+        relatedArticles: ['seal-integrity', 'filter-media-science', 'service-intervals'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-04',
+      nextScheduledReview: '2027-01-04',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-LUBRICATION)',
+      evidenceStatus: 'ISO 16889:2022 verified; API CK-4 specification verified; SAE J300:2021 verified; SAE J306:2019 verified; ASTM D664/D2896 verified',
+    },
+  },
+
+  {
+    slug: 'hydraulic-power-unit-design',
+    title: 'Hydraulic Power Unit Design',
+    subtitle: 'Return-Line, Pressure-Line, and Offline Filtration — System Architecture and Commissioning',
+    metaDescription: 'Engineering reference for hydraulic power unit filtration system design: return-line filter sizing, pressure-line filtration for servo valve circuits, offline kidney-loop design, reservoir contamination control, commissioning flush protocol, and ISO 4406 verification.',
+    category: 'Engineering',
+    readTime: '12 min',
+    intro: 'Hydraulic power unit (HPU) design integrates three complementary filtration circuits — return-line, pressure-line, and offline — to maintain system cleanliness within the target ISO 4406 code required by the most sensitive component in the circuit. No single filtration stage is sufficient; each stage addresses a different contamination pathway and particle size range. System design, commissioning protocol, and ongoing monitoring are equally important: a perfectly specified filter system operated without commissioning flush or monitoring will not achieve or maintain its cleanliness target.',
+    sections: [
+      {
+        heading: 'HPU Filtration Architecture Overview',
+        body: 'A complete hydraulic power unit filtration system addresses three contamination flows: (1) Ingress from external sources (breathers, shaft seals, cylinder rod seals, maintenance) — controlled by breather filters, seal selection, and fill-point discipline. (2) Recirculating contamination (particles generated by wear, passing through the return line filter, accumulating in the reservoir) — controlled by return-line and offline filters. (3) Pump outlet contamination (wear particles from the pump itself, reaching sensitive valves before they reach the return filter) — controlled by pressure-line filters. The filtration architecture is designed in sequence: offline filters reduce baseline reservoir cleanliness; return-line filters capture recirculating particles; pressure-line filters provide final protection for sensitive valves. The three stages operate simultaneously and are not redundant — removing any stage degrades the overall protection. System cleanliness is measured at the most sensitive component (servo or proportional valve inlet), not at the reservoir.',
+        callout: [
+          { label: 'Return-line filter role', value: 'Captures recirculating particles from actuators' },
+          { label: 'Pressure-line filter role', value: 'Protects servo/proportional valves from pump wear particles' },
+          { label: 'Offline filter role', value: 'Continuously polishes reservoir to reduce baseline' },
+        ],
+      },
+      {
+        heading: 'Return-Line Filter Sizing and Specification',
+        body: 'The return-line filter handles all oil returning from actuators (cylinders, motors) to the reservoir. Return-line flow equals pump delivery plus any accumulator discharge — in systems with large accumulators, peak return flow can exceed steady-state pump delivery by 2–3×. The filter must be sized for peak return flow without exceeding its rated differential pressure at operating temperature. Undersizing causes the bypass valve to open on return flow spikes, bypassing unfiltered oil directly to the reservoir. Return-line filter specification: (1) Flow capacity: rated for 120–150% of pump delivery to account for accumulator discharge and variable displacement extremes. (2) Beta rating: β₁₀(c) ≥ 75 for standard hydraulic systems; β₁₀(c) ≥ 200 for servo valve circuits. (3) Bypass valve pressure: typically 3.5–5 bar for tank-top return-line filters. (4) Contamination indicator: differential pressure indicator with electrical signal to control system — do not rely on visual-only indicators for systems requiring continuous cleanliness monitoring. (5) Filter housing rating: rated for 1.5× maximum operating pressure on return circuit (some circuits have pressure pulses from actuator deceleration).',
+        callout: [
+          { label: 'Sizing factor', value: '120–150% of peak pump delivery' },
+          { label: 'Beta rating (servo circuit)', value: 'β₁₀(c) ≥ 200' },
+          { label: 'Bypass valve pressure (return line)', value: '3.5–5 bar' },
+        ],
+      },
+      {
+        heading: 'Pressure-Line Filtration for Servo Valve Circuits',
+        body: 'Pressure-line filters are installed downstream of the pump and upstream of servo valves or proportional valves to capture pump wear particles before they enter valve spools. Pump wear particles — generated by axial piston pump port plate and shoe-to-swashplate surfaces — are typically angular metallic particles in the 5–25 µm range, well-matched to servo valve spool clearances. Pressure-line filter specification for servo valve protection: β₃(c) ≥ 200 (removes ≥99.5% of particles ≥3 µm — within the servo spool clearance range); β₁(c) ≥ 75 in precision electrohydraulic systems. Pressure-line filters must be rated for the full system pressure including pressure spikes — minimum housing rating: system MAWP × 1.5 safety factor. High-pressure hydraulic filters for 350 bar systems require housings rated at 525 bar minimum. Filter elements for high-pressure service must withstand collapse differential pressure exceeding 350 bar without element structural failure. Pressure-line filter change interval: condition-based per differential pressure indicator, typically 1,000–3,000 hours in clean operating environments where pump wear is minimal.',
+        callout: [
+          { label: 'Servo valve protection rating', value: 'β₃(c) ≥ 200' },
+          { label: 'Housing pressure rating', value: 'System MAWP × 1.5 minimum' },
+          { label: 'Element collapse rating', value: '≥ system maximum pressure' },
+        ],
+      },
+      {
+        heading: 'Offline Kidney-Loop Circuit Design',
+        body: 'An offline kidney-loop circuit continuously circulates reservoir fluid through a high-efficiency filter and returns it to the reservoir, independent of the main hydraulic circuit. The offline circuit uses its own small pump (typically 5–15% of the main system flow) and is the most cost-effective approach to reducing sub-10 µm particle concentration — the fine particle range that return-line flow rates cannot efficiently capture. Kidney-loop design parameters: (1) Flow rate: 5–15% of total system volume per minute gives 6–20 fluid turnovers per hour, sufficient to achieve and maintain target cleanliness codes in most systems. (2) Filter rating: β₁₀(c) ≥ 200 for standard systems; β₃(c) ≥ 200 for fine-particle control in servo circuits. (3) Circuit arrangement: return from reservoir bottom (where settled particles concentrate), discharge above the fluid surface to allow deaeration. (4) Heat exchanger: the offline circuit is the optimal location for an oil cooler since the low-flow, continuously-running circuit provides stable temperature control without pressure drop concerns. Kidney-loop filtration is particularly valuable in systems that experience intermittent high-contamination events (maintenance, seal replacement) — the circuit restores target cleanliness within 4–8 hours rather than waiting for recirculation through the main circuit.',
+        callout: [
+          { label: 'Kidney-loop flow rate', value: '5–15% of total system volume/min' },
+          { label: 'Fluid turnovers per hour', value: '6–20 (at 5–15% flow rate)' },
+          { label: 'Return from reservoir', value: 'Reservoir bottom — picks up settled particles' },
+        ],
+      },
+      {
+        heading: 'Reservoir Design for Contamination Control',
+        body: 'Reservoir design directly impacts system cleanliness through: (1) Volume and residence time — residence time = reservoir volume (L) / pump flow rate (L/min). Minimum residence time for deaeration: 3–5 minutes; minimum for particle settling: depends on particle density and size, but 30 minutes minimum for particles ≥25 µm in ISO VG 46 at 50°C. Design target: reservoir volume ≥ 3× pump flow per minute for adequate residence time. (2) Baffles — a baffle between the return port and the suction port prevents returning contaminated fluid from immediately re-entering the pump suction. (3) Breather — all vented reservoirs must have a breather filter sized for the maximum inflow/outflow volume rate (cylinder extension/retraction) plus thermal breathing. Breather filter rating: 3–10 µm absolute, desiccant breather for systems in humid environments (desiccant beads change colour from orange to green when saturated — a condition indicator). (4) Settling zone — reservoir bottom is a contamination accumulation zone; the kidney-loop suction picks up settled particles; the suction strainer prevents large particles from entering the pump.',
+        callout: [
+          { label: 'Reservoir volume minimum', value: '≥3× pump flow (L/min) in litres' },
+          { label: 'Breather filter rating', value: '3–10 µm absolute' },
+          { label: 'Desiccant breather saturation indicator', value: 'Orange = active; green = saturated' },
+        ],
+      },
+      {
+        heading: 'Commissioning Flush Protocol',
+        body: 'System commissioning flush removes built-in contamination (machining debris, weld scale, pipe scale, elastomer flash) from a new or rebuilt hydraulic circuit before first productive operation. Without commissioning flush, built-in contamination typically presents at ISO 22/20/17 or worse — far above the target code for servo valve or piston pump circuits. Flush procedure: (1) Fill with flush fluid (same grade as operating fluid or a compatible lower-viscosity flushing oil). (2) Install bypass plates across servo valves, proportional valves, and other sensitive components — circulate through actuator ports but bypass the valve spools. (3) Install temporary high-capacity return-line filter elements (10 µm absolute, high DHC) in place of the system elements to capture bulk contamination without overloading permanent elements. (4) Circulate at 1.5–2× rated flow for turbulent flushing effect (Reynolds number ≥4,000 in all pipe sections). (5) Sample every 2 hours; continue until two consecutive samples meet the cleanliness target. (6) Replace temporary filter elements with system elements, remove bypass plates, re-sample at target code before commissioning under load.',
+        callout: [
+          { label: 'Pre-flush typical cleanliness', value: 'ISO 22/20/17 or worse' },
+          { label: 'Flush flow rate target', value: '1.5–2× rated operational flow' },
+          { label: 'Acceptance criterion', value: '2 consecutive samples at target code' },
+        ],
+      },
+      {
+        heading: 'System Cleanliness Verification and Monitoring',
+        body: 'Ongoing cleanliness verification requires sampling from the correct point: the most sensitive component inlet — servo valve inlet manifold or piston pump outlet, not the reservoir. Reservoir samples underestimate circulating contamination because settled particles do not represent the active particle population. Sampling schedule: initial commissioning (post-flush); 50 hours after commissioning; then quarterly or per 500 hours. Any maintenance event (seal replacement, component change, fluid top-up) triggers an unscheduled sample within 50 hours. Automatic particle counters installed in-line on the return line provide continuous cleanliness monitoring with ISO 4406 code reporting to the SCADA or PLC — alert setpoints can be configured to trigger alarms at one code unit above target, with shutdown inhibits at two code units above target. In-line sensors complement but do not replace periodic laboratory samples — laboratory samples capture the full size distribution and include ICP spectroscopy for wear metal trending.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Return-line filter (servo circuit)', value: 'β₁₀(c) ≥ 200' },
+      { label: 'Pressure-line filter (servo circuit)', value: 'β₃(c) ≥ 200' },
+      { label: 'Reservoir volume minimum', value: '≥3× pump flow (litres/L per min)' },
+      { label: 'Commissioning flush flow', value: '1.5–2× rated flow' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
+    relatedTechnologies: ['NANOFORCE™'],
+    relatedSystems: ['Hydraulic Protection'],
+    keywords: ['hydraulic power unit', 'HPU design', 'return-line filter', 'pressure-line filter', 'kidney loop', 'commissioning flush', 'reservoir design', 'ISO 4406'],
+    fieldDiagnostics: {
+      symptoms: [
+        'Servo valve hunting or null drift — spool silting from fine particle accumulation in clearance, causing deadband increase',
+        'Piston pump noise (cavitation-like) with flow reduction — suction starvation from blocked suction strainer or incorrect reservoir level',
+        'High oil temperature sustained above 70°C — inadequate cooling capacity or excessive case drain leakage indicating pump or motor wear',
+        'Differential pressure indicator triggered on return-line filter between normal service intervals — contamination event (maintenance, seal failure) loading element prematurely',
+        'Hydraulic cylinder drift under load (no input commanded) — directional control valve seat erosion or spool wear from contamination',
+      ],
+      probableCauses: [
+        'Commissioning flush not performed or incomplete — built-in contamination circulating and loading system filter elements within first 200 hours',
+        'Breather filter saturated or missing — ambient dust ingressing through reservoir vent at rate exceeding filtration capacity',
+        'Return-line filter undersized for peak return flow — bypass valve opening during accumulator discharge, passing unfiltered bulk flow to reservoir',
+        'Kidney-loop pump failure or bypass valve stuck open — offline polishing circuit not contributing to cleanliness maintenance',
+        'Contaminated replacement fluid added during top-up — new drum fluid at ISO 18/16/13 adding 3–5 code units of contamination to a system targeted at ISO 16/14/11',
+      ],
+      inspectionMethods: [
+        'ISO 4406 particle count at servo valve inlet manifold: result vs. target code identifies whether filtration is achieving design cleanliness',
+        'Differential pressure check across return-line, pressure-line, and offline filters — any element at bypass condition is not filtering',
+        'Breather filter inspection: flow test through breather (airflow resistance check) and desiccant bead colour (orange = active; green = change required)',
+        'Reservoir level check at operating temperature: low level reduces residence time and deaeration, increasing recirculated aerated oil to pump suction',
+        'Servo valve performance test: step input response, threshold, hysteresis, and null drift — deviations from commissioning baseline indicate spool silting or wear',
+      ],
+      correctiveActions: [
+        'If system cleanliness exceeds target by >2 code units: run kidney-loop continuously until two consecutive samples meet target; investigate and seal ingress source before declaring system clean',
+        'If commissioning flush was inadequate: drain fluid, replace with clean flush oil, repeat full flush procedure including temporary high-capacity element installation',
+        'If servo valve threshold has increased >50%: flush pressure-line circuit at 2× rated flow with β₃(c) ≥ 200 elements; valve may require specialist cleaning or replacement if silting is severe',
+        'If breather saturated: replace with desiccant breather sized for peak breathing rate (maximum cylinder extension/retraction speed × bore area); inspect reservoir for water accumulation',
+        'After any contamination event: increase sampling frequency to every 50 hours until three consecutive samples confirm return to target code',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Servo valve silting causing threshold and hysteresis increase',
+        standard: 'ISO 4406 (ISO 14/12/9 target for servo circuits), ISO 16889 (filter β specification)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Pressure-line filter β₃(c) ≥ 200 upstream of valve + offline kidney-loop β₁₀(c) ≥ 200 at 10% system flow',
+        relatedArticles: ['hydraulic-contamination-sensitivity', 'beta-ratio', 'contamination-control'],
+      },
+      {
+        problem: 'Post-commissioning contamination spike — built-in contamination in new system',
+        standard: 'ISO 4406 (verification) + ISO 16889 (flush filter specification)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Commissioning flush at 1.5–2× flow with temporary β₁₀(c) ≥ 1000 elements; accept on two consecutive samples at target code',
+        relatedArticles: ['contamination-control', 'fluid-cleanliness', 'particle-ingress-prevention'],
+      },
+      {
+        problem: 'Ambient dust ingress raising system cleanliness code',
+        standard: 'ISO 4406 (monitoring) + ISO 11171 (particle counter calibration)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Desiccant breather replacement + offline kidney-loop flow increase to 15% system volume/min',
+        relatedArticles: ['particle-ingress-prevention', 'fluid-cleanliness', 'service-intervals'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-04',
+      nextScheduledReview: '2027-01-04',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC)',
+      evidenceStatus: 'ISO 4406:2021 verified; ISO 16889:2022 verified; reservoir design data from ISO TR 10949; commissioning protocol from NFPA T2.14 guidelines',
+    },
+  },
+
+  {
+    slug: 'particle-ingress-prevention',
+    title: 'Particle Ingress Prevention',
+    subtitle: 'Breather Engineering, Shaft Seal Selection, and Contamination Budget Methodology',
+    metaDescription: 'Engineering reference for particle ingress prevention in hydraulic and lube systems: ingress pathway classification, breather filter selection, shaft seal engineering, fill-point contamination control, ingress rate budgeting, and monitoring protocols.',
+    category: 'Engineering',
+    readTime: '10 min',
+    intro: 'Particle ingress prevention is the upstream discipline of contamination control — stopping contamination from entering the system before it can degrade fluid cleanliness and damage components. Filtration alone cannot achieve a target ISO 4406 cleanliness code if ingress rates exceed filtration removal capacity. Identifying, quantifying, and sealing ingress pathways is prerequisite to achieving sustained cleanliness in demanding operating environments.',
+    sections: [
+      {
+        heading: 'Ingress Pathways and Classification',
+        body: 'Particle ingress into hydraulic and lubrication systems occurs through four categories of pathways. Atmospheric ingress: ambient dust entering through reservoir breathers, cylinder rod seals, shaft seals, and structural gaps in housings. This is the dominant ingress category for outdoor mobile equipment — a hydraulic system on a mining shovel can ingest 50–200 mg of dust per hour through an unfiltered breather alone in a 1–5 mg/m³ dust environment. Maintenance ingress: particles introduced during component replacement, fluid top-up, and sampling — contaminated tools, open reservoirs, contaminated fill equipment, and particles dislodged from fitting threads. A single contaminated fill nozzle can introduce 500–2,000 mg in one fill event. Built-in ingress: machining debris, scale, weld slag, and assembly residues present in new or rebuilt components before first fill. Typically ISO 22/20/17 or worse in an unflushed new system. Generated ingress: particles produced by internal wear, cavitation erosion, and seal degradation — these are not "ingress" in the conventional sense but contribute to the total contamination load the filter must manage. Ranking ingress severity: in most outdoor industrial applications, atmospheric > maintenance > built-in > generated.',
+        callout: [
+          { label: 'Atmospheric ingress (unfiltered breather)', value: '50–200 mg/h in 1–5 mg/m³ dust environment' },
+          { label: 'Maintenance ingress (contaminated fill nozzle)', value: '500–2,000 mg per event' },
+          { label: 'Built-in (unflushed new system)', value: 'ISO 22/20/17 or worse' },
+        ],
+      },
+      {
+        heading: 'Breather Filter Engineering',
+        body: 'Reservoir breathers equalise pressure as fluid volume changes (thermal expansion/contraction, cylinder extension/retraction). An unfiltered or under-specified breather is the highest-flow ingress pathway in most outdoor hydraulic systems. Engineering requirements: (1) Filtration rating: 3 µm absolute minimum for systems targeting ISO 17/15/12 or better; 1 µm absolute for servo valve systems targeting ISO 15/13/10 or better. (2) Flow capacity: the breather must pass the maximum breathing volume without developing significant pressure differential — excessive restriction causes reservoir pressure cycling (cavitation on suction, deaeration on positive pressure). Maximum breathing volume = maximum cylinder area (cm²) × maximum rod extension speed (cm/s). (3) Desiccant function: in humid environments, desiccant breathers (silica gel or molecular sieve) adsorb water vapour from incoming air, preventing water accumulation in the reservoir. Desiccant capacity is finite — bead colour change (orange to green for silica gel) indicates saturation. (4) Mounting orientation: horizontal or upward-facing to prevent rain pooling on the breather membrane. (5) Pre-filter protection: a coarse pre-filter mesh upstream of the fine media prevents rapid clogging from insects, large debris, and rain splash.',
+        callout: [
+          { label: 'Breather rating (ISO 17/15/12 target)', value: '3 µm absolute' },
+          { label: 'Breather rating (ISO 15/13/10 target)', value: '1 µm absolute' },
+          { label: 'Desiccant saturation indicator', value: 'Orange (active) → green (replace)' },
+        ],
+      },
+      {
+        heading: 'Shaft Seal Engineering for Ingress Control',
+        body: 'Hydraulic shaft seals (lip seals, PTFE seals, labyrinth seals) prevent fluid leakage outward and dust/water ingress inward at rotating shaft penetrations (pump shafts, motor shafts, cylinder rod ends). Seal selection parameters: (1) Shaft surface roughness: lip seal sealing requires shaft Ra ≤ 0.4 µm in the seal contact band; rough shafts cause accelerated lip wear and ingress. (2) Shaft runout: total indicator reading ≤ 0.05 mm at the seal lip location for shafts ≤50 mm diameter — higher runout causes periodic lip lift during rotation, creating a momentary ingress path. (3) Seal material vs. fluid compatibility: NBR for petroleum hydraulic fluid to 80°C; FKM (Viton) for synthetic fluid and temperatures to 120°C; PTFE for chemical resistance. (4) Exclusion lip: double-lip seals with an exclusion (outer) lip prevent ingress of external particulate and water without preventing lubrication retention at the inner lip. (5) Seal installation: incorrect installation (twisted lip, over-compressed, out-of-square) causes immediate ingress and rapid wear — use installation tools sized to the specific seal OD and bore.',
+        callout: [
+          { label: 'Shaft roughness limit', value: 'Ra ≤ 0.4 µm in seal contact band' },
+          { label: 'Shaft runout limit (≤50 mm OD)', value: 'TIR ≤ 0.05 mm' },
+          { label: 'Double-lip seal function', value: 'Inner lip retains fluid; outer lip excludes ingress' },
+        ],
+      },
+      {
+        heading: 'Fill-Point Contamination Control',
+        body: 'Fluid top-up and replacement is the highest-risk maintenance activity for contamination introduction. New oil from a sealed drum typically presents at ISO 18/16/13 — already above the target for servo valve and piston pump circuits. Fill-point contamination control: (1) Pre-filtered fill carts: all fill equipment must have an onboard filter (β₁₀(c) ≥ 200) in the fill line, maintained on a separate service schedule. A contaminated fill cart can reduce system cleanliness by 3–4 code units per top-up. (2) Closed fill systems: dedicated quick-connect fill couplings with dust caps prevent open-top fill operations. Couplings mate to a matching fitting on the fill cart — no open funnels, no uncapped reservoirs. (3) Transfer containers: oil transfers in open buckets from a drum to a reservoir can introduce 500–5,000 mg/L of contamination depending on the ambient dust concentration and container cleanliness. Use sealed, pre-cleaned closed-loop transfer systems. (4) Fitting thread contamination: hydraulic fitting threads contain machining oil and particles from manufacturing — inspect and clean new fittings before assembly; thread sealant (PTFE tape or anaerobic sealant) prevents particle shedding during make-up.',
+        callout: [
+          { label: 'New drum oil cleanliness', value: 'ISO 18/16/13 typical' },
+          { label: 'Fill cart filter minimum', value: 'β₁₀(c) ≥ 200 in-line' },
+          { label: 'Open bucket transfer contamination', value: '500–5,000 mg/L possible' },
+        ],
+      },
+      {
+        heading: 'Ingress Rate Measurement and Contamination Budgeting',
+        body: 'Contamination budgeting quantifies the balance between total ingress rate (mg/h) and filtration removal rate (mg/h) to predict whether a system can achieve and maintain its target cleanliness code at steady state. Ingress rate estimation: breather ingress = ambient dust concentration (mg/m³) × breathing flow rate (m³/h) × (1 − breather efficiency). Shaft seal ingress = empirical value from worn seal data (0.5–5 mg/h per seal, depending on seal condition, shaft speed, and ambient conditions). Fill-event ingress = fill frequency (events/h) × contamination per event (mg). Total ingress = sum of all pathways. Filtration removal rate = flow through filter (L/h) × inlet particle concentration (mg/L) × filter efficiency (1 − 1/β). Steady-state cleanliness is achieved when removal rate ≥ ingress rate. Budget deficit (removal < ingress) means cleanliness will degrade until the system reaches a higher equilibrium code — the rate of degradation and the equilibrium code can be calculated from the contamination budget. The budget identifies which ingress pathway has the greatest impact per unit cost of reduction — typically the breather and fill-point pathways dominate.',
+        callout: [
+          { label: 'Steady-state condition', value: 'Filtration removal rate ≥ total ingress rate' },
+          { label: 'Budget deficit consequence', value: 'Cleanliness degrades to higher equilibrium code' },
+          { label: 'Highest priority reduction', value: 'Breather and fill-point (highest mg/h typically)' },
+        ],
+      },
+      {
+        heading: 'Monitoring and Trending for Ingress Detection',
+        body: 'Ingress events are detectable through ISO 4406 particle count trending before the cleanliness code reaches the damage threshold. Key monitoring practices: (1) Establish a baseline cleanliness code for each machine under normal operating conditions — record 3 sequential samples at the same sampling point, same condition. (2) Set alert thresholds at one code unit above baseline at ≥6 µm; set action thresholds at two code units above baseline. One code unit = 2× particle count change, detectable with high confidence. (3) Correlate code trends with maintenance records — a code unit rise following a specific maintenance event (cylinder rod seal replacement, hydraulic motor change, fluid top-up) identifies the event as the ingress source. (4) Silicon content in oil (ICP) rising alongside particle count rise indicates airborne silica ingress — breather or shaft seal failure. Copper rising alongside particle count rise indicates internal component wear contributing to generated contamination. (5) Sample after every contamination risk event (storm, submersion, maintenance) within 24–48 hours of returning to service.',
+      },
+      {
+        heading: 'System Ingress Audit Methodology',
+        body: 'A systematic ingress audit identifies and prioritises all contamination pathways for a specific machine or installation. Audit procedure: (1) Map all potential ingress points — breathers (count, location, rating), shaft seals (number, type, age), fill points (configuration, discipline), cylinder rod seals (number, stroke length, ambient conditions), structural gaps (housing joints, cable penetrations). (2) Rate each pathway by estimated ingress rate (mg/h) under normal operating conditions. (3) Calculate total ingress budget and compare to installed filtration removal capacity. (4) Prioritise remediation by cost-effectiveness: ingress rate reduction per dollar spent. Typical findings in order of cost-effectiveness: (a) Replace unfiltered breather with rated desiccant breather — highest ingress reduction per dollar; (b) Install sealed fill system — eliminates highest single-event ingress source; (c) Replace worn shaft seals — moderate improvement at moderate cost; (d) Increase kidney-loop flow rate — improves removal rate without reducing ingress. Document audit findings and post-remediation cleanliness codes for ongoing reference.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Breather rating (servo systems)', value: '1 µm absolute' },
+      { label: 'Atmospheric ingress (unfiltered)', value: '50–200 mg/h in dust environment' },
+      { label: 'Fill cart filter minimum', value: 'β₁₀(c) ≥ 200' },
+      { label: 'Shaft roughness limit', value: 'Ra ≤ 0.4 µm (seal contact zone)' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 11171', 'ISO 16889'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: ['particle ingress', 'breather filter', 'shaft seal', 'contamination budget', 'fill-point control', 'ingress rate', 'ISO 4406', 'desiccant breather'],
+    fieldDiagnostics: {
+      symptoms: [
+        'Unexplained ISO 4406 cleanliness code rise between consecutive samples taken under identical conditions — indicates active ingress event or change in ingress rate',
+        'Rising silicon (Si) in ICP oil analysis — airborne silica dust ingressing through breather, shaft seal, or rod seal pathway',
+        'Filter service interval shortening progressively — ingress rate exceeding design assumption, loading elements faster than expected',
+        'Water accumulation in reservoir detected by sampling or sight glass — atmospheric humidity ingress through unprotected breather or condensation in vented reservoir',
+        'Particle count code rise directly after a maintenance event — maintenance-ingress event traceable to specific activity',
+      ],
+      probableCauses: [
+        'Breather filter saturated (desiccant beads green, restriction elevated) or breather absent/bypassed — atmospheric ingress at maximum rate',
+        'Shaft seal worn or incorrectly installed — allowing dust and water ingress alongside shaft at 0.5–5 mg/h per seal',
+        'Fill-point contamination — uncapped fill port, open-top bucket transfer, or contaminated fill cart filter not maintained',
+        'Cylinder rod seal failure — rod surface or seal lip damage allowing particulate ingress during retraction stroke',
+        'Structural gap in housing (loose inspection cover, damaged casting) creating an unintended atmospheric connection',
+      ],
+      inspectionMethods: [
+        'Breather inspection: attempt to blow through the breather by mouth — no air passage = restriction too high, replace; also check desiccant bead colour',
+        'Shaft seal visual inspection: evidence of oil film on shaft exterior inboard of seal = outward leakage (seal worn from inside); dust accumulation on shaft at seal = inward ingress path confirmed',
+        'ISO 4406 particle count with and without a specific pathway blocked: install a temporary 3 µm breather cap and sample after 4 hours — if code improves, breather was the dominant ingress source',
+        'ICP Si content trending: Si rise >5 ppm between consecutive samples at same interval is significant; Si rise correlated with dusty operation season or specific location confirms airborne ingress',
+        'Fill-point cleanliness test: collect a sample from the fill cart outlet (with fill cart running) into a pre-cleaned bottle; ISO 4406 count should meet or exceed the system target — if not, fill cart is a contamination source',
+      ],
+      correctiveActions: [
+        'Replace breather immediately with rated desiccant breather; install at correct flow capacity for maximum breathing rate; fit pre-filter mesh upstream of main element',
+        'Install sealed fill system with in-line β₁₀(c) ≥ 200 fill cart filter; implement closed fill coupling at reservoir; audit fill cart filter service records',
+        'After any ingress event confirmed by particle count rise: run kidney-loop continuously; sample at 50, 100, and 200 hours until cleanliness returns to baseline; document root cause and corrective action',
+        'For shaft seal ingress: inspect shaft for surface damage in seal contact zone (Ra measurement); repair shaft if Ra >0.4 µm before fitting new seal; use installation tool to prevent twisted-lip installation',
+        'For maintenance-induced contamination spike: implement pre-cleaned component storage policy; mandate ISO 4406 sampling within 48 hours of any maintenance activity on a system with sensitive components',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Rising silicon in oil analysis indicating airborne dust ingress',
+        standard: 'ASTM D5185 (ICP Si measurement), ISO 4406 (cleanliness code tracking)',
+        protectionSystem: 'Hydraulic Protection or Lubrication Protection',
+        technology: '1–3 µm absolute desiccant breather + shaft seal inspection and replacement if worn',
+        relatedArticles: ['oil-analysis-methods', 'contamination-control', 'fluid-cleanliness'],
+      },
+      {
+        problem: 'Cleanliness code rise traceable to fluid top-up events',
+        standard: 'ISO 4406 (system cleanliness), ISO 11171 (fill cart filter verification)',
+        protectionSystem: 'Hydraulic Protection or Lubrication Protection',
+        technology: 'Sealed fill system with in-line β₁₀(c) ≥ 200 filter; pre-filtered bulk fluid storage',
+        relatedArticles: ['contamination-control', 'hydraulic-power-unit-design', 'service-intervals'],
+      },
+      {
+        problem: 'System cannot maintain target cleanliness despite correct filtration specification',
+        standard: 'ISO 4406 (monitoring), ISO 16889 (filter β verification)',
+        protectionSystem: 'Hydraulic Protection or Lubrication Protection',
+        technology: 'Contamination budget audit: quantify all ingress pathways and compare to filtration removal capacity; identify and seal dominant ingress pathway',
+        relatedArticles: ['contamination-control', 'hydraulic-power-unit-design', 'fluid-cleanliness'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-04',
+      nextScheduledReview: '2027-01-04',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)',
+      evidenceStatus: 'ISO 4406:2021 verified; ISO 11171:2010 verified; shaft seal data from ISO 6194-1; ingress rate estimates from published contamination audit data',
+    },
   },
 ];
 
