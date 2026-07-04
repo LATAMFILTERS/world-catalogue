@@ -34,7 +34,7 @@ import requests
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
-API_BASE = "https://elimfilters-search-pro.onrender.com"
+API_BASE = "https://part-search.elimfilters.com"
 API_KEY  = None  # set via --api-key argument
 BATCH    = 10    # conservative: some products have 300+ fitment rows
 MAX_FITMENT = 150  # truncate to avoid 413 on large products
@@ -149,11 +149,12 @@ def map_row(record: dict) -> dict | None:
         fitment = fitment[:MAX_FITMENT]
 
     return {
-        'mann_code':       record['sku'],
-        'filter_type_raw': ft_raw,
+        'sku':             record['sku'],
+        'mann_part_number': record['sku'],
+        'filter_type':     ft_raw,
         'description':     (record.get('description') or '')[:600] or None,
-        'oe_numbers':      record.get('oe_numbers') or {},
-        'fitment':         fitment,
+        'oem_codes':       record.get('oe_numbers') or {},
+        'equipment_applications': fitment,
         'outer_diameter_mm': parse_dim_mm(dims.get('A') or dims.get('OD') or dims.get('Outer Diameter')),
         'height_mm':       parse_dim_mm(dims.get('H') or dims.get('Height')),
     }
@@ -162,12 +163,12 @@ def map_row(record: dict) -> dict | None:
 def post_batch(rows: list, dry_run: bool) -> dict:
     if dry_run:
         log.info(f"  [DRY] would POST {len(rows)} rows")
-        return {'success': True, 'total': len(rows), 'inserted': 0, 'updated': 0, 'errors': 0, 'skipped': []}
+        return {'success': True, 'inserted': 0, 'updated': 0, 'errors': []}
 
     url = f"{API_BASE}/api/import/mann"
     resp = requests.post(
         url,
-        json={'rows': rows},
+        json={'products': rows},
         headers={'Authorization': f'Bearer {API_KEY}', 'Content-Type': 'application/json'},
         timeout=120,
     )
@@ -178,13 +179,13 @@ def post_batch(rows: list, dry_run: bool) -> dict:
         r1 = post_batch(rows[:mid], dry_run)
         r2 = post_batch(rows[mid:], dry_run)
         return {
-            'success': True,
-            'total':    r1['total']    + r2['total'],
-            'inserted': r1['inserted'] + r2['inserted'],
-            'updated':  r1['updated']  + r2['updated'],
-            'errors':   r1['errors']   + r2['errors'],
-            'skipped':  r1.get('skipped', []) + r2.get('skipped', []),
+            'success':  True,
+            'inserted': r1.get('inserted', 0) + r2.get('inserted', 0),
+            'updated':  r1.get('updated', 0)  + r2.get('updated', 0),
+            'errors':   (r1.get('errors') or []) + (r2.get('errors') or []),
         }
+    if resp.status_code >= 400:
+        log.error(f"  Server error {resp.status_code}: {resp.text[:1000]}")
     resp.raise_for_status()
     return resp.json()
 
@@ -200,7 +201,6 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
     total_inserted = 0
     total_updated = 0
     total_errors = 0
-    all_server_skipped = []
     all_error_details = []
 
     batch = []
@@ -236,7 +236,7 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
                 continue
 
             # --filter-type filter
-            if filter_type and mapped['filter_type_raw'].lower() != filter_type.lower():
+            if filter_type and mapped['filter_type'].lower() != filter_type.lower():
                 continue
 
             batch.append(mapped)
@@ -245,13 +245,12 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
                 result = post_batch(batch, dry_run)
                 total_inserted += result.get('inserted', 0)
                 total_updated  += result.get('updated', 0)
-                total_errors   += result.get('errors', 0)
-                all_server_skipped.extend(result.get('skipped', []))
-                batch_errors = result.get('errorDetails', [])
+                batch_errors = result.get('errors', []) or []
+                total_errors  += len(batch_errors)
                 all_error_details.extend(batch_errors)
                 log.info(
                     f"  Batch {total_read}: +{result.get('inserted',0)} ins "
-                    f"+{result.get('updated',0)} upd {result.get('errors',0)} err"
+                    f"+{result.get('updated',0)} upd {len(batch_errors)} err"
                 )
                 for ed in batch_errors[:5]:
                     log.warning(f"    ERR {ed.get('sku')}: {ed.get('error')}")
@@ -263,9 +262,9 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
         result = post_batch(batch, dry_run)
         total_inserted += result.get('inserted', 0)
         total_updated  += result.get('updated', 0)
-        total_errors   += result.get('errors', 0)
-        all_server_skipped.extend(result.get('skipped', []))
-        all_error_details.extend(result.get('errorDetails', []))
+        batch_errors = result.get('errors', []) or []
+        total_errors  += len(batch_errors)
+        all_error_details.extend(batch_errors)
 
     log.info(f"\n{'='*55}")
     log.info(f"Mann LD Import Summary {'(DRY RUN)' if dry_run else ''}")
@@ -275,10 +274,6 @@ def run(jsonl_path: Path, dry_run: bool, filter_type: str | None, start_from: st
     log.info(f"  Inserted           : {total_inserted:,}")
     log.info(f"  Updated            : {total_updated:,}")
     log.info(f"  Errors             : {total_errors:,}")
-    if all_server_skipped:
-        log.info(f"  Server skipped     : {len(all_server_skipped)} (SKU collisions)")
-        for s in all_server_skipped[:10]:
-            log.info(f"    {s}")
 
     if all_error_details:
         log.info(f"\n  First 20 errors:")
