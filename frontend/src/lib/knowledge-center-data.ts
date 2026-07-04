@@ -123,43 +123,76 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   {
     slug: 'contamination-control',
     title: 'Contamination Control',
-    subtitle: 'Particle Management, ISO Cleanliness Codes, and System Design',
-    metaDescription: 'Engineering framework for contamination control: particle counting methodology, ISO 4406 cleanliness codes, ingress point identification, and system-level contamination budgets.',
+    subtitle: 'Three Contamination Categories, ISO 4406 Target Setting, and System Design',
+    metaDescription: 'Engineering framework for contamination control in industrial fluid systems: three contamination categories, critical 5–15 µm particle range, ISO 4406 target setting, ingress estimation, filtration system design, commissioning flushing, and ongoing monitoring.',
     category: 'Engineering',
-    readTime: '10 min',
-    intro: 'Contamination control is the systematic management of particle, water, and chemical ingress into mechanical systems. It requires identifying all contamination sources, quantifying concentration and particle size distribution, selecting filtration parameters that achieve target cleanliness levels, and verifying cleanliness through oil analysis or particle counting.',
+    readTime: '12 min',
+    intro: 'Contamination control is the systematic engineering discipline that keeps particle, water, and chemical concentrations within specified limits in industrial fluid systems. It begins with identifying contamination sources and quantifying ingress rates, then proceeds through cleanliness target selection, filtration system design, commissioning flushing, and continuous monitoring. Failing any one of these steps allows contamination to accumulate and accelerate component wear.',
     sections: [
       {
-        heading: 'Contamination Sources',
-        body: 'Built-in contamination enters during manufacturing (machining chips, casting sand, assembly residues). Ingress contamination enters during operation (airborne dust through air intake, water through breathers, particles through worn seals). Generated contamination is produced by wear, oxidation, and thermal degradation within the system. A contamination control strategy must address all three sources: flush to remove built-in contamination, filtration to capture ingress contamination, and condition monitoring to detect generated contamination.',
-      },
-      {
-        heading: 'Particle Size Distribution',
-        body: 'Particles in industrial fluids follow a distribution weighted toward smaller sizes — for every 5 µm particle, there are approximately 10× more 2 µm particles. Most wear damage is caused by particles in the 5–15 µm range — the clearance size range of bearings, servo valves, and gear teeth. Particles larger than 40 µm are visible to the naked eye but cause less proportional damage than critical-size particles because they are rapidly captured by primary filters. ISO 4406 counts particles at ≥4 µm, ≥6 µm, and ≥14 µm — specifically targeting the critical wear range.',
+        heading: 'Three Contamination Categories',
+        body: 'Industrial fluid contamination divides into three categories with distinct control strategies. Built-in contamination originates from manufacturing — machining chips, casting sand, pipe scale, elastomer flash, and assembly residues. A new hydraulic system without commissioning flush can present ISO 22/20/17 or worse before first operation. Ingress contamination enters during operation: airborne dust drawn past worn shaft seals or through breathers, water through condensation in vented reservoirs, and particles introduced during maintenance (contaminated fill equipment, open top fill points). Generated contamination is produced internally by wear, cavitation erosion, thermal degradation of fluid, and oxidation. Generated contamination is both a consequence of contamination already present and a cause of further wear. The three categories must be controlled in sequence: flush out built-in, seal against ingress, monitor generated.',
         callout: [
-          { label: 'Critical particle range', value: '5–15 µm' },
-          { label: 'Bearing clearance typical', value: '5–25 µm' },
-          { label: 'ISO count sizes', value: '≥4, ≥6, ≥14 µm' },
+          { label: 'New hydraulic system (unflushed)', value: 'ISO 22/20/17 typical' },
+          { label: 'Ingress primary pathway', value: 'Breathers and shaft seals' },
+          { label: 'Generated particles indicate', value: 'Wear in progress' },
         ],
       },
       {
-        heading: 'ISO 4406 Cleanliness Codes',
-        body: 'ISO 4406 assigns a three-number cleanliness code (e.g., 17/15/12) where each number represents a range of particle counts per mL at the three measurement sizes. A one-unit change in code number doubles the particle count. A system at ISO 17/15/12 contains approximately twice the particles of a system at ISO 16/14/11. Target cleanliness codes are determined by the most sensitive component in the system — proportional valves typically require ISO 16/14/11 or better, while gear pumps may tolerate ISO 19/17/14.',
+        heading: 'The Critical 5–15 µm Particle Range',
+        body: 'Particle size distribution in contaminated fluid follows an inverse relationship: smaller particles are orders of magnitude more numerous than large ones. For every 100 µm particle, there are roughly 10,000 particles at 10 µm and 1,000,000 at 2 µm. The engineering significance of the 5–15 µm size range comes from its relationship to component running clearances: engine main bearings run at 5–15 µm clearance, gear teeth at 5–25 µm, servo valve spools at 1–4 µm, vane pump vane tips at 2–5 µm. Particles within the clearance range are not simply trapped — they are pulled through, abrading both surfaces and generating secondary wear debris. Particles substantially larger than the clearance are blocked at entry and cause relatively limited damage. ISO 4406 reports counts at ≥4 µm, ≥6 µm, and ≥14 µm precisely because this range encompasses the critical wear zone.',
+        callout: [
+          { label: 'Main bearing clearance', value: '5–15 µm' },
+          { label: 'Servo valve spool clearance', value: '1–4 µm' },
+          { label: 'ISO 4406 count sizes', value: '≥4 µm, ≥6 µm, ≥14 µm' },
+        ],
       },
       {
-        heading: 'Filtration Ratio and Beta Values',
-        body: 'Filtration efficiency is expressed as Beta ratio (β): the ratio of particles upstream to particles downstream at a given size. β₁₀ = 200 means for every 200 particles >10 µm entering the filter, 1 exits — 99.5% efficiency. ISO 16889 multi-pass testing is the standard method for Beta ratio measurement. A filter rated βx(c) uses the ISO 16889 calibrated particle counting method, providing comparable data across manufacturers.',
+        heading: 'ISO 4406 Target Setting',
+        body: 'Target cleanliness codes are set by the most sensitive — lowest clearance — component in the fluid circuit. The three-number code (e.g., 16/14/11) reports particle count ranges at ≥4 µm, ≥6 µm, and ≥14 µm per millilitre. Each increment of one code unit doubles the particle count; two code units is a 4× change in contamination level. Representative target codes by component type: servo and proportional valves ISO 14/12/9 to 16/14/11; piston pumps and motors ISO 17/15/12; vane pumps ISO 17/15/12; gear pumps ISO 18/16/13; engine bearings ISO 16/14/11; gearboxes ISO 18/16/13. New oil from the drum typically presents at ISO 18/16/13 — it does not meet specification for sensitive circuits without additional filtration. Operating above the target code by two or more units (e.g., running at ISO 18/16/13 instead of ISO 16/14/11) reduces bearing life by approximately 50%.',
+        callout: [
+          { label: 'Servo valve target', value: 'ISO 14/12/9' },
+          { label: 'Piston pump target', value: 'ISO 17/15/12' },
+          { label: 'New drum oil typical', value: 'ISO 18/16/13' },
+        ],
+      },
+      {
+        heading: 'Ingress Points and Rate Estimation',
+        body: 'Quantifying ingress rate allows the filtration system to be sized to maintain the target cleanliness code under steady-state operation. Ingress pathways and typical rates: reservoir breathers (unfiltered) at 10–50 mg/h depending on ambient dust and pressure cycling; shaft seals (worn lip seals) at 1–10 mg/h per seal; maintenance fill points (open buckets, contaminated nozzles) at 50–500 mg per fill event; cylinder rod seals (extended stroke) at 1–5 mg/h per cylinder. The sum of all ingress rates defines the contamination load the filtration system must equal or exceed in removal rate to maintain steady-state cleanliness. This analysis identifies which ingress points have the highest marginal impact — often breather replacement from open vent to 3 µm filter provides the highest contamination reduction per dollar spent.',
+      },
+      {
+        heading: 'Filtration System Design',
+        body: 'Filtration system design translates the contamination budget into filter specifications. The required Beta ratio at each particle size is derived from the target cleanliness code and steady-state ingress rate. The fundamental relationship is: C_downstream = C_upstream / β_x, where C is particle count at size x. For a hydraulic circuit targeting ISO 16/14/11 with a return-line filter, the filter Beta ratio must be sufficient to reduce fluid entering return from its contamination level to the target. High-efficiency return-line filters with β₁₀(c) ≥ 200 are standard for servo valve circuits. Offline kidney-loop circuits with high Beta ratios continuously polish fluid independent of system operation, particularly effective for removing sub-10 µm particles that return-line flow rates cannot capture efficiently. Filter area (pleat count × pleat height × pleat density) determines dirt holding capacity and therefore service interval — undersized filters load rapidly and may increase bypass events.',
+        callout: [
+          { label: 'Servo circuit return filter', value: 'β₁₀(c) ≥ 200' },
+          { label: 'Kidney loop interval', value: 'Continuous offline polishing' },
+          { label: 'Offline circuit flow', value: '5–15% of system volume/min' },
+        ],
+      },
+      {
+        heading: 'Commissioning Flush Protocol',
+        body: 'Commissioning flush removes built-in contamination from new or rebuilt systems before first operation under load. Without flushing, machining residues and assembly contamination immediately load the system filters, cause early bypass events, and can score servo valve spools and pump surfaces before steady-state operation establishes. Flush procedure: fill system with flush fluid (same as operating fluid or compatible flush oil), install temporary bypass plates across sensitive components (servo valves, proportional valves), circulate at 1.5–2× operating flow for turbulent flushing effect, sample and analyse at 2-hour intervals, continue until two consecutive samples meet the target cleanliness code. For a typical hydraulic system, commissioning flush takes 4–16 hours. Temporary high-capacity return-line filters (10 µm absolute) during flush prevent system filter loading during the contaminant removal phase.',
+        callout: [
+          { label: 'Flush flow rate', value: '1.5–2× operating flow' },
+          { label: 'Flush duration', value: '4–16 hours typical' },
+          { label: 'Acceptance criterion', value: '2 consecutive samples at target code' },
+        ],
+      },
+      {
+        heading: 'Ongoing Monitoring',
+        body: 'Ongoing contamination monitoring provides early warning of system degradation before it causes component failure. Oil sampling frequency: once per 250–500 hours for hydraulic systems; once per 250 hours for critical engine lube circuits; after any maintenance event or component change. Sampling point selection is critical — draw from turbulent zones in return lines or dedicated sampling valves, not from stagnant legs or the bottom of reservoirs. Use pre-cleaned sample bottles (ISO 14/12/11 or better) to prevent bottle contamination from biasing results. Trending is more informative than individual readings: a rising ISO code number over successive samples signals increasing ingress or failing filtration before the component reaches damage threshold. Elemental spectroscopy (ICP) on lube oil adds wear metal trending — rising iron indicates bearing or liner wear; rising silicon indicates dust ingress; rising copper indicates bearing overlay failure.',
       },
     ],
     keyMetrics: [
       { label: 'Critical wear particle range', value: '5–15 µm' },
-      { label: 'β₁₀ = 200 efficiency', value: '99.5%' },
-      { label: 'Bearing life at ISO 16/14/11 vs 19/17/14', value: '3–5× longer' },
+      { label: 'Servo valve ISO target', value: '14/12/9' },
+      { label: 'Commissioning flush time', value: '4–16 hours' },
+      { label: 'Two code-unit degradation', value: '~50% bearing life reduction' },
     ],
-    relatedStandards: ['ISO 4406', 'ISO 16889'],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
-    keywords: ['contamination control', 'ISO 4406', 'particle size', 'cleanliness code', 'Beta ratio'],
+    keywords: ['contamination control', 'ISO 4406', 'particle size', 'cleanliness code', 'Beta ratio', 'commissioning flush', 'ingress control'],
   },
   {
     slug: 'filter-media-science',
@@ -577,6 +610,304 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
     relatedSystems: ['Lubrication Protection', 'Hydraulic Protection'],
     keywords: ['filter materials', 'elastomer compatibility', 'housing materials', 'end cap bonding', 'thermal rating'],
+  },
+
+  // ── Phase 4 Cornerstone Engineering References ────────────────────────────
+
+  {
+    slug: 'iso-16889',
+    title: 'ISO 16889',
+    subtitle: 'Multi-Pass Method for Evaluating Filter Element Performance',
+    metaDescription: 'Complete technical reference for ISO 16889: multi-pass test circuit, ISO A2 test contaminant, ISO 11171 particle counter calibration, Beta ratio calculation, dirt holding capacity measurement, and filter performance specification.',
+    category: 'Standards',
+    readTime: '12 min',
+    intro: 'ISO 16889 defines the multi-pass method for determining the filtration efficiency and dirt holding capacity of hydraulic filter elements. It is the international standard basis for Beta ratio specifications and the primary performance test referenced when specifying or comparing hydraulic and lube oil filter elements. Understanding its test circuit, contaminants, calibration requirements, and output metrics is prerequisite to correctly interpreting filter performance data.',
+    sections: [
+      {
+        heading: 'Purpose and Scope',
+        body: 'ISO 16889 establishes a single-element multi-pass test that simultaneously measures two independent performance parameters: filtration efficiency (expressed as Beta ratio, β) at multiple particle sizes, and dirt holding capacity (DHC, in grams) at terminal differential pressure. The standard applies to filter elements used in hydraulic fluid power systems and lube oil circuits. It does not apply to air filters (ISO 5011), fuel filters (ISO 16332), or coalescence filters. The "multi-pass" principle distinguishes this method from single-pass efficiency tests: test fluid is recirculated through the circuit, allowing particles that pass through the filter to accumulate in the downstream loop and contribute to downstream particle counts over time. This loading approach reflects realistic field conditions more accurately than single-pass lab tests and produces both efficiency data and DHC in one test run.',
+      },
+      {
+        heading: 'Test Circuit Architecture',
+        body: 'The ISO 16889 test circuit consists of an upstream injection loop and a downstream collection loop connected through the test filter element. The upstream reservoir contains test fluid conditioned to the specified ISO Viscosity Grade (typically ISO VG 15 mineral oil). A constant-displacement pump maintains the specified flow rate through the element. ISO A2 medium test dust is injected upstream at a controlled mass rate using a calibrated gravimetric feeder. Automatic particle counters (APC) sample upstream and downstream continuously. The test runs until terminal differential pressure is reached — defined as either 10× the initial clean differential pressure or 6 bar (whichever occurs first). All connections downstream of the test element are maintained at ISO 11/9/6 or better to prevent background contamination from masking downstream particle counts.',
+        callout: [
+          { label: 'Test fluid', value: 'ISO VG 15 mineral oil' },
+          { label: 'Test temperature', value: '50°C ± 2°C' },
+          { label: 'Terminal ΔP definition', value: '10× initial ΔP or 6 bar' },
+        ],
+      },
+      {
+        heading: 'Test Contaminant: ISO 12103-1 A2 Medium',
+        body: 'ISO 16889 specifies ISO 12103-1 A2 medium test dust as the standard contaminant. This synthetic dust replicates the composition and size distribution of atmospheric dust: approximately 68% silicon dioxide (quartz), 14% aluminum oxide, 8% iron oxide, 3% calcium oxide, and trace amounts of magnesium oxide and other oxides. Particle size distribution spans 0.5 to 180 µm with the median diameter (D50) near 10 µm. The controlled composition and size distribution allows reproducible test results across different laboratories and test dates, provided the dust lot is from a certified supplier and stored according to specification (sealed, dry, ≤25°C). Using different dust — including field-collected soil — invalidates comparison with published ISO 16889 data.',
+        callout: [
+          { label: 'Dust composition', value: '~68% SiO₂, ~14% Al₂O₃' },
+          { label: 'Particle size range', value: '0.5–180 µm' },
+          { label: 'Median diameter (D50)', value: '~10 µm' },
+        ],
+      },
+      {
+        heading: 'Particle Counting and ISO 11171 Calibration',
+        body: 'Particle counts upstream and downstream must be measured with automatic particle counters (APC) calibrated according to ISO 11171. This calibration standard uses NIST-traceable primary reference particles to establish the relationship between particle size and light obscuration signal in the specific instrument. ISO 11171 calibration replaced the older AC fine dust calibration method for particle counters in 2000. Data generated with the old calibration is denoted β₁₀ (without suffix); data generated with ISO 11171-calibrated counters is denoted β₁₀(c). These two values are not numerically equivalent: a filter with β₁₀ = 75 by the old method may yield β₁₀(c) = 10–12 by the current calibration — a substantial difference in reported efficiency. All current ISO 16889 data must specify β(c). When comparing datasheets from different manufacturers or different dates, verify the calibration basis before drawing performance conclusions.',
+        callout: [
+          { label: 'Current calibration standard', value: 'ISO 11171 (NIST-traceable)' },
+          { label: 'Old notation', value: 'β₁₀ (AC fine dust cal.)' },
+          { label: 'Current notation', value: 'β₁₀(c) (ISO 11171 cal.)' },
+        ],
+      },
+      {
+        heading: 'Calculating Beta Ratio',
+        body: 'Beta ratio at a given particle size x is defined as: β_x(c) = N_upstream(≥x) / N_downstream(≥x), where N is the cumulative particle count per millilitre at or above size x. Both counts are time-averaged over the same sample interval during the test run. For example, if upstream counts 2,000 particles ≥10 µm/mL and downstream counts 10 particles ≥10 µm/mL, then β₁₀(c) = 200. Efficiency is derived from Beta ratio: E(%) = (1 − 1/β) × 100. β₁₀(c) = 200 → E = (1 − 1/200) × 100 = 99.5%. β₁₀(c) = 1,000 → E = 99.9%. The relationship is non-linear at high Beta values — improving from β = 100 to β = 200 doubles particle rejection, but improving from β = 1,000 to β = 2,000 only halves an already very small penetration fraction.',
+        callout: [
+          { label: 'β₁₀(c) = 75 efficiency', value: '98.7%' },
+          { label: 'β₁₀(c) = 200 efficiency', value: '99.5%' },
+          { label: 'β₁₀(c) = 1000 efficiency', value: '99.9%' },
+        ],
+      },
+      {
+        heading: 'Dirt Holding Capacity',
+        body: 'Dirt holding capacity (DHC) is measured as the total mass of ISO A2 medium test dust injected from the start of the test until terminal differential pressure is reached. DHC is expressed in grams and reported at the specific test flow rate and fluid conditions. DHC is not a fixed material property — it is a function of flow rate (face velocity), fluid viscosity, and dust concentration. A filter element tested at higher flow rate will exhibit a lower DHC in grams because higher face velocity compresses the dust cake more rapidly and the differential pressure rises faster. DHC data is therefore only directly comparable when the test conditions (flow rate, fluid, dust concentration) match. For field service life prediction, DHC must be combined with a site-specific dust concentration measurement to estimate hours to service.',
+        callout: [
+          { label: 'DHC unit', value: 'Grams of ISO A2 medium dust' },
+          { label: 'DHC dependency', value: 'Flow rate, viscosity, dust concentration' },
+          { label: 'Field life formula', value: 'Hours = DHC(g) / dust ingress (g/h)' },
+        ],
+      },
+      {
+        heading: 'Interpreting and Specifying Filter Performance',
+        body: 'A complete ISO 16889 performance specification for a filter element includes: the particle size at which Beta is specified (e.g., 10 µm), the minimum Beta ratio at that size [e.g., β₁₀(c) ≥ 200], the minimum DHC at the specified test flow rate (e.g., DHC ≥ 150 g at 40 L/min), and the test conditions (ISO VG 15, 50°C, ISO A2 medium). When evaluating competitor or equivalent products, request full ISO 16889 test reports from accredited laboratories (ISO 17025), not marketing summary sheets. Verify the calibration notation (c suffix), the test flow rate matching your application, and the dust concentration used. A filter may meet ISO 16889 requirements at a specified minimum Beta ratio with no upper guarantee — a β₁₀(c) minimum of 75 does not prevent the filter from achieving β₁₀(c) = 200 in practice, but the minimum is the contractual commitment.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Test fluid viscosity', value: 'ISO VG 15' },
+      { label: 'Test temperature', value: '50°C ± 2°C' },
+      { label: 'Terminal ΔP', value: '10× initial ΔP or 6 bar' },
+      { label: 'Test contaminant', value: 'ISO 12103-1 A2 medium' },
+      { label: 'Calibration standard', value: 'ISO 11171' },
+    ],
+    relatedStandards: ['ISO 16889', 'ISO 11171', 'ISO 4406'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: ['ISO 16889', 'multi-pass test', 'Beta ratio', 'dirt holding capacity', 'filter efficiency', 'ISO 11171', 'particle counting'],
+  },
+
+  {
+    slug: 'iso-4406',
+    title: 'ISO 4406',
+    subtitle: 'Hydraulic Fluid Power — Method for Coding the Level of Contamination by Solid Particles',
+    metaDescription: 'Technical reference for ISO 4406: three-number cleanliness code, particle count ranges, significance of each size threshold, target codes by component type, wear-cleanliness correlation, sampling protocols, and comparison with NAS 1638.',
+    category: 'Standards',
+    readTime: '10 min',
+    intro: 'ISO 4406 provides a standardised coding system for expressing the level of solid particle contamination in hydraulic and lubricating fluids. The three-number code converts raw particle count data from automatic particle counters into a concise, comparable format used by system designers, maintenance engineers, and filter manufacturers to specify cleanliness targets and assess system condition.',
+    sections: [
+      {
+        heading: 'The Three-Number Code',
+        body: 'ISO 4406 assigns three code numbers separated by slashes, each representing a particle count range at one of three cumulative size thresholds: ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per millilitre. The "(c)" suffix indicates that particle counts were obtained with a counter calibrated per ISO 11171 using NIST-traceable reference particles. A code of 17/15/12 means: the particle count at ≥4 µm falls in the range corresponding to code 17 (80,000–160,000 particles/mL), at ≥6 µm falls in the range for code 15 (20,000–40,000 particles/mL), and at ≥14 µm falls in the range for code 12 (2,500–5,000 particles/mL). The three thresholds were chosen to align with the critical wear zones of bearings and hydraulic components (4–6 µm range) and to capture the upper tail of the damage-causing particle distribution (≥14 µm).',
+        callout: [
+          { label: 'Size 1: ≥4 µm(c)', value: 'Total contamination indicator' },
+          { label: 'Size 2: ≥6 µm(c)', value: 'Bearing clearance range' },
+          { label: 'Size 3: ≥14 µm(c)', value: 'Larger particle indicator' },
+        ],
+      },
+      {
+        heading: 'Code-to-Count Conversion',
+        body: 'Each ISO 4406 code number maps to a range of particle counts per millilitre. The code scale is logarithmic, base 2: each increment of one code unit doubles the upper count boundary. Code 14: 2,000–4,000 particles/mL. Code 15: 4,000–8,000. Code 16: 8,000–16,000. Code 17: 16,000–32,000. Code 18: 32,000–64,000. Code 19: 64,000–130,000. Code 20: 130,000–250,000. Code 21: 250,000–500,000. Code 22: 500,000–1,000,000. The implication for contamination management: improving from ISO 20 to ISO 16 at a given size reduces particle count by a factor of approximately 16 (four code-unit steps = 2⁴ = 16). Improving from ISO 16 to ISO 14 reduces by a further factor of 4.',
+        callout: [
+          { label: 'Code 14', value: '2,000–4,000 particles/mL' },
+          { label: 'Code 17', value: '16,000–32,000 particles/mL' },
+          { label: 'Code 20', value: '130,000–250,000 particles/mL' },
+        ],
+      },
+      {
+        heading: 'Significance of Each Size Threshold',
+        body: 'The ≥4 µm(c) count (first code number) captures the total contamination load across the full critical size range and is the most sensitive indicator of filtration performance. Small particles in this range are the most numerous and most difficult to remove. The ≥6 µm(c) count (second number) targets the clearance range of most roller bearings (6–15 µm) and gear tooth faces. This is the most widely used single indicator of bearing protection adequacy. The ≥14 µm(c) count (third number) captures larger particles that can cause scoring of sliding surfaces and three-body abrasion in gear contacts. Particles in this range are more readily removed by standard 10 µm absolute filters and thus serve as a check on gross filtration failure rather than fine cleanliness. Systems with a third code number disproportionately high relative to the first two numbers (e.g., 16/15/14) may indicate filter bypass or a specific contamination source introducing coarse particles.',
+      },
+      {
+        heading: 'Target Codes by Component Type',
+        body: 'Cleanliness targets are determined by the component with the tightest clearance in the circuit. Published guidelines from ISO TR 10949 and OEM service data: servo valves and electrohydraulic proportional valves ISO 14/12/9 to 15/13/10; axial piston pumps and motors ISO 16/14/11 to 17/15/12; vane pumps ISO 16/14/11 to 17/15/12; gear pumps and motors ISO 18/16/13 to 19/17/14; hydraulic cylinders ISO 18/16/13; engine main and rod bearings ISO 16/14/11; camshaft bearings ISO 15/13/10; automatic transmissions ISO 17/15/12; industrial gearboxes ISO 17/15/12 to 18/16/13. New fluid from a sealed drum typically measures ISO 18/16/13 — adequate for gear pumps but not for servo valves or piston pumps without additional filtration.',
+        callout: [
+          { label: 'Servo valve', value: 'ISO 14/12/9' },
+          { label: 'Piston pump/motor', value: 'ISO 17/15/12' },
+          { label: 'Gear pump', value: 'ISO 19/17/14' },
+        ],
+      },
+      {
+        heading: 'Wear-Cleanliness Correlation',
+        body: 'The relationship between cleanliness code and component life has been quantified through fleet studies and accelerated wear tests. A two-code-unit difference at ≥6 µm(c) corresponds approximately to a factor of 2 in bearing life under otherwise identical conditions. Maintaining ISO 16/14/11 instead of ISO 18/16/13 in an axial piston pump extends expected pump life by approximately 2–4×. Conversely, allowing cleanliness to degrade two code units below target accelerates wear proportionally. Servo valve sensitivity is higher: spool clearances of 1–3 µm mean that particles in the ≥4 µm range can cause spool stiction, flow gain changes, and hysteresis increase at code levels that cause no visible damage to gear pumps. ISO 4406 does not define cleanliness targets — it defines how to measure and report cleanliness. The targets come from component OEM specifications, ISO TR 10949, and system-specific analysis.',
+      },
+      {
+        heading: 'Sampling Protocols',
+        body: 'Oil sample quality is as important as particle counter accuracy. Correct sampling: (1) take representative samples from turbulent zones (return lines, not reservoir bottom or dead legs); (2) use ISO 11171-certified sample bottles, pre-cleaned to ISO 11/9/6 or better; (3) purge the sampling valve with 3–5 volumes before collecting the sample; (4) fill the bottle to 75–80% capacity to allow mixing but not aeration; (5) label immediately with machine ID, sample point, oil hours, and date. Common errors that invalidate results: using uncleaned bottles (adds 2–4 code units of contamination), sampling from stagnant points (underestimates circulating contamination), aeration of the sample from high-velocity sampling (breaks particles into artificial small counts). For trend analysis, samples must come from the same sampling point under identical operating conditions (temperature, flow rate, time since last change).',
+        callout: [
+          { label: 'Bottle cleanliness required', value: 'ISO 11/9/6 or better' },
+          { label: 'Sampling from reservoir', value: 'NOT representative — avoid' },
+          { label: 'Valve purge before sample', value: '3–5 valve volumes' },
+        ],
+      },
+      {
+        heading: 'ISO 4406 vs NAS 1638',
+        body: 'NAS 1638 (National Aerospace Standard) is an older US standard for hydraulic fluid cleanliness. NAS 1638 uses a single code number (Class 0 to Class 12) based on particle counts in five size ranges: 5–15 µm, 15–25 µm, 25–50 µm, 50–100 µm, and ≥100 µm. The NAS class is determined by the worst-performing size range — one range above the class limit fails the entire sample. NAS 1638 uses particle counts per 100 mL; ISO 4406 uses counts per mL. NAS 1638 Class 8 corresponds approximately to ISO 16/14/11, but the mapping is imprecise because the size ranges and count thresholds do not align exactly. NAS 1638 was officially withdrawn in 2001 and replaced by ARP 598. ISO 4406 is the current international standard and should be used for new specifications. When converting existing NAS-specified systems, verify the conversion for each size range rather than applying a generic NAS-to-ISO offset table.',
+        callout: [
+          { label: 'NAS 1638 status', value: 'Withdrawn 2001, replaced by ARP 598' },
+          { label: 'NAS 8 ≈ ISO', value: '16/14/11 (approximate, not exact)' },
+          { label: 'Current standard', value: 'ISO 4406 (three-number code)' },
+        ],
+      },
+    ],
+    keyMetrics: [
+      { label: 'Code unit = particle count change', value: '×2 per unit' },
+      { label: 'Servo valve target', value: 'ISO 14/12/9' },
+      { label: 'New drum oil typical', value: 'ISO 18/16/13' },
+      { label: 'Sample bottle cleanliness', value: 'ISO 11/9/6 minimum' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: ['ISO 4406', 'cleanliness code', 'particle count', 'hydraulic cleanliness', 'NAS 1638', 'fluid contamination'],
+  },
+
+  {
+    slug: 'iso-5011',
+    title: 'ISO 5011',
+    subtitle: 'Inlet Air Cleaning Equipment for Internal Combustion Engines — Performance Testing',
+    metaDescription: 'Technical reference for ISO 5011: scope, test dust specification, initial efficiency measurement, restriction curves, dust holding capacity, fractional efficiency, safety element testing, and comparison with SAE J1539.',
+    category: 'Standards',
+    readTime: '10 min',
+    intro: 'ISO 5011 defines performance test methods for inlet air cleaning equipment used with internal combustion engines and compressors. It establishes the test conditions, contaminants, measurement procedures, and reporting requirements for three key performance parameters: initial particle separation efficiency, restriction (differential pressure) as a function of dust load, and dust holding capacity. Filter elements for gasoline engines, diesel engines, turbocharged engines, and industrial compressors are all within scope.',
+    sections: [
+      {
+        heading: 'Scope and Application',
+        body: 'ISO 5011 applies to dry-type inlet air cleaning equipment: primary filter elements (paper, synthetic, or glass fiber media), safety/secondary elements, pre-cleaners, and complete air cleaner assemblies. Wet-type (oil bath) cleaners are excluded. The standard covers both initial and loaded efficiency, restriction development under continuous dust loading, and total mass of dust retained before terminal restriction. ISO 5011 does not define pass/fail cleanliness targets — it is a measurement protocol only. Cleanliness specifications and service limits are set by the engine manufacturer in their technical data. A common distinction: ISO 5011 is the European and international standard; SAE J1539 is the older US market standard. Both cover similar parameters but differ in test dust specification and some procedural details.',
+      },
+      {
+        heading: 'Test Dust Specification',
+        body: 'ISO 5011 uses ISO 12103-1 A2 fine test dust as the standard loading medium. This synthetic dust represents the fine mineral fraction of atmospheric dust with a controlled composition: approximately 68% SiO₂, 14% Al₂O₃, 8% Fe₂O₃, 3% CaO, and trace oxides. The particle size distribution spans 0 to 200 µm with a mass median diameter near 23 µm. Dust feed rate is expressed in grams per kilogram of air (g/kg air) or grams per cubic metre (g/m³). Test concentrations typically range from 1 to 10 g/m³ depending on the test protocol and intended application. The controlled dust allows direct comparison of restriction and DHC data between manufacturers, provided the test airflow, temperature, and humidity conditions are also matched.',
+        callout: [
+          { label: 'Test dust', value: 'ISO 12103-1 A2 fine' },
+          { label: 'Dust composition', value: '~68% SiO₂, ~14% Al₂O₃' },
+          { label: 'Particle size span', value: '0–200 µm' },
+        ],
+      },
+      {
+        heading: 'Initial Efficiency Measurement',
+        body: 'Initial efficiency is measured on a clean element at the start of the test, before any dust loading. An isokinetic sampling probe upstream and a downstream probe draw simultaneous samples through optical particle counters or gravimetric samplers. Fractional efficiency — efficiency at each individual particle size — is measured using particle counters over the size range 0.5 to 80 µm. Penetration at each size = (downstream count / upstream count) × 100%. Initial efficiency is always higher than efficiency under partial load conditions for depth-filtration media (cellulose), where dust cake formation increases efficiency as the element loads. For surface-filtration media (membrane-type), initial and loaded efficiencies are more similar because surface capture dominates from first contact. ISO 5011 requires reporting fractional efficiency at minimum at 0.5, 1, 2, 3, 5, 7, 10, 20, 40, and 80 µm.',
+        callout: [
+          { label: 'Efficiency sizes reported', value: '0.5, 1, 2, 3, 5, 7, 10, 20, 40, 80 µm' },
+          { label: 'Depth media efficiency trend', value: 'Increases with dust cake formation' },
+          { label: 'Surface media efficiency', value: 'Stable from clean to loaded' },
+        ],
+      },
+      {
+        heading: 'Restriction Curve and ΔP Development',
+        body: 'Restriction — the differential pressure across the filter element — is measured continuously throughout the test as dust accumulates. The restriction curve plots ΔP (in Pa or mbar) against cumulative dust mass fed (in grams). Initial restriction is the ΔP through a clean element at the test airflow. As dust accumulates, restriction rises. For cellulose media, restriction increases slowly at first (loose surface layer, low packing density) then accelerates as the dust cake compresses and blind-holes. Synthetic media exhibits different loading characteristics depending on fiber diameter and arrangement. Terminal restriction for ISO 5011 testing is typically defined as an absolute value set by agreement (commonly 2,500–4,000 Pa for primary elements, or the OEM service limit). DHC is the cumulative dust mass at terminal restriction.',
+        callout: [
+          { label: 'Restriction unit', value: 'Pa or mbar' },
+          { label: 'Typical terminal restriction', value: '2,500–4,000 Pa (primary elements)' },
+          { label: 'Clean restriction target', value: '<500 Pa at rated airflow' },
+        ],
+      },
+      {
+        heading: 'Dust Holding Capacity',
+        body: 'Dust holding capacity (DHC) is the total mass of test dust retained in the filter element at terminal restriction, measured by weighing the element before and after the test. DHC is the primary indicator of service life potential: higher DHC at equivalent efficiency and restriction means longer intervals between element changes. DHC depends on element media area (total filtration area in cm²), media type and porosity, pleat geometry, and test face velocity. All else equal, doubling media area approximately doubles DHC. MACROCORE™ synthetic media achieves higher DHC than cellulose for equivalent media area because synthetic fibers have larger void fraction, accepting more dust before the cake seals. Field DHC application requires a site-specific dust concentration measurement: expected service life (hours) = DHC (grams) / (dust concentration g/m³ × airflow m³/h).',
+        callout: [
+          { label: 'DHC units', value: 'Grams of ISO A2 fine dust' },
+          { label: 'Field life formula', value: 'DHC(g) / (conc. × airflow)' },
+          { label: 'Media area doubles DHC by', value: '~2× (approximately linear)' },
+        ],
+      },
+      {
+        heading: 'Reading ISO 5011 Data Sheets',
+        body: 'A valid ISO 5011 data sheet reports: (1) test airflow in m³/h or kg/h; (2) test temperature and humidity; (3) dust type (A2 fine or alternative); (4) dust concentration g/m³; (5) initial restriction in Pa at test airflow; (6) fractional efficiency curve or tabulated values at specified sizes; (7) terminal restriction definition used; (8) DHC in grams at terminal restriction; (9) overall initial gravimetric efficiency (total mass captured / total mass fed × 100%). Data sheets without the test airflow specification are unusable for comparison because restriction and DHC both depend on airflow. When comparing two elements, ensure the test airflow matches your application rated airflow — DHC data taken at 500 m³/h does not apply to an element installed in a 1,000 m³/h air cleaner.',
+      },
+      {
+        heading: 'ISO 5011 vs SAE J1539',
+        body: 'SAE J1539 (Air Cleaner Test Code — Engine Intake Air Cleaning Equipment) is the comparable US market standard. Key differences: ISO 5011 uses SI units throughout (Pa, m³/h, g/m³); SAE J1539 uses mixed US/SI units. ISO 5011 specifies ISO 12103-1 A2 fine dust; SAE J1539 specifies SAE fine and SAE coarse test dusts, which have different particle size distributions from ISO A2 fine. Efficiency measured with SAE coarse will be numerically higher than with ISO A2 fine because the coarser dust is easier to capture. ISO 5011 requires fractional efficiency measurement across the full size distribution; SAE J1539 historically focused on total gravimetric efficiency. Manufacturers serving global markets typically report ISO 5011 data; products targeted at North American OEMs often include SAE J1539 data. For cross-manufacturer comparison, verify the test protocol and dust type before drawing conclusions.',
+        callout: [
+          { label: 'ISO 5011 dust', value: 'ISO 12103-1 A2 fine' },
+          { label: 'SAE J1539 dust', value: 'SAE fine or SAE coarse' },
+          { label: 'Units', value: 'ISO 5011 = SI; J1539 = mixed' },
+        ],
+      },
+    ],
+    keyMetrics: [
+      { label: 'Test dust', value: 'ISO 12103-1 A2 fine' },
+      { label: 'Fractional efficiency sizes', value: '0.5–80 µm (10 points minimum)' },
+      { label: 'Terminal restriction (typical)', value: '2,500–4,000 Pa' },
+      { label: 'DHC unit', value: 'Grams at terminal restriction' },
+    ],
+    relatedStandards: ['ISO 5011', 'ISO 29463'],
+    relatedTechnologies: ['MACROCORE™'],
+    relatedSystems: ['Air Intake Protection'],
+    keywords: ['ISO 5011', 'air filter test', 'dust holding capacity', 'inlet air cleaning', 'filter efficiency', 'SAE J1539', 'restriction curve'],
+  },
+
+  {
+    slug: 'beta-ratio',
+    title: 'Beta Ratio',
+    subtitle: 'Filter Efficiency Metric — Definition, Measurement, and Application',
+    metaDescription: 'Complete engineering reference for Beta ratio: definition, derivation from ISO 16889 multi-pass test, calibrated (c) notation, Beta-to-efficiency conversion, multi-point efficiency curves, system design application, and why nominal micron ratings are technically insufficient.',
+    category: 'Engineering',
+    readTime: '9 min',
+    intro: 'Beta ratio (β) is the quantitative measure of filter element efficiency at a specified particle size. It is derived from ISO 16889 multi-pass testing and expresses the ratio of upstream to downstream particle concentrations at a given cumulative size threshold. Beta ratio, not nominal micron rating, is the engineering basis for filter selection in hydraulic and lube oil systems — it provides a traceable, calibrated, and reproducible measure of filtration performance.',
+    sections: [
+      {
+        heading: 'Definition and Formula',
+        body: 'Beta ratio at particle size x is defined as: β_x = N₁(≥x) / N₂(≥x), where N₁ is the upstream particle count per mL at size ≥x and N₂ is the downstream particle count per mL at the same size. The subscript notation β_x(c) indicates that counts were obtained with ISO 11171-calibrated automatic particle counters; the (c) suffix is mandatory for current-standard data and distinguishes it from pre-2000 results using AC fine dust calibration. A Beta ratio of 1 means no filtration (equal counts upstream and downstream). A Beta ratio of 200 at 10 µm means for every 200 particles ≥10 µm entering the filter, on average 1 exits downstream — 99.5% capture efficiency at that size. Beta ratio has no upper theoretical limit, though practical measurement becomes difficult above β = 10,000 because downstream counts approach the particle counter background noise floor.',
+        callout: [
+          { label: 'Formula', value: 'β_x = N₁(≥x) / N₂(≥x)' },
+          { label: 'β_x = 1', value: 'No filtration (0% efficiency)' },
+          { label: 'β_x = 200', value: '99.5% efficiency at size x' },
+        ],
+      },
+      {
+        heading: 'Derivation from ISO 16889 Multi-Pass Testing',
+        body: 'Beta ratio data comes from ISO 16889 multi-pass testing, not from single-pass efficiency measurement. In the multi-pass circuit, particles that penetrate the filter remain in the test fluid circuit and accumulate in the downstream sampling zone. Upstream concentration is continuously elevated by injected test dust. The ratio of upstream to downstream counts is measured continuously and averaged over defined time intervals. This multi-pass approach reflects actual operating conditions where circulating fluid is repeatedly challenged by the same filter. The resulting Beta values are conservative relative to a single-pass test because recirculated penetrating particles add to downstream counts. ISO 16889 requires reporting Beta ratios at minimum at particle sizes 2, 5, 10, 15, 20, 25, and 30 µm(c) to enable construction of a fractional efficiency curve. Most filter specifications cite β₁₀(c) or β₁₂(c) as the primary performance indicator.',
+      },
+      {
+        heading: 'The Calibrated (c) Notation',
+        body: 'The "(c)" suffix in β₁₀(c) is not cosmetic — it indicates a specific and mandatory calibration of the particle counting instrument. ISO 11171 defines the calibration procedure using NIST-traceable reference particles certified by the National Institute of Standards and Technology. ISO 11171 calibration replaced AC fine dust calibration (the "old method") in 2000. The problem with the old calibration: AC fine dust particles of a given size were assigned to size bins differently than ISO 11171 reference particles because the optical properties differ. The result: the same physical filter measured β₁₀ = 200 with the old method and β₁₀(c) = 75 or lower with ISO 11171 calibration — the particle counter reports smaller sizes for the same physical particles. When comparing filter datasheets from different eras or manufacturers, the presence or absence of the (c) suffix is a critical qualifier. Mixing old β values with new β(c) values to compare filters is a systematic error that can understate the performance difference between products.',
+        callout: [
+          { label: 'Old notation (pre-2000)', value: 'β₁₀ (AC fine dust calibration)' },
+          { label: 'Current notation', value: 'β₁₀(c) (ISO 11171 calibration)' },
+          { label: 'Approx. relationship', value: 'β₁₀ = 200 old ≈ β₁₀(c) = 75–100 new' },
+        ],
+      },
+      {
+        heading: 'Beta-to-Efficiency Conversion',
+        body: 'Filtration efficiency E (%) at size x is derived directly from Beta ratio: E(%) = (1 − 1/β_x) × 100 = (β_x − 1) / β_x × 100. This relationship is strictly monotonic — higher Beta always means higher efficiency, with diminishing returns at very high Beta values. Practical Beta values and their efficiencies: β₆(c) = 10 → E = 90.0%; β₁₀(c) = 75 → E = 98.7%; β₁₀(c) = 200 → E = 99.5%; β₁₀(c) = 1,000 → E = 99.9%; β₁₀(c) = 5,000 → E = 99.98%. The engineering significance of this curve: moving from β = 10 to β = 75 (a 7.5× Beta improvement) delivers a 8.7 percentage point efficiency gain. Moving from β = 1,000 to β = 5,000 (a 5× Beta improvement) delivers only 0.08 percentage points. For contamination-sensitive systems (servo valves, piston pumps), the difference between β₁₀(c) = 75 and β₁₀(c) = 200 is meaningful — penetration drops from 1.33% to 0.5%, a 2.7× reduction in particles escaping downstream per unit time.',
+        callout: [
+          { label: 'β₁₀(c) = 10 efficiency', value: '90.0%' },
+          { label: 'β₁₀(c) = 75 efficiency', value: '98.7%' },
+          { label: 'β₁₀(c) = 200 efficiency', value: '99.5%' },
+        ],
+      },
+      {
+        heading: 'Multi-Point Efficiency Curves',
+        body: 'A single Beta value (e.g., β₁₀(c) = 200) describes efficiency at one particle size only. A complete filter specification includes a multi-point efficiency curve — Beta ratio across the full range of particle sizes. The curve typically follows a sigmoid shape when plotted on a linear size axis: low efficiency at very small sizes (below the effective capture range of the media), rising steeply through the media\'s characteristic capture size, and approaching asymptotically high efficiency at large sizes. The "x" in β_x(c) where efficiency transitions from below 50% to above 99% is sometimes informally called the "absolute" rating — though this term is not defined in ISO 16889. Multi-point curves matter when the system contains components sensitive to different particle sizes: a servo valve sensitive to ≥3 µm particles requires β₃(c) to be specified alongside β₁₀(c).',
+      },
+      {
+        heading: 'System Design Application',
+        body: 'Beta ratio is the design input for calculating achievable system cleanliness under specified ingress and filtration conditions. The steady-state cleanliness of a fluid system can be estimated from the contamination balance: C_system = C_ingress × V_system / (β_x × Q_filter × t), where V_system is reservoir volume, Q_filter is filter flow rate, and t is residence time. Selecting the required β_x to achieve a target ISO 4406 cleanliness code involves solving for β given known ingress rate (particles/mL/h) and system volume. For a hydraulic system targeting ISO 16/14/11 with a 500 L reservoir and 100 L/min filter flow, maintaining code requires β₁₀(c) ≥ 75 for moderate ingress and β₁₀(c) ≥ 200 for high-ingress applications (outdoor equipment with worn seals). This calculation demonstrates that Beta ratio selection is system-specific — the same filter element may be adequate in one installation and insufficient in another depending on ingress rate and system volume.',
+        callout: [
+          { label: 'Low ingress (office equip.)', value: 'β₁₀(c) ≥ 10–25 typically adequate' },
+          { label: 'Moderate ingress (mobile equip.)', value: 'β₁₀(c) ≥ 75 typically required' },
+          { label: 'High ingress (mining/outdoor)', value: 'β₁₀(c) ≥ 200 recommended' },
+        ],
+      },
+      {
+        heading: 'Why Nominal Micron Ratings Are Insufficient',
+        body: 'Nominal micron rating — a single number such as "10 micron nominal" — was the historical shorthand for filter performance but carries no standardized definition. Different manufacturers define "nominal" differently: some at 50% efficiency, some at 90% efficiency, some at 98% efficiency at the rated size. A "10 micron nominal" filter from one manufacturer may remove 50% of 10 µm particles; another may remove 95% — both are technically compliant with their own definition of "nominal." This ambiguity makes nominal micron ratings useless for engineering comparisons. Absolute micron rating fares slightly better but still lacks a standardized efficiency threshold — "10 micron absolute" conventionally implies ≥99.5% efficiency at 10 µm, corresponding to β₁₀ ≥ 200, but this is not ISO-defined. Only β_x(c) from ISO 16889 testing provides a standardized, reproducible, instrument-calibrated efficiency value that supports engineering design calculations. When specifying or procuring hydraulic or lube filters, nominal micron rating should be replaced with the ISO 16889 Beta ratio specification at the relevant particle size.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Beta ratio formula', value: 'β_x = N₁(≥x) / N₂(≥x)' },
+      { label: 'β₁₀(c) = 200 efficiency', value: '99.5%' },
+      { label: 'Test method', value: 'ISO 16889 multi-pass' },
+      { label: 'Calibration standard', value: 'ISO 11171 (current); AC fine (legacy)' },
+    ],
+    relatedStandards: ['ISO 16889', 'ISO 11171', 'ISO 4406'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: ['Beta ratio', 'filter efficiency', 'ISO 16889', 'particle counting', 'nominal micron rating', 'multi-pass test', 'ISO 11171'],
   },
 ];
 

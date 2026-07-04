@@ -44,6 +44,17 @@ export { EDL_FAMILIES }     from './family-registry';
 export { EDL_INDUSTRIES }   from './industry-registry';
 export { EDL_TERMINOLOGY }  from './terminology-edl';
 
+// ── Alias Registry ────────────────────────────────────────────────────────
+
+export type { AliasEntry, AliasRegistry } from './alias-registry';
+
+export {
+  EDL_ALIASES,
+  resolveAlias,
+  getAliasesFor,
+  getAliasesByConfidence,
+} from './alias-registry';
+
 // ── Knowledge Graph ───────────────────────────────────────────────────────
 
 export type { GraphEdge, EdgeType } from './knowledge-graph';
