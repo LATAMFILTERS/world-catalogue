@@ -184,6 +184,8 @@ def post_batch(rows: list, dry_run: bool) -> dict:
             'updated':  r1.get('updated', 0)  + r2.get('updated', 0),
             'errors':   (r1.get('errors') or []) + (r2.get('errors') or []),
         }
+    if resp.status_code >= 400:
+        log.error(f"  Server error {resp.status_code}: {resp.text[:1000]}")
     resp.raise_for_status()
     return resp.json()
 
