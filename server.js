@@ -457,11 +457,46 @@ function isCompetitor(manufacturer) {
 }
 
 function parseRefs(arr){
-  if(!arr) return [];
-  return arr.map(item => ({
-    manufacturer: item.manufacturer || item.brand || 'UNKNOWN',
-    code: item.code
-  }));
+  if (!Array.isArray(arr)) return [];
+
+  const INVALID = new Set([
+    'THREADSIZE',
+    'LARGESTOD',
+    'SMALLESTOD',
+    'LENGTH',
+    'HEIGHT',
+    'GASKETOD',
+    'GASKETID',
+    'PRESSUREVALVE',
+    'RATEDFLOW',
+    'MEDIATYPE',
+    'RELATEDPARTS',
+    'MAINTENANCEKITS',
+    'TESTSPECIFICATION',
+    'PRODUCT DESCRIPTION',
+    'PRODUCTDESCRIPTION',
+    'APPLICABLEREGION',
+    'UPGRADE OF',
+    'UPGRADEOF',
+    'FOR UPGRADE, USE',
+    'NO'
+  ]);
+
+  const seen=new Set();
+
+  return arr
+    .map(item=>({
+      manufacturer:String(item.manufacturer||item.brand||'').trim(),
+      code:String(item.code||'').trim()
+    }))
+    .filter(r=>r.manufacturer && r.code)
+    .filter(r=>!INVALID.has(r.manufacturer.toUpperCase()))
+    .filter(r=>{
+        const k=(r.manufacturer+'|'+r.code).toUpperCase();
+        if(seen.has(k)) return False;
+        seen.add(k);
+        return true;
+    });
 }
 
 // ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
