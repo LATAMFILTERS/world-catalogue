@@ -2,8 +2,8 @@
  * edl/problem-registry.ts
  * Engineering Data Layer — Problem Entity Registry
  *
- * 15 canonical Problem entities. Governance metadata is complete.
- * Engineering content (definition, failureProgression, etc.) is Phase 3.
+ * 15 canonical Problem entities with governance metadata and relationship arrays.
+ * Engineering content (definition, failureProgression, etc.) is Phase 4.
  */
 
 import type { EDLProblemEntity, EDLProblemRegistry } from './types';
@@ -21,6 +21,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-MACROCORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-ISO-4406'],
   },
 
   'PROB-ADHESIVE-WEAR': {
@@ -34,6 +36,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-ISO-4406'],
   },
 
   'PROB-BEARING-WEAR': {
@@ -47,6 +51,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-ISO-4406'],
   },
 
   'PROB-INJECTOR-WEAR': {
@@ -60,6 +66,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTEPORE', 'TECH-HYDROCORE'],
+    measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
   },
 
   'PROB-SILICON-DUST-INGESTION': {
@@ -73,6 +81,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-MACROCORE'],
+    measuredByStandards: ['STD-ISO-5011', 'STD-SAE-J1539'],
   },
 
   'PROB-WATER-INGRESS': {
@@ -86,6 +96,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTEPORE', 'TECH-TURBOCORE', 'TECH-MARINECLEAN', 'TECH-DRYCORE'],
+    measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-8573-1'],
   },
 
   'PROB-FUEL-CONTAMINATION': {
@@ -99,6 +111,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTEPORE', 'TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-MARINECLEAN'],
+    measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-16332', 'STD-ISO-12937'],
   },
 
   'PROB-AIR-RESTRICTION': {
@@ -112,6 +126,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-MACROCORE'],
+    measuredByStandards: ['STD-ISO-5011', 'STD-SAE-J1539', 'STD-ISO-29463'],
   },
 
   'PROB-CAVITATION': {
@@ -125,6 +141,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-NANOFORCE', 'TECH-HYDROCORE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-NFPA-T2-14'],
   },
 
   'PROB-PUMP-FAILURE': {
@@ -138,6 +156,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-ISO-4406', 'STD-NFPA-T2-14'],
   },
 
   'PROB-FILTER-COLLAPSE': {
@@ -151,6 +171,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-MACROCORE', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-NFPA-T2-14'],
   },
 
   'PROB-MEDIA-FATIGUE': {
@@ -164,6 +186,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-MACROCORE', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-16889', 'STD-ISO-5011'],
   },
 
   'PROB-VARNISH-FORMATION': {
@@ -177,6 +201,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE'],
+    measuredByStandards: ['STD-ISO-4406', 'STD-ISO-16889', 'STD-DIN-51524'],
   },
 
   'PROB-OXIDATION': {
@@ -190,6 +216,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-SYNTRAX'],
+    measuredByStandards: ['STD-ISO-4406', 'STD-DIN-51524'],
   },
 
   'PROB-MICROBIAL-GROWTH': {
@@ -203,6 +231,8 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-MARINECLEAN', 'TECH-TURBOCORE'],
+    measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
   },
 
 };

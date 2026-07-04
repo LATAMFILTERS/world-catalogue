@@ -3,7 +3,7 @@
  * Engineering Data Layer — Technology Entity Registry
  *
  * Governed entities for all 12 ELIMFILTERS filtration technologies.
- * Uses permanent TECH-xxx identifiers consistent with technology-architectures.ts.
+ * Uses permanent TECH-xxx identifiers. Relationship arrays use permanent IDs.
  */
 
 import type { EDLTechnologyEntity, EDLTechnologyRegistry } from './types';
@@ -23,6 +23,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'Progressive density gradient air intake filtration',
     engineeringPrinciple: 'Three-zone progressive density media achieving ISO 5011 absolute performance',
+    implementsStandards: ['STD-ISO-5011', 'STD-SAE-J1539'],
+    addressesProblems: ['PROB-SILICON-DUST-INGESTION', 'PROB-AIR-RESTRICTION', 'PROB-FILTER-COLLAPSE', 'PROB-MEDIA-FATIGUE'],
+    usedInSystems: ['SYS-AIR-INTAKE'],
   },
 
   'TECH-SYNTRAX': {
@@ -38,6 +41,16 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'Synthetic lube oil filtration for ISO 4406 cleanliness targets',
     engineeringPrinciple: 'Synthetic media multi-pass filtration per ISO 16889',
+    implementsStandards: ['STD-ISO-16889', 'STD-ISO-4406'],
+    addressesProblems: [
+      'PROB-ABRASIVE-WEAR',
+      'PROB-ADHESIVE-WEAR',
+      'PROB-BEARING-WEAR',
+      'PROB-PUMP-FAILURE',
+      'PROB-VARNISH-FORMATION',
+      'PROB-OXIDATION',
+    ],
+    usedInSystems: ['SYS-LUBRICATION'],
   },
 
   'TECH-NANOFORCE': {
@@ -53,6 +66,18 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'High-precision hydraulic filtration for servo valve protection',
     engineeringPrinciple: 'Nanofiber-enhanced media for ISO 16/14/11 and tighter cleanliness codes',
+    implementsStandards: ['STD-ISO-16889', 'STD-ISO-4406', 'STD-NFPA-T2-14', 'STD-NAS-1638', 'STD-DIN-51524'],
+    addressesProblems: [
+      'PROB-ABRASIVE-WEAR',
+      'PROB-ADHESIVE-WEAR',
+      'PROB-BEARING-WEAR',
+      'PROB-CAVITATION',
+      'PROB-PUMP-FAILURE',
+      'PROB-FILTER-COLLAPSE',
+      'PROB-MEDIA-FATIGUE',
+      'PROB-VARNISH-FORMATION',
+    ],
+    usedInSystems: ['SYS-HYDRAULIC'],
   },
 
   'TECH-SYNTEPORE': {
@@ -68,6 +93,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'High-pressure common-rail injector protection filtration',
     engineeringPrinciple: 'Absolute rated synthetic fuel filtration for HPCR injector clearances',
+    implementsStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
+    addressesProblems: ['PROB-INJECTOR-WEAR', 'PROB-FUEL-CONTAMINATION', 'PROB-WATER-INGRESS'],
+    usedInSystems: ['SYS-FUEL-CLEANLINESS'],
   },
 
   'TECH-HYDROCORE': {
@@ -83,6 +111,15 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'Coalescing fuel-water separation',
     engineeringPrinciple: 'Coalescing media achieving >95% free water removal per ASTM D6304',
+    implementsStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
+    addressesProblems: [
+      'PROB-INJECTOR-WEAR',
+      'PROB-WATER-INGRESS',
+      'PROB-FUEL-CONTAMINATION',
+      'PROB-CAVITATION',
+      'PROB-MICROBIAL-GROWTH',
+    ],
+    usedInSystems: ['SYS-FUEL-CLEANLINESS'],
   },
 
   'TECH-TURBOCORE': {
@@ -97,6 +134,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'Three-stage fuel filtration per ISO 16332',
+    implementsStandards: ['STD-ISO-16332', 'STD-ASTM-D6304', 'STD-ISO-12937'],
+    addressesProblems: ['PROB-WATER-INGRESS', 'PROB-FUEL-CONTAMINATION', 'PROB-MICROBIAL-GROWTH'],
+    usedInSystems: ['SYS-FUEL-CLEANLINESS'],
   },
 
   'TECH-THERMACORE': {
@@ -111,6 +151,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'Coolant supplemental additive filtration',
+    implementsStandards: [],
+    addressesProblems: [],
+    usedInSystems: ['SYS-COOLING'],
   },
 
   'TECH-DRYCORE': {
@@ -125,6 +168,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'ISO 8573-1 classified compressed air purification',
+    implementsStandards: ['STD-ISO-8573-1', 'STD-ISO-29463'],
+    addressesProblems: ['PROB-WATER-INGRESS'],
+    usedInSystems: ['SYS-COMPRESSED-AIR'],
   },
 
   'TECH-INTEKCORE': {
@@ -139,6 +185,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'Integrated filter housing and mounting systems',
+    implementsStandards: [],
+    addressesProblems: [],
+    usedInSystems: ['SYS-AIR-INTAKE'],
   },
 
   'TECH-DURATECH': {
@@ -153,6 +202,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'Fleet-wide filtration maintenance kit system',
+    implementsStandards: [],
+    addressesProblems: [],
+    usedInSystems: [],
   },
 
   'TECH-MARINECLEAN': {
@@ -167,6 +219,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     tagline: 'IMO-certified marine filtration for diesel and hydraulic systems',
+    implementsStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
+    addressesProblems: ['PROB-MICROBIAL-GROWTH', 'PROB-WATER-INGRESS', 'PROB-FUEL-CONTAMINATION'],
+    usedInSystems: ['SYS-FUEL-CLEANLINESS', 'SYS-HYDRAULIC'],
   },
 
   'TECH-MICROKAPPA': {
@@ -182,6 +237,9 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     contentPhase: 3,
     tagline: 'Occupant health protection per ISO 11155 and DIN 71220',
     engineeringPrinciple: 'Multi-layer cabin air filtration targeting PM2.5 and biological contaminants',
+    implementsStandards: ['STD-ISO-11155-1', 'STD-DIN-71220', 'STD-ISO-29463'],
+    addressesProblems: [],
+    usedInSystems: ['SYS-CABIN-AIR'],
   },
 
 };

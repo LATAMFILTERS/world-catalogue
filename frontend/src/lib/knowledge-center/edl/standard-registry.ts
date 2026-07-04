@@ -3,7 +3,7 @@
  * Engineering Data Layer — Standard Entity Registry
  *
  * Governed entities for all KC-tracked industrial filtration standards.
- * Uses permanent STD-xxx identifiers consistent with standards-registry.ts.
+ * Uses permanent STD-xxx identifiers. Relationship arrays use permanent IDs.
  */
 
 import type { EDLStandardEntity, EDLStandardRegistry } from './types';
@@ -24,6 +24,17 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     contentPhase: 3,
     scope: 'Defines the multi-pass test method for determining Beta ratio and filtration efficiency of hydraulic filter elements.',
     year: 2010,
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX'],
+    addressesProblems: [
+      'PROB-ABRASIVE-WEAR',
+      'PROB-ADHESIVE-WEAR',
+      'PROB-BEARING-WEAR',
+      'PROB-CAVITATION',
+      'PROB-PUMP-FAILURE',
+      'PROB-FILTER-COLLAPSE',
+      'PROB-MEDIA-FATIGUE',
+      'PROB-VARNISH-FORMATION',
+    ],
   },
 
   'STD-ISO-5011': {
@@ -40,6 +51,12 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     contentPhase: 3,
     scope: 'Specifies performance testing methods for air intake filters including efficiency, restriction, and dust holding capacity.',
     year: 2014,
+    implementedByTechnologies: ['TECH-MACROCORE'],
+    addressesProblems: [
+      'PROB-SILICON-DUST-INGESTION',
+      'PROB-AIR-RESTRICTION',
+      'PROB-MEDIA-FATIGUE',
+    ],
   },
 
   'STD-ISO-4406': {
@@ -56,6 +73,15 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     contentPhase: 3,
     scope: 'Defines the three-number cleanliness code (≥4µm / ≥6µm / ≥14µm) for hydraulic and lubrication fluids.',
     year: 2021,
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX'],
+    addressesProblems: [
+      'PROB-ABRASIVE-WEAR',
+      'PROB-ADHESIVE-WEAR',
+      'PROB-BEARING-WEAR',
+      'PROB-PUMP-FAILURE',
+      'PROB-VARNISH-FORMATION',
+      'PROB-OXIDATION',
+    ],
   },
 
   'STD-NAS-1638': {
@@ -70,6 +96,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-NANOFORCE'],
+    addressesProblems: ['PROB-ABRASIVE-WEAR', 'PROB-PUMP-FAILURE'],
   },
 
   'STD-ISO-29463': {
@@ -84,6 +112,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-DRYCORE', 'TECH-MICROKAPPA'],
+    addressesProblems: ['PROB-AIR-RESTRICTION'],
   },
 
   'STD-ISO-8573-1': {
@@ -98,6 +128,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-DRYCORE'],
+    addressesProblems: ['PROB-WATER-INGRESS'],
   },
 
   'STD-SAE-J1539': {
@@ -112,6 +144,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-MACROCORE'],
+    addressesProblems: ['PROB-SILICON-DUST-INGESTION', 'PROB-AIR-RESTRICTION'],
   },
 
   'STD-ISO-12937': {
@@ -126,6 +160,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTEPORE', 'TECH-TURBOCORE'],
+    addressesProblems: ['PROB-WATER-INGRESS', 'PROB-FUEL-CONTAMINATION', 'PROB-MICROBIAL-GROWTH'],
   },
 
   'STD-ASTM-D6304': {
@@ -140,6 +176,13 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTEPORE', 'TECH-TURBOCORE'],
+    addressesProblems: [
+      'PROB-WATER-INGRESS',
+      'PROB-FUEL-CONTAMINATION',
+      'PROB-INJECTOR-WEAR',
+      'PROB-MICROBIAL-GROWTH',
+    ],
   },
 
   'STD-NFPA-T2-14': {
@@ -154,6 +197,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-NANOFORCE'],
+    addressesProblems: ['PROB-CAVITATION', 'PROB-PUMP-FAILURE', 'PROB-FILTER-COLLAPSE'],
   },
 
   'STD-ISO-11155-1': {
@@ -168,6 +213,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-MICROKAPPA'],
+    addressesProblems: [],
   },
 
   'STD-DIN-71220': {
@@ -182,6 +229,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-MICROKAPPA'],
+    addressesProblems: [],
   },
 
   'STD-ISO-16332': {
@@ -196,6 +245,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-SYNTEPORE'],
+    addressesProblems: ['PROB-FUEL-CONTAMINATION', 'PROB-INJECTOR-WEAR'],
   },
 
   'STD-DIN-51524': {
@@ -210,6 +261,8 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
+    implementedByTechnologies: ['TECH-NANOFORCE'],
+    addressesProblems: ['PROB-VARNISH-FORMATION', 'PROB-OXIDATION'],
   },
 
 };
