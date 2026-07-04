@@ -57,6 +57,15 @@ function buildEntry(url) {
   </url>`;
 }
 
+function isIndexable(htmlPath) {
+  try {
+    const html = readFileSync(htmlPath, 'utf8');
+    return !html.includes('noindex');
+  } catch {
+    return true;
+  }
+}
+
 function injectIntoSitemap(sitemapPath, entries) {
   if (!existsSync(sitemapPath)) {
     console.warn(`  [warn] sitemap not found: ${sitemapPath}`);
@@ -80,8 +89,15 @@ if (!existsSync(KC_OUT_DIR)) {
 }
 
 const indexFiles = walkDir(KC_OUT_DIR);
-const urls = indexFiles.map(buildUrl).sort();
-const entries = urls.map(buildEntry);
+const urls = [];
+const entries = [];
+for (const htmlFile of indexFiles.sort()) {
+  if (isIndexable(htmlFile)) {
+    const url = buildUrl(htmlFile);
+    urls.push(url);
+    entries.push(buildEntry(url));
+  }
+}
 
 console.log(`[generate-kc-sitemap] Found ${urls.length} knowledge-center pages`);
 
