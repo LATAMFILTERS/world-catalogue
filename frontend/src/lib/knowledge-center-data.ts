@@ -909,6 +909,369 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
     keywords: ['Beta ratio', 'filter efficiency', 'ISO 16889', 'particle counting', 'nominal micron rating', 'multi-pass test', 'ISO 11171'],
   },
+
+  {
+    slug: 'hydraulic-contamination-sensitivity',
+    title: 'Hydraulic Contamination Sensitivity',
+    subtitle: 'Component Clearances, Failure Mechanisms, and Cleanliness Requirements',
+    metaDescription: 'Engineering analysis of how hydraulic component clearances determine contamination sensitivity: servo valve silting, piston pump wear, gear pump abrasion, and why ISO 4406 target codes are set by the most sensitive component in the circuit.',
+    category: 'Engineering',
+    readTime: '11 min',
+    intro: 'Hydraulic systems fail from contamination through two distinct mechanisms: abrasive wear (particles erode precision surfaces) and silting (fine particles pack into close-clearance annuli, causing valve stiction). The sensitivity of a hydraulic component to contamination is a direct function of its internal clearances — components with tighter clearances fail first and set the cleanliness target for the entire circuit.',
+    sections: [
+      {
+        heading: 'Component Clearances and Contamination Sensitivity',
+        body: 'Hydraulic component running clearances determine which particle sizes cause damage. Servo valve spool-to-bore clearances: 1–3 µm. Proportional valve spool clearances: 3–8 µm. Axial piston pump slipper-to-swashplate clearances: 5–10 µm; cylinder bore-to-piston clearances: 5–13 µm. Vane pump tip-to-ring clearances: 2–5 µm. Gear pump gear-to-housing radial clearances: 0.5–5 µm depending on grade. Hydraulic motor cylinder port plate: 5–15 µm. Particles within or slightly below the clearance size cause the most damage — they are small enough to enter the clearance but too large to pass freely, generating two-body abrasion on both surfaces with each pass. Particles substantially larger than the clearance bridge across and cause localised scoring; particles much smaller than the clearance pass through without contact.',
+        callout: [
+          { label: 'Servo valve spool clearance', value: '1–3 µm' },
+          { label: 'Axial piston pump clearance', value: '5–13 µm' },
+          { label: 'Gear pump tip clearance', value: '0.5–5 µm' },
+        ],
+      },
+      {
+        heading: 'Abrasive Wear Mechanisms',
+        body: 'Three abrasive wear modes operate simultaneously in contaminated hydraulic systems. Two-body abrasion: a hard particle embedded in or trapped against one surface cuts the opposing surface as they move relative to each other, producing long ribbon-like wear debris. Three-body abrasion: a free-rolling hard particle (silica, alumina) between two surfaces acts as a micro-cutting wheel, removing material from both — this mode dominates at moderate contamination levels and is responsible for the majority of progressive hydraulic component wear. Adhesive wear: metal-to-metal contact under high load removes material from the softer surface; contamination accelerates adhesive wear by preventing hydrodynamic films from forming in bearing areas. Abrasive wear rate is not linear with contamination — at cleanliness levels above ISO 21/19/16, the abrasive particle count is high enough to dominate hydrodynamic film formation and wear rates increase sharply.',
+      },
+      {
+        heading: 'Servo Valve Silting',
+        body: 'Silting is distinct from abrasive wear: fine particles (typically ≤5 µm) accumulate in the annular clearance between a servo valve spool and its bore, building a compacted layer that increases the force required to move the spool. Silting does not immediately destroy the valve — it degrades performance by increasing threshold (deadband), hysteresis, and null shift. A silted servo valve may command 2 mA but not respond until 4–6 mA — a 100–200% increase in threshold — while appearing externally undamaged. Silting reverses partially when system operation causes flow velocity through the clearance to flush the accumulated particles, but a silted valve that has been stationary (standby mode) requires high drive current to break out. Preventing silting requires maintaining ISO 16/14/11 or better (≤320 particles ≥6 µm/mL) in servo valve circuits — the fine particle count at ≥4 µm is the most predictive single number for silting risk.',
+        callout: [
+          { label: 'Silting particle size', value: '≤5 µm (accumulate in clearance)' },
+          { label: 'Silting effect', value: 'Increased threshold, hysteresis, null shift' },
+          { label: 'Servo valve target to prevent', value: 'ISO 16/14/11 or better' },
+        ],
+      },
+      {
+        heading: 'Contamination Sensitivity Classification',
+        body: 'ISO TR 10949 and component OEM service data classify hydraulic components by contamination sensitivity and specify corresponding cleanliness targets. Very high sensitivity (ISO 14/12/9 to 15/13/10): servo valves, electrohydraulic proportional valves, high-speed hydrostatic motors. High sensitivity (ISO 16/14/11 to 17/15/12): axial piston pumps and motors, vane pumps, medium-pressure proportional valves, precision gear pumps. Medium sensitivity (ISO 18/16/13 to 19/17/14): gear pumps (standard), gear motors, directional control valves, hydraulic cylinders (standard seal package). Low sensitivity (ISO 20/18/15 to 21/19/16): heavy-duty cylinders, manual valves, accumulators, rigid piping. The circuit cleanliness target is set by the most sensitive component installed — a system containing one servo valve must meet ISO 14/12/9 throughout, regardless of what other components tolerate.',
+        callout: [
+          { label: 'Servo valve (very high)', value: 'ISO 14/12/9' },
+          { label: 'Piston pump (high)', value: 'ISO 17/15/12' },
+          { label: 'Standard gear pump (medium)', value: 'ISO 19/17/14' },
+        ],
+      },
+      {
+        heading: 'Component Life vs Cleanliness Relationship',
+        body: 'The relationship between system cleanliness and component life has been characterised through fleet studies and accelerated wear testing. For axial piston pumps, the relationship approximates: each two-code-unit improvement in cleanliness at ≥6 µm doubles expected pump life, with diminishing returns above ISO 15/13/10. Data from hydraulic pump OEMs indicates: at ISO 20/18/15, pump life averages 1,500–2,500 operating hours; at ISO 17/15/12, life extends to 5,000–8,000 hours; at ISO 15/13/10, life exceeds 10,000 hours in many applications. For servo valves, the correlation is steeper: hysteresis and threshold degrade measurably within 500–1,000 hours at ISO 18/16/13, while valves maintained at ISO 15/13/10 operate indefinitely without measurable performance degradation in the same application. These relationships are not universal — they depend on fluid type, operating pressure, temperature, and duty cycle — but they illustrate the order-of-magnitude impact of cleanliness on component economics.',
+      },
+      {
+        heading: 'Offline Filtration and Contamination Control Architecture',
+        body: 'Return-line filtration is the primary protection mechanism in most hydraulic circuits: all fluid returning from actuators passes through the return filter before re-entering the reservoir. Return-line filters are sized for the full system flow at maximum operating temperature. Offline (kidney-loop) filtration continuously circulates reservoir fluid through a high-efficiency filter independent of system operation — typically 5–15% of total system flow at β₁₀(c) ≥ 200 or β₃(c) ≥ 200 for servo valve circuits. Kidney-loop circuits are particularly effective at reducing fine particle counts (≤5 µm) that return-line filters at practical flow rates cannot capture efficiently. Pressure-line filtration (downstream of pump, upstream of control valves) provides protection against pump wear particles reaching sensitive valves — typically 3–5 µm absolute rated. Multi-stage filtration: high-capacity return filter + high-efficiency kidney loop + pressure-line filter covers the full particle size range and multiple ingress pathways simultaneously.',
+        callout: [
+          { label: 'Return-line filter rating', value: 'β₁₀(c) ≥ 75–200' },
+          { label: 'Kidney loop flow', value: '5–15% of total system volume/min' },
+          { label: 'Pressure-line filter', value: '3–5 µm absolute for servo circuits' },
+        ],
+      },
+      {
+        heading: 'Fluid Sampling and Cleanliness Verification',
+        body: 'Verifying that a hydraulic system operates within its cleanliness target requires correct fluid sampling. Sample ports must be located in turbulent flow zones — return-line tees, pump outlet connections, or dedicated sampling valves. Do not sample from the reservoir directly (stratified contamination and settled particles give unrepresentative results). Sample bottles must be pre-cleaned to ISO 11/9/6 or better. Sample the system at operating temperature and normal flow rate — cold samples drawn at idle give optimistic particle counts. For servo valve systems, confirm cleanliness meets ISO 14/12/9 at the valve inlet port, not just at the reservoir. Initial commissioning sampling after flushing is mandatory: a system accepted at ISO 22/20/17 in as-built condition has already initiated spool wear before its first productive cycle.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Servo valve spool clearance', value: '1–3 µm' },
+      { label: 'Servo valve cleanliness target', value: 'ISO 14/12/9' },
+      { label: 'Piston pump life at ISO 17/15/12', value: '5,000–8,000 hours' },
+      { label: 'Kidney-loop flow rate', value: '5–15% system volume/min' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection'],
+    keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop'],
+  },
+
+  {
+    slug: 'water-contamination-fuel',
+    title: 'Water Contamination in Fuel Systems',
+    subtitle: 'ASTM D6304, Karl Fischer Titration, and HPCR Injector Protection',
+    metaDescription: 'Technical reference for water contamination in diesel fuel systems: free, dissolved, and emulsified water states, ASTM D6304 Karl Fischer measurement, ISO 12937, microbial growth, HPCR injector clearances, and coalescing filter selection.',
+    category: 'Engineering',
+    readTime: '11 min',
+    intro: 'Water is the most damaging non-particulate contaminant in diesel fuel systems. It exists in three physical states — dissolved, emulsified, and free — each requiring different detection and removal strategies. High-pressure common rail (HPCR) injection systems, with pressures up to 2,500 bar and injector nozzle clearances of 1–3 µm, are acutely sensitive to water concentrations that would cause no visible damage in older injection systems.',
+    sections: [
+      {
+        heading: 'Three States of Water in Fuel',
+        body: 'Dissolved water is held in molecular solution within the fuel hydrocarbon matrix. Diesel fuel at 20°C can hold approximately 50–100 ppm dissolved water at saturation, depending on fuel composition and aromaticity. Dissolved water is invisible and causes no immediate operational problem. As temperature drops or water loading increases beyond saturation, dissolved water precipitates as emulsified water — micron-scale droplets dispersed through the fuel, giving it a hazy appearance. Free water settles to the lowest point of the fuel system as a distinct aqueous layer, typically at the bottom of fuel tanks, filter housings, and injection pump sumps. Free water causes the most acute damage: corrosion, bacterial growth, ice crystal formation, and lubrication loss in injection system components. The transitions between states are reversible with temperature and mixing energy, making free water identification at tank bottom a reliable indicator of total water loading.',
+        callout: [
+          { label: 'Dissolved water (saturation)', value: '50–100 ppm at 20°C in diesel' },
+          { label: 'Emulsified water appearance', value: 'Hazy, milky, or cloudy fuel' },
+          { label: 'Free water location', value: 'Bottom of tank/housing (settled)' },
+        ],
+      },
+      {
+        heading: 'ASTM D6304 and Karl Fischer Titration',
+        body: 'ASTM D6304 (Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration) is the primary laboratory method for measuring total water content in fuel. The Karl Fischer reaction oxidises sulphur dioxide with iodine in the presence of water: H₂O + I₂ + SO₂ + 3(RN) + CH₃OH → 2[RNH]I + [RNH]SO₄CH₃. Coulometric KFT generates iodine electrolytically from iodide — one mole of iodine reacts with one mole of water, allowing water mass to be calculated from the electrical charge. Method range: 10–10,000 ppm water. Precision: ±2 ppm at concentrations below 100 ppm. ASTM D6304 measures all three water states simultaneously. ISO 12937 (Petroleum Products — Determination of Water — Coulometric Karl Fischer Titration Method) covers the same fundamental reaction with harmonised procedure for international markets.',
+        callout: [
+          { label: 'ASTM D6304 range', value: '10–10,000 ppm' },
+          { label: 'Precision at <100 ppm', value: '±2 ppm' },
+          { label: 'ISO equivalent', value: 'ISO 12937' },
+        ],
+      },
+      {
+        heading: 'EN 590 Fuel Quality Specification',
+        body: 'EN 590, the European diesel fuel quality standard, specifies maximum water content of 200 mg/kg (approximately 200 ppm by mass) at point of distribution. This limit encompasses all three water states and is measured by ASTM D6304 or equivalent coulometric KFT. However, 200 ppm at the distribution terminal does not mean 200 ppm at the fuel tank: water ingress during transport (condensation in vented tanks, incompletely dried tanker compartments, contaminated fill nozzles) and during vehicle storage (temperature cycling of partly filled tanks) typically adds 50–300 ppm to fuel before it reaches the injection system. On-tank water accumulation in large-capacity fleet vehicles operating in humid environments can reach 500–2,000 ppm total water in the lower fuel strata, with measurable free water layering above the tank drain point.',
+        callout: [
+          { label: 'EN 590 water limit', value: '200 mg/kg (≈200 ppm)' },
+          { label: 'In-service accumulation', value: '50–300 ppm additional typical' },
+          { label: 'Fleet tank worst case', value: '500–2,000 ppm in lower strata' },
+        ],
+      },
+      {
+        heading: 'HPCR Injector Sensitivity to Water',
+        body: 'High-pressure common rail injection systems operate at rail pressures of 1,600–2,500 bar. Injector nozzle needle clearances are 1–3 µm; injector solenoid and piezo valve clearances are tighter still. Water in the injection system causes damage through three distinct mechanisms. Corrosion: water in contact with ferrous fuel system components generates iron hydroxide corrosion products (rust particles); these particles, typically 5–50 µm, cause abrasive wear of injector needles and nozzle seats at rail pressure. Lubrication loss: diesel fuel provides hydrodynamic lubrication to high-pressure injection pump plungers (lubrication rating HFRR ≤ 460 µm). Free water displaces the fuel film, increasing plunger and barrel wear by 5–20× in water-contaminated operation. Hydraulic lock and nozzle damage: at sub-zero temperatures, dissolved water that precipitates in the high-pressure nozzle bore can form ice crystals that hydraulically lock the injector needle open, causing injector tip failure and catastrophic nozzle seat erosion. A 200 ppm water concentration in HPCR fuel, while within EN 590 specification, is at the threshold of injector service life impact for pumps operating at ≥2,000 bar.',
+        callout: [
+          { label: 'HPCR rail pressure', value: '1,600–2,500 bar' },
+          { label: 'Injector nozzle clearance', value: '1–3 µm' },
+          { label: 'Water lubrication impact', value: '5–20× pump wear increase' },
+        ],
+      },
+      {
+        heading: 'Microbial Contamination and Fuel Degradation',
+        body: 'Free water at the fuel–water interface in storage tanks supports microbial colonisation. Cladosporium resinae (the "kerosene fungus") and Pseudomonas aeruginosa are the most common fuel-degrading microorganisms in diesel. Microbial biofilm grows at the fuel–water interface, producing organic acids that lower fuel pH, generate particulate biomass (5–50 µm fungal hyphae and bacterial aggregates), and accelerate metal corrosion through hydrogen sulphide and organic acid production. Microbial contamination in commercial tanks is typically detected when fuel darkens, develops sediment, or causes rapid filter plugging. Biocide treatment (ASTM D4054 approved biocides) kills active microorganisms but does not remove dead cell matter — a biocide-treated tank with established biofilm requires flushing and physical cleaning to restore fuel quality. Prevention is more effective than remediation: maintaining tank water content below 50 ppm prevents the free-water layer necessary for microbial establishment.',
+        callout: [
+          { label: 'Primary organism', value: 'Cladosporium resinae (diesel fungus)' },
+          { label: 'Prevention threshold', value: 'Tank water <50 ppm (no free layer)' },
+          { label: 'Biocide limitation', value: 'Kills organisms; does not remove biomass' },
+        ],
+      },
+      {
+        heading: 'Coalescing Filter Technology and Water Removal',
+        body: 'Fuel filter water separators use coalescence to remove emulsified and free water from fuel. Coalescence media (glass fiber or hydrophilic synthetic with controlled surface energy) cause small water droplets to collide, adhere, and grow into larger droplets that settle by gravity to the water sump. Separation efficiency is expressed as water dropout rate at a specified fuel flow rate and initial water concentration. Stage 1 (coalescer): emulsified water droplets (1–10 µm) coalesce to >100 µm on the coalescing media surface. Stage 2 (separator shell): coalesced droplets settle through the quiescent zone below the coalescer to the water collection bowl. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) measures particulate levels that accompany water separation testing. HYDROCORE™ coalescing technology combines sub-10 µm particle capture with water separation in a single element, eliminating the separate secondary stage in applications where space is constrained.',
+        callout: [
+          { label: 'Coalescence droplet range', value: '1–10 µm (initial) → >100 µm (coalesced)' },
+          { label: 'Separation mechanism', value: 'Gravity settling after coalescence' },
+          { label: 'Test standard', value: 'ASTM D7619 (particle sizing with water)' },
+        ],
+      },
+      {
+        heading: 'Field Detection and Monitoring',
+        body: 'Field water detection methods span from crude to quantitative. Water paste (copper sulphate indicator): applied to a sampling tube, changes colour in contact with free water — useful for tank bottom sampling to confirm presence/absence of a free-water layer. Water-finding paper or capsules: single-use colorimetric indicators for field confirmation. Portable refractometer: measures water content by refractive index change — applicable to water-soluble fluids (coolant, water-glycol hydraulic fluid) but not diesel. Coulometric KFT field instruments: handheld units can measure water in fuel to ±10 ppm precision at 30–300 ppm concentrations, suitable for fleet pre-delivery inspection. Capacitance sensors: installed in-line fuel water sensors detect emulsified water by dielectric constant change — they trigger an alarm at pre-set water fraction without measuring ppm. Drain inspection: daily inspection and draining of filter water bowls is the minimum fleet maintenance protocol; drain volume and visual appearance of drained water provide qualitative contamination trending.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'EN 590 water limit', value: '200 mg/kg (ppm)' },
+      { label: 'HPCR rail pressure', value: '1,600–2,500 bar' },
+      { label: 'ASTM D6304 precision', value: '±2 ppm at <100 ppm' },
+      { label: 'Microbial prevention threshold', value: '<50 ppm tank water' },
+    ],
+    relatedStandards: ['ASTM D6304', 'ISO 12937'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedSystems: ['Fuel Cleanliness Protection'],
+    keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
+  },
+
+  {
+    slug: 'compressed-air-purity',
+    title: 'Compressed Air Purity',
+    subtitle: 'ISO 8573-1 Quality Classes, Contamination Measurement, and System Design',
+    metaDescription: 'Technical reference for compressed air purity: ISO 8573-1 quality classes for particles, moisture, and oil; ISO 8573-2/3 test methods; dew point measurement; and filtration system design for pneumatic and process air applications.',
+    category: 'Engineering',
+    readTime: '10 min',
+    intro: 'Compressed air contains particles, liquid water, water vapour, and oil aerosols and vapour introduced during compression and distribution. ISO 8573-1 defines quality classes for each contaminant type, providing a standardised specification language for compressed air systems. Achieving the correct purity class requires understanding contamination sources, measurement methods, and the filtration and drying technologies that control each contaminant type.',
+    sections: [
+      {
+        heading: 'ISO 8573-1 Quality Classes',
+        body: 'ISO 8573-1 defines quality classes 0 through 6 for three contamination categories independently: solid particles (by count and size), moisture (by pressure dew point, °C), and total oil (aerosol plus vapour, mg/m³). Class 0 is specified by the user and is more stringent than Class 1 — it is not a defined numerical value in the standard. Class 1 is the highest standard-defined purity; Class 6 is the least stringent. A compressed air quality specification written as ISO 8573-1:2010 [2:4:2] means Class 2 for particles, Class 4 for moisture, and Class 2 for oil. Each class must be specified independently because different treatment stages address each contamination type — a highly efficient particulate filter provides no benefit for dew point, and a refrigerant dryer reduces moisture but does not remove oil aerosols.',
+        callout: [
+          { label: 'Class 0', value: 'User-defined, more stringent than Class 1' },
+          { label: 'Class 1 oil content', value: '≤0.01 mg/m³ (total oil)' },
+          { label: 'Notation example', value: 'ISO 8573-1 [2:4:2] = particles:moisture:oil' },
+        ],
+      },
+      {
+        heading: 'Particle Quality Classes',
+        body: 'ISO 8573-1 particle classes are defined by the maximum number of particles per cubic metre at specified size ranges. Class 1 (particles): ≤20,000 particles/m³ at 0.1–0.5 µm; ≤400 at 0.5–1 µm; ≤10 at 1–5 µm; no particles ≥5 µm. Class 2: same ≤400,000 at 0.1–0.5 µm; ≤6,000 at 0.5–1 µm; ≤100 at 1–5 µm; no particles ≥5 µm. Class 3: no limit for <1 µm; ≤1,000 at 1–5 µm; no particles ≥5 µm. Classes 4 and 5 allow particles ≥5 µm in increasing quantities. Class 6 allows particle mass concentration up to 10 mg/m³ without size distribution limits. For most industrial pneumatic actuator and tool applications, particle Class 3 or 4 is adequate. Instrument air (analytical instruments, pressure transmitters, control valves) requires particle Class 1 or 2 to prevent instrument blockage and measurement error.',
+        callout: [
+          { label: 'Class 1 (≥5 µm particles)', value: 'Zero permitted' },
+          { label: 'Class 3 (1–5 µm)', value: '≤1,000 particles/m³' },
+          { label: 'Instrument air class', value: 'Class 1 or 2' },
+        ],
+      },
+      {
+        heading: 'Moisture Classes and Pressure Dew Point',
+        body: 'Moisture in compressed air is expressed as pressure dew point (PDP) — the temperature at which condensation occurs at the system operating pressure. A PDP of −40°C at 7 bar means the air contains so little moisture that condensation will not form until the temperature drops to −40°C, even at 7 bar line pressure. ISO 8573-1 moisture classes: Class 1: PDP ≤ −70°C; Class 2: ≤ −40°C; Class 3: ≤ −20°C; Class 4: ≤ +3°C; Class 5: ≤ +7°C; Class 6: ≤ +10°C. Refrigerant dryers achieve PDP between +2°C and +10°C (Classes 4–6). Adsorption (desiccant) dryers achieve PDP between −20°C and −70°C (Classes 1–3). The conversion from PDP to water content in g/m³ at a reference condition allows calculation of absolute humidity: at −40°C PDP and 7 bar, the water content is approximately 0.003 g/m³ — compared to 1.4 g/m³ at +7°C PDP.',
+        callout: [
+          { label: 'Class 1 PDP', value: '≤ −70°C' },
+          { label: 'Refrigerant dryer PDP range', value: '+2°C to +10°C (Classes 4–6)' },
+          { label: 'Desiccant dryer PDP range', value: '−20°C to −70°C (Classes 1–3)' },
+        ],
+      },
+      {
+        heading: 'Oil Content Classes and Measurement',
+        body: 'Oil in compressed air originates from lubricant carryover from oil-lubricated compressors (in the form of aerosol and vapour) and from atmospheric hydrocarbon vapours that concentrate during compression. ISO 8573-1 total oil classes (aerosol + liquid + vapour, mg/m³): Class 1: ≤0.01 mg/m³; Class 2: ≤0.1 mg/m³; Class 3: ≤1 mg/m³; Class 4: ≤5 mg/m³. Oil-free compressors (Class 0 equipment per ISO 8573-7) still require oil removal filtration for Class 1 or Class 2 applications because atmospheric hydrocarbon vapours drawn into the compressor inlet concentrate to measurable levels at the outlet. ISO 8573-2 defines the test method for aerosol oil measurement: impaction on a membrane filter with gravimetric analysis. ISO 8573-5 defines the vapour oil measurement method using activated carbon adsorption tubes. Total oil = aerosol (ISO 8573-2 method) + oil vapour (ISO 8573-5 method). Coalescing filters remove aerosol oil to Class 1; activated carbon adsorption removes vapour oil — both stages are required to achieve verified Class 1 compliance.',
+        callout: [
+          { label: 'Class 1 oil content', value: '≤0.01 mg/m³' },
+          { label: 'Aerosol removal', value: 'Coalescing filter (ISO 8573-2)' },
+          { label: 'Vapour removal', value: 'Activated carbon (ISO 8573-5)' },
+        ],
+      },
+      {
+        heading: 'Contamination Sources During Compression',
+        body: 'Ambient air drawn into a compressor contains atmospheric particulates (0.1–10 µm pollen, dust, soot), water vapour (humidity), and trace hydrocarbon vapours. During compression, all constituents are concentrated in proportion to the compression ratio: at 7 bar gauge (8 bar absolute), volume reduces to 1/8 and contaminant mass per volume increases 8-fold. Compressed air after-cooling (required to prevent thermal damage to downstream equipment) causes the compressed, humid air to cool rapidly — water vapour condenses into liquid water and aerosol droplets. The after-cooler and condensate separator remove the largest water fraction (typically 70–90% of the inlet water vapour at tropical ambient conditions) but leave substantial residual moisture requiring drying. Oil-lubricated compressors inject oil into the compression stage for cooling and sealing — oil carryover from the separator and coalescing filter in the compressor unit outlet is typically 1–5 mg/m³ before point-of-use treatment.',
+      },
+      {
+        heading: 'Filtration System Design for Quality Classes',
+        body: 'A compressed air treatment train is designed in stages, each addressing one contamination category at the conditions produced by the upstream stage. After-cooler + condensate separator: removes bulk liquid water and coarse aerosols (Stages 4–5 moisture, particle Class 4–5). General purpose coalescing filter (1 µm coalescence element): removes liquid aerosol oil to 0.1 mg/m³ and particles ≥1 µm (particle Class 2–3, oil Class 2–3). High-efficiency coalescing filter (0.01 µm coalescence element): reduces oil aerosol to 0.01 mg/m³ (oil Class 1). Activated carbon adsorber: removes oil vapour below 0.003 mg/m³ (oil Class 1). Desiccant dryer: achieves PDP ≤ −40°C (moisture Class 2). Final particulate filter (PTFE membrane or borosilicate fiber): ensures sterile or classified air downstream of all treatment stages (particle Class 1 or 2). DRYCORE™ filtration systems provide integrated particulate and coalescing elements for compressed air applications, reducing system footprint and pressure drop budget.',
+        callout: [
+          { label: 'Coalescing filter achieves', value: 'Oil Class 2 (0.1 mg/m³)' },
+          { label: 'High-efficiency coalescer', value: 'Oil Class 1 (0.01 mg/m³)' },
+          { label: 'Activated carbon adds', value: 'Vapour removal to full Class 1 compliance' },
+        ],
+      },
+    ],
+    keyMetrics: [
+      { label: 'ISO 8573-1 Class 1 oil', value: '≤0.01 mg/m³' },
+      { label: 'Class 1 pressure dew point', value: '≤ −70°C' },
+      { label: 'Class 1 particles (≥5 µm)', value: 'Zero permitted' },
+      { label: 'Refrigerant dryer PDP', value: '+2°C to +10°C' },
+    ],
+    relatedStandards: ['ISO 8573-1', 'ISO 29463'],
+    relatedTechnologies: ['DRYCORE™'],
+    relatedSystems: ['Compressed Air Protection'],
+    keywords: ['ISO 8573', 'compressed air purity', 'pressure dew point', 'oil aerosol', 'particle class', 'coalescing filter', 'desiccant dryer'],
+  },
+
+  {
+    slug: 'oil-analysis-methods',
+    title: 'Oil Analysis Methods',
+    subtitle: 'ICP Spectroscopy, TAN/TBN, Viscosity, and Wear Metal Trending',
+    metaDescription: 'Engineering reference for oil condition monitoring: ICP spectrometric wear metal analysis, total acid number (ASTM D664), total base number (ASTM D2896), kinematic viscosity (ASTM D445), FTIR spectroscopy, and sampling protocols for fleet maintenance programs.',
+    category: 'Engineering',
+    readTime: '10 min',
+    intro: 'Oil analysis is the systematic measurement of physical and chemical properties of in-service lubricating oil to detect component wear, monitor oil degradation, and identify contamination before damage occurs. When applied to a defined sampling schedule, oil analysis provides a leading indicator of failure — typically identifying problems 200–500 operating hours before mechanical failure, allowing planned intervention rather than unplanned breakdown.',
+    sections: [
+      {
+        heading: 'ICP Spectrometric Wear Metal Analysis',
+        body: 'Inductively Coupled Plasma (ICP) spectrometry is the standard method for measuring dissolved and sub-20 µm particle wear metals in engine and hydraulic oils. ASTM D5185 (Multi-Element Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry) is the reference method. A plasma torch at approximately 10,000 K atomises and excites elements in the oil sample; emission lines at element-specific wavelengths are measured simultaneously. Reportable elements and their diagnostic significance: iron (Fe) — cylinder liners, camshaft, crankshaft wear; chromium (Cr) — piston ring, cylinder liner wear; aluminium (Al) — piston crown, bearing housing, gear case wear; copper (Cu) — bearing overlay wear (Cu–Pb, Cu–Sn overlays), bronze bushing wear; lead (Pb) — bearing overlay failure; silicon (Si) — airborne dust ingestion (silica) OR antifreeze coolant (silicone additive); sodium (Na) — coolant ingress (sodium silicate antifreeze); boron (B) — coolant ingress (sodium borate antifreeze). ICP reliably detects particles below 7–10 µm; larger wear particles (fatigue spalling, chip wear) are not efficiently dissolved or atomised and require particle counting or analytical ferrography for detection.',
+        callout: [
+          { label: 'Iron (Fe)', value: 'Liner, crankshaft, camshaft wear' },
+          { label: 'Silicon (Si)', value: 'Dust ingestion OR coolant (context dependent)' },
+          { label: 'ICP particle size limit', value: 'Effective to ~7–10 µm diameter' },
+        ],
+      },
+      {
+        heading: 'Total Acid Number and Total Base Number',
+        body: 'Total Acid Number (TAN) measures the concentration of all acidic components in oil — oxidation products, acidic combustion by-products, and depleted additive degradation products. ASTM D664 (Potentiometric Titration Method) expresses TAN in mg KOH per gram of oil (mgKOH/g). New engine oil TAN typically ranges 0.3–1.5 mgKOH/g. A rising TAN trend indicates accelerating oxidation or acid contamination. Alert limit: TAN ≥ 2× new oil value or ≥ 2.0 mgKOH/g depending on OEM specification. Total Base Number (TBN) measures the alkaline reserve of the oil — primarily the detergent and dispersant additives that neutralise combustion acids. ASTM D2896 (Potentiometric Perchloric Acid Titration Method). New diesel engine oil TBN: 10–30 mgKOH/g depending on application (mining diesel at 30+ TBN for high-sulphur fuel; on-road diesel at 10–14 TBN with low-sulphur ULSD). As TBN depletes during service, TAN rises. Service limit is typically TBN ≤ 50% of new oil TBN, or TAN approaching TBN. TBN:TAN ratio ≥ 1 is the minimum criterion for maintaining protective alkaline buffering.',
+        callout: [
+          { label: 'TAN test method', value: 'ASTM D664 (mgKOH/g)' },
+          { label: 'TBN test method', value: 'ASTM D2896 (mgKOH/g)' },
+          { label: 'Service limit (TBN)', value: '≤50% of new oil TBN, or TBN ≤ TAN' },
+        ],
+      },
+      {
+        heading: 'Kinematic Viscosity',
+        body: 'Kinematic viscosity is the fundamental physical property governing oil film thickness, pump efficiency, and bearing protection. ASTM D445 (Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids) measures viscosity by timing oil flow through a calibrated capillary tube at 40°C and 100°C. Results in centistokes (cSt = mm²/s). Viscosity index (ASTM D2270) characterises viscosity-temperature sensitivity: high VI oils maintain viscosity better across temperature range. Viscosity decrease in service (shear thinning): VI improvers in multigrade oils are high-molecular-weight polymers that shear into shorter chains under mechanical stress, reducing viscosity permanently. Alert: viscosity ≥20% below or ≥30% above new oil value at 40°C. Viscosity increase: oxidation increases molecular weight of base oil and creates sludge precursors. Fuel dilution from injector blow-by reduces viscosity acutely (confirmed by flash point test ASTM D92: fuel-diluted oil flash point drops below 160°C). Coolant ingress from head gasket failure increases water content and, after emulsification, apparent viscosity.',
+        callout: [
+          { label: 'Test standard', value: 'ASTM D445 at 40°C and 100°C' },
+          { label: 'Viscosity decrease alert', value: '≥20% below new oil spec' },
+          { label: 'Fuel dilution indicator', value: 'Flash point <160°C (ASTM D92)' },
+        ],
+      },
+      {
+        heading: 'FTIR Spectroscopy for Oil Condition',
+        body: 'Fourier Transform Infrared spectroscopy (FTIR) identifies molecular species in used oil by comparing absorption spectra to a reference spectrum of new (unused) oil of the same grade. Absorbance peaks at characteristic wavenumbers indicate specific degradation products: oxidation products (1,700–1,760 cm⁻¹, carbonyl stretch); nitration products (1,620 cm⁻¹, nitrile bands from combustion gas oxidation of nitrogen); soot/combustion particulates (2,000 cm⁻¹ baseline elevation); water (3,400 cm⁻¹, OH stretch — used for water detection when coulometric KFT is not available); glycol coolant (866 cm⁻¹, ethylene glycol signature). FTIR is reported in Absorbance Units (AU) relative to the new oil baseline. Alert limits vary by OEM: oxidation ≥ 25 AU and nitration ≥ 25 AU are common fleet trigger values for SAE 15W-40 diesel engine oil. FTIR is a rapid, cost-effective screening technique — a complete spectrum is generated in under 2 minutes. Confirmation of specific contaminants identified by FTIR is done by dedicated test methods (D664 for oxidation acids, D6304 for water).',
+        callout: [
+          { label: 'Oxidation peak', value: '1,700–1,760 cm⁻¹ (carbonyl)' },
+          { label: 'Glycol coolant peak', value: '866 cm⁻¹' },
+          { label: 'Oxidation alert limit', value: '≥25 AU (relative to new oil)' },
+        ],
+      },
+      {
+        heading: 'Particle Counting in Used Oil',
+        body: 'ISO 4406 particle counting applied to used engine or hydraulic oil provides early detection of increased internal wear before ICP spectroscopy can detect it (ICP is limited to particles ≤7–10 µm; particles from surface fatigue and spalling are typically 25–100 µm). Automatic particle counters calibrated per ISO 11171 count particles at ≥4 µm, ≥6 µm, and ≥14 µm. Establishing a baseline ISO code for each specific machine type (e.g., ISO 17/15/12 for a healthy diesel engine lube circuit) allows deviation detection — a shift of two code units above baseline indicates a doubling in particle generation rate. When particle counts rise and ICP shows no corresponding elemental increase, the source particles are larger than 10 µm and represent fatigue or spalling events. Combined ICP + particle counting covers the full size distribution and provides complementary diagnostic information: ICP for chronic sub-surface wear, particle counting for acute mechanical events.',
+        callout: [
+          { label: 'ICP particle size limit', value: '≤7–10 µm reliably detected' },
+          { label: 'Fatigue particle size', value: '25–100 µm (ICP misses these)' },
+          { label: 'Alert threshold', value: '≥2 code-unit rise from individual baseline' },
+        ],
+      },
+      {
+        heading: 'Sampling Protocols and Trending',
+        body: 'Oil analysis value is maximised by consistent sampling protocols that enable trend detection across multiple data points. Key protocol requirements: sample at consistent engine/machine hours from the same sampling point each interval; use pre-cleaned sample tubes or syringes with a dedicated sampling valve (not the drain plug); sample at operating temperature with the system at normal load; fill sample bottles to 3/4 capacity to allow mixing without aeration. Recommended intervals: engine oil in mining trucks, every 250 hours; engine oil in on-road diesel, every 500 hours; hydraulic oil in construction equipment, every 250–500 hours; turbine oil, every 1,000–2,000 hours. A single sample is a measurement; three or more samples from the same machine are a trend. Alert limits for a single sample are less meaningful than a rising trend — an iron reading of 80 ppm that was 15 ppm previously indicates a 5× wear rate acceleration, even if 80 ppm has not crossed the absolute alert limit.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'ICP standard', value: 'ASTM D5185' },
+      { label: 'TAN standard', value: 'ASTM D664 (mgKOH/g)' },
+      { label: 'TBN service limit', value: '≤50% of new oil TBN' },
+      { label: 'Viscosity standard', value: 'ASTM D445 at 40°C and 100°C' },
+    ],
+    relatedStandards: ['ISO 4406', 'ASTM D6304'],
+    relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: ['oil analysis', 'ICP spectroscopy', 'wear metals', 'TAN', 'TBN', 'viscosity', 'FTIR', 'ASTM D5185', 'ASTM D664', 'fluid condition monitoring'],
+  },
+
+  {
+    slug: 'cabin-air-filtration',
+    title: 'Cabin Air Filtration',
+    subtitle: 'ISO 11155, Particulate Exposure Limits, and Operator Health Protection',
+    metaDescription: 'Technical reference for mobile equipment cabin air filtration: ISO 11155 test standards, PM10 and PM2.5 occupational exposure limits, activated carbon for gaseous contaminants, HVAC integration, and DIN 71220 classification.',
+    category: 'Engineering',
+    readTime: '9 min',
+    intro: 'Cabin air filtration in mobile equipment protects operators from airborne particulates, chemical vapours, and biological contaminants generated by the operating environment. For mining, construction, and agricultural equipment operators working 2,000–5,000 hours per year, cabin filtration directly determines the chronic particulate dose received during occupational exposure. ISO 11155 provides the framework for testing and specifying cabin air filter performance; occupational health standards define the dose limits that cabin systems must maintain.',
+    sections: [
+      {
+        heading: 'Occupational Particulate Exposure Limits',
+        body: 'Regulatory exposure limits for respirable dust in occupational settings are set by national and international bodies. WHO Air Quality Guidelines (2021) define PM2.5 annual mean guideline at 5 µg/m³ and 24-hour guideline at 15 µg/m³; PM10 annual mean at 15 µg/m³ and 24-hour at 45 µg/m³. Mining-specific limits: coal dust (MSHA, US) at 1.5 mg/m³ total dust; silica (quartz) at 0.05 mg/m³ respirable fraction — the most stringent mineral dust limit because crystalline silica causes silicosis at chronic exposures above 0.025 mg/m³ over a working lifetime. Cab air standards for mobile mining equipment typically target a cab-to-ambient ratio (CAR) of 0.05 or better — meaning the PM10 concentration inside the cab should be no more than 5% of the ambient concentration outside the machine. Achieving CAR ≤ 0.05 in a 10 mg/m³ dust environment produces an internal concentration of ≤0.5 mg/m³, consistent with health protection during a full shift.',
+        callout: [
+          { label: 'WHO PM2.5 guideline (annual)', value: '5 µg/m³' },
+          { label: 'Crystalline silica OEL', value: '0.05 mg/m³ respirable' },
+          { label: 'Mining cab target (CAR)', value: '≤0.05 (5% of ambient)' },
+        ],
+      },
+      {
+        heading: 'ISO 11155 — Cabin Air Filtration Standard',
+        body: 'ISO 11155 (Road Vehicles — Air Filters for Passenger Compartments) consists of two parts: ISO 11155-1 defines general requirements, test conditions, performance parameters, and marking requirements; ISO 11155-2 defines the test method for evaluating aerosol particle filtration efficiency and airflow resistance. The test measures filtration efficiency at particle sizes 0.4 µm using a dioctyl phthalate (DOP) or dioctyl sebacate (DOS) aerosol challenge and an optical particle counter. Performance is classified by removal efficiency at 0.4 µm: standard cabin filter (ISO 11155 Class 1) ≥ 10% efficiency; anti-pollen filter (Class 2) ≥ 80%; activated carbon filter (Class 3): meets Class 2 particle efficiency plus gaseous contaminant removal. DIN 71220 is the predecessor German standard (published before ISO 11155) and remains referenced in older OEM specifications; it defines similar particle classes but with slightly different test conditions and classification thresholds. For heavy mobile equipment (mining, construction), ISO 11155 test conditions may not fully replicate cab pressurisation, airflow rates, and ambient dust concentrations — equipment-specific testing is recommended for critical applications.',
+        callout: [
+          { label: 'ISO 11155 test aerosol', value: 'DOP or DOS at 0.4 µm' },
+          { label: 'Class 2 efficiency (0.4 µm)', value: '≥80%' },
+          { label: 'Class 3 (carbon filter)', value: 'Class 2 + gaseous removal' },
+        ],
+      },
+      {
+        heading: 'Particulate Capture Mechanisms in Cabin Filters',
+        body: 'Cabin air filter elements use the same particle capture mechanisms as industrial filtration: inertial impaction (heavy particles >5 µm deviate from streamlines and impact fiber surfaces), interception (particles 1–5 µm follow streamlines but contact fiber surfaces due to their physical size), diffusion (Brownian motion causes sub-1 µm particles to deviate from streamlines and contact fibers — increasing with decreasing particle size), and electrostatic attraction (charged media or charged particles enhance interception and diffusion capture). Depth-loading media (cellulose, polyester) capture particles throughout the media thickness; surface-loading membrane media (PTFE) capture particles on the upstream face. Cabin filters see moderate dust concentrations compared to engine air filters — typically 0.01–10 mg/m³ ambient, resulting in low pressure-drop build-up rates and long service intervals (one filter per season or per OEM interval). Activated carbon layers added to cabin filter elements capture gaseous contaminants (NOx, SO₂, O₃, VOCs) through adsorption — carbon surface area (800–1,200 m²/g for activated carbon) determines capacity. Carbon layer exhaustion is not detectable by restriction monitoring; it is time- and exposure-based.',
+        callout: [
+          { label: 'Coarse particle removal (>5 µm)', value: 'Inertial impaction' },
+          { label: 'Sub-micron particle removal', value: 'Diffusion (increases with smaller size)' },
+          { label: 'Activated carbon surface area', value: '800–1,200 m²/g' },
+        ],
+      },
+      {
+        heading: 'Cab Pressurisation and Ingress Control',
+        body: 'A cabin air filter alone cannot achieve low cab-to-ambient ratios if the cab structure has uncontrolled leakage paths. Effective cab sealing requires positive pressurisation — maintaining cab interior air pressure 10–30 Pa above ambient. Positive pressure prevents ambient dust from being drawn in through door seals, cable penetrations, floor gaskets, and structural joints. Pressurisation is maintained by supplying filtered air at a flow rate that exceeds the leakage rate of the cab. Leakage rate measurement: with the HVAC fan on and all openings sealed (doors closed, vents shut), measure pressure decay over 60 seconds with HVAC fan off. A well-sealed cab retains ≥50% of pressurisation after 60 seconds. Poorly sealed cabs with doors, gaskets, or penetration seals in poor condition cannot achieve CAR ≤ 0.05 regardless of filter efficiency — the filtration element is not the limiting factor. Cab integrity testing should precede or accompany filter specification upgrades on high-contamination equipment.',
+        callout: [
+          { label: 'Positive pressurisation target', value: '10–30 Pa above ambient' },
+          { label: 'Pressure retention (well-sealed cab)', value: '≥50% after 60 seconds' },
+          { label: 'Limiting factor for poor CAR', value: 'Cab leakage, not filter efficiency' },
+        ],
+      },
+      {
+        heading: 'Filter Selection for Mining and Construction Equipment',
+        body: 'Mining and construction equipment cabin filtration requirements differ from passenger car requirements in dust concentration, airflow volume, and shift duration. Key selection parameters: (1) Efficiency at PM10 and PM2.5 sizes — not just the DOP 0.4 µm ISO 11155 metric; request fractional efficiency data at 1, 2.5, 5, and 10 µm for particulate health protection. (2) Dust holding capacity in grams — harsh environments require high-capacity elements to maintain airflow throughout a full shift without performance degradation. (3) Activated carbon mass — specified in grams of activated carbon, not just "with carbon": 100 g carbon is meaningfully different in capacity from 20 g. (4) Chemical compatibility — carbon layers are selective; activated carbon for NOx/SO₂ removal (impregnated carbon) differs from standard carbon for VOC removal. MICROKAPPA™ cabin filter elements combine high particulate efficiency with high activated carbon loading optimised for mining and construction ambient contaminant profiles.',
+        callout: [
+          { label: 'Key efficiency sizes for health', value: '1, 2.5, 5, 10 µm' },
+          { label: 'Carbon capacity indicator', value: 'Total carbon mass (grams)' },
+          { label: 'Activated carbon types', value: 'Standard (VOC) vs impregnated (NOx/SO₂)' },
+        ],
+      },
+      {
+        heading: 'Maintenance and Service Intervals',
+        body: 'Cabin air filter service intervals are determined by restriction increase (airflow reduction) and by total operating hours rather than by particulate breakthrough. Restriction increase degrades cab pressurisation: as the filter loads, the HVAC fan operates at reduced efficiency, cab pressure drops, and ambient dust ingress increases. Service when restriction indicator (if fitted) reaches the set point, or on the OEM\'s scheduled interval — whichever comes first. Activated carbon elements must be replaced on time-based intervals even if particulate restriction has not reached the service point, because carbon exhaustion is invisible to restriction monitoring. Heavily contaminated carbon elements may desorb adsorbed gases when ambient conditions change (elevated temperature), temporarily releasing accumulated contaminants into the cab air — this is the critical failure mode for carbon elements operated past their service life. Visual inspection of a used cabin filter provides useful information: a grey-brown uniform loading pattern indicates normal ambient dust; localised dark staining may indicate specific contamination source proximity (diesel exhaust, chemical storage); unusual colours indicate chemical exposure requiring investigation.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'WHO PM2.5 guideline (annual)', value: '5 µg/m³' },
+      { label: 'Mining cab CAR target', value: '≤0.05' },
+      { label: 'ISO 11155 Class 2 efficiency', value: '≥80% at 0.4 µm' },
+      { label: 'Cab pressurisation target', value: '10–30 Pa above ambient' },
+    ],
+    relatedStandards: ['ISO 11155', 'DIN 71220'],
+    relatedTechnologies: ['MICROKAPPA™'],
+    relatedSystems: ['Cabin Air Protection'],
+    keywords: ['cabin air filtration', 'ISO 11155', 'DIN 71220', 'PM10', 'PM2.5', 'activated carbon', 'cab pressurisation', 'operator health', 'MICROKAPPA'],
+  },
 ];
 
 // ─── STANDARDS ────────────────────────────────────────────────────────────────
