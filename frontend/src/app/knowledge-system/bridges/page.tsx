@@ -164,13 +164,27 @@ export default function BridgesHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges',
         headline: 'Filter Selection Technical Guides',
         description: 'Technical reference guides for industrial filtration selection covering OEM requirements, aftermarket evaluation, and fleet standardization strategies based on ISO 16889 and ISO 4406 criteria.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['filtration decision bridge', 'OEM filter requirements', 'aftermarket filter selection', 'fleet filtration strategy', 'contamination control', 'ISO 16889', 'asset protection'],
         about: { '@type': 'Thing', name: 'Filtration Decision Bridges', description: 'Bridge framework connecting product-based filtration decisions to system-level contamination control across OEM, aftermarket, and fleet operation contexts.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges#collection',
+        name: 'Filtration Decision Bridges',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: BRIDGE_PAGES.map((b) => ({
+          '@type': 'WebPage',
+          name: b.title,
+          description: b.description,
+          url: `https://elimfilters.com${b.href}`,
+        })),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

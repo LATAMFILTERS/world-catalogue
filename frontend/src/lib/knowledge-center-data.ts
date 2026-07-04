@@ -48,11 +48,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     sections: [
       {
         heading: 'Pressure Drop Fundamentals',
-        body: 'Pressure drop (ΔP) across a filter element is expressed in millibar (mbar) or inches of water column (inH₂O). Initial restriction — the pressure drop through a clean element at rated airflow — determines the baseline performance. As the element loads with contaminant, restriction increases until a service threshold is reached. Clean element restriction typically ranges from 6 to 25 mbar depending on element geometry, face velocity, and media type. Service limit is typically 25 mbar for naturally aspirated engines and up to 625 mbar for turbocharged applications. Exceeding service limits causes volumetric efficiency losses and, in turbocharged engines, compressor surge risk.',
+        body: 'Pressure drop (ΔP) across a filter element is expressed in millibar (mbar) or inches of water column (inH₂O). Initial restriction — the pressure drop through a clean element at rated airflow — determines the baseline performance. As the element loads with contaminant, restriction increases until a service threshold is reached. Clean element restriction typically ranges from 6 to 25 mbar depending on element geometry, face velocity, and media type. Service limit is typically 25 mbar for naturally aspirated engines and up to 62.5 mbar for turbocharged applications. Exceeding service limits causes volumetric efficiency losses and, in turbocharged engines, compressor surge risk.',
         callout: [
           { label: 'Clean restriction', value: '6–25 mbar' },
           { label: 'NA engine service limit', value: '25 mbar' },
-          { label: 'Turbo engine service limit', value: '375–625 mbar' },
+          { label: 'Turbo engine service limit', value: '37.5–62.5 mbar' },
         ],
       },
       {
@@ -853,7 +853,7 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Equivalent standard', value: 'ASTM D6304 (North American)' },
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
   },
   {
     slug: 'nfpa-t2-14',
@@ -939,7 +939,7 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Lube coolant leak indicator', value: '>0.1% water' },
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
   },
   {
     slug: 'iso-16332',
@@ -955,7 +955,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'HPCR Fuel System Application',
-        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the three-stage ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) is positioned after SYNTEPORE™ (primary >10 µm particle removal) and before TURBOCORE™ (final <4 µm stage). Together, these achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
+        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) operates in sequence with SYNTEPORE™ (primary particle removal) to achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
       },
       {
         heading: 'Relationship to Fuel Water Standards',
@@ -968,7 +968,7 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
   },
   {
     slug: 'din-71220',
@@ -1045,7 +1045,7 @@ export const KC_SYSTEMS = [
     title: 'Fuel Cleanliness Protection',
     description: 'Removing water and particles from diesel fuel to protect high-pressure common rail injectors. Water above 200 ppm causes injector stiction and micro-pitting.',
     icon: '⛽',
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™', 'DURATECH™', 'MARINECLEAN™'],
+    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'DURATECH™', 'MARINECLEAN™'],
     standards: ['ISO 12937', 'ASTM D6304'],
     challenges: ['Water contamination', 'HPCR injector protection', 'Microbial growth', 'Fuel polishing'],
   },
@@ -1245,7 +1245,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
   {
     slug: 'intekcore',
     name: 'INTEKCORE™',
-    domain: 'Air Intake Housing Systems',
+    domain: 'Air Intake Protection',
     tagline: 'Air intake housing and pre-cleaner system for primary element life extension.',
     engineeringPrinciple: 'INTEKCORE™ provides the system housing around the MACROCORE™ primary element, including pre-cleaner integration, restriction monitoring port, and service access design. Centrifugal pre-cleaners integrated into INTEKCORE™ housings remove 80–95% of dust before it reaches the primary element, extending primary element service life 3–5× in high-dust environments. The integrated restriction indicator port accepts mechanical or electronic restriction indicators for condition-based service scheduling. Housing seals are precision-engineered to eliminate bypass at the housing-to-engine interface.',
     contamination: ['Pre-cleaner stage: coarse particles >50 µm removed by centrifugal separation', 'Housing bypass prevention: zero-leak seal design', 'Restriction monitoring: prevents service-limit exceedance'],
@@ -1276,24 +1276,6 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['cabin-air-protection'],
     relatedIndustries: ['mining', 'construction', 'agriculture', 'oil-gas', 'waste-municipal'],
     worksWith: [],
-  },
-  {
-    slug: 'turbocore',
-    name: 'TURBOCORE™',
-    domain: 'Fuel Cleanliness — HPCR Final Stage',
-    tagline: 'Final-stage sub-4 µm fuel filter for high-pressure common rail injector protection in three-stage fuel systems.',
-    engineeringPrinciple: 'TURBOCORE™ is the final stage in the ELIMFILTERS three-stage fuel protection strategy: after SYNTEPORE™ removes >10 µm primary particulate and HYDROCORE™ separates free water, TURBOCORE™ provides <4 µm final particle removal to achieve HPCR fuel cleanliness at ISO 12/10/8. Operating at rated injection system fuel flow, TURBOCORE™ media is engineered to capture residual fine particles that survive upstream stages — particles in the 2–4 µm range that cause abrasive wear of injector needle seats and solenoid actuator components operating at 1,600–2,500 bar injection pressure.',
-    contamination: ['Hard particles 2–4 µm (injector actuator clearance range)', 'Residual silica fines from primary stage bypass', 'Metallic particles from fuel system wear', 'Carbon particles from fuel degradation'],
-    performanceSpecs: [
-      { label: 'Final stage particle removal', value: '<4 µm absolute' },
-      { label: 'Water separation efficiency', value: '≥96% free water (ISO 16332)' },
-      { label: 'Target fuel cleanliness', value: 'ISO 12/10/8' },
-      { label: 'System position', value: 'Stage 3 — after SYNTEPORE™ + HYDROCORE™' },
-    ],
-    standards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
-    relatedSystems: ['fuel-cleanliness-protection'],
-    relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'power-generation'],
-    worksWith: ['SYNTEPORE™', 'HYDROCORE™'],
   },
   {
     slug: 'duratech',

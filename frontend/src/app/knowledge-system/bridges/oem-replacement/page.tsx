@@ -578,10 +578,11 @@ export default function OEMReplacementPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/bridges/oem-replacement',
         headline: 'OEM Filter Requirements Strategy',
         description: 'Technical framework for understanding when OEM filters are required, optional, or replaceable—covering warranty compliance, specification matching, and post-warranty optimization using ISO 16889 equivalent aftermarket alternatives.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['OEM filter requirements', 'OEM vs aftermarket', 'ISO 16889', 'filter specification matching', 'warranty compliance', 'contamination control', 'asset protection', 'industrial filtration'],
         about: { '@type': 'Thing', name: 'OEM Filter Requirements Strategy', description: 'Framework for evaluating OEM filter compliance requirements across warranty and post-warranty equipment lifecycle phases.' },

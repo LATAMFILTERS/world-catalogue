@@ -109,9 +109,12 @@ export default function ROICalculatorPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
+    '@id': 'https://elimfilters.com/knowledge-system/fleet/roi-calculator',
     headline: 'Industrial Fleet Filtration ROI Calculator',
     description: 'Calculate return on investment for system-level filtration programs versus commodity filter approaches in industrial fleet operations.',
     author: { '@type': 'Organization', name: 'ELIMFILTERS', '@id': 'https://elimfilters.com/#organization' },
+    publisher: { '@type': 'Organization', name: 'ELIMFILTERS', '@id': 'https://elimfilters.com/#organization' },
+    dateModified: '2026-07-03',
     keywords: ['filtration ROI', 'fleet maintenance cost', 'ISO 16889', 'TCO calculation', 'contamination control economics'],
   };
 

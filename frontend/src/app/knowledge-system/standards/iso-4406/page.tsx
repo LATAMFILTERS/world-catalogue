@@ -230,6 +230,7 @@ export default function ISO4406Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/iso-4406',
         headline: 'ISO 4406 — Fluid Cleanliness Classification Standard',
         description: 'ISO 4406 establishes a particle count classification system for hydraulic and lube oil fluids using a two- or three-number Range Number cleanliness code representing particle concentrations at 4 µm, 6 µm, and 14 µm thresholds. Predecessor to ISO 16889, widely referenced in legacy equipment specifications.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

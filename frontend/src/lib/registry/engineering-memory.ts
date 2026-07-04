@@ -421,24 +421,7 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
     edrRef: 'EDR-C-005-v1.0',
   },
 
-  {
-    memoryId: 'MEM-2026-07-01-023',
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-TURBOCORE',
-    entityVersion: '1.0.0',
-    archivedDate: '2026-07-01',
-    archivedReason: 'VERSION_SNAPSHOT',
-    snapshot: {
-      id: 'TECH-TURBOCORE',
-      name: 'TURBOCORE',
-      systemDomain: 'Fuel 3-Stage',
-      primaryStandards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
-      engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-004', 'EP-PHS-001', 'EP-PHS-002'],
-      componentClasses: 8,
-      maturity: 3,
-    },
-    edrRef: 'EDR-C-006-v1.0',
-  },
+
 
   {
     memoryId: 'MEM-2026-07-01-024',

@@ -218,13 +218,27 @@ export default function ContaminationHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination',
         headline: 'Contamination & Failure Modes',
         description: 'Root cause analysis of contamination-induced failures in industrial filtration systems, covering particle wear in engines, diesel water contamination, and hydraulic system contamination.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['contamination failure modes', 'particle wear', 'diesel water contamination', 'hydraulic contamination', 'ISO 16889', 'ISO 4406', 'industrial filtration', 'asset protection'],
         about: { '@type': 'Thing', name: 'Industrial Contamination & Failure Modes', description: 'Technical case studies of contamination-induced equipment failures in industrial filtration systems.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination#collection',
+        name: 'Industrial Contamination & Failure Modes',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: CONTAMINATION_TYPES.map((c) => ({
+          '@type': 'WebPage',
+          name: c.title,
+          description: c.description,
+          url: `https://elimfilters.com${c.href}`,
+        })),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

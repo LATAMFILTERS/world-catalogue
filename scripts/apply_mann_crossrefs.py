@@ -80,7 +80,7 @@ def run(input_path: Path, dry_run: bool):
                 continue
 
             batch.append({
-                'mann_sku':  record['sku'],
+                'sku':       record['sku'],
                 'crossrefs': crossrefs,
             })
 

@@ -424,10 +424,11 @@ export default function FuelEfficiencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/fleet/fuel-efficiency',
         headline: 'Filtration and Fuel Efficiency',
         description: 'Fuel consumption in industrial equipment is not a fixed parameter. Contamination of fuel, air, and lubrication systems creates measurable degradation in thermodynamic efficiency that compounds across fleet operating hours.',
-        author: { '@type': 'Organization', name: 'ELIMFILTERS' },
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS' },
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         dateModified: '2026-06-11',
         keywords: ['industrial filtration', 'contamination control', 'fuel efficiency', 'diesel fuel filtration', 'injector wear', 'specific fuel consumption', 'ASTM D975'],
         about: { '@type': 'Thing', name: 'Filtration and Fuel Efficiency', description: 'Contamination in fuel, air intake, and engine oil systems drives measurable specific fuel consumption increases that compound across industrial fleet operating hours.' },

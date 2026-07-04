@@ -261,6 +261,7 @@ export default function CompressedAirSystemsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/compressed-air-systems',
         headline: 'Compressed Air Systems',
         description: 'Compressed air filtration engineering: ISO 8573-1 purity classes, ISO 8573-2 oil aerosol testing, ISO 8573-3 humidity measurement, dew point control, and pneumatic system protection.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

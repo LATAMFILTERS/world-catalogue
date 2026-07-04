@@ -351,6 +351,7 @@ export default function FuelInjectorWearPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/contamination/fuel-injector-wear',
         headline: 'Fuel Injector Wear from Contamination',
         description: 'HPCR injector wear mechanisms from particulate contamination, water emulsification, and lacquer deposit stiction in high-pressure common rail diesel systems operating at 1,600-2,500 bar.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

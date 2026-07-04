@@ -195,6 +195,7 @@ export default function FuelSystemsPage() {
               { title: 'Water Separator Integration', body: 'Free water removal via coalescence or gravity separation prevents water from reaching injectors. Separator bowl drainage intervals depend on storage conditions and climate.' },
               { title: 'Tank Breather Desiccation', body: 'Sealed fuel tanks with desiccant breathers prevent atmospheric moisture ingress during thermal cycling.' },
               { title: 'Microbial Prevention Strategy', body: 'Keeping water content below 300 ppm prevents bacterial and fungal colony establishment in fuel tanks.' },
+              { title: 'Fuel Restriction and Injection Pump Sensitivity', body: 'Rising fuel filter differential pressure (ΔP) restricts flow to the injection pump, which in HPCR systems can induce cavitation at the pump inlet as it works to maintain rail pressure against increasing suction restriction. Fuel systems should be monitored for ΔP trend, not just absolute restriction, since a rapid ΔP rise indicates active plugging (water, microbial growth, or gum formation) rather than normal gradual loading.' },
             ].map((item) => (
               <div key={item.title} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem' }}>
                 <p style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: '0.95rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>{item.title}</p>
@@ -243,6 +244,7 @@ export default function FuelSystemsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/fuel-systems',
         headline: 'Fuel Filtration Systems',
         description: 'Fuel filtration engineering: ASTM D6304 water content testing, ISO 12937 Karl Fischer method, Common Rail injection protection, and diesel contamination control standards.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },

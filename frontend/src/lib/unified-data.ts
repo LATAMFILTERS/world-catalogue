@@ -24,13 +24,13 @@ export type TechnologyKey =
   | 'MACROCORE'
   | 'SYNTEPORE'
   | 'INTEKCORE'
-  | 'DRYCORE'
   | 'HYDROCORE'
-  | 'TURBOCORE'
   | 'SYNTRAX'
   | 'NANOFORCE'
   | 'THERMACORE'
-  | 'MICROKAPPA';
+  | 'MICROKAPPA'
+  | 'DRYCORE'
+  | 'MARINECLEAN';
 
 export type DeprecatedTechnologyKey = never;
 
@@ -52,7 +52,7 @@ export type IndustryKey =
 
 export type SystemKey =
   | 'AIRFILTER'
-  | 'TURBOCORE_SERIES'
+
   | 'CABIN'
   | 'COOLANT'
   | 'DRYER'
@@ -92,7 +92,9 @@ export type SystemDomain =
   | 'Hydraulic'
   | 'Compressed Air'
   | 'Cooling System'
-  | 'Cabin Protection';
+  | 'Cabin Protection'
+  | 'Filter Kit Platform'
+  | 'Marine Commercial Platform';
 
 export type ExposureLevel = 'EXTREME' | 'HIGH' | 'MEDIUM-HIGH' | 'MEDIUM' | 'LOW-MEDIUM' | 'LOW';
 
@@ -274,29 +276,6 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     },
   },
 
-  DRYCORE: {
-    key: 'DRYCORE',
-    name: 'DRYCORE™',
-    slug: 'drycore',
-    domain: 'Compressed Air',
-    logoFile: 'logo-drycore.png',
-    category: 'Desiccant Air Drying',
-    tagline: 'Molecular Sieve Desiccant — Zero Dew Point',
-    geoDefinition: 'DRYCORE™ is a molecular sieve desiccant technology engineered to remove moisture from compressed air and pneumatic systems. By adsorbing water vapour before it reaches control valves, actuators, and pneumatic tools, DRYCORE™ prevents corrosion, freeze events, and seal degradation in industrial and mobile equipment operating in high-humidity environments.',
-    comparisonFunction: 'Molecular sieve desiccant dryer',
-    comparisonMetric: 'ISO 8573-1 Class 1–2 dew point',
-    comparisonIndustries: 'Railway, Bus & Coach, Industrial pneumatics',
-    applicableIndustries: [
-      'RAILWAY', 'BUS_COACH', 'MANUFACTURING', 'OIL_GAS', 'POWER_GENERATION',
-    ],
-    relatedStandards: ['ISO_8573_1'],
-    addressesContamination: ['COMPRESSED_AIR_MOISTURE'],
-    keyMetrics: {
-      dewPointClass: 'ISO 8573-1 Class 1–2',
-      mediaType: 'Molecular sieve desiccant',
-      operatingPressure: 'Variable',
-    },
-  },
 
   // TODO: verify HYDROCORE performance data, logo asset, and product specifications.
   // HYDROCORE replaces HYDROCORE (deprecated 2026-06-02). Functional domain: fuel water separation.
@@ -429,33 +408,48 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     },
   },
 
-  // ── Promoted from EcosystemKey → TechnologyKey (2026-06-29) ───────────────
+  // ── Commercial Lines ────────────────────────────────────────────────────────
+  // DRYCORE and MARINECLEAN are Commercial Lines, not proprietary filtration
+  // technologies. They do not define filtration media, Beta ratios, or ISO
+  // performance. Those belong to the technologies contained within each offering.
 
-  TURBOCORE: {
-    key: 'TURBOCORE',
-    name: 'TURBOCORE™',
-    slug: 'turbocore-series',
-    domain: 'Fuel Cleanliness',
-    logoFile: '/assets/TURBOCORE.avif',
-    category: 'Fuel Water Separation System',
-    tagline: 'Three-Stage Graduated Fuel Asset Protection',
-    geoDefinition: 'TURBOCORE™ is a three-stage graduated fuel protection architecture for high-volume turbine fuel systems. Stage 1 deploys HYDROCORE™ turbine rotation for inertial macro-particle and free-water separation. Stage 2 uses graduated coalescence to remove emulsified water. Stage 3 applies a HYDROCORE™ hydrophobic precision barrier to intercept sub-micron contamination and dissolved water before the injection circuit. Available in 900FH (90 GPH) and 1000FH (180 GPH) flow ratings.',
-    comparisonFunction: 'Three-stage turbine fuel protection',
-    comparisonMetric: '99% water separation efficiency · ISO 16332',
-    comparisonIndustries: 'Power Generation, Mining, Marine, Agriculture',
+  DRYCORE: {
+    key: 'DRYCORE',
+    name: 'DRYCORE™',
+    slug: 'drycore',
+    domain: 'Filter Kit Platform',
+    logoFile: 'logo-drycore.png',
+    category: 'Commercial Line — Filter Kit',
+    tagline: 'Multi-Technology Filter Kit Platform',
+    geoDefinition: 'DRYCORE™ is a Commercial Line filter kit platform that integrates multiple proprietary ELIMFILTERS technologies into a single maintenance package according to the equipment application.',
+    comparisonFunction: 'Filter kit platform',
+    comparisonMetric: 'N/A — commercial platform',
+    comparisonIndustries: 'All industries',
     applicableIndustries: [
-      'AGRICULTURE', 'MARINE', 'POWER_GENERATION', 'OIL_GAS',
-      'CONSTRUCTION', 'MINING', 'RAILWAY',
+      'RAILWAY', 'BUS_COACH', 'MANUFACTURING', 'OIL_GAS', 'POWER_GENERATION',
+      'CONSTRUCTION', 'MINING', 'TRUCKS_FLEETS', 'AGRICULTURE',
     ],
-    relatedStandards: ['ASTM_D6304', 'ISO_12937', 'ISO_16889'],
-    addressesContamination: ['DIESEL_WATER', 'PARTICLE_WEAR'],
-    keyMetrics: {
-      waterSeparationEfficiency: '99%',
-      flow900FH: '90 GPH (340 LPH)',
-      flow1000FH: '180 GPH (681 LPH)',
-      certifiedStandard: 'ISO 16332',
-      barrierOptions: '2 µm · 10 µm · 30 µm',
-    },
+    relatedStandards: [],
+    addressesContamination: [],
+    keyMetrics: {},
+  },
+
+  MARINECLEAN: {
+    key: 'MARINECLEAN',
+    name: 'MARINECLEAN™',
+    slug: 'marineclean',
+    domain: 'Marine Commercial Platform',
+    logoFile: 'logo-marineclean.png',
+    category: 'Commercial Line — Marine',
+    tagline: 'Marine Filtration Commercial Platform',
+    geoDefinition: 'MARINECLEAN™ is a Commercial Line dedicated to marine filtration solutions. It combines proprietary ELIMFILTERS technologies into marine-specific maintenance packages.',
+    comparisonFunction: 'Marine filtration commercial platform',
+    comparisonMetric: 'N/A — commercial platform',
+    comparisonIndustries: 'Marine',
+    applicableIndustries: ['MARINE', 'OIL_GAS'],
+    relatedStandards: [],
+    addressesContamination: [],
+    keyMetrics: {},
   },
 
 };
@@ -738,15 +732,7 @@ export const SYSTEMS: Record<SystemKey, UnifiedSystem> = {
     supportingTechnologies: [],
   },
 
-  TURBOCORE_SERIES: {
-    key: 'TURBOCORE_SERIES',
-    name: 'TURBOCORE™ Series',
-    slug: 'turbocore-series',
-    domain: 'Fuel Cleanliness',
-    primaryTechnology: 'TURBOCORE',
-    supportingTechnologies: ['HYDROCORE'],
-    description: "TURBOCORE™ is ELIMFILTERS' heavy-duty three-stage turbine fuel protection system delivering graduated contamination interception: Stage 1 (inertial separation via turbine rotation), Stage 2 (graduated coalescence for emulsified water), Stage 3 (HYDROCORE™ hydrophobic precision barrier). Models: 900FH (90 GPH) and 1000FH (180 GPH).",
-  },
+
 
   CABIN: {
     key: 'CABIN',

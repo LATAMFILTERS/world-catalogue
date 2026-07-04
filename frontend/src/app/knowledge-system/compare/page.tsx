@@ -208,6 +208,7 @@ export default function ComparisonHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/compare',
         headline: 'System vs Commodity Thinking',
         description: 'Reframes industrial filtration evaluation from product-based commodity selection to system-level contamination control strategy, covering OEM comparison, filter evaluation frameworks, and total cost of ownership analysis.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
@@ -215,6 +216,19 @@ export default function ComparisonHubPage() {
         dateModified: '2026-06-11',
         keywords: ['system vs commodity filtration', 'OEM filter comparison', 'filter evaluation', 'total cost of ownership', 'contamination control', 'ISO 16889', 'asset protection', 'industrial filtration'],
         about: { '@type': 'Thing', name: 'System vs Commodity Filtration Thinking', description: 'Framework for evaluating industrial filtration decisions based on contamination control system performance rather than product price or brand.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/compare#collection',
+        name: 'System vs Commodity Filtration Thinking',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: FRAMEWORK_SECTIONS.map((f) => ({
+          '@type': 'WebPage',
+          name: f.title,
+          description: f.description,
+          url: `https://elimfilters.com${f.href}`,
+        })),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

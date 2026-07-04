@@ -55,7 +55,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md",
+  "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md",
   "_links": {
     "self": "/api/citation/WASTE_MUNICIPAL.json",
     "type_index": "/api/citation/type/industry.json",

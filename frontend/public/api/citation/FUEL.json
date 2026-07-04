@@ -28,7 +28,7 @@
       "ISO_12937"
     ]
   },
-  "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md",
+  "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\FUEL.md",
   "_links": {
     "self": "/api/citation/FUEL.json",
     "type_index": "/api/citation/type/protection-domain.json",

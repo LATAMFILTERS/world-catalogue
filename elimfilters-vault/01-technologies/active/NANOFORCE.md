@@ -49,7 +49,7 @@ The technology is deployed as a kidney-loop or bypass filtration circuit operati
 ## Relationships
 
 ### Related Standards
-- [[ISO_4406|ISO 4406 — Three-number fluid cleanliness code; NANOFORCE targets 15/13/10 (improvement over full-flow 16/14/11 baseline) by removing sub-micron particle counts at ≥4 µm, ≥6 µm, ≥14 µm per 100 mL]]
+- [[ISO_4406|ISO 4406 — Three-number fluid cleanliness code; NANOFORCE targets 15/13/10 (improvement over full-flow 16/14/11 baseline) by removing sub-micron particle counts at ≥4 µm, ≥6 µm, ≥14 µm per 1 mL]]
 - [[ISO_16889|ISO 16889 — Multi-pass filter Beta ratio test; NANOFORCE rated at Beta(x[c]) ≥ 1000 at 5 µm absolute under ISO 16889 test conditions]]
 
 ### Contamination Addressed

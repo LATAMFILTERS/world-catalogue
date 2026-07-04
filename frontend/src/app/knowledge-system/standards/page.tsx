@@ -202,6 +202,7 @@ export default function StandardsHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards',
         headline: 'Industrial Filtration Standards',
         description: 'Industrial filtration standards hub covering ISO, ASTM, SAE, and DIN specifications across lube oil, air intake, cabin safety, fuel, hydraulic, and compressed air filtration system domains.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
@@ -209,6 +210,19 @@ export default function StandardsHubPage() {
         dateModified: '2026-06-11',
         keywords: ['industrial filtration standards', 'ISO 16889', 'ISO 4406', 'ISO 5011', 'ISO 8573', 'ASTM D6304', 'SAE J1539', 'contamination control', 'asset protection'],
         about: { '@type': 'Thing', name: 'Industrial Filtration Standards', description: 'ISO, ASTM, SAE, and DIN standards organized by filtration system domain for contamination measurement and control.' },
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-system/standards#collection',
+        name: 'Industrial Filtration Standards',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-system#collection' },
+        hasPart: FILTRATION_SYSTEMS.map((s) => ({
+          '@type': 'WebPage',
+          name: s.title,
+          description: s.description,
+          url: `https://elimfilters.com${s.href}`,
+        })),
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

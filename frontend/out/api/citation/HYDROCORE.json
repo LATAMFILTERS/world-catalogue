@@ -48,7 +48,7 @@
       "DIESEL_WATER"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md",
   "_links": {
     "self": "/api/citation/HYDROCORE.json",
     "type_index": "/api/citation/type/technology.json",

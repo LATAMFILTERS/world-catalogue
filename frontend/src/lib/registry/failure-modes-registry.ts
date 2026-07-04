@@ -94,7 +94,7 @@ export const FAILURE_MODES_REGISTRY: Record<string, FailureModeRecord> = {
     industrialImpact:
       'Full injector set replacement (6-cylinder): USD 2,400–12,000 per event. Off-service: 2–5 days. Fleets with recurring fuel water contamination report 15–25% of unscheduled maintenance events attributable to injection system water damage.',
     relevantStandardRefs: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    controlledByTechnologyIds: ['TECH-HYDROCORE', 'TECH-TURBOCORE'],
+    controlledByTechnologyIds: ['TECH-HYDROCORE'],
     contaminationTypeId: 'CONT-WATER-FUEL',
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',

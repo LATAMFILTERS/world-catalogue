@@ -1,7 +1,7 @@
 # ELIMFILTERS® Vault Index
 
 Manually maintained. Update this file whenever a note is added or removed.
-Last updated: 2026-07-02 (amended)
+Last updated: 2026-07-03 (DD-2026-07-03-006)
 
 ---
 
@@ -138,17 +138,18 @@ CUSTOMER
 
 ### Active (9 total — 1 created)
 
-| Key | Name | Domain | Status |
-|-----|------|--------|--------|
-| [[MACROCORE]] | MACROCORE™ | Air Intake | ✅ Created |
-| SYNTEPORE | SYNTEPORE™ | Air Intake | ⬜ Pending |
-| INTEKCORE | INTEKCORE™ | Air Intake | ⬜ Pending |
-| DRYCORE | DRYCORE™ | Compressed Air | ⬜ Pending |
-| HYDROCORE | HYDROCORE™ | Fuel Cleanliness | ⬜ Pending |
-| SYNTRAX | SYNTRAX™ | Lubrication | ⬜ Pending |
-| NANOFORCE | NANOFORCE™ | Hydraulic | ⬜ Pending |
-| THERMACORE | THERMACORE™ | Cooling System | ⬜ Pending |
-| MICROKAPPA | MICROKAPPA™ | Cabin Protection | ⬜ Pending |
+| Key | Name | Protection System | Lifecycle State |
+|-----|------|-------------------|-----------------|
+| [[MACROCORE]] | MACROCORE™ | Air Intake Protection | PUBLIC |
+| [[SYNTEPORE]] | SYNTEPORE™ | Fuel Cleanliness Protection | PUBLIC |
+| [[INTEKCORE]] | INTEKCORE™ | Air Intake Protection | PUBLIC |
+| DRYCORE | DRYCORE™ | Compressed Air | Decision Pending |
+| HYDROCORE | HYDROCORE™ | Fuel Cleanliness Protection | VALIDATED |
+| [[SYNTRAX]] | SYNTRAX™ | Lubrication Protection | PUBLIC |
+| [[NANOFORCE]] | NANOFORCE™ | Hydraulic Protection | PUBLIC |
+| THERMACORE | THERMACORE™ | Cooling System Protection | PUBLIC PREVIEW |
+| MICROKAPPA | MICROKAPPA™ | Cabin Air Protection | CONCEPT |
+| TURBOCORE | TURBOCORE™ | Fuel Cleanliness Protection | INTERNAL DEVELOPMENT |
 
 ### Deprecated (0 of 2 created)
 
@@ -157,12 +158,12 @@ CUSTOMER
 | (retired) | HYDROCORE | — erased 2026-06-10 |
 | (retired) | THERMACORE | — erased 2026-06-10 |
 
-### Ecosystems (0 of 2 created)
+### Commercial Lines
 
 | Key | Type | Status |
 |-----|------|--------|
-| MARINECLEAN | Marine certification | ⬜ Pending |
-| DURATECH | Durability program | ⬜ Pending |
+| MARINECLEAN | Commercial Line | PUBLIC |
+| DURATECH | Commercial Line | PUBLIC |
 
 ---
 

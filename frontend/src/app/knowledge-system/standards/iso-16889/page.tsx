@@ -230,6 +230,7 @@ export default function ISO16889Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
+        '@id': 'https://elimfilters.com/knowledge-system/standards/iso-16889',
         headline: 'ISO 16889 — Multi-Pass Filter Performance Testing Standard',
         description: 'ISO 16889 specifies the multi-pass method for evaluating filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic fluid power filter elements. Beta ratio quantifies filter efficiency at specific particle sizes, enabling system designers to specify target cleanliness codes for critical components.',
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
