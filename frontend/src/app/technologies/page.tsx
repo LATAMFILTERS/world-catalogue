@@ -151,12 +151,10 @@ export default function TechnologiesPage() {
       '@type': 'ListItem',
       position: i + 1,
       item: {
-        '@type': 'Product',
+        '@type': 'WebPage',
         name: tech.title,
-        brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
         description: GEO_DEFINITIONS[slug] || tech.description,
         url: `https://elimfilters.com/technologies/${slug}`,
-        manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
       },
     };
   });

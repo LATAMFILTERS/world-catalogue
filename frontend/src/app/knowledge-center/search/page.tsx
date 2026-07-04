@@ -4,9 +4,10 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES } from '@/lib/knowledge-center-data';
+import { PROBLEM_STUBS, PROBLEM_CATEGORY_LABELS, getPublishedTerms, termIdToSlug } from '@/lib/knowledge-center';
 
 type ResultItem = {
-  type: 'article' | 'standard' | 'system' | 'industry';
+  type: 'article' | 'standard' | 'system' | 'industry' | 'problem' | 'term';
   title: string;
   subtitle: string;
   href: string;
@@ -42,6 +43,20 @@ const ALL_RESULTS: ResultItem[] = [
     href: `/knowledge-center/industries`,
     tags: [ind.title, ind.dust],
   })),
+  ...PROBLEM_STUBS.map((p) => ({
+    type: 'problem' as const,
+    title: p.name,
+    subtitle: `${PROBLEM_CATEGORY_LABELS[p.category]} — ${p.severity} severity`,
+    href: `/knowledge-center/problems/${p.slug}`,
+    tags: [p.category, p.severity, p.id, 'contamination', 'failure', 'wear'],
+  })),
+  ...getPublishedTerms().map((t) => ({
+    type: 'term' as const,
+    title: t.term,
+    subtitle: t.definition.slice(0, 120) + '…',
+    href: `/knowledge-center/glossary/${termIdToSlug(t.id)}`,
+    tags: [...t.aliases, ...t.applicableStandards, t.id],
+  })),
 ];
 
 const TYPE_LABELS: Record<string, string> = {
@@ -49,6 +64,8 @@ const TYPE_LABELS: Record<string, string> = {
   standard: 'STANDARD',
   system: 'SYSTEM',
   industry: 'INDUSTRY',
+  problem: 'PROBLEM',
+  term: 'GLOSSARY',
 };
 
 const QUICK_SEARCHES = [

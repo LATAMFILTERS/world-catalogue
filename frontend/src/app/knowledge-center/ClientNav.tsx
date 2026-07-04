@@ -8,8 +8,10 @@ const NAV = [
   { href: '/knowledge-center/engineering', label: 'Engineering' },
   { href: '/knowledge-center/standards', label: 'Standards' },
   { href: '/knowledge-center/systems', label: 'Systems' },
+  { href: '/knowledge-center/problems', label: 'Problems' },
   { href: '/knowledge-center/industries', label: 'Industries' },
   { href: '/knowledge-center/technologies', label: 'Technologies' },
+  { href: '/knowledge-center/glossary', label: 'Glossary' },
   { href: '/knowledge-center/technical-library', label: 'Library' },
   { href: '/knowledge-center/engineering-reference', label: 'Reference' },
 ];
