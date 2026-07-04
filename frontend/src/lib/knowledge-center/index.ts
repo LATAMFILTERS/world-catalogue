@@ -52,3 +52,17 @@ export type {
 } from './problem-types';
 
 export { CANONICAL_PROBLEM_IDS } from './problem-types';
+
+// Article Registry (KC-00 routing and section definitions)
+export type { KCSectionKey, KCSectionDefinition, ProblemStub } from './article-registry';
+
+export {
+  KC_SECTION_DEFINITIONS,
+  PROBLEM_STUBS,
+  PROBLEM_STUBS_BY_SLUG,
+  PROBLEM_CATEGORY_LABELS,
+  PROBLEM_SEVERITY_COLORS,
+  buildRoute,
+  termIdToSlug,
+  slugToTermId,
+} from './article-registry';
