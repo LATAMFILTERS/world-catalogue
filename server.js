@@ -1,11 +1,11 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const express = require('express');
 const { Client, Pool } = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 
-// ─── Rate Limiters ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Rate Limiters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const searchLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 60,
@@ -28,7 +28,7 @@ const importLimiter = rateLimit({
   legacyHeaders: false,
   message: { error: 'Too many import requests.' },
 });
-// ─── Admin key middleware ─────────────────────────────────────────────────────
+// â”€â”€â”€ Admin key middleware â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const ADMIN_KEY = process.env.ADMIN_KEY;
 if (!ADMIN_KEY) throw new Error('ADMIN_KEY environment variable is required');
 
@@ -50,7 +50,7 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 const app = express();
 app.set('trust proxy', 1);
 
-// ─── HTTPS enforcement + security headers (production only) ────────────────────────────────────────
+// â”€â”€â”€ HTTPS enforcement + security headers (production only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
     return res.redirect(301, 'https://' + req.get('host') + req.originalUrl);
@@ -63,7 +63,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Healthcheck FIRST — must respond before anything else can fail
+// Healthcheck FIRST â€” must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
 
@@ -142,8 +142,8 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
   }
   const safeName    = _escHtml(name);
   const safeEmail   = _escHtml(email);
-  const safePhone   = _escHtml(phone || '—');
-  const safeCompany = _escHtml(company || '—');
+  const safePhone   = _escHtml(phone || 'â€”');
+  const safeCompany = _escHtml(company || 'â€”');
   const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
   try {
     const transporter = nodemailer.createTransport({
@@ -159,7 +159,7 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'info@elimfilters.com',
       replyTo: safeEmail,
-      subject: `[Web Contact] ${safeName} — ${safeCompany}`,
+      subject: `[Web Contact] ${safeName} â€” ${safeCompany}`,
       html: `
         <h2 style="color:#000">New contact from elimfilters.com</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%">
@@ -214,21 +214,21 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'distribution_network@elimfilters.com',
       replyTo: esc(email),
-      subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
+      subject: `[Distributor] ${esc(companyName)} â€” ${esc(country)}`,
       html: `
-        <h2 style="color:#000">New distributor application — elimfilters.com</h2>
+        <h2 style="color:#000">New distributor application â€” elimfilters.com</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
           <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
-          <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
+          <tr><td><b>Legal name</b></td><td>${esc(legalName || 'â€”')}</td></tr>
           <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
           <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || 'â€”')}</td></tr>
           <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
-          <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
-          <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || 'â€”')}</td></tr>
+          <tr><td><b>Employees</b></td><td>${esc(employees || 'â€”')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || 'â€”')}</td></tr>
+          <tr><td><b>Current products</b></td><td>${esc(currentProducts || 'â€”')}</td></tr>
+          <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || 'â€”')}</td></tr>
         </table>
         ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
       `,
@@ -240,31 +240,31 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── Chat API (Groq / Llama-3.3-70b) ────────────────────────────────────────
-const _chatSessions = new Map(); // sessionId → { count, lastActivity }
+// â”€â”€â”€ Chat API (Groq / Llama-3.3-70b) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+const _chatSessions = new Map(); // sessionId â†’ { count, lastActivity }
 const CHAT_LIMIT = 5;
-const CHAT_SYSTEM_PROMPT = `You are the ELIMFILTERS Asset Protection Assistant — a knowledgeable, warm, and consultative expert in industrial filtration. Your role is to guide every user to the right solution through conversation, regardless of their technical background.
+const CHAT_SYSTEM_PROMPT = `You are the ELIMFILTERS Asset Protection Assistant â€” a knowledgeable, warm, and consultative expert in industrial filtration. Your role is to guide every user to the right solution through conversation, regardless of their technical background.
 
 ## Conversation approach
 
 **For non-technical users or vague questions:**
-Guide them step by step with short, friendly questions — one at a time. Never overwhelm. Discover:
+Guide them step by step with short, friendly questions â€” one at a time. Never overwhelm. Discover:
 1. What type of equipment or machinery they use (truck, excavator, agricultural tractor, compressor, hydraulic press, etc.)
 2. What problem or concern they have (excessive wear, filter clogging, contamination, high downtime, oil looking dirty, etc.)
 3. Which system is affected (engine, hydraulic circuit, fuel system, cabin, compressed air)
-Then connect their problem to the right ELIMFILTERS solution: contamination source → protection technology → product line.
+Then connect their problem to the right ELIMFILTERS solution: contamination source â†’ protection technology â†’ product line.
 
 **For technical users** (they use terms like ISO, Beta ratio, micron, cleanliness code, ppm, etc.):
 Answer directly, precisely, and cordially. Use the full technical depth they expect. Reference ISO codes, Beta ratios, micron ratings, and quantified operational impacts.
 
 **In both cases:**
-- Be human, warm, and conversational — never robotic or like a product catalog
-- Keep responses concise (2–3 short paragraphs or a brief guided question)
+- Be human, warm, and conversational â€” never robotic or like a product catalog
+- Keep responses concise (2â€“3 short paragraphs or a brief guided question)
 - Never list all capabilities unprompted
 - No marketing language ("best", "leading", "superior", "premium")
 - Respond in the same language as the user
 - **Never improvise or invent information.** Only answer what you know with certainty from your knowledge base.
-- **When uncertain, information is missing, or the question exceeds your knowledge:** do not guess. Acknowledge the limit honestly and refer the user to the ELIMFILTERS engineering team: "For this specific question, I recommend contacting our technical team directly at support@elimfilters.com — they can give you a precise answer for your application."
+- **When uncertain, information is missing, or the question exceeds your knowledge:** do not guess. Acknowledge the limit honestly and refer the user to the ELIMFILTERS engineering team: "For this specific question, I recommend contacting our technical team directly at support@elimfilters.com â€” they can give you a precise answer for your application."
 
 ## Technical knowledge base
 
@@ -277,22 +277,22 @@ Filtration domains and key standards:
 - Compressed air: ISO 8573-1 (purity classes: particles, water, oil)
 
 ELIMFILTERS technologies by domain:
-- MACROCORE → air intake (ISO 5011 certified)
-- SYNTRAX → engine lube oil (ISO 16889)
-- NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
-- SYNTEPORE → fuel / HPCR injectors (ASTM D6304)
-- HYDROCORE → fuel water separation (ASTM D6304)
-- TURBOCORE → fuel 3-stage filtration (ISO 16332)
-- MICROKAPPA → cabin air (ISO 11155, DIN 71220)
-- DRYCORE → compressed air / pneumatic (ISO 8573)
-- THERMACORE → cooling system SCA additive
-- DURATECH → fleet maintenance master kits
+- MACROCORE â†’ air intake (ISO 5011 certified)
+- SYNTRAX â†’ engine lube oil (ISO 16889)
+- NANOFORCE â†’ hydraulic systems (ISO 16889, sub-micron)
+- SYNTEPORE â†’ fuel / HPCR injectors (ASTM D6304)
+- HYDROCORE â†’ fuel water separation (ASTM D6304)
+- TURBOCORE â†’ fuel 3-stage filtration (ISO 16332)
+- MICROKAPPA â†’ cabin air (ISO 11155, DIN 71220)
+- DRYCORE â†’ compressed air / pneumatic (ISO 8573)
+- THERMACORE â†’ cooling system SCA additive
+- DURATECH â†’ fleet maintenance master kits
 
-Failure chains (root cause → consequence):
-- Particles in oil → abrasive wear → bearing clearance reduction → seizure
-- Water in diesel → injector stiction → HPCR pump failure
-- Dirty hydraulic fluid → valve spool wear → control loss → unplanned downtime
-- Unfiltered cabin air → operator PM10 exposure → health / regulatory risk`;
+Failure chains (root cause â†’ consequence):
+- Particles in oil â†’ abrasive wear â†’ bearing clearance reduction â†’ seizure
+- Water in diesel â†’ injector stiction â†’ HPCR pump failure
+- Dirty hydraulic fluid â†’ valve spool wear â†’ control loss â†’ unplanned downtime
+- Unfiltered cabin air â†’ operator PM10 exposure â†’ health / regulatory risk`;
 
 
 // Cleanup sessions older than 24 h (run every hour)
@@ -356,9 +356,9 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     return res.status(500).json({ error: 'Internal error' });
   }
 });
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-// Middleware para encoding UTF-8 — solo rutas API, no archivos estáticos ni webhook
+// Middleware para encoding UTF-8 â€” solo rutas API, no archivos estÃ¡ticos ni webhook
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -380,7 +380,7 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
-// ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
+// â”€â”€â”€ Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let _redis = null;
 if (process.env.REDIS_URL) {
   const Redis = require('ioredis');
@@ -392,7 +392,7 @@ if (process.env.REDIS_URL) {
   });
   _redis.on('error', (e) => console.error('[redis]', e.message));
   _redis.connect().then(() => console.log('[cache] Redis connected')).catch(() => {
-    console.warn('[cache] Redis unavailable — falling back to in-memory cache');
+    console.warn('[cache] Redis unavailable â€” falling back to in-memory cache');
     _redis = null;
   });
 }
@@ -430,7 +430,7 @@ async function cacheSet(key, val, ttlMs) {
   _memCache.set(key, { val, exp: Date.now() + ttlMs });
 }
 
-// Filter brands (competitors) — everything else is an OEM equipment manufacturer
+// Filter brands (competitors) â€” everything else is an OEM equipment manufacturer
 const COMPETITOR_BRANDS = new Set([
   'DONALDSON','BALDWIN','FLEETGUARD','MANN','MANN+HUMMEL','MANN-HUMMEL',
   'WIX','FRAM','PUROLATOR','NAPA','AC DELCO','ACDELCO','BOSCH','MAHLE',
@@ -493,13 +493,13 @@ function parseRefs(arr){
     .filter(r=>!INVALID.has(r.manufacturer.toUpperCase()))
     .filter(r=>{
         const k=(r.manufacturer+'|'+r.code).toUpperCase();
-        if(seen.has(k)) return False;
+        if(seen.has(k)) return false;
         seen.add(k);
         return true;
     });
 }
 
-// ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
+// â”€â”€ Shared: resolve alternatives[] P-codes â†’ ELIMFILTERS SKUs + inherit data â”€â”€
 // Called from every search endpoint so all modes (part / VIN / equipment) benefit.
 // alternatives[] is stored as codigo_base values ("P552100"). This function resolves
 // them to EL-SKUs in one batch query and inherits equipment_applications /
@@ -573,13 +573,13 @@ function detectLang(req) {
 }
 
 const PROPRIETARY_SUBTYPES = new Set([
-  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
-  'alpha-web™', 'alpha-web', 'synteq xp™',
+  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquablocÂ® ii', 'aquabloc ii',
+  'alpha-webâ„¢', 'alpha-web', 'synteq xpâ„¢',
 ]);
 function safeSubtype(val, lang = 'en') {
   const text = extractText(val, lang);
   if (!text) return null;
-  if (/[®™]/.test(text)) return null;
+  if (/[Â®â„¢]/.test(text)) return null;
   if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
   return text;
 }
@@ -590,7 +590,7 @@ function extractText(val, lang = 'en') {
   if (typeof val === 'object' && !Array.isArray(val)) {
     return val[lang] || val.en || val.es || Object.values(val)[0] || null;
   }
-  // String – may be raw text OR a JSON-encoded object
+  // String â€“ may be raw text OR a JSON-encoded object
   if (typeof val === 'string') {
     const trimmed = val.trim();
     if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
@@ -624,20 +624,20 @@ const TECH_LOGO_MAP = {
 
 function getTechLogo(tech) {
   if (!tech) return null;
-  const key = tech.toLowerCase().replace(/[™®\s™]/g, '').trim();
+  const key = tech.toLowerCase().replace(/[â„¢Â®\sâ„¢]/g, '').trim();
   const mapped = TECH_LOGO_MAP[key];
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
 
 // Canonical technology name corrections (DB may have older/misspelled variants)
-const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
+const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPOREâ„¢': 'SYNTEPOREâ„¢' };
 
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
 
   // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
   if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
-    subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
+    subtype = lang === 'es' ? 'HÃ­brida' : 'Genuine Media';
   }
 
   // Re-classify on every response: after the consolidation migration oem_codes
@@ -648,7 +648,7 @@ function buildFilterData(row, lang = 'en'){
 
   return {
     elimfilters_sku: row.sku,
-    description: row.description || null,
+    description: extractText(row.description, lang),
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: subtype,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
@@ -673,7 +673,7 @@ function buildFilterData(row, lang = 'en'){
   };
 }
 
-// Duplicate status route removed — the authoritative one is at top of file (v3.8.0)
+// Duplicate status route removed â€” the authoritative one is at top of file (v3.8.0)
 
 
 
@@ -682,7 +682,7 @@ function buildFilterData(row, lang = 'en'){
 
 
 
-// POST /api/kits — create a kit from filter SKUs + equipment name
+// POST /api/kits â€” create a kit from filter SKUs + equipment name
 app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
   const { name, equipment_ref, filter_skus } = req.body;
   if (!name || !Array.isArray(filter_skus) || filter_skus.length === 0)
@@ -735,7 +735,7 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// GET /api/kits/:kit_sku — full kit details with all component filters
+// GET /api/kits/:kit_sku â€” full kit details with all component filters
 app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   const kit_sku = req.params.kit_sku.trim().toUpperCase();
   const lang = detectLang(req);
@@ -775,7 +775,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
   }
 });
 
-// GET /api/filters/kits?sku=XXX — which kits contain this filter
+// GET /api/filters/kits?sku=XXX â€” which kits contain this filter
 app.get('/api/filters/kits', searchLimiter, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({ success: false, kits: [] });
@@ -843,7 +843,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
 });
 
 
-// ─── GET /api/search ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || req.query.sku || '').trim();
   if (!raw) return res.json({ success: false, results: [] });
@@ -947,7 +947,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/vin ───────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search/vin â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/search/vin', searchLimiter, async (req, res) => {
   const vin = (req.query.vin || '').trim().toUpperCase();
   if (!vin || vin.length !== 17) return res.status(400).json({ success: false, error: 'Invalid VIN (must be 17 chars)' });
@@ -980,7 +980,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/equipment ─────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/search/equipment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   const { make, model, year, engine } = req.query;
   if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
@@ -1049,7 +1049,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/debug/sku-codes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.status(400).json({ error: 'sku required' });
@@ -1085,7 +1085,7 @@ app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/debug/suspects-equipment ─────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/debug/suspects-equipment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/debug/suspects-equipment', searchLimiter, async (req, res) => {
   const ADMIN_KEY_LOCAL = process.env.ADMIN_KEY;
   const authHeader = req.get('authorization') || '';
@@ -1130,7 +1130,7 @@ app.get('/api/debug/suspects-equipment', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── POST /api/import/donaldson ─────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/import/donaldson â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const FILTER_TYPE_CANONICAL = {
   'Air Filter':                'air',
   'Air Filter Housing':        'air',
@@ -1189,7 +1189,7 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
       try {
         const existing = await client.query('SELECT sku FROM elimfilters_catalog WHERE sku = $1', [sku]);
         if (existing.rows.length > 0) {
-          // UPDATE — merge JSONB arrays (competitor_codes, oem_codes, equipment_applications)
+          // UPDATE â€” merge JSONB arrays (competitor_codes, oem_codes, equipment_applications)
           await client.query(`
             UPDATE elimfilters_catalog SET
               codigo_base = COALESCE($2, codigo_base),
@@ -1324,7 +1324,7 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/import/mann ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/import/mann â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const MANN_SKU_PREFIXES = {
   'Oil Filter':    'EL3',
   'Air Filter':    'EA3',
@@ -1446,7 +1446,7 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// ─── POST /api/admin/rename-sku ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/rename-sku â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Renames a SKU: copies all data to new_sku, deletes old_sku.
 // Body: { old_sku: "EA200003", new_sku: "EA20003" }
 // Both must match /^[A-Z]{2,3}[0-9]{4}$/ (3-char prefix + 4 digits).
@@ -1512,7 +1512,7 @@ app.post('/api/admin/rename-sku', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/admin/delete-sku ──────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/delete-sku â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Permanently deletes a single SKU from the catalog.
 // Body: { sku: "EA200003" }
 app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) => {
@@ -1528,7 +1528,7 @@ app.post('/api/admin/delete-sku', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/admin/fix-ld-duty ─────────────────────────────────────────────
+// â”€â”€â”€ POST /api/admin/fix-ld-duty â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Bulk-corrects EL3/EA3/EC3/EF3 records that have wrong duty value.
 app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
@@ -1548,7 +1548,7 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
   }
 });
 
-// ─── POST /api/update/mann-crossrefs ──────────────────────────────────────────
+// â”€â”€â”€ POST /api/update/mann-crossrefs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Bulk-apply competitor cross-reference codes to LD products via Mann part number.
 // Body: { rows: [{ sku: "W940/21", crossrefs: { FRAM: ["PH5316"], WIX: ["51452"] } }] }
 app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, res) => {
@@ -1574,7 +1574,7 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       if (newCodes.length === 0) { skipped++; continue; }
 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
-      // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
+      // Mann W940/21 â†’ digits "94021" â†’ last 4 = "4021" â†’ codigo_base
       const digits = mannSku.replace(/\D/g, '');
       const codigoBase = digits.slice(-4);
       if (!codigoBase || codigoBase.length < 4) { skipped++; continue; }
@@ -1607,7 +1607,7 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── GET /api/admin/lookup-competitor ─────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/lookup-competitor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, res) => {
   const code = (req.query.code || '').trim().toUpperCase();
   if (!code) return res.status(400).json({ error: 'code required' });
@@ -1631,7 +1631,7 @@ app.get('/api/admin/lookup-competitor', adminLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── POST /api/cleanup/fram-hd-force ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/cleanup/fram-hd-force â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Hard SQL-based cleanup: strip ALL FRAM PH/CA/CF/G codes from HD SKUs (EL8, EA1, EC1, EF9).
 // Handles any manufacturer key format (uppercase, lowercase, missing).
 app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, res) => {
@@ -1671,7 +1671,7 @@ app.post('/api/cleanup/fram-hd-force', importLimiter, requireAdmin, async (req, 
   }
 });
 
-// ─── POST /api/cleanup/oem-reclassify ─────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/cleanup/oem-reclassify â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Re-runs the isCompetitor() classification on every row to fix any oem_codes/competitor_codes
 // that were stored in the wrong column.
 app.post('/api/cleanup/oem-reclassify', importLimiter, requireAdmin, async (req, res) => {
@@ -1708,7 +1708,7 @@ app.post('/api/cleanup/oem-reclassify', importLimiter, requireAdmin, async (req,
   }
 });
 
-// ─── GET /api/admin/audit ───────────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/admin/audit â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
@@ -1739,8 +1739,8 @@ app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
-// ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
-// Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
+// â”€â”€â”€ GET /api/admin/malformed-skus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Lists all SKUs that donâ€™t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
@@ -1760,7 +1760,7 @@ app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res
   }
 });
 
-// ─── GET /api/ai/search ─────────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ GET /api/ai/search â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/api/ai/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || '').trim();
   if (!raw) return res.json({ success: false, results: [] });
@@ -1808,7 +1808,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── POST /api/ai/escalate ───────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST /api/ai/escalate â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
   const { session_id, lang, messages } = req.body || {};
   if (!session_id || !Array.isArray(messages) || messages.length === 0) {
@@ -1837,7 +1837,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
     await transporter.sendMail({
       from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
       to: 'info@elimfilters.com',
-      subject: `[Chat Escalation] Session ${safeSessionId} — ${usedLang.toUpperCase()}`,
+      subject: `[Chat Escalation] Session ${safeSessionId} â€” ${usedLang.toUpperCase()}`,
       html: `
         <h2>Chat session escalated to human support</h2>
         <p><b>Session:</b> ${safeSessionId} | <b>Language:</b> ${usedLang}</p>
@@ -1854,6 +1854,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`[server] ✅ Listening on port ${PORT}`);
-  console.log(`[server] ✅ ELIMFILTERS API ready`);
+  console.log(`[server] âœ… Listening on port ${PORT}`);
+  console.log(`[server] âœ… ELIMFILTERS API ready`);
 });
+
