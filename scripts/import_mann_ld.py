@@ -112,6 +112,16 @@ def normalize_filter_type(raw: str, mann_code: str = '') -> str | None:
     return None
 
 
+def flatten_oe_numbers(oe_numbers: dict) -> list:
+    """Convert scraper's {manufacturer: [codes]} dict into
+    [{"manufacturer": mfr, "code": code}, ...] as stored in oem_codes."""
+    out = []
+    for mfr, codes in (oe_numbers or {}).items():
+        for code in codes:
+            out.append({'manufacturer': mfr, 'code': code})
+    return out
+
+
 def parse_dim_mm(val) -> float | None:
     """Extract a float mm value from strings like '118 mm' or '4.65 inch (118 mm)'."""
     if val is None:
@@ -153,7 +163,7 @@ def map_row(record: dict) -> dict | None:
         'mann_part_number': record['sku'],
         'filter_type':     ft_raw,
         'description':     (record.get('description') or '')[:600] or None,
-        'oem_codes':       record.get('oe_numbers') or {},
+        'oem_codes':       flatten_oe_numbers(record.get('oe_numbers')),
         'equipment_applications': fitment,
         'outer_diameter_mm': parse_dim_mm(dims.get('A') or dims.get('OD') or dims.get('Outer Diameter')),
         'height_mm':       parse_dim_mm(dims.get('H') or dims.get('Height')),
