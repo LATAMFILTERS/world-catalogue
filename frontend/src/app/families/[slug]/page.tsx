@@ -61,7 +61,7 @@ export default function FamilyPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'ProductGroup',
     '@id': `${BASE_URL}/families/${fam.slug}#productgroup`,
-    name: `${fam.name} Filters`,
+    name: fam.name,
     description: fam.purpose,
     url: `${BASE_URL}/families/${fam.slug}`,
     brand: {
@@ -82,7 +82,7 @@ export default function FamilyPage({ params }: Props) {
         '@type': 'Product',
         '@id': `${BASE_URL}/families/${fam.slug}#variant-hd`,
         name: `${fam.name} — Heavy Duty (HD)`,
-        description: `Heavy Duty ${fam.name.toLowerCase()} filter series. SKU prefix: ${fam.hdPrefix}.`,
+        description: `Heavy Duty ${fam.name} series. SKU prefix: ${fam.hdPrefix}.`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
@@ -99,7 +99,7 @@ export default function FamilyPage({ params }: Props) {
         '@type': 'Product',
         '@id': `${BASE_URL}/families/${fam.slug}#variant-ld`,
         name: `${fam.name} — Light Duty (LD)`,
-        description: `Light Duty ${fam.name.toLowerCase()} filter series. SKU prefix: ${fam.ldPrefix}.`,
+        description: `Light Duty ${fam.name} series. SKU prefix: ${fam.ldPrefix}.`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
