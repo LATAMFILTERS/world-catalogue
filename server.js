@@ -1359,13 +1359,14 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
       }
 
       // Generate 4-digit codigo_base from last 4 digits of MANN code
+      // (zero-padded on the left when the MANN code has fewer than 4 digits, e.g. C31 -> 0031)
       const digits = mannCode.replace(/[^0-9]/g, '');
-      if (!digits || digits.length < 4) {
-        results.errors.push({ mann: mannCode, error: `cannot extract 4 digits from ${mannCode}` });
+      if (!digits) {
+        results.errors.push({ mann: mannCode, error: `cannot extract digits from ${mannCode}` });
         results.skipped++;
         continue;
       }
-      const codigoBase = digits.slice(-4);
+      const codigoBase = digits.slice(-4).padStart(4, '0');
       const sku = prefix + codigoBase;
 
       // Collision check: if another MANN code already generated this SKU, reject
