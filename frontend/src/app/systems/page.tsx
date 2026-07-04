@@ -39,7 +39,7 @@ export default function SystemsPage() {
       '@type': 'ListItem',
       position: i + 1,
       item: {
-        '@type': 'Product',
+        '@type': 'WebPage',
         name: sys.name,
         url: `${BASE_URL}/systems/${sys.slug}`,
         description: sys.tagline,
