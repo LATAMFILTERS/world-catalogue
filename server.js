@@ -1228,6 +1228,7 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
       const equipment_applications = row.equipment_applications ? JSON.stringify(row.equipment_applications) : '[]';
       const ft = MANN_FILTER_TYPES[filterType] || 'other';
 
+      await client.query('SAVEPOINT row_sp');
       try {
         if (existing.rows.length > 0) {
           // UPDATE: merge arrays
@@ -1274,7 +1275,9 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
           );
           results.inserted++;
         }
+        await client.query('RELEASE SAVEPOINT row_sp');
       } catch (rowErr) {
+        await client.query('ROLLBACK TO SAVEPOINT row_sp');
         results.errors.push({ mann: mannCode, sku, error: rowErr.message });
         results.skipped++;
       }
