@@ -660,6 +660,8 @@
 
 
 
+
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
@@ -824,6 +826,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/compressed-air-dryer-selection</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/compressed-air-purity</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -842,6 +850,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/contamination-sensitivity-components</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/cooling-system-contamination</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -855,6 +869,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/dust-holding-capacity</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/extended-drain-interval-engineering</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -914,6 +934,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/iso-11171-particle-counting</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/iso-16889</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -927,6 +953,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/iso-4406</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/iso-4548-lube-filter-test-methods</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

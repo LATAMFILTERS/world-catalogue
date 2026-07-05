@@ -3274,6 +3274,642 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     },
   },
 
+  // ── Article 26 ────────────────────────────────────────────────────────────
+  {
+    slug: 'iso-4548-lube-filter-test-methods',
+    title: 'ISO 4548 Lubricating Oil Filter Test Methods: Performance Verification for Full-Flow Filters',
+    subtitle: 'ISO 4548 multi-part test series covering end-load, bypass valve, cold-start simulation, burst pressure, vibration fatigue, filtration efficiency, and anti-drainback valve performance for full-flow lube oil filters.',
+    metaDescription: 'Engineering reference for ISO 4548 lubricating oil filter test standard series: end-load (Part 1), bypass valve cracking pressure (Part 2), cold-start simulation (Part 5), static burst (Part 6), vibration fatigue (Part 8), multi-pass filtration efficiency (Part 12), and anti-drainback valve (Part 13) test methods.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'ISO 4548 is the primary international test standard series for full-flow lubricating oil filters used in internal combustion engines. Where ISO 16889 defines filtration efficiency testing for industrial filters using ISO medium test dust, ISO 4548 defines the complete mechanical and filtration performance test battery specifically for engine lube oil spin-on and cartridge filters — covering structural integrity, bypass valve behaviour, cold-start performance, vibration resistance, and filtration efficiency under conditions representative of engine service. Engine filter procurement specifications should reference ISO 4548 parts relevant to the application, not ISO 16889 alone.',
+    sections: [
+      {
+        heading: 'ISO 4548 Series Structure and Scope',
+        body: 'ISO 4548 comprises 13 parts, each addressing a specific performance attribute of full-flow lube oil filters. The most operationally significant parts are: Part 1 (end-load test — axial force resistance); Part 2 (element bypass valve test — cracking pressure and flow characteristics); Part 5 (cold-start simulation — differential pressure at low temperature and high viscosity); Part 6 (static burst pressure — housing pressure containment); Part 7 (fatigue test for filter assemblies — pressure cycling); Part 8 (vibration test — structural integrity under engine vibration); Part 12 (filtration efficiency and dirt holding capacity — multi-pass test); Part 13 (anti-drainback valve test — seal integrity and cracking pressure). Parts 3, 4, and 9–11 address resistance to flow fatigue, high-pressure resistance, uniformity of contamination test, and internal leakage. A complete filter qualification programme references the full set of applicable parts; application-specific parts (e.g. vibration test for engine-mounted filters) are mandatory where relevant.',
+      },
+      {
+        heading: 'Part 1 — End-Load Test',
+        body: 'The end-load test (ISO 4548-1) verifies filter assembly resistance to axial forces applied to the element end-caps and housing. During engine operation, a spin-on filter experiences end-load from: (1) system pressure acting on the closed end of the filter (F = P × A, where A is the closed-end area); (2) thermal cycling causing differential expansion between element and housing; (3) mounting orientation — vertically-mounted filters with full oil column weight. ISO 4548-1 applies a controlled axial load to the filter assembly and measures deflection and permanent set. Failure criteria: element bypass path opening; end-cap separation from media; housing deformation allowing housing-to-element bypass. The test load is typically specified as a multiple of the maximum operating pressure load — ensuring a safety factor above normal service conditions. This test is complementary to ISO 2941 (general filter collapse test) but is specific to the spin-on assembly configuration including thread engagement and housing interaction.',
+        callout: [
+          { label: 'End-load source', value: 'F = System pressure × closed-end area' },
+          { label: 'Failure criteria', value: 'Bypass path opening or end-cap separation' },
+        ],
+      },
+      {
+        heading: 'Part 2 — Element Bypass Valve Test',
+        body: 'ISO 4548-2 defines the test method for bypass valve cracking pressure and flow characteristics. The test measures: (1) cracking pressure — the differential pressure at which the bypass valve first begins to pass fluid; (2) full-open flow — the differential pressure at which the bypass valve passes the rated system flow; (3) re-seating pressure — the differential pressure at which the valve returns to the closed position as flow decreases; (4) leakage at closed condition — any flow through the valve below cracking pressure. Standard cracking pressure range for engine oil bypass valves: 0.7–1.4 bar, depending on engine manufacturer specification. The bypass valve hysteresis (cracking − re-seating pressure) should be minimised — excessive hysteresis means the valve stays open after the cold-start transient passes, routing unfiltered oil for an extended period. ISO 4548-2 requires the test be conducted at the rated fluid viscosity to simulate cold-start conditions where bypass valve activation is most likely.',
+        callout: [
+          { label: 'Cracking pressure (engine)', value: '0.7–1.4 bar (engine manufacturer specification)' },
+          { label: 'Hysteresis concern', value: 'High hysteresis → valve stays open post cold-start' },
+        ],
+      },
+      {
+        heading: 'Part 5 — Cold-Start Simulation Test',
+        body: 'ISO 4548-5 simulates cold-start conditions to verify filter differential pressure behaviour when oil viscosity is at maximum. The test uses a fluid of specified high viscosity at the test temperature to represent engine oil at minimum expected ambient temperature. For SAE 15W-40 at −20°C, viscosity approaches 3,000–5,000 cSt — the filter must either: (a) allow the bypass valve to open at the specified cracking pressure before element collapse; or (b) if no bypass valve, demonstrate that element structural integrity is maintained at the maximum expected cold-start differential pressure. ISO 4548-5 measures: Δp versus flow rate at cold viscosity; bypass valve activation point; time to return to bypass-closed condition as temperature rises. This test identifies filters where the bypass valve cracking pressure is set too high relative to cold-start Δp, allowing element structural damage before bypass activation — a failure mode not detected by room-temperature testing alone.',
+      },
+      {
+        heading: 'Part 6 and Part 7 — Burst and Fatigue Tests',
+        body: 'Part 6 (static burst) pressurises the complete filter assembly to destruction (or to the specified proof pressure), measuring burst pressure and failure mode. For a lube oil filter rated at 10 bar operating pressure, Part 6 typically requires proof at ≥30 bar without leakage. Part 7 (fatigue) cycles the filter between 0 and maximum operating pressure for a defined number of cycles (typically 50,000–100,000 cycles) to simulate long service life under pressure pulsation from the engine oil pump. After the fatigue cycle, the filter is inspected for: media deformation; end-cap bond failure; housing thread wear or fatigue crack; bypass valve seat damage. Fatigue failure mode not detected by static tests: end-cap bond progressive delamination under cyclic Δp — initially a small bypass path that grows cycle-by-cycle. ISO 4548-7 addresses both the element and the assembled housing-element system, since fatigue loading of the housing affects the thread and seating-surface interfaces that an element-only test cannot assess.',
+      },
+      {
+        heading: 'Part 8 — Vibration Test',
+        body: 'Engine-mounted filters experience continuous vibration from engine combustion and drivetrain oscillation. ISO 4548-8 specifies a vibration test that sweeps through a defined frequency range (typically 10–200 Hz) at a defined acceleration (g-level, derived from engine-specific vibration measurements) for a defined duration. Vibration failure modes: (1) fatigue fracture of housing casting at thread root or wall section changes; (2) progressive thread loosening (spin-on elements backing off); (3) resonant vibration of internal element structure causing media fatigue; (4) bypass valve flutter — the valve resonates at engine combustion frequency, causing cyclical bypass events. SAE J806 specifies additional vibration requirements for automotive applications and should be referenced alongside ISO 4548-8 for passenger vehicle and light-duty applications. Vibration test results at development stage inform mounting orientation, damping provisions, and bracket design for production installation.',
+      },
+      {
+        heading: 'Part 12 — Filtration Efficiency and Dirt Holding Capacity',
+        body: 'ISO 4548-12 defines the multi-pass filtration efficiency test for lube oil filters, analogous to ISO 16889 for hydraulic and industrial filters. Key differences from ISO 16889: (1) test fluid — ISO 4548-12 uses engine oil at defined viscosity, not hydraulic test fluid; (2) test dust — ISO medium test dust (ISO 12103-1 A2 Fine) injected at controlled rate; (3) test pressure and flow — set to represent engine lube system operating conditions (typically 3–5 bar at operating viscosity); (4) terminal condition — test ends when Δp reaches a defined multiple of initial clean-element Δp (typically 5×); dirt holding capacity (g) is recorded at terminal condition. Beta ratio calculation is identical to ISO 16889: β_x(c) = upstream count / downstream count at particle size x µm(c). Filter element certification for engine applications should reference ISO 4548-12 compliance, not ISO 16889 alone — different test fluids and conditions produce different absolute efficiency results for the same element.',
+        callout: [
+          { label: 'Test fluid', value: 'Engine oil (ISO 4548-12) vs hydraulic fluid (ISO 16889)' },
+          { label: 'Beta ratio calc', value: 'Identical method: β_x(c) = upstream ÷ downstream' },
+        ],
+      },
+      {
+        heading: 'Part 13 — Anti-Drainback Valve Test',
+        body: 'ISO 4548-13 tests the anti-drainback valve (ADV) function in spin-on filter assemblies. The test verifies: (1) sealing — oil does not drain from an inverted, oil-filled filter assembly through the ADV within a specified time; (2) cracking pressure — the minimum pressure required to open the ADV (must be low enough for oil pump prime pressure at cold start, typically <0.05 bar); (3) flow capacity — ADV does not restrict rated oil flow to the engine at operating conditions. ADV failure in the closed direction (will not open at pump prime pressure) causes oil starvation at cold start until the pump generates enough pressure to open the ADV against the closed-spring load — during this period, bearings run unlubricated. ISO 4548-13 inversion sealing test: fill filter assembly with test fluid; invert 180°; measure fluid loss over 30 minutes. Acceptable leakage: typically ≤10 mL in 30 minutes. An ADV that seals perfectly inverted but opens at 0.02 bar forward pressure is the performance target.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Engine bypass valve cracking range', value: '0.7–1.4 bar (ISO 4548-2)' },
+      { label: 'Cold-start SAE 15W-40 at −20°C', value: '~3,000–5,000 cSt' },
+      { label: 'Static burst safety factor', value: '≥3× rated operating pressure (typical)' },
+      { label: 'Fatigue cycle count', value: '50,000–100,000 pressure cycles (Part 7)' },
+      { label: 'ADV inversion leakage limit', value: '≤10 mL in 30 minutes (Part 13)' },
+    ],
+    relatedStandards: ['ISO 4548', 'ISO 16889', 'ISO 2941', 'ISO 2942', 'ISO 12103-1', 'SAE J806'],
+    relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: [
+      'ISO 4548', 'lube filter test', 'bypass valve test', 'cold start simulation', 'ISO 4548-2',
+      'ISO 4548-5', 'ISO 4548-12', 'anti-drainback valve', 'ISO 4548-13', 'filter burst test',
+      'filter vibration test', 'dirt holding capacity', 'engine oil filter', 'full-flow filter',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Oil pressure warning lamp at cold start — clears after warming (bypass valve or cold-start Δp issue)',
+        'Filter housing cracking or leaking at thread region — structural fatigue',
+        'Filter element found internally collapsed at oil change — cold-start Δp exceeded element limit',
+        'Spin-on filter loosening in service — thread fatigue or vibration-induced back-off',
+        'Oil analysis shows elevated wear metals immediately after cold start — ADV failure',
+      ],
+      probableCauses: [
+        'Cold-start warning lamp: (a) bypass valve cracking pressure too high relative to cold-start Δp (ISO 4548-5 limit exceeded); (b) oil grade viscosity exceeds SAE J300 minimum for ambient temperature; (c) bypass valve stuck closed — bench test per ISO 4548-2',
+        'Housing cracking at thread: fatigue fracture at thread root stress concentration — ISO 4548-8 vibration test not completed or mounting inadequate; housing material defect',
+        'Collapsed element: cold-start Δp exceeded element collapse pressure before bypass valve activated; mismatch between bypass cracking pressure and element structural limit — requires ISO 4548-5 and ISO 2941 review',
+        'Thread loosening: inadequate installation torque for vibration environment; thread form wear from cyclic loading; consider safety wire or torque-locking provisions for high-vibration applications',
+        'Post-cold-start wear metals spike: ADV seal failure — oil column draining to sump between shutdowns; verify with ISO 4548-13 inversion test on removed filter',
+      ],
+      inspectionMethods: [
+        'Bypass valve bench test per ISO 4548-2: connect removed valve to calibrated pressure source and flow measurement; measure cracking and re-seating pressures; compare to specification',
+        'ADV inversion test per ISO 4548-13: fill removed filter with clean oil; invert; measure leakage over 30 minutes; >10 mL indicates ADV seal failure',
+        'Element collapse inspection: cut open removed element; inspect pleats for deformation; measure pleat spacing at top, middle, bottom — uniform spacing indicates no collapse; compressed pleats at centre indicate inward collapse',
+        'Housing thread inspection: remove element; inspect thread with magnifying glass and thread gauge; look for fatigue cracks at thread root, especially on first engaged thread where stress is highest',
+        'Cold-start Δp measurement: install Δp gauge across filter; record Δp during cold start at minimum ambient temperature; compare to bypass cracking pressure and element collapse pressure specification',
+      ],
+      correctiveActions: [
+        'Bypass cracking pressure mismatch: replace bypass valve assembly (where serviceable) with correct cracking pressure for oil grade and cold temperature; do not modify springs without recertification per ISO 4548-2',
+        'Housing fatigue crack: replace housing; investigate mounting — add isolation bracket or damper if housing is rigidly attached to high-vibration surface; review ISO 4548-8 compliance for the filter model',
+        'Thread loosening in service: apply calibrated torque on reinstallation; investigate if mounting surface is flat and undamaged; install anti-rotation clip if housing provides provision; consider cartridge filter conversion for highest-vibration applications',
+        'ADV seal failure confirmed: replace complete spin-on element (ADV is integral to element in most designs); monitor post-startup oil pressure rise time with gauge — should reach rated pressure within 5 seconds of cranking at operating temperature',
+        'Collapsed element: root cause analysis — verify oil grade SAE J300 compliance for minimum ambient; verify bypass valve cracking pressure per ISO 4548-2; ensure element specification includes ISO 4548-5 cold-start compliance',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Engine lube oil filter for heavy-duty diesel in arctic operation (−35°C ambient) — selecting element with correct cold-start performance',
+        standard: 'ISO 4548-5 (cold-start simulation), ISO 4548-2 (bypass valve), SAE J300 (viscosity grade)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Specify element with ISO 4548-5 compliance at test viscosity matching SAE J300 cold-crank viscosity for −35°C ambient (0W grade CCS limit ≤6,200 mPa·s); verify bypass valve cracking pressure 0.7–1.0 bar so it opens before element collapse pressure at cold viscosity; pair with full synthetic SAE 0W-40 to minimise cold-start Δp and ADV opening pressure requirement',
+        relatedArticles: ['lubrication-system-filtration', 'sae-j300-viscosity-classification', 'filter-element-integrity'],
+      },
+      {
+        problem: 'Engine oil filter qualification programme — what ISO 4548 parts are required for a new heavy-duty diesel engine application?',
+        standard: 'ISO 4548 (full series), SAE J806 (automotive vibration)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Mandatory for engine-mounted applications: Parts 2 (bypass valve), 5 (cold-start), 6 (burst), 7 (fatigue), 8 (vibration), 12 (efficiency/DHC), 13 (ADV if spin-on); Part 1 (end-load) for orientation exposing housing to axial load; Part 4 (high pressure) if system peaks above 2× normal operating pressure; provide complete test certificates referencing specific ISO 4548 part numbers and test conditions in filter procurement specification',
+        relatedArticles: ['filter-element-integrity', 'filter-media-engineering', 'oem-engineering'],
+      },
+      {
+        problem: 'Engine oil filter beta ratio certification — supplier provides ISO 16889 certificate but not ISO 4548-12',
+        standard: 'ISO 4548-12 (lube oil efficiency), ISO 16889 (hydraulic filter efficiency)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'ISO 16889 and ISO 4548-12 use the same beta ratio calculation but different test fluids and conditions; an ISO 16889 certificate for a lube oil filter does not demonstrate ISO 4548-12 compliance; request ISO 4548-12 certificate specifically; if supplier cannot provide it, conduct incoming acceptance sampling per ISO 2859-1 with particle count upstream-downstream test at rated engine oil viscosity conditions',
+        relatedArticles: ['filter-media-engineering', 'beta-ratio', 'testing-and-validation'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-STANDARDS (STD-ISO-4548)',
+      evidenceStatus: 'ISO 4548 Parts 1–13 series verified; SAE J806 vibration requirements verified; bypass valve cracking pressure range from ISO 4548-2 and engine OEM specifications; ADV leakage limit from ISO 4548-13 method; cold-start viscosity data from SAE J300',
+    },
+  },
+
+  // ── Article 27 ────────────────────────────────────────────────────────────
+  {
+    slug: 'contamination-sensitivity-components',
+    title: 'Contamination Sensitivity of Hydraulic and Lubrication Components: Clearance Data and ISO 4406 Targets',
+    subtitle: 'Component internal clearance dimensions, particle size damage thresholds, ISO 4406 cleanliness targets, and failure mechanisms for hydraulic pumps, motors, valves, cylinders, and engine bearing systems.',
+    metaDescription: 'Engineering reference for hydraulic and lubrication component contamination sensitivity: servo valve spool clearances 1–3 µm, proportional valve 3–8 µm, piston pump 5–20 µm, gear pump 10–50 µm, journal bearing 5–75 µm clearances, ISO 4406 cleanliness targets per component type, and particle size vs damage threshold relationships.',
+    category: 'engineering',
+    readTime: '13 min',
+    intro: 'Contamination sensitivity of a hydraulic or lubrication component is determined primarily by its critical internal clearances — the minimum gap between moving surfaces. A particle larger than this clearance cannot pass through without either jamming the component (valve sticking) or scoring the surfaces (abrasive wear). Understanding the clearance dimensions of each component type enables engineers to set ISO 4406 cleanliness targets that protect the most sensitive component in the circuit, and to predict which components will fail first when a system operates above target cleanliness.',
+    sections: [
+      {
+        heading: 'Clearance Dimensions by Component Type',
+        body: 'Critical internal clearances define particle size damage thresholds for each component class. Electrohydraulic servo valves: nozzle-flapper gap 18–63 µm; spool-bore radial clearance 1–4 µm; jet pipe orifice 130–450 µm — the spool-bore clearance at 1–4 µm governs sensitivity. Proportional directional valves: spool-bore radial clearance 3–8 µm. Pressure-compensated piston pumps: piston-bore radial clearance 5–10 µm; port plate gap 0.5–5 µm (the port plate gap is the governing dimension for piston pump cleanliness sensitivity). Vane pumps: vane tip-to-ring gap 0.5–1 µm; rotor side clearance 10–25 µm — the vane tip clearance is the most sensitive dimension in the machine. Gear pumps: gear tip-to-housing clearance 0.5–5 µm; gear face-to-plate clearance 5–25 µm; journal bearing clearance 10–50 µm. Hydraulic cylinders: piston seal-to-bore gap (seal contact, no hard clearance); rod seal: 0.05–0.25 µm finish Ra. Engine journal bearings: oil film thickness at minimum 0.5–2 µm at full load; operating clearance 5–75 µm (varies by bearing size and load).',
+        callout: [
+          { label: 'Servo valve spool clearance', value: '1–4 µm radial (most sensitive)' },
+          { label: 'Piston pump port plate gap', value: '0.5–5 µm (governs pump sensitivity)' },
+          { label: 'Vane tip-to-ring gap', value: '0.5–1 µm (most sensitive rotating machine)' },
+        ],
+      },
+      {
+        heading: 'Particle Size Damage Threshold Relationship',
+        body: 'Particles cause damage when they are larger than the minimum film thickness but small enough to enter the clearance. Particles smaller than the film thickness are carried through without contact. Particles larger than the clearance opening jam rather than enter — causing valve sticking and potential hydraulic lock rather than abrasive wear. The most damaging particle size for a given clearance is approximately 1–2× the minimum film thickness: large enough to bridge the gap and cause abrasive contact, small enough to enter and pass through. For a servo valve spool clearance of 2 µm: the most damaging particle size is approximately 2–6 µm. ISO 4406 reporting at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) thresholds is designed to capture these critical size ranges. Particles at ≥4 µm(c) govern servo valve and vane pump protection. Particles at ≥6 µm(c) govern proportional valve and piston pump protection. Particles at ≥14 µm(c) govern gear pump and cylinder protection.',
+        callout: [
+          { label: 'Most damaging particle size', value: '~1–2× minimum film thickness' },
+          { label: 'ISO 4406 ≥4 µm(c)', value: 'Governs servo valve / vane pump code' },
+          { label: 'ISO 4406 ≥14 µm(c)', value: 'Governs gear pump / cylinder code' },
+        ],
+      },
+      {
+        heading: 'ISO 4406 Targets by Component Class',
+        body: 'Recommended ISO 4406 system cleanliness targets (the target governs for the most sensitive component present): Servo valves (spool clearance 1–4 µm): ISO 14/12/9 to ISO 16/14/11 depending on application criticality — aerospace and precision machine tools at the tighter end; industrial servo applications typically ISO 16/14/11. Proportional directional valves: ISO 17/15/12. Pressure-compensated piston pumps (high-pressure, axial piston): ISO 17/15/12; some manufacturers specify ISO 16/14/11 for pressures above 280 bar. Vane pumps: ISO 17/15/12 (despite sub-micron tip clearance, damage mechanism is wear not jamming — particle count at ≥6 µm(c) governs). Gear pumps (standard industrial): ISO 18/16/13. Directional control valves (standard spool, no compensation): ISO 18/16/13. Hydraulic cylinders (standard): ISO 20/18/15 minimum; better practice ISO 18/16/13. Engine journal bearings (automotive): typically ISO 17/15/12 equivalent in lube oil context. Engine journal bearings (large bore diesel, marine): ISO 16/14/11 equivalent.',
+      },
+      {
+        heading: 'Servo Valve Failure Mechanisms',
+        body: 'Servo valves fail from contamination through three mechanisms in order of increasing damage: (1) Spool sticking — particles deposit in spool-bore clearance causing increased breakout force; detected as null drift and reduced gain; cleaning and refitting may restore function. (2) Spool scoring — hard particles (silica, metallic carbides, wear debris) trapped between spool OD and bore ID create parallel scratches across the critical seal land; once scratched, leakage across the spool land increases and valve gain decreases permanently — valve requires replacement. (3) Nozzle blockage — in two-stage flapper-nozzle servo valves, particles at the nozzle orifice (typically 130–450 µm diameter) cause partial or complete blockage of the control orifice, resulting in control signal saturation. Each mechanism requires different diagnostic and corrective action; particle size distribution from ISO 11171 counting helps identify which mechanism is active.',
+      },
+      {
+        heading: 'Piston Pump Sensitivity and Failure Progression',
+        body: 'Axial piston pumps are the most common high-pressure hydraulic machine and the most complex from a contamination perspective. Three critical clearances interact: piston-bore (5–10 µm): contamination at this clearance causes piston stick-slip friction and reduced volumetric efficiency; scoring increases internal leakage. Port plate-barrel (0.5–5 µm): this hydrodynamic film is the thinnest in the pump; contamination causes cavitation erosion pitting and face scoring, detectable as metallic particles in oil and audible as changed pump noise. Slipper-swashplate (2–8 µm): slipper scoring reduces piston retraction force and causes piston withdrawal. Piston pump contamination failure progression: (1) volumetric efficiency loss (detectable by flow measurement); (2) elevated case drain leakage (>10% of rated flow indicates advanced wear); (3) audible high-frequency noise from port plate scoring; (4) catastrophic bearing failure from swashplate loading change. Oil analysis ICP monitoring (Fe particle trend) detects progression from stage 1–2 before stage 3.',
+      },
+      {
+        heading: 'Engine Bearing Sensitivity and Contamination Wear',
+        body: 'Engine journal bearing minimum oil film thickness at full load (hydrodynamic film) is the critical parameter for bearing contamination sensitivity. At rated speed and load, minimum film thickness typically 0.5–2 µm for connecting rod big-end bearings in high-speed engines. The Sommerfeld number governs film thickness: h_min ∝ (η × N × L × D) / (W × c), where η is viscosity, N is shaft speed, L and D are bearing dimensions, W is load, and c is radial clearance. Particles larger than the minimum film thickness scratch bearing surfaces. Bearing alloy (Babbitt, copper-lead, aluminium-tin) has a hardness of approximately 20–40 HV — softer than typical contaminant particles (silica: ~1,000 HV; iron carbide: ~1,500 HV). This hardness differential means every contaminant particle harder than the bearing surface causes measurable wear on each pass. Oil analysis ICP: Fe (crankshaft journal wear), Cu and Pb (copper-lead bearing wear), Sn (Babbitt overlay wear) are the specific markers for bearing deterioration from contamination.',
+        callout: [
+          { label: 'Bearing min film thickness', value: '0.5–2 µm at full load (high-speed engine)' },
+          { label: 'Silica hardness', value: '~1,000 HV vs Babbitt ~20–40 HV' },
+          { label: 'Copper-lead bearing markers', value: 'Cu + Pb in ICP elemental analysis' },
+        ],
+      },
+      {
+        heading: 'Vane Pump and Gear Motor Specific Sensitivity',
+        body: 'Vane pumps operate with vane tips contacting the cam ring at very small clearance (0.5–1 µm vane tip radius; contact is nominally zero with hydrodynamic lift at speed). At low speed (below minimum hydrodynamic film speed), vane tips operate in boundary lubrication — direct contact with cam ring surface. Contamination particles at this interface cause cam ring scoring, which progresses to vane tip chipping and catastrophic vane fracture under high-pressure loading. ISO 17/15/12 cleanliness target for vane pumps is conservative but necessary — field experience demonstrates vane pump failure rates 3–5× higher at ISO 18/16/13 versus ISO 17/15/12. Gear motors (internal and external gear) experience contamination damage primarily at the gear tooth faces and journal bearings. Abrasive particles in the gear tooth contact zone cause pitting and spalling detectable as vibration increase and elevated Fe/Cr in oil analysis. Gear motor contamination tolerance is higher than piston or vane machines because the tooth contact zone has a relatively wide particle accommodation range, but high-pressure gear motors (above 250 bar) exhibit sensitivity approaching piston pumps due to increased gear tooth face loading.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Servo valve spool radial clearance', value: '1–4 µm (most critical)' },
+      { label: 'Vane tip clearance', value: '0.5–1 µm (most sensitive rotating machine)' },
+      { label: 'Engine bearing min film thickness', value: '0.5–2 µm at rated load/speed' },
+      { label: 'Silica hardness vs Babbitt', value: '1,000 HV vs 20–40 HV' },
+      { label: 'Piston pump port plate gap', value: '0.5–5 µm (governing clearance)' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171', 'NFPA T2.14', 'SAE J300'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: [
+      'component contamination sensitivity', 'servo valve clearance', 'hydraulic pump clearance',
+      'ISO 4406 targets', 'vane pump sensitivity', 'piston pump wear', 'bearing film thickness',
+      'gear pump contamination', 'particle size damage', 'journal bearing wear', 'NFPA T2.14 tiers',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Servo valve null drift — position creep under zero command signal',
+        'Hydraulic pump flow loss — measured volumetric efficiency decrease >5% from baseline',
+        'Vane pump audible noise increase at low-speed (below 500 rpm) operation',
+        'Elevated Cu and Pb in engine oil ICP — bearing copper-lead overlay wear',
+        'Gear motor vibration increase without load or speed change',
+      ],
+      probableCauses: [
+        'Servo valve null drift: particle deposition in spool-bore clearance (1–4 µm); ISO 4406 code above ISO 16/14/11 target; MPC varnish deposit on spool also possible',
+        'Pump flow loss: piston-bore wear (volumetric loss from piston slip); port plate scoring (progressive — check case drain flow rate first); ISO 4406 code trending above ISO 17/15/12',
+        'Vane pump noise at low speed: cam ring scoring from boundary lubrication at low speed with contamination; ISO 4406 code above ISO 17/15/12; check vane tip condition at next scheduled inspection',
+        'Elevated Cu+Pb: bearing overlay wear from contamination at or below film thickness; check ISO 4406 code equivalent for lube oil; verify oil grade meets OEM HTHS minimum',
+        'Gear motor vibration: gear tooth pitting from abrasive contamination (Fe, Cr in oil analysis); confirm with spectrum analysis to identify gear mesh frequency component',
+      ],
+      inspectionMethods: [
+        'ISO 11171 particle count upstream and downstream of suspect circuit — compare to component target; code deviation identifies contamination level vs component tolerance',
+        'Pump volumetric efficiency: measure actual flow at rated speed and pressure; compare to new-pump specification; >5% loss is investigation threshold; >10% loss requires rebuild assessment',
+        'Case drain flow measurement: gear-type flow meter on case drain line; >10% of rated pump delivery indicates advanced internal wear',
+        'Oil analysis ICP at 250-hour intervals: Fe trend (general wear), Cu (bearing/pump), Al (servo valve housing), Cr (hydraulic cylinder rod, valve bore chrome plating)',
+        'Servo valve null test: command zero signal; measure output position; null drift >1% of full stroke in 60 seconds indicates spool contamination or scoring',
+      ],
+      correctiveActions: [
+        'Servo valve spool sticking: clean per manufacturer procedure in clean fluid; ISO 4406 at ISO 16/14/11 before reinstall; if spool scored — valve must be replaced, cleaning will not restore performance',
+        'Pump volumetric efficiency loss: reduce contamination level to ISO 17/15/12 using kidney-loop filtration; schedule rebuild at next planned maintenance; do not defer beyond 15% efficiency loss',
+        'Vane pump cam ring scoring: remove and inspect at next service; measure cam ring roundness and surface roughness; Ra >0.4 µm at cam surface requires replacement; correct ISO 4406 to ISO 17/15/12 before refitting',
+        'Bearing wear (elevated Cu+Pb): reduce oil contamination equivalent to ISO 16/14/11 or better; check oil grade compliance (HTHS and viscosity); inspect bearings at overhaul; contamination-driven wear is not recoverable — correct and prevent recurrence',
+        'Gear motor vibration: drain oil sample for ICP; if Fe+Cr elevated, schedule rebuild inspection; prevent by maintaining ISO 18/16/13 cleanliness for gear motor applications',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Mixed hydraulic circuit with servo valves, proportional valves, and gear pumps — setting a single system cleanliness target',
+        standard: 'NFPA T2.14 (component tiers), ISO 4406 (cleanliness code), ISO 16889 (filter spec)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'System target governed by most sensitive component (servo valve): ISO 16/14/11; filter all circuits to this target including gear pump supply; the gear pump will operate conservatively at this target with extended service life; filter specification: β₃(c) ≥ 200 at servo valve supply circuit; consider separate servo valve supply line with dedicated fine filter if servo valve flow is <10% of total system flow',
+        relatedArticles: ['nfpa-t2-14-hydraulic-cleanliness', 'hydraulic-power-unit-design', 'contamination-ingression-modelling'],
+      },
+      {
+        problem: 'Piston pump case drain flow measured at 12% of rated delivery — investigating contamination vs mechanical wear cause',
+        standard: 'ISO 4406 (system cleanliness), ISO 11171 (particle counting)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Case drain at 12% indicates advanced wear; take oil sample for ICP (elevated Fe, Al indicate port plate and barrel wear); take ISO 4406 code sample — if system has been above ISO 17/15/12, contamination is likely a contributing cause; kidney-loop flush to ISO 17/15/12 will slow but not reverse existing wear; schedule rebuild; correct system filtration before installing rebuilt pump',
+        relatedArticles: ['contamination-ingression-modelling', 'oil-analysis-methods', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'Diesel engine bearing failures at 4,000 hours in a fleet with extended 500-hour oil drain intervals',
+        standard: 'SAE J300 (oil grade), ISO 4406 equivalent for lube oil, ISO 17359 (condition monitoring)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'ICP oil analysis to confirm bearing wear metals (Cu, Pb, Sn trend); if particle count equivalent elevated above ISO 16/14/11 — extended drain interval allowing contamination accumulation; switch to 250-hour oil analysis with particle count; if TAN or viscosity degradation confirmed, reduce drain to 300 hours until root cause is corrected; verify lube oil filter beta ratio meets ISO 4548-12 compliance for extended drain DHC',
+        relatedArticles: ['lubrication-system-filtration', 'extended-drain-interval-engineering', 'oil-analysis-methods'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)',
+      evidenceStatus: 'Servo valve clearance data from electrohydraulic valve engineering references and Moog, Parker Hannifin published specifications; piston pump clearances from axial piston pump engineering literature; vane pump tip clearance from published fluid power engineering textbooks; bearing film thickness from journal bearing tribology literature (Hamrock, Schmid, Jacobson — Fundamentals of Machine Elements); particle hardness values from ASM Metals Handbook',
+    },
+  },
+
+  // ── Article 28 ────────────────────────────────────────────────────────────
+  {
+    slug: 'extended-drain-interval-engineering',
+    title: 'Extended Drain Interval Engineering: Oil Condition Monitoring, Limit Setting, and Risk Management',
+    subtitle: 'Methodology for establishing and monitoring extended oil drain intervals: oil deterioration rates, TAN and viscosity action limits, particle-based drain triggers, contamination budget considerations, and TCO versus risk trade-off analysis.',
+    metaDescription: 'Engineering reference for extended drain interval methodology: oil deterioration monitoring (TAN, viscosity, FTIR, particle count), drain interval limit-setting from condition data, contamination budget analysis, API CK-4 extended drain capability, and total cost of ownership versus equipment risk trade-off framework.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'Extended drain interval (EDI) programmes reduce oil change frequency beyond standard OEM recommendations by monitoring oil condition continuously and changing oil when condition triggers are reached, rather than at fixed time or mileage intervals. EDI offers reduced maintenance costs, lower waste oil volumes, and potentially lower lubricant spend. Engineering an EDI programme requires establishing chemistry-based and contamination-based action limits, validating those limits against the specific oil formulation and equipment duty cycle, and managing the residual risk that an oil condition excursion occurs between sampling intervals.',
+    sections: [
+      {
+        heading: 'EDI Rationale and Scope',
+        body: 'Standard OEM oil drain intervals are set conservatively to accommodate the worst-case combination of: maximum duty cycle severity (100% load, maximum temperature), minimum oil formulation quality (lowest API service category compliant oil), and maximum interval between oil analysis samples. For fleets where oil analysis is conducted regularly and equipment operates at moderate duty cycles, the actual oil condition at the OEM drain interval is frequently within safe limits — the oil has remaining useful life that is discarded with the change. EDI captures this remaining oil life while managing the risk that condition deterioration accelerates unexpectedly. EDI is most appropriate for: large oil sumps (high oil-change cost justifies analysis investment), low-load-fraction duty cycles, controlled operating temperatures, and operators with established oil analysis programmes. EDI is contraindicated for: frequent cold-start operations (fuel dilution risk), unknown duty cycles, poorly maintained air filtration (high Si contamination ingression), and equipment with history of internal contamination events.',
+      },
+      {
+        heading: 'Oil Chemistry Action Limits',
+        body: 'Chemistry-based drain triggers monitor oil degradation products and additive depletion. Kinematic viscosity at 100°C (ASTM D445): change limit at ±15% from fresh oil baseline — increase indicates oxidative thickening or contamination; decrease indicates fuel dilution or VII shear. Total Acid Number (ASTM D664): change limit when TAN increases by 2.0 mg KOH/g above fresh oil baseline; absolute limit typically 5.0 mg KOH/g for Group I/II base stock and 7.0 mg KOH/g for Group III/IV synthetic. Total Base Number (ASTM D2896): change limit when TBN falls below 50% of fresh oil TBN (fresh TBN for API CK-4 heavy-duty diesel oil is typically 12–15 mg KOH/g; change at ≤6 mg KOH/g). FTIR oxidation: no universal limit; establish baseline on fresh oil, track increase in oxidation peak (1,700–1,750 cm⁻¹ carbonyl stretch); each 0.1 A/cm increase above baseline represents significant oxidation progression. Nitration (diesel): FTIR nitration peak (1,630 cm⁻¹); significant at >20 A/cm. Soot (diesel): >3.5% soot by mass (ASTM D5967 or FTIR) triggers viscosity concerns and increased wear rate.',
+        callout: [
+          { label: 'Viscosity action limit', value: '±15% from fresh oil at 100°C' },
+          { label: 'TAN change limit', value: '+2.0 mg KOH/g above baseline' },
+          { label: 'TBN minimum limit', value: '≤50% of fresh TBN (typically ≤6 mg KOH/g)' },
+        ],
+      },
+      {
+        heading: 'Contamination-Based Drain Triggers',
+        body: 'Contamination triggers monitor ingestion of external contaminants: Silicon (Si) by ICP: Si >25 ppm in used oil indicates significant dust/silica ingestion — dust contamination increases abrasive wear proportionally; this is a filtration failure (air filter or crankcase ventilation) indicator, not an oil chemistry failure. Investigate air filtration before extending drain. Sodium (Na) and potassium (K): Na >20 ppm or K >20 ppm indicates coolant ingestion (ethylene glycol coolant contains Na and K inhibitors) — drain immediately regardless of oil chemistry. Copper (Cu): rising Cu trend (>20 ppm in a sampling interval) indicates copper alloy bearing wear — investigate before continuing. Iron (Fe): baseline Fe trend establishes normal wear rate; an inflection — rate increase beyond the established trend — indicates accelerated wear from contamination or component distress. Water content (ASTM D6304): >0.1% water triggers drain — water causes emulsification, corrosion, and bacterial growth in biodegradable oils. Fuel dilution: fuel content >2% by GC (ASTM D3525) causes viscosity reduction below grade minimum and reduces lubricity.',
+      },
+      {
+        heading: 'EDI Limit Validation Methodology',
+        body: 'EDI limits must be validated for the specific combination of oil formulation, equipment type, and duty cycle — they cannot be taken from generic tables. Validation protocol: (1) identify candidate oil formulation with API CK-4 or equivalent certification; (2) enrol 10–20 representative units in a 24-month validation programme; (3) sample at 50% of proposed EDI and at proposed EDI on each unit; (4) at proposed EDI, drain and submit oil for complete analysis plus submit fresh oil for baseline comparison; (5) at overhaul on enrolled units, record wear measurements (bearing clearances, ring-land clearances, bore wear) and compare to fleet historical baseline from standard drain intervals; (6) if wear rates are equivalent and no chemistry limits are exceeded at proposed EDI, the interval is validated for this oil-equipment-duty combination. API CK-4 specification oils are validated to support drain intervals of up to 2× the previous API CJ-4 intervals in comparable applications, per the API specification rationale document.',
+      },
+      {
+        heading: 'Filtration Requirements for EDI',
+        body: 'Extended drain intervals place additional demands on filtration: (1) Dirt Holding Capacity — the filter element must not reach bypass-triggering Δp before the extended drain interval; DHC calculation: DHC ≥ (ingression rate × drain interval hours) × safety factor of 2; for a system with 0.05 g/hour contamination generation and 500-hour drain, DHC ≥ 50 g; verify against ISO 4548-12 DHC at rated flow. (2) Media stability — the filter media must maintain β efficiency throughout the drain interval; oil oxidation products can attack cellulose media binders; synthetic media (SYNTRAX™ architecture) provides better chemical resistance for EDI applications. (3) Bypass valve frequency — monitor bypass valve indicator frequency; if bypass occurs (even briefly at cold start), contamination load during bypass periods must be added to the contamination budget. (4) Sampling compatibility — the oil analysis sampling protocol must not introduce contamination that confounds the results; ISO 3722 sample bottle preparation is mandatory.',
+      },
+      {
+        heading: 'Risk Management Framework for EDI',
+        body: 'EDI introduces a residual risk that the oil condition will deteriorate beyond acceptable limits between sampling intervals. Risk management requires: Sampling frequency: sample at intervals no greater than 50% of the proposed drain interval — this ensures detection of rapid deterioration before the drain point is reached. Action plan for exceedances: if any action limit is exceeded at an intermediate sample, change oil at that interval (not at the next scheduled EDI point); investigate root cause before resuming EDI. Consequence assessment: evaluate the cost of bearing replacement or engine rebuild if EDI failure occurs — for high-consequence equipment (underground mining, offshore platforms, critical production machinery), the risk may not justify EDI without real-time oil condition monitoring. Real-time sensors: viscosity sensors (acoustic or microwave), TAN sensors (electrochemical), or particle counters (in-line laser) can provide continuous monitoring between scheduled samples — reducing the risk window substantially. EDI programmes must be reassessed annually against actual oil condition data and compared to fleet overhaul records.',
+      },
+      {
+        heading: 'TCO Analysis for EDI Decisions',
+        body: 'EDI economic benefit calculation: (a) oil purchase cost reduction = (1 − 1/interval_multiplier) × oil cost per change × changes/year; (b) labour cost reduction = same multiplier × labour cost per change × changes/year; (c) oil analysis cost addition = analysis cost per sample × (samples/year under EDI); (d) waste disposal reduction = proportional to oil change frequency reduction. Net saving per unit per year = (a + b − c) net of any incremental filter cost difference. EDI economic case is strongest for: large oil capacity (marine engines at 2,000 L per change), high oil cost (synthetic oil at 3–5× mineral cost), frequent normal drain intervals (heavy construction at 250 hours), and where labour cost is significant. EDI economic case is weakest for: small oil capacity (passenger car), low oil cost (mineral base stock), and low-labour service environments. Risk cost must be estimated: probability of accelerated wear from EDI failure × cost of consequent repair. If risk cost per unit per year approaches or exceeds net saving, EDI is not justified on TCO grounds alone.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Viscosity action limit', value: '±15% from fresh oil at 100°C (ASTM D445)' },
+      { label: 'TAN change limit', value: '+2.0 mg KOH/g above fresh baseline (ASTM D664)' },
+      { label: 'TBN minimum', value: '≤50% of fresh TBN (typically ≤6 mg KOH/g, ASTM D2896)' },
+      { label: 'Si contamination trigger', value: '>25 ppm Si in used oil — investigate air filtration' },
+      { label: 'Sampling frequency', value: '≤50% of proposed drain interval' },
+    ],
+    relatedStandards: ['ISO 17359', 'ASTM D445', 'ASTM D664', 'ASTM D2896', 'ASTM D6304', 'API CK-4', 'ISO 3722'],
+    relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: [
+      'extended drain interval', 'EDI oil analysis', 'oil condition monitoring', 'TAN action limit',
+      'TBN depletion', 'ASTM D664', 'ASTM D2896', 'drain trigger', 'API CK-4 extended drain',
+      'FTIR oil analysis', 'soot content', 'fuel dilution', 'oil drain TCO', 'ISO 17359',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Oil analysis at proposed EDI shows TAN increase >2.0 mg KOH/g above baseline',
+        'Viscosity at 100°C drops >15% below fresh oil specification',
+        'Silicon (Si) in used oil above 25 ppm at mid-drain sample',
+        'TBN falls below 6 mg KOH/g before proposed drain interval',
+        'FTIR oxidation peak rising faster than established trend from prior drain intervals',
+      ],
+      probableCauses: [
+        'TAN increase: oxidative acid buildup from elevated operating temperatures; antioxidant depletion; confirm with FTIR oxidation peak increase; reduce drain interval or switch to more oxidation-stable oil formulation',
+        'Viscosity decrease: fuel dilution (GC test to confirm fuel in oil); VII shear degradation (permanent — oil must be replaced); check cold-start fuelling strategy and injector sealing',
+        'Elevated Si: air intake filtration failure or bypass (check air filter condition and restriction); elevated Si is not an oil chemistry failure — it is an ingestion failure requiring air filtration investigation before resuming EDI',
+        'TBN depletion: high acid-load duty cycle (urban stop-start with frequent cold starts produces more acid combustion products); oil is unable to neutralise acid load at extended interval; reduce interval or switch to higher TBN base stock',
+        'Rapid FTIR oxidation increase: operating temperature above design range (check coolant system); glycol contamination (ASTM D2982 to confirm); oil formulation inadequate for this duty cycle',
+      ],
+      inspectionMethods: [
+        'ASTM D445 kinematic viscosity at 40°C and 100°C — compare to fresh oil specification; trending identifies viscosity trajectory',
+        'ASTM D664 TAN and ASTM D2896 TBN at each oil analysis interval — plot trend to predict when limits will be reached',
+        'FTIR analysis for oxidation, nitration, soot, water, and glycol — single test covers multiple deterioration modes',
+        'ICP elemental analysis for Si, Na, K, Fe, Cu, Pb at each interval — contamination and wear markers simultaneously',
+        'ASTM D6304 Karl Fischer water content — >0.1% triggers immediate drain regardless of chemistry',
+      ],
+      correctiveActions: [
+        'TAN limit reached at EDI: change oil immediately; investigate cause — if oxidative (FTIR confirms), reduce drain interval by 20% and re-evaluate after 3 more drain intervals with closer sampling; if contamination-induced, address contamination source first',
+        'Fuel dilution confirmed (viscosity decrease + GC positive): drain immediately; investigate injector, ring or valve sealing; cold-start operation frequency; EDI is contraindicated until fuel dilution cause is corrected',
+        'Si above 25 ppm: change oil immediately; inspect air intake filter — restriction, damage, bypass sealing; correct air filtration before resuming EDI programme',
+        'TBN depletion before EDI: reduce drain interval to point where TBN remains above 6 mg KOH/g; consider higher TBN base oil for this application; confirm API CK-4 compliance of replacement oil',
+        'EDI programme validation failed: return to OEM drain interval for all enrolled units while root cause is investigated; restart validation with corrected conditions after a minimum of 6 months at standard interval with oil analysis monitoring',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Fleet operator wants to extend diesel engine oil drain from 250 hours to 500 hours on construction equipment',
+        standard: 'ISO 17359 (condition monitoring), API CK-4 (oil specification), ASTM D664 (TAN)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'API CK-4 oil supports extended drain capability vs CJ-4; validate with 24-month programme: sample at 250, 400, and 500 hours on 10+ units; confirm TAN <+2 mg KOH/g above baseline; TBN >6 mg KOH/g; Si <25 ppm; viscosity within ±15%; Fe/Cu trend linear (no inflection); filter element DHC must cover 500-hour ingression load per ISO 4548-12 — verify with filter supplier for this specific application',
+        relatedArticles: ['oil-analysis-methods', 'lubrication-system-filtration', 'iso-4548-lube-filter-test-methods'],
+      },
+      {
+        problem: 'Marine engine with 2,000 L oil sump — oil analysis shows TBN depletion to 7 mg KOH/g at 1,500 hours (drain scheduled at 2,000 hours)',
+        standard: 'ISO 17359 (condition monitoring), ASTM D2896 (TBN), API CK-4',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'TBN at 7 mg KOH/g with 500 hours remaining to proposed drain — trajectory predicts reaching 6 mg KOH/g at approximately 1,700 hours; schedule drain at 1,700 hours based on trend; evaluate oil top-up to restore TBN (valid if top-up oil is same formulation and top-up volume is >10% of sump capacity); next interval recalibrate to 1,700 hours as the working EDI unless corrective action addresses TBN depletion rate',
+        relatedArticles: ['oil-analysis-methods', 'service-intervals', 'total-cost-of-ownership'],
+      },
+      {
+        problem: 'Hydraulic system on excavator fleet — can extended drain apply to hydraulic fluid?',
+        standard: 'ISO 4406 (particle cleanliness), ASTM D664 (TAN for hydraulic fluid), ISO 17359',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Hydraulic fluid EDI is feasible but more complex than engine oil EDI: hydraulic fluid does not have a TBN depletion mechanism; primary limits are TAN (oxidative acid), particle count (ISO 4406), and water content (ASTM D6304); contamination ingression rate in mobile hydraulic systems is high — particle count at ISO 4406 governs hydraulic fluid life more than chemistry; if particle count exceeds system target at 50% interval, address ingression (breather, shaft seals) before extending drain; hydraulic fluid drain interval is secondary to maintaining ISO 4406 cleanliness code',
+        relatedArticles: ['contamination-ingression-modelling', 'oil-analysis-methods', 'hydraulic-power-unit-design'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-LUBRICATION)',
+      evidenceStatus: 'Viscosity ±15% action limit from Noria Corporation oil analysis guidelines and SAE J306; TAN +2.0 mg KOH/g from ASTM D664 application guidance; TBN 50% minimum from Shell Lubricants Technical Manual and ASTM D2896 application data; Si >25 ppm trigger from field correlation data in published oil analysis literature; API CK-4 extended drain capability from API 1509 Annex E; sampling frequency ≤50% from ISO 17359 condition monitoring guidance',
+    },
+  },
+
+  // ── Article 29 ────────────────────────────────────────────────────────────
+  {
+    slug: 'compressed-air-dryer-selection',
+    title: 'Compressed Air Dryer Selection: Refrigeration, Desiccant, and Membrane Drying Technologies vs ISO 8573-1 Dew Point Classes',
+    subtitle: 'Dew point specification per ISO 8573-1 Class system, refrigeration dryer thermodynamic limits, desiccant regeneration methods, membrane dryer capacity constraints, and combined filtration-drying system design.',
+    metaDescription: 'Engineering reference for compressed air dryer selection: ISO 8573-1 humidity classes and pressure dew point targets, refrigeration dryer dew point limit (+3°C to +10°C PDP), desiccant dryer types (heatless, heated, heat-of-compression) and dew points (−40°C to −70°C PDP), membrane dryer constraints, and complete compressed air treatment system design.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'Moisture in compressed air is the most common cause of downstream equipment failure, product contamination, and pipe corrosion in industrial pneumatic and process air systems. Water vapour carried from the compressor discharge condenses in pipework and tools when air temperature drops below the pressure dew point — producing liquid water that corrodes valves, washes away lubrication, promotes bacterial growth in food-grade systems, and freezes in outdoor or cold-store applications. ISO 8573-1 defines humidity purity classes for compressed air, and dryer technology selection determines which class is achievable for a given application and flow rate.',
+    sections: [
+      {
+        heading: 'ISO 8573-1 Humidity Classes and Pressure Dew Point',
+        body: 'ISO 8573-1 Table 1 defines seven humidity classes (Class 1 through Class 9) expressed as maximum pressure dew point (PDP) in degrees Celsius at the system operating pressure. The critical classes for industrial applications: Class 4: PDP ≤+3°C — achievable with refrigeration dryers; prevents condensation in most indoor applications above 3°C ambient. Class 3: PDP ≤−20°C — requires desiccant drying; suitable for pneumatic tools, outdoor applications above −20°C ambient. Class 2: PDP ≤−40°C — high-performance desiccant drying; suitable for instrument air, outdoor applications above −40°C, and most chemical process applications. Class 1: PDP ≤−70°C — ultra-dry; required for moisture-sensitive chemical processes, pharmaceutical manufacturing, and outdoor applications in arctic climates. Pressure dew point versus atmospheric dew point: a PDP of −40°C at 7 bar (typical industrial compressed air pressure) corresponds to an atmospheric dew point of approximately −28°C — accounting for the moisture concentration increase at elevated pressure. Always specify humidity class in terms of pressure dew point, not atmospheric dew point.',
+        callout: [
+          { label: 'ISO 8573-1 Class 4', value: 'PDP ≤+3°C (refrigeration achievable)' },
+          { label: 'Class 2', value: 'PDP ≤−40°C (high-performance desiccant)' },
+          { label: 'Class 1', value: 'PDP ≤−70°C (ultra-dry desiccant or membrane)' },
+        ],
+      },
+      {
+        heading: 'Refrigeration Dryer Technology and Thermodynamic Limits',
+        body: 'Refrigeration dryers cool compressed air to near the dew point, condensing water vapour, then reheat the dried air to prevent condensation in downstream pipework. The thermodynamic limit on pressure dew point achievable with refrigeration drying is approximately +3°C to +10°C PDP — constrained by the freezing point of condensed water and the practical minimum evaporator temperature. Operating the evaporator below 0°C would freeze the condensate, blocking airflow. Non-cycling refrigeration dryers (most common): run the refrigeration circuit continuously; energy consumption does not vary with air demand. Cycling (or energy-saving) dryers: stop the refrigeration compressor when air demand is low; save energy at partial load but require a thermal mass to maintain dew point during cycling. Variable-speed drive (VSD) refrigeration dryers: modulate compressor speed to match heat load; most energy-efficient for variable demand. Refrigeration dryer capacity is rated in m³/min at specified inlet conditions (typically 7 bar, 35°C, 100% relative humidity) — derate capacity when inlet temperature exceeds rating or inlet pressure differs from rating.',
+      },
+      {
+        heading: 'Desiccant Dryer Types and Regeneration Methods',
+        body: 'Desiccant dryers achieve PDP of −20°C to −70°C by adsorbing water vapour onto solid desiccant (silica gel, activated alumina, or molecular sieve). Dual-tower design: one tower adsorbs while the other regenerates — alternating between drying and regeneration on a timed or dew point-triggered cycle. Heatless (purge) desiccant dryers: use approximately 15–20% of rated airflow as dry purge air to regenerate the offline tower at ambient temperature; no external heat required; simplest design; relatively high purge air loss. Heated (external heat) desiccant dryers: use an external heater to regenerate the desiccant with a smaller purge volume (typically 2–5% of rated flow); lower purge air loss; additional energy cost for heater. Internally heated (blower purge): a blower circulates air through the offline tower with heating; no compressed air used for regeneration; highest capital cost, lowest operating cost. Heat-of-compression (HOC) dryers: integrate desiccant drying into the compressor process, using the compressor discharge heat to regenerate desiccant without additional energy input; achievable only with oil-free compressors at discharge temperatures above 120°C; most energy-efficient where applicable.',
+        callout: [
+          { label: 'Heatless desiccant purge', value: '15–20% of rated airflow loss' },
+          { label: 'Heated desiccant purge', value: '2–5% purge air loss' },
+          { label: 'HOC dryer requirement', value: 'Oil-free compressor, ≥120°C discharge' },
+        ],
+      },
+      {
+        heading: 'Membrane Dryer Technology and Constraints',
+        body: 'Membrane dryers use selective permeation: water vapour passes through a polymer membrane much faster than air; a small purge sweep on the permeate side carries the water vapour away. Achievable PDP: −40°C to −70°C PDP for small flow rates; performance degrades significantly with flow rate above rated capacity. Constraints: (1) Maximum flow rate is limited by membrane surface area — membrane dryers are economical only for small flows (typically <10 m³/min) where the alternatives are impractical or expensive; (2) Purge air loss: 20–25% of inlet flow for standard membrane dryers — similar to heatless desiccant but without the need for regeneration switching; (3) Oil sensitivity: compressed air must be pre-filtered to <0.01 mg/m³ oil aerosol content (ISO 8573-1 Class 1 oil) before the membrane — oil fouls the membrane permanently and rapidly; (4) Temperature sensitivity: membrane performance varies with compressed air temperature; performance is typically specified at 20–35°C inlet temperature. Membrane dryers require no electrical power (passive technology), making them suitable for remote locations and hazardous areas where electrical installations are costly.',
+      },
+      {
+        heading: 'Pre-Filtration Requirements for Drying Systems',
+        body: 'All dryer types require upstream filtration to protect the dryer from oil and particulate contamination. Required pre-filtration sequence before a refrigeration or desiccant dryer: (1) bulk liquid separator (coalescing filter): removes bulk liquid water and oil droplets from compressor aftercooler discharge; rated efficiency ≥99.9% for liquid droplets at rated flow; (2) coalescing filter (pre-filter): removes oil aerosol to ISO 8573-1 Class 2 oil content (≤0.1 mg/m³) or better. After the dryer, post-filtration removes any desiccant particles (desiccant dryers) or downstream pipe contamination: (3) particulate filter: ISO 8573-1 Class 1 or 2 particle content. For point-of-use applications requiring oil-free air (pharmaceutical, food grade, electronics): (4) activated carbon filter: removes oil vapour to ≤0.003 mg/m³ (ISO 8573-1 Class 1 oil). DRYCORE™ filtration architecture addresses this pre- and post-dryer filtration requirement, combining high-efficiency coalescing (oil aerosol removal) with downstream particulate filtration in a single station design.',
+      },
+      {
+        heading: 'Dew Point Monitoring — ISO 8573-3',
+        body: 'ISO 8573-3 defines the measurement method for water vapour content in compressed air, expressed as pressure dew point or water vapour concentration. Measurement technologies: (1) Chilled mirror: cools a mirror until condensation forms; direct dew point measurement; reference-grade accuracy ±0.1°C PDP; slow response (1–5 minutes); used for calibration and verification. (2) Capacitive sensor: aluminium oxide or polymer substrate changes capacitance with moisture; response time 30–60 seconds; typical accuracy ±2°C PDP; most common field instrument. (3) Quartz crystal microbalance: resonant frequency changes with adsorbed water mass; fast response; used in demanding applications. Dew point sensors must be calibrated at intervals defined by the manufacturer and application — typically annually for industrial process air. Sensor installation: locate sensor downstream of all drying and filtration stages; ensure pipe at sensor location is at system operating temperature (not in a cold zone that could cause condensation before the sensor). An alarm set at PDP ≤ (application minimum ambient temperature + 5°C safety margin) provides lead time for corrective action before condensation occurs in service.',
+      },
+      {
+        heading: 'System Design and Technology Selection Matrix',
+        body: 'Dryer technology selection by application requirement: ISO 8573-1 Class 4 (PDP ≤+3°C), indoor general manufacturing: refrigeration dryer (non-cycling or VSD); most economical for flows >2 m³/min. ISO 8573-1 Class 3 (PDP ≤−20°C), pneumatic tools or outdoor piping: desiccant dryer (heatless acceptable for small flows, heated or HOC for large flow, energy-sensitive applications). ISO 8573-1 Class 2 (PDP ≤−40°C), instrument air, laboratory: desiccant with molecular sieve desiccant; heated or blower-purge regeneration at large flow. ISO 8573-1 Class 1 (PDP ≤−70°C), arctic outdoor, pharmaceutical: molecular sieve desiccant with low purge loss; consider parallel dryers for large flow. Small flow (<0.5 m³/min), remote, no power available: membrane dryer; ISO 8573-1 Class 2 achievable; verify oil pre-filtration. All desiccant dryer systems: verify desiccant replacement interval (typically 3–5 years for silica gel; longer for molecular sieve; confirm with dew point monitoring as desiccant approaches capacity end-of-life).',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Refrigeration dryer PDP limit', value: '+3°C to +10°C PDP (freezing constraint)' },
+      { label: 'Heatless desiccant purge loss', value: '15–20% of rated airflow' },
+      { label: 'HOC dryer requirement', value: 'Oil-free compressor, ≥120°C discharge temperature' },
+      { label: 'Membrane dryer purge loss', value: '20–25% of inlet flow' },
+      { label: 'Chilled mirror dew point accuracy', value: '±0.1°C PDP (reference grade)' },
+    ],
+    relatedStandards: ['ISO 8573-1', 'ISO 8573-3', 'ISO 8573-2', 'ISO 12500-1'],
+    relatedTechnologies: ['DRYCORE™'],
+    relatedSystems: ['Air Intake Protection'],
+    keywords: [
+      'compressed air dryer', 'ISO 8573-1', 'pressure dew point', 'refrigeration dryer',
+      'desiccant dryer', 'heatless desiccant', 'membrane dryer', 'HOC dryer', 'dew point monitoring',
+      'ISO 8573-3', 'compressed air drying', 'DRYCORE', 'purge air loss', 'molecular sieve',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Condensate in downstream pipework and tools despite dryer being in service',
+        'Desiccant dryer dew point rising progressively over weeks — not maintaining rated PDP',
+        'Refrigeration dryer dew point alarm during summer months only',
+        'Desiccant beads visible in downstream filter — desiccant migration',
+        'Membrane dryer dew point performance degrading — not recovering with higher purge',
+      ],
+      probableCauses: [
+        'Condensate in downstream pipework: dryer bypassed or offline; dryer PDP higher than minimum ambient temperature in affected pipe section; condensate drain on dryer or pre-filter bowl not functioning (manual drain forgotten; auto-drain solenoid failed)',
+        'Desiccant dew point rising: desiccant saturation (end of service life — typically 3–5 years for silica gel); regeneration cycle not completing (heater fault or timer fault in heated dryers); purge air valve stuck closed (heatless dryers — purge not flowing); high inlet humidity exceeding dryer capacity',
+        'Refrigeration dryer summer alarm: inlet air temperature above dryer rating (ambient >40°C causes most refrigeration dryers to lose rated PDP performance); inlet air load above capacity at higher ambient; refrigerant charge low; condenser fouled (reduced heat rejection)',
+        'Desiccant migration to downstream: desiccant bead breakdown (mechanical degradation from thermal cycling or water hammer); downstream particulate filter element failure or missing; bead size smaller than downstream filter rating',
+        'Membrane dryer degradation: oil contamination fouling membrane (pre-filter oil coalescer bypass or failure); flow rate above rated capacity; inlet temperature outside operating range',
+      ],
+      inspectionMethods: [
+        'ISO 8573-3 dew point measurement: calibrated capacitive sensor downstream of dryer at rated system pressure and flow; compare to rated PDP specification; measurement at reduced flow may show better PDP than at rated flow',
+        'Desiccant saturation test: remove sample of desiccant from both towers; weigh against fresh desiccant to determine water adsorption at current condition; >20% weight gain above dry weight indicates saturation',
+        'Refrigeration dryer performance check: measure evaporator temperature; measure air inlet temperature and humidity; calculate expected PDP from psychrometric chart; compare to measured PDP',
+        'Condensate drain function check: observe auto-drain during compressor start-up (condensate should discharge within 60 seconds); test manual drain override; drain flow should be free of oil emulsion (oil present indicates coalescing filter bypass)',
+        'Membrane integrity check: close downstream valve; measure PDP rise over time with no flow — if PDP rises rapidly, membrane seal leakage is suspected; consult manufacturer for membrane module leak test procedure',
+      ],
+      correctiveActions: [
+        'Desiccant saturation: replace desiccant in both towers simultaneously (replacing only one tower leaves the saturated tower to contaminate the freshly dried air during its next drying cycle); regenerate replacement towers before first adsorption cycle',
+        'Refrigeration dryer overloaded in summer: install aftercooler with lower approach temperature; add water separator before dryer; reduce compressor discharge temperature; consider additional refrigeration dryer in parallel during peak summer load',
+        'Membrane oil fouling: replace membrane module (fouling is irreversible); install oil-free compressor or upgrade oil coalescing filter to ISO 8573-1 Class 1 (≤0.01 mg/m³) before membrane; verify pre-filtration is maintained at every service interval',
+        'Condensate in downstream pipework: increase pipe slope to drain points (minimum 1:200 slope to drain); install additional condensate drain points at low points and before upward pipe runs; verify dryer is sized for actual flow rate (not installed flow capacity)',
+        'Rising dew point with correct desiccant: check regeneration cycle timing and temperature; for heated dryers, measure heater outlet temperature (must reach desiccant regeneration temperature, typically 120°C minimum for silica gel); replace heater element if below specification',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Pharmaceutical production requires ISO 8573-1 Class 1 compressed air (PDP ≤−70°C, particles ≤Class 1, oil ≤Class 1)',
+        standard: 'ISO 8573-1 (all classes), ISO 8573-3 (dew point measurement), ISO 12500-1 (coalescing filter test)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'Molecular sieve desiccant dryer with low-purge-loss regeneration (blower purge or HOC if oil-free compressor); pre-filter sequence: bulk liquid separator → coalescing filter (ISO 8573-1 Class 2 oil) → desiccant dryer → particulate filter (Class 1) → activated carbon filter (oil vapour Class 1); continuous dew point monitoring per ISO 8573-3 with alarm at −65°C PDP; annual dryer performance verification; document pre-filter maintenance in quality management system',
+        relatedArticles: ['compressed-air-purity', 'filter-media-engineering', 'filter-housing-system-integration'],
+      },
+      {
+        problem: 'Outdoor compressed air network serving mining equipment at −30°C minimum ambient — preventing freezing in pipework and pneumatic tools',
+        standard: 'ISO 8573-1 Class 2 (PDP ≤−40°C), ISO 8573-3 (monitoring)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'PDP target of −40°C provides 10°C safety margin below −30°C ambient; desiccant dryer with molecular sieve to achieve −40°C PDP reliably; heated purge regeneration preferred (heatless dryer purge loss 15–20% increases compressor capacity requirement in high-altitude or remote installations where compressor capacity is limited); install capacitive dew point sensor with alarm at −35°C PDP and maintenance trigger at −30°C PDP; insulate all pipework below grade and in cold zones; check condensate drains for freeze risk (insulate or heat trace)',
+        relatedArticles: ['compressed-air-purity', 'filter-housing-system-integration', 'service-intervals'],
+      },
+      {
+        problem: 'Remote pneumatic valve actuators powered by instrument air — nearest maintenance technician is 8 hours away',
+        standard: 'ISO 8573-1 Class 2 (PDP ≤−40°C instrument air), ISO 8573-3',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'Remote location favours HOC or blower-purge desiccant dryer (no heater elements to fail; no purge air valves on heatless type); install continuous dew point transmitter with SCADA integration — remote dew point monitoring allows early intervention before instrument failure; size desiccant towers for 3–5 year desiccant service life without site visit; specify desiccant replacement kit held at nearest service base; coalescing pre-filter with auto-drain and auto-drain failure alarm; downstream particulate filter sized for 2× normal change interval to accommodate remote access constraints',
+        relatedArticles: ['compressed-air-purity', 'service-intervals', 'filter-housing-system-integration'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-DRYCORE)',
+      evidenceStatus: 'ISO 8573-1:2010 humidity classes verified; ISO 8573-3:2010 dew point measurement methods verified; refrigeration dryer PDP limit from thermodynamic constraint (water freezing point); desiccant purge air percentages from published compressed air drying engineering references; HOC dryer temperature requirement from Atlas Copco and Gardner Denver technical documentation; membrane dryer purge loss from Donaldson and Parker Hannifin membrane product specifications',
+    },
+  },
+
+  // ── Article 30 ────────────────────────────────────────────────────────────
+  {
+    slug: 'iso-11171-particle-counting',
+    title: 'ISO 11171 Particle Counter Calibration: Methodology, Traceability, and In-Service Application',
+    subtitle: 'ISO 11171 automatic particle counter calibration methodology, reference material traceability chain, coincidence error at high concentrations, ISO 3722 sample bottle preparation, in-line versus bottle sampling, and counter selection for ISO 4406 reporting.',
+    metaDescription: 'Engineering reference for ISO 11171 particle counter calibration: NIST-traceable reference material, coincidence error and dilution requirements, ISO 3722 sample bottle preparation, in-line versus bottle sample comparison, hydraulic fluid compatibility, and APC selection criteria for ISO 4406 fluid cleanliness reporting.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'ISO 4406 cleanliness codes derived from particle counting are only as reliable as the calibration of the automatic particle counter (APC) used to generate the count data. ISO 11171 defines the calibration methodology for APCs used for hydraulic fluid cleanliness measurement, establishing a traceable reference chain from national standards through certified reference materials to field instruments. Without ISO 11171 calibration, two different laboratories can report different ISO 4406 codes from the same fluid sample — making cleanliness data non-comparable and specification compliance unverifiable.',
+    sections: [
+      {
+        heading: 'Why ISO 11171 Calibration Matters',
+        body: 'Before ISO 11171 (and its predecessor ISO/CD 11171 derived from ACFTD — Air Cleaner Fine Test Dust era), automatic particle counters were calibrated using ACFTD (AC Fine Test Dust) suspensions. ACFTD had a poorly characterised, variable particle size distribution — different batches of ACFTD produced different calibration responses, and particle size assignments were inconsistent between laboratories. This explained a well-documented phenomenon: two ISO 4406 particle counts from the same sample submitted to different laboratories could differ by 2–3 ISO code levels. ISO 11171 replaced ACFTD calibration with a traceable reference material (RM) — ISO Medium Test Dust (ISO 12103-1 A2 Fine) characterised by NIST (National Institute of Standards and Technology) or equivalent national metrology institute. ISO 11171 calibration produces particle size discrimination at specific absolute (c-type) sizes, which is why ISO 4406:1999 and later use the (c) suffix — indicating counter calibration per ISO 11171.',
+      },
+      {
+        heading: 'ISO 11171 Calibration Reference Material and Traceability',
+        body: 'ISO 11171 specifies calibration using primary reference material (PRM) — a suspension of ISO Medium Test Dust (ISO 12103-1 A2 Fine, also known as SAE Fine) in ISO VG 32 or ISO VG 46 mineral base oil. The PRM is characterised by scanning electron microscopy (SEM) to establish the actual particle size distribution; this characterisation is traceable to NIST or equivalent national reference laboratory. The traceability chain: NIST standard (reference) → PRM manufacturer characterisation → certified reference material (CRM) batch → working calibration suspension → APC calibration. ISO 11171 calibration is performed at the particle sizes reported in ISO 4406: ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c). The "(c)" designation indicates calibration per ISO 11171 — distinguishing from legacy ACFTD-calibrated counts which used different (and non-equivalent) particle size thresholds. A particle reported as 5 µm(c) on an ISO 11171-calibrated counter corresponds to a different physical size than 5 µm on an ACFTD-calibrated counter.',
+        callout: [
+          { label: 'Reference material', value: 'ISO 12103-1 A2 Fine (NIST-traceable SEM characterisation)' },
+          { label: 'Calibration sizes', value: '≥4 µm(c), ≥6 µm(c), ≥14 µm(c)' },
+          { label: '(c) suffix meaning', value: 'ISO 11171-calibrated counter (not ACFTD)' },
+        ],
+      },
+      {
+        heading: 'Coincidence Error and High-Concentration Limits',
+        body: 'Coincidence error occurs when two or more particles pass through the sensing zone simultaneously — the APC counts them as a single, larger particle, underestimating particle count at each size channel and overestimating count at larger size channels. The coincidence limit is the concentration above which error exceeds a defined threshold (typically 10% error). ISO 11171 specifies the coincidence limit for the counter as part of calibration: it must be declared by the manufacturer and verified. For most commercial laser particle counters, coincidence limit is approximately 6,000–20,000 particles/mL at ≥1 µm cumulative concentration. When fluid concentration exceeds the coincidence limit, dilution is required before counting. Dilution procedure: dilute with pre-filtered base oil (particle count below detection limit for the diluent); record dilution ratio; multiply reported counts by dilution ratio to obtain original concentration. Failure to dilute concentrated samples produces falsely low ISO 4406 codes and false compliance with cleanliness targets.',
+      },
+      {
+        heading: 'ISO 3722 Sample Bottle Preparation',
+        body: 'The sample bottle is the most significant contamination source in laboratory particle counting. ISO 3722 defines the preparation protocol for fluid sampling containers: glass bottles (borosilicate) or low-extractable plastic bottles (HDPE, PTFE); minimum 50 mL capacity. Preparation: (1) rinse with clean filtered solvent (n-heptane, petroleum ether, or equivalent at ≤ISO 4406 Class 14/12/9 cleanliness); (2) fill with pre-filtered solvent; (3) seal with clean solvent-rinsed polyethylene cap; (4) verify blank count — count pre-filtered solvent from the prepared bottle; blank must be below the lowest expected count in the sample; (5) store sealed until use. Common contamination source: sampling bottle contamination introduces particles at 4–6 µm(c) size range — exactly the ISO 4406 reporting range; an inadequately prepared bottle shifts ISO 4406 results by 1–3 code levels upward. Laboratory bottles should be re-verified after any process deviation and at regular intervals (typically every 50 bottles or monthly).',
+        callout: [
+          { label: 'ISO 3722 blank requirement', value: 'Blank count below lowest expected sample count' },
+          { label: 'Contamination risk', value: 'Bottle contamination adds 1–3 ISO codes (4–6 µm range)' },
+        ],
+      },
+      {
+        heading: 'In-Line vs Bottle Sampling',
+        body: 'In-line particle counting uses an APC with a flow-through sensing cell connected directly to the system fluid circuit via a high-pressure sample line and flow control valve. Bottle sampling draws a fluid sample into an ISO 3722-prepared bottle for laboratory analysis. In-line advantages: continuous real-time monitoring; no sampling delay; eliminates bottle contamination variable; detects transient contamination events (filter bypass, maintenance events); integrates with condition monitoring systems and alarms. In-line disadvantages: requires compatible APC (high-pressure-rated cell up to 420 bar for some hydraulic applications); sensitive to air bubbles (which count as particles — degassing is critical); sensitive to flow rate (must be controlled within ±5% of rated flow); cannot be shared between multiple machines. Bottle sampling advantages: single laboratory instrument serves many machines; convenient for periodic monitoring programmes; allows laboratory confirmation of in-line results. Bottle sampling disadvantage: sample taken at one time point; contamination between samples is not detected; bottle handling introduces potential for external contamination. ISO 11171 calibration applies to both methods — in-line counters require the same calibration as laboratory instruments.',
+      },
+      {
+        heading: 'APC Selection and Fluid Compatibility',
+        body: 'APC selection criteria for ISO 4406 hydraulic fluid cleanliness reporting: (1) Calibration — must be ISO 11171 calibrated; obtain calibration certificate with traceability statement to national standard; verify calibration date within manufacturer-recommended interval (typically 12 months); (2) Fluid compatibility — APC flow cell and seals must be compatible with the fluid to be measured (hydraulic oil, transmission fluid, turbine oil, phosphate ester, water-glycol); incompatible seals swell and shed particles, falsifying results; (3) Sizing resolution — APC must report counts at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) as required by ISO 4406; some APCs report at ≥2 µm(c) as well for extended analysis; (4) Coincidence limit — specify coincidence limit from the calibration certificate; verify it exceeds the expected maximum sample concentration for the application; (5) Sample volume — APC must measure the minimum sample volume required to achieve statistical validity for the expected concentration range; ISO 4406 reporting requires sufficient count volume to reduce statistical uncertainty to ≤1 ISO code level; at ISO 4406 cleanliness code 14 (160–320 particles/mL at ≥6 µm(c)), a 1 mL sample gives adequate statistics; at code 8 (1.3–2.5 particles/mL), a 25 mL sample is required for acceptable confidence.',
+      },
+      {
+        heading: 'Calibration Intervals and Field Verification',
+        body: 'ISO 11171 requires full calibration at intervals defined by the manufacturer and the application — typically 12 months for most commercial APCs or when any of the following occur: (1) counter serviced or any optical component replaced; (2) internal leak detected; (3) results inconsistent with known reference samples; (4) counter dropped or exposed to shock. Field verification between full calibrations: (1) daily or before each measurement session, verify with a traceable verification fluid (ISO 3722-prepared clean diluent in a verified clean bottle — blank count must be below detection limit); (2) periodic inter-laboratory comparison — send split samples to reference laboratory for ISO 4406 comparison; results should agree within ±1 ISO code level; discrepancy >1 code level triggers investigation and recalibration. Calibration drift indicators: a counter that consistently reports ±2 ISO code levels different from a reference counter on the same sample requires immediate recalibration — this magnitude of drift can cause false compliance or false exceedances and is engineering-significant.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'ISO 11171 calibration sizes', value: '≥4 µm(c), ≥6 µm(c), ≥14 µm(c)' },
+      { label: 'Coincidence limit (typical APC)', value: '6,000–20,000 particles/mL at ≥1 µm' },
+      { label: 'Calibration interval', value: '12 months (or after any maintenance event)' },
+      { label: 'Inter-lab agreement limit', value: '±1 ISO code level (investigate if >1 level)' },
+      { label: 'ISO 3722 blank requirement', value: 'Below lowest expected sample count' },
+    ],
+    relatedStandards: ['ISO 11171', 'ISO 4406', 'ISO 3722', 'ISO 12103-1', 'ISO 16889'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
+    keywords: [
+      'ISO 11171', 'particle counter calibration', 'ISO 4406 counting', 'APC calibration',
+      'coincidence error', 'ISO 3722 sample bottle', 'pressure dew point', 'reference material',
+      'NIST traceable', 'ISO 12103-1 A2 fine', 'in-line particle counting', 'bottle sampling',
+      'cleanliness measurement', 'ACFTD replacement', 'c-suffix particle size',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Two laboratories report ISO 4406 codes differing by more than 1 code level from the same sample',
+        'In-line particle counter shows erratically high counts during normal operation',
+        'ISO 4406 codes from the same system trending steadily upward without any system change',
+        'Post-maintenance particle count spike much larger than expected from maintenance contamination',
+        'Counter consistently reads 2+ codes cleaner than the reference laboratory on the same sample',
+      ],
+      probableCauses: [
+        'Inter-lab discrepancy >1 code: one or both counters not ISO 11171 calibrated; one counter using ACFTD calibration (legacy); bottle preparation inadequate at one laboratory (ISO 3722 non-compliance); different fluid viscosities in counting cells',
+        'Erratic in-line counts: air bubbles in fluid (bubble counts as particle — check for pump cavitation, reservoir air ingestion, low fluid level); flow rate not controlled at rated APC flow (flow variation shifts count); check flow control valve',
+        'Steady upward trend without system change: APC calibration drift (schedule recalibration); or real increase in system contamination (breather failure, seal deterioration — investigate ingress pathways before assuming counter drift)',
+        'Large post-maintenance spike: maintenance ingress (tools, fill fluid, component handling) — normal; if much larger than expected: bottle contamination during sampling event (ISO 3722 blank check on sampling bottle)',
+        'Counter reading cleaner than reference: coincidence error (sample too concentrated — dilute before counting; verify dilution ratio); APC flow rate too low (undercounting); calibration drift on high side',
+      ],
+      inspectionMethods: [
+        'ISO 11171 calibration certificate review: verify calibration date, traceability statement, declared coincidence limit, and calibrated particle sizes; reject if calibration is expired or traceability is absent',
+        'Blank count verification per ISO 3722: prepare bottle per procedure; count pre-filtered diluent; blank must be below detection for the system under test; if blank fails, remake bottles before continuing',
+        'Inter-laboratory comparison: split a known-concentration reference sample between laboratory APC and a NIST-traceable reference laboratory; if results differ by >1 ISO code at any size, recalibrate local counter',
+        'In-line APC validation: compare in-line count to simultaneous bottle sample from the same sampling point; results should agree within ±1 ISO code; systematic difference indicates in-line counter issue (bubbles, flow rate, calibration)',
+        'Coincidence check: dilute sample 10:1 with clean diluent; if counts × 10 agree within ±20% with undiluted count — sample was below coincidence limit; if diluted result ÷ 10 is significantly lower than undiluted — coincidence was affecting original count',
+      ],
+      correctiveActions: [
+        'Expired calibration: return APC to manufacturer or accredited calibration laboratory for ISO 11171 recalibration; do not report ISO 4406 results from a counter with expired calibration certificate',
+        'In-line bubble contamination: increase reservoir fluid level above minimum; install degassing device on sample line; check compressor or pump for air ingestion; reduce flow rate to APC if within specification range',
+        'ISO 3722 bottle failure: replace entire bottle preparation batch; review procedure — ensure rinse solvent itself is particle-free (verify rinse solvent with APC before use); store prepared bottles sealed until use',
+        'Counter consistently biased vs reference: full ISO 11171 recalibration; if bias persists post-calibration, inspect laser source intensity (laser degradation shifts count curves) and flow cell (deposit on cell walls)',
+        'ACFTD legacy counter in service: replace or recalibrate to ISO 11171; document all historical data as pre-ISO 11171 and do not directly compare with ISO 11171 (c) data without a correction factor validated for the specific counter',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Hydraulic system ISO 4406 code reported as ISO 22/20/17 by in-house counter but ISO 19/17/14 by external laboratory from same sample',
+        standard: 'ISO 11171 (APC calibration), ISO 3722 (sample bottle), ISO 4406 (cleanliness reporting)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Discrepancy of 3 ISO codes requires immediate investigation: (1) verify both counters have current ISO 11171 calibration certificates; (2) check in-house ISO 3722 bottle blank — if blank count is elevated, bottle contamination explains the inflated in-house result; (3) verify in-house counter is counting at the ISO 4406 (c) size thresholds (4, 6, 14 µm) — some legacy counters still report at legacy ACFTD sizes; (4) send a new split sample to both laboratories simultaneously to confirm the discrepancy; do not make system decisions based on uncalibrated counter data',
+        relatedArticles: ['iso-4406', 'contamination-ingression-modelling', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'New particle counter installed for monitoring a servo valve hydraulic system — verifying fitness for purpose before first use',
+        standard: 'ISO 11171 (calibration), ISO 4406 (cleanliness code), NFPA T2.14 (servo valve target ISO 16/14/11)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Pre-use acceptance procedure: (1) verify ISO 11171 calibration certificate with NIST-traceable reference material, calibration date within 12 months, and declared coincidence limit ≥10,000 particles/mL at ≥1 µm; (2) verify ISO 3722 bottle blank <1 particle/mL at ≥6 µm(c) from 5 bottles prepared per procedure; (3) count an ISO 4406 reference suspension of known concentration; compare to certificate value — agree within ±1 ISO code; (4) document acceptance test results; file with calibration certificate before first operational use',
+        relatedArticles: ['iso-4406', 'contamination-sensitivity-components', 'nfpa-t2-14-hydraulic-cleanliness'],
+      },
+      {
+        problem: 'ISO 4406 codes on an operating hydraulic system trending upward by 1 code per month over 4 months — determining whether this is real contamination or counter drift',
+        standard: 'ISO 11171 (calibration), ISO 4406 (trending), ISO 16889 (filter verification)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Differentiate real trend from counter drift: (1) send one sample from each of the last 3 months stored samples (if sealed bottles preserved) to an ISO 11171-calibrated reference laboratory; if reference confirms upward trend — contamination is real; if reference shows constant code — counter is drifting upward; (2) simultaneously: recalibrate counter; (3) if contamination trend confirmed: execute contamination audit per contamination-ingression-modelling article to identify accelerating ingress pathway',
+        relatedArticles: ['iso-4406', 'contamination-ingression-modelling', 'particle-ingress-prevention'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-STANDARDS (STD-ISO-11171)',
+      evidenceStatus: 'ISO 11171:2010 calibration methodology verified; ISO 3722:2015 sample bottle preparation verified; ISO 12103-1:2016 reference material specification verified; coincidence limit range from commercial APC manufacturer specifications (HACH, Parker Kittiwake, Hydac); inter-laboratory agreement limit from ISO 11171 Annex data; ACFTD replacement rationale from ISO TC 131/SC 6 technical report',
+    },
+  },
+
 ];
 
 // ─── STANDARDS ────────────────────────────────────────────────────────────────
