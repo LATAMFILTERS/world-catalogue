@@ -414,7 +414,10 @@ const COMPETITOR_BRANDS = new Set([
 
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
-  const m = manufacturer.toUpperCase().trim();
+  // Strip trademark/registered symbols before matching — some scraped brand
+  // names carry them (e.g. "FLEETGUARD®"), which would otherwise silently
+  // fail the exact-match lookup and misclassify a competitor as OEM.
+  const m = manufacturer.toUpperCase().replace(/[®™]/g, '').trim();
   // Direct match
   if (COMPETITOR_BRANDS.has(m)) return true;
   // Partial match for common patterns
@@ -809,18 +812,22 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
 // Splits a cross-reference match into HD/LD groups when a duty filter wasn't
 // requested and the code hit both classes. Returns null when the rows are a
 // single duty class (caller should render results normally in that case).
-function handleMixedDuty(rows, lang) {
+async function handleMixedDuty(rows, lang, client) {
   const hd = rows.filter(r => r.duty === 'HEAVY_DUTY');
   const ld = rows.filter(r => r.duty === 'LIGHT_DUTY');
   if (hd.length === 0 || ld.length === 0) return null;
+  const hd_products = hd.slice(0, 10).map(r => buildFilterData(r, lang));
+  const ld_products = ld.slice(0, 10).map(r => buildFilterData(r, lang));
+  await enrichAlternatives(hd_products, client);
+  await enrichAlternatives(ld_products, client);
   return {
     success: true,
     results: [],
     mixed_duty: true,
     hd_count: hd.length,
     ld_count: ld.length,
-    hd_products: hd.slice(0, 10).map(r => buildFilterData(r, lang)),
-    ld_products: ld.slice(0, 10).map(r => buildFilterData(r, lang)),
+    hd_products,
+    ld_products,
   };
 }
 
@@ -934,7 +941,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     );
     if (oem.rows.length > 0) {
       if (!validDuty) {
-        const mixed = handleMixedDuty(oem.rows, lang);
+        const mixed = await handleMixedDuty(oem.rows, lang, client);
         if (mixed) return res.json(mixed);
       }
       const products = oem.rows.slice(0, 10).map(r => buildFilterData(r, lang));
@@ -959,7 +966,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       );
       if (prefix.rows.length > 0) {
         if (!validDuty) {
-          const mixed = handleMixedDuty(prefix.rows, lang);
+          const mixed = await handleMixedDuty(prefix.rows, lang, client);
           if (mixed) return res.json(mixed);
         }
         const products = prefix.rows.slice(0, 10).map(r => buildFilterData(r, lang));
@@ -969,9 +976,15 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     }
 
     // 3. Description full-text search
+    // description is JSONB ({"en": "...", "es": "..."}), not text — COALESCE
+    // against a text literal throws "invalid input syntax for type json" and
+    // turns every true no-match search into a 500. Pull the language values
+    // out as text before building the tsvector.
     const desc = await client.query(
       `SELECT * FROM elimfilters_catalog
-       WHERE to_tsvector('english', COALESCE(description,'')) @@ plainto_tsquery('english', $1)
+       WHERE to_tsvector('english',
+         COALESCE(description->>'en', '') || ' ' || COALESCE(description->>'es', '')
+       ) @@ plainto_tsquery('english', $1)
        LIMIT 10`,
       [raw]
     );
@@ -1051,9 +1064,12 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
       idx++;
     }
     if (model) {
+      // Older imports stored the equipment name under 'machine' instead of
+      // 'model' (see scripts/run_004_batched.py) — match either key so
+      // legacy-keyed rows aren't silently invisible to this search.
       conditions.push(`EXISTS (
         SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'model') LIKE $${idx}
+        WHERE UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}
       )`);
       params.push('%' + model.toUpperCase() + '%');
       idx++;
