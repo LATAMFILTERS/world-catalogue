@@ -7,8 +7,7 @@ Busca cross-references FRAM/PUROLATOR/WIX para filtros MANN LD (light-duty).
 Fuentes:
   W*              → oilfilter-crossreference.com   (aceite)
   WK*, PU*, KC*, KL* → fuelfilter-crossreference.com  (combustible)
-  C*, FP*, LA*, LC* → airfilter-crossreference.com  (aire)
-  CU*, CUK*           → SKIP (filtros de cabina, no tienen crossrefs en estos sites)
+  C*, FP*, LA*, LC*, CU*, CUK* → airfilter-crossreference.com  (aire / cabina)
 
 Flujo:
   1. Lee C:\\mann\\mann_classified.jsonl → extrae SKUs con segment=LD
@@ -97,7 +96,8 @@ _PREFIX_ROUTES = [
 # LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
 # Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
 # WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
-_SKIP_PREFIXES = {"LE", "LB", "DI", "CU", "CUK"}  # DI = industrial diesel; CU/CUK = cabin air (not on crossref sites)
+# CU / CUK (cabin) DO have crossref coverage on airfilter-crossreference.com — not skipped.
+_SKIP_PREFIXES = {"LE", "LB", "DI"}  # DI = industrial diesel
 
 # HD Mann prefixes — truck/bus/industrial, no LD consumer crossrefs
 _HD_PREFIXES = {"TB", "HD", "HF", "DF", "TFP", "TF", "WA", "FP2", "DB"}
