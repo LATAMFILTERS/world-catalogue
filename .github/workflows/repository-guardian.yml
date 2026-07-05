@@ -1,0 +1,96 @@
+name: Repository Guardian
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: repository-guardian-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guard-generated-artifacts:
+    name: Block generated artifact changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect forbidden generated artifacts in PR
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          echo "Checking changed files from $BASE_SHA to $HEAD_SHA"
+          git diff --name-only "$BASE_SHA" "$HEAD_SHA" > changed-files.txt
+
+          echo "Changed files:"
+          cat changed-files.txt
+
+          FORBIDDEN_REGEX='^(frontend/out/|frontend/public/api/citation/|elimfilters-vault/00-meta/CITATION_INDEX\.json$|frontend/src/lib/jsonld-constants\.generated\.ts$)'
+
+          if grep -E "$FORBIDDEN_REGEX" changed-files.txt > forbidden-files.txt; then
+            echo "::error::This PR modifies generated artifacts that caused merge conflicts in the past. Do not commit generated output. Regenerate during build/deploy instead."
+            echo "Forbidden generated files:"
+            cat forbidden-files.txt
+            exit 1
+          fi
+
+          echo "No forbidden generated artifacts changed."
+
+  build:
+    name: Build and type validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - name: Install root dependencies
+        run: npm ci || npm install
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci || npm install
+
+      - name: Check TypeScript
+        working-directory: frontend
+        run: npm run type-check
+
+      - name: Build static site
+        run: npm run build
+
+  conflict-marker-check:
+    name: Conflict marker check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fail on Git conflict markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -n -E '^(<<<<<<<|=======|>>>>>>>)' -- ':!frontend/out/**' ':!node_modules/**'; then
+            echo "::error::Git conflict markers were found. Resolve conflicts before merging."
+            exit 1
+          fi
+          echo "No conflict markers found."

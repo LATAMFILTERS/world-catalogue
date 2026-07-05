@@ -449,7 +449,10 @@ const COMPETITOR_BRANDS = new Set([
 
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
-  const m = manufacturer.toUpperCase().trim();
+  // Strip trademark/registered symbols before matching — some scraped brand
+  // names carry them (e.g. "FLEETGUARD®"), which would otherwise silently
+  // fail the exact-match lookup and misclassify a competitor as OEM.
+  const m = manufacturer.toUpperCase().replace(/[®™]/g, '').trim();
   // Direct match
   if (COMPETITOR_BRANDS.has(m)) return true;
   // Partial match for common patterns
@@ -459,6 +462,11 @@ function isCompetitor(manufacturer) {
 function parseRefs(arr){
   if (!Array.isArray(arr)) return [];
 
+  // Bad scraper data occasionally stores an internal field name (a spec-table
+  // column header, or literal webpage UI text like "Find a Dealer") in either
+  // the "manufacturer" or the "code" position of a cross-reference entry —
+  // the two got scrambled at import time, not consistently in one position.
+  // These must never reach the API response.
   const INVALID = new Set([
     'THREADSIZE',
     'LARGESTOD',
@@ -471,7 +479,9 @@ function parseRefs(arr){
     'RATEDFLOW',
     'MEDIATYPE',
     'RELATEDPARTS',
+    'RELATED PARTS',
     'MAINTENANCEKITS',
+    'MAINTENANCE KITS',
     'TESTSPECIFICATION',
     'PRODUCT DESCRIPTION',
     'PRODUCTDESCRIPTION',
@@ -479,23 +489,40 @@ function parseRefs(arr){
     'UPGRADE OF',
     'UPGRADEOF',
     'FOR UPGRADE, USE',
+    'FIND A DEALER',
+    'DOWNLOAD SPECS',
+    'OEM CROSS REFERENCE',
+    'CELLULOSE',
     'NO'
   ]);
 
-  const seen=new Set();
+  // A real manufacturer name or reference code never looks like a physical
+  // measurement (a number followed by a unit). When either field matches
+  // this shape, the entry is spec-table noise, not a genuine cross-reference.
+  const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|UN|UNF|KG|LB)\b/i;
+
+  // A real manufacturer name always contains at least one letter (Caterpillar,
+  // 3M, SKF...). Some scraped rows pair two part numbers together (e.g.
+  // {manufacturer: "23518480", code: "23527033"} — a related/alternate code
+  // relationship, not a cross-reference brand) with no company name at all.
+  const HAS_LETTER = /[A-Za-z]/;
+
+  const seen = new Set();
 
   return arr
-    .map(item=>({
-      manufacturer:String(item.manufacturer||item.brand||'').trim(),
-      code:String(item.code||'').trim()
+    .map(item => ({
+      manufacturer: fixMojibake(String(item.manufacturer || item.brand || '').trim()),
+      code: fixMojibake(String(item.code || '').trim())
     }))
-    .filter(r=>r.manufacturer && r.code)
-    .filter(r=>!INVALID.has(r.manufacturer.toUpperCase()))
-    .filter(r=>{
-        const k=(r.manufacturer+'|'+r.code).toUpperCase();
-        if(seen.has(k)) return False;
-        seen.add(k);
-        return true;
+    .filter(r => r.manufacturer && r.code)
+    .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
+    .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
+    .filter(r => HAS_LETTER.test(r.manufacturer))
+    .filter(r => {
+      const k = (r.manufacturer + '|' + r.code).toUpperCase();
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
     });
 }
 
@@ -584,11 +611,27 @@ function safeSubtype(val, lang = 'en') {
   return text;
 }
 
+// ── Mojibake repair ──────────────────────────────────────────────────────────
+// Some catalog rows were imported through a pipeline that read UTF-8 bytes as
+// Latin-1 and re-encoded them, producing sequences like "Â", "â€”", "â†'".
+// Re-interpreting the string as Latin-1 bytes and decoding as UTF-8 undoes
+// exactly that mistake. Only applied when the string looks corrupted, and
+// only kept if the repair doesn't produce replacement characters.
+const MOJIBAKE_PATTERN = /Ã[\x80-\xBF]|Â[\x80-\xBF ®™]|â€[™"" -]|â†[’'-]/;
+function fixMojibake(str) {
+  if (typeof str !== 'string' || !MOJIBAKE_PATTERN.test(str)) return str;
+  try {
+    const repaired = Buffer.from(str, 'latin1').toString('utf8');
+    if (repaired && !repaired.includes('�') && repaired !== str) return repaired;
+  } catch (_) {}
+  return str;
+}
+
 function extractText(val, lang = 'en') {
   if (val === null || val === undefined) return null;
   // Already an object (JSONB from pg)
   if (typeof val === 'object' && !Array.isArray(val)) {
-    return val[lang] || val.en || val.es || Object.values(val)[0] || null;
+    return fixMojibake(val[lang] || val.en || val.es || Object.values(val)[0] || null);
   }
   // String – may be raw text OR a JSON-encoded object
   if (typeof val === 'string') {
@@ -597,11 +640,11 @@ function extractText(val, lang = 'en') {
       try {
         const p = JSON.parse(trimmed);
         if (p && typeof p === 'object' && !Array.isArray(p)) {
-          return p[lang] || p.en || p.es || Object.values(p)[0] || val;
+          return fixMojibake(p[lang] || p.en || p.es || Object.values(p)[0] || val);
         }
       } catch (_) {}
     }
-    return val; // plain text
+    return fixMojibake(val); // plain text
   }
   return String(val);
 }
@@ -632,6 +675,22 @@ function getTechLogo(tech) {
 // Canonical technology name corrections (DB may have older/misspelled variants)
 const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
 
+// Deep-sanitizes every string leaf of an array of application objects
+// (equipment_applications / vehicle_applications) against mojibake.
+function fixMojibakeDeep(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr.map(item => {
+    if (item && typeof item === 'object') {
+      const out = {};
+      for (const k of Object.keys(item)) {
+        out[k] = typeof item[k] === 'string' ? fixMojibake(item[k]) : item[k];
+      }
+      return out;
+    }
+    return typeof item === 'string' ? fixMojibake(item) : item;
+  });
+}
+
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
 
@@ -648,7 +707,7 @@ function buildFilterData(row, lang = 'en'){
 
   return {
     elimfilters_sku: row.sku,
-    description: row.description || null,
+    description: extractText(row.description, lang),
     filter_type: extractText(row.filter_type, lang),
     filter_subtype: subtype,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
@@ -669,7 +728,8 @@ function buildFilterData(row, lang = 'en'){
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
-    equipment_applications: row.equipment_applications || []
+    equipment_applications: fixMojibakeDeep(row.equipment_applications),
+    vehicle_applications: fixMojibakeDeep(row.vehicle_applications)
   };
 }
 
@@ -843,6 +903,71 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
 });
 
 
+// Splits a cross-reference match into HD/LD groups when a duty filter wasn't
+// requested and the code hit both classes. Returns null when the rows are a
+// single duty class (caller should render results normally in that case).
+async function handleMixedDuty(rows, lang, client) {
+  const hd = rows.filter(r => r.duty === 'HEAVY_DUTY');
+  const ld = rows.filter(r => r.duty === 'LIGHT_DUTY');
+  if (hd.length === 0 || ld.length === 0) return null;
+  const hd_products = hd.slice(0, 10).map(r => buildFilterData(r, lang));
+  const ld_products = ld.slice(0, 10).map(r => buildFilterData(r, lang));
+  await enrichAlternatives(hd_products, client);
+  await enrichAlternatives(ld_products, client);
+  return {
+    success: true,
+    results: [],
+    mixed_duty: true,
+    hd_count: hd.length,
+    ld_count: ld.length,
+    hd_products,
+    ld_products,
+  };
+}
+
+// ─── GET /api/autocomplete ────────────────────────────────────────────────────────────────────────
+// Predictive suggestions for the part number search box: SKU / codigo_base
+// prefix matches and OEM/competitor cross-reference code prefix matches.
+app.get('/api/autocomplete', searchLimiter, async (req, res) => {
+  const raw = (req.query.q || '').trim();
+  if (raw.length < 2) return res.json([]);
+  const q = raw.toUpperCase().replace(/[-\s]/g, '');
+
+  const client = await pool.connect();
+  try {
+    await client.query("SET client_encoding = 'UTF8'");
+    const { rows } = await client.query(
+      `SELECT DISTINCT ON (val) val, type FROM (
+         SELECT sku AS val, 'SKU' AS type
+         FROM elimfilters_catalog
+         WHERE UPPER(REPLACE(sku,'-','')) LIKE $1
+         UNION ALL
+         SELECT codigo_base AS val, 'BASE CODE' AS type
+         FROM elimfilters_catalog
+         WHERE codigo_base IS NOT NULL AND UPPER(REPLACE(codigo_base,'-','')) LIKE $1
+         UNION ALL
+         SELECT ref->>'code' AS val, 'OEM' AS type
+         FROM elimfilters_catalog, jsonb_array_elements(oem_codes) AS ref
+         WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
+         UNION ALL
+         SELECT ref->>'code' AS val, 'CROSS-REF' AS type
+         FROM elimfilters_catalog, jsonb_array_elements(competitor_codes) AS ref
+         WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
+       ) matches
+       WHERE val IS NOT NULL AND val <> ''
+       ORDER BY val, type
+       LIMIT 8`,
+      [q + '%']
+    );
+    res.json(rows.map(r => ({ text: fixMojibake(r.val), type: r.type })));
+  } catch (e) {
+    console.error('[autocomplete]', e.message);
+    res.json([]);
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/search ──────────────────────────────────────────────────────────────────────────────
 app.get('/api/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || req.query.sku || '').trim();
@@ -855,6 +980,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     return res.status(403).json({ error: 'forbidden' });
   }
 
+  res.set('Cache-Control', 'no-store');
   const lang = detectLang(req);
   const client = await pool.connect();
   try {
@@ -883,22 +1009,37 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'codigo_base' });
     }
 
+    // Equipment class filter — HD and LD parts must never be mixed in a single
+    // result set (different thread sizes / bypass pressures). When the caller
+    // doesn't specify one and a cross-reference code hits both classes, the
+    // duty-separated shape below is returned instead of a flat list.
+    const dutyParam = (req.query.duty || '').trim().toUpperCase();
+    const validDuty = dutyParam === 'HEAVY_DUTY' || dutyParam === 'HD' ? 'HEAVY_DUTY'
+      : dutyParam === 'LIGHT_DUTY' || dutyParam === 'LD' ? 'LIGHT_DUTY'
+      : null;
+    const dutyClause = validDuty ? ' AND duty = $2' : '';
+    const dutyArgs = validDuty ? [validDuty] : [];
+
     // 2. OEM / competitor cross-reference (exact match)
     const oem = await client.query(
       `SELECT * FROM elimfilters_catalog
-       WHERE EXISTS (
+       WHERE (EXISTS (
          SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
        )
        OR EXISTS (
          SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
-       )
-       LIMIT 10`,
-      [q]
+       ))${dutyClause}
+       LIMIT 20`,
+      [q, ...dutyArgs]
     );
     if (oem.rows.length > 0) {
-      const products = oem.rows.map(r => buildFilterData(r, lang));
+      if (!validDuty) {
+        const mixed = await handleMixedDuty(oem.rows, lang, client);
+        if (mixed) return res.json(mixed);
+      }
+      const products = oem.rows.slice(0, 10).map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
       return res.json({ success: true, results: products, source: 'oem_crossref' });
     }
@@ -907,28 +1048,38 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     if (q.length >= 4) {
       const prefix = await client.query(
         `SELECT * FROM elimfilters_catalog
-         WHERE EXISTS (
+         WHERE (EXISTS (
            SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
            WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
          )
          OR EXISTS (
            SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
            WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
-         )
-         LIMIT 10`,
-        [q + '%']
+         ))${dutyClause}
+         LIMIT 20`,
+        [q + '%', ...dutyArgs]
       );
       if (prefix.rows.length > 0) {
-        const products = prefix.rows.map(r => buildFilterData(r, lang));
+        if (!validDuty) {
+          const mixed = await handleMixedDuty(prefix.rows, lang, client);
+          if (mixed) return res.json(mixed);
+        }
+        const products = prefix.rows.slice(0, 10).map(r => buildFilterData(r, lang));
         await enrichAlternatives(products, client);
         return res.json({ success: true, results: products, source: 'oem_prefix' });
       }
     }
 
     // 3. Description full-text search
+    // description is JSONB ({"en": "...", "es": "..."}), not text — COALESCE
+    // against a text literal throws "invalid input syntax for type json" and
+    // turns every true no-match search into a 500. Pull the language values
+    // out as text before building the tsvector.
     const desc = await client.query(
       `SELECT * FROM elimfilters_catalog
-       WHERE to_tsvector('english', COALESCE(description,'')) @@ plainto_tsquery('english', $1)
+       WHERE to_tsvector('english',
+         COALESCE(description->>'en', '') || ' ' || COALESCE(description->>'es', '')
+       ) @@ plainto_tsquery('english', $1)
        LIMIT 10`,
       [raw]
     );
@@ -1008,9 +1159,12 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
       idx++;
     }
     if (model) {
+      // Older imports stored the equipment name under 'machine' instead of
+      // 'model' (see scripts/run_004_batched.py) — match either key so
+      // legacy-keyed rows aren't silently invisible to this search.
       conditions.push(`EXISTS (
         SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'model') LIKE $${idx}
+        WHERE UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}
       )`);
       params.push('%' + model.toUpperCase() + '%');
       idx++;
@@ -1577,8 +1731,8 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
       // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
       const digits = mannSku.replace(/\D/g, '');
-      const codigoBase = digits.slice(-4);
-      if (!codigoBase || codigoBase.length < 4) { skipped++; continue; }
+      if (!digits) { skipped++; continue; }
+      const codigoBase = digits.slice(-4).padStart(4, '0');
       const find = await client.query(
         `SELECT id, competitor_codes FROM elimfilters_catalog
          WHERE duty = 'LIGHT_DUTY' AND codigo_base = $1
@@ -1593,11 +1747,16 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       if (toAdd.length === 0) { skipped++; continue; }
 
       const merged = [...existing, ...toAdd];
-      await client.query(
-        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
-        [JSON.stringify(merged), find.rows[0].id]
-      );
-      updated++;
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+          [JSON.stringify(merged), find.rows[0].id]
+        );
+        updated++;
+      } catch (rowErr) {
+        console.error('[update/mann-crossrefs row]', mannSku, rowErr.message);
+        errors++;
+      }
     }
     res.json({ success: true, total: rows.length, updated, skipped, errors });
   } catch (e) {

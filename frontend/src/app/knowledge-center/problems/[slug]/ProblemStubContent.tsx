@@ -8,6 +8,12 @@ import {
   PROBLEM_SEVERITY_COLORS,
 } from '@/lib/knowledge-center';
 import type { ProblemStub } from '@/lib/knowledge-center';
+import {
+  ArticleBreadcrumb,
+  WarningBox,
+  SpecificationTable,
+  ArticleSchema,
+} from '@/components/knowledge-center';
 
 const CATEGORY_ORDER_INDEX: Record<string, number> = {
   'mechanical-wear': 0,
@@ -16,6 +22,7 @@ const CATEGORY_ORDER_INDEX: Record<string, number> = {
   'chemical-degradation': 3,
   'biological': 4,
 };
+void CATEGORY_ORDER_INDEX;
 
 export default function ProblemStubContent({ problem }: { problem: ProblemStub }) {
   const severityColor = PROBLEM_SEVERITY_COLORS[problem.severity];
@@ -27,18 +34,11 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
-      {/* Back navigation */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '1rem clamp(1.5rem, 5vw, 4rem)' }}>
-        <Link href="/knowledge-center/problems" style={{
-          fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.7rem',
-          color: 'rgba(255,255,255,0.4)',
-          textDecoration: 'none',
-          letterSpacing: '0.06em',
-        }}>
-          ← PROBLEM GRAPH
-        </Link>
-      </div>
+      <ArticleBreadcrumb items={[
+        { label: 'Knowledge Center', href: '/knowledge-center' },
+        { label: 'Problem Graph', href: '/knowledge-center/problems' },
+        { label: problem.name },
+      ]} />
 
       {/* Hero */}
       <section style={{
@@ -51,7 +51,6 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            {/* Category + ID */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
               <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
@@ -83,7 +82,6 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
               {problem.name}
             </h1>
 
-            {/* Severity badge */}
             <span style={{
               display: 'inline-block',
               fontFamily: 'JetBrains Mono, monospace',
@@ -101,98 +99,47 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
         </div>
       </section>
 
-      {/* Governance status */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)' }}>
+      <div style={{
+        maxWidth: '860px',
+        margin: '0 auto',
+        padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
+      }}>
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          style={{
-            background: 'rgba(255,241,45,0.04)',
-            border: '1px solid rgba(255,241,45,0.15)',
-            borderRadius: '6px',
-            padding: '1.5rem 2rem',
-            marginBottom: '2.5rem',
-          }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            color: 'rgba(255,241,45,0.7)',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            marginBottom: '0.6rem',
-          }}>
-            Entity Status — Draft
-          </p>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '0.9rem',
-            color: 'rgba(255,255,255,0.55)',
-            lineHeight: 1.65,
-          }}>
+          <WarningBox variant="draft">
             This Problem Graph entity is registered with permanent identifier{' '}
             <span style={{ fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem' }}>
               {problem.id}
             </span>
             . Engineering content — definition, failure progression, affected components, contamination sources,
             and technology recommendations — is scheduled for the Phase 3 Engineering Data Layer.
-          </p>
+          </WarningBox>
         </motion.div>
 
-        {/* Governance metadata table */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          style={{ marginBottom: '3rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: 'rgba(255,255,255,0.3)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: '1rem',
-          }}>
-            KC-00 Governance Metadata
-          </p>
-          <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-            <tbody>
-              {[
-                ['Permanent ID', problem.id],
-                ['Entity Type', 'Problem (PROB-xxx)'],
-                ['Category', PROBLEM_CATEGORY_LABELS[problem.category]],
-                ['Severity', problem.severity.charAt(0).toUpperCase() + problem.severity.slice(1)],
-                ['Status', 'Draft'],
-                ['Content Phase', 'Phase 3 — Engineering Data Layer'],
-              ].map(([label, value]) => (
-                <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <td style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.7rem',
-                    color: 'rgba(255,255,255,0.35)',
-                    padding: '0.65rem 0',
-                    width: '200px',
-                    letterSpacing: '0.04em',
-                  }}>
-                    {label}
-                  </td>
-                  <td style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.65)',
-                    padding: '0.65rem 0 0.65rem 1rem',
-                  }}>
-                    {value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <SpecificationTable
+            title="KC-00 Governance Metadata"
+            labelWidth="200px"
+            rows={[
+              { label: 'Permanent ID', value: problem.id },
+              { label: 'Entity Type', value: 'Problem (PROB-xxx)' },
+              { label: 'Category', value: PROBLEM_CATEGORY_LABELS[problem.category] },
+              { label: 'Severity', value: problem.severity.charAt(0).toUpperCase() + problem.severity.slice(1) },
+              { label: 'Status', value: 'Draft' },
+              { label: 'Content Phase', value: 'Phase 3 — Engineering Data Layer' },
+            ]}
+          />
         </motion.div>
 
-        {/* Related problems in same category */}
+        {/* Related problems — pill links (same category) */}
         {relatedProblems.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -232,23 +179,17 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
         )}
       </div>
 
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'TechArticle',
-            '@id': `https://elimfilters.com/knowledge-center/problems/${problem.slug}`,
-            'name': problem.name,
-            'description': `${problem.id}: ${problem.name} — a ${problem.severity}-severity industrial failure problem in the ${PROBLEM_CATEGORY_LABELS[problem.category]} category.`,
-            'url': `https://elimfilters.com/knowledge-center/problems/${problem.slug}`,
-            'isPartOf': { '@id': 'https://elimfilters.com/knowledge-center/problems' },
-            'author': { '@id': 'https://elimfilters.com/#organization' },
-            'identifier': problem.id,
-          }),
-        }}
-      />
+      <ArticleSchema data={{
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        '@id': `https://elimfilters.com/knowledge-center/problems/${problem.slug}`,
+        name: problem.name,
+        description: `${problem.id}: ${problem.name} — a ${problem.severity}-severity industrial failure problem in the ${PROBLEM_CATEGORY_LABELS[problem.category]} category.`,
+        url: `https://elimfilters.com/knowledge-center/problems/${problem.slug}`,
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-center/problems' },
+        author: { '@id': 'https://elimfilters.com/#organization' },
+        identifier: problem.id,
+      }} />
     </main>
   );
 }

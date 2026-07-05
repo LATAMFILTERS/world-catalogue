@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { TERMINOLOGY_REGISTRY, termIdToSlug } from '@/lib/knowledge-center';
 import type { TerminologyEntry } from '@/lib/knowledge-center';
+import {
+  ArticleBreadcrumb,
+  ArticleHero,
+  SpecificationTable,
+  ArticleSchema,
+} from '@/components/knowledge-center';
 
 export default function GlossaryTermContent({
   entry,
@@ -19,69 +25,41 @@ export default function GlossaryTermContent({
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
 
-      {/* Back navigation */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '1rem clamp(1.5rem, 5vw, 4rem)' }}>
-        <Link href="/knowledge-center/glossary" style={{
-          fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.7rem',
-          color: 'rgba(255,255,255,0.4)',
-          textDecoration: 'none',
-          letterSpacing: '0.06em',
-        }}>
-          ← GLOSSARY
-        </Link>
-      </div>
+      <ArticleBreadcrumb items={[
+        { label: 'Knowledge Center', href: '/knowledge-center' },
+        { label: 'Glossary', href: '/knowledge-center/glossary' },
+        { label: entry.term },
+      ]} />
 
-      {/* Hero */}
-      <section style={{
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
-      }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-          >
-            <p style={{
+      <ArticleHero
+        overline={entry.id}
+        title={entry.term}
+        gradient={false}
+      >
+        {entry.aliases.length > 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            style={{
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: '0.65rem',
-              letterSpacing: '0.1em',
               color: 'rgba(255,255,255,0.3)',
-              marginBottom: '1rem',
-            }}>
-              {entry.id}
-            </p>
-            <h1 style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-              lineHeight: 1.15,
-              marginBottom: '0.75rem',
-              color: '#fff',
-            }}>
-              {entry.term}
-            </h1>
-            {entry.aliases.length > 0 && (
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                color: 'rgba(255,255,255,0.3)',
-                letterSpacing: '0.04em',
-              }}>
-                Also: {entry.aliases.join(' · ')}
-              </p>
-            )}
-          </motion.div>
-        </div>
-      </section>
+              letterSpacing: '0.04em',
+            }}
+          >
+            Also: {entry.aliases.join(' · ')}
+          </motion.p>
+        )}
+      </ArticleHero>
 
-      {/* Definition */}
       <div style={{
         maxWidth: '860px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
+
+        {/* Canonical definition */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -144,57 +122,24 @@ export default function GlossaryTermContent({
           </motion.div>
         )}
 
-        {/* Governance metadata */}
+        {/* KC-00 Governance Metadata */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          style={{ marginBottom: '3rem' }}
         >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            color: 'rgba(255,255,255,0.3)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: '1rem',
-          }}>
-            KC-00 Governance Metadata
-          </p>
-          <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-            <tbody>
-              {[
-                ['Permanent ID', entry.id],
-                ['Status', entry.status.charAt(0).toUpperCase() + entry.status.slice(1)],
-                ['Version', entry.version],
-                ['Last Reviewed', entry.lastReviewed],
-              ].map(([label, value]) => (
-                <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <td style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.7rem',
-                    color: 'rgba(255,255,255,0.3)',
-                    padding: '0.6rem 0',
-                    width: '160px',
-                    letterSpacing: '0.04em',
-                  }}>
-                    {label}
-                  </td>
-                  <td style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.6)',
-                    padding: '0.6rem 0 0.6rem 1rem',
-                  }}>
-                    {value}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <SpecificationTable
+            title="KC-00 Governance Metadata"
+            rows={[
+              { label: 'Permanent ID', value: entry.id },
+              { label: 'Status', value: entry.status.charAt(0).toUpperCase() + entry.status.slice(1) },
+              { label: 'Version', value: entry.version },
+              { label: 'Last Reviewed', value: entry.lastReviewed },
+            ]}
+          />
         </motion.div>
 
-        {/* Related terms */}
+        {/* Related terms — pill links (distinct from article cards) */}
         {relatedEntries.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -234,25 +179,19 @@ export default function GlossaryTermContent({
         )}
       </div>
 
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'DefinedTerm',
-            '@id': `https://elimfilters.com/knowledge-center/glossary/${slug}`,
-            'name': entry.term,
-            'description': entry.definition,
-            'identifier': entry.id,
-            'inDefinedTermSet': { '@id': 'https://elimfilters.com/knowledge-center/glossary' },
-            'author': { '@id': 'https://elimfilters.com/#organization' },
-            'version': entry.version,
-            'dateModified': entry.lastReviewed,
-            'alternateName': entry.aliases,
-          }),
-        }}
-      />
+      <ArticleSchema data={{
+        '@context': 'https://schema.org',
+        '@type': 'DefinedTerm',
+        '@id': `https://elimfilters.com/knowledge-center/glossary/${slug}`,
+        name: entry.term,
+        description: entry.definition,
+        identifier: entry.id,
+        inDefinedTermSet: { '@id': 'https://elimfilters.com/knowledge-center/glossary' },
+        author: { '@id': 'https://elimfilters.com/#organization' },
+        version: entry.version,
+        dateModified: entry.lastReviewed,
+        alternateName: entry.aliases,
+      }} />
     </main>
   );
 }
