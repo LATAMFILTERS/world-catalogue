@@ -192,6 +192,35 @@ export const TERM_IDS = {
   'depth-filtration':              'TERM-DEPTH-FILTRATION',
   'surface-filtration':            'TERM-SURFACE-FILTRATION',
   'synthetic-media':               'TERM-SYNTHETIC-MEDIA',
+  // Phase 5B Expansion — Filtration Performance
+  'collapse-pressure':             'TERM-COLLAPSE-PRESSURE',
+  // Phase 5B Expansion — Air Intake
+  'safety-element':                'TERM-SAFETY-ELEMENT',
+  'pre-cleaner':                   'TERM-PRE-CLEANER',
+  'restriction-indicator':         'TERM-RESTRICTION-INDICATOR',
+  'breather-filter':               'TERM-BREATHER-FILTER',
+  // Phase 5B Expansion — Fluid Cleanliness
+  'dew-point':                     'TERM-DEW-POINT',
+  'compressed-air-purity':         'TERM-COMPRESSED-AIR-PURITY',
+  // Phase 5B Expansion — Contamination
+  'ferrous-wear-debris':           'TERM-FERROUS-WEAR-DEBRIS',
+  'glycol-contamination':          'TERM-GLYCOL-CONTAMINATION',
+  // Phase 5B Expansion — Hydraulic Systems
+  'kidney-loop':                   'TERM-KIDNEY-LOOP',
+  'system-flushing':               'TERM-SYSTEM-FLUSHING',
+  // Phase 5B Expansion — Lubrication
+  'hydrodynamic-lubrication':      'TERM-HYDRODYNAMIC-LUBRICATION',
+  'oil-drain-interval':            'TERM-OIL-DRAIN-INTERVAL',
+  // Phase 5B Expansion — Chemical Degradation
+  'sludge':                        'TERM-SLUDGE',
+  'lacquer':                       'TERM-LACQUER',
+  // Phase 5B Expansion — Water & Fuel
+  'free-water':                    'TERM-FREE-WATER',
+  'emulsified-water':              'TERM-EMULSIFIED-WATER',
+  'water-separation-efficiency':   'TERM-WATER-SEPARATION-EFFICIENCY',
+  // Phase 5B Expansion — Filter Media
+  'melt-blown-media':              'TERM-MELT-BLOWN-MEDIA',
+  'cellulose-media':               'TERM-CELLULOSE-MEDIA',
 } as const;
 
 // ── Lookup helpers ─────────────────────────────────────────────────────────────
