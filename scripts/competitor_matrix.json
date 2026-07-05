@@ -18625,5 +18625,84 @@
   "P584863": [],
   "P584864": [],
   "P584865": [],
-  "P584866": []
+  "P584866": [],
+  "P584867": [],
+  "P584927": [],
+  "P584928": [],
+  "P584929": [],
+  "P584930": [],
+  "P584936": [],
+  "P584937": [],
+  "P584938": [],
+  "P584939": [],
+  "P600676": [],
+  "P601280": [],
+  "P601437": [],
+  "P601767": [],
+  "P601790": [],
+  "P604457": [],
+  "P604996": [],
+  "P607955": [],
+  "P607960": [],
+  "P608306": [],
+  "P608665": [],
+  "P608666": [],
+  "P608667": [],
+  "P608675": [],
+  "P608676": [
+    {
+      "manufacturer": "BERKHOF",
+      "code": "AMBASSADOR ALE 106-205, ALE 120-205"
+    },
+    {
+      "manufacturer": "BERKHOF",
+      "code": "AMBASSADOR ALE 106-225, ALE 120-225"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "FUTURA FHD 104, FHD 120, FHD 127, FLD 104, FLD 120, FLD 127"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "FUTURA FLD 104, FLD 120, FLD 127"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "MAGIQ MHD 122"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "MAGIQ MHD 131 MAGNUM, MHD 139 MAGNUM, MHD 148 MAGNUM"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "SYNERGY SDD 130, SDD 141"
+    },
+    {
+      "manufacturer": "BOVA",
+      "code": "SYNERGY SDD 130, SSD 141"
+    },
+    {
+      "manufacturer": "IRIZAR",
+      "code": "PB PB 12, PB 13"
+    },
+    {
+      "manufacturer": "IRIZAR",
+      "code": "PB PB 14, PB 14.6, PB 16"
+    },
+    {
+      "manufacturer": "MERCEDES-BENZ",
+      "code": "INTOURO INTOURO, INTOURO E, INTOURO M, INTOURO ME"
+    }
+  ],
+  "P608677": [],
+  "P608885": [],
+  "P609218": [],
+  "P609221": [],
+  "P609519": [],
+  "P610903": [],
+  "P610905": [],
+  "P611858": [],
+  "P611859": [],
+  "P616648": []
 }
