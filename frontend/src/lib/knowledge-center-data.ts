@@ -2645,6 +2645,635 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     },
   },
 
+  // ── Article 21 ────────────────────────────────────────────────────────────
+  {
+    slug: 'contamination-ingression-modelling',
+    title: 'Contamination Ingression Rate Modelling: Cleanliness Budget Methodology for Fluid Systems',
+    subtitle: 'Quantifying contamination ingress pathways, calculating steady-state cleanliness codes, sizing filtration systems against measured ingression rates, and conducting multi-pathway contamination audits.',
+    metaDescription: 'Engineering reference for contamination ingression rate modelling: ingress pathway quantification, steady-state ISO 4406 code calculation, filter sizing against measured ingression rates, ISO 11171 particle counting methodology, and multi-pathway contamination audit procedures.',
+    category: 'engineering',
+    readTime: '13 min',
+    intro: 'Filtration system design is fundamentally a balance problem: the rate at which contamination enters a fluid system must be matched by the rate at which the filtration system removes it. Without a quantitative contamination budget, filter and system sizing is based on empirical rules-of-thumb rather than the actual contamination load the system faces. Contamination ingression modelling replaces assumption with measurement — quantifying each ingress pathway independently and calculating the filtration specification required to achieve and maintain a target cleanliness code (ISO 4406).',
+    sections: [
+      {
+        heading: 'The Contamination Balance Equation',
+        body: 'At steady state, the particle concentration in a fluid system is determined by the balance between contamination ingression rate and contamination removal rate. The governing relationship: C_ss = I / (Q × E), where C_ss is the steady-state particle concentration (particles/mL), I is the total ingression rate (particles/min), Q is the system flow rate through the filter (mL/min), and E is the single-pass filter efficiency at the target particle size (E = 1 − 1/β_x(c)). This equation shows that for a given ingression rate, reducing filter efficiency by half doubles the steady-state particle concentration — doubling the ISO 4406 code by approximately 1 level. Rearranging: the required filter beta ratio = I / (Q × C_target × (1 − 1/β)), or equivalently β_required ≥ I / (Q × C_target) + 1. This calculation can be performed for each particle size of interest (typically 4, 6, and 14 µm(c) for ISO 4406 reporting).',
+        callout: [
+          { label: 'Steady-state equation', value: 'C_ss = I ÷ (Q × E)' },
+          { label: 'E (efficiency)', value: 'E = 1 − 1/β_x(c)' },
+          { label: 'β₁₀(c) = 75 → E', value: '98.7% single-pass efficiency' },
+        ],
+      },
+      {
+        heading: 'Ingression Pathway Classification and Quantification',
+        body: 'Contamination enters a fluid system through four pathway classes: (1) Atmospheric ingress — particles entrained in air drawn into the system through reservoir breathers, shaft seals, and rod seal gaps. Quantification: measure breather air flow rate (function of thermal cycling rate and piston rod extension/retraction volume per cycle) × atmospheric particle concentration (ISO 11171 particle counter at breather inlet); typical values 10⁶–10⁸ particles >4 µm per hour for a 500 L hydraulic reservoir in an agricultural environment. (2) Maintenance ingress — particles introduced during fill operations, element replacement, sampling, and component maintenance. Quantification: measure particle count of fill fluid; count fill events per year; estimate maintenance-introduced particles per event from industry data (uncontrolled fill: 10⁸–10⁹ particles per fill; controlled fill through 3 µm absolute: 10⁶–10⁷ particles per fill). (3) Built-in contamination — particles present in new system components after manufacture. Quantification: component cleanliness tests per ISO 16232 or SAE J1227. (4) Generated contamination — wear particles produced by sliding and rolling contacts within the system. Quantification: oil analysis ICP elemental trend (wear rate in mg/hour) converted to particle count using assumed wear particle density and size distribution.',
+      },
+      {
+        heading: 'Atmospheric Ingression Rate Calculation',
+        body: 'Atmospheric ingression through reservoir breathers is typically the dominant ingress pathway for open-circuit hydraulic systems in industrial and agricultural environments. Calculation method: (1) Determine reservoir breathing volume per cycle (V_breath = actuator piston area × stroke length for each actuator per circuit). (2) Multiply by cycle frequency to obtain total air volume per unit time. (3) Apply ISO 11171-measured atmospheric particle concentration at the site. (4) Apply breather filter efficiency at the target particle size. Example: 500 L reservoir with 3 m³/hour breathing rate, outdoor agricultural site (ISO 4406 ambient ≈ 25/22/19 in unfiltered air), breather filter β₃(c) = 200: ingression rate = 3×10⁶ mL/hour × C_atm × (1−0.995) ≈ calculation showing that breather filter efficiency is the dominant control variable. A 25 µm nominal breather versus a 3 µm absolute breather can differ by factor of 10³ in ingression rate, equivalent to approximately 10 ISO 4406 code levels.',
+        callout: [
+          { label: 'Agricultural ambient air', value: '~ISO 25/22/19 particle equivalent' },
+          { label: 'Breather β impact', value: '25 µm vs 3 µm: ~10³× ingression difference' },
+        ],
+      },
+      {
+        heading: 'Generated Contamination Rate Estimation',
+        body: 'Wear particle generation is both a consequence of contamination and a contribution to it — a positive feedback loop. In a well-controlled system at target cleanliness, wear generation rates are low (typically 0.1–0.5 mg Fe/hour for a hydraulic pump in good condition at ISO 17/15/12 cleanliness). Wear rate increases approximately as the square of particle concentration above the target: a system operating 2 ISO codes above target generates wear at approximately 4× the baseline rate. This feedback mechanism explains why contamination-induced machine deterioration accelerates non-linearly once control is lost. For the purposes of ingression modelling, initial wear generation rate is estimated from oil analysis data on similar equipment in similar service. Running ICP elemental analysis at 250-hour intervals establishes the wear trend; mg/hour of iron can be converted to approximate particle count assuming 7.8 g/cm³ iron density and a lognormal particle size distribution with median ~5 µm.',
+      },
+      {
+        heading: 'Steady-State Cleanliness Code Prediction',
+        body: 'Once all ingression rates are quantified, the total ingression rate I_total (particles/min at each particle size threshold) is summed across all pathways. The required filter specification to achieve a target cleanliness code C_target at system flow rate Q is then: β_x(c) ≥ I_total / (Q × C_target). This calculation is performed separately for each of the three ISO 4406 particle size thresholds (4, 6, 14 µm(c)). The most demanding β requirement across the three thresholds governs filter specification. The calculation also reveals the relative contribution of each ingression pathway — this is the basis for prioritising ingress control measures. If atmospheric ingress through the breather accounts for 90% of total ingression rate, improving the breather filter from β₂₅ to β₃(c) = 200 reduces total ingression by 90% and allows a filter with substantially lower β to achieve the same target code — potentially reducing filter pressure drop and energy cost while improving cleanliness.',
+      },
+      {
+        heading: 'Contamination Audit Procedure',
+        body: 'A contamination audit establishes the actual ingression rate for an operating system. Protocol: (1) achieve cleanliness target (or use a well-controlled reference condition); (2) isolate the system from additional ingress (close breather, inhibit maintenance, measure only operational ingress); (3) take ISO 11171-calibrated particle count samples at fixed intervals (typically 0, 100, 250, 500 hours); (4) plot particle concentration versus time — the slope of the concentration-time curve in particles/mL/hour equals the net ingression rate (ingress minus filtration removal) at that particle size; (5) deactivate filtration briefly (with system at rest) and repeat: the slope now equals gross ingression rate; (6) difference = filter removal rate, providing direct β verification at operating conditions. This in-situ measurement approach provides a system-level beta ratio verification that accounts for housing bypass, end-cap leakage, and flow distribution — all factors not captured by element-level ISO 16889 certification testing alone.',
+      },
+      {
+        heading: 'Dynamic Contamination Events and Transient Response',
+        body: 'The steady-state model applies to continuous operation. Several operational events generate transient contamination spikes that must be considered separately: (1) system commissioning — built-in contamination from new components can be 100–1,000× the steady-state operating concentration; ISO 23309 commissioning flush protocol is required before connecting sensitive components; (2) component replacement — new component built-in contamination; pre-flush new components in clean fluid before installation; (3) filter service — brief ingress of maintenance-phase contamination during element exchange; duplex arrangements or offline pre-flushing of new elements minimises this; (4) high-load transient — rapid increase in wear generation rate during overload conditions; oil analysis at elevated frequency following overload events detects this before damage escalates. Each transient event represents a temporary deviation from the steady-state balance; the time to return to target cleanliness after a transient depends on the system volume and filter flow rate: time constant τ = V_system / (Q × E), where V_system is total fluid volume.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Steady-state equation', value: 'C_ss = I ÷ (Q × E)' },
+      { label: 'Agricultural breather ingression', value: '10⁶–10⁸ particles >4 µm/hour (unfiltered)' },
+      { label: 'System time constant', value: 'τ = V_system ÷ (Q × E)' },
+      { label: 'Wear rate at ISO 17/15/12', value: '~0.1–0.5 mg Fe/hour (healthy hydraulic pump)' },
+      { label: 'Breather improvement factor', value: 'β₃ vs β₂₅: ~10³× ingression reduction' },
+    ],
+    relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171', 'ISO 16232', 'ISO 23309'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™', 'SYNTEPORE™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Air Intake Protection'],
+    keywords: [
+      'contamination ingression rate', 'cleanliness budget', 'ISO 4406 modelling', 'filter sizing',
+      'contamination balance equation', 'atmospheric ingression', 'breather filter', 'wear particle generation',
+      'contamination audit', 'ISO 16232', 'steady-state cleanliness', 'particle ingression pathway',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'System cannot achieve target cleanliness code despite correct filter specification on paper',
+        'Cleanliness code rises progressively over weeks or months without component failure',
+        'Contamination code spikes after filter element service then recovers',
+        'New system at commissioning cannot achieve target code even after extended operation',
+        'Code rises during summer months (higher ambient temperature) and recovers in winter',
+      ],
+      probableCauses: [
+        'Cannot achieve target despite correct spec: actual ingression rate exceeds model assumptions; breather filter bypassed or missing; unexpected ingress pathway (damaged shaft seal, open fill point)',
+        'Progressive code rise: filter DHC exhausted without bypass indicator triggering (indicator faulty or miscalibrated); wear rate elevated above model (component degradation in progress)',
+        'Post-service spike: maintenance ingress during element replacement; end-cap integrity failure on new element; housing contamination not purged after service',
+        'Commissioning code failure: built-in contamination from components (ISO 16232 non-compliance); commissioning flush protocol not followed; sensitive components connected before flush complete',
+        'Seasonal variation: temperature-driven reservoir breathing rate variation; summer: more breathing cycles per day; higher ambient particle concentration in dry season',
+      ],
+      inspectionMethods: [
+        'ISO 11171 particle counter at breather inlet and outlet — directly measures breather efficiency and atmospheric ingress rate at site conditions',
+        'Sequential ISO 4406 samples at 50-hour intervals in a controlled operational period — slope of concentration vs time curve = net ingression rate',
+        'Breather condition inspection: remove breather filter, inspect element for damage, measure restriction (Δp at rated flow); compare β to specification',
+        'Fill point audit: sample fill fluid with ISO 11171 counter; compare cleanliness of fill fluid to system target',
+        'Shaft seal inspection: fluorescent tracer dye in oil system + UV light around seal areas detects weeping seals before visible leakage',
+      ],
+      correctiveActions: [
+        'Ingression rate above model: identify dominant pathway (audit each independently); if breather — upgrade to β₃(c) ≥ 200 absolute breather; if fill point — implement controlled fill via 3 µm transfer unit',
+        'Elevated wear rate driving code rise: schedule ICP oil analysis at 100-hour intervals; identify elevated metals (Fe: hydraulic pump/motor wear; Cu: bearing or valve body); schedule component inspection',
+        'Cannot achieve target code at commissioning: extend flush cycle; verify all bypass paths are closed during flush; sample from multiple locations in circuit to identify contamination source',
+        'Post-service code spike: implement clean-room element handling (seal both ends of element before installation); pre-flush new elements in clean fluid before installing',
+        'Seasonal code variation: install temperature-compensated or desiccant breather to reduce moisture and particle ingress from thermal breathing cycles',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Hydraulic system at ISO 21/19/16 — 4 levels above target ISO 17/15/12 — filter specification appears correct',
+        standard: 'ISO 4406 (monitoring), ISO 11171 (particle counting), ISO 16889 (β verification)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Execute contamination audit protocol: (1) measure breather efficiency with in-situ particle counter; (2) sample fill fluid cleanliness; (3) record code trend over 50-hour intervals; calculate actual ingression rate; compare to filter removal capacity at measured Q; identify dominant ingress pathway and address',
+        relatedArticles: ['iso-4406', 'iso-16889', 'particle-ingress-prevention', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'New hydraulic press at commissioning cannot achieve ISO 17/15/12 after 200 hours of flush',
+        standard: 'ISO 23309 (commissioning flush), ISO 16232 (component cleanliness), ISO 4406 (cleanliness target)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Sample fluid from each circuit branch independently (ISO 11171) to locate contamination source; test each new component for ISO 16232 compliance before assembly into circuit; if source is a single component (e.g. contaminated manifold), remove, clean separately, and refit; extend flush with higher flow rate to achieve Reynolds number >4000 in all lines',
+        relatedArticles: ['filter-housing-system-integration', 'iso-4406', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'Engine oil cleanliness code cannot be monitored because ISO 11171 particle counting is unavailable at site',
+        standard: 'ISO 4406 (cleanliness), ISO 17359 (condition monitoring), ASTM D445 (viscosity)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Use oil analysis laboratory service with particle count reporting per ISO 4406; establish sample frequency (every 250 hours for working machines); use portable patch colorimetry or ferrous particle count as field proxy for particle count pending laboratory results; trend Fe by ICP as surrogate for wear particle generation rate',
+        relatedArticles: ['oil-analysis-methods', 'lubrication-system-filtration', 'service-intervals'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)',
+      evidenceStatus: 'Contamination balance equation from ISO 16889 and fluid power engineering literature; atmospheric ingression rate estimates from published field studies; wear rate values from ICP trend data published in tribology literature; breather efficiency impact from filter manufacturer application engineering data',
+    },
+  },
+
+  // ── Article 22 ────────────────────────────────────────────────────────────
+  {
+    slug: 'sae-j300-viscosity-classification',
+    title: 'SAE J300 Engine Oil Viscosity Classification: Cold-Start, High-Temperature, and Multi-Grade Engineering',
+    subtitle: 'SAE viscosity grade system, cold cranking and pumpability limits, HTHS viscosity at 150°C, multi-grade oil technology, pour point, and viscosity grade selection for operating temperature range.',
+    metaDescription: 'Engineering reference for SAE J300 engine oil viscosity classification: cold cranking simulator (ASTM D5293), mini-rotary viscometer pumpability (ASTM D4684), kinematic viscosity at 100°C (ASTM D445), HTHS at 150°C (ASTM D4683), and multi-grade oil grade selection methodology.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'Engine oil viscosity is the single most important parameter determining oil film thickness at bearing surfaces and valve train components. SAE J300 defines the viscosity classification system that allows engine manufacturers to specify, and lubricant marketers to certify, the viscosity properties of engine oils under both cold-start and high-temperature operating conditions. Correct viscosity grade selection — matched to both minimum starting temperature and maximum operating temperature — is prerequisite to maintaining adequate bearing film thickness throughout engine operating range.',
+    sections: [
+      {
+        heading: 'SAE J300 Grade Structure',
+        body: 'SAE J300 defines two sets of engine oil viscosity grades: (1) Winter grades (W-grades: 0W, 5W, 10W, 15W, 20W, 25W) — defined by maximum cold-start viscosity limits at low temperature, ensuring adequate oil flow to bearings during cold-start before operating temperature is reached; (2) High-temperature grades (20, 30, 40, 50, 60) — defined by minimum kinematic viscosity at 100°C (ASTM D445) and minimum high-temperature high-shear (HTHS) viscosity. Multi-grade oils (e.g. SAE 15W-40) must comply with both the W-grade low-temperature limits (as a 15W) and the high-temperature grade limits (as a 40). Multi-grade oils achieve this using viscosity index improvers (VII) — polymer additives that reduce viscosity loss at high temperature, allowing a single oil to span both the low-temperature and high-temperature requirements. Mono-grade oils (SAE 40, SAE 50) are not classified for low-temperature performance and are not suitable for cold-start at temperatures below approximately −5°C.',
+        callout: [
+          { label: 'W-grade example', value: 'SAE 15W: cold-crank ≤3,500 cP at −20°C' },
+          { label: 'High-temperature grade 40', value: '12.5–16.3 mm²/s kinematic at 100°C' },
+          { label: 'Multi-grade 15W-40', value: 'Meets both 15W and 40 grade limits' },
+        ],
+      },
+      {
+        heading: 'Cold Cranking Simulator — ASTM D5293',
+        body: 'The Cold Cranking Simulator (CCS) test (ASTM D5293) measures apparent viscosity at low temperature under high shear rate conditions that simulate engine bearing loading during cranking. Test temperature is grade-dependent: 0W tested at −35°C; 5W at −30°C; 10W at −25°C; 15W at −20°C; 20W at −15°C; 25W at −10°C. SAE J300 specifies maximum CCS viscosity for each W-grade; exceeding the limit means the starter motor cannot crank the engine at rated speed, preventing ignition. The CCS test measures apparent (not true Newtonian) viscosity because engine oil is a non-Newtonian fluid at low temperature — viscosity is shear-rate dependent due to wax crystal formation and polymer additive behaviour. A 0W-20 oil has a CCS limit of ≤6,200 mPa·s at −35°C; a 15W-40 has a CCS limit of ≤3,500 mPa·s at −20°C.',
+      },
+      {
+        heading: 'Mini-Rotary Viscometer Pumpability — ASTM D4684',
+        body: 'Cold start pumpability is assessed by the Mini-Rotary Viscometer (MRV) test (ASTM D4684). The MRV measures oil pumpability at temperatures 5°C colder than the CCS test temperature — simulating the oil that must be pumped from the sump to the oil pump suction. SAE J300 sets a maximum MRV viscosity (typically 60,000 mPa·s) and a maximum yield stress (35 Pa) for each W-grade. If the yield stress limit is exceeded, the oil exhibits gel-like behaviour that prevents flow to the pump suction even if CCS viscosity is within limits — this is the "structured fluid" failure mode where oil cannot be pumped even though it appears to be a liquid. MRV failure at the yield stress limit causes oil starvation within seconds of engine start — bearings run unlubricated until the oil pump can draw fluid from the sump. Synthetic base stocks (Group III, IV, V) exhibit substantially better MRV performance than conventional mineral oils at equivalent viscosity grade.',
+      },
+      {
+        heading: 'High-Temperature High-Shear Viscosity — ASTM D4683',
+        body: 'High-temperature high-shear (HTHS) viscosity (ASTM D4683) measures engine oil viscosity at 150°C and 10⁶ s⁻¹ shear rate — conditions representative of journal bearing load zones in high-output engines at full operating temperature. HTHS viscosity is the most direct predictor of oil film thickness at bearing surfaces under high-load conditions. SAE J300 specifies minimum HTHS viscosity for each high-temperature grade: SAE 20 requires ≥2.6 mPa·s; SAE 30 requires ≥2.9 mPa·s; SAE 40 (passenger car) requires ≥3.5 mPa·s; SAE 40 (heavy-duty) requires ≥3.7 mPa·s. API CK-4 specification (heavy-duty diesel) requires minimum HTHS ≥3.5 mPa·s at 150°C. Fuel economy improvement claims based on lower viscosity oils (e.g. 0W-20 vs 15W-40) are predicated on HTHS viscosity reduction; this must be balanced against minimum required film thickness for the specific engine design — the engine manufacturer\'s oil specification defines the minimum acceptable HTHS for that application.',
+        callout: [
+          { label: 'SAE 30 HTHS minimum', value: '2.9 mPa·s at 150°C, 10⁶ s⁻¹' },
+          { label: 'SAE 40 HD minimum', value: '3.7 mPa·s at 150°C (API CK-4)' },
+          { label: 'HTHS test standard', value: 'ASTM D4683 (TBS viscometer)' },
+        ],
+      },
+      {
+        heading: 'Viscosity Grade Selection Methodology',
+        body: 'Viscosity grade selection must satisfy three simultaneous requirements: (1) Cold-start capability — W-grade cold-crank limit must be within starter motor torque capability at minimum expected ambient temperature. SAE J300 provides minimum temperature recommendation for each W-grade (0W: −40°C; 5W: −35°C; 10W: −25°C; 15W: −20°C; 20W: −15°C); these are guidelines, not guarantees — actual minimum temperature depends on battery condition, starter motor rating, and engine compression ratio. (2) HTHS film thickness — high-temperature grade must provide HTHS viscosity meeting the engine manufacturer\'s minimum specification. Do not downgrade to a lower HTHS grade without OEM written approval; reduced film thickness increases bearing wear rate. (3) Extended drain capability — for extended drain programs, oil must maintain viscosity within grade limits throughout the drain interval; oil analysis trending of kinematic viscosity at 100°C detects viscosity breakdown from shear degradation of VII or oxidative thickening.',
+      },
+      {
+        heading: 'Synthetic and Semi-Synthetic Base Stocks',
+        body: 'API base oil groups define refining level: Group I (solvent-refined mineral), Group II (hydrocracked mineral, better oxidation stability), Group III (severely hydrocracked, semi-synthetic), Group IV (polyalphaolefin, fully synthetic), Group V (esters, other synthetics). Group III and IV base stocks provide: lower pour point (typically −50°C to −60°C vs −15°C for Group I mineral oil), better low-temperature fluidity (MRV performance), lower evaporation loss (ASTM D5800 Noack evaporation), better oxidation stability at high temperature. For cold-climate applications below −25°C, Group III or IV base stocks are required to meet both CCS and MRV requirements across the full operating temperature range. For extended drain intervals (>500 hours in industrial engines), Group III or IV oxidation stability provides cleaner engine operation — lower varnish and sludge formation rates compared to Group I/II oils at extended drain.',
+      },
+      {
+        heading: 'Viscosity Monitoring in Service',
+        body: 'Used oil viscosity monitoring by kinematic viscosity at 100°C (ASTM D445) detects three failure modes: (1) viscosity increase — oxidative thickening (oil deterioration), coolant contamination (glycol in oil increases viscosity), or diesel fuel soot loading (soot-thickened oil above 3.5% soot by mass); (2) viscosity decrease — fuel dilution (cold-start fuel washing down cylinder walls at low temperature), shear degradation of VII polymer additive (permanent viscosity loss in multi-grades), or solvent contamination; (3) grade-limit exceedance — if kinematic viscosity at 100°C falls below the minimum for the stated SAE grade, the oil no longer provides rated film thickness. Action limit: +/−15% from fresh oil viscosity at 100°C triggers oil change investigation regardless of drain interval. Viscosity data must always be interpreted alongside TAN, water content (ASTM D6304), and ICP elemental analysis — viscosity alone does not confirm oil condition.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'SAE 15W CCS limit', value: '≤3,500 mPa·s at −20°C (ASTM D5293)' },
+      { label: 'MRV maximum yield stress', value: '35 Pa (all W-grades, SAE J300)' },
+      { label: 'SAE 40 HD HTHS minimum', value: '3.7 mPa·s at 150°C (API CK-4)' },
+      { label: 'Viscosity action limit', value: '±15% from fresh oil at 100°C' },
+      { label: 'Group IV pour point', value: 'Typically −50°C to −60°C' },
+    ],
+    relatedStandards: ['SAE J300', 'ASTM D445', 'ASTM D5293', 'ASTM D4684', 'ASTM D4683', 'API CK-4'],
+    relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: [
+      'SAE J300', 'engine oil viscosity', 'cold cranking simulator', 'ASTM D5293', 'MRV pumpability',
+      'ASTM D4684', 'HTHS viscosity', 'ASTM D4683', 'viscosity grade selection', 'multi-grade oil',
+      'synthetic base oil', 'API CK-4', 'oil viscosity monitoring', 'fuel dilution', 'viscosity breakdown',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Slow or failed cold start — starter motor cranks slowly or engine fails to fire',
+        'Oil pressure warning lamp at cold start — clears after 10–30 seconds (delayed oil delivery)',
+        'Oil viscosity at 100°C increased >15% above fresh oil baseline in used oil analysis',
+        'Oil viscosity at 100°C decreased >15% below fresh oil baseline — grade-limit risk',
+        'Bearing wear metals (Fe, Cu, Pb) elevated in ICP analysis at correct drain interval',
+      ],
+      probableCauses: [
+        'Slow/failed cold start: oil grade W-rating too high for ambient temperature; SAE J300 minimum temperature recommendation exceeded; battery or starter at reduced capacity amplifying viscosity effect',
+        'Delayed oil pressure: correct behaviour in extreme cold if bypass valve is opening (cold oil forcing bypass); concerning if occurring above −10°C with correct W-grade — check pump suction for MRV yield-stress-type failure (gel plug)',
+        'Viscosity increase >15%: oxidative oil degradation (drain interval exceeded); glycol contamination (ASTM D2982 to confirm); soot loading in diesel engines operating at low load',
+        'Viscosity decrease >15%: fuel dilution from cold-start fuel washing (check fuel in oil by ASTM D3525 gas chromatography); VII shear degradation (permanent — oil must be replaced); solvent ingress',
+        'Elevated wear metals at correct drain: HTHS viscosity too low for engine bearing requirement; check oil specification compliance with engine OEM minimum HTHS requirement; may indicate incorrect grade specified',
+      ],
+      inspectionMethods: [
+        'ASTM D445 kinematic viscosity at 40°C and 100°C — baseline comparison against fresh oil specification',
+        'ASTM D5293 CCS test for suspected low-temperature issue — requires laboratory; verify grade compliance at minimum ambient temperature',
+        'ASTM D3525 gas chromatography for fuel-in-oil diagnosis — detects fuel components in oil by volatility',
+        'ASTM D2982 glycol test for viscosity increase investigation — rapid colorimetric test',
+        'ASTM D5800 Noack evaporation — excessive evaporation loss causes viscosity increase in high-temperature service',
+      ],
+      correctiveActions: [
+        'Cold-start failure from viscosity grade mismatch: switch to lower W-grade (e.g. 15W-40 → 10W-40 or 5W-40 for synthetic) rated for minimum ambient; drain and refill do not simply top up',
+        'Viscosity increase from oxidative degradation: reduce drain interval; investigate if engine is running hotter than normal (high coolant temperature accelerates oxidation); consider Group III or IV base stock for better oxidation resistance',
+        'Fuel dilution confirmed: investigate cold-start fuelling calibration; check injector sealing (diesel) or valve timing (petrol); change oil and filter immediately; monitor at 50-hour follow-up sample',
+        'Elevated wear metals with correct grade: verify oil meets OEM minimum HTHS specification; check bearing clearances at next overhaul; upgrade oil to higher HTHS grade if OEM permits',
+        'VII shear breakdown (viscosity below grade minimum): replace oil and filter; evaluate if extended drain interval is causing shear degradation; switch to oil with VII-free or higher molecular weight VII formulation',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Fleet operating in −25°C winter ambient reports slow cold starts and oil pressure warning lamps with SAE 15W-40',
+        standard: 'SAE J300 (minimum operating temperature per grade), ASTM D5293 (CCS verification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'SAE 15W-40 is rated to −20°C minimum; at −25°C, CCS viscosity exceeds limit and pumpability is marginal. Switch to SAE 10W-40 (rated −25°C) or SAE 5W-40 full synthetic (rated −30°C); verify API service category maintained (CK-4 for heavy-duty diesel); change oil at all fleet vehicles before next cold season',
+        relatedArticles: ['lubrication-system-filtration', 'oil-analysis-methods', 'filter-element-integrity'],
+      },
+      {
+        problem: 'Extended drain interval program shows viscosity increase >20% at 500 hours in used oil analysis',
+        standard: 'SAE J300 (grade limits), ASTM D445 (kinematic viscosity), ASTM D943 (oxidation stability)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Viscosity increase >20% indicates oxidative thickening or contamination; ASTM D2982 glycol check and ASTM D3525 fuel check to exclude contamination; if oil-only oxidation, evaluate Group III or IV synthetic oil with better oxidation stability; reduce extended drain interval until oil change viscosity remains within 15% of baseline',
+        relatedArticles: ['oil-analysis-methods', 'service-intervals', 'varnish-formation-lube-systems'],
+      },
+      {
+        problem: 'Engine manufacturer specifies minimum HTHS 3.5 mPa·s but fleet is running lower-specification oil to reduce fuel consumption',
+        standard: 'SAE J300 (HTHS grade limits), API CK-4 (HTHS minimum 3.5 mPa·s), ASTM D4683',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Engine OEM minimum HTHS specification is a load-bearing requirement, not advisory — operating below minimum HTHS increases bearing wear rate. Fuel consumption benefit from lower HTHS oil must be weighed against bearing life reduction. Quantify actual fuel savings (typically 0.5–1.5% at most) against bearing replacement cost and downtime. If OEM approves lower HTHS via field trial programme, proceed with oil analysis monitoring at 100-hour intervals for wear metal trending',
+        relatedArticles: ['lubrication-system-filtration', 'total-cost-of-ownership', 'oil-analysis-methods'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-STANDARDS (STD-SAE-J300)',
+      evidenceStatus: 'SAE J300:2021 verified; ASTM D5293 verified; ASTM D4684 verified; ASTM D4683 verified; ASTM D445 verified; API CK-4 HTHS minimum from API 1509 Annex E; base oil Group classifications from API 1509 Appendix E',
+    },
+  },
+
+  // ── Article 23 ────────────────────────────────────────────────────────────
+  {
+    slug: 'nfpa-t2-14-hydraulic-cleanliness',
+    title: 'NFPA T2.14 Hydraulic System Contamination Control: Component Sensitivity and Cleanliness Level Specification',
+    subtitle: 'NFPA T2.14 contamination tolerance levels, component sensitivity classification, NAS 1638 and ISO 4406 cross-reference, hydraulic fluid selection for cleanliness, and system cleanliness specification methodology.',
+    metaDescription: 'Engineering reference for NFPA T2.14 hydraulic system contamination control: component sensitivity levels, NAS 1638 and ISO 4406 equivalence table, hydraulic fluid selection criteria, and filtration system specification methodology for mobile and industrial hydraulic circuits.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'NFPA T2.14 (National Fluid Power Association) defines contamination control requirements for hydraulic fluid power systems, providing a component-level classification of contamination sensitivity that bridges between cleanliness measurement standards (ISO 4406, NAS 1638) and practical filtration system specification. NFPA T2.14 is widely used alongside ISO 4406 in North American industrial and mobile hydraulic applications, and provides a component sensitivity framework that ISO 4406 alone does not supply.',
+    sections: [
+      {
+        heading: 'NFPA T2.14 Scope and Structure',
+        body: 'NFPA T2.14 (Recommended Practice for Hydraulic Fluid Power — Contamination Analysis — Method for Coding Level of Contamination by Solid Particles) establishes a systematic approach to hydraulic system contamination control covering: (1) contamination measurement methodology; (2) component contamination sensitivity classification; (3) system target cleanliness code determination based on the most sensitive component in the circuit; (4) filtration system specification to achieve and maintain target codes. NFPA T2.14 references both ISO 4406 and NAS 1638 as measurement systems, allowing cross-reference between the two classification schemes. The standard is applicable to mobile hydraulic systems (construction, agricultural, mining equipment) and industrial fixed hydraulic systems (presses, machine tools, material handling).',
+      },
+      {
+        heading: 'Component Sensitivity Classification',
+        body: 'NFPA T2.14 classifies hydraulic components by their contamination sensitivity, expressed as a maximum tolerable ISO 4406 cleanliness code at which the component can be expected to achieve rated service life. Classification tiers: Tier 1 (least sensitive) — hydraulic cylinders with large clearance seals: tolerate ISO 21/19/16 approximately; Tier 2 — gear pumps, directional control valves (standard spool clearances 10–20 µm): tolerate ISO 18/16/13; Tier 3 — vane pumps, proportional control valves (spool clearances 3–10 µm): tolerate ISO 17/15/12; Tier 4 — piston pumps, servo valves (spool clearances 1–5 µm), load-sensing systems: tolerate ISO 16/14/11; Tier 5 (most sensitive) — high-pressure radial piston motors, electro-hydraulic servo actuators with sub-micron clearances: require ISO 14/12/9 or better. The system target code is determined by the most sensitive component present in the circuit — a servo valve in a mixed circuit mandates system-level cleanliness adequate for servo valve protection regardless of other components.',
+        callout: [
+          { label: 'Gear pump target', value: 'ISO 18/16/13 (NFPA Tier 2)' },
+          { label: 'Proportional valve target', value: 'ISO 17/15/12 (NFPA Tier 3)' },
+          { label: 'Servo valve target', value: 'ISO 16/14/11 (NFPA Tier 4)' },
+        ],
+      },
+      {
+        heading: 'NAS 1638 and ISO 4406 Cross-Reference',
+        body: 'NAS 1638 (National Aerospace Standard, last revised 1992) was a predecessor cleanliness classification widely used in aerospace and industrial hydraulics. NAS 1638 uses a single class number (Class 00 through Class 12) based on particle counts in five size ranges (5–15, 15–25, 25–50, 50–100, >100 µm). The NAS class that governs is the highest class number across all five size ranges. ISO 4406 replaced NAS 1638 as the primary standard for most new applications, but NAS 1638 remains in use in legacy specifications. Approximate cross-reference (not exact — different particle size ranges): NAS Class 6 ≈ ISO 16/14/11; NAS Class 7 ≈ ISO 17/15/12; NAS Class 8 ≈ ISO 18/16/13; NAS Class 9 ≈ ISO 19/17/14; NAS Class 10 ≈ ISO 20/18/15. Cross-references are approximate — when both standards appear in a specification, measure to ISO 4406 and verify NAS class from the same sample using the NAS particle size ranges.',
+        callout: [
+          { label: 'NAS Class 6 ≈', value: 'ISO 16/14/11' },
+          { label: 'NAS Class 8 ≈', value: 'ISO 18/16/13' },
+          { label: 'NAS Class 10 ≈', value: 'ISO 20/18/15' },
+        ],
+      },
+      {
+        heading: 'Hydraulic Fluid Selection for Cleanliness',
+        body: 'Hydraulic fluid type influences both achievable cleanliness code and component compatibility. Mineral hydraulic oils (ISO VG 32, 46, 68 per ISO 6743-4) are the baseline; water-glycol fluids (50% glycol, ISO VG 46) present filtration challenges: incompatibility with standard filter end-cap adhesives (as noted in ISO 2943); corrosion of zinc, cadmium, and magnesium alloy components; limited operating temperature range (0°C–60°C continuous). Fire-resistant phosphate ester fluids (Skydrol, Fyrquel, EHF-series): very low particle contamination tolerance (servo valve clearances more critical than with mineral oil due to lower film strength); incompatible with nitrile rubber seals (FKM required per ISO 2943). Biodegradable hydraulic fluids (HETG vegetable ester, HEES synthetic ester): higher oxidation rate than mineral oil requires more frequent condition monitoring; otherwise similar particle contamination requirements. Fluid viscosity selection: filter pressure drop and pump efficiency optimisation requires viscosity matched to operating temperature (typically ISO VG 46 for 40–60°C operating temperature in industrial systems).',
+      },
+      {
+        heading: 'System Cleanliness Specification Procedure',
+        body: 'NFPA T2.14 system cleanliness specification follows five steps: (1) Identify the most sensitive component in the circuit and its contamination tolerance tier; (2) Set system target ISO 4406 code = most sensitive component tolerance code; (3) Calculate required filter β-ratio using the contamination balance equation (Article: contamination-ingression-modelling) for the system\'s expected ingression rate and flow; (4) Specify breather filter, fill-point filter, and main circuit filter to achieve target code; (5) Define monitoring frequency — particle count sampling at target intervals using ISO 11171 calibrated counter; set action limit at one ISO code level above target for maintenance trigger; set alarm limit at two ISO code levels above target for immediate investigation. This procedure creates a complete contamination control specification that is linked to component requirements, not arbitrary clean filter grades.',
+      },
+      {
+        heading: 'Filter Specification from NFPA Contamination Targets',
+        body: 'Translating NFPA T2.14 contamination targets to filter β-ratio specification requires the contamination balance equation. For a servo-valve system targeting ISO 16/14/11: the 14 µm(c) code of 11 corresponds to 160–320 particles/mL at ≥14 µm(c). System ingression rate (primarily breather + maintenance ingress) at a moderate industrial site: approximately 10⁷ particles/hour at >14 µm(c). System oil volume: 200 L; filter flow rate: 200 L/min (full-flow return filter): required β₁₄(c) ≥ I / (Q × C_target) = 10⁷ particles/hour / (200,000 mL/min × 60 min/hour × 240 particles/mL) = 10⁷ / (2.88 × 10⁹) ≈ 0.003 — which means β₁₄(c) = 2 is sufficient at these conditions. But most real systems have higher ingression rates; at 10 × higher ingression (agricultural outdoor environment), β₁₄(c) ≥ 30 is needed. The calculation shows why filter specification must be based on measured ingression rate, not a universal rule.',
+      },
+      {
+        heading: 'Condition Monitoring and Action Protocols',
+        body: 'NFPA T2.14 condition monitoring protocol: baseline sample at system commissioning (after flush to target cleanliness); periodic samples at intervals determined by the system criticality and ingression rate (quarterly for low-risk fixed industrial; monthly for high-ingression mobile equipment); each sample analysed per ISO 4406 with ISO 11171 calibrated particle counter. Action levels: (1) Monitoring level — system at target: continue scheduled monitoring; (2) Caution level — system at target + 1 ISO code: increase monitoring frequency; investigate ingress pathway change (breather damage, open fill point, maintenance event); (3) Alarm level — system at target + 2 ISO codes: immediate investigation required; check bypass valve function; inspect breather; verify filter element is installed and undamaged; (4) Critical level — system at target + 3 or more codes: cease operation of precision components (servo valves, proportional valves); change oil and filter; flush system before returning to service.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Servo valve target (NFPA Tier 4)', value: 'ISO 16/14/11' },
+      { label: 'Proportional valve target', value: 'ISO 17/15/12' },
+      { label: 'NAS Class 6 equivalent', value: '≈ ISO 16/14/11' },
+      { label: 'Caution level trigger', value: 'Target + 1 ISO code' },
+      { label: 'Alarm level trigger', value: 'Target + 2 ISO codes' },
+    ],
+    relatedStandards: ['NFPA T2.14', 'ISO 4406', 'ISO 16889', 'ISO 11171', 'NAS 1638', 'ISO 2943'],
+    relatedTechnologies: ['NANOFORCE™'],
+    relatedSystems: ['Hydraulic Protection'],
+    keywords: [
+      'NFPA T2.14', 'hydraulic cleanliness', 'NAS 1638', 'ISO 4406 cross-reference', 'component sensitivity',
+      'servo valve cleanliness', 'hydraulic contamination control', 'NFPA contamination', 'filter specification',
+      'cleanliness target', 'ISO 16/14/11', 'hydraulic fluid selection', 'condition monitoring protocol',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Proportional valve hunting or instability — erratic position control at low speeds',
+        'Servo valve null drift — position creep under zero command signal',
+        'Hydraulic pump noise increase — cavitation-like noise that responds to oil temperature',
+        'System unable to maintain ISO 4406 target despite correct filter specification',
+        'Rapid pressure-line filter plugging in servo-controlled circuit',
+      ],
+      probableCauses: [
+        'Proportional valve hunting: ISO 4406 code above NFPA Tier 3 tolerance (ISO 17/15/12); particle jamming in spool clearance (3–10 µm); verify particle count before condemning valve electronics',
+        'Servo valve null drift: particle deposition in nozzle-flapper clearance (<3 µm); ISO 4406 code above ISO 16/14/11; valve requires cleaning and ISO 11171-verified system flush before reinstall',
+        'Pump noise: cavitation from restricted inlet (check suction filter or strainer); air ingestion via shaft seal; elevated viscosity at low temperature — verify oil grade for operating temperature',
+        'Cannot maintain target: dominant ingress pathway uncontrolled; execute contamination audit per contamination-ingression-modelling article',
+        'Rapid pressure-line filter plugging: servo valve internal leakage generating fine particles (valve worn or damaged); pump generating elevated fine wear particles (cavitation damage)',
+      ],
+      inspectionMethods: [
+        'ISO 11171 particle count at system sample port: compare to NFPA target for most sensitive component; three samples at 100-hour intervals to establish trend',
+        'Servo valve null bias test per valve manufacturer procedure: excessive null shift (>5% of full stroke) indicates spool contamination',
+        'Pressure-line filter Δp trending: plot Δp against service hours; abnormally rapid Δp rise identifies elevated particle generation rate within the circuit',
+        'Pump efficiency test: measure volumetric efficiency (actual flow / theoretical flow) at rated pressure; >5% efficiency loss indicates pump wear from contamination',
+        'Fluid particle count at pump outlet vs filter outlet: difference quantifies filter removal rate; if pump outlet is much higher than expected, pump is generating contamination internally',
+      ],
+      correctiveActions: [
+        'Servo valve confirmed contaminated: remove valve; clean per manufacturer procedure using clean flushing fluid meeting ISO 14/12/9; flush system circuit before reinstalling; verify system cleanliness at ISO 16/14/11 before returning to service',
+        'System above NFPA target by 2+ codes: offline kidney-loop flushing at 5–10% of system volume/min until target achieved; investigate ingress pathways; repair or replace breather, shaft seals, fill-point filters as needed',
+        'Rapid pressure-line filter plugging from internal particle generation: identify source (worn pump — verify efficiency; damaged servo valve — inspect); replace damaged component; flush system; replace filter with high-DHC element for initial cleanup period',
+        'NAS specification on legacy equipment: measure ISO 4406; convert using cross-reference table; use ISO 4406 as the working standard for monitoring and reporting; retain NAS cross-reference in specification documentation',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Legacy specification uses NAS 1638 Class 7 — need to select replacement filter and set up ISO 4406 monitoring',
+        standard: 'NAS 1638 (legacy), ISO 4406 (current), ISO 11171 (measurement)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'NAS Class 7 ≈ ISO 17/15/12; specify filter with β₅(c) ≥ 75 for proportional valve protection; set up ISO 11171 calibrated particle counter; establish monitoring at ISO 17/15/12 target; convert specification documentation to ISO 4406 for future use; retain NAS Class 7 reference in changeover records for continuity',
+        relatedArticles: ['iso-4406', 'hydraulic-power-unit-design', 'contamination-ingression-modelling'],
+      },
+      {
+        problem: 'Servo valve system must operate in agricultural environment with high ambient dust loading',
+        standard: 'NFPA T2.14 (Tier 4 servo valve), ISO 4406 (target ISO 16/14/11), ISO 16889 (filter β)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Agricultural ambient ISO equivalent >25/22/19 — breather filter must be β₃(c) ≥ 200 absolute to prevent atmospheric ingress from dominating contamination budget; calculate ingression rate per contamination balance equation; specify return-line filter at β₃(c) ≥ 200 at minimum; install kidney-loop circuit at 10% system volume/min as tertiary control; monitor at monthly intervals (high-ingression environment)',
+        relatedArticles: ['contamination-ingression-modelling', 'particle-ingress-prevention', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'New hydraulic system design — component mix includes servo valves, proportional valves, gear pumps, and cylinders',
+        standard: 'NFPA T2.14 (component classification), ISO 4406 (target setting), ISO 16889 (filter spec)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Servo valves are Tier 4 (most sensitive) — system target is ISO 16/14/11 regardless of less-sensitive components; specify all circuit filtration to achieve ISO 16/14/11 at servo valve inlet; consider separate servo valve supply circuit with dedicated fine filtration if servo valve flow is small fraction of total system flow; design breather for β₃(c) ≥ 200; document monitoring protocol per NFPA T2.14 action levels before commissioning',
+        relatedArticles: ['hydraulic-power-unit-design', 'filter-housing-system-integration', 'contamination-ingression-modelling'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-STANDARDS (STD-NFPA-T2-14)',
+      evidenceStatus: 'NFPA T2.14 verified; NAS 1638 cross-reference table from SAE ARP1246; component sensitivity tiers from NFPA T2.14 Table 1 and ISO 4406 application guidance; ISO 11171 and ISO 4406 measurement standards verified',
+    },
+  },
+
+  // ── Article 24 ────────────────────────────────────────────────────────────
+  {
+    slug: 'iso-29463-hepa-ulpa-filters',
+    title: 'ISO 29463 High-Efficiency Particulate Air Filters: HEPA and ULPA Classification, Testing, and Application',
+    subtitle: 'ISO 29463 filter efficiency class system (E10–U17), EN 1822 test methodology, most penetrating particle size (MPPS), scan versus integrated efficiency testing, and cabin safety and compressed air applications.',
+    metaDescription: 'Engineering reference for ISO 29463 and EN 1822 high-efficiency particulate air filter classification: efficiency classes E10 through U17, MPPS particle size determination, scan and overall efficiency testing, DEHS test aerosol, and application in cabin safety filtration (ISO 11155) and cleanroom supply air.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'ISO 29463 (Filters for the protection of persons — High-efficiency air filters) defines the test methods and efficiency classification system for HEPA (High-Efficiency Particulate Air) and ULPA (Ultra-Low Penetration Air) filters used in personal protection, clean manufacturing, and cabin air applications. ISO 29463 replaced EN 1822 as the international standard (EN 1822 is now technically equivalent and remains the European adoption). For industrial operator cabin protection, ISO 11155-2 specifies the minimum efficiency class required — and ISO 29463/EN 1822 defines how that efficiency is measured and certified.',
+    sections: [
+      {
+        heading: 'ISO 29463 Classification System',
+        body: 'ISO 29463 Part 1 defines efficiency classes for high-efficiency air filters based on penetration (P = 1 − E, where E is efficiency) and test method. Classes E10 through U17: Class E10: ≥85% overall efficiency (penetration ≤15%); Class E11: ≥95% overall efficiency; Class E12: ≥99.5% overall efficiency; Class H13: ≥99.95% overall efficiency (HEPA threshold); Class H14: ≥99.995% overall efficiency; Class U15: ≥99.9995% overall efficiency; Class U16: ≥99.99995% overall efficiency; Class U17: ≥99.999995% overall efficiency (ULPA). The classification is based on overall penetration (integrated across the filter area), except for classes H and U which require both overall penetration AND local (scan) penetration limits — ensuring no point on the filter has a leak path even if the overall efficiency is compliant.',
+        callout: [
+          { label: 'HEPA threshold', value: 'Class H13: ≥99.95% efficiency' },
+          { label: 'EN 1822 equivalence', value: 'Classes identical to ISO 29463' },
+          { label: 'ULPA starts at', value: 'Class U15: ≥99.9995%' },
+        ],
+      },
+      {
+        heading: 'Most Penetrating Particle Size (MPPS)',
+        body: 'All particle capture mechanisms — interception, impaction, and diffusion — vary with particle size, but in opposite directions: impaction and interception efficiency increase with particle size; diffusion efficiency decreases with particle size (smaller particles diffuse more, increasing capture). The combined efficiency curve has a minimum at the particle size where the two effects balance — the most penetrating particle size (MPPS). For fibrous air filter media, MPPS typically falls in the range 0.1–0.3 µm (100–300 nm). ISO 29463 and EN 1822 require efficiency testing at the MPPS — this is the most demanding test condition, ensuring rated efficiency is the worst-case, not a best-case, efficiency. Filter efficiency at other particle sizes (both larger and smaller than MPPS) is always higher than the rated efficiency. Cabin air filters tested per ISO 11155-2 must be efficiency-rated at MPPS to ensure PM₂.₅ protection (which includes particles near MPPS size).',
+      },
+      {
+        heading: 'Test Aerosol and Measurement Methodology',
+        body: 'ISO 29463 Part 2 defines the test aerosol as DEHS (di-ethyl-hexyl sebacate) or equivalent — a low-vapour-pressure oil that forms stable, spherical, monodisperse droplets when atomised. Test aerosol is generated by an atomiser and conditioned to a specified particle size distribution centred at MPPS. The challenge concentration is measured upstream with an optical particle counter or condensation particle counter (CPC); the penetrating concentration is measured downstream; penetration P = downstream/upstream particle count. For H and U class filters, a scanning photometer maps penetration across the entire filter face at prescribed scan speed and photometer position — any local penetration above the class limit is a failure even if the overall average penetration is within limits. Class E filters require only overall (integrated) efficiency measurement; scanning is not required.',
+      },
+      {
+        heading: 'Cabin Safety Application — ISO 11155',
+        body: 'ISO 11155-1 and -2 define the cabin air filtration system requirements for road vehicles and related equipment, referencing ISO 29463/EN 1822 filter efficiency classes. Minimum efficiency requirements for operator protection from fine particulate (PM₂.₅) in agricultural and construction environments: recirculation air filter: Class E11 (≥95% efficiency at MPPS); fresh air intake filter: Class E12 (≥99.5% efficiency at MPPS) where cabin is used for pesticide application protection; or Class H13 (≥99.95%) where carbon filter systems require high-efficiency pre-filter to prevent carbon bed bypass. PM₂.₅ penetrates deeply into alveolar lung tissue — particles 0.1–2.5 µm in diameter (which includes MPPS range) are the most damaging size range. A cabin pressurised with an E12-class filter at positive 10–30 Pa reduces operator PM₂.₅ exposure by ≥99.5% compared to ambient — the critical performance criterion for occupational health compliance. MICROKAPPA™ cabin filter architecture is designed to meet H13-class efficiency (≥99.95% at MPPS) for the highest-protection applications.',
+        callout: [
+          { label: 'Minimum recirculation', value: 'E11 (≥95% at MPPS)' },
+          { label: 'Pesticide protection', value: 'E12 (≥99.5% at MPPS)' },
+          { label: 'Maximum protection', value: 'H13 (≥99.95% at MPPS)' },
+        ],
+      },
+      {
+        heading: 'Filter Integrity Testing in Service',
+        body: 'ISO 29463 filter certification is performed at the point of manufacture. Once a filter is installed in a housing and used in service, local leaks can develop at seal interfaces, gasket deformation points, or frame-to-housing contact areas. For critical applications (cleanrooms, pharmaceutical manufacturing, operator cab protection at H13 level), installed filter integrity testing per ISO 14644-3 (cleanroom testing) or EN 1822 scan test methodology is required at commissioning and at defined intervals. Test method: introduce DEHS aerosol upstream; scan photometer across downstream filter face; measure local penetration; compare to filter class limit. For cabin air applications, installed filter seal integrity is evaluated by cabin pressurisation test — a sealed cabin pressurised to 50 Pa should show pressure decay rate below the specified limit, indicating no significant seal leakage.',
+      },
+      {
+        heading: 'Compressed Air Filtration Context',
+        body: 'ISO 8573-1 compressed air purity classes for oil aerosol and particles are separate from ISO 29463 (which addresses fibrous air filters for personnel protection, not compressed air filtration). However, the MPPS concept applies to both: sub-micron oil aerosol particles in compressed air (0.1–1 µm) must be captured by coalescing filters at their MPPS, analogous to particulate filter MPPS. ISO 29463/EN 1822 filter elements are used in some clean room supply air applications and some high-purity compressed air systems as final-stage particulate filters where ISO 8573-1 Class 1 or 2 particulate purity is required. In these applications, the filter housing must maintain element frame seal integrity under the pressure differential and cyclic loading conditions of compressed air service — conditions that differ substantially from the ambient-pressure test conditions of ISO 29463.',
+      },
+      {
+        heading: 'Filter Selection and Performance Verification',
+        body: 'Selecting ISO 29463 filters requires: (1) determine the application requirement (ISO 11155 for cabin; ISO 14644 for cleanroom; ISO 8573-1 for compressed air particulate); (2) identify minimum efficiency class from the applicable standard; (3) verify the filter certificate includes MPPS efficiency test data per ISO 29463 Part 2 — not just "HEPA" labelling which may be based on earlier or non-equivalent test methods; (4) for H and U class: require scan test certificate showing no local penetration above class limit; (5) verify airflow rating at rated face velocity — an H13 filter operated at 2× rated face velocity will show significantly higher penetration than at rated conditions; (6) for cabin applications: confirm filter dimensions and sealing gasket specification match housing design. An ISO 29463-compliant H13 filter with valid scan certificate provides 99.95% efficiency at MPPS for the life of the certificate — field degradation monitoring is the next requirement.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'HEPA minimum (H13)', value: '≥99.95% overall + ≤0.25% local penetration' },
+      { label: 'MPPS range (fibrous media)', value: '0.1–0.3 µm (100–300 nm)' },
+      { label: 'Cabin positive pressure', value: '10–30 Pa (ISO 11155-2 requirement)' },
+      { label: 'PM₂.₅ MPPS overlap', value: '0.1–2.5 µm size range' },
+      { label: 'DEHS test aerosol', value: 'Di-ethyl-hexyl sebacate (ISO 29463-2)' },
+    ],
+    relatedStandards: ['ISO 29463', 'EN 1822', 'ISO 11155', 'ISO 14644', 'ISO 8573-1'],
+    relatedTechnologies: ['MICROKAPPA™', 'DRYCORE™'],
+    relatedSystems: ['Air Intake Protection'],
+    keywords: [
+      'ISO 29463', 'EN 1822', 'HEPA filter', 'ULPA filter', 'MPPS most penetrating particle size',
+      'cabin air filter', 'ISO 11155', 'filter efficiency class', 'H13 filter', 'scan test',
+      'DEHS aerosol', 'MICROKAPPA', 'PM2.5 protection', 'cleanroom filter', 'operator protection',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Cabin dust infiltration despite cabin air filter showing low restriction (low Δp)',
+        'Operator respiratory complaints in sealed cab despite functional air conditioning',
+        'Cabin pressurisation test shows rapid pressure decay (seal integrity failure)',
+        'PM₂.₅ monitoring inside cab shows elevated particles after filter replacement',
+        'Filter physically intact on removal but efficiency test fails at one localised area',
+      ],
+      probableCauses: [
+        'Low Δp but dust infiltration: filter seal failure (frame-to-housing contact gap); filter installed without gasket or with damaged gasket; cabin pressurisation system inoperative',
+        'Respiratory complaints: filter class insufficient for contaminant type (pesticide mist requires E12 minimum; some chemical vapours require activated carbon layer beyond particulate filter scope); check positive pressure function',
+        'Rapid pressure decay: door or window seal deterioration; HVAC fresh-air inlet seal gap; filter housing seal gap — not necessarily the filter element itself',
+        'Elevated PM₂.₅ post-replacement: filter efficiency class downgraded (lower class installed); installation without correct gasket seating; MPPS penetration above spec (verify filter certificate)',
+        'Localised scan failure: frame seal at one corner; media fold defect from handling damage; manufacturing pinhole',
+      ],
+      inspectionMethods: [
+        'Cabin pressurisation test: seal all openings, pressurise to 50 Pa with clean air supply, measure decay rate with digital manometer; leak rate above specification indicates seal failure',
+        'DEHS scan test for installed filter (where test equipment available): introduce DEHS aerosol upstream, scan photometer across downstream filter face; maps local penetration to filter area',
+        'Visual inspection with bright light source: illuminate filter from upstream side in darkened cabin; light transmission points indicate media damage',
+        'Filter certificate verification: confirm certificate includes MPPS efficiency data per ISO 29463 Part 2 and scan test data for H13 class',
+        'PM₂.₅ monitoring inside and outside cab simultaneously with calibrated particle counter: ratio = filter + cabin seal efficiency; below target ratio indicates combined filter/seal issue',
+      ],
+      correctiveActions: [
+        'Seal failure: replace filter housing gasket; inspect filter frame for deformation; verify filter installation procedure specifies correct installation torque or compression distance for housing design',
+        'Incorrect filter class: replace with filter of correct efficiency class per application requirement (ISO 11155 or OEM specification); do not substitute lower class to reduce cost',
+        'Scan failure on new filter: return to supplier for replacement; implement incoming inspection sampling plan (ISO 2859-1 AQL) for critical applications',
+        'Cabin pressurisation system inoperative: inspect blower motor, ducting, and fresh-air inlet control; restore pressurisation before operator enters high-contamination environments',
+        'Handling damage: establish handling procedure for H13 elements (no contact with filter media face; store horizontally in sealed packaging until installation)',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Operator cab for pesticide application requires filter selection meeting occupational health regulations',
+        standard: 'ISO 11155-2 (cabin filtration), ISO 29463 (filter efficiency class), EN 15695 (tractor cab for plant protection)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'EN 15695 Category 2 (liquid pesticide) requires Class 4 cabin (positive pressure + E12 pre-filter + activated carbon); E12 = ≥99.5% at MPPS per ISO 29463; select filter with ISO 29463 Part 2 certificate; verify housing seal integrity with pressurisation test at commissioning and after each season; carbon filter bed requires separate replacement schedule (activated carbon capacity is finite)',
+        relatedArticles: ['cabin-air-filtration', 'air-intake-system-design', 'filter-media-engineering'],
+      },
+      {
+        problem: 'Mining excavator operator exposed to respirable crystalline silica (RCS) — regulatory action limit 0.1 mg/m³ TWA',
+        standard: 'ISO 11155-2 (cabin filtration), ISO 29463 (H13 class efficiency)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'RCS particles in respirable size range overlap with MPPS — H13 class (≥99.95% at MPPS) is required for effective RCS control in high-exposure environments; verify cabin positive pressurisation system delivers ≥25 Pa positive pressure relative to outside; install occupational PM₂.₅ monitor inside cab to verify filter + cabin system performance; combine with respiratory protective equipment (RPE) for maintenance operations outside the cab',
+        relatedArticles: ['cabin-air-filtration', 'filter-element-integrity', 'filter-housing-system-integration'],
+      },
+      {
+        problem: 'HVAC filter for cleanroom supply air must meet ISO 14644-1 Class ISO 7 (particle concentration ≤352,000 particles/m³ at ≥0.5 µm)',
+        standard: 'ISO 29463 (filter class), ISO 14644-3 (installed filter leakage test), ISO 14644-1 (cleanroom class)',
+        protectionSystem: 'Air Intake Protection',
+        technology: 'ISO Class 7 cleanroom supply air typically requires H14-class terminal HEPA filters (≥99.995% at MPPS); ISO 29463 certificate with scan data required; installed leakage test per ISO 14644-3 at commissioning and at annual intervals; housing must accept photometer probe for in-situ scan; pre-filter (G4 or F7 class per ISO 16890) upstream of HEPA extends HEPA service life by capturing coarse particles',
+        relatedArticles: ['air-intake-system-design', 'filter-media-engineering', 'filter-housing-system-integration'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-MICROKAPPA)',
+      evidenceStatus: 'ISO 29463:2011 Parts 1–5 verified; EN 1822:2009 equivalence confirmed; ISO 11155-2:2009 cabin requirements verified; EN 15695:2009 tractor cab categories verified; MPPS range from published aerosol science literature; PM₂.₅ regulatory exposure limit references from OSHA and EU Directive 2017/2398',
+    },
+  },
+
+  // ── Article 25 ────────────────────────────────────────────────────────────
+  {
+    slug: 'varnish-formation-lube-systems',
+    title: 'Varnish Formation in Lubrication Systems: Oxidation Mechanisms, Electrostatic Deposition, and Remediation',
+    subtitle: 'Oil oxidation chemistry leading to varnish precursors, electrostatic discharge deposition on servo and control valve surfaces, patch colorimetry (MPC) quantification, varnish solubility window, and clean-up strategies.',
+    metaDescription: 'Engineering reference for varnish formation in lubrication and hydraulic systems: oxidative and thermal oil degradation mechanisms, electrostatic deposition on valve surfaces, membrane patch colorimetry (ASTM D7843) for varnish potential quantification, solubility window concept, and varnish remediation via fluid flushing and filtration.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'Varnish deposits — insoluble oxidation byproducts that adhere to metal surfaces — are a primary cause of servo valve and proportional valve sticking, hydraulic pump seizure, and control system instability in turbine lube oil and hydraulic systems operating at elevated temperatures. Varnish is distinct from particle contamination: it cannot be captured by conventional particulate filters and is invisible to ISO 4406 particle counting. Understanding varnish formation mechanisms and quantification methods is prerequisite to selecting appropriate prevention and remediation strategies.',
+    sections: [
+      {
+        heading: 'Varnish Chemistry: Oxidation and Thermal Degradation',
+        body: 'Varnish precursors form through two primary chemical pathways: (1) Oil oxidation — oxygen reacts with hydrocarbon base oil at elevated temperature in the presence of metal catalysts (iron, copper). The oxidation chain reaction produces peroxides, aldehydes, and carboxylic acids (detected as TAN increase per ASTM D664); these products condense and polymerise into high-molecular-weight resins and asphaltenes. Oxidation rate approximately doubles per 10°C increase above 60°C (Arrhenius relationship). (2) Thermal degradation — direct pyrolysis of base oil molecules at hot spots (pump cavitation zones, hydraulic cylinder rod surfaces, areas adjacent to heat exchanger plates) produces carbon-rich degradation products without requiring oxygen. Both pathways generate polar compounds that are initially soluble in the oil but become insoluble as their molecular weight increases or as oil temperature changes. The point at which oil can no longer dissolve the oxidation products — the solubility limit — determines when varnish precipitates onto metal surfaces.',
+        callout: [
+          { label: 'Oxidation rate rule', value: 'Doubles per 10°C above 60°C' },
+          { label: 'TAN increase', value: 'Indicates oxidative acid buildup (ASTM D664)' },
+          { label: 'Critical sites', value: 'Hot spots: pump cavitation, heat exchanger zones' },
+        ],
+      },
+      {
+        heading: 'Solubility Window and Precipitation Triggers',
+        body: 'Turbine oil and high-performance hydraulic oil systems exhibit a characteristic "solubility window" phenomenon: oxidation products remain dissolved in hot oil during operation but precipitate when oil cools during shutdown. The solubility of polar oxidation products in non-polar base oil decreases as temperature falls — leading to deposition on cool metal surfaces during shutdown and on surfaces that operate at lower temperature during normal operation (reservoir walls, valve bodies, cooler tube sheets). This explains a characteristic observation: varnish deposits appear preferentially on stationary internal surfaces during shutdown, and on servo valve spools that operate at cooler temperatures than the bulk oil. Conversely, at operating temperature, some varnish may re-dissolve ("remobilisation") — releasing previously deposited varnish fragments as particle contamination and explaining occasional contamination spikes during hot system operation.',
+      },
+      {
+        heading: 'Electrostatic Discharge Deposition Mechanism',
+        body: 'A secondary varnish formation mechanism — electrostatic discharge (ESD) deposition — operates in high-velocity fluid circuits independent of oxidation level. As oil flows at high velocity (typically >5 m/s) through fine filters and orifices, tribostatic charging occurs — polar molecules in the oil generate an electric charge imbalance between the oil and the metal surfaces. The resulting electrostatic potential (measurable as a streaming current) deposits charged polar molecules — including oxidation products already in solution — onto metal surfaces. ESD deposition is particularly active in systems with: very clean, low-conductivity base oil (minimal ionic dissipation); high-efficiency fine filters (which increase oil velocity through fine pores); high flow rates; and long fluid circulation times between reservoir and equipment. Electrostatic filtration (electret-based filter media with applied field) can accelerate ESD deposition within the filter element, removing varnish precursors before they reach valve surfaces — but must be carefully engineered to avoid removing beneficial polar additives.',
+      },
+      {
+        heading: 'Membrane Patch Colorimetry — ASTM D7843',
+        body: 'Membrane Patch Colorimetry (MPC) is the primary quantitative method for varnish potential assessment. ASTM D7843 procedure: a 100 mL oil sample is passed through a 0.45 µm membrane patch under controlled conditions; the patch colour is measured by spectrophotometry and expressed as the ΔE (colour difference) value. Higher ΔE indicates higher concentration of oil-insoluble oxidation deposits on the patch. MPC ΔE interpretation: ΔE <15: low varnish potential; ΔE 15–30: moderate varnish potential; ΔE 30–45: high varnish potential — monitor closely; ΔE >45: critical — varnish deposition likely in system. MPC is complementary to, not a replacement for, ISO 4406 particle counting: ISO 4406 measures particles >4 µm; MPC captures sub-micron insoluble oxidation products not visible to particle counters. A system can show ISO 4406 code within target while MPC ΔE is in the critical range — indicating developing varnish problem not yet at the particle size threshold.',
+        callout: [
+          { label: 'MPC ΔE < 15', value: 'Low varnish potential' },
+          { label: 'MPC ΔE 30–45', value: 'High varnish potential — monitor closely' },
+          { label: 'MPC ΔE > 45', value: 'Critical — deposition likely active' },
+        ],
+      },
+      {
+        heading: 'Servo Valve Sticking and Control System Impact',
+        body: 'Varnish deposits on servo valve spool surfaces accumulate in the sub-micron clearance between spool and bore (typically 1–3 µm for electrohydraulic servo valves). Deposit thickness of as little as 1–2 µm is sufficient to cause spool sticking — the force required to move the spool against varnish adhesion exceeds the torque motor force available. The result: valve fails to respond to low-magnitude control signals (instability at small position corrections); valve "sticks" at one position causing drift; eventually valve requires mechanical removal and cleaning. Thermal cycling during system start-stop cycles worsens this mechanism: deposits formed during cool-down are not re-dissolved during warm-up if the solubility window has shifted with oil degradation. Turbine lube oil systems in gas turbines and steam turbines, and high-performance servo-hydraulic test systems, are most susceptible due to continuous long-duration high-temperature operation.',
+      },
+      {
+        heading: 'Varnish Prevention Strategies',
+        body: 'Prevention is substantially easier than remediation: (1) Oil selection — esters and PAO base oils have inherently higher oxidation stability than Group I mineral oils; turbine oil specifications (ISO 8068-series) require ASTM D943 TOST (Turbine Oil Stability Test) minimum 1,000 hours to sludge; some premium turbine oils exceed 10,000 hours TOST. (2) Temperature control — maintain bulk oil temperature below 60°C where practical; hot-spot control via design (adequate heat exchanger capacity, pump cavitation prevention); turbine oil systems targeting <65°C bulk temperature. (3) Antioxidant maintenance — monitor TAN per ASTM D664 and phenolic antioxidant depletion; antioxidant top-up or oil blending is possible for large-volume systems where complete oil change is expensive. (4) Electrostatic deposition control — system design to maintain oil velocity below 5 m/s in critical lines; electrostatic hazard assessment for very clean, low-conductivity oil in high-velocity circuits. (5) MPC monitoring — quarterly MPC testing to detect rising varnish potential before deposition begins.',
+      },
+      {
+        heading: 'Varnish Remediation Procedures',
+        body: 'When MPC ΔE exceeds 45 or varnish deposition is confirmed by valve sticking, remediation options are: (1) Solubility enhancement — add a varnish-solubilising additive (typically amine-based or polar ester chemistry) to the existing oil charge; this raises the solubility limit, re-dissolving some varnish deposits into the oil, which are then captured by high-efficiency downstream filtration; risk: released particles from large deposits can exceed filter capacity and reach valves. (2) Solvent flush — drain existing oil; flush circuit with a low-viscosity, high-solubility flush fluid (lighter hydrocarbon or dedicated varnish-removal fluid) at elevated temperature; circulate through fine filtration; drain and refill with fresh oil. (3) Electrostatic filtration — install electret-based or applied-field electrostatic filter elements to capture sub-micron insoluble oxidation products not captured by conventional media; ongoing removal of varnish precursors reduces deposition rate. (4) Component overhaul — remove, disassemble, ultrasonically clean servo valves and proportional valves; reinstall after system flush and fresh oil fill. All remediation strategies must be followed by MPC monitoring at 250-hour intervals to confirm varnish potential is decreasing.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Oxidation rate acceleration', value: '2× per 10°C above 60°C (Arrhenius)' },
+      { label: 'MPC ΔE critical threshold', value: '>45 (ASTM D7843)' },
+      { label: 'Varnish sticking clearance', value: '1–3 µm (servo valve spool bore)' },
+      { label: 'ESD deposition onset velocity', value: '>5 m/s (turbostatic charging)' },
+      { label: 'Turbine oil TOST target', value: '≥1,000 hours (ISO 8068-series)' },
+    ],
+    relatedStandards: ['ASTM D7843', 'ASTM D664', 'ASTM D943', 'ISO 8068', 'ISO 4406'],
+    relatedTechnologies: ['SYNTRAX™'],
+    relatedSystems: ['Lubrication Protection', 'Hydraulic Protection'],
+    keywords: [
+      'varnish formation', 'MPC membrane patch colorimetry', 'ASTM D7843', 'oil oxidation',
+      'electrostatic deposition', 'servo valve sticking', 'turbine oil varnish', 'TAN increase',
+      'solubility window', 'ASTM D664', 'varnish remediation', 'SYNTRAX', 'ISO 8068',
+      'varnish prevention', 'hydraulic varnish',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Servo valve or proportional valve sticking — erratic or sluggish response to control signal',
+        'Hydraulic pump or motor increased noise and vibration without change in operating conditions',
+        'Oil appears normal in appearance but MPC ΔE is >30 at quarterly analysis',
+        'Varnish-like deposits (amber to dark brown, hard, adherent) visible on reservoir interior or filter element exterior',
+        'ISO 4406 particle count within target but servo valve performance continues to degrade',
+      ],
+      probableCauses: [
+        'Valve sticking: varnish deposition on spool surface — MPC ΔE to confirm; particle contamination also possible — ISO 4406 to distinguish; solubility window precipitation during previous shutdown cycles',
+        'Pump noise: cavitation (check suction restriction); varnish on pump internal surfaces restricting clearances; viscosity incorrect for operating temperature',
+        'High MPC with normal appearance: sub-micron insoluble oxidation products — not visible to eye or particle counter; early warning before macro-deposition begins',
+        'Visible deposits: advanced oxidation — system has been operating above temperature limits or with depleted antioxidants for extended period',
+        'ISO 4406 normal, valve degrading: varnish is sub-micron (below ISO 4406 detection threshold); MPC quantification required',
+      ],
+      inspectionMethods: [
+        'ASTM D7843 MPC test on oil sample — 100 mL through 0.45 µm patch; measure ΔE by spectrophotometer; compare to thresholds',
+        'ASTM D664 TAN (Total Acid Number) on oil sample — rising TAN indicates oxidative acid buildup; TAN increase >0.5 mg KOH/g from baseline indicates significant oxidation',
+        'ASTM D943 TOST on fresh oil sample — verifies remaining oxidation stability if conducting preventive antioxidant top-up programme',
+        'Servo valve inspection: remove valve, disassemble spool from bore, inspect for amber or brown deposits in spool OD and bore ID; document with photography',
+        'Elemental spectroscopy (ICP) for Fe and Cu in oil — elevated metals indicate corrosive varnish attack on metal surfaces or deposit remobilisation releasing metallic particles',
+      ],
+      correctiveActions: [
+        'MPC ΔE 30–45 (high, not yet critical): increase monitoring to monthly; add varnish-solubilising additive at manufacturer-recommended dose; install electrostatic fine filter element downstream of main filter; avoid temperature excursions',
+        'MPC ΔE >45 or valve confirmed varnish-stuck: remove stuck valve(s); clean ultrasonically; execute system solvent flush (drain oil, flush with low-viscosity flush fluid at 60°C for 8 hours, drain flush fluid, refill with fresh oil); install electrostatic filtration for ongoing prevention',
+        'Confirmed thermal degradation (hot spots): inspect heat exchanger for fouling; verify bypass valve cracking pressure is not allowing hot oil bypass; review pump cavitation indicators',
+        'Confirmed ESD deposition pattern (ultra-clean oil in high-velocity circuit): reduce oil flow velocity where possible; install electrostatic filter element to capture ESD-deposited material before it reaches valves; consider oil with higher conductivity additive',
+        'Post-remediation: ASTM D7843 at 250-hour intervals until ΔE <15; ISO 4406 at 100-hour intervals post-flush to verify no released particles exceed target code',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Turbine lube oil system at MPC ΔE 38 after 12,000 hours of service — valves are beginning to show sluggish response',
+        standard: 'ASTM D7843 (MPC varnish potential), ASTM D664 (TAN), ISO 8068 (turbine oil specification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'MPC 38 is high — intervention before critical threshold. Option 1 (preferred if oil chemistry permits): add varnish solubiliser at 2–5% dose; increase monitoring to monthly MPC; install electrostatic filter element; target MPC <20 within 3,000 hours. Option 2 (if TAN >2.0 mg KOH/g — oil degradation severe): scheduled drain and flush; ultrasonic clean all valves during drain; refill with fresh turbine oil meeting ISO 8068 TOST ≥1,000 hours',
+        relatedArticles: ['oil-analysis-methods', 'lubrication-system-filtration', 'hydraulic-contamination-sensitivity'],
+      },
+      {
+        problem: 'Hydraulic servo test system with ultra-clean synthetic ester fluid showing servo valve null drift after 6 months',
+        standard: 'ASTM D7843 (MPC varnish), ISO 4406 (particles), ASTM D664 (TAN)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Ester fluid in high-velocity servo circuit is susceptible to ESD deposition; measure MPC ΔE and streaming current if equipment available; if MPC elevated with low ISO particle count — ESD deposition confirmed; reduce oil velocity in main supply lines if circuit allows redesign; install electrostatic filter element; check that fluid additives include conductivity modifier to reduce ESD potential',
+        relatedArticles: ['nfpa-t2-14-hydraulic-cleanliness', 'hydraulic-contamination-sensitivity', 'filter-media-engineering'],
+      },
+      {
+        problem: 'Engine sump showing TAN increase to 2.0 mg KOH/g at 300 hours in a 500-hour extended drain programme',
+        standard: 'ASTM D664 (TAN), SAE J300 (viscosity grade), API CK-4 (oil specification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'TAN of 2.0 mg KOH/g at 300/500 hours indicates accelerated oxidation — likely elevated operating temperature or antioxidant depletion; ISO 4406 particle count and viscosity to complete picture; do not extend to 500 hours with TAN at 2.0; review if engine is running above normal coolant temperature; consider switch to Group III or IV synthetic base oil with higher TOST performance for this engine and duty cycle',
+        relatedArticles: ['sae-j300-viscosity-classification', 'oil-analysis-methods', 'service-intervals'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-SYSTEMS (SYS-LUBRICATION)',
+      evidenceStatus: 'ASTM D7843:2021 MPC method verified; ASTM D664 TAN method verified; ASTM D943 TOST verified; oxidation rate doubling per 10°C from Arrhenius kinetics (published tribology literature); MPC ΔE threshold values from published field correlation studies; servo valve clearance range from electrohydraulic servo valve engineering references; ESD deposition mechanism from published LUBE magazine and STLE research',
+    },
+  },
+
 ];
 
 // ─── STANDARDS ────────────────────────────────────────────────────────────────
