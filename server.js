@@ -507,6 +507,13 @@ function parseRefs(arr){
   // relationship, not a cross-reference brand) with no company name at all.
   const HAS_LETTER = /[A-Za-z]/;
 
+  // A real manufacturer name is never *shaped* like a part number either —
+  // a short letter prefix (0-4 chars) immediately followed by 3+ digits
+  // (LF3620, FL1994, E12981309) is a reference code, not a company name.
+  // Real company names are either pure letters/spaces (CATERPILLAR, ATLAS
+  // COPCO) or a short alphanumeric abbreviation with few digits (3M).
+  const CODE_SHAPED = /^[A-Za-z]{0,4}\d{3,}[A-Za-z0-9]*$/;
+
   const seen = new Set();
 
   return arr
@@ -518,6 +525,7 @@ function parseRefs(arr){
     .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
     .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
     .filter(r => HAS_LETTER.test(r.manufacturer))
+    .filter(r => !CODE_SHAPED.test(r.manufacturer))
     .filter(r => {
       const k = (r.manufacturer + '|' + r.code).toUpperCase();
       if (seen.has(k)) return false;
