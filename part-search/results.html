@@ -935,7 +935,6 @@ const query = (params.get('q') || '').trim();
 const mode  = params.get('mode') || 'part';
 const model  = params.get('model') || '';
 const engine = params.get('engine') || '';
-const eqType = params.get('type') || '';
 // duty: passed from index.html when user picks HD or LD before searching
 const dutyParam = (params.get('duty') || '').trim().toUpperCase();
 
@@ -1349,10 +1348,12 @@ function renderCard(p, index) {
 }
 
 // ─── Render Results ───
-function renderResults(items, count, searchMode, searchTerm, decodedText = null, totalCatalog = null, limitReached = false, dutyData = null) {
+// Mixed HD/LD duty classes are intercepted earlier by showMixedDutyPrompt()
+// before this function is ever called, so it only ever renders a single,
+// duty-consistent result set.
+function renderResults(items, count, searchMode, searchTerm) {
   document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
 
-  // Update header summary with real count
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
     summaryEl.innerHTML = `
@@ -1360,38 +1361,7 @@ function renderResults(items, count, searchMode, searchTerm, decodedText = null,
       <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
   }
 
-  // ── Mixed HD/LD: render two separate sections ─────────────────────────
-  if (dutyData && dutyData.mixed_duty) {
-    const hdItems = dutyData.hd_products || [];
-    const ldItems = dutyData.ld_products || [];
-
-    const dutyWarning = `<div style="background:rgba(255,241,45,0.08);border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1rem 1.25rem;margin-bottom:2rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;">
-      <span style="color:#FFF12D;font-weight:600;">⚠ MULTIPLE DUTY CLASSES FOUND</span><br>
-      This reference code appears in both Heavy Duty and Light Duty filters. These are <strong>not interchangeable</strong> — different thread sizes, diameters and bypass pressures. Select your equipment class below.
-    </div>`;
-
-    const hdSection = hdItems.length ? `
-      <div style="margin-bottom:2.5rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:1rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,241,45,0.2);">HEAVY DUTY — ${hdItems.length} RESULT${hdItems.length !== 1 ? 'S' : ''}</div>
-        <div class="products">${hdItems.map((p, i) => renderCard(p, i)).join('')}</div>
-      </div>` : '';
-
-    const ldSection = ldItems.length ? `
-      <div style="margin-bottom:2.5rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;color:rgba(255,255,255,0.5);margin-bottom:1rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08);">LIGHT DUTY — ${ldItems.length} RESULT${ldItems.length !== 1 ? 'S' : ''}</div>
-        <div class="products">${ldItems.map((p, i) => renderCard(p, hdItems.length + i)).join('')}</div>
-      </div>` : '';
-
-    app.innerHTML = dutyWarning + hdSection + ldSection;
-    return;
-  }
-
-  // ── Standard render (single duty class) ──────────────────────────────
-  app.innerHTML = `
-    <div class="products">
-      ${items.map((p, i) => renderCard(p, i)).join('')}
-    </div>
-    ${limitReached ? `<div style="text-align:center;padding:1.5rem 0 0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;color:rgba(255,255,255,0.3);">// SHOWING FIRST 30 RESULTS — REFINE YOUR SEARCH FOR MORE PRECISION</div>` : ''}`;
+  app.innerHTML = `<div class="products">${items.map((p, i) => renderCard(p, i)).join('')}</div>`;
 }
 
 // ─── SEARCH EXECUTION ───
@@ -1426,60 +1396,56 @@ async function executeSearch() {
       clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      const products = data.results || data.products || [];
-      const count = data.count ?? products.length;
-      if (!products.length) { showEmpty(query); return; }
 
       // mixed_duty: API found both HD and LD — show duty selection prompt
       if (data.mixed_duty) {
         showMixedDutyPrompt(data, query);
         return;
       }
-      const dutyData = null; // results are already clean (single duty or duty-filtered)
-      renderResults(products, count, 'PART NUMBER', query, null, data.total_catalog, false, dutyData);
+      if (!data.results?.length) { showEmpty(query); return; }
+      renderResults(data.results, data.results.length, 'PART NUMBER', query);
     } catch { clearTimeout(warmupTimer); showError(); }
 
   } else if (mode === 'vin' && model) {
     let localModel = model;
     let localEngine = engine;
-    let decodedText = null;
+    const isVin = /^[A-Z0-9]{17}$/i.test(model);
 
-    if (model && /^[A-Z0-9]{17}$/i.test(model)) {
+    if (isVin) {
       showLoading(`DECODING VIN: ${model}...`);
       const decoded = await decodeNHTSA(model);
       if (decoded) {
         localModel = `${decoded.make} ${decoded.model}`.trim();
         localEngine = decoded.disp || engine;
-        decodedText = `${decoded.make} ${decoded.model} ${decoded.disp}`.trim().toUpperCase();
       }
     }
 
     showLoading(localModel);
     try {
-      let url = `${API}/api/filters/search/vin?model=${encodeURIComponent(localModel)}&lang=${currentLang}`;
+      // A real 17-char VIN resolves via the vehicle-fitment map; anything
+      // else (free-text vehicle/model name) falls back to the equipment
+      // application search, which matches on make/model/engine.
+      let url = isVin
+        ? `${API}/api/search/vin?vin=${encodeURIComponent(model.toUpperCase())}&lang=${currentLang}`
+        : `${API}/api/search/equipment?model=${encodeURIComponent(localModel)}&lang=${currentLang}`;
       if (localEngine) url += `&engine=${encodeURIComponent(localEngine)}`;
       const r = await fetch(url);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      const products = data.results || data.products || [];
-      const count = data.count ?? products.length;
-      if (!products.length) { showEmpty(model); return; }
-      renderResults(products, count, 'VIN / MODEL', model, decodedText, null, count >= 30);
+      if (!data.results?.length) { showEmpty(model); return; }
+      renderResults(data.results, data.results.length, 'VIN / MODEL', model);
     } catch { showError(); }
 
   } else if (mode === 'equip' && model) {
     showLoading(model);
     try {
-      let url = `${API}/api/filters/search/equipment?model=${encodeURIComponent(model)}&lang=${currentLang}`;
-      if (eqType) url += `&type=${encodeURIComponent(eqType)}`;
+      let url = `${API}/api/search/equipment?model=${encodeURIComponent(model)}&lang=${currentLang}`;
       if (engine) url += `&engine=${encodeURIComponent(engine)}`;
       const r = await fetch(url);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      const products = data.results || data.products || [];
-      const count = data.count ?? products.length;
-      if (!products.length) { showEmpty(model); return; }
-      renderResults(products, count, 'EQUIPMENT', model, null, null, count >= 30);
+      if (!data.results?.length) { showEmpty(model); return; }
+      renderResults(data.results, data.results.length, 'EQUIPMENT', model);
     } catch { showError(); }
 
   } else {
