@@ -447,14 +447,20 @@ const COMPETITOR_BRANDS = new Set([
   'ELOFIC','WABCO','KNORR','ALLISON','ZF',
 ]);
 
+// Hyphens/pluses and spacing vary between scraped rows for the same brand
+// (AC-DELCO vs AC DELCO, MANN-HUMMEL vs MANN HUMMEL). Normalize both the
+// blocklist and the incoming value the same way so the comparison is
+// consistent regardless of which punctuation variant a row happened to use.
+function normalizeBrandKey(s) {
+  return s.toUpperCase().replace(/[®™]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+const NORMALIZED_COMPETITOR_BRANDS = new Set([...COMPETITOR_BRANDS].map(normalizeBrandKey));
+
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
-  // Strip trademark/registered symbols before matching — some scraped brand
-  // names carry them (e.g. "FLEETGUARD®"), which would otherwise silently
-  // fail the exact-match lookup and misclassify a competitor as OEM.
-  const m = manufacturer.toUpperCase().replace(/[®™]/g, '').trim();
+  const m = normalizeBrandKey(manufacturer);
   // Direct match
-  if (COMPETITOR_BRANDS.has(m)) return true;
+  if (NORMALIZED_COMPETITOR_BRANDS.has(m)) return true;
   // Partial match for common patterns
   return m.includes('FILTER') || m.includes('FILTR') || m.includes('FILTRO');
 }
