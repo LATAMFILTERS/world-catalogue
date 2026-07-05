@@ -13,14 +13,14 @@ const { Client } = require("pg");
     SELECT
       c.sku,
       c.duty,
-      c.product_type
+      c.filter_type
     FROM elimfilters_catalog c
     WHERE NOT EXISTS (
       SELECT 1
       FROM oem_codes o
       WHERE o.catalog_id = c.id
     )
-    ORDER BY c.duty, c.product_type, c.sku
+    ORDER BY c.duty, c.filter_type, c.sku
   `);
 
   fs.writeFileSync(
@@ -37,3 +37,4 @@ const { Client } = require("pg");
   console.error(err);
   process.exit(1);
 });
+
