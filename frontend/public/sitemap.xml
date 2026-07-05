@@ -17,12 +17,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/about/philosophy</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/contact/</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -38,231 +32,195 @@
   <!-- ── Knowledge System Hub ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-system</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/bridges</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-system/index</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://elimfilters.com/knowledge-system/standards</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/contamination</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/fleet</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/compare</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/science</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- ── Bridge Pages (High Priority — Search Interception) ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/bridges</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-system/bridges/industrial-filtration</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/bridges/oem-replacement</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/bridges/aftermarket-selection</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/bridges/fleet-solutions</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- ── Standards Domain Pages ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/standards</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-system/standards/lube-oil-systems</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/standards/air-intake-systems</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/standards/cabin-safety-systems</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/standards/fuel-systems</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/standards/hydraulic-systems</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/standards/cabin-safety-systems</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/standards/compressed-air-systems</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- ── Standards Definition Pages ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/standards/iso-16889</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://elimfilters.com/knowledge-system/standards/iso-4406</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-system/standards/iso-4406</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://elimfilters.com/knowledge-system/standards/iso-16889</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/standards/iso-5011</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- ── Contamination Pages ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://elimfilters.com/knowledge-system/contamination/particle-wear</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/contamination/diesel-water</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination/particle-wear</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/contamination/hydraulic-system</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination/coolant-contamination</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination/compressed-air-contamination</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination/fuel-injector-wear</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/contamination/varnish-formation</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- ── Fleet Optimization Pages ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/fleet</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-system/fleet/reducing-downtime</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/fleet/fuel-efficiency</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/fleet/total-cost-ownership</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/fleet/roi-calculator</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- ── Compare Pages ── -->
   <url>
-    <loc>https://elimfilters.com/knowledge-system/compare</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-system/compare/system-vs-commodity</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/compare/evaluation-framework</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-system/compare/total-cost-ownership</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-system/compare/oem-comparison</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-system/compare/total-cost-ownership</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- ── Technologies ── -->
@@ -575,94 +533,25 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- ── Knowledge Center ── -->
+  <url>
+    <loc>https://elimfilters.com/knowledge-center</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering-reference</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
     <lastmod>2026-07-05</lastmod>
@@ -736,12 +625,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering-reference</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/maintenance-engineering</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -790,12 +673,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/air-intake-system-design</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/air-restriction</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -814,55 +691,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/beta-ratio</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/cabin-air-filtration</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/compressed-air-dryer-selection</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/compressed-air-purity</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/contamination-control</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/contamination-ingression-modelling</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/contamination-sensitivity-components</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/cooling-system-contamination</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/diesel-fuel-filtration</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -874,31 +703,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/extended-drain-interval-engineering</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/failure-analysis</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/filter-element-integrity</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/filter-housing-system-integration</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/filter-media-engineering</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -916,103 +721,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/hydraulic-contamination-sensitivity</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/hydraulic-power-unit-design</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-11171-particle-counting</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-16889</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-29463-hepa-ulpa-filters</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-4406</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-4548-lube-filter-test-methods</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/iso-5011</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/lubrication-system-filtration</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/marine-diesel-filtration</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/materials-engineering</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/nfpa-t2-14-hydraulic-cleanliness</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/oem-engineering</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/oil-analysis-methods</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/particle-ingress-prevention</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/sae-j300-viscosity-classification</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1042,88 +757,10 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/varnish-formation-lube-systems</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/engineering/water-contamination-fuel</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/absolute-efficiency</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/beta-ratio</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/dust-holding-capacity</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary</loc>
+    <loc>https://elimfilters.com/knowledge-center/industries</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/iso-cleanliness-code</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/nominal-efficiency</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/progressive-density-gradient</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/restriction</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/servo-valve</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/varnish</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/glossary/water-ingress</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/industries/agriculture</loc>
@@ -1136,12 +773,6 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/industries</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/industries/manufacturing</loc>
@@ -1192,13 +823,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/problems</loc>
+    <loc>https://elimfilters.com/knowledge-center/search</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/search</loc>
+    <loc>https://elimfilters.com/knowledge-center/standards</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1220,12 +851,6 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/standards</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/standards/iso-11155-1</loc>
@@ -1306,6 +931,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/systems</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/systems/air-intake-protection</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -1336,12 +967,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center/systems</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://elimfilters.com/knowledge-center/systems/lubrication-protection</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -1349,6 +974,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/technical-library</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/technologies</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1370,12 +1001,6 @@
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://elimfilters.com/knowledge-center/technologies</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/technologies/intekcore</loc>
@@ -1421,6 +1046,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/technologies/thermacore</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/technologies/turbocore</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

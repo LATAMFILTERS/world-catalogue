@@ -1,170 +1,118 @@
 'use client';
 
-import Link from 'next/link';
-import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+import { TechDetailPage } from '@/components/TechDetailPage';
+import type { TechDetailData } from '@/components/TechDetailPage';
+
+const DATA: TechDetailData = {
+  categoryTag: 'COMMERCIAL LINE · FLEET',
+  heroTitle: 'DURATECH™',
+  heroSubtitle: 'FLEET MASTER KIT SYSTEM',
+  heroTagline: 'Fleet maintenance master kits consolidating oil, fuel, air, and cabin filtration into OEM-interchangeable platform-specific packages. One kit per vehicle model. One order per service cycle.',
+  heroImage: '/images/npr-01_converted.avif',
+  logoSrc: '/assets/Duratech.avif',
+  breadcrumbParent: { label: 'COMMERCIAL LINES', href: '/commercial-lines' },
+  heroStats: [
+    { key: 'ELEMENTS/KIT', value: '4' },
+    { key: 'SOURCING', value: 'SINGLE ORDER' },
+    { key: 'COMPATIBILITY', value: 'OEM-MATCHED' },
+  ],
+  systemHeadline: 'Fleet Maintenance Standardisation\nThrough Platform-Specific Kits',
+  systemParagraphs: [
+    'DURATECH™ is a fleet maintenance standardisation system that consolidates OEM-interchangeable filtration components into master kits. Each kit is platform-specific — one DURATECH™ kit covers a complete vehicle service: oil filter, fuel filter, air filter, and cabin filter. Designed for mixed-fleet operations in mining, construction, on-road transport, and agriculture.',
+    'Mixed-fleet operations face a systematic problem: each vehicle model requires a different combination of filter specifications. Without a kit system, maintenance teams must track individual elements across dozens of part numbers — creating inventory complexity, procurement overhead, and the persistent risk of wrong-element installation. Wrong elements installed at service are the primary cause of filtration-related equipment failures in fleet operations.',
+    'DURATECH™ eliminates this failure mode by converting filter inventory to a kit-based structure. Platform-specific kits contain only the correct elements for each vehicle model. A single DURATECH™ order per service cycle replaces multiple individual part orders — reducing procurement complexity and ensuring every service event uses verified OEM-interchangeable specifications.',
+  ],
+  productImageSrc: '/assets/Duratech.avif',
+  productImageCaption: 'DURATECH™ — Fleet Master Kit System',
+  stagesHeading: 'FOUR ELEMENTS. ONE KIT. ONE SERVICE CYCLE.',
+  stages: [
+    {
+      number: '01',
+      tag: 'LUBRICATION',
+      title: 'Oil Filter — SYNTRAX™ Element',
+      body: 'SYNTRAX™ lubrication protection element specified to the engine platform — correct viscosity grade, dirt-holding capacity, and bypass valve threshold for the vehicle model. Maintains ISO 4406 cleanliness codes across extended drain intervals. Included for every engine type in the DURATECH™ platform coverage range.',
+      stat: 'SYNTRAX™',
+      statLabel: 'Lubrication protection element',
+    },
+    {
+      number: '02',
+      tag: 'FUEL CLEANLINESS',
+      title: 'Fuel Filter — HYDROCORE™ or SYNTEPORE™',
+      body: 'HYDROCORE™ water separation element for conventional diesel injection systems, or SYNTEPORE™ 4µm zero-migration barrier for HPCR injection systems operating above 2,000 bar. The correct fuel filtration element is matched to the injection system pressure specification of each vehicle platform included in the kit.',
+      stat: 'HYDROCORE™',
+      statLabel: 'or SYNTEPORE™ — matched to injection system',
+    },
+    {
+      number: '03',
+      tag: 'AIR INTAKE',
+      title: 'Air Filter — MACROCORE™ Element',
+      body: 'MACROCORE™ Progressive Density Gradient air intake element specified to the engine air circuit and operating environment. ISO 5011 certified for heavy-duty combustion engines in mining, agriculture, and construction. Element size, inlet diameter, and collapse rating matched to the OEM air intake specification for each vehicle platform in the kit.',
+      stat: 'MACROCORE™',
+      statLabel: 'Air intake protection element',
+    },
+    {
+      number: '04',
+      tag: 'CABIN AIR',
+      title: 'Cabin Filter — MICROKAPPA™ Element',
+      body: 'MICROKAPPA™ PM2.5 cabin air element for operator protection — included where the vehicle platform has cabin air filtration installed. Electrostatic + activated carbon + HEPA-class construction. Cabin filter is included in kits for vehicles with documented cabin filtration systems; excluded where the platform has no cabin filter position.',
+      stat: 'MICROKAPPA™',
+      statLabel: 'Cabin air protection element (where installed)',
+    },
+  ],
+  specs: [
+    { label: 'Elements Per Kit', value: '4', sub: 'Oil, fuel, air, and cabin elements per vehicle service kit. All elements OEM-interchangeable for the specified platform.' },
+    { label: 'Sourcing Model', value: '1×', sub: 'Single order per service cycle. Replaces multiple individual part orders per vehicle model with one kit order.' },
+    { label: 'Platform Coverage', value: 'Mixed', sub: 'Covers on-road trucks, off-road mining and construction equipment, and agricultural machinery across multiple manufacturers.' },
+    { label: 'Installation Risk', value: '0', sub: 'Wrong-element installation risk eliminated. Platform-specific kits contain only correct elements for the vehicle model.' },
+    { label: 'Inventory Structure', value: 'KIT', sub: 'Converts per-part filter inventory to predictable kit-based structure. Reduces stocked SKUs per fleet vehicle by up to 4×.' },
+    { label: 'Compatibility', value: 'OEM', sub: 'All elements are OEM-interchangeable. DURATECH™ kits meet or exceed OEM filter specification for each platform.' },
+  ],
+  applicationsHeading: 'FLEET OPERATIONS — ON-ROAD & OFF-ROAD',
+  applicationsSubtext: 'DURATECH™ standardises filtration across mixed-model fleets in any industry where multiple vehicle types share a maintenance program.',
+  applications: [
+    {
+      sector: 'TRUCKS & ON-ROAD FLEETS',
+      detail: 'On-road commercial transport fleets with mixed makes and models — long-haul trucks, regional distribution, and last-mile delivery vehicles. Fleet operators managing 20+ vehicles across multiple makes face persistent wrong-element installation risk. DURATECH™ kit-per-platform structure eliminates this risk and reduces procurement to a single order per service event per vehicle model.',
+    },
+    {
+      sector: 'MINING & CONSTRUCTION',
+      detail: 'Off-road heavy equipment fleets — excavators, loaders, haul trucks, graders, and drill rigs operating across multiple equipment brands on the same site. Mining fleet maintenance teams typically manage 8–15 equipment models in parallel. DURATECH™ platform-specific kits convert this to a single kit reference per model, managed as standard inventory items rather than individual filter SKUs.',
+    },
+    {
+      sector: 'AGRICULTURE',
+      detail: 'Agricultural machinery fleets — tractors, harvesters, and self-propelled sprayers across seasonal maintenance cycles. Agricultural maintenance has defined service windows (pre-season, mid-season, harvest). DURATECH™ kits allow maintenance teams to pre-kit all required filtration before the service window, eliminating last-minute sourcing and ensuring correct elements are available for every machine in the fleet.',
+    },
+  ],
+  ctaTag: 'DURATECH™ FLEET KITS',
+  ctaHeading: 'Find Your Platform Kit by Vehicle Model',
+  ctaBody: 'Cross-reference your vehicle make, model, and engine specification to identify the correct DURATECH™ fleet kit for your service cycle.',
+};
 
 export default function DuratechPage() {
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
-
-      {/* Hero */}
-      <section style={{
-        position: 'relative',
-        minHeight: '60vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        padding: 'clamp(6rem, 10vw, 9rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 5vw, 4rem)',
-        overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url(/assets/Duratech.avif)',
-          backgroundSize: 'cover', backgroundPosition: 'center',
-          opacity: 0.18,
-        }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, #000 40%, transparent 100%)',
-        }} />
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '860px' }}>
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <h1 style={{
-              fontFamily: 'Outfit, sans-serif', fontWeight: 700,
-              fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 1,
-              letterSpacing: '-0.03em', textTransform: 'uppercase',
-              marginBottom: '1rem',
-            }}>
-              DURATECH™
-            </h1>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
-              color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '560px',
-              textAlign: 'justify',
-            }}>
-              Fleet master kit system for on-road and off-road operations. One kit per vehicle platform.
-              All filtration elements per service cycle — oil, fuel, air, and cabin.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4rem)' }}>
-
-        {/* Section 01 */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.25rem' }}>Fleet Maintenance Master Kits</h2>
-          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '1rem' }}>
-            DURATECH™ is a fleet maintenance standardisation system that consolidates OEM-interchangeable filtration components into master kits. Designed for mixed-fleet operations in mining, construction, and agriculture, DURATECH™ reduces parts inventory complexity, lowers procurement cost, and ensures every service event uses the correct filter specification for each asset.
-          </p>
-          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, textAlign: 'justify' }}>
-            Each kit is platform-specific — one DURATECH™ kit covers a complete vehicle service: oil filter, fuel filter, air filter, and cabin filter. Eliminates wrong-element installations in mixed-model fleets and converts filter inventory to a predictable kit-based structure with a single order per service cycle.
-          </p>
-        </motion.section>
-
-        {/* Section 02 — Kit structure */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>What Each Kit Contains</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-            {[
-              { title: 'Oil Filter', body: 'SYNTRAX™ lubrication protection element — correct viscosity grade and capacity for the specific engine platform.' },
-              { title: 'Fuel Filter', body: 'HYDROCORE™ or SYNTEPORE™ fuel cleanliness element matched to injection system pressure specification.' },
-              { title: 'Air Filter', body: 'MACROCORE™ or SYNTEPORE™ air intake element specified to the engine air circuit and operating environment.' },
-              { title: 'Cabin Filter', body: 'MICROKAPPA™ cabin air element for operator protection — included where platform cabin filtration is installed.' },
-            ].map(f => (
-              <div key={f.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.6rem', color: '#FFF12D' }}>{f.title}</h3>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{f.body}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Section 03 — Fleet applications */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>On-Road & Off-Road Operations</h2>
-          {[
-            { sector: 'Trucks & Fleets', desc: 'On-road commercial transport fleets with mixed makes and models — long-haul trucks, regional distribution, and last-mile delivery vehicles.' },
-            { sector: 'Mining & Construction', desc: 'Off-road heavy equipment fleets — excavators, loaders, haul trucks, and drill rigs operating across multiple equipment brands.' },
-            { sector: 'Agriculture', desc: 'Agricultural machinery fleets — tractors, harvesters, and self-propelled sprayers across seasonal maintenance cycles.' },
-          ].map(a => (
-            <div key={a.sector} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem', marginBottom: '1.5rem' }}>
-              <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.4rem' }}>{a.sector}</h3>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'justify' }}>{a.desc}</p>
-            </div>
-          ))}
-        </motion.section>
-
-        {/* Canonical Knowledge Block */}
-        <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ marginBottom: '2rem' }}>
-          <div style={{
-            background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)',
-            padding: '2rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem',
-            lineHeight: 1.8, color: 'rgba(255,255,255,0.65)',
-            textAlign: 'justify',
-          }}>
-            <p style={{ color: '#FFF12D', fontWeight: 700, marginBottom: '1.25rem', fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-              CANONICAL KNOWLEDGE BLOCK: DURATECH™
-            </p>
-            <p><strong>DEFINITION</strong><br />
-            DURATECH™ is a fleet maintenance standardisation system that consolidates OEM-interchangeable filtration components into platform-specific master kits. Each kit contains the correct oil, fuel, air, and cabin filter for a specific vehicle model. Designed for mixed-fleet operations in trucks, mining, construction, and agriculture.</p>
-            <p style={{ marginTop: '1rem' }}><strong>KIT_CONTENTS</strong><br />
-            Oil Filter: SYNTRAX™ lubrication protection element | Fuel Filter: HYDROCORE™ or SYNTEPORE™ fuel cleanliness element | Air Filter: MACROCORE™ or SYNTEPORE™ air intake element | Cabin Filter: MICROKAPPA™ cabin air element (where installed)</p>
-            <p style={{ marginTop: '1rem' }}><strong>OPERATIONAL_BENEFITS</strong><br />
-            Eliminates wrong-element installations in mixed-model fleets | Converts filter inventory to predictable kit-based structure | Single order per service cycle — reduces procurement complexity | Platform-specific kits — one kit per vehicle model | OEM-interchangeable specifications</p>
-            <p style={{ marginTop: '1rem' }}><strong>FLEET_APPLICATIONS</strong><br />
-            Trucks & Fleets: on-road commercial transport — long-haul, regional distribution, last-mile | Mining & Construction: off-road heavy equipment — excavators, loaders, haul trucks, drill rigs | Agriculture: tractors, harvesters, self-propelled sprayers across seasonal maintenance cycles</p>
-            <p style={{ marginTop: '1rem' }}><strong>CLASSIFICATION</strong><br />
-            Commercial product line (fleet service kit system). Not a filtration technology. Bundles existing ELIMFILTERS® protection technologies into platform-specific service kits. Listed under /commercial-lines/, not /technologies/.</p>
-            <p style={{ marginTop: '1rem' }}><strong>CITATION_REFERENCE</strong><br />
-            source: elimfilters.com/commercial-lines/duratech | concept: DURATECH Commercial Line | version: 1.0 | last_updated: 2026-06-24</p>
-          </div>
-        </motion.section>
-
-        {/* Back link */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <Link href="/commercial-lines" style={{
-            fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem',
-            letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
-          }}>
-            ← Back to Commercial Lines
-          </Link>
-        </div>
-
-      </div>
-      {/* JSON-LD structured data */}
-      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'DURATECH™',
-        description: 'Fleet maintenance standardisation system consolidating oil, fuel, air, and cabin filtration into OEM-interchangeable master kits. Platform-specific kits for mixed-model fleets in trucks, mining, construction, and agriculture.',
-        brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
-        manufacturer: { '@type': 'Organization', name: 'Kleo Technologies LLC', url: 'https://elimfilters.com' },
-        url: 'https://elimfilters.com/commercial-lines/duratech/',
-        category: 'Industrial Filtration — Fleet Maintenance',
-        additionalProperty: [
-          { '@type': 'PropertyValue', name: 'Compatibility', value: 'OEM-interchangeable' },
-          { '@type': 'PropertyValue', name: 'Sourcing', value: 'Single-source per service cycle' },
-          { '@type': 'PropertyValue', name: 'Coverage', value: 'On-road and off-road mixed-model fleets' },
-          { '@type': 'PropertyValue', name: 'Elements per Kit', value: 'Oil · Fuel · Air · Cabin' },
-        ],
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS®', item: 'https://elimfilters.com' },
-            { '@type': 'ListItem', position: 2, name: 'Commercial Lines', item: 'https://elimfilters.com/commercial-lines/' },
-            { '@type': 'ListItem', position: 3, name: 'DURATECH™', item: 'https://elimfilters.com/commercial-lines/duratech/' },
-          ],
-        },
-      }) }} />
-
-      <Footer />
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'DURATECH™',
+            description: 'Fleet maintenance standardisation system consolidating oil, fuel, air, and cabin filtration into OEM-interchangeable master kits. Platform-specific kits for mixed-model fleets in trucks, mining, construction, and agriculture.',
+            brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
+            manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+            url: 'https://elimfilters.com/commercial-lines/duratech/',
+            category: 'Industrial Filtration — Fleet Maintenance',
+            additionalProperty: [
+              { '@type': 'PropertyValue', name: 'Elements Per Kit', value: '4 (oil, fuel, air, cabin)' },
+              { '@type': 'PropertyValue', name: 'Compatibility', value: 'OEM-interchangeable' },
+              { '@type': 'PropertyValue', name: 'Coverage', value: 'On-road and off-road mixed-model fleets' },
+            ],
+          }),
+        }}
+      />
+      <TechDetailPage data={DATA} />
+    </>
   );
 }

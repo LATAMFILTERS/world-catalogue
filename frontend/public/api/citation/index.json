@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-07-05T04:03:19.608Z",
+    "generated": "2026-07-05T04:19:13.946Z",
     "entity_count": 54,
     "endpoint_base": "/api/citation",
     "query_patterns": {
@@ -349,13 +349,13 @@
         "concept": "SYNTRAX Full-Flow Lube Protection",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:951017803767ebe0fa30e6585498d2392c32466575dc3363e9c4ece640495dce"
+        "content_hash": "sha256:2e2b8c93e03cc3554012ca790a1c0df5a6fb3bff7399af12ebeaf3f0068939fd"
       },
       "canonical": {
         "definition": "SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits by combining high-efficiency particulate capture (ISO 16889 Beta ratio rated) with soot agglomerate removal above 2% by weight concentration, preventing both abrasive particle wear and soot-induced oil degradation.",
         "systems": "Engine lube oil circuits, hydraulic power circuits, transmission fluid systems across diesel-powered on-highway and off-highway equipment",
         "failure_impact": "Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.",
-        "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 1 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
+        "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 100 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
         "related_technologies": "NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by",
         "industrial_role": "SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories."
       },
@@ -1490,14 +1490,14 @@
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:bb0e49d4cd81c3a74b66b51d41fd0631e60e406084f1c5e995d4cbcf9077ed2e"
+        "content_hash": "sha256:df017dbfddf4beef40dd713d378cc5bc3164a12e0fb3d6bbe0b1498899142fa7"
       },
       "canonical": {
         "definition": "ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil systems, using ISO Medium Test Dust (ISO 12103-1 A3) to calculate particle capture efficiency across defined size classes (β₆, β₁₀, β₁₆, β₂₅).",
         "systems": "Hydraulic fluid power systems, engine lube oil circuits, fuel filtration systems",
         "failure_impact": "Filters without ISO 16889 certified Beta ratios cannot be verified for actual particle capture efficiency → assumed performance diverges from actual → ISO 4406 cleanliness targets are not met → particles above 10–15 µm remain in oil → abrasive bearing wear → clearance loss → seizure at 3,000–5,000 hours instead of 15,000–25,000 hours.",
         "related_standards": "ISO 4406: Three-number cleanliness code (≥4/≥6/≥14 µm) that ISO 16889 Beta ratio performance enables and validates | SAE J1539: Air intake cleanliness standard (parallel domain — air-side particle control)",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal rated at Beta(x[c]) ≥ 1000 at 5 µm absolute under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal rated at 1 µm efficiency under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
         "industrial_role": "ISO 16889 Beta ratio is the only quantitative performance metric that converts a filter product specification into a verifiable contamination control capability — it is the engineering basis for achieving and maintaining ISO 4406 cleanliness targets in hydraulic and lube systems."
       },
       "relationships": {
@@ -1541,10 +1541,10 @@
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:62bd09ac6104511ae50473726f86f3be40aaf826667033430324d53867904ed4"
+        "content_hash": "sha256:1a84dfd2603115b9a058eee1c98db6ad3cdc6ff5540b8be12d3e877a8201cccf"
       },
       "canonical": {
-        "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 1 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
+        "definition": "ISO 4406 is the international standard defining fluid cleanliness codes as three-number expressions (e.g., 16/14/11) representing particle count ranges at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) per 100 mL of fluid, providing the universal measurement language for specifying and verifying hydraulic and lube oil contamination control targets.",
         "systems": "Hydraulic fluid power systems, engine lube oil circuits, transmission circuits — any fluid system requiring measurable particle contamination control",
         "failure_impact": "Lube oil or hydraulic fluid at ISO 4406 19/17/14 (typical commodity filtration outcome) has 8× the particle count at ≥4 µm compared to 16/14/11 (system filtration target) → proportional hydraulic valve sticktion and bearing surface abrasive wear → valve replacement ($5,000–$25,000) and engine bearing seizure at 3,000–5,000 hours versus 15,000–25,000 hours at target code.",
         "related_standards": "ISO 16889: Multi-pass filter test method that generates the Beta ratios used to select filters achieving ISO 4406 target codes | SAE J1539: Air intake standard (parallel domain — air-side particle control feeding lube circuit contamination)",

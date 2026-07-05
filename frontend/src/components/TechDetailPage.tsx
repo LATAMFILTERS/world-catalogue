@@ -46,6 +46,7 @@ export interface TechDetailData {
   heroImage: string;
   heroStats?: { key: string; value: string }[];
   logoSrc: string;
+  breadcrumbParent?: { label: string; href: string };
   systemHeadline: string;
   systemParagraphs: string[];
   productImageSrc: string;
@@ -87,11 +88,11 @@ export function TechDetailPage({ data }: Props) {
           >HOME</Link>
           <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
           <Link
-            href="/technologies"
+            href={data.breadcrumbParent?.href ?? '/technologies'}
             style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
-          >TECHNOLOGY</Link>
+          >{data.breadcrumbParent?.label ?? 'TECHNOLOGY'}</Link>
           <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.1em', color: '#FFF12D' }}>
             {data.heroTitle}
