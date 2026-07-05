@@ -499,13 +499,18 @@ function parseRefs(arr){
     'DOWNLOAD SPECS',
     'OEM CROSS REFERENCE',
     'CELLULOSE',
-    'NO'
+    'NO',
+    'SPECIFICATION',
+    'DOWNLOADSPECS',
+    'HYDROSTATIC BURST MINIMUM',
+    'USES SERVICE PART'
   ]);
 
   // A real manufacturer name or reference code never looks like a physical
   // measurement (a number followed by a unit). When either field matches
   // this shape, the entry is spec-table noise, not a genuine cross-reference.
-  const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|UN|UNF|KG|LB)\b/i;
+  // UNS (thread class, e.g. "1.00 1/2 16 UNS 2B") must match too, hence UNS?.
+  const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|KPA|UNS?|UNF|KG|LB)\b/i;
 
   // A real manufacturer name always contains at least one letter (Caterpillar,
   // 3M, SKF...). Some scraped rows pair two part numbers together (e.g.
@@ -520,6 +525,14 @@ function parseRefs(arr){
   // COPCO) or a short alphanumeric abbreviation with few digits (3M).
   const CODE_SHAPED = /^[A-Za-z]{0,4}\d{3,}[A-Za-z0-9]*$/;
 
+  // Caterpillar-style reference codes (1R1808, 1W2660, 2P4005, 7W5497,
+  // 2Y8097) start with a digit, so CODE_SHAPED above never catches them.
+  // Generalizing: no real manufacturer name has 3+ digit characters in it
+  // anywhere (verified against every legitimate brand seen in production
+  // data, including alphanumeric ones like 3M) — anything with that many
+  // digits is a reference code, not a company name.
+  const DIGIT_HEAVY = (s) => (s.match(/\d/g) || []).length >= 3;
+
   const seen = new Set();
 
   return arr
@@ -532,6 +545,7 @@ function parseRefs(arr){
     .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
     .filter(r => HAS_LETTER.test(r.manufacturer))
     .filter(r => !CODE_SHAPED.test(r.manufacturer))
+    .filter(r => !DIGIT_HEAVY(r.manufacturer))
     .filter(r => {
       const k = (r.manufacturer + '|' + r.code).toUpperCase();
       if (seen.has(k)) return false;
