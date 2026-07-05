@@ -53,16 +53,32 @@ export interface KCArticle {
 }
 
 export interface KCStandard {
+  // ── Core identity ──────────────────────────────────────────────────────────
   slug: string;
   code: string;
   title: string;
+  entityId: string;                       // STD-xxx permanent graph ID
+  // ── Issuing body & revision ────────────────────────────────────────────────
+  issuingOrganization: string;            // Full organization name
+  year: string;
+  revisionStatus: 'active' | 'superseded' | 'withdrawn' | 'draft';
+  supersedes?: string;                    // Code string of superseded standard
+  supersededBy?: string;                  // Code string of superseding standard
+  // ── Content ───────────────────────────────────────────────────────────────
   metaDescription: string;
   scope: string;
-  year: string;
+  engineeringPurpose: string;             // Why this standard exists for filtration engineering
   sections: { heading: string; body: string }[];
   keyParams: { label: string; value: string }[];
-  relatedTopics: string[];
-  relatedTechnologies: string[];
+  // ── Graph relationships ────────────────────────────────────────────────────
+  applicableSystems: string[];            // system slugs (SYSTEM_IDS keys)
+  relatedGlossaryTerms: string[];         // TERM-xxx permanent IDs
+  relatedTopics: string[];                // article category slugs
+  relatedTechnologies: string[];          // technology display names (e.g. 'MACROCORE™')
+  relatedArticles: string[];              // article slugs
+  // ── Hierarchy ─────────────────────────────────────────────────────────────
+  parentStandard?: string;                // STD-xxx ID (e.g. ISO 8573-2 → ISO 8573-1)
+  childStandards?: string[];              // STD-xxx IDs
 }
 
 export interface KCTechnology {

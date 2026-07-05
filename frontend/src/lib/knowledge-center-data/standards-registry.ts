@@ -1,22 +1,42 @@
 /**
  * standards-registry.ts
- * ELIMFILTERS Knowledge Center — Standards Data
+ * ELIMFILTERS Knowledge Center — Standards Data Registry
  *
- * Dependency: ./types
+ * Phase 5C: Standards Library Expansion
+ * 22 canonical engineering standards. Every standard is a first-class graph entity
+ * with permanent ID, issuing body metadata, revision status, and full relationship
+ * edges to systems, technologies, glossary terms, and articles.
+ *
+ * Dependency: ./types (KCStandard)
+ * Consumed by: knowledge-center/navigation-index.ts
+ *
+ * Rules:
+ *   - entityId must match the corresponding STANDARD_IDS key in entity-ids.ts
+ *   - relatedGlossaryTerms must reference valid TERM-xxx permanent IDs
+ *   - applicableSystems must reference valid SYSTEM_IDS slugs
+ *   - relatedTechnologies use display names with ™ symbol (e.g. 'MACROCORE™')
+ *   - parentStandard / childStandards use STD-xxx permanent IDs
  */
 
 import type { KCStandard } from './types';
 
-// ─── STANDARDS ────────────────────────────────────────────────────────────────
+// ─── STANDARDS REGISTRY ────────────────────────────────────────────────────────
 
 export const KC_STANDARDS: KCStandard[] = [
+
+  // ── HYDRAULIC & LUBRICATION FILTER PERFORMANCE ────────────────────────────
+
   {
     slug: 'iso-16889',
     code: 'ISO 16889',
+    entityId: 'STD-ISO-16889',
     title: 'Hydraulic Fluid Power — Multi-Pass Method for Evaluating Filter Element Performance',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2022 (4th edition)',
+    revisionStatus: 'active',
     metaDescription: 'ISO 16889 defines the multi-pass test method for hydraulic and lubrication filter elements, establishing Beta ratio, dirt holding capacity, and performance classification methodology.',
     scope: 'Hydraulic and lubrication filter elements used in hydraulic fluid power systems.',
-    year: '2022 (4th edition)',
+    engineeringPurpose: 'Provides the sole global standardised test method for measuring hydraulic and lubrication filter element efficiency (Beta ratio) and capacity (dust holding capacity), enabling direct cross-manufacturer performance comparability under fully reproducible laboratory conditions. ISO 16889 is the reference standard for all ELIMFILTERS fluid filter qualification.',
     sections: [
       {
         heading: 'Scope and Application',
@@ -38,46 +58,28 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Particle counter calibration', value: 'ISO 11171' },
       { label: 'Terminal ΔP', value: 'Typically 6 bar' },
     ],
+    applicableSystems: ['lubrication-protection', 'hydraulic-protection'],
+    relatedGlossaryTerms: [
+      'TERM-BETA-RATIO', 'TERM-ABSOLUTE-EFFICIENCY', 'TERM-MULTI-PASS-TEST',
+      'TERM-DIFFERENTIAL-PRESSURE', 'TERM-TEST-DUST', 'TERM-DUST-HOLDING-CAPACITY',
+      'TERM-COLLAPSE-PRESSURE', 'TERM-NOMINAL-EFFICIENCY',
+    ],
     relatedTopics: ['contamination-control', 'filter-media-science', 'fluid-cleanliness'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedArticles: ['iso-16889', 'iso-16889-multipass-test', 'beta-ratio', 'filter-media-engineering', 'testing-and-validation'],
   },
-  {
-    slug: 'iso-5011',
-    code: 'ISO 5011',
-    title: 'Inlet Air Cleaning Equipment — Performance Testing of Air Filters for Internal Combustion Engines and Compressors',
-    metaDescription: 'ISO 5011 defines performance test methods for air filters used in internal combustion engines and compressors, covering efficiency, restriction, and dust holding capacity.',
-    scope: 'Air filters for internal combustion engines, gas turbines, and compressors.',
-    year: '2014',
-    sections: [
-      {
-        heading: 'Scope and Application',
-        body: 'ISO 5011 defines test methods for determining the performance characteristics of air cleaner filter elements including filtration efficiency, air restriction (pressure drop), and dust holding capacity. The standard applies to primary and safety filter elements used in internal combustion engines (gasoline and diesel), gas turbines, and compressors in industrial and mobile applications.',
-      },
-      {
-        heading: 'Efficiency Measurement',
-        body: 'Particle counting upstream and downstream at 0.5, 1, 2, 3, 5, 7, 10, 20, 40, and 80 µm provides fractional efficiency data. Overall efficiency is measured gravimetrically — mass of dust retained by element divided by mass injected. ISO A2 fine test dust (ISO 12103-1, formerly SAE Fine test dust) is injected at constant rate during the test. A secondary downstream filter captures all particles that pass through the test element.',
-      },
-      {
-        heading: 'Restriction and Capacity Testing',
-        body: 'Restriction (pressure drop in mbar or Pa) is measured at rated airflow using calibrated differential pressure transducers. The test runs at constant flow until terminal restriction is reached (as specified by the manufacturer or test client). Dust holding capacity is the total grams of test dust retained by the element at terminal restriction, providing the basis for service interval prediction.',
-      },
-    ],
-    keyParams: [
-      { label: 'Test dust', value: 'ISO A2 fine (ISO 12103-1)' },
-      { label: 'Restriction unit', value: 'mbar or Pa' },
-      { label: 'Efficiency unit', value: '% gravimetric or fractional' },
-      { label: 'DHC unit', value: 'grams' },
-    ],
-    relatedTopics: ['airflow-engineering', 'air-restriction', 'dust-holding-capacity'],
-    relatedTechnologies: ['MACROCORE™'],
-  },
+
   {
     slug: 'iso-4406',
     code: 'ISO 4406',
+    entityId: 'STD-ISO-4406',
     title: 'Hydraulic Fluid Power — Method for Coding the Level of Contamination by Solid Particles',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2021 (3rd edition)',
+    revisionStatus: 'active',
     metaDescription: 'ISO 4406 defines the particle contamination coding system for hydraulic and lubrication fluids, establishing cleanliness codes used to specify and verify target contamination levels.',
     scope: 'Hydraulic fluids, lubrication oils, and other industrial fluids requiring cleanliness specification.',
-    year: '2021 (3rd edition)',
+    engineeringPurpose: 'Establishes the universal particle contamination coding system for hydraulic and lubrication fluids — providing a common language for cleanliness specification, measurement verification, and contamination control target-setting across all OEM and aftermarket filtration applications.',
     sections: [
       {
         heading: 'Cleanliness Code System',
@@ -98,16 +100,27 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Code range per number', value: '2× range (doubling)' },
       { label: 'APC calibration', value: 'ISO 11171' },
     ],
+    applicableSystems: ['lubrication-protection', 'hydraulic-protection'],
+    relatedGlossaryTerms: [
+      'TERM-ISO-CLEANLINESS-CODE', 'TERM-PARTICLE-COUNT', 'TERM-NAS-CLEANLINESS-CODE',
+      'TERM-BETA-RATIO', 'TERM-SERVO-VALVE', 'TERM-PROPORTIONAL-VALVE',
+    ],
     relatedTopics: ['contamination-control', 'fluid-cleanliness', 'filter-media-science'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedArticles: ['iso-4406', 'fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'contamination-sensitivity-components'],
   },
+
   {
     slug: 'nas-1638',
     code: 'NAS 1638',
+    entityId: 'STD-NAS-1638',
     title: 'Cleanliness Requirements for Parts Used in Hydraulic Systems',
+    issuingOrganization: 'AIA (Aerospace Industries Association)',
+    year: '1964 (with subsequent amendments)',
+    revisionStatus: 'active',
     metaDescription: 'NAS 1638 defines particle contamination cleanliness classes for hydraulic system components and fluids, widely used in aerospace, defense, and industrial hydraulics applications.',
     scope: 'Hydraulic system components and fluids in aerospace, defense, and industrial applications.',
-    year: '1964 (with subsequent amendments)',
+    engineeringPurpose: 'Predecessor hydraulic cleanliness classification standard developed for US aerospace hydraulic systems; provides the legacy single-number class framework still required in aerospace, defense, and industrial equipment documentation where OEM specifications have not migrated to ISO 4406.',
     sections: [
       {
         heading: 'NAS vs ISO 4406',
@@ -124,66 +137,24 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Count unit', value: 'Particles per 100 mL' },
       { label: 'NAS 6 ≈ ISO equivalent', value: 'ISO 17/15/12' },
     ],
+    applicableSystems: ['hydraulic-protection'],
+    relatedGlossaryTerms: ['TERM-NAS-CLEANLINESS-CODE', 'TERM-ISO-CLEANLINESS-CODE', 'TERM-PARTICLE-COUNT'],
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
     relatedTechnologies: ['NANOFORCE™'],
+    relatedArticles: ['fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'nfpa-t2-14-hydraulic-cleanliness'],
   },
-  {
-    slug: 'iso-29463',
-    code: 'ISO 29463',
-    title: 'High-Efficiency Filters and Filter Media — Classification, Performance Testing, and Marking',
-    metaDescription: 'ISO 29463 defines test methods and classification for high-efficiency air filters (HEPA/ULPA classes ePM1, ePM2.5, ePM10) for engine intake, compressed air, and cabin air applications.',
-    scope: 'High-efficiency air and cabin air filters for HEPA/ULPA performance classification.',
-    year: '2011 (Parts 1–5)',
-    sections: [
-      {
-        heading: 'Classification System',
-        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters targeting occupational health protection in mining and construction applications are classified to H13 minimum for PM2.5 protection.',
-      },
-      {
-        heading: 'MPPS Testing',
-        body: 'The most penetrating particle size (MPPS) for fibrous media is typically 0.1–0.3 µm — the size at which diffusion and interception mechanisms both have minimum efficiency. Testing at MPPS provides the worst-case efficiency measurement. For cabin air filters, scanning methods measure local penetration across the entire filter face to identify any penetration hotspots that would expose occupants to localized high particle concentration.',
-      },
-    ],
-    keyParams: [
-      { label: 'H13 minimum efficiency', value: '99.95% at MPPS' },
-      { label: 'MPPS range', value: '0.1–0.3 µm' },
-      { label: 'Application scope', value: 'HEPA/ULPA cabin air' },
-    ],
-    relatedTopics: ['filter-media-science', 'airflow-engineering'],
-    relatedTechnologies: ['MICROKAPPA™'],
-  },
-  {
-    slug: 'sae-j1858',
-    code: 'SAE J1858',
-    title: 'Full-Flow Lubricating Oil Filters — Selecting and Specifying',
-    metaDescription: 'SAE J1858 provides guidance for specifying and selecting full-flow lubricating oil filters for diesel and gasoline engines, covering performance requirements and test methodology references.',
-    scope: 'Full-flow lube oil filters for internal combustion engines.',
-    year: '2011',
-    sections: [
-      {
-        heading: 'Specification Framework',
-        body: 'SAE J1858 establishes the performance requirements and selection criteria for full-flow lube oil filters in gasoline and diesel engine applications. The standard references ISO 4548 for test methodology and provides guidance on bypass valve specification, anti-drain back valve performance, and media efficiency requirements for different engine service categories.',
-      },
-      {
-        heading: 'Performance Categories',
-        body: 'SAE J1858 defines performance levels based on oil change interval: standard service (≤5,000 km), extended service (5,000–10,000 km), and severe/extended (>10,000 km). Higher categories require higher dirt holding capacity and superior media efficiency to maintain protection through longer service intervals. Synthetic media filters are required for extended service applications.',
-      },
-    ],
-    keyParams: [
-      { label: 'Standard service', value: '≤5,000 km' },
-      { label: 'Extended service', value: '5,000–10,000 km' },
-      { label: 'Test method reference', value: 'ISO 4548' },
-    ],
-    relatedTopics: ['service-intervals', 'oem-engineering', 'filter-media-science'],
-    relatedTechnologies: ['SYNTRAX™'],
-  },
+
   {
     slug: 'iso-11171',
     code: 'ISO 11171',
+    entityId: 'STD-ISO-11171',
     title: 'Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2016',
+    revisionStatus: 'active',
     metaDescription: 'ISO 11171 defines calibration methodology for automatic particle counters used in hydraulic and lubrication fluid analysis, establishing the basis for traceable ISO 4406 cleanliness measurements.',
     scope: 'Automatic particle counters (APC) used for particle counting in hydraulic and lubrication fluids.',
-    year: '2016',
+    engineeringPurpose: 'Specifies the calibration procedure for automatic particle counters using NIST-traceable reference particles, ensuring that ISO 4406 cleanliness code measurements and ISO 16889 Beta ratio results are reproducible across instruments, laboratories, and countries — the metrological foundation of the entire fluid cleanliness system.',
     sections: [
       {
         heading: 'Calibration Basis',
@@ -199,96 +170,24 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Notation suffix', value: '(c) = ISO 11171 calibrated' },
       { label: 'Calibration verification', value: 'NIST SRM 1003c reference material' },
     ],
+    applicableSystems: ['lubrication-protection', 'hydraulic-protection'],
+    relatedGlossaryTerms: ['TERM-PARTICLE-COUNT', 'TERM-ISO-CLEANLINESS-CODE', 'TERM-MULTI-PASS-TEST', 'TERM-BETA-RATIO'],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'contamination-control'],
-    relatedTechnologies: ['NANOFORCE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedArticles: ['iso-11171-particle-counting', 'fluid-cleanliness', 'oil-analysis-methods', 'testing-and-validation'],
   },
-  {
-    slug: 'iso-8573-1',
-    code: 'ISO 8573-1',
-    title: 'Compressed Air — Contaminant Classes and Purity Requirements',
-    metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
-    scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
-    year: '2010',
-    sections: [
-      {
-        heading: 'Purity Class Structure',
-        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
-      },
-      {
-        heading: 'Application Requirements',
-        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
-      },
-      {
-        heading: 'Treatment Stage Requirements',
-        body: 'Achieving Class 1:4:1 requires a multi-stage compressed air treatment train: pre-filter (bulk liquid and >3 µm particles), refrigeration dryer (pressure dewpoint 2–5°C), coalescing filter (oil aerosol to 0.01 mg/m³), activated carbon (oil vapor to 0.005 mg/m³), and post-filter (carbon fines removal). Each stage is tested and classified individually against the applicable ISO 8573 part.',
-      },
-    ],
-    keyParams: [
-      { label: 'Format', value: 'Particle:Water:Oil class numbers' },
-      { label: 'Instrument air minimum', value: 'Class 2:4:1' },
-      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
-      { label: 'Class 1 particles', value: '<20,000/m³ at ≥0.1 µm' },
-    ],
-    relatedTopics: ['testing-and-validation', 'contamination-control'],
-    relatedTechnologies: ['DRYCORE™'],
-  },
-  {
-    slug: 'sae-j1539',
-    code: 'SAE J1539',
-    title: 'Air Cleaner Test Code — Heavy Duty Diesel Engines',
-    metaDescription: 'SAE J1539 defines test procedures for evaluating air cleaner performance on heavy-duty diesel engines, covering restriction, efficiency, dust capacity, and element replacement protocols.',
-    scope: 'Test code for air cleaner performance evaluation on heavy-duty diesel engines, including restriction measurement, filtration efficiency, and service life determination.',
-    year: '1986',
-    sections: [
-      {
-        heading: 'Test Parameters',
-        body: 'SAE J1539 establishes standardized test conditions for evaluating air cleaner assemblies installed on heavy-duty diesel engines. Key parameters include airflow rate matched to engine displacement and rated speed, test dust specification using ISO fine or coarse test dust (ISO 12103-1), restriction measurement method using calibrated differential pressure transducers, and efficiency calculation. The test enables comparison of air cleaner performance across different configurations under controlled conditions.',
-      },
-      {
-        heading: 'Relationship to ISO 5011',
-        body: 'SAE J1539 and ISO 5011 address similar test objectives — air cleaner performance evaluation for internal combustion engines. ISO 5011 is the international standard widely referenced in European and international OEM specifications. SAE J1539 is the North American counterpart referenced in North American heavy-duty diesel engine applications. MACROCORE™ elements are characterized against both standards to provide performance documentation for global equipment OEM specifications.',
-      },
-    ],
-    keyParams: [
-      { label: 'Application', value: 'Heavy-duty diesel engine air cleaners' },
-      { label: 'Key measurements', value: 'Restriction, efficiency, dust capacity' },
-      { label: 'Related standard', value: 'ISO 5011 (international equivalent)' },
-    ],
-    relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
-    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
-  },
-  {
-    slug: 'iso-12937',
-    code: 'ISO 12937',
-    title: 'Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration',
-    metaDescription: 'ISO 12937 defines the Karl Fischer coulometric titration method for determining water content in petroleum products, the European and international equivalent of ASTM D6304.',
-    scope: 'Determination of water content in petroleum products with water content between 5 mg/kg and 2,000 mg/kg using coulometric Karl Fischer titration.',
-    year: '2000',
-    sections: [
-      {
-        heading: 'Karl Fischer Titration Principle',
-        body: 'ISO 12937 uses coulometric Karl Fischer titration to quantitatively determine water content in petroleum products. Iodine is electrochemically generated at an anode and reacts stoichiometrically with water in the Karl Fischer reaction; the charge required to generate sufficient iodine to consume all sample water is proportional to water content. Results are expressed as mg/kg (ppm by mass). ISO 12937 and ASTM D6304 use the same electrochemical principle and produce equivalent results — ISO 12937 is the European and international market reference; ASTM D6304 is the North American equivalent.',
-      },
-      {
-        heading: 'HPCR Fuel Quality Target',
-        body: 'ISO 12937 is the measurement method cited in EN 590 (European diesel fuel specification) with a limit of 200 mg/kg water. High-pressure common rail injectors require fuel water content below this threshold to prevent injector seat corrosion, micro-pitting, and stiction. Water above 500 mg/kg causes visible free water phases. ISO 12937 analysis is performed at fuel depot acceptance, during storage monitoring, and as commissioning flush verification for marine vessels under ISO 8217.',
-      },
-    ],
-    keyParams: [
-      { label: 'Measurement range', value: '5–2,000 mg/kg (ppm)' },
-      { label: 'EN 590 water limit', value: '200 mg/kg' },
-      { label: 'Equivalent standard', value: 'ASTM D6304 (North American)' },
-    ],
-    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
-  },
+
   {
     slug: 'nfpa-t2-14',
     code: 'NFPA T2.14',
+    entityId: 'STD-NFPA-T2-14',
     title: 'Fluid Power Systems — Hydraulic Filters — Method for Verifying Collapse/Burst Resistance',
+    issuingOrganization: 'NFPA (National Fluid Power Association)',
+    year: '2005',
+    revisionStatus: 'active',
     metaDescription: 'NFPA T2.14 specifies test methods for verifying the structural integrity of hydraulic filter elements under differential pressure, defining collapse and burst resistance ratings for high-pressure hydraulic applications.',
     scope: 'Test methods for verifying collapse pressure rating and burst resistance of hydraulic filter elements operating in high-pressure hydraulic systems.',
-    year: '2005',
+    engineeringPurpose: 'Provides structural integrity verification test methodology for hydraulic filter elements in high-pressure applications, ensuring collapse pressure margins that prevent catastrophic contamination release events during differential pressure transients and cold-start conditions.',
     sections: [
       {
         heading: 'Collapse and Burst Testing',
@@ -309,127 +208,28 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'Servo valve minimum cleanliness', value: 'ISO 15/13/10' },
       { label: 'Proportional valve minimum', value: 'ISO 16/14/11' },
     ],
+    applicableSystems: ['hydraulic-protection'],
+    relatedGlossaryTerms: [
+      'TERM-ISO-CLEANLINESS-CODE', 'TERM-PARTICLE-COUNT', 'TERM-SERVO-VALVE',
+      'TERM-PROPORTIONAL-VALVE', 'TERM-COLLAPSE-PRESSURE', 'TERM-ELEMENT-COLLAPSE',
+      'TERM-DIFFERENTIAL-PRESSURE',
+    ],
     relatedTopics: ['contamination-control', 'fluid-cleanliness', 'testing-and-validation'],
     relatedTechnologies: ['NANOFORCE™'],
+    relatedArticles: ['nfpa-t2-14-hydraulic-cleanliness', 'fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'filter-element-integrity'],
   },
-  {
-    slug: 'iso-11155-1',
-    code: 'ISO 11155-1',
-    title: 'Road Vehicles — Air Filters for Passenger Compartments — Particle Filtration Performance',
-    metaDescription: 'ISO 11155-1 defines particle filtration efficiency and airflow resistance test methods for cabin air filters in road vehicles and heavy equipment operator cabs.',
-    scope: 'Performance testing of cabin air filter elements for particle filtration efficiency (PM10, PM2.5) and airflow resistance in road vehicle passenger compartments and heavy equipment operator cabs.',
-    year: '2001',
-    sections: [
-      {
-        heading: 'Particle Efficiency Testing',
-        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency, exceeding the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
-      },
-      {
-        heading: 'ISO 11155-2 Complement',
-        body: 'ISO 11155-1 addresses particle filtration; ISO 11155-2 addresses gaseous contaminant removal efficiency for activated carbon layers against odour compounds, aromatic hydrocarbons, and NOx species. Together, Parts 1 and 2 provide the full performance framework for cabin air filtration. DIN 71220 is the German predecessor standard, harmonised into ISO 11155 methodology, still referenced in European OEM cabin filter qualification documents.',
-      },
-      {
-        heading: 'Heavy Equipment Application',
-        body: 'ISO 11155 was developed for road vehicle passenger compartments, but the test methodology applies to heavy equipment operator cabs where contamination environments are significantly more aggressive. In mining and construction operations, ambient PM2.5 concentrations can reach 150–500 µg/m³ during active operations — 10–30× the WHO 24-hour guideline of 15 µg/m³. Cabin filtration compliant with ISO 11155-1 PM2.5 efficiency targets reduces in-cab concentrations to below occupational exposure limits.',
-      },
-    ],
-    keyParams: [
-      { label: 'PM10 efficiency minimum', value: '>80%' },
-      { label: 'PM2.5 efficiency minimum', value: '>60%' },
-      { label: 'MICROKAPPA™ PM2.5', value: '≥95%' },
-      { label: 'Parts', value: 'Part 1: particles; Part 2: gas phase' },
-    ],
-    relatedTopics: ['filter-media-science', 'testing-and-validation'],
-    relatedTechnologies: ['MICROKAPPA™'],
-  },
-  {
-    slug: 'astm-d6304',
-    code: 'ASTM D6304',
-    title: 'Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration',
-    metaDescription: 'ASTM D6304 is the North American coulometric Karl Fischer titration method for water content in petroleum products and lubricating oils, equivalent to ISO 12937.',
-    scope: 'Water content determination in petroleum products, lubricating oils, and additives with water content from 10 ppm to 25,000 ppm using coulometric Karl Fischer titration.',
-    year: '2007',
-    sections: [
-      {
-        heading: 'Coulometric Karl Fischer Method',
-        body: 'ASTM D6304 measures total water content in petroleum products using coulometric Karl Fischer titration — iodine generated electrochemically reacts stoichiometrically with sample water, with the charge passed proportional to water concentration. Sensitivity range covers 10–25,000 mg/kg, making it appropriate for fuel quality management and lubricating oil condition monitoring. ASTM D6304 and ISO 12937 are technically equivalent, producing the same results from the same sample material; ASTM D6304 is referenced in North American OEM and regulatory specifications where ISO 12937 is cited in European and international frameworks.',
-      },
-      {
-        heading: 'Fuel and Lube Oil Applications',
-        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations, with target outlet below 50–100 mg/kg dissolved saturation.',
-      },
-    ],
-    keyParams: [
-      { label: 'Measurement range', value: '10–25,000 ppm' },
-      { label: 'Equivalent to', value: 'ISO 12937' },
-      { label: 'HPCR protection threshold', value: '<200 ppm' },
-      { label: 'Lube coolant leak indicator', value: '>0.1% water' },
-    ],
-    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
-  },
-  {
-    slug: 'iso-16332',
-    code: 'ISO 16332',
-    title: 'Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency',
-    metaDescription: 'ISO 16332 defines test methods for measuring water separation efficiency of diesel fuel filters, establishing the performance benchmark for coalescing fuel water separators.',
-    scope: 'Test methodology for determining the water separation efficiency of diesel fuel filter elements using standardized test conditions and water concentration measurement.',
-    year: '2015',
-    sections: [
-      {
-        heading: 'Water Separation Efficiency Test',
-        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. HYDROCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 test conditions.',
-      },
-      {
-        heading: 'HPCR Fuel System Application',
-        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) operates in sequence with SYNTEPORE™ (primary particle removal) to achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
-      },
-      {
-        heading: 'Relationship to Fuel Water Standards',
-        body: 'ISO 16332 defines the filter performance test; ISO 12937 and ASTM D6304 define the water content measurement methods used both within the ISO 16332 test protocol and for field monitoring of fuel water content. Together, these three standards form the measurement and performance framework for diesel fuel water contamination control: ISO 12937/ASTM D6304 measure water concentration in fuel; ISO 16332 verifies that filtration equipment removes water to below the HPCR protection threshold.',
-      },
-    ],
-    keyParams: [
-      { label: 'HYDROCORE™ water separation', value: '≥96% (ISO 16332)' },
-      { label: 'Test method for water content', value: 'ISO 12937 / ASTM D6304' },
-      { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
-    ],
-    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™'],
-  },
-  {
-    slug: 'din-71220',
-    code: 'DIN 71220',
-    title: 'Road Vehicles — Cabin Air Filters — Requirements and Testing',
-    metaDescription: 'DIN 71220 is the German standard for road vehicle cabin air filter performance, specifying particle filtration efficiency, odour removal, and activated carbon performance — a predecessor to ISO 11155 still referenced in European OEM specifications.',
-    scope: 'Cabin air filters for road vehicles (passenger cars, light commercial vehicles, buses, trucks) in European OEM qualification contexts, particularly German automotive supply chains.',
-    year: 'Active (pre-harmonisation)',
-    sections: [
-      {
-        heading: 'Scope and Background',
-        body: 'DIN 71220 specifies particle filtration efficiency (>80%), odour removal performance, and activated carbon layer testing for road vehicle cabin air filters. Published by DIN (Deutsches Institut für Normung), it preceded ISO 11155 and remains cited in European OEM supplier qualification documents — particularly in German automotive, bus, and truck supply chains — where legacy specifications have not been updated to ISO 11155 equivalents. The standard covers the same vehicle scope as ISO 11155: passenger cars, light commercial vehicles, buses, and trucks.',
-      },
-      {
-        heading: 'Relationship to ISO 11155',
-        body: 'ISO 11155-1 particle efficiency and flow resistance methodology builds directly on the DIN 71220 framework with internationally standardised test conditions. In practice, a cabin filter that passes ISO 11155-1 will generally satisfy DIN 71220 particle efficiency requirements. However, formal DIN 71220 testing may be required separately for OEM qualification where German OEM specifications continue to cite DIN 71220 alongside or in place of ISO 11155. Dual-standard compliance is required for European market cabin filter products targeting German OEM supply chains.',
-      },
-    ],
-    keyParams: [
-      { label: 'Particle efficiency threshold', value: '>80% at rated test conditions' },
-      { label: 'Issuing body', value: 'DIN (Deutsches Institut für Normung)' },
-      { label: 'Scope', value: 'Road vehicles — passenger cars, LCV, buses, trucks' },
-      { label: 'Relationship', value: 'German predecessor to ISO 11155; dual qualification required in some EU OEM supply chains' },
-    ],
-    relatedTopics: ['cabin-air-filtration', 'operator-health'],
-    relatedTechnologies: ['MICROKAPPA™'],
-  },
+
   {
     slug: 'din-51524',
     code: 'DIN 51524',
+    entityId: 'STD-DIN-51524',
     title: 'Hydraulic Fluids — Minimum Requirements (HL, HLP, HVLP Classifications)',
+    issuingOrganization: 'DIN (Deutsches Institut für Normung)',
+    year: 'Active (multi-part)',
+    revisionStatus: 'active',
     metaDescription: 'DIN 51524 specifies minimum performance requirements for hydraulic and lube oils in HL, HLP, and HVLP classifications — the German standard for lubricant compatibility with filtration media and hydraulic system components.',
     scope: 'Hydraulic and lube oil performance classification for industrial and mobile equipment — engine lube circuits, hydraulic power circuits, and industrial gear lubrication.',
-    year: 'Active (multi-part)',
+    engineeringPurpose: 'Defines the composition and performance classification (HL/HLP/HVLP) for hydraulic and lubricating oils, ensuring that filter media chemical compatibility and anti-wear additive protection are maintained across the full service interval in both European and global equipment platforms.',
     sections: [
       {
         heading: 'Classification System (HL / HLP / HVLP)',
@@ -450,8 +250,634 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'HVLP class', value: 'High-viscosity index — wide temperature range applications' },
       { label: 'Compatibility check', value: 'Required when changing lubricant brand or formulation' },
     ],
+    applicableSystems: ['hydraulic-protection', 'lubrication-protection'],
+    relatedGlossaryTerms: ['TERM-VISCOSITY', 'TERM-VISCOSITY-INDEX', 'TERM-OXIDATIVE-DEGRADATION', 'TERM-ISO-CLEANLINESS-CODE'],
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
-    relatedTechnologies: ['SYNTRAX™'],
+    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™'],
+    relatedArticles: ['lubrication-system-filtration', 'contamination-control', 'fluid-cleanliness'],
   },
-];
 
+  // ── AIR INTAKE ─────────────────────────────────────────────────────────────
+
+  {
+    slug: 'iso-5011',
+    code: 'ISO 5011',
+    entityId: 'STD-ISO-5011',
+    title: 'Inlet Air Cleaning Equipment — Performance Testing of Air Filters for Internal Combustion Engines and Compressors',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2014',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 5011 defines performance test methods for air filters used in internal combustion engines and compressors, covering efficiency, restriction, and dust holding capacity.',
+    scope: 'Air filters for internal combustion engines, gas turbines, and compressors.',
+    engineeringPurpose: 'Provides standardised test methodology for air intake filter gravimetric efficiency and dust holding capacity, enabling performance comparison across air filter manufacturers for engine intake protection in on-road, off-road, agricultural, and industrial applications.',
+    sections: [
+      {
+        heading: 'Scope and Application',
+        body: 'ISO 5011 defines test methods for determining the performance characteristics of air cleaner filter elements including filtration efficiency, air restriction (pressure drop), and dust holding capacity. The standard applies to primary and safety filter elements used in internal combustion engines (gasoline and diesel), gas turbines, and compressors in industrial and mobile applications.',
+      },
+      {
+        heading: 'Efficiency Measurement',
+        body: 'Particle counting upstream and downstream at 0.5, 1, 2, 3, 5, 7, 10, 20, 40, and 80 µm provides fractional efficiency data. Overall efficiency is measured gravimetrically — mass of dust retained by element divided by mass injected. ISO A2 fine test dust (ISO 12103-1, formerly SAE Fine test dust) is injected at constant rate during the test. A secondary downstream filter captures all particles that pass through the test element.',
+      },
+      {
+        heading: 'Restriction and Capacity Testing',
+        body: 'Restriction (pressure drop in mbar or Pa) is measured at rated airflow using calibrated differential pressure transducers. The test runs at constant flow until terminal restriction is reached (as specified by the manufacturer or test client). Dust holding capacity is the total grams of test dust retained by the element at terminal restriction, providing the basis for service interval prediction.',
+      },
+    ],
+    keyParams: [
+      { label: 'Test dust', value: 'ISO A2 fine (ISO 12103-1)' },
+      { label: 'Restriction unit', value: 'mbar or Pa' },
+      { label: 'Efficiency unit', value: '% gravimetric or fractional' },
+      { label: 'DHC unit', value: 'grams' },
+    ],
+    applicableSystems: ['air-intake-protection'],
+    relatedGlossaryTerms: [
+      'TERM-GRAVIMETRIC-EFFICIENCY', 'TERM-DUST-HOLDING-CAPACITY', 'TERM-RESTRICTION',
+      'TERM-TEST-DUST', 'TERM-SAFETY-ELEMENT', 'TERM-PRE-CLEANER', 'TERM-CYCLONIC-SEPARATION',
+    ],
+    relatedTopics: ['airflow-engineering', 'air-restriction', 'dust-holding-capacity'],
+    relatedTechnologies: ['MACROCORE™'],
+    relatedArticles: ['iso-5011', 'sae-j726-iso-5011-air-cleaner-test', 'airflow-engineering', 'air-intake-system-design'],
+  },
+
+  {
+    slug: 'sae-j726',
+    code: 'SAE J726',
+    entityId: 'STD-SAE-J726',
+    title: 'Air Cleaner Test Code',
+    issuingOrganization: 'SAE International',
+    year: '1993 (with supplements)',
+    revisionStatus: 'active',
+    metaDescription: 'SAE J726 defines the air cleaner test code for engine intake air filter performance evaluation — the North American counterpart to ISO 5011, measuring gravimetric efficiency, restriction, and dust holding capacity.',
+    scope: 'Air intake filter elements for gasoline and diesel internal combustion engines in automotive and light-to-medium commercial vehicle applications in North American OEM specifications.',
+    engineeringPurpose: 'Provides the North American standard test code for air filter performance evaluation, complementing ISO 5011 with procedures aligned to North American engine manufacturer specifications and US OEM qualification requirements. MACROCORE™ elements are characterised against both SAE J726 and ISO 5011 for global OEM documentation.',
+    sections: [
+      {
+        heading: 'Test Code Scope',
+        body: 'SAE J726 defines test procedures for measuring air cleaner element performance including: gravimetric filtration efficiency (mass of test dust retained per total dust injected, expressed as a percentage), intake restriction (differential pressure across the filter element at rated engine airflow), and dust holding capacity (grams of test dust at terminal restriction). The test uses SAE fine or coarse test dust (equivalent to ISO 12103-1 A2 Fine and A3 Medium grades).',
+      },
+      {
+        heading: 'Relationship to ISO 5011',
+        body: 'SAE J726 and ISO 5011 address the same test objectives for air cleaner performance evaluation, with differences in detailed test conditions and reporting formats. ISO 5011 is the international reference cited in European and international OEM specifications; SAE J726 is the North American equivalent referenced in US and Canadian OEM applications. Filter manufacturers targeting global OEM supply require characterisation data against both standards. A filter element meeting SAE J726 performance thresholds will generally satisfy ISO 5011 efficiency requirements at equivalent test conditions.',
+      },
+      {
+        heading: 'Service Interval Implication',
+        body: 'Dust holding capacity data from SAE J726 testing (grams at terminal restriction) is the primary input for service interval prediction models. Higher dust holding capacity at equivalent initial restriction means longer field service before restriction indicator activation. The progressive density gradient construction used in MACROCORE™ elements maximises SAE J726 dust holding capacity at the specified terminal restriction limit.',
+      },
+    ],
+    keyParams: [
+      { label: 'Test dust', value: 'SAE fine/coarse (≈ ISO 12103-1 A2/A3)' },
+      { label: 'Key metrics', value: 'Efficiency (%), restriction (mbar), DHC (grams)' },
+      { label: 'International equivalent', value: 'ISO 5011' },
+      { label: 'Application', value: 'North American automotive and light commercial OEM' },
+    ],
+    applicableSystems: ['air-intake-protection'],
+    relatedGlossaryTerms: [
+      'TERM-GRAVIMETRIC-EFFICIENCY', 'TERM-DUST-HOLDING-CAPACITY', 'TERM-RESTRICTION',
+      'TERM-TEST-DUST', 'TERM-PROGRESSIVE-DENSITY-GRADIENT',
+    ],
+    relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
+    relatedTechnologies: ['MACROCORE™'],
+    relatedArticles: ['sae-j726-iso-5011-air-cleaner-test', 'airflow-engineering', 'iso-5011', 'air-intake-system-design'],
+  },
+
+  {
+    slug: 'sae-j1539',
+    code: 'SAE J1539',
+    entityId: 'STD-SAE-J1539',
+    title: 'Air Cleaner Test Code — Heavy Duty Diesel Engines',
+    issuingOrganization: 'SAE International',
+    year: '1986',
+    revisionStatus: 'active',
+    metaDescription: 'SAE J1539 defines test procedures for evaluating air cleaner performance on heavy-duty diesel engines, covering restriction, efficiency, dust capacity, and element replacement protocols.',
+    scope: 'Test code for air cleaner performance evaluation on heavy-duty diesel engines, including restriction measurement, filtration efficiency, and service life determination.',
+    engineeringPurpose: 'Defines standardised test conditions for evaluating complete air cleaner assemblies on heavy-duty diesel engines in North American OEM applications, providing the framework for restriction indicator calibration and engine manufacturer restriction limit specification.',
+    sections: [
+      {
+        heading: 'Test Parameters',
+        body: 'SAE J1539 establishes standardized test conditions for evaluating air cleaner assemblies installed on heavy-duty diesel engines. Key parameters include airflow rate matched to engine displacement and rated speed, test dust specification using ISO fine or coarse test dust (ISO 12103-1), restriction measurement method using calibrated differential pressure transducers, and efficiency calculation. The test enables comparison of air cleaner performance across different configurations under controlled conditions.',
+      },
+      {
+        heading: 'Relationship to ISO 5011',
+        body: 'SAE J1539 and ISO 5011 address similar test objectives — air cleaner performance evaluation for internal combustion engines. ISO 5011 is the international standard widely referenced in European and international OEM specifications. SAE J1539 is the North American counterpart referenced in North American heavy-duty diesel engine applications. MACROCORE™ elements are characterized against both standards to provide performance documentation for global equipment OEM specifications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Application', value: 'Heavy-duty diesel engine air cleaners' },
+      { label: 'Key measurements', value: 'Restriction, efficiency, dust capacity' },
+      { label: 'Related standard', value: 'ISO 5011 (international equivalent)' },
+    ],
+    applicableSystems: ['air-intake-protection'],
+    relatedGlossaryTerms: ['TERM-RESTRICTION', 'TERM-RESTRICTION-INDICATOR', 'TERM-DIFFERENTIAL-PRESSURE', 'TERM-DUST-HOLDING-CAPACITY'],
+    relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
+    relatedArticles: ['airflow-engineering', 'air-restriction', 'iso-5011', 'service-intervals'],
+  },
+
+  // ── CABIN AIR ──────────────────────────────────────────────────────────────
+
+  {
+    slug: 'iso-29463',
+    code: 'ISO 29463',
+    entityId: 'STD-ISO-29463',
+    title: 'High-Efficiency Filters and Filter Media — Classification, Performance Testing, and Marking',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2011 (Parts 1–5)',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 29463 defines test methods and classification for high-efficiency air filters (HEPA/ULPA classes ePM1, ePM2.5, ePM10) for engine intake, compressed air, and cabin air applications.',
+    scope: 'High-efficiency air and cabin air filters for HEPA/ULPA performance classification.',
+    engineeringPurpose: 'Provides the international classification system and performance test methodology for HEPA and ULPA-grade air filters, enabling occupational health compliance verification for cabin air systems in heavy equipment operating in mining, quarrying, and construction environments.',
+    sections: [
+      {
+        heading: 'Classification System',
+        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters targeting occupational health protection in mining and construction applications are classified to H13 minimum for PM2.5 protection.',
+      },
+      {
+        heading: 'MPPS Testing',
+        body: 'The most penetrating particle size (MPPS) for fibrous media is typically 0.1–0.3 µm — the size at which diffusion and interception mechanisms both have minimum efficiency. Testing at MPPS provides the worst-case efficiency measurement. For cabin air filters, scanning methods measure local penetration across the entire filter face to identify any penetration hotspots that would expose occupants to localized high particle concentration.',
+      },
+    ],
+    keyParams: [
+      { label: 'H13 minimum efficiency', value: '99.95% at MPPS' },
+      { label: 'MPPS range', value: '0.1–0.3 µm' },
+      { label: 'Application scope', value: 'HEPA/ULPA cabin air and industrial filtration' },
+    ],
+    applicableSystems: ['cabin-air-protection', 'air-intake-protection'],
+    relatedGlossaryTerms: ['TERM-PROGRESSIVE-DENSITY-GRADIENT', 'TERM-MELT-BLOWN-MEDIA', 'TERM-SURFACE-FILTRATION'],
+    relatedTopics: ['filter-media-science', 'airflow-engineering', 'cabin-air-filtration'],
+    relatedTechnologies: ['MICROKAPPA™'],
+    relatedArticles: ['cabin-air-filtration', 'filter-media-science', 'filter-media-engineering'],
+  },
+
+  {
+    slug: 'iso-11155-1',
+    code: 'ISO 11155-1',
+    entityId: 'STD-ISO-11155-1',
+    title: 'Road Vehicles — Air Filters for Passenger Compartments — Particle Filtration Performance',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2001',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 11155-1 defines particle filtration efficiency and airflow resistance test methods for cabin air filters in road vehicles and heavy equipment operator cabs.',
+    scope: 'Performance testing of cabin air filter elements for particle filtration efficiency (PM10, PM2.5) and airflow resistance in road vehicle passenger compartments and heavy equipment operator cabs.',
+    engineeringPurpose: 'Defines particle filtration efficiency test methodology for cabin air systems in road vehicles and heavy equipment operator cabs, providing the performance framework for protecting operator health from PM2.5 and PM10 exposure in industrial environments.',
+    sections: [
+      {
+        heading: 'Particle Efficiency Testing',
+        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency, exceeding the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
+      },
+      {
+        heading: 'ISO 11155-2 Complement',
+        body: 'ISO 11155-1 addresses particle filtration; ISO 11155-2 addresses gaseous contaminant removal efficiency for activated carbon layers against odour compounds, aromatic hydrocarbons, and NOx species. Together, Parts 1 and 2 provide the full performance framework for cabin air filtration. DIN 71220 is the German predecessor standard, harmonised into ISO 11155 methodology, still referenced in European OEM cabin filter qualification documents.',
+      },
+      {
+        heading: 'Heavy Equipment Application',
+        body: 'ISO 11155 was developed for road vehicle passenger compartments, but the test methodology applies to heavy equipment operator cabs where contamination environments are significantly more aggressive. In mining and construction operations, ambient PM2.5 concentrations can reach 150–500 µg/m³ during active operations — 10–30× the WHO 24-hour guideline of 15 µg/m³. Cabin filtration compliant with ISO 11155-1 PM2.5 efficiency targets reduces in-cab concentrations to below occupational exposure limits.',
+      },
+    ],
+    keyParams: [
+      { label: 'PM10 efficiency minimum', value: '>80%' },
+      { label: 'PM2.5 efficiency minimum', value: '>60%' },
+      { label: 'MICROKAPPA™ PM2.5', value: '≥95%' },
+      { label: 'Parts', value: 'Part 1: particles; Part 2: gas phase' },
+    ],
+    applicableSystems: ['cabin-air-protection'],
+    relatedGlossaryTerms: ['TERM-PROGRESSIVE-DENSITY-GRADIENT', 'TERM-MELT-BLOWN-MEDIA', 'TERM-DEPTH-FILTRATION'],
+    relatedTopics: ['filter-media-science', 'testing-and-validation', 'cabin-air-filtration'],
+    relatedTechnologies: ['MICROKAPPA™'],
+    relatedArticles: ['cabin-air-filtration', 'filter-media-science'],
+  },
+
+  {
+    slug: 'din-71220',
+    code: 'DIN 71220',
+    entityId: 'STD-DIN-71220',
+    title: 'Road Vehicles — Cabin Air Filters — Requirements and Testing',
+    issuingOrganization: 'DIN (Deutsches Institut für Normung)',
+    year: 'Active (pre-harmonisation)',
+    revisionStatus: 'active',
+    metaDescription: 'DIN 71220 is the German standard for road vehicle cabin air filter performance, specifying particle filtration efficiency, odour removal, and activated carbon performance — a predecessor to ISO 11155 still referenced in European OEM specifications.',
+    scope: 'Cabin air filters for road vehicles (passenger cars, light commercial vehicles, buses, trucks) in European OEM qualification contexts, particularly German automotive supply chains.',
+    engineeringPurpose: 'German predecessor standard for cabin air filter qualification, still required alongside ISO 11155 for European OEM supply chains where legacy specifications mandate dual-standard compliance for German automotive and commercial vehicle markets.',
+    sections: [
+      {
+        heading: 'Scope and Background',
+        body: 'DIN 71220 specifies particle filtration efficiency (>80%), odour removal performance, and activated carbon layer testing for road vehicle cabin air filters. Published by DIN (Deutsches Institut für Normung), it preceded ISO 11155 and remains cited in European OEM supplier qualification documents — particularly in German automotive, bus, and truck supply chains — where legacy specifications have not been updated to ISO 11155 equivalents. The standard covers the same vehicle scope as ISO 11155: passenger cars, light commercial vehicles, buses, and trucks.',
+      },
+      {
+        heading: 'Relationship to ISO 11155',
+        body: 'ISO 11155-1 particle efficiency and flow resistance methodology builds directly on the DIN 71220 framework with internationally standardised test conditions. In practice, a cabin filter that passes ISO 11155-1 will generally satisfy DIN 71220 particle efficiency requirements. However, formal DIN 71220 testing may be required separately for OEM qualification where German OEM specifications continue to cite DIN 71220 alongside or in place of ISO 11155. Dual-standard compliance is required for European market cabin filter products targeting German OEM supply chains.',
+      },
+    ],
+    keyParams: [
+      { label: 'Particle efficiency threshold', value: '>80% at rated test conditions' },
+      { label: 'Issuing body', value: 'DIN (Deutsches Institut für Normung)' },
+      { label: 'Scope', value: 'Road vehicles — passenger cars, LCV, buses, trucks' },
+      { label: 'Relationship', value: 'German predecessor to ISO 11155; dual qualification required in some EU OEM supply chains' },
+    ],
+    applicableSystems: ['cabin-air-protection'],
+    relatedGlossaryTerms: ['TERM-MELT-BLOWN-MEDIA', 'TERM-PROGRESSIVE-DENSITY-GRADIENT'],
+    relatedTopics: ['cabin-air-filtration', 'operator-health'],
+    relatedTechnologies: ['MICROKAPPA™'],
+    relatedArticles: ['cabin-air-filtration', 'filter-media-science'],
+  },
+
+  // ── FUEL & WATER SEPARATION ────────────────────────────────────────────────
+
+  {
+    slug: 'iso-12937',
+    code: 'ISO 12937',
+    entityId: 'STD-ISO-12937',
+    title: 'Petroleum Products — Determination of Water by Coulometric Karl Fischer Titration',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2000',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 12937 defines the Karl Fischer coulometric titration method for determining water content in petroleum products, the European and international equivalent of ASTM D6304.',
+    scope: 'Determination of water content in petroleum products with water content between 5 mg/kg and 2,000 mg/kg using coulometric Karl Fischer titration.',
+    engineeringPurpose: 'Specifies the Karl Fischer coulometric titration method for quantifying water contamination in diesel fuel and lubricating oils — the primary analytical measurement used to verify fuel water content compliance with HPCR injection system protection thresholds and to detect coolant ingress in engine oil condition monitoring.',
+    sections: [
+      {
+        heading: 'Karl Fischer Titration Principle',
+        body: 'ISO 12937 uses coulometric Karl Fischer titration to quantitatively determine water content in petroleum products. Iodine is electrochemically generated at an anode and reacts stoichiometrically with water in the Karl Fischer reaction; the charge required to generate sufficient iodine to consume all sample water is proportional to water content. Results are expressed as mg/kg (ppm by mass). ISO 12937 and ASTM D6304 use the same electrochemical principle and produce equivalent results — ISO 12937 is the European and international market reference; ASTM D6304 is the North American equivalent.',
+      },
+      {
+        heading: 'HPCR Fuel Quality Target',
+        body: 'ISO 12937 is the measurement method cited in EN 590 (European diesel fuel specification) with a limit of 200 mg/kg water. High-pressure common rail injectors require fuel water content below this threshold to prevent injector seat corrosion, micro-pitting, and stiction. Water above 500 mg/kg causes visible free water phases. ISO 12937 analysis is performed at fuel depot acceptance, during storage monitoring, and as commissioning flush verification for marine vessels under ISO 8217.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '5–2,000 mg/kg (ppm)' },
+      { label: 'EN 590 water limit', value: '200 mg/kg' },
+      { label: 'Equivalent standard', value: 'ASTM D6304 (North American)' },
+    ],
+    applicableSystems: ['fuel-cleanliness-protection', 'lubrication-protection'],
+    relatedGlossaryTerms: [
+      'TERM-KARL-FISCHER-TITRATION', 'TERM-WATER-INGRESS', 'TERM-FREE-WATER',
+      'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-MICROBIAL-CONTAMINATION',
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
+  },
+
+  {
+    slug: 'astm-d6304',
+    code: 'ASTM D6304',
+    entityId: 'STD-ASTM-D6304',
+    title: 'Standard Test Method for Determination of Water in Petroleum Products by Coulometric Karl Fischer Titration',
+    issuingOrganization: 'ASTM International',
+    year: '2007',
+    revisionStatus: 'active',
+    metaDescription: 'ASTM D6304 is the North American coulometric Karl Fischer titration method for water content in petroleum products and lubricating oils, equivalent to ISO 12937.',
+    scope: 'Water content determination in petroleum products, lubricating oils, and additives with water content from 10 ppm to 25,000 ppm using coulometric Karl Fischer titration.',
+    engineeringPurpose: 'Provides the North American standard analytical method for water content measurement in petroleum products and lubricating oils — used for HPCR fuel quality verification, fuel filter/water separator performance testing, and engine oil condition monitoring where coolant ingress detection is required.',
+    sections: [
+      {
+        heading: 'Coulometric Karl Fischer Method',
+        body: 'ASTM D6304 measures total water content in petroleum products using coulometric Karl Fischer titration — iodine generated electrochemically reacts stoichiometrically with sample water, with the charge passed proportional to water concentration. Sensitivity range covers 10–25,000 mg/kg, making it appropriate for fuel quality management and lubricating oil condition monitoring. ASTM D6304 and ISO 12937 are technically equivalent, producing the same results from the same sample material; ASTM D6304 is referenced in North American OEM and regulatory specifications where ISO 12937 is cited in European and international frameworks.',
+      },
+      {
+        heading: 'Fuel and Lube Oil Applications',
+        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations, with target outlet below 50–100 mg/kg dissolved saturation.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement range', value: '10–25,000 ppm' },
+      { label: 'Equivalent to', value: 'ISO 12937' },
+      { label: 'HPCR protection threshold', value: '<200 ppm' },
+      { label: 'Lube coolant leak indicator', value: '>0.1% water' },
+    ],
+    applicableSystems: ['fuel-cleanliness-protection', 'lubrication-protection'],
+    relatedGlossaryTerms: [
+      'TERM-KARL-FISCHER-TITRATION', 'TERM-FREE-WATER', 'TERM-EMULSIFIED-WATER',
+      'TERM-WATER-SEPARATION-EFFICIENCY', 'TERM-COALESCING', 'TERM-HPCR',
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
+  },
+
+  {
+    slug: 'iso-16332',
+    code: 'ISO 16332',
+    entityId: 'STD-ISO-16332',
+    title: 'Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2015',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 16332 defines test methods for measuring water separation efficiency of diesel fuel filters, establishing the performance benchmark for coalescing fuel water separators.',
+    scope: 'Test methodology for determining the water separation efficiency of diesel fuel filter elements using standardized test conditions and water concentration measurement.',
+    engineeringPurpose: 'Provides the standardised test method for measuring water separation efficiency of diesel fuel filter/water separator elements, enabling performance qualification of coalescing filter technology for HPCR injection system protection in heavy-duty diesel applications.',
+    sections: [
+      {
+        heading: 'Water Separation Efficiency Test',
+        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. HYDROCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 test conditions.',
+      },
+      {
+        heading: 'HPCR Fuel System Application',
+        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) operates in sequence with SYNTEPORE™ (primary particle removal) to achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
+      },
+      {
+        heading: 'Relationship to Fuel Water Standards',
+        body: 'ISO 16332 defines the filter performance test; ISO 12937 and ASTM D6304 define the water content measurement methods used both within the ISO 16332 test protocol and for field monitoring of fuel water content. Together, these three standards form the measurement and performance framework for diesel fuel water contamination control: ISO 12937/ASTM D6304 measure water concentration in fuel; ISO 16332 verifies that filtration equipment removes water to below the HPCR protection threshold.',
+      },
+    ],
+    keyParams: [
+      { label: 'HYDROCORE™ water separation', value: '≥96% (ISO 16332)' },
+      { label: 'Test method for water content', value: 'ISO 12937 / ASTM D6304' },
+      { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
+    ],
+    applicableSystems: ['fuel-cleanliness-protection'],
+    relatedGlossaryTerms: [
+      'TERM-COALESCING', 'TERM-WATER-SEPARATION-EFFICIENCY', 'TERM-FREE-WATER',
+      'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-INJECTOR-STICTION',
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedArticles: ['fuel-water-contamination', 'hpcr-fuel-system-protection', 'iso-16332'],
+  },
+
+  // ── COMPRESSED AIR ─────────────────────────────────────────────────────────
+
+  {
+    slug: 'iso-8573-1',
+    code: 'ISO 8573-1',
+    entityId: 'STD-ISO-8573-1',
+    title: 'Compressed Air — Contaminant Classes and Purity Requirements',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2010',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
+    scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
+    engineeringPurpose: 'Establishes the compressed air purity classification system (Particle:Water:Oil classes) enabling specification of point-of-use air quality requirements for pneumatic equipment, instrumentation, and process applications — the primary framework for selecting and verifying DRYCORE™ compressed air treatment systems.',
+    sections: [
+      {
+        heading: 'Purity Class Structure',
+        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
+      },
+      {
+        heading: 'Application Requirements',
+        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
+      },
+      {
+        heading: 'Treatment Stage Requirements',
+        body: 'Achieving Class 1:4:1 requires a multi-stage compressed air treatment train: pre-filter (bulk liquid and >3 µm particles), refrigeration dryer (pressure dewpoint 2–5°C), coalescing filter (oil aerosol to 0.01 mg/m³), activated carbon (oil vapor to 0.005 mg/m³), and post-filter (carbon fines removal). Each stage is tested and classified individually against the applicable ISO 8573 part.',
+      },
+    ],
+    keyParams: [
+      { label: 'Format', value: 'Particle:Water:Oil class numbers' },
+      { label: 'Instrument air minimum', value: 'Class 2:4:1' },
+      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
+      { label: 'Class 1 particles', value: '<20,000/m³ at ≥0.1 µm' },
+    ],
+    applicableSystems: [],
+    relatedGlossaryTerms: ['TERM-DEW-POINT', 'TERM-COMPRESSED-AIR-PURITY', 'TERM-COALESCING'],
+    relatedTopics: ['testing-and-validation', 'contamination-control'],
+    relatedTechnologies: ['DRYCORE™'],
+    relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
+    childStandards: ['STD-ISO-8573-2'],
+  },
+
+  // ── LUBRICATION OIL ────────────────────────────────────────────────────────
+
+  {
+    slug: 'sae-j1858',
+    code: 'SAE J1858',
+    entityId: 'STD-SAE-J1858',
+    title: 'Full-Flow Lubricating Oil Filters — Selecting and Specifying',
+    issuingOrganization: 'SAE International',
+    year: '2011',
+    revisionStatus: 'active',
+    metaDescription: 'SAE J1858 provides guidance for specifying and selecting full-flow lubricating oil filters for diesel and gasoline engines, covering performance requirements and test methodology references.',
+    scope: 'Full-flow lube oil filters for internal combustion engines.',
+    engineeringPurpose: 'Provides the selection and specification framework for full-flow lube oil filters in engine applications, defining performance tiers aligned to oil drain interval categories and referencing ISO test methods for efficiency, capacity, and structural requirements.',
+    sections: [
+      {
+        heading: 'Specification Framework',
+        body: 'SAE J1858 establishes the performance requirements and selection criteria for full-flow lube oil filters in gasoline and diesel engine applications. The standard references ISO 4548 for test methodology and provides guidance on bypass valve specification, anti-drain back valve performance, and media efficiency requirements for different engine service categories.',
+      },
+      {
+        heading: 'Performance Categories',
+        body: 'SAE J1858 defines performance levels based on oil change interval: standard service (≤5,000 km), extended service (5,000–10,000 km), and severe/extended (>10,000 km). Higher categories require higher dirt holding capacity and superior media efficiency to maintain protection through longer service intervals. Synthetic media filters are required for extended service applications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Standard service', value: '≤5,000 km' },
+      { label: 'Extended service', value: '5,000–10,000 km' },
+      { label: 'Test method reference', value: 'ISO 4548' },
+    ],
+    applicableSystems: ['lubrication-protection'],
+    relatedGlossaryTerms: [
+      'TERM-BETA-RATIO', 'TERM-DIFFERENTIAL-PRESSURE', 'TERM-FILTER-BYPASS-VALVE',
+      'TERM-SERVICE-INTERVAL', 'TERM-OIL-DRAIN-INTERVAL', 'TERM-DUST-HOLDING-CAPACITY',
+    ],
+    relatedTopics: ['service-intervals', 'oem-engineering', 'filter-media-science'],
+    relatedTechnologies: ['SYNTRAX™'],
+    relatedArticles: ['lubrication-system-filtration', 'service-intervals', 'filter-element-integrity', 'extended-drain-interval-engineering'],
+  },
+
+  // ── PHASE 5C NEW STANDARDS ─────────────────────────────────────────────────
+
+  {
+    slug: 'iso-3723',
+    code: 'ISO 3723',
+    entityId: 'STD-ISO-3723',
+    title: 'Hydraulic Fluid Power Filter Elements — Method for End Load Test',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2015',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 3723 defines the end load test method for determining the structural integrity and collapse resistance of hydraulic filter elements under axial compressive loading conditions.',
+    scope: 'Hydraulic filter elements in hydraulic fluid power systems requiring structural integrity qualification under compressive differential pressure loading.',
+    engineeringPurpose: 'Determines the structural load capacity and collapse pressure of hydraulic filter elements, verifying that element construction withstands the axial compressive forces generated by differential pressure buildup, cold-start viscosity transients, and bypass valve activation — preventing element collapse and catastrophic contamination release.',
+    sections: [
+      {
+        heading: 'End Load Test Methodology',
+        body: 'ISO 3723 specifies a compressive end load test that simulates the axial force exerted on a filter element by differential pressure in an outside-in flow configuration. The element is mounted in a test fixture and subjected to increasing axial compressive load until structural failure occurs. The load at failure is the collapse end load, which is correlated to the collapse pressure rating for a given element diameter and end cap geometry. Elements are qualified against minimum collapse end load values that provide a defined safety margin above the system bypass valve opening pressure.',
+      },
+      {
+        heading: 'Collapse Prevention Engineering',
+        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ and SYNTRAX™ elements use steel inner and outer support cages with bonded end caps, achieving collapse load margins of 10–20× above typical bypass valve settings (3–6 bar).',
+      },
+      {
+        heading: 'Complementary Standards',
+        body: 'ISO 3723 (end load/collapse) complements NFPA T2.14 (hydraulic collapse and burst pressure verification) and ISO 2941 (filter element structural integrity — collapse and burst test under internal pressure). Together these standards provide complete structural qualification for filter elements operating under both outside-in and inside-out flow regimes, covering the full range of collapse and burst failure modes encountered in hydraulic and lubrication system applications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Test type', value: 'Axial compressive end load' },
+      { label: 'Failure mode targeted', value: 'Element collapse under differential pressure' },
+      { label: 'Safety margin requirement', value: '≥10× bypass valve opening pressure' },
+      { label: 'Complementary standard', value: 'NFPA T2.14, ISO 2941' },
+    ],
+    applicableSystems: ['hydraulic-protection', 'lubrication-protection'],
+    relatedGlossaryTerms: [
+      'TERM-COLLAPSE-PRESSURE', 'TERM-ELEMENT-COLLAPSE', 'TERM-DIFFERENTIAL-PRESSURE',
+      'TERM-FILTER-BYPASS-VALVE',
+    ],
+    relatedTopics: ['testing-and-validation', 'filter-media-science', 'contamination-control'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'],
+    relatedArticles: ['filter-element-integrity', 'materials-engineering', 'failure-analysis'],
+  },
+
+  {
+    slug: 'iso-19438',
+    code: 'ISO 19438',
+    entityId: 'STD-ISO-19438',
+    title: 'Diesel Fuel and Petrol — Filtration and Filtration Performance Evaluation',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2003',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 19438 defines particle counting and filtration performance evaluation methods for diesel and petrol fuel filter elements, extending ISO 16889 methodology to fuel system applications for HPCR injection protection.',
+    scope: 'Fuel filter elements in diesel and petrol fuel systems, particularly high-pressure common-rail injection systems requiring particle filtration qualification at ≤6 µm particle sizes.',
+    engineeringPurpose: 'Provides standardised particle counting and filtration efficiency measurement for diesel and petrol fuel filter elements, enabling quantitative Beta ratio performance qualification for HPCR injection system protection where particles above 4–6 µm cause precision injector and pump component failure within the injection system clearance envelope.',
+    sections: [
+      {
+        heading: 'Scope and HPCR Context',
+        body: 'ISO 19438 adapts the multi-pass filtration test methodology of ISO 16889 to fuel filter applications, addressing the specific conditions of diesel and petrol fuel systems. The standard defines test fluid selection (diesel or ISO VG 15 test fluid), test dust type, flow conditions, and particle counting methodology for fuel filter elements. The primary application is qualification of fuel filters for high-pressure common-rail (HPCR) diesel injection systems where component clearances of 1–3 µm require fuel cleanliness at ISO 12/10/8 or finer.',
+      },
+      {
+        heading: 'Particle Counting Methodology',
+        body: 'ISO 19438 uses automatic particle counters calibrated per ISO 11171 for particle size thresholds including ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c). The multi-pass test recirculates fuel-dust suspension to achieve statistically reliable counts at each size range. Beta ratio results from ISO 19438 are expressed in the same β_x(c) format as ISO 16889, enabling direct comparison of fuel filter efficiency with hydraulic filter efficiency data — important for systems combining fuel filtration with hydraulic filtration in equipment powertrain design.',
+      },
+      {
+        heading: 'HPCR Protection Specification',
+        body: 'For HPCR injection systems operating at 1,600–2,500 bar injection pressure, injector nozzle tip orifices of 100–150 µm diameter, and pump plunger clearances of 1–2 µm, particle contamination above 6 µm at the injector inlet causes abrasive wear of precision surfaces. ISO 19438 Beta ratio qualification at β₆(c) ≥ 200 is the minimum filtration performance required for HPCR injector protection. SYNTEPORE™ fuel filter elements are qualified to ISO 19438 at β₆(c) ≥ 200 for HPCR applications.',
+      },
+    ],
+    keyParams: [
+      { label: 'Key particle size', value: '≥4 µm(c), ≥6 µm(c)' },
+      { label: 'HPCR minimum Beta ratio', value: 'β₆(c) ≥ 200' },
+      { label: 'Particle counter calibration', value: 'ISO 11171' },
+      { label: 'Equivalent methodology', value: 'ISO 16889 (hydraulic) adapted to fuel' },
+    ],
+    applicableSystems: ['fuel-cleanliness-protection'],
+    relatedGlossaryTerms: [
+      'TERM-BETA-RATIO', 'TERM-HPCR', 'TERM-INJECTOR-STICTION', 'TERM-PARTICLE-COUNT',
+      'TERM-ABSOLUTE-EFFICIENCY', 'TERM-MULTI-PASS-TEST',
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'filter-media-science'],
+    relatedTechnologies: ['SYNTEPORE™', 'TURBOCORE™'],
+    relatedArticles: ['hpcr-fuel-system-protection', 'fuel-water-contamination', 'beta-ratio', 'filter-media-engineering'],
+  },
+
+  {
+    slug: 'astm-d5185',
+    code: 'ASTM D5185',
+    entityId: 'STD-ASTM-D5185',
+    title: 'Determination of Additive Elements, Wear Metals, and Contaminants in Used Lubricating Oils by ICP-OES',
+    issuingOrganization: 'ASTM International',
+    year: '2019',
+    revisionStatus: 'active',
+    metaDescription: 'ASTM D5185 specifies inductively coupled plasma optical emission spectrometry (ICP-OES) for measuring elemental composition of used lubricating and hydraulic oils in condition monitoring programmes.',
+    scope: 'Used lubricating oils, hydraulic fluids, and related petroleum products in predictive maintenance oil analysis programmes requiring elemental quantification of wear metals, additive elements, and contaminants.',
+    engineeringPurpose: 'Provides the primary analytical method for used oil spectrometric analysis — quantifying 20+ elements (wear metals, additive elements, contaminants) that indicate component wear rates, oil degradation rates, and contamination events — enabling condition-based maintenance decisions on oil change intervals and component inspection scheduling.',
+    sections: [
+      {
+        heading: 'ICP-OES Analysis Methodology',
+        body: 'ASTM D5185 uses inductively coupled plasma optical emission spectrometry (ICP-OES) to simultaneously quantify multiple elements in used oil samples diluted in a solvent. The plasma source atomises and excites oil-dissolved metal species; each element emits characteristic wavelengths detected by the spectrometer. Elements measured include wear metals (iron, copper, lead, tin, aluminium, chromium, nickel), additive elements (calcium, magnesium, zinc, phosphorus, boron, molybdenum), and contaminants (silicon, sodium, potassium, glycol marker elements). Results are expressed in mg/kg (ppm).',
+      },
+      {
+        heading: 'Wear Metal Interpretation',
+        body: 'Iron concentration indicates general ferrous component wear across the lubrication circuit. Copper indicates bearing shell wear. Lead indicates bearing overlay failure. Aluminium indicates piston or bearing alloy wear. Silicon above 20 ppm indicates soil ingestion (air filter bypass or road dust contamination), which simultaneously produces elevated iron by acting as an abrasive on cylinder bores and bearing surfaces. Trending multiple wear elements simultaneously reveals the specific wear mechanism and affected component — ICP analysis without silicon data is incomplete for root-cause diagnosis of elevated iron.',
+      },
+      {
+        heading: 'Integration with Oil Condition Monitoring',
+        body: 'ASTM D5185 is the central analytical method in oil condition monitoring programmes, combined with: viscosity at 100°C (ASTM D445), acid number/TAN (ASTM D664), base number/TBN (ASTM D2896 or D4739), water content (ASTM D6304/ISO 12937), and particle count (ISO 4406/ISO 11171). Each analytical method covers a different failure mode — ASTM D5185 addresses component wear and contamination; viscosity and TBN/TAN address oil degradation. Combined data enables condition-based oil drain interval decisions.',
+      },
+    ],
+    keyParams: [
+      { label: 'Method', value: 'ICP-OES (inductively coupled plasma)' },
+      { label: 'Sensitivity range', value: '0.1–10,000 ppm per element' },
+      { label: 'Elements measured', value: '20+ (wear metals, additives, contaminants)' },
+      { label: 'Silicon threshold (air ingestion)', value: '>20 ppm = suspected filter bypass' },
+    ],
+    applicableSystems: ['lubrication-protection', 'hydraulic-protection'],
+    relatedGlossaryTerms: [
+      'TERM-OIL-CONDITION-MONITORING', 'TERM-FERROUS-WEAR-DEBRIS', 'TERM-ABRASIVE-WEAR',
+      'TERM-GLYCOL-CONTAMINATION', 'TERM-SILICA', 'TERM-TOTAL-BASE-NUMBER', 'TERM-TOTAL-ACID-NUMBER',
+    ],
+    relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'contamination-control'],
+    relatedTechnologies: ['DURATECH™', 'SYNTRAX™'],
+    relatedArticles: ['oil-analysis-methods', 'oil-condition-monitoring', 'fleet-oil-sampling-protocol', 'extended-drain-interval-engineering'],
+  },
+
+  {
+    slug: 'iso-8573-2',
+    code: 'ISO 8573-2',
+    entityId: 'STD-ISO-8573-2',
+    title: 'Compressed Air — Test Methods for Aerosol Oil Content',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2018 (3rd edition)',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 8573-2 specifies test methods for measuring oil aerosol and vapour content in compressed air, providing measurement procedures for the oil contamination class defined in ISO 8573-1.',
+    scope: 'Measurement of oil aerosol and vapour contamination in compressed air at the point of use, for compressed air treatment system qualification and purity class verification per ISO 8573-1.',
+    engineeringPurpose: 'Provides the measurement methodology for the oil content component of the ISO 8573-1 purity class system, enabling verification that coalescing filters, activated carbon beds, and compressed air treatment systems achieve the specified oil aerosol and vapour class in food contact, pharmaceutical, and sensitive process applications.',
+    sections: [
+      {
+        heading: 'Oil Content Measurement Scope',
+        body: 'ISO 8573-2 specifies two complementary test methods for measuring total oil content in compressed air: the aerosol method (membrane filter collection and gravimetric measurement for liquid oil mist) and the vapour method (activated carbon sorbent tube collection and solvent extraction for oil vapour). Total oil content = aerosol oil + vapour oil, reported in mg/m³ at reference conditions (20°C, 1 bar). ISO 8573-1 oil classes are verified using the total oil content measurement from ISO 8573-2.',
+      },
+      {
+        heading: 'Compressed Air Treatment Verification',
+        body: 'ISO 8573-2 measurement is performed downstream of each treatment stage to verify that the installed equipment achieves the specified oil class. A coalescing pre-filter reduces oil aerosol from compressor lubricant carry-over (typically 5–40 mg/m³ at compressor outlet) to <1 mg/m³ (ISO Class 3 oil). A high-efficiency coalescing stage reduces further to <0.1 mg/m³ (ISO Class 2). An activated carbon adsorber removes oil vapour to <0.01 mg/m³ (ISO Class 1). Point-of-use measurement confirms each stage is functioning correctly under actual operating pressure and flow conditions.',
+      },
+      {
+        heading: 'Relationship to ISO 8573-1',
+        body: 'ISO 8573-2 is the test method standard referenced by ISO 8573-1 for the oil contamination class parameter. ISO 8573-1 specifies what purity class is required; ISO 8573-2 specifies how to measure whether that class is achieved. Additional ISO 8573 parts cover other contaminants: Part 3 (water and humidity measurement), Part 4 (solid particles by mass), Part 6 (gaseous contaminants), and Part 9 (liquid water measurement). Together these parts form the complete measurement framework for the ISO 8573-1 purity class system.',
+      },
+    ],
+    keyParams: [
+      { label: 'Measurement', value: 'Oil aerosol + vapour (mg/m³)' },
+      { label: 'ISO Class 3 oil limit', value: '<1 mg/m³' },
+      { label: 'ISO Class 1 oil limit', value: '<0.01 mg/m³' },
+      { label: 'Methods', value: 'Membrane filter (aerosol) + sorbent tube (vapour)' },
+    ],
+    applicableSystems: [],
+    relatedGlossaryTerms: ['TERM-COMPRESSED-AIR-PURITY', 'TERM-DEW-POINT', 'TERM-COALESCING'],
+    relatedTopics: ['testing-and-validation', 'contamination-control'],
+    relatedTechnologies: ['DRYCORE™'],
+    relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
+    parentStandard: 'STD-ISO-8573-1',
+  },
+
+  {
+    slug: 'iso-3968',
+    code: 'ISO 3968',
+    entityId: 'STD-ISO-3968',
+    title: 'Hydraulic Fluid Power — Filters — Evaluation of Differential Pressure versus Flow Characteristics',
+    issuingOrganization: 'ISO (International Organization for Standardization)',
+    year: '2001',
+    revisionStatus: 'active',
+    metaDescription: 'ISO 3968 defines the test method for measuring differential pressure versus flow rate characteristics of hydraulic filter elements, providing the pressure-flow curve data used for system integration and housing selection.',
+    scope: 'Hydraulic filter elements and filter assemblies requiring pressure-flow characteristic data for system integration into hydraulic circuit design.',
+    engineeringPurpose: 'Provides standardised measurement of filter element pressure-flow (ΔP-Q) characteristics, enabling accurate hydraulic circuit pressure drop modelling and filter housing selection across the full operating flow range — from cold-start viscosity conditions to rated continuous flow.',
+    sections: [
+      {
+        heading: 'Pressure-Flow Test Method',
+        body: 'ISO 3968 measures differential pressure across a filter element at a series of flow rates using clean test fluid (ISO VG 15 mineral oil) at a controlled temperature (23 ± 1°C). The test generates a ΔP-Q curve: at zero flow, ΔP is zero; as flow increases, ΔP increases approximately with the square of flow rate for turbulent conditions or linearly for laminar conditions. Multiple measurement points generate the curve, which is fitted to a polynomial or power function for hydraulic circuit modelling. Cold-start correction factors are applied using the viscosity multiplier at the cold start temperature.',
+      },
+      {
+        heading: 'System Integration Application',
+        body: 'Pressure-flow data from ISO 3968 is the primary input for hydraulic system pressure drop budgeting. In a typical mobile hydraulic system, filter element pressure drop must not exceed 15–20% of pump delivery pressure at rated flow and operating temperature to maintain acceptable system efficiency. ISO 3968 data allows engineers to select filter elements and housings that maintain acceptable ΔP across the full operating range: cold start (high viscosity, low flow), operating temperature (rated viscosity, rated flow), and end-of-life (clean element, rated flow — the worst-case for initial system design).',
+      },
+      {
+        heading: 'Relationship to ISO 16889',
+        body: 'ISO 3968 characterises clean filter element pressure-flow behaviour; ISO 16889 characterises dirty element performance (Beta ratio, DHC, and ΔP buildup during loading). Together, ISO 3968 (initial ΔP) and ISO 16889 (ΔP at end of life) define the complete differential pressure range the filtration system will present to the hydraulic circuit — from first installation to replacement. Both data sets are required for complete filter system integration in high-pressure hydraulic circuit design.',
+      },
+    ],
+    keyParams: [
+      { label: 'Test fluid', value: 'ISO VG 15 mineral oil' },
+      { label: 'Test temperature', value: '23 ± 1°C (clean element)' },
+      { label: 'Output', value: 'ΔP-Q curve (differential pressure vs flow rate)' },
+      { label: 'Application', value: 'Circuit pressure drop budgeting and housing selection' },
+    ],
+    applicableSystems: ['hydraulic-protection', 'lubrication-protection'],
+    relatedGlossaryTerms: [
+      'TERM-DIFFERENTIAL-PRESSURE', 'TERM-FILTER-BYPASS-VALVE', 'TERM-VISCOSITY',
+      'TERM-FULL-FLOW-FILTRATION', 'TERM-KIDNEY-LOOP',
+    ],
+    relatedTopics: ['contamination-control', 'testing-and-validation', 'filter-media-science'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'],
+    relatedArticles: ['hydraulic-power-unit-design', 'filter-element-integrity', 'testing-and-validation'],
+  },
+
+];

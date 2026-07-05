@@ -87,6 +87,12 @@ export const STANDARD_IDS = {
   'din-71220':   'STD-DIN-71220',
   'din-51524':   'STD-DIN-51524',
   'sae-j726':    'STD-SAE-J726',
+  // Phase 5C additions
+  'iso-3723':    'STD-ISO-3723',
+  'iso-19438':   'STD-ISO-19438',
+  'astm-d5185':  'STD-ASTM-D5185',
+  'iso-8573-2':  'STD-ISO-8573-2',
+  'iso-3968':    'STD-ISO-3968',
 } as const;
 
 // ── Technology IDs ────────────────────────────────────────────────────────────
