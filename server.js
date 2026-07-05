@@ -462,9 +462,11 @@ function isCompetitor(manufacturer) {
 function parseRefs(arr){
   if (!Array.isArray(arr)) return [];
 
-  // Bad scraper data occasionally stores an internal field name (a table
-  // column header, not a real manufacturer) as the "manufacturer" of a
-  // cross-reference entry. These must never reach the API response.
+  // Bad scraper data occasionally stores an internal field name (a spec-table
+  // column header, or literal webpage UI text like "Find a Dealer") in either
+  // the "manufacturer" or the "code" position of a cross-reference entry —
+  // the two got scrambled at import time, not consistently in one position.
+  // These must never reach the API response.
   const INVALID = new Set([
     'THREADSIZE',
     'LARGESTOD',
@@ -477,7 +479,9 @@ function parseRefs(arr){
     'RATEDFLOW',
     'MEDIATYPE',
     'RELATEDPARTS',
+    'RELATED PARTS',
     'MAINTENANCEKITS',
+    'MAINTENANCE KITS',
     'TESTSPECIFICATION',
     'PRODUCT DESCRIPTION',
     'PRODUCTDESCRIPTION',
@@ -485,8 +489,17 @@ function parseRefs(arr){
     'UPGRADE OF',
     'UPGRADEOF',
     'FOR UPGRADE, USE',
+    'FIND A DEALER',
+    'DOWNLOAD SPECS',
+    'OEM CROSS REFERENCE',
+    'CELLULOSE',
     'NO'
   ]);
+
+  // A real manufacturer name or reference code never looks like a physical
+  // measurement (a number followed by a unit). When either field matches
+  // this shape, the entry is spec-table noise, not a genuine cross-reference.
+  const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|UN|UNF|KG|LB)\b/i;
 
   const seen = new Set();
 
@@ -496,7 +509,8 @@ function parseRefs(arr){
       code: fixMojibake(String(item.code || '').trim())
     }))
     .filter(r => r.manufacturer && r.code)
-    .filter(r => !INVALID.has(r.manufacturer.toUpperCase()))
+    .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
+    .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
     .filter(r => {
       const k = (r.manufacturer + '|' + r.code).toUpperCase();
       if (seen.has(k)) return false;
