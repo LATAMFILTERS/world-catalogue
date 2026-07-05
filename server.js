@@ -1066,7 +1066,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // 2. OEM / competitor cross-reference (exact match)
     const oem = await client.query(
-      `SELECT c.* FROM elimfilters_catalog c
+      `SELECT c.*, COALESCE(p.priority, 0) AS search_priority FROM elimfilters_catalog c
        LEFT JOIN search_result_priority p
          ON p.sku = c.sku
         AND UPPER(REPLACE(p.query_code,'-','')) = $1
@@ -1083,7 +1083,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       [q, ...dutyArgs]
     );
     if (oem.rows.length > 0) {
-      if (!validDuty) {
+      if (!validDuty && !oem.rows.some(r => Number(r.search_priority) > 0)) {
         const mixed = await handleMixedDuty(oem.rows, lang, client);
         if (mixed) return res.json(mixed);
       }
@@ -1095,7 +1095,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     // 2b. OEM / competitor prefix match (e.g. PH3387 matches PH3387A, PH3387AAZ)
     if (q.length >= 4) {
       const prefix = await client.query(
-        `SELECT c.* FROM elimfilters_catalog c
+        `SELECT c.*, COALESCE(p.priority, 0) AS search_priority FROM elimfilters_catalog c
          LEFT JOIN search_result_priority p
            ON p.sku = c.sku
           AND UPPER(REPLACE(p.query_code,'-','')) = REPLACE($1, '%', '')
@@ -1112,7 +1112,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
         [q + '%', ...dutyArgs]
       );
       if (prefix.rows.length > 0) {
-        if (!validDuty) {
+        if (!validDuty && !prefix.rows.some(r => Number(r.search_priority) > 0)) {
           const mixed = await handleMixedDuty(prefix.rows, lang, client);
           if (mixed) return res.json(mixed);
         }
