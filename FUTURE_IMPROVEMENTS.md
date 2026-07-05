@@ -1,10 +1,14 @@
-# Known Limitations — Part Search
+# Future Improvements — Part Search
 
-## Autocomplete does not reuse the `parseRefs()` normalization/filtering pipeline
+This is not a defect log. It records deliberate scope decisions and
+tech-debt observations from the Part Search staging validation work, kept
+here so they aren't lost rather than because they block anything.
+
+## Share normalization/filtering logic between `/api/search` and `/api/autocomplete`
 
 **Component:** `server.js` — `GET /api/autocomplete`
-**Severity:** Low
-**Production impact:** Non-blocking
+**Type:** Code duplication / tech debt, not a confirmed functional defect
+**Production impact:** None identified — no incorrect suggestion text or data leak observed
 
 ### Description
 
@@ -31,8 +35,10 @@ badge (e.g. `OEM` instead of the type it would have carried had it gone
 through `parseRefs()`).
 
 **What does not happen:** the internal field name itself is never shown to the
-user, and the suggested code text is always correct. This is a metadata
-classification quirk in the dropdown's type badge, not a data leak.
+user, and the suggested code text is always correct. This is a cosmetic
+metadata-classification quirk in the dropdown's type badge under a specific
+edge-case data condition — not a data leak, and not a confirmed
+production-impacting defect.
 
 Verified via a seeded test row (`manufacturer: "RELATEDPARTS"`,
 `code: "EL82100"`): the autocomplete suggestion for `EL82100` appeared with
