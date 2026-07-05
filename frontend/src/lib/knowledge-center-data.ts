@@ -1994,6 +1994,657 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       evidenceStatus: 'ISO 4406:2021 verified; ISO 11171:2010 verified; shaft seal data from ISO 6194-1; ingress rate estimates from published contamination audit data',
     },
   },
+
+  // ── Article 16 ────────────────────────────────────────────────────────────
+  {
+    slug: 'filter-media-engineering',
+    title: 'Filter Media Engineering: Construction, Performance, and Selection Criteria',
+    subtitle: 'Synthetic fibre architecture, Beta ratio verification, dirt capacity, and media collapse pressure — engineering principles for filter media specification.',
+    metaDescription: 'Engineering reference for industrial filter media: glass fibre, synthetic, and cellulose construction; β efficiency per ISO 16889; dirt holding capacity; structural collapse limits; media selection criteria for hydraulic, lubrication, fuel, and air filtration.',
+    category: 'engineering',
+    readTime: '13 min',
+    intro: 'Filter media is the functional core of every filtration element. The same housing, bypass valve, and end-cap configuration can deliver radically different contamination control outcomes depending solely on media specification. Understanding media construction — fibre diameter distribution, porosity gradient, dirt holding capacity, and structural limits — is prerequisite to engineering a filtration system that meets cleanliness targets reliably across service life.',
+    sections: [
+      {
+        heading: 'Media Construction Principles',
+        body: 'Industrial filter media is a nonwoven fibrous matrix engineered to capture particles by interception, impaction, and diffusion. The three primary substrate types are: cellulose (natural plant fibres, ~10–30 µm diameter, hygroscopic, moderate efficiency), glass fibre (borosilicate fibres, 0.3–6 µm diameter, high efficiency, low dirt capacity), and synthetic polymer (polyester or polypropylene fibres, 1–20 µm diameter, high dirt capacity, moisture-resistant). High-performance filter media combines these substrates in gradient construction: coarse outer layers capture large particles and protect fine inner layers; fine inner layers provide rated β efficiency. Gradient construction increases dirt holding capacity (DHC) by 40–100% compared to uniform-density media at the same rated β ratio.',
+        callout: [
+          { label: 'Cellulose β', value: 'β₁₅(c) ~ 2–5 (nominal, not absolute)' },
+          { label: 'Glass fibre β', value: 'β₃(c) ≥ 200 achievable' },
+          { label: 'Synthetic β', value: 'β₅(c) 75–200, high DHC' },
+        ],
+      },
+      {
+        heading: 'Beta Ratio and ISO 16889 Verification',
+        body: 'Beta ratio (β) is the sole standardised measure of particle capture efficiency for liquid filtration media. ISO 16889 defines the multi-pass test protocol: ISO medium test dust (AC-Fine) is injected upstream at a controlled rate; particle counters (ISO 11171 calibrated) measure concentrations upstream and downstream at defined particle sizes. β_x(c) = upstream count / downstream count at particle size x µm (c). A β₅(c) of 200 means 200 particles ≥5 µm upstream for each 1 particle ≥5 µm downstream — corresponding to 99.5% efficiency. Media β ratings must be verified at the element level under flowing conditions, not from flat media coupon tests. Coupon β values routinely exceed element-level β values by 20–40% due to edge leakage and end-cap bypass in assembled elements.',
+        callout: [
+          { label: 'β₅(c) = 200', value: '99.5% efficiency at ≥5 µm (c)' },
+          { label: 'β₁₀(c) = 75', value: '98.7% efficiency at ≥10 µm (c)' },
+          { label: 'β₂₀(c) = 10', value: '90% efficiency at ≥20 µm (c)' },
+        ],
+      },
+      {
+        heading: 'Dirt Holding Capacity',
+        body: 'Dirt holding capacity (DHC) is the mass of ISO medium test dust (g) captured by a filter element before terminal differential pressure is reached. DHC determines service interval length at a given system contamination ingression rate. DHC is measured as part of the ISO 16889 multi-pass test: the endpoint is defined by the test terminal differential pressure (typically 3× the initial clean-element Δp). For engine oil filters, DHC requirements are driven by oil drain interval targets and engine contamination generation rate (typically 0.01–0.05 g/L of oil per hour at rated load). For hydraulic return filters, DHC must accommodate system commissioning contamination without premature bypass. Glass fibre media offers the highest β efficiency but lowest DHC per unit volume; synthetic gradient media optimises both efficiency and DHC.',
+      },
+      {
+        heading: 'Structural Integrity: Collapse and Burst Pressure',
+        body: 'Filter elements must withstand differential pressures that arise at cold start (high oil viscosity), during contamination loading (as Δp rises toward bypass valve opening pressure), and during pressure transients (pump start-up, relief valve actuation). ISO 2941 defines collapse test methodology: the element is pressurised to a specified differential pressure (typically 10× the rated working Δp or per manufacturer specification) and inspected for permanent deformation. For hydraulic system pressure-line filters, elements must withstand Δp up to full system pressure without bypass valve — structural integrity requirements are substantially higher than return-line filters. SAE 15W-40 at −20°C exhibits viscosity of approximately 3,000–5,000 cSt; cold-start Δp across a lube oil filter under these conditions routinely exceeds 5 bar, requiring bypass valve opening before media structural limits are reached.',
+      },
+      {
+        heading: 'Media Selection for Specific Filtration Domains',
+        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: coalescing-capable synthetic media with β₃(c) ≥ 200 for particles, plus water coalescing layer; ASTM D6304 water removal verification required (SYNTEPORE™ architecture). Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
+      },
+      {
+        heading: 'End-Cap and Sealing Engineering',
+        body: 'Filter media performance is bounded by end-cap and sealing integrity. End-cap bonding failures allow particle bypass without filter element collapse — contamination spikes occur without elevated differential pressure warning. ISO 2942 defines end-cap integrity test methodology using a pressure differential and bubble detection. O-ring sealing between element and housing must account for fluid compatibility (nitrile for petroleum oils and fuels; fluorocarbon [FKM/Viton] for synthetic esters and phosphate esters; EPDM for water-glycol), compression set over service life, and thermal expansion differential between elastomer and housing material. Anti-drainback valves (ADV) on vertically mounted spin-on elements maintain oil column between shutdowns, preventing dry starts; ADV competence test per ISO 3968 should confirm cracking pressure ≤0.05 bar to avoid restriction.',
+      },
+      {
+        heading: 'Media Degradation and Service Life',
+        body: 'Filter media degrades through three mechanisms: (1) media migration — fibres released into filtered fluid, detectable by particle count increases immediately downstream of a new element (normal during initial conditioning, typically ≤500 cycles); (2) chemical attack — strong acids (TAN >4 mg KOH/g in oil), oxidised fuel, or incompatible solvents hydrolyse cellulose fibres or dissolve synthetic binders, reducing structural integrity without visible external signs; (3) thermal degradation — sustained temperatures above media design limits reduce fibre strength. Extended drain intervals demand media that maintains β efficiency and structural integrity throughout the drain period. ISO 16889 does not currently define a media aging test; extended drain media specifications rely on manufacturer accelerated aging data and field correlation. Condition monitoring via iron particle count (ICP or RDE analysis) detects filter media failure earlier than differential pressure monitoring.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Glass fibre minimum diameter', value: '0.3 µm' },
+      { label: 'DHC improvement — gradient vs uniform', value: '40–100%' },
+      { label: 'β₅(c) = 200 efficiency', value: '99.5% at ≥5 µm (c)' },
+      { label: 'Cold-start Δp (SAE 15W-40, −20°C)', value: '≥5 bar across lube filter' },
+      { label: 'ISO 2941 collapse test multiplier', value: '10× rated working Δp' },
+    ],
+    relatedStandards: ['ISO 16889', 'ISO 11171', 'ISO 2941', 'ISO 2942', 'ISO 3968', 'ISO 5011'],
+    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'MACROCORE™'],
+    relatedSystems: ['Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection', 'Air Intake Protection'],
+    keywords: [
+      'filter media engineering', 'beta ratio', 'ISO 16889', 'dirt holding capacity', 'glass fibre media',
+      'synthetic filter media', 'cellulose media', 'collapse pressure', 'ISO 2941', 'media gradient',
+      'end-cap integrity', 'ISO 2942', 'filtration efficiency', 'particle capture', 'media selection',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Rapid differential pressure rise across filter (element plugging faster than expected service interval)',
+        'Elevated particle counts immediately downstream of new replacement element',
+        'Contamination code rise after filter service (spike post-maintenance)',
+        'Bypass valve indicator lamp activated during cold start only',
+        'Bypass indicator activated at normal operating temperature (element collapse or bypass valve failure)',
+      ],
+      probableCauses: [
+        'Rapid Δp rise: elevated system contamination ingression rate exceeds filter DHC; media efficiency mismatch (β too high for ingression load creates rapid loading)',
+        'Elevated counts from new element: media migration during initial conditioning; end-cap bonding defect allowing bypass',
+        'Post-maintenance contamination spike: installation contamination introduced via service tools or inadequate flushing of replacement element',
+        'Cold-start bypass only: normal behaviour — oil viscosity exceeds bypass valve rating; evaluate whether fluid specification matches operating temperature',
+        'Normal-temperature bypass: element structural collapse; bypass valve spring fatigue (check cracking pressure); contamination loading reaching bypass threshold',
+      ],
+      inspectionMethods: [
+        'ISO 11171 particle counter upstream and downstream of suspect filter — compare β achieved to β rated; deviation >30% indicates media integrity issue',
+        'Differential pressure gauge across element: record at operating temperature; trending rate of Δp rise indicates remaining service life',
+        'ISO 2942 bubble point test on removed element: pressurisation with air, submersion in test fluid; bubbles indicate end-cap bonding failure or media damage',
+        'Oil analysis ICP/RDE for silicon (Si): elevated Si indicates air intake media failure or external contamination source, not fluid filter media',
+        'Bypass valve cracking pressure verification: remove valve, bench-test with calibrated pressure source; specification typically 0.7–1.4 bar for lube oil bypass valves',
+      ],
+      correctiveActions: [
+        'Confirm media β specification matches system contamination target (ISO 4406 code vs component sensitivity table)',
+        'If DHC is the limiting factor, install higher DHC element (synthetic gradient media) or shorten service interval to prevent bypass loading',
+        'If end-cap failure is confirmed, inspect housing seating surface for damage; replace element with a unit from different production batch and retest',
+        'For cold-start bypass: consider multi-grade oil specified for minimum operating temperature; partial engine warm-up protocol before full load',
+        'Media migration from new elements: flush 2–3 L through element before installation, or accept initial conditioning period with frequent particle monitoring',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'System requires β₃(c) ≥ 200 for servo-valve protection but elements plug in less than 250 hours',
+        standard: 'ISO 16889 (β verification), ISO 4406 (system cleanliness monitoring)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Glass fibre absolute media (β₃(c) ≥ 200) supplemented by offline kidney-loop filter to reduce loading on pressure-line element; target kidney-loop flow at 5–10% of system volume per minute',
+        relatedArticles: ['beta-ratio', 'hydraulic-power-unit-design', 'particle-ingress-prevention'],
+      },
+      {
+        problem: 'Extended drain interval (500+ hours) requires filter element to maintain β efficiency throughout drain',
+        standard: 'ISO 16889 (efficiency at terminal Δp), API CK-4 (oil specification for extended drain)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Synthetic gradient media with high DHC (≥80 g at rated Δp) and verified β₁₅(c) ≥ 12 throughout loading cycle; cold-start bypass valve sized for rated fluid viscosity at minimum start temperature',
+        relatedArticles: ['lubrication-system-filtration', 'oil-analysis-methods', 'service-intervals'],
+      },
+      {
+        problem: 'HPCR fuel system requires particle and water removal to protect injector clearances (<3 µm)',
+        standard: 'ISO 19438 (fuel particle cleanliness), ASTM D6304 (water content verification)',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Coalescing synthetic media with β₃(c) ≥ 200 for particle removal and integrated water coalescing layer with coalesced-water collection bowl; water sensor to alarm before bowl overflow',
+        relatedArticles: ['diesel-fuel-filtration', 'water-contamination-fuel', 'beta-ratio'],
+      },
+      {
+        problem: 'Filter element fails ISO 2942 end-cap integrity test on incoming inspection',
+        standard: 'ISO 2942 (element integrity), ISO 16889 (β confirmation post-integrity)',
+        protectionSystem: 'All fluid filtration systems',
+        technology: 'Implement incoming inspection sampling plan (ISO 2859-1 AQL); verify bonding specification with supplier; check housing seating surface geometry compatibility; replace from different production lot pending investigation',
+        relatedArticles: ['testing-and-validation', 'oem-engineering', 'fluid-cleanliness'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (SYNTRAX, NANOFORCE, SYNTEPORE, MACROCORE)',
+      evidenceStatus: 'ISO 16889:2022 verified; ISO 2941:2010 verified; ISO 2942:2014 verified; fibre diameter ranges from published media engineering literature; DHC estimates from ISO 16889 multi-pass test data',
+    },
+  },
+
+  // ── Article 17 ────────────────────────────────────────────────────────────
+  {
+    slug: 'marine-diesel-filtration',
+    title: 'Marine Diesel Filtration: Fuel Quality, Saltwater Ingress, and Microbial Contamination',
+    subtitle: 'Contamination control for marine diesel systems — ISO 8217 fuel specifications, saltwater corrosion mechanisms, MARPOL sulphur limits, and microbial growth prevention.',
+    metaDescription: 'Engineering reference for marine diesel filtration: ISO 8217 distillate and residual fuel specifications, saltwater contamination pathways, ASTM D6304 water content limits, microbial growth mechanisms, and three-stage filtration architecture for marine HPCR engines.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'Marine diesel filtration operates under contamination conditions absent in land-based applications: saltwater ingress pathways, marine diesel fuel quality variability (ISO 8217 distillate grades DMA, DMB, DMZ), microbial contamination in fuel tanks operating in warm humid environments, and MARPOL 2020 sulphur compliance requiring blended fuels with altered stability characteristics. Marine filtration engineering must address all these mechanisms simultaneously while operating in environments with vibration, motion, and limited maintenance access.',
+    sections: [
+      {
+        heading: 'Marine Fuel Quality and ISO 8217',
+        body: 'ISO 8217 classifies marine fuels into distillate grades (DM-series: DMA, DMB, DMZ) and residual grades (RM-series: RMA through RMK). Marine gas oil (MGO, grade DMA) is the primary fuel for high-speed and medium-speed marine diesel engines equipped with HPCR injection systems. ISO 8217:2017 defines DMA limits: maximum water content 200 mg/kg (ASTM D6304), maximum total sediment ≤0.01% (ISO 10307-1), lubricity HFRR wear scar ≤520 µm at 60°C (ISO 12156-1), minimum flash point 60°C. MARPOL Annex VI Regulation 14 (in effect from January 2020) limits sulphur content in Emission Control Areas (ECA) to 0.1% m/m and globally to 0.5% m/m. Compliant very-low-sulphur fuel oil (VLSFO) blends exhibit reduced lubricity and increased water absorption compared to high-sulphur heavy fuel oil, increasing filtration demands.',
+        callout: [
+          { label: 'ISO 8217 DMA water limit', value: '200 mg/kg max (ASTM D6304)' },
+          { label: 'MARPOL 2020 sulphur ECA', value: '0.1% m/m max' },
+          { label: 'VLSFO lubricity HFRR', value: '≤520 µm wear scar' },
+        ],
+      },
+      {
+        heading: 'Saltwater Contamination Pathways',
+        body: 'Saltwater enters marine fuel and lube oil systems through: (1) condensation — diurnal temperature cycling in partially-filled tanks causes air-water cycling; in marine environments, humid air contains dissolved salt aerosol; (2) deck plate and fill-point ingress — wave wash-over or rain on open fill points introduces seawater directly; (3) heat exchanger leakage — sea-water-cooled heat exchangers with tube failures allow seawater into lube oil or coolant circuits at differential pressures up to 3–5 bar; (4) shaft seal ingress — stern tube seals and rudder post seals operating at waterline can allow seawater ingress into lube oil when worn or under pressure transient. Dissolved salt in fuel promotes microbiologically influenced corrosion (MIC) and provides ionic conductivity that accelerates electrolytic corrosion of steel fuel system components. Seawater in lube oil above 0.1% causes emulsification, bearing surface corrosion, and loss of oil film strength.',
+      },
+      {
+        heading: 'Microbial Contamination in Marine Fuel',
+        body: 'Marine fuel tanks operate at temperatures (10–40°C) within the growth range of hydrocarbon-degrading bacteria and fungi. Microbial growth requires water at the fuel-water interface (not dissolved water); biosulphide-producing bacteria (Desulfovibrio, Desulfobacter) generate H₂S that accelerates corrosion; Hormoconis resinae fungus produces organic acids and biomass that plug fuel filters. Biofilm formation on tank walls provides a stable colony independent of bulk fuel water content. Detection methods: ASTM D7468 (bioburden enumeration), rapid ATP bioluminescence test (≥10³ CFU/mL indicates active growth). Prevention: maintain fuel water content below ISO 8217 limit (200 mg/kg), apply biocide treatment (Biobor JF or equivalent at 50–100 ppm), tank cleaning per manufacturer interval. MARINECLEAN™ filtration architecture is designed for the combined particle, water, and biofilm fragment removal requirements of marine diesel systems.',
+        callout: [
+          { label: 'Microbial growth range', value: '10–40°C (marine typical)' },
+          { label: 'Biocide treatment rate', value: 'Biobor JF: 50–100 ppm' },
+          { label: 'Detection threshold (ATP)', value: '≥10³ CFU/mL indicates active growth' },
+        ],
+      },
+      {
+        heading: 'Three-Stage Marine Fuel Filtration Architecture',
+        body: 'Marine HPCR diesel engines require staged fuel filtration from tank to injection: Stage 1 — transfer pump filter (coarse, 30–100 µm nominal): removes large debris, protects transfer pump. Stage 2 — fuel conditioning module: coalescing water separator (meets ISO 8217 DMA water limit), primary particle filtration (β₁₀ ≥ 12 nominal). Stage 3 — fine filter (engine-mounted): β₃(c) ≥ 200 for HPCR injector protection; water indicator; differential pressure indicator. Duplex (parallel) filter arrangements are required on vessels where filter service requires engine shutdown — changeover valve enables element replacement without stopping the engine. Duplex switching must be performed with care: rapid changeover introduces housing fill fluid (air) that causes injector fuel starvation; slow changeover (over 30–60 seconds) allows gradual pressure equalisation.',
+      },
+      {
+        heading: 'MARPOL Compliance and Exhaust Gas Cleaning Systems',
+        body: 'Vessels operating in ECAs with exhaust gas cleaning systems (scrubbers) may use high-sulphur fuel oil (HSFO) as an alternative to VLSFO. HSFO filtration requirements differ significantly from VLSFO: higher viscosity HSFO (cSt at 50°C: 40–700 depending on grade) requires fuel heating to achieve pump-able viscosity (typically 120–150°C heating to reach 10–15 cSt at injection); high viscosity requires centrifugal purification (fuel separator) before fine filtration to remove asphaltenes and catalytic fines (cat fines) — aluminium-silicate particles from catalytic cracking that cause severe injector and pump wear. ISO 8217 limits cat fines to 60 mg/kg maximum; however, samples taken from bunker supply frequently exceed this limit. Fine filtration (7–10 µm absolute) is required ahead of HPCR systems fuelled by HSFO-compatible fuel blends.',
+      },
+      {
+        heading: 'Corrosion Prevention and Inhibitor Management',
+        body: 'Marine fuel systems are particularly susceptible to corrosion from: (1) organic acids produced by microbial metabolism; (2) low-sulphur fuels with reduced natural lubricity and anti-corrosion properties; (3) saltwater contamination providing electrolytic medium; (4) oxygen ingress into diesel fuel stored in partially-filled tanks (oxidative degradation produces gum and varnish deposits). Corrosion inhibitor packages for marine diesel fuel systems must be compatible with ISO 8217 stability requirements and MARPOL-compliant fuels. Fuel additives that exceed ASTM D6304 water limits or alter flash point below ISO 8217 minimum are non-compliant. Filtration system materials must be compatible with marine fuels including VLSFO blends: some synthetic elastomers are not compatible with paraffinic VLSFO blends; verify O-ring material specification against ISO 8217 DMA properties.',
+      },
+      {
+        heading: 'Lube Oil Filtration in Marine Engines',
+        body: 'Marine diesel lube oil filtration faces elevated contamination challenges: combustion byproduct carbon (blowby past piston rings) at rates higher than automotive engines due to larger bore sizes; seawater ingress from stern tube seals and heat exchanger leaks; increased time at high load operation; and extended drain intervals driven by large-volume oil systems (a medium-speed engine may have 500–2,000 L oil capacity with drains at 2,000+ hours). Marine engine lube oil condition monitoring per ISO 17359 requires: viscosity at 40°C and 100°C (ASTM D445), TAN (ASTM D664), water content (ASTM D6304 or Karl Fischer), ICP elemental analysis for wear metals (Fe, Cu, Pb, Sn, Al) and contamination indicators (Si, Na for coolant/saltwater). Full-flow lube oil filtration at β₁₅(c) ≥ 12 is minimum requirement; supplemental bypass fine filtration at β₅(c) ≥ 200 extends drain intervals and protects bearing surfaces.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'ISO 8217 DMA water limit', value: '200 mg/kg (ASTM D6304)' },
+      { label: 'MARPOL ECA sulphur limit', value: '0.1% m/m (from 2020)' },
+      { label: 'Cat fines ISO 8217 limit', value: '60 mg/kg Al + Si max' },
+      { label: 'HSFO injection viscosity target', value: '10–15 cSt (heat to 120–150°C)' },
+      { label: 'Marine engine oil drain (large bore)', value: '2,000+ hours typical' },
+    ],
+    relatedStandards: ['ISO 8217', 'ASTM D6304', 'ISO 19438', 'ISO 4020', 'ISO 17359', 'ASTM D7468'],
+    relatedTechnologies: ['MARINECLEAN™', 'HYDROCORE™', 'SYNTEPORE™', 'SYNTRAX™'],
+    relatedSystems: ['Fuel Cleanliness Protection', 'Lubrication Protection'],
+    keywords: [
+      'marine diesel filtration', 'ISO 8217', 'MARPOL sulphur', 'saltwater contamination',
+      'microbial contamination fuel', 'VLSFO filtration', 'HSFO cat fines', 'marine fuel filtration',
+      'MARINECLEAN', 'duplex filter', 'marine engine oil', 'biosulphide corrosion',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Premature filter plugging in marine fuel system (element service interval below 250 hours)',
+        'Visible dark slime or gelatinous material on removed filter element',
+        'Injector performance deterioration — hard starting, rough running, increased fuel consumption',
+        'Elevated Na (sodium) in lube oil analysis (>20 ppm indicates saltwater ingress)',
+        'Water separator bowl filling rapidly (>2× expected rate)',
+        'Cat fine damage to injectors and fuel pumps — elevated Al + Si in fuel analysis',
+      ],
+      probableCauses: [
+        'Rapid plugging: microbial biofilm fragments; cat fines in HSFO blend; asphaltene precipitation from incompatible fuel blends',
+        'Dark slime: Hormoconis resinae fungal growth in water-contaminated fuel; ATP test to confirm',
+        'Injector deterioration: water contamination exceeding ISO 8217 DMA limit; particle contamination above HPCR cleanliness target',
+        'Elevated Na: stern tube seal failure; raw water cooler tube leak; fill-point saltwater ingress',
+        'Rapid water accumulation: condensation in partially-filled tanks during diurnal temperature cycles; compromised fill-point sealing',
+        'Cat fine damage: fuel supplier delivering HSFO blend non-compliant with ISO 8217 cat fine limit; centrifugal purifier bypass or failure',
+      ],
+      inspectionMethods: [
+        'Fuel sample analysis: ASTM D6304 water content, ISO 10307-1 total sediment, ICP for Al+Si (cat fines)',
+        'ATP bioluminescence test on fuel sample from tank bottom (worst-case water interface): ATP ≥10³ CFU/mL indicates active microbial growth',
+        'Lube oil ICP: monitor Na trend; single result >20 ppm requires immediate source investigation',
+        'Duplex filter Δp across both elements: compare; significant difference indicates one element has media integrity issue',
+        'Centrifugal purifier efficiency verification: particle count before and after purifier at rated throughput flow rate',
+      ],
+      correctiveActions: [
+        'Microbial contamination: apply Biobor JF biocide at 50–100 ppm; tank clean (remove water from tank bottom); replace all filter elements; retest after 100 hours',
+        'Saltwater in lube oil: locate and repair ingress source (stern tube seal inspection, heat exchanger tube leak test); drain and flush oil system; replace oil charge',
+        'Cat fine damage: reject bunker batch; inspect injectors and fuel pump plungers; install additional 7 µm absolute pre-filtration; confirm purifier performance',
+        'Premature filter plugging from asphaltene precipitation: verify fuel blend compatibility (ISO 4740 compatibility assessment); avoid mixing incompatible bunker batches',
+        'Biocide treatment before long-term storage: treat fuel tank to full biocide dose; maintain water-free storage condition',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Marine vessel switching to VLSFO (MARPOL 2020 compliant) reports increased filter service frequency',
+        standard: 'ISO 8217 (fuel specification), ISO 19438 (cleanliness target)',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Evaluate VLSFO blend stability (ISO 4740); install enhanced coalescing pre-filter with larger bowl capacity to handle increased water content; verify O-ring material compatibility with paraffinic VLSFO blend',
+        relatedArticles: ['diesel-fuel-filtration', 'water-contamination-fuel', 'filter-media-engineering'],
+      },
+      {
+        problem: 'HSFO-fuelled vessel using scrubber system experiencing injector wear from cat fines',
+        standard: 'ISO 8217 (Al+Si ≤60 mg/kg), ISO 19438 (fuel particle cleanliness)',
+        protectionSystem: 'Fuel Cleanliness Protection',
+        technology: 'Verify centrifugal purifier operating parameters (throughput ≤75% of rated capacity for cat fine removal efficiency); install 7 µm absolute fine filter post-purifier; request bunker sample analysis per ISO 8217 before acceptance',
+        relatedArticles: ['diesel-fuel-filtration', 'beta-ratio', 'filter-media-engineering'],
+      },
+      {
+        problem: 'Elevated sodium (Na) in marine engine lube oil analysis — saltwater ingress suspected',
+        standard: 'ISO 17359 (condition monitoring), ASTM D6304 (water content verification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Pressure test all raw-water-cooled heat exchangers at operating differential pressure; inspect stern tube seal clearance and lip condition; if heat exchanger tube confirmed leaking, system must be oil-flushed and oil replaced before returning to service',
+        relatedArticles: ['lubrication-system-filtration', 'oil-analysis-methods', 'cooling-system-contamination'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-MARINECLEAN)',
+      evidenceStatus: 'ISO 8217:2017 verified; MARPOL Annex VI Regulation 14 verified; ASTM D6304 verified; biocide treatment rates from Hammonds Fuel Additives Biobor JF datasheet; cat fines limit from ISO 8217:2017 Table 2',
+    },
+  },
+
+  // ── Article 18 ────────────────────────────────────────────────────────────
+  {
+    slug: 'cooling-system-contamination',
+    title: 'Engine Cooling System Contamination: Liner Pitting, Coolant Degradation, and SCA Management',
+    subtitle: 'Cavitation erosion of cylinder liners, electrochemical corrosion mechanisms, supplemental coolant additive (SCA) depletion, and glycol contamination in lubrication oil.',
+    metaDescription: 'Engineering reference for engine cooling system contamination: wet liner cavitation erosion mechanisms (ASTM D2570), SCA chemistry and depletion rates (ASTM D6210), glycol-in-oil detection (ASTM D2982), electrochemical corrosion in mixed-metal cooling circuits, and coolant condition monitoring intervals.',
+    category: 'engineering',
+    readTime: '12 min',
+    intro: 'Cooling system contamination damages engines through two primary mechanisms: (1) wet cylinder liner cavitation erosion that perforate liners independently of any mechanical failure, and (2) coolant degradation that allows electrochemical corrosion of aluminium, copper, and cast iron components in mixed-metal cooling circuits. Both mechanisms are controlled through supplemental coolant additive (SCA) management and condition monitoring — not filtration alone. THERMACORE™ filtration architecture combines coolant filtration with integrated SCA delivery and condition monitoring for heavy-duty diesel applications.',
+    sections: [
+      {
+        heading: 'Wet Liner Cavitation Erosion Mechanism',
+        body: 'Wet cylinder liners contact coolant directly on their outer surface. Liner vibration (from combustion impulse and piston slap) generates rapid pressure oscillations in the adjacent coolant film. Where pressure drops below coolant vapour pressure, micro-bubbles form (cavitation inception). When the pressure pulse reverses, bubbles collapse asymmetrically against the liner surface, generating localised pressures of 400–600 MPa. Repeated collapse events progressively erode cast iron liner material at the mid-stroke thrust side — the collapse point closest to the liner wall. Erosion appears as a pitted, rough surface that eventually perforates the liner, allowing coolant ingress into the cylinder. Cavitation erosion rate is accelerated by: low coolant pH (below 7.5), reduced SCA concentration, coolant velocity above 3 m/s through narrow passages, and air entrainment in coolant.',
+        callout: [
+          { label: 'Cavitation collapse pressure', value: '400–600 MPa (localised)' },
+          { label: 'Critical coolant pH', value: '<7.5 accelerates erosion' },
+          { label: 'Coolant velocity threshold', value: '>3 m/s in narrow passages' },
+        ],
+      },
+      {
+        heading: 'Supplemental Coolant Additives (SCAs)',
+        body: 'SCAs are chemical packages added to ethylene glycol/water coolant mixtures to provide: (1) corrosion inhibitors — nitrites, molybdates, silicates, or organic acid technology (OAT) inhibitors forming protective films on metal surfaces; (2) anti-cavitation protection — nitrite-based SCAs form an iron oxide-nitride protective layer on liner surfaces, providing surface hardening and reducing cavitation pitting; (3) pH buffering — maintaining coolant pH 7.5–11 range per ASTM D6210 requirements. SCA concentration is expressed as units per gallon (US) or per litre. ASTM D6210 specifies minimum/maximum SCA concentration ranges for heavy-duty diesel coolant systems. Excessive SCA concentration (overcorrection) causes silicate gelation (silicate-based SCAs) or can increase corrosion on some alloys; insufficient SCA allows corrosion and liner pitting. Concentration measurement: titration per ASTM D6210 Annex or corrosion test strip test calibrated against titration.',
+        callout: [
+          { label: 'Target pH range', value: '7.5–11.0 (ASTM D6210)' },
+          { label: 'SCA type for liner protection', value: 'Nitrite-based (ASTM D6210 compliant)' },
+          { label: 'Monitoring interval', value: 'Every 150–250 hours (coolant test strip)' },
+        ],
+      },
+      {
+        heading: 'Electrochemical Corrosion in Mixed-Metal Systems',
+        body: 'Modern heavy-duty diesel cooling systems incorporate aluminium (cylinder heads, aftercoolers, radiators), copper-brass (radiator cores in older systems), cast iron (engine block, cylinder liners), and steel (water pump housings, turbocharger housings). These dissimilar metals create electrochemical cells when immersed in electrolyte (coolant). The galvanic series in coolant environments places aluminium as the more anodic (sacrificial) metal versus copper. Aluminium corrosion in copper-contaminated coolant can generate 0.5–2 mm/year metal loss rates. Copper from corroding solder or copper pipe deposits on engine surfaces and accelerates aluminium attack. OAT (organic acid technology) and HOAT (hybrid OAT) coolant formulations use carboxylate anion inhibitors that provide effective aluminium protection in mixed-metal systems without silicate gelation risk. SAE J1941 defines coolant type designations; ASTM D6868 defines OAT inhibitor technology requirements.',
+      },
+      {
+        heading: 'Glycol Contamination in Engine Oil',
+        body: 'Coolant ingress into engine oil occurs through: (1) cylinder head gasket failure (most common — high combustion pressure forces coolant into oil return passages); (2) liner perforation from cavitation erosion; (3) failed O-rings in wet liner installations; (4) cracked cylinder head (from overheating or thermal shock). Glycol in engine oil is detectable at 0.1% by ASTM D2982 (glycol detection test) or inductively-coupled plasma (ICP) elemental analysis detecting glycol-associated metals (potassium, boron from coolant inhibitor packages). At 0.5% glycol in oil, bearing surfaces begin to experience accelerated corrosion. At 1% glycol, oil emulsification begins — viscosity may appear normal initially, but load-carrying capacity is severely compromised. Oil analysis intervals should detect glycol ingression before bearing damage becomes irreversible. Immediate corrective action: cease operation, locate and repair source, flush oil system, replace oil charge. Do not continue operation with confirmed glycol contamination.',
+        callout: [
+          { label: 'Glycol detection threshold (ASTM D2982)', value: '0.1%' },
+          { label: 'Critical glycol level', value: '0.5% — accelerated corrosion begins' },
+          { label: 'Emulsification onset', value: '~1% glycol in oil' },
+        ],
+      },
+      {
+        heading: 'Coolant Filtration and Condition Monitoring',
+        body: 'Coolant filtration serves two functions: (1) particle removal — wear debris, rust, and scale particles that abrade water pump seals and impeller surfaces and that act as nucleation sites for scale deposition; (2) SCA delivery — supplemental coolant additive filter elements designed to release SCA at a controlled rate as coolant flows through them, maintaining concentration between manual service intervals. Particle filtration targets: coolant bypass filtration at 15–25 µm nominal is typical; finer filtration increases SCA depletion rate by increasing coolant filtration rate. SCA-releasing filter elements (THERMACORE™ architecture) are sized to release SCA at the engine manufacturer\'s specified dosing rate. Coolant condition monitoring per ISO 17359 and ASTM D6210: pH, SCA concentration (nitrite for conventional coolant, reserve alkalinity for OAT), glycol content (ASTM D1177 freeze point, correlated to glycol percentage), and visual inspection for discoloration, foaming, or oily contamination.',
+      },
+      {
+        heading: 'Scale and Fouling Prevention',
+        body: 'Mineral scale (calcium and magnesium carbonates) deposits on heat transfer surfaces — radiator tubes, aftercooler cores, cylinder head water jackets. A 0.25 mm scale layer reduces heat transfer coefficient by 20–30%. Scale deposits nucleate at hot spots (fuel injector cavities, exhaust valve seat areas) where coolant film reaches maximum temperature. Prevention: dilute with deionised or distilled water (total hardness <200 ppm as CaCO₃); ASTM D6210 limits total dissolved solids in coolant. Water quality is the primary determinant of scale formation rate. Scale inhibitors (phosphates, polymers) in SCA packages reduce scale nucleation rate. Existing scale cannot be removed by coolant chemistry alone — mechanical descaling or acid cleaning (phosphoric acid formulations) followed by complete coolant system flush is required.',
+      },
+      {
+        heading: 'Cooling System Failure Mode Summary',
+        body: 'Cooling system failures follow predictable escalation patterns: inadequate SCA → pH drift below 7.5 → cavitation erosion begins → liner pitting progresses → coolant ingression → glycol in oil → bearing corrosion → engine failure. Alternatively: inadequate water quality → scale deposits → hot spots → coolant boiling → thermal stress fracture → coolant ingression. Condition monitoring intersects this chain at coolant pH/SCA (early intervention), glycol-in-oil (mid-chain intervention), and iron particle count in coolant (early liner erosion detection). Proactive SCA management per ASTM D6210 schedule and oil analysis at 150–250 hour intervals prevents the chain from advancing beyond the early intervention point.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Cavitation collapse pressure', value: '400–600 MPa (localised, per published data)' },
+      { label: 'Target coolant pH', value: '7.5–11.0 (ASTM D6210)' },
+      { label: 'Scale thermal penalty (0.25 mm)', value: '20–30% heat transfer reduction' },
+      { label: 'Glycol detection (ASTM D2982)', value: '0.1% minimum detectable' },
+      { label: 'Monitoring interval', value: '150–250 hours (coolant test strip)' },
+    ],
+    relatedStandards: ['ASTM D6210', 'ASTM D2982', 'SAE J1941', 'ASTM D6868', 'ISO 17359'],
+    relatedTechnologies: ['THERMACORE™', 'SYNTRAX™'],
+    relatedSystems: ['Lubrication Protection'],
+    keywords: [
+      'cooling system contamination', 'liner cavitation erosion', 'SCA supplemental coolant additive',
+      'glycol in oil', 'ASTM D6210', 'THERMACORE', 'electrochemical corrosion', 'coolant filtration',
+      'ASTM D2982', 'coolant condition monitoring', 'scale fouling', 'wet liner', 'coolant inhibitor',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Cream-coloured emulsion on oil dipstick or oil filler cap — glycol-water emulsification in oil',
+        'White exhaust smoke under load (not cold-start condensation) — coolant entering combustion chamber',
+        'Coolant level dropping without visible external leak — internal leak path to oil or combustion',
+        'Oil pressure warning at hot idle — oil viscosity loss from glycol emulsification',
+        'Elevated coolant temperature with normal thermostat function — scale fouling on heat transfer surfaces',
+        'Water pump noise / seal weeping — particle-induced seal wear',
+      ],
+      probableCauses: [
+        'Cream emulsion: head gasket failure; wet liner O-ring failure; cracked head from overheating event',
+        'White exhaust smoke under load: liner perforation from cavitation erosion (check liner surface for pitting); head gasket failure on water jacket side',
+        'Coolant level drop (no external leak): confirm with ASTM D2982 glycol test on oil sample; combustion gas test on coolant (CO₂ indicator test)',
+        'Elevated oil temperature: glycol contamination compromising oil film; check oil pressure sender calibration before condemning bearings',
+        'Elevated coolant temperature: scale deposits (inspect radiator core and aftercooler for whitish deposits); thermostat stuck partially open; insufficient coolant flow (pump impeller erosion)',
+        'Pump seal failure: particle contamination in coolant above 25 µm (inspect filter element; check if bypass is operating)',
+      ],
+      inspectionMethods: [
+        'ASTM D2982 glycol test on oil sample — results in 30 minutes; positive result (colour change) confirms glycol presence above 0.1%',
+        'Combustion gas test on coolant: combustion gas detector tube (CO detects exhaust leakage into coolant from head gasket failure); persistent CO reading confirms head gasket or liner failure',
+        'Coolant pH and SCA concentration: pH test strip or meter; SCA titration per ASTM D6210 — compare against specification for engine coolant volume',
+        'Coolant particle count: send 100 mL coolant sample to laboratory; particle count above 1,000 particles/mL at >25 µm indicates abnormal erosion or corrosion',
+        'ICP elemental analysis on coolant: elevated Fe indicates cast iron corrosion; elevated Al indicates aluminium corrosion; elevated Cu indicates copper solder dissolution',
+        'Pressure test cooling system at 1.0–1.5× rated cap pressure: external leaks locate immediately; pressure drop without visible leak confirms internal leakage path',
+      ],
+      correctiveActions: [
+        'Confirmed glycol in oil: cease operation immediately; repair source (head gasket or liner) before restart; flush oil system; fill with fresh oil and filter; retest oil at 50 hours',
+        'SCA concentration below minimum: add SCA per ASTM D6210 calculation for system volume; do not exceed maximum SCA concentration; retest pH and SCA after thorough mixing',
+        'Scale deposits: drain coolant system; flush with phosphoric acid-based descaler (follow manufacturer dilution and contact time); flush with clean water; refill with fresh coolant to ASTM D6210 specification using deionised water',
+        'Cavitation erosion detected (pitting on liner surface at mid-stroke thrust side): evaluate liner thickness remaining with ultrasonic thickness gauge; liners below minimum thickness require replacement; correct SCA management to prevent recurrence',
+        'Water pump seal failure: replace seal and impeller; flush system to remove seal debris; verify coolant filtration is functioning',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Cooling system requires extended maintenance intervals but SCA concentration drops below minimum between scheduled coolant changes',
+        standard: 'ASTM D6210 (SCA concentration specification)',
+        protectionSystem: 'Lubrication Protection (coolant-oil boundary)',
+        technology: 'Install SCA-releasing filter element (sized to deliver SCA at coolant flow × depletion rate); monitor concentration monthly; adjust element dosing rate to match system-specific depletion rate measured over first 500 hours',
+        relatedArticles: ['service-intervals', 'oil-analysis-methods', 'total-cost-of-ownership'],
+      },
+      {
+        problem: 'Glycol detected in engine oil (ASTM D2982 positive) — source not yet identified',
+        standard: 'ASTM D2982 (glycol detection), ISO 17359 (condition monitoring)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Systematic source elimination: (1) pressure test cooling system, (2) combustion gas test on coolant, (3) inspect liner O-rings (if wet-liner design), (4) magnetic plug inspection for copper/aluminium particles indicating internal corrosion; cease operation until source confirmed and repaired',
+        relatedArticles: ['oil-analysis-methods', 'lubrication-system-filtration', 'failure-analysis'],
+      },
+      {
+        problem: 'Wet liner cavitation pitting observed at overhaul on liners with fewer than 5,000 hours',
+        standard: 'ASTM D6210 (SCA management), ASTM D6868 (OAT inhibitor technology)',
+        protectionSystem: 'Lubrication Protection (engine protection)',
+        technology: 'Review SCA maintenance records for entire liner service period; install data-logging coolant pH monitor to identify excursions below 7.5; switch to OAT or HOAT coolant formulation with documented anti-cavitation performance; implement 150-hour coolant test strip monitoring intervals going forward',
+        relatedArticles: ['service-intervals', 'oil-analysis-methods', 'total-cost-of-ownership'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-THERMACORE)',
+      evidenceStatus: 'ASTM D6210:2019 verified; ASTM D2982 verified; cavitation collapse pressure range from published tribology literature; scale thermal penalty from heat transfer engineering data; glycol detection threshold from ASTM D2982 method sensitivity',
+    },
+  },
+
+  // ── Article 19 ────────────────────────────────────────────────────────────
+  {
+    slug: 'filter-element-integrity',
+    title: 'Filter Element Structural Integrity: Collapse Pressure, End-Cap Sealing, and Bypass Valve Engineering',
+    subtitle: 'ISO 2941 collapse testing, ISO 2942 end-cap integrity, ISO 2943 fluid compatibility, bypass valve cracking pressure, and structural failure modes under high-viscosity cold-start conditions.',
+    metaDescription: 'Engineering reference for filter element structural integrity: ISO 2941 collapse pressure testing, ISO 2942 end-cap integrity verification, ISO 2943 fluid compatibility, bypass valve engineering, and cold-start high-viscosity failure mode prevention.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'Filter element structural integrity is the prerequisite for filtration performance — a filter that collapses, bypasses, or allows end-cap leakage provides no contamination control regardless of media specification. ISO 2941, ISO 2942, and ISO 2943 define the verification test battery for element structural properties. These standards are frequently omitted from procurement specifications that focus exclusively on beta ratio (ISO 16889), creating a critical gap: an element can comply with ISO 16889 efficiency requirements while failing under cold-start differential pressure conditions that routinely occur in engine lubrication systems.',
+    sections: [
+      {
+        heading: 'Collapse and Burst Pressure — ISO 2941',
+        body: 'ISO 2941 defines the test method for verifying filter element resistance to differential pressure-induced collapse (outside-in flow direction) and burst (inside-out flow direction). The test applies a controlled differential pressure to the element at specified ramp rate and holds at the maximum test pressure. Element failure is defined as permanent deformation exceeding specified limits, or catastrophic structural failure. ISO 2941 specifies test pressures by element type; purchasers typically specify collapse/burst test pressure at 10× the rated working differential pressure or per manufacturer design specification. Return-line hydraulic elements (rated at 0.5–1.0 MPa working Δp) require collapse resistance to 5–10 MPa. Pressure-line elements may require collapse resistance to full system pressure (up to 35 MPa for high-pressure systems). Elements must be tested in the flow direction used in service; collapse and burst limits are not interchangeable.',
+        callout: [
+          { label: 'ISO 2941 test multiplier', value: '10× rated working Δp (typical)' },
+          { label: 'Pressure-line max requirement', value: 'Up to 35 MPa collapse resistance' },
+          { label: 'Return-line typical', value: '0.5–1.0 MPa working Δp' },
+        ],
+      },
+      {
+        heading: 'End-Cap Integrity — ISO 2942',
+        body: 'End-cap bonding failure allows fluid to bypass the filter media entirely without generating differential pressure signal and without activating the bypass valve. The bypass is invisible to all pressure-based monitoring. ISO 2942 defines the element integrity test using pressurised nitrogen or air: the element is sealed, submerged in test fluid, and pressurised to the specified bubble point pressure. Bubble emission indicates a breach in the media, end-cap bond, or outer wrap seal. The test is applicable during manufacturing quality control and as an incoming inspection test for field-purchased elements. End-cap bonding failure mechanisms: thermal cycling (repeated thermal expansion/contraction cycles fatigue the adhesive bond); chemical incompatibility (adhesive dissolution by aggressive synthetic lubricants or fuel additives); mechanical damage (improper handling or installation tool impact). Silicone adhesives used in some elements are not compatible with phosphate ester hydraulic fluids.',
+      },
+      {
+        heading: 'Fluid Compatibility — ISO 2943',
+        body: 'ISO 2943 tests filter element component compatibility with the service fluid. Test protocol: immerse element (or representative samples of each material — media, end-caps, O-rings, adhesives) in service fluid at elevated temperature for a defined exposure period. After exposure, assess: dimensional change of elastomers (volume swell must be within specification); tensile strength retention of media; adhesive bond strength retention. ISO 2943 is particularly relevant for non-standard fluid applications: synthetic esters, polyalphaolefin (PAO) base oils, phosphate ester hydraulic fluids, water-glycol hydraulic fluids, and biodiesel blends (B20–B100). Nitrile (NBR) O-rings are suitable for petroleum-based fluids; fluorocarbon (FKM/Viton) is required for phosphate esters and high-temperature synthetic esters; EPDM is required for water-glycol. Material compatibility must be verified for the specific fluid formulation — fluid additive packages can affect compatibility differently from the base fluid alone.',
+        callout: [
+          { label: 'NBR (nitrile)', value: 'Petroleum oils and fuels' },
+          { label: 'FKM (Viton)', value: 'Phosphate esters, synthetic esters >120°C' },
+          { label: 'EPDM', value: 'Water-glycol hydraulic fluids' },
+        ],
+      },
+      {
+        heading: 'Bypass Valve Engineering',
+        body: 'The bypass valve opens when filter Δp reaches the cracking pressure, allowing unfiltered fluid to bypass the element. Bypass valve function is essential during cold start (high viscosity) and when an element approaches its dirt holding capacity. Bypass valve cracking pressure is selected to: (1) open before element collapse pressure is reached under cold-start conditions; (2) remain closed during normal operating conditions at rated flow and element loading; (3) match the bypass pressure to the downstream system pressure rating. Typical cracking pressures: engine lube oil bypass valves 0.7–1.4 bar; hydraulic return-line bypass valves 2–4 bar; hydraulic pressure-line (where bypass valves are used) 7–10 bar. Bypass valve hysteresis (cracking vs re-seating pressure differential) must be verified — excessive hysteresis means the valve remains open after the cold-start transient, providing no filtration at normal operating temperature. ISO 3968 defines pressure-flow characteristic testing methods applicable to bypass valve performance verification.',
+      },
+      {
+        heading: 'Cold-Start Structural Failure Risk Assessment',
+        body: 'Cold-start presents the highest structural risk to filter elements in lube oil and hydraulic systems. At −20°C, SAE 15W-40 engine oil viscosity is approximately 3,000–5,000 cSt. Flow demand during engine cranking forces this viscous oil through the filter element at high differential pressure. If the bypass valve has inadequate cracking pressure or fails to open promptly, Δp across the element can exceed structural limits within seconds. Structural failure mode in this scenario: element pleats collapse inward, blocking flow, causing catastrophic Δp rise, and then structural breakthrough — contaminating the system with filter media debris. Assessment protocol: verify minimum start temperature vs. oil grade specification (SAE J300 defines minimum start temperature for each viscosity grade); verify bypass valve cracking pressure vs. element collapse pressure; consider pre-heating for arctic or high-altitude applications where oil temperature at start is consistently below SAE J300 minimum.',
+      },
+      {
+        heading: 'Anti-Drainback Valve Function',
+        body: 'Spin-on filter elements mounted vertically (oil draining downward by gravity when engine stops) incorporate anti-drainback valves (ADV) in the filter base. The ADV prevents the oil column from draining back to the sump between shutdown and restart, ensuring the filter housing is oil-filled at start. Without ADV function, the engine experiences momentary oil starvation (0.5–3 seconds depending on pump displacement and priming capacity) at each start — this period correlates with elevated bearing wear detected in oil analysis shortly after engine overhaul. ADV cracking pressure must be low enough to open under the oil head pressure at engine-off conditions (typically 0.02–0.05 bar minimum) and seal against drain-back (checked by inversion test or per ISO 3968). ADV compatibility with oil viscosity: high-viscosity oils may not drain through a partially-open ADV at cold temperatures, preventing oil column drain even with a defective ADV.',
+      },
+      {
+        heading: 'Structural Integrity Specification for Procurement',
+        body: 'Complete filter element structural integrity specification requires: (1) ISO 16889 beta ratio at rated flow and differential pressure; (2) ISO 2941 collapse pressure ≥10× rated working Δp; (3) ISO 2942 element integrity (bubble point) ≥ rated bypass valve cracking pressure; (4) ISO 2943 fluid compatibility at service fluid composition and maximum operating temperature; (5) bypass valve cracking pressure within ±10% of specification at rated temperature and flow; (6) ADV cracking pressure per ISO 3968 and inversion sealing test. Specifying only ISO 16889 efficiency leaves the structural and sealing properties unverified and relies entirely on manufacturer representation. DURATECH™ element architecture targets all six specification points across hydraulic and lubrication application element ranges.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'ISO 2941 collapse test pressure', value: '10× rated working Δp (typical)' },
+      { label: 'Lube oil bypass cracking pressure', value: '0.7–1.4 bar (typical range)' },
+      { label: 'Hydraulic return bypass', value: '2–4 bar cracking pressure' },
+      { label: 'Cold-start SAE 15W-40 at −20°C', value: '~3,000–5,000 cSt' },
+      { label: 'ADV minimum cracking pressure', value: '0.02–0.05 bar' },
+    ],
+    relatedStandards: ['ISO 2941', 'ISO 2942', 'ISO 2943', 'ISO 3968', 'ISO 16889', 'SAE J300'],
+    relatedTechnologies: ['DURATECH™', 'SYNTRAX™', 'NANOFORCE™'],
+    relatedSystems: ['Lubrication Protection', 'Hydraulic Protection'],
+    keywords: [
+      'filter element integrity', 'ISO 2941', 'collapse pressure', 'ISO 2942', 'end-cap integrity',
+      'ISO 2943', 'fluid compatibility', 'bypass valve engineering', 'anti-drainback valve',
+      'cold start filter', 'DURATECH', 'structural integrity', 'ISO 3968',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Oil pressure warning lamp at cold start only — clears within 30–60 seconds of running',
+        'Contamination code spike immediately after filter element replacement',
+        'Oil pressure lamp at normal operating temperature — persistent, not cold-start only',
+        'Catastrophic contamination event (dramatically elevated wear metals across all elements in oil analysis) with no identified mechanical failure',
+        'Filter element visually intact after removal but oil analysis shows fine particle spike',
+      ],
+      probableCauses: [
+        'Cold-start oil pressure lamp: (a) oil grade too viscous for ambient temperature (SAE J300 compliance); (b) bypass valve opening correctly at cold Δp — normal operation; (c) bypass valve stuck open — unfiltered oil bypassing at normal temperature',
+        'Post-replacement contamination spike: installation contamination (tools, handling); end-cap integrity failure on replacement element releasing stored particles',
+        'Persistent oil pressure lamp: bearing clearance wear; oil pump output loss; pressure relief valve stuck open — NOT a filter structural issue; investigate bearings and pump',
+        'Catastrophic contamination: element structural collapse releasing media fibres into oil system; bypass valve failure in open position during extended cold-start load; inspect removed element for structural damage',
+        'Fine particle spike with intact element: end-cap bond failure (ISO 2942 bubble test to verify on removed element)',
+      ],
+      inspectionMethods: [
+        'Removed element ISO 2942 bubble point test: pressurise removed element with air at rated test pressure; submerge in water; bubbles at end-cap confirm bonding failure',
+        'Bypass valve bench test: remove valve, test cracking pressure with calibrated pressure source and flow measurement; compare to specification',
+        'ADV inversion test: fill spin-on filter with clean oil, invert 180°; oil should not drain from base within 5 minutes if ADV is functional',
+        'Cold-start Δp measurement: install Δp gauge across filter; record maximum Δp at cold start; compare to bypass valve cracking pressure and element collapse pressure specification',
+        'Oil analysis ICP for Fe trend — sudden step increase in Fe (≥3× baseline) without elevated wear in other metals may indicate filter media fibre release',
+      ],
+      correctiveActions: [
+        'Confirmed bypass valve stuck open: replace bypass valve assembly; verify cracking pressure before installation; change oil and filter; monitor particle count in first 100 hours',
+        'End-cap integrity failure: remove element; verify with ISO 2942 test; replace with element from different production lot; implement incoming inspection sampling plan',
+        'Element structural collapse confirmed: flush oil system completely; inspect bearings for media fibre damage; replace all filters; retest oil at 20, 50, and 100 hours for wear trend',
+        'Cold-start Δp exceeds bypass cracking pressure regularly: review oil grade specification vs minimum operating temperature per SAE J300; lower viscosity grade for minimum temperature or install engine oil heater',
+        'ADV failure: replace spin-on element with functional ADV; verify correct element specification for vertical mount application',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'Extended drain interval program requires filter element to maintain structural integrity and efficiency beyond standard service intervals',
+        standard: 'ISO 2941 (collapse), ISO 2942 (integrity), ISO 16889 (efficiency throughout drain)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Specify element with verified ISO 2941 collapse resistance ≥10× rated Δp AND verified ISO 16889 efficiency throughout full service interval (not only at clean-element condition); supplement with bypass valve cracking pressure verification at minimum operating temperature; oil analysis at 50% and 100% of extended drain interval',
+        relatedArticles: ['lubrication-system-filtration', 'oil-analysis-methods', 'service-intervals'],
+      },
+      {
+        problem: 'Hydraulic system converting from petroleum-based to phosphate ester fluid — existing elements used in interim',
+        standard: 'ISO 2943 (fluid compatibility), ISO 16889 (efficiency)',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'ISO 2943 compatibility test required for all element materials (media binder, end-cap adhesive, O-ring) in phosphate ester at system operating temperature before extended service; FKM O-rings mandatory; phosphate ester dissolves some nitrile-bonded end-cap adhesives within 500 hours; do not assume petroleum-rated elements are compatible',
+        relatedArticles: ['hydraulic-power-unit-design', 'filter-media-engineering', 'fluid-cleanliness'],
+      },
+      {
+        problem: 'Repeated element collapse events at cold start in arctic operating conditions (ambient −30°C)',
+        standard: 'SAE J300 (viscosity grade minimum start temperature), ISO 2941 (collapse verification)',
+        protectionSystem: 'Lubrication Protection',
+        technology: 'Verify oil grade compliance with SAE J300 minimum pumpability temperature for −30°C ambient; install thermostatically controlled oil heater (engine oil heater) for pre-start warm-up; review bypass valve cracking pressure — increase if required to open before element collapse; consider synthetic base oil (lower pour point, lower cold crank viscosity)',
+        relatedArticles: ['lubrication-system-filtration', 'filter-media-engineering', 'service-intervals'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-DURATECH)',
+      evidenceStatus: 'ISO 2941:2010 verified; ISO 2942:2014 verified; ISO 2943:2010 verified; ISO 3968:2015 verified; bypass valve cracking pressure ranges from SAE J806 and manufacturer engineering data; cold-start viscosity values from SAE J300 viscosity grade specification',
+    },
+  },
+
+  // ── Article 20 ────────────────────────────────────────────────────────────
+  {
+    slug: 'filter-housing-system-integration',
+    title: 'Filter Housing and System Integration Engineering: Mounting, Sealing, and Installation Design',
+    subtitle: 'Filter housing material selection, thread specification, O-ring sealing, bypass valve installation, service access design, and commissioning flushing protocols.',
+    metaDescription: 'Engineering reference for filter housing system integration: housing material selection, ISO 3923 mounting thread specification, O-ring sealing and torque requirements, bypass valve installation, service access engineering, and INTEKCORE™ housing system architecture for industrial filtration applications.',
+    category: 'engineering',
+    readTime: '11 min',
+    intro: 'Filter housing engineering determines whether a correctly-specified filter element delivers its rated performance in service. Incorrect housing material selection, inadequate sealing, improper installation torque, and poor service access design are responsible for a significant proportion of field filtration failures — failures that produce no differential pressure signal and are often misidentified as element performance failures. INTEKCORE™ housing system architecture applies engineered housing solutions across hydraulic, lubrication, fuel, and compressed air filtration domains.',
+    sections: [
+      {
+        heading: 'Housing Material Selection',
+        body: 'Filter housing material must be compatible with the service fluid, operating pressure, temperature range, and environmental exposure. Cast iron: suitable for petroleum-based oils and fuels at temperatures to 120°C; susceptible to corrosion in water-contaminated environments and wet storage; commonly used for engine-mounted lube oil and fuel filter housings. Cast aluminium: lighter weight, higher corrosion resistance for petroleum fluids, temperature to 150°C; lower burst pressure than cast iron at equivalent wall thickness — requires thicker walls at high pressure; not suitable for phosphate ester hydraulic fluids (unless anodised and coated). Stainless steel: required for aggressive chemicals, high-temperature synthetic fluids, marine environments with seawater exposure, and food-processing or pharmaceutical applications; most expensive option. High-strength thermoplastic (nylon 66 glass-filled, acetal): suitable for low-pressure applications (fuel pre-filters, air systems); limited temperature range (typically <120°C continuous); not suitable for hydraulic systems above 10 MPa.',
+        callout: [
+          { label: 'Cast iron service temperature', value: 'To 120°C continuous' },
+          { label: 'Cast aluminium limitation', value: 'Not for phosphate ester (bare)' },
+          { label: 'Stainless — marine/aggressive', value: 'Required for seawater exposure' },
+        ],
+      },
+      {
+        heading: 'Thread Specification and ISO 3923',
+        body: 'Spin-on filter element mounting threads must provide secure attachment under operating pressure, thermal cycling, and vibration. ISO 3923 defines the standard mounting thread for spin-on filter elements: 1–14 UNF-2B (internal thread, housing) and 1–14 UNF-2A (external thread, element base plate). This thread specification is nearly universal for heavy-duty and passenger-vehicle spin-on elements globally. Thread engagement length must provide adequate clamping force at rated installation torque; ISO 3923 specifies minimum thread engagement. Cross-threading risk: installation without alignment (especially in remote or poorly accessible locations) damages both housing and element threads; threaded element guides or captive element designs reduce cross-thread risk. Thread condition inspection at each service: damaged threads in housing require immediate repair (thread insert or housing replacement) before element installation. Do not install elements into damaged threads — risk of element ejection under operating pressure.',
+      },
+      {
+        heading: 'O-Ring Sealing and Installation Torque',
+        body: 'Spin-on filter O-ring sealing between element face gasket and housing seating surface is the primary pressure boundary. O-ring sealing failure mechanisms: (1) inadequate installation torque — face gasket not fully compressed, allowing pressure bleed; (2) over-torque — gasket extrusion past seating surface, creating leak path; (3) dry installation — un-lubricated O-ring tears during compression; (4) double-gasket — previous O-ring not removed before new element installation. Standard installation torque for spin-on filters: after hand-tight contact with housing, apply ¾ turn additional (approximately 20–25 N·m for standard 1-14 UNF thread). Always lubricate O-ring with clean service oil before installation. Cartridge element housings use separate O-rings or quad-rings in machined grooves; torque to housing manufacturer specification and verify O-ring is fully seated in groove before assembly. High-pressure hydraulic housing bolted connections require torque to specification with calibrated torque wrench — not by feel.',
+        callout: [
+          { label: 'Standard spin-on torque', value: 'Hand tight + ¾ turn (≈20–25 N·m)' },
+          { label: 'O-ring lubrication', value: 'Clean service fluid before installation (mandatory)' },
+        ],
+      },
+      {
+        heading: 'Bypass Valve Location and Housing Design',
+        body: 'Bypass valve may be located in the filter housing, in the element base plate (for spin-on filters), or in the filter head (remote mounting). Housing-mounted bypass valves: valve is permanent and not replaced with element service — verify cracking pressure at scheduled intervals (typically every 2,000 hours or at major overhaul). Element-mounted bypass valves (integral to spin-on base plate): replaced with each element service — beneficial as valve cracking pressure is renewed, but valve is not available for separate bench testing. Filter head bypass: used in duplex housings where bypass must direct flow to the second element before bypassing to system return — complex routing requires careful circuit design to ensure unfiltered fluid does not reach system during normal operation. A common design error: installing a bypass valve between filter outlet and tank return (instead of between inlet and outlet of the filter element) — this allows unfiltered fluid to bypass directly to return under high Δp conditions.',
+      },
+      {
+        heading: 'Service Access and Housing Location Engineering',
+        body: 'Poor housing location design is a leading cause of inadequate field maintenance — if element service requires three personnel and two hours of disassembly, service intervals are missed. Service access requirements: (1) minimum 50 mm clearance around element circumference for removal tool access; (2) drain plug or drain port below element mounting face (cartridge housings) to allow drainage before element removal; (3) element orientation to avoid oil spill on electrical components, hot exhaust surfaces, or personnel working below; (4) visibility of differential pressure indicator from normal maintenance position (not requiring mirror or special equipment to read). Hydraulic filter housings with high-pressure connections: isolation valve required upstream to allow element service without full system depressurisation — verify isolation valve holds rated system pressure before element removal. Duplex housing switchover procedure: document and train all maintenance personnel on correct changeover sequence before installation.',
+      },
+      {
+        heading: 'Commissioning Flushing Protocol',
+        body: 'New hydraulic and lube oil systems, and systems following major component overhaul, contain construction-phase contamination (weld slag, pipe scale, machining swarf, assembly lubricants, thread sealant residue) that must be removed before precision components are subjected to system flow. ISO 23309 defines hydraulic system flushing protocol: (1) pre-flush — bypass all sensitive components (servo valves, proportional valves, motors); (2) flush at maximum achievable flow rate with system fluid at operating temperature; (3) monitor particle count per ISO 4406 during flush; (4) flush is complete when target cleanliness code is achieved and maintained for minimum 30-minute stable period; (5) reconnect sensitive components; (6) verify cleanliness code with components connected. Filter housings during commissioning flush: install temporary low-cost high-DHC elements for flushing phase (expect frequent servicing); install rated system elements after cleanliness target is achieved.',
+        callout: [
+          { label: 'ISO 23309 flush completion', value: 'Target ISO 4406 code stable ≥30 min' },
+          { label: 'Sensitive component bypass', value: 'Required during commissioning flush' },
+        ],
+      },
+      {
+        heading: 'Differential Pressure Indicator Types and Calibration',
+        body: 'Differential pressure indicators (Δp indicators) signal when element service is required. Types: (1) visual pop-up pin indicator (mechanical, spring-loaded): pops up when Δp exceeds set point; no electrical interface; low cost; reset manually after element service. (2) Electrical switch (normally-open or normally-closed): activates warning light or controller input at set Δp; verify polarity and voltage rating before wiring. (3) Differential pressure gauge: continuous reading; requires observation; most informative for trending. (4) Electronic Δp transmitter: 4–20 mA or CAN output; integrates with telematics and condition monitoring systems for remote monitoring. Indicator calibration: verify set point against the element rated working Δp and bypass valve cracking pressure — Δp indicator must activate before bypass valve opens. Cold-start lockout: mechanical and electrical Δp indicators must not be read or acted upon during cold-start transient (typically first 5 minutes at ambient temperatures below 0°C); use a time-delay relay or ECU cold-start lockout to prevent nuisance service calls from high-viscosity cold-start Δp.',
+      },
+    ],
+    keyMetrics: [
+      { label: 'Standard spin-on installation torque', value: 'Hand tight + ¾ turn (≈20–25 N·m)' },
+      { label: 'ISO 3923 thread standard', value: '1–14 UNF-2A/B (spin-on elements)' },
+      { label: 'ISO 23309 flush completion criterion', value: 'Target cleanliness stable ≥30 min' },
+      { label: 'Minimum service access clearance', value: '50 mm around element circumference' },
+    ],
+    relatedStandards: ['ISO 3923', 'ISO 3968', 'ISO 2941', 'ISO 23309', 'ISO 4406'],
+    relatedTechnologies: ['INTEKCORE™', 'DURATECH™', 'NANOFORCE™', 'SYNTRAX™'],
+    relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Air Intake Protection'],
+    keywords: [
+      'filter housing engineering', 'INTEKCORE', 'ISO 3923', 'spin-on filter installation',
+      'O-ring sealing', 'bypass valve location', 'commissioning flushing', 'ISO 23309',
+      'differential pressure indicator', 'filter mounting thread', 'housing material selection',
+      'service access design', 'DURATECH',
+    ],
+    fieldDiagnostics: {
+      symptoms: [
+        'Oil or fluid seeping from filter housing base — external seal leak',
+        'Element falls away from housing on first filter service — thread damage',
+        'Differential pressure indicator shows no signal despite contaminated oil analysis',
+        'Element service interval far shorter than specification (excessive contamination ingression)',
+        'System contamination code does not improve after filter service',
+      ],
+      probableCauses: [
+        'Housing base leak: double-gasket (old O-ring not removed); insufficient installation torque; O-ring damaged (not lubricated, or torn during installation); housing thread damage causing misalignment',
+        'Thread damage: cross-threading during installation (no alignment guide); element installed in housing with existing thread damage; incorrect thread specification (wrong element for housing)',
+        'Δp indicator no signal: indicator calibration drift (verify set point against rated Δp); wiring fault (electrical type); indicator bypass path installed incorrectly',
+        'Short element life: contamination ingression rate exceeds design basis (verify ingress prevention at fill points, breathers, shaft seals)',
+        'No code improvement after service: bypass valve open (verify cracking pressure); end-cap integrity failure on new element; housing internal bypass path (manufacturing defect or incorrect assembly)',
+      ],
+      inspectionMethods: [
+        'External leak: clean housing area, run system to operating temperature and pressure, inspect for weeping at housing threads and O-ring land; torque spin-on element to specification if leak is at element face; replace O-ring if leak persists',
+        'Thread condition: remove element, inspect housing thread with thread gauge or calibrated pitch gauge; inspect element base plate thread for cross-thread damage',
+        'Δp indicator calibration: bench test indicator with calibrated pressure source; compare activation point to specification; replace if >±15% deviation',
+        'Bypass valve function: with element removed, verify valve cracking pressure with air pressure source; confirm valve re-seats below cracking pressure; replace if valve is stuck open',
+        'System contamination source: ISO 4406 code trend analysis — if code rises between filter services, contamination ingression rate exceeds filter removal rate; audit all ingress pathways (ISO 11171 particle counter at inlet)',
+      ],
+      correctiveActions: [
+        'Double-gasket: drain system to below filter level, remove element, inspect for two O-rings, remove both, clean seating surface, install new element with single lubricated O-ring to correct torque',
+        'Cross-threaded housing: do not force element onto damaged thread; repair with thread insert (Helicoil equivalent) or replace housing; never use element in damaged housing (ejection risk)',
+        'Bypass valve permanently open: replace valve; change oil and filter; verify oil analysis at 50 hours shows no contamination spike from accumulated system contamination',
+        'Commissioning contamination: implement ISO 23309 flush protocol before connecting precision components; install temporary high-DHC flush elements; replace with rated elements after achieving target cleanliness code',
+        'Poor service access: document location deficiency and escalate to equipment engineering; if interim, establish two-person procedure with defined tool list and sequence; record as maintenance risk for fleet management',
+      ],
+    },
+    decisionMatrix: [
+      {
+        problem: 'New machine installation — filter housing locations have been selected but service intervals are being missed because elements are inaccessible',
+        standard: 'ISO 23309 (system commissioning), ISO 4406 (cleanliness monitoring)',
+        protectionSystem: 'All filtration domains (Housing Systems)',
+        technology: 'Evaluate remote mounting options using hydraulic line extension; assess remote filter head mounting with flexible hose connections to place elements in accessible panel locations; cost of re-routing hoses is almost always less than cost of missed filter services and consequent equipment failures; document revised location in maintenance manual',
+        relatedArticles: ['service-intervals', 'total-cost-of-ownership', 'hydraulic-power-unit-design'],
+      },
+      {
+        problem: 'Hydraulic system requires filter element service without full system depressurisation (production process cannot tolerate shutdown)',
+        standard: 'ISO 4406 (cleanliness), relevant pressure vessel safety regulations',
+        protectionSystem: 'Hydraulic Protection',
+        technology: 'Install duplex (parallel) filter housing with manual or automatic changeover valve; verify changeover valve holds full system pressure with one element isolated; train maintenance personnel on changeover sequence; document sequence on housing placard; verify new element DHC sufficient for full service interval at system ingression rate',
+        relatedArticles: ['hydraulic-power-unit-design', 'particle-ingress-prevention', 'service-intervals'],
+      },
+      {
+        problem: 'Repeated external seal leaks at filter housing on vibrating equipment (engine or compressor mounted)',
+        standard: 'ISO 3923 (thread specification), ISO 3968 (pressure-flow)',
+        protectionSystem: 'Lubrication Protection or Fuel Cleanliness Protection',
+        technology: 'Verify installation torque is to specification (vibration can back-rotate spin-on elements off correct face gasket compression); apply anti-rotation clip or wire lock (if housing has provision) for high-vibration applications; evaluate cartridge element housing conversion (bolted closure is more vibration-resistant than spin-on thread); verify O-ring durometer and compound for operating temperature range',
+        relatedArticles: ['filter-element-integrity', 'lubrication-system-filtration', 'diesel-fuel-filtration'],
+      },
+    ],
+    revisionHistory: {
+      version: '1.0',
+      lastEngineeringReview: '2026-07-05',
+      nextScheduledReview: '2027-01-05',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (TECH-INTEKCORE)',
+      evidenceStatus: 'ISO 3923:2017 verified; ISO 23309:2006 verified; ISO 3968:2015 verified; installation torque range from SAE J806 and ISO 3923; O-ring material compatibility from Parker O-Ring Handbook and ISO 2943 test data; service access clearance from industry maintenance engineering practice',
+    },
+  },
+
 ];
 
 // ─── STANDARDS ────────────────────────────────────────────────────────────────
