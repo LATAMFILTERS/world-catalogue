@@ -38,9 +38,16 @@ graphify-out/
 elimfilters-vault/.obsidian/
 
 # Next.js build output — generated, never commit
-# frontend/out/ is tracked intentionally for Windows local serving
 frontend/.next/
 .next/
+
+# Static export and generated knowledge artifacts
+# These are currently guarded by CI because some are tracked historically.
+# Long-term goal: untrack them in a dedicated cleanup PR.
+frontend/out/
+frontend/public/api/citation/
+elimfilters-vault/00-meta/CITATION_INDEX.json
+frontend/src/lib/jsonld-constants.generated.ts
 
 # Development/investigation scripts — never deploy
 audit_*.js
