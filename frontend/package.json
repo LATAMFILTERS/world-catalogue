@@ -16,6 +16,9 @@
     "validate:vault": "node ../scripts/build-citation-index.js --validate",
     "validate:map": "node ../scripts/build-part-search-map.js --validate",
     "validate:citation-api": "node ../scripts/generate-citation-api.js --validate",
+    "validate:kc": "npx tsx scripts/validate-kc-integrity.ts",
+    "guardian": "bash ../scripts/guardian.sh --skip-build",
+    "guardian:full": "bash ../scripts/guardian.sh",
     "test": "vitest run",
     "test:engine": "vitest run src/lib/decision-engine/__tests__/decision-engine.test.ts",
     "test:engineering": "vitest run src/lib/decision-engine/__tests__/engineering-validation.test.ts"

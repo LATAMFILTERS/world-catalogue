@@ -580,6 +580,27 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
     edrRef: 'EDR-B-001-v1.1',
   },
 
+  // ── Phase 5B Hardening Deposit (2026-07-05) ───────────────────────────────
+
+  {
+    memoryId: 'MEM-2026-07-05-001',
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    entityId: 'TECH-TURBOCORE',
+    entityVersion: '1.0.0',
+    archivedDate: '2026-07-05',
+    archivedReason: 'VERSION_SNAPSHOT',
+    snapshot: {
+      id: 'TECH-TURBOCORE',
+      name: 'TURBOCORE',
+      systemDomain: 'Fuel 3-Stage',
+      primaryStandards: ['ISO 16332', 'ASTM D6304'],
+      engineeringPrincipleIds: ['EP-SEP-003', 'EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
+      componentClasses: 8,
+      maturity: 3,
+    },
+    edrRef: 'EDR-C-012-v1.0',
+  },
+
 ] as const;
 
 // ============================================================================

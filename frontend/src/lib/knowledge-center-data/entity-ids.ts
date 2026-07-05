@@ -86,6 +86,7 @@ export const STANDARD_IDS = {
   'iso-16332':   'STD-ISO-16332',
   'din-71220':   'STD-DIN-71220',
   'din-51524':   'STD-DIN-51524',
+  'sae-j726':    'STD-SAE-J726',
 } as const;
 
 // ── Technology IDs ────────────────────────────────────────────────────────────
@@ -96,6 +97,7 @@ export const TECHNOLOGY_IDS = {
   'nanoforce':   'TECH-NANOFORCE',
   'syntepore':   'TECH-SYNTEPORE',
   'hydrocore':   'TECH-HYDROCORE',
+  'turbocore':   'TECH-TURBOCORE',
   'thermacore':  'TECH-THERMACORE',
   'drycore':     'TECH-DRYCORE',
   'intekcore':   'TECH-INTEKCORE',

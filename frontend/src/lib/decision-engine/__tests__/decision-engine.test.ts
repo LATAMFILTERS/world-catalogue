@@ -106,7 +106,7 @@ describe('PROHIBITED gate', () => {
     }));
 
     expect(result.decisionState).toBe('PROHIBITED');
-    const comp = result.composition as { minimumInformationRequired: string[] };
+    const comp = result.composition as unknown as { minimumInformationRequired: string[] };
     expect(comp.minimumInformationRequired.length).toBeGreaterThan(0);
     expect(comp.minimumInformationRequired.length).toBeLessThanOrEqual(3);
   });
