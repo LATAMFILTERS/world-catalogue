@@ -1136,16 +1136,21 @@ function formatRefs(arr, max = Infinity) {
     if ((!r.brand || r.brand === 'OEM') && codeToBrands[r.code].size > 0) {
       return false;
     }
-    
+
     const finalBrand = r.brand === 'OEM' ? '' : r.brand;
     const key = finalBrand + '|' + r.code;
-    
+
     if (seen.has(key)) return false;
     seen.add(key);
-    
+
     r.brand = finalBrand;
     return true;
-  }).slice(0, max);
+  })
+  // A cross-reference chip with no manufacturer conveys nothing — it's a
+  // bare code, not a "reference" at all. Never render one, even if it's
+  // the only entry for that code (the branch above only catches duplicates).
+  .filter(r => r.brand)
+  .slice(0, max);
 }
 
 // Server pre-classifies oem_codes (equipment makers) and competitor_codes (filter brands).
