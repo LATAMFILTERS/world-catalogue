@@ -47,7 +47,7 @@
       "ISO_5011"
     ]
   },
-  "vault_path": "elimfilters-vault/06-components/TURBOCHARGER_BEARING.md",
+  "vault_path": "elimfilters-vault\\06-components\\TURBOCHARGER_BEARING.md",
   "_links": {
     "self": "/api/citation/TURBOCHARGER_BEARING.json",
     "type_index": "/api/citation/type/component.json",
