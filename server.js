@@ -1424,8 +1424,8 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
       // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
       const digits = mannSku.replace(/\D/g, '');
-      const codigoBase = digits.slice(-4);
-      if (!codigoBase || codigoBase.length < 4) { skipped++; continue; }
+      if (!digits) { skipped++; continue; }
+      const codigoBase = digits.slice(-4).padStart(4, '0');
       const find = await client.query(
         `SELECT id, competitor_codes FROM elimfilters_catalog
          WHERE duty = 'LIGHT_DUTY' AND codigo_base = $1
@@ -1440,11 +1440,16 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       if (toAdd.length === 0) { skipped++; continue; }
 
       const merged = [...existing, ...toAdd];
-      await client.query(
-        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
-        [JSON.stringify(merged), find.rows[0].id]
-      );
-      updated++;
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+          [JSON.stringify(merged), find.rows[0].id]
+        );
+        updated++;
+      } catch (rowErr) {
+        console.error('[update/mann-crossrefs row]', mannSku, rowErr.message);
+        errors++;
+      }
     }
     res.json({ success: true, total: rows.length, updated, skipped, errors });
   } catch (e) {

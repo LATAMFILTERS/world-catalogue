@@ -40,6 +40,7 @@ from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 # ── Paths ──────────────────────────────────────────────────────────────────
 INPUT_CLASSIFIED  = Path(r"C:\mann\mann_classified.jsonl")
 INPUT_OEM_MASTER  = Path(r"C:\mann\mann_oem_master_clean.csv")
+INPUT_GAPS        = Path(r"C:\mann\mann_master_gaps.jsonl")
 OUTPUT_FILE      = Path(r"C:\mann\mann_ld_crossrefs.jsonl")
 PROGRESS_FILE    = Path(r"C:\mann\mann_ld_crossrefs_progress.json")
 
@@ -197,6 +198,24 @@ def load_ld_skus() -> list:
                         seen.add(sku)
                         skus.append(sku)
         log.info(f"LD SKUs cargados desde JSONL (fallback): {len(skus)}")
+
+    # merge in the newly-discovered gap SKUs (scraper_mann_catalog.py output,
+    # enriched by scraper_mann_master.py --from-gaps) so the full ~7,822-SKU
+    # universe gets crossref coverage, not just the original 2,056-SKU subset.
+    if INPUT_GAPS.exists():
+        added = 0
+        with open(INPUT_GAPS, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                rec = json.loads(line)
+                sku = clean_sku(rec.get("sku", ""))
+                if sku and sku not in seen:
+                    seen.add(sku)
+                    skus.append(sku)
+                    added += 1
+        log.info(f"LD SKUs adicionales desde gaps: {added} (total: {len(skus)})")
 
     return skus
 
