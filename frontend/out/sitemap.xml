@@ -663,6 +663,7 @@
 
 
 
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
@@ -839,6 +840,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/compressed-air-quality-verification</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/contamination-control</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -858,6 +865,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/cooling-system-contamination</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/crankcase-ventilation-filtration</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -893,6 +906,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/filter-housing-design</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/filter-housing-system-integration</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -911,7 +930,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/fleet-oil-sampling-protocol</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/fluid-cleanliness</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/hpcr-fuel-system-cleanliness</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -929,6 +960,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/hydraulic-reservoir-design</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/hydraulic-system-flushing</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -936,6 +979,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/iso-11171-particle-counting</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/iso-16889-multipass-test</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1007,6 +1056,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/oil-condition-monitoring</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/particle-ingress-prevention</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -1014,6 +1069,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering/sae-j300-viscosity-classification</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/engineering/sae-j726-iso-5011-air-cleaner-test</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
