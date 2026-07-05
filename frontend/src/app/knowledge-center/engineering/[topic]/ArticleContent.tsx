@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ENGINEERING_ARTICLES, KCArticle } from '@/lib/knowledge-center-data';
+import { KCArticle } from '@/lib/knowledge-center-data';
 import {
   ArticleBreadcrumb,
   ArticleHero,
@@ -12,37 +13,21 @@ import {
   RelatedArticles,
   ArticleSchema,
 } from '@/components/knowledge-center';
+import { getArticleSidebarData } from '@/lib/knowledge-center/navigation-index';
 
-const STD_SLUG_MAP: Record<string, string> = {
-  'ISO 16889': 'iso-16889',
-  'ISO 5011': 'iso-5011',
-  'ISO 4406': 'iso-4406',
-  'NAS 1638': 'nas-1638',
-  'ISO 29463': 'iso-29463',
-  'SAE J1858': 'sae-j1858',
-  'ISO 11171': 'iso-11171',
-  'ISO 8573-1': 'iso-8573-1',
-  'SAE J1539': 'sae-j1539',
-  'ISO 12937': 'iso-12937',
-  'NFPA T2.14': 'nfpa-t2-14',
-  'ISO 11155': 'iso-11155-1',
-  'ISO 11155-1': 'iso-11155-1',
-  'ASTM D6304': 'astm-d6304',
-  'ISO 16332': 'iso-16332',
-  'DIN 71220': 'din-71220',
-  'DIN 51524': 'din-51524',
+const SEVERITY_COLORS: Record<string, string> = {
+  critical: '#ff4444',
+  high:     '#ff8c00',
+  medium:   '#FFF12D',
+  low:      '#44ff88',
 };
 
 export default function ArticleContent({ article }: { article: KCArticle }) {
-  const relatedArticles = ENGINEERING_ARTICLES.filter(
-    (a) => a.slug !== article.slug &&
-    (a.relatedSystems.some((s) => article.relatedSystems.includes(s)) ||
-     a.relatedStandards.some((s) => article.relatedStandards.includes(s)))
-  ).slice(0, 3);
+  const sidebarData = getArticleSidebarData(article.slug);
 
   const sidebar = (
     <>
-      {article.relatedStandards.length > 0 && (
+      {sidebarData.relatedStandards.length > 0 && (
         <div style={{ marginBottom: '1.5rem' }}>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -54,18 +39,18 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             RELEVANT STANDARDS
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {article.relatedStandards.map((std) => (
+            {sidebarData.relatedStandards.map((std) => (
               <ISOStandardCard
-                key={std}
-                code={std}
-                href={STD_SLUG_MAP[std] ? `/knowledge-center/standards/${STD_SLUG_MAP[std]}` : undefined}
+                key={std.permanentId}
+                code={std.code}
+                href={std.slug ? `/knowledge-center/standards/${std.slug}` : undefined}
               />
             ))}
           </div>
         </div>
       )}
 
-      {article.relatedTechnologies.length > 0 && (
+      {sidebarData.relatedTechnologies.length > 0 && (
         <div style={{ marginBottom: '1.5rem' }}>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -77,14 +62,14 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             ELIMFILTERS TECHNOLOGIES
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {article.relatedTechnologies.map((tech) => (
-              <KCTechnologyCard key={tech} name={tech} />
+            {sidebarData.relatedTechnologies.map((tech) => (
+              <KCTechnologyCard key={tech.permanentId} name={tech.name} />
             ))}
           </div>
         </div>
       )}
 
-      {article.relatedSystems.length > 0 && (
+      {sidebarData.relatedSystems.length > 0 && (
         <div style={{ marginBottom: '1.5rem' }}>
           <p style={{
             fontFamily: 'JetBrains Mono, monospace',
@@ -96,16 +81,90 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             PROTECTION SYSTEMS
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {article.relatedSystems.map((sys) => (
-              <div key={sys} style={{
-                border: '1px solid rgba(255,255,255,0.07)',
-                padding: '0.6rem 0.875rem',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.78rem',
-                color: 'rgba(255,255,255,0.5)',
-              }}>
-                {sys}
-              </div>
+            {sidebarData.relatedSystems.map((sys) => (
+              <Link key={sys.permanentId} href={`/knowledge-center/systems/${sys.slug}`} style={{ textDecoration: 'none' }}>
+                <motion.div
+                  whileHover={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,241,45,0.2)' }}
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    padding: '0.6rem 0.875rem',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.78rem',
+                    color: 'rgba(255,255,255,0.5)',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  {sys.title}
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {sidebarData.relatedProblems.length > 0 && (
+        <div style={{ marginBottom: '1.5rem' }}>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.6rem',
+            letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.3)',
+            marginBottom: '0.75rem',
+          }}>
+            RELATED FAILURE MODES
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+            {sidebarData.relatedProblems.map((prob) => (
+              <Link key={prob.permanentId} href={`/knowledge-center/problems/${prob.slug}`} style={{ textDecoration: 'none' }}>
+                <motion.div
+                  whileHover={{ background: 'rgba(255,255,255,0.04)' }}
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    borderLeft: `2px solid ${SEVERITY_COLORS[prob.severity]}`,
+                    padding: '0.5rem 0.75rem',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.75rem',
+                    color: 'rgba(255,255,255,0.5)',
+                    transition: 'background 0.2s',
+                  }}
+                >
+                  {prob.name}
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {sidebarData.relatedArticles.length > 0 && (
+        <div style={{ marginBottom: '1.5rem' }}>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.6rem',
+            letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.3)',
+            marginBottom: '0.75rem',
+          }}>
+            RELATED ARTICLES
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+            {sidebarData.relatedArticles.map((rel) => (
+              <Link key={rel.permanentId} href={`/knowledge-center/engineering/${rel.slug}`} style={{ textDecoration: 'none' }}>
+                <motion.div
+                  whileHover={{ background: 'rgba(255,255,255,0.03)', color: 'rgba(255,255,255,0.65)' }}
+                  style={{
+                    padding: '0.5rem 0.75rem',
+                    borderLeft: '2px solid transparent',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.73rem',
+                    color: 'rgba(255,255,255,0.4)',
+                    lineHeight: 1.4,
+                    transition: 'all 0.15s',
+                  }}
+                >
+                  {rel.title}
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -219,10 +278,10 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
 
         <RelatedArticles
           title="RELATED ENGINEERING TOPICS"
-          items={relatedArticles.map((rel) => ({
+          items={sidebarData.relatedArticles.map((rel) => ({
             title: rel.title,
             href: `/knowledge-center/engineering/${rel.slug}`,
-            description: rel.subtitle,
+            description: rel.category,
           }))}
         />
       </ArticleLayout>

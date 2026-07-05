@@ -664,6 +664,7 @@
 
 
 
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
@@ -1254,10 +1255,58 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/abrasive-wear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/bearing-wear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/cavitation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/filter-collapse</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/fuel-contamination</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/problems</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/silicon-dust-ingestion</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/varnish-formation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/problems/water-ingress</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/search</loc>

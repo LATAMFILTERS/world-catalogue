@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ENGINEERING_ARTICLES, KCStandard } from '@/lib/knowledge-center-data';
+import { KCStandard } from '@/lib/knowledge-center-data';
 import {
   ArticleBreadcrumb,
   ArticleHero,
@@ -11,11 +11,10 @@ import {
   RelatedArticles,
   ArticleSchema,
 } from '@/components/knowledge-center';
+import { getStandardSidebarData } from '@/lib/knowledge-center/navigation-index';
 
 export default function StandardContent({ std }: { std: KCStandard }) {
-  const relatedArticles = ENGINEERING_ARTICLES.filter(
-    (a) => a.relatedStandards.includes(std.code)
-  ).slice(0, 4);
+  const { referencingArticles, relatedStandards: indexRelatedStandards } = getStandardSidebarData(std.slug);
 
   const sidebar = (
     <>
@@ -66,6 +65,53 @@ export default function StandardContent({ std }: { std: KCStandard }) {
                   {topic.replace(/-/g, ' ')} →
                 </motion.div>
               </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {indexRelatedStandards.length > 0 && (
+        <div style={{ marginBottom: '1.5rem' }}>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.6rem',
+            letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.3)',
+            marginBottom: '0.75rem',
+          }}>
+            RELATED STANDARDS
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+            {indexRelatedStandards.map((s) => (
+              s.slug ? (
+                <Link key={s.permanentId} href={`/knowledge-center/standards/${s.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.div
+                    whileHover={{ background: 'rgba(255,241,45,0.06)' }}
+                    style={{
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      padding: '0.6rem 0.875rem',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.7rem',
+                      fontWeight: 700,
+                      color: '#FFF12D',
+                      transition: 'background 0.2s',
+                    }}
+                  >
+                    {s.code}
+                  </motion.div>
+                </Link>
+              ) : (
+                <div key={s.permanentId} style={{
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  padding: '0.6rem 0.875rem',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  color: 'rgba(255,241,45,0.7)',
+                }}>
+                  {s.code}
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -200,7 +246,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
 
         <RelatedArticles
           title={`ENGINEERING ARTICLES REFERENCING ${std.code}`}
-          items={relatedArticles.map((art) => ({
+          items={referencingArticles.slice(0, 6).map((art) => ({
             title: art.title,
             href: `/knowledge-center/engineering/${art.slug}`,
             meta: `${art.readTime} read`,
