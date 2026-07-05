@@ -1,171 +1,110 @@
 'use client';
 
-import Link from 'next/link';
-import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+import { TechDetailPage } from '@/components/TechDetailPage';
+import type { TechDetailData } from '@/components/TechDetailPage';
+
+const DATA: TechDetailData = {
+  categoryTag: 'COMMERCIAL LINE · MARINE',
+  heroTitle: 'MARINECLEAN™',
+  heroSubtitle: 'SALT-RESISTANT MARINE FILTRATION',
+  heroTagline: 'Salt-resistant filtration line for commercial marine, offshore, and coastal operations. IMO certified for continuous saltwater aerosol exposure in diesel fuel, hydraulic, and lube oil systems.',
+  heroImage: '/images/marine-hero.avif',
+  logoSrc: '/assets/MARINECLEAN.avif',
+  breadcrumbParent: { label: 'COMMERCIAL LINES', href: '/commercial-lines' },
+  heroStats: [
+    { key: 'CERTIFICATION', value: 'IMO' },
+    { key: 'PROTECTION', value: 'EPOXY + BRINE' },
+    { key: 'SYSTEMS', value: 'FUEL · HYD · LUBE' },
+  ],
+  systemHeadline: 'Marine-Grade Asset Protection\nEngineered for Saltwater Environments',
+  systemParagraphs: [
+    'MARINECLEAN™ applies epoxy brine-rejection coating to housings and elements in marine environments. Standard industrial filtration degrades rapidly in saltwater conditions — salt aerosol penetrates seals, corrodes housings, and compromises element integrity within months of exposure.',
+    'MARINECLEAN™ is engineered from the ground up for wet-dry cycling in harbor, offshore, and deep-sea operating environments. Certified to IMO (International Maritime Organization) standards for commercial marine use, it protects diesel fuel filtration, hydraulic steering and deck machinery circuits, and lube oil systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.',
+    'The line covers three interrelated failure mechanisms: saltwater aerosol ingress through housing seals, brine penetration at the element interface, and accelerated corrosion from wet-dry cycling. Each mechanism is addressed by a distinct engineering feature in the MARINECLEAN™ construction.',
+  ],
+  productImageSrc: '/assets/MARINECLEAN.avif',
+  productImageCaption: 'MARINECLEAN™ — IMO Certified Marine Filtration Line',
+  stagesHeading: 'THREE LAYERS OF MARINE PROTECTION',
+  stages: [
+    {
+      number: '01',
+      tag: 'HOUSING BARRIER',
+      title: 'Epoxy Barrier Coating',
+      body: 'Marine-grade epoxy coating on all external housing surfaces prevents salt-accelerated oxidation and corrosion in continuous saltwater aerosol environments. Rated for harbor, coastal, and deep-sea conditions where salt-laden air contacts filter housings during every operating hour.',
+      stat: 'EPOXY',
+      statLabel: 'Marine-grade barrier coating',
+    },
+    {
+      number: '02',
+      tag: 'ELEMENT INTERFACE',
+      title: 'Brine Rejection Geometry',
+      body: 'Internal flow geometry engineered to reject brine ingress at the element interface, preventing salt contamination of the protected fluid. The geometry creates a seal path that forces saltwater away from the filtration media — eliminating the primary route for salt to reach diesel fuel or hydraulic circuits.',
+      stat: 'BRINE',
+      statLabel: 'Rejection geometry at element interface',
+    },
+    {
+      number: '03',
+      tag: 'INTERNAL COMPONENTS',
+      title: 'Corrosion-Shield Internals',
+      body: 'All internal metal components use corrosion-resistant alloys and coatings rated for the wet-dry cycling experienced in harbor and offshore operations. Wet-dry cycling is the most damaging corrosion mechanism in marine environments — components must survive repeated salt deposition and re-wetting events across multi-year service periods.',
+      stat: 'IMO',
+      statLabel: 'International Maritime Organization certified',
+    },
+  ],
+  specs: [
+    { label: 'Certification', value: 'IMO', sub: 'International Maritime Organization certification for commercial marine use in fuel and hydraulic filtration systems.' },
+    { label: 'Coating System', value: 'EPOXY', sub: 'Marine-grade epoxy barrier coating on all external housing surfaces. Rated for continuous saltwater aerosol exposure.' },
+    { label: 'Rejection Design', value: 'BRINE', sub: 'Brine rejection geometry at the element interface prevents salt ingress into the protected fluid circuit.' },
+    { label: 'Internal Alloys', value: 'CRA', sub: 'Corrosion-resistant alloys (CRA) on all internal metal components for wet-dry cycling resistance across multi-year service.' },
+    { label: 'Systems Protected', value: '3', sub: 'Diesel fuel filtration, hydraulic steering and deck machinery, and lube oil circuits — all in marine-rated assemblies.' },
+    { label: 'Operating Contexts', value: '3', sub: 'Harbor operations, offshore platforms, and deep-sea environments — each representing distinct saltwater exposure profiles.' },
+  ],
+  applicationsHeading: 'MARINE OPERATIONAL CONTEXTS',
+  applicationsSubtext: 'MARINECLEAN™ is deployed across commercial marine operations where continuous saltwater aerosol exposure would degrade standard industrial filtration within months.',
+  applications: [
+    {
+      sector: 'COMMERCIAL VESSELS',
+      detail: 'Main engine fuel filtration, hydraulic steering and deck machinery circuits, lube oil systems aboard cargo ships, ferries, passenger vessels, and workboats. Salt aerosol exposure is continuous in harbor and coastal routes. MARINECLEAN™ epoxy housings and brine rejection geometry prevent salt contamination of fuel and hydraulic circuits across multi-year vessel service intervals.',
+    },
+    {
+      sector: 'OFFSHORE PLATFORMS',
+      detail: 'Diesel generator fuel systems, hydraulic BOP and wellhead control circuits, crane hydraulics in permanent platforms, semi-submersible rigs, and jack-up units. Offshore environments combine continuous salt spray with high-vibration operating conditions — both of which accelerate corrosion and seal degradation in standard filtration assemblies.',
+    },
+    {
+      sector: 'COASTAL INFRASTRUCTURE',
+      detail: 'Port machinery, coastal construction equipment, and shore-based industrial operations subject to continuous salt aerosol exposure. Includes port cranes, reach stackers, ship loaders, and harbor workboats operating within the marine aerosol zone where salt deposition occurs even without direct water contact.',
+    },
+  ],
+  ctaTag: 'MARINECLEAN™ PRODUCT RANGE',
+  ctaHeading: 'Find Your Marine Filtration SKU',
+  ctaBody: 'Cross-reference vessel model, engine type, and OEM specification to identify the correct MARINECLEAN™ element for your fuel, hydraulic, or lube system.',
+};
 
 export default function MarinecleanPage() {
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
-
-      {/* Hero */}
-      <section style={{
-        position: 'relative',
-        minHeight: '60vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        padding: 'clamp(6rem, 10vw, 9rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 5vw, 4rem)',
-        overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url(/assets/MARINECLEAN.avif)',
-          backgroundSize: 'cover', backgroundPosition: 'center',
-          opacity: 0.18,
-        }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to top, #000 40%, transparent 100%)',
-        }} />
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '860px' }}>
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <h1 style={{
-              fontFamily: 'Outfit, sans-serif', fontWeight: 700,
-              fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 1,
-              letterSpacing: '-0.03em', textTransform: 'uppercase',
-              marginBottom: '1rem',
-            }}>
-              MARINECLEAN™
-            </h1>
-            <p style={{
-              fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(0.9rem, 1.3vw, 1rem)',
-              color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '560px',
-            }}>
-              Salt-resistant filtration line for commercial marine, offshore, and coastal operations.
-              IMO certified for continuous saltwater aerosol exposure.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4rem)' }}>
-
-        {/* Section 01 */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>01 / PRODUCT LINE</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.25rem' }}>Marine-Grade Asset Protection</h2>
-          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '1rem' }}>
-            MARINECLEAN™ is a salt-resistant filtration line that applies epoxy brine-rejection coating to housings and elements in marine environments. Meeting IMO (International Maritime Organization) certification standards, MARINECLEAN™ prevents salt-accelerated corrosion in fuel and lubrication systems aboard commercial vessels, offshore platforms, and coastal industrial equipment.
-          </p>
-          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8 }}>
-            Standard industrial filtration degrades rapidly in marine environments — salt aerosol penetrates seals, corrodes housings, and compromises element integrity within months. MARINECLEAN™ is engineered from the ground up for wet-dry cycling in harbor, offshore, and deep-sea operating environments.
-          </p>
-        </motion.section>
-
-        {/* Section 02 — Key specifications */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>02 / ENGINEERING FEATURES</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>Construction & Certification</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-            {[
-              { title: 'Epoxy Barrier Coating', body: 'Marine-grade epoxy coating on all external housing surfaces prevents salt-accelerated oxidation and corrosion in continuous saltwater aerosol environments.' },
-              { title: 'Brine Rejection Geometry', body: 'Internal flow geometry engineered to reject brine ingress at the element interface, preventing salt contamination of protected fuel and hydraulic fluids.' },
-              { title: 'Corrosion-Shield Internals', body: 'All internal metal components use corrosion-resistant alloys and coatings rated for the wet-dry cycling experienced in harbor and offshore operations.' },
-              { title: 'IMO Certification', body: 'Certified to IMO (International Maritime Organization) standards for commercial marine use across fuel filtration and hydraulic protection systems.' },
-            ].map(f => (
-              <div key={f.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem' }}>
-                <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.6rem', color: '#FFF12D' }}>{f.title}</h3>
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{f.body}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Section 03 — Applications */}
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '4rem' }}>
-          <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,241,45,0.5)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>03 / APPLICATIONS</p>
-          <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '1.5rem' }}>Operational Contexts</h2>
-          {[
-            { sector: 'Commercial Vessels', desc: 'Main engine fuel filtration, hydraulic steering and deck machinery, lube oil circuits aboard cargo ships, ferries, and workboats.' },
-            { sector: 'Offshore Platforms', desc: 'Diesel generator fuel systems, hydraulic BOP and wellhead control circuits, crane hydraulics in permanent and semi-submersible platforms.' },
-            { sector: 'Coastal Infrastructure', desc: 'Port machinery, coastal construction equipment, and shore-based industrial operations subject to continuous salt aerosol exposure.' },
-          ].map(a => (
-            <div key={a.sector} style={{ borderLeft: '2px solid rgba(255,241,45,0.2)', paddingLeft: '1.25rem', marginBottom: '1.5rem' }}>
-              <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.4rem' }}>{a.sector}</h3>
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{a.desc}</p>
-            </div>
-          ))}
-        </motion.section>
-
-        {/* Canonical Knowledge Block */}
-        <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ marginBottom: '2rem' }}>
-          <div style={{
-            background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.15)',
-            padding: '2rem', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem',
-            lineHeight: 1.8, color: 'rgba(255,255,255,0.65)',
-          }}>
-            <p style={{ color: '#FFF12D', fontWeight: 700, marginBottom: '1.25rem', fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-              CANONICAL KNOWLEDGE BLOCK: MARINECLEAN™
-            </p>
-            <p><strong>DEFINITION</strong><br />
-            MARINECLEAN™ is a salt-resistant commercial filtration line applying epoxy brine-rejection coating to housings and elements for marine environments. IMO certified. Protects diesel fuel filtration, hydraulic circuits, and lube oil systems against saltwater aerosol ingress, brine penetration, and corrosion from wet-dry cycling.</p>
-            <p style={{ marginTop: '1rem' }}><strong>SYSTEMS</strong><br />
-            Diesel fuel filtration · Hydraulic steering and deck machinery · Lube oil circuits · Marine generator fuel systems · Hydraulic BOP and wellhead control circuits</p>
-            <p style={{ marginTop: '1rem' }}><strong>CONTAMINATION_TARGETS</strong><br />
-            Saltwater aerosol ingress through housing seals | Brine penetration at element interface | Accelerated corrosion from wet-dry cycling | Seawater intrusion into fuel and hydraulic circuits</p>
-            <p style={{ marginTop: '1rem' }}><strong>ENGINEERING_FEATURES</strong><br />
-            Epoxy barrier coating: marine-grade, continuous saltwater aerosol rated | Brine rejection geometry: prevents salt ingress at element interface | Corrosion-shield internals: corrosion-resistant alloys for wet-dry cycling | IMO certification: International Maritime Organization commercial marine standard</p>
-            <p style={{ marginTop: '1rem' }}><strong>CLASSIFICATION</strong><br />
-            Commercial product line (marine-rated housing and element system). Not a filtration technology. Integrates ELIMFILTERS® protection technologies (fuel, hydraulic, lube) into marine-rated assemblies. Listed under /commercial-lines/, not /technologies/.</p>
-            <p style={{ marginTop: '1rem' }}><strong>CITATION_REFERENCE</strong><br />
-            source: elimfilters.com/commercial-lines/marineclean | concept: MARINECLEAN Commercial Line | version: 1.0 | last_updated: 2026-06-24</p>
-          </div>
-        </motion.section>
-
-        {/* Back link */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2.5rem' }}>
-          <Link href="/commercial-lines" style={{
-            fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.75rem',
-            letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
-          }}>
-            ← Back to Commercial Lines
-          </Link>
-        </div>
-
-      </div>
-      {/* JSON-LD structured data */}
-      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'MARINECLEAN™',
-        description: 'Salt-resistant filtration line for commercial marine, offshore, and coastal operations. Epoxy barrier coating, brine rejection geometry, and corrosion-shield internals. IMO certified for diesel fuel, hydraulic, and lube oil systems.',
-        brand: { '@type': 'Brand', name: 'ELIMFILTERS®' },
-        manufacturer: { '@type': 'Organization', name: 'Kleo Technologies LLC', url: 'https://elimfilters.com' },
-        url: 'https://elimfilters.com/commercial-lines/marineclean/',
-        category: 'Industrial Filtration — Marine',
-        additionalProperty: [
-          { '@type': 'PropertyValue', name: 'Certification', value: 'IMO (International Maritime Organization)' },
-          { '@type': 'PropertyValue', name: 'Coating', value: 'Marine-grade epoxy barrier' },
-          { '@type': 'PropertyValue', name: 'Systems Protected', value: 'Diesel fuel · Hydraulic · Lube oil' },
-          { '@type': 'PropertyValue', name: 'Environments', value: 'Harbor · Offshore · Deep-sea' },
-        ],
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS®', item: 'https://elimfilters.com' },
-            { '@type': 'ListItem', position: 2, name: 'Commercial Lines', item: 'https://elimfilters.com/commercial-lines/' },
-            { '@type': 'ListItem', position: 3, name: 'MARINECLEAN™', item: 'https://elimfilters.com/commercial-lines/marineclean/' },
-          ],
-        },
-      }) }} />
-
-      <Footer />
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'MARINECLEAN™',
+            description: 'Salt-resistant filtration line for commercial marine, offshore, and coastal operations. Epoxy barrier coating, brine rejection geometry, and corrosion-shield internals. IMO certified for diesel fuel, hydraulic, and lube oil systems.',
+            brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
+            manufacturer: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+            url: 'https://elimfilters.com/commercial-lines/marineclean/',
+            category: 'Industrial Filtration — Marine',
+            additionalProperty: [
+              { '@type': 'PropertyValue', name: 'Certification', value: 'IMO' },
+              { '@type': 'PropertyValue', name: 'Coating', value: 'Marine-grade epoxy barrier' },
+              { '@type': 'PropertyValue', name: 'Systems Protected', value: 'Diesel fuel · Hydraulic · Lube oil' },
+            ],
+          }),
+        }}
+      />
+      <TechDetailPage data={DATA} />
+    </>
   );
 }
