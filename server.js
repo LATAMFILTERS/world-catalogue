@@ -501,6 +501,12 @@ function parseRefs(arr){
   // this shape, the entry is spec-table noise, not a genuine cross-reference.
   const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|UN|UNF|KG|LB)\b/i;
 
+  // A real manufacturer name always contains at least one letter (Caterpillar,
+  // 3M, SKF...). Some scraped rows pair two part numbers together (e.g.
+  // {manufacturer: "23518480", code: "23527033"} — a related/alternate code
+  // relationship, not a cross-reference brand) with no company name at all.
+  const HAS_LETTER = /[A-Za-z]/;
+
   const seen = new Set();
 
   return arr
@@ -511,6 +517,7 @@ function parseRefs(arr){
     .filter(r => r.manufacturer && r.code)
     .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
     .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
+    .filter(r => HAS_LETTER.test(r.manufacturer))
     .filter(r => {
       const k = (r.manufacturer + '|' + r.code).toUpperCase();
       if (seen.has(k)) return false;
