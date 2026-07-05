@@ -25,3 +25,5 @@ jobs:
     - run: node tests/autocomplete.test.js
 
     - run: npm run build
+
+    - run: node tests/search.test.js
