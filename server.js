@@ -503,7 +503,8 @@ function parseRefs(arr){
     'SPECIFICATION',
     'DOWNLOADSPECS',
     'HYDROSTATIC BURST MINIMUM',
-    'USES SERVICE PART'
+    'USES SERVICE PART',
+    'REPLACES'
   ]);
 
   // A real manufacturer name or reference code never looks like a physical
@@ -535,11 +536,26 @@ function parseRefs(arr){
 
   const seen = new Set();
 
+  // Real reference codes are almost always alphanumeric (they contain a
+  // digit); real manufacturer names almost always contain a digit-free
+  // brand word. When scraped rows get their two fields scrambled the wrong
+  // way around — e.g. {manufacturer: "TL2FSO", code: "SANDVIK"} — swapping
+  // them recovers the genuine cross-reference instead of discarding it.
+  function unswap(r) {
+    const codeHasDigit = /\d/.test(r.code);
+    const manuHasDigit = /\d/.test(r.manufacturer);
+    if (!codeHasDigit && manuHasDigit && r.code.length >= 3 && HAS_LETTER.test(r.code)) {
+      return { manufacturer: r.code, code: r.manufacturer };
+    }
+    return r;
+  }
+
   return arr
     .map(item => ({
       manufacturer: fixMojibake(String(item.manufacturer || item.brand || '').trim()),
       code: fixMojibake(String(item.code || '').trim())
     }))
+    .map(unswap)
     .filter(r => r.manufacturer && r.code)
     .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
     .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
