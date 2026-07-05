@@ -130,6 +130,68 @@ export const INDUSTRY_IDS = {
   'waste-municipal':  'IND-WASTE-MUNICIPAL',
 } as const;
 
+// ── Term IDs ──────────────────────────────────────────────────────────────────
+
+export const TERM_IDS = {
+  // Filtration Performance
+  'beta-ratio':                    'TERM-BETA-RATIO',
+  'absolute-efficiency':           'TERM-ABSOLUTE-EFFICIENCY',
+  'nominal-efficiency':            'TERM-NOMINAL-EFFICIENCY',
+  'multi-pass-test':               'TERM-MULTI-PASS-TEST',
+  'gravimetric-efficiency':        'TERM-GRAVIMETRIC-EFFICIENCY',
+  'differential-pressure':         'TERM-DIFFERENTIAL-PRESSURE',
+  'filter-bypass-valve':           'TERM-FILTER-BYPASS-VALVE',
+  'element-collapse':              'TERM-ELEMENT-COLLAPSE',
+  // Fluid Cleanliness
+  'iso-cleanliness-code':          'TERM-ISO-CLEANLINESS-CODE',
+  'particle-count':                'TERM-PARTICLE-COUNT',
+  'nas-cleanliness-code':          'TERM-NAS-CLEANLINESS-CODE',
+  'contamination-ingression-rate': 'TERM-CONTAMINATION-INGRESSION-RATE',
+  'test-dust':                     'TERM-TEST-DUST',
+  'oil-condition-monitoring':      'TERM-OIL-CONDITION-MONITORING',
+  // Air Intake
+  'restriction':                   'TERM-RESTRICTION',
+  'dust-holding-capacity':         'TERM-DUST-HOLDING-CAPACITY',
+  'progressive-density-gradient':  'TERM-PROGRESSIVE-DENSITY-GRADIENT',
+  'cyclonic-separation':           'TERM-CYCLONIC-SEPARATION',
+  'ingress-protection':            'TERM-INGRESS-PROTECTION',
+  'service-interval':              'TERM-SERVICE-INTERVAL',
+  // Contamination
+  'abrasive-wear':                 'TERM-ABRASIVE-WEAR',
+  'adhesive-wear':                 'TERM-ADHESIVE-WEAR',
+  'silica':                        'TERM-SILICA',
+  'aeration':                      'TERM-AERATION',
+  'particle-size-distribution':    'TERM-PARTICLE-SIZE-DISTRIBUTION',
+  // Hydraulic Systems
+  'servo-valve':                   'TERM-SERVO-VALVE',
+  'proportional-valve':            'TERM-PROPORTIONAL-VALVE',
+  'cavitation':                    'TERM-CAVITATION',
+  'bypass-filtration':             'TERM-BYPASS-FILTRATION',
+  'full-flow-filtration':          'TERM-FULL-FLOW-FILTRATION',
+  // Lubrication
+  'bearing-clearance':             'TERM-BEARING-CLEARANCE',
+  'viscosity':                     'TERM-VISCOSITY',
+  'viscosity-index':               'TERM-VISCOSITY-INDEX',
+  'total-base-number':             'TERM-TOTAL-BASE-NUMBER',
+  // Chemical Degradation
+  'varnish':                       'TERM-VARNISH',
+  'oxidative-degradation':         'TERM-OXIDATIVE-DEGRADATION',
+  'thermal-degradation':           'TERM-THERMAL-DEGRADATION',
+  'total-acid-number':             'TERM-TOTAL-ACID-NUMBER',
+  'soot':                          'TERM-SOOT',
+  // Water & Fuel
+  'water-ingress':                 'TERM-WATER-INGRESS',
+  'karl-fischer-titration':        'TERM-KARL-FISCHER-TITRATION',
+  'hpcr':                          'TERM-HPCR',
+  'injector-stiction':             'TERM-INJECTOR-STICTION',
+  'coalescing':                    'TERM-COALESCING',
+  'microbial-contamination':       'TERM-MICROBIAL-CONTAMINATION',
+  // Filter Media
+  'depth-filtration':              'TERM-DEPTH-FILTRATION',
+  'surface-filtration':            'TERM-SURFACE-FILTRATION',
+  'synthetic-media':               'TERM-SYNTHETIC-MEDIA',
+} as const;
+
 // ── Lookup helpers ─────────────────────────────────────────────────────────────
 
 export function getArticleId(slug: string): string | undefined {
@@ -150,4 +212,8 @@ export function getSystemId(slug: string): string | undefined {
 
 export function getIndustryId(slug: string): string | undefined {
   return (INDUSTRY_IDS as Record<string, string>)[slug];
+}
+
+export function getTermId(slug: string): string | undefined {
+  return (TERM_IDS as Record<string, string>)[slug];
 }

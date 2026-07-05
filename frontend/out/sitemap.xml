@@ -665,6 +665,7 @@
 
 
 
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/engineering-reference/air-cleanliness</loc>
@@ -1117,7 +1118,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/abrasive-wear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/absolute-efficiency</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/adhesive-wear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/aeration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/bearing-clearance</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1129,7 +1154,79 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/bypass-filtration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/cavitation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/coalescing</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/contamination-ingression-rate</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/cyclonic-separation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/depth-filtration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/differential-pressure</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/dust-holding-capacity</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/element-collapse</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/filter-bypass-valve</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/full-flow-filtration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/gravimetric-efficiency</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/hpcr</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1141,7 +1238,43 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/ingress-protection</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/injector-stiction</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/iso-cleanliness-code</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/karl-fischer-titration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/microbial-contamination</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/multi-pass-test</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/nas-cleanliness-code</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1153,7 +1286,37 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/oil-condition-monitoring</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/oxidative-degradation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/particle-count</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/particle-size-distribution</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/progressive-density-gradient</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/proportional-valve</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1165,13 +1328,79 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/service-interval</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/servo-valve</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/silica</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/soot</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/surface-filtration</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/synthetic-media</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/test-dust</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/thermal-degradation</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/total-acid-number</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/total-base-number</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/varnish</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/viscosity-index</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/glossary/viscosity</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

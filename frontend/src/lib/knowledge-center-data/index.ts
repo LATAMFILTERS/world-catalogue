@@ -27,11 +27,13 @@ export {
   TECHNOLOGY_IDS,
   SYSTEM_IDS,
   INDUSTRY_IDS,
+  TERM_IDS,
   getArticleId,
   getStandardId,
   getTechnologyId,
   getSystemId,
   getIndustryId,
+  getTermId,
 } from './entity-ids';
 
 // ── Data Registries ───────────────────────────────────────────────────────────
@@ -40,3 +42,4 @@ export { KC_STANDARDS } from './standards-registry';
 export { KC_TECHNOLOGIES } from './technologies-registry';
 export { KC_SYSTEMS, KC_SYSTEM_DETAILS } from './systems-registry';
 export { KC_INDUSTRIES, KC_INDUSTRY_DETAILS } from './industries-registry';
+export { GLOSSARY_REGISTRY } from './glossary-registry';
