@@ -1,4 +1,4 @@
-/**
+﻿/**
  * build-competitor-matrix.js
  *
  * Phase 1: Scrape oilfilter-crossreference.com for all P-numbers found in
@@ -22,26 +22,46 @@ const path  = require('path');
 
 const DRY_RUN       = process.argv.includes('--dry');
 const DELAY_MS      = 2500;
-const MATRIX_FILE   = path.join(__dirname, 'competitor_matrix.json');
-const SOURCE_FILES  = ['donaldson_lube_results.json', 'donaldson_fuel_results.json'];
 
-// ─── Collect all unique P-numbers from local JSON files ──────────────────────
+const DOMAIN_MAP = {
+  air: "https://www.airfilter-crossreference.com/convert/DONALDSON/",
+  "air-intake": "https://www.airfilter-crossreference.com/convert/DONALDSON/",
+  cabin: "https://www.airfilter-crossreference.com/convert/DONALDSON/",
+  fuel: "https://www.fuelfilter-crossreference.com/convert/DONALDSON/",
+  "fuel-separator": "https://www.fuelfilter-crossreference.com/convert/DONALDSON/",
+  lube: "https://www.oilfilter-crossreference.com/convert/DONALDSON/",
+  hydraulic: "https://www.oilfilter-crossreference.com/convert/DONALDSON/",
+  coolant: "https://www.oilfilter-crossreference.com/convert/DONALDSON/",
+  "air-dryer": "https://www.oilfilter-crossreference.com/convert/DONALDSON/",
+  turbine: "https://www.oilfilter-crossreference.com/convert/DONALDSON/"
+};
+
+const MATRIX_FILE   = path.join(__dirname, 'competitor_matrix.json');
+const SOURCE_FILES = fs
+  .readdirSync(__dirname)
+  .filter(f => /^donaldson_.*_results\.json$/i.test(f))
+  .sort();
+
+// â”€â”€â”€ Collect all unique P-numbers from local JSON files â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function collectPNumbers() {
-  const pnums = new Set();
+  const pnums = [];
   for (const f of SOURCE_FILES) {
+  const category = path.basename(f)
+    .replace(/^donaldson_/, "")
+    .replace(/_results\.json$/i, "");
     const fpath = path.join(__dirname, f);
     if (!fs.existsSync(fpath)) { console.warn(`  WARN: ${f} not found, skipping`); continue; }
     const data = JSON.parse(fs.readFileSync(fpath, 'utf8'));
     for (const item of data) {
       for (const p of (item.alternatives || [])) {
-        if (/^P[0-9]/.test(p)) pnums.add(p);
+        if (typeof p === "string" && p.trim().length >= 3) pnums.push({ category, part: p.trim().toUpperCase() });
       }
     }
   }
-  return [...pnums].sort();
+  return pnums.sort((a,b)=>a.part.localeCompare(b.part));
 }
 
-// ─── Load / save matrix ───────────────────────────────────────────────────────
+// â”€â”€â”€ Load / save matrix â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function loadMatrix() {
   try { return JSON.parse(fs.readFileSync(MATRIX_FILE, 'utf8')); }
   catch { return {}; }
@@ -50,7 +70,7 @@ function saveMatrix(matrix) {
   fs.writeFileSync(MATRIX_FILE, JSON.stringify(matrix, null, 2));
 }
 
-// ─── HTTP fetch with redirect follow ─────────────────────────────────────────
+// â”€â”€â”€ HTTP fetch with redirect follow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function fetch(url, redirectsLeft = 5) {
   return new Promise((resolve, reject) => {
     const mod  = url.startsWith('https') ? https : http;
@@ -73,7 +93,7 @@ function fetch(url, redirectsLeft = 5) {
   });
 }
 
-// ─── HTML parser ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ HTML parser â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function parseCrossRefs(html) {
   const refs = [];
   const seen = new Set();
@@ -101,19 +121,19 @@ function parseCrossRefs(html) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ─── Main ─────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function run() {
-  console.log('\n═══════════════════════════════════════════════════════════');
+  console.log('\nâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
   console.log('  BUILD competitor matrix from oilfilter-crossreference.com');
   console.log(`  Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`);
-  console.log('═══════════════════════════════════════════════════════════\n');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n');
 
   const allPNumbers = collectPNumbers();
   console.log(`P-numbers found in source files: ${allPNumbers.length}`);
 
   const matrix = loadMatrix();
   const done   = new Set(Object.keys(matrix));
-  const pending = allPNumbers.filter(p => !done.has(p));
+  const pending = allPNumbers.filter(x => !done.has(x.part));
 
   console.log(`Already fetched : ${done.size}`);
   console.log(`Remaining       : ${pending.length}\n`);
@@ -127,21 +147,21 @@ async function run() {
   let fetched = 0, noData = 0, errors = 0;
 
   for (let i = 0; i < pending.length; i++) {
-    const pnum   = pending[i];
-    const prefix = `[${i+1}/${pending.length}] ${pnum}`;
+    const { category, part: pnum } = pending[i];
+    const prefix = `[${i+1}/${pending.length}] ${category}:${pnum}`;
 
     if (DRY_RUN) {
-      console.log(`${prefix} → https://www.oilfilter-crossreference.com/convert/DONALDSON/${pnum}`);
+      console.log(`${prefix} â†’ ${DOMAIN_MAP[category] || DOMAIN_MAP.lube}${pnum}`);
       matrix[pnum] = [];
       continue;
     }
 
     try {
-      const url = `https://www.oilfilter-crossreference.com/convert/DONALDSON/${encodeURIComponent(pnum)}`;
+      const url = `${DOMAIN_MAP[category] || DOMAIN_MAP.lube}${encodeURIComponent(pnum)}`;
       const { status, body } = await fetch(url);
 
       if (status === 404 || status === 410) {
-        console.log(`${prefix} → not found (${status})`);
+        console.log(`${prefix} â†’ not found (${status})`);
         matrix[pnum] = [];
         noData++;
         saveMatrix(matrix);
@@ -150,7 +170,7 @@ async function run() {
       }
 
       if (status !== 200) {
-        console.warn(`${prefix} → HTTP ${status}, retry next run`);
+        console.warn(`${prefix} â†’ HTTP ${status}, retry next run`);
         errors++;
         if (i < pending.length - 1) await sleep(DELAY_MS);
         continue;
@@ -161,29 +181,38 @@ async function run() {
       saveMatrix(matrix);
 
       if (refs.length > 0) {
-        console.log(`${prefix} → ${refs.length} refs: ${refs.slice(0,3).map(r => r.manufacturer+':'+r.code).join(', ')}${refs.length > 3 ? '...' : ''}`);
+        console.log(`${prefix} â†’ ${refs.length} refs: ${refs.slice(0,3).map(r => r.manufacturer+':'+r.code).join(', ')}${refs.length > 3 ? '...' : ''}`);
         fetched++;
       } else {
-        console.log(`${prefix} → page OK, 0 refs`);
+        console.log(`${prefix} â†’ page OK, 0 refs`);
         noData++;
       }
 
     } catch (err) {
-      console.error(`${prefix} → ERROR: ${err.message}`);
+      console.error(`${prefix} â†’ ERROR: ${err.message}`);
       errors++;
     }
 
     if (i < pending.length - 1) await sleep(DELAY_MS);
   }
 
-  console.log('\n═══════════════════════════════════════════════════════════');
+  console.log('\nâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
   console.log('  MATRIX BUILD COMPLETE');
   console.log(`  With refs : ${fetched}`);
   console.log(`  No data   : ${noData}`);
   console.log(`  Errors    : ${errors} (retry next run)`);
   console.log(`  Matrix file: scripts/competitor_matrix.json`);
-  console.log('═══════════════════════════════════════════════════════════\n');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n');
   console.log('Next step: node scripts/apply-competitor-matrix.js');
 }
 
 run().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+
+
+
+
+
+
+
+
+
