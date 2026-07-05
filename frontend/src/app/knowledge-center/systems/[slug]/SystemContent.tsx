@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { KC_SYSTEMS, KC_SYSTEM_DETAILS, KC_TECHNOLOGIES, KCSystemDetail } from '@/lib/knowledge-center-data';
+import { getSystemSidebarData } from '@/lib/knowledge-center/navigation-index';
 
 type KCSystem = typeof KC_SYSTEMS[number];
 
@@ -32,6 +33,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
   );
 
   const otherSystems = KC_SYSTEMS.filter((s) => s.slug !== system.slug);
+  const { referencingArticles } = getSystemSidebarData(system.slug);
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -331,7 +333,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
             </div>
           )}
 
-          <div>
+          <div style={{ marginBottom: referencingArticles.length > 0 ? '1.5rem' : 0 }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
               OTHER SYSTEMS
             </p>
@@ -349,6 +351,34 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               ))}
             </div>
           </div>
+
+          {referencingArticles.length > 0 && (
+            <div>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
+                ENGINEERING ARTICLES
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                {referencingArticles.slice(0, 6).map((a) => (
+                  <Link key={a.permanentId} href={`/knowledge-center/engineering/${a.slug}`} style={{ textDecoration: 'none' }}>
+                    <motion.div
+                      whileHover={{ background: 'rgba(255,255,255,0.03)', color: 'rgba(255,255,255,0.65)' }}
+                      style={{
+                        padding: '0.5rem 0.75rem',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '0.73rem',
+                        color: 'rgba(255,255,255,0.4)',
+                        lineHeight: 1.4,
+                        borderLeft: '2px solid transparent',
+                        transition: 'all 0.15s',
+                      }}
+                    >
+                      {a.title}
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </aside>
       </div>
 

@@ -123,6 +123,7 @@ export interface ProblemStub {
   category: ProblemCategory;
   severity: 'critical' | 'high' | 'medium' | 'low';
   status: EntityStatus;
+  relatedSystems?: string[];
 }
 
 export const PROBLEM_STUBS: ProblemStub[] = [
@@ -133,7 +134,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Abrasive Wear',
     category: 'mechanical-wear',
     severity: 'critical',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['lubrication-protection', 'hydraulic-protection', 'air-intake-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.ADHESIVE_WEAR,
@@ -142,6 +144,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'mechanical-wear',
     severity: 'high',
     status: 'draft',
+    relatedSystems: ['lubrication-protection', 'hydraulic-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.BEARING_WEAR,
@@ -149,7 +152,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Bearing Wear',
     category: 'mechanical-wear',
     severity: 'critical',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['lubrication-protection', 'hydraulic-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.INJECTOR_WEAR,
@@ -158,6 +162,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'mechanical-wear',
     severity: 'high',
     status: 'draft',
+    relatedSystems: ['fuel-cleanliness-protection'],
   },
   // Contamination (4)
   {
@@ -166,7 +171,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Silicon Dust Ingestion',
     category: 'contamination',
     severity: 'critical',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['air-intake-protection', 'lubrication-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.WATER_INGRESS,
@@ -174,7 +180,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Water Ingress',
     category: 'contamination',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['fuel-cleanliness-protection', 'lubrication-protection', 'hydraulic-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.FUEL_CONTAMINATION,
@@ -182,7 +189,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Fuel Contamination',
     category: 'contamination',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['fuel-cleanliness-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.AIR_RESTRICTION,
@@ -191,6 +199,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'contamination',
     severity: 'high',
     status: 'draft',
+    relatedSystems: ['air-intake-protection'],
   },
   // Structural Failure (4)
   {
@@ -199,7 +208,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Cavitation',
     category: 'structural-failure',
     severity: 'critical',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['hydraulic-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.PUMP_FAILURE,
@@ -208,6 +218,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'structural-failure',
     severity: 'critical',
     status: 'draft',
+    relatedSystems: ['hydraulic-protection', 'lubrication-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.FILTER_COLLAPSE,
@@ -215,7 +226,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Filter Collapse',
     category: 'structural-failure',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['hydraulic-protection', 'lubrication-protection', 'air-intake-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.MEDIA_FATIGUE,
@@ -224,6 +236,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'structural-failure',
     severity: 'medium',
     status: 'draft',
+    relatedSystems: ['hydraulic-protection', 'lubrication-protection'],
   },
   // Chemical Degradation (2)
   {
@@ -232,7 +245,8 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Varnish Formation',
     category: 'chemical-degradation',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
+    relatedSystems: ['lubrication-protection', 'hydraulic-protection'],
   },
   {
     id: CANONICAL_PROBLEM_IDS.OXIDATION,
@@ -241,6 +255,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'chemical-degradation',
     severity: 'medium',
     status: 'draft',
+    relatedSystems: ['lubrication-protection'],
   },
   // Biological (1)
   {
@@ -250,6 +265,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     category: 'biological',
     severity: 'medium',
     status: 'draft',
+    relatedSystems: ['fuel-cleanliness-protection'],
   },
 ];
 

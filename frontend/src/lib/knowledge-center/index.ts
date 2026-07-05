@@ -66,3 +66,27 @@ export {
   termIdToSlug,
   slugToTermId,
 } from './article-registry';
+
+// Navigation Index (Phase 5A)
+export type {
+  SidebarStandard,
+  SidebarTechnology,
+  SidebarSystem,
+  SidebarProblem,
+  SidebarArticle,
+  KCSidebarData,
+  StandardSidebarData,
+  StandardSidebarArticle,
+  TechSidebarArticle,
+  TechSidebarData,
+  SystemSidebarData,
+} from './navigation-index';
+
+export {
+  KC_GRAPH_METADATA,
+  getArticleSidebarData,
+  getStandardSidebarData,
+  getTechSidebarData,
+  getSystemSidebarData,
+  getGraphStats,
+} from './navigation-index';
