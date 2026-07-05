@@ -1061,20 +1061,24 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const validDuty = dutyParam === 'HEAVY_DUTY' || dutyParam === 'HD' ? 'HEAVY_DUTY'
       : dutyParam === 'LIGHT_DUTY' || dutyParam === 'LD' ? 'LIGHT_DUTY'
       : null;
-    const dutyClause = validDuty ? ' AND duty = $2' : '';
+    const dutyClause = validDuty ? ' AND c.duty = $2' : '';
     const dutyArgs = validDuty ? [validDuty] : [];
 
     // 2. OEM / competitor cross-reference (exact match)
     const oem = await client.query(
-      `SELECT * FROM elimfilters_catalog
+      `SELECT c.* FROM elimfilters_catalog c
+       LEFT JOIN search_result_priority p
+         ON p.sku = c.sku
+        AND UPPER(REPLACE(p.query_code,'-','')) = $1
        WHERE (EXISTS (
-         SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
+         SELECT 1 FROM jsonb_array_elements(c.oem_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
        )
        OR EXISTS (
-         SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
+         SELECT 1 FROM jsonb_array_elements(c.competitor_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
        ))${dutyClause}
+       ORDER BY COALESCE(p.priority, 0) DESC, c.sku
        LIMIT 20`,
       [q, ...dutyArgs]
     );
@@ -1091,15 +1095,19 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     // 2b. OEM / competitor prefix match (e.g. PH3387 matches PH3387A, PH3387AAZ)
     if (q.length >= 4) {
       const prefix = await client.query(
-        `SELECT * FROM elimfilters_catalog
+        `SELECT c.* FROM elimfilters_catalog c
+         LEFT JOIN search_result_priority p
+           ON p.sku = c.sku
+          AND UPPER(REPLACE(p.query_code,'-','')) = REPLACE($1, '%', '')
          WHERE (EXISTS (
-           SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
+           SELECT 1 FROM jsonb_array_elements(c.oem_codes) AS ref
            WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
          )
          OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
+           SELECT 1 FROM jsonb_array_elements(c.competitor_codes) AS ref
            WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
          ))${dutyClause}
+         ORDER BY COALESCE(p.priority, 0) DESC, c.sku
          LIMIT 20`,
         [q + '%', ...dutyArgs]
       );
