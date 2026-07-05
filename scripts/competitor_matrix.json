@@ -18704,5 +18704,3109 @@
   "P610905": [],
   "P611858": [],
   "P611859": [],
-  "P616648": []
+  "P616648": [],
+  "P616742": [],
+  "P621983": [],
+  "P625128": [],
+  "P625287": [],
+  "P627122": [],
+  "P638061": [],
+  "P638062": [],
+  "P643144": [],
+  "P643145": [],
+  "P645114": [],
+  "P762921": [],
+  "P763016": [],
+  "P763529": [],
+  "P763577": [],
+  "P764737": [],
+  "P766756": [],
+  "P766811": [],
+  "P766813": [],
+  "P766847": [],
+  "P766959": [],
+  "P766987": [],
+  "P767010": [],
+  "P767011": [],
+  "P767012": [],
+  "P767084": [],
+  "P767104": [],
+  "P767106": [],
+  "P767128": [],
+  "P767129": [],
+  "P767130": [],
+  "P767131": [],
+  "P771003": [],
+  "P771520": [],
+  "P771523": [
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 210.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 230TI.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 260.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 260.19,C 280.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 260.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 260.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 280.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 290.19,C 300.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 290.19/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "C C 290.26,C 300.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "FR1 FR1"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "R 312"
+    }
+  ],
+  "P771529": [],
+  "P771549": [],
+  "P772520": [],
+  "P772523": [],
+  "P772529": [],
+  "P777868": [
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 1142 ACB"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 1142 ACX"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 935 FDB"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 935 FDE"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 935 FTB"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 935 FTE"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 938 EDB"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 938 EDE"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 938 ETB"
+    },
+    {
+      "manufacturer": "BMC",
+      "code": "PROFESSIONAL 938 ETE"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "A-SERIES A25D"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "A-SERIES A30D"
+    }
+  ],
+  "P780522": [],
+  "P780622": [
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 10 P 210"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 10 P 240"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 12 P 210"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 12 P 240"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 12 P 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 12 P 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 13 P 210, 13 KP 210"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 13 P 240, 13 KP 240"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 13 P 250, 13 KP 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 13 P 280, 13 KP 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 14 P 210, 14 KP 210"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 14 P 240, 14 KP 240"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 14 P 250, 14 KP 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 14 P 280, 14 KP 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 16 P 210, 16 KP 210"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 16 P 240, 16 KP 240"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 16 P 250, 16 KP 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 16 P 280, 16 KP 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 250, 18 P 250 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 280, 18 P 280 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 320"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 P 320, 18 P 320 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 T 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 18 T 320"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 25 P 250 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 25 P 280 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 25 P 320 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 250"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 250, 26 P 250 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 280"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 280, 26 P 280 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 320"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "D-SERIE 26 P 320, 26 P 320 LOW"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.08/B,150.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.09/B,150.09/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.10/B,150.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.12/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12/B, 180.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.08/B, 220.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.09/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.10/B, 220.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.12/C, 220.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.13/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.13/C, 220.13/C, 220.13/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.14/C, 220.14/C, 220.14/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.15/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.16/C, 220.16/C, 22.16/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.14"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.18/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.13/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.14/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.15/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.16/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.16/CT"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.13/C, 270.13/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.14/C, 270.14/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.16/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.16/C, 270.16/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.18/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 210.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 210.18D, 220.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 270.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.16D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.16T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.18D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.19D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.24D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.18D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.19D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.19D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.24D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 420.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 420.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 320.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.18,400.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.18T,400.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.19,400.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.19T,400.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.24,400.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.24T,400.24T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.26,400.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-22"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 280-22"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 280-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 240-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 250-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 250-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 280-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-18"
+    }
+  ],
+  "P781039": [],
+  "P781098": [],
+  "P781176": [],
+  "P781398": [
+    {
+      "manufacturer": "VOLVO",
+      "code": "A-SERIES A35D"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "A-SERIES A40D"
+    }
+  ],
+  "P781740": [
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/330"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/330"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 L/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 L/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 /G420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 /G260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/300"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/300"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 L/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 C/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 C/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 G/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 G/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 L/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 L/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 C/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 C/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 L/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 230, P 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 270, P 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 270, P 270, R 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 310, P 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, P 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, P 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 360, P 360, R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 380, P 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 380, P 380, R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 400, P 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, P 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, P 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 440, R 440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470, P 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 480, R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 480, R 480, P 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 230, R 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 270, R 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 280"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 310, R 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 320"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 360, R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380, R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380, R380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 420, G 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 480, R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES T 470"
+    }
+  ],
+  "P782106": [],
+  "P783554": [],
+  "P785520": [
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/330"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 C/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/330"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 G/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 L/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 114 L/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 /G420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 C/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 G/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 124 L/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 /G260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/300"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 C/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/300"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 D/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 G/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES 94 L/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 C/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 C/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 G/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 G/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 L/340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 114 L/380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 C/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 G/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 124 L/470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 C/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 C/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/220"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/260"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 G/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "4 - SERIES T 94 L/310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 230, P 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 270, P 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 270, P 270, R 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 310, P 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, P 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, P 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 360, P 360, R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 380, P 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 380, P 380, R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 400, P 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, P 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, P 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 440, R 440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470, P 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 480, R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES G 480, R 480, P 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 230, R 230"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 270, R 270"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 280"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 310, R 310"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 320"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 340, R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 360, R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380, R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 380, R380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 400, R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 420, G 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 420, R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 470, R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES P 480, R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 340"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 360"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 380"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 400"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 420"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 440"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 470"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES R 480"
+    },
+    {
+      "manufacturer": "SCANIA",
+      "code": "P,G,R,T - SERIES T 470"
+    }
+  ],
+  "P785522": [
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 390.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 430.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 470.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM AE 560.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 440.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 440.18 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 440.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 440.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 440.26 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 480.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 480.18 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 480.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 480.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 12 480.26 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 440.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 460.18 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 460.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 460.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 460.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 460.26 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 480.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 480.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 500.18 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 500.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 500.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 500.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 500.26 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 520.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 520.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 520.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 520.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM DXI 13 520.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 400.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 440.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MAGNUM E.TECH 480.26T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.08/B,150.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.09/B,150.09/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 135.10/B,150.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 150.12/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 160.08"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 160.10"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 160.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 180.12/B, 180.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 190.08"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 190.10"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 190.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 190.13"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 190.14"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.08/B, 220.08/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.09/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.10/B, 220.10/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.12/C, 220.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.13/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.13/C, 220.13/C, 220.13/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.14/C, 220.14/C, 220.14/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.15/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 210.16/C, 220.16/C, 22.16/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.08"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.10"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.13"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.14"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 220.18/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 240.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 240.13"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 240.14"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 240.15"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 240.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.13/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.14/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.15/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.16/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 250.16/CT"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.12/C"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.13/C, 270.13/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.14/C, 270.14/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.16/B"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.16/C, 270.16/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 270.18/D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 280.12"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 280.13"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 280.14"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 280.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "MIDLUM 280.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 240.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 270.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 310.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 310.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 340.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 340.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 340.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 370.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 370.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 380.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 380.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 380.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 410.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 410.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 430.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 430.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 430.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 450.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 DISTRIBUTION 460.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 270.18, LANDER 270.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 310.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 310.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 340.18, LANDER 340.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 340.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 380.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 380.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 380.32"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 430.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 430.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 430.32"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 440.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 440.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 440.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 440.32"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 460.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 460.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 LANDER 460.32"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 330.18 T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 380.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 380.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 380.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 410.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 410.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 410.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 410.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 410.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 430.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 430.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 430.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 450.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 450.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 450.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 450.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 450.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 460.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM 2 ROUTE 460.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 210.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 210.18D, 220.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 250.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 260.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 270.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.16D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.16T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.18D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.19D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 300.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.18 D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.24D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 320.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.18D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.19D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.19D/T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 340.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.24D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 370.26D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 420.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM DISTRIBUTION 420.18D"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.16"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 300.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 320.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 340.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 370.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.18,400.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.18T,400.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.19,400.19"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.19T,400.19T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.24,400.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.24T,400.24T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 385.26,400.26"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.18"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.18T"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.24"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.25"
+    },
+    {
+      "manufacturer": "RENAULT TRUCKS",
+      "code": "PREMIUM ROUTE 420.26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-22"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE FE 240-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 240-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 320-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FE II FE 320-26"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 260-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL II FL 290-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 240-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-15"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 260-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 280-18"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-12"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-14"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-16"
+    },
+    {
+      "manufacturer": "VOLVO",
+      "code": "FL III FL 290-18"
+    }
+  ],
+  "P821575": [],
+  "P822686": [],
+  "P822768": [],
+  "P822769": [],
+  "P827653": [],
+  "P828889": [],
+  "P831424": [],
+  "P831520": [],
+  "P920683": [],
+  "P920711": [],
+  "P951372": [],
+  "P954925": [],
+  "P954970": [],
+  "P959142": [],
+  "P959163": [],
+  "P959195": [],
+  "X006244": [],
+  "X006247": [],
+  "X006253": [],
+  "X011398": [],
+  "X011724": [],
+  "X011861": [],
+  "X011872": [],
+  "X770683": [],
+  "X770684": [],
+  "X770685": [],
+  "X770686": [],
+  "X770687": [],
+  "X770688": [],
+  "X770689": [],
+  "X770690": [],
+  "X770691": [],
+  "X770692": [],
+  "X770693": []
 }
