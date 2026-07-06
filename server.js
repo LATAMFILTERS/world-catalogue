@@ -380,6 +380,22 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
+// ─── A: Real-time Learning Loop ───────────────────────────────────────────────
+// Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
+// function after every cross-reference resolution. Non-blocking — errors are
+// logged but never propagate to the API response.
+async function recordLearning(manufacturer, status) {
+  if (!manufacturer || !status) return;
+  try {
+    await pool.query(
+      'SELECT record_resolution($1, $2)',
+      [String(manufacturer).toUpperCase().trim(), status]
+    );
+  } catch (e) {
+    console.error('[learning]', e.message);
+  }
+}
+
 // ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
 let _redis = null;
 if (process.env.REDIS_URL) {
@@ -1064,61 +1080,100 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const dutyClause = validDuty ? ' AND c.duty = $2' : '';
     const dutyArgs = validDuty ? [validDuty] : [];
 
-    // 2. OEM / competitor cross-reference (exact match)
-    const oem = await client.query(
-      `SELECT c.*, COALESCE(p.priority, 0) AS search_priority FROM elimfilters_catalog c
-       LEFT JOIN search_result_priority p
-         ON p.sku = c.sku
-        AND UPPER(REPLACE(p.query_code,'-','')) = $1
-       WHERE (EXISTS (
-         SELECT 1 FROM jsonb_array_elements(c.oem_codes) AS ref
-         WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
-       )
-       OR EXISTS (
-         SELECT 1 FROM jsonb_array_elements(c.competitor_codes) AS ref
-         WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
-       ))${dutyClause}
-       ORDER BY COALESCE(p.priority, 0) DESC, c.sku
+    // 2. C: Cross-reference exact match via v_api_resolver_v5 (adaptive scoring)
+    const xrefResult = await client.query(
+      `SELECT DISTINCT ON (v.sku)
+         c.*,
+         v.status       AS resolver_status,
+         v.score        AS resolver_score,
+         v.manufacturer AS resolver_manufacturer
+       FROM v_api_resolver_v5 v
+       JOIN elimfilters_catalog c ON c.sku = v.sku
+       WHERE v.code = $1
+       ${validDuty ? 'AND c.duty = $2' : ''}
+       ORDER BY v.sku, v.score DESC
        LIMIT 20`,
       [q, ...dutyArgs]
     );
-    if (oem.rows.length > 0) {
-      if (!validDuty && !oem.rows.some(r => Number(r.search_priority) > 0)) {
-        const mixed = await handleMixedDuty(oem.rows, lang, client);
+    if (xrefResult.rows.length > 0) {
+      const xrows = xrefResult.rows;
+
+      // B: Multi-SKU AMBIGUOUS detection — multiple distinct SKUs at equal top score
+      const topScore = Math.max(...xrows.map(r => parseFloat(r.resolver_score) || 0));
+      const topSkus  = [...new Set(
+        xrows
+          .filter(r => (parseFloat(r.resolver_score) || 0) >= topScore * 0.90)
+          .map(r => r.sku)
+      )];
+      if (topSkus.length > 1) {
+        xrows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({
+          success: true,
+          resolution: 'AMBIGUOUS',
+          results: [],
+          candidates: topSkus,
+          message: `Code ${raw} matches ${topSkus.length} products with equal priority. Provide duty or manufacturer to resolve.`,
+          source: 'xref_ambiguous',
+        });
+      }
+
+      // Single/top resolution — standard flow
+      if (!validDuty) {
+        const mixed = await handleMixedDuty(xrows, lang, client);
         if (mixed) return res.json(mixed);
       }
-      const products = oem.rows.slice(0, 10).map(r => buildFilterData(r, lang));
+      const products = xrows.slice(0, 10).map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
-      return res.json({ success: true, results: products, source: 'oem_crossref' });
+      xrows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+      return res.json({ success: true, results: products, source: 'xref_v5', resolution: 'RESOLVED' });
     }
 
-    // 2b. OEM / competitor prefix match (e.g. PH3387 matches PH3387A, PH3387AAZ)
+    // 2b. C: Cross-reference prefix match via v_api_resolver_v5
     if (q.length >= 4) {
-      const prefix = await client.query(
-        `SELECT c.*, COALESCE(p.priority, 0) AS search_priority FROM elimfilters_catalog c
-         LEFT JOIN search_result_priority p
-           ON p.sku = c.sku
-          AND UPPER(REPLACE(p.query_code,'-','')) = REPLACE($1, '%', '')
-         WHERE (EXISTS (
-           SELECT 1 FROM jsonb_array_elements(c.oem_codes) AS ref
-           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(c.competitor_codes) AS ref
-           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
-         ))${dutyClause}
-         ORDER BY COALESCE(p.priority, 0) DESC, c.sku
+      const prefixResult = await client.query(
+        `SELECT DISTINCT ON (v.sku)
+           c.*,
+           v.status       AS resolver_status,
+           v.score        AS resolver_score,
+           v.manufacturer AS resolver_manufacturer
+         FROM v_api_resolver_v5 v
+         JOIN elimfilters_catalog c ON c.sku = v.sku
+         WHERE v.code LIKE $1
+         ${validDuty ? 'AND c.duty = $2' : ''}
+         ORDER BY v.sku, v.score DESC
          LIMIT 20`,
         [q + '%', ...dutyArgs]
       );
-      if (prefix.rows.length > 0) {
-        if (!validDuty && !prefix.rows.some(r => Number(r.search_priority) > 0)) {
-          const mixed = await handleMixedDuty(prefix.rows, lang, client);
+      if (prefixResult.rows.length > 0) {
+        const prows = prefixResult.rows;
+
+        // B: Ambiguous detection for prefix results
+        const pTopScore = Math.max(...prows.map(r => parseFloat(r.resolver_score) || 0));
+        const pTopSkus  = [...new Set(
+          prows
+            .filter(r => (parseFloat(r.resolver_score) || 0) >= pTopScore * 0.90)
+            .map(r => r.sku)
+        )];
+        if (pTopSkus.length > 1) {
+          prows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+          return res.json({
+            success: true,
+            resolution: 'AMBIGUOUS',
+            results: [],
+            candidates: pTopSkus,
+            message: `Code ${raw} (prefix) matches ${pTopSkus.length} products with equal priority.`,
+            source: 'xref_prefix_ambiguous',
+          });
+        }
+
+        if (!validDuty) {
+          const mixed = await handleMixedDuty(prows, lang, client);
           if (mixed) return res.json(mixed);
         }
-        const products = prefix.rows.slice(0, 10).map(r => buildFilterData(r, lang));
+        const products = prows.slice(0, 10).map(r => buildFilterData(r, lang));
         await enrichAlternatives(products, client);
-        return res.json({ success: true, results: products, source: 'oem_prefix' });
+        prows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({ success: true, results: products, source: 'xref_prefix_v5', resolution: 'RESOLVED' });
       }
     }
 
