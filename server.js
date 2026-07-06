@@ -63,6 +63,103 @@ app.use((req, res, next) => {
   next();
 });
 
+// ─── SEO/GEO Redirects (knowledge-system -> knowledge-center) ───────────────────
+// Maps legacy routes to new structures. Covers trailing slashes and retains query parameters.
+const LEGACY_REDIRECTS = {
+  '/knowledge-system': '/knowledge-center',
+  '/knowledge-system/': '/knowledge-center/',
+  '/knowledge-system/index': '/knowledge-center',
+  '/knowledge-system/index/': '/knowledge-center/',
+  '/knowledge-system/science': '/knowledge-center/engineering',
+  '/knowledge-system/science/': '/knowledge-center/engineering/',
+
+  '/knowledge-system/standards': '/knowledge-center/standards',
+  '/knowledge-system/standards/': '/knowledge-center/standards/',
+  '/knowledge-system/standards/lube-oil-systems': '/knowledge-center/systems/lubrication-protection',
+  '/knowledge-system/standards/lube-oil-systems/': '/knowledge-center/systems/lubrication-protection/',
+  '/knowledge-system/standards/hydraulic-systems': '/knowledge-center/systems/hydraulic-protection',
+  '/knowledge-system/standards/hydraulic-systems/': '/knowledge-center/systems/hydraulic-protection/',
+  '/knowledge-system/standards/air-intake-systems': '/knowledge-center/systems/air-intake-protection',
+  '/knowledge-system/standards/air-intake-systems/': '/knowledge-center/systems/air-intake-protection/',
+  '/knowledge-system/standards/fuel-systems': '/knowledge-center/systems/fuel-cleanliness-protection',
+  '/knowledge-system/standards/fuel-systems/': '/knowledge-center/systems/fuel-cleanliness-protection/',
+  '/knowledge-system/standards/cabin-safety-systems': '/knowledge-center/systems/cabin-air-protection',
+  '/knowledge-system/standards/cabin-safety-systems/': '/knowledge-center/systems/cabin-air-protection/',
+  '/knowledge-system/standards/compressed-air-systems': '/knowledge-center/standards/iso-8573-1',
+  '/knowledge-system/standards/compressed-air-systems/': '/knowledge-center/standards/iso-8573-1/',
+  '/knowledge-system/standards/iso-16889': '/knowledge-center/standards/iso-16889',
+  '/knowledge-system/standards/iso-16889/': '/knowledge-center/standards/iso-16889/',
+  '/knowledge-system/standards/iso-4406': '/knowledge-center/standards/iso-4406',
+  '/knowledge-system/standards/iso-4406/': '/knowledge-center/standards/iso-4406/',
+  '/knowledge-system/standards/iso-5011': '/knowledge-center/standards/iso-5011',
+  '/knowledge-system/standards/iso-5011/': '/knowledge-center/standards/iso-5011/',
+
+  '/knowledge-system/contamination': '/knowledge-center/engineering',
+  '/knowledge-system/contamination/': '/knowledge-center/engineering/',
+  '/knowledge-system/contamination/hydraulic-system': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/hydraulic-system/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/particle-wear': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/particle-wear/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/diesel-water': '/knowledge-center/engineering/fluid-cleanliness',
+  '/knowledge-system/contamination/diesel-water/': '/knowledge-center/engineering/fluid-cleanliness/',
+  '/knowledge-system/contamination/varnish-formation': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/varnish-formation/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/fuel-injector-wear': '/knowledge-center/engineering/fluid-cleanliness',
+  '/knowledge-system/contamination/fuel-injector-wear/': '/knowledge-center/engineering/fluid-cleanliness/',
+  '/knowledge-system/contamination/compressed-air-contamination': '/knowledge-center/standards/iso-8573-1',
+  '/knowledge-system/contamination/compressed-air-contamination/': '/knowledge-center/standards/iso-8573-1/',
+  '/knowledge-system/contamination/coolant-contamination': '/knowledge-center/systems/cooling-system-protection',
+  '/knowledge-system/contamination/coolant-contamination/': '/knowledge-center/systems/cooling-system-protection/',
+
+  '/knowledge-system/fleet': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/reducing-downtime': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/reducing-downtime/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/fuel-efficiency': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/fuel-efficiency/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership',
+  '/knowledge-system/fleet/total-cost-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/',
+  '/knowledge-system/fleet/roi-calculator': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/roi-calculator/': '/knowledge-center/technical-library/',
+
+  '/knowledge-system/bridges': '/knowledge-center',
+  '/knowledge-system/bridges/': '/knowledge-center/',
+  '/knowledge-system/bridges/industrial-filtration': '/knowledge-center',
+  '/knowledge-system/bridges/industrial-filtration/': '/knowledge-center/',
+  '/knowledge-system/bridges/aftermarket-selection': '/knowledge-center',
+  '/knowledge-system/bridges/aftermarket-selection/': '/knowledge-center/',
+  '/knowledge-system/bridges/fleet-solutions': '/knowledge-center/technical-library',
+  '/knowledge-system/bridges/fleet-solutions/': '/knowledge-center/technical-library/',
+  '/knowledge-system/bridges/oem-replacement': '/knowledge-center',
+  '/knowledge-system/bridges/oem-replacement/': '/knowledge-center/',
+
+  '/knowledge-system/compare': '/knowledge-center',
+  '/knowledge-system/compare/': '/knowledge-center/',
+  '/knowledge-system/compare/evaluation-framework': '/knowledge-center/technical-library',
+  '/knowledge-system/compare/evaluation-framework/': '/knowledge-center/technical-library/',
+  '/knowledge-system/compare/oem-comparison': '/knowledge-center',
+  '/knowledge-system/compare/oem-comparison/': '/knowledge-center/',
+  '/knowledge-system/compare/system-vs-commodity': '/knowledge-center',
+  '/knowledge-system/compare/system-vs-commodity/': '/knowledge-center/',
+  '/knowledge-system/compare/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership',
+  '/knowledge-system/compare/total-cost-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/'
+};
+
+app.use((req, res, next) => {
+  const path = req.path;
+  if (path.startsWith('/knowledge-system')) {
+    const target = LEGACY_REDIRECTS[path];
+    const queryString = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : '';
+    if (target) {
+      return res.redirect(301, target + queryString);
+    }
+    // Fallback: regex replace first occurrence of /knowledge-system with /knowledge-center
+    const wildcardTarget = path.replace(/^\/knowledge-system/, '/knowledge-center');
+    return res.redirect(301, wildcardTarget + queryString);
+  }
+  next();
+});
+
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
