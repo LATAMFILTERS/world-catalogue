@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/automotive",
+          "source_url": "elimfilters.com/knowledge-center/industries/automotive",
           "concept": "Automotive Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -64,7 +64,7 @@
             "FUEL_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/AUTOMOTIVE.md"
+        "vault_path": "elimfilters-vault\\02-industries\\AUTOMOTIVE.md"
       }
     },
     {
@@ -88,7 +88,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Engine Oil Contamination — Lube Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -135,7 +135,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -159,7 +159,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Particle Wear in Engines",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -185,7 +185,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -210,7 +210,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/syntrax",
+          "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
           "concept": "SYNTRAX Full-Flow Lube Protection",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -247,7 +247,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
       }
     }
   ],

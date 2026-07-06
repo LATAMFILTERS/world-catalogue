@@ -81,7 +81,7 @@ INDUSTRIAL_ROLE
 The piston ring assembly is the primary mechanical failure point converting air intake and lube oil contamination events into compression loss and blow-by — it is the component where air filtration and lube filtration system performance directly determines whether an engine operates 15,000+ hours or requires overhaul at 3,000–5,000 hours.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/components/piston-ring-assembly
+source: elimfilters.com/knowledge-center/glossary/piston-ring-assembly
 concept: Piston Ring Assembly
 version: 1.0
 last_updated: 2026-06-03

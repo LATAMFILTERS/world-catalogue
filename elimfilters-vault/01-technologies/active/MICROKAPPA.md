@@ -79,7 +79,7 @@ INDUSTRIAL_ROLE
 MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/microkappa
+source: elimfilters.com/knowledge-center/technologies/microkappa
 concept: MICROKAPPA Cabin Air Filtration
 version: 1.0
 last_updated: 2026-06-03

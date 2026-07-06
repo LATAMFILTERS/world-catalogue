@@ -76,7 +76,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/MINING.md"
+        "vault_path": "elimfilters-vault\\02-industries\\MINING.md"
       }
     },
     {
@@ -100,7 +100,7 @@
           "exposure-extreme"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Dust Ingestion — Air Intake Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -142,7 +142,7 @@
             "AGRICULTURE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
       }
     },
     {
@@ -166,7 +166,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Particle Wear in Engines",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -192,7 +192,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -252,7 +252,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
       }
     }
   ],

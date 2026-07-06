@@ -93,7 +93,7 @@ INDUSTRIAL_ROLE
 Trucks & Fleets filtration is primarily an economic optimisation problem at fleet scale — the aggregate financial impact of standardising filtration across 100+ vehicle fleets (15–25% procurement cost reduction; 10–18% unplanned downtime reduction) creates measurable ROI from system-level filtration investment that commodity product selection approaches cannot capture.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/trucks-fleets
+source: elimfilters.com/knowledge-center/industries/trucks-fleets
 concept: Trucks & Fleets Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

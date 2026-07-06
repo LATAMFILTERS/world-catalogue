@@ -14,7 +14,7 @@
     "vault-only"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/components/piston-ring-assembly",
+    "source_url": "elimfilters.com/knowledge-center/glossary/piston-ring-assembly",
     "concept": "Piston Ring Assembly",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -43,7 +43,7 @@
       "ISO_5011"
     ]
   },
-  "vault_path": "elimfilters-vault/06-components/PISTON_RING_ASSEMBLY.md",
+  "vault_path": "elimfilters-vault\\06-components\\PISTON_RING_ASSEMBLY.md",
   "_links": {
     "self": "/api/citation/PISTON_RING_ASSEMBLY.json",
     "type_index": "/api/citation/type/component.json",

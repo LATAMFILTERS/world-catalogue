@@ -18,7 +18,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/hydrocore",
         "concept": "HYDROCORE Water-Separating Fuel Protection",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -52,7 +52,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
     },
     {
       "key": "INTEKCORE",
@@ -72,7 +72,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/intekcore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/intekcore",
         "concept": "INTEKCORE Zero-Bypass Radial Seal Housing",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -101,7 +101,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/INTEKCORE.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\INTEKCORE.md"
     },
     {
       "key": "MACROCORE",
@@ -156,7 +156,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
     },
     {
       "key": "MICROKAPPA",
@@ -174,7 +174,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/microkappa",
+        "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
         "concept": "MICROKAPPA Cabin Air Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -205,7 +205,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
     },
     {
       "key": "NANOFORCE",
@@ -224,7 +224,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/nanoforce",
+        "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
         "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -261,7 +261,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
     },
     {
       "key": "SYNTEPORE",
@@ -281,7 +281,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/syntepore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/syntepore",
         "concept": "SYNTEPORE All-Synthetic Intake Media",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -312,7 +312,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/SYNTEPORE.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTEPORE.md"
     },
     {
       "key": "SYNTRAX",
@@ -332,7 +332,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/syntrax",
+        "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
         "concept": "SYNTRAX Full-Flow Lube Protection",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -369,7 +369,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
     }
   ]
 }

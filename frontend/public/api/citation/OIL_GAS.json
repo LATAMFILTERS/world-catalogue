@@ -13,7 +13,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/industries/oil-gas",
+    "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
     "concept": "Oil & Gas Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -55,7 +55,7 @@
       "HYDRAULIC_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md",
+  "vault_path": "elimfilters-vault\\02-industries\\OIL_GAS.md",
   "_links": {
     "self": "/api/citation/OIL_GAS.json",
     "type_index": "/api/citation/type/industry.json",

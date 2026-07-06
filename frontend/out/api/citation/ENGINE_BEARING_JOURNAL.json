@@ -16,7 +16,7 @@
     "vault-only"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/components/engine-bearing-journal",
+    "source_url": "elimfilters.com/knowledge-center/glossary/engine-bearing-journal",
     "concept": "Engine Bearing Journal",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -42,7 +42,7 @@
       "ISO_4406"
     ]
   },
-  "vault_path": "elimfilters-vault/06-components/ENGINE_BEARING_JOURNAL.md",
+  "vault_path": "elimfilters-vault\\06-components\\ENGINE_BEARING_JOURNAL.md",
   "_links": {
     "self": "/api/citation/ENGINE_BEARING_JOURNAL.json",
     "type_index": "/api/citation/type/component.json",

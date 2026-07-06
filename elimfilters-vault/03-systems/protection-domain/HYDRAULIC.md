@@ -57,7 +57,7 @@ INDUSTRIAL_ROLE
 Hydraulic filtration maintains the cleanliness codes required for proportional valve and piston pump reliability — particle contamination above cleanliness targets is the leading cause of unplanned hydraulic system downtime in mobile and industrial equipment.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/hydraulic-systems
+source: elimfilters.com/knowledge-center/systems/hydraulic-protection
 concept: HYDRAULIC — Hydraulic Filtration Domain
 version: 1.0
 last_updated: 2026-06-24

@@ -8,7 +8,7 @@
   "ud_key": null,
   "tags": [],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+    "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
     "concept": "CABIN — Cabin Air Filtration Domain",
     "version": "1.0",
     "last_updated": "2026-06-24",
@@ -28,7 +28,7 @@
       "DIN_71220"
     ]
   },
-  "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md",
+  "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\CABIN.md",
   "_links": {
     "self": "/api/citation/CABIN.json",
     "type_index": "/api/citation/type/protection-domain.json",

@@ -12,7 +12,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "CABIN — Cabin Air Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -32,7 +32,7 @@
           "DIN_71220"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\CABIN.md"
     },
     {
       "key": "FUEL",
@@ -44,7 +44,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/fuel-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
         "concept": "FUEL — Fuel Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -64,7 +64,7 @@
           "ISO_12937"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\FUEL.md"
     },
     {
       "key": "HYDRAULIC",
@@ -76,7 +76,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/hydraulic-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
         "concept": "HYDRAULIC — Hydraulic Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -96,7 +96,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/HYDRAULIC.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\HYDRAULIC.md"
     },
     {
       "key": "OIL",
@@ -108,7 +108,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "OIL — Lube Oil Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -128,7 +128,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/OIL.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\OIL.md"
     }
   ]
 }

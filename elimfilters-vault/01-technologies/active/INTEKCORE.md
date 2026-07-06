@@ -79,7 +79,7 @@ INDUSTRIAL_ROLE
 INTEKCORE closes the gap between rated filter element efficiency (from ISO 5011 media testing) and actual installed system efficiency — in axial-seal designs this gap can represent 10–30% unfiltered air bypass under field vibration conditions, negating the performance of even high-specification filter media.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/intekcore
+source: elimfilters.com/knowledge-center/technologies/intekcore
 concept: INTEKCORE Zero-Bypass Radial Seal Housing
 version: 1.0
 last_updated: 2026-06-03

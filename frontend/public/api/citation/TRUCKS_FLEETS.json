@@ -13,7 +13,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/industries/trucks-fleets",
+    "source_url": "elimfilters.com/knowledge-center/industries/trucks-fleets",
     "concept": "Trucks & Fleets Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -57,7 +57,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md",
+  "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md",
   "_links": {
     "self": "/api/citation/TRUCKS_FLEETS.json",
     "type_index": "/api/citation/type/industry.json",

@@ -17,7 +17,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/standards/iso-16889",
+    "source_url": "elimfilters.com/knowledge-center/standards/iso-16889",
     "concept": "ISO 16889 Filter Multi-Pass Test Method",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -47,7 +47,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ISO_16889.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md",
   "_links": {
     "self": "/api/citation/ISO_16889.json",
     "type_index": "/api/citation/type/standard.json",

@@ -100,7 +100,7 @@ INDUSTRIAL_ROLE
 Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/construction
+source: elimfilters.com/knowledge-center/industries/construction
 concept: Construction Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

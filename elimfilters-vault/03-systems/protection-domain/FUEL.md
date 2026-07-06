@@ -56,7 +56,7 @@ INDUSTRIAL_ROLE
 Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/fuel-systems
+source: elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection
 concept: FUEL — Fuel Filtration Domain
 version: 1.0
 last_updated: 2026-06-24

@@ -85,7 +85,7 @@ INDUSTRIAL_ROLE
 Automotive diesel engine contamination control is determined by the intersection of common-rail injection system sensitivity to particle and water contamination at high operating pressures (1,600–2,000 bar), turbocharger shaft bearing sensitivity to sub-micron particles in lube circuits, and fleet management economics where systematic ISO 4406-monitored lube filtration extends engine service intervals and reduces unplanned bearing failures across vehicle populations.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/automotive
+source: elimfilters.com/knowledge-center/industries/automotive
 concept: Automotive Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

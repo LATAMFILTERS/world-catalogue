@@ -51,7 +51,7 @@
       "TURBOCHARGER_BEARING"
     ]
   },
-  "vault_path": "elimfilters-vault/03-systems/product-line/AIRFILTER.md",
+  "vault_path": "elimfilters-vault\\03-systems\\product-line\\AIRFILTER.md",
   "_links": {
     "self": "/api/citation/AIRFILTER.json",
     "type_index": "/api/citation/type/system.json",

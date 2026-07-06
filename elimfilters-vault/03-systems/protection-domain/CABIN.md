@@ -57,7 +57,7 @@ INDUSTRIAL_ROLE
 Cabin air filtration is a mandatory safety system for mobile equipment operators working in environments with silica dust, coal dust, grain dust, or pesticide exposure — failure to maintain effective filtration creates direct occupational health risk.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/cabin-safety-systems
+source: elimfilters.com/knowledge-center/systems/cabin-air-protection
 concept: CABIN — Cabin Air Filtration Domain
 version: 1.0
 last_updated: 2026-06-24

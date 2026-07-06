@@ -13,7 +13,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/industries/waste-municipal",
+    "source_url": "elimfilters.com/knowledge-center/industries/waste-municipal",
     "concept": "Waste & Municipal Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -55,7 +55,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md",
+  "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md",
   "_links": {
     "self": "/api/citation/WASTE_MUNICIPAL.json",
     "type_index": "/api/citation/type/industry.json",

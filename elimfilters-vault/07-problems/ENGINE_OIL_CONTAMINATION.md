@@ -155,7 +155,7 @@ predictably toward bearing failure. It is the primary commercial target of LUBE_
 and the SYNTRAX technology platform, covering all 11 industries.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/particle-wear
+source: elimfilters.com/knowledge-center/engineering/contamination-control
 concept: Engine Oil Contamination — Lube Circuit Problem
 version: 1.0
 last_updated: 2026-06-03

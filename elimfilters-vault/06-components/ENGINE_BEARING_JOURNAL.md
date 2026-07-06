@@ -76,7 +76,7 @@ INDUSTRIAL_ROLE
 Engine bearing journals represent the highest-cost single failure point in diesel engine contamination events — seizure triggers full engine rebuild at $50,000–$200,000+ and removes the machine from production for weeks; maintaining ISO 4406 16/14/11 through certified full-flow lube filtration is the primary engineered defense against this outcome.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/components/engine-bearing-journal
+source: elimfilters.com/knowledge-center/glossary/engine-bearing-journal
 concept: Engine Bearing Journal
 version: 1.0
 last_updated: 2026-06-03

@@ -94,7 +94,7 @@ INDUSTRIAL_ROLE
 Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/diesel-water
+source: elimfilters.com/knowledge-center/engineering/fluid-cleanliness
 concept: Diesel Water Contamination
 version: 1.0
 last_updated: 2026-06-03

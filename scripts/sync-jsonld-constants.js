@@ -41,7 +41,7 @@ function entityDefinition(key) {
 
 function entitySourceUrl(key) {
   const url = entities[key]?.citation?.source_url;
-  if (!url) return 'https://elimfilters.com/knowledge-system';
+  if (!url) return 'https://elimfilters.com/knowledge-center';
   // source_url may or may not start with https://
   if (url.startsWith('http')) return url;
   return `https://${url}`;
@@ -60,7 +60,7 @@ function makeDefinedTerm(key, inDefinedTermSet) {
     identifier: key,
     description: entityDefinition(key),
     url: entitySourceUrl(key),
-    inDefinedTermSet: inDefinedTermSet || 'https://elimfilters.com/knowledge-system',
+    inDefinedTermSet: inDefinedTermSet || 'https://elimfilters.com/knowledge-center',
   };
 }
 
@@ -84,7 +84,7 @@ const hubData = {
   '@type': 'DataCatalog',
   name: 'ELIMFILTERS Knowledge Vault',
   description: 'Machine-readable industrial filtration knowledge graph covering contamination modes, technologies, standards, and product families.',
-  url: 'https://elimfilters.com/knowledge-system',
+  url: 'https://elimfilters.com/knowledge-center',
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dataset: Object.keys(entities)
     .map(makeDataset)
@@ -98,10 +98,10 @@ const standardsIndexData = {
   '@type': 'CollectionPage',
   name: 'Industrial Filtration Standards — ELIMFILTERS Knowledge System',
   description: 'Index of international standards governing industrial filtration: ISO 16889, ISO 4406, ISO 5011, ISO 11155, ISO 12937, ASTM D6304, SAE J1539, DIN 71220, NFPA T2.14.',
-  url: 'https://elimfilters.com/knowledge-system/standards',
+  url: 'https://elimfilters.com/knowledge-center/standards',
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   hasPart: standardKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -112,7 +112,7 @@ const airIntakeData = {
   '@type': ['TechArticle', 'DefinedTermSet'],
   headline: 'Air Intake Filtration Systems — ISO 5011 and SAE J1539 Standards',
   description: 'Air intake filtration system standards — ISO 5011, SAE J1539 — defining efficiency measurement, flow restriction, and dust holding capacity for diesel engine air intake filters.',
-  url: 'https://elimfilters.com/knowledge-system/standards/air-intake-systems',
+  url: 'https://elimfilters.com/knowledge-center/systems/air-intake-protection',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -127,7 +127,7 @@ const airIntakeData = {
   })),
   inLanguage: 'en',
   hasDefinedTerm: airIntakeKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -138,7 +138,7 @@ const lubeOilData = {
   '@type': ['TechArticle', 'DefinedTermSet'],
   headline: 'Lube Oil Filtration Systems — ISO 16889 and ISO 4406 Standards',
   description: 'Lube oil filtration system standards — ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes) — defining particle contamination control in engine and hydraulic lube circuits.',
-  url: 'https://elimfilters.com/knowledge-system/standards/lube-oil-systems',
+  url: 'https://elimfilters.com/knowledge-center/systems/lubrication-protection',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -153,7 +153,7 @@ const lubeOilData = {
   })),
   inLanguage: 'en',
   hasDefinedTerm: lubeOilKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -164,7 +164,7 @@ const cabinData = {
   '@type': ['TechArticle', 'DefinedTermSet'],
   headline: 'Cabin Safety Filtration Systems — ISO 11155 and DIN 71220 Standards',
   description: 'Cabin air filtration standards — ISO 11155 (particulate and gaseous), DIN 71220 — protecting equipment operators from PM10, PM2.5 and chemical exposure inside enclosed cabs.',
-  url: 'https://elimfilters.com/knowledge-system/standards/cabin-safety-systems',
+  url: 'https://elimfilters.com/knowledge-center/systems/cabin-air-protection',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -179,7 +179,7 @@ const cabinData = {
   })),
   inLanguage: 'en',
   hasDefinedTerm: cabinKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -190,7 +190,7 @@ const fuelData = {
   '@type': ['TechArticle', 'DefinedTermSet'],
   headline: 'Fuel Filtration Systems — ASTM D6304 and ISO 12937 Standards',
   description: 'Diesel fuel filtration standards — ASTM D6304, ISO 12937 — measuring water content in petroleum products and preventing injector damage from water contamination.',
-  url: 'https://elimfilters.com/knowledge-system/standards/fuel-systems',
+  url: 'https://elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -205,7 +205,7 @@ const fuelData = {
   })),
   inLanguage: 'en',
   hasDefinedTerm: fuelKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -216,7 +216,7 @@ const hydraulicData = {
   '@type': ['TechArticle', 'DefinedTermSet'],
   headline: 'Hydraulic Filtration Systems — ISO 16889, ISO 4406, and NFPA T2.14 Standards',
   description: 'Hydraulic system filtration standards — ISO 16889 (Beta ratio), ISO 4406 (cleanliness codes), NFPA T2.14 (collapse resistance) — for proportional valve and pump protection.',
-  url: 'https://elimfilters.com/knowledge-system/standards/hydraulic-systems',
+  url: 'https://elimfilters.com/knowledge-center/systems/hydraulic-protection',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -231,7 +231,7 @@ const hydraulicData = {
   })),
   inLanguage: 'en',
   hasDefinedTerm: hydraulicStdKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -240,12 +240,12 @@ const contaminationKeys = Object.keys(entities).filter(k => entities[k].type ===
 const contaminationIndexData = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Industrial Filtration Failure Analysis — ELIMFILTERS Knowledge System',
+  name: 'Industrial Filtration Failure Analysis — ELIMFILTERS Knowledge Center',
   description: 'Index of contamination failure modes: diesel water contamination, particle wear in engines, hydraulic system contamination, and cabin air contamination.',
-  url: 'https://elimfilters.com/knowledge-system/contamination',
+  url: 'https://elimfilters.com/knowledge-center/engineering/contamination-control',
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   hasPart: contaminationKeys
-    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-system'))
+    .map(k => makeDefinedTerm(k, 'https://elimfilters.com/knowledge-center'))
     .filter(Boolean),
 };
 
@@ -256,7 +256,7 @@ const particleWearData = {
   '@type': 'TechArticle',
   headline: 'Particle Wear in Engines — Abrasive Contamination Failure Analysis',
   description: particleWearEntity ? entityDefinition('PARTICLE_WEAR') : 'Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals — caused by hard particle contamination in lube oil.',
-  url: 'https://elimfilters.com/knowledge-system/contamination/particle-wear',
+  url: 'https://elimfilters.com/knowledge-center/engineering/contamination-control',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -279,7 +279,7 @@ const dieselWaterData = {
   '@type': 'TechArticle',
   headline: 'Diesel Water Contamination — Fuel System Failure Analysis',
   description: dieselWaterEntity ? entityDefinition('DIESEL_WATER') : 'Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems causing injector damage, microbial growth, and corrosion.',
-  url: 'https://elimfilters.com/knowledge-system/contamination/diesel-water',
+  url: 'https://elimfilters.com/knowledge-center/engineering/fluid-cleanliness',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -302,7 +302,7 @@ const hydraulicContaminationData = {
   '@type': 'TechArticle',
   headline: 'Hydraulic System Contamination — Particle and Water Failure Analysis',
   description: hydraulicContamEntity ? entityDefinition('HYDRAULIC_CONTAMINATION') : 'Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid threatening proportional valve and pump reliability.',
-  url: 'https://elimfilters.com/knowledge-system/contamination/hydraulic-system',
+  url: 'https://elimfilters.com/knowledge-center/engineering/contamination-control',
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
@@ -321,7 +321,7 @@ const hydraulicContaminationData = {
 // ─── Serialize all constants ───────────────────────────────────────────────────
 
 const constants = [
-  { name: 'JSONLD_KNOWLEDGE_SYSTEM_HUB',    data: hubData,                   desc: `DataCatalog, ${Object.keys(entities).length} entities` },
+  { name: 'JSONLD_KNOWLEDGE_CENTER_HUB',    data: hubData,                   desc: `DataCatalog, ${Object.keys(entities).length} entities` },
   { name: 'JSONLD_STANDARDS_INDEX',          data: standardsIndexData,        desc: `CollectionPage, ${standardKeys.length} standards` },
   { name: 'JSONLD_AIR_INTAKE_SYSTEMS',       data: airIntakeData,             desc: `TechArticle + DefinedTermSet, ${airIntakeKeys.length} entities` },
   { name: 'JSONLD_LUBE_OIL_SYSTEMS',         data: lubeOilData,               desc: `TechArticle + DefinedTermSet, ${lubeOilKeys.length} entities` },

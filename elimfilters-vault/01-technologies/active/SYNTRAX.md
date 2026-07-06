@@ -96,7 +96,7 @@ INDUSTRIAL_ROLE
 SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/syntrax
+source: elimfilters.com/knowledge-center/technologies/syntrax
 concept: SYNTRAX Full-Flow Lube Protection
 version: 1.0
 last_updated: 2026-06-03

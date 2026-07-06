@@ -85,7 +85,7 @@ INDUSTRIAL_ROLE
 HYDROCORE water-separating fuel filtration is the primary engineering control preventing injector erosion in high-pressure common-rail diesel engines; in marine, mining, and remote power generation applications where fuel tank condensation is unavoidable, HYDROCORE coalescing separation determines whether injection systems reach design service life or fail prematurely from water-induced cavitation erosion.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/hydrocore
+source: elimfilters.com/knowledge-center/technologies/hydrocore
 concept: HYDROCORE Water-Separating Fuel Protection
 version: 1.0
 last_updated: 2026-06-03

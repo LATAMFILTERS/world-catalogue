@@ -15,7 +15,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/standards/air-intake-systems",
+    "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
     "concept": "ISO 5011 — Air Filter Performance Test",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -52,7 +52,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ISO_5011.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md",
   "_links": {
     "self": "/api/citation/ISO_5011.json",
     "type_index": "/api/citation/type/standard.json",

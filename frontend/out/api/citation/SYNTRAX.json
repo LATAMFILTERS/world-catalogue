@@ -16,7 +16,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/technologies/syntrax",
+    "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
     "concept": "SYNTRAX Full-Flow Lube Protection",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -53,7 +53,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md",
   "_links": {
     "self": "/api/citation/SYNTRAX.json",
     "type_index": "/api/citation/type/technology.json",

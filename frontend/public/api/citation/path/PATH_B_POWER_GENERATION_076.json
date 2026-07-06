@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/power-generation",
+          "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
           "concept": "Power Generation Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -68,7 +68,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
+        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
       }
     },
     {
@@ -92,7 +92,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -131,7 +131,7 @@
             "POWER_GENERATION"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+        "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
       }
     },
     {
@@ -153,7 +153,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Hydraulic System Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -180,7 +180,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
       }
     },
     {
@@ -204,7 +204,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/nanoforce",
+          "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
           "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -241,7 +241,7 @@
             "HYDRAULIC_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
       }
     }
   ],

@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/power-generation",
+          "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
           "concept": "Power Generation Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -68,7 +68,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
+        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
       }
     },
     {
@@ -92,7 +92,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Engine Oil Contamination — Lube Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -139,7 +139,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -163,7 +163,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Particle Wear in Engines",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -189,7 +189,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -249,7 +249,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
       }
     }
   ],

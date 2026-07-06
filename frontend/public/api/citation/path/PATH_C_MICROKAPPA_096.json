@@ -26,7 +26,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/microkappa",
+          "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
           "concept": "MICROKAPPA Cabin Air Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -57,7 +57,7 @@
             "CABIN_AIR_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],

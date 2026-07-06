@@ -28,7 +28,7 @@
     "industrial_role": "DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance."
   },
   "relationships": {},
-  "vault_path": "elimfilters-vault/10-commercial/DURATECH.md",
+  "vault_path": "elimfilters-vault\\10-commercial\\DURATECH.md",
   "_links": {
     "self": "/api/citation/DURATECH.json",
     "type_index": "/api/citation/type/commercial-system.json",

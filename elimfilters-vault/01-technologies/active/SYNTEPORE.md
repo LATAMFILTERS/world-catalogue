@@ -82,7 +82,7 @@ INDUSTRIAL_ROLE
 SYNTEPORE extends reliable air intake filtration performance into marine, coastal, and high-humidity environments where cellulose media failure would otherwise create scheduled replacement intervals as short as 100–200 hours or risk undetected bypass contamination.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/syntepore
+source: elimfilters.com/knowledge-center/technologies/syntepore
 concept: SYNTEPORE All-Synthetic Intake Media
 version: 1.0
 last_updated: 2026-06-03

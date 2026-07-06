@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/bus-coach",
+          "source_url": "elimfilters.com/knowledge-center/industries/bus-coach",
           "concept": "Bus & Coach Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -66,7 +66,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
+        "vault_path": "elimfilters-vault\\02-industries\\BUS_COACH.md"
       }
     },
     {
@@ -90,7 +90,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Engine Oil Contamination — Lube Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -137,7 +137,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -161,7 +161,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Particle Wear in Engines",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -187,7 +187,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -211,7 +211,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/nanoforce",
+          "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
           "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -248,7 +248,7 @@
             "HYDRAULIC_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
       }
     }
   ],

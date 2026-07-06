@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/trucks-fleets",
+          "source_url": "elimfilters.com/knowledge-center/industries/trucks-fleets",
           "concept": "Trucks & Fleets Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -69,7 +69,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
+        "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md"
       }
     },
     {
@@ -94,7 +94,7 @@
           "occupational-health"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
           "concept": "Operator Dust Exposure — Cabin Air Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -132,7 +132,7 @@
             "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
@@ -154,7 +154,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/cabin-air-contamination",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
           "concept": "Cabin Air Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -177,7 +177,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
@@ -200,7 +200,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/microkappa",
+          "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
           "concept": "MICROKAPPA Cabin Air Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -231,7 +231,7 @@
             "CABIN_AIR_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],

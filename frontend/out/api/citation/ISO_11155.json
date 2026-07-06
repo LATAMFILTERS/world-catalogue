@@ -15,7 +15,7 @@
     "in-ud"
   ],
   "citation": {
-    "source_url": "elimfilters.com/knowledge-system/standards/iso-11155",
+    "source_url": "elimfilters.com/knowledge-center/standards/iso-11155",
     "concept": "ISO 11155 Cabin Air Filter Performance",
     "version": "1.0",
     "last_updated": "2026-06-03",
@@ -48,7 +48,7 @@
       "CABIN_AIR_CONTAMINATION"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ISO_11155.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md",
   "_links": {
     "self": "/api/citation/ISO_11155.json",
     "type_index": "/api/citation/type/standard.json",

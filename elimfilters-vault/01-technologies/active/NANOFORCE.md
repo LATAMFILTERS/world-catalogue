@@ -93,7 +93,7 @@ INDUSTRIAL_ROLE
 NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/technologies/nanoforce
+source: elimfilters.com/knowledge-center/technologies/nanoforce
 concept: NANOFORCE Sub-Micron Lube and Hydraulic Filtration
 version: 1.0
 last_updated: 2026-06-03

@@ -139,7 +139,7 @@ it is rapid-onset and temperature-sensitive. It is the primary commercial target
 FUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/diesel-water
+source: elimfilters.com/knowledge-center/engineering/fluid-cleanliness
 concept: Fuel Filter Plugging — Fuel System Problem
 version: 1.0
 last_updated: 2026-06-03

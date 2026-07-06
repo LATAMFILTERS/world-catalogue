@@ -81,7 +81,7 @@ INDUSTRIAL_ROLE
 NFPA T2.14 addresses a failure mode that filtration efficiency standards like ISO 16889 do not cover — the structural failure of a filter element under differential pressure — making it a mandatory structural certification for hydraulic filter elements in high-pressure industrial applications where element collapse would convert a contamination-controlled circuit into a contamination event.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/nfpa-t214
+source: elimfilters.com/knowledge-center/standards/nfpa-t214
 concept: NFPA T2.14 Hydraulic Filter Collapse/Burst Resistance
 version: 1.0
 last_updated: 2026-06-03

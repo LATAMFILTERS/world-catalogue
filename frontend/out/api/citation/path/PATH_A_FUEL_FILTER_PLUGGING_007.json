@@ -27,7 +27,7 @@
           "exposure-medium"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+          "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
           "concept": "Fuel Filter Plugging — Fuel System Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -65,7 +65,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+        "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md"
       }
     },
     {
@@ -87,7 +87,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+          "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
           "concept": "Diesel Water Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -110,7 +110,7 @@
             "HYDROCORE"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
       }
     },
     {
@@ -133,7 +133,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+          "source_url": "elimfilters.com/knowledge-center/technologies/hydrocore",
           "concept": "HYDROCORE Water-Separating Fuel Protection",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -167,7 +167,7 @@
             "DIESEL_WATER"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
       }
     }
   ],

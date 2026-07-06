@@ -17,7 +17,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/cabin-air-contamination",
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Cabin Air Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -40,7 +40,7 @@
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
     },
     {
       "key": "DIESEL_WATER",
@@ -57,7 +57,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+        "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Diesel Water Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -80,7 +80,7 @@
           "HYDROCORE"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
     },
     {
       "key": "HYDRAULIC_CONTAMINATION",
@@ -97,7 +97,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic System Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -124,7 +124,7 @@
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
     },
     {
       "key": "PARTICLE_WEAR",
@@ -143,7 +143,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Particle Wear in Engines",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -169,7 +169,7 @@
           "SYNTRAX"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
     }
   ]
 }
