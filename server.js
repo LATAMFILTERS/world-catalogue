@@ -2027,6 +2027,22 @@ app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res
   }
 });
 
+// ─── POST /api/admin/rebuild-crossref-cache ───────────────────────────────────
+// Triggers a full rebuild of crossref_resolved_cache from oem_codes and
+// competitor_codes JSONB. Use after bulk imports or when cache is suspected stale.
+app.post('/api/admin/rebuild-crossref-cache', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    console.log('[admin] crossref cache rebuild requested...');
+    const result = await pool.query('SELECT refresh_crossref_cache() AS count');
+    const count = parseInt(result.rows[0].count, 10);
+    console.log(`[admin] crossref cache rebuilt: ${count} rows`);
+    res.json({ success: true, rows: count, message: `Cache rebuilt with ${count} rows.` });
+  } catch (e) {
+    console.error('[admin/rebuild-crossref-cache]', e.message);
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
 // ─── GET /api/ai/search ─────────────────────────────────────────────────────────────────────────────────
 app.get('/api/ai/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || '').trim();
