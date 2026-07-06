@@ -1688,6 +1688,77 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
+// ─── POST /api/import/mann-specs ─────────────────────────────────────────────
+// Patches dimensional + performance specs into existing LD products.
+// Body: array of { sku (EL/EA/EC/EF-format), thread_size, outer_diameter_mm,
+//   height_mm, gasket_od_mm, gasket_id_mm, micron_rating, iso_test_method,
+//   burst_pressure_psi, collapse_pressure_psi, installation_type }
+// Only updates rows that already exist (no insert). Uses COALESCE to avoid
+// overwriting previously populated fields.
+app.post('/api/import/mann-specs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = Array.isArray(req.body) ? req.body : req.body?.products;
+  if (!rows || !Array.isArray(rows)) return res.status(400).json({ error: 'Expected array of spec patches' });
+  if (rows.length > 500) return res.status(400).json({ error: 'Max 500 records per batch' });
+
+  const results = { updated: 0, not_found: 0, skipped: 0, errors: [] };
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    for (const row of rows) {
+      const sku = (row.sku || '').trim().toUpperCase();
+      if (!sku || !/^[A-Z]{2,3}[0-9]{4,7}$/.test(sku)) {
+        results.errors.push({ sku, error: 'invalid sku format' });
+        results.skipped++;
+        continue;
+      }
+      try {
+        const res2 = await client.query(
+          `UPDATE elimfilters_catalog SET
+            installation_type    = COALESCE(installation_type,    $2),
+            thread_size          = COALESCE(thread_size,          $3),
+            outer_diameter_mm    = COALESCE(outer_diameter_mm,    $4),
+            height_mm            = COALESCE(height_mm,            $5),
+            gasket_od_mm         = COALESCE(gasket_od_mm,         $6),
+            gasket_id_mm         = COALESCE(gasket_id_mm,         $7),
+            iso_test_method      = COALESCE(iso_test_method,      $8),
+            micron_rating        = COALESCE(micron_rating,        $9),
+            nominal_efficiency   = COALESCE(nominal_efficiency,   $10),
+            burst_pressure_psi   = COALESCE(burst_pressure_psi,   $11),
+            collapse_pressure_psi= COALESCE(collapse_pressure_psi,$12)
+          WHERE sku = $1`,
+          [
+            sku,
+            row.installation_type     || null,
+            row.thread_size           || null,
+            row.outer_diameter_mm     != null ? Number(row.outer_diameter_mm)     : null,
+            row.height_mm             != null ? Number(row.height_mm)             : null,
+            row.gasket_od_mm          != null ? Number(row.gasket_od_mm)          : null,
+            row.gasket_id_mm          != null ? Number(row.gasket_id_mm)          : null,
+            row.iso_test_method       || null,
+            row.micron_rating         != null ? Number(row.micron_rating)         : null,
+            row.nominal_efficiency    != null ? Number(row.nominal_efficiency)    : null,
+            row.burst_pressure_psi    != null ? Number(row.burst_pressure_psi)    : null,
+            row.collapse_pressure_psi != null ? Number(row.collapse_pressure_psi) : null,
+          ]
+        );
+        if (res2.rowCount > 0) results.updated++;
+        else results.not_found++;
+      } catch (rowErr) {
+        results.errors.push({ sku, error: rowErr.message });
+        results.skipped++;
+      }
+    }
+    await client.query('COMMIT');
+    res.json({ success: true, ...results });
+  } catch (e) {
+    await client.query('ROLLBACK');
+    console.error('[import/mann-specs]', e.message);
+    res.status(500).json({ error: 'Specs import failed', detail: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/import/mann ───────────────────────────────────────────────────────────────────────────────
 const MANN_SKU_PREFIXES = {
   'Oil Filter':    'EL3',
