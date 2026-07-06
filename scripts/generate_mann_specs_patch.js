@@ -18,11 +18,12 @@
 const fs   = require('fs');
 const path = require('path');
 
-const INPUT_FILE  = process.argv.includes('--input')
+const INPUT_FILE      = process.argv.includes('--input')
   ? process.argv[process.argv.indexOf('--input') + 1]
   : 'C:\\mann\\mann_master.jsonl';
-const OUTPUT_FILE = path.join(__dirname, 'mann_specs_patch.jsonl');
-const DRY_RUN     = process.argv.includes('--dry-run');
+const INPUT_GAPS_FILE = 'C:\\mann\\mann_master_gaps.jsonl'; // scraper --from-gaps output
+const OUTPUT_FILE     = path.join(__dirname, 'mann_specs_patch.jsonl');
+const DRY_RUN         = process.argv.includes('--dry-run');
 
 // ── SKU prefix map (same as server.js /api/import/mann) ──────────────────────
 const MANN_SKU_PREFIXES = {
@@ -140,24 +141,54 @@ function inferInstallationType(filterType) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 function main() {
-  if (!fs.existsSync(INPUT_FILE)) {
-    console.error(`❌ Input file not found: ${INPUT_FILE}`);
-    process.exit(1);
+  const allRecordsMap = new Map();
+
+  // 1. Read primary master file
+  if (fs.existsSync(INPUT_FILE)) {
+    const lines = fs.readFileSync(INPUT_FILE, 'utf8').split('\n').filter(Boolean);
+    console.log(`📥 Reading primary file: ${lines.length} records from ${INPUT_FILE}`);
+    for (const line of lines) {
+      try {
+        const record = JSON.parse(line);
+        const sku = (record.sku || '').trim().toUpperCase();
+        if (sku) {
+          allRecordsMap.set(sku, record);
+        }
+      } catch (e) {}
+    }
+  } else {
+    console.log(`⚠️ Primary input file not found: ${INPUT_FILE}`);
   }
 
-  const lines = fs.readFileSync(INPUT_FILE, 'utf8').split('\n').filter(Boolean);
-  console.log(`📥 Reading ${lines.length} records from ${INPUT_FILE}`);
+  // 2. Read gaps file and merge (only if not already present to avoid overwriting primary data)
+  if (fs.existsSync(INPUT_GAPS_FILE)) {
+    const lines = fs.readFileSync(INPUT_GAPS_FILE, 'utf8').split('\n').filter(Boolean);
+    console.log(`📥 Reading gaps file: ${lines.length} records from ${INPUT_GAPS_FILE}`);
+    let mergedCount = 0;
+    for (const line of lines) {
+      try {
+        const record = JSON.parse(line);
+        const sku = (record.sku || '').trim().toUpperCase();
+        if (sku) {
+          if (!allRecordsMap.has(sku)) {
+            allRecordsMap.set(sku, record);
+            mergedCount++;
+          }
+        }
+      } catch (e) {}
+    }
+    console.log(`   Merged ${mergedCount} new unique records from gaps file.`);
+  } else {
+    console.log(`⚠️ Gaps input file not found: ${INPUT_GAPS_FILE}`);
+  }
+
+  console.log(`📊 Combined unique records to process: ${allRecordsMap.size}`);
 
   const patches = [];
   const stats = { total: 0, skipped_no_sku: 0, skipped_no_type: 0, skipped_no_dims: 0, ok: 0 };
 
-  for (const line of lines) {
-    let record;
-    try { record = JSON.parse(line); } catch { continue; }
+  for (const [mannCode, record] of allRecordsMap.entries()) {
     stats.total++;
-
-    const mannCode = (record.sku || '').trim().toUpperCase();
-    if (!mannCode) { stats.skipped_no_sku++; continue; }
 
     // Resolve filter type
     let filterType = record.filter_type || '';
@@ -171,12 +202,18 @@ function main() {
 
     // Generate EL/EA/EC/EF SKU
     const elSku = generateSku(mannCode, filterType);
-    if (!elSku) { stats.skipped_no_sku++; continue; }
+    if (!elSku) {
+      stats.skipped_no_sku++;
+      continue;
+    }
 
     // Map dimensions
     const dims    = mapDimensions(record.dimensions || record.dims_inline || {});
     const hasAny  = Object.values(dims).some(v => v != null);
-    if (!hasAny) { stats.skipped_no_dims++; continue; }
+    if (!hasAny) {
+      stats.skipped_no_dims++;
+      continue;
+    }
 
     const patch = {
       sku:                 elSku,
