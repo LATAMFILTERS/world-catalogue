@@ -1080,18 +1080,21 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const dutyClause = validDuty ? ' AND c.duty = $2' : '';
     const dutyArgs = validDuty ? [validDuty] : [];
 
-    // 2. C: Cross-reference exact match via v_api_resolver_v5 (adaptive scoring)
+    // 2. C: Cross-reference exact match via v_api_resolver_v5 (adaptive scoring) + priority override
     const xrefResult = await client.query(
       `SELECT DISTINCT ON (v.sku)
          c.*,
          v.status       AS resolver_status,
-         v.score        AS resolver_score,
+         (v.score + COALESCE(p.priority, 0)) AS resolver_score,
          v.manufacturer AS resolver_manufacturer
        FROM v_api_resolver_v5 v
        JOIN elimfilters_catalog c ON c.sku = v.sku
+       LEFT JOIN search_result_priority p
+         ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+        AND p.sku = v.sku
        WHERE v.code = $1
        ${validDuty ? 'AND c.duty = $2' : ''}
-       ORDER BY v.sku, v.score DESC
+       ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 20`,
       [q, ...dutyArgs]
     );
@@ -1128,19 +1131,22 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'xref_v5', resolution: 'RESOLVED' });
     }
 
-    // 2b. C: Cross-reference prefix match via v_api_resolver_v5
+    // 2b. C: Cross-reference prefix match via v_api_resolver_v5 + priority override
     if (q.length >= 4) {
       const prefixResult = await client.query(
         `SELECT DISTINCT ON (v.sku)
            c.*,
            v.status       AS resolver_status,
-           v.score        AS resolver_score,
+           (v.score + COALESCE(p.priority, 0)) AS resolver_score,
            v.manufacturer AS resolver_manufacturer
          FROM v_api_resolver_v5 v
          JOIN elimfilters_catalog c ON c.sku = v.sku
+         LEFT JOIN search_result_priority p
+           ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+          AND p.sku = v.sku
          WHERE v.code LIKE $1
          ${validDuty ? 'AND c.duty = $2' : ''}
-         ORDER BY v.sku, v.score DESC
+         ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
          LIMIT 20`,
         [q + '%', ...dutyArgs]
       );
@@ -2069,17 +2075,28 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'exact_sku' });
     }
 
-    // OEM/competitor cross-ref
+    // OEM/competitor cross-ref via v_api_resolver_v5 (adaptive scoring) + priority override
     const oem = await client.query(
-      `SELECT * FROM elimfilters_catalog
-       WHERE EXISTS (SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref WHERE UPPER(REPLACE(ref->>'code','-',''))=$1)
-       OR    EXISTS (SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref WHERE UPPER(REPLACE(ref->>'code','-',''))=$1)
+      `SELECT DISTINCT ON (v.sku)
+         c.*,
+         v.status       AS resolver_status,
+         (v.score + COALESCE(p.priority, 0)) AS resolver_score,
+         v.manufacturer AS resolver_manufacturer
+       FROM v_api_resolver_v5 v
+       JOIN elimfilters_catalog c ON c.sku = v.sku
+       LEFT JOIN search_result_priority p
+         ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+        AND p.sku = v.sku
+       WHERE v.code = $1
+       ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 10`, [q]
     );
     if (oem.rows.length > 0) {
+      // Record learning signal for AI search too
+      oem.rows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
       const products = oem.rows.map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
-      return res.json({ success: true, results: products, source: 'oem_crossref' });
+      return res.json({ success: true, results: products, source: 'oem_crossref_v5' });
     }
 
     res.json({ success: true, results: [], source: 'no_match' });
