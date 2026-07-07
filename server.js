@@ -1308,27 +1308,79 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/vin ───────────────────────────────────────────────────────────────────────────
+// ─── GET /api/search/vin ──────────────────────────────────────────────────────
+// Searches by vehicle make / model / engine in:
+//   - vehicle_applications JSONB (Light Duty)
+//   - kg_product_equipment relational table (Heavy Duty)
 app.get('/api/search/vin', searchLimiter, async (req, res) => {
-  const vin = (req.query.vin || '').trim().toUpperCase();
-  if (!vin || vin.length !== 17) return res.status(400).json({ success: false, error: 'Invalid VIN (must be 17 chars)' });
+  const model  = (req.query.model  || '').trim();
+  const engine = (req.query.engine || '').trim();
 
-  const SEARCH_KEY = process.env.SEARCH_API_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (!model) return res.status(400).json({ success: false, error: 'model is required' });
 
-  const lang = detectLang(req);
+  const lang   = detectLang(req);
   const client = await pool.connect();
   try {
     await client.query("SET client_encoding = 'UTF8'");
-    const { rows } = await client.query(
-      `SELECT c.* FROM elimfilters_catalog c
-       JOIN vin_equipment_map v ON c.sku = ANY(v.filter_skus)
-       WHERE v.vin = $1
-       LIMIT 20`,
-      [vin]
-    );
+
+    const params = [];
+    let idx = 1;
+
+    // ── Light Duty: vehicle_applications JSONB ───────────────────────────────
+    const modelPat = '%' + model.toUpperCase() + '%';
+    params.push(modelPat);                          // $1 = model LIKE
+    const engineCond = engine
+      ? `AND (
+           UPPER(va->>'engine_code') LIKE $${++idx}
+           OR UPPER(va->>'model') LIKE $${idx}
+         )`
+      : '';
+    if (engine) params.push('%' + engine.toUpperCase() + '%');
+
+    const idxAfterLD = idx;
+
+    // ── Heavy Duty: kg_product_equipment relational ──────────────────────────
+    params.push(modelPat);                          // next $ = model LIKE HD
+    idx++;
+    const hdEngineCond = engine
+      ? `AND (
+           UPPER(kpe.engine_code) LIKE $${++idx}
+           OR UPPER(kpe.model)    LIKE $${idx}
+         )`
+      : '';
+    if (engine) params.push('%' + engine.toUpperCase() + '%');
+
+    const { rows } = await client.query(`
+      SELECT DISTINCT ON (c.sku) c.*
+      FROM elimfilters_catalog c
+      WHERE
+        -- Light Duty: search in vehicle_applications
+        (
+          c.duty = 'LIGHT_DUTY'
+          AND EXISTS (
+            SELECT 1
+            FROM jsonb_array_elements(c.vehicle_applications) AS va
+            WHERE
+              UPPER(COALESCE(va->>'make','') || ' ' || COALESCE(va->>'model','')) LIKE $1
+              ${engineCond}
+          )
+        )
+        OR
+        -- Heavy Duty: search in relational kg_product_equipment
+        (
+          c.duty = 'HEAVY_DUTY'
+          AND EXISTS (
+            SELECT 1
+            FROM kg_product_equipment kpe
+            WHERE kpe.product_sku = c.sku
+              AND UPPER(COALESCE(kpe.make,'') || ' ' || COALESCE(kpe.model,'')) LIKE $${idxAfterLD + 1}
+              ${hdEngineCond}
+          )
+        )
+      ORDER BY c.sku
+      LIMIT 30
+    `, params);
+
     if (!rows.length) return res.json({ success: true, results: [], source: 'vin_no_match' });
     const products = rows.map(r => buildFilterData(r, lang));
     await enrichAlternatives(products, client);
@@ -1341,17 +1393,15 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/equipment ─────────────────────────────────────────────────────────────────────
+// ─── GET /api/search/equipment ────────────────────────────────────────────────
+// Searches by equipment make / model / engine in:
+//   - equipment_applications JSONB (Heavy Duty)
+//   - vehicle_applications   JSONB (Light Duty – industrial machines stored here)
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   const { make, model, year, engine } = req.query;
   if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
 
-  const SEARCH_KEY = process.env.SEARCH_API_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
-
-  const lang = detectLang(req);
+  const lang   = detectLang(req);
   const client = await pool.connect();
   try {
     await client.query("SET client_encoding = 'UTF8'");
@@ -1360,45 +1410,39 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     const params = [];
     let idx = 1;
 
-    if (make) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'make') LIKE $${idx}
-      )`);
-      params.push('%' + make.toUpperCase() + '%');
-      idx++;
-    }
-    if (model) {
-      // Older imports stored the equipment name under 'machine' instead of
-      // 'model' (see scripts/run_004_batched.py) — match either key so
-      // legacy-keyed rows aren't silently invisible to this search.
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}
-      )`);
-      params.push('%' + model.toUpperCase() + '%');
-      idx++;
-    }
-    if (year) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE (ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}
-      )`);
-      params.push(parseInt(year));
-      idx++;
-    }
-    if (engine) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'engine') LIKE $${idx}
-      )`);
-      params.push('%' + engine.toUpperCase() + '%');
-      idx++;
-    }
+    const buildJsonbCond = (col) => {
+      const conds = [];
+      if (make) {
+        conds.push(`UPPER(ea->>'make') LIKE $${idx}`);
+        params.push('%' + make.toUpperCase() + '%');
+        idx++;
+      }
+      if (model) {
+        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}`);
+        params.push('%' + model.toUpperCase() + '%');
+        idx++;
+      }
+      if (year) {
+        conds.push(`(ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}`);
+        params.push(parseInt(year));
+        idx++;
+      }
+      if (engine) {
+        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE $${idx}`);
+        params.push('%' + engine.toUpperCase() + '%');
+        idx++;
+      }
+      return `EXISTS (SELECT 1 FROM jsonb_array_elements(${col}) AS ea WHERE ${conds.join(' AND ')})`;
+    };
 
-    const whereClause = conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
+    // HD: equipment_applications
+    conditions.push(buildJsonbCond('equipment_applications'));
+    // LD: vehicle_applications (industrial equipment also stored here)
+    conditions.push(buildJsonbCond('vehicle_applications'));
+
+    const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
     const { rows } = await client.query(
-      `SELECT * FROM elimfilters_catalog ${whereClause} LIMIT 20`,
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog ${whereClause} ORDER BY sku LIMIT 30`,
       params
     );
 
@@ -1412,6 +1456,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     client.release();
   }
 });
+
 
 // ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
 app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {

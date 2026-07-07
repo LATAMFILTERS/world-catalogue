@@ -324,9 +324,9 @@
         if (mode === 'part' && q) {
           url = \`/api/search?q=\${encodeURIComponent(q)}\`;
         } else if (mode === 'vin' && model) {
-          url = \`/api/filters/search/vin?model=\${encodeURIComponent(model)}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+          url = `/api/search/vin?model=${encodeURIComponent(model)}${engine ? '&engine='+encodeURIComponent(engine) : ''}`;
         } else if (mode === 'equip' && model) {
-          url = \`/api/filters/search/equipment?model=\${encodeURIComponent(model)}\${type ? '&type='+encodeURIComponent(type) : ''}\${engine ? '&engine='+encodeURIComponent(engine) : ''}\`;
+          url = `/api/search/equipment?model=${encodeURIComponent(model)}${type ? '&type='+encodeURIComponent(type) : ''}${engine ? '&engine='+encodeURIComponent(engine) : ''}`;
         }
 
         if (!url) {
