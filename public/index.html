@@ -1347,26 +1347,35 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // VIN DECODER — NHTSA vPIC API (free, no auth)
-// Detects when the Vehicle/Model field contains a 17-char VIN,
-// decodes it live and auto-fills the engine field.
+// Detects 17-char VIN → decodes → shows badge → auto-searches in 2s
 // ─────────────────────────────────────────────────────────────────────────────
 (function initVinDecoder() {
   const inp    = document.getElementById('inp-vin-model');
   const engInp = document.getElementById('inp-vin-engine');
   const badge  = document.getElementById('vin-decode-badge');
-  if (!inp || !badge) return;
+  const form   = inp ? inp.closest('form') : null;
+  if (!inp || !badge || !form) return;
 
-  // Store decoded vehicle data for use in submit
-  let decoded = null;
-  let vinDebounce = null;
+  let decoded        = null;
+  let vinDebounce    = null;
+  let autoSearchTimer = null;  // countdown to auto-redirect
+  let countdown       = 2;
 
   const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/i;
-
   function isVin(val) { return VIN_RE.test(val.replace(/\s/g, '')); }
+
+  function buildResultUrl(dec, rawEngine) {
+    const model       = dec.make + ' ' + dec.model;
+    const finalEngine = rawEngine || dec.engine || '';
+    let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
+    if (finalEngine) url += `&engine=${encodeURIComponent(finalEngine)}`;
+    if (dec.year)    url += `&year=${encodeURIComponent(dec.year)}`;
+    return url;
+  }
 
   function showBadge(html, ok = true) {
     badge.innerHTML = html;
-    badge.style.display = 'block';
+    badge.style.display     = 'block';
     badge.style.borderColor = ok ? 'rgba(255,241,45,0.35)' : 'rgba(255,80,80,0.4)';
     badge.style.background  = ok ? 'rgba(255,241,45,0.07)' : 'rgba(255,80,80,0.05)';
   }
@@ -1374,99 +1383,134 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   function hideBadge() {
     badge.style.display = 'none';
     decoded = null;
+    clearAutoSearch();
+  }
+
+  function clearAutoSearch() {
+    clearInterval(autoSearchTimer);
+    autoSearchTimer = null;
+    countdown = 2;
+  }
+
+  function startAutoSearch(dec) {
+    clearAutoSearch();
+    countdown = 2;
+
+    function renderCountdown(n) {
+      const cylStr  = dec.cyl  ? ` · ${dec.cyl} cyl`  : '';
+      const dispStr = dec.disp ? ` · ${dec.disp}L`    : '';
+      const fuelStr = dec.fuel ? ` · ${dec.fuel}`      : '';
+      const specStr = (cylStr + dispStr + fuelStr).replace(/^ · /, '');
+      return (
+        `<span style="color:rgba(255,241,45,0.9);font-weight:700;">✓ VIN DECODED</span><br>` +
+        `<span style="color:rgba(255,255,255,0.5);font-size:0.62rem;">SOURCE: NHTSA vPIC</span><br>` +
+        `<br><b>${dec.make} ${dec.model}</b>${dec.year ? ' (' + dec.year + ')' : ''}` +
+        (specStr ? `<br><span style="color:rgba(255,255,255,0.55);font-size:0.68rem;">${specStr}</span>` : '') +
+        `<br><br>` +
+        `<span style="color:rgba(255,241,45,0.7);font-size:0.68rem;">⟳ Buscando filtros automáticamente en <b style="color:#fff241;">${n}</b>s… ` +
+        `<span id="vin-cancel-link" style="cursor:pointer;text-decoration:underline;color:rgba(255,255,255,0.4);">Cancelar</span></span>`
+      );
+    }
+
+    showBadge(renderCountdown(countdown));
+    // wire cancel link
+    const cancelEl = badge.querySelector('#vin-cancel-link');
+    if (cancelEl) cancelEl.addEventListener('click', () => { clearAutoSearch(); showBadge(renderCountdown('—').replace(/⟳.*$/, ''), true); });
+
+    autoSearchTimer = setInterval(() => {
+      countdown--;
+      if (countdown <= 0) {
+        clearAutoSearch();
+        window.location.href = buildResultUrl(dec, engInp.value.trim());
+        return;
+      }
+      showBadge(renderCountdown(countdown));
+      const cl = badge.querySelector('#vin-cancel-link');
+      if (cl) cl.addEventListener('click', () => { clearAutoSearch(); });
+    }, 1000);
   }
 
   async function decodeVin(vin) {
-    showBadge('<span style="color:rgba(255,241,45,0.6)">⟳ DECODING VIN via NHTSA vPIC…</span>', true);
+    showBadge('<span style="color:rgba(255,241,45,0.6)">⟳ Decodificando VIN via NHTSA vPIC…</span>', true);
+    clearAutoSearch();
     try {
-      const url = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${encodeURIComponent(vin)}?format=json`;
+      const url  = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${encodeURIComponent(vin)}?format=json`;
       const res  = await fetch(url);
-      if (!res.ok) throw new Error('NHTSA API error ' + res.status);
+      if (!res.ok) throw new Error('NHTSA ' + res.status);
       const json = await res.json();
 
-      const get = (varId) => {
-        const found = json.Results.find(r => r.VariableId === varId);
-        return (found && found.Value && found.Value !== 'Not Applicable') ? found.Value.trim() : '';
+      const get = (id) => {
+        const r = json.Results.find(r => r.VariableId === id);
+        return (r && r.Value && r.Value !== 'Not Applicable') ? r.Value.trim() : '';
       };
 
-      const make   = get(26);   // Make
-      const model  = get(28);   // Model
-      const year   = get(29);   // Model Year
-      const disp   = get(13);   // Displacement (L)
-      const eng    = get(9);    // Engine Model
-      const cyl    = get(11);   // Engine Number of Cylinders
-      const fuel   = get(24);   // Fuel Type - Primary
+      const make = get(26);  // Make
+      const model = get(28); // Model
+      const year  = get(29); // Model Year
+      const disp  = get(13); // Displacement (L)
+      const eng   = get(9);  // Engine Model
+      const cyl   = get(11); // Engine Cylinders
+      const fuel  = get(24); // Fuel Type
 
       if (!make && !model) {
-        showBadge('⚠ VIN no reconocido — verifica el número e intenta de nuevo.', false);
+        showBadge('⚠ VIN no reconocido — verifica el número o usa búsqueda por modelo.', false);
         decoded = null;
         return;
       }
 
-      decoded = { make, model, year, engine: eng || disp || '' };
+      decoded = { make, model, year, engine: eng || disp || '', disp, cyl, fuel };
 
-      // Auto-fill engine field
+      // Auto-fill engine field if empty
       if (decoded.engine && !engInp.value.trim()) {
         engInp.value = decoded.engine;
       }
 
-      const cylStr  = cyl  ? ` · ${cyl} cyl` : '';
-      const dispStr = disp ? ` · ${disp}L` : '';
-      const fuelStr = fuel ? ` · ${fuel}` : '';
-
-      showBadge(
-        `<span style="color:rgba(255,241,45,0.9);font-weight:700;">✓ VIN DECODED</span><br>` +
-        `<span style="color:rgba(255,255,255,0.5);font-size:0.62rem;">SOURCE: NHTSA vPIC</span><br>` +
-        `<br><b>${make} ${model}</b> ${year ? '(' + year + ')' : ''}` +
-        (cylStr || dispStr || fuelStr ? `<br><span style="color:rgba(255,255,255,0.55);font-size:0.68rem;">${(cylStr+dispStr+fuelStr).replace(/^ · /, '')}</span>` : ''),
-        true
-      );
+      // Start 2-second auto-search countdown
+      startAutoSearch(decoded);
 
     } catch (err) {
-      showBadge('⚠ Error al conectar con NHTSA. Intenta buscar por modelo.', false);
+      showBadge('⚠ Error al conectar con NHTSA. Intenta buscar por modelo de vehículo.', false);
       decoded = null;
     }
   }
 
   inp.addEventListener('input', function() {
     clearTimeout(vinDebounce);
+    clearAutoSearch();
     const val = inp.value.trim();
-
     if (!val) { hideBadge(); return; }
-
     if (isVin(val)) {
-      // Debounce 600ms before calling NHTSA
       vinDebounce = setTimeout(() => decodeVin(val), 600);
     } else {
       hideBadge();
     }
   });
 
-  // Expose decoded data for the submit handler below
-  window.__vinDecoded = () => decoded;
+  // Expose decoded + builder for manual submit
+  window.__vinDecoded   = () => decoded;
+  window.__vinResultUrl = () => decoded ? buildResultUrl(decoded, engInp.value.trim()) : null;
 })();
 
 document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
   e.preventDefault();
-  const rawVal = document.getElementById('inp-vin-model').value.trim();
-  const engine = document.getElementById('inp-vin-engine').value.trim();
+  const rawVal  = document.getElementById('inp-vin-model').value.trim();
+  const engine  = document.getElementById('inp-vin-engine').value.trim();
   const decoded = window.__vinDecoded ? window.__vinDecoded() : null;
 
-  let model;
-  if (decoded && decoded.make && decoded.model) {
-    // Use decoded make + model for a precise DB search
-    model = decoded.make + ' ' + decoded.model;
-  } else {
-    model = rawVal;
+  // If VIN was decoded, use the pre-built URL (which already has make+model+year)
+  if (window.__vinResultUrl && window.__vinResultUrl()) {
+    window.location.href = window.__vinResultUrl();
+    return;
   }
 
-  if (!model) return;
-  const finalEngine = engine || (decoded && decoded.engine) || '';
-  let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
-  if (finalEngine) url += `&engine=${encodeURIComponent(finalEngine)}`;
-  if (decoded && decoded.year) url += `&year=${encodeURIComponent(decoded.year)}`;
+  // Otherwise use free-text model
+  if (!rawVal) return;
+  let url = `results.html?mode=vin&model=${encodeURIComponent(rawVal)}`;
+  if (engine) url += `&engine=${encodeURIComponent(engine)}`;
   window.location.href = url;
 });
+
+
 
 
 document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
