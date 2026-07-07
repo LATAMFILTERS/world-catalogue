@@ -80,9 +80,22 @@ function generateSku(mannCode, filterType) {
 
 function parseMm(val) {
   if (val == null) return null;
-  const s = String(val).replace(',', '.').replace(/[^0-9.]/g, '');
-  const n = parseFloat(s);
-  return isNaN(n) ? null : n;
+  const str = String(val).toLowerCase().trim();
+  
+  // Detect if unit is inches
+  const isInch = str.includes('inch') || str.includes('in') || str.includes('"');
+  
+  // Extract number (support decimal comma replacement)
+  const s = str.replace(',', '.').replace(/[^0-9.]/g, '');
+  let n = parseFloat(s);
+  if (isNaN(n)) return null;
+
+  if (isInch) {
+    n = n * 25.4;
+  }
+
+  // Round to 2 decimal places for database accuracy
+  return Math.round(n * 100) / 100;
 }
 
 /**

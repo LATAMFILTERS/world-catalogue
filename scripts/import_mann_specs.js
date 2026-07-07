@@ -103,16 +103,15 @@ async function main() {
     }
 
     try {
-      // We only update if the SKU already exists.
-      // We use COALESCE so that if the column already has data, we keep it, otherwise update.
+      // Overwrite technical specs directly so that corrected dimensions overwrite incorrect ones.
       const res = await client.query(
         `UPDATE elimfilters_catalog SET
-          installation_type    = COALESCE(installation_type, $2),
-          thread_size          = COALESCE(thread_size, $3),
-          outer_diameter_mm    = COALESCE(outer_diameter_mm, $4),
-          height_mm            = COALESCE(height_mm, $5),
-          gasket_od_mm         = COALESCE(gasket_od_mm, $6),
-          gasket_id_mm         = COALESCE(gasket_id_mm, $7)
+          installation_type    = $2,
+          thread_size          = $3,
+          outer_diameter_mm    = $4,
+          height_mm            = $5,
+          gasket_od_mm         = $6,
+          gasket_id_mm         = $7
         WHERE sku = $1`,
         [
           sku,
