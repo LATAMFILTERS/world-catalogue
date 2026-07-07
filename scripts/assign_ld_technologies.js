@@ -53,7 +53,7 @@ async function main() {
     UPDATE elimfilters_catalog 
     SET 
       technology = 'SYNTRAX™', 
-      sub_type = 'Cellulose' 
+      sub_type = 'Genuine Media' 
     WHERE duty = 'LIGHT_DUTY' 
       AND filter_type = 'oil' 
       AND technology IS NULL;
@@ -65,7 +65,7 @@ async function main() {
     UPDATE elimfilters_catalog 
     SET 
       technology = 'MACROCORE™', 
-      sub_type = 'Cellulose' 
+      sub_type = 'Genuine Media' 
     WHERE duty = 'LIGHT_DUTY' 
       AND filter_type = 'air' 
       AND technology IS NULL;
@@ -77,7 +77,7 @@ async function main() {
     UPDATE elimfilters_catalog 
     SET 
       technology = 'SYNTEPORE™', 
-      sub_type = 'Cellulose' 
+      sub_type = 'Genuine Media' 
     WHERE duty = 'LIGHT_DUTY' 
       AND filter_type = 'fuel' 
       AND technology IS NULL;
@@ -89,7 +89,7 @@ async function main() {
     UPDATE elimfilters_catalog 
     SET 
       technology = 'MICROKAPPA™', 
-      sub_type = 'Cellulose' 
+      sub_type = 'Genuine Media' 
     WHERE duty = 'LIGHT_DUTY' 
       AND filter_type = 'cabin' 
       AND technology IS NULL;
