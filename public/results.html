@@ -676,8 +676,59 @@
         if (foundHD) duty = 'HEAVY_DUTY';
       }
 
+      // Auto-extract vehicle or equipment details from matching applications if not fully present in URL
+      let displayModel = model || '';
+      let displayMake = '';
+      let displayEngine = engine || '';
+      let displayYear = year || '';
+      let displayType = type || '';
+
+      const queryUpper = (model || q || '').toUpperCase().trim();
+
+      if (duty === 'HEAVY_DUTY') {
+        // Look for matching equipment application in the returned items
+        for (const item of items) {
+          const apps = item.equipment_applications || item.vehicle_applications || [];
+          const found = apps.find(app => {
+            const m = (app.model || app.machine || '').toUpperCase();
+            const mk = (app.make || '').toUpperCase();
+            return m.includes(queryUpper) || `${mk} ${m}`.includes(queryUpper) || queryUpper.includes(m);
+          });
+          if (found) {
+            displayMake = found.make || '';
+            displayModel = found.model || found.machine || displayModel;
+            displayEngine = found.engine || found.engine_code || displayEngine;
+            displayType = found.type || displayType;
+            break;
+          }
+        }
+        if (displayMake && !displayModel.toUpperCase().includes(displayMake.toUpperCase())) {
+          displayModel = `${displayMake} ${displayModel}`;
+        }
+      } else {
+        // Light Duty: Look for matching vehicle application
+        for (const item of items) {
+          const apps = item.vehicle_applications || item.equipment_applications || [];
+          const found = apps.find(app => {
+            const m = (app.model || app.machine || '').toUpperCase();
+            const mk = (app.make || '').toUpperCase();
+            return m.includes(queryUpper) || `${mk} ${m}`.includes(queryUpper) || queryUpper.includes(m);
+          });
+          if (found) {
+            displayMake = found.make || '';
+            displayModel = found.model || found.machine || displayModel;
+            displayEngine = found.engine_code || found.engine || displayEngine;
+            displayYear = found.year_range || displayYear;
+            break;
+          }
+        }
+        if (displayMake && !displayModel.toUpperCase().includes(displayMake.toUpperCase())) {
+          displayModel = `${displayMake} ${displayModel}`;
+        }
+      }
+
       // Generate a persistent Kit code based on the search parameters
-      const salt = model || q || 'DURATECH';
+      const salt = displayModel || model || q || 'DURATECH';
       const kitCode = getKitCode(duty, salt);
       currentContext.kitCode = kitCode;
 
@@ -699,17 +750,17 @@
               ` : ''}
               <div class="meta-item">
                 <div class="meta-lbl">VEHICLE MAKE & MODEL</div>
-                <div class="meta-val">${(model || 'VEHICULO NO ESPECIFICADO').toUpperCase()}</div>
+                <div class="meta-val">${(displayModel || 'VEHICULO NO ESPECIFICADO').toUpperCase()}</div>
               </div>
-              ${year ? `
+              ${displayYear ? `
                 <div class="meta-item">
                   <div class="meta-lbl">MANUFACTURE YEAR</div>
-                  <div class="meta-val">${year}</div>
+                  <div class="meta-val">${displayYear}</div>
                 </div>
               ` : ''}
               <div class="meta-item">
                 <div class="meta-lbl">ENGINE TYPE</div>
-                <div class="meta-val">${(engine || 'N/A').toUpperCase()}</div>
+                <div class="meta-val">${(displayEngine || 'N/A').toUpperCase()}</div>
               </div>
             </div>
           </div>
@@ -725,15 +776,15 @@
             <div class="kit-meta-grid">
               <div class="meta-item">
                 <div class="meta-lbl">EQUIPMENT MODEL</div>
-                <div class="meta-val">${(model || 'HEAVY MACHINERY').toUpperCase()}</div>
+                <div class="meta-val">${(displayModel || 'HEAVY MACHINERY').toUpperCase()}</div>
               </div>
               <div class="meta-item">
                 <div class="meta-lbl">EQUIPMENT TYPE</div>
-                <div class="meta-val">${(type || 'INDUSTRIAL CLASS').toUpperCase()}</div>
+                <div class="meta-val">${(displayType || type || 'INDUSTRIAL CLASS').toUpperCase()}</div>
               </div>
               <div class="meta-item">
                 <div class="meta-lbl">POWERPLANT ENGINE</div>
-                <div class="meta-val">${(engine || 'N/A').toUpperCase()}</div>
+                <div class="meta-val">${(displayEngine || 'N/A').toUpperCase()}</div>
               </div>
             </div>
           </div>
