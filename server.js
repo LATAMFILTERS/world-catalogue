@@ -1309,12 +1309,15 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 });
 
 // ─── GET /api/search/vin ──────────────────────────────────────────────────────
-// Searches by vehicle make / model / engine in:
+// Searches by vehicle make / model / engine / year in:
 //   - vehicle_applications JSONB (Light Duty)
 //   - kg_product_equipment relational table (Heavy Duty)
+// The 'model' param accepts free-text (HILUX) or a decoded make+model from NHTSA.
+// The optional 'year' param is decoded from a VIN via NHTSA vPIC.
 app.get('/api/search/vin', searchLimiter, async (req, res) => {
   const model  = (req.query.model  || '').trim();
   const engine = (req.query.engine || '').trim();
+  const year   = parseInt(req.query.year || '0', 10);
 
   if (!model) return res.status(400).json({ success: false, error: 'model is required' });
 
@@ -1336,6 +1339,13 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
          )`
       : '';
     if (engine) params.push('%' + engine.toUpperCase() + '%');
+
+    // year_range in LD JSONB is stored as "MM/YY → MM/YY" string so we match
+    // just the year portion with a LIKE pattern.
+    const yearCondLD = year
+      ? `AND va->>'year_range' LIKE $${++idx}`
+      : '';
+    if (year) params.push('%' + year + '%');
 
     const idxAfterLD = idx;
 
@@ -1363,6 +1373,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
             WHERE
               UPPER(COALESCE(va->>'make','') || ' ' || COALESCE(va->>'model','')) LIKE $1
               ${engineCond}
+              ${yearCondLD}
           )
         )
         OR
@@ -1392,6 +1403,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
     client.release();
   }
 });
+
 
 // ─── GET /api/search/equipment ────────────────────────────────────────────────
 // Searches by equipment make / model / engine in:
