@@ -1364,12 +1364,13 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/i;
   function isVin(val) { return VIN_RE.test(val.replace(/\s/g, '')); }
 
-  function buildResultUrl(dec, rawEngine) {
+  function buildResultUrl(dec, rawEngine, rawVin) {
     const model       = dec.make + ' ' + dec.model;
     const finalEngine = rawEngine || dec.engine || '';
     let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
     if (finalEngine) url += `&engine=${encodeURIComponent(finalEngine)}`;
     if (dec.year)    url += `&year=${encodeURIComponent(dec.year)}`;
+    if (rawVin)      url += `&vin=${encodeURIComponent(rawVin)}`;
     return url;
   }
 
@@ -1421,7 +1422,7 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
       countdown--;
       if (countdown <= 0) {
         clearAutoSearch();
-        window.location.href = buildResultUrl(dec, engInp.value.trim());
+        window.location.href = buildResultUrl(dec, engInp.value.trim(), inp.value.trim());
         return;
       }
       showBadge(renderCountdown(countdown));
@@ -1488,7 +1489,7 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
 
   // Expose decoded + builder for manual submit
   window.__vinDecoded   = () => decoded;
-  window.__vinResultUrl = () => decoded ? buildResultUrl(decoded, engInp.value.trim()) : null;
+  window.__vinResultUrl = () => decoded ? buildResultUrl(decoded, engInp.value.trim(), inp.value.trim()) : null;
 })();
 
 document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
