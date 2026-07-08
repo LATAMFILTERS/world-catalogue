@@ -39,8 +39,8 @@ export const KC_STANDARDS: KCStandard[] = [
     engineeringPurpose: 'Provides the sole global standardised test method for measuring hydraulic and lubrication filter element efficiency (Beta ratio) and capacity (dust holding capacity), enabling direct cross-manufacturer performance comparability under fully reproducible laboratory conditions. ISO 16889 is the reference standard for all ELIMFILTERS fluid filter qualification.',
     sections: [
       {
-        heading: 'Scope and Application',
-        body: 'ISO 16889 specifies the multi-pass method for testing filter elements used in hydraulic fluid power systems, including lube oil filtration. The test measures filter efficiency (Beta ratio), dirt holding capacity (grams of A2 medium test dust), and differential pressure characteristics throughout the test cycle. The standard applies to full-flow and bypass filter elements operating in petroleum and synthetic hydraulic fluids.',
+        heading: 'What ISO 16889 Measures',
+        body: 'ISO 16889 defines the multi-pass method for evaluating the filtration ratio (Beta ratio) and dirt-holding capacity of hydraulic filter elements. The Beta ratio (βx) quantifies a filter\'s efficiency at a specific particle size: β10(c) = 200 means the filter captures 200 contaminated particles per 1 clean particle that passes through at the 10 µm(c) size — equivalent to 99.5% efficiency at that size. The cleanliness code produced by ISO 16889-based testing uses three Range Numbers representing particle counts per millilitre at >4 µm, >6 µm, and >14 µm thresholds. A code of 16/14/11 means: up to 320 particles >4 µm, up to 80 particles >6 µm, and up to 10 particles >14 µm per mL. Particle counting must be performed with an automatic particle counter (APC) calibrated to ISO 11171 using NIST-traceable calibration fluid — this eliminated inter-laboratory variation that existed under older ISO 4406 manual counting methods.',
       },
       {
         heading: 'Test Methodology',
@@ -49,6 +49,26 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         heading: 'Beta Ratio Interpretation',
         body: 'Beta ratio (β) at a given particle size is the ratio of upstream to downstream particle count at that size. β₆(c) = 200 indicates that for every 200 particles >6 µm upstream, one particle exits downstream — 99.5% efficiency. The "(c)" suffix confirms ISO 11171 calibrated counting. Beta values vary continuously throughout the test as the element loads with contaminant; the reported value is the filtration ratio averaged over the test.',
+      },
+      {
+        heading: 'Why It Matters for Industrial Filtration',
+        body: 'ISO 16889 is the foundational measurement standard for specifying and verifying hydraulic system cleanliness. Without it, there is no consistent way to define what "clean enough" means for a specific hydraulic circuit, or to verify that a filter element actually performs as specified. The standard enables engineers to: (1) specify target cleanliness codes for each circuit based on the most sensitive component (e.g., ISO 16/14/11 for proportional valves with 1–4 µm spool clearances); (2) select filter elements with Beta ratios proven to achieve those targets; (3) verify actual fluid condition through periodic oil analysis. Particle contamination is responsible for 70–80% of hydraulic system failures. ISO 16889 provides the measurement framework that transforms contamination control from a qualitative guideline into a verifiable engineering specification.',
+      },
+      {
+        heading: 'Cleanliness Codes for Common Hydraulic Systems',
+        body: 'Target cleanliness codes vary by component sensitivity. Proportional and servo control valves (spool clearances 1–4 µm): ISO 16/14/11 or 15/13/10. Pressure-compensated variable displacement pumps: ISO 17/15/12. Standard directional control valves: ISO 18/16/13. Hydraulic cylinders and motors: ISO 19/17/14. Return line and reservoir circuits: ISO 20/18/15. These targets are derived from empirical wear data: maintaining 16/14/11 in a servo system extends valve spool life by 3–5× compared to uncontrolled contamination at 20/18/15. Filter selection must account for the system\'s highest-pressure circuit, the most sensitive component, and the expected ingression rate from ambient contamination, system wear particles, and new oil contamination. New oil from drums typically measures ISO 21/19/16 — it must be filtered before use if the system target is tighter than 20/18/15.',
+      },
+      {
+        heading: 'What is the difference between ISO 4406 and ISO 16889?',
+        body: 'ISO 4406 defined the Range Number cleanliness code system. ISO 16889 defines how to measure the fluid to arrive at that code — specifically the multi-pass filter test, the Beta ratio measurement protocol, and the requirement for automatic particle counters calibrated to ISO 11171. The cleanliness code format is identical: both use three Range Numbers at 4 µm, 6 µm, and 14 µm. The difference is measurement precision: ISO 4406 permitted manual microscopic counting that varied between laboratories; ISO 16889 mandated calibrated APCs that produce consistent, reproducible results. When a service manual specifies "ISO 4406 18/16/13," the numbers mean exactly the same as "ISO 16889 18/16/13."',
+      },
+      {
+        heading: 'How often should fluid cleanliness be measured?',
+        body: 'Measurement frequency depends on system criticality and operating environment. Servo and proportional valve systems in clean environments: quarterly or every 500 operating hours. Mobile construction equipment in dusty environments: every 250 hours or when filter differential pressure indicators signal approaching bypass. Fixed industrial systems with continuous monitoring: inline particle counters can provide real-time cleanliness data. After maintenance events (filter change, seal replacement, component repair): always sample before returning to service to confirm the circuit was not contaminated during maintenance. Oil analysis programs typically combine particle counting (ISO 16889), water content (Karl Fischer per ASTM D6304), and wear metal spectrometry (ICP-OES) to provide a complete picture of fluid condition.',
+      },
+      {
+        heading: 'What does "absolute" versus "nominal" filtration rating mean?',
+        body: '"Absolute" filtration rating means the filter achieves a specified Beta ratio at the stated particle size: a 10 µm absolute filter has β10(c) ≥ 200 (99.5% efficiency). "Nominal" ratings are not standardised and carry no guaranteed efficiency — a filter marked "10 µm nominal" might allow 30–50% of 10 µm particles to pass in service. ISO 16889 only recognises Beta ratio values as valid efficiency descriptors. When specifying replacement filter elements, always request the manufacturer\'s ISO 16889 test report with Beta ratio data, not just a nominal micron rating. Nominal ratings are a legacy marketing convention with no engineering basis under modern filtration standards.',
       },
     ],
     keyParams: [
@@ -82,16 +102,32 @@ export const KC_STANDARDS: KCStandard[] = [
     engineeringPurpose: 'Establishes the universal particle contamination coding system for hydraulic and lubrication fluids — providing a common language for cleanliness specification, measurement verification, and contamination control target-setting across all OEM and aftermarket filtration applications.',
     sections: [
       {
-        heading: 'Cleanliness Code System',
-        body: 'ISO 4406 assigns a three-number code (e.g., 17/15/12) representing the particle contamination level at three size thresholds: ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c). Each code number corresponds to a particle count range per milliliter. Code 17 = 640–1,300 particles/mL; Code 12 = 20–40 particles/mL. A one-unit increase in code number doubles the particle count.',
+        heading: 'What ISO 4406 Measures',
+        body: 'ISO 4406 classifies particle contamination in hydraulic and lubricating fluids using a two- or three-number cleanliness code. Each number in the code is a Range Number corresponding to a particle count threshold per millilitre: the first number covers particles larger than 4 µm, the second covers particles larger than 6 µm, and a third number (when included) covers particles larger than 14 µm. Range Numbers are logarithmic: Range Number 18 means a maximum of 1,300 particles per mL; Range Number 16 means a maximum of 320 particles per mL. Each increment of one Range Number represents a doubling of the particle count. A code such as 18/16/13 means the fluid contains up to 1,300 particles >4 µm, up to 320 particles >6 µm, and up to 40 particles >14 µm per millilitre of fluid. The 4 µm channel captures the fine contamination that causes the most damage to tight-tolerance components; the 14 µm channel captures larger wear debris indicating ongoing component damage.',
       },
       {
-        heading: 'Target Code Selection',
-        body: 'Target cleanliness codes are determined by the most sensitive component in the system. Equipment manufacturers specify target codes based on their component clearance tolerances. Servo valves with 1–3 µm spool clearances require ISO 14/12/10. Hydraulic motors with 10–30 µm clearances may tolerate ISO 18/16/13. Engine bearings with 5–25 µm journal clearances target ISO 16/14/11.',
+        heading: 'Industrial Application',
+        body: 'ISO 4406 codes appear in OEM service manuals, hydraulic component datasheets, and oil analysis laboratory reports. When a hydraulic system specifies a target cleanliness of ISO 4406 16/14/11, it defines the maximum allowable particle concentrations at which the system will operate without accelerated wear. Proportional control valves with spool clearances of 1–4 µm require target codes of 16/14/11 or tighter; industrial hydraulic cylinders typically specify 18/16/13. Particle counters calibrated to ISO 11171 measure fluid samples and report the code automatically. Oil analysis programs use ISO 4406 codes to trend contamination over time — a shift from 16/14/11 to 18/16/13 indicates contamination ingress or filter degradation and triggers maintenance action before component failure occurs.',
       },
       {
         heading: 'Measurement Methods',
         body: 'Particle counts are measured by automatic particle counter (APC) using light obscuration, calibrated per ISO 11171 using NIST-traceable PSL reference particles. Alternatively, microscopic counting (patch test, ISO 11500) provides confirmation. Sample collection, handling, and bottle cleanliness requirements are specified to prevent sample contamination from invalidating results.',
+      },
+      {
+        heading: 'Relationship to ISO 16889',
+        body: 'ISO 4406 predates ISO 16889 and used slightly different counting methods, which created measurement inconsistencies between laboratories. ISO 16889 (published 1999, revised 2022) standardised the multi-pass filter test methodology and the automatic particle counter calibration protocol under ISO 11171, replacing the earlier manual counting methods that ISO 4406 permitted. Modern equipment specifications typically reference ISO 16889 cleanliness codes rather than ISO 4406 codes, but the Range Number framework and the 4 µm / 6 µm / 14 µm particle size channels are identical. Legacy equipment built before 2000 frequently specifies ISO 4406 two-number codes such as 18/16; these translate directly to ISO 16889 codes by adding the 14 µm channel: 18/16 is approximately equivalent to 18/16/13. Equipment operating under legacy ISO 4406 specifications can still be monitored using modern particle counters reporting ISO 16889 codes — the numerical values are compatible.',
+      },
+      {
+        heading: 'What does an ISO 4406 code of 18/16 mean?',
+        body: 'ISO 4406 18/16 means the fluid contains: up to 1,300 particles larger than 4 µm per mL (Range Number 18 = 640–1,300 particles/mL) and up to 320 particles larger than 6 µm per mL (Range Number 16 = 160–320 particles/mL). This is a relatively contaminated condition typically acceptable for low-pressure return lines and reservoirs, but not for servo valves or pump circuits. For comparison, a clean hydraulic servo system typically targets 16/14 (up to 320 particles >4 µm / up to 80 particles >6 µm per mL).',
+      },
+      {
+        heading: 'Why do some hydraulic systems still specify ISO 4406 codes?',
+        body: 'Many legacy systems, imported machines, and OEM service manuals written before 2000 reference ISO 4406 codes. Maintenance teams working on these systems encounter two-number codes (e.g., 18/16) without a 14 µm channel. This is fully compatible with modern ISO 16889-based oil analysis — modern particle counters report all three channels automatically. A legacy ISO 4406 18/16 specification means the third channel (14 µm) was not originally measured; when monitoring the system today, target 18/16/13 or tighter. The 14 µm channel provides early warning of catastrophic wear events that the two-channel code would miss.',
+      },
+      {
+        heading: 'What particle counter should be used to measure ISO 4406 cleanliness?',
+        body: 'Automatic optical particle counters (OPCs) calibrated to ISO 11171 using NIST-traceable AC Fine Test Dust (ACFTD) reference material are the required measurement instrument. Older manual counting methods (light microscopy on filter membranes) are no longer acceptable for ISO 16889 reporting but may still appear in older ISO 4406 procedures. For field sampling, bottles must be clean to ISO 4406 14/12/10 or better and filled under clean conditions to prevent sampling contamination. Sample volume is typically 10–100 mL. Laboratory results report Range Numbers for each particle size channel; counts are corrected for background contamination per ISO 11171 procedures.',
       },
     ],
     keyParams: [
@@ -272,8 +308,8 @@ export const KC_STANDARDS: KCStandard[] = [
     engineeringPurpose: 'Provides standardised test methodology for air intake filter gravimetric efficiency and dust holding capacity, enabling performance comparison across air filter manufacturers for engine intake protection in on-road, off-road, agricultural, and industrial applications.',
     sections: [
       {
-        heading: 'Scope and Application',
-        body: 'ISO 5011 defines test methods for determining the performance characteristics of air cleaner filter elements including filtration efficiency, air restriction (pressure drop), and dust holding capacity. The standard applies to primary and safety filter elements used in internal combustion engines (gasoline and diesel), gas turbines, and compressors in industrial and mobile applications.',
+        heading: 'What ISO 5011 Tests',
+        body: 'ISO 5011 defines the test methods for measuring the performance of air intake filter elements used in internal combustion engines and compressors. The standard specifies three principal test procedures: (1) Initial efficiency test — measures the filter\'s particle capture efficiency at the start of service life, using AC Fine Test Dust (ACFTD) of defined particle size distribution. (2) Dust capacity test — measures the total mass of dust the element can hold before reaching the specified maximum permissible differential pressure, defining service interval. (3) Collapse/integrity test — verifies the element\'s structural integrity under severe differential pressure: the element must survive without leaking or collapsing at three to five times the rated operating pressure differential. These tests are conducted under standardised airflow conditions and document filter performance using consistent, reproducible methodology that allows direct comparison between competing elements.',
       },
       {
         heading: 'Efficiency Measurement',
@@ -282,6 +318,30 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         heading: 'Restriction and Capacity Testing',
         body: 'Restriction (pressure drop in mbar or Pa) is measured at rated airflow using calibrated differential pressure transducers. The test runs at constant flow until terminal restriction is reached (as specified by the manufacturer or test client). Dust holding capacity is the total grams of test dust retained by the element at terminal restriction, providing the basis for service interval prediction.',
+      },
+      {
+        heading: 'Why It Matters for Engine Protection',
+        body: 'Air intake filtration is the first and most critical defence for combustion engine reliability. Diesel engines ingest 10,000–30,000 litres of air per litre of fuel burned; all contamination in that air — silica dust, carbon particles, pollen, industrial particulate — enters the combustion chamber unless the air filter intercepts it. A single particle of silica dust (hardness 7 Mohs) larger than the oil film thickness on a piston ring (typically 3–10 µm) can initiate abrasive wear that propagates across the full service interval. ISO 5011 provides the measurement framework that guarantees an air filter element will capture particles above its rated efficiency threshold under defined operating conditions. An element that passes ISO 5011 integrity testing at 3× rated differential pressure will not develop bypass leaks in normal service. Without ISO 5011 certification, there is no engineering basis for assuming an air filter will perform as labelled during its full service life.',
+      },
+      {
+        heading: 'Application in Engine Specifications',
+        body: 'OEM engine manufacturers specify air filter elements by ISO 5011 performance parameters: minimum initial efficiency (typically 99.5%–99.9% at the test particle size), minimum dust capacity (in grams of ACFTD per unit airflow), and minimum collapse pressure. When an agricultural tractor OEM specifies an air filter element for a 150 kW diesel engine, the element must meet the ISO 5011 performance parameters validated for that engine\'s airflow rate (typically 600–900 m³/h) and operating environment (high ambient dust concentration in agricultural applications requires higher dust capacity than urban construction equipment). Aftermarket elements must demonstrate equivalent ISO 5011 performance — not just dimensional compatibility — to provide equivalent engine protection. An element that fits physically but holds 30% less dust will require 30% more frequent replacement intervals to prevent performance degradation from restriction or failure from collapse.',
+      },
+      {
+        heading: 'What is the difference between the collapse test and the integrity test in ISO 5011?',
+        body: 'The integrity test (bubble point test) applies low-pressure air to the clean filter element while the outlet side is submerged in liquid; bubbles indicate leaks in the filter media or gasket seals. It detects manufacturing defects and small perforations that would allow particle bypass in service. The collapse test applies increasing differential pressure (with liquid) until the element either develops a sustained leak or deforms structurally. The collapse test verifies the element can withstand pressure spikes from cold start conditions, clogged filter operation, and blocked service intervals without catastrophic bypass. ISO 5011 requires elements to survive at least 3× their rated operating differential pressure without collapse.',
+      },
+      {
+        heading: 'What differential pressure rating should a heavy-duty air filter element have?',
+        body: 'Heavy-duty air filter elements for diesel engines typically have rated service differential pressures of 3–7 kPa (30–70 mbar) at maximum rated airflow. Service restriction indicators (visual or electronic) typically trigger at 6–10 kPa. ISO 5011 collapse testing requires the element to survive 20–35 kPa without failure — providing a 3–5× safety margin above the service restriction trigger point. Mining and construction equipment operating in extremely dusty environments may use lower restriction triggers (4–5 kPa) to prevent ingestion of dust through a bypassing clogged element. High-performance industrial compressors may specify collapse ratings up to 100 kPa for catastrophic-failure prevention in process-critical applications.',
+      },
+      {
+        heading: 'How does ISO 5011 relate to SAE J726 and SAE J1539?',
+        body: 'SAE J726 (Air Cleaner Test Code) and ISO 5011 are technically equivalent standards that were harmonised through the international standardisation process. SAE J726 is the North American version; ISO 5011 is the international version. They specify the same test procedures, the same test dusts, and produce comparable results. Equipment sold globally may reference either standard. SAE J1539 (Air Cleaner Element Test Code for Crankcase Breathers) covers a related but distinct application: crankcase ventilation filter elements that prevent engine oil mist and blowby gases from entering the air intake. ELIMFILTERS MACROCORE™ elements are tested and certified under both ISO 5011 and SAE J726 for primary air intake applications.',
+      },
+      {
+        heading: 'Does ISO 5011 certification guarantee compatibility with my engine?',
+        body: 'ISO 5011 certification guarantees the element meets the specified efficiency, dust capacity, and structural integrity values under the standard\'s test conditions — it does not guarantee dimensional fit or compatibility with a specific engine\'s airflow system. An element must also match the engine\'s housing inlet/outlet dimensions, sealing geometry (radial seal, axial seal, or flat panel), and airflow resistance characteristics to the OEM specification. When sourcing replacement elements, verify both the ISO 5011 performance data (efficiency ≥ OEM spec, dust capacity ≥ OEM spec, collapse pressure ≥ OEM spec) and the dimensional specification against the original element part number.',
       },
     ],
     keyParams: [
