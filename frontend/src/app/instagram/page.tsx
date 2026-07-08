@@ -9,7 +9,7 @@ export default function InstagramPage() {
     <main className="min-h-screen bg-black text-white">
       <section className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 py-20 text-center">
         <img
-          src="/assets/logo-elimfilters.png"
+          src="/images/logo-sin-fondo.avif"
           alt="ELIMFILTERS"
           className="mb-8 h-auto w-56 md:w-72"
         />
