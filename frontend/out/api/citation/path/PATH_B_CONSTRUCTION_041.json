@@ -1,0 +1,260 @@
+{
+  "path_id": "PATH_B_CONSTRUCTION_041",
+  "path_type": "B",
+  "entry_node": "CONSTRUCTION",
+  "entry_type": "industry",
+  "industry": "CONSTRUCTION",
+  "valid": true,
+  "steps": [
+    {
+      "key": "CONSTRUCTION",
+      "type": "industry",
+      "name": "Construction",
+      "citation_record": {
+        "key": "CONSTRUCTION",
+        "type": "industry",
+        "name": "Construction",
+        "slug": "construction",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "CONSTRUCTION",
+        "tags": [
+          "industry",
+          "active",
+          "high-exposure",
+          "off-highway",
+          "hydraulic-intensive",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/industries/construction",
+          "concept": "Construction Industry Filtration Requirements",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:769a5e1daeb005779b2c28a0b465fd59ece7fd8576604f771cd7288d17c3d5fe"
+        },
+        "canonical": {
+          "definition": "Construction is a HIGH contamination exposure industrial category for heavy equipment, with concurrent silica-bearing airborne dust, hydraulic system wear particle generation, diesel fuel water contamination, and operator cabin air quality hazards all simultaneously present in excavator, loader, bulldozer, and compactor operations.",
+          "systems": "Air intake filtration, hydraulic circuit filtration, lube oil filtration, fuel filtration, cabin air filtration across all heavy construction equipment categories",
+          "failure_impact": "Hydraulic contamination above ISO 4406 17/15/12 → proportional valve spool sticktion and internal leakage → machine productivity loss and valve replacement ($5,000–$25,000 per valve) | Air intake failure → silica dust ingestion → piston ring abrasive wear → engine overhaul at 3,000–5,000 hours | Cabin air contamination above PM10 limits → operator chronic respiratory exposure at active earthmoving sites.",
+          "related_standards": "SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles",
+          "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | HYDROCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
+          "industrial_role": "Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs."
+        },
+        "relationships": {
+          "relevant_contamination": [
+            "PARTICLE_WEAR",
+            "HYDRAULIC_CONTAMINATION",
+            "DIESEL_WATER",
+            "CABIN_AIR_CONTAMINATION"
+          ],
+          "applicable_technologies": [
+            "MACROCORE",
+            "NANOFORCE",
+            "SYNTRAX",
+            "HYDROCORE",
+            "MICROKAPPA",
+            "INTEKCORE"
+          ],
+          "applicable_standards": [
+            "SAE_J1539",
+            "ISO_16889",
+            "ISO_5011",
+            "NFPA_T214",
+            "ISO_11155"
+          ],
+          "common_problems": [
+            "DUST_INGESTION",
+            "ENGINE_OIL_CONTAMINATION",
+            "HYDRAULIC_VALVE_FAILURE",
+            "OPERATOR_DUST_EXPOSURE"
+          ],
+          "typical_product_families": [
+            "AIRFILTER_PRIMARY",
+            "LUBE_PRIMARY",
+            "HYDRAULIC_PRIMARY",
+            "CABIN_PRIMARY"
+          ]
+        },
+        "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
+      }
+    },
+    {
+      "key": "HYDRAULIC_VALVE_FAILURE",
+      "type": "problem",
+      "name": "Hydraulic Valve Failure",
+      "citation_record": {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "type": "problem",
+        "name": "Hydraulic Valve Failure",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "hydraulic",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-high"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+        },
+        "canonical": {
+          "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
+          "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
+          "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
+          "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
+          "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
+          "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ISO_16889",
+            "ISO_4406",
+            "NFPA_T214"
+          ],
+          "resolved_by_technologies": [
+            "NANOFORCE",
+            "SYNTRAX"
+          ],
+          "recommended_product_families": [
+            "HYDRAULIC_PRIMARY"
+          ],
+          "root_contamination": [
+            "HYDRAULIC_CONTAMINATION"
+          ],
+          "industry_frequency": [
+            "CONSTRUCTION",
+            "MINING",
+            "AGRICULTURE",
+            "MARINE",
+            "OIL_GAS",
+            "POWER_GENERATION"
+          ]
+        },
+        "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+      }
+    },
+    {
+      "key": "HYDRAULIC_CONTAMINATION",
+      "type": "contamination-mode",
+      "name": "Hydraulic System Contamination",
+      "citation_record": {
+        "key": "HYDRAULIC_CONTAMINATION",
+        "type": "contamination-mode",
+        "name": "Hydraulic System Contamination",
+        "slug": "hydraulic-contamination",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "HYDRAULIC_CONTAMINATION",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "hydraulic",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Hydraulic System Contamination",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:13a03cb41b7aa90756be4178b97fa2e8da544eb392b65ffb1f2ff9dca148d10a"
+        },
+        "canonical": {
+          "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
+          "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
+          "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
+          "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
+          "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | HYDROCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
+          "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_16889",
+            "ISO_4406",
+            "NFPA_T214"
+          ],
+          "resolved_by": [
+            "NANOFORCE",
+            "HYDROCORE",
+            "SYNTRAX",
+            "MICROKAPPA"
+          ]
+        },
+        "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
+      }
+    },
+    {
+      "key": "SYNTRAX",
+      "type": "technology",
+      "name": "SYNTRAX — Full-Flow Lube Protection",
+      "citation_record": {
+        "key": "SYNTRAX",
+        "type": "technology",
+        "name": "SYNTRAX — Full-Flow Lube Protection",
+        "slug": "syntrax",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "SYNTRAX",
+        "tags": [
+          "technology",
+          "active",
+          "lube-oil",
+          "full-flow",
+          "iso-4406",
+          "bearing-protection",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
+          "concept": "SYNTRAX Full-Flow Lube Protection",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:951017803767ebe0fa30e6585498d2392c32466575dc3363e9c4ece640495dce"
+        },
+        "canonical": {
+          "definition": "SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits by combining high-efficiency particulate capture (ISO 16889 Beta ratio rated) with soot agglomerate removal above 2% by weight concentration, preventing both abrasive particle wear and soot-induced oil degradation.",
+          "systems": "Engine lube oil circuits, hydraulic power circuits, transmission fluid systems across diesel-powered on-highway and off-highway equipment",
+          "failure_impact": "Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.",
+          "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 1 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
+          "related_technologies": "NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by",
+          "industrial_role": "SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories."
+        },
+        "relationships": {
+          "applicable_industries": [
+            "AGRICULTURE",
+            "AUTOMOTIVE",
+            "BUS_COACH",
+            "CONSTRUCTION",
+            "MARINE",
+            "MINING",
+            "POWER_GENERATION",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL",
+            "OIL_GAS"
+          ],
+          "related_standards": [
+            "ISO_4406",
+            "ISO_16889",
+            "DIN_51524"
+          ],
+          "addresses_contamination": [
+            "PARTICLE_WEAR"
+          ]
+        },
+        "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "LUBE_PRIMARY"
+  ]
+}

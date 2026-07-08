@@ -1,0 +1,145 @@
+{
+  "key": "OIL_GAS",
+  "type": "industry",
+  "name": "Oil & Gas",
+  "slug": "oil-gas",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "OIL_GAS",
+  "tags": [
+    "industry",
+    "active",
+    "oil-gas",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
+    "concept": "Oil & Gas Industry Filtration Requirements",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:c80702515096ef1b7461e26d3b27ac6643c687ff50f500a32ac4756bf81f4a51"
+  },
+  "canonical": {
+    "definition": "Oil & Gas is an EXTREME contamination exposure industrial category for diesel and gas-powered drilling, compression, and pipeline equipment operating in remote locations where equipment failure costs $15,000–$50,000/day in downtime and compressor bearing failure costs $200,000+ per event — driven by desert silica dust in air intake, gas condensate in compressor lube oil, H₂S-accelerated oil acidification, and extended service intervals enforced by remote logistics constraints.",
+    "systems": "Drilling rig diesel engine air intake and lube circuits, gas compressor lube oil systems, pump jack engine lube circuits, wellhead hydraulic systems, pipeline compressor station filtration",
+    "failure_impact": "Drilling rig air intake bypass in desert environment → silica ingestion at several g/hour → piston ring and bore abrasive wear → compression loss and engine seizure | Compressor lube oil above ISO 4406 15/13/10 → bearing abrasive wear at high-cycle compression loads → bearing seizure → $200,000+ rebuild cost + production loss | Remote location → extended repair timeline 5–15× greater than onshore industrial sites.",
+    "related_standards": "ISO 5011: Air filtration performance standard for drilling engine and compressor intake systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for drilling and compressor system element selection | ISO 4406: Fluid cleanliness code; compressor lube target 15/13/10; drilling hydraulic target 16/14/11",
+    "related_technologies": "MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service | SYNTEPORE: Synthetic media for gas compressor inlet air systems with condensate resistance",
+    "industrial_role": "Oil and gas filtration is uniquely high-stakes because the economic consequence of contamination-driven failure — measured in daily downtime costs and six-figure rebuild costs — dwarfs filter cost by 100–1,000×; maintaining ISO 4406 target codes in compressor lube circuits and high-efficiency air intake protection in drilling environments are the primary engineering controls preventing the unplanned failures that dominate oil and gas operational cost."
+  },
+  "relationships": {
+    "relevant_contamination": [
+      "PARTICLE_WEAR",
+      "HYDRAULIC_CONTAMINATION",
+      "DIESEL_WATER"
+    ],
+    "applicable_technologies": [
+      "MACROCORE",
+      "NANOFORCE",
+      "SYNTRAX",
+      "SYNTEPORE"
+    ],
+    "applicable_standards": [
+      "ISO_5011",
+      "ISO_16889",
+      "ISO_4406"
+    ],
+    "common_problems": [
+      "ENGINE_OIL_CONTAMINATION",
+      "FUEL_FILTER_PLUGGING",
+      "HYDRAULIC_VALVE_FAILURE"
+    ],
+    "typical_product_families": [
+      "LUBE_PRIMARY",
+      "FUEL_PRIMARY",
+      "HYDRAULIC_PRIMARY"
+    ]
+  },
+  "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md",
+  "_links": {
+    "self": "/api/citation/OIL_GAS.json",
+    "type_index": "/api/citation/type/industry.json",
+    "related": [
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "relevant_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      },
+      {
+        "key": "HYDRAULIC_CONTAMINATION",
+        "relation": "relevant_contamination",
+        "href": "/api/citation/HYDRAULIC_CONTAMINATION.json"
+      },
+      {
+        "key": "DIESEL_WATER",
+        "relation": "relevant_contamination",
+        "href": "/api/citation/DIESEL_WATER.json"
+      },
+      {
+        "key": "MACROCORE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "SYNTEPORE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/SYNTEPORE.json"
+      },
+      {
+        "key": "ISO_5011",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "ISO_16889",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "relation": "common_problems",
+        "href": "/api/citation/ENGINE_OIL_CONTAMINATION.json"
+      },
+      {
+        "key": "FUEL_FILTER_PLUGGING",
+        "relation": "common_problems",
+        "href": "/api/citation/FUEL_FILTER_PLUGGING.json"
+      },
+      {
+        "key": "HYDRAULIC_VALVE_FAILURE",
+        "relation": "common_problems",
+        "href": "/api/citation/HYDRAULIC_VALVE_FAILURE.json"
+      },
+      {
+        "key": "LUBE_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/LUBE_PRIMARY.json"
+      },
+      {
+        "key": "FUEL_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/FUEL_PRIMARY.json"
+      },
+      {
+        "key": "HYDRAULIC_PRIMARY",
+        "relation": "typical_product_families",
+        "href": "/api/citation/HYDRAULIC_PRIMARY.json"
+      }
+    ]
+  }
+}

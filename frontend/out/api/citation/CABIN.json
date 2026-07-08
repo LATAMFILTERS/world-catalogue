@@ -1,0 +1,48 @@
+{
+  "key": "CABIN",
+  "type": "protection-domain",
+  "name": "Cabin Air Filtration Domain",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+    "concept": "CABIN — Cabin Air Filtration Domain",
+    "version": "1.0",
+    "last_updated": "2026-06-24",
+    "content_hash": "sha256:3005ac733581826cb53ba0abd82643a38f11e42adc814780238fd35a95a81089"
+  },
+  "canonical": {
+    "definition": "The cabin air filtration domain covers operator cab air quality systems in mobile equipment, protecting personnel from PM10, PM2.5, and chemical vapor exposure in mining, agriculture, construction, and commercial transport operating environments.",
+    "systems": "Operator cabs in agricultural machinery, construction equipment, mining vehicles, commercial transport, and industrial vehicles operating in dusty or chemically active environments",
+    "failure_impact": "Inadequate cabin filtration → operator exposure to respirable PM2.5 dust → occupational silicosis, coal workers' pneumoconiosis, or chemical toxicity | Regulatory impact: exceeding OSHA/NIOSH PEL thresholds creates occupational health liability and equipment operator health risk.",
+    "related_standards": "ISO 11155: Road vehicle cabin air filtration test methodology | DIN 71220: Cabin air filter classification and performance requirements",
+    "related_technologies": "MICROKAPPA: Cabin air filter elements for PM10/PM2.5 capture with activated carbon variants for chemical vapor environments",
+    "industrial_role": "Cabin air filtration is a mandatory safety system for mobile equipment operators working in environments with silica dust, coal dust, grain dust, or pesticide exposure — failure to maintain effective filtration creates direct occupational health risk."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_11155",
+      "DIN_71220"
+    ]
+  },
+  "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md",
+  "_links": {
+    "self": "/api/citation/CABIN.json",
+    "type_index": "/api/citation/type/protection-domain.json",
+    "related": [
+      {
+        "key": "ISO_11155",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_11155.json"
+      },
+      {
+        "key": "DIN_71220",
+        "relation": "related_standards",
+        "href": "/api/citation/DIN_71220.json"
+      }
+    ]
+  }
+}

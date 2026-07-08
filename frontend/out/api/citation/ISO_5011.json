@@ -1,0 +1,117 @@
+{
+  "key": "ISO_5011",
+  "type": "standard",
+  "name": "Air Filter Performance Test",
+  "slug": "iso-5011",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "ISO_5011",
+  "tags": [
+    "standard",
+    "active",
+    "air-intake",
+    "iso",
+    "test-method",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
+    "concept": "ISO 5011 — Air Filter Performance Test",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:32212b5f9d4aa2bd28b5471c7150771d466381940c7a8a04542774836d877a77"
+  },
+  "canonical": {
+    "definition": "ISO 5011 is the standardised laboratory test method for measuring air intake filter\nefficiency (%), flow restriction (kPa), and dust-holding capacity (g) for internal\ncombustion engine applications using ISO 12103-1 A2 fine test dust.",
+    "systems": "Air Intake domain; governs: MACROCORE™, SYNTEPORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
+    "failure_impact": "When ISO 5011 performance requirements are not met: insufficient particle capture →\nabrasive dust reaches combustion chamber → piston ring wear → cylinder scuffing →\nengine overhaul intervals reduced from 25,000 hours to 3,000–5,000 hours",
+    "related_standards": "SAE J1539: Air intake contamination classification — companion standard defining\nacceptable dust concentration targets in intake air",
+    "related_technologies": "MACROCORE: 99.9%–99.98% efficiency at rated test dust | SYNTEPORE: ISO 5011 compliant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe ISO 5011-certified element",
+    "industrial_role": "ISO 5011 is the measurement framework that makes air filtration performance auditable.\nWithout ISO 5011 certification, filter performance claims are unverifiable — the test\nmethod defines the minimum evidence standard for responsible filtration specification\nin industrial, mining, and agricultural equipment."
+  },
+  "relationships": {
+    "related_standards": [
+      "SAE_J1539"
+    ],
+    "applicable_to_technologies": [
+      "MACROCORE",
+      "SYNTEPORE",
+      "INTEKCORE"
+    ],
+    "applicable_to_industries": [
+      "MINING",
+      "AGRICULTURE",
+      "CONSTRUCTION",
+      "TRUCKS_FLEETS",
+      "POWER_GENERATION"
+    ],
+    "applicable_to_systems": [
+      "AIRFILTER"
+    ],
+    "related_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/ISO_5011.md",
+  "_links": {
+    "self": "/api/citation/ISO_5011.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "SAE_J1539",
+        "relation": "related_standards",
+        "href": "/api/citation/SAE_J1539.json"
+      },
+      {
+        "key": "MACROCORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "SYNTEPORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/SYNTEPORE.json"
+      },
+      {
+        "key": "INTEKCORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/INTEKCORE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "AIRFILTER",
+        "relation": "applicable_to_systems",
+        "href": "/api/citation/AIRFILTER.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "related_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}

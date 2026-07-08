@@ -1,0 +1,103 @@
+{
+  "key": "ASTM_D6304",
+  "type": "standard",
+  "name": "Water in Petroleum Products by Coulometric Karl Fischer Titration",
+  "slug": "astm-d6304",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "ASTM_D6304",
+  "tags": [
+    "standard",
+    "active",
+    "fuel",
+    "astm",
+    "test-method",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
+    "concept": "ASTM D6304 Water in Petroleum Products",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:1b261f72fbbf8f3d4734ad5a44afb3f91698932bd8d79565a2b8c0e7800fc925"
+  },
+  "canonical": {
+    "definition": "ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration, quantifying total water concentration in diesel fuel as mg/kg (ppm) by mass — providing the primary analytical tool for monitoring water contamination in fuel storage, delivery, and filtration systems against the EN 590 limit of 200 mg/kg.",
+    "systems": "Diesel fuel quality monitoring in bulk storage tanks, vehicle fuel systems, marine fuel management, and oilfield fuel supply verification; used as the performance validation method for water-separating fuel filtration technologies",
+    "failure_impact": "Diesel fuel above 200 mg/kg total water (ASTM D6304) or free water at any concentration above dissolved saturation (50–100 mg/kg) → water droplets entering common-rail injection system at 1,800–2,500 bar → cavitation erosion at injector nozzle tip and needle seat → spray pattern degradation → incomplete combustion and power loss | Without ASTM D6304 monitoring, water accumulation in storage tanks progresses to microbial growth and filter-plugging biomass formation before detection | Operational Impact: injector replacement $800–$4,000/unit; microbial contamination causes 30–40% of fuel filter failures in marine and remote-site diesel fleets.",
+    "related_standards": "ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304",
+    "related_technologies": "HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims",
+    "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_12937"
+    ],
+    "applicable_to_technologies": [
+      "HYDROCORE"
+    ],
+    "applicable_to_industries": [
+      "AGRICULTURE",
+      "MARINE",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "TRUCKS_FLEETS"
+    ],
+    "related_contamination": [
+      "DIESEL_WATER"
+    ]
+  },
+  "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md",
+  "_links": {
+    "self": "/api/citation/ASTM_D6304.json",
+    "type_index": "/api/citation/type/standard.json",
+    "related": [
+      {
+        "key": "ISO_12937",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_12937.json"
+      },
+      {
+        "key": "HYDROCORE",
+        "relation": "applicable_to_technologies",
+        "href": "/api/citation/HYDROCORE.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_to_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "DIESEL_WATER",
+        "relation": "related_contamination",
+        "href": "/api/citation/DIESEL_WATER.json"
+      }
+    ]
+  }
+}

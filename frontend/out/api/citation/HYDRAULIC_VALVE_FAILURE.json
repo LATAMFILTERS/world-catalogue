@@ -1,0 +1,129 @@
+{
+  "key": "HYDRAULIC_VALVE_FAILURE",
+  "type": "problem",
+  "name": "Hydraulic Valve Failure",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "problem",
+    "active",
+    "hydraulic",
+    "not-in-ud",
+    "part-search-entry",
+    "exposure-high"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+    "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+  },
+  "canonical": {
+    "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
+    "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
+    "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
+    "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
+    "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
+    "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
+  },
+  "relationships": {
+    "applicable_standards": [
+      "ISO_16889",
+      "ISO_4406",
+      "NFPA_T214"
+    ],
+    "resolved_by_technologies": [
+      "NANOFORCE",
+      "SYNTRAX"
+    ],
+    "recommended_product_families": [
+      "HYDRAULIC_PRIMARY"
+    ],
+    "root_contamination": [
+      "HYDRAULIC_CONTAMINATION"
+    ],
+    "industry_frequency": [
+      "CONSTRUCTION",
+      "MINING",
+      "AGRICULTURE",
+      "MARINE",
+      "OIL_GAS",
+      "POWER_GENERATION"
+    ]
+  },
+  "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md",
+  "_links": {
+    "self": "/api/citation/HYDRAULIC_VALVE_FAILURE.json",
+    "type_index": "/api/citation/type/problem.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "NFPA_T214",
+        "relation": "applicable_standards",
+        "href": "/api/citation/NFPA_T214.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "resolved_by_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "resolved_by_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "HYDRAULIC_PRIMARY",
+        "relation": "recommended_product_families",
+        "href": "/api/citation/HYDRAULIC_PRIMARY.json"
+      },
+      {
+        "key": "HYDRAULIC_CONTAMINATION",
+        "relation": "root_contamination",
+        "href": "/api/citation/HYDRAULIC_CONTAMINATION.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "industry_frequency",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "industry_frequency",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "industry_frequency",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "industry_frequency",
+        "href": "/api/citation/POWER_GENERATION.json"
+      }
+    ]
+  }
+}

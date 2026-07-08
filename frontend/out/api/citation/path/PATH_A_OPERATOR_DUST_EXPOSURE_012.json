@@ -1,0 +1,175 @@
+{
+  "path_id": "PATH_A_OPERATOR_DUST_EXPOSURE_012",
+  "path_type": "A",
+  "entry_node": "OPERATOR_DUST_EXPOSURE",
+  "entry_type": "problem",
+  "industry": null,
+  "valid": true,
+  "steps": [
+    {
+      "key": "OPERATOR_DUST_EXPOSURE",
+      "type": "problem",
+      "name": "Operator Dust Exposure",
+      "citation_record": {
+        "key": "OPERATOR_DUST_EXPOSURE",
+        "type": "problem",
+        "name": "Operator Dust Exposure",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "cabin",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-extreme",
+          "occupational-health"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Operator Dust Exposure — Cabin Air Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:c40db41df53c67068ca4e4630112bac9c0ee4c538a0d86fdac6efc593d06a68e"
+        },
+        "canonical": {
+          "definition": "Operator dust exposure — ingress of respirable particulate and chemical contaminants into\nequipment operator cabs — is the primary occupational health contamination problem in\nconstruction, mining, and agricultural equipment, governed by ISO 11155 cab air standards\nand occupational health regulations.",
+          "systems": "Cabin/Operator Protection; affected: operator respiratory system; primary industries:\nMining (EXTREME), Construction (HIGH), Agriculture (HIGH), Bus/Coach, Railway, Trucks/Fleets",
+          "failure_impact": "Cab filter degradation or bypass → ambient dust (silica, PM2.5) enters breathing zone\n→ cumulative alveolar deposition of crystalline silica → progressive pulmonary fibrosis\n→ silicosis (irreversible) after 10+ years sustained exposure |\nOperational Impact: regulatory non-compliance exposure ($500K–$2M lifetime cost per case);\nISO 11155 Class A cab maintains <0.025 mg/m³ at 500 mg/m³ ambient concentration",
+          "related_standards": "ISO 11155: Cab air filter performance requirements for agricultural and construction equipment |\nDIN 71220: Vehicle cabin air filter classification standard",
+          "related_technologies": "MICROKAPPA: ISO 11155-compliant cabin filtration removing PM10, PM2.5, and chemical aerosols\nfrom operator cab air supply; available in Class A (particulate) and Class B (particulate + carbon)",
+          "industrial_role": "Operator dust exposure is the only contamination problem with direct human health and\nregulatory compliance consequences. It is distinct from all equipment-failure contamination\nproblems in that the failure is measured in occupational health outcomes, not equipment\nlifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ISO_11155",
+            "DIN_71220"
+          ],
+          "resolved_by_technologies": [
+            "MICROKAPPA"
+          ],
+          "recommended_product_families": [
+            "CABIN_PRIMARY"
+          ],
+          "root_contamination": [
+            "CABIN_AIR_CONTAMINATION"
+          ],
+          "industry_frequency": [
+            "CONSTRUCTION",
+            "MINING",
+            "AGRICULTURE",
+            "BUS_COACH",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
+          ]
+        },
+        "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+      }
+    },
+    {
+      "key": "CABIN_AIR_CONTAMINATION",
+      "type": "contamination-mode",
+      "name": "Cabin Air Contamination",
+      "citation_record": {
+        "key": "CABIN_AIR_CONTAMINATION",
+        "type": "contamination-mode",
+        "name": "Cabin Air Contamination",
+        "slug": "cabin-air-contamination",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "CABIN_AIR_CONTAMINATION",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "cabin",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Cabin Air Contamination",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:2aa8db81a6055e3f5ff6a609020536cbf8febcc44f5c20d48faf45020455675c"
+        },
+        "canonical": {
+          "definition": "Cabin air contamination is the occupational exposure of equipment operators to respirable particulate matter (PM10, PM2.5, crystalline silica), chemical vapors (pesticides, exhaust gases), and biological particles (endotoxins, spores) entering the cab through degraded filtration, failed positive pressure, or contamination bypass pathways — creating regulatory OEL violation risk and long-term respiratory disease exposure.",
+          "systems": "Agricultural machine cabs (harvesters, tractors, sprayers), mining equipment operator cabs, construction machine cabs (excavators, loaders), on-highway truck driver cabs, municipal refuse vehicle cabs",
+          "failure_impact": "Cab filtration bypass or degradation → respirable silica particles above 0.025–0.1 mg/m³ OEL → chronic occupational exposure → silicosis (irreversible) at 5–15 year latency | Pesticide vapor infiltration → acute toxicity events | Blocked cabin filter → loss of cab positive pressure → all gap pathways become contamination ingress routes | Operational impact: regulatory OEL violation; operator productivity −10–20% in extreme dust environments; chronic respiratory disease liability.",
+          "related_standards": "ISO 11155: Passenger compartment air filter test standard; defines cab filter efficiency classification | DIN 71220: Agricultural machinery cab air filtration performance requirements",
+          "related_technologies": "MICROKAPPA: Cabin air filtration technology for PM10, PM2.5, and silica capture with cab positive pressure maintenance and optional chemical vapor adsorption stage",
+          "industrial_role": "Cabin air contamination is the primary occupational health regulatory compliance challenge in mining and agricultural equipment operation — maintaining ISO 11155-rated cab filtration performance and cab positive pressure is the only controllable engineering control that prevents respirable silica and chemical vapor exposure from exceeding OEL limits in high-dust equipment operating environments."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_11155",
+            "DIN_71220"
+          ],
+          "resolved_by": [
+            "MICROKAPPA"
+          ]
+        },
+        "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+      }
+    },
+    {
+      "key": "MICROKAPPA",
+      "type": "technology",
+      "name": "MICROKAPPA™",
+      "citation_record": {
+        "key": "MICROKAPPA",
+        "type": "technology",
+        "name": "MICROKAPPA™",
+        "slug": "microkappa",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "MICROKAPPA",
+        "tags": [
+          "technology",
+          "active",
+          "cabin",
+          "in-ud",
+          "part-search-node"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
+          "concept": "MICROKAPPA Cabin Air Filtration",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:c02b644691a5b1f5eda29aa4788626e91a88d58b4b8d732f4f85f01cb9d2b31b"
+        },
+        "canonical": {
+          "definition": "MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contaminants) that removes >95% of PM10 and >85% of PM2.5 particulate contamination from operator cab air supply in industrial equipment, protecting occupants from respirable crystalline silica, agricultural dust, diesel particulate matter, and chemical vapors.",
+          "systems": "Operator cab HVAC air supply filtration in agricultural machinery, construction equipment, mining vehicles, railway locomotives, road transport trucks, and municipal refuse vehicles; available with activated carbon stage for chemical vapor co-removal",
+          "failure_impact": "Cab air filtration below ISO 11155 PM10 efficiency in high-dust environments → operator respirable crystalline silica (RCS) exposure above occupational exposure limits (EU OEL: 0.1 mg/m³ RCS as quartz) → silicosis risk with cumulative exposure over multi-year operation | Short-term: diesel particulate matter and agricultural pesticide vapor exposure causing acute respiratory irritation | Operational impact: worker compensation liability, regulatory enforcement under EU Directive 2004/37/EC, and operator absenteeism from occupational respiratory disease.",
+          "related_standards": "ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework",
+          "related_technologies": "SYNTEPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
+          "industrial_role": "MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation."
+        },
+        "relationships": {
+          "applicable_industries": [
+            "AGRICULTURE",
+            "CONSTRUCTION",
+            "MINING",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
+          ],
+          "related_standards": [
+            "ISO_11155",
+            "DIN_71220"
+          ],
+          "addresses_contamination": [
+            "CABIN_AIR_CONTAMINATION"
+          ]
+        },
+        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "CABIN_PRIMARY"
+  ]
+}
