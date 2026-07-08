@@ -115,3 +115,35 @@ export interface KCIndustryDetail {
   systems: string[];
   sections: { heading: string; body: string }[];
 }
+
+export interface KCDiagram {
+  // ── Core identity ──────────────────────────────────────────────────────────
+  slug: string;
+  entityId: string;                    // DIAG-xxx permanent graph ID
+  title: string;
+  metaDescription: string;
+  engineeringPurpose: string;
+  diagramType: 'flow' | 'schematic' | 'cross-section' | 'system' | 'process' | 'chart';
+  // ── Standards ─────────────────────────────────────────────────────────────
+  governingStandards: string[];        // STD-xxx permanent IDs
+  // ── Graph relationships ────────────────────────────────────────────────────
+  applicableSystems: string[];         // system slugs (SYSTEM_IDS keys)
+  relatedTechnologies: string[];       // technology display names (e.g. 'NANOFORCE™')
+  relatedArticles: string[];           // article slugs
+  relatedGlossaryTerms: string[];      // TERM-xxx permanent IDs
+  // ── Revision metadata ─────────────────────────────────────────────────────
+  revisionMetadata: {
+    version: string;
+    lastReviewed: string;
+    nextReview: string;
+    status: 'current' | 'draft' | 'superseded';
+  };
+  // ── Accessibility ─────────────────────────────────────────────────────────
+  accessibility: {
+    title: string;
+    desc: string;
+    ariaLabel: string;
+  };
+  // ── SVG component reference ────────────────────────────────────────────────
+  svgComponentId: string;              // matches component export name
+}

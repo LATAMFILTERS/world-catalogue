@@ -229,6 +229,21 @@ export const TERM_IDS = {
   'cellulose-media':               'TERM-CELLULOSE-MEDIA',
 } as const;
 
+// ── Diagram IDs ───────────────────────────────────────────────────────────────
+
+export const DIAGRAM_IDS = {
+  'multipass-test-circuit':        'DIAG-MULTIPASS-TEST',
+  'beta-ratio-measurement':        'DIAG-BETA-RATIO',
+  'iso-4406-cleanliness-scale':    'DIAG-ISO4406-CLEANLINESS',
+  'hydraulic-contamination-paths': 'DIAG-HYD-CONTAMINATION',
+  'air-intake-filtration-flow':    'DIAG-AIR-INTAKE-FLOW',
+  'lube-oil-circuit':              'DIAG-LUBE-OIL-CIRCUIT',
+  'fuel-filtration-3stage':        'DIAG-FUEL-3STAGE',
+  'differential-pressure-curve':   'DIAG-DP-CURVE',
+  'compressed-air-treatment':      'DIAG-CA-TREATMENT',
+  'particle-wear-mechanism':       'DIAG-PARTICLE-WEAR',
+} as const;
+
 // ── Lookup helpers ─────────────────────────────────────────────────────────────
 
 export function getArticleId(slug: string): string | undefined {
@@ -253,4 +268,8 @@ export function getIndustryId(slug: string): string | undefined {
 
 export function getTermId(slug: string): string | undefined {
   return (TERM_IDS as Record<string, string>)[slug];
+}
+
+export function getDiagramId(slug: string): string | undefined {
+  return (DIAGRAM_IDS as Record<string, string>)[slug];
 }
