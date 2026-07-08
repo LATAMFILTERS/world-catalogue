@@ -55,14 +55,14 @@ After: All 11 pages import from `jsonld-constants.generated.ts`, which is regene
 > node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js
 
 CITATION INDEX COMPILER — Phase 4A
-===================================
+---
 Notes scanned:    41
 Records built:    41
 Errors:           0
 Warnings:         9 (pre-existing dangling links — unrelated to Phase 4D)
 
 JSON-LD CONSTANTS SYNC
-======================
+---
 Source: elimfilters-vault/00-meta/CITATION_INDEX.json (41 entities)
 Output: frontend/src/lib/jsonld-constants.generated.ts
 Constants generated: 11

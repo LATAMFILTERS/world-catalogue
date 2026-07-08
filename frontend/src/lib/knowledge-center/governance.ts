@@ -71,16 +71,45 @@ export interface EvidenceGovernance {
 // One registry, one definition per term.
 // Articles reference TERM-xxx identifiers, never write inline definitions.
 
+export type TermCategory =
+  | 'filtration-performance'
+  | 'fluid-cleanliness'
+  | 'air-intake'
+  | 'contamination'
+  | 'hydraulic-systems'
+  | 'lubrication'
+  | 'chemical-degradation'
+  | 'water-fuel'
+  | 'filter-media';
+
+export const TERM_CATEGORY_LABELS: Record<TermCategory, string> = {
+  'filtration-performance': 'Filtration Performance',
+  'fluid-cleanliness':      'Fluid Cleanliness',
+  'air-intake':             'Air Intake',
+  'contamination':          'Contamination Mechanisms',
+  'hydraulic-systems':      'Hydraulic Systems',
+  'lubrication':            'Lubrication',
+  'chemical-degradation':   'Chemical Degradation',
+  'water-fuel':             'Water & Fuel',
+  'filter-media':           'Filter Media',
+};
+
 export interface TerminologyEntry {
-  id: PermanentId;            // TERM-BETA-RATIO
-  term: string;               // "Beta Ratio"
-  definition: string;         // Single authoritative definition — exists nowhere else
-  aliases: string[];          // ["ß ratio", "filtration ratio", "Beta-x"]
+  id: PermanentId;              // TERM-BETA-RATIO
+  term: string;                 // "Beta Ratio"
+  category: TermCategory;       // grouping for index page
+  definition: string;           // Single authoritative definition — exists nowhere else
+  engineeringContext: string;   // where/when this term applies operationally
+  aliases: string[];            // ["ß ratio", "filtration ratio", "Beta-x"]
+  abbreviations: string[];      // ["β_x(c)", "DHC"] — distinct from aliases
   applicableStandards: PermanentId[];
   relatedTerms: PermanentId[];
+  relatedTechnologies: string[]; // tech slugs — 'macrocore', 'nanoforce', etc.
+  relatedSystems: string[];      // system slugs — 'lubrication-protection', etc.
+  relatedArticles: string[];     // article slugs — graph-assigned
   version: string;
   status: EntityStatus;
-  lastReviewed: string;       // ISO 8601
+  lastReviewed: string;          // ISO 8601
 }
 
 // ── Knowledge Lifecycle ───────────────────────────────────────────────────────

@@ -13,7 +13,9 @@ import {
   RelatedArticles,
   ArticleSchema,
 } from '@/components/knowledge-center';
+import DiagramBlock from '@/components/knowledge-center/DiagramBlock';
 import { getArticleSidebarData } from '@/lib/knowledge-center/navigation-index';
+import { getDiagramsForArticle } from '@/lib/knowledge-center-data';
 
 const SEVERITY_COLORS: Record<string, string> = {
   critical: '#ff4444',
@@ -24,6 +26,7 @@ const SEVERITY_COLORS: Record<string, string> = {
 
 export default function ArticleContent({ article }: { article: KCArticle }) {
   const sidebarData = getArticleSidebarData(article.slug);
+  const relatedDiagrams = getDiagramsForArticle(article.slug);
 
   const sidebar = (
     <>
@@ -275,6 +278,50 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             )}
           </motion.section>
         ))}
+
+        {relatedDiagrams.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.6rem',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,241,45,0.5)',
+              marginBottom: '1.25rem',
+            }}>
+              ENGINEERING DIAGRAMS
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              {relatedDiagrams.map((diagram) => (
+                <div key={diagram.entityId}>
+                  <DiagramBlock
+                    id={diagram.svgComponentId}
+                    caption={`${diagram.title} — ${diagram.accessibility.desc.slice(0, 120)}…`}
+                    aspectRatio="unset"
+                  />
+                  <Link
+                    href={`/knowledge-center/diagrams/${diagram.slug}`}
+                    style={{
+                      display: 'inline-block',
+                      marginTop: '0.5rem',
+                      fontFamily: 'JetBrains Mono, monospace',
+                      fontSize: '0.65rem',
+                      letterSpacing: '0.08em',
+                      color: 'rgba(255,241,45,0.5)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    VIEW FULL DIAGRAM →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         <RelatedArticles
           title="RELATED ENGINEERING TOPICS"

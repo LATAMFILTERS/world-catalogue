@@ -36,8 +36,8 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     implementedByTechnologies: [
       'TECH-MACROCORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE',
       'TECH-HYDROCORE', 'TECH-MICROKAPPA', 'TECH-SYNTEPORE',
-      'TECH-THERMACORE',
-      'TECH-INTEKCORE',
+      'TECH-THERMACORE', 'TECH-INTEKCORE',
+      'TECH-DRYCORE', 'TECH-MARINECLEAN', 'TECH-TURBOCORE',
     ],
     versionHistory: [
       {
@@ -88,7 +88,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'In cyclonic or turbine-rotation configurations, the fluid is set into rotational motion. Centrifugal acceleration drives denser contaminants (particles, water droplets) radially outward against the collection chamber wall, where they accumulate and settle. The clean fluid exits from the center of the rotation pattern. Separation efficiency increases with rotational velocity and contaminant-to-fluid density ratio.',
     standardRefs: ['ISO 16332', 'SAE J905'],
-    implementedByTechnologies: ['TECH-MARINECLEAN'],
+    implementedByTechnologies: ['TECH-MARINECLEAN', 'TECH-TURBOCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -140,7 +140,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Dispersed water droplets (<20 µm) in diesel fuel cannot settle by gravity alone in normal service conditions — surface tension and flow turbulence keep them suspended. A coalescing medium provides high surface area where droplets repeatedly contact fibers. Each contact event causes partial merging (coalescence). As merged droplets grow above ~100 µm, gravitational settling force exceeds suspension forces and water drops fall to the collection sump. The principle operates independently of flow rate within design limits.',
     standardRefs: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE'],
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -165,7 +165,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Surface energy of the medium is below the surface tension of water (~72 mN/m at 20°C). Water droplets arriving at the hydrophobic surface form high-contact-angle beads (>90°) and cannot spread or penetrate. The critical breakthrough pressure — the minimum differential pressure required to force water through — exceeds design operating pressures. At higher differential pressures, the barrier integrity must be verified by the manufacturer against operating conditions.',
     standardRefs: ['ASTM D6304', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE'],
+    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -192,7 +192,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Desiccant materials (activated alumina, silica gel, molecular sieves) present enormous internal surface area (hundreds of m²/g). Gas molecules passing through the adsorbent bed contact the surface and adhere. Adsorption capacity is finite — breakthrough occurs when the adsorbent is saturated and additional contaminant molecules pass through unimpeded. Thermal regeneration or pressure swing restores capacity.',
     standardRefs: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-3'],
-    implementedByTechnologies: ['TECH-MICROKAPPA'],
+    implementedByTechnologies: ['TECH-MICROKAPPA', 'TECH-DRYCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -271,7 +271,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Hard particles (silica, iron oxides, carbides) suspended in lubrication or hydraulic fluid transit bearing clearances. When a particle diameter approaches or exceeds the bearing oil film thickness (typically 2–8 µm for engine bearings, 0.5–3 µm for hydraulic valve bores), it contacts both bearing surfaces. Each contact event removes a microscopic volume of material. Cumulative material loss increases bearing clearance, reduces oil film integrity, accelerates wear rate non-linearly, and eventually causes bearing failure. Particle contamination above the ISO 4406 target is the primary controllable variable in abrasive wear rate.',
     standardRefs: ['ISO 4406', 'ASTM G40', 'ISO 15243'],
-    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-MACROCORE'],
+    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-MACROCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
