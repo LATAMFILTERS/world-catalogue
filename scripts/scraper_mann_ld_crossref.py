@@ -7,8 +7,7 @@ Busca cross-references FRAM/PUROLATOR/WIX para filtros MANN LD (light-duty).
 Fuentes:
   W*              → oilfilter-crossreference.com   (aceite)
   WK*, PU*, KC*, KL* → fuelfilter-crossreference.com  (combustible)
-  C*, FP*, LA*, LC* → airfilter-crossreference.com  (aire)
-  CU*, CUK*           → SKIP (filtros de cabina, no tienen crossrefs en estos sites)
+  C*, FP*, LA*, LC*, CU*, CUK* → airfilter-crossreference.com  (aire / cabina)
 
 Flujo:
   1. Lee C:\\mann\\mann_classified.jsonl → extrae SKUs con segment=LD
@@ -40,6 +39,7 @@ from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 # ── Paths ──────────────────────────────────────────────────────────────────
 INPUT_CLASSIFIED  = Path(r"C:\mann\mann_classified.jsonl")
 INPUT_OEM_MASTER  = Path(r"C:\mann\mann_oem_master_clean.csv")
+INPUT_GAPS        = Path(r"C:\mann\mann_master_gaps.jsonl")
 OUTPUT_FILE      = Path(r"C:\mann\mann_ld_crossrefs.jsonl")
 PROGRESS_FILE    = Path(r"C:\mann\mann_ld_crossrefs_progress.json")
 
@@ -96,7 +96,8 @@ _PREFIX_ROUTES = [
 # LE / LB = industrial lube elements / specialty bulk filters (no consumer equivalents)
 # Numeric (starts with digit) = OEM-only part numbers, no aftermarket crossrefs
 # WK / PU / KC = fuel filters — intentar en fuelfilter-crossreference.com
-_SKIP_PREFIXES = {"LE", "LB", "DI", "CU", "CUK"}  # DI = industrial diesel; CU/CUK = cabin air (not on crossref sites)
+# CU / CUK (cabin) DO have crossref coverage on airfilter-crossreference.com — not skipped.
+_SKIP_PREFIXES = {"LE", "LB", "DI"}  # DI = industrial diesel
 
 # HD Mann prefixes — truck/bus/industrial, no LD consumer crossrefs
 _HD_PREFIXES = {"TB", "HD", "HF", "DF", "TFP", "TF", "WA", "FP2", "DB"}
@@ -197,6 +198,24 @@ def load_ld_skus() -> list:
                         seen.add(sku)
                         skus.append(sku)
         log.info(f"LD SKUs cargados desde JSONL (fallback): {len(skus)}")
+
+    # merge in the newly-discovered gap SKUs (scraper_mann_catalog.py output,
+    # enriched by scraper_mann_master.py --from-gaps) so the full ~7,822-SKU
+    # universe gets crossref coverage, not just the original 2,056-SKU subset.
+    if INPUT_GAPS.exists():
+        added = 0
+        with open(INPUT_GAPS, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                rec = json.loads(line)
+                sku = clean_sku(rec.get("sku", ""))
+                if sku and sku not in seen:
+                    seen.add(sku)
+                    skus.append(sku)
+                    added += 1
+        log.info(f"LD SKUs adicionales desde gaps: {added} (total: {len(skus)})")
 
     return skus
 

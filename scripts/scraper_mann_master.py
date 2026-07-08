@@ -43,7 +43,7 @@ PROGRESS_FILE     = Path(r"C:\mann\mann_master_progress.json")
 
 PROFILE_DIR      = os.path.join(os.path.expanduser("~"), ".mann_master_profile")
 PROFILE_DIR_GAPS = os.path.join(os.path.expanduser("~"), ".mann_master_gaps_profile")
-MANN_LOCALES = ["us-en", "ph-en", "de-de", "gb-en"]
+MANN_LOCALES = ["us-en", "ph-en", "de-de", "gb-en", "cn-zh"]
 MANN_BASE    = "https://www.mann-filter.com/{locale}/catalog/search-results/product.html/{url_key}.html"
 MANN_DOMAIN  = "https://www.mann-filter.com"
 PAUSE        = (4, 8)

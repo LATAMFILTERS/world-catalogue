@@ -91,7 +91,7 @@ INDUSTRIAL_ROLE
 Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and HYDROCORE coalescing filtration the primary engineering controls for fleet reliability.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/marine
+source: elimfilters.com/knowledge-center/industries/marine
 concept: Marine Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

@@ -91,7 +91,7 @@ INDUSTRIAL_ROLE
 Cabin air contamination is the primary occupational health regulatory compliance challenge in mining and agricultural equipment operation — maintaining ISO 11155-rated cab filtration performance and cab positive pressure is the only controllable engineering control that prevents respirable silica and chemical vapor exposure from exceeding OEL limits in high-dust equipment operating environments.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/cabin-air-contamination
+source: elimfilters.com/knowledge-center/systems/cabin-air-protection
 concept: Cabin Air Contamination
 version: 1.0
 last_updated: 2026-06-03

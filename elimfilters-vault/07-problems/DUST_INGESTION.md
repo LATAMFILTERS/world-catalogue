@@ -141,7 +141,7 @@ construction. It is a maintenance discipline failure as much as a product specif
 problem — correct change interval compliance accounts for the majority of prevention.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/particle-wear
+source: elimfilters.com/knowledge-center/engineering/contamination-control
 concept: Dust Ingestion — Air Intake Problem
 version: 1.0
 last_updated: 2026-06-03

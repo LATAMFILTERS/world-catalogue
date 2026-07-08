@@ -20,7 +20,7 @@ const DATA: TechDetailData = {
     'MARINECLEAN™ is a filtration line engineered for the corrosive demands of ocean and coastal operating environments. Salt spray, brine immersion, and humidity condensation degrade standard filtration hardware — accelerating housing corrosion, element bypass, and system contamination in marine diesel and hydraulic circuits.',
     'Each MARINECLEAN™ element addresses the three failure mechanisms specific to marine operation: external corrosion from saline atmosphere, brine rejection at the element interface, and galvanic degradation of internal metallic components. Covers primary fuel, hydraulic steering, and engine lube oil circuits across commercial vessels, offshore platforms, and coastal infrastructure.',
   ],
-  productImageSrc: '/images/marine-hero.avif',
+  productImageSrc: '/images/marino-taller.avif',
   productImageCaption: 'MARINECLEAN™ marine filtration — salt-resistant architecture for commercial marine operations.',
   stagesHeading: 'THREE LAYERS OF MARINE PROTECTION',
   stages: [

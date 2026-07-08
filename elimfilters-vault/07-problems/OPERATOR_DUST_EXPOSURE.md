@@ -141,7 +141,7 @@ problems in that the failure is measured in occupational health outcomes, not eq
 lifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/cabin-safety-systems
+source: elimfilters.com/knowledge-center/systems/cabin-air-protection
 concept: Operator Dust Exposure — Cabin Air Problem
 version: 1.0
 last_updated: 2026-06-03

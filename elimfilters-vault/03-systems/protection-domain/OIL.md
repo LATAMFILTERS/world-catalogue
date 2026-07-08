@@ -58,7 +58,7 @@ INDUSTRIAL_ROLE
 Lube oil filtration is the single largest controllable factor in engine bearing lifespan — maintaining ISO 4406 16/14/11 cleanliness extends bearing life 3–5× compared to commodity filtration approaches.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/lube-oil-systems
+source: elimfilters.com/knowledge-center/systems/lubrication-protection
 concept: OIL — Lube Oil Filtration Domain
 version: 1.0
 last_updated: 2026-06-24

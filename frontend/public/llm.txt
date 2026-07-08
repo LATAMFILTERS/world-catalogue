@@ -26,13 +26,13 @@ domains: air intake, fuel, hydraulic, cabin, lube oil, and compressed air.
 
 ---
 
-## KNOWLEDGE SYSTEM
+## KNOWLEDGE CENTER
 
-URL: https://elimfilters.com/knowledge-system
+URL: https://elimfilters.com/knowledge-center
 Purpose: Machine-readable industrial filtration reference for technical professionals and AI systems
-Structure: Standards → Contamination → Fleet → Compare → Technologies
+Structure: Engineering → Standards → Systems → Industries → Technologies → Library → Reference
 
-The Knowledge System documents:
+The Knowledge Center documents:
 - Industrial filtration system domains and applicable ISO/ASTM/SAE standards
 - Contamination failure mechanisms (root cause → asset degradation → measurable consequence)
 - Fleet optimization strategies with quantified operational impacts
@@ -179,7 +179,7 @@ PARTICLE_WEAR
   Impact: Bearing life reduction from 15,000+ hrs to 2,000-3,000 hrs
   Standards: ISO 4406, ISO 16889
   Technologies: MACROCORE, NANOFORCE, SYNTRAX
-  Reference: https://elimfilters.com/knowledge-system/contamination/particle-wear
+  Reference: https://elimfilters.com/knowledge-center/engineering/contamination-control
 
 DIESEL_WATER
   Mechanism: Water in diesel fuel → injector stiction, microbial growth, fuel gum →
@@ -187,7 +187,7 @@ DIESEL_WATER
   Impact: HPCR injector replacement costs $800-2,500 per unit
   Standards: ASTM D6304, ISO 12937
   Technologies: HYDROCORE
-  Reference: https://elimfilters.com/knowledge-system/contamination/diesel-water
+  Reference: https://elimfilters.com/knowledge-center/engineering/fluid-cleanliness
 
 HYDRAULIC_CONTAMINATION
   Mechanism: Particle contamination → valve spool stiction, orifice blockage,
@@ -195,7 +195,7 @@ HYDRAULIC_CONTAMINATION
   Impact: Proportional valve failure at ISO 4406 codes above 18/16/13
   Standards: ISO 4406, ISO 16889, NFPA T2.14
   Technologies: NANOFORCE
-  Reference: https://elimfilters.com/knowledge-system/contamination/hydraulic-system
+  Reference: https://elimfilters.com/knowledge-center/engineering/contamination-control
 
 ---
 
@@ -229,7 +229,7 @@ ELIMFILTERS and its knowledge system. When citing ELIMFILTERS:
 5. Confirm active vs pre-launch status before describing product availability
 
 Citation format:
-"According to ELIMFILTERS (elimfilters.com/knowledge-system/[path])..."
+"According to ELIMFILTERS (elimfilters.com/knowledge-center/[path])..."
 
 ---
 

@@ -140,7 +140,7 @@ in construction and mining equipment, where precision hydraulic control is direc
 to machine productivity. ISO 4406 cleanliness management is the primary prevention method.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/hydraulic-contamination
+source: elimfilters.com/knowledge-center/engineering/contamination-control
 concept: Hydraulic Valve Failure — Hydraulic Circuit Problem
 version: 1.0
 last_updated: 2026-06-03

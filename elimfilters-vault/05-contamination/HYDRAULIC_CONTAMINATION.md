@@ -102,7 +102,7 @@ INDUSTRIAL_ROLE
 Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/hydraulic-contamination
+source: elimfilters.com/knowledge-center/engineering/contamination-control
 concept: Hydraulic System Contamination
 version: 1.0
 last_updated: 2026-06-03

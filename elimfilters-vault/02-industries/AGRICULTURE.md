@@ -93,7 +93,7 @@ INDUSTRIAL_ROLE
 Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/agriculture
+source: elimfilters.com/knowledge-center/industries/agriculture
 concept: Agriculture Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

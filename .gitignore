@@ -42,6 +42,11 @@ frontend/out/
 frontend/.next/
 .next/
 
+# Static export and generated knowledge artifacts
+frontend/public/api/citation/
+elimfilters-vault/00-meta/CITATION_INDEX.json
+frontend/src/lib/jsonld-constants.generated.ts
+
 # Development/investigation scripts — never deploy
 audit_*.js
 count_*.js

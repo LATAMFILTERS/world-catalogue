@@ -89,7 +89,7 @@ INDUSTRIAL_ROLE
 Oil and gas filtration is uniquely high-stakes because the economic consequence of contamination-driven failure — measured in daily downtime costs and six-figure rebuild costs — dwarfs filter cost by 100–1,000×; maintaining ISO 4406 target codes in compressor lube circuits and high-efficiency air intake protection in drilling environments are the primary engineering controls preventing the unplanned failures that dominate oil and gas operational cost.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/oil-gas
+source: elimfilters.com/knowledge-center/industries/oil-gas
 concept: Oil & Gas Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

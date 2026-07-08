@@ -88,7 +88,7 @@ INDUSTRIAL_ROLE
 ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/standards/astm-d6304
+source: elimfilters.com/knowledge-center/standards/astm-d6304
 concept: ASTM D6304 Water in Petroleum Products
 version: 1.0
 last_updated: 2026-06-03

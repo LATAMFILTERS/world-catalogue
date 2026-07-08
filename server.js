@@ -63,6 +63,103 @@ app.use((req, res, next) => {
   next();
 });
 
+// ─── SEO/GEO Redirects (knowledge-system -> knowledge-center) ───────────────────
+// Maps legacy routes to new structures. Covers trailing slashes and retains query parameters.
+const LEGACY_REDIRECTS = {
+  '/knowledge-system': '/knowledge-center',
+  '/knowledge-system/': '/knowledge-center/',
+  '/knowledge-system/index': '/knowledge-center',
+  '/knowledge-system/index/': '/knowledge-center/',
+  '/knowledge-system/science': '/knowledge-center/engineering',
+  '/knowledge-system/science/': '/knowledge-center/engineering/',
+
+  '/knowledge-system/standards': '/knowledge-center/standards',
+  '/knowledge-system/standards/': '/knowledge-center/standards/',
+  '/knowledge-system/standards/lube-oil-systems': '/knowledge-center/systems/lubrication-protection',
+  '/knowledge-system/standards/lube-oil-systems/': '/knowledge-center/systems/lubrication-protection/',
+  '/knowledge-system/standards/hydraulic-systems': '/knowledge-center/systems/hydraulic-protection',
+  '/knowledge-system/standards/hydraulic-systems/': '/knowledge-center/systems/hydraulic-protection/',
+  '/knowledge-system/standards/air-intake-systems': '/knowledge-center/systems/air-intake-protection',
+  '/knowledge-system/standards/air-intake-systems/': '/knowledge-center/systems/air-intake-protection/',
+  '/knowledge-system/standards/fuel-systems': '/knowledge-center/systems/fuel-cleanliness-protection',
+  '/knowledge-system/standards/fuel-systems/': '/knowledge-center/systems/fuel-cleanliness-protection/',
+  '/knowledge-system/standards/cabin-safety-systems': '/knowledge-center/systems/cabin-air-protection',
+  '/knowledge-system/standards/cabin-safety-systems/': '/knowledge-center/systems/cabin-air-protection/',
+  '/knowledge-system/standards/compressed-air-systems': '/knowledge-center/standards/iso-8573-1',
+  '/knowledge-system/standards/compressed-air-systems/': '/knowledge-center/standards/iso-8573-1/',
+  '/knowledge-system/standards/iso-16889': '/knowledge-center/standards/iso-16889',
+  '/knowledge-system/standards/iso-16889/': '/knowledge-center/standards/iso-16889/',
+  '/knowledge-system/standards/iso-4406': '/knowledge-center/standards/iso-4406',
+  '/knowledge-system/standards/iso-4406/': '/knowledge-center/standards/iso-4406/',
+  '/knowledge-system/standards/iso-5011': '/knowledge-center/standards/iso-5011',
+  '/knowledge-system/standards/iso-5011/': '/knowledge-center/standards/iso-5011/',
+
+  '/knowledge-system/contamination': '/knowledge-center/engineering',
+  '/knowledge-system/contamination/': '/knowledge-center/engineering/',
+  '/knowledge-system/contamination/hydraulic-system': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/hydraulic-system/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/particle-wear': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/particle-wear/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/diesel-water': '/knowledge-center/engineering/fluid-cleanliness',
+  '/knowledge-system/contamination/diesel-water/': '/knowledge-center/engineering/fluid-cleanliness/',
+  '/knowledge-system/contamination/varnish-formation': '/knowledge-center/engineering/contamination-control',
+  '/knowledge-system/contamination/varnish-formation/': '/knowledge-center/engineering/contamination-control/',
+  '/knowledge-system/contamination/fuel-injector-wear': '/knowledge-center/engineering/fluid-cleanliness',
+  '/knowledge-system/contamination/fuel-injector-wear/': '/knowledge-center/engineering/fluid-cleanliness/',
+  '/knowledge-system/contamination/compressed-air-contamination': '/knowledge-center/standards/iso-8573-1',
+  '/knowledge-system/contamination/compressed-air-contamination/': '/knowledge-center/standards/iso-8573-1/',
+  '/knowledge-system/contamination/coolant-contamination': '/knowledge-center/systems/cooling-system-protection',
+  '/knowledge-system/contamination/coolant-contamination/': '/knowledge-center/systems/cooling-system-protection/',
+
+  '/knowledge-system/fleet': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/reducing-downtime': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/reducing-downtime/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/fuel-efficiency': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/fuel-efficiency/': '/knowledge-center/technical-library/',
+  '/knowledge-system/fleet/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership',
+  '/knowledge-system/fleet/total-cost-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/',
+  '/knowledge-system/fleet/roi-calculator': '/knowledge-center/technical-library',
+  '/knowledge-system/fleet/roi-calculator/': '/knowledge-center/technical-library/',
+
+  '/knowledge-system/bridges': '/knowledge-center',
+  '/knowledge-system/bridges/': '/knowledge-center/',
+  '/knowledge-system/bridges/industrial-filtration': '/knowledge-center',
+  '/knowledge-system/bridges/industrial-filtration/': '/knowledge-center/',
+  '/knowledge-system/bridges/aftermarket-selection': '/knowledge-center',
+  '/knowledge-system/bridges/aftermarket-selection/': '/knowledge-center/',
+  '/knowledge-system/bridges/fleet-solutions': '/knowledge-center/technical-library',
+  '/knowledge-system/bridges/fleet-solutions/': '/knowledge-center/technical-library/',
+  '/knowledge-system/bridges/oem-replacement': '/knowledge-center',
+  '/knowledge-system/bridges/oem-replacement/': '/knowledge-center/',
+
+  '/knowledge-system/compare': '/knowledge-center',
+  '/knowledge-system/compare/': '/knowledge-center/',
+  '/knowledge-system/compare/evaluation-framework': '/knowledge-center/technical-library',
+  '/knowledge-system/compare/evaluation-framework/': '/knowledge-center/technical-library/',
+  '/knowledge-system/compare/oem-comparison': '/knowledge-center',
+  '/knowledge-system/compare/oem-comparison/': '/knowledge-center/',
+  '/knowledge-system/compare/system-vs-commodity': '/knowledge-center',
+  '/knowledge-system/compare/system-vs-commodity/': '/knowledge-center/',
+  '/knowledge-system/compare/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership',
+  '/knowledge-system/compare/total-cost-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/'
+};
+
+app.use((req, res, next) => {
+  const path = req.path;
+  if (path.startsWith('/knowledge-system')) {
+    const target = LEGACY_REDIRECTS[path];
+    const queryString = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : '';
+    if (target) {
+      return res.redirect(301, target + queryString);
+    }
+    // Fallback: regex replace first occurrence of /knowledge-system with /knowledge-center
+    const wildcardTarget = path.replace(/^\/knowledge-system/, '/knowledge-center');
+    return res.redirect(301, wildcardTarget + queryString);
+  }
+  next();
+});
+
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
 
@@ -380,6 +477,22 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
+// ─── A: Real-time Learning Loop ───────────────────────────────────────────────
+// Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
+// function after every cross-reference resolution. Non-blocking — errors are
+// logged but never propagate to the API response.
+async function recordLearning(manufacturer, status) {
+  if (!manufacturer || !status) return;
+  try {
+    await pool.query(
+      'SELECT record_resolution($1, $2)',
+      [String(manufacturer).toUpperCase().trim(), status]
+    );
+  } catch (e) {
+    console.error('[learning]', e.message);
+  }
+}
+
 // ─── Cache layer (Redis if REDIS_URL set, otherwise in-memory Map) ────────────
 let _redis = null;
 if (process.env.REDIS_URL) {
@@ -447,14 +560,20 @@ const COMPETITOR_BRANDS = new Set([
   'ELOFIC','WABCO','KNORR','ALLISON','ZF',
 ]);
 
+// Hyphens/pluses and spacing vary between scraped rows for the same brand
+// (AC-DELCO vs AC DELCO, MANN-HUMMEL vs MANN HUMMEL). Normalize both the
+// blocklist and the incoming value the same way so the comparison is
+// consistent regardless of which punctuation variant a row happened to use.
+function normalizeBrandKey(s) {
+  return s.toUpperCase().replace(/[®™]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+const NORMALIZED_COMPETITOR_BRANDS = new Set([...COMPETITOR_BRANDS].map(normalizeBrandKey));
+
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
-  // Strip trademark/registered symbols before matching — some scraped brand
-  // names carry them (e.g. "FLEETGUARD®"), which would otherwise silently
-  // fail the exact-match lookup and misclassify a competitor as OEM.
-  const m = manufacturer.toUpperCase().replace(/[®™]/g, '').trim();
+  const m = normalizeBrandKey(manufacturer);
   // Direct match
-  if (COMPETITOR_BRANDS.has(m)) return true;
+  if (NORMALIZED_COMPETITOR_BRANDS.has(m)) return true;
   // Partial match for common patterns
   return m.includes('FILTER') || m.includes('FILTR') || m.includes('FILTRO');
 }
@@ -462,9 +581,11 @@ function isCompetitor(manufacturer) {
 function parseRefs(arr){
   if (!Array.isArray(arr)) return [];
 
-  // Bad scraper data occasionally stores an internal field name (a table
-  // column header, not a real manufacturer) as the "manufacturer" of a
-  // cross-reference entry. These must never reach the API response.
+  // Bad scraper data occasionally stores an internal field name (a spec-table
+  // column header, or literal webpage UI text like "Find a Dealer") in either
+  // the "manufacturer" or the "code" position of a cross-reference entry —
+  // the two got scrambled at import time, not consistently in one position.
+  // These must never reach the API response.
   const INVALID = new Set([
     'THREADSIZE',
     'LARGESTOD',
@@ -477,7 +598,9 @@ function parseRefs(arr){
     'RATEDFLOW',
     'MEDIATYPE',
     'RELATEDPARTS',
+    'RELATED PARTS',
     'MAINTENANCEKITS',
+    'MAINTENANCE KITS',
     'TESTSPECIFICATION',
     'PRODUCT DESCRIPTION',
     'PRODUCTDESCRIPTION',
@@ -485,18 +608,73 @@ function parseRefs(arr){
     'UPGRADE OF',
     'UPGRADEOF',
     'FOR UPGRADE, USE',
-    'NO'
+    'FIND A DEALER',
+    'DOWNLOAD SPECS',
+    'OEM CROSS REFERENCE',
+    'CELLULOSE',
+    'NO',
+    'SPECIFICATION',
+    'DOWNLOADSPECS',
+    'HYDROSTATIC BURST MINIMUM',
+    'USES SERVICE PART',
+    'REPLACES'
   ]);
 
+  // A real manufacturer name or reference code never looks like a physical
+  // measurement (a number followed by a unit). When either field matches
+  // this shape, the entry is spec-table noise, not a genuine cross-reference.
+  // UNS (thread class, e.g. "1.00 1/2 16 UNS 2B") must match too, hence UNS?.
+  const MEASUREMENT = /\d\s*(INCH|MM|GPM|L\/MIN|MICRON|PSI|BAR|KPA|UNS?|UNF|KG|LB)\b/i;
+
+  // A real manufacturer name always contains at least one letter (Caterpillar,
+  // 3M, SKF...). Some scraped rows pair two part numbers together (e.g.
+  // {manufacturer: "23518480", code: "23527033"} — a related/alternate code
+  // relationship, not a cross-reference brand) with no company name at all.
+  const HAS_LETTER = /[A-Za-z]/;
+
+  // A real manufacturer name is never *shaped* like a part number either —
+  // a short letter prefix (0-4 chars) immediately followed by 3+ digits
+  // (LF3620, FL1994, E12981309) is a reference code, not a company name.
+  // Real company names are either pure letters/spaces (CATERPILLAR, ATLAS
+  // COPCO) or a short alphanumeric abbreviation with few digits (3M).
+  const CODE_SHAPED = /^[A-Za-z]{0,4}\d{3,}[A-Za-z0-9]*$/;
+
+  // Caterpillar-style reference codes (1R1808, 1W2660, 2P4005, 7W5497,
+  // 2Y8097) start with a digit, so CODE_SHAPED above never catches them.
+  // Generalizing: no real manufacturer name has 3+ digit characters in it
+  // anywhere (verified against every legitimate brand seen in production
+  // data, including alphanumeric ones like 3M) — anything with that many
+  // digits is a reference code, not a company name.
+  const DIGIT_HEAVY = (s) => (s.match(/\d/g) || []).length >= 3;
+
   const seen = new Set();
+
+  // Real reference codes are almost always alphanumeric (they contain a
+  // digit); real manufacturer names almost always contain a digit-free
+  // brand word. When scraped rows get their two fields scrambled the wrong
+  // way around — e.g. {manufacturer: "TL2FSO", code: "SANDVIK"} — swapping
+  // them recovers the genuine cross-reference instead of discarding it.
+  function unswap(r) {
+    const codeHasDigit = /\d/.test(r.code);
+    const manuHasDigit = /\d/.test(r.manufacturer);
+    if (!codeHasDigit && manuHasDigit && r.code.length >= 3 && HAS_LETTER.test(r.code)) {
+      return { manufacturer: r.code, code: r.manufacturer };
+    }
+    return r;
+  }
 
   return arr
     .map(item => ({
       manufacturer: fixMojibake(String(item.manufacturer || item.brand || '').trim()),
       code: fixMojibake(String(item.code || '').trim())
     }))
+    .map(unswap)
     .filter(r => r.manufacturer && r.code)
-    .filter(r => !INVALID.has(r.manufacturer.toUpperCase()))
+    .filter(r => !INVALID.has(r.manufacturer.toUpperCase()) && !INVALID.has(r.code.toUpperCase()))
+    .filter(r => !MEASUREMENT.test(r.manufacturer) && !MEASUREMENT.test(r.code))
+    .filter(r => HAS_LETTER.test(r.manufacturer))
+    .filter(r => !CODE_SHAPED.test(r.manufacturer))
+    .filter(r => !DIGIT_HEAVY(r.manufacturer))
     .filter(r => {
       const k = (r.manufacturer + '|' + r.code).toUpperCase();
       if (seen.has(k)) return false;
@@ -996,56 +1174,109 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const validDuty = dutyParam === 'HEAVY_DUTY' || dutyParam === 'HD' ? 'HEAVY_DUTY'
       : dutyParam === 'LIGHT_DUTY' || dutyParam === 'LD' ? 'LIGHT_DUTY'
       : null;
-    const dutyClause = validDuty ? ' AND duty = $2' : '';
+    const dutyClause = validDuty ? ' AND c.duty = $2' : '';
     const dutyArgs = validDuty ? [validDuty] : [];
 
-    // 2. OEM / competitor cross-reference (exact match)
-    const oem = await client.query(
-      `SELECT * FROM elimfilters_catalog
-       WHERE (EXISTS (
-         SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
-         WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
-       )
-       OR EXISTS (
-         SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
-         WHERE UPPER(REPLACE(ref->>'code','-','')) = $1
-       ))${dutyClause}
+    // 2. C: Cross-reference exact match via v_api_resolver_v5 (adaptive scoring) + priority override
+    const xrefResult = await client.query(
+      `SELECT DISTINCT ON (v.sku)
+         c.*,
+         v.status       AS resolver_status,
+         (v.score + COALESCE(p.priority, 0)) AS resolver_score,
+         v.manufacturer AS resolver_manufacturer
+       FROM v_api_resolver_v5 v
+       JOIN elimfilters_catalog c ON c.sku = v.sku
+       LEFT JOIN search_result_priority p
+         ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+        AND p.sku = v.sku
+       WHERE v.code = $1
+       ${validDuty ? 'AND c.duty = $2' : ''}
+       ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 20`,
       [q, ...dutyArgs]
     );
-    if (oem.rows.length > 0) {
+    if (xrefResult.rows.length > 0) {
+      const xrows = xrefResult.rows;
+
+      // B: Multi-SKU AMBIGUOUS detection — multiple distinct SKUs at equal top score
+      const topScore = Math.max(...xrows.map(r => parseFloat(r.resolver_score) || 0));
+      const topSkus  = [...new Set(
+        xrows
+          .filter(r => (parseFloat(r.resolver_score) || 0) >= topScore * 0.90)
+          .map(r => r.sku)
+      )];
+      if (topSkus.length > 1) {
+        xrows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({
+          success: true,
+          resolution: 'AMBIGUOUS',
+          results: [],
+          candidates: topSkus,
+          message: `Code ${raw} matches ${topSkus.length} products with equal priority. Provide duty or manufacturer to resolve.`,
+          source: 'xref_ambiguous',
+        });
+      }
+
+      // Single/top resolution — standard flow
       if (!validDuty) {
-        const mixed = await handleMixedDuty(oem.rows, lang, client);
+        const mixed = await handleMixedDuty(xrows, lang, client);
         if (mixed) return res.json(mixed);
       }
-      const products = oem.rows.slice(0, 10).map(r => buildFilterData(r, lang));
+      const products = xrows.slice(0, 10).map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
-      return res.json({ success: true, results: products, source: 'oem_crossref' });
+      xrows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+      return res.json({ success: true, results: products, source: 'xref_v5', resolution: 'RESOLVED' });
     }
 
-    // 2b. OEM / competitor prefix match (e.g. PH3387 matches PH3387A, PH3387AAZ)
+    // 2b. C: Cross-reference prefix match via v_api_resolver_v5 + priority override
     if (q.length >= 4) {
-      const prefix = await client.query(
-        `SELECT * FROM elimfilters_catalog
-         WHERE (EXISTS (
-           SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref
-           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
-         )
-         OR EXISTS (
-           SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref
-           WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
-         ))${dutyClause}
+      const prefixResult = await client.query(
+        `SELECT DISTINCT ON (v.sku)
+           c.*,
+           v.status       AS resolver_status,
+           (v.score + COALESCE(p.priority, 0)) AS resolver_score,
+           v.manufacturer AS resolver_manufacturer
+         FROM v_api_resolver_v5 v
+         JOIN elimfilters_catalog c ON c.sku = v.sku
+         LEFT JOIN search_result_priority p
+           ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+          AND p.sku = v.sku
+         WHERE v.code LIKE $1
+         ${validDuty ? 'AND c.duty = $2' : ''}
+         ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
          LIMIT 20`,
         [q + '%', ...dutyArgs]
       );
-      if (prefix.rows.length > 0) {
+      if (prefixResult.rows.length > 0) {
+        const prows = prefixResult.rows;
+
+        // B: Ambiguous detection for prefix results
+        const pTopScore = Math.max(...prows.map(r => parseFloat(r.resolver_score) || 0));
+        const pTopSkus  = [...new Set(
+          prows
+            .filter(r => (parseFloat(r.resolver_score) || 0) >= pTopScore * 0.90)
+            .map(r => r.sku)
+        )];
+        if (pTopSkus.length > 1) {
+          prows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+          return res.json({
+            success: true,
+            resolution: 'AMBIGUOUS',
+            results: [],
+            candidates: pTopSkus,
+            message: `Code ${raw} (prefix) matches ${pTopSkus.length} products with equal priority.`,
+            source: 'xref_prefix_ambiguous',
+          });
+        }
+
         if (!validDuty) {
-          const mixed = await handleMixedDuty(prefix.rows, lang, client);
+          const mixed = await handleMixedDuty(prows, lang, client);
           if (mixed) return res.json(mixed);
         }
-        const products = prefix.rows.slice(0, 10).map(r => buildFilterData(r, lang));
+        const products = prows.slice(0, 10).map(r => buildFilterData(r, lang));
         await enrichAlternatives(products, client);
-        return res.json({ success: true, results: products, source: 'oem_prefix' });
+        prows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({ success: true, results: products, source: 'xref_prefix_v5', resolution: 'RESOLVED' });
       }
     }
 
@@ -1077,27 +1308,90 @@ app.get('/api/search', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/vin ───────────────────────────────────────────────────────────────────────────
+// ─── GET /api/search/vin ──────────────────────────────────────────────────────
+// Searches by vehicle make / model / engine / year in:
+//   - vehicle_applications JSONB (Light Duty)
+//   - kg_product_equipment relational table (Heavy Duty)
+// The 'model' param accepts free-text (HILUX) or a decoded make+model from NHTSA.
+// The optional 'year' param is decoded from a VIN via NHTSA vPIC.
 app.get('/api/search/vin', searchLimiter, async (req, res) => {
-  const vin = (req.query.vin || '').trim().toUpperCase();
-  if (!vin || vin.length !== 17) return res.status(400).json({ success: false, error: 'Invalid VIN (must be 17 chars)' });
+  const model  = (req.query.model  || '').trim();
+  const engine = (req.query.engine || '').trim();
+  const year   = parseInt(req.query.year || '0', 10);
 
-  const SEARCH_KEY = process.env.SEARCH_API_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
+  if (!model) return res.status(400).json({ success: false, error: 'model is required' });
 
-  const lang = detectLang(req);
+  const lang   = detectLang(req);
   const client = await pool.connect();
   try {
     await client.query("SET client_encoding = 'UTF8'");
-    const { rows } = await client.query(
-      `SELECT c.* FROM elimfilters_catalog c
-       JOIN vin_equipment_map v ON c.sku = ANY(v.filter_skus)
-       WHERE v.vin = $1
-       LIMIT 20`,
-      [vin]
-    );
+
+    const params = [];
+    let idx = 1;
+
+    // ── Light Duty: vehicle_applications JSONB ───────────────────────────────
+    const modelPat = '%' + model.toUpperCase() + '%';
+    params.push(modelPat);                          // $1 = model LIKE
+    const engineCond = engine
+      ? `AND (
+           UPPER(va->>'engine_code') LIKE $${++idx}
+           OR UPPER(va->>'model') LIKE $${idx}
+         )`
+      : '';
+    if (engine) params.push('%' + engine.toUpperCase() + '%');
+
+    // year_range in LD JSONB is stored as "MM/YY → MM/YY" string so we match
+    // just the year portion with a LIKE pattern.
+    const yearCondLD = year
+      ? `AND va->>'year_range' LIKE $${++idx}`
+      : '';
+    if (year) params.push('%' + year + '%');
+
+    const idxAfterLD = idx;
+
+    // ── Heavy Duty: kg_product_equipment relational ──────────────────────────
+    params.push(modelPat);                          // next $ = model LIKE HD
+    idx++;
+    const hdEngineCond = engine
+      ? `AND (
+           UPPER(kpe.engine_code) LIKE $${++idx}
+           OR UPPER(kpe.model)    LIKE $${idx}
+         )`
+      : '';
+    if (engine) params.push('%' + engine.toUpperCase() + '%');
+
+    const { rows } = await client.query(`
+      SELECT DISTINCT ON (c.sku) c.*
+      FROM elimfilters_catalog c
+      WHERE
+        -- Light Duty: search in vehicle_applications
+        (
+          c.duty = 'LIGHT_DUTY'
+          AND EXISTS (
+            SELECT 1
+            FROM jsonb_array_elements(c.vehicle_applications) AS va
+            WHERE
+              UPPER(COALESCE(va->>'make','') || ' ' || COALESCE(va->>'model','')) LIKE $1
+              ${engineCond}
+              ${yearCondLD}
+          )
+        )
+        OR
+        -- Heavy Duty: search in relational kg_product_equipment
+        (
+          c.duty = 'HEAVY_DUTY'
+          AND EXISTS (
+            SELECT 1
+            FROM kg_product_equipment kpe
+            WHERE kpe.product_sku = c.sku
+              AND UPPER(COALESCE(kpe.make,'') || ' ' || COALESCE(kpe.model,'')) LIKE $${idxAfterLD + 1}
+              ${hdEngineCond}
+          )
+        )
+      ORDER BY c.sku
+      LIMIT 30
+    `, params);
+
     if (!rows.length) return res.json({ success: true, results: [], source: 'vin_no_match' });
     const products = rows.map(r => buildFilterData(r, lang));
     await enrichAlternatives(products, client);
@@ -1110,17 +1404,16 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
   }
 });
 
-// ─── GET /api/search/equipment ─────────────────────────────────────────────────────────────────────
+
+// ─── GET /api/search/equipment ────────────────────────────────────────────────
+// Searches by equipment make / model / engine in:
+//   - equipment_applications JSONB (Heavy Duty)
+//   - vehicle_applications   JSONB (Light Duty – industrial machines stored here)
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   const { make, model, year, engine } = req.query;
   if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
 
-  const SEARCH_KEY = process.env.SEARCH_API_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (SEARCH_KEY && providedKey !== SEARCH_KEY) return res.status(403).json({ error: 'forbidden' });
-
-  const lang = detectLang(req);
+  const lang   = detectLang(req);
   const client = await pool.connect();
   try {
     await client.query("SET client_encoding = 'UTF8'");
@@ -1129,45 +1422,39 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     const params = [];
     let idx = 1;
 
-    if (make) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'make') LIKE $${idx}
-      )`);
-      params.push('%' + make.toUpperCase() + '%');
-      idx++;
-    }
-    if (model) {
-      // Older imports stored the equipment name under 'machine' instead of
-      // 'model' (see scripts/run_004_batched.py) — match either key so
-      // legacy-keyed rows aren't silently invisible to this search.
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}
-      )`);
-      params.push('%' + model.toUpperCase() + '%');
-      idx++;
-    }
-    if (year) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE (ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}
-      )`);
-      params.push(parseInt(year));
-      idx++;
-    }
-    if (engine) {
-      conditions.push(`EXISTS (
-        SELECT 1 FROM jsonb_array_elements(equipment_applications) AS ea
-        WHERE UPPER(ea->>'engine') LIKE $${idx}
-      )`);
-      params.push('%' + engine.toUpperCase() + '%');
-      idx++;
-    }
+    const buildJsonbCond = (col) => {
+      const conds = [];
+      if (make) {
+        conds.push(`UPPER(ea->>'make') LIKE $${idx}`);
+        params.push('%' + make.toUpperCase() + '%');
+        idx++;
+      }
+      if (model) {
+        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}`);
+        params.push('%' + model.toUpperCase() + '%');
+        idx++;
+      }
+      if (year) {
+        conds.push(`(ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}`);
+        params.push(parseInt(year));
+        idx++;
+      }
+      if (engine) {
+        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE $${idx}`);
+        params.push('%' + engine.toUpperCase() + '%');
+        idx++;
+      }
+      return `EXISTS (SELECT 1 FROM jsonb_array_elements(${col}) AS ea WHERE ${conds.join(' AND ')})`;
+    };
 
-    const whereClause = conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
+    // HD: equipment_applications
+    conditions.push(buildJsonbCond('equipment_applications'));
+    // LD: vehicle_applications (industrial equipment also stored here)
+    conditions.push(buildJsonbCond('vehicle_applications'));
+
+    const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
     const { rows } = await client.query(
-      `SELECT * FROM elimfilters_catalog ${whereClause} LIMIT 20`,
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog ${whereClause} ORDER BY sku LIMIT 30`,
       params
     );
 
@@ -1181,6 +1468,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     client.release();
   }
 });
+
 
 // ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
 app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
@@ -1457,6 +1745,77 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
   }
 });
 
+// ─── POST /api/import/mann-specs ─────────────────────────────────────────────
+// Patches dimensional + performance specs into existing LD products.
+// Body: array of { sku (EL/EA/EC/EF-format), thread_size, outer_diameter_mm,
+//   height_mm, gasket_od_mm, gasket_id_mm, micron_rating, iso_test_method,
+//   burst_pressure_psi, collapse_pressure_psi, installation_type }
+// Only updates rows that already exist (no insert). Uses COALESCE to avoid
+// overwriting previously populated fields.
+app.post('/api/import/mann-specs', importLimiter, requireAdmin, async (req, res) => {
+  const rows = Array.isArray(req.body) ? req.body : req.body?.products;
+  if (!rows || !Array.isArray(rows)) return res.status(400).json({ error: 'Expected array of spec patches' });
+  if (rows.length > 500) return res.status(400).json({ error: 'Max 500 records per batch' });
+
+  const results = { updated: 0, not_found: 0, skipped: 0, errors: [] };
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    for (const row of rows) {
+      const sku = (row.sku || '').trim().toUpperCase();
+      if (!sku || !/^[A-Z]{2,3}[0-9]{4,7}$/.test(sku)) {
+        results.errors.push({ sku, error: 'invalid sku format' });
+        results.skipped++;
+        continue;
+      }
+      try {
+        const res2 = await client.query(
+          `UPDATE elimfilters_catalog SET
+            installation_type    = COALESCE(installation_type,    $2),
+            thread_size          = COALESCE(thread_size,          $3),
+            outer_diameter_mm    = COALESCE(outer_diameter_mm,    $4),
+            height_mm            = COALESCE(height_mm,            $5),
+            gasket_od_mm         = COALESCE(gasket_od_mm,         $6),
+            gasket_id_mm         = COALESCE(gasket_id_mm,         $7),
+            iso_test_method      = COALESCE(iso_test_method,      $8),
+            micron_rating        = COALESCE(micron_rating,        $9),
+            nominal_efficiency   = COALESCE(nominal_efficiency,   $10),
+            burst_pressure_psi   = COALESCE(burst_pressure_psi,   $11),
+            collapse_pressure_psi= COALESCE(collapse_pressure_psi,$12)
+          WHERE sku = $1`,
+          [
+            sku,
+            row.installation_type     || null,
+            row.thread_size           || null,
+            row.outer_diameter_mm     != null ? Number(row.outer_diameter_mm)     : null,
+            row.height_mm             != null ? Number(row.height_mm)             : null,
+            row.gasket_od_mm          != null ? Number(row.gasket_od_mm)          : null,
+            row.gasket_id_mm          != null ? Number(row.gasket_id_mm)          : null,
+            row.iso_test_method       || null,
+            row.micron_rating         != null ? Number(row.micron_rating)         : null,
+            row.nominal_efficiency    != null ? Number(row.nominal_efficiency)    : null,
+            row.burst_pressure_psi    != null ? Number(row.burst_pressure_psi)    : null,
+            row.collapse_pressure_psi != null ? Number(row.collapse_pressure_psi) : null,
+          ]
+        );
+        if (res2.rowCount > 0) results.updated++;
+        else results.not_found++;
+      } catch (rowErr) {
+        results.errors.push({ sku, error: rowErr.message });
+        results.skipped++;
+      }
+    }
+    await client.query('COMMIT');
+    res.json({ success: true, ...results });
+  } catch (e) {
+    await client.query('ROLLBACK');
+    console.error('[import/mann-specs]', e.message);
+    res.status(500).json({ error: 'Specs import failed', detail: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/import/mann ───────────────────────────────────────────────────────────────────────────────
 const MANN_SKU_PREFIXES = {
   'Oil Filter':    'EL3',
@@ -1710,8 +2069,8 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
       // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
       const digits = mannSku.replace(/\D/g, '');
-      const codigoBase = digits.slice(-4);
-      if (!codigoBase || codigoBase.length < 4) { skipped++; continue; }
+      if (!digits) { skipped++; continue; }
+      const codigoBase = digits.slice(-4).padStart(4, '0');
       const find = await client.query(
         `SELECT id, competitor_codes FROM elimfilters_catalog
          WHERE duty = 'LIGHT_DUTY' AND codigo_base = $1
@@ -1726,11 +2085,16 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
       if (toAdd.length === 0) { skipped++; continue; }
 
       const merged = [...existing, ...toAdd];
-      await client.query(
-        `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
-        [JSON.stringify(merged), find.rows[0].id]
-      );
-      updated++;
+      try {
+        await client.query(
+          `UPDATE elimfilters_catalog SET competitor_codes = $1::jsonb WHERE id = $2`,
+          [JSON.stringify(merged), find.rows[0].id]
+        );
+        updated++;
+      } catch (rowErr) {
+        console.error('[update/mann-crossrefs row]', mannSku, rowErr.message);
+        errors++;
+      }
     }
     res.json({ success: true, total: rows.length, updated, skipped, errors });
   } catch (e) {
@@ -1894,6 +2258,22 @@ app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res
   }
 });
 
+// ─── POST /api/admin/rebuild-crossref-cache ───────────────────────────────────
+// Triggers a full rebuild of crossref_resolved_cache from oem_codes and
+// competitor_codes JSONB. Use after bulk imports or when cache is suspected stale.
+app.post('/api/admin/rebuild-crossref-cache', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    console.log('[admin] crossref cache rebuild requested...');
+    const result = await pool.query('SELECT refresh_crossref_cache() AS count');
+    const count = parseInt(result.rows[0].count, 10);
+    console.log(`[admin] crossref cache rebuilt: ${count} rows`);
+    res.json({ success: true, rows: count, message: `Cache rebuilt with ${count} rows.` });
+  } catch (e) {
+    console.error('[admin/rebuild-crossref-cache]', e.message);
+    res.status(500).json({ success: false, error: e.message });
+  }
+});
+
 // ─── GET /api/ai/search ─────────────────────────────────────────────────────────────────────────────────
 app.get('/api/ai/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || '').trim();
@@ -1920,17 +2300,28 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'exact_sku' });
     }
 
-    // OEM/competitor cross-ref
+    // OEM/competitor cross-ref via v_api_resolver_v5 (adaptive scoring) + priority override
     const oem = await client.query(
-      `SELECT * FROM elimfilters_catalog
-       WHERE EXISTS (SELECT 1 FROM jsonb_array_elements(oem_codes) AS ref WHERE UPPER(REPLACE(ref->>'code','-',''))=$1)
-       OR    EXISTS (SELECT 1 FROM jsonb_array_elements(competitor_codes) AS ref WHERE UPPER(REPLACE(ref->>'code','-',''))=$1)
+      `SELECT DISTINCT ON (v.sku)
+         c.*,
+         v.status       AS resolver_status,
+         (v.score + COALESCE(p.priority, 0)) AS resolver_score,
+         v.manufacturer AS resolver_manufacturer
+       FROM v_api_resolver_v5 v
+       JOIN elimfilters_catalog c ON c.sku = v.sku
+       LEFT JOIN search_result_priority p
+         ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
+        AND p.sku = v.sku
+       WHERE v.code = $1
+       ORDER BY v.sku, (v.score + COALESCE(p.priority, 0)) DESC
        LIMIT 10`, [q]
     );
     if (oem.rows.length > 0) {
+      // Record learning signal for AI search too
+      oem.rows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
       const products = oem.rows.map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
-      return res.json({ success: true, results: products, source: 'oem_crossref' });
+      return res.json({ success: true, results: products, source: 'oem_crossref_v5' });
     }
 
     res.json({ success: true, results: [], source: 'no_match' });

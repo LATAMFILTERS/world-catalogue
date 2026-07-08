@@ -91,7 +91,7 @@ INDUSTRIAL_ROLE
 Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/waste-municipal
+source: elimfilters.com/knowledge-center/industries/waste-municipal
 concept: Waste & Municipal Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

@@ -110,21 +110,28 @@
     <!-- ── FORM: VIN / MODEL ── -->
     <form class="search-form" data-form="vin" autocomplete="off">
       <div class="field-row cols-2">
-        <div class="field-group">
-          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">Vehicle / Model</label>
-          <div class="input-wrap">
+        <div class="field-group" style="position:relative;">
+          <label class="field-label" for="inp-vin-model" id="lbl-vin-model">Vehicle / Model — or paste a VIN</label>
+          <div class="input-wrap" style="position:relative;">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
               type="text"
               id="inp-vin-model"
               name="model"
-              placeholder="e.g. HILUX, RANGER..."
+              placeholder="e.g. HILUX, RANGER... or 1HGCM82633A004352"
               spellcheck="false"
+              maxlength="50"
             />
+          </div>
+          <!-- VIN Decode Status Badge -->
+          <div id="vin-decode-badge" style="display:none; margin-top:0.5rem; padding:0.6rem 1rem;
+            background:rgba(255,241,45,0.07); border:1px solid rgba(255,241,45,0.25);
+            border-radius:3px; font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+            color:rgba(255,255,255,0.85); line-height:1.6;">
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional)</label>
+          <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional — auto-filled from VIN)</label>
           <div class="input-wrap">
             <span class="input-icon" aria-hidden="true">◈</span>
             <input
@@ -1324,110 +1331,8 @@ function renderResults(items, count, mode, query) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// AUTOCOMPLETE LOGIC
+// AUTOCOMPLETE LOGIC — handled by the initAutocomplete() IIFE below
 // ─────────────────────────────────────────────────────────────────────────────
-const inpPart = document.getElementById('inp-part');
-const acList = document.getElementById('ac-list');
-let acDebounce;
-let acActiveIndex = -1;
-
-function renderAc(items, query) {
-  acList.innerHTML = '';
-  if (!items || !items.length) {
-    acList.innerHTML = `<div class="ac-empty">// NO MATCHES FOUND</div>`;
-    acList.classList.add('open');
-    return;
-  }
-  
-  const qUpper = query.toUpperCase();
-  items.forEach((item, idx) => {
-    const div = document.createElement('div');
-    div.className = 'ac-item';
-    div.dataset.index = idx;
-    
-    // Highlight matching part
-    const textUpper = item.text.toUpperCase();
-    const matchIdx = textUpper.indexOf(qUpper);
-    let html = item.text;
-    if (matchIdx !== -1) {
-      const before = item.text.substring(0, matchIdx);
-      const match = item.text.substring(matchIdx, matchIdx + qUpper.length);
-      const after = item.text.substring(matchIdx + qUpper.length);
-      html = `${before}<mark>${match}</mark>${after}`;
-    }
-    
-    div.innerHTML = `<span class="ac-code">${html}</span><span class="ac-type">${item.type}</span>`;
-    
-    div.addEventListener('click', () => {
-      inpPart.value = item.text;
-      acList.classList.remove('open');
-      document.querySelector('[data-form="part"]').dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-    });
-    
-    div.addEventListener('mouseenter', () => {
-      acActiveIndex = idx;
-      updateAcHighlight();
-    });
-    
-    acList.appendChild(div);
-  });
-  acList.classList.add('open');
-}
-
-function updateAcHighlight() {
-  const items = acList.querySelectorAll('.ac-item');
-  items.forEach((item, idx) => {
-    item.classList.toggle('highlighted', idx === acActiveIndex);
-  });
-}
-
-if (inpPart) {
-  inpPart.addEventListener('input', (e) => {
-    const q = e.target.value.trim();
-    clearTimeout(acDebounce);
-    acActiveIndex = -1;
-    
-    if (q.length < 2) {
-      acList.classList.remove('open');
-      return;
-    }
-    
-    acDebounce = setTimeout(async () => {
-      try {
-        const res = await fetch(`${API}/api/autocomplete?q=${encodeURIComponent(q)}`);
-        if (!res.ok) throw new Error();
-        const data = await res.json();
-        renderAc(data, q);
-      } catch (err) {
-        acList.classList.remove('open');
-      }
-    }, 250);
-  });
-
-  inpPart.addEventListener('keydown', (e) => {
-    const items = acList.querySelectorAll('.ac-item');
-    if (!acList.classList.contains('open') || items.length === 0) return;
-    
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      acActiveIndex = (acActiveIndex + 1) % items.length;
-      updateAcHighlight();
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      acActiveIndex = (acActiveIndex - 1 + items.length) % items.length;
-      updateAcHighlight();
-    } else if (e.key === 'Enter' && acActiveIndex >= 0) {
-      e.preventDefault();
-      items[acActiveIndex].click();
-    }
-  });
-}
-
-document.addEventListener('click', (e) => {
-  if (acList && !e.target.closest('.ac-wrap')) {
-    acList.classList.remove('open');
-  }
-});
 
 // ─────────────────────────────────────────────────────────────────────────────
 // FORM SUBMIT HANDLERS — redirect to results.html
@@ -1440,16 +1345,174 @@ document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   }
 });
 
+// ─────────────────────────────────────────────────────────────────────────────
+// VIN DECODER — NHTSA vPIC API (free, no auth)
+// Detects 17-char VIN → decodes → shows badge → auto-searches in 2s
+// ─────────────────────────────────────────────────────────────────────────────
+(function initVinDecoder() {
+  const inp    = document.getElementById('inp-vin-model');
+  const engInp = document.getElementById('inp-vin-engine');
+  const badge  = document.getElementById('vin-decode-badge');
+  const form   = inp ? inp.closest('form') : null;
+  if (!inp || !badge || !form) return;
+
+  let decoded        = null;
+  let vinDebounce    = null;
+  let autoSearchTimer = null;  // countdown to auto-redirect
+  let countdown       = 2;
+
+  const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/i;
+  function isVin(val) { return VIN_RE.test(val.replace(/\s/g, '')); }
+
+  function buildResultUrl(dec, rawEngine, rawVin) {
+    const model       = dec.make + ' ' + dec.model;
+    const finalEngine = rawEngine || dec.engine || '';
+    let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
+    if (finalEngine) url += `&engine=${encodeURIComponent(finalEngine)}`;
+    if (dec.year)    url += `&year=${encodeURIComponent(dec.year)}`;
+    if (rawVin)      url += `&vin=${encodeURIComponent(rawVin)}`;
+    return url;
+  }
+
+  function showBadge(html, ok = true) {
+    badge.innerHTML = html;
+    badge.style.display     = 'block';
+    badge.style.borderColor = ok ? 'rgba(255,241,45,0.35)' : 'rgba(255,80,80,0.4)';
+    badge.style.background  = ok ? 'rgba(255,241,45,0.07)' : 'rgba(255,80,80,0.05)';
+  }
+
+  function hideBadge() {
+    badge.style.display = 'none';
+    decoded = null;
+    clearAutoSearch();
+  }
+
+  function clearAutoSearch() {
+    clearInterval(autoSearchTimer);
+    autoSearchTimer = null;
+    countdown = 2;
+  }
+
+  function startAutoSearch(dec) {
+    clearAutoSearch();
+    countdown = 2;
+
+    function renderCountdown(n) {
+      const cylStr  = dec.cyl  ? ` · ${dec.cyl} cyl`  : '';
+      const dispStr = dec.disp ? ` · ${dec.disp}L`    : '';
+      const fuelStr = dec.fuel ? ` · ${dec.fuel}`      : '';
+      const specStr = (cylStr + dispStr + fuelStr).replace(/^ · /, '');
+      return (
+        `<span style="color:rgba(255,241,45,0.9);font-weight:700;">✓ VIN DECODED</span><br>` +
+        `<span style="color:rgba(255,255,255,0.5);font-size:0.62rem;">SOURCE: NHTSA vPIC</span><br>` +
+        `<br><b>${dec.make} ${dec.model}</b>${dec.year ? ' (' + dec.year + ')' : ''}` +
+        (specStr ? `<br><span style="color:rgba(255,255,255,0.55);font-size:0.68rem;">${specStr}</span>` : '') +
+        `<br><br>` +
+        `<span style="color:rgba(255,241,45,0.7);font-size:0.68rem;">⟳ Buscando filtros automáticamente en <b style="color:#fff241;">${n}</b>s… ` +
+        `<span id="vin-cancel-link" style="cursor:pointer;text-decoration:underline;color:rgba(255,255,255,0.4);">Cancelar</span></span>`
+      );
+    }
+
+    showBadge(renderCountdown(countdown));
+    // wire cancel link
+    const cancelEl = badge.querySelector('#vin-cancel-link');
+    if (cancelEl) cancelEl.addEventListener('click', () => { clearAutoSearch(); showBadge(renderCountdown('—').replace(/⟳.*$/, ''), true); });
+
+    autoSearchTimer = setInterval(() => {
+      countdown--;
+      if (countdown <= 0) {
+        clearAutoSearch();
+        window.location.href = buildResultUrl(dec, engInp.value.trim(), inp.value.trim());
+        return;
+      }
+      showBadge(renderCountdown(countdown));
+      const cl = badge.querySelector('#vin-cancel-link');
+      if (cl) cl.addEventListener('click', () => { clearAutoSearch(); });
+    }, 1000);
+  }
+
+  async function decodeVin(vin) {
+    showBadge('<span style="color:rgba(255,241,45,0.6)">⟳ Decodificando VIN via NHTSA vPIC…</span>', true);
+    clearAutoSearch();
+    try {
+      const url  = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${encodeURIComponent(vin)}?format=json`;
+      const res  = await fetch(url);
+      if (!res.ok) throw new Error('NHTSA ' + res.status);
+      const json = await res.json();
+
+      const get = (id) => {
+        const r = json.Results.find(r => r.VariableId === id);
+        return (r && r.Value && r.Value !== 'Not Applicable') ? r.Value.trim() : '';
+      };
+
+      const make = get(26);  // Make
+      const model = get(28); // Model
+      const year  = get(29); // Model Year
+      const disp  = get(13); // Displacement (L)
+      const eng   = get(9);  // Engine Model
+      const cyl   = get(11); // Engine Cylinders
+      const fuel  = get(24); // Fuel Type
+
+      if (!make && !model) {
+        showBadge('⚠ VIN no reconocido — verifica el número o usa búsqueda por modelo.', false);
+        decoded = null;
+        return;
+      }
+
+      decoded = { make, model, year, engine: eng || disp || '', disp, cyl, fuel };
+
+      // Auto-fill engine field if empty
+      if (decoded.engine && !engInp.value.trim()) {
+        engInp.value = decoded.engine;
+      }
+
+      // Start 2-second auto-search countdown
+      startAutoSearch(decoded);
+
+    } catch (err) {
+      showBadge('⚠ Error al conectar con NHTSA. Intenta buscar por modelo de vehículo.', false);
+      decoded = null;
+    }
+  }
+
+  inp.addEventListener('input', function() {
+    clearTimeout(vinDebounce);
+    clearAutoSearch();
+    const val = inp.value.trim();
+    if (!val) { hideBadge(); return; }
+    if (isVin(val)) {
+      vinDebounce = setTimeout(() => decodeVin(val), 600);
+    } else {
+      hideBadge();
+    }
+  });
+
+  // Expose decoded + builder for manual submit
+  window.__vinDecoded   = () => decoded;
+  window.__vinResultUrl = () => decoded ? buildResultUrl(decoded, engInp.value.trim(), inp.value.trim()) : null;
+})();
+
 document.querySelector('[data-form="vin"]').addEventListener('submit', e => {
   e.preventDefault();
-  const model = document.getElementById('inp-vin-model').value.trim();
-  const engine = document.getElementById('inp-vin-engine').value.trim();
-  if (model) {
-    let url = `results.html?mode=vin&model=${encodeURIComponent(model)}`;
-    if (engine) url += `&engine=${encodeURIComponent(engine)}`;
-    window.location.href = url;
+  const rawVal  = document.getElementById('inp-vin-model').value.trim();
+  const engine  = document.getElementById('inp-vin-engine').value.trim();
+  const decoded = window.__vinDecoded ? window.__vinDecoded() : null;
+
+  // If VIN was decoded, use the pre-built URL (which already has make+model+year)
+  if (window.__vinResultUrl && window.__vinResultUrl()) {
+    window.location.href = window.__vinResultUrl();
+    return;
   }
+
+  // Otherwise use free-text model
+  if (!rawVal) return;
+  let url = `results.html?mode=vin&model=${encodeURIComponent(rawVal)}`;
+  if (engine) url += `&engine=${encodeURIComponent(engine)}`;
+  window.location.href = url;
 });
+
+
+
 
 document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   e.preventDefault();

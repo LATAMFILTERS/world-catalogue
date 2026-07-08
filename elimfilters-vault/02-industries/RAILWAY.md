@@ -91,7 +91,7 @@ INDUSTRIAL_ROLE
 Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/railway
+source: elimfilters.com/knowledge-center/industries/railway
 concept: Railway Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

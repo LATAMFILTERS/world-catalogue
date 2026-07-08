@@ -91,7 +91,7 @@ INDUSTRIAL_ROLE
 Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/industries/power-generation
+source: elimfilters.com/knowledge-center/industries/power-generation
 concept: Power Generation Industry Filtration Requirements
 version: 1.0
 last_updated: 2026-06-03

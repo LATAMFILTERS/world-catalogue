@@ -107,7 +107,7 @@ INDUSTRIAL_ROLE
 Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-system/contamination/particle-wear
+source: elimfilters.com/knowledge-center/engineering/contamination-control
 concept: Particle Wear in Engines
 version: 1.0
 last_updated: 2026-06-03
