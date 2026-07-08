@@ -221,7 +221,7 @@ The INTEKCORE/SYNTEPORE ProductFamily gap (2 invalid Type C paths) is a genuine 
 
 ```
 CITATION INDEX COMPILER — Phase 5 Final
-========================================
+---
 Notes scanned:    45
 Records built:    45
 Errors:           0
@@ -230,7 +230,7 @@ Dangling links:   5  (DIN_51524, CABIN, FUEL, HYDRAULIC, OIL — non-vault syste
 Resolution ratio: 1.0
 
 PART SEARCH MAP COMPILER — Phase 5 Final
-==========================================
+---
 Traversal paths built:    99
   Type A (Problem→PF):    12  (12 valid)
   Type B (Industry→PF):   80  (80 valid)
@@ -241,7 +241,7 @@ Problems without paths:   0
 Industries with complete paths: 11/11
 
 NEXT.JS BUILD
-=============
+---
 Status:   ✓ Compiled successfully
 Pages:    89 static HTML pages
 Errors:   0

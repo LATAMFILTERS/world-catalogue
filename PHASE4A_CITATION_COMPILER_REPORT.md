@@ -30,7 +30,7 @@ Phase 4A of the ELIMFILTERS AI Citation Index has been implemented and executed 
 
 ```
 CITATION INDEX COMPILER — Phase 4A
-===================================
+---
 Notes scanned:    37
 Records built:    37
 Errors:           0
