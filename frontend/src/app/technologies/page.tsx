@@ -336,7 +336,7 @@ export default function TechnologiesPage() {
                     <img
                       src={item.src}
                       alt={item.title}
-                      style={{ width: '110px', height: '110px', objectFit: 'cover', flexShrink: 0, borderRadius: '6px', opacity: 0.9 }}
+                      style={{ width: '140px', height: '80px', objectFit: 'contain', objectPosition: 'left center', flexShrink: 0, opacity: 0.85 }}
                     />
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.3)' }}>{item.tag}</p>
@@ -349,6 +349,17 @@ export default function TechnologiesPage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+          <div style={{ marginTop: '1.5rem', textAlign: 'right' }}>
+            <Link href="/commercial-lines" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
+              letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
+              border: '1px solid rgba(255,241,45,0.25)', borderRadius: '3px',
+              padding: '0.55rem 1.1rem', transition: 'border-color 0.2s',
+            }}>
+              VIEW ALL COMMERCIAL LINES →
+            </Link>
           </div>
         </div>
       </section>
