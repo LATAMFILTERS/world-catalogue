@@ -8,9 +8,11 @@ export default function InstagramPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 py-20 text-center">
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
-          ELIMFILTERS
-        </p>
+        <img
+          src="/assets/logo-elimfilters.png"
+          alt="ELIMFILTERS"
+          className="mb-8 h-auto w-56 md:w-72"
+        />
 
         <h1 className="text-4xl font-black uppercase tracking-tight md:text-6xl">
           Total Asset Protection
