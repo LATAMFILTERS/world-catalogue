@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/railway",
+          "source_url": "elimfilters.com/knowledge-center/industries/railway",
           "concept": "Railway Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -91,7 +91,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Engine Oil Contamination — Lube Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -162,7 +162,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Particle Wear in Engines",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -212,7 +212,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/nanoforce",
+          "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
           "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",

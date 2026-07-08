@@ -25,7 +25,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/industries/oil-gas",
+          "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
           "concept": "Oil & Gas Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -91,7 +91,7 @@
           "exposure-high"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -152,7 +152,7 @@
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Hydraulic System Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
@@ -202,7 +202,7 @@
           "part-search-node"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+          "source_url": "elimfilters.com/knowledge-center/technologies/hydrocore",
           "concept": "HYDROCORE Water-Separating Fuel Protection",
           "version": "1.0",
           "last_updated": "2026-06-03",

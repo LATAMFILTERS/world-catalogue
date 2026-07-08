@@ -4,27 +4,27 @@
 User-agent: *
 Allow: /
 
-# Allow all AI crawlers access to Knowledge System (semantic architecture optimized for AI retrieval)
+# Allow all AI crawlers access to Knowledge Center (semantic architecture optimized for AI retrieval)
 User-agent: GPTBot
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 User-agent: Claude-Web
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 User-agent: anthropic-ai
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 User-agent: Google-Extended
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 User-agent: Bingbot
 Allow: /
 
 User-agent: CCBot
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 User-agent: PerplexityBot
-Allow: /knowledge-system/
+Allow: /knowledge-center/
 
 # Sitemap
 Sitemap: https://elimfilters.com/sitemap.xml

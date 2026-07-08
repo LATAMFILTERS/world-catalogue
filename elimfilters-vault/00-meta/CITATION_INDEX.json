@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-07-08T12:30:31.555Z",
+    "generated": "2026-07-08T12:25:08.337Z",
     "note_count": 66,
     "entity_types": [
       "architecture",
@@ -37,7 +37,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/hydrocore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/hydrocore",
         "concept": "HYDROCORE Water-Separating Fuel Protection",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -91,7 +91,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/intekcore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/intekcore",
         "concept": "INTEKCORE Zero-Bypass Radial Seal Housing",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -193,7 +193,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/microkappa",
+        "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
         "concept": "MICROKAPPA Cabin Air Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -243,7 +243,7 @@
         "part-search-node"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/nanoforce",
+        "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
         "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -300,7 +300,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/syntepore",
+        "source_url": "elimfilters.com/knowledge-center/technologies/syntepore",
         "concept": "SYNTEPORE All-Synthetic Intake Media",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -351,7 +351,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/technologies/syntrax",
+        "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
         "concept": "SYNTRAX Full-Flow Lube Protection",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -406,7 +406,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/agriculture",
+        "source_url": "elimfilters.com/knowledge-center/industries/agriculture",
         "concept": "Agriculture Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -468,7 +468,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/automotive",
+        "source_url": "elimfilters.com/knowledge-center/industries/automotive",
         "concept": "Automotive Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -524,7 +524,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/bus-coach",
+        "source_url": "elimfilters.com/knowledge-center/industries/bus-coach",
         "concept": "Bus & Coach Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -584,7 +584,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/construction",
+        "source_url": "elimfilters.com/knowledge-center/industries/construction",
         "concept": "Construction Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -650,7 +650,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/marine",
+        "source_url": "elimfilters.com/knowledge-center/industries/marine",
         "concept": "Marine Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -778,7 +778,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/oil-gas",
+        "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
         "concept": "Oil & Gas Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -837,7 +837,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/power-generation",
+        "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
         "concept": "Power Generation Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -897,7 +897,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/railway",
+        "source_url": "elimfilters.com/knowledge-center/industries/railway",
         "concept": "Railway Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -956,7 +956,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/trucks-fleets",
+        "source_url": "elimfilters.com/knowledge-center/industries/trucks-fleets",
         "concept": "Trucks & Fleets Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1017,7 +1017,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/industries/waste-municipal",
+        "source_url": "elimfilters.com/knowledge-center/industries/waste-municipal",
         "concept": "Waste & Municipal Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1126,7 +1126,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "CABIN — Cabin Air Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -1158,7 +1158,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/fuel-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
         "concept": "FUEL — Fuel Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -1190,7 +1190,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/hydraulic-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
         "concept": "HYDRAULIC — Hydraulic Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -1222,7 +1222,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "OIL — Lube Oil Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -1261,7 +1261,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/astm-d6304",
+        "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
         "concept": "ASTM D6304 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1306,7 +1306,7 @@
       "ud_key": null,
       "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/lube-oil-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "DIN 51524 — Hydraulic and Lube Oil Specification",
         "version": "1.0",
         "last_updated": "2026-06-24",
@@ -1340,7 +1340,7 @@
         "not-in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/din-71220",
+        "source_url": "elimfilters.com/knowledge-center/standards/din-71220",
         "concept": "DIN 71220 Cabin Air Filter Testing",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1389,7 +1389,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/iso-11155",
+        "source_url": "elimfilters.com/knowledge-center/standards/iso-11155",
         "concept": "ISO 11155 Cabin Air Filter Performance",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1441,7 +1441,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/iso-12937",
+        "source_url": "elimfilters.com/knowledge-center/standards/iso-12937",
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1492,7 +1492,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/iso-16889",
+        "source_url": "elimfilters.com/knowledge-center/standards/iso-16889",
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1543,7 +1543,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/iso-4406",
+        "source_url": "elimfilters.com/knowledge-center/standards/iso-4406",
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1588,7 +1588,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/air-intake-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "ISO 5011 — Air Filter Performance Test",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1644,7 +1644,7 @@
         "not-in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/nfpa-t214",
+        "source_url": "elimfilters.com/knowledge-center/standards/nfpa-t214",
         "concept": "NFPA T2.14 Hydraulic Filter Collapse/Burst Resistance",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1693,7 +1693,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/sae-j1539",
+        "source_url": "elimfilters.com/knowledge-center/standards/sae-j1539",
         "concept": "SAE J1539 Air Intake Cleanliness",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1736,7 +1736,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/cabin-air-contamination",
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Cabin Air Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1776,7 +1776,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+        "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Diesel Water Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1816,7 +1816,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic System Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1862,7 +1862,7 @@
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Particle Wear in Engines",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1908,7 +1908,7 @@
         "vault-only"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/components/engine-bearing-journal",
+        "source_url": "elimfilters.com/knowledge-center/glossary/engine-bearing-journal",
         "concept": "Engine Bearing Journal",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -1952,7 +1952,7 @@
         "vault-only"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/components/piston-ring-assembly",
+        "source_url": "elimfilters.com/knowledge-center/glossary/piston-ring-assembly",
         "concept": "Piston Ring Assembly",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -2051,7 +2051,7 @@
         "exposure-extreme"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Dust Ingestion — Air Intake Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -2112,7 +2112,7 @@
         "exposure-high"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/particle-wear",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Engine Oil Contamination — Lube Circuit Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -2178,7 +2178,7 @@
         "exposure-medium"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/diesel-water",
+        "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Fuel Filter Plugging — Fuel System Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -2235,7 +2235,7 @@
         "exposure-high"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/contamination/hydraulic-contamination",
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
@@ -2294,7 +2294,7 @@
         "occupational-health"
       ],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-system/standards/cabin-safety-systems",
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Operator Dust Exposure — Cabin Air Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
