@@ -43,7 +43,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md",
+  "vault_path": "elimfilters-vault/04-standards/ISO_4406.md",
   "_links": {
     "self": "/api/citation/ISO_4406.json",
     "type_index": "/api/citation/type/standard.json",

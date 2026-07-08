@@ -40,7 +40,7 @@
       "MICROKAPPA"
     ]
   },
-  "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md",
+  "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md",
   "_links": {
     "self": "/api/citation/HYDRAULIC_CONTAMINATION.json",
     "type_index": "/api/citation/type/contamination-mode.json",

@@ -51,7 +51,7 @@
       "HYDRAULIC"
     ]
   },
-  "vault_path": "elimfilters-vault\\08-product-families\\HYDRAULIC_PRIMARY.md",
+  "vault_path": "elimfilters-vault/08-product-families/HYDRAULIC_PRIMARY.md",
   "_links": {
     "self": "/api/citation/HYDRAULIC_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",

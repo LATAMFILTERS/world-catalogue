@@ -54,7 +54,7 @@
       "WASTE_MUNICIPAL"
     ]
   },
-  "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md",
+  "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md",
   "_links": {
     "self": "/api/citation/OPERATOR_DUST_EXPOSURE.json",
     "type_index": "/api/citation/type/problem.json",
