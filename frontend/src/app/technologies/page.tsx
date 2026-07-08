@@ -350,6 +350,17 @@ export default function TechnologiesPage() {
               </motion.div>
             ))}
           </div>
+          <div style={{ marginTop: '1.5rem', textAlign: 'right' }}>
+            <Link href="/commercial-lines" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+              fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem',
+              letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
+              border: '1px solid rgba(255,241,45,0.25)', borderRadius: '3px',
+              padding: '0.55rem 1.1rem', transition: 'border-color 0.2s',
+            }}>
+              VIEW ALL COMMERCIAL LINES →
+            </Link>
+          </div>
         </div>
       </section>
 
