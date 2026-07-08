@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
+import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES, KC_CALCULATORS } from '@/lib/knowledge-center-data';
 import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
 
 const SECTIONS = [
@@ -68,6 +68,14 @@ const SECTIONS = [
     title: 'Knowledge Search',
     description: 'Search by symptom, equipment type, industry, standard code, or technology to find relevant engineering documentation.',
     count: 'AI-indexed',
+    accent: '#FFF12D',
+  },
+  {
+    href: '/knowledge-center/calculators',
+    label: '09 / CALCULATORS',
+    title: 'Engineering Calculators',
+    description: 'Standards-based computation tools: ISO 4406 cleanliness codes, Beta ratio efficiency, pressure drop estimation, dirt holding capacity, service intervals, and air restriction analysis.',
+    count: `${KC_CALCULATORS.length} calculators`,
     accent: '#FFF12D',
   },
 ];

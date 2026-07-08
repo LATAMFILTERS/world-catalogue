@@ -7,14 +7,16 @@
  * Zero breaking changes — all previously exported names remain available.
  *
  * Dependency graph (acyclic):
- *   types.ts            ← no imports from this module
- *   entity-ids.ts       ← no imports from this module
- *   articles-registry   ← imports types
- *   standards-registry  ← imports types
+ *   types.ts              ← no imports from this module
+ *   entity-ids.ts         ← no imports from this module
+ *   calculator-engines.ts ← no imports from this module
+ *   articles-registry     ← imports types
+ *   standards-registry    ← imports types
  *   technologies-registry ← imports types
- *   systems-registry    ← imports types
- *   industries-registry ← imports types
- *   index.ts (this)     ← imports all above
+ *   systems-registry      ← imports types
+ *   industries-registry   ← imports types
+ *   calculators-registry  ← imports types, entity-ids
+ *   index.ts (this)       ← imports all above
  */
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -53,3 +55,45 @@ export {
   getDiagramsForArticle,
   getDiagramsForStandard,
 } from './diagram-registry';
+
+// ── Engineering Calculators ───────────────────────────────────────────────────
+export type {
+  KCCalculator,
+  KCCalculatorFormula,
+  KCCalculatorInputSpec,
+  KCCalculatorOutputSpec,
+  KCCalculatorVariable,
+  KCCalculatorWorkedExample,
+  KCCalculatorCategory,
+} from './types';
+export { CALCULATOR_IDS, getCalculatorId } from './entity-ids';
+export {
+  KC_CALCULATORS,
+  getCalculatorBySlug,
+  getCalculatorsByCategory,
+} from './calculators-registry';
+export type {
+  Iso4406Code,
+  FilterMediaType,
+  HydraulicSystemType,
+  CleanlinessEvaluation,
+  OperatingEnvironment,
+} from './calculator-engines';
+export {
+  iso4406RangeCode,
+  iso4406CodeToRange,
+  countsToIso4406Code,
+  iso4406CodeToString,
+  betaToEfficiency,
+  efficiencyToBeta,
+  pressureDropEstimate,
+  dhcEstimate,
+  intervalFromDhc,
+  AIR_SERVICE_LIMIT_PA,
+  airFilterRemainingLife,
+  getCleanlinessTarget,
+  evaluateCleanliness,
+  getIngestionRate,
+  getDefaultSafetyFactor,
+  serviceInterval,
+} from './calculator-engines';

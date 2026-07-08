@@ -147,3 +147,79 @@ export interface KCDiagram {
   // ── SVG component reference ────────────────────────────────────────────────
   svgComponentId: string;              // matches component export name
 }
+
+// ── Engineering Calculators ───────────────────────────────────────────────────
+
+export interface KCCalculatorVariable {
+  symbol: string;         // e.g. "β_x(c)"
+  definition: string;     // e.g. "Beta ratio at particle size x µm(c)"
+  unit: string;           // e.g. "dimensionless"
+}
+
+export interface KCCalculatorWorkedExample {
+  description: string;
+  inputs: { symbol: string; value: string }[];
+  outputs: { symbol: string; value: string }[];
+  narrative: string;
+}
+
+export interface KCCalculatorFormula {
+  expression: string;                   // human-readable formula string
+  variables: KCCalculatorVariable[];
+  standard: string;                     // e.g. "ISO 16889:2022 §3.1.2"
+  assumptions: string[];
+  limitations: string[];
+  workedExample: KCCalculatorWorkedExample;
+  validationReference: string;          // citation for known test data
+}
+
+export interface KCCalculatorInputSpec {
+  id: string;
+  label: string;
+  symbol: string;
+  unit: string;
+  min: number;
+  max: number;
+  step: number;
+  default: number;
+  description: string;
+}
+
+export interface KCCalculatorOutputSpec {
+  id: string;
+  label: string;
+  symbol: string;
+  unit: string;
+  precision: number;
+}
+
+export type KCCalculatorCategory =
+  | 'fluid-cleanliness'
+  | 'filtration-efficiency'
+  | 'pressure-drop'
+  | 'service-interval'
+  | 'air-intake';
+
+export interface KCCalculator {
+  // ── Core identity ──────────────────────────────────────────────────────────
+  slug: string;
+  entityId: string;                     // CALC-xxx permanent graph ID
+  title: string;
+  description: string;
+  category: KCCalculatorCategory;
+  governingStandard: string;            // primary standard citation for display
+  // ── Engineering specification ──────────────────────────────────────────────
+  formula: KCCalculatorFormula;
+  // inputSummary/outputSummary: registry metadata only (documentation & SEO).
+  // Actual computation logic lives in CalculatorContent.tsx — not in the registry.
+  inputSummary: KCCalculatorInputSpec[];
+  outputSummary: KCCalculatorOutputSpec[];
+  // ── Graph relationships ────────────────────────────────────────────────────
+  relatedStandards: string[];           // standard slugs
+  relatedArticles: string[];            // article slugs
+  relatedTechnologies: string[];        // technology display names (e.g. 'NANOFORCE™')
+  // ── Validation & revision ─────────────────────────────────────────────────
+  validationStatus: 'validated' | 'pending';
+  sourceStandardRevision: string;       // e.g. "ISO 16889:2022"
+  revisionHistory: { version: string; date: string; change: string }[];
+}

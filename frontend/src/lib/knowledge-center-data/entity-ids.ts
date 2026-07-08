@@ -273,3 +273,19 @@ export function getTermId(slug: string): string | undefined {
 export function getDiagramId(slug: string): string | undefined {
   return (DIAGRAM_IDS as Record<string, string>)[slug];
 }
+
+// ── Calculator IDs ─────────────────────────────────────────────────────────────
+
+export const CALCULATOR_IDS = {
+  'iso4406-code-converter':      'CALC-ISO4406-CONVERTER',
+  'beta-ratio-efficiency':       'CALC-BETA-RATIO-EFF',
+  'pressure-drop-estimator':     'CALC-PRESSURE-DROP',
+  'dhc-planning-estimator':      'CALC-DHC-ESTIMATOR',
+  'air-filter-restriction':      'CALC-AIR-RESTRICTION',
+  'fluid-cleanliness-evaluator': 'CALC-FLUID-CLEANLINESS',
+  'service-interval-engineering':'CALC-SERVICE-INTERVAL',
+} as const;
+
+export function getCalculatorId(slug: string): string | undefined {
+  return (CALCULATOR_IDS as Record<string, string>)[slug];
+}
