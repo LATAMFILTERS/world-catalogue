@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-07-06T08:07:28.330Z",
+    "generated": "2026-07-08T12:25:08.337Z",
     "note_count": 66,
     "entity_types": [
       "architecture",
@@ -71,7 +71,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
     },
     "INTEKCORE": {
       "key": "INTEKCORE",
@@ -120,7 +120,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\INTEKCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/INTEKCORE.md"
     },
     "MACROCORE": {
       "key": "MACROCORE",
@@ -175,7 +175,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
     },
     "MICROKAPPA": {
       "key": "MICROKAPPA",
@@ -224,7 +224,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
     },
     "NANOFORCE": {
       "key": "NANOFORCE",
@@ -280,7 +280,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md"
     },
     "SYNTEPORE": {
       "key": "SYNTEPORE",
@@ -331,7 +331,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTEPORE.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/SYNTEPORE.md"
     },
     "SYNTRAX": {
       "key": "SYNTRAX",
@@ -388,7 +388,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+      "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
     },
     "AGRICULTURE": {
       "key": "AGRICULTURE",
@@ -451,7 +451,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\AGRICULTURE.md"
+      "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
     },
     "AUTOMOTIVE": {
       "key": "AUTOMOTIVE",
@@ -507,7 +507,7 @@
           "FUEL_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\AUTOMOTIVE.md"
+      "vault_path": "elimfilters-vault/02-industries/AUTOMOTIVE.md"
     },
     "BUS_COACH": {
       "key": "BUS_COACH",
@@ -565,7 +565,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\BUS_COACH.md"
+      "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
     },
     "CONSTRUCTION": {
       "key": "CONSTRUCTION",
@@ -633,7 +633,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\CONSTRUCTION.md"
+      "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
     },
     "MARINE": {
       "key": "MARINE",
@@ -693,7 +693,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\MARINE.md"
+      "vault_path": "elimfilters-vault/02-industries/MARINE.md"
     },
     "MINING": {
       "key": "MINING",
@@ -761,7 +761,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\MINING.md"
+      "vault_path": "elimfilters-vault/02-industries/MINING.md"
     },
     "OIL_GAS": {
       "key": "OIL_GAS",
@@ -820,7 +820,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\OIL_GAS.md"
+      "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md"
     },
     "POWER_GENERATION": {
       "key": "POWER_GENERATION",
@@ -880,7 +880,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
+      "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
     },
     "RAILWAY": {
       "key": "RAILWAY",
@@ -939,7 +939,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\RAILWAY.md"
+      "vault_path": "elimfilters-vault/02-industries/RAILWAY.md"
     },
     "TRUCKS_FLEETS": {
       "key": "TRUCKS_FLEETS",
@@ -1000,7 +1000,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md"
+      "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
     },
     "WASTE_MUNICIPAL": {
       "key": "WASTE_MUNICIPAL",
@@ -1059,7 +1059,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md"
+      "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
     },
     "AIRFILTER": {
       "key": "AIRFILTER",
@@ -1114,7 +1114,7 @@
           "TURBOCHARGER_BEARING"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\product-line\\AIRFILTER.md"
+      "vault_path": "elimfilters-vault/03-systems/product-line/AIRFILTER.md"
     },
     "CABIN": {
       "key": "CABIN",
@@ -1146,7 +1146,7 @@
           "DIN_71220"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\CABIN.md"
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md"
     },
     "FUEL": {
       "key": "FUEL",
@@ -1178,7 +1178,7 @@
           "ISO_12937"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\FUEL.md"
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md"
     },
     "HYDRAULIC": {
       "key": "HYDRAULIC",
@@ -1210,7 +1210,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\HYDRAULIC.md"
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/HYDRAULIC.md"
     },
     "OIL": {
       "key": "OIL",
@@ -1242,7 +1242,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\OIL.md"
+      "vault_path": "elimfilters-vault/03-systems/protection-domain/OIL.md"
     },
     "ASTM_D6304": {
       "key": "ASTM_D6304",
@@ -1294,7 +1294,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md"
+      "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
     },
     "DIN_51524": {
       "key": "DIN_51524",
@@ -1321,7 +1321,7 @@
         "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault\\04-standards\\DIN_51524.md"
+      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
     },
     "DIN_71220": {
       "key": "DIN_71220",
@@ -1370,7 +1370,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md"
+      "vault_path": "elimfilters-vault/04-standards/DIN_71220.md"
     },
     "ISO_11155": {
       "key": "ISO_11155",
@@ -1422,7 +1422,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md"
+      "vault_path": "elimfilters-vault/04-standards/ISO_11155.md"
     },
     "ISO_12937": {
       "key": "ISO_12937",
@@ -1471,7 +1471,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md"
+      "vault_path": "elimfilters-vault/04-standards/ISO_12937.md"
     },
     "ISO_16889": {
       "key": "ISO_16889",
@@ -1522,7 +1522,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md"
+      "vault_path": "elimfilters-vault/04-standards/ISO_16889.md"
     },
     "ISO_4406": {
       "key": "ISO_4406",
@@ -1569,7 +1569,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md"
+      "vault_path": "elimfilters-vault/04-standards/ISO_4406.md"
     },
     "ISO_5011": {
       "key": "ISO_5011",
@@ -1625,7 +1625,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md"
+      "vault_path": "elimfilters-vault/04-standards/ISO_5011.md"
     },
     "NFPA_T214": {
       "key": "NFPA_T214",
@@ -1674,7 +1674,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md"
+      "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md"
     },
     "SAE_J1539": {
       "key": "SAE_J1539",
@@ -1719,7 +1719,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md"
+      "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md"
     },
     "CABIN_AIR_CONTAMINATION": {
       "key": "CABIN_AIR_CONTAMINATION",
@@ -1759,7 +1759,7 @@
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
     },
     "DIESEL_WATER": {
       "key": "DIESEL_WATER",
@@ -1799,7 +1799,7 @@
           "HYDROCORE"
         ]
       },
-      "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
+      "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
     },
     "HYDRAULIC_CONTAMINATION": {
       "key": "HYDRAULIC_CONTAMINATION",
@@ -1843,7 +1843,7 @@
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
     },
     "PARTICLE_WEAR": {
       "key": "PARTICLE_WEAR",
@@ -1888,7 +1888,7 @@
           "SYNTRAX"
         ]
       },
-      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+      "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
     },
     "ENGINE_BEARING_JOURNAL": {
       "key": "ENGINE_BEARING_JOURNAL",
@@ -1934,7 +1934,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault\\06-components\\ENGINE_BEARING_JOURNAL.md"
+      "vault_path": "elimfilters-vault/06-components/ENGINE_BEARING_JOURNAL.md"
     },
     "PISTON_RING_ASSEMBLY": {
       "key": "PISTON_RING_ASSEMBLY",
@@ -1981,7 +1981,7 @@
           "ISO_5011"
         ]
       },
-      "vault_path": "elimfilters-vault\\06-components\\PISTON_RING_ASSEMBLY.md"
+      "vault_path": "elimfilters-vault/06-components/PISTON_RING_ASSEMBLY.md"
     },
     "TURBOCHARGER_BEARING": {
       "key": "TURBOCHARGER_BEARING",
@@ -2032,7 +2032,7 @@
           "ISO_5011"
         ]
       },
-      "vault_path": "elimfilters-vault\\06-components\\TURBOCHARGER_BEARING.md"
+      "vault_path": "elimfilters-vault/06-components/TURBOCHARGER_BEARING.md"
     },
     "DUST_INGESTION": {
       "key": "DUST_INGESTION",
@@ -2093,7 +2093,7 @@
           "AGRICULTURE"
         ]
       },
-      "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
+      "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
     },
     "ENGINE_OIL_CONTAMINATION": {
       "key": "ENGINE_OIL_CONTAMINATION",
@@ -2159,7 +2159,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
     },
     "FUEL_FILTER_PLUGGING": {
       "key": "FUEL_FILTER_PLUGGING",
@@ -2216,7 +2216,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md"
+      "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
     },
     "HYDRAULIC_VALVE_FAILURE": {
       "key": "HYDRAULIC_VALVE_FAILURE",
@@ -2274,7 +2274,7 @@
           "POWER_GENERATION"
         ]
       },
-      "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
+      "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
     },
     "OPERATOR_DUST_EXPOSURE": {
       "key": "OPERATOR_DUST_EXPOSURE",
@@ -2332,7 +2332,7 @@
           "WASTE_MUNICIPAL"
         ]
       },
-      "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
+      "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
     },
     "AIRFILTER_PRIMARY": {
       "key": "AIRFILTER_PRIMARY",
@@ -2386,7 +2386,7 @@
           "AIRFILTER"
         ]
       },
-      "vault_path": "elimfilters-vault\\08-product-families\\AIRFILTER_PRIMARY.md"
+      "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md"
     },
     "CABIN_PRIMARY": {
       "key": "CABIN_PRIMARY",
@@ -2442,7 +2442,7 @@
           "CABIN"
         ]
       },
-      "vault_path": "elimfilters-vault\\08-product-families\\CABIN_PRIMARY.md"
+      "vault_path": "elimfilters-vault/08-product-families/CABIN_PRIMARY.md"
     },
     "FUEL_PRIMARY": {
       "key": "FUEL_PRIMARY",
@@ -2497,7 +2497,7 @@
           "FUEL"
         ]
       },
-      "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md"
+      "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md"
     },
     "HYDRAULIC_PRIMARY": {
       "key": "HYDRAULIC_PRIMARY",
@@ -2552,7 +2552,7 @@
           "HYDRAULIC"
         ]
       },
-      "vault_path": "elimfilters-vault\\08-product-families\\HYDRAULIC_PRIMARY.md"
+      "vault_path": "elimfilters-vault/08-product-families/HYDRAULIC_PRIMARY.md"
     },
     "LUBE_PRIMARY": {
       "key": "LUBE_PRIMARY",
@@ -2612,7 +2612,7 @@
           "OIL"
         ]
       },
-      "vault_path": "elimfilters-vault\\08-product-families\\LUBE_PRIMARY.md"
+      "vault_path": "elimfilters-vault/08-product-families/LUBE_PRIMARY.md"
     },
     "AI_REASONING_ENGINE": {
       "key": "AI_REASONING_ENGINE",
@@ -2644,7 +2644,7 @@
         "industrial_role": "The AI Reasoning Engine repositions the filtration selection conversation from product price comparison to contamination control system design — shifting customer decision criteria from commodity purchasing to asset protection engineering."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault\\09-artificial-intelligence\\AI_REASONING_ENGINE.md"
+      "vault_path": "elimfilters-vault/09-artificial-intelligence/AI_REASONING_ENGINE.md"
     },
     "DURATECH": {
       "key": "DURATECH",
@@ -2676,7 +2676,7 @@
         "industrial_role": "DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault\\10-commercial\\DURATECH.md"
+      "vault_path": "elimfilters-vault/10-commercial/DURATECH.md"
     },
     "MARINECLEAN": {
       "key": "MARINECLEAN",
@@ -2707,7 +2707,7 @@
         "industrial_role": "MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault\\10-commercial\\MARINECLEAN.md"
+      "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md"
     },
     "ELIMFILTERS_NOMENCLATURE": {
       "key": "ELIMFILTERS_NOMENCLATURE",
@@ -2739,7 +2739,7 @@
         "industrial_role": "The SKU nomenclature architecture enables fleet managers, dealers, and AI systems to immediately identify the contamination domain and application class of any ELIMFILTERS part number without requiring catalogue lookup."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault\\11-sku-architecture\\ELIMFILTERS_NOMENCLATURE.md"
+      "vault_path": "elimfilters-vault/11-sku-architecture/ELIMFILTERS_NOMENCLATURE.md"
     }
   },
   "graph": {

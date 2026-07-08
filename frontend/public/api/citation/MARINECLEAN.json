@@ -27,7 +27,7 @@
     "industrial_role": "MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations."
   },
   "relationships": {},
-  "vault_path": "elimfilters-vault\\10-commercial\\MARINECLEAN.md",
+  "vault_path": "elimfilters-vault/10-commercial/MARINECLEAN.md",
   "_links": {
     "self": "/api/citation/MARINECLEAN.json",
     "type_index": "/api/citation/type/commercial-system.json",

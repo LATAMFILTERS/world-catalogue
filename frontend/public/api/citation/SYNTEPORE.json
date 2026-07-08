@@ -47,7 +47,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTEPORE.md",
+  "vault_path": "elimfilters-vault/01-technologies/active/SYNTEPORE.md",
   "_links": {
     "self": "/api/citation/SYNTEPORE.json",
     "type_index": "/api/citation/type/technology.json",
