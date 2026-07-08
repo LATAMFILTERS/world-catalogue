@@ -41,7 +41,7 @@
       "SYNTRAX"
     ]
   },
-  "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md",
+  "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md",
   "_links": {
     "self": "/api/citation/PARTICLE_WEAR.json",
     "type_index": "/api/citation/type/contamination-mode.json",

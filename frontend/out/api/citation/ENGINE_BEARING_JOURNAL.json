@@ -42,7 +42,7 @@
       "ISO_4406"
     ]
   },
-  "vault_path": "elimfilters-vault\\06-components\\ENGINE_BEARING_JOURNAL.md",
+  "vault_path": "elimfilters-vault/06-components/ENGINE_BEARING_JOURNAL.md",
   "_links": {
     "self": "/api/citation/ENGINE_BEARING_JOURNAL.json",
     "type_index": "/api/citation/type/component.json",

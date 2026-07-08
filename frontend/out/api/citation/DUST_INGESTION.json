@@ -57,7 +57,7 @@
       "AGRICULTURE"
     ]
   },
-  "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md",
+  "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md",
   "_links": {
     "self": "/api/citation/DUST_INGESTION.json",
     "type_index": "/api/citation/type/problem.json",
