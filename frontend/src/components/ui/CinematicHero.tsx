@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -58,7 +58,7 @@ export default function CinematicHero() {
       }}
         className="hero-grid"
       >
-        {/* LEFT — headline */}
+        {/* LEFT â€” headline */}
         <div>
           <motion.p
             initial={{ opacity: 0 }}
@@ -77,11 +77,11 @@ export default function CinematicHero() {
           >
             <span style={{
               display: "block",
-              fontFamily: "var(--font-display)",
-              fontWeight: 500,
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              fontWeight: 800,
               fontSize: "clamp(1.8rem, 4.2vw, 4rem)",
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
+              lineHeight: 0.88.05,
+              letterSpacing: '-0.04em',
               color: "rgba(255,255,255,0.7)",
               textTransform: "uppercase",
             }}>
@@ -89,11 +89,11 @@ export default function CinematicHero() {
             </span>
             <span style={{
               display: "block",
-              fontFamily: "var(--font-display)",
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.04em",
+              lineHeight: 0.885,
+              letterSpacing: '-0.04em',
               color: "#fff",
               textTransform: "uppercase",
             }}>
@@ -101,11 +101,11 @@ export default function CinematicHero() {
             </span>
             <span style={{
               display: "block",
-              fontFamily: "var(--font-display)",
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.04em",
+              lineHeight: 0.885,
+              letterSpacing: '-0.04em',
               color: "#FFF12D",
               textTransform: "uppercase",
             }}>
@@ -114,7 +114,7 @@ export default function CinematicHero() {
           </motion.h1>
         </div>
 
-        {/* RIGHT — divider + description + CTAs */}
+        {/* RIGHT â€” divider + description + CTAs */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -129,10 +129,10 @@ export default function CinematicHero() {
           }} />
 
           <p style={{
-            fontFamily: "var(--font-inter)",
-            fontWeight: 400,
+            fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+            fontWeight: 800,
             fontSize: "clamp(0.82rem, 1.1vw, 0.95rem)",
-            lineHeight: 1.8,
+            lineHeight: 0.88.8,
             color: "rgba(255,255,255,0.42)",
             margin: 0,
           }}>
@@ -149,10 +149,10 @@ export default function CinematicHero() {
                 gap: "0.55rem",
                 background: "#FFF12D",
                 color: "#000",
-                fontFamily: "var(--font-inter)",
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
                 fontSize: "0.72rem",
-                letterSpacing: "0.1em",
+                letterSpacing: '-0.04em',
                 padding: "0.85rem 1.6rem",
                 textDecoration: "none",
                 textTransform: "uppercase",
@@ -181,10 +181,10 @@ export default function CinematicHero() {
                 alignItems: "center",
                 gap: "0.5rem",
                 color: "rgba(255,255,255,0.4)",
-                fontFamily: "var(--font-inter)",
-                fontWeight: 500,
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                fontWeight: 800,
                 fontSize: "0.72rem",
-                letterSpacing: "0.08em",
+                letterSpacing: '-0.04em',
                 textDecoration: "none",
                 textTransform: "uppercase",
                 transition: "color 0.2s",
@@ -193,13 +193,13 @@ export default function CinematicHero() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFF12D"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}
             >
-              {t("home.ctaFilter", "Find My Filter")} →
+              {t("home.ctaFilter", "Find My Filter")} â†’
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator — bottom center */}
+      {/* Scroll indicator â€” bottom center */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -235,3 +235,4 @@ export default function CinematicHero() {
     </section>
   );
 }
+
