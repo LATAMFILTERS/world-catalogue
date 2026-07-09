@@ -6,14 +6,14 @@ import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 
 const TECHNOLOGIES = [
-  { code: 'MACROCOREâ„¢', domain: 'Engine · Lube · Hydraulic', href: '/technologies/macrocore' },
+  { code: 'MACROCOREâ„¢', domain: 'Engine / Lube / Hydraulic', href: '/technologies/macrocore' },
   { code: 'MICROKAPPAâ„¢', domain: 'Sub-Micron Particle Capture', href: '/technologies/microkappa' },
-  { code: 'DRYCOREâ„¢', domain: 'Air Intake · Dust Separation', href: '/technologies/drycore' },
-  { code: 'INTEKCOREâ„¢', domain: 'Fuel · Water Separation', href: '/technologies/intekcore' },
+  { code: 'DRYCOREâ„¢', domain: 'Air Intake / Dust Separation', href: '/technologies/drycore' },
+  { code: 'INTEKCOREâ„¢', domain: 'Fuel / Water Separation', href: '/technologies/intekcore' },
   { code: 'SYNTEPOREâ„¢', domain: 'Synthetic Depth Media', href: '/technologies/syntepore' },
   { code: 'HYDROCOREâ„¢', domain: 'Hydraulic High-Pressure', href: '/technologies/hydrocore' },
   { code: 'SYNTRAXâ„¢', domain: 'Active Synthetic Media', href: '/technologies/syntrax' },
-  { code: 'NANOFORCEâ„¢', domain: 'Sub-1µm Particle Removal', href: '/technologies/nanoforce' },
+  { code: 'NANOFORCEâ„¢', domain: 'Sub-1um Particle Removal', href: '/technologies/nanoforce' },
   { code: 'THERMACOREâ„¢', domain: 'Thermal Management', href: '/technologies/thermacore' },
 ];
 
@@ -227,7 +227,7 @@ export default function DistributorApplication() {
           transition: 'background 0.2s, border-color 0.2s',
         }}
       >
-        ← HOME
+         HOME
       </Link>
 
       {/* Hero */}
@@ -596,7 +596,7 @@ export default function DistributorApplication() {
                   textDecoration: 'none',
                 }}
               >
-                EXPLORE ALL TECHNOLOGIES →
+                EXPLORE ALL TECHNOLOGIES ->
               </Link>
             </p>
           </AnimateIn>
@@ -787,7 +787,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Industries We Serve
+                    -> Industries We Serve
                   </Link>
                   <Link
                     href="/technologies"
@@ -800,7 +800,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Proprietary Technologies
+                    -> Proprietary Technologies
                   </Link>
                   <Link
                     href="/knowledge-system"
@@ -813,7 +813,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Knowledge System
+                    -> Knowledge System
                   </Link>
                   <Link
                     href="/contact"
@@ -826,7 +826,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Technical Contact
+                    -> Technical Contact
                   </Link>
                 </div>
               </div>
@@ -1061,6 +1061,7 @@ export default function DistributorApplication() {
     </main>
   );
 }
+
 
 
 
