@@ -1,369 +1,419 @@
-'use client';
-
-import Link from 'next/link';
-import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
-
-const ease = [0.16, 1, 0.3, 1] as const;
-
-const PARTNER_VALUE = [
-  {
-    title: 'Proprietary Technology Portfolio',
-    body: '10 proprietary technologies covering all critical filtration domains: air, fuel, hydraulic, lube oil, cabin, and compressed air. No commodity product dependence.',
-  },
-  {
-    title: 'Knowledge System Access',
-    body: 'Full access to the ELIMFILTERS Knowledge System — ISO standards library, contamination case studies, fleet optimization frameworks — tools to sell by engineering value, not price.',
-  },
-  {
-    title: 'Technical Support Infrastructure',
-    body: 'Dedicated engineering support for OEM cross-reference validation, application specification, and fleet filtration system design.',
-  },
-  {
-    title: 'Warranty Coverage',
-    body: 'Non-prorated warranty with immediate replacement guarantee. Full asset protection warranty language supports distributor credibility with industrial clients.',
-  },
-  {
-    title: 'LATAM Operations Proximity',
-    body: 'Operations center in Barquisimeto, Venezuela provides regional support for LATAM distributors. Spanish-language support, proximity to key mining and agricultural markets.',
-  },
-  {
-    title: 'Category Leadership Positioning',
-    body: 'Represent a platform that defines a new category: industrial asset protection vs commodity filtration. A defensible competitive position beyond price competition.',
-  },
-];
+﻿import Link from 'next/link';
+import type { CSSProperties } from 'react';
 
 const DISTRIBUTORS = [
   {
     country: 'Dominican Republic',
-    flag: '🇩🇴',
     company: 'TROY, SRL',
+    region: 'Caribbean / LATAM',
     address: 'Ave. Las Palmas #64, Santo Domingo, Dominican Republic 10905',
-    phone: null,
-    social: [
-      { label: 'Instagram', href: 'https://www.instagram.com/troydominicana/', icon: 'Ig' },
-    ],
-    accent: '#fb923c',
+    phone: '',
+    social: 'Instagram',
+    href: 'https://www.instagram.com/troydominicana/',
   },
   {
     country: 'Colombia',
-    flag: '🇨🇴',
     company: 'COLSAISA',
-    address: 'Cl. 17 #82 – 67, Fontibón, Bogotá, Colombia',
+    region: 'Andean Region',
+    address: 'Cl. 17 #82 - 67, Fontibon, Bogota, Colombia',
     phone: '+57 310 611 2190',
-    social: [],
-    accent: '#4ade80',
+    social: '',
+    href: '',
   },
   {
     country: 'United States',
-    flag: '🇺🇸',
     company: 'ELIMPERCA',
+    region: 'North America',
     address: 'Frisco, Texas, United States',
-    phone: null,
-    social: [],
-    accent: '#60a5fa',
+    phone: '',
+    social: '',
+    href: '',
   },
 ];
 
+const PARTNER_VALUE = [
+  ['Technology Portfolio', 'Access to ELIMFILTERS protection technologies across air, fuel, lube, hydraulic, cooling, cabin, and compressed air systems.'],
+  ['Engineering Support', 'Cross-reference validation, application guidance, dimensional review, and technical support for severe-duty customers.'],
+  ['Knowledge System', 'Sales support built around contamination control, ISO standards, failure modes, and asset protection logic.'],
+  ['Warranty Positioning', 'Distributor credibility supported by clear warranty language and replacement-focused customer protection.'],
+  ['Regional Expansion', 'A platform designed for LATAM, North America, and industrial markets that need technical filtration support.'],
+  ['Category Positioning', 'A stronger commercial position: asset protection systems, not commodity filter replacement.'],
+];
+
+const NETWORK_LOGIC = [
+  'Industrial market coverage',
+  'Technical sales support',
+  'Cross-reference intelligence',
+  'Local customer access',
+  'Warranty confidence',
+  'Asset protection growth',
+];
+
+export const metadata = {
+  title: 'Authorized Distributors | ELIMFILTERS',
+  description:
+    'ELIMFILTERS authorized distributors provide local access to industrial asset protection systems, technical support, and filtration solutions across the Americas.',
+};
+
 export default function DistributorsPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'ELIMFILTERS Authorized Distributors',
+    url: 'https://elimfilters.com/distributors',
+    numberOfItems: DISTRIBUTORS.length,
+    itemListElement: DISTRIBUTORS.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Organization',
+        name: item.company,
+        address: item.address,
+        areaServed: item.country,
+      },
+    })),
+  };
+
   return (
-    <>
-      <Navigation />
-      <main style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
+    <main style={main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-        {/* Hero */}
-        <section style={{ padding: '8rem 8% 5rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease }}
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '1.5rem',
-              }}
-            >
-              AUTHORIZED DISTRIBUTION NETWORK
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease }}
-              style={{
-                fontFamily: 'Titillium Web, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(2.2rem, 5vw, 4rem)',
-                lineHeight: 1,
-                letterSpacing: '-0.03em',
-                textTransform: 'uppercase',
-                color: '#fff',
-                margin: '0 0 1.5rem',
-              }}
-            >
-              Authorized<br />
-              <span style={{ color: '#FFF12D' }}>Distributors</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3, ease }}
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.95rem',
-                lineHeight: 1.75,
-                textAlign: 'justify',
-                color: 'rgba(255,255,255,0.45)',
-                maxWidth: '520px',
-              }}
-            >
-              ELIMFILTERS authorized distributors provide local access to the full product catalogue, technical support, and asset protection consultation across the Americas.
-            </motion.p>
+      <Link href="/" style={homeButton}>HOME</Link>
+
+      <section style={hero}>
+        <div style={{ ...heroImage, backgroundImage: 'url(/images/distributor-network.avif)' }} />
+        <div style={heroOverlay} />
+
+        <div style={heroInner}>
+          <p style={eyebrow}>AUTHORIZED DISTRIBUTION NETWORK</p>
+          <h1 style={heroTitle}>
+            Industrial
+            <br />
+            Distribution Network
+          </h1>
+          <p style={heroLead}>
+            ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.
+          </p>
+
+          <div style={tagRow}>
+            {['LATAM', 'USA', 'CARIBBEAN', 'FLEETS', 'MINING', 'INDUSTRIAL'].map((item) => (
+              <span key={item} style={tag}>{item}</span>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Distributor Cards */}
-        <section style={{ padding: '5rem 8%' }}>
-          <div style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '1.5rem',
-          }}>
-            {DISTRIBUTORS.map((d, i) => (
-              <motion.div
-                key={d.company}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease }}
-                style={{
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '4px',
-                  padding: '2.5rem',
-                  background: 'rgba(255,255,255,0.02)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.25rem',
-                }}
-              >
-                {/* Country */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>{d.flag}</span>
-                  <span style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.15em',
-                    color: d.accent,
-                    textTransform: 'uppercase',
-                  }}>
-                    {d.country}
-                  </span>
-                </div>
+      <section style={section}>
+        <div style={twoCol}>
+          <div>
+            <p style={eyebrow}>NETWORK PURPOSE</p>
+            <h2 style={sectionTitle}>Local access with technical selling power.</h2>
+          </div>
+          <div>
+            <p style={leadText}>
+              Industrial customers need more than part numbers. They need local support, fast response, cross-reference confidence, and a supplier that understands contamination-driven failures.
+            </p>
+            <p style={bodyText}>
+              The ELIMFILTERS distribution network is designed to support regional partners with product architecture, technical language, warranty positioning, and asset protection value.
+            </p>
+          </div>
+        </div>
+      </section>
 
-                {/* Company name */}
-                <h2 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '1.4rem',
-                  letterSpacing: '-0.01em',
-                  color: '#fff',
-                  margin: 0,
-                  textTransform: 'uppercase',
-                }}>
-                  {d.company}
-                </h2>
+      <section style={yellowSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>DISTRIBUTION LOGIC</p>
+          <h2 style={sectionTitle}>From market coverage to protected assets.</h2>
 
-                {/* Address */}
-                <p style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.85rem',
-                  lineHeight: 1.65,
-                  textAlign: 'justify',
-                  color: 'rgba(255,255,255,0.5)',
-                  margin: 0,
-                }}>
-                  {d.address}
-                </p>
+          <div style={logicGrid}>
+            {NETWORK_LOGIC.map((item, index) => (
+              <div key={item} style={logicCard}>
+                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <strong style={logicText}>{item}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                {/* Phone */}
-                {d.phone && (
-                  <a
-                    href={`tel:${d.phone.replace(/\s/g, '')}`}
-                    style={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.78rem',
-                      color: d.accent,
-                      textDecoration: 'none',
-                      letterSpacing: '0.04em',
-                    }}
-                  >
-                    {d.phone}
+      <section style={networkSection}>
+        <div style={wrapWide}>
+          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
+            <p style={eyebrow}>AUTHORIZED PARTNERS</p>
+            <h2 style={sectionTitle}>Current distributor coverage.</h2>
+          </div>
+
+          <div style={distributorGrid}>
+            {DISTRIBUTORS.map((item, index) => (
+              <article key={item.company} style={distributorCard}>
+                <span style={distributorNumber}>{String(index + 1).padStart(2, '0')}</span>
+                <p style={region}>{item.region}</p>
+                <h3 style={company}>{item.company}</h3>
+                <p style={country}>{item.country}</p>
+                <p style={address}>{item.address}</p>
+
+                {item.phone && <a href={`tel:${item.phone.replace(/\s/g, '')}`} style={contactLink}>{item.phone}</a>}
+
+                {item.href && (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" style={contactLink}>
+                    {item.social}
                   </a>
                 )}
 
-                {/* Social links */}
-                {d.social.length > 0 && (
-                  <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-                    {d.social.map((s) => (
-                      <a
-                        key={s.label}
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontFamily: 'JetBrains Mono, monospace',
-                          fontSize: '0.65rem',
-                          letterSpacing: '0.1em',
-                          color: d.accent,
-                          background: `${d.accent}15`,
-                          border: `1px solid ${d.accent}40`,
-                          padding: '0.25rem 0.65rem',
-                          borderRadius: '2px',
-                          textDecoration: 'none',
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        {s.icon} {s.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-
-                {/* Divider accent */}
-                <div style={{
-                  marginTop: 'auto',
-                  paddingTop: '1.25rem',
-                  borderTop: `1px solid ${d.accent}25`,
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.12em',
-                  color: 'rgba(255,255,255,0.2)',
-                  textTransform: 'uppercase',
-                }}>
-                  ELIMFILTERS® AUTHORIZED DISTRIBUTOR
-                </div>
-              </motion.div>
+                <div style={authorized}>ELIMFILTERS AUTHORIZED DISTRIBUTOR</div>
+              </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Partner Value */}
-        <section style={{ padding: '5rem 8%', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.18em', color: '#FFF12D', textTransform: 'uppercase', marginBottom: '0.75rem' }}
-            >
-              WHAT AUTHORIZED DISTRIBUTORS RECEIVE
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', color: '#fff', marginBottom: '3rem', letterSpacing: '-0.01em' }}
-            >
-              Partnership Benefits
-            </motion.h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-              {PARTNER_VALUE.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
-                  style={{
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '4px',
-                    padding: '1.75rem',
-                    background: 'rgba(255,255,255,0.02)',
-                  }}
-                >
-                  <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.6rem' }}>{item.title}</p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, textAlign: 'justify' }}>{item.body}</p>
-                </motion.div>
-              ))}
-            </div>
+      <section style={partnerSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>PARTNER VALUE</p>
+          <h2 style={sectionTitle}>What authorized distributors receive.</h2>
+
+          <div style={partnerGrid}>
+            {PARTNER_VALUE.map(([title, body], index) => (
+              <article key={title} style={partnerCard}>
+                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <h3 style={partnerTitle}>{title}</h3>
+                <p style={partnerBody}>{body}</p>
+              </article>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Become a Distributor CTA */}
-        <section style={{
-          padding: '5rem 8%',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          background: 'rgba(255,241,45,0.02)',
-        }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
-            <div>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.65rem',
-                letterSpacing: '0.18em',
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-                textTransform: 'uppercase',
-              }}>
-                EXPAND THE NETWORK
-              </p>
-              <h2 style={{
-                fontFamily: 'Titillium Web, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                color: '#fff',
-                margin: 0,
-                lineHeight: 1.2,
-                textAlign: 'justify',
-              }}>
-                Become an Authorized Distributor
-              </h2>
-              <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.875rem',
-                color: 'rgba(255,255,255,0.45)',
-                marginTop: '0.75rem',
-                maxWidth: '420px',
-                lineHeight: 1.7,
-                textAlign: 'justify',
-              }}>
-                Join the ELIMFILTERS distribution network and provide industrial asset protection systems to your region.
-              </p>
-            </div>
-            <Link
-              href="/distributor-application"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem',
-                padding: '0.85rem 1.75rem',
-                background: '#FFF12D',
-                color: '#000',
-                fontFamily: 'Titillium Web, sans-serif',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                letterSpacing: '0.08em',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                borderRadius: '3px',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              APPLY NOW →
-            </Link>
+      <section style={applicationCallout}>
+        <div style={applicationInner}>
+          <div>
+            <p style={eyebrow}>EXPAND THE NETWORK</p>
+            <h2 style={{ ...sectionTitle, fontSize: 'clamp(2rem, 4vw, 4.2rem)' }}>
+              Become an authorized distributor.
+            </h2>
+            <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}>
+              Join the ELIMFILTERS distribution network and represent a platform built around industrial asset protection, technical differentiation, and severe-duty market growth.
+            </p>
           </div>
-        </section>
+          <Link href="/distributor-application" style={yellowButton}>APPLY NOW</Link>
+        </div>
+      </section>
 
-      </main>
-      <Footer />
-    </>
+      <section style={cta}>
+        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
+            Distribution becomes stronger when it sells protection, not only replacement parts.
+          </h2>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
+            <Link href="/distributor-application" style={yellowButton}>DISTRIBUTOR APPLICATION</Link>
+            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
+
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
+
+const homeButton: CSSProperties = {
+  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
+  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
+  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
+};
+
+const hero: CSSProperties = {
+  minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+};
+
+const heroImage: CSSProperties = {
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.28,
+};
+
+const heroOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+};
+
+const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+
+const eyebrow: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
+  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
+};
+
+const heroTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
+  lineHeight: 0.92, fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+  maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
+};
+
+const heroLead: CSSProperties = {
+  marginTop: '2rem', maxWidth: '800px', color: 'rgba(255,255,255,0.78)',
+  fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
+};
+
+const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
+
+const tag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.18)', padding: '0.82rem 1rem',
+  fontFamily: 'var(--font-display)', fontSize: '0.74rem',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.88)',
+};
+
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+
+const twoCol: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+  gap: 'clamp(2rem, 6vw, 5rem)',
+};
+
+const sectionTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
+  lineHeight: 0.96, letterSpacing: '-0.045em', margin: 0, textTransform: 'uppercase',
+};
+
+const leadText: CSSProperties = {
+  color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
+  lineHeight: 1.72, fontWeight: 600, margin: 0,
+};
+
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
+
+const yellowSection: CSSProperties = {
+  background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,241,45,0.01))',
+  borderTop: '1px solid rgba(255,241,45,0.16)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+
+const logicGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '0.8rem', marginTop: '2.4rem',
+};
+
+const logicCard: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.44)',
+  padding: '1.2rem', minHeight: '140px',
+};
+
+const number: CSSProperties = {
+  display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
+};
+
+const logicText: CSSProperties = { display: 'block', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2 };
+
+const networkSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
+
+const distributorGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',
+};
+
+const distributorCard: CSSProperties = {
+  position: 'relative', minHeight: '420px', padding: '1.4rem',
+  border: '1px solid rgba(255,255,255,0.1)', background: 'linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015))',
+  display: 'flex', flexDirection: 'column',
+};
+
+const distributorNumber: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.86rem', marginBottom: '2.5rem',
+};
+
+const region: CSSProperties = {
+  color: 'rgba(255,241,45,0.82)', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', margin: '0 0 0.7rem',
+};
+
+const company: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 3.3rem)',
+  lineHeight: 0.94, letterSpacing: '-0.04em', margin: 0, textTransform: 'uppercase',
+};
+
+const country: CSSProperties = {
+  color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.08em', fontSize: '0.82rem', margin: '1.1rem 0 0.4rem',
+};
+
+const address: CSSProperties = {
+  color: 'rgba(255,255,255,0.62)', fontSize: '0.95rem',
+  lineHeight: 1.58, margin: 0,
+};
+
+const contactLink: CSSProperties = {
+  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.08em', fontSize: '0.82rem', marginTop: '1.2rem',
+};
+
+const authorized: CSSProperties = {
+  marginTop: 'auto', paddingTop: '1.4rem', borderTop: '1px solid rgba(255,241,45,0.22)',
+  color: 'rgba(255,255,255,0.42)', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.68rem',
+};
+
+const partnerSection: CSSProperties = {
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))',
+  borderTop: '1px solid rgba(255,255,255,0.08)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const partnerGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+  gap: '1rem', marginTop: '2.4rem',
+};
+
+const partnerCard: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)',
+  padding: '1.4rem', minHeight: '230px',
+};
+
+const partnerTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: '1.35rem',
+  lineHeight: 1.05, margin: 0, letterSpacing: '-0.03em',
+};
+
+const partnerBody: CSSProperties = {
+  color: 'rgba(255,255,255,0.6)', lineHeight: 1.62,
+  fontSize: '0.92rem', margin: '1rem 0 0',
+};
+
+const applicationCallout: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const applicationInner: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'flex', flexWrap: 'wrap',
+  alignItems: 'center', justifyContent: 'space-between', gap: '2rem',
+  border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.045)',
+  padding: 'clamp(1.5rem, 4vw, 2.4rem)',
+};
+
+const cta: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+  borderTop: '1px solid rgba(255,241,45,0.2)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+};
+
+const yellowButton: CSSProperties = {
+  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem',
+};
+
+const darkButton: CSSProperties = {
+  display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
+  textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem',
+  border: '1px solid rgba(255,241,45,0.4)',
+};
