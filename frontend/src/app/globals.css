@@ -126,3 +126,42 @@ h4 .reg-sup {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--border);
 }
+
+.product-desc-grid {
+  min-width: 0;
+}
+
+.product-desc-grid > * {
+  min-width: 0;
+}
+
+.product-desc-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .product-desc-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .product-desc-grid > div:nth-child(2) {
+    order: -1 !important;
+    width: 100% !important;
+  }
+
+  .product-desc-grid > div:nth-child(2) > div {
+    width: 100% !important;
+    padding-bottom: 56.25% !important;
+    border-radius: 14px !important;
+  }
+
+  .product-desc-grid > div:first-child {
+    width: 100% !important;
+  }
+}
