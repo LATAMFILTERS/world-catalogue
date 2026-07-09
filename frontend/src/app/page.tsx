@@ -16,7 +16,7 @@ import type { SearchResult } from '@/lib/services';
 
 const STATS_DATA = [
   { value: null, display: '15k+', ring: 75 },
-  { value: null, display: '3â€“5Ã - ', ring: 65 },
+  { value: null, display: '3-5 - ', ring: 65 },
   { value: 80, prefix: '', suffix: '%', ring: 80 },
   { value: null, display: '$62K', ring: 100 },
 ];
@@ -154,7 +154,7 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
       <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: hovered ? 600 : 500, color: hovered ? '#fff' : 'rgba(255,255,255,0.65)', transition: 'all 0.25s ease' }}>
         {label}
       </span>
-      <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }} style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>â†’</motion.span>
+      <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }} style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>{'->'}</motion.span>
     </a>
   );
 }
@@ -251,10 +251,10 @@ function EngineeringEntrySection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{ marginBottom: '2.5rem', maxWidth: '680px' }}
         >
-          <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standardâ€¦" />
+          <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standard..." />
         </motion.div>
 
-        {/* Journey cards â€” 2Ã - 2 grid */}
+        {/* Journey cards  -  2 - 2 grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -295,7 +295,7 @@ function EngineeringEntrySection() {
                 marginTop: '1rem', fontSize: '0.75rem',
                 color: 'rgba(255,255,255,0.25)',
               }}>
-                {card.external ? 'part-search.elimfilters.com â†’' : 'Explore â†’'}
+                {card.external ? 'part-search.elimfilters.com ->' : 'Explore ->'}
               </div>
             </motion.a>
           ))}
@@ -400,7 +400,7 @@ export default function Home() {
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'var(--font-body)' }}>
-                  {t('home.problemIntro', '80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components â€” bearing surfaces, injector orifices, hydraulic spools.')}
+                  {t('home.problemIntro', '80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components  -  bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
@@ -448,9 +448,9 @@ export default function Home() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
-                { label: 'Hydraulic Pump Replacement', cost: '$18,000â€“$32,000', icon: 'âšTM', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
-                { label: 'System Flush + Fluid', cost: '$4,000â€“$6,000', icon: 'ðŸ”§', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
-                { label: 'Unplanned Downtime (5â€“8 days)', cost: '$40,000â€“$80,000', icon: 'â±', desc: 'Lost production on a 50-ton excavator: $5,000â€“$10,000/day. 5â€“8 days of downtime compounds cost rapidly.' },
+                { label: 'Hydraulic Pump Replacement', cost: '$18,000-$32,000', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
+                { label: 'System Flush + Fluid', cost: '$4,000-$6,000', icon: '06', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
+                { label: 'Unplanned Downtime (5-8 days)', cost: '$40,000-$80,000', icon: '07', desc: 'Lost production on a 50-ton excavator: $5,000-$10,000/day. 5-8 days of downtime compounds cost rapidly.' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -476,13 +476,13 @@ export default function Home() {
               style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
             >
               <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost â€” 4Ã -  NANOFORCEâ„¢ Hydraulic Filters</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost  -  4x NANOFORCETM Hydraulic Filters</p>
                 <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>
                   4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
-                  <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost â€” it is the lowest-cost insurance available.</strong>
+                  <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost  -  it is the lowest-cost insurance available.</strong>
                 </p>
               </div>
             </motion.div>
@@ -500,7 +500,7 @@ export default function Home() {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
-                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company â€” engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
+                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company  -  engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
                 </motion.p>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
@@ -510,7 +510,7 @@ export default function Home() {
                   {(Array.isArray(whyCheckItems) ? whyCheckItems : []).map((item, i) => (
                     <motion.div key={i} variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                       style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>âœ“</span>
+                      <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>OK</span>
                       <span style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>{item}</span>
                     </motion.div>
                   ))}
@@ -553,7 +553,7 @@ export default function Home() {
                   {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
                 </p>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
-                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism â€” particle wear, water ingestion, bypass failure, or thermal degradation â€” targeting the root cause of premature asset failure.')}
+                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism  -  particle wear, water ingestion, bypass failure, or thermal degradation  -  targeting the root cause of premature asset failure.')}
                 </p>
               </div>
               <div style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
@@ -561,8 +561,8 @@ export default function Home() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
                     { step: '01', label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
-                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 Â -  ISO 16889 Â -  ISO 5011 Â -  ISO 19438' },
-                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE Â -  SYNTRAX Â -  NANOFORCE Â -  SYNTEPORE' },
+                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 / ISO 16889 / ISO 5011 / ISO 19438' },
+                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE  -  SYNTRAX  -  NANOFORCE  -  SYNTEPORE' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: '#FFF12D', opacity: 0.6, flexShrink: 0, paddingTop: '0.15rem' }}>{item.step}</div>
@@ -661,82 +661,13 @@ export default function Home() {
         {/* â”€â”€ TESTIMONIALS â”€â”€ */}
 
         {/* â”€â”€ FAQ SECTION â”€â”€ */}
-        <section style={{
-          padding: '4.75rem 8%',
-          background: 'linear-gradient(180deg, rgba(255,241,45,0.02) 0%, transparent 100%)',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
-              style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 3.2vw, 2.25rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff' }}>
-                {t('home.faqTitle', 'Common Questions About Industrial Asset Protection')}
-              </h2>
-            </motion.div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem' }}>
-              {[
-                {
-                  q: 'What is the best air filter for mining equipment?',
-                  a: 'ELIMFILTERS MACROCOREâ„¢ and NANOFORCEâ„¢ technologies achieve 99.9% particulate capture efficiency for mining air intake systems, meeting SAE J1539 and ISO 5011 standards. Selection depends on engine displacement and operating environment.',
-                },
-                {
-                  q: 'How often should industrial fuel filters be changed?',
-                  a: 'ELIMFILTERS recommends fuel filter replacement intervals of 500â€“1,000 operating hours for heavy-duty diesel engines, or 250â€“500 hours in high-contamination environments. HYDROCOREâ„¢ fuel filters extend change intervals through superior water separation (99.8% efficiency).',
-                },
-                {
-                  q: 'What ISO cleanliness code should a hydraulic system target?',
-                  a: 'Most industrial hydraulic systems require ISO 17/15/12 cleanliness code to protect proportional valve spools. Critical systems (aerospace, precision manufacturing) may specify ISO 15/13/10. ELIMFILTERS filtration strategies target measured cleanliness codes, not product brand.',
-                },
-                {
-                  q: 'Why does contamination cause engine failure?',
-                  a: 'Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000â€“3,000 hours. ELIMFILTERS system-level contamination control prevents these failure modes.',
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  style={{
-                    background: '#050505',
-                    border: '1px solid rgba(255,241,45,0.12)',
-                    padding: '2rem',
-                    borderRadius: '6px',
-                  }}
-                >
-                  <h3 style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    color: '#FFF12D',
-                    marginBottom: '0.75rem',
-                    lineHeight: 1.4,
-                    textAlign: 'justify',
-                  }}>
-                    {item.q}
-                  </h3>
-                  <p style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '0.9rem',
-                    color: 'rgba(255,255,255,0.7)',
-                    lineHeight: 1.7,
-                    textAlign: 'justify',
-                    margin: 0,
-                  }}>
-                    {item.a}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </ConversionProvider>
   );
 }
+
+
 
 
 
