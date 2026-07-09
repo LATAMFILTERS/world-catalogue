@@ -112,16 +112,16 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      <section style={yellowSection}>
+      <section style={processSection}>
         <div style={wrap}>
           <p style={eyebrow}>SUPPORT PROCESS</p>
           <h2 style={sectionTitle}>From claim evidence to support decision.</h2>
 
-          <div style={logicGrid}>
+          <div style={processList}>
             {PROCESS.map((item, index) => (
-              <div key={item} style={logicCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <strong style={logicText}>{item}</strong>
+              <div key={item} style={processRow}>
+                <span style={processStep}>{String(index + 1).padStart(2, '0')}</span>
+                <strong style={processLabel}>{item}</strong>
               </div>
             ))}
           </div>
@@ -153,9 +153,9 @@ export default function WarrantyPage() {
           <h2 style={sectionTitle}>What support can review.</h2>
 
           <div style={coverageGrid}>
-            {COVERAGE.map((item, index) => (
+            {COVERAGE.map((item) => (
               <div key={item} style={coverageCard}>
-                <span style={check}>{String(index + 1).padStart(2, '0')}</span>
+                <span style={check}>&#10003;</span>
                 <strong style={coverageText}>{item}</strong>
               </div>
             ))}
@@ -167,7 +167,7 @@ export default function WarrantyPage() {
         <div style={validationInner}>
           <div>
             <p style={eyebrow}>TECHNICAL VALIDATION</p>
-            <h2 style={{ ...sectionTitle, fontSize: 'clamp(2rem, 4vw, 4.2rem)' }}>
+            <h2 style={sectionTitle}>
               Validate before the problem becomes downtime.
             </h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
@@ -228,7 +228,7 @@ const eyebrow: CSSProperties = {
 
 const heroTitle: CSSProperties = {
   fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
-  lineHeight: 0.92, fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+  lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
   maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
 };
 
@@ -280,8 +280,8 @@ const twoCol: CSSProperties = {
 };
 
 const sectionTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
-  lineHeight: 0.96, letterSpacing: '-0.045em', margin: 0, textTransform: 'uppercase',
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
 };
 
 const leadText: CSSProperties = {
@@ -291,32 +291,27 @@ const leadText: CSSProperties = {
 
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
 
-const yellowSection: CSSProperties = {
-  background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,241,45,0.01))',
-  borderTop: '1px solid rgba(255,241,45,0.16)',
-  borderBottom: '1px solid rgba(255,255,255,0.08)',
-  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
-};
-
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
-const logicGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-  gap: '0.8rem', marginTop: '2.4rem',
+const processSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+
+const processList: CSSProperties = {
+  marginTop: '2.4rem', borderTop: '1px solid rgba(255,255,255,0.1)',
 };
 
-const logicCard: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.44)',
-  padding: '1.2rem', minHeight: '140px',
+const processRow: CSSProperties = {
+  display: 'grid', gridTemplateColumns: '70px minmax(0, 1fr)', gap: '1.5rem',
+  padding: '1.35rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)', alignItems: 'center',
 };
 
-const number: CSSProperties = {
-  display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
+const processStep: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em',
 };
 
-const logicText: CSSProperties = { display: 'block', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2 };
+const processLabel: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(1rem, 1.6vw, 1.3rem)', lineHeight: 1.15, margin: 0,
+};
 
 const pillarSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
@@ -365,7 +360,7 @@ const coverageCard: CSSProperties = {
 
 const check: CSSProperties = {
   color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
-  letterSpacing: '0.12em', fontSize: '0.8rem',
+  fontSize: '1.1rem', flexShrink: 0,
 };
 
 const coverageText: CSSProperties = {
