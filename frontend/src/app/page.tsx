@@ -380,57 +380,9 @@ export default function Home() {
         <CinematicHero />
 
         {/* â”€â”€ ENGINEERING ENTRY â”€â”€ */}
-        <EngineeringEntrySection />
 
         {/* â”€â”€ INDUSTRIES STRIP â”€â”€ */}
-        <section style={{ background: '#000', padding: '2.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '4px' }}
-            >
-              {[
-                { label: 'Agriculture',       href: '/industries/agriculture' },
-                { label: 'Automotive',        href: '/industries/automotive' },
-                { label: 'Bus & Coach',       href: '/industries/bus-coach' },
-                { label: 'Construction',      href: '/industries/construction' },
-                { label: 'Manufacturing',     href: '/industries/manufacturing' },
-                { label: 'Marine',            href: '/industries/marine' },
-                { label: 'Mining',            href: '/industries/mining' },
-                { label: 'Oil & Gas',         href: '/industries/oil-gas' },
-                { label: 'Power Generation',  href: '/industries/power-generation' },
-                { label: 'Railway',           href: '/industries/railway' },
-                { label: 'Trucks & Fleets',   href: '/industries/trucks-fleets' },
-                { label: 'Waste & Municipal', href: '/industries/waste-municipal' },
-              ].map((ind, i) => (
-                <a
-                  key={ind.href}
-                  href={ind.href}
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontWeight: 600,
-                    fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
-                    letterSpacing: '0.02em',
-                    color: i % 2 === 0 ? '#fff' : '#FFF12D',
-                    textDecoration: 'none',
-                    padding: '0.7rem 0.6rem',
-                    textAlign: 'center',
-                    lineHeight: 1.25,
-                    transition: 'opacity 0.2s',
-                    display: 'block',
-                  }}
-                  onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.opacity = '0.6'}
-                  onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.opacity = '1'}
-                >
-                  {ind.label}
-                </a>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* â”€â”€ CONTAMINATION / PROBLEM SECTION â”€â”€ */}
-        <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+      <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
 
@@ -785,6 +737,7 @@ export default function Home() {
     </ConversionProvider>
   );
 }
+
 
 
 
