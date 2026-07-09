@@ -13,6 +13,9 @@ interface HeroProps {
   category?: string;
 }
 
+const displayFont = 'Chakra Petch, Arial Narrow, monospace';
+const bodyFont = 'Barlow, Arial, sans-serif';
+
 export function Hero({
   title,
   subtitle,
@@ -63,9 +66,11 @@ export function Hero({
         flexDirection: 'column',
         justifyContent: 'center',
         overflow: 'hidden',
+        fontFamily: bodyFont,
       }}
     >
-      {/* Background image */}
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
+
       <div
         style={{
           position: 'absolute',
@@ -78,17 +83,15 @@ export function Hero({
         }}
       />
 
-      {/* Gradient overlay */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.90) 100%)',
+            'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.70) 48%, rgba(0,0,0,0.32) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
         }}
       />
 
-      {/* Noise texture overlay */}
       <div
         style={{
           position: 'absolute',
@@ -98,12 +101,11 @@ export function Hero({
         }}
       />
 
-      {/* Content */}
       <div
         style={{
           position: 'relative',
           zIndex: 10,
-          maxWidth: '1400px',
+          maxWidth: '1180px',
           margin: '0 auto',
           padding: '0 2rem',
           paddingTop: '120px',
@@ -115,11 +117,13 @@ export function Hero({
           <div
             ref={taglineRef}
             style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.7rem',
-              letterSpacing: '0.2em',
-              color: 'rgba(255,255,255,0.5)',
-              marginBottom: '1.5rem',
+              fontFamily: displayFont,
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.34em',
+              color: '#FFF12D',
+              marginBottom: '1.25rem',
+              textTransform: 'uppercase',
               display: 'flex',
               alignItems: 'center',
               gap: '0.75rem',
@@ -140,14 +144,16 @@ export function Hero({
         <h1
           ref={titleRef}
           style={{
-            fontFamily: 'Titillium Web, sans-serif',
-            fontWeight: 300,
-            fontSize: 'clamp(2rem, 4.5vw, 3.75rem)',
-            lineHeight: 1.1,
-            letterSpacing: '-0.01em',
-            color: 'rgba(255,255,255,0.92)',
-            maxWidth: '820px',
+            fontFamily: displayFont,
+            fontWeight: 700,
+            fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
+            lineHeight: 0.88,
+            letterSpacing: '-0.055em',
+            color: 'rgba(255,255,255,0.96)',
+            maxWidth: '980px',
+            margin: 0,
             marginBottom: subtitle ? '0.25rem' : '1.5rem',
+            textTransform: 'uppercase',
           }}
         >
           {title}
@@ -157,13 +163,14 @@ export function Hero({
           <p
             ref={subtitleRef}
             style={{
-              fontFamily: 'Titillium Web, sans-serif',
-              fontWeight: 600,
-              fontSize: 'clamp(1.8rem, 4vw, 3.5rem)',
-              lineHeight: 1.1,
+              fontFamily: displayFont,
+              fontWeight: 700,
+              fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
+              lineHeight: 0.88,
               color: '#FFF12D',
               marginBottom: '1.5rem',
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.055em',
+              textTransform: 'uppercase',
             }}
           >
             {subtitle}
@@ -174,11 +181,12 @@ export function Hero({
           <p
             ref={taglineRef}
             style={{
-              fontFamily: 'Titillium Web, sans-serif',
-              fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
-              color: 'rgba(255,255,255,0.62)',
-              maxWidth: '560px',
-              lineHeight: 1.75,
+              fontFamily: bodyFont,
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              color: 'rgba(255,255,255,0.76)',
+              maxWidth: '770px',
+              lineHeight: 1.65,
+              fontWeight: 600,
               marginBottom: '2.5rem',
               borderLeft: '3px solid #FFF12D',
               paddingLeft: '1.25rem',
@@ -197,12 +205,13 @@ export function Hero({
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Titillium Web, sans-serif',
+              fontFamily: displayFont,
               fontWeight: 700,
               fontSize: '0.78rem',
-              letterSpacing: '0.12em',
-              padding: '0.85rem 2rem',
+              letterSpacing: '0.16em',
+              padding: '0.95rem 1.4rem',
               textDecoration: 'none',
+              textTransform: 'uppercase',
               transition: 'all 0.25s ease',
               borderRadius: '2px',
             }}
@@ -221,26 +230,26 @@ export function Hero({
             href="#features"
             style={{
               display: 'inline-block',
-              border: '1px solid rgba(255,241,45,0.35)',
-              color: 'rgba(255,241,45,0.8)',
-              fontFamily: 'Titillium Web, sans-serif',
+              border: '1px solid rgba(255,255,255,0.14)',
+              background: 'rgba(255,255,255,0.04)',
+              color: 'rgba(255,255,255,0.72)',
+              fontFamily: displayFont,
               fontWeight: 700,
               fontSize: '0.78rem',
-              letterSpacing: '0.12em',
-              padding: '0.85rem 1.75rem',
+              letterSpacing: '0.16em',
+              padding: '0.95rem 1.4rem',
               textDecoration: 'none',
+              textTransform: 'uppercase',
               transition: 'all 0.25s ease',
               borderRadius: '2px',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#FFF12D';
+              e.currentTarget.style.borderColor = 'rgba(255,241,45,0.45)';
               e.currentTarget.style.color = '#FFF12D';
-              e.currentTarget.style.background = 'rgba(255,241,45,0.05)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,241,45,0.35)';
-              e.currentTarget.style.color = 'rgba(255,241,45,0.8)';
-              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
+              e.currentTarget.style.color = 'rgba(255,255,255,0.72)';
             }}
           >
             EXPLORE
@@ -248,7 +257,6 @@ export function Hero({
         </div>
       </div>
 
-      {/* Stats bar */}
       {stats && stats.length > 0 && (
         <div
           ref={statsRef}
@@ -284,7 +292,7 @@ export function Hero({
               >
                 <div
                   style={{
-                    fontFamily: 'Titillium Web, sans-serif',
+                    fontFamily: displayFont,
                     fontWeight: 700,
                     fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                     color: '#FFF12D',
@@ -296,11 +304,12 @@ export function Hero({
                 </div>
                 <div
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: displayFont,
                     fontSize: '0.65rem',
-                    letterSpacing: '0.12em',
+                    letterSpacing: '0.16em',
                     color: 'rgba(255,255,255,0.45)',
                     textTransform: 'uppercase',
+                    fontWeight: 700,
                   }}
                 >
                   {stat.label}
@@ -311,7 +320,6 @@ export function Hero({
         </div>
       )}
 
-      {/* Scroll indicator */}
       <div
         style={{
           position: 'absolute',
