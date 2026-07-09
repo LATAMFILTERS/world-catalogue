@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Manrope, Outfit, JetBrains_Mono } from 'next/font/google';
+import { Barlow, Chakra_Petch, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
@@ -8,9 +8,9 @@ import ConsentBanner from '@/components/ConsentBanner';
 import ChatBot from '@/components/ui/ChatBot';
 
 // Primary body font — highly legible, premium feel
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-inter', weight: ['300', '400', '500', '600', '700'] });
+const barlow = Barlow({ subsets: ['latin'], variable: '--font-inter', weight: ['300', '400', '500', '600', '700', '800', '900'] });
 // Display / headline font — geometric, modern, clean
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-display', weight: ['300', '400', '500', '600', '700', '800'] });
+const chakraPetch = Chakra_Petch({ subsets: ['latin'], variable: '--font-display', weight: ['400', '500', '600', '700'] });
 // Monospace — labels, codes, tags only
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', weight: ['400', '500'] });
 
@@ -131,7 +131,7 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${outfit.variable} ${jetBrainsMono.variable}`}>
+    <html lang="en" className={`${barlow.variable} ${chakraPetch.variable} ${jetBrainsMono.variable}`}>
       <head>
         <meta name="theme-color" content="#000000" />
         {/* Cloudflare Turnstile — loaded globally, used by contact/distributor forms and chat widget */}
