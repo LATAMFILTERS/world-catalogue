@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 const TECHNOLOGIES = [
@@ -60,7 +60,7 @@ export default function TechnologiesPage() {
           <h1 style={heroTitle}>
             Technology
             <br />
-            Built To Protect Assets
+            <span style={{ color: '#FFF12D' }}>Built To Protect Assets</span>
           </h1>
           <p style={heroLead}>
             ELIMFILTERS technologies are not decorative product names. They are protection architectures mapped to specific contamination mechanisms, system risks, and industrial operating environments.
@@ -99,14 +99,12 @@ export default function TechnologiesPage() {
           </div>
 
           <div style={techGrid}>
-            {TECHNOLOGIES.map(([slug, name, system, image, line], index) => (
+            {TECHNOLOGIES.map(([slug, name, system, image, line]) => (
               <Link key={slug} href={`/technologies/${slug}`} style={techCard}>
                 <img src={image} alt={name} style={techImage} />
                 <div style={techOverlay} />
                 <div style={techContent}>
-                  <span style={techNumber}>{String(index + 1).padStart(2, '0')}</span>
                   <p style={techSystem}>{system}</p>
-                  <h3 style={techTitle}>{name}</h3>
                   <p style={techLine}>{line}</p>
                   <span style={explore}>EXPLORE TECHNOLOGY</span>
                 </div>
@@ -140,9 +138,7 @@ export default function TechnologiesPage() {
         <div style={searchInner}>
           <div>
             <p style={eyebrow}>PART SEARCH INTELLIGENCE</p>
-            <h2 style={sectionTitle}>
-              Technology must connect to real parts.
-            </h2>
+            <h2 style={sectionTitle}>Technology must connect to real parts.</h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
               Use ELIMFILTERS part search to connect OEM numbers, competitive references, product families, dimensions, and application logic to the correct protection architecture.
             </p>
@@ -186,12 +182,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.32,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.36,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.70) 48%, rgba(0,0,0,0.30) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
@@ -255,12 +251,14 @@ const techCard: CSSProperties = {
 };
 
 const techImage: CSSProperties = {
-  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6,
+  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain',
+  objectPosition: 'center 28%', opacity: 0.78, filter: 'brightness(1.14) contrast(1.04)',
+  padding: '2rem 1.25rem 6.5rem', boxSizing: 'border-box',
 };
 
 const techOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.62) 52%, rgba(0,0,0,0.96) 100%), linear-gradient(90deg, rgba(0,0,0,0.7), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.30) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.34), transparent)',
 };
 
 const techContent: CSSProperties = {
@@ -268,24 +266,14 @@ const techContent: CSSProperties = {
   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
 };
 
-const techNumber: CSSProperties = {
-  position: 'absolute', top: '1.1rem', left: '1.2rem', color: '#FFF12D',
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
-};
-
 const techSystem: CSSProperties = {
-  color: 'rgba(255,241,45,0.82)', fontFamily: 'var(--font-display)',
+  color: 'rgba(255,241,45,0.9)', fontFamily: 'var(--font-display)',
   fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', margin: '0 0 0.7rem',
 };
 
-const techTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 2vw, 1.9rem)',
-  lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
-};
-
 const techLine: CSSProperties = {
-  color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
-  lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
+  color: 'rgba(255,255,255,0.68)', fontSize: '0.95rem',
+  lineHeight: 1.55, margin: 0, maxWidth: '360px',
 };
 
 const explore: CSSProperties = {
