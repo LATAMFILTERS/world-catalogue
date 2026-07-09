@@ -229,14 +229,14 @@ function EngineeringEntrySection() {
           style={{ marginBottom: '2rem' }}
         >
           <div style={{
-            fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)',
-            fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.15em',
-            marginBottom: '0.6rem',
+            fontSize: '0.72rem', color: '#FFF12D',
+            fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.24em',
+            marginBottom: '0.75rem',
           }}>
             ENGINEERING INTELLIGENCE PLATFORM
           </div>
           <h2 style={{
-            fontFamily: 'Outfit, sans-serif', fontWeight: 700,
+            fontFamily: 'var(--font-display)', fontWeight: 700,
             fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
             color: '#fff', margin: 0,
           }}>
@@ -282,7 +282,7 @@ function EngineeringEntrySection() {
             >
               <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{card.icon}</div>
               <div style={{
-                fontFamily: 'Outfit, sans-serif', fontWeight: 700,
+                fontFamily: 'var(--font-display)', fontWeight: 700,
                 color: '#fff', fontSize: '1rem', marginBottom: '0.4rem',
               }}>
                 {card.label}
@@ -383,36 +383,6 @@ export default function Home() {
         {/* ── ENGINEERING ENTRY ── */}
         <EngineeringEntrySection />
 
-        {/* ── STRATEGIC MISSION ── */}
-        <section style={{ background: '#000', padding: '5rem 8%', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-
-              {/* Left: headline */}
-              <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}>
-                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#fff', lineHeight: 1.15, margin: 0 }}>
-                  {t('home.missionTitle', 'Why ELIMFILTERS Exists')}
-                </h2>
-              </motion.div>
-
-              {/* Right: body text */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                {[
-                  t('home.missionP1', 'Industrial contamination remains one of the most underestimated threats to equipment reliability worldwide.'),
-                  t('home.missionP2', 'ELIMFILTERS exists to help organizations reduce contamination-driven failures through engineered asset protection systems designed for critical industrial operations.'),
-                  t('home.missionP3', 'Our mission is to improve equipment reliability, operational continuity, and asset longevity through contamination control.'),
-                ].map((p, i) => (
-                  <motion.p key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.12 }} viewport={{ once: true, margin: '-40px' }}
-                    style={{ fontFamily: 'var(--font-body)', fontSize: i === 2 ? '1.05rem' : '0.95rem', lineHeight: 1.8, color: i === 2 ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.55)', fontStyle: i === 2 ? 'italic' : 'normal', borderLeft: i === 2 ? '3px solid #FFF12D' : 'none', paddingLeft: i === 2 ? '1.25rem' : 0, margin: 0 }}>
-                    {p}
-                  </motion.p>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </section>
-
         {/* ── INDUSTRIES STRIP ── */}
         <section style={{ background: '#000', padding: '3rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -466,7 +436,7 @@ export default function Home() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
 
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.75rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem, 4.2vw, 3.6rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
                 {t('home.problemH1', "WHAT YOU CAN'T SEE")}
                 <br /><span style={{ color: '#FFF12D' }}>{t('home.problemH2', 'IS STOPPING YOUR OPERATION.')}</span>
               </motion.h2>
@@ -572,7 +542,7 @@ export default function Home() {
         <section style={{ padding: '6rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
+              style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem, 4.2vw, 3.4rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
               {t('home.whyTitle1', 'ASSET PROTECTION')} <span style={{ color: '#FFF12D' }}>{t('home.whyTitle2', 'TECHNOLOGY')}</span>
             </motion.h2>
             <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
@@ -625,7 +595,7 @@ export default function Home() {
             <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div>
 
-                <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff', marginBottom: '1.5rem' }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>
                   {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
                 </h2>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
@@ -663,7 +633,7 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
               style={{ marginBottom: '3.5rem' }}>
 
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.2, marginBottom: '1rem', maxWidth: '700px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', color: '#fff', lineHeight: 1.15, marginBottom: '1rem', maxWidth: '700px' }}>
                 {t('home.sciTitle', 'The Science Behind Asset Protection')}
               </h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', maxWidth: '640px' }}>
@@ -690,7 +660,7 @@ export default function Home() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
 
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem, 4.2vw, 3.4rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '3.5rem' }}>
                 {t('home.techTitle', 'Asset Protection')} <span style={{ color: '#FFF12D' }}>{t('home.techHighlight', 'Technology')}</span>
               </motion.h2>
               <div className="tech-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
@@ -718,12 +688,12 @@ export default function Home() {
             <div key={i} style={{ position: i === activeSlide ? 'relative' : 'absolute', top: i === activeSlide ? undefined : 0, left: i === activeSlide ? undefined : 0, width: '100%', opacity: i === activeSlide ? 1 : 0, transition: 'opacity 0.8s ease', pointerEvents: i === activeSlide ? 'all' : 'none', padding: '5rem 8%' }}>
               <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
 
-                <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2.25rem, 4.5vw, 4rem)', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2.25rem, 4vw, 3.6rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.02, color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
                   {slide.title}<br /><span style={{ color: '#FFF12D' }}>{slide.highlight}</span>
                 </h2>
                 <motion.a href={slide.href} target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, boxShadow: '0 0 36px rgba(255,241,45,0.5)' }} whileTap={{ scale: 0.96 }}
-                  style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}>
+                  style={{ display: 'inline-block', background: '#FFF12D', color: '#000', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.15em', padding: '1rem 2.5rem', textDecoration: 'none', textTransform: 'uppercase' }}>
                   {slide.buttonText}
                 </motion.a>
               </div>
@@ -750,7 +720,7 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
               style={{ marginBottom: '3rem', textAlign: 'center' }}>
 
-              <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.2, color: '#fff' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff' }}>
                 {t('home.faqTitle', 'Common Questions About Industrial Asset Protection')}
               </h2>
             </motion.div>

@@ -77,11 +77,11 @@ export default function CinematicHero() {
           >
             <span style={{
               display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 300,
+              fontFamily: "var(--font-display)",
+              fontWeight: 500,
               fontSize: "clamp(1.8rem, 4.2vw, 4rem)",
               lineHeight: 1.05,
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.02em",
               color: "rgba(255,255,255,0.7)",
               textTransform: "uppercase",
             }}>
@@ -89,11 +89,11 @@ export default function CinematicHero() {
             </span>
             <span style={{
               display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 800,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.035em",
+              lineHeight: 0.95,
+              letterSpacing: "-0.04em",
               color: "#fff",
               textTransform: "uppercase",
             }}>
@@ -101,11 +101,11 @@ export default function CinematicHero() {
             </span>
             <span style={{
               display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 800,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.035em",
+              lineHeight: 0.95,
+              letterSpacing: "-0.04em",
               color: "#FFF12D",
               textTransform: "uppercase",
             }}>
