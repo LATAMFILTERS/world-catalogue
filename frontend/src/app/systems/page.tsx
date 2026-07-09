@@ -1,31 +1,35 @@
+﻿import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 
 const BASE_URL = 'https://elimfilters.com';
 
-export const metadata: Metadata = {
-  title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
-  description:
-    'Seven industrial protection systems engineered by ELIMFILTERS: Air Intake, Fuel Cleanliness, Lubrication, Hydraulic, Cooling System, Cabin Air, and Compressed Air protection.',
-  alternates: { canonical: `${BASE_URL}/systems` },
-  openGraph: {
-    title: 'Protection Systems | ELIMFILTERS',
-    description: 'Industrial contamination control systems protecting engines and assets across mining, agriculture, marine, construction, and power generation.',
-    url: `${BASE_URL}/systems`,
-    type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
-  },
-};
-
 const SYSTEM_IMAGES: Record<string, string> = {
   'air-intake': '/images/mecanica-air.avif',
   'fuel-cleanliness': '/images/fuellseparator-hero.avif',
-  'lubrication': '/images/oil-hand.avif',
-  'hydraulic': '/images/hidraulic.avif',
+  lubrication: '/images/oil-hand.avif',
+  hydraulic: '/images/hidraulic.avif',
   'cooling-system': '/images/coolant-filters.avif',
   'cabin-air': '/images/cabin-hero.avif',
   'compressed-air': '/images/airdryer-hero.avif',
+};
+
+const SYSTEM_LINES: Record<string, string> = {
+  'air-intake': 'Dust ingestion control, airflow stability, restriction management, and engine protection.',
+  'fuel-cleanliness': 'Particle control, water separation, injector protection, and fuel system reliability.',
+  lubrication: 'Wear particle control, oil cleanliness, bearing protection, and engine life extension.',
+  hydraulic: 'Servo valve protection, pressure stability, pump protection, and ISO cleanliness discipline.',
+  'cooling-system': 'Coolant stability, additive control, corrosion reduction, and thermal reliability.',
+  'cabin-air': 'Operator exposure reduction, cabin air quality, dust control, and comfort protection.',
+  'compressed-air': 'Moisture control, dryer protection, pneumatic reliability, and air system cleanliness.',
+};
+
+export const metadata: Metadata = {
+  title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+  description:
+    'Seven industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, cooling, cabin air, and compressed air protection.',
+  alternates: { canonical: `${BASE_URL}/systems` },
 };
 
 export default function SystemsPage() {
@@ -35,270 +39,318 @@ export default function SystemsPage() {
     name: 'ELIMFILTERS Protection Systems',
     url: `${BASE_URL}/systems`,
     numberOfItems: PROTECTION_SYSTEM_LIST.length,
-    itemListElement: PROTECTION_SYSTEM_LIST.map((sys, i) => ({
+    itemListElement: PROTECTION_SYSTEM_LIST.map((system, index) => ({
       '@type': 'ListItem',
-      position: i + 1,
+      position: index + 1,
       item: {
         '@type': 'WebPage',
-        name: sys.name,
-        url: `${BASE_URL}/systems/${sys.slug}`,
-        description: sys.tagline,
+        name: system.name,
+        url: `${BASE_URL}/systems/${system.slug}`,
+        description: system.tagline,
       },
     })),
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <main style={main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <Link href="/" style={homeButton}>HOME</Link>
 
-        <Link href="/" style={{
-          position: 'fixed', top: '1rem', right: '1.5rem', zIndex: 9999,
-          display: 'flex', alignItems: 'center', gap: '0.4rem',
-          background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,241,45,0.35)',
-          borderRadius: '4px', padding: '0.45rem 1rem',
-          fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '0.72rem',
-          letterSpacing: '0.12em', color: '#FFF12D', textDecoration: 'none',
-          backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
-          transition: 'background 0.2s, border-color 0.2s',
-        }}>← HOME</Link>
+      <section style={hero}>
+        <div style={{ ...heroImage, backgroundImage: 'url(/assets/hero-systems.avif)' }} />
+        <div style={heroOverlay} />
 
-        {/* ── Hero Image ─────────────────────────────────────────────── */}
-        <section
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: 'clamp(320px, 45vw, 580px)',
-            overflow: 'hidden',
-          }}
-        >
-          <img
-            src="/assets/hero-systems.avif"
-            alt="ELIMFILTERS Protection Systems — Industrial Contamination Control"
-            fetchPriority="high"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              display: 'block',
-            }}
-          />
-          {/* Gradient overlay for text readability */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 70%, #000 100%)',
-            }}
-          />
-          {/* Hero text overlay */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 'clamp(2rem, 5vw, 3.5rem)',
-              left: 'clamp(1.5rem, 5vw, 4rem)',
-              right: 'clamp(1.5rem, 5vw, 4rem)',
-              maxWidth: '1200px',
-              margin: '0 auto',
-            }}
-          >
-            <h1
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontWeight: 700,
-                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                marginBottom: '0.75rem',
-                color: '#fff',
-                maxWidth: '680px',
-              }}
-            >
-              Protection Systems
-            </h1>
-            <p
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
-                color: 'rgba(255,255,255,0.65)',
-                lineHeight: 1.7,
-                maxWidth: '520px',
-              }}
-            >
-              Seven contamination control domains — each engineered to protect a specific
-              asset system.
+        <div style={heroInner}>
+          <p style={eyebrow}>PROTECTION SYSTEMS</p>
+          <h1 style={heroTitle}>
+            Systems Built
+            <br />
+            Around Failure Risk
+          </h1>
+          <p style={heroLead}>
+            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, coolant, cabin, and compressed air each demand a different contamination control strategy.
+          </p>
+
+          <div style={tagRow}>
+            {['AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING', 'CABIN'].map((item) => (
+              <span key={item} style={tag}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={twoCol}>
+          <div>
+            <p style={eyebrow}>WHY SYSTEMS MATTER</p>
+            <h2 style={sectionTitle}>A filter is a part. A system is the protection logic.</h2>
+          </div>
+          <div>
+            <p style={leadText}>
+              The same asset can fail through different contamination pathways: dust ingestion, water in fuel, abrasive wear particles, coolant instability, moisture in compressed air, or operator dust exposure.
+            </p>
+            <p style={bodyText}>
+              That is why ELIMFILTERS structures its platform around protection systems first, technologies second, product families third, and individual part numbers last.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── Subheading ─────────────────────────────────────────────── */}
-        <section
-          style={{
-            padding: 'clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem)',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)',
-              color: 'rgba(255,255,255,0.45)',
-              lineHeight: 1.75,
-              maxWidth: '560px',
-            }}
-          >
-            Select a domain to explore its technology architecture, product families, and engineering reference.
-          </p>
-        </section>
+      <section style={yellowSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>SYSTEM ARCHITECTURE</p>
+          <h2 style={sectionTitle}>From contamination mode to asset protection.</h2>
 
-        {/* ── Part Search Callout ─────────────────────────────────────── */}
-        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem) 0' }}>
-          <div style={{ background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.1)', padding: '1.75rem 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
-            <div>
-              <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1rem', color: '#fff', marginBottom: '0.35rem' }}>Search by Part Number or OEM Cross-Reference</p>
-              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, textAlign: 'justify' }}>Real-time dimension queries, application lookups, and OEM cross-referencing.</p>
-            </div>
-            <a
-              href="https://part-search.elimfilters.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF12D', color: '#000', textDecoration: 'none', padding: '0.65rem 1.35rem', fontFamily: "'Titillium Web', sans-serif", fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}
-            >
-              PART SEARCH ↗
-            </a>
-          </div>
-        </section>
-
-        {/* ── Grid ───────────────────────────────────────────────────── */}
-        <section
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: 'clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '1.5px',
-            background: 'rgba(255,255,255,0.04)',
-          }}
-        >
-          {PROTECTION_SYSTEM_LIST.map((sys) => {
-            const img = SYSTEM_IMAGES[sys.slug] || '/images/sistems-hero.avif';
-            return (
-              <Link
-                key={sys.key}
-                href={`/systems/${sys.slug}`}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <article
-                  style={{
-                    background: '#000',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    aspectRatio: '4/3',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-end',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={sys.name}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      opacity: 0.45,
-                      transition: 'opacity 0.4s ease, transform 0.5s ease',
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, transparent 100%)',
-                    }}
-                  />
-                  <div style={{ position: 'relative', padding: '1.5rem 1.75rem' }}>
-                    <h2
-                      style={{
-                        fontFamily: "'Outfit', sans-serif",
-                        fontWeight: 700,
-                        fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
-                        lineHeight: 1.2,
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      {sys.name}
-                    </h2>
-                    <p
-                      style={{
-                        fontFamily: "'Outfit', sans-serif",
-                        fontSize: '0.8rem',
-                        color: 'rgba(255,255,255,0.5)',
-                        lineHeight: 1.5,
-                        textAlign: 'justify',
-                      }}
-                    >
-                      {sys.tagline}
-                    </p>
-                  </div>
-                </article>
-              </Link>
-            );
-          })}
-        </section>
-
-        {/* ── Hierarchy note ──────────────────────────────────────────── */}
-        <section
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 6vw, 5rem)',
-          }}
-        >
-          <div
-            style={{
-              borderTop: '1px solid rgba(255,255,255,0.06)',
-              paddingTop: '2.5rem',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem',
-            }}
-          >
+          <div style={logicGrid}>
             {[
-              { label: 'Protection System', sub: 'Domain' },
-              { label: 'Technology', sub: 'Architecture' },
-              { label: 'Product Family', sub: 'Category' },
-              { label: 'Products', sub: 'HD · LD' },
-            ].map((item, i, arr) => (
-              <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div>
-                  <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '0.85rem', color: i === 0 || i === arr.length - 1 ? '#FFF12D' : '#fff', marginBottom: '0.15rem' }}>
-                    {item.label}
-                  </p>
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em' }}>
-                    {item.sub}
-                  </p>
-                </div>
-                {i < arr.length - 1 && (
-                  <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '1.2rem', flexShrink: 0 }}>↓</span>
-                )}
+              'Contamination source',
+              'Failure pathway',
+              'System sensitivity',
+              'Technology selection',
+              'Product family',
+              'Protected asset',
+            ].map((item, index) => (
+              <div key={item} style={logicCard}>
+                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <strong style={logicText}>{item}</strong>
               </div>
             ))}
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+
+      <section style={systemSection}>
+        <div style={wrapWide}>
+          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
+            <p style={eyebrow}>SYSTEM PORTFOLIO</p>
+            <h2 style={sectionTitle}>Select the system. Control the failure mode.</h2>
+          </div>
+
+          <div style={systemGrid}>
+            {PROTECTION_SYSTEM_LIST.map((system, index) => {
+              const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
+              const line = SYSTEM_LINES[system.slug] || system.tagline;
+
+              return (
+                <Link key={system.key} href={`/systems/${system.slug}`} style={systemCard}>
+                  <img src={image} alt={system.name} style={systemImage} />
+                  <div style={systemOverlay} />
+                  <div style={systemContent}>
+                    <span style={systemNumber}>{String(index + 1).padStart(2, '0')}</span>
+                    <h3 style={systemTitle}>{system.name}</h3>
+                    <p style={systemLine}>{line}</p>
+                    <span style={explore}>EXPLORE SYSTEM</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section style={searchCallout}>
+        <div style={searchInner}>
+          <div>
+            <p style={eyebrow}>PART SEARCH INTELLIGENCE</p>
+            <h2 style={{ ...sectionTitle, fontSize: 'clamp(2rem, 4vw, 4.2rem)' }}>
+              From system domain to real part number.
+            </h2>
+            <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
+              Use ELIMFILTERS part search to connect OEM numbers, competitive references, dimensions, and application logic back to the correct protection system.
+            </p>
+          </div>
+          <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}>
+            PART SEARCH
+          </a>
+        </div>
+      </section>
+
+      <section style={cta}>
+        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
+            Protection begins with understanding the system under attack.
+          </h2>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
+            <Link href="/technologies" style={yellowButton}>EXPLORE TECHNOLOGIES</Link>
+            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
+
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
+
+const homeButton: CSSProperties = {
+  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
+  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
+  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
+};
+
+const hero: CSSProperties = {
+  minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+};
+
+const heroImage: CSSProperties = {
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.28,
+};
+
+const heroOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+};
+
+const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+
+const eyebrow: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
+  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
+};
+
+const heroTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
+  lineHeight: 0.92, fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+  maxWidth: '1040px', margin: 0, textTransform: 'uppercase',
+};
+
+const heroLead: CSSProperties = {
+  marginTop: '2rem', maxWidth: '780px', color: 'rgba(255,255,255,0.78)',
+  fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
+};
+
+const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
+
+const tag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.18)', padding: '0.82rem 1rem',
+  fontFamily: 'var(--font-display)', fontSize: '0.74rem',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.88)',
+};
+
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+
+const twoCol: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+  gap: 'clamp(2rem, 6vw, 5rem)',
+};
+
+const sectionTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
+  lineHeight: 0.96, letterSpacing: '-0.045em', margin: 0, textTransform: 'uppercase',
+};
+
+const leadText: CSSProperties = {
+  color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
+  lineHeight: 1.72, fontWeight: 600, margin: 0,
+};
+
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
+
+const yellowSection: CSSProperties = {
+  background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,241,45,0.01))',
+  borderTop: '1px solid rgba(255,241,45,0.16)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+
+const logicGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '0.8rem', marginTop: '2.4rem',
+};
+
+const logicCard: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.44)',
+  padding: '1.2rem', minHeight: '140px',
+};
+
+const number: CSSProperties = {
+  display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
+};
+
+const logicText: CSSProperties = { display: 'block', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2 };
+
+const systemSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
+
+const systemGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',
+};
+
+const systemCard: CSSProperties = {
+  minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
+};
+
+const systemImage: CSSProperties = {
+  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.62,
+};
+
+const systemOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.62) 52%, rgba(0,0,0,0.96) 100%), linear-gradient(90deg, rgba(0,0,0,0.7), transparent)',
+};
+
+const systemContent: CSSProperties = {
+  position: 'absolute', inset: 0, padding: '1.35rem',
+  display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+};
+
+const systemNumber: CSSProperties = {
+  position: 'absolute', top: '1.1rem', left: '1.2rem', color: '#FFF12D',
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
+};
+
+const systemTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 2.8vw, 3rem)',
+  lineHeight: 0.96, letterSpacing: '-0.04em', margin: 0, textTransform: 'uppercase',
+};
+
+const systemLine: CSSProperties = {
+  color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
+  lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
+};
+
+const explore: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
+};
+
+const searchCallout: CSSProperties = {
+  padding: '0 clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)',
+};
+
+const searchInner: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'flex', flexWrap: 'wrap',
+  alignItems: 'center', justifyContent: 'space-between', gap: '2rem',
+  border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.045)',
+  padding: 'clamp(1.5rem, 4vw, 2.4rem)',
+};
+
+const cta: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+  borderTop: '1px solid rgba(255,241,45,0.2)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+};
+
+const yellowButton: CSSProperties = {
+  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem',
+};
+
+const darkButton: CSSProperties = {
+  display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
+  textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem',
+  border: '1px solid rgba(255,241,45,0.4)',
+};
