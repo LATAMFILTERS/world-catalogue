@@ -69,17 +69,33 @@ export function Hero({
         fontFamily: bodyFont,
       }}
     >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');
+
+        @media (max-width: 860px) {
+          .industry-hero-section {
+            min-height: 88vh !important;
+          }
+
+          .industry-hero-bg {
+            transform: none !important;
+            background-position: center center !important;
+            filter: brightness(1.18) contrast(1.06) !important;
+          }
+        }
+      `}</style>
 
       <div
+        className="industry-hero-bg"
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
-          transform: 'scale(1.02)',
+          transform: 'none',
+          filter: 'brightness(1.14) contrast(1.05)',
         }}
       />
 
@@ -88,7 +104,7 @@ export function Hero({
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.70) 48%, rgba(0,0,0,0.32) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+            'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 36%)',
         }}
       />
 
@@ -96,7 +112,7 @@ export function Hero({
         style={{
           position: 'absolute',
           inset: 0,
-          opacity: 0.03,
+          opacity: 0.025,
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
