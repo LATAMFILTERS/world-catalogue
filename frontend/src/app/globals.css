@@ -1,8 +1,8 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design Tokens ──────────────────────────────────────────────────── */
+/* â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   /* Colors */
   --volt: #FFF12D;
@@ -16,15 +16,15 @@
   --text-muted: rgba(255, 255, 255, 0.55);
   --text-subtle: rgba(255, 255, 255, 0.35);
 
-  /* Typography — font stacks via CSS variables from next/font */
+  /* Typography â€” font stacks via CSS variables from next/font */
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-display), 'Space Grotesk', system-ui, sans-serif;
   --font-mono: var(--font-mono), 'JetBrains Mono', 'Courier New', monospace;
 
-  /* Type scale — fluid, mobile-first */
+  /* Type scale â€” fluid, mobile-first */
   --text-xs:   clamp(0.7rem,  1.5vw, 0.75rem);   /* labels, tags, monospace */
   --text-sm:   clamp(0.85rem, 1.8vw, 0.9rem);    /* captions, secondary */
-  --text-base: clamp(0.95rem, 2vw,   1rem);       /* body — min 15px */
+  --text-base: clamp(0.95rem, 2vw,   1rem);       /* body â€” min 15px */
   --text-lg:   clamp(1.05rem, 2.2vw, 1.15rem);   /* lead text */
   --text-xl:   clamp(1.2rem,  2.5vw, 1.4rem);    /* subheadings */
   --text-2xl:  clamp(1.4rem,  3vw,   1.9rem);    /* section headings */
@@ -36,7 +36,7 @@
   --section-py: clamp(3rem, 7vw, 6rem);
 }
 
-/* ── Reset ──────────────────────────────────────────────────────────── */
+/* â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -50,7 +50,7 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* ── Base ───────────────────────────────────────────────────────────── */
+/* â”€â”€ Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body {
   background: var(--bg);
   color: var(--text);
@@ -63,7 +63,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Paragraphs — left-aligned, never justified (kills mobile readability) */
+/* Paragraphs â€” left-aligned, never justified (kills mobile readability) */
 p {
   text-align: left;
   line-height: 1.75;
@@ -87,7 +87,7 @@ svg {
   max-width: 100%;
 }
 
-/* ® in headings — reduce to superscript size so it doesn't look oversized */
+/* Â® in headings â€” reduce to superscript size so it doesn't look oversized */
 h1 .reg-sup,
 h2 .reg-sup,
 h3 .reg-sup,
@@ -99,7 +99,7 @@ h4 .reg-sup {
   letter-spacing: 0;
 }
 
-/* ── Typography utility classes ─────────────────────────────────────── */
+/* â”€â”€ Typography utility classes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .font-display {
   font-family: var(--font-display);
 }
@@ -282,8 +282,8 @@ h4 .reg-sup {
   background: var(--bg);
 }
 
-/* ── Responsive grid overrides ──────────────────────────────────────── */
-/* Tablet (≤1024px) */
+/* â”€â”€ Responsive grid overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Tablet (â‰¤1024px) */
 @media (max-width: 1024px) {
   .product-desc-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
   .product-compare-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -294,7 +294,7 @@ h4 .reg-sup {
   .marine-product-image { width: 100% !important; height: 280px !important; margin-left: 0 !important; margin-top: 0 !important; }
 }
 
-/* Mobile (≤768px) */
+/* Mobile (â‰¤768px) */
 @media (max-width: 768px) {
   .product-desc-grid { gap: 2rem !important; }
   .product-specs-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
@@ -309,7 +309,7 @@ h4 .reg-sup {
   .home-hero-section { padding: 0 5% 80px !important; padding-top: 100px !important; }
 }
 
-/* Small mobile (≤480px) */
+/* Small mobile (â‰¤480px) */
 @media (max-width: 480px) {
   .product-specs-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
@@ -322,9 +322,9 @@ h4 .reg-sup {
 @media (max-width: 768px) {
   .industry-hero-section { min-height: 60vh !important; }
 }
-/* ─────────────────────────────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* ── Skip to content (accessibility) ──────────────────────────────── */
+/* â”€â”€ Skip to content (accessibility) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .skip-to-content {
   position: fixed;
   top: -100%;
@@ -332,7 +332,7 @@ h4 .reg-sup {
   z-index: 99999;
   background: var(--volt);
   color: #000;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -348,7 +348,7 @@ h4 .reg-sup {
   outline-offset: 0;
 }
 
-/* ── Focus-visible styles (keyboard navigation) ───────────────────── */
+/* â”€â”€ Focus-visible styles (keyboard navigation) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :focus-visible {
   outline: 2px solid var(--volt);
   outline-offset: 3px;
@@ -368,7 +368,7 @@ button:focus-visible,
   outline: none;
 }
 
-/* ── Back nav button — mobile responsive ──────────────────────────── */
+/* â”€â”€ Back nav button â€” mobile responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .back-nav-btn {
   /* Desktop: already positioned correctly via inline style */
 }
@@ -383,7 +383,7 @@ button:focus-visible,
   }
 }
 
-/* ── Industries strip grid ────────────────────────────────────────── */
+/* â”€â”€ Industries strip grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .industries-strip { grid-template-columns: repeat(4, 1fr) !important; }
 }
@@ -394,7 +394,7 @@ button:focus-visible,
   .industries-strip { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
-/* ── Footer responsive grid ───────────────────────────────────────── */
+/* â”€â”€ Footer responsive grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .footer-main-grid {
   display: grid;
   grid-template-columns: 1.4fr repeat(5, 1fr);
@@ -481,7 +481,7 @@ button:focus-visible,
   }
 }
 
-/* ── Performance Metrics KPI grid — responsive ────────────────────── */
+/* â”€â”€ Performance Metrics KPI grid â€” responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .stat-counter-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -493,7 +493,7 @@ button:focus-visible,
   }
 }
 
-/* ── Footer right-col mobile visibility ──────────────────────────── */
+/* â”€â”€ Footer right-col mobile visibility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .footer-right-col {
     align-items: flex-start !important;
@@ -503,7 +503,7 @@ button:focus-visible,
   }
 }
 
-/* ── Nav header mobile height ─────────────────────────────────────── */
+/* â”€â”€ Nav header mobile height â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .nav-logo {
     height: 52px !important;
@@ -514,3 +514,4 @@ button:focus-visible,
     height: 46px !important;
   }
 }
+
