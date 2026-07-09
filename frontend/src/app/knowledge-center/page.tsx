@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES, KC_CALCULATORS } from '@/lib/knowledge-center-data';
+import { ENGINEERING_ARTICLES, KC_STANDARDS, KC_SYSTEMS, KC_INDUSTRIES, KC_TECHNOLOGIES, KC_CALCULATORS, KC_COMPARISONS } from '@/lib/knowledge-center-data';
 import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
 
 const SECTIONS = [
@@ -76,6 +76,14 @@ const SECTIONS = [
     title: 'Engineering Calculators',
     description: 'Standards-based computation tools: ISO 4406 cleanliness codes, Beta ratio efficiency, pressure drop estimation, dirt holding capacity, service intervals, and air restriction analysis.',
     count: `${KC_CALCULATORS.length} calculators`,
+    accent: '#FFF12D',
+  },
+  {
+    href: '/knowledge-center/comparisons',
+    label: '10 / COMPARISONS',
+    title: 'Engineering Comparisons',
+    description: 'Side-by-side technical comparisons across filtration standards, media technologies, system architectures, and test methods. Includes When to Use / When Not to Use decision frameworks.',
+    count: `${KC_COMPARISONS.length} comparisons`,
     accent: '#FFF12D',
   },
 ];

@@ -490,6 +490,7 @@
 
 
 
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/calculators/air-filter-restriction</loc>
@@ -535,6 +536,72 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/calculators/service-interval-engineering</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/beta-ratio-vs-filtration-efficiency</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/bypass-vs-full-flow-filtration</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/cellulose-vs-synthetic-media</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/gravimetric-vs-particle-counting</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/iso5011-vs-sae-j726</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/multipass-vs-single-pass-testing</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/online-vs-offline-hydraulic</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/single-stage-vs-multi-stage-fuel</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/comparisons/surface-vs-depth-filtration</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

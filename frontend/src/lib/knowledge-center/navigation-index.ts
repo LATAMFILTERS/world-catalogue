@@ -37,8 +37,8 @@ import type { TerminologyEntry } from './governance';
 // ── Graph Version Metadata ────────────────────────────────────────────────────
 
 export const KC_GRAPH_METADATA = {
-  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams.Calculators.Reserved */
-  graphVersion: '6B.53.22.12.68.15.7.0',
+  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams.Calculators.Comparisons */
+  graphVersion: '6C.53.22.12.68.15.7.10',
   /** Schema version for the navigation index structure. */
   schemaVersion: '1.1.0',
   /**
@@ -56,6 +56,7 @@ export const KC_GRAPH_METADATA = {
     terms:        68,
     diagrams:     15,
     calculators:   7,
+    comparisons:  10,
   },
   edgeTypes: [
     'ARTICLE_TO_STANDARD',
@@ -76,6 +77,11 @@ export const KC_GRAPH_METADATA = {
     'CALCULATOR_TO_STANDARD',
     'CALCULATOR_TO_ARTICLE',
     'CALCULATOR_TO_TECHNOLOGY',
+    'COMPARISON_TO_STANDARD',
+    'COMPARISON_TO_TECHNOLOGY',
+    'COMPARISON_TO_SYSTEM',
+    'COMPARISON_TO_ARTICLE',
+    'COMPARISON_TO_TERM',
   ],
 } as const;
 

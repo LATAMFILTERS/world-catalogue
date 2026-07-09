@@ -16,6 +16,7 @@
  *   systems-registry      ← imports types
  *   industries-registry   ← imports types
  *   calculators-registry  ← imports types, entity-ids
+ *   comparisons-registry  ← imports types, entity-ids
  *   index.ts (this)       ← imports all above
  */
 
@@ -97,3 +98,18 @@ export {
   getDefaultSafetyFactor,
   serviceInterval,
 } from './calculator-engines';
+
+// ── Engineering Comparisons ───────────────────────────────────────────────────
+export type {
+  KCComparison,
+  KCComparisonDimension,
+  KCComparisonOption,
+  KCComparisonWhenClause,
+  KCComparisonCategory,
+} from './types';
+export { COMPARISON_IDS, getComparisonId } from './entity-ids';
+export {
+  KC_COMPARISONS,
+  getComparisonBySlug,
+  getComparisonsByCategory,
+} from './comparisons-registry';

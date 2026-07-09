@@ -223,3 +223,59 @@ export interface KCCalculator {
   sourceStandardRevision: string;       // e.g. "ISO 16889:2022"
   revisionHistory: { version: string; date: string; change: string }[];
 }
+
+// ── COMPARISON TYPES ─────────────────────────────────────────────────────────
+
+export interface KCComparisonDimension {
+  dimension:        string;             // what is being compared (e.g. "Efficiency expression")
+  optionA:          string;             // value / description for option A
+  optionB:          string;             // value / description for option B
+  engineeringNote?: string;             // clarification when interpretation is non-obvious
+}
+
+export interface KCComparisonOption {
+  id:                  string;          // 'A' or 'B' used internally
+  label:               string;          // short name (e.g. "Beta Ratio")
+  description:         string;          // one-paragraph engineering definition
+  advantages:          string[];        // factual engineering advantages
+  limitations:         string[];        // factual engineering limitations
+  typicalApplications: string[];        // real-world contexts where this option is used
+}
+
+export interface KCComparisonWhenClause {
+  option:     'A' | 'B';
+  conditions: string[];                 // concrete operational conditions that trigger this choice
+}
+
+export type KCComparisonCategory =
+  | 'standards'
+  | 'technology'
+  | 'system'
+  | 'test-method';
+
+export interface KCComparison {
+  // ── Core identity ──────────────────────────────────────────────────────────
+  id:                     string;       // COMP-xxx permanent graph ID
+  slug:                   string;       // URL slug
+  title:                  string;       // "Beta Ratio vs. Filtration Efficiency"
+  subtitle:               string;       // one-line context
+  category:               KCComparisonCategory;
+  // ── Engineering specification ──────────────────────────────────────────────
+  engineeringObjective:   string;       // what decision this comparison informs
+  comparisonScope:        string;       // what is and is not covered
+  governingStandards:     string[];     // ISO/ASTM/SAE codes that define the compared entities
+  optionA:                KCComparisonOption;
+  optionB:                KCComparisonOption;
+  matrix:                 KCComparisonDimension[];
+  engineeringImplications: string[];    // consequences of choosing incorrectly
+  whenToUse:              KCComparisonWhenClause[];
+  whenNotToUse:           KCComparisonWhenClause[];
+  // ── Graph relationships ────────────────────────────────────────────────────
+  relatedStandards:       string[];     // standard slugs
+  relatedTechnologies:    string[];     // technology display names
+  relatedSystems:         string[];     // system slugs
+  relatedTerms:           string[];     // glossary term slugs
+  relatedArticles:        string[];     // article slugs
+  // ── Revision ──────────────────────────────────────────────────────────────
+  revisionHistory:        { version: string; date: string; changes: string }[];
+}

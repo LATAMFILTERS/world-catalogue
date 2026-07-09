@@ -295,3 +295,22 @@ export const CALCULATOR_IDS = {
 export function getCalculatorId(slug: string): string | undefined {
   return (CALCULATOR_IDS as Record<string, string>)[slug];
 }
+
+// ── Comparison IDs ─────────────────────────────────────────────────────────────
+
+export const COMPARISON_IDS = {
+  'beta-ratio-vs-filtration-efficiency': 'COMP-BETA-VS-EFF',
+  'iso4406-vs-nas1638':                  'COMP-ISO4406-VS-NAS',
+  'iso5011-vs-sae-j726':                 'COMP-ISO5011-VS-SAE',
+  'cellulose-vs-synthetic-media':        'COMP-CELLULOSE-VS-SYN',
+  'surface-vs-depth-filtration':         'COMP-SURFACE-VS-DEPTH',
+  'bypass-vs-full-flow-filtration':      'COMP-BYPASS-VS-FULL',
+  'single-stage-vs-multi-stage-fuel':    'COMP-SINGLE-VS-MULTI-FUEL',
+  'online-vs-offline-hydraulic':         'COMP-ONLINE-VS-OFFLINE',
+  'multipass-vs-single-pass-testing':    'COMP-MULTI-VS-SINGLE-TEST',
+  'gravimetric-vs-particle-counting':    'COMP-GRAV-VS-PARTICLE',
+} as const;
+
+export function getComparisonId(slug: string): string | undefined {
+  return (COMPARISON_IDS as Record<string, string>)[slug];
+}
