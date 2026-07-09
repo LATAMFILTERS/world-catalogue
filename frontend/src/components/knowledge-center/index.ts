@@ -70,6 +70,10 @@ export type { DiagramBlockProps } from './DiagramBlock';
 export { default as FAQSection } from './FAQSection';
 export type { FAQSectionProps, FAQItem } from './FAQSection';
 
+// ── Citation ──────────────────────────────────────────────────────────────────
+export { default as CitationBlock } from './CitationBlock';
+export type { CitationBlockProps } from './CitationBlock';
+
 // ── Schema ────────────────────────────────────────────────────────────────────
 export { default as ArticleSchema } from './ArticleSchema';
 export type { ArticleSchemaProps } from './ArticleSchema';

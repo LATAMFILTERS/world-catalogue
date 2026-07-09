@@ -166,6 +166,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
     keywords: ['contamination control', 'ISO 4406', 'particle size', 'cleanliness code', 'Beta ratio', 'commissioning flush', 'ingress control'],
+    commonMistakes: [
+      'Focusing contamination control solely on filter element selection while ignoring ingression rates. A 10 µm(c) absolute filter cannot maintain ISO 16/14/11 if the system ingests contamination at 5× the filter capture rate.',
+      'Not flushing new systems before commissioning. New hydraulic components contain manufacturing debris (metal chips, seal particles, weld slag) that exceed the target cleanliness code — commissioning without flushing introduces contamination that immediately exceeds system targets.',
+      'Treating a single cleanliness measurement as representative of system condition. Particle counts vary with flow rate, temperature, and recent maintenance events — trend monitoring over 3+ sampling intervals provides reliable contamination control assessment.',
+    ],
   },
   {
     slug: 'filter-media-science',
@@ -208,6 +213,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection'],
     keywords: ['filter media', 'cellulose', 'synthetic media', 'glass fiber', 'Beta ratio', 'dirt capacity'],
+    commonMistakes: [
+      'Assuming cellulose media is equivalent to synthetic media for extended-drain interval applications. Cellulose absorbs moisture from oil, degrading structural integrity over time — synthetic media maintains performance across extended drain intervals where cellulose deteriorates.',
+      'Selecting filter media based on initial Beta ratio at rated flow without considering Beta ratio stability under variable flow and pressure pulsations. Synthetic glass-fibre composites maintain higher Beta stability than cellulose under dynamic conditions.',
+      'Not accounting for fluid compatibility when specifying media type for phosphate ester or biodegradable hydraulic fluids. Some glass-fibre binders and cellulose fibres are incompatible with ester-based fluids — media compatibility must be verified against the specific fluid formulation.',
+    ],
   },
   {
     slug: 'fluid-cleanliness',
@@ -736,6 +746,10 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
     keywords: ['ISO 4406', 'cleanliness code', 'particle count', 'hydraulic cleanliness', 'NAS 1638', 'fluid contamination'],
+    commonMistakes: [
+      'Interpreting ISO 4406 Range Numbers as direct particle counts. Range Number 18 means up to 1,300 particles/mL, not 18 particles — the numbers are exponential scale identifiers, not particle counts.',
+      'Not specifying the particle size channels when quoting an ISO 4406 code. A two-channel code (e.g., 18/16) omits the 14 µm channel that identifies large wear debris, making it impossible to detect accelerating component failure from coarse wear particles.',
+    ],
   },
 
   {
@@ -881,6 +895,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection'],
     keywords: ['Beta ratio', 'filter efficiency', 'ISO 16889', 'particle counting', 'nominal micron rating', 'multi-pass test', 'ISO 11171'],
+    commonMistakes: [
+      'Interpreting Beta ratio as a percentage efficiency: β₁₀(c) = 200 is 99.5% efficiency, not 200%. The ratio is upstream particle count divided by downstream particle count at the stated size.',
+      'Using nominal micron ratings as engineering specifications for hydraulic system design. Nominal ratings have no defined efficiency level under ISO 16889 and vary between manufacturers — Beta ratio from ISO 16889 test reports is the only valid engineering specification.',
+      'Selecting filter elements based on Beta ratio at a single particle size without evaluating dirt-holding capacity. An element with β₆(c) = 200 but low DHC may require change intervals 3× more frequent than an element with the same efficiency and higher capacity.',
+    ],
   },
 
   {
@@ -951,6 +970,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedSystems: ['Hydraulic Protection'],
     keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop'],
+    commonMistakes: [
+      'Specifying the same ISO 4406 cleanliness target for all hydraulic components in a system. Servo valves with 1–4 µm spool clearances require ISO 16/14/11; cylinders only need ISO 19/17/14 — a single target for the entire system over-specifies low-sensitivity circuits.',
+      'Not accounting for the cumulative effect of two-body and three-body abrasive wear. Single large particles cause two-body wear (direct gouging); wear debris particles from the first event become abrasives causing three-body wear on adjacent surfaces — contamination damage is self-accelerating.',
+      'Relying solely on replacement filter elements to maintain cleanliness without addressing contamination ingression pathways. New systems, opened reservoirs, and worn breathers introduce contamination that overwhelms filtration capacity without ingression reduction measures.',
+    ],
   },
 
   {
@@ -1031,6 +1055,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
+    commonMistakes: [
+      'Assuming that drained water separator bowls indicate successful water removal. Drained free water confirms the separator is working — it does not confirm that dissolved water (which passes through coalescing separators) is below the 200 ppm HPCR protection threshold.',
+      'Not testing for water when fuel is sourced from known-good suppliers. Atmospheric moisture ingress during tank breathing and condensation on tank walls can increase water content from <50 ppm (bulk supply) to >500 ppm in storage tanks over several weeks.',
+      'Treating microbial contamination as a chemical problem solved only by biocide addition. Biocides treat existing microbial colonies but do not prevent re-colonisation from water accumulation — eliminating free water at the tank bottom is the primary prevention measure.',
+    ],
   },
 
   {
@@ -1102,6 +1131,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['DRYCORE™'],
     relatedSystems: ['Compressed Air Protection'],
     keywords: ['ISO 8573', 'compressed air purity', 'pressure dew point', 'oil aerosol', 'particle class', 'coalescing filter', 'desiccant dryer'],
+    commonMistakes: [
+      'Specifying ISO 8573-1 Class 0 air quality when the application only requires Class 1 or Class 2. Class 0 requires an inherently oil-free compressor — applying it to systems served by lubricated compressors forces complete system replacement rather than downstream treatment.',
+      'Measuring compressed air quality only at the dryer or filter outlet. Compressed air picks up contamination from distribution pipework — point-of-use measurements at the application connection are required to verify actual delivered quality.',
+      'Confusing pressure dew point (PDP) with atmospheric dew point. ISO 8573-1 water classes specify PDP at line pressure — a PDP of −40°C at 7 bar corresponds to approximately −27°C atmospheric dew point; the two figures are not interchangeable in specifications.',
+    ],
   },
 
   {
@@ -1173,6 +1207,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     relatedTechnologies: ['SYNTRAX™', 'DURATECH™'],
     relatedSystems: ['Lubrication Protection'],
     keywords: ['oil analysis', 'ICP spectroscopy', 'wear metals', 'TAN', 'TBN', 'viscosity', 'FTIR', 'ASTM D5185', 'ASTM D664', 'fluid condition monitoring'],
+    commonMistakes: [
+      'Interpreting single-sample wear metal concentrations as definitive wear rate indicators without rate-of-change context. A high silicon reading may reflect recent seal replacement (run-in contamination), not accelerating abrasive wear — trends over 3+ samples at known drain intervals distinguish the two.',
+      'Not adjusting ICP-OES results for oil drain interval when comparing samples taken at different intervals. A 500-hour iron reading of 80 ppm represents higher wear rate than a 250-hour reading of 80 ppm — normalize to mg/hour or mg/L for valid comparisons.',
+      'Relying solely on ICP spectroscopy to detect advanced bearing fatigue. ICP reliably detects particles below 5–8 µm — spalling fatigue produces large wear particles (20–100+ µm) that are under-reported by ICP. Particle count or ferrographic analysis is required for complete wear assessment.',
+    ],
   },
 
   {
@@ -1388,6 +1427,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       responsibleRegistry: 'EDL-STANDARDS (STD-ASTM-D6304, STD-ISO-12937)',
       evidenceStatus: 'ISO 4020:2001 verified; ISO 19438:2003 verified; ASTM D6304:2022 verified; EN 590:2022 verified',
     },
+    commonMistakes: [
+      'Using a single coarse fuel pre-filter before an HPCR pump without a final-stage 2–6 µm filter. HPCR injection systems require final filtration at the pump inlet — coarse pre-filtration alone does not protect injector and pump components with 1–3 µm clearances.',
+      'Not draining water separator bowls on a time-based schedule independent of indicator warning lights. Capacitive water-in-fuel sensors fail in fuel with surfactant contamination or biodiesel blends — visual inspection and manual drain cycles are required as backup.',
+      'Assuming that cloud point and CFPP (Cold Filter Plugging Point) are equivalent measures of cold weather filterability. Cloud point is the temperature at which wax crystallisation begins; CFPP is the temperature at which crystals block a filter — the two differ by 5–10°C and address different failure modes.',
+    ],
   },
 
   {
@@ -1667,6 +1711,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       responsibleRegistry: 'EDL-SYSTEMS (SYS-LUBRICATION)',
       evidenceStatus: 'ISO 16889:2022 verified; API CK-4 specification verified; SAE J300:2021 verified; SAE J306:2019 verified; ASTM D664/D2896 verified',
     },
+    commonMistakes: [
+      'Selecting engine oil viscosity grade based solely on ambient temperature without considering the oil pump minimum viscosity requirement at maximum engine operating temperature. Oil that is too thin at high temperature loses hydrodynamic film thickness in main bearings.',
+      'Not accounting for viscosity index (VI) when comparing multi-grade oils. A 10W-40 with VI 130 maintains higher viscosity at engine operating temperature than a 10W-40 with VI 100 — the SAE grade only specifies viscosity at cold and 100°C reference points, not actual operating viscosity.',
+      'Extending oil drain intervals without oil analysis verification data. Extended drain intervals require condition-monitoring evidence that TAN, TBN, viscosity, and wear metals remain within specification — blanket interval extension without oil analysis risks bearing and ring damage.',
+    ],
   },
 
   {
@@ -1807,6 +1856,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC)',
       evidenceStatus: 'ISO 4406:2021 verified; ISO 16889:2022 verified; reservoir design data from ISO TR 10949; commissioning protocol from NFPA T2.14 guidelines',
     },
+    commonMistakes: [
+      'Sizing hydraulic reservoir volume to pump output rather than system heat rejection requirements. A reservoir volume of 3–5× pump flow rate per minute is a thermal management rule, not an arbitrary convention — undersized reservoirs cause fluid overheating and accelerated oxidation degradation.',
+      'Not installing a kidney-loop offline filtration circuit in systems with servo or proportional valves. Online pressure-line filters operate at system pressure — kidney-loop offline filters operate at low pressure, allowing finer filtration (ISO 14/12/9 or tighter) with lower bypass risk.',
+      'Connecting return line filters directly to the top of the reservoir without a diffuser tube below the fluid surface. Turbulent return flow entrains air into the fluid — submerged return and diffuser baffles are required to prevent aeration that causes cavitation in axial piston pumps.',
+    ],
   },
 
   {
@@ -2717,6 +2771,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       responsibleRegistry: 'EDL-SYSTEMS (SYS-HYDRAULIC, SYS-LUBRICATION)',
       evidenceStatus: 'Contamination balance equation from ISO 16889 and fluid power engineering literature; atmospheric ingression rate estimates from published field studies; wear rate values from ICP trend data published in tribology literature; breather efficiency impact from filter manufacturer application engineering data',
     },
+    commonMistakes: [
+      'Modelling steady-state contamination balance without including burst ingression events from maintenance operations, seal failures, and cylinder rod retraction. Episodic high-ingression events dominate total contamination loading in mobile equipment — steady-state models underestimate real-world filter loading.',
+      'Using atmospheric particle counts from one location as the ingression rate baseline for all equipment at a site. Ingression rates vary by a factor of 10–50× between equipment operating in open-pit mining versus enclosed-factory environments — site-specific measurement is required for accurate model inputs.',
+      'Assuming that system oil volume is the primary parameter governing contamination concentration. Filter capture rate, ingression rate, and fluid volume all affect steady-state cleanliness — doubling filter flow rate has the same cleanliness effect as doubling system oil volume at the same ingression rate.',
+    ],
   },
 
   // ── Article 22 ────────────────────────────────────────────────────────────

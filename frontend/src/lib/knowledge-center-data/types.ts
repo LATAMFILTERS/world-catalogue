@@ -50,6 +50,8 @@ export interface KCArticle {
     responsibleRegistry: string;
     evidenceStatus: string;
   };
+  /** Documented engineering misinterpretations of this article's core concepts. */
+  commonMistakes?: string[];
 }
 
 export interface KCStandard {
@@ -79,6 +81,8 @@ export interface KCStandard {
   // ── Hierarchy ─────────────────────────────────────────────────────────────
   parentStandard?: string;                // STD-xxx ID (e.g. ISO 8573-2 → ISO 8573-1)
   childStandards?: string[];              // STD-xxx IDs
+  /** Documented engineering misinterpretations of this standard's requirements or application. */
+  commonMistakes?: string[];
 }
 
 export interface KCTechnology {

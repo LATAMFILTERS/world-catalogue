@@ -12,6 +12,7 @@ import {
   KCTechnologyCard,
   RelatedArticles,
   ArticleSchema,
+  CitationBlock,
 } from '@/components/knowledge-center';
 import DiagramBlock from '@/components/knowledge-center/DiagramBlock';
 import { getArticleSidebarData } from '@/lib/knowledge-center/navigation-index';
@@ -323,6 +324,46 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
           </motion.div>
         )}
 
+        {/* Common Engineering Mistakes */}
+        {article.commonMistakes && article.commonMistakes.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.45 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.6rem',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,255,255,0.3)',
+              marginBottom: '1rem',
+            }}>
+              COMMON ENGINEERING MISTAKES
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {article.commonMistakes.map((mistake, i) => (
+                <div key={i} style={{
+                  padding: '0.875rem 1rem 0.875rem 1.25rem',
+                  border: '1px solid rgba(255,140,0,0.1)',
+                  borderLeft: '2px solid rgba(255,140,0,0.5)',
+                  background: 'rgba(255,140,0,0.04)',
+                }}>
+                  <p style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.88rem',
+                    lineHeight: 1.7,
+                    color: 'rgba(255,255,255,0.62)',
+                    margin: 0,
+                  }}>
+                    {mistake}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         <RelatedArticles
           title="RELATED ENGINEERING TOPICS"
           items={sidebarData.relatedArticles.map((rel) => ({
@@ -330,6 +371,13 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
             href: `/knowledge-center/engineering/${rel.slug}`,
             description: rel.category,
           }))}
+        />
+
+        {/* Citation block */}
+        <CitationBlock
+          title={article.title}
+          url={`/knowledge-center/engineering/${article.slug}`}
+          entityType="article"
         />
       </ArticleLayout>
 

@@ -87,6 +87,12 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['contamination-control', 'filter-media-science', 'fluid-cleanliness'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedArticles: ['iso-16889', 'iso-16889-multipass-test', 'beta-ratio', 'filter-media-engineering', 'testing-and-validation'],
+    commonMistakes: [
+      'Confusing Beta ratio with percentage efficiency: β₁₀(c) = 200 means 99.5% efficiency, not 200% — the ratio is upstream count ÷ downstream count, not a percentage.',
+      'Specifying nominal micron ratings instead of Beta values from ISO 16889 test reports. Nominal ratings carry no guaranteed efficiency under ISO 16889 and are not valid engineering specifications.',
+      'Using the Beta ratio at a single particle size as the sole filter selection criterion. Dirt-holding capacity and collapse pressure are equally critical for field performance and service life.',
+      'Assuming ISO 16889 test results apply at all flow rates. The standard specifies rated flow conditions — Beta ratio degrades at elevated flow and improves at reduced flow.',
+    ],
   },
 
   {
@@ -144,6 +150,12 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['contamination-control', 'fluid-cleanliness', 'filter-media-science'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedArticles: ['iso-4406', 'fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'contamination-sensitivity-components'],
+    commonMistakes: [
+      'Reading cleanliness codes as absolute particle counts: ISO 4406 Range Numbers are logarithmic, not linear. Range Number 18 means up to 1,300 particles/mL — not 18 particles.',
+      'Specifying only two-channel codes (e.g., 18/16) for modern servo systems. ISO 4406 three-channel codes (4 µm / 6 µm / 14 µm) are required for complete contamination characterisation.',
+      'Treating the cleanliness code as a target rather than a maximum allowable limit. The code defines the worst acceptable condition — not the operating setpoint.',
+      'Confusing ISO 4406 (the coding method) with ISO 16889 (the multi-pass test method). ISO 4406 defines how to express the result; ISO 16889 defines how to measure it.',
+    ],
   },
 
   {
@@ -178,6 +190,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
     relatedTechnologies: ['NANOFORCE™'],
     relatedArticles: ['fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'nfpa-t2-14-hydraulic-cleanliness'],
+    commonMistakes: [
+      'Treating NAS 1638 Class numbers and ISO 4406 Range Numbers as directly interchangeable. Different measurement bases and particle size channels make conversion approximate, not equivalent.',
+      'Applying NAS 1638 targets to modern servo and proportional valve systems specified to ISO 4406 without formal conversion verification. Clearance tolerance differences make direct substitution unsafe.',
+      'Using NAS 1638 for aerospace hydraulic system maintenance monitoring where the applicable standard is now SAE AS4059 in most OEM documentation.',
+    ],
   },
 
   {
@@ -211,6 +228,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'contamination-control'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedArticles: ['iso-11171-particle-counting', 'fluid-cleanliness', 'oil-analysis-methods', 'testing-and-validation'],
+    commonMistakes: [
+      'Operating automatic particle counters without verifying ISO 11171 calibration status. APC calibration drift causes systematic errors that invalidate cleanliness code comparisons between service intervals.',
+      'Comparing particle count results from APCs using different calibration fluids or PSL reference standards. ISO 11171 requires NIST SRM 1003c — instruments calibrated to other standards produce non-comparable results.',
+      'Using light obscuration APCs for fluids with additives that cause optical absorption (e.g., dark gear oils). ISO 11171 specifies the applicable fluid types — non-conforming fluids require alternative counting methods.',
+    ],
   },
 
   {
@@ -253,6 +275,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['contamination-control', 'fluid-cleanliness', 'testing-and-validation'],
     relatedTechnologies: ['NANOFORCE™'],
     relatedArticles: ['nfpa-t2-14-hydraulic-cleanliness', 'fluid-cleanliness', 'hydraulic-contamination-sensitivity', 'filter-element-integrity'],
+    commonMistakes: [
+      'Applying a single cleanliness target across all hydraulic circuits without distinguishing component sensitivity. Servo valves require ISO 16/14/11; cylinders only need ISO 19/17/14 — over-specifying increases filtration cost without benefit.',
+      'Not accounting for ingression rates in mobile equipment when selecting target cleanliness codes. NFPA T2.14 targets designed for closed industrial systems may be unachievable in open-cab excavators without sealed reservoirs.',
+      'Treating T2.14 cleanliness specifications as applicable to fluid at rest rather than during active operation. Dynamic ingression from rod seals and breathers raises in-service contamination above static measurements.',
+    ],
   },
 
   {
@@ -291,6 +318,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
     relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™'],
     relatedArticles: ['lubrication-system-filtration', 'contamination-control', 'fluid-cleanliness'],
+    commonMistakes: [
+      'Selecting HLP grade mineral oil for hydraulic systems requiring HM specification. HM fluids add anti-wear additives for high-pressure pump protection — substituting HLP in HM-specified systems increases pump wear.',
+      'Choosing hydraulic fluid viscosity grade based only on ambient temperature without considering operating pressure and pump type. High-pressure axial piston pumps require higher viscosity than gear pumps at the same temperature.',
+      'Mixing DIN 51524 fluid classifications (HL, HLP, HVLP) in the same system. Additive package incompatibility can cause foaming, emulsification, and seal degradation.',
+    ],
   },
 
   // ── AIR INTAKE ─────────────────────────────────────────────────────────────
@@ -358,6 +390,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['airflow-engineering', 'air-restriction', 'dust-holding-capacity'],
     relatedTechnologies: ['MACROCORE™'],
     relatedArticles: ['iso-5011', 'sae-j726-iso-5011-air-cleaner-test', 'airflow-engineering', 'air-intake-system-design'],
+    commonMistakes: [
+      'Confusing ISO 5011 gravimetric test dust capacity with real-world service life. Laboratory dust (ISO Fine or ISO Coarse) differs in size distribution and composition from ambient dust at specific job site conditions.',
+      'Treating initial restriction values as representative of in-service restriction. A filter\'s restriction increases significantly as contaminant loads onto the media — rated flow restriction at 0 g dust loading is not the operating condition.',
+      'Selecting air filters by nominal micron rating rather than ISO 5011 gravimetric efficiency with specified dust type and concentration. Nominal ratings are not defined by ISO 5011 and carry no engineering validity.',
+    ],
   },
 
   {
@@ -432,6 +469,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['airflow-engineering', 'dust-holding-capacity', 'testing-and-validation'],
     relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
     relatedArticles: ['airflow-engineering', 'air-restriction', 'iso-5011', 'service-intervals'],
+    commonMistakes: [
+      'Setting restriction change indicators at static clean-element values rather than the OEM-specified maximum restriction limit. J1539 restriction limits account for fully loaded element conditions — change decisions based on clean pressure drop cause premature element replacement.',
+      'Not correcting restriction measurements for altitude. Air density reduction at high elevation reduces mass flow for the same volumetric restriction reading — J1539 restriction limits specified at sea level must be adjusted for altitude operation.',
+      'Assuming SAE J1539 and ISO 5011 test results are directly comparable. Different test dust specifications and airflow conditions mean results are not numerically interchangeable between the two standards.',
+    ],
   },
 
   // ── CABIN AIR ──────────────────────────────────────────────────────────────
@@ -467,6 +509,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['filter-media-science', 'airflow-engineering', 'cabin-air-filtration'],
     relatedTechnologies: ['MICROKAPPA™'],
     relatedArticles: ['cabin-air-filtration', 'filter-media-science', 'filter-media-engineering'],
+    commonMistakes: [
+      'Using DOP/DEHS penetration at rated airflow as the sole performance criterion. ISO 29463 also requires mechanical integrity under pulsed pressure cycling — high efficiency media that fails cyclic loading provides no protection.',
+      'Confusing H13 HEPA efficiency (99.95% at MPPS) with H14 (99.995%) as equivalent for operator health applications. The 10× penetration difference is significant at industrial dust concentrations above 1 mg/m³.',
+      'Applying cabin HEPA specifications from laboratory HVAC to heavy equipment cabs without accounting for higher face velocities and contamination concentrations in mining and construction environments.',
+    ],
   },
 
   {
@@ -505,6 +552,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['filter-media-science', 'testing-and-validation', 'cabin-air-filtration'],
     relatedTechnologies: ['MICROKAPPA™'],
     relatedArticles: ['cabin-air-filtration', 'filter-media-science'],
+    commonMistakes: [
+      'Specifying cabin filters solely by particle efficiency without considering gaseous contaminant protection. ISO 11155-1 covers particulate only — chemical and odour protection requires ISO 11155-2 combined filter testing.',
+      'Not accounting for filter media saturation in high-dust environments. Particle efficiency approaches 100% on a saturated filter, but flow restriction may exceed the HVAC system capacity before the end of the rated service interval.',
+      'Applying road vehicle cabin filter specifications (passenger compartment conditions) directly to construction or mining equipment cabs without adjusting for the higher ambient dust concentrations of those environments.',
+    ],
   },
 
   {
@@ -539,6 +591,10 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['cabin-air-filtration', 'operator-health'],
     relatedTechnologies: ['MICROKAPPA™'],
     relatedArticles: ['cabin-air-filtration', 'filter-media-science'],
+    commonMistakes: [
+      'Treating DIN 71220 and ISO 11155 as fully interchangeable specifications. Test dust concentrations and efficiency measurement conditions differ between the two standards — a filter qualifying under one may not meet the other.',
+      'Applying automotive passenger vehicle cabin filter change intervals (typically 15,000–25,000 km) to construction or agricultural equipment where ambient dust concentrations are 10–100× higher than road vehicle conditions.',
+    ],
   },
 
   // ── FUEL & WATER SEPARATION ────────────────────────────────────────────────
@@ -577,6 +633,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
     relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
+    commonMistakes: [
+      'Confusing free water and dissolved water in Karl Fischer results. ISO 12937 coulometric KF measures total water (dissolved + free + emulsified) — a result of 80 ppm in diesel does not mean free water is absent if phase separation has occurred.',
+      'Accepting diesel water content above 200 ppm without considering HPCR injector stiction risk. Modern HPCR systems with ≤1 µm spool clearances show accelerated wear onset above 200 ppm total water.',
+      'Not accounting for sample handling water pickup during Karl Fischer testing. Low-water samples (<50 ppm) absorb ambient moisture rapidly — ISO 12937 sample handling protocols are mandatory for reliable results.',
+    ],
   },
 
   {
@@ -614,6 +675,10 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
     relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
+    commonMistakes: [
+      'Selecting coulometric Karl Fischer (ASTM D6304) for high-water-content samples (>1000 ppm). Coulometric KF is designed for low water content — volumetric KF (ASTM D1744) is more appropriate for high-water petroleum products.',
+      'Comparing KF water content results between samples taken at different fuel temperatures. Water solubility in diesel changes with temperature — hot tank samples taken after engine operation will show lower dissolved water than cold morning samples.',
+    ],
   },
 
   {
@@ -654,6 +719,10 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
     relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'hpcr-fuel-system-protection', 'iso-16332'],
+    commonMistakes: [
+      'Specifying water separation efficiency at a single test flow rate as the only performance criterion. ISO 16332 water separation efficiency varies significantly with flow — a separator rated at 95% efficiency at rated flow may drop to 60% at 150% of rated flow.',
+      'Not distinguishing between free water separation and emulsified water separation in ISO 16332 test results. Coalescing separators remove free water efficiently but require higher-efficiency coalescer media for surfactant-stabilised emulsified water.',
+    ],
   },
 
   // ── COMPRESSED AIR ─────────────────────────────────────────────────────────
@@ -695,6 +764,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTechnologies: ['DRYCORE™'],
     relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
     childStandards: ['STD-ISO-8573-2'],
+    commonMistakes: [
+      'Specifying ISO 8573-1 Class 0 (oil-free) for applications that only require Class 1 (≤0.01 mg/m³ oil aerosol). Class 0 requires an oil-free compressor; Class 1 is achievable with downstream coalescing filtration on a lubricated compressor — a significant cost difference.',
+      'Not distinguishing between ISO 8573-1 oil aerosol content (measured by 8573-2) and total hydrocarbon content (aerosol + vapour). A system meeting Class 1 oil aerosol may still contain oil vapour requiring activated carbon treatment.',
+      'Applying ISO 8573-1 purity class specifications at a single point in the system without accounting for recontamination from distribution pipework. Point-of-use air quality must be measured at the application, not at the dryer outlet.',
+    ],
   },
 
   // ── LUBRICATION OIL ────────────────────────────────────────────────────────
@@ -733,6 +807,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['service-intervals', 'oem-engineering', 'filter-media-science'],
     relatedTechnologies: ['SYNTRAX™'],
     relatedArticles: ['lubrication-system-filtration', 'service-intervals', 'filter-element-integrity', 'extended-drain-interval-engineering'],
+    commonMistakes: [
+      'Confusing bypass valve opening pressure with collapse pressure. Bypass valve activation is a normal, designed operating event — it protects the engine from oil starvation during cold starts. Collapse is a structural failure that releases contamination.',
+      'Using J1858 flow rate and efficiency requirements from one engine class for a different engine service category. J1858 distinguishes between standard service, severe service, and extended drain service — each has different performance requirements.',
+      'Selecting full-flow oil filters based on thread size and anti-drain back valve orientation alone without verifying media efficiency and collapse pressure ratings meet the engine manufacturer\'s J1858 service category requirements.',
+    ],
   },
 
   // ── PHASE 5C NEW STANDARDS ─────────────────────────────────────────────────
@@ -776,6 +855,10 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['testing-and-validation', 'filter-media-science', 'contamination-control'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'],
     relatedArticles: ['filter-element-integrity', 'materials-engineering', 'failure-analysis'],
+    commonMistakes: [
+      'Confusing collapse pressure (structural failure) with bypass valve opening pressure (designed operating event). Collapse releases unfiltered fluid and captured contaminant into the system — bypass valve activation diverts flow around a blocked element without releasing contaminant.',
+      'Not testing under pulsed differential pressure conditions representative of cold-start and flow transients. ISO 3723 static end load tests qualify elements for sustained differential pressure — fatigue failure from cyclic loading is a separate qualification requirement.',
+    ],
   },
 
   {
@@ -817,6 +900,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'filter-media-science'],
     relatedTechnologies: ['SYNTEPORE™', 'TURBOCORE™'],
     relatedArticles: ['hpcr-fuel-system-protection', 'fuel-water-contamination', 'beta-ratio', 'filter-media-engineering'],
+    commonMistakes: [
+      'Specifying fuel filter performance using ISO 4548 (lube oil filter method) when ISO 19438 is the applicable standard for fuel applications. Different test fluids, viscosities, and contaminant specifications make the tests non-comparable.',
+      'Not accounting for biocide treatment effects on synthetic filter media in biodiesel (B20+) applications. Some amine-based biocides cause swelling and degradation of polyester filter media that passes ISO 19438 testing with mineral diesel.',
+      'Using particle efficiency at 10 µm as the primary HPCR fuel filter selection criterion. HPCR injector clearances of 1–3 µm require fuel filter qualification at 4–6 µm particle sizes — 10 µm efficiency data understates contamination risk.',
+    ],
   },
 
   {
@@ -858,6 +946,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'contamination-control'],
     relatedTechnologies: ['DURATECH™', 'SYNTRAX™'],
     relatedArticles: ['oil-analysis-methods', 'oil-condition-monitoring', 'fleet-oil-sampling-protocol', 'extended-drain-interval-engineering'],
+    commonMistakes: [
+      'Treating wear metal concentration in a single sample as a definitive wear indicator without trending data from sequential samples at known drain intervals. A high iron value in isolation may reflect component run-in — the trend rate matters more than any single reading.',
+      'Not normalizing wear metal concentrations for sample drain interval. Comparing a 250-hour oil sample to a 500-hour sample without normalization gives a misleading wear rate impression — mg/hour of operation is the correct comparison metric.',
+      'Using ICP-OES (ASTM D5185) spectroscopy as the sole wear debris detection method. ICP-OES reliably detects particles below 5–8 µm; larger wear debris particles characteristic of accelerated component damage are under-reported. Ferrography or filter debris analysis should supplement ICP for critical equipment.',
+    ],
   },
 
   {
@@ -897,6 +990,10 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTechnologies: ['DRYCORE™'],
     relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
     parentStandard: 'STD-ISO-8573-1',
+    commonMistakes: [
+      'Using ISO 8573-2 oil aerosol measurement as a proxy for total hydrocarbon content. ISO 8573-2 measures oil aerosol and liquid oil — it does not detect oil vapour, which requires activated carbon treatment and separate measurement.',
+      'Not recognising that oil aerosol content in compressed air increases with downstream filter element aging even within the rated service life. Verification measurements must be taken at end-of-life conditions, not only on new elements.',
+    ],
   },
 
   {
@@ -938,6 +1035,11 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTopics: ['contamination-control', 'testing-and-validation', 'filter-media-science'],
     relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'],
     relatedArticles: ['hydraulic-power-unit-design', 'filter-element-integrity', 'testing-and-validation'],
+    commonMistakes: [
+      'Selecting filters based on clean ΔP from ISO 3968 alone without accounting for in-service contaminated ΔP. A fully loaded filter element can have 5–10× the clean differential pressure — system designs using only clean ΔP data underestimate circuit pressure losses.',
+      'Comparing ISO 3968 ΔP-Q curves from different manufacturers without confirming identical test fluid viscosity (ISO VG 15 at 23°C). Viscosity differences of ±20% produce proportional ΔP differences — data from different test conditions is not directly comparable.',
+      'Not applying cold-start viscosity correction to ISO 3968 data when specifying bypass valve relief settings. Mineral oil at 0°C has 10–15× higher viscosity than at operating temperature — cold-start ΔP may exceed bypass valve opening pressure even on a clean element.',
+    ],
   },
 
 ];
