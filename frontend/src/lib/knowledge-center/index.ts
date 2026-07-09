@@ -95,3 +95,17 @@ export {
   getGlossarySidebarData,
   getGraphStats,
 } from './navigation-index';
+
+// Phase 6D: Recommendation Engine
+export type {
+  KCNodeType,
+  KCNodeKey,
+  KCReasonType,
+  KCGraphNode,
+  KCGraph,
+  KCRecommendation,
+  KCRecommendationOptions,
+} from './recommendation-types';
+
+export { getRecommendations } from './recommendation-engine';
+export { getKCRecommendationGraph, makeKey } from './recommendation-graph';

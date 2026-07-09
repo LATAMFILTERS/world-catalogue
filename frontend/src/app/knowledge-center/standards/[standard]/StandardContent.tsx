@@ -12,6 +12,7 @@ import {
   ArticleSchema,
 } from '@/components/knowledge-center';
 import { getStandardSidebarData } from '@/lib/knowledge-center/navigation-index';
+import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
 
 export default function StandardContent({ std }: { std: KCStandard }) {
   const { referencingArticles, relatedStandards: indexRelatedStandards } = getStandardSidebarData(std.slug);
@@ -251,6 +252,14 @@ export default function StandardContent({ std }: { std: KCStandard }) {
             href: `/knowledge-center/engineering/${art.slug}`,
             meta: `${art.readTime} read`,
           }))}
+        />
+
+        <RecommendationBlock
+          sourceType="standard"
+          sourceSlug={std.slug}
+          maxResults={10}
+          excludeTypes={['standard']}
+          title="Related Engineering Content"
         />
 
       </ArticleLayout>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import type { KCComparison, KCComparisonCategory } from '@/lib/knowledge-center-data';
+import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
 
 const CATEGORY_LABELS: Record<KCComparisonCategory, string> = {
   'standards':   'STANDARDS',
@@ -508,6 +509,15 @@ export default function ComparisonContent({
             )}
           </div>
         </div>
+
+        {/* Recommendations */}
+        <RecommendationBlock
+          sourceType="comparison"
+          sourceSlug={c.slug}
+          maxResults={12}
+          excludeTypes={['comparison']}
+          title="Related Engineering Content"
+        />
 
         {/* Revision */}
         <div style={{
