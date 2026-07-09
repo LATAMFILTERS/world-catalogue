@@ -232,16 +232,22 @@ export const TERM_IDS = {
 // ── Diagram IDs ───────────────────────────────────────────────────────────────
 
 export const DIAGRAM_IDS = {
-  'multipass-test-circuit':        'DIAG-MULTIPASS-TEST',
-  'beta-ratio-measurement':        'DIAG-BETA-RATIO',
-  'iso-4406-cleanliness-scale':    'DIAG-ISO4406-CLEANLINESS',
-  'hydraulic-contamination-paths': 'DIAG-HYD-CONTAMINATION',
-  'air-intake-filtration-flow':    'DIAG-AIR-INTAKE-FLOW',
-  'lube-oil-circuit':              'DIAG-LUBE-OIL-CIRCUIT',
-  'fuel-filtration-3stage':        'DIAG-FUEL-3STAGE',
-  'differential-pressure-curve':   'DIAG-DP-CURVE',
-  'compressed-air-treatment':      'DIAG-CA-TREATMENT',
-  'particle-wear-mechanism':       'DIAG-PARTICLE-WEAR',
+  'multipass-test-circuit':          'DIAG-MULTIPASS-TEST',
+  'beta-ratio-measurement':          'DIAG-BETA-RATIO',
+  'iso-4406-cleanliness-scale':      'DIAG-ISO4406-CLEANLINESS',
+  'hydraulic-contamination-paths':   'DIAG-HYD-CONTAMINATION',
+  'air-intake-filtration-flow':      'DIAG-AIR-INTAKE-FLOW',
+  'lube-oil-circuit':                'DIAG-LUBE-OIL-CIRCUIT',
+  'fuel-filtration-3stage':          'DIAG-FUEL-3STAGE',
+  'differential-pressure-curve':     'DIAG-DP-CURVE',
+  'compressed-air-treatment':        'DIAG-CA-TREATMENT',
+  'particle-wear-mechanism':         'DIAG-PARTICLE-WEAR',
+  // ── Phase 6B additions ──────────────────────────────────────────────────────
+  'filter-media-cross-section':      'DIAG-MEDIA-CROSS-SECTION',
+  'iso-8573-purity-classes':         'DIAG-ISO8573-PURITY',
+  'service-interval-flow':           'DIAG-SERVICE-INTERVAL-FLOW',
+  'cabin-air-system':                'DIAG-CABIN-AIR-SYSTEM',
+  'water-contamination-pathways':    'DIAG-WATER-CONT-PATHS',
 } as const;
 
 // ── Lookup helpers ─────────────────────────────────────────────────────────────

@@ -11,6 +11,11 @@ import {
   DifferentialPressureCurve,
   CompressedAirTreatment,
   ParticleWearMechanism,
+  FilterMediaCrossSection,
+  Iso8573PurityClasses,
+  ServiceIntervalFlow,
+  CabinAirSystem,
+  WaterContaminationPathways,
 } from './diagrams';
 
 const SVG_COMPONENTS: Record<string, React.ComponentType> = {
@@ -24,6 +29,11 @@ const SVG_COMPONENTS: Record<string, React.ComponentType> = {
   DifferentialPressureCurve,
   CompressedAirTreatment,
   ParticleWearMechanism,
+  FilterMediaCrossSection,
+  Iso8573PurityClasses,
+  ServiceIntervalFlow,
+  CabinAirSystem,
+  WaterContaminationPathways,
 };
 
 export interface DiagramBlockProps {
