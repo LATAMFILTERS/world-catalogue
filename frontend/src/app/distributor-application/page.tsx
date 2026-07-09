@@ -596,7 +596,7 @@ export default function DistributorApplication() {
                   textDecoration: 'none',
                 }}
               >
-                EXPLORE ALL TECHNOLOGIES ->
+                EXPLORE ALL TECHNOLOGIES &gt;
               </Link>
             </p>
           </AnimateIn>
@@ -787,7 +787,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    -> Industries We Serve
+                    &gt; Industries We Serve
                   </Link>
                   <Link
                     href="/technologies"
@@ -800,7 +800,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    -> Proprietary Technologies
+                    &gt; Proprietary Technologies
                   </Link>
                   <Link
                     href="/knowledge-system"
@@ -813,7 +813,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    -> Knowledge System
+                    &gt; Knowledge System
                   </Link>
                   <Link
                     href="/contact"
@@ -826,7 +826,7 @@ export default function DistributorApplication() {
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    -> Technical Contact
+                    &gt; Technical Contact
                   </Link>
                 </div>
               </div>
@@ -1061,6 +1061,7 @@ export default function DistributorApplication() {
     </main>
   );
 }
+
 
 
 
