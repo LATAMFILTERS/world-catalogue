@@ -15,8 +15,22 @@ const TECHNOLOGIES = [
 ];
 
 const COMMERCIAL_LINES = [
-  ['marineclean', 'MARINECLEAN', 'Marine Protection Line', '/assets/MARINECLEAN.avif', '/commercial-lines/marineclean'],
-  ['duratech', 'DURATECH', 'Fleet Master Kit Line', '/assets/Duratech.avif', '/commercial-lines/duratech'],
+  {
+    slug: 'marineclean',
+    name: 'MARINECLEAN',
+    label: 'Marine Protection Line',
+    image: '/assets/MARINECLEAN.avif',
+    href: '/commercial-lines/marineclean',
+    description: 'Salt-resistant filtration solutions engineered for marine, offshore, and coastal operations.',
+  },
+  {
+    slug: 'duratech',
+    name: 'DURATECH',
+    label: 'Fleet Master Kit Line',
+    image: '/assets/Duratech.avif',
+    href: '/commercial-lines/duratech',
+    description: 'Integrated maintenance kits engineered for heavy-duty fleet service and severe-duty equipment uptime.',
+  },
 ];
 
 export const metadata = {
@@ -120,12 +134,14 @@ export default function TechnologiesPage() {
           <h2 style={sectionTitle}>Specialized lines built on technology architecture.</h2>
 
           <div style={commercialGrid}>
-            {COMMERCIAL_LINES.map(([slug, name, label, image, href]) => (
-              <Link key={slug} href={href} style={commercialCard}>
-                <img src={image} alt={name} style={commercialImage} />
-                <div>
-                  <p style={commercialLabel}>{label}</p>
-                  <h3 style={commercialTitle}>{name}</h3>
+            {COMMERCIAL_LINES.map((line) => (
+              <Link key={line.slug} href={line.href} style={commercialCard}>
+                <div style={commercialLogoPanel}>
+                  <img src={line.image} alt={line.name} style={commercialImage} />
+                </div>
+                <div style={commercialContent}>
+                  <p style={commercialLabel}>{line.label}</p>
+                  <p style={commercialDescription}>{line.description}</p>
                   <span style={explore}>EXPLORE LINE</span>
                 </div>
               </Link>
@@ -294,22 +310,33 @@ const commercialGrid: CSSProperties = {
 };
 
 const commercialCard: CSSProperties = {
-  display: 'flex', alignItems: 'center', gap: '1.4rem',
-  textDecoration: 'none', color: '#fff', background: 'rgba(0,0,0,0.55)',
-  border: '1px solid rgba(255,255,255,0.1)', padding: '1.4rem',
+  display: 'grid', gridTemplateColumns: 'minmax(120px, 0.85fr) minmax(0, 1.15fr)', alignItems: 'center', gap: '1.6rem',
+  textDecoration: 'none', color: '#fff', background: 'rgba(0,0,0,0.5)',
+  border: '1px solid rgba(255,255,255,0.1)', padding: '1.45rem', overflow: 'hidden',
+};
+
+const commercialLogoPanel: CSSProperties = {
+  minHeight: '110px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+  background: 'radial-gradient(circle at center, rgba(255,255,255,0.055), rgba(0,0,0,0.12) 62%)',
+  border: '1px solid rgba(255,255,255,0.05)', padding: '1rem',
 };
 
 const commercialImage: CSSProperties = {
-  width: '120px', height: '86px', objectFit: 'contain', flexShrink: 0,
+  width: '100%', maxWidth: '210px', height: 'auto', objectFit: 'contain', flexShrink: 0,
+};
+
+const commercialContent: CSSProperties = {
+  minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
 };
 
 const commercialLabel: CSSProperties = {
-  color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-display)',
-  fontSize: '0.72rem', letterSpacing: '0.12em', fontWeight: 700, margin: '0 0 0.5rem',
+  color: 'rgba(255,241,45,0.88)', fontFamily: 'var(--font-display)',
+  fontSize: '0.72rem', letterSpacing: '0.16em', fontWeight: 700, margin: '0 0 0.8rem', textTransform: 'uppercase',
 };
 
-const commercialTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: '1.8rem', margin: 0, letterSpacing: '-0.03em',
+const commercialDescription: CSSProperties = {
+  color: 'rgba(255,255,255,0.64)', fontSize: '0.92rem', lineHeight: 1.55,
+  maxWidth: '420px', margin: 0,
 };
 
 const searchCallout: CSSProperties = {
