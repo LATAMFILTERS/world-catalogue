@@ -393,7 +393,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroSubtitle: 'WATER SEPARATOR',
     heroTagline: 'Hydrophobic protection technology achieving 99.8% water separation efficiency from fuel systems. Three-phase water interception — free, emulsified and dissolved — before contamination reaches the injection circuit.',
 
-    heroImage: '/assets/HYDROCORE.avif',
+    heroImage: '/images/hydrocore-hero.avif',
     heroStats: [
       { key: 'EFFICIENCY', value: '99.8%' },
       { key: 'BARRIER TYPE', value: 'HYDROPHOBIC' },
