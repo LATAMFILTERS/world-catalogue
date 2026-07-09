@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -6,15 +6,15 @@ import { motion } from 'motion/react';
 import { AnimateIn } from '@/components/AnimateIn';
 
 const TECHNOLOGIES = [
-  { code: 'MACROCORE™', domain: 'Engine · Lube · Hydraulic', href: '/technologies/macrocore' },
-  { code: 'MICROKAPPA™', domain: 'Sub-Micron Particle Capture', href: '/technologies/microkappa' },
-  { code: 'DRYCORE™', domain: 'Air Intake · Dust Separation', href: '/technologies/drycore' },
-  { code: 'INTEKCORE™', domain: 'Fuel · Water Separation', href: '/technologies/intekcore' },
-  { code: 'SYNTEPORE™', domain: 'Synthetic Depth Media', href: '/technologies/syntepore' },
-  { code: 'HYDROCORE™', domain: 'Hydraulic High-Pressure', href: '/technologies/hydrocore' },
-  { code: 'SYNTRAX™', domain: 'Active Synthetic Media', href: '/technologies/syntrax' },
-  { code: 'NANOFORCE™', domain: 'Sub-1µm Particle Removal', href: '/technologies/nanoforce' },
-  { code: 'THERMACORE™', domain: 'Thermal Management', href: '/technologies/thermacore' },
+  { code: 'MACROCOREâ„¢', domain: 'Engine Â· Lube Â· Hydraulic', href: '/technologies/macrocore' },
+  { code: 'MICROKAPPAâ„¢', domain: 'Sub-Micron Particle Capture', href: '/technologies/microkappa' },
+  { code: 'DRYCOREâ„¢', domain: 'Air Intake Â· Dust Separation', href: '/technologies/drycore' },
+  { code: 'INTEKCOREâ„¢', domain: 'Fuel Â· Water Separation', href: '/technologies/intekcore' },
+  { code: 'SYNTEPOREâ„¢', domain: 'Synthetic Depth Media', href: '/technologies/syntepore' },
+  { code: 'HYDROCOREâ„¢', domain: 'Hydraulic High-Pressure', href: '/technologies/hydrocore' },
+  { code: 'SYNTRAXâ„¢', domain: 'Active Synthetic Media', href: '/technologies/syntrax' },
+  { code: 'NANOFORCEâ„¢', domain: 'Sub-1Âµm Particle Removal', href: '/technologies/nanoforce' },
+  { code: 'THERMACOREâ„¢', domain: 'Thermal Management', href: '/technologies/thermacore' },
 ];
 
 const PARTNER_CRITERIA = [
@@ -26,7 +26,7 @@ const PARTNER_CRITERIA = [
   {
     code: '02',
     title: 'Technical Capability',
-    body: 'Ability to deliver system-level consultation — OEM cross-reference validation, ISO specification matching, application engineering. Filter distribution experience is an asset but not a requirement.',
+    body: 'Ability to deliver system-level consultation â€” OEM cross-reference validation, ISO specification matching, application engineering. Filter distribution experience is an asset but not a requirement.',
   },
   {
     code: '03',
@@ -36,7 +36,7 @@ const PARTNER_CRITERIA = [
   {
     code: '04',
     title: 'Asset Protection Alignment',
-    body: 'Willingness to position ELIMFILTERS as a contamination control system — not a filter SKU. Partners who sell on specification and system value, not on price and brand recognition.',
+    body: 'Willingness to position ELIMFILTERS as a contamination control system â€” not a filter SKU. Partners who sell on specification and system value, not on price and brand recognition.',
   },
 ];
 
@@ -47,7 +47,7 @@ const PARTNER_VALUE = [
   },
   {
     title: 'Knowledge System Access',
-    body: 'Full access to the ELIMFILTERS Knowledge System — ISO standards library, contamination case studies, fleet optimization frameworks — tools to sell by engineering value, not price.',
+    body: 'Full access to the ELIMFILTERS Knowledge System â€” ISO standards library, contamination case studies, fleet optimization frameworks â€” tools to sell by engineering value, not price.',
   },
   {
     title: 'Technical Support Infrastructure',
@@ -161,12 +161,12 @@ export default function DistributorApplication() {
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
-    padding: '0.75rem',
+    padding: '0.9rem 1rem',
     background: 'rgba(255,255,255,0.05)',
     border: '1px solid rgba(255,255,255,0.1)',
-    borderRadius: '4px',
+    borderRadius: '0px',
     color: 'rgba(255,255,255,0.85)',
-    fontFamily: 'Outfit, sans-serif',
+    fontFamily: "Barlow, Arial, sans-serif",
     fontSize: '0.95rem',
     boxSizing: 'border-box',
   };
@@ -177,7 +177,7 @@ export default function DistributorApplication() {
     fontWeight: 600,
     marginBottom: '0.5rem',
     color: 'rgba(255,255,255,0.6)',
-    fontFamily: 'JetBrains Mono, monospace',
+    fontFamily: "Chakra Petch, Arial Narrow, monospace",
     letterSpacing: '0.08em',
   };
 
@@ -191,7 +191,8 @@ export default function DistributorApplication() {
   };
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'Barlow, Arial, sans-serif', overflowX: 'hidden' }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService) }}
@@ -213,12 +214,12 @@ export default function DistributorApplication() {
           gap: '0.4rem',
           background: 'rgba(0,0,0,0.85)',
           border: '1px solid rgba(255,241,45,0.35)',
-          borderRadius: '4px',
+          borderRadius: '0px',
           padding: '0.45rem 1rem',
-          fontFamily: 'Outfit, sans-serif',
+          fontFamily: "Barlow, Arial, sans-serif",
           fontWeight: 700,
           fontSize: '0.72rem',
-          letterSpacing: '0.12em',
+          letterSpacing: '0.2em',
           color: '#FFF12D',
           textDecoration: 'none',
           backdropFilter: 'blur(8px)',
@@ -226,7 +227,7 @@ export default function DistributorApplication() {
           transition: 'background 0.2s, border-color 0.2s',
         }}
       >
-        ← HOME
+        â† HOME
       </Link>
 
       {/* Hero */}
@@ -235,7 +236,7 @@ export default function DistributorApplication() {
           marginTop: 0,
           paddingTop: 'clamp(5rem, 12vh, 8rem)',
           paddingBottom: 'clamp(3rem, 6vh, 5rem)',
-          background: 'linear-gradient(160deg, rgba(255,241,45,0.04) 0%, #000 60%)',
+          background: 'radial-gradient(circle at top, rgba(255,241,45,0.16), transparent 32%), linear-gradient(135deg, rgba(255,255,255,0.055) 0%, transparent 32%, rgba(255,241,45,0.08) 100%)',
           borderBottom: '1px solid rgba(255,255,255,0.07)',
         }}
       >
@@ -245,30 +246,30 @@ export default function DistributorApplication() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: 'JetBrains Mono, monospace',
+              fontFamily: "Chakra Petch, Arial Narrow, monospace",
               fontSize: '0.72rem',
               letterSpacing: '0.2em',
               color: '#FFF12D',
               marginBottom: '1.25rem',
             }}
           >
-            AUTHORIZED DISTRIBUTION PROGRAM
+            ENGINEERED PARTNERSHIP PROGRAM
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(3.2rem, 7vw, 6.8rem)',
               fontWeight: 900,
-              fontFamily: 'Outfit, sans-serif',
-              lineHeight: 1.1,
+              fontFamily: "Barlow, Arial, sans-serif",
+              lineHeight: 0.9,
               textAlign: 'justify',
               marginBottom: '1.5rem',
             }}
           >
-            Distribute an Asset Protection Platform.<br />
-            <span style={{ color: '#FFF12D' }}>Not a Filter Brand.</span>
+            Represent Total Asset Protection.<br />
+            <span style={{ color: '#FFF12D' }}>Not Commodity Filtration.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -279,14 +280,11 @@ export default function DistributorApplication() {
               lineHeight: 1.7,
               textAlign: 'justify',
               color: 'rgba(255,255,255,0.65)',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: "Barlow, Arial, sans-serif",
               maxWidth: '680px',
             }}
           >
-            ELIMFILTERS authorized distributors represent a contamination control system — 10
-            proprietary technologies, 12 industrial sectors, and a knowledge infrastructure that
-            enables technical selling. Industrial clients protect equipment assets. Distributors
-            deliver the system that makes that possible.
+            ELIMFILTERS authorized distributors represent a severe-duty protection platform built around contamination control, technical selling, OEM cross-reference intelligence and industrial reliability. This is not retail filter distribution. This is asset protection for fleets, equipment operators and critical industries.
           </motion.p>
         </div>
       </section>
@@ -297,7 +295,7 @@ export default function DistributorApplication() {
           <AnimateIn>
             <p
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: "Chakra Petch, Arial Narrow, monospace",
                 fontSize: '0.65rem',
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
@@ -310,7 +308,7 @@ export default function DistributorApplication() {
               style={{
                 fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                 fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: "Barlow, Arial, sans-serif",
                 color: '#fff',
                 marginBottom: '1.5rem',
                 lineHeight: 1.25,
@@ -331,13 +329,13 @@ export default function DistributorApplication() {
                 style={{
                   padding: '1.75rem',
                   border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '4px',
+                  borderRadius: '0px',
                   background: '#050505',
                 }}
               >
                 <p
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.15em',
                     color: 'rgba(255,255,255,0.35)',
@@ -352,7 +350,7 @@ export default function DistributorApplication() {
                     lineHeight: 1.7,
                     textAlign: 'justify',
                     color: 'rgba(255,255,255,0.55)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: "Barlow, Arial, sans-serif",
                   }}
                 >
                   Catalog selling. Compete on price and availability. OEM cross-reference matching as
@@ -364,13 +362,13 @@ export default function DistributorApplication() {
                 style={{
                   padding: '1.75rem',
                   border: '1px solid rgba(255,241,45,0.2)',
-                  borderRadius: '4px',
+                  borderRadius: '0px',
                   background: 'rgba(255,241,45,0.02)',
                 }}
               >
                 <p
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.15em',
                     color: '#FFF12D',
@@ -385,10 +383,10 @@ export default function DistributorApplication() {
                     lineHeight: 1.7,
                     textAlign: 'justify',
                     color: 'rgba(255,255,255,0.75)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: "Barlow, Arial, sans-serif",
                   }}
                 >
-                  System-level consultation. Sell on contamination control outcomes — bearing life
+                  System-level consultation. Sell on contamination control outcomes â€” bearing life
                   extension, downtime reduction, total cost of ownership. ELIMFILTERS technologies
                   are specified, not substituted. Technical value creates client retention.
                 </p>
@@ -410,7 +408,7 @@ export default function DistributorApplication() {
           <AnimateIn>
             <p
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: "Chakra Petch, Arial Narrow, monospace",
                 fontSize: '0.65rem',
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
@@ -423,7 +421,7 @@ export default function DistributorApplication() {
               style={{
                 fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                 fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: "Barlow, Arial, sans-serif",
                 color: '#fff',
                 marginBottom: '2rem',
                 lineHeight: 1.25,
@@ -442,13 +440,13 @@ export default function DistributorApplication() {
                     gap: '1.25rem',
                     padding: '1.5rem',
                     border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '4px',
+                    borderRadius: '0px',
                     background: '#000',
                   }}
                 >
                   <span
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
                       fontSize: '0.65rem',
                       color: '#FFF12D',
                       letterSpacing: '0.1em',
@@ -462,7 +460,7 @@ export default function DistributorApplication() {
                       style={{
                         fontSize: '0.95rem',
                         fontWeight: 700,
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: "Barlow, Arial, sans-serif",
                         color: '#fff',
                         marginBottom: '0.5rem',
                       }}
@@ -475,7 +473,7 @@ export default function DistributorApplication() {
                         lineHeight: 1.65,
                         textAlign: 'justify',
                         color: 'rgba(255,255,255,0.6)',
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: "Barlow, Arial, sans-serif",
                         margin: 0,
                       }}
                     >
@@ -501,7 +499,7 @@ export default function DistributorApplication() {
           <AnimateIn>
             <p
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: "Chakra Petch, Arial Narrow, monospace",
                 fontSize: '0.65rem',
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
@@ -514,7 +512,7 @@ export default function DistributorApplication() {
               style={{
                 fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                 fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: "Barlow, Arial, sans-serif",
                 color: '#fff',
                 marginBottom: '0.75rem',
                 lineHeight: 1.25,
@@ -527,7 +525,7 @@ export default function DistributorApplication() {
               style={{
                 fontSize: '0.95rem',
                 color: 'rgba(255,255,255,0.55)',
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: "Barlow, Arial, sans-serif",
                 marginBottom: '2rem',
                 maxWidth: '600px',
               }}
@@ -550,7 +548,7 @@ export default function DistributorApplication() {
                     display: 'block',
                     padding: '1.25rem',
                     border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '4px',
+                    borderRadius: '0px',
                     background: '#050505',
                     textDecoration: 'none',
                     transition: 'border-color 0.2s',
@@ -564,7 +562,7 @@ export default function DistributorApplication() {
                 >
                   <p
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
                       fontSize: '0.72rem',
                       fontWeight: 700,
                       color: '#FFF12D',
@@ -578,7 +576,7 @@ export default function DistributorApplication() {
                     style={{
                       fontSize: '0.78rem',
                       color: 'rgba(255,255,255,0.5)',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                       margin: 0,
                     }}
                   >
@@ -591,14 +589,14 @@ export default function DistributorApplication() {
               <Link
                 href="/technologies"
                 style={{
-                  fontFamily: 'JetBrains Mono, monospace',
+                  fontFamily: "Chakra Petch, Arial Narrow, monospace",
                   fontSize: '0.7rem',
                   letterSpacing: '0.15em',
                   color: '#FFF12D',
                   textDecoration: 'none',
                 }}
               >
-                EXPLORE ALL TECHNOLOGIES →
+                EXPLORE ALL TECHNOLOGIES â†’
               </Link>
             </p>
           </AnimateIn>
@@ -617,7 +615,7 @@ export default function DistributorApplication() {
           <AnimateIn>
             <p
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: "Chakra Petch, Arial Narrow, monospace",
                 fontSize: '0.65rem',
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
@@ -630,7 +628,7 @@ export default function DistributorApplication() {
               style={{
                 fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                 fontWeight: 700,
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: "Barlow, Arial, sans-serif",
                 color: '#fff',
                 marginBottom: '2rem',
                 lineHeight: 1.25,
@@ -652,7 +650,7 @@ export default function DistributorApplication() {
                   style={{
                     padding: '1.5rem',
                     border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '4px',
+                    borderRadius: '0px',
                     background: '#000',
                   }}
                 >
@@ -660,7 +658,7 @@ export default function DistributorApplication() {
                     style={{
                       fontSize: '0.9rem',
                       fontWeight: 700,
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                       color: '#FFF12D',
                       marginBottom: '0.6rem',
                     }}
@@ -673,7 +671,7 @@ export default function DistributorApplication() {
                       lineHeight: 1.65,
                       textAlign: 'justify',
                       color: 'rgba(255,255,255,0.6)',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                       margin: 0,
                     }}
                   >
@@ -708,7 +706,7 @@ export default function DistributorApplication() {
               <div>
                 <p
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.2em',
                     color: '#FFF12D',
@@ -721,7 +719,7 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: 'clamp(1.4rem, 3vw, 2rem)',
                     fontWeight: 700,
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: "Barlow, Arial, sans-serif",
                     color: '#fff',
                     marginBottom: '1.25rem',
                     lineHeight: 1.25,
@@ -736,7 +734,7 @@ export default function DistributorApplication() {
                     lineHeight: 1.7,
                     textAlign: 'justify',
                     color: 'rgba(255,255,255,0.6)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: "Barlow, Arial, sans-serif",
                     marginBottom: '2rem',
                   }}
                 >
@@ -751,7 +749,7 @@ export default function DistributorApplication() {
                     lineHeight: 1.7,
                     textAlign: 'justify',
                     color: 'rgba(255,255,255,0.5)',
-                    fontFamily: 'Outfit, sans-serif',
+                    fontFamily: "Barlow, Arial, sans-serif",
                     marginBottom: '2rem',
                   }}
                 >
@@ -770,7 +768,7 @@ export default function DistributorApplication() {
                 >
                   <p
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
                       fontSize: '0.6rem',
                       letterSpacing: '0.15em',
                       color: 'rgba(255,255,255,0.3)',
@@ -784,12 +782,12 @@ export default function DistributorApplication() {
                       fontSize: '0.82rem',
                       color: 'rgba(255,255,255,0.55)',
                       textDecoration: 'none',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Industries We Serve
+                    â†’ Industries We Serve
                   </Link>
                   <Link
                     href="/technologies"
@@ -797,12 +795,12 @@ export default function DistributorApplication() {
                       fontSize: '0.82rem',
                       color: 'rgba(255,255,255,0.55)',
                       textDecoration: 'none',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Proprietary Technologies
+                    â†’ Proprietary Technologies
                   </Link>
                   <Link
                     href="/knowledge-system"
@@ -810,12 +808,12 @@ export default function DistributorApplication() {
                       fontSize: '0.82rem',
                       color: 'rgba(255,255,255,0.55)',
                       textDecoration: 'none',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Knowledge System
+                    â†’ Knowledge System
                   </Link>
                   <Link
                     href="/contact"
@@ -823,12 +821,12 @@ export default function DistributorApplication() {
                       fontSize: '0.82rem',
                       color: 'rgba(255,255,255,0.55)',
                       textDecoration: 'none',
-                      fontFamily: 'Outfit, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                   >
-                    → Technical Contact
+                    â†’ Technical Contact
                   </Link>
                 </div>
               </div>
@@ -839,8 +837,8 @@ export default function DistributorApplication() {
               <div
                 style={{
                   background: 'linear-gradient(135deg, rgba(255,241,45,0.03) 0%, rgba(0,0,0,0.2) 100%)',
-                  border: '1px solid rgba(255,241,45,0.12)',
-                  borderRadius: '8px',
+                  border: '1px solid rgba(255,241,45,0.28)',
+                  borderRadius: '0px',
                   padding: '2.5rem',
                 }}
               >
@@ -848,13 +846,13 @@ export default function DistributorApplication() {
                   style={{
                     fontSize: '0.85rem',
                     fontWeight: 700,
-                    fontFamily: 'JetBrains Mono, monospace',
-                    letterSpacing: '0.12em',
+                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
+                    letterSpacing: '0.2em',
                     color: 'rgba(255,255,255,0.45)',
                     marginBottom: '2rem',
                   }}
                 >
-                  DISTRIBUTOR APPLICATION FORM
+                  AUTHORIZED PARTNER APPLICATION
                 </h3>
 
                 {submitted && (
@@ -862,12 +860,12 @@ export default function DistributorApplication() {
                     style={{
                       background: 'rgba(100,200,100,0.12)',
                       border: '1px solid rgba(100,200,100,0.35)',
-                      borderRadius: '4px',
+                      borderRadius: '0px',
                       padding: '1rem',
                       marginBottom: '1.5rem',
                       fontSize: '0.9rem',
                       color: '#90ee90',
-                      fontFamily: 'Titillium Web, sans-serif',
+                      fontFamily: "Barlow, Arial, sans-serif",
                     }}
                   >
                     Application submitted. Our commercial team will review and respond within 5
@@ -1036,19 +1034,19 @@ export default function DistributorApplication() {
                     whileHover={{ scale: turnstileToken ? 1.02 : 1, boxShadow: turnstileToken ? '0 0 28px rgba(255,241,45,0.35)' : 'none' }}
                     style={{
                       width: '100%',
-                      padding: '0.875rem',
+                      padding: '1rem',
                       background: '#FFF12D',
                       color: '#000',
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
                       fontWeight: 700,
                       fontSize: '0.78rem',
-                      letterSpacing: '0.12em',
+                      letterSpacing: '0.2em',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '0px',
                       cursor: 'pointer',
                     }}
                   >
-                    SUBMIT APPLICATION
+                    REQUEST DISTRIBUTOR REVIEW
                   </motion.button>
                 </form>
               </div>
@@ -1063,3 +1061,5 @@ export default function DistributorApplication() {
     </main>
   );
 }
+
+
