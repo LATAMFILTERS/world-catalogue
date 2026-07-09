@@ -1,213 +1,391 @@
-'use client';
-
-import Link from 'next/link';
-import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+﻿import Link from 'next/link';
+import type { CSSProperties } from 'react';
 
 const LINES = [
   {
-    name: 'MARINECLEAN™',
-    tagline: 'Protecting Marine Assets',
-    description: 'Salt-resistant filtration line for commercial marine, offshore, and coastal operations. Epoxy barrier coating, brine rejection geometry, and corrosion-shield internals. IMO certified for continuous saltwater aerosol exposure in diesel fuel and hydraulic systems.',
-    specs: ['IMO certified', 'Epoxy barrier coating', 'Brine rejection geometry', 'Diesel fuel & hydraulic protection'],
+    slug: 'marineclean',
+    name: 'MARINECLEAN',
+    system: 'Marine Protection Line',
+    image: '/assets/MARINECLEAN.avif',
     href: '/commercial-lines/marineclean',
-    src: '/assets/MARINECLEAN.avif',
-    domains: 'Marine · Offshore · Coastal Infrastructure',
+    line: 'Salt-resistant filtration line for marine, offshore, harbor, and coastal operations.',
+    details: ['Marine diesel', 'Hydraulic systems', 'Salt exposure', 'Corrosion control'],
   },
   {
-    name: 'DURATECH™',
-    tagline: 'One Kit. More Uptime.',
-    description: 'Fleet master kit system that consolidates all filtration elements for a complete vehicle service — oil, fuel, air, and cabin — into a single OEM-interchangeable package. Platform-specific kits for mixed-model fleets in on-road and off-road operations.',
-    specs: ['OEM-interchangeable', 'Single-source per service cycle', 'Oil · Fuel · Air · Cabin', 'Mixed-model fleet coverage'],
+    slug: 'duratech',
+    name: 'DURATECH',
+    system: 'Fleet Master Kit Line',
+    image: '/assets/Duratech.avif',
     href: '/commercial-lines/duratech',
-    src: '/assets/Duratech.avif',
-    domains: 'Trucks & Fleets · Mining · Construction · Agriculture',
+    line: 'Complete service kit logic for mixed-model fleets, trucks, machinery, and heavy equipment.',
+    details: ['Oil', 'Fuel', 'Air', 'Cabin', 'Fleet service'],
   },
 ];
 
+const LINE_LOGIC = [
+  'Operational environment',
+  'Service model',
+  'System demand',
+  'Technology base',
+  'Kit or line structure',
+  'Protected asset',
+];
+
+export const metadata = {
+  title: 'Commercial Lines | ELIMFILTERS',
+  description:
+    'ELIMFILTERS commercial lines organize specialized product architectures for marine protection and fleet maintenance programs.',
+};
+
 export default function CommercialLinesPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'ELIMFILTERS Commercial Lines',
+    url: 'https://elimfilters.com/commercial-lines',
+    description:
+      'ELIMFILTERS specialized commercial lines for marine protection and fleet maintenance.',
+    hasPart: LINES.map((line) => ({
+      '@type': 'WebPage',
+      name: line.name,
+      url: `https://elimfilters.com${line.href}`,
+      description: line.line,
+    })),
+  };
+
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Navigation />
+    <main style={main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      {/* Hero */}
-      <section style={{
-        padding: 'clamp(6rem, 12vw, 10rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 6vw, 5rem)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-      }}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <p style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.25em',
-            color: 'rgba(255,241,45,0.7)',
-            textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-          }}>
-            COMMERCIAL LINES · ELIMFILTERS®
-          </p>
-          <h1 style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontWeight: 700,
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            lineHeight: 1,
-            letterSpacing: '-0.03em',
-            textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-          }}>
-            Commercial<br />
-            <span style={{ color: '#FFF12D' }}>Lines.</span>
+      <Link href="/" style={homeButton}>HOME</Link>
+
+      <section style={hero}>
+        <div style={{ ...heroImage, backgroundImage: 'url(/images/commercial-lines-hero.avif)' }} />
+        <div style={heroOverlay} />
+
+        <div style={heroInner}>
+          <p style={eyebrow}>COMMERCIAL LINES</p>
+          <h1 style={heroTitle}>
+            Lines Built
+            <br />
+            For Operating Reality
           </h1>
-          <p style={{
-            fontFamily: 'Outfit, sans-serif',
-            fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
-            color: 'rgba(255,255,255,0.5)',
-            maxWidth: '560px',
-            lineHeight: 1.7,
-            textAlign: 'justify',
-          }}>
-            Integrated product lines engineered for specific operational contexts —
-            marine environments and mixed-model fleet maintenance.
+          <p style={heroLead}>
+            ELIMFILTERS commercial lines package protection technologies into market-ready programs for marine environments and fleet maintenance operations.
           </p>
-        </motion.div>
+
+          <div style={tagRow}>
+            {['MARINE', 'FLEETS', 'OFFSHORE', 'TRUCKS', 'KITS', 'UPTIME'].map((item) => (
+              <span key={item} style={tag}>{item}</span>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Lines */}
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4rem)' }}>
-        {LINES.map((line, i) => (
-          <motion.div
-            key={line.name}
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '4rem',
-              alignItems: 'center',
-              padding: '4rem 0',
-              borderBottom: '1px solid rgba(255,255,255,0.06)',
-            }}
-            className="commercial-line-row"
-          >
-            {/* Image */}
-            <div style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.06)',
-              aspectRatio: '4/3',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden',
-            }}>
-              <img
-                src={line.src}
-                alt={line.name}
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
-              />
-            </div>
+      <section style={section}>
+        <div style={twoCol}>
+          <div>
+            <p style={eyebrow}>COMMERCIAL PURPOSE</p>
+            <h2 style={sectionTitle}>A line is not a product. It is a market program.</h2>
+          </div>
+          <div>
+            <p style={leadText}>
+              Commercial lines organize technologies, product families, and application logic around a specific customer reality: harsh marine exposure or complete fleet service cycles.
+            </p>
+            <p style={bodyText}>
+              This gives distributors and industrial customers a cleaner way to buy, explain, and standardize ELIMFILTERS protection across operating environments.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            {/* Content */}
-            <div>
-              <h2 style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(1.8rem, 3vw, 2.8rem)',
-                letterSpacing: '-0.02em',
-                marginBottom: '1.5rem',
-              }}>
-                {line.name}
-              </h2>
-              <p style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontSize: '0.95rem',
-                color: 'rgba(255,255,255,0.55)',
-                lineHeight: 1.75,
-                textAlign: 'justify',
-                marginBottom: '2rem',
-              }}>
-                {line.description}
-              </p>
+      <section style={yellowSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>LINE ARCHITECTURE</p>
+          <h2 style={sectionTitle}>From operating environment to protected asset.</h2>
 
-              {/* Specs */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
-                {line.specs.map(s => (
-                  <span key={s} style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.1em',
-                    color: 'rgba(255,255,255,0.4)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    padding: '0.3rem 0.7rem',
-                    textTransform: 'uppercase',
-                  }}>
-                    {s}
-                  </span>
-                ))}
+          <div style={logicGrid}>
+            {LINE_LOGIC.map((item, index) => (
+              <div key={item} style={logicCard}>
+                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <strong style={logicText}>{item}</strong>
               </div>
-
-              <Link
-                href={line.href}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.75rem',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#FFF12D',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid rgba(255,241,45,0.3)',
-                  paddingBottom: '2px',
-                }}
-              >
-                Explore {line.name} →
-              </Link>
-            </div>
-          </motion.div>
-        ))}
+            ))}
+          </div>
+        </div>
       </section>
 
-      <style suppressHydrationWarning>{`
-        @media (max-width: 768px) {
-          .commercial-line-row {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-          }
-        }
-      `}</style>
+      <section style={lineSection}>
+        <div style={wrapWide}>
+          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
+            <p style={eyebrow}>LINE PORTFOLIO</p>
+            <h2 style={sectionTitle}>Two programs. Different operating missions.</h2>
+          </div>
 
-      {/* JSON-LD structured data */}
-      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        name: 'Commercial Lines — MARINECLEAN™ & DURATECH™',
-        description: 'ELIMFILTERS® integrated product lines engineered for specific operational contexts: MARINECLEAN™ for marine and offshore environments, DURATECH™ for mixed-model fleet maintenance.',
-        url: 'https://elimfilters.com/commercial-lines/',
-        publisher: { '@type': 'Organization', name: 'ELIMFILTERS®', url: 'https://elimfilters.com' },
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS®', item: 'https://elimfilters.com' },
-            { '@type': 'ListItem', position: 2, name: 'Commercial Lines', item: 'https://elimfilters.com/commercial-lines/' },
-          ],
-        },
-        hasPart: [
-          { '@type': 'WebPage', name: 'MARINECLEAN™', url: 'https://elimfilters.com/commercial-lines/marineclean/' },
-          { '@type': 'WebPage', name: 'DURATECH™', url: 'https://elimfilters.com/commercial-lines/duratech/' },
-        ],
-      }) }} />
+          <div style={lineGrid}>
+            {LINES.map((line, index) => (
+              <Link key={line.slug} href={line.href} style={lineCard}>
+                <img src={line.image} alt={line.name} style={lineImage} />
+                <div style={lineOverlay} />
+                <div style={lineContent}>
+                  <span style={lineNumber}>{String(index + 1).padStart(2, '0')}</span>
+                  <p style={lineSystem}>{line.system}</p>
+                  <h3 style={lineTitle}>{line.name}</h3>
+                  <p style={lineBody}>{line.line}</p>
 
-      <Footer />
+                  <div style={miniTags}>
+                    {line.details.map((detail) => (
+                      <span key={detail} style={miniTag}>{detail}</span>
+                    ))}
+                  </div>
+
+                  <span style={explore}>EXPLORE LINE</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={comparisonSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>POSITIONING</p>
+          <h2 style={sectionTitle}>Different markets. Same asset protection logic.</h2>
+
+          <div style={comparisonGrid}>
+            <article style={comparisonCard}>
+              <span style={number}>01</span>
+              <h3 style={comparisonTitle}>MARINECLEAN</h3>
+              <p style={comparisonBody}>
+                Built for salt exposure, corrosion pressure, diesel fuel protection, hydraulic circuits, wet-dry cycles, and marine operating environments.
+              </p>
+            </article>
+
+            <article style={comparisonCard}>
+              <span style={number}>02</span>
+              <h3 style={comparisonTitle}>DURATECH</h3>
+              <p style={comparisonBody}>
+                Built for fleets that need complete service kits, reduced wrong-part installation, cleaner inventory structure, and faster service cycles.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section style={cta}>
+        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
+            Commercial lines turn technologies into market-ready protection programs.
+          </h2>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
+            <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
+            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
+
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
+
+const homeButton: CSSProperties = {
+  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
+  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
+  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
+};
+
+const hero: CSSProperties = {
+  minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+};
+
+const heroImage: CSSProperties = {
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25,
+};
+
+const heroOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+};
+
+const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+
+const eyebrow: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
+  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
+};
+
+const heroTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
+  lineHeight: 0.92, fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+  maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
+};
+
+const heroLead: CSSProperties = {
+  marginTop: '2rem', maxWidth: '800px', color: 'rgba(255,255,255,0.78)',
+  fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
+};
+
+const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
+
+const tag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.18)', padding: '0.82rem 1rem',
+  fontFamily: 'var(--font-display)', fontSize: '0.74rem',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.88)',
+};
+
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+
+const twoCol: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+  gap: 'clamp(2rem, 6vw, 5rem)',
+};
+
+const sectionTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
+  lineHeight: 0.96, letterSpacing: '-0.045em', margin: 0, textTransform: 'uppercase',
+};
+
+const leadText: CSSProperties = {
+  color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
+  lineHeight: 1.72, fontWeight: 600, margin: 0,
+};
+
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
+
+const yellowSection: CSSProperties = {
+  background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,241,45,0.01))',
+  borderTop: '1px solid rgba(255,241,45,0.16)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+
+const logicGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '0.8rem', marginTop: '2.4rem',
+};
+
+const logicCard: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.44)',
+  padding: '1.2rem', minHeight: '140px',
+};
+
+const number: CSSProperties = {
+  display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
+};
+
+const logicText: CSSProperties = { display: 'block', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2 };
+
+const lineSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
+
+const lineGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem',
+};
+
+const lineCard: CSSProperties = {
+  minHeight: '560px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
+};
+
+const lineImage: CSSProperties = {
+  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.58,
+};
+
+const lineOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.64) 52%, rgba(0,0,0,0.98) 100%), linear-gradient(90deg, rgba(0,0,0,0.72), transparent)',
+};
+
+const lineContent: CSSProperties = {
+  position: 'absolute', inset: 0, padding: '1.5rem',
+  display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+};
+
+const lineNumber: CSSProperties = {
+  position: 'absolute', top: '1.2rem', left: '1.2rem', color: '#FFF12D',
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
+};
+
+const lineSystem: CSSProperties = {
+  color: 'rgba(255,241,45,0.82)', fontFamily: 'var(--font-display)',
+  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', margin: '0 0 0.7rem',
+};
+
+const lineTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.3rem, 5vw, 5rem)',
+  lineHeight: 0.9, letterSpacing: '-0.05em', margin: 0, textTransform: 'uppercase',
+};
+
+const lineBody: CSSProperties = {
+  color: 'rgba(255,255,255,0.7)', fontSize: '1rem',
+  lineHeight: 1.6, margin: '1rem 0 0', maxWidth: '520px',
+};
+
+const miniTags: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.2rem' };
+
+const miniTag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.72)',
+  padding: '0.42rem 0.6rem', fontFamily: 'var(--font-display)',
+  fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em',
+};
+
+const explore: CSSProperties = {
+  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
+};
+
+const comparisonSection: CSSProperties = {
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))',
+  borderTop: '1px solid rgba(255,255,255,0.08)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+};
+
+const comparisonGrid: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gap: '1rem', marginTop: '2.4rem',
+};
+
+const comparisonCard: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)',
+  padding: '1.4rem', minHeight: '260px',
+};
+
+const comparisonTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)', fontSize: '2.1rem',
+  lineHeight: 1, margin: 0, letterSpacing: '-0.04em',
+};
+
+const comparisonBody: CSSProperties = {
+  color: 'rgba(255,255,255,0.62)', lineHeight: 1.65,
+  fontSize: '0.95rem', margin: '1rem 0 0',
+};
+
+const cta: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+  borderTop: '1px solid rgba(255,241,45,0.2)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+};
+
+const yellowButton: CSSProperties = {
+  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
+  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem',
+};
+
+const darkButton: CSSProperties = {
+  display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
+  textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700,
+  letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem',
+  border: '1px solid rgba(255,241,45,0.4)',
+};
