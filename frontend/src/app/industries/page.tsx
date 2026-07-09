@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 const INDUSTRIES = [
@@ -41,6 +41,7 @@ export default function IndustriesPage() {
 
   return (
     <main style={main}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <Link href="/" style={homeButton}>HOME</Link>
@@ -54,7 +55,7 @@ export default function IndustriesPage() {
           <h1 style={heroTitle}>
             Built For
             <br />
-            Severe-Duty Work
+            <span style={{ color: '#FFF12D' }}>Severe-Duty Work</span>
           </h1>
           <p style={heroLead}>
             Every industry has a different contamination profile. ELIMFILTERS structures protection around the machine, the environment, the duty cycle, and the cost of downtime.
@@ -128,12 +129,15 @@ export default function IndustriesPage() {
   );
 }
 
-const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
+const displayFont = 'Chakra Petch, Arial Narrow, monospace';
+const bodyFont = 'Barlow, Arial, sans-serif';
+
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
 const homeButton: CSSProperties = {
   position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
   background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
   fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
   padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
 };
@@ -156,27 +160,27 @@ const heroOverlay: CSSProperties = {
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 
 const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.75rem',
-  fontWeight: 700, letterSpacing: '0.3em', margin: '0 0 1rem',
+  color: '#FFF12D', fontFamily: displayFont, fontSize: '0.75rem',
+  fontWeight: 700, letterSpacing: '0.34em', margin: '0 0 1.25rem', textTransform: 'uppercase',
 };
 
 const heroTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
   lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
   maxWidth: '980px', margin: 0, textTransform: 'uppercase',
 };
 
 const heroLead: CSSProperties = {
-  marginTop: '2rem', maxWidth: '760px', color: 'rgba(255,255,255,0.78)',
-  fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
+  marginTop: '2rem', maxWidth: '770px', color: 'rgba(255,255,255,0.76)',
+  fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
 };
 
 const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
 
 const tag: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.18)', padding: '0.82rem 1rem',
-  fontFamily: 'var(--font-display)', fontSize: '0.74rem',
-  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.88)',
+  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
+  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
 };
 
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
@@ -188,8 +192,8 @@ const twoCol: CSSProperties = {
 };
 
 const sectionTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-  lineHeight: 0.95, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
+  fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
 const leadText: CSSProperties = {
@@ -228,12 +232,12 @@ const marketContent: CSSProperties = {
 
 const marketNumber: CSSProperties = {
   position: 'absolute', top: '1.1rem', left: '1.2rem', color: '#FFF12D',
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
 };
 
 const marketTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 2vw, 1.9rem)',
-  lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
+  fontFamily: displayFont, fontSize: 'clamp(1.4rem, 2vw, 1.9rem)',
+  lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
 const marketLine: CSSProperties = {
@@ -242,7 +246,7 @@ const marketLine: CSSProperties = {
 };
 
 const explore: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
+  color: '#FFF12D', fontFamily: displayFont, fontWeight: 700,
   letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
 };
 
@@ -254,13 +258,13 @@ const cta: CSSProperties = {
 
 const yellowButton: CSSProperties = {
   display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em',
-  fontSize: '0.82rem', padding: '1rem 1.25rem',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
 
 const darkButton: CSSProperties = {
   display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
-  textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700,
-  letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem',
-  border: '1px solid rgba(255,241,45,0.4)',
+  textDecoration: 'none', fontFamily: displayFont, fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem',
+  border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase',
 };
