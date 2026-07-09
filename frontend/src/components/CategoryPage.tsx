@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -149,7 +149,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             <Link
               href="/"
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: 'var(--font-mono)',
                 fontSize: '0.62rem',
                 letterSpacing: '0.1em',
                 color: 'rgba(255,255,255,0.4)',
@@ -161,11 +161,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             >
               {t('category.home', 'HOME')}
             </Link>
-            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>â†’</span>
             <Link
               href={CATEGORY_URLS[category]}
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: 'var(--font-mono)',
                 fontSize: '0.62rem',
                 letterSpacing: '0.1em',
                 color: 'rgba(255,255,255,0.4)',
@@ -177,10 +177,10 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             >
               {categoryLabel.toUpperCase()}
             </Link>
-            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>â†’</span>
             <span
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: 'var(--font-mono)',
                 fontSize: '0.62rem',
                 letterSpacing: '0.1em',
                 color: '#FFF12D',
@@ -205,18 +205,18 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         {geoData?.directAnswer && (
           <section style={{ padding: '3rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                 INDUSTRIAL CONTEXT
               </p>
-              <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'Titillium Web, sans-serif', width: '100%' }}>
-                {geoData.directAnswer.split('®').map((part, i, arr) =>
+              <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-display)', width: '100%' }}>
+                {geoData.directAnswer.split('Â®').map((part, i, arr) =>
                   i < arr.length - 1
-                    ? <span key={i}>{part}<sup style={{ fontSize: '0.6em', verticalAlign: 'super', lineHeight: 0 }}>®</sup></span>
+                    ? <span key={i}>{part}<sup style={{ fontSize: '0.6em', verticalAlign: 'super', lineHeight: 0 }}>Â®</sup></span>
                     : part
                 )}
               </p>
               {geoData.lastUpdated && (
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.25)', marginTop: '1.5rem', letterSpacing: '0.1em' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'rgba(255,255,255,0.25)', marginTop: '1.5rem', letterSpacing: '0.1em' }}>
                   LAST UPDATED: {geoData.lastUpdated}
                 </p>
               )}
@@ -229,14 +229,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           <section style={{ padding: '2.5rem 2rem', background: 'rgba(255,241,45,0.03)', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <AnimateIn>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '0.75rem' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '0.75rem' }}>
                   OPERATIONAL OBJECTIVE
                 </p>
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.15rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1rem, 2vw, 1.15rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
                   {geoData.operationalObjective.headline}
                 </p>
                 {geoData.operationalObjective.lines.map((line, i) => (
-                  <p key={i} style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'Outfit, sans-serif', marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.5rem' : 0 }}>
+                  <p key={i} style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-display)', marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.5rem' : 0 }}>
                     {line}
                   </p>
                 ))}
@@ -262,7 +262,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                     <span
                       style={{
-                        fontFamily: 'JetBrains Mono, monospace',
+                        fontFamily: 'var(--font-mono)',
                         fontSize: '0.6rem',
                         letterSpacing: '0.2em',
                         color: '#FFF12D',
@@ -275,7 +275,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     style={{
                       fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                       fontWeight: 700,
-                      fontFamily: 'Titillium Web, sans-serif',
+                      fontFamily: 'var(--font-display)',
                       color: 'rgba(255,255,255,0.75)',
                       marginBottom: '1.5rem',
                       lineHeight: 1.2,
@@ -285,13 +285,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   </h3>
                   {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
                     <div style={{ marginBottom: '1.5rem' }}>
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '0.6rem' }}>
+                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.15em', color: '#FFF12D', marginBottom: '0.6rem' }}>
                         PROTECTED ASSETS
                       </p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                         {geoData.protectedAssets.map((asset) => (
-                          <span key={asset} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
-                            · {asset}
+                          <span key={asset} style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
+                            Â· {asset}
                           </span>
                         ))}
                       </div>
@@ -305,7 +305,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: i === 0 ? '1rem' : '0.95rem',
                           lineHeight: 1.8,
                           color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)',
-                          fontFamily: 'Titillium Web, sans-serif',
+                          fontFamily: 'var(--font-display)',
                           marginBottom: i < item.videoBody!.length - 1 ? '1rem' : 0,
                         }}
                       >
@@ -319,7 +319,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: '1rem',
                           lineHeight: 1.8,
                           color: 'rgba(255,255,255,0.8)',
-                          fontFamily: 'Titillium Web, sans-serif',
+                          fontFamily: 'var(--font-display)',
                           marginBottom: '1rem',
                         }}
                       >
@@ -330,7 +330,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                           fontSize: '0.95rem',
                           lineHeight: 1.8,
                           color: 'rgba(255,255,255,0.7)',
-                          fontFamily: 'Titillium Web, sans-serif',
+                          fontFamily: 'var(--font-display)',
                         }}
                       >
                         Every micron of contamination matters. ELIMFILTERS systems help {item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.
@@ -398,7 +398,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: '0.6rem',
                     letterSpacing: '0.2em',
                     color: '#FFF12D',
@@ -409,7 +409,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
@@ -424,13 +424,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </h2>
               <p
                 style={{
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.5)',
                   lineHeight: 1.7,
                   maxWidth: '420px',
                 }}
-                dangerouslySetInnerHTML={{ __html: item.description.replace(/®/g, '<sup style="font-size:0.55em;vertical-align:super;line-height:0">®</sup>') }}
+                dangerouslySetInnerHTML={{ __html: item.description.replace(/Â®/g, '<sup style="font-size:0.55em;vertical-align:super;line-height:0">Â®</sup>') }}
               />
             </AnimateIn>
 
@@ -464,7 +464,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: '0.6rem',
                     letterSpacing: '0.2em',
                     color: '#FFF12D',
@@ -475,7 +475,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontWeight: 700,
                   fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
                   color: '#fff',
@@ -490,13 +490,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </h2>
               <p
                 style={{
-                  fontFamily: 'Inter, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '0.9rem',
                   color: 'rgba(255,255,255,0.5)',
                   lineHeight: 1.8,
                 }}
               >
-                {item.engineeringBody ?? 'ELIMFILTERS engineering is built around Total Asset Protection — controlling contamination at the source to prevent degradation, extend equipment lifespan and reduce the total cost of ownership across all critical industrial systems.'}
+                {item.engineeringBody ?? 'ELIMFILTERS engineering is built around Total Asset Protection â€” controlling contamination at the source to prevent degradation, extend equipment lifespan and reduce the total cost of ownership across all critical industrial systems.'}
               </p>
             </AnimateIn>
 
@@ -521,7 +521,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                   />
                   <span
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: 'var(--font-mono)',
                       fontSize: '0.65rem',
                       letterSpacing: '0.15em',
                       color: 'rgba(255,255,255,0.5)',
@@ -546,7 +546,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                     >
                       <span
                         style={{
-                          fontFamily: 'Inter, sans-serif',
+                          fontFamily: 'var(--font-body)',
                           fontSize: '0.82rem',
                           color: 'rgba(255,255,255,0.5)',
                         }}
@@ -555,13 +555,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       </span>
                       <span
                         style={{
-                          fontFamily: 'JetBrains Mono, monospace',
+                          fontFamily: 'var(--font-mono)',
                           fontSize: '0.7rem',
                           color: '#FFF12D',
                           letterSpacing: '0.05em',
                         }}
                       >
-                        {t('category.active', '✓ ACTIVE')}
+                        {t('category.active', 'âœ“ ACTIVE')}
                       </span>
                     </motion.div>
                   ))}
@@ -603,7 +603,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 <div style={{ width: '32px', height: '2px', background: '#FFF12D' }} />
                 <span
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: '0.6rem',
                     letterSpacing: '0.2em',
                     color: '#FFF12D',
@@ -614,7 +614,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               </div>
               <h2
                 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontWeight: 700,
                   fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
                   color: '#fff',
@@ -642,11 +642,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         marginTop: '0.2rem',
                       }}
                     >
-                      ✓
+                      âœ“
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'var(--font-body)',
                         fontSize: '0.9rem',
                         color: 'rgba(255,255,255,0.8)',
                         lineHeight: 1.6,
@@ -688,13 +688,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                       <span
                         key={ps}
                         style={{
-                          fontFamily: 'Outfit, sans-serif',
+                          fontFamily: 'var(--font-display)',
                           fontSize: '0.8rem',
                           color: 'rgba(255,255,255,0.55)',
                           lineHeight: 1.5,
                         }}
                       >
-                        · {ps}
+                        Â· {ps}
                       </span>
                     ))}
                   </div>
@@ -703,7 +703,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               )}
               <h3
                 style={{
-                  fontFamily: 'Titillium Web, sans-serif',
+                  fontFamily: 'var(--font-display)',
                   fontWeight: 700,
                   fontSize: '0.72rem',
                   letterSpacing: '0.15em',
@@ -715,19 +715,19 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 {t('category.technologiesIncluded', 'Technologies Included')}
               </h3>
               {geoData?.techFocus && (
-                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', marginBottom: '1rem', lineHeight: 1.5 }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', marginBottom: '1rem', lineHeight: 1.5 }}>
                   {geoData.techFocus}
                 </p>
               )}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'HYDROCORE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
-                  const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
+                {(item.techTags || ['SYNTRAXâ„¢', 'NANOFORCEâ„¢', 'HYDROCOREâ„¢', 'MACROCOREâ„¢', 'SYNTEPOREâ„¢', 'INTEKCOREâ„¢']).map((tech) => {
+                  const slug = tech.toLowerCase().replace(/â„¢|Â®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
                   return (
                     <Link
                       key={tech}
                       href={`/technologies/${slug}`}
                       style={{
-                        fontFamily: 'JetBrains Mono, monospace',
+                        fontFamily: 'var(--font-mono)',
                         fontSize: '0.62rem',
                         letterSpacing: '0.05em',
                         padding: '0.3rem 0.7rem',
@@ -764,18 +764,18 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           <section style={{ padding: '4rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
               <AnimateIn>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                   KNOWLEDGE NETWORK
                 </p>
-                <h2 style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif', color: '#fff', marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#fff', marginBottom: '2rem' }}>
                   Protection Systems Applied
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
                   {geoData.knowledgeLinks.map(({ label, href }) => {
                     const inner = (
                       <div style={{ padding: '1rem 1.25rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '4px', background: '#000' }}>
-                        <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', display: 'block' }}>
-                          {label} {href ? '→' : ''}
+                        <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', display: 'block' }}>
+                          {label} {href ? 'â†’' : ''}
                         </span>
                       </div>
                     );
@@ -799,10 +799,10 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}>
               <AnimateIn>
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
                   {geoData.preCtaQuote.line1}
                 </p>
-                <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
                   {geoData.preCtaQuote.line2}
                 </p>
               </AnimateIn>
@@ -822,13 +822,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         {industryLinks && (
           <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '2rem' }}>
                 KNOWLEDGE NETWORK
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem' }}>
                 {industryLinks.contamination && industryLinks.contamination.length > 0 && (
                   <div>
-                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
                       Contamination Threats
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
@@ -836,11 +836,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         <Link
                           key={link.href}
                           href={link.href}
-                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                           onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                           onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
                         >
-                          → {link.label}
+                          â†’ {link.label}
                         </Link>
                       ))}
                     </div>
@@ -848,7 +848,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 )}
                 {industryLinks.systems && industryLinks.systems.length > 0 && (
                   <div>
-                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
                       Protection Systems
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
@@ -856,11 +856,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         <Link
                           key={link.href}
                           href={link.href}
-                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                           onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                           onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
                         >
-                          → {link.label}
+                          â†’ {link.label}
                         </Link>
                       ))}
                     </div>
@@ -868,7 +868,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                 )}
                 {industryLinks.knowledge && industryLinks.knowledge.length > 0 && (
                   <div>
-                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.15em', color: 'rgba(255,255,255,0.28)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
                       Knowledge System
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
@@ -876,11 +876,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
                         <Link
                           key={link.href}
                           href={link.href}
-                          style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                           onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
                           onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
                         >
-                          → {link.label}
+                          â†’ {link.label}
                         </Link>
                       ))}
                     </div>
@@ -907,17 +907,17 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               })}}
             />
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', marginBottom: '1rem' }}>
                 COMMON QUESTIONS
               </p>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#fff', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#fff', marginBottom: '3rem' }}>
                 Frequently Asked Questions
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {geoData.faq.map(({ q, a }) => (
                   <div key={q} style={{ padding: '1.75rem', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', background: '#000' }}>
-                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
-                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'Titillium Web, sans-serif', margin: 0 }}>{a}</p>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, fontFamily: 'var(--font-display)', color: 'rgba(255,255,255,0.9)', marginBottom: '0.75rem' }}>{q}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-display)', margin: 0 }}>{a}</p>
                   </div>
                 ))}
               </div>
@@ -928,3 +928,4 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     </>
   );
 }
+
