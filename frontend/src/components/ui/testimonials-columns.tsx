@@ -4,11 +4,16 @@ import { motion } from "motion/react";
 
 export type Testimonial = {
   text: string;
-  image: string;
-  name: string;
   role: string;
-  company: string;
+  sector: string;
 };
+
+function monogram(role: string): string {
+  const words = role.split(' ').filter(Boolean);
+  const first = words[0]?.[0] ?? '';
+  const second = words[1]?.[0] ?? '';
+  return (first + second).toUpperCase();
+}
 
 export const TestimonialsColumn = (props: {
   className?: string;
@@ -29,7 +34,7 @@ export const TestimonialsColumn = (props: {
       >
         {[...new Array(2).fill(0).map((_, index) => (
           <React.Fragment key={index}>
-            {props.testimonials.map(({ text, image, name, role, company }, i) => (
+            {props.testimonials.map(({ text, role, sector }, i) => (
               <div
                 key={i}
                 className="p-6 rounded-2xl max-w-xs w-full"
@@ -46,17 +51,24 @@ export const TestimonialsColumn = (props: {
                   color: 'rgba(255,255,255,0.72)',
                   textAlign: 'left',
                 }}>
-                  &ldquo;{text}&rdquo;
+                  {text}
                 </p>
                 <div className="flex items-center gap-3 mt-5">
-                  <img
-                    width={40}
-                    height={40}
-                    src={image}
-                    alt={name}
-                    className="h-10 w-10 rounded-full object-cover"
-                    style={{ border: '1px solid rgba(255,241,45,0.2)' }}
-                  />
+                  <div
+                    aria-hidden="true"
+                    className="h-10 w-10 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      border: '1px solid rgba(255,241,45,0.3)',
+                      background: 'rgba(255,241,45,0.06)',
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 700,
+                      fontSize: '0.72rem',
+                      color: '#FFF12D',
+                      letterSpacing: '0.02em',
+                    }}
+                  >
+                    {monogram(role)}
+                  </div>
                   <div>
                     <div style={{
                       fontFamily: 'var(--font-body)',
@@ -64,7 +76,7 @@ export const TestimonialsColumn = (props: {
                       fontSize: '0.85rem',
                       color: '#fff',
                       lineHeight: 1.3,
-                    }}>{name}</div>
+                    }}>{role}</div>
                     <div style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '0.68rem',
@@ -72,7 +84,7 @@ export const TestimonialsColumn = (props: {
                       lineHeight: 1.4,
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
-                    }}>{role} · {company}</div>
+                    }}>{sector}</div>
                   </div>
                 </div>
               </div>
