@@ -138,6 +138,8 @@ export default function ContactPage() {
       <section
         style={{
           minHeight: '88vh',
+          position: 'relative',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           background:
@@ -146,7 +148,29 @@ export default function ContactPage() {
           padding: '6rem clamp(1.25rem,5vw,2rem) 4rem',
         }}
       >
-        <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%' }}>
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/images/contacto-papa.avif)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 50%',
+            opacity: 0.38,
+            zIndex: 0,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.68) 46%, rgba(0,0,0,0.24) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+            zIndex: 1,
+          }}
+        />
+        <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
           <p
             style={{
               color: '#FFF12D',
@@ -494,3 +518,4 @@ export default function ContactPage() {
     </main>
   );
 }
+
