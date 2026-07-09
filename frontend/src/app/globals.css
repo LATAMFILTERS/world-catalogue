@@ -1,10 +1,10 @@
-﻿@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
-  /* Colors */
   --volt: #FFF12D;
   --bg: #000000;
   --surface: #050505;
@@ -16,27 +16,23 @@
   --text-muted: rgba(255, 255, 255, 0.55);
   --text-subtle: rgba(255, 255, 255, 0.35);
 
-  /* Typography â€” font stacks via CSS variables from next/font */
-  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-display), 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: var(--font-mono), 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Barlow', Arial, sans-serif;
+  --font-display: 'Chakra Petch', 'Arial Narrow', monospace;
+  --font-mono: 'Chakra Petch', 'Arial Narrow', monospace;
 
-  /* Type scale â€” fluid, mobile-first */
-  --text-xs:   clamp(0.7rem,  1.5vw, 0.75rem);   /* labels, tags, monospace */
-  --text-sm:   clamp(0.85rem, 1.8vw, 0.9rem);    /* captions, secondary */
-  --text-base: clamp(0.95rem, 2vw,   1rem);       /* body â€” min 15px */
-  --text-lg:   clamp(1.05rem, 2.2vw, 1.15rem);   /* lead text */
-  --text-xl:   clamp(1.2rem,  2.5vw, 1.4rem);    /* subheadings */
-  --text-2xl:  clamp(1.4rem,  3vw,   1.9rem);    /* section headings */
-  --text-3xl:  clamp(1.7rem,  3.5vw, 2.5rem);    /* page headings */
-  --text-4xl:  clamp(2rem,    4vw,   3.2rem);    /* hero headings */
+  --text-xs: clamp(0.7rem, 1.5vw, 0.75rem);
+  --text-sm: clamp(0.85rem, 1.8vw, 0.9rem);
+  --text-base: clamp(0.95rem, 2vw, 1rem);
+  --text-lg: clamp(1.05rem, 2.2vw, 1.15rem);
+  --text-xl: clamp(1.2rem, 2.5vw, 1.4rem);
+  --text-2xl: clamp(1.4rem, 3vw, 1.9rem);
+  --text-3xl: clamp(1.7rem, 3.5vw, 2.5rem);
+  --text-4xl: clamp(2rem, 4vw, 3.2rem);
 
-  /* Spacing */
   --section-px: clamp(1.25rem, 6vw, 6rem);
   --section-py: clamp(3rem, 7vw, 6rem);
 }
 
-/* â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -46,11 +42,9 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  /* Prevent layout shift from scrollbar */
   scrollbar-gutter: stable;
 }
 
-/* â”€â”€ Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body {
   background: var(--bg);
   color: var(--text);
@@ -63,19 +57,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Paragraphs â€” left-aligned, never justified (kills mobile readability) */
 p {
   text-align: left;
   line-height: 1.75;
   font-size: var(--text-base);
 }
 
-/* Headings use display font */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
 }
 
 img, video, iframe {
@@ -87,7 +79,6 @@ svg {
   max-width: 100%;
 }
 
-/* Â® in headings â€” reduce to superscript size so it doesn't look oversized */
 h1 .reg-sup,
 h2 .reg-sup,
 h3 .reg-sup,
@@ -99,7 +90,6 @@ h4 .reg-sup {
   letter-spacing: 0;
 }
 
-/* â”€â”€ Typography utility classes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .font-display {
   font-family: var(--font-display);
 }
@@ -112,7 +102,6 @@ h4 .reg-sup {
   font-family: var(--font-mono);
 }
 
-/* Friendly readable sizes */
 .text-readable {
   font-size: var(--text-base);
   line-height: 1.75;
@@ -125,7 +114,6 @@ h4 .reg-sup {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* Volt glow effect */
 .volt-glow {
   box-shadow: 0 0 20px rgba(255, 241, 45, 0.3), 0 0 40px rgba(255, 241, 45, 0.1);
 }
@@ -134,384 +122,7 @@ h4 .reg-sup {
   text-shadow: 0 0 20px rgba(255, 241, 45, 0.5);
 }
 
-/* Card hover effect */
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--border);
 }
-
-.card-hover:hover {
-  border-color: var(--volt);
-  box-shadow: 0 0 24px rgba(255, 241, 45, 0.15), inset 0 0 24px rgba(255, 241, 45, 0.03);
-  transform: translateY(-2px);
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 241, 45, 0.3);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--volt);
-}
-
-/* Selection */
-::selection {
-  background: rgba(255, 241, 45, 0.3);
-  color: #000;
-}
-
-/* Hero gradient overlay */
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.5) 40%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-}
-
-/* Section divider */
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-}
-
-/* Tag styles */
-.tech-tag {
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.5rem;
-  border: 1px solid var(--border);
-  color: var(--volt);
-  background: rgba(255, 241, 45, 0.05);
-  border-radius: 2px;
-}
-
-/* Animated underline */
-.animated-underline {
-  position: relative;
-}
-
-.animated-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--volt);
-  transition: width 0.3s ease;
-}
-
-.animated-underline:hover::after {
-  width: 100%;
-}
-
-/* Number display */
-.stat-number {
-  font-family: var(--font-space-grotesk), sans-serif;
-  font-weight: 700;
-  color: var(--volt);
-  line-height: 1;
-}
-
-/* CTA button */
-.btn-volt {
-  background: var(--volt);
-  color: #000;
-  font-family: var(--font-outfit), sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-volt::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0);
-  transition: background 0.2s ease;
-}
-
-.btn-volt:hover::after {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.btn-volt:hover {
-  box-shadow: 0 0 30px rgba(255, 241, 45, 0.5);
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  border: 1px solid var(--volt);
-  color: var(--volt);
-  font-family: var(--font-outfit), sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  transition: all 0.2s ease;
-}
-
-.btn-outline:hover {
-  background: var(--volt);
-  color: #000;
-  box-shadow: 0 0 20px rgba(255, 241, 45, 0.3);
-}
-
-/* Grid layout helpers */
-.industry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--border);
-}
-
-.industry-grid > * {
-  background: var(--bg);
-}
-
-/* â”€â”€ Responsive grid overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-/* Tablet (â‰¤1024px) */
-@media (max-width: 1024px) {
-  .product-desc-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
-  .product-compare-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-  .spotlight-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-  .why-grid { grid-template-columns: 1fr !important; }
-  .tech-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .asset-protection-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-  .marine-product-image { width: 100% !important; height: 280px !important; margin-left: 0 !important; margin-top: 0 !important; }
-}
-
-/* Mobile (â‰¤768px) */
-@media (max-width: 768px) {
-  .product-desc-grid { gap: 2rem !important; }
-  .product-specs-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
-  .product-compare-grid { gap: 1.5rem !important; }
-  .spotlight-grid { padding: 1.5rem !important; }
-  .tech-grid { grid-template-columns: 1fr !important; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .problem-grid { grid-template-columns: 1fr !important; }
-  .hero-bottom { flex-direction: column !important; gap: 1rem !important; }
-  .footer-bottom { flex-direction: column !important; gap: 2rem !important; text-align: center !important; }
-  .footer-bottom > div { text-align: center !important; }
-  .home-hero-section { padding: 0 5% 80px !important; padding-top: 100px !important; }
-}
-
-/* Small mobile (â‰¤480px) */
-@media (max-width: 480px) {
-  .product-specs-grid { grid-template-columns: 1fr !important; }
-  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
-}
-/* Hero responsive height */
-.industry-hero-section { min-height: 100vh; }
-@media (max-width: 1024px) {
-  .industry-hero-section { min-height: 70vh !important; }
-}
-@media (max-width: 768px) {
-  .industry-hero-section { min-height: 60vh !important; }
-}
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-
-/* â”€â”€ Skip to content (accessibility) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.skip-to-content {
-  position: fixed;
-  top: -100%;
-  left: 1rem;
-  z-index: 99999;
-  background: var(--volt);
-  color: #000;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.6rem 1.25rem;
-  border-radius: 0 0 4px 4px;
-  text-decoration: none;
-  transition: top 0.15s ease;
-}
-
-.skip-to-content:focus {
-  top: 0;
-  outline: 2px solid #000;
-  outline-offset: 0;
-}
-
-/* â”€â”€ Focus-visible styles (keyboard navigation) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-:focus-visible {
-  outline: 2px solid var(--volt);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-a:focus-visible,
-button:focus-visible,
-[role="button"]:focus-visible {
-  outline: 2px solid var(--volt);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* Suppress focus ring on mouse clicks, keep for keyboard */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* â”€â”€ Back nav button â€” mobile responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.back-nav-btn {
-  /* Desktop: already positioned correctly via inline style */
-}
-
-@media (max-width: 768px) {
-  .back-nav-btn {
-    /* Move to left side on mobile to avoid hamburger menu collision */
-    right: auto !important;
-    left: 1rem !important;
-    font-size: 0.65rem !important;
-    padding: 0.35rem 0.75rem !important;
-  }
-}
-
-/* â”€â”€ Industries strip grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-@media (max-width: 1024px) {
-  .industries-strip { grid-template-columns: repeat(4, 1fr) !important; }
-}
-@media (max-width: 640px) {
-  .industries-strip { grid-template-columns: repeat(3, 1fr) !important; }
-}
-@media (max-width: 400px) {
-  .industries-strip { grid-template-columns: repeat(2, 1fr) !important; }
-}
-
-/* â”€â”€ Footer responsive grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.footer-main-grid {
-  display: grid;
-  grid-template-columns: 1.4fr repeat(5, 1fr);
-  gap: 24px 32px;
-  align-items: start;
-}
-
-.footer-nav-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 28px;
-}
-
-.footer-outer-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 80px;
-  align-items: start;
-}
-
-@media (max-width: 1280px) {
-  .footer-main-grid {
-    grid-template-columns: 1.2fr repeat(5, 1fr);
-    gap: 20px 24px;
-  }
-  .footer-nav-grid {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .footer-main-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2.5rem 1.5rem !important;
-  }
-  .footer-nav-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2rem 1.5rem !important;
-  }
-  .footer-outer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 3rem !important;
-  }
-  .footer-right-col {
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    gap: 1.5rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-main-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem 1.25rem !important;
-  }
-  .footer-nav-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem 1.25rem !important;
-  }
-}
-
-@media (max-width: 375px) {
-  .footer-main-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1.75rem 0.75rem !important;
-  }
-  .footer-nav-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1.75rem 0.75rem !important;
-    font-size: 0.82rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .footer-main-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  .footer-nav-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-}
-
-/* â”€â”€ Performance Metrics KPI grid â€” responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-@media (max-width: 768px) {
-  .stat-counter-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-@media (max-width: 480px) {
-  .stat-counter-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-
-/* â”€â”€ Footer right-col mobile visibility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-@media (max-width: 768px) {
-  .footer-right-col {
-    align-items: flex-start !important;
-  }
-  .footer-address {
-    text-align: left !important;
-  }
-}
-
-/* â”€â”€ Nav header mobile height â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-@media (max-width: 768px) {
-  .nav-logo {
-    height: 52px !important;
-  }
-}
-@media (max-width: 480px) {
-  .nav-logo {
-    height: 46px !important;
-  }
-}
-
