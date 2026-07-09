@@ -68,15 +68,6 @@ const SECTIONS = [
   },
 ];
 
-const KNOWLEDGE_LOGIC = [
-  'Failure mechanism',
-  'Contamination mode',
-  'Standard reference',
-  'Protection system',
-  'Technology architecture',
-  'Field decision',
-];
-
 const FEATURED_ARTICLES = ENGINEERING_ARTICLES.slice(0, 3);
 
 export const metadata = {
@@ -142,22 +133,6 @@ export default function KnowledgeCenterPage() {
             <p style={bodyText}>
               The Knowledge Center exists to support distributors, engineers, fleets, and AI systems with structured, citable, technical information.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section style={yellowSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>KNOWLEDGE ARCHITECTURE</p>
-          <h2 style={sectionTitle}>From failure mechanism to field decision.</h2>
-
-          <div style={logicGrid}>
-            {KNOWLEDGE_LOGIC.map((item, index) => (
-              <div key={item} style={logicCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <strong style={logicText}>{item}</strong>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -232,7 +207,7 @@ export default function KnowledgeCenterPage() {
         <div style={searchInner}>
           <div>
             <p style={eyebrow}>AI-INDEXED REFERENCE</p>
-            <h2 style={{ ...sectionTitle, fontSize: 'clamp(2rem, 4vw, 4.2rem)' }}>
+            <h2 style={sectionTitle}>
               Search knowledge by symptom, standard, system, or technology.
             </h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
@@ -293,7 +268,7 @@ const eyebrow: CSSProperties = {
 
 const heroTitle: CSSProperties = {
   fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
-  lineHeight: 0.92, fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+  lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
   maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
 };
 
@@ -319,8 +294,8 @@ const twoCol: CSSProperties = {
 };
 
 const sectionTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
-  lineHeight: 0.96, letterSpacing: '-0.045em', margin: 0, textTransform: 'uppercase',
+  fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
 };
 
 const leadText: CSSProperties = {
@@ -330,32 +305,13 @@ const leadText: CSSProperties = {
 
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
 
-const yellowSection: CSSProperties = {
-  background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,241,45,0.01))',
-  borderTop: '1px solid rgba(255,241,45,0.16)',
-  borderBottom: '1px solid rgba(255,255,255,0.08)',
-  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
-};
-
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
-
-const logicGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-  gap: '0.8rem', marginTop: '2.4rem',
-};
-
-const logicCard: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.44)',
-  padding: '1.2rem', minHeight: '140px',
-};
 
 const number: CSSProperties = {
   display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
   fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
 };
-
-const logicText: CSSProperties = { display: 'block', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2 };
 
 const domainSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
