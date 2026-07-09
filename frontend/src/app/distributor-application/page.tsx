@@ -1,70 +1,35 @@
 ﻿'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { AnimateIn } from '@/components/AnimateIn';
+import { useEffect, useState } from 'react';
 
 const TECHNOLOGIES = [
-  { code: 'MACROCOREâ„¢', domain: 'Engine / Lube / Hydraulic', href: '/technologies/macrocore' },
-  { code: 'MICROKAPPAâ„¢', domain: 'Sub-Micron Particle Capture', href: '/technologies/microkappa' },
-  { code: 'DRYCOREâ„¢', domain: 'Air Intake / Dust Separation', href: '/technologies/drycore' },
-  { code: 'INTEKCOREâ„¢', domain: 'Fuel / Water Separation', href: '/technologies/intekcore' },
-  { code: 'SYNTEPOREâ„¢', domain: 'Synthetic Depth Media', href: '/technologies/syntepore' },
-  { code: 'HYDROCOREâ„¢', domain: 'Hydraulic High-Pressure', href: '/technologies/hydrocore' },
-  { code: 'SYNTRAXâ„¢', domain: 'Active Synthetic Media', href: '/technologies/syntrax' },
-  { code: 'NANOFORCEâ„¢', domain: 'Sub-1um Particle Removal', href: '/technologies/nanoforce' },
-  { code: 'THERMACOREâ„¢', domain: 'Thermal Management', href: '/technologies/thermacore' },
+  { code: 'MACROCORE TM', domain: 'Air Intake / Severe Dust Protection', href: '/technologies/macrocore' },
+  { code: 'SYNTEPORE TM', domain: 'Fuel Cleanliness / Water Control', href: '/technologies/syntepore' },
+  { code: 'NANOFORCE TM', domain: 'Hydraulic Contamination Control', href: '/technologies/nanoforce' },
+  { code: 'SYNTRAX TM', domain: 'Lube Oil / Engine Protection', href: '/technologies/syntrax' },
+  { code: 'HYDROCORE TM', domain: 'Fuel Water Separation', href: '/technologies/hydrocore' },
+  { code: 'THERMACORE TM', domain: 'Cooling System Protection', href: '/technologies/thermacore' },
 ];
 
-const PARTNER_CRITERIA = [
-  {
-    code: '01',
-    title: 'Industrial Sector Access',
-    body: 'Active relationships with operators in mining, agriculture, marine, construction, oil & gas, power generation, or heavy transport. You serve equipment operators, not retail end-consumers.',
-  },
-  {
-    code: '02',
-    title: 'Technical Capability',
-    body: 'Ability to deliver system-level consultation â€” OEM cross-reference validation, ISO specification matching, application engineering. Filter distribution experience is an asset but not a requirement.',
-  },
-  {
-    code: '03',
-    title: 'Regional Coverage',
-    body: 'Defined service territory with distribution infrastructure. ELIMFILTERS prioritizes coverage gaps in LATAM, Southeast Asia, Middle East, and Sub-Saharan Africa where industrial asset density is highest.',
-  },
-  {
-    code: '04',
-    title: 'Asset Protection Alignment',
-    body: 'Willingness to position ELIMFILTERS as a contamination control system â€” not a filter SKU. Partners who sell on specification and system value, not on price and brand recognition.',
-  },
+const MARKETS = [
+  'Mining',
+  'Construction',
+  'Agriculture',
+  'Truck Fleets',
+  'Oil & Gas',
+  'Marine',
+  'Power Generation',
+  'Industrial Equipment',
 ];
 
 const PARTNER_VALUE = [
-  {
-    title: 'Proprietary Technology Portfolio',
-    body: '10 proprietary technologies covering all critical filtration domains: air, fuel, hydraulic, lube oil, cabin, and compressed air. No commodity product dependence.',
-  },
-  {
-    title: 'Knowledge System Access',
-    body: 'Full access to the ELIMFILTERS Knowledge System â€” ISO standards library, contamination case studies, fleet optimization frameworks â€” tools to sell by engineering value, not price.',
-  },
-  {
-    title: 'Technical Support Infrastructure',
-    body: 'Dedicated engineering support for OEM cross-reference validation, application specification, and fleet filtration system design. You have backing on every technical question.',
-  },
-  {
-    title: 'Warranty Coverage',
-    body: 'Non-prorated warranty with immediate replacement guarantee. Full asset protection warranty language supports distributor credibility with industrial clients.',
-  },
-  {
-    title: 'LATAM Operations Proximity',
-    body: 'Operations center in Barquisimeto, Venezuela provides regional support for LATAM distributors. Regional knowledge, Spanish-language support, proximity to key mining and agricultural markets.',
-  },
-  {
-    title: 'Category Leadership Positioning',
-    body: 'Represent a platform that defines a new category: industrial asset protection vs commodity filtration. Distributors who understand this distinction gain a defensible competitive position.',
-  },
+  'Technical selling position beyond commodity filter distribution.',
+  'Industrial asset protection language for fleets and equipment operators.',
+  'OEM cross-reference support and application validation.',
+  'Coverage across air, fuel, lube, hydraulic and cooling systems.',
+  'Brand platform built for severe-duty markets and distributor growth.',
+  'Commercial positioning focused on downtime reduction and service life.',
 ];
 
 const schemaService = {
@@ -78,7 +43,7 @@ const schemaService = {
     url: 'https://elimfilters.com',
   },
   description:
-    'Authorized distributor partnership program for industrial asset protection. ELIMFILTERS provides proprietary contamination control technologies across 12 industrial sectors.',
+    'Authorized distributor partnership program for industrial asset protection. ELIMFILTERS provides proprietary contamination control technologies across industrial sectors.',
   areaServed: 'Worldwide',
   serviceType: 'Industrial Distributor Partnership',
 };
@@ -146,14 +111,14 @@ export default function DistributorApplication() {
         email: '',
         phone: '',
         country: '',
-          state: '',
-          employees: '',
-          yearsInBusiness: '',
-          currentProducts: '',
-          serviceArea: '',
-          message: '',
-        });
-        setTimeout(() => setSubmitted(false), 5000);
+        state: '',
+        employees: '',
+        yearsInBusiness: '',
+        currentProducts: '',
+        serviceArea: '',
+        message: '',
+      });
+      setTimeout(() => setSubmitted(false), 5000);
     } catch {
       alert('Error sending application. Please try again.');
     }
@@ -161,908 +126,435 @@ export default function DistributorApplication() {
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
-    padding: '0.9rem 1rem',
-    background: 'rgba(255,255,255,0.05)',
-    border: '1px solid rgba(255,255,255,0.1)',
-    borderRadius: '0px',
-    color: 'rgba(255,255,255,0.85)',
-    fontFamily: "Barlow, Arial, sans-serif",
+    padding: '0.95rem 1rem',
+    background: 'rgba(255,255,255,0.045)',
+    border: '1px solid rgba(255,255,255,0.14)',
+    borderRadius: 0,
+    color: 'rgba(255,255,255,0.9)',
+    fontFamily: 'Barlow, Arial, sans-serif',
     fontSize: '0.95rem',
     boxSizing: 'border-box',
+    outline: 'none',
   };
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '0.85rem',
-    fontWeight: 600,
-    marginBottom: '0.5rem',
-    color: 'rgba(255,255,255,0.6)',
-    fontFamily: "Chakra Petch, Arial Narrow, monospace",
-    letterSpacing: '0.08em',
+    fontSize: '0.72rem',
+    fontWeight: 800,
+    marginBottom: '0.55rem',
+    color: 'rgba(255,255,255,0.58)',
+    fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+    letterSpacing: '0.18em',
+    textTransform: 'uppercase',
   };
 
   const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
-    e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.65)';
+    e.currentTarget.style.background = 'rgba(255,255,255,0.075)';
   };
+
   const onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-    e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
+    e.currentTarget.style.background = 'rgba(255,255,255,0.045)';
   };
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'Barlow, Arial, sans-serif', overflowX: 'hidden' }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
-      />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
       <Link
         href="/"
         style={{
           position: 'fixed',
           top: '1rem',
-          right: '1.5rem',
+          right: '1rem',
           zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          background: 'rgba(0,0,0,0.85)',
-          border: '1px solid rgba(255,241,45,0.35)',
-          borderRadius: '0px',
-          padding: '0.45rem 1rem',
-          fontFamily: "Barlow, Arial, sans-serif",
+          border: '1px solid rgba(255,241,45,0.45)',
+          padding: '0.55rem 1rem',
+          color: '#FFF12D',
+          background: 'rgba(0,0,0,0.88)',
+          textDecoration: 'none',
+          fontFamily: 'Chakra Petch, Arial Narrow, monospace',
           fontWeight: 700,
           fontSize: '0.72rem',
-          letterSpacing: '0.2em',
-          color: '#FFF12D',
-          textDecoration: 'none',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-          transition: 'background 0.2s, border-color 0.2s',
+          letterSpacing: '0.18em',
         }}
       >
-         HOME
+        HOME
       </Link>
 
-      {/* Hero */}
       <section
         style={{
-          marginTop: 0,
-          paddingTop: 'clamp(5rem, 12vh, 8rem)',
-          paddingBottom: 'clamp(3rem, 6vh, 5rem)',
-          background: 'radial-gradient(circle at top, rgba(255,241,45,0.16), transparent 32%), linear-gradient(135deg, rgba(255,255,255,0.055) 0%, transparent 32%, rgba(255,241,45,0.08) 100%)',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          minHeight: '92vh',
+          display: 'flex',
+          alignItems: 'center',
+          background:
+            'radial-gradient(circle at top, rgba(255,241,45,0.16), transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 36%, rgba(255,241,45,0.08) 100%)',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          padding: '6rem clamp(1.25rem,5vw,2rem) 4rem',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 clamp(1.25rem,5vw,2rem)' }}>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%' }}>
+          <p
             style={{
-              fontFamily: "Chakra Petch, Arial Narrow, monospace",
-              fontSize: '0.72rem',
-              letterSpacing: '0.2em',
               color: '#FFF12D',
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.34em',
+              textTransform: 'uppercase',
               marginBottom: '1.25rem',
             }}
           >
-            ENGINEERED PARTNERSHIP PROGRAM
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            Authorized Distributor Program
+          </p>
+
+          <h1
             style={{
-              fontSize: 'clamp(3.2rem, 7vw, 6.8rem)',
-              fontWeight: 900,
-              fontFamily: "Barlow, Arial, sans-serif",
-              lineHeight: 0.9,
-              textAlign: 'justify',
+              maxWidth: '980px',
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
+              lineHeight: 0.88,
+              letterSpacing: '-0.055em',
+              textTransform: 'uppercase',
               marginBottom: '1.5rem',
             }}
           >
-            Represent Total Asset Protection.<br />
-            <span style={{ color: '#FFF12D' }}>Not Commodity Filtration.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            Represent Total Asset
+            <span style={{ display: 'block', color: '#FFF12D' }}>Protection</span>
+          </h1>
+
+          <p
             style={{
-              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
-              lineHeight: 1.7,
-              textAlign: 'justify',
-              color: 'rgba(255,255,255,0.65)',
-              fontFamily: "Barlow, Arial, sans-serif",
-              maxWidth: '680px',
+              maxWidth: '760px',
+              color: 'rgba(255,255,255,0.76)',
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              lineHeight: 1.65,
+              fontWeight: 600,
+              marginBottom: '2rem',
             }}
           >
-            ELIMFILTERS authorized distributors represent a severe-duty protection platform built around contamination control, technical selling, OEM cross-reference intelligence and industrial reliability. This is not retail filter distribution. This is asset protection for fleets, equipment operators and critical industries.
-          </motion.p>
-        </div>
-      </section>
+            Join an industrial filtration platform built for severe-duty markets,
+            technical selling, OEM cross-reference intelligence and contamination control.
+          </p>
 
-      {/* 01 / WHY THIS IS DIFFERENT */}
-      <section style={{ padding: 'clamp(3rem,7vh,5rem) clamp(1.25rem,5vw,2rem)', background: '#000' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <AnimateIn>
-            <p
-              style={{
-                fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                fontSize: '0.65rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}
-            >
-              01 / WHY THIS IS DIFFERENT
-            </p>
-            <h2
-              style={{
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                fontWeight: 700,
-                fontFamily: "Barlow, Arial, sans-serif",
-                color: '#fff',
-                marginBottom: '1.5rem',
-                lineHeight: 1.25,
-                textAlign: 'justify',
-              }}
-            >
-              Most filter distributors sell SKUs. ELIMFILTERS distributors sell outcomes.
-            </h2>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '1.5rem',
-                marginTop: '2rem',
-              }}
-            >
-              <div
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
+            {['Technical Selling', 'Severe Duty Markets', 'Industrial Reliability'].map((item) => (
+              <span
+                key={item}
                 style={{
-                  padding: '1.75rem',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: '0px',
-                  background: '#050505',
+                  border: '1px solid rgba(255,255,255,0.14)',
+                  background: 'rgba(255,255,255,0.04)',
+                  padding: '0.75rem 1rem',
+                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.72)',
                 }}
               >
-                <p
-                  style={{
-                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.15em',
-                    color: 'rgba(255,255,255,0.35)',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  COMMODITY DISTRIBUTION
-                </p>
-                <p
-                  style={{
-                    fontSize: '0.9rem',
-                    lineHeight: 1.7,
-                    textAlign: 'justify',
-                    color: 'rgba(255,255,255,0.55)',
-                    fontFamily: "Barlow, Arial, sans-serif",
-                  }}
-                >
-                  Catalog selling. Compete on price and availability. OEM cross-reference matching as
-                  the primary value. Filter brands are interchangeable. Margin pressure from
-                  e-commerce. No defensible technical position.
-                </p>
-              </div>
-              <div
-                style={{
-                  padding: '1.75rem',
-                  border: '1px solid rgba(255,241,45,0.2)',
-                  borderRadius: '0px',
-                  background: 'rgba(255,241,45,0.02)',
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.15em',
-                    color: '#FFF12D',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  ASSET PROTECTION DISTRIBUTION
-                </p>
-                <p
-                  style={{
-                    fontSize: '0.9rem',
-                    lineHeight: 1.7,
-                    textAlign: 'justify',
-                    color: 'rgba(255,255,255,0.75)',
-                    fontFamily: "Barlow, Arial, sans-serif",
-                  }}
-                >
-                  System-level consultation. Sell on contamination control outcomes â€” bearing life
-                  extension, downtime reduction, total cost of ownership. ELIMFILTERS technologies
-                  are specified, not substituted. Technical value creates client retention.
-                </p>
-              </div>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* 02 / IDEAL PARTNER PROFILE */}
-      <section
-        style={{
-          padding: 'clamp(3rem,7vh,5rem) clamp(1.25rem,5vw,2rem)',
-          background: '#050505',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <AnimateIn>
-            <p
-              style={{
-                fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                fontSize: '0.65rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}
-            >
-              02 / IDEAL PARTNER PROFILE
-            </p>
-            <h2
-              style={{
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                fontWeight: 700,
-                fontFamily: "Barlow, Arial, sans-serif",
-                color: '#fff',
-                marginBottom: '2rem',
-                lineHeight: 1.25,
-                textAlign: 'justify',
-              }}
-            >
-              Who We're Looking For
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {PARTNER_CRITERIA.map(({ code, title, body }) => (
-                <div
-                  key={code}
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '2.5rem 1fr',
-                    gap: '1.25rem',
-                    padding: '1.5rem',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '0px',
-                    background: '#000',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                      fontSize: '0.65rem',
-                      color: '#FFF12D',
-                      letterSpacing: '0.1em',
-                      paddingTop: '0.2rem',
-                    }}
-                  >
-                    {code}
-                  </span>
-                  <div>
-                    <h3
-                      style={{
-                        fontSize: '0.95rem',
-                        fontWeight: 700,
-                        fontFamily: "Barlow, Arial, sans-serif",
-                        color: '#fff',
-                        marginBottom: '0.5rem',
-                      }}
-                    >
-                      {title}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: '0.875rem',
-                        lineHeight: 1.65,
-                        textAlign: 'justify',
-                        color: 'rgba(255,255,255,0.6)',
-                        fontFamily: "Barlow, Arial, sans-serif",
-                        margin: 0,
-                      }}
-                    >
-                      {body}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* 03 / WHAT YOU REPRESENT */}
-      <section
-        style={{
-          padding: 'clamp(3rem,7vh,5rem) clamp(1.25rem,5vw,2rem)',
-          background: '#000',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <AnimateIn>
-            <p
-              style={{
-                fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                fontSize: '0.65rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}
-            >
-              03 / WHAT YOU REPRESENT
-            </p>
-            <h2
-              style={{
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                fontWeight: 700,
-                fontFamily: "Barlow, Arial, sans-serif",
-                color: '#fff',
-                marginBottom: '0.75rem',
-                lineHeight: 1.25,
-                textAlign: 'justify',
-              }}
-            >
-              The Technology Portfolio
-            </h2>
-            <p
-              style={{
-                fontSize: '0.95rem',
-                color: 'rgba(255,255,255,0.55)',
-                fontFamily: "Barlow, Arial, sans-serif",
-                marginBottom: '2rem',
-                maxWidth: '600px',
-              }}
-            >
-              10 proprietary technologies covering every critical contamination domain across 12
-              industrial sectors.
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '0.75rem',
-              }}
-            >
-              {TECHNOLOGIES.map(({ code, domain, href }) => (
-                <Link
-                  key={code}
-                  href={href}
-                  style={{
-                    display: 'block',
-                    padding: '1.25rem',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '0px',
-                    background: '#050505',
-                    textDecoration: 'none',
-                    transition: 'border-color 0.2s',
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.borderColor = 'rgba(255,241,45,0.3)')
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)')
-                  }
-                >
-                  <p
-                    style={{
-                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      color: '#FFF12D',
-                      marginBottom: '0.35rem',
-                      letterSpacing: '0.05em',
-                    }}
-                  >
-                    {code}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '0.78rem',
-                      color: 'rgba(255,255,255,0.5)',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                      margin: 0,
-                    }}
-                  >
-                    {domain}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <p style={{ marginTop: '1.5rem' }}>
-              <Link
-                href="/technologies"
-                style={{
-                  fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                  fontSize: '0.7rem',
-                  letterSpacing: '0.15em',
-                  color: '#FFF12D',
-                  textDecoration: 'none',
-                }}
-              >
-                EXPLORE ALL TECHNOLOGIES &gt;
-              </Link>
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* 04 / PARTNER VALUE */}
-      <section
-        style={{
-          padding: 'clamp(3rem,7vh,5rem) clamp(1.25rem,5vw,2rem)',
-          background: '#050505',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <AnimateIn>
-            <p
-              style={{
-                fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                fontSize: '0.65rem',
-                letterSpacing: '0.2em',
-                color: '#FFF12D',
-                marginBottom: '0.75rem',
-              }}
-            >
-              04 / PARTNER VALUE
-            </p>
-            <h2
-              style={{
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                fontWeight: 700,
-                fontFamily: "Barlow, Arial, sans-serif",
-                color: '#fff',
-                marginBottom: '2rem',
-                lineHeight: 1.25,
-                textAlign: 'justify',
-              }}
-            >
-              What the Partnership Provides
-            </h2>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1rem',
-              }}
-            >
-              {PARTNER_VALUE.map(({ title, body }) => (
-                <div
-                  key={title}
-                  style={{
-                    padding: '1.5rem',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: '0px',
-                    background: '#000',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: '0.9rem',
-                      fontWeight: 700,
-                      fontFamily: "Barlow, Arial, sans-serif",
-                      color: '#FFF12D',
-                      marginBottom: '0.6rem',
-                    }}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '0.85rem',
-                      lineHeight: 1.65,
-                      textAlign: 'justify',
-                      color: 'rgba(255,255,255,0.6)',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                      margin: 0,
-                    }}
-                  >
-                    {body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* 05 / APPLICATION */}
-      <section
-        style={{
-          padding: 'clamp(3rem,7vh,5rem) clamp(1.25rem,5vw,2rem)',
-          background: '#000',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '4rem',
-              alignItems: 'start',
-            }}
-          >
-            {/* Left: context */}
-            <AnimateIn direction="left">
-              <div>
-                <p
-                  style={{
-                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.2em',
-                    color: '#FFF12D',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  05 / APPLICATION
-                </p>
-                <h2
-                  style={{
-                    fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                    fontWeight: 700,
-                    fontFamily: "Barlow, Arial, sans-serif",
-                    color: '#fff',
-                    marginBottom: '1.25rem',
-                    lineHeight: 1.25,
-                    textAlign: 'justify',
-                  }}
-                >
-                  Apply for Authorized Distributor Status
-                </h2>
-                <p
-                  style={{
-                    fontSize: '0.9rem',
-                    lineHeight: 1.7,
-                    textAlign: 'justify',
-                    color: 'rgba(255,255,255,0.6)',
-                    fontFamily: "Barlow, Arial, sans-serif",
-                    marginBottom: '2rem',
-                  }}
-                >
-                  The ELIMFILTERS commercial team reviews each application for regional coverage
-                  fit, industrial sector alignment, and technical capability. Applications that do
-                  not clearly define a service territory or industrial focus are typically not
-                  approved.
-                </p>
-                <p
-                  style={{
-                    fontSize: '0.85rem',
-                    lineHeight: 1.7,
-                    textAlign: 'justify',
-                    color: 'rgba(255,255,255,0.5)',
-                    fontFamily: "Barlow, Arial, sans-serif",
-                    marginBottom: '2rem',
-                  }}
-                >
-                  Response within 5 business days. Include specific details about your service
-                  territory, current industrial clients, and which sectors you serve.
-                </p>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.75rem',
-                    paddingTop: '1rem',
-                    borderTop: '1px solid rgba(255,255,255,0.08)',
-                  }}
-                >
-                  <p
-                    style={{
-                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                      fontSize: '0.6rem',
-                      letterSpacing: '0.15em',
-                      color: 'rgba(255,255,255,0.3)',
-                    }}
-                  >
-                    RELATED
-                  </p>
-                  <Link
-                    href="/industries"
-                    style={{
-                      fontSize: '0.82rem',
-                      color: 'rgba(255,255,255,0.55)',
-                      textDecoration: 'none',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
-                  >
-                    &gt; Industries We Serve
-                  </Link>
-                  <Link
-                    href="/technologies"
-                    style={{
-                      fontSize: '0.82rem',
-                      color: 'rgba(255,255,255,0.55)',
-                      textDecoration: 'none',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
-                  >
-                    &gt; Proprietary Technologies
-                  </Link>
-                  <Link
-                    href="/knowledge-system"
-                    style={{
-                      fontSize: '0.82rem',
-                      color: 'rgba(255,255,255,0.55)',
-                      textDecoration: 'none',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
-                  >
-                    &gt; Knowledge System
-                  </Link>
-                  <Link
-                    href="/contact"
-                    style={{
-                      fontSize: '0.82rem',
-                      color: 'rgba(255,255,255,0.55)',
-                      textDecoration: 'none',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
-                  >
-                    &gt; Technical Contact
-                  </Link>
-                </div>
-              </div>
-            </AnimateIn>
-
-            {/* Right: form */}
-            <AnimateIn direction="right">
-              <div
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,241,45,0.03) 0%, rgba(0,0,0,0.2) 100%)',
-                  border: '1px solid rgba(255,241,45,0.28)',
-                  borderRadius: '0px',
-                  padding: '2.5rem',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: '0.85rem',
-                    fontWeight: 700,
-                    fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                    letterSpacing: '0.2em',
-                    color: 'rgba(255,255,255,0.45)',
-                    marginBottom: '2rem',
-                  }}
-                >
-                  AUTHORIZED PARTNER APPLICATION
-                </h3>
-
-                {submitted && (
-                  <div
-                    style={{
-                      background: 'rgba(100,200,100,0.12)',
-                      border: '1px solid rgba(100,200,100,0.35)',
-                      borderRadius: '0px',
-                      padding: '1rem',
-                      marginBottom: '1.5rem',
-                      fontSize: '0.9rem',
-                      color: '#90ee90',
-                      fontFamily: "Barlow, Arial, sans-serif",
-                    }}
-                  >
-                    Application submitted. Our commercial team will review and respond within 5
-                    business days.
-                  </div>
-                )}
-
-                <form onSubmit={handleSubmit}>
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>COMPANY LEGAL NAME *</label>
-                    <input
-                      type="text"
-                      name="legalName"
-                      value={formData.legalName}
-                      onChange={handleChange}
-                      required
-                      style={inputStyle}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>CONTACT NAME *</label>
-                    <input
-                      type="text"
-                      name="contactName"
-                      value={formData.contactName}
-                      onChange={handleChange}
-                      required
-                      style={inputStyle}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>EMAIL *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      style={inputStyle}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>PHONE *</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      style={inputStyle}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr',
-                      gap: '1rem',
-                      marginBottom: '1.25rem',
-                    }}
-                  >
-                    <div>
-                      <label style={labelStyle}>COUNTRY *</label>
-                      <input
-                        type="text"
-                        name="country"
-                        value={formData.country}
-                        onChange={handleChange}
-                        required
-                        style={inputStyle}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                      />
-                    </div>
-                    <div>
-                      <label style={labelStyle}>STATE / PROVINCE</label>
-                      <input
-                        type="text"
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                        style={inputStyle}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                      />
-                    </div>
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>YEARS IN BUSINESS</label>
-                    <input
-                      type="number"
-                      name="yearsInBusiness"
-                      value={formData.yearsInBusiness}
-                      onChange={handleChange}
-                      style={inputStyle}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>CURRENT PRODUCT LINES</label>
-                    <textarea
-                      name="currentProducts"
-                      value={formData.currentProducts}
-                      onChange={handleChange}
-                      rows={3}
-                      style={{ ...inputStyle, resize: 'vertical' }}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.25rem' }}>
-                    <label style={labelStyle}>SERVICE TERRITORY / INDUSTRIES SERVED *</label>
-                    <textarea
-                      name="serviceArea"
-                      value={formData.serviceArea}
-                      onChange={handleChange}
-                      required
-                      rows={3}
-                      placeholder="Describe your geographic territory and the industrial sectors you currently serve (mining, agriculture, marine, etc.)"
-                      style={{ ...inputStyle, resize: 'vertical' }}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '1.75rem' }}>
-                    <label style={labelStyle}>ADDITIONAL INFORMATION</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      style={{ ...inputStyle, resize: 'vertical' }}
-                      onFocus={onFocus}
-                      onBlur={onBlur}
-                    />
-                  </div>
-
-                  {/* Turnstile captcha */}
-                  <div
-                    className="cf-turnstile"
-                    data-sitekey="0x4AAAAAAAAADqjDbXIBhXQVtSY"
-                    data-callback="onTurnstileSuccess"
-                    data-theme="dark"
-                    style={{ margin: '1rem 0' }}
-                  />
-
-                  <motion.button
-                    type="submit"
-                    disabled={!turnstileToken}
-                    whileHover={{ scale: turnstileToken ? 1.02 : 1, boxShadow: turnstileToken ? '0 0 28px rgba(255,241,45,0.35)' : 'none' }}
-                    style={{
-                      width: '100%',
-                      padding: '1rem',
-                      background: '#FFF12D',
-                      color: '#000',
-                      fontFamily: "Chakra Petch, Arial Narrow, monospace",
-                      fontWeight: 700,
-                      fontSize: '0.78rem',
-                      letterSpacing: '0.2em',
-                      border: 'none',
-                      borderRadius: '0px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    REQUEST DISTRIBUTOR REVIEW
-                  </motion.button>
-                </form>
-              </div>
-            </AnimateIn>
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* RetrievalBlock */}
-      <div style={{ padding: '0 clamp(1.25rem,5vw,2rem) 4rem' }}>
-      </div>
+      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem)', background: '#000' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', background: '#050505', padding: '1.6rem' }}>
+              <h2 style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '1.5rem', textTransform: 'uppercase', marginBottom: '0.8rem' }}>
+                Not Commodity Distribution
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.66)', lineHeight: 1.65, margin: 0 }}>
+                ELIMFILTERS distributors sell technical outcomes: downtime reduction,
+                cleaner systems, longer service life and better asset protection.
+              </p>
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,241,45,0.28)', background: 'rgba(255,241,45,0.035)', padding: '1.6rem' }}>
+              <h2 style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '1.5rem', textTransform: 'uppercase', marginBottom: '0.8rem' }}>
+                Built For Industrial Markets
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.65, margin: 0 }}>
+                Priority partners serve fleets, equipment operators, mining, construction,
+                agriculture, marine, oil and power generation accounts.
+              </p>
+            </div>
+
+            <div style={{ border: '1px solid rgba(255,255,255,0.1)', background: '#050505', padding: '1.6rem' }}>
+              <h2 style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '1.5rem', textTransform: 'uppercase', marginBottom: '0.8rem' }}>
+                Technical Sales Advantage
+              </h2>
+              <p style={{ color: 'rgba(255,255,255,0.66)', lineHeight: 1.65, margin: 0 }}>
+                Partners gain a stronger position by selling contamination control systems,
+                not interchangeable filter SKUs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem)', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, textTransform: 'uppercase', marginBottom: '1rem' }}>
+            Severe-Duty Coverage
+          </h2>
+          <p style={{ maxWidth: '680px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.65, marginBottom: '2rem' }}>
+            ELIMFILTERS is positioned for markets where equipment uptime, contamination control
+            and technical specification matter.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem' }}>
+            {MARKETS.map((market) => (
+              <div
+                key={market}
+                style={{
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(255,255,255,0.035)',
+                  padding: '1rem',
+                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                  color: 'rgba(255,255,255,0.78)',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
+                {market}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem)', background: '#000' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, textTransform: 'uppercase', marginBottom: '1rem' }}>
+            Technology Portfolio
+          </h2>
+          <p style={{ maxWidth: '720px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.65, marginBottom: '2rem' }}>
+            A focused portfolio covering air intake, fuel cleanliness, hydraulic protection,
+            lube oil protection, water separation and cooling system protection.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+            {TECHNOLOGIES.map((tech) => (
+              <Link
+                key={tech.code}
+                href={tech.href}
+                style={{
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(255,255,255,0.035)',
+                  padding: '1.35rem',
+                  textDecoration: 'none',
+                  transition: 'border-color 0.2s, background 0.2s',
+                }}
+              >
+                <div style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.35rem' }}>
+                  {tech.code}
+                </div>
+                <div style={{ color: 'rgba(255,255,255,0.58)', fontSize: '0.92rem' }}>
+                  {tech.domain}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/technologies"
+            style={{
+              display: 'inline-block',
+              marginTop: '1.5rem',
+              color: '#FFF12D',
+              textDecoration: 'none',
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Explore All Technologies &gt;
+          </Link>
+        </div>
+      </section>
+
+      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem)', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, textTransform: 'uppercase', marginBottom: '2rem' }}>
+            Partner Advantage
+          </h2>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            {PARTNER_VALUE.map((value) => (
+              <div
+                key={value}
+                style={{
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(255,255,255,0.035)',
+                  padding: '1.3rem',
+                  color: 'rgba(255,255,255,0.7)',
+                  lineHeight: 1.6,
+                  fontWeight: 600,
+                }}
+              >
+                {value}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem) 5rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'start' }}>
+          <div>
+            <h2 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: 'clamp(2rem, 4vw, 3.8rem)', lineHeight: 0.95, textTransform: 'uppercase', marginBottom: '1.2rem' }}>
+              Apply For Distributor Review
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.66)', lineHeight: 1.7, maxWidth: '560px', marginBottom: '1.5rem' }}>
+              Applications are reviewed for industrial sector alignment, regional coverage,
+              technical selling capability and fit with the ELIMFILTERS asset protection model.
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.48)', lineHeight: 1.7, maxWidth: '560px' }}>
+              Include specific details about your territory, current industrial clients,
+              product lines and the sectors you serve.
+            </p>
+          </div>
+
+          <div
+            style={{
+              border: '1px solid rgba(255,241,45,0.28)',
+              background: 'linear-gradient(135deg, rgba(255,241,45,0.055), rgba(255,255,255,0.025))',
+              padding: 'clamp(1.4rem, 4vw, 2.5rem)',
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                color: '#FFF12D',
+                fontSize: '0.9rem',
+                fontWeight: 700,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                marginBottom: '1.8rem',
+              }}
+            >
+              Authorized Partner Application
+            </h3>
+
+            {submitted && (
+              <div
+                style={{
+                  background: 'rgba(100,200,100,0.12)',
+                  border: '1px solid rgba(100,200,100,0.35)',
+                  padding: '1rem',
+                  marginBottom: '1.5rem',
+                  fontSize: '0.9rem',
+                  color: '#90ee90',
+                }}
+              >
+                Application submitted. Our commercial team will review and respond within 5 business days.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Company Legal Name *</label>
+                <input type="text" name="legalName" value={formData.legalName} onChange={handleChange} required style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Contact Name *</label>
+                <input type="text" name="contactName" value={formData.contactName} onChange={handleChange} required style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Email *</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Phone *</label>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.15rem' }}>
+                <div>
+                  <label style={labelStyle}>Country *</label>
+                  <input type="text" name="country" value={formData.country} onChange={handleChange} required style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+                <div>
+                  <label style={labelStyle}>State / Province</label>
+                  <input type="text" name="state" value={formData.state} onChange={handleChange} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Years In Business</label>
+                <input type="number" name="yearsInBusiness" value={formData.yearsInBusiness} onChange={handleChange} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Current Product Lines</label>
+                <textarea name="currentProducts" value={formData.currentProducts} onChange={handleChange} rows={3} style={{ ...inputStyle, resize: 'vertical' }} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div style={{ marginBottom: '1.15rem' }}>
+                <label style={labelStyle}>Service Territory / Industries Served *</label>
+                <textarea
+                  name="serviceArea"
+                  value={formData.serviceArea}
+                  onChange={handleChange}
+                  required
+                  rows={3}
+                  placeholder="Describe your geographic territory and the industrial sectors you currently serve."
+                  style={{ ...inputStyle, resize: 'vertical' }}
+                  onFocus={onFocus}
+                  onBlur={onBlur}
+                />
+              </div>
+
+              <div style={{ marginBottom: '1.5rem' }}>
+                <label style={labelStyle}>Additional Information</label>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={4} style={{ ...inputStyle, resize: 'vertical' }} onFocus={onFocus} onBlur={onBlur} />
+              </div>
+
+              <div
+                className="cf-turnstile"
+                data-sitekey="0x4AAAAAAAAADqjDbXIBhXQVtSY"
+                data-callback="onTurnstileSuccess"
+                data-theme="dark"
+                style={{ margin: '1rem 0' }}
+              />
+
+              <button
+                type="submit"
+                disabled={!turnstileToken}
+                style={{
+                  width: '100%',
+                  padding: '1rem',
+                  background: turnstileToken ? '#FFF12D' : 'rgba(255,255,255,0.18)',
+                  color: turnstileToken ? '#000' : 'rgba(255,255,255,0.5)',
+                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.18em',
+                  border: 'none',
+                  cursor: turnstileToken ? 'pointer' : 'not-allowed',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Request Distributor Review
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
-
-
-
-
-
