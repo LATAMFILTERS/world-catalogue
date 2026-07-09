@@ -94,12 +94,11 @@ export default function IndustriesPage() {
           </div>
 
           <div style={marketGrid}>
-            {INDUSTRIES.map(([slug, label, image, line], index) => (
+            {INDUSTRIES.map(([slug, label, image, line]) => (
               <Link key={slug} href={`/industries/${slug}`} style={marketCard}>
                 <img src={image} alt={label} style={marketImage} />
                 <div style={marketOverlay} />
                 <div style={marketContent}>
-                  <span style={marketNumber}>{String(index + 1).padStart(2, '0')}</span>
                   <h3 style={marketTitle}>{label}</h3>
                   <p style={marketLine}>{line}</p>
                   <span style={explore}>EXPLORE MARKET</span>
@@ -217,22 +216,18 @@ const marketCard: CSSProperties = {
 };
 
 const marketImage: CSSProperties = {
-  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.62,
+  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
+  opacity: 0.68, filter: 'brightness(1.05)',
 };
 
 const marketOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.62) 52%, rgba(0,0,0,0.96) 100%), linear-gradient(90deg, rgba(0,0,0,0.7), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.52) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.55), transparent)',
 };
 
 const marketContent: CSSProperties = {
   position: 'absolute', inset: 0, padding: '1.35rem',
   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-};
-
-const marketNumber: CSSProperties = {
-  position: 'absolute', top: '1.1rem', left: '1.2rem', color: '#FFF12D',
-  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.86rem',
 };
 
 const marketTitle: CSSProperties = {
