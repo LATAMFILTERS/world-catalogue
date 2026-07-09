@@ -184,8 +184,8 @@ export default function AboutPage() {
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
               letterSpacing: '-0.055em',
-              lineHeight: 0.92,
-              fontSize: 'clamp(4rem, 9.5vw, 9.5rem)',
+              lineHeight: 0.88,
+              fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
               maxWidth: '980px',
               margin: 0,
               textTransform: 'uppercase',
@@ -383,9 +383,9 @@ const eyebrow: React.CSSProperties = {
 
 const sectionTitle: React.CSSProperties = {
   fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(2.2rem, 5vw, 5.3rem)',
-  lineHeight: 0.96,
-  letterSpacing: '-0.045em',
+  fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95,
+  letterSpacing: '-0.02em',
   margin: 0,
   textTransform: 'uppercase',
 };
