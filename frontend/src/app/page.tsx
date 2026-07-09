@@ -6,7 +6,6 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
-import TestimonialsSection from '@/components/ui/TestimonialsSection';
 import CinematicHero from '@/components/ui/CinematicHero';
 import { ConversionProvider } from '@/components/conversion';
 import { EngineeringSearchBar } from '@/components/engineering';
@@ -17,7 +16,7 @@ import type { SearchResult } from '@/lib/services';
 
 const STATS_DATA = [
   { value: null, display: '15k+', ring: 75 },
-  { value: null, display: '3â€“5Ã—', ring: 65 },
+  { value: null, display: '3â€“5Ã - ', ring: 65 },
   { value: 80, prefix: '', suffix: '%', ring: 80 },
   { value: null, display: '$62K', ring: 100 },
 ];
@@ -167,7 +166,7 @@ const JOURNEY_CARDS = [
     id: 'PART_NUMBER',
     label: 'Find a Part',
     description: 'Know the part number or OEM reference? Locate it instantly.',
-    icon: 'ðŸ”Ž',
+    icon: '01',
     accent: 'rgba(255,241,45,0.08)',
     border: 'rgba(255,241,45,0.2)',
     href: 'https://part-search.elimfilters.com',
@@ -177,7 +176,7 @@ const JOURNEY_CARDS = [
     id: 'ASSET_PROTECTION',
     label: 'Protect Your Assets',
     description: 'Select your industry. We identify contamination risks for your equipment.',
-    icon: 'ðŸ›¡',
+    icon: '02',
     accent: 'rgba(134,239,172,0.06)',
     border: 'rgba(134,239,172,0.18)',
     href: '/engineering/asset-protection',
@@ -187,7 +186,7 @@ const JOURNEY_CARDS = [
     id: 'PROBLEM_DIAGNOSIS',
     label: 'Diagnose a Problem',
     description: 'Describe the symptom. We trace it to the failure mode and root cause.',
-    icon: 'âš ',
+    icon: '03',
     accent: 'rgba(252,165,165,0.06)',
     border: 'rgba(252,165,165,0.18)',
     href: '/engineering/diagnosis',
@@ -197,7 +196,7 @@ const JOURNEY_CARDS = [
     id: 'LEARNING',
     label: 'Explore Engineering',
     description: 'Study contamination mechanisms, standards, and technology architectures.',
-    icon: 'ðŸ“',
+    icon: '04',
     accent: 'rgba(125,211,252,0.06)',
     border: 'rgba(125,211,252,0.18)',
     href: '/knowledge-system',
@@ -255,7 +254,7 @@ function EngineeringEntrySection() {
           <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standardâ€¦" />
         </motion.div>
 
-        {/* Journey cards â€” 2Ã—2 grid */}
+        {/* Journey cards â€” 2Ã - 2 grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -497,7 +496,7 @@ export default function Home() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
-                { label: 'Hydraulic Pump Replacement', cost: '$18,000â€“$32,000', icon: 'âš™', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
+                { label: 'Hydraulic Pump Replacement', cost: '$18,000â€“$32,000', icon: 'âšTM', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
                 { label: 'System Flush + Fluid', cost: '$4,000â€“$6,000', icon: 'ðŸ”§', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
                 { label: 'Unplanned Downtime (5â€“8 days)', cost: '$40,000â€“$80,000', icon: 'â±', desc: 'Lost production on a 50-ton excavator: $5,000â€“$10,000/day. 5â€“8 days of downtime compounds cost rapidly.' },
               ].map((item, i) => (
@@ -525,7 +524,7 @@ export default function Home() {
               style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
             >
               <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost â€” 4Ã— NANOFORCEâ„¢ Hydraulic Filters</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost â€” 4Ã -  NANOFORCEâ„¢ Hydraulic Filters</p>
                 <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
@@ -577,7 +576,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
                       <li key={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â—†</span>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â - †</span>
                         {item}
                       </li>
                     ))}
@@ -610,8 +609,8 @@ export default function Home() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
                     { step: '01', label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
-                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 Â· ISO 16889 Â· ISO 5011 Â· ISO 19438' },
-                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE Â· SYNTRAX Â· NANOFORCE Â· SYNTEPORE' },
+                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 Â -  ISO 16889 Â -  ISO 5011 Â -  ISO 19438' },
+                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE Â -  SYNTRAX Â -  NANOFORCE Â -  SYNTEPORE' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: '#FFF12D', opacity: 0.6, flexShrink: 0, paddingTop: '0.15rem' }}>{item.step}</div>
@@ -708,7 +707,6 @@ export default function Home() {
         </div>
 
         {/* â”€â”€ TESTIMONIALS â”€â”€ */}
-        <TestimonialsSection />
 
         {/* â”€â”€ FAQ SECTION â”€â”€ */}
         <section style={{
@@ -787,5 +785,6 @@ export default function Home() {
     </ConversionProvider>
   );
 }
+
 
 
