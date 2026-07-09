@@ -38,7 +38,7 @@ import type { TerminologyEntry } from './governance';
 
 export const KC_GRAPH_METADATA = {
   /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams.Calculators.Comparisons */
-  graphVersion: '6D.53.22.12.68.15.7.10',
+  graphVersion: '6F.53.22.12.68.15.7.10',
   /** Schema version for the navigation index structure. */
   schemaVersion: '1.1.0',
   /**

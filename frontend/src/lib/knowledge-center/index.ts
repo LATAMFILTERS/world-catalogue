@@ -109,3 +109,14 @@ export type {
 
 export { getRecommendations } from './recommendation-engine';
 export { getKCRecommendationGraph, makeKey } from './recommendation-graph';
+
+// Phase 6F: Engineering Intelligence Dashboard
+export type {
+  KCRankedNode,
+  KCGraphSummary,
+  KCTypeConnectivity,
+  KCRecentStandard,
+  KCDashboardData,
+} from './dashboard-types';
+
+export { KC_DASHBOARD_DATA } from './dashboard-analytics';
