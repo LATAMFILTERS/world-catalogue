@@ -121,7 +121,7 @@ const PAGE_DATA: Record<string, PageData> = {
     anchors: [
       { label: 'Water testing', value: 'ASTM D6304 / ISO 12937' },
       { label: 'System', value: 'Fuel Cleanliness Protection' },
-      { label: 'Technology', value: 'AQUAGUARD / SYNTEPORE' },
+      { label: 'Technology', value: 'HYDROCORE / SYNTEPORE' },
     ],
   },
   science: {
@@ -284,6 +284,12 @@ const ALIASES: Record<string, string> = {
   'bridges/oem-replacement': 'compare/oem-comparison',
   'compare/total-cost-ownership': 'fleet/total-cost-ownership',
 };
+
+const STATIC_ROUTES = Array.from(new Set([...Object.keys(PAGE_DATA), ...Object.keys(ALIASES)]));
+
+export function generateStaticParams() {
+  return STATIC_ROUTES.map((route) => ({ slug: route.split('/') }));
+}
 
 function getPageData(slug: string): PageData {
   return PAGE_DATA[slug] || PAGE_DATA[ALIASES[slug]] || {
