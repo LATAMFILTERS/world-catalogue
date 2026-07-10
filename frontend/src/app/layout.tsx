@@ -17,20 +17,22 @@ const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 const GA_ID = 'G-T7STY4TY9C';
 
 const BASE_URL = 'https://elimfilters.com';
+const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
+const BRAND_DESCRIPTION = 'ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets across mining, construction, agriculture, power generation, marine, and heavy-duty transportation.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
+    default: BRAND_TITLE,
     template: '%s | ELIMFILTERS',
   },
-  description:
-    'ELIMFILTERS World Catalogue: 12 industries, 12 products, 12 proprietary technologies. Asset protection filtration engineered for maximum performance in mining, agriculture, marine, and heavy industry.',
+  description: BRAND_DESCRIPTION,
   keywords: [
-    'industrial filtration', 'asset protection filters', 'air filters industrial',
-    'fuel filters heavy duty', 'hydraulic filters', 'oil filters industrial',
-    'mining filtration', 'agriculture filtration', 'marine filtration',
-    'SYNTRAX filter', 'NANOFORCE filter', 'INTEKCORE fuel filter', 'ELIMFILTERS',
+    'total asset protection systems', 'industrial asset protection', 'industrial filtration',
+    'contamination control systems', 'air filters industrial', 'fuel filters heavy duty',
+    'hydraulic filters', 'oil filters industrial', 'mining filtration',
+    'agriculture filtration', 'marine filtration', 'SYNTRAX filter',
+    'NANOFORCE filter', 'INTEKCORE', 'ELIMFILTERS',
   ],
   authors: [{ name: 'ELIMFILTERS', url: BASE_URL }],
   creator: 'ELIMFILTERS',
@@ -56,18 +58,18 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
-    title: 'ELIMFILTERS — World Catalogue | Industrial Filtration Systems',
-    description: 'Asset protection filtration for mining, agriculture, marine and heavy industry. 12 industries · 12 systems · 12 proprietary technologies.',
+    siteName: 'ELIMFILTERS',
+    title: BRAND_TITLE,
+    description: BRAND_DESCRIPTION,
     url: BASE_URL,
-    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS World Catalogue' }],
+    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS Total Asset Protection Systems' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@elimfilters',
-    title: 'ELIMFILTERS — World Catalogue',
-    description: 'Asset protection filtration for mining, agriculture, marine and heavy industry.',
+    title: BRAND_TITLE,
+    description: BRAND_DESCRIPTION,
     images: ['/assets/logo-elimfilters.png'],
   },
 };
@@ -75,16 +77,17 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  // Canonical @id anchor — all page-level schemas reference this node.
-  // Unifies the entity graph across the root layout and knowledge-system/layout.tsx.
   '@id': `${BASE_URL}/#organization`,
   name: 'ELIMFILTERS',
+  alternateName: 'ELIMFILTERS Total Asset Protection Systems',
+  slogan: 'Total Asset Protection Systems',
   url: BASE_URL,
   logo: `${BASE_URL}/assets/logo-elimfilters.png`,
-  description: 'ELIMFILTERS® is an Industrial Asset Protection Technology company engineered by Kleo Technologies. Contamination control systems that improve equipment reliability, operational continuity, and asset lifecycle across mining, agriculture, marine, oil & gas, and heavy industry.',
+  description: BRAND_DESCRIPTION,
   foundingLocation: 'Frisco, Texas, USA',
   areaServed: 'Worldwide',
   knowsAbout: [
+    'Total Asset Protection Systems',
     'Industrial Asset Protection',
     'Contamination Control',
     'Equipment Reliability Engineering',
@@ -107,10 +110,11 @@ const organizationSchema = {
   sameAs: ['https://www.linkedin.com/company/133064152/', 'https://www.facebook.com/elimfilters/', 'https://www.instagram.com/elimfilters.global', 'https://x.com/elimfilters', 'https://www.youtube.com/@elimfilters9112'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'ELIMFILTERS World Catalogue',
+    name: 'ELIMFILTERS Total Asset Protection Platform',
     itemListElement: [
       { '@type': 'OfferCatalog', name: 'Asset Protection by Industry', url: `${BASE_URL}/industries` },
       { '@type': 'OfferCatalog', name: 'Contamination Control Systems', url: `${BASE_URL}/systems` },
+      { '@type': 'OfferCatalog', name: 'Product Families', url: `${BASE_URL}/families` },
       { '@type': 'OfferCatalog', name: 'Proprietary Protection Technologies', url: `${BASE_URL}/technologies` },
       { '@type': 'OfferCatalog', name: 'Knowledge System', url: `${BASE_URL}/knowledge-system` },
     ],
@@ -120,7 +124,8 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ELIMFILTERS World Catalogue',
+  name: 'ELIMFILTERS',
+  alternateName: 'ELIMFILTERS Total Asset Protection Systems',
   url: BASE_URL,
   potentialAction: {
     '@type': 'SearchAction',
