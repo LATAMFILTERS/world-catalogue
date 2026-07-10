@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import {
   ENGINEERING_ARTICLES,
@@ -9,61 +9,64 @@ import {
 } from '@/lib/knowledge-center-data';
 import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
 
+const displayFont = 'Chakra Petch, Arial Narrow, monospace';
+const bodyFont = 'Barlow, Arial, sans-serif';
+
 const SECTIONS = [
   {
     href: '/knowledge-center/engineering',
-    label: 'ENGINEERING',
+    label: 'Engineering',
     title: 'Engineering Principles',
-    count: `${ENGINEERING_ARTICLES.length} ARTICLES`,
+    count: `${ENGINEERING_ARTICLES.length} Articles`,
     description: 'Filtration theory, media science, airflow, fluid cleanliness, and contamination control fundamentals.',
   },
   {
     href: '/knowledge-center/standards',
-    label: 'STANDARDS',
+    label: 'Standards',
     title: 'Industry Standards',
-    count: `${KC_STANDARDS.length} STANDARDS`,
+    count: `${KC_STANDARDS.length} Standards`,
     description: 'ISO, ASTM, SAE, and NAS references explained for testing, validation, and technical selection.',
   },
   {
     href: '/knowledge-center/systems',
-    label: 'SYSTEMS',
+    label: 'Systems',
     title: 'Protection Systems',
-    count: `${KC_SYSTEMS.length} SYSTEMS`,
+    count: `${KC_SYSTEMS.length} Systems`,
     description: 'Air, fuel, lube, hydraulic, cooling, cabin, and compressed air protection domains.',
   },
   {
     href: '/knowledge-center/industries',
-    label: 'INDUSTRIES',
+    label: 'Industries',
     title: 'Industry Applications',
-    count: `${KC_INDUSTRIES.length} INDUSTRIES`,
+    count: `${KC_INDUSTRIES.length} Industries`,
     description: 'Contamination profiles, operating exposure, and filtration risk by industrial market.',
   },
   {
     href: '/knowledge-center/technologies',
-    label: 'TECHNOLOGIES',
+    label: 'Technologies',
     title: 'Technology Registry',
-    count: `${KC_TECHNOLOGIES.length} TECHNOLOGIES`,
+    count: `${KC_TECHNOLOGIES.length} Technologies`,
     description: 'ELIMFILTERS proprietary protection architectures mapped to failure mechanisms.',
   },
   {
     href: '/knowledge-center/technical-library',
-    label: 'LIBRARY',
+    label: 'Library',
     title: 'Technical Library',
-    count: 'FIELD GUIDES',
+    count: 'Field Guides',
     description: 'Specification guides, selection frameworks, procedures, and technical references.',
   },
   {
     href: '/knowledge-center/engineering-reference',
-    label: 'REFERENCE',
+    label: 'Reference',
     title: 'Engineering Reference Library',
-    count: `${ERL_SECTIONS.length} SECTIONS`,
+    count: `${ERL_SECTIONS.length} Sections`,
     description: 'Structured reference library for standards, filtration science, performance metrics, and reliability.',
   },
   {
     href: '/knowledge-center/search',
-    label: 'SEARCH',
+    label: 'Search',
     title: 'Knowledge Search',
-    count: 'AI INDEXED',
+    count: 'AI Indexed',
     description: 'Search by symptom, equipment, industry, standard, system, or technology.',
   },
 ];
@@ -93,6 +96,7 @@ export default function KnowledgeCenterPage() {
 
   return (
     <main style={main}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <Link href="/" style={homeButton}>HOME</Link>
@@ -106,10 +110,10 @@ export default function KnowledgeCenterPage() {
           <h1 style={heroTitle}>
             Engineering
             <br />
-            Intelligence Library
+            <span style={{ color: '#FFF12D' }}>Intelligence Library</span>
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS Knowledge Center organizes contamination control, filtration standards, protection systems, technologies, and industrial application logic into a technical reference platform.
+            ELIMFILTERS organizes contamination control, filtration standards, protection systems, proprietary technologies, and industrial application logic into a technical reference platform.
           </p>
 
           <div style={tagRow}>
@@ -123,7 +127,6 @@ export default function KnowledgeCenterPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>TECHNICAL PURPOSE</p>
             <h2 style={sectionTitle}>Knowledge turns filtration into engineering decisions.</h2>
           </div>
           <div>
@@ -131,7 +134,7 @@ export default function KnowledgeCenterPage() {
               Industrial filtration is not only a catalogue problem. It is a contamination control problem tied to standards, failure mechanisms, operating exposure, and asset risk.
             </p>
             <p style={bodyText}>
-              The Knowledge Center exists to support distributors, engineers, fleets, and AI systems with structured, citable, technical information.
+              The Knowledge Center supports distributors, engineers, fleets, and AI systems with structured, citable, technical information.
             </p>
           </div>
         </div>
@@ -140,14 +143,12 @@ export default function KnowledgeCenterPage() {
       <section style={domainSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>KNOWLEDGE DOMAINS</p>
             <h2 style={sectionTitle}>Structured technical reference by domain.</h2>
           </div>
 
           <div style={domainGrid}>
-            {SECTIONS.map((section, index) => (
+            {SECTIONS.map((section) => (
               <Link key={section.href} href={section.href} style={domainCard}>
-                <span style={domainNumber}>{String(index + 1).padStart(2, '0')}</span>
                 <p style={domainLabel}>{section.label}</p>
                 <h3 style={domainTitle}>{section.title}</h3>
                 <p style={domainBody}>{section.description}</p>
@@ -163,16 +164,14 @@ export default function KnowledgeCenterPage() {
         <div style={wrap}>
           <div style={splitHeader}>
             <div>
-              <p style={eyebrow}>FEATURED ENGINEERING TOPICS</p>
               <h2 style={sectionTitle}>Start with core principles.</h2>
             </div>
             <Link href="/knowledge-center/engineering" style={yellowButton}>VIEW ALL ARTICLES</Link>
           </div>
 
           <div style={featuredGrid}>
-            {FEATURED_ARTICLES.map((article, index) => (
+            {FEATURED_ARTICLES.map((article) => (
               <Link key={article.slug} href={`/knowledge-center/engineering/${article.slug}`} style={featuredCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
                 <p style={featuredMeta}>{article.category} / {article.readTime}</p>
                 <h3 style={featuredTitle}>{article.title}</h3>
                 <p style={featuredBody}>{article.subtitle}</p>
@@ -186,7 +185,6 @@ export default function KnowledgeCenterPage() {
         <div style={wrap}>
           <div style={splitHeader}>
             <div>
-              <p style={eyebrow}>CORE STANDARDS</p>
               <h2 style={sectionTitle}>Technical references that anchor the platform.</h2>
             </div>
             <Link href="/knowledge-center/standards" style={darkButton}>ALL STANDARDS</Link>
@@ -206,7 +204,6 @@ export default function KnowledgeCenterPage() {
       <section style={searchCallout}>
         <div style={searchInner}>
           <div>
-            <p style={eyebrow}>AI-INDEXED REFERENCE</p>
             <h2 style={sectionTitle}>
               Search knowledge by symptom, standard, system, or technology.
             </h2>
@@ -220,7 +217,6 @@ export default function KnowledgeCenterPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             The stronger the knowledge base, the stronger the protection decision.
           </h2>
@@ -234,12 +230,12 @@ export default function KnowledgeCenterPage() {
   );
 }
 
-const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
 const homeButton: CSSProperties = {
   position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
   background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
   fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
   padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
 };
@@ -251,23 +247,23 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.24,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 
 const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
-  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
+  color: '#FFF12D', fontFamily: displayFont, fontSize: '0.75rem',
+  fontWeight: 700, letterSpacing: '0.34em', margin: '0 0 1.25rem', textTransform: 'uppercase',
 };
 
 const heroTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
   lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
   maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
 };
@@ -280,9 +276,9 @@ const heroLead: CSSProperties = {
 const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
 
 const tag: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.18)', padding: '0.82rem 1rem',
-  fontFamily: 'var(--font-display)', fontSize: '0.74rem',
-  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.88)',
+  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
+  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
 };
 
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
@@ -294,8 +290,8 @@ const twoCol: CSSProperties = {
 };
 
 const sectionTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-  lineHeight: 0.95, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase',
+  fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
 const leadText: CSSProperties = {
@@ -308,11 +304,6 @@ const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1r
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
-const number: CSSProperties = {
-  display: 'block', color: '#FFF12D', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
-};
-
 const domainSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
 const domainGrid: CSSProperties = {
@@ -320,39 +311,34 @@ const domainGrid: CSSProperties = {
 };
 
 const domainCard: CSSProperties = {
-  minHeight: '360px', textDecoration: 'none', color: '#fff',
+  minHeight: '330px', textDecoration: 'none', color: '#fff',
   border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.025)',
-  padding: '1.25rem', display: 'flex', flexDirection: 'column',
-};
-
-const domainNumber: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
-  letterSpacing: '0.16em', fontSize: '0.82rem', marginBottom: '1.4rem',
+  padding: '1.35rem', display: 'flex', flexDirection: 'column',
 };
 
 const domainLabel: CSSProperties = {
-  color: 'rgba(255,241,45,0.82)', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', margin: '0 0 0.7rem',
+  color: 'rgba(255,241,45,0.88)', fontFamily: displayFont,
+  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', margin: '0 0 0.8rem', textTransform: 'uppercase',
 };
 
 const domainTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 2.8vw, 3rem)',
-  lineHeight: 0.96, letterSpacing: '-0.04em', margin: 0, textTransform: 'uppercase',
+  fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2.4vw, 2.3rem)',
+  lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
 const domainBody: CSSProperties = {
-  color: 'rgba(255,255,255,0.58)', lineHeight: 1.58,
-  fontSize: '0.92rem', margin: '1rem 0 0',
+  color: 'rgba(255,255,255,0.62)', lineHeight: 1.58,
+  fontSize: '0.95rem', margin: '1rem 0 0',
 };
 
 const domainCount: CSSProperties = {
-  color: 'rgba(255,255,255,0.42)', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', marginTop: '1rem',
+  color: 'rgba(255,255,255,0.42)', fontFamily: displayFont,
+  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', marginTop: '1rem', textTransform: 'uppercase',
 };
 
 const explore: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700,
-  letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: 'auto',
+  color: '#FFF12D', fontFamily: displayFont, fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: 'auto', textTransform: 'uppercase',
 };
 
 const featuredSection: CSSProperties = {
@@ -373,19 +359,19 @@ const featuredGrid: CSSProperties = {
 };
 
 const featuredCard: CSSProperties = {
-  minHeight: '260px', textDecoration: 'none', color: '#fff',
+  minHeight: '250px', textDecoration: 'none', color: '#fff',
   border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)',
-  padding: '1.25rem', display: 'flex', flexDirection: 'column',
+  padding: '1.35rem', display: 'flex', flexDirection: 'column',
 };
 
 const featuredMeta: CSSProperties = {
-  color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.68rem',
+  color: 'rgba(255,241,45,0.82)', fontFamily: displayFont,
+  fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.68rem', textTransform: 'uppercase',
 };
 
 const featuredTitle: CSSProperties = {
-  fontFamily: 'var(--font-display)', fontSize: '1.35rem',
-  lineHeight: 1.05, margin: '0.7rem 0 0', letterSpacing: '-0.03em',
+  fontFamily: displayFont, fontSize: '1.35rem',
+  lineHeight: 1.05, margin: '0.7rem 0 0', letterSpacing: '-0.03em', fontWeight: 700,
 };
 
 const featuredBody: CSSProperties = {
@@ -410,7 +396,7 @@ const standardCard: CSSProperties = {
 };
 
 const standardCode: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)',
+  color: '#FFF12D', fontFamily: displayFont,
   fontWeight: 700, fontSize: '0.85rem', whiteSpace: 'nowrap',
 };
 
@@ -419,7 +405,7 @@ const standardScope: CSSProperties = {
 };
 
 const searchCallout: CSSProperties = {
-  padding: '0 clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)',
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
 };
 
 const searchInner: CSSProperties = {
@@ -437,13 +423,13 @@ const cta: CSSProperties = {
 
 const yellowButton: CSSProperties = {
   display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
-  fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em',
-  fontSize: '0.82rem', padding: '1rem 1.25rem',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
 
 const darkButton: CSSProperties = {
   display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
-  textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700,
-  letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem',
-  border: '1px solid rgba(255,241,45,0.4)',
+  textDecoration: 'none', fontFamily: displayFont, fontWeight: 700,
+  letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem',
+  border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase',
 };
