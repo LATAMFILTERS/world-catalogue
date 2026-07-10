@@ -9,10 +9,10 @@ import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import { CanonicalEngineeringBlocks } from './CanonicalEngineeringBlocks';
 import { StructuredTechnologyDefinition } from './StructuredTechnologyDefinition';
+import { StructuredSystemDefinition } from './StructuredSystemDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Update html lang attribute when language changes
     const updateLang = (lng: string) => {
       document.documentElement.lang = lng;
       document.documentElement.dir = ['ar', 'fa', 'he'].includes(lng) ? 'rtl' : 'ltr';
@@ -29,6 +29,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       {children}
       <CanonicalEngineeringBlocks />
       <StructuredTechnologyDefinition />
+      <StructuredSystemDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
