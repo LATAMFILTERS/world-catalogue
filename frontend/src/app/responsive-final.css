@@ -1,0 +1,182 @@
+/* Phase 3B.3.4 - Final responsive and multilingual audit. */
+
+html,
+body,
+#main-content,
+main {
+  width: 100%;
+  max-width: 100%;
+}
+
+main section,
+main header,
+main nav,
+main article,
+main aside {
+  min-width: 0;
+}
+
+main h1,
+main h2,
+main h3,
+main p,
+main a,
+main button,
+main span,
+main strong {
+  max-width: 100%;
+}
+
+main h1,
+main h2,
+main h3 {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+}
+
+main p,
+main a,
+main button,
+main span,
+main strong {
+  overflow-wrap: anywhere;
+}
+
+main img,
+main video,
+main iframe,
+main svg {
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  main [style*="grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)"],
+  main [style*="grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr)"],
+  main [style*="grid-template-columns: 0.9fr 1.1fr"],
+  main [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: clamp(1.75rem, 4vw, 2.75rem) !important;
+  }
+
+  main [style*="max-width: 1180px"],
+  main [style*="max-width: 1200px"],
+  main [style*="max-width: 1240px"],
+  main [style*="max-width: 1320px"] {
+    width: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+  main > a[style*="position: fixed"] {
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    left: auto;
+    max-width: calc(100vw - 1.5rem) !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.1em !important;
+    padding: 0.65rem 0.8rem !important;
+  }
+
+  main > a[style*="position: fixed"][style*="left:"] {
+    left: 0.75rem !important;
+    right: auto !important;
+  }
+
+  main nav[style*="display: flex"] {
+    row-gap: 0.65rem !important;
+  }
+
+  main [style*="padding: clamp(1.25rem, 6vw, 6rem)"],
+  main [style*="padding: clamp(1.25rem,6vw,6rem)"] {
+    padding-left: clamp(1.1rem, 4vw, 1.75rem) !important;
+    padding-right: clamp(1.1rem, 4vw, 1.75rem) !important;
+  }
+
+  main h1 {
+    font-size: clamp(2.2rem, 9.5vw, 4.1rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.7rem, 7vw, 2.65rem) !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-px: 1.15rem;
+    --section-py: 3.25rem;
+  }
+
+  main section,
+  main header {
+    scroll-margin-top: 4.5rem;
+  }
+
+  main [style*="padding-left: 1.4rem"] {
+    padding-left: 1rem !important;
+  }
+
+  main [style*="letter-spacing: 0.34em"],
+  main [style*="letter-spacing: '0.34em'"] {
+    letter-spacing: 0.18em !important;
+  }
+
+  main [style*="display: flex"][style*="flex-wrap: wrap"] {
+    gap: 0.65rem !important;
+  }
+
+  main [style*="font-size: 0.72rem"],
+  main [style*="font-size: 0.75rem"],
+  main [style*="font-size: 0.78rem"] {
+    line-height: 1.25 !important;
+  }
+
+  main p {
+    font-size: clamp(0.96rem, 4.2vw, 1.02rem) !important;
+    line-height: 1.66 !important;
+  }
+
+  main a,
+  main button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 420px) {
+  main h1 {
+    font-size: clamp(1.95rem, 11vw, 3rem) !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.5rem, 8vw, 2.15rem) !important;
+  }
+
+  main > a[style*="position: fixed"] {
+    font-size: 0.62rem !important;
+    padding: 0.58rem 0.68rem !important;
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  main header[style*="min-height"],
+  main section[style*="min-height"] {
+    min-height: 520px !important;
+    padding-top: 5.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+[dir="rtl"] main > a[style*="position: fixed"] {
+  right: auto !important;
+  left: 0.85rem !important;
+}
+
+[dir="rtl"] main h1,
+[dir="rtl"] main h2,
+[dir="rtl"] main h3,
+[dir="rtl"] main p {
+  text-align: right;
+}
