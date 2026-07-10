@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 interface NavItem {
@@ -51,48 +52,62 @@ const COMMON: Record<string, NavItem> = {
   },
 };
 
+function isRoute(pathname: string, base: string) {
+  return pathname === base || pathname.startsWith(`${base}/`);
+}
+
 function navigationFor(pathname: string): NavigationConfig | null {
-  if (pathname.startsWith('/families/')) {
+  if (isRoute(pathname, '/families')) {
     return {
       kind: 'families',
       eyebrow: 'CONTINUE THROUGH THE PLATFORM',
-      title: 'From product family to complete asset protection.',
+      title: pathname === '/families'
+        ? 'Connect product families to complete protection systems.'
+        : 'From product family to complete asset protection.',
       items: [COMMON.systems, COMMON.technologies, COMMON.knowledge, COMMON.search],
     };
   }
 
-  if (pathname.startsWith('/systems/')) {
+  if (isRoute(pathname, '/systems')) {
     return {
       kind: 'systems',
       eyebrow: 'NEXT ENGINEERING PATH',
-      title: 'Connect the protection system to products and operating context.',
+      title: pathname === '/systems'
+        ? 'Move from protection architecture to products and field application.'
+        : 'Connect the protection system to products and operating context.',
       items: [COMMON.families, COMMON.technologies, COMMON.industries, COMMON.search],
     };
   }
 
-  if (pathname.startsWith('/technologies/')) {
+  if (isRoute(pathname, '/technologies')) {
     return {
       kind: 'technologies',
       eyebrow: 'RELATED PLATFORM PATHS',
-      title: 'Connect the technology to systems, products, and field application.',
+      title: pathname === '/technologies'
+        ? 'Connect each technology to systems, products, and operating environments.'
+        : 'Connect the technology to systems, products, and field application.',
       items: [COMMON.systems, COMMON.families, COMMON.industries, COMMON.knowledge],
     };
   }
 
-  if (pathname.startsWith('/industries/')) {
+  if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',
       eyebrow: 'CONTINUE THE PROTECTION STRATEGY',
-      title: 'Move from operating environment to the correct protection architecture.',
+      title: pathname === '/industries'
+        ? 'Translate industry risk into the correct protection architecture.'
+        : 'Move from operating environment to the correct protection architecture.',
       items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],
     };
   }
 
-  if (pathname.startsWith('/knowledge-system/')) {
+  if (isRoute(pathname, '/knowledge-system')) {
     return {
       kind: 'knowledge',
       eyebrow: 'APPLY THE KNOWLEDGE',
-      title: 'Turn technical understanding into a protection decision.',
+      title: pathname === '/knowledge-system'
+        ? 'Turn technical knowledge into an asset protection decision.'
+        : 'Turn technical understanding into a protection decision.',
       items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],
     };
   }
@@ -100,9 +115,43 @@ function navigationFor(pathname: string): NavigationConfig | null {
   return null;
 }
 
+const LEGACY_ENDING_MARKERS = [
+  'explore further',
+  'continue through the platform',
+  'related platform paths',
+  'next engineering path',
+];
+
 export function UniversalEndNavigation() {
   const pathname = usePathname();
   const config = navigationFor(pathname);
+
+  useEffect(() => {
+    if (!config) return;
+
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    const hiddenSections: HTMLElement[] = [];
+    const sections = Array.from(main.querySelectorAll<HTMLElement>(':scope > section'));
+
+    sections.forEach((section) => {
+      const heading = section.querySelector('h2, h3, p, span');
+      const text = heading?.textContent?.trim().toLowerCase() ?? '';
+      if (LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker))) {
+        section.dataset.universalEndNavHidden = 'true';
+        section.style.display = 'none';
+        hiddenSections.push(section);
+      }
+    });
+
+    return () => {
+      hiddenSections.forEach((section) => {
+        section.style.removeProperty('display');
+        delete section.dataset.universalEndNavHidden;
+      });
+    };
+  }, [config, pathname]);
 
   if (!config) return null;
 
