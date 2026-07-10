@@ -141,27 +141,42 @@ export default function FamilyPage({ params }: Props) {
         </div>
       </section>
 
-      <section style={darkSection}>
+      <section style={darkSectionCompact}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>Technical anchors.</h2>
-          <div style={anchorGrid}>
-            {sys && (
-              <Link href={`/systems/${sys.slug}`} style={anchorCard}>
-                <span style={anchorLabel}>Protection System</span>
-                <strong style={anchorTitle}>{sys.name}</strong>
-                <span style={explore}>VIEW SYSTEM</span>
+          <div style={twoColCompact}>
+            <div>
+              <h2 style={sectionTitle}>Technical validation.</h2>
+              <p style={bodyText}>This family connects the protected system, the primary ELIMFILTERS technology, product identification, and applicable test standards into a single engineering path.</p>
+            </div>
+
+            <div style={compactStack}>
+              {sys && (
+                <Link href={`/systems/${sys.slug}`} style={compactLinkCard}>
+                  <span style={anchorLabel}>Protection system</span>
+                  <strong style={compactTitle}>{sys.name}</strong>
+                  <span style={explore}>VIEW SYSTEM</span>
+                </Link>
+              )}
+              <Link href={`/technologies/${fam.primaryTechnology}`} style={compactLinkCardYellow}>
+                <span style={anchorLabel}>Primary technology</span>
+                <strong style={compactTitle}>{fam.primaryTechnology.replace(/-/g, ' ')}</strong>
+                <span style={explore}>VIEW TECHNOLOGY</span>
               </Link>
-            )}
-            <Link href={`/technologies/${fam.primaryTechnology}`} style={anchorCardYellow}>
-              <span style={anchorLabel}>Primary Technology</span>
-              <strong style={anchorTitle}>{fam.primaryTechnology.replace(/-/g, ' ')}</strong>
-              <span style={explore}>VIEW TECHNOLOGY</span>
-            </Link>
-            <Link href="https://part-search.elimfilters.com" style={anchorCard}>
-              <span style={anchorLabel}>Part Identification</span>
-              <strong style={anchorTitle}>Cross-reference search</strong>
-              <span style={explore}>FIND MY FILTER</span>
-            </Link>
+              <Link href="https://part-search.elimfilters.com" style={compactLinkCard}>
+                <span style={anchorLabel}>Part identification</span>
+                <strong style={compactTitle}>Cross-reference search</strong>
+                <span style={explore}>FIND FILTER</span>
+              </Link>
+            </div>
+          </div>
+
+          <div style={standardBand}>
+            <span style={standardBandLabel}>Applicable standards</span>
+            <div style={standardsGridCompact}>
+              {fam.applicableStandards.map((std) => (
+                <Link key={std} href={standardHref(std)} style={standardCard}>{std}</Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -196,25 +211,14 @@ export default function FamilyPage({ params }: Props) {
         </section>
       )}
 
-      <section style={darkSection}>
-        <div style={wrap}>
-          <h2 style={sectionTitle}>Applicable standards.</h2>
-          <div style={standardsGrid}>
-            {fam.applicableStandards.map((std) => (
-              <Link key={std} href={standardHref(std)} style={standardCard}>{std}</Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={sectionLast}>
-        <div style={wrap}>
-          <h2 style={sectionTitle}>Continue through the platform.</h2>
-          <div style={anchorGrid}>
-            <Link href="/families" style={anchorCard}>All Product Families<span style={explore}>OPEN</span></Link>
-            <Link href="/systems" style={anchorCard}>Protection Systems<span style={explore}>OPEN</span></Link>
-            <Link href="/technologies" style={anchorCard}>Technologies<span style={explore}>OPEN</span></Link>
-            <Link href="/knowledge-system" style={anchorCard}>Knowledge System<span style={explore}>OPEN</span></Link>
+      <section style={platformBand}>
+        <div style={platformInner}>
+          <span style={platformLabel}>Continue through the platform</span>
+          <div style={platformLinks}>
+            <Link href="/families" style={platformLink}>All Families</Link>
+            <Link href="/systems" style={platformLink}>Systems</Link>
+            <Link href="/technologies" style={platformLink}>Technologies</Link>
+            <Link href="/knowledge-system" style={platformLink}>Knowledge</Link>
           </div>
         </div>
       </section>
@@ -270,11 +274,14 @@ const tagLink: CSSProperties = { ...tag, textDecoration: 'none', color: '#FFF12D
 
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
-const darkSection: CSSProperties = { ...section, background: 'rgba(255,255,255,0.018)' };
-const sectionLast: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+const darkSectionCompact: CSSProperties = { padding: 'clamp(3.4rem, 6vw, 5.4rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,255,255,0.018)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const twoCol: CSSProperties = {
   maxWidth: '1180px', margin: '0 auto', display: 'grid',
   gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)',
+};
+const twoColCompact: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'minmax(0, 0.85fr) minmax(0, 1.15fr)',
+  gap: 'clamp(2rem, 6vw, 5rem)', alignItems: 'start',
 };
 const sectionTitle: CSSProperties = {
   fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
@@ -283,17 +290,25 @@ const sectionTitle: CSSProperties = {
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78, marginTop: '1.2rem' };
 
-const anchorGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginTop: '2.4rem' };
-const anchorCard: CSSProperties = {
-  minHeight: '190px', textDecoration: 'none', color: '#fff',
+const compactStack: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' };
+const compactLinkCard: CSSProperties = {
+  minHeight: '138px', textDecoration: 'none', color: '#fff',
   border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)',
-  padding: '1.35rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+  padding: '1.15rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
   fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.02em', textTransform: 'uppercase',
 };
-const anchorCardYellow: CSSProperties = { ...anchorCard, borderColor: 'rgba(255,241,45,0.22)', background: 'rgba(255,241,45,0.045)' };
-const anchorLabel: CSSProperties = { color: 'rgba(255,255,255,0.38)', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase' };
-const anchorTitle: CSSProperties = { color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1.2rem, 2vw, 1.7rem)', lineHeight: 1.02, textTransform: 'uppercase' };
-const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', textTransform: 'uppercase' };
+const compactLinkCardYellow: CSSProperties = { ...compactLinkCard, borderColor: 'rgba(255,241,45,0.22)', background: 'rgba(255,241,45,0.045)' };
+const anchorLabel: CSSProperties = { color: 'rgba(255,255,255,0.38)', fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase' };
+const compactTitle: CSSProperties = { color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1rem, 1.6vw, 1.3rem)', lineHeight: 1.05, textTransform: 'uppercase' };
+const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.68rem', textTransform: 'uppercase' };
+
+const standardBand: CSSProperties = {
+  marginTop: '2rem', paddingTop: '1.4rem', borderTop: '1px solid rgba(255,255,255,0.08)',
+  display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem', flexWrap: 'wrap',
+};
+const standardBandLabel: CSSProperties = { fontFamily: displayFont, color: 'rgba(255,255,255,0.68)', fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.75rem', textTransform: 'uppercase' };
+const standardsGridCompact: CSSProperties = { display: 'flex', gap: '0.7rem', flexWrap: 'wrap' };
+const standardCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.16)', padding: '0.72rem 0.95rem', fontFamily: displayFont, fontSize: '0.74rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.78)', textDecoration: 'none', textTransform: 'uppercase' };
 
 const productGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '2.4rem' };
 const productCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)', padding: '1.35rem' };
@@ -301,5 +316,8 @@ const cardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontS
 const productList: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.75rem' };
 const productLink: CSSProperties = { color: '#FFF12D', textDecoration: 'none', border: '1px solid rgba(255,241,45,0.24)', padding: '0.7rem 0.9rem', fontFamily: displayFont, fontSize: '0.78rem', letterSpacing: '0.12em', fontWeight: 700 };
 
-const standardsGrid: CSSProperties = { display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '2rem' };
-const standardCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.16)', padding: '0.8rem 1rem', fontFamily: displayFont, fontSize: '0.78rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.78)', textDecoration: 'none', textTransform: 'uppercase' };
+const platformBand: CSSProperties = { padding: '1.4rem clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,255,255,0.08)' };
+const platformInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' };
+const platformLabel: CSSProperties = { fontFamily: displayFont, color: 'rgba(255,255,255,0.45)', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700 };
+const platformLinks: CSSProperties = { display: 'flex', gap: '0.55rem', flexWrap: 'wrap' };
+const platformLink: CSSProperties = { color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.14em', fontWeight: 700, textTransform: 'uppercase', border: '1px solid rgba(255,241,45,0.22)', padding: '0.65rem 0.85rem' };
