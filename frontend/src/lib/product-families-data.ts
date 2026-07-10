@@ -87,7 +87,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     applicableStandards: ['ISO 5011'],
     hdProducts: ['DOCUMENTATION PENDING'],
     ldProducts: ['DOCUMENTATION PENDING'],
-    heroImage: '/images/air-filter1.avif',
+    heroImage: '/images/secondaryfilter.avif',
   },
 
   'safety-elements': {
