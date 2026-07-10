@@ -19,7 +19,6 @@
   --cta-letter-spacing: 0.14em;
 }
 
-/* Shared card treatment for the inline-style page templates. */
 main a[style*="border: 1px solid"][style*="background"],
 main div[style*="border: 1px solid"][style*="background"] {
   border-radius: var(--ui-radius) !important;
@@ -42,7 +41,6 @@ main a[style*="border: 1px solid"][style*="background"] {
   }
 }
 
-/* Fase 3B.1 - one CTA system across all page templates. */
 main a[style*="text-transform: uppercase"][style*="padding"],
 main button[style*="text-transform: uppercase"][style*="padding"],
 main a[style*="letter-spacing"][style*="padding"],
@@ -72,7 +70,6 @@ main button[style*="letter-spacing"][style*="padding"] {
     box-shadow var(--ui-transition) !important;
 }
 
-/* Primary CTA. */
 main a[style*="background: rgb(255, 241, 45)"],
 main a[style*="background: #FFF12D"],
 main button[style*="background: rgb(255, 241, 45)"],
@@ -88,7 +85,6 @@ main button[style*="background: #FFF12D"] {
   box-shadow: none;
 }
 
-/* Secondary CTA. */
 main a[style*="background: rgba(0, 0, 0"],
 main a[style*="background: rgba(0,0,0"],
 main button[style*="background: rgba(0, 0, 0"],
@@ -105,7 +101,6 @@ main a[style*="background: rgba(255, 255, 255, 0.04)"] {
   line-height: 1.1 !important;
 }
 
-/* CTA groups remain balanced on all languages. */
 main [style*="display: flex"][style*="gap"] > a[style*="padding"],
 main [style*="display: flex"][style*="gap"] > button[style*="padding"] {
   flex: 0 1 auto;
@@ -137,7 +132,6 @@ main button:focus-visible {
   outline-offset: 3px !important;
 }
 
-/* Consistent content rhythm without forcing every page into the same layout. */
 main > section + section {
   position: relative;
 }
@@ -151,7 +145,6 @@ main [style*="display: flex"] > * {
   min-width: 0;
 }
 
-/* Technical cards should feel substantial without looking artificially empty. */
 main a[style*="min-height: 360px"],
 main a[style*="min-height: 420px"],
 main a[style*="min-height: 440px"] {
@@ -167,7 +160,42 @@ main p {
   text-wrap: pretty;
 }
 
-/* Touch devices should not inherit hover displacement. */
+/* Phase 3B.3.1 - global visual cleanup. */
+main section[style*="padding: clamp(4rem, 8vw, 7rem)"],
+main section[style*="padding: clamp(4rem,8vw,7rem)"] {
+  padding-top: clamp(3.5rem, 6vw, 5.5rem) !important;
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem) !important;
+}
+
+main section[style*="min-height: 360px"],
+main section[style*="min-height: 420px"],
+main section[style*="min-height: 440px"],
+main div[style*="min-height: 360px"],
+main div[style*="min-height: 420px"],
+main div[style*="min-height: 440px"] {
+  min-height: unset !important;
+}
+
+main [style*="margin-top: 2.4rem"],
+main [style*="margin-top: 2.3rem"],
+main [style*="margin-top: 2.2rem"] {
+  margin-top: clamp(1.5rem, 3vw, 2rem) !important;
+}
+
+main [style*="padding: 2rem"][style*="min-height"] {
+  padding: clamp(1.35rem, 2vw, 1.75rem) !important;
+}
+
+main section:empty,
+main div:empty:not([style*="background"]):not([style*="position: absolute"]) {
+  display: none;
+}
+
+main [style*="border-top: 1px solid"][style*="border-bottom: 1px solid"] +
+main [style*="border-top: 1px solid"] {
+  border-top: 0 !important;
+}
+
 @media (hover: none), (pointer: coarse) {
   main a[style*="border: 1px solid"][style*="background"]:hover,
   main a[style*="padding"]:hover,
@@ -204,6 +232,12 @@ main p {
   main a[style*="min-height: 420px"],
   main a[style*="min-height: 440px"] {
     box-shadow: none;
+  }
+
+  main section[style*="padding: clamp(4rem, 8vw, 7rem)"],
+  main section[style*="padding: clamp(4rem,8vw,7rem)"] {
+    padding-top: 3.25rem !important;
+    padding-bottom: 3.25rem !important;
   }
 }
 
