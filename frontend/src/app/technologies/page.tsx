@@ -115,7 +115,9 @@ export default function TechnologiesPage() {
           <div style={techGrid}>
             {TECHNOLOGIES.map(([slug, name, system, image, line]) => (
               <Link key={slug} href={`/technologies/${slug}`} style={techCard}>
-                <img src={image} alt={name} style={techImage} />
+                <div style={techLogoStage}>
+                  <img src={image} alt={name} style={techImage} />
+                </div>
                 <div style={techOverlay} />
                 <div style={techContent}>
                   <p style={techSystem}>{system}</p>
@@ -266,15 +268,19 @@ const techCard: CSSProperties = {
   color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
 };
 
+const techLogoStage: CSSProperties = {
+  position: 'absolute', top: '1.85rem', left: '1.5rem', right: '1.5rem', height: '118px',
+  display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
+};
+
 const techImage: CSSProperties = {
-  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain',
-  objectPosition: 'center 28%', opacity: 0.78, filter: 'brightness(1.14) contrast(1.04)',
-  padding: '2rem 1.25rem 6.5rem', boxSizing: 'border-box',
+  display: 'block', width: '100%', height: '76px', objectFit: 'contain', objectPosition: 'center',
+  opacity: 0.78, filter: 'brightness(1.14) contrast(1.04)',
 };
 
 const techOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.30) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.34), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.28), transparent)',
 };
 
 const techContent: CSSProperties = {
