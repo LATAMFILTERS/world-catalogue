@@ -1,3 +1,5 @@
+@import './visual-polish.css';
+
 /* Shared hero system for desktop, tablet and mobile.
  * These rules preserve one visual hierarchy across all languages while
  * preventing oversized headings, clipped media and excessive empty height.
