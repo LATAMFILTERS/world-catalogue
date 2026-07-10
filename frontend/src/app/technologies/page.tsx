@@ -269,18 +269,18 @@ const techCard: CSSProperties = {
 };
 
 const techLogoStage: CSSProperties = {
-  position: 'absolute', top: '1.85rem', left: '1.5rem', right: '1.5rem', height: '118px',
+  position: 'absolute', top: '1rem', left: '1rem', right: '1rem', height: '255px',
   display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
 };
 
 const techImage: CSSProperties = {
-  display: 'block', width: '100%', height: '76px', objectFit: 'contain', objectPosition: 'center',
-  opacity: 0.78, filter: 'brightness(1.14) contrast(1.04)',
+  display: 'block', width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center',
+  opacity: 0.84, filter: 'brightness(1.16) contrast(1.05)',
 };
 
 const techOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.24) 48%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.28), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.16) 46%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.22), transparent)',
 };
 
 const techContent: CSSProperties = {
