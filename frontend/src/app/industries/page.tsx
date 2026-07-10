@@ -60,12 +60,6 @@ export default function IndustriesPage() {
           <p style={heroLead}>
             Every industry has a different contamination profile. ELIMFILTERS structures protection around the machine, the environment, the duty cycle, and the cost of downtime.
           </p>
-
-          <div style={tagRow}>
-            {['MINING', 'AGRICULTURE', 'CONSTRUCTION', 'MARINE', 'POWER GENERATION'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -172,14 +166,6 @@ const heroTitle: CSSProperties = {
 const heroLead: CSSProperties = {
   marginTop: '2rem', maxWidth: '770px', color: 'rgba(255,255,255,0.76)',
   fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
-};
-
-const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
-
-const tag: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
-  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
-  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
 };
 
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
