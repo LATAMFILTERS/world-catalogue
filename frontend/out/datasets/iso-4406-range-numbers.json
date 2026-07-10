@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "ISO 4406 Particle Count Range Number Table",
+  "description": "Complete ISO 4406:2021 Range Number (RN) to particle count per millilitre conversion table. Each Range Number represents a bracket of particle counts measured at three size thresholds: ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c) by automatic particle counter calibrated per ISO 11171.",
+  "creator": {
+    "@type": "Organization",
+    "@id": "https://elimfilters.com/#organization",
+    "name": "ELIMFILTERS"
+  },
+  "dateModified": "2026-06-15",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "ISO 4406:2021 — Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles",
+  "variableMeasured": [
+    { "name": "Range Number", "description": "ISO 4406 code unit" },
+    { "name": "Minimum count (particles/mL)", "description": "Lower boundary of count bracket" },
+    { "name": "Maximum count (particles/mL)", "description": "Upper boundary of count bracket" }
+  ],
+  "data": [
+    { "rangeNumber": 1,  "minCount": 0,           "maxCount": 1           },
+    { "rangeNumber": 2,  "minCount": 1,           "maxCount": 2           },
+    { "rangeNumber": 3,  "minCount": 2,           "maxCount": 4           },
+    { "rangeNumber": 4,  "minCount": 4,           "maxCount": 8           },
+    { "rangeNumber": 5,  "minCount": 8,           "maxCount": 16          },
+    { "rangeNumber": 6,  "minCount": 16,          "maxCount": 32          },
+    { "rangeNumber": 7,  "minCount": 32,          "maxCount": 64          },
+    { "rangeNumber": 8,  "minCount": 64,          "maxCount": 130         },
+    { "rangeNumber": 9,  "minCount": 130,         "maxCount": 250         },
+    { "rangeNumber": 10, "minCount": 250,         "maxCount": 500         },
+    { "rangeNumber": 11, "minCount": 500,         "maxCount": 1000        },
+    { "rangeNumber": 12, "minCount": 1000,        "maxCount": 2000        },
+    { "rangeNumber": 13, "minCount": 2000,        "maxCount": 4000        },
+    { "rangeNumber": 14, "minCount": 4000,        "maxCount": 8000        },
+    { "rangeNumber": 15, "minCount": 8000,        "maxCount": 16000       },
+    { "rangeNumber": 16, "minCount": 16000,       "maxCount": 32000       },
+    { "rangeNumber": 17, "minCount": 32000,       "maxCount": 64000       },
+    { "rangeNumber": 18, "minCount": 64000,       "maxCount": 130000      },
+    { "rangeNumber": 19, "minCount": 130000,      "maxCount": 250000      },
+    { "rangeNumber": 20, "minCount": 250000,      "maxCount": 500000      },
+    { "rangeNumber": 21, "minCount": 500000,      "maxCount": 1000000     },
+    { "rangeNumber": 22, "minCount": 1000000,     "maxCount": 2000000     },
+    { "rangeNumber": 23, "minCount": 2000000,     "maxCount": 4000000     },
+    { "rangeNumber": 24, "minCount": 4000000,     "maxCount": 8000000     }
+  ],
+  "componentTargets": [
+    { "component": "Servo / proportional valve", "clearanceMicrons": "1–4", "isoTarget": "14/12/9" },
+    { "component": "Axial piston pump / motor", "clearanceMicrons": "5–15", "isoTarget": "17/15/12" },
+    { "component": "Vane pump", "clearanceMicrons": "5–13", "isoTarget": "17/15/12" },
+    { "component": "Gear pump / motor", "clearanceMicrons": "15–30", "isoTarget": "19/17/14" },
+    { "component": "Hydraulic cylinder", "clearanceMicrons": "50–250 (rod seal)", "isoTarget": "18/16/13" },
+    { "component": "Engine main / rod bearing", "clearanceMicrons": "5–25", "isoTarget": "16/14/11" },
+    { "component": "Camshaft bearing", "clearanceMicrons": "5–15", "isoTarget": "15/13/10" },
+    { "component": "Automotive automatic transmission", "clearanceMicrons": "5–20", "isoTarget": "17/15/12" },
+    { "component": "Industrial gearbox", "clearanceMicrons": "15–40", "isoTarget": "18/16/13" }
+  ],
+  "governingStandard": "ISO 4406:2021",
+  "relatedStandards": ["ISO 16889:2022", "ISO 11171:2016", "ISO 11500:2008"],
+  "source": "https://elimfilters.com/knowledge-center/datasets"
+}

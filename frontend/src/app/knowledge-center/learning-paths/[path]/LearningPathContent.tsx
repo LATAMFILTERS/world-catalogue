@@ -344,6 +344,41 @@ export default function LearningPathContent({ path }: { path: LearningPath }) {
         </div>
       </section>
 
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Knowledge Center', item: 'https://elimfilters.com/knowledge-center' },
+          { '@type': 'ListItem', position: 2, name: 'Learning Paths', item: 'https://elimfilters.com/knowledge-center/learning-paths' },
+          { '@type': 'ListItem', position: 3, name: path.title, item: `https://elimfilters.com/knowledge-center/learning-paths/${path.slug}` },
+        ],
+      }) }} />
+
+      {/* LearningResource JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'LearningResource',
+        name: path.title,
+        description: path.description,
+        url: `https://elimfilters.com/knowledge-center/learning-paths/${path.slug}`,
+        author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        educationalLevel: path.difficulty,
+        timeRequired: `PT${path.totalMinutes}M`,
+        teaches: path.outcomeStatement,
+        learningResourceType: 'Learning Path',
+        hasPart: path.steps.map((step) => ({
+          '@type': 'LearningResource',
+          name: step.title,
+          description: step.description,
+          url: `https://elimfilters.com${step.href}`,
+          timeRequired: `PT${step.estimatedMinutes}M`,
+          learningResourceType: step.type,
+        })),
+        prerequisites: path.prerequisites,
+      }) }} />
+
     </main>
   );
 }

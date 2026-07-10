@@ -21,7 +21,10 @@
  */
 
 // ── Types ─────────────────────────────────────────────────────────────────────
-export type { KCArticle, KCStandard, KCTechnology, KCSystemDetail, KCIndustryDetail } from './types';
+export type {
+  KCArticle, KCStandard, KCTechnology, KCSystemDetail, KCIndustryDetail,
+  KCEeat, KCFaqItem, KCEngineeringReference, KCHowTo, KCHowToStep, KCDecisionGuide, KCDecisionNode,
+} from './types';
 
 // ── Entity IDs ────────────────────────────────────────────────────────────────
 export {

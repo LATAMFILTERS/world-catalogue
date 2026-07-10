@@ -52,6 +52,17 @@ export interface KCArticle {
   };
   /** Documented engineering misinterpretations of this article's core concepts. */
   commonMistakes?: string[];
+  // ── Phase 6G: GEO + SEO Hardening ───────────────────────────────────────
+  /** EEAT visible metadata — reviewer, discipline, version, review dates. */
+  eeat?: KCEeat;
+  /** Frequently Asked Questions — rendered + emitted as FAQPage JSON-LD. */
+  faqs?: KCFaqItem[];
+  /** Authoritative engineering references organised by category. */
+  engineeringReferences?: KCEngineeringReference[];
+  /** Procedural HowTo — emitted as HowTo JSON-LD for procedural articles. */
+  howTo?: KCHowTo;
+  /** Engineering decision guide — rendered as interactive decision tree. */
+  decisionGuide?: KCDecisionGuide;
 }
 
 export interface KCStandard {
@@ -83,6 +94,11 @@ export interface KCStandard {
   childStandards?: string[];              // STD-xxx IDs
   /** Documented engineering misinterpretations of this standard's requirements or application. */
   commonMistakes?: string[];
+  // ── Phase 6G: GEO + SEO Hardening ───────────────────────────────────────
+  /** Frequently Asked Questions about this standard — rendered + FAQPage JSON-LD. */
+  faqs?: KCFaqItem[];
+  /** Authoritative engineering references for this standard. */
+  engineeringReferences?: KCEngineeringReference[];
 }
 
 export interface KCTechnology {
@@ -226,6 +242,65 @@ export interface KCCalculator {
   validationStatus: 'validated' | 'pending';
   sourceStandardRevision: string;       // e.g. "ISO 16889:2022"
   revisionHistory: { version: string; date: string; change: string }[];
+}
+
+// ── Phase 6G: GEO + SEO Hardening — Supporting Interfaces ────────────────────
+
+export interface KCEeat {
+  reviewerName: string;
+  reviewerTitle: string;
+  organization: string;
+  lastReviewDate: string;          // ISO date e.g. "2026-06-15"
+  nextReviewDate: string;
+  discipline: string;              // e.g. "Fluid Power Engineering"
+  standards: string[];             // governing standard codes
+  contentLevel: 'introductory' | 'intermediate' | 'advanced' | 'expert';
+  contentType: 'technical-article' | 'case-study' | 'reference' | 'procedure' | 'analysis';
+  version: string;                 // e.g. "2.1"
+  evidenceBase: string;            // source evidence summary
+}
+
+export interface KCFaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface KCEngineeringReference {
+  category: 'standard' | 'specification' | 'research' | 'handbook' | 'regulation' | 'test-method';
+  citation: string;
+  relevance: string;
+}
+
+export interface KCHowToStep {
+  name: string;
+  text: string;
+  tool?: string;
+  supply?: string;
+}
+
+export interface KCHowTo {
+  name: string;
+  description: string;
+  totalTime?: string;   // ISO 8601 duration e.g. "PT2H"
+  supply?: string[];
+  tool?: string[];
+  steps: KCHowToStep[];
+}
+
+export interface KCDecisionNode {
+  id: string;
+  question: string;
+  yes?: string;          // next node ID on yes
+  no?: string;           // next node ID on no
+  result?: string;       // terminal node — recommendation text
+  note?: string;         // engineering note
+}
+
+export interface KCDecisionGuide {
+  title: string;
+  description: string;
+  startNode: string;
+  nodes: KCDecisionNode[];
 }
 
 // ── COMPARISON TYPES ─────────────────────────────────────────────────────────
