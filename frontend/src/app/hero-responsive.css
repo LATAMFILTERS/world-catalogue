@@ -4,6 +4,7 @@
 @import './hero-audit.css';
 @import './responsive-final.css';
 @import './canonical-engineering.css';
+@import './structured-definitions.css';
 
 /* Shared hero system for desktop, tablet and mobile.
  * These rules preserve one visual hierarchy across all languages while
