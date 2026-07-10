@@ -116,6 +116,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.035em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
 }
 
 img, video, iframe {
@@ -189,6 +192,62 @@ h4 .reg-sup {
   object-fit: cover;
 }
 
+/*
+ * Global multilingual layout guardrails.
+ * The same visual hierarchy is preserved in every language; longer translations
+ * wrap inside the component instead of changing the typography scale.
+ */
+main [style*="grid-template-columns"] > * {
+  min-width: 0;
+}
+
+main a h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.15rem, 1.8vw, 2rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.025em !important;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+}
+
+main a p,
+main a span {
+  overflow-wrap: anywhere;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-body);
+}
+
+[dir="rtl"] p {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  /* Shared two-column editorial layouts used by Systems, Industries and Knowledge System. */
+  main [style*="0.9fr"][style*="1.1fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  main [style*="0.9fr"][style*="1.1fr"] > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  main h1 {
+    font-size: clamp(2.35rem, 11vw, 4.4rem) !important;
+    line-height: 0.94 !important;
+    max-width: 100% !important;
+  }
+
+  main h2 {
+    max-width: 100% !important;
+  }
+}
+
 @media (max-width: 767px) {
   .product-desc-grid {
     display: flex !important;
@@ -216,5 +275,14 @@ h4 .reg-sup {
     padding-bottom: 56.25% !important;
     height: 0 !important;
     border-radius: 14px !important;
+  }
+
+  main a h3 {
+    font-size: clamp(1.05rem, 5vw, 1.45rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  main p {
+    max-width: 100% !important;
   }
 }
