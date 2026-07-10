@@ -55,7 +55,17 @@ export default function FamilyPage({ params }: Props) {
   const hasHdProducts = fam.hdPrefix && fam.hdProducts.length > 0 && fam.hdProducts[0] !== 'DOCUMENTATION PENDING';
   const hasLdProducts = fam.ldPrefix && fam.ldProducts.length > 0 && fam.ldProducts[0] !== 'DOCUMENTATION PENDING';
   const isPrimaryAir = fam.slug === 'primary-air';
-  const heroSrc = isPrimaryAir ? '/images/air-filter1.avif' : fam.heroImage;
+  const isAirCleanerHousings = fam.slug === 'air-cleaner-housings';
+  const heroSrc = isPrimaryAir
+    ? '/images/air-filter1.avif'
+    : isAirCleanerHousings
+      ? '/images/carcasa.jd.avif'
+      : fam.heroImage;
+  const heroImageStyle = isPrimaryAir
+    ? primaryAirHeroImage
+    : isAirCleanerHousings
+      ? airCleanerHousingHeroImage
+      : heroImage;
 
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -116,7 +126,7 @@ export default function FamilyPage({ params }: Props) {
       <Link href="/families" style={backButton}>← FAMILIES</Link>
 
       <header style={hero}>
-        <img src={heroSrc} alt={fam.name} fetchPriority="high" style={isPrimaryAir ? primaryAirHeroImage : heroImage} />
+        <img src={heroSrc} alt={fam.name} fetchPriority="high" style={heroImageStyle} />
         <div style={heroOverlay} />
         <div style={heroInner}>
           <h1 style={heroTitle}>{fam.name}</h1>
@@ -248,6 +258,12 @@ const primaryAirHeroImage: CSSProperties = {
   opacity: 0.52,
   objectPosition: '64% center',
   filter: 'contrast(1.08) saturate(1.04)',
+};
+const airCleanerHousingHeroImage: CSSProperties = {
+  ...heroImage,
+  opacity: 0.58,
+  objectPosition: '68% center',
+  filter: 'contrast(1.08) saturate(1.05)',
 };
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
