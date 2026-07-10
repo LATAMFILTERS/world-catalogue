@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { motion } from 'motion/react';
 
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -44,22 +45,39 @@ const VERIFIED_REFERENCES = [
     stat: 'ISO 4406',
     label: 'Hydraulic fluid cleanliness is classified using solid-particle contamination codes.',
     source: 'ISO 4406:2021',
+    href: '/knowledge-system/standards/iso-4406',
   },
   {
     stat: 'ISO 16889',
     label: 'Hydraulic filter element performance is evaluated through multi-pass testing.',
     source: 'ISO 16889 Multi-Pass Test',
+    href: '/knowledge-system/standards/iso-16889',
   },
   {
     stat: 'B10(c) >= 200',
     label: 'Beta 200 corresponds to approximately 99.5% efficiency at the rated particle size.',
     source: 'Beta Ratio Formula',
+    href: '/knowledge-system/standards/iso-16889',
   },
   {
     stat: 'Particle Control',
     label: 'Cleaner hydraulic fluid reduces abrasive wear, valve sticking, pump damage, and reliability loss.',
     source: 'Hydraulic Contamination Control',
+    href: '/knowledge-system/contamination/particle-wear',
   },
+];
+
+const NAV_LINKS = [
+  { label: 'ISO 4406 Cleanliness Codes', href: '/knowledge-system/standards/iso-4406' },
+  { label: 'ISO 16889 Multi-Pass Testing', href: '/knowledge-system/standards/iso-16889' },
+  { label: 'Particle Wear', href: '/knowledge-system/contamination/particle-wear' },
+  { label: 'Hydraulic System Contamination', href: '/knowledge-system/contamination/hydraulic-system' },
+  { label: 'Diesel Water Contamination', href: '/knowledge-system/contamination/diesel-water' },
+  { label: 'Operational Continuity', href: '/knowledge-system/fleet/reducing-downtime' },
+  { label: 'Total Cost of Ownership', href: '/knowledge-system/fleet/total-cost-ownership' },
+  { label: 'Protection Systems', href: '/systems' },
+  { label: 'Technologies', href: '/technologies' },
+  { label: 'Industries', href: '/industries' },
 ];
 
 const FAQS = [
@@ -119,10 +137,20 @@ export default function KnowledgeSystemPage() {
           <h2 style={sectionTitle}>From contamination risk to asset protection decisions.</h2>
           <div>
             <p style={leadText}>
-              The ELIMFILTERS Knowledge System is structured around a simple operating sequence: understand the industry, identify the asset at risk, define the contamination problem, apply the correct protection system, and connect the result to operational continuity.
+              The ELIMFILTERS Knowledge System is structured around a practical operating sequence: understand the{' '}
+              <Link href="/industries" style={inlineLink}>industry context</Link>, identify the{' '}
+              <Link href="/knowledge-system/science" style={inlineLink}>assets at risk</Link>, define the{' '}
+              <Link href="/knowledge-system/contamination" style={inlineLink}>contamination problem</Link>, apply the correct{' '}
+              <Link href="/systems" style={inlineLink}>protection system</Link>, connect the correct{' '}
+              <Link href="/technologies" style={inlineLink}>technology</Link>, and measure the result as{' '}
+              <Link href="/knowledge-system/fleet/reducing-downtime" style={inlineLink}>operational continuity</Link>.
             </p>
             <p style={bodyText}>
-              Every section is designed to support distributors, engineers, fleets, maintenance teams, and AI retrieval systems with technical information that can be navigated by standard, system, contamination mode, technology, or industry.
+              Every section remains connected for customers, distributors, engineers, fleets, maintenance teams, and AI retrieval systems. Users can move from{' '}
+              <Link href="/knowledge-system/standards/iso-4406" style={inlineLink}>ISO cleanliness codes</Link> to{' '}
+              <Link href="/knowledge-system/standards/iso-16889" style={inlineLink}>filter performance testing</Link>, from{' '}
+              <Link href="/knowledge-system/contamination/particle-wear" style={inlineLink}>particle wear</Link> to{' '}
+              <Link href="/knowledge-system/contamination/diesel-water" style={inlineLink}>diesel water contamination</Link>, and from technical risk to purchasing and maintenance decisions.
             </p>
           </div>
         </div>
@@ -133,11 +161,24 @@ export default function KnowledgeSystemPage() {
           <h2 style={sectionTitle}>Verified technical anchors.</h2>
           <div style={statsGrid}>
             {VERIFIED_REFERENCES.map((item) => (
-              <div key={item.stat} style={statCard}>
+              <Link key={item.stat} href={item.href} style={statCard}>
                 <strong style={statValue}>{item.stat}</strong>
                 <p style={statLabel}>{item.label}</p>
                 <span style={statSource}>{item.source}</span>
-              </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={linkSection}>
+        <div style={wrap}>
+          <h2 style={sectionTitle}>Knowledge paths customers can follow.</h2>
+          <div style={navGrid}>
+            {NAV_LINKS.map((item) => (
+              <Link key={item.href} href={item.href} style={navLink}>
+                {item.label}
+              </Link>
             ))}
           </div>
         </div>
@@ -185,7 +226,7 @@ export default function KnowledgeSystemPage() {
   );
 }
 
-const homeButton: React.CSSProperties = {
+const homeButton: CSSProperties = {
   position: 'fixed',
   top: '1.1rem',
   right: '1.35rem',
@@ -202,7 +243,7 @@ const homeButton: React.CSSProperties = {
   backdropFilter: 'blur(14px)',
 };
 
-const heroSection: React.CSSProperties = {
+const heroSection: CSSProperties = {
   minHeight: '88vh',
   display: 'flex',
   alignItems: 'center',
@@ -211,7 +252,7 @@ const heroSection: React.CSSProperties = {
   borderBottom: '1px solid rgba(255,255,255,0.08)',
 };
 
-const heroTitle: React.CSSProperties = {
+const heroTitle: CSSProperties = {
   fontFamily: displayFont,
   fontWeight: 700,
   letterSpacing: '-0.055em',
@@ -222,7 +263,7 @@ const heroTitle: React.CSSProperties = {
   textTransform: 'uppercase',
 };
 
-const heroLead: React.CSSProperties = {
+const heroLead: CSSProperties = {
   marginTop: '2rem',
   maxWidth: '820px',
   color: 'rgba(255,255,255,0.78)',
@@ -233,12 +274,12 @@ const heroLead: React.CSSProperties = {
   paddingLeft: '1.4rem',
 };
 
-const introSection: React.CSSProperties = {
+const introSection: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
   borderBottom: '1px solid rgba(255,255,255,0.06)',
 };
 
-const twoCol: React.CSSProperties = {
+const twoCol: CSSProperties = {
   maxWidth: '1180px',
   margin: '0 auto',
   display: 'grid',
@@ -246,7 +287,7 @@ const twoCol: React.CSSProperties = {
   gap: 'clamp(2rem, 6vw, 5rem)',
 };
 
-const sectionTitle: React.CSSProperties = {
+const sectionTitle: CSSProperties = {
   fontFamily: displayFont,
   fontSize: 'clamp(2rem, 4vw, 3.6rem)',
   lineHeight: 0.95,
@@ -256,7 +297,7 @@ const sectionTitle: React.CSSProperties = {
   fontWeight: 700,
 };
 
-const leadText: React.CSSProperties = {
+const leadText: CSSProperties = {
   color: 'rgba(255,255,255,0.8)',
   fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
   lineHeight: 1.72,
@@ -264,37 +305,46 @@ const leadText: React.CSSProperties = {
   margin: 0,
 };
 
-const bodyText: React.CSSProperties = {
+const bodyText: CSSProperties = {
   color: 'rgba(255,255,255,0.58)',
   fontSize: '1rem',
   lineHeight: 1.78,
   marginTop: '1.2rem',
 };
 
-const referenceSection: React.CSSProperties = {
+const inlineLink: CSSProperties = {
+  color: '#FFF12D',
+  textDecoration: 'underline',
+  textUnderlineOffset: '0.18em',
+  fontWeight: 700,
+};
+
+const referenceSection: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
   background: 'rgba(255,255,255,0.018)',
   borderBottom: '1px solid rgba(255,255,255,0.06)',
 };
 
-const wrap: React.CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
-const wrapNarrow: React.CSSProperties = { maxWidth: '900px', margin: '0 auto' };
+const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const wrapNarrow: CSSProperties = { maxWidth: '900px', margin: '0 auto' };
 
-const statsGrid: React.CSSProperties = {
+const statsGrid: CSSProperties = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
   gap: '1rem',
   marginTop: '2.4rem',
 };
 
-const statCard: React.CSSProperties = {
+const statCard: CSSProperties = {
+  display: 'block',
+  textDecoration: 'none',
   background: 'rgba(0,0,0,0.55)',
   border: '1px solid rgba(255,255,255,0.1)',
   padding: '1.35rem',
   minHeight: '210px',
 };
 
-const statValue: React.CSSProperties = {
+const statValue: CSSProperties = {
   display: 'block',
   fontFamily: displayFont,
   color: '#FFF12D',
@@ -304,14 +354,14 @@ const statValue: React.CSSProperties = {
   textTransform: 'uppercase',
 };
 
-const statLabel: React.CSSProperties = {
+const statLabel: CSSProperties = {
   color: 'rgba(255,255,255,0.68)',
   fontSize: '0.95rem',
   lineHeight: 1.62,
   marginTop: '1rem',
 };
 
-const statSource: React.CSSProperties = {
+const statSource: CSSProperties = {
   display: 'block',
   color: 'rgba(255,255,255,0.38)',
   fontFamily: displayFont,
@@ -321,19 +371,44 @@ const statSource: React.CSSProperties = {
   marginTop: '1rem',
 };
 
-const cardsSection: React.CSSProperties = {
+const linkSection: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+  borderBottom: '1px solid rgba(255,255,255,0.06)',
+};
+
+const navGrid: CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '0.75rem',
+  marginTop: '2.3rem',
+};
+
+const navLink: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.1)',
+  background: 'rgba(255,255,255,0.025)',
+  color: 'rgba(255,255,255,0.82)',
+  textDecoration: 'none',
+  fontFamily: displayFont,
+  fontWeight: 700,
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  fontSize: '0.78rem',
+  padding: '1rem 1.1rem',
+};
+
+const cardsSection: CSSProperties = {
   maxWidth: '1240px',
   margin: '0 auto',
   padding: 'clamp(4rem, 8vw, 7rem) 2rem',
 };
 
-const cardsGrid: React.CSSProperties = {
+const cardsGrid: CSSProperties = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
   gap: '1.4rem',
 };
 
-const sectionCard: React.CSSProperties = {
+const sectionCard: CSSProperties = {
   background: 'rgba(255,255,255,0.02)',
   border: '1px solid rgba(255,255,255,0.08)',
   padding: '2rem',
@@ -344,7 +419,7 @@ const sectionCard: React.CSSProperties = {
   flexDirection: 'column',
 };
 
-const cardTitle: React.CSSProperties = {
+const cardTitle: CSSProperties = {
   fontFamily: displayFont,
   fontSize: 'clamp(1.35rem, 2.4vw, 2rem)',
   fontWeight: 700,
@@ -355,7 +430,7 @@ const cardTitle: React.CSSProperties = {
   margin: 0,
 };
 
-const cardBody: React.CSSProperties = {
+const cardBody: CSSProperties = {
   fontFamily: bodyFont,
   fontSize: '0.96rem',
   color: 'rgba(255,255,255,0.62)',
@@ -363,7 +438,7 @@ const cardBody: React.CSSProperties = {
   marginTop: '1.35rem',
 };
 
-const explore: React.CSSProperties = {
+const explore: CSSProperties = {
   color: '#FFF12D',
   fontFamily: displayFont,
   fontWeight: 700,
@@ -373,19 +448,19 @@ const explore: React.CSSProperties = {
   textTransform: 'uppercase',
 };
 
-const faqSection: React.CSSProperties = {
+const faqSection: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) 2rem',
   background: 'rgba(255,241,45,0.025)',
   borderTop: '1px solid rgba(255,255,255,0.06)',
 };
 
-const faqCard: React.CSSProperties = {
+const faqCard: CSSProperties = {
   background: 'rgba(0,0,0,0.55)',
   border: '1px solid rgba(255,255,255,0.08)',
   padding: '1.55rem 1.8rem',
 };
 
-const faqTitle: React.CSSProperties = {
+const faqTitle: CSSProperties = {
   fontFamily: displayFont,
   color: '#fff',
   fontSize: '1.05rem',
@@ -395,7 +470,7 @@ const faqTitle: React.CSSProperties = {
   letterSpacing: '-0.02em',
 };
 
-const faqBody: React.CSSProperties = {
+const faqBody: CSSProperties = {
   fontFamily: bodyFont,
   color: 'rgba(255,255,255,0.62)',
   fontSize: '0.95rem',
