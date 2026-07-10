@@ -1,0 +1,101 @@
+/* Phase 3B.3.3 - Shared hero audit.
+ * Preserve page-specific object-position values while stabilizing media,
+ * overlays, content hierarchy and contrast across devices.
+ */
+
+main header[style*="position: relative"][style*="overflow: hidden"],
+main section[style*="position: relative"][style*="overflow: hidden"][style*="min-height"] {
+  isolation: isolate;
+  background-color: #050505;
+}
+
+main header[style*="position: relative"] > img[style*="position: absolute"],
+main section[style*="position: relative"] > img[style*="position: absolute"],
+main header[style*="position: relative"] > video[style*="position: absolute"],
+main section[style*="position: relative"] > video[style*="position: absolute"] {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  max-width: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+main header[style*="position: relative"] > div[style*="position: absolute"][style*="inset: 0"],
+main section[style*="position: relative"] > div[style*="position: absolute"][style*="inset: 0"] {
+  pointer-events: none;
+}
+
+main header[style*="position: relative"] > div[style*="position: relative"],
+main section[style*="position: relative"] > div[style*="position: relative"] {
+  z-index: 2;
+}
+
+main header[style*="min-height"] h1,
+main section[style*="min-height"] h1 {
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.72);
+}
+
+main header[style*="min-height"] p,
+main section[style*="min-height"] p {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.72);
+}
+
+main header[style*="min-height"] [style*="border-left: 3px solid"],
+main section[style*="min-height"] [style*="border-left: 3px solid"] {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.38), transparent 88%);
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  padding-right: 0.75rem;
+}
+
+main header[style*="min-height"] img,
+main section[style*="min-height"] img {
+  image-rendering: auto;
+}
+
+@media (max-width: 900px) {
+  main header[style*="min-height"] > img[style*="position: absolute"],
+  main section[style*="min-height"] > img[style*="position: absolute"] {
+    min-height: 100%;
+  }
+
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    max-width: 16ch !important;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.82);
+  }
+
+  main header[style*="min-height"] p,
+  main section[style*="min-height"] p {
+    max-width: 62ch !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main header[style*="min-height"],
+  main section[style*="min-height"] {
+    min-height: clamp(520px, 78svh, 680px) !important;
+  }
+
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    max-width: 13ch !important;
+  }
+
+  main header[style*="min-height"] [style*="border-left: 3px solid"],
+  main section[style*="min-height"] [style*="border-left: 3px solid"] {
+    padding-left: 1rem !important;
+    padding-right: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main header[style*="position: relative"] > img,
+  main section[style*="position: relative"] > img,
+  main header[style*="position: relative"] > video,
+  main section[style*="position: relative"] > video {
+    transform: none !important;
+  }
+}
