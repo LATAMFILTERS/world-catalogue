@@ -1,5 +1,6 @@
 @import './visual-polish.css';
 @import './universal-end-navigation.css';
+@import './cards-layout-polish.css';
 
 /* Shared hero system for desktop, tablet and mobile.
  * These rules preserve one visual hierarchy across all languages while
