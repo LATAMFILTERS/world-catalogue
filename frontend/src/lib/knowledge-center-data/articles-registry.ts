@@ -959,6 +959,32 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
         heading: 'Fluid Sampling and Cleanliness Verification',
         body: 'Verifying that a hydraulic system operates within its cleanliness target requires correct fluid sampling. Sample ports must be located in turbulent flow zones — return-line tees, pump outlet connections, or dedicated sampling valves. Do not sample from the reservoir directly (stratified contamination and settled particles give unrepresentative results). Sample bottles must be pre-cleaned to ISO 11/9/6 or better. Sample the system at operating temperature and normal flow rate — cold samples drawn at idle give optimistic particle counts. For servo valve systems, confirm cleanliness meets ISO 14/12/9 at the valve inlet port, not just at the reservoir. Initial commissioning sampling after flushing is mandatory: a system accepted at ISO 22/20/17 in as-built condition has already initiated spool wear before its first productive cycle.',
       },
+      {
+        heading: 'Contamination Pathways and System Failure Presentation',
+        body: 'The first sign of hydraulic contamination is not a leak or a failure — it is drift. Actuators that do not hold position. Proportional valves with growing deadband. Boom controls that hunt at partial throttle. These symptoms appear months before a component failure forces a repair event, meaning contamination is already costing money long before it is diagnosed. Hydraulic contamination is responsible for 70–80% of premature component failures in mobile equipment hydraulic circuits. It is not a consequence of bad luck. It is the predictable result of operating a high-precision system without a measured contamination control strategy. Contamination enters through four distinct pathways: built-in contamination from assembly residue in hoses, cylinders, and fittings; ingressed particles through cylinder rod seals and reservoir breathers; internally generated wear debris from pumps, motors, and valves; and fluid degradation products including varnish precursors from thermal-oxidative breakdown above 70°C. In mobile off-highway equipment, all four pathways operate simultaneously. At mining machine rates of $120,000–$180,000 per operating hour, a 24-hour hydraulic pump failure represents $2.88M–$4.32M in lost production value before repair costs.',
+        callout: [
+          { label: 'Hydraulic component failures from contamination', value: '70–80% of premature failures' },
+          { label: 'Component service life (uncontrolled)', value: '−50–70% reduction' },
+          { label: 'Proportional valve / pump replacement', value: '$2,000–$40,000 per event' },
+        ],
+      },
+      {
+        heading: 'Varnish Formation: Secondary Failure Mechanism',
+        body: 'Hydraulic fluid exposed to operating temperatures above 80°C undergoes thermal-oxidative degradation producing varnish precursor molecules that deposit as thin lacquer films on proportional valve bores, pump plates, and accumulator internals. Varnish deposits of 1–2 µm thickness are sufficient to cause spool stiction under static conditions. Varnish cannot be removed by filtration alone — dissolved precursors require chemical flushing. Filtration prevents the solid varnish particles that form after precipitation from re-circulating in the system. Track varnish potential index (MPC test) if the system operates above 70°C — particle filtration alone will not prevent varnish-induced stiction in high-temperature applications.',
+      },
+      {
+        heading: 'Technology Mapping: Hydraulic System Protection',
+        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. HYDROCORE™ coalescing media removes free and emulsified water from hydraulic fluid, preventing water-accelerated fluid oxidation and varnish precursor formation; applied in reservoir return-line housings. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
+        callout: [
+          { label: 'NANOFORCE™ rating', value: 'β₁₀(c) ≥ 1000; servo/proportional valve circuits' },
+          { label: 'HYDROCORE™ application', value: 'Water separation in reservoir return-line housings' },
+          { label: 'MICROKAPPA™ application', value: 'Reservoir breather ingress prevention' },
+        ],
+      },
+      {
+        heading: 'Hydraulic Contamination Control Protocol',
+        body: 'Effective hydraulic contamination control requires four concurrent measures: inline filtration at the pump outlet (protecting valves), return-line filtration at the reservoir inlet (preventing system re-contamination), reservoir breather filtration (blocking ingress), and condition-based oil sampling (confirming ISO 4406 compliance). Changing a filter element without measuring the resulting cleanliness code does not confirm protection — it only confirms that a filter was installed. Protocol: establish ISO 4406 cleanliness targets before selecting filter element specifications; size filter elements to system flow rate and dirt-holding capacity, not just connection port size; monitor differential pressure indicator and confirm bypass valve does not open under operating conditions; implement quarterly oil analysis to track ISO 4406 particle count between service intervals; commission new hydraulic systems with a flushing circuit before connecting to valves — built-in contamination from assembly is the leading source of early component failures; track varnish potential index (MPC test) if system operates above 70°C.',
+      },
     ],
     keyMetrics: [
       { label: 'Servo valve spool clearance', value: '1–3 µm' },
@@ -967,9 +993,9 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Kidney-loop flow rate', value: '5–15% system volume/min' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'HYDROCORE™', 'MICROKAPPA™'],
     relatedSystems: ['Hydraulic Protection'],
-    keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop'],
+    keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop', 'varnish formation', 'contamination pathways'],
     commonMistakes: [
       'Specifying the same ISO 4406 cleanliness target for all hydraulic components in a system. Servo valves with 1–4 µm spool clearances require ISO 16/14/11; cylinders only need ISO 19/17/14 — a single target for the entire system over-specifies low-sensitivity circuits.',
       'Not accounting for the cumulative effect of two-body and three-body abrasive wear. Single large particles cause two-body wear (direct gouging); wear debris particles from the first event become abrasives causing three-body wear on adjacent surfaces — contamination damage is self-accelerating.',
@@ -1043,6 +1069,23 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       {
         heading: 'Field Detection and Monitoring',
         body: 'Field water detection methods span from crude to quantitative. Water paste (copper sulphate indicator): applied to a sampling tube, changes colour in contact with free water — useful for tank bottom sampling to confirm presence/absence of a free-water layer. Water-finding paper or capsules: single-use colorimetric indicators for field confirmation. Portable refractometer: measures water content by refractive index change — applicable to water-soluble fluids (coolant, water-glycol hydraulic fluid) but not diesel. Coulometric KFT field instruments: handheld units can measure water in fuel to ±10 ppm precision at 30–300 ppm concentrations, suitable for fleet pre-delivery inspection. Capacitance sensors: installed in-line fuel water sensors detect emulsified water by dielectric constant change — they trigger an alarm at pre-set water fraction without measuring ppm. Drain inspection: daily inspection and draining of filter water bowls is the minimum fleet maintenance protocol; drain volume and visual appearance of drained water provide qualitative contamination trending.',
+      },
+      {
+        heading: 'Operational Signals and Fleet Impact',
+        body: 'The operational signal for diesel water contamination is almost never "water in fuel." It is unexplained short filter life: fuel filters that should last 500 operating hours plugging at 50–100 hours. It is injector failures arriving outside the normal replacement schedule. It is engine hard starts in cold mornings, or power loss under load from restricted fuel flow. By the time water is the confirmed diagnosis, the system has already been degraded. Water in diesel fuel enters through condensation in partially filled above-ground storage tanks, rain ingress through improperly sealed filler caps, cross-contamination during fuel delivery, and emulsification during fuel agitation. Every diesel fleet operating from bulk storage is exposed to at least one of these pathways continuously. A 10,000-litre bulk fuel storage tank with water content above 0.1% by volume can develop active microbial contamination within 30–60 days, rendering the entire tank volume unusable without chemical treatment and filtration. In agricultural operations dependent on large seasonal fuel reserves, a single contamination event can affect multiple machines simultaneously during peak operating periods.',
+        callout: [
+          { label: 'Injector service life reduction', value: '−40–70% under sustained water contamination above 200 ppm' },
+          { label: 'Fuel filter service interval', value: '−60–80% from microbial biomass plugging' },
+          { label: 'Injector set replacement cost', value: '$5,000–$30,000 per event' },
+        ],
+      },
+      {
+        heading: 'Five Failure Modes from Water in Diesel Fuel',
+        body: 'Water in diesel fuel exists in three forms: dissolved (invisible, below saturation, 50–200 ppm), free (separate phase at tank bottom, visible above 500 ppm), and emulsified (droplets suspended in fuel from agitation or additive interaction). Each form causes different damage through different mechanisms across the fuel system. Injector erosion: water at 1,600–2,500 bar injection pressure flashes at injector tip orifices, causing hydraulic erosion of needle and seat at 40–70× the rate in clean fuel. Injector clearances of 1–3 µm are destroyed by erosion within tens of minutes of water slug exposure. Microbial growth: sulphate-reducing bacteria and Hormoconis resinae fungi proliferate at the water-diesel interface in storage tanks. Colonies produce acidic metabolic byproducts, form filter-plugging biomass mats, and accelerate tank corrosion through electrochemical pitting. Active contamination renders a 10,000 L tank unusable in 30–60 days. Filter plugging: microbial biomass mats plug fuel filter media at particle sizes far below filter rated efficiency. Filters rated for 500-hour life may plug in 50–100 hours under active microbial contamination. Below −5°C, ice crystal formation compounds plugging with wax crystallisation from cold fuel. Fuel pump cavitation: water-contaminated fuel causes vapour cavitation in high-pressure fuel pump at operating pressure transitions. Cavitation collapses erode pump barrel and plunger surfaces, creating metal debris that enters the fuel circuit downstream of the pump. Tank corrosion: electrochemical pitting from microbial acid production and water-diesel interface corrosion degrades steel tank walls. Corrosion debris becomes a secondary contamination source, adding abrasive iron oxide particles to an already-contaminated fuel supply.',
+      },
+      {
+        heading: 'Water Contamination Control Strategy',
+        body: 'Water contamination control is most effective when applied at the fuel storage stage — where water is present in bulk form and easily separated — rather than at the engine fuel filter, where coalescing efficiency is limited by fuel flow rate and microbial biomass may already have formed. A contaminated bulk fuel supply will defeat any on-engine filtration system if the source contamination rate exceeds the filter\'s water holding capacity. Control protocol: test bulk fuel storage quarterly with ASTM D6304 Karl Fischer titration before contamination becomes visible; inspect and seal all storage tank filler caps, vents, and inspection covers against rain ingress; install fuel transfer filtration with water separation before fuel enters equipment tanks; keep bulk storage tanks as full as practical to minimise headspace volume available for condensation; monitor microbial contamination indicators (filter plugging rate, fuel haze, dark deposits at tank outlet); apply biocide treatment when microbial contamination is confirmed — ASTM D6304 positive does not distinguish microbial from condensation water; replace all fuel filters and flush the fuel circuit after a water contamination event and do not return equipment to service on contaminated-path filters.',
       },
     ],
     keyMetrics: [
@@ -1501,6 +1544,37 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
         heading: 'Maintenance Protocol and Inspection',
         body: 'Air intake system maintenance must preserve the gasket seal between the primary element and the housing seat — this is the most critical installation parameter. Gasket compression: spin-on and axial-push element installations require the gasket to be seated fully before closure. Inspect the housing seat for nicks, corrosion, or deformation that would create a partial bypass channel. After element installation, attempt to rotate the element by hand — any rotation indicates incomplete seating. Housing interior cleaning: wipe with a clean damp cloth before installing the replacement element. Do not use compressed air inside the housing while the safety element is absent — particles will be driven downstream. Element cleaning (blowing out with compressed air): only permitted for elements specifically rated as cleanable (polyurethane foam pre-cleaners, some panel pre-filters). Pleated paper or synthetic primary elements must not be cleaned — compressed air drives particles deeper into the media, increases restriction, and creates micro-perforations. Element disposal inspection: before discarding the used primary element, cut the end cap and inspect the upstream media face — irregular loading patterns, holes, or metallic deposits indicate housing or installation problems that must be corrected before the new element is installed.',
       },
+      {
+        heading: 'Abrasive Wear Mechanism: Dust Ingestion Failure Progression',
+        body: 'The failure mechanism is mechanical abrasion governed by the Mohs hardness differential between the contaminant and the component surface. Silica (Mohs 7) is significantly harder than steel (Mohs 4–5). Hardrock mine dust, crop silica, and construction site dust all contain silica at concentrations that make every cubic metre of ambient air a potential abrasive. When particles bypass air intake filtration and enter the combustion chamber, each piston stroke introduces abrasive micro-cutting between ring and cylinder wall surfaces. Failure progression: fine silica particles (5–20 µm) bypass the filter or pass through a late-life element; particles enter the combustion chamber via the intake manifold; abrasive contact with piston ring and cylinder wall occurs on every piston stroke; ring-to-wall clearance increases from cumulative micro-cutting; blow-by gases (with combustion products and silica) enter the crankcase; oil analysis shows elevated silicon (Si) and aluminium (Al) — abrasive wear is confirmed active; increased blow-by accelerates oil oxidation and viscosity breakdown; compression loss reduces power output and fuel consumption increases; bearing wear accelerates from particle-contaminated oil circuit; engine overhaul is required at 3,000–5,000 hours versus 15,000–25,000 hours in a managed air filtration programme. Turbocharger bearings operate at 80,000–150,000 RPM — the turbocharger is the first high-speed component in the air path after filtration and is typically the first catastrophic repair event in an engine experiencing intake contamination.',
+        callout: [
+          { label: 'Silica (Mohs 7) vs steel (Mohs 4–5)', value: 'Abrasive cuts steel on every piston stroke' },
+          { label: 'Engine overhaul (unmanaged)', value: '3,000–5,000 hours' },
+          { label: 'Engine overhaul (managed)', value: '15,000–25,000 hours' },
+        ],
+      },
+      {
+        heading: 'Operational Consequences of Dust Ingestion',
+        body: 'Engine overhaul interval under uncontrolled dust ingestion is 3,000–5,000 operating hours versus 15,000–25,000 hours in a managed air filtration programme. Engine rebuild cost per event is $25,000–$150,000+ depending on equipment class. Turbocharger replacement is $3,000–$15,000 — the turbocharger is the first component in the air path after filtration and is typically the first catastrophic failure in an engine experiencing intake contamination. At mining machine rates of $180,000 per operating hour, a 5–14 day engine overhaul event represents $21M–$60M+ in total event cost. Dust ingestion does not require a visible filter failure. Elements operating near or past their rated dust-holding capacity allow progressively more fine particles through as differential pressure rises. This late-life ingestion — where the filter is technically in service but no longer controlling contamination — accounts for a significant fraction of premature engine wear in fleets with poor service interval compliance. In agricultural environments, engine overhaul during harvest season represents not only repair cost but lost seasonal productivity — a 10-day overhaul during peak harvest may cause crop losses exceeding the total equipment value for some operations.',
+        callout: [
+          { label: 'Engine overhaul interval (dust ingestion)', value: '3,000–5,000 hours vs. 15,000–25,000 managed' },
+          { label: 'Turbocharger replacement', value: '$3,000–$15,000 per event' },
+          { label: 'Mining-class total event cost', value: '$21M–$60M+ at $180,000/hour' },
+        ],
+      },
+      {
+        heading: 'Technology Selection for Operating Environment',
+        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery. SYNTEPORE™ all-synthetic intake filter media is applied in high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation — marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
+        callout: [
+          { label: 'MACROCORE™ efficiency', value: '99.9%–99.98% (ISO 5011) for off-highway engines' },
+          { label: 'INTEKCORE™ function', value: 'Zero-bypass housing integrity at sealing interfaces' },
+          { label: 'SYNTEPORE™ application', value: 'High-humidity environments replacing cellulose media' },
+        ],
+      },
+      {
+        heading: 'Protection Strategy: Service Interval Compliance Is a Technical Requirement',
+        body: 'The most effective protection against dust ingestion is a correctly specified filter element changed at the correct interval. An over-specified element (too high efficiency for actual dust load) will restrict flow prematurely and trigger bypass events. An under-specified element (too low dust capacity for ambient concentration) will reach rated capacity early and begin allowing late-life ingestion. Both failures are specification errors, not field failures. Protocol: specify element dust capacity against measured ambient dust concentration in the operating environment, not generic OEM replacement specification; install a restriction indicator (service indicator) on the intake system — visual confirmation of impending bypass is the most reliable field measurement; change element on restriction indicator signal, not on calendar interval — dust loads vary seasonally and site-to-site; inspect element seating and housing seals at every element change and replace if any distortion, compression set, or contamination path is visible; include oil analysis in the service programme — elevated Si in oil confirms late-life ingestion was occurring before the element was changed; pre-cleaner or cyclone separator upstream of the primary element reduces dust load and extends service life in extreme mining and construction environments; never clean and re-use cellulose air filter elements — cleaning redistributes contamination and damages media fibres, reducing efficiency below original ratings.',
+      },
     ],
     keyMetrics: [
       { label: 'Face velocity design target', value: '0.05–0.12 m/s' },
@@ -1508,10 +1582,10 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Turbo engine service limit', value: '37.5–62.5 mbar' },
       { label: 'Pre-cleaner life extension', value: '3–10× primary element life' },
     ],
-    relatedStandards: ['ISO 5011', 'ISO 29463'],
-    relatedTechnologies: ['MACROCORE™'],
+    relatedStandards: ['ISO 5011', 'ISO 29463', 'SAE J1539'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTEPORE™'],
     relatedSystems: ['Air Intake Protection'],
-    keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration'],
+    keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration', 'dust ingestion', 'abrasive wear'],
     fieldDiagnostics: {
       symptoms: [
         'Black exhaust smoke at full load — fuel-rich combustion from reduced air mass flow due to over-restricted element',
