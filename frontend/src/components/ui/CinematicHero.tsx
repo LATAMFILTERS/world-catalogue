@@ -76,7 +76,7 @@ export default function CinematicHero() {
             marginBottom: "1.25rem",
           }}
         >
-          {t("home.overline", "Industrial Asset Protection")}
+          Total Asset Protection Systems
         </motion.p>
 
         <motion.h1
@@ -114,10 +114,7 @@ export default function CinematicHero() {
             marginBottom: "2rem",
           }}
         >
-          {t(
-            "home.heroDesc",
-            "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment."
-          )}
+          ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets.
         </motion.p>
 
         <motion.div
