@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Barlow, Chakra_Petch, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import './hero-responsive.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
