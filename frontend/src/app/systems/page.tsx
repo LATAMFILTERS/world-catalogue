@@ -143,13 +143,15 @@ export default function SystemsPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>PRODUCT FAMILIES</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Protection begins with understanding the system under attack.
+            Explore filters and components by product family.
           </h2>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/technologies" style={yellowButton}>EXPLORE TECHNOLOGIES</Link>
-            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
+            Move from the protection system to the physical product family: primary air, secondary safety elements, housings, fuel, lubrication, hydraulic, coolant, cabin, and compressed air filtration.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <Link href="/families" style={yellowButton}>EXPLORE PRODUCT FAMILIES</Link>
           </div>
         </div>
       </section>
@@ -295,11 +297,4 @@ const yellowButton: CSSProperties = {
   display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
   fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
   fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
-};
-
-const darkButton: CSSProperties = {
-  display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D',
-  textDecoration: 'none', fontFamily: displayFont, fontWeight: 700,
-  letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem',
-  border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase',
 };
