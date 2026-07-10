@@ -6,6 +6,7 @@ import i18n from '@/i18n';
 
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
+import { UniversalEndNavigation } from './UniversalEndNavigation';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -24,6 +25,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <LanguageDetector />
       <ScrollProgress />
       {children}
+      <UniversalEndNavigation />
     </I18nextProvider>
   );
 }
