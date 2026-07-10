@@ -93,6 +93,18 @@ a[href="#content"]:focus,
   text-decoration: none !important;
 }
 
+/* Visual cleanup for a legacy encoded marker in the home asset-protection card. */
+main ul[style*="list-style"] li > span:first-child {
+  font-size: 0 !important;
+}
+
+main ul[style*="list-style"] li > span:first-child::before {
+  content: "•" !important;
+  font-size: 0.95rem !important;
+  line-height: 1 !important;
+  color: #FFF12D !important;
+}
+
 p {
   text-align: left;
   line-height: 1.75;
