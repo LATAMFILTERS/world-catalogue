@@ -54,6 +54,8 @@ export default function FamilyPage({ params }: Props) {
   const sys = getProtectionSystemBySlug(fam.protectionSystem);
   const hasHdProducts = fam.hdPrefix && fam.hdProducts.length > 0 && fam.hdProducts[0] !== 'DOCUMENTATION PENDING';
   const hasLdProducts = fam.ldPrefix && fam.ldProducts.length > 0 && fam.ldProducts[0] !== 'DOCUMENTATION PENDING';
+  const isPrimaryAir = fam.slug === 'primary-air';
+  const heroSrc = isPrimaryAir ? '/images/air-filter1.avif' : fam.heroImage;
 
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -114,7 +116,7 @@ export default function FamilyPage({ params }: Props) {
       <Link href="/families" style={homeButton}>FAMILIES</Link>
 
       <header style={hero}>
-        <img src={fam.heroImage} alt={fam.name} fetchPriority="high" style={heroImage} />
+        <img src={heroSrc} alt={fam.name} fetchPriority="high" style={isPrimaryAir ? primaryAirHeroImage : heroImage} />
         <div style={heroOverlay} />
         <div style={heroInner}>
           <h1 style={heroTitle}>{fam.name}</h1>
@@ -237,9 +239,15 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.32 };
+const primaryAirHeroImage: CSSProperties = {
+  ...heroImage,
+  opacity: 0.52,
+  objectPosition: '64% center',
+  filter: 'contrast(1.08) saturate(1.04)',
+};
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.76) 50%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 34%)',
 };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = {
@@ -258,7 +266,7 @@ const tag: CSSProperties = {
   fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.14em', fontWeight: 700,
   color: 'rgba(255,255,255,0.78)', textTransform: 'uppercase',
 };
-const tagLink: CSSProperties = { ...tag, color: '#FFF12D', textDecoration: 'none', borderColor: 'rgba(255,241,45,0.34)' };
+const tagLink: CSSProperties = { ...tag, textDecoration: 'none', color: '#FFF12D', borderColor: 'rgba(255,241,45,0.28)' };
 
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
