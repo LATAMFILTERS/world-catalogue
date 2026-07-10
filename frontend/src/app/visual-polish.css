@@ -1,0 +1,140 @@
+/*
+ * ELIMFILTERS visual polish system.
+ * Shared visual treatment for cards, calls to action and page rhythm.
+ * This layer does not change page content or language-specific typography.
+ */
+
+:root {
+  --ui-radius: 2px;
+  --ui-border: rgba(255, 255, 255, 0.10);
+  --ui-border-hover: rgba(255, 241, 45, 0.40);
+  --ui-surface: rgba(255, 255, 255, 0.025);
+  --ui-surface-raised: rgba(255, 255, 255, 0.045);
+  --ui-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  --ui-shadow-hover: 0 22px 64px rgba(0, 0, 0, 0.34);
+  --ui-transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Shared card treatment for the inline-style page templates. */
+main a[style*="border: 1px solid"][style*="background"],
+main div[style*="border: 1px solid"][style*="background"] {
+  border-radius: var(--ui-radius) !important;
+}
+
+main a[style*="border: 1px solid"][style*="background"] {
+  transition:
+    transform var(--ui-transition),
+    border-color var(--ui-transition),
+    background-color var(--ui-transition),
+    box-shadow var(--ui-transition),
+    color var(--ui-transition) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main a[style*="border: 1px solid"][style*="background"]:hover {
+    border-color: var(--ui-border-hover) !important;
+    box-shadow: var(--ui-shadow-hover);
+    transform: translateY(-3px);
+  }
+}
+
+/* Keep primary and secondary calls to action visually consistent. */
+main a[style*="background: rgb(255, 241, 45)"],
+main a[style*="background: #FFF12D"],
+main button[style*="background: rgb(255, 241, 45)"],
+main button[style*="background: #FFF12D"] {
+  min-height: 48px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ui-radius) !important;
+  line-height: 1.1 !important;
+  box-shadow: none;
+  transition:
+    transform var(--ui-transition),
+    box-shadow var(--ui-transition),
+    background-color var(--ui-transition) !important;
+}
+
+main a[style*="background: rgba(0, 0, 0"],
+main a[style*="background: rgba(0,0,0"],
+main button[style*="background: rgba(0, 0, 0"],
+main button[style*="background: rgba(0,0,0"] {
+  min-height: 48px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ui-radius) !important;
+  line-height: 1.1 !important;
+  transition:
+    transform var(--ui-transition),
+    border-color var(--ui-transition),
+    color var(--ui-transition) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main a[style*="background: rgb(255, 241, 45)"]:hover,
+  main a[style*="background: #FFF12D"]:hover,
+  main button[style*="background: rgb(255, 241, 45)"]:hover,
+  main button[style*="background: #FFF12D"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 34px rgba(255, 241, 45, 0.18);
+  }
+}
+
+/* Consistent content rhythm without forcing every page into the same layout. */
+main > section + section {
+  position: relative;
+}
+
+main section p:last-child {
+  margin-bottom: 0;
+}
+
+main [style*="display: grid"] > *,
+main [style*="display: flex"] > * {
+  min-width: 0;
+}
+
+/* Technical cards should feel substantial without looking artificially empty. */
+main a[style*="min-height: 360px"],
+main a[style*="min-height: 420px"],
+main a[style*="min-height: 440px"] {
+  box-shadow: var(--ui-shadow);
+}
+
+main h2,
+main h3 {
+  text-wrap: balance;
+}
+
+main p {
+  text-wrap: pretty;
+}
+
+/* Touch devices should not inherit hover displacement. */
+@media (hover: none), (pointer: coarse) {
+  main a[style*="border: 1px solid"][style*="background"]:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 767px) {
+  main a[style*="background: rgb(255, 241, 45)"],
+  main a[style*="background: #FFF12D"],
+  main a[style*="background: rgba(0, 0, 0"],
+  main a[style*="background: rgba(0,0,0"] {
+    width: auto;
+    max-width: 100%;
+    min-height: 46px;
+    padding-top: 0.82rem !important;
+    padding-bottom: 0.82rem !important;
+  }
+
+  main a[style*="min-height: 360px"],
+  main a[style*="min-height: 420px"],
+  main a[style*="min-height: 440px"] {
+    box-shadow: none;
+  }
+}
