@@ -201,19 +201,28 @@ main [style*="grid-template-columns"] > * {
   min-width: 0;
 }
 
+main a h2,
 main a h3 {
   font-family: var(--font-display) !important;
   font-size: clamp(1.15rem, 1.8vw, 2rem) !important;
   line-height: 1 !important;
   letter-spacing: -0.025em !important;
-  overflow-wrap: normal;
+  overflow-wrap: break-word;
   word-break: normal;
   hyphens: auto;
 }
 
 main a p,
-main a span {
+main a span,
+main button,
+main [role="button"] {
   overflow-wrap: anywhere;
+}
+
+main a,
+main button,
+main [role="button"] {
+  max-width: 100%;
 }
 
 [dir="rtl"] body {
@@ -222,6 +231,15 @@ main a span {
 
 [dir="rtl"] p {
   text-align: right;
+}
+
+@media (max-width: 1100px) {
+  main [style*="repeat(auto-fit, minmax(290px"],
+  main [style*="repeat(auto-fill, minmax(290px"],
+  main [style*="repeat(auto-fit, minmax(320px"],
+  main [style*="repeat(auto-fill, minmax(320px"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -245,6 +263,21 @@ main a span {
 
   main h2 {
     max-width: 100% !important;
+  }
+
+  main section[style*="min-height: 88vh"],
+  main section[style*="min-height: 92vh"] {
+    min-height: auto !important;
+    padding-top: 7rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  main > a[style*="position: fixed"] {
+    top: 0.85rem !important;
+    right: 0.85rem !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.12em !important;
+    padding: 0.68rem 0.85rem !important;
   }
 }
 
@@ -277,12 +310,54 @@ main a span {
     border-radius: 14px !important;
   }
 
+  main [style*="repeat(auto-fit, minmax("],
+  main [style*="repeat(auto-fill, minmax("] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  main [style*="padding: 0 2rem"] {
+    padding-left: 1.2rem !important;
+    padding-right: 1.2rem !important;
+  }
+
+  main a h2,
   main a h3 {
     font-size: clamp(1.05rem, 5vw, 1.45rem) !important;
-    line-height: 1.02 !important;
+    line-height: 1.03 !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.7rem, 8vw, 2.55rem) !important;
+    line-height: 1 !important;
   }
 
   main p {
     max-width: 100% !important;
+  }
+
+  main [style*="min-height: 360px"],
+  main [style*="min-height: 420px"],
+  main [style*="min-height: 440px"] {
+    min-height: 320px !important;
+  }
+
+  main [style*="padding: 2rem"] {
+    padding: 1.35rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  main h1 {
+    font-size: clamp(2.05rem, 12vw, 3.15rem) !important;
+    line-height: 0.96 !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.55rem, 8.5vw, 2.2rem) !important;
+  }
+
+  main > a[style*="position: fixed"] {
+    font-size: 0.64rem !important;
+    padding: 0.6rem 0.72rem !important;
   }
 }
