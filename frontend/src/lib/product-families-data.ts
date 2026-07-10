@@ -2,8 +2,9 @@
  * product-families-data.ts
  * ELIMFILTERS — Product Experience Platform v1.0
  *
- * Authoritative registry for all 12 Product Families.
+ * Authoritative registry for Product Families.
  * Each family belongs to a Protection System and anchors one technology.
+ * Safety air elements are consolidated publicly under Secondary / Safety Air Elements.
  *
  * HD/LD coding rules enforced per doctrine:
  *   HD Air:      EA1XXXX   LD Air:      EA3XXXX
@@ -37,17 +38,17 @@ export interface ProductFamily {
   readonly key: FamilyKey;
   readonly name: string;
   readonly slug: string;
-  readonly protectionSystem: string; // protection system slug
-  readonly primaryTechnology: string; // technology slug
+  readonly protectionSystem: string;
+  readonly primaryTechnology: string;
   readonly dutyClass: DutyClass;
   readonly hdPrefix: string | null;
   readonly ldPrefix: string | null;
   readonly purpose: string;
   readonly engineering: string;
-  readonly construction: string; // "DOCUMENTATION PENDING" if unknown
+  readonly construction: string;
   readonly applicableStandards: string[];
-  readonly hdProducts: string[]; // part numbers (DOCUMENTATION PENDING if none)
-  readonly ldProducts: string[]; // part numbers
+  readonly hdProducts: string[];
+  readonly ldProducts: string[];
   readonly heroImage: string;
 }
 
@@ -73,15 +74,15 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
 
   'secondary-air': {
     key: 'secondary-air',
-    name: 'Secondary Air',
+    name: 'Secondary / Safety Air Elements',
     slug: 'secondary-air',
     protectionSystem: 'air-intake',
     primaryTechnology: 'macrocore',
     dutyClass: 'HD+LD',
     hdPrefix: 'EA1',
     ldPrefix: 'EA3',
-    purpose: 'Secondary air elements are installed downstream of the primary element as a safety barrier. They prevent unfiltered air from reaching the engine during primary element service changes, and provide redundant protection in high-contamination environments. In mining and quarrying, secondary elements are mandatory for ISO 5011 compliance.',
-    engineering: 'Secondary elements use a high-efficiency fine-fibre construction designed to capture the residual contamination that passes through a damaged or improperly seated primary element. Their lower flow resistance compensates for the additional restriction in the two-stage intake system.',
+    purpose: 'Secondary / safety air elements are installed downstream of the primary element as the final safety barrier in heavy-duty air intake systems. They protect the engine if the primary element is damaged, improperly seated, overloaded, or removed during service, preventing unfiltered air from reaching the intake tract.',
+    engineering: 'Secondary / safety elements use high-efficiency fine-fibre construction designed to capture residual contamination that passes through a compromised primary element. Their role is protective redundancy, not routine dust loading; the primary element remains the main service-interval component.',
     construction: 'DOCUMENTATION PENDING',
     applicableStandards: ['ISO 5011'],
     hdProducts: ['DOCUMENTATION PENDING'],
@@ -271,7 +272,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
 
 };
 
-export const PRODUCT_FAMILY_LIST = Object.values(PRODUCT_FAMILIES);
+export const PRODUCT_FAMILY_LIST = Object.values(PRODUCT_FAMILIES).filter(f => f.key !== 'safety-elements');
 
 export function getFamilyBySlug(slug: string): ProductFamily | undefined {
   return PRODUCT_FAMILY_LIST.find(f => f.slug === slug);
