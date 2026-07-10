@@ -43,16 +43,16 @@ const PLATFORM = [
 ];
 
 const TECHNOLOGIES = [
-  ['MACROCORE', 'Air Intake Protection'],
-  ['SYNTEPORE', 'Fuel Cleanliness Protection'],
-  ['HYDROCORE', 'Fuel / Water Separation'],
-  ['SYNTRAX', 'Lubrication Protection'],
-  ['NANOFORCE', 'Hydraulic Protection'],
-  ['THERMACORE', 'Cooling System Protection'],
-  ['MICROKAPPA', 'Cabin Air Protection'],
-  ['DRYCORE', 'Compressed Air Protection'],
-  ['INTEKCORE', 'Housing Architecture'],
-  ['TURBOCORE', 'Bulk Fuel Protection'],
+  { name: 'MACROCORE', domain: 'Air Intake Protection', href: '/technologies/macrocore' },
+  { name: 'SYNTEPORE', domain: 'Fuel Cleanliness Protection', href: '/technologies/syntepore' },
+  { name: 'HYDROCORE', domain: 'Fuel / Water Separation', href: '/technologies/hydrocore' },
+  { name: 'SYNTRAX', domain: 'Lubrication Protection', href: '/technologies/syntrax' },
+  { name: 'NANOFORCE', domain: 'Hydraulic Protection', href: '/technologies/nanoforce' },
+  { name: 'THERMACORE', domain: 'Cooling System Protection', href: '/technologies/thermacore' },
+  { name: 'MICROKAPPA', domain: 'Cabin Air Protection', href: '/technologies/microkappa' },
+  { name: 'DRYCORE', domain: 'Compressed Air Protection', href: '/technologies/drycore' },
+  { name: 'INTEKCORE', domain: 'Housing Architecture', href: '/technologies/intekcore' },
+  { name: 'TURBOCORE', domain: 'Bulk Fuel Protection', href: '/technologies/turbocore-series' },
 ];
 
 const MARKETS = [
@@ -307,10 +307,10 @@ export default function AboutPage() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '0.75rem' }}>
-            {TECHNOLOGIES.map(([name, domain]) => (
+            {TECHNOLOGIES.map((technology) => (
               <Link
-                key={name}
-                href="/technologies"
+                key={technology.name}
+                href={technology.href}
                 style={{
                   textDecoration: 'none',
                   color: '#fff',
@@ -319,8 +319,8 @@ export default function AboutPage() {
                   background: 'rgba(255,255,255,0.025)',
                 }}
               >
-                <strong style={{ display: 'block', fontFamily: 'var(--font-display)', color: '#FFF12D', letterSpacing: '0.08em', fontSize: '0.9rem' }}>{name} TM</strong>
-                <span style={{ display: 'block', color: 'rgba(255,255,255,0.54)', fontSize: '0.88rem', marginTop: '0.4rem' }}>{domain}</span>
+                <strong style={{ display: 'block', fontFamily: 'var(--font-display)', color: '#FFF12D', letterSpacing: '0.08em', fontSize: '0.9rem' }}>{technology.name}™</strong>
+                <span style={{ display: 'block', color: 'rgba(255,255,255,0.54)', fontSize: '0.88rem', marginTop: '0.4rem' }}>{technology.domain}</span>
               </Link>
             ))}
           </div>
