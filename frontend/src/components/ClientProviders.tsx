@@ -7,9 +7,9 @@ import i18n from '@/i18n';
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
-import { CanonicalEngineeringBlocks } from './CanonicalEngineeringBlocks';
 import { StructuredTechnologyDefinition } from './StructuredTechnologyDefinition';
 import { StructuredSystemDefinition } from './StructuredSystemDefinition';
+import { StructuredFamilyDefinition } from './StructuredFamilyDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -27,9 +27,9 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <LanguageDetector />
       <ScrollProgress />
       {children}
-      <CanonicalEngineeringBlocks />
       <StructuredTechnologyDefinition />
       <StructuredSystemDefinition />
+      <StructuredFamilyDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
