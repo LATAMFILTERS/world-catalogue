@@ -120,6 +120,55 @@ export default function ProtectionSystemPage({ params }: Props) {
   if (!sys) notFound();
 
   const families = getFamiliesByProtectionSystem(sys.slug);
+  const isAirIntake = sys.slug === 'air-intake';
+
+  const heroStyle: CSSProperties = {
+    position: 'relative',
+    minHeight: isAirIntake ? 'clamp(560px, 78vh, 860px)' : 'clamp(440px, 68vh, 720px)',
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const heroImageStyle: CSSProperties = {
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: isAirIntake ? 'center 38%' : 'center center',
+    opacity: isAirIntake ? 0.68 : 0.42,
+    filter: isAirIntake ? 'brightness(1.18) contrast(1.06) saturate(1.06)' : 'brightness(1.05)',
+  };
+
+  const heroOverlayStyle: CSSProperties = {
+    position: 'absolute',
+    inset: 0,
+    background: isAirIntake
+      ? 'linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.56) 38%, rgba(0,0,0,0.10) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.12), transparent 34%)'
+      : 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+  };
+
+  const heroContentStyle: CSSProperties = {
+    position: 'relative',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: isAirIntake ? 'clamp(4.4rem, 7vw, 6.4rem) clamp(1.5rem, 5vw, 4rem)' : 'clamp(4rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)',
+    width: '100%',
+    textShadow: isAirIntake ? '0 2px 18px rgba(0,0,0,0.85)' : undefined,
+  };
+
+  const heroTitleStyle: CSSProperties = {
+    fontFamily: displayFont,
+    fontWeight: 700,
+    fontSize: isAirIntake ? 'clamp(2.9rem, 6.5vw, 6.2rem)' : 'clamp(3.1rem, 7.5vw, 7.2rem)',
+    lineHeight: 0.88,
+    letterSpacing: '-0.055em',
+    textTransform: 'uppercase',
+    maxWidth: isAirIntake ? '820px' : '980px',
+    margin: 0,
+    marginBottom: '1.5rem',
+  };
 
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -174,21 +223,21 @@ export default function ProtectionSystemPage({ params }: Props) {
           ))}
         </nav>
 
-        <header style={{ position: 'relative', minHeight: 'clamp(440px, 68vh, 720px)', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+        <header style={heroStyle}>
           <img
             src={sys.heroImage}
             alt={sys.name}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42, filter: 'brightness(1.05)' }}
+            style={heroImageStyle}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)' }} />
-          <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(4rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)', width: '100%' }}>
+          <div style={heroOverlayStyle} />
+          <div style={heroContentStyle}>
             <p style={{ ...labelStyle, color: '#FFF12D', marginBottom: '1.25rem', letterSpacing: '0.34em' }}>
               PROTECTION SYSTEM
             </p>
-            <h1 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)', lineHeight: 0.88, letterSpacing: '-0.055em', textTransform: 'uppercase', maxWidth: '980px', margin: 0, marginBottom: '1.5rem' }}>
+            <h1 style={heroTitleStyle}>
               {sys.name}
             </h1>
-            <p style={{ fontFamily: bodyFont, fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'rgba(255,255,255,0.76)', maxWidth: '770px', lineHeight: 1.65, fontWeight: 600 }}>
+            <p style={{ fontFamily: bodyFont, fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'rgba(255,255,255,0.82)', maxWidth: isAirIntake ? '700px' : '770px', lineHeight: 1.65, fontWeight: 700 }}>
               {sys.tagline}
             </p>
           </div>
