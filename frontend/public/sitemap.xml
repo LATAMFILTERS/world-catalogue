@@ -496,6 +496,10 @@
 
 
 
+
+
+
+
   <!-- ── Knowledge Center ── -->
   <url>
     <loc>https://elimfilters.com/knowledge-center/calculators/air-filter-restriction</loc>
@@ -613,6 +617,12 @@
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/dashboard</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/datasets</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1162,6 +1172,12 @@
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elimfilters.com/knowledge-center/geo-report</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://elimfilters.com/knowledge-center/glossary/abrasive-wear</loc>
