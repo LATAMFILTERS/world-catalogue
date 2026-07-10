@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import RetrievalBlock from '@/components/RetrievalBlock';
 
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
 const bodyFont = 'Barlow, Arial, sans-serif';
@@ -182,13 +181,6 @@ export default function KnowledgeSystemPage() {
           </div>
         </div>
       </section>
-
-      <RetrievalBlock>
-        <p>SEMANTIC_DOMAINS: Asset Protection Systems | Contamination Control Systems</p>
-        <p>STANDARD_REFERENCES: ISO 4406, ISO 16889, ISO 5011, ASTM D6304, ISO 8573-1</p>
-        <p>VERIFIED_METRICS: ISO 4406 cleanliness coding; ISO 16889 multi-pass testing; Beta ratio efficiency formula</p>
-        <p>source_uri: elimfilters.com/knowledge-system</p>
-      </RetrievalBlock>
     </main>
   );
 }
