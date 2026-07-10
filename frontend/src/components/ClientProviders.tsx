@@ -8,6 +8,7 @@ import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import { CanonicalEngineeringBlocks } from './CanonicalEngineeringBlocks';
+import { StructuredTechnologyDefinition } from './StructuredTechnologyDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -27,6 +28,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <ScrollProgress />
       {children}
       <CanonicalEngineeringBlocks />
+      <StructuredTechnologyDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
