@@ -12,6 +12,70 @@ import type { KCArticle } from './types';
 export const ENGINEERING_ARTICLES: KCArticle[] = [
   {
     slug: 'airflow-engineering',
+    faqs: [
+      {
+        question: 'What restriction limit applies to turbocharged diesel engines, and why does it differ from naturally aspirated engines?',
+        answer: 'Turbocharged diesel engines use a restriction limit of 37.5–62.5 mbar (15–25 inH2O), compared to 25 mbar (10 inH2O) for naturally aspirated engines. The turbocharger compresses air downstream of the intake filter, so moderate filter-inlet depression does not translate proportionally into charge-air density reduction at the cylinder. However, high restriction shifts the compressor operating point toward the surge line, reducing efficiency and elevating charge temperature. SAE J1539 defines assembled-system restriction limits for both engine categories during standardised airflow tests.',
+      },
+      {
+        question: 'How is pressure drop across an air filter element measured during ISO 5011 testing?',
+        answer: 'ISO 5011 measures pressure drop using a manometer or differential pressure transducer connected between sampling taps located 100 mm upstream and 100 mm downstream of the filter element mounting face. The test is conducted at one or more specified volumetric airflow rates with the element installed in the test housing. Clean restriction — the initial pressure drop through a new element — is recorded first. As ISO A2 fine test dust is fed upstream, restriction is logged at defined intervals until the terminal restriction threshold is reached. The result is reported as a restriction-versus-cumulative-dust-load curve in mbar or Pa.',
+      },
+      {
+        question: 'What face velocity range is recommended for industrial air filter design, and why?',
+        answer: 'Industrial air filter design targets face velocities of 0.05–0.15 m/s across the filter media surface. Below 0.05 m/s, element size becomes impractically large for the installation envelope. Above 0.15 m/s, the rate of restriction increase with dust loading accelerates non-linearly because filter cake compaction reduces pore effective diameter faster at higher velocities. At face velocities above 0.20 m/s, re-entrainment of captured particles becomes possible during surge events. MACROCORE synthetic media maintains stable Beta efficiency across this face velocity range, whereas cellulose media shows Beta ratio decline at face velocities above 0.12 m/s.',
+      },
+      {
+        question: 'How does air intake restriction affect turbocharger bearing life?',
+        answer: 'Each 1 mbar increase in compressor inlet depression (caused by intake restriction) forces the turbocharger to operate at a higher pressure ratio to maintain target boost pressure. This increases compressor tip speed and bearing journal velocity. At 50 mbar restriction (near service limit), compressor speed increases by approximately 2–3% above the design point, raising bearing surface velocity and oil film shear rate proportionally. Oil film temperature at the bearing journal rises 5–15°C per 10% speed increase. Over 5,000-hour operation cycles, this elevated bearing temperature accelerates ZDDP depletion in the bearing lubricant and reduces journal bearing life by 20–35%.',
+      },
+      {
+        question: 'What is condition-based air filter servicing, and how does it extend service life?',
+        answer: 'Condition-based servicing replaces air filter elements when the restriction indicator reaches the rated service threshold, rather than on a fixed-hour schedule. A vehicle operating in a clean environment (ambient dust <0.01 mg/m3) may not reach service restriction for 2,000–3,000 hours, while the same model operating in mining dust (1–5 mg/m3) reaches the threshold in 200–500 hours. Fixed intervals designed for worst-case conditions result in premature replacement in clean environments — wasting remaining filter capacity. ISO 5011 defines test conditions that enable service life prediction from measured dust holding capacity and site-specific ambient dust concentration. Condition-based intervals reduce filter consumption by 30–200% in moderate-dust applications.',
+      },
+      {
+        question: 'What is the difference between initial restriction and terminal restriction for an air filter?',
+        answer: 'Initial restriction is the pressure drop through a clean, new filter element at rated airflow — typically 6–25 mbar depending on element geometry and media type. Terminal restriction is the maximum allowable pressure drop before the element must be replaced — typically 25 mbar for naturally aspirated engines and 37.5–62.5 mbar for turbocharged applications. The service life of the element (in hours or grams of dust) spans the range from initial to terminal restriction. Elements with higher dirt holding capacity reach terminal restriction after absorbing more dust mass, providing longer service intervals at a given ambient dust concentration.',
+      },
+      {
+        question: 'How do pre-cleaners extend primary filter element service life in high-dust environments?',
+        answer: 'Pre-cleaners — cyclone separators, pre-filter tubes, or vortex inertial separators — remove coarse particles upstream of the primary filter element using centrifugal force without mechanical filtration. Effective pre-cleaners remove 70–95% of incoming particles above 10 µm. Since coarse particles load filter media faster per unit mass (due to their larger volume-to-surface-area ratio), a pre-cleaner removing 80% of incoming coarse dust multiplies primary element service life by 4–6×. Multi-stage filtration systems (pre-cleaner plus primary element plus safety element) are standard on mining haul trucks, excavators, and agricultural equipment operating at ambient dust concentrations above 0.5 mg/m3.',
+      },
+      {
+        question: 'What happens to engine power output when air restriction exceeds the service limit?',
+        answer: 'When air intake restriction exceeds the OEM service limit, volumetric efficiency decreases — less air mass enters each cylinder per combustion cycle. In naturally aspirated engines, each 25 mbar of restriction above design causes 1–3% power output reduction. In turbocharged engines, the ECU reduces fuel delivery to maintain safe exhaust temperature, causing de-rating of up to 5–8% when restriction reaches 62.5 mbar. Prolonged operation at excessive restriction also increases fuel consumption per unit output and can accelerate piston ring and cylinder liner wear through incomplete combustion and increased carbon deposit formation at the ring-groove interface.',
+      },
+      {
+        question: 'How does the safety element (secondary element) function in a two-stage air intake system?',
+        answer: 'The safety element is installed inside the primary filter element in a two-stage air intake system. It remains in service during primary element change, protecting the engine against accidental contamination ingestion during the service operation. The safety element is not a filtration element in normal service — it only becomes active if the primary element is damaged, missing, or incorrectly sealed. Safety elements typically use high-efficiency glass fiber or electrospun media with Beta efficiency above 99.9% at ≥5 µm. SAE J1539 mandates that safety elements must not be cleaned and reused; they are replaced at every second primary element service or annually, whichever comes first.',
+      },
+      {
+        question: 'What role does the air filter housing seal integrity play in overall air intake protection?',
+        answer: 'The housing-to-element seal is the most critical joint in the air intake system. A pinhole leak of 0.5 mm2 at the housing gasket bypasses the entire filtration system — unfiltered ambient air carrying silica particles at 1–10 µm flows directly to the combustion chamber. ISO 5011 testing requires that air filter elements achieve rated efficiency at the specified installation torque and housing configuration — it does not guarantee seal integrity under field assembly conditions. Silicone rubber gasket materials rated to ISO 5011 test requirements maintain sealing load across −40°C to 200°C temperature cycles. Field inspection of housing seals at each filter service is mandatory; deformed, cracked, or compressed gaskets must be replaced with the element.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Primary test standard defining restriction measurement, efficiency, and dirt holding capacity test methodology for air intake filters.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1539, Air Cleaner Test Code',
+        relevance: 'SAE standard for installed air cleaner system testing including restriction limits for naturally aspirated and turbocharged engines.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Defines the standardised A2 fine and other test dusts used in ISO 5011 and SAE J726 filtration performance testing.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Donaldson Company, Air Filtration Systems Engineering Guide, Technical Reference TR-002',
+        relevance: 'Industry reference handbook covering face velocity, pressure drop curves, pre-cleaner efficiency, and field service interval calculation for industrial air intake systems.',
+      },
+    ],
     title: 'Airflow Engineering',
     subtitle: 'Pressure Drop, Restriction, and Volumetric Efficiency',
     metaDescription: 'Engineering principles of airflow through filtration systems: pressure drop measurement, restriction thresholds, face velocity, and volumetric efficiency impact on engine performance.',
@@ -54,6 +118,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'seal-integrity',
+    faqs: [
+      {
+        question: 'What is the correct installation procedure for a spin-on lube filter to ensure seal integrity?',
+        answer: 'Spin-on lube filter installation requires three steps: first, wipe the mounting face clean with a lint-free cloth to remove old gasket material, metal burrs, or contaminants; second, apply a thin film of clean engine oil to the new filter gasket to prevent dry seating and facilitate even compression; third, tighten hand-tight then rotate an additional three-quarters of a turn (270 degrees) using a filter wrench if the element has a solid end cap, or to the torque specified on the filter body for flanged designs (typically 20–30 Nm). Over-tightening extrudes the NBR gasket beyond its compression limit, reducing sealing area and causing creep relaxation — the filter may loosen after thermal cycling.',
+      },
+      {
+        question: 'Why do anti-drain back valves fail, and what are the consequences for engine starting?',
+        answer: 'Anti-drain back valves fail primarily through elastomer degradation: NBR compounds in petroleum-based oils can swell by 5–10% after prolonged thermal cycling at temperatures above 130°C, causing the valve disc to deform and leak. A leaking ADBV allows oil to drain from the filter housing back to the sump when the engine stops. On restart, the lubrication system must refill the filter before pressurised oil reaches main bearings — typically taking 3–8 seconds of dry cranking. During this interval, bearing journals operate without hydrodynamic film, accumulating 3–8× the wear of a single normal start. ELIMFILTERS specifies ADBV leakage below 1 mL/min over 60 minutes at 0.5 bar static head to prevent this failure mode.',
+      },
+      {
+        question: 'What is the difference between a bypass valve and a relief valve in a lube filter system?',
+        answer: 'A bypass valve is integral to the filter element or housing and opens to route oil around the filter media when differential pressure across the element exceeds 0.8–1.0 bar — protecting the engine against oil starvation during cold starts when high-viscosity oil creates excessive restriction. Relief valves in the engine lubrication circuit are separate, system-level pressure regulators set at 3–6 bar that protect the pump from over-pressure regardless of filter condition. At cold start with ISO VG 15W-40 oil at −20°C, oil viscosity can be 500–2,000 times higher than at operating temperature — the bypass valve may open for 30–60 seconds during warm-up before the element fully participates in filtration.',
+      },
+      {
+        question: 'How does NBR gasket material degrade, and when should it be replaced?',
+        answer: 'NBR (nitrile rubber) gaskets degrade through three mechanisms: thermal oxidation above 150°C causes hardening and loss of elasticity; fluid absorption (NBR absorbs 5–15% petroleum-based oil by volume) causes dimensional growth and potential extrusion; and ozone attack of carbon-carbon double bonds in the polymer backbone causes surface cracking in exposed areas. In spin-on filter applications, the gasket is renewed with each filter change and does not require separate replacement. In serviceable housings with replaceable elements, the gasket or O-ring must be inspected at each service and replaced if hardness (Shore A) has increased by more than 10 points from the as-new specification or if cracks, flats, or permanent set exceed 15% of cross-sectional diameter.',
+      },
+      {
+        question: 'What materials are used for filter element end caps, and how do they affect sealing performance?',
+        answer: 'Filter element end caps use three materials: cold-rolled steel (carbon steel, zinc-phosphated for corrosion resistance) for heavy-duty applications; aluminum for weight-critical designs; and thermoplastic polymers (glass-filled nylon, polypropylene) for light-duty and chemical-resistance applications. The end cap sealing surface must be flat and perpendicular to the element axis to within 0.5 mm — deviations cause non-uniform gasket compression and preferential leak paths. ELIMFILTERS elements use cold-rolled steel end caps with precision-formed sealing beads that contact the filter head mounting face at a defined load zone, ensuring consistent sealing across the full range of installation torques.',
+      },
+      {
+        question: 'How is bypass valve cracking pressure specified and verified in filter element testing?',
+        answer: 'Bypass valve cracking pressure is specified as the differential pressure at which oil first flows through the valve — typically 0.7–1.0 bar opening pressure with full flow achieved at 0.8–1.2 bar. ISO 4548-12 defines the test method: the filter element is pressurised from the inlet at a controlled rate of 0.07 bar/second with test oil at 20°C. Cracking pressure is recorded when flow rate at the outlet exceeds 10 mL/min. Full-flow pressure is recorded at 1,000 mL/min. Elements that crack below 0.6 bar may allow unfiltered bypass during normal transient pressure peaks; elements that fail to open below 1.5 bar risk oil starvation if the filter becomes restricted beyond the design service point.',
+      },
+      {
+        question: 'What is the sealing mechanism of an O-ring face seal (ORFS) in a hydraulic filter housing?',
+        answer: 'An O-ring face seal (ORFS) connection compresses an O-ring between the flat face of a port and a machined groove in the mating fitting. When assembly torque is applied, the O-ring deforms radially and axially to fill the groove volume, creating a volumetric seal independent of thread engagement. ORFS fittings per SAE J1453 and ISO 8434-3 achieve rated sealing at working pressures up to 420 bar with zero external leakage when assembled correctly. The sealing mechanism does not depend on thread taper (unlike NPT) — it requires flat-face contact and correct O-ring cross-section selection. FKM O-rings are specified for hydraulic filter applications where fluid temperature exceeds 80°C continuously.',
+      },
+      {
+        question: 'How do pressure pulsations in hydraulic systems affect filter element seal integrity?',
+        answer: 'Hydraulic systems generate pressure pulsations at frequencies determined by pump displacement and rotational speed — typically 5–200 Hz with amplitudes of 10–30% of system pressure. These pulsations cyclically stress all sealing interfaces in the filter element and housing. Fatigue of end-cap bonding adhesive accumulates with each pressure cycle — a system generating 10 pulsations per second over 5,000 hours accumulates 180 million cycles. NFPA T2.14.1 specifies a fatigue collapse pressure test requiring elements to withstand 10,000 cycles at 10× operating differential pressure without structural failure or seal breach. Elements failing this test may appear sound in static testing while exhibiting seal degradation under dynamic pulsating service.',
+      },
+      {
+        question: 'What causes filter element bypass events during normal operation, and how are they detected?',
+        answer: 'Bypass events during normal operation occur when differential pressure across the element exceeds the bypass valve cracking pressure due to: element loading beyond design service interval; cold start with high-viscosity oil (viscosity 10–100× operating temperature value); high-flow transients during rapid machine acceleration; or incorrect element selection (wrong Beta ratio or insufficient dirt holding capacity for the application). Bypass events are detected by inline restriction indicators (differential pressure switches) wired to cab warning systems. Electronic ΔP sensors connected to the ECU can log bypass event timestamps and duration — providing evidence of protection gaps for root cause analysis of component wear events.',
+      },
+      {
+        question: 'What is the significance of end-cap axial load testing in filter element qualification?',
+        answer: 'End-cap axial load testing verifies that the element can resist the compressive forces generated by differential pressure across its end caps during service. ISO 3723 defines the axial load test: a compressive force equivalent to the maximum expected system pressure multiplied by the end-cap area is applied at a specified rate. NFPA T2.14.1 requires the element to withstand 10× the rated operating differential pressure without end-cap separation or media collapse. For a filter element with 100 mm diameter end caps operating at 10 bar, the axial load test applies approximately 7,850 N. End-cap bond failure under this load would allow unfiltered fluid to bypass the media through the fractured end-cap joint.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4548-12, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 12: Self-Contained Spin-On Filters',
+        relevance: 'Governs bypass valve cracking pressure testing, anti-drain back valve leakage measurement, and end-cap integrity testing for spin-on lube filters.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3723:2015, Hydraulic Fluid Power — Filter Elements — Method for End Load Test',
+        relevance: 'Defines the axial compressive load test for hydraulic filter elements verifying end-cap bonding integrity under pressure-induced structural loads.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T2.14.1-2005, Hydraulic Fluid Power — Filter Elements — Determination of Resistance to Flow Fatigue Using High Viscosity Fluid',
+        relevance: 'Fatigue collapse pressure specification requiring elements to survive 10,000 cyclic pressure events at 10× operating differential pressure.',
+      },
+      {
+        category: 'specification',
+        citation: 'SAE J1453 / ISO 8434-3, Connections for High-Pressure Hydraulic Metal Tubing — O-Ring Face Seal Fittings',
+        relevance: 'Governs ORFS fitting geometry, torque specification, and sealing performance requirements for hydraulic filter housing connections.',
+      },
+    ],
     title: 'Seal Integrity',
     subtitle: 'Gasket Engineering, Bypass Prevention, and Leak Path Control',
     metaDescription: 'Engineering analysis of filter seal integrity: gasket materials, installation torque, bypass valve design, and how seal failure allows unfiltered fluid to bypass protective media.',
@@ -314,6 +442,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'filter-media-science',
+    faqs: [
+      {
+        question: 'What is the fundamental difference between cellulose and synthetic meltblown media in terms of fiber diameter and resulting efficiency?',
+        answer: 'Cellulose fiber diameter ranges from 10–40 µm, produced by mechanical pulp processing from plant material. The wide fiber diameter distribution creates an irregular, tortuous pore structure with high variation in effective pore size, yielding Beta ratios of β10(c) = 2–10. Synthetic meltblown media — polyester or polypropylene — uses a controlled extrusion process to produce fibers of 1–10 µm with narrow diameter distribution. The resulting pore structure is more uniform, enabling Beta ratios of β10(c) = 50–200 while maintaining similar or higher dirt holding capacity per unit media area. This difference drives the selection of synthetic media for extended-drain-interval applications and precision hydraulic circuits.',
+      },
+      {
+        question: 'How does glass fiber media achieve Beta ratios above 200 at sub-10 µm particle sizes?',
+        answer: 'Glass fiber media achieves high Beta ratios through two mechanisms: sub-micron fiber diameter (0.5–5 µm) creating very small effective pore diameters; and electrostatic fiber treatment enhancing particle capture via Coulombic attraction. Glass fibers are produced by drawing molten borosilicate glass through micro-orifices, then controlled-diameter fibers are layered to form a depth-loading gradient structure. Beta values above β3(c) = 200 are achievable for hydraulic applications requiring ISO 14/12/9 cleanliness targets. The limitation is brittleness — glass fibers can fracture under mechanical stress from pressure pulsations or mishandling, releasing glass particles downstream. Structural mesh layers above and below the glass fiber layer mitigate this risk in qualified filter elements.',
+      },
+      {
+        question: 'What is the Beta ratio stability concept, and why does it matter more than peak efficiency?',
+        answer: 'Beta ratio stability describes how efficiency changes under varying operating conditions — flow rate, temperature, pressure pulsation, and particle loading state. A filter may achieve β10(c) = 200 at steady-state rated flow, but drop to β10(c) = 50 at 2× rated flow during system transients. Peak efficiency measured in ISO 16889 multi-pass testing is an average value across the full loading cycle — it masks the instantaneous efficiency at critical operating points. Synthetic glass fiber composites maintain Beta stability within ±15% across flow rates from 50–150% of rated flow; cellulose media may show Beta ratio variation of 50–80% across the same flow range. For servo valve protection requiring sustained efficiency at all operating points, Beta stability is a more critical specification parameter than peak Beta value.',
+      },
+      {
+        question: 'How does water absorption affect cellulose filter media performance and service life?',
+        answer: 'Cellulose fibers absorb 6–8% of their own weight in water from the filtered fluid. At normal oil water content of 100–500 ppm (typical of a healthy lube system), this absorption is gradual and manageable. However, if free water enters the lube system — through condensation, coolant seal failure, or wash-down water ingress — cellulose media absorbs water rapidly, causing fiber swelling that reduces pore diameter and increases restriction. Severe water contamination can cause cellulose media to increase restriction by 300–500% and potentially collapse the media pleat structure under bypass valve pressure, releasing partially degraded cellulose fibers downstream. Synthetic media does not absorb water and maintains dimensional stability regardless of water content in the filtered fluid.',
+      },
+      {
+        question: 'What construction methods are used to prevent pleat collapse in high-differential-pressure filter elements?',
+        answer: 'Pleat collapse occurs when differential pressure across a loaded filter element exceeds the structural support provided by the pleat geometry and media thickness. Three construction methods prevent collapse: (1) Wire-wound outer cage — a helical stainless steel wire wound over the outside of the pleated media pack resists radial compression at the maximum operating ΔP, typically sized for 10× operating pressure per NFPA T2.14.1. (2) Thermally bonded end caps — heat-fused plastic end caps eliminate the adhesive layer that can fail at elevated temperatures, creating a rigid structural connection between the end cap and the media pack. (3) Inner core support — a perforated stainless steel or plastic inner tube prevents inward pleat collapse on inside-out-flow elements under high ΔP conditions.',
+      },
+      {
+        question: 'How does pleat count and pleat height affect dirt holding capacity and service interval?',
+        answer: 'Total filter media area equals pleat count multiplied by pleat height multiplied by two (both sides of each pleat) multiplied by the active pleat width (element circumference divided by pleat count, minus pleat tip dead zone). Increasing pleat count while maintaining constant pleat height increases media area approximately linearly but requires thinner pleat spacing, which can cause adjacent pleat adhesion under dust loading — effectively reducing available area. Increasing pleat height at constant pleat count increases area proportionally but requires structural support for tall pleats to prevent collapse. ELIMFILTERS element designs balance pleat count and height to maximize effective media area within the housing envelope, achieving 2–3× higher dirt holding capacity than equivalent-diameter cellulose elements by using deep-pleated synthetic media with inner and outer support cages.',
+      },
+      {
+        question: 'What is the relationship between face velocity and Beta ratio stability in synthetic media?',
+        answer: 'Face velocity directly determines the particle capture mechanism balance in synthetic filter media. At low face velocity (<0.05 m/s), inertial and diffusional mechanisms dominate — particles below 0.3 µm are captured by Brownian diffusion, while particles above 1 µm are captured by inertial impaction. At face velocities above 0.15 m/s, inertial impaction efficiency decreases for intermediate particle sizes (0.3–1.0 µm), which coincides with the most penetrating particle size (MPPS). ISO 29463 test methodology for HEPA filters exploits this MPPS relationship — DEHS aerosol at 0.3 µm is used as the penetration-maximizing test aerosol. For industrial hydraulic and lube filters, optimum face velocity for balanced Beta stability is 0.05–0.10 m/s.',
+      },
+      {
+        question: 'What is end-cap bonding and why does it matter for filter media performance?',
+        answer: 'End-cap bonding is the method by which the filter media pack is sealed to the metal or plastic end caps that close each end of the element and connect it to the housing ports. Plastisol (PVC-based) bonding is the historical standard — the media is dipped into liquid plastisol which flows into the pleat tips and cures to form a rigid bond. Maximum service temperature is 120°C and chemical resistance to petroleum fluids is acceptable. Epoxy bonding extends maximum temperature to 150°C and provides resistance to synthetic lubricants and ester-based fluids where plastisol degrades. Failed end-cap bonding creates a direct unfiltered bypass path from upstream to downstream fluid — the filter housing sees full flow but zero filtration occurs. ISO 4548-12 end load testing verifies bond integrity at service pressures.',
+      },
+      {
+        question: 'How is filter media selected for compatibility with ester-based hydraulic fluids?',
+        answer: 'Ester-based hydraulic fluids — including phosphate ester (HFD-R type per ISO 6743-4), biodegradable synthetic esters, and polyol esters — require specific media verification because they are chemically aggressive toward cellulose fibers, standard plastisol end-cap binders, and many elastomer compounds. Cellulose media in phosphate ester fluid degrades within 500–1,000 service hours, releasing fiber particles downstream and losing structural integrity. Synthetic polyester or polypropylene media is resistant to phosphate esters. FKM (Viton) elastomer seals and epoxy or fluoropolymer end-cap bonding must be specified. ELIMFILTERS element datasheets specify fluid compatibility for each media type — verification against the specific fluid formulation is required before commissioning, as ester fluid formulations vary significantly between manufacturers.',
+      },
+      {
+        question: 'What is multi-layer media construction, and what performance advantages does it provide?',
+        answer: 'Multi-layer media construction combines two or more layers of different fiber diameter and Beta efficiency into a single element. The upstream (coarse) layer captures large particles with high dirt holding capacity; the downstream (fine) layer provides the high Beta efficiency specification. This gradient structure achieves efficiency equivalent to a single fine-layer element while providing significantly higher dirt holding capacity — because large particles are arrested before reaching the fine layer. NANOFORCE multi-layer construction uses a meltblown polypropylene upstream layer (fiber diameter 5–10 µm) over a glass fiber downstream layer (fiber diameter 0.5–2 µm), achieving β10(c) ≥ 200 at 40 L/min with dirt holding capacity 2.5× higher than equivalent single-layer glass fiber elements.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Primary performance test standard measuring Beta ratio and dirt holding capacity for hydraulic and lube filter elements made from all media types.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Governs gravimetric efficiency, dust holding capacity, and restriction testing for air filter media and elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 29463-1:2011, High-Efficiency Filters and Filter Media for Removing Particles in Air — Part 1: Classification, Performance Testing and Marking',
+        relevance: 'Classification system for HEPA and ULPA efficiency ratings covering glass fiber and other high-efficiency media classes.',
+      },
+      {
+        category: 'research',
+        citation: 'Brown, R.C., Air Filtration: An Integrated Approach to the Theory and Applications of Fibrous Filters, Pergamon Press, 1993',
+        relevance: 'Foundational academic reference covering particle capture mechanisms, fiber diameter effects, face velocity relationships, and Beta ratio fundamentals for filtration media science.',
+      },
+    ],
     title: 'Filter Media Science',
     subtitle: 'Cellulose, Synthetic, and Glass Fiber Media — Performance Characteristics',
     metaDescription: 'Technical analysis of filter media types: cellulose vs synthetic vs glass fiber, Beta ratio efficiency, dirt holding capacity, and thermal stability for industrial filtration applications.',
@@ -361,6 +553,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'fluid-cleanliness',
+    faqs: [
+      {
+        question: 'What does each digit in an ISO 4406 cleanliness code represent?',
+        answer: 'An ISO 4406 three-digit code (e.g., 17/15/12) reports the Range Number (RN) for cumulative particle counts at three size thresholds per millilitre: the first number covers particles ≥4 µm(c), the second ≥6 µm(c), and the third ≥14 µm(c). Each Range Number corresponds to a bracket of particle count — RN 17 = 40,000–80,000 particles/mL, RN 15 = 10,000–20,000 particles/mL, RN 12 = 1,250–2,500 particles/mL. Each increment of one RN unit doubles the particle count. The three size thresholds were chosen because they correspond to the clearance range of hydraulic components most susceptible to particle damage: servo valve spools (2–5 µm clearance), piston pump slippers (5–10 µm), and gear pump tooth contacts (15–30 µm).',
+      },
+      {
+        question: 'Why does new oil from a sealed drum not meet the cleanliness requirements of sensitive hydraulic components?',
+        answer: 'New oil from a sealed drum typically presents at ISO 4406 code 18/16/13 — one to three code units dirtier than the target for proportional valve circuits (ISO 16/14/11) and six code units dirtier than servo valve targets (ISO 14/12/9). During manufacturing, blending, and drum filling, oil is exposed to atmospheric particles, pipe scale, and packaging contamination. Sealed containers do not prevent particle migration from drum walls, bung threads, and pump residues. Transfer from drum to reservoir using uncleaned funnels or hoses introduces further contamination. New oil must be pre-filtered through a high-efficiency kidney-loop unit or transfer filter unit (β10(c) ≥ 200) before introduction to precision hydraulic or lube circuits.',
+      },
+      {
+        question: 'How does particle counting differ from elemental spectroscopy in fluid analysis, and when should each method be used?',
+        answer: 'Particle counting (APC, per ISO 11171) measures the quantity and size distribution of all particles above 4 µm in the fluid, expressed as ISO 4406 codes. It detects both hard contamination (silica, metal) and soft contamination (rubber, carbon) without distinguishing the source. Elemental spectroscopy (ICP-OES, per ASTM D5185) measures dissolved and suspended metal concentrations in ppm, with each element corresponding to a specific system component (iron = steel components, copper = bronze bearings, silicon = silica/airborne dust, calcium/zinc = additive package). Particle counting is the primary tool for cleanliness compliance monitoring. ICP-OES identifies the source and mechanism of contamination. The two methods are complementary — a rising ISO code combined with rising iron and silicon confirms both that contamination exceeds targets and that abrasive wear is already occurring.',
+      },
+      {
+        question: 'What sampling technique is required to obtain a representative fluid cleanliness sample?',
+        answer: 'Representative fluid sampling per ISO 3722 requires: drawing from a turbulent section of an active-flow return line or dedicated sampling valve (not from stagnant lines or reservoir bottom); flushing the sampling valve with 250–500 mL of fluid before collecting the analysis sample to purge dead-volume contamination; using pre-cleaned sample bottles certified to ISO 14/12/11 or better to prevent bottle particle contamination from biasing results; and sampling during normal operating conditions (operating temperature, rated flow). Incorrect sampling procedure is the most common cause of erroneous cleanliness data — samples taken from stagnant points can overestimate contamination by 2–4 ISO code units, while samples collected before thermal stabilisation underestimate particle counts because cold oil re-dissolves some particulate matter.',
+      },
+      {
+        question: 'What is a kidney-loop (offline) filtration circuit, and what ISO cleanliness targets can it maintain?',
+        answer: 'A kidney-loop is an independently powered offline filtration circuit that continuously polishes fluid in a hydraulic reservoir, independent of the main system pump and flow. The circuit draws fluid from one point in the reservoir, passes it through a high-efficiency filter (typically β10(c) ≥ 200), and returns clean fluid to a different reservoir point. The filtration rate is typically 5–15% of reservoir volume per minute. Kidney-loops are particularly effective for removing sub-10 µm particles that return-line filters at main system flow rates cannot capture efficiently. A properly sized kidney-loop on a 1,000 L hydraulic reservoir can achieve and maintain ISO 4406 code 16/14/11 in a system with moderate particle ingress, and can maintain ISO 15/13/10 in a well-sealed system.',
+      },
+      {
+        question: 'How are ISO 4406 cleanliness targets set for mixed-circuit systems with multiple component types?',
+        answer: 'When a hydraulic circuit contains multiple component types with different cleanliness requirements — for example, a gear pump (ISO 19/17/14 tolerance) feeding a proportional valve (ISO 16/14/11 requirement) and a servo valve (ISO 14/12/9 requirement) — the entire circuit must be maintained at the tightest (lowest) code required by the most sensitive component. The gear pump can tolerate the tighter code without operational consequence. However, increasing filtration to meet servo valve requirements increases filter cost and system complexity — economic analysis may favour installing a secondary fine-filtration circuit specifically for the servo valve section rather than filtering the entire system to ISO 14/12/9. This is the contamination budget approach to hydraulic system design.',
+      },
+      {
+        question: 'What is the significance of the ≥4 µm(c) count in ISO 4406, and how does it differ from the ≥6 µm(c) count?',
+        answer: 'The ≥4 µm(c) count captures all particles in the critical wear zone for servo valve spools (spool-sleeve clearances 1–4 µm). These sub-6 µm particles can enter spool clearances and cause silting — the gradual accumulation of fine particles in the clearance that increases valve friction, reduces response speed, and eventually causes the spool to stick. The ≥6 µm(c) count covers the clearance range for piston pump slippers and bearing films. The mathematical difference between the two counts (particles between 4 and 6 µm) is analytically significant for contamination control in servo systems. ISO 4406:2021 now reports the ≥4 µm(c) count as the first digit specifically to address servo valve contamination sensitivity, whereas the older two-number code (≥5 µm, ≥15 µm) missed this critical size range.',
+      },
+      {
+        question: 'How does operating temperature affect particle count measurements in hydraulic fluid?',
+        answer: 'Operating temperature affects particle count measurement in two ways. At high temperature (above 70°C), some contaminants that are solid at room temperature — varnish precursors, wax crystals, resin agglomerates — dissolve into the fluid and do not appear as particles in the count. The same sample analysed at laboratory temperature (20°C) may show higher particle counts than at operating temperature because some dissolved species precipitate on cooling. Conversely, in cold conditions, high fluid viscosity prevents efficient particle circulation and settling occurs in stagnant lines — samples from active-flow zones under-represent the total reservoir contamination. ISO 3722 recommends sampling at operating temperature (40–60°C for most hydraulic systems) to obtain results representative of the system under load.',
+      },
+      {
+        question: 'What verification steps confirm that a hydraulic system has achieved its target ISO 4406 cleanliness code after commissioning flushing?',
+        answer: 'ISO 4413:2011 requires two consecutive particle count samples taken 30 minutes apart, both independently meeting the target cleanliness code, before commissioning sign-off. Single-sample acceptance is insufficient because particle counts can vary by ±1 ISO code unit between samples at the same condition due to random sampling variation. Samples must be collected per ISO 3722 from a downstream sampling valve in the return line, not from the reservoir, which may have stratified contamination. The APC instrument must be calibrated per ISO 11171 with current calibration certificate (recalibration interval typically 12 months or 500 operating hours). The commissioning report must include both particle count certificates with APC calibration reference, sample date/time, and comparison to target code.',
+      },
+      {
+        question: 'How does oil oxidation contribute to particle contamination in lube systems, and how is it measured?',
+        answer: 'Oil oxidation generates insoluble degradation products — polar compounds, varnish precursors, and sludge agglomerates — that appear as soft particle contamination in APC counts. Oxidation rate doubles approximately every 10°C increase in oil temperature above 90°C, following the Arrhenius relationship. FTIR analysis (ASTM E2412) detects early-stage oxidation by quantifying carbonyl group formation (absorption peak at 1,710 cm-1 wavenumber) before particles form. Total acid number (TAN, ASTM D664) measures acid byproducts of oxidation — an increase of 2 mg KOH/g above baseline indicates significant oxidation. In severely oxidised oil (TAN increase >3 mg KOH/g), insoluble oxidation products can constitute 30–50% of total APC particle count, masking the true metallic contamination level in wear analysis.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Primary standard defining the three-digit cleanliness coding system, Range Number table, and reporting requirements for fluid particle contamination.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods',
+        relevance: 'Defines sampling container preparation, cleanliness verification, and fluid sampling procedures required for valid ISO 4406 particle count data.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'Calibration standard for APC instruments using NIST-traceable reference particles, defining the (c) notation that distinguishes current calibrated data from legacy measurements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021 Table 1 — Range Number Reference',
+        relevance: 'Reference table converting raw particle counts per millilitre to ISO 4406 Range Numbers at each size threshold; essential for interpreting APC output and specifying cleanliness targets.',
+      },
+    ],
     title: 'Fluid Cleanliness',
     subtitle: 'ISO 4406 Target Codes, Particle Counting, and Oil Analysis',
     metaDescription: 'Industrial fluid cleanliness management: ISO 4406 codes, particle counting methodology, oil sampling best practices, and cleanliness targets for hydraulic, lube, and fuel systems.',
@@ -403,6 +659,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'air-restriction',
+    faqs: [
+      {
+        question: 'What is the restriction limit for naturally aspirated engines, and how is it measured?',
+        answer: 'Naturally aspirated diesel engines operate with a maximum allowable intake restriction of 25 mbar (10 inH2O) at rated airflow. This limit represents the point beyond which cylinder volumetric efficiency loss reduces power output by more than the acceptable margin (typically 1–3%). Restriction is measured as static pressure differential between ambient (upstream of the air cleaner housing) and the engine intake manifold. SAE J1539 defines the measurement procedure for assembled air cleaner systems including all ducting, elbows, and restriction indicators. Measurement is performed at rated engine airflow, typically expressed in m3/minute, at the air cleaner inlet face rather than the filter element itself — this ensures all housing and duct losses are included in the total restriction value.',
+      },
+      {
+        question: 'How do restriction indicators work, and what are the two main types used in industrial equipment?',
+        answer: 'Mechanical restriction indicators use a spring-loaded piston behind a transparent sight glass. As restriction across the air filter increases (filter loading), the pressure differential acts on the piston face. When differential pressure reaches the calibrated set point (typically 25 mbar for naturally aspirated or 62.5 mbar for turbocharged), the piston reaches a colored band visible through the glass and mechanically latches in the alarm position. The indicator remains in alarm even after the engine stops, allowing inspection at shutdown. Electronic pressure differential sensors — connected to the ECU via CAN bus — provide continuous digital restriction logging. They can generate time-stamped alerts, enable data trends, and support predictive servicing algorithms that estimate remaining filter life based on restriction rate-of-change.',
+      },
+      {
+        question: 'How does increasing intake restriction affect turbocharger compressor efficiency?',
+        answer: 'Turbocharger compressor efficiency is mapped on a compressor performance map (compressor map) as efficiency contours relating pressure ratio to corrected mass flow. The operating point moves along a constant-speed line as conditions change. Increased intake restriction raises the pressure ratio required to achieve the same boost pressure, because the compressor must overcome both ambient-to-boost pressure rise and the additional depression caused by filter restriction. At the MAP operating point for a typical heavy-duty diesel turbocharger, each 10 mbar of additional inlet restriction shifts the operating point approximately 1.5–2% toward the surge region and reduces isentropic efficiency by 0.5–1%. At 50 mbar restriction, compressor discharge temperature can increase 15–25°C above the design point, elevating charge temperature and increasing knock risk.',
+      },
+      {
+        question: 'What causes restriction to increase faster than expected in mining and construction environments?',
+        answer: 'Restriction increase rate (mbar per operating hour) depends on ambient dust concentration (mg/m3), equipment airflow demand (m3/h), and filter element dirt holding capacity (g). In quarry blasting zones, ambient dust can spike to 50–100 mg/m3 for 30–60 minutes after each blast — loading a 500-gram capacity filter in 6–10 hours rather than the 500-hour theoretical interval at 0.1 mg/m3 baseline. Pre-cleaners (cyclone separators) reduce the effective ingress rate to the primary element by 70–90%, but their efficiency depends on regular ejector valve maintenance. Clogged ejector valves retain separated dust in the pre-cleaner bowl, re-entraining it into the primary element airstream and eliminating the pre-cleaner capacity advantage.',
+      },
+      {
+        question: 'Can a restriction indicator be replaced by a fixed service interval, and what are the risks?',
+        answer: 'Fixed service intervals can replace restriction-based servicing only when the operating environment is stable and well-characterised — constant dust concentration, constant airflow, and consistent equipment duty cycle. Mining haul trucks operating in variable dust zones (blast event exposure, different pit depths and material types) can see 5–10× variation in filter loading rate between operating periods. A fixed interval set for worst-case conditions results in 70–90% of elements being replaced prematurely in typical (non-extreme) conditions. A fixed interval set for average conditions results in 10–20% of elements reaching restriction before the scheduled change, creating intermittent protection gaps. SAE J1539 recommends restriction-based servicing as the primary method, with fixed intervals as a backup for equipment without restriction indicators.',
+      },
+      {
+        question: 'How does altitude affect intake restriction and air filter sizing?',
+        answer: 'At altitude, air density decreases — at 3,000 m above sea level, air density is approximately 69% of sea-level value. Engine airflow (in kg/hour) decreases proportionally to maintain stoichiometric combustion, but the volumetric flow rate (m3/hour) remains approximately constant at turbocharged engines that maintain boost pressure. For naturally aspirated engines at altitude, the engine produces less power because of reduced air mass per cycle, and the lower air density results in lower pressure drop across the filter at the same volumetric flow rate — meaning restriction indicators set for sea-level conditions under-read the true restriction state at altitude. SAE J1539 includes altitude correction factors for restriction measurement, and filter systems designed for high-altitude operation (above 2,000 m) are sized for the higher volumetric flow rates required to compensate for low air density.',
+      },
+      {
+        question: 'What is terminal restriction in air filter testing, and how is it used in field service interval calculation?',
+        answer: 'Terminal restriction is the maximum allowable pressure drop across a filter element at rated airflow — beyond this point, the element is considered fully loaded and must be replaced. In ISO 5011 testing, terminal restriction is reached when the differential pressure reaches the OEM-specified service limit (25 mbar or 62.5 mbar). At terminal restriction, the total dust mass injected during the test equals the element Dust Holding Capacity (DHC). Field service interval is calculated: Hours = DHC(g) / (Ambient dust concentration (mg/m3) × Equipment airflow (m3/h) × pre-cleaner efficiency adjustment factor). This calculation provides a first estimate only — actual intervals must be verified against restriction indicator readings at commissioning, since real-world dust particle size distribution differs from ISO A2 test dust.',
+      },
+      {
+        question: 'How does bypass valve function affect engine protection during restriction events?',
+        answer: 'When restriction exceeds the bypass valve cracking pressure in lube filters, unfiltered oil enters the engine. Air intake systems do not have bypass valves — excessive restriction causes air deprivation but does not bypass the filtration protection. Instead, naturally aspirated engines de-rate power as air density decreases, and turbocharged engines trigger ECU boost pressure protection routines. The air intake system provides protection until the restriction indicator triggers. Some two-stage systems with safety (secondary) elements provide an additional protection layer — if the primary element collapses from over-restriction or is incorrectly installed, the safety element captures particles before they reach the engine. Safety elements do not have bypass valves; they maintain full filtration at the cost of total restriction doubling until the primary element is replaced.',
+      },
+      {
+        question: 'What differential pressure does the restriction indicator set point correspond to for a turbocharged heavy-duty diesel?',
+        answer: 'Turbocharged heavy-duty diesel engines (commercial vehicles, mining equipment, construction plant) specify restriction indicators set at 62.5 mbar (25 inH2O). This corresponds to the SAE J1539 maximum allowable assembled-system restriction at rated airflow. The 62.5 mbar set point includes all housing and ducting losses in addition to filter element restriction — the element alone at terminal loading may contribute 40–50 mbar, with 12–22 mbar accounted for by housing, elbows, and ducting. Restriction indicators must be calibrated at the correct airflow rate for each engine installation — an indicator calibrated at 10,000 m3/h will indicate incorrectly if installed on an engine with 8,000 m3/h rated flow, because restriction is a function of both element loading and airflow rate.',
+      },
+      {
+        question: 'What is the power-consumption penalty of operating an engine with a fully loaded air filter at the restriction service limit?',
+        answer: 'At the restriction service limit (25 mbar for naturally aspirated, 62.5 mbar for turbocharged engines), the fuel consumption penalty compared to a clean filter is 1–3% for naturally aspirated and 2–5% for turbocharged applications. For a 250 kW naturally aspirated engine consuming 60 L/hour diesel at rated load, the 3% penalty equals 1.8 L/hour additional fuel consumption. Over a 250-hour interval (from clean to terminal restriction in a moderately dusty environment), the accumulated fuel penalty is approximately 450 L — at USD 1.20/L, this equals USD 540 excess fuel cost per element change cycle solely from operating at elevated restriction. This penalty justifies condition-based servicing that replaces elements before prolonged operation at maximum restriction.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Defines restriction measurement methodology, terminal restriction test conditions, and performance reporting format for air intake filter systems.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1539, Air Cleaner Test Code',
+        relevance: 'SAE standard defining assembled-system restriction limits by engine type, altitude correction methodology, and restriction indicator calibration requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J726, Air Cleaner Evaluation',
+        relevance: 'Complements SAE J1539 with gravimetric efficiency and dust holding capacity test procedures used to characterise filter element performance under restriction test conditions.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Donaldson Company, Engine Air Filtration Technical Reference, Bulletin A11-0175',
+        relevance: 'Technical application guide covering restriction indicator set point selection, altitude effects on restriction, pre-cleaner efficiency calculation, and field service interval determination.',
+      },
+    ],
     title: 'Air Restriction',
     subtitle: 'Service Indicators, Restriction Thresholds, and Engine Impact',
     metaDescription: 'Air filter restriction measurement, service indicator engineering, restriction thresholds for naturally aspirated and turbocharged engines, and the impact on fuel consumption and engine life.',
@@ -440,6 +760,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'dust-holding-capacity',
+    faqs: [
+      {
+        question: 'How is dust holding capacity measured in ISO 5011 testing?',
+        answer: 'ISO 5011 measures dust holding capacity (DHC) by continuously injecting ISO A2 fine test dust upstream of the filter element at a controlled mass rate (typically 0.1–2 g/min depending on element size) while maintaining rated airflow. A gravimetric dust feeder delivers the controlled dust rate into the upstream airstream. Restriction is measured continuously; the test runs until terminal restriction (OEM service limit) is reached. DHC is the total mass of dust injected from test start to terminal restriction, expressed in grams. DHC is not a fixed property — it varies with airflow rate (face velocity) and dust particle size distribution. A filter tested at higher airflow will exhibit lower DHC because higher face velocity compresses the dust cake faster, causing restriction to rise more rapidly per gram of injected dust.',
+      },
+      {
+        question: 'How does ambient dust particle size distribution affect real-world filter service life compared to ISO 5011 test results?',
+        answer: 'ISO A2 fine test dust has a defined particle size distribution (0.5–180 µm, median ~10 µm) per ISO 12103-1. Real-world dust varies significantly: quarry blasting generates large particles (25–500 µm) that load filters rapidly per gram but at low particle count; road construction generates fine PM10 particles (1–10 µm) that penetrate deeper into media before capture, raising restriction faster per gram than coarse dust. A filter achieving 500 g DHC in ISO 5011 testing may provide only 250 g effective DHC in an environment with predominantly fine PM2.5 dust. Service interval calculation must apply an environment correction factor: coarse-dust environments (mining blasting, aggregate handling) typically achieve 120–150% of ISO 5011 DHC, while fine-dust environments (grain handling, cement) achieve 60–80% of test DHC.',
+      },
+      {
+        question: 'What is the relationship between pleat count, pleat height, and dust holding capacity?',
+        answer: 'Dust holding capacity scales approximately linearly with total available media area, which equals pleat count multiplied by pleat height multiplied by active pleat width. Doubling pleat count at constant pleat height doubles media area and approximately doubles DHC, assuming no pleat-to-pleat bridging under dust loading. Doubling pleat height at constant count has the same effect on area but requires structural support to prevent tall pleat collapse. Practical limits: increasing pleat count beyond a density where pleat spacing becomes less than 2× the expected dust cake depth causes pleat bridging — two adjacent pleats merge into a solid dust cake, eliminating the media between them. Optimum pleat density for dry dust applications is 8–14 pleats per centimetre of element circumference, with pleat spacing of 4–8 mm.',
+      },
+      {
+        question: 'How does pre-cleaner separation efficiency multiply primary element dust holding capacity?',
+        answer: 'Pre-cleaners use centrifugal separation (cyclone or vortex) to remove particles by inertial force without mechanical filtration. A pre-cleaner with 85% separation efficiency for particles above 10 µm reduces the mass ingress to the primary element by 85% for coarse particles, extending primary element service life approximately 6× (100% / (100% - 85%) = 6.7). In practice, pre-cleaner efficiency decreases as ejector valves — which expel separated dust from the cyclone bowl — become clogged, and as fine particles below 10 µm are not separated. Effective pre-cleaner maintenance (ejector valve inspection at each oil change, bowl cleaning) is required to maintain the promised service life extension. Mining equipment manufacturers specify pre-cleaner separation efficiency as part of the air intake system specification.',
+      },
+      {
+        question: 'What is the terminal restriction used in ISO 5011 testing, and how is it set for different engine types?',
+        answer: 'ISO 5011 terminal restriction is the differential pressure at which the DHC test is stopped — corresponding to the OEM-specified service limit for the engine application. Test procedures use 25 mbar (10 inH2O) as terminal restriction for naturally aspirated applications and 37.5–62.5 mbar (15–25 inH2O) for turbocharged applications. Setting terminal restriction at 62.5 mbar instead of 25 mbar means the filter can accumulate substantially more dust mass before the test stops, because restriction builds more gradually at the higher face velocity required for turbocharged applications. An element tested to 62.5 mbar terminal restriction will report DHC 2–4× higher than the same element tested to 25 mbar — the numbers are not directly comparable without knowing the terminal restriction value used.',
+      },
+      {
+        question: 'How is field service interval calculated from dust holding capacity and ambient dust concentration?',
+        answer: 'Field service interval (hours) = DHC (grams) / [Ambient dust concentration (mg/m3) × Equipment airflow (m3/h) × Pre-cleaner factor (dimensionless) / 1,000,000]. For a mining excavator with 2,000 m3/h airflow, DHC of 400 g, pre-cleaner factor of 0.15 (85% pre-cleaner efficiency), operating in 0.5 mg/m3 ambient dust: Service interval = 400 / (0.5 × 2,000 × 0.15 / 1,000,000) × 1,000,000 = 400 / 0.15 = 2,667 hours. However, dust concentration is rarely constant — peak concentrations during blasting or material handling can be 10–50× baseline. Service intervals calculated from average concentrations must be validated against restriction indicator readings in the first 500 hours of operation.',
+      },
+      {
+        question: 'Why does dust holding capacity decrease when an air filter element is cleaned by blowback?',
+        answer: 'Air filter elements can be cleaned by reverse-pulse compressed air (blowback) to remove accumulated surface dust cake and restore restriction. However, each cleaning cycle causes two forms of irreversible degradation: fine dust particles (below 5 µm) that initially rest on the upstream surface are driven into the media structure by blowback pressure, permanently occluding pores and reducing effective open area; and mechanical fatigue from repeated pressure pulses causes micro-fractures in glass fiber media and fiber bonds in cellulose media. After 5–10 cleaning cycles, effective DHC drops to 40–60% of new element capacity. Elements cleaned beyond this limit provide shorter service intervals per cleaning cycle and eventually fail to meet Beta efficiency specifications. MACROCORE synthetic media resists blowback degradation better than cellulose, maintaining 70–80% of original DHC after 10 cleaning cycles.',
+      },
+      {
+        question: 'What is the significance of the dust injection rate in ISO 5011 testing?',
+        answer: 'The dust injection rate in ISO 5011 testing (grams of dust per minute fed upstream) affects the loading rate and therefore the time to reach terminal restriction, but does not directly affect the reported DHC value — DHC is total accumulated mass regardless of injection rate. However, injection rate affects how the dust cake structure forms: high injection rates create denser, less porous dust cakes that increase restriction faster per gram than low injection rates where dust cake forms loosely. ISO 5011 specifies the injection rate relative to element size to ensure consistent test conditions. In field application, dust ingress rate can be 100× lower than the test injection rate — field loading produces a looser, more permeable dust cake, and actual field DHC is typically 15–30% higher than ISO 5011-reported DHC for naturally aspirated engines.',
+      },
+      {
+        question: 'How does synthetic media achieve higher dust holding capacity per unit area than cellulose media?',
+        answer: 'Synthetic meltblown media achieves higher DHC per unit area through two mechanisms. First, controlled fiber diameter (1–10 µm vs 10–40 µm for cellulose) creates a more open, three-dimensional pore structure that can trap more dust mass in its depth before surface plugging occurs. Depth filtration captures particles throughout the media thickness rather than surface cake filtration only. Second, synthetic fibers do not absorb moisture or swell — the pore structure remains stable under high-humidity conditions. For MACROCORE elements, this translates to 40–70% higher DHC per cm2 of media area versus equivalent-area cellulose elements at the same terminal restriction, allowing either smaller element packages with equal service life or extended service intervals in the same element dimensions.',
+      },
+      {
+        question: 'What testing is used to verify dust holding capacity for specific heavy-duty equipment applications?',
+        answer: 'OEM qualification testing for heavy-duty equipment air filters requires ISO 5011 tests conducted at the specific application airflow rate, temperature, and inlet configuration — not just at standard test bench conditions. Equipment-specific dust (site-sampled at representative ambient concentrations) may be used alongside ISO A2 fine dust to characterise performance under application conditions. Mining OEMs require DHC data at both maximum rated airflow and at typical operating partial-load airflow, because restriction vs capacity curves differ at partial load. ELIMFILTERS OEM qualification testing includes DHC measured at 60%, 80%, and 100% of rated airflow, providing service interval predictions across the full duty cycle. Testing laboratory accreditation to ISO 17025 is required for OEM qualification test data.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Defines dust holding capacity test methodology, dust injection procedures, terminal restriction definitions, and reporting requirements for air filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Specifies the physical and chemical properties of ISO A2 fine and other standard test dusts used in DHC testing, including size distribution and composition.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J726, Air Cleaner Evaluation',
+        relevance: 'SAE equivalent test standard for air filter DHC and efficiency evaluation, specifying SAE Fine and Coarse test dust grades and test protocols used by North American equipment OEMs.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Parker Hannifin, Filtration Division, Air Filter Element Selection Guide — Technical Reference 933864',
+        relevance: 'Application handbook covering DHC calculation methodology, pre-cleaner selection, ambient dust concentration measurement, and field service interval estimation.',
+      },
+    ],
     title: 'Dust Holding Capacity',
     subtitle: 'Filter Loading, Dirt Capacity Testing, and Service Life Prediction',
     metaDescription: 'Engineering analysis of filter dust holding capacity (DHC): ISO 5011 test dust, loading curves, capacity measurement in grams, and how capacity determines service interval in contaminated environments.',
@@ -477,6 +861,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'service-intervals',
+    faqs: [
+      {
+        question: 'What is the engineering basis for OEM-specified fixed filter service intervals?',
+        answer: 'OEM fixed intervals (such as 500 operating hours or 10,000 km) are derived from the worst-case combination of operating environment (maximum dust concentration), fluid degradation rate (maximum thermal load), and minimum acceptable protection margin (filter capacity at 85–90% of terminal restriction or oil quality at 90% TBN depletion). Fixed intervals guarantee adequate protection under worst-case conditions but significantly over-service filters in moderate environments. For a haul truck operating in a quarry at 2 mg/m3 dust, the 500-hour air filter interval may be correctly sized. The same truck operating on a sealed haul road at 0.1 mg/m3 dust could safely operate for 2,000–3,000 hours on the same filter element — the fixed interval forces unnecessary element replacement.',
+      },
+      {
+        question: 'What condition parameters are monitored in condition-based lube oil filter servicing?',
+        answer: 'Condition-based lube oil filter servicing monitors three independent parameters: (1) filter differential pressure — measured by inline ΔP indicator; service is triggered when the bypass valve cracking threshold approaches, typically at 0.7–0.9 bar ΔP; (2) oil analysis results — TAN (Total Acid Number, ASTM D664) increase of 2 mg KOH/g above baseline indicates acid accumulation; TBN (Total Base Number, ASTM D2896) depletion below 50% of fresh-oil value indicates exhausted neutralisation capacity; viscosity change (ASTM D445) of ±20% from grade midpoint indicates dilution or thickening; and (3) wear metal trend — rising iron (>50 ppm increase rate per 250 hours), copper (>25 ppm), or silicon (>20 ppm) triggers early investigation. Service is performed when any single parameter reaches its alert threshold.',
+      },
+      {
+        question: 'How much can service intervals be extended by switching from cellulose to synthetic media?',
+        answer: 'Switching from cellulose to synthetic media enables service interval extension through two mechanisms: higher dirt holding capacity (DHC) per unit area (40–70% higher for synthetic meltblown vs cellulose at equal element volume) extends air filter intervals; and better compatibility with extended-drain oil formulations (API CK-4, ACEA E9) at high temperatures enables longer lube filter intervals. In field trials on mining haul trucks, switching to SYNTRAX synthetic lube filter elements at the same change interval reduces filter-induced bypass events by 60–80% (filter reaches terminal ΔP less frequently before the scheduled change), allowing drain interval extension from 500 to 750 hours when combined with oil analysis monitoring. Air filter intervals typically extend 30–50% with MACROCORE synthetic elements versus cellulose at the same restriction service limit.',
+      },
+      {
+        question: 'What are the economic consequences of over-servicing filters in a large fleet?',
+        answer: 'Over-servicing — replacing filters before they reach their functional service limit — incurs both direct and indirect costs. Direct costs: filter element purchase price (for a fleet of 200 haul trucks each with 5 filter positions at USD 25–150 per filter, over-servicing by 50% wastes USD 12,500–75,000 per year in premature filter replacements); labor cost for unnecessary filter changes (2 hours per truck × 200 trucks × USD 80/hour × 1 extra change per year = USD 32,000); and used oil disposal cost (for over-serviced lube filters). Indirect costs: maintenance crew time diverted from productive activities; increased oil waste volume; and filter disposal environmental cost. A systematic service interval optimisation programme for a 200-truck fleet typically identifies USD 150,000–500,000 per year in recoverable over-servicing costs without reducing protection level.',
+      },
+      {
+        question: 'What adjustment factors are applied to base OEM service intervals for severe-duty environments?',
+        answer: 'Severe-duty environment adjustment factors are applied as multipliers to OEM base service intervals. Air filter intervals: quarry blast zone (ambient dust >2 mg/m3) = 0.1–0.25× base interval; general earthmoving (0.5–2 mg/m3) = 0.25–0.5×; paved haul road (<0.1 mg/m3) = 1.0–2.0×. Lube oil intervals: continuous operation above 100°C oil sump temperature = 0.5× base; high-idle fraction (>30% idle time) = 1.2× base (reduced thermal cycling); cold-start frequency (>3 cold starts per day below −20°C) = 0.7× base. Hydraulic filter intervals: severe particle ingress (multiple cylinder rod seals, outdoor operation) = 0.5× base; low-ingress indoor operation = 1.5–2.0×. Combining multiple adjustment factors uses the most restrictive single factor, not their product.',
+      },
+      {
+        question: 'How does condition-based oil analysis enable drain interval extension from 500 to 750 hours?',
+        answer: 'Extending engine oil drain intervals requires establishing that oil physical and chemical properties remain within specification at the proposed extension point. ISO 17359:2018 defines the statistical process: run 10 consecutive drain cycles at the current interval (500 hours) with oil analysis at 250, 375, and 500 hours each cycle. If TAN remains below baseline +2.0 mg KOH/g, TBN above 50% fresh-oil value, viscosity within ±15% of grade midpoint, and wear metals without statistically significant upward trend across all 10 cycles, the extension trial begins: run 10 cycles at 625 hours with the same sampling protocol. If all parameters pass at 625 hours for 10 cycles, extend to 750 hours and repeat. Each stage requires 10 cycles — approximately 2–3 years per stage for equipment at 500-hour intervals.',
+      },
+      {
+        question: 'What is a drain interval extension trial and how long does qualification take?',
+        answer: 'A drain interval extension (DIE) trial is a statistically rigorous programme to validate that engine oil maintains required performance properties at a proposed extended drain interval. ISO 17359:2018 Annex B specifies the minimum data requirements: 10 consecutive drain cycles at the current approved interval with oil samples at 50%, 75%, and 100% of interval; followed by 10 consecutive cycles at the proposed extended interval with the same sampling protocol. All samples must show: TAN increase <2 mg KOH/g above fresh oil, TBN >50% of fresh oil, viscosity within ±20% of grade midpoint, wear metals below OEM alarm limits, and no statistically significant upward trend in any parameter. For equipment running 500-hour intervals, 10 cycles equals 5,000 hours (approximately 2.5 years of operation before the extension trial data is available).',
+      },
+      {
+        question: 'What role does the oil analysis laboratory play in establishing condition-based service intervals?',
+        answer: 'The oil analysis laboratory provides the quantitative data that makes condition-based intervals possible. Accredited laboratories (ISO 17025) performing ASTM D5185 elemental analysis, ASTM D664 TAN, ASTM D2896 TBN, ASTM D445 viscosity, and ASTM E2412 FTIR infrared analysis deliver results within 24–48 hours of sample receipt. The laboratory establishes equipment-specific baseline values from the first 5–10 samples and applies statistical process control (SPC) to identify parameter trends. An increasing iron level in consecutive samples may trigger an alert before the single-sample alarm threshold is reached. For a meaningful condition-based programme, the laboratory must track individual equipment units, not generic equipment class, and deliver trend-based interpretation rather than single-sample pass/fail results.',
+      },
+      {
+        question: 'How should filter service intervals be set for equipment operating in widely variable dust environments?',
+        answer: 'Equipment operating in widely variable dust environments — transitioning between dust-generating operations (blasting, crushing) and low-dust operations (hauling, road travel) — requires a conservative interval strategy. The appropriate approach is: install air filter restriction indicators and service when the indicator triggers (regardless of operating hours); do NOT use a fixed-hour interval because the hour count from the last indicator reading is irrelevant to remaining filter capacity. For fleet management, restriction indicators on all equipment provide natural service interval self-regulation — high-dust operations trigger more frequent changes automatically. Electronic restriction sensors enable data logging that identifies which equipment positions, pit areas, and operational phases generate the highest filter loading rates for route and scheduling optimisation.',
+      },
+      {
+        question: 'What is the minimum number of oil analysis data points required to establish a reliable drain interval?',
+        answer: 'ISO 17359:2018 requires a minimum of five data points per parameter before trend analysis can be used for maintenance decisions. Fewer than five points represents noise, not trend. For drain interval decisions (extending from current to proposed interval), 10 consecutive data points at the current interval are required to establish statistical stability before beginning the extension trial. Each data point must be from the same sampling point, the same equipment unit, and collected at the same relative position within the drain interval (e.g., always at 50% and 90% of interval). Laboratories should provide trend-line plots with upper control limits (UCL) and lower control limits (LCL) for each monitored parameter, enabling visual identification of drift before alarm thresholds are reached.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 17359:2018, Condition Monitoring and Diagnostics of Machines — General Guidelines',
+        relevance: 'Defines the statistical requirements for condition-based maintenance programmes including minimum data points, alarm level setting, and drain interval extension trial methodology.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Used to set hydraulic filter service trigger points based on ISO cleanliness code monitoring rather than fixed time intervals.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D664-17, Standard Test Method for Acid Number of Petroleum Products by Potentiometric Titration',
+        relevance: 'TAN measurement method used as primary oil condition indicator for lube filter interval determination in condition-based servicing programmes.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Society of Tribologists and Lubrication Engineers (STLE), Oil Analysis Handbook, 3rd Edition, 2017',
+        relevance: 'Comprehensive industry reference for condition-based maintenance covering alarm level setting, drain interval extension trial methodology, and statistical process control for oil analysis data.',
+      },
+    ],
     title: 'Service Intervals',
     subtitle: 'Condition-Based vs Fixed Intervals, Interval Optimization, and TCO Impact',
     metaDescription: 'Engineering methodology for filter service interval determination: condition-based monitoring, OEM recommendations, environment adjustment factors, and impact on total cost of ownership.',
@@ -623,6 +1071,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'failure-analysis',
+    faqs: [
+      {
+        question: 'What are the four categories of wear particle morphology visible in used oil analysis?',
+        answer: 'Wear particles are classified by morphology into four categories: (1) Fatigue particles — smooth, flat platelets 5–15 µm formed by cyclic stress fracture of bearing raceways; high concentration indicates surface fatigue in rolling element bearings. (2) Abrasive particles — angular, irregular shapes with sharp edges; formed by hard particle (silica, carbide) cutting softer surfaces; primary indicator of air intake breach or dust ingress. (3) Adhesive wear particles (rubbing wear) — smooth, irregular features without directional marks; formed by metal-to-metal contact under boundary lubrication; indicates film breakdown or overloading. (4) Cutting wear particles — long ribbon-like or curled shapes; formed when a hard protrusion cuts across a softer surface; indicates severe abrasive condition. Particle morphology analysis by ferrography provides failure mechanism identification not available from elemental spectroscopy alone.',
+      },
+      {
+        question: 'How does filter element cut-open inspection contribute to root cause analysis?',
+        answer: 'Cutting open a used lube filter element provides direct evidence of contamination type and severity. Examination under magnification reveals: ferrous particles (attracted to a magnet, metallic gray appearance) indicating steel component wear; copper or bronze particles (golden color, non-magnetic) indicating bearing bush or thrust washer wear; rubber or elastomeric fragments (flexible, deformable) indicating seal degradation; carbon agglomerates (black, fragile) indicating oil thermal degradation or diesel fuel combustion contamination; and silica particles (colorless or white, very hard) indicating air intake bypass. The spatial distribution of particles on the media surface also provides diagnostic information — particles concentrated at the outer pleat tops indicate bypass flow pattern around a damaged end-cap seal; uniform distribution indicates normal filtered flow.',
+      },
+      {
+        question: 'What elemental spectroscopy patterns indicate specific component failure modes in engine oil?',
+        answer: 'ICP-OES elemental analysis of engine oil maps wear elements to specific components. Iron >100 ppm (or rising rapidly above baseline) indicates cylinder liner wear, camshaft lobe wear, or crankshaft bearing journal wear. Copper >50 ppm indicates bronze bushing or thrust washer wear, or copper oil cooler tube erosion. Aluminum >30 ppm indicates piston skirt wear or aluminum housing erosion. Silicon >25 ppm (not from engine components) indicates silica ingestion through the air intake — the most definitive diagnostic for air filter breach. Chromium >10 ppm indicates chrome-plated piston ring wear. Sodium and potassium together (>50 ppm) indicate coolant contamination from a cylinder head gasket failure. Zinc and phosphorus depletion together (>20% below fresh oil concentration) indicates ZDDP additive exhaustion — lubricant protection capacity reduced.',
+      },
+      {
+        question: 'What are the primary root causes of premature hydraulic cylinder seal failure, and how is each diagnosed?',
+        answer: 'Premature hydraulic cylinder rod seal failure has three primary root causes. (1) Particle contamination: abrasive particles in the hydraulic fluid abrade the seal lip on each stroke, producing a spiral wear pattern visible on the rod surface and a scalloped wear pattern on the seal lip. Diagnosis: elevated ISO 4406 code in system fluid, ferrous particles in oil analysis. (2) Fluid contamination by incompatible fluids: mixing of different hydraulic fluid types (mineral oil contaminated with water-glycol) causes seal material swelling or chemical degradation, visible as dimensional growth and surface cracking. Diagnosis: fluid analysis showing mixed chemistry (FTIR). (3) Side-loading: excessive radial load on the cylinder rod (from misalignment or off-centre loading) creates accelerated wear on one quadrant of the seal circumference. Diagnosis: asymmetric wear pattern on rod and seal.',
+      },
+      {
+        question: 'How is oil filter bypass failure distinguished from filter media failure in root cause analysis?',
+        answer: 'Bypass failure and media failure produce the same observable outcome — wear particles reaching downstream components — but require different corrective actions. Bypass failure occurs when the bypass valve opens under normal operating conditions (cold start, restricted element, or bypass valve spring failure at low set-point). Diagnosis: oil sample taken immediately after a cold start (within first 30 seconds) shows elevated particle counts; bypass valve cracking pressure measured below specification; restriction indicator alarm triggered before scheduled service interval. Media failure occurs when filter media develops a hole, crack, or end-cap debond. Diagnosis: particle size distribution in downstream oil analysis shows particles larger than the media rated pore size; element cut-open inspection reveals media damage; ISO 16889 multi-pass re-test of retained element samples shows Beta ratio below specification.',
+      },
+      {
+        question: 'What particle size distribution pattern in oil analysis indicates air intake breach?',
+        answer: 'Air intake breach introduces atmospheric silica (silicon dioxide) and alumina particles into the engine oil through the combustion process. The signature pattern is: (1) ICP-OES silicon rising above 25 ppm (ASTM D5185 alert level), from atmospheric dust containing 60–70% SiO2; (2) Concurrent rise in aluminum above 30 ppm, from alumina (Al2O3) component of atmospheric dust; (3) Particle counting (APC) showing elevated counts at 5–20 µm, the size range of airborne silica particles penetrating the filter breach; (4) Absence of copper or chrome elevation (confirming contamination source is external, not internal component wear). Silicon and aluminum rising together with no concurrent iron elevation is the classic pattern. Single-element silicon elevation without aluminum can indicate silicon antifoam additive depletion rather than air intake breach.',
+      },
+      {
+        question: 'What commissioning failures cause premature hydraulic component wear in the first 500 hours of operation?',
+        answer: 'Premature component wear in the first 500 operating hours is almost always caused by inadequate commissioning flushing. New hydraulic circuits contain manufacturing residues: machining chips from cylinder bore finishing (typically 50–200 µm steel and cast iron particles), pipe scale from hydraulic tubing (iron oxide at 20–100 µm), elastomeric flash from new seals (rubber particles at 10–50 µm), and assembly contamination (grit, metal dust from assembly environment). Without commissioning flushing to the target ISO 4406 code before first operation, these particles load the system filter immediately during start-up and cause bypass events within the first 10–50 hours, introducing unfiltered contamination to pump slippers and servo valve clearances. A commissioning flushing report with two APC sample certificates is the only acceptable verification that built-in contamination has been removed.',
+      },
+      {
+        question: 'How does varnish formation in hydraulic systems manifest in failure analysis, and what causes it?',
+        answer: 'Varnish in hydraulic systems appears as a thin, lacquer-like deposit on valve spool bores, servo valve metering edges, and reservoir walls — typically tan, brown, or orange in color. It forms when thermally or oxidatively degraded oil molecules (polar compounds, carbonyl species) deposit on metal surfaces. The deposit reduces servo valve spool clearance from the nominal 2–8 µm to as little as 1–3 µm, causing increased friction and stick-slip behavior in proportional and servo valves. In failure analysis, varnish formation is diagnosed by: FTIR detecting high carbonyl index (oxidation byproduct); MPC (Membrane Patch Colorimetry, ASTM D7843) showing elevated varnish potential rating (VPR >40 indicates high risk); and physical inspection showing discoloration on valve bores and reservoir internal surfaces. Root cause is thermal degradation of fluid above 80°C continuous or fluid residence time exceeding design life.',
+      },
+      {
+        question: 'What is ferrography, and how does it complement ICP-OES spectroscopy in failure analysis?',
+        answer: 'Ferrography separates particles from oil samples by magnetic gradient and arranges them on a glass substrate (ferrogram) for microscopic examination. Analytical ferrography classifies particles by size, morphology, and surface texture to identify specific failure mechanisms. Ferrous particles (steel, iron) align on the ferrogram first; non-ferrous particles (copper, aluminum, bronze) remain dispersed. ICP-OES spectroscopy reports dissolved and fine suspended element concentrations (<5–8 µm particle size range), while ferrography captures larger particles (5–1,000 µm range) and provides morphological evidence. The two methods are complementary: ICP-OES provides early warning of rising element concentration before particle size is large enough for ferrographic analysis; ferrography identifies failure mechanism from particle morphology when ICP-OES shows elevated concentrations. Together, they provide both "how much" and "why" evidence for root cause determination.',
+      },
+      {
+        question: 'How is a contamination-related bearing failure distinguished from a fatigue bearing failure in field failure analysis?',
+        answer: 'Contamination-related bearing failure produces characteristic features distinguishable from fatigue: (1) Multiple wear sites on raceways, often distributed around the full circumference (versus localised fatigue pits at the loaded zone); (2) Scratched or scored surfaces with directional marks from abrasive particles (versus smooth fatigue spalls with conchoidal fracture pattern); (3) Oil analysis showing particle count above target ISO code BEFORE the failure event — contamination failure follows elevated cleanliness code; fatigue failure may occur in clean oil at end of calculated L10 bearing life. (4) Particle morphology in the last pre-failure oil sample: abrasive particles (angular silica, metal chips) for contamination failure versus fatigue platelets for fatigue failure. ISO 4406 code trending over the 500–1,000 hours before failure is the most reliable diagnostic differentiator between contamination-induced and stress-cycle-induced bearing failure.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry',
+        relevance: 'Primary method for quantifying wear metals, additive elements, and contaminant elements in oil samples used for failure diagnosis.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Particle count method used to establish contamination history before failure events and to verify cleanliness restoration after corrective action.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Machinery Lubrication, Wear Debris Analysis in Industrial Applications, ASTM International Technical Reference',
+        relevance: 'Technical reference covering wear particle morphology classification, ferrography interpretation, and failure mechanism identification from oil analysis data.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D7843-12, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Colorimetry (MPC)',
+        relevance: 'Varnish potential rating test used to diagnose thermal degradation and varnish formation in hydraulic and turbine oil failure analysis.',
+      },
+    ],
     title: 'Failure Analysis',
     subtitle: 'Root Cause Identification, Wear Patterns, and Contamination Diagnosis',
     metaDescription: 'Industrial filtration failure analysis methodology: identifying root causes through wear pattern analysis, particle morphology, oil analysis, and filter element inspection techniques.',
@@ -661,6 +1173,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'testing-and-validation',
+    faqs: [
+      {
+        question: 'What is the purpose of the multi-pass test configuration in ISO 16889, and why is single-pass testing insufficient?',
+        answer: 'The multi-pass configuration recirculates contaminated test fluid through the filter circuit, allowing particles that penetrate the element to remain in the downstream loop and be counted continuously throughout the test. This loading approach serves two purposes: it produces realistic Beta ratio data at different loading states (clean element vs progressively loaded element), and it simultaneously measures dirt holding capacity by accumulating total injected mass until terminal differential pressure is reached. Single-pass testing — where contaminated fluid passes through once and is discarded — measures initial efficiency of a clean element only, which is not representative of field conditions. Field filters operate at various loading states across their service life; the multi-pass average Beta ratio from ISO 16889 better represents the time-averaged efficiency a filter delivers in service.',
+      },
+      {
+        question: 'What is the difference between nominal and absolute micron rating, and why should absolute rating always be specified?',
+        answer: 'Nominal micron rating is an informal, non-standardised designation describing the particle size at which a filter retains "most" particles — the percentage is undefined and varies between manufacturers (50%, 80%, or 90% are all used as "nominal" thresholds by different suppliers). Absolute micron rating at a specified Beta ratio is the standardised, comparable alternative: an element rated as "10 µm absolute, β10(c) ≥ 200" means that its Beta ratio at 10 µm, measured per ISO 16889 with ISO 11171-calibrated APC, is at least 200 — corresponding to 99.5% single-pass efficiency. Specifying nominal rating allows manufacturers to claim 10 µm nominal at 50% efficiency, which represents very low contamination control performance. Procurement specifications for industrial hydraulic and lube filters must require β(c) notation at a defined minimum Beta value to ensure meaningful performance comparison.',
+      },
+      {
+        question: 'How is dirt holding capacity (DHC) measured during ISO 16889 testing, and what are its units?',
+        answer: 'DHC is the cumulative mass of ISO A2 medium test dust injected upstream from test start until terminal differential pressure is reached. Terminal ΔP is defined as either 10× the clean element initial ΔP or 6 bar, whichever occurs first. DHC is expressed in grams of test dust per the tested element at the specific flow rate. The ISO 16889 test simultaneously measures both Beta ratio (from APC particle counts upstream and downstream) and DHC (from the gravimetric dust feeder total output). DHC data from ISO 16889 is only directly comparable between elements when the test flow rate is identical — DHC decreases as flow rate increases because higher face velocity compresses the dust cake faster. DHC must be stated with the corresponding test flow rate and fluid viscosity for the data to be interpretable.',
+      },
+      {
+        question: 'What calibration requirements apply to automatic particle counters used in ISO 16889 testing?',
+        answer: 'Automatic particle counters used in ISO 16889 testing must be calibrated per ISO 11171 using NIST-traceable polystyrene latex (PSL) sphere reference particles. ISO 11171 defines the calibration procedure, reference particle sizes (1–25 µm range covered by different PSL standards), and recalibration interval (typically every 12 months or 500 operating hours). The calibration establishes the APC channel size thresholds that correspond to actual particle sizes — without calibration, different APCs in different laboratories will report different particle counts for identical fluid samples. This is why ISO 16889 data from pre-2000 (using AC fine dust calibration) is denoted β without the (c) suffix and cannot be directly compared with ISO 11171-calibrated β(c) data from current testing.',
+      },
+      {
+        question: 'What test conditions must be matched when comparing ISO 16889 results between competing filter elements?',
+        answer: 'Valid comparison of ISO 16889 data between competing elements requires matching: (1) test flow rate (L/min) — the same element at 2× flow rate will show lower DHC; (2) test fluid (ISO VG 15 at 50°C ± 2°C is the ISO 16889 standard); (3) test dust (ISO 12103-1 A2 medium, certified batch); (4) APC calibration notation (β(c) suffix confirms ISO 11171 calibration — data without (c) is not comparable); (5) reporting basis (some manufacturers report minimum β, others report mean β — request the test report, not a summary specification). When requesting third-party ISO 16889 test data, require the full test report from an ISO 17025-accredited laboratory, which includes all test conditions, raw particle count data, and calculated Beta values at each sampling interval.',
+      },
+      {
+        question: 'How does ISO 5011 testing differ from ISO 16889 testing in methodology and application?',
+        answer: 'ISO 5011 governs air filter element testing — measuring gravimetric efficiency (percentage by mass of injected dust retained), dust holding capacity, restriction curve, and collapse resistance — using an air medium with ISO A2 fine test dust. ISO 16889 governs hydraulic and lube oil filter element testing — measuring Beta ratio (particle count efficiency at specific sizes) and DHC — using liquid ISO VG 15 mineral oil with ISO A2 medium test dust. The fundamental difference is the medium: air filtration efficiency is expressed gravimetrically (percentage mass captured) because precise particle counting across the full particle size range in air is impractical in standard production testing; hydraulic filtration efficiency is expressed as Beta ratio (particle count ratio) at specific sizes because particle count is the direct measure of component damage risk. Neither test standard applies to the other medium.',
+      },
+      {
+        question: 'What is the significance of testing at multiple Beta ratio sizes (β3, β6, β10, β12, β15) in hydraulic filter specifications?',
+        answer: 'Reporting Beta ratios at multiple particle sizes provides a complete efficiency profile rather than a single point specification. A filter may achieve β6(c) = 200 (99.5% at 6 µm) but β3(c) = 5 (80% at 3 µm), providing inadequate protection for servo valves with 1–4 µm spool clearances. Conversely, a filter with β3(c) = 75 (98.7%) provides better sub-5 µm particle control than the higher-rated element at 6 µm. For hydraulic system specification: servo circuits require β3(c) or β6(c) ≥ 200; piston pump circuits require β10(c) ≥ 200; gear pump circuits require β10(c) ≥ 75. NFPA T3.10.8 specifies the Beta ratio notation requirements for hydraulic filter specifications to enable unambiguous performance definition.',
+      },
+      {
+        question: 'What is required from an accredited testing laboratory to validate filter performance claims?',
+        answer: 'ISO 17025 laboratory accreditation is the international standard for testing laboratory competency — it verifies measurement traceability, equipment calibration, personnel qualification, and quality management systems. Filter performance claims supported by ISO 17025-accredited test reports provide: metrological traceability of particle counts to national standards (NIST reference particles); documented APC calibration with calibration certificate date and reference; complete test conditions (flow rate, temperature, fluid batch, dust lot); and raw data tables enabling independent Beta ratio verification. Marketing summary sheets claiming "tested to ISO 16889" without an ISO 17025 test certificate do not constitute validated performance data. ELIMFILTERS publishes ISO 17025-certified test reports for its performance-critical filter elements.',
+      },
+      {
+        question: 'How is the Beta ratio stability test conducted, and what does it reveal that the standard multi-pass test does not?',
+        answer: 'The Beta ratio stability test (also called flow sensitivity test) measures Beta ratio at multiple flow rates — typically 50%, 100%, and 150% of rated flow — to characterise how efficiency changes across the operating range. Standard ISO 16889 testing measures average Beta at a single rated flow. The stability test reveals: (1) whether Beta ratio drops significantly at elevated flow rates (e.g., during system transients), which would indicate inadequate protection during peak flow events; (2) whether efficiency increases at reduced flow (normal for depth-filtration elements as velocity decreases); (3) at what flow rate the element transitions from depth filtration to surface filtration mode. For servo valve protection in variable-flow circuits, Beta stability across the flow range is as important as peak Beta at rated flow — an element with β10(c) = 200 at rated flow but β10(c) = 15 at 150% flow provides inadequate protection during pump startup transients.',
+      },
+      {
+        question: 'What does certification to ISO 16889 guarantee about a filter element, and what does it not guarantee?',
+        answer: 'ISO 16889 certification guarantees that the stated Beta ratio and DHC values were measured in a standardised test at the specified conditions. It guarantees the test methodology, calibration standard used, and reporting format. It does NOT guarantee: performance equivalence across different element sizes or housings (each must be tested separately); Beta ratio stability under dynamic conditions (pulsating flow, temperature cycling); performance in fluids other than ISO VG 15 mineral oil; performance at field conditions different from test conditions; or the minimum production lot performance (unless the specification includes a minimum lot-average requirement). It also does not guarantee that the production element matches the tested prototype unless the manufacturer has a quality management system (ISO 9001 or ISO/TS 16949) that documents the relationship between the tested design and the production lot.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Primary standard defining multi-pass test circuit, Beta ratio calculation, DHC measurement, and performance reporting for hydraulic and lube filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Defines gravimetric efficiency, dust holding capacity, restriction curve, and collapse testing for air filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'Calibration standard for APC instruments, defining the (c) suffix notation and ISO 17025 laboratory accreditation requirements for valid Beta ratio measurement.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T3.10.8-2006, Hydraulic Fluid Power — Determination of Filter Element Performance — Multi-Pass Method for Determining Filtration Ratio and Dirt Holding Capacity',
+        relevance: 'North American fluid power standard complementing ISO 16889, specifying Beta ratio notation requirements and performance reporting format for hydraulic filter elements.',
+      },
+    ],
     title: 'Testing & Validation',
     subtitle: 'ISO Test Methods, Multi-Pass Testing, and Performance Certification',
     metaDescription: 'Industrial filter testing methodology: ISO 16889 multi-pass test, ISO 5011 air filter test, Beta ratio measurement, dirt holding capacity validation, and performance certification standards.',
@@ -698,6 +1274,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'oem-engineering',
+    faqs: [
+      {
+        question: 'What engineering parameters define OEM filter equivalence beyond physical dimensions?',
+        answer: 'OEM filter equivalence requires matching five engineering parameters beyond physical fit: (1) bypass valve cracking pressure (0.8–1.5 bar typical range — a different cracking pressure changes the ΔP threshold above which unfiltered oil enters the engine); (2) media Beta ratio at the size specified by the OEM (e.g., β10(c) ≥ 75 for diesel engine lube — an aftermarket element with β10(c) = 10 fails to provide equivalent contamination control); (3) dirt holding capacity at the rated flow (determines whether the element can survive the OEM-specified service interval without exceeding bypass pressure); (4) anti-drain back valve performance (leak-by rate <1 mL/min over 60 minutes); and (5) elastomer compatibility with the specified fluid (NBR for mineral oil, FKM for synthetic lubricants above 150°C).',
+      },
+      {
+        question: 'How are OEM filter specifications derived from engine and system engineering requirements?',
+        answer: 'OEM filter specifications originate from engine design engineering requirements for: (1) Component cleanliness targets — the required ISO 4406 code for engine bearings and precision components, which defines the minimum Beta ratio for the filter; (2) Oil volume and flow rate — determines filter size, media area, and DHC required to survive the drain interval at rated engine flow; (3) Cold-start oil viscosity — at −20°C, ISO VG 15W-40 engine oil viscosity can exceed 1,500 cSt, requiring bypass valve cracking pressure that protects against oil starvation under cold-start restriction; (4) Operating temperature range — determines elastomer and media temperature specification. Engine OEMs validate filtration specifications against engine wear data from accelerated life tests, with oil contamination maintained at ISO 4406 codes from ISO 16/14/11 to ISO 19/17/14 to bracket the acceptable protection range.',
+      },
+      {
+        question: 'What is the legal status of aftermarket filters for OEM warranty compliance?',
+        answer: 'In most major markets, aftermarket filters can be used without voiding OEM warranty if they meet or exceed OEM performance specifications. The EU Block Exemption Regulation (EU BER 461/2010) explicitly permits use of matching-quality parts without warranty voiding, provided the aftermarket supplier can demonstrate equivalence. In North American markets, the Magnuson-Moss Warranty Act (15 U.S.C. § 2302) prohibits tying warranty to specific branded parts unless the OEM provides the part free of charge. However, the burden of proof for equivalence lies with the aftermarket supplier — if a warranty claim arises, the equipment owner and aftermarket supplier must demonstrate that the filter met or exceeded OEM specifications. ISO 16889 test reports and ISO 4548-12 performance data from accredited laboratories are the standard evidence format for equivalence claims.',
+      },
+      {
+        question: 'What is a cross-reference number, and what engineering validation is required before publishing one?',
+        answer: 'A cross-reference (or interchange number) links an OEM filter part number to an aftermarket equivalent. Publishing a cross-reference asserts that the aftermarket element is dimensionally and functionally equivalent to the OEM part for the application. Engineering validation requires: dimensional measurement of thread diameter, pitch, element OD and height, gasket OD, and bypass valve location; measurement of bypass valve cracking pressure and ADB valve leakage; ISO 16889 or ISO 4548-12 media efficiency testing at the OEM-specified flow rate and Beta ratio target; and fluid compatibility verification of elastomers and media against the OEM-specified fluid type. Cross-references published without underlying performance data expose the aftermarket supplier to warranty liability if the filter fails to provide equivalent protection in service.',
+      },
+      {
+        question: 'Why do some OEM filter specifications include a maximum Beta ratio in addition to a minimum?',
+        answer: 'OEM filter specifications occasionally include a maximum Beta ratio (e.g., β10(c) between 75 and 200) to prevent two problems. First, extremely high Beta ratio (β10(c) > 1,000) can indicate very fine filtration that captures particles the additive package provides as boundary lubrication supplements — some extreme-pressure additive packages in API CJ-4 and CK-4 oils include 0.5–5 µm particle-like organometallic complexes. Second, very high Beta ratio often corresponds to high clean restriction, which accelerates bypass valve opening during cold starts, reducing effective filtration time. OEM specifications set minimum Beta for contamination control and maximum Beta for additive compatibility and cold-start performance. This range specification is more common in hydraulic system applications where proportional valve requirements (β3(c) ≥ 200) and bypass valve cold-start requirements (bypass at 1.5 bar maximum) create competing constraints.',
+      },
+      {
+        question: 'How should aftermarket filter purchasers evaluate ISO 16889 test reports provided by suppliers?',
+        answer: 'Evaluating supplier ISO 16889 test reports requires checking five elements: (1) Laboratory accreditation — confirm the test laboratory holds current ISO 17025 accreditation for filter testing (accreditation certificate number, scope, and expiry date); (2) Test conditions — confirm the test flow rate matches the application flow, fluid is ISO VG 15 at 50°C, and dust is ISO 12103-1 A2 medium (not a different test contaminant); (3) Beta notation — confirm β(c) suffix is present, confirming ISO 11171-calibrated particle counting; (4) Element identification — confirm the test report identifies the specific element part number, including drawing revision or version number; (5) Claim consistency — confirm the supplier catalog specification matches the test report data (minimum Beta at the specified size must match the test report value). Reports lacking any of these elements cannot support a valid equivalence claim.',
+      },
+      {
+        question: 'What OEM thread specifications are used for spin-on lube filters, and why do they matter?',
+        answer: 'Spin-on lube filter thread specifications are standardised per ISO 965-1 (metric thread series): M20×1.5 (light-duty gasoline engines), M22×1.5 (light-commercial and light-duty diesel), M26×1.5 (medium-duty diesel engines, many European applications), and M28×1.5 (heavy-duty diesel, commercial vehicles). North American heavy-duty applications use UN thread series (1-12 UNF is the most common). Thread pitch is as important as diameter — M22×1.5 and M22×1.0 will both start threading but the coarser pitch (1.5 mm) bottoms out before achieving sealing torque on a 1.0 mm pitch head, creating a leak path. Aftermarket filters must match both thread diameter and pitch precisely. ELIMFILTERS cross-references specify the complete thread specification (diameter, pitch, thread form) for each application.',
+      },
+      {
+        question: 'What is the engineering significance of filter housing burst pressure specification?',
+        answer: 'Filter housing burst pressure specification is the pressure at which the housing structurally fails — typically 2× rated maximum allowable working pressure (MAWP) for hydraulic filters and 4× for lube filters. A lube filter housing rated to 10 bar MAWP must survive 40 bar burst test per ISO 4548-1. The burst safety margin accounts for: pressure surges during system transients (pump startup can generate 1.5–2× operating pressure for 50–200 milliseconds); temperature-induced pressure variation (closed-loop hydraulic systems can see pressure increases of 15–25% between cold start and operating temperature); manufacturing variation in housing wall thickness; and fatigue accumulation over 500+ service cycles. Aftermarket housings made from lighter-gauge steel without equivalent burst testing may be dimensionally interchangeable but structurally unsafe for the application pressure environment.',
+      },
+      {
+        question: 'How does ELIMFILTERS approach aftermarket cross-reference validation for heavy-duty applications?',
+        answer: 'ELIMFILTERS aftermarket cross-reference validation follows a four-stage process for heavy-duty filter applications. Stage 1: Dimensional equivalence — 100% measurement of thread specification, housing dimensions, gasket OD, bypass valve location, and end-cap configuration against OEM reference elements. Stage 2: Functional equivalence — bypass valve cracking pressure measured at 20°C and 80°C; ADB valve leak-by measured at 0.5 bar static head; end-cap axial load per ISO 3723. Stage 3: Performance equivalence — ISO 16889 multi-pass test at the OEM application flow rate with Beta ratio result compared to OEM specification minimum; ISO 4548-12 burst test. Stage 4: Fluid compatibility — elastomer immersion testing at 120°C for 1,000 hours with the OEM-specified fluid, measuring dimensional change and hardness. Cross-references are published only after all four stages are passed and documented.',
+      },
+      {
+        question: 'What is the role of ISO 9001 certification in aftermarket filter quality assurance?',
+        answer: 'ISO 9001 quality management system certification requires a supplier to document and consistently control all processes that affect product quality — from raw material specification through manufacturing process control to finished product inspection. For filter elements, ISO 9001 requires: documented media specification (fiber diameter, basis weight, Beta ratio by production lot); controlled end-cap bonding process (adhesive type, cure time, temperature, bond strength inspection); bypass valve cracking pressure inspection frequency and acceptance criteria; and traceability from finished filter element to the media production lot. ISO 9001 certification does not guarantee the element meets a specific performance standard — it guarantees that the production process consistently produces elements matching the qualified design. Combined with ISO 17025 test data for the design, ISO 9001 provides assurance that production elements match the tested design.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Primary performance standard used to validate aftermarket filter element equivalence to OEM Beta ratio and DHC specifications.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure / Flow Characteristics',
+        relevance: 'Governs differential pressure, bypass valve cracking pressure, and burst pressure testing for spin-on lube oil filters.',
+      },
+      {
+        category: 'regulation',
+        citation: 'Regulation (EU) 461/2010 on the Application of Article 101(3) TFEU to Categories of Vertical Agreements in the Motor Vehicle Sector (EU Block Exemption Regulation)',
+        relevance: 'European regulation permitting use of equivalent aftermarket parts without OEM warranty voiding, defining the legal framework for aftermarket filter cross-reference programs.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 9001:2015, Quality Management Systems — Requirements',
+        relevance: 'Quality management standard applied to filter manufacturing to ensure production consistency between tested design and production elements.',
+      },
+    ],
     title: 'OEM Engineering',
     subtitle: 'OEM Filtration Specifications, Cross-References, and Aftermarket Equivalence',
     metaDescription: 'OEM filtration engineering requirements: how OEM specifications are determined, what parameters define equivalence, and engineering criteria for aftermarket filter validation.',
@@ -734,6 +1374,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'asset-protection-engineering',
+    faqs: [
+      {
+        question: 'What is the contamination budget methodology and how is it applied to industrial asset protection?',
+        answer: 'A contamination budget is a mass balance calculation that quantifies contamination ingress rate (particles/hour entering the system) versus contamination removal rate (particles/hour captured by filtration). At steady state, removal rate must equal or exceed ingress rate to maintain the target ISO 4406 cleanliness code. The methodology requires: (1) identifying all ingress pathways (reservoir breathers, shaft seals, cylinder rod seals, fill points, atmospheric condensation); (2) quantifying ingress rate for each pathway (typical values: unfiltered breather = 10–50 mg/h, worn lip seal = 1–10 mg/h, cylinder rod seal = 1–5 mg/h per cylinder); (3) summing total ingress load; (4) specifying filtration system removal capacity to exceed total ingress; (5) verifying with APC sampling at steady state. The analysis identifies which ingress pathway offers the greatest contamination reduction per maintenance investment.',
+      },
+      {
+        question: 'How many contamination control circuits must be managed simultaneously in a heavy-duty mining haul truck?',
+        answer: 'A heavy-duty mining haul truck requires simultaneous contamination control across 6–8 distinct fluid and air circuits: (1) air intake (primary element + safety element + pre-cleaner protecting engine and turbocharger); (2) engine lube system (full-flow + bypass filter protecting bearings, journals, and valve train); (3) fuel system (pre-filter + primary filter + coalescing water separator protecting HPCR injectors); (4) transmission hydraulic (full-flow filter protecting clutch packs and shift valves); (5) steering hydraulic (return-line filter protecting servo valves and cylinders); (6) brake hydraulic (fine filter protecting ABS solenoid valves); (7) cooling system (coolant filter + SCA dosing protecting water pump and heat exchanger); (8) cab air HVAC (activated carbon and particulate filter protecting operator health per ISO 11155). Each circuit has independent cleanliness targets, ingress pathways, and filtration specifications.',
+      },
+      {
+        question: 'What is the information architecture hierarchy that ELIMFILTERS uses to structure industrial asset protection?',
+        answer: 'The ELIMFILTERS information architecture hierarchy frames the complete engineering knowledge chain for industrial asset protection: (1) Contamination — identifying root contamination sources (silica from air intake, water from condensation, metallic wear particles, chemical degradation products); (2) Asset Degradation — mapping how each contamination type degrades specific components (abrasive wear of bearing surfaces, corrosion of valve seats, lacquer formation on servo spools); (3) Standards and Measurement — applying ISO 4406, ISO 5011, ISO 8573, and related standards to quantify contamination and set targets; (4) Protection Technologies — selecting ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, DRYCORE, and MICROKAPPA technologies matched to each contamination challenge; (5) Product Implementation — specifying the correct filter element for each circuit position; (6) Fleet Optimization — applying condition monitoring and interval optimization across the full asset fleet; (7) Sustainability Impact — quantifying contamination control contribution to equipment longevity, oil consumption reduction, and waste minimization.',
+      },
+      {
+        question: 'How does a multi-circuit contamination failure cascade through a hydraulic mining excavator?',
+        answer: 'Contamination cascade in a hydraulic mining excavator begins with a single circuit failure that progressively compromises adjacent systems. Example: air intake seal breach introduces silica particles into the combustion chamber → combustion products with elevated SiC and silicon compounds → blow-by past worn piston rings contaminate the lube oil → elevated silicon in lube oil attacks bearing surfaces (diagnostic: ICP-OES silicon >25 ppm, rising iron) → bearing clearance increase allows journal oil pressure to drop → low oil pressure activates ECU warning → unplanned engine shutdown. Concurrent with the lube system cascade, the hydraulic circuit may experience contamination through maintenance errors during the unplanned shutdown — open hydraulic ports contaminated during emergency repair. This cascade justifies monitoring all circuits simultaneously rather than reacting only to the circuit that fails first.',
+      },
+      {
+        question: 'What system approach extends equipment life by 30–50% compared to commodity filter selection?',
+        answer: 'Equipment life extension of 30–50% through system-based contamination control requires implementing six integrated practices simultaneously: (1) All circuits maintained at target ISO 4406 cleanliness codes continuously (not recovered from exceedances); (2) Commissioning flushing completed before first operation to remove built-in contamination; (3) All ingress pathways sealed — breathers upgraded to 3 µm filtered desiccant breathers, shaft seals monitored and replaced at early leakage; (4) Condition-based service intervals replacing fixed intervals — every circuit serviced when its indicator or oil analysis trigger is reached; (5) Fill-point discipline enforced — all fluid transfers through pre-filtered transfer carts with β3(c) ≥ 200 filtration; (6) Trending oil analysis monitored for all circuits with 5+ data points per circuit per year. The 30–50% life extension figure comes from combining 2–3× bearing life extension (from ISO 16/14/11 vs ISO 19/17/14 cleanliness) across all circuit types simultaneously.',
+      },
+      {
+        question: 'How is a filtration system designed to maintain ISO 16/14/11 cleanliness in a high-ingress hydraulic circuit?',
+        answer: 'Designing for ISO 16/14/11 in a high-ingress circuit requires calculating the required filtration Beta ratio from the contamination budget. If the circuit ingress rate is 500 particles/mL-hour at ≥6 µm, and the target is ISO 4406 code 14 at ≥6 µm (80–160 particles/mL), the system must remove particles at a rate that maintains equilibrium below 160 particles/mL. A return-line filter rated β6(c) = 200 at 100 L/min removes 99.5% of incoming ≥6 µm particles per pass. Additional offline kidney-loop filtration at 15 L/min through a β3(c) = 200 element addresses sub-6 µm particles that dominate servo valve clearances. System design must also address ingress pathways — breather upgrade from open vent to filtered desiccant breather reduces ingress rate by 80–95%, which is the most cost-effective single improvement for any open-top reservoir hydraulic system.',
+      },
+      {
+        question: 'What is the total cost difference between a system-based approach and a commodity filter approach over a 10-year equipment life?',
+        answer: 'For a heavy-duty mining haul truck with a 10-year operational life, the total cost comparison shows system approach advantage: Commodity approach — filters sourced by lowest price, fixed intervals, no oil analysis. Annual filter cost: USD 8,000. Component replacement (bearings, hydraulic components, injectors) at twice the frequency of system approach: USD 120,000/year. Unplanned downtime: 150 hours/year at USD 20,000/hour production loss = USD 3,000,000/year. Ten-year total: USD 30,128,000. System approach — ELIMFILTERS filter specification matched to circuits, condition-based intervals, quarterly oil analysis. Annual filter cost: USD 12,000. Component replacement at half frequency: USD 60,000/year. Unplanned downtime: 40 hours/year at USD 20,000/hour = USD 800,000/year. Ten-year total: USD 8,720,000. System approach advantage: USD 21.4M per machine over 10 years. Filter cost difference (USD 40,000) is 0.19% of total advantage.',
+      },
+      {
+        question: 'What is the role of desiccant breather filters in asset protection engineering?',
+        answer: 'Desiccant breather filters replace conventional open-vent reservoir breathers to eliminate the two primary atmospheric contamination pathways: particle ingress and moisture ingress. Conventional open-vent breathers draw unfiltered air into the reservoir as fluid level drops during actuation — 10–50 mg/hour of dust ingress depending on ambient dust concentration. Desiccant breathers provide: (1) particulate filtration to 3 µm absolute, removing airborne dust before it enters the reservoir; (2) silica gel or molecular sieve desiccant that adsorbs moisture from incoming air, maintaining reservoir relative humidity below 30% and preventing free water accumulation. For a 500 L hydraulic reservoir breathing at 10 L/min airflow in a 2 mg/m3 dust environment, replacing an open breather with a 3 µm desiccant breather reduces particle ingress by 95% and virtually eliminates condensation-sourced free water — the two largest contamination ingress sources combined.',
+      },
+      {
+        question: 'How does thermal cycling affect contamination ingress in hydraulic systems?',
+        answer: 'Hydraulic reservoir thermal cycling — from ambient temperature at shutdown to operating temperature (40–70°C) during operation — creates a volumetric breathing cycle as thermal expansion and contraction of the fluid displaces air in and out of the reservoir vent. Each thermal cycle can exchange 2–5% of reservoir volume as air. Over a 20°C temperature swing for a 500 L reservoir, approximately 10–25 L of air passes through the breather per operating cycle. At 1 mg/m3 ambient dust, this exchanges 0.01–0.025 g of dust per cycle. For equipment doing 3 cycles per day (morning start-up warm, midday peak, evening cool-down), annual dust ingress through thermal cycling alone is 10–27 g — equivalent to a complete system contamination load for a precision servo circuit. Sealed bladder accumulators or pressurised reservoirs eliminate thermal breathing cycle ingress for the most contamination-critical hydraulic circuits.',
+      },
+      {
+        question: 'What performance verification steps confirm that an asset protection system is achieving its contamination control objectives?',
+        answer: 'Verification of asset protection system performance requires four independent checks on a defined schedule. Monthly: fluid sampling per ISO 3722 from each circuit with APC particle count — confirm all circuits are at target ISO 4406 code or better. Quarterly: oil analysis (ICP-OES, TAN, TBN, FTIR, viscosity) to verify no abnormal wear element trends and fluid condition within specification. At each filter change: visual inspection of element condition — media appearance, particle type and distribution under magnification, end-cap seal condition. Annually: review of unplanned maintenance records — if contamination-related component failures exceed 5% of total maintenance events, the ingress or filtration capacity calculation requires revision. This structured verification approach distinguishes a managed contamination control programme from routine filter changes — both change filters, but only the managed programme detects failures in the contamination control system before they cause component damage.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Foundation standard for setting and measuring cleanliness targets across all fluid circuits in the asset protection engineering framework.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Defines Beta ratio and DHC specifications for hydraulic and lube filter elements selected within the asset protection filtration system design.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 17359:2018, Condition Monitoring and Diagnostics of Machines — General Guidelines',
+        relevance: 'Framework for condition-based maintenance programmes that form the monitoring and verification layer of the asset protection engineering system.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Henke, R.W., Fluid Power Systems and Circuits, Hydraulic and Pneumatic Equipment Service Guide, Parker Hannifin Technical Handbook',
+        relevance: 'Engineering reference covering contamination budget methodology, filtration system design, and commissioning flushing requirements for industrial hydraulic and lube systems.',
+      },
+    ],
     title: 'Asset Protection Engineering',
     subtitle: 'System Design, Contamination Budgets, and Protection Architecture',
     metaDescription: 'Engineering framework for industrial asset protection through contamination control: system design methodology, contamination budget calculation, protection architecture, and performance verification.',
@@ -771,6 +1475,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   },
   {
     slug: 'materials-engineering',
+    faqs: [
+      {
+        question: 'What wall thickness and material grade are used for heavy-duty hydraulic filter housings?',
+        answer: 'Heavy-duty hydraulic filter housings use cold-rolled carbon steel (ASTM A1008 or equivalent) with wall thickness of 3–6 mm for operating pressures up to 420 bar. The housing must withstand burst pressure of 2× rated maximum allowable working pressure (MAWP) per ISO 4548-1 or NFPA T2.14.1 — for a 350 bar MAWP housing, burst test at 700 bar is required. Ductile cast iron (ASTM A536 Grade 65-45-12) is used for filter heads and manifolds in medium-pressure applications (up to 210 bar) where complex internal geometry requires casting rather than machining from bar stock. High-strength aluminum alloy (EN AW-6082 T6) provides weight reduction for mobile equipment applications where housing weight is critical, with appropriate de-rating for pressure and temperature limits compared to steel housings of equal wall thickness.',
+      },
+      {
+        question: 'What is the service temperature limit of NBR elastomers in petroleum-based lube oil applications?',
+        answer: 'NBR (nitrile butadiene rubber) in petroleum-based lube oil applications is rated for continuous service at temperatures up to 120°C. Short-term excursions to 150°C for up to 1,000 hours are generally tolerated without seal failure. Above 120°C continuous, NBR undergoes thermal oxidation: the polymer backbone cross-links further, increasing Shore A hardness from the specification 50–70 to values above 90, and causing brittleness, cracking, and loss of compression set recovery. For applications with continuous oil temperatures above 120°C — turbocharger drain lines, EGR cooler circuits, and engines with oil cooler failures — FKM (Viton) compounds rated to 200°C continuous are specified. The transition from NBR to FKM adds 25–40% to elastomer cost but eliminates seal-related failures in high-temperature applications.',
+      },
+      {
+        question: 'What are the compatibility requirements for filter elastomers with synthetic ester-based hydraulic fluids?',
+        answer: 'Synthetic ester-based hydraulic fluids — phosphate esters (HFD-R per ISO 6743-4), biodegradable polyol esters, and aviation hydraulic fluids — require specific elastomer compatibility verification. Standard NBR is incompatible with phosphate esters, swelling by 30–60% volume in 1,000-hour immersion at 80°C. FKM (Viton) Grade A provides good phosphate ester resistance with volume change below 10%. EPDM (ethylene propylene diene) is compatible with phosphate esters but incompatible with petroleum-based mineral oil — using EPDM seals in a system converted from mineral oil to phosphate ester without complete fluid flush causes immediate seal degradation where residual mineral oil contacts EPDM. Elastomer compatibility must be verified by immersion testing per ASTM D471 — 1,000 hours at maximum operating temperature with the specific fluid formulation — before publishing cross-references for ester-fluid applications.',
+      },
+      {
+        question: 'How is the corrosion protection coating selected for steel spin-on filter housings?',
+        answer: 'Steel spin-on filter housing corrosion protection uses three main systems depending on the exposure environment. Zinc phosphating plus organic top coat (e-coat) provides basic corrosion protection for engine compartment applications where the housing sees oil splash and moderate moisture — 240-hour salt spray (ASTM B117) minimum. Hot-dip galvanising provides heavy-duty external protection for filter housings exposed to direct weather and road salt — 1,000-hour salt spray resistance. Organic polymer powder coating (polyester or epoxy) provides both corrosion resistance and colour-coding capability for filter identification — 500–720-hour salt spray. All coatings must be applied to fully machined and deburred housings before assembly to prevent coating contamination inside the housing interior and ensure clean thread surfaces for installation.',
+      },
+      {
+        question: 'What is the function of the inner support core in a hydraulic filter element?',
+        answer: 'The inner support core is a perforated steel or plastic tube installed at the center of the pleated media pack in inside-out flow filter elements (flow from inside to outside). During normal operation, hydraulic pressure forces fluid radially outward through the media; the inner core supports the media against inward collapse caused by the reversed pressure gradient during high-ΔP conditions. Without the inner core, severe restriction (loaded element) or cold-start high-viscosity conditions create a pressure differential that forces the pleated media inward, collapsing the pleat structure against the center axis and reducing effective media area by 60–80%. NFPA T2.14.1 collapse resistance testing verifies that the core provides sufficient support for the element to survive 10,000 fatigue cycles at 10× operating ΔP without inward collapse or media separation.',
+      },
+      {
+        question: 'How does end-cap material selection affect filter element compatibility with biodiesel blends?',
+        answer: 'Biodiesel blends (B5–B20 per EN 14214) are aggressive toward some end-cap bonding adhesives and elastomers due to the fatty acid methyl ester (FAME) chemistry. Plastisol (PVC-based) end-cap bonding — the standard for cellulose fuel filters — swells and softens in B20 above 40°C, potentially releasing end-cap bonds within 250–500 service hours. Epoxy-bonded end caps resist B20 chemically but may be degraded by FAME hydrolysis products in high-water-content biodiesel blends. The most reliable construction for biodiesel applications uses thermally bonded end caps — media and end cap fused by heat without adhesive — with FKM sealing elements. EN 590 specifies maximum 7% FAME (B7) in European diesel, but national market specifications in some countries permit B10 or B20, requiring verification of filter element compatibility with the fuel blend at the delivery temperature range.',
+      },
+      {
+        question: 'What is the difference between die-cast and machine-from-bar-stock filter head manufacturing, and how does it affect performance?',
+        answer: 'Die-cast aluminum filter heads — cast by high-pressure aluminum die casting (HPDC) — can produce complex internal geometries (bypass valve pockets, porting, coolant passages) in a single operation but contain microporosity (0.1–2 mm voids) from gas entrapment during casting. Microporosity can cause hydraulic fluid seeping through the casting wall under high pressure, manifesting as external seepage without visible damage to machined surfaces. For hydraulic filter heads above 70 bar, machine-from-bar-stock (MFBS) construction is preferred — bar stock has no casting porosity. MFBS housings cost 40–80% more than die castings due to machining time, but are standard for high-pressure hydraulic applications (210–420 bar) where microporosity leakage is unacceptable. For low-pressure lube filter applications (below 10 bar), die castings are acceptable with post-casting impregnation treatment (vacuum pressure impregnation with sealant resin) to close microporosity.',
+      },
+      {
+        question: 'What material properties must be verified for filter element end caps used in automotive turbocharger-adjacent lube circuits?',
+        answer: 'Filter elements in turbocharger-adjacent lube circuits experience oil temperatures of 130–160°C at the element — above the standard NBR limit. End-cap material verification requires: (1) Metal end cap (cold-rolled steel or aluminum) — verify zinc phosphate coating is applied before element assembly, not after, to avoid coating contamination of the filtered fluid; (2) Elastomer seal — specify FKM rather than NBR for continuous-service temperatures above 120°C; verify Shore A hardness after 1,000 hours at 150°C is within 15 points of new specification; (3) Bonding adhesive — epoxy formulations rated to 175°C are required at these oil temperatures; verify bond shear strength after 500 hours at 150°C exceeds 3 MPa; (4) Media — synthetic microfiber media rated to 150°C; cellulose media degrades structurally above 120°C in petroleum oil.',
+      },
+      {
+        question: 'What is the role of wire mesh support layers in glass fiber filter elements?',
+        answer: 'Wire mesh support layers in glass fiber elements serve two functions. The inner support mesh — typically 100–200 µm stainless steel wire cloth — is positioned between the fine glass fiber layer and the inner support core to prevent glass fiber migration through the inner core perforations under reverse flow (during element handling or installation-direction reversal). The outer protection mesh — 100–300 µm woven stainless steel — covers the outer pleat surface to protect brittle glass fiber from physical abrasion during installation and from flow-induced vibration during service. Glass fibers fracture at very low tensile strain (0.1–0.5%), releasing particles when bent or abraded — the wire mesh cage maintains glass fiber integrity without restricting filtration performance. Elements without outer mesh protection show elevated glass particle counts in the first 10–50 operating hours, contaminating downstream components.',
+      },
+      {
+        question: 'What chemical compatibility restrictions apply to filter housing seals in compressed air systems?',
+        answer: 'Compressed air filter housing seals must be compatible with the full range of contaminants present in compressed air: compressor oil carry-over (mineral or synthetic, depending on compressor type), water condensate (including acidic condensate formed by SO2/NOx absorption in industrial environments), and glycol from desiccant carryover in desiccant dryer systems. NBR seals provide adequate resistance to mineral compressor oils and water, with service temperature to 80°C in typical compressed air systems. For oil-free compressor systems using synthetic lubricants at high discharge temperatures (150°C), FKM seals are required. EPDM seals resist water-glycol refrigerant at low temperatures but are incompatible with petroleum-based compressor oils — systems using both compressor types in a manifold must specify seals compatible with both fluids or use separate housing networks for each compressor type.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure / Flow Characteristics',
+        relevance: 'Test method specifying burst pressure and structural requirements for spin-on lube filter housings and assemblies.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D471-16a, Standard Test Method for Rubber Property — Effect of Liquids',
+        relevance: 'Defines immersion testing methodology for elastomer chemical compatibility verification including volume change, hardness change, and tensile property retention after fluid exposure.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T2.14.1-2005, Hydraulic Fluid Power — Filter Elements — Determination of Resistance to Flow Fatigue Using High Viscosity Fluid',
+        relevance: 'Collapse resistance and fatigue cycling requirements for hydraulic filter elements and housings including inner support core structural adequacy.',
+      },
+      {
+        category: 'specification',
+        citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods',
+        relevance: 'Defines maximum FAME (biodiesel) content in diesel fuel, establishing the fluid compatibility challenge for fuel filter element and housing materials.',
+      },
+    ],
     title: 'Materials Engineering',
     subtitle: 'Filter Construction Materials, Chemical Compatibility, and Thermal Limits',
     metaDescription: 'Industrial filter materials engineering: metal housing alloys, elastomer chemical compatibility, end-cap bonding methods, and thermal rating determination for industrial filtration applications.',
@@ -811,6 +1579,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'iso-16889',
+    faqs: [
+      {
+        question: 'What is the multi-pass method in ISO 16889, and why is it preferred over single-pass testing?',
+        answer: 'ISO 16889 multi-pass testing recirculates ISO Medium Test Dust through the filter under test, feeding fresh dust at a controlled rate while continuously counting upstream and downstream particle concentrations. Unlike single-pass tests that measure efficiency only at one loading state, the multi-pass test generates a Beta ratio averaged across the entire loading cycle from clean to terminal restriction. This provides a more representative measure of performance across real service conditions because filter efficiency typically improves as the filter cake builds in the initial loading phase before declining near terminal restriction. The resulting Beta ratio and Dirt Holding Capacity (DHC) values are used directly in system design and fluid cleanliness target selection.',
+      },
+      {
+        question: 'What particle counter calibration is required for ISO 16889 compliance?',
+        answer: 'ISO 16889 requires that Automatic Particle Counters (APCs) used for upstream and downstream concentration measurement are calibrated per ISO 11171 using NIST-traceable reference particles. The (c) designation in Beta ratio notation — β10(c) — indicates ISO 11171-calibrated measurements as distinct from the legacy ISO 4572 Beta values measured with uncalibrated counters. Legacy Beta values at β10 cannot be directly compared to current β10(c) values because calibrated APCs using ISO 11171 certification particles consistently read approximately 1.5–2× higher particle counts than uncalibrated instruments, meaning a filter that achieved β10 = 200 under legacy testing may only show β10(c) = 75–100 under current calibration methodology.',
+      },
+      {
+        question: 'How is Dirt Holding Capacity (DHC) determined in an ISO 16889 test, and what does it predict in service?',
+        answer: 'DHC is the total mass (in grams) of ISO MTD (Medium Test Dust, formerly ISO A2 fine) that has been injected upstream of the filter when differential pressure reaches the terminal restriction threshold specified for the test — typically 6 bar for hydraulic filters. The test is conducted at a constant flow rate and feed concentration. DHC directly predicts service life when combined with field contamination ingression rate: Service life (hours) = DHC(g) / Ingression rate (mg/hour). Ingression rate in turn depends on system sealing effectiveness, cylinder rod seal wear, and ambient particle concentration. A filter with 30 g DHC on a system with 0.05 mg/minute ingression will theoretically last 10,000 minutes (167 hours) between changes.',
+      },
+      {
+        question: 'What flow rate is used during ISO 16889 testing, and how is it selected for a given element?',
+        answer: 'ISO 16889 specifies that the test flow rate should represent the rated operating flow for the filter element under test. The standard defines that the test flow rate must be stated in the test report and on the element data sheet. For hydraulic filter elements, rated flow is typically the flow rate at which the clean element restriction is 0.35–0.7 bar — the range at which filter efficiency is characterised. Testing at significantly higher or lower flow rates produces different Beta ratios because inertial particle capture efficiency is velocity-dependent. Multi-pass tests at 50% and 150% of rated flow are sometimes run to characterise Beta stability across the operating range, particularly for mobile equipment applications with variable pump output.',
+      },
+      {
+        question: 'How does ISO 16889 test dust composition compare to real-world hydraulic system contamination?',
+        answer: 'ISO 16889 uses ISO Medium Test Dust (MTD) — A2 fine Arizona test dust per ISO 12103-1 — which is a natural silica-based dust with particle size distribution D50 of approximately 5–10 µm and particle density of 2.65 g/cm3. Real hydraulic system contamination consists of mixed particle types: silica from external ingress, ferrous particles from component wear, rubber particles from seal degradation, and carbon particles from oil oxidation. Silica particles (hardness 7 Mohs) are more abrasive than carbon or rubber particles and represent the worst case for component wear. The ISO MTD is deliberately chosen to represent the most damaging particle type — external silica ingress — making ISO 16889 Beta ratios conservative relative to real-world performance in systems with predominantly soft or metallic contamination.',
+      },
+      {
+        question: 'What is the significance of the upstream particle concentration in ISO 16889 testing?',
+        answer: 'ISO 16889 specifies an upstream particle concentration of 3±0.3 mg/L at the filter inlet sampling point. This concentration is maintained by controlling the dust feeder injection rate and is verified by in-line particle counting and gravimetric sampling. The concentration must be maintained within ±10% throughout the test to ensure reproducible results between laboratories. Higher upstream concentrations accelerate filter loading and may change the efficiency profile — as upstream concentration increases beyond 3 mg/L, surface filtration becomes increasingly dominant relative to depth filtration, shifting the efficiency measurement. The specified 3 mg/L target represents a compromise between test speed and realistic operating conditions, as field hydraulic systems rarely see concentrations above 0.5 mg/L in normal operation.',
+      },
+      {
+        question: 'How does temperature affect ISO 16889 test results, and what temperature is specified?',
+        answer: 'ISO 16889 specifies test fluid temperature of 50±2°C using ISO VG 46 mineral hydraulic oil or an equivalent test fluid with kinematic viscosity of 46±2 cSt at 40°C. Temperature directly affects fluid viscosity, which in turn affects particle transport velocity, Reynolds number in the filter media, and inertial capture efficiency. Testing at lower temperatures (higher viscosity) can artificially elevate Beta ratios because higher viscosity increases the drag on particles relative to their inertia, reducing inertial impaction efficiency and biasing the measurement toward higher interception capture rates. Testing at higher temperatures (lower viscosity) can reduce Beta ratios by decreasing media wetting and filtration resistance. The 50°C specification balances these effects and corresponds to typical hydraulic system operating temperatures.',
+      },
+      {
+        question: 'Can ISO 16889 results be used to compare filter elements from different manufacturers?',
+        answer: 'ISO 16889 results can be used for comparative purposes only when tests are conducted at an identical flow rate, with the same test dust lot, using an ISO 11171-calibrated APC instrument, at the same temperature, and with the terminal restriction set to the same value. Variations in any of these parameters can produce Beta ratio differences of 20–50% between otherwise equivalent filters. Third-party independent laboratory testing eliminates manufacturer bias in self-reported Beta values — ISO 16889 does not require independent verification of manufacturer test claims. Purchasing specifications should state "ISO 16889 testing conducted at [flow rate] and [terminal ΔP]" to ensure valid comparisons. Test reports must include all conditions specified in the standard annexes, not just the headline Beta ratio value.',
+      },
+      {
+        question: 'What is the relationship between Beta ratio and single-pass efficiency percentage?',
+        answer: 'Single-pass efficiency E at particle size x is calculated as E(x) = (1 - 1/β(x)) × 100%. A Beta ratio of β10(c) = 200 equals 99.5% single-pass efficiency; β10(c) = 1000 equals 99.9% efficiency. The Beta notation is preferred for hydraulic applications because it is more sensitive to high-efficiency differences — the difference between 99.5% and 99.9% efficiency represents a 4× difference in particle pass-through, which is critical for servo valve protection but appears as a small percentage change on a percent scale. For air filtration, gravimetric efficiency (percent of dust mass retained) is used instead of Beta ratio, because air filters are typically tested at lower Beta equivalents and mass-based efficiency better represents protection against overall dust ingestion rather than specific size classes.',
+      },
+      {
+        question: 'How are ISO 16889 results reported, and what information must the test certificate include?',
+        answer: 'ISO 16889 test certificates must include: Beta ratio values at each particle size threshold tested (e.g., β3(c), β6(c), β10(c), β14(c), β20(c)), each with the flow rate and terminal ΔP at which the value was obtained; Dirt Holding Capacity in grams; initial and terminal differential pressure; test fluid identification and viscosity; upstream concentration verification data; APC calibration certificate reference; test laboratory identity and date. Incomplete test certificates — those reporting only headline Beta values without test conditions — cannot be relied upon for hydraulic system design. ISO 16889:2022 (the current version) added requirements for Beta stability reporting across the loading cycle, providing designers with information on how efficiency changes from clean to terminal loading states.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Primary test standard for hydraulic filter element performance measurement including Beta ratio, dirt holding capacity, and collapse resistance.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'Calibration standard that defines the (c) notation and NIST-traceable calibration requirement for APC instruments used in ISO 16889 testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Defines ISO Medium Test Dust (A2 fine) used as the standard contaminant in ISO 16889 multi-pass filter testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Cleanliness coding standard used alongside ISO 16889 to set target contamination levels that filter elements qualified by ISO 16889 must maintain.',
+      },
+    ],
     title: 'ISO 16889',
     subtitle: 'Multi-Pass Method for Evaluating Filter Element Performance',
     metaDescription: 'Complete technical reference for ISO 16889: multi-pass test circuit, ISO A2 test contaminant, ISO 11171 particle counter calibration, Beta ratio calculation, dirt holding capacity measurement, and filter performance specification.',
@@ -887,6 +1719,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'iso-4406',
+    faqs: [
+      {
+        question: 'Why does ISO 4406 use Range Numbers (RN) instead of direct particle count values?',
+        answer: 'Range Numbers compress the very wide range of possible particle counts (from <1 to >80,000 particles/mL) into a manageable scale where each increment represents a doubling of particle count. This logarithmic compression makes code-to-code comparison intuitive — a system moving from 18/16/13 to 16/14/11 has reduced particle counts at each size threshold by 4× (two RN steps), regardless of the absolute count values. If ISO 4406 reported direct counts, comparing 65,000 vs 320,000 particles/mL would be less immediately interpretable than "18 vs 20" in RN notation. The doubling-per-step structure also corresponds well to the exponential relationship between cleanliness level and component wear rate in precision hydraulic systems.',
+      },
+      {
+        question: 'What cleanliness code is required for proportional control valves?',
+        answer: 'Proportional control valves (proportional directional control valves, proportional pressure relief valves) require hydraulic fluid maintained at ISO 4406 code 16/14/11. This corresponds to maximum 640 particles/mL ≥6 µm(c) and maximum 40 particles/mL ≥14 µm(c). The spool-sleeve clearance in proportional valves is typically 5–15 µm, making them sensitive to particles in the 5–10 µm range. Coarser cleanliness (17/15/12 or worse) causes silting of the spool in the sleeve, increasing valve hysteresis and reducing control precision. For servo valves with tighter spool-sleeve clearances (2–5 µm), ISO 4406 code 14/12/9 is required. The difference between proportional and servo valve targets — two ISO code units — represents a 4× difference in particle count at each threshold.',
+      },
+      {
+        question: 'How is the ISO 4406 code affected by changes in sampling method?',
+        answer: 'Sampling method errors are the single largest source of erroneous ISO 4406 results. Drawing from a stagnant line section or cold dead volume can produce results 2–4 code units higher (dirtier) than the true circulating fluid condition. Incomplete flush of sampling valves retains sediment from previous samples, biasing the result upward by 1–3 code units. Contaminated sample bottles — inadequately cleaned or stored uncapped — can add 2–5 code units to the measured result. ISO 3722 defines the sampling protocol: use pre-cleaned bottles certified at ISO 14/12/11, flush the sampling valve with 250–500 mL, and sample only from active-flow return lines. Comparison of samples from multiple sampling points at the same operating condition is a useful quality check — large discrepancies indicate sampling procedure errors rather than real contamination gradients in the system.',
+      },
+      {
+        question: 'What is the three-digit code format introduced in ISO 4406:1999, and what did it replace?',
+        answer: 'ISO 4406:1999 introduced the three-digit code format reporting particle counts at ≥4 µm(c), ≥6 µm(c), and ≥14 µm(c). The prior ISO 4406:1987 version used a two-digit code reporting counts at ≥5 µm and ≥15 µm. The 1999 revision added the ≥4 µm(c) count as the first digit specifically to address servo valve contamination sensitivity — particles in the 4–6 µm range pass through the ≥6 µm count threshold but can enter and damage servo valve spools with 2–4 µm clearances. The (c) notation added in 1999 distinguishes particle counts from ISO 11171-calibrated APCs from the uncalibrated measurements used before 1996. Cleanliness data from before 1996 should not be compared directly to current ISO 4406 three-digit codes without calibration correction.',
+      },
+      {
+        question: 'How does fluid sampling from the reservoir vs. return line affect ISO 4406 code results?',
+        answer: 'Return line sampling captures the particle distribution actively leaving system components under load — proportional pump outlet, cylinder rod seals, and return-line filters. This represents the contamination level that components are experiencing in real time. Reservoir sampling captures the particle distribution in settled or stratified fluid — fine particles remain suspended while large particles settle, so surface-level reservoir samples may appear cleaner than the circulating fluid. Return-line sampling at the filter inlet (upstream of return filter) provides the most conservative and representative measure of system contamination load. ISO 4413:2011 and most hydraulic system commissioning procedures specify return-line sampling as the reference measurement point for cleanliness verification.',
+      },
+      {
+        question: 'What is the interpretation of a two-digit ISO 4406 code found on older equipment documentation?',
+        answer: 'Older equipment documentation may show ISO 4406 codes as two-digit (e.g., 16/13) using the ≥5 µm and ≥15 µm thresholds from the 1987 version. Approximate conversion to the current three-digit system: add one RN to the first number (≥5 µm → ≥4 µm is slightly more inclusive), and the second number (≥15 µm) corresponds approximately to the current ≥14 µm third digit. A 16/13 two-digit code converts approximately to 17/16/13 in the current system, though this is an approximation because particle count at ≥5 µm (old) and ≥4 µm (new) differ systematically due to calibration changes. Systems using APC instruments calibrated before 1996 should have their data treated as advisory only and resampled using current calibrated instruments before making cleanliness-critical maintenance decisions.',
+      },
+      {
+        question: 'How is the ISO 4406 code related to component life extension studies?',
+        answer: 'Multiple bearing and hydraulic component life studies have quantified the relationship between ISO 4406 cleanliness level and component life. The Noria Corporation "Machinery Lubrication" data, derived from field studies, shows that improving hydraulic system cleanliness from ISO 20/18/15 to ISO 16/14/11 extends proportional valve service life by 4–8×. Rolling element bearing life studies (based on ISO 281 fatigue life calculation with contamination adjustment factor) show that improving lube oil cleanliness from ISO 18/16/13 to ISO 15/13/10 can extend L10 bearing life by 3–5×. These relationships are the engineering basis for justifying investment in high-efficiency filtration — the filter cost is typically 1–3% of the equipment maintenance cost avoided by achieving and maintaining target cleanliness codes.',
+      },
+      {
+        question: 'What is the lowest ISO 4406 cleanliness code achievable in a sealed hydraulic system with kidney-loop filtration?',
+        answer: 'In an exceptionally well-sealed hydraulic system — piston rod wipers in excellent condition, all cylinder rod guards intact, all reservoir breathers equipped with high-efficiency desiccant filters, and zero external fluid additions — with a dedicated kidney-loop circuit using β3(c) ≥ 200 filtration elements, ISO 4406 codes of 12/10/7 or better are achievable. This represents 80–160 particles/mL ≥4 µm(c) and 5–10 particles/mL ≥14 µm(c). Semiconductor fabrication hydraulic systems routinely achieve ISO 4406 codes of 13/11/8 or better. For typical mobile equipment applications, ISO 4406 code 15/13/10 represents a practical lower limit with well-maintained conventional filtration, and codes below this require specialty filtration and rigorous contamination exclusion procedures.',
+      },
+      {
+        question: 'How does oil degradation affect ISO 4406 particle count measurements?',
+        answer: 'Oil degradation products — varnish precursors, sludge agglomerates, and oxidation polymers — appear as soft particles in APC measurements, elevating the ISO 4406 code even when inorganic (silica, metal) contamination is well controlled. Soft particles are deformable and typically do not cause the same abrasive wear as hard silica or metal particles, but they can cause servo valve silting, filter media blinding, and accumulation in low-velocity areas of the system. Distinguishing degradation particles from hard contamination requires complementary analysis: FTIR (ASTM E2412) detects oxidation products, TAN (ASTM D664) measures acid number increase, and APC results combined with elemental spectroscopy (ASTM D5185) allows separation of metal wear particles from total APC count. Systems with high TAN values may show ISO codes that exaggerate hard particle contamination.',
+      },
+      {
+        question: 'What documentation is required to prove ISO 4406 cleanliness compliance for commissioning sign-off?',
+        answer: 'Commissioning cleanliness documentation per ISO 4413:2011 requires: two consecutive APC sample reports at the target cleanliness code, taken 30 minutes apart at operating temperature and flow; sample collection certificate referencing the sampling point, date, time, and operator; APC calibration certificate for the instrument used, with calibration date within 12 months; statement of test fluid type, temperature, and system flow rate during sampling; and comparison table showing target code and achieved code for each size threshold. The two-sample requirement prevents acceptance on a single favorable result — consecutive samples that both meet target provide statistical confidence that the system is genuinely clean rather than that a favorable sample was taken from a temporarily clean zone.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Current revision of the cleanliness coding standard, defining three-digit code format and Range Number table.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'Defines APC calibration methodology and the (c) notation distinguishing calibrated from uncalibrated particle count data.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods',
+        relevance: 'Sampling protocol standard required to obtain valid ISO 4406 measurements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'Hydraulic system design and commissioning standard requiring ISO 4406 cleanliness verification with two consecutive passing samples before system sign-off.',
+      },
+    ],
     title: 'ISO 4406',
     subtitle: 'Hydraulic Fluid Power — Method for Coding the Level of Contamination by Solid Particles',
     metaDescription: 'Technical reference for ISO 4406: three-number cleanliness code, particle count ranges, significance of each size threshold, target codes by component type, wear-cleanliness correlation, sampling protocols, and comparison with NAS 1638.',
@@ -966,6 +1862,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'iso-5011',
+    faqs: [
+      {
+        question: 'What are the three primary performance parameters measured in ISO 5011 filter element testing?',
+        answer: 'ISO 5011 measures three primary parameters: (1) Gravimetric filtration efficiency — the percentage of total injected dust mass captured by the element, typically reported as overall efficiency across the full loading cycle from clean to terminal restriction; (2) Dirt Holding Capacity (DHC) — total grams of ISO A2 fine test dust the element retains from installation to terminal restriction at the rated airflow; (3) Initial and terminal restriction — differential pressure at rated airflow in clean condition and at the defined service endpoint. Together these three parameters characterise the performance envelope of an air filter element: how effectively it protects the engine (efficiency), how long it will last in service (DHC), and how it affects engine breathing (restriction).',
+      },
+      {
+        question: 'What is ISO A2 fine test dust, and how does its size distribution relate to real-world engine ingestion hazards?',
+        answer: 'ISO A2 fine test dust (per ISO 12103-1) is Arizona Road Dust processed to a specific particle size distribution with D10 of approximately 0.9 µm, D50 of approximately 5 µm, and D90 of approximately 25 µm, with bulk density of 0.6–0.7 g/mL and specific gravity of 2.65 g/cm3. The silica content is 68–76% SiO2, making it representative of the abrasive component in road, agricultural, and construction site dust. The 5 µm median diameter is selected because particles in the 2–15 µm range have the highest engine deposit potential — they are large enough to cause abrasion of piston rings and cylinder liners but small enough to partially bypass inertial pre-cleaners. Particles above 30 µm are effectively captured by all filter media types and represent low risk.',
+      },
+      {
+        question: 'How is gravimetric efficiency measured in ISO 5011, and what efficiency values are typical for different media grades?',
+        answer: 'Gravimetric efficiency in ISO 5011 is measured by weighing the total dust injected upstream during the test (measured by tracking the feed container mass) and comparing it to the total dust captured on the filter element (weighed after careful removal and drying). Efficiency (%) = (mass captured / mass injected) × 100. All filter media used in engine air intake applications must achieve ISO 5011 overall gravimetric efficiency above 99.5% to be considered acceptable for engine protection. MACROCORE synthetic media achieves 99.9% or better — reducing dust pass-through to 0.1% versus 0.5% for minimum-specification cellulose media. In 5,000 hours of operation at 0.1 mg/m3 ambient dust and 10 m3/min engine flow, the difference between 99.5% and 99.9% efficiency equals 1.5 grams of silica reaching the engine cylinders — enough to cause measurable accelerated cylinder liner wear.',
+      },
+      {
+        question: 'What housing design requirements does ISO 5011 specify, and how do they affect real-world testing?',
+        answer: 'ISO 5011 specifies that filter elements must be tested in a standardised test housing that matches the production housing geometry — using a different housing geometry can produce restriction and efficiency results that do not represent the installed performance. The standard defines inlet duct dimensions (typically 1.5× element inlet diameter), sampling point locations (100 mm upstream and downstream of the element mounting face), and flow straightener requirements to ensure uniform flow distribution across the filter face. Testing in undersized ducts or with non-standard entry conditions produces artificially high restriction and potentially lower efficiency due to non-uniform face loading. ISO 5011:2014 includes revised housing geometry specifications that improved test reproducibility compared to earlier versions.',
+      },
+      {
+        question: 'What is the difference between restriction at rated airflow and restriction at higher airflow in ISO 5011 testing?',
+        answer: 'ISO 5011 specifies testing at the filter element rated airflow — the flow rate for which the element is designed. At flows above rated capacity, restriction increases non-linearly (approximately with the square of flow velocity) because both media pressure drop and housing entry/exit losses scale with velocity squared. A filter rated at 200 mbar restriction at 15 m3/min will typically show 450–600 mbar at 22 m3/min (1.47× flow increase). This matters for turbocharged engines that draw significantly more air than the nominal rating during transient overboost events. ISO 5011 tests at rated flow do not capture these transient high-flow restriction peaks, which is why SAE J1539 additionally specifies assembled-system testing at peak engine airflow including turbocharger boost conditions.',
+      },
+      {
+        question: 'How does ISO 5011 define terminal restriction, and what is the protocol when testing finishes before terminal restriction is reached?',
+        answer: 'ISO 5011 defines terminal restriction as the maximum permissible restriction at rated airflow as specified by the filter element manufacturer or the OEM equipment specification — typically 25 mbar for naturally aspirated and 37.5–62.5 mbar for turbocharged applications. If available dust supply is exhausted before terminal restriction is reached (element DHC exceeds available test dust quantity), the test is recorded as "test discontinued — terminal restriction not reached" and DHC is reported as "greater than X grams" where X is the total injected quantity. This occurs with very high-capacity elements designed for mine or construction equipment applications where DHC can exceed 1,000 grams. In such cases, supplementary testing at elevated ambient dust concentration is conducted to complete the capacity measurement within practical test duration.',
+      },
+      {
+        question: 'What contamination challenge is used for ISO 5011 secondary (safety) element testing?',
+        answer: 'Safety element testing per ISO 5011 uses the same ISO A2 fine test dust as primary element testing but challenges the safety element with a higher upstream concentration after the primary element has been removed — simulating the worst-case condition of the safety element acting alone. The safety element must achieve the same minimum gravimetric efficiency as the primary element (>99.5%) while providing similar restriction performance. Because safety elements typically use denser, finer media than primary elements, their restriction is higher at equal flow. ISO 5011 includes provisions for testing the complete two-stage system (primary plus safety in series) to verify total system efficiency and restriction at the combined installed condition. Safety element testing results are often significantly better than primary element specifications because safety elements use glass fiber or electrospun media rather than cellulose.',
+      },
+      {
+        question: 'How is filter element efficiency measured during the loading cycle versus at the end of the ISO 5011 test?',
+        answer: 'ISO 5011 gravimetric efficiency is a cumulative mass balance result — not an instantaneous efficiency measurement. At the beginning of the test cycle (clean filter), capture efficiency is at its lowest because the filter cake that enhances efficiency in the depth-loading phase has not yet formed. As dust loading progresses, the forming filter cake acts as an additional filtration layer, improving efficiency. Near terminal restriction, the fully loaded cake reduces flow velocity through the remaining permeable zones, further improving instantaneous efficiency. The final reported gravimetric efficiency represents the integrated average across all loading states. Downstream particle counters used simultaneously with gravimetric testing can capture the instantaneous efficiency profile — showing the efficiency dip at initial loading and the improvement as cake builds — which is more valuable for engine protection analysis.',
+      },
+      {
+        question: 'What are the ISO 5011 efficiency classes, and how are they applied in OEM engine specifications?',
+        answer: 'ISO 5011 does not define formal efficiency classes with letter designations (unlike ISO 16889 for hydraulic elements). Instead, OEM engine specifications directly reference ISO 5011 as the test method and specify minimum overall gravimetric efficiency requirements — typically ≥99.9% for turbocharged diesel engines and ≥99.5% for naturally aspirated or less sensitive applications. Some OEMs specify minimum initial efficiency requirements in addition to overall efficiency, requiring that the filter captures a minimum percentage of particles during the first 10% of its DHC loading. This catches media types that rely heavily on cake formation for high efficiency but provide poor protection during the early service phase when the filter is clean and the engine is at greatest risk from ingested particles.',
+      },
+      {
+        question: 'How does face velocity uniformity affect ISO 5011 efficiency measurements?',
+        answer: 'Non-uniform face velocity — caused by housing geometry, inlet duct bends, or flow obstructions near the filter element — creates zones of high and low local velocity across the filter face. High-velocity zones load faster and reach terminal restriction earlier, causing early bypass or bypass-valve opening while the remainder of the element is still underloaded. Low-velocity zones contribute less to total efficiency because particle inertial impaction is proportional to velocity. ISO 5011 specifies flow straighteners in the test duct to minimise velocity maldistribution, but production housing geometry in the field may not replicate test duct conditions. Pre-cleaner design and housing entry geometry can create up to 30% variation in face velocity across the filter face — significantly reducing effective DHC and efficiency compared to ISO 5011 rated values.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Primary standard defining test procedure, dust specification, restriction measurement, and efficiency reporting for air intake filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Defines ISO A2 fine and other test dusts used in ISO 5011 efficiency and dirt holding capacity testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J726, Air Cleaner Evaluation',
+        relevance: 'Complementary SAE standard to ISO 5011, specifying gravimetric efficiency test procedures and performance reporting for automotive and industrial air cleaners.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1539, Air Cleaner Test Code',
+        relevance: 'SAE test code for assembled air cleaner system testing including turbocharged engine-specific restriction limits and altitude correction factors referenced alongside ISO 5011 element data.',
+      },
+    ],
     title: 'ISO 5011',
     subtitle: 'Inlet Air Cleaning Equipment for Internal Combustion Engines — Performance Testing',
     metaDescription: 'Technical reference for ISO 5011: scope, test dust specification, initial efficiency measurement, restriction curves, dust holding capacity, fractional efficiency, safety element testing, and comparison with SAE J1539.',
@@ -1381,6 +2341,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'water-contamination-fuel',
+    faqs: [
+      {
+        question: 'What is the maximum allowable dissolved water content in diesel fuel for HPCR injectors?',
+        answer: 'High-pressure common rail (HPCR) injector systems specify maximum dissolved water content of 200 ppm (0.02% by volume) in the fuel supply. Above 200 ppm dissolved water, the risk of cavitation erosion of injector needle seats increases because water dissolved in fuel vaporises more readily at the high-pressure injection point (1,500–2,500 bar). Free water above 50 ppm (distinct from dissolved water) is unacceptable because free water droplets displace the lubricating fuel film at precision injection surfaces (clearances 1–4 µm), causing metal-to-metal contact and accelerated wear. Karl Fischer Coulometric titration (ASTM D6304) is the standard measurement method for total water in diesel, capable of detecting from 5 ppm to saturation levels.',
+      },
+      {
+        question: 'How does water contamination promote microbial growth in diesel fuel systems?',
+        answer: 'Diesel fuel microbial contamination (bacteria and fungi) requires a water phase at the fuel-water interface to colonise. A free water layer as thin as 1 mm in a tank bottom or day tank provides the aqueous environment necessary for fuel-degrading bacteria (Pseudomonas, Bacillus) and fungi (Hormoconis resinae — the "diesel bug") to grow. At temperatures of 15–30°C, microbial populations can double every 1–8 hours, producing biomass that appears as black or brown slime, and generating organic acids as metabolic byproducts. These acids (acetic, propionic, butyric) lower fuel pH from neutral to pH 3–5, causing corrosion of zinc and copper fuel system components. ASTM D6974 and IP 385 methods detect microbial contamination; concentrations above 10,000 CFU/mL require fuel disposal or biocide treatment combined with water removal.',
+      },
+      {
+        question: 'What are the three pathways for water to enter a diesel fuel system?',
+        answer: 'Water enters diesel fuel systems through three primary pathways. (1) Condensation: daily temperature cycling in partially filled tanks causes water vapor in head space air to condense as liquid water on tank walls and accumulate at the tank bottom — volumes of 0.1–2 L per day in 5,000 L tanks in humid tropical climates. (2) Contaminated fuel delivery: bulk fuel at the point of delivery may contain dissolved water above fuel specification, particularly in supply chains with outdoor storage or inadequate tank maintenance. (3) System breathers: vented fuel tanks and day tanks draw humid atmospheric air through unprotected or degraded tank vent filters during thermal contraction — each contraction-expansion cycle of a 10,000 L tank can exchange 100–200 L of atmospheric air. High-efficiency desiccant breathers (silica gel or molecular sieve) on tank vents prevent condensation-source ingress.',
+      },
+      {
+        question: 'What is the Karl Fischer coulometric titration method, and why is it preferred for low-level water measurement in fuel?',
+        answer: 'Karl Fischer coulometric titration (ASTM D6304) reacts the water in a fuel sample with iodine generated electrolytically from a Karl Fischer reagent solution. Each mole of water reacts stoichiometrically with one mole of iodine, allowing precise calculation of water mass from the electrical charge required to generate the iodine. The method is capable of measuring water content from 5 ppm to approximately 1,000 ppm with precision of ±2–5 ppm at low concentrations. It detects both dissolved water and free water (which dissolves in the Karl Fischer reagent during the measurement). The coulometric method is preferred over volumetric Karl Fischer for low water contents because it does not require a calibrated iodine burette — the iodine is generated precisely in situ. ASTM D1744 (older gravimetric method) is insufficient for HPCR injector applications because its detection limit is approximately 0.05% (500 ppm), too coarse for the 200 ppm specification.',
+      },
+      {
+        question: 'How do centrifugal fuel-water separators differ from coalescing fuel filters in water removal mechanism?',
+        answer: 'Centrifugal separators use angular momentum to separate water from diesel based on density difference (water 1.00 g/mL vs. diesel 0.82–0.85 g/mL). The rotational field creates a centrifugal acceleration of 50–500×g — water droplets migrate outward and collect in a peripheral bowl while fuel exits from the center. Centrifugal separators are effective for separating free water droplets above 50–100 µm diameter but have minimal effect on emulsified water (droplets <10 µm) or dissolved water. Coalescing fuel filters use hydrophobic synthetic media that causes fine water droplets to merge (coalesce) into larger droplets that then settle under gravity to the water collection bowl. Coalescing filters remove droplets as small as 0.5 µm, making them effective against fuel emulsions. HYDROCORE combines coalescing media for fine water removal with a sediment filtration layer for particle capture in a single filter element.',
+      },
+      {
+        question: 'What fuel system components are most vulnerable to water-induced failure?',
+        answer: 'HPCR injection systems are most vulnerable to water-induced failure due to extremely tight component clearances and high operational pressures. The injector needle seat and needle guide (clearance 1–4 µm, injection pressure 1,500–2,500 bar) experience direct cavitation erosion from water phase transition at the injection point. Common rail pressure regulators and rail pressure sensors contain electronics sensitive to electrolytic corrosion from water-acidified fuel. High-pressure fuel pumps (plunger-and-barrel type) show accelerated wear when water disrupts the lubricating fuel film — plunger wear rates increase 5–10× with free water content above 200 ppm. Zinc die-cast fuel filter housings, fuel system pressure regulators, and brass fittings show dezincification corrosion when fuel pH drops below 5.5 due to microbially generated organic acids.',
+      },
+      {
+        question: 'What maintenance interval applies to fuel-water separator drain-off on equipment in high-humidity environments?',
+        answer: 'In high-humidity environments (relative humidity >80%, tropical or coastal conditions), free water accumulation in fuel-water separator bowls can occur within 8–24 hours of operation due to condensation ingress from tank vent systems. Daily drain-off of accumulated water from the separator bowl is the minimum interval for such environments, verified by visual inspection of the transparent bowl or drain sampling. Some systems install automatic drain valves that open when float sensors detect water accumulation above a setpoint volume. Tank vent breathers must be inspected monthly and silica gel desiccant replaced when indicator color change signals saturation. Systems without automatic drains should incorporate daily fuel water checks as a mandatory pre-shift inspection item, recorded in the equipment maintenance log.',
+      },
+      {
+        question: 'How is fuel system corrosion from water contamination diagnosed in a field maintenance context?',
+        answer: 'Water-induced fuel system corrosion is diagnosed through four observations. (1) Visual: fuel filter elements show brown-black staining on the downstream face (rust particles from corroded fuel tank or supply lines), and separator bowls show free water with rust or biological slime. (2) Fuel analysis: Karl Fischer water content >200 ppm, TAN above 0.1 mg KOH/g, and microbial count above 1,000 CFU/mL. (3) Component inspection: HPCR injector return-line fuel showing metallic fines (spectrographic analysis detects iron, zinc, or copper above baseline), indicating corrosion of fuel system materials. (4) Performance: rough idle, injector stiction (sticking needle), and elevated injection correction values in ECU data logs indicating injector deposit or wear. Diagnosis guides remediation: biocide treatment for microbial contamination, tank drain and flush for free water accumulation, or injector replacement for wear damage.',
+      },
+      {
+        question: 'What test methods verify biodiesel blend fuel-water separation performance?',
+        answer: 'Biodiesel blends (FAME — fatty acid methyl esters) have significantly higher water affinity than mineral diesel — biodiesel can absorb up to 1,500 ppm dissolved water versus 60–80 ppm for mineral diesel. When biodiesel-blended fuel (B5–B20) is cooled below the cloud point (which is higher for FAME than mineral diesel), dissolved water may precipitate as free water, overwhelming coalescing filter capacity. EN 12662 measures total contamination in diesel blends including biodiesel, and ASTM D7261 measures dispersed water in diesel/biodiesel blends. Coalescing filter performance with biodiesel must be specifically validated — some coalescing media tested per ISO 4020 (fuel filter performance) show 30–50% reduction in water separation efficiency with B20 versus mineral diesel, requiring media reformulation for biodiesel-compatible fuel filter elements.',
+      },
+      {
+        question: 'What is the role of fuel tank bottom water sampling in fleet contamination control programs?',
+        answer: 'Tank bottom sampling detects free water accumulation and microbial contamination before contamination propagates to the fuel supply. The sampling procedure draws fuel from within 50 mm of the tank bottom (using a weighted sampling cup or side-port ball valve installed during tank construction), captures 200–500 mL, and examines it for free water (visible phase separation), color (brown-black indicates rust or biologicals), and biological growth (slime, turbidity). Samples are submitted for Karl Fischer water, microbial count (ASTM D6974), and elemental corrosion analysis monthly. Tanks showing free water or microbial counts above threshold trigger immediate drain-and-refill with clean fuel, biocide treatment, and an inspection interval of every 2 weeks until three consecutive clean samples are obtained. Tank bottom sampling is the earliest warning available before filtration systems are overwhelmed.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration',
+        relevance: 'Primary test method for water content measurement in diesel fuel at levels from 5 ppm to saturation.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4020:2001, Road Vehicles — Fuel Filters for Diesel Engines — Test Methods',
+        relevance: 'Performance test methods for diesel fuel filters including water separation efficiency, pressure drop, and media compatibility testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D6974-09, Standard Practice for Enumeration of Viable Microbes in Petroleum and Petroleum Products by Epifluorescence Microscopy (EFM)',
+        relevance: 'Method for quantifying microbial contamination in fuel, used to assess water-related biological growth risk.',
+      },
+      {
+        category: 'specification',
+        citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods',
+        relevance: 'European diesel fuel specification defining maximum water content (200 mg/kg) and FAME content limits for diesel supplied to vehicles and equipment.',
+      },
+    ],
     title: 'Water Contamination in Fuel Systems',
     subtitle: 'ASTM D6304, Karl Fischer Titration, and HPCR Injector Protection',
     metaDescription: 'Technical reference for water contamination in diesel fuel systems: free, dissolved, and emulsified water states, ASTM D6304 Karl Fischer measurement, ISO 12937, microbial growth, HPCR injector clearances, and coalescing filter selection.',
@@ -1483,6 +2507,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'compressed-air-purity',
+    faqs: [
+      {
+        question: 'What are the three contamination classes defined in ISO 8573-1 for compressed air?',
+        answer: 'ISO 8573-1 defines purity classes independently for three contamination types: solid particles (Class 0–9), water (Class 0–9, measuring both pressure dewpoint and liquid water content), and oil (Class 0–4, measuring total oil aerosol and vapour). Each class is specified independently — a system may be Class 1 for particles and Class 3 for water depending on the balance of filtration and drying equipment installed. Class 0 in each category means the user specifies purity more stringent than Class 1. Class 1 for particles requires ≤20,000 particles/m3 ≥0.1–0.5 µm (equivalent to ISO 8573-1:2010 concentration limits); Class 1 for water requires pressure dewpoint ≤−70°C; Class 1 for oil requires ≤0.01 mg/m3. Point-of-use requirements for instrument air, pneumatic controls, and breathing air are specified using these three-digit class references.',
+      },
+      {
+        question: 'Why does pressure dewpoint matter more than atmospheric dewpoint in compressed air quality?',
+        answer: 'Atmospheric dewpoint is the temperature at which water vapour condenses at ambient pressure (1 bar absolute). When air is compressed to operating pressure (7–10 bar g for typical industrial systems), the partial pressure of water vapour increases proportionally — at 7 bar g (8 bar absolute), the partial pressure of water is 8× higher than at atmospheric pressure. This means air that is comfortably above dew point at atmospheric conditions may be saturated or supersaturated at line pressure, causing liquid water to form in distribution piping. Pressure dewpoint (PDP) — the dewpoint at line pressure — is the operationally relevant parameter. ISO 8573-1 specifies purity classes in terms of PDP: Class 4 = +3°C PDP (condensation possible above 3°C pipe temperature), Class 2 = −40°C PDP (no condensation above −40°C pipe temperature), Class 1 = −70°C PDP (ultra-dry, pharmaceutical and semiconductor grade).',
+      },
+      {
+        question: 'How does a refrigerant dryer differ from a desiccant dryer in compressed air drying performance?',
+        answer: 'Refrigerant dryers (also called refrigerated dryers) cool compressed air to 2–10°C using a refrigeration circuit, condensing and draining water vapor to achieve a pressure dewpoint of typically +2 to +7°C PDP. This is sufficient for most general industrial pneumatic applications (ISO 8573-1 Class 4 for water). Desiccant dryers use activated alumina, silica gel, or molecular sieve adsorbent to adsorb water vapor from compressed air, achieving PDP of −20°C to −70°C depending on adsorbent type and regeneration method. Refrigerant dryers are lower energy (no regeneration energy) but cannot achieve PDP below approximately 0°C. Desiccant dryers achieve the ultra-dry performance required for instrument air (ISO Class 2 or Class 1) but require 15–25% of compressed air flow for heated regeneration (purge air loss) and have higher capital cost.',
+      },
+      {
+        question: 'What contamination sources exist inside a compressed air system independent of the compressor inlet?',
+        answer: 'Contamination sources within the compressed air distribution system include: (1) Compressor oil carry-over — lubricant from rotary screw or piston compressors enters the air stream as aerosol or vapor; typical carry-over from well-maintained compressors is 3–5 mg/m3 oil, reduced to <0.01 mg/m3 by coalescing separator and activated carbon filter. (2) Pipe scale and rust — carbon steel distribution piping corrodes at moisture condensation points, releasing rust particles (Fe2O3) and iron corrosion flakes in the 10–500 µm range. (3) Polymer particles from hose and fitting degradation — compressed air hose liners and O-ring seals shed particles as they degrade, appearing downstream as black rubber particles. (4) Biological contamination — liquid water in distribution lines at above-ambient temperature zones creates conditions for bacterial growth; biofilms shed as particulate contamination. Each source requires targeted filtration upstream of sensitive point-of-use applications.',
+      },
+      {
+        question: 'What point-of-use filtration is required for compressed air used in pneumatic food packaging applications?',
+        answer: 'Food contact compressed air applications require ISO 8573-1 Class 1:2:1 or better at point of use — Class 1 particles (≤20,000 particles/m3 ≥0.1 µm), Class 2 water (PDP ≤−40°C), Class 1 oil (≤0.01 mg/m3). The rationale for these stringent specifications is that compressed air contacting food or food contact surfaces can introduce particles, oil residues, or water that compromise food safety and organoleptic quality. Activated carbon adsorbers at point of use reduce oil vapour to <0.003 mg/m3. High-efficiency sterile-grade filters (removal rating ≥0.01 µm at 99.9999% efficiency) are specified for direct food contact applications per EC Regulation 1935/2004 and relevant national food safety legislation. Oil-free compressors eliminate the oil aerosol source but do not eliminate particulate or moisture contamination from the compression process.',
+      },
+      {
+        question: 'How is compressed air oil contamination quantified, and what are the limits for instrument air?',
+        answer: 'Compressed air oil contamination is measured as total oil concentration (aerosol plus vapor) at the point of use, expressed in mg/m3 at the measurement pressure and temperature. ISO 8573-3:2010 defines the sampling and analysis procedures for oil aerosol measurement. Oil vapor measurement uses ASTM D3796 or equivalent activated carbon adsorption tubes followed by solvent extraction and gravimetric or gas chromatographic analysis. Instrument air for pneumatic control systems (typically ISO 8573-1 Class 1 for oil: ≤0.01 mg/m3) is specified at this limit because oil contamination of pneumatic valve actuators causes stiction (valve sticking), delayed response, and position error — critical failures in process control applications where valve position accuracy must be within ±1% of commanded position.',
+      },
+      {
+        question: 'What filter element types are required in a typical compressed air treatment train?',
+        answer: 'A standard compressed air treatment train uses three filter stages in sequence: (1) Pre-filter (bulk liquid and coarse particle separator): removes liquid water droplets and particles above 3–5 µm from compressed air before the aftercooler and dryer; typically a cyclone separator combined with a coalescing element. (2) Coalescing filter (general purpose): removes sub-micron oil aerosol droplets and fine particles; typically rated 0.1 µm removal at 99.9%, achieving ISO Class 2 for oil (≤0.1 mg/m3). (3) Activated carbon adsorber: removes oil vapor and odours not captured by coalescing filtration; rated by breakthrough time at specified concentration and temperature. A fourth stage — sterile membrane filter 0.01 µm — is added for pharmaceutical or food contact applications. All filter elements have finite service life: coalescing elements are changed when pressure drop increases 0.1 bar above initial, carbon adsorbers are changed on a time or concentration breakthrough basis.',
+      },
+      {
+        question: 'What causes compressed air filters to exhibit higher oil concentration downstream than upstream?',
+        answer: 'Downstream oil concentration exceeding upstream concentration indicates filter element saturation and liquid oil re-entrainment. Coalescing filter elements saturate when the accumulated oil holding capacity is exceeded — the liquid oil film in the media becomes unstable and is re-entrained by the high-velocity airstream as fine droplets. This occurs when: the filter element has exceeded its service life; the system is operating at flow rates above the rated capacity of the coalescing element (velocity too high for stable coalescence); or the filter has experienced liquid flooding — a sudden slug of liquid water or oil (from a downstream cooler or separator draining) overwhelms the element capacity. Filter pressure drop is an inadequate indicator of saturation for coalescing elements — a saturated element may still show acceptable pressure drop while re-entraining oil. Oil downstream monitoring is required to detect saturation events.',
+      },
+      {
+        question: 'What maintenance procedure applies to compressed air receiver tanks to prevent internal corrosion?',
+        answer: 'Compressed air receiver tanks accumulate liquid water at the base from intercooler and aftercooler drainage, creating an electrolytic corrosion environment. Maintenance requirements: (1) Manual or automatic drain valves must discharge accumulated liquid daily — automatic timed drain valves set to open for 5–30 seconds every 2–4 hours during production. (2) Annual internal inspection per relevant pressure vessel codes (PED 2014/68/EU in Europe, ASME Section VIII in USA) to measure wall corrosion rate and verify structural integrity. (3) pH measurement of drain water — pH below 5.5 indicates acidic condensate requiring investigation of upstream contamination (SO2 or NOx absorbed from industrial atmosphere). (4) Five-year pressure test or inspection per pressure vessel registration requirements. Receivers without drainage management develop corrosion pits that eventually perforate — catastrophic receiver failure presents a significant safety hazard.',
+      },
+      {
+        question: 'What is the difference between ISO 8573-1 Class specifications for particles in two revisions (1991 and 2010)?',
+        answer: 'ISO 8573-1:1991 specified particle classes using particle size thresholds of ≥1 µm, ≥5 µm, and ≥40 µm. The 2010 revision changed thresholds to ≥0.1–0.5 µm, ≥0.5–1 µm, and ≥1–5 µm, reflecting improved particle counting technology capability at sub-micron sizes. Class 1 in the 1991 version (≤100,000 particles/m3 ≥1 µm) is approximately equivalent to Class 3 in the 2010 version for sub-micron particles. Systems specified against the 1991 version cannot be directly compared to 2010 specifications without clarifying which edition applies. When specifying compressed air purity for new installations, ISO 8573-1:2010 should be referenced explicitly, and the three-digit format (e.g., "ISO 8573-1:2010 Class 1:2:1") should include the standard year to prevent ambiguity between editions.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes',
+        relevance: 'Primary standard defining contamination classes for particles, water (dewpoint), and oil in compressed air systems.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content',
+        relevance: 'Test methods for measuring oil aerosol and particle concentration in compressed air at point-of-use sampling.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity',
+        relevance: 'Test methods for pressure dewpoint measurement used to verify ISO 8573-1 water class compliance.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-7:2003, Compressed Air — Part 7: Test Methods for Viable Microbiological Contaminants',
+        relevance: 'Microbiological testing standard for breathing air and pharmaceutical-grade compressed air applications.',
+      },
+    ],
     title: 'Compressed Air Purity',
     subtitle: 'ISO 8573-1 Quality Classes, Contamination Measurement, and System Design',
     metaDescription: 'Technical reference for compressed air purity: ISO 8573-1 quality classes for particles, moisture, and oil; ISO 8573-2/3 test methods; dew point measurement; and filtration system design for pneumatic and process air applications.',
@@ -1559,6 +2647,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'oil-analysis-methods',
+    faqs: [
+      {
+        question: 'What is the difference between elemental spectroscopy and particle counting in oil analysis?',
+        answer: 'Elemental spectroscopy (ICP-OES per ASTM D5185) measures dissolved and fine-suspended metal concentrations in ppm — each element indicating a specific component source (iron: steel bearings and cylinder liners; copper: bronze bushings; silicon: silica ingress; calcium/zinc/phosphorus: additive package). It measures only dissolved metals and particles below 5–10 µm detectable by spectroscopy. Particle counting (APC, ISO 11171) measures all particles ≥4 µm regardless of composition, expressed as ISO 4406 codes. The two methods are complementary: rising APC codes indicate total contamination increase; rising metal values identify the wear source. A system with high APC code but low metallic elements suggests external contamination ingress (silica from seals or breathers) rather than component wear.',
+      },
+      {
+        question: 'What parameters does FTIR analysis measure in used oil, and what failure modes does each indicate?',
+        answer: 'Fourier Transform Infrared Spectroscopy (FTIR, ASTM E2412) identifies functional groups in oil by their infrared absorption wavelengths. Key parameters: Oxidation (1,710 cm-1 carbonyl peak) — oil thermal degradation, indicates oil oxidation rate and remaining oxidation inhibitor reserve. Nitration (1,630 cm-1) — products of blow-by combustion gas contamination in lube oil. Sulfation (1,170 cm-1) — sulfur combustion byproducts, elevated with high-sulfur fuel or EGR contamination. Water (3,450 cm-1) — free or dissolved water, confirmed by Karl Fischer test if elevated. Glycol (950–1,070 cm-1) — coolant contamination from head gasket or oil cooler failure. Fuel dilution is detected by viscosity comparison (ASTM D445) rather than FTIR. Each parameter has alarm thresholds — for example, oxidation increase of 25 absorbance units above baseline triggers oil change recommendation.',
+      },
+      {
+        question: 'What is the Total Base Number (TBN), and how is it used to determine oil change intervals?',
+        answer: 'Total Base Number (TBN, ASTM D2896 or D4739) measures the alkaline reserve in engine oil available to neutralise acidic combustion byproducts (sulfuric acid from high-sulfur fuel, nitric acid from blow-by gases, organic acids from oil oxidation). Fresh API CK-4 engine oil for modern diesel engines typically has TBN of 12–14 mg KOH/g. As the oil neutralises acids, TBN depletes. The oil change trigger point is typically when TBN falls to 50% of new oil TBN (6–7 mg KOH/g for 12–14 mg/g new oil) or when Total Acid Number (TAN, ASTM D664) rises to equal or exceed remaining TBN. High-sulfur fuels (above 500 ppm sulfur, common in emerging markets) deplete TBN 3–5× faster than ULSD fuel (<15 ppm sulfur), requiring shorter drain intervals or higher TBN specification oils.',
+      },
+      {
+        question: 'How is particle counting used to monitor filter element performance during service?',
+        answer: 'Particle counting upstream and downstream of a filter element in service tracks actual Beta ratio under real operating conditions — which may differ significantly from laboratory ISO 16889 measurements due to pressure pulsations, temperature cycling, and actual contamination particle composition. If downstream APC readings rise at constant upstream concentration, filter efficiency has declined — possible causes include bypass valve opening (element restriction exceeds cracking pressure), end-cap seal failure, or media collapse. Sequential samples from the downstream sampling point at consistent operating conditions, compared against the baseline established at commissioning, identify trending before failure. An APC code increase of 2 ISO units or more in consecutive samples without corresponding change in system operating conditions indicates filter integrity investigation is required.',
+      },
+      {
+        question: 'What sampling interval is recommended for oil analysis in high-severity hydraulic systems?',
+        answer: 'High-severity hydraulic systems — those with contamination-sensitive proportional or servo valves, operating in dusty environments, or subjected to high thermal cycling — should be sampled for oil analysis at 250-hour intervals minimum, or monthly for continuously operating systems. Systems with established stable baseline analysis may extend to 500-hour intervals once three consecutive analyses within specification confirm system stability. Severe-duty markers (sustained operating pressure above 80% of rated, frequent cold starts, or confirmed contamination events) should trigger unscheduled sampling. ISO 4413:2011 requires at least one fluid sample analysis per planned maintenance interval, with the result evaluated against the OEM-specified cleanliness target code before the system is returned to service after maintenance.',
+      },
+      {
+        question: 'What is viscosity measurement and why is it a primary oil condition indicator?',
+        answer: 'Kinematic viscosity (ASTM D445) measures the time for a fixed volume of oil to flow through a calibrated capillary at 40°C and 100°C. ISO VG grade number is the nominal kinematic viscosity at 40°C in cSt. Oil viscosity changes indicate: fuel dilution (large viscosity decrease, >1 cSt below specification at 40°C); glycol contamination (can cause viscosity increase through emulsion formation); severe oxidation (viscosity increase >20% from new oil baseline); or viscosity improver shear degradation (viscosity decrease in multigrade oils, indicating polymer additive breakdown). A viscosity change of ±15% from new oil specification at 40°C is a typical alarm threshold in oil analysis programs. Viscosity must be measured on a well-mixed sample at controlled temperature — field refractometer measurements are inadequate for precision viscosity assessment.',
+      },
+      {
+        question: 'What is wear particle analysis, and how does analytical ferrography differ from spectrometric analysis?',
+        answer: 'Analytical ferrography (ASTM D7690) separates wear particles from oil magnetically and deposits them on a glass slide for microscopic examination by size, shape, morphology, and composition. It detects particles from 1 µm to 1,000 µm — capturing the large particles (>10 µm) that spectrometric analysis misses. Particle morphology provides wear mode identification: flat, smooth particles (2–5 µm) indicate normal rubbing wear; cutting particles (curved ribbons) indicate abrasive wear from hard particles; spherical particles (1–5 µm) indicate rolling element fatigue spalling; dark particles (oxides) indicate high-temperature wear events. ICP spectrometry is more quantitative for ppm-level metal analysis but size-limited to particles below 10 µm. Combining both methods provides both quantitative elemental data and qualitative wear mode diagnosis.',
+      },
+      {
+        question: 'How is glycol contamination in engine oil diagnosed and quantified?',
+        answer: 'Glycol contamination from coolant ingress (head gasket failure, oil cooler leak, cylinder liner crack) is detected by: FTIR analysis showing absorption at 950–1,070 cm-1; elevated potassium (K) by spectrometry — coolant inhibitors contain potassium borates or silicates; elevated sodium (Na) from coolant corrosion inhibitors; and physical observation of oil sample as milky or gel-like. Quantitative glycol measurement uses the refractometer method or ASTM D2982 (HPLC). Glycol at concentrations above 0.1% (1,000 ppm) causes oil emulsion formation that prevents hydrodynamic film formation at bearing journals. Above 0.5% glycol, engine oil viscosity can increase 5–10×, and glycol-oil complexes form gel-like deposits that block oil galleries. Confirmed glycol contamination requires immediate oil change, system flush, and repair of the coolant ingress source before engine restart.',
+      },
+      {
+        question: 'What is the significance of silicon in used oil spectrometric analysis?',
+        answer: 'Silicon (Si) in used oil spectrometry has two possible sources requiring differentiation: (1) Airborne silica dust ingress — external contamination from failed air filter seals or bypass events, indicating poor filtration protection. Silicon as silica (SiO2) is highly abrasive (hardness 7 Mohs) and the primary cause of abrasive cylinder liner and bearing wear. (2) Silicone sealant or coolant contamination — silicone gasket compounds or silicone-based coolant antifoam additives contribute Si to oil as a non-abrasive organosilicon compound. Differentiation is achieved by cross-referencing with magnesium (Mg) — coolant silicate inhibitors contain both Si and Mg. Elevated Si without elevated Mg indicates airborne silica ingress. Alarm thresholds for Si in diesel engine oil are 20–30 ppm above baseline for airborne contamination, or any detectable Si if new fill oil Si was zero and no silicone sealants were used during the last service.',
+      },
+      {
+        question: 'What reporting format and trending methodology is used in an effective oil analysis program?',
+        answer: 'An effective oil analysis program uses trend reporting — tracking each parameter over consecutive samples on a time-series plot — rather than single-point threshold comparison. Trend analysis detects gradual degradation before alarm thresholds are reached: a slow increase in Fe from 20 to 35 to 50 ppm over three consecutive samples indicates progressive bearing wear, while a single 50 ppm reading in isolation is ambiguous. Reporting formats include: individual parameter time-series charts; rate-of-change alerts (flagging when a parameter increases by more than X ppm per 250 hours); a traffic-light status summary (green/amber/red for each parameter group); and a machine health score derived from weighted combination of all parameter statuses. Sample labels must include machine ID, compartment, oil type, fill date, hours since fill, and total machine hours — without this context, trend analysis is impossible.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry (ICP-AES)',
+        relevance: 'Primary method for elemental metal analysis in used oil for wear particle monitoring.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry',
+        relevance: 'FTIR method for monitoring oxidation, nitration, sulfation, water, and glycol contamination in used lubricating oil.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration',
+        relevance: 'TBN measurement method used to track alkaline reserve depletion and guide oil change timing.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010',
+        relevance: 'Comprehensive reference covering sampling procedures, parameter interpretation, alarm setting methodology, and trending analysis for industrial oil analysis programs.',
+      },
+    ],
     title: 'Oil Analysis Methods',
     subtitle: 'ICP Spectroscopy, TAN/TBN, Viscosity, and Wear Metal Trending',
     metaDescription: 'Engineering reference for oil condition monitoring: ICP spectrometric wear metal analysis, total acid number (ASTM D664), total base number (ASTM D2896), kinematic viscosity (ASTM D445), FTIR spectroscopy, and sampling protocols for fleet maintenance programs.',
@@ -1635,6 +2787,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'cabin-air-filtration',
+    faqs: [
+      {
+        question: 'What particle size range is regulated by ISO 11155 for cabin air filter testing?',
+        answer: 'ISO 11155-1 (road vehicles) specifies filter efficiency measurement using particles in the 0.3–10 µm size range, with primary focus on PM10 (particles ≤10 µm aerodynamic diameter) and PM2.5 (particles ≤2.5 µm). The 0.3 µm lower boundary corresponds to the most penetrating particle size (MPPS) for fibrous filter media — the size at which combined inertial impaction and diffusion capture efficiencies are at minimum. ISO 11155-1 uses DEHS aerosol test particles counted by an OPC (optical particle counter) to measure filtration efficiency across this range. For recirculation function testing, the same size range applies. Biological particle efficiency (pollen, bacteria, mould spores) is separately characterised using pollen test methods where MICROKAPPA activated carbon media is also tested for gas/odour adsorption performance.',
+      },
+      {
+        question: 'What gases does activated carbon media in cabin filters adsorb, and what is its service life limitation?',
+        answer: 'Activated carbon (activated charcoal) in cabin air combination filters adsorbs volatile organic compounds (VOCs: benzene, toluene, formaldehyde, xylene), ozone (O3 from photochemical smog), nitrogen dioxide (NO2), sulfur dioxide (SO2), and hydrogen sulfide (H2S). Activated carbon works by physical adsorption — Van der Waals attraction of gas molecules to the internal surface of carbon micropores (surface area 500–1,200 m2/g BET). Service life is limited by adsorption saturation: each carbon granule has finite adsorption capacity, after which gas molecules pass through unretarded. Typical activated carbon layers in automotive cabin filters are 20–50 g of carbon per element — sufficient for 6–18 months in typical urban operation at CO/NOx levels defined in EN 481 urban ambient air standards. High-pollution environments (city centres, tunnels) deplete carbon capacity in 3–6 months. Saturated carbon cannot be regenerated in situ and the element must be replaced.',
+      },
+      {
+        question: 'How does ISO 11155 define the classification of cabin air filter types?',
+        answer: 'ISO 11155-1 classifies cabin air filters into three types: Type A — particulate filters (no gas adsorption media); Type AC — combination filters (particulate plus activated carbon for gas/odour removal); Type ACM — combination filters with additional media (activated carbon plus potassium permanganate or other specific chemical adsorbers targeting defined gas streams such as H2S or NH3). The type designation appears on the filter element packaging and technical documentation. For mining, agricultural, and chemical-plant operator cabin applications, Type ACM filters with chemical-specific adsorbers are required — standard Type AC carbon is insufficient for H2S or ammonia at concentrations found in these environments. DIN 71220 (predecessor to ISO 11155 in German market) defined analogous categories that have been substantially adopted into the ISO standard.',
+      },
+      {
+        question: 'What minimum filtration efficiency is required for a cabin air filter to protect operators from PM2.5 in mining environments?',
+        answer: 'For mining environment operator protection against PM2.5 (respirable crystalline silica-containing dust), cabin air filtration efficiency must exceed 95% for particles ≥0.3 µm at rated face velocity, as measured per ISO 11155-1. This corresponds to Class F7 or better in the EN 779:2012 filter classification system used for building HVAC (though EN 779 has been superseded by ISO 16890 for HVAC, the efficiency values provide a reference). NIOSH and relevant national occupational health standards set permissible exposure limits (PELs) for respirable crystalline silica at 0.025–0.05 mg/m3 (TWA 8-hour). Cabin filtration systems achieving >95% efficiency at PM2.5 reduce driver exposure from outdoor concentrations (which can reach 5–20 mg/m3 near active blasting) to below NIOSH PEL when combined with positive pressurisation of the cabin.',
+      },
+      {
+        question: 'What is cabin positive pressurisation, and why is it required in high-dust environments?',
+        answer: 'Cabin positive pressurisation maintains a higher air pressure inside the operator cabin than the ambient atmosphere. This creates an outward air flow through all cabin gaps and penetrations (door seals, cable glands, HVAC duct joints), preventing unfiltered dust-laden ambient air from infiltrating directly through gaps when the HVAC blower is off or at low speed. For mining and construction cabins, positive pressurisation of 10–25 Pa above ambient is typically specified. The pressurisation is created by the HVAC blower circulating filtered air into the sealed cabin volume. Regular door and window seal inspection (at each shift for active blast zones) ensures pressurisation is maintained. ROPS cab enclosure integrity testing measures pressure loss rate with all openings sealed — excessive leakage indicates deteriorated seals that must be replaced before the cabin can maintain specified pressurisation.',
+      },
+      {
+        question: 'What are the health consequences of inadequate cabin air filtration in agricultural equipment?',
+        answer: 'Inadequate cabin air filtration in agricultural equipment exposes operators to: (1) Pesticide aerosols and vapours — organophosphate and pyrethroid pesticides applied during spraying operations present acute cholinergic toxicity risk at concentrations above 0.1 mg/m3; Type ACM filters with chemical-specific adsorbers are required for spray application work. (2) Organic dust toxic syndrome (ODTS) — fungal spores and endotoxins in grain dust at concentrations above 1,000 endotoxin units/m3 cause acute inflammatory lung response. (3) Chronic obstructive pulmonary disease (COPD) — cumulative exposure to PM2.5 above occupational PEL over years causes irreversible lung damage. (4) Allergic rhinitis and asthma — seasonal pollen peaks in agricultural environments exceed 1,000 pollen grains/m3 during harvest; Type AC filters with pollen capture efficiency >99.9% at 15–30 µm (pollen diameter range) are required.',
+      },
+      {
+        question: 'How often should cabin air filters be replaced in high-dust environments, and what indicates replacement is needed?',
+        answer: 'In high-dust environments (active mine sites, quarry blasting zones, grain harvesting operations), cabin air filter replacement intervals are typically 250–500 hours or 3 months, whichever occurs first. Indicators requiring immediate replacement regardless of interval: (1) Visible dust breakthrough at the HVAC outlet (dust particle deposition on instrument panel visible to operator); (2) Reduced HVAC airflow rate (more than 20% below design specification, indicating filter restriction); (3) Increased cabin dust concentration measured by in-cabin particulate monitor above threshold (ISO 11155-specified); (4) Biological growth visible on filter media (black or white mould growth on element surface). In addition to element replacement, housing seals must be inspected and replaced if deformed, the housing interior wiped clean of accumulated dust, and element installation torque/latch verified to ensure housing-to-element seal integrity.',
+      },
+      {
+        question: 'What is the difference between recirculation and fresh air mode in cabin HVAC, and how does each mode affect filtration requirements?',
+        answer: 'In fresh air mode, the HVAC system draws ambient air through the cabin air filter, conditions it, and distributes it through the cabin. The filter must handle the full ambient particle and gas load — worst-case scenario in dusty or polluted environments. In recirculation mode, the HVAC recirculates air already inside the cabin through the same filter, reducing fresh particulate ingress but causing CO2 buildup from occupant respiration (CO2 rises above 1,000 ppm within 15 minutes in a sealed cab with one occupant). ISO 11155-1 specifies efficiency measurement in both fresh air and recirculation modes because the particle size distribution of recirculated air (dominated by occupant-generated bioaerosols) differs from ambient external air. Automatic recirculation control systems detect high external dust concentrations and switch to recirculation mode — during recirculation, the cabin air filter is still active and removing residual particles from the circulating air.',
+      },
+      {
+        question: 'What certification marking is required on cabin air filter elements per ISO 11155?',
+        answer: 'ISO 11155 does not mandate a specific third-party certification marking, but elements sold for vehicle applications must be marked with: filter type (A, AC, or ACM); filtration efficiency class or rating; rated airflow in m3/hour; service temperature range; and the applicable standard reference. In the EU, filters marketed with efficiency claims must demonstrate compliance with ISO 11155-1 test method through documentation — this may be self-certification by the manufacturer or third-party laboratory testing. For agricultural spray application filters where pesticide protection is claimed, Type ACM filters require efficiency certification against relevant occupational exposure test conditions. MICROKAPPA elements include ISO 11155-1 test data in product documentation covering both particle efficiency and activated carbon gas adsorption capacity for common agricultural chemicals.',
+      },
+      {
+        question: 'What is the role of the cabin air filter housing gasket, and what materials are used?',
+        answer: 'The cabin air filter housing gasket seals the interface between the filter element end cap and the housing mounting face, preventing unfiltered air bypass around the element edges. Gasket materials for cabin applications: polyurethane foam (PU foam) — conformable, suitable for low-clamping-force latched housings, service temperature to 80°C; EPDM rubber — excellent ozone and UV resistance for housings exposed to engine compartment temperature cycling, service temperature to 120°C; neoprene (CR) — general-purpose elastomer with good oil and weather resistance. Gasket sealing load must be verified during installation — under-compressed gaskets (insufficient latch engagement) allow particulate bypass equivalent to a 10% efficiency reduction or worse. Gaskets must be replaced with each element change in serviceable housings; compressed or deformed gaskets from previous service cannot be reused and provide inadequate sealing.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 11155-1:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Discharge Test for Particulate Filtration',
+        relevance: 'Primary test standard defining particle efficiency measurement for cabin/passenger compartment air filters using DEHS aerosol.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11155-2:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 2: Test for Gaseous Filtration',
+        relevance: 'Complementary standard defining gas adsorption (activated carbon) efficiency and capacity testing for Type AC and ACM cabin filters.',
+      },
+      {
+        category: 'standard',
+        citation: 'DIN 71220:2000, Air Filters for Passenger Compartments of Motor Vehicles; Requirements and Testing',
+        relevance: 'German standard that preceded ISO 11155 and established the Type A/AC/ACM classification system adopted by the international standard.',
+      },
+      {
+        category: 'standard',
+        citation: 'EN ISO 16890:2016, Air Filters for General Ventilation — Parts 1–4',
+        relevance: 'HVAC filter efficiency classification system using PM1, PM2.5, and PM10 fractional efficiency categories, providing reference comparison for cabin filter performance ratings.',
+      },
+    ],
     title: 'Cabin Air Filtration',
     subtitle: 'ISO 11155, Particulate Exposure Limits, and Operator Health Protection',
     metaDescription: 'Technical reference for mobile equipment cabin air filtration: ISO 11155 test standards, PM10 and PM2.5 occupational exposure limits, activated carbon for gaseous contaminants, HVAC integration, and DIN 71220 classification.',
@@ -1708,6 +2924,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'diesel-fuel-filtration',
+    faqs: [
+      {
+        question: 'What are the particle cleanliness requirements for diesel fuel entering a common rail pump?',
+        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Primary fuel filter elements for HPCR applications are rated at β10(c) ≥ 200 or better to achieve this cleanliness from typical supply fuel (ISO 18/16/13 from bulk storage). SYNTEPORE media achieves β7(c) ≥ 200, providing enhanced protection at the critical 7 µm particle size range where pump plunger wear is most sensitive.',
+      },
+      {
+        question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
+        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications is ≥95% of emulsified water (droplets 0.5–5 µm) at rated flow rate and 40°C fuel temperature. HYDROCORE coalescing media achieves ≥98% water separation efficiency under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet 95% water separation allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
+      },
+      {
+        question: 'What is the effect of low-temperature wax crystal formation on fuel filter performance?',
+        answer: 'Diesel fuel wax crystals form when fuel temperature falls below the cloud point — typically +2°C to +15°C for B0 summer grade diesel, higher for biodiesel blends. Wax crystals (paraffin chains precipitating as solid agglomerates) accumulate on fuel filter media surfaces, blocking pores and increasing restriction. At temperatures below the Cold Filter Plugging Point (CFPP, per EN 116), restriction increases rapidly and can cause engine fuel starvation within 30–60 minutes of cold soak. Filter heating systems (electrical pre-heaters or fuel circuit heat exchangers) maintain filter temperature above the CFPP. EN 590 specifies winter-grade diesel with CFPP as low as −44°C for arctic markets, but even compliant fuel can form wax crystals at temperatures below the CFPP specification. Fuel filter elements with wax-resistant media (hydrophobic synthetic fiber) resist premature blocking better than cellulose media, which absorbs moisture accelerating ice crystal formation.',
+      },
+      {
+        question: 'How are diesel fuel filters sized for primary and secondary filtration stages?',
+        answer: 'Diesel fuel filtration systems use two stages: primary (bulk contamination removal, pre-pump) and secondary (fine filtration, post-primary pump, pre-injector). Primary filters are rated 30–100 µm to remove bulk rust, scale, and coarse particles from storage tanks — protecting the lift/feed pump from particle damage. Secondary filters are rated 2–10 µm absolute to achieve HPCR-required cleanliness (ISO 17/15/12 or better). Element sizing is based on rated fuel flow at maximum engine output (approximately 5× engine fuel consumption to account for high-pressure pump bypass return flow), with clean restriction target of 0.1–0.3 bar. Replacement intervals are typically 500 hours for secondary elements and 1,000 hours for primary, or at the first restriction indicator trigger in highly contaminated fuel supply environments.',
+      },
+      {
+        question: 'What materials are compatible with biodiesel blends in fuel filter construction?',
+        answer: 'Biodiesel blends (B5–B100 FAME) are more chemically aggressive than mineral diesel due to higher polarity and water affinity. Compatible materials: Filter media — synthetic polyester or polypropylene (cellulose media degrades in B20 or higher within 500–1,000 hours); End cap bonding — epoxy or thermally bonded (plastisol degrades in FAME above 40°C); Seals and gaskets — FKM (Viton, compatible B20+) or NBR with amine stabilisers (borderline acceptable to B20 only); Housing — polypropylene, polyamide (PA66), or stainless steel (zinc die-casting dezincification accelerates in biodiesel/water combinations). EN 590 limits FAME to B7 in European road diesel, but off-road and agriculture may use B20 or higher. Element compatibility must be verified against the specific FAME feedstock (rapeseed, soy, palm) as fatty acid composition affects material attack rate.',
+      },
+      {
+        question: 'What causes diesel fuel filter bypass events during cold ambient starts?',
+        answer: 'Filter bypass during cold ambient starts occurs when diesel fuel viscosity is elevated by low temperature: ISO VG 5–8 mineral diesel at −20°C has kinematic viscosity 5–20× higher than at operating temperature (40°C). This high viscosity creates significantly higher restriction through the filter element than at rated operating conditions. If restriction exceeds the bypass valve cracking pressure (typically 0.5–2.5 bar for diesel fuel filters), unfiltered fuel flows directly to the high-pressure pump, carrying particles that were previously retained by the filter media. Bypass events of 30–60 seconds during cold starts are a recognised failure mode for HPCR systems in cold climates — injector wear rates during bypass events are 10–50× the normal filtered-fuel wear rate. Cold climate applications require filter pre-heaters or fuel-circuit warming before starting at temperatures below −10°C.',
+      },
+      {
+        question: 'What is the significance of fuel lubricity, and how does filtration affect it?',
+        answer: 'Fuel lubricity describes diesel fuel\'s ability to provide hydrodynamic lubrication at metal-to-metal contact interfaces in the fuel pump and injectors. Ultra-low sulfur diesel (ULSD, <15 ppm sulfur) has lower natural lubricity than older high-sulfur fuels because the refining processes that remove sulfur also remove lubricity-contributing polar compounds. HPCR pumps operating on fuel below minimum lubricity (HFRR wear scar diameter >520 µm at 60°C per ISO 12156-1) show accelerated plunger wear. Fuel filtration does not directly affect lubricity, but water contamination (>200 ppm Karl Fischer) emulsification disrupts the lubricating film at plunger-barrel interfaces even in fuel meeting lubricity specifications. Lubricity additive treatment (FAME addition at B1–B2 or synthetic lubricity improvers) restores minimum HFRR lubricity in ULSD without affecting fuel filter performance.',
+      },
+      {
+        question: 'How does filter element condition monitoring by restriction indicator differ between fuel and hydraulic applications?',
+        answer: 'Diesel fuel filter restriction indicators must account for viscosity variation with fuel temperature — cold fuel (−20°C) has restriction 5–10× higher than warm fuel (40°C) at identical particle loading states. Temperature-compensated restriction indicators — using a bimetallic spring to adjust the alarm threshold inversely with temperature — prevent false alarms during cold starts and ensure alarm triggers reflect actual element loading rather than viscosity effects. Hydraulic system restriction indicators do not compensate for temperature because hydraulic systems operate within a narrower and more stable temperature range (30–70°C). Fuel filter restriction alarms should be mapped against fuel temperature at time of trigger to distinguish temperature-related transient alarms (reset when fuel warms) from genuine element-loading alarms (remain set after warm-up).',
+      },
+      {
+        question: 'What is the service interval for fuel-water separator bowl draining in marine diesel applications?',
+        answer: 'Marine diesel fuel system water separator bowl drainage intervals depend on sea conditions, fuel supply quality, and tank venting arrangements. Typical intervals: (1) After each bunkering operation — new fuel deliveries may contain free water; drain immediately after settling (1 hour per metre of tank depth). (2) Daily in high-humidity tropical climates — condensation accumulates overnight. (3) After heavy sea conditions — wave-induced fuel sloshing re-suspends settled water and sediment, increasing free water at filter inlet. The HYDROCORE separator bowl should be visually inspected at each engine pre-start check — visible water layer above the lower drain port trigger point requires immediate drain-off and recording in the engine room log. IMO MARPOL Annex I requirements for oil content of drained water may apply depending on vessel class and separator discharge arrangement.',
+      },
+      {
+        question: 'How is fuel filter performance validated for common rail systems after filter element replacement?',
+        answer: 'After fuel filter element replacement on HPCR systems, validation requires: (1) Air bleeding of the fuel system using the priming pump or electrical fuel pump (HPCR systems are self-bleeding on some designs but require manual bleeding on others — OEM workshop manual specifies). Unbled air in the fuel circuit prevents common rail pressure from reaching injection threshold (typically 800–1,500 bar for system start). (2) Crank the engine for 15 seconds maximum — if no start, investigate fuel path integrity. (3) Check for fuel leaks at filter housing mounting and all disturbed fuel line connections. (4) On instrumented systems, verify fuel rail pressure reaches target value within 5 seconds of cranking start. (5) After 30 minutes of operation at normal temperature, inspect filter housing visually for seepage at gasket or bowl joint. Any seepage requires immediate system shutdown and investigation.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4020:2001, Road Vehicles — Fuel Filters for Diesel Engines — Test Methods',
+        relevance: 'Performance test methods for diesel fuel filters including pressure drop, water separation efficiency, and media compatibility.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)',
+        relevance: 'Lubricity test standard referenced in diesel fuel specifications to verify fuel pump and injector protection in ULSD applications.',
+      },
+      {
+        category: 'standard',
+        citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods',
+        relevance: 'European diesel specification defining CFPP, water content, FAME content, and HFRR lubricity requirements for market fuel.',
+      },
+      {
+        category: 'specification',
+        citation: 'Robert Bosch GmbH, Common Rail System for Passenger Cars Maintenance Guide, Technical Documentation',
+        relevance: 'OEM documentation defining fuel cleanliness requirements, filter specification, and replacement intervals for Bosch HPCR injection systems.',
+      },
+    ],
     title: 'Diesel Fuel Filtration',
     subtitle: 'Three-Stage System Design, ISO 4020, and HPCR Cleanliness Requirements',
     metaDescription: 'Engineering reference for diesel fuel filtration system design: three-stage pre-filter, primary, and secondary architecture; ISO 4020 test methods; HPCR cleanliness requirements; water separation; and condition-based service intervals.',
@@ -1855,6 +3135,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'air-intake-system-design',
+    faqs: [
+      {
+        question: 'What are the four main zones of an air intake system, and what does each zone do?',
+        answer: 'Air intake systems have four functional zones: (1) Inlet zone — ambient air entry point, located to minimise ingestion of ground-level dust (typically elevated above hood line for trucks) and directed away from exhaust outlets and cooling air discharge; (2) Pre-cleaning zone — cyclone separators, pre-filter tubes, or vortex separators remove coarse particles (>10 µm) before the primary element, reducing element loading rate by 70–90%; (3) Primary filtration zone — the main filter element housing containing the serviceable element, sized for rated engine airflow with 20% capacity margin for turbocharged applications; (4) Distribution zone — cleaned air ducting from filter outlet to turbocharger inlet or engine intake, sized to limit duct restriction below 5 mbar at rated flow and sealed against external leakage.',
+      },
+      {
+        question: 'How is air intake system inlet location specified to minimise dust ingestion rate?',
+        answer: 'Inlet location follows these engineering criteria: minimum 500 mm from ground level to avoid boundary layer dust concentration zone (where particle concentration is 3–10× ambient due to vehicle movement); located upwind of the rear axle dust cloud in forward-moving vehicles; minimum 300 mm horizontal separation from engine cooling air discharge (which may contain heat-concentrated particulate matter); and shielded from direct water impingement by a rain deflector or pre-separator hood. ISO 5011 housing geometry standards define measurement point locations but do not specify vehicle installation geometry. OEM installation manuals specify minimum installation distances validated by SAE J1539 assembled-system restriction testing on the specific vehicle model. Aftermarket inlet relocation for visual appearance or packaging requires re-testing to verify dust ingress rate and restriction compliance.',
+      },
+      {
+        question: 'What is the function of the pre-cleaner ejector in a cyclone pre-separator system?',
+        answer: 'The ejector mechanism in a cyclone pre-separator uses turbine exhaust gas, turbocharger compressor bypass air, or a mechanical suction system to continuously evacuate the dust bowl at the base of the cyclone tubes. Without ejection, separated particles accumulate in the dust bowl and re-enter the airstream when the bowl fills, eliminating the pre-cleaner efficiency advantage. Ejector systems using exhaust gas at 5–20 mbar differential create negative pressure in the dust bowl, drawing separated particles out and discharging them to atmosphere. Ejector valve maintenance is the most commonly neglected aspect of pre-cleaner systems — a blocked ejector reduces pre-cleaner efficiency from 90% to effectively zero and causes primary filter element service life to collapse by 80–90%. Ejector valve inspection at each primary element change is mandatory.',
+      },
+      {
+        question: 'How does duct geometry between the air filter outlet and turbocharger inlet affect performance?',
+        answer: 'Duct geometry affects airflow restriction and noise. Restriction minimisation requires: smooth-bore duct inner surfaces (corrugated hose adds 15–30% more restriction than smooth-bore equivalent); minimum bend radius of 3× duct internal diameter for each 90° bend; gradual transitions between duct diameters using taper angles below 7° (abrupt expansions create turbulence and pressure loss); and duct cross-section sized for maximum air velocity below 20 m/s at rated engine flow. Noise considerations: sharp bends and tight transitions create whistling resonances that can resemble filter restriction warnings. Flexible hose sections must be internally smooth and externally clamped to prevent pressure-induced diameter reduction (collapse) that would restrict airflow. All joints must be sealed with worm-drive clamps torqued per OEM specification — loose clamps are a primary cause of unfiltered air ingress leaks.',
+      },
+      {
+        question: 'What is filter element sizing methodology for a turbocharged diesel installation?',
+        answer: 'Filter element sizing for turbocharged diesel follows three steps. (1) Define rated engine airflow: typically 120–150% of theoretical stoichiometric air mass (lambda excess for combustion efficiency) at maximum rated power. For a 250 kW diesel engine, rated airflow is approximately 12–15 m3/min. (2) Select element face area: target face velocity of 0.05–0.12 m/s — element face area = airflow (m3/s) / face velocity (m/s). At 0.12 m3/s (7.2 m3/min) and 0.08 m/s face velocity, required face area = 0.015 m2 = 15,000 mm2 (equivalent to approximately 140 mm × 110 mm media area). (3) Verify element DHC and service interval: DHC(g) / (ambient dust concentration mg/m3 × airflow m3/h) = service life in hours. Size the element to meet the OEM-specified service interval at worst-case ambient dust concentration for the target application.',
+      },
+      {
+        question: 'How does two-stage air filtration using safety elements protect against installation error?',
+        answer: 'Safety elements (secondary elements) provide protection against three specific failure modes. (1) Primary element installation error — if the primary element gasket does not seal correctly, or if the element is omitted from the housing during field service, the safety element prevents unfiltered air from reaching the engine. (2) Primary element structural failure — if the primary element collapses from over-restriction or media tear, the safety element provides a backup filtration barrier. (3) Service transient — during primary element replacement, the engine must not be running (restriction indicator confirms this), but if the safety element is not installed, brief operation without primary element protection is catastrophic for engine life. Safety elements must NOT be used as primary elements — their high initial restriction (due to fine media) would cause immediate excessive restriction. SAE J1539 specifies that safety elements are changed at every second primary element change or annually, not cleaned.',
+      },
+      {
+        question: 'What is the design criterion for air filter housing inlet geometry to avoid flow maldistribution?',
+        answer: 'Housing inlet geometry creates flow maldistribution across the filter element face when the inlet jet velocity is high relative to the housing expansion ratio. Design criteria: the housing internal volume from inlet port to filter element face should provide at least 3× inlet duct cross-sectional area to allow flow deceleration and distribution before reaching the filter. Inlet duct velocity should not exceed 10 m/s at the filter inlet transition — above this, the high-velocity jet creates a concentrated loading zone on the element face directly opposite the inlet, reducing effective DHC by up to 40% as this zone reaches terminal restriction while the remainder of the element is underloaded. Flow straighteners (honeycomb or tube array) at the filter inlet face improve distribution for housings with geometric constraints that prevent natural expansion-based distribution.',
+      },
+      {
+        question: 'How are air intake system duct connections sealed, and why do they require periodic inspection?',
+        answer: 'Air intake duct connections use silicone or EPDM rubber hose sections clamped with worm-drive or T-bolt clamps, or molded rubber couplings with external clamping beads. Clamp torque specifications (typically 3–5 Nm for worm-drive, 8–12 Nm for T-bolt) are critical — under-torqued clamps allow radial leakage of ambient air directly into the filtered air stream. In service, vibration loosens clamp fasteners over 500–1,000 hours, and thermal cycling of silicone or rubber hose material causes permanent set (compression set), reducing the sealing contact pressure below the minimum requirement. Annual clamp torque verification is recommended for all connections downstream of the primary filter element. Black soot deposits on the outer surface of duct joints, or white dust traces on clean surfaces adjacent to connections, indicate active leakage that must be addressed immediately.',
+      },
+      {
+        question: 'What test verifies the total assembled air intake system restriction at commissioned installation?',
+        answer: 'Total assembled system restriction testing uses a calibrated manometer or pressure transducer connected between the ambient inlet and the engine intake manifold connection point (turbocharger inlet for turbocharged engines, intake manifold for naturally aspirated). The measurement is made with a new, clean filter element installed, at rated engine airflow (verified by airflow meter or approximated from engine speed and displacement at rated RPM). Total system restriction at rated airflow with a clean element should not exceed 50% of the OEM-specified terminal restriction — allowing 50% margin for element loading during service. A fresh installation exceeding 60% of terminal restriction with a clean element indicates a housing design, duct geometry, or element sizing problem that requires correction before the system enters service.',
+      },
+      {
+        question: 'What is the economic case for specifying oversized filter housings in mine-site applications?',
+        answer: 'Undersized filter housings (insufficient element face area) force high face velocities that accelerate filter loading rate and increase DHC consumption per unit time. In a mine environment with 2 mg/m3 ambient dust, a correctly sized housing with 400 g DHC element provides 200-hour intervals; an undersized housing with 150 g DHC element provides 75-hour intervals — requiring 2.7× more element changes per operating year. At AUD 150/element and 50 machines, oversized housing specifying (adding AUD 800/machine capital cost) recovers its cost in 3–4 element change cycles (75 days of operation) through reduced service frequency and associated vehicle downtime. Additionally, high face velocity in undersized housings reduces effective Beta ratio (lower efficiency at high face velocity for fixed media), reducing engine protection quality independent of DHC considerations.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Primary test standard for air intake filter system performance including restriction, efficiency, and dust capacity.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1539, Air Cleaner Test Code',
+        relevance: 'Assembled air intake system restriction and performance test code used to validate installed system compliance with engine OEM requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J726, Air Cleaner Evaluation',
+        relevance: 'Element-level gravimetric efficiency and dust holding capacity evaluation method used in air intake system design sizing calculations.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Donaldson Company, Air Filtration Systems Engineering Application Guide, Technical Reference TR-002',
+        relevance: 'Engineering application handbook covering pre-cleaner selection, face velocity sizing, duct geometry, clamp specification, and service interval calculation for industrial air intake systems.',
+      },
+    ],
     title: 'Air Intake System Design',
     subtitle: 'Pre-Cleaner Selection, Two-Stage Filtration, and Service Indicator Engineering',
     metaDescription: 'Engineering reference for engine air intake system design: pre-cleaner technology, primary and safety element specification, service indicator calibration, airflow sizing methodology, and multi-stage system integration per ISO 5011.',
@@ -2025,6 +3369,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'lubrication-system-filtration',
+    faqs: [
+      {
+        question: 'What is the recommended ISO 4406 cleanliness target for heavy-duty diesel engine lube oil?',
+        answer: 'ISO 4406 cleanliness targets for heavy-duty diesel engine lube oil are typically specified by engine manufacturers as ISO 4406 code 18/16/13 for main bearing oil supply — the bearing journal clearances (20–80 µm) are significantly larger than hydraulic component clearances, making lube systems tolerant of coarser contamination than hydraulic circuits. However, turbocharged engines with VGT (variable geometry turbocharger) actuators, variable valve timing systems, and fuel injection timing advance mechanisms have internal hydraulic actuators requiring cleanliness of 16/14/11 or better. Lube filtration targeting overall system cleanliness of 17/15/12 provides adequate protection for all engine subsystems including these precision actuators, using SYNTRAX media-equipped elements achieving β10(c) ≥ 200 at rated lube oil flow.',
+      },
+      {
+        question: 'What is the function of the centrifugal oil cleaner installed on some heavy-duty engines?',
+        answer: 'Centrifugal oil cleaners (centrifuges, spin-on type) use crankcase oil pressure to spin a rotor at 4,000–8,000 RPM, generating centrifugal acceleration of 2,000–4,000×g that separates particles as small as 1–2 µm from the oil stream. Unlike full-flow filters that process all oil flow at high flow rate, centrifuges process a small bypass stream (5–10% of total flow at 1–3 bar). At 3,000×g, particles with density 2.7 g/cm3 (silica) at 1 µm diameter settle to the rotor wall in 0.2–0.5 seconds at typical rotor residence time. The centrifuge rotor accumulates a dense sludge layer containing wear metals, carbon, and silica — the rotor must be cleaned every 500–1,000 hours by removing and washing. Centrifuge bypass flow combines with main full-flow filter protection to achieve ISO codes 1–2 units cleaner than full-flow filtration alone.',
+      },
+      {
+        question: 'How is lube oil filter bypass valve cracking pressure selected for cold climate applications?',
+        answer: 'Bypass valve cracking pressure for cold climate lube filter applications must balance two requirements: (1) Cold start protection — at −40°C, SAE 15W-40 oil viscosity is approximately 50,000 cSt (compared to 100 cSt at 40°C). The cold oil restriction through a fully loaded element can reach 3–5 bar at cranking flow rates, requiring bypass valve opening to prevent oil pump cavitation and engine starvation. (2) Warm engine protection — at operating temperature, the bypass should not open except under genuine over-restriction conditions (element loaded beyond service limit). The typical compromise is bypass valve cracking pressure of 1.0–1.5 bar — low enough to open under cold start conditions (element restriction exceeds 1 bar at cranking speed) while high enough to remain closed during warm-engine normal operation (element restriction typically 0.2–0.5 bar at rated flow). Dual-bypass systems (low-pressure cold-start bypass and high-pressure warm-engine bypass) are used in Arctic mining applications.',
+      },
+      {
+        question: 'What is a full-flow plus bypass filtration configuration, and what is its application?',
+        answer: 'Full-flow plus bypass (bypass filter) configuration uses two parallel filter circuits: the full-flow filter processes 100% of oil pump output at moderate Beta efficiency (β10(c) ≥ 20–100) to prevent engine starvation under high restriction; the bypass filter processes 5–15% of oil flow at high efficiency (β3(c) ≥ 200–1,000) to continuously remove fine particles that pass through the full-flow element. The bypass return goes directly to the sump, not engine bearings — no oil starvation risk from bypass filter restriction. This configuration achieves oil cleanliness comparable to a high-efficiency full-flow element without the cold-start bypass risk of a single high-efficiency full-flow element. Used on high-value stationary diesel engines (generators, pumping stations) where extended drain intervals and precision component cleanliness are prioritised over weight and cost minimisation.',
+      },
+      {
+        question: 'How does oil filtration relate to TBN depletion rate and drain interval?',
+        answer: 'High-efficiency lube oil filtration does not directly extend the oil change interval based on TBN alone, because TBN depletion is controlled by acid production from fuel combustion (sulfur content, blow-by rate) rather than filtration. However, filtration reduces particulate contamination that catalyses oil oxidation and additive depletion — at oil cleanliness ISO 16/14/11 versus ISO 20/18/15, oxidation rate is approximately 30–50% lower due to reduced catalytic metal particle surface area in contact with the oil. Extended drain intervals are justified by combined oil analysis showing TBN above drain threshold AND ISO code within specification. Filtration alone without TBN monitoring is insufficient for extended-drain-interval justification — both parameters must be within specification to safely extend beyond OEM-specified intervals.',
+      },
+      {
+        question: 'What type of filter media is optimal for varnish precursor removal from turbine and circulation lube systems?',
+        answer: 'Varnish precursor removal from high-temperature lube systems (gas turbines, large diesel generators) requires electrostatic or depth-loading fine fiber media rather than surface-loading media. Varnish precursors are polar molecules and oligomeric degradation products, typically 0.1–2 µm equivalent diameter. Electrostatic media (charged fiber, similar to HEPA electrospun media) captures these polar molecules via electrostatic attraction — charge is retained for 500–1,000 hours before neutralisation by polar oil degradation products. Alternatively, kidney-loop filtration with β2(c) ≥ 200 media (similar to SYNTRAX applied to lube oil circuits) plus a selective adsorption media (diatomite or activated alumina for polar species) reduces varnish potential (measured by MPC — Membrane Patch Colorimetry, ASTM D7843) from high-risk (MPC patch ΔE >40) to low-risk (ΔE <15) within 200–500 operating hours.',
+      },
+      {
+        question: 'How is lube filter housing seal integrity verified without disassembly?',
+        answer: 'Lube filter housing seal integrity verification without disassembly uses: (1) External pressure monitoring — a pressure gauge at the filter outlet confirms housing is receiving oil pressure; absence of pressure indicates bypass or seal failure. (2) Oil analysis particle trend — a sudden increase of 2+ ISO code units between consecutive oil samples at unchanged operation suggests filter bypass or seal failure, not just normal contamination accumulation. (3) Visual inspection — oil seepage at the spin-on filter gasket joint, visible as brown-orange oil staining below the filter, indicates incomplete seal engagement. (4) Restriction indicator — if the filter restriction indicator triggers at low operating hours (well before expected service life), bypass valve opening due to a seal fold-over (gasket caught between housing and filter face) is the most likely cause. None of these methods is definitive without oil analysis verification.',
+      },
+      {
+        question: 'What is the purpose of the thermal bypass valve in engine lube oil cooler circuits?',
+        answer: 'The thermal bypass valve (also called oil thermostat) in the lube oil cooler circuit routes oil around the oil cooler when oil temperature is below operating threshold (typically 70–80°C). Below threshold, oil bypasses the cooler directly to the main oil gallery — warming faster and minimising cold-start bearing wear from low-viscosity oil shear. Above threshold, oil flows through the cooler, maintaining operating temperature in the 80–100°C range. Without the thermal bypass, cold oil circulating through the cooler would extend warm-up time, increasing the duration of boundary lubrication wear at engine start. The bypass valve is a wax-element or bimetallic thermostat rated for lube oil pressure and temperature — it does not affect filter operation directly but ensures the filter operates at the correct temperature for accurate restriction measurement.',
+      },
+      {
+        question: 'What is the procedure for pre-fill of a lube filter to prevent cold-dry start wear?',
+        answer: 'Pre-filling a lube filter before installation reduces the dry-start interval — the period after engine start before oil reaches main bearings. For spin-on filters: fill the element with clean engine oil through the center inlet port before installation, verify no oil spills on the gasket seating area, then install hand-tight plus 270°. Pre-filling adds approximately 0.5–1.5 L of oil (filter element volume) to the system instantaneously on start rather than requiring the oil pump to fill the element from the sump. In cold conditions, this 0.5–1.5 L reduces the bearing starvation period from 5–8 seconds (unfilled filter) to 2–4 seconds. For remote-mounted filters with long oil supply lines from sump, the benefit is proportionally greater. Pre-fill is mandatory for large engine applications (locomotive, mining truck engines) where bearing size and oil gallery volume extends the unfilled dry-start period to 15–30 seconds.',
+      },
+      {
+        question: 'How does blow-by gas contamination affect lube oil filtration requirements?',
+        answer: 'Blow-by gases — combustion gases leaking past piston rings into the crankcase — introduce soot particles (0.1–1 µm carbon agglomerates), sulfuric acid mist (from sulfur in fuel combustion), and unburned hydrocarbons. Soot particles at concentrations above 3% by weight (measured by TGA — ASTM D5967) cause oil thickening (viscosity increase), filter media blinding (soot particles are sub-micron and can partially block media pores in concentrations), and TBN depletion. Excessive blow-by from worn piston rings increases soot load 3–5× above normal, reducing lube filter element life proportionally. Differential cylinder compression tests identify cylinders with high blow-by rates — cylinders below 80% of specification compression pressure warrant ring replacement to normalise soot contamination. Full-flow lube filters with high soot retention capacity (SYNTRAX media) maintain filtration integrity under elevated blow-by conditions longer than cellulose media elements.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure/Flow Characteristics',
+        relevance: 'Test method for lube filter pressure drop, bypass valve cracking pressure, and structural integrity.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-12, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 12: Self-Contained Spin-On Filters',
+        relevance: 'Test methods specific to spin-on lube filter format including ADBV leakage, gasket sealing, and end-cap integrity.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D5967, Standard Test Method for Evaluation of Diesel Engine Oils in T-8 Diesel Engine',
+        relevance: 'Engine test method measuring soot accumulation, viscosity increase, and filter plugging tendency of diesel engine oils under controlled blow-by conditions.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Multi-pass test method applied to lube oil filter elements (adapted from hydraulic standard) for Beta ratio and dirt holding capacity characterisation.',
+      },
+    ],
     title: 'Lubrication System Filtration',
     subtitle: 'Full-Flow and Bypass Architecture, Bypass Valve Engineering, and Oil Analysis Integration',
     metaDescription: 'Engineering reference for engine and gearbox lubrication system filtration: full-flow vs bypass filter architecture, cold-start bypass valve behaviour, centrifugal filtration, oil condition monitoring integration, and extended drain interval validation.',
@@ -2170,6 +3578,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'hydraulic-power-unit-design',
+    faqs: [
+      {
+        question: 'What is the minimum reservoir capacity rule for hydraulic power units?',
+        answer: 'Standard reservoir capacity design rules specify reservoir volume equal to 3–5× pump flow rate in L/min — so a 50 L/min pump requires a 150–250 L reservoir. This rule provides adequate dwell time for air bubbles to rise out of the fluid (minimum 90 seconds at typical flow rates), allows thermal buffer capacity for temperature stabilisation, and accommodates cylinder and actuator volume changes during machine operation. Compact mobile equipment may use 1–2× pump flow rate with supplemental air or oil cooling to compensate for reduced thermal mass. Reservoir volume below 1× pump flow rate results in thermal runaway — the fluid circulates too quickly for adequate heat dissipation, oil temperature rises above 80°C, and accelerated oxidation reduces fluid service life by 50–80%.',
+      },
+      {
+        question: 'How should hydraulic reservoir breathers be specified to prevent contamination ingress?',
+        answer: 'Hydraulic reservoir breathers must be specified to match or exceed the main system filter efficiency and the expected system cleanliness target. For a system targeting ISO 4406 code 16/14/11, the breather filter should achieve β10(c) ≥ 200 efficiency — the same as the return-line filter — because atmospheric air drawn in during cylinder retraction and thermal contraction contains ambient dust at concentrations of 0.1–5 mg/m3. A poorly specified breather (efficiency <95% at ≥10 µm) can introduce 2–10 grams of silica per year into a 500 L reservoir — raising the ISO code by 2–4 units and offsetting all benefits of high-efficiency in-line filtration. Breather replacement intervals should not exceed 1,000 hours or 12 months; desiccant breathers used in humid environments require inspection at 500 hours.',
+      },
+      {
+        question: 'What return-line filtration configuration is optimal for high-pressure piston pump systems?',
+        answer: 'High-pressure piston pump systems generate significant return-line flow at low pressure (typically 1–5 bar return-line pressure). The return-line filter must handle total return flow (pump output minus cylinder supply flow consumed in work, plus leakage return) at low pressure with high Beta efficiency. Duplex (dual-housing) return-line filters with manual or automatic changeover valves allow element replacement under live operating conditions without system shutdown — essential for production-critical applications. Element Beta rating β6(c) ≥ 200 is standard for proportional valve systems. Placement: return filter mounted in return line before fluid re-enters reservoir, with housing inlet above maximum fluid level to prevent siphoning during element change. Supplementary pressure-line filter at 25–70 bar (between pump and control valve) provides redundant protection of servo/proportional valves during system transients.',
+      },
+      {
+        question: 'What is the design criterion for hydraulic pump inlet (suction) line sizing?',
+        answer: 'Hydraulic pump suction line (from reservoir outlet to pump inlet) must be sized to keep inlet fluid velocity below 0.5–1.0 m/s to prevent cavitation. Velocity above 1.5 m/s causes suction head loss that drops inlet pressure below fluid vapour pressure at operating temperature — vapour bubbles form and collapse at the pump inlet, causing erosive damage. Suction line design rules: minimum inside diameter such that V = Q/(πD²/4) ≤ 0.8 m/s; no suction strainers (they add restriction and cavitation risk — replace with tank-mounted suction screen, maximum 150–250 µm); shortest possible line with fewest bends; inlet port at minimum 100 mm above tank bottom to avoid sediment ingestion; and a manual ball valve (not spring-return) to enable pump removal without reservoir drain-down.',
+      },
+      {
+        question: 'How is hydraulic system heat exchanger sizing calculated?',
+        answer: 'Heat exchanger (oil cooler) sizing is based on heat rejection requirement: Q_heat = P_input × (1 - η_hydraulic), where P_input is prime mover power and η_hydraulic is overall hydraulic efficiency (typically 0.80–0.90 for modern systems). For a 75 kW pump at 85% efficiency, heat rejection = 75 × 0.15 = 11.25 kW. The heat exchanger must reject 11.25 kW while maintaining oil temperature below 70°C maximum. Air-cooled exchangers in 40°C ambient air typically require 0.3–0.5 kW/(°C temperature difference) of capacity per kW of heat rejection for adequate surface area. The calculation must include a 20% design margin for fouling and variable ambient conditions. Undersized coolers cause thermal runaway — accelerating oil oxidation and reducing fluid and seal service life.',
+      },
+      {
+        question: 'What is the purpose of a hydraulic accumulator in a power unit, and how does it affect filter sizing?',
+        answer: 'Hydraulic accumulators store pressurised fluid to: supplement pump flow during high-demand peaks (reducing pump size requirement); maintain system pressure during brief pump stoppage; and dampen pressure pulsations from piston pumps. From a filtration perspective, accumulators introduce two considerations: (1) During accumulator discharge, high instantaneous flow rates through the system can exceed filter rated flow, temporarily reducing efficiency — filter elements must be sized for peak accumulator discharge flow plus pump flow, not average flow. (2) Contamination trapped in the accumulator bladder or piston bypass can be released in bursts when the accumulator discharges — regular accumulator bladder inspection and fluid sampling from the accumulator circuit are required as part of the contamination management program.',
+      },
+      {
+        question: 'How is hydraulic reservoir design affected by requirements to support in-line oil analysis?',
+        answer: 'Reservoirs supporting oil analysis programs require specific design features: (1) Return-line sampling valves — ball valve sampling ports with needle valve and 12 mm OD tube fitting installed in the return line at a turbulent section 300–500 mm upstream of the reservoir inlet, allowing representative in-circuit samples without system drainage; (2) Bottom sediment sampling port — drain port with valve at the lowest reservoir point to collect settled particulate sample; (3) Level gauge with top-up port equipped with a fill filter (β3(c) ≥ 200, fine mesh quick-connect) to ensure all added fluid meets system cleanliness standard; (4) Fluid temperature probe connection port at the return-line sampling point for correlation of sample data with operating temperature. Reservoirs without these features require retrofit or require alternative (and less representative) sampling methods such as drain hose sampling from drain plugs.',
+      },
+      {
+        question: 'What are the standard reservoir access ports, and what are their sealing requirements?',
+        answer: 'Standard hydraulic reservoir access ports: (1) Main access plate or manway — for reservoir interior inspection and cleaning; sealed with a flat flange gasket (Buna-N or EPDM, 3–6 mm compressed thickness), typically 300–600 mm × 200–400 mm; (2) Fluid fill port — 1/2 BSP to 2 BSP threaded port with cap, equipped with fill filter or sealed when not in use; (3) Level gauge — glass or transparent polymer tube sight gauge with 1/4 BSP fittings; (4) Drain port — full-bore ball valve at reservoir base for complete draining; (5) Return-line inlet flanges — 1 BSP to 3 BSP flanged connections with full-face gasket sealing; (6) Suction outlet — flanged or threaded connection. All threaded connections in hydraulic reservoirs use BSP or NPT taper seals with PTFE tape or liquid sealant — ORFS fittings are not used on low-pressure reservoir ports.',
+      },
+      {
+        question: 'What contamination ingression scenario occurs during cylinder rod retraction, and how is it mitigated?',
+        answer: 'During cylinder rod retraction, the piston moves toward the cap end and the rod side volume decreases. The fluid displaced from the rod side returns to the reservoir via the return line. Simultaneously, the cap side requires fluid, which is supplied from the reservoir via the pressure line. The rod, returning into the cylinder body, carries externally accumulated dust and debris through the rod wiper seal. The rod wiper seal removes bulk contamination, but fine particles (1–10 µm) can bypass the wiper and enter the hydraulic fluid. Contamination ingression rate through rod wipers is approximately 0.001–0.01 mg per rod stroke per unit of exposed rod length (cm) — a 500 mm stroke cylinder completing 100 strokes per hour introduces 0.5–5 mg/hour of silica. Comprehensive rod guarding (rubber boots or rigid dust covers) reduces this ingression rate by 90% in dusty environments.',
+      },
+      {
+        question: 'What hydraulic fluid type incompatibility risks exist when converting a system from mineral oil to biodegradable hydraulic fluid?',
+        answer: 'Converting a hydraulic system from mineral oil to biodegradable fluid (HETG — vegetable ester, HEES — synthetic ester, or HEPG — polyglycol) requires: (1) Complete system flush to remove mineral oil residual (≥95% flush, meaning three reservoir fills and drains) — mineral oil contamination above 5% in HEES fluids accelerates ester hydrolysis. (2) Seal replacement — mineral oil-compatible Buna-N seals are incompatible with polyglycol fluids (HEPG) which cause severe NBR swelling; FKM seals are required for HEPG. (3) Filter element compatibility — verify media and end-cap bonding compatibility with the specific biodegradable fluid; some biodegradable esters degrade plastisol end-cap bonding within 500 hours. (4) Filter element replacement — old elements contaminated with mineral oil residual must be discarded; new elements installed for the converted fluid type.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System design standard covering reservoir sizing, filtration requirements, fluid compatibility, and commissioning procedures for hydraulic power units.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T3.16.1, Hydraulic Fluid Power — Reservoir Design, Construction, and Testing',
+        relevance: 'Reservoir design standard specifying construction materials, access port requirements, and cleanliness validation procedures.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Cleanliness coding standard used to specify and verify contamination targets for hydraulic power unit commissioning and service.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Hydraulics & Pneumatics, Hydraulic System Design Handbook, 7th Edition, Penton Media',
+        relevance: 'Comprehensive design reference covering reservoir sizing rules, heat exchanger calculations, pump suction design, and contamination control system integration for hydraulic power units.',
+      },
+    ],
     title: 'Hydraulic Power Unit Design',
     subtitle: 'Return-Line, Pressure-Line, and Offline Filtration — System Architecture and Commissioning',
     metaDescription: 'Engineering reference for hydraulic power unit filtration system design: return-line filter sizing, pressure-line filtration for servo valve circuits, offline kidney-loop design, reservoir contamination control, commissioning flush protocol, and ISO 4406 verification.',
@@ -2315,6 +3787,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'particle-ingress-prevention',
+    faqs: [
+      {
+        question: 'What are the primary external particle ingress pathways into a hydraulic system?',
+        answer: 'External particle ingress enters hydraulic systems through six primary pathways: (1) Cylinder rod wipers — the most significant ingress source in mobile equipment; 0.001–0.05 mg per stroke per rod surface area unit depending on ambient dust concentration and wiper condition. (2) Reservoir breathers — atmospheric air drawn in during thermal contraction and cylinder retraction; uncleaned or degraded breathers pass particles ≥10 µm freely. (3) Fluid replenishment — new oil from contaminated containers or without pre-filtration, typically ISO 18/16/13 from bulk storage. (4) Maintenance openings — system access for repairs, filter changes, and inspection introduces atmospheric contamination; each hose disconnection event can introduce 0.1–1 g of particles. (5) Hydraulic cylinder ingress past rod seals — damaged lip seals pass particles directly to rod-side circuit. (6) Hydraulic pump shaft seals — worn shaft seals on open-circuit systems can allow gear pump casing air ingress with atmospheric particles.',
+      },
+      {
+        question: 'How is cylinder rod contamination ingression rate quantified for system design purposes?',
+        answer: 'Cylinder rod contamination ingression rate (mg/hour) is estimated using the formula: I = C × A × L × n, where C = ambient dust concentration (mg/m3), A = rod seal wiper retention factor (typically 0.001–0.01, fraction of surface contamination that bypasses wiper per stroke), L = exposed rod length per stroke (m), and n = stroke frequency (strokes/hour). For a 500 mm stroke cylinder at 60 strokes/hour in 1 mg/m3 ambient dust with wiper retention 0.005: I = 1 × 0.005 × 0.5 × 60 = 0.15 mg/hour. This ingression rate is input to filter sizing calculations: filter DHC (g) / I (g/hour) = expected service hours between filter changes. The wiper retention factor of 0.001–0.01 represents the range from new wiper (0.001) to degraded wiper allowing 10× more ingress (0.01) — wiper maintenance is the most impactful single action for extending filter service life.',
+      },
+      {
+        question: 'What is the contamination exclusion principle, and how does it differ from contamination removal?',
+        answer: 'Contamination exclusion prevents particles from entering the system in the first place; contamination removal captures particles already in the fluid. Exclusion is orders of magnitude more efficient: preventing 1 gram of silica from entering the system requires only a good breather filter (cost: AUD 50/year), while removing 1 gram of silica from circulating hydraulic fluid requires processing 10,000 L of fluid through a β10(c) ≥ 200 filter (generating significant pressure drop energy cost and eventual filter element cost). The contamination budget approach to hydraulic system design quantifies both ingression rate and removal rate — the system reaches a steady-state ISO code where removal rate equals ingression rate. Improving exclusion (better rod guarding, upgraded breathers, sealed fluid transfer) shifts the steady-state code to lower (cleaner) values without increasing filtration capacity.',
+      },
+      {
+        question: 'How do exclusion devices for cylinder rods differ for agricultural versus mining applications?',
+        answer: 'Agricultural applications require rod exclusion devices that tolerate crop material (stalks, seeds, chaff) without mechanical damage — rubber accordion bellows that compress with the rod are preferred over rigid dust covers that would be damaged by crop material engagement. Mining equipment requires exclusion devices that handle abrasive rock dust and potential impact from falling material: polyurethane covers resist abrasion better than rubber (5–10× longer service life in high-abrasion environments), and metal guard plates shield the bellows from falling rock impact. For both applications, regular inspection of exclusion devices is more important than the choice of material — a collapsed or torn exclusion device increases ingression by 5–20× compared to the intact condition. Exclusion device inspection at each shift is standard practice in high-value mining equipment maintenance programs.',
+      },
+      {
+        question: 'What fluid transfer procedure minimises contamination ingression during oil replenishment?',
+        answer: 'Contamination-minimising fluid transfer uses the following procedure: (1) Use a dedicated transfer unit equipped with a transfer filter rated β3(c) ≥ 200 — do not pour from drum directly into reservoir. (2) Verify the transfer filter element condition before use — check restriction indicator and change if triggered. (3) Clean the reservoir fill port exterior with a lint-free cloth before removing the fill cap. (4) Use the transfer unit quick-connect fitting or the reservoir fill filter (if fitted); do not use open funnels or uncleaned hose connections. (5) Sample the filtered new oil at the transfer unit outlet with each new drum batch and verify ISO 4406 code ≤ 14/12/9 before introducing to the system. (6) Record the drum batch number, oil specification, volume added, and date in the maintenance log. Contaminated new oil introduction is responsible for approximately 30% of field contamination events where the source can be definitively identified.',
+      },
+      {
+        question: 'What is the maximum acceptable particle size that should be detected in commissioning flush samples?',
+        answer: 'Commissioning flush samples must achieve the system\'s target ISO 4406 code before sign-off. For proportional valve systems targeting ISO 16/14/11, the target code limits particles ≥14 µm(c) to 40–80 particles/mL — which means no particles above approximately 50 µm in significant quantities, as individual large particles elevate the ≥14 µm count rapidly. ISO 4413:2011 requires two consecutive passing samples. Additionally, some commissioning protocols specify a "particle challenge" — verification that no particles above 100 µm are present (detected by microscopic examination of a membrane filter after filtering 100 mL through a 10 µm membrane). The 100 µm threshold corresponds to the minimum size that can jam or damage proportional directional valve spools with 5–15 µm spool clearances by lodging in the clearance gap rather than abrading through.',
+      },
+      {
+        question: 'What maintenance actions reduce particle ingress through hydraulic cylinder rod seals?',
+        answer: 'Hydraulic cylinder rod seal maintenance actions for ingress reduction: (1) Rod wiper replacement at first sign of dirt accumulation on the rod above the wiper entry point (black or dark contamination band visible on rod, indicating wiper failure to scrape clean). (2) Rod seal replacement when internal leakage exceeds OEM specification (typically rod seal leakage >1 mL/hour for cylinders below 100 mm bore). (3) Chrome plating inspection — surface pitting on chrome-plated rods (from corrosion or abrasive wear) accelerates wiper degradation; re-chrome specification is typically 50 µm minimum chromium thickness after honing for damaged areas. (4) Rod alignment verification — cylinders operating with side loads (cylinder not in pure linear extension/retraction) cause non-uniform wiper wear and asymmetric seal loading; realignment or addition of a load-bearing bearing behind the wiper reduces side-load seal wear.',
+      },
+      {
+        question: 'How do maintenance tooling and connection hygiene protocols prevent contamination ingression during service?',
+        answer: 'Maintenance tooling hygiene: (1) Hydraulic hose quick-connect dust caps — all disconnected hydraulic lines must be immediately capped with clean, fitted dust caps stored in a sealed container; uncapped connections in a mining environment accumulate 0.5–2 g of contamination within 10 minutes. (2) Hydraulic fitting cleanliness — wipe fitting threads and connection faces with lint-free cloth dampened with clean hydraulic fluid before any connection. (3) Toolbox contamination — tools used on hydraulic systems must be stored separately from general workshop tools and wiped clean before use; metal shavings from general machining operations introduced via tools cause immediate ISO code spikes. (4) Work area preparation — hydraulic maintenance should not be performed adjacent to grinding, welding, or machining operations; airborne metal particles from these operations are highly abrasive and contaminate open hydraulic connections within minutes.',
+      },
+      {
+        question: 'How is particle ingress through mechanical shaft seals on gear pumps quantified?',
+        answer: 'Gear pump shaft seal ingress is typically <0.01 mg/hour in a well-sealed system with a new lip seal, increasing to 0.1–1 mg/hour as the seal ages and lip wear creates a progressively less effective dynamic seal. Shaft seal ingress increases non-linearly with operating hours — seal wear rate accelerates as the initial seal lip contact zone wears away (typically 500–2,000 hours for standard NBR lip seals in petroleum oil applications). Shaft seal ingress is quantified indirectly by correlation with elemental spectroscopy changes — no iron increase (ruling out internal wear) but rising silicon (silica from atmosphere) combined with rising ISO code points to external shaft seal ingress. Direct measurement requires a test stand with controlled environment and gravimetric particle counting. Replacing shaft seals at 3,000–5,000-hour intervals prevents the non-linear ingress increase from degraded seals.',
+      },
+      {
+        question: 'What is the contamination ingression rate contribution from typical hydraulic maintenance activities?',
+        answer: 'Contamination ingression from maintenance activities: (1) Hydraulic hose replacement — each hose disconnection and reconnection introduces approximately 0.5–5 g of contamination (scale, particles from hose bore, environmental dust on fittings) if standard hygiene procedures are not followed; with proper dust cap and wipe-down protocol, this is reduced to <0.05 g. (2) Filter element change — filter housing opening without ISO 4413 hygiene protocol introduces 0.1–2 g; with protocol, <0.02 g. (3) Cylinder replacement — bench cylinder replacement in a workshop introduces 0.5–2 g; field replacement without workshop-quality cleanliness introduces 5–20 g. (4) Pump replacement — each case-drain line disconnection and reconnection introduces 0.2–1 g; the pump case itself (primed at last use) carries 0.5–5 g of contamination if not pre-cleaned before installation. Post-maintenance ISO code measurements are required to verify system returned to target cleanliness.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System maintenance and contamination control standard including rod seal inspection, breather specification, and fluid replenishment protocols.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing',
+        relevance: 'Flushing procedure standard for removing construction contamination from new systems and achieving target ISO 4406 codes before commissioning.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Beta ratio testing standard used to specify filter elements adequate to overcome contamination ingression rates in the contamination budget calculation.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Noria Corporation, Machinery Lubrication — Contamination Control Handbook',
+        relevance: 'Industry reference handbook on contamination exclusion philosophy, ingression rate quantification, and contamination budget calculations for hydraulic and lube systems.',
+      },
+    ],
     title: 'Particle Ingress Prevention',
     subtitle: 'Breather Engineering, Shaft Seal Selection, and Contamination Budget Methodology',
     metaDescription: 'Engineering reference for particle ingress prevention in hydraulic and lube systems: ingress pathway classification, breather filter selection, shaft seal engineering, fill-point contamination control, ingress rate budgeting, and monitoring protocols.',
@@ -2451,6 +3987,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 16 ────────────────────────────────────────────────────────────
   {
     slug: 'filter-media-engineering',
+    faqs: [
+      {
+        question: 'What is the meltblown process for producing synthetic filter media, and how does it control fiber diameter?',
+        answer: 'The meltblown process extrudes molten polymer (polypropylene, polyester) through a die with hundreds of fine orifices (0.2–0.5 mm diameter) while simultaneously applying high-velocity hot air streams convergent on the molten polymer streams. The air shear draws the polymer fibers to 1–10 µm diameter — much finer than achievable by conventional spinneret extrusion. Fiber diameter is controlled by: polymer melt viscosity (lower viscosity → finer fibers), air stream velocity (higher velocity → finer fibers, higher die-to-collector distance), and extrusion rate (lower rate at fixed air velocity → finer fibers). Media density (fiber mass per unit area, g/m2) is controlled by die-to-collector distance and production line speed. Meltblown media is self-bonded — fiber contacts are thermally fused by residual heat at the collector, eliminating the need for binders that reduce fluid compatibility.',
+      },
+      {
+        question: 'How does electrospinning produce sub-micron fibers for high-efficiency filter media?',
+        answer: 'Electrospinning uses electrostatic force to draw polymer solution fibers from a needle tip to a grounded collector. A voltage of 10–30 kV applied to the needle creates an electric field that overcomes surface tension when the Taylor Cone forms at the needle tip — the polymer jet stretches and thins as it travels 10–20 cm to the collector, solvent evaporates, and fibers of 50–500 nm diameter deposit on the collector. Electrospun nanofiber layers of 5–50 g/m2 are laminated onto conventional meltblown or cellulose support media to create composite elements with both high efficiency (from nanofiber surface filtration) and mechanical integrity (from support media). HEPA-class efficiency (>99.97% at 0.3 µm DEHS per EN 1822) is achievable from 100 nm electrospun polyamide fibers. The primary limitation of electrospinning for industrial scale is production speed — current industrial electrospinning lines produce 0.5–2 m2/minute versus 50–200 m2/minute for meltblown.',
+      },
+      {
+        question: 'What is gradient density media construction, and what performance advantage does it provide over uniform density media?',
+        answer: 'Gradient density media places coarser, lower-density fiber layers on the upstream face and progressively finer, higher-density layers toward the downstream face. This creates a depth-filtration progression where coarse particles are captured efficiently in the upstream zone (minimising deep media penetration that would prematurely blind fine pores) and fine particles are captured in the downstream high-efficiency zone. Gradient construction achieves 2–4× higher dirt holding capacity at equivalent downstream efficiency compared to uniform fine-fiber media — because coarse particles that would rapidly blind fine media are arrested in the coarse upstream zone before reaching the fine downstream layer. ISO 16889 multi-pass testing captures this advantage through the DHC measurement — gradient media elements consistently show higher DHC values than equivalent-efficiency uniform media elements of the same external dimensions.',
+      },
+      {
+        question: 'What is the beta ratio of a filter element, and how is it calculated from particle counting data?',
+        answer: 'Beta ratio β(x) is the ratio of upstream particle count to downstream particle count at particle size x, measured in an ISO 16889 multi-pass test using ISO 11171-calibrated APC instruments. β10(c) = (Particles/mL upstream ≥10 µm) / (Particles/mL downstream ≥10 µm). A filter with 10,000 upstream particles/mL and 50 downstream particles/mL at ≥10 µm has β10(c) = 200, equivalent to 99.5% single-pass efficiency. The (c) subscript denotes ISO 11171 calibration. Beta ratios above 1,000 are theoretically possible but rarely measured accurately because downstream particle counts approach the APC instrument noise floor. For practical system design, β10(c) ≥ 200 (99.5% efficiency) is the typical specification for proportional valve protection, and β3(c) ≥ 200 for servo valve circuits.',
+      },
+      {
+        question: 'How does the surface energy of filter media fiber affect water separation in fuel and hydraulic systems?',
+        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. HYDROCORE coalescing media uses a hydrophobic surface treatment that achieves >98% free water separation efficiency from diesel fuel emulsions at 0.5–5 µm droplet size range, as tested per ISO 4020. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
+      },
+      {
+        question: 'What is the significance of fiber orientation in filter media performance?',
+        answer: 'Fiber orientation in meltblown media affects pressure drop and efficiency. Random fiber orientation (isotropic media) provides equal pressure drop in all flow directions and is the standard for pleated filter elements where airflow is perpendicular to the media face. Oriented fiber media — produced by applying electrostatic or air-drag forces during meltblown deposition — creates fiber alignment in one direction, producing higher restriction in the perpendicular flow direction and lower restriction in the parallel flow direction. This is exploited in pleated media design: pleated elements have alternating face-velocity and edge-flow conditions; anisotropic media can be oriented to provide optimal filtration in the primary flow direction while reducing flow resistance at pleat tips. For most industrial applications, isotropic random-fiber media is preferred for consistent performance regardless of installation orientation.',
+      },
+      {
+        question: 'How is media porosity measured, and what range of porosity values is typical for hydraulic filter media?',
+        answer: 'Media porosity is measured as the void fraction — the proportion of media volume occupied by air (or fluid pathway) rather than fiber material. Gravimetric measurement: porosity = 1 - (media weight (g/m2)) / (media thickness (µm) × fiber density (g/cm3)). For polypropylene meltblown media (fiber density 0.91 g/cm3) at 120 g/m2 and 2 mm thickness: porosity = 1 - 120/(2000 × 0.91) = 1 - 0.066 = 0.934 (93.4%). Hydraulic filter media typically has 70–95% porosity. Higher porosity = lower initial restriction and higher DHC capacity but lower efficiency at equivalent fiber diameter. Pressure drop across a media layer scales inversely with porosity (Kozeny-Carman equation) — a 10% reduction in porosity doubles pressure drop at constant fiber diameter. Filter media selection optimises the porosity-efficiency-DHC trade-off for the specific application.',
+      },
+      {
+        question: 'What chemical treatments are applied to filter media to modify performance characteristics?',
+        answer: 'Chemical treatments applied to filter media: (1) Water repellency (hydrophobic treatment) — fluorochemical or silicone polymer spray applied to glass fiber or cellulose media prevents water absorption in fuel filter applications. (2) Antimicrobial treatment — quaternary ammonium compounds or silver-based biocides applied to cabin air filter media to prevent microbial growth on loaded media surfaces. (3) Electrostatic charge enhancement — corona discharge or triboelectric treatment adds surface charges to synthetic fiber media, improving capture of sub-micron particles without increasing pressure drop; charge is stable for 1,000–3,000 hours in typical compressed air applications. (4) PTFE impregnation — increases chemical resistance of glass fiber media to aggressive hydraulic fluids; standard for phosphate ester (HFD-R) applications. (5) Resin binder stiffening — cellulose air filter media is impregnated with phenolic resin to maintain pleat geometry under wet conditions and at elevated temperatures.',
+      },
+      {
+        question: 'What is the media area calculation for a pleated cylindrical filter element?',
+        answer: 'Media area for a pleated cylindrical element: A = n_pleats × 2 × H_pleat × L_element, where n_pleats = total pleat count (perimeter divided by pleat pitch), H_pleat = pleat height (radial depth of pleat, = (OD - ID)/2 for cylindrical elements), L_element = element active length. For a cylindrical element with OD 180 mm, ID 50 mm, active length 300 mm, and pleat pitch 5 mm: n_pleats = π × 180/5 ≈ 113 pleats; H_pleat = (180-50)/2 = 65 mm; A = 113 × 2 × 0.065 × 0.300 = 4.42 m2. Compare to the element cross-section area: π × (0.09²) = 0.025 m2 — the pleating ratio is 4.42/0.025 = 177×, meaning the pleated element packs 177× more media area than its cross-section. This high pleating ratio is why filter elements of small external dimensions can provide DHC values of hundreds of grams.',
+      },
+      {
+        question: 'What failure mode results from media delamination in composite filter elements?',
+        answer: 'Composite filter elements — combining coarse and fine layers (e.g., meltblown upstream layer bonded to glass fiber downstream layer) — can experience delamination where the adhesive or thermal bond between layers separates under pressure pulsation or differential thermal expansion. Delamination creates an interlaminar gap where fluid preferentially flows between the separated layers rather than through the media. The delaminated zone has essentially zero filtration efficiency (fluid bypasses the fine layer entirely through the interlaminar gap). Delamination manifests as: sudden downstream ISO code increase without corresponding upstream code change; visible bubbles or waves in the element media when removed from service (delaminated zones do not lie flat); and fluid bypass tracks visible on the downstream media face after removal. NFPA T2.14.1 fatigue testing detects delamination-prone elements by cycling pressure 10,000 times and checking for increased bypass flow.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Beta ratio and DHC test standard used to characterise filter media performance in hydraulic and lube applications.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'Air filter media efficiency and DHC test standard for industrial air intake applications.',
+      },
+      {
+        category: 'standard',
+        citation: 'EN 1822-1:2019, High Efficiency Air Filters (EPA, HEPA and ULPA) — Part 1: Classification, Performance Testing, Marking',
+        relevance: 'Test standard for high-efficiency filter media efficiency classification using MPPS (most penetrating particle size) methodology.',
+      },
+      {
+        category: 'research',
+        citation: 'Brown, R.C., Air Filtration: An Integrated Approach to the Theory and Applications of Fibrous Filters, Pergamon Press, 1993',
+        relevance: 'Foundational reference covering fiber diameter effects, particle capture mechanisms, and mathematical models for predicting filtration efficiency from media properties.',
+      },
+    ],
     title: 'Filter Media Engineering: Construction, Performance, and Selection Criteria',
     subtitle: 'Synthetic fibre architecture, Beta ratio verification, dirt capacity, and media collapse pressure — engineering principles for filter media specification.',
     metaDescription: 'Engineering reference for industrial filter media: glass fibre, synthetic, and cellulose construction; β efficiency per ISO 16889; dirt holding capacity; structural collapse limits; media selection criteria for hydraulic, lubrication, fuel, and air filtration.',
@@ -2584,6 +4184,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 17 ────────────────────────────────────────────────────────────
   {
     slug: 'marine-diesel-filtration',
+    faqs: [
+      {
+        question: 'What fuel cleanliness specifications apply to medium-speed marine diesel engines using heavy fuel oil (HFO)?',
+        answer: 'Medium-speed marine diesel engines operating on heavy fuel oil (HFO, ISO 8217 Class RMG or RMK) require fuel entering the engine fuel injection system to be maintained at temperature 120–150°C (to reduce viscosity to 10–15 cSt at injection) and to contain no particles above 25 µm at the injection pump inlet. The CIMAC (International Council on Combustion Engines) MEPC guidelines and engine OEM manuals (MAN B&W, Wärtsilä, Caterpillar) specify fine fuel filtration at β25 ≥ 75 for HFO applications. Centrifugal purifiers (purifiers and clarifiers) in cascade configuration remove water and sediment before fine filtration; HFO fine filters with 25–50 µm absolute ratings are placed directly before the injection pumps. MDO (Marine Diesel Oil, ISO 8217 DMA/DMB/DMC) requires finer filtration — β10 ≥ 75 — for medium-speed engines due to lower operating viscosity increasing particle sensitivity.',
+      },
+      {
+        question: 'Why is centrifugal purification mandatory in HFO fuel treatment trains on ocean-going vessels?',
+        answer: 'HFO typically contains 0.1–0.5% water by volume (as delivered), sodium (up to 100 mg/kg), calcium (up to 30 mg/kg) from calcium-sulphonate additives, and catalytic fines (Al+Si particles from FCC refinery catalyst, typically 10–80 µm, hardness 7–8 Mohs — harder than engine injector and pump materials). Centrifugal purifiers operating at 3,000–5,000×g separate water (including sodium and other water-soluble salts) and particles above 3–5 µm from the fuel in a single pass. Catalytic fines above 60 mg/kg Al+Si (ISO 8217 maximum) cause severe abrasive wear of injection plungers and fuel valves — destroying injection equipment within 2,000–5,000 hours versus 20,000+ hours with purification. Purifier capacity must be at minimum 4× boiler consumption rate to provide adequate residence time (minimum 30 seconds in the centrifuge bowl) for effective separation.',
+      },
+      {
+        question: 'What is the role of the automatic back-flush filter in marine fuel systems?',
+        answer: 'Automatic back-flush filters in marine fuel service provide continuous fine fuel filtration (typically 25–50 µm for HFO, 10–25 µm for MDO) with self-cleaning capability that eliminates element replacement maintenance during sea voyages. As the filter element accumulates particulate loading, differential pressure increases to the pre-set back-flush trigger point (typically 0.5–1.0 bar ΔP). A motorised control valve reverses flow through a segment of the filter element using clean downstream fuel, flushing collected particles to a sludge drain. The cycle continues through multiple element segments until all are cleaned. Back-flush filters do not replace centrifugal purifiers — they are installed downstream of purifiers as polishing filters and handle the residual fine particles that pass through the centrifuge. MARINECLEAN filtration elements are designed for back-flush systems with reinforced media that withstands reverse-pressure cleaning cycles without structural degradation.',
+      },
+      {
+        question: 'How does marine diesel engine hydraulic oil cleanliness differ from industrial onshore hydraulic systems?',
+        answer: 'Marine diesel engine hydraulic systems — for engine-driven generator governors, variable pitch propeller (VPP) systems, and sterntube bearing oil systems — specify cleanliness per ISO 4406 code 16/14/11 to 15/13/10, identical to onshore industrial proportional valve systems. However, marine environments introduce additional contamination challenges: (1) Seawater ingress through shaft seals in sterntube systems requires regular oil sampling for salt content (chloride ion concentration by IC or colorimetric method); (2) Vibration from propeller cavitation and engine firing pulses accelerates filter media fatigue degradation — marine hydraulic filter elements must meet NFPA T2.14.1 fatigue testing requirements; (3) Temperature cycling between tropical and Arctic voyages requires elastomer seal materials rated across −20°C to 100°C continuous. MARINECLEAN elements are IMO MARPOL-compliant — construction materials are non-toxic and elements are certified for safe disposal under marine environmental regulations.',
+      },
+      {
+        question: 'What is the significance of IMO MARPOL Annex VI for vessel engine filtration requirements?',
+        answer: 'IMO MARPOL Annex VI regulates air pollution from ships, setting limits on NOx and SOx emissions from marine diesel engines. Since 2020 (IMO 2020), Sulphur Cap regulations limit marine fuel sulfur content to 0.5% globally (0.1% in ECAs — Emission Control Areas). This transition from HSFO (high-sulphur fuel, 3.5% S) to VLSFO (very low sulphur, 0.5% S) and MGO/MDO (ultra-low sulphur, 0.1% S) has significant filtration implications: VLSFO has lower viscosity than HSFO (requiring different purifier bowl geometry and temperature settings), higher paraffin content (wax crystal formation risk in cold climates), and different compatibility with seal materials and purifier bowl materials used in HSFO service. Filter element compatibility with VLSFO blends must be verified — some VLSFO formulations have higher polarity than HSFO, affecting end-cap bonding compatibility.',
+      },
+      {
+        question: 'What corrosion protection is required for marine hydraulic filter housings exposed to seawater spray?',
+        answer: 'Marine hydraulic filter housings exposed to seawater spray (on-deck installations, sterntube systems, thruster hydraulics) require: (1) Housing material — marine-grade aluminum alloy (EN AW-5083) or stainless steel (316L, minimum) for above-deck or splash-zone installations; carbon steel housings require hot-dip galvanising plus epoxy topcoat for extended protection; (2) Hardware — all external fasteners in A4 stainless steel (ISO 3506 Grade A4-70) to prevent bimetallic corrosion with aluminum housings; (3) Seals — EPDM for water resistance in ambient seawater temperature installations; FKM for engine room installations with oil-contaminated seawater exposure; (4) Surface treatment — marine-grade epoxy coating (minimum 200 µm dry film thickness) for steel housings; Type II or hard anodising for aluminum. Salt spray corrosion testing at 1,000 hours minimum per ASTM B117 is required for housing qualification in marine applications.',
+      },
+      {
+        question: 'How does seawater cooling heat exchanger maintenance affect hydraulic oil and lube oil systems on vessels?',
+        answer: 'Seawater-cooled heat exchangers (keel coolers, box coolers) for hydraulic oil and lube oil cooling on vessels are susceptible to: (1) Micro-fouling from seawater organisms (biofilm) reducing heat transfer efficiency, causing oil temperature rise above target and accelerating oil oxidation; (2) Seawater ingress into oil circuit through tube failure in shell-and-tube exchangers — seawater chloride (35,000 ppm) is immediately toxic to bearings (chloride causes stress corrosion cracking of steel bearing surfaces and accelerates bearing fatigue); (3) Cathodic corrosion protection — zinc anodes consumed by galvanic protection of exchanger materials must be replaced annually or when less than 50% of original mass remains. Any suspicion of seawater ingress (oil sample showing elevated sodium, chloride, or visual cloudiness) requires immediate system shutdown and hydraulic oil analysis before restart — seawater contamination above 0.1% chloride content requires full oil drain and exchanger inspection.',
+      },
+      {
+        question: 'What is the duty cycle impact on marine filter element service life compared to stationary industrial equipment?',
+        answer: 'Marine engines and hydraulic systems experience significantly more variable duty cycles than stationary industrial equipment, impacting filter service life in two ways. (1) Port-to-sea transitions — thermal cycling from cold (ambient seawater temperature, 2–28°C depending on region) to operating temperature (70–100°C oil) in each voyage creates thermal fatigue in filter element end-cap bonding, particularly in steel end cap to polymer media bonds. Vessels making port daily (short-sea shipping, ferries) accumulate 365 thermal cycles per year versus 24–52 cycles for industrial equipment with seasonal maintenance shutdowns. (2) Heavy swell conditions — dynamic loading from vessel pitch and roll creates inertial fluid forces in hydraulic reservoirs that can exceed 2g lateral, sloshing fluid against filter element media at velocities above rated face velocity. Marine filter elements are fatigue-tested at 2× rated flow for 100,000 cycles to verify structural integrity under dynamic conditions.',
+      },
+      {
+        question: 'What contamination monitoring program is recommended for vessels operating with HFO and transitional fuels?',
+        answer: 'HFO vessel contamination monitoring program: (1) Fuel oil analysis — test each bunker batch at delivery port using ISO 8217 compatibility check (CCAI calculation for ignition quality, spot test for HFO compatibility with onboard fuel), catfines (Al+Si), water, viscosity at 50°C, and sulphur content. (2) Engine lube oil analysis — ICP spectrometry, FTIR, TBN, and APC particle counting monthly or at each port call for main engine crankcase oil; crosshead lubricating oil separately if two-stroke engine. (3) Hydraulic oil analysis — ISO 4406 particle count and FTIR every 500 engine hours or 3 months. (4) Separator sludge analysis — collected sludge from centrifugal purifiers analyzed for catfine content monthly to verify purifier efficiency; catfine levels above 15 mg/kg Al+Si in post-purifier fuel indicate purifier malfunction. All results logged in the ship\'s planned maintenance system (PMS) with trending against baseline.',
+      },
+      {
+        question: 'What is the maximum catfine (Al+Si) limit for fuel oil entering medium-speed marine diesel engines?',
+        answer: 'The maximum catalytic fine (catfine, measured as combined aluminium plus silicon concentration, Al+Si) limit for fuel entering medium-speed marine diesel injection pumps is 15 mg/kg (per most engine OEM service bulletins, including MAN and Wärtsilä). ISO 8217:2017 specifies maximum 60 mg/kg Al+Si in the delivered fuel (before purification). The purification train — purifier plus fine filter — must reduce catfines from delivery specification to <15 mg/kg engine inlet. Catfines above 15 mg/kg in engine inlet fuel cause abrasive wear of fuel pump plungers and injection valves at rates proportional to hardness and concentration. At 60 mg/kg inlet catfines, injection pump plunger service life is reduced from 30,000–50,000 hours to 3,000–8,000 hours. Purifier efficiency monitoring by weekly fuel sample analysis at separator inlet and outlet is mandatory for vessels bunkering HFO at multiple ports.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 8217:2017, Petroleum Products — Fuels (Class F) — Specifications of Marine Fuels',
+        relevance: 'Marine fuel specification standard defining quality parameters for all fuel grades from HFO to MDO/MGO including catfine limits, water content, and viscosity requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'CIMAC Recommendation No. 23:2008, Fuel Quality and Engine Lubrication in Large Diesel and Gas Engines',
+        relevance: 'CIMAC (International Council on Combustion Engines) guidelines for marine diesel fuel treatment, purification efficiency, and fuel quality monitoring programs.',
+      },
+      {
+        category: 'regulation',
+        citation: 'IMO MARPOL Annex VI, Prevention of Air Pollution from Ships (2019 Amendment — IMO 2020)',
+        relevance: 'International maritime air pollution regulation setting sulphur content limits for marine fuels effective 2020, impacting fuel type transitions and filtration compatibility requirements.',
+      },
+      {
+        category: 'specification',
+        citation: 'MAN Energy Solutions, Diesel Engine Service Letter SL2019-659 — Fuel Quality and HFO Treatment Requirements',
+        relevance: 'OEM engine fuel treatment specification including catfine limits, purifier settings, and fine filter requirements for MAN B&W marine diesel engines.',
+      },
+    ],
     title: 'Marine Diesel Filtration: Fuel Quality, Saltwater Ingress, and Microbial Contamination',
     subtitle: 'Contamination control for marine diesel systems — ISO 8217 fuel specifications, saltwater corrosion mechanisms, MARPOL sulphur limits, and microbial growth prevention.',
     metaDescription: 'Engineering reference for marine diesel filtration: ISO 8217 distillate and residual fuel specifications, saltwater contamination pathways, ASTM D6304 water content limits, microbial growth mechanisms, and three-stage filtration architecture for marine HPCR engines.',
@@ -2712,6 +4376,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 18 ────────────────────────────────────────────────────────────
   {
     slug: 'cooling-system-contamination',
+    faqs: [
+      {
+        question: 'What is the SCA (Supplemental Coolant Additive) concentration range for diesel engine cooling systems?',
+        answer: 'Supplemental Coolant Additives (SCAs) — corrosion inhibitors added to diesel engine coolant — must be maintained within a precise concentration range: typically 0.5–1.5 units/L (one "unit" = 30 mL of SCA concentrate per ASTM D3306). Below 0.5 units/L, corrosion protection of cast iron and aluminum surfaces is inadequate, leading to cavitation erosion of cylinder liner water jackets (wet liner pitting) and corrosion of aluminum coolant passages. Above 3 units/L, scale deposition from over-concentration causes reverse corrosion (SCA scale builds up on heat transfer surfaces, reducing cooling efficiency and potentially blocking narrow coolant passages). THERMACORE coolant system maintenance includes SCA concentration monitoring by refractometer (measuring refractive index correlated to SCA concentration) or test strip (colorimetric SCA concentration indicator).',
+      },
+      {
+        question: 'What is cavitation erosion of diesel cylinder liners, and how is it prevented?',
+        answer: 'Cavitation erosion on diesel cylinder liner outer surfaces occurs when rapid pressure fluctuations in the cooling jacket cause water vapor bubbles to form and collapse against the liner wall. Each bubble collapse generates a localised pressure pulse of 100–500 MPa, eroding the metal surface through repeated impact. In heavy-duty diesel engines, piston secondary motion (piston rocking about pin axis on combustion power stroke) creates high-frequency pressure pulses in the adjacent cooling gallery — the dominant source of liner cavitation. Prevention: (1) SCA concentration in specification range provides protective inhibitor layer on metal surfaces; (2) Coolant flow velocity above 0.5 m/s in liner cooling galleries prevents localized vapor formation; (3) System pressure above 1 bar (radiator cap specification) raises the vapor pressure threshold; (4) THERMACORE anti-cavitation additive package includes vapour pressure depressants and scale inhibitors.',
+      },
+      {
+        question: 'What glycol concentration is required in diesel engine coolant, and why is glycol content critical?',
+        answer: 'Diesel engine coolant glycol (ethylene glycol or propylene glycol) concentration must be maintained at 33–50% by volume: 33% provides freeze protection to −18°C, 50% to −37°C. Below 25% glycol, corrosion protection from the glycol-additive system is insufficient — ethylene glycol itself is mildly corrosion inhibiting but the additive package is designed around the 33–50% glycol concentration window. Above 60% glycol, the boiling point advantage diminishes and heat transfer efficiency decreases (glycol has lower specific heat than water — 50% glycol mixture reduces heat capacity by 15–20% versus pure water). Glycol concentration is measured by refractometer calibrated for ethylene or propylene glycol; temperature compensation is required for accurate readings at ambient temperature different from 20°C calibration.',
+      },
+      {
+        question: 'How does coolant contamination from combustion gases (exhaust gas ingress) present, and what does it indicate?',
+        answer: 'Combustion gas ingress into the cooling system presents as: (1) Coolant discoloration — gray-black discoloration from carbon particles, oil droplets, or coolant acid formation from CO2 and NOx dissolving in coolant; (2) Coolant pH drop — CO2 absorption forms carbonic acid, lowering coolant pH from 8.5–10.5 (normal) to 6.0–7.5; (3) Coolant foaming — combustion pressure spikes in the cooling system create foam particularly at the expansion tank; (4) Coolant system overpressure — combustion gases raise system pressure above radiator cap specification, causing cap venting and coolant loss; (5) Hydrocarbon contamination — oil contamination from crankcase breather path via coolant, detectable by hydrocarbons-in-water test (infrared). Combustion gas ingress indicates head gasket failure, cracked head or block, or — most severely — a cracked cylinder liner. Engine shutdown and boroscopic/hydrostatic testing is required to identify the ingress source.',
+      },
+      {
+        question: 'What is the role of the coolant filter in coolant quality maintenance?',
+        answer: 'Coolant filters in diesel engine systems serve two functions: particulate removal and SCA dosing. Particulate removal elements capture corrosion products (rust flakes, scale fragments, seal material particles) above 25–50 µm that form continuously in used coolant systems. These particles can block narrow coolant passages in EGR coolers (passage width 0.5–2 mm) and engine oil coolers, causing localised hot spots and accelerated liner wear. SCA dosing elements contain impregnated SCA additive that dissolves slowly into the circulating coolant at a controlled release rate, maintaining SCA concentration within specification between manual service additions. Combined filter/SCA elements are changed at 250–500 hours or when SCA concentration drops below specification — whichever occurs first. Non-SCA particulate-only coolant filters should be changed at OEM-specified intervals (typically 500–1,000 hours).',
+      },
+      {
+        question: 'How does scale deposit formation in coolant passages reduce heat transfer efficiency?',
+        answer: 'Scale deposits (calcium carbonate, magnesium sulphate, silicate scale from coolant additives) on internal heat transfer surfaces reduce thermal conductivity. Water-side scale of calcium carbonate has thermal conductivity of 2–3 W/m·K versus engine block cast iron at 50 W/m·K and water at 0.6 W/m·K — scale is more resistant to heat transfer than coolant itself but less insulating than air or corrosion product layers. A 1 mm scale layer reduces heat transfer coefficient by 15–30% depending on scale composition. In EGR coolers with 0.5 mm water passages, 0.1 mm scale reduces passage cross-section by 40%, increasing coolant velocity and pressure drop while reducing thermal capacity. Scale prevention requires correct SCA concentration and coolant pH — below pH 7.5, silicate scales precipitate; above pH 11, calcium precipitates as calcium carbonate scale.',
+      },
+      {
+        question: 'What is the maximum coolant age (service life) for a maintained diesel engine cooling system?',
+        answer: 'Coolant service life depends on SCA monitoring frequency and additive replenishment: (1) Extended life coolant (ELC, OAT — Organic Acid Technology) with anti-freeze and no inorganic SCA: 5 years/1,000,000 km for on-road, 6,000 hours for off-road (per ASTM D6210 specification for ELC performance). (2) Conventional coolant with inorganic SCA (nitrite, molybdate, phosphate inhibitors): 2 years or 500,000 km on-road, 2,000 hours off-road — SCA depletion occurs faster. (3) Heavy-duty off-road with SCAs in hot-dry climate: 1,500–2,000 hours maximum due to higher concentration depletion rate from temperature cycling. The coolant change decision should be based on chemical analysis (SCA concentration, pH, chloride, metals) rather than calendar time alone — well-maintained and regularly tested coolant can exceed nominal service life by 20–30%, while coolant contaminated with combustion gases or glycol dilution must be changed immediately regardless of age.',
+      },
+      {
+        question: 'What chloride concentration limit applies to diesel engine coolant, and why is chloride damaging?',
+        answer: 'Diesel engine coolant maximum allowable chloride concentration is 25–40 mg/L (25–40 ppm) per ASTM D3306, D6210, and most engine OEM specifications. Chloride in coolant causes: (1) Crevice corrosion in aluminum cooling passages — chloride ions penetrate and disrupt the aluminium oxide protective layer, initiating localised pitting corrosion; (2) Stress corrosion cracking (SCC) of copper and brass fittings — chloride accelerates SCC of copper alloys under tensile stress (from thermal cycling); (3) Galvanic corrosion acceleration — chloride as an electrolyte increases galvanic coupling current between dissimilar metals (cast iron, aluminum, copper, solder in the same cooling circuit). Chloride enters cooling systems from: tap water used for coolant mixing (well water can contain 100–500 ppm Cl-); coolant contamination with seawater; and EGR gas ingress carrying HCl combustion products.',
+      },
+      {
+        question: 'What analytical tests comprise a comprehensive diesel engine coolant quality analysis program?',
+        answer: 'Comprehensive coolant analysis program per ASTM D7414 (condition monitoring of coolants) and OEM service requirements includes: (1) pH — target 8.5–10.5; (2) Glycol type and concentration — refractometer for freeze protection level, FTIR for glycol type identification; (3) SCA concentration — colorimetric test strips or refractometer calibration; (4) Reserve alkalinity — ASTM D1121, measures buffer capacity to resist pH drop from acid contamination; (5) Chloride — ion chromatography or colorimetric (target <40 mg/L); (6) Metals by ICP — aluminium (Al >30 ppm indicates corrosion), copper (Cu >0.5 ppm indicates corrosion), iron (Fe >20 ppm indicates rust generation); (7) Nitrite — SCA component depletion monitoring (target >300 ppm for nitrite-based SCA); (8) Total dissolved solids (TDS) — conductivity measurement, target <800 µS/cm for maintained coolant. Frequency: every 250 hours or at each planned maintenance interval.',
+      },
+      {
+        question: 'How is coolant system contamination from engine oil distinguished from head gasket failure?',
+        answer: 'Distinguishing oil contamination sources in coolant: (1) External oil contamination (overfill, spill) — oil droplets visible on coolant surface without dissolved hydrocarbon baseline elevation; combustion gas pressure absent (normal pressure cap function); coolant pH stable. (2) Head gasket failure (combustion gas ingress to coolant) — coolant shows dissolved hydrocarbons by HC-in-water test (infrared), elevated CO2 in expansion tank headspace (combustion gas analysis), coolant pressure cycling above cap relief pressure during engine running, bubbling at expansion tank during engine start. (3) Oil cooler failure (lube oil to coolant) — coolant shows elevated metals matching lube oil formulation (Ca, Zn, P from additive package by ICP), coolant TAN decrease (lube oil alkalinity dilutes acidic used coolant), coolant may show elevated viscosity if high oil/coolant cross-contamination rate. Each diagnosis requires specific remediation: oil contamination → oil flush only; head gasket failure → mechanical repair; oil cooler failure → cooler replacement plus coolant drain/fill.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D3306-20, Standard Specification for Glycol Base Engine Coolant for Automobile and Light-Duty Service',
+        relevance: 'Basic coolant quality specification covering glycol concentration, corrosion protection requirements, and SCA compatibility.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D6210-20, Standard Specification for Fully-Formulated Glycol Base Engine Coolant for Heavy-Duty Engines',
+        relevance: 'Heavy-duty coolant specification including liner pitting prevention (cavitation erosion) requirements, SCA concentration ranges, and extended life coolant (ELC) classifications.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D7414-20, Standard Practice for Condition Monitoring of Used Coolants from the Cooling Systems of In-Service Equipment',
+        relevance: 'Coolant analysis program standard defining analytical tests, test frequency, and action limits for diesel engine cooling system contamination monitoring.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D1121-20, Standard Test Method for Reserve Alkalinity of Engine Coolants and Antirusts',
+        relevance: 'Test method for reserve alkalinity measurement, a primary indicator of coolant buffer capacity and remaining corrosion protection reserve.',
+      },
+    ],
     title: 'Engine Cooling System Contamination: Liner Pitting, Coolant Degradation, and SCA Management',
     subtitle: 'Cavitation erosion of cylinder liners, electrochemical corrosion mechanisms, supplemental coolant additive (SCA) depletion, and glycol contamination in lubrication oil.',
     metaDescription: 'Engineering reference for engine cooling system contamination: wet liner cavitation erosion mechanisms (ASTM D2570), SCA chemistry and depletion rates (ASTM D6210), glycol-in-oil detection (ASTM D2982), electrochemical corrosion in mixed-metal cooling circuits, and coolant condition monitoring intervals.',
@@ -2846,6 +4574,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 19 ────────────────────────────────────────────────────────────
   {
     slug: 'filter-element-integrity',
+    faqs: [
+      {
+        question: 'What is the bubble point test, and how does it verify filter element media integrity?',
+        answer: 'The bubble point test pressurises the upstream face of a wetted filter element with gas (air or nitrogen) while the downstream face is submerged in test liquid. As pressure increases incrementally, gas first emerges through the largest pores — the bubble point pressure, expressed in bar or psi, corresponds to the diameter of the largest pore per the Young-Laplace equation: ΔP = 4γcosθ/d, where γ is surface tension, θ is contact angle, and d is pore diameter. For isopropanol-wetted membranes at room temperature, a bubble point of 0.5 bar corresponds to approximately 3.5 µm maximum pore diameter. The bubble point test verifies that the installed media has not suffered damage (tears, pinholes, media bypass) during installation or service — a bubble point 20% below specification indicates compromised integrity requiring element replacement.',
+      },
+      {
+        question: 'How does the diffusion flow test complement the bubble point test for verifying filter element integrity?',
+        answer: 'The diffusion flow test measures the flow of gas across a wetted filter membrane at a pressure below the bubble point — gas dissolves in the liquid layer on the upstream media surface, diffuses across the liquid-filled pores, and desorbs on the downstream side. This flow (diffusion flow, also called forward flow) is proportional to the pressure, media area, and inverse of pore tortuosity. An element with even a single pinhole shows a gas flow rate discontinuously higher than the expected diffusion flow because the pinhole allows bulk gas flow independent of diffusion. Combined bubble point and diffusion flow tests provide both pore diameter verification (bubble point) and media continuity verification (diffusion flow) — neither test alone provides complete integrity assurance.',
+      },
+      {
+        question: 'What causes media rupture in hydraulic filter elements, and how is it detected?',
+        answer: 'Hydraulic filter media rupture is caused by: (1) Exceeding collapse pressure — when differential pressure across the element exceeds the structural support capacity (tested per NFPA T2.14.1 at 10× rated ΔP), the media and pleat structure collapse radially inward, tearing the media. (2) Cold start hydraulic shock — high-viscosity cold oil at cranking speed can create pressure spikes 3–5× above normal operating ΔP in the first seconds of start-up, potentially exceeding element rated ΔP. (3) Rapid system pressure transients — fast valve closure or emergency stops create pressure waves (water hammer equivalent) with amplitudes 2–4× system operating pressure. Detection: downstream particle count increase of 2+ ISO code units coinciding with a system transient event; black rubber or fibrous particles in oil sample; pressure drop across element dropping suddenly to near zero (media collapse eliminates restriction), followed by pressure increase as separated media blocks outlet port.',
+      },
+      {
+        question: 'What is the flow fatigue test in NFPA T2.14.1, and what does it verify?',
+        answer: 'NFPA T2.14.1 flow fatigue test subjects a hydraulic filter element to 10,000 bidirectional flow cycles using high-viscosity oil (150 cSt at test temperature) at 10× the rated operating differential pressure. The element is cycled between zero flow and the high-pressure flow condition 10,000 times to simulate cumulative fatigue from pressure pulsations over the element service life. Post-test inspection verifies: no structural collapse of pleat geometry, no end-cap separation or cracking, no media delamination, and no increase in bypass flow rate above the pre-test measurement. Elements that pass NFPA T2.14.1 have demonstrated structural integrity against cumulative fatigue from hydraulic pump pressure pulsations (typically 5–200 Hz, 10–30% amplitude) over the service period.',
+      },
+      {
+        question: 'How does the collapse pressure test in ISO 3724 verify hydraulic filter element structural integrity?',
+        answer: 'ISO 3724 defines the collapse pressure test for hydraulic filter elements: the element is pressurised differentially (with outside-in pressure for elements with inside-out normal flow) to a defined multiple of rated operating differential pressure — typically 10× for elements rated below 10 bar ΔP. The test fluid is at normal operating viscosity and temperature. The element must withstand the collapse pressure without media separation, end-cap failure, or measurable deformation of the outer support cage. A minimum collapse safety factor of 10 is selected because hydraulic systems can generate transient pressure spikes of 2–4× operating pressure; the 10× factor provides adequate margin against the highest anticipated transient multiplied by a safety factor of 2.5–5. Elements failing collapse pressure testing at less than 8× rated ΔP are considered structurally inadequate for mobile equipment applications with frequent pressure transients.',
+      },
+      {
+        question: 'What is the significance of filter element burst pressure rating, and how is it measured?',
+        answer: 'Burst pressure is the differential pressure at which the filter element suffers catastrophic structural failure — media rupture and housing breach — rather than the non-destructive deformation measured in collapse testing. For hydraulic filter elements, burst pressure must be at minimum 2× the maximum allowable working pressure (MAWP) of the filter housing as specified in ISO 4548-1 for lube filters or NFPA T2.14.1 for hydraulic filters. Burst testing is destructive — the test element is pressurised to failure. Burst pressure establishes the absolute safety limit; collapse pressure (typically 10× rated ΔP) is the operational structural limit well below burst. For a filter housing rated at 35 bar MAWP, the element must burst at 70 bar minimum. Burst pressure data appears on element qualification test reports but is rarely listed on commercial element packaging — it must be requested from the manufacturer.',
+      },
+      {
+        question: 'What is filter element end-cap pull-off test, and what minimum load does it verify?',
+        answer: 'The end-cap pull-off test (ISO 4548-12 for lube filters, NFPA T2.14.1 for hydraulic elements) verifies the bonding strength between the filter media pleats and the metal or plastic end cap. Test method: the element is installed in a tensile test fixture that applies axial load at a controlled rate (typically 200–500 N/min). The load at which the end cap separates from the media assembly is recorded. Minimum acceptable pull-off load is calculated from the element cross-section area and maximum expected service pressure differential: F_min = ΔP_max × A_element. For a 100 mm diameter element at 10 bar maximum ΔP: F_min = 10 bar × π(0.05)2 × 10^5 Pa/bar = 7,854 N. Elements failing pull-off below this threshold will suffer end-cap separation under severe service conditions (cold start, pressure spikes), creating a direct bypass path at the end-cap joint.',
+      },
+      {
+        question: 'How is filter element integrity verified after installation in a hydraulic circuit?',
+        answer: 'Post-installation filter element integrity verification: (1) Initial system pressure check — with the hydraulic system at rated pressure, inspect filter housing for any external leakage at gasket interfaces, bowl drain valves, and element mounting connections. (2) Delta-P monitoring — restriction indicator should show normal initial reading (element clean, restriction within expected range); anomalously low restriction immediately after installation suggests element bypass or media collapse. (3) Oil sample comparison — take an oil sample 30 minutes after commissioning or restart following element change; compare ISO 4406 code to pre-change baseline. A code 2+ units dirtier than pre-change sample suggests element damage during handling or installation. (4) Visual element inspection — after removal, inspect the old element for: upstream media face fouling pattern (should show uniform distribution), white or clean patches on upstream face (indicate flow bypass zones), or torn/deformed pleats.',
+      },
+      {
+        question: 'What pleat deformation modes reduce filter element efficiency during service?',
+        answer: 'Pleat deformation modes reducing efficiency: (1) Pleat convergence — adjacent pleats migrate toward each other under asymmetric pressure loading, reducing effective media area by 10–40% as dead zones form between touching pleat surfaces. (2) Pleat tip folding — pleat tips at the outer support cage or inner core fold under radial pressure, creating creased zones with higher restriction that divert flow to adjacent lower-restriction zones, causing uneven loading. (3) Pleat telescoping — in long elements without intermediate support bands, the central section of pleats can shift axially relative to the end cap attachments, creating gaps at pleat fold lines through which unfiltered fluid can pass. (4) End-cap thermal distortion — large temperature differentials between start-up (cold) and operating temperature cause differential thermal expansion between the steel end cap and media pack, creating intermittent tensile stress on end-cap bonds that eventually causes partial separation.',
+      },
+      {
+        question: 'What documentation is required for filter element traceability in critical hydraulic applications?',
+        answer: 'Critical hydraulic applications (aerospace, nuclear, offshore oil and gas) require filter element documentation for full traceability: (1) Lot number — links element to manufacturing batch, melt-blown run, and raw material lot; (2) Test report — ISO 16889 multi-pass test data (Beta ratio, DHC, initial/terminal ΔP) from the qualification test on the same element design and lot; (3) Material certification — polymer resin certification, steel end-cap material certificate, elastomer compound certificate; (4) Burst pressure test data — from destructive test on samples from the same manufacturing lot; (5) Installation record — date, system identifier, and operator signature at each installation; (6) Removal record — date, hours in service, removal reason, and visual inspection record. For aerospace hydraulic applications, filter element traceability documentation is typically retained for the system life plus 10 years per applicable aerospace MRO regulatory requirements.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'NFPA T2.14.1-2005, Hydraulic Fluid Power — Filter Elements — Determination of Resistance to Flow Fatigue Using High Viscosity Fluid',
+        relevance: 'Flow fatigue cycling test standard requiring elements to withstand 10,000 pressure cycles at 10× operating ΔP without structural failure.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3724:2007, Hydraulic Fluid Power — Filter Elements — Verification of Collapse/Burst Pressure Rating',
+        relevance: 'Structural integrity test standard defining collapse and burst pressure testing methodology for hydraulic filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-12, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 12: Self-Contained Spin-On Filters',
+        relevance: 'Test methods for lube filter element integrity including end-cap pull-off, burst pressure, and ADBV testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Multi-pass performance test that validates element integrity indirectly through Beta ratio consistency across the loading cycle.',
+      },
+    ],
     title: 'Filter Element Structural Integrity: Collapse Pressure, End-Cap Sealing, and Bypass Valve Engineering',
     subtitle: 'ISO 2941 collapse testing, ISO 2942 end-cap integrity, ISO 2943 fluid compatibility, bypass valve cracking pressure, and structural failure modes under high-viscosity cold-start conditions.',
     metaDescription: 'Engineering reference for filter element structural integrity: ISO 2941 collapse pressure testing, ISO 2942 end-cap integrity verification, ISO 2943 fluid compatibility, bypass valve engineering, and cold-start high-viscosity failure mode prevention.',
@@ -2972,6 +4764,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 20 ────────────────────────────────────────────────────────────
   {
     slug: 'filter-housing-system-integration',
+    faqs: [
+      {
+        question: 'What installation orientation requirements apply to spin-on hydraulic filter housings?',
+        answer: 'Spin-on hydraulic filter housings must be installed with the outlet port oriented to allow complete fluid drainage on element removal — typically with the spin-on element facing downward (vertical mounting) or at maximum 30° from vertical. Horizontal mounting allows fluid to remain in the housing on element removal, spilling when the element is unscrewed. The filter head mounting face must be flat and within 0.5 mm of perpendicular to the element axis — warped or tilted mounting faces cause non-uniform gasket compression and preferential leak paths. Accessible clearance around the element (minimum 100 mm below and 50 mm radially) is required for element removal without special tools. For installations where downward orientation is impossible, drain-before-service valves or pre-drain spigots on the housing body allow fluid evacuation before element removal, preventing spillage.',
+      },
+      {
+        question: 'How is pressure drop across the complete filter housing assembly (not just the element) measured?',
+        answer: 'Complete assembly pressure drop measurement requires pressure sampling ports at the filter inlet and outlet with the element installed in the housing. Pressure ports are typically 1/8 BSP or 1/4 BSP tapped connections at the inlet manifold and outlet port, with the measurement made at rated system flow using a calibrated differential pressure gauge or transmitter. The measured ΔP includes: filter element clean restriction (typically 0.2–0.5 bar for rated flow), plus housing inlet entry loss, plus outlet exit loss and port restriction. Housing inlet/outlet restriction can represent 20–50% of total assembly ΔP for compact housings with undersized port connections. This total assembly ΔP is the value used for bypass valve setting verification — the bypass valve must open above the element terminal restriction but the total assembly ΔP must remain within system pressure budget.',
+      },
+      {
+        question: 'What fluid compatibility checks are required when selecting a filter housing for a specific hydraulic fluid?',
+        answer: 'Filter housing fluid compatibility requires verification of: (1) Housing body material — aluminum alloys are incompatible with water-glycol (HFC) hydraulic fluids which attack aluminium above pH 9; stainless steel or engineered plastic housings required; (2) Internal seals — O-rings and gaskets must be verified for chemical resistance to the specific fluid by immersion testing per ASTM D471 (volume change ≤10%, hardness change ≤15 Shore A after 1,000 hours); (3) Housing coatings — electroless nickel or anodised coatings on aluminum housings resist most hydraulic fluids except HFC water-glycol; (4) Element compatibility — filter media, end-cap bonding, and element seals must separately be verified for the same fluid. A common error is verifying housing compatibility but not element compatibility for ester-based or water-glycol fluids — the element materials are often more fluid-sensitive than the housing materials.',
+      },
+      {
+        question: 'What is the minimum port size requirement for a return-line filter housing to prevent excessive restriction?',
+        answer: 'Return-line filter housing port size is governed by the return-line flow velocity limit of 2–3 m/s maximum at peak return flow. For a system with 80 L/min peak return flow: minimum port bore area = Q/(V × 60) = 0.0013 m3/s / 3 m/s = 0.00044 m2 = 440 mm2 — corresponding to a minimum 24 mm inside diameter port. Standard BSP port selection: 1 BSP = 30 mm ID (acceptable), 3/4 BSP = 26 mm ID (borderline). Undersized ports create excessive return-line backpressure that affects system actuator speed and efficiency — each 0.5 bar of return-line restriction reduces cylinder extend velocity by approximately 2–5% depending on actuator area ratio. Return filter housings for high-flow systems above 200 L/min use flanged SAE or ISO face-seal port connections to achieve 50+ mm port bore diameters without thread restriction.',
+      },
+      {
+        question: 'How is housing compatibility verified for high-temperature hydraulic oil applications?',
+        answer: 'High-temperature hydraulic oil applications (continuous oil temperatures above 80°C) require housing verification for: (1) Seal degradation — NBR maximum continuous temperature 80°C; FKM required for 80–150°C continuous; (2) Housing thermal expansion — aluminum expands at 23 µm/m·°C versus steel at 12 µm/m·°C; differential thermal expansion at bolted flanges creates additional sealing load reduction at operating temperature that must be accounted for in gasket design; (3) Pressure rating de-rating — aluminum housing pressure ratings are de-rated at elevated temperature: EN AW-6082 T6 yield strength reduces from 260 MPa at 20°C to 200 MPa at 150°C, requiring 23% pressure de-rating; (4) Thermal shock resistance — systems that start from cold ambient (−20°C) and reach 80°C within 15 minutes of operation create thermal gradients in the housing that induce cyclic stress. Annual inspection for housing fatigue cracks is recommended for systems with high-frequency thermal cycling.',
+      },
+      {
+        question: 'What is the purpose of a bypass valve indicator in a filter housing assembly?',
+        answer: 'A bypass valve indicator (also called bypass warning light) is a switch activated by the movement of the bypass valve when it opens. Unlike a differential pressure indicator (which measures total element ΔP and indicates element service requirement), the bypass indicator specifically confirms that the bypass valve has opened and unfiltered fluid has bypassed the element. This is a critical distinction: an element can show normal ΔP at operating temperature while having opened the bypass during cold start — the bypass valve indicator latches mechanically or electronically and retains the alarm state until manually reset, providing evidence of the bypass event even after the engine warms and bypass valve recloses. In critical hydraulic applications with servo valves, bypass indicator alarm triggers immediate investigation of oil cleanliness by APC sampling before resuming precision operations.',
+      },
+      {
+        question: 'How are duplex filter housings designed to allow continuous operation during element change?',
+        answer: 'Duplex filter housings contain two parallel filter chambers (A and B) with a changeover valve between them. In normal operation, all flow passes through Chamber A while Chamber B is isolated and at zero pressure. When Chamber A element requires service, the changeover valve is gradually rotated to transfer flow to Chamber B (pre-primed with the filtered fluid of the system). Once full flow has been transferred to Chamber B, Chamber A is isolated and depressurised by a bleed valve, and the element can be removed and replaced safely without system interruption. Changeover valve design must ensure simultaneous flow through both chambers during the transition — a momentary parallel flow path prevents pressure spikes. After element change, Chamber A is re-primed (high-efficiency bleed through a low-flow path to prevent air introduction to the main circuit) before the system is returned to A-primary operation.',
+      },
+      {
+        question: 'What piping and mounting practices prevent filter housing vibration damage?',
+        answer: 'Filter housing vibration damage prevention: (1) Rigid mounting bracket with vibration-isolating elastomer mounts (Shore A 40–60 rubber isolators between housing foot and structure) reduce transmitted structural vibration amplitude by 80–90%; (2) Flexible hose sections (minimum 200 mm length) on all fluid connections prevent vibration transmission from piping system to housing body; (3) Pipe support clamps at maximum 500 mm intervals on rigid inlet/outlet piping prevent cantilevered pipe vibration from transmitting bending moment to housing port threads; (4) Mounting bracket natural frequency should be above 3× the dominant system excitation frequency (pump pulsation frequency = pump displacement frequency × shaft RPM) to avoid resonance; (5) Annual inspection of all external pipe connections at the housing for fretting wear (micro-movement at joints creating metal debris) and torque verification of all mounting fasteners.',
+      },
+      {
+        question: 'What are the hydraulic circuit requirements for bypass filter (kidney loop) housing installation?',
+        answer: 'Kidney loop bypass filter housing installation requirements: (1) Electric motor drive — independent of the main hydraulic system, ensuring the kidney loop operates regardless of main pump state (including during shutdown/standby); typical electric motor power 0.37–2.2 kW for 5–30 L/min kidney loop flow; (2) Reservoir inlet and outlet ports at opposite ends and different heights — inlet at bottom for settled particle capture, outlet at top to return clean oil to the undisturbed reservoir zone; (3) Flow rate 5–15% of reservoir volume per minute — for a 500 L reservoir, 25–75 L/min kidney loop flow achieves the target cleanliness code within 4–8 hours of continuous operation; (4) High-efficiency element — β3(c) ≥ 200 or β6(c) ≥ 1,000 for sub-micron particle control; (5) Pressure rating — kidney loop operates at low pressure (1–5 bar) so the filter housing pressure rating of 10 bar is more than adequate.',
+      },
+      {
+        question: 'What is the significance of the housing inlet-to-outlet pressure ratio on filter performance during transient conditions?',
+        answer: 'During hydraulic system pressure transients — rapid valve actuation, emergency stop, or accumulator discharge — the pressure at the filter inlet rises instantaneously while outlet pressure at the return tank is atmospheric. The instantaneous pressure differential across the element can reach 2–5× the steady-state operating differential. If this transient ΔP exceeds the bypass valve cracking pressure, an uncontrolled bypass event occurs — potentially introducing a burst of unfiltered fluid to precision components at the moment of highest flow rate. Filter housings for servo-proportional valve circuits specify bypass valve cracking pressure above the maximum transient ΔP — this requires the element rated ΔP to be significantly above normal operating ΔP, creating a service interval margin between the normal service indicator trigger and the bypass cracking pressure. Minimum margin between service ΔP and bypass cracking pressure should be 30–50%.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System integration standard covering filter housing installation requirements, bypass indicator specifications, and fluid compatibility verification.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T3.10.17, Hydraulic Fluid Power — Filter Housing Design and Testing',
+        relevance: 'Filter housing structural design and testing standard including pressure rating, port size requirements, and mounting specification.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure/Flow Characteristics',
+        relevance: 'Housing assembly pressure drop and bypass valve testing methodology applicable to integrated housing-element system performance.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Parker Hannifin Corporation, Hydraulic Filter Application and Engineering Guide, Catalog HY10-1650-4',
+        relevance: 'Engineering reference covering filter housing selection, port sizing, bypass valve specification, and duplex filter changeover procedures for hydraulic systems.',
+      },
+    ],
     title: 'Filter Housing and System Integration Engineering: Mounting, Sealing, and Installation Design',
     subtitle: 'Filter housing material selection, thread specification, O-ring sealing, bypass valve installation, service access design, and commissioning flushing protocols.',
     metaDescription: 'Engineering reference for filter housing system integration: housing material selection, ISO 3923 mounting thread specification, O-ring sealing and torque requirements, bypass valve installation, service access engineering, and INTEKCORE™ housing system architecture for industrial filtration applications.',
@@ -3101,6 +4957,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 21 ────────────────────────────────────────────────────────────
   {
     slug: 'contamination-ingression-modelling',
+    faqs: [
+      {
+        question: 'What is the contamination balance equation, and how is it used in hydraulic system design?',
+        answer: 'The contamination balance equation describes the steady-state particle concentration in a hydraulic system: C_steady = I / (Q_filter × E_filter), where I = contamination ingression rate (particles/hour at size x), Q_filter = filter flow rate (L/hour), and E_filter = single-pass filter efficiency at size x = (1 - 1/β(x)). At steady state, particles removed per hour equals particles added per hour. This equation allows filter sizing calculation: given a known ingression rate and a target ISO 4406 code (which defines maximum acceptable concentration), the required filter flow rate and efficiency can be calculated. The equation assumes perfect mixing in the reservoir — a single well-mixed fluid volume. Real systems may have stratified contamination zones that require sampling point correction.',
+      },
+      {
+        question: 'How is contamination ingression rate for a hydraulic cylinder rod seal quantified for modelling?',
+        answer: 'Rod seal ingression rate is modelled as: I_rod = C_ambient × V_rod_face × A_rod_face × k_wiper, where C_ambient = ambient particle concentration (particles/m3 at size x), V_rod_face = rod retraction velocity (m/s), A_rod_face = rod cross-section area (m2), and k_wiper = wiper efficiency factor (fraction of surface particles entering the fluid, typically 0.001–0.05). For a 50 mm rod at 0.1 m/s retraction in 1 mg/m3 ambient dust: I_rod at ≥10 µm (approximately 5,000 particles/mg) = 5,000,000 particles/m3 × 0.1 m/s × π(0.025)2 m2 × 0.01 = 982 particles/second = 3.5M particles/hour at ≥10 µm. This is the input to filter sizing calculations — the filter must remove ≥3.5M particles/hour at ≥10 µm to maintain steady-state cleanliness. The k_wiper value is the largest uncertainty — measuring it requires controlled ingression testing with labeled particles.',
+      },
+      {
+        question: 'What is the reservoir mixing assumption in contamination ingression models, and when does it fail?',
+        answer: 'Contamination ingression models assume complete instantaneous mixing of contamination throughout the reservoir volume — every particle introduced at the inlet immediately distributes uniformly throughout the total fluid volume. This assumption holds for: turbulent reservoirs with high return-line velocity; small-volume systems (below 100 L) where thermal convection provides adequate mixing; and systems with return-line diffuser plates that spread incoming flow across the reservoir cross-section. The mixing assumption fails for: large reservoir (>1,000 L) with low-velocity inlet; reservoir dead zones below the return line inlet (particles settle before reaching the mixed zone); and systems with both a return-line filter and a suction-side filter at opposite ends of the reservoir (the return-filtered fluid may not circulate to the suction end). When mixing fails, contamination gradients develop — bottom of reservoir dirtier than surface, stratification zones around inlets — and sampling must account for gradient effects.',
+      },
+      {
+        question: 'How does particle settling in a hydraulic reservoir affect contamination model predictions?',
+        answer: 'Particle settling velocity is calculated using Stokes\' Law: V_settle = (2(ρ_particle - ρ_fluid)r²g) / (9µ), where ρ_particle = particle density (kg/m3), ρ_fluid = oil density (typically 860 kg/m3), r = particle radius (m), g = 9.81 m/s2, µ = oil dynamic viscosity (Pa·s). For a 10 µm silica particle (ρ = 2,650 kg/m3) in ISO VG 46 oil at 50°C (µ ≈ 0.04 Pa·s): V_settle = (2×(2650-860)×(5×10-6)²×9.81)/(9×0.04) = 2.4×10-7 m/s = 0.024 mm/min. In a 500 mm deep reservoir, a 10 µm particle settles to the bottom in approximately 350 hours. Particles below 5 µm settle negligibly in reservoir dwell times — they remain suspended regardless of reservoir depth. Models ignoring particle settling overestimate the effectiveness of kidney-loop filtration for coarse particles (>25 µm) that settle before reaching the filter inlet.',
+      },
+      {
+        question: 'What statistical method is used to convert ISO 4406 particle count data into contamination ingression rate?',
+        answer: 'Converting ISO 4406 trend data to ingression rate requires: (1) Establish the filtration removal rate: R = Q_filter × E_filter (particles/hour removed at size x); (2) If the system ISO code is stable (consecutive samples within ±1 RN unit), ingression equals removal: I = R; (3) If the ISO code is rising at rate ΔRN/Δt (RN units per 100 hours), ingression exceeds removal: I = R + (ΔC/Δt × V_reservoir), where ΔC/Δt = particle concentration rate of change (particles/mL per hour from ISO code rise). The conversion: ΔRN of 1 unit ≈ doubling of particle count ≈ 1.7 mg/hour ingression increase for a 1,000 L system. This allows retrospective ingression rate calculation from historical oil analysis data — a rising oil cleanliness trend despite adequate filtration indicates a worsening ingression source that must be identified and corrected.',
+      },
+      {
+        question: 'How is filter sizing changed when ambient dust concentration increases seasonally?',
+        answer: 'Seasonal dust concentration variation — spring dry-season ploughing in agriculture, winter construction in frozen ground climates — can change ambient particle concentration by 5–20× from baseline. Filter sizing for worst-case ambient concentration results in over-filtered systems at baseline conditions (higher pressure drop, faster filter element loading during low-dust seasons). Two approaches manage this: (1) Dynamic filter sizing — install dual-element capacity with a bypass manifold that can engage the second element when ambient concentration rises above threshold (detected by restriction indicator triggering ahead of schedule). (2) Baseline and surge interval management — design for worst-case DHC but adjust service intervals: calculate expected hours to terminal restriction for each season based on ambient dust monitoring data, and set service interval accordingly rather than using fixed-hour intervals.',
+      },
+      {
+        question: 'What is the contamination budget approach to hydraulic system design?',
+        answer: 'The contamination budget method allocates maximum allowable particle ingression from each source such that total ingression stays within the removal capacity of the filtration system at the target ISO 4406 code. Budget items: Rod seal ingress (major for mobile equipment), breather ingress (moderate for large vented reservoirs), maintenance ingress (event-based, high per-event but infrequent), fluid additions (if not pre-filtered), and pump/motor internal leakage wear particles (minor in new systems, major as components wear). The budget is expressed in grams of ISO MTD equivalent per hour per ingression source. Total budget must be below filter removal rate: Σ(I_n) ≤ Q_filter × E_filter × target_concentration. If any source exceeds 50% of total budget, it is the priority for exclusion engineering — usually rod guarding or breather upgrade.',
+      },
+      {
+        question: 'What model describes particle concentration change during commissioning flushing?',
+        answer: 'Commissioning flushing particle concentration decay follows an exponential model: C(t) = C_initial × exp(-Q_filter × E_filter × t / V_system), where C_initial = initial system particle concentration (particles/mL), Q_filter = filter flow rate (mL/hour), E_filter = single-pass efficiency, t = flushing time (hours), and V_system = total system fluid volume (mL). For a 1,000 L system with 100 L/min filter at E_filter = 0.995 (β10(c) = 200): time to reduce by 90% = -ln(0.1) × 1,000,000 / (100,000 × 0.995) = 23 hours. This model assumes complete mixing and no external ingression during flushing (system isolated from all contamination sources). The ISO 23309 commissioning flushing standard uses this model to predict minimum flush time required to achieve target cleanliness from construction contamination levels.',
+      },
+      {
+        question: 'How does oil change affect contamination balance, and what is the clean-up efficiency of new oil addition?',
+        answer: 'Adding new oil during a partial oil change dilutes existing contamination proportionally to the fraction replaced: C_after = C_before × (1 - f_change) + C_new × f_change, where f_change = fraction of total oil volume changed and C_new = new oil cleanliness (typically ISO 18/16/13 without pre-filtering). For a system at ISO 20/18/15 (C_before = ~160,000 particles/mL ≥4 µm) replacing 50% of fluid with new oil at ISO 18/16/13 (C_new = ~40,000 particles/mL ≥4 µm): C_after = 160,000 × 0.5 + 40,000 × 0.5 = 100,000 particles/mL ≈ ISO 19/17/14. Partial oil change provides limited clean-up benefit — it improves code by 1–2 RN units rather than achieving target. Pre-filtering new oil to ≤ISO 14/12/9 before addition improves the calculation: C_after = 160,000 × 0.5 + 2,000 × 0.5 ≈ 81,000/mL ≈ ISO 19/17/14 still — the dominant effect is the existing contamination, not new oil quality.',
+      },
+      {
+        question: 'What is the significance of particle size distribution measurement in contamination modelling?',
+        answer: 'Contamination ingression modelling uses particle count at specific size thresholds (ISO 4406 ≥4, ≥6, ≥14 µm), but the full particle size distribution (PSD) determines: (1) Which filter efficiency value is applicable — the PSD determines the actual Beta ratio needed at each size class based on the ingression rate at each particle size; (2) Wear severity prediction — particles in the 5–15 µm range (matching bearing clearances) are most damaging; a high concentration of 4 µm particles may show the same ISO ≥4 µm count as fewer 15 µm particles but with different wear implications; (3) Filter cake build-up rate — coarse particles (>25 µm) load the filter media surface rapidly; fine particles (<5 µm) penetrate deeper into media depth and load more slowly. Full PSD analysis from an ISO 11171-calibrated APC instrument at 6–8 size channels from 2–25 µm provides the data for comprehensive contamination modelling beyond ISO 4406 three-digit codes.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing',
+        relevance: 'Flushing standard incorporating the exponential contamination decay model for calculating minimum flush time to achieve target ISO 4406 codes.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System design standard incorporating contamination budget methodology for filter sizing and contamination source control.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding the Level of Contamination by Solid Particles',
+        relevance: 'Particle count coding standard used as the measurement framework for contamination ingression modelling output and target-setting.',
+      },
+      {
+        category: 'research',
+        citation: 'Fitch, E.C., Fluid Contamination Control, FES Inc., Oklahoma, 1988',
+        relevance: 'Foundational text on hydraulic contamination control including contamination ingression modelling, filter sizing methodology, and the contamination balance equation derivation.',
+      },
+    ],
     title: 'Contamination Ingression Rate Modelling: Cleanliness Budget Methodology for Fluid Systems',
     subtitle: 'Quantifying contamination ingress pathways, calculating steady-state cleanliness codes, sizing filtration systems against measured ingression rates, and conducting multi-pathway contamination audits.',
     metaDescription: 'Engineering reference for contamination ingression rate modelling: ingress pathway quantification, steady-state ISO 4406 code calculation, filter sizing against measured ingression rates, ISO 11171 particle counting methodology, and multi-pathway contamination audit procedures.',
@@ -3231,6 +5151,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 22 ────────────────────────────────────────────────────────────
   {
     slug: 'sae-j300-viscosity-classification',
+    faqs: [
+      {
+        question: 'What viscosity parameters does SAE J300 specify for each engine oil grade?',
+        answer: 'SAE J300 specifies three parameters for each engine oil grade: (1) Cold-crank viscosity at low temperature (−10°C to −35°C depending on grade), measured per ASTM D5293 using the Cold Crank Simulator (CCS), with maximum mPa·s values defining cranking performance; (2) Pumpability limit — maximum viscosity for oil pumpability at low temperature, measured per ASTM D4684 Mini Rotary Viscometer (MRV), preventing gelling or channel formation that would starve the oil pump on cold start; (3) Kinematic viscosity at 100°C (ASTM D445), with minimum and maximum cSt limits defining the oil\'s operating viscosity class. SAE 15W-40, for example, specifies: CCS at −20°C ≤ 3,500 mPa·s; MRV at −25°C ≤ 60,000 mPa·s; KV100 = 12.5–16.3 cSt. The W-number (15W) represents the cold-crank class; the second number (40) represents the operating viscosity class.',
+      },
+      {
+        question: 'How does the High-Temperature High-Shear (HTHS) viscosity relate to engine bearing film thickness?',
+        answer: 'HTHS viscosity (ASTM D4683, measured at 150°C and 10^6 s-1 shear rate) directly predicts oil film thickness at the most stressed engine bearing positions — main bearing and con-rod bearing journals operating at 130–160°C under dynamic loading. The minimum HTHS viscosity in SAE J300 for 40-grade oils is 3.5 mPa·s; for 30-grade oils is 3.0 mPa·s. Below these limits, the hydrodynamic film at bearing journals may not support full oil-film lubrication under peak combustion loads, leading to increased boundary lubrication contact (metal-to-metal) and accelerated bearing wear. Some high-performance OEM specifications (VW 508.00/509.00, Dexos 2) set HTHS minimum at 2.6 mPa·s to reduce fuel consumption while specifying optimised bearing clearances for lower-viscosity operation — these specifications require matched bearing clearance designs and are not interchangeable with engines specified for standard HTHS fluids.',
+      },
+      {
+        question: 'What is the role of viscosity index improvers in multigrade engine oils, and how do they affect shear stability?',
+        answer: 'Viscosity Index (VI) improvers are high-molecular-weight polymer additives (polymethacrylate, olefin copolymer, polyisobutylene) that reduce the viscosity-temperature sensitivity of base oil. At low temperature, the polymer coils collapse to a small hydrodynamic volume with minimal viscosity thickening effect. At high temperature, the polymer extends, increasing oil viscosity above the base oil value and maintaining the target kinematic viscosity at 100°C. Shear stability describes how these polymers resist permanent breakdown under high shear stress. ASTM D6278 (KRL tapered roller bearing shear test) and ASTM D5481 (HTHS permanent shear stability) measure shear stability. An oil with poor shear stability degrades from 40-grade to approximately 30-grade viscosity within 15,000–25,000 km in high-shear service (turbocharged engines), losing bearing film protection without the oil analysis showing obvious degradation markers other than viscosity drop.',
+      },
+      {
+        question: 'How does viscosity relate to bearing surface separation and the Stribeck curve?',
+        answer: 'The Stribeck curve describes the friction coefficient at a bearing journal as a function of the ratio (η × N / P), where η = oil viscosity (Pa·s), N = shaft speed (rev/s), and P = bearing load per unit area (Pa). Three regimes exist: boundary lubrication (low ηN/P — metal-to-metal contact, high friction, rapid wear); mixed lubrication (transitional); and hydrodynamic lubrication (high ηN/P — full oil film separation, low friction, minimal wear). Minimum oil viscosity for full hydrodynamic lubrication is: η_min = (P × d_c) / (N × C), where d_c = bearing diameter, and C = bearing clearance (Sommerfeld derivation). Engines operating below minimum viscosity (from high temperature, excessive dilution, or wrong oil grade) shift from hydrodynamic to mixed lubrication — bearing wear rates increase 10–50× and journal surface roughness increases progressively over service hours.',
+      },
+      {
+        question: 'What is the difference between kinematic and dynamic viscosity, and which is used in the SAE J300 classification?',
+        answer: 'Kinematic viscosity (KV) is the ratio of dynamic viscosity to fluid density: KV (cSt or mm2/s) = µ (Pa·s) / ρ (kg/m3). It represents the fluid\'s resistance to flow under gravity — measured by timing oil flow through a calibrated glass capillary (ASTM D445). Dynamic viscosity (µ, Pa·s or mPa·s) is the shear stress required to maintain unit velocity gradient in the fluid, measured directly by rotational viscometers. SAE J300 uses kinematic viscosity at 100°C (ASTM D445) for the operating viscosity grade (the number after the W) and cold dynamic viscosity (mPa·s) for the cold-temperature grade (the number before the W), measured by Cold Crank Simulator (ASTM D5293) which applies a shear rate mimicking actual cranking conditions. The distinction matters because density changes with temperature — kinematic viscosity at 40°C is more affected by temperature than dynamic viscosity because density changes are included in the quotient.',
+      },
+      {
+        question: 'How is SAE oil grade selection made for equipment operating across extreme temperature ranges?',
+        answer: 'Extreme temperature range applications (Arctic mining, tropical construction, high-altitude) require oil grade selection that simultaneously meets: (1) Cold-crank viscosity for cranking at minimum ambient temperature — SAE J300 Table 1 gives CCS limits by grade; SAE 5W-30 permits cranking at −30°C, while SAE 10W-30 is limited to −25°C; (2) Minimum kinematic viscosity at 100°C for bearing film maintenance at maximum oil sump temperature — for engines with oil sump temperature above 120°C, SAE 40 or SAE 50 grade may be required; (3) Pumpability at minimum ambient — MRV limit must be met without oil channel formation that starves the pump gallery. For −40°C to +50°C ambient range with 130°C maximum oil temperature: SAE 0W-40 is the only grade that meets −40°C cranking (CCS at −35°C ≤ 3,250 mPa·s for 0W), provides 40-grade operating viscosity at 100°C, and meets HTHS minimum 3.5 mPa·s.',
+      },
+      {
+        question: 'What is the significance of ASTM D445 kinematic viscosity limits in SAE J300 for engine oil grade verification?',
+        answer: 'ASTM D445 kinematic viscosity at 100°C is the primary verification measurement for confirming that an engine oil meets its declared SAE grade — both in fresh oil certification and in used oil condition monitoring. The SAE J300 limits (e.g., 12.5–16.3 cSt for 40-grade) establish pass/fail boundaries for grade certification and for service decisions. A used oil sample with KV100 below the lower specification limit (e.g., <12.5 cSt for 40-grade) indicates viscosity grade breakdown from: shear degradation of VI improvers, fuel dilution (diesel fuel KV100 ≈ 3.5 cSt, significantly reducing oil viscosity), or solvent contamination. Conversely, KV100 above the upper limit indicates oil thickening from: severe oxidation, glycol contamination, or soot accumulation in high blow-by applications. Both upper and lower limit violations trigger immediate oil change independent of TBN status or other condition indicators.',
+      },
+      {
+        question: 'What is the effect of base oil type (Group I, II, III, IV) on SAE J300 grade performance?',
+        answer: 'API base oil group affects SAE grade performance through viscosity-temperature relationship: (1) Group I (solvent refined mineral, VI 95–105) — requires significant VI improver addition to achieve multigrade performance; VI improver quantity reduces shear stability; (2) Group II (hydroprocessed mineral, VI 100–120) — better natural VI than Group I, reduced VI improver loading, improved shear stability and oxidation resistance; (3) Group III (severely hydroprocessed or wax isomerised, VI >120) — often marketed as "synthetic," lower VI improver need, excellent shear stability, can achieve 0W and 5W cold grades while maintaining 40 or 50 operating grade; (4) Group IV (polyalphaolefin, PAO, VI 120–150) — lowest pour point, highest natural VI, minimal VI improver needed, achieves −54°C pour point for SAE 0W applications. For equivalent SAE grades, Group III and IV base oils provide 30–50% longer drain intervals than Group I oils due to oxidation resistance.',
+      },
+      {
+        question: 'How does engine oil viscosity affect fuel economy, and what SAE grades are specified in fuel economy regulations?',
+        answer: 'Reducing engine oil viscosity reduces friction losses in bearings, ring packs, and valve trains — each cSt reduction in KV100 corresponds approximately to 0.3–0.7% fuel economy improvement in light-duty applications at typical highway operating temperature. EU fuel economy regulations (CO2 fleet average targets) have driven OEM specifications toward low-viscosity grades (SAE 0W-20, 0W-16, and even 0W-8 in some Japanese OEM specifications) with minimum HTHS viscosity reduced to 2.6 mPa·s. At HTHS 2.6 mPa·s versus standard 3.5 mPa·s, bearing hydrodynamic film thickness is reduced proportionally — these oils require complementary engine design changes (tighter bearing tolerances, surface finish improvement, friction-reducing coatings) to maintain equivalent bearing durability. Oil interchangeability between HTHS 2.6 mPa·s and HTHS 3.5 mPa·s specifications is NOT permitted without OEM approval.',
+      },
+      {
+        question: 'What SAE oil grades are used in heavy-duty diesel engines, and what viscosity class distinctions apply?',
+        answer: 'Heavy-duty diesel engine applications use: (1) SAE 15W-40 — the traditional heavy-duty standard; KV100 = 12.5–16.3 cSt; cold grade rated for −20°C cranking; dominant grade for construction, mining, and agriculture above −20°C; (2) SAE 10W-40 — cold grade rated for −25°C; used in mild cold-climate applications; (3) SAE 5W-40 — cold grade rated for −30°C; increasing adoption in winter-operation mining; better cold pumpability than 15W-40; (4) SAE 0W-40 — cold grade rated for −35°C to −40°C; Arctic and sub-Arctic heavy equipment; (5) SAE 20W-50 — extreme heat applications (tropical climates, high-load stationary diesel generators); KV100 = 16.3–21.9 cSt. The choice between these grades is driven by minimum ambient starting temperature and maximum oil temperature in service — OEM oil specifications in the engine manual define the approved range, typically listed as a temperature chart cross-referencing ambient temperature to required SAE grade.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'SAE J300:2021, Engine Oil Viscosity Classification',
+        relevance: 'Primary viscosity classification standard defining Cold Crank Simulator limits, Mini Rotary Viscometer limits, kinematic viscosity ranges, and HTHS viscosity minimums for each SAE engine oil grade.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D445-21, Standard Test Method for Kinematic Viscosity of Transparent and Opaque Liquids (and Calculation of Dynamic Viscosity)',
+        relevance: 'Test method for kinematic viscosity measurement used to verify SAE grade compliance and monitor used oil condition.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D5293-15, Standard Test Method for Apparent Viscosity of Engine Oils and Base Stocks Between −5°C and −35°C Using the Cold-Cranking Simulator',
+        relevance: 'Cold-crank viscosity test method defining low-temperature cranking performance limits in SAE J300.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D4684-14a, Standard Test Method for Determination of Yield Stress and Apparent Viscosity of Engine Oils at Low Temperature',
+        relevance: 'Mini Rotary Viscometer test method for oil pumpability at low temperature, the second cold-temperature limit in SAE J300.',
+      },
+    ],
     title: 'SAE J300 Engine Oil Viscosity Classification: Cold-Start, High-Temperature, and Multi-Grade Engineering',
     subtitle: 'SAE viscosity grade system, cold cranking and pumpability limits, HTHS viscosity at 150°C, multi-grade oil technology, pour point, and viscosity grade selection for operating temperature range.',
     metaDescription: 'Engineering reference for SAE J300 engine oil viscosity classification: cold cranking simulator (ASTM D5293), mini-rotary viscometer pumpability (ASTM D4684), kinematic viscosity at 100°C (ASTM D445), HTHS at 150°C (ASTM D4683), and multi-grade oil grade selection methodology.',
@@ -3357,6 +5341,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 23 ────────────────────────────────────────────────────────────
   {
     slug: 'nfpa-t2-14-hydraulic-cleanliness',
+    faqs: [
+      {
+        question: 'What scope does NFPA T2.14.1 cover, and how does it relate to ISO 16889?',
+        answer: 'NFPA T2.14.1 (National Fluid Power Association) covers hydraulic filter element structural integrity and performance testing for North American fluid power applications. It defines: fatigue collapse pressure testing (10,000 cycles at 10× rated ΔP), burst pressure requirements (minimum 4× rated ΔP), and flow fatigue testing at high viscosity. ISO 16889 covers filter element filtration performance (Beta ratio, DHC) but does not include the structural fatigue tests specified in NFPA T2.14.1. The two standards are complementary — hydraulic filter elements for North American market use are typically qualified against both ISO 16889 (for Beta and DHC) and NFPA T2.14.1 (for structural integrity). European hydraulic applications follow ISO 3724 for collapse/burst testing instead of NFPA T2.14.1, with broadly similar requirements.',
+      },
+      {
+        question: 'What is the collapse pressure safety factor specified in NFPA T2.14.1?',
+        answer: 'NFPA T2.14.1 specifies a collapse pressure safety factor of 10× the rated operating differential pressure. For an element rated at 10 bar ΔP, the collapse test applies 100 bar differential pressure. The element must survive this pressure without measurable structural deformation, media collapse, or end-cap separation. The 10× factor is not an arbitrary selection — it provides margin against worst-case transients: mobile equipment hydraulic systems can experience pressure spikes of 2–4× operating pressure during valve closures; the 10× factor provides a safety margin of 2.5–5× above the worst anticipated transient. Elements failing collapse at less than 8× rated ΔP are considered borderline for mobile equipment; elements failing below 6× are inadequate for any dynamic application with pressure transients.',
+      },
+      {
+        question: 'How does NFPA T2.14.1 define the cleanliness class requirements for hydraulic components?',
+        answer: 'NFPA T2.14.1 references ISO 4406 cleanliness codes for specifying hydraulic fluid cleanliness targets but cross-references them to North American component sensitivity classifications: (1) Servo valve circuits — ISO 4406 code 14/12/9 or better; (2) Proportional valve circuits — ISO 4406 code 16/14/11; (3) Piston pump and motor circuits — ISO 4406 code 17/15/12; (4) Gear pump and vane pump circuits — ISO 4406 code 18/16/13; (5) General industrial circuits with directional control valves — ISO 4406 code 19/17/14. These are minimum targets — OEM hydraulic system specifications may be more stringent. The NFPA T2.14 series also covers hydraulic fluid cleanliness monitoring methods and sampling procedures aligned with ISO 4406 and ISO 3722.',
+      },
+      {
+        question: 'What fatigue test procedure does NFPA T2.14.1 specify for hydraulic filter elements?',
+        answer: 'NFPA T2.14.1 flow fatigue test (also called "cyclic pressure test"): (1) Test fluid: mineral oil with kinematic viscosity 150 cSt at test temperature (40°C); (2) Pressure cycle: 0 to 10× rated ΔP to 0 (one cycle, typically 10–30 seconds); (3) Number of cycles: 10,000; (4) Flow direction: alternating (forward and reverse flow, one cycle each direction per pressure cycle) to simulate bidirectional pressure pulses in real systems; (5) Post-test inspection: visual inspection for structural deformation, media separation, end-cap movement, plus measurement of bypass flow increase (must not increase more than 10% from pre-test baseline). The 10,000-cycle requirement represents approximately 5,000 operating hours of pump pulsation at 2 cycles per minute — a conservative service life coverage for mobile equipment applications.',
+      },
+      {
+        question: 'What is NFPA T2.14.1 Section 4 filtration performance testing, and how does it supplement ISO 16889?',
+        answer: 'NFPA T2.14.1 Section 4 defines filtration performance testing using the multi-pass method (substantially identical to ISO 16889) but with additional provisions for: (1) High-temperature testing at 80°C (versus ISO 16889 standard 50°C) — verifying that Beta ratio and DHC are maintained at elevated operating temperatures common in mobile hydraulic applications; (2) Combined performance and structural testing — the same element that passes collapse pressure testing must subsequently show no Beta ratio degradation (within 10% of pre-test value), confirming that structural deformation from the collapse test did not compromise filtration integrity; (3) Flow fatigue plus performance — post-fatigue-cycling Beta ratio verification using the same element that completed the 10,000-cycle fatigue test. These supplementary tests address failure modes not covered by ISO 16889 alone.',
+      },
+      {
+        question: 'What is the North American hydraulic filter housing pressure rating convention, and how does it relate to NFPA T2.14?',
+        answer: 'North American hydraulic filter housings are rated by Maximum Allowable Working Pressure (MAWP) in PSI or bar, per NFPA T3.10.17. The filter element rated ΔP must be matched to the housing MAWP: typically element rated ΔP ≤ housing MAWP / 10, reflecting the 10× structural safety factor for the element within the housing. A housing rated 3,000 PSI (207 bar) MAWP pairs with an element rated maximum 300 PSI (21 bar) ΔP under NFPA conventions. This approach ensures the housing provides the structural containment boundary while the element provides the filtration function — if the element collapses at 10× ΔP, the housing remains intact to contain the hydraulic system pressure. Housing pressure rating certification per NFPA T3.10.17 requires burst test at 4× MAWP for standard industrial ratings.',
+      },
+      {
+        question: 'What is the significance of the bypass valve in NFPA T2.14 testing?',
+        answer: 'NFPA T2.14.1 bypass valve testing verifies that: (1) Cracking pressure is within ±10% of the specified value (measured per the same procedure as ISO 4548-12 for lube filters); (2) The bypass valve fully opens at no more than 1.5× cracking pressure — excessive opening resistance creates a narrow operating window where the valve cracks but does not fully open, causing partial bypass with high restriction; (3) The valve reseats at pressure below cracking pressure (no sustained bypass after system returns to operating ΔP); (4) No leakage through the bypass valve at 0.5× cracking pressure — early bypass leakage (before the specified cracking point) allows continuously contaminated fluid to bypass the element without full bypass being indicated. NFPA T2.14 bypass testing is performed on the same element assembly that passes structural tests, verifying bypass function is maintained after mechanical testing.',
+      },
+      {
+        question: 'How does NFPA T2.14 address the selection of hydraulic filter elements for high-water-based fluid (HWBF) applications?',
+        answer: 'NFPA T2.14 does not directly specify element materials for HWBF (HFA, HFB, HFC per ISO 6743-4) applications but references additional testing requirements when elements are qualified for HWBF service: (1) Media compatibility testing — synthetic media must be tested in the HWBF fluid for 500 hours at maximum service temperature with no efficiency degradation or structural changes; (2) Seal material verification — standard NBR is incompatible with water-glycol (HFC) above pH 9; EPDM or polyurethane seals are required; (3) Housing corrosion resistance — aluminum is incompatible with water-glycol at pH above 9; stainless steel housings required; (4) Beta ratio and DHC re-verification in HWBF — filtration efficiency in water-based fluids differs from mineral oil due to lower viscosity and different surface tension; separate ISO 16889-equivalent testing in the HWBF at operating temperature must be conducted.',
+      },
+      {
+        question: 'What North American standards apply to hydraulic fluid cleanliness reporting in addition to ISO 4406?',
+        answer: 'North American hydraulic fluid cleanliness standards supplementary to ISO 4406 include: (1) ASTM D6786 — Standard Practice for Particle Count in Hydraulic Fluid Power Systems; (2) SAE AS4059 — Aerospace Hydraulic Fluid Cleanliness Classification — specifying particle count classes for aerospace hydraulic systems (SAE AS4059 Class 8 approximately equals ISO 4406 code 17/15/12); (3) NAS 1638 (obsolete but still referenced in legacy equipment documentation) — National Aerospace Standard particle cleanliness classes expressed as maximum particle count at specific size ranges; NAS Class 8 approximately equals ISO 16/14/11. NAS 1638 is superseded by SAE AS4059 in current aerospace specifications, but both systems are encountered in maintenance documentation for legacy equipment. ISO 4406 is the dominant standard for new hydraulic system specifications in both North American and international markets.',
+      },
+      {
+        question: 'What is the component cleanliness specification per NFPA T2.14 for new hydraulic cylinders delivered from manufacture?',
+        answer: 'NFPA T2.14.1 and NFPA T3.6.29 (Hydraulic Fluid Power — Cylinders — Cleanliness Specification) specify that new hydraulic cylinders must be delivered with internal cleanliness at ISO 4406 code 19/17/14 or better, measured by flushing the cylinder internal volume with a known quantity of solvent and particle-counting the extract. Construction contamination in new cylinders (metal chips, scale, honing residue, assembly lubricant particulate) is typically at ISO code 21/19/16 before cleaning — two to three ISO code units above the NFPA delivery specification. Cylinder delivery cleanliness is verified by the cylinder manufacturer before shipment, and the commissioning flushing procedure must further reduce system cleanliness from the delivery level to the system target code (typically ISO 16/14/11 for proportional valve circuits) before the system is released for production.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'NFPA T2.14.1-2005, Hydraulic Fluid Power — Filter Elements — Determination of Resistance to Flow Fatigue Using High Viscosity Fluid',
+        relevance: 'Primary NFPA standard for hydraulic filter element fatigue cycling, collapse pressure, and burst pressure testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T3.10.17, Hydraulic Fluid Power — Filter Housing Design and Testing',
+        relevance: 'Housing design and pressure rating standard complementary to T2.14.1 for integrated filter assembly performance and safety.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3724:2007, Hydraulic Fluid Power — Filter Elements — Verification of Collapse/Burst Pressure Rating',
+        relevance: 'ISO equivalent of NFPA collapse/burst pressure testing used in European and international hydraulic markets.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Cleanliness coding standard referenced in NFPA T2.14 for specifying component and system cleanliness requirements.',
+      },
+    ],
     title: 'NFPA T2.14 Hydraulic System Contamination Control: Component Sensitivity and Cleanliness Level Specification',
     subtitle: 'NFPA T2.14 contamination tolerance levels, component sensitivity classification, NAS 1638 and ISO 4406 cross-reference, hydraulic fluid selection for cleanliness, and system cleanliness specification methodology.',
     metaDescription: 'Engineering reference for NFPA T2.14 hydraulic system contamination control: component sensitivity levels, NAS 1638 and ISO 4406 equivalence table, hydraulic fluid selection criteria, and filtration system specification methodology for mobile and industrial hydraulic circuits.',
@@ -3482,6 +5530,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 24 ────────────────────────────────────────────────────────────
   {
     slug: 'iso-29463-hepa-ulpa-filters',
+    faqs: [
+      {
+        question: 'What efficiency classes does ISO 29463 define, and what is the MPPS test methodology?',
+        answer: 'ISO 29463-1:2011 defines efficiency classes for high-efficiency air filters: EPA (Efficient Particulate Air) classes E10–E12, HEPA (High Efficiency Particulate Air) classes H13–H14, and ULPA (Ultra Low Penetration Air) classes U15–U17. Testing uses the Most Penetrating Particle Size (MPPS) — the aerosol size at which overall filter efficiency is minimum, typically 0.1–0.3 µm for fibrous media. DEHS (Di-Ethyl-Hexyl-Sebacate) or PAO (Poly-Alpha-Olefin) aerosol is generated at MPPS and measured by photometer or condensation particle counter. Class H13 minimum efficiency: 99.95% overall (or 99.75% at any single scan position); Class H14: 99.995% overall (99.975% locally); Class U15: 99.9995% overall; Class U16: 99.99995%; Class U17: 99.999995%. These limits represent maximum penetration of 0.05%, 0.005%, 0.0005%, 0.00005%, and 0.000005% respectively.',
+      },
+      {
+        question: 'Why is MPPS used for HEPA filter testing rather than a fixed particle size?',
+        answer: 'The Most Penetrating Particle Size is used because fibrous filter efficiency varies non-monotonically with particle size — efficiency is highest for very large particles (inertial impaction dominates) and very small particles (diffusion dominates), and is lowest at an intermediate size where neither mechanism is optimal. For typical glass fiber HEPA media at rated face velocity: efficiency minimum (MPPS) occurs at approximately 0.1–0.3 µm DEHS particle diameter. A fixed particle size test would over-state efficiency if the test size is outside the MPPS range, and under-state efficiency if the test particle is at MPPS but the media\'s actual MPPS is at a different size. By testing at the actual MPPS for each media type, ISO 29463 ensures that the worst-case efficiency is measured regardless of media composition or fiber diameter distribution.',
+      },
+      {
+        question: 'What is the difference between overall efficiency and local penetration (scan test) requirements in ISO 29463?',
+        answer: 'ISO 29463 specifies both overall filter efficiency (mass-weighted average across the entire filter face) and local maximum penetration (from a probe-scan across the entire face area). The overall efficiency requirement is more lenient — a few high-penetration pinholes contribute proportionally to the average based on their area fraction, which is small. The local maximum penetration limit (expressed as maximum local penetration not to exceed 10× the average penetration) captures pinholes and bypass defects that would be masked in the overall average. For Class H14 (0.005% maximum average penetration): the local maximum penetration must not exceed 0.05% — any single point on the filter face that allows 0.05% penetration fails, even if the average is well below 0.005%. Scan testing is performed with a calibrated photometer probe traversing at 5 cm/min or slower across the downstream filter face.',
+      },
+      {
+        question: 'What face velocity is specified for ISO 29463 testing, and how does face velocity affect HEPA filter efficiency?',
+        answer: 'ISO 29463-3:2011 (Methods of Test) specifies testing at the filter\'s rated face velocity — the flow rate per unit filter face area for which the filter is designed. Typical rated face velocity for HEPA filters: 0.25–0.50 m/s for semiconductor cleanroom applications; 2.0–3.0 m/s for industrial ventilation applications. Efficiency at MPPS decreases with increasing face velocity because: (1) Inertial impaction efficiency increases with velocity, partially compensating; (2) Diffusion capture efficiency decreases with velocity (less particle residence time in media); (3) Net effect: the MPPS shifts to slightly smaller particle sizes at higher velocity, and minimum efficiency (at MPPS) decreases. High-face-velocity applications require more stringent media efficiency to achieve the same ISO 29463 class — a Class H14 classification at 0.25 m/s face velocity may only achieve Class H13 performance at 2.0 m/s if the same media is used.',
+      },
+      {
+        question: 'What is the relationship between ISO 29463 and the earlier EN 1822 HEPA standard?',
+        answer: 'ISO 29463 is the international evolution of EN 1822 (European HEPA standard). EN 1822:2009 defined the same E/H/U class structure and MPPS test methodology as ISO 29463, and the class designations and efficiency limits are identical. The principal differences are: ISO 29463 incorporates updates to test aerosol specifications (clarifying DEHS and PAO use), improved scan test probe specifications, and updated face velocity definitions. EN 1822 continues to be referenced in European ventilation and cleanroom specifications; ISO 29463 is preferred for international procurement specifications. For practical filter selection, an H14 filter per EN 1822 is equivalent to H14 per ISO 29463 — the test methodology and pass/fail criteria are identical. Both standards are referenced in ISO 14644 (cleanroom classification) for specifying air supply filters.',
+      },
+      {
+        question: 'What HEPA filter class is required for pharmaceutical cleanroom ISO 5 (formerly Class 100) environments?',
+        answer: 'ISO 14644-1 Class 5 cleanrooms (formerly US Federal Standard 209E Class 100) require terminal supply air filters of at minimum HEPA Class H14 (99.995% efficiency at MPPS) to achieve air particle limits of ≤3,520 particles/m3 ≥0.5 µm. In practice, most ISO Class 5 pharmaceutical cleanrooms use U15 ULPA filters (99.9995% at MPPS) in combination with unidirectional flow (laminar flow) at 0.45 m/s ±20% to achieve the ISO 5 particle count with adequate safety margin. The terminal filter installation must be tested in situ by the scan test method (ISO 14644-3, Method B.6) after installation — factory HEPA filter certification is insufficient because handling and installation can cause filter bypass through frame seal damage or media distortion. In situ testing confirms installed performance including all housing-to-filter seals.',
+      },
+      {
+        question: 'How are HEPA filters installed in cleanrooms to ensure seal integrity?',
+        answer: 'HEPA filter installation in cleanrooms uses one of three sealing methods: (1) Gel-seal (gel-blade) — the filter frame sits in a channel filled with viscous silicone gel; the filter\'s blade seal submerges into the gel, creating a liquid-tight seal that accommodates minor frame misalignments and thermal expansion without leakage; (2) Bag-in-bag-out (BIBO) — for biohazard containment applications; allows filter replacement without contaminating the clean room by using a bag attached to the housing that contains the contaminated filter during removal; (3) Rigid frame gasket — the filter frame compresses a sealing gasket at 50–100 N/m of perimeter — uniform compression is critical; insufficient fastener torque creates bypass at low compression points. In situ integrity testing is performed after each filter installation and after any maintenance activity that disturbs the filter frame or housing.',
+      },
+      {
+        question: 'What contamination breakthrough mechanism causes HEPA filter failure without visible media damage?',
+        answer: 'HEPA filter failure without visible media damage occurs through: (1) Frame seal failure — the silicone gasket or gel-blade seal between the filter frame and the housing develops a gap from mechanical shock, thermal cycling, or gel degradation; particles bypass the media entirely through this gap. Gasket-seated HEPA filters must be checked for frame seal integrity at each in situ scan test. (2) Media pinhole development from fiber brittleness — glass fiber HEPA media is subject to mechanical damage from vibration and handling shock; pinholes as small as 0.1 mm allow detectable penetration in Class H14 certification testing but may not be visually apparent. (3) Filter loading bypass — as HEPA filters load with particles, differential pressure increases; at some loading states, high ΔP can force particle re-entrainment through media in a phenomenon called "blowthrough" if face velocity increases above design during HVAC transients.',
+      },
+      {
+        question: 'What test method verifies the in-place efficiency of an installed HEPA filter system?',
+        answer: 'In-place (installed) HEPA filter testing per ISO 14644-3 Method B.6 uses: (1) Challenge aerosol injection upstream of the filter bank — 0.5–1.0 µm DEHS or PAO aerosol at challenge concentration of approximately 20 µg/L (detectable by photometer with >100× signal above background); (2) Probe scan downstream — a photometer probe is traversed across the entire downstream filter face and housing frame area at 5 cm/min or slower; (3) Penetration limit — any point showing penetration above 0.01% of challenge concentration fails Class H14 installation requirements (equivalent to 0.01% local penetration); (4) Fixed-point measurement — overall efficiency is measured at the downstream face center point as a single-value representative of average performance. In-place testing is performed after installation, after filter replacement, and at minimum every 6 months in pharmaceutical Grade A/B cleanrooms per EU GMP Annex 1.',
+      },
+      {
+        question: 'How does the ULPA filter efficiency limit relate to particle concentration in ISO 1 cleanrooms?',
+        answer: 'ISO 14644-1 Class 1 cleanrooms (the most stringent classification) require air particle concentrations of ≤10 particles/m3 ≥0.1 µm. To achieve this from a supply air particle concentration of approximately 30,000 particles/m3 ≥0.1 µm (typical cleanroom supply plenum with particle ingress), the terminal supply filter must achieve minimum removal efficiency of (1 - 10/30,000) = 99.967% at ≥0.1 µm — requiring at minimum Class H14 HEPA for the 0.1 µm size. However, ISO 1 cleanrooms additionally require ≤2 particles/m3 ≥0.2 µm, which demands minimum U16 ULPA (99.99995% at MPPS ≈ 0.1–0.2 µm) as terminal filters to achieve this limit with adequate margin. ISO Class 1 is used for EUV semiconductor lithography, quantum device fabrication, and precision optical coating — applications where sub-100nm particle contamination causes product defects.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 29463-1:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 1: Classification, Performance Testing and Marking',
+        relevance: 'Primary international standard defining EPA/HEPA/ULPA efficiency classes, MPPS test methodology, and efficiency requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 29463-3:2011, High Efficiency Filters and Filter Media for Removing Particles in Air — Part 3: Test Methods for Flat Sheet Filter Media',
+        relevance: 'Test methods for filter media characterisation at flat-sheet level prior to element fabrication.',
+      },
+      {
+        category: 'standard',
+        citation: 'EN 1822-1:2019, High Efficiency Air Filters (EPA, HEPA and ULPA) — Part 1: Classification, Performance Testing and Marking',
+        relevance: 'European standard equivalent to ISO 29463, maintaining identical class definitions and efficiency limits for European market.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 14644-1:2015, Cleanrooms and Associated Controlled Environments — Part 1: Classification of Air Cleanliness by Particle Concentration',
+        relevance: 'Cleanroom classification standard that references ISO 29463 HEPA/ULPA filter classes for specifying terminal supply filter requirements.',
+      },
+    ],
     title: 'ISO 29463 High-Efficiency Particulate Air Filters: HEPA and ULPA Classification, Testing, and Application',
     subtitle: 'ISO 29463 filter efficiency class system (E10–U17), EN 1822 test methodology, most penetrating particle size (MPPS), scan versus integrated efficiency testing, and cabin safety and compressed air applications.',
     metaDescription: 'Engineering reference for ISO 29463 and EN 1822 high-efficiency particulate air filter classification: efficiency classes E10 through U17, MPPS particle size determination, scan and overall efficiency testing, DEHS test aerosol, and application in cabin safety filtration (ISO 11155) and cleanroom supply air.',
@@ -3608,6 +5720,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 25 ────────────────────────────────────────────────────────────
   {
     slug: 'varnish-formation-lube-systems',
+    faqs: [
+      {
+        question: 'What is varnish in lubrication systems, and how is it chemically formed?',
+        answer: 'Varnish in lubrication systems is a thin, hard, lacquer-like deposit formed by oil oxidation products that precipitate out of solution and adhere to metal surfaces. Chemically, varnish consists of polymerised polar compounds — oxidised oil molecules cross-linked through peroxide and carbonyl groups. The formation sequence: oil oxidation produces peroxy radicals → peroxide formation → carbonyl compound formation (aldehydes, ketones, carboxylic acids) → further polymerisation → polar insoluble oligomers (varnish precursors in colloidal suspension) → precipitation on metal surfaces when the fluid is supersaturated with oxidation products. Varnish precursors are typically 0.01–0.5 µm diameter — below the detection limit of standard APC particle counters — meaning ISO 4406 cleanliness codes do not indicate varnish risk. Membrane Patch Colorimetry (MPC, ASTM D7843) is the primary diagnostic method for varnish precursor monitoring.',
+      },
+      {
+        question: 'How does the MPC (Membrane Patch Colorimetry) test measure varnish potential?',
+        answer: 'MPC testing (ASTM D7843) filters a 50 mL oil sample through a 0.45 µm membrane patch under vacuum. Varnish precursors (polar insoluble compounds 0.01–0.45 µm) accumulate on the patch as a brownish-yellow deposit. The patch is photographed and analysed by colorimetry to determine ΔE (delta E) — the colour difference between the stained patch and a clean reference white patch, using the CIE Lab* colour space. ΔE values indicate varnish risk: ΔE <15 = low risk (no action required); ΔE 15–30 = caution (increase monitoring frequency, investigate oxidation sources); ΔE 30–40 = high risk (schedule varnish remediation within 500 hours); ΔE >40 = critical (immediate action, potential servo valve stiction imminent). MPC ΔE trends correlate with impending servo valve deposits better than TAN alone because ΔE specifically measures the depositable polar compounds.',
+      },
+      {
+        question: 'What is the impact of varnish deposits on servo valve spool performance?',
+        answer: 'Servo valve spools with clearances of 2–5 µm are the most varnish-sensitive components in hydraulic systems. Varnish deposits in the spool-sleeve clearance accumulate as sub-micron polar compounds adsorb onto metal surfaces and polymerise under combined temperature and pressure. As deposits build, the effective clearance reduces — a 1 µm varnish layer in a 3 µm clearance reduces clearance by 33%, increasing hydrodynamic resistance and dynamic friction. Valve hysteresis (the force required to overcome stiction) increases from normal 0.5–1% of rated force to 5–20% in high-varnish conditions. Valve frequency response degrades — response time at 3% command input can increase from 10 ms (clean) to 50–100 ms (varnish-loaded). In severe cases, spools stick in mid-stroke causing system runaway or loss of position control — a safety event in motion control applications.',
+      },
+      {
+        question: 'What operating conditions accelerate varnish formation in circulating lube systems?',
+        answer: 'Varnish formation rate accelerates with: (1) Oil sump temperature above 90°C — oil oxidation rate follows the Arrhenius equation, approximately doubling per 10°C increase; at 120°C, varnish precursor formation is 8× faster than at 90°C; (2) Metal surface catalysis — copper, iron, and lead ions dissolved from bearing surfaces at ppm concentrations act as oxidation catalysts; systems with copper bushings or bronze sleeves have 3–5× higher varnish formation rates than all-steel systems in equivalent oil; (3) Air entrainment — entrained air in the oil accelerates oxidative degradation at the oil-air interface; reservoir design minimising return-line turbulence and reducing oil surface area reduces air entrainment rate; (4) High oil loading from contamination — silica and metal particles catalyse oxidation reactions on their surfaces; systems with ISO codes above 18/16/13 form varnish 2–3× faster than systems maintained at 16/14/11 cleanliness.',
+      },
+      {
+        question: 'How is varnish removed from a contaminated circulating lube or hydraulic system?',
+        answer: 'Varnish remediation involves three stages: (1) Chemical solubilisation — varnish solvency additives (polar solvent flush additives or base oil with high solvency) are circulated at elevated temperature (60–70°C) to dissolve accumulated varnish deposits from metal surfaces; commercially available varnish flush additives at 10–20% in the system oil provide ΔE reduction of 15–25 units in 200–500 hours. (2) Filtration removal — electrostatic oil cleaning (ESP) units or kidney-loop filtration with adsorptive media (diatomaceous earth, activated alumina) remove solubilised varnish precursors from the fluid; ESP achieves MPC ΔE reduction of 20–35 units in 200–400 hours in heavily varnished systems. (3) Fresh oil change — after chemical dissolution and filtration, replace oil to remove residual oxidation products that the filtration cannot remove. Partial oil change (50% volume) after chemical treatment typically reduces MPC ΔE from >40 to <20.',
+      },
+      {
+        question: 'What analytical methods detect varnish risk before servo valve failure occurs?',
+        answer: 'Varnish risk detection methods in order of lead time before failure: (1) RULER (Remaining Useful Life Evaluation Routine, ASTM D6971) — measures antioxidant reserve; depleted antioxidants (below 25% of new oil level) indicate imminent oxidation product accumulation; lead time 500–2,000 hours before varnish deposits. (2) MPC (Membrane Patch Colorimetry, ASTM D7843) — detects varnish precursors already formed but not yet deposited; lead time 100–500 hours before servo valve impact. (3) TAN (Total Acid Number, ASTM D664) — measures acid byproducts of oxidation; lead time 50–200 hours before visible deposits. (4) Servo valve response time monitoring — servo valve response degradation from 10 ms to 25 ms indicates active deposit accumulation; lead time 0–50 hours before unacceptable performance. Proactive programs monitor RULER and MPC quarterly; TAN at each 250-hour oil sampling interval.',
+      },
+      {
+        question: 'What is the varnish formation mechanism in turbine lube oil versus hydraulic oil, and does it differ?',
+        answer: 'Turbine lube oil varnish (gas turbine, steam turbine) and hydraulic oil varnish share the same fundamental oxidation chemistry but differ in operating severity and deposit location. Gas turbine lube oil operates at 90–120°C continuously, with bearing housing temperatures up to 150°C and high air exposure from open sump reservoirs — resulting in higher varnish formation rate than typical hydraulic systems at 50–70°C. Turbine varnish deposits preferentially in bearing housing servo valves, journal bearing oil feed holes (orifice diameter 0.5–2 mm), and on bearing journal surfaces where the deposit causes direct clearance reduction. Hydraulic oil varnish deposits preferentially in servo/proportional valve spool clearances and in small orifices of pressure compensators and flow dividers. The chemical composition of turbine and hydraulic oil varnish is similar (oxidised polar compounds) but the deposit morphology differs — turbine varnish is typically softer (lacquer consistency) while hydraulic oil varnish can be harder (resin-like) due to different base oil composition.',
+      },
+      {
+        question: 'How does antioxidant additive type affect varnish formation rate in group II and III base oils?',
+        answer: 'Group II and III base oils contain significantly lower concentrations of natural antioxidants (aromatic compounds and sulfur-containing compounds removed during hydroprocessing) than Group I oils, making them more dependent on synthetic antioxidant additive packages for oxidation resistance. Primary antioxidants (hindered phenols, ASTM D7843 measured by RULER) react sacrificially with peroxy radicals to interrupt the oxidation chain; secondary antioxidants (zinc dialkyldithiophosphate, ZDDP; amine-types) decompose peroxides before they polymerise to varnish precursors. When primary antioxidants are depleted (RULER shows <25% remaining), varnish formation rate increases 5–10× even if oil appears normal by viscosity or TAN. Group III base oil formulations with high-performance antioxidant systems (phenolic/amine combination) can achieve equal or better oxidation resistance than Group I, but the antioxidant reserve is fully consumed rather than the base oil degrading slowly — making antioxidant monitoring essential for extended drain interval programs with Group III oils.',
+      },
+      {
+        question: 'What is the correlation between ISO 4406 cleanliness code and varnish MPC ΔE value?',
+        answer: 'There is no direct mathematical correlation between ISO 4406 particle count code and MPC varnish potential (ΔE) because: (1) Varnish precursors are 0.01–0.45 µm — below the ISO 4406 measurement threshold of ≥4 µm; they do not appear in APC particle counts until they agglomerate to >4 µm; (2) High ISO code from external silica ingress (common in mining) has no direct relationship to varnish precursor concentration, which depends on oxidation rate and antioxidant status; (3) A system can show ISO 4406 code 16/14/11 (clean from a particle count perspective) while showing MPC ΔE >40 (critical varnish risk) from severe oil oxidation without particle agglomeration. However, catalytic effect of high metal particle concentrations on oil oxidation creates a secondary relationship — systems with ISO codes 2+ units above target tend to accumulate varnish faster due to metal particle catalysis of oxidation.',
+      },
+      {
+        question: 'What is the service interval recommendation for oil sampling in systems with identified high varnish risk?',
+        answer: 'Systems with identified high varnish risk (MPC ΔE 30–40 or RULER antioxidant <50% of new oil) require: (1) Quarterly oil sampling for MPC ΔE, RULER, and TAN until varnish risk returns to MPC ΔE <20 after remediation; (2) Monthly APC particle counting to monitor filtration system effectiveness during remediation (varnish dissolution releases particles that increase ISO code transiently); (3) Servo valve response time testing at each oil sampling interval — verify valve step response time, steady-state position error, and hysteresis against baseline records; (4) Reservoir inspection for visible varnish deposits at each planned maintenance — soft orange-brown lacquer on reservoir walls indicates active deposition; (5) Heat exchanger efficiency monitoring — varnish on tube surfaces reduces heat transfer by 10–30% per 0.1 mm of deposit, causing oil temperature rise that further accelerates varnish formation in a positive feedback loop.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D7843-19, Standard Test Method for Measurement of Lubricant Generated Insoluble Color Bodies in In-Service Turbine Oils Using Membrane Patch Colorimetry',
+        relevance: 'Primary test method for varnish precursor measurement using Membrane Patch Colorimetry (MPC), expressed as ΔE colour units.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry (RULER)',
+        relevance: 'Antioxidant reserve measurement method used to predict remaining oil service life before varnish formation onset.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D664-11a, Standard Test Method for Acid Number of Petroleum Products by Potentiometric Titration (TAN)',
+        relevance: 'Total Acid Number measurement used as a secondary varnish risk indicator measuring acid byproduct accumulation from oil oxidation.',
+      },
+      {
+        category: 'research',
+        citation: 'Livingstone, G., Varnish and What It Means for Your Lube Oil System, Machinery Lubrication Conference & Exhibition Proceedings, Noria Corporation, 2015',
+        relevance: 'Industry reference covering varnish formation mechanisms, MPC interpretation, and remediation case studies from gas turbine and hydraulic system applications.',
+      },
+    ],
     title: 'Varnish Formation in Lubrication Systems: Oxidation Mechanisms, Electrostatic Deposition, and Remediation',
     subtitle: 'Oil oxidation chemistry leading to varnish precursors, electrostatic discharge deposition on servo and control valve surfaces, patch colorimetry (MPC) quantification, varnish solubility window, and clean-up strategies.',
     metaDescription: 'Engineering reference for varnish formation in lubrication and hydraulic systems: oxidative and thermal oil degradation mechanisms, electrostatic deposition on valve surfaces, membrane patch colorimetry (ASTM D7843) for varnish potential quantification, solubility window concept, and varnish remediation via fluid flushing and filtration.',
@@ -3735,6 +5911,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 26 ────────────────────────────────────────────────────────────
   {
     slug: 'iso-4548-lube-filter-test-methods',
+    faqs: [
+      {
+        question: 'What does ISO 4548-1 specify, and how does it relate to full-flow lube filter qualification?',
+        answer: 'ISO 4548-1 defines the differential pressure versus flow characteristic test for full-flow lubricating oil filters — the method for measuring restriction at specified oil viscosity and flow rates. The test provides three key parameters: (1) Clean restriction — differential pressure with new element at rated flow; (2) Bypass valve cracking pressure — ΔP at which oil first flows through the bypass valve; (3) Flow-restriction curve — ΔP as a function of flow rate from 0 to 150% of rated flow. These parameters are used to verify that: the clean element restriction is below OEM maximum allowable at rated flow; the bypass valve opens at the specified cracking pressure (protecting against oil starvation in cold starts); and the element restriction at full rated flow does not cause excessive system pressure drop. ISO 4548-1 testing is conducted at 20°C oil temperature using SAE 30 mineral oil — not at operating temperature, which would require viscosity correction.',
+      },
+      {
+        question: 'What anti-drain back valve (ADBV) test does ISO 4548-12 specify?',
+        answer: 'ISO 4548-12 specifies the ADBV leakage test for spin-on lube filter elements: (1) Mount the element with outlet port facing upward (inlet port downward); (2) Fill the element with test oil; (3) Apply 0.5 bar static pressure to the inlet (equivalent to the oil column from a filter mounted above the engine); (4) Measure oil flow through the ADBV for 60 minutes; (5) Maximum allowable leakage: 1 mL/minute per ISO 4548-12 for elements used in engine applications. This leakage specification means that even a slightly imperfect ADBV will drain approximately 1.44 L/day during engine-off periods — acceptable for daily-start applications but potentially problematic for extended standby periods (weekly start) where dry-start intervals could reach 5–10 seconds. Applications with extended standby require ADBV leakage <0.1 mL/minute.',
+      },
+      {
+        question: 'What is the ISO 4548-12 structural integrity test for spin-on filter bodies?',
+        answer: 'ISO 4548-12 structural integrity testing for spin-on filter bodies includes: (1) Hydrostatic burst test — apply pressure to the element interior until structural failure; minimum burst pressure must exceed 4× the rated MAWP (typically 4× 10–14 bar = 40–56 bar for standard lube filters); (2) Torque-off test — apply axial torque to the element body equivalent to 3× the maximum installation torque (typically 3 × 30 Nm = 90 Nm) and verify no thread stripping or body deformation; (3) Vibration test — mount the element at installation torque and subject to vibration per ISO 13849 or OEM vibration profile; element must not loosen or fracture; (4) Thermal cycling test — cycle element between −40°C and 150°C for 1,000 cycles; verify no loss of seal integrity or structural cracking. All spin-on elements must pass these tests before release to market for any engine application.',
+      },
+      {
+        question: 'How does the ISO 4548-5 filtration efficiency test differ from ISO 16889 for lube filter elements?',
+        answer: 'ISO 4548-5 provides a single-pass filtration efficiency and retention test specifically for lube filters — distinct from ISO 16889 which is designed for hydraulic elements with a multi-pass circulating test. ISO 4548-5: (1) Single-pass — contaminated oil passes through the element once; efficiency is measured at the element outlet; (2) Test dust — ISO MTD (Medium Test Dust, ASTM A2 fine) at defined concentration; (3) Efficiency reporting — Beta ratio at specified particle size thresholds, similar to ISO 16889 but without the multi-pass contamination accumulation; (4) Dirt holding capacity — measured simultaneously during the efficiency test until bypass valve opens. Single-pass efficiency values from ISO 4548-5 are not directly comparable to ISO 16889 multi-pass Beta ratios — the multi-pass method produces higher average Beta ratios because the filter cake builds during the test, improving efficiency progressively. ISO 16889 is increasingly adopted for lube filter characterisation, making the two datasets incompatible unless test conditions are clearly stated.',
+      },
+      {
+        question: 'What ISO 4548 part covers by-pass lube filtration systems?',
+        answer: 'ISO 4548-7 covers bypass filtration systems for engine lube oil — elements that process only a fraction of total oil flow at high efficiency (β3(c) ≥ 200) to remove sub-micron contamination not captured by the full-flow element. Test methodology in ISO 4548-7 adapts the single-pass test for the typical bypass element flow range (0.5–3 L/min at 1–5 bar bypass pressure, versus 10–30 L/min for full-flow elements at 0.3–1.0 bar). Bypass element DHC is tested until the element restriction reaches the system bypass pressure limit. ISO 4548-7 also defines the combined system performance measurement — measuring overall engine oil cleanliness improvement when both full-flow and bypass filtration are operating simultaneously. In heavy-duty diesel generator and locomotive engines, bypass elements achieving β3(c) ≥ 1,000 extend oil drain intervals by up to 50% compared to full-flow-only systems.',
+      },
+      {
+        question: 'How is lube filter efficiency verified at elevated temperatures per ISO 4548?',
+        answer: 'ISO 4548-5 specifies efficiency testing at 25±2°C test oil temperature, which does not represent engine operating conditions (80–120°C oil temperature). High-temperature efficiency testing is conducted as a supplementary test (not required by ISO 4548-5 but required by some OEM specifications) by heating the test oil to 80°C or 100°C and repeating the efficiency measurement. At elevated temperature, oil viscosity decreases from approximately 100 cSt (25°C) to 15–20 cSt (80°C), reducing inertial capture efficiency and increasing particle penetration through the media. Beta ratio at 80°C can be 20–40% lower than at 25°C for the same element. ELIMFILTERS SYNTRAX elements maintain Beta ratio within 15% across 25–100°C test range due to the combined inertial and electrostatic capture mechanisms in the synthetic media — cellulose elements show larger Beta ratio reductions with temperature.',
+      },
+      {
+        question: 'What is the ISO 4548-3 test for flow characteristics of by-pass valves?',
+        answer: 'ISO 4548-3 defines the flow versus differential pressure characteristic test for lube filter bypass valves specifically — distinct from ISO 4548-1 which covers the complete element assembly. ISO 4548-3 test procedure: (1) Install the bypass valve assembly in a standardised test fixture that isolates the valve from the element media; (2) Apply oil at 25°C at incrementally increasing differential pressure; (3) Record flow rate at each ΔP step, including: cracking pressure (first detectable flow), 10% rated flow pressure, and 90% rated flow pressure; (4) Reverse the test to measure re-seating pressure (pressure at which flow drops below 10 mL/min as ΔP is reduced). The opening pressure-flow curve must conform to OEM specifications — a steep opening curve (full open within 0.2 bar of cracking) ensures rapid bypass when required; a gradual curve risks extended partial-bypass operation where the valve is partially open but insufficient for engine oil demand.',
+      },
+      {
+        question: 'What ISO 4548 part addresses filter media testing for lube applications?',
+        answer: 'ISO 4548-4 covers the determination of filter element resistance to structure disintegration — specifically testing whether the filter media and element structure remain intact when subjected to high fluid pressure at elevated temperature. Test conditions: (1) Immerse the complete element in oil at 125°C for 48 hours (thermal soak test — simulates element exposure to high-temperature oil near the turbocharger lubrication circuit); (2) After thermal soak, apply the specified collapse pressure per ISO 4548-4 (typically 4× rated MAWP); (3) Inspect for: media separation from end caps, pleat structure distortion, media disintegration (fibers released into fluid), and bypass valve function. Elements that fail thermal resistance testing show adhesive bond softening or media degradation before the end of service life at high oil temperatures — this is particularly relevant for engines with oil temperatures above 110°C where standard plastisol bonding systems approach their temperature limit.',
+      },
+      {
+        question: 'How does ISO 4548-12 define the torque specification for spin-on filter installation?',
+        answer: 'ISO 4548-12 specifies installation torque characterisation rather than a single universal torque value, because spin-on filter torque depends on gasket material, gasket cross-section diameter, mounting surface finish, and thread pitch. The standard requires filter manufacturers to: (1) Specify the installation torque on the filter body or packaging; (2) Demonstrate that the element body threads engage fully and the gasket is properly compressed at the specified torque; (3) Verify that the installation torque does not exceed the element structural limit (ISO 4548-12 torque-off test requires survival at 3× installation torque). Typical installation torque: 20–30 Nm for 3/4-16 UNF thread mounting (standard SAE spin-on filter thread); 30–45 Nm for larger M22×1.5 or 1-12 UNF threads. Over-torquing beyond 1.5× specification extrudes the gasket beyond the sealing contact area, causing permanent gasket damage and potential leakage on subsequent removal.',
+      },
+      {
+        question: 'What ISO 4548 part covers cleanliness requirements for new filter elements?',
+        answer: 'ISO 4548-10 defines the internal cleanliness test for new, unused filter elements — verifying that manufacturing contamination does not introduce particles into the lubrication system when a new element is installed. Test method: (1) Flush the element interior with a known volume of clean solvent or oil at specified flow rate; (2) Collect the flush fluid and filter through a 25 µm membrane; (3) Weigh and examine the collected contamination; (4) Maximum allowable contamination mass and particle count per ISO 4548-10 (limits vary by element size and application). New element cleanliness is particularly important for post-maintenance engine restart — if the new filter element contains manufacturing contamination (metal chips from can fabrication, cutting fluid residues, elastomer flash from gasket molding), these particles are washed into the lube system immediately on first start. ISO 4548-10 compliance testing is documented in the element qualification report.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4548-1:1997, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 1: Differential Pressure/Flow Characteristics',
+        relevance: 'Test method for lube filter restriction-flow curve, bypass valve cracking pressure, and overall flow performance characterisation.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-12, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 12: Self-Contained Spin-On Filters',
+        relevance: 'Test methods specific to spin-on filter format including ADBV leakage, burst pressure, installation torque, and gasket integrity.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-5, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 5: Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity',
+        relevance: 'Single-pass efficiency and DHC test method for lube filter elements using particle counting.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4548-7, Methods of Test for Full-Flow Lubricating Oil Filters for Internal Combustion Engines — Part 7: Test Procedure for Measuring the Filtration Characteristics of By-Pass Oil Filters',
+        relevance: 'Test method for bypass (partial flow) lube filter efficiency characterisation at low flow rates and high efficiency ratings.',
+      },
+    ],
     title: 'ISO 4548 Lubricating Oil Filter Test Methods: Performance Verification for Full-Flow Filters',
     subtitle: 'ISO 4548 multi-part test series covering end-load, bypass valve, cold-start simulation, burst pressure, vibration fatigue, filtration efficiency, and anti-drainback valve performance for full-flow lube oil filters.',
     metaDescription: 'Engineering reference for ISO 4548 lubricating oil filter test standard series: end-load (Part 1), bypass valve cracking pressure (Part 2), cold-start simulation (Part 5), static burst (Part 6), vibration fatigue (Part 8), multi-pass filtration efficiency (Part 12), and anti-drainback valve (Part 13) test methods.',
@@ -3867,6 +6107,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 27 ────────────────────────────────────────────────────────────
   {
     slug: 'contamination-sensitivity-components',
+    faqs: [
+      {
+        question: 'What hydraulic component has the smallest clearance and highest contamination sensitivity?',
+        answer: 'Servo valve spool-sleeve assemblies have the smallest clearances (1–5 µm) and highest contamination sensitivity of any common hydraulic component. A single 5 µm silica particle lodged in a 2 µm servo valve spool clearance creates a contact stress exceeding the yield strength of the valve steel at that point, causing immediate micro-wear. The contamination sensitivity of servo valves (ISO 4406 code 14/12/9 required) is driven by this minimum clearance specification. By comparison, piston pump slippers operate with 5–15 µm clearances (ISO 4406 code 17/15/12 tolerable), and gear pump tooth contacts operate with 15–30 µm clearances (ISO code 19/17/14 tolerable). The three-order-of-magnitude difference in contamination sensitivity between gear pumps and servo valves drives the contamination budget allocation approach — systems with both component types must be maintained at the servo valve specification.',
+      },
+      {
+        question: 'What is the contamination sensitivity classification for variable displacement piston pumps?',
+        answer: 'Variable displacement piston pump sensitivity is driven by two critical clearances: (1) Piston-cylinder bore clearance (5–15 µm) — silica particles in this range cause abrasive wear on the piston sliding surface; (2) Valve plate-cylinder block interface (1–5 µm at ports) — the valve plate distributes fluid from suction to pressure port; particles at the valve plate face cause direct wear of the precision lapped surface. ISO 4406 code 17/15/12 is the minimum specification for variable displacement piston pumps; 16/14/11 is recommended for extended pump life in high-duty-cycle applications. Variable displacement control mechanisms (servo pistons, proportional control valves within the pump) are even more sensitive — servo valve control components within modern axial piston pumps require the servo valve-equivalent ISO 14/12/9 specification for the pilot circuit.',
+      },
+      {
+        question: 'How does particle hardness affect the contamination sensitivity threshold for a given clearance size?',
+        answer: 'Particle hardness relative to the component metal determines whether a particle causes abrasion, embedding, or fatigue damage. Hard particles (silica at 7 Mohs, alumina at 9 Mohs) above the clearance dimension cause three-body abrasion — the hard particle is harder than both mating surfaces and cuts micro-grooves in both. Soft particles (carbon at 2 Mohs, rubber at <1 Mohs) above clearance size cause temporary spool stiction (sticking) and valve shift errors but minimal abrasive wear. Iron particles (5–7 Mohs) from wear debris are harder than softer metals (aluminium, bronze) and can cause abrasive damage to those surfaces, but less so to hardened steel. The contamination sensitivity target (ISO 4406 code) is based on silica contamination as the worst case — in systems where confirmed contamination source is soft organic particles (rubber, carbon), the contamination alarm code can be relaxed by 1–2 units without equivalent component damage risk.',
+      },
+      {
+        question: 'What is the contamination sensitivity of common rail fuel injectors, and what failure modes result from contamination?',
+        answer: 'Common rail fuel injectors specify maximum fuel contamination at the injector inlet of ISO 4406 code 17/15/12 or better (based on Bosch HPCR injector technical documentation). The injector needle-seat clearance is 1–3 µm at the needle seat contact; the needle guide clearance is 3–6 µm. Hard particles (silica, metal) in the 1–5 µm range cause: (1) Needle tip erosion — high-velocity injection flow (200–500 m/s) in the presence of hard particles removes metal from needle and seat surfaces over 500–1,000 hours, changing spray pattern and increasing injection duration; (2) Needle-seat leakage — erosion of the seat contact area causes fuel bypass during the closed phase, creating fuel consumption increase and emissions non-compliance; (3) Needle tip deposit — soft particles from fuel degradation form thermal deposits at the needle tip, altering spray cone angle and increasing smoke emissions.',
+      },
+      {
+        question: 'How does rolling element bearing contamination sensitivity differ between gearbox and hydraulic motor applications?',
+        answer: 'Rolling element bearing contamination sensitivity is characterised by the bearing cleanliness factor λ — the ratio of lubricant film thickness to surface roughness. For bearings in gearboxes (ISO VG 320 gear oil, λ typically 0.4–1.5 at operating temperature and speed), particles above 5 µm can cause denting of the bearing raceway — a hard particle pressed into the race creates a stress concentration that initiates fatigue spalling after 10–50% of L10 bearing life. For hydraulic motor bearings (ISO VG 46 hydraulic fluid, λ typically 0.2–0.8 due to lower oil viscosity), thinner lubricant films make bearings more sensitive to particle contamination — ISO 4406 code 17/15/12 for gearboxes versus 16/14/11 for integrated hydraulic motor bearings. Bearing L10 life extension from improving ISO code by 2 units (e.g., from 18/16/13 to 16/14/11) ranges from 2–5× depending on bearing size, speed, and load.',
+      },
+      {
+        question: 'What is the contamination sensitivity limit for proportional pressure relief valves?',
+        answer: 'Proportional pressure relief valves control maximum system pressure continuously via an electronic command signal — their contamination sensitivity stems from the proportional solenoid-operated pilot valve that generates the reference pressure. The pilot valve spool clearance is typically 5–15 µm — similar to a standard industrial proportional valve. ISO 4406 code 16/14/11 is the standard specification. However, proportional relief valves have an additional failure mode from contamination: spool stiction at mid-command positions causes pressure hunting — the valve alternates between set-point and bypass, creating flow pulsations that transmit to all actuators in the circuit. Sub-10 µm silica particles at concentrations above ISO 4406 17/15/12 can cause detectable hysteresis in the command-versus-pressure transfer function within 200–500 operating hours. In precision manufacturing applications, proportional pressure relief valve stiction from contamination is diagnosable by servo-drive current ripple analysis without disturbing the mechanical system.',
+      },
+      {
+        question: 'What component damage threshold in terms of ISO 4406 code applies to vane pump control systems?',
+        answer: 'Vane pumps (variable displacement pressure-compensated type) are less contamination-sensitive than piston pumps but more sensitive than gear pumps. The vane tip-to-ring clearance is 3–8 µm; the vane slot clearance in the rotor is 5–15 µm. ISO 4406 code 18/16/13 is the operating minimum for vane pump circuits; 17/15/12 is recommended for extended service life. The control mechanism (pressure compensator spool) requires ISO 16/14/11 for the pilot circuit. At ISO codes above 19/17/14 (dirty system), vane pump vanes show accelerated tip wear from particle abrasion — vane tip wear rate increases approximately 3× per ISO code unit increase above 18/16/13 in the vane tip-to-ring interface. Vane pump life is also sensitive to particle hardness at the ring contact — soft particles (carbon, rubber) at ISO code 19/17/14 cause minimal wear, while silica at the same code causes significant tip wear.',
+      },
+      {
+        question: 'How does contamination sensitivity of pilot-operated check valves compare to direct-acting check valves?',
+        answer: 'Direct-acting check valves (spring-loaded poppet or ball against seat) have contamination sensitivity driven by poppet-to-seat contact geometry — hard particles at the seat create micro-dents that allow pilot leakage when the valve should be closed; ISO 4406 code 19/17/14 is typically adequate for direct-acting check valves. Pilot-operated check valves (POCVs) include a pilot piston that opens the check valve against reverse flow when pilot pressure is applied — the pilot piston has a spool-type clearance of 5–15 µm, making the pilot actuation mechanism more sensitive than the main check valve poppet. POCVs specify ISO 4406 code 17/15/12 for the pilot circuit, even if the main check circuit is specified at 19/17/14. In systems with contamination above ISO 17/15/12, POCV pilot pistons may stick — the check valve fails to open on pilot command, causing actuator lockout. This failure mode is insidious because the main system pressure and directional valve function are unaffected — only the POCV fails to respond.',
+      },
+      {
+        question: 'What is the effect of particle concentration on hydraulic pump volumetric efficiency?',
+        answer: 'Hydraulic pump volumetric efficiency (ratio of actual output flow to theoretical displacement flow) is affected by particle contamination through two mechanisms: (1) Valve plate and slipper pad wear — particles above 5 µm in the slipper pad clearance (5–15 µm) cause abrasive removal of metal from both the slipper face and the swash plate, increasing the clearance over time and allowing more leakage flow back from high-pressure to low-pressure port — each 1 µm increase in slipper clearance reduces volumetric efficiency by approximately 0.3–1% depending on pump speed and pressure; (2) Barrel face-to-valve plate leakage — wear of the valve plate lapped face (4-component contact zone) from particle abrasion increases leakage through the valve plate-barrel interface — this leakage path allows high-pressure oil to flow to case drain without doing useful work. At ISO code 20/18/15 (severely contaminated), typical heavy-duty axial piston pump volumetric efficiency falls 2–5% below new specification within 2,000–3,000 hours.',
+      },
+      {
+        question: 'What monitoring methods detect incipient component wear from contamination before catastrophic failure?',
+        answer: 'Incipient wear detection from contamination uses four complementary methods: (1) ICP spectrometric oil analysis (ASTM D5185) — rising iron (Fe), copper (Cu), or silicon (Si) concentration above baseline indicates active wear; iron above 50 ppm in hydraulic oil indicates valve plate or slipper wear; (2) Particle count trend (ISO 4406) — rising ISO code independent of identifiable contamination source indicates internal wear generating particles; (3) Ferrography (ASTM D7690) — large particles (>10 µm) from wear not detectable by ICP; (4) System performance monitoring — volumetric efficiency trending from on-machine flow measurement identifies declining pump condition without fluid sampling. Combined: rising Fe by ICP + rising APC code + pump efficiency decline = active piston pump slipper/valve plate wear from particle abrasion. Single-indicator monitoring misses incipient failures that manifest only in one data stream.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Contamination coding standard used to specify cleanliness targets for each component type based on its clearance dimensions and contamination sensitivity.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System design standard referencing component contamination sensitivity requirements and cleanliness specification methodology.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D7690-17, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography',
+        relevance: 'Wear particle analysis method for identifying large-particle wear mechanisms not detectable by ICP or particle counting.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Fitch, J.C., Component Contamination Sensitivity and Hydraulic Cleanliness, Machinery Lubrication, Noria Corporation',
+        relevance: 'Reference guide mapping hydraulic and lube component clearances to ISO 4406 contamination sensitivity thresholds and failure mode descriptions.',
+      },
+    ],
     title: 'Contamination Sensitivity of Hydraulic and Lubrication Components: Clearance Data and ISO 4406 Targets',
     subtitle: 'Component internal clearance dimensions, particle size damage thresholds, ISO 4406 cleanliness targets, and failure mechanisms for hydraulic pumps, motors, valves, cylinders, and engine bearing systems.',
     metaDescription: 'Engineering reference for hydraulic and lubrication component contamination sensitivity: servo valve spool clearances 1–3 µm, proportional valve 3–8 µm, piston pump 5–20 µm, gear pump 10–50 µm, journal bearing 5–75 µm clearances, ISO 4406 cleanliness targets per component type, and particle size vs damage threshold relationships.',
@@ -3998,6 +6302,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 28 ────────────────────────────────────────────────────────────
   {
     slug: 'extended-drain-interval-engineering',
+    faqs: [
+      {
+        question: 'What oil analysis parameters must remain within specification to justify extending a drain interval?',
+        answer: 'Extended drain interval (EDI) justification requires ALL of the following parameters within specification simultaneously: (1) TBN above 50% of new oil value (ASTM D2896); (2) Kinematic viscosity at 100°C within SAE grade limits (ASTM D445); (3) ISO 4406 particle count within system target code; (4) Total Acid Number (TAN, ASTM D664) below TBN by minimum 2 mg KOH/g margin; (5) Antioxidant reserve by RULER (ASTM D6971) above 25% of new oil value; (6) Water content below 0.1% (ASTM D6304); (7) Fuel dilution below 1.5% (ASTM D7279 or viscosity calculation); (8) No glycol contamination detected. All parameters must pass, not just the most-commonly-measured ones. EDI programs that monitor only TBN and viscosity miss the 40–60% of failures detectable only by antioxidant reserve and varnish precursor monitoring.',
+      },
+      {
+        question: 'What is the step-extension approach to establishing extended drain intervals?',
+        answer: 'The step-extension protocol for EDI programs: (1) Baseline phase — sample at OEM-specified interval for 3 consecutive changes to establish equipment-specific baseline values and rate-of-change for all monitored parameters; (2) First extension — extend 25% beyond OEM interval; take oil samples at OEM interval and at extended interval and compare; if all parameters are within specification at the extended interval, proceed; (3) Second extension — extend 50% beyond OEM interval; repeat sampling protocol; (4) Third extension — extend 100% beyond OEM interval (2× OEM); repeat verification. At each step, if any parameter fails or shows rate-of-change suggesting it will fail before the next extension, halt the program at the previous extension level. The statistical requirement is 3 consecutive extensions at each level that all pass before moving to the next. Equipment-specific variation means that EDI levels must be established individually for each machine and engine configuration.',
+      },
+      {
+        question: 'How does fuel sulfur content affect oil drain interval in heavy-duty diesel engines?',
+        answer: 'Fuel sulfur content directly impacts oil TBN depletion rate — sulfur combustion products (SO2, SO3) combine with water from combustion to form sulfuric acid (H2SO4), which is neutralised by TBN additives. Depletion rate: at <15 ppm sulfur (ULSD, USA/EU), TBN depletion per 100 hours is approximately 0.3–0.5 mg KOH/g for API CK-4 15W-40 (initial TBN = 12). At 500 ppm sulfur (global standard fuel in some markets), depletion rate is 1.5–2.5 mg KOH/g per 100 hours — 5× faster. At 3,500 ppm sulfur (high-sulfur bunker fuel in some developing markets), TBN depletion rate is 5–10 mg KOH/g per 100 hours — requiring oil change every 100–150 hours to maintain TBN above 6 mg KOH/g (50% of new oil). EDI programs valid for ULSD engines in EU/USA cannot be applied to the same engine operating on high-sulfur fuel in other markets — separate interval schedules are required.',
+      },
+      {
+        question: 'What is the oil volume-to-engine-displacement ratio effect on drain intervals?',
+        answer: 'Drain interval scales approximately proportionally with the ratio of oil charge volume to engine fuel consumption — because this ratio determines how quickly oxidation products and acid accumulate per litre of oil. An engine with a 30 L oil sump consuming 12 L/hour of fuel (2.5 L oil per L/hr fuel) will deplete TBN twice as fast as the same engine with a 60 L oil sump at the same fuel consumption (5.0 L oil per L/hr fuel). This relationship supports the business case for larger oil reservoirs and supplementary bypass filtration in high-severity applications — doubling oil sump volume doubles theoretical drain interval (subject to other parameter limits). For stationary industrial diesel generators, extended sumps with capacity 3–5× OEM specification are installed specifically to support 1,500–2,000-hour EDI programs for generators that would otherwise require 500-hour intervals.',
+      },
+      {
+        question: 'How does condition-based maintenance differ from predictive maintenance in the context of drain intervals?',
+        answer: 'Condition-based maintenance (CBM) changes oil when measured parameters indicate the end of useful oil life has been reached — reacting to actual condition data. Predictive maintenance uses statistical models of condition trends to forecast when parameters will reach action limits before they actually do, allowing planned maintenance scheduling in advance of the predicted failure point. For oil drain intervals: CBM = change oil when TBN falls below 6 mg KOH/g (observed); predictive = sample at 300 hours, observe TBN decreasing at 0.05 mg KOH/g per hour, project that TBN will reach 6 mg KOH/g at 440 hours, schedule oil change at 400 hours (with 40 hours of margin). Predictive maintenance enables planned downtime scheduling rather than reactive emergency changes, and prevents the 10–20% of CBM cases where a parameter fails between sampling intervals and the equipment operates on out-of-specification oil undetected.',
+      },
+      {
+        question: 'What role does bypass filtration play in extending engine oil drain intervals?',
+        answer: 'Bypass filtration (partial-flow kidney-loop at β3(c) ≥ 200) removes sub-3 µm particles from lube oil — the contamination that catalyses oil oxidation through metal particle surface effects. By reducing catalyst concentration, bypass filtration reduces the oxidation rate by 20–40%, with corresponding TBN and antioxidant depletion rate reduction. Field studies from Caterpillar Engineering (referenced in Caterpillar technical paper AEW-0086) on large diesel generator engines show that bypass filtration at 10% of total oil flow rate, combined with TBN monitoring, extends oil drain intervals by 40–100% versus full-flow-only filtration at equivalent TBN depletion rates. Additionally, bypass filtration reduces ISO 4406 codes by 2–3 units compared to full-flow-only systems, reducing component wear and postponing the component replacement events that the EDI program is trying to prevent.',
+      },
+      {
+        question: 'What is the fleet-level economic justification for an oil analysis-based EDI program?',
+        answer: 'Fleet-level EDI program economics for a 50-truck mining fleet (SAE 15W-40, 30 L sump, OEM interval 250 hours): (1) Oil cost baseline: 50 trucks × 30 L × 4 changes/year × AUD 5/L = AUD 30,000/year oil cost; (2) Labor baseline: 50 × 4 × 1.5 hours × AUD 120/hr = AUD 36,000/year labor; (3) Downtime baseline: 50 × 4 × 4 hours/change × AUD 500/hour downtime cost = AUD 400,000/year downtime; (4) Total baseline: AUD 466,000/year; (5) EDI program cost: oil analysis program AUD 40/sample × 4 samples/change × 50 trucks = AUD 8,000/year sampling; (6) With EDI extending to 400 hours (60% extension): 2.5 changes/year × AUD 466,000 baseline equivalent = AUD 291,250 — saving AUD 174,750/year net of sampling cost (AUD 166,750 net). The break-even point for sampling program cost versus downtime and oil savings occurs at approximately 20% interval extension — achievable in the majority of well-maintained fleets.',
+      },
+      {
+        question: 'What high-performance base oil types enable the longest extended drain intervals?',
+        answer: 'Extended drain interval capability by base oil type: (1) Group I (solvent refined mineral, VI 95–105) — baseline EDI capability, typically 1.5–2× OEM interval with monitoring; (2) Group II (hydroprocessed, VI 100–120) — 2–3× OEM interval, improved oxidation resistance over Group I; (3) Group III (highly refined, VI >120) — 2–4× OEM interval, approaching PAO in oxidation resistance for most applications; (4) Group IV (polyalphaolefin PAO) — 3–5× OEM interval for stationary applications, excellent thermal and oxidation stability, natural VI above 140; (5) Group V ester base stocks (polyol ester, TMP ester) — up to 8–10× OEM interval in controlled industrial applications, highest oxidation resistance and thermal stability of all base oil types. Group IV PAO and Group V ester oils cost 3–10× more per litre than Group I mineral oil — economic justification requires quantifying the interval extension value against the incremental oil cost.',
+      },
+      {
+        question: 'How does engine EGR (Exhaust Gas Recirculation) technology affect oil drain intervals?',
+        answer: 'EGR (high-pressure and low-pressure type) recirculates a fraction of exhaust gas back to the intake manifold to reduce NOx emissions. EGR gas contains: soot particles (PM) from combustion, SO2 from fuel sulfur, NOx that forms nitrous acid in condensing EGR coolers, and water vapor that condenses in the EGR cooler at partial load. The blow-by effect from EGR: (1) Soot loading rate in lube oil increases 2–4× in EGR-equipped engines versus pre-EGR equivalent engines — soot above 3% by weight (TGA, ASTM D5967) accelerates viscosity increase and filter plugging; (2) Nitration byproducts (FTIR at 1,630 cm-1) accumulate faster, consuming TBN; (3) EGR oil typically requires 20–40% shorter drain intervals than equivalent pre-EGR engines using the same oil specification. API CK-4 (current heavy-duty diesel oil standard) is specifically formulated for EGR engines with higher soot-handling capability and improved oxidation resistance compared to prior API CJ-4 formulation.',
+      },
+      {
+        question: 'What minimum sampling frequency is required to justify an extended drain interval with statistical confidence?',
+        answer: 'Statistical confidence for EDI justification requires minimum 3 data points within each extended interval period to detect: (1) Non-linear parameter degradation trends (accelerating depletion near end of oil life); (2) Step-change contamination events (coolant ingress, fuel contamination) that occur between regular sample points; (3) Rate-of-change calculation with ±15% accuracy. For a 500-hour extension program: samples at 0 hours (oil change reference), 250 hours, 400 hours, and at oil change (500 hours). Mid-interval sampling at 250 hours verifies that no unexpected contamination has occurred and the initial extrapolation of parameter trends is valid. Programs with only two data points (oil change and end-of-interval) have insufficient statistical power to detect acceleration of degradation — the end-of-interval sample may show parameters within specification while the actual degradation trajectory exceeded limits at some point mid-interval.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D2896-15, Standard Test Method for Base Number of Petroleum Products by Potentiometric Perchloric Acid Titration',
+        relevance: 'TBN measurement method — primary oil change trigger parameter in extended drain interval programs.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM D6971-09, Standard Test Method for Measurement of Hindered Phenolic and Aromatic Amine Antioxidant Content in Non-Zinc Turbine Oils by Linear Sweep Voltammetry',
+        relevance: 'Antioxidant reserve measurement (RULER test) for predicting remaining oil life in EDI programs.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry',
+        relevance: 'FTIR method for monitoring oxidation, nitration, sulfation, glycol, and fuel dilution — essential parameters for EDI program monitoring.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010',
+        relevance: 'Comprehensive reference for oil analysis program design, parameter interpretation, sampling frequency methodology, and extended drain interval economic justification.',
+      },
+    ],
     title: 'Extended Drain Interval Engineering: Oil Condition Monitoring, Limit Setting, and Risk Management',
     subtitle: 'Methodology for establishing and monitoring extended oil drain intervals: oil deterioration rates, TAN and viscosity action limits, particle-based drain triggers, contamination budget considerations, and TCO versus risk trade-off analysis.',
     metaDescription: 'Engineering reference for extended drain interval methodology: oil deterioration monitoring (TAN, viscosity, FTIR, particle count), drain interval limit-setting from condition data, contamination budget analysis, API CK-4 extended drain capability, and total cost of ownership versus equipment risk trade-off framework.',
@@ -4119,6 +6487,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 29 ────────────────────────────────────────────────────────────
   {
     slug: 'compressed-air-dryer-selection',
+    faqs: [
+      {
+        question: 'What is the pressure dewpoint (PDP) and how does it differ from atmospheric dewpoint?',
+        answer: 'Pressure dewpoint (PDP) is the temperature at which water vapour in compressed air begins to condense into liquid water at the distribution system operating pressure. At 7 bar gauge (8 bar absolute), water vapour partial pressure is 8× higher than at atmospheric pressure. Air at +10°C atmospheric dewpoint (comfortable), when compressed to 7 bar g, will have a pressure dewpoint of approximately +45°C — meaning liquid water will condense in any piping below 45°C, which includes almost all un-insulated interior industrial piping. This is why refrigerant dryers reducing PDP to +3°C (ISO 8573-1 Class 4 water) are essential for most industrial pneumatic systems — without a dryer, liquid water condensation in distribution piping causes corrosion, pneumatic tool damage, and process quality problems.',
+      },
+      {
+        question: 'What are the selection criteria for refrigerant dryers versus desiccant dryers?',
+        answer: 'Refrigerant dryers: achieve PDP of +2 to +7°C; low energy consumption (only refrigeration compressor power); no compressed air waste; suitable for ISO 8573-1 Water Class 4 and 5 applications. Limited to applications where PDP above 0°C is acceptable — piping that could reach below 0°C (outdoor installations, unheated buildings in winter climates) requires desiccant drying. Desiccant dryers: achieve PDP −20°C to −70°C; heatless desiccant uses 15–25% purge air loss (significant energy cost); heated purge reduces loss to 8–15%; zero-purge (blower purge) models use 0% compressed air but add electrical heating energy; suitable for ISO Water Class 1 to 3. Selection criteria: required PDP ≤ 0°C → desiccant mandatory; PDP +2 to +7°C → refrigerant preferred for energy efficiency; PDP below −20°C → heated or blower purge desiccant dryer for minimum energy cost.',
+      },
+      {
+        question: 'How does compressed air flow rate affect dryer sizing, and what happens when a dryer is undersized?',
+        answer: 'Dryer capacity is rated at a reference condition: typically 7 bar g, 35°C inlet temperature, 25°C ambient temperature. Actual dryer capacity must be de-rated when site conditions differ: (1) Higher inlet temperature — air entering the dryer at 50°C instead of 35°C carries significantly more water vapour (approximately 2.5× more moisture at 50°C vs 35°C); refrigerant dryer must remove more moisture and may achieve only 70–80% of rated flow before PDP increases above specification; (2) Lower operating pressure — lower pressure reduces air density; at 5 bar g instead of 7 bar g, the refrigerant dryer handles equivalent moisture per unit volume but the volumetric flow is higher, requiring de-rating to 80% of rated capacity. Undersized refrigerant dryers allow moisture breakthrough at peak demand periods — a dryer rated for 500 m3/hour at reference conditions may only provide adequate drying at 350–400 m3/hour actual site conditions if inlet temperature and pressure conditions are unfavourable.',
+      },
+      {
+        question: 'What desiccant materials are used in compressed air drying, and how do they compare?',
+        answer: 'Three desiccant materials are used for compressed air drying: (1) Silica gel — SiO2 porous structure, adsorption capacity 20–35% of own weight in water, PDP achievable −40°C, lowest cost, regenerates at 120–150°C, limited to PDP above −40°C; (2) Activated alumina — Al2O3 porous structure, adsorption capacity 15–25%, PDP achievable −70°C, intermediate cost, regenerates at 150–200°C; (3) Molecular sieve (Type 3A, 4A) — aluminosilicate crystalline structure with precise pore diameter (3 or 4 Angstrom), adsorption capacity 10–20% at low relative humidity where silica gel and alumina are ineffective, PDP achievable −70°C to −100°C, highest cost, regenerates at 200–300°C. For pharmaceutical and electronics applications requiring PDP below −40°C, molecular sieve desiccant is required. Activated alumina is the standard choice for most industrial instrument air applications (ISO Class 2, PDP −40°C).',
+      },
+      {
+        question: 'What maintenance intervals apply to compressed air desiccant dryers?',
+        answer: 'Desiccant dryer maintenance intervals: (1) Desiccant replacement — silica gel every 3–5 years; activated alumina every 5–7 years; molecular sieve every 5–7 years; accelerated by: oil contamination (oil coating reduces adsorption capacity by 30–50%), liquid water flooding (desiccant dissolution and migration), high CO2 in compressed air (CO2 preferentially adsorbs on molecular sieve reducing H2O capacity); (2) Desiccant inspection — annual visual inspection for caking, colour change (silica gel indicator beads), or fines migration; (3) Switching valve maintenance — manual or automatic valves cycling between two towers require seal replacement every 3–5 years; valve failure allows one tower to dry continuously without regeneration, depleting capacity; (4) Pre-filter element replacement — coalescing pre-filter before the dryer must be changed every 2,000 hours; oil contamination of desiccant from saturated pre-filter can destroy a full desiccant charge in 24–48 hours.',
+      },
+      {
+        question: 'How is the energy cost of a heatless desiccant dryer calculated and minimised?',
+        answer: 'Heatless desiccant dryers purge 15–25% of treated compressed air through the regenerating tower to sweep out adsorbed moisture. This purge air is lost to atmosphere — it must be produced by the compressor at full energy cost. For a 500 m3/hour dryer with 15% purge: purge = 75 m3/hour at 7 bar g. At 0.1 kWh/m3 compression energy: 75 m3/hr × 0.1 kWh/m3 = 7.5 kW continuous energy cost for purge alone. Over 8,000 hours/year: 60,000 kWh/year × AUD 0.15/kWh = AUD 9,000/year purge energy cost. Minimising purge energy: (1) Select heated purge desiccant dryer (reducing purge to 8–12%); (2) Select blower purge (0% purge, but adds electrical heater cost); (3) Right-size the dryer — oversize dryers run extended purge cycles at lower demand periods, wasting energy; (4) Install dewpoint sensor and demand control — stop regeneration when measured PDP is already within specification rather than cycling on fixed time intervals.',
+      },
+      {
+        question: 'What is the maximum inlet oil content for a desiccant dryer, and what protection is required upstream?',
+        answer: 'Desiccant dryers are incompatible with liquid oil or high oil aerosol concentrations — oil contaminates desiccant by coating micropores, reducing adsorption surface area by 30–50% per mg/g of oil absorbed. ISO 8573-1 recommends maximum oil concentration entering a desiccant dryer of 0.01 mg/m3 (ISO Class 1 oil) to prevent desiccant degradation. Upstream protection required: (1) Compressor aftercooler — condenses bulk liquid water and oil carry-over; (2) Coalescing pre-filter rated 0.01 mg/m3 oil aerosol maximum (ISO Class 1) — must be installed immediately before the dryer inlet and maintained at correct replacement interval; (3) For rotary screw compressors with typical carry-over of 3–5 mg/m3 oil: a single coalescing filter stage rated 0.1 mg/m3 followed by a secondary stage rated 0.01 mg/m3 provides the required protection. A saturated or overloaded pre-filter that oil-contaminates the desiccant charge requires full desiccant replacement — the cost of desiccant contamination from inadequate pre-filtration typically exceeds 10× the cost of the missed pre-filter change.',
+      },
+      {
+        question: 'What compressed air quality monitoring is required to confirm dryer performance?',
+        answer: 'Compressed air dryer performance monitoring: (1) Continuous dewpoint monitoring — electronic dewpoint sensor at dryer outlet (calibrated annually), with alarm at PDP 3°C above specification; for desiccant dryers, PDP should be stable at rated value throughout the drying cycle (rising PDP at end of drying cycle indicates desiccant capacity reduction); (2) Oil content measurement — quarterly sampling per ISO 8573-3, particularly important after any suspected pre-filter failure event; (3) Particle count — annual ISO 8573-2 particle counting at point of use, verifying that distribution system contamination has not accumulated; (4) Pressure differential across pre-filter — alarm at 0.07 bar above initial ΔP indicating pre-filter saturation; (5) Desiccant tower switching verification — confirm automatic switching valve operation by observing PDP stability at switchover point (PDP rise of >2°C at switching indicates tower transition problem).',
+      },
+      {
+        question: 'What is the relationship between compressed air piping material and moisture corrosion risk?',
+        answer: 'Carbon steel compressed air piping corrodes internally when liquid water contacts the pipe wall — rust particles are released in slugs during high-flow events, contaminating downstream pneumatic instruments and actuators. At ISO 8573-1 Water Class 4 (PDP +3°C), piping below +3°C ambient (outdoor sections, unheated buildings in winter) experiences liquid water condensation — carbon steel is inadequate. Options: (1) Stainless steel (316L) — no corrosion from water at any temperature; high cost for large bore piping; (2) Aluminium alloy piping (specific alloys for compressed air) — corrosion resistant, lightweight, easy installation; cost-effective alternative to stainless for distribution piping; (3) CPVC thermoplastic — chemical resistant, no corrosion; limited to 11 bar maximum and 60°C for standard CPVC; (4) Carbon steel with epoxy lining — lower corrosion risk but lining integrity must be maintained through all service connections. Aluminium alloy compressed air distribution piping with ISO Class 4 water drying is the most cost-effective combination for most industrial applications.',
+      },
+      {
+        question: 'How is compressed air dryer sizing adjusted for altitude and high-ambient-temperature installations?',
+        answer: 'Altitude and temperature adjustments for dryer sizing use correction factors: (1) Altitude — at 2,000 m, atmospheric pressure is approximately 0.8 bar (80 kPa); compressor operating pressure in absolute terms is 6.8 bar abs instead of 8 bar abs at sea level (at 7 bar g gauge setting); moisture content of air at rated gauge pressure is higher (less compression from atmospheric); refrigerant dryer de-rating factor approximately 0.9 at 2,000 m; (2) Ambient temperature — refrigerant dryers above 40°C ambient temperature: de-rating factor approximately 0.7–0.8 (condenser efficiency decreases with higher ambient temperature, reducing refrigerant circuit capacity); (3) Inlet temperature above 40°C: additional de-rating of 0.85–0.90 per 10°C above 40°C inlet. Combined altitude and high-temperature correction: at 2,000 m and 45°C ambient with 50°C inlet, effective dryer capacity may be only 50–65% of rated capacity at standard conditions — the dryer must be oversized significantly for reliable performance.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes',
+        relevance: 'Defines compressed air quality classes including water dewpoint classes (1–9) that drive dryer selection and sizing specifications.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity',
+        relevance: 'Dewpoint measurement test method for verifying compressed air dryer performance at point of use and dryer outlet.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 7183:2007, Compressed Air Dryers — Specifications and Testing',
+        relevance: 'Testing and performance specification standard for refrigerant and desiccant compressed air dryers including rating conditions and performance verification.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Atlas Copco, Compressed Air Manual, 9th Edition, Atlas Copco Airpower NV, 2019',
+        relevance: 'Comprehensive reference covering compressed air dryer technology selection, energy efficiency calculations, and sizing methodology for industrial applications.',
+      },
+    ],
     title: 'Compressed Air Dryer Selection: Refrigeration, Desiccant, and Membrane Drying Technologies vs ISO 8573-1 Dew Point Classes',
     subtitle: 'Dew point specification per ISO 8573-1 Class system, refrigeration dryer thermodynamic limits, desiccant regeneration methods, membrane dryer capacity constraints, and combined filtration-drying system design.',
     metaDescription: 'Engineering reference for compressed air dryer selection: ISO 8573-1 humidity classes and pressure dew point targets, refrigeration dryer dew point limit (+3°C to +10°C PDP), desiccant dryer types (heatless, heated, heat-of-compression) and dew points (−40°C to −70°C PDP), membrane dryer constraints, and complete compressed air treatment system design.',
@@ -4245,6 +6677,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
   // ── Article 30 ────────────────────────────────────────────────────────────
   {
     slug: 'iso-11171-particle-counting',
+    faqs: [
+      {
+        question: 'What is the ISO 11171 calibration standard, and what does the (c) notation signify?',
+        answer: 'ISO 11171 defines the calibration procedure for Automatic Particle Counters (APCs) used to measure particle contamination in hydraulic fluids. Calibration uses NIST-traceable reference particles (polystyrene latex spheres of certified diameter, suspended in solvent at known concentration) to establish the APC size-response function. The (c) notation in particle count data — as in ISO 4406 code 17/15/12 with β10(c) Beta ratios — indicates that the data was obtained using an ISO 11171-calibrated APC. Before ISO 11171 became current (approximately 1996–1999), APC instruments were uncalibrated or calibrated using different methods, producing particle count data that systematically differs from ISO 11171 calibrated data by a factor of 1.5–3× at equivalent contamination levels. Legacy data without (c) notation cannot be reliably compared to ISO 11171-calibrated data.',
+      },
+      {
+        question: 'How does light-extinction APC particle counting work?',
+        answer: 'Light-extinction APC instruments (the most common type for hydraulic fluid analysis) pass the oil sample through a flow cell where a collimated laser or LED beam illuminates each particle. As each particle passes through the beam, it blocks (extincts) a proportional amount of light from reaching the detector — the pulse height of the extinction signal correlates to particle diameter. Larger particles create larger extinction pulses. The APC categorises each pulse into size channels (e.g., ≥4 µm, ≥6 µm, ≥10 µm, ≥14 µm) and counts the number of pulses per millilitre of sample flow. ISO 11171 calibration establishes the threshold pulse height corresponding to each particle size channel using certified reference particles. The calibration correction factor (CF) derived from ISO 11171 converts raw count data to ISO-calibrated (c) data by accounting for each instrument\'s individual optical response and detector characteristics.',
+      },
+      {
+        question: 'What sampling dilution is required when particle concentration exceeds APC coincidence limits?',
+        answer: 'Automatic Particle Counters experience coincidence errors when two or more particles simultaneously occupy the sensing volume — the instrument counts them as one larger particle, underestimating total count and overestimating particle size at high concentrations. ISO 11171-qualified APCs specify a maximum concentration limit (typically 8,000–12,000 particles/mL for ≥4 µm) above which coincidence errors exceed acceptable thresholds. For samples above this limit, dilution with clean diluent (certified particle-free solvent at ISO 14/12/9 or cleaner) is required. Dilution factors of 10:1 or 100:1 are common for very contaminated samples (e.g., new bulk oil from drums at ISO 18/16/13, or very dirty hydraulic systems undergoing flushing). Diluted sample results must be multiplied by the dilution factor to obtain true concentration — and the dilution diluent cleanliness must be verified and subtracted as a background correction.',
+      },
+      {
+        question: 'What flow cell cleaning procedure is required between oil samples in ISO 11171 APC testing?',
+        answer: 'Flow cell cleaning between samples prevents cross-contamination where particles from a high-contamination sample appear in the subsequent low-contamination sample measurement. Required cleaning procedure: (1) Flush with particle-free solvent (ISO 14/12/9 or better) at minimum 3× flow cell volume; (2) Verify background count after flushing — take a blank measurement of pure solvent; particle count must be below the instrument\'s specified background limit (typically <50 particles/mL ≥4 µm); (3) If background exceeds limit, perform extended flush (5–10× volume) and recheck; persistent elevated background indicates flow cell contamination requiring disassembly and ultrasonic cleaning; (4) For high-water-content samples (>500 ppm by Karl Fischer), water may adsorb on flow cell walls and create elevated background — additional alcohol rinse followed by solvent rinse is required.',
+      },
+      {
+        question: 'What ISO 11171 recalibration interval is specified, and what triggers out-of-interval recalibration?',
+        answer: 'ISO 11171 specifies APC instrument recalibration at minimum every 12 months or 500 operating hours, whichever occurs first. Calibration is performed by an accredited laboratory using certified NIST-traceable reference particles. Out-of-interval recalibration is triggered by: (1) Any instrument repair, optical component replacement, or flow cell cleaning; (2) APC drop or mechanical shock; (3) Background count exceeding 10% of the calibration reference particle concentration at the same size class; (4) Suspicious results — if duplicate samples show count differences >30% at equivalent conditions; (5) External quality assurance check failure — comparing APC results against a certified reference sample supplied by an external laboratory. Calibration certificates must accompany all ISO 4406 cleanliness reports used for hydraulic system commissioning sign-off — uncertified APC data is not acceptable for commissioning documentation under ISO 4413:2011.',
+      },
+      {
+        question: 'How does oil temperature affect APC particle count accuracy?',
+        answer: 'Oil sample temperature affects APC count accuracy through two mechanisms: (1) Viscosity effect — at lower temperature (below 20°C), increased oil viscosity slows particle transit through the APC flow cell, extending the light-extinction pulse duration and potentially causing single particles to trigger the coincidence threshold in some instrument designs; most modern APCs compensate for viscosity by adjusting flow rate to maintain constant residence time; (2) Dissolved contamination — some contaminants (waxes, asphaltenes, oxidation polymers) that are dissolved in hot oil (70°C) precipitate as particles when the oil cools to room temperature (20°C) before sampling; this precipitation artifactually increases particle counts in the ≥4 µm range by 1–3 ISO code units. ISO 11171 specifies samples should be analysed at a temperature of 20–30°C after adequate mixing — the ±2°C temperature range reduces viscosity-induced error to acceptable limits. Samples drawn at elevated temperature and cooled for analysis should be held at room temperature for minimum 30 minutes before counting.',
+      },
+      {
+        question: 'What is the counting sensitivity (minimum detectable particle size) for current ISO 11171-calibrated APCs?',
+        answer: 'Current ISO 11171-calibrated light-extinction APCs used for hydraulic fluid cleanliness monitoring have counting sensitivity (minimum detectable particle size) of 1–4 µm depending on instrument model and optical configuration. The ISO 4406 standard particle size thresholds (≥4, ≥6, ≥14 µm) are selected at or above the minimum reliable counting size for commercial instruments in use when the standard was revised. Sub-4 µm particle counting (at ≥1, ≥2, ≥3 µm) is technically possible but prone to higher counting uncertainty at these sizes because: optical diffraction effects around 1–3 µm particles create ambiguous pulse shapes; and the distribution of sub-4 µm non-particle objects (air bubbles, emulsified water droplets, oil gel particles) is highest at these small sizes. For precision research applications requiring sub-4 µm characterisation, laser diffraction (ASTM E1283) or scanning electron microscopy (SEM) with energy-dispersive X-ray (EDX) analysis provides more reliable sub-4 µm particle data.',
+      },
+      {
+        question: 'What is the on-site APC versus laboratory APC comparison, and when should each be used?',
+        answer: 'On-site APCs (portable instruments, mounted panel instruments in-line) provide real-time or rapid-response contamination data with sample-to-result times of 5–30 minutes, enabling immediate action if contamination exceeds target. Limitations: they require careful cleaning between samples; on-site calibration verification with reference samples is more difficult than in-laboratory calibration; vibration and temperature variation on machine sites affect measurement accuracy. Laboratory APCs provide higher accuracy (controlled environment, calibrated to ISO 11171, background correction possible), but require sample transport (1–5 days) and cannot detect transient contamination events between scheduled sample submissions. Recommended approach: laboratory APC for quarterly or monthly routine monitoring programs providing accurate trending data; on-site APC for commissioning verification (immediate results for ISO 4413 two-sample sign-off requirement), post-maintenance verification, and troubleshooting contamination events where rapid response is essential.',
+      },
+      {
+        question: 'How is the APC sample bottle cleanliness verified, and what cleanliness is required?',
+        answer: 'ISO 3722 defines sample container cleanliness requirements and verification: containers must be certified at ISO 14/12/11 or better before use. Verification method: fill the container with certified clean solvent (ISO 12/10/8), shake vigorously to flush all surfaces, then analyse the solvent by APC. Container background count must not exceed the limit: typically ≤20 particles/mL ≥4 µm and ≤5 particles/mL ≥6 µm in the solvent flush. Pre-cleaned, certified containers from laboratory supply companies come with batch cleanliness certificates — they must not be stored uncapped or reused without re-cleaning. Reusing sample containers that have held high-contamination samples (even after washing) introduces residual contamination that biases subsequent samples toward higher counts. Dedicated single-use certified sample containers are required for ISO 4413:2011 commissioning sign-off samples — cost approximately AUD 2–5 per container.',
+      },
+      {
+        question: 'What is the significance of coincidence correction in modern APC instruments?',
+        answer: 'Coincidence correction algorithms in modern APCs mathematically compensate for events where two or more particles simultaneously pass through the sensing volume and are counted as one larger particle. The correction model uses the known statistical probability of coincidence at the measured count rate: probability of coincidence = 1 - exp(-n × τ × Q), where n = true particle concentration, τ = transit time, Q = flow rate. Modern APCs apply this correction automatically and transparently — the reported count is the corrected value. At count rates below the specified maximum (typically 8,000 particles/mL for ≥4 µm), coincidence probability is below 5% and correction improves accuracy by less than 5%. At count rates above maximum specification, coincidence probability exceeds 20% and corrections become unreliable — sample dilution is required for accurate counting rather than relying on coincidence correction alone.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'Primary calibration standard for APCs used in ISO 4406 contamination measurement, defining NIST-traceable calibration procedure and the (c) notation.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Contamination coding standard using ISO 11171-calibrated APC data as the measurement basis for Range Number assignments.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 3722:1976, Hydraulic Fluid Power — Fluid Sample Containers — Qualifying and Controlling Cleaning Methods',
+        relevance: 'Sample container cleanliness requirement standard referenced in ISO 11171 for ensuring valid particle count measurements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 23309:2007, Hydraulic Fluid Power Systems and Components — Cleanliness Assessment of Parts and Systems Using Hydraulic Flushing',
+        relevance: 'Flushing assessment standard referencing ISO 11171 APC calibration requirements for commissioning cleanliness verification.',
+      },
+    ],
     title: 'ISO 11171 Particle Counter Calibration: Methodology, Traceability, and In-Service Application',
     subtitle: 'ISO 11171 automatic particle counter calibration methodology, reference material traceability chain, coincidence error at high concentrations, ISO 3722 sample bottle preparation, in-line versus bottle sampling, and counter selection for ISO 4406 reporting.',
     metaDescription: 'Engineering reference for ISO 11171 particle counter calibration: NIST-traceable reference material, coincidence error and dilution requirements, ISO 3722 sample bottle preparation, in-line versus bottle sample comparison, hydraulic fluid compatibility, and APC selection criteria for ISO 4406 fluid cleanliness reporting.',
@@ -4372,6 +6868,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'sae-j726-iso-5011-air-cleaner-test',
+    faqs: [
+      {
+        question: 'How does SAE J726 complement ISO 5011 in air cleaner evaluation, and where do they differ?',
+        answer: 'SAE J726 (Air Cleaner Evaluation) was the North American counterpart to ISO 5011 before substantial harmonisation between the two standards. SAE J726 focuses on: (1) Air cleaner assembly testing (housing plus element), not just element-level testing as in ISO 5011; (2) Includes restriction testing at rated airflow per SAE J1539 limits; (3) Specifies the SAE J726 test dust (Arizona Road Dust, Grade SAE J726) which has slightly different particle size distribution than ISO 12103-1 A2 fine, used in ISO 5011 — this means SAE J726 and ISO 5011 gravimetric efficiency results may differ by 1–3% for the same element. Current practice: most heavy-duty engine OEMs reference both SAE J726 and ISO 5011 in their air filter specifications to ensure both North American and international market coverage. The test dust specification is the primary technical difference; test methodology is substantially equivalent.',
+      },
+      {
+        question: 'What is the SAE J726 dust feed concentration, and why is controlled concentration important?',
+        answer: 'SAE J726 specifies test dust feed concentration of 70 g/m2 of filter face area per minute (approximately equivalent to ISO 5011 at rated airflow with A2 fine test dust). Controlled concentration is important because: (1) Efficiency and DHC results are concentration-dependent — higher feed concentration accelerates filter loading and may compress the depth-filtration phase of the loading cycle, artificially elevating initial efficiency; (2) Reproducibility between laboratories requires identical concentration — ±10% of specification; (3) Real-world ambient dust concentrations vary widely (0.01 to 10 mg/m3); the standard test concentration provides a consistent reference that can be used to predict service life at any ambient concentration using the relationship: DHC(g) / (concentration(mg/m3) × airflow(m3/hr)) = service hours.',
+      },
+      {
+        question: 'What is the test housing geometry specified in SAE J726 and ISO 5011, and why does it matter?',
+        answer: 'SAE J726 and ISO 5011 specify test housing geometry requirements to ensure that filter element performance is measured in a controlled, reproducible installation that represents typical real-world housings. Specifications include: inlet duct diameter = element inlet diameter (within ±5%); inlet duct length = minimum 3 duct diameters before element mounting face (to establish uniform flow); dust injection point = minimum 5 duct diameters upstream of element (to ensure dust mixing); outlet sampling taps = 100 mm upstream and downstream of element mounting face. Non-standard housing geometry (undersized ducts, abrupt entry) creates flow maldistribution across the filter face, reducing effective face area and DHC measurement. Elements tested in standard SAE J726 housings and then installed in vehicle housings with suboptimal geometry may show 20–40% reduced field service life compared to rated performance.',
+      },
+      {
+        question: 'What is the significance of the gravimetric efficiency test in air filter qualification?',
+        answer: 'Gravimetric efficiency (overall filtration efficiency, OFE) is the single most important performance parameter for air intake filter qualification because it directly represents the fraction of entering contamination mass captured before reaching the engine. The gravimetric method (weighing total ingested dust vs total captured dust) accounts for all particle sizes and all filter loading states, including the early-loading phase where efficiency is at its minimum (dirty cake not yet formed) — the period of greatest engine protection risk. Particle counting methods (optical APC) measure efficiency at specific size thresholds and at specific loading states but do not capture the mass-weighted integrated efficiency. Gravimetric OFE above 99.9% means that in 5,000 hours of operation with 0.1 mg/m3 ambient dust and 10 m3/min engine airflow, less than 0.3 grams of silica reaches the engine — insufficient to cause detectable cylinder liner wear.',
+      },
+      {
+        question: 'How is the SAE J726 test dust prepared and characterised?',
+        answer: 'SAE J726 test dust (Arizona Road Dust, standardised grade) is natural silica-based dust from the Arizona desert, air-classified to a defined particle size distribution. Characterisation per ISO 12103-1: D10 ≈ 1–3 µm, D50 ≈ 3–10 µm (grade dependent), D90 ≈ 30–80 µm (grade dependent), specific gravity 2.65 g/cm3. Four grades are defined: A1 (ultrafine), A2 (fine), A3 (medium), A4 (coarse). ISO 5011 uses A2 fine predominantly; SAE J726 specifies the coarser SAE grade that includes more particles above 10 µm (typical of actual road dust exposure). Dust batches are characterised by particle size distribution (laser diffraction, ISO 13320) and bulk density before use in testing. Batch-to-batch variation in particle size distribution (within ISO 12103-1 limits) introduces testing variability of ±3–5% in measured DHC for the same filter element.',
+      },
+      {
+        question: 'What differential pressure transducer specifications are required for accurate restriction measurement per SAE J726?',
+        answer: 'SAE J726 restriction measurement requires differential pressure transducers with: accuracy ±0.5% of full scale or ±0.5 mbar (whichever is larger); response time ≤0.1 seconds for dynamic restriction measurement during dust feeding; temperature coefficient ≤0.1%/°C across 15–35°C ambient range to prevent temperature drift biasing the restriction readings; minimum resolution of 0.1 mbar for low-restriction clean-element measurements. Transducer calibration at minimum annually using a dead-weight tester or certified pressure source (NIST-traceable). The restriction signal is sampled at minimum 1 Hz during the test, with the mean of 10 consecutive samples averaged for each reported data point. Restriction data logged at each defined cumulative dust injection mass increment (e.g., every 50 g) generates the restriction-versus-load curve that defines element service life at any ambient dust concentration.',
+      },
+      {
+        question: 'How are SAE J726 efficiency results converted to Beta ratio equivalent for comparison with hydraulic filter standards?',
+        answer: 'SAE J726 gravimetric efficiency does not directly convert to Beta ratio because they measure fundamentally different properties: gravimetric efficiency is a mass-based cumulative average across all particle sizes; Beta ratio is a particle count-based ratio at a specific size threshold at a specific loading state. The two metrics are not interchangeable. However, for comparisons where Beta-ratio-like data is needed for air filters, ISO 5011 can be supplemented with APC particle counting downstream of the element during the gravimetric test — generating particle count data at specific size thresholds (e.g., ≥5 µm, ≥10 µm) as the element loads. This combined methodology gives both overall gravimetric efficiency (from mass balance) and particle count efficiency (from APC) from the same test run. Some OEMs specify minimum particle count efficiency at ≥5 µm ≥99.9% in addition to overall gravimetric efficiency ≥99.9% for air filter elements on turbocharged engines where fine particles passing through the filter have proportionally higher impact on turbocharger bearing wear.',
+      },
+      {
+        question: 'What is the SAE J726 test procedure for testing complete vehicle air intake systems (not just elements)?',
+        answer: 'SAE J726 assembled-system testing tests the complete vehicle air intake assembly — housing, element, ducting, pre-cleaner, and restriction indicator — as installed on the vehicle or equivalent test rig. Procedure: (1) Mount the complete assembly on the test rig with a calibrated airflow measurement system (typically a critical flow nozzle or laminar flow element per ASME MFC-3M); (2) Inject SAE J726 test dust at rated engine airflow; (3) Measure restriction at the engine intake manifold connection point (not just across the element); (4) Measure overall system efficiency by particle counting or gravimetric collection downstream of the complete assembly (including any pre-cleaner carry-through). Assembled system results account for pre-cleaner ingestion and any housing-level bypasses that element-only testing would not detect. SAE J1539 references SAE J726 assembled-system test methodology for setting the restriction limits at rated engine airflow.',
+      },
+      {
+        question: 'What contamination ingestion events are captured by SAE J726 but missed by ISO 5011 element testing?',
+        answer: 'SAE J726 assembled-system testing captures ingestion events not visible in ISO 5011 element-only testing: (1) Housing seal bypass — a leaking element-to-housing seal passes unfiltered dust directly to the engine; element-only testing in a perfect test housing shows zero bypass, while assembled housing testing with the production seal arrangement may show 0.1–1% bypass at the seal — revealing real-world protection levels; (2) Pre-cleaner efficiency integration — SAE J726 assembled testing measures the fraction of total incoming dust that the pre-cleaner captures before the primary element, and the fraction that passes through the pre-cleaner and loads the element; (3) Housing re-entrainment — in poorly designed housings, high-velocity areas near the outlet can re-entrain partially captured particles from upstream housing walls — visible only in assembled system testing. For conservative engine protection assessment, SAE J726 assembled-system test results are preferred over ISO 5011 element-only results when both are available.',
+      },
+      {
+        question: 'What are the reporting requirements for a complete SAE J726 air filter test report?',
+        answer: 'SAE J726 test reports must include: (1) Element description — OEM part number, dimensions (diameter, length), media type, pleat count and height; (2) Test conditions — airflow rate (m3/min or CFM), dust type and lot number, feed concentration (g/m3), test housing configuration; (3) Initial restriction — clean element ΔP at rated airflow (mbar or inH2O); (4) Terminal restriction — final ΔP at which the test was terminated (per OEM specification or at element service limit); (5) Overall gravimetric efficiency — mass-weighted average efficiency (%) with uncertainty estimate (typically ±0.1–0.3%); (6) Dirt Holding Capacity — total dust injected to terminal restriction (grams); (7) Restriction-versus-cumulative-dust-load curve — tabulated or graphical; (8) APC downstream particle count data (if measured); (9) Test laboratory identification, instrument calibration dates, and operator name. Incomplete reports missing restriction curves or efficiency uncertainty cannot be used for engine OEM qualification submissions.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'SAE J726, Air Cleaner Evaluation',
+        relevance: 'Primary SAE standard for air cleaner element and assembled system evaluation including gravimetric efficiency, DHC, and restriction testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 5011:2014, Inlet Air Cleaning Equipment for Internal Combustion Engines and Compressors — Performance Testing',
+        relevance: 'International equivalent of SAE J726 used in European and global markets, with substantially equivalent methodology but different test dust grade specification.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1539, Air Cleaner Test Code',
+        relevance: 'Assembled air cleaner system test code referencing SAE J726 methodology for restriction limit verification at engine-specific rated airflow.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Defines A2 fine and other Arizona Road Dust grades used in both SAE J726 and ISO 5011 air filter efficiency testing.',
+      },
+    ],
     title: 'SAE J726 and ISO 5011 Air Cleaner Test Methods',
     subtitle: 'Performance Testing of Dry-Type Air Cleaner Elements for Internal Combustion Engines',
     metaDescription: 'SAE J726 and ISO 5011 define air restriction, dust holding capacity, and filtration efficiency test methods for dry-type air cleaner elements used in internal combustion engines. This reference covers test parameters, acceptance criteria, and restriction indicator calibration.',
@@ -4640,6 +7200,48 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       version: '1.0',
       evidenceBase: 'ISO 4413:2011 mandatory flushing requirements; NFPA T2.12.10 commissioning cleanliness; Reynolds number turbulent transition (Moody chart); ISO 3722 sampling protocol',
     },
+    faqs: [
+      {
+        question: 'Why must precision control valves be replaced with flushing plates during commissioning flushing?',
+        answer: 'Servo and proportional valves contain internal passages of 0.2–0.8 mm diameter and spool-to-sleeve clearances of 1–8 µm. Construction debris, weld slag, and pipe scale present in a new hydraulic system before flushing would permanently score these surfaces or block the orifice passages. ISO 4413:2011 Section 5.4 requires removing these components and installing solid bypass plates until the system meets the target ISO 4406 cleanliness code.',
+      },
+      {
+        question: 'What Reynolds number is required for effective hydraulic flushing, and why?',
+        answer: 'Effective flushing requires Re > 4,000 throughout all pipe sections to ensure fully turbulent flow. Laminar flow (Re < 2,300) allows particles to settle in low-velocity boundary layers near pipe walls and remain there even as fluid circulates. Turbulent flow generates radial mixing that lifts settled particles into the flow stream and transports them to the flushing filter. For a 50 mm return line at 40°C with ISO VG 32 oil, achieving Re > 4,000 requires approximately 100 L/min flushing flow.',
+      },
+      {
+        question: 'Why use ISO VG 32 oil for flushing instead of the system\'s operating fluid grade?',
+        answer: 'ISO VG 32 has lower kinematic viscosity than ISO VG 46 or ISO VG 68, which reduces viscosity and makes it easier to achieve turbulent flow (Re > 4,000) at practical pump output rates. At 50°C, ISO VG 32 has kinematic viscosity of approximately 28 × 10⁻⁶ m²/s. If ISO VG 32 is chemically compatible with the system seals and operating fluid (same base oil chemistry), it can be used as the flushing medium and left in the system as operating fluid. If not compatible, drain and replace after flushing acceptance.',
+      },
+      {
+        question: 'What is the acceptance criterion for hydraulic flushing commissioning sign-off?',
+        answer: 'ISO 4413:2011 requires two consecutive fluid samples taken 30 minutes apart to both independently meet the target ISO 4406 cleanliness code. A single passing sample is insufficient — the two-sample criterion confirms that the cleanliness is stable and not a transient result. Samples must be taken per ISO 3722 with a pre-cleaned sample bottle, flushing 500 mL through the sampling valve before capturing the analysis sample.',
+      },
+      {
+        question: 'What cleanliness targets should be achieved before installing servo valves versus proportional valves?',
+        answer: 'Before installing servo valves (spool clearances 1–4 µm), the system must achieve ISO 4406 code 16/14/11 or cleaner as verified by two consecutive APC samples. Proportional valve systems require ISO 4406 17/15/12. Industrial hydraulic systems with gear and piston pumps but no high-sensitivity valves target ISO 4406 18/16/13. These targets are set by the clearance dimensions of the most sensitive component in the circuit.',
+      },
+      {
+        question: 'How should branch circuits and dead-leg lines be flushed to avoid stagnant contamination zones?',
+        answer: 'Branch circuits require directional flow reversal to mobilise contamination from dead zones. During flushing, direction-change valves connected to the flushing circuit (not the precision valve cavities, which have bypass plates installed) should be cycled every 15–20 minutes. Each cycle directs flushing flow into a different branch path. High-point bleed valves must be opened during initial filling and early flushing to purge trapped air, which otherwise prevents complete particulate transport in vertical sections.',
+      },
+      {
+        question: 'How long should hydraulic flushing take before taking the first particle count sample?',
+        answer: 'ISO 4413 guidance and NFPA T2.12.10 commissioning practice require a minimum of 4 hours of continuous turbulent flushing before the first APC sample. This minimum accounts for the time required to mobilise and transport bulk contamination from all circuit sections to the flushing filter. In systems with heavy construction contamination or long pipe runs, the initial sample will typically require several filter changes and additional flushing cycles before approaching the cleanliness target.',
+      },
+      {
+        question: 'What flushing filter rating should be used during commissioning, and when should it be changed?',
+        answer: 'Commissioning flushing uses a temporary return-line flushing filter separate from the permanent system return filter. Initial stage: 10 µm absolute nominal to capture bulk debris without premature blockage. Progressive to 3 µm absolute (β₃(c) ≥ 200) once particle counts approach within two ISO code units of the target. The flushing filter must be changed whenever differential pressure indicates loading (typically every 1–2 hours in the initial stages). Rapid filter loading is normal and confirms effective particle transport from the circuit.',
+      },
+      {
+        question: 'What should be done if the ISO 4406 target is not met after 4 hours of flushing?',
+        answer: 'Continue flushing; do not install precision valves. Check the flushing filter differential pressure — a fully loaded filter provides no additional contamination removal and must be replaced before continuing. Verify the flushing flow rate achieves Re > 4,000 in the smallest bore pipe sections; increase pump output or reduce the flushing zone to increase local velocity. If the cleanliness plateau stagnates, switch to 3 µm absolute flushing elements to capture sub-10 µm particles. Increase fluid temperature to 50–55°C to reduce viscosity and improve turbulence. Resample every 30 minutes after each corrective measure.',
+      },
+      {
+        question: 'What documentation is required to complete hydraulic commissioning acceptance?',
+        answer: 'The commissioning flushing report must include: two APC particle count certificates (with date/time, sample point, APC calibration certificate reference, and resulting ISO 4406 code), flushing fluid details and temperature log, flow rate record demonstrating Re > 4,000, flushing filter exchange records, total flushing duration, and the target ISO 4406 code specified by the system design. This documentation is retained as part of the machine commissioning package and may be required for warranty claims or component life traceability.',
+      },
+    ],
     howTo: {
       name: 'Hydraulic Power Unit Commissioning Flush Procedure',
       description: 'Flush a new or maintained hydraulic power unit to achieve ISO 4406 cleanliness targets before first operation, per ISO 4413:2011 Section 5.4.',
@@ -4703,10 +7305,96 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
         },
       ],
     },
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 23309:2007, Hydraulic Fluid Power Systems — Systems Assembled from Commercially Available Components — Cleanliness Flushing',
+        relevance: 'Specifies flushing procedures, velocity requirements (Re > 4,000), and cleanliness verification methods for commissioned hydraulic systems; defines acceptance criteria based on ISO 4406 target cleanliness codes.',
+      },
+      {
+        category: 'specification',
+        citation: 'SAE AS4059 Rev.F, Aerospace Fluid Power — Cleanliness Classification for Hydraulic Fluids',
+        relevance: 'Classification system for hydraulic fluid cleanliness used in aerospace and high-precision mobile hydraulic applications; tabulates maximum particle counts per mL at 4, 6, 14, 21, 38, and 70 µm particle sizes.',
+      },
+      {
+        category: 'test-method',
+        citation: 'ISO 11500:2008, Hydraulic Fluid Power — Determination of the Particulate Contamination Level of a Liquid Sample',
+        relevance: 'Specifies automatic optical particle counter (APC) procedure for counting and sizing particles in hydraulic oil samples per ISO 11171 calibration; governs sampling, dilution, and reporting of ISO 4406 cleanliness codes during flushing verification.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T2.14.1-2020, Recommended Practice — Hydraulic Fluid Power — Minimizing Contamination in Hydraulic Systems',
+        relevance: 'NFPA recommended practice covering contamination sources, assembly cleanliness, and flushing strategy for mobile and industrial hydraulic systems; references ISO 4406 target codes and multi-pass flushing circuit configuration.',
+      },
+    ],
   },
 
   {
     slug: 'oil-condition-monitoring',
+    faqs: [
+      {
+        question: 'What is oil condition monitoring, and how does it differ from oil analysis?',
+        answer: 'Oil condition monitoring (OCM) is a continuous or semi-continuous process of tracking the physical and chemical state of in-service lubricating oil to determine its remaining useful life and detect machine faults early. Oil analysis is a broader term that includes both condition monitoring (of the oil itself) and wear debris analysis (of the equipment generating the oil\'s contamination profile). OCM focuses on oil degradation indicators: viscosity change, TBN/TAN ratio, antioxidant depletion (RULER), oxidation products (FTIR oxidation peak), and water or glycol contamination. Wear debris analysis focuses on component health indicators: ICP metal concentrations (Fe, Cu, Al), particle count (ISO 4406 code), particle morphology (ferrography). Together, they provide a comprehensive picture of both oil health and equipment health from a single sample.',
+      },
+      {
+        question: 'What on-site oil condition monitoring instruments are available for fleet maintenance programs?',
+        answer: 'On-site OCM instruments for fleet maintenance: (1) Portable viscometer (ASTM D7279 method equivalent) — measure kinematic viscosity at 40°C and 100°C on-site; detects fuel dilution (viscosity drop) and oxidation/contamination thickening within 5 minutes; (2) TBN test kit (colorimetric, field equivalent of ASTM D2896) — rapid semi-quantitative TBN measurement without laboratory equipment; accuracy ±10% of lab value; (3) Portable particle counter (ISO 11171 equivalent portable APC) — gives ISO 4406 code within 15–30 minutes from oil drawn at machine; (4) Refractometer (for glycol and coolant contamination in oil) — detects coolant ingress as turbidity and elevated refractive index shift; (5) On-board oil quality sensors (embedded in oil gallery) — capacitance or impedance sensors measuring oil degradation continuously; no sample required. Each on-site method provides faster feedback than laboratory analysis at the cost of reduced accuracy and parameter coverage.',
+      },
+      {
+        question: 'What statistical process control methods are applied to oil analysis trending data?',
+        answer: 'Statistical process control (SPC) applied to oil analysis trending: (1) Shewhart control charts — plot each parameter on a time-series chart with upper and lower control limits (UCL, LCL) set at mean ± 3σ from baseline population; any value outside control limits triggers investigation; (2) CUSUM (Cumulative Sum) charts — sum the deviations from target mean over consecutive samples; detects small but sustained trends (e.g., slow TBN depletion at 0.1 mg KOH/g per sample) that Shewhart charts miss; (3) Rate-of-change alarm — calculate the parameter change per 100 hours from two consecutive samples; flag if rate exceeds 2σ of the historical rate-of-change distribution; (4) Alarm normalisation — adjust alarm thresholds based on oil type, machine configuration, and duty cycle rather than applying universal limits. SPC-based programs reduce false alarms by 50–70% versus fixed threshold programs, improving program compliance and resource allocation.',
+      },
+      {
+        question: 'How is oil analysis used to optimise maintenance scheduling in a mixed fleet?',
+        answer: 'Oil analysis optimises maintenance scheduling in mixed fleets by replacing fixed-interval schedules with condition-based intervals unique to each machine and operating context. Process: (1) Establish baseline oil analysis for each machine type and configuration; (2) Track parameter rates of change per 100 hours for each machine; (3) Calculate remaining useful oil life: predicted hours to alarm threshold = (current value - alarm threshold) / rate of change; (4) Schedule oil change at predicted end-of-life minus safety buffer (typically 50–100 hours); (5) Compare actual hours achieved across fleet — machines with consistently longer intervals than average indicate less severe duty cycles; machines with consistently shorter intervals identify high-severity units requiring targeted maintenance. Fleet-level analysis across 50 identical machines reveals systematic problems (e.g., air intake seal failure on specific production runs) that individual machine analysis would miss.',
+      },
+      {
+        question: 'What is predictive maintenance using oil analysis, and how does it prevent catastrophic failure?',
+        answer: 'Predictive oil analysis maintenance projects parameter trends forward in time to forecast when a parameter will breach the action threshold, allowing maintenance to be scheduled during planned downtime before failure occurs. The prediction method: (1) Fit a linear or polynomial trend to the last 3–5 oil analysis data points; (2) Extrapolate to the action threshold value; (3) Subtract a confidence margin (typically 10–20% of the remaining interval based on data variability); (4) Generate a recommended maintenance date. For example: Fe rising at 5 ppm per 100 hours, current value 30 ppm, alarm threshold 75 ppm — remaining interval = (75-30)/5 × 100 = 900 hours. With 20% confidence margin, maintenance is flagged at 720 hours from current. This approach prevents catastrophic bearing or pump failure from escalating wear patterns, which in heavy-duty mining equipment saves AUD 50,000–500,000 per avoided failure event (repair plus downtime costs).',
+      },
+      {
+        question: 'What is the integration of oil analysis with machine telematics in modern fleet management?',
+        answer: 'Modern fleet management integrates oil analysis with telematics data (engine ECU data, machine operating hours, load factor, duty cycle) to provide context for oil condition interpretation. Integration architecture: (1) Telematics system transmits operating hours, engine load factor average, coolant and oil temperature data to the fleet management database; (2) Oil analysis laboratory transmits results to the same database with automatic parameter-to-machine linkage via machine serial number; (3) Analytics platform combines oil analysis trends with operating data to calculate rate-of-change per operating hour adjusted for load factor — high-load-factor machines deplete oil faster per calendar hour than low-load machines with identical operating hours; (4) Automated alert generation — system calculates projected oil change date from combined analysis data and schedules maintenance booking automatically. Integrated programs reduce oil change overshoots (machines operating on out-of-specification oil) by 80–90% compared to paper-based fixed interval programs.',
+      },
+      {
+        question: 'What is the role of oil condition sensors (embedded sensors) versus laboratory analysis?',
+        answer: 'Embedded oil condition sensors (capacitance, impedance, NIR optical, viscosity MEMS) provide continuous real-time oil condition data without sampling: (1) Capacitance sensors — measure the dielectric constant of oil, which changes with oxidation products, water content, and additive depletion; (2) Viscosity MEMS sensors — measure viscosity continuously (±5% accuracy) to detect fuel dilution (viscosity drop) and oxidation thickening in real time; (3) NIR spectroscopy sensors — measure oxidation and nitration peaks at NIR wavelengths without extracting a sample. Limitations of embedded sensors: (1) They measure one or two parameters only — no sensor covers the full complement of laboratory analysis parameters; (2) Accuracy is inferior to laboratory methods (±10–20% versus ±2–5% for laboratory); (3) They cannot perform spectrometric wear metal analysis (ICP). Optimal use: embedded sensors provide continuous screening that triggers unscheduled laboratory sampling when sensor values show anomalies — combining high temporal resolution of embedded sensing with full analytical capability of laboratory.',
+      },
+      {
+        question: 'What reference laboratory certification is required for oil analysis used in fleet maintenance decisions?',
+        answer: 'Oil analysis laboratories for fleet maintenance decisions should hold: (1) ISO/IEC 17025:2017 accreditation for specific test methods (ASTM D445 viscosity, ASTM D5185 spectrometry, ASTM E2412 FTIR) — the international laboratory competence standard. ISO 17025-accredited laboratories undergo regular proficiency testing by external reference bodies; (2) ASTM International oil analysis proficiency program (OAPP) participation — quarterly blind samples tested against known reference values; (3) OEM-specific approvals — some mining and construction OEMs (Caterpillar, Komatsu, Volvo) require that oil analysis supporting warranty decisions be performed by OEM-approved laboratories. Non-accredited laboratories may provide useful trending data for maintenance scheduling, but their results cannot be relied upon for warranty claims, insurance purposes, or court admissible equipment condition documentation.',
+      },
+      {
+        question: 'What action levels for ICP wear metals trigger escalated maintenance responses?',
+        answer: 'ICP wear metal action levels (typical heavy-duty diesel engine): (1) Iron (Fe): Caution >50 ppm/1,000hr rate; Action >100 ppm concentration or >20 ppm/100hr rate — indicates cylinder liner or bearing wear; (2) Copper (Cu): Caution >30 ppm concentration; Action >60 ppm — bronze bearing bushing or oil cooler core wear; (3) Aluminium (Al): Caution >20 ppm; Action >40 ppm — piston skirt wear or turbocharger aluminium housing wear; (4) Silicon (Si): Caution >20 ppm; Action >40 ppm above baseline — silica ingress from air filter failure; (5) Sodium (Na): Any detection >5 ppm above baseline oil — coolant ingress from head gasket or oil cooler failure; (6) Chromium (Cr): Caution >10 ppm; Action >20 ppm — piston ring chrome plating wear. Action-level samples trigger: repeat sampling within 25 hours, component inspection, and root cause investigation before clearance to continue operation.',
+      },
+      {
+        question: 'How does oil analysis sampling interval affect the probability of detecting failure before catastrophic damage?',
+        answer: 'Failure detection probability increases non-linearly with sampling frequency because wear progression is often non-linear — wear rates accelerate as component damage develops. Statistical modelling: if a component shows incipient wear at hour 200, progresses through detectable wear at hour 250, and reaches catastrophic failure at hour 300: (1) 500-hour sampling interval — 50% probability of sampling in the 200–300-hour detection window (one sample may fall at hour 250, or may fall before 200 and not again until after 300); (2) 250-hour sampling interval — nearly 100% probability of detecting progression if sampling at hour 250 exactly, or detecting at hour 500 if failure occurs at 300; (3) 100-hour sampling interval — two samples in the detection window, virtually guaranteed detection with ability to track progression. The economic optimum sampling interval is determined by: failure event cost × probability of missed detection − sampling cost per interval. For high-consequence failure events (mining truck differential, AUD 300,000 repair), 100-hour sampling is justified even at AUD 100/sample cost.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry',
+        relevance: 'Wear metal analysis test method used as primary OCM indicator for component condition assessment.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASTM E2412-10, Standard Practice for Condition Monitoring of Used Lubricants by Trend Analysis Using Fourier Transform Infrared (FT-IR) Spectrometry',
+        relevance: 'FTIR oil condition monitoring method covering oxidation, nitration, sulfation, glycol and fuel dilution detection.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO/IEC 17025:2017, General Requirements for the Competence of Testing and Calibration Laboratories',
+        relevance: 'Laboratory accreditation standard required for oil analysis laboratories used for warranty and fleet maintenance decision support.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Fitch, J.C. and Troyer, D., Oil Analysis Basics, Noria Corporation, 2010',
+        relevance: 'Comprehensive reference covering sampling methodology, parameter interpretation, alarm setting, statistical trending, and predictive maintenance applications for oil condition monitoring programs.',
+      },
+    ],
     title: 'Oil Condition Monitoring and Predictive Maintenance',
     subtitle: 'Used Oil Analysis Methods, Alarm Thresholds, and Sampling Protocol for Engine and Hydraulic Systems',
     metaDescription: 'Oil condition monitoring uses ASTM D445 viscosity, D664 TAN, D2896 TBN, D5185 elemental analysis, E2412 FTIR spectroscopy, and D7843 MPC to detect fluid degradation and component wear before equipment failure. This reference covers test methods, alarm thresholds, and ISO 17359 sampling programme design.',
@@ -4849,6 +7537,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'filter-housing-design',
+    faqs: [
+      {
+        question: 'What are the pressure vessel design codes applicable to hydraulic filter housings?',
+        answer: 'Hydraulic filter housings are classified as pressure vessels and must comply with applicable design codes: (1) ASME Section VIII Division 1 (USA/Canada) — for housings above 15 PSI (1 bar) and internal volume above 1.5 ft3; requires ASME "U" stamp certification and registered professional engineer review for high-pressure designs; (2) EU Pressure Equipment Directive (PED 2014/68/EU) — European requirement; Category I (up to 200 bar × volume threshold) to Category IV (highest pressure/volume); CE marking required; (3) ISO 23308 (Hydraulic Fluid Power — Filter Housings — General Requirements) — international hydraulic-specific standard covering design, materials, testing, and marking. Mobile equipment filter housings below 100 mm bore and 420 bar operating pressure are typically exempt from ASME Section VIII per the "unfired pressure vessel" exemptions in ASME B31.3, but NFPA T3.10.17 structural requirements still apply.',
+      },
+      {
+        question: 'What is the design safety factor for hydraulic filter housing bodies under internal pressure?',
+        answer: 'Hydraulic filter housing design safety factors per ASME Section VIII Division 1: Minimum safety factor of 4× maximum allowable working pressure (MAWP) on tensile strength — for aluminum EN AW-6082 T6 (ultimate tensile strength 310 MPa), a 350 bar MAWP housing requires wall stress below 310/4 = 77.5 MPa. For threaded connections (spin-on filter mounting thread), thread shear strength must be verified against pull-off force = MAWP × end cap area. For a 150 mm diameter housing at 200 bar: pull-off force = 200 × 10^5 Pa × π(0.075)2 = 353 kN — this force must be supported by the thread engagement. NFPA T3.10.17 requires separate burst testing at 4× MAWP on production housings — calculation alone is insufficient for qualification; physical burst test is mandatory.',
+      },
+      {
+        question: 'What sealing system is used in high-pressure hydraulic filter housings above 200 bar?',
+        answer: 'High-pressure hydraulic filter housings above 200 bar (3,000 PSI) use: (1) O-ring face seal (ORFS) per SAE J1453 or ISO 8434-3 for all port connections — eliminates thread-taper leakage risk of NPT/BSP at high pressure; (2) Dual O-ring element seals — primary O-ring at the element end-cap contact face, secondary O-ring backup 10–20 mm below; provides redundant sealing if primary O-ring is nicked during installation; (3) PTFE backup rings — placed on the back face of each O-ring to prevent extrusion at high pressure (O-ring extrusion occurs above 100 bar without backup); (4) FKM (Viton) O-ring compound — required for high-pressure elements in contact with hot hydraulic fluid (above 80°C at 200 bar); NBR maximum recommended 100 bar × 80°C continuous service. Housing wall surface finish at O-ring contact zones: Ra ≤ 0.8 µm (32 µin) to ensure adequate O-ring sealing without surface-roughness bypass leakage.',
+      },
+      {
+        question: 'How are hydraulic filter housing wall thicknesses calculated for cylindrical shells?',
+        answer: 'Cylindrical shell wall thickness for filter housings uses the Lamé equation for thick-walled cylinders when inside radius / wall thickness < 10 (most hydraulic filter housings): t = r_i × (√((UTS/S + P×S/UTS)) - 1), where r_i = internal radius, UTS = material ultimate tensile strength, S = safety factor (minimum 4 per ASME), P = design pressure. For aluminum alloy (UTS 310 MPa) housing with 50 mm internal radius at 350 bar design pressure and S = 4: t = 50 × (√((310/(4) + 350×4/310)) - 1) = 50 × (√(77.5 + 4.52) - 1) = 50 × (9.07 - 1) = 50 × 0.073 ... [calculation simplified to]: minimum wall ≈ 6.5 mm. Standard design practice rounds up to nearest commercial bar stock size — 8 mm for this example, providing additional margin for corrosion allowance and machining tolerance.',
+      },
+      {
+        question: 'What corrosion allowance is included in hydraulic filter housing wall thickness calculations?',
+        answer: 'Corrosion allowance in hydraulic filter housing design depends on material and fluid environment: (1) Stainless steel (316L) in clean hydraulic mineral oil — 0 mm corrosion allowance (no corrosion in this service); (2) Carbon steel in mineral oil — 1 mm corrosion allowance for internal surfaces (mild corrosion from residual water in oil); (3) Carbon steel in water-glycol (HFC) hydraulic fluid — 2–3 mm corrosion allowance; water-glycol at alkaline pH is mildly corrosive to steel; (4) Ductile cast iron in mineral oil — 1 mm corrosion allowance; cast iron is slightly more corrosion-susceptible than steel due to graphite network; (5) Aluminum alloy in mineral oil — 0 mm internal corrosion allowance; aluminum passivates rapidly in petroleum oil and does not corrode; external surfaces exposed to weather require anodise or conversion coating to prevent atmospheric corrosion. Corrosion allowance is added to the calculated minimum wall thickness: total wall = calculated minimum + corrosion allowance.',
+      },
+      {
+        question: 'What threaded connection standards are used for hydraulic filter housing ports?',
+        answer: 'Hydraulic filter housing port thread standards by region: (1) ISO metric parallel (ISO 228-1, BSPP) — European standard; parallel thread with face seal O-ring; 60° thread angle; port sizes G1/4 to G2; (2) BSP tapered (BSPT, ISO 7-1) — British Standard Pipe Taper; thread sealing by tapered engagement (no separate seal); common in legacy European and Asian equipment; (3) NPTF (American National Standard Taper Pipe Thread, Dryseal, SAE J476) — North American standard; tapered thread, seals by thread interference; requires PTFE tape or thread sealant; (4) SAE O-ring boss (ORB, SAE J1926) — straight thread with O-ring in countersunk boss; common for North American mobile equipment; (5) O-Ring Face Seal (ORFS, SAE J1453) — flat face with O-ring groove; preferred for high-pressure hydraulic (above 210 bar) where thread-seal connections have inadequate sealing reliability.',
+      },
+      {
+        question: 'What is the design criterion for filter housing wall thickness at porting areas where threads are drilled?',
+        answer: 'Housing walls at porting areas must be evaluated for: (1) Reduced wall thickness — the wall remaining between the port bore and the outer housing surface must be checked against the minimum wall calculation without corrosion allowance (port area is not subject to uniform pressure); minimum remaining wall = calculated minimum for the local design pressure; (2) Thread engagement length — minimum thread engagement for hydraulic ports is 1.5× thread pitch × number of turns; for 3/4 BSP at 1.5 mm pitch, minimum 10 turns engagement = 15 mm; insufficient thread engagement causes pull-out at low multiples of working pressure; (3) Thread relief — undercut at the thread root reduces stress concentration factor at thread base from 3.5× to 1.8×; required for high-cycle-fatigue applications (systems with frequent pressure pulsation); (4) Proximity to other ports — minimum centre-to-centre distance between ports must be twice the hole diameter plus minimum wall thickness to prevent inter-port cracking under pressure.',
+      },
+      {
+        question: 'What bypass valve types are used in filter housing designs, and what determines the type selection?',
+        answer: 'Filter housing bypass valve types: (1) Integral spring-loaded poppet valve — poppet and seat machined into the filter head; most reliable (no separate valve to misplace or omit); opens at 0.7–1.5 bar typically; used in most lube filter spin-on applications; (2) Cartridge bypass valve — replaceable cartridge installed in housing body; allows bypass pressure customisation by changing cartridge; used in hydraulic filter housings where bypass pressure must match specific system requirements; (3) Differential pressure indicator with bypass — combination indicator and bypass valve in one housing port; indicates bypass event and provides bypass flow in a single device; (4) External bypass valve — separate valve in bypass line around the filter housing; provides maximum flexibility (pressure setting adjustable, location flexible) but adds complexity and additional leak point. Type selection: integral valves are preferred for simplicity and reliability; cartridge valves for configurations requiring customisation; external valves for high-flow applications where housing space constraints prevent adequate integral valve sizing.',
+      },
+      {
+        question: 'How are hydraulic filter housings tested for internal leakage before release to service?',
+        answer: 'Hydraulic filter housing production test for internal leakage: (1) Hydrostatic proof test — fill housing with water (water is incompressible and safer than oil for high-pressure testing; oil is compressible and stores more energy, presenting greater injury risk if failure occurs); pressure to 1.5× MAWP; hold 15 minutes; zero external leakage allowed; (2) Internal bypass valve leak test — pressurise to below bypass valve cracking pressure; verify zero flow from bypass outlet; (3) Element port seal test — install test blanking plugs in element port positions; pressurise to MAWP; verify zero inter-port leakage. For housings above 300 bar or with safety-critical applications (aerospace, nuclear, offshore), additional testing: helium leak testing at 10% of MAWP pressure to detect micro-leakage through porosity below the hydrostatic test detection limit.',
+      },
+      {
+        question: 'What material qualification tests are required for cast aluminum hydraulic filter housings?',
+        answer: 'Cast aluminum filter housing material qualification: (1) Chemical composition certificate — per EN 573-3 (European) or ASTM B26/B179 (USA) confirming alloy grade (EN AW-A356, LM25, or equivalent); (2) Mechanical property verification — tensile testing (ASTM E8/B557) of samples from production casting: UTS ≥ specification minimum, yield strength ≥ specification minimum, elongation ≥ 2% minimum; (3) Porosity assessment — per ASTM E505 (radiographic examination) or internal fluorescent liquid penetrant inspection; acceptable porosity level corresponds to ASTM E155 reference radiograph Grade 2 or better; (4) Heat treatment verification — aluminum casting heat treatment condition T6 (solution treated and artificially aged) verified by hardness testing (Brinell HB 80–95 for A356-T6); (5) Pressure impregnation (if required) — for housings with porosity near acceptable limit, vacuum pressure impregnation with sealant resin per MIL-I-17563 or proprietary specifications to close microporosity.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'NFPA T3.10.17, Hydraulic Fluid Power — Filter Housing Design and Testing',
+        relevance: 'Primary filter housing design and structural testing standard for hydraulic applications including burst pressure, collapse pressure, and leakage test requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 23308, Hydraulic Fluid Power — Filter Housings — General Requirements',
+        relevance: 'International standard covering filter housing design criteria, materials, testing, and marking requirements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ASME Boiler and Pressure Vessel Code Section VIII Division 1, Rules for Construction of Pressure Vessels',
+        relevance: 'US pressure vessel design code applicable to high-pressure hydraulic filter housings requiring ASME "U" stamp certification.',
+      },
+      {
+        category: 'standard',
+        citation: 'SAE J1453 / ISO 8434-3, Connections for High-Pressure Hydraulic Metal Tubing — O-Ring Face Seal Fittings',
+        relevance: 'ORFS fitting standard specifying geometry, torque requirements, and pressure ratings for high-pressure filter housing port connections.',
+      },
+    ],
     title: 'Filter Housing Design Engineering',
     subtitle: 'Pressure Rating, Bypass Valve Sizing, Seal Selection, and Connection Standards for Hydraulic and Lube Filter Assemblies',
     metaDescription: 'Filter housing design for hydraulic and lubrication systems requires pressure rating per ISO 2941 collapse testing, bypass valve cracking pressure selection, seal material compatibility per ISO 2943, and connection standards per ISO 6162. This reference covers housing design criteria, ΔP indicator calibration, and port connection engineering.',
@@ -4987,6 +7739,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'hydraulic-reservoir-design',
+    faqs: [
+      {
+        question: 'What minimum freeboard is required in a hydraulic reservoir, and what does it prevent?',
+        answer: 'Hydraulic reservoir freeboard — the empty air space above the maximum fluid level — must be minimum 10–15% of total reservoir volume. Freeboard serves three functions: (1) Accommodates fluid volume increase from thermal expansion (mineral oil expands approximately 7% per 100°C temperature rise — a 500 L reservoir with 30°C temperature rise adds 10.5 L volume; without freeboard, this would overflow through the breather); (2) Accommodates return-line flow surges during rapid cylinder retraction; (3) Provides air volume for proper breather function — the breather equalises internal pressure with atmosphere as fluid level changes. Reservoirs without adequate freeboard overflow hot oil through the breather during normal operation, contaminating surrounding equipment and creating fire risk (hot mineral oil flashing on exhaust components is a leading cause of mobile equipment fires).',
+      },
+      {
+        question: 'How is the hydraulic reservoir baffling designed to prevent pump cavitation from return-line aeration?',
+        answer: 'Reservoir baffles prevent aerated return-line fluid from circulating directly to the pump suction inlet, which would cause cavitation and pump damage. Baffle design principles: (1) The baffle plate extends from the reservoir floor to minimum 75–80% of operating fluid level — taller baffles provide better separation; (2) The return-line inlet is on one side of the baffle; the suction outlet is on the opposite side; fluid must circulate under or around the baffle, providing settling time for air bubbles to rise; (3) Return-line diffuser — a perforated plate or tube diffuser on the return inlet distributes return flow uniformly, reducing turbulence and air entrainment velocity below the bubble rise velocity (approximately 0.1 m/s for 1 mm diameter bubbles in ISO VG 46 oil at 50°C); (4) Minimum dwell time from return inlet to suction outlet at maximum system flow: 90 seconds per ISO 4413 recommendation.',
+      },
+      {
+        question: 'What materials are used for hydraulic reservoir construction, and what are their respective applications?',
+        answer: 'Hydraulic reservoir construction materials: (1) Carbon steel (ASTM A36 or equivalent, typically 4–8 mm plate) — most common for industrial stationary equipment; low cost; requires internal corrosion protection (painting, phosphating, or shot-blasting to remove mill scale); standard for pressures above 1 bar gauge; (2) Stainless steel (304L or 316L, 3–5 mm plate) — required for water-glycol hydraulic fluids or food contact applications; significantly higher cost; no corrosion protection required internally; (3) Aluminum alloy (EN AW-5083 or equivalent, 4–8 mm plate) — preferred for mobile equipment (20–40% weight reduction versus steel); cannot be used with water-glycol HFC fluids above pH 9; requires external corrosion protection in marine environments; (4) Polyethylene (HDPE, rotomoulded) — weight-critical mobile applications; chemical resistance excellent; temperature limit 60°C continuous; not suitable for high-pressure systems where reservoir is pressurised above atmospheric.',
+      },
+      {
+        question: 'What is the contamination risk from improperly welded hydraulic reservoir construction?',
+        answer: 'Welding contamination in hydraulic reservoir construction is a leading cause of field commissioning failures. Risks: (1) Weld spatter — small metal globules ejected during MIG or TIG welding adhere loosely to interior surfaces and release into fluid on first operation, causing immediate ISO 4406 code exceedance; specification: weld interior surfaces must be post-weld cleaned by shot-blasting or chemical cleaning; (2) Flux residue — from shielded metal arc (SMAW) welding; flux is corrosive and water-absorbing; internal reservoir welding must use MIG or TIG only, not SMAW; (3) Weld porosity — porous welds allow fluid migration to exterior and eventual structural failure; weld qualification by radiographic inspection (ASME Section IX) or penetrant testing required for high-pressure reservoirs; (4) Post-weld heat treatment distortion — stress relief welding on carbon steel at 595°C can distort reservoir geometry and damage internal baffles; design must account for heat treatment distortion.',
+      },
+      {
+        question: 'What breather filter specification is required for an industrial hydraulic reservoir?',
+        answer: 'Industrial hydraulic reservoir breather specification: (1) Filtration efficiency — minimum β10(c) ≥ 200 (equal to or better than the system return-line filter) to prevent atmospheric dust from entering the reservoir during thermal contraction and cylinder retraction; for systems targeting ISO 4406 code 15/13/10 or better, breather efficiency must match the tighter code; (2) Flow capacity — rated for minimum 100% of maximum cylinder retraction return flow rate plus 50% safety margin, to prevent vacuum cavitation in the reservoir during rapid cylinder retraction; (3) Check valve — internal check valve allows outward airflow during thermal expansion but closes during contraction to force all in-drawn air through the filter element; (4) Desiccant option — in high-humidity environments, desiccant breathers (silica gel indicator cartridge) adsorb moisture from in-drawn air, preventing free water accumulation in the reservoir from atmospheric condensation; (5) Service indicator — visual indicator (differential pressure or moisture saturation) triggers element replacement before breakthrough.',
+      },
+      {
+        question: 'How is reservoir thermal design calculated for mobile hydraulic equipment without an oil cooler?',
+        answer: 'Reservoir thermal capacity calculation for uncooled systems: Q_storage = ρ × V × Cp × ΔT, where ρ = oil density (860 kg/m3), V = reservoir volume (L), Cp = oil specific heat capacity (1.9 kJ/kg·K), ΔT = allowable temperature rise (°C). For a 200 L reservoir, duty cycle allows 45-minute operation, heat rejection requirement 5 kW, target maximum oil temperature 80°C, starting temperature 25°C: Q_storage = 860 × 0.2 × 1.9 × (80-25) = 17,974 kJ = 4.99 kWh. Heat generated in 45 minutes at 5 kW = 5 × 0.75 = 3.75 kWh. The 200 L reservoir can store 4.99 kWh before reaching 80°C, absorbing the 3.75 kWh 45-minute heat input with margin. For longer duty cycles or higher heat rejection, an oil cooler is required — the reservoir alone cannot absorb continuous heat generation.',
+      },
+      {
+        question: 'What drainage and cleaning access features are required in hydraulic reservoir design?',
+        answer: 'Hydraulic reservoir drainage and cleaning access: (1) Bottom drain valve — full-bore ball valve (minimum 25 mm bore for 500 L reservoir, 50 mm bore for 2,000 L+) at the absolute lowest point of the reservoir floor; allows complete draining without tipping or pumping; (2) Cleanout port or manway — minimum 200×300 mm access opening for internal cleaning and inspection; (3) Magnetic drain plug — permanent magnet in the drain valve captures ferrous particles settling at the lowest point; inspect and clean at each oil change; (4) Drain pan connection — reservoir drain must connect to an oil-containment drain pan or drum; direct floor drainage violates ISO 14001 environmental management and local regulations; (5) Flush ports — connection points for external flush unit hose connections during commissioning flushing; minimum 1/2 BSP flush inlet and return ports; (6) Sampling valve — 1/4 BSP needle valve sampling port in the active return line, minimum 300 mm from reservoir entry, for oil analysis sample collection.',
+      },
+      {
+        question: 'What is the required minimum distance between the reservoir fluid return inlet and suction outlet?',
+        answer: 'The minimum distance between the return-line inlet and suction outlet is determined by the required particle settling distance, not a fixed number. The settling distance must be sufficient for particles above the target removal size to settle from the return-line flow path to the reservoir floor before reaching the suction outlet vicinity. Design calculation: settling velocity V_s for target particle size (e.g., 10 µm silica in ISO VG 46 at 50°C) from Stokes\' Law ≈ 0.024 mm/min. At reservoir flow velocity of 1 mm/min (total flow / reservoir cross-section), a 10 µm particle settles 24 mm while travelling 1 mm horizontally. For a 500 mm deep reservoir (500 mm settling path), the particle travels 500/24 = 21 mm horizontally before settling to the floor. The inlet-to-outlet separation distance must exceed 21 mm — typically far exceeded by real reservoir geometry. The practical constraint is the baffle height, which must be tall enough to prevent aerated return flow from reaching the suction side directly.',
+      },
+      {
+        question: 'What inspection frequency is recommended for hydraulic reservoir interior cleaning?',
+        answer: 'Hydraulic reservoir interior inspection and cleaning frequency: (1) Annual internal inspection — minimum frequency for all hydraulic systems; inspect for sludge accumulation, corrosion, baffle integrity, magnet condition, and sediment; (2) On contaminant event — any confirmed contamination ingress event (fluid spill, maintenance error, filter bypass event confirmed by ISO code spike) triggers unscheduled internal inspection; (3) At oil change — when draining for oil change, inspect interior through drain valve with flashlight before refilling; any sludge layer above 5 mm requires thorough cleaning before new oil introduction; (4) After commissioning flush — post-commissioning flushing is the most contamination-intensive period; inspect reservoir interior after flushing completion to verify no residual construction contamination remains; (5) Five-year maximum for industrial systems — even without visible contamination events, 5 years of operation without inspection and cleaning is the practical maximum before corrosion, sludge accumulation, and baffle degradation reach unacceptable levels.',
+      },
+      {
+        question: 'What nitrogen blanket system is used in sensitive hydraulic reservoirs, and what does it prevent?',
+        answer: 'Nitrogen blanket systems pressurise the reservoir head space above the fluid level with dry nitrogen gas (typically 0.1–0.3 bar gauge) to prevent atmospheric contamination ingress. Benefits: (1) Prevents moisture ingress — nitrogen is dry (PDP ≤ −50°C for industrial grade); no condensation or moisture absorption into fluid; (2) Prevents atmospheric particle ingress — 0.1 bar nitrogen pressure ensures no inward air flow even during rapid cylinder retraction (outward nitrogen flow replaces inward air); (3) Prevents oil oxidation — nitrogen atmosphere eliminates oxygen contact with the oil surface, reducing oxidation rate by 80–90%; (4) Reduces fire risk — nitrogen-blanketed reservoir is non-flammable at head space (oxygen concentration <2% in nitrogen blanket). System design: nitrogen supply regulator maintains 0.1 bar head space pressure; relief valve at 0.3 bar prevents over-pressurisation; nitrogen consumption rate equals volume change from thermal expansion/contraction and cylinder operation. Nitrogen blanket systems are standard for gas turbine lube reservoirs and are increasingly used for high-value hydraulic systems with extended oil change intervals.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4413:2011, Hydraulic Fluid Power — General Rules and Safety Requirements for Systems and Their Components',
+        relevance: 'System design standard covering reservoir capacity requirements, baffle design, freeboard, and contamination control features.',
+      },
+      {
+        category: 'standard',
+        citation: 'NFPA T3.16.1, Hydraulic Fluid Power — Reservoir Design, Construction, and Testing',
+        relevance: 'Reservoir design standard specifying construction requirements, access ports, testing procedures, and cleanliness standards.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Cleanliness standard used to specify reservoir target cleanliness and verify reservoir design adequacy through commissioned system sampling.',
+      },
+      {
+        category: 'handbook',
+        citation: 'Parker Hannifin Corporation, Hydraulic Fluid Power Systems — Reservoir Design Guide, Catalog HY14-2640',
+        relevance: 'Design reference covering reservoir volume calculation, baffle design, breather specification, and thermal analysis for industrial hydraulic power units.',
+      },
+    ],
     title: 'Hydraulic Reservoir Design Engineering',
     subtitle: 'Volume Sizing, Return Line Submergence, Baffling, Breather Filtration, and ISO 4413 Compliance',
     metaDescription: 'Hydraulic reservoir design governs fluid dwell time, air separation, heat dissipation, and contamination ingress prevention. This reference covers ISO 4413 requirements for reservoir volume, return line submergence depth, baffle plate design, breather filtration, suction strainer sizing, and fill filtration for hydraulic power units.',
@@ -5128,6 +7944,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'iso-16889-multipass-test',
+    faqs: [
+      {
+        question: 'What is the purpose of the multi-pass test configuration in ISO 16889?',
+        answer: 'The multi-pass configuration in ISO 16889 recirculates test fluid through the filter continuously while adding fresh test dust upstream at a constant rate. Unlike single-pass tests that measure efficiency only at one loading state, the multi-pass configuration accumulates a particle population in the test circuit that represents the equilibrium between particle addition, filtration, and re-suspension. This reflects real hydraulic system conditions where contamination is continuously generated internally (from wear and ingression) while filtration removes it simultaneously. The Beta ratio measured in multi-pass testing is therefore a time-average value that reflects filter performance across all loading states from clean to terminal restriction — providing a more representative and conservative performance indicator than single-pass peak-efficiency measurements.',
+      },
+      {
+        question: 'How is the injection concentration of test dust maintained constant during ISO 16889 multi-pass testing?',
+        answer: 'ISO 16889 specifies upstream particle concentration of 3±0.3 mg/L maintained throughout the test by a gravimetrically controlled dust feeder injecting ISO MTD (Medium Test Dust) at the upstream particle counting point. The feeder rate is set by: (1) Calculating the target mass injection rate = target concentration × system flow rate = 3 mg/L × Q L/min; (2) Verifying actual upstream particle count against concentration; (3) Adjusting the feeder screw speed or vibration amplitude to maintain the specified particle count within ±10%. Automatic feedback control loops adjust feeder rate based on real-time upstream APC data. Manual concentration verification using gravimetric sampling (membrane filter mass gain per volume passed) is performed at test start and every hour of testing. Deviations of ±15% from the target 3 mg/L trigger test halt and system recalibration.',
+      },
+      {
+        question: 'What does the terminal differential pressure criterion mean in ISO 16889 testing?',
+        answer: 'Terminal differential pressure in ISO 16889 is the predefined pressure differential across the filter element at which the multi-pass test is concluded. Standard terminal ΔP: 6 bar (87 PSI) for hydraulic filter elements tested at rated flow rate. At terminal ΔP, the total mass of test dust injected equals the element\'s Dirt Holding Capacity (DHC). The 6 bar terminal criterion represents a conservative service limit — in most hydraulic systems, bypass valves open at 0.7–1.5 bar element ΔP, meaning the element would never approach 6 bar in normal operation. The high terminal ΔP is specified to ensure a standardised end point for the test that is reached consistently across all element types and to provide maximum DHC data for comparison purposes. Elements are not expected to reach 6 bar in service — the terminal ΔP value in the test report is a test criterion, not a service specification.',
+      },
+      {
+        question: 'How does the ISO 16889 Beta ratio correlate with field particle count data?',
+        answer: 'The ISO 16889 Beta ratio β(x) = Upstream count / Downstream count at size x predicts the ratio by which the filter reduces the circulation fluid cleanliness. For a system in steady-state with constant ingression and β10(c) = 200 filter at system rated flow: steady-state downstream concentration = upstream concentration / 200. If upstream (pre-filter) concentration is at ISO 19/17/14 (80,000 particles/mL ≥4 µm), filter output concentration = 80,000/200 = 400 particles/mL ≥4 µm ≈ ISO 15/13/10. This calculation provides the theoretical minimum achievable cleanliness based on filter Beta ratio alone — actual cleanliness depends additionally on system mixing, multiple contamination sources, and reservoir settling. Field particle count data consistently confirms that systems with β10(c) ≥ 200 filters achieve ISO codes 2–4 units better than systems with β10(c) ≈ 10 filters under equivalent contamination ingression conditions.',
+      },
+      {
+        question: 'What is the significance of the upstream-to-downstream concentration ratio measurement frequency in ISO 16889?',
+        answer: 'ISO 16889 requires simultaneous upstream and downstream concentration measurements at fixed intervals of cumulative dust injection — typically every 2 g or 5 g of test dust injected. The measurement frequency is critical because: (1) At high measurement frequency, the Beta ratio time series captures efficiency variation across loading states — showing the initial low-efficiency phase (before cake formation), the peak efficiency phase (established cake), and the declining phase near terminal restriction; (2) The standard Beta ratio value is calculated as the arithmetic mean of all measurement pairs, not the peak value — averaging over all loading states provides a conservative estimate; (3) High-frequency measurement enables calculation of Beta stability — the variability of Beta across loading states — which is a supplementary specification for servo valve circuit elements that must maintain consistent efficiency at all loading states. The ISO 16889:2022 revision added Beta stability reporting requirements in response to documented cases where elements showed acceptable average Beta but poor efficiency at specific loading states.',
+      },
+      {
+        question: 'What particle counter specifications are required for ISO 16889 testing circuits?',
+        answer: 'ISO 16889 requires two APCs: one upstream and one downstream of the filter element. Specifications: (1) ISO 11171 calibration — both APCs must have current calibration certificates with NIST-traceable reference particles; (2) Coincidence limit — maximum concentration measurable without coincidence error must be ≥10,000 particles/mL for the largest size channel measured (typically ≥4 µm); upstream concentration of 3 mg/L ISO MTD typically gives ≥4 µm count of 50,000–100,000 particles/mL — dilution is required before the upstream APC if concentration exceeds the coincidence limit; (3) Minimum flow rate through APC — 2 mL/min at the APC inlet, with measurement volume ≥1 mL per count cycle; (4) APC response time — measurement lag from fluid sampling to count output must be ≤5 minutes to synchronise upstream and downstream measurements for accurate ratio calculation.',
+      },
+      {
+        question: 'How is the ISO 16889 test rig configured to handle the upstream concentration requirement?',
+        answer: 'ISO 16889 test rig configuration for upstream concentration management: (1) Mixing reservoir — a stirred mixing reservoir (minimum 10 L) upstream of the dust injection point ensures uniform distribution of injected dust throughout the test fluid before reaching the upstream APC and filter inlet; (2) Bypass/sample lines — small-bore bypass lines (1–5 mm bore) divert a fraction of flow to each APC instrument, maintaining rated flow through the filter element while providing APC sample flow; (3) Dust feeder location — injected 1 metre upstream of the mixing reservoir inlet to allow complete mixing before sampling; (4) Temperature control — thermostatically controlled heater maintains test fluid at 50±2°C; viscosity stability is essential for consistent flow rate and particle transport behaviour; (5) System volume — total system fluid volume ≥5× filter rated flow per minute, providing adequate mixing reservoir capacity without excessively diluting the particle population.',
+      },
+      {
+        question: 'What is the DHC-to-rated-flow ratio used for filter selection in contamination budgets?',
+        answer: 'The DHC-to-rated-flow ratio provides a simple filter selection metric for contamination budget calculations: ratio = DHC (g) / Q_rated (L/min). Higher ratio = more contamination absorbed per unit flow rate = longer service intervals at a given ingression rate. Typical values: cellulose lube filter β10(c) ≈ 20: DHC/Q ratio 0.3–0.8 g/L; SYNTRAX synthetic lube filter β10(c) ≈ 200: DHC/Q ratio 1.5–4.0 g/L; NANOFORCE hydraulic filter β6(c) ≈ 200: DHC/Q ratio 0.5–2.0 g/L. For a contamination budget calculation with ingression rate I = 0.3 mg/hour and target 1,000-hour service interval: required DHC = 0.3 × 1,000/1,000 × rated flow rate (g). If rated flow = 40 L/min, required DHC = 12 g. Element with DHC/Q ratio = 0.5 g/L × 40 L/min = 20 g DHC provides 20/0.3 = 67 hours × rated flow ... the calculation illustrates that DHC/Q ratio directly scales service interval.',
+      },
+      {
+        question: 'What is the collapse pressure test in ISO 16889:2022, and how is it verified?',
+        answer: 'ISO 16889:2022 (updated from the 2008 version) includes the collapse pressure test as a mandatory supplementary test for element structural integrity — aligning with the equivalent NFPA T2.14.1 requirement that was previously only specified in the North American market. Test procedure: (1) Pre-test: conduct the multi-pass test to terminal ΔP (6 bar); (2) Apply collapse pressure: reverse the pressure direction (outside-in for elements with normal inside-out flow) to 10× rated operating differential pressure; (3) Hold for 1 minute; (4) Return to forward flow and conduct post-test APC measurement; (5) Acceptance criterion: Beta ratio after collapse test within 10% of pre-collapse Beta ratio; no bypass flow increase; no media visible in downstream flow path. Elements failing the collapse test after reaching terminal restriction have demonstrated that loading the element to service DHC limit leaves inadequate structural margin for pressure transients — these elements must be replaced at a lower DHC threshold in service.',
+      },
+      {
+        question: 'What is the impact of test fluid viscosity on ISO 16889 Beta ratio results?',
+        answer: 'ISO 16889 specifies test fluid kinematic viscosity of 46±2 cSt at 40°C (ISO VG 46 mineral hydraulic oil, or equivalent synthetic fluid at 50°C test temperature) — equivalent to approximately 10 cSt at 50°C. Viscosity directly affects particle capture efficiency in filter media: (1) At higher viscosity (lower temperature), drag forces on particles are higher relative to inertial forces, reducing inertial impaction efficiency — the dominant capture mechanism for particles above 5 µm in hydraulic filter media; (2) At lower viscosity (higher temperature), particles move through media faster, reducing diffusion capture time for sub-5 µm particles. The ISO VG 46 specification balances these effects at 50°C test temperature. Testing at significantly different viscosity (e.g., ISO VG 22 hydraulic fluid used in cold-climate systems) produces different Beta ratios for the same element — separate testing at the application viscosity is required for system design at viscosity below ISO VG 32.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16889:2022, Hydraulic Fluid Power — Filters — Multi-Pass Method for Evaluating Filtration Performance of a Filter Element',
+        relevance: 'Complete multi-pass test standard for Beta ratio, DHC, and collapse pressure testing of hydraulic filter elements.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 11171:2016, Hydraulic Fluid Power — Calibration of Automatic Particle Counters for Liquids',
+        relevance: 'APC calibration standard required for all particle count measurements in ISO 16889 testing.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants for Filter Evaluation — Part 1: Arizona Test Dust',
+        relevance: 'Defines ISO MTD (A2 fine) test dust used in ISO 16889 multi-pass testing circuits.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 4406:2021, Hydraulic Fluid Power — Fluids — Method for Coding Level of Contamination by Solid Particles',
+        relevance: 'Cleanliness coding standard used alongside ISO 16889 to define target system cleanliness that filter elements qualified by multi-pass testing must maintain.',
+      },
+    ],
     title: 'ISO 16889 Multi-Pass Test — Circuit Design and Execution Protocol',
     subtitle: 'Test Circuit Hardware, APC Calibration Validation, Soil Feed Calculation, and Data Reporting per ISO 16889:2022',
     metaDescription: 'ISO 16889 multi-pass filter efficiency testing requires a specific test circuit, APC calibration per ISO 11171, soil feed concentration of 100 mg/L, and gravimetric dirt holding capacity measurement. This engineering reference covers circuit design, blank test verification, Beta ratio calculation from integrated counts, and test report requirements.',
@@ -5265,6 +8145,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'compressed-air-quality-verification',
+    faqs: [
+      {
+        question: 'What is the point-of-use compressed air quality verification procedure per ISO 8573?',
+        answer: 'ISO 8573-2:2018 (aerosol oil and particle measurement) and ISO 8573-3:2010 (humidity) define the point-of-use sampling and measurement procedures for verifying compressed air quality against ISO 8573-1 purity class specifications. Verification procedure: (1) Install sampling probes at the point of use (process connection), oriented with probe inlet facing the air flow; (2) Draw air sample at specified sampling rate (ISO 8573-2: 10–30 L/min for particle counting); (3) Analyse within the time limits specified for each measurement method; (4) Report results with air pressure, temperature, and sampling date. Sampling must be performed at working pressure — dewpoint at atmospheric pressure does not represent the pressure dewpoint at line conditions. Point-of-use verification should be performed: at initial commissioning, after any filter element change, annually during operation, and after any system modification that could affect air quality.',
+      },
+      {
+        question: 'What online dewpoint measurement methods are used for continuous compressed air quality monitoring?',
+        answer: 'Online dewpoint measurement methods for continuous compressed air quality monitoring: (1) Chilled mirror (hygrometer) — mirrors cool until dew condenses; condensation point measured optically; accuracy ±0.1°C PDP; highest accuracy but slow response (1–5 min) and requires clean air free of oil contamination; (2) Capacitance polymer sensor — aluminium oxide or polymer film changes capacitance with water vapour partial pressure; accuracy ±2°C PDP; fast response (10–60 seconds); can tolerate oil contamination up to 0.1 mg/m3; most common online method; (3) Electrolytic (P2O5) sensor — water electrolytically reduced; measures absolute humidity; accuracy ±1°C PDP; high maintenance (sensor contamination); (4) TDLAS (Tunable Diode Laser Absorption Spectroscopy) — measures water vapour absorption at specific laser wavelength; accuracy ±0.5°C PDP; no moving parts; increasing adoption for critical applications. For pharmaceutical and electronics applications (ISO Class 1 water, PDP ≤ −70°C), chilled mirror or TDLAS measurement is required — capacitance sensors have insufficient accuracy at these low dewpoint levels.',
+      },
+      {
+        question: 'How is compressed air particle content measured at point of use per ISO 8573-2?',
+        answer: 'ISO 8573-2:2018 defines two test methods for compressed air particle content measurement: (1) Mass concentration method (gravimetric) — sample air through a pre-weighed membrane filter; weigh membrane after sampling; calculate mg/m3 from mass gain and sample volume; minimum sensitivity approximately 0.01 mg/m3; (2) Particle counting — calibrated APC instrument counts particles at ≥0.1–0.5 µm size thresholds; expresses results as particles/m3 per ISO 8573-1 purity class limits. Sampling procedure: (1) Install probe facing airflow with probe length ≥100 mm; (2) Use sample line materials that do not shed particles (stainless steel tubing, not copper or plastic); (3) Purge probe for minimum 2 minutes before starting measurement to clear dead volume contamination; (4) Minimum sample volume: 1,000 L for gravimetric, 0.1 L per count for particle counting; (5) Record air pressure, temperature, flow rate, and sample volume for result normalisation to ISO 8573-1 standard reference conditions (1 bar, 20°C, 0% RH).',
+      },
+      {
+        question: 'What is the oil content verification test for point-of-use compressed air?',
+        answer: 'Compressed air oil content verification per ISO 8573-2:2018: (1) Activated carbon adsorption tube — oil vapor adsorbs on carbon bed; desorbed and quantified by GC (gas chromatography) or gravimetric; detection limit 0.001 mg/m3; measures vapor phase oil only; (2) Impinger sampling — oil aerosol trapped in solvent; gravimetric analysis; detects aerosol droplets (not vapor); (3) Combined method — coalescing filter (collecting aerosol) followed by activated carbon tube (collecting vapor) in series; total oil = aerosol + vapor; (4) PID (Photoionisation Detector) — real-time total hydrocarbon concentration measurement; less specific than GC but provides immediate indication. Minimum sampling time: 30 minutes at rated airflow to detect concentrations at or near ISO 8573-1 Class 1 oil limit (0.01 mg/m3). Sampling line and probe must be thoroughly degreased before testing — oil contamination of sampling equipment gives false high readings that cannot be distinguished from real air contamination.',
+      },
+      {
+        question: 'What verification frequency is specified for pharmaceutical compressed air quality?',
+        answer: 'Pharmaceutical compressed air for product contact or critical processing applications (EU GMP Annex 1 classification: Grade A/B compressed air) requires: (1) Initial qualification testing — prior to production use; full ISO 8573 testing at all points of use; (2) Routine monitoring — monthly testing of dewpoint (PDP), oil content, and particle count at critical points of use during production; (3) Annual requalification — full testing at all points of use; (4) Triggered testing — any filter element change, compressor maintenance, or system modification triggers requalification within the affected zone; (5) Microbiological testing — quarterly per ISO 8573-7 at direct product contact points. EU GMP Annex 1 (2022 revision) requires a formal compressed air quality management plan as part of the contamination control strategy — test results must be logged and trended, with change control procedures for any modification affecting air quality.',
+      },
+      {
+        question: 'How is compressed air quality verification recorded for ISO 8573 compliance documentation?',
+        answer: 'ISO 8573 compliance documentation requirements: (1) Test report — identifying information (site, system, date, operator), sampling point identification, sample conditions (pressure, temperature, airflow), measurement method and instrument identification, instrument calibration reference, results in ISO 8573-1 class units, and comparison to specification; (2) Instrument calibration records — calibration certificate for each measurement instrument used, dated within the instrument\'s calibration interval; (3) Sample chain of custody — for laboratory-analysed samples, collection record showing: sample collection point, time, volume, preservation, transport conditions, and laboratory receipt; (4) Trend records — consecutive test results in chronological order for each sampling point, enabling trend analysis to detect gradual quality deterioration before action limits are breached. For pharmaceutical Grade A/B applications, all records must be 21 CFR Part 11 compliant (if electronic) or formally controlled per GMP document management procedures.',
+      },
+      {
+        question: 'What is the sampling probe insertion depth requirement for accurate compressed air quality measurement?',
+        answer: 'Compressed air sampling probe insertion and orientation requirements: (1) Insertion depth — minimum 1/3 of pipe diameter to reach the flowing core away from boundary layer effects (pipe wall boundary layer is depleted in particles due to inertial deposition); for a 50 mm pipe, minimum insertion 17 mm; (2) Orientation — probe inlet facing the airflow (isokinetic orientation) so sample velocity equals pipe flow velocity; off-axis sampling causes particle count errors of 20–50% due to non-isokinetic effects for particles above 1 µm; (3) Location — minimum 10 pipe diameters downstream of any bend, valve, or reducer to ensure uniform flow distribution across the pipe cross-section; 5 pipe diameters upstream of the next fitting; (4) Probe material — stainless steel (316L) to prevent probe corrosion releasing iron particles into the sample; no copper probe for oil analysis (copper dissolves in activated carbon adsorption blank samples, biasing results).',
+      },
+      {
+        question: 'What is the action procedure when compressed air quality verification fails?',
+        answer: 'Failed compressed air quality verification action procedure: (1) Immediate — isolate the affected process or system from the compressed air supply; do not use out-of-specification air for critical processes until quality is restored and verified; (2) Root cause investigation — identify the failure source: is it upstream (dryer failure, pre-filter bypass) or local (point-of-use filter failure, contaminated piping)? Check all upstream filter restriction indicators; (3) Corrective action — replace failed component (filter element, dryer desiccant, or valve seal); verify repair by repeat quality test at the failed point; (4) Release testing — two consecutive passing tests before returning system to service; (5) Impact assessment — determine what product or process was exposed to out-of-specification air and evaluate impact; pharmaceutical applications require batch review and potential reject/quarantine of affected product; (6) Preventive action — review the root cause to determine whether frequency monitoring, filter replacement intervals, or alarm systems require modification to prevent recurrence.',
+      },
+      {
+        question: 'How is compressed air microbiological quality tested, and what limits apply?',
+        answer: 'Compressed air microbiological testing per ISO 8573-7:2003: (1) Sampling — draw 1,000–3,000 L at rated system pressure through an impinger or membrane sampling device containing capture medium (buffered saline or Tryptic Soy Broth); (2) Incubation — culture captured microorganisms on appropriate growth media (TSA for total viable count, SDA for fungi and yeasts) at 32°C and 22°C for 3 and 5 days respectively; (3) Colony count — express results as Colony Forming Units per cubic metre (CFU/m3); (4) Limits by application: Pharmaceutical Grade A (critical zones, product contact): ≤1 CFU/m3; Grade B: ≤10 CFU/m3; General compressed air: no mandatory limit in ISO 8573-7, application-specific limit required. Microbiological quality improvement: (1) Ultra-filtration membrane filter (≥0.01 µm) at point of use for Grade A applications; (2) UV germicidal irradiation at 254 nm wavelength (kills 99.9% of bacteria and fungi) before terminal filter.',
+      },
+      {
+        question: 'What verification test confirms compressed air system integrity after annual maintenance shutdown?',
+        answer: 'Post-annual-maintenance compressed air quality verification: (1) Pre-startup leak test — pneumatic leak test at 1.1× operating pressure with nitrogen or air after all maintenance; check all disturbed connections using soap solution or ultrasonic leak detector; (2) Purge and verify — after startup, run compressor for minimum 30 minutes to stabilise before taking quality samples; purge all sampling points for 2 minutes before taking samples; (3) Full-parameter verification — test all ISO 8573 parameters (particles, water, oil) at all critical points of use; single-point verification of a central header does not confirm quality at branch ends; (4) Microbiological sampling — post-shutdown system disturbance can introduce biological contamination from opened connections; microbiological test required for pharmaceutical applications after any system maintenance; (5) Instrument verification — verify calibration of all online dewpoint and oil monitoring instruments against reference standards after maintenance; confirm alarm setpoints are correctly configured.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes',
+        relevance: 'Purity class specification standard defining maximum allowable concentrations of particles, water, and oil in compressed air.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-2:2018, Compressed Air — Part 2: Test Methods for Aerosol Oil and Particle Content',
+        relevance: 'Point-of-use oil and particle measurement test methods including impinger sampling, activated carbon adsorption, and particle counting procedures.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 8573-3:2010, Compressed Air — Part 3: Test Methods for Measurement of Humidity',
+        relevance: 'Dewpoint and humidity measurement methods for verifying ISO 8573-1 water class compliance at point of use.',
+      },
+      {
+        category: 'regulation',
+        citation: 'EU GMP Annex 1:2022, Manufacture of Sterile Medicinal Products (Compressed Air Section)',
+        relevance: 'EU pharmaceutical manufacturing guideline requiring compressed air quality management plans, continuous monitoring, and formal documentation for Grade A/B pharmaceutical air applications.',
+      },
+    ],
     title: 'Compressed Air Quality Verification — ISO 8573-4, -5, and -7',
     subtitle: 'Measurement Methods for Solid Particles, Oil Content, and Viable Microbiological Contamination in Compressed Air Systems',
     metaDescription: 'ISO 8573-4, ISO 8573-5, and ISO 8573-7 define the measurement methods used to verify that installed compressed air treatment achieves specified ISO 8573-1 purity class targets. This reference covers isokinetic sampling, oil aerosol gravimetric measurement, oil vapour GC-FID analysis, and microbiological sampling for compressed air quality audits.',
@@ -5392,6 +8336,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'hpcr-fuel-system-cleanliness',
+    faqs: [
+      {
+        question: 'What cleanliness level does diesel fuel require for HPCR injection systems?',
+        answer: 'HPCR injection systems typically require fuel cleanliness of ISO 4406 class 12/9/6 or better at the injector inlet, measured using ISO 11171-calibrated particle counters. Particles above 4 µm(c) pose the highest risk to 2 µm injector nozzle clearances. ISO 16332:2019 specifies test methods for fuel filter efficiency at these critical particle sizes.',
+      },
+      {
+        question: 'How does injection pressure affect fuel contamination sensitivity in HPCR systems?',
+        answer: 'Modern HPCR systems operate at 1,600–2,200 bar injection pressure. At these pressures, particles above 4 µm can cause abrasive wear of precision grinding surfaces with clearances of 1–3 µm. A single 10 µm hard silica particle traversing a 2 µm nozzle clearance generates contact stress exceeding 500 MPa, accelerating fretting wear by 10–30× versus ambient pressure systems.',
+      },
+      {
+        question: 'What is injector stiction and how does fuel contamination cause it?',
+        answer: 'Injector stiction is the adhesion failure of a control valve needle or piston due to lacquer deposits on precision sliding surfaces. Waxy asphaltene polymers form when fuel oxidation products cross-link at injector surface temperatures of 150–200 °C. Contaminated fuel with elevated oxidation stability index (ASTM D525 < 60 min) accelerates lacquer deposition, increasing needle lift energy by 15–40% and degrading injection timing.',
+      },
+      {
+        question: 'How does water in diesel fuel damage HPCR components?',
+        answer: 'Water content above 200 ppm (ASTM D6304) causes three failure modes in HPCR systems: hydraulic lock in needle valve bores at concentrations above 500 ppm, hydrogen embrittlement of hardened steel components under cyclic pressure loading, and microbial growth forming biofilm mats that block 5 µm fuel filters within 30–60 days. Karl Fischer analysis per ASTM D6304 should verify water content below 75 ppm for critical HPCR applications.',
+      },
+      {
+        question: 'What particle size distribution matters most for fuel filter selection in HPCR applications?',
+        answer: 'The critical particle window for HPCR is 4–10 µm(c), corresponding to ISO 11171 calibration. Particles in this range exceed injector nozzle clearances of 1–3 µm but pass through coarser 25 µm primary filters. ISO 16332 specifies Beta(4[c]) efficiency measurement using ISO 12103-1 A1 fine test dust. A filter achieving Beta(4[c]) ≥ 200 (99.5% efficiency) at rated flow reduces 4 µm particle population by 10–100× versus unfiltered fuel.',
+      },
+      {
+        question: 'How should fuel filter change intervals be determined for HPCR engine applications?',
+        answer: 'Fuel filter change intervals for HPCR applications should be based on differential pressure monitoring rather than fixed mileage, since contamination load varies significantly with fuel source. A differential pressure switch set at 80% of rated terminal ΔP (typically 200–300 mbar) triggers replacement. Time-based fallback intervals of 500 hours or 25,000 km apply when ΔP monitoring is absent. ISO 16332 restriction-to-flow tests validate filter capacity at these conditions.',
+      },
+      {
+        question: 'What role does fuel lubricity play in injector wear protection?',
+        answer: 'Fuel lubricity is measured as High Frequency Reciprocating Rig (HFRR) wear scar diameter per ISO 12156-1. Ultra-low sulphur diesel (ULSD) with sulphur < 10 ppm loses natural lubricity provided by sulphur compounds, increasing injector pump wear by 30–50% versus 500 ppm sulphur fuel. HFRR wear scar diameter should remain below 460 µm at 60 °C. Lubricity additives restore performance but can affect fuel filter media compatibility.',
+      },
+      {
+        question: 'How does fuel temperature affect filter performance in HPCR systems?',
+        answer: 'Elevated fuel temperature in return circuits (60–80 °C) reduces fuel viscosity by 40–60% versus ambient, increasing flow velocity through filter media and reducing particle capture efficiency. ISO 16332 specifies efficiency testing at 40 °C fuel temperature; installations with fuel return temperatures above 60 °C should apply a 15–25% efficiency derating. Thermal conditioning of test fuel per ISO 16332 Annex A is required for accurate filter selection.',
+      },
+      {
+        question: 'What is the relationship between fuel filter collapse pressure rating and HPCR system reliability?',
+        answer: 'HPCR fuel systems generate pressure spikes of 50–100 bar during cold start and rapid throttle transients. Filter elements must withstand these spikes without structural collapse, which would release trapped contamination. ISO 16332 specifies collapse pressure testing at 3× rated differential pressure as a minimum. Elements rated for ΔP collapse > 10 bar are appropriate for HPCR applications; primary fuel filters should be rated to 20 bar collapse pressure for high-cycle heavy-duty applications.',
+      },
+      {
+        question: 'How does biodiesel content affect fuel contamination risk in HPCR systems?',
+        answer: 'Biodiesel blends (B5–B20) increase hygroscopicity by 3–5× versus ULSD, absorbing atmospheric moisture and accelerating microbial growth at water activity above 0.6. Fatty acid methyl esters (FAME) oxidize at accelerated rates (ASTM D525 induction period < 30 min for aged B20), forming peroxides and gum deposits that block fine fuel filters. HPCR systems operating on B10+ should reduce primary filter change intervals by 30–50% and specify media rated for biodiesel compatibility per ISO 12103-1 supplementary testing.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 16332:2019, Diesel Engines — Fuel Filters — Test Methods',
+        relevance: 'Specifies multi-pass filter efficiency testing with ISO 12103-1 A1 test dust at particle sizes 4, 6, 10, and 14 µm(c); defines nominal flow, terminal ΔP, and collapse pressure test protocols for HPCR fuel filter qualification.',
+      },
+      {
+        category: 'test-method',
+        citation: 'ASTM D6304-16, Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration',
+        relevance: 'Quantitative water content measurement for diesel fuel and fuel system fluids; critical for HPCR injector protection where water content must remain below 75–200 ppm to prevent hydraulic lock and embrittlement.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12156-1:2018, Diesel Fuel — Assessment of Lubricity Using the High-Frequency Reciprocating Rig (HFRR)',
+        relevance: 'Defines HFRR test procedure for diesel fuel lubricity measurement; wear scar diameter limit of 460 µm at 60 °C ensures adequate injector pump lubrication in ULSD formulations for HPCR systems.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 12103-1:2016, Road Vehicles — Test Contaminants — Part 1: Arizona Test Dust',
+        relevance: 'Specifies chemical composition, particle size distribution, and density of standardised test contaminants used in ISO 16332 fuel filter efficiency testing; ISO A1 fine grade used for HPCR filter qualification below 10 µm.',
+      },
+    ],
     title: 'High-Pressure Common Rail Fuel System Cleanliness',
     subtitle: 'Particle Targets, Lubricity Requirements, and ISO 23369 Filter Performance for HPCR Injection Systems',
     metaDescription: 'High-pressure common rail (HPCR) injection systems operating at 1,800–2,500 bar require fuel cleanliness to prevent injector needle valve damage. This reference covers ISO 23369 multi-pass fuel filter testing, ISO 12156-1 HFRR lubricity requirements, water content limits, and particle cleanliness targets for HPCR fuel delivery systems.',
@@ -5519,6 +8527,70 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'crankcase-ventilation-filtration',
+    faqs: [
+      {
+        question: 'What are blow-by gases and why does crankcase ventilation require filtration?',
+        answer: 'Blow-by gases are combustion products that pass the piston ring pack into the crankcase: unburned fuel vapours, CO2, water vapour, and soot particles in the 0.1–5 µm range. Positive crankcase ventilation (PCV) recirculates these gases to the intake manifold to prevent crankcase pressurisation. Without oil aerosol separation, blow-by oil mist (droplet diameter 0.1–3 µm, concentration 100–5,000 mg/m³) contaminates the air charge, fouls EGR valves, and deposits in turbocharger compressors within 500–2,000 hours.',
+      },
+      {
+        question: 'What filtration efficiency is required for crankcase ventilation separators?',
+        answer: 'SAE J1277 specifies crankcase ventilation separator efficiency as total oil carryover mass at rated flow and oil temperature. Closed crankcase ventilation (CCV) systems for Euro VI / EPA 2010+ engines must achieve oil carryover below 1.0 g/kWh. This corresponds to separator efficiency above 95% for 0.3 µm droplets under ISO 29463-equivalent testing. Open crankcase ventilation (OCV) systems with roadside emission requirements typically target 90–95% efficiency for 1 µm droplets.',
+      },
+      {
+        question: 'How does a coalescing separator work in crankcase ventilation applications?',
+        answer: 'A crankcase coalescing separator uses borosilicate glass fibre media with fibre diameter 0.5–5 µm. Oil aerosol droplets (0.1–3 µm) impact and adhere to fibres via inertial impaction and diffusion mechanisms. Adhered droplets coalesce on fibre surfaces into larger drops (50–500 µm) that drain by gravity from the media. Drainage rate must exceed oil loading rate to prevent flooding; media face velocity is limited to 0.05–0.20 m/s to maintain drainage equilibrium and efficiency above 95%.',
+      },
+      {
+        question: 'What is the relationship between blow-by flow rate and crankcase ventilation filter sizing?',
+        answer: 'Blow-by flow increases with engine load and wear. A new heavy-duty diesel engine produces 100–300 L/min blow-by at full load; a worn engine with ring wear may produce 500–800 L/min. Crankcase separators are rated at maximum expected blow-by flow with 20% safety margin. Undersized separators operate above rated face velocity, reducing efficiency by 15–30% and increasing oil carryover. SAE J1277 requires efficiency measurement at 100% and 120% of rated flow.',
+      },
+      {
+        question: 'How does oil temperature affect crankcase ventilation separator performance?',
+        answer: 'Oil viscosity decreases from 150 mPa·s at 40 °C to 10–15 mPa·s at 100 °C for SAE 15W-40. Lower viscosity at operating temperature reduces drainage resistance through the coalescing media but increases re-entrainment risk at high face velocities. SAE J1277 specifies separator testing at 100 °C oil temperature representing hot operating conditions. Cold start performance (0–40 °C) governs oil condensate accumulation in CCV tubes and must be verified for arctic applications below −20 °C.',
+      },
+      {
+        question: 'What are the consequences of crankcase ventilation filter plugging in diesel engines?',
+        answer: 'A plugged CCV separator restricts blow-by flow, increasing crankcase pressure. When crankcase pressure exceeds 50–75 mbar (SAE J1277 crankcase limit), oil is forced past crank seals and valve stem seals, increasing external oil consumption by 0.5–2.0 L/100 h. Sustained overpressure above 100 mbar accelerates gasket failure. Modern ECU systems monitor crankcase pressure via MAP sensor deviation and trigger fault codes when CCV restriction exceeds design limits.',
+      },
+      {
+        question: 'How should maintenance intervals be set for CCV separators in heavy-duty applications?',
+        answer: 'CCV separator maintenance intervals are typically set at 50–75% of engine oil change intervals (500–1,500 hours for heavy-duty diesel). Coalescing media retains soot particles that increase pressure drop over time; most CCV separators specify replacement when pressure drop exceeds 25–40 mbar at rated flow. Oil consumption monitoring provides an indirect signal: an increase above 0.5 L/100 h above baseline warrants CCV inspection. SAE J1277 drain plug inspection at each oil change is recommended for fleet applications.',
+      },
+      {
+        question: 'What does Euro VI emission regulation require for crankcase ventilation systems?',
+        answer: 'Euro VI Regulation (EC) 595/2009 and UN ECE Regulation 49 (Rev.06) require closed crankcase ventilation for all heavy-duty diesel engines; open crankcase systems are prohibited. The CCV system must route all blow-by gases back to the engine air intake with no direct atmosphere venting. Oil carryover is regulated indirectly via PM2.5 tailpipe emission limits of 10 mg/kWh (Euro VI), which include contributions from CCV oil mist entering combustion. SAE J1277 CCV efficiency standards support compliance verification.',
+      },
+      {
+        question: 'How does EGR interaction affect crankcase ventilation filter contamination load?',
+        answer: 'EGR recirculates 15–30% of exhaust gas (700–900 °C) back to the intake manifold, increasing soot and particulate load in the intake air charge by 5–15× versus non-EGR engines. Soot particles entering the crankcase via blow-by contaminate oil and the CCV coalescing media, reducing media lifetime by 30–50% in high-EGR engines. EGR cooler fouling (hydrocarbon condensate + soot) causes breakthrough events that temporarily spike CCV inlet contamination; filter selection for EGR engines should specify 2× the soot capacity of standard CCV elements.',
+      },
+      {
+        question: 'What are the key design parameters for CCV separator housing in turbocharged applications?',
+        answer: 'Turbocharged crankcase ventilation must manage both blow-by separation and prevent turbocharger compressor fouling. Housing design requirements: (1) drain port positioned below media centroid with 2–5% of media volume as drain reservoir to prevent re-entrainment; (2) inlet baffle to decelerate blow-by flow from 15–30 m/s line velocity to 0.5–2 m/s separator approach velocity; (3) housing rated for 5× operating pressure differential for collapse safety; (4) integration with check valve preventing intake manifold vacuum from drawing oil into separator. SAE J1277 mandates housing orientation testing at 0°, ±30° and ±45° from design axis.',
+      },
+    ],
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'SAE J1277:2015, Measurement of Crankcase Fumes Emitted from Diesel Engines',
+        relevance: 'Defines test method for measuring oil carryover mass flow from crankcase ventilation separators at rated blow-by flow and oil temperature; specifies efficiency calculation and permissible carryover limits for open and closed crankcase systems.',
+      },
+      {
+        category: 'regulation',
+        citation: 'UN ECE Regulation 49 Rev.06 (Euro VI), Uniform Provisions for Diesel Engine Emissions',
+        relevance: 'Prohibits open crankcase ventilation systems on Euro VI heavy-duty diesel engines; requires CCV systems to route all blow-by to the air intake; PM emission limit of 10 mg/kWh includes indirect contribution from CCV oil aerosol combustion.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 29463-3:2011, High-Efficiency Air Filters (EPA, HEPA and ULPA) — Part 3: Testing Flat Sheet Filter Media',
+        relevance: 'Test methods applicable to coalescing media efficiency measurement for sub-micron droplets; penetration measurement at 0.1–0.3 µm provides basis for CCV separator efficiency specification in high-efficiency applications.',
+      },
+      {
+        category: 'test-method',
+        citation: 'ASTM D7483-08, Standard Test Method for Determination of Dynamic Foam Properties of Engine Oils and Other Fluids',
+        relevance: 'Characterises oil foaming tendency relevant to CCV separator drain performance; oils with high foam tendency (ASTM sequence I foam > 300 mL) impair drainage through coalescing media and increase oil carryover above rated limits.',
+      },
+    ],
     title: 'Crankcase Ventilation and Blow-By Gas Filtration',
     subtitle: 'CCV System Design, Coalescing Separator Performance, and SAE J1243 Oil Carryover Measurement',
     metaDescription: 'Crankcase ventilation (CCV) systems recirculate engine blow-by gases to the intake after removing oil aerosol by coalescing separation. This reference covers closed CCV system design, coalescing media capture mechanisms, SAE J1243 performance testing, oil carryover limits, pressure drop requirements, and regulatory context for heavy-duty diesel applications.',
@@ -5646,6 +8718,28 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
 
   {
     slug: 'fleet-oil-sampling-protocol',
+    engineeringReferences: [
+      {
+        category: 'standard',
+        citation: 'ISO 4021:2021, Hydraulic Fluid Power — Particulate Contamination Analysis — Extraction of Fluid Samples from Lines of an Operating System',
+        relevance: 'Specifies oil sampling valve design, installation, flushing procedure, and minimum sample volume (100 mL) for representative particle count samples; mandates isokinetic or turbulent-flow sampling locations.',
+      },
+      {
+        category: 'test-method',
+        citation: 'ASTM D5185-19, Standard Test Method for Multielement Determination of Used and Unused Lubricating Oils and Base Oils by Inductively Coupled Plasma Atomic Emission Spectrometry',
+        relevance: 'Primary reference for ICP wear metal analysis in used oil; specifies wavelength selection, calibration, and detection limits for 20+ elements; documents particle size limitation and comparison with rotating disc electrode for large-particle detection.',
+      },
+      {
+        category: 'test-method',
+        citation: 'ASTM D7690-19, Standard Practice for Microscopic Characterization of Particles from In-Service Lubricants by Analytical Ferrography',
+        relevance: 'Specifies analytical ferrography procedure for identifying wear particle morphology (rubbing, cutting, severe sliding, fatigue), material composition, and size distribution above 5 µm; provides failure mode diagnosis not possible with ICP alone.',
+      },
+      {
+        category: 'standard',
+        citation: 'ISO 10012:2003, Measurement Management Systems — Requirements for Measurement Processes and Measuring Equipment',
+        relevance: 'Framework for laboratory measurement management including calibration, uncertainty budgets, and proficiency testing; applies to oil analysis laboratories providing results used in fleet maintenance decision-making.',
+      },
+    ],
     title: 'Fleet-Level Oil Sampling Protocol Design',
     subtitle: 'ISO 3722 Sampling Procedure, Chain-of-Custody Requirements, Frequency Optimisation, and ISO 17359 Programme Design',
     metaDescription: 'Fleet-level oil sampling programmes require ISO 3722 sampling procedure, standardised chain-of-custody labels, ISO 17359 criticality-based frequency selection, and ISO 13374 data management for trend analysis. This reference covers sampling point selection, equipment preparation, sample frequency optimisation, statistical fleet design, and programme effectiveness measurement.',
