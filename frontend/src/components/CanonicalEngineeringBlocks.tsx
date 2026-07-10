@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getFamilyBySlug } from '@/lib/product-families-data';
-import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getRelatedEntities } from '@/lib/entity-graph';
 
 interface CanonicalBlock {
@@ -14,36 +13,6 @@ interface CanonicalBlock {
 
 function humanize(value: string) {
   return value.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
-}
-
-function systemBlocks(slug: string): { title: string; blocks: CanonicalBlock[] } | null {
-  const system = getProtectionSystemBySlug(slug);
-  if (!system) return null;
-
-  const entityId = `system:${system.slug}`;
-  const technologies = getRelatedEntities(entityId, 'uses-technology');
-  const families = getRelatedEntities(entityId, 'contains-family');
-  const standards = getRelatedEntities(entityId, 'validated-by');
-
-  return {
-    title: `${system.name} engineering summary`,
-    blocks: [
-      { label: 'Definition', content: system.overview },
-      { label: 'Engineering Principle', content: system.engineeringPrinciple },
-      {
-        label: 'Applicable Standards',
-        links: standards.map((item) => ({ href: item.href, label: item.name })),
-      },
-      {
-        label: 'Related Technologies',
-        links: technologies.map((item) => ({ href: item.href, label: item.name })),
-      },
-      {
-        label: 'Related Product Families',
-        links: families.map((item) => ({ href: item.href, label: item.name })),
-      },
-    ],
-  };
 }
 
 function familyBlocks(slug: string): { title: string; blocks: CanonicalBlock[] } | null {
@@ -79,8 +48,6 @@ function familyBlocks(slug: string): { title: string; blocks: CanonicalBlock[] }
 function configFor(pathname: string) {
   const segments = pathname.split('/').filter(Boolean);
   if (segments.length !== 2) return null;
-
-  if (segments[0] === 'systems') return systemBlocks(segments[1]);
   if (segments[0] === 'families') return familyBlocks(segments[1]);
   return null;
 }
