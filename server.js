@@ -1939,6 +1939,63 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
   }
 });
 
+// ─── POST /api/import/hd-fitment ─────────────────────────────────────────────
+// Bulk-write equipment_applications scraped from Fleetguard / Donaldson.
+// Body: array of { part, brand, mann_part, equipment: [{make,model,engine,year,equipment}] }
+// Lookup: finds ELIMFILTERS SKU via competitor_codes @> [{"manufacturer":"FLEETGUARD","code":part}]
+// Only writes to SKUs whose equipment_applications is currently empty.
+// Max 200 rows per call.
+app.post('/api/import/hd-fitment', importLimiter, requireAdmin, async (req, res) => {
+  const rows = Array.isArray(req.body) ? req.body : req.body?.rows;
+  if (!rows || !Array.isArray(rows)) return res.status(400).json({ error: 'Expected array of fitment rows' });
+  if (rows.length > 200) return res.status(400).json({ error: 'Max 200 rows per batch' });
+
+  const stats = { updated: 0, skipped_no_sku: 0, skipped_already_has: 0, skipped_no_equip: 0, errors: [] };
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    for (const row of rows) {
+      const { part, brand, equipment } = row;
+      if (!part || !Array.isArray(equipment) || equipment.length === 0) { stats.skipped_no_equip++; continue; }
+
+      const brandUpper = (brand || 'FLEETGUARD').toUpperCase();
+      const { rows: found } = await client.query(
+        `SELECT sku, jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) AS eq_count
+         FROM elimfilters_catalog
+         WHERE competitor_codes @> $1::jsonb
+         LIMIT 1`,
+        [JSON.stringify([{ manufacturer: brandUpper, code: part }])]
+      );
+
+      if (!found.length) { stats.skipped_no_sku++; continue; }
+      const { sku, eq_count } = found[0];
+      if (eq_count > 0) { stats.skipped_already_has++; continue; }
+
+      const apps = equipment.map(e => ({
+        make: e.make || '',
+        model: e.model || e.equipment || '',
+        engine: e.engine || '',
+        year: e.year || '',
+        equipment: e.equipment || '',
+      }));
+
+      await client.query(
+        `UPDATE elimfilters_catalog SET equipment_applications = $1::jsonb WHERE sku = $2`,
+        [JSON.stringify(apps), sku]
+      );
+      stats.updated++;
+    }
+    await client.query('COMMIT');
+    res.json({ success: true, ...stats });
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('[import/hd-fitment]', err.message);
+    res.status(500).json({ error: err.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── POST /api/admin/rename-sku ──────────────────────────────────────────────────────────────────────────────
 // Renames a SKU: copies all data to new_sku, deletes old_sku.
 // Body: { old_sku: "EA200003", new_sku: "EA20003" }
