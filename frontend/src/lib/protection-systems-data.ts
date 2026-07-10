@@ -46,7 +46,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Contamination interception before it reaches the combustion chamber.',
     overview: 'Air Intake Protection is the first defense layer in any contamination control strategy. Every combustion engine requires clean, metered air — any particulate matter that bypasses the intake system reaches the combustion chamber, accelerates cylinder liner and piston ring wear, and shortens engine service life. ELIMFILTERS Air Intake Protection systems are engineered to ISO 5011 standards, delivering 99.9%–99.98% particle interception across the contamination size ranges critical to heavy-duty engine protection.',
     engineeringPrinciple: 'Progressive Density Gradient (PDG) filtration creates layered interception zones. Outer media captures coarse particles (25 µm+) before they load the inner zones. Intermediate layers intercept mid-range particles. The final inner zone captures sub-micron contamination. This graduated architecture extends service life by distributing contaminant loading across the full media depth rather than concentrating it at the surface.',
-    heroImage: '/images/mecanica-air.avif',
+    heroImage: '/images/carcasa.jd.avif',
     heroColor: '#FFF12D',
     primaryTechnologies: ['macrocore'],
     supportingTechnologies: ['intekcore'],
