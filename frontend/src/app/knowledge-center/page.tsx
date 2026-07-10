@@ -428,7 +428,7 @@ export default function KnowledgeCenterPage() {
         </div>
       </section>
 
-      {/* JSON-LD */}
+      {/* CollectionPage JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
@@ -445,6 +445,34 @@ export default function KnowledgeCenterPage() {
           name: 'Industrial Filtration Engineering',
           description: 'Contamination control, filtration media science, fluid cleanliness standards, and equipment asset protection.',
         },
+      })}} />
+
+      {/* WebSite + SearchAction JSON-LD — enables Google Sitelinks search box */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': 'https://elimfilters.com/#website',
+        name: 'ELIMFILTERS',
+        url: 'https://elimfilters.com',
+        publisher: { '@id': 'https://elimfilters.com/#organization' },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://elimfilters.com/knowledge-center/search?q={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      })}} />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ELIMFILTERS', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Knowledge Center', item: 'https://elimfilters.com/knowledge-center' },
+        ],
       })}} />
     </main>
   );

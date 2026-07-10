@@ -435,6 +435,17 @@ export default function GlossaryTermContent({
         dateModified: entry.lastReviewed,
         alternateName: entry.aliases,
       }} />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Knowledge Center', item: 'https://elimfilters.com/knowledge-center' },
+          { '@type': 'ListItem', position: 2, name: 'Glossary', item: 'https://elimfilters.com/knowledge-center/glossary' },
+          { '@type': 'ListItem', position: 3, name: entry.term, item: `https://elimfilters.com/knowledge-center/glossary/${slug}` },
+        ],
+      }) }} />
     </main>
   );
 }

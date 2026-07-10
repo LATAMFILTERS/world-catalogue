@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { KCStandard } from '@/lib/knowledge-center-data';
+import type { KCFaqItem, KCEngineeringReference } from '@/lib/knowledge-center-data';
 import {
   ArticleBreadcrumb,
   ArticleHero,
@@ -14,6 +16,49 @@ import {
 } from '@/components/knowledge-center';
 import { getStandardSidebarData } from '@/lib/knowledge-center/navigation-index';
 import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
+
+const REF_CATEGORY_LABEL: Record<string, string> = {
+  standard: 'STANDARD',
+  specification: 'SPEC',
+  research: 'RESEARCH',
+  handbook: 'HANDBOOK',
+  regulation: 'REGULATION',
+  'test-method': 'TEST METHOD',
+};
+
+function FaqAccordion({ faqs }: { faqs: KCFaqItem[] }) {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      {faqs.map((faq, i) => (
+        <div key={i} style={{ border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.015)' }}>
+          <button
+            onClick={() => setOpenIdx(openIdx === i ? null : i)}
+            style={{
+              width: '100%', background: 'none', border: 'none', padding: '1rem 1.25rem',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
+              cursor: 'pointer', textAlign: 'left', gap: '1rem',
+            }}
+          >
+            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#fff', lineHeight: 1.4 }}>
+              {faq.question}
+            </span>
+            <span style={{ color: '#FFF12D', fontSize: '1.1rem', flexShrink: 0, marginTop: '1px' }}>
+              {openIdx === i ? '−' : '+'}
+            </span>
+          </button>
+          {openIdx === i && (
+            <div style={{ padding: '0 1.25rem 1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', textAlign: 'justify', marginTop: '0.75rem' }}>
+                {faq.answer}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const STATUS_COLORS: Record<string, string> = {
   active:     '#44ff88',
@@ -386,6 +431,50 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           </motion.div>
         )}
 
+        {/* Engineering References */}
+        {std.engineeringReferences && std.engineeringReferences.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
+              ENGINEERING REFERENCES
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {std.engineeringReferences.map((ref, i) => (
+                <div key={i} style={{ padding: '0.875rem 1.125rem', border: '1px solid rgba(255,255,255,0.06)', display: 'flex', gap: '0.875rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.5rem', letterSpacing: '0.08em', color: '#FFF12D', background: 'rgba(255,241,45,0.08)', border: '1px solid rgba(255,241,45,0.15)', padding: '0.2rem 0.45rem', flexShrink: 0, marginTop: '2px' }}>
+                    {REF_CATEGORY_LABEL[ref.category] ?? ref.category.toUpperCase()}
+                  </span>
+                  <div>
+                    <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', color: 'rgba(255,255,255,0.75)', marginBottom: '0.25rem' }}>{ref.citation}</p>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)' }}>{ref.relevance}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* FAQ Section */}
+        {std.faqs && std.faqs.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
+              FREQUENTLY ASKED QUESTIONS — {std.code}
+            </p>
+            <FaqAccordion faqs={std.faqs} />
+          </motion.div>
+        )}
+
         <RelatedArticles
           title={`ENGINEERING ARTICLES REFERENCING ${std.code}`}
           items={referencingArticles.slice(0, 6).map((art) => ({
@@ -422,8 +511,34 @@ export default function StandardContent({ std }: { std: KCStandard }) {
         description: std.metaDescription,
         url: `https://elimfilters.com/knowledge-center/standards/${std.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         about: { '@type': 'Thing', name: std.code, description: std.scope },
+        dateModified: std.year ? `${std.year}-01-01` : undefined,
       }} />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Knowledge Center', item: 'https://elimfilters.com/knowledge-center' },
+          { '@type': 'ListItem', position: 2, name: 'Standards', item: 'https://elimfilters.com/knowledge-center/standards' },
+          { '@type': 'ListItem', position: 3, name: std.code, item: `https://elimfilters.com/knowledge-center/standards/${std.slug}` },
+        ],
+      }) }} />
+
+      {/* FAQPage JSON-LD — emitted only when standard carries FAQ data */}
+      {std.faqs && std.faqs.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: std.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        }) }} />
+      )}
     </main>
   );
 }
