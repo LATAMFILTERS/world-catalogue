@@ -3,7 +3,7 @@ import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
-import { getEntityNode, getIncomingEntities, getRelatedEntities } from '@/lib/entity-graph';
+import { getConnectedEntities, getEntityNode, type EntityKind } from '@/lib/entity-graph';
 
 type ConnectionKind = 'technology' | 'system' | 'family' | 'industry' | 'standard' | 'failure';
 
@@ -21,13 +21,8 @@ function unique(nodes: Array<{ id: string; href: string; name: string }>) {
   return Array.from(new Map(nodes.map((node) => [node.id, { href: node.href, name: node.name }])).values());
 }
 
-function failuresForEntity(id: string) {
-  return unique([
-    ...getRelatedEntities(id, 'controls-failure'),
-    ...getRelatedEntities(id, 'mitigates-failure'),
-    ...getRelatedEntities(id, 'addresses-failure'),
-    ...getRelatedEntities(id, 'exposed-to-failure'),
-  ]);
+function connected(id: string, targetKind: EntityKind) {
+  return unique(getConnectedEntities(id, { targetKind }));
 }
 
 function buildGroups(kind: ConnectionKind, slug: string): { title: string; groups: Group[] } | null {
@@ -38,11 +33,11 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
     return {
       title: `${system.name} connections`,
       groups: [
-        { label: 'Technologies', links: unique(getRelatedEntities(id, 'uses-technology')) },
-        { label: 'Product Families', links: unique(getRelatedEntities(id, 'contains-family')) },
-        { label: 'Standards', links: unique(getRelatedEntities(id, 'validated-by')) },
-        { label: 'Industries', links: unique(getRelatedEntities(id, 'applied-in')) },
-        { label: 'Failure Modes Controlled', links: failuresForEntity(id) },
+        { label: 'Technologies', links: connected(id, 'technology') },
+        { label: 'Product Families', links: connected(id, 'family') },
+        { label: 'Standards', links: connected(id, 'standard') },
+        { label: 'Industries', links: connected(id, 'industry') },
+        { label: 'Failure Modes Controlled', links: connected(id, 'failure') },
       ],
     };
   }
@@ -51,16 +46,14 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
     const family = getFamilyBySlug(slug);
     if (!family) return null;
     const id = `family:${slug}`;
-    const systems = getRelatedEntities(id, 'belongs-to');
-    const industries = systems.flatMap((system) => getRelatedEntities(system.id, 'applied-in'));
     return {
       title: `${family.name} connections`,
       groups: [
-        { label: 'Protection System', links: unique(systems) },
-        { label: 'Primary Technology', links: unique(getRelatedEntities(id, 'uses-technology')) },
-        { label: 'Standards', links: unique(getRelatedEntities(id, 'validated-by')) },
-        { label: 'Industries', links: unique(industries) },
-        { label: 'Failure Modes Controlled', links: failuresForEntity(id) },
+        { label: 'Protection System', links: connected(id, 'system') },
+        { label: 'Primary Technology', links: connected(id, 'technology') },
+        { label: 'Standards', links: connected(id, 'standard') },
+        { label: 'Industries', links: connected(id, 'industry') },
+        { label: 'Failure Modes Controlled', links: connected(id, 'failure') },
       ],
     };
   }
@@ -69,18 +62,14 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
     const technology = getCanonicalTechnology(slug);
     const node = getEntityNode(`technology:${slug}`);
     if (!technology || !node) return null;
-    const systems = getIncomingEntities(node.id, 'uses-technology').filter((entry) => entry.kind === 'system');
-    const families = getIncomingEntities(node.id, 'uses-technology').filter((entry) => entry.kind === 'family');
-    const standards = [...systems, ...families].flatMap((entry) => getRelatedEntities(entry.id, 'validated-by'));
-    const industries = systems.flatMap((entry) => getRelatedEntities(entry.id, 'applied-in'));
     return {
       title: `${technology.name} connections`,
       groups: [
-        { label: 'Protection Systems', links: unique(systems) },
-        { label: 'Product Families', links: unique(families) },
-        { label: 'Standards', links: unique(standards) },
-        { label: 'Industries', links: unique(industries) },
-        { label: 'Failure Modes Controlled', links: failuresForEntity(node.id) },
+        { label: 'Protection Systems', links: connected(node.id, 'system') },
+        { label: 'Product Families', links: connected(node.id, 'family') },
+        { label: 'Standards', links: connected(node.id, 'standard') },
+        { label: 'Industries', links: connected(node.id, 'industry') },
+        { label: 'Failure Modes Controlled', links: connected(node.id, 'failure') },
       ],
     };
   }
@@ -89,18 +78,14 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
     const item = getItemBySlug('industries', slug);
     const node = getEntityNode(`industry:${slug}`);
     if (!item || !node) return null;
-    const systems = getIncomingEntities(node.id, 'applied-in').filter((entry) => entry.kind === 'system');
-    const technologies = systems.flatMap((entry) => getRelatedEntities(entry.id, 'uses-technology'));
-    const families = systems.flatMap((entry) => getRelatedEntities(entry.id, 'contains-family'));
-    const standards = systems.flatMap((entry) => getRelatedEntities(entry.id, 'validated-by'));
     return {
       title: `${node.name} protection connections`,
       groups: [
-        { label: 'Protection Systems', links: unique(systems) },
-        { label: 'Technologies', links: unique(technologies) },
-        { label: 'Product Families', links: unique(families) },
-        { label: 'Standards', links: unique(standards) },
-        { label: 'Failure Modes', links: failuresForEntity(node.id) },
+        { label: 'Protection Systems', links: connected(node.id, 'system') },
+        { label: 'Technologies', links: connected(node.id, 'technology') },
+        { label: 'Product Families', links: connected(node.id, 'family') },
+        { label: 'Standards', links: connected(node.id, 'standard') },
+        { label: 'Failure Modes', links: connected(node.id, 'failure') },
       ],
     };
   }
@@ -108,18 +93,14 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
   if (kind === 'standard') {
     const node = getEntityNode(`standard:${slug}`);
     if (!node) return null;
-    const systems = getIncomingEntities(node.id, 'validated-by').filter((entry) => entry.kind === 'system');
-    const families = getIncomingEntities(node.id, 'validated-by').filter((entry) => entry.kind === 'family');
-    const technologies = [...systems, ...families].flatMap((entry) => getRelatedEntities(entry.id, 'uses-technology'));
-    const industries = systems.flatMap((entry) => getRelatedEntities(entry.id, 'applied-in'));
     return {
       title: `${node.name} engineering connections`,
       groups: [
-        { label: 'Protection Systems', links: unique(systems) },
-        { label: 'Technologies', links: unique(technologies) },
-        { label: 'Product Families', links: unique(families) },
-        { label: 'Industries', links: unique(industries) },
-        { label: 'Failure Modes Addressed', links: failuresForEntity(node.id) },
+        { label: 'Protection Systems', links: connected(node.id, 'system') },
+        { label: 'Technologies', links: connected(node.id, 'technology') },
+        { label: 'Product Families', links: connected(node.id, 'family') },
+        { label: 'Industries', links: connected(node.id, 'industry') },
+        { label: 'Failure Modes Addressed', links: connected(node.id, 'failure') },
       ],
     };
   }
@@ -129,11 +110,11 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
   return {
     title: `${node.name} control connections`,
     groups: [
-      { label: 'Protection Systems', links: unique(getIncomingEntities(node.id, 'controls-failure').filter((entry) => entry.kind === 'system')) },
-      { label: 'Technologies', links: unique(getIncomingEntities(node.id, 'mitigates-failure')) },
-      { label: 'Product Families', links: unique(getIncomingEntities(node.id, 'controls-failure').filter((entry) => entry.kind === 'family')) },
-      { label: 'Standards', links: unique(getIncomingEntities(node.id, 'addresses-failure')) },
-      { label: 'Industries', links: unique(getIncomingEntities(node.id, 'exposed-to-failure')) },
+      { label: 'Protection Systems', links: connected(node.id, 'system') },
+      { label: 'Technologies', links: connected(node.id, 'technology') },
+      { label: 'Product Families', links: connected(node.id, 'family') },
+      { label: 'Standards', links: connected(node.id, 'standard') },
+      { label: 'Industries', links: connected(node.id, 'industry') },
     ],
   };
 }
