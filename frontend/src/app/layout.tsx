@@ -1,19 +1,11 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Barlow, Chakra_Petch, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import './hero-responsive.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 import ChatBot from '@/components/ui/ChatBot';
-
-// Primary body font — highly legible, premium feel
-const barlow = Barlow({ subsets: ['latin'], variable: '--font-inter', weight: ['300', '400', '500', '600', '700', '800', '900'] });
-// Display / headline font — geometric, modern, clean
-const chakraPetch = Chakra_Petch({ subsets: ['latin'], variable: '--font-display', weight: ['400', '500', '600', '700'] });
-// Monospace — labels, codes, tags only
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', weight: ['400', '500'] });
 
 const GA_ID = 'G-T7STY4TY9C';
 
@@ -117,7 +109,7 @@ const organizationSchema = {
       { '@type': 'OfferCatalog', name: 'Contamination Control Systems', url: `${BASE_URL}/systems` },
       { '@type': 'OfferCatalog', name: 'Product Families', url: `${BASE_URL}/families` },
       { '@type': 'OfferCatalog', name: 'Proprietary Protection Technologies', url: `${BASE_URL}/technologies` },
-      { '@type': 'OfferCatalog', name: 'Knowledge System', url: `${BASE_URL}/knowledge-system` },
+      { '@type': 'OfferCatalog', name: 'Knowledge Center', url: `${BASE_URL}/knowledge-center` },
     ],
   },
 };
@@ -137,9 +129,17 @@ const websiteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${barlow.variable} ${chakraPetch.variable} ${jetBrainsMono.variable}`}>
+    <html lang="en">
       <head>
         <meta name="theme-color" content="#000000" />
+        {/* Build-safe font variables: system fallbacks avoid Google Fonts network fetches during static export. */}
+        <style>{`
+          :root {
+            --font-inter: Barlow, Arial, Helvetica, sans-serif;
+            --font-display: 'Chakra Petch', 'Arial Narrow', Impact, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+          }
+        `}</style>
         {/* Cloudflare Turnstile — loaded globally, used by contact/distributor forms and chat widget */}
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
         <script
