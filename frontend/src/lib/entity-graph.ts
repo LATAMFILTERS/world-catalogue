@@ -27,6 +27,13 @@ export interface EntityNode {
   readonly href: string;
 }
 
+export interface EntityConnection {
+  readonly source: EntityNode;
+  readonly target: EntityNode;
+  readonly relation: EntityRelationType;
+  readonly direction: 'outgoing' | 'incoming';
+}
+
 export type { EntityRelation, EntityRelationType };
 export { normalizeStandardId };
 
@@ -130,10 +137,61 @@ export function getIncomingEntities(id: string, relationType?: EntityRelationTyp
     .filter((node): node is EntityNode => Boolean(node));
 }
 
+export function getEntityConnections(
+  id: string,
+  options: {
+    relationType?: EntityRelationType;
+    targetKind?: EntityKind;
+  } = {},
+): EntityConnection[] {
+  const sourceNode = nodeById.get(id);
+  if (!sourceNode) return [];
+
+  const outgoing = getCanonicalOutgoingRelations(id, options.relationType)
+    .map((relation) => {
+      const target = nodeById.get(relation.to);
+      return target
+        ? { source: sourceNode, target, relation: relation.type, direction: 'outgoing' as const }
+        : null;
+    });
+
+  const incoming = getCanonicalIncomingRelations(id, options.relationType)
+    .map((relation) => {
+      const source = nodeById.get(relation.from);
+      return source
+        ? { source: sourceNode, target: source, relation: relation.type, direction: 'incoming' as const }
+        : null;
+    });
+
+  return [...outgoing, ...incoming]
+    .filter((connection): connection is EntityConnection => Boolean(connection))
+    .filter((connection) => !options.targetKind || connection.target.kind === options.targetKind)
+    .filter((connection, index, all) =>
+      all.findIndex((candidate) =>
+        candidate.target.id === connection.target.id &&
+        candidate.relation === connection.relation &&
+        candidate.direction === connection.direction,
+      ) === index,
+    );
+}
+
+export function getConnectedEntities(
+  id: string,
+  options: {
+    relationType?: EntityRelationType;
+    targetKind?: EntityKind;
+  } = {},
+): EntityNode[] {
+  return getEntityConnections(id, options)
+    .map((connection) => connection.target)
+    .filter((node, index, all) => all.findIndex((candidate) => candidate.id === node.id) === index);
+}
+
 export interface EntityGraphValidation {
   readonly duplicateNodeIds: string[];
   readonly orphanRelationEndpoints: string[];
   readonly duplicateRelations: string[];
+  readonly isolatedNodeIds: string[];
   readonly isValid: boolean;
 }
 
@@ -146,14 +204,18 @@ export function validateEntityGraph(): EntityGraphValidation {
   );
   const relationKeys = ENTITY_RELATIONS.map((relation) => `${relation.from}|${relation.type}|${relation.to}`);
   const duplicateRelations = relationKeys.filter((key, index) => relationKeys.indexOf(key) !== index);
+  const connectedNodeIds = new Set(ENTITY_RELATIONS.flatMap((relation) => [relation.from, relation.to]));
+  const isolatedNodeIds = nodeIds.filter((id) => !connectedNodeIds.has(id));
 
   return {
     duplicateNodeIds: unique(duplicateNodeIds),
     orphanRelationEndpoints,
     duplicateRelations: unique(duplicateRelations),
+    isolatedNodeIds,
     isValid:
       duplicateNodeIds.length === 0 &&
       orphanRelationEndpoints.length === 0 &&
-      duplicateRelations.length === 0,
+      duplicateRelations.length === 0 &&
+      isolatedNodeIds.length === 0,
   };
 }
