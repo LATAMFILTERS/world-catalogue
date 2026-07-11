@@ -50,7 +50,7 @@ function postBatch(batch) {
       headers:  {
         'Content-Type':  'application/json',
         'Content-Length': Buffer.byteLength(body),
-        'x-admin-key':    ADMIN_KEY,
+        'Authorization':  `Bearer ${ADMIN_KEY}`,
       },
     };
     const req = http.request(options, res => {
