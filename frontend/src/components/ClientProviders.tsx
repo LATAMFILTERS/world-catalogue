@@ -3,16 +3,9 @@
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
-
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
-import { StructuredTechnologyDefinition } from './StructuredTechnologyDefinition';
-import { StructuredSystemDefinition } from './StructuredSystemDefinition';
-import { StructuredFamilyDefinition } from './StructuredFamilyDefinition';
-import { StructuredIndustryDefinition } from './StructuredIndustryDefinition';
-import { StructuredStandardDefinition } from './StructuredStandardDefinition';
-import { FailureKnowledgeDefinition } from './FailureKnowledgeDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -30,12 +23,6 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <LanguageDetector />
       <ScrollProgress />
       {children}
-      <StructuredTechnologyDefinition />
-      <StructuredSystemDefinition />
-      <StructuredFamilyDefinition />
-      <StructuredIndustryDefinition />
-      <StructuredStandardDefinition />
-      <FailureKnowledgeDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
