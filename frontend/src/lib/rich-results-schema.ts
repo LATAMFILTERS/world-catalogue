@@ -117,7 +117,7 @@ export function buildRichResultsGraph(
     buildWebPageNode(kind, slug),
     buildBreadcrumbNode(kind, slug),
     buildFaqNode(kind, slug),
-  ].filter((node): node is Record<string, unknown> => Boolean(node));
+  ].filter((node): node is NonNullable<typeof node> => Boolean(node));
 
   const graph = [...baseGraph['@graph'], ...richNodes];
   const uniqueGraph = Array.from(

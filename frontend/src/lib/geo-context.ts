@@ -13,7 +13,7 @@ import {
   type CanonicalEngineeringDefinition,
 } from './canonical-engineering';
 import { isCanonicalTechnology } from './canonical-technologies';
-import { getContentIntelligenceProfile } from './enterprise-content-intelligence';
+import { getContentIntelligenceProfile, getSharedRetrievalPassages } from './enterprise-content-intelligence';
 
 export interface GeoEntityContext {
   readonly entity: EntityNode;
@@ -181,7 +181,10 @@ export function validateGeoContext(): GeoValidationResult {
     .filter((node) => !getGeoEntityContext(node.id))
     .map((node) => node.id);
 
-  const allPassages = contexts.flatMap((context) => context?.retrievalPassages || []);
+  const sharedPassages = getSharedRetrievalPassages();
+  const allPassages = contexts
+    .flatMap((context) => context?.retrievalPassages || [])
+    .filter((passage) => !sharedPassages.has(passage));
   const duplicatePassages = allPassages.filter((passage, index) => allPassages.indexOf(passage) !== index);
   const invalidTechnologyEntities = ENTITY_NODES
     .filter((node) => node.kind === 'technology')

@@ -51,7 +51,7 @@ export const CANONICAL_TECHNOLOGIES = {
     slug: 'hydrocore',
     name: 'HYDROCORE™',
     domain: 'fuel-cleanliness',
-    role: 'Fuel-water separators',
+    role: 'Fuel-water separation filtration',
   },
   turbocore: {
     slug: 'turbocore',
