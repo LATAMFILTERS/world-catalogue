@@ -151,7 +151,7 @@ export function buildCanonicalEntitySchema(
 }
 
 export function validateCanonicalEntitySchemas(
-  entities: readonly Array<{ kind: SchemaEntityKind; slug: string }>,
+  entities: ReadonlyArray<{ kind: SchemaEntityKind; slug: string }>,
 ): SchemaValidationResult {
   const schemas = entities.map(({ kind, slug }) => ({ key: `${kind}:${slug}`, schema: buildCanonicalEntitySchema(kind, slug) }));
   const missingSchemas = schemas.filter(({ schema }) => !schema).map(({ key }) => key);
