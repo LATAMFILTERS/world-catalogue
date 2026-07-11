@@ -12,6 +12,7 @@ import {
   getTechnologyEngineering,
   type CanonicalEngineeringDefinition,
 } from './canonical-engineering';
+import { isCanonicalTechnology } from './canonical-technologies';
 
 export interface GeoEntityContext {
   readonly entity: EntityNode;
@@ -37,12 +38,10 @@ export interface CanonicalAnswer {
 export interface GeoValidationResult {
   readonly missingContexts: string[];
   readonly duplicatePassages: string[];
-  readonly retiredTechnologyReferences: string[];
+  readonly invalidTechnologyEntities: string[];
   readonly contradictoryTechnologyDomains: string[];
   readonly isValid: boolean;
 }
-
-const RETIRED_TECHNOLOGIES = ['AQUAGUARD', 'COOLTECH'];
 
 function engineeringForEntity(kind: EntityKind, slug: string): CanonicalEngineeringDefinition | undefined {
   if (kind === 'technology') return getTechnologyEngineering(slug);
@@ -90,8 +89,8 @@ function fallbackEngineering(entity: EntityNode): CanonicalEngineeringDefinition
     name: entity.name,
     definition: `${entity.name} is an ELIMFILTERS engineering entity within the Total Asset Protection knowledge system.`,
     engineeringPrinciple: `Its role is defined by its relationships to ${names(systems)}, ${names(technologies)}, and ${names(standards)}.`,
-    controlStrategy: `Use the connected engineering entities to select and validate the appropriate contamination-control strategy.`,
-    operationalImpact: `The entity contributes to reduced contamination exposure and improved asset reliability.`,
+    controlStrategy: 'Use the connected engineering entities to select and validate the appropriate contamination-control strategy.',
+    operationalImpact: 'The entity contributes to reduced contamination exposure and improved asset reliability.',
   };
 }
 
@@ -128,18 +127,10 @@ function buildCanonicalAnswers(
     { question: `What does ${entity.name} protect?`, answer: engineering.operationalImpact },
   ];
 
-  if (groups.standards.length) {
-    answers.push({ question: `Which standards are associated with ${entity.name}?`, answer: names(groups.standards) });
-  }
-  if (groups.failures.length) {
-    answers.push({ question: `Which failure modes are connected to ${entity.name}?`, answer: names(groups.failures) });
-  }
-  if (groups.systems.length) {
-    answers.push({ question: `Which protection systems use ${entity.name}?`, answer: names(groups.systems) });
-  }
-  if (groups.industries.length) {
-    answers.push({ question: `Which industries use ${entity.name}?`, answer: names(groups.industries) });
-  }
+  if (groups.standards.length) answers.push({ question: `Which standards are associated with ${entity.name}?`, answer: names(groups.standards) });
+  if (groups.failures.length) answers.push({ question: `Which failure modes are connected to ${entity.name}?`, answer: names(groups.failures) });
+  if (groups.systems.length) answers.push({ question: `Which protection systems use ${entity.name}?`, answer: names(groups.systems) });
+  if (groups.industries.length) answers.push({ question: `Which industries use ${entity.name}?`, answer: names(groups.industries) });
 
   return answers;
 }
@@ -187,8 +178,10 @@ export function validateGeoContext(): GeoValidationResult {
 
   const allPassages = contexts.flatMap((context) => context?.retrievalPassages || []);
   const duplicatePassages = allPassages.filter((passage, index) => allPassages.indexOf(passage) !== index);
-  const serialized = contexts.map((context) => JSON.stringify(context)).join('\n').toUpperCase();
-  const retiredTechnologyReferences = RETIRED_TECHNOLOGIES.filter((name) => serialized.includes(name));
+  const invalidTechnologyEntities = ENTITY_NODES
+    .filter((node) => node.kind === 'technology')
+    .filter((node) => !isCanonicalTechnology(node.id.slice(node.id.indexOf(':') + 1)))
+    .map((node) => node.id);
 
   const technologyDomains = new Map<string, Set<string>>();
   contexts.forEach((context) => {
@@ -202,12 +195,12 @@ export function validateGeoContext(): GeoValidationResult {
   return {
     missingContexts,
     duplicatePassages: Array.from(new Set(duplicatePassages)),
-    retiredTechnologyReferences,
+    invalidTechnologyEntities,
     contradictoryTechnologyDomains,
     isValid:
       missingContexts.length === 0 &&
       duplicatePassages.length === 0 &&
-      retiredTechnologyReferences.length === 0 &&
+      invalidTechnologyEntities.length === 0 &&
       contradictoryTechnologyDomains.length === 0,
   };
 }
