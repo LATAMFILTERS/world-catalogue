@@ -3,10 +3,12 @@ import { AIEntityCard } from '@/components/AIEntityCard';
 import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
+import { getEntityAuthorityScore } from '@/lib/entity-authority';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getConnectedEntities, getEntityNode, type EntityKind } from '@/lib/entity-graph';
 import { getSemanticRecommendations } from '@/lib/semantic-recommendations';
+import { buildTopicCluster } from '@/lib/topical-authority';
 
 type ConnectionKind = 'technology' | 'system' | 'family' | 'industry' | 'standard' | 'failure';
 
@@ -136,9 +138,11 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
   const config = buildGroups(kind, slug);
   if (!config) return null;
 
+  const cluster = buildTopicCluster(config.entityId);
+  const authority = getEntityAuthorityScore(config.entityId);
   const groups = config.groups.filter((group) => group.links.length > 0);
   const displayedHrefs = new Set(groups.flatMap((group) => group.links.map((link) => link.href)));
-  const recommendations = getSemanticRecommendations(config.entityId, { limit: 10 })
+  const recommendations = getSemanticRecommendations(config.entityId, { limit: 14 })
     .filter((recommendation) => recommendation.reason === 'shared-context')
     .filter((recommendation) => !displayedHrefs.has(recommendation.node.href))
     .slice(0, 6)
@@ -151,12 +155,23 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
     groups.push({ label: 'Recommended Next', links: recommendations });
   }
 
+  const topicalPath = cluster
+    ? [cluster.hub, ...cluster.recommended]
+      .filter((node, index, all) => node.id !== config.entityId && all.findIndex((candidate) => candidate.id === node.id) === index)
+      .slice(0, 6)
+    : [];
+
   return (
     <>
       <CanonicalEntitySchema kind={kind} slug={slug} />
       <AIEntityCard kind={kind} slug={slug} />
       {groups.length > 0 && (
-        <section className="structured-definition structured-definition--connections" aria-label="Engineering knowledge connections">
+        <section
+          className="structured-definition structured-definition--connections"
+          aria-label="Engineering knowledge connections"
+          data-topic-cluster={cluster?.hub.id}
+          data-entity-authority={authority?.score}
+        >
           <div className="structured-definition__inner">
             <p className="structured-definition__eyebrow">ENGINEERING KNOWLEDGE CONNECTIONS</p>
             <h2 className="structured-definition__title">{config.title}</h2>
@@ -170,6 +185,11 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
                 </article>
               ))}
             </div>
+            {topicalPath.length > 0 && (
+              <nav className="structured-definition__links" aria-label="Topical authority path">
+                {topicalPath.map((node) => <Link key={`topic-${node.id}`} href={node.href}>{node.name}</Link>)}
+              </nav>
+            )}
           </div>
         </section>
       )}
