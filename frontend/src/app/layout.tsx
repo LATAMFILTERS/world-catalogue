@@ -132,12 +132,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="theme-color" content="#000000" />
-        {/* Build-safe font variables: system fallbacks avoid Google Fonts network fetches during static export. */}
+        {/* Build-safe font variables: system stacks only; no Google Fonts network fetches during static export. */}
         <style>{`
           :root {
-            --font-inter: Barlow, Arial, Helvetica, sans-serif;
-            --font-display: 'Chakra Petch', 'Arial Narrow', Impact, sans-serif;
-            --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+            --font-inter: Arial, Helvetica, sans-serif;
+            --font-display: 'Arial Narrow', Impact, Arial, sans-serif;
+            --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
           }
         `}</style>
         {/* Cloudflare Turnstile — loaded globally, used by contact/distributor forms and chat widget */}
