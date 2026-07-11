@@ -13,6 +13,7 @@ import {
   type CanonicalEngineeringDefinition,
 } from './canonical-engineering';
 import { isCanonicalTechnology } from './canonical-technologies';
+import { getContentIntelligenceProfile } from './enterprise-content-intelligence';
 
 export interface GeoEntityContext {
   readonly entity: EntityNode;
@@ -99,11 +100,13 @@ function buildPassages(
   engineering: CanonicalEngineeringDefinition,
   groups: Pick<GeoEntityContext, 'systems' | 'technologies' | 'families' | 'standards' | 'industries' | 'failures'>,
 ): string[] {
+  const profile = getContentIntelligenceProfile(entity.id);
   const passages = [
     `${entity.name}: ${engineering.definition}`,
     `${entity.name} engineering principle: ${engineering.engineeringPrinciple}`,
     `${entity.name} control strategy: ${engineering.controlStrategy}`,
     `${entity.name} operational impact: ${engineering.operationalImpact}`,
+    ...(profile ? [`${entity.name} domain summary: ${profile.engineeringSummary}`, ...profile.retrievalPassages] : []),
   ];
 
   if (groups.systems.length) passages.push(`${entity.name} is connected to the following protection systems: ${names(groups.systems)}.`);
@@ -121,10 +124,12 @@ function buildCanonicalAnswers(
   engineering: CanonicalEngineeringDefinition,
   groups: Pick<GeoEntityContext, 'systems' | 'technologies' | 'families' | 'standards' | 'industries' | 'failures'>,
 ): CanonicalAnswer[] {
+  const profile = getContentIntelligenceProfile(entity.id);
   const answers: CanonicalAnswer[] = [
     { question: `What is ${entity.name}?`, answer: engineering.definition },
     { question: `How does ${entity.name} work?`, answer: engineering.engineeringPrinciple },
     { question: `What does ${entity.name} protect?`, answer: engineering.operationalImpact },
+    ...(profile?.canonicalAnswers || []),
   ];
 
   if (groups.standards.length) answers.push({ question: `Which standards are associated with ${entity.name}?`, answer: names(groups.standards) });
@@ -132,7 +137,7 @@ function buildCanonicalAnswers(
   if (groups.systems.length) answers.push({ question: `Which protection systems use ${entity.name}?`, answer: names(groups.systems) });
   if (groups.industries.length) answers.push({ question: `Which industries use ${entity.name}?`, answer: names(groups.industries) });
 
-  return answers;
+  return Array.from(new Map(answers.map((answer) => [answer.question.toLowerCase(), answer])).values());
 }
 
 export function getGeoEntityContext(entityId: string): GeoEntityContext | undefined {
