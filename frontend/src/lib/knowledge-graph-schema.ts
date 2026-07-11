@@ -6,10 +6,16 @@ import {
   type SchemaEntityKind,
 } from './canonical-entity-schema';
 import { ENTITY_NODES, getConnectedEntities } from './entity-graph';
+import {
+  EXPANDED_KNOWLEDGE_CONCEPTS,
+  buildExpandedConceptSchema,
+  getExpandedConceptsForEntity,
+} from './knowledge-graph-expansion';
 
 const BASE_URL = 'https://elimfilters.com';
 const ORGANIZATION_ID = `${BASE_URL}/#organization`;
 const WEBSITE_ID = `${BASE_URL}/#website`;
+const CONCEPT_SET_ID = `${BASE_URL}/#industrial-contamination-knowledge`;
 
 export interface KnowledgeGraphSchema {
   readonly '@context': 'https://schema.org';
@@ -41,12 +47,23 @@ function buildEntityNode(kind: SchemaEntityKind, slug: string): CanonicalSchemaN
   return buildCanonicalEntitySchema(kind, slug);
 }
 
+function buildConceptSetNode(): Record<string, unknown> {
+  return {
+    '@type': 'DefinedTermSet',
+    '@id': CONCEPT_SET_ID,
+    name: 'ELIMFILTERS Industrial Contamination Knowledge',
+    description: 'Canonical engineering concepts covering contaminants, failure mechanisms, protection strategies, maintenance objectives, and lifecycle outcomes.',
+    publisher: { '@id': ORGANIZATION_ID },
+  };
+}
+
 export function buildKnowledgeGraphSchema(
   focus?: { kind: SchemaEntityKind; slug: string },
 ): KnowledgeGraphSchema {
   const organization = buildOrganizationSchema();
   const website = buildWebsiteSchema();
   const entitySchemas: CanonicalSchemaNode[] = [];
+  const conceptSchemas: Record<string, unknown>[] = [];
 
   if (focus) {
     const focusId = `${focus.kind}:${focus.slug}`;
@@ -59,6 +76,10 @@ export function buildKnowledgeGraphSchema(
       const schema = buildEntityNode(key.kind, key.slug);
       if (schema) entitySchemas.push(schema);
     });
+
+    getExpandedConceptsForEntity(focusId).forEach((concept) => {
+      conceptSchemas.push(buildExpandedConceptSchema(concept));
+    });
   } else {
     ENTITY_NODES.forEach((node) => {
       const key = entityKeyFromId(node.id);
@@ -66,10 +87,16 @@ export function buildKnowledgeGraphSchema(
       const schema = buildEntityNode(key.kind, key.slug);
       if (schema) entitySchemas.push(schema);
     });
+    EXPANDED_KNOWLEDGE_CONCEPTS.forEach((concept) => {
+      conceptSchemas.push(buildExpandedConceptSchema(concept));
+    });
   }
 
   const uniqueEntities = Array.from(
     new Map(entitySchemas.map((schema) => [schema['@id'], schema])).values(),
+  );
+  const uniqueConcepts = Array.from(
+    new Map(conceptSchemas.map((schema) => [String(schema['@id']), schema])).values(),
   );
 
   return {
@@ -77,7 +104,9 @@ export function buildKnowledgeGraphSchema(
     '@graph': [
       withoutContext(organization),
       withoutContext(website),
+      buildConceptSetNode(),
       ...uniqueEntities.map((schema) => withoutContext(schema as unknown as Record<string, unknown>)),
+      ...uniqueConcepts,
     ],
   };
 }
@@ -110,7 +139,7 @@ export function validateKnowledgeGraphSchema(): KnowledgeGraphValidationResult {
     if (id.startsWith(`${BASE_URL}/`) && !id.includes('#entity')) return false;
     return id.startsWith(BASE_URL);
   });
-  const missingRootNodes = [ORGANIZATION_ID, WEBSITE_ID].filter((id) => !idSet.has(id));
+  const missingRootNodes = [ORGANIZATION_ID, WEBSITE_ID, CONCEPT_SET_ID].filter((id) => !idSet.has(id));
   const invalidCanonicalIds = ids.filter((id) => !id.startsWith(BASE_URL));
 
   return {
