@@ -48,14 +48,14 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   const geo = validateGeoContext();
   addIssue(issues, 'geo', 'missing-contexts', geo.missingContexts);
   addIssue(issues, 'geo', 'duplicate-passages', geo.duplicatePassages);
-  addIssue(issues, 'geo', 'retired-technology-references', geo.retiredTechnologyReferences);
+  addIssue(issues, 'geo', 'invalid-technology-entities', geo.invalidTechnologyEntities);
   addIssue(issues, 'geo', 'contradictory-technology-domains', geo.contradictoryTechnologyDomains);
 
   const entitySchemas = validateCanonicalEntitySchemas(schemaEntities);
   addIssue(issues, 'entity-schema', 'missing-schemas', entitySchemas.missingSchemas);
   addIssue(issues, 'entity-schema', 'duplicate-ids', entitySchemas.duplicateIds);
   addIssue(issues, 'entity-schema', 'invalid-canonical-urls', entitySchemas.invalidCanonicalUrls);
-  addIssue(issues, 'entity-schema', 'retired-technology-references', entitySchemas.retiredTechnologyReferences);
+  addIssue(issues, 'entity-schema', 'invalid-technology-entities', entitySchemas.invalidTechnologyEntities);
 
   const knowledgeGraph = validateKnowledgeGraphSchema();
   addIssue(issues, 'knowledge-graph', 'duplicate-ids', knowledgeGraph.duplicateIds);
@@ -68,7 +68,7 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   addIssue(issues, 'ai-citation', 'duplicate-aliases', citations.duplicateAliases);
   addIssue(issues, 'ai-citation', 'missing-definitions', citations.missingDefinitions);
   addIssue(issues, 'ai-citation', 'missing-answers', citations.missingAnswers);
-  addIssue(issues, 'ai-citation', 'retired-technology-references', citations.retiredTechnologyReferences);
+  addIssue(issues, 'ai-citation', 'invalid-technology-entities', citations.invalidTechnologyEntities);
   addIssue(issues, 'ai-citation', 'invalid-canonical-urls', citations.invalidCanonicalUrls);
 
   schemaEntities.forEach(({ kind, slug }) => {
