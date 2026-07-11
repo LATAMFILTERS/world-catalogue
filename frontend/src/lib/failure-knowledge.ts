@@ -1,7 +1,4 @@
-export type FailureKnowledgeKey =
-  | 'hydraulic-system'
-  | 'particle-wear'
-  | 'diesel-water';
+export type FailureKnowledgeKey = 'hydraulic-system' | 'particle-wear' | 'diesel-water';
 
 export interface FailureKnowledgeProfile {
   readonly key: FailureKnowledgeKey;
@@ -52,7 +49,7 @@ export const FAILURE_KNOWLEDGE: Record<FailureKnowledgeKey, FailureKnowledgeProf
     operationalImpact: 'Fuel quality degrades, injectors lose metering precision, combustion quality declines, and the probability of pump and injector failure increases.',
     controlStrategy: 'Control storage and transfer practices, drain collected water, monitor fuel condition, and use staged particle filtration with water separation appropriate to the application.',
     systems: ['fuel-cleanliness'],
-    technologies: ['syntepore', 'hydrocore', 'turbocore-series'],
+    technologies: ['syntepore', 'aquaguard'],
     families: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
     standards: ['astm-d6304', 'iso-12937', 'iso-16332'],
     industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets'],
