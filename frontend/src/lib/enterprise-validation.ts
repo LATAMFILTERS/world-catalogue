@@ -3,6 +3,7 @@ import { validateCanonicalEntitySchemas, type SchemaEntityKind } from './canonic
 import { validateCrawlOptimization } from './crawl-optimization';
 import { validateEntityAuthority } from './entity-authority';
 import { ENTITY_NODES, validateEntityGraph } from './entity-graph';
+import { validateContentIntelligence } from './enterprise-content-intelligence';
 import { validateSeoGeoProfiles } from './enterprise-seo-geo';
 import { validateGeoContext } from './geo-context';
 import { validateKnowledgeGraphExpansion } from './knowledge-graph-expansion';
@@ -22,7 +23,8 @@ export interface EnterpriseValidationIssue {
     | 'seo-geo'
     | 'topical-authority'
     | 'entity-authority'
-    | 'crawl';
+    | 'crawl'
+    | 'content-intelligence';
   readonly code: string;
   readonly values: readonly string[];
 }
@@ -117,6 +119,11 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   addIssue(issues, 'crawl', 'invalid-canonical-urls', crawl.invalidCanonicalUrls);
   addIssue(issues, 'crawl', 'invalid-priorities', crawl.invalidPriorities);
   addIssue(issues, 'crawl', 'isolated-entity-urls', crawl.isolatedEntityUrls);
+
+  const content = validateContentIntelligence();
+  addIssue(issues, 'content-intelligence', 'duplicate-entity-assignments', content.duplicateEntityAssignments);
+  addIssue(issues, 'content-intelligence', 'empty-profiles', content.emptyProfiles);
+  addIssue(issues, 'content-intelligence', 'missing-required-sections', content.missingRequiredSections);
 
   schemaEntities.forEach(({ kind, slug }) => {
     const richResults = validateRichResultsGraph(kind, slug);
