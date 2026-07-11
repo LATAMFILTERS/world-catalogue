@@ -4,6 +4,7 @@ import { validateEntityAuthority } from './entity-authority';
 import { ENTITY_NODES, validateEntityGraph } from './entity-graph';
 import { validateSeoGeoProfiles } from './enterprise-seo-geo';
 import { validateGeoContext } from './geo-context';
+import { validateKnowledgeGraphExpansion } from './knowledge-graph-expansion';
 import { validateKnowledgeGraphSchema } from './knowledge-graph-schema';
 import { validateRichResultsGraph } from './rich-results-schema';
 import { validateTopicalAuthority } from './topical-authority';
@@ -14,6 +15,7 @@ export interface EnterpriseValidationIssue {
     | 'geo'
     | 'entity-schema'
     | 'knowledge-graph'
+    | 'knowledge-expansion'
     | 'ai-citation'
     | 'rich-results'
     | 'seo-geo'
@@ -74,6 +76,11 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   addIssue(issues, 'knowledge-graph', 'orphan-references', knowledgeGraph.orphanReferences);
   addIssue(issues, 'knowledge-graph', 'missing-root-nodes', knowledgeGraph.missingRootNodes);
   addIssue(issues, 'knowledge-graph', 'invalid-canonical-ids', knowledgeGraph.invalidCanonicalIds);
+
+  const expansion = validateKnowledgeGraphExpansion();
+  addIssue(issues, 'knowledge-expansion', 'duplicate-concept-ids', expansion.duplicateIds);
+  addIssue(issues, 'knowledge-expansion', 'invalid-entity-references', expansion.invalidEntityReferences);
+  addIssue(issues, 'knowledge-expansion', 'empty-descriptions', expansion.emptyDescriptions);
 
   const citations = validateAICitationRecords(schemaEntities);
   addIssue(issues, 'ai-citation', 'duplicate-citation-ids', citations.duplicateCitationIds);
