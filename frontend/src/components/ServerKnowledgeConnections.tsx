@@ -4,6 +4,7 @@ import { getItemBySlug } from '@/lib/catalogue';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getConnectedEntities, getEntityNode, type EntityKind } from '@/lib/entity-graph';
+import { getSemanticRecommendations } from '@/lib/semantic-recommendations';
 
 type ConnectionKind = 'technology' | 'system' | 'family' | 'industry' | 'standard' | 'failure';
 
@@ -25,12 +26,17 @@ function connected(id: string, targetKind: EntityKind) {
   return unique(getConnectedEntities(id, { targetKind }));
 }
 
-function buildGroups(kind: ConnectionKind, slug: string): { title: string; groups: Group[] } | null {
+function entityId(kind: ConnectionKind, slug: string) {
+  return `${kind}:${slug}`;
+}
+
+function buildGroups(kind: ConnectionKind, slug: string): { entityId: string; title: string; groups: Group[] } | null {
   if (kind === 'system') {
     const system = getProtectionSystemBySlug(slug);
     if (!system) return null;
-    const id = `system:${slug}`;
+    const id = entityId(kind, slug);
     return {
+      entityId: id,
       title: `${system.name} connections`,
       groups: [
         { label: 'Technologies', links: connected(id, 'technology') },
@@ -45,8 +51,9 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
   if (kind === 'family') {
     const family = getFamilyBySlug(slug);
     if (!family) return null;
-    const id = `family:${slug}`;
+    const id = entityId(kind, slug);
     return {
+      entityId: id,
       title: `${family.name} connections`,
       groups: [
         { label: 'Protection System', links: connected(id, 'system') },
@@ -60,9 +67,10 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
 
   if (kind === 'technology') {
     const technology = getCanonicalTechnology(slug);
-    const node = getEntityNode(`technology:${slug}`);
+    const node = getEntityNode(entityId(kind, slug));
     if (!technology || !node) return null;
     return {
+      entityId: node.id,
       title: `${technology.name} connections`,
       groups: [
         { label: 'Protection Systems', links: connected(node.id, 'system') },
@@ -76,9 +84,10 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
 
   if (kind === 'industry') {
     const item = getItemBySlug('industries', slug);
-    const node = getEntityNode(`industry:${slug}`);
+    const node = getEntityNode(entityId(kind, slug));
     if (!item || !node) return null;
     return {
+      entityId: node.id,
       title: `${node.name} protection connections`,
       groups: [
         { label: 'Protection Systems', links: connected(node.id, 'system') },
@@ -91,9 +100,10 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
   }
 
   if (kind === 'standard') {
-    const node = getEntityNode(`standard:${slug}`);
+    const node = getEntityNode(entityId(kind, slug));
     if (!node) return null;
     return {
+      entityId: node.id,
       title: `${node.name} engineering connections`,
       groups: [
         { label: 'Protection Systems', links: connected(node.id, 'system') },
@@ -105,9 +115,10 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
     };
   }
 
-  const node = getEntityNode(`failure:${slug}`);
+  const node = getEntityNode(entityId(kind, slug));
   if (!node) return null;
   return {
+    entityId: node.id,
     title: `${node.name} control connections`,
     groups: [
       { label: 'Protection Systems', links: connected(node.id, 'system') },
@@ -122,7 +133,22 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
 export function ServerKnowledgeConnections({ kind, slug }: Props) {
   const config = buildGroups(kind, slug);
   if (!config) return null;
+
   const groups = config.groups.filter((group) => group.links.length > 0);
+  const displayedHrefs = new Set(groups.flatMap((group) => group.links.map((link) => link.href)));
+  const recommendations = getSemanticRecommendations(config.entityId, { limit: 10 })
+    .filter((recommendation) => recommendation.reason === 'shared-context')
+    .filter((recommendation) => !displayedHrefs.has(recommendation.node.href))
+    .slice(0, 6)
+    .map((recommendation) => ({
+      href: recommendation.node.href,
+      name: recommendation.node.name,
+    }));
+
+  if (recommendations.length > 0) {
+    groups.push({ label: 'Recommended Next', links: recommendations });
+  }
+
   if (groups.length === 0) return null;
 
   return (
