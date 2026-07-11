@@ -56,11 +56,24 @@ const industrySlugs = unique([
   ...Object.values(FAILURE_KNOWLEDGE).flatMap((failure) => [...failure.industries]),
 ]);
 
-const standards = unique([
+const standardNameById = new Map<string, string>();
+[
   ...PROTECTION_SYSTEM_LIST.flatMap((system) => system.relatedStandards),
   ...PRODUCT_FAMILY_LIST.flatMap((family) => family.applicableStandards),
   ...Object.values(FAILURE_KNOWLEDGE).flatMap((failure) => [...failure.standards]),
-]);
+].forEach((standard) => {
+  const id = normalizeStandardId(standard);
+  if (!standardNameById.has(id) || /[A-Z]/.test(standard)) {
+    standardNameById.set(id, standard);
+  }
+});
+
+const standardNodes = Array.from(standardNameById.entries()).map(([id, name]) => ({
+  id: `standard:${id}`,
+  kind: 'standard' as const,
+  name,
+  href: `/knowledge-system/standards/${id}`,
+}));
 
 export const ENTITY_NODES: readonly EntityNode[] = [
   { id: 'organization:elimfilters', kind: 'organization', name: 'ELIMFILTERS®', href: '/' },
@@ -88,12 +101,7 @@ export const ENTITY_NODES: readonly EntityNode[] = [
     name: INDUSTRY_NAMES[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase()),
     href: `/industries/${slug}`,
   })),
-  ...standards.map((standard) => ({
-    id: `standard:${normalizeStandardId(standard)}`,
-    kind: 'standard' as const,
-    name: standard,
-    href: getStandardHref(standard),
-  })),
+  ...standardNodes,
   ...Object.values(FAILURE_KNOWLEDGE).map((failure) => ({
     id: `failure:${failure.key}`,
     kind: 'failure' as const,
