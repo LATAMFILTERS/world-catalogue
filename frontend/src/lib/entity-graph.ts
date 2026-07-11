@@ -1,3 +1,4 @@
+import { CANONICAL_TECHNOLOGY_LIST } from './canonical-technologies';
 import { FAILURE_KNOWLEDGE } from './failure-knowledge';
 import { PRODUCT_FAMILY_LIST } from './product-families-data';
 import { PROTECTION_SYSTEM_LIST } from './protection-systems-data';
@@ -40,19 +41,6 @@ const unique = <T,>(items: T[]): T[] => Array.from(new Set(items));
 export const normalizeStandardId = (value: string) =>
   value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const TECHNOLOGY_NAMES: Record<string, string> = {
-  macrocore: 'MACROCORE™',
-  intekcore: 'INTEKCORE™',
-  microkappa: 'MICROKAPPA™',
-  drycore: 'DRYCORE™',
-  syntepore: 'SYNTEPORE™',
-  hydrocore: 'HYDROCORE™',
-  turbocore: 'TURBOCORE™',
-  syntrax: 'SYNTRAX™',
-  nanoforce: 'NANOFORCE™',
-  thermacore: 'THERMACORE™',
-};
-
 const INDUSTRY_NAMES: Record<string, string> = {
   agriculture: 'Agriculture',
   automotive: 'Automotive',
@@ -72,11 +60,6 @@ export function getStandardHref(standard: string): string {
   return `/knowledge-system/standards/${normalizeStandardId(standard)}`;
 }
 
-const technologySlugs = unique([
-  ...PROTECTION_SYSTEM_LIST.flatMap((system) => [...system.primaryTechnologies, ...system.supportingTechnologies]),
-  ...PRODUCT_FAMILY_LIST.map((family) => family.primaryTechnology),
-  ...Object.values(FAILURE_KNOWLEDGE).flatMap((failure) => [...failure.technologies]),
-]);
 const industrySlugs = unique([
   ...PROTECTION_SYSTEM_LIST.flatMap((system) => system.relatedIndustries),
   ...Object.values(FAILURE_KNOWLEDGE).flatMap((failure) => [...failure.industries]),
@@ -91,7 +74,7 @@ export const ENTITY_NODES: readonly EntityNode[] = [
   { id: 'organization:elimfilters', kind: 'organization', name: 'ELIMFILTERS®', href: '/' },
   ...PROTECTION_SYSTEM_LIST.map((system) => ({ id: `system:${system.slug}`, kind: 'system' as const, name: system.name, href: `/systems/${system.slug}` })),
   ...PRODUCT_FAMILY_LIST.map((family) => ({ id: `family:${family.slug}`, kind: 'family' as const, name: family.name, href: `/families/${family.slug}` })),
-  ...technologySlugs.map((slug) => ({ id: `technology:${slug}`, kind: 'technology' as const, name: TECHNOLOGY_NAMES[slug] || slug.replace(/-/g, ' ').toUpperCase(), href: `/technologies/${slug}` })),
+  ...CANONICAL_TECHNOLOGY_LIST.map((technology) => ({ id: `technology:${technology.slug}`, kind: 'technology' as const, name: technology.name, href: `/technologies/${technology.slug}` })),
   ...industrySlugs.map((slug) => ({ id: `industry:${slug}`, kind: 'industry' as const, name: INDUSTRY_NAMES[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase()), href: `/industries/${slug}` })),
   ...standards.map((standard) => ({ id: `standard:${normalizeStandardId(standard)}`, kind: 'standard' as const, name: standard, href: getStandardHref(standard) })),
   ...Object.values(FAILURE_KNOWLEDGE).map((failure) => ({ id: `failure:${failure.key}`, kind: 'failure' as const, name: failure.name, href: `/knowledge-system/contamination/${failure.key}` })),
