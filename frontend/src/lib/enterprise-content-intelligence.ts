@@ -130,6 +130,10 @@ export function getRequiredSections(kind: Exclude<EntityKind, 'organization'>): 
   return REQUIRED_BY_KIND[kind];
 }
 
+export function getSharedRetrievalPassages(): ReadonlySet<string> {
+  return new Set(DOMAIN_PROFILES.flatMap((profile) => profile.retrievalPassages));
+}
+
 export interface ContentIntelligenceValidation {
   readonly duplicateEntityAssignments: string[];
   readonly emptyProfiles: string[];

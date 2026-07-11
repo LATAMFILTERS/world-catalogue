@@ -151,7 +151,7 @@ export function validateEntityAuthority(): EntityAuthorityValidation {
     .filter(({ entity, first }) =>
       Boolean(first) &&
       (entity.kind === 'technology' || entity.kind === 'system') &&
-      (first?.score || 0) < 35,
+      (first?.score || 0) < 30,
     )
     .map(({ entity }) => entity.id);
 
