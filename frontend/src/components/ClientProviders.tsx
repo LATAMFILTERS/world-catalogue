@@ -11,6 +11,7 @@ import { StructuredTechnologyDefinition } from './StructuredTechnologyDefinition
 import { StructuredSystemDefinition } from './StructuredSystemDefinition';
 import { StructuredFamilyDefinition } from './StructuredFamilyDefinition';
 import { StructuredIndustryDefinition } from './StructuredIndustryDefinition';
+import { StructuredStandardDefinition } from './StructuredStandardDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -32,6 +33,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <StructuredSystemDefinition />
       <StructuredFamilyDefinition />
       <StructuredIndustryDefinition />
+      <StructuredStandardDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
