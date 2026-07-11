@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AIEntityCard } from '@/components/AIEntityCard';
 import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
 import { getFamilyBySlug } from '@/lib/product-families-data';
@@ -149,24 +150,27 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
     groups.push({ label: 'Recommended Next', links: recommendations });
   }
 
-  if (groups.length === 0) return null;
-
   return (
-    <section className="structured-definition structured-definition--connections" aria-label="Engineering knowledge connections">
-      <div className="structured-definition__inner">
-        <p className="structured-definition__eyebrow">ENGINEERING KNOWLEDGE CONNECTIONS</p>
-        <h2 className="structured-definition__title">{config.title}</h2>
-        <div className="structured-definition__grid">
-          {groups.map((group) => (
-            <article className="structured-definition__row" key={group.label}>
-              <h3>{group.label}</h3>
-              <div className="structured-definition__links">
-                {group.links.map((link) => <Link key={`${group.label}-${link.href}`} href={link.href}>{link.name}</Link>)}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <AIEntityCard kind={kind} slug={slug} />
+      {groups.length > 0 && (
+        <section className="structured-definition structured-definition--connections" aria-label="Engineering knowledge connections">
+          <div className="structured-definition__inner">
+            <p className="structured-definition__eyebrow">ENGINEERING KNOWLEDGE CONNECTIONS</p>
+            <h2 className="structured-definition__title">{config.title}</h2>
+            <div className="structured-definition__grid">
+              {groups.map((group) => (
+                <article className="structured-definition__row" key={group.label}>
+                  <h3>{group.label}</h3>
+                  <div className="structured-definition__links">
+                    {group.links.map((link) => <Link key={`${group.label}-${link.href}`} href={link.href}>{link.name}</Link>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 }
