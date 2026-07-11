@@ -26,18 +26,9 @@ const DOMAIN_PROFILES: readonly ContentIntelligenceProfile[] = [
   {
     phase: '6.1.1-air-intake',
     entityIds: [
-      'system:air-intake',
-      'technology:macrocore',
-      'technology:intekcore',
-      'technology:microkappa',
-      'technology:drycore',
-      'family:primary-air',
-      'family:secondary-air',
-      'family:air-cleaner-housings',
-      'family:cabin-filters',
-      'family:air-dryer-filters',
-      'standard:iso-5011',
-      'failure:particle-wear',
+      'system:air-intake', 'technology:macrocore', 'technology:intekcore', 'technology:microkappa', 'technology:drycore',
+      'family:primary-air', 'family:secondary-air', 'family:air-cleaner-housings', 'family:cabin-filters', 'family:air-dryer-filters',
+      'standard:iso-5011', 'failure:particle-wear',
     ],
     engineeringSummary: 'Air-intake protection is a coordinated boundary-control system combining filtration media, housing integrity, sealing, airflow management, cabin protection, and compressed-air moisture control.',
     retrievalPassages: [
@@ -116,8 +107,23 @@ const REQUIRED_BY_KIND: Record<Exclude<EntityKind, 'organization'>, readonly str
   failure: ['Definition', 'Root causes', 'Mechanism', 'Symptoms', 'Consequences', 'Control strategy', 'Technologies', 'Standards', 'Industries'],
 };
 
+export function getContentIntelligenceProfiles(entityId: string): readonly ContentIntelligenceProfile[] {
+  return DOMAIN_PROFILES.filter((profile) => profile.entityIds.includes(entityId));
+}
+
 export function getContentIntelligenceProfile(entityId: string): ContentIntelligenceProfile | undefined {
-  return DOMAIN_PROFILES.find((profile) => profile.entityIds.includes(entityId));
+  const matches = getContentIntelligenceProfiles(entityId);
+  if (matches.length === 0) return undefined;
+  if (matches.length === 1) return matches[0];
+
+  return {
+    phase: matches[0].phase,
+    entityIds: [entityId],
+    engineeringSummary: matches.map((profile) => profile.engineeringSummary).join(' '),
+    retrievalPassages: Array.from(new Set(matches.flatMap((profile) => profile.retrievalPassages))),
+    canonicalAnswers: Array.from(new Map(matches.flatMap((profile) => profile.canonicalAnswers).map((answer) => [answer.question.toLowerCase(), answer])).values()),
+    requiredSections: Array.from(new Set(matches.flatMap((profile) => profile.requiredSections))),
+  };
 }
 
 export function getRequiredSections(kind: Exclude<EntityKind, 'organization'>): readonly string[] {
@@ -132,9 +138,10 @@ export interface ContentIntelligenceValidation {
 }
 
 export function validateContentIntelligence(): ContentIntelligenceValidation {
-  const assignments = DOMAIN_PROFILES.flatMap((profile) => profile.entityIds.map((entityId) => `${entityId}|${profile.phase}`));
-  const entityIds = assignments.map((assignment) => assignment.split('|')[0]);
-  const duplicateEntityAssignments = entityIds.filter((id, index) => entityIds.indexOf(id) !== index);
+  const duplicateEntityAssignments = DOMAIN_PROFILES.flatMap((profile) => {
+    const duplicates = profile.entityIds.filter((id, index) => profile.entityIds.indexOf(id) !== index);
+    return duplicates.map((id) => `${profile.phase}:${id}`);
+  });
   const emptyProfiles = DOMAIN_PROFILES
     .filter((profile) => !profile.engineeringSummary.trim() || profile.retrievalPassages.length === 0 || profile.canonicalAnswers.length === 0)
     .map((profile) => profile.phase);
