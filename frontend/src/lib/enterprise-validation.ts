@@ -1,13 +1,24 @@
 import { validateAICitationRecords } from './ai-citation-layer';
 import { validateCanonicalEntitySchemas, type SchemaEntityKind } from './canonical-entity-schema';
+import { validateEntityAuthority } from './entity-authority';
 import { ENTITY_NODES, validateEntityGraph } from './entity-graph';
 import { validateSeoGeoProfiles } from './enterprise-seo-geo';
 import { validateGeoContext } from './geo-context';
 import { validateKnowledgeGraphSchema } from './knowledge-graph-schema';
 import { validateRichResultsGraph } from './rich-results-schema';
+import { validateTopicalAuthority } from './topical-authority';
 
 export interface EnterpriseValidationIssue {
-  readonly layer: 'entity-graph' | 'geo' | 'entity-schema' | 'knowledge-graph' | 'ai-citation' | 'rich-results' | 'seo-geo';
+  readonly layer:
+    | 'entity-graph'
+    | 'geo'
+    | 'entity-schema'
+    | 'knowledge-graph'
+    | 'ai-citation'
+    | 'rich-results'
+    | 'seo-geo'
+    | 'topical-authority'
+    | 'entity-authority';
   readonly code: string;
   readonly values: readonly string[];
 }
@@ -78,6 +89,16 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   addIssue(issues, 'seo-geo', 'invalid-technology-entities', seoGeo.invalidTechnologyEntities);
   addIssue(issues, 'seo-geo', 'duplicate-titles', seoGeo.duplicateTitles);
   addIssue(issues, 'seo-geo', 'duplicate-descriptions', seoGeo.duplicateDescriptions);
+
+  const topical = validateTopicalAuthority();
+  addIssue(issues, 'topical-authority', 'missing-clusters', topical.missingClusters);
+  addIssue(issues, 'topical-authority', 'empty-clusters', topical.emptyClusters);
+  addIssue(issues, 'topical-authority', 'duplicate-links', topical.duplicateLinks);
+  addIssue(issues, 'topical-authority', 'self-links', topical.selfLinks);
+
+  const authority = validateEntityAuthority();
+  addIssue(issues, 'entity-authority', 'missing-scores', authority.missingScores);
+  addIssue(issues, 'entity-authority', 'out-of-range-scores', authority.outOfRangeScores);
 
   schemaEntities.forEach(({ kind, slug }) => {
     const richResults = validateRichResultsGraph(kind, slug);
