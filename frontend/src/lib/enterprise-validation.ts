@@ -108,6 +108,8 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   const authority = validateEntityAuthority();
   addIssue(issues, 'entity-authority', 'missing-scores', authority.missingScores);
   addIssue(issues, 'entity-authority', 'out-of-range-scores', authority.outOfRangeScores);
+  addIssue(issues, 'entity-authority', 'non-deterministic-scores', authority.nonDeterministicScores);
+  addIssue(issues, 'entity-authority', 'critical-entities-below-threshold', authority.criticalEntitiesBelowThreshold);
 
   const crawl = validateCrawlOptimization();
   addIssue(issues, 'crawl', 'duplicate-urls', crawl.duplicateUrls);
