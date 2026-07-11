@@ -65,9 +65,9 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     construction: pending, applicableStandards: ['ASTM D6304', 'ISO 12937'], hdProducts: [pending], ldProducts: [pending], heroImage: '/images/fuelfilter-hero.avif',
   },
   'fuel-water-separators': {
-    key: 'fuel-water-separators', name: 'Fuel Water Separators', slug: 'fuel-water-separators', protectionSystem: 'fuel-cleanliness', primaryTechnology: 'aquaguard', dutyClass: 'HD', hdPrefix: 'EF9', ldPrefix: null,
+    key: 'fuel-water-separators', name: 'Fuel Water Separators', slug: 'fuel-water-separators', protectionSystem: 'fuel-cleanliness', primaryTechnology: 'hydrocore', dutyClass: 'HD', hdPrefix: 'EF9', ldPrefix: null,
     purpose: 'Fuel-water separators remove free and emulsified water while supporting particulate control in diesel fuel systems.',
-    engineering: 'AQUAGUARD™ combines staged separation, droplet coalescence, gravity collection, and a final hydrophobic barrier appropriate to the application.',
+    engineering: 'HYDROCORE™ combines staged separation, droplet coalescence, gravity collection, and a final hydrophobic barrier appropriate to the application.',
     construction: pending, applicableStandards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'], hdProducts: [pending], ldProducts: [], heroImage: '/images/fuellseparator-hero.avif',
   },
   'oil-filters': {
