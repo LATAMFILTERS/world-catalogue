@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { AIEntityCard } from '@/components/AIEntityCard';
+import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
 import { getFamilyBySlug } from '@/lib/product-families-data';
@@ -152,6 +153,7 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
 
   return (
     <>
+      <CanonicalEntitySchema kind={kind} slug={slug} />
       <AIEntityCard kind={kind} slug={slug} />
       {groups.length > 0 && (
         <section className="structured-definition structured-definition--connections" aria-label="Engineering knowledge connections">
