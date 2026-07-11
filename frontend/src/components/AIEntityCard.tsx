@@ -66,7 +66,7 @@ export function AIEntityCard({ kind, slug }: Props) {
           ))}
         </div>
 
-        <div className="ai-entity-card__retrieval" data-geo-context="true" aria-hidden="true">
+        <div hidden data-geo-context="true">
           {context.retrievalPassages.map((passage) => <p key={passage}>{passage}</p>)}
         </div>
       </div>
