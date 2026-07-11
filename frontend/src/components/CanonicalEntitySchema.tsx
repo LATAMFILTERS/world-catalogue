@@ -1,6 +1,6 @@
 import type { SchemaEntityKind } from '@/lib/canonical-entity-schema';
 import { buildAICitationRecord } from '@/lib/ai-citation-layer';
-import { buildKnowledgeGraphSchema } from '@/lib/knowledge-graph-schema';
+import { buildRichResultsGraph } from '@/lib/rich-results-schema';
 
 interface Props {
   kind: SchemaEntityKind;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function CanonicalEntitySchema({ kind, slug }: Props) {
-  const schema = buildKnowledgeGraphSchema({ kind, slug });
+  const schema = buildRichResultsGraph(kind, slug);
   const citation = buildAICitationRecord(kind, slug);
 
   return (
