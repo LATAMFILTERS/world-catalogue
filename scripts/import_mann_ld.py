@@ -138,16 +138,13 @@ def parse_dim_mm(val) -> float | None:
 def map_row(record: dict) -> dict | None:
     """
     Map a mann_master.jsonl record to the /api/import/mann row format.
-    Returns None if the record should be skipped (zero OE codes + zero fitment,
-    or unsupported filter type, or HTTP error during scrape).
+    Inserts a bare row (empty OE/fitment) when the mann-filter.com detail
+    scrape had nothing (404, or page had no data) as long as the filter
+    type can still be determined from the MANN part-number prefix — this
+    lets crossref data (from a different source) attach to the SKU later.
+    Returns None only when the filter type can't be determined at all,
+    or the type isn't one of the 4 supported LD types.
     """
-    # Skip failed scrapes
-    if record.get('status', 0) not in (200, 0):
-        return None
-    # Skip if no data at all
-    if not record.get('oe_count') and not record.get('fitment_count'):
-        return None
-
     ft_raw = normalize_filter_type(record.get('filter_type', ''), record.get('sku', ''))
     if ft_raw not in SUPPORTED_TYPES:
         return None
