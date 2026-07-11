@@ -1,3 +1,5 @@
+import type { TechnologySlug } from './canonical-technologies';
+
 /**
  * Authoritative registry for the five ELIMFILTERS protection domains.
  * Cabin filtration and compressed-air drying are represented as product
@@ -21,8 +23,8 @@ export interface ProtectionSystem {
   readonly engineeringPrinciple: string;
   readonly heroImage: string;
   readonly heroColor: string;
-  readonly primaryTechnologies: string[];
-  readonly supportingTechnologies: string[];
+  readonly primaryTechnologies: TechnologySlug[];
+  readonly supportingTechnologies: TechnologySlug[];
   readonly productFamilies: string[];
   readonly hdPrefix: string;
   readonly ldPrefix: string | null;
