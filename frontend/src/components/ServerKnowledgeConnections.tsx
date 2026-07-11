@@ -6,7 +6,7 @@ import { getItemBySlug } from '@/lib/catalogue';
 import { compareEntityAuthority, getEntityAuthorityScore } from '@/lib/entity-authority';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
-import { getConnectedEntities, getEntityNode, type EntityKind } from '@/lib/entity-graph';
+import { getConnectedEntities, getEntityNode, type EntityKind, type EntityNode } from '@/lib/entity-graph';
 import { getSemanticRecommendations } from '@/lib/semantic-recommendations';
 import { buildTopicCluster } from '@/lib/topical-authority';
 
@@ -22,7 +22,7 @@ interface Group {
   links: Array<{ href: string; name: string }>;
 }
 
-function unique(nodes: Array<{ id: string; href: string; name: string }>) {
+function unique(nodes: EntityNode[]) {
   return Array.from(new Map(nodes.map((node) => [node.id, node])).values())
     .sort(compareEntityAuthority)
     .map((node) => ({ href: node.href, name: node.name }));
