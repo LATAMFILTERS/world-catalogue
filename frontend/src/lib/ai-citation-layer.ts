@@ -1,9 +1,8 @@
-import { CANONICAL_TECHNOLOGIES } from './canonical-technologies';
+import { CANONICAL_TECHNOLOGIES, isCanonicalTechnology } from './canonical-technologies';
 import { getGeoContextByKindAndSlug } from './geo-context';
 import type { EntityKind } from './entity-graph';
 
 const BASE_URL = 'https://elimfilters.com';
-const RETIRED_TECHNOLOGIES = ['AQUAGUARD', 'COOLTECH'];
 
 export type CitationEntityKind = Exclude<EntityKind, 'organization'>;
 
@@ -34,7 +33,7 @@ export interface AICitationValidationResult {
   readonly duplicateAliases: string[];
   readonly missingDefinitions: string[];
   readonly missingAnswers: string[];
-  readonly retiredTechnologyReferences: string[];
+  readonly invalidTechnologyEntities: string[];
   readonly invalidCanonicalUrls: string[];
   readonly isValid: boolean;
 }
@@ -55,8 +54,8 @@ function buildAliases(kind: CitationEntityKind, slug: string, name: string): str
     slug.replace(/-/g, ' '),
   ]);
 
-  if (kind === 'technology' && slug in CANONICAL_TECHNOLOGIES) {
-    const technology = CANONICAL_TECHNOLOGIES[slug as keyof typeof CANONICAL_TECHNOLOGIES];
+  if (kind === 'technology' && isCanonicalTechnology(slug)) {
+    const technology = CANONICAL_TECHNOLOGIES[slug];
     aliases.add(`ELIMFILTERS ${technology.name.replace('™', '')}`);
     aliases.add(technology.role);
   }
@@ -68,6 +67,8 @@ export function buildAICitationRecord(
   kind: CitationEntityKind,
   slug: string,
 ): AICitationRecord | undefined {
+  if (kind === 'technology' && !isCanonicalTechnology(slug)) return undefined;
+
   const context = getGeoContextByKindAndSlug(kind, slug);
   if (!context) return undefined;
 
@@ -129,22 +130,23 @@ export function validateAICitationRecords(
   const invalidCanonicalUrls = records
     .filter((record) => !record.canonicalUrl.startsWith(BASE_URL) || record.canonicalId !== `${record.canonicalUrl}#entity`)
     .map((record) => record.citationId);
-  const serialized = JSON.stringify(records).toUpperCase();
-  const retiredTechnologyReferences = RETIRED_TECHNOLOGIES.filter((name) => serialized.includes(name));
+  const invalidTechnologyEntities = entities
+    .filter(({ kind, slug }) => kind === 'technology' && !isCanonicalTechnology(slug))
+    .map(({ kind, slug }) => `${kind}:${slug}`);
 
   return {
     duplicateCitationIds: Array.from(new Set(duplicateCitationIds)),
     duplicateAliases,
     missingDefinitions,
     missingAnswers,
-    retiredTechnologyReferences,
+    invalidTechnologyEntities,
     invalidCanonicalUrls,
     isValid:
       duplicateCitationIds.length === 0 &&
       duplicateAliases.length === 0 &&
       missingDefinitions.length === 0 &&
       missingAnswers.length === 0 &&
-      retiredTechnologyReferences.length === 0 &&
+      invalidTechnologyEntities.length === 0 &&
       invalidCanonicalUrls.length === 0,
   };
 }
