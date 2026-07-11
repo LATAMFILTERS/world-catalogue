@@ -1,10 +1,10 @@
 import { getGeoContextByKindAndSlug } from './geo-context';
+import { isCanonicalTechnology } from './canonical-technologies';
 import type { EntityKind, EntityNode } from './entity-graph';
 
 const BASE_URL = 'https://elimfilters.com';
 const ORGANIZATION_ID = `${BASE_URL}/#organization`;
 const WEBSITE_ID = `${BASE_URL}/#website`;
-const RETIRED_TECHNOLOGIES = ['AQUAGUARD', 'COOLTECH'];
 
 export type SchemaEntityKind = Exclude<EntityKind, 'organization'>;
 
@@ -35,7 +35,7 @@ export interface SchemaValidationResult {
   readonly missingSchemas: string[];
   readonly duplicateIds: string[];
   readonly invalidCanonicalUrls: string[];
-  readonly retiredTechnologyReferences: string[];
+  readonly invalidTechnologyEntities: string[];
   readonly isValid: boolean;
 }
 
@@ -110,6 +110,8 @@ export function buildCanonicalEntitySchema(
   kind: SchemaEntityKind,
   slug: string,
 ): CanonicalSchemaNode | undefined {
+  if (kind === 'technology' && !isCanonicalTechnology(slug)) return undefined;
+
   const context = getGeoContextByKindAndSlug(kind, slug);
   if (!context) return undefined;
 
@@ -161,18 +163,19 @@ export function validateCanonicalEntitySchemas(
   const invalidCanonicalUrls = present
     .filter((schema) => !schema.url.startsWith(BASE_URL) || schema.mainEntityOfPage['@id'] !== schema.url)
     .map((schema) => schema['@id']);
-  const serialized = JSON.stringify(present).toUpperCase();
-  const retiredTechnologyReferences = RETIRED_TECHNOLOGIES.filter((name) => serialized.includes(name));
+  const invalidTechnologyEntities = entities
+    .filter(({ kind, slug }) => kind === 'technology' && !isCanonicalTechnology(slug))
+    .map(({ kind, slug }) => `${kind}:${slug}`);
 
   return {
     missingSchemas,
     duplicateIds: Array.from(new Set(duplicateIds)),
     invalidCanonicalUrls,
-    retiredTechnologyReferences,
+    invalidTechnologyEntities,
     isValid:
       missingSchemas.length === 0 &&
       duplicateIds.length === 0 &&
       invalidCanonicalUrls.length === 0 &&
-      retiredTechnologyReferences.length === 0,
+      invalidTechnologyEntities.length === 0,
   };
 }
