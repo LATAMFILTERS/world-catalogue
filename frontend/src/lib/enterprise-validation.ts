@@ -1,12 +1,13 @@
 import { validateAICitationRecords } from './ai-citation-layer';
 import { validateCanonicalEntitySchemas, type SchemaEntityKind } from './canonical-entity-schema';
 import { ENTITY_NODES, validateEntityGraph } from './entity-graph';
+import { validateSeoGeoProfiles } from './enterprise-seo-geo';
 import { validateGeoContext } from './geo-context';
 import { validateKnowledgeGraphSchema } from './knowledge-graph-schema';
 import { validateRichResultsGraph } from './rich-results-schema';
 
 export interface EnterpriseValidationIssue {
-  readonly layer: 'entity-graph' | 'geo' | 'entity-schema' | 'knowledge-graph' | 'ai-citation' | 'rich-results';
+  readonly layer: 'entity-graph' | 'geo' | 'entity-schema' | 'knowledge-graph' | 'ai-citation' | 'rich-results' | 'seo-geo';
   readonly code: string;
   readonly values: readonly string[];
 }
@@ -70,6 +71,13 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   addIssue(issues, 'ai-citation', 'missing-answers', citations.missingAnswers);
   addIssue(issues, 'ai-citation', 'invalid-technology-entities', citations.invalidTechnologyEntities);
   addIssue(issues, 'ai-citation', 'invalid-canonical-urls', citations.invalidCanonicalUrls);
+
+  const seoGeo = validateSeoGeoProfiles(schemaEntities);
+  addIssue(issues, 'seo-geo', 'missing-profiles', seoGeo.missingProfiles);
+  addIssue(issues, 'seo-geo', 'invalid-canonical-urls', seoGeo.invalidCanonicalUrls);
+  addIssue(issues, 'seo-geo', 'invalid-technology-entities', seoGeo.invalidTechnologyEntities);
+  addIssue(issues, 'seo-geo', 'duplicate-titles', seoGeo.duplicateTitles);
+  addIssue(issues, 'seo-geo', 'duplicate-descriptions', seoGeo.duplicateDescriptions);
 
   schemaEntities.forEach(({ kind, slug }) => {
     const richResults = validateRichResultsGraph(kind, slug);
