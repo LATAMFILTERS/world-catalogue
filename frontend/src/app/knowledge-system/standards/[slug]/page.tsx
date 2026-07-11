@@ -5,6 +5,7 @@ import { ENTITY_NODES, getEntityNode } from '@/lib/entity-graph';
 import { ServerKnowledgeConnections } from '@/components/ServerKnowledgeConnections';
 
 const BASE_URL = 'https://elimfilters.com';
+const LEGACY_CATCH_ALL_STANDARDS = new Set(['iso-16889', 'iso-4406', 'iso-5011']);
 
 const PURPOSES: Record<string, string> = {
   'iso-16889': 'Multi-pass test method for evaluating hydraulic filter element efficiency, Beta ratio, contaminant capacity, and differential-pressure behavior.',
@@ -23,7 +24,11 @@ const PURPOSES: Record<string, string> = {
 };
 
 export function generateStaticParams() {
-  return ENTITY_NODES.filter((node) => node.kind === 'standard').map((node) => ({ slug: node.id.replace('standard:', '') }));
+  return ENTITY_NODES
+    .filter((node) => node.kind === 'standard')
+    .map((node) => node.id.replace('standard:', ''))
+    .filter((slug) => !LEGACY_CATCH_ALL_STANDARDS.has(slug))
+    .map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
