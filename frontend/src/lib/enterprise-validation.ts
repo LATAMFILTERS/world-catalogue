@@ -1,5 +1,6 @@
 import { validateAICitationRecords } from './ai-citation-layer';
 import { validateCanonicalEntitySchemas, type SchemaEntityKind } from './canonical-entity-schema';
+import { validateCrawlOptimization } from './crawl-optimization';
 import { validateEntityAuthority } from './entity-authority';
 import { ENTITY_NODES, validateEntityGraph } from './entity-graph';
 import { validateSeoGeoProfiles } from './enterprise-seo-geo';
@@ -20,7 +21,8 @@ export interface EnterpriseValidationIssue {
     | 'rich-results'
     | 'seo-geo'
     | 'topical-authority'
-    | 'entity-authority';
+    | 'entity-authority'
+    | 'crawl';
   readonly code: string;
   readonly values: readonly string[];
 }
@@ -106,6 +108,13 @@ export function validateEnterpriseArchitecture(): EnterpriseValidationReport {
   const authority = validateEntityAuthority();
   addIssue(issues, 'entity-authority', 'missing-scores', authority.missingScores);
   addIssue(issues, 'entity-authority', 'out-of-range-scores', authority.outOfRangeScores);
+
+  const crawl = validateCrawlOptimization();
+  addIssue(issues, 'crawl', 'duplicate-urls', crawl.duplicateUrls);
+  addIssue(issues, 'crawl', 'missing-entity-urls', crawl.missingEntityUrls);
+  addIssue(issues, 'crawl', 'invalid-canonical-urls', crawl.invalidCanonicalUrls);
+  addIssue(issues, 'crawl', 'invalid-priorities', crawl.invalidPriorities);
+  addIssue(issues, 'crawl', 'isolated-entity-urls', crawl.isolatedEntityUrls);
 
   schemaEntities.forEach(({ kind, slug }) => {
     const richResults = validateRichResultsGraph(kind, slug);
