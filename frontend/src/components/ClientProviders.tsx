@@ -12,6 +12,7 @@ import { StructuredSystemDefinition } from './StructuredSystemDefinition';
 import { StructuredFamilyDefinition } from './StructuredFamilyDefinition';
 import { StructuredIndustryDefinition } from './StructuredIndustryDefinition';
 import { StructuredStandardDefinition } from './StructuredStandardDefinition';
+import { FailureKnowledgeDefinition } from './FailureKnowledgeDefinition';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -34,6 +35,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
       <StructuredFamilyDefinition />
       <StructuredIndustryDefinition />
       <StructuredStandardDefinition />
+      <FailureKnowledgeDefinition />
       <UniversalEndNavigation />
     </I18nextProvider>
   );
