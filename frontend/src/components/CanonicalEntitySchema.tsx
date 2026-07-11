@@ -1,7 +1,5 @@
-import {
-  buildCanonicalEntitySchema,
-  type SchemaEntityKind,
-} from '@/lib/canonical-entity-schema';
+import type { SchemaEntityKind } from '@/lib/canonical-entity-schema';
+import { buildKnowledgeGraphSchema } from '@/lib/knowledge-graph-schema';
 
 interface Props {
   kind: SchemaEntityKind;
@@ -9,8 +7,7 @@ interface Props {
 }
 
 export function CanonicalEntitySchema({ kind, slug }: Props) {
-  const schema = buildCanonicalEntitySchema(kind, slug);
-  if (!schema) return null;
+  const schema = buildKnowledgeGraphSchema({ kind, slug });
 
   return (
     <script
