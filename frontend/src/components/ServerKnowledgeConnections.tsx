@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
@@ -65,15 +66,15 @@ function buildGroups(kind: ConnectionKind, slug: string): { title: string; group
   }
 
   if (kind === 'technology') {
-    const item = getItemBySlug('technologies', slug);
+    const technology = getCanonicalTechnology(slug);
     const node = getEntityNode(`technology:${slug}`);
-    if (!item || !node) return null;
+    if (!technology || !node) return null;
     const systems = getIncomingEntities(node.id, 'uses-technology').filter((entry) => entry.kind === 'system');
     const families = getIncomingEntities(node.id, 'uses-technology').filter((entry) => entry.kind === 'family');
     const standards = [...systems, ...families].flatMap((entry) => getRelatedEntities(entry.id, 'validated-by'));
     const industries = systems.flatMap((entry) => getRelatedEntities(entry.id, 'applied-in'));
     return {
-      title: `${node.name} connections`,
+      title: `${technology.name} connections`,
       groups: [
         { label: 'Protection Systems', links: unique(systems) },
         { label: 'Product Families', links: unique(families) },
