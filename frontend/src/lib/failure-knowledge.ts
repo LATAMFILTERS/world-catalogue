@@ -1,3 +1,5 @@
+import type { TechnologySlug } from './canonical-technologies';
+
 export type FailureKnowledgeKey = 'hydraulic-system' | 'particle-wear' | 'diesel-water';
 
 export interface FailureKnowledgeProfile {
@@ -8,7 +10,7 @@ export interface FailureKnowledgeProfile {
   readonly operationalImpact: string;
   readonly controlStrategy: string;
   readonly systems: readonly string[];
-  readonly technologies: readonly string[];
+  readonly technologies: readonly TechnologySlug[];
   readonly families: readonly string[];
   readonly standards: readonly string[];
   readonly industries: readonly string[];
