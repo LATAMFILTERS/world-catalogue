@@ -1,3 +1,5 @@
+import type { TechnologySlug } from './canonical-technologies';
+
 export type FamilyKey =
   | 'primary-air'
   | 'secondary-air'
@@ -18,7 +20,7 @@ export interface ProductFamily {
   readonly name: string;
   readonly slug: string;
   readonly protectionSystem: string;
-  readonly primaryTechnology: string;
+  readonly primaryTechnology: TechnologySlug;
   readonly dutyClass: DutyClass;
   readonly hdPrefix: string | null;
   readonly ldPrefix: string | null;
