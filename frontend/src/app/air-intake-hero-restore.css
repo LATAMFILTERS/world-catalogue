@@ -114,6 +114,12 @@ main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3
   grid-row: 2 !important;
 }
 
+/* Remove repeated/reference-only sections from the visible Air Intake page. */
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(n+4),
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(n+4) {
+  display: none !important;
+}
+
 @media (max-width: 1100px) {
   main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div,
   main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) > div {
