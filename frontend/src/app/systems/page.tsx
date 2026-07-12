@@ -28,7 +28,7 @@ const SYSTEM_LINES: Record<string, string> = {
 export const metadata: Metadata = {
   title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
   description:
-    'Seven industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, cooling, cabin air, and compressed air protection.',
+    'Five industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, and cooling system protection.',
   alternates: { canonical: `${BASE_URL}/systems` },
 };
 
@@ -69,15 +69,13 @@ export default function SystemsPage() {
             <span style={{ color: '#FFF12D' }}>Around Failure Risk</span>
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, coolant, cabin, and compressed air each demand a different contamination control strategy.
+            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, and coolant systems each demand a different contamination control strategy.
           </p>
-
-          <div style={tagRow}>
-            {['AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING', 'CABIN'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
-            ))}
-          </div>
         </div>
+
+        <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={partSearchHeroButton}>
+          PART SEARCH
+        </a>
       </section>
 
       <section style={section}>
@@ -105,12 +103,13 @@ export default function SystemsPage() {
           </div>
 
           <div style={systemGrid}>
-            {PROTECTION_SYSTEM_LIST.map((system) => {
+            {PROTECTION_SYSTEM_LIST.map((system, index) => {
               const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
               const line = SYSTEM_LINES[system.slug] || system.tagline;
+              const placement = index < 3 ? topCardPlacement : index === 3 ? bottomLeftPlacement : bottomRightPlacement;
 
               return (
-                <Link key={system.key} href={`/systems/${system.slug}`} style={systemCard}>
+                <Link key={system.key} href={`/systems/${system.slug}`} style={{ ...systemCard, ...placement }}>
                   <img src={image} alt={system.name} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
@@ -125,20 +124,7 @@ export default function SystemsPage() {
         </div>
       </section>
 
-      <section style={searchCallout}>
-        <div style={searchInner}>
-          <div>
-            <p style={eyebrow}>PART SEARCH INTELLIGENCE</p>
-            <h2 style={sectionTitle}>From system domain to real part number.</h2>
-            <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
-              Use ELIMFILTERS part search to connect OEM numbers, competitive references, dimensions, and application logic back to the correct protection system.
-            </p>
-          </div>
-          <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}>
-            PART SEARCH
-          </a>
-        </div>
-      </section>
+      <section style={searchCallout} />
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
@@ -204,12 +190,11 @@ const heroLead: CSSProperties = {
   fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
 };
 
-const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
-
-const tag: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
-  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
-  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
+const partSearchHeroButton: CSSProperties = {
+  position: 'absolute', right: 'clamp(1.25rem, 6vw, 6rem)', bottom: 'clamp(2rem, 5vw, 4rem)', zIndex: 3,
+  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
 
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
@@ -237,8 +222,12 @@ const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 const systemSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
 const systemGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',
+  display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '1rem',
 };
+
+const topCardPlacement: CSSProperties = { gridColumn: 'span 2' };
+const bottomLeftPlacement: CSSProperties = { gridColumn: '2 / span 2' };
+const bottomRightPlacement: CSSProperties = { gridColumn: '4 / span 2' };
 
 const systemCard: CSSProperties = {
   minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
@@ -275,16 +264,7 @@ const explore: CSSProperties = {
   letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
 };
 
-const searchCallout: CSSProperties = {
-  padding: '0 clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)',
-};
-
-const searchInner: CSSProperties = {
-  maxWidth: '1180px', margin: '0 auto', display: 'flex', flexWrap: 'wrap',
-  alignItems: 'center', justifyContent: 'space-between', gap: '2rem',
-  border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.045)',
-  padding: 'clamp(1.5rem, 4vw, 2.4rem)',
-};
+const searchCallout: CSSProperties = { display: 'none' };
 
 const cta: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
