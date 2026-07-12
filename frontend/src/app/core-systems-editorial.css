@@ -71,11 +71,26 @@ main:has(> header > img[alt="Cooling System Protection"]) > section:first-of-typ
   display: none !important;
 }
 
+/* Primary Technologies: collapse empty auto-fill tracks and balance the real cards only. */
 main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div,
 main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div,
 main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div,
 main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  max-width: 980px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  gap: 1px !important;
   background: transparent !important;
+}
+
+main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  max-width: 1120px !important;
 }
 
 main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div > a,
@@ -84,5 +99,51 @@ main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > 
 main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div > a {
   background: #000 !important;
   border: 1px solid rgba(255,255,255,0.08) !important;
+  min-height: 205px !important;
+  justify-content: center !important;
+}
+
+/* Product Families remain clean after the added Protection Architecture section. */
+main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(4) > div,
+main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(4) > div,
+main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(4) > div,
+main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(4) > div {
+  background: transparent !important;
+}
+
+main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(4) > div > a,
+main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(4) > div > a,
+main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(4) > div > a,
+main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(4) > div > a {
+  background: #000 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
   min-height: 250px !important;
+}
+
+@media (max-width: 900px) {
+  main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div,
+  main:has(> header > img[alt="Fuel Cleanliness Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Lubrication Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Hydraulic Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)),
+  main:has(> header > img[alt="Cooling System Protection"]) > section:nth-of-type(3) > div:has(> a:nth-child(4)) {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
 }
