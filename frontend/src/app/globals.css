@@ -127,12 +127,11 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: auto;
 }
 
-/* Phase 2A — internal page hero typography normalization.
- * Scope intentionally excludes HOME by targeting internal pages that render
- * the fixed HOME link immediately before their hero section.
- */
+/* Phase 2A — internal page hero typography normalization. */
 main > a[href="/"] + section h1,
-main > a[href="/"] + section h1 span {
+main > a[href="/"] + section h1 span,
+main > section:first-of-type h1,
+main > section:first-of-type h1 span {
   font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
   font-weight: 700 !important;
   letter-spacing: -0.06em !important;
@@ -140,21 +139,26 @@ main > a[href="/"] + section h1 span {
   text-transform: uppercase !important;
 }
 
-main > a[href="/"] + section h1 {
+main > a[href="/"] + section h1,
+main > section:first-of-type h1 {
   font-size: clamp(2.85rem, 6.2vw, 6.05rem) !important;
   max-width: 980px !important;
 }
 
-main > a[href="/"] + section h1 span {
+main > a[href="/"] + section h1 span,
+main > section:first-of-type h1 span {
   font-size: 0.94em !important;
 }
 
-main > a[href="/"] + section p {
+main > a[href="/"] + section p,
+main > section:first-of-type p {
   font-family: 'Barlow', Arial, sans-serif !important;
 }
 
-main > a[href="/"] + section p:first-of-type {
-  font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
+/* Phase 2B — no generic AI-style hero eyebrows on internal hero pages. */
+main > a[href="/"] + section > div[style*="max-width"] > p:first-child,
+main > section:first-of-type > div[style*="max-width"] > p:first-child {
+  display: none !important;
 }
 
 img, video, iframe {
