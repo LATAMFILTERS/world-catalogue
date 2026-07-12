@@ -4,6 +4,7 @@ import './globals.css';
 import './hero-responsive.css';
 import './home-emergency-restore.css';
 import './systems-cleanup.css';
+import './air-intake-hero-restore.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
@@ -38,94 +39,34 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg' },
-    ],
+    icon: '/images/logo.svg',
+    shortcut: '/images/logo.svg',
+    apple: '/images/logo.svg',
   },
-  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
-    siteName: 'ELIMFILTERS',
+    locale: 'en_US',
+    url: BASE_URL,
+    siteName: 'ELIMFILTERS World Catalogue',
     title: BRAND_TITLE,
     description: BRAND_DESCRIPTION,
-    url: BASE_URL,
-    images: [{ url: '/assets/logo-elimfilters.png', width: 1200, height: 630, alt: 'ELIMFILTERS Total Asset Protection Systems' }],
-    locale: 'en_US',
+    images: [
+      {
+        url: `${BASE_URL}/images/logo.svg`,
+        width: 1200,
+        height: 630,
+        alt: 'ELIMFILTERS',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@elimfilters',
     title: BRAND_TITLE,
     description: BRAND_DESCRIPTION,
-    images: ['/assets/logo-elimfilters.png'],
+    images: [`${BASE_URL}/images/logo.svg`],
   },
-};
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': `${BASE_URL}/#organization`,
-  name: 'ELIMFILTERS',
-  alternateName: 'ELIMFILTERS Total Asset Protection Systems',
-  slogan: 'Total Asset Protection Systems',
-  url: BASE_URL,
-  logo: `${BASE_URL}/assets/logo-elimfilters.png`,
-  description: BRAND_DESCRIPTION,
-  foundingLocation: 'Frisco, Texas, USA',
-  areaServed: 'Worldwide',
-  knowsAbout: [
-    'Total Asset Protection Systems',
-    'Industrial Asset Protection',
-    'Contamination Control',
-    'Equipment Reliability Engineering',
-    'ISO 16889 Filtration Standards',
-    'ISO 4406 Cleanliness Codes',
-    'Hydraulic System Protection',
-    'Fuel System Contamination Control',
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'technical support',
-    url: `${BASE_URL}/contact`,
-    availableLanguage: ['English', 'Spanish', 'Portuguese', 'French'],
-  },
-  parentOrganization: {
-    '@type': 'Organization',
-    name: 'Kleo Technologies',
-    description: 'Industrial Research & Engineering Division',
-  },
-  sameAs: ['https://www.linkedin.com/company/133064152/', 'https://www.facebook.com/elimfilters/', 'https://www.instagram.com/elimfilters.global', 'https://x.com/elimfilters', 'https://www.youtube.com/@elimfilters9112'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'ELIMFILTERS Total Asset Protection Platform',
-    itemListElement: [
-      { '@type': 'OfferCatalog', name: 'Asset Protection by Industry', url: `${BASE_URL}/industries` },
-      { '@type': 'OfferCatalog', name: 'Contamination Control Systems', url: `${BASE_URL}/systems` },
-      { '@type': 'OfferCatalog', name: 'Product Families', url: `${BASE_URL}/families` },
-      { '@type': 'OfferCatalog', name: 'Proprietary Protection Technologies', url: `${BASE_URL}/technologies` },
-      { '@type': 'OfferCatalog', name: 'Knowledge Center', url: `${BASE_URL}/knowledge-center` },
-    ],
-  },
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'ELIMFILTERS',
-  alternateName: 'ELIMFILTERS Total Asset Protection Systems',
-  url: BASE_URL,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: 'https://part-search.elimfilters.com?q={search_term_string}' },
-    'query-input': 'required name=search_term_string',
+  alternates: {
+    canonical: BASE_URL,
   },
 };
 
@@ -133,55 +74,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#000000" />
-        {/* Build-safe font variables: system stacks only; no Google Fonts network fetches during static export. */}
-        <style>{`
-          :root {
-            --font-inter: Arial, Helvetica, sans-serif;
-            --font-display: 'Arial Narrow', Impact, Arial, sans-serif;
-            --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
-          }
-        `}</style>
-        {/* Cloudflare Turnstile — loaded globally, used by contact/distributor forms and chat widget */}
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-T7STY4TY9C" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </head>
       <body>
-        {/* Skip to main content — keyboard/screen reader accessibility */}
-        <a href="#main-content" className="skip-to-content">
-          Skip to main content
-        </a>
-        <Analytics />
-        <ConsentBanner />
         <ClientProviders>
-          <div id="main-content">
-            {children}
-          </div>
+          {children}
+          <ConsentBanner />
+          <Analytics />
           <ChatBot />
         </ClientProviders>
-        {/* ® in headings: wrap as small superscript so it doesn't look oversized */}
-        <Script id="reg-in-headings" strategy="afterInteractive">{`
-          (function(){
-            function wrapReg(root){
-              var heads = root.querySelectorAll('h1,h2,h3,h4');
-              heads.forEach(function(h){
-                h.innerHTML = h.innerHTML.replace(/®/g,'<span class="reg-sup">®</span>');
-              });
-            }
-            wrapReg(document);
-            var obs = new MutationObserver(function(muts){
-              muts.forEach(function(m){ m.addedNodes.forEach(function(n){ if(n.nodeType===1) wrapReg(n); }); });
-            });
-            obs.observe(document.body,{childList:true,subtree:true});
-          })();
-        `}</Script>
       </body>
     </html>
   );
