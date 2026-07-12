@@ -1,25 +1,41 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 
 const BASE_URL = 'https://elimfilters.com';
 
-const SYSTEM_IMAGES: Record<string, string> = {
-  'air-intake': '/images/mecanica-air.avif',
-  'fuel-cleanliness': '/images/fuellseparator-hero.avif',
-  lubrication: '/images/oil-hand.avif',
-  hydraulic: '/images/hidraulic.avif',
-  'cooling-system': '/images/coolant-filters.avif',
-};
-
-const SYSTEM_LINES: Record<string, string> = {
-  'air-intake': 'Dust ingestion control, airflow stability, restriction management, and engine protection.',
-  'fuel-cleanliness': 'Particle control, water separation, injector protection, and fuel system reliability.',
-  lubrication: 'Wear particle control, oil cleanliness, bearing protection, and engine life extension.',
-  hydraulic: 'Servo valve protection, pressure stability, pump protection, and ISO cleanliness discipline.',
-  'cooling-system': 'Coolant stability, additive control, corrosion reduction, and thermal reliability.',
-};
+const SYSTEM_CARDS = [
+  {
+    name: 'Air Intake & Airflow Protection',
+    slug: 'air-intake',
+    image: '/images/mecanica-air.avif',
+    line: 'Dust ingestion control, airflow stability, restriction management, and engine protection.',
+  },
+  {
+    name: 'Fuel Cleanliness Protection',
+    slug: 'fuel-cleanliness',
+    image: '/images/fuellseparator-hero.avif',
+    line: 'Particle control, water separation, injector protection, and fuel system reliability.',
+  },
+  {
+    name: 'Lubrication Protection',
+    slug: 'lubrication',
+    image: '/images/oil-hand.avif',
+    line: 'Wear particle control, oil cleanliness, bearing protection, and engine life extension.',
+  },
+  {
+    name: 'Hydraulic Protection',
+    slug: 'hydraulic',
+    image: '/images/hidraulic.avif',
+    line: 'Servo valve protection, pressure stability, pump protection, and ISO cleanliness discipline.',
+  },
+  {
+    name: 'Cooling System Protection',
+    slug: 'cooling-system',
+    image: '/images/coolant-filters.avif',
+    line: 'Coolant stability, additive control, corrosion reduction, and thermal reliability.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
@@ -34,15 +50,15 @@ export default function SystemsPage() {
     '@type': 'ItemList',
     name: 'ELIMFILTERS Protection Systems',
     url: `${BASE_URL}/systems`,
-    numberOfItems: PROTECTION_SYSTEM_LIST.length,
-    itemListElement: PROTECTION_SYSTEM_LIST.map((system, index) => ({
+    numberOfItems: SYSTEM_CARDS.length,
+    itemListElement: SYSTEM_CARDS.map((system, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
         '@type': 'WebPage',
         name: system.name,
         url: `${BASE_URL}/systems/${system.slug}`,
-        description: system.tagline,
+        description: system.line,
       },
     })),
   };
@@ -75,29 +91,25 @@ export default function SystemsPage() {
       </section>
 
       <section style={systemSection}>
-        <div style={wrapWide}>
-          <div style={systemGrid}>
-            {PROTECTION_SYSTEM_LIST.map((system, index) => {
-              const image = SYSTEM_IMAGES[system.slug] || system.heroImage || '/images/sistems-hero.avif';
-              const line = SYSTEM_LINES[system.slug] || system.tagline;
-              const cardPlacement = index < 3 ? topCardPlacement : bottomCardPlacement;
+        <div style={systemsGrid}>
+          {SYSTEM_CARDS.map((system, index) => {
+            const placement = index < 3 ? topCardPlacement : bottomCardPlacement;
 
-              return (
-                <Link
-                  key={system.key}
-                  href={`/systems/${system.slug}`}
-                  style={{ ...systemCard, ...cardPlacement, backgroundImage: `url(${image})` }}
-                >
-                  <div style={systemOverlay} />
-                  <div style={systemContent}>
-                    <h3 style={systemTitle}>{system.name}</h3>
-                    <p style={systemLine}>{line}</p>
-                    <span style={explore}>EXPLORE SYSTEM</span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+            return (
+              <Link
+                key={system.slug}
+                href={`/systems/${system.slug}`}
+                style={{ ...systemCard, ...placement, backgroundImage: `url(${system.image})` }}
+              >
+                <div style={systemOverlay} />
+                <div style={systemContent}>
+                  <h2 style={systemTitle}>{system.name}</h2>
+                  <p style={systemLine}>{system.line}</p>
+                  <span style={explore}>EXPLORE SYSTEM</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </main>
@@ -118,13 +130,13 @@ const homeButton: CSSProperties = {
 };
 
 const hero: CSSProperties = {
-  minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
   padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
-  borderBottom: '1px solid rgba(255,255,255,0.08)',
+  borderBottom: '1px solid rgba(255,241,45,0.18)',
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.36,
 };
 
 const heroOverlay: CSSProperties = {
@@ -157,12 +169,13 @@ const partSearchHeroButton: CSSProperties = {
   fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
 
-const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+const systemSection: CSSProperties = {
+  padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem) clamp(4rem, 8vw, 7rem)',
+};
 
-const systemSection: CSSProperties = { padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem) clamp(4rem, 8vw, 7rem)' };
-
-const systemGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '1rem',
+const systemsGrid: CSSProperties = {
+  maxWidth: '1320px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '1rem',
 };
 
 const topCardPlacement: CSSProperties = { gridColumn: 'span 2' };
