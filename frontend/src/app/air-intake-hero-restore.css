@@ -59,9 +59,28 @@ main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3
   min-height: 250px !important;
 }
 
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) h2,
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) h2 {
+  font-size: clamp(2.07rem, 4.37vw, 3.56rem) !important;
+  line-height: 0.96 !important;
+}
+
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div > a p,
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) > div > a p,
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div > a span,
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) > div > a span {
+  font-size: 115% !important;
+}
+
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div > a p:nth-of-type(2),
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) > div > a p:nth-of-type(2) {
+  font-size: 1.15rem !important;
+  line-height: 1.12 !important;
+}
+
 main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div > a p:nth-of-type(3),
 main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(3) > div > a p:nth-of-type(3) {
-  font-size: 0.99rem !important;
+  font-size: 1.14rem !important;
   line-height: 1.72 !important;
 }
 
