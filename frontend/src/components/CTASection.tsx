@@ -51,17 +51,6 @@ export function CTASection({
           transition: 'opacity 0.7s ease, transform 0.7s ease',
         }}
       >
-        <p
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.65rem',
-            letterSpacing: '0.22em',
-            color: '#FFF12D',
-            marginBottom: '1.25rem',
-          }}
-        >
-          ASSET PROTECTION
-        </p>
         <h2
           style={{
             fontFamily: 'Titillium Web, sans-serif',
