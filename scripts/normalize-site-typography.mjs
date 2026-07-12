@@ -4,6 +4,12 @@ import { extname, join, resolve } from 'node:path';
 const root = resolve(process.cwd(), 'src');
 const allowedExt = new Set(['.tsx', '.ts', '.jsx', '.js', '.css']);
 
+const APPROVED_FAMILIES = {
+  display: 'Chakra Petch',
+  body: 'Barlow',
+  mono: 'Chakra Petch',
+};
+
 const APPROVED_TOKENS = {
   display: 'var(--font-display)',
   body: 'var(--font-body)',
@@ -14,8 +20,12 @@ const replacements = [
   // Inline React style fontFamily values.
   [/fontFamily:\s*'Chakra Petch, Arial Narrow, monospace'/g, `fontFamily: '${APPROVED_TOKENS.display}'`],
   [/fontFamily:\s*"Chakra Petch, Arial Narrow, monospace"/g, `fontFamily: '${APPROVED_TOKENS.display}'`],
+  [/fontFamily:\s*'Chakra Petch, Barlow, Arial, sans-serif'/g, `fontFamily: '${APPROVED_TOKENS.display}'`],
+  [/fontFamily:\s*"Chakra Petch, Barlow, Arial, sans-serif"/g, `fontFamily: '${APPROVED_TOKENS.display}'`],
   [/fontFamily:\s*'Barlow, Arial, sans-serif'/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
   [/fontFamily:\s*"Barlow, Arial, sans-serif"/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
+  [/fontFamily:\s*'Barlow, sans-serif'/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
+  [/fontFamily:\s*"Barlow, sans-serif"/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
   [/fontFamily:\s*'Inter, sans-serif'/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
   [/fontFamily:\s*"Inter, sans-serif"/g, `fontFamily: '${APPROVED_TOKENS.body}'`],
   [/fontFamily:\s*'Outfit, sans-serif'/g, `fontFamily: '${APPROVED_TOKENS.display}'`],
@@ -40,7 +50,7 @@ const replacements = [
   [/font-family:\s*'JetBrains Mono'[^;]*;/g, 'font-family: var(--font-mono);'],
   [/font-family:\s*"JetBrains Mono"[^;]*;/g, 'font-family: var(--font-mono);'],
 
-  // Remote Google Fonts imports are not allowed.
+  // Page-level Google Fonts imports are not allowed.
   [/@import\s+url\(['"]https:\/\/fonts\.googleapis\.com\/css2\?[^'"]*['"]\);\n?/g, ''],
   [/\s*<style>\{`@import url\(['"]https:\/\/fonts\.googleapis\.com\/css2\?[^'"]*['"]\);`\}<\/style>/g, ''],
 
@@ -82,6 +92,6 @@ for (const file of walk(root)) {
   }
 }
 
-console.log('[normalize-site-typography] Approved typography: ELIM Display Font = var(--font-display), ELIM Body Font = var(--font-body), ELIM Mono Font = var(--font-mono)');
+console.log(`[normalize-site-typography] Approved typography: ELIM Display Font = ${APPROVED_FAMILIES.display} (${APPROVED_TOKENS.display}), ELIM Body Font = ${APPROVED_FAMILIES.body} (${APPROVED_TOKENS.body}), ELIM Mono Font = ${APPROVED_FAMILIES.mono} (${APPROVED_TOKENS.mono})`);
 console.log(`[normalize-site-typography] Files changed: ${changedFiles}`);
 console.log(`[normalize-site-typography] Replacements applied: ${replacementsApplied}`);
