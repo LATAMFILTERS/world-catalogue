@@ -19,11 +19,9 @@ export default function CinematicHero() {
         display: "flex",
         alignItems: "center",
         padding: "90px 7% 0",
-        fontFamily: "Barlow, Arial, sans-serif",
+        fontFamily: "var(--font-body)",
       }}
     >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
-
       <video
         autoPlay
         muted
@@ -62,42 +60,33 @@ export default function CinematicHero() {
           margin: "0 auto",
         }}
       >
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          style={{
-            color: "#FFF12D",
-            fontFamily: "Chakra Petch, Arial Narrow, monospace",
-            fontSize: "0.75rem",
-            fontWeight: 700,
-            letterSpacing: "0.34em",
-            textTransform: "uppercase",
-            marginBottom: "1.25rem",
-          }}
-        >
-          Total Asset Protection Systems
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.2, ease }}
           style={{
-            maxWidth: "980px",
-            fontFamily: "Chakra Petch, Arial Narrow, monospace",
-            fontSize: "clamp(3.1rem, 7.5vw, 7.2rem)",
-            lineHeight: 0.88,
+            maxWidth: "960px",
+            fontFamily: "var(--font-display)",
+            lineHeight: 0.9,
             letterSpacing: "-0.055em",
             textTransform: "uppercase",
             margin: 0,
-            marginBottom: "1.5rem",
+            marginBottom: "1.65rem",
             color: "#fff",
           }}
         >
-          {t("home.heroLine_protecting", "Protecting")} {t("home.heroLine_industrial", "Industrial")}
-          <span style={{ display: "block", color: "#FFF12D" }}>
-            {t("home.heroLine_assets", "Assets.")}
+          <span style={{ display: "block", fontSize: "clamp(2.48rem, 6vw, 5.76rem)" }}>
+            {t("home.heroLine_protecting", "Protecting")} {t("home.heroLine_industrial", "Industrial")}
+          </span>
+          <span
+            style={{
+              display: "block",
+              color: "#FFF12D",
+              fontSize: "clamp(2.25rem, 5.45vw, 5.25rem)",
+              lineHeight: 0.9,
+            }}
+          >
+            {t("home.heroLine_assets", "Assets")}
           </span>
         </motion.h1>
 
@@ -106,9 +95,10 @@ export default function CinematicHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.45, ease }}
           style={{
-            maxWidth: "770px",
+            maxWidth: "850px",
             color: "rgba(255,255,255,0.76)",
-            fontSize: "clamp(1rem, 2vw, 1.25rem)",
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(1rem, 1.45vw, 1.18rem)",
             lineHeight: 1.65,
             fontWeight: 600,
             marginBottom: "2rem",
@@ -131,7 +121,7 @@ export default function CinematicHero() {
               gap: "0.55rem",
               background: "#FFF12D",
               color: "#000",
-              fontFamily: "Chakra Petch, Arial Narrow, monospace",
+              fontFamily: "var(--font-display)",
               fontWeight: 700,
               fontSize: "0.78rem",
               letterSpacing: "0.16em",
@@ -165,7 +155,7 @@ export default function CinematicHero() {
               border: "1px solid rgba(255,255,255,0.14)",
               background: "rgba(255,255,255,0.04)",
               padding: "0.95rem 1.4rem",
-              fontFamily: "Chakra Petch, Arial Narrow, monospace",
+              fontFamily: "var(--font-display)",
               fontSize: "0.78rem",
               fontWeight: 700,
               letterSpacing: "0.16em",
