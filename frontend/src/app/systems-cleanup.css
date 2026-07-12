@@ -59,9 +59,8 @@ main > section:nth-of-type(4) {
   display: none !important;
 }
 
-/* Air Intake internal system hero: protect the product image and approved hero hierarchy. */
+/* Air Intake internal system hero: move only the text block over the engine filter. */
 main header:has(> img[src$="/images/mecanica-air.avif"]) > img {
-  object-position: center top !important;
   opacity: 0.74 !important;
   filter: brightness(1.16) contrast(1.06) saturate(1.06) !important;
 }
@@ -70,7 +69,7 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
   max-width: 1200px !important;
   padding-left: clamp(7rem, 13.5vw, 14rem) !important;
   padding-right: clamp(1.5rem, 5vw, 4rem) !important;
-  transform: translate(0, 15%) !important;
+  transform: translate(-6%, 15%) !important;
 }
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > p:first-child {
@@ -78,14 +77,14 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > 
 }
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > h1 {
-  max-width: min(760px, 45vw) !important;
-  font-size: clamp(2.45rem, 5.05vw, 4.85rem) !important;
+  max-width: min(680px, 39vw) !important;
+  font-size: clamp(2.45rem, 4.7vw, 4.5rem) !important;
 }
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > p:last-child {
   color: #FFF12D !important;
-  max-width: min(720px, 44vw) !important;
-  width: min(720px, 44vw) !important;
+  max-width: min(620px, 38vw) !important;
+  width: min(620px, 38vw) !important;
   font-family: 'Barlow', Arial, sans-serif !important;
 }
 
