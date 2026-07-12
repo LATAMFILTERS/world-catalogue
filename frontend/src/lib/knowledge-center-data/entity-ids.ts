@@ -86,6 +86,13 @@ export const STANDARD_IDS = {
   'iso-16332':   'STD-ISO-16332',
   'din-71220':   'STD-DIN-71220',
   'din-51524':   'STD-DIN-51524',
+  'sae-j726':    'STD-SAE-J726',
+  // Phase 5C additions
+  'iso-3723':    'STD-ISO-3723',
+  'iso-19438':   'STD-ISO-19438',
+  'astm-d5185':  'STD-ASTM-D5185',
+  'iso-8573-2':  'STD-ISO-8573-2',
+  'iso-3968':    'STD-ISO-3968',
 } as const;
 
 // ── Technology IDs ────────────────────────────────────────────────────────────
@@ -96,6 +103,7 @@ export const TECHNOLOGY_IDS = {
   'nanoforce':   'TECH-NANOFORCE',
   'syntepore':   'TECH-SYNTEPORE',
   'hydrocore':   'TECH-HYDROCORE',
+  'turbocore':   'TECH-TURBOCORE',
   'thermacore':  'TECH-THERMACORE',
   'drycore':     'TECH-DRYCORE',
   'intekcore':   'TECH-INTEKCORE',
@@ -130,6 +138,112 @@ export const INDUSTRY_IDS = {
   'waste-municipal':  'IND-WASTE-MUNICIPAL',
 } as const;
 
+// ── Term IDs ──────────────────────────────────────────────────────────────────
+
+export const TERM_IDS = {
+  // Filtration Performance
+  'beta-ratio':                    'TERM-BETA-RATIO',
+  'absolute-efficiency':           'TERM-ABSOLUTE-EFFICIENCY',
+  'nominal-efficiency':            'TERM-NOMINAL-EFFICIENCY',
+  'multi-pass-test':               'TERM-MULTI-PASS-TEST',
+  'gravimetric-efficiency':        'TERM-GRAVIMETRIC-EFFICIENCY',
+  'differential-pressure':         'TERM-DIFFERENTIAL-PRESSURE',
+  'filter-bypass-valve':           'TERM-FILTER-BYPASS-VALVE',
+  'element-collapse':              'TERM-ELEMENT-COLLAPSE',
+  // Fluid Cleanliness
+  'iso-cleanliness-code':          'TERM-ISO-CLEANLINESS-CODE',
+  'particle-count':                'TERM-PARTICLE-COUNT',
+  'nas-cleanliness-code':          'TERM-NAS-CLEANLINESS-CODE',
+  'contamination-ingression-rate': 'TERM-CONTAMINATION-INGRESSION-RATE',
+  'test-dust':                     'TERM-TEST-DUST',
+  'oil-condition-monitoring':      'TERM-OIL-CONDITION-MONITORING',
+  // Air Intake
+  'restriction':                   'TERM-RESTRICTION',
+  'dust-holding-capacity':         'TERM-DUST-HOLDING-CAPACITY',
+  'progressive-density-gradient':  'TERM-PROGRESSIVE-DENSITY-GRADIENT',
+  'cyclonic-separation':           'TERM-CYCLONIC-SEPARATION',
+  'ingress-protection':            'TERM-INGRESS-PROTECTION',
+  'service-interval':              'TERM-SERVICE-INTERVAL',
+  // Contamination
+  'abrasive-wear':                 'TERM-ABRASIVE-WEAR',
+  'adhesive-wear':                 'TERM-ADHESIVE-WEAR',
+  'silica':                        'TERM-SILICA',
+  'aeration':                      'TERM-AERATION',
+  'particle-size-distribution':    'TERM-PARTICLE-SIZE-DISTRIBUTION',
+  // Hydraulic Systems
+  'servo-valve':                   'TERM-SERVO-VALVE',
+  'proportional-valve':            'TERM-PROPORTIONAL-VALVE',
+  'cavitation':                    'TERM-CAVITATION',
+  'bypass-filtration':             'TERM-BYPASS-FILTRATION',
+  'full-flow-filtration':          'TERM-FULL-FLOW-FILTRATION',
+  // Lubrication
+  'bearing-clearance':             'TERM-BEARING-CLEARANCE',
+  'viscosity':                     'TERM-VISCOSITY',
+  'viscosity-index':               'TERM-VISCOSITY-INDEX',
+  'total-base-number':             'TERM-TOTAL-BASE-NUMBER',
+  // Chemical Degradation
+  'varnish':                       'TERM-VARNISH',
+  'oxidative-degradation':         'TERM-OXIDATIVE-DEGRADATION',
+  'thermal-degradation':           'TERM-THERMAL-DEGRADATION',
+  'total-acid-number':             'TERM-TOTAL-ACID-NUMBER',
+  'soot':                          'TERM-SOOT',
+  // Water & Fuel
+  'water-ingress':                 'TERM-WATER-INGRESS',
+  'karl-fischer-titration':        'TERM-KARL-FISCHER-TITRATION',
+  'hpcr':                          'TERM-HPCR',
+  'injector-stiction':             'TERM-INJECTOR-STICTION',
+  'coalescing':                    'TERM-COALESCING',
+  'microbial-contamination':       'TERM-MICROBIAL-CONTAMINATION',
+  // Filter Media
+  'depth-filtration':              'TERM-DEPTH-FILTRATION',
+  'surface-filtration':            'TERM-SURFACE-FILTRATION',
+  'synthetic-media':               'TERM-SYNTHETIC-MEDIA',
+  // Phase 5B Expansion — Filtration Performance
+  'collapse-pressure':             'TERM-COLLAPSE-PRESSURE',
+  // Phase 5B Expansion — Air Intake
+  'safety-element':                'TERM-SAFETY-ELEMENT',
+  'pre-cleaner':                   'TERM-PRE-CLEANER',
+  'restriction-indicator':         'TERM-RESTRICTION-INDICATOR',
+  'breather-filter':               'TERM-BREATHER-FILTER',
+  // Phase 5B Expansion — Fluid Cleanliness
+  'dew-point':                     'TERM-DEW-POINT',
+  'compressed-air-purity':         'TERM-COMPRESSED-AIR-PURITY',
+  // Phase 5B Expansion — Contamination
+  'ferrous-wear-debris':           'TERM-FERROUS-WEAR-DEBRIS',
+  'glycol-contamination':          'TERM-GLYCOL-CONTAMINATION',
+  // Phase 5B Expansion — Hydraulic Systems
+  'kidney-loop':                   'TERM-KIDNEY-LOOP',
+  'system-flushing':               'TERM-SYSTEM-FLUSHING',
+  // Phase 5B Expansion — Lubrication
+  'hydrodynamic-lubrication':      'TERM-HYDRODYNAMIC-LUBRICATION',
+  'oil-drain-interval':            'TERM-OIL-DRAIN-INTERVAL',
+  // Phase 5B Expansion — Chemical Degradation
+  'sludge':                        'TERM-SLUDGE',
+  'lacquer':                       'TERM-LACQUER',
+  // Phase 5B Expansion — Water & Fuel
+  'free-water':                    'TERM-FREE-WATER',
+  'emulsified-water':              'TERM-EMULSIFIED-WATER',
+  'water-separation-efficiency':   'TERM-WATER-SEPARATION-EFFICIENCY',
+  // Phase 5B Expansion — Filter Media
+  'melt-blown-media':              'TERM-MELT-BLOWN-MEDIA',
+  'cellulose-media':               'TERM-CELLULOSE-MEDIA',
+} as const;
+
+// ── Diagram IDs ───────────────────────────────────────────────────────────────
+
+export const DIAGRAM_IDS = {
+  'multipass-test-circuit':        'DIAG-MULTIPASS-TEST',
+  'beta-ratio-measurement':        'DIAG-BETA-RATIO',
+  'iso-4406-cleanliness-scale':    'DIAG-ISO4406-CLEANLINESS',
+  'hydraulic-contamination-paths': 'DIAG-HYD-CONTAMINATION',
+  'air-intake-filtration-flow':    'DIAG-AIR-INTAKE-FLOW',
+  'lube-oil-circuit':              'DIAG-LUBE-OIL-CIRCUIT',
+  'fuel-filtration-3stage':        'DIAG-FUEL-3STAGE',
+  'differential-pressure-curve':   'DIAG-DP-CURVE',
+  'compressed-air-treatment':      'DIAG-CA-TREATMENT',
+  'particle-wear-mechanism':       'DIAG-PARTICLE-WEAR',
+} as const;
+
 // ── Lookup helpers ─────────────────────────────────────────────────────────────
 
 export function getArticleId(slug: string): string | undefined {
@@ -150,4 +264,12 @@ export function getSystemId(slug: string): string | undefined {
 
 export function getIndustryId(slug: string): string | undefined {
   return (INDUSTRY_IDS as Record<string, string>)[slug];
+}
+
+export function getTermId(slug: string): string | undefined {
+  return (TERM_IDS as Record<string, string>)[slug];
+}
+
+export function getDiagramId(slug: string): string | undefined {
+  return (DIAGRAM_IDS as Record<string, string>)[slug];
 }

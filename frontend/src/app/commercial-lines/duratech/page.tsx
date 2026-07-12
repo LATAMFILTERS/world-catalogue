@@ -11,18 +11,19 @@ const DATA: TechDetailData = {
   logoSrc: '/assets/Duratech.avif',
   breadcrumbParent: { label: 'COMMERCIAL LINES', href: '/commercial-lines' },
   heroStats: [
-    { key: 'ELEMENTS/KIT', value: '4' },
+    { key: 'ELEMENTS/KIT', value: '3–8' },
     { key: 'SOURCING', value: 'SINGLE ORDER' },
     { key: 'COMPATIBILITY', value: 'OEM-MATCHED' },
   ],
   systemHeadline: 'Fleet Maintenance Standardisation System',
   systemParagraphs: [
-    'DURATECH™ consolidates OEM-interchangeable filtration components into platform-specific master kits. Each kit covers one vehicle service cycle: oil filter, fuel filter, air filter, and cabin filter — all specified to the platform, all sourced in a single order.',
+    'DURATECH™ consolidates OEM-interchangeable filtration components into platform-specific master kits. Each kit covers one vehicle service cycle with 3 to 8 elements — oil, fuel, air, and cabin filters as applicable per platform — all specified to the application, all sourced in a single order.',
     'Designed for mixed-fleet operations in mining, construction, agriculture, and on-road transport. Eliminates wrong-element installations across multi-brand fleets and converts filter inventory to a predictable kit-based structure. One kit number per vehicle platform reduces purchasing complexity and ensures service technicians apply the correct specification on every service event.',
   ],
-  productImageSrc: '/images/npr-01_converted.avif',
-  productImageCaption: 'DURATECH™ fleet master kit — four elements per vehicle platform, one service cycle.',
-  stagesHeading: 'FOUR ELEMENTS. ONE KIT. ONE SERVICE CYCLE.',
+  productImageSrc: '/images/kits-npr.avif',
+  productImageCaption: 'DURATECH™ fleet master kit — platform-matched elements per vehicle, one service cycle.',
+  productImageFit: 'contain',
+  stagesHeading: 'PLATFORM-MATCHED ELEMENTS. ONE KIT. ONE SERVICE CYCLE.',
   stages: [
     {
       number: '01',
@@ -59,7 +60,7 @@ const DATA: TechDetailData = {
   ],
   specsHeading: 'KIT SPECIFICATIONS',
   specs: [
-    { label: 'Kit Configuration', value: '4-Element', sub: 'Oil · Fuel · Air · Cabin' },
+    { label: 'Kit Configuration', value: '3–8 Elements', sub: 'Oil · Fuel · Air · Cabin (platform-matched)' },
     { label: 'Platform Matching', value: 'OEM-Spec', sub: 'Make · Model · Engine' },
     { label: 'Order Structure', value: 'Single SKU', sub: 'Per vehicle platform' },
     { label: 'Lube Standard', value: 'ISO 4406', sub: 'Cleanliness code compliance' },

@@ -5,9 +5,12 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const ease = [0.16, 1, 0.3, 1] as const;
+const approvedDisplayFont = "Chakra Petch, Arial Narrow, monospace";
+const approvedBodyFont = "Barlow, Arial, sans-serif";
 
 export default function CinematicHero() {
   const { t } = useTranslation();
+  const assetsTitle = t("home.heroLine_assets", "Assets").replace(/[.。．]+$/, "");
 
   return (
     <section
@@ -19,11 +22,14 @@ export default function CinematicHero() {
         display: "flex",
         alignItems: "center",
         padding: "90px 7% 0",
+        fontFamily: approvedBodyFont,
       }}
     >
-      {/* Background video */}
       <video
-        autoPlay muted loop playsInline
+        autoPlay
+        muted
+        loop
+        playsInline
         style={{
           position: "absolute",
           inset: 0,
@@ -37,169 +43,149 @@ export default function CinematicHero() {
         <source src="/images/moleculas.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)",
-        zIndex: 1,
-      }} />
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.70) 46%, rgba(0,0,0,0.30) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 36%)",
+          zIndex: 1,
+        }}
+      />
 
-      {/* Horizontal two-column layout */}
-      <div style={{
-        position: "relative",
-        zIndex: 2,
-        width: "100%",
-        maxWidth: "1400px",
-        display: "grid",
-        gridTemplateColumns: "1fr 420px",
-        gap: "4rem",
-        alignItems: "center",
-      }}
-        className="hero-grid"
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          maxWidth: "1180px",
+          margin: "0 auto",
+        }}
       >
-        {/* LEFT — headline */}
-        <div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1, ease }}
-            style={{ display: 'none' }}
-          >
-            {t("home.overline", "Industrial Asset Protection")}
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.2, ease }}
-            style={{ margin: 0 }}
-          >
-            <span style={{
-              display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 300,
-              fontSize: "clamp(1.8rem, 4.2vw, 4rem)",
-              lineHeight: 1.05,
-              letterSpacing: "-0.025em",
-              color: "rgba(255,255,255,0.7)",
-              textTransform: "uppercase",
-            }}>
-              {t("home.heroLine_protecting", "Protecting")}
-            </span>
-            <span style={{
-              display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.035em",
-              color: "#fff",
-              textTransform: "uppercase",
-            }}>
-              {t("home.heroLine_industrial", "Industrial")}
-            </span>
-            <span style={{
-              display: "block",
-              fontFamily: "var(--font-inter)",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 5.5vw, 5.2rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.035em",
-              color: "#FFF12D",
-              textTransform: "uppercase",
-            }}>
-              {t("home.heroLine_assets", "Assets.")}
-            </span>
-          </motion.h1>
-        </div>
-
-        {/* RIGHT — divider + description + CTAs */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.75, delay: 0.45, ease }}
-          style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}
-        >
-          {/* Top accent line */}
-          <div style={{
-            width: "40px",
-            height: "2px",
-            background: "rgba(255,241,45,0.45)",
-          }} />
-
-          <p style={{
-            fontFamily: "var(--font-inter)",
-            fontWeight: 400,
-            fontSize: "clamp(0.82rem, 1.1vw, 0.95rem)",
-            lineHeight: 1.8,
-            color: "rgba(255,255,255,0.42)",
+        <motion.h1
+          className="elim-home-hero-title"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 0.2, ease }}
+          style={{
+            maxWidth: "980px",
+            fontFamily: approvedDisplayFont,
+            lineHeight: 0.88,
+            letterSpacing: "-0.055em",
+            textTransform: "uppercase",
             margin: 0,
-          }}>
-            {t("home.heroDesc", "Advanced contamination control systems engineered to reduce wear, minimize downtime, improve reliability, and extend the operational life of critical industrial equipment.")}
-          </p>
+            marginBottom: "1.65rem",
+            color: "#fff",
+          }}
+        >
+          <span style={{ display: "block", fontFamily: approvedDisplayFont, fontSize: "clamp(2.55rem, 6vw, 5.8rem)" }}>
+            {t("home.heroLine_protecting", "Protecting")}
+          </span>
+          <span style={{ display: "block", fontFamily: approvedDisplayFont, fontSize: "clamp(2.55rem, 6vw, 5.8rem)" }}>
+            {t("home.heroLine_industrial", "Industrial")}
+          </span>
+          <span
+            style={{
+              display: "block",
+              color: "#FFF12D",
+              fontFamily: approvedDisplayFont,
+              fontSize: "clamp(2.15rem, 5.05vw, 4.95rem)",
+              lineHeight: 0.9,
+            }}
+          >
+            {assetsTitle}
+          </span>
+        </motion.h1>
 
-          {/* CTAs */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            <Link
-              href="/knowledge-system"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.55rem",
-                background: "#FFF12D",
-                color: "#000",
-                fontFamily: "var(--font-inter)",
-                fontWeight: 700,
-                fontSize: "0.72rem",
-                letterSpacing: "0.1em",
-                padding: "0.85rem 1.6rem",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                width: "fit-content",
-                transition: "box-shadow 0.2s, transform 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 28px rgba(255,241,45,0.4)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLElement).style.transform = "none";
-              }}
-            >
-              {t("home.ctaProtect", "Protect My Assets")}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </Link>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.45, ease }}
+          style={{
+            maxWidth: "850px",
+            color: "rgba(255,255,255,0.76)",
+            fontFamily: approvedBodyFont,
+            fontSize: "clamp(1rem, 1.45vw, 1.18rem)",
+            lineHeight: 1.65,
+            fontWeight: 600,
+            marginBottom: "2rem",
+          }}
+        >
+          In the field, failures rarely start with the filter. They start with dust entering an air intake, water reaching diesel injectors, abrasive particles moving through oil, or contamination damaging hydraulic components. ELIMFILTERS builds protection around those real failure paths.
+        </motion.p>
 
-            <a
-              href="https://part-search.elimfilters.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                color: "rgba(255,255,255,0.4)",
-                fontFamily: "var(--font-inter)",
-                fontWeight: 500,
-                fontSize: "0.72rem",
-                letterSpacing: "0.08em",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                transition: "color 0.2s",
-                width: "fit-content",
-              }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFF12D"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}
-            >
-              {t("home.ctaFilter", "Find My Filter")} →
-            </a>
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.55, ease }}
+          style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}
+        >
+          <Link
+            href="/knowledge-system"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.55rem",
+              background: "#FFF12D",
+              color: "#000",
+              fontFamily: approvedDisplayFont,
+              fontWeight: 700,
+              fontSize: "0.78rem",
+              letterSpacing: "0.16em",
+              padding: "0.95rem 1.4rem",
+              textDecoration: "none",
+              textTransform: "uppercase",
+              transition: "box-shadow 0.2s, transform 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 28px rgba(255,241,45,0.4)";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              (e.currentTarget as HTMLElement).style.transform = "none";
+            }}
+          >
+            {t("home.ctaProtect", "Protect My Assets")}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+
+          <a
+            href="https://part-search.elimfilters.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              border: "1px solid rgba(255,255,255,0.14)",
+              background: "rgba(255,255,255,0.04)",
+              padding: "0.95rem 1.4rem",
+              fontFamily: approvedDisplayFont,
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.72)",
+              textDecoration: "none",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "#FFF12D";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,241,45,0.45)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.72)";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.14)";
+            }}
+          >
+            {t("home.ctaFilter", "Find My Filter")}
+          </a>
         </motion.div>
       </div>
 
-      {/* Scroll indicator — bottom center */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -225,10 +211,15 @@ export default function CinematicHero() {
       </motion.div>
 
       <style>{`
+        .elim-home-hero-title,
+        .elim-home-hero-title span {
+          font-family: Chakra Petch, Arial Narrow, monospace !important;
+        }
+
         @media (max-width: 860px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+          section {
+            padding: 120px 7% 0 !important;
+            align-items: flex-start !important;
           }
         }
       `}</style>

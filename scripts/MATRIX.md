@@ -1,5 +1,5 @@
-# SCRAPING MATRIX — Donaldson
-Última actualización: 2026-05-31
+# SCRAPING MATRIX — Donaldson + Equipment Applications Gap
+Última actualización: 2026-07-11
 
 ---
 
@@ -220,4 +220,76 @@ o un formato unificado `alternatives: [{brand, part_number}]`. Decidir cuando te
 - **`--retry-zeros <cat>`**: borra del cache los `{}` para re-intentar productos sin resultados.
 - **Mac usa `python3`**, Windows usa `python`.
 - **NO mezclar bases de datos todavía** — solo colectar códigos raw.
-- **Fleetguard**: ignorar por ahora.
+
+---
+
+## FASE 4 — equipment_applications Gap Matrix (2026-07-11)
+
+Estado calculado desde `donaldson_import_ready.jsonl` (4,606 SKUs HD).
+
+### Resumen Global
+
+| Métrica                              | Count |
+|--------------------------------------|------:|
+| Total SKUs HD en DB                  | 4,606 |
+| SKUs con equipment_applications      | 2,781 |
+| SKUs sin equipment_applications      | 1,825 |
+| — con FG cross-ref (importables)     |   493 |
+| — sin FG cross-ref (otra fuente)     | 1,332 |
+
+### Por Categoría
+
+| Categoría   | Total | Con FG | Con Equip | FG sin Equip | Sin FG sin Equip |
+|-------------|------:|-------:|----------:|-------------:|-----------------:|
+| air         | 1,366 |  1,025 |     1,140 |          132 |               94 |
+| air-intake  |   243 |     81 |        17 |           67 |              159 |
+| cabin       |   122 |     76 |       105 |            9 |                8 |
+| coolant     |    59 |      6 |        30 |            0 |               29 |
+| fuel        |   500 |    315 |       433 |           25 |               42 |
+| hydraulic   | 1,962 |    632 |       723 |          251 |              988 |
+| lube        |   351 |    268 |       330 |            9 |               12 |
+| air-dryer   |     3 |      0 |         3 |            0 |                0 |
+| **TOTAL**   | **4,606** | **2,403** | **2,781** | **493** | **1,332** |
+
+### Acción Inmediata — 493 SKUs via Fleetguard
+
+Los 493 SKUs en columna "FG sin Equip" se llenan corriendo el script de importación:
+
+```powershell
+# Windows — requiere git pull primero
+git pull origin claude/create-elimfilters-manuals-iFz1q
+
+# Dry run (verifica 200, no 403)
+$env:ADMIN_KEY="<key-de-render>"; node scripts\import-hd-fitment-fg.js --dry
+
+# Live
+$env:ADMIN_KEY="<key-de-render>"; node scripts\import-hd-fitment-fg.js
+```
+
+Archivo fuente: `C:\mann\hd_fitment_fleetguard.jsonl` (6,509 rows, 2,628 con equipment data)
+Batches: 27 × 100 rows, ~500ms entre batches. Tiempo estimado: ~14 segundos.
+
+**ADMIN_KEY**: obtener de Render Dashboard → Service `elimfilters-search-pro` → Environment Variables.
+
+### Acción Futura — 1,332 SKUs sin FG
+
+Distribución del gap restante después del import FG:
+
+| Categoría   | SKUs gap post-FG |
+|-------------|----------------:|
+| hydraulic   |             988 |
+| air-intake  |             159 |
+| air         |              94 |
+| fuel        |              42 |
+| coolant     |              29 |
+| cabin       |               8 |
+| lube        |              12 |
+
+Fuentes candidatas para llenar este gap:
+1. **OEM equipment matrices** ya en `competitor_matrix.json` / `donaldson_oem_matrix.json`
+2. **Scraper Fleetguard** — categorías lube/fuel/hydraulic pendientes
+3. **Donaldson equipment data** — campo `equipment[]` en `donaldson_*_results.json`
+
+> **Nota sobre DBL codes**: DBL0832, DBL3998, etc. son Donaldson bulk codes sin datos en su catálogo.
+> El scraper retorna 0 Attr / 0 Cross / 0 Alt / 0 Equip para todos. No requieren re-scraping.
+> Solo 14 SKUs tienen codigo_base DBL. Ignorar en cualquier scraping futuro.

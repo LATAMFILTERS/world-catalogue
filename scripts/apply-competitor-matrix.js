@@ -17,7 +17,7 @@ const fs         = require('fs');
 const path       = require('path');
 
 const DRY_RUN     = process.argv.includes('--dry');
-const MATRIX_FILE = path.join(__dirname, 'competitor_matrix.json');
+const MATRIX_FILE = path.join(__dirname, 'donaldson_competitor_matrix.json');
 
 // ─── DB config ────────────────────────────────────────────────────────────────
 const DB_CONFIG = (() => {

@@ -27,18 +27,20 @@ import {
   KC_STANDARDS,
   KC_TECHNOLOGIES,
   KC_SYSTEMS,
+  GLOSSARY_REGISTRY,
 } from '@/lib/knowledge-center-data';
 import type { KCArticle, KCStandard, KCTechnology } from '@/lib/knowledge-center-data';
 import { PROBLEM_STUBS } from './article-registry';
 import type { ProblemStub } from './article-registry';
+import type { TerminologyEntry } from './governance';
 
 // ── Graph Version Metadata ────────────────────────────────────────────────────
 
 export const KC_GRAPH_METADATA = {
-  /** Semantic version: Phase.Articles.Standards.Technologies */
-  graphVersion: '5A.53.16.11',
+  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams */
+  graphVersion: '5D.53.22.12.68.10',
   /** Schema version for the navigation index structure. */
-  schemaVersion: '1.0.0',
+  schemaVersion: '1.1.0',
   /**
    * Deterministic build date (not a timestamp).
    * Identical for any two builds of the same data.
@@ -46,11 +48,13 @@ export const KC_GRAPH_METADATA = {
   generatedAt: '2026-07-05',
   entityCounts: {
     articles:     53,
-    standards:    16,
-    technologies: 11,
+    standards:    22,
+    technologies: 12,
     systems:       6,
     industries:   10,
     problems:     15,
+    terms:        68,
+    diagrams:     10,
   },
   edgeTypes: [
     'ARTICLE_TO_STANDARD',
@@ -62,6 +66,12 @@ export const KC_GRAPH_METADATA = {
     'SYSTEM_TO_ARTICLE',
     'PROBLEM_TO_ARTICLE',
     'ARTICLE_TO_PROBLEM',
+    'TERM_TO_STANDARD',
+    'TERM_TO_TECHNOLOGY',
+    'TERM_TO_SYSTEM',
+    'TERM_TO_ARTICLE',
+    'TERM_TO_TERM',
+    'ARTICLE_TO_TERM',
   ],
 } as const;
 
@@ -186,6 +196,23 @@ export interface SystemSidebarData {
   referencingArticles: StandardSidebarArticle[];
 }
 
+// ── Glossary Sidebar Types ────────────────────────────────────────────────────
+
+export interface SidebarTerm {
+  permanentId: string;
+  slug: string;
+  term: string;
+  category: string;
+}
+
+export interface GlossarySidebarData {
+  relatedStandards:    SidebarStandard[];
+  relatedTechnologies: SidebarTechnology[];
+  relatedSystems:      SidebarSystem[];
+  relatedArticles:     SidebarArticle[];
+  relatedTerms:        SidebarTerm[];
+}
+
 // ── Internal Index Structure ──────────────────────────────────────────────────
 
 interface KCNavigationIndex {
@@ -195,6 +222,7 @@ interface KCNavigationIndex {
   standardBySlug:    Map<string, KCStandard>;
   technologyBySlug:  Map<string, KCTechnology>;
   systemBySlug:      Map<string, { slug: string; title: string }>;
+  termBySlug:        Map<string, TerminologyEntry>;
 
   // Inverted indexes (keyed by related entity → sorted article slug list)
   articlesByStandard:   Map<string, string[]>; // standard code → article slugs
@@ -212,6 +240,7 @@ interface KCNavigationIndex {
   getStandardSidebar(stdSlug: string): StandardSidebarData;
   getTechSidebar(techSlug: string): TechSidebarData;
   getSystemSidebar(systemSlug: string): SystemSidebarData;
+  getGlossarySidebar(termSlug: string): GlossarySidebarData;
 }
 
 // ── Singleton ─────────────────────────────────────────────────────────────────
@@ -226,6 +255,15 @@ function buildIndex(): KCNavigationIndex {
   const standardBySlug   = new Map(KC_STANDARDS.map((s) => [s.slug, s]));
   const technologyBySlug = new Map(KC_TECHNOLOGIES.map((t) => [t.slug, t]));
   const systemBySlug     = new Map(KC_SYSTEMS.map((s) => [s.slug, { slug: s.slug, title: s.title }]));
+
+  // Glossary: build slug → TerminologyEntry map.
+  // Slug = TERM-xxx → strip prefix, lowercase → term slug.
+  function termIdToSlug(id: string): string {
+    return id.replace(/^TERM-/, '').toLowerCase();
+  }
+  const termBySlug = new Map<string, TerminologyEntry>(
+    Object.values(GLOSSARY_REGISTRY).map((t) => [termIdToSlug(t.id), t])
+  );
 
   // ── Permanent ID maps ──────────────────────────────────────────────────────
   // IDs are constructed deterministically from slug conventions.
@@ -457,12 +495,103 @@ function buildIndex(): KCNavigationIndex {
     return { referencingArticles };
   }
 
+  // ── Query: Glossary Term Sidebar ───────────────────────────────────────────
+
+  function getGlossarySidebar(termSlug: string): GlossarySidebarData {
+    const entry = termBySlug.get(termSlug);
+    if (!entry) {
+      return {
+        relatedStandards: [],
+        relatedTechnologies: [],
+        relatedSystems: [],
+        relatedArticles: [],
+        relatedTerms: [],
+      };
+    }
+
+    // Standards panel — from entry.applicableStandards (TERM-xxx → STD-xxx IDs)
+    const relatedStandards: SidebarStandard[] = entry.applicableStandards
+      .map((stdId) => {
+        // stdId is STD-xxx — derive slug by lowercasing after prefix
+        const slug = stdId.replace(/^STD-/, '').toLowerCase();
+        const std = standardBySlug.get(slug);
+        return {
+          permanentId: stdId,
+          code: std?.code ?? stdId.replace(/^STD-/, '').replace(/-/g, ' '),
+          slug: std?.slug ?? null,
+          title: std?.title ?? stdId,
+        };
+      });
+
+    // Technologies panel — from entry.relatedTechnologies (slugs)
+    const relatedTechnologies: SidebarTechnology[] = entry.relatedTechnologies
+      .map((slug) => {
+        const tech = technologyBySlug.get(slug);
+        if (!tech) return null;
+        return {
+          permanentId: technologyPermanentIds.get(tech.slug) ?? toTechnologyId(tech.slug),
+          name: tech.name,
+          slug: tech.slug,
+          domain: tech.domain,
+        };
+      })
+      .filter((t): t is SidebarTechnology => t !== null);
+
+    // Systems panel — from entry.relatedSystems (slugs)
+    const relatedSystems: SidebarSystem[] = entry.relatedSystems
+      .map((slug) => {
+        const sys = systemBySlug.get(slug);
+        if (!sys) return null;
+        return {
+          permanentId: systemPermanentIds.get(sys.slug) ?? toSystemId(sys.slug),
+          slug: sys.slug,
+          title: sys.title,
+        };
+      })
+      .filter((s): s is SidebarSystem => s !== null);
+
+    // Articles panel — from entry.relatedArticles (article slugs), max 6
+    const relatedArticles: SidebarArticle[] = entry.relatedArticles
+      .map((slug) => {
+        const a = articleBySlug.get(slug);
+        if (!a) return null;
+        return {
+          permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
+          slug,
+          title: a.title,
+          category: a.category,
+          readTime: a.readTime,
+        };
+      })
+      .filter((a): a is SidebarArticle => a !== null)
+      .slice(0, 6);
+
+    // Related terms panel — from entry.relatedTerms (TERM-xxx IDs)
+    const relatedTerms: SidebarTerm[] = entry.relatedTerms
+      .map((termId) => {
+        const slug = termIdToSlug(termId);
+        const t = termBySlug.get(slug);
+        if (!t) return null;
+        const item: SidebarTerm = {
+          permanentId: termId as string,
+          slug,
+          term: t.term,
+          category: t.category as string,
+        };
+        return item;
+      })
+      .filter((t): t is SidebarTerm => t !== null);
+
+    return { relatedStandards, relatedTechnologies, relatedSystems, relatedArticles, relatedTerms };
+  }
+
   return {
     articleBySlug,
     standardByCode,
     standardBySlug,
     technologyBySlug,
     systemBySlug,
+    termBySlug,
     articlesByStandard,
     articlesByTechnology,
     articlesBySystem,
@@ -474,6 +603,7 @@ function buildIndex(): KCNavigationIndex {
     getStandardSidebar,
     getTechSidebar,
     getSystemSidebar,
+    getGlossarySidebar,
   };
 }
 
@@ -504,6 +634,11 @@ export function getSystemSidebarData(systemSlug: string): SystemSidebarData {
   return getIndex().getSystemSidebar(systemSlug);
 }
 
+/** Returns all sidebar data for a glossary term. O(1) after first call. */
+export function getGlossarySidebarData(termSlug: string): GlossarySidebarData {
+  return getIndex().getGlossarySidebar(termSlug);
+}
+
 /** Graph statistics for validation and reporting. */
 export function getGraphStats() {
   const idx = getIndex();
@@ -515,12 +650,32 @@ export function getGraphStats() {
   Array.from(idx.articlesByTechnology.values()).forEach((list) => { totalArticleToTechEdges        += list.length; });
   Array.from(idx.articlesBySystem.values()).forEach((list)     => { totalArticleToSystemEdges      += list.length; });
 
+  // Glossary edge counts (sum all term relationship arrays)
+  const terms = Object.values(GLOSSARY_REGISTRY);
+  let totalTermToStandard = 0;
+  let totalTermToTechnology = 0;
+  let totalTermToSystem = 0;
+  let totalTermToArticle = 0;
+  let totalTermToTerm = 0;
+  terms.forEach((t) => {
+    totalTermToStandard    += t.applicableStandards.length;
+    totalTermToTechnology  += t.relatedTechnologies.length;
+    totalTermToSystem      += t.relatedSystems.length;
+    totalTermToArticle     += t.relatedArticles.length;
+    totalTermToTerm        += t.relatedTerms.length;
+  });
+
   return {
     ...KC_GRAPH_METADATA,
     edgeCounts: {
       articleToStandard:   totalArticleToStandardEdges,
       articleToTechnology: totalArticleToTechEdges,
       articleToSystem:     totalArticleToSystemEdges,
+      termToStandard:      totalTermToStandard,
+      termToTechnology:    totalTermToTechnology,
+      termToSystem:        totalTermToSystem,
+      termToArticle:       totalTermToArticle,
+      termToTerm:          totalTermToTerm,
     },
   };
 }

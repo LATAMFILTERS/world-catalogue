@@ -30,7 +30,7 @@ The current Citation Index contains 37 entities across 8 types with 335 edges. O
 
 ```
 PART SEARCH MAP COMPILER — Phase 4B
-=====================================
+---
 Traversal paths built:    19
   Type A (Problem→PF):    3  (1 valid)
   Type B (Industry→PF):   9  (3 valid)

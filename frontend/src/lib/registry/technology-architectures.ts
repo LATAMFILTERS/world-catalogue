@@ -754,6 +754,204 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
+  // ── TURBOCORE — Three-Stage Fuel Filtration / Water Separation ──────────
+
+  'TECH-TURBOCORE': {
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    id: 'TECH-TURBOCORE',
+    technologyName: 'TURBOCORE',
+    commercialName: 'TURBOCORE™',
+    systemDomain: 'Fuel 3-Stage',
+    primaryStandards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
+    maturity: MATURITY.PUBLISHED,
+    createdDate: '2026-07-01',
+
+    canonicalDefinition:
+      'TURBOCORE is the three-stage heavy-duty fuel filter and water separator technology addressing the complete diesel fuel contamination spectrum in sequence: Stage 1 applies inertial separation (HYDROCORE™ rotation principle) for coarse particle capture and initial free water separation; Stage 2 applies coalescing medium for emulsified water aggregation and gravity separation; Stage 3 applies a hydrophobic barrier preventing any water carry-over to the HPCR injection circuit. Designed for high-flow-rate diesel systems (90–180 GPH) in power generation, mining, agriculture, and heavy transport.',
+
+    systemContext:
+      'Applies to heavy-duty diesel fuel supply systems where single-stage filtration is insufficient for the contamination load. Primary installation in: high-capacity standby power generation sets, mining haul trucks and drilling rigs, large agricultural equipment with high-flow Common Rail fuel systems, and commercial marine auxiliary diesel. Flow rates 90–180 GPH distinguish TURBOCORE applications from single-stage HYDROCORE installations (typically <40 GPH).',
+
+    industrialRole:
+      'High-flow diesel systems operating in contaminated environments (mining dust, stored fuel with water accumulation, high-humidity marine environments) subject the fuel supply to simultaneous particle and water contamination at rates that exceed single-stage filter capacity. TURBOCORE three-stage architecture distributes the contamination load: Stage 1 removes coarse particles and bulk free water (protecting Stage 2 from overloading); Stage 2 resolves emulsified water the inertial stage cannot separate; Stage 3 provides a final absolute water barrier. The staged approach extends service life of each stage relative to a single combined element.',
+
+    protectionMedia: [
+      {
+        type: 'Inertial separation stage (Stage 1)',
+        description:
+          'Rotational turbine housing geometry imparting centrifugal acceleration to fuel flow, separating heavy particles and free water droplets radially outward by density differential.',
+        micronRating: 'Coarse — >100 µm particles and bulk free water',
+        mediaConstruction: 'Metal turbine geometry — no filter medium required (separation by flow path geometry)',
+      },
+      {
+        type: 'Coalescing medium (Stage 2)',
+        description:
+          'High-surface-area hydrophilic fiber matrix providing repeated droplet contact. Dispersed water droplets (5–50 µm) contact fibers and merge into settleable droplets (>100 µm) that fall to the collection sump.',
+        micronRating: '10 µm fuel particulate co-filtration',
+        mediaConstruction: 'Borosilicate glass microfiber, hydrophilic surface treatment',
+      },
+      {
+        type: 'Hydrophobic barrier (Stage 3)',
+        description:
+          'Final hydrophobic membrane — PTFE surface energy below water surface tension — preventing any water carry-over from Stage 2 to the injection rail.',
+        micronRating: '2–10 µm absolute final barrier',
+        mediaConstruction: 'PTFE-coated glass fiber, hydrophobic surface treatment',
+      },
+    ],
+
+    engineeringPrincipleIds: ['EP-SEP-003', 'EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
+
+    materials: [
+      {
+        component: 'Turbine housing (Stage 1)',
+        material: 'Anodized aluminum or stainless steel',
+        justification:
+          'Fuel-compatible, pressure-rated for high-flow operation. Turbine geometry is precision-formed to produce consistent rotational velocity at rated flow.',
+      },
+      {
+        component: 'Coalescing element (Stage 2)',
+        material: 'Borosilicate glass microfiber with hydrophilic treatment',
+        justification:
+          'Hydrophilic surface treatment maximizes water droplet contact and coalescence efficiency in the 5–50 µm droplet range that survives Stage 1 inertial separation.',
+      },
+      {
+        component: 'Hydrophobic barrier layer (Stage 3)',
+        material: 'PTFE-coated borosilicate glass fiber',
+        justification:
+          'PTFE surface energy ~18 mN/m — well below water surface tension (72 mN/m) — providing absolute water rejection at operating differential pressures.',
+      },
+      {
+        component: 'Transparent water collection bowl',
+        material: 'Polysulfone',
+        justification:
+          'Visual water level monitoring. Diesel-compatible and UV-stable. Sump drain valve (manual or automatic) for periodic separated water discharge.',
+      },
+    ],
+
+    construction: [
+      {
+        feature: 'Three-stage sequential contamination control',
+        description:
+          'Inertia → coalescence → barrier. Each stage is optimized for a specific contamination challenge; later stages are protected by earlier stages from contamination loads beyond their design envelope.',
+        engineeringBasis:
+          'Single-stage water separators cannot simultaneously remove bulk free water, emulsified water, and fine particulate at high flow rates without medium overloading or pressure-drop accumulation. Staged architecture distributes the load, extending service intervals and maintaining efficiency throughout.',
+      },
+      {
+        feature: 'Flow-rate-independent water separation',
+        description:
+          'The three-stage architecture maintains separation efficiency across the rated flow range (90–180 GPH).',
+        engineeringBasis:
+          'Stage 1 (inertial) efficiency varies with rotational velocity (flow dependent). Stage 2 (coalescence) is partially flow-sensitive. Stage 3 (hydrophobic barrier) is flow-independent. The combination maintains overall water separation ≥99% across the design flow range.',
+      },
+      {
+        feature: 'Integrated water-in-fuel (WIF) sensor port',
+        description:
+          'Electrical port for capacitance WIF sensor providing operator dashboard warning when separated water reaches service level.',
+        engineeringBasis:
+          'ISO 4020 WIF warning compliance. Converts mechanical separator into a condition-monitoring device — operator receives service alert before the bowl overflows and water re-enters the fuel circuit.',
+      },
+    ],
+
+    flowDynamics: [
+      {
+        parameter: 'Rated fuel flow range',
+        value: '90–180',
+        unit: 'GPH at rated fuel temperature',
+        standardRef: 'ISO 16332',
+      },
+      {
+        parameter: 'Water separation efficiency (three-stage)',
+        value: '≥99',
+        unit: '% free and emulsified water',
+        standardRef: 'ISO 16332',
+      },
+      {
+        parameter: 'Stage 2 particulate rating',
+        value: '10',
+        unit: 'µm (co-filtration)',
+        standardRef: 'ASTM D6304',
+      },
+    ],
+
+    captureMechanisms: [
+      {
+        contaminantClass: 'Coarse particles and bulk free water (Stage 1)',
+        mechanism: 'Inertial centrifugal separation by turbine rotation — density differential',
+        efficiency: '>95% for particles >100 µm and bulk free water',
+        particleSizeRange: '>100 µm',
+      },
+      {
+        contaminantClass: 'Emulsified water (Stage 2)',
+        mechanism: 'Coalescence — droplet contact on hydrophilic fiber surface → gravitational settling of merged droplets',
+        efficiency: '>95% per ISO 16332 test conditions',
+        particleSizeRange: '5–100 µm water droplets',
+      },
+      {
+        contaminantClass: 'Water carry-over prevention (Stage 3)',
+        mechanism: 'Hydrophobic repulsion — PTFE surface energy <30 mN/m prevents water transit',
+        efficiency: 'Absolute barrier at design differential pressure',
+        particleSizeRange: 'All water droplet sizes',
+      },
+    ],
+
+    performanceProfile: [
+      {
+        metric: 'Overall water separation efficiency',
+        value: '≥99',
+        unit: '% (three-stage combined)',
+        evidenceSource: 'ISO 16332 fuel/water separator test protocol',
+        standardRef: 'ISO 16332',
+      },
+      {
+        metric: 'Fuel water content delivered to injection rail',
+        value: '<50',
+        unit: 'ppm (target)',
+        evidenceSource: 'ASTM D6304 Karl Fischer titration post-Stage 3',
+        standardRef: 'ASTM D6304',
+      },
+      {
+        metric: 'Rated flow range',
+        value: '90–180',
+        unit: 'GPH',
+        evidenceSource: 'Product specification — FH 900FH · FH 1000FH series',
+        standardRef: 'ISO 16332',
+      },
+    ],
+
+    failureModes: [
+      {
+        id: 'FM-FUEL-001',
+        rootCauseChain:
+          'High-flow diesel fuel with water contamination > 200 ppm → water reaches HPCR injection rail at 1,800+ bar → hydraulic fracture of injector tip → injection pattern distortion → combustion failure and injector replacement',
+        measuredConsequence:
+          'HPCR injector failure in high-flow power generation or mining equipment: USD 800–4,000 per injector. 6–12 cylinder engines: USD 5,000–48,000 per contamination event. Plus unscheduled downtime: typically 3–7 days for parts sourcing in remote mining applications.',
+        operationalImpact:
+          'Mining and power generation operations with inadequate fuel filtration at high-flow rates report injector failure rates of 1–3 per 2,000 operating hours. TURBOCORE three-stage protection reduces this to <1 per 10,000 hours in documented fleet programs.',
+        preventedByThisTechnology: true,
+      },
+      {
+        id: 'FM-HPCR-001',
+        rootCauseChain:
+          'Water + particulate in fuel → injector stiction from water-induced lacquer formation + abrasive particle micro-scoring of needle and seat → injection quantity drift → combustion control loss → engine derating',
+        measuredConsequence:
+          'Injector stiction causes injection quantity error up to ±15% before detection. Early detection via fuel consumption monitoring or exhaust opacity; late detection at injector replacement.',
+        operationalImpact:
+          'Heavy-duty diesel engines in high-cycle applications (mining haul trucks, power generation) operating 20–24 h/day have zero tolerance for planned maintenance delays. TURBOCORE prevents the contamination mode responsible for the majority of unscheduled injection system failures in these applications.',
+        preventedByThisTechnology: true,
+      },
+    ],
+
+    versionHistory: [
+      {
+        version: '1.0.0',
+        publishedDate: '2026-07-05',
+        approvedBy: 'Technology Authority + Quality Authority',
+        changeNote: 'Initial publication — Repository Hardening Phase 1 (Phase 5B integration)',
+        edrRef: 'EDR-C-012-v1.0',
+      },
+    ],
+  },
+
   // ── MICROKAPPA — Cabin Air Filtration ────────────────────────────────
 
   'TECH-MICROKAPPA': {

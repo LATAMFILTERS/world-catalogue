@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMFILTERS — Search Results</title>
-  <meta name="description" content="ELIMFILTERS filter search results — cross-reference OEM and competitor codes.">
+  <title>ELIMFILTERS â€” Search Results</title>
+  <meta name="description" content="ELIMFILTERS filter search results â€” cross-reference OEM and competitor codes.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#000000">
 
@@ -32,7 +32,7 @@
       overflow-x: hidden;
     }
 
-    /* ─── HEADER ─── */
+    /* â”€â”€â”€ HEADER â”€â”€â”€ */
     .header {
       position: sticky;
       top: 0;
@@ -110,7 +110,7 @@
     }
     .header-back:hover { color: var(--y); }
 
-    /* ─── RESULTS META ─── */
+    /* â”€â”€â”€ RESULTS META â”€â”€â”€ */
     .results-meta {
       padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
       max-width: 1600px;
@@ -162,7 +162,7 @@
       margin-top: 1.2rem;
     }
 
-    /* ─── PRODUCT GRID ─── */
+    /* â”€â”€â”€ PRODUCT GRID â”€â”€â”€ */
     .products {
       max-width: 1600px;
       margin: 0 auto;
@@ -172,7 +172,7 @@
       gap: 1.2rem;
     }
 
-    /* ─── MATCH BADGE ─── */
+    /* â”€â”€â”€ MATCH BADGE â”€â”€â”€ */
     .match-badge {
       display: inline-flex;
       align-items: center;
@@ -189,12 +189,12 @@
       text-transform: uppercase;
     }
     .match-badge::before {
-      content: '⌕';
+      content: 'âŒ•';
       font-size: 0.75em;
       opacity: 0.7;
     }
 
-    /* ─── PRODUCT CARD ─── */
+    /* â”€â”€â”€ PRODUCT CARD â”€â”€â”€ */
     .product-card {
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -462,7 +462,7 @@
       }
     }
 
-    /* Column wrappers — equal, with inner padding and dividers */
+    /* Column wrappers â€” equal, with inner padding and dividers */
     .columns-container > div {
       border-top: none;
       padding-top: 0;
@@ -524,7 +524,7 @@
       border-radius: 2px;
     }
 
-    /* ─── SEE ALSO ─── */
+    /* â”€â”€â”€ SEE ALSO â”€â”€â”€ */
     .see-also {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
@@ -560,7 +560,7 @@
       border-color: rgba(255,241,45,0.55);
     }
 
-    /* ─── STATUS MESSAGES ─── */
+    /* â”€â”€â”€ STATUS MESSAGES â”€â”€â”€ */
     .status-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -607,7 +607,7 @@
     }
     .status-action:hover { background: #ffe800; }
 
-    /* ─── LOADING ANIMATION ─── */
+    /* â”€â”€â”€ LOADING ANIMATION â”€â”€â”€ */
     .scan-line {
       position: fixed;
       top: 72px;
@@ -626,7 +626,7 @@
       100% { transform: translateX(100%); opacity: 0; }
     }
 
-    /* ─── LOADING DOTS ─── */
+    /* â”€â”€â”€ LOADING DOTS â”€â”€â”€ */
     .loading-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -662,7 +662,7 @@
       100% { transform: translateX(350%); }
     }
 
-    /* ─── FOOTER ─── */
+    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
     .footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -678,7 +678,7 @@
     .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
     .footer-line a:hover { color: var(--y); }
 
-    /* ─── KLEO BADGE ─── */
+    /* â”€â”€â”€ KLEO BADGE â”€â”€â”€ */
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
@@ -706,12 +706,12 @@
       text-transform: uppercase;
     }
 
-    /* ─── ANIMATIONS ─── */
+    /* â”€â”€â”€ ANIMATIONS â”€â”€â”€ */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── RESPONSIVE ─── */
+    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
     @media (max-width: 768px) {
       .header { height: 60px; gap: 0.75rem; }
       .header-logo img { height: 32px; }
@@ -732,13 +732,95 @@
       .card-header { flex-direction: column; }
       .specs-grid { grid-template-columns: 1fr 1fr; }
     }
-  </style>
+  
+/* ELIMFILTERS mobile viewport lock */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+body {
+  touch-action: pan-y;
+}
+
+main,
+section,
+form,
+div {
+  max-width: 100%;
+}
+
+input,
+select,
+button,
+textarea {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .shell,
+  .search-shell,
+  .container,
+  .search-card,
+  .results-shell,
+  .results-card,
+  .mode-tabs,
+  .equipment-class,
+  .field-row,
+  .actions,
+  .result-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mode-tabs,
+  .equipment-class,
+  .field-row,
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  input,
+  select,
+  button {
+    min-width: 0;
+  }
+}
+</style>
 </head>
 <body>
 
 <div class="scan-line"></div>
 
-<!-- ─── HEADER ─── -->
+<!-- â”€â”€â”€ HEADER â”€â”€â”€ -->
 <header class="header">
   <a href="https://elimfilters.com" class="header-logo" aria-label="ELIMFILTERS homepage">
     <img src="https://elimfilters.com/images/logo-sin-fondo.avif" alt="ELIMFILTERS Logo">
@@ -747,44 +829,44 @@
 
   <div class="search-summary" id="search-summary">
     <span class="search-summary-mode">PART NUMBER</span>
-    <span class="search-summary-main"><strong>—</strong></span>
+    <span class="search-summary-main"><strong>â€”</strong></span>
   </div>
 
-  <a href="/index.html" class="header-back">← BACK TO SEARCH</a>
+  <a href="/index.html" class="header-back">â† BACK TO SEARCH</a>
 </header>
 
-<!-- ─── KLEO BADGE ─── -->
+<!-- â”€â”€â”€ KLEO BADGE â”€â”€â”€ -->
 
 
-<!-- ─── MAIN CONTENT ─── -->
+<!-- â”€â”€â”€ MAIN CONTENT â”€â”€â”€ -->
 <div id="app"></div>
 
-<!-- ─── FOOTER ─── -->
+<!-- â”€â”€â”€ FOOTER â”€â”€â”€ -->
 <footer class="footer">
   <p class="footer-line">
-    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
-    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    ELIMFILTERSÂ® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1); font-size: 0.45rem;">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site â€” including but not limited to OEM codes and competitor cross-references â€” are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
-<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <script>
 'use strict';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// i18n — TRANSLATION DICTIONARY (results page)
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// i18n â€” TRANSLATION DICTIONARY (results page)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const TRANSLATIONS = {
   en: {
     searchPlaceholder: 'Search again...',
-    backToSearch:      '← BACK TO SEARCH',
+    backToSearch:      'â† BACK TO SEARCH',
     loading:           'SEARCHING',
     noResultsTitle:    'NO RESULTS FOUND',
-    noResultsDesc:     'No filters match "%s" — verify the reference or try a different search term.',
+    noResultsDesc:     'No filters match "%s" â€” verify the reference or try a different search term.',
     newSearch:         'NEW SEARCH',
     errorTitle:        'CONNECTION ERROR',
     errorDesc:         'Could not reach the server. Check your connection and try again.',
@@ -818,28 +900,28 @@ const TRANSLATIONS = {
   },
   es: {
     searchPlaceholder: 'Buscar de nuevo...',
-    backToSearch:      '← VOLVER AL BUSCADOR',
+    backToSearch:      'â† VOLVER AL BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SIN RESULTADOS',
-    noResultsDesc:     'Ningún filtro coincide con "%s" — verifica la referencia o intenta otro término.',
-    newSearch:         'NUEVA BÚSqueda',
-    errorTitle:        'ERROR DE CONEXIóN',
-    errorDesc:         'No se pudo conectar al servidor. Verifica tu conexión e intenta de nuevo.',
+    noResultsDesc:     'NingÃºn filtro coincide con "%s" â€” verifica la referencia o intenta otro tÃ©rmino.',
+    newSearch:         'NUEVA BÃšSqueda',
+    errorTitle:        'ERROR DE CONEXIÃ³N',
+    errorDesc:         'No se pudo conectar al servidor. Verifica tu conexiÃ³n e intenta de nuevo.',
     retry:             'REINTENTAR',
     labelResults:      'RESULTADO',
     labelResults_pl:   'RESULTADOS',
-    modePartNumber:    'N° DE PARTE',
+    modePartNumber:    'NÂ° DE PARTE',
     modeVin:           'VIN / MODELO',
     modeEquip:         'EQUIPO',
-    specsTitle:        'Especificaciones Técnicas',
+    specsTitle:        'Especificaciones TÃ©cnicas',
     oemTitle:          'Referencias OEM',
     compTitle:         'Referencias de Competencia',
     equipTitle:        'Aplicaciones de Equipo',
-    vehicleTitle:      'Aplicaciones de Vehículo',
+    vehicleTitle:      'Aplicaciones de VehÃ­culo',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
     // Technical spec translations
-    specOD:            'Diámetro Exterior',
+    specOD:            'DiÃ¡metro Exterior',
     specThread:        'Rosca / Hilo',
     specLength:        'Largo / Altura',
     specGasketOD:      'Empaque DE',
@@ -847,48 +929,48 @@ const TRANSLATIONS = {
     specEfficiency:    'Eficiencia',
     specTestStd:       'Norma de Eficiencia',
     specMediaType:     'Medio Filtrante',
-    specBurst:         'Presión de Rotura',
-    specCollapse:      'Presión de Colapso',
+    specBurst:         'PresiÃ³n de Rotura',
+    specCollapse:      'PresiÃ³n de Colapso',
     specNoRefs:        'Sin referencias cruzadas',
     specNoEquip:       'Sin aplicaciones de equipo',
     altTitle:          'Productos Alternativos',
   },
   pt: {
     searchPlaceholder: 'Buscar novamente...',
-    backToSearch:      '← VOLTAR AO BUSCADOR',
+    backToSearch:      'â† VOLTAR AO BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SEM RESULTADOS',
-    noResultsDesc:     'Nenhum filtro corresponde a "%s" — verifique a referência ou tente outro termo.',
+    noResultsDesc:     'Nenhum filtro corresponde a "%s" â€” verifique a referÃªncia ou tente outro termo.',
     newSearch:         'NOVA BUSCA',
-    errorTitle:        'ERRO DE CONEXÃO',
-    errorDesc:         'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',
+    errorTitle:        'ERRO DE CONEXÃƒO',
+    errorDesc:         'NÃ£o foi possÃ­vel conectar ao servidor. Verifique sua conexÃ£o e tente novamente.',
     retry:             'TENTAR NOVAMENTE',
     labelResults:      'RESULTADO',
     labelResults_pl:   'RESULTADOS',
-    modePartNumber:    'N° DA PEÇA',
+    modePartNumber:    'NÂ° DA PEÃ‡A',
     modeVin:           'VIN / MODELO',
     modeEquip:         'EQUIPAMENTO',
-    specsTitle:        'Especificações Técnicas',
-    oemTitle:          'Referências OEM',
-    compTitle:         'Referências de Concorrentes',
-    equipTitle:        'Aplicações de Equipamento',
-    vehicleTitle:      'Aplicações de Veículo',
+    specsTitle:        'EspecificaÃ§Ãµes TÃ©cnicas',
+    oemTitle:          'ReferÃªncias OEM',
+    compTitle:         'ReferÃªncias de Concorrentes',
+    equipTitle:        'AplicaÃ§Ãµes de Equipamento',
+    vehicleTitle:      'AplicaÃ§Ãµes de VeÃ­culo',
     decodedLabel:      'DECODIFICADO',
     decodingVin:       'DECODIFICANDO VIN',
     // Technical spec translations
-    specOD:            'Diâmetro Externo',
+    specOD:            'DiÃ¢metro Externo',
     specThread:        'Rosca',
     specLength:        'Comprimento',
     specGasketOD:      'Gaxeta DE',
     specGasketID:      'Gaxeta DI',
-    specEfficiency:    'Eficiência',
-    specTestStd:       'Norma de Eficiência',
-    specMediaType:     'Tipo de Mídia',
-    specBurst:         'Pressão de Ruptura',
-    specCollapse:      'Pressão de Colapso',
-    specNoRefs:        'Sem referências cruzadas',
+    specEfficiency:    'EficiÃªncia',
+    specTestStd:       'Norma de EficiÃªncia',
+    specMediaType:     'Tipo de MÃ­dia',
+    specBurst:         'PressÃ£o de Ruptura',
+    specCollapse:      'PressÃ£o de Colapso',
+    specNoRefs:        'Sem referÃªncias cruzadas',
     altTitle:          'Produtos Alternativos',
-    specNoEquip:       'Sem aplicações de equipamento',
+    specNoEquip:       'Sem aplicaÃ§Ãµes de equipamento',
   }
 };
 
@@ -921,15 +1003,15 @@ detectLang().then(lang => {
   executeSearch();
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const API = '';
 const app = document.getElementById('app');
 
-// ─── HTML escape — prevents XSS from URL parameters injected into innerHTML ───
+// â”€â”€â”€ HTML escape â€” prevents XSS from URL parameters injected into innerHTML â”€â”€â”€
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
-// ─── Parse URL parameters ───
+// â”€â”€â”€ Parse URL parameters â”€â”€â”€
 const params = new URLSearchParams(window.location.search);
 const query = (params.get('q') || '').trim();
 const mode  = params.get('mode') || 'part';
@@ -949,7 +1031,7 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
 })();
 
 function showMixedDutyPrompt(data, searchTerm) {
-  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+  document.title = `${searchTerm.toUpperCase()} â€” ELIMFILTERS Part Search`;
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
     summaryEl.innerHTML = `
@@ -960,20 +1042,20 @@ function showMixedDutyPrompt(data, searchTerm) {
   const ld = data.ld_count || 0;
   app.innerHTML = `
     <div style="border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1.75rem;background:rgba(255,241,45,0.04);max-width:600px;margin:0 auto;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.85rem;">⚠ MULTIPLE EQUIPMENT CLASSES FOUND</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.85rem;">âš  MULTIPLE EQUIPMENT CLASSES FOUND</div>
       <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:1.5rem;">
         The reference <strong style="color:#fff;">${_esc(searchTerm.toUpperCase())}</strong> appears in both Heavy Duty industrial filters and Light Duty passenger/light vehicle filters.
-        These are <strong style="color:#fff;">not interchangeable</strong> — different thread sizes, diameters and bypass pressures apply.
+        These are <strong style="color:#fff;">not interchangeable</strong> â€” different thread sizes, diameters and bypass pressures apply.
         Select your equipment class:
       </p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a href="/results.html?q=${encodeURIComponent(searchTerm)}&duty=HEAVY_DUTY"
            style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.75rem 1.4rem;border:1px solid #FFF12D;background:rgba(255,241,45,0.1);color:#FFF12D;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;">
-          ▶ HEAVY DUTY<br><span style="font-size:0.6rem;opacity:0.7">${hd} RESULT${hd !== 1 ? 'S' : ''} · TRUCKS, INDUSTRIAL, AGRICULTURE</span>
+          â–¶ HEAVY DUTY<br><span style="font-size:0.6rem;opacity:0.7">${hd} RESULT${hd !== 1 ? 'S' : ''} Â· TRUCKS, INDUSTRIAL, AGRICULTURE</span>
         </a>
         <a href="/results.html?q=${encodeURIComponent(searchTerm)}&duty=LIGHT_DUTY"
            style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.75rem 1.4rem;border:1px solid rgba(100,200,255,0.5);background:rgba(100,200,255,0.06);color:rgba(100,200,255,0.9);cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;">
-          ▶ LIGHT DUTY<br><span style="font-size:0.6rem;opacity:0.7">${ld} RESULT${ld !== 1 ? 'S' : ''} · PASSENGER &amp; LIGHT COMMERCIAL</span>
+          â–¶ LIGHT DUTY<br><span style="font-size:0.6rem;opacity:0.7">${ld} RESULT${ld !== 1 ? 'S' : ''} Â· PASSENGER &amp; LIGHT COMMERCIAL</span>
         </a>
       </div>
     </div>`;
@@ -987,24 +1069,24 @@ function showLoading(term) {
     </div>`;
 }
 
-// ─── Warmup timer: shows message after 8s if server is cold-starting ───
+// â”€â”€â”€ Warmup timer: shows message after 8s if server is cold-starting â”€â”€â”€
 function startWarmupTimer(term) {
   return setTimeout(() => {
     const msg = document.getElementById('loading-msg');
     if (msg) {
       msg.innerHTML = `SEARCHING: ${_esc((term || '').toUpperCase())}<br>
         <span style="font-size:0.7rem;color:rgba(255,241,45,0.8);letter-spacing:0.06em;display:block;margin-top:0.6rem">
-          SERVER WARMING UP — FREE TIER · PLEASE WAIT ~60s
+          SERVER WARMING UP â€” FREE TIER Â· PLEASE WAIT ~60s
         </span>`;
     }
   }, 8000);
 }
 
-// ─── Render Empty ───
+// â”€â”€â”€ Render Empty â”€â”€â”€
 function showEmpty(term) {
   app.innerHTML = `
     <div class="status-container">
-      <div class="status-icon">⌕</div>
+      <div class="status-icon">âŒ•</div>
       <p class="status-title">${T.noResultsTitle}</p>
       <p class="status-desc">${T.noResultsDesc.replace('%s', _esc((term || '').toUpperCase()))}</p>
       <div style="
@@ -1053,18 +1135,18 @@ function showEmpty(term) {
     </div>`;
 }
 
-// ─── Render Error ───
+// â”€â”€â”€ Render Error â”€â”€â”€
 function showError() {
   app.innerHTML = `
     <div class="status-container">
-      <div class="status-icon">⚠</div>
+      <div class="status-icon">âš </div>
       <p class="status-title">${T.errorTitle}</p>
       <p class="status-desc">${T.errorDesc}</p>
       <a href="/index.html" class="status-action">${T.retry}</a>
     </div>`;
 }
 
-// ─── HTML escape (XSS prevention) ───────────────────────────────────────────
+// â”€â”€â”€ HTML escape (XSS prevention) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function esc(str) {
   if (str == null) return '';
   return String(str)
@@ -1072,7 +1154,7 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 }
 
-// ─── Parse description (may come as JSON string from API) ───
+// â”€â”€â”€ Parse description (may come as JSON string from API) â”€â”€â”€
 function parseDesc(val) {
   if (!val) return null;
   const lang = currentLang;
@@ -1093,10 +1175,10 @@ function parseDesc(val) {
   return val;
 }
 
-// ─── Format Refs ───
+// â”€â”€â”€ Format Refs â”€â”€â”€
 function normalizeBrand(b) {
   if (!b) return '';
-  // Normalize brand name variations (AC-DELCO → AC DELCO, BIG-A → BIG A, etc.)
+  // Normalize brand name variations (AC-DELCO â†’ AC DELCO, BIG-A â†’ BIG A, etc.)
   return b.trim().replace(/-/g, ' ').replace(/\s+/g, ' ').toUpperCase();
 }
 
@@ -1146,7 +1228,7 @@ function formatRefs(arr, max = Infinity) {
     r.brand = finalBrand;
     return true;
   })
-  // A cross-reference chip with no manufacturer conveys nothing — it's a
+  // A cross-reference chip with no manufacturer conveys nothing â€” it's a
   // bare code, not a "reference" at all. Never render one, even if it's
   // the only entry for that code (the branch above only catches duplicates).
   .filter(r => r.brand)
@@ -1154,7 +1236,7 @@ function formatRefs(arr, max = Infinity) {
 }
 
 // Server pre-classifies oem_codes (equipment makers) and competitor_codes (filter brands).
-// Trust the server's classification — no client-side re-sorting needed.
+// Trust the server's classification â€” no client-side re-sorting needed.
 function splitCrossReferences(oemArr, compArr) {
   const sortByBrand = (a, b) => (a.brand || '').localeCompare(b.brand || '');
   const oem  = formatRefs(oemArr  || []).sort(sortByBrand);
@@ -1162,15 +1244,15 @@ function splitCrossReferences(oemArr, compArr) {
   return { oem, comp };
 }
 
-// ─── Render Spec Item ───
+// â”€â”€â”€ Render Spec Item â”€â”€â”€
 function specHTML(label, value) {
   if (!value) return '';
   return `<div class="spec-item"><span class="spec-label">${label}</span><span class="spec-value">${value}</span></div>`;
 }
 
-// ─── Render Product Card ───
+// â”€â”€â”€ Render Product Card â”€â”€â”€
 function renderCard(p, index) {
-  const sku = p.elimfilters_sku || p.sku || '—';
+  const sku = p.elimfilters_sku || p.sku || 'â€”';
 
   function dimFmt(mm) {
     if (!mm) return null;
@@ -1181,7 +1263,7 @@ function renderCard(p, index) {
   function mediaLabel(val) {
     if (!val) return null;
     const v = String(val).toLowerCase().trim();
-    if (v === 'cellulose' || v === 'celulosa') return currentLang === 'es' ? 'Híbrida' : 'Genuine Media';
+    if (v === 'cellulose' || v === 'celulosa') return currentLang === 'es' ? 'HÃ­brida' : 'Genuine Media';
     return val;
   }
   function psiFmt(psi) {
@@ -1199,7 +1281,7 @@ function renderCard(p, index) {
   const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
   const effLabel = pctStr ? (T.specEfficiency || 'Efficiency') + ' ' + pctStr + '%' : (T.specEfficiency || 'Efficiency');
 
-  // Group 1 — physical dimensions
+  // Group 1 â€” physical dimensions
   const dimSpecs = [
     specHTML(T.specOD,       dimFmt(p.outer_diameter_mm)),
     specHTML(T.specThread,   p.thread_size),
@@ -1208,7 +1290,7 @@ function renderCard(p, index) {
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
   ].filter(Boolean);
 
-  // Group 2 — filtration performance (Style omitted: already shown as badge)
+  // Group 2 â€” filtration performance (Style omitted: already shown as badge)
   const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
@@ -1231,7 +1313,7 @@ function renderCard(p, index) {
       <div class="card-inner">
         <div class="card-header">
           <div class="card-identity">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERS®</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERSÂ®</span>
             <span class="card-sku">${sku}</span>
           </div>
           <div class="card-badges">
@@ -1239,7 +1321,7 @@ function renderCard(p, index) {
             ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
             ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
-            ${p.technology       ? `<a href="https://elimfilters.com/technologies/${p.technology.replace(/[™®\s]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
+            ${p.technology       ? `<a href="https://elimfilters.com/technologies/${p.technology.replace(/[â„¢Â®\s]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>
         </div>
 
@@ -1302,8 +1384,8 @@ function renderCard(p, index) {
                         // For LD: show engine + power + year; for HD: show engine + type + year
                         const power = (a.kw || a.hp) ? [(a.kw ? a.kw + ' kW' : ''), (a.hp ? a.hp + ' hp' : '')].filter(Boolean).join('/') : '';
                         const yearType = isLD
-                          ? [power, a.year].filter(Boolean).join(' · ')
-                          : [a.year, a.type].filter(Boolean).join(' · ');
+                          ? [power, a.year].filter(Boolean).join(' Â· ')
+                          : [a.year, a.type].filter(Boolean).join(' Â· ');
                         if (!fullName) return '';
 
                         // First word as manufacturer accent, rest as model
@@ -1315,7 +1397,7 @@ function renderCard(p, index) {
                           nameLine = `<span class="equip-mfr">${esc(fullName)}</span>`;
                         }
 
-                        const subLine = [eng, yearType].filter(Boolean).join(' · ');
+                        const subLine = [eng, yearType].filter(Boolean).join(' Â· ');
                         return `<span class="equip-chip"><span class="equip-name">${nameLine}</span>${subLine ? `<span class="equip-sub">${esc(subLine)}</span>` : ''}</span>`;
                       }
                       
@@ -1352,24 +1434,24 @@ function renderCard(p, index) {
     </article>`;
 }
 
-// ─── Render Results ───
+// â”€â”€â”€ Render Results â”€â”€â”€
 // Mixed HD/LD duty classes are intercepted earlier by showMixedDutyPrompt()
 // before this function is ever called, so it only ever renders a single,
 // duty-consistent result set.
 function renderResults(items, count, searchMode, searchTerm) {
-  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+  document.title = `${searchTerm.toUpperCase()} â€” ELIMFILTERS Part Search`;
 
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
     summaryEl.innerHTML = `
-      <span class="search-summary-mode">${count} ${count !== 1 ? T.labelResults_pl : T.labelResults} · ${searchMode}</span>
+      <span class="search-summary-mode">${count} ${count !== 1 ? T.labelResults_pl : T.labelResults} Â· ${searchMode}</span>
       <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
   }
 
   app.innerHTML = `<div class="products">${items.map((p, i) => renderCard(p, i)).join('')}</div>`;
 }
 
-// ─── SEARCH EXECUTION ───
+// â”€â”€â”€ SEARCH EXECUTION â”€â”€â”€
 async function decodeNHTSA(vin) {
   try {
     const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
@@ -1402,7 +1484,7 @@ async function executeSearch() {
       if (!r.ok) throw new Error();
       const data = await r.json();
 
-      // mixed_duty: API found both HD and LD — show duty selection prompt
+      // mixed_duty: API found both HD and LD â€” show duty selection prompt
       if (data.mixed_duty) {
         showMixedDutyPrompt(data, query);
         return;
@@ -1458,8 +1540,9 @@ async function executeSearch() {
   }
 }
 
-// executeSearch() is called by detectLang().then() above — no boot call needed
+// executeSearch() is called by detectLang().then() above â€” no boot call needed
 </script>
 
 </body>
 </html>
+

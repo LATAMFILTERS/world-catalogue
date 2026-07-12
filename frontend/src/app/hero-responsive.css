@@ -1,0 +1,117 @@
+@import './visual-polish.css';
+@import './universal-end-navigation.css';
+@import './cards-layout-polish.css';
+@import './hero-audit.css';
+@import './responsive-final.css';
+@import './canonical-engineering.css';
+@import './structured-definitions.css';
+
+/* Shared hero system for desktop, tablet and mobile.
+ * These rules preserve one visual hierarchy across all languages while
+ * preventing oversized headings, clipped media and excessive empty height.
+ */
+
+main > header,
+main > section {
+  min-width: 0;
+}
+
+main header[style*="position: relative"],
+main section[style*="position: relative"][style*="overflow: hidden"] {
+  isolation: isolate;
+}
+
+main header[style*="min-height"] > img,
+main section[style*="min-height"] > img,
+main header[style*="min-height"] > video,
+main section[style*="min-height"] > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main header[style*="min-height"] h1,
+main section[style*="min-height"] h1 {
+  max-width: min(100%, 1040px) !important;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+main header[style*="min-height"] p,
+main section[style*="min-height"] p {
+  max-width: min(100%, 820px);
+}
+
+@media (max-width: 1100px) {
+  main header[style*="min-height"],
+  main section[style*="min-height: 88vh"],
+  main section[style*="min-height: 92vh"] {
+    min-height: clamp(560px, 74vh, 700px) !important;
+  }
+
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    font-size: clamp(2.9rem, 8vw, 5.4rem) !important;
+    line-height: 0.92 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  main header[style*="min-height"],
+  main section[style*="min-height: 88vh"],
+  main section[style*="min-height: 92vh"] {
+    min-height: auto !important;
+    padding-top: 7rem !important;
+    padding-bottom: 4.5rem !important;
+    align-items: center !important;
+  }
+
+  main header[style*="min-height"] > div[style*="max-width"],
+  main section[style*="min-height"] > div[style*="max-width"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: clamp(1.2rem, 5vw, 2.4rem) !important;
+    padding-right: clamp(1.2rem, 5vw, 2.4rem) !important;
+  }
+
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    font-size: clamp(2.45rem, 10vw, 4.4rem) !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.045em !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main header[style*="min-height"],
+  main section[style*="min-height: 88vh"],
+  main section[style*="min-height: 92vh"] {
+    padding-top: 6.25rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    font-size: clamp(2.1rem, 11.5vw, 3.35rem) !important;
+    line-height: 0.96 !important;
+  }
+
+  main header[style*="min-height"] p,
+  main section[style*="min-height"] p {
+    font-size: 1rem !important;
+    line-height: 1.62 !important;
+  }
+
+  main header[style*="min-height"] [style*="display: flex"],
+  main section[style*="min-height"] [style*="display: flex"] {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  main header[style*="min-height"] h1,
+  main section[style*="min-height"] h1 {
+    font-size: clamp(1.95rem, 11.8vw, 2.95rem) !important;
+  }
+}

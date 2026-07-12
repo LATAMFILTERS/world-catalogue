@@ -53,16 +53,32 @@ export interface KCArticle {
 }
 
 export interface KCStandard {
+  // ── Core identity ──────────────────────────────────────────────────────────
   slug: string;
   code: string;
   title: string;
+  entityId: string;                       // STD-xxx permanent graph ID
+  // ── Issuing body & revision ────────────────────────────────────────────────
+  issuingOrganization: string;            // Full organization name
+  year: string;
+  revisionStatus: 'active' | 'superseded' | 'withdrawn' | 'draft';
+  supersedes?: string;                    // Code string of superseded standard
+  supersededBy?: string;                  // Code string of superseding standard
+  // ── Content ───────────────────────────────────────────────────────────────
   metaDescription: string;
   scope: string;
-  year: string;
+  engineeringPurpose: string;             // Why this standard exists for filtration engineering
   sections: { heading: string; body: string }[];
   keyParams: { label: string; value: string }[];
-  relatedTopics: string[];
-  relatedTechnologies: string[];
+  // ── Graph relationships ────────────────────────────────────────────────────
+  applicableSystems: string[];            // system slugs (SYSTEM_IDS keys)
+  relatedGlossaryTerms: string[];         // TERM-xxx permanent IDs
+  relatedTopics: string[];                // article category slugs
+  relatedTechnologies: string[];          // technology display names (e.g. 'MACROCORE™')
+  relatedArticles: string[];              // article slugs
+  // ── Hierarchy ─────────────────────────────────────────────────────────────
+  parentStandard?: string;                // STD-xxx ID (e.g. ISO 8573-2 → ISO 8573-1)
+  childStandards?: string[];              // STD-xxx IDs
 }
 
 export interface KCTechnology {
@@ -98,4 +114,36 @@ export interface KCIndustryDetail {
   standards: string[];
   systems: string[];
   sections: { heading: string; body: string }[];
+}
+
+export interface KCDiagram {
+  // ── Core identity ──────────────────────────────────────────────────────────
+  slug: string;
+  entityId: string;                    // DIAG-xxx permanent graph ID
+  title: string;
+  metaDescription: string;
+  engineeringPurpose: string;
+  diagramType: 'flow' | 'schematic' | 'cross-section' | 'system' | 'process' | 'chart';
+  // ── Standards ─────────────────────────────────────────────────────────────
+  governingStandards: string[];        // STD-xxx permanent IDs
+  // ── Graph relationships ────────────────────────────────────────────────────
+  applicableSystems: string[];         // system slugs (SYSTEM_IDS keys)
+  relatedTechnologies: string[];       // technology display names (e.g. 'NANOFORCE™')
+  relatedArticles: string[];           // article slugs
+  relatedGlossaryTerms: string[];      // TERM-xxx permanent IDs
+  // ── Revision metadata ─────────────────────────────────────────────────────
+  revisionMetadata: {
+    version: string;
+    lastReviewed: string;
+    nextReview: string;
+    status: 'current' | 'draft' | 'superseded';
+  };
+  // ── Accessibility ─────────────────────────────────────────────────────────
+  accessibility: {
+    title: string;
+    desc: string;
+    ariaLabel: string;
+  };
+  // ── SVG component reference ────────────────────────────────────────────────
+  svgComponentId: string;              // matches component export name
 }

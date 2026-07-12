@@ -72,13 +72,14 @@ export function Navigation() {
             style={{
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Titillium Web, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: '0.82rem',
               letterSpacing: '0.1em',
               padding: '0.55rem 1.35rem',
               textDecoration: 'none',
               display: 'inline-block',
+              textTransform: 'uppercase',
             }}
           >
             {t('nav.findMyFilter', 'FIND MY FILTER')}
@@ -156,7 +157,7 @@ export function Navigation() {
                   href="https://part-search.elimfilters.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif', fontWeight: 700, letterSpacing: '0.1em' }}
+                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
                 >
                   {t('nav.findMyFilter', 'FIND MY FILTER')} →
                 </a>
@@ -193,10 +194,10 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
         style={{
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'var(--font-body)',
           fontSize: '0.95rem',
-          fontWeight: 500,
-          letterSpacing: '0.04em',
+          fontWeight: 600,
+          letterSpacing: '0.025em',
           transition: 'color 0.2s ease',
           display: 'block',
           paddingBottom: '3px',
@@ -225,7 +226,8 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 const mobileLinkStyle: React.CSSProperties = {
   color: 'rgba(255,255,255,0.85)',
   textDecoration: 'none',
-  fontFamily: 'Titillium Web, sans-serif',
+  fontFamily: 'var(--font-body)',
   fontSize: '1rem',
-  fontWeight: 500,
+  fontWeight: 600,
+  letterSpacing: '0.025em',
 };

@@ -16,6 +16,7 @@ export type {
   EvidenceConfidence,
   EvidenceGovernance,
   TerminologyEntry,
+  TermCategory,
   ReviewFrequency,
   KnowledgeLifecycle,
   EngineeringQualityScore,
@@ -29,6 +30,7 @@ export type {
 export {
   HIERARCHY_LABELS,
   AUTHORITY_THRESHOLDS,
+  TERM_CATEGORY_LABELS,
 } from './governance';
 
 // Terminology Registry
@@ -67,19 +69,21 @@ export {
   slugToTermId,
 } from './article-registry';
 
-// Navigation Index (Phase 5A)
+// Navigation Index (Phase 5A/5B)
 export type {
   SidebarStandard,
   SidebarTechnology,
   SidebarSystem,
   SidebarProblem,
   SidebarArticle,
+  SidebarTerm,
   KCSidebarData,
   StandardSidebarData,
   StandardSidebarArticle,
   TechSidebarArticle,
   TechSidebarData,
   SystemSidebarData,
+  GlossarySidebarData,
 } from './navigation-index';
 
 export {
@@ -88,5 +92,6 @@ export {
   getStandardSidebarData,
   getTechSidebarData,
   getSystemSidebarData,
+  getGlossarySidebarData,
   getGraphStats,
 } from './navigation-index';

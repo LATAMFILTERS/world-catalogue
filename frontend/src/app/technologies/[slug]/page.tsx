@@ -1,8 +1,10 @@
-import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
+import type { Metadata } from 'next';
 import { CategoryPage } from '@/components/CategoryPage';
 import { TechDetailPage } from '@/components/TechDetailPage';
+import { CANONICAL_TECHNOLOGY_LIST, getCanonicalTechnology } from '@/lib/canonical-technologies';
+import { getTechnologyEngineering } from '@/lib/canonical-engineering';
+import { getItemBySlug, type CatalogueItem } from '@/lib/catalogue';
 import { TECH_PAGES } from './techPagesData';
-import type { Metadata } from 'next';
 
 interface Props {
   params: { slug: string };
@@ -10,54 +12,91 @@ interface Props {
 
 const BASE_URL = 'https://elimfilters.com';
 
+function resolveTechnology(slug: string): CatalogueItem | undefined {
+  const catalogueItem = getItemBySlug('technologies', slug);
+  const canonical = getCanonicalTechnology(slug);
+  const engineering = getTechnologyEngineering(slug);
+
+  if (catalogueItem && canonical && engineering) {
+    return {
+      ...catalogueItem,
+      name: canonical.name.replace('™', ''),
+      title: canonical.name,
+      subtitle: canonical.role,
+      description: engineering.definition,
+      engineeringBody: engineering.engineeringPrinciple,
+    };
+  }
+
+  if (catalogueItem) return catalogueItem;
+  if (!canonical || !engineering) return undefined;
+
+  return {
+    name: canonical.name.replace('™', ''),
+    file: '',
+    title: canonical.name,
+    subtitle: canonical.role,
+    description: engineering.definition,
+    features: [engineering.engineeringPrinciple, engineering.controlStrategy],
+    benefits: [engineering.operationalImpact],
+    techTags: [canonical.domain, canonical.name],
+    stats: {},
+    cta: 'Explore ELIMFILTERS protection systems',
+    engineeringBody: engineering.engineeringPrinciple,
+  };
+}
+
 export function generateStaticParams() {
-  return catalogue.technologies.map((item) => ({
-    slug: getSlug(item.name),
-  }));
+  return CANONICAL_TECHNOLOGY_LIST.map((technology) => ({ slug: technology.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const item = getItemBySlug('technologies', params.slug);
-  if (!item) return { title: 'Not Found' };
+  const item = resolveTechnology(params.slug);
+  const engineering = getTechnologyEngineering(params.slug);
+  if (!item || !engineering) return { title: 'Not Found' };
+
   const url = `${BASE_URL}/technologies/${params.slug}`;
   const title = `${item.title} | ELIMFILTERS Proprietary Technology`;
   return {
     title,
-    description: item.description,
+    description: engineering.definition,
     keywords: [
-      item.title, `${item.title} filtration technology`, `${item.name.toLowerCase()} filter`,
-      'ELIMFILTERS technology', 'industrial filtration technology', 'asset protection',
+      item.title,
+      `${item.title} filtration technology`,
+      `${item.name.toLowerCase()} filter`,
+      'ELIMFILTERS technology',
+      'industrial filtration technology',
+      'asset protection',
     ],
-    alternates: {
-      canonical: url,
-    },
+    alternates: { canonical: url },
     openGraph: {
       title,
-      description: item.description,
+      description: engineering.definition,
       url,
       type: 'website',
       siteName: 'ELIMFILTERS World Catalogue',
-      images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630, alt: `${item.title} — ELIMFILTERS Technology` }],
+      images: [{
+        url: 'https://elimfilters.com/assets/logo-elimfilters.png',
+        width: 1200,
+        height: 630,
+        alt: `${item.title} - ELIMFILTERS Technology`,
+      }],
     },
-    twitter: { card: 'summary_large_image', title, description: item.description },
+    twitter: { card: 'summary_large_image', title, description: engineering.definition },
   };
 }
 
-// ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, etc.) are proprietary
-// engineering architectures — not standalone purchasable products. Using `Product`
-// here would mislead Google into expecting offer/pricing data and misrepresent
-// the nature of the entity. `TechArticle` correctly signals technical documentation
-// for a named engineering methodology, consistent with how Donaldson, Parker Hannifin,
-// and other industrial leaders structure technology knowledge pages.
-function productSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
-  if (!item) return null;
+function technologySchema(item: CatalogueItem, slug: string) {
+  const engineering = getTechnologyEngineering(slug);
+  if (!engineering) return null;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
     '@id': `${BASE_URL}/technologies/${slug}#article`,
     headline: item.title,
     name: item.title,
-    description: item.description,
+    description: engineering.definition,
     url: `${BASE_URL}/technologies/${slug}`,
     author: {
       '@type': 'Organization',
@@ -70,10 +109,12 @@ function productSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
       name: 'ELIMFILTERS',
     },
     about: {
-      '@type': 'Thing',
+      '@type': 'DefinedTerm',
       name: item.title,
-      description: item.description,
+      description: engineering.definition,
+      inDefinedTermSet: `${BASE_URL}/technologies`,
     },
+    abstract: engineering.engineeringPrinciple,
     keywords: [
       item.title,
       'industrial filtration technology',
@@ -89,8 +130,10 @@ function productSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
   };
 }
 
-function faqSchema(item: ReturnType<typeof getItemBySlug>) {
-  if (!item) return null;
+function faqSchema(item: CatalogueItem, slug: string) {
+  const engineering = getTechnologyEngineering(slug);
+  if (!engineering) return null;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -98,30 +141,23 @@ function faqSchema(item: ReturnType<typeof getItemBySlug>) {
       {
         '@type': 'Question',
         name: `What is ${item.title}?`,
-        acceptedAnswer: { '@type': 'Answer', text: item.description },
+        acceptedAnswer: { '@type': 'Answer', text: engineering.definition },
       },
       {
         '@type': 'Question',
-        name: `What industries use ${item.title}?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `${item.title} is used across heavy industry sectors including mining, agriculture, marine, construction, power generation, oil & gas, and transportation fleets where engine and equipment protection is critical.`,
-        },
+        name: `How does ${item.title} work?`,
+        acceptedAnswer: { '@type': 'Answer', text: engineering.engineeringPrinciple },
       },
       {
         '@type': 'Question',
-        name: `What is the engineering architecture behind ${item.title}?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `${item.title} is a proprietary ELIMFILTERS protection architecture engineered for specific contamination control targets in industrial operating environments. It uses a multi-layer protection construction validated against ISO industry standards (ISO 5011, ISO 16889, ISO 4406) for the contamination particle size ranges, operating pressures, and service intervals characteristic of the applications it protects.`,
-        },
+        name: `What does ${item.title} protect?`,
+        acceptedAnswer: { '@type': 'Answer', text: engineering.operationalImpact },
       },
     ],
   };
 }
 
-function breadcrumbSchema(item: ReturnType<typeof getItemBySlug>, slug: string) {
-  if (!item) return null;
+function breadcrumbSchema(item: CatalogueItem, slug: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -134,26 +170,24 @@ function breadcrumbSchema(item: ReturnType<typeof getItemBySlug>, slug: string) 
 }
 
 export default function TechnologyPage({ params }: Props) {
-  const item = getItemBySlug('technologies', params.slug);
+  const item = resolveTechnology(params.slug);
   if (!item) return null;
 
   const slug = params.slug;
-  const pSchema = productSchema(item, slug);
-  const fSchema = faqSchema(item);
-  const bSchema = breadcrumbSchema(item, slug);
+  const articleSchema = technologySchema(item, slug);
+  const questionsSchema = faqSchema(item, slug);
+  const breadcrumbs = breadcrumbSchema(item, slug);
 
   const schemas = (
     <>
-      {pSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pSchema) }} />}
-      {fSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fSchema) }} />}
-      {bSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bSchema) }} />}
+      {articleSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />}
+      {questionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(questionsSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
     </>
   );
 
   const techData = TECH_PAGES[slug];
-  if (techData) {
-    return <>{schemas}<TechDetailPage data={techData} /></>;
-  }
+  if (techData) return <>{schemas}<TechDetailPage data={techData} /></>;
 
   return <>{schemas}<CategoryPage item={item} category="technologies" /></>;
 }
