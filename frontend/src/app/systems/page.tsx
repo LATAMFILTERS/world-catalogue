@@ -82,12 +82,16 @@ export default function SystemsPage() {
         <div style={wrapWide}>
           <div style={systemGrid}>
             {PROTECTION_SYSTEM_LIST.map((system, index) => {
-              const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
+              const image = SYSTEM_IMAGES[system.slug] || system.heroImage || '/images/sistems-hero.avif';
               const line = SYSTEM_LINES[system.slug] || system.tagline;
               const placement = index < 3 ? topCardPlacement : index === 3 ? bottomLeftPlacement : bottomRightPlacement;
 
               return (
-                <Link key={system.key} href={`/systems/${system.slug}`} style={{ ...systemCard, ...placement }}>
+                <Link
+                  key={system.key}
+                  href={`/systems/${system.slug}`}
+                  style={{ ...systemCard, ...placement, backgroundImage: `url(${image})` }}
+                >
                   <img src={image} alt={system.name} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
@@ -172,21 +176,22 @@ const bottomRightPlacement: CSSProperties = { gridColumn: '4 / span 2' };
 
 const systemCard: CSSProperties = {
   minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
-  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: '#050505',
+  backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
 };
 
 const systemImage: CSSProperties = {
   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.68, filter: 'brightness(1.05)',
+  opacity: 0.94, filter: 'brightness(1.12)', zIndex: 0,
 };
 
 const systemOverlay: CSSProperties = {
-  position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.52) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.55), transparent)',
+  position: 'absolute', inset: 0, zIndex: 1,
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.28) 52%, rgba(0,0,0,0.78) 100%), linear-gradient(90deg, rgba(0,0,0,0.34), transparent)',
 };
 
 const systemContent: CSSProperties = {
-  position: 'absolute', inset: 0, padding: '1.35rem',
+  position: 'absolute', inset: 0, padding: '1.35rem', zIndex: 2,
   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
 };
 
@@ -196,7 +201,7 @@ const systemTitle: CSSProperties = {
 };
 
 const systemLine: CSSProperties = {
-  color: 'rgba(255,255,255,0.65)', fontFamily: bodyFont, fontSize: '0.95rem',
+  color: 'rgba(255,255,255,0.76)', fontFamily: bodyFont, fontSize: '0.95rem',
   lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
 };
 
