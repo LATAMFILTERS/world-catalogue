@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
@@ -68,7 +68,7 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
   return <span ref={ref}>{prefix}{Number.isInteger(to) ? Math.round(to) : to.toFixed(1)}{suffix}</span>;
 }
 
-// â”€â”€â”€ Spotlight card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ Spotlight card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   children: React.ReactNode;
@@ -98,7 +98,7 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
-// â”€â”€â”€ FloatingParticles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ FloatingParticles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function FloatingParticles({ count = 22 }: { count?: number }) {
   return (
@@ -114,7 +114,7 @@ function FloatingParticles({ count = 22 }: { count?: number }) {
   );
 }
 
-// â”€â”€â”€ StatRing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ StatRing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function StatRing({ percent, content, label }: { percent: number; content: React.ReactNode; label: string }) {
   const r = 38;
@@ -143,7 +143,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
   );
 }
 
-// â”€â”€â”€ IndustryCard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ IndustryCard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function IndustryCard({ id, label, href }: { id: string; label: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -159,7 +159,7 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   );
 }
 
-// â”€â”€â”€ Engineering Entry Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ Engineering Entry Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const JOURNEY_CARDS = [
   {
@@ -306,7 +306,7 @@ function EngineeringEntrySection() {
   );
 }
 
-// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export default function Home() {
   const { t } = useTranslation();
@@ -560,15 +560,15 @@ export default function Home() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
-                    { step: '01', label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
-                    { step: '02', label: 'Apply Engineering Standards', desc: 'ISO 4406 / ISO 16889 / ISO 5011 / ISO 19438' },
-                    { step: '03', label: 'Deploy Protection Technology', desc: 'MACROCORE  -  SYNTRAX  -  NANOFORCE  -  SYNTEPORE' },
+                    { label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
+                    { label: 'Apply Engineering Standards', desc: 'ISO 4406 · ISO 16889 · ISO 5011 · ISO 19438' },
+                    { label: 'Deploy Protection Technology', desc: 'MACROCORE · SYNTRAX · NANOFORCE · SYNTEPORE' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: '#FFF12D', opacity: 0.6, flexShrink: 0, paddingTop: '0.15rem' }}>{item.step}</div>
+                      <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFF12D', flexShrink: 0, marginTop: '0.52rem' }} />
                       <div>
-                        <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.85rem', color: 'rgba(255,255,255,0.85)', margin: '0 0 0.2rem' }}>{item.label}</p>
-                        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', margin: 0, letterSpacing: '0.05em' }}>{item.desc}</p>
+                        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', margin: '0 0 0.2rem', letterSpacing: '0.02em' }}>{item.label}</p>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.48)', margin: 0, letterSpacing: 0 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -666,10 +666,6 @@ export default function Home() {
     </ConversionProvider>
   );
 }
-
-
-
-
 
 
 
