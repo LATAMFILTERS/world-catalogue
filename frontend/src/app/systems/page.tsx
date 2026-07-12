@@ -83,8 +83,7 @@ export default function SystemsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>WHY SYSTEMS MATTER</p>
-            <h2 style={sectionTitle}>A filter is a part. A system is the protection logic.</h2>
+            <h2 style={whyTitle}>A filter is a part. A system is the protection logic.</h2>
           </div>
           <div>
             <p style={leadText}>
@@ -160,6 +159,7 @@ export default function SystemsPage() {
 
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
+const approvedDisplayFont = "'Chakra Petch', 'Arial Narrow', monospace";
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
@@ -222,6 +222,11 @@ const twoCol: CSSProperties = {
 
 const sectionTitle: CSSProperties = {
   fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
+};
+
+const whyTitle: CSSProperties = {
+  fontFamily: approvedDisplayFont, fontSize: 'clamp(2.4rem, 4.8vw, 4.32rem)',
   lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
