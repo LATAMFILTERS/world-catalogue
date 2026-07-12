@@ -161,6 +161,79 @@ main > section:first-of-type > div[style*="max-width"] > p:first-child {
   display: none !important;
 }
 
+/* HOME Phase 2 — readability and redundancy cleanup.
+ * Scoped only to the current HOME page by targeting its hidden direct-answer block.
+ */
+main:has(> div[style*="visibility: hidden"]) > section:first-of-type p {
+  max-width: 1100px !important;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem) !important;
+  line-height: 1.7 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > p:first-child {
+  max-width: 100% !important;
+  font-size: 1.16rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > div p {
+  font-size: 1.03rem !important;
+  line-height: 1.72 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="space-between"] {
+  display: none !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="repeat(auto-fit"] p:last-child {
+  font-size: 0.98rem !important;
+  line-height: 1.72 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child p {
+  font-size: 1.2rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child span:not(:first-child) {
+  font-size: 1.14rem !important;
+  line-height: 1.65 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child p,
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li {
+  font-size: 1.14rem !important;
+  line-height: 1.7 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li > span:first-child::before {
+  font-size: 1.14rem !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) h2 {
+  font-size: clamp(2.04rem, 3.84vw, 2.7rem) !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) p {
+  font-size: 1.14rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) [style*="var(--font-mono)"] {
+  font-size: 0.78rem !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(6) div[style*="marginBottom: 2.75rem"] > p {
+  max-width: 1040px !important;
+  font-size: 1.08rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(7) .tech-grid p {
+  font-size: 1.05rem !important;
+  line-height: 1.78 !important;
+}
+
 img, video, iframe {
   max-width: 100%;
   display: block;
