@@ -112,7 +112,7 @@ export default function CinematicHero() {
             marginBottom: "2rem",
           }}
         >
-          ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets.
+          In the field, failures rarely start with the filter. They start with dust entering an air intake, water reaching diesel injectors, abrasive particles moving through oil, or contamination damaging hydraulic components. ELIMFILTERS builds protection around those real failure paths.
         </motion.p>
 
         <motion.div
