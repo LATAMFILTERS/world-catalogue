@@ -11,9 +11,9 @@ main > section:first-of-type div[style*="margin-top: 2.2rem"] {
   overflow: hidden !important;
 }
 
-/* Systems protection logic title: +12% from current size, approved display font. */
+/* Systems protection logic title: corrected size, approved display font. */
 main > section:nth-of-type(2) h2 {
   font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
-  font-size: clamp(2.688rem, 5.376vw, 4.838rem) !important;
+  font-size: clamp(2.285rem, 4.57vw, 4.112rem) !important;
   line-height: 0.95 !important;
 }
