@@ -1,4 +1,12 @@
-/* Systems page cleanup: hide only the legacy hero category chips. */
-main:has(a[href="/systems/air-intake"]) > section:first-of-type div[style*="margin-top: 2.2rem"][style*="gap: 0.8rem"] {
+/* Systems page cleanup: hide only the legacy hero category chips.
+ * This targets the inline tag row inside the /systems hero without touching cards or images.
+ */
+main > section:first-of-type div[style*="margin-top:2.2rem"],
+main > section:first-of-type div[style*="margin-top: 2.2rem"] {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
