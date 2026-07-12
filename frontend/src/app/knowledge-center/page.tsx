@@ -52,8 +52,6 @@ export default function KnowledgeCenterPage() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
-
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/knowledge-center-hero.avif)' }} />
         <div style={heroOverlay} />
@@ -147,7 +145,6 @@ export default function KnowledgeCenterPage() {
 }
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-const homeButton: CSSProperties = { position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50, background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem', padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)' };
 const hero: CSSProperties = { minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3 };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)' };
@@ -166,32 +163,32 @@ const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 const validatedSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,255,255,0.01))', borderTop: '1px solid rgba(255,241,45,0.16)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const validatedGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginTop: '2.4rem' };
-const validatedCard: CSSProperties = { minHeight: '220px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)', padding: '1.35rem', display: 'flex', flexDirection: 'column' };
-const validatedValue: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.4rem, 3vw, 2.25rem)', letterSpacing: '-0.035em', lineHeight: 0.98 };
-const validatedBody: CSSProperties = { color: 'rgba(255,255,255,0.68)', fontSize: '0.95rem', lineHeight: 1.58, margin: '1.1rem 0 1.2rem' };
-const validatedSource: CSSProperties = { color: 'rgba(255,255,255,0.42)', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', marginTop: 'auto', textTransform: 'uppercase' };
+const validatedCard: CSSProperties = { minHeight: '220px', border: '1px solid rgba(255,241,45,0.24)', background: 'rgba(255,241,45,0.03)', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
+const validatedValue: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: 'clamp(1.3rem, 2.2vw, 2rem)', letterSpacing: '0.08em' };
+const validatedBody: CSSProperties = { color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, margin: '1rem 0' };
+const validatedSource: CSSProperties = { color: 'rgba(255,255,255,0.38)', fontFamily: displayFont, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase' };
 const domainSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
-const domainGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem' };
-const domainCard: CSSProperties = { minHeight: '330px', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.025)', padding: '1.35rem', display: 'flex', flexDirection: 'column' };
-const domainLabel: CSSProperties = { color: 'rgba(255,241,45,0.88)', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', margin: '0 0 0.8rem', textTransform: 'uppercase' };
-const domainTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2.4vw, 2.3rem)', lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
-const domainBody: CSSProperties = { color: 'rgba(255,255,255,0.62)', lineHeight: 1.58, fontSize: '0.95rem', margin: '1rem 0 0' };
-const domainCount: CSSProperties = { color: 'rgba(255,255,255,0.42)', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', marginTop: '1rem', textTransform: 'uppercase' };
-const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: 'auto', textTransform: 'uppercase' };
-const featuredSection: CSSProperties = { background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-const splitHeader: CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '2rem', flexWrap: 'wrap', marginBottom: '2.4rem' };
-const featuredGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' };
-const featuredCard: CSSProperties = { minHeight: '250px', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)', padding: '1.35rem', display: 'flex', flexDirection: 'column' };
-const featuredMeta: CSSProperties = { color: 'rgba(255,241,45,0.82)', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.68rem', textTransform: 'uppercase' };
-const featuredTitle: CSSProperties = { fontFamily: displayFont, fontSize: '1.35rem', lineHeight: 1.05, margin: '0.7rem 0 0', letterSpacing: '-0.03em', fontWeight: 700 };
-const featuredBody: CSSProperties = { color: 'rgba(255,255,255,0.58)', lineHeight: 1.58, fontSize: '0.9rem', margin: '1rem 0 0' };
+const domainGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '1rem' };
+const domainCard: CSSProperties = { minHeight: '320px', padding: '1.35rem', border: '1px solid rgba(255,255,255,0.1)', background: '#050505', color: '#fff', textDecoration: 'none', display: 'flex', flexDirection: 'column' };
+const domainLabel: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0 };
+const domainTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.35rem, 2vw, 1.9rem)', lineHeight: 1.02, margin: '1rem 0 0', textTransform: 'uppercase' };
+const domainBody: CSSProperties = { color: 'rgba(255,255,255,0.58)', lineHeight: 1.65, margin: '1rem 0 0' };
+const domainCount: CSSProperties = { marginTop: 'auto', color: 'rgba(255,255,255,0.45)', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.12em', paddingTop: '1rem' };
+const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1rem' };
+const featuredSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,255,255,0.02)' };
+const splitHeader: CSSProperties = { display: 'flex', justifyContent: 'space-between', gap: '2rem', alignItems: 'end', marginBottom: '2.2rem', flexWrap: 'wrap' };
+const featuredGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' };
+const featuredCard: CSSProperties = { minHeight: '260px', padding: '1.35rem', border: '1px solid rgba(255,255,255,0.1)', background: '#030303', textDecoration: 'none', color: '#fff' };
+const featuredMeta: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0 };
+const featuredTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.35rem, 2vw, 1.9rem)', lineHeight: 1.02, margin: '1rem 0', textTransform: 'uppercase' };
+const featuredBody: CSSProperties = { color: 'rgba(255,255,255,0.58)', lineHeight: 1.65 };
 const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-const standardsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.7rem' };
-const standardCard: CSSProperties = { display: 'flex', gap: '1rem', alignItems: 'flex-start', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.025)', padding: '1rem' };
-const standardCode: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, fontSize: '0.85rem', whiteSpace: 'nowrap' };
-const standardScope: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '0.82rem', lineHeight: 1.45 };
-const searchCallout: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-const searchInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.045)', padding: 'clamp(1.5rem, 4vw, 2.4rem)' };
-const cta: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.2)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)' };
+const standardsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.8rem' };
+const standardCard: CSSProperties = { minHeight: '150px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.02)', padding: '1rem', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
+const standardCode: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '1.1rem', letterSpacing: '0.08em' };
+const standardScope: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '0.9rem', lineHeight: 1.5 };
+const searchCallout: CSSProperties = { padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(90deg, rgba(255,241,45,0.12), transparent)' };
+const searchInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' };
+const cta: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)' };
 const yellowButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase' };
 const darkButton: CSSProperties = { display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem', border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase' };
