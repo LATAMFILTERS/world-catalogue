@@ -105,8 +105,8 @@ export default function SystemsPage() {
   );
 }
 
-const displayFont = 'var(--font-display)';
-const bodyFont = 'var(--font-body)';
+const displayFont = "'Chakra Petch', 'Arial Narrow', monospace";
+const bodyFont = "'Barlow', Arial, sans-serif";
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
@@ -148,7 +148,7 @@ const heroTitle: CSSProperties = {
 
 const heroLead: CSSProperties = {
   marginTop: '2rem', maxWidth: '780px', color: 'rgba(255,255,255,0.76)',
-  fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
+  fontFamily: bodyFont, fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
 };
 
 const partSearchHeroButton: CSSProperties = {
@@ -196,7 +196,7 @@ const systemTitle: CSSProperties = {
 };
 
 const systemLine: CSSProperties = {
-  color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
+  color: 'rgba(255,255,255,0.65)', fontFamily: bodyFont, fontSize: '0.95rem',
   lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
 };
 
