@@ -8,6 +8,7 @@ import './air-intake-hero-restore.css';
 import './air-intake-visible-cleanup.css';
 import './core-systems-editorial.css';
 import './air-intake-narrative-section-fix.css';
+import './industries-risk-title-tweak.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
