@@ -248,32 +248,49 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         )}
 
         <section id="features" style={{ padding: '6rem 0', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+          <div style={{ maxWidth: isMining ? '1320px' : '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: isMining ? '5rem' : '4rem', alignItems: 'start' }}>
             <AnimateIn direction="up">
-              <h2 style={sectionTitle}>Why ELIMFILTERS</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <h2 style={isMining ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>Why ELIMFILTERS</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: isMining ? '1.15rem' : '1rem' }}>
                 {advantages.map((benefit, i) => (
                   <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <span style={{ color: '#FFF12D', fontWeight: 'bold', marginTop: '0.2rem' }}>•</span>
-                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>{benefit}</span>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: isMining ? '1.064rem' : '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65 }}>{benefit}</span>
                   </div>
                 ))}
               </div>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={0.15}>
-              <div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: '2rem' }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', marginBottom: '1rem' }}>
+              <div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: isMining ? '2.45rem' : '2rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: isMining ? '1.12rem' : '1rem', color: '#fff', marginBottom: isMining ? '1.4rem' : '1rem' }}>
                   Technologies Applied
                 </h3>
                 {geoData?.techFocus && (
                   <p style={{ ...bodyText, marginBottom: '1.1rem' }}>{geoData.techFocus}</p>
                 )}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
+                <div style={isMining ? { display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '0.65rem', maxWidth: '620px' } : { display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech, techIndex) => {
                     const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
                     return (
-                      <Link key={tech} href={`/technologies/${slug}`} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.05em', padding: '0.3rem 0.7rem', border: '1px solid rgba(255,241,45,0.25)', color: 'rgba(255,241,45,0.75)', background: 'rgba(255,241,45,0.04)', textDecoration: 'none' }}>
+                      <Link key={tech} href={`/technologies/${slug}`} style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: isMining ? '0.72rem' : '0.62rem',
+                        letterSpacing: '0.05em',
+                        padding: isMining ? '0.72rem 1.05rem' : '0.3rem 0.7rem',
+                        border: '1px solid rgba(255,241,45,0.25)',
+                        color: 'rgba(255,241,45,0.75)',
+                        background: 'rgba(255,241,45,0.04)',
+                        textDecoration: 'none',
+                        ...(isMining ? {
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          minHeight: '48px',
+                          gridColumn: techIndex < 3 ? `${techIndex * 2 + 1} / span 2` : techIndex === 3 ? '2 / span 2' : '4 / span 2',
+                          gridRow: techIndex < 3 ? 1 : 2,
+                        } : {}),
+                      }}>
                         {tech}
                       </Link>
                     );
@@ -286,14 +303,22 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
         {geoData?.preCtaQuote && (
           <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: isMining ? '1180px' : '860px', margin: '0 auto', textAlign: 'center' }}>
               <AnimateIn>
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
-                  {geoData.preCtaQuote.line1}
-                </p>
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
-                  {geoData.preCtaQuote.line2}
-                </p>
+                {isMining ? (
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.155rem, 2.625vw, 1.47rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, whiteSpace: 'nowrap' }}>
+                    {geoData.preCtaQuote.line1} <span style={{ color: '#FFF12D' }}>{geoData.preCtaQuote.line2}</span>
+                  </p>
+                ) : (
+                  <>
+                    <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                      {geoData.preCtaQuote.line1}
+                    </p>
+                    <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
+                      {geoData.preCtaQuote.line2}
+                    </p>
+                  </>
+                )}
               </AnimateIn>
             </div>
           </section>
