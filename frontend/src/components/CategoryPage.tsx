@@ -9,6 +9,7 @@ import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
 import { CTASection } from './CTASection';
 import { AnimateIn } from './AnimateIn';
+import { MiningDirectAnswer } from './MiningDirectAnswer';
 
 interface CategoryPageProps {
   item: CatalogueItem;
@@ -112,6 +113,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
+  const isMining = category === 'industries' && item.name === 'Mining';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -128,6 +130,15 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     'Total Asset Protection across critical systems',
     'Cost-effective protection across duty cycles',
   ];
+
+  const miningVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Mining applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Every micron of contamination matters. ELIMFILTERS® systems help Mining operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination related failure.';
+
+  const videoParagraphs = isMining
+    ? [miningVideoParagraph]
+    : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+      `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+      `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+    ]);
 
   return (
     <>
@@ -175,9 +186,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         {geoData?.directAnswer && (
           <section style={{ padding: '4rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-              <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }}>
-                {geoData.directAnswer}
-              </p>
+              {isMining ? (
+                <MiningDirectAnswer paragraphStyle={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }} />
+              ) : (
+                <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }}>
+                  {geoData.directAnswer}
+                </p>
+              )}
             </div>
           </section>
         )}
@@ -199,24 +214,21 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
         {industryVideo && (
           <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ maxWidth: isMining ? '1320px' : '1200px', margin: '0 auto' }}>
+              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isMining ? '56% 44%' : '60% 40%', gap: isMining ? '2.6rem' : '3rem', alignItems: 'center' }}>
                 <div>
-                  <h2 style={sectionTitle}>{item.name} Asset Protection</h2>
+                  <h2 style={isMining ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{item.name} Asset Protection</h2>
                   {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
                     <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>
                       {geoData.protectedAssets.map((asset) => (
-                        <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                        <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: isMining ? '1.008rem' : '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
                           · {asset}
                         </span>
                       ))}
                     </div>
                   )}
-                  {(item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-                    `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-                    `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-                  ]).map((para, i) => (
-                    <p key={i} style={{ ...bodyText, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
+                  {videoParagraphs.map((para, i) => (
+                    <p key={i} style={{ ...bodyText, fontSize: isMining ? '1.064rem' : bodyText.fontSize, lineHeight: isMining ? 1.82 : bodyText.lineHeight, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
                       {para}
                     </p>
                   ))}
