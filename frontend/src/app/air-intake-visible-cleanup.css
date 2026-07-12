@@ -21,8 +21,19 @@ main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) ~ 
   overflow: hidden !important;
 }
 
-/* Defensive fallback for injected reference wrappers that may not be direct sections. */
-main:has(img[src*="mecanica-air.avif"]) h2,
-main:has(img[alt="Air Intake & Airflow Protection"]) h2 {
-  scroll-margin-top: 120px;
+/* If the reference/GEO blocks are injected inside the Product Families section,
+ * keep only the visible Product Families heading and card grid.
+ */
+main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(3) > :nth-child(n+3),
+main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > :nth-child(n+3),
+main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(3) > div ~ *,
+main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div ~ * {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
 }
