@@ -7,6 +7,7 @@ import {
   getProtectionSystemBySlug,
 } from '@/lib/protection-systems-data';
 import { getFamiliesByProtectionSystem } from '@/lib/product-families-data';
+import { CoreSystemProtectionNarrative } from './CoreSystemProtectionNarrative';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -263,6 +264,8 @@ export default function ProtectionSystemPage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        <CoreSystemProtectionNarrative slug={sys.slug} />
 
         <section style={section}>
           <h2 style={h2Style}>Primary Technologies</h2>
