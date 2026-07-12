@@ -1,3 +1,4 @@
-/* Systems page cleanup stylesheet intentionally kept non-invasive.
- * Typography is controlled directly inside /systems/page.tsx.
- */
+/* Systems page cleanup: hide only the legacy hero category chips. */
+main:has(a[href="/systems/air-intake"]) > section:first-of-type div[style*="margin-top: 2.2rem"][style*="gap: 0.8rem"] {
+  display: none !important;
+}
