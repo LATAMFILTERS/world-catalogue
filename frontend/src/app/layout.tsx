@@ -5,6 +5,7 @@ import './hero-responsive.css';
 import './home-emergency-restore.css';
 import './systems-cleanup.css';
 import './air-intake-hero-restore.css';
+import './air-intake-visible-cleanup.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
