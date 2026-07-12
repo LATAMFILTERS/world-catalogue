@@ -23,6 +23,10 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const VAULT_DIR = path.join(PROJECT_ROOT, 'elimfilters-vault');
 const OUTPUT_PATH = path.join(VAULT_DIR, '00-meta', 'CITATION_INDEX.json');
 
+const RETIRED_ENTITY_KEYS = new Set([
+  'HYDROCORE',
+]);
+
 const MARKETING_TERMS = [
   'industry-leading',
   'cutting-edge',
@@ -291,7 +295,7 @@ function parseNote(filePath) {
     canonical: parsed.canonical,
     citation: parsed.citation,
     hasAiRetrieval,
-    isEntityNote: Boolean(yaml.key && yaml.type),
+    isEntityNote: Boolean(yaml.key && yaml.type) && !RETIRED_ENTITY_KEYS.has(yaml.key),
   };
 }
 
@@ -497,6 +501,7 @@ function main() {
       note_count: records.length,
       scanned_note_count: parsedNotes.length,
       skipped_non_entity_count: skippedNonEntities,
+      retired_entity_keys: Array.from(RETIRED_ENTITY_KEYS).sort(),
       entity_types: entityTypes,
       resolution_ratio: resolutionRatio,
       generator: 'scripts/build-citation-index.js',
@@ -518,53 +523,34 @@ function main() {
   console.log(`Notes scanned:    ${parsedNotes.length}`);
   console.log(`Entity records:   ${records.length}`);
   console.log(`Skipped docs:     ${skippedNonEntities}`);
+  console.log(`Retired keys:     ${Array.from(RETIRED_ENTITY_KEYS).sort().join(', ') || 'none'}`);
   console.log(`Errors:           ${errors.length}`);
   console.log(`Warnings:         ${warnings.length}`);
   console.log(`Dangling links:   ${graph.dangling_keys.length}`);
-  console.log('');
 
-  if (errors.length === 0) {
+  if (errors.length > 0) {
+    console.log('\nERRORS');
+    for (const err of errors) console.log(`- ${err.code} ${err.entity}: ${err.message}`);
+  } else {
     console.log('ERRORS: none');
-  } else {
-    console.log('ERRORS:');
-    for (const e of errors) console.log(`  ${e.code}: ${e.entity} — ${e.message}`);
   }
 
-  console.log('');
-
-  if (warnings.length === 0) {
+  if (warnings.length > 0) {
+    console.log('\nWARNINGS');
+    for (const warn of warnings) console.log(`- ${warn.code} ${warn.entity}: ${warn.message}`);
+  } else {
     console.log('WARNINGS: none');
-  } else {
-    console.log('WARNINGS:');
-    for (const w of warnings) {
-      if (w.code === 'W005') console.log(`  W005: ${w.from} → [[${w.to}]] (relation: ${w.relation})`);
-      else console.log(`  ${w.code}: ${w.entity} — ${w.message}`);
-    }
   }
 
-  console.log('');
-  if (validateOnly) {
-    console.log('Validation complete (--validate mode, no files written)');
-    process.exit(errors.length > 0 ? 1 : 0);
+  if (graph.dangling_keys.length > 0) {
+    console.log(`DANGLING KEYS: ${graph.dangling_keys.join(', ')}`);
   }
 
   console.log(`OUTPUT: ${path.relative(PROJECT_ROOT, OUTPUT_PATH)}`);
 
-  return {
-    noteCount: records.length,
-    scannedNoteCount: parsedNotes.length,
-    skippedNonEntityCount: skippedNonEntities,
-    recordCount: records.length,
-    errorCount: errors.length,
-    warningCount: warnings.length,
-    errors,
-    warnings,
-    graph,
-    entityTypes,
-    resolutionRatio,
-    outputPath: OUTPUT_PATH,
-    index,
-  };
+  if (errors.length > 0) {
+    process.exitCode = 1;
+  }
 }
 
 main();
