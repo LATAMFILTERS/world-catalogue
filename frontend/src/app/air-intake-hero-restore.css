@@ -1,0 +1,41 @@
+/* Air Intake hero restore: undo failed text-position experiments.
+ * This file is loaded after systems-cleanup.css and only affects /systems/air-intake.
+ */
+main header:has(> img[src$="/images/mecanica-air.avif"]) > img {
+  object-position: center top !important;
+  opacity: 0.74 !important;
+  filter: brightness(1.16) contrast(1.06) saturate(1.06) !important;
+}
+
+main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
+  max-width: 1200px !important;
+  padding-left: clamp(46vw, 52vw, 58vw) !important;
+  padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+  transform: translate(-10%, 15%) !important;
+}
+
+main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > h1 {
+  max-width: 760px !important;
+  font-size: clamp(2.65rem, 5.8vw, 5.45rem) !important;
+}
+
+main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > p:last-child {
+  color: #FFF12D !important;
+  max-width: 980px !important;
+  width: min(980px, 100%) !important;
+  font-family: 'Barlow', Arial, sans-serif !important;
+}
+
+@media (max-width: 900px) {
+  main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
+    padding-left: clamp(1.5rem, 5vw, 4rem) !important;
+    padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+    transform: translate(0, 10%) !important;
+  }
+
+  main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > h1,
+  main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > p:last-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
