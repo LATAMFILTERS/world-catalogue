@@ -95,3 +95,28 @@ export {
   getGlossarySidebarData,
   getGraphStats,
 } from './navigation-index';
+
+// Phase 6D: Recommendation Engine
+export type {
+  KCNodeType,
+  KCNodeKey,
+  KCReasonType,
+  KCGraphNode,
+  KCGraph,
+  KCRecommendation,
+  KCRecommendationOptions,
+} from './recommendation-types';
+
+export { getRecommendations } from './recommendation-engine';
+export { getKCRecommendationGraph, makeKey } from './recommendation-graph';
+
+// Phase 6F: Engineering Intelligence Dashboard
+export type {
+  KCRankedNode,
+  KCGraphSummary,
+  KCTypeConnectivity,
+  KCRecentStandard,
+  KCDashboardData,
+} from './dashboard-types';
+
+export { KC_DASHBOARD_DATA } from './dashboard-analytics';

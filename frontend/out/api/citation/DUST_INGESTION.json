@@ -43,7 +43,7 @@
       "TURBOCHARGER_BEARING"
     ],
     "affects_systems": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ],
     "recommended_product_families": [
       "AIRFILTER_PRIMARY"
@@ -93,9 +93,9 @@
         "href": "/api/citation/TURBOCHARGER_BEARING.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "affects_systems",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       },
       {
         "key": "AIRFILTER_PRIMARY",

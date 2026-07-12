@@ -1,0 +1,143 @@
+{
+  "key": "LUBRICATION_PROTECTION",
+  "type": "system",
+  "name": "Lubrication Systems",
+  "slug": "lubrication-protection",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "LUBRICATION_PROTECTION",
+  "tags": [
+    "system",
+    "active",
+    "lubrication",
+    "lube-oil",
+    "asset-protection",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
+    "concept": "Lubrication Systems",
+    "version": "1.0",
+    "last_updated": "2026-07-11",
+    "content_hash": "sha256:89b59e62ba5295b8ea65ff04fe316994c44f4a376867267023ac25b873533d0f"
+  },
+  "canonical": {
+    "definition": "Lubrication Systems are the ELIMFILTERS system domain controlling engine oil, transmission oil, gearbox oil, and rotating equipment lubricant contamination to protect bearings, journals, gears, piston rings, turbochargers, and precision surfaces from abrasive wear and oil degradation.",
+    "systems": "Full-flow lube filters, bypass lube circuits, engine oil filtration, transmission oil filtration, gearbox filtration, rotating equipment lubricant protection, and oil cleanliness programs.",
+    "failure_impact": "Oil contamination → abrasive wear, bearing scoring, journal damage, piston ring wear, turbocharger bearing degradation, varnish formation, soot-driven viscosity change, reduced oil life, increased friction, elevated operating temperature, and premature overhaul.",
+    "related_standards": "ISO 16889: Multi-pass Beta ratio filtration performance testing | ISO 4406: Fluid cleanliness code for particle count targets in lube and hydraulic circuits.",
+    "related_technologies": "SYNTRAX: Full-flow lube oil protection technology | NANOFORCE: Sub-micron polishing and fine particle control supporting extended asset protection in severe-duty lube systems.",
+    "industrial_role": "Lubrication Systems transform oil filtration from a replacement part into a life-extension system for engines and rotating assets, especially where downtime, overhaul cost, and high-load duty cycles dominate total cost of ownership."
+  },
+  "relationships": {
+    "applicable_industries": [
+      "AGRICULTURE",
+      "AUTOMOTIVE",
+      "BUS_COACH",
+      "CONSTRUCTION",
+      "MANUFACTURING",
+      "MARINE",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL"
+    ],
+    "applicable_technologies": [
+      "SYNTRAX",
+      "NANOFORCE"
+    ],
+    "applicable_standards": [
+      "ISO_16889",
+      "ISO_4406"
+    ]
+  },
+  "vault_path": "elimfilters-vault/03-systems/LUBRICATION_PROTECTION.md",
+  "_links": {
+    "self": "/api/citation/LUBRICATION_PROTECTION.json",
+    "type_index": "/api/citation/type/system.json",
+    "related": [
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "AUTOMOTIVE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/AUTOMOTIVE.json"
+      },
+      {
+        "key": "BUS_COACH",
+        "relation": "applicable_industries",
+        "href": "/api/citation/BUS_COACH.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MANUFACTURING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MANUFACTURING.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "applicable_industries",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "applicable_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "ISO_16889",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_4406.json"
+      }
+    ]
+  }
+}

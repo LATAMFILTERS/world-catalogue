@@ -1,30 +1,9 @@
-# ELIMFILTERS World Catalogue — robots.txt
-# Optimized for: Googlebot, GPTBot, Claude-Web, Bingbot, Gemini, CCBot
-
-User-agent: *
+User-Agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /search?
 
-# Allow all AI crawlers access to Knowledge Center (semantic architecture optimized for AI retrieval)
-User-agent: GPTBot
-Allow: /knowledge-center/
-
-User-agent: Claude-Web
-Allow: /knowledge-center/
-
-User-agent: anthropic-ai
-Allow: /knowledge-center/
-
-User-agent: Google-Extended
-Allow: /knowledge-center/
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: CCBot
-Allow: /knowledge-center/
-
-User-agent: PerplexityBot
-Allow: /knowledge-center/
-
-# Sitemap
+Host: https://elimfilters.com
 Sitemap: https://elimfilters.com/sitemap.xml

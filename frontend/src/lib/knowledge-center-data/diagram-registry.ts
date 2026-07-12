@@ -435,6 +435,211 @@ export const ENGINEERING_DIAGRAMS: KCDiagram[] = [
     },
     svgComponentId: 'ParticleWearMechanism',
   },
+
+  // ── Phase 6B: Five additional engineering diagrams ────────────────────────
+
+  // ── 11. Filter Media Cross-Section ────────────────────────────────────────
+  {
+    slug: 'filter-media-cross-section',
+    entityId: 'DIAG-MEDIA-CROSS-SECTION',
+    title: 'Filter Element Media Cross-Section',
+    metaDescription:
+      'Cross-section diagram of a cylindrical filter element showing outer wrap, pre-filter layer, main filtration media depth zone, anti-collapse scrim, and perforated center tube with progressive particle capture at each layer.',
+    engineeringPurpose:
+      'Illustrates the layered construction of a modern multi-layer filter element and how particle capture efficiency arises from depth filtration. The progressive-density gradient from outer coarse layers to inner fine media layers maximises dirt-holding capacity while maintaining the rated Beta ratio efficiency.',
+    diagramType: 'cross-section',
+    governingStandards: ['STD-ISO-16889', 'STD-ISO-11171'],
+    applicableSystems: ['hydraulic-protection', 'lubrication-protection', 'fuel-cleanliness'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™'],
+    relatedArticles: [
+      'filter-media-science',
+      'filter-media-engineering',
+      'fluid-cleanliness',
+      'testing-and-validation',
+      'dust-holding-capacity',
+    ],
+    relatedGlossaryTerms: [
+      'TERM-DEPTH-FILTRATION',
+      'TERM-SURFACE-FILTRATION',
+      'TERM-PROGRESSIVE-DENSITY-GRADIENT',
+      'TERM-SYNTHETIC-MEDIA',
+      'TERM-CELLULOSE-MEDIA',
+      'TERM-BETA-RATIO',
+      'TERM-COLLAPSE-PRESSURE',
+      'TERM-MELT-BLOWN-MEDIA',
+    ],
+    revisionMetadata: {
+      version: '1.0.0',
+      lastReviewed: '2026-07-08',
+      nextReview: '2027-07-08',
+      status: 'current',
+    },
+    accessibility: {
+      title: 'Filter Element Media Cross-Section',
+      desc: 'Cross-sectional view through a cylindrical filter element from outside to center. Left edge: protective outer wrap. Next layer: coarse pre-filter zone showing large particle symbols trapped near the surface. Main zone (widest): synthetic or glass-fiber filtration media with progressive density gradient — large particles captured near outer edge, medium particles at mid-depth, fine particles near the center. Anti-collapse inner scrim. Right edge: perforated steel center tube providing structural support. Arrows show contaminated flow entering from left, clean filtered flow exiting right. Formula box: Beta ratio β = N_upstream ÷ N_downstream per ISO 16889.',
+      ariaLabel: 'Cross-section diagram of a cylindrical filter element showing outer wrap, pre-filter layer, main filtration media, and perforated center tube',
+    },
+    svgComponentId: 'FilterMediaCrossSection',
+  },
+
+  // ── 12. ISO 8573-1 Purity Classes ─────────────────────────────────────────
+  {
+    slug: 'iso-8573-purity-classes',
+    entityId: 'DIAG-ISO8573-PURITY',
+    title: 'ISO 8573-1 Compressed Air Purity Classes',
+    metaDescription:
+      'Chart reference for ISO 8573-1:2010 compressed air purity classifications covering solid particle count, pressure dew point, and total oil content across Classes 0 through 9.',
+    engineeringPurpose:
+      'Provides a visual reference for ISO 8573-1 purity class selection in compressed air system design. Engineers select the appropriate class for each application based on sensitivity to solid particles, moisture, and oil — then specify the treatment train components required to achieve that class at the point of use.',
+    diagramType: 'chart',
+    governingStandards: ['STD-ISO-8573-1', 'STD-ISO-8573-2'],
+    applicableSystems: ['compressed-air-protection'],
+    relatedTechnologies: ['DRYCORE™'],
+    relatedArticles: [
+      'compressed-air-purity',
+      'compressed-air-quality-verification',
+      'compressed-air-dryer-selection',
+      'testing-and-validation',
+    ],
+    relatedGlossaryTerms: [
+      'TERM-COMPRESSED-AIR-PURITY',
+      'TERM-DEW-POINT',
+      'TERM-PARTICLE-COUNT',
+      'TERM-PARTICLE-SIZE-DISTRIBUTION',
+    ],
+    revisionMetadata: {
+      version: '1.0.0',
+      lastReviewed: '2026-07-08',
+      nextReview: '2027-07-08',
+      status: 'current',
+    },
+    accessibility: {
+      title: 'ISO 8573-1 Compressed Air Purity Classes Chart',
+      desc: 'Three-panel reference chart for ISO 8573-1:2010. Top panel — solid particles: table showing Classes 0–5 with maximum particle count per cubic metre at size ranges ≥0.1 µm, ≥0.5 µm, ≥1 µm, and ≥5 µm; Class 0 requires user specification, Class 1 is most stringent. Middle panel — water content: horizontal bars showing maximum pressure dew point from Class 1 (−70°C, driest) to Class 6 (+10°C, least dry). Bottom panel — oil content: bar chart showing Classes 1–4 maximum total oil content from 0.01 mg/m³ to 5 mg/m³.',
+      ariaLabel: 'Chart showing ISO 8573-1:2010 compressed air purity classes 0 through 9 for solid particles, water content, and total oil content',
+    },
+    svgComponentId: 'Iso8573PurityClasses',
+  },
+
+  // ── 13. Service Interval Decision Flow ────────────────────────────────────
+  {
+    slug: 'service-interval-flow',
+    entityId: 'DIAG-SERVICE-INTERVAL-FLOW',
+    title: 'Service Interval Planning Decision Flow',
+    metaDescription:
+      'Engineering decision flowchart for calculating filter service intervals from dirt holding capacity (DHC), contamination ingestion rate, system flow rate, and safety factor per ISO 3724:2007 and SAE J1299:2008.',
+    engineeringPurpose:
+      'Documents the ISO 3724/SAE J1299 service interval calculation method as a decision flow so engineers can systematically derive replacement intervals from measured or estimated DHC, environment-specific ingestion rates, and application safety factors. The output interval is a planning target requiring field validation.',
+    diagramType: 'flow',
+    governingStandards: ['STD-ISO-16889'],
+    applicableSystems: ['air-intake-protection', 'hydraulic-protection', 'lubrication-protection', 'fuel-cleanliness'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™'],
+    relatedArticles: [
+      'service-intervals',
+      'dust-holding-capacity',
+      'contamination-ingression-modelling',
+      'total-cost-of-ownership',
+    ],
+    relatedGlossaryTerms: [
+      'TERM-DUST-HOLDING-CAPACITY',
+      'TERM-CONTAMINATION-INGRESSION-RATE',
+      'TERM-SERVICE-INTERVAL',
+      'TERM-DIFFERENTIAL-PRESSURE',
+    ],
+    revisionMetadata: {
+      version: '1.0.0',
+      lastReviewed: '2026-07-08',
+      nextReview: '2027-07-08',
+      status: 'current',
+    },
+    accessibility: {
+      title: 'Service Interval Planning Decision Flow',
+      desc: 'Flowchart for filter service interval planning per ISO 3724 and SAE J1299. Start oval: Filter Service Interval Planning. Step 1 box: Measure DHC via ISO 16889 multipass test or estimate from media area × capacity factor, result in grams. Step 2 box: Classify operating environment — construction 2.0 mg/L typical ingestion, agriculture 0.8 mg/L, industrial 0.15 mg/L per SAE J1299 Table 2. Step 3 box: Apply safety factor — construction 0.65, agriculture 0.75, industrial 0.85 per SAE J1299 Annex D. Step 4 box: Calculate service interval I_s = DHC × S_f divided by C_in × Q × 60, result in hours. End oval: Service Interval I_s in hours. Side note: verify against field data and adjust safety factor if needed.',
+      ariaLabel: 'Flowchart showing the engineering process for calculating filter service intervals from dirt holding capacity, contamination ingestion rate, and safety factor',
+    },
+    svgComponentId: 'ServiceIntervalFlow',
+  },
+
+  // ── 14. Cabin Air Filtration System ───────────────────────────────────────
+  {
+    slug: 'cabin-air-system',
+    entityId: 'DIAG-CABIN-AIR-SYSTEM',
+    title: 'Cabin Air Filtration System — ISO 11155',
+    metaDescription:
+      'System diagram of an ISO 11155 vehicle cabin air filtration train showing fresh air inlet, coarse particulate pre-filter, activated carbon gas-phase stage, fine particulate HEPA stage, recirculation mode damper, and cabin delivery.',
+    engineeringPurpose:
+      'Documents the filtration stages in a compliant cabin air system under ISO 11155. Operators in construction, agriculture, and mining environments may be exposed to PM10 and PM2.5 concentrations that exceed occupational exposure limits without an effective cabin filtration system. Each stage addresses a distinct contaminant class: coarse particles, gas-phase contaminants, and fine respirable particles.',
+    diagramType: 'system',
+    governingStandards: ['STD-ISO-11155-1', 'STD-ISO-29463', 'STD-DIN-71220'],
+    applicableSystems: ['cabin-air-protection'],
+    relatedTechnologies: ['MICROKAPPA™'],
+    relatedArticles: [
+      'cabin-air-filtration',
+      'filter-element-integrity',
+      'seal-integrity',
+    ],
+    relatedGlossaryTerms: [
+      'TERM-PRE-CLEANER',
+      'TERM-DEPTH-FILTRATION',
+      'TERM-SAFETY-ELEMENT',
+    ],
+    revisionMetadata: {
+      version: '1.0.0',
+      lastReviewed: '2026-07-08',
+      nextReview: '2027-07-08',
+      status: 'current',
+    },
+    accessibility: {
+      title: 'Cabin Air Filtration System ISO 11155 Diagram',
+      desc: 'Left-to-right system flow. Outside air inlet on the left. First stage: coarse particulate pre-filter labelled PM10 stage per ISO 11155, showing large particle symbols blocked. Second stage: activated carbon adsorber for gas-phase contaminants and odours, shown as a dotted-pattern block. Third stage: fine particulate filter labelled PM2.5/HEPA achieving greater than 95% efficiency at 0.3 µm per ISO 29463, shown with dense hatch and very small particles blocked. Arrow continues to cabin HVAC zone on the right. A recirculation branch shown as a dashed arrow below the main flow returns cabin air to the carbon and fine filter stages, controlled by a damper. Labels indicate fresh air mode on main path and recirculation mode on branch.',
+      ariaLabel: 'System diagram of a vehicle cabin air filtration system showing fresh air inlet, particulate pre-filter, activated carbon stage, HEPA final stage, recirculation loop, and delivery to cabin',
+    },
+    svgComponentId: 'CabinAirSystem',
+  },
+
+  // ── 15. Water Contamination Pathways ──────────────────────────────────────
+  {
+    slug: 'water-contamination-pathways',
+    entityId: 'DIAG-WATER-CONT-PATHS',
+    title: 'Water Contamination Ingress Pathways — Diesel Fuel Systems',
+    metaDescription:
+      'Engineering diagram showing five water ingress pathways into diesel fuel and hydraulic systems — condensation, fill cap, breather vent, worn seals, and cross-contamination — and the downstream equipment damage consequences.',
+    engineeringPurpose:
+      'Identifies and maps the five primary water ingress mechanisms in diesel fuel and hydraulic reservoirs to enable targeted prevention design. Water contamination is the primary failure driver in HPCR fuel injection systems and the principal cause of microbial growth in diesel fuel tanks. Each ingress pathway requires a specific prevention measure.',
+    diagramType: 'flow',
+    governingStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
+    applicableSystems: ['fuel-cleanliness', 'hydraulic-protection'],
+    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedArticles: [
+      'water-contamination-fuel',
+      'diesel-fuel-filtration',
+      'hpcr-fuel-system-cleanliness',
+      'contamination-control',
+    ],
+    relatedGlossaryTerms: [
+      'TERM-WATER-INGRESS',
+      'TERM-KARL-FISCHER-TITRATION',
+      'TERM-FREE-WATER',
+      'TERM-EMULSIFIED-WATER',
+      'TERM-MICROBIAL-CONTAMINATION',
+      'TERM-COALESCING',
+      'TERM-HPCR',
+      'TERM-INJECTOR-STICTION',
+      'TERM-WATER-SEPARATION-EFFICIENCY',
+    ],
+    revisionMetadata: {
+      version: '1.0.0',
+      lastReviewed: '2026-07-08',
+      nextReview: '2027-07-08',
+      status: 'current',
+    },
+    accessibility: {
+      title: 'Water Contamination Ingress Pathways Diagram',
+      desc: 'Central element: a fuel or hydraulic reservoir tank shape. Five ingress pathways shown as arrows pointing into the tank. Top-left: condensation from temperature cycling with water droplet symbols. Top-right: fill cap splash or rain ingress. Left: breather vent admitting humid air shown as a dashed arrow. Bottom-left: worn shaft seals allowing external water ingress. Bottom-right: transfer cross-contamination from contaminated fluid during transfers. Right side of diagram: consequence chain — arrow leaving tank labelled free water present, then four stacked consequence boxes: microbial growth from sulphate-reducing bacteria, filter plugging at the hydrocarbon-water interface, injector corrosion, and HPCR pump damage. Detection box below: Karl Fischer titration per ASTM D6304 and ISO 12937, target below 200 ppm by weight.',
+      ariaLabel: 'Diagram showing five water contamination ingress pathways in diesel fuel systems and the downstream equipment damage consequences',
+    },
+    svgComponentId: 'WaterContaminationPathways',
+  },
 ];
 
 /**

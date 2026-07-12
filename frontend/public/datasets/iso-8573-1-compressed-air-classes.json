@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "ISO 8573-1 Compressed Air Quality Classes — Particles, Water, and Oil",
+  "description": "ISO 8573-1:2010 compressed air purity class definitions for solid particles (particle concentration per m³), water (pressure dew point °C and liquid water content), and total oil aerosol (mg/m³). Used for specifying compressed air quality in industrial, food, pharmaceutical, and electronics applications.",
+  "creator": {
+    "@type": "Organization",
+    "@id": "https://elimfilters.com/#organization",
+    "name": "ELIMFILTERS"
+  },
+  "dateModified": "2026-06-15",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "ISO 8573-1:2010 — Compressed air — Part 1: Contaminants and purity classes",
+  "particleClasses": [
+    { "class": 0, "particles_0_1_0_5_per_m3": "> Class 1 specified by user",  "particles_0_5_1_0_per_m3": "Per agreement", "particles_1_0_5_0_per_m3": "Per agreement", "note": "User-defined — stricter than Class 1" },
+    { "class": 1, "particles_0_1_0_5_per_m3": "≤ 20,000",   "particles_0_5_1_0_per_m3": "≤ 400",  "particles_1_0_5_0_per_m3": "≤ 10",   "note": "Electronics, cleanroom" },
+    { "class": 2, "particles_0_1_0_5_per_m3": "≤ 400,000",  "particles_0_5_1_0_per_m3": "≤ 6,000","particles_1_0_5_0_per_m3": "≤ 100",  "note": "Precision instruments, spray painting" },
+    { "class": 3, "particles_0_1_0_5_per_m3": "N/A",        "particles_0_5_1_0_per_m3": "≤ 90,000","particles_1_0_5_0_per_m3": "≤ 1,000","note": "General manufacturing, pneumatic tools" },
+    { "class": 4, "particles_0_1_0_5_per_m3": "N/A",        "particles_0_5_1_0_per_m3": "N/A",   "particles_1_0_5_0_per_m3": "≤ 10,000","note": "Heavy industry, blasting" },
+    { "class": 5, "particles_0_1_0_5_per_m3": "N/A",        "particles_0_5_1_0_per_m3": "N/A",   "particles_1_0_5_0_per_m3": "≤ 100,000","note": "Unregulated process air" }
+  ],
+  "waterClasses": [
+    { "class": 1, "pressureDewPoint_C": "≤ -70", "note": "Cryogenic air separation, aerospace" },
+    { "class": 2, "pressureDewPoint_C": "≤ -40", "note": "Instrument air, food contact" },
+    { "class": 3, "pressureDewPoint_C": "≤ -20", "note": "General instrument air" },
+    { "class": 4, "pressureDewPoint_C": "≤ +3",  "note": "Outdoor installations, unheated lines" },
+    { "class": 5, "pressureDewPoint_C": "≤ +7",  "note": "Indoor compressed air" },
+    { "class": 6, "pressureDewPoint_C": "≤ +10", "note": "Non-critical industrial" },
+    { "class": "X", "pressureDewPoint_C": "> +10", "note": "Liquid water present; user-defined limit required" }
+  ],
+  "oilClasses": [
+    { "class": 0,  "totalOil_mg_per_m3": "Per agreement with supplier", "note": "Oil-free systems" },
+    { "class": 1,  "totalOil_mg_per_m3": "≤ 0.01",   "note": "Food, pharmaceutical, electronics" },
+    { "class": 2,  "totalOil_mg_per_m3": "≤ 0.1",    "note": "Painting, precision assembly" },
+    { "class": 3,  "totalOil_mg_per_m3": "≤ 1.0",    "note": "General manufacturing" },
+    { "class": 4,  "totalOil_mg_per_m3": "≤ 5.0",    "note": "Heavy industrial, pneumatic tools" },
+    { "class": "X", "totalOil_mg_per_m3": "> 5.0",   "note": "User-defined higher limit" }
+  ],
+  "typicalSpecifications": [
+    { "application": "Food & beverage direct contact", "particles": "Class 1", "water": "Class 2", "oil": "Class 1" },
+    { "application": "Pharmaceutical manufacturing", "particles": "Class 1", "water": "Class 2", "oil": "Class 1" },
+    { "application": "Spray painting (automotive)", "particles": "Class 2", "water": "Class 3", "oil": "Class 2" },
+    { "application": "Pneumatic tools (workshops)", "particles": "Class 3", "water": "Class 5", "oil": "Class 3" },
+    { "application": "Mining compressed air (drills, jacks)", "particles": "Class 4", "water": "Class 5", "oil": "Class 4" },
+    { "application": "Instrument / control air", "particles": "Class 2", "water": "Class 2", "oil": "Class 2" }
+  ],
+  "governingStandard": "ISO 8573-1:2010",
+  "relatedStandards": ["ISO 8573-2:2018", "ISO 8573-3:1999", "ISO 8573-4:2019", "ISO 8573-5:2001"],
+  "source": "https://elimfilters.com/knowledge-center/datasets"
+}

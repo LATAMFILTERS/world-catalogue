@@ -232,16 +232,22 @@ export const TERM_IDS = {
 // ── Diagram IDs ───────────────────────────────────────────────────────────────
 
 export const DIAGRAM_IDS = {
-  'multipass-test-circuit':        'DIAG-MULTIPASS-TEST',
-  'beta-ratio-measurement':        'DIAG-BETA-RATIO',
-  'iso-4406-cleanliness-scale':    'DIAG-ISO4406-CLEANLINESS',
-  'hydraulic-contamination-paths': 'DIAG-HYD-CONTAMINATION',
-  'air-intake-filtration-flow':    'DIAG-AIR-INTAKE-FLOW',
-  'lube-oil-circuit':              'DIAG-LUBE-OIL-CIRCUIT',
-  'fuel-filtration-3stage':        'DIAG-FUEL-3STAGE',
-  'differential-pressure-curve':   'DIAG-DP-CURVE',
-  'compressed-air-treatment':      'DIAG-CA-TREATMENT',
-  'particle-wear-mechanism':       'DIAG-PARTICLE-WEAR',
+  'multipass-test-circuit':          'DIAG-MULTIPASS-TEST',
+  'beta-ratio-measurement':          'DIAG-BETA-RATIO',
+  'iso-4406-cleanliness-scale':      'DIAG-ISO4406-CLEANLINESS',
+  'hydraulic-contamination-paths':   'DIAG-HYD-CONTAMINATION',
+  'air-intake-filtration-flow':      'DIAG-AIR-INTAKE-FLOW',
+  'lube-oil-circuit':                'DIAG-LUBE-OIL-CIRCUIT',
+  'fuel-filtration-3stage':          'DIAG-FUEL-3STAGE',
+  'differential-pressure-curve':     'DIAG-DP-CURVE',
+  'compressed-air-treatment':        'DIAG-CA-TREATMENT',
+  'particle-wear-mechanism':         'DIAG-PARTICLE-WEAR',
+  // ── Phase 6B additions ──────────────────────────────────────────────────────
+  'filter-media-cross-section':      'DIAG-MEDIA-CROSS-SECTION',
+  'iso-8573-purity-classes':         'DIAG-ISO8573-PURITY',
+  'service-interval-flow':           'DIAG-SERVICE-INTERVAL-FLOW',
+  'cabin-air-system':                'DIAG-CABIN-AIR-SYSTEM',
+  'water-contamination-pathways':    'DIAG-WATER-CONT-PATHS',
 } as const;
 
 // ── Lookup helpers ─────────────────────────────────────────────────────────────
@@ -272,4 +278,39 @@ export function getTermId(slug: string): string | undefined {
 
 export function getDiagramId(slug: string): string | undefined {
   return (DIAGRAM_IDS as Record<string, string>)[slug];
+}
+
+// ── Calculator IDs ─────────────────────────────────────────────────────────────
+
+export const CALCULATOR_IDS = {
+  'iso4406-code-converter':      'CALC-ISO4406-CONVERTER',
+  'beta-ratio-efficiency':       'CALC-BETA-RATIO-EFF',
+  'pressure-drop-estimator':     'CALC-PRESSURE-DROP',
+  'dhc-planning-estimator':      'CALC-DHC-ESTIMATOR',
+  'air-filter-restriction':      'CALC-AIR-RESTRICTION',
+  'fluid-cleanliness-evaluator': 'CALC-FLUID-CLEANLINESS',
+  'service-interval-engineering':'CALC-SERVICE-INTERVAL',
+} as const;
+
+export function getCalculatorId(slug: string): string | undefined {
+  return (CALCULATOR_IDS as Record<string, string>)[slug];
+}
+
+// ── Comparison IDs ─────────────────────────────────────────────────────────────
+
+export const COMPARISON_IDS = {
+  'beta-ratio-vs-filtration-efficiency': 'COMP-BETA-VS-EFF',
+  'iso4406-vs-nas1638':                  'COMP-ISO4406-VS-NAS',
+  'iso5011-vs-sae-j726':                 'COMP-ISO5011-VS-SAE',
+  'cellulose-vs-synthetic-media':        'COMP-CELLULOSE-VS-SYN',
+  'surface-vs-depth-filtration':         'COMP-SURFACE-VS-DEPTH',
+  'bypass-vs-full-flow-filtration':      'COMP-BYPASS-VS-FULL',
+  'single-stage-vs-multi-stage-fuel':    'COMP-SINGLE-VS-MULTI-FUEL',
+  'online-vs-offline-hydraulic':         'COMP-ONLINE-VS-OFFLINE',
+  'multipass-vs-single-pass-testing':    'COMP-MULTI-VS-SINGLE-TEST',
+  'gravimetric-vs-particle-counting':    'COMP-GRAV-VS-PARTICLE',
+} as const;
+
+export function getComparisonId(slug: string): string | undefined {
+  return (COMPARISON_IDS as Record<string, string>)[slug];
 }

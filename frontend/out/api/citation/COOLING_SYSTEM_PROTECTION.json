@@ -1,0 +1,93 @@
+{
+  "key": "COOLING_SYSTEM_PROTECTION",
+  "type": "system",
+  "name": "Cooling System Protection",
+  "slug": "cooling-system-protection",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "COOLING_SYSTEM_PROTECTION",
+  "tags": [
+    "system",
+    "active",
+    "cooling",
+    "coolant",
+    "asset-protection",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/cooling-system-protection",
+    "concept": "Cooling System Protection",
+    "version": "1.0",
+    "last_updated": "2026-07-11",
+    "content_hash": "sha256:3534002abc15acab484e2266c16fb28768bf274bd6d0c31631d580089f9b009d"
+  },
+  "canonical": {
+    "definition": "Cooling System Protection is the ELIMFILTERS system domain protecting coolant circuits from contamination, scale, corrosion, liner cavitation, heat-transfer loss, and overheating in diesel-powered industrial assets.",
+    "systems": "Coolant filters, coolant treatment circuits, cooling system protection elements, heavy-duty engine coolant loops, generator cooling circuits, and severe-duty thermal protection programs.",
+    "failure_impact": "Coolant contamination, scale, corrosion, or additive depletion → reduced heat transfer, liner pitting, cavitation erosion, overheating, gasket damage, engine derating, emergency shutdown, and premature engine failure.",
+    "related_standards": "Cooling system protection uses coolant quality monitoring, contamination control, and OEM heavy-duty coolant maintenance requirements to preserve heat-transfer performance and corrosion protection.",
+    "related_technologies": "THERMACORE: ELIMFILTERS cooling system protection technology for coolant circuit reliability and thermal asset protection.",
+    "industrial_role": "Cooling System Protection is critical where engines operate under high thermal load, extended duty cycles, dusty environments, standby generator readiness requirements, and remote maintenance conditions where overheating causes immediate downtime."
+  },
+  "relationships": {
+    "applicable_industries": [
+      "CONSTRUCTION",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL",
+      "AGRICULTURE"
+    ],
+    "applicable_technologies": [
+      "THERMACORE"
+    ]
+  },
+  "vault_path": "elimfilters-vault/03-systems/COOLING_SYSTEM_PROTECTION.md",
+  "_links": {
+    "self": "/api/citation/COOLING_SYSTEM_PROTECTION.json",
+    "type_index": "/api/citation/type/system.json",
+    "related": [
+      {
+        "key": "CONSTRUCTION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "applicable_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "THERMACORE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/THERMACORE.json"
+      }
+    ]
+  }
+}

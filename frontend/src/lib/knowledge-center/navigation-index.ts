@@ -37,15 +37,15 @@ import type { TerminologyEntry } from './governance';
 // ── Graph Version Metadata ────────────────────────────────────────────────────
 
 export const KC_GRAPH_METADATA = {
-  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams */
-  graphVersion: '5D.53.22.12.68.10',
+  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams.Calculators.Comparisons */
+  graphVersion: '6F.53.22.12.68.15.7.10',
   /** Schema version for the navigation index structure. */
   schemaVersion: '1.1.0',
   /**
    * Deterministic build date (not a timestamp).
    * Identical for any two builds of the same data.
    */
-  generatedAt: '2026-07-05',
+  generatedAt: '2026-07-08',
   entityCounts: {
     articles:     53,
     standards:    22,
@@ -54,7 +54,9 @@ export const KC_GRAPH_METADATA = {
     industries:   10,
     problems:     15,
     terms:        68,
-    diagrams:     10,
+    diagrams:     15,
+    calculators:   7,
+    comparisons:  10,
   },
   edgeTypes: [
     'ARTICLE_TO_STANDARD',
@@ -72,6 +74,14 @@ export const KC_GRAPH_METADATA = {
     'TERM_TO_ARTICLE',
     'TERM_TO_TERM',
     'ARTICLE_TO_TERM',
+    'CALCULATOR_TO_STANDARD',
+    'CALCULATOR_TO_ARTICLE',
+    'CALCULATOR_TO_TECHNOLOGY',
+    'COMPARISON_TO_STANDARD',
+    'COMPARISON_TO_TECHNOLOGY',
+    'COMPARISON_TO_SYSTEM',
+    'COMPARISON_TO_ARTICLE',
+    'COMPARISON_TO_TERM',
   ],
 } as const;
 
