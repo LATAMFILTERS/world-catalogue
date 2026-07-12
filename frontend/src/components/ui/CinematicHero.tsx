@@ -8,6 +8,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function CinematicHero() {
   const { t } = useTranslation();
+  const assetsTitle = t("home.heroLine_assets", "Assets").replace(/[.。．]+$/u, "");
 
   return (
     <section
@@ -86,7 +87,7 @@ export default function CinematicHero() {
               lineHeight: 0.9,
             }}
           >
-            {t("home.heroLine_assets", "Assets")}
+            {assetsTitle}
           </span>
         </motion.h1>
 
