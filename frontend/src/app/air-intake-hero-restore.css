@@ -28,6 +28,16 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > 
   line-height: 1.45 !important;
 }
 
+/* Air Intake first content block: justified copy, no generic label. */
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:first-of-type p {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:first-of-type div > div > p:first-child {
+  display: none !important;
+}
+
 @media (max-width: 900px) {
   main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
     padding-left: clamp(1.5rem, 5vw, 4rem) !important;
