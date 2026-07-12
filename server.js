@@ -2107,24 +2107,31 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
 // /api/search/vin and /api/search/equipment query for duty='LIGHT_DUTY'). Moves
 // that data over and clears the misplaced equipment_applications for LD rows.
 app.post('/api/admin/migrate-ld-vehicle-applications', adminLimiter, requireAdmin, async (req, res) => {
+  const batchSize = Math.min(parseInt(req.query.batch, 10) || 300, 500);
   const client = await pool.connect();
   try {
     const result = await client.query(`
-      UPDATE elimfilters_catalog SET
+      WITH batch AS (
+        SELECT sku FROM elimfilters_catalog
+        WHERE duty = 'LIGHT_DUTY'
+          AND jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 0
+        LIMIT $1
+      )
+      UPDATE elimfilters_catalog c SET
         vehicle_applications = (
           SELECT jsonb_agg(DISTINCT elem)
           FROM (
-            SELECT jsonb_array_elements(COALESCE(vehicle_applications,'[]'::jsonb))
+            SELECT jsonb_array_elements(COALESCE(c.vehicle_applications,'[]'::jsonb))
             UNION ALL
-            SELECT jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb))
+            SELECT jsonb_array_elements(COALESCE(c.equipment_applications,'[]'::jsonb))
           ) AS t(elem)
         ),
         equipment_applications = '[]'::jsonb
-      WHERE duty = 'LIGHT_DUTY'
-        AND jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 0
-      RETURNING sku
-    `);
-    res.json({ success: true, migrated: result.rowCount, skus: result.rows.map(r => r.sku).slice(0, 50) });
+      FROM batch
+      WHERE c.sku = batch.sku
+      RETURNING c.sku
+    `, [batchSize]);
+    res.json({ success: true, migrated: result.rowCount, done: result.rowCount === 0, skus: result.rows.map(r => r.sku).slice(0, 50) });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
