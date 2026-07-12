@@ -6,6 +6,7 @@ import './home-emergency-restore.css';
 import './systems-cleanup.css';
 import './air-intake-hero-restore.css';
 import './air-intake-visible-cleanup.css';
+import './core-systems-editorial.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
     'total asset protection systems', 'industrial asset protection', 'industrial filtration',
     'contamination control systems', 'air filters industrial', 'fuel filters heavy duty',
     'hydraulic filters', 'oil filters industrial', 'mining filtration',
-    'agriculture filtration', 'marine filtration', 'SYNTRAX filter',
-    'NANOFORCE filter', 'INTEKCORE', 'ELIMFILTERS',
+    'construction equipment filters', 'fleet maintenance filters', 'industrial air filtration',
+    'engine protection systems', 'equipment reliability', 'downtime reduction',
   ],
   authors: [{ name: 'ELIMFILTERS', url: BASE_URL }],
   creator: 'ELIMFILTERS',
@@ -44,53 +45,21 @@ export const metadata: Metadata = {
     shortcut: '/images/logo.svg',
     apple: '/images/logo.svg',
   },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: BASE_URL,
-    siteName: 'ELIMFILTERS World Catalogue',
-    title: BRAND_TITLE,
-    description: BRAND_DESCRIPTION,
-    images: [
-      {
-        url: `${BASE_URL}/images/logo.svg`,
-        width: 1200,
-        height: 630,
-        alt: 'ELIMFILTERS',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: BRAND_TITLE,
-    description: BRAND_DESCRIPTION,
-    images: [`${BASE_URL}/images/logo.svg`],
-  },
-  alternates: {
-    canonical: BASE_URL,
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-T7STY4TY9C" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
-          `}
-        </Script>
-      </head>
       <body>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA_ID}');`}
+        </Script>
         <ClientProviders>
           {children}
+          <ChatBot />
           <ConsentBanner />
           <Analytics />
-          <ChatBot />
         </ClientProviders>
       </body>
     </html>
