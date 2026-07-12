@@ -1,5 +1,5 @@
-/* Air Intake hero restore: undo failed text-position experiments.
- * This file is loaded after systems-cleanup.css and only affects /systems/air-intake.
+/* Air Intake hero correction: move ONLY the title/subtitle block over the left engine filter.
+ * Do not shift or reframe the background image. Keep the model fully visible.
  */
 main header:has(> img[src$="/images/mecanica-air.avif"]) > img {
   object-position: center top !important;
@@ -9,21 +9,23 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > img {
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
   max-width: 1200px !important;
-  padding-left: clamp(46vw, 52vw, 58vw) !important;
+  padding-left: clamp(4.25rem, 7vw, 7.5rem) !important;
   padding-right: clamp(1.5rem, 5vw, 4rem) !important;
-  transform: translate(-10%, 15%) !important;
+  transform: translate(0, 8%) !important;
 }
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > h1 {
-  max-width: 760px !important;
-  font-size: clamp(2.65rem, 5.8vw, 5.45rem) !important;
+  max-width: min(660px, 38vw) !important;
+  font-size: clamp(2.35rem, 4.45vw, 4.35rem) !important;
+  line-height: 0.9 !important;
 }
 
 main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > p:last-child {
   color: #FFF12D !important;
-  max-width: 980px !important;
-  width: min(980px, 100%) !important;
+  max-width: min(610px, 37vw) !important;
+  width: min(610px, 37vw) !important;
   font-family: 'Barlow', Arial, sans-serif !important;
+  line-height: 1.45 !important;
 }
 
 @media (max-width: 900px) {
