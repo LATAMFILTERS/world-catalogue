@@ -78,30 +78,8 @@ export default function SystemsPage() {
         </a>
       </section>
 
-      <section style={section}>
-        <div style={twoCol}>
-          <div>
-            <p style={eyebrow}>WHY SYSTEMS MATTER</p>
-            <h2 style={sectionTitle}>A filter is a part. A system is the protection logic.</h2>
-          </div>
-          <div>
-            <p style={leadText}>
-              The same asset can fail through different contamination pathways: dust ingestion, water in fuel, abrasive wear particles, coolant instability, moisture in compressed air, or operator dust exposure.
-            </p>
-            <p style={bodyText}>
-              That is why ELIMFILTERS structures its platform around protection systems first, technologies second, product families third, and individual part numbers last.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section style={systemSection}>
         <div style={wrapWide}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>SYSTEM PORTFOLIO</p>
-            <h2 style={sectionTitle}>Select the system. Control the failure mode.</h2>
-          </div>
-
           <div style={systemGrid}>
             {PROTECTION_SYSTEM_LIST.map((system) => {
               const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
@@ -119,21 +97,6 @@ export default function SystemsPage() {
                 </Link>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section style={cta}>
-        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>PRODUCT FAMILIES</p>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Explore filters and components by product family.
-          </h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
-            Move from the protection system to the physical product family: primary air, secondary safety elements, housings, fuel, lubrication, hydraulic, coolant, cabin, and compressed air filtration.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-            <Link href="/families" style={yellowButton}>EXPLORE PRODUCT FAMILIES</Link>
           </div>
         </div>
       </section>
@@ -194,26 +157,6 @@ const partSearchHeroButton: CSSProperties = {
   fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
 
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-
-const twoCol: CSSProperties = {
-  maxWidth: '1180px', margin: '0 auto', display: 'grid',
-  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
-  gap: 'clamp(2rem, 6vw, 5rem)',
-};
-
-const sectionTitle: CSSProperties = {
-  fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
-};
-
-const leadText: CSSProperties = {
-  color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
-  lineHeight: 1.72, fontWeight: 600, margin: 0,
-};
-
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
-
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
 const systemSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
@@ -255,16 +198,4 @@ const systemLine: CSSProperties = {
 const explore: CSSProperties = {
   color: '#FFF12D', fontFamily: displayFont, fontWeight: 700,
   letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
-};
-
-const cta: CSSProperties = {
-  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
-  borderTop: '1px solid rgba(255,241,45,0.2)',
-  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
-};
-
-const yellowButton: CSSProperties = {
-  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
-  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
-  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
