@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node ../scripts/normalize-retired-citation-keys.mjs && node ../scripts/normalize-site-typography.mjs && node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js && node ../scripts/ensure-next-cache.mjs",
+    "prebuild": "node ../scripts/normalize-retired-citation-keys.mjs && node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js && node ../scripts/ensure-next-cache.mjs",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "node ../scripts/generate-kc-sitemap.mjs",
