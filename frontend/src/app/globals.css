@@ -127,6 +127,36 @@ h1, h2, h3, h4, h5, h6 {
   hyphens: auto;
 }
 
+/* Phase 2A — internal page hero typography normalization.
+ * Scope intentionally excludes HOME by targeting internal pages that render
+ * the fixed HOME link immediately before their hero section.
+ */
+main > a[href="/"] + section h1,
+main > a[href="/"] + section h1 span {
+  font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.06em !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase !important;
+}
+
+main > a[href="/"] + section h1 {
+  font-size: clamp(2.85rem, 6.2vw, 6.05rem) !important;
+  max-width: 980px !important;
+}
+
+main > a[href="/"] + section h1 span {
+  font-size: 0.94em !important;
+}
+
+main > a[href="/"] + section p {
+  font-family: 'Barlow', Arial, sans-serif !important;
+}
+
+main > a[href="/"] + section p:first-of-type {
+  font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
+}
+
 img, video, iframe {
   max-width: 100%;
   display: block;
