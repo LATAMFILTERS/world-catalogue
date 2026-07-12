@@ -29,12 +29,17 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > 
 }
 
 /* Air Intake first content block: justified copy, no generic label. */
+main > header:has(> img[alt="Air Intake & Airflow Protection"]) + section p,
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:first-of-type p,
 main:has(header > img[src$="/images/mecanica-air.avif"]) > section:first-of-type p {
   text-align: justify !important;
   text-justify: inter-word !important;
+  text-align-last: left !important;
 }
 
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:first-of-type div > div > p:first-child {
+main > header:has(> img[alt="Air Intake & Airflow Protection"]) + section > div > div > p:first-child,
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:first-of-type > div > div > p:first-child,
+main:has(header > img[src$="/images/mecanica-air.avif"]) > section:first-of-type > div > div > p:first-child {
   display: none !important;
 }
 
