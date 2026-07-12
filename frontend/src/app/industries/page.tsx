@@ -41,7 +41,6 @@ export default function IndustriesPage() {
 
   return (
     <main style={main}>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <Link href="/" style={homeButton}>HOME</Link>
@@ -122,8 +121,8 @@ export default function IndustriesPage() {
   );
 }
 
-const displayFont = 'Chakra Petch, Arial Narrow, monospace';
-const bodyFont = 'Barlow, Arial, sans-serif';
+const displayFont = 'var(--font-display)';
+const bodyFont = 'var(--font-body)';
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
