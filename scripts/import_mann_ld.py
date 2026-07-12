@@ -173,12 +173,30 @@ def post_batch(rows: list, dry_run: bool) -> dict:
         return {'success': True, 'inserted': 0, 'updated': 0, 'errors': []}
 
     url = f"{API_BASE}/api/import/mann"
-    resp = requests.post(
-        url,
-        json={'products': rows},
-        headers={'Authorization': f'Bearer {API_KEY}', 'Content-Type': 'application/json'},
-        timeout=120,
-    )
+    try:
+        resp = requests.post(
+            url,
+            json={'products': rows},
+            headers={'Authorization': f'Bearer {API_KEY}', 'Content-Type': 'application/json'},
+            timeout=180,
+        )
+    except requests.exceptions.Timeout:
+        if len(rows) > 1:
+            mid = len(rows) // 2
+            log.warning(f"  timeout — splitting {len(rows)} rows into {mid}+{len(rows)-mid} and retrying")
+            r1 = post_batch(rows[:mid], dry_run)
+            r2 = post_batch(rows[mid:], dry_run)
+            return {
+                'success':  True,
+                'inserted': r1.get('inserted', 0) + r2.get('inserted', 0),
+                'updated':  r1.get('updated', 0)  + r2.get('updated', 0),
+                'errors':   (r1.get('errors') or []) + (r2.get('errors') or []),
+            }
+        # single row still times out — record it as an error and move on
+        log.error(f"  timeout on single row {rows[0].get('sku')} — skipping")
+        return {'success': True, 'inserted': 0, 'updated': 0,
+                'errors': [{'sku': rows[0].get('sku'), 'error': 'request timeout'}]}
+
     # If payload too large, split in half and retry recursively
     if resp.status_code == 413 and len(rows) > 1:
         mid = len(rows) // 2
