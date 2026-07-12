@@ -124,7 +124,7 @@ export default function ProtectionSystemPage({ params }: Props) {
 
   const heroStyle: CSSProperties = {
     position: 'relative',
-    minHeight: isAirIntake ? 'clamp(560px, 78vh, 860px)' : 'clamp(440px, 68vh, 720px)',
+    minHeight: isAirIntake ? 'clamp(590px, 82vh, 900px)' : 'clamp(440px, 68vh, 720px)',
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
@@ -136,16 +136,16 @@ export default function ProtectionSystemPage({ params }: Props) {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    objectPosition: isAirIntake ? 'center 38%' : 'center center',
-    opacity: isAirIntake ? 0.68 : 0.42,
-    filter: isAirIntake ? 'brightness(1.18) contrast(1.06) saturate(1.06)' : 'brightness(1.05)',
+    objectPosition: isAirIntake ? 'center 26%' : 'center center',
+    opacity: isAirIntake ? 0.78 : 0.42,
+    filter: isAirIntake ? 'brightness(1.15) contrast(1.05) saturate(1.05)' : 'brightness(1.05)',
   };
 
   const heroOverlayStyle: CSSProperties = {
     position: 'absolute',
     inset: 0,
     background: isAirIntake
-      ? 'linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.56) 38%, rgba(0,0,0,0.10) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.12), transparent 34%)'
+      ? 'linear-gradient(90deg, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.50) 34%, rgba(0,0,0,0.18) 72%, rgba(0,0,0,0.26) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.10), transparent 34%)'
       : 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
   };
 
@@ -161,13 +161,22 @@ export default function ProtectionSystemPage({ params }: Props) {
   const heroTitleStyle: CSSProperties = {
     fontFamily: displayFont,
     fontWeight: 700,
-    fontSize: isAirIntake ? 'clamp(2.9rem, 6.5vw, 6.2rem)' : 'clamp(3.1rem, 7.5vw, 7.2rem)',
+    fontSize: isAirIntake ? 'clamp(2.65rem, 5.8vw, 5.45rem)' : 'clamp(3.1rem, 7.5vw, 7.2rem)',
     lineHeight: 0.88,
     letterSpacing: '-0.055em',
     textTransform: 'uppercase',
-    maxWidth: isAirIntake ? '820px' : '980px',
+    maxWidth: isAirIntake ? '760px' : '980px',
     margin: 0,
     marginBottom: '1.5rem',
+  };
+
+  const heroTaglineStyle: CSSProperties = {
+    fontFamily: bodyFont,
+    fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+    color: isAirIntake ? '#FFF12D' : 'rgba(255,255,255,0.82)',
+    maxWidth: isAirIntake ? '980px' : '770px',
+    lineHeight: 1.65,
+    fontWeight: 800,
   };
 
   const breadcrumb = {
@@ -231,13 +240,15 @@ export default function ProtectionSystemPage({ params }: Props) {
           />
           <div style={heroOverlayStyle} />
           <div style={heroContentStyle}>
-            <p style={{ ...labelStyle, color: '#FFF12D', marginBottom: '1.25rem', letterSpacing: '0.34em' }}>
-              PROTECTION SYSTEM
-            </p>
+            {!isAirIntake && (
+              <p style={{ ...labelStyle, color: '#FFF12D', marginBottom: '1.25rem', letterSpacing: '0.34em' }}>
+                PROTECTION SYSTEM
+              </p>
+            )}
             <h1 style={heroTitleStyle}>
               {sys.name}
             </h1>
-            <p style={{ fontFamily: bodyFont, fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'rgba(255,255,255,0.82)', maxWidth: isAirIntake ? '700px' : '770px', lineHeight: 1.65, fontWeight: 700 }}>
+            <p style={heroTaglineStyle}>
               {sys.tagline}
             </p>
           </div>
