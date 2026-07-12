@@ -83,8 +83,11 @@ export default function SystemsPage() {
               const cardPlacement = index < 3 ? topCardPlacement : bottomCardPlacement;
 
               return (
-                <Link key={system.key} href={`/systems/${system.slug}`} style={{ ...systemCard, ...cardPlacement }}>
-                  <img src={image} alt={system.name} style={systemImage} />
+                <Link
+                  key={system.key}
+                  href={`/systems/${system.slug}`}
+                  style={{ ...systemCard, ...cardPlacement, backgroundImage: `url(${image})` }}
+                >
                   <div style={systemOverlay} />
                   <div style={systemContent}>
                     <h3 style={systemTitle}>{system.name}</h3>
@@ -167,12 +170,8 @@ const bottomCardPlacement: CSSProperties = { gridColumn: 'span 3' };
 
 const systemCard: CSSProperties = {
   minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
-  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505', display: 'block',
-};
-
-const systemImage: CSSProperties = {
-  position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.82, filter: 'brightness(1.08)',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: '#050505', display: 'block',
+  backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
 };
 
 const systemOverlay: CSSProperties = {
