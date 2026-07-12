@@ -2051,11 +2051,16 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
 
   const client = await pool.connect();
   let updated = 0, skipped = 0, errors = 0;
+  const skippedDetails = [];
+  const pushSkip = (mann, sku, reason) => {
+    skipped++;
+    if (skippedDetails.length < 200) skippedDetails.push({ mann, sku, reason });
+  };
   try {
     for (const row of rows) {
       const mannSku = (row.sku || '').trim();
       const crossrefs = row.crossrefs || {};
-      if (!mannSku || Object.keys(crossrefs).length === 0) { skipped++; continue; }
+      if (!mannSku || Object.keys(crossrefs).length === 0) { pushSkip(mannSku, null, 'no_crossrefs'); continue; }
 
       // Build competitor_codes array from crossrefs object
       const newCodes = [];
@@ -2064,25 +2069,25 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
           if (code) newCodes.push({ manufacturer: manufacturer.toUpperCase(), code: code.trim() });
         }
       }
-      if (newCodes.length === 0) { skipped++; continue; }
+      if (newCodes.length === 0) { pushSkip(mannSku, null, 'no_valid_codes'); continue; }
 
       // Find the LD product by codigo_base (last 4 digits of Mann part number)
       // Mann W940/21 → digits "94021" → last 4 = "4021" → codigo_base
       const digits = mannSku.replace(/\D/g, '');
-      if (!digits) { skipped++; continue; }
+      if (!digits) { pushSkip(mannSku, null, 'no_digits'); continue; }
       const codigoBase = digits.slice(-4).padStart(4, '0');
       const find = await client.query(
-        `SELECT id, competitor_codes FROM elimfilters_catalog
+        `SELECT id, sku, competitor_codes FROM elimfilters_catalog
          WHERE duty = 'LIGHT_DUTY' AND codigo_base = $1
          LIMIT 1`,
         [codigoBase]
       );
-      if (!find.rows.length) { skipped++; continue; }
+      if (!find.rows.length) { pushSkip(mannSku, null, `not_found:codigo_base=${codigoBase}`); continue; }
 
       const existing = find.rows[0].competitor_codes || [];
       const existingSet = new Set(existing.map(c => `${c.manufacturer}|${c.code}`));
       const toAdd = newCodes.filter(c => !existingSet.has(`${c.manufacturer}|${c.code}`));
-      if (toAdd.length === 0) { skipped++; continue; }
+      if (toAdd.length === 0) { pushSkip(mannSku, find.rows[0].sku, 'already_applied'); continue; }
 
       const merged = [...existing, ...toAdd];
       try {
@@ -2096,7 +2101,7 @@ app.post('/api/update/mann-crossrefs', importLimiter, requireAdmin, async (req, 
         errors++;
       }
     }
-    res.json({ success: true, total: rows.length, updated, skipped, errors });
+    res.json({ success: true, total: rows.length, updated, skipped, errors, skippedDetails });
   } catch (e) {
     console.error('[update/mann-crossrefs]', e.message);
     res.status(500).json({ success: false, error: e.message });

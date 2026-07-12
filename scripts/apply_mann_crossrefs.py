@@ -50,7 +50,7 @@ def post_batch(rows: list, dry_run: bool) -> dict:
     return resp.json()
 
 
-def run(input_path: Path, dry_run: bool):
+def run(input_path: Path, dry_run: bool, skip_details_file: Path | None = None):
     if not input_path.exists():
         log.error(f"File not found: {input_path}")
         sys.exit(1)
@@ -60,6 +60,7 @@ def run(input_path: Path, dry_run: bool):
     total_updated = 0
     total_skipped = 0
     total_errors = 0
+    all_skip_details = []
 
     batch = []
 
@@ -89,6 +90,7 @@ def run(input_path: Path, dry_run: bool):
                 total_updated += result.get('updated', 0)
                 total_skipped += result.get('skipped', 0)
                 total_errors  += result.get('errors', 0)
+                all_skip_details.extend(result.get('skippedDetails', []))
                 log.info(
                     f"  Batch {total_read}: +{result.get('updated',0)} upd "
                     f"{result.get('skipped',0)} skip {result.get('errors',0)} err"
@@ -102,6 +104,7 @@ def run(input_path: Path, dry_run: bool):
         total_updated += result.get('updated', 0)
         total_skipped += result.get('skipped', 0)
         total_errors  += result.get('errors', 0)
+        all_skip_details.extend(result.get('skippedDetails', []))
 
     log.info(f"\n{'='*55}")
     log.info(f"Mann LD Crossrefs Apply {'(DRY RUN)' if dry_run else ''}")
@@ -111,12 +114,20 @@ def run(input_path: Path, dry_run: bool):
     log.info(f"  Skipped (not found): {total_skipped:,}")
     log.info(f"  Errors            : {total_errors:,}")
 
+    if skip_details_file and all_skip_details:
+        skip_details_file.write_text(json.dumps(all_skip_details, indent=2), encoding='utf-8')
+        log.info(f"\n  {len(all_skip_details)} skip details saved to: {skip_details_file}")
+        from collections import Counter
+        reasons = Counter(d['reason'].split(':')[0] for d in all_skip_details)
+        log.info(f"  Reasons breakdown: {dict(reasons)}")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Apply Mann LD crossrefs to catalog')
     parser.add_argument('--file',    default=str(INPUT_FILE), help='Path to mann_ld_crossrefs.jsonl')
     parser.add_argument('--api-key', default=None,            help='ADMIN_KEY')
     parser.add_argument('--dry-run', action='store_true',     help='Parse without posting')
+    parser.add_argument('--skip-details-file', default=None,  help='Save per-row skip reasons to this JSON file')
     args = parser.parse_args()
 
     if not args.dry_run and not args.api_key:
@@ -125,4 +136,5 @@ if __name__ == '__main__':
 
     API_KEY = args.api_key
 
-    run(Path(args.file), args.dry_run)
+    run(Path(args.file), args.dry_run,
+        Path(args.skip_details_file) if args.skip_details_file else None)
