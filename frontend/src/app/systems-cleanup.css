@@ -83,6 +83,15 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > 
   font-family: 'Barlow', Arial, sans-serif !important;
 }
 
+/* Direct air-intake hero correction: keep model head visible and move title block left/down. */
+main > header:first-of-type > img[alt="Air Intake & Airflow Protection"] {
+  object-position: center top !important;
+}
+
+main > header:first-of-type > img[alt="Air Intake & Airflow Protection"] + div + div {
+  transform: translate(-10%, 15%) !important;
+}
+
 @media (max-width: 1100px) {
   main > section:nth-of-type(3) div[style*="repeat(auto-fit"] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -99,9 +108,11 @@ main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) > 
 }
 
 @media (max-width: 900px) {
-  main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2) {
+  main header:has(> img[src$="/images/mecanica-air.avif"]) > div:nth-of-type(2),
+  main > header:first-of-type > img[alt="Air Intake & Airflow Protection"] + div + div {
     padding-left: clamp(1.5rem, 5vw, 4rem) !important;
     padding-right: clamp(1.5rem, 5vw, 4rem) !important;
+    transform: translate(0, 10%) !important;
   }
 }
 
