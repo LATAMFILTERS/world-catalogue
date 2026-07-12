@@ -83,7 +83,7 @@ export default function SystemsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={whyTitle}>A filter is a part. A system is the protection logic.</h2>
+            <h2 style={whyTitle}>A filter is a part A system is the protection logic</h2>
           </div>
           <div>
             <p style={leadText}>
@@ -226,7 +226,7 @@ const sectionTitle: CSSProperties = {
 };
 
 const whyTitle: CSSProperties = {
-  fontFamily: approvedDisplayFont, fontSize: 'clamp(2.4rem, 4.8vw, 4.32rem)',
+  fontFamily: approvedDisplayFont, fontSize: 'clamp(2.04rem, 4.08vw, 3.67rem)',
   lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
