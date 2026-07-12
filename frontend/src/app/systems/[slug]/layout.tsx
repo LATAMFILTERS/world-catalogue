@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
-import { ServerKnowledgeConnections } from '@/components/ServerKnowledgeConnections';
+import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const system = getProtectionSystemBySlug(params.slug);
@@ -18,5 +18,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function SystemLayout({ children, params }: { children: ReactNode; params: { slug: string } }) {
-  return <>{children}<ServerKnowledgeConnections kind="system" slug={params.slug} /></>;
+  return (
+    <>
+      {children}
+      <CanonicalEntitySchema kind="system" slug={params.slug} />
+    </>
+  );
 }
