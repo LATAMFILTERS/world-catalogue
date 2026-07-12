@@ -21,9 +21,15 @@ This applies to:
 - Legal pages
 - Navigation, cards, labels, forms, and CTAs
 
-## Approved font tokens
+## Approved font families
 
 ### ELIM Display Font
+
+Approved family:
+
+```text
+Chakra Petch
+```
 
 CSS variable:
 
@@ -38,8 +44,15 @@ Approved use:
 - Section headings
 - Card titles
 - Strong visual labels
+- CTA labels
 
 ### ELIM Body Font
+
+Approved family:
+
+```text
+Barlow
+```
 
 CSS variable:
 
@@ -57,7 +70,13 @@ Approved use:
 - Forms
 - General UI text
 
-### ELIM Mono Font
+### ELIM Technical Font
+
+Approved family:
+
+```text
+Chakra Petch
+```
 
 CSS variable:
 
@@ -68,27 +87,15 @@ var(--font-mono)
 Approved use:
 
 - Technical labels
+- ISO / SAE codes
 - Small uppercase metadata
 - Engineering codes
 - SKU-like labels
 - Measurement callouts
 
-## Forbidden direct font names
-
-Do not hard-code these names in page components or CSS:
-
-- Chakra Petch
-- Barlow
-- Inter
-- Outfit
-- JetBrains Mono
-- Arial Narrow as primary font
-- Google Fonts import URLs
-- `next/font/google`
-
 ## Implementation rule
 
-Use only the approved tokens:
+Components and pages must not hard-code raw font-family stacks. They must use only the approved tokens:
 
 ```tsx
 fontFamily: 'var(--font-display)'
@@ -103,6 +110,18 @@ font-family: var(--font-display);
 font-family: var(--font-body);
 font-family: var(--font-mono);
 ```
+
+## Not approved
+
+Do not introduce additional families or local page-level typography systems such as:
+
+- Inter
+- Outfit
+- JetBrains Mono
+- Arial Narrow as primary font
+- random per-page font stacks
+- page-level Google Fonts imports
+- `next/font/google` imports inside pages/components
 
 ## Build enforcement
 
