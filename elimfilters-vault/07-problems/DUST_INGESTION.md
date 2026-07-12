@@ -22,7 +22,7 @@ symptom_indicators:
 affects_components:
   - "[[TURBOCHARGER_BEARING]]"
 affects_systems:
-  - "[[AIRFILTER]]"
+  - "[[AIR_INTAKE_PROTECTION]]"
 industry_frequency:
   - "[[MINING]]"
   - "[[CONSTRUCTION]]"
@@ -68,7 +68,7 @@ Dust ingestion problems often go undetected until oil analysis reveals elevated 
 - [[TURBOCHARGER_BEARING|Turbocharger Bearing]] — first high-speed component in the air path after filtration
 
 ### Systems Involved
-- [[AIRFILTER|Air Filtration System — Product Line]] — the system that must prevent this problem
+- [[AIR_INTAKE_PROTECTION|Air Filtration System — Product Line]] — the system that must prevent this problem
 
 ### Industries Where Most Common
 - [[MINING|Mining — Extreme Dust Exposure]] (highest severity; silica and hardrock dust)

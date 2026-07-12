@@ -29,7 +29,7 @@ protected_by_technologies:
   - "[[MACROCORE]]"
   - "[[SYNTRAX]]"
 located_in_systems:
-  - "[[AIRFILTER]]"
+  - "[[AIR_INTAKE_PROTECTION]]"
 typical_filter_families:
   - "[[AIRFILTER_PRIMARY]]"
 in_unified_data: false
@@ -67,7 +67,7 @@ In mining applications, where intake dust concentrations may exceed 10,000 mg/m�
 - [[SYNTRAX|SYNTRAX™ — Full-Flow Lube Protection]] (oil-side particle control)
 
 ### Systems
-- [[AIRFILTER|Air Filtration System — Product Line]] (primary system context)
+- [[AIR_INTAKE_PROTECTION|Air Filtration System — Product Line]] (primary system context)
 
 ### Product Families
 - [[AIRFILTER_PRIMARY|Primary Intake Protection (MACROCORE™)]] (air intake filter family)

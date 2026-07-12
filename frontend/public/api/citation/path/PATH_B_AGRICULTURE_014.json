@@ -123,7 +123,7 @@
             "TURBOCHARGER_BEARING"
           ],
           "affects_systems": [
-            "AIRFILTER"
+            "AIR_INTAKE_PROTECTION"
           ],
           "recommended_product_families": [
             "AIRFILTER_PRIMARY"

@@ -377,7 +377,7 @@
           "POWER_GENERATION"
         ],
         "applicable_to_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "related_contamination": [
           "PARTICLE_WEAR"

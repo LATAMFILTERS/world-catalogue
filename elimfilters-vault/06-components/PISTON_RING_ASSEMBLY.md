@@ -17,7 +17,7 @@ failure_consequences: "Compression loss 10–25%; blow-by increase → oil conta
 sensitive_to_contamination:
   - "[[PARTICLE_WEAR]]"
 located_in_systems:
-  - "[[AIRFILTER]]"
+  - "[[AIR_INTAKE_PROTECTION]]"
 protected_by_technologies:
   - "[[MACROCORE]]"
   - "[[SYNTRAX]]"
@@ -41,7 +41,7 @@ Two-body and three-body particle wear mechanisms operate simultaneously at the r
 - [[PARTICLE_WEAR|PARTICLE_WEAR — Piston ring assembly is the primary two-body and three-body wear site; ring-to-wall clearance (5–15 µm) is directly abraded by particles above 5 µm in oil and intake air]]
 
 ### Located In Systems
-- [[AIRFILTER|AIRFILTER — Air intake system protects combustion chamber from particle ingestion that directly contacts ring-to-wall interface]]
+- [[AIR_INTAKE_PROTECTION|AIRFILTER — Air intake system protects combustion chamber from particle ingestion that directly contacts ring-to-wall interface]]
 
 ### Protected By Technologies
 - [[MACROCORE|MACROCORE — Air intake particle capture prevents silica and environmental dust from entering combustion chamber and contacting ring-to-wall interface]]
