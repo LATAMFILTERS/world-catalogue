@@ -28,7 +28,7 @@ const SYSTEM_LINES: Record<string, string> = {
 export const metadata: Metadata = {
   title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
   description:
-    'Five industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, and cooling system protection.',
+    'Seven industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, cooling, cabin air, and compressed air protection.',
   alternates: { canonical: `${BASE_URL}/systems` },
 };
 
@@ -69,29 +69,48 @@ export default function SystemsPage() {
             <span style={{ color: '#FFF12D' }}>Around Failure Risk</span>
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, and coolant systems each demand a different contamination control strategy.
+            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, coolant, cabin, and compressed air each demand a different contamination control strategy.
           </p>
-        </div>
 
-        <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={partSearchHeroButton}>
-          PART SEARCH
-        </a>
+          <div style={tagRow}>
+            {['AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING', 'CABIN'].map((item) => (
+              <span key={item} style={tag}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={twoCol}>
+          <div>
+            <p style={eyebrow}>WHY SYSTEMS MATTER</p>
+            <h2 style={sectionTitle}>A filter is a part. A system is the protection logic.</h2>
+          </div>
+          <div>
+            <p style={leadText}>
+              The same asset can fail through different contamination pathways: dust ingestion, water in fuel, abrasive wear particles, coolant instability, moisture in compressed air, or operator dust exposure.
+            </p>
+            <p style={bodyText}>
+              That is why ELIMFILTERS structures its platform around protection systems first, technologies second, product families third, and individual part numbers last.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section style={systemSection}>
         <div style={wrapWide}>
+          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
+            <p style={eyebrow}>SYSTEM PORTFOLIO</p>
+            <h2 style={sectionTitle}>Select the system. Control the failure mode.</h2>
+          </div>
+
           <div style={systemGrid}>
-            {PROTECTION_SYSTEM_LIST.map((system, index) => {
-              const image = SYSTEM_IMAGES[system.slug] || system.heroImage || '/images/sistems-hero.avif';
+            {PROTECTION_SYSTEM_LIST.map((system) => {
+              const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
               const line = SYSTEM_LINES[system.slug] || system.tagline;
-              const placement = index < 3 ? topCardPlacement : index === 3 ? bottomLeftPlacement : bottomRightPlacement;
 
               return (
-                <Link
-                  key={system.key}
-                  href={`/systems/${system.slug}`}
-                  style={{ ...systemCard, ...placement, backgroundImage: `url(${image})` }}
-                >
+                <Link key={system.key} href={`/systems/${system.slug}`} style={systemCard}>
                   <img src={image} alt={system.name} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
@@ -105,12 +124,42 @@ export default function SystemsPage() {
           </div>
         </div>
       </section>
+
+      <section style={searchCallout}>
+        <div style={searchInner}>
+          <div>
+            <p style={eyebrow}>PART SEARCH INTELLIGENCE</p>
+            <h2 style={sectionTitle}>From system domain to real part number.</h2>
+            <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
+              Use ELIMFILTERS part search to connect OEM numbers, competitive references, dimensions, and application logic back to the correct protection system.
+            </p>
+          </div>
+          <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}>
+            PART SEARCH
+          </a>
+        </div>
+      </section>
+
+      <section style={cta}>
+        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ ...eyebrow, textAlign: 'center' }}>PRODUCT FAMILIES</p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
+            Explore filters and components by product family.
+          </h2>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
+            Move from the protection system to the physical product family: primary air, secondary safety elements, housings, fuel, lubrication, hydraulic, coolant, cabin, and compressed air filtration.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <Link href="/families" style={yellowButton}>EXPLORE PRODUCT FAMILIES</Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
 
-const displayFont = "'Chakra Petch', 'Arial Narrow', monospace";
-const bodyFont = "'Barlow', Arial, sans-serif";
+const displayFont = 'var(--font-display)';
+const bodyFont = 'var(--font-body)';
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
@@ -152,46 +201,62 @@ const heroTitle: CSSProperties = {
 
 const heroLead: CSSProperties = {
   marginTop: '2rem', maxWidth: '780px', color: 'rgba(255,255,255,0.76)',
-  fontFamily: bodyFont, fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
+  fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
 };
 
-const partSearchHeroButton: CSSProperties = {
-  position: 'absolute', right: 'clamp(1.25rem, 6vw, 6rem)', bottom: 'clamp(2rem, 5vw, 4rem)', zIndex: 3,
-  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
-  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
-  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
+const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
+
+const tag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
+  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
+  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
 };
+
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
+
+const twoCol: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+  gap: 'clamp(2rem, 6vw, 5rem)',
+};
+
+const sectionTitle: CSSProperties = {
+  fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
+};
+
+const leadText: CSSProperties = {
+  color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
+  lineHeight: 1.72, fontWeight: 600, margin: 0,
+};
+
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
 
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
 const systemSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
 const systemGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '1rem',
+  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',
 };
-
-const topCardPlacement: CSSProperties = { gridColumn: 'span 2' };
-const bottomLeftPlacement: CSSProperties = { gridColumn: '2 / span 2' };
-const bottomRightPlacement: CSSProperties = { gridColumn: '4 / span 2' };
 
 const systemCard: CSSProperties = {
   minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
-  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: '#050505',
-  backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
 };
 
 const systemImage: CSSProperties = {
   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.94, filter: 'brightness(1.12)', zIndex: 0,
+  opacity: 0.68, filter: 'brightness(1.05)',
 };
 
 const systemOverlay: CSSProperties = {
-  position: 'absolute', inset: 0, zIndex: 1,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.28) 52%, rgba(0,0,0,0.78) 100%), linear-gradient(90deg, rgba(0,0,0,0.34), transparent)',
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.52) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.55), transparent)',
 };
 
 const systemContent: CSSProperties = {
-  position: 'absolute', inset: 0, padding: '1.35rem', zIndex: 2,
+  position: 'absolute', inset: 0, padding: '1.35rem',
   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
 };
 
@@ -201,11 +266,34 @@ const systemTitle: CSSProperties = {
 };
 
 const systemLine: CSSProperties = {
-  color: 'rgba(255,255,255,0.76)', fontFamily: bodyFont, fontSize: '0.95rem',
+  color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
   lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
 };
 
 const explore: CSSProperties = {
   color: '#FFF12D', fontFamily: displayFont, fontWeight: 700,
   letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1.3rem',
+};
+
+const searchCallout: CSSProperties = {
+  padding: '0 clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)',
+};
+
+const searchInner: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'flex', flexWrap: 'wrap',
+  alignItems: 'center', justifyContent: 'space-between', gap: '2rem',
+  border: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.045)',
+  padding: 'clamp(1.5rem, 4vw, 2.4rem)',
+};
+
+const cta: CSSProperties = {
+  padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
+  borderTop: '1px solid rgba(255,241,45,0.2)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+};
+
+const yellowButton: CSSProperties = {
+  display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none',
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em',
+  fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase',
 };
