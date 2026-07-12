@@ -1,0 +1,78 @@
+/* Emergency restore for HOME after the aggressive Phase 2 readability overrides.
+ * This file is loaded after globals.css and neutralizes only the HOME Phase 2 CSS.
+ * It preserves the approved humanized hero copy from commit aa12044.
+ */
+
+main:has(> div[style*="visibility: hidden"]) > section:first-of-type p {
+  max-width: 850px !important;
+  font-size: clamp(1rem, 1.45vw, 1.18rem) !important;
+  line-height: 1.65 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > p:first-child {
+  max-width: none !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > div p {
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="space-between"] {
+  display: flex !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="repeat(auto-fit"] p:last-child {
+  font-size: 0.85rem !important;
+  line-height: 1.65 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child p {
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child span:not(:first-child) {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child p {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li {
+  font-size: 0.9rem !important;
+  line-height: normal !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li > span:first-child::before {
+  font-size: 0.95rem !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) h2 {
+  font-size: clamp(1.7rem, 3.2vw, 2.25rem) !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) p {
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) [style*="var(--font-mono)"] {
+  font-size: 0.65rem !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(6) div[style*="marginBottom: 2.75rem"] > p {
+  max-width: 640px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(7) .tech-grid p {
+  font-size: 0.9rem !important;
+  line-height: 1.75 !important;
+}
