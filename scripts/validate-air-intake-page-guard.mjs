@@ -4,11 +4,27 @@ import path from 'node:path';
 const root = process.cwd();
 const layoutPath = path.join(root, 'frontend/src/app/systems/[slug]/layout.tsx');
 const pagePath = path.join(root, 'frontend/src/app/systems/[slug]/page.tsx');
+const dataPath = path.join(root, 'frontend/src/lib/protection-systems-data.ts');
 
 const layout = fs.readFileSync(layoutPath, 'utf8');
 const page = fs.readFileSync(pagePath, 'utf8');
+const data = fs.readFileSync(dataPath, 'utf8');
 
 const failures = [];
+
+const protectedSystems = [
+  'air-intake',
+  'fuel-cleanliness',
+  'lubrication',
+  'hydraulic',
+  'cooling-system',
+];
+
+for (const slug of protectedSystems) {
+  if (!data.includes(`slug: '${slug}'`) && !data.includes(`slug: "${slug}"`)) {
+    failures.push(`Missing protected commercial system slug in protection-systems-data.ts: ${slug}`);
+  }
+}
 
 if (layout.includes('ServerKnowledgeConnections')) {
   failures.push('systems/[slug]/layout.tsx must not render ServerKnowledgeConnections on commercial /systems pages. Keep GEO through CanonicalEntitySchema only.');
@@ -49,14 +65,22 @@ for (const label of requiredVisibleLabels) {
   }
 }
 
+if (!page.includes('getFamiliesByProtectionSystem')) {
+  failures.push('Commercial /systems/[slug]/page.tsx must keep product-family mapping through getFamiliesByProtectionSystem.');
+}
+
+if (!page.includes('getProtectionSystemBySlug')) {
+  failures.push('Commercial /systems/[slug]/page.tsx must keep system lookup through getProtectionSystemBySlug.');
+}
+
 if (!page.includes('isAirIntake')) {
-  failures.push('Air Intake page-specific guard expects isAirIntake branch to preserve the approved hero behavior.');
+  failures.push('Air Intake page-specific branch must remain to preserve the approved hero behavior.');
 }
 
 if (failures.length) {
-  console.error('\n[validate-air-intake-page-guard] FAILED');
+  console.error('\n[validate-core-systems-page-guard] FAILED');
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log('[validate-air-intake-page-guard] PASS: /systems/air-intake commercial page is protected.');
+console.log(`[validate-core-systems-page-guard] PASS: protected clean commercial pattern for ${protectedSystems.join(', ')}.`);
