@@ -8,7 +8,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function CinematicHero() {
   const { t } = useTranslation();
-  const assetsTitle = t("home.heroLine_assets", "Assets").replace(/[.。．]+$/u, "");
+  const assetsTitle = t("home.heroLine_assets", "Assets").replace(/[.。．]+$/, "");
 
   return (
     <section
