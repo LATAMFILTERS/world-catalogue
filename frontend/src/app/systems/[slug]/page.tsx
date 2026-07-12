@@ -132,20 +132,24 @@ export default function ProtectionSystemPage({ params }: Props) {
         </nav>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <header style={{ position: 'relative', height: 'clamp(300px, 45vh, 520px)', overflow: 'hidden' }}>
+        <header style={{ position: 'relative', height: 'clamp(480px, 62vh, 680px)', overflow: 'hidden' }}>
           <img
             src={sys.heroImage}
             alt={sys.name}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', opacity: 0.45 }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 40%, transparent 100%)' }} />
-          <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
-              {sys.name}
-            </h1>
-            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', color: 'rgba(255,255,255,0.6)', maxWidth: '540px', lineHeight: 1.65, textAlign: 'justify' }}>
-              {sys.tagline}
-            </p>
+          {/* gradient darkens engine/filter area (left-center) where text sits */}
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 38%, rgba(0,0,0,0.25) 65%, transparent 100%)' }} />
+          {/* text block anchored to bottom-left — over the filter housing area */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 4vw, 3.5rem)' }}>
+              <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '55%', marginBottom: '0.75rem' }}>
+                {sys.name}
+              </h1>
+              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.9rem, 1.3vw, 1rem)', color: '#FFF12D', maxWidth: '48%', lineHeight: 1.6 }}>
+                {sys.tagline}
+              </p>
+            </div>
           </div>
         </header>
 
