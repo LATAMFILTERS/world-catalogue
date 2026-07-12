@@ -54,6 +54,11 @@ main > section:nth-of-type(3) div[style*="repeat(auto-fit"] > a:nth-child(5) {
   grid-column: span 2 !important;
 }
 
+/* Remove the standalone Part Search Intelligence callout after the cards. */
+main > section:nth-of-type(4) {
+  display: none !important;
+}
+
 @media (max-width: 1100px) {
   main > section:nth-of-type(3) div[style*="repeat(auto-fit"] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
