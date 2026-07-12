@@ -7,6 +7,7 @@ import './systems-cleanup.css';
 import './air-intake-hero-restore.css';
 import './air-intake-visible-cleanup.css';
 import './core-systems-editorial.css';
+import './air-intake-narrative-section-fix.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
@@ -29,21 +30,19 @@ export const metadata: Metadata = {
     'total asset protection systems', 'industrial asset protection', 'industrial filtration',
     'contamination control systems', 'air filters industrial', 'fuel filters heavy duty',
     'hydraulic filters', 'oil filters industrial', 'mining filtration',
-    'construction equipment filters', 'fleet maintenance filters', 'industrial air filtration',
-    'engine protection systems', 'equipment reliability', 'downtime reduction',
   ],
   authors: [{ name: 'ELIMFILTERS', url: BASE_URL }],
   creator: 'ELIMFILTERS',
   publisher: 'ELIMFILTERS',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
   icons: {
     icon: '/images/logo.svg',
     shortcut: '/images/logo.svg',
     apple: '/images/logo.svg',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
@@ -51,16 +50,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA_ID}');`}
-        </Script>
         <ClientProviders>
           {children}
-          <ChatBot />
-          <ConsentBanner />
           <Analytics />
+          <ConsentBanner />
+          <ChatBot />
         </ClientProviders>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
