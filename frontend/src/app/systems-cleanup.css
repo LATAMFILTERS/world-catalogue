@@ -1,36 +1,3 @@
-/* Systems page cleanup: hide the legacy hero category chips only. */
-main:has(a[href="/systems/air-intake"]) > section:first-of-type div[style*="margin-top: 2.2rem"][style*="gap: 0.8rem"] {
-  display: none !important;
-}
-
-/* Systems page typography alignment — match approved HOME typography. */
-main:has(a[href="/systems/air-intake"]) h1,
-main:has(a[href="/systems/air-intake"]) h1 span,
-main:has(a[href="/systems/air-intake"]) h2,
-main:has(a[href="/systems/air-intake"]) h3,
-main:has(a[href="/systems/air-intake"]) a span,
-main:has(a[href="/systems/air-intake"]) a[href="https://part-search.elimfilters.com"],
-main:has(a[href="/systems/air-intake"]) a[href="/families"],
-main:has(a[href="/systems/air-intake"]) > section p:first-child {
-  font-family: 'Chakra Petch', 'Arial Narrow', monospace !important;
-  font-weight: 700 !important;
-}
-
-main:has(a[href="/systems/air-intake"]) p:not(:first-child),
-main:has(a[href="/systems/air-intake"]) a p {
-  font-family: 'Barlow', Arial, sans-serif !important;
-}
-
-main:has(a[href="/systems/air-intake"]) h2,
-main:has(a[href="/systems/air-intake"]) h3 {
-  letter-spacing: -0.045em !important;
-  line-height: 0.96 !important;
-}
-
-main:has(a[href="/systems/air-intake"]) > section p:first-child,
-main:has(a[href="/systems/air-intake"]) a span,
-main:has(a[href="/systems/air-intake"]) a[href="https://part-search.elimfilters.com"],
-main:has(a[href="/systems/air-intake"]) a[href="/families"] {
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-}
+/* Systems page cleanup stylesheet intentionally kept non-invasive.
+ * Typography is controlled directly inside /systems/page.tsx.
+ */
