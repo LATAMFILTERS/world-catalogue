@@ -1871,7 +1871,10 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
 
       const oem_codes        = row.oem_codes        ? JSON.stringify(row.oem_codes)        : '[]';
       const competitor_codes = row.competitor_codes ? JSON.stringify(row.competitor_codes) : '[]';
-      const equipment_applications = row.equipment_applications ? JSON.stringify(row.equipment_applications) : '[]';
+      // LD vehicle fitment goes in vehicle_applications (what /api/search/vin and
+      // /api/search/equipment query for duty='LIGHT_DUTY'), not equipment_applications
+      // (that column is for Heavy Duty industrial equipment).
+      const vehicle_applications = row.equipment_applications ? JSON.stringify(row.equipment_applications) : '[]';
       const ft = MANN_FILTER_TYPES[filterType] || 'other';
 
       await client.query('SAVEPOINT row_sp');
@@ -1899,25 +1902,25 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
                   SELECT jsonb_array_elements($5::jsonb)
                 ) AS t(elem)
               ),
-              equipment_applications = (
+              vehicle_applications = (
                 SELECT jsonb_agg(DISTINCT elem)
                 FROM (
-                  SELECT jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb))
+                  SELECT jsonb_array_elements(COALESCE(vehicle_applications,'[]'::jsonb))
                   UNION ALL
                   SELECT jsonb_array_elements($6::jsonb)
                 ) AS t(elem)
               )
             WHERE sku = $1`,
-            [sku, row.description || null, ft, oem_codes, competitor_codes, equipment_applications]
+            [sku, row.description || null, ft, oem_codes, competitor_codes, vehicle_applications]
           );
           results.updated++;
         } else {
           await client.query(`
             INSERT INTO elimfilters_catalog
               (sku, codigo_base, description, filter_type, duty,
-               oem_codes, competitor_codes, equipment_applications)
+               oem_codes, competitor_codes, vehicle_applications)
             VALUES ($1,$2,$3,$4,'LIGHT_DUTY',$5::jsonb,$6::jsonb,$7::jsonb)`,
-            [sku, codigoBase, row.description || null, ft, oem_codes, competitor_codes, equipment_applications]
+            [sku, codigoBase, row.description || null, ft, oem_codes, competitor_codes, vehicle_applications]
           );
           results.inserted++;
         }
@@ -2034,6 +2037,37 @@ app.post('/api/admin/fix-ld-duty', adminLimiter, requireAdmin, async (req, res) 
       RETURNING sku
     `);
     res.json({ success: true, fixed: result.rowCount, skus: result.rows.map(r => r.sku) });
+  } catch(e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/admin/migrate-ld-vehicle-applications ─────────────────────────
+// One-time fix: earlier /api/import/mann writes stored MANN vehicle fitment in
+// equipment_applications (the HD column) instead of vehicle_applications (what
+// /api/search/vin and /api/search/equipment query for duty='LIGHT_DUTY'). Moves
+// that data over and clears the misplaced equipment_applications for LD rows.
+app.post('/api/admin/migrate-ld-vehicle-applications', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(`
+      UPDATE elimfilters_catalog SET
+        vehicle_applications = (
+          SELECT jsonb_agg(DISTINCT elem)
+          FROM (
+            SELECT jsonb_array_elements(COALESCE(vehicle_applications,'[]'::jsonb))
+            UNION ALL
+            SELECT jsonb_array_elements(COALESCE(equipment_applications,'[]'::jsonb))
+          ) AS t(elem)
+        ),
+        equipment_applications = '[]'::jsonb
+      WHERE duty = 'LIGHT_DUTY'
+        AND jsonb_array_length(COALESCE(equipment_applications,'[]'::jsonb)) > 0
+      RETURNING sku
+    `);
+    res.json({ success: true, migrated: result.rowCount, skus: result.rows.map(r => r.sku).slice(0, 50) });
   } catch(e) {
     res.status(500).json({ success: false, error: e.message });
   } finally {
