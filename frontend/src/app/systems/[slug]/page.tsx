@@ -284,7 +284,7 @@ export default function ProtectionSystemPage({ params }: Props) {
           </div>
         </section>
 
-        <section style={section}>
+        <section style={{ ...section, borderBottom: 'none' }}>
           <h2 style={h2Style}>Product Families</h2>
           {families.length === 0 ? (
             <p style={prose}>DOCUMENTATION PENDING</p>
@@ -305,44 +305,6 @@ export default function ProtectionSystemPage({ params }: Props) {
               ))}
             </div>
           )}
-        </section>
-
-        <section style={section}>
-          <h2 style={h2Style}>Applicable Standards</h2>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
-            {sys.relatedStandards.map((std) => (
-              <span key={std} style={{ border: '1px solid rgba(255,255,255,0.18)', padding: '0.55rem 1rem', fontFamily: displayFont, fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.75)' }}>
-                {std}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section style={section}>
-          <h2 style={h2Style}>Industries Served</h2>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
-            {sys.relatedIndustries.map((ind) => (
-              <Link key={ind} href={`/industries/${ind}`} style={{ border: '1px solid rgba(255,241,45,0.25)', padding: '0.55rem 1rem', fontFamily: displayFont, fontWeight: 700, fontSize: '0.82rem', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', textTransform: 'uppercase' as const, letterSpacing: '0.08em' }}>
-                {ind.replace(/-/g, ' ')}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ ...section, borderBottom: 'none' }}>
-          <h2 style={h2Style}>Explore Further</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', marginTop: '0.5rem' }}>
-            {[
-              { href: '/technologies', label: 'All Technologies' },
-              { href: '/knowledge-system', label: 'Knowledge Center' },
-              { href: 'https://part-search.elimfilters.com', label: 'Part Search' },
-              { href: '/systems', label: 'All Protection Systems' },
-            ].map((link) => (
-              <Link key={link.href} href={link.href} style={{ display: 'block', background: '#000', padding: '1.25rem 1.5rem', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {link.label} →
-              </Link>
-            ))}
-          </div>
         </section>
       </main>
     </>
