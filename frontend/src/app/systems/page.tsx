@@ -11,8 +11,6 @@ const SYSTEM_IMAGES: Record<string, string> = {
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
   'cooling-system': '/images/coolant-filters.avif',
-  'cabin-air': '/images/cabin-hero.avif',
-  'compressed-air': '/images/airdryer-hero.avif',
 };
 
 const SYSTEM_LINES: Record<string, string> = {
@@ -21,14 +19,12 @@ const SYSTEM_LINES: Record<string, string> = {
   lubrication: 'Wear particle control, oil cleanliness, bearing protection, and engine life extension.',
   hydraulic: 'Servo valve protection, pressure stability, pump protection, and ISO cleanliness discipline.',
   'cooling-system': 'Coolant stability, additive control, corrosion reduction, and thermal reliability.',
-  'cabin-air': 'Operator exposure reduction, cabin air quality, dust control, and comfort protection.',
-  'compressed-air': 'Moisture control, dryer protection, pneumatic reliability, and air system cleanliness.',
 };
 
 export const metadata: Metadata = {
   title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
   description:
-    'Seven industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, cooling, cabin air, and compressed air protection.',
+    'Five industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, and cooling system protection.',
   alternates: { canonical: `${BASE_URL}/systems` },
 };
 
@@ -69,7 +65,7 @@ export default function SystemsPage() {
             <span style={{ color: '#FFF12D' }}>Around Failure Risk</span>
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, coolant, cabin, and compressed air each demand a different contamination control strategy.
+            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, and coolant systems each demand a different contamination control strategy.
           </p>
         </div>
 
@@ -81,12 +77,13 @@ export default function SystemsPage() {
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={systemGrid}>
-            {PROTECTION_SYSTEM_LIST.map((system) => {
-              const image = SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif';
+            {PROTECTION_SYSTEM_LIST.map((system, index) => {
+              const image = SYSTEM_IMAGES[system.slug] || system.heroImage || '/images/sistems-hero.avif';
               const line = SYSTEM_LINES[system.slug] || system.tagline;
+              const cardPlacement = index < 3 ? topCardPlacement : bottomCardPlacement;
 
               return (
-                <Link key={system.key} href={`/systems/${system.slug}`} style={systemCard}>
+                <Link key={system.key} href={`/systems/${system.slug}`} style={{ ...systemCard, ...cardPlacement }}>
                   <img src={image} alt={system.name} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
@@ -118,7 +115,7 @@ const homeButton: CSSProperties = {
 };
 
 const hero: CSSProperties = {
-  minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
   padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
   borderBottom: '1px solid rgba(255,255,255,0.08)',
 };
@@ -159,39 +156,42 @@ const partSearchHeroButton: CSSProperties = {
 
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
-const systemSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
+const systemSection: CSSProperties = { padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem) clamp(4rem, 8vw, 7rem)' };
 
 const systemGrid: CSSProperties = {
-  display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',
+  display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '1rem',
 };
+
+const topCardPlacement: CSSProperties = { gridColumn: 'span 2' };
+const bottomCardPlacement: CSSProperties = { gridColumn: 'span 3' };
 
 const systemCard: CSSProperties = {
   minHeight: '440px', position: 'relative', overflow: 'hidden', textDecoration: 'none',
-  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505',
+  color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505', display: 'block',
 };
 
 const systemImage: CSSProperties = {
   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.68, filter: 'brightness(1.05)',
+  opacity: 0.82, filter: 'brightness(1.08)',
 };
 
 const systemOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.52) 52%, rgba(0,0,0,0.88) 100%), linear-gradient(90deg, rgba(0,0,0,0.55), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.50) 52%, rgba(0,0,0,0.90) 100%), linear-gradient(90deg, rgba(0,0,0,0.58), transparent)',
 };
 
 const systemContent: CSSProperties = {
   position: 'absolute', inset: 0, padding: '1.35rem',
-  display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+  display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 2,
 };
 
 const systemTitle: CSSProperties = {
-  fontFamily: displayFont, fontSize: 'clamp(1.7rem, 2.8vw, 3rem)',
+  fontFamily: displayFont, fontSize: 'clamp(1.55rem, 2.45vw, 2.55rem)',
   lineHeight: 0.96, letterSpacing: '-0.04em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
 };
 
 const systemLine: CSSProperties = {
-  color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
+  color: 'rgba(255,255,255,0.72)', fontSize: '0.95rem',
   lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
 };
 
