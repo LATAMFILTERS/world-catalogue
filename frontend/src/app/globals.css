@@ -14,6 +14,12 @@
   --text-muted: rgba(255, 255, 255, 0.55);
   --text-subtle: rgba(255, 255, 255, 0.35);
 
+  /* ELIMFILTERS APPROVED TYPOGRAPHY SYSTEM
+   * ELIM Display Font = Chakra Petch
+   * ELIM Body Font    = Barlow
+   * ELIM Mono Font    = Chakra Petch
+   * Use these variables across the entire site instead of page-level font names.
+   */
   --font-body: 'Barlow', Arial, sans-serif;
   --font-display: 'Chakra Petch', 'Arial Narrow', monospace;
   --font-mono: 'Chakra Petch', 'Arial Narrow', monospace;
@@ -53,6 +59,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
+}
+
+/* Sitewide typography guardrail.
+ * This preserves the HOME typography system across heroes, cards, pages and subpages
+ * without rewriting source files during Render builds.
+ */
+body,
+p,
+a,
+li,
+span,
+small,
+label,
+input,
+textarea,
+select,
+button,
+main div {
+  font-family: var(--font-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display,
+main [style*="uppercase"],
+main [style*="letterSpacing"],
+main [style*="letter-spacing"] {
+  font-family: var(--font-display) !important;
+}
+
+code,
+pre,
+kbd,
+samp,
+.font-mono,
+main [style*="SKU"],
+main [style*="ISO"],
+main [style*="SAE"] {
+  font-family: var(--font-mono) !important;
 }
 
 a[href="#main-content"],
@@ -110,7 +159,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+  font-family: var(--font-display) !important;
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -140,15 +189,15 @@ h4 .reg-sup {
 }
 
 .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-display) !important;
 }
 
 .font-body {
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
 }
 
 .font-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono) !important;
 }
 
 .text-readable {
@@ -231,7 +280,7 @@ main [role="button"] {
 }
 
 [dir="rtl"] body {
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
 }
 
 [dir="rtl"] p {
