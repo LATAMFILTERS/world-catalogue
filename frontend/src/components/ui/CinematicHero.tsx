@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const ease = [0.16, 1, 0.3, 1] as const;
+const approvedDisplayFont = "Chakra Petch, Arial Narrow, monospace";
+const approvedBodyFont = "Barlow, Arial, sans-serif";
 
 export default function CinematicHero() {
   const { t } = useTranslation();
@@ -20,7 +22,7 @@ export default function CinematicHero() {
         display: "flex",
         alignItems: "center",
         padding: "90px 7% 0",
-        fontFamily: "var(--font-body)",
+        fontFamily: approvedBodyFont,
       }}
     >
       <video
@@ -62,13 +64,14 @@ export default function CinematicHero() {
         }}
       >
         <motion.h1
+          className="elim-home-hero-title"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.2, ease }}
           style={{
-            maxWidth: "960px",
-            fontFamily: "var(--font-display)",
-            lineHeight: 0.9,
+            maxWidth: "980px",
+            fontFamily: approvedDisplayFont,
+            lineHeight: 0.88,
             letterSpacing: "-0.055em",
             textTransform: "uppercase",
             margin: 0,
@@ -76,14 +79,18 @@ export default function CinematicHero() {
             color: "#fff",
           }}
         >
-          <span style={{ display: "block", fontSize: "clamp(2.48rem, 6vw, 5.76rem)" }}>
-            {t("home.heroLine_protecting", "Protecting")} {t("home.heroLine_industrial", "Industrial")}
+          <span style={{ display: "block", fontFamily: approvedDisplayFont, fontSize: "clamp(2.55rem, 6vw, 5.8rem)" }}>
+            {t("home.heroLine_protecting", "Protecting")}
+          </span>
+          <span style={{ display: "block", fontFamily: approvedDisplayFont, fontSize: "clamp(2.55rem, 6vw, 5.8rem)" }}>
+            {t("home.heroLine_industrial", "Industrial")}
           </span>
           <span
             style={{
               display: "block",
               color: "#FFF12D",
-              fontSize: "clamp(2.25rem, 5.45vw, 5.25rem)",
+              fontFamily: approvedDisplayFont,
+              fontSize: "clamp(2.15rem, 5.05vw, 4.95rem)",
               lineHeight: 0.9,
             }}
           >
@@ -98,7 +105,7 @@ export default function CinematicHero() {
           style={{
             maxWidth: "850px",
             color: "rgba(255,255,255,0.76)",
-            fontFamily: "var(--font-body)",
+            fontFamily: approvedBodyFont,
             fontSize: "clamp(1rem, 1.45vw, 1.18rem)",
             lineHeight: 1.65,
             fontWeight: 600,
@@ -122,7 +129,7 @@ export default function CinematicHero() {
               gap: "0.55rem",
               background: "#FFF12D",
               color: "#000",
-              fontFamily: "var(--font-display)",
+              fontFamily: approvedDisplayFont,
               fontWeight: 700,
               fontSize: "0.78rem",
               letterSpacing: "0.16em",
@@ -156,7 +163,7 @@ export default function CinematicHero() {
               border: "1px solid rgba(255,255,255,0.14)",
               background: "rgba(255,255,255,0.04)",
               padding: "0.95rem 1.4rem",
-              fontFamily: "var(--font-display)",
+              fontFamily: approvedDisplayFont,
               fontSize: "0.78rem",
               fontWeight: 700,
               letterSpacing: "0.16em",
@@ -204,6 +211,11 @@ export default function CinematicHero() {
       </motion.div>
 
       <style>{`
+        .elim-home-hero-title,
+        .elim-home-hero-title span {
+          font-family: Chakra Petch, Arial Narrow, monospace !important;
+        }
+
         @media (max-width: 860px) {
           section {
             padding: 120px 7% 0 !important;
