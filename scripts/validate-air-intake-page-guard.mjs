@@ -1,10 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = process.cwd();
-const layoutPath = path.join(root, 'frontend/src/app/systems/[slug]/layout.tsx');
-const pagePath = path.join(root, 'frontend/src/app/systems/[slug]/page.tsx');
-const dataPath = path.join(root, 'frontend/src/lib/protection-systems-data.ts');
+const repoRoot = path.resolve(process.cwd(), '..');
+const frontendRoot = process.cwd().endsWith(`${path.sep}frontend`)
+  ? process.cwd()
+  : path.join(repoRoot, 'frontend');
+
+const layoutPath = path.join(frontendRoot, 'src/app/systems/[slug]/layout.tsx');
+const pagePath = path.join(frontendRoot, 'src/app/systems/[slug]/page.tsx');
+const dataPath = path.join(frontendRoot, 'src/lib/protection-systems-data.ts');
 
 const layout = fs.readFileSync(layoutPath, 'utf8');
 const page = fs.readFileSync(pagePath, 'utf8');
