@@ -142,8 +142,13 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
 
   const cluster = buildTopicCluster(config.entityId);
   const authority = getEntityAuthorityScore(config.entityId);
-  const groups = config.groups.filter((group) => group.links.length > 0);
-  const displayedHrefs = new Set(groups.flatMap((group) => group.links.map((link) => link.href)));
+
+  // AIEntityCard (rendered below) already lists these same relationship
+  // groups, so they're only used here to dedupe the recommendations below,
+  // not rendered a second time.
+  const displayedHrefs = new Set(
+    config.groups.flatMap((group) => group.links.map((link) => link.href)),
+  );
   const recommendations = getSemanticRecommendations(config.entityId, { limit: 20 })
     .filter((recommendation) => recommendation.reason === 'shared-context')
     .filter((recommendation) => !displayedHrefs.has(recommendation.node.href))
@@ -154,10 +159,6 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
       name: recommendation.node.name,
     }));
 
-  if (recommendations.length > 0) {
-    groups.push({ label: 'Recommended Next', links: recommendations });
-  }
-
   const topicalPath = cluster
     ? [cluster.hub, ...cluster.recommended]
       .filter((node, index, all) => node.id !== config.entityId && all.findIndex((candidate) => candidate.id === node.id) === index)
@@ -165,23 +166,26 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
       .slice(0, 6)
     : [];
 
+  const exploreGroups: Group[] = [];
+  if (recommendations.length > 0) exploreGroups.push({ label: 'Recommended Next', links: recommendations });
+  if (topicalPath.length > 0) exploreGroups.push({ label: 'Related Topics', links: topicalPath.map((node) => ({ href: node.href, name: node.name })) });
+
   return (
     <>
       <CanonicalEntitySchema kind={kind} slug={slug} />
       <AIEntityCard kind={kind} slug={slug} />
-      {groups.length > 0 && (
+      {exploreGroups.length > 0 && (
         <section
           className="structured-definition structured-definition--connections"
-          aria-label="Engineering knowledge connections"
+          aria-label="Continue exploring related resources"
           data-topic-cluster={cluster?.hub.id}
           data-entity-authority={authority?.score}
           data-authority-breadth={authority?.coverageBreadth}
         >
           <div className="structured-definition__inner">
-            <p className="structured-definition__eyebrow">ENGINEERING KNOWLEDGE CONNECTIONS</p>
-            <h2 className="structured-definition__title">{config.title}</h2>
+            <p className="structured-definition__eyebrow">CONTINUE EXPLORING</p>
             <div className="structured-definition__grid">
-              {groups.map((group) => (
+              {exploreGroups.map((group) => (
                 <article className="structured-definition__row" key={group.label}>
                   <h3>{group.label}</h3>
                   <div className="structured-definition__links">
@@ -190,11 +194,6 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
                 </article>
               ))}
             </div>
-            {topicalPath.length > 0 && (
-              <nav className="structured-definition__links" aria-label="Topical authority path">
-                {topicalPath.map((node) => <Link key={`topic-${node.id}`} href={node.href}>{node.name}</Link>)}
-              </nav>
-            )}
           </div>
         </section>
       )}
