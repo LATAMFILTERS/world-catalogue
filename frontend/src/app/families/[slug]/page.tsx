@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -5,6 +6,8 @@ import { PRODUCT_FAMILY_LIST, getFamilyBySlug } from '@/lib/product-families-dat
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 
 const BASE_URL = 'https://elimfilters.com';
+const displayFont = 'var(--font-display)';
+const bodyFont = 'var(--font-body)';
 
 interface Props {
   params: { slug: string };
@@ -17,8 +20,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fam = getFamilyBySlug(params.slug);
   if (!fam) return { title: 'Not Found' };
+
   const url = `${BASE_URL}/families/${fam.slug}`;
   const title = `${fam.name} | ELIMFILTERS Product Family`;
+
   return {
     title,
     description: fam.purpose,
@@ -34,11 +39,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function standardHref(std: string) {
+  const key = std.toLowerCase();
+  if (key.includes('iso 16889')) return '/knowledge-system/standards/iso-16889';
+  if (key.includes('iso 4406')) return '/knowledge-system/standards/iso-4406';
+  if (key.includes('iso 5011')) return '/knowledge-system/standards/iso-5011';
+  return '/knowledge-system/standards';
+}
+
 export default function FamilyPage({ params }: Props) {
   const fam = getFamilyBySlug(params.slug);
   if (!fam) notFound();
 
   const sys = getProtectionSystemBySlug(fam.protectionSystem);
+  const hasHdProducts = fam.hdPrefix && fam.hdProducts.length > 0 && fam.hdProducts[0] !== 'DOCUMENTATION PENDING';
+  const hasLdProducts = fam.ldPrefix && fam.ldProducts.length > 0 && fam.ldProducts[0] !== 'DOCUMENTATION PENDING';
+  const isPrimaryAir = fam.slug === 'primary-air';
+  const isAirCleanerHousings = fam.slug === 'air-cleaner-housings';
+  const heroSrc = isPrimaryAir
+    ? '/images/air-filter1.avif'
+    : isAirCleanerHousings
+      ? '/images/carcasa.jd.avif'
+      : fam.heroImage;
+  const heroImageStyle = isPrimaryAir
+    ? primaryAirHeroImage
+    : isAirCleanerHousings
+      ? airCleanerHousingHeroImage
+      : heroImage;
 
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -50,13 +77,6 @@ export default function FamilyPage({ params }: Props) {
     ],
   };
 
-  // ProductGroup: represents the full product family across all duty classes.
-  // hasVariant entries use duty class (HD/LD) as the variation axis.
-  // Individual SKU-level variants will replace these entries when product
-  // documentation is complete (PHASE 2: expand to full engineering documentation).
-  // Each variant carries a minimal Offer to satisfy Schema.org ProductGroup validation
-  // and resolve GSC hasVariant.offers errors. No price is declared — products are
-  // sold through authorized distributors and part-search.elimfilters.com.
   const productGroupSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProductGroup',
@@ -64,223 +84,255 @@ export default function FamilyPage({ params }: Props) {
     name: fam.name,
     description: fam.purpose,
     url: `${BASE_URL}/families/${fam.slug}`,
-    brand: {
-      '@type': 'Brand',
-      name: 'ELIMFILTERS',
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
-      name: 'ELIMFILTERS',
-    },
+    brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
+    manufacturer: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
     category: 'Industrial Filtration',
-    // variesBy: the axis along which products in this group differ
     variesBy: ['Duty Class'],
-    // hasVariant: one entry per duty class currently defined
     hasVariant: [
       ...(fam.hdPrefix ? [{
         '@type': 'Product',
         '@id': `${BASE_URL}/families/${fam.slug}#variant-hd`,
-        name: `${fam.name} — Heavy Duty (HD)`,
+        name: `${fam.name} - Heavy Duty (HD)`,
         description: `Heavy Duty ${fam.name} series. SKU prefix: ${fam.hdPrefix}.`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
           priceCurrency: 'USD',
           url: 'https://part-search.elimfilters.com',
-          seller: {
-            '@type': 'Organization',
-            '@id': `${BASE_URL}/#organization`,
-            name: 'ELIMFILTERS',
-          },
+          seller: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
         },
       }] : []),
       ...(fam.ldPrefix ? [{
         '@type': 'Product',
         '@id': `${BASE_URL}/families/${fam.slug}#variant-ld`,
-        name: `${fam.name} — Light Duty (LD)`,
+        name: `${fam.name} - Light Duty (LD)`,
         description: `Light Duty ${fam.name} series. SKU prefix: ${fam.ldPrefix}.`,
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
           priceCurrency: 'USD',
           url: 'https://part-search.elimfilters.com',
-          seller: {
-            '@type': 'Organization',
-            '@id': `${BASE_URL}/#organization`,
-            name: 'ELIMFILTERS',
-          },
+          seller: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
         },
       }] : []),
     ],
   };
 
-  const h2Style: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', lineHeight: 1.2, marginBottom: '1rem' };
-  const prose: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(0.9rem, 1.3vw, 1rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85, textAlign: 'justify' };
-  const section: React.CSSProperties = { maxWidth: '1200px', margin: '0 auto', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
-
   return (
-    <>
+    <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productGroupSchema) }} />
-      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-        
-        {/* Breadcrumb */}
-        <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '1.25rem clamp(1.5rem, 5vw, 4rem) 0', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          {[
-            { href: '/', label: 'Home' },
-            { href: '/families', label: 'Families' },
-            { label: fam.name },
-          ].map((crumb, i, arr) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              {crumb.href ? (
-                <Link href={crumb.href} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>{crumb.label}</Link>
-              ) : (
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: '#FFF12D' }}>{crumb.label}</span>
-              )}
-              {i < arr.length - 1 && <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>/</span>}
-            </span>
-          ))}
-        </nav>
 
-        {/* Hero */}
-        <header style={{ position: 'relative', height: 'clamp(280px, 40vh, 480px)', overflow: 'hidden' }}>
-          <img src={fam.heroImage} alt={fam.name} fetchPriority="high" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.95) 40%, transparent 100%)' }} />
-          <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.05, letterSpacing: '-0.025em', maxWidth: '620px', marginBottom: '1rem' }}>
-              {fam.name}
-            </h1>
+      <Link href="/families" style={backButton}>← FAMILIES</Link>
+
+      <header style={hero}>
+        <img src={heroSrc} alt={fam.name} fetchPriority="high" style={heroImageStyle} />
+        <div style={heroOverlay} />
+        <div style={heroInner}>
+          <h1 style={heroTitle}>{fam.name}</h1>
+          <p style={heroLead}>{fam.purpose}</p>
+          <div style={tagRow}>
+            {fam.hdPrefix && <span style={tag}>HD PREFIX {fam.hdPrefix}</span>}
+            {fam.ldPrefix && <span style={tag}>LD PREFIX {fam.ldPrefix}</span>}
+            {sys && <Link href={`/systems/${sys.slug}`} style={tagLink}>{sys.name}</Link>}
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* Overview & Engineering */}
-        <section style={section}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
-            <div>
-              <p style={prose}>{fam.purpose}</p>
-            </div>
-            <div>
-              <p style={prose}>{fam.engineering}</p>
-            </div>
-            <div>
-              <p style={{ ...prose, ...(fam.construction === 'DOCUMENTATION PENDING' ? { color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em' } : {}) }}>
-                {fam.construction}
-              </p>
-            </div>
+      <section style={section}>
+        <div style={twoCol}>
+          <h2 style={sectionTitle}>Family engineering role.</h2>
+          <div>
+            <p style={leadText}>{fam.engineering}</p>
+            {fam.construction !== 'DOCUMENTATION PENDING' && (
+              <p style={bodyText}>{fam.construction}</p>
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Protection System & Tech Anchor */}
-        <section style={section}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            {sys && (
-              <div>
-                <Link href={`/systems/${sys.slug}`} style={{ display: 'block', textDecoration: 'none', background: 'rgba(255,255,255,0.04)', padding: '1.5rem', borderRadius: '4px' }}>
-                  <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1.1rem', color: '#fff', marginBottom: '0.5rem' }}>{sys.name}</p>
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>View System →</p>
+      <section style={darkSectionCompact}>
+        <div style={wrap}>
+          <div style={twoColCompact}>
+            <div>
+              <h2 style={sectionTitle}>Technical validation.</h2>
+              <p style={bodyText}>This family connects the protected system, the primary ELIMFILTERS technology, product identification, and applicable test standards into a single engineering path.</p>
+            </div>
+
+            <div style={compactStack}>
+              {sys && (
+                <Link href={`/systems/${sys.slug}`} style={compactLinkCard}>
+                  <span style={anchorLabel}>Protection system</span>
+                  <strong style={compactTitle}>{sys.name}</strong>
+                  <span style={explore}>VIEW SYSTEM</span>
                 </Link>
-              </div>
-            )}
-            <div>
-              <Link href={`/technologies/${fam.primaryTechnology}`} style={{ display: 'block', textDecoration: 'none', background: 'rgba(255,241,45,0.04)', border: '1px solid rgba(255,241,45,0.1)', padding: '1.5rem', borderRadius: '4px' }}>
-                <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '1.1rem', color: '#FFF12D', marginBottom: '0.5rem', textTransform: 'uppercase' }}>{fam.primaryTechnology.replace(/-/g, ' ')}</p>
-                <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>View Technology →</p>
+              )}
+              <Link href={`/technologies/${fam.primaryTechnology}`} style={compactLinkCardYellow}>
+                <span style={anchorLabel}>Primary technology</span>
+                <strong style={compactTitle}>{fam.primaryTechnology.replace(/-/g, ' ')}</strong>
+                <span style={explore}>VIEW TECHNOLOGY</span>
+              </Link>
+              <Link href="https://part-search.elimfilters.com" style={compactLinkCard}>
+                <span style={anchorLabel}>Part identification</span>
+                <strong style={compactTitle}>Cross-reference search</strong>
+                <span style={explore}>FIND FILTER</span>
               </Link>
             </div>
           </div>
-        </section>
 
-        {/* Products */}
+          <div style={standardBand}>
+            <span style={standardBandLabel}>Applicable standards</span>
+            <div style={standardsGridCompact}>
+              {fam.applicableStandards.map((std) => (
+                <Link key={std} href={standardHref(std)} style={standardCard}>{std}</Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {(hasHdProducts || hasLdProducts) && (
         <section style={section}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
-            {fam.hdPrefix && (
-              <div>
-                {fam.hdProducts.length > 0 && fam.hdProducts[0] !== 'DOCUMENTATION PENDING' ? (
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                    {fam.hdProducts.map(pn => (
-                      <li key={pn}><Link href={`/products/${pn.toLowerCase()}`} style={{ color: '#fff', textDecoration: 'none', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem' }}>{pn}</Link></li>
+          <div style={wrap}>
+            <h2 style={sectionTitle}>Product references.</h2>
+            <div style={productGrid}>
+              {hasHdProducts && (
+                <div style={productCard}>
+                  <h3 style={cardTitle}>Heavy Duty Series</h3>
+                  <div style={productList}>
+                    {fam.hdProducts.map((pn) => (
+                      <Link key={pn} href={`/products/${pn.toLowerCase()}`} style={productLink}>{pn}</Link>
                     ))}
-                  </ul>
-                ) : (
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>Product documentation is currently in progress.</p>
-                )}
-              </div>
-            )}
-            {fam.ldPrefix && (
-              <div>
-                {fam.ldProducts.length > 0 && fam.ldProducts[0] !== 'DOCUMENTATION PENDING' ? (
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                    {fam.ldProducts.map(pn => (
-                      <li key={pn}><Link href={`/products/${pn.toLowerCase()}`} style={{ color: '#fff', textDecoration: 'none', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem' }}>{pn}</Link></li>
+                  </div>
+                </div>
+              )}
+              {hasLdProducts && (
+                <div style={productCard}>
+                  <h3 style={cardTitle}>Light Duty Series</h3>
+                  <div style={productList}>
+                    {fam.ldProducts.map((pn) => (
+                      <Link key={pn} href={`/products/${pn.toLowerCase()}`} style={productLink}>{pn}</Link>
                     ))}
-                  </ul>
-                ) : (
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>Product documentation is currently in progress.</p>
-                )}
-              </div>
-            )}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </section>
+      )}
 
-        {/* Standards */}
-        <section style={section}>
-          <h2 style={h2Style}>Applicable Standards</h2>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' as const, marginTop: '0.5rem' }}>
-            {fam.applicableStandards.map((std) => (
-              <span key={std} style={{ border: '1px solid rgba(255,255,255,0.18)', padding: '0.45rem 1rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.75)' }}>
-                {std}
-              </span>
-            ))}
+      <section style={platformBand}>
+        <div style={platformInner}>
+          <span style={platformLabel}>Continue through the platform</span>
+          <div style={platformLinks}>
+            <Link href="/families" style={platformLink}>All Families</Link>
+            <Link href="/systems" style={platformLink}>Systems</Link>
+            <Link href="/technologies" style={platformLink}>Technologies</Link>
+            <Link href="/knowledge-system" style={platformLink}>Knowledge</Link>
           </div>
-        </section>
-
-        {/*
-          PHASE 2 — Future Engineering Documentation Sections
-          =====================================================
-          This page is a strategic knowledge asset and future SEO landing page
-          for category searches (e.g., "Primary Air Filters", "Hydraulic Filters").
-
-          When documentation is ready, add sections in this order:
-          1. Operating Principle — filtration mechanism, media construction diagrams
-          2. Contamination Mechanisms — what particles/water/vapour this family stops
-          3. Filtration Media — media type, Beta rating, dirt capacity
-          4. Applicable Technologies — which ELIMFILTERS technologies this family uses
-          5. Standards Compliance — ISO/SAE/ASTM test methods and pass criteria
-          6. Maintenance Guidance — service intervals, replacement indicators
-          7. Troubleshooting — bypass valve opening, early blockage, media collapse
-          8. Applications — equipment types, duty cycles, environments
-          9. Related Products — cross-reference to complementary families
-          10. FAQs — operator and engineering questions
-          11. Downloadable Documentation — datasheets, installation guides, white papers
-          12. Videos / Case Studies — embed links when available
-
-          When individual SKUs are confirmed, replace hasVariant duty-class placeholders
-          in productGroupSchema with proper Product entries (one per SKU).
-        */}
-
-        {/* Cross-links */}
-        <section style={{ ...section, borderBottom: 'none' }}>
-          <h2 style={h2Style}>Explore Further</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', marginTop: '0.5rem' }}>
-            {[
-              { href: '/families', label: 'All Product Families' },
-              { href: sys ? `/systems/${sys.slug}` : '/systems', label: sys ? sys.name : 'Protection Systems' },
-              { href: '/technologies', label: 'All Technologies' },
-              { href: 'https://part-search.elimfilters.com', label: 'Part Search ↗' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{ display: 'block', background: '#000', padding: '1.25rem 1.5rem', textDecoration: 'none', fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)' }}
-              >
-                {link.label} →
-              </Link>
-            ))}
-          </div>
-        </section>
-
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
+
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
+
+const backButton: CSSProperties = {
+  position: 'fixed', top: '1.1rem', left: '1.35rem', zIndex: 50,
+  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
+  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
+  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
+  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
+};
+
+const hero: CSSProperties = {
+  minHeight: '88vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
+  padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
+  borderBottom: '1px solid rgba(255,255,255,0.08)',
+};
+
+const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.32 };
+const primaryAirHeroImage: CSSProperties = {
+  ...heroImage,
+  opacity: 0.52,
+  objectPosition: '64% center',
+  filter: 'contrast(1.08) saturate(1.04)',
+};
+const airCleanerHousingHeroImage: CSSProperties = {
+  ...heroImage,
+  opacity: 0.58,
+  objectPosition: '68% center',
+  filter: 'contrast(1.08) saturate(1.05)',
+};
+const heroOverlay: CSSProperties = {
+  position: 'absolute', inset: 0,
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 34%)',
+};
+const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroTitle: CSSProperties = {
+  fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
+  lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
+  maxWidth: '1120px', margin: 0, textTransform: 'uppercase',
+};
+const heroLead: CSSProperties = {
+  marginTop: '2rem', maxWidth: '860px', color: 'rgba(255,255,255,0.78)',
+  fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
+  borderLeft: '3px solid #FFF12D', paddingLeft: '1.35rem',
+};
+const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
+const tag: CSSProperties = {
+  border: '1px solid rgba(255,255,255,0.16)', padding: '0.75rem 1rem',
+  fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.14em', fontWeight: 700,
+  color: 'rgba(255,255,255,0.78)', textTransform: 'uppercase',
+};
+const tagLink: CSSProperties = { ...tag, textDecoration: 'none', color: '#FFF12D', borderColor: 'rgba(255,241,45,0.28)' };
+
+const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
+const darkSectionCompact: CSSProperties = { padding: 'clamp(3.4rem, 6vw, 5.4rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,255,255,0.018)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
+const twoCol: CSSProperties = {
+  maxWidth: '1180px', margin: '0 auto', display: 'grid',
+  gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)',
+};
+const twoColCompact: CSSProperties = {
+  display: 'grid', gridTemplateColumns: 'minmax(0, 0.85fr) minmax(0, 1.15fr)',
+  gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'start',
+};
+const sectionTitle: CSSProperties = {
+  fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+  lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
+};
+const leadText: CSSProperties = { color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78, marginTop: '1.2rem' };
+
+const compactStack: CSSProperties = { display: 'grid', gap: '0.8rem' };
+const compactLinkCard: CSSProperties = {
+  minHeight: '112px', textDecoration: 'none', color: '#fff',
+  border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)',
+  padding: '1rem 1.1rem', display: 'grid', gap: '0.55rem',
+};
+const compactLinkCardYellow: CSSProperties = { ...compactLinkCard, borderColor: 'rgba(255,241,45,0.24)', background: 'rgba(255,241,45,0.045)' };
+const anchorLabel: CSSProperties = { color: 'rgba(255,255,255,0.38)', fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700 };
+const compactTitle: CSSProperties = { color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1.05rem, 1.8vw, 1.45rem)', lineHeight: 1.02, textTransform: 'uppercase' };
+const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.7rem', textTransform: 'uppercase' };
+
+const standardBand: CSSProperties = {
+  marginTop: '2rem', paddingTop: '1.2rem', borderTop: '1px solid rgba(255,255,255,0.08)',
+  display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between',
+};
+const standardBandLabel: CSSProperties = { fontFamily: displayFont, color: 'rgba(255,255,255,0.76)', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', fontSize: '0.76rem' };
+const standardsGridCompact: CSSProperties = { display: 'flex', gap: '0.65rem', flexWrap: 'wrap' };
+const standardCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.16)', padding: '0.7rem 0.9rem', fontFamily: displayFont, fontSize: '0.74rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.78)', textDecoration: 'none', textTransform: 'uppercase' };
+
+const productGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginTop: '2.4rem' };
+const productCard: CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.55)', padding: '1.35rem' };
+const cardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '1.25rem', lineHeight: 1.05, margin: '0 0 1.2rem', textTransform: 'uppercase' };
+const productList: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.75rem' };
+const productLink: CSSProperties = { color: '#FFF12D', textDecoration: 'none', border: '1px solid rgba(255,241,45,0.24)', padding: '0.7rem 0.9rem', fontFamily: displayFont, fontSize: '0.78rem', letterSpacing: '0.12em', fontWeight: 700 };
+
+const platformBand: CSSProperties = { padding: '1.25rem clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.2)', background: 'rgba(255,241,45,0.035)' };
+const platformInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' };
+const platformLabel: CSSProperties = { fontFamily: displayFont, color: '#fff', fontWeight: 700, letterSpacing: '-0.02em', textTransform: 'uppercase', fontSize: 'clamp(1rem, 1.8vw, 1.35rem)' };
+const platformLinks: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.7rem' };
+const platformLink: CSSProperties = { color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.72rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,0.26)', padding: '0.65rem 0.8rem' };

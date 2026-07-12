@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMFILTERS — Part Search</title>
+  <title>ELIMFILTERS â€” Part Search</title>
   <meta name="description" content="Find ELIMFILTERS filters by part number, VIN/vehicle model, or equipment reference. Cross-reference with OEM and competitor codes.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="ELIMFILTERS Part Search">
-  <meta property="og:description" content="Industrial filtration cross-reference — Part number, VIN, and Equipment search.">
+  <meta property="og:description" content="Industrial filtration cross-reference â€” Part number, VIN, and Equipment search.">
   <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* ─── SPLASH SCREEN ─── */
+    /* â”€â”€â”€ SPLASH SCREEN â”€â”€â”€ */
     #cinematic-splash {
       position: fixed;
       inset: 0;
@@ -66,7 +66,7 @@
       50% { opacity: 0.6; }
     }
 
-    /* ─── CANVAS ─── */
+    /* â”€â”€â”€ CANVAS â”€â”€â”€ */
     #nanoflow {
       position: fixed;
       inset: 0;
@@ -75,7 +75,7 @@
       pointer-events: none;
     }
 
-    /* ─── LOGO ─── */
+    /* â”€â”€â”€ LOGO â”€â”€â”€ */
     #logo {
       position: fixed;
       top: 1.5rem; left: 2rem;
@@ -103,7 +103,7 @@
       padding: 0.15rem 0.4rem;
     }
 
-    /* ─── SKIP ─── */
+    /* â”€â”€â”€ SKIP â”€â”€â”€ */
     #skip-btn {
       position: fixed;
       bottom: 2rem; right: 2rem;
@@ -121,7 +121,7 @@
     }
     #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
 
-    /* ─── UI LAYER ─── */
+    /* â”€â”€â”€ UI LAYER â”€â”€â”€ */
     #ui {
       position: relative;
       z-index: 10;
@@ -134,7 +134,7 @@
       gap: 0;
     }
 
-    /* ─── INTRO LABEL ─── */
+    /* â”€â”€â”€ INTRO LABEL â”€â”€â”€ */
     .intro-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: clamp(1.3rem, 5.2vw, 2.08rem);
@@ -148,7 +148,7 @@
     }
     .intro-label.vis { opacity: 1; transform: translateY(0); }
 
-    /* ─── SEARCH PANEL ─── */
+    /* â”€â”€â”€ SEARCH PANEL â”€â”€â”€ */
     #search-panel {
       width: 100%;
       max-width: 720px;
@@ -163,7 +163,7 @@
       pointer-events: all;
     }
 
-    /* ─── TAB SWITCHER ─── */
+    /* â”€â”€â”€ TAB SWITCHER â”€â”€â”€ */
     .mode-tabs {
       display: flex;
       justify-content: center;
@@ -191,7 +191,7 @@
       border-bottom-color: var(--y);
     }
 
-    /* ─── FORMS ─── */
+    /* â”€â”€â”€ FORMS â”€â”€â”€ */
     .search-form { display: none; flex-direction: column; gap: 0.85rem; }
     .search-form.active { display: flex; }
 
@@ -282,7 +282,7 @@
       pointer-events: none;
     }
 
-    /* ─── SEARCH BUTTON ─── */
+    /* â”€â”€â”€ SEARCH BUTTON â”€â”€â”€ */
     .btn-search {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
@@ -308,7 +308,7 @@
       margin-top: 1rem;
     }
 
-    /* ─── HINT PILLS ─── */
+    /* â”€â”€â”€ HINT PILLS â”€â”€â”€ */
     .hint-row {
       display: flex;
       flex-wrap: wrap;
@@ -328,7 +328,7 @@
     }
     .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
 
-    /* ─── AUTOCOMPLETE ─── */
+    /* â”€â”€â”€ AUTOCOMPLETE â”€â”€â”€ */
     .autocomplete-dropdown {
       position: absolute;
       top: calc(100% + 6px);
@@ -373,7 +373,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* ─── RESULTS ─── */
+    /* â”€â”€â”€ RESULTS â”€â”€â”€ */
     #results {
       width: 100%;
       max-width: 720px;
@@ -404,7 +404,7 @@
       padding: 0.18rem 0.5rem;
     }
 
-    /* ─── RESULT CARD ─── */
+    /* â”€â”€â”€ RESULT CARD â”€â”€â”€ */
     .result-card {
       border: 1px solid var(--border);
       border-radius: 4px;
@@ -473,7 +473,7 @@
       color: rgba(255,255,255,0.55);
     }
 
-    /* ── Duty selector chips ── */
+    /* â”€â”€ Duty selector chips â”€â”€ */
     .duty-chip {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
@@ -500,7 +500,7 @@
       position: relative;
     }
 
-    /* ─── SPECS GRID ─── */
+    /* â”€â”€â”€ SPECS GRID â”€â”€â”€ */
     .card-specs {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -528,7 +528,7 @@
       color: rgba(255,255,255,0.82);
     }
 
-    /* ─── REFS ─── */
+    /* â”€â”€â”€ REFS â”€â”€â”€ */
     .card-refs {
       margin-top: 0.85rem;
       display: flex;
@@ -547,7 +547,7 @@
       margin-right: 0.4rem;
     }
 
-    /* ─── EQUIPMENT APPS ─── */
+    /* â”€â”€â”€ EQUIPMENT APPS â”€â”€â”€ */
     .card-equipment {
       margin-top: 0.85rem;
       padding-top: 0.85rem;
@@ -576,7 +576,7 @@
       padding: 0.18rem 0.5rem;
     }
 
-    /* ─── STATUS MESSAGES ─── */
+    /* â”€â”€â”€ STATUS MESSAGES â”€â”€â”€ */
     .status-msg {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
@@ -593,7 +593,7 @@
       color: rgba(255,255,255,0.15);
     }
 
-    /* ─── LOADING DOTS ─── */
+    /* â”€â”€â”€ LOADING DOTS â”€â”€â”€ */
     .loading-dots::after {
       content: '...';
       animation: dots 1.2s steps(3, end) infinite;
@@ -604,7 +604,7 @@
       66%  { content: '...'; }
     }
 
-    /* ─── KLEO BADGE ─── */
+    /* â”€â”€â”€ KLEO BADGE â”€â”€â”€ */
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
@@ -632,7 +632,7 @@
       text-transform: uppercase;
     }
 
-    /* ─── FOOTER ─── */
+    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
     #footer {
       position: relative;
       z-index: 10;
@@ -650,7 +650,7 @@
     .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
     .footer-line a:hover { color: var(--y); }
 
-    /* ─── RESPONSIVE ─── */
+    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
     @media (max-width: 640px) {
       .field-row.cols-2,
       .field-row.cols-3 { grid-template-columns: 1fr; }
@@ -658,11 +658,93 @@
       .card-specs { grid-template-columns: repeat(2, 1fr); }
       #logo { top: 1rem; left: 1rem; }
     }
-  </style>
+  
+/* ELIMFILTERS mobile viewport lock */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+body {
+  touch-action: pan-y;
+}
+
+main,
+section,
+form,
+div {
+  max-width: 100%;
+}
+
+input,
+select,
+button,
+textarea {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .shell,
+  .search-shell,
+  .container,
+  .search-card,
+  .results-shell,
+  .results-card,
+  .mode-tabs,
+  .equipment-class,
+  .field-row,
+  .actions,
+  .result-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mode-tabs,
+  .equipment-class,
+  .field-row,
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  input,
+  select,
+  button {
+    min-width: 0;
+  }
+}
+</style>
 </head>
 <body>
 
-<!-- ─── CINEMATIC SPLASH ─── -->
+<!-- â”€â”€â”€ CINEMATIC SPLASH â”€â”€â”€ -->
 <div id="cinematic-splash" style="display: none;">
   <canvas id="splash-canvas"></canvas>
   <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
@@ -675,14 +757,14 @@
   <span class="logo-badge" id="logo-badge">PART SEARCH</span>
 </a>
 
-<button id="skip-btn">SKIP INTRO ›</button>
+<button id="skip-btn">SKIP INTRO â€º</button>
 
 
 
 <div id="ui">
   <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
 
-  <!-- ── SEARCH PANEL ── -->
+  <!-- â”€â”€ SEARCH PANEL â”€â”€ -->
   <div id="search-panel">
 
     <!-- Mode tabs -->
@@ -692,12 +774,12 @@
       <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false" id="tab-equip">EQUIPMENT</button>
     </nav>
 
-    <!-- ── FORM: PART NUMBER ── -->
+    <!-- â”€â”€ FORM: PART NUMBER â”€â”€ -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
         <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
         <div class="input-wrap primary">
-          <span class="input-icon" aria-hidden="true">⌕</span>
+          <span class="input-icon" aria-hidden="true">âŒ•</span>
           <input
             type="search"
             id="inp-part"
@@ -710,7 +792,7 @@
           <div id="ac-dropdown" class="autocomplete-dropdown"></div>
         </div>
       </div>
-      <!-- Duty selector — HD/LD must never mix per system rules -->
+      <!-- Duty selector â€” HD/LD must never mix per system rules -->
       <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
         <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Equipment class:</span>
         <button type="button" class="duty-chip active" data-duty="" id="duty-all">ALL</button>
@@ -718,17 +800,17 @@
         <button type="button" class="duty-chip" data-duty="LIGHT_DUTY" id="duty-ld">LIGHT DUTY</button>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-part">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-part">SEARCH â†’</button>
       </div>
     </form>
 
-    <!-- ── FORM: VIN / MODEL ── -->
+    <!-- â”€â”€ FORM: VIN / MODEL â”€â”€ -->
     <form class="search-form" data-form="vin" autocomplete="off">
       <div class="field-row cols-2">
         <div class="field-group">
           <label class="field-label" for="inp-vin-model" id="lbl-vin-model">VIN or Vehicle Model</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">◈</span>
+            <span class="input-icon" aria-hidden="true">â—ˆ</span>
             <input
               type="text"
               id="inp-vin-model"
@@ -741,7 +823,7 @@
         <div class="field-group">
           <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional)</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">◈</span>
+            <span class="input-icon" aria-hidden="true">â—ˆ</span>
             <input
               type="text"
               id="inp-vin-engine"
@@ -753,17 +835,17 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-vin">SEARCH â†’</button>
       </div>
     </form>
 
-    <!-- ── FORM: EQUIPMENT ── -->
+    <!-- â”€â”€ FORM: EQUIPMENT â”€â”€ -->
     <form class="search-form" data-form="equip" autocomplete="off">
       <div class="field-row cols-3">
         <div class="field-group">
           <label class="field-label" for="inp-equip-model" id="lbl-equip-model">Equipment Model</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">◈</span>
+            <span class="input-icon" aria-hidden="true">â—ˆ</span>
             <input
               type="text"
               id="inp-equip-model"
@@ -776,7 +858,7 @@
         <div class="field-group">
           <label class="field-label" for="inp-equip-type" id="lbl-equip-type">Equipment Type</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">▾</span>
+            <span class="input-icon" aria-hidden="true">â–¾</span>
             <select id="inp-equip-type" name="type">
               <option value="" id="opt-any">Any type</option>
               <option value="EXCAVATOR">Excavator</option>
@@ -791,13 +873,13 @@
               <option value="AGRICULTURAL">Agricultural</option>
               <option value="FORKLIFT">Forklift</option>
             </select>
-            <span class="select-arrow" aria-hidden="true">▾</span>
+            <span class="select-arrow" aria-hidden="true">â–¾</span>
           </div>
         </div>
         <div class="field-group">
           <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">◈</span>
+            <span class="input-icon" aria-hidden="true">â—ˆ</span>
             <input
               type="text"
               id="inp-equip-engine"
@@ -809,35 +891,35 @@
         </div>
       </div>
       <div class="form-footer">
-        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH →</button>
+        <button type="submit" class="btn-search" id="btn-search-equip">SEARCH â†’</button>
       </div>
     </form>
 
   </div><!-- /search-panel -->
 
-  <!-- ── RESULTS ── -->
+  <!-- â”€â”€ RESULTS â”€â”€ -->
   <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
 
 </div><!-- /ui -->
 
 <footer id="footer">
   <p class="footer-line">
-    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
-    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
+    ELIMFILTERSÂ® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com/knowledge-system">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site â€” including but not limited to OEM codes and competitor cross-references â€” are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
-<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <script>
 'use strict';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// i18n — TRANSLATION DICTIONARY
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// i18n â€” TRANSLATION DICTIONARY
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const TRANSLATIONS = {
   en: {
     splashSkip:       'Click anywhere to skip',
@@ -857,18 +939,18 @@ const TRANSLATIONS = {
     lblEquipType:     'Equipment Type',
     optAnyType:       'Any type',
     lblEquipEngine:   'Engine (optional)',
-    btnSearch:        'SEARCH →',
+    btnSearch:        'SEARCH â†’',
   },
   es: {
     splashSkip:       'Clic en cualquier lugar para saltar',
     logoBadge:        'BUSCADOR DE PIEZAS',
-    introLabel:       '// BÚSqueda de Piezas y Filtros',
-    tabPart:          'N° DE PARTE',
+    introLabel:       '// BÃšSqueda de Piezas y Filtros',
+    tabPart:          'NÂ° DE PARTE',
     tabVin:           'VIN / MODELO',
     tabEquip:         'EQUIPO',
-    lblPart:          'Número de parte',
-    phPart:           'Ingresa número de parte o código OEM...',
-    lblVinModel:      'Vehículo / Modelo',
+    lblPart:          'NÃºmero de parte',
+    phPart:           'Ingresa nÃºmero de parte o cÃ³digo OEM...',
+    lblVinModel:      'VehÃ­culo / Modelo',
     phVinModel:       'Ej: HILUX, EXCAVADORA 336...',
     lblVinEngine:     'Motor (opcional)',
     phEngine:         'Ej: 3.0L, 1GD...',
@@ -877,18 +959,18 @@ const TRANSLATIONS = {
     lblEquipType:     'Tipo de Equipo',
     optAnyType:       'Cualquier tipo',
     lblEquipEngine:   'Motor (opcional)',
-    btnSearch:        'BUSCAR →',
+    btnSearch:        'BUSCAR â†’',
   },
   pt: {
     splashSkip:       'Clique em qualquer lugar para pular',
-    logoBadge:        'BUSCA DE PEÇAS',
-    introLabel:       '// Busca de Peças e Filtros',
-    tabPart:          'N° DA PEÇA',
+    logoBadge:        'BUSCA DE PEÃ‡AS',
+    introLabel:       '// Busca de PeÃ§as e Filtros',
+    tabPart:          'NÂ° DA PEÃ‡A',
     tabVin:           'VIN / MODELO',
     tabEquip:         'EQUIPAMENTO',
-    lblPart:          'Número da peça',
-    phPart:           'Digite número da peça ou código OEM...',
-    lblVinModel:      'Veículo / Modelo',
+    lblPart:          'NÃºmero da peÃ§a',
+    phPart:           'Digite nÃºmero da peÃ§a ou cÃ³digo OEM...',
+    lblVinModel:      'VeÃ­culo / Modelo',
     phVinModel:       'Ex: HILUX, ESCAVADEIRA 336...',
     lblVinEngine:     'Motor (opcional)',
     phEngine:         'Ex: 3.0L, 1GD...',
@@ -897,7 +979,7 @@ const TRANSLATIONS = {
     lblEquipType:     'Tipo de Equipamento',
     optAnyType:       'Qualquer tipo',
     lblEquipEngine:   'Motor (opcional)',
-    btnSearch:        'BUSCAR →',
+    btnSearch:        'BUSCAR â†’',
   }
 };
 
@@ -979,16 +1061,16 @@ detectLang().then(lang => {
   try { sessionStorage.setItem('ef_lang', lang); } catch(_) {}
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // CONFIG
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const API = ''; // Use relative path since API is on the same server
 
-// ─────────────────────────────────────────────────────────────────────────────
-// WARMUP PING — fires immediately on page load so Render wakes up before
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// WARMUP PING â€” fires immediately on page load so Render wakes up before
 // the user submits a search. On free tier, cold start takes 60-90s.
 // Silent background fetch; all errors intentionally ignored.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 (function warmupServer() {
   try {
     fetch('/api/status', { method: 'GET', cache: 'no-store' })
@@ -996,9 +1078,9 @@ const API = ''; // Use relative path since API is on the same server
   } catch (_) {}
 })();
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // CANVAS / FLOW FIELD
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const canvas = document.getElementById('nanoflow');
 const ctx = canvas.getContext('2d');
 let W, H;
@@ -1018,9 +1100,9 @@ function flowAngle(x, y, t) {
   ) * Math.PI;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FILTER SILHOUETTE — spin-on oil filter geometry
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// FILTER SILHOUETTE â€” spin-on oil filter geometry
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildFilterSilhouette(cx, cy, scale = 2.1) {
   const OW = 180, OH = 300;
   const off = document.createElement('canvas');
@@ -1085,9 +1167,9 @@ function buildFilterSilhouette(cx, cy, scale = 2.1) {
   return pts;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // PARTICLE
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 class Particle {
   constructor() {
     this.x  = Math.random() * (W || 800);
@@ -1126,9 +1208,9 @@ class Particle {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // ANIMATION SYSTEM
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const N = 2200;
 let particles = [];
 let phase = 'scatter';
@@ -1244,9 +1326,9 @@ if (localStorage.getItem('ef-ps-v')) {
   });
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // MODE TABS
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let currentMode = 'part';
 
 document.querySelectorAll('.mode-tab').forEach(tab => {
@@ -1263,16 +1345,16 @@ document.querySelectorAll('.mode-tab').forEach(tab => {
   });
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SEARCH STATE — this page only collects input and redirects to results.html,
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// SEARCH STATE â€” this page only collects input and redirects to results.html,
 // which performs the actual search against the API.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const resultsEl = document.getElementById('results');
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
 function clearResults() { resultsEl.innerHTML = ''; }
 
-// ─── DUTY CHIP SELECTOR ─────────────────────────────────────────────────────
+// â”€â”€â”€ DUTY CHIP SELECTOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 let selectedDuty = '';
 document.querySelectorAll('.duty-chip').forEach(chip => {
   chip.addEventListener('click', () => {
@@ -1282,9 +1364,9 @@ document.querySelectorAll('.duty-chip').forEach(chip => {
   });
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // AUTOCOMPLETE
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const acDropdown = document.getElementById('ac-dropdown');
 const inpPartCode = document.getElementById('inp-part');
 let acTimeout;
@@ -1346,9 +1428,9 @@ if (inpPartCode && acDropdown) {
   });
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FORM SUBMIT HANDLERS — redirect to results.html
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// FORM SUBMIT HANDLERS â€” redirect to results.html
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   e.preventDefault();
   const q = document.getElementById('inp-part').value.trim();
@@ -1385,9 +1467,9 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // CINEMATIC SPLASH SCREEN (NETFLIX MODE)
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 (function initSplash() {
   const splashEl = document.getElementById('cinematic-splash');
   splashEl.style.display = 'flex';
@@ -1395,18 +1477,18 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
   
   const isMobile = window.innerWidth < 768;
-  const particleSpacing = isMobile ? 3 : 2; // Más espaciado en móvil para no sobrecargar
+  const particleSpacing = isMobile ? 3 : 2; // MÃ¡s espaciado en mÃ³vil para no sobrecargar
   const mouseRadius = isMobile ? 80 : 120;
   let particlesArray = [];
   let mouse = { x: null, y: null, radius: mouseRadius };
   
   splashEl.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   splashEl.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
-  // Soporte táctil en móvil
+  // Soporte tÃ¡ctil en mÃ³vil
   splashEl.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }, { passive: true });
   
   function resizeSplash() {
-    // clientWidth/Height es más preciso en móvil (ignora la barra del navegador)
+    // clientWidth/Height es mÃ¡s preciso en mÃ³vil (ignora la barra del navegador)
     cvs.width = document.documentElement.clientWidth;
     cvs.height = document.documentElement.clientHeight;
   }
@@ -1436,7 +1518,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
   function getTargetsFromImage(img, isSolidBlackBackground) {
     let targets = [];
-    // Móvil: 98% del ancho (+15%). Escritorio: 50% del ancho
+    // MÃ³vil: 98% del ancho (+15%). Escritorio: 50% del ancho
     const maxFraction = isMobile ? 0.98 : 0.50;
     const imgW = Math.min(img.width, cvs.width * maxFraction);
     const scale = imgW / img.width;
@@ -1500,7 +1582,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
         this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
         this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
       } else {
-        // Ensamble rápido: divisor 8 = forma el logo en ~2s
+        // Ensamble rÃ¡pido: divisor 8 = forma el logo en ~2s
         const returnSpeed = isMobile ? 10 : 8;
         if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / returnSpeed;
         if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / returnSpeed;
@@ -1548,7 +1630,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 2s E → disolver
+    // 2s E â†’ disolver
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
     }, 2000));
@@ -1588,3 +1670,4 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
 </body>
 </html>
+

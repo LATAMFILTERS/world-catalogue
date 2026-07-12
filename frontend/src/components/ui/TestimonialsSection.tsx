@@ -2,69 +2,53 @@
 import { motion } from "motion/react";
 import { TestimonialsColumn, type Testimonial } from "./testimonials-columns";
 
+// Composite operator feedback patterns observed across field deployments.
+// Roles and sectors are generic — not attributed to named individuals or companies.
 const testimonials: Testimonial[] = [
   {
-    text: "Since switching to ELIMFILTERS on our mining haul fleet, hydraulic failures dropped 60%. Contamination is no longer our leading cause of unplanned downtime.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face",
-    name: "Marcus Okafor",
-    role: "Fleet Director",
-    company: "Rio Tinto Operations",
+    text: "Fleets running high-dust haul routes typically report fewer hydraulic failures after standardizing on contamination-controlled filtration across the fleet.",
+    role: "Fleet Maintenance Director",
+    sector: "Heavy-Duty Mining Haul Fleet",
   },
   {
-    text: "Their MACROCORE air filtration system extended our excavator engine intervals from 500h to 1,200h in high-dust operations. The engineering support was outstanding.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
-    name: "Javier Mendoza",
-    role: "Maintenance Manager",
-    company: "Grupo CAT Chile",
+    text: "High-dust job sites moving to progressive-density air intake protection commonly see engine service intervals extend well beyond baseline.",
+    role: "Heavy-Duty Service Manager",
+    sector: "Off-Highway Construction Equipment",
   },
   {
-    text: "ELIMFILTERS redefined how we manage contamination across 340 trucks. ISO cleanliness targets are now part of our maintenance KPIs, not an afterthought.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
-    name: "Daniel Ferreira",
-    role: "VP Operations",
-    company: "TransBrasil Logística",
+    text: "Standardizing ISO cleanliness targets across a mixed haul-truck fleet lets operations teams treat contamination control as a maintenance KPI, not an afterthought.",
+    role: "Mining Operations Manager",
+    sector: "Open-Pit Mining Fleet",
   },
   {
-    text: "We reduced hydraulic oil top-ups by 40% and virtually eliminated servo valve failures on our precision ag fleet. The ROI was clear within one harvest season.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
-    name: "Sarah Kowalski",
-    role: "Equipment Manager",
-    company: "Prairie Harvest Group",
+    text: "Reducing hydraulic oil top-ups and servo valve failures on precision agricultural equipment typically shows measurable ROI within a single harvest season.",
+    role: "Procurement Lead",
+    sector: "Precision Agriculture Equipment",
   },
   {
-    text: "Our generator sets operate in coastal environments. THERMACORE cooling filtration eliminated the corrosion-related failures that were costing us $80k annually.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face",
-    name: "Ahmed Al-Rashidi",
+    text: "Coastal generator installations exposed to salt air see fewer corrosion-related cooling system failures once coolant filtration is upgraded.",
     role: "Site Engineer",
-    company: "Gulf Power Solutions",
+    sector: "Standby Power Generation",
   },
   {
-    text: "Cabin air quality on our construction sites went from a compliance risk to a selling point for operator recruitment. ISO 11155 compliance on every machine.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b9e33a1b?w=80&h=80&fit=crop&crop=face",
-    name: "Claudia Herrera",
+    text: "Cabin air quality upgrades on construction fleets shift from a compliance checkbox to a real factor in operator recruitment and retention.",
     role: "HSE Director",
-    company: "Constructora Omega",
+    sector: "Construction Fleet Operations",
   },
   {
-    text: "The NANOFORCE hydraulic filters took our press injection systems from 19/17/14 to 16/14/11 cleanliness codes. Proportional valve life tripled.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&fit=crop&crop=face",
-    name: "Wolfgang Bauer",
+    text: "Tightening hydraulic cleanliness codes on press and injection systems is a common lever for extending proportional valve life in manufacturing plants.",
     role: "Plant Manager",
-    company: "Bavarian Hydraulics GmbH",
+    sector: "Industrial Manufacturing",
   },
   {
-    text: "Fuel system injector failures on our offshore supply vessels dropped to near zero. HYDROCORE water separation in demanding marine environments simply works.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face",
-    name: "Ingrid Thorsen",
+    text: "Offshore support vessels see fuel system injector failures drop sharply once fuel water-separation performance is addressed directly.",
     role: "Fleet Engineer",
-    company: "Nordic Offshore AS",
+    sector: "Marine & Offshore Support Vessels",
   },
   {
-    text: "We now quote filter replacement as asset protection cost, not maintenance cost. The shift in how our clients think about contamination control has been significant.",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&crop=face",
-    name: "Ricardo Palacios",
-    role: "Regional Director",
-    company: "LATAM Equipment Distributors",
+    text: "Distributors who reposition filter replacement as asset protection, not routine maintenance, report a real shift in how customers evaluate total cost of ownership.",
+    role: "Regional Distribution Manager",
+    sector: "Industrial Equipment Distribution",
   },
 ];
 
@@ -86,12 +70,15 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center max-w-xl mx-auto mb-12"
         >
+          <p style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.24em', color: '#FFF12D', marginBottom: '0.9rem' }}>
+            FIELD DEPLOYMENT PATTERNS
+          </p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.6rem, 3vw, 2.5rem)', color: '#fff', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-            What operators say<br />
+            What operational teams report<br />
             <span style={{ color: '#FFF12D' }}>after protecting their assets.</span>
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, textAlign: 'center' }}>
-            From mining and agriculture to marine and power generation — contamination control delivers measurable results across every industry.
+            Composite feedback patterns observed across mining, agriculture, marine, and power generation deployments — not verified individual endorsements.
           </p>
         </motion.div>
 

@@ -22,6 +22,7 @@ const DATA: TechDetailData = {
   ],
   productImageSrc: '/images/kits-npr.avif',
   productImageCaption: 'DURATECH™ fleet master kit — platform-matched elements per vehicle, one service cycle.',
+  productImageFit: 'contain',
   stagesHeading: 'PLATFORM-MATCHED ELEMENTS. ONE KIT. ONE SERVICE CYCLE.',
   stages: [
     {

@@ -70,14 +70,9 @@ export function Footer() {
 
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-
-      {/* ── MAIN BODY ── */}
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
         <div className="footer-main-grid">
-
-          {/* Brand column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-            {/* Logo */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', minWidth: 0 }}>
             <div>
               <img
                 src="/images/KLEO-TECHNOLOGY-fn.avif"
@@ -86,19 +81,17 @@ export function Footer() {
               />
             </div>
 
-            {/* Tagline */}
             <p style={{
-              fontFamily: 'Barlow, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
               color: 'rgba(255,255,255,0.35)',
               lineHeight: 1.7,
-              maxWidth: '220px',
+              maxWidth: '240px',
               margin: 0,
             }}>
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            {/* Contact details */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
                 { icon: '✉', text: 'info@elimfilters.com', href: 'mailto:info@elimfilters.com' },
@@ -108,26 +101,19 @@ export function Footer() {
                 <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '11px', color: 'rgba(255,241,45,0.4)', flexShrink: 0 }}>{item.icon}</span>
                   {item.href ? (
-                    <a href={item.href} style={{
-                      fontFamily: 'Barlow, sans-serif', fontSize: '12px',
-                      color: 'rgba(255,255,255,0.35)', textDecoration: 'none',
-                      transition: 'color 0.2s',
-                    }}
+                    <a href={item.href} style={contactStyle}
                       onMouseEnter={e => (e.currentTarget.style.color = '#FFF12D')}
                       onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span style={{ fontFamily: 'Barlow, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
-                      {item.text}
-                    </span>
+                    <span style={contactStyle}>{item.text}</span>
                   )}
                 </div>
               ))}
             </div>
 
-            {/* Social icons */}
             <div style={{ display: 'flex', gap: '8px' }}>
               {SOCIAL.map((s) => (
                 <motion.a
@@ -145,7 +131,7 @@ export function Footer() {
                     color: 'rgba(255,255,255,0.35)',
                     textDecoration: 'none',
                     fontSize: '10px',
-                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontFamily: 'var(--font-display)',
                     fontWeight: 700, letterSpacing: '0.5px',
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
@@ -164,11 +150,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Nav columns */}
           {NAV_COLUMNS.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} style={{ minWidth: 0 }}>
               <div style={{
-                fontFamily: "'Barlow Condensed', sans-serif",
+                fontFamily: 'var(--font-display)',
                 fontWeight: 700, fontSize: '11px',
                 color: 'rgba(255,255,255,0.55)',
                 textTransform: 'uppercase', letterSpacing: '2.5px',
@@ -205,11 +190,9 @@ export function Footer() {
               )}
             </div>
           ))}
-
         </div>
       </div>
 
-      {/* ── LEGAL BAR ── */}
       <div style={{
         maxWidth: '1400px', margin: '0 auto',
         padding: '28px clamp(1.25rem, 5vw, 48px)',
@@ -219,24 +202,31 @@ export function Footer() {
         alignItems: 'center', justifyContent: 'space-between',
         gap: '8px 24px',
       }}>
-        <span style={{ fontFamily: 'Barlow, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.2px' }}>
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.2px' }}>
           © 2015–2026 Kleo Technologies LLC · ELIMFILTERS® is a registered trademark. All rights reserved.
         </span>
-        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '10px', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.1em' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.1em' }}>
           Kleo Technologies LLC · Frisco, Texas · Caracas, Venezuela · info@elimfilters.com
         </span>
       </div>
-
     </footer>
   );
 }
+
+const contactStyle: React.CSSProperties = {
+  fontFamily: 'var(--font-body)',
+  fontSize: '12px',
+  color: 'rgba(255,255,255,0.35)',
+  textDecoration: 'none',
+  transition: 'color 0.2s',
+};
 
 const linkStyle: React.CSSProperties = {
   fontSize: '13px',
   textDecoration: 'none',
   color: 'rgba(255,255,255,0.4)',
   display: 'block',
-  fontFamily: 'Barlow, sans-serif',
+  fontFamily: 'var(--font-body)',
   lineHeight: 1.5,
   transition: 'color 0.2s ease',
 };

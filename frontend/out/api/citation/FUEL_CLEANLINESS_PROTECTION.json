@@ -1,0 +1,125 @@
+{
+  "key": "FUEL_CLEANLINESS_PROTECTION",
+  "type": "system",
+  "name": "Fuel Cleanliness Protection Systems",
+  "slug": "fuel-cleanliness-protection",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "FUEL_CLEANLINESS_PROTECTION",
+  "tags": [
+    "system",
+    "active",
+    "fuel",
+    "diesel-water",
+    "asset-protection",
+    "in-ud"
+  ],
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
+    "concept": "Fuel Cleanliness Protection Systems",
+    "version": "1.0",
+    "last_updated": "2026-07-11",
+    "content_hash": "sha256:07edca9de9d7dd77dad11de10199b4902c6588e297e74262085795edcd49af72"
+  },
+  "canonical": {
+    "definition": "Fuel Cleanliness Protection Systems are the ELIMFILTERS system domain controlling water, particles, microbial contamination, and fuel restriction before diesel fuel reaches pumps, injectors, and high-pressure common-rail components.",
+    "systems": "Fuel filters, fuel/water separators, turbine-style separation assemblies, spin-on fuel separators, cartridge fuel filters, bulk fuel protection, and fuel cleanliness programs for industrial diesel assets.",
+    "failure_impact": "Diesel water and particulate contamination → injector erosion, needle-seat wear, pump scoring, corrosion, microbial growth, filter plugging, fuel starvation, poor combustion, emergency start failure, and unplanned downtime. In high-pressure common-rail systems, small contamination events can create expensive injector and pump failures.",
+    "related_standards": "ASTM D6304: Coulometric Karl Fischer water measurement in petroleum products | ISO 12937: International Karl Fischer method for water in petroleum products and diesel fuel cleanliness programs.",
+    "related_technologies": "HYDROCORE: Water-separating fuel protection technology | SYNTEPORE: Synthetic fuel media supporting particle control and stable performance in fuel cleanliness systems.",
+    "industrial_role": "Fuel Cleanliness Protection determines whether stored or delivered diesel becomes a controlled energy source or a contamination pathway into injectors, pumps, generators, vessels, locomotives, trucks, and off-highway equipment."
+  },
+  "relationships": {
+    "applicable_industries": [
+      "AGRICULTURE",
+      "CONSTRUCTION",
+      "MARINE",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL"
+    ],
+    "applicable_technologies": [
+      "HYDROCORE",
+      "SYNTEPORE"
+    ],
+    "applicable_standards": [
+      "ASTM_D6304",
+      "ISO_12937"
+    ]
+  },
+  "vault_path": "elimfilters-vault/03-systems/FUEL_CLEANLINESS_PROTECTION.md",
+  "_links": {
+    "self": "/api/citation/FUEL_CLEANLINESS_PROTECTION.json",
+    "type_index": "/api/citation/type/system.json",
+    "related": [
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "applicable_industries",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "applicable_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "HYDROCORE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/HYDROCORE.json"
+      },
+      {
+        "key": "SYNTEPORE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/SYNTEPORE.json"
+      },
+      {
+        "key": "ASTM_D6304",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ASTM_D6304.json"
+      },
+      {
+        "key": "ISO_12937",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_12937.json"
+      }
+    ]
+  }
+}
