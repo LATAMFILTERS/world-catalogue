@@ -121,9 +121,15 @@ const oilGasDirectAnswer = [
   'Oil and gas environments expose air intake, fuel, hydraulic, and lubrication systems to salt laden air, moisture, airborne particulate, fuel contamination, pressure cycling, thermal stress, and vibration. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so energy operators can protect rotating equipment, preserve uptime, maintain service discipline, and reduce downtime risk across offshore, onshore, upstream, and energy support applications.',
 ];
 
+const marineDirectAnswer = [
+  'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, deck machinery, steering systems, and onboard hydraulic equipment operating under salt air, humidity, vibration, and long duty cycles. At sea, filtration is part of the reliability strategy because service access, fuel quality, weather windows, and unscheduled port calls directly affect operational continuity.',
+  'Marine environments expose air intake, fuel, hydraulic, and lubrication systems to moisture, salinity, fuel water contamination, airborne salt particles, vibration loading, and extended engine operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so marine operators can protect engine reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across offshore, coastal, and commercial vessel applications.',
+];
+
 const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
 const constructionVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.';
 const oilGasVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.';
+const marineVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Marine applications, protection systems must perform under salt air, humidity, fuel water contamination, vibration loading, corrosion risk, and long duration engine operation. ELIMFILTERS® systems help marine operators protect commercial vessels, workboats, fishing fleets, offshore support vessels, deck machinery, and onboard hydraulic systems from contamination related failure while maintaining service continuity at sea.';
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
@@ -134,6 +140,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const isAgriculture = isIndustry && item.name === 'Agriculture';
   const isConstruction = isIndustry && item.name === 'Construction';
   const isOilGas = isIndustry && item.name === 'Oil Gas';
+  const isMarine = isIndustry && item.name === 'Marine';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -161,10 +168,12 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         ? [constructionVideoParagraph]
         : isOilGas
           ? [oilGasVideoParagraph]
-          : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-            `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-            `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-          ]);
+          : isMarine
+            ? [marineVideoParagraph]
+            : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+              `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+              `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+            ]);
 
   const industryAnswerParagraphs = isAgriculture
     ? agricultureDirectAnswer
@@ -172,9 +181,11 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
       ? constructionDirectAnswer
       : isOilGas
         ? oilGasDirectAnswer
-        : isIndustry && !isMining
-          ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
-          : undefined;
+        : isMarine
+          ? marineDirectAnswer
+          : isIndustry && !isMining
+            ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+            : undefined;
 
   const techTags = isAgriculture
     ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™']
@@ -182,7 +193,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
       ? ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™']
       : isOilGas
         ? ['MACROCORE™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™']
-        : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+        : isMarine
+          ? ['MACROCORE™', 'AQUAGUARD™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™']
+          : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
 
   const protectedAssets = isAgriculture ? [
     'Tractors',
@@ -205,6 +218,13 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     'Turbines',
     'Generators',
     'Offshore Support Equipment',
+  ] : isMarine ? [
+    'Commercial Vessels',
+    'Workboats',
+    'Fishing Fleets',
+    'Offshore Support Vessels',
+    'Marine Diesel Engines',
+    'Deck Machinery',
   ] : geoData?.protectedAssets;
 
   const heroTitle = isAgriculture
@@ -213,21 +233,27 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
       ? 'Construction Filtration Systems'
       : isOilGas
         ? 'Oil & Gas Filtration Systems'
-        : item.title;
+        : isMarine
+          ? 'Marine Filtration Systems'
+          : item.title;
   const heroSubtitle = isAgriculture
     ? 'AGRICULTURAL ASSETS'
     : isConstruction
       ? 'CONSTRUCTION ASSETS'
       : isOilGas
         ? 'OIL & GAS ASSETS'
-        : item.subtitle || undefined;
+        : isMarine
+          ? 'MARINE ASSETS'
+          : item.subtitle || undefined;
   const heroTagline = isAgriculture
     ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.'
     : isConstruction
       ? 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.'
       : isOilGas
         ? 'Oil & Gas equipment cannot afford contamination related downtime in remote, corrosive, and continuous duty environments. ELIMFILTERS® engineering protects compressors, pumps, turbines, generators, hydraulic systems, and offshore support assets operating under salt air, fuel contamination, thermal stress, and severe duty cycles.'
-        : item.description;
+        : isMarine
+          ? 'Marine equipment cannot afford contamination related downtime at sea or offshore. ELIMFILTERS® engineering protects commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, and onboard hydraulic systems operating under salt air, humidity, fuel water contamination, vibration, and long service cycles.'
+          : item.description;
   const assetHeading = isOilGas ? 'Oil & Gas Asset Protection' : `${item.name} Asset Protection`;
 
   return (
