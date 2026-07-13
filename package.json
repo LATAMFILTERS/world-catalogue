@@ -9,7 +9,8 @@
     "start": "node server.js",
     "dev": "node server.js",
     "build": "cd frontend && npm ci && npm run build",
-    "test:ebp-phase1": "node --test tests/ebp-phase1/*.test.js"
+    "test:ebp-phase1": "node --test tests/ebp-phase1/*.test.js",
+    "test:ebp-phase4": "node --test tests/ebp-phase4/*.test.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

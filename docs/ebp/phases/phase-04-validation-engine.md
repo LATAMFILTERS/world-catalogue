@@ -1,9 +1,15 @@
 # Phase 04 — Engineering Compliance Validation
 
-**Status:** Spec Drafted (implementable, revised 2026-07-13 following
-closure of all twelve `ENGINEERING_RULE_ENGINE.md` open questions —
-**still not approved; approval and implementation authorization are the
-project owner's explicit next step, per `CLAUDE_WORKFLOW.md`**)
+**Status:** Built (not frozen) — 2026-07-13. The project owner authorized
+implementation by resolving all twelve `ENGINEERING_RULE_ENGINE.md` open
+questions (Decisions 01-12, ADR-0039 through ADR-0050) plus the Global
+Result Model (ADR-0051), then explicitly directed implementation of
+Phase 4 only, with Phase 5 not to begin. Real migrations
+(`migrations/ebp-phase4/`), a real backend module (`ebp/phase4/`), and a
+73-test suite (`tests/ebp-phase4/`) exist and pass against a real local
+Postgres instance — see `IMPLEMENTATION_MASTER_INDEX.md` for the full
+delivery summary. **Deliberately left `Built`, not frozen — no freeze was
+requested this round.**
 **Depends on:** Phase 01 (`APPROVED / FROZEN v1.0`), Phase 02
 (`APPROVED / FROZEN v1.0`), Phase 03 (`APPROVED / FROZEN v1.0`),
 `docs/ebp/ENGINEERING_RULE_ENGINE.md` (normative, ADR-0038 through
@@ -195,7 +201,7 @@ are fixed by the Decisions above and may not be collapsed)
   Decisions" section and the Global Result Model (ADR-0039–ADR-0051) are
   binding business rules for this phase, not suggestions.
 
-## API Surface (sketch, internal-only — mirrors Phase 1/2's
+## API Surface (as built, internal-only — mirrors Phase 1/2's
 `requireAdmin`-gated internal surface; there is no Manufacturer- or
 Distributor-facing endpoint in this phase)
 
@@ -208,28 +214,44 @@ Distributor-facing endpoint in this phase)
 - `GET /api/ebp/internal/validation/:offer_code/history` — every past
   Validation Run for this Offer lineage, `STALE` included, immutable.
 - `POST /api/ebp/internal/validation/:offer_code/decisions` — record an
-  Engineering Decision (`ENGINEERING_APPROVER` only), referencing a
-  specific Validation Run.
+  Engineering Decision (`ENGINEERING_APPROVER` only), referencing the
+  current Validation Run; accepts an inline `conditions[]` array when
+  `decision` is `CONDITIONALLY_APPROVED` (Decision 08 requires at least
+  one; there is no separate "attach a condition to an existing decision"
+  endpoint — conditions are only ever created together with the decision
+  that requires them).
 - `POST /api/ebp/internal/validation/:offer_code/exceptions` — request an
-  Exception for a specific Rule ID + Rule Version (any authorized role);
-  rejected at the service layer if that rule version's `exception_policy`
-  is `NON_WAIVABLE`.
+  Exception for a specific Rule ID + Rule Version (`ENGINEERING_REVIEWER`
+  or `ENGINEERING_APPROVER`); rejected at the service layer if that rule
+  version's `exception_policy` is `NON_WAIVABLE`, or if that rule's result
+  in the current run is not `REQUIRES_EXCEPTION`.
 - `POST /api/ebp/internal/validation/exceptions/:id/approve` /
   `.../reject` — `ENGINEERING_APPROVER` only; a Manufacturer-submitted
   Offer can never self-approve its own Exception (no such endpoint exists
-  on the factory-facing surface at all).
-- `POST /api/ebp/internal/validation/decisions/:id/conditions` — attach a
-  structured condition to a `CONDITIONALLY_APPROVED` decision.
+  on the factory-facing surface at all — this phase has no factory-facing
+  surface).
 - `POST /api/ebp/internal/validation/conditions/:id/status` — transition
-  a condition's status (`SATISFIED`/`WAIVED`/`FAILED`/`CANCELLED`).
-- `GET/POST /api/ebp/internal/rule-catalog/*` — Rule Catalog
-  administration (`DRAFT` creation, publish to `ACTIVE`, supersede,
-  retire) — `ADMIN_OWNER` only for publication; no visual editor, per
-  Decision 10.
-- `/api/ebp/internal/analytics/*` (reserved prefix, ADR-0037 §8.6) — this
-  phase is the first to actually populate it, reading only from
-  `ebp_analytics_validation_summary` and the Activity Events/KPI/Alert
-  layers, never a transactional table directly.
+  a condition's status (`SATISFIED`/`OVERDUE`/`FAILED`/`WAIVED`/
+  `CANCELLED`), `ENGINEERING_APPROVER` only.
+- `POST /api/ebp/internal/rule-catalog/` — create a `DRAFT` rule version,
+  `ADMIN_OWNER` only.
+- `GET /api/ebp/internal/rule-catalog/:rule_id` — every version of a rule,
+  DRAFT through RETIRED.
+- `POST /api/ebp/internal/rule-catalog/:rule_id/:rule_version/publish` —
+  `DRAFT` → `ACTIVE`, superseding any prior `ACTIVE` version of the same
+  `rule_id`; `ADMIN_OWNER` only.
+- `POST /api/ebp/internal/rule-catalog/:rule_id/:rule_version/retire` —
+  `ADMIN_OWNER` only.
+- `POST /api/ebp/internal/roles/` and `.../roles/revoke` — Engineering
+  functional role assignment (Decision 01, ADR-0039): `ADMIN_OWNER` only,
+  except a one-time bootstrap allowance that lets the very first
+  `ADMIN_OWNER` be assigned with no prior role held (otherwise nobody
+  could ever satisfy the check to create it) — `requireAdmin`'s shared
+  `ADMIN_KEY` remains the real security boundary this sits behind.
+- `/api/ebp/internal/analytics/*` (reserved prefix, ADR-0037 §8.6) —
+  **not implemented this round.** `ebp_analytics_validation_summary` (the
+  view) exists and is queryable directly; a dedicated read endpoint over
+  it is deferred.
 
 ## Integration Points
 

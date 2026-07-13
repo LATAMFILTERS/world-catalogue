@@ -5,6 +5,82 @@ logged here in reverse chronological order. Every entry that changes a
 phase's status must correspond to a row update in
 `IMPLEMENTATION_MASTER_INDEX.md` in the same commit.
 
+## 2026-07-13 — Phase 4 (Engineering Compliance Validation) Built (not frozen)
+
+- The project owner closed all twelve `ENGINEERING_RULE_ENGINE.md` open
+  questions in a single session (Decisions 01-12) plus the Global Result
+  Model, and explicitly authorized implementing Phase 4 only ("no inicies
+  Phase 5"). Documentation was updated and ADRs registered **before** any
+  code was written, per `CLAUDE_WORKFLOW.md`:
+  - `ENGINEERING_RULE_ENGINE.md` — all sections updated to reflect the
+    closed decisions; the old "Open Questions" section replaced with a
+    "Global Result Model" section and a "Resolved Decisions" section
+    (one subsection per decision, cross-referencing its ADR).
+  - `docs/ebp/DECISIONS.md` — **ADR-0039** through **ADR-0051** added (13
+    ADRs: the twelve decisions plus the Global Result Model).
+  - `phases/phase-04-validation-engine.md` — rewritten as an
+    implementable spec (data model sketch, API surface, Business Rules
+    Enforced, Dashboard Readiness, Exit Criteria), including a
+    **consistency-audit finding**: Phase 3's frozen
+    `ebp_manufacturer_offer_technical_fields.compliance_status` column
+    (a 3-value enum, pre-reserved for Phase 4 by Phase 3's own frozen
+    comment) cannot represent the six-state Rule Result model — resolved
+    by keeping `ebp_rule_results` authoritative and having Phase 4 write
+    a coarse, best-effort projection into the legacy column via a plain
+    `UPDATE` (never `ALTER TABLE`, no schema change).
+- **Migrations** (`migrations/ebp-phase4/`): `001_schema.sql` (8 tables —
+  `ebp_engineering_role_assignments`, `ebp_rule_versions` [the Rule
+  Catalog], `ebp_validation_runs`, `ebp_rule_results`,
+  `ebp_engineering_decisions`, `ebp_engineering_exceptions`,
+  `ebp_engineering_conditions`, and `ebp_activity_events` — the first
+  real implementation of the ADR-0037 shared event ledger — plus 1
+  analytics view, `ebp_analytics_validation_summary`), `validate.sql` (15
+  checks), and `rollback.sql`. Verified against a real local Postgres
+  instance: clean apply, clean rollback (Phase 1/2/3 row counts and the
+  frozen `compliance_status` CHECK constraint unaffected), clean
+  reapply, idempotent on repeated application (all `IF NOT EXISTS`
+  guards exercised with zero errors).
+- **Backend module** (`ebp/phase4/`): `comparators.js` (the ten
+  Comparison Types: EXACT_MATCH, NUMERIC_TOLERANCE, RANGE, MAXIMUM,
+  MINIMUM, ENUMERATION, PATTERN, BOOLEAN, REQUIRED_EVIDENCE, plus
+  COMPOSITE/CONDITIONAL orchestrated by `rule-engine.js`),
+  `severity.js` (fixed Severity → gating mapping, Decision 03; harden-
+  only, never weaken), `rule-engine.js` (applicability checks, Composite
+  AND/OR/XOR aggregation and Conditional precondition evaluation per
+  Decision 04, and the Global Result Model's Mechanical Compliance
+  Result computation per ADR-0051), `observations.js` (Decision 06's
+  hybrid Observation Catalog — stable `observation_code` +
+  `observation_params` stored, text rendered on read, per-rule-version
+  override supported), `activity-events.js`, `repository.js`,
+  `service.js` (Engineering Decision/Exception/Condition workflows, Rule
+  Catalog lifecycle, functional-role enforcement per Decision 01), and
+  `dto.js`. Mounted in `server.js` behind `requireAdmin` at
+  `/api/ebp/internal/validation`, `/api/ebp/internal/rule-catalog`, and
+  `/api/ebp/internal/roles` — no Manufacturer- or Distributor-facing
+  endpoint exists in this phase.
+- **Tests** (`tests/ebp-phase4/`): 73 tests (33 unit, 27 integration, 13
+  regression) — all passing against a real local Postgres instance, no
+  mocks, stable across repeated runs. Re-ran and confirmed **unchanged**:
+  Phase 1 (59), Phase 2 (100), Phase 3 (126) — all still passing.
+- Two implementation-time fixes worth recording: (1) the Validation Run
+  transaction originally inserted the new `CURRENT` row before marking
+  the prior run `STALE`, transiently violating
+  `uq_ebp_validation_runs_one_current` — fixed by marking the prior run
+  `STALE` first, inserting the new row, then wiring `superseded_by`; (2)
+  `assignRoleService` originally required the caller to already hold
+  `ADMIN_OWNER`, which made it impossible for anyone to ever become the
+  first `ADMIN_OWNER` — fixed with a one-time bootstrap allowance that
+  only applies while zero `ADMIN_OWNER` assignments exist system-wide
+  (`requireAdmin`'s shared `ADMIN_KEY` remains the real security
+  boundary throughout).
+- Corrected an off-by-one ADR-range typo in `ENGINEERING_RULE_ENGINE.md`'s
+  header (referenced "ADR-0052"; the actual range is ADR-0039 through
+  ADR-0051) and removed a redundant duplicate unique index on
+  `ebp_rule_versions` in the migration.
+
+**Phase 4 is `Built`, deliberately not frozen — no freeze was requested
+this round. Phase 5 (Manufacturer Selection) has not been started.**
+
 ## 2026-07-13 — Phase 0: Foundation documentation created
 
 - Created `docs/ebp/` project structure.

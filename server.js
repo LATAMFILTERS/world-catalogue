@@ -525,6 +525,21 @@ app.use('/api/ebp/factory', factoryLimiter, createFactoryRouter(pool, ebpPhase3S
 const createEbpPortalRouter = require('./ebp/phase3/portal.routes');
 app.use('/portal', factoryLimiter, createEbpPortalRouter(pool));
 
+// ─── EBP Phase 4: Engineering Compliance Validation ───────────────────────────
+// Internal-only surface (requireAdmin), per docs/ebp/phases/phase-04-
+// validation-engine.md. Table migrations live under migrations/ebp-phase4/.
+// Never modifies Phase 1/2/3 schema — only ever writes a coarse, best-effort
+// UPDATE into the pre-existing, frozen ebp_manufacturer_offer_technical_
+// fields.compliance_status column (2026-07-13 consistency-audit finding).
+const {
+  createValidationRouter,
+  createRuleCatalogRouter,
+  createRolesRouter,
+} = require('./ebp/phase4/internal.routes');
+app.use('/api/ebp/internal/validation', adminLimiter, requireAdmin, createValidationRouter(pool));
+app.use('/api/ebp/internal/rule-catalog', adminLimiter, requireAdmin, createRuleCatalogRouter(pool));
+app.use('/api/ebp/internal/roles', adminLimiter, requireAdmin, createRolesRouter(pool));
+
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
 // function after every cross-reference resolution. Non-blocking — errors are

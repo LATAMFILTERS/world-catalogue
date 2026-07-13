@@ -39,7 +39,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised); rule-engine behavior normatively defined in [`ENGINEERING_RULE_ENGINE.md`](ENGINEERING_RULE_ENGINE.md), ADR-0038 | — | — |
+| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **Built** (not frozen); rule-engine behavior normatively defined in [`ENGINEERING_RULE_ENGINE.md`](ENGINEERING_RULE_ENGINE.md), ADR-0038, twelve open questions resolved 2026-07-13 (ADR-0039 through ADR-0051) | — | — |
 | 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
@@ -172,7 +172,41 @@ See ADR-0005.
   and **must all be answered before any Phase 4 code is written**. Phase
   4's own spec (`phases/phase-04-validation-engine.md`) is unchanged by
   this ADR and remains `Spec Drafted`, unapproved. **Phase 4 remains not
-  started and not authorized.**
+  started and not authorized (superseded below — 2026-07-13).**
+- **Phase 04 — Engineering Compliance Validation is `Built`, not frozen, as
+  of 2026-07-13.** The project owner resolved all twelve open questions
+  (Decisions 01-12) plus the Global Result Model in a single session;
+  `ENGINEERING_RULE_ENGINE.md` and `phases/phase-04-validation-engine.md`
+  were updated accordingly and ADR-0039 through ADR-0051 were recorded
+  before any code was written, per `CLAUDE_WORKFLOW.md`. Delivered: real,
+  executable, idempotent, reversible SQL migrations
+  (`migrations/ebp-phase4/`: `001_schema.sql` + `validate.sql` +
+  `rollback.sql`) adding 8 tables (`ebp_engineering_role_assignments`,
+  `ebp_rule_versions` — the Rule Catalog, `ebp_validation_runs`,
+  `ebp_rule_results`, `ebp_engineering_decisions`,
+  `ebp_engineering_exceptions`, `ebp_engineering_conditions`, and
+  `ebp_activity_events` — the first real implementation of the ADR-0037
+  shared event ledger) plus 1 analytics view
+  (`ebp_analytics_validation_summary`); a real backend module
+  (`ebp/phase4/`: `comparators.js` for the ten Comparison Types,
+  `severity.js` and `rule-engine.js` for the Severity/gating mapping and
+  Composite/Conditional aggregation, `observations.js` for the Decision-06
+  hybrid Observation Catalog, `activity-events.js`, `repository.js`,
+  `service.js`, `dto.js`) mounted in `server.js` behind `requireAdmin` at
+  `/api/ebp/internal/validation`, `/api/ebp/internal/rule-catalog`, and
+  `/api/ebp/internal/roles`; and a 73-test suite (33 unit + 27 integration
+  + 13 regression, `tests/ebp-phase4/`) all passing against a real local
+  Postgres instance, stable across repeated runs, with a verified
+  migrate → rollback → reapply cycle. Re-ran and confirmed unchanged:
+  Phase 1 (59), Phase 2 (100), Phase 3 (126) — all still passing. The
+  Global Result Model's three-way separation (Mechanical Compliance
+  Result / Engineering Decision / Offer Approval, ADR-0051) is enforced
+  structurally (separate columns/tables, separate CHECK constraints,
+  tested that the engine never self-grants an Engineering Decision — see
+  Decision 09, ADR-0047). **Phase 4 is deliberately left `Built`, not
+  frozen — the project owner did not request a freeze this round.**
+  **Phase 5 (Manufacturer Selection) has not been started; this build
+  does not authorize it.**
 
 ## How to Use This File
 
