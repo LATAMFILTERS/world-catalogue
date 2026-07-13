@@ -319,3 +319,76 @@ The project owner formally approved Phase 0. Recorded as ADR-0013 in
 - **No production code was written in this change.** Phase 1
   implementation begins in the next change, per the project owner's
   explicit authorization in this same approval.
+
+## 2026-07-13 — Phase 1 (Product Engineering Passport) built
+
+First EBP implementation change. Converts
+`phases/phase-01-product-engineering-passport.md` from `Spec Drafted` to
+an implementable spec and then implements it in full — real migrations,
+real backend module, real tests, all verified against a real local
+Postgres instance (not mocked). Phase 1 status moves to `Built`.
+
+- **`docs/ebp/phases/phase-01-product-engineering-passport.md`** — full
+  rewrite: real SQL schema (5 tables), the `is_pre_sku_draft`/
+  `field_applicability` mechanisms, the create/revise/activate/retire
+  lifecycle, the internal API surface, `requireAdmin` permissions,
+  validation rules, three role-scoped DTOs, and a seeded (engineering-
+  review-flagged) field applicability matrix. Both prior open questions
+  (data-entry actor; applicability matrix mechanism) are resolved.
+- **`migrations/ebp-phase1/001_schema.sql`** — `ebp_engineering_passports`
+  (versioned per-revision, partial unique index enforcing one `ACTIVE`
+  revision per SKU), `ebp_passport_engineering`, `ebp_passport_packaging`
+  (ELIMFILTERS-requirement fields only, per ADR-0008),
+  `ebp_field_applicability_matrix`, `ebp_passport_status_history`.
+  Idempotent (`CREATE TABLE IF NOT EXISTS`), follows the
+  `migrations/kg-phase1/` file convention.
+- **`migrations/ebp-phase1/002_seed_applicability_matrix.sql`** — 40 seed
+  rows (10 product_category/subtype pairs × 4 fields), explicitly flagged
+  as needing ELIMFILTERS engineering review before production use.
+- **`migrations/ebp-phase1/validate.sql`**, **`rollback.sql`** — both
+  executed for real against a local Postgres 16 instance: `validate.sql`
+  confirmed all 5 tables, 40 seed rows, the partial unique index, zero
+  orphaned rows, and zero SKUs with more than one `ACTIVE` revision;
+  `rollback.sql` confirmed all 5 EBP tables drop cleanly with
+  `elimfilters_catalog` and `technologies` left untouched.
+- **`ebp/phase1/validation.js`** — pure validation functions (locked
+  identification, applicability resolution/merge, engineering
+  completeness, packaging, automotive/industrial defaults).
+- **`ebp/phase1/dto.js`** — `toInternalPassportDTO`,
+  `toManufacturerPassportDTO` (excludes `internal_engineering_notes`),
+  `toDistributorPassportDTO` (identification only) — ADR-0009's
+  role-projection requirement, implemented and unit-tested.
+- **`ebp/phase1/repository.js`** — database access layer.
+- **`ebp/phase1/service.js`** — orchestration: `createPassport`,
+  `createRevision`, `activatePassport` (atomic supersession via row
+  locks), `retirePassport`.
+- **`ebp/phase1/passports.routes.js`** — the ten-endpoint internal API
+  surface (`create`, `get current`, `list revisions`, `get revision`,
+  `create revision`, `activate`, `retire`, `applicability-matrix`).
+- **`server.js`** — mounts `/api/ebp/passports` behind the existing
+  `adminLimiter` + `requireAdmin` middleware, right after `pool` is
+  constructed. No existing route, table, or behavior modified.
+- **`tests/ebp-phase1/unit.test.js`**, **`integration.test.js`**,
+  **`regression.test.js`** — 43 tests total using Node's built-in test
+  runner (`node --test`, zero new npm dependencies): 19 unit tests
+  (validation + DTO pure functions), 18 integration subtests (full HTTP
+  lifecycle against a live server + live Postgres — HD and LD SKU
+  creation, duplicate-revision conflict, unresolved-applicability
+  rejection, explicit-override acceptance, non-existent-SKU rejection,
+  atomic activation/supersession, retirement, revision history, the
+  applicability-matrix endpoint), 6 regression subtests (DB-level
+  guards independent of application code: the partial unique index, the
+  `(elimfilters_code, engineering_revision)` uniqueness constraint, the
+  applicability `CHECK` constraint, the target-quantity `CHECK`
+  constraint, and cascade-delete with no orphaned rows). **All 43 passed**
+  against a real local Postgres 16 instance. `package.json` gained a
+  `test:ebp-phase1` script; no new dependency was added.
+- **Manual live-server verification:** `server.js` was booted against the
+  local test database with a real `ADMIN_KEY`; a real `POST
+  /api/ebp/passports` request for SKU `EL80047` (OIL/SPIN_ON/HEAVY_DUTY)
+  returned a `201` with the applicability matrix correctly resolving
+  `bypass_valve_applicability`/`antidrainback_valve_applicability` to
+  `REQUIRED`; an unauthenticated request to the same surface returned
+  `403`.
+- **Phase 2 was not started.** No Manufacturer Registry table, route, or
+  spec change was made in this session.

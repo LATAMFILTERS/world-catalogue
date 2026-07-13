@@ -477,6 +477,12 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
+// ─── EBP Phase 1: Product Engineering Passport ────────────────────────────────
+// Internal-only surface (requireAdmin), per docs/ebp/phases/phase-01-product-
+// engineering-passport.md. Table migrations live under migrations/ebp-phase1/.
+const createEbpPassportsRouter = require('./ebp/phase1/passports.routes');
+app.use('/api/ebp/passports', adminLimiter, requireAdmin, createEbpPassportsRouter(pool));
+
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
 // function after every cross-reference resolution. Non-blocking — errors are
