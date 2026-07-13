@@ -1,0 +1,165 @@
+# PLATFORM ARCHITECTURE — ELIMFILTERS Business Platform (EBP)
+
+**Status:** Phase 0 — Proposed, not yet built
+**Depends on:** `PROJECT_MANIFESTO.md`, `BUSINESS_RULES.md`
+
+This document describes the proposed technical architecture for EBP. Nothing
+in this document is implemented yet. It exists so that Phase 1 onward has an
+agreed target to build against.
+
+## 1. Existing System (as-found, Phase 0 audit)
+
+| Layer | Technology | Notes |
+|---|---|---|
+| Public frontend | Next.js 14, static export (`frontend/out/`) | World Catalogue + Knowledge System. Deployed as a static site. |
+| API backend | Node.js + Express, single `server.js` (~2,486 lines) | Search, catalog, admin-key-gated import/admin endpoints, rate-limited via `express-rate-limit`. |
+| Database | PostgreSQL (Railway by default; Neon/Supabase supported via `DATABASE_URL`) | Accessed via `pg` (`Client`/`Pool`). Schema organized under `database/schema/001`–`007` (core taxonomy, catalog relationships, knowledge graph, customer intelligence, digital twins, predictive protection, autonomous protection) plus `migrations/kg-phase1`–`kg-phase8`. |
+| Caching | `ioredis` (Redis) | Used by the existing backend; availability/role not yet fully mapped for Phase 0 (see Risks). |
+| Auth (existing) | Static `ADMIN_KEY` bearer token via `requireAdmin` middleware | Applies to admin/import endpoints only. No end-user or distributor auth exists today. |
+| Mail | `nodemailer` via GoDaddy SMTP | Used by the contact form. |
+| Product identity | SKU architecture (HD `EA1/EH6/EL8/...`, LD `EL3/EA3/EC3/EF3`) | Defined in root `CLAUDE.md`. This is the join key EBP uses to reference catalog products — EBP does not mint its own product identifiers. |
+
+**Key existing tables EBP will reference (not modify):** `technologies`,
+`oems` (vehicle-OEM manufacturers, e.g. FIAT/VW — **not** the same concept as
+an EBP "manufacturer," see `BUSINESS_RULES.md` §1), `industries`, `assets`,
+and the product/catalog tables that hold SKUs and cross-reference data.
+
+## 2. Design Decision: Extend, Not Fork
+
+EBP will **not** stand up a separate database or a separate backend service
+in Phase 0/1. It extends the existing Postgres database with new tables under
+an `ebp_` table-name prefix (not a Postgres schema, to match the existing
+convention of prefix-namespaced tables rather than `CREATE SCHEMA`), and adds
+new route modules to the existing Express app rather than a new server
+process. Rationale and alternatives considered are recorded in
+`DECISIONS.md` (ADR-0001).
+
+This keeps SKU references (foreign keys), technology references, and OEM
+references consistent by construction, and avoids a second source of truth
+for product identity.
+
+## 3. Module Map
+
+Each module corresponds to one phase (see `ROADMAP.md`). Modules are additive
+— later modules depend on earlier ones but earlier modules do not depend on
+later ones.
+
+```
+                        ┌────────────────────────────┐
+                        │   Existing Catalog (SKUs,   │
+                        │  OEM codes, technologies)   │
+                        └──────────────┬─────────────┘
+                                       │ referenced by SKU
+                                       ▼
+                 ┌───────────────────────────────────────┐
+                 │  01 · Product Engineering Passport     │  canonical spec per SKU/family
+                 └───────────────────┬─────────────────────┘
+                                     │
+        ┌────────────────────────────┼─────────────────────────────┐
+        ▼                            ▼                             │
+┌───────────────────┐      ┌───────────────────┐                   │
+│ 02 · Manufacturer  │      │ 03 · Supplier      │                  │
+│    Registry        │      │    Portal          │                  │
+└─────────┬──────────┘      └─────────┬──────────┘                  │
+          └────────────┬──────────────┘                             │
+                        ▼                                           │
+              ┌───────────────────────┐                             │
+              │ 04 · Validation Engine │◄────────────────────────────┘
+              └───────────┬───────────┘
+                          ▼
+              ┌───────────────────────┐
+              │ 05 · Manufacturer      │
+              │    Selection           │
+              └───────────┬───────────┘
+                          ▼
+              ┌───────────────────────┐
+              │ 06 · Cost Engine       │
+              └───────────┬───────────┘
+                          ▼
+              ┌───────────────────────┐
+              │ 07 · Pricing Engine    │
+              └───────────┬───────────┘
+                          ▼
+              ┌───────────────────────┐
+              │ 08 · Distributor Portal│
+              └───────────┬───────────┘
+                          ▼
+              ┌───────────────────────┐
+              │ 09 · Order Management  │
+              └───────────────────────┘
+```
+
+## 4. Data Flow Summary
+
+1. **Engineering Passport (01)** defines *what* a product is: dimensions,
+   media, performance targets, standards it must meet, technology assignment.
+2. **Manufacturer Registry (02)** and **Supplier Portal (03)** define *who
+   can build it and from what*: qualified manufacturing partners and their
+   approved component/material suppliers.
+3. **Validation Engine (04)** checks a proposed (Passport × Manufacturer ×
+   Supplier) combination against `BUSINESS_RULES.md` and engineering
+   tolerances before it is allowed downstream. Nothing after this point may
+   reference an unvalidated combination.
+4. **Manufacturer Selection (05)** picks the best validated manufacturer for
+   a given demand signal (order, forecast) using cost, lead time, quality,
+   and region as inputs.
+5. **Cost Engine (06)** computes landed cost from the selected
+   manufacturer/supplier route: materials + conversion + freight + duties +
+   overhead.
+6. **Pricing Engine (07)** computes channel/region sell price from cost plus
+   margin and positioning rules (see `BUSINESS_RULES.md` §5, and the
+   Category Reframing Layer in root `CLAUDE.md`).
+7. **Distributor Portal (08)** exposes the priced, validated catalog to
+   authenticated distributor accounts.
+8. **Order Management (09)** turns a distributor selection into a tracked
+   order: allocation to a manufacturer, production/shipment status,
+   invoicing.
+
+## 5. Proposed API Surface (high level, not final)
+
+New route modules under the existing Express app, namespaced `/api/ebp/*`,
+gated by a distinct auth mechanism from the current `ADMIN_KEY` (see
+`DECISIONS.md` ADR-0002 — distributor/staff auth is undesigned as of Phase 0
+and is explicitly a Phase 8 dependency, not a Phase 0 deliverable):
+
+- `/api/ebp/passports` — Product Engineering Passport CRUD/read (Phase 1)
+- `/api/ebp/manufacturers` — Manufacturer Registry (Phase 2)
+- `/api/ebp/suppliers` — Supplier Portal (Phase 3)
+- `/api/ebp/validate` — Validation Engine (Phase 4)
+- `/api/ebp/selection` — Manufacturer Selection (Phase 5)
+- `/api/ebp/cost` — Cost Engine (Phase 6)
+- `/api/ebp/pricing` — Pricing Engine (Phase 7)
+- `/api/ebp/distributor` — Distributor Portal (Phase 8)
+- `/api/ebp/orders` — Order Management (Phase 9)
+
+This is directional only; each phase's own spec (`phases/phase-NN-*.md`) is
+the authority on its actual endpoints once written and approved.
+
+## 6. Non-Functional Requirements (carried into every phase)
+
+- **Auditability:** every write to an EBP table that affects cost, price, or
+  validation status must be attributable (who/what/when) and retained, not
+  overwritten in place.
+- **Backward compatibility:** no phase may alter existing catalog tables'
+  schema or semantics. EBP reads from and adds foreign keys to the existing
+  catalog; it does not migrate it.
+- **Environment separation:** EBP introduces no new required environment
+  variables beyond what is documented in each phase's spec and reflected in
+  `.env.example`.
+- **No production code before spec approval:** consistent with
+  `PROJECT_MANIFESTO.md` §4.1.
+
+## 7. Open Architectural Questions (carried to Phase 1+)
+
+See the Phase 0 audit report for the full list; summarized here for
+traceability:
+
+- Where does distributor/staff authentication live, and is it shared with
+  any future authentication on `frontend/`? (Blocks Phase 8 design, not
+  Phase 1-7.)
+- Does Redis (`ioredis`) play any role in EBP (e.g., caching Cost/Pricing
+  Engine outputs), or is it out of scope until a phase specifically needs it?
+- Should `ebp_*` tables live in the same logical database as the catalog
+  tables in all environments (dev/staging/prod), or only in prod, given the
+  existing `DATABASE_URL` is environment-specific and not yet documented
+  per-environment in this repo?
