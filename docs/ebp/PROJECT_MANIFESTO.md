@@ -1,8 +1,13 @@
 # PROJECT MANIFESTO — ELIMFILTERS Business Platform (EBP)
 
-**Status:** Phase 0 — Foundation
+**Status:** Phase 0 — Foundation (revised, correction round)
 **Owner:** ELIMFILTERS
 **Created:** 2026-07-13
+**Revised:** 2026-07-13 — domain model correction, see ADR-0005 and ADR-0006
+in `DECISIONS.md`. This revision replaces the raw-material "Supplier"
+concept in the original draft with the agreed three-entity MVP model below.
+It does not change §1-§2's framing, only the entity model and the phase
+chain.
 
 ## 1. What EBP Is
 
@@ -10,13 +15,39 @@ The ELIMFILTERS Business Platform (EBP) is the operational system that turns a
 filtration product from an **engineering specification** into a **sold,
 manufactured, and delivered part**. It governs the business logic that sits
 behind the public-facing World Catalogue: how a product is engineered, who is
-allowed to manufacture it, what components it is built from, whether a given
-build is valid, what it costs, what it sells for, and how a distributor orders
-it.
+allowed to manufacture it, whether a given manufacturer's offer is valid,
+what it costs, what it sells for, and how a distributor orders it.
 
 EBP is not a marketing surface and not a content system. It is the system of
-record for **product engineering, sourcing, cost, price, and order
-fulfillment**.
+record for **product engineering, manufacturer qualification, cost, price,
+and order fulfillment**.
+
+## 1.1 The Three MVP Entities
+
+The MVP models exactly three principal actors. Every phase in the roadmap
+exists to govern the relationship between them.
+
+1. **ELIMFILTERS** — owns and defines the Product Engineering Passport: the
+   mandatory specification, technology assignment, packaging requirements,
+   and final approval authority for every SKU. ELIMFILTERS never
+   manufactures directly; it defines what "correct" means and approves who
+   is allowed to build it.
+2. **Manufacturer** — the factory that produces the finished filter. A
+   Manufacturer receives assigned products (a Request Batch), responds
+   whether it can produce them, submits its own offered specification and
+   commercial terms (a Manufacturer Product Offer — FOB, MOQ, lead time,
+   capacity, packaging, evidence), and is identified internally by a
+   permanent, confidential code (`EFM-XXXX`), never by name as a functional
+   key. See `phases/phase-02-manufacturer-registry.md`.
+3. **Distributor** — sees only ELIMFILTERS-approved products at their final
+   approved price. A Distributor never sees which Manufacturer produced a
+   SKU, its `EFM-XXXX` code, FOB price, margin, or any confidential
+   engineering detail. See `BUSINESS_RULES.md` §10 and ADR-0006.
+
+Raw-material and component suppliers (filter media, adhesives, gaskets,
+cans) are **explicitly out of the MVP**. They are a Manufacturer-internal
+concern, not a modeled EBP entity, and must not appear as a dependency of
+any Phase 01-09 spec. See ADR-0005.
 
 ## 2. What EBP Is Not
 
@@ -41,12 +72,11 @@ The existing platform answers: *"What is this part, and what does it cross
 to?"* It does not yet answer:
 
 - Who is engineering-approved to manufacture this SKU, at what quality tier?
-- What raw materials and components does that manufacturing route require,
-  and who supplies them?
-- Is a given product + manufacturer + supplier combination valid against
-  ELIMFILTERS engineering and compliance rules before it is produced?
-- Given multiple qualified manufacturers, which one should fulfill a given
-  order (cost, lead time, quality, region)?
+- Does a given Manufacturer's offered specification actually comply with
+  ELIMFILTERS' required engineering before it is produced?
+- Given multiple qualified manufacturers with compliant offers, which one
+  should fulfill a given order (FOB cost, lead time, quality, capacity,
+  region)?
 - What does this SKU actually cost to land, and what should it sell for, by
   channel and region?
 - How does a distributor browse a priced catalog, place an order, and track
@@ -68,9 +98,10 @@ spreadsheets and ad hoc scripts.
 3. **Extend, don't fork, the existing catalog.** EBP tables reference existing
    catalog entities (SKUs, `technologies`, `oems`, `industries`) by their
    existing identifiers. EBP does not duplicate product master data.
-4. **Validation is a gate, not a suggestion.** No product/manufacturer/
-   supplier combination reaches Cost Engine, Pricing Engine, or Distributor
-   Portal without passing the Validation Engine (Phase 4).
+4. **Validation is a gate, not a suggestion.** No Passport × Manufacturer ×
+   Manufacturer Offer combination reaches Manufacturer Selection, Cost
+   Engine, Pricing Engine, or Distributor Portal without passing Engineering
+   Compliance Validation (Phase 4).
 5. **Sequential, gated phases.** Phases are built in dependency order (see
    `ROADMAP.md`). A phase does not start implementation until its
    predecessors are approved and, where applicable, deployed.
@@ -79,9 +110,14 @@ spreadsheets and ad hoc scripts.
    (`CLAUDE.md` — AI Citation Layer, Category Reframing Layer): no marketing
    superlatives, quantified claims only, standards cited by code.
 7. **Traceability.** Every priced SKU must be traceable back to: the
-   Engineering Passport version, the manufacturer and supplier that produced
-   it, the cost calculation that priced it, and the validation result that
-   approved it.
+   Engineering Passport version, the manufacturer and offer that produced
+   it, the cost calculation that priced it, and the compliance validation
+   result that approved it.
+8. **Manufacturer confidentiality by default.** Manufacturer identity,
+   `EFM-XXXX` code, FOB price, margin, and confidential engineering are
+   never exposed to a Distributor. This is enforced at the data boundary
+   between Pricing Engine and Distributor Portal, not just in the UI. See
+   ADR-0006.
 
 ## 5. Relationship to the Existing Codebase
 
@@ -95,12 +131,15 @@ spreadsheets and ad hoc scripts.
 
 ## 6. Success Criteria for EBP (Program-Level)
 
-- A product can be traced end-to-end: Engineering Passport → approved
-  manufacturer → validated build → landed cost → sell price → distributor
-  order — with every step attributable and auditable.
-- No SKU is priced or offered to a distributor without a passing validation
-  record.
-- Manufacturer and supplier data is structured enough to support a real
+- A product can be traced end-to-end: Engineering Passport → Manufacturer
+  Request Batch → Manufacturer Product Offer → compliance-validated build →
+  selected manufacturer → landed cost → sell price → distributor order —
+  with every step attributable and auditable.
+- No SKU is priced or offered to a distributor without a passing Engineering
+  Compliance Validation record.
+- No Distributor-visible data ever carries manufacturer identity, FOB, or
+  margin.
+- Manufacturer and offer data is structured enough to support a real
   sourcing decision (Phase 5) without spreadsheets.
 - The system extends the existing catalog without duplicating or
   contradicting it.

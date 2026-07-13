@@ -1,14 +1,26 @@
 # Phase 07 — Pricing Engine
 
-**Status:** Spec Drafted (not approved — no implementation authorized)
+**Status:** Spec Drafted (revised, correction round 2026-07-13 — section
+references and confidentiality requirement corrected; not approved; no
+implementation authorized)
 **Depends on:** Phase 06
 **Blocks:** Phase 08
+
+**Correction notice:** Cross-references to `BUSINESS_RULES.md` are updated
+to its revised section numbering (Pricing Engine Rules is now §9,
+Distributor Portal Rules is now §10 — see `BUSINESS_RULES.md`'s correction
+notice). This phase's confidentiality obligation to Phase 8 is also made
+explicit: this is the module responsible for stripping manufacturer
+identity and cost-basis fields before its output ever reaches Distributor
+Portal. See ADR-0006 in `DECISIONS.md`.
 
 ## Objective
 
 Compute channel/region sell price from landed cost plus margin rules, as the
 single authoritative source of price data for every downstream module
-(`BUSINESS_RULES.md` §8).
+(`BUSINESS_RULES.md` §9), and produce a confidentiality-safe output for
+Distributor Portal that carries no manufacturer identity or cost-basis
+fields.
 
 ## Scope
 
@@ -28,37 +40,47 @@ single authoritative source of price data for every downstream module
 - Landed cost computation itself (Phase 6) — Pricing consumes it
   exclusively.
 - Actual promotional/clearance pricing policy design — `BUSINESS_RULES.md`
-  §8 allows for logged exceptions but does not define a promotions system;
+  §9 allows for logged exceptions but does not define a promotions system;
   that would be a future, separate decision if pursued.
 
 ## Dependencies
 
 - Phase 6 (landed cost is the sole cost input; Pricing does not
-  independently estimate cost, per `BUSINESS_RULES.md` §8).
+  independently estimate cost, per `BUSINESS_RULES.md` §9).
 
 ## Key Entities / Data Model (sketch, not final)
 
 - `ebp_margin_rules` — channel/tier, region, currency, margin percentage
   or formula, effective date range.
-- `ebp_price_calculations` — `passport_id`, `manufacturer_id` (references
-  the costed combination), `channel`, `region`, `currency`, `landed_cost_ref`
-  (FK to the specific `ebp_cost_calculations` row used), `margin_applied`,
-  `sell_price`, `effective_from`, `effective_to`, `is_below_floor_exception`
-  (boolean), `exception_reason`.
+- `ebp_price_calculations` — `passport_id`, `manufacturer_code` (internal
+  reference to the costed Offer, ELIMFILTERS-visible only), `channel`,
+  `region`, `currency`, `landed_cost_ref` (FK to the specific
+  `ebp_cost_calculations` row used), `margin_applied`, `sell_price`,
+  `effective_from`, `effective_to`, `is_below_floor_exception` (boolean),
+  `exception_reason`.
+- `ebp_price_calculations_distributor_view` — a strict subset/projection of
+  the above containing only `passport_id`, `channel`, `region`, `currency`,
+  `sell_price`, `effective_from`. This (not the full record) is what Phase
+  8 is ever given access to — `manufacturer_code`, `landed_cost_ref`, and
+  `margin_applied` are not present in this projection at all, per
+  `BUSINESS_RULES.md` §9 and ADR-0006.
 
 ## Business Rules Enforced
 
-- `BUSINESS_RULES.md` §8 in full.
+- `BUSINESS_RULES.md` §9 in full, including the requirement that Pricing
+  Engine's output to Phase 8 excludes manufacturer-identifying and
+  cost-basis fields at the data-shape level.
 - Category Reframing Layer / AI Citation Layer language rules (root
   `CLAUDE.md`) for any generated pricing rationale text.
 
 ## Integration Points
 
 - Reads Phase 6 cost output exclusively for cost input.
-- Read by: Phase 8 (Distributor Portal displays this output and holds no
-  independent pricing logic, per `BUSINESS_RULES.md` §9), Phase 9 (orders
+- Read by: Phase 8 (Distributor Portal reads only the
+  `ebp_price_calculations_distributor_view` projection and holds no
+  independent pricing logic, per `BUSINESS_RULES.md` §10), Phase 9 (orders
   freeze a reference to the price at order time, per `BUSINESS_RULES.md`
-  §10).
+  §11).
 
 ## Deliverables
 
@@ -87,6 +109,13 @@ single authoritative source of price data for every downstream module
   conversion to each channel's currency introduces FX-timing risk (rate at
   cost-calc time vs. rate at price-calc time vs. rate at order time).
   Needs an explicit, documented policy before implementation.
+- **Risk: confidentiality-projection drift.** If a future change adds a
+  field to `ebp_price_calculations` and the corresponding
+  `ebp_price_calculations_distributor_view` projection isn't updated in
+  lockstep, a manufacturer/cost-basis field could reach Phase 8 by
+  omission rather than by design. The projection should be built as an
+  explicit allow-list (only named fields pass through), not a deny-list of
+  excluded fields, so new fields default to hidden.
 
 ## Open Questions
 

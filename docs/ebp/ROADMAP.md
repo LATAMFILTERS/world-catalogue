@@ -1,23 +1,33 @@
 # ROADMAP — ELIMFILTERS Business Platform (EBP)
 
-**Status:** Phase 0 — Foundation
+**Status:** Phase 0 — Foundation (revised, correction round, 2026-07-13)
 **Rule:** No phase begins implementation without explicit approval on its
 spec doc (`phases/phase-NN-*.md`) and its predecessors being approved. See
 `CLAUDE_WORKFLOW.md`.
+
+**Correction notice:** Phase 3's domain scope is corrected from "Supplier
+Portal" (raw-material vendor management) to **Manufacturer Intake Portal /
+Factory Portal** (Manufacturer Request Batch → Manufacturer Product Offer).
+Phase 4 is corrected from a generic "Validation Engine" over
+`Passport × Manufacturer × Supplier` to **Engineering Compliance
+Validation** over `Passport Version × Manufacturer × Manufacturer Offer`.
+See ADR-0005 in `DECISIONS.md`. File names under `phases/` are unchanged to
+avoid unnecessary churn; each file's title and content are the authority on
+its actual scope.
 
 ## Phase Sequence and Dependency Chain
 
 | # | Phase | Depends on | Delivers |
 |---|---|---|---|
 | 00 | Foundation | — | This documentation set. No code. |
-| 01 | Product Engineering Passport | 00 | Canonical technical spec per SKU/product family. |
-| 02 | Manufacturer Registry | 01 | Registry of qualified manufacturing partners by product family. |
-| 03 | Supplier Portal | 01 | Registry of component/material suppliers, scoped per manufacturer. |
-| 04 | Validation Engine | 01, 02, 03 | Gate that validates (Passport × Manufacturer × Supplier) combinations. |
-| 05 | Manufacturer Selection | 02, 04 | Decision logic choosing a manufacturer per demand signal. |
-| 06 | Cost Engine | 02, 03, 05 | Landed cost calculation per validated, selected combination. |
-| 07 | Pricing Engine | 06 | Channel/region sell price derived from cost + margin rules. |
-| 08 | Distributor Portal | 01, 07 | Authenticated portal exposing priced, validated catalog. |
+| 01 | Product Engineering Passport | 00 | ELIMFILTERS-owned canonical technical spec per SKU/product family: locked identification, required engineering, required packaging. |
+| 02 | Manufacturer Registry | 01 | Registry of qualified manufacturing partners by product family, keyed by permanent confidential `EFM-XXXX` codes. |
+| 03 | Manufacturer Intake Portal (Factory Portal) | 01, 02 | Manufacturer Request Batch mechanism + Manufacturer Product Offer collection (`offered_*`/`actual_*`, FOB, MOQ, lead time, capacity, packaging, evidence). |
+| 04 | Engineering Compliance Validation | 01, 02, 03 | Gate that validates Passport Version × Manufacturer × Manufacturer Offer combinations against required engineering. |
+| 05 | Manufacturer Selection | 02, 04 | Decision logic recommending primary/secondary/backup manufacturer per demand signal; ELIMFILTERS gives final approval. |
+| 06 | Cost Engine | 02, 05 | Landed cost calculation (FOB + freight + duties + overhead) per validated, selected Offer. |
+| 07 | Pricing Engine | 06 | Channel/region sell price derived from cost + margin rules; strips manufacturer/cost-basis fields before downstream exposure. |
+| 08 | Distributor Portal | 01, 07 | Authenticated portal exposing priced, validated catalog — product and final price only, never manufacturer/FOB/margin. |
 | 09 | Order Management | 08 | Order lifecycle: placement → allocation → production → shipment → invoicing. |
 
 This is a strict dependency graph, not a strict calendar — phases may be
@@ -49,17 +59,25 @@ A phase is considered **done** only when:
 For planning visibility, phases group into three milestones. Grouping is
 informational; the phase gate rule above still governs actual sequencing.
 
-- **Milestone A — Engineering Foundation** (Phases 01-03): establishes what
-  a product is, who can build it, and what it's built from. No cost or
-  pricing exists yet.
+- **Milestone A — Engineering & Manufacturer Foundation** (Phases 01-03):
+  establishes what a product must be, who exists to build it, and collects
+  each qualified Manufacturer's actual offered response. No compliance
+  verdict, cost, or pricing exists yet.
 - **Milestone B — Qualification & Economics** (Phases 04-07): establishes
-  that a build is valid, who should build it, what it costs, and what it
-  sells for. Nothing is customer-facing yet.
+  that an Offer is compliant, which Manufacturer should be selected, what
+  it costs, and what it sells for. Nothing is customer-facing yet.
 - **Milestone C — Commercial Operation** (Phases 08-09): exposes the
-  qualified, priced catalog to distributors and transacts orders against it.
+  qualified, priced catalog to distributors and transacts orders against
+  it, with manufacturer identity and cost basis never leaving the internal
+  boundary.
 
 ## Explicitly Out of Scope for This Roadmap
 
+- Raw-material/component Supplier management (filter media, adhesives,
+  gaskets, cans) as an independently modeled, validated EBP entity. This is
+  a Manufacturer-internal concern in the MVP and, if ever pursued, would be
+  a distinct future phase with its own ADR — not a dependency of Phases
+  01-09. See ADR-0005.
 - Any change to `frontend/` public pages, Knowledge System content, or SEO/
   GEO structure.
 - Any change to existing catalog import pipelines (`scripts/`) or the
@@ -67,6 +85,6 @@ informational; the phase gate rule above still governs actual sequencing.
 - Payment processing / financial settlement mechanics beyond invoicing
   status tracking (Phase 9 records invoicing status; it does not implement
   a payment gateway — that would be a future phase if pursued).
-- Distributor/staff identity provider selection (Phase 8 depends on this
-  being decided, but Phase 0 does not decide it — see
-  `PLATFORM_ARCHITECTURE.md` §7 open questions).
+- Manufacturer/Distributor identity provider selection (Phases 3 and 8
+  depend on this being decided, but Phase 0 does not decide it — see
+  `PLATFORM_ARCHITECTURE.md` §7 open questions, ADR-0002).

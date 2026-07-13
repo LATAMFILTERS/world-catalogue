@@ -14,6 +14,27 @@ Do not mix EBP commits with unrelated World Catalogue/Knowledge System
 commits in the same commit — keep history attributable per project even when
 sharing a branch.
 
+## 1.1 Domain Model Terms (binding, corrected 2026-07-13)
+
+The MVP has exactly three principal entities: **ELIMFILTERS**,
+**Manufacturer**, and **Distributor**. A raw-material/component **Supplier**
+is not a mandatory MVP entity — see `BUSINESS_RULES.md` §1 and ADR-0005 in
+`DECISIONS.md`. Do not:
+
+- Introduce a `Supplier`-named table, route, or field as a dependency of any
+  Phase 01-09 deliverable.
+- Reference a Manufacturer by `legal_name` as a functional/join key — use
+  `manufacturer_code` (`EFM-XXXX`) per ADR-0006.
+- Build or expose any data path that lets Distributor-facing code (Phase 8
+  or later) receive manufacturer identity, `EFM-XXXX`, FOB price, margin,
+  or confidential engineering notes — this must be excluded at the data
+  shape produced by Pricing Engine (Phase 7), not filtered after the fact.
+
+If a future request seems to reintroduce a Supplier concept or a
+manufacturer-identity leak toward Distributor Portal, stop and confirm with
+the project owner before proceeding — these are both points that have
+already been explicitly corrected once.
+
 ## 2. Phase Discipline (the core rule)
 
 - **Read `IMPLEMENTATION_MASTER_INDEX.md` first**, every session, before
@@ -104,7 +125,7 @@ Once a phase reaches implementation (post-approval):
   introducing new tooling.
 - New EBP backend logic should include a way to verify it against seed/test
   data before it touches real catalog or pricing data, per the "no invented
-  data in shared environments" rule in `BUSINESS_RULES.md` §11.
+  data in shared environments" rule in `BUSINESS_RULES.md` §12.
 
 ## 9. Session Startup
 
