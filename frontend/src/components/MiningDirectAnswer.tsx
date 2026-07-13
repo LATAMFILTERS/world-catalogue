@@ -14,19 +14,37 @@ export function MiningDirectAnswer({ paragraphStyle }: Props) {
     <div
       style={{
         display: 'grid',
-        gap: '1.15rem',
-        width: 'min(1180px, calc(100vw - 4rem))',
-        maxWidth: '1180px',
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+        gap: 'clamp(2rem, 4vw, 4rem)',
+        width: 'min(1240px, calc(100vw - 4rem))',
+        maxWidth: '1240px',
         position: 'relative',
         left: '50%',
         transform: 'translateX(-50%)',
+        alignItems: 'start',
       }}
     >
       {paragraphs.map((paragraph) => (
-        <p key={paragraph} style={{ ...paragraphStyle, margin: 0, textAlign: 'justify', textAlignLast: 'left' }}>
+        <p
+          key={paragraph}
+          style={{
+            ...paragraphStyle,
+            margin: 0,
+            fontSize: 'clamp(1rem, 1.38vw, 1.16rem)',
+            lineHeight: 1.82,
+            textAlign: 'left',
+          }}
+        >
           {paragraph}
         </p>
       ))}
+      <style>{`
+        @media (max-width: 860px) {
+          div:has(> p:first-child:last-child) {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
