@@ -49,13 +49,51 @@ export function MobileInternalLayoutFix() {
       @media (max-width: 860px) {
         .about-page-mobile-fix,
         .technologies-page-mobile-fix {
+          width: 100% !important;
+          max-width: 100% !important;
           overflow-x: clip !important;
         }
 
         .about-page-mobile-fix section,
         .technologies-page-mobile-fix section {
+          width: 100% !important;
           max-width: 100vw !important;
           overflow-x: clip !important;
+          box-sizing: border-box !important;
+        }
+
+        .about-page-mobile-fix section:not(:first-of-type) {
+          min-height: auto !important;
+          height: auto !important;
+        }
+
+        .about-page-mobile-fix section > div[style*="grid-template-columns"],
+        .technologies-page-mobile-fix section > div[style*="grid-template-columns"] {
+          display: grid !important;
+          grid-template-columns: minmax(0, 1fr) !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          gap: 1.75rem !important;
+        }
+
+        .about-page-mobile-fix div[style*="grid-template-columns"] > *,
+        .technologies-page-mobile-fix div[style*="grid-template-columns"] > *,
+        .about-page-mobile-fix div[style*="display: flex"] > *,
+        .technologies-page-mobile-fix div[style*="display: flex"] > * {
+          min-width: 0 !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .about-page-mobile-fix p,
+        .technologies-page-mobile-fix p {
+          width: 100% !important;
+          max-width: 100% !important;
+          white-space: normal !important;
+          overflow-wrap: break-word !important;
+          word-break: normal !important;
+          hyphens: none !important;
         }
 
         .about-failure-row-mobile {
@@ -64,6 +102,8 @@ export function MobileInternalLayoutFix() {
           row-gap: 0.85rem !important;
           padding: 1.4rem 0 !important;
           align-items: start !important;
+          min-height: auto !important;
+          height: auto !important;
         }
 
         .about-failure-row-mobile > h3 {
@@ -84,32 +124,37 @@ export function MobileInternalLayoutFix() {
           font-size: 1rem !important;
           line-height: 1.72 !important;
           text-align: left !important;
-          overflow-wrap: normal !important;
+          overflow-wrap: break-word !important;
           word-break: normal !important;
           hyphens: none !important;
         }
 
         .about-technology-layout-mobile {
           display: grid !important;
-          grid-template-columns: 1fr !important;
+          grid-template-columns: minmax(0, 1fr) !important;
           gap: 2rem !important;
           width: 100% !important;
+          max-width: 100% !important;
         }
 
         .about-technology-layout-mobile > * {
           min-width: 0 !important;
           width: 100% !important;
+          max-width: 100% !important;
         }
 
         .about-technology-cards-mobile {
           display: grid !important;
-          grid-template-columns: 1fr !important;
+          grid-template-columns: minmax(0, 1fr) !important;
           gap: 0.8rem !important;
           width: 100% !important;
+          max-width: 100% !important;
         }
 
         .about-technology-cards-mobile > a {
+          display: block !important;
           width: 100% !important;
+          max-width: 100% !important;
           min-width: 0 !important;
           box-sizing: border-box !important;
         }
@@ -120,6 +165,7 @@ export function MobileInternalLayoutFix() {
         .technologies-page-mobile-fix h1,
         .technologies-page-mobile-fix h2,
         .technologies-page-mobile-fix h3 {
+          max-width: 100% !important;
           overflow-wrap: normal !important;
           word-break: normal !important;
           hyphens: none !important;
@@ -143,7 +189,9 @@ export function MobileInternalLayoutFix() {
         .about-page-mobile-fix img,
         .about-page-mobile-fix video {
           display: block !important;
+          width: auto !important;
           max-width: 100% !important;
+          height: auto !important;
           margin-left: auto !important;
           margin-right: auto !important;
         }
@@ -154,6 +202,11 @@ export function MobileInternalLayoutFix() {
         .technologies-page-mobile-fix section {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
+        }
+
+        .about-page-mobile-fix section > div[style*="grid-template-columns"],
+        .technologies-page-mobile-fix section > div[style*="grid-template-columns"] {
+          gap: 1.35rem !important;
         }
 
         .technologies-page-mobile-fix h2 {
