@@ -133,12 +133,20 @@ function getIndustryTechGridCell(index: number, total: number) {
   return { gridColumn: `${position * 2 + 1} / span 2`, gridRow: isTop ? 1 : 2 };
 }
 
+const agricultureDirectAnswer = [
+  'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combines, harvesters, sprayers, irrigation engines, and field support equipment operating through heavy dust, crop residue, heat, vibration, and long seasonal duty cycles. During planting and harvest, filtration is not a routine maintenance detail. It is part of the protection strategy that keeps equipment productive when every hour in the field matters.',
+  'Agricultural operations expose air intake, hydraulic, fuel, and lubrication systems to fine soil dust, organic debris, moisture, fuel variability, and extended operating hours. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so producers can protect equipment value, maintain service discipline, preserve engine and hydraulic reliability, and reduce downtime risk during critical field windows.',
+];
+
+const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
+
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
   const isIndustry = category === 'industries';
   const isMining = isIndustry && item.name === 'Mining';
+  const isAgriculture = isIndustry && item.name === 'Agriculture';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -160,16 +168,34 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
   const videoParagraphs = isMining
     ? [miningVideoParagraph]
-    : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-      `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-      `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-    ]);
+    : isAgriculture
+      ? [agricultureVideoParagraph]
+      : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+        `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+        `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+      ]);
 
-  const industryAnswerParagraphs = isIndustry && !isMining
-    ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
-    : undefined;
+  const industryAnswerParagraphs = isAgriculture
+    ? agricultureDirectAnswer
+    : isIndustry && !isMining
+      ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+      : undefined;
 
-  const techTags = item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+  const techTags = isAgriculture
+    ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™']
+    : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+
+  const protectedAssets = geoData?.protectedAssets ?? (isAgriculture ? [
+    'Tractors',
+    'Combines',
+    'Harvesters',
+    'Sprayers',
+    'Irrigation Engines',
+    'Field Support Equipment',
+  ] : undefined);
+
+  const heroTitle = isAgriculture ? 'Agricultural Filtration Systems' : item.title;
+  const heroSubtitle = isAgriculture ? 'AGRICULTURAL ASSETS' : item.subtitle || undefined;
 
   return (
     <>
@@ -201,15 +227,15 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             </Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: '#FFF12D' }}>
-              {item.title}
+              {heroTitle}
             </span>
           </div>
         </div>
 
         <Hero
-          title={item.title}
-          subtitle={item.subtitle || undefined}
-          tagline={item.description}
+          title={heroTitle}
+          subtitle={heroSubtitle}
+          tagline={isAgriculture ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.' : item.description}
           ctaText={item.cta}
           backgroundImage={industryImage || bgImage}
         />
@@ -249,9 +275,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
               <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isIndustry ? '56% 44%' : '60% 40%', gap: isIndustry ? '2.6rem' : '3rem', alignItems: 'center' }}>
                 <div>
                   <h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{item.name} Asset Protection</h2>
-                  {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
+                  {protectedAssets && protectedAssets.length > 0 && (
                     <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>
-                      {geoData.protectedAssets.map((asset) => (
+                      {protectedAssets.map((asset) => (
                         <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: isIndustry ? '1.008rem' : '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
                           · {asset}
                         </span>
