@@ -1,0 +1,107 @@
+/* Scoped mobile/tablet aesthetic polish for shared internal-page components. */
+
+@media (max-width: 860px) {
+  .industry-hero-section {
+    min-height: auto !important;
+    padding-top: 0 !important;
+  }
+
+  .industry-hero-section > div:nth-of-type(4) {
+    padding: 6.75rem 1.15rem 4rem !important;
+  }
+
+  .industry-hero-section h1 {
+    max-width: 100% !important;
+    font-size: clamp(2.15rem, 11vw, 3.45rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.035em !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  .industry-hero-section h1 + p {
+    max-width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  .industry-hero-section p {
+    max-width: 100% !important;
+    text-wrap: pretty;
+  }
+
+  .industry-hero-section a {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .product-desc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .product-desc-grid > * {
+    min-width: 0 !important;
+  }
+
+  .product-desc-grid img,
+  .product-desc-grid video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .technology-portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+  }
+
+  .technology-portfolio-card {
+    min-height: 330px !important;
+  }
+
+  .technology-portfolio-logo-stage {
+    top: 0.85rem !important;
+    left: 0.85rem !important;
+    right: 0.85rem !important;
+    height: 240px !important;
+  }
+
+  .technology-portfolio-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .technology-portfolio-content {
+    padding: 1.1rem !important;
+  }
+
+  .technology-portfolio-explore {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.13em !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 430px) {
+  .industry-hero-section > div:nth-of-type(4) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .industry-hero-section h1 {
+    font-size: clamp(2rem, 10.5vw, 2.85rem) !important;
+  }
+
+  .technology-portfolio-card {
+    min-height: 305px !important;
+  }
+
+  .technology-portfolio-logo-stage {
+    height: 215px !important;
+  }
+}
