@@ -17,6 +17,7 @@ const dto = require('./dto');
 const csrf = require('./csrf');
 const pepFields = require('./pep-fields');
 const errorUtils = require('./errors');
+const factoryAuth = require('./factory-auth');
 
 const SESSION_COOKIE = 'ebp_factory_session';
 const LOGIN_CSRF_COOKIE = 'ebp_login_csrf';
@@ -40,13 +41,27 @@ function parseCookies(req) {
   );
 }
 
+// ADR-0035: Max-Age is always aligned with the server-side session TTL
+// (factory-auth.js's own 12-hour SESSION_TTL_SECONDS, never a separate
+// hardcoded number that could drift from it) — the cookie's own lifetime
+// never outlives, or meaningfully undershoots, the session it names. The
+// server session row remains the sole authority regardless: an expired/
+// revoked session is rejected by resolveSession() even if a stale cookie
+// with a longer client-side clock is still present.
 function setSessionCookie(res, token) {
   const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
-  res.set('Set-Cookie', `${SESSION_COOKIE}=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/portal${secure}`);
+  res.set(
+    'Set-Cookie',
+    `${SESSION_COOKIE}=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/portal; Max-Age=${factoryAuth.SESSION_TTL_SECONDS}${secure}`
+  );
 }
 
+// Clearing uses the identical HttpOnly/SameSite/Path/Secure attributes as
+// setSessionCookie (only Max-Age changes, to 0) — some browsers only
+// reliably overwrite/delete a cookie when every other attribute matches.
 function clearSessionCookie(res) {
-  res.set('Set-Cookie', `${SESSION_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal; Max-Age=0`);
+  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  res.set('Set-Cookie', `${SESSION_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal; Max-Age=0${secure}`);
 }
 
 // Double-submit cookie for the pre-session /portal/login form (there is no
@@ -62,7 +77,8 @@ function setLoginCsrfCookie(res, token) {
 }
 
 function clearLoginCsrfCookie(res) {
-  res.set('Set-Cookie', `${LOGIN_CSRF_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal/login; Max-Age=0`);
+  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  res.set('Set-Cookie', `${LOGIN_CSRF_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal/login; Max-Age=0${secure}`);
 }
 
 // csrfToken, when present, renders "Log out" as its own tiny POST form

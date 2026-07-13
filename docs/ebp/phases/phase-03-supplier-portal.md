@@ -686,6 +686,17 @@ Phase 2.
   curl, or API token is needed. Verified end-to-end (including the
   tampered-file and re-confirm-rejected paths) against a real Postgres
   instance via a cookie-authenticated integration test.
+- ~~**Risk: the session cookie had no `Max-Age`, and a password reset did
+  not revoke existing sessions.**~~ **Resolved in the pre-freeze
+  correction round (ADR-0035).** The session cookie's `Max-Age` is now
+  aligned with the real 12-hour session TTL (`factory-auth.SESSION_TTL_
+  SECONDS`); clearing a cookie always uses the identical attributes used
+  to set it; and `service.resetPassword`/`acceptInvite` now call
+  `repository.revokeAllSessionsForUser`, so a leaked session token stops
+  working the instant an account holder resets their password. Email
+  existence non-disclosure during login/reset was already correct and is
+  now covered by a dedicated test. **This closes every item of the
+  project owner's 9-point pre-freeze correction list.**
 
 ## Open Questions
 

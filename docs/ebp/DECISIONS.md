@@ -1889,3 +1889,79 @@ line for a specific user's report.
   `factory.routes.js`'s `errorToResponse` and the one string match inside
   `service.js`'s own `catch` block used purely to detect the specific
   `23505` lineage-conflict case (never returned to a caller).
+
+## ADR-0035 — Session cookie attributes aligned with the 12-hour session lifetime; sessions revoked on password reset
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The Factory Portal's session cookie (`ebp_factory_session`)
+was `HttpOnly`/`SameSite=Strict`/`Path=/portal` (and `Secure` in
+production) but had no `Max-Age` at all — making it a browser-session
+cookie, deleted the instant the tab/browser closes, which is *shorter*-
+lived than the actual 12-hour server-side session in the common case and
+inconsistent with it in general. `clearSessionCookie` (logout) and the
+login-CSRF cookie's own clear function also omitted `Secure` in
+production, an attribute mismatch versus the cookie they were clearing.
+Separately, resetting a factory user's password did not revoke that
+user's other live sessions — a session token issued before a reset
+(e.g., one that had leaked) would keep working for up to its own
+remaining 12 hours after the account holder reset their password
+specifically because they suspected compromise.
+
+**Decision:**
+1. **`factory-auth.js` exports `SESSION_TTL_SECONDS`** (derived from the
+   existing `SESSION_TTL_MS`, never a second hardcoded number that could
+   drift from it). `portal.routes.js`'s `setSessionCookie` sets
+   `Max-Age=${SESSION_TTL_SECONDS}` (43200) — the cookie's own lifetime
+   is always exactly the server-side session TTL. The server session row
+   remains the sole authority regardless: `resolveSession` rejects an
+   expired or revoked session even if a client's stale cookie/clock would
+   otherwise suggest it's still valid.
+2. **Clearing a cookie always uses the identical attribute set as setting
+   it** (only `Max-Age` changes, to `0`) — `clearSessionCookie` and
+   `clearLoginCsrfCookie` both now include `Secure` in production, same
+   as their corresponding "set" functions, since some browsers only
+   reliably overwrite/delete a cookie when every other attribute matches
+   the one that set it.
+3. **`repository.revokeAllSessionsForUser(pool, factoryUserId)`** — a
+   single `UPDATE ... SET revoked_at = NOW() WHERE factory_user_id = $1
+   AND revoked_at IS NULL` — is called from both `service.resetPassword`
+   and `service.acceptInvite` (the only two places a factory user's
+   password is ever set) immediately after the new password hash is
+   stored. Every previously-live session for that user stops resolving
+   the instant the reset completes, not merely once each session's own
+   TTL naturally expires.
+4. **Session token rotation on login was already structural, not new.**
+   `service.login` always generates a brand-new `crypto.randomBytes`
+   session token per call (a fresh row, never a reused/mutated one) —
+   this already satisfies "rotate the token after login." Combined with
+   (3), a password reset revokes every old session and forces a fresh
+   login to obtain a new one, which is itself a rotation of both the
+   session token and its bound CSRF token (ADR-0033) together, since the
+   CSRF token lives on the session row.
+5. **Email-existence non-disclosure was already correct, verified by
+   test.** `service.login` throws the identical `UnauthorizedError`
+   message regardless of whether the account doesn't exist, is
+   `DISABLED`, is still `INVITED` with no password set, or the password
+   is simply wrong. `service.requestPasswordReset` already returned
+   `null` silently for a nonexistent/disabled account with the route
+   always responding `200 {status: 'ok'}` either way — this ADR adds a
+   dedicated test proving the response for a real account and a
+   nonexistent one are byte-identical, rather than relying on code
+   inspection alone.
+
+**Consequences:**
+- A Manufacturer's session persists across browser restarts for up to
+  the real 12-hour window, matching user expectation, without ever
+  outliving the server's own authority over it.
+- A password reset now has an immediate, verifiable security effect
+  beyond "the old password stops working" — verified by test: a live
+  session token obtained before a reset is rejected (401) immediately
+  after the reset completes, using a fresh, isolated factory user/session
+  fixture (never touching the shared fixtures the rest of the suite
+  depends on).
+- No behavior change for `acceptInvite`'s revoke call in practice (a
+  freshly-invited account has no live sessions yet) — included purely to
+  keep the invariant absolute: every password-setting event revokes
+  whatever sessions exist, with no special-cased exception.

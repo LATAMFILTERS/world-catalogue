@@ -813,6 +813,7 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.match(res.headers.get('location'), /error=csrf/);
   });
 
+  let secondSessionCookieValue;
   await t.test('portal: login with a VALID matching CSRF field succeeds and issues a session cookie', async () => {
     const res = await fetch(`${portalUrl}/login`, {
       method: 'POST',
@@ -822,7 +823,42 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     });
     assert.equal(res.status, 302);
     assert.match(res.headers.get('location'), /\/portal\/dashboard/);
-    assert.match(res.headers.get('set-cookie') || '', /ebp_factory_session=/);
+    const setCookie = res.headers.get('set-cookie') || '';
+    assert.match(setCookie, /ebp_factory_session=/);
+    assert.match(setCookie, /HttpOnly/);
+    assert.match(setCookie, /SameSite=Strict/);
+    assert.match(setCookie, /Path=\/portal(?!\/)/);
+    // Max-Age is aligned with the 12-hour server-side session TTL (ADR-0035), never absent (which
+    // would make it a browser-session-only cookie shorter-lived than the real session).
+    assert.match(setCookie, /Max-Age=43200\b/);
+    secondSessionCookieValue = extractSetCookie(res, 'ebp_factory_session');
+  });
+
+  await t.test('portal: logging out clears the session cookie with matching attributes and the server session stops working', async () => {
+    const dashRes = await fetch(`${portalUrl}/dashboard`, { headers: { cookie: `ebp_factory_session=${secondSessionCookieValue}` } });
+    const dashHtml = await dashRes.text();
+    const csrfMatch = dashHtml.match(/name="_csrf" value="([0-9a-f]{64})"/);
+    assert.ok(csrfMatch);
+
+    const logoutRes = await fetch(`${portalUrl}/logout`, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { cookie: `ebp_factory_session=${secondSessionCookieValue}`, 'content-type': 'application/x-www-form-urlencoded' },
+      body: `_csrf=${csrfMatch[1]}`,
+    });
+    assert.equal(logoutRes.status, 302);
+    assert.match(logoutRes.headers.get('location'), /\/portal\/login/);
+    const clearCookie = logoutRes.headers.get('set-cookie') || '';
+    assert.match(clearCookie, /ebp_factory_session=;/);
+    assert.match(clearCookie, /HttpOnly/);
+    assert.match(clearCookie, /SameSite=Strict/);
+    assert.match(clearCookie, /Path=\/portal(?!\/)/);
+    assert.match(clearCookie, /Max-Age=0/);
+
+    // The server session is authoritative: even presenting the same (now-revoked) cookie value again is rejected.
+    const afterRes = await fetch(`${portalUrl}/dashboard`, { headers: { cookie: `ebp_factory_session=${secondSessionCookieValue}` }, redirect: 'manual' });
+    assert.equal(afterRes.status, 302);
+    assert.match(afterRes.headers.get('location'), /\/portal\/login/);
   });
 
   await t.test('portal: logout is a POST (never GET) and requires a valid CSRF token', async () => {
@@ -862,6 +898,78 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.equal(body.error, 'not_found');
     assert.match(body.request_id, /^[0-9a-f-]{36}$/i);
     assert.doesNotMatch(JSON.stringify(body), FORBIDDEN_INTERNAL_PATTERNS);
+  });
+
+  // ── 9e. Session revocation on password reset (ADR-0035) ─────────────────
+  // Uses an entirely fresh factory user/session, isolated from every other
+  // test's shared factoryEmail/sessionToken fixtures.
+
+  await t.test('resetting a factory user\'s password revokes all of that user\'s existing sessions immediately', async () => {
+    const svc = require('../../ebp/phase3/service');
+    const resetEmail = `reset-test-${suffix}@example.com`;
+    const inviteRes = await fetch(`${internalUrl}/manufacturer-users`, {
+      method: 'POST',
+      headers: admin(),
+      body: JSON.stringify({ manufacturer_id: manufacturerId, email: resetEmail, full_name: 'Reset Test User', role: 'MANUFACTURER_ENGINEERING' }),
+    });
+    assert.equal(inviteRes.status, 201);
+    const invited = await inviteRes.json();
+    const acceptRes = await fetch(`${factoryUrl}/auth/accept-invite`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ token: invited.invite_token, password: 'first-strong-password-789' }),
+    });
+    assert.equal(acceptRes.status, 200);
+    const loginRes = await fetch(`${factoryUrl}/auth/login`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: resetEmail, password: 'first-strong-password-789' }),
+    });
+    assert.equal(loginRes.status, 200);
+    const liveToken = (await loginRes.json()).session_token;
+
+    const beforeRes = await fetch(`${factoryUrl}/batches`, { headers: { authorization: `Bearer ${liveToken}` } });
+    assert.equal(beforeRes.status, 200);
+
+    // request-password-reset never discloses account existence via its own response...
+    const requestRes = await fetch(`${factoryUrl}/auth/request-password-reset`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: resetEmail }),
+    });
+    assert.equal(requestRes.status, 200);
+    assert.deepEqual(await requestRes.json(), { status: 'ok' });
+
+    // ...so the raw reset token (deliberately never returned over HTTP) is obtained by calling
+    // the same service function directly, exactly as a real out-of-band delivery mechanism would.
+    const { resetToken } = await svc.requestPasswordReset(pool, resetEmail);
+    assert.ok(resetToken);
+    await svc.resetPassword(pool, resetToken, 'second-strong-password-abc');
+
+    const afterRes = await fetch(`${factoryUrl}/batches`, { headers: { authorization: `Bearer ${liveToken}` } });
+    assert.equal(afterRes.status, 401); // the pre-reset session is dead, not just the reset token
+
+    const reLoginRes = await fetch(`${factoryUrl}/auth/login`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: resetEmail, password: 'second-strong-password-abc' }),
+    });
+    assert.equal(reLoginRes.status, 200); // the new password works for a fresh login
+  });
+
+  await t.test('request-password-reset never discloses whether the email exists (identical response for a real vs. nonexistent account)', async () => {
+    const realRes = await fetch(`${factoryUrl}/auth/request-password-reset`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: factoryEmail }),
+    });
+    const fakeRes = await fetch(`${factoryUrl}/auth/request-password-reset`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: `definitely-nonexistent-${suffix}@example.com` }),
+    });
+    assert.equal(realRes.status, fakeRes.status);
+    assert.deepEqual(await realRes.json(), await fakeRes.json());
   });
 
   // ── 10. Batch close / cancel ─────────────────────────────────────────────

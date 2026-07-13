@@ -112,16 +112,22 @@ See ADR-0005.
   upgraded to match), ADR-0033 (CSRF protection: session-bound
   synchronizer token on every Portal form, a double-submit cookie for
   the pre-session login form, `logout` changed from `GET` to `POST`),
-  and ADR-0034 (error-response sanitization: known service errors keep
+  ADR-0034 (error-response sanitization: known service errors keep
   their curated message, anything unexpected becomes a generic message
   plus a `request_id`, closing two real leak vectors found in the
-  Portal's offer-submit and Excel-confirm error paths) are done;
-  cookie/session-lifecycle hardening is still pending. The test suite
-  has grown from 87 to 123 tests (counts confirmed by the `node --test`
-  runner, `tests/ebp-phase3/`), all passing against a real local Postgres
-  instance, with Phase 1's 59-test and Phase 2's 100-test suites
-  re-confirmed unmodified. Built with ADR-0023 through ADR-0034 — see
-  `DECISIONS.md`. **Phase 3 will not be marked `APPROVED / FROZEN` until
+  Portal's offer-submit and Excel-confirm error paths), and ADR-0035
+  (cookie/session lifecycle: the session cookie's `Max-Age` is now
+  aligned with the real 12-hour session TTL, clearing a cookie always
+  uses the identical attributes used to set it, and resetting a factory
+  user's password immediately revokes every one of that user's existing
+  sessions) are done. **This closes every item of the project owner's
+  9-point pre-freeze correction list except the final audit-and-freeze
+  step itself.** The test suite has grown from 87 to 126 tests (counts
+  confirmed by the `node --test` runner, `tests/ebp-phase3/`), all
+  passing against a real local Postgres instance, with Phase 1's 59-test
+  and Phase 2's 100-test suites re-confirmed unmodified. Built with
+  ADR-0023 through ADR-0035 — see `DECISIONS.md`. **Phase 3 will not be
+  marked `APPROVED / FROZEN` until
   the full correction list is complete and re-audited. Phase 4
   (Engineering Compliance Validation) has not been started.**
 - **Phases 04-09** remain `Spec Drafted` — first-pass drafts written during

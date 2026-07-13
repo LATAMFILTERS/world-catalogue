@@ -386,6 +386,10 @@ async function acceptInvite(pool, rawToken, password) {
   const passwordHash = await factoryAuth.hashPassword(password);
   const user = await repository.updateFactoryUserPassword(pool, invitation.factory_user_id, passwordHash);
   await repository.markInvitationUsed(pool, invitation.id);
+  // No live session should exist yet for a just-invited account, but
+  // revoking here too is harmless and keeps the invariant absolute:
+  // every password-setting event revokes whatever sessions exist.
+  await repository.revokeAllSessionsForUser(pool, user.id);
   await repository.insertAuditLog(pool, user.id, 'ACTIVATED', null, {});
   return user;
 }
@@ -412,6 +416,10 @@ async function resetPassword(pool, rawToken, password) {
   const passwordHash = await factoryAuth.hashPassword(password);
   const user = await repository.updateFactoryUserPassword(pool, invitation.factory_user_id, passwordHash);
   await repository.markInvitationUsed(pool, invitation.id);
+  // ADR-0035: every existing session is revoked the moment the password
+  // is reset — a leaked/stolen session token stops working immediately,
+  // not just on its own natural 12-hour expiry.
+  await repository.revokeAllSessionsForUser(pool, user.id);
   await repository.insertAuditLog(pool, user.id, 'PASSWORD_RESET_COMPLETED', null, {});
   return user;
 }

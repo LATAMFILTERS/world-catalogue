@@ -518,6 +518,14 @@ async function revokeSessionByHash(pool, tokenHash) {
   await pool.query('UPDATE ebp_factory_sessions SET revoked_at = NOW() WHERE token_hash = $1 AND revoked_at IS NULL', [tokenHash]);
 }
 
+// ADR-0035: every live session for a user is revoked on password
+// change/reset, so a stolen/leaked session token stops working the
+// moment the account holder resets their credentials — not just future
+// logins requiring the new password.
+async function revokeAllSessionsForUser(pool, factoryUserId) {
+  await pool.query('UPDATE ebp_factory_sessions SET revoked_at = NOW() WHERE factory_user_id = $1 AND revoked_at IS NULL', [factoryUserId]);
+}
+
 async function insertAuditLog(pool, factoryUserId, eventType, ipAddress, metadata) {
   await pool.query(
     `INSERT INTO ebp_factory_user_audit_log (factory_user_id, event_type, ip_address, metadata)
@@ -576,5 +584,6 @@ module.exports = {
   fetchLiveSessionByHash,
   touchSession,
   revokeSessionByHash,
+  revokeAllSessionsForUser,
   insertAuditLog,
 };

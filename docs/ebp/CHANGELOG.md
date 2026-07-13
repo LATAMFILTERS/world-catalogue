@@ -950,4 +950,42 @@ freeze entry.
   item of this correction round before the audit-and-freeze step.
 - **Phase 4 was not started.**
 
+## 2026-07-13 — Phase 3 mandatory pre-freeze correction round (part 4): cookie/session lifecycle hardening (ADR-0035)
+
+- **`ebp_factory_session` cookie now sets `Max-Age` aligned with the real
+  12-hour server-side session TTL** (`factory-auth.js`'s new
+  `SESSION_TTL_SECONDS`, derived from the existing `SESSION_TTL_MS`, never
+  a second hardcoded number) — it was previously a browser-session-only
+  cookie with no `Max-Age` at all, shorter-lived than the session it
+  named in the common case of a closed tab/browser.
+- **Clearing a cookie now always uses the identical attribute set used to
+  set it** — `clearSessionCookie` and `clearLoginCsrfCookie` both gained
+  the same `Secure`-in-production attribute their corresponding "set"
+  functions already had, since some browsers only reliably overwrite/
+  delete a cookie when every other attribute matches.
+- **`repository.revokeAllSessionsForUser(pool, factoryUserId)`** — called
+  from both `service.resetPassword` and `service.acceptInvite`
+  immediately after a new password hash is stored. Every previously-live
+  session for that user is revoked the instant a password reset
+  completes, not merely once each session's own TTL naturally expires.
+- **Verified, not just asserted, that email existence is never disclosed**
+  during login or password reset — a new test proves
+  `request-password-reset` returns byte-identical responses for a real
+  vs. a nonexistent email.
+- **Session token rotation on login** was already structural (every
+  `service.login` call generates a brand-new random token, never reusing/
+  mutating one) — documented as such in ADR-0035 rather than re-built.
+- **Test suite.** 126 tests total (was 123): a login test extended to
+  assert the session cookie's `HttpOnly`/`SameSite=Strict`/`Path=/portal`/
+  `Max-Age=43200` attributes; a new logout test proving the cleared
+  cookie carries matching attributes and that the server rejects the
+  same cookie value again afterward; a new isolated-fixture test proving
+  a live session token stops working immediately after that user's
+  password is reset; and a new test proving password-reset's
+  email-existence non-disclosure. All 126 pass; Phase 1 (59) and Phase 2
+  (100) re-confirmed unmodified.
+- **This closes every item of the project owner's 9-point pre-freeze
+  correction list except the final audit-and-freeze step itself.**
+- **Phase 4 was not started.**
+
 

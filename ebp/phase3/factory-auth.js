@@ -13,6 +13,7 @@ const scryptAsync = promisify(scrypt);
 const SCRYPT_KEYLEN = 64;
 const SESSION_TOKEN_BYTES = 32;
 const SESSION_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
+const SESSION_TTL_SECONDS = SESSION_TTL_MS / 1000; // for the Set-Cookie Max-Age attribute (ADR-0035)
 const INVITE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 const PASSWORD_RESET_TTL_MS = 60 * 60 * 1000; // 1 hour
 const MAX_FAILED_LOGINS = 5;
@@ -71,4 +72,5 @@ module.exports = {
   randomUUID,
   MAX_FAILED_LOGINS,
   LOCKOUT_MS,
+  SESSION_TTL_SECONDS,
 };
