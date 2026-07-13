@@ -12,17 +12,26 @@ requires a three-tier recommendation (primary/secondary/backup) with
 ELIMFILTERS retaining final approval, per the project owner's correction.
 See ADR-0005 in `DECISIONS.md`.
 
-**Correction notice (second round, this revision):** Because a
-Manufacturer may now submit many versioned Offers for the same Passport
-Version (ADR-0007), Selection's candidate pool is narrowed to exactly the
-Offers that are **both** the current active revision for their (Passport
-Version × Manufacturer) pair **and** hold a current `VALID` result within
-its effectiveness window — never expired, withdrawn, rejected, or
-superseded. The recommendation now records the exact `offer_id` and
-`offer_revision` evaluated and selected for each tier, not just the
-Manufacturer. See ADR-0007. This phase's relationship to the new **Offer
-Approval** entity (Phase 3) is flagged as an open question below, not
-resolved by this correction round.
+**Correction notice (second round):** Because a Manufacturer may now
+submit many versioned Offers for the same Passport Version (ADR-0007),
+Selection's candidate pool is narrowed to exactly the Offers that are
+**both** the current active revision for their (Passport Version ×
+Manufacturer) pair **and** hold a current `VALID` result within its
+effectiveness window — never expired, withdrawn, rejected, or superseded.
+The recommendation now records the exact `offer_id` and `offer_revision`
+evaluated and selected for each tier, not just the Manufacturer. See
+ADR-0007.
+
+**Governance decision (2026-07-13, Phase 0 closure, ADR-0010):** The
+Offer Approval / Selection ordering question this phase previously left
+open is now resolved. An **official** Selection recommendation may only
+evaluate Offers that are simultaneously: the current active revision;
+`VALID` and within its effectiveness window; `APPROVED` (Phase 3 Offer
+Approval, ADR-0011); and from a Manufacturer that is `QUALIFIED` or
+`CONDITIONAL`-satisfied for the family. A `VALID`-but-not-yet-`APPROVED`
+Offer may be used only in an internal, explicitly labeled
+`PRELIMINARY_COMPARISON` — never an official recommendation, and never
+promoted into one.
 
 ## Objective
 
@@ -35,12 +44,19 @@ not auto-commit.
 ## Scope
 
 **In scope:**
-- Candidate filtering: only Offers that are (a) the current active
-  revision for their (Passport Version × Manufacturer) pair — not
-  `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or `REJECTED` — and (b) hold a
-  current `VALID` Engineering Compliance Validation result bound to that
-  exact `offer_id`/`offer_revision`, within its effectiveness window, are
-  eligible candidates (`BUSINESS_RULES.md` §8).
+- Candidate filtering for an **official** recommendation: only Offers that
+  are (a) the current active revision for their (Passport Version ×
+  Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or
+  `REJECTED`; (b) hold a current `VALID` Engineering Compliance Validation
+  result bound to that exact `offer_id`/`offer_revision`, within its
+  effectiveness window; (c) hold a current `APPROVED` Offer Approval
+  result (Phase 3, ADR-0011); and (d) belong to a Manufacturer that is
+  `QUALIFIED` or `CONDITIONAL`-satisfied for the family, are eligible
+  candidates (`BUSINESS_RULES.md` §8, ADR-0010).
+- **`PRELIMINARY_COMPARISON`:** an internal, explicitly labeled comparison
+  of `VALID`-but-not-yet-`APPROVED` Offers, for planning visibility only.
+  Never creates, converts into, or is reused as an official recommendation
+  (ADR-0010).
 - Selection logic considering, at minimum, per `BUSINESS_RULES.md` §8:
   mandatory technical compliance (the `VALID` gate itself), FOB price,
   packaging, MOQ, lead time, monthly capacity, certifications, evidence,
@@ -83,17 +99,28 @@ not auto-commit.
   `offer_id`/`offer_revision`, validated status, and attributes at
   decision time), `basis` (structured rationale per tier), `recommended_at`.
 - `ebp_selection_approvals` — `recommendation_id`, `approved_by`
-  (ELIMFILTERS actor), `approved_at`, `approved_primary_offer_id` (may
-  differ from the recommended primary if ELIMFILTERS overrides the
-  recommendation — still must reference a `VALID` Offer), `override_reason`
-  (populated only if the approved choice differs from the recommended
-  primary).
+  (an `ADMIN_OWNER`, per ADR-0011), `approved_at`, `approved_primary_
+  offer_id` (may differ from the recommended primary if `ADMIN_OWNER`
+  overrides the recommendation — still must reference a `VALID` **and**
+  `APPROVED` Offer; `ADMIN_OWNER` can never promote a technically
+  `INVALID` Offer into the decision), `override_reason` (populated only if
+  the approved choice differs from the recommended primary).
+- `ebp_selection_preliminary_comparisons` — `passport_id`,
+  `candidates_considered` (Offers that are `VALID` but not yet
+  `APPROVED`), `basis`, `compared_at`, `compared_by`,
+  `label` (fixed value `PRELIMINARY_COMPARISON`) — structurally separate
+  from `ebp_selection_recommendations` so a preliminary analysis can never
+  be mistaken for, or silently promoted into, an official recommendation
+  (ADR-0010).
 
 ## Business Rules Enforced
 
-- `BUSINESS_RULES.md` §8 in full, including the current-active-revision +
-  `VALID`-within-window candidate gate, the primary/secondary/backup
-  requirement, and the ELIMFILTERS-final-approval requirement.
+- `BUSINESS_RULES.md` §8 in full, including the five-part official-
+  candidate gate (current-active-revision, `VALID`-within-window,
+  `APPROVED`, `QUALIFIED`/`CONDITIONAL`-satisfied, not expired/withdrawn/
+  rejected/superseded — ADR-0010), the `PRELIMINARY_COMPARISON` carve-out,
+  the primary/secondary/backup requirement, and the `ADMIN_OWNER`
+  final-approval requirement (ADR-0011).
 
 ## Integration Points
 
@@ -142,11 +169,14 @@ not auto-commit.
   `BUSINESS_RULES.md` §8. Without an explicit weighting or scoring model
   agreed at spec-approval time, "primary" vs. "secondary" is not
   reproducible or auditable.
-- **Risk: Offer Approval / Selection ordering is undecided (new this
-  round).** If Selection can recommend an Offer that ELIMFILTERS has not
-  yet approved (Phase 3, `ebp_manufacturer_offer_approvals`), a
-  recommendation could point to packaging terms that are later rejected
-  at approval time, forcing a re-selection. See Open Questions.
+- **Risk: `PRELIMINARY_COMPARISON` / official-recommendation confusion.**
+  Because a `PRELIMINARY_COMPARISON` and an official recommendation can
+  reference overlapping candidate Offers, an implementation that doesn't
+  keep them in structurally separate tables/status spaces (per
+  `ebp_selection_preliminary_comparisons` vs. `ebp_selection_
+  recommendations`, ADR-0010) risks a preliminary analysis being displayed
+  or consumed as if it were official. Should be a release-blocking check
+  at spec approval, not left to UI labeling alone.
 
 ## Open Questions
 
@@ -154,18 +184,14 @@ not auto-commit.
   orders (post-Phase-9), or also forecasts/planning demand ahead of Order
   Management existing? If forecasts are in scope, Phase 5 has a soft
   dependency on demand-planning data that isn't modeled anywhere in
-  Phases 00-09 today.
+  Phases 00-09 today. (Note: a `PRELIMINARY_COMPARISON`, ADR-0010, can
+  reasonably run against a forecast signal even before Order Management
+  exists, since it never produces an official, actionable outcome.)
 - What is the actual scoring/weighting formula across the ranking
   criteria? Needed before this phase's spec can be marked
   `Spec Approved` — flagged as a risk above, repeated here as the concrete
   open decision.
-- **Does Selection require an Offer Approval record (Phase 3,
-  `ebp_manufacturer_offer_approvals`) in addition to a current `VALID`
-  validation before an Offer can even be *recommended*, or is Offer
-  Approval only required before an order is actually fulfilled against
-  it?** Not decided by either correction round — `BUSINESS_RULES.md` §8
-  currently gates Selection on `VALID` + current-active-revision only, per
-  the project owner's literal instruction, but this leaves open whether a
-  recommended primary/secondary/backup could later have its packaging
-  proposal rejected at Approval time, requiring re-selection. Needs an
-  explicit decision at this phase's spec approval.
+- **Resolved (2026-07-13, ADR-0010):** Selection requires a current
+  `APPROVED` Offer Approval result, in addition to `VALID`, before an
+  Offer is eligible for an official recommendation. A `VALID`-only Offer
+  may appear solely in a `PRELIMINARY_COMPARISON`.

@@ -1,8 +1,23 @@
 # Phase 00 — Foundation
 
-**Status:** In Build (this document is part of its own deliverable)
+**Status:** `APPROVED / FROZEN v1.0`
+**Approved:** 2026-07-13, by the project owner, after two correction
+rounds (ADR-0005/ADR-0006; ADR-0007/ADR-0008/ADR-0009) and a final
+governance-decisions round (ADR-0010/ADR-0011/ADR-0012). See ADR-0013 in
+`DECISIONS.md`.
+**Branch:** `claude/phase-0-audit-review-wanxa3`
+**Closing commit:** see the "Phase 0 approved and frozen — v1.0" entry in
+`CHANGELOG.md` for this date, which names the exact commit hash.
 **Depends on:** Nothing
 **Blocks:** All other phases
+
+**Frozen scope:** the domain model, entity list, and governance rules
+established through ADR-0001–ADR-0013 (the three-entity model, Offer
+versioning, packaging ownership split, note-field split, and Selection/
+Approval governance) may not be changed without a new ADR that explicitly
+supersedes the relevant prior entry. Phase specs may still be elaborated
+with implementation detail as each phase moves through its own approval
+gate — that is expected, not an architecture change.
 
 ## Objective
 
@@ -63,14 +78,16 @@ None yet in code; Phase 0 is where `BUSINESS_RULES.md` itself is authored.
 
 ## Exit Criteria
 
-- Every file in the required structure exists and is internally consistent
-  (no contradictions between `BUSINESS_RULES.md`, `PLATFORM_ARCHITECTURE.md`,
-  and the phase specs).
-- The audit report has been delivered.
-- The project owner has reviewed the audit report. (Approval to proceed to
-  Phase 1 is a separate, explicit step — Phase 0 "done" means the
-  deliverable is complete and reviewable, not that Phase 1 is
-  automatically authorized.)
+- [x] Every file in the required structure exists and is internally
+  consistent (no contradictions between `BUSINESS_RULES.md`,
+  `PLATFORM_ARCHITECTURE.md`, and the phase specs) — verified across three
+  review rounds, most recently by the consistency audit accompanying
+  ADR-0013.
+- [x] The audit report has been delivered (three times: initial, and after
+  each of two correction rounds).
+- [x] The project owner has reviewed the audit report and **formally
+  approved Phase 0** on 2026-07-13 (ADR-0013). Phase 1 is authorized to
+  begin; no phase beyond Phase 1 is authorized by this approval.
 
 ## Risks
 

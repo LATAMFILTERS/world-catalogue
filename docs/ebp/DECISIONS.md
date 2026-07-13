@@ -389,3 +389,218 @@ Passport" API implementation.
 - `PLATFORM_ARCHITECTURE.md` §6 (Confidentiality by construction) is
   extended to name role-specific Passport projections as a required
   pattern, not just a Distributor-facing one.
+
+---
+
+## ADR-0010 — Manufacturer Selection requires VALID and APPROVED; preliminary analysis is explicitly non-official
+
+**Date:** 2026-07-13
+**Status:** Accepted — **resolves** the open question left by ADR-0008 and
+carried in `phases/phase-05-manufacturer-selection.md` and
+`phases/phase-09-order-management.md` (whether Selection requires Offer
+Approval in addition to `VALID` before recommending).
+
+**Context:** ADR-0008 introduced Offer Approval as a gate distinct from
+Engineering Compliance Validation but deliberately left open whether
+Manufacturer Selection's official recommendation could be built from
+`VALID`-but-not-yet-`APPROVED` Offers. Leaving this open risked a
+recommendation being built on packaging/commercial terms ELIMFILTERS had
+not yet accepted, forcing rework if Approval later rejected those terms.
+The project owner has now decided this explicitly.
+
+**Decision:**
+1. An **official** Manufacturer Selection recommendation (and, downstream,
+   any Manufacturer Selection used to source Cost Engine, Pricing Engine,
+   or an Order) may only evaluate Offers that satisfy **all** of:
+   - the Offer is the current active revision for its (Passport Version ×
+     Manufacturer) pair;
+   - Engineering Compliance Validation = `VALID` (current, within its
+     effectiveness window);
+   - Manufacturer Offer Approval = `APPROVED` (per ADR-0011);
+   - the Manufacturer's qualification status is `QUALIFIED`, or
+     `CONDITIONAL` with its condition satisfied, for the Passport's family;
+   - the Offer is not expired, withdrawn, rejected, or superseded.
+2. A **preliminary** internal comparison of `VALID`-but-not-yet-`APPROVED`
+   Offers is permitted, but must be explicitly and permanently marked
+   `PRELIMINARY_COMPARISON` wherever it is stored or displayed. A
+   `PRELIMINARY_COMPARISON` record can never become, convert into, or be
+   silently promoted to an official Selection recommendation, a
+   Manufacturer Selection, or an Order allocation. Producing an official
+   recommendation always requires a fresh evaluation against the full gate
+   in point 1 at the time the recommendation is made.
+
+**Consequences:**
+- `BUSINESS_RULES.md` §8 (Manufacturer Selection Rules) is rewritten to
+  state this five-part gate and to define `PRELIMINARY_COMPARISON` as a
+  non-official, clearly labeled analysis artifact.
+- `phases/phase-05-manufacturer-selection.md`'s open question on Selection/
+  Approval ordering is resolved by this ADR; `phases/phase-09-order-
+  management.md`'s equivalent open question on the `allocated` → `in
+  production` transition is resolved the same way — an order may not
+  allocate to an Offer that is not both `VALID` and `APPROVED`.
+- Any Selection implementation must be able to distinguish, at the data
+  level, an official recommendation record from a `PRELIMINARY_COMPARISON`
+  record — these must never share a table/status space that could let one
+  be mistaken for the other.
+
+---
+
+## ADR-0011 — Offer Approval requires two independent roles; ADMIN_OWNER cannot override technical invalidity
+
+**Date:** 2026-07-13
+**Status:** Accepted — **extends** ADR-0008's Offer Approval entity
+(`ebp_manufacturer_offer_approvals`) with a concrete authorization model,
+resolving the open question in `phases/phase-03-supplier-portal.md` on who
+is authorized to record an approval decision.
+
+**Context:** ADR-0008 created the Offer Approval entity but did not define
+who is authorized to approve what. Leaving "approval" as a single
+undifferentiated action risks one person declaring both technical
+compliance and commercial acceptability, which defeats the separation of
+concerns Validation vs. Approval was meant to establish (ADR-0008), and
+risks a single actor overriding a technical `INVALID` result by fiat.
+
+**Decision:**
+1. Three functional roles govern Offer Approval and sourcing decisions:
+   - **`ENGINEERING_APPROVER`** — approves technical compliance. Does not
+     approve FOB, margin, or any other commercial term.
+   - **`COMMERCIAL_APPROVER`** — approves FOB, MOQ, lead time, capacity,
+     final packaging, and other commercial/operational terms. Cannot
+     declare an Offer technically valid.
+   - **`ADMIN_OWNER`** — approves the final sourcing decision (primary,
+     secondary, backup) produced by Manufacturer Selection (Phase 5); may
+     reject an Offer or a selection outright. **Can never convert a
+     technically `INVALID` Offer (per Engineering Compliance Validation,
+     Phase 4) into `VALID` or `APPROVED`** — `ADMIN_OWNER` authority is
+     scoped to the sourcing decision, not to technical compliance.
+2. For the MVP, a Manufacturer Product Offer's `status` reaches `APPROVED`
+   (per its lifecycle in `BUSINESS_RULES.md` §5 / ADR-0007) only after all
+   three of the following are true for that exact `offer_id`/
+   `offer_revision`:
+   1. Engineering Compliance Validation result = `VALID`.
+   2. An `ENGINEERING_APPROVER` engineering-approval decision is recorded.
+   3. A `COMMERCIAL_APPROVER` commercial-approval decision is recorded.
+3. Every approval decision (`ENGINEERING_APPROVER`, `COMMERCIAL_APPROVER`,
+   or `ADMIN_OWNER`) must record: the user, their role at decision time,
+   the date, the decision, the reason, comments, and the exact `offer_id`/
+   `offer_revision` (and, for `ADMIN_OWNER`, the selection recommendation
+   id) evaluated. This is stored in `ebp_manufacturer_offer_approvals`
+   (engineering/commercial decisions) and `ebp_selection_approvals`
+   (`ADMIN_OWNER` decisions), both append-only per ADR-0008/ADR-0005-era
+   auditability rules.
+
+**Consequences:**
+- `BUSINESS_RULES.md` §7 (Manufacturer Offer Approval Rules) is rewritten
+  to require both an `ENGINEERING_APPROVER` and a `COMMERCIAL_APPROVER`
+  decision, each independently recorded, before `APPROVED` is reached.
+- `phases/phase-03-supplier-portal.md`'s `ebp_manufacturer_offer_approvals`
+  entity gains explicit `engineering_approval` and `commercial_approval`
+  sub-records (or rows), each with the full audit field set from point 3.
+- Role assignment/authentication mechanics (who holds which role, and how
+  that is enforced in code) remain undecided pending the Manufacturer/
+  Distributor/staff auth decision (ADR-0002) — this ADR defines the
+  functional roles and their authority boundaries, not the identity
+  system that will enforce them.
+
+---
+
+## ADR-0012 — Manufacturer Request Batch deadlines are set per batch, not globally
+
+**Date:** 2026-07-13
+**Status:** Accepted — **resolves** the open question in
+`phases/phase-03-supplier-portal.md` on whether a Request Batch has a
+deadline.
+
+**Context:** Different Request Batches (a single urgent SKU vs. a large
+multi-SKU sourcing round) reasonably need different response windows. A
+single global deadline policy would either be too short for complex
+batches or too permissive for urgent ones.
+
+**Decision:**
+1. There is no fixed global response deadline. ELIMFILTERS sets
+   `response_due_at` explicitly on every Request Batch at creation (or
+   before sending).
+2. Every Request Batch record carries: `batch_id`, `manufacturer_code`,
+   `created_at`, `sent_at`, `response_due_at`, `timezone`, `status`,
+   `created_by`.
+3. A Request Batch's status lifecycle has exactly seven states: `DRAFT`,
+   `SENT`, `PARTIALLY_RESPONDED`, `RESPONDED`, `OVERDUE`, `CLOSED`,
+   `CANCELLED`.
+4. A Manufacturer Offer submitted after its batch's `response_due_at` may
+   still be received, but must be flagged `LATE_SUBMISSION = true` on the
+   Offer, and the Offer's actual `submitted_at` timestamp (the real receipt
+   time) is preserved unmodified — a late submission is never silently
+   treated as on-time, and is never rejected purely for being late (that
+   remains a Commercial/Admin decision, not a system-enforced block).
+
+**Consequences:**
+- `BUSINESS_RULES.md` §5 (Manufacturer Intake Rules) is extended with the
+  Request Batch field list, its seven-state lifecycle, and the
+  `LATE_SUBMISSION` rule.
+- `phases/phase-03-supplier-portal.md`'s `ebp_manufacturer_request_batches`
+  entity gains the full field list above; `ebp_manufacturer_offers` gains
+  a `late_submission` boolean.
+- A batch transitioning to `OVERDUE` (when `response_due_at` passes with
+  outstanding Manufacturers) is a status change like any other and must be
+  logged, not just computed ad hoc at read time — the mechanism for this
+  (scheduled job vs. computed-on-read) is left to Phase 3's implementation,
+  consistent with the same open item already carried for Engineering
+  Compliance Validation's triggering mechanism (`phases/phase-04-
+  validation-engine.md` Open Questions).
+
+---
+
+## ADR-0013 — Phase 0 approved and frozen as v1.0
+
+**Date:** 2026-07-13
+**Status:** Accepted
+**Branch:** `claude/phase-0-audit-review-wanxa3`
+**Closing commit:** see `CHANGELOG.md`'s "Phase 0 approved and frozen —
+v1.0" entry for this date, which names the exact commit hash once
+committed.
+
+**Context:** Phase 0 was reviewed three times by the project owner: an
+initial review that rejected the original Supplier-based domain model
+(ADR-0005/ADR-0006), a second review that rejected the unversioned-Offer
+and Passport-owned-packaging model (ADR-0007/ADR-0008/ADR-0009), and a
+final review that added binding governance decisions on Selection gating,
+approval roles, and Request Batch deadlines (ADR-0010/ADR-0011/ADR-0012).
+The project owner has now stated the final review is satisfactory and
+formally approves Phase 0.
+
+**Decision:**
+1. **Phase 0 — Foundation is APPROVED.**
+2. The documentation set under `docs/ebp/` as of this ADR (`PROJECT_
+   MANIFESTO.md`, `BUSINESS_RULES.md`, `PLATFORM_ARCHITECTURE.md`,
+   `ROADMAP.md`, `DECISIONS.md` through ADR-0013, `CHANGELOG.md`,
+   `IMPLEMENTATION_MASTER_INDEX.md`, `CLAUDE_WORKFLOW.md`,
+   `CLAUDE_START_PROMPT.md`, and `phases/phase-00-foundation.md` through
+   `phases/phase-09-order-management.md`) is marked **`APPROVED /
+   FROZEN v1.0`**.
+3. **Frozen** means: the domain model, entity list, and governance rules
+   established through ADR-0001–ADR-0013 may not be altered without a new
+   ADR that explicitly supersedes the relevant prior entry — the same
+   append-only discipline already in force, now extended to cover the
+   whole v1.0 baseline, not just individual ADRs. Phase specs may still be
+   elaborated with implementation detail (SQL types, exact API payloads,
+   etc.) as each phase moves through its own approval gate — that is
+   expected and is not an architecture change.
+4. Phase 1 — Product Engineering Passport is authorized to begin,
+   immediately following this ADR, per the project owner's explicit
+   instruction. No phase beyond Phase 1 is authorized by this ADR.
+
+**Consequences:**
+- `IMPLEMENTATION_MASTER_INDEX.md`, `phases/phase-00-foundation.md`, and
+  `CHANGELOG.md` are updated in the same change to reflect `APPROVED /
+  FROZEN v1.0` status, the approval date, the branch, and the closing
+  commit.
+- Any future session proposing to change the three-entity model, the
+  Offer versioning model, the packaging ownership split, the note-field
+  split, or the Selection/Approval governance model must stop and treat
+  that as a request to supersede a frozen ADR, not a routine edit — per
+  the existing rule in `CLAUDE_WORKFLOW.md` §1.1, now applying to the full
+  v1.0 baseline.
+- Phase 1 moves from `Spec Drafted` to active implementation under its own
+  spec, which this same change converts to a complete, implementable
+  specification before any code is written, per
+  `CLAUDE_WORKFLOW.md` §3 (Documentation-First Requirement).

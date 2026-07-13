@@ -18,19 +18,33 @@ suppliers are explicitly deferred to a possible future phase, outside the
 current 00-09 roadmap, and are not a dependency of this phase or any other
 in the current roadmap.
 
-**Correction notice (second round, this revision):** A Manufacturer Product
-Offer is no longer "exactly one per (Manufacturer, Passport version)." A
-Manufacturer may submit many versioned Offers over time; exactly one stays
-active at any moment, and the full history is retained (ADR-0007). This
-phase also gains the **Offer Approval** entity
-(`ebp_manufacturer_offer_approvals`) — ELIMFILTERS' packaging/commercial
-decision about a specific Offer, distinct from technical validation
-(Phase 4) — and the Offer's packaging fields are now explicitly scoped as
-that Manufacturer's own proposal, never a Passport field (ADR-0008). The
-Passport's note field is now two fields; a Manufacturer sees
-`manufacturer_instruction_notes` only, scoped to Passports it was actually
-sent (ADR-0009), which resolves this phase's prior open question on that
-point.
+**Correction notice (second round):** A Manufacturer Product Offer is no
+longer "exactly one per (Manufacturer, Passport version)." A Manufacturer
+may submit many versioned Offers over time; exactly one stays active at
+any moment, and the full history is retained (ADR-0007). This phase also
+gains the **Offer Approval** entity (`ebp_manufacturer_offer_approvals`) —
+ELIMFILTERS' packaging/commercial decision about a specific Offer,
+distinct from technical validation (Phase 4) — and the Offer's packaging
+fields are now explicitly scoped as that Manufacturer's own proposal,
+never a Passport field (ADR-0008). The Passport's note field is now two
+fields; a Manufacturer sees `manufacturer_instruction_notes` only, scoped
+to Passports it was actually sent (ADR-0009), which resolves this phase's
+prior open question on that point.
+
+**Governance decisions (2026-07-13, Phase 0 closure):** Three prior open
+questions in this phase are now resolved. (1) Request Batch deadlines are
+per-batch, not global — every batch carries `response_due_at`, a
+seven-state lifecycle, and late Offers are flagged `LATE_SUBMISSION`
+rather than rejected or silently backdated (ADR-0012). (2) Offer Approval
+requires **two independent role decisions** — `ENGINEERING_APPROVER` and
+`COMMERCIAL_APPROVER` — before an Offer reaches `APPROVED`; neither role
+may exercise the other's authority, and `ADMIN_OWNER` (Phase 5's
+sourcing-decision role) can never override a technical `INVALID` into
+valid (ADR-0011). (3) Offer Approval must complete — `APPROVED` — before
+an Offer is eligible for an *official* Manufacturer Selection
+recommendation; a `VALID`-but-not-yet-`APPROVED` Offer may only appear in
+an explicitly labeled `PRELIMINARY_COMPARISON`, never an official
+recommendation (ADR-0010).
 
 ## Objective
 
@@ -49,7 +63,11 @@ fully traceable data to evaluate.
 - **Manufacturer Request Batch:** a set of Passports (SKUs) ELIMFILTERS
   assigns to one or more `QUALIFIED`/`CONDITIONAL` Manufacturers (Phase 2)
   for a capability/offer response. Does not commit ELIMFILTERS to
-  purchase.
+  purchase. Every batch carries `batch_id`, `manufacturer_code`,
+  `created_at`, `sent_at`, `response_due_at` (set per batch — no global
+  deadline), `timezone`, `status`, `created_by` (ADR-0012), with a
+  seven-state lifecycle: `DRAFT` → `SENT` → `PARTIALLY_RESPONDED` /
+  `RESPONDED` / `OVERDUE` → `CLOSED` / `CANCELLED`.
 - **Manufacturer Product Offer, versioned:** a Manufacturer may submit
   many Offers over time for the same (Passport Version × Manufacturer)
   pair — each a new revision, never an overwrite. Every Offer carries:
@@ -57,9 +75,15 @@ fully traceable data to evaluate.
     within the lineage), `status`, `submitted_at`, `effective_from`,
     `expires_at` (nullable), `supersedes_offer_id` (nullable), and
     `created_by`.
-  - Status lifecycle (exactly eight states): `DRAFT` → `SUBMITTED` →
-    `UNDER_REVIEW` → `VALIDATED` (or `REJECTED`) → eventually
-    `SUPERSEDED`, `EXPIRED`, or `WITHDRAWN`.
+  - Status lifecycle (nine states, extended from eight by ADR-0011):
+    `DRAFT` → `SUBMITTED` → `UNDER_REVIEW` → `VALIDATED` (or `REJECTED`) →
+    `APPROVED` → eventually `SUPERSEDED`, `EXPIRED`, or `WITHDRAWN`.
+    `VALIDATED` reflects a current `VALID` Engineering Compliance
+    Validation result only — it is not the same as `APPROVED` (see Offer
+    Approval below, ADR-0011).
+  - A `late_submission` boolean, set when `submitted_at` is after the
+    parent Request Batch's `response_due_at` (ADR-0012); the real
+    `submitted_at` is never altered to hide lateness.
   - At most one Offer among all revisions for a given (Passport Version ×
     Manufacturer) pair may be active (`SUBMITTED`, `UNDER_REVIEW`, or
     `VALIDATED`) at a time. Submitting a new revision supersedes the prior
@@ -79,13 +103,24 @@ fully traceable data to evaluate.
     property.
 - **Offer Approval** (`ebp_manufacturer_offer_approvals`,
   `BUSINESS_RULES.md` §3.1.C and §7): ELIMFILTERS' own decision about a
-  specific Offer revision's packaging and commercial/operational
-  acceptability — distinct from, and not automatically granted by,
-  Engineering Compliance Validation (Phase 4). Holds: `offer_id` +
-  `offer_revision`, approval status, final approved packaging,
-  `elimfilters_approved_quantity`, acceptance/rejection of any proposed
-  deviation, responsible approver, reason, date, and its own append-only
-  history.
+  specific Offer revision's technical, packaging, and commercial/
+  operational acceptability — distinct from, and not automatically granted
+  by, Engineering Compliance Validation (Phase 4). Requires **two
+  independent role decisions** before the Offer reaches `APPROVED`
+  (ADR-0011):
+  - An **`ENGINEERING_APPROVER`** decision — technical compliance
+    acknowledgment only; never commercial terms.
+  - A **`COMMERCIAL_APPROVER`** decision — FOB, MOQ, lead time, capacity,
+    final approved packaging (`elimfilters_approved_quantity` and final
+    approved packaging spec), and acceptance/rejection of any proposed
+    deviation; never a technical-validity declaration.
+  Each decision independently holds: the approving user, their role at
+  decision time, the date, the decision, the reason, comments, and the
+  exact `offer_id`/`offer_revision` evaluated, and its own append-only
+  history (a new decision supersedes, never overwrites, a prior one for
+  the same role and Offer revision). An Offer's `status` becomes
+  `APPROVED` only once Validation = `VALID` **and** both role decisions
+  are recorded.
 - Multiple Manufacturers may submit different Offers for the same
   Passport — Offers are independent records, never merged or averaged,
   across Manufacturers or across a single Manufacturer's own revisions.
@@ -118,16 +153,22 @@ fully traceable data to evaluate.
 
 ## Key Entities / Data Model (sketch, not final)
 
-- `ebp_manufacturer_request_batches` — `id`, `passport_ids` (the assigned
-  set), `manufacturer_codes` (the Manufacturers solicited), `created_at`,
-  `notes`.
+- `ebp_manufacturer_request_batches` — `batch_id`, `passport_ids` (the
+  assigned set), `manufacturer_code` (one batch targets one Manufacturer;
+  a multi-Manufacturer solicitation is multiple batch rows sharing a
+  `passport_ids` set, keeping `response_due_at`/status independent per
+  Manufacturer), `created_at`, `sent_at`, `response_due_at`, `timezone`,
+  `status` (`DRAFT` / `SENT` / `PARTIALLY_RESPONDED` / `RESPONDED` /
+  `OVERDUE` / `CLOSED` / `CANCELLED`), `created_by`, `notes`.
 - `ebp_manufacturer_offers` — `offer_id` (unique per revision),
   `offer_revision`, `passport_id`, `passport_version` (references
-  `engineering_revision`), `manufacturer_code`, `status` (`DRAFT` /
-  `SUBMITTED` / `UNDER_REVIEW` / `VALIDATED` / `REJECTED` / `SUPERSEDED` /
-  `EXPIRED` / `WITHDRAWN`), `submitted_at`, `effective_from`, `expires_at`
-  (nullable), `supersedes_offer_id` (nullable), `created_by`, `fob_price`,
-  `currency`, `moq`, `lead_time`, `monthly_capacity`.
+  `engineering_revision`), `manufacturer_code`, `batch_id` (the Request
+  Batch this Offer responds to), `status` (`DRAFT` / `SUBMITTED` /
+  `UNDER_REVIEW` / `VALIDATED` / `APPROVED` / `REJECTED` / `SUPERSEDED` /
+  `EXPIRED` / `WITHDRAWN`), `submitted_at`, `late_submission` (boolean),
+  `effective_from`, `expires_at` (nullable), `supersedes_offer_id`
+  (nullable), `created_by`, `fob_price`, `currency`, `moq`, `lead_time`,
+  `monthly_capacity`.
 - `ebp_manufacturer_offer_packaging` — `offer_id`,
   `manufacturer_recommended_quantity`, `proposed_box_dimensions`,
   `net_weight`, `gross_weight`, `proposed_units_per_box`,
@@ -137,12 +178,19 @@ fully traceable data to evaluate.
   Passport engineering field per Offer revision: `offer_id`,
   `field_name`, `offered_value`/`actual_value`, `compliance_status` (null
   until Phase 4 evaluates it), `manufacturer_note`, `evidence_attachment`.
-- `ebp_manufacturer_offer_approvals` — `id`, `offer_id`, `offer_revision`,
-  `approval_status`, `final_approved_packaging`,
-  `elimfilters_approved_quantity`, `deviation_decision` (accepted/
-  rejected per proposed deviation), `approved_by`, `reason`,
-  `decided_at`, `superseded_by` (append-only — a new approval decision for
-  the same Offer revision supersedes, never overwrites, the prior one).
+- `ebp_manufacturer_offer_approvals` — one row per approval decision (not
+  one row per Offer): `id`, `offer_id`, `offer_revision`,
+  `approver_role` (`ENGINEERING_APPROVER` / `COMMERCIAL_APPROVER`),
+  `approved_by` (user), `decision` (`APPROVED`/`REJECTED`), `reason`,
+  `comments`, `decided_at`, `superseded_by` (append-only — a new decision
+  for the same role and Offer revision supersedes, never overwrites, the
+  prior one). Commercial-role rows additionally carry
+  `final_approved_packaging`, `elimfilters_approved_quantity`, and
+  `deviation_decision` (accepted/rejected per proposed deviation) —
+  engineering-role rows do not. An Offer's `status` is computed/derived to
+  `APPROVED` only when a current `VALID` validation result, a current
+  `APPROVED` engineering-role row, and a current `APPROVED` commercial-
+  role row all exist for the same `offer_id`/`offer_revision` (ADR-0011).
 
 ## Business Rules Enforced
 
@@ -199,10 +247,17 @@ fully traceable data to evaluate.
   `SUPERSEDED` while preserving it in history.
 - A second Manufacturer can submit an independent, differing Offer for the
   same Passport version without conflict.
-- ELIMFILTERS can record an Offer Approval decision against a specific
-  Offer revision, including a final approved packaging quantity that
-  differs from the Manufacturer's recommended quantity, with a reason and
-  responsible approver retained.
+- ELIMFILTERS can record both an `ENGINEERING_APPROVER` and a
+  `COMMERCIAL_APPROVER` decision against a specific Offer revision —
+  including a final approved packaging quantity that differs from the
+  Manufacturer's recommended quantity — with reason and responsible
+  approver retained per decision, and the Offer's status correctly
+  resolves to `APPROVED` only once both exist alongside a current `VALID`
+  result.
+- A Request Batch's `response_due_at` passing with an outstanding
+  Manufacturer transitions it toward `OVERDUE`, and a Manufacturer's Offer
+  submitted after that point is correctly flagged `late_submission = true`
+  while still being accepted.
 - Phase 4's spec can evaluate an Offer revision's completeness and
   per-field values directly against this model with no gaps.
 
@@ -235,14 +290,21 @@ fully traceable data to evaluate.
 
 ## Open Questions
 
-- Is there a deadline/expiration on a Request Batch (Manufacturer must
-  respond within N days), or is it open-ended? Not decided in Phase 0.
-- Does Offer Approval (this phase) need to happen before an Offer can even
-  be *recommended* by Manufacturer Selection (Phase 5), or only before an
-  order is actually fulfilled against it? Not decided in this correction
-  round — see the same open question in
-  `phases/phase-05-manufacturer-selection.md` and
-  `PLATFORM_ARCHITECTURE.md` §7.
-- Who is authorized to record an Offer Approval decision, and is it always
-  a single ELIMFILTERS role, or does it vary by product family/value
-  threshold? Not decided in Phase 0.
+- **Resolved (2026-07-13, ADR-0012):** Request Batch deadlines are set
+  per batch via `response_due_at` — no global deadline. Late Offers are
+  flagged `late_submission`, not rejected or backdated.
+- **Resolved (2026-07-13, ADR-0010):** Offer Approval must reach
+  `APPROVED` before an Offer is eligible for an *official* Manufacturer
+  Selection recommendation. A `VALID`-but-not-yet-`APPROVED` Offer may
+  only appear in an explicitly labeled `PRELIMINARY_COMPARISON`, which can
+  never become an official recommendation.
+- **Resolved (2026-07-13, ADR-0011):** Offer Approval requires both an
+  `ENGINEERING_APPROVER` and a `COMMERCIAL_APPROVER` decision — two
+  distinct functional roles, neither able to exercise the other's
+  authority. Which individuals hold these roles, and whether that varies
+  by product family or value threshold, remains an implementation detail
+  for spec approval, pending the broader auth decision (ADR-0002).
+- Is Request Batch `OVERDUE` computed on read or via a scheduled job? Not
+  decided — the same open mechanism question already carried for
+  Engineering Compliance Validation's triggering (`phases/phase-04-
+  validation-engine.md` Open Questions).

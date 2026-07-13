@@ -186,6 +186,18 @@ only after review of a specific Offer's proposal.
 - A **Manufacturer Request Batch** is a set of Passports (SKUs) ELIMFILTERS
   assigns to one or more Manufacturers for a capability/offer response. It
   does not commit ELIMFILTERS to purchase.
+- Every Request Batch record carries: `batch_id`, `manufacturer_code`,
+  `created_at`, `sent_at`, `response_due_at`, `timezone`, `status`,
+  `created_by` (ADR-0012). There is **no fixed global deadline** —
+  ELIMFILTERS sets `response_due_at` per batch.
+- A Request Batch's status lifecycle has exactly seven states: `DRAFT`,
+  `SENT`, `PARTIALLY_RESPONDED`, `RESPONDED`, `OVERDUE`, `CLOSED`,
+  `CANCELLED`.
+- A Manufacturer Offer submitted after its batch's `response_due_at` may
+  still be received. It must be flagged `LATE_SUBMISSION = true`, and its
+  real `submitted_at` receipt time is preserved unmodified — lateness is
+  never silently normalized away, and a late Offer is never
+  system-rejected purely for being late (ADR-0012).
 - A Manufacturer may submit **many** Manufacturer Product Offers for the
   same (`passport_version`, `manufacturer_code`) pair over time — a new
   quote, correction, or update is a new **revision**, never an overwrite of
@@ -197,10 +209,19 @@ only after review of a specific Offer's proposal.
   `status`, `submitted_at`, `effective_from`, `expires_at` (nullable),
   `supersedes_offer_id` (nullable — the prior `offer_id` this revision
   replaces), and `created_by`.
-- The Offer status lifecycle has exactly eight states: `DRAFT`,
-  `SUBMITTED`, `UNDER_REVIEW`, `VALIDATED`, `REJECTED`, `SUPERSEDED`,
-  `EXPIRED`, `WITHDRAWN`. `DRAFT` is manufacturer-side work-in-progress and
-  is not visible to ELIMFILTERS as a submission.
+- The Offer status lifecycle has **nine** states: `DRAFT`, `SUBMITTED`,
+  `UNDER_REVIEW`, `VALIDATED`, `APPROVED`, `REJECTED`, `SUPERSEDED`,
+  `EXPIRED`, `WITHDRAWN` (extended from the original eight-state list in
+  ADR-0007 by ADR-0011, which added `APPROVED`). `DRAFT` is
+  manufacturer-side work-in-progress and is not visible to ELIMFILTERS as
+  a submission. `VALIDATED` reflects a current `VALID` Engineering
+  Compliance Validation result (§6) only. `APPROVED` is reached only after
+  `VALIDATED` **and** both an `ENGINEERING_APPROVER` and a
+  `COMMERCIAL_APPROVER` decision are recorded (§7, ADR-0011) — `VALIDATED`
+  alone is never treated as `APPROVED`.
+- Every Offer carries a `late_submission` boolean, set when its
+  `submitted_at` is after its Request Batch's `response_due_at`
+  (ADR-0012).
 - **At most one** Offer among all revisions for a given (`passport_version`,
   `manufacturer_code`) pair may hold an active status (`SUBMITTED`,
   `UNDER_REVIEW`, or `VALIDATED`) at any moment. Submitting a new revision
@@ -276,13 +297,32 @@ only after review of a specific Offer's proposal.
   approval of an Offer is not automatically a Manufacturer Selection
   (§8 — Selection's own approval step is a separate, later decision about
   *which* Offer is sourced from).
+- **Two independent roles govern approval, and their authority never
+  overlaps (ADR-0011):**
+  - **`ENGINEERING_APPROVER`** — approves technical compliance only. Never
+    approves FOB, margin, or other commercial terms.
+  - **`COMMERCIAL_APPROVER`** — approves FOB, MOQ, lead time, capacity,
+    final packaging, and other commercial/operational terms. Never
+    declares an Offer technically valid.
+  - **`ADMIN_OWNER`** — approves the final sourcing decision produced by
+    Manufacturer Selection (§8); may reject an Offer or a selection
+    outright; **can never convert a technically `INVALID` Offer into
+    `VALID` or `APPROVED`.**
+- An Offer reaches `APPROVED` (its Offer-status value, §5) only after all
+  three of the following hold for that exact `offer_id`/`offer_revision`
+  (ADR-0011):
+  1. Engineering Compliance Validation result = `VALID` (§6).
+  2. An `ENGINEERING_APPROVER` decision is recorded.
+  3. A `COMMERCIAL_APPROVER` decision is recorded.
 - Offer Approval is recorded in **`ebp_manufacturer_offer_approvals`**
   (ADR-0008), keyed to a specific `offer_id` and `offer_revision`, and
-  holds: approval status, final approved packaging, `elimfilters_approved_
-  quantity` (§3.1.C), whether a proposed deviation was accepted or
-  rejected, the responsible approver, the reason, the date, and its own
-  append-only history — a new approval decision supersedes, never
-  overwrites, a prior one for the same Offer revision.
+  holds, per decision (engineering and commercial recorded separately):
+  the approving user, their role at decision time, the date, the decision,
+  the reason, comments, final approved packaging, `elimfilters_approved_
+  quantity` (§3.1.C) and whether a proposed deviation was accepted or
+  rejected (commercial decision only), and its own append-only history —
+  a new approval decision supersedes, never overwrites, a prior one for
+  the same Offer revision.
 - Offer Approval may only be recorded against an Offer revision that is
   the current active revision for its (Passport Version × Manufacturer)
   pair (§5). An approval is not retroactively valid against a revision
@@ -290,16 +330,28 @@ only after review of a specific Offer's proposal.
 
 ## 8. Manufacturer Selection Rules
 
-- Selection logic evaluates, per Passport, only Offers that satisfy **all**
-  of: (a) the Offer is the current active revision for its (Passport
-  Version × Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`,
-  or `REJECTED`; (b) the Offer holds a current `VALID` Engineering
-  Compliance Validation result bound to that exact `offer_id` and
-  `offer_revision`; (c) that validation result is within its effectiveness
-  window (`effective_from` through `expires_at`, where applicable). An
-  Offer failing any of these is never a candidate, including for manual
+- An **official** Selection recommendation evaluates, per Passport, only
+  Offers that satisfy **all five** of the following (ADR-0010):
+  (a) the Offer is the current active revision for its (Passport Version ×
+  Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or
+  `REJECTED`; (b) Engineering Compliance Validation = `VALID`, current, and
+  bound to that exact `offer_id`/`offer_revision`; (c) that validation
+  result is within its effectiveness window (`effective_from` through
+  `expires_at`, where applicable); (d) Manufacturer Offer Approval (§7) =
+  `APPROVED`; (e) the Manufacturer is `QUALIFIED`, or `CONDITIONAL` with
+  its condition satisfied, for the Passport's family. An Offer failing any
+  of these is never an official candidate, including for manual
   override — a manual override must instead produce a new `VALID` result
   (§6) or a new Offer Approval decision (§7) rather than bypassing either.
+- **`PRELIMINARY_COMPARISON`** — an internal, non-official comparison of
+  `VALID`-but-not-yet-`APPROVED` Offers is permitted for planning purposes,
+  but any such record must be permanently and explicitly labeled
+  `PRELIMINARY_COMPARISON` wherever stored or displayed, and can never be
+  promoted, converted, or silently reused as an official recommendation,
+  a Manufacturer Selection, or an Order allocation (ADR-0010). Producing
+  an official recommendation always re-evaluates the full five-part gate
+  above at the time the recommendation is made — it never reuses a
+  `PRELIMINARY_COMPARISON` result as-is.
 - Selection must consider, at minimum: mandatory technical compliance (the
   `VALID` gate itself), FOB price, packaging, MOQ, lead time, monthly
   capacity, certifications, evidence, and quality history where it exists.

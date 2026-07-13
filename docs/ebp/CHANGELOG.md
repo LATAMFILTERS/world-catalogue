@@ -247,3 +247,76 @@ ADR-0007, ADR-0008, and ADR-0009 in `DECISIONS.md`.
   these are explanatory/historical (describing the correction itself).
 - **No production code was written in this change.** Phase 0 remains
   unapproved; Phases 01-09 remain `Spec Drafted`, not `Spec Approved`.
+
+## 2026-07-13 — Phase 0 final governance decisions (pre-approval)
+
+The project owner confirmed the second correction round was satisfactory
+and issued three final governance decisions before approving Phase 0,
+recorded as ADR-0010, ADR-0011, and ADR-0012 in `DECISIONS.md`.
+
+- **`DECISIONS.md`** — added ADR-0010 (an official Manufacturer Selection
+  recommendation requires a five-part gate: current active revision,
+  `VALID` within window, `APPROVED`, `QUALIFIED`/`CONDITIONAL`-satisfied,
+  not expired/withdrawn/rejected/superseded; introduces
+  `PRELIMINARY_COMPARISON` as a non-official, non-promotable analysis
+  artifact); ADR-0011 (`ENGINEERING_APPROVER`, `COMMERCIAL_APPROVER`, and
+  `ADMIN_OWNER` functional roles; an Offer reaches `APPROVED` only after
+  `VALID` plus both an engineering and a commercial approval decision;
+  `ADMIN_OWNER` can never override a technical `INVALID`); ADR-0012
+  (Manufacturer Request Batch deadlines are set per batch via
+  `response_due_at`, no global deadline; seven-state batch lifecycle;
+  late Offers flagged `LATE_SUBMISSION`, never rejected or backdated).
+- **`BUSINESS_RULES.md`** — §5 (Manufacturer Intake) gained the full
+  Request Batch field list, seven-state lifecycle, and `late_submission`
+  rule; the Offer status lifecycle is extended from eight to nine states
+  with `APPROVED` added; §7 (Offer Approval) rewritten around the
+  `ENGINEERING_APPROVER`/`COMMERCIAL_APPROVER` two-role model and the
+  `APPROVED` derivation rule; §8 (Selection) rewritten around the
+  five-part official-candidate gate and the `PRELIMINARY_COMPARISON`
+  carve-out.
+- **`phases/phase-03-supplier-portal.md`** — Request Batch entity gained
+  the full field/status list; Offer entity gained `batch_id`,
+  `late_submission`, and the `APPROVED` status value; Offer Approval
+  entity rewritten to one row per role decision
+  (`ENGINEERING_APPROVER`/`COMMERCIAL_APPROVER`) rather than one row per
+  Offer; all three of this phase's open questions on deadlines,
+  Approval-vs-Selection ordering, and approval authorization are marked
+  resolved.
+- **`phases/phase-05-manufacturer-selection.md`** — candidate gate
+  extended to require `APPROVED` in addition to `VALID`; new
+  `ebp_selection_preliminary_comparisons` entity added, structurally
+  separate from `ebp_selection_recommendations`; `ebp_selection_approvals`
+  attributed to the `ADMIN_OWNER` role explicitly; the open question on
+  Selection/Approval ordering is marked resolved.
+- **`phases/phase-09-order-management.md`** — the open question on
+  whether fulfillment requires a recorded Offer Approval is marked
+  resolved: allocation transitively requires `APPROVED` because it
+  references an official Phase 5 Selection decision.
+- **No production code was written in this change.** Phase 0 remains
+  unapproved as of this entry; Phases 01-09 remain `Spec Drafted`.
+
+## 2026-07-13 — Phase 0 approved and frozen — v1.0
+
+The project owner formally approved Phase 0. Recorded as ADR-0013 in
+`DECISIONS.md`.
+
+- **`DECISIONS.md`** — added ADR-0013: Phase 0 — Foundation is
+  `APPROVED`; the full `docs/ebp/` baseline (ADR-0001 through ADR-0013) is
+  marked `APPROVED / FROZEN v1.0`; frozen means the domain model and
+  governance rules cannot change without a new ADR that explicitly
+  supersedes the relevant prior entry; Phase 1 — Product Engineering
+  Passport is authorized to begin; no phase beyond Phase 1 is authorized.
+- **`IMPLEMENTATION_MASTER_INDEX.md`** — Phase 00 row set to `APPROVED /
+  FROZEN v1.0`, approved by Project Owner on 2026-07-13; Phase 01 row set
+  to `In Build`; notes section rewritten to reflect the frozen baseline and
+  that Phase 01 alone is authorized for implementation.
+- **`phases/phase-00-foundation.md`** — status header rewritten to
+  `APPROVED / FROZEN v1.0` with approval date, branch, and a pointer to
+  this entry for the closing commit hash; Exit Criteria checked off.
+- **Branch:** `claude/phase-0-audit-review-wanxa3`.
+- **Closing commit:** `<PENDING — filled in by the immediately following
+  commit that records this entry; see git history for
+  "docs: ebp: Approve and freeze Phase 0 as v1.0" on this branch>`.
+- **No production code was written in this change.** Phase 1
+  implementation begins in the next change, per the project owner's
+  explicit authorization in this same approval.

@@ -5,7 +5,15 @@ phase's status changes — it is the authoritative status tracker referenced by
 `CLAUDE_START_PROMPT.md` at the start of every EBP session.
 
 **Status values:** `Not Started` → `Spec Drafted` → `Spec Approved` → `In
-Build` → `Built` → `Blocked` (with reason).
+Build` → `Built` → `Blocked` (with reason). A phase's foundation/spec can
+additionally be marked `APPROVED / FROZEN vX.Y` once formally approved and
+locked against unreviewed architecture changes (see Phase 00 below).
+
+**Phase 0 formally APPROVED / FROZEN v1.0 — 2026-07-13.** Branch
+`claude/phase-0-audit-review-wanxa3`. See ADR-0013 in `DECISIONS.md` and
+the "Phase 0 approved and frozen — v1.0" entry in `CHANGELOG.md` for the
+closing commit hash. Phase 1 — Product Engineering Passport is authorized
+to begin immediately; no phase beyond Phase 1 is authorized.
 
 **Correction round 1 (2026-07-13):** Phase 0 was reviewed and **not
 approved** — the project owner identified a domain-model error (a
@@ -27,8 +35,8 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 
 | # | Phase | Doc | Status | Approved by | Approved on |
 |---|---|---|---|---|---|
-| 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | In Build (correction round 2) | — | — |
-| 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | Spec Drafted (revised) | — | — |
+| 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
+| 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | In Build | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | Spec Drafted (revised) | — | — |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | Spec Drafted (revised) | — | — |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised) | — | — |
@@ -46,22 +54,19 @@ See ADR-0005.
 
 ## Notes on Current Status
 
-- **Phase 00** is "In Build (correction round 2)" because this
-  documentation set itself is the Phase 0 deliverable, and it has now been
-  returned for correction twice rather than approved. It moves to `Built`
-  once this second corrected Phase 0 audit report is delivered and the
-  project owner approves proceeding to Phase 1.
-- **Phases 01-09** are marked `Spec Drafted` because their spec files exist
-  as first-pass drafts written during Phase 0 to prove the roadmap's
-  dependency chain is coherent (see each file's own "Status" line). Phases
-  marked "(revised)" were corrected across one or both rounds — round 1 to
-  remove the erroneous Supplier dependency and align with the Manufacturer
-  Offer model, round 2 to version Offers, split packaging ownership
-  (PEP/Offer/Approval), split the note field, and add the Offer Approval
-  entity. None of them are `Spec Approved` — per `CLAUDE_WORKFLOW.md`,
-  approval is a separate, explicit step that has not yet occurred for any
-  phase beyond 00. **No implementation work may start on Phases 01-09
-  based on their current draft status alone.**
+- **Phase 00** is `APPROVED / FROZEN v1.0` as of 2026-07-13, after two
+  correction rounds and a final governance-decisions round (ADR-0005
+  through ADR-0013). The documentation baseline under `docs/ebp/` may not
+  be altered without a new ADR that explicitly supersedes the relevant
+  prior entry — see ADR-0013.
+- **Phase 01 — Product Engineering Passport** is `In Build`, authorized by
+  the project owner immediately following Phase 0's approval (ADR-0013).
+  It is the only phase currently authorized for implementation.
+- **Phases 02-09** remain `Spec Drafted` — first-pass drafts written during
+  Phase 0 to prove the roadmap's dependency chain is coherent (see each
+  file's own "Status" line). None are `Spec Approved`. **No implementation
+  work may start on Phases 02-09 until each is explicitly approved in its
+  own turn, per `CLAUDE_WORKFLOW.md`.**
 
 ## How to Use This File
 

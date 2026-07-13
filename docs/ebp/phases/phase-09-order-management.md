@@ -13,13 +13,22 @@ and the distributor-visible order record must exclude manufacturer
 identity, FOB, and margin, per the same confidentiality boundary as Phase
 8. See ADR-0006 in `DECISIONS.md`.
 
-**Correction notice (second round, this revision):** `BUSINESS_RULES.md`
-section numbers are updated again (Order Management Rules is now §12 —
-inserting a new Offer Approval section shifted every section after §6 by
-one; see `BUSINESS_RULES.md`'s correction notice). Order allocation now
-references the specific `offer_id`/`offer_revision` selected (ADR-0007),
-and the distributor-visible order projection also excludes any Passport
-note field, mirroring `BUSINESS_RULES.md` §11.
+**Correction notice (second round):** `BUSINESS_RULES.md` section numbers
+are updated again (Order Management Rules is now §12 — inserting a new
+Offer Approval section shifted every section after §6 by one; see
+`BUSINESS_RULES.md`'s correction notice). Order allocation now references
+the specific `offer_id`/`offer_revision` selected (ADR-0007), and the
+distributor-visible order projection also excludes any Passport note
+field, mirroring `BUSINESS_RULES.md` §11.
+
+**Governance decision (2026-07-13, Phase 0 closure, ADR-0010):** This
+phase's open question on whether fulfillment requires a recorded Offer
+Approval is resolved: because Order Management allocates only against an
+existing (or freshly triggered) Phase 5 Selection decision, and Selection
+now requires an official candidate to be both `VALID` and `APPROVED`
+(ADR-0010), an order's allocated Offer is transitively guaranteed to be
+`APPROVED` — there is no separate Offer Approval check to perform at
+order time beyond confirming the Selection decision itself is current.
 
 ## Objective
 
@@ -139,11 +148,9 @@ identity and cost basis out of any distributor-visible order record.
   accounting system, or is it purely an internal status field with no
   external system of record? This affects whether Phase 9 has an
   undocumented external dependency similar to Phase 8's auth dependency.
-- Must an order's allocated Offer have a recorded Offer Approval
-  (`ebp_manufacturer_offer_approvals`, Phase 3) with finalized packaging
-  before production can begin, or can `in production` start against a
-  `VALID`-but-not-yet-approved Offer with packaging finalized later? Not
-  decided — the same ordering question flagged in
-  `phases/phase-05-manufacturer-selection.md`'s Open Questions, but here
-  it materially affects the `allocated` → `in production` transition
-  specifically.
+- **Resolved (2026-07-13, ADR-0010):** An order's allocated Offer is
+  transitively guaranteed to be `APPROVED` because allocation only
+  references an official Phase 5 Selection decision, and Selection now
+  requires `APPROVED` (not just `VALID`) for an official candidate. No
+  separate Offer Approval check is needed at the `allocated` →
+  `in production` transition.
