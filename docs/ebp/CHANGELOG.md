@@ -656,6 +656,8 @@ audit, and formally approved Phase 2.
   phase-status notes section rewritten accordingly; Phases 03-09 note
   corrected to Phases 04-09 (Phase 3 is now authorized).
 - **Branch:** `claude/phase-0-audit-review-wanxa3`.
+- **Closing commit:** `f12e981d` ("docs: ebp: Phase 2 post-closing-audit
+  correction, approve v1.0").
 - **No further changes to Phase 2's implementation are made in this
   entry** — this is a status/approval-only change, consistent with
   ADR-0022 requiring no code changes. **Phase 3 — Manufacturer Intake
