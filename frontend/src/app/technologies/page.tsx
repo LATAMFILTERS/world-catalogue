@@ -51,14 +51,6 @@ export default function TechnologiesPage() {
 
       <TechnologiesPortfolio />
 
-      <section style={architectureSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>ASSET PROTECTION LOGIC</p>
-          <h2 style={sectionTitle}>Each technology belongs to a protected system.</h2>
-          <p style={{ ...leadText, marginTop: '1.4rem' }}>MACROCORE™, SYNTEPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, DRYCORE™, INTEKCORE™, and MICROKAPPA™ form the engineering layer behind ELIMFILTERS® asset protection systems.</p>
-        </div>
-      </section>
-
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
@@ -115,8 +107,6 @@ const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(
 const whyTitle: CSSProperties = { fontFamily: approvedDisplayFont, fontSize: 'clamp(2.04rem, 4.08vw, 3.67rem)', lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
-const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
-const architectureSection: CSSProperties = { background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const cta: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.2)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)' };
 const yellowButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem' };
 const darkButton: CSSProperties = { display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.12em', fontSize: '0.82rem', padding: '1rem 1.25rem', border: '1px solid rgba(255,241,45,0.4)' };
