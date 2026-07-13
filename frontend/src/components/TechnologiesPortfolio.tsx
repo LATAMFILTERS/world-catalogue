@@ -4,10 +4,10 @@ import type { CSSProperties } from 'react';
 const technologies = [
   ['macrocore', 'MACROCORE™', 'Air Intake Protection', '/assets/MACROCORE.avif'],
   ['syntepore', 'SYNTEPORE™', 'Fuel Cleanliness Protection', '/assets/SYNTEPORE.avif'],
-  ['hydrocore', 'AQUAGUARD™', 'Fuel / Water Separation', '/assets/HYDROCORE.avif'],
+  ['hydrocore', 'HYDROCORE™', 'Fuel / Water Separation', '/assets/HYDROCORE.avif'],
   ['syntrax', 'SYNTRAX™', 'Lubrication Protection', '/assets/SYNTRAX.avif'],
   ['nanoforce', 'NANOFORCE™', 'Hydraulic Protection', '/assets/NANOFORCE.avif'],
-  ['thermacore', 'COOLTECH™', 'Cooling System Protection', '/assets/THERMACORE.avif'],
+  ['thermacore', 'THERMACORE™', 'Cooling System Protection', '/assets/THERMACORE.avif'],
   ['drycore', 'DRYCORE™', 'Compressed Air Protection', '/assets/DRYCORE.avif'],
   ['intekcore', 'INTEKCORE™', 'Housing Architecture', '/assets/INTEKCORE.avif'],
   ['microkappa', 'MICROKAPPA™', 'Cabin Air Protection', '/assets/MICROKAPPA.avif'],
