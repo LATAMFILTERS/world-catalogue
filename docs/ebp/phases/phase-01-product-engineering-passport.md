@@ -5,8 +5,8 @@
 audit correction (endpoint-count accuracy, declared-actor semantics,
 ADR-0014's applicability-approval activation gate).
 **Branch:** `claude/phase-0-audit-review-wanxa3`
-**Closing commit:** see the "Phase 1 approved and frozen — v1.0" entry in
-`CHANGELOG.md` for this date, which names the exact commit hash.
+**Closing commit:** `76ba9c32` ("fix: ebp: Phase 1 post-implementation
+audit correction, approve v1.0").
 **Depends on:** Phase 00 (`APPROVED / FROZEN v1.0`)
 **Blocks:** Phases 02, 03, 04, 08
 

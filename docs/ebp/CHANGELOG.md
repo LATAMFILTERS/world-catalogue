@@ -491,9 +491,8 @@ satisfactory and formally approved Phase 1.
 - **`IMPLEMENTATION_MASTER_INDEX.md`** — Phase 01 row set to `APPROVED /
   FROZEN v1.0`, approved by Project Owner on 2026-07-13.
 - **Branch:** `claude/phase-0-audit-review-wanxa3`.
-- **Closing commit:** `<PENDING — filled in by the immediately following
-  commit that records this entry; see git history for the Phase 1
-  freeze commit on this branch>`.
+- **Closing commit:** `76ba9c32` ("fix: ebp: Phase 1 post-implementation
+  audit correction, approve v1.0").
 - **No further changes to Phase 1's implementation are made in this
   entry** — this is a status/approval-only change. Phase 2 remains not
   started.
