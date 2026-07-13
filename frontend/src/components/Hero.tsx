@@ -31,6 +31,8 @@ export function Hero({
   const taglineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const normalizedSubtitle = subtitle?.trim().replace(/\.$/, '');
+  const isApprovedAssetSubtitle = normalizedSubtitle === 'MINING ASSETS' || normalizedSubtitle === 'AGRICULTURAL ASSETS';
 
   useEffect(() => {
     const elements = [
@@ -168,28 +170,29 @@ export function Hero({
             color: 'rgba(255,255,255,0.96)',
             maxWidth: '980px',
             margin: 0,
-            marginBottom: subtitle ? '0.25rem' : '1.5rem',
+            marginBottom: normalizedSubtitle ? '0.25rem' : '1.5rem',
             textTransform: 'uppercase',
           }}
         >
           {title}
         </h1>
 
-        {subtitle && (
+        {normalizedSubtitle && (
           <p
             ref={subtitleRef}
             style={{
               fontFamily: displayFont,
               fontWeight: 700,
-              fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
-              lineHeight: 0.88,
+              fontSize: isApprovedAssetSubtitle ? 'clamp(1.24rem, 3vw, 2.88rem)' : 'clamp(3.1rem, 7.5vw, 7.2rem)',
+              lineHeight: isApprovedAssetSubtitle ? 0.95 : 0.88,
               color: '#FFF12D',
-              marginBottom: '1.5rem',
-              letterSpacing: '-0.055em',
+              marginTop: isApprovedAssetSubtitle ? '0.55rem' : 0,
+              marginBottom: isApprovedAssetSubtitle ? '1.65rem' : '1.5rem',
+              letterSpacing: isApprovedAssetSubtitle ? '-0.035em' : '-0.055em',
               textTransform: 'uppercase',
             }}
           >
-            {subtitle}
+            {normalizedSubtitle}
           </p>
         )}
 
