@@ -163,23 +163,8 @@ function createInternalRouter(pool, storageAdapter) {
     '/:batch_code/excel/export',
     handle(async (req, res) => {
       const batch = await service.getBatch(pool, req.params.batch_code);
-      const items = await service.listBatchItems(pool, req.params.batch_code);
-      const rows = items.map((item) => ({
-        batch_item_id: item.id,
-        elimfilters_code: item.elimfilters_code,
-        field_name: '',
-        required_value: '',
-        unit: '',
-        instructions: item.manufacturer_visible_snapshot?.engineering?.manufacturer_instruction_notes || '',
-        offered_value: '',
-        completeness_status: '',
-        manufacturer_note: '',
-        fob_price: '',
-        currency: '',
-        moq: '',
-        lead_time_days: '',
-      }));
-      const rawBuffer = await excel.buildBatchWorkbook({ batchCode: batch.batch_code, manufacturerId: batch.manufacturer_id, items: rows });
+      const batchItems = await service.listBatchItems(pool, req.params.batch_code);
+      const rawBuffer = await excel.buildBatchWorkbook({ batchCode: batch.batch_code, manufacturerId: batch.manufacturer_id, batchItems });
       const buffer = Buffer.from(rawBuffer);
       const crypto = require('node:crypto');
       const { buildStorageKey } = require('./storage');

@@ -21,7 +21,8 @@
 //   12. GET    /documents/:id/download
 //   13. GET    /batches/:batch_code/excel/export
 //   14. POST   /batches/:batch_code/excel/stage
-//   15. POST   /batches/:batch_code/excel/confirm
+//   15. GET    /batches/:batch_code/excel/stage/:staging_id
+//   16. POST   /batches/:batch_code/excel/confirm
 
 const express = require('express');
 const multer = require('multer');
@@ -177,7 +178,8 @@ function createFactoryRouter(pool, storageAdapter) {
     requireRole('MANUFACTURER_ADMIN', 'MANUFACTURER_ENGINEERING', 'MANUFACTURER_COMMERCIAL'),
     handle(async (req, res) => {
       await requireOwnBatch(pool, req, req.params.batch_code);
-      const offer = await service.createOfferRevision(pool, req.params.batch_code, req.params.item_id, req.body || {}, actorFromSession(req));
+      const created = await service.createOfferRevision(pool, req.params.batch_code, req.params.item_id, req.body || {}, actorFromSession(req));
+      const offer = await service.getOfferWithDetail(pool, created.offer_code);
       res.status(201).json(dto.toFactoryOfferDTO(offer));
     })
   );
@@ -242,23 +244,8 @@ function createFactoryRouter(pool, storageAdapter) {
     sessionMiddleware,
     handle(async (req, res) => {
       const batch = await requireOwnBatch(pool, req, req.params.batch_code);
-      const items = await service.listBatchItems(pool, req.params.batch_code);
-      const rows = items.map((item) => ({
-        batch_item_id: item.id,
-        elimfilters_code: item.elimfilters_code,
-        field_name: '',
-        required_value: '',
-        unit: '',
-        instructions: item.manufacturer_visible_snapshot?.engineering?.manufacturer_instruction_notes || '',
-        offered_value: '',
-        completeness_status: '',
-        manufacturer_note: '',
-        fob_price: '',
-        currency: '',
-        moq: '',
-        lead_time_days: '',
-      }));
-      const buffer = await excel.buildBatchWorkbook({ batchCode: batch.batch_code, manufacturerId: batch.manufacturer_id, items: rows });
+      const batchItems = await service.listBatchItems(pool, req.params.batch_code);
+      const buffer = await excel.buildBatchWorkbook({ batchCode: batch.batch_code, manufacturerId: batch.manufacturer_id, batchItems });
       res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
       res.set('Content-Disposition', `attachment; filename="${batch.batch_code}.xlsx"`);
       res.send(Buffer.from(buffer));
@@ -273,10 +260,38 @@ function createFactoryRouter(pool, storageAdapter) {
     handle(async (req, res) => {
       const batch = await requireOwnBatch(pool, req, req.params.batch_code);
       if (!req.file) return res.status(400).json({ error: 'validation_failed', details: ['file is required'] });
+      const workbookHash = require('node:crypto').createHash('sha256').update(req.file.buffer).digest('hex');
       const { errors, preview } = await excel.parseAndValidateWorkbook(req.file.buffer, batch.batch_code, batch.manufacturer_id);
-      if (errors.length) return res.status(422).json({ error: 'excel_validation_failed', details: errors });
-      const stagingToken = staging.put(batch.batch_code, batch.manufacturer_id, preview);
-      res.json({ staging_token: stagingToken, preview });
+      if (errors.length) {
+        await staging.put(pool, {
+          manufacturerId: req.factorySession.manufacturer_id,
+          factoryUserId: req.factorySession.factory_user_id,
+          batchId: batch.id,
+          workbookHash,
+          preview: null,
+          errors,
+        });
+        return res.status(422).json({ error: 'excel_validation_failed', details: errors });
+      }
+      const stagingId = await staging.put(pool, {
+        manufacturerId: req.factorySession.manufacturer_id,
+        factoryUserId: req.factorySession.factory_user_id,
+        batchId: batch.id,
+        workbookHash,
+        preview,
+      });
+      res.json({ staging_id: stagingId, preview });
+    })
+  );
+
+  router.get(
+    '/batches/:batch_code/excel/stage/:staging_id',
+    sessionMiddleware,
+    handle(async (req, res) => {
+      const batch = await requireOwnBatch(pool, req, req.params.batch_code);
+      const staged = await staging.peek(pool, req.params.staging_id, batch.id, req.factorySession.manufacturer_id);
+      if (!staged) return res.status(404).json({ error: 'not_found' });
+      res.json({ status: staged.status, preview: staged.preview_json, errors: staged.errors_json, expires_at: staged.expires_at });
     })
   );
 
@@ -286,36 +301,45 @@ function createFactoryRouter(pool, storageAdapter) {
     requireRole('MANUFACTURER_ADMIN', 'MANUFACTURER_ENGINEERING', 'MANUFACTURER_COMMERCIAL'),
     handle(async (req, res) => {
       const batch = await requireOwnBatch(pool, req, req.params.batch_code);
-      const { staging_token: stagingToken } = req.body || {};
-      const preview = staging.take(stagingToken, batch.batch_code, batch.manufacturer_id);
+      const { staging_id: stagingId } = req.body || {};
+      const preview = await staging.take(pool, stagingId, batch.id, req.factorySession.manufacturer_id);
       if (!preview) {
         return res.status(409).json({ error: 'conflict', message: 'staging token is invalid, expired, or already used — re-stage the file' });
       }
+      // preview is one entry PER BATCH ITEM (excel.js groups all of that
+      // item's field rows together), so this calls the identical
+      // service.createOfferRevision the Portal form calls, once per item,
+      // with the identical technical_fields[] shape (ADR-0032) — Excel is
+      // one more channel producing the same Offer lifecycle, never a
+      // shortcut around it.
       const results = [];
-      for (const row of preview) {
-        // eslint-disable-next-line no-await-in-loop
-        const offer = await service.createOfferRevision(
-          pool,
-          batch.batch_code,
-          row.batch_item_id,
-          {
-            submit: true,
-            fob_price: row.fob_price ? String(row.fob_price) : '0.01',
-            currency: row.currency || batch.requested_currency || 'USD',
-            moq: row.moq ? Number(row.moq) : undefined,
-            lead_time_days: row.lead_time_days ? Number(row.lead_time_days) : undefined,
-            technical_fields: [
-              {
-                field_name: row.field_name || 'imported_field',
-                offered_value: row.offered_value,
-                completeness_status: row.completeness_status,
-                manufacturer_note: row.manufacturer_note || null,
-              },
-            ],
-          },
-          actorFromSession(req)
-        );
-        results.push(dto.toFactoryOfferDTO(offer));
+      const itemErrors = [];
+      for (const entry of preview) {
+        try {
+          // eslint-disable-next-line no-await-in-loop
+          const created = await service.createOfferRevision(
+            pool,
+            batch.batch_code,
+            entry.batch_item_id,
+            {
+              submit: true,
+              fob_price: entry.fob_price ? String(entry.fob_price) : undefined,
+              currency: entry.currency || batch.requested_currency || undefined,
+              moq: entry.moq ? Number(entry.moq) : undefined,
+              lead_time_days: entry.lead_time_days ? Number(entry.lead_time_days) : undefined,
+              technical_fields: entry.technical_fields,
+            },
+            actorFromSession(req)
+          );
+          // eslint-disable-next-line no-await-in-loop
+          const offer = await service.getOfferWithDetail(pool, created.offer_code);
+          results.push(dto.toFactoryOfferDTO(offer));
+        } catch (err) {
+          itemErrors.push({ batch_item_id: entry.batch_item_id, error: err.message });
+        }
+      }
+      if (itemErrors.length) {
+        return res.status(207).json({ offers: results, item_errors: itemErrors });
       }
       res.status(201).json({ offers: results });
     })

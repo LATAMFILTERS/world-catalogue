@@ -14,6 +14,7 @@ function toInternalBatchDTO(row) {
     purpose: row.purpose,
     channel: row.channel,
     status: row.status,
+    effective_status: row.effective_status, // ADR-0031: OVERDUE when response_due_at has passed and status isn't RESPONDED/CLOSED/CANCELLED — always read this, never re-derive it
     created_at: row.created_at,
     sent_at: row.sent_at,
     response_due_at: row.response_due_at,

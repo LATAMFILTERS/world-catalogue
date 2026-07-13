@@ -1560,3 +1560,184 @@ portal without a second, unrelated deployment pipeline.
   to `/portal/login` rather than rendering; every `/portal/*` response
   includes the `noindex, nofollow` meta tag; the session cookie is
   `HttpOnly`.
+
+## ADR-0030 — Excel staging is persisted in Postgres, never process-local memory
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** ADR-0028 shipped the Excel stage/confirm pipeline with a
+process-local in-memory `Map` (`ebp/phase3/staging.js`), flagged in the
+original phase doc as an accepted MVP trade-off. During the mandatory
+pre-freeze correction round, the project owner required this to no longer
+be the frozen policy: a process restart, redeploy, or multi-instance
+deployment must not silently lose a Manufacturer's staged (but not yet
+confirmed) Excel upload.
+
+**Decision:**
+1. `migrations/ebp-phase3/002_excel_staging.sql` adds
+   `ebp_manufacturer_excel_staging`: `id` (the staging token itself),
+   `manufacturer_id`, `factory_user_id`, `batch_id`, `workbook_hash`,
+   `preview_json`, `errors_json`, `status`
+   (`STAGED`/`CONSUMED`/`EXPIRED`), `created_at`, `expires_at`,
+   `consumed_at`.
+2. `staging.take(pool, stagingId, batchId, manufacturerId)` consumes in a
+   single atomic statement: `UPDATE ... SET status = 'CONSUMED', consumed_at
+   = NOW() WHERE id = $1 AND batch_id = $2 AND manufacturer_id = $3 AND
+   status = 'STAGED' AND expires_at > NOW() RETURNING preview_json`. There
+   is no separate SELECT-then-UPDATE step, so two concurrent confirm
+   requests for the same staging id can never both succeed. Tenant
+   isolation (`batch_id`/`manufacturer_id`) is enforced in the same
+   statement, not as a follow-up check.
+3. `staging.peek(pool, ...)` is a read-only variant (used by the Portal's
+   review screen, which must render the staged result without consuming
+   it — confirmation is a separate, explicit user action).
+4. A 15-minute TTL (`STAGING_TTL_MS`) is enforced at read time
+   (`expires_at > NOW()`); expired rows are never confirmable. A future
+   scheduled job may `DELETE`/mark `EXPIRED` rows past their TTL for
+   table hygiene, but correctness never depends on that job running.
+5. Malformed (non-UUID) staging ids are rejected by a regex guard before
+   ever reaching Postgres, so a client-supplied garbage value returns the
+   same "not found" result a well-formed-but-unknown id would, rather than
+   letting Postgres's own `22P02` invalid-input error surface as a raw
+   500 (ADR-0033-adjacent discipline, see the error-sanitization work in
+   this same correction round).
+
+**Consequences:**
+- Restarting the Node process no longer loses any Manufacturer's
+  in-progress Excel staging — verified by a regression test that opens a
+  brand-new `Pool` (simulating a fresh process with zero shared in-memory
+  state) and successfully reads a row written via the original pool.
+- A staged upload can still only ever be confirmed exactly once, and only
+  by the same manufacturer/batch it was staged against — verified by
+  test (mismatched batch/manufacturer, expired row, already-consumed row
+  all rejected).
+- `ebp/phase3/staging.js`'s public function signatures
+  (`put`/`take`/`peek`) are unchanged from the original in-memory version
+  except for now taking `pool` as their first argument — `factory.routes
+  .js` and `portal.routes.js` required no structural changes beyond that.
+
+## ADR-0031 — Batch `OVERDUE` is a centralized, read-time computed status; no cron job is required or assumed
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The original Phase 3 phase doc honestly flagged, as an
+acknowledged risk, that `OVERDUE` was never automatically computed: a
+Batch whose `response_due_at` had passed stayed in whatever status it was
+last explicitly set to, until an admin (or a future scheduled job this
+stack does not have) called the status-transition endpoint directly. The
+project owner required this fixed, explicitly ruling out a cron job as
+mandatory and instead requiring a centralized effective-status semantics,
+mirroring the pattern Offers already use
+(`ebp_manufacturer_offers_effective`, ADR-0019).
+
+**Decision:**
+1. `migrations/ebp-phase3/003_batch_effective_status.sql` adds
+   `ebp_manufacturer_request_batches_effective`, a `CREATE OR REPLACE
+   VIEW` over the base table: `effective_status = 'OVERDUE'` whenever
+   `status NOT IN ('RESPONDED','CLOSED','CANCELLED')` and
+   `response_due_at IS NOT NULL AND response_due_at < NOW()`; otherwise
+   `effective_status = status`.
+2. Every read path is rewired through this view, not the base table:
+   `repository.fetchBatchByCode`, `fetchBatchByCodeForManufacturer`,
+   `lockBatchByCode`, and `listBatches` (including its `status` filter,
+   which now matches against `effective_status`); `dto.toInternalBatchDTO`
+   exposes `effective_status` explicitly; `portal.routes.js`'s dashboard
+   and batch-detail pages display `effective_status` in preference to the
+   raw stored `status`. No other code path computes `OVERDUE`
+   independently — this is enforced by convention (the base table's
+   `status` column is never read directly outside `repository.js` and the
+   view definition itself) and verified by test.
+3. The stored `status` column remains the actual state-machine value and
+   is still the target of every explicit transition
+   (`transitionBatchStatus`); `effective_status` is a projection, never a
+   second source of truth requiring its own writes or its own state
+   machine.
+4. `LATE_SUBMISSION` on an Offer (already existing since ADR-0026)
+   continues to be calculated and persisted at the moment a response is
+   actually received after `response_due_at` — this ADR only changes how
+   `OVERDUE` is *read*, not how lateness is recorded on the Offer itself.
+
+**Consequences:**
+- No scheduled job is required for `OVERDUE` to be correct at any read;
+  it is impossible for two different screens/endpoints to disagree about
+  whether a Batch is overdue, since there is exactly one place that
+  computes it.
+- Verified by a regression test suite covering: `SENT` past-due →
+  `OVERDUE`; `PARTIALLY_RESPONDED` past-due → `OVERDUE`; `RESPONDED`
+  past-due → stays `RESPONDED` (never `OVERDUE` once actually answered);
+  `CLOSED`/`CANCELLED` past-due → stay as-is (terminal states are never
+  reclassified); `NULL response_due_at` → never `OVERDUE`.
+- `SELECT ... FOR UPDATE` continues to work through this view (verified
+  empirically), so `lockBatchByCode`'s existing row-locking behavior for
+  offer supersession required no change.
+
+## ADR-0032 — Offer technical fields are driven by the frozen PEP snapshot, never freely typed; Portal and Excel produce the identical `technical_fields` model
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The original Offer form/API accepted a single freely-typed
+`field_name` and `offered_value` pair — a Manufacturer could type any
+string as `field_name`, with no guarantee it corresponded to a real,
+applicable Passport Engineering Passport (PEP) field, and no mechanism
+requiring every applicable field to actually be answered before an Offer
+could be submitted. The Excel export mirrored this limitation (one
+technical field per Batch Item row). The project owner required a form
+generated from the Batch Item's locked PEP snapshot, covering every
+applicable field, with the Manufacturer never able to write or alter
+`field_name` — and required Portal and Excel to produce exactly the same
+`technical_fields` model.
+
+**Decision:**
+1. `ebp/phase3/pep-fields.js` — a new, read-only presentation registry
+   mapping Phase 1's frozen engineering schema (`ebp_passport_
+   engineering` columns) to per-field UI/UX metadata: `field_name` (the
+   real Phase 1 column/concept name, never invented), `label`, `unit`,
+   `required_value` (read from the snapshot), `required_tolerance`
+   (read from the snapshot where applicable), and `applicability`
+   (gated by `field_applicability` for fields like `bypass_valve_
+   applicability`/`antidrainback_valve_applicability` that do not apply
+   to every product). This module never writes to or modifies any Phase
+   1 table or type — it is purely a derived, presentation-layer mapping,
+   preserving Phase 1's freeze. `getApplicableFields(passportSnapshot)`
+   is the single function both the Portal form and `excel.js` call.
+2. `validation.validateOfferFieldsAgainstSnapshot(passportSnapshot,
+   submittedFields, isSubmit)`, wired into `service.createOfferRevision`:
+   rejects any submitted `field_name` that is not in the snapshot's
+   applicable-field set (the Manufacturer can supply a value for a real
+   field, never invent a new one); when `isSubmit` is true (moving to
+   `SUBMITTED`, not saving a `DRAFT`), requires every applicable field to
+   have an explicit `completeness_status` of `ANSWERED`, `CANNOT_MEET`,
+   or `NOT_APPLICABLE` — an incomplete `DRAFT` remains explicitly allowed,
+   matching the project owner's requirement that an offer may be saved
+   incomplete but never submitted incomplete.
+3. `excel.js` was rewritten so the export expands one row per (Batch Item
+   × applicable PEP field) — using the identical `pepFields.
+   getApplicableFields()` call the Portal form uses — rather than one row
+   per Batch Item. `field_name` is in `LOCKED_COLUMNS` (always
+   pre-populated from the snapshot, the Manufacturer never types or
+   alters it); `offered_value`/`offered_unit`/`offered_tolerance`/
+   `completeness_status`/`manufacturer_note` remain editable per row.
+   `parseAndValidateWorkbook` groups rows back by `batch_item_id` into
+   the same `{ batch_item_id, fob_price, currency, moq, lead_time_days,
+   technical_fields: [...] }` shape `createOfferRevision` expects from
+   the Portal path — Excel confirm and Portal submit call the identical
+   service function with an identical payload shape; there is no second,
+   Excel-only code path that could drift from the Portal's rules.
+
+**Consequences:**
+- A Manufacturer can no longer submit an Offer with a fabricated
+  `field_name`, nor silently skip an applicable field and still reach
+  `SUBMITTED` — verified by test (submission rejected when the four
+  applicable fields on the test Passport — media, efficiency, bypass
+  valve, anti-drainback valve — are not all answered).
+- Portal and Excel are provably the same model: the same fixture Passport
+  produces the same four `field_name`s through both paths, and the same
+  `service.createOfferRevision` call is exercised either way.
+- This is presentation/validation logic layered on top of Phase 1 and
+  Phase 3's own existing schemas — no ALTER was made to any Phase 1
+  table, and no new Phase 3 column was required to store per-field
+  metadata (label/unit/tolerance) since `pep-fields.js` derives it from
+  data already present in the snapshot plus a static registry.

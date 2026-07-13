@@ -18,6 +18,7 @@ const { Pool } = require('pg');
 
 const createInternalRouter = require('../../ebp/phase3/internal.routes');
 const { createFactoryRouter } = require('../../ebp/phase3/factory.routes');
+const createPortalRouter = require('../../ebp/phase3/portal.routes');
 const { LocalFilesystemStorageAdapter } = require('../../ebp/phase3/storage');
 const staging = require('../../ebp/phase3/staging');
 const { generateCandidate: generateEfmCandidate } = require('../../ebp/phase2/efm-code');
@@ -38,10 +39,16 @@ async function startTestServer(pool, storageAdapter) {
   app.use(express.urlencoded({ extended: false }));
   app.use('/api/ebp/internal/manufacturer-batches', requireAdmin, createInternalRouter(pool, storageAdapter));
   app.use('/api/ebp/factory', createFactoryRouter(pool, storageAdapter));
+  app.use('/portal', createPortalRouter(pool));
   const server = http.createServer(app);
   await new Promise((resolve) => server.listen(0, resolve));
   const { port } = server.address();
-  return { server, internalUrl: `http://127.0.0.1:${port}/api/ebp/internal/manufacturer-batches`, factoryUrl: `http://127.0.0.1:${port}/api/ebp/factory` };
+  return {
+    server,
+    internalUrl: `http://127.0.0.1:${port}/api/ebp/internal/manufacturer-batches`,
+    factoryUrl: `http://127.0.0.1:${port}/api/ebp/factory`,
+    portalUrl: `http://127.0.0.1:${port}/portal`,
+  };
 }
 
 function admin(extraHeaders = {}) {
@@ -61,7 +68,7 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
   const tmpStorageRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'ebp-phase3-storage-'));
   const storageAdapter = new LocalFilesystemStorageAdapter(tmpStorageRoot);
 
-  const { server, internalUrl, factoryUrl } = await startTestServer(pool, storageAdapter);
+  const { server, internalUrl, factoryUrl, portalUrl } = await startTestServer(pool, storageAdapter);
   t.after(async () => {
     server.close();
     await pool.end();
@@ -91,7 +98,18 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     [sku]
   );
   const passportId = passportInsert.rows[0].id;
-  await pool.query(`INSERT INTO ebp_passport_engineering (passport_id, manufacturer_instruction_notes) VALUES ($1, 'Torque to spec X')`, [passportId]);
+  // Sets four applicable fields (ADR-0032: media, efficiency, bypass valve,
+  // anti-drainback valve) so the multi-field Offer form/validation has a
+  // real, non-trivial set of required fields to exercise — not just the
+  // two valve fields.
+  await pool.query(
+    `INSERT INTO ebp_passport_engineering
+      (passport_id, manufacturer_instruction_notes, required_media, minimum_efficiency, efficiency_particle_size_basis,
+       bypass_opening_pressure_kpa, bypass_pressure_tolerance_pct, antidrainback_valve_material, field_applicability)
+     VALUES ($1, 'Torque to spec X', 'Cellulose blend', 99.5, '20 micron ISO 4548-12', 100, 10, 'Nitrile rubber',
+             '{"bypass_valve_applicability":"REQUIRED","antidrainback_valve_applicability":"REQUIRED"}'::jsonb)`,
+    [passportId]
+  );
   await pool.query(
     `INSERT INTO ebp_passport_packaging (passport_id, packaging_class, individual_box_required, elimfilters_target_quantity) VALUES ($1, 'AUTOMOTIVE', TRUE, 24)`,
     [passportId]
@@ -294,9 +312,18 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
   });
 
   // ── 6. Offer creation, decimal FOB, packaging, late_submission ──────────
+  // Every applicable field on this Passport snapshot (ADR-0032): media,
+  // efficiency, bypass valve, anti-drainback valve — a genuinely
+  // multi-field Offer, not just the two valve fields.
+  const ALL_APPLICABLE_TECHNICAL_FIELDS = [
+    { field_name: 'required_media', offered_value: 'Synthetic blend', completeness_status: 'ANSWERED' },
+    { field_name: 'minimum_efficiency', offered_value: 99.2, unit: '%', completeness_status: 'ANSWERED' },
+    { field_name: 'bypass_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
+    { field_name: 'antidrainback_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
+  ];
 
   let offerCode;
-  await t.test('creates and submits an Offer with decimal FOB (string, never float), packaging, and technical fields', async () => {
+  await t.test('creates and submits a multi-field Offer (media, efficiency, bypass, anti-drainback) with decimal FOB (string, never float) and packaging', async () => {
     const res = await fetch(`${factoryUrl}/batches/${batchCode}/items/${itemId}/offers`, {
       method: 'POST',
       headers: factoryAuthed(),
@@ -306,16 +333,16 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
         currency: 'USD',
         moq: 500,
         lead_time_days: 30,
-        technical_fields: [
-          { field_name: 'bypass_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-          { field_name: 'antidrainback_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-        ],
+        technical_fields: ALL_APPLICABLE_TECHNICAL_FIELDS,
         packaging: { recommended_quantity_per_box: 24, net_weight_kg: '5.5', gross_weight_kg: '6.2' },
       }),
     });
     assert.equal(res.status, 201);
     const body = await res.json();
     assert.equal(body.status, 'SUBMITTED');
+    assert.equal(body.technical_fields.length, 4);
+    const fieldNames = body.technical_fields.map((f) => f.field_name).sort();
+    assert.deepEqual(fieldNames, ['antidrainback_valve_applicability', 'bypass_valve_applicability', 'minimum_efficiency', 'required_media']);
     assert.equal(body.fob_price, '12.3456'); // exact decimal string round-trip, ADR-0026
     assert.equal(typeof body.fob_price, 'string');
     assert.equal(body.late_submission, true); // response_due_at was already in the past
@@ -349,10 +376,7 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
         submit: true,
         fob_price: '11.0000',
         currency: 'USD',
-        technical_fields: [
-          { field_name: 'bypass_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-          { field_name: 'antidrainback_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-        ],
+        technical_fields: ALL_APPLICABLE_TECHNICAL_FIELDS,
       }),
     });
     assert.equal(res.status, 201);
@@ -370,10 +394,7 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
         submit: true,
         fob_price: '10.5000',
         currency: 'USD',
-        technical_fields: [
-          { field_name: 'bypass_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-          { field_name: 'antidrainback_valve_applicability', offered_value: 'REQUIRED', completeness_status: 'ANSWERED' },
-        ],
+        technical_fields: ALL_APPLICABLE_TECHNICAL_FIELDS,
       }),
     });
     assert.equal(res.status, 201);
@@ -427,11 +448,26 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
   // ── 9. Excel export / stage / confirm (ADR-0028) ─────────────────────────
 
   let excelBuffer;
+  let lastStagingId;
   await t.test('exports the batch as an Excel workbook', async () => {
     const res = await fetch(`${factoryUrl}/batches/${batchCode}/excel/export`, { headers: factoryAuthed() });
     assert.equal(res.status, 200);
     excelBuffer = Buffer.from(await res.arrayBuffer());
     assert.ok(excelBuffer.length > 0);
+  });
+
+  await t.test('the exported workbook has one row per applicable PEP field (media, efficiency, bypass, anti-drainback), field_name locked and pre-populated', async () => {
+    const ExcelJS = require('exceljs');
+    const excel = require('../../ebp/phase3/excel');
+    const wb = new ExcelJS.Workbook();
+    await wb.xlsx.load(excelBuffer);
+    const sheet = wb.getWorksheet(excel.VISIBLE_SHEET_NAME);
+    const col = (name) => excel.ALL_COLUMNS.indexOf(name) + 1;
+    const fieldNames = [];
+    for (let r = 2; r <= sheet.rowCount; r += 1) {
+      fieldNames.push(sheet.getCell(r, col('field_name')).value);
+    }
+    assert.deepEqual(fieldNames.sort(), ['antidrainback_valve_applicability', 'bypass_valve_applicability', 'minimum_efficiency', 'required_media']);
   });
 
   await t.test('rejects staging a workbook with an altered locked cell (hash mismatch, zero rows persisted)', async () => {
@@ -467,18 +503,26 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.ok(Number(before.rows[0].count) >= 0); // no crash; zero NEW rows verified by the stage-only nature of this call
   });
 
-  await t.test('a valid stage -> confirm round-trip creates a new Offer revision, never VALIDATED/APPROVED', async () => {
+  await t.test('a valid stage -> confirm round-trip (all 4 applicable fields answered) creates a new Offer revision, never VALIDATED/APPROVED', async () => {
     const ExcelJS = require('exceljs');
     const excel = require('../../ebp/phase3/excel');
     const wb = new ExcelJS.Workbook();
     await wb.xlsx.load(excelBuffer);
     const sheet = wb.getWorksheet(excel.VISIBLE_SHEET_NAME);
     const col = (name) => excel.ALL_COLUMNS.indexOf(name) + 1;
-    sheet.getRow(2).getCell(col('field_name')).value = 'bypass_valve_applicability';
-    sheet.getRow(2).getCell(col('offered_value')).value = 'REQUIRED';
-    sheet.getRow(2).getCell(col('completeness_status')).value = 'ANSWERED';
-    sheet.getRow(2).getCell(col('fob_price')).value = '9.99';
-    sheet.getRow(2).getCell(col('currency')).value = 'USD';
+    const OFFERED_VALUES = {
+      required_media: 'Synthetic blend (Excel)',
+      minimum_efficiency: '99.1',
+      bypass_valve_applicability: 'REQUIRED',
+      antidrainback_valve_applicability: 'REQUIRED',
+    };
+    for (let r = 2; r <= sheet.rowCount; r += 1) {
+      const fieldName = sheet.getCell(r, col('field_name')).value;
+      sheet.getCell(r, col('offered_value')).value = OFFERED_VALUES[fieldName];
+      sheet.getCell(r, col('completeness_status')).value = 'ANSWERED';
+    }
+    sheet.getCell(2, col('fob_price')).value = '9.99';
+    sheet.getCell(2, col('currency')).value = 'USD';
     const editedBuffer = Buffer.from(await wb.xlsx.writeBuffer());
 
     const boundary = '----EbpPhase3ValidBoundary';
@@ -494,12 +538,13 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     });
     assert.equal(stageRes.status, 200);
     const staged = await stageRes.json();
-    assert.ok(staged.staging_token);
+    assert.ok(staged.staging_id);
+    lastStagingId = staged.staging_id;
 
     const confirmRes = await fetch(`${factoryUrl}/batches/${batchCode}/excel/confirm`, {
       method: 'POST',
       headers: factoryAuthed(),
-      body: JSON.stringify({ staging_token: staged.staging_token }),
+      body: JSON.stringify({ staging_id: staged.staging_id }),
     });
     assert.equal(confirmRes.status, 201);
     const confirmed = await confirmRes.json();
@@ -507,13 +552,144 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.ok(['DRAFT', 'SUBMITTED'].includes(confirmed.offers[0].status));
   });
 
-  await t.test('re-confirming with an already-used staging token is rejected (409), no double-persist', async () => {
+  await t.test('re-confirming with an already-used staging_id is rejected (409), no double-persist', async () => {
     const res = await fetch(`${factoryUrl}/batches/${batchCode}/excel/confirm`, {
       method: 'POST',
       headers: factoryAuthed(),
-      body: JSON.stringify({ staging_token: 'does-not-exist-or-already-used' }),
+      body: JSON.stringify({ staging_id: lastStagingId }),
     });
     assert.equal(res.status, 409);
+  });
+
+  await t.test('confirming with a nonexistent (but well-formed) staging_id is rejected (409), never a 500 from an invalid-UUID crash', async () => {
+    const res = await fetch(`${factoryUrl}/batches/${batchCode}/excel/confirm`, {
+      method: 'POST',
+      headers: factoryAuthed(),
+      body: JSON.stringify({ staging_id: '00000000-0000-0000-0000-000000000000' }),
+    });
+    assert.equal(res.status, 409);
+  });
+
+  // ── 9b. Factory Portal Excel UI (server-rendered HTML, cookie session) ──
+  // No Postman/curl anywhere in this flow: download -> upload -> review ->
+  // explicit confirm, all through the same session the Manufacturer already
+  // has. resolveSession is transport-agnostic (ADR-0023), so the existing
+  // Bearer session_token doubles as the portal's cookie value here.
+
+  function portalCookie() {
+    return { cookie: `ebp_factory_session=${sessionToken}` };
+  }
+
+  let portalExcelBuffer;
+  let portalStagingId;
+
+  await t.test('portal: downloads the workbook template with no API knowledge required', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/export`, { headers: portalCookie() });
+    assert.equal(res.status, 200);
+    portalExcelBuffer = Buffer.from(await res.arrayBuffer());
+    assert.ok(portalExcelBuffer.length > 0);
+  });
+
+  await t.test('portal: uploading a completed workbook stages it and redirects straight to a human-readable review screen', async () => {
+    const ExcelJS = require('exceljs');
+    const excel = require('../../ebp/phase3/excel');
+    const wb = new ExcelJS.Workbook();
+    await wb.xlsx.load(portalExcelBuffer);
+    const sheet = wb.getWorksheet(excel.VISIBLE_SHEET_NAME);
+    const col = (name) => excel.ALL_COLUMNS.indexOf(name) + 1;
+    const OFFERED_VALUES = {
+      required_media: 'Synthetic blend (Portal)',
+      minimum_efficiency: '99.3',
+      bypass_valve_applicability: 'REQUIRED',
+      antidrainback_valve_applicability: 'REQUIRED',
+    };
+    for (let r = 2; r <= sheet.rowCount; r += 1) {
+      const fieldName = sheet.getCell(r, col('field_name')).value;
+      sheet.getCell(r, col('offered_value')).value = OFFERED_VALUES[fieldName];
+      sheet.getCell(r, col('completeness_status')).value = 'ANSWERED';
+    }
+    sheet.getCell(2, col('fob_price')).value = '8.75';
+    sheet.getCell(2, col('currency')).value = 'USD';
+    const editedBuffer = Buffer.from(await wb.xlsx.writeBuffer());
+
+    const boundary = '----EbpPhase3PortalBoundary';
+    const body = Buffer.concat([
+      Buffer.from(
+        `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="edited.xlsx"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n\r\n`
+      ),
+      editedBuffer,
+      Buffer.from(`\r\n--${boundary}--\r\n`),
+    ]);
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
+      body,
+    });
+    assert.equal(res.status, 200); // fetch follows the server redirect straight to the preview page
+    assert.match(res.url, /\/excel\/preview\//);
+    const html = await res.text();
+    assert.match(html, /Review Before Submitting/);
+    assert.match(html, /Synthetic blend \(Portal\)/);
+    assert.match(html, /Confirm &amp; Submit Offers/);
+    portalStagingId = res.url.split('/excel/preview/')[1];
+  });
+
+  await t.test('portal: confirming from the review screen submits the offer and shows a human-readable success report (never storage_key/password_hash/token_hash)', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
+      body: `staging_id=${encodeURIComponent(portalStagingId)}`,
+    });
+    assert.equal(res.status, 200);
+    const html = await res.text();
+    assert.match(html, /Offers Submitted/);
+    assert.doesNotMatch(html, /storage_key|password_hash|token_hash/);
+  });
+
+  await t.test('portal: re-confirming the same (now-consumed) staging_id shows a clear "could not confirm" page, no double-persist', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
+      body: `staging_id=${encodeURIComponent(portalStagingId)}`,
+    });
+    assert.equal(res.status, 200);
+    const html = await res.text();
+    assert.match(html, /Could Not Confirm/);
+  });
+
+  await t.test('portal: a tampered workbook is rejected with a rejection report and zero partial persistence', async () => {
+    const ExcelJS = require('exceljs');
+    const excel = require('../../ebp/phase3/excel');
+    const wb = new ExcelJS.Workbook();
+    await wb.xlsx.load(portalExcelBuffer);
+    const sheet = wb.getWorksheet(excel.VISIBLE_SHEET_NAME);
+    const codeColIndex = excel.ALL_COLUMNS.indexOf('elimfilters_code') + 1;
+    sheet.getRow(2).getCell(codeColIndex).value = 'TAMPERED-VIA-PORTAL';
+    const tamperedBuffer = Buffer.from(await wb.xlsx.writeBuffer());
+
+    const boundary = '----EbpPhase3PortalTamperBoundary';
+    const body = Buffer.concat([
+      Buffer.from(
+        `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="tampered.xlsx"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n\r\n`
+      ),
+      tamperedBuffer,
+      Buffer.from(`\r\n--${boundary}--\r\n`),
+    ]);
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
+      body,
+    });
+    assert.equal(res.status, 200);
+    const html = await res.text();
+    assert.match(html, /Upload Rejected/);
+    assert.match(html, /altered|corrupted|wrong template/);
+  });
+
+  await t.test('portal: rejects any Excel page request without a session cookie (redirects to login)', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel`, { redirect: 'manual' });
+    assert.equal(res.status, 302);
+    assert.match(res.headers.get('location'), /\/portal\/login/);
   });
 
   // ── 10. Batch close / cancel ─────────────────────────────────────────────

@@ -4,6 +4,8 @@
 // database/network calls live in repository.js and service.js. See
 // docs/ebp/phases/phase-03-supplier-portal.md.
 
+const pepFields = require('./pep-fields');
+
 const BATCH_PURPOSES = new Set(['CAPABILITY_ASSESSMENT', 'COMMERCIAL_QUOTATION', 'PRODUCTION_CANDIDATE']);
 const BATCH_CHANNELS = new Set(['PORTAL', 'EXCEL', 'HYBRID']);
 const BATCH_STATUSES = new Set(['DRAFT', 'SENT', 'PARTIALLY_RESPONDED', 'RESPONDED', 'OVERDUE', 'CLOSED', 'CANCELLED']);
@@ -161,6 +163,39 @@ function validateOfferPayload(payload) {
   return errors;
 }
 
+// ADR-0032: field_name always comes from the Batch Item's frozen PEP
+// snapshot — the Manufacturer never writes or alters it. Validates that
+// (1) every submitted field_name is one of the Passport's actual
+// applicable fields (rejects any free-typed/invented field_name), and
+// (2) when submitting (not saving a DRAFT), every applicable field has a
+// response — no silent gaps. Portal and Excel both funnel through this
+// same function, so they can never diverge on what "complete" means.
+function validateOfferFieldsAgainstSnapshot(passportSnapshot, submittedFields, isSubmit) {
+  const errors = [];
+  const applicableFields = pepFields.getApplicableFields(passportSnapshot);
+  const applicableNames = new Set(applicableFields.map((f) => f.field_name));
+  const submittedNames = new Set();
+
+  for (const field of submittedFields || []) {
+    if (field && typeof field === 'object') submittedNames.add(field.field_name);
+    if (!field || !applicableNames.has(field.field_name)) {
+      errors.push(
+        `field_name "${field && field.field_name}" is not an applicable field on this Passport — field_name must come from the Passport snapshot, it is never freely entered`
+      );
+    }
+  }
+
+  if (isSubmit) {
+    for (const name of applicableNames) {
+      if (!submittedNames.has(name)) {
+        errors.push(`applicable field "${name}" has no response — every applicable field must be ANSWERED, CANNOT_MEET, or NOT_APPLICABLE before this Offer can be submitted`);
+      }
+    }
+  }
+
+  return errors;
+}
+
 function validateTechnicalFieldPayload(field) {
   const errors = [];
   if (!field || typeof field !== 'object') return ['field must be an object'];
@@ -227,6 +262,7 @@ module.exports = {
   validateBatchPayload,
   validateBatchItemPayload,
   validateOfferPayload,
+  validateOfferFieldsAgainstSnapshot,
   validateTechnicalFieldPayload,
   validateDecimalString,
   validateDocumentUpload,

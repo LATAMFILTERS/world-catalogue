@@ -89,31 +89,34 @@ See ADR-0005.
   ADRs) may not be altered without a new ADR that explicitly supersedes
   the relevant prior entry, same discipline as Phase 0/ADR-0013 and Phase
   1.
-- **Phase 03 — Manufacturer Intake Portal (Factory Portal)** is `Built`
-  (not `APPROVED / FROZEN`) as of 2026-07-13: real, executable SQL
-  migrations (`migrations/ebp-phase3/`, 12 tables + 1 effective-Offer
-  view), a real backend module (`ebp/phase3/`) with a hard-split internal
+- **Phase 03 — Manufacturer Intake Portal (Factory Portal)** is `Built,
+  in mandatory pre-freeze correction` (not `APPROVED / FROZEN`) as of
+  2026-07-13: real, executable SQL migrations (`migrations/ebp-phase3/`,
+  now 13 tables + 2 effective/computed views), a real backend module
+  (`ebp/phase3/`) with a hard-split internal
   (`/api/ebp/internal/manufacturer-batches`, 13 endpoints,
-  `requireAdmin`) and factory-facing (`/api/ebp/factory`, 15 endpoints,
+  `requireAdmin`) and factory-facing (`/api/ebp/factory`, 16 endpoints,
   `requireFactorySession`) API surface, real Factory-user authentication
   (scrypt password hashing, opaque hashed session tokens — resolves
   ADR-0002 for Manufacturers only), a Portal-and-Excel dual intake flow
   (Excel via `exceljs`, uploads via `multer` — both new dependencies,
-  documented in ADR-0027/ADR-0028), and a minimal private Factory Portal
-  frontend (`/portal/*`, server-rendered, `noindex/nofollow`). A 87-test
-  suite (34 unit + 30 integration + 28 regression, `tests/ebp-phase3/`)
-  passes against a real local Postgres instance, confirmed stable across
-  3 consecutive runs, including a full rollback-with-real-data
-  verification (120 batches + 68 offers + 29 factory users dropped
-  cleanly, Phase 1/Phase 2/catalog unchanged) and re-confirmation that
-  Phase 1's 59-test and Phase 2's 100-test suites still pass unmodified.
-  Built with ADR-0023 through ADR-0029 — see `DECISIONS.md`. Two real
-  implementation bugs (an Offer-supersession ordering bug; a misclassified
-  locked/editable Excel column) were found and fixed during test-writing,
-  documented in the phase doc's own "Bugs found and fixed" section. Per
-  the project owner's explicit instruction, Phase 3 is deliberately left
-  at `Built`, not frozen — freezing is a separate, later step.
-  **Phase 4 (Engineering Compliance Validation) has not been started.**
+  documented in ADR-0027/ADR-0028), and a Factory Portal frontend
+  (`/portal/*`, server-rendered, `noindex/nofollow`) whose Excel flow is
+  now a full UI (download/upload/review/confirm — no Postman/curl/API
+  token needed, see the correction-round CHANGELOG entry). The project
+  owner reviewed Phase 3 and required a mandatory correction round before
+  any freeze; ADR-0030 (Postgres-persisted Excel staging), ADR-0031
+  (centralized effective `OVERDUE`, no cron required), and ADR-0032
+  (PEP-driven multi-field Offer form, Portal/Excel parity) are done;
+  CSRF protection, error-response sanitization, and cookie/session
+  hardening are still pending. The test suite has grown from 87 to
+  104 tests (counts confirmed by the `node --test` runner,
+  `tests/ebp-phase3/`), all passing against a real local Postgres
+  instance, with Phase 1's 59-test and Phase 2's 100-test suites
+  re-confirmed unmodified. Built with ADR-0023 through ADR-0032 — see
+  `DECISIONS.md`. **Phase 3 will not be marked `APPROVED / FROZEN` until
+  the full correction list is complete and re-audited. Phase 4
+  (Engineering Compliance Validation) has not been started.**
 - **Phases 04-09** remain `Spec Drafted` — first-pass drafts written during
   Phase 0 to prove the roadmap's dependency chain is coherent (see each
   file's own "Status" line). None are `Spec Approved`. **No implementation

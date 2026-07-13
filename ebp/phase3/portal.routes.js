@@ -8,9 +8,15 @@
 // the public Next.js site's navigation/sitemap.
 
 const express = require('express');
+const multer = require('multer');
 const service = require('./service');
+const excel = require('./excel');
+const staging = require('./staging');
+const validation = require('./validation');
+const dto = require('./dto');
 
 const SESSION_COOKIE = 'ebp_factory_session';
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: validation.MAX_DOCUMENT_SIZE_BYTES } });
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -131,7 +137,7 @@ function createPortalRouter(pool) {
           .map(
             (b) =>
               `<tr><td><a href="/portal/batches/${escapeHtml(b.batch_code)}">${escapeHtml(b.batch_code)}</a></td>` +
-              `<td>${escapeHtml(b.purpose)}</td><td><span class="status">${escapeHtml(b.status)}</span></td>` +
+              `<td>${escapeHtml(b.purpose)}</td><td><span class="status">${escapeHtml(b.effective_status || b.status)}</span></td>` +
               `<td>${escapeHtml(b.response_due_at || '—')}</td></tr>`
           )
           .join('')
@@ -160,7 +166,7 @@ function createPortalRouter(pool) {
       res.send(
         layout(
           `Batch ${batch.batch_code}`,
-          `<p>Purpose: ${escapeHtml(batch.purpose)} · Status: <span class="status">${escapeHtml(batch.status)}</span> · Due: ${escapeHtml(batch.response_due_at || '—')}</p>` +
+          `<p>Purpose: ${escapeHtml(batch.purpose)} · Status: <span class="status">${escapeHtml(batch.effective_status || batch.status)}</span> · Due: ${escapeHtml(batch.response_due_at || '—')}</p>` +
             `<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Excel export/import</a></p>` +
             `<table><thead><tr><th>Product</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table>`
         )
@@ -235,21 +241,211 @@ function createPortalRouter(pool) {
     }
   });
 
+  // Renders a single technical field row inside the preview table.
+  function renderFieldRow(field) {
+    return `<tr><td>${escapeHtml(field.field_name)}</td><td>${escapeHtml(field.offered_value)}</td>` +
+      `<td>${escapeHtml(field.unit || '—')}</td><td>${escapeHtml(field.tolerance || '—')}</td>` +
+      `<td><span class="status">${escapeHtml(field.completeness_status)}</span></td>` +
+      `<td>${escapeHtml(field.manufacturer_note || '—')}</td></tr>`;
+  }
+
+  // Renders the staged errors, whichever shape they take: an array of
+  // structural strings (wrong batch/template/tampered locked columns) or
+  // an array of per-row objects (Stage 2 field validation).
+  function renderErrorReport(errorsJson) {
+    const errors = errorsJson || [];
+    if (!errors.length) return '<p>No errors.</p>';
+    if (typeof errors[0] === 'string') {
+      return `<ul class="error">${errors.map((e) => `<li>${escapeHtml(e)}</li>`).join('')}</ul>`;
+    }
+    const rows = errors
+      .map(
+        (e) =>
+          `<tr><td>${escapeHtml(e.row)}</td><td>${escapeHtml(e.batch_item_id)}</td><td>${escapeHtml(e.field_name)}</td>` +
+          `<td class="error">${e.errors.map((m) => escapeHtml(m)).join('; ')}</td></tr>`
+      )
+      .join('');
+    return `<table><thead><tr><th>Row</th><th>Product</th><th>Field</th><th>Problem</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
   router.get('/batches/:batch_code/excel', async (req, res) => {
     try {
       const batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+      const error = req.query.error ? `<p class="error">${escapeHtml(req.query.error)}</p>` : '';
       res.send(
         layout(
           'Excel Export / Import',
-          `<p><a href="/api/ebp/factory/batches/${escapeHtml(batch.batch_code)}/excel/export">Download current workbook</a></p>
-<p>To submit via Excel: download, fill in the editable columns, then use the API endpoints
-<code>POST /api/ebp/factory/batches/${escapeHtml(batch.batch_code)}/excel/stage</code> and
-<code>/excel/confirm</code> with your session token (form-based upload is not yet wired into this minimal portal UI).</p>`
+          `${error}
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel/export">1. Download the current workbook</a> — fill in the editable (unshaded) columns only.</p>
+<p>2. Upload your completed workbook below. It is checked and staged for your review before anything is submitted.</p>
+<form method="post" action="/portal/batches/${escapeHtml(batch.batch_code)}/excel/upload" enctype="multipart/form-data">
+  <label>Completed workbook (.xlsx)<input type="file" name="file" accept=".xlsx" required></label>
+  <button type="submit">Upload &amp; Review</button>
+</form>`
         )
       );
     } catch {
       res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
     }
+  });
+
+  router.get('/batches/:batch_code/excel/export', async (req, res) => {
+    try {
+      const batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+      const batchItems = await service.listBatchItems(pool, req.params.batch_code);
+      const buffer = await excel.buildBatchWorkbook({ batchCode: batch.batch_code, manufacturerId: batch.manufacturer_id, batchItems });
+      res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      res.set('Content-Disposition', `attachment; filename="${batch.batch_code}.xlsx"`);
+      res.send(Buffer.from(buffer));
+    } catch {
+      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+    }
+  });
+
+  router.post('/batches/:batch_code/excel/upload', upload.single('file'), async (req, res) => {
+    let batch;
+    try {
+      batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+    } catch {
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+    }
+    if (!req.file) {
+      return res.redirect(`/portal/batches/${encodeURIComponent(req.params.batch_code)}/excel?error=${encodeURIComponent('Choose a .xlsx file to upload.')}`);
+    }
+    try {
+      const workbookHash = require('node:crypto').createHash('sha256').update(req.file.buffer).digest('hex');
+      const { errors, preview } = await excel.parseAndValidateWorkbook(req.file.buffer, batch.batch_code, batch.manufacturer_id);
+      const stagingId = await staging.put(pool, {
+        manufacturerId: req.factorySession.manufacturer_id,
+        factoryUserId: req.factorySession.factory_user_id,
+        batchId: batch.id,
+        workbookHash,
+        preview,
+        errors: errors.length ? errors : null,
+      });
+      res.redirect(`/portal/batches/${encodeURIComponent(batch.batch_code)}/excel/preview/${encodeURIComponent(stagingId)}`);
+    } catch {
+      res.redirect(
+        `/portal/batches/${encodeURIComponent(req.params.batch_code)}/excel?error=${encodeURIComponent('That file could not be read — make sure it is the unmodified workbook downloaded from this portal.')}`
+      );
+    }
+  });
+
+  router.get('/batches/:batch_code/excel/preview/:staging_id', async (req, res) => {
+    let batch;
+    try {
+      batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+    } catch {
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+    }
+    const staged = await staging.peek(pool, req.params.staging_id, batch.id, req.factorySession.manufacturer_id);
+    if (!staged) {
+      return res.send(
+        layout(
+          'Upload Expired',
+          `<p class="error">This staged upload was not found or has expired. Please upload the workbook again.</p>
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`
+        )
+      );
+    }
+    if (staged.status !== 'STAGED') {
+      return res.send(
+        layout(
+          'Already Handled',
+          `<p>This staged upload has already been ${escapeHtml(staged.status.toLowerCase())}.</p>
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`
+        )
+      );
+    }
+    if (!staged.preview_json) {
+      return res.send(
+        layout(
+          'Upload Rejected',
+          `<p class="error">This workbook could not be staged. Nothing was submitted.</p>
+${renderErrorReport(staged.errors_json)}
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Upload a corrected workbook</a></p>`
+        )
+      );
+    }
+    const itemBlocks = staged.preview_json
+      .map((entry) => {
+        const fieldRows = entry.technical_fields.map(renderFieldRow).join('');
+        return `<h3>Product ${escapeHtml(entry.batch_item_id)}</h3>
+<p>FOB: ${escapeHtml(entry.fob_price || '—')} ${escapeHtml(entry.currency || '')} · MOQ: ${escapeHtml(entry.moq || '—')} · Lead time: ${escapeHtml(entry.lead_time_days || '—')} days</p>
+<table><thead><tr><th>Field</th><th>Offered value</th><th>Unit</th><th>Tolerance</th><th>Completeness</th><th>Note</th></tr></thead><tbody>${fieldRows}</tbody></table>`;
+      })
+      .join('<hr>');
+    res.send(
+      layout(
+        'Review Before Submitting',
+        `<p>Review the parsed offer below. Nothing has been submitted yet — confirm to create these offers, or go back and upload a corrected file.</p>
+${itemBlocks}
+<form method="post" action="/portal/batches/${escapeHtml(batch.batch_code)}/excel/confirm">
+  <input type="hidden" name="staging_id" value="${escapeHtml(req.params.staging_id)}">
+  <button type="submit">Confirm &amp; Submit Offers</button>
+</form>
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Discard and upload a different file</a></p>`
+      )
+    );
+  });
+
+  router.post('/batches/:batch_code/excel/confirm', express.urlencoded({ extended: false }), async (req, res) => {
+    let batch;
+    try {
+      batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+    } catch {
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+    }
+    const { staging_id: stagingId } = req.body || {};
+    const preview = await staging.take(pool, stagingId, batch.id, req.factorySession.manufacturer_id);
+    if (!preview) {
+      return res.send(
+        layout(
+          'Could Not Confirm',
+          `<p class="error">This staged upload is invalid, expired, or was already confirmed. Please upload the workbook again.</p>
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`
+        )
+      );
+    }
+    const actor = { declared_actor: req.factorySession.factory_user_id, identity_mechanism: 'FACTORY_SESSION', factory_user_id: req.factorySession.factory_user_id };
+    const results = [];
+    const itemErrors = [];
+    for (const entry of preview) {
+      try {
+        // eslint-disable-next-line no-await-in-loop
+        const created = await service.createOfferRevision(
+          pool,
+          batch.batch_code,
+          entry.batch_item_id,
+          {
+            submit: true,
+            fob_price: entry.fob_price ? String(entry.fob_price) : undefined,
+            currency: entry.currency || undefined,
+            moq: entry.moq ? Number(entry.moq) : undefined,
+            lead_time_days: entry.lead_time_days ? Number(entry.lead_time_days) : undefined,
+            technical_fields: entry.technical_fields,
+          },
+          actor
+        );
+        // eslint-disable-next-line no-await-in-loop
+        const offer = await service.getOfferWithDetail(pool, created.offer_code);
+        results.push(dto.toFactoryOfferDTO(offer));
+      } catch (err) {
+        itemErrors.push({ batch_item_id: entry.batch_item_id, error: err.message });
+      }
+    }
+    const successRows = results
+      .map((o) => `<tr><td>${escapeHtml(o.offer_code)}</td><td>${escapeHtml(o.batch_item_id)}</td><td><span class="status">${escapeHtml(o.status)}</span></td></tr>`)
+      .join('');
+    const errorRows = itemErrors.map((e) => `<tr><td>${escapeHtml(e.batch_item_id)}</td><td class="error">${escapeHtml(e.error)}</td></tr>`).join('');
+    res.send(
+      layout(
+        itemErrors.length ? 'Submitted With Errors' : 'Offers Submitted',
+        `${results.length ? `<h3>Submitted</h3><table><thead><tr><th>Offer</th><th>Product</th><th>Status</th></tr></thead><tbody>${successRows}</tbody></table>` : ''}
+${itemErrors.length ? `<h3 class="error">Rejected</h3><table><thead><tr><th>Product</th><th>Reason</th></tr></thead><tbody>${errorRows}</tbody></table>` : ''}
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`
+      )
+    );
   });
 
   return router;

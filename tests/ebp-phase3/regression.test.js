@@ -507,4 +507,166 @@ test('EBP Phase 3 — regression guards', async (t) => {
     const after = await pool.query('SELECT COUNT(*) FROM ebp_manufacturers');
     assert.ok(Number(after.rows[0].count) >= Number(manufacturersCountBefore.rows[0].count));
   });
+
+  // ── Batch effective_status / OVERDUE (ADR-0031, correction round) ──────
+
+  await t.test('REGRESSION: a SENT batch past its response_due_at reports effective_status OVERDUE via the centralized view, while the stored status column is unchanged', async () => {
+    const mfr = await insertManufacturer();
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_manufacturer_request_batches (batch_code, manufacturer_id, purpose, channel, timezone, status, response_due_at, created_by)
+       VALUES ($1, $2, 'COMMERCIAL_QUOTATION', 'PORTAL', 'UTC', 'SENT', NOW() - interval '1 day', 'regression-test') RETURNING id`,
+      [await codes.generateUniqueBatchCode(async () => false), mfr.id]
+    );
+    const view = await pool.query('SELECT status, effective_status FROM ebp_manufacturer_request_batches_effective WHERE id = $1', [rows[0].id]);
+    assert.equal(view.rows[0].status, 'SENT');
+    assert.equal(view.rows[0].effective_status, 'OVERDUE');
+  });
+
+  await t.test('REGRESSION: a PARTIALLY_RESPONDED batch past its deadline is also OVERDUE', async () => {
+    const mfr = await insertManufacturer();
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_manufacturer_request_batches (batch_code, manufacturer_id, purpose, channel, timezone, status, response_due_at, created_by)
+       VALUES ($1, $2, 'COMMERCIAL_QUOTATION', 'PORTAL', 'UTC', 'PARTIALLY_RESPONDED', NOW() - interval '1 hour', 'regression-test') RETURNING id`,
+      [await codes.generateUniqueBatchCode(async () => false), mfr.id]
+    );
+    const view = await pool.query('SELECT effective_status FROM ebp_manufacturer_request_batches_effective WHERE id = $1', [rows[0].id]);
+    assert.equal(view.rows[0].effective_status, 'OVERDUE');
+  });
+
+  await t.test('REGRESSION: a RESPONDED batch past its deadline is NEVER reported OVERDUE — terminal-ish statuses are exempt', async () => {
+    const mfr = await insertManufacturer();
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_manufacturer_request_batches (batch_code, manufacturer_id, purpose, channel, timezone, status, response_due_at, created_by)
+       VALUES ($1, $2, 'COMMERCIAL_QUOTATION', 'PORTAL', 'UTC', 'RESPONDED', NOW() - interval '1 day', 'regression-test') RETURNING id`,
+      [await codes.generateUniqueBatchCode(async () => false), mfr.id]
+    );
+    const view = await pool.query('SELECT effective_status FROM ebp_manufacturer_request_batches_effective WHERE id = $1', [rows[0].id]);
+    assert.equal(view.rows[0].effective_status, 'RESPONDED');
+  });
+
+  await t.test('REGRESSION: CLOSED and CANCELLED batches past deadline are never OVERDUE either', async () => {
+    const mfr = await insertManufacturer();
+    for (const terminalStatus of ['CLOSED', 'CANCELLED']) {
+      // eslint-disable-next-line no-await-in-loop
+      const { rows } = await pool.query(
+        `INSERT INTO ebp_manufacturer_request_batches (batch_code, manufacturer_id, purpose, channel, timezone, status, response_due_at, created_by)
+         VALUES ($1, $2, 'COMMERCIAL_QUOTATION', 'PORTAL', 'UTC', $3, NOW() - interval '1 day', 'regression-test') RETURNING id`,
+        [await codes.generateUniqueBatchCode(async () => false), mfr.id, terminalStatus]
+      );
+      // eslint-disable-next-line no-await-in-loop
+      const view = await pool.query('SELECT effective_status FROM ebp_manufacturer_request_batches_effective WHERE id = $1', [rows[0].id]);
+      assert.equal(view.rows[0].effective_status, terminalStatus);
+    }
+  });
+
+  await t.test('REGRESSION: a batch with no response_due_at (NULL) is never OVERDUE regardless of status/age', async () => {
+    const mfr = await insertManufacturer();
+    const batch = await insertBatch(mfr.id); // default status DRAFT, response_due_at NULL
+    const view = await pool.query('SELECT effective_status FROM ebp_manufacturer_request_batches_effective WHERE id = $1', [batch.id]);
+    assert.notEqual(view.rows[0].effective_status, 'OVERDUE');
+  });
+
+  await t.test('REGRESSION: late_submission is computed and persisted at Offer-submission time, never recomputed later', async () => {
+    const mfr = await insertManufacturer();
+    const batchCode = await codes.generateUniqueBatchCode(async () => false);
+    const { rows: batchRows } = await pool.query(
+      `INSERT INTO ebp_manufacturer_request_batches (batch_code, manufacturer_id, purpose, channel, timezone, status, response_due_at, created_by)
+       VALUES ($1, $2, 'COMMERCIAL_QUOTATION', 'PORTAL', 'UTC', 'SENT', NOW() - interval '1 day', 'regression-test') RETURNING id`,
+      [batchCode, mfr.id]
+    );
+    const passport = await insertPassport();
+    const item = await insertBatchItem(batchRows[0].id, passport);
+    const offer = await insertOffer(item, mfr.id, 'SUBMITTED');
+    // late_submission is set by the application layer (service.js), not by
+    // this raw regression INSERT helper — this test only confirms the
+    // column exists and is independently settable/queryable; the
+    // behavioral guarantee (computed once, at submit time) is covered by
+    // integration.test.js's "late_submission = true" assertion.
+    const { rows } = await pool.query('SELECT late_submission FROM ebp_manufacturer_offers WHERE id = $1', [offer.id]);
+    assert.equal(typeof rows[0].late_submission, 'boolean');
+  });
+
+  // ── Excel staging persistence (ADR-0030, correction round) ──────────────
+
+  const staging = require('../../ebp/phase3/staging');
+
+  await t.test('REGRESSION: a staged import can be consumed exactly once (single atomic UPDATE, no race window)', async () => {
+    const mfr = await insertManufacturer();
+    const batch = await insertBatch(mfr.id);
+    const stagingId = await staging.put(pool, {
+      manufacturerId: mfr.id,
+      batchId: batch.id,
+      workbookHash: 'd'.repeat(64),
+      preview: [{ x: 1 }],
+    });
+    const first = await staging.take(pool, stagingId, batch.id, mfr.id);
+    assert.deepEqual(first, [{ x: 1 }]);
+    const second = await staging.take(pool, stagingId, batch.id, mfr.id);
+    assert.equal(second, null);
+  });
+
+  await t.test('REGRESSION: a staged import scoped to a different manufacturer/batch is rejected (tenant isolation enforced in the same query)', async () => {
+    const mfrA = await insertManufacturer();
+    const mfrB = await insertManufacturer();
+    const batchA = await insertBatch(mfrA.id);
+    const stagingId = await staging.put(pool, {
+      manufacturerId: mfrA.id,
+      batchId: batchA.id,
+      workbookHash: 'e'.repeat(64),
+      preview: [{ x: 1 }],
+    });
+    assert.equal(await staging.take(pool, stagingId, batchA.id, mfrB.id), null); // wrong manufacturer
+    const batchB = await insertBatch(mfrB.id);
+    assert.equal(await staging.take(pool, stagingId, batchB.id, mfrA.id), null); // wrong batch
+    // The row is still STAGED (neither mismatched call should have consumed it)
+    assert.deepEqual(await staging.take(pool, stagingId, batchA.id, mfrA.id), [{ x: 1 }]);
+  });
+
+  await t.test('REGRESSION: an expired staging row cannot be confirmed', async () => {
+    const mfr = await insertManufacturer();
+    const batch = await insertBatch(mfr.id);
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_manufacturer_excel_staging (manufacturer_id, batch_id, workbook_hash, preview_json, expires_at)
+       VALUES ($1, $2, $3, $4, NOW() - interval '1 minute') RETURNING id`,
+      [mfr.id, batch.id, 'f'.repeat(64), JSON.stringify([{ x: 1 }])]
+    );
+    assert.equal(await staging.take(pool, rows[0].id, batch.id, mfr.id), null);
+  });
+
+  await t.test('REGRESSION: a staged row survives a fresh Pool/connection (simulates a process restart — no in-memory state involved)', async () => {
+    const mfr = await insertManufacturer();
+    const batch = await insertBatch(mfr.id);
+    const stagingId = await staging.put(pool, {
+      manufacturerId: mfr.id,
+      batchId: batch.id,
+      workbookHash: 'a1'.repeat(32),
+      preview: [{ restart_test: true }],
+    });
+    // A brand-new Pool, independent of the one used to write the row —
+    // nothing about this read depends on any process-local state.
+    const freshPool = new Pool({ connectionString: DATABASE_URL });
+    try {
+      const result = await staging.take(freshPool, stagingId, batch.id, mfr.id);
+      assert.deepEqual(result, [{ restart_test: true }]);
+    } finally {
+      await freshPool.end();
+    }
+  });
+
+  await t.test('REGRESSION: ebp_manufacturer_excel_staging rejects an invalid status value', async () => {
+    const mfr = await insertManufacturer();
+    const batch = await insertBatch(mfr.id);
+    await assert.rejects(
+      () =>
+        pool.query(
+          `INSERT INTO ebp_manufacturer_excel_staging (manufacturer_id, batch_id, workbook_hash, preview_json, status, expires_at)
+           VALUES ($1, $2, $3, '{}', 'BOGUS', NOW() + interval '1 hour')`,
+          [mfr.id, batch.id, 'b2'.repeat(32)]
+        ),
+      (err) => {
+        assert.equal(err.code, '23514');
+        return true;
+      }
+    );
+  });
 });

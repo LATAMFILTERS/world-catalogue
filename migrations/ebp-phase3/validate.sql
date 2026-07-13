@@ -5,7 +5,7 @@
 -- Safe to run: YES (read-only)
 -- =============================================================================
 
--- 1. All 12 tables exist
+-- 1. All 13 tables exist (12 from 001_schema.sql + ebp_manufacturer_excel_staging from 002_excel_staging.sql)
 SELECT tablename
 FROM pg_tables
 WHERE schemaname = 'public'
@@ -21,10 +21,11 @@ WHERE schemaname = 'public'
     'ebp_manufacturer_offer_status_history',
     'ebp_manufacturer_offer_technical_fields',
     'ebp_manufacturer_offer_packaging',
-    'ebp_manufacturer_documents'
+    'ebp_manufacturer_documents',
+    'ebp_manufacturer_excel_staging'
   )
 ORDER BY tablename;
--- Expected: 12 rows
+-- Expected: 13 rows
 
 -- 2. The effective-Offer view exists
 SELECT viewname FROM pg_views WHERE viewname = 'ebp_manufacturer_offers_effective';
@@ -87,3 +88,19 @@ WHERE table_name = 'ebp_manufacturer_offers'
 -- 11. No password_hash or token_hash column is ever exposed via a view (only real tables hold them)
 SELECT viewname FROM pg_views WHERE viewname LIKE '%factory%';
 -- Expected: 0 rows (no view exists over factory auth tables at all)
+
+-- 12. Excel staging table has a status CHECK and no orphaned rows against its parents
+SELECT conname FROM pg_constraint WHERE conname = 'ebp_manufacturer_excel_staging_status_check';
+-- Expected: 1 row
+SELECT s.id FROM ebp_manufacturer_excel_staging s
+  LEFT JOIN ebp_manufacturer_request_batches b ON b.id = s.batch_id WHERE b.id IS NULL;
+SELECT s.id FROM ebp_manufacturer_excel_staging s
+  LEFT JOIN ebp_manufacturers m ON m.id = s.manufacturer_id WHERE m.id IS NULL;
+-- Expected: 0 rows each
+
+-- 13. No staging row is ever both CONSUMED and still returnable by take() a second time
+-- (structural guarantee: take() is a single atomic UPDATE ... WHERE status = 'STAGED',
+-- so a CONSUMED row can never match that predicate again — verified by application-level
+-- regression test, this is a read-only sanity check that no CONSUMED row lacks consumed_at)
+SELECT id FROM ebp_manufacturer_excel_staging WHERE status = 'CONSUMED' AND consumed_at IS NULL;
+-- Expected: 0 rows

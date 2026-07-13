@@ -19,6 +19,7 @@
 DROP VIEW IF EXISTS ebp_manufacturer_offers_effective;
 
 -- Step 2: Drop leaf/child tables first
+DROP TABLE IF EXISTS ebp_manufacturer_excel_staging                    CASCADE;
 DROP TABLE IF EXISTS ebp_manufacturer_documents                        CASCADE;
 DROP TABLE IF EXISTS ebp_manufacturer_offer_packaging                  CASCADE;
 DROP TABLE IF EXISTS ebp_manufacturer_offer_technical_fields           CASCADE;
@@ -50,7 +51,8 @@ WHERE schemaname = 'public'
     'ebp_manufacturer_offer_status_history',
     'ebp_manufacturer_offer_technical_fields',
     'ebp_manufacturer_offer_packaging',
-    'ebp_manufacturer_documents'
+    'ebp_manufacturer_documents',
+    'ebp_manufacturer_excel_staging'
   );
 -- Expected: 0 rows (all Phase 3 tables dropped)
 
@@ -81,6 +83,7 @@ SELECT COUNT(*) AS manufacturers_intact FROM ebp_manufacturers;
 -- CREATE TABLE statements are a no-op since IF NOT EXISTS). Order respects
 -- FK dependencies:
 /*
+TRUNCATE ebp_manufacturer_excel_staging;
 TRUNCATE ebp_manufacturer_documents;
 TRUNCATE ebp_manufacturer_offer_packaging;
 TRUNCATE ebp_manufacturer_offer_technical_fields;

@@ -75,21 +75,30 @@ async function insertBatch(client, payload, code, actor) {
   return rows[0];
 }
 
+// Reads go through ebp_manufacturer_request_batches_effective (ADR-0031) so
+// every caller sees the computed effective_status (OVERDUE when
+// response_due_at has passed and the batch hasn't reached RESPONDED/
+// CLOSED/CANCELLED) alongside the raw, last-explicitly-set `status` column
+// — never a second, independently-calculated OVERDUE rule anywhere else.
 async function fetchBatchByCode(pool, batchCode) {
-  const { rows } = await pool.query('SELECT * FROM ebp_manufacturer_request_batches WHERE batch_code = $1', [batchCode]);
+  const { rows } = await pool.query('SELECT * FROM ebp_manufacturer_request_batches_effective WHERE batch_code = $1', [batchCode]);
   return rows[0] || null;
 }
 
 async function fetchBatchByCodeForManufacturer(pool, batchCode, manufacturerId) {
   const { rows } = await pool.query(
-    'SELECT * FROM ebp_manufacturer_request_batches WHERE batch_code = $1 AND manufacturer_id = $2',
+    'SELECT * FROM ebp_manufacturer_request_batches_effective WHERE batch_code = $1 AND manufacturer_id = $2',
     [batchCode, manufacturerId]
   );
   return rows[0] || null;
 }
 
+// Locks the underlying base-table row (Postgres permits FOR UPDATE through
+// a simple, single-table view with no aggregates/DISTINCT) — the state
+// machine below still validates against the raw `status` column, which
+// this view exposes unchanged alongside the computed `effective_status`.
 async function lockBatchByCode(client, batchCode) {
-  const { rows } = await client.query('SELECT * FROM ebp_manufacturer_request_batches WHERE batch_code = $1 FOR UPDATE', [batchCode]);
+  const { rows } = await client.query('SELECT * FROM ebp_manufacturer_request_batches_effective WHERE batch_code = $1 FOR UPDATE', [batchCode]);
   return rows[0] || null;
 }
 
@@ -101,8 +110,12 @@ async function listBatches(pool, { manufacturer_id, status, purpose, limit = 50,
     conditions.push(`manufacturer_id = $${params.length}`);
   }
   if (status) {
+    // Filters against effective_status (ADR-0031), not the raw status
+    // column — so ?status=OVERDUE correctly finds a batch whose stored
+    // status is still SENT/PARTIALLY_RESPONDED but whose deadline has
+    // passed, matching what every other read of this data already shows.
     params.push(status);
-    conditions.push(`status = $${params.length}`);
+    conditions.push(`effective_status = $${params.length}`);
   }
   if (purpose) {
     params.push(purpose);
@@ -112,7 +125,7 @@ async function listBatches(pool, { manufacturer_id, status, purpose, limit = 50,
   params.push(limit);
   params.push(offset);
   const { rows } = await pool.query(
-    `SELECT * FROM ebp_manufacturer_request_batches ${where} ORDER BY created_at DESC LIMIT $${params.length - 1} OFFSET $${params.length}`,
+    `SELECT * FROM ebp_manufacturer_request_batches_effective ${where} ORDER BY created_at DESC LIMIT $${params.length - 1} OFFSET $${params.length}`,
     params
   );
   return rows;

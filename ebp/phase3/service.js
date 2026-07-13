@@ -188,6 +188,15 @@ async function createOfferRevision(pool, batchCode, itemId, payload, actor) {
   const item = await repository.fetchBatchItemForBatch(pool, itemId, batch.id);
   if (!item) throw new NotFoundError(`batch item ${itemId} not found for batch ${batchCode}`);
 
+  // ADR-0032: field_name always comes from the frozen PEP snapshot, never
+  // freely entered; every applicable field must be answered before submit.
+  const fieldErrors = validation.validateOfferFieldsAgainstSnapshot(
+    item.manufacturer_visible_snapshot,
+    payload.technical_fields || [],
+    !!payload.submit
+  );
+  if (fieldErrors.length) throw new ValidationError(fieldErrors);
+
   const code = await codes.generateUniqueOfferCode((candidate) => repository.offerCodeExists(pool, candidate));
 
   const client = await pool.connect();

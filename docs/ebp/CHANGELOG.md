@@ -746,9 +746,18 @@ to `Built` (not `APPROVED / FROZEN` — freezing is a separate, later step).
   No password-hashing or JWT/session library was added — `node:crypto`
   covers both.
 - **`tests/ebp-phase3/unit.test.js`**, **`integration.test.js`**,
-  **`regression.test.js`** — 87 tests total (34 unit, 30 integration
-  subtests against a live server + live Postgres, 28 regression subtests
-  guarding DB-level invariants independent of application code). **All 87
+  **`regression.test.js`** — 87 tests total, counts confirmed directly
+  from the `node --test` runner output (not estimated): 29 unit, 30
+  integration subtests against a live server + live Postgres, 28
+  regression subtests guarding DB-level invariants independent of
+  application code. **Correction (this entry):** an earlier version of
+  this changelog entry, the phase doc, and `IMPLEMENTATION_MASTER_INDEX
+  .md` all incorrectly stated "34 unit tests" (34 + 30 + 28 = 92, which
+  does not match the actual 87-test total or the runner's own per-file
+  output of 29/30/28) — corrected here and in both other documents to the
+  runner-confirmed 29/30/28 breakdown. No test was added, removed, or
+  renamed to make a number match; the documentation was corrected to
+  match the code, not the other way around. **All 87
   passed**, confirmed stable across 3 consecutive re-runs. Phase 1's own
   59-test suite and Phase 2's own 100-test suite were re-run after this
   work and still pass unmodified.
@@ -763,5 +772,91 @@ to `Built` (not `APPROVED / FROZEN` — freezing is a separate, later step).
   fill in via Excel — fixed by reclassifying it as editable.
 - **Phase 4 was not started.** No Engineering Compliance Validation
   table, route, or spec change was made in this session.
+
+## 2026-07-13 — Phase 3 mandatory pre-freeze correction round (part 1): persistent staging, centralized OVERDUE, multi-field PEP offer form, real Excel UI
+
+The project owner reviewed Phase 3 as "well underway, but not yet approved
+or frozen" and required a mandatory correction pass before any freeze —
+the same discipline already applied to Phase 0/1/2. This entry covers the
+first four items of that correction list; CSRF, error sanitization, and
+cookie/session hardening are tracked separately and precede the final
+freeze entry.
+
+- **ADR-0030 (Excel staging persistence).** Replaced the process-local
+  in-memory `Map` in `ebp/phase3/staging.js` with a real Postgres table,
+  `ebp_manufacturer_excel_staging` (`migrations/ebp-phase3/002_excel_
+  staging.sql`): `manufacturer_id`/`factory_user_id`/`batch_id`/
+  `workbook_hash`/`preview_json`/`errors_json`/`status`/`expires_at`/
+  `consumed_at`. `take()` is a single atomic `UPDATE ... WHERE status =
+  'STAGED' AND expires_at > NOW() ... RETURNING` — single-use consumption
+  with no separate check-then-act race window; `peek()` is a read-only
+  variant for the Portal's review screen. A malformed (non-UUID) staging
+  id is rejected before it ever reaches Postgres, rather than surfacing a
+  raw `22P02` error as a 500. Verified surviving a simulated process
+  restart (a regression test opens a brand-new `Pool` and reads a row
+  written via the original one), tenant isolation, and TTL expiry.
+- **ADR-0031 (centralized effective `OVERDUE`).** Added
+  `migrations/ebp-phase3/003_batch_effective_status.sql`:
+  `ebp_manufacturer_request_batches_effective`, a computed view exposing
+  `effective_status = OVERDUE` whenever `response_due_at < NOW()` and the
+  stored status isn't `RESPONDED`/`CLOSED`/`CANCELLED` — no cron/scheduled
+  job required. `repository.js` (`fetchBatchByCode*`, `lockBatchByCode`,
+  `listBatches`), `dto.js`, and `portal.routes.js` now all read through
+  this view exclusively, so no code path can compute `OVERDUE`
+  differently. This closes the gap the original Phase 3 doc had honestly
+  flagged as an acknowledged risk.
+- **ADR-0032 (PEP-driven multi-field offer, Portal/Excel parity).** The
+  Offer form no longer accepts one freely-typed `field_name`/`value` pair.
+  A new read-only presentation registry, `ebp/phase3/pep-fields.js`, maps
+  Phase 1's frozen engineering schema to per-field metadata (label, unit,
+  required value/tolerance, applicability) without modifying Phase 1.
+  `validation.js` adds `validateOfferFieldsAgainstSnapshot`, wired into
+  `service.createOfferRevision`, which rejects any submitted `field_name`
+  not present in the snapshot's applicable-field set (the Manufacturer
+  can never write or alter `field_name`) and requires every applicable
+  field to have an explicit `ANSWERED`/`CANNOT_MEET`/`NOT_APPLICABLE`
+  response before `submit: true` is accepted (an incomplete `DRAFT` is
+  still allowed). `excel.js` was rewritten to expand one row per (Batch
+  Item × applicable PEP field) using the same registry, so Portal and
+  Excel produce byte-identical `technical_fields[]` payloads consumed by
+  the same `service.createOfferRevision` — never two independent code
+  paths that could drift. `field_name` moved back to `LOCKED_COLUMNS`
+  (this time always correctly pre-populated from the snapshot, never
+  blank). Integration tests now exercise all four applicable fields on
+  the test Passport (media, efficiency, bypass valve, anti-drainback
+  valve), not just two.
+- **Real Excel UI flow, no Postman/curl/API token required.**
+  `ebp/phase3/portal.routes.js` implements the full manufacturer-facing
+  flow as server-rendered HTML, reusing `excel.js`/`staging.js`/
+  `service.js` directly rather than duplicating any validation logic:
+  download the current workbook, upload the completed `.xlsx`, stage it,
+  review a human-readable screen (valid rows; per-row/field errors;
+  wrong-batch/wrong-template detection; altered-locked-column detection
+  via the independent hash re-check), an explicit "Confirm & Submit
+  Offers" button, and a final success/rejection report. Nothing is
+  persisted if a blocking error exists (`preview` is `null` whenever
+  `errors` is non-empty, so no item's offer is ever created from a
+  rejected stage). Verified end-to-end against a real Postgres instance
+  via a cookie-authenticated integration test (the existing factory
+  session token doubles as the portal cookie value, since
+  `resolveSession` is transport-agnostic) covering the happy path, a
+  tampered-file rejection, a re-confirm-of-consumed-staging rejection,
+  and the unauthenticated-redirect gate.
+- **`ebp/phase3/factory.routes.js`** — route-inventory comment corrected
+  from 15 to 16 entries (a `GET /batches/:batch_code/excel/stage/
+  :staging_id` peek route, used by the Portal review screen, had been
+  added without updating the comment).
+- **Test suite.** 104 tests total (was 87), confirmed directly from the
+  `node --test` runner output: the new totals reflect 6 new regression
+  tests (staging persistence + effective-`OVERDUE`) and 6 new portal-
+  level integration tests (the Excel UI flow), plus the existing
+  unit/integration coverage extended for the four-field PEP model. All
+  104 pass. Phase 1's own 59-test suite and Phase 2's own 100-test suite
+  were re-run and still pass unmodified.
+- **CSRF protection, error-response sanitization, and cookie/session
+  hardening are not yet done** — tracked as the remaining items of this
+  same correction round, to be covered by a follow-up entry before any
+  freeze declaration.
+- **Phase 4 was not started.**
 
 

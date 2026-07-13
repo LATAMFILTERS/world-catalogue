@@ -528,8 +528,9 @@ to leave Phase 1, Phase 2, the KG tables, `elimfilters_catalog`, and
   endpoints, `factory.routes.js`) API surfaces, hard-split,
   `requireAdmin`/`requireFactorySession` respectively — confirmed by
   direct route-count grep against the router source.
-- [x] Full test suite (34 unit + 30 integration + 28 regression = 87
-  tests) against real Postgres, covering every item in the project
+- [x] Full test suite (29 unit + 30 integration + 28 regression = 87
+  tests, counts confirmed by the `node --test` runner output, not
+  estimated) against real Postgres, covering every item in the project
   owner's mandatory list — all passing, confirmed stable across 3
   consecutive runs.
 
@@ -625,27 +626,46 @@ Phase 2.
   (10 requests / 15 min) mounted ahead of `factoryLimiter` (300 / 15 min)
   specifically on `/api/ebp/factory/auth/login` in `server.js`, narrower
   than the phase-wide limiter, to slow credential-stuffing.
-- **Risk: `OVERDUE` is never automatically computed — corrected from an
-  earlier draft of this document.** Unlike Offer expiry
-  (`ebp_manufacturer_offers_effective`, a real computed view, ADR-0019
-  pattern), Phase 3 does **not** implement an equivalent view for Batch
-  `OVERDUE` status. A batch whose `response_due_at` has passed remains in
-  whatever status it was last explicitly transitioned to until an admin
-  (or a future scheduled job, which this stack does not have) calls the
-  `POST /:batch_code/status` transition to `OVERDUE` directly. This is a
-  real, acknowledged gap (not a "computed at read time" guarantee as an
-  earlier draft of this document incorrectly claimed) — flagged for a
-  future phase or operational runbook, not silently glossed over.
-- **Risk: the Excel pipeline's staging store is process-local
-  (`ebp/phase3/staging.js`), not Redis-backed** — documented in-code as an
-  accepted MVP trade-off; a multi-process deployment would need to move
-  staging to Redis (already a dependency elsewhere in this codebase) or
-  have `confirm` re-submit the full payload instead of a token.
-- **Risk: the Excel round-trip in this MVP supports exactly one technical
-  field per Batch Item row**, not one row per required Passport field —
-  a Passport with multiple required fields needs multiple Excel rows (or
-  Portal submission) to fully answer each one. Acceptable for the MVP
-  scope; flagged as a real functional limitation, not hidden.
+- ~~**Risk: `OVERDUE` is never automatically computed.**~~ **Resolved in
+  the pre-freeze correction round (ADR-0031).** A `response_due_at`
+  cron/job is not required: `ebp_manufacturer_request_batches_effective`
+  is a computed view exposing `effective_status = OVERDUE` whenever
+  `response_due_at < NOW()` and the stored status isn't
+  `RESPONDED`/`CLOSED`/`CANCELLED`, exactly mirroring the pre-existing
+  Offer-effective-status pattern (ADR-0019). `repository.js`, `dto.js`,
+  and `portal.routes.js` all read through this view — no code path
+  computes `OVERDUE` independently. The underlying stored `status` can
+  still be advanced explicitly (e.g. to `RESPONDED`); `effective_status`
+  is a read-time projection, never a second source of truth.
+- ~~**Risk: the Excel pipeline's staging store is process-local.**~~
+  **Resolved in the pre-freeze correction round (ADR-0030).** Staging is
+  now a Postgres table (`ebp_manufacturer_excel_staging`) keyed by a UUID
+  token, with `expires_at`/TTL cleanup, single-use atomic consumption
+  (`UPDATE ... WHERE status = 'STAGED' ... RETURNING`, no SELECT-then-
+  UPDATE race window), and tenant isolation enforced in the same query.
+  Verified by a regression test that opens a brand-new `Pool` — simulating
+  a process restart — and reads a row written via the original pool.
+- ~~**Risk: the Excel round-trip supports exactly one technical field per
+  Batch Item row.**~~ **Resolved in the pre-freeze correction round
+  (ADR-0032).** The export now expands one row per (Batch Item ×
+  applicable PEP field), using the same `pep-fields.js` applicability
+  lookup the Portal's multi-field Offer form uses — Portal and Excel
+  produce byte-identical `technical_fields[]` payloads consumed by the
+  same `service.createOfferRevision`. `field_name` moved back to
+  `LOCKED_COLUMNS` (correctly pre-populated from the frozen Passport
+  snapshot this time, never blank) since the Manufacturer must never
+  type or alter which field a row answers.
+- **Risk: the Factory Portal previously required the Manufacturer to call
+  the Excel `stage`/`confirm` API endpoints directly (no UI) — resolved.**
+  `ebp/phase3/portal.routes.js` now implements the full flow as
+  server-rendered HTML: download template, upload `.xlsx`, stage,
+  review (valid rows, per-row/field errors, wrong-template/altered-
+  locked-column detection), explicit confirm button, and a final
+  success/rejection report — reusing `excel.js`/`staging.js`/`service.js`
+  directly rather than duplicating any validation logic. No Postman,
+  curl, or API token is needed. Verified end-to-end (including the
+  tampered-file and re-confirm-rejected paths) against a real Postgres
+  instance via a cookie-authenticated integration test.
 
 ## Open Questions
 

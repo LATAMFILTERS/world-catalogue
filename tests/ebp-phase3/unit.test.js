@@ -10,7 +10,6 @@ const codes = require('../../ebp/phase3/codes');
 const factoryAuth = require('../../ebp/phase3/factory-auth');
 const validation = require('../../ebp/phase3/validation');
 const dto = require('../../ebp/phase3/dto');
-const staging = require('../../ebp/phase3/staging');
 
 // ── Batch/Offer code generation ─────────────────────────────────────────────
 
@@ -212,20 +211,8 @@ test('toInternalBatchDTO handles a null row without throwing', () => {
   assert.equal(dto.toInternalBatchDTO(null), null);
 });
 
-// ── Staging store (Excel pipeline) ──────────────────────────────────────────
-
-test('staging: a token can be taken exactly once, then is gone', () => {
-  const token = staging.put('MRB-AAAAAA', 'm1', [{ x: 1 }]);
-  const first = staging.take(token, 'MRB-AAAAAA', 'm1');
-  assert.deepEqual(first, [{ x: 1 }]);
-  const second = staging.take(token, 'MRB-AAAAAA', 'm1');
-  assert.equal(second, null);
-});
-
-test('staging: a token scoped to a different batch/manufacturer is rejected', () => {
-  const tokenA = staging.put('MRB-BBBBBB', 'm1', [{ x: 1 }]);
-  assert.equal(staging.take(tokenA, 'MRB-BBBBBB', 'm2'), null); // wrong manufacturer
-
-  const tokenB = staging.put('MRB-BBBBBB', 'm1', [{ x: 1 }]);
-  assert.equal(staging.take(tokenB, 'MRB-CCCCCC', 'm1'), null); // wrong batch
-});
+// Note: the Excel staging store (ebp/phase3/staging.js) is Postgres-backed
+// as of ADR-0030 (correction round, 2026-07-13) — it is no longer a pure
+// function testable without a database. Its behavior (single-use consume,
+// tenant/batch scoping, survives a fresh connection) is covered in
+// regression.test.js instead, against a real Postgres instance.
