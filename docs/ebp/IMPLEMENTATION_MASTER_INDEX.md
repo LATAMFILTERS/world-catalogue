@@ -38,7 +38,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | Spec Drafted (revised) | — | — |
+| 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **Built** | — | — |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised) | — | — |
 | 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
@@ -88,8 +88,32 @@ See ADR-0005.
   (`phases/phase-02-manufacturer-registry.md` and its cross-referenced
   ADRs) may not be altered without a new ADR that explicitly supersedes
   the relevant prior entry, same discipline as Phase 0/ADR-0013 and Phase
-  1. **Phase 3 (Manufacturer Intake Portal / Factory Portal) is authorized
-  to begin immediately; no phase beyond Phase 3 is authorized.**
+  1.
+- **Phase 03 — Manufacturer Intake Portal (Factory Portal)** is `Built`
+  (not `APPROVED / FROZEN`) as of 2026-07-13: real, executable SQL
+  migrations (`migrations/ebp-phase3/`, 12 tables + 1 effective-Offer
+  view), a real backend module (`ebp/phase3/`) with a hard-split internal
+  (`/api/ebp/internal/manufacturer-batches`, 13 endpoints,
+  `requireAdmin`) and factory-facing (`/api/ebp/factory`, 15 endpoints,
+  `requireFactorySession`) API surface, real Factory-user authentication
+  (scrypt password hashing, opaque hashed session tokens — resolves
+  ADR-0002 for Manufacturers only), a Portal-and-Excel dual intake flow
+  (Excel via `exceljs`, uploads via `multer` — both new dependencies,
+  documented in ADR-0027/ADR-0028), and a minimal private Factory Portal
+  frontend (`/portal/*`, server-rendered, `noindex/nofollow`). A 87-test
+  suite (34 unit + 30 integration + 28 regression, `tests/ebp-phase3/`)
+  passes against a real local Postgres instance, confirmed stable across
+  3 consecutive runs, including a full rollback-with-real-data
+  verification (120 batches + 68 offers + 29 factory users dropped
+  cleanly, Phase 1/Phase 2/catalog unchanged) and re-confirmation that
+  Phase 1's 59-test and Phase 2's 100-test suites still pass unmodified.
+  Built with ADR-0023 through ADR-0029 — see `DECISIONS.md`. Two real
+  implementation bugs (an Offer-supersession ordering bug; a misclassified
+  locked/editable Excel column) were found and fixed during test-writing,
+  documented in the phase doc's own "Bugs found and fixed" section. Per
+  the project owner's explicit instruction, Phase 3 is deliberately left
+  at `Built`, not frozen — freezing is a separate, later step.
+  **Phase 4 (Engineering Compliance Validation) has not been started.**
 - **Phases 04-09** remain `Spec Drafted` — first-pass drafts written during
   Phase 0 to prove the roadmap's dependency chain is coherent (see each
   file's own "Status" line). None are `Spec Approved`. **No implementation

@@ -1074,3 +1074,489 @@ carried-forward risks into Phase 3.
   already matched all four decisions; this ADR formalizes and closes them
   as part of the freeze rather than leaving them as carried-forward risk
   language.
+
+## ADR-0023 — Factory user authentication resolves ADR-0002 for Manufacturers only; Distributor auth remains separately undecided
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** ADR-0002 left Manufacturer and Distributor authentication
+both undesigned. Phase 3 is the first module with real external users
+(factory staff), and the project owner explicitly prohibited exposing it
+behind the shared `ADMIN_KEY`. A real identity system is required now;
+Phase 8's Distributor auth remains a separate, later decision — the two
+audiences have different tiers, different data exposure, and no reason to
+share a design just because both are "external."
+
+**Decision:**
+1. **New tables**, additive, no change to any Phase 1/2 table:
+   `ebp_factory_users` (one row per factory staff member, scoped to a
+   `manufacturer_id`), `ebp_factory_user_invitations` (invite/reset
+   tokens, hashed), `ebp_factory_sessions` (opaque bearer session tokens,
+   hashed), `ebp_factory_user_audit_log` (append-only auth event log).
+2. **Password hashing:** Node's built-in `crypto.scrypt` (N=16384, r=8,
+   p=1, 64-byte derived key, random 16-byte salt per user), not a new
+   dependency — no `bcrypt`/`argon2` package is added. The stored format
+   is `scrypt$<salt-hex>$<hash-hex>` so the algorithm is self-describing
+   and could be swapped later without a full-table migration.
+3. **Sessions, not JWTs.** On successful login the server generates a
+   32-byte random token via `crypto.randomBytes`, returns the raw token
+   to the client exactly once, and stores only its SHA-256 hash in
+   `ebp_factory_sessions.token_hash`. A stolen database backup alone can
+   never yield a usable session token. Sessions carry `expires_at` (fixed
+   TTL, no silent infinite renewal), `revoked_at` (explicit revocation
+   sets this, the row is never deleted — audit trail preserved), and
+   `last_used_at`. No JWT library is added; there is nothing here a JWT
+   would do better (no cross-service verification need, no stateless
+   requirement) and a JWT would remove the ability to revoke a single
+   session server-side without a blocklist, which opaque tokens give for
+   free.
+4. **Roles** are a fixed `CHECK`-constrained enum on `ebp_factory_users
+   .role`: `MANUFACTURER_ADMIN`, `MANUFACTURER_ENGINEERING`,
+   `MANUFACTURER_COMMERCIAL`, `MANUFACTURER_READ_ONLY`. Authorization is
+   enforced **server-side only**, on every factory-facing route, never by
+   hiding a frontend option — the same discipline `PLATFORM_ARCHITECTURE
+   .md` §6 already requires for internal roles (ADR-0011).
+5. **Tenant isolation is structural, not a filter the caller must
+   remember.** Every factory-facing repository/service function takes the
+   authenticated session's `manufacturer_id` as a mandatory parameter and
+   scopes every query to it — there is no factory-facing function that
+   can be called without a manufacturer scope, mirroring the composite-FK
+   discipline ADR-0018 already established for Phase 2 (a batch item,
+   offer, or document belonging to Manufacturer A can never be returned
+   to a session authenticated as Manufacturer B, checked in the query
+   itself, not only in the response filter).
+6. **Account lifecycle:** `INVITED` (created by ELIMFILTERS admin, no
+   password set yet) → `ACTIVE` (password set via a one-time, hashed,
+   expiring invite token) → `LOCKED` (automatic, after 5 consecutive
+   failed logins, `locked_until` set) → back to `ACTIVE` on a successful
+   password reset, or → `DISABLED` (permanent, admin-set, blocks login
+   regardless of password). Password reset reuses the same hashed-token
+   mechanism as invitation, distinguished by `purpose`.
+7. **Zero new npm dependencies for auth.** `crypto` (password hashing,
+   token generation, hashing) is Node's standard library.
+
+**Consequences:**
+- The internal ELIMFILTERS surface (`/api/ebp/internal/manufacturer-
+  batches/*`) continues to use `requireAdmin` (`ADMIN_KEY`), unchanged.
+  The factory-facing surface (`/api/ebp/factory/*`) uses a new
+  `requireFactorySession` middleware that resolves the bearer token to a
+  live, unexpired, unrevoked `ebp_factory_sessions` row and attaches
+  `{ factory_user_id, manufacturer_id, role }` to the request — the two
+  surfaces never share a middleware or a trust boundary.
+- Distributor authentication (Phase 8) is **not** resolved by this ADR
+  and remains its own open decision — ADR-0002 stays partially open for
+  that audience.
+- Tests must prove cross-tenant isolation explicitly: a session
+  authenticated as Manufacturer A requesting Manufacturer B's batch,
+  offer, or document by ID returns `404` (never `403` with a body that
+  confirms the resource exists — existence itself is not disclosed across
+  tenants), and every factory-facing endpoint returns `401` with no
+  session and `403` for a role lacking the required permission.
+
+## ADR-0024 — Manufacturer Request Batch purpose classifies eligibility; only PRODUCTION_CANDIDATE requires QUALIFIED/CONDITIONAL status
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The project owner requires that a batch never be sent to a
+`SUSPENDED`/`RETIRED` Manufacturer, and never to one unqualified for the
+included families — "salvo que el lote esté explícitamente marcado como
+evaluación de capacidad y no como solicitud productiva." This means
+eligibility is not a single global rule; it depends on what the batch is
+*for*.
+
+**Decision:** Every `ebp_manufacturer_request_batches` row carries a
+mandatory `purpose`, one of three values, each with its own eligibility
+gate enforced in `ebp/phase3/service.js` before a batch may transition
+`DRAFT` → `SENT`:
+- **`CAPABILITY_ASSESSMENT`** — ELIMFILTERS is probing whether a
+  Manufacturer *could* produce a family it is not yet qualified for
+  (typically while the Manufacturer is still `CANDIDATE` or
+  `UNDER_REVIEW` in Phase 2). Eligibility gate: the Manufacturer must not
+  be `SUSPENDED` or `RETIRED`. No family-qualification check is applied —
+  that is precisely what this batch type exists to establish.
+- **`COMMERCIAL_QUOTATION`** — ELIMFILTERS wants pricing/terms without
+  yet committing to a production relationship. Eligibility gate: the
+  Manufacturer must not be `SUSPENDED` or `RETIRED`. No family-
+  qualification check is applied (a quotation is not a production
+  commitment).
+- **`PRODUCTION_CANDIDATE`** — ELIMFILTERS intends this as a real sourcing
+  candidate. Eligibility gate (the strict one, matching the project
+  owner's rule verbatim): the Manufacturer must be `QUALIFIED` or
+  `CONDITIONAL` (Phase 2, ADR-0020) for **every** product family among the
+  batch's assigned Passports, at a location that itself holds that
+  qualification (Phase 2's `ebp_manufacturer_qualifications`, scoped by
+  `location_id` per ADR-0018) — and must not be `SUSPENDED`/`RETIRED`.
+  Any Passport whose family the Manufacturer is not qualified for at any
+  location blocks the entire batch from being sent (never silently
+  drops that one item).
+
+**Consequences:**
+- `ebp_manufacturer_request_batches.purpose` is a `CHECK`-constrained
+  enum (`CAPABILITY_ASSESSMENT`, `COMMERCIAL_QUOTATION`,
+  `PRODUCTION_CANDIDATE`); no free-form purpose.
+- The eligibility gate reads Phase 2's `ebp_manufacturers.status` and
+  `ebp_manufacturer_qualifications` tables — read-only, no FK (same
+  read-only-reference discipline as ADR-0016's family-vocabulary reuse),
+  never written to by Phase 3.
+- Tests must cover all three purposes explicitly: a `SUSPENDED`
+  Manufacturer is rejected for any purpose; an unqualified `CANDIDATE`
+  Manufacturer is accepted for `CAPABILITY_ASSESSMENT`/
+  `COMMERCIAL_QUOTATION` but rejected for `PRODUCTION_CANDIDATE`; a
+  `QUALIFIED` Manufacturer is accepted for all three.
+
+## ADR-0025 — Batch Items pin an immutable snapshot of the exact Passport revision and its Manufacturer-visible content
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The project owner requires that "una revisión posterior del
+PEP no debe cambiar silenciosamente un lote ya enviado." Phase 1's
+Passport is versioned (`engineering_revision`, ADR from Phase 1) and a
+new `ACTIVE` revision supersedes the prior one — if a Batch Item merely
+stored a live reference to "the current Passport for this SKU," a later
+Phase 1 revision would silently change what an already-sent batch shows
+a Manufacturer, and — worse — change what an already-*submitted* Offer
+is implicitly being evaluated against.
+
+**Decision:** `ebp_manufacturer_request_batch_items` stores three
+things, all fixed at the moment the item is added to a `DRAFT` batch and
+never recomputed afterward:
+1. `passport_id` + `engineering_revision` — a real foreign key to the
+   specific `ebp_engineering_passports` row (not "the SKU," the exact
+   revision), `ON DELETE RESTRICT` (Phase 1 never hard-deletes Passports,
+   so this can never actually block a Phase 1 write, but the constraint
+   exists in case that ever changes).
+2. `manufacturer_visible_snapshot JSONB` — the **exact** output of Phase
+   1's `toManufacturerPassportDTO(row)` (ADR-0009) at snapshot time,
+   stored verbatim. This is what the Factory Portal actually renders to
+   the Manufacturer — never a live re-fetch of the current Passport —
+   so a later Phase 1 revision provably cannot alter what an already-sent
+   batch shows.
+3. `elimfilters_code` — denormalized for display/search convenience only;
+   the authoritative binding is `passport_id` + `engineering_revision`,
+   never the code alone (same functional-key discipline as ADR-0006's
+   `manufacturer_code` rule, applied here to the Passport reference).
+
+**Consequences:**
+- If ELIMFILTERS needs a Manufacturer to respond against a *newer*
+  Passport revision, the correct action is a **new Batch** (or a new Batch
+  Item) referencing the new revision — never an in-place edit of an
+  existing Batch Item's `engineering_revision`. `ebp_manufacturer_
+  request_batch_items` has no `UPDATE` path for `passport_id`/
+  `engineering_revision`/`manufacturer_visible_snapshot` in the service
+  layer (only `status`/`responded_at` are mutable).
+- `ebp_manufacturer_offers.engineering_revision` is copied from its
+  parent Batch Item at Offer-creation time and is what Phase 4's
+  validation binds to (`BUSINESS_RULES.md` §6's "Passport Version ×
+  Manufacturer Code × Offer ID × Offer Revision" tuple) — never
+  re-derived from a live Passport lookup.
+- Tests must prove: creating a new `ACTIVE` Passport revision after a
+  batch was sent does not change that batch item's stored snapshot or
+  `engineering_revision` on read.
+
+## ADR-0026 — Offer identity: versioning keyed on (Passport revision, Manufacturer), exact decimal pricing, immutable once SUBMITTED
+
+**Date:** 2026-07-13
+**Status:** Accepted — implements ADR-0007's versioning rule and the
+project owner's explicit "no `float`" pricing requirement.
+
+**Context:** ADR-0007 (Phase 0) already decided Offers are versioned with
+one active revision per (Manufacturer, Passport version). Phase 3 must
+turn that into real schema and enforce two things the project owner
+added explicitly this round: FOB and all money fields must use an exact
+decimal type, never IEEE-754 float, and an Offer must become immutable
+the instant it is `SUBMITTED` — any further change is a new revision,
+never an in-place edit.
+
+**Decision:**
+1. **Versioning key:** the partial unique index enforcing "at most one
+   active Offer" is on `(passport_id, engineering_revision,
+   manufacturer_id)` **filtered to** `status IN ('SUBMITTED',
+   'UNDER_REVIEW', 'VALIDATED')` — not on `batch_item_id`. This matters:
+   if the same Manufacturer receives the same Passport revision again in
+   a second batch (e.g. a `COMMERCIAL_QUOTATION` re-ask), the lineage
+   constraint still applies across both batches, exactly matching
+   ADR-0007's "(Manufacturer, Passport version)" wording, not a
+   per-batch wording the project owner never stated.
+2. **Money fields use `NUMERIC`, never `FLOAT`/`REAL`/`DOUBLE
+   PRECISION`.** `fob_price NUMERIC(12,4)`, `tooling_cost NUMERIC(12,2)`,
+   `sample_cost NUMERIC(12,2)` — Postgres `NUMERIC` is exact, arbitrary-
+   precision decimal, immune to the rounding errors IEEE-754 float
+   introduces for currency math. The `pg` driver returns `NUMERIC` values
+   as JavaScript strings by default (not `Number`), which the service
+   layer preserves end-to-end rather than coercing to a JS float at any
+   point before Phase 6 (Cost Engine) does its own, separately-specified,
+   decimal-safe arithmetic.
+3. **Immutability after `SUBMITTED`:** the service layer's only mutation
+   paths for an existing `ebp_manufacturer_offers` row are status
+   transitions (`transitionOfferStatus`) and the compliance-status write
+   Phase 4 will make on `ebp_manufacturer_offer_technical_fields` — no
+   function exists to edit `fob_price`, `moq`, a technical field's
+   `offered_value`, or packaging once the parent Offer has left `DRAFT`.
+   A correction is always `createOfferRevision`, which supersedes the
+   prior active Offer in the same transaction (mirroring Phase 1's
+   `activatePassport` atomic-supersession pattern, ADR-precedent from
+   Phase 1's row-locked `FOR UPDATE` transaction).
+4. **Offer status machine** (nine states, per `BUSINESS_RULES.md` §5):
+   `DRAFT → SUBMITTED → UNDER_REVIEW → (VALIDATED | REJECTED)`, `VALIDATED
+   → APPROVED` (Phase 4/Offer-Approval territory, not written by Phase 3),
+   any active state `→ SUPERSEDED` (only via a new revision's atomic
+   supersession write), any state with `expires_at` passed `→ EXPIRED`
+   (computed at read time via a view, same ADR-0019 pattern — no
+   scheduled job), `DRAFT → WITHDRAWN` or any pre-`APPROVED` active state
+   `→ WITHDRAWN` (Manufacturer-initiated). Phase 3 **never** writes
+   `VALIDATED` or `APPROVED` itself — those values exist in the `CHECK`
+   constraint because they are valid states of the column, but only Phase
+   4/Offer-Approval's future service code is permitted to set them; Phase
+   3's `transitionOfferStatus` function explicitly rejects any caller
+   attempting to set either from Phase 3's own surface.
+
+**Consequences:**
+- `ebp_manufacturer_offer_technical_fields` distinguishes `ANSWERED` /
+  `CANNOT_MEET` / `NOT_APPLICABLE` completeness explicitly (closing the
+  phase-03 draft's own previously-flagged "incomplete Offers" risk) —
+  `compliance_status` stays `NULL` until Phase 4 writes it, and Phase 3's
+  DTOs never fabricate a default value for it.
+- Tests must prove: submitting a second revision correctly flips the
+  prior one to `SUPERSEDED` atomically (row-locked transaction, no window
+  with zero or two active revisions — same test pattern as Phase 1's
+  `activatePassport`); `fob_price` round-trips through Postgres and the
+  API as a decimal string, never silently becomes a lossy JS float;
+  attempting to edit a `SUBMITTED` Offer's technical fields via the
+  service layer throws, and the only path forward is a new revision;
+  Phase 3's own routes cannot set `status = 'VALIDATED'` or `'APPROVED'`.
+
+## ADR-0027 — Documents/evidence: metadata in Postgres, binaries on a local-filesystem storage adapter behind an interface, never in the database
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The project owner explicitly prohibits storing binary files
+directly in Postgres and explicitly says not to assume a definitive
+storage provider if none exists — but to design an adapter and use a
+clearly-configured local backend for the MVP, with no publicly reachable
+paths.
+
+**Decision:**
+1. `ebp_manufacturer_documents` stores metadata only: `id`,
+   `manufacturer_id`, optional `batch_id`/`offer_id`/`technical_field_id`
+   (nullable FKs, all `ON DELETE RESTRICT` — a document is never silently
+   destroyed by deleting its parent), `category` (fixed enum:
+   `CERTIFICATION_EVIDENCE`, `TECHNICAL_EVIDENCE`, `COMMERCIAL_DOCUMENT`,
+   `EXCEL_IMPORT`, `EXCEL_EXPORT`, `OTHER`), `original_filename` (never
+   used as the storage path), `mime_type` (allow-listed at the
+   application layer before insert: PDF, PNG, JPEG, and the two Excel
+   MIME types only), `size_bytes` (`CHECK 0 < size_bytes <= 26214400`, a
+   25 MB ceiling), `sha256_hash` (computed server-side from the actual
+   bytes, used for tamper/duplicate detection — never trusted from the
+   client), `storage_key` (a server-generated, collision-resistant,
+   non-guessable key — `crypto.randomUUID()` plus a manufacturer-scoped
+   path prefix — never the original filename or anything derived from
+   client input), `review_status` (`UNREVIEWED`/`ACCEPTED`/`REJECTED`).
+2. **Storage adapter interface** (`ebp/phase3/storage.js`): `put(key,
+   buffer) → void`, `get(key) → Buffer`, `exists(key) → boolean`,
+   `remove(key) → void`. The MVP implementation
+   (`LocalFilesystemStorageAdapter`) writes under a configurable root
+   directory (`EBP_DOCUMENT_STORAGE_ROOT`, defaulting to a path outside
+   any `express.static` root and outside `frontend/`, so nothing under it
+   is ever served publicly by accident) with the `storage_key` as the
+   relative path, one manufacturer-scoped subdirectory per
+   `manufacturer_id` for an extra filesystem-level isolation layer beyond
+   the DB-level tenant check. Swapping to an object-storage backend later
+   (S3-compatible or otherwise) means implementing the same four-method
+   interface — no calling code changes.
+3. **Upload handling** uses `multer` (Express's own maintained upload
+   middleware, from the `expressjs` GitHub org — the one new runtime
+   dependency this ADR adds, beyond `exceljs` in ADR-0028) configured
+   with `memoryStorage()` (never disk-buffers an unvalidated upload) and
+   a `fileSize` limit matching the 25 MB `CHECK`. The service layer
+   validates MIME type and size **before** calling `storage.put`, and
+   computes the SHA-256 hash from the in-memory buffer before it ever
+   touches disk.
+4. **No public route ever serves a document by `storage_key` or
+   filesystem path.** Every document download goes through an
+   authenticated, tenant-scoped route (`GET /api/ebp/internal/.../
+   documents/:id/download` or the factory-facing equivalent) that
+   resolves `:id` → `storage_key` via the DB (checking the caller's
+   tenant scope first) and streams the adapter's `get()` result — the
+   `storage_key` itself is never returned in any API response body.
+
+**Consequences:**
+- New dependencies added this phase: `multer` (upload parsing) and
+  `exceljs` (ADR-0028) — both documented here and in `CHANGELOG.md`,
+  per the project owner's explicit "documenta cualquier dependencia
+  nueva" instruction. No other new dependency is added.
+- Tests must prove: an upload exceeding 25 MB or an unlisted MIME type is
+  rejected before `storage.put` is ever called; a document's
+  `storage_key` never appears in a JSON response; a factory session for
+  Manufacturer A requesting Manufacturer B's document (by guessed/
+  enumerated ID) gets `404`; the local storage root is not inside any
+  directory Express serves statically.
+
+## ADR-0028 — Excel export/import: `exceljs`, staged validation before persistence, tamper-evident template hash, no partial writes
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The project owner requires a full Portal-or-Excel dual flow
+with locked vs. editable columns, protected identifiers, a template
+version, a hash/signature to detect the wrong or a manipulated file, a
+staging → preview → validate → confirm import sequence, per-row/per-field
+error reporting, and an explicit prohibition on silent partial updates.
+
+**Decision:**
+1. **Library: `exceljs` (MIT license, actively maintained), not `xlsx`
+   (SheetJS)**, chosen specifically because `xlsx`'s community/free build
+   has had known prototype-pollution advisories in its parsing path and
+   `exceljs` has a materially cleaner security history for parsing
+   externally-supplied `.xlsx` files (the highest-risk operation here is
+   parsing a file a Manufacturer uploads, not generating one ELIMFILTERS
+   controls) — this is a security-motivated choice, not a convenience
+   one, and is recorded here as required by the project owner.
+2. **Export (`ebp/phase3/excel.js`, `buildBatchWorkbook`):** one workbook
+   per Batch. Locked columns (Passport identification, `required_*`
+   values, instructions) are written to cells with `sheet.protect()`
+   applied and those specific cells left unlocked=false (Excel's native
+   cell-protection, which is a UX guard, not a security boundary — see
+   point 4). Editable columns (`offered_*`, commercial fields, packaging)
+   are left unlocked. A hidden, protected sheet (or hidden columns)
+   carries: `batch_id`, `manufacturer_id`, each row's `batch_item_id`,
+   `template_version`, and a SHA-256 hash of the locked-column content
+   computed at export time. The visible template version and a short
+   human-readable batch code are also shown in a visible header cell.
+   The exported file itself is recorded as an `ebp_manufacturer_documents`
+   row with `category = 'EXCEL_EXPORT'`.
+3. **Import (`importBatchWorkbook`) is a four-stage pipeline, matching
+   the project owner's explicit sequence, and never persists partially:**
+   - **Stage 1 — Parse to staging (in-memory only, nothing written to
+     Postgres yet):** read the hidden metadata sheet, recompute the
+     locked-column hash from the file's own visible locked cells, and
+     compare it to the stored hash. A mismatch means either wrong
+     template version or a manipulated locked cell — the entire import
+     is rejected before any row is evaluated, with a single top-level
+     error, not per-row noise.
+   - **Stage 2 — Row-level validation:** every data row is checked
+     against the same `validation.js` rules the Portal path uses (so
+     Portal and Excel can never diverge in what counts as a valid
+     Offer) — type checks, required-field completeness (`ANSWERED`/
+     `CANNOT_MEET`/`NOT_APPLICABLE` per ADR-0026), decimal parsing for
+     price fields (parsed via a strict decimal-string parser, never
+     `parseFloat`, to preserve ADR-0026's no-float rule end to end).
+     Every failing row/field is collected into a structured error list —
+     the pipeline does not stop at the first error.
+   - **Stage 3 — Preview:** if Stage 2 produced zero errors, the fully
+     parsed, would-be Offer payload (one per row/`batch_item_id`) is
+     returned to the caller as a preview — still nothing written.
+   - **Stage 4 — Confirm:** only an explicit, separate `POST .../
+     confirm` call (carrying the same staging token from Stage 3)
+     actually calls `service.createOfferRevision` for each row, inside
+     one transaction per Offer (each Offer's own atomic-supersession
+     transaction, per ADR-0026) — if any single row's confirm-time write
+     fails, only that row's transaction rolls back; rows that already
+     committed are not retroactively undone (each row is an independent
+     Offer, so this is correct, not a partial-write violation — the
+     violation the project owner is guarding against is a *single row*
+     ending up half-written, which the per-row transaction already
+     prevents).
+   - A confirmed import's resulting Offers always land in `DRAFT` or
+     `SUBMITTED` — never any validated/approved state — matching
+     "nunca como validado" exactly, and mirroring ADR-0026's rule that
+     Phase 3 never writes `VALIDATED`/`APPROVED` regardless of channel.
+4. **Excel's native sheet-protection is UX, not security.** The staging
+   pipeline's hash check (point 3, Stage 1) is the real tamper boundary —
+   it does not trust that a locked cell was actually uneditable
+   client-side (any user can unprotect an `.xlsx` sheet trivially); it
+   independently verifies the locked content against the stored hash
+   server-side.
+5. **No update path exists for re-importing over an already-`SUBMITTED`
+   Offer.** A re-import for a `batch_item_id` that already has an active
+   Offer creates a new revision (ADR-0026), exactly as the Portal path
+   would — Excel is one more channel producing the same Offer lifecycle,
+   never a shortcut around it.
+
+**Consequences:**
+- `exceljs` is added to `package.json` (documented here, in ADR-0027, and
+  in `CHANGELOG.md`).
+- Tests must cover: a valid import round-trip (export → edit → import →
+  confirm), an import with a `batch_id` that does not match the file
+  (wrong template — rejected at Stage 1), an import where a locked
+  column's content was altered (hash mismatch — rejected at Stage 1), an
+  import with an invalid row (e.g. non-numeric FOB — surfaced as a Stage
+  2 per-row error, nothing persisted), and confirmation that a rejected
+  import writes zero rows to any `ebp_manufacturer_*` table.
+
+## ADR-0029 — API surface split (internal vs. factory) and the Factory Portal ships as authenticated server-rendered pages under `/portal`, not a new SPA
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The project owner requires the internal and factory-facing
+APIs to never mix, and requires the first private frontend surface —
+excluded from public navigation/sitemap/indexing, with no anonymous
+shared state, SSR-safe (no data leakage via errors or bundles), covering
+login/dashboard/product view/offer form/Excel upload. The existing
+`frontend/` directory is a separate, already-large Next.js 14 static-
+export marketing site (`ELIMFILTERS World Catalogue`) with its own
+CLAUDE.md governance, its own build pipeline, and no server-side
+rendering or session-auth capability at all (`output: 'export'` static
+site) — it is not a viable host for an authenticated, dynamic, per-tenant
+portal without a second, unrelated deployment pipeline.
+
+**Decision:**
+1. **API surface split (hard boundary, per the project owner's explicit
+   instruction):** `/api/ebp/internal/manufacturer-batches/*` (mounted
+   behind the existing `adminLimiter` + `requireAdmin`, same as every
+   other internal EBP surface) and `/api/ebp/factory/*` (mounted behind a
+   new `factoryLimiter` + `requireFactorySession`, ADR-0023). No route
+   file is shared between the two mounts; `ebp/phase3/internal.routes.js`
+   and `ebp/phase3/factory.routes.js` are separate modules, each importing
+   from the same `service.js`/`repository.js` but calling different,
+   narrower service functions (the factory routes never call a service
+   function that accepts an arbitrary `manufacturer_id` parameter from
+   the request — it is always taken from the authenticated session).
+2. **Factory Portal frontend ships as server-rendered pages mounted
+   directly in `server.js`** (`ebp/phase3/portal.routes.js`, plain HTML
+   returned via Express with inline vanilla JS calling the `/api/ebp/
+   factory/*` JSON API — no new frontend framework, no new build step, no
+   new npm dependency for the UI layer), under the path prefix `/portal`.
+   This is the pragmatic MVP choice given the existing stack has no
+   dynamic-rendering surface; every page:
+   - Requires a valid session cookie (checked server-side before any HTML
+     is returned — an unauthenticated request to any `/portal/*` page
+     other than `/portal/login` redirects to login, it never renders a
+     shell that then discovers it has no data client-side).
+   - Sets `<meta name="robots" content="noindex, nofollow">` and is never
+     linked from the public Next.js site's navigation, sitemap, or
+     `robots.txt` allow rules.
+   - Sets the session cookie `HttpOnly`, `Secure` (in production),
+     `SameSite=Strict` — never exposes the raw session token to page
+     JavaScript.
+   - Renders per-request from the authenticated session's own data only
+     — no cached/shared HTML fragment between requests, so there is no
+     anonymous or cross-tenant shared state.
+   - `portal.elimfilters.com` as a distinct subdomain (the project
+     owner's stated preference) is a DNS/deployment/reverse-proxy
+     decision outside this repository's scope; this ADR only fixes where
+     the pages live in code (`/portal/*` on the same `server.js`) — a
+     later reverse-proxy or subdomain routing change does not require
+     moving this code.
+   - Minimum page set: `/portal/login`, `/portal/dashboard` (batch list),
+     `/portal/batches/:batch_code` (batch detail + item list),
+     `/portal/batches/:batch_code/items/:item_id/offer` (offer form),
+     `/portal/batches/:batch_code/excel` (Excel upload/download), plus
+     error/empty states for expired session, no batches, and a validation-
+     failed Excel import.
+
+**Consequences:**
+- No new frontend dependency (React, Vue, a bundler) is introduced for
+  the portal; `frontend/`'s Next.js app and its `npm run build` pipeline
+  are completely untouched by Phase 3.
+- The public Next.js site's `sitemap.xml`/`robots.txt` (already governed
+  by root `CLAUDE.md`) are not modified by this phase — `/portal` never
+  appears there because it is not served by that app at all.
+- Tests must prove: an unauthenticated `GET /portal/dashboard` redirects
+  to `/portal/login` rather than rendering; every `/portal/*` response
+  includes the `noindex, nofollow` meta tag; the session cookie is
+  `HttpOnly`.

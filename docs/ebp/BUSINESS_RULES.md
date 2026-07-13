@@ -200,6 +200,20 @@ no sentence below is altered or removed.
 
 ## 5. Manufacturer Intake (Manufacturer Request Batch & Offer) Rules
 
+**Note (additive, ADR-0023/ADR-0024):** two rules below predate Phase 3
+implementation and are non-exhaustive. (1) Every Request Batch carries a
+mandatory `purpose` — `CAPABILITY_ASSESSMENT`, `COMMERCIAL_QUOTATION`, or
+`PRODUCTION_CANDIDATE` — which determines the eligibility gate applied
+before the batch may be sent: only `PRODUCTION_CANDIDATE` requires the
+target Manufacturer to be `QUALIFIED`/`CONDITIONAL` for every included
+product family; the other two purposes require only that the
+Manufacturer not be `SUSPENDED`/`RETIRED`. (2) A Manufacturer Offer may
+be submitted by a Manufacturer's own authenticated factory-user account
+(resolving ADR-0002 for Manufacturers), never the shared `ADMIN_KEY` —
+see ADR-0023 for the full authentication model. See ADR-0023/ADR-0024 in
+`DECISIONS.md` for the complete rules. This note is additive only; no
+sentence below is altered or removed.
+
 - A **Manufacturer Request Batch** is a set of Passports (SKUs) ELIMFILTERS
   assigns to one or more Manufacturers for a capability/offer response. It
   does not commit ELIMFILTERS to purchase.

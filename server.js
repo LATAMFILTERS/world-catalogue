@@ -491,6 +491,40 @@ app.use('/api/ebp/passports', adminLimiter, requireAdmin, createEbpPassportsRout
 const createEbpManufacturersRouter = require('./ebp/phase2/manufacturers.routes');
 app.use('/api/ebp/manufacturers', adminLimiter, requireAdmin, createEbpManufacturersRouter(pool));
 
+// ─── EBP Phase 3: Manufacturer Intake Portal (Factory Portal) ─────────────────
+// Hard split between internal (requireAdmin) and factory-facing
+// (requireFactorySession, ADR-0023) surfaces — never shared, per ADR-0029.
+// Table migrations live under migrations/ebp-phase3/. Never modifies
+// Phase 1 or Phase 2 tables — read-only reference only (ADR-0025/ADR-0024).
+const factoryLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many factory portal requests.' },
+});
+const factoryLoginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many login attempts, try again later.' },
+});
+const { LocalFilesystemStorageAdapter } = require('./ebp/phase3/storage');
+const ebpPhase3StorageAdapter = new LocalFilesystemStorageAdapter();
+const createEbpInternalIntakeRouter = require('./ebp/phase3/internal.routes');
+app.use(
+  '/api/ebp/internal/manufacturer-batches',
+  adminLimiter,
+  requireAdmin,
+  createEbpInternalIntakeRouter(pool, ebpPhase3StorageAdapter)
+);
+const { createFactoryRouter } = require('./ebp/phase3/factory.routes');
+app.use('/api/ebp/factory/auth/login', factoryLoginLimiter);
+app.use('/api/ebp/factory', factoryLimiter, createFactoryRouter(pool, ebpPhase3StorageAdapter));
+const createEbpPortalRouter = require('./ebp/phase3/portal.routes');
+app.use('/portal', factoryLimiter, createEbpPortalRouter(pool));
+
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
 // function after every cross-reference resolution. Non-blocking — errors are

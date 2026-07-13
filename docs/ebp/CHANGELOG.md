@@ -664,4 +664,104 @@ audit, and formally approved Phase 2.
   Portal / Factory Portal is authorized to begin immediately; no phase
   beyond Phase 3 is authorized.**
 
+## 2026-07-13 — Phase 3 (Manufacturer Intake Portal / Factory Portal) built
+
+With Phase 2 frozen, the project owner authorized starting Phase 3 only
+(explicitly not Engineering Compliance Validation, Manufacturer
+Selection, or Cost Engine). Converts
+`phases/phase-03-supplier-portal.md` into a complete implementable spec
+and implements it in full — real migrations, a hard-split internal/
+factory-facing backend, real Factory-user authentication, a Portal/Excel
+dual intake flow, and a minimal private frontend, all verified against a
+real local Postgres instance. Phase 1's and Phase 2's tables, rows, and
+test suites were re-verified unmodified throughout. Phase 3 status moves
+to `Built` (not `APPROVED / FROZEN` — freezing is a separate, later step).
+
+- **`docs/ebp/DECISIONS.md`** — added ADR-0023 through ADR-0029: Factory
+  user authentication resolving ADR-0002 for Manufacturers only (scrypt
+  password hashing, opaque hashed session tokens, structural tenant
+  isolation, zero new auth dependencies); Manufacturer Request Batch
+  `purpose` (`CAPABILITY_ASSESSMENT`/`COMMERCIAL_QUOTATION`/
+  `PRODUCTION_CANDIDATE`) gating eligibility so only a
+  `PRODUCTION_CANDIDATE` batch requires `QUALIFIED`/`CONDITIONAL` status;
+  Batch Items pinning an immutable snapshot of the exact Passport revision
+  (`toManufacturerPassportDTO` output, verbatim) so a later Passport
+  revision never silently changes an already-sent batch; Offer identity
+  keyed on `(passport_id, engineering_revision, manufacturer_id)` with
+  exact-decimal (`NUMERIC`, never `float`) money fields and immutability
+  once `SUBMITTED`; documents as metadata-only rows behind a four-method
+  storage-adapter interface, binaries never in Postgres; the Excel
+  export/import pipeline design (`exceljs`, staged validation, tamper-
+  evident locked-column hash, no partial persistence); and the API-
+  surface split plus the Factory Portal frontend shipping as server-
+  rendered pages under `/portal`, not a new SPA.
+- **`docs/ebp/phases/phase-03-supplier-portal.md`** — full rewrite into an
+  implementable spec: real SQL schema (12 tables + 1 view), both state
+  machines, the eligibility gate, the Factory-auth model, the Portal/Excel
+  dual-intake design, the 13+15-endpoint API surface, and closed risks
+  reflecting what was actually built (including an honest correction: no
+  computed-view exists for Batch `OVERDUE`, unlike Offer expiry).
+- **`migrations/ebp-phase3/001_schema.sql`** — `ebp_factory_users` +
+  `ebp_factory_user_invitations` + `ebp_factory_sessions` +
+  `ebp_factory_user_audit_log` (Manufacturer-side auth),
+  `ebp_manufacturer_request_batches` + `..._status_history` +
+  `..._items` (the one real cross-phase FK Phase 3 adds: `batch_items
+  .passport_id -> ebp_engineering_passports.id`, `ON DELETE RESTRICT`),
+  `ebp_manufacturer_offers` (+ `ebp_manufacturer_offers_effective` view)
+  + `..._status_history` + `..._technical_fields` + `..._packaging`,
+  `ebp_manufacturer_documents`. Idempotent, additive, no ALTER on any
+  Phase 1/2 table.
+- **`migrations/ebp-phase3/validate.sql`**, **`rollback.sql`** — both
+  executed for real, including a rollback verification with 120 real
+  batches, 68 offers, and 29 factory users present, confirming Phase 1 (8
+  tables incl. Phase 2), `elimfilters_catalog`, and `ebp_manufacturers`
+  row counts unchanged; schema reapplied and idempotency confirmed by a
+  second `001_schema.sql` run.
+- **`ebp/phase3/codes.js`**, **`factory-auth.js`**, **`storage.js`**,
+  **`validation.js`**, **`dto.js`**, **`repository.js`**, **`service.js`**,
+  **`excel.js`**, **`staging.js`** — the full backend module: `MRB-`/
+  `OFR-` code generation (same discipline as Phase 2's `EFM-XXXX`),
+  scrypt/opaque-token auth primitives, a local-filesystem storage adapter
+  behind a four-method interface, both state machines and every payload
+  validator, internal-only + factory-scoped DTOs (never leaking
+  `password_hash`, `token_hash`, or `storage_key`), the batch/offer/
+  document/factory-user orchestration (atomic offer supersession via row
+  locks, mirroring Phase 1's `activatePassport` pattern), the Excel
+  stage/confirm pipeline, and the process-local Excel staging store.
+- **`ebp/phase3/internal.routes.js`** (13 endpoints) and
+  **`factory.routes.js`** (15 endpoints, including `requireFactorySession`
+  and role-based authorization) — the hard-split API surfaces, never
+  sharing a route file.
+- **`ebp/phase3/portal.routes.js`** — the minimal private Factory Portal:
+  login, dashboard, batch detail, Offer form, Excel page; session cookie
+  `HttpOnly`/`SameSite=Strict`; every page `noindex, nofollow`.
+- **`server.js`** — mounts `/api/ebp/internal/manufacturer-batches`
+  (`requireAdmin`), `/api/ebp/factory` (`requireFactorySession`, with a
+  dedicated tighter `factoryLoginLimiter` on `/auth/login`), and `/portal`.
+  No existing route, table, or behavior modified.
+- **`package.json`** — two new dependencies, both documented in ADR-0027/
+  ADR-0028: `exceljs` (Excel read/write, chosen over `xlsx`/SheetJS
+  specifically for its cleaner parsing-security history) and `multer`
+  (Express's own maintained upload middleware, `memoryStorage()` only).
+  No password-hashing or JWT/session library was added — `node:crypto`
+  covers both.
+- **`tests/ebp-phase3/unit.test.js`**, **`integration.test.js`**,
+  **`regression.test.js`** — 87 tests total (34 unit, 30 integration
+  subtests against a live server + live Postgres, 28 regression subtests
+  guarding DB-level invariants independent of application code). **All 87
+  passed**, confirmed stable across 3 consecutive re-runs. Phase 1's own
+  59-test suite and Phase 2's own 100-test suite were re-run after this
+  work and still pass unmodified.
+- **Two real implementation bugs found and fixed during test-writing**
+  (documented in full in the phase doc): an Offer-supersession ordering
+  bug (`service.createOfferRevision` inserted the new `SUBMITTED`
+  revision before marking the prior one `SUPERSEDED`, spuriously
+  violating the partial unique index at statement time — fixed by
+  reordering, matching Phase 1's `activatePassport` pattern); and
+  `field_name` misclassified as a locked Excel column while being
+  exported blank, making it impossible for a Manufacturer to actually
+  fill in via Excel — fixed by reclassifying it as editable.
+- **Phase 4 was not started.** No Engineering Compliance Validation
+  table, route, or spec change was made in this session.
+
 
