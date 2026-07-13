@@ -1817,3 +1817,75 @@ state-changing action must never be reachable via a plain link/prefetch).
   (`Secure` outside production, `Path` scoping, session revocation on
   password change) — that is tracked as a separate, subsequent item in
   this same correction round.
+
+## ADR-0034 — Error responses are sanitized end-to-end: known service errors keep their curated message, everything else becomes a generic message plus a correlation id
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** Auditing the Factory Portal and factory-facing API for the
+pre-freeze correction round found two real leak vectors: (1)
+`portal.routes.js`'s offer-submit handler put a caught error's raw
+`.message` directly into a redirect query string, later rendered into the
+HTML error banner; and (2) both `portal.routes.js`'s and
+`factory.routes.js`'s Excel-confirm per-item loops did the same into a
+per-item error field (HTML table cell / JSON `item_errors[]`). Since
+`service.createOfferRevision` re-throws an unrecognized Postgres error
+verbatim in its `catch` block (only a specific `23505`/lineage-conflict
+case is translated to a curated `ConflictError`), any other unexpected
+database error — a constraint name, a column name, a raw SQL fragment —
+could have reached the browser through either path. Separately, no
+request/correlation id existed anywhere, so a genuinely generic "internal
+error" response gave an admin no way to find the corresponding server log
+line for a specific user's report.
+
+**Decision:**
+1. **`ebp/phase3/errors.js`** is the single place this logic lives:
+   `isKnownServiceError(err)` recognizes `service.js`'s four thrown error
+   classes (`ValidationError`/`NotFoundError`/`ConflictError`/
+   `UnauthorizedError`) — these already carry curated, pre-written
+   business messages (batch/offer/manufacturer codes the caller already
+   knows, never SQL/constraints/paths/tokens/hashes/stack traces) and are
+   always safe to return as-is. `safeMessage(err, requestId, context)`
+   returns that curated message for a known error; for anything else, it
+   logs the **full, unmodified** error (with `context` and `requestId`)
+   to the server console only, and returns a fixed generic string
+   embedding `requestId` — the raw error itself never leaves the process.
+2. **Every response surface routes through it.** `factory.routes.js`'s
+   `errorToResponse` (used by every JSON endpoint) and
+   `portal.routes.js`'s two per-item/redirect error sites (offer submit,
+   Excel confirm) all call `safeMessage`/log through `errors.js` — there
+   is exactly one place that decides "is this safe to show," not one
+   decision repeated (and potentially forgotten) at each call site.
+3. **`request_id`** (`crypto.randomUUID()`, assigned once per request by
+   a leading middleware in both `factory.routes.js` and
+   `portal.routes.js`) is included in every error JSON body
+   (`factory.routes.js`) and available to every portal error path for
+   inclusion in the generic message shown to the Manufacturer — so a
+   support conversation can say "reference ABC123" and an operator can
+   grep server logs for that exact id to find the full, unsanitized
+   error.
+4. **Never a partial fix.** The Excel-confirm per-item loops
+   specifically were a second, easy-to-miss leak vector distinct from
+   the single-offer path — both were audited and fixed together, not
+   just the more obviously "browser-facing" one.
+
+**Consequences:**
+- A raw Postgres error (constraint violation, syntax error, connection
+  failure) reaching any Phase 3 Portal or factory-API response now always
+  becomes a fixed generic sentence plus a request id — verified by test
+  (a malformed-UUID batch-item id, which previously would have let
+  Postgres's own `22P02: invalid input syntax for type uuid` message
+  reach the response, now returns a bare `{error: 'internal_error',
+  request_id}` with no `message` field at all).
+- Known/expected errors (offer not found, a batch in the wrong state,
+  invalid credentials) are unaffected in user-facing behavior — they
+  still return their existing curated message — but now also carry a
+  `request_id` for consistency.
+- Nothing under `ebp/phase3/` calls `err.message`/`error.message`/
+  `.stack` directly in a response body or HTML string any more — verified
+  by a repo-wide grep as part of this audit; the only remaining
+  `err.message` reads are the three curated, safe cases in
+  `factory.routes.js`'s `errorToResponse` and the one string match inside
+  `service.js`'s own `catch` block used purely to detect the specific
+  `23505` lineage-conflict case (never returned to a caller).

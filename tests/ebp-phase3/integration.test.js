@@ -833,6 +833,37 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.equal(missingRes.status, 403);
   });
 
+  // ── 9d. Error-response sanitization (ADR-0034) ──────────────────────────
+
+  const FORBIDDEN_INTERNAL_PATTERNS = /relation |constraint|syntax for type|22P02|node_modules|at [A-Za-z]+\.|\.js:\d+:\d+|password_hash|token_hash|storage_key/i;
+
+  await t.test('factory API: a genuinely unexpected internal error (raw Postgres UUID-syntax failure) never leaks SQL/constraint details, and carries a request_id', async () => {
+    const res = await fetch(`${factoryUrl}/batches/${batchCode}/items/not-a-valid-uuid/offers`, {
+      method: 'POST',
+      headers: factoryAuthed(),
+      body: JSON.stringify({ submit: true, fob_price: '1.00', currency: 'USD', technical_fields: [] }),
+    });
+    assert.equal(res.status, 500);
+    const body = await res.json();
+    assert.equal(body.error, 'internal_error');
+    assert.ok('message' in body === false, 'a 500 must never include a raw message field');
+    assert.match(body.request_id, /^[0-9a-f-]{36}$/i);
+    assert.doesNotMatch(JSON.stringify(body), FORBIDDEN_INTERNAL_PATTERNS);
+  });
+
+  await t.test('factory API: a known/expected error (offer not found) still returns its curated message plus a request_id', async () => {
+    const res = await fetch(`${factoryUrl}/batches/${batchCode}/items/00000000-0000-0000-0000-000000000000/offers`, {
+      method: 'POST',
+      headers: factoryAuthed(),
+      body: JSON.stringify({ submit: false, fob_price: '1.00', currency: 'USD', technical_fields: [] }),
+    });
+    assert.equal(res.status, 404);
+    const body = await res.json();
+    assert.equal(body.error, 'not_found');
+    assert.match(body.request_id, /^[0-9a-f-]{36}$/i);
+    assert.doesNotMatch(JSON.stringify(body), FORBIDDEN_INTERNAL_PATTERNS);
+  });
+
   // ── 10. Batch close / cancel ─────────────────────────────────────────────
 
   await t.test('closes the batch (SENT -> RESPONDED -> CLOSED, since an offer was submitted)', async () => {

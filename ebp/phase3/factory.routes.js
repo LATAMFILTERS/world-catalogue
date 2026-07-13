@@ -33,15 +33,20 @@ const validation = require('./validation');
 const excel = require('./excel');
 const staging = require('./staging');
 const repository = require('./repository');
+const errorUtils = require('./errors');
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: validation.MAX_DOCUMENT_SIZE_BYTES } });
 
-function errorToResponse(err) {
-  if (err instanceof service.ValidationError) return { status: 400, body: { error: 'validation_failed', details: err.errors } };
-  if (err instanceof service.NotFoundError) return { status: 404, body: { error: 'not_found', message: err.message } };
-  if (err instanceof service.ConflictError) return { status: 409, body: { error: 'conflict', message: err.message } };
-  if (err instanceof service.UnauthorizedError) return { status: 401, body: { error: 'unauthorized', message: err.message } };
-  return { status: 500, body: { error: 'internal_error' } };
+// ADR-0034: request_id is always present so a Manufacturer's generic
+// error message can be correlated with the corresponding sanitized
+// server log line, without ever exposing the underlying error itself.
+function errorToResponse(err, requestId) {
+  if (err instanceof service.ValidationError) return { status: 400, body: { error: 'validation_failed', details: err.errors, request_id: requestId } };
+  if (err instanceof service.NotFoundError) return { status: 404, body: { error: 'not_found', message: err.message, request_id: requestId } };
+  if (err instanceof service.ConflictError) return { status: 409, body: { error: 'conflict', message: err.message, request_id: requestId } };
+  if (err instanceof service.UnauthorizedError) return { status: 401, body: { error: 'unauthorized', message: err.message, request_id: requestId } };
+  console.error('[ebp/phase3/factory] request failed', { request_id: requestId }, err);
+  return { status: 500, body: { error: 'internal_error', request_id: requestId } };
 }
 
 function handle(fn) {
@@ -49,8 +54,7 @@ function handle(fn) {
     try {
       await fn(req, res);
     } catch (err) {
-      const { status, body } = errorToResponse(err);
-      if (status === 500) console.error('[ebp/phase3/factory] request failed', err);
+      const { status, body } = errorToResponse(err, req.requestId);
       res.status(status).json(body);
     }
   };
@@ -94,6 +98,11 @@ async function requireOwnBatch(pool, req, batchCode) {
 
 function createFactoryRouter(pool, storageAdapter) {
   const router = express.Router();
+
+  router.use((req, res, next) => {
+    req.requestId = errorUtils.generateRequestId();
+    next();
+  });
 
   // ── Auth (unauthenticated routes — mounted before the session middleware
   // applies to the rest of this router) ──────────────────────────────────
@@ -335,11 +344,11 @@ function createFactoryRouter(pool, storageAdapter) {
           const offer = await service.getOfferWithDetail(pool, created.offer_code);
           results.push(dto.toFactoryOfferDTO(offer));
         } catch (err) {
-          itemErrors.push({ batch_item_id: entry.batch_item_id, error: err.message });
+          itemErrors.push({ batch_item_id: entry.batch_item_id, error: errorUtils.safeMessage(err, req.requestId, 'factory excel confirm') });
         }
       }
       if (itemErrors.length) {
-        return res.status(207).json({ offers: results, item_errors: itemErrors });
+        return res.status(207).json({ offers: results, item_errors: itemErrors, request_id: req.requestId });
       }
       res.status(201).json({ offers: results });
     })

@@ -908,4 +908,46 @@ freeze entry.
   pending** — the remaining two items of this correction round.
 - **Phase 4 was not started.**
 
+## 2026-07-13 — Phase 3 mandatory pre-freeze correction round (part 3): error-response sanitization (ADR-0034)
+
+- **Found two real leak vectors while auditing per the correction list:**
+  `portal.routes.js`'s offer-submit handler put a caught error's raw
+  `.message` directly into a redirect query string (later rendered into
+  the HTML error banner); both `portal.routes.js`'s and
+  `factory.routes.js`'s Excel-confirm per-item loops did the same into a
+  per-item error field. Since `service.createOfferRevision` re-throws any
+  unrecognized Postgres error verbatim (only the specific `23505`
+  lineage-conflict case is translated to a curated message), a genuine
+  constraint name, column name, or SQL fragment could have reached the
+  browser through either path.
+- **ADR-0034.** Added `ebp/phase3/errors.js`: `isKnownServiceError(err)`
+  recognizes `service.js`'s four error classes
+  (`ValidationError`/`NotFoundError`/`ConflictError`/`UnauthorizedError`),
+  which already carry curated, pre-written business messages safe to
+  return as-is; `safeMessage(err, requestId, context)` returns that
+  message for a known error, and for anything else logs the full,
+  unmodified error server-side only and returns a fixed generic string
+  embedding a `request_id`. Wired into `factory.routes.js`'s
+  `errorToResponse` (every JSON endpoint now includes `request_id`) and
+  into both Excel-confirm per-item loops and the Portal's offer-submit
+  redirect. A `request_id` (`crypto.randomUUID()`) is now assigned once
+  per request by a leading middleware in both `factory.routes.js` and
+  `portal.routes.js`.
+- **Test suite.** 123 tests total (was 117): 5 new unit tests for
+  `errors.js` (known-error passthrough never logs; unknown-error is
+  logged in full server-side but never returned verbatim; the
+  known/unknown distinction itself; request-id uniqueness) and 2 new
+  integration tests exercising the real HTTP surface — a malformed-UUID
+  batch-item id (previously would have let Postgres's own `22P02:
+  invalid input syntax for type uuid` message reach the response) now
+  returns a bare `{error: 'internal_error', request_id}` with **no**
+  `message` field and none of the previously-possible SQL/constraint
+  text, alongside a companion test confirming a known error (offer not
+  found) still returns its existing curated message plus the new
+  `request_id`. All 123 pass; Phase 1 (59) and Phase 2 (100)
+  re-confirmed unmodified.
+- **Cookie/session lifecycle hardening is still pending** — the final
+  item of this correction round before the audit-and-freeze step.
+- **Phase 4 was not started.**
+
 

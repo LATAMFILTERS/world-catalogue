@@ -11,6 +11,8 @@ const factoryAuth = require('../../ebp/phase3/factory-auth');
 const validation = require('../../ebp/phase3/validation');
 const dto = require('../../ebp/phase3/dto');
 const csrf = require('../../ebp/phase3/csrf');
+const errorUtils = require('../../ebp/phase3/errors');
+const service = require('../../ebp/phase3/service');
 
 // ── Batch/Offer code generation ─────────────────────────────────────────────
 
@@ -86,6 +88,60 @@ test('csrfTokensMatch: never throws on missing, non-string, or length-mismatched
   assert.equal(csrf.csrfTokensMatch(token, 'short'), false);
   assert.equal(csrf.csrfTokensMatch(token, 123), false);
   assert.equal(csrf.csrfTokensMatch(null, null), false);
+});
+
+// ── Error sanitization (ADR-0034) ────────────────────────────────────────────
+
+test('safeMessage: known service errors return their own curated message, never touching the console', () => {
+  const originalError = console.error;
+  let logged = false;
+  console.error = () => {
+    logged = true;
+  };
+  try {
+    assert.equal(errorUtils.safeMessage(new service.NotFoundError('batch XYZ not found'), 'req-1'), 'batch XYZ not found');
+    assert.equal(errorUtils.safeMessage(new service.ConflictError('batch is CLOSED'), 'req-1'), 'batch is CLOSED');
+    assert.equal(errorUtils.safeMessage(new service.UnauthorizedError('invalid email or password'), 'req-1'), 'invalid email or password');
+    assert.equal(errorUtils.safeMessage(new service.ValidationError(['fob_price is required', 'currency is required']), 'req-1'), 'fob_price is required; currency is required');
+    assert.equal(logged, false);
+  } finally {
+    console.error = originalError;
+  }
+});
+
+test('safeMessage: an unknown/raw error is never returned verbatim — generic message + request id only, and it IS logged', () => {
+  const originalError = console.error;
+  let loggedWith = null;
+  console.error = (...args) => {
+    loggedWith = args;
+  };
+  try {
+    const rawDbError = new Error('duplicate key value violates unique constraint "uq_ebp_offers_one_active_lineage"');
+    rawDbError.code = '23505';
+    const message = errorUtils.safeMessage(rawDbError, 'req-42', 'test context');
+    assert.doesNotMatch(message, /constraint|duplicate key|23505/);
+    assert.match(message, /req-42/);
+    assert.ok(loggedWith, 'expected the raw error to be logged internally');
+    assert.ok(loggedWith.some((a) => a === rawDbError), 'expected the actual error object to be passed to console.error for full server-side detail');
+  } finally {
+    console.error = originalError;
+  }
+});
+
+test('isKnownServiceError distinguishes service.js error classes from raw errors', () => {
+  assert.equal(errorUtils.isKnownServiceError(new service.NotFoundError('x')), true);
+  assert.equal(errorUtils.isKnownServiceError(new service.ConflictError('x')), true);
+  assert.equal(errorUtils.isKnownServiceError(new service.UnauthorizedError('x')), true);
+  assert.equal(errorUtils.isKnownServiceError(new service.ValidationError(['x'])), true);
+  assert.equal(errorUtils.isKnownServiceError(new Error('a bug')), false);
+  assert.equal(errorUtils.isKnownServiceError({ code: '23505', message: 'raw pg error' }), false);
+});
+
+test('generateRequestId produces distinct UUIDs', () => {
+  const a = errorUtils.generateRequestId();
+  const b = errorUtils.generateRequestId();
+  assert.notEqual(a, b);
+  assert.match(a, /^[0-9a-f-]{36}$/);
 });
 
 // ── Batch status state machine ──────────────────────────────────────────────

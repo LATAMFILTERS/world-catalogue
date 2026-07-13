@@ -16,6 +16,7 @@ const validation = require('./validation');
 const dto = require('./dto');
 const csrf = require('./csrf');
 const pepFields = require('./pep-fields');
+const errorUtils = require('./errors');
 
 const SESSION_COOKIE = 'ebp_factory_session';
 const LOGIN_CSRF_COOKIE = 'ebp_login_csrf';
@@ -128,8 +129,12 @@ function verifyCsrf(req, res, next) {
 function createPortalRouter(pool) {
   const router = express.Router();
 
-  // Auth gate — applied to every route below except /login.
+  // Auth gate — applied to every route below except /login. Also assigns
+  // a per-request correlation id (ADR-0034) used to tie a generic
+  // user-facing error message back to its full, sanitized server log
+  // line, without ever exposing the underlying error itself.
   router.use(async (req, res, next) => {
+    req.requestId = errorUtils.generateRequestId();
     if (req.path === '/login' || req.path === '/login/') return next();
     const cookies = parseCookies(req);
     const token = cookies[SESSION_COOKIE];
@@ -333,8 +338,9 @@ function createPortalRouter(pool) {
       );
       res.redirect(`/portal/batches/${encodeURIComponent(req.params.batch_code)}`);
     } catch (err) {
+      const message = errorUtils.safeMessage(err, req.requestId, 'portal offer submit');
       res.redirect(
-        `/portal/batches/${encodeURIComponent(req.params.batch_code)}/items/${encodeURIComponent(req.params.item_id)}/offer?error=${encodeURIComponent(err.message || 'Could not submit offer')}`
+        `/portal/batches/${encodeURIComponent(req.params.batch_code)}/items/${encodeURIComponent(req.params.item_id)}/offer?error=${encodeURIComponent(message)}`
       );
     }
   });
@@ -424,7 +430,11 @@ function createPortalRouter(pool) {
         errors: errors.length ? errors : null,
       });
       res.redirect(`/portal/batches/${encodeURIComponent(batch.batch_code)}/excel/preview/${encodeURIComponent(stagingId)}`);
-    } catch {
+    } catch (err) {
+      // Always a fixed, generic message to the Manufacturer — but still
+      // logged internally (with a correlation id) so a real parsing bug
+      // is traceable, not silently swallowed.
+      errorUtils.safeMessage(err, req.requestId, 'portal excel upload');
       res.redirect(
         `/portal/batches/${encodeURIComponent(req.params.batch_code)}/excel?error=${encodeURIComponent('That file could not be read — make sure it is the unmodified workbook downloaded from this portal.')}`
       );
@@ -537,7 +547,7 @@ ${itemBlocks}
         const offer = await service.getOfferWithDetail(pool, created.offer_code);
         results.push(dto.toFactoryOfferDTO(offer));
       } catch (err) {
-        itemErrors.push({ batch_item_id: entry.batch_item_id, error: err.message });
+        itemErrors.push({ batch_item_id: entry.batch_item_id, error: errorUtils.safeMessage(err, req.requestId, 'portal excel confirm') });
       }
     }
     const successRows = results

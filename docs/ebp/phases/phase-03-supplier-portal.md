@@ -665,6 +665,16 @@ Phase 2.
   exists) uses a separate double-submit cookie instead. `logout` moved
   from `GET` to `POST`. `SameSite=Strict` on the session cookie remains
   in place as defense in depth, never treated as sufficient on its own.
+- **Risk: a raw internal error (Postgres constraint/syntax detail) could
+  reach the browser — resolved (ADR-0034).** Two real leak vectors were
+  found and fixed: the Portal's offer-submit handler put a caught error's
+  raw `.message` into a redirect query string/HTML banner, and both the
+  Portal's and factory API's Excel-confirm per-item loops did the same
+  into a per-item error field. `ebp/phase3/errors.js` is now the single
+  place that decides what is safe to show: `service.js`'s own curated
+  error classes keep their existing message, anything else is logged in
+  full server-side (never shown) and replaced with a generic message plus
+  a `request_id` for support correlation.
 - **Risk: the Factory Portal previously required the Manufacturer to call
   the Excel `stage`/`confirm` API endpoints directly (no UI) — resolved.**
   `ebp/phase3/portal.routes.js` now implements the full flow as
