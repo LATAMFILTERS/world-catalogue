@@ -1,8 +1,15 @@
 # ENGINEERING RULE ENGINE — Engineering Compliance Validation (Phase 4)
 
-**Status:** Normative reference — approved architecture, no implementation
-authorized. See ADR-0038 in `DECISIONS.md`.
+**Status:** Normative reference — architecture and rule-behavior fully
+decided. See ADR-0038 in `DECISIONS.md`, and ADR-0039 through ADR-0051
+for the twelve closed decisions plus the Global Result Model, recorded
+2026-07-13. Implementation of Phase 4 is authorized to proceed from this
+document; Phase 5 is not.
 **Created:** 2026-07-13, before Phase 4 was authorized to begin.
+**Decisions closed:** 2026-07-13, by the project owner, resolving all
+twelve open questions raised in the original version of this document.
+See "Resolved Decisions" below (replaces the former "Open Questions"
+section) and the "Global Result Model" section.
 **Depends on:** Phase 01 (Product Engineering Passport, `APPROVED / FROZEN
 v1.0`), Phase 02 (Manufacturer Registry, `APPROVED / FROZEN v1.0`), Phase 03
 (Manufacturer Intake Portal, `APPROVED / FROZEN v1.0`).
@@ -58,19 +65,20 @@ document does not touch).
 
 ### Engineering Approval
 
-The specific ELIMFILTERS-internal decision, made by a qualified engineer
-(a `declared_actor` with an engineering-authorized role — the exact role
-model is an open question, §"Open Questions"), that a given Compliance
-result — including any `WARNING`s, `REQUIRES_REVIEW`s, or granted
-Exceptions — is acceptable to proceed. Engineering Approval is the human
-decision layered on top of the engine's mechanical output; the engine
-never grants Engineering Approval itself, even when every rule reports
-`PASS`. This mirrors the existing platform-wide principle that "no
-Passport × Manufacturer × Manufacturer Offer combination reaches
-Manufacturer Selection... without passing Engineering Compliance
-Validation" (`PROJECT_MANIFESTO.md` §4.4) — the engine produces the
-evidence; a person (or a rule explicitly configured to auto-approve, if
-ever decided) makes the approval.
+The specific ELIMFILTERS-internal decision, recorded by a human holding
+the `ENGINEERING_APPROVER` functional role (**Decision 01**, ADR-0039;
+**Decision 09**, ADR-0047), that a given Compliance result — including
+any `WARNING`s, `REQUIRES_REVIEW`s, or granted Exceptions — is acceptable
+to proceed. Engineering Approval is always a human decision layered on
+top of the engine's mechanical output; **the engine never grants
+Engineering Approval itself, even when every rule reports `PASS`**
+(Decision 09) — the mechanical output can at most be flagged
+`MECHANICALLY_ELIGIBLE_FOR_APPROVAL` (see "Global Result Model"). This
+mirrors the existing platform-wide principle that "no Passport ×
+Manufacturer × Manufacturer Offer combination reaches Manufacturer
+Selection... without passing Engineering Compliance Validation"
+(`PROJECT_MANIFESTO.md` §4.4) — the engine produces the evidence; a
+human `ENGINEERING_APPROVER` makes the approval, always.
 
 ### Commercial Approval
 
@@ -111,10 +119,12 @@ production run pending a corrective action report within 30 days";
 another: the existing Phase 2 `CONDITIONAL` manufacturer-qualification
 condition being satisfied). A Conditional Approval is not a lesser or
 implicit form of Approval — it is a full Approval that carries an
-explicit, tracked condition. Whether Conditional Approval requires its own
-distinct state or is modeled as an ordinary Engineering Approval plus a
-linked Exception/condition record is an open question (§"Open
-Questions") — not decided by this document.
+explicit, tracked condition. **Decided (Decision 08, ADR-0046):**
+Conditional Approval is an ordinary Engineering Decision
+(`CONDITIONALLY_APPROVED`) with one or more structured condition records
+linked to it — never a separate, parallel technical state. See "Global
+Result Model" and Decision 08 below for the condition record shape and
+eligibility rules.
 
 ## 2. Comparison Types
 
@@ -292,6 +302,15 @@ values itself. This keeps every atomic comparison auditable in isolation
 comparison) while still allowing genuinely compound engineering
 requirements to be expressed as data rather than as bespoke code.
 
+**Decided (Decision 04, ADR-0042) — severity and gating semantics:**
+- **Effective severity** of a Composite Rule is the **highest** severity
+  among: the Composite Rule's own declared severity, and the severities
+  of whichever operand(s) actually caused the negative result.
+- **`AND`:** fails if any blocking operand fails.
+- **`OR`:** fails only when every valid alternative fails.
+- **`XOR`:** fails if none of the alternatives are satisfied, or if more
+  than one is.
+
 ### Conditional Rule
 
 A rule that only applies — and only produces a `PASS`/`FAIL`/`WARNING` —
@@ -313,7 +332,16 @@ Phase 1's `field_applicability` matrix and reused by Phase 3's
 `pep-fields.js` — Conditional Rule in this engine is the same concept,
 generalized: a rule's applicability precondition can be any other rule's
 or field's state, not only the two valve fields Phase 1 happens to gate
-today.
+today (Decision 11, ADR-0049, generalizes this further to Rule
+Applicability beyond Phase 1 fields).
+
+**Decided (Decision 04, ADR-0042) — severity semantics when the
+precondition is false:** severity is evaluated **only** when the
+precondition is true. When the precondition is false, the result is
+`NOT_APPLICABLE`, severity never participates in gating, it never
+affects any future Scoring (§6), and the `NOT_APPLICABLE` result — with
+which precondition evaluated false — is always recorded for
+traceability, never silently omitted.
 
 ## 3. States
 
@@ -329,11 +357,12 @@ a fixed enum, never free text.
 | `REQUIRES_REVIEW` | The engine cannot mechanically resolve `PASS`/`FAIL` without a human judgment call — typically a Required Evidence rule where a document exists but has not yet been reviewed, or a comparison the Rule Catalog explicitly marks as needing engineering eyes regardless of the numeric/textual result (e.g. a borderline case near a tolerance edge, if the catalog chooses to flag it that way). Blocks the overall Compliance Summary from reaching a terminal `VALID`/`INVALID` state until resolved. |
 | `REQUIRES_EXCEPTION` | The rule mechanically resolved to a Deviation (what would otherwise be `FAIL`) on a rule whose Severity means it cannot be silently accepted, but the Rule Catalog or an engineer has determined an Exception is the correct path forward rather than an outright rejection. This state exists specifically so "this failed, and the only way forward is an explicit, recorded Exception" is distinguishable from a plain `FAIL` that simply means "this Offer does not qualify." |
 
-**Open question (§"Open Questions"):** the exact transition rules between
-`FAIL` and `REQUIRES_EXCEPTION` — is this always a Rule Catalog default
-behavior (§8, "Default Behavior" column) decided in advance, or can an
-engineer manually promote a `FAIL` to `REQUIRES_EXCEPTION` at review time?
-Not decided here.
+**Decided (Decision 02, ADR-0040):** the `FAIL` ↔ `REQUIRES_EXCEPTION`
+relationship is entirely a function of the rule version's declared
+`exception_policy` (`NON_WAIVABLE` / `WAIVABLE_WITH_ENGINEERING_APPROVAL`
+/ `WAIVABLE_WITH_CONDITIONS`) — never a manual, ad hoc promotion an
+engineer performs at review time outside that declared policy. See
+Decision 02 below.
 
 ## 4. Severity
 
@@ -343,92 +372,105 @@ carries the same severity across every Offer it evaluates, unless the
 Rule Catalog itself is revised (which is itself a tracked, versioned
 change, not a silent edit).
 
-| Severity | Meaning (illustrative default; final gating behavior is Phase 4's spec decision, see "Open Questions") |
+**Decided (Decision 03, ADR-0041) — fixed platform-wide base mapping:**
+
+| Severity | Gating behavior (fixed floor, see hardening rule below) |
 |---|---|
-| `CRITICAL` | A failure here means the product cannot function or is unsafe as specified. A `FAIL` at `CRITICAL` severity always blocks `VALID`, with or without an Exception being technically possible to request (whether `CRITICAL` failures can ever receive an Exception at all is itself an open question). |
-| `HIGH` | A failure materially affects product performance or reliability. A `FAIL` blocks `VALID` unless a granted Exception exists. |
-| `MEDIUM` | A failure affects secondary performance characteristics or increases risk without being an immediate functional concern. Illustrative default: produces `WARNING` rather than `FAIL`, or blocks `VALID` only if the Rule Catalog specifically configures it to. |
-| `LOW` | A minor deviation, typically cosmetic, packaging-adjacent, or administrative. Illustrative default: `WARNING`, never blocks `VALID`. |
-| `INFO` | Not a compliance judgment at all — an observation the engine records for visibility (e.g., "offered value exceeds the requirement," a positive deviation) without any pass/fail semantics. Never blocks anything. |
+| `CRITICAL` | Blocks `VALID`. Result is `FAIL`. **Non-waivable by default** — see Decision 02/Decision 03; a `CRITICAL` rule version may only become waivable if its `exception_policy` explicitly declares so. |
+| `HIGH` | Blocks `VALID`. Result is `FAIL` or `REQUIRES_EXCEPTION`, according to the rule version's `exception_policy`. |
+| `MEDIUM` | Does not block automatically. Produces `WARNING`. May require human review if the rule version explicitly declares that. |
+| `LOW` | Does not block. Produces `WARNING`. |
+| `INFO` | Does not block. Produces information only — no pass/fail semantics. |
+
+**The Rule Catalog cannot weaken this mapping, only harden it.** A given
+rule version may configure a `MEDIUM` rule to block `VALID`; it may never
+configure a `HIGH` rule to stop blocking without a formal, declared
+Exception path. Every hardening is itself versioned and audited (Decision
+10, ADR-0048) as part of that rule's own `rule_version` record.
 
 Severity and State are independent axes: a `CRITICAL` rule can resolve to
 `NOT_APPLICABLE` (the precondition was false) just as easily as a `LOW`
-rule can resolve to `FAIL`. The Rule Catalog's "Default Behavior" column
-(§8) is where Severity and State combine into an actual effect on the
-Compliance Summary — that mapping is data, not hardcoded logic, so it can
-be reviewed and adjusted by engineering governance without a code change.
+rule can resolve to `FAIL`. The Rule Catalog's "Default Behavior" and
+`exception_policy` columns (§8) are where Severity and State combine into
+an actual effect on the Compliance Summary — that mapping is data, not
+hardcoded logic, versioned per `rule_version`, so it can be reviewed and
+adjusted by engineering governance without a code deploy (Decision 10).
 
 ## 5. Exceptions
 
+**Decided (Decision 02 / ADR-0040, Decision 07 / ADR-0045):**
+
 - **What Exceptions exist:** an Exception is always scoped to exactly one
-  (Offer Revision × Rule) pair. There is no "blanket Exception" for an
-  Offer, a Manufacturer, or a product family — each Deviation that needs
-  one gets its own Exception record. (Whether a "class Exception" —
-  e.g., "this Manufacturer's known plating process is pre-approved as
-  equivalent for this rule, indefinitely" — should exist as a distinct
-  concept is an open question, not decided here; if it is ever needed,
-  it is still recorded as an explicit, auditable decision, never an
-  implicit rule change.)
-- **Who approves them:** an ELIMFILTERS-internal engineering-authorized
-  actor — the exact role/permission model (a new role distinct from the
-  existing `requireAdmin` internal surface, a specific engineering group,
-  etc.) is an open question. What is decided here: an Exception is never
-  self-granted by the same mechanism that submitted the Offer (a
-  Manufacturer can never approve its own Exception), matching the
-  existing separation-of-duties pattern already used for Offer Approval
-  (Phase 3) and Manufacturer qualification changes (Phase 2, admin-only).
+  **Offer ID × Offer Revision × Rule ID × Rule Version** tuple. There is
+  no "blanket Exception" for an Offer, a Manufacturer, or a product
+  family in Phase 4 v1.0 — each Deviation that needs one gets its own
+  Exception record. A "class Exception" (e.g., a Manufacturer's known
+  process pre-approved as equivalent for one rule, indefinitely) is
+  **explicitly deferred to a future version and requires its own,
+  independent ADR** — it is not built now, and this document takes no
+  position on its eventual shape beyond requiring it never become an
+  implicit, un-audited rule change if it is ever built.
+- **Whether a rule can even receive one:** governed by that rule
+  version's `exception_policy` — `NON_WAIVABLE`,
+  `WAIVABLE_WITH_ENGINEERING_APPROVAL`, or `WAIVABLE_WITH_CONDITIONS`.
+  An engineer cannot freely convert an arbitrary `FAIL` into
+  `REQUIRES_EXCEPTION`; a request may only be made if the rule version's
+  policy allows it. `NON_WAIVABLE` rules never receive an Exception,
+  ever. Every `CRITICAL`-severity rule is `NON_WAIVABLE` **by default**;
+  a rule version may declare itself `CRITICAL` and waivable only by
+  explicit, visible configuration on that version (never a silent
+  default). No administrative override outside this formal Exception
+  flow is permitted, for any severity.
+- **Who approves them:** the `ENGINEERING_APPROVER` functional role
+  (Decision 01, ADR-0039). An Exception is never self-granted by the
+  same mechanism that submitted the Offer (a Manufacturer can never
+  approve its own Exception) and is never granted via an `ADMIN_OWNER`
+  administrative override — matching the existing separation-of-duties
+  pattern already used for Offer Approval (Phase 3) and Manufacturer
+  qualification changes (Phase 2, admin-only).
 - **How long they last:** an Exception is bound to the specific Offer
   Revision it was granted against. **It does not carry forward
   automatically to a later Offer revision** — a new revision re-triggers
   the underlying rule evaluation from scratch, and if the same Deviation
-  recurs, a new Exception must be explicitly (re-)granted. This mirrors
-  the platform-wide principle already established for validation results
-  generally (`phase-04-validation-engine.md`: "a new Offer revision...
-  invalidates the prior result and requires re-validation"). Whether an
-  Exception can also carry an explicit expiration date/time independent
-  of the Offer revision (e.g., "valid for 90 days regardless of
-  revision") is an open question.
-- **Where they are recorded:** not decided by this document (no table is
-  created here) — but whatever Phase 4's eventual schema looks like, an
-  Exception record must be immutable once granted (append a
-  superseding/revoking record rather than editing history, the same
-  discipline already used everywhere else in this platform: Passport
-  supersession, Offer supersession, Manufacturer status history) and must
-  capture, at minimum: which Rule, which Offer Revision, who approved it,
-  when, and why (a required justification, never optional).
-- **How they affect future validations:** a granted Exception changes what
-  the Compliance Summary and Engineering Decision are allowed to conclude
-  for that one (Offer Revision × Rule) pair — it never changes the Rule
-  Result itself (a `FAIL` under Exception is still recorded as `FAIL`,
-  with the Exception noted alongside it) and it never affects any other
-  rule, any other Offer revision, or any other Manufacturer's evaluation
-  of the same rule. Exceptions are never precedent — a granted Exception
-  for Manufacturer A does not imply or auto-grant one for Manufacturer B
-  on the same rule.
+  recurs, a new Exception must be explicitly (re-)granted.
+- **Where they are recorded:** as versioned Postgres data (Decision 10,
+  ADR-0048), immutable once granted (append a superseding/revoking record
+  rather than editing history, the same discipline already used
+  everywhere else in this platform), capturing at minimum: Rule ID +
+  Rule Version, Offer ID + Offer Revision, who approved it (an
+  `ENGINEERING_APPROVER`), when, and a required justification.
+- **How they affect future validations:** a granted Exception changes
+  what the Compliance Summary and Engineering Decision are allowed to
+  conclude for that one tuple — **it never changes the Rule Result
+  itself** (a `FAIL` under Exception is still recorded as `FAIL`, with
+  the Exception noted alongside it), **it never modifies the Rule
+  Catalog**, **it never changes the Passport (PEP)**, and **it never
+  converts a Deviation into genuine technical compliance** — it only
+  authorizes accepting that specific, identified Deviation. Exceptions
+  are never precedent — a granted Exception for Manufacturer A does not
+  imply or auto-grant one for Manufacturer B on the same rule.
 
 ## 6. Scoring
 
-**Philosophy only — not implemented in this document or authorized for
-implementation yet.**
+**Decided (Decision 05, ADR-0043): no numeric technical Score in Phase 4
+v1.0.**
 
-The engine must be able to produce, in principle, either:
-- a pure `PASS`/`FAIL` (plus the other states in §3) combination result
-  with no numeric score, or
-- a numeric technical Score (e.g., `97.3%`) summarizing the evaluation as
-  a single comparable figure.
+Phase 4 v1.0 produces, per validation run: per-rule results, a per-state
+summary, per-severity counts, an overall mechanical result, and a
+separate human Engineering Decision (see "Global Result Model"). It does
+not produce, present, or store any single numeric compliance percentage.
+**No fictitious "compliance percentage" derived merely from a count of
+passed rules is ever shown** — a pass-count ratio is not a meaningful
+technical score and is explicitly rejected as a substitute for one.
 
-If a Score is ever implemented, it is expected to be a function of
-Severity-weighted rule outcomes across the applicable rules for that
-Offer (e.g., something in the shape of: start at 100, subtract a
-per-Severity weight for each `FAIL`/`WARNING`, `NOT_APPLICABLE` rules
-excluded from the denominator entirely) — but the **exact formula, its
-weights, and whether it is even a single platform-wide constant or
-configurable per product category are explicitly not decided here**. A
-Score, if built, is always presented as a supplementary, informational
-figure — it never overrides or substitutes for the `PASS`/`FAIL`/
-`REQUIRES_EXCEPTION`/`REQUIRES_REVIEW` gating logic that actually
-determines whether an Offer may proceed. A 97.3% Score does not make an
-unresolved `CRITICAL FAIL` acceptable.
+All data needed to compute a real, Severity-weighted Score in a future
+version is already captured (every Rule Result's state, severity,
+category, and rule version) so a future Score can be added, and even
+computed retroactively over historical validation runs, **without
+recalculating or losing any history**. The exact formula, its weights,
+and whether it is a platform-wide constant or configurable per Category/
+Duty remain undecided and deferred — building a Score is a future,
+separately-authorized decision, not part of Phase 4 v1.0.
 
 ## 7. Automatic Observations
 
@@ -453,26 +495,55 @@ triggered it — a prerequisite for any future AI system to reliably parse
 "why did this fail" across thousands of evaluations (§12), and for a
 human reviewer to trust that the same words always mean the same thing.
 
-The Observation Catalog's exact structure (one template per Comparison
-Type × State combination, one per Rule Catalog entry, or a hybrid) is not
-decided here — an open question for Phase 4's own spec.
+**Decided (Decision 06, ADR-0044): a hybrid Observation Catalog.**
+
+1. A default template keyed by (`comparison_type`, `result_state`).
+2. An optional override keyed by (`rule_id`, `rule_version`,
+   `result_state`), taking precedence over the default when present.
+
+Every Observation is identified by a stable **observation code** (never
+free text as the authority) — e.g. `OBS_NUMERIC_BELOW_MINIMUM`,
+`OBS_TOLERANCE_EXCEEDED`, `OBS_REQUIRED_EVIDENCE_MISSING`. Each rendered
+Observation stores, at minimum: the `observation_code`, the structured
+parameters used to render it (required value, offered value, unit,
+tolerance, field label — never only the final rendered sentence), and
+the template version used. **The rendered text is a presentation
+artifact only — it is never stored as the sole source of truth**; the
+code + structured parameters are what is authoritative and queryable.
+
+Phase 4 v1.0 renders English only, but the catalog is structured with
+i18n-ready keys from day one (`observation_code` + parameters, not
+baked-in English strings) so a future language can be added by adding
+templates, never by touching evaluation code.
 
 ## 8. Rule Catalog
 
-Every rule the engine can execute is one row in the Rule Catalog. The
-engine has no comparison logic that is not traceable to a specific
-catalog entry. Each entry declares:
+Every rule the engine can execute is one row (one `rule_version`) in the
+Rule Catalog. The engine has no comparison logic that is not traceable to
+a specific catalog entry. **Decided (Decision 10, ADR-0048): the Rule
+Catalog is stored as versioned data in Postgres, never as code.** Each
+rule version declares:
 
 | Field | Meaning |
 |---|---|
 | **Rule ID** | A stable, permanent identifier (e.g. `RULE-EFF-001`). Never reused after a rule is retired; never renumbered. |
+| **Rule Version** | Monotonically increasing per Rule ID. A published version is never edited — a functional change always creates a new version. Every validation references an exact Rule ID + Rule Version, never "the current version" implicitly. |
 | **Rule Name** | A short, human-readable name. |
 | **Description** | The engineering rationale — what this rule checks and why it matters, in the same neutral technical tone as `BUSINESS_RULES.md`. |
 | **Comparison Type** | Exactly one of the ten types in §2. |
 | **Severity** | Exactly one of the five levels in §4. |
+| **Exception Policy** | (Decision 02, ADR-0040) Exactly one of `NON_WAIVABLE`, `WAIVABLE_WITH_ENGINEERING_APPROVAL`, `WAIVABLE_WITH_CONDITIONS`. Defaults to `NON_WAIVABLE` for `CRITICAL` severity unless explicitly overridden on that version. |
 | **Category** | Exactly one of the categories in §9. |
 | **Applies To** | Which Passport field(s) (`required_*`) and Offer field(s) (`offered_*`/`actual_*`) this rule reads — for this platform, expressed as the exact `field_name` values already frozen in Phase 1's engineering schema and reused by Phase 3's `pep-fields.js` (e.g. `minimum_efficiency` + `efficiency_particle_size_basis`, `bypass_valve_applicability` + `bypass_opening_pressure_kpa` + `bypass_pressure_tolerance_pct`) — never a new, parallel field-naming scheme. |
-| **Default Behavior** | What the Compliance Summary does with this rule's result by default (e.g., "FAIL blocks VALID," "FAIL produces WARNING only," "FAIL requires an Exception to proceed") — the mapping described qualitatively in §4, made concrete per rule. |
+| **Rule Applicability** | (Decision 11, ADR-0049) The declared, versioned condition under which this rule is even evaluated — may read Phase 1's `field_applicability` directly, or Phase 4's own additional applicability inputs (product category/subtype, duty, technology, another field's presence/value, Manufacturer qualification attributes). Always explicit, never inferred silently. |
+| **Default Behavior** | What the Compliance Summary does with this rule's result by default (e.g., "FAIL blocks VALID," "FAIL produces WARNING only," "FAIL requires an Exception to proceed") — the mapping described qualitatively in §4, made concrete per rule version, and never weaker than §4's fixed floor. |
+| **Status** | `DRAFT` → `ACTIVE` → `SUPERSEDED` / `RETIRED`. A rule version that was ever used by a real validation run is never deleted, regardless of status. |
+| **Effective Dates** | When this version became/stopped being `ACTIVE`. |
+| **Authoring / Audit Metadata** | Who authored/published this version, when. |
+
+Rule Catalog administration in Phase 4 v1.0 is via controlled internal
+endpoints and/or versioned migrations/seed data, following this same data
+model — **no visual rule-editing interface is built in v1.0.**
 
 **Illustrative starter entries** (not exhaustive, not final — Phase 4's
 own spec finalizes the actual catalog and may add, split, or reword any
@@ -516,72 +587,66 @@ Passport (Phase 1, frozen at a specific engineering_revision)
 Offer (Phase 3, a specific offer_id / offer_revision, its offered_*
        technical fields and evidence documents)
    ↓
-Rule Evaluation (each applicable Rule Catalog entry runs its Comparison
-                 Type against the matching Passport/Offer field pair)
+Rule Evaluation (each applicable Rule Catalog entry — an exact
+                 rule_id + rule_version — runs its Comparison Type
+                 against the matching Passport/Offer field pair)
    ↓
 Rule Results (one State + Severity + Observation per rule, per §3/§4/§7)
    ↓
-Compliance Summary (the aggregate: overall VALID / INVALID / REQUIRES_
-                     REVIEW / REQUIRES_EXCEPTION, derived from every Rule
-                     Result's State × Severity × Default Behavior — never
-                     a separate, independently-entered judgment)
+Mechanical Compliance Result (MECHANICALLY_PASS / MECHANICALLY_FAIL /
+                     REQUIRES_ENGINEERING_REVIEW — the aggregate, derived
+                     purely from every Rule Result's State × Severity ×
+                     Default Behavior × Exception Policy; never a
+                     separate, independently-entered judgment)
    ↓
-Engineering Decision (a human — or an explicitly-configured automatic
-                       rule — records Engineering Approval, a Conditional
-                       Approval, or a rejection, referencing the
-                       Compliance Summary and any granted Exceptions)
+Engineering Decision (always a human ENGINEERING_APPROVER: PENDING_
+                       REVIEW / APPROVED / CONDITIONALLY_APPROVED /
+                       REJECTED — references, never recalculates, the
+                       Mechanical Compliance Result and any granted
+                       Exceptions; the engine may surface
+                       MECHANICALLY_ELIGIBLE_FOR_APPROVAL but never
+                       writes APPROVED itself, Decision 09)
    ↓
 Offer Approval (Phase 3, ebp_manufacturer_offer_approvals — the separate
-                 Commercial Approval gate, ADR-0008; may only ever be
-                 granted for an Offer revision that has an Engineering
-                 Decision on file, but is its own independent decision)
+                 Commercial Approval gate, ADR-0008; requires an eligible
+                 Engineering Decision on file, but is its own independent
+                 decision, never merged into the same column)
 ```
 
-Nothing after "Rule Evaluation" re-derives a value the engine already
-computed — the Compliance Summary is a pure aggregation of Rule Results,
-and the Engineering Decision always references (never recalculates) the
-Compliance Summary it was based on, so a later audit can reconstruct
-exactly which rule results informed which decision.
+See "Global Result Model" below for the full definition of these three
+distinct, never-conflated concepts. Nothing after "Rule Evaluation"
+re-derives a value the engine already computed.
 
 ## 11. Dashboard Readiness
 
-Per ADR-0037 (`PLATFORM_ARCHITECTURE.md` §8), the engine must emit
-Activity Events into the shared, single-model event ledger described
-there — never its own independent event system. Candidate events (final
-naming is Phase 4's own spec decision, not fixed here):
+Per ADR-0037 (`PLATFORM_ARCHITECTURE.md` §8), the engine emits Activity
+Events into the shared, single-model event ledger — never its own
+independent event system. **Decided, final event set for Phase 4 v1.0:**
 
-- `RULE_EVALUATED` — one rule ran against one Offer revision, regardless
-  of outcome. `entity_type = 'OFFER'`, carries `rule_id`, resulting
-  `state`, `severity`.
-- `RULE_FAILED` — a rule resolved to `FAIL`. Carries the same fields as
-  `RULE_EVALUATED` plus the rendered Observation (§7).
-- `RULE_WARNING` — a rule resolved to `WARNING`.
-- `VALIDATION_COMPLETED` — the Compliance Summary reached a terminal
-  state (`VALID`/`INVALID`) for a specific Offer revision. Carries the
-  overall result and, if implemented, the Score (§6).
-- `ENGINEERING_EXCEPTION_CREATED` — an Exception was requested/proposed
-  for a specific (Offer Revision × Rule) pair.
-- `ENGINEERING_EXCEPTION_APPROVED` — an Exception was granted, by whom,
-  and its justification.
+**Events:** `VALIDATION_RUN_CREATED`, `RULE_EVALUATED`, `RULE_PASSED`,
+`RULE_FAILED`, `RULE_WARNING`, `RULE_NOT_APPLICABLE`,
+`VALIDATION_COMPLETED`, `VALIDATION_MARKED_STALE`,
+`ENGINEERING_REVIEW_STARTED`, `ENGINEERING_DECISION_RECORDED`,
+`ENGINEERING_EXCEPTION_REQUESTED`, `ENGINEERING_EXCEPTION_APPROVED`,
+`ENGINEERING_EXCEPTION_REJECTED`, `ENGINEERING_CONDITION_CREATED`,
+`ENGINEERING_CONDITION_SATISFIED`, `ENGINEERING_CONDITION_OVERDUE`,
+`ENGINEERING_CONDITION_FAILED`.
 
-**Candidate KPIs** (per `PLATFORM_ARCHITECTURE.md` §8.4): validations
-completed, pass rate, average rules failed per Offer, Exceptions granted
-per period, most-triggered rule, rejection rate by Manufacturer.
+**KPIs:** validations completed; pass/fail/review-required rate; rules
+failing most frequently; failure rate by Manufacturer; failure rate by
+product Category; exception request rate; exception approval rate;
+average engineering review time; conditions open/overdue/failed; stale
+validations pending re-run.
 
-**Candidate Alerts** (per §8.5): "Engineering review required" (a
-`REQUIRES_REVIEW` state persisting past a threshold), "Repeated Deviation
-by Manufacturer" (the same rule failing for the same Manufacturer across
-multiple Offers/product families — a genuine early-warning signal this
-engine is uniquely positioned to produce).
+**Alerts:** validation pending review; critical rule failure; required
+evidence missing; exception expiring; condition approaching deadline;
+condition overdue; validation stale; active Offer without a current
+validation.
 
-**Candidate Analytics Views** (per §8.3): `ebp_analytics_validation_
-summary` (per Offer/Manufacturer: pass rate, open Exceptions, most recent
-Compliance Summary) — naming/shape finalized by Phase 4's own spec, not
-this document.
-
-This is architecture only — no event, table, or route exists yet. Actual
-implementation follows the same phase-gate discipline as everything else
-in this platform (`CLAUDE_WORKFLOW.md`).
+**Analytics Views:** `ebp_analytics_validation_summary` (per Offer/
+Manufacturer: pass rate, open Exceptions, most recent Mechanical
+Compliance Result and Engineering Decision) — exact shape finalized by
+Phase 4's own spec.
 
 ## 12. Preparation for AI
 
@@ -613,86 +678,256 @@ structured, non-improvised output is what makes a system reliably
 citable and queryable by an LLM later — not a feature added after the
 fact.
 
+## Global Result Model (added 2026-07-13)
+
+The engine keeps three concepts structurally distinct — **never merged
+into a single column or state**:
+
+### 1. Mechanical Compliance Result
+
+Generated automatically, with no human step:
+- `MECHANICALLY_PASS`
+- `MECHANICALLY_FAIL`
+- `REQUIRES_ENGINEERING_REVIEW`
+
+This is the pure aggregation of Rule Results (state × severity ×
+exception policy × default behavior). It may additionally be flagged
+`MECHANICALLY_ELIGIBLE_FOR_APPROVAL` when every applicable rule resolved
+to `PASS`/`NOT_APPLICABLE` — but this flag is informational only; it is
+never itself a decision and never becomes `APPROVED` without step 2.
+
+### 2. Engineering Decision
+
+Recorded by a human `ENGINEERING_APPROVER` (Decision 01):
+- `PENDING_REVIEW`
+- `APPROVED`
+- `CONDITIONALLY_APPROVED`
+- `REJECTED`
+
+Always references the Mechanical Compliance Result and any granted
+Exceptions it was based on; never recalculates them. `CONDITIONALLY_
+APPROVED` carries one or more structured condition records (Decision 08).
+
+### 3. Offer Approval
+
+Belongs to the already-defined downstream flow (Phase 3,
+`ebp_manufacturer_offer_approvals`, ADR-0008):
+- Requires an eligible Engineering Decision on file (`APPROVED`, or
+  `CONDITIONALLY_APPROVED` with no mandatory condition `OPEN`/`OVERDUE`/
+  `FAILED`).
+- Requires its own, separate Commercial Approval.
+- Is never part of the mechanical evaluation.
+
+## Resolved Decisions (2026-07-13)
+
+The twelve questions originally raised here are now closed by the
+project owner. Each decision below is registered by its own ADR in
+`DECISIONS.md`; this section is the durable summary. **No table, API,
+migration, or Phase 4 code exists as a result of these decisions alone**
+— they authorize Phase 4's spec (`phases/phase-04-validation-engine.md`)
+to be written as an implementable document and, from there, Phase 4's
+implementation to begin. Phase 5 remains not started and not authorized.
+
+### Decision 01 — Engineering Approval authority model (ADR-0039)
+
+The MVP uses the existing internal `requireAdmin` mechanism, complemented
+by explicit functional authorization via three functional roles:
+
+- **`ENGINEERING_REVIEWER`** — may review results and request
+  clarifications; may not grant Exceptions.
+- **`ENGINEERING_APPROVER`** — may record an Engineering Decision, may
+  technically reject an Offer, may approve Exceptions the rule's
+  `exception_policy` permits.
+- **`ADMIN_OWNER`** — may administer role assignments; **may not**
+  directly convert an invalid technical result into valid, and **may
+  not** approve rules outside their authorized flow via an
+  administrative override.
+
+While `ADMIN_KEY_SHARED` remains the identity mechanism, the actor stays
+a declared label: `declared_actor` and `identity_mechanism =
+ADMIN_KEY_SHARED` are stored, never presented as a cryptographically
+authenticated identity. The architecture must allow this to be replaced
+later by real individual internal authentication without altering any
+historical engineering decision.
+
+### Decision 02 — `FAIL` → `REQUIRES_EXCEPTION` promotion (ADR-0040)
+
+Exception capability is defined per rule version via a declared
+**`exception_policy`**: `NON_WAIVABLE`,
+`WAIVABLE_WITH_ENGINEERING_APPROVAL`, or `WAIVABLE_WITH_CONDITIONS`.
+
+- An engineer cannot freely convert an arbitrary `FAIL` into
+  `REQUIRES_EXCEPTION` — an Exception may only be requested if the rule
+  version's policy permits it.
+- `NON_WAIVABLE` rules never receive an Exception.
+- A rule may be `CRITICAL` and exceptionally waivable, but this must be
+  declared explicitly on that rule version.
+- **By default, every `CRITICAL` rule is `NON_WAIVABLE`.**
+- No administrative override outside the formal Exception flow is
+  permitted, for any severity.
+
+### Decision 03 — Severity → gating mapping (ADR-0041)
+
+A fixed, platform-wide base mapping is adopted:
+
+- `CRITICAL` — blocks `VALID`; result `FAIL`; non-waivable by default.
+- `HIGH` — blocks `VALID`; result `FAIL` or `REQUIRES_EXCEPTION`,
+  per `exception_policy`.
+- `MEDIUM` — does not block automatically; produces `WARNING`; may
+  require human review if the rule defines that.
+- `LOW` — does not block; produces `WARNING`.
+- `INFO` — does not block; information only.
+
+**The Rule Catalog cannot weaken this mapping, only harden it.** A
+`MEDIUM` rule may be configured to block; a `HIGH` rule may never be
+configured to stop blocking without a formal Exception. Every hardening
+is versioned and audited.
+
+### Decision 04 — Composite and Conditional Rule severity (ADR-0042)
+
+**Composite Rules:** the effective severity is the highest among the
+Composite Rule's own declared severity and the severities of whichever
+operand(s) caused the negative result.
+- `AND` — any blocking operand can fail the rule.
+- `OR` — fails only when every valid alternative fails.
+- `XOR` — fails if none, or more than one, alternative is satisfied.
+
+**Conditional Rules:** severity is evaluated only when the precondition
+is true. When the precondition is false: the result is `NOT_APPLICABLE`;
+severity does not participate in gating; it does not affect future
+Scoring; it is always recorded for traceability.
+
+### Decision 05 — Scoring (ADR-0043)
+
+No numeric technical score is implemented in Phase 4 v1.0. Phase 4 v1.0
+produces per-rule results, a per-state summary, per-severity counts, an
+overall Mechanical Compliance Result, and a separate human Engineering
+Decision. All data needed to add scoring in a future version is
+preserved, without recalculating or losing history. No fictitious
+compliance percentage derived merely from a count of passed rules is
+ever shown.
+
+### Decision 06 — Observation Catalog (ADR-0044)
+
+A hybrid model:
+1. A default template keyed by (`comparison_type`, `result_state`).
+2. An optional override keyed by (`rule_id`, `rule_version`,
+   `result_state`).
+
+Observations are identified by stable codes, not free text as authority
+(e.g. `OBS_NUMERIC_BELOW_MINIMUM`, `OBS_TOLERANCE_EXCEEDED`,
+`OBS_REQUIRED_EVIDENCE_MISSING`). Stored: `observation_code`, structured
+parameters, and the template version used. The rendered text is always
+generated from the catalog and is never stored as the sole source of
+truth. Translation is prepared via i18n-ready keys; Phase 4 v1.0 may
+render English only as long as the infrastructure is ready for future
+languages.
+
+### Decision 07 — Exception scope (ADR-0045)
+
+Phase 4 v1.0 permits Exceptions only at: **Offer ID × Offer Revision ×
+Rule ID × Rule Version**. No general Exceptions exist by Manufacturer,
+family, or future Offers. An Exception: is not inherited; is not applied
+automatically to later revisions; does not modify the Rule Catalog; does
+not change the PEP; does not convert a Deviation into genuine technical
+compliance; only authorizes accepting that specific, identified
+Deviation. Class Exceptions are deferred to a future version and require
+an independent ADR.
+
+### Decision 08 — Conditional Approval data shape (ADR-0046)
+
+`CONDITIONALLY_APPROVED` is a normal Engineering Decision with one or
+more structured condition records linked to it — never a separate,
+parallel technical state.
+
+Engineering Decision: `APPROVED`, `CONDITIONALLY_APPROVED`, `REJECTED`,
+`PENDING_REVIEW`.
+
+Each condition record includes: `condition_id`; `condition_type`;
+description; verifiable requirement; responsible party; due date;
+required evidence; status; satisfaction date; consequence of
+non-compliance.
+
+Condition status: `OPEN`, `SATISFIED`, `OVERDUE`, `WAIVED`, `FAILED`,
+`CANCELLED`.
+
+A `CONDITIONALLY_APPROVED` Offer: does not count as final approval for
+Manufacturer Selection while any mandatory condition is `OPEN`,
+`OVERDUE`, or `FAILED`; may be used only in preliminary comparisons;
+becomes eligible once every mandatory condition is `SATISFIED` or
+formally `WAIVED`. The Alert Layer produces alerts for conditions
+approaching their deadline, overdue, or failed.
+
+### Decision 09 — Automatic vs. human Engineering Decision (ADR-0047)
+
+Every Offer requires a human decision. The automatic engine: evaluates
+rules; generates Rule Results; produces the Mechanical Compliance
+Result; recommends a mechanical disposition. **It never grants a final
+Engineering Approval by itself** — even when every rule is `PASS` or
+`NOT_APPLICABLE`, an `ENGINEERING_APPROVER` must confirm the decision.
+The system may display `MECHANICALLY_ELIGIBLE_FOR_APPROVAL`, but may not
+convert it automatically into `APPROVED`. This policy may only be
+revisited in the future via a new ADR, with sufficient operational
+history.
+
+### Decision 10 — Rule Catalog storage and versioning (ADR-0048)
+
+The Rule Catalog is stored as versioned data in Postgres — never as code
+only. Minimum entities: rule identity; rule version; comparison type;
+category; severity; gating behavior; exception policy; applicability;
+operands/dependencies; observation templates; status; effective dates;
+authoring/audit metadata.
+
+Rules: `rule_id` is stable and permanent; every functional change creates
+a new `rule_version`; a published version is never edited; prior
+versions remain available; every validation references exactly
+`rule_id` + `rule_version`; a new rule starts as `DRAFT`, goes through
+review, is published as `ACTIVE`, may become `SUPERSEDED` or `RETIRED`;
+never deleted if it was ever used.
+
+No advanced visual rule-editing UI is built yet. In Phase 4 v1.0,
+administration may be done via controlled internal endpoints or
+versioned migrations/seed data, respecting this same data model.
+
+### Decision 11 — Relationship with Phase 1 applicability (ADR-0049)
+
+Phase 4 uses two applicability levels:
+
+**Field applicability** — comes from Phase 1:
+`ebp_field_applicability_matrix`, the PEP snapshot, engineering overrides
+frozen at the Passport revision. Phase 4 does not modify this
+information.
+
+**Rule applicability** — Phase 4's own, additional concept for whether a
+rule applies, based on: product category; product subtype; duty;
+technology; presence or absence of a field; value of another required
+field; Manufacturer qualification attributes; other explicitly declared
+inputs. A rule may depend on Phase 1, but not every rule is limited to a
+single Phase 1 field. All rule applicability must be: declared;
+versioned; auditable; and must record why a rule was evaluated or marked
+`NOT_APPLICABLE`.
+
+### Decision 12 — Re-validation triggers (ADR-0050)
+
+Phase 4 v1.0 uses full coarse invalidation. The complete validation is
+invalidated when any of the following changes: Passport revision;
+Manufacturer Offer revision; relevant Manufacturer qualification status;
+Offer expiration; the Rule Catalog's applicable `ACTIVE` version;
+required linked evidence; an Exception; an approval condition; or any
+other data used as input by the rule set.
+
+No partial results from a prior validation are reused. Every
+revalidation: creates a new validation run; preserves the previous
+execution; re-evaluates every applicable rule; records the trigger;
+records the exact versions of every input. The previous validation
+becomes `STALE` (or an equivalent state) without being deleted or
+modified historically. Fine-grained optimization is deferred until there
+is real evidence of a performance problem.
+
 ## Restrictions Confirmed
 
 No table was created by this document. No API was created. No migration
 was written. No code was written. No frozen phase (0, 1, 2, or 3) was
-modified. **Phase 4 was not started.**
-
-## Open Questions (must be resolved before any Phase 4 code is written)
-
-1. **Engineering Approval authority model.** Who, specifically, is
-   authorized to record an Engineering Decision or grant an Exception? A
-   new role distinct from the existing `requireAdmin` internal surface? A
-   named engineering group? Does this require its own identity/auth
-   model, or does it reuse the existing internal admin mechanism with an
-   additional permission check?
-2. **`FAIL` → `REQUIRES_EXCEPTION` promotion.** Is this always a fixed
-   Rule Catalog "Default Behavior" decided in advance per rule, or can an
-   engineer manually request an Exception path for a rule whose default
-   behavior is a hard `FAIL`? Can `CRITICAL`-severity rules ever receive
-   an Exception at all, or are some rules categorically non-waivable?
-3. **Severity → gating mapping, exactly.** §4 gives an illustrative
-   default (`CRITICAL`/`HIGH` block, `MEDIUM`/`LOW` warn). Is this
-   mapping fixed platform-wide, or configurable per Rule Catalog entry
-   (per the "Default Behavior" column, §8)? If configurable, who is
-   authorized to change it, and is that itself audited?
-4. **Composite/Conditional Rule combination with severity/state
-   aggregation.** When a Composite Rule's operands have different
-   severities, what severity does the Composite Rule itself carry? Does
-   a Conditional Rule's severity apply only when its precondition is
-   true, or does `NOT_APPLICABLE` always mean severity is moot regardless?
-5. **Scoring formula and scope (§6).** Is a numeric Score built at all in
-   Phase 4's first implementation, or deferred entirely? If built: what
-   is the exact weighting formula, is it a single platform-wide constant
-   or configurable per product Category (§9) or Duty (HD/LD, per root
-   `CLAUDE.md`'s SKU architecture), and who owns changing it?
-6. **Observation Catalog structure (§7).** One template per (Comparison
-   Type × State), one per individual Rule Catalog entry, or a hybrid
-   (a rule-specific override of a Comparison-Type default)? Where does
-   internationalization fit, if a future Manufacturer-facing surface
-   needs the same Observation in a language other than English?
-7. **Exception scope beyond one (Offer Revision × Rule) pair.** Does a
-   "class Exception" (e.g., a Manufacturer's pre-approved equivalent
-   process for one rule, applied automatically to all its future Offers
-   against that rule) ever get built, or is per-(Offer Revision × Rule)
-   the permanent, only granularity? If it exists, how does it avoid
-   becoming an implicit, un-audited rule change?
-8. **Conditional Approval's data shape (Philosophy §, "Conditional
-   Approval").** Is it its own distinct state/entity, or an ordinary
-   Engineering Approval plus a linked follow-up/condition record? How is
-   a missed/expired condition detected and alerted (ties to ADR-0037's
-   Alert Layer)?
-9. **Automatic vs. human Engineering Decision.** Can a Compliance Summary
-   with 100% `PASS` (or `PASS`/`NOT_APPLICABLE` only) ever auto-grant
-   Engineering Approval without a human step, or is a human decision
-   always required regardless of the mechanical result? If auto-approval
-   is ever allowed, under what exact conditions, and is it itself
-   auditable as a "decision" distinguishable from a human one?
-10. **Rule Catalog storage and versioning.** Is the Rule Catalog itself
-    data (a table, editable by an authorized role without a code
-    deploy) or code (a versioned file requiring a normal
-    review/deploy cycle, closer to how `ebp/phase3/pep-fields.js` is
-    structured today)? If data, how are changes to an existing rule's
-    Severity/Comparison Type/Default Behavior themselves versioned and
-    audited, given a rule's own identity (Rule ID) must remain stable
-    forever?
-11. **Relationship to Phase 1's `field_applicability` matrix.** Does
-    every Conditional Rule's precondition read Phase 1's existing
-    `field_applicability`/`ebp_field_applicability_matrix` directly (as
-    §2's example assumes), or does Phase 4 need its own, additional
-    applicability concept for rules that don't map one-to-one onto an
-    existing Passport field (e.g., a rule that only applies to certain
-    Duty classes or product Categories not currently modeled as a Phase 1
-    field)?
-12. **Re-validation triggers, precisely.** `phase-04-validation-engine
-    .md` already states that a new Offer revision, a Passport revision
-    change, a Manufacturer qualification status change, or Offer
-    `expires_at` passing all invalidate a prior result. Does *every*
-    Rule Result get invalidated in every one of those cases, or only the
-    subset of rules that actually reference the changed data (e.g., a
-    Manufacturer status change plausibly only invalidates `RULE-CERT-*`,
-    not `RULE-THR-001`)? Coarse (invalidate everything) is simpler and
-    safer by default; fine-grained (invalidate only affected rules) is
-    more efficient but requires the Rule Catalog to declare its exact
-    data dependencies up front.
+modified. **Phase 4 was not started.** These decisions authorize Phase
+4's spec to be finalized and its implementation to proceed; they do not
+themselves implement anything.
