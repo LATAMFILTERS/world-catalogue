@@ -388,19 +388,22 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         />
 
         {geoData?.faq && geoData.faq.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: geoData.faq.map(({ q, a }) => ({
+                '@type': 'Question',
+                name: q,
+                acceptedAnswer: { '@type': 'Answer', text: a },
+              })),
+            })}}
+          />
+        )}
+
+        {geoData?.faq && geoData.faq.length > 0 && !isIndustry && (
           <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: geoData.faq.map(({ q, a }) => ({
-                  '@type': 'Question',
-                  name: q,
-                  acceptedAnswer: { '@type': 'Answer', text: a },
-                })),
-              })}}
-            />
             <div style={{ maxWidth: '860px', margin: '0 auto' }}>
               <h2 style={sectionTitle}>Common Questions</h2>
               <div style={{ display: 'grid', gap: '1rem' }}>
