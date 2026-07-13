@@ -15,10 +15,10 @@ const technologies = [
 
 export function TechnologiesPortfolio() {
   return (
-    <section style={section}>
+    <section className="technology-portfolio-section" style={section}>
       <div style={wrap}>
-        <p style={eyebrow}>TECHNOLOGY PORTFOLIO</p>
-        <h2 style={title}>Select the architecture. Understand the protection role.</h2>
+        <p className="technology-portfolio-eyebrow" style={eyebrow}>TECHNOLOGY PORTFOLIO</p>
+        <h2 className="technology-portfolio-title" style={title}>Select the architecture. Understand the protection role.</h2>
         <div className="technology-portfolio-grid" style={grid}>
           {technologies.map(([slug, name, image]) => (
             <Link key={slug} href={`/technologies/${slug}`} className="technology-portfolio-card" style={card}>
@@ -42,7 +42,7 @@ const wrap: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.3em', margin: '0 0 1rem' };
 const title: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, letterSpacing: '-0.02em', margin: '0 0 2.4rem', textTransform: 'uppercase', color: '#fff' };
 const grid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem' };
-const card: CSSProperties = { minHeight: '420px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
+const card: CSSProperties = { display: 'block', width: '100%', minHeight: '420px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
 const logoStage: CSSProperties = { position: 'absolute', top: '1rem', left: '1rem', right: '1rem', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' };
 const imageStyle: CSSProperties = { display: 'block', width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', opacity: 0.9, filter: 'brightness(1.16) contrast(1.05)' };
 const overlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.78) 100%)' };
