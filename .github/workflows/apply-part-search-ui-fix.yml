@@ -3,7 +3,7 @@ name: Apply part search UI fix
 on:
   push:
     branches:
-      - fix/part-search-typography-clean-button
+      - main
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: fix/part-search-typography-clean-button
+          ref: main
           fetch-depth: 0
 
       - name: Repair part search typography and controls
@@ -34,7 +34,7 @@ jobs:
           html = html.replace("'JetBrains Mono', monospace", "'Barlow Condensed', sans-serif")
           html = html.replace("'JetBrains Mono',monospace", "'Barlow Condensed',sans-serif")
 
-          for bad in ('SEARCH â†’', 'SEARCH →', 'SEARCH â†’', 'SEARCH â†’'):
+          for bad in ('SEARCH â†’', 'SEARCH →'):
               html = html.replace(bad, 'SEARCH')
           html = html.replace('<span class="input-icon" aria-hidden="true">âŒ•</span>', '')
 
@@ -183,4 +183,4 @@ jobs:
             exit 0
           fi
           git commit -m "Fix part search typography and clean search button [skip ui-fix]"
-          git push origin HEAD:fix/part-search-typography-clean-button
+          git push origin HEAD:main
