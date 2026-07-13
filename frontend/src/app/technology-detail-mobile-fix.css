@@ -1,0 +1,95 @@
+/* Mobile-only correction for individual technology detail heroes. */
+
+@media (max-width: 860px) {
+  #main-content > section:first-child {
+    min-height: auto !important;
+    padding: 3rem 0 2.5rem !important;
+    justify-content: flex-start !important;
+    background-size: 230px auto, cover, cover !important;
+    background-position: center 3.5rem, center, center !important;
+    background-repeat: no-repeat, no-repeat, no-repeat !important;
+  }
+
+  #main-content > section:first-child > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1.15rem !important;
+    box-sizing: border-box !important;
+  }
+
+  #main-content > section:first-child > div > div:first-child {
+    width: 230px !important;
+    height: 150px !important;
+    margin: 0 auto 1.5rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  #main-content > section:first-child p {
+    width: 100% !important;
+    max-width: 34rem !important;
+    margin: 0 auto 1.75rem !important;
+    padding: 0 !important;
+    text-align: left !important;
+    font-family: var(--font-body) !important;
+    font-size: 1rem !important;
+    line-height: 1.68 !important;
+    letter-spacing: normal !important;
+    color: rgba(255,255,255,0.78) !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty;
+  }
+
+  #main-content > section:first-child > div > div:last-child {
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  #main-content > section:first-child > div > div:last-child > div {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 34rem !important;
+    margin: 0 auto !important;
+    border-top: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  #main-content > section:first-child > div > div:last-child > div > div {
+    min-width: 0 !important;
+    padding: 1rem 0.55rem !important;
+    text-align: center !important;
+  }
+
+  #main-content > section:first-child > div > div:last-child > div > div + div {
+    border-left: 1px solid rgba(255,255,255,0.08) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  #main-content > section:first-child {
+    padding-top: 2.5rem !important;
+    background-size: 205px auto, cover, cover !important;
+    background-position: center 3rem, center, center !important;
+  }
+
+  #main-content > section:first-child > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  #main-content > section:first-child > div > div:first-child {
+    width: 205px !important;
+    height: 132px !important;
+    margin-bottom: 1.35rem !important;
+  }
+
+  #main-content > section:first-child p {
+    font-size: 0.97rem !important;
+    line-height: 1.64 !important;
+  }
+
+  #main-content > section:first-child > div > div:last-child > div > div {
+    padding: 0.9rem 0.35rem !important;
+  }
+}
