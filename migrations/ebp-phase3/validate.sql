@@ -104,3 +104,15 @@ SELECT s.id FROM ebp_manufacturer_excel_staging s
 -- regression test, this is a read-only sanity check that no CONSUMED row lacks consumed_at)
 SELECT id FROM ebp_manufacturer_excel_staging WHERE status = 'CONSUMED' AND consumed_at IS NULL;
 -- Expected: 0 rows
+
+-- 14. The centralized Batch effective-status view exists (ADR-0031)
+SELECT viewname FROM pg_views WHERE viewname = 'ebp_manufacturer_request_batches_effective';
+-- Expected: 1 row
+
+-- 15. Every factory session has a CSRF token (ADR-0033); the column is NOT NULL
+SELECT column_name, is_nullable
+FROM information_schema.columns
+WHERE table_name = 'ebp_factory_sessions' AND column_name = 'csrf_token';
+-- Expected: 1 row, is_nullable = 'NO'
+SELECT id FROM ebp_factory_sessions WHERE csrf_token IS NULL OR length(csrf_token) <> 64;
+-- Expected: 0 rows

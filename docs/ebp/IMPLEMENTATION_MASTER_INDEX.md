@@ -106,14 +106,18 @@ See ADR-0005.
   token needed, see the correction-round CHANGELOG entry). The project
   owner reviewed Phase 3 and required a mandatory correction round before
   any freeze; ADR-0030 (Postgres-persisted Excel staging), ADR-0031
-  (centralized effective `OVERDUE`, no cron required), and ADR-0032
-  (PEP-driven multi-field Offer form, Portal/Excel parity) are done;
-  CSRF protection, error-response sanitization, and cookie/session
+  (centralized effective `OVERDUE`, no cron required), ADR-0032
+  (PEP-driven multi-field Offer form, Portal/Excel parity — including a
+  fix to the Portal's own HTML offer form, which had not yet been
+  upgraded to match), and ADR-0033 (CSRF protection: session-bound
+  synchronizer token on every Portal form, a double-submit cookie for
+  the pre-session login form, `logout` changed from `GET` to `POST`) are
+  done; error-response sanitization and cookie/session-lifecycle
   hardening are still pending. The test suite has grown from 87 to
-  104 tests (counts confirmed by the `node --test` runner,
+  117 tests (counts confirmed by the `node --test` runner,
   `tests/ebp-phase3/`), all passing against a real local Postgres
   instance, with Phase 1's 59-test and Phase 2's 100-test suites
-  re-confirmed unmodified. Built with ADR-0023 through ADR-0032 — see
+  re-confirmed unmodified. Built with ADR-0023 through ADR-0033 — see
   `DECISIONS.md`. **Phase 3 will not be marked `APPROVED / FROZEN` until
   the full correction list is complete and re-audited. Phase 4
   (Engineering Compliance Validation) has not been started.**

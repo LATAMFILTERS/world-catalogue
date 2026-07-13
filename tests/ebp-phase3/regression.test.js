@@ -399,9 +399,10 @@ test('EBP Phase 3 — regression guards', async (t) => {
     );
     const userId = userRes.rows[0].id;
     const tokenHash = require('node:crypto').createHash('sha256').update(`session-dup-${suffix}-${Math.random()}`).digest('hex');
-    await pool.query(`INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at) VALUES ($1, $2, NOW() + interval '1 hour')`, [userId, tokenHash]);
+    const csrfToken = require('node:crypto').randomBytes(32).toString('hex');
+    await pool.query(`INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at, csrf_token) VALUES ($1, $2, NOW() + interval '1 hour', $3)`, [userId, tokenHash, csrfToken]);
     await assert.rejects(
-      () => pool.query(`INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at) VALUES ($1, $2, NOW() + interval '1 hour')`, [userId, tokenHash]),
+      () => pool.query(`INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at, csrf_token) VALUES ($1, $2, NOW() + interval '1 hour', $3)`, [userId, tokenHash, csrfToken]),
       (err) => {
         assert.equal(err.code, '23505');
         return true;

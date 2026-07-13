@@ -859,4 +859,53 @@ freeze entry.
   freeze declaration.
 - **Phase 4 was not started.**
 
+## 2026-07-13 — Phase 3 mandatory pre-freeze correction round (part 2): CSRF protection, and a real fix to the Portal's own offer form
+
+- **Found while implementing CSRF: the Portal's HTML offer form had never
+  actually been upgraded to the multi-field PEP model from part 1.** Part
+  1's ADR-0032 work updated the JSON API (`factory.routes.js`), `excel.js`,
+  and `service.js`'s validation, but `portal.routes.js`'s own
+  server-rendered `GET/POST .../offer` route was left on the original
+  single free-typed `field_name`/`offered_value` pair — meaning the
+  Portal's own HTML form, not just Excel/API clients, would have started
+  failing the new "every applicable field must be answered before
+  SUBMITTED" rule the moment a real Manufacturer used it for any product
+  with more than one applicable field. Fixed here (not a new correction
+  item, closing a gap in part 1's own delivery): the GET route now builds
+  one `<fieldset>` per `pepFields.getApplicableFields(item.
+  manufacturer_visible_snapshot)` entry (offered value/unit/tolerance/
+  completeness/note), field names are never editable inputs (rendered as
+  read-only labels, submitted as fixed form-field-name suffixes the
+  server already knows), and the form now has both "Save as Draft" and
+  "Submit Offer" buttons (`action=draft` omits `submit: true`, matching
+  the requirement that an incomplete Offer may be saved but not
+  submitted).
+- **ADR-0033 (CSRF protection).** Added `ebp/phase3/csrf.js`
+  (`generateCsrfToken`/`csrfTokensMatch`, the latter using
+  `crypto.timingSafeEqual` with a constant-time path even on a length
+  mismatch) and `migrations/ebp-phase3/004_session_csrf_token.sql`
+  (`ebp_factory_sessions.csrf_token`, backfilled then `NOT NULL`). Every
+  Portal form (offer submit, Excel upload, Excel confirm, logout) now
+  embeds a hidden `_csrf` field bound to the session; a `verifyCsrf`
+  middleware rejects any state-changing POST with a missing or
+  mismatched token (403, generic message, never logged). `POST /portal/
+  login` — which happens before any session exists — uses a separate
+  double-submit cookie (`ebp_login_csrf`) instead, compared against the
+  login form's own hidden field before credentials are even checked.
+  **`logout` changed from `GET` to `POST`** and is now its own tiny form,
+  not a plain link.
+- **Test suite.** 117 tests total (was 104): 3 new unit tests for
+  `csrf.js` (token randomness, match/no-match, never-throws on malformed
+  input) and 10 new integration tests covering valid/missing/incorrect
+  CSRF token on both the session-bound token (Excel upload, Excel
+  confirm) and the login double-submit cookie, plus the GET-logout-no-
+  longer-exists check. A pre-existing regression test that inserted a raw
+  `ebp_factory_sessions` row without a `csrf_token` was updated to supply
+  one (test-only fix, not a schema change) after the new `NOT NULL`
+  constraint correctly caught it. All 117 pass; Phase 1 (59) and Phase 2
+  (100) re-confirmed unmodified.
+- **Error-response sanitization and cookie/session hardening are still
+  pending** — the remaining two items of this correction round.
+- **Phase 4 was not started.**
+
 

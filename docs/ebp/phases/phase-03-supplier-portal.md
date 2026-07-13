@@ -655,6 +655,16 @@ Phase 2.
   `LOCKED_COLUMNS` (correctly pre-populated from the frozen Passport
   snapshot this time, never blank) since the Manufacturer must never
   type or alter which field a row answers.
+- ~~**Risk: no explicit CSRF protection on the Factory Portal's
+  cookie-authenticated state-changing actions.**~~ **Resolved in the
+  pre-freeze correction round (ADR-0033).** A cryptographically random,
+  session-bound synchronizer token is generated at login and embedded in
+  every server-rendered form (offer submit, Excel upload/confirm,
+  logout); a `verifyCsrf` middleware timing-safe-compares it before any
+  state-changing handler runs. `POST /portal/login` (before any session
+  exists) uses a separate double-submit cookie instead. `logout` moved
+  from `GET` to `POST`. `SameSite=Strict` on the session cookie remains
+  in place as defense in depth, never treated as sufficient on its own.
 - **Risk: the Factory Portal previously required the Manufacturer to call
   the Excel `stage`/`confirm` API endpoints directly (no UI) — resolved.**
   `ebp/phase3/portal.routes.js` now implements the full flow as

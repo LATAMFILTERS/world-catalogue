@@ -580,8 +580,32 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     return { cookie: `ebp_factory_session=${sessionToken}` };
   }
 
+  function multipartBody(boundary, fields, filePart) {
+    const parts = fields.map(
+      ([name, value]) => Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}\r\n`)
+    );
+    parts.push(
+      Buffer.from(
+        `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="${filePart.filename}"\r\nContent-Type: ${filePart.contentType}\r\n\r\n`
+      ),
+      filePart.buffer,
+      Buffer.from(`\r\n--${boundary}--\r\n`)
+    );
+    return Buffer.concat(parts);
+  }
+
   let portalExcelBuffer;
   let portalStagingId;
+  let portalCsrfToken;
+
+  await t.test('portal: a page render includes the session-bound CSRF token (ADR-0033)', async () => {
+    const res = await fetch(`${portalUrl}/dashboard`, { headers: portalCookie() });
+    assert.equal(res.status, 200);
+    const html = await res.text();
+    const match = html.match(/name="_csrf" value="([0-9a-f]{64})"/);
+    assert.ok(match, 'expected a 64-hex-char CSRF token embedded in the page');
+    portalCsrfToken = match[1];
+  });
 
   await t.test('portal: downloads the workbook template with no API knowledge required', async () => {
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/export`, { headers: portalCookie() });
@@ -590,7 +614,41 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     assert.ok(portalExcelBuffer.length > 0);
   });
 
-  await t.test('portal: uploading a completed workbook stages it and redirects straight to a human-readable review screen', async () => {
+  await t.test('portal: an Excel upload with a MISSING CSRF token is rejected (403), nothing staged', async () => {
+    const boundary = '----EbpPhase3CsrfMissingBoundary';
+    const body = multipartBody(boundary, [], {
+      filename: 'edited.xlsx',
+      contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      buffer: portalExcelBuffer,
+    });
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
+      body,
+    });
+    assert.equal(res.status, 403);
+    const html = await res.text();
+    assert.match(html, /Request Blocked/);
+  });
+
+  await t.test('portal: an Excel upload with an INCORRECT CSRF token is rejected (403), nothing staged', async () => {
+    const boundary = '----EbpPhase3CsrfWrongBoundary';
+    const body = multipartBody(boundary, [['_csrf', 'f'.repeat(64)]], {
+      filename: 'edited.xlsx',
+      contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      buffer: portalExcelBuffer,
+    });
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
+      body,
+    });
+    assert.equal(res.status, 403);
+    const html = await res.text();
+    assert.match(html, /Request Blocked/);
+  });
+
+  await t.test('portal: uploading a completed workbook with a VALID CSRF token stages it and redirects to a human-readable review screen', async () => {
     const ExcelJS = require('exceljs');
     const excel = require('../../ebp/phase3/excel');
     const wb = new ExcelJS.Workbook();
@@ -613,13 +671,11 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     const editedBuffer = Buffer.from(await wb.xlsx.writeBuffer());
 
     const boundary = '----EbpPhase3PortalBoundary';
-    const body = Buffer.concat([
-      Buffer.from(
-        `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="edited.xlsx"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n\r\n`
-      ),
-      editedBuffer,
-      Buffer.from(`\r\n--${boundary}--\r\n`),
-    ]);
+    const body = multipartBody(boundary, [['_csrf', portalCsrfToken]], {
+      filename: 'edited.xlsx',
+      contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      buffer: editedBuffer,
+    });
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
       method: 'POST',
       headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
@@ -634,11 +690,29 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     portalStagingId = res.url.split('/excel/preview/')[1];
   });
 
-  await t.test('portal: confirming from the review screen submits the offer and shows a human-readable success report (never storage_key/password_hash/token_hash)', async () => {
+  await t.test('portal: confirming with a MISSING CSRF token is rejected (403), no offer created', async () => {
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
       method: 'POST',
       headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
       body: `staging_id=${encodeURIComponent(portalStagingId)}`,
+    });
+    assert.equal(res.status, 403);
+  });
+
+  await t.test('portal: confirming with an INCORRECT CSRF token is rejected (403), no offer created', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
+      body: `staging_id=${encodeURIComponent(portalStagingId)}&_csrf=${'a'.repeat(64)}`,
+    });
+    assert.equal(res.status, 403);
+  });
+
+  await t.test('portal: confirming with a VALID CSRF token from the review screen submits the offer (never storage_key/password_hash/token_hash)', async () => {
+    const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
+      method: 'POST',
+      headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
+      body: `staging_id=${encodeURIComponent(portalStagingId)}&_csrf=${encodeURIComponent(portalCsrfToken)}`,
     });
     assert.equal(res.status, 200);
     const html = await res.text();
@@ -650,7 +724,7 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/confirm`, {
       method: 'POST',
       headers: { ...portalCookie(), 'content-type': 'application/x-www-form-urlencoded' },
-      body: `staging_id=${encodeURIComponent(portalStagingId)}`,
+      body: `staging_id=${encodeURIComponent(portalStagingId)}&_csrf=${encodeURIComponent(portalCsrfToken)}`,
     });
     assert.equal(res.status, 200);
     const html = await res.text();
@@ -668,13 +742,11 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     const tamperedBuffer = Buffer.from(await wb.xlsx.writeBuffer());
 
     const boundary = '----EbpPhase3PortalTamperBoundary';
-    const body = Buffer.concat([
-      Buffer.from(
-        `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="tampered.xlsx"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n\r\n`
-      ),
-      tamperedBuffer,
-      Buffer.from(`\r\n--${boundary}--\r\n`),
-    ]);
+    const body = multipartBody(boundary, [['_csrf', portalCsrfToken]], {
+      filename: 'tampered.xlsx',
+      contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      buffer: tamperedBuffer,
+    });
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel/upload`, {
       method: 'POST',
       headers: { ...portalCookie(), 'content-type': `multipart/form-data; boundary=${boundary}` },
@@ -690,6 +762,75 @@ test('EBP Phase 3 — Manufacturer Intake Portal integration', async (t) => {
     const res = await fetch(`${portalUrl}/batches/${batchCode}/excel`, { redirect: 'manual' });
     assert.equal(res.status, 302);
     assert.match(res.headers.get('location'), /\/portal\/login/);
+  });
+
+  // ── 9c. Factory Portal login CSRF (double-submit cookie, ADR-0033) ──────
+  // Login happens before any session exists, so it cannot use the
+  // session-bound synchronizer token above; it uses a separate
+  // double-submit cookie instead. Exercised against the real factory user
+  // created earlier (still ACTIVE at this point in the suite).
+
+  function extractSetCookie(res, name) {
+    const header = res.headers.get('set-cookie') || '';
+    const match = header.match(new RegExp(`${name}=([^;]+)`));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  let loginCsrfCookieValue;
+  let loginCsrfFieldValue;
+  await t.test('portal: GET /login sets a double-submit CSRF cookie matching the hidden form field', async () => {
+    const res = await fetch(`${portalUrl}/login`);
+    assert.equal(res.status, 200);
+    loginCsrfCookieValue = extractSetCookie(res, 'ebp_login_csrf');
+    assert.ok(loginCsrfCookieValue);
+    const html = await res.text();
+    const match = html.match(/name="_csrf" value="([0-9a-f]{64})"/);
+    assert.ok(match);
+    loginCsrfFieldValue = match[1];
+    assert.equal(loginCsrfCookieValue, loginCsrfFieldValue);
+  });
+
+  await t.test('portal: login with a MISSING CSRF field is rejected (redirected back to login, never authenticated)', async () => {
+    const res = await fetch(`${portalUrl}/login`, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { cookie: `ebp_login_csrf=${loginCsrfCookieValue}`, 'content-type': 'application/x-www-form-urlencoded' },
+      body: `email=${encodeURIComponent(factoryEmail)}&password=${encodeURIComponent('a-very-strong-password-123')}`,
+    });
+    assert.equal(res.status, 302);
+    assert.match(res.headers.get('location'), /error=csrf/);
+    assert.equal(res.headers.get('set-cookie') || '', ''); // no session cookie issued
+  });
+
+  await t.test('portal: login with an INCORRECT CSRF field (mismatched with the cookie) is rejected', async () => {
+    const res = await fetch(`${portalUrl}/login`, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { cookie: `ebp_login_csrf=${loginCsrfCookieValue}`, 'content-type': 'application/x-www-form-urlencoded' },
+      body: `email=${encodeURIComponent(factoryEmail)}&password=${encodeURIComponent('a-very-strong-password-123')}&_csrf=${'0'.repeat(64)}`,
+    });
+    assert.equal(res.status, 302);
+    assert.match(res.headers.get('location'), /error=csrf/);
+  });
+
+  await t.test('portal: login with a VALID matching CSRF field succeeds and issues a session cookie', async () => {
+    const res = await fetch(`${portalUrl}/login`, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { cookie: `ebp_login_csrf=${loginCsrfCookieValue}`, 'content-type': 'application/x-www-form-urlencoded' },
+      body: `email=${encodeURIComponent(factoryEmail)}&password=${encodeURIComponent('a-very-strong-password-123')}&_csrf=${loginCsrfFieldValue}`,
+    });
+    assert.equal(res.status, 302);
+    assert.match(res.headers.get('location'), /\/portal\/dashboard/);
+    assert.match(res.headers.get('set-cookie') || '', /ebp_factory_session=/);
+  });
+
+  await t.test('portal: logout is a POST (never GET) and requires a valid CSRF token', async () => {
+    const getRes = await fetch(`${portalUrl}/logout`, { headers: portalCookie(), redirect: 'manual' });
+    assert.notEqual(getRes.status, 200); // no GET /logout route exists any more (ADR-0033: state-changing action must be POST)
+
+    const missingRes = await fetch(`${portalUrl}/logout`, { method: 'POST', headers: portalCookie() });
+    assert.equal(missingRes.status, 403);
   });
 
   // ── 10. Batch close / cancel ─────────────────────────────────────────────

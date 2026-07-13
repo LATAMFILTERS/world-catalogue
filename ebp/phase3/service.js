@@ -15,6 +15,7 @@ const validation = require('./validation');
 const repository = require('./repository');
 const codes = require('./codes');
 const factoryAuth = require('./factory-auth');
+const csrf = require('./csrf');
 const { toManufacturerPassportDTO } = require('../phase1/dto');
 
 class ValidationError extends Error {
@@ -440,7 +441,8 @@ async function login(pool, email, password, requestMeta = {}) {
   await repository.insertAuditLog(pool, user.id, 'LOGIN_SUCCESS', requestMeta.ip, {});
 
   const { raw, hash } = factoryAuth.generateOpaqueToken();
-  await repository.insertSession(pool, user.id, hash, factoryAuth.sessionExpiryFromNow(), requestMeta.ip, requestMeta.userAgent);
+  const csrfToken = csrf.generateCsrfToken();
+  await repository.insertSession(pool, user.id, hash, factoryAuth.sessionExpiryFromNow(), requestMeta.ip, requestMeta.userAgent, csrfToken);
   return { user, sessionToken: raw };
 }
 
@@ -454,7 +456,7 @@ async function resolveSession(pool, rawToken) {
   const session = await repository.fetchLiveSessionByHash(pool, hash);
   if (!session || session.user_status === 'DISABLED') return null;
   await repository.touchSession(pool, session.id);
-  return { factory_user_id: session.factory_user_id, manufacturer_id: session.manufacturer_id, role: session.role };
+  return { factory_user_id: session.factory_user_id, manufacturer_id: session.manufacturer_id, role: session.role, csrf_token: session.csrf_token };
 }
 
 module.exports = {

@@ -10,6 +10,7 @@ const codes = require('../../ebp/phase3/codes');
 const factoryAuth = require('../../ebp/phase3/factory-auth');
 const validation = require('../../ebp/phase3/validation');
 const dto = require('../../ebp/phase3/dto');
+const csrf = require('../../ebp/phase3/csrf');
 
 // ── Batch/Offer code generation ─────────────────────────────────────────────
 
@@ -58,6 +59,33 @@ test('two generated tokens are never equal (cryptographically random)', () => {
   const a = factoryAuth.generateOpaqueToken();
   const b = factoryAuth.generateOpaqueToken();
   assert.notEqual(a.raw, b.raw);
+});
+
+// ── CSRF synchronizer token (ADR-0033) ──────────────────────────────────────
+
+test('generateCsrfToken: 64 hex characters (32 random bytes), two calls never equal', () => {
+  const a = csrf.generateCsrfToken();
+  const b = csrf.generateCsrfToken();
+  assert.match(a, /^[0-9a-f]{64}$/);
+  assert.match(b, /^[0-9a-f]{64}$/);
+  assert.notEqual(a, b);
+});
+
+test('csrfTokensMatch: identical tokens match, a single differing character does not', () => {
+  const token = csrf.generateCsrfToken();
+  assert.equal(csrf.csrfTokensMatch(token, token), true);
+  const flipped = `0${token.slice(1)}` === token ? `1${token.slice(1)}` : `0${token.slice(1)}`;
+  assert.equal(csrf.csrfTokensMatch(token, flipped), false);
+});
+
+test('csrfTokensMatch: never throws on missing, non-string, or length-mismatched input', () => {
+  const token = csrf.generateCsrfToken();
+  assert.equal(csrf.csrfTokensMatch(token, undefined), false);
+  assert.equal(csrf.csrfTokensMatch(undefined, token), false);
+  assert.equal(csrf.csrfTokensMatch(token, ''), false);
+  assert.equal(csrf.csrfTokensMatch(token, 'short'), false);
+  assert.equal(csrf.csrfTokensMatch(token, 123), false);
+  assert.equal(csrf.csrfTokensMatch(null, null), false);
 });
 
 // ── Batch status state machine ──────────────────────────────────────────────

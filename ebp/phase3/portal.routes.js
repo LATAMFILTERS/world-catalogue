@@ -14,8 +14,11 @@ const excel = require('./excel');
 const staging = require('./staging');
 const validation = require('./validation');
 const dto = require('./dto');
+const csrf = require('./csrf');
+const pepFields = require('./pep-fields');
 
 const SESSION_COOKIE = 'ebp_factory_session';
+const LOGIN_CSRF_COOKIE = 'ebp_login_csrf';
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: validation.MAX_DOCUMENT_SIZE_BYTES } });
 
 function escapeHtml(value) {
@@ -45,7 +48,33 @@ function clearSessionCookie(res) {
   res.set('Set-Cookie', `${SESSION_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal; Max-Age=0`);
 }
 
-function layout(title, bodyHtml) {
+// Double-submit cookie for the pre-session /portal/login form (there is no
+// session yet at that point, so the synchronizer-token pattern used
+// everywhere else does not apply). The cookie value is never read by
+// client JS — the browser simply re-attaches it automatically, and the
+// server compares it against the hidden form field it rendered alongside
+// it, so a cross-site forged form (which cannot read this cookie) can
+// never supply a matching field value.
+function setLoginCsrfCookie(res, token) {
+  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  res.set('Set-Cookie', `${LOGIN_CSRF_COOKIE}=${encodeURIComponent(token)}; HttpOnly; SameSite=Strict; Path=/portal/login; Max-Age=600${secure}`);
+}
+
+function clearLoginCsrfCookie(res) {
+  res.set('Set-Cookie', `${LOGIN_CSRF_COOKIE}=; HttpOnly; SameSite=Strict; Path=/portal/login; Max-Age=0`);
+}
+
+// csrfToken, when present, renders "Log out" as its own tiny POST form
+// (logout is a state-changing action and must never be a GET link) with
+// the session's synchronizer token attached. Omitted entirely when there
+// is no session (e.g. the login page itself).
+function layout(title, bodyHtml, csrfToken) {
+  const logoutControl = csrfToken
+    ? `<form method="post" action="/portal/logout" style="display:inline;margin:0;padding:0;max-width:none;width:auto;">
+  <input type="hidden" name="_csrf" value="${escapeHtml(csrfToken)}">
+  <button type="submit" style="all:unset;cursor:pointer;color:#FFF12D;font:inherit;">Log out</button>
+</form>`
+    : '';
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -68,11 +97,32 @@ function layout(title, bodyHtml) {
 </style>
 </head>
 <body>
-<nav><a href="/portal/dashboard">Dashboard</a> <a href="/portal/logout">Log out</a></nav>
+<nav><a href="/portal/dashboard">Dashboard</a> ${logoutControl}</nav>
 <h1>${escapeHtml(title)}</h1>
 ${bodyHtml}
 </body>
 </html>`;
+}
+
+// Applied to every state-changing (non-login) POST route. Must run after
+// the auth-gate middleware (req.factorySession) and after body parsing
+// (req.body._csrf). Rejects with a generic, safe message — never
+// reflects the submitted or expected token back to the client, and never
+// logs either value.
+function verifyCsrf(req, res, next) {
+  const submitted = (req.body || {})._csrf;
+  if (!csrf.csrfTokensMatch(req.factorySession.csrf_token, submitted)) {
+    return res
+      .status(403)
+      .send(
+        layout(
+          'Request Blocked',
+          '<p class="error">This request could not be verified. Go back, refresh the page, and try again.</p>',
+          req.factorySession.csrf_token
+        )
+      );
+  }
+  next();
 }
 
 function createPortalRouter(pool) {
@@ -95,12 +145,15 @@ function createPortalRouter(pool) {
   });
 
   router.get('/login', (req, res) => {
-    const error = req.query.error ? '<p class="error">Invalid email or password.</p>' : '';
+    const error = req.query.error === 'csrf' ? '<p class="error">Your session expired. Please try again.</p>' : req.query.error ? '<p class="error">Invalid email or password.</p>' : '';
+    const loginCsrfToken = csrf.generateCsrfToken();
+    setLoginCsrfCookie(res, loginCsrfToken);
     res.send(
       layout(
         'Log in',
         `${error}
 <form method="post" action="/portal/login">
+  <input type="hidden" name="_csrf" value="${escapeHtml(loginCsrfToken)}">
   <label>Email<input type="email" name="email" required></label>
   <label>Password<input type="password" name="password" required></label>
   <button type="submit">Log in</button>
@@ -110,6 +163,11 @@ function createPortalRouter(pool) {
   });
 
   router.post('/login', express.urlencoded({ extended: false }), async (req, res) => {
+    const cookies = parseCookies(req);
+    if (!csrf.csrfTokensMatch(cookies[LOGIN_CSRF_COOKIE], (req.body || {})._csrf)) {
+      return res.redirect('/portal/login?error=csrf');
+    }
+    clearLoginCsrfCookie(res);
     try {
       const { email, password } = req.body || {};
       const { sessionToken } = await service.login(pool, email, password, { ip: req.ip, userAgent: req.get('user-agent') });
@@ -120,7 +178,7 @@ function createPortalRouter(pool) {
     }
   });
 
-  router.get('/logout', async (req, res) => {
+  router.post('/logout', express.urlencoded({ extended: false }), verifyCsrf, async (req, res) => {
     const cookies = parseCookies(req);
     const token = cookies[SESSION_COOKIE];
     if (token) {
@@ -145,7 +203,8 @@ function createPortalRouter(pool) {
     res.send(
       layout(
         'Your Batches',
-        `<table><thead><tr><th>Batch</th><th>Purpose</th><th>Status</th><th>Response Due</th></tr></thead><tbody>${rows}</tbody></table>`
+        `<table><thead><tr><th>Batch</th><th>Purpose</th><th>Status</th><th>Response Due</th></tr></thead><tbody>${rows}</tbody></table>`,
+        req.factorySession.csrf_token
       )
     );
   });
@@ -168,68 +227,107 @@ function createPortalRouter(pool) {
           `Batch ${batch.batch_code}`,
           `<p>Purpose: ${escapeHtml(batch.purpose)} · Status: <span class="status">${escapeHtml(batch.effective_status || batch.status)}</span> · Due: ${escapeHtml(batch.response_due_at || '—')}</p>` +
             `<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Excel export/import</a></p>` +
-            `<table><thead><tr><th>Product</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table>`
+            `<table><thead><tr><th>Product</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table>`,
+          req.factorySession.csrf_token
         )
       );
     } catch {
-      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
   });
 
+  // Looks up a single Batch Item by id from the tenant-scoped item list —
+  // there is no dedicated single-item service function, and the list is
+  // already tenant/batch-scoped via getBatchForManufacturer + listBatchItems.
+  async function findOwnBatchItem(batchCode, manufacturerId, itemId) {
+    await service.getBatchForManufacturer(pool, batchCode, manufacturerId);
+    const items = await service.listBatchItems(pool, batchCode);
+    return items.find((i) => i.id === itemId) || null;
+  }
+
   router.get('/batches/:batch_code/items/:item_id/offer', async (req, res) => {
     try {
-      await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+      const item = await findOwnBatchItem(req.params.batch_code, req.factorySession.manufacturer_id, req.params.item_id);
+      if (!item) return res.status(404).send(layout('Not Found', '<p>Product not found in this batch.</p>', req.factorySession.csrf_token));
+      const fields = pepFields.getApplicableFields(item.manufacturer_visible_snapshot);
       const error = req.query.error ? `<p class="error">${escapeHtml(req.query.error)}</p>` : '';
-      res.send(
-        layout(
-          'Submit Offer',
-          `${error}
-<form method="post" action="/portal/batches/${escapeHtml(req.params.batch_code)}/items/${escapeHtml(req.params.item_id)}/offer">
-  <label>FOB Price (decimal, e.g. 12.50)<input type="text" name="fob_price" required pattern="-?\\d+(\\.\\d+)?"></label>
-  <label>Currency (3-letter)<input type="text" name="currency" maxlength="3" required></label>
-  <label>MOQ<input type="number" name="moq"></label>
-  <label>Lead time (days)<input type="number" name="lead_time_days"></label>
-  <label>Field name<input type="text" name="field_name" required></label>
+      const fieldBlocks = fields
+        .map(
+          (f) => `<fieldset style="border:1px solid #333;margin-bottom:1rem;padding:1rem;">
+  <legend>${escapeHtml(f.label)}${f.unit ? ` (${escapeHtml(f.unit)})` : ''}</legend>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;">ELIMFILTERS-required: ${escapeHtml(f.required_value ?? '—')}${
+            f.required_tolerance ? ` &#177; ${escapeHtml(f.required_tolerance)}` : ''
+          }${f.instructions ? ` — ${escapeHtml(f.instructions)}` : ''}</p>
+  <label>Offered value<input type="text" name="tf_${escapeHtml(f.field_name)}_value"></label>
+  <label>Offered unit<input type="text" name="tf_${escapeHtml(f.field_name)}_unit" value="${escapeHtml(f.unit || '')}"></label>
+  <label>Offered tolerance<input type="text" name="tf_${escapeHtml(f.field_name)}_tolerance"></label>
   <label>Completeness
-    <select name="completeness_status">
+    <select name="tf_${escapeHtml(f.field_name)}_status">
+      <option value="">— choose —</option>
       <option value="ANSWERED">Answered</option>
       <option value="CANNOT_MEET">Cannot meet</option>
       <option value="NOT_APPLICABLE">Not applicable</option>
     </select>
   </label>
-  <label>Offered value<input type="text" name="offered_value"></label>
-  <label>Note<textarea name="manufacturer_note"></textarea></label>
-  <button type="submit">Submit Offer</button>
-</form>`
+  <label>Note<textarea name="tf_${escapeHtml(f.field_name)}_note"></textarea></label>
+</fieldset>`
+        )
+        .join('');
+      res.send(
+        layout(
+          'Submit Offer',
+          `${error}
+<p>Answer every applicable field below exactly as defined in this product's Engineering Passport. Field names are fixed by ELIMFILTERS and cannot be edited. You may save an incomplete response as a Draft, but every field must have an explicit answer before submitting.</p>
+<form method="post" action="/portal/batches/${escapeHtml(req.params.batch_code)}/items/${escapeHtml(req.params.item_id)}/offer">
+  <input type="hidden" name="_csrf" value="${escapeHtml(req.factorySession.csrf_token)}">
+  <label>FOB Price (decimal, e.g. 12.50)<input type="text" name="fob_price" required pattern="-?\\d+(\\.\\d+)?"></label>
+  <label>Currency (3-letter)<input type="text" name="currency" maxlength="3" required></label>
+  <label>MOQ<input type="number" name="moq"></label>
+  <label>Lead time (days)<input type="number" name="lead_time_days"></label>
+  <h3>Technical fields</h3>
+  ${fieldBlocks || '<p>No applicable technical fields for this product.</p>'}
+  <button type="submit" name="action" value="draft">Save as Draft</button>
+  <button type="submit" name="action" value="submit">Submit Offer</button>
+</form>`,
+          req.factorySession.csrf_token
         )
       );
     } catch {
-      res.status(404).send(layout('Not Found', '<p>Batch or item not found.</p>'));
+      res.status(404).send(layout('Not Found', '<p>Batch or item not found.</p>', req.factorySession.csrf_token));
     }
   });
 
-  router.post('/batches/:batch_code/items/:item_id/offer', express.urlencoded({ extended: false }), async (req, res) => {
+  router.post('/batches/:batch_code/items/:item_id/offer', express.urlencoded({ extended: false }), verifyCsrf, async (req, res) => {
     try {
-      await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
+      const item = await findOwnBatchItem(req.params.batch_code, req.factorySession.manufacturer_id, req.params.item_id);
+      if (!item) throw new Error('item not found');
+      const applicableFields = pepFields.getApplicableFields(item.manufacturer_visible_snapshot);
       const body = req.body || {};
+      const technicalFields = applicableFields
+        .map((f) => {
+          const status = body[`tf_${f.field_name}_status`];
+          if (!status) return null; // left blank — omitted; SUBMITTED will be rejected server-side if this field is required
+          return {
+            field_name: f.field_name,
+            offered_value: body[`tf_${f.field_name}_value`] || null,
+            unit: body[`tf_${f.field_name}_unit`] || null,
+            tolerance: body[`tf_${f.field_name}_tolerance`] || null,
+            completeness_status: status,
+            manufacturer_note: body[`tf_${f.field_name}_note`] || null,
+          };
+        })
+        .filter(Boolean);
       await service.createOfferRevision(
         pool,
         req.params.batch_code,
         req.params.item_id,
         {
-          submit: true,
+          submit: body.action === 'submit',
           fob_price: body.fob_price,
           currency: body.currency,
           moq: body.moq ? Number(body.moq) : undefined,
           lead_time_days: body.lead_time_days ? Number(body.lead_time_days) : undefined,
-          technical_fields: [
-            {
-              field_name: body.field_name,
-              offered_value: body.offered_value,
-              completeness_status: body.completeness_status,
-              manufacturer_note: body.manufacturer_note || null,
-            },
-          ],
+          technical_fields: technicalFields,
         },
         { declared_actor: req.factorySession.factory_user_id, identity_mechanism: 'FACTORY_SESSION', factory_user_id: req.factorySession.factory_user_id }
       );
@@ -279,13 +377,15 @@ function createPortalRouter(pool) {
 <p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel/export">1. Download the current workbook</a> — fill in the editable (unshaded) columns only.</p>
 <p>2. Upload your completed workbook below. It is checked and staged for your review before anything is submitted.</p>
 <form method="post" action="/portal/batches/${escapeHtml(batch.batch_code)}/excel/upload" enctype="multipart/form-data">
+  <input type="hidden" name="_csrf" value="${escapeHtml(req.factorySession.csrf_token)}">
   <label>Completed workbook (.xlsx)<input type="file" name="file" accept=".xlsx" required></label>
   <button type="submit">Upload &amp; Review</button>
-</form>`
+</form>`,
+          req.factorySession.csrf_token
         )
       );
     } catch {
-      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
   });
 
@@ -298,16 +398,16 @@ function createPortalRouter(pool) {
       res.set('Content-Disposition', `attachment; filename="${batch.batch_code}.xlsx"`);
       res.send(Buffer.from(buffer));
     } catch {
-      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
   });
 
-  router.post('/batches/:batch_code/excel/upload', upload.single('file'), async (req, res) => {
+  router.post('/batches/:batch_code/excel/upload', upload.single('file'), verifyCsrf, async (req, res) => {
     let batch;
     try {
       batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
     } catch {
-      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
     if (!req.file) {
       return res.redirect(`/portal/batches/${encodeURIComponent(req.params.batch_code)}/excel?error=${encodeURIComponent('Choose a .xlsx file to upload.')}`);
@@ -336,7 +436,7 @@ function createPortalRouter(pool) {
     try {
       batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
     } catch {
-      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
     const staged = await staging.peek(pool, req.params.staging_id, batch.id, req.factorySession.manufacturer_id);
     if (!staged) {
@@ -344,7 +444,8 @@ function createPortalRouter(pool) {
         layout(
           'Upload Expired',
           `<p class="error">This staged upload was not found or has expired. Please upload the workbook again.</p>
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`,
+          req.factorySession.csrf_token
         )
       );
     }
@@ -353,7 +454,8 @@ function createPortalRouter(pool) {
         layout(
           'Already Handled',
           `<p>This staged upload has already been ${escapeHtml(staged.status.toLowerCase())}.</p>
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`,
+          req.factorySession.csrf_token
         )
       );
     }
@@ -363,7 +465,8 @@ function createPortalRouter(pool) {
           'Upload Rejected',
           `<p class="error">This workbook could not be staged. Nothing was submitted.</p>
 ${renderErrorReport(staged.errors_json)}
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Upload a corrected workbook</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Upload a corrected workbook</a></p>`,
+          req.factorySession.csrf_token
         )
       );
     }
@@ -382,19 +485,21 @@ ${renderErrorReport(staged.errors_json)}
 ${itemBlocks}
 <form method="post" action="/portal/batches/${escapeHtml(batch.batch_code)}/excel/confirm">
   <input type="hidden" name="staging_id" value="${escapeHtml(req.params.staging_id)}">
+  <input type="hidden" name="_csrf" value="${escapeHtml(req.factorySession.csrf_token)}">
   <button type="submit">Confirm &amp; Submit Offers</button>
 </form>
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Discard and upload a different file</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Discard and upload a different file</a></p>`,
+        req.factorySession.csrf_token
       )
     );
   });
 
-  router.post('/batches/:batch_code/excel/confirm', express.urlencoded({ extended: false }), async (req, res) => {
+  router.post('/batches/:batch_code/excel/confirm', express.urlencoded({ extended: false }), verifyCsrf, async (req, res) => {
     let batch;
     try {
       batch = await service.getBatchForManufacturer(pool, req.params.batch_code, req.factorySession.manufacturer_id);
     } catch {
-      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>'));
+      return res.status(404).send(layout('Not Found', '<p>Batch not found.</p>', req.factorySession.csrf_token));
     }
     const { staging_id: stagingId } = req.body || {};
     const preview = await staging.take(pool, stagingId, batch.id, req.factorySession.manufacturer_id);
@@ -403,7 +508,8 @@ ${itemBlocks}
         layout(
           'Could Not Confirm',
           `<p class="error">This staged upload is invalid, expired, or was already confirmed. Please upload the workbook again.</p>
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}/excel">Back to Excel upload</a></p>`,
+          req.factorySession.csrf_token
         )
       );
     }
@@ -443,7 +549,8 @@ ${itemBlocks}
         itemErrors.length ? 'Submitted With Errors' : 'Offers Submitted',
         `${results.length ? `<h3>Submitted</h3><table><thead><tr><th>Offer</th><th>Product</th><th>Status</th></tr></thead><tbody>${successRows}</tbody></table>` : ''}
 ${itemErrors.length ? `<h3 class="error">Rejected</h3><table><thead><tr><th>Product</th><th>Reason</th></tr></thead><tbody>${errorRows}</tbody></table>` : ''}
-<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`
+<p><a href="/portal/batches/${escapeHtml(batch.batch_code)}">Back to batch</a></p>`,
+        req.factorySession.csrf_token
       )
     );
   });

@@ -1741,3 +1741,79 @@ applicable field, with the Manufacturer never able to write or alter
   table, and no new Phase 3 column was required to store per-field
   metadata (label/unit/tolerance) since `pep-fields.js` derives it from
   data already present in the snapshot plus a static registry.
+
+## ADR-0033 — CSRF protection for the Factory Portal: session-bound synchronizer token, plus a double-submit cookie for the pre-session login form
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The Factory Portal (`ebp/phase3/portal.routes.js`) authenticates
+via an `HttpOnly`/`SameSite=Strict` cookie (ADR-0029), but had no explicit
+CSRF protection on any of its state-changing POST actions (offer submit,
+Excel stage/confirm, document upload, login, logout). `SameSite=Strict`
+alone was not accepted as sufficient by the project owner — it is defense
+in depth, not a substitute for an explicit token, given older browsers,
+non-navigational cross-scheme requests, and the possibility of a future
+cookie-policy change silently removing the only protection. Logout was
+also a `GET` route, which is itself a CSRF-adjacent defect (a
+state-changing action must never be reachable via a plain link/prefetch).
+
+**Decision:**
+1. **Synchronizer token for every authenticated action.** A
+   cryptographically random token (`crypto.randomBytes(32).toString
+   ('hex')`, `ebp/phase3/csrf.js`) is generated once at login and stored
+   on the session row (`ebp_factory_sessions.csrf_token`, migration
+   `004_session_csrf_token.sql`) — bound to the session, not to a single
+   request. Every server-rendered form (offer submit, Excel upload,
+   Excel confirm, logout) embeds it as a hidden `_csrf` field. Every
+   state-changing route runs a `verifyCsrf` middleware that compares the
+   submitted field against the session's stored token using
+   `crypto.timingSafeEqual` (`csrf.csrfTokensMatch`), including a
+   constant-time path for a length mismatch so a wrong-length guess does
+   not complete faster than a correctly-sized wrong guess. On failure:
+   HTTP 403, a generic "could not be verified" message, and the failure
+   is never logged with either the submitted or expected token value.
+2. **`logout` changed from `GET` to `POST`,** rendered as its own tiny
+   form (styled inline to look like a link) rather than an anchor tag —
+   it is a state-changing action and must require the same CSRF token as
+   any other.
+3. **Login's pre-session double-submit cookie.** `POST /portal/login`
+   happens before any session exists, so the synchronizer-token pattern
+   above does not apply. `GET /portal/login` instead sets a short-lived
+   (`Max-Age=600`), `HttpOnly`, `SameSite=Strict` cookie
+   (`ebp_login_csrf`) and embeds the identical value as a hidden `_csrf`
+   field on the login form. `POST /portal/login` compares the two (still
+   via the same timing-safe comparison) before ever touching credentials
+   or calling `service.login`; on mismatch it redirects to
+   `/portal/login?error=csrf` without revealing whether the submitted
+   email/password would otherwise have been valid. This is a standard
+   double-submit defense: a cross-site forged form cannot read the
+   victim's browser's cookie value (same-origin policy), so it can never
+   supply a matching `_csrf` field, even without any client-side
+   JavaScript.
+4. **Never a second source of truth for the token.** The token is never
+   returned by the factory-facing JSON API (`factory.routes.js`) — that
+   surface authenticates via a `Bearer` header, which a browser never
+   auto-attaches cross-site, so it is not subject to classic CSRF in the
+   same way and is out of scope for this ADR by design (the project
+   owner's requirement was specifically about "the Factory Portal," the
+   cookie-based surface).
+
+**Consequences:**
+- Every previously-existing Portal form (offer submit, Excel upload,
+  Excel confirm) and the new logout form all carry the token; a request
+  missing it, or carrying a mismatched one, is rejected before any
+  business logic (offer creation, staging, session revocation) executes.
+- Verified by test: valid, missing, and incorrect token cases for both
+  the session-bound token (Excel upload/confirm, logout) and the
+  pre-session double-submit cookie (login) — twelve dedicated CSRF tests
+  in `tests/ebp-phase3/integration.test.js`, plus three pure-function unit
+  tests for `csrf.js` itself (`tests/ebp-phase3/unit.test.js`).
+- `migrations/ebp-phase3/004_session_csrf_token.sql` backfills any
+  pre-existing session row (there should be none in a fresh environment,
+  but the migration is safe against a populated one) before making the
+  column `NOT NULL`.
+- This ADR does not by itself address cookie/session attribute hardening
+  (`Secure` outside production, `Path` scoping, session revocation on
+  password change) — that is tracked as a separate, subsequent item in
+  this same correction round.

@@ -490,11 +490,11 @@ async function markInvitationUsed(pool, invitationId) {
   await pool.query('UPDATE ebp_factory_user_invitations SET used_at = NOW() WHERE id = $1', [invitationId]);
 }
 
-async function insertSession(pool, factoryUserId, tokenHash, expiresAt, ipAddress, userAgent) {
+async function insertSession(pool, factoryUserId, tokenHash, expiresAt, ipAddress, userAgent, csrfToken) {
   const { rows } = await pool.query(
-    `INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at, ip_address, user_agent)
-     VALUES ($1,$2,$3,$4,$5) RETURNING *`,
-    [factoryUserId, tokenHash, expiresAt, ipAddress || null, userAgent || null]
+    `INSERT INTO ebp_factory_sessions (factory_user_id, token_hash, expires_at, ip_address, user_agent, csrf_token)
+     VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`,
+    [factoryUserId, tokenHash, expiresAt, ipAddress || null, userAgent || null, csrfToken]
   );
   return rows[0];
 }
