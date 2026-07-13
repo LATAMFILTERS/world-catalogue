@@ -45,8 +45,7 @@ export default function TechnologiesPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>THE DIFFERENCE</p>
-            <h2 style={sectionTitle}>Products replace parts. Technologies control failure.</h2>
+            <h2 style={whyTitle}>Products replace parts Technologies control failure</h2>
           </div>
           <div>
             <p style={leadText}>A product number tells you what fits. A technology tells you why the asset is being protected and what operating risk is being reduced.</p>
@@ -81,6 +80,7 @@ export default function TechnologiesPage() {
 
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
+const approvedDisplayFont = "'Chakra Petch', 'Arial Narrow', monospace";
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 const homeButton: CSSProperties = {
@@ -123,6 +123,7 @@ const tag: CSSProperties = {
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
+const whyTitle: CSSProperties = { fontFamily: approvedDisplayFont, fontSize: 'clamp(2.04rem, 4.08vw, 3.67rem)', lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
