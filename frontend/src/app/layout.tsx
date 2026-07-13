@@ -10,6 +10,7 @@ import './core-systems-editorial.css';
 import './air-intake-narrative-section-fix.css';
 import './industries-risk-title-tweak.css';
 import './commercial-knowledge-visibility-guard.css';
+import './mobile-aesthetic-polish.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import Analytics from '@/components/Analytics';
