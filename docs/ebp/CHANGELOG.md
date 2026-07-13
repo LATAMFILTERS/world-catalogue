@@ -314,9 +314,8 @@ The project owner formally approved Phase 0. Recorded as ADR-0013 in
   `APPROVED / FROZEN v1.0` with approval date, branch, and a pointer to
   this entry for the closing commit hash; Exit Criteria checked off.
 - **Branch:** `claude/phase-0-audit-review-wanxa3`.
-- **Closing commit:** `<PENDING — filled in by the immediately following
-  commit that records this entry; see git history for
-  "docs: ebp: Approve and freeze Phase 0 as v1.0" on this branch>`.
+- **Closing commit:** `cd1a9a78` ("docs: ebp: Final governance decisions
+  and approve/freeze Phase 0 v1.0").
 - **No production code was written in this change.** Phase 1
   implementation begins in the next change, per the project owner's
   explicit authorization in this same approval.

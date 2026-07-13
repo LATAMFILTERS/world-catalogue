@@ -555,9 +555,9 @@ batches or too permissive for urgent ones.
 **Date:** 2026-07-13
 **Status:** Accepted
 **Branch:** `claude/phase-0-audit-review-wanxa3`
-**Closing commit:** see `CHANGELOG.md`'s "Phase 0 approved and frozen —
-v1.0" entry for this date, which names the exact commit hash once
-committed.
+**Closing commit:** `cd1a9a78` ("docs: ebp: Final governance decisions
+and approve/freeze Phase 0 v1.0") — see `CHANGELOG.md`'s "Phase 0
+approved and frozen — v1.0" entry for this date.
 
 **Context:** Phase 0 was reviewed three times by the project owner: an
 initial review that rejected the original Supplier-based domain model

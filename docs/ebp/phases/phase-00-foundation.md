@@ -6,8 +6,8 @@ rounds (ADR-0005/ADR-0006; ADR-0007/ADR-0008/ADR-0009) and a final
 governance-decisions round (ADR-0010/ADR-0011/ADR-0012). See ADR-0013 in
 `DECISIONS.md`.
 **Branch:** `claude/phase-0-audit-review-wanxa3`
-**Closing commit:** see the "Phase 0 approved and frozen — v1.0" entry in
-`CHANGELOG.md` for this date, which names the exact commit hash.
+**Closing commit:** `cd1a9a78` ("docs: ebp: Final governance decisions
+and approve/freeze Phase 0 v1.0").
 **Depends on:** Nothing
 **Blocks:** All other phases
 
