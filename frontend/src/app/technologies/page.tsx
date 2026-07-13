@@ -34,11 +34,6 @@ export default function TechnologiesPage() {
           <p style={heroLead}>
             ELIMFILTERS® technologies are engineering architectures mapped to protected systems, contamination risks, and industrial duty cycles.
           </p>
-          <div style={tagRow}>
-            {['AIR', 'FUEL', 'WATER', 'LUBE', 'HYDRAULIC', 'COOLING', 'CABIN'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -113,12 +108,6 @@ const heroTitle: CSSProperties = {
 const heroLead: CSSProperties = {
   marginTop: '2rem', maxWidth: '780px', color: 'rgba(255,255,255,0.76)',
   fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
-};
-const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
-const tag: CSSProperties = {
-  border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem',
-  fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase',
-  letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)',
 };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)' };
