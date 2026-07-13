@@ -32,7 +32,7 @@ export function Hero({
   const ctaRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const normalizedSubtitle = subtitle?.trim().replace(/\.$/, '');
-  const isApprovedAssetSubtitle = normalizedSubtitle === 'MINING ASSETS' || normalizedSubtitle === 'AGRICULTURAL ASSETS' || normalizedSubtitle === 'CONSTRUCTION ASSETS';
+  const isApprovedAssetSubtitle = normalizedSubtitle?.endsWith(' ASSETS') || false;
 
   useEffect(() => {
     const elements = [
@@ -147,14 +147,7 @@ export function Hero({
               gap: '0.75rem',
             }}
           >
-            <span
-              style={{
-                display: 'inline-block',
-                width: '32px',
-                height: '1px',
-                background: '#FFF12D',
-              }}
-            />
+            <span style={{ display: 'inline-block', width: '32px', height: '1px', background: '#FFF12D' }} />
             {category}
           </div>
         )}
@@ -301,36 +294,11 @@ export function Hero({
             }}
           >
             {stats.map((stat, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: '1.5rem 2rem',
-                  borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                  textAlign: 'center',
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: displayFont,
-                    fontWeight: 700,
-                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                    color: '#FFF12D',
-                    lineHeight: 1,
-                    marginBottom: '0.3rem',
-                  }}
-                >
+              <div key={i} style={{ padding: '1.5rem 2rem', borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', textAlign: 'center' }}>
+                <div style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#FFF12D', lineHeight: 1, marginBottom: '0.3rem' }}>
                   {stat.value}
                 </div>
-                <div
-                  style={{
-                    fontFamily: displayFont,
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.16em',
-                    color: 'rgba(255,255,255,0.45)',
-                    textTransform: 'uppercase',
-                    fontWeight: 700,
-                  }}
-                >
+                <div style={{ fontFamily: displayFont, fontSize: '0.65rem', letterSpacing: '0.16em', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', fontWeight: 700 }}>
                   {stat.label}
                 </div>
               </div>
@@ -354,13 +322,7 @@ export function Hero({
           animation: 'bounce 2s infinite',
         }}
       >
-        <div
-          style={{
-            width: '1px',
-            height: '48px',
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,241,45,0.8))',
-          }}
-        />
+        <div style={{ width: '1px', height: '48px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,241,45,0.8))' }} />
       </div>
 
       <style>{`
