@@ -109,11 +109,36 @@ const sectionTitle = {
   marginBottom: '1.5rem',
 };
 
+function splitIntoEditorialParagraphs(text?: string): string[] {
+  if (!text) return [];
+  const clean = text.trim();
+  const sentences = clean.match(/[^.!?]+[.!?]+/g)?.map((sentence) => sentence.trim()) ?? [clean];
+  if (sentences.length <= 2) return [clean];
+  const midpoint = Math.ceil(sentences.length / 2);
+  return [
+    sentences.slice(0, midpoint).join(' '),
+    sentences.slice(midpoint).join(' '),
+  ].filter(Boolean);
+}
+
+function getIndustryTechGridCell(index: number, total: number) {
+  const topCount = total === 4 ? 2 : Math.min(3, total);
+  const bottomCount = total - topCount;
+  const isTop = index < topCount;
+  const position = isTop ? index : index - topCount;
+  const count = isTop ? topCount : bottomCount;
+
+  if (count <= 1) return { gridColumn: '3 / span 2', gridRow: isTop ? 1 : 2 };
+  if (count === 2) return { gridColumn: position === 0 ? '2 / span 2' : '4 / span 2', gridRow: isTop ? 1 : 2 };
+  return { gridColumn: `${position * 2 + 1} / span 2`, gridRow: isTop ? 1 : 2 };
+}
+
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
-  const isMining = category === 'industries' && item.name === 'Mining';
+  const isIndustry = category === 'industries';
+  const isMining = isIndustry && item.name === 'Mining';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -139,6 +164,12 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
       `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
       `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
     ]);
+
+  const industryAnswerParagraphs = isIndustry && !isMining
+    ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+    : undefined;
+
+  const techTags = item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
 
   return (
     <>
@@ -183,14 +214,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           backgroundImage={industryImage || bgImage}
         />
 
-        {geoData?.directAnswer && (
+        {(geoData?.directAnswer || isIndustry) && (
           <section style={{ padding: '4rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-              {isMining ? (
-                <MiningDirectAnswer paragraphStyle={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }} />
+            <div style={{ maxWidth: isIndustry ? '1240px' : '900px', margin: '0 auto' }}>
+              {isIndustry ? (
+                <MiningDirectAnswer paragraphStyle={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }} paragraphs={industryAnswerParagraphs} />
               ) : (
                 <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }}>
-                  {geoData.directAnswer}
+                  {geoData?.directAnswer}
                 </p>
               )}
             </div>
@@ -214,21 +245,21 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
         {industryVideo && (
           <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: isMining ? '1320px' : '1200px', margin: '0 auto' }}>
-              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isMining ? '56% 44%' : '60% 40%', gap: isMining ? '2.6rem' : '3rem', alignItems: 'center' }}>
+            <div style={{ maxWidth: isIndustry ? '1320px' : '1200px', margin: '0 auto' }}>
+              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isIndustry ? '56% 44%' : '60% 40%', gap: isIndustry ? '2.6rem' : '3rem', alignItems: 'center' }}>
                 <div>
-                  <h2 style={isMining ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{item.name} Asset Protection</h2>
+                  <h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{item.name} Asset Protection</h2>
                   {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
                     <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>
                       {geoData.protectedAssets.map((asset) => (
-                        <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: isMining ? '1.008rem' : '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                        <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: isIndustry ? '1.008rem' : '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
                           · {asset}
                         </span>
                       ))}
                     </div>
                   )}
                   {videoParagraphs.map((para, i) => (
-                    <p key={i} style={{ ...bodyText, fontSize: isMining ? '1.064rem' : bodyText.fontSize, lineHeight: isMining ? 1.82 : bodyText.lineHeight, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
+                    <p key={i} style={{ ...bodyText, fontSize: isIndustry ? '1.064rem' : bodyText.fontSize, lineHeight: isIndustry ? 1.82 : bodyText.lineHeight, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
                       {para}
                     </p>
                   ))}
@@ -248,47 +279,46 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         )}
 
         <section id="features" style={{ padding: '6rem 0', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: isMining ? '1320px' : '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: isMining ? '5rem' : '4rem', alignItems: 'start' }}>
+          <div style={{ maxWidth: isIndustry ? '1320px' : '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: isIndustry ? '5rem' : '4rem', alignItems: 'start' }}>
             <AnimateIn direction="up">
-              <h2 style={isMining ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>Why ELIMFILTERS</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: isMining ? '1.15rem' : '1rem' }}>
+              <h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>Why ELIMFILTERS</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: isIndustry ? '1.15rem' : '1rem' }}>
                 {advantages.map((benefit, i) => (
                   <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <span style={{ color: '#FFF12D', fontWeight: 'bold', marginTop: '0.2rem' }}>•</span>
-                    <span style={{ fontFamily: 'var(--font-body)', fontSize: isMining ? '1.064rem' : '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65 }}>{benefit}</span>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: isIndustry ? '1.064rem' : '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65 }}>{benefit}</span>
                   </div>
                 ))}
               </div>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={0.15}>
-              <div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: isMining ? '2.45rem' : '2rem' }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: isMining ? '1.12rem' : '1rem', color: '#fff', marginBottom: isMining ? '1.4rem' : '1rem' }}>
+              <div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: isIndustry ? '2.45rem' : '2rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: isIndustry ? '1.12rem' : '1rem', color: '#fff', marginBottom: isIndustry ? '1.4rem' : '1rem' }}>
                   Technologies Applied
                 </h3>
                 {geoData?.techFocus && (
                   <p style={{ ...bodyText, marginBottom: '1.1rem' }}>{geoData.techFocus}</p>
                 )}
-                <div style={isMining ? { display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '0.65rem', maxWidth: '620px' } : { display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech, techIndex) => {
+                <div style={isIndustry ? { display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '0.65rem', maxWidth: '620px' } : { display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {techTags.map((tech, techIndex) => {
                     const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
                     return (
                       <Link key={tech} href={`/technologies/${slug}`} style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: isMining ? '0.72rem' : '0.62rem',
+                        fontSize: isIndustry ? '0.72rem' : '0.62rem',
                         letterSpacing: '0.05em',
-                        padding: isMining ? '0.72rem 1.05rem' : '0.3rem 0.7rem',
+                        padding: isIndustry ? '0.72rem 1.05rem' : '0.3rem 0.7rem',
                         border: '1px solid rgba(255,241,45,0.25)',
                         color: 'rgba(255,241,45,0.75)',
                         background: 'rgba(255,241,45,0.04)',
                         textDecoration: 'none',
-                        ...(isMining ? {
+                        ...(isIndustry ? {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           minHeight: '48px',
-                          gridColumn: techIndex < 3 ? `${techIndex * 2 + 1} / span 2` : techIndex === 3 ? '2 / span 2' : '4 / span 2',
-                          gridRow: techIndex < 3 ? 1 : 2,
+                          ...getIndustryTechGridCell(techIndex, techTags.length),
                         } : {}),
                       }}>
                         {tech}
@@ -303,9 +333,9 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
         {geoData?.preCtaQuote && (
           <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: isMining ? '1180px' : '860px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: isIndustry ? '1180px' : '860px', margin: '0 auto', textAlign: 'center' }}>
               <AnimateIn>
-                {isMining ? (
+                {isIndustry ? (
                   <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.155rem, 2.625vw, 1.47rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, whiteSpace: 'nowrap' }}>
                     {geoData.preCtaQuote.line1} <span style={{ color: '#FFF12D' }}>{geoData.preCtaQuote.line2}</span>
                   </p>
