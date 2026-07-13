@@ -11,6 +11,7 @@ import './air-intake-narrative-section-fix.css';
 import './industries-risk-title-tweak.css';
 import './commercial-knowledge-visibility-guard.css';
 import { ClientProviders } from '@/components/ClientProviders';
+import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 import ChatBot from '@/components/ui/ChatBot';
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ClientProviders>
           {children}
+          <MiningHeroCleanup />
           <Analytics />
           <ConsentBanner />
           <ChatBot />
