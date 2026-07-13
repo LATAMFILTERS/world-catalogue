@@ -30,15 +30,8 @@
     min-height: 72svh !important;
   }
 
-  .technology-portfolio-section {
-    padding: 4rem 1rem !important;
-  }
-
-  .technology-portfolio-section > div {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
+  .technology-portfolio-section { padding: 4rem 1rem !important; }
+  .technology-portfolio-section > div { width: 100% !important; max-width: 100% !important; }
   .technology-portfolio-eyebrow {
     display: block !important;
     width: 100% !important;
@@ -48,7 +41,6 @@
     letter-spacing: .22em !important;
     line-height: 1.35 !important;
   }
-
   .technology-portfolio-title {
     width: 100% !important;
     max-width: 100% !important;
@@ -60,7 +52,6 @@
     word-break: normal !important;
     hyphens: none !important;
   }
-
   .technology-portfolio-grid {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
@@ -68,7 +59,6 @@
     width: 100% !important;
     max-width: 100% !important;
   }
-
   .technology-portfolio-card {
     display: block !important;
     position: relative !important;
@@ -83,7 +73,6 @@
     border: 1px solid rgba(255,255,255,.14) !important;
     background: #050505 !important;
   }
-
   .technology-portfolio-logo-stage {
     display: flex !important;
     position: absolute !important;
@@ -95,7 +84,6 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
   .technology-portfolio-image {
     display: block !important;
     width: 100% !important;
@@ -104,7 +92,6 @@
     opacity: .95 !important;
     visibility: visible !important;
   }
-
   .technology-portfolio-content {
     display: flex !important;
     position: absolute !important;
@@ -114,11 +101,7 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
-  .technologies-final-cta {
-    padding: 4rem 1rem 6rem !important;
-  }
-
+  .technologies-final-cta { padding: 4rem 1rem 6rem !important; }
   .technologies-final-title {
     width: 100% !important;
     max-width: 100% !important;
@@ -137,7 +120,6 @@
     height: auto !important;
     padding: 1.5rem 0 !important;
   }
-
   .about-failure-row-mobile > p {
     grid-column: 1 / -1 !important;
     width: 100% !important;
@@ -147,7 +129,6 @@
     word-break: normal !important;
     overflow-wrap: break-word !important;
   }
-
   .about-technology-layout-mobile,
   .about-technology-cards-mobile {
     display: grid !important;
@@ -155,7 +136,6 @@
     width: 100% !important;
     max-width: 100% !important;
   }
-
   .about-technology-layout-mobile > *,
   .about-technology-cards-mobile > * {
     width: 100% !important;
@@ -172,7 +152,6 @@
     min-width: 0 !important;
     grid-template-columns: minmax(0, 1fr) !important;
   }
-
   .industries-page-mobile-fix div[style*="display: grid"] > a,
   .systems-page-mobile-fix div[style*="display: grid"] > a {
     display: block !important;
@@ -189,7 +168,6 @@
     border: 1px solid rgba(255,255,255,.14) !important;
     background: #050505 !important;
   }
-
   .industries-page-mobile-fix div[style*="display: grid"] > a *,
   .systems-page-mobile-fix div[style*="display: grid"] > a * {
     max-width: 100% !important;
@@ -197,7 +175,6 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
   .industries-page-mobile-fix img,
   .systems-page-mobile-fix img {
     display: block !important;
@@ -206,21 +183,18 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-
   .industries-page-mobile-fix h1,
   .systems-page-mobile-fix h1 {
     font-size: clamp(2.2rem, 10vw, 3.4rem) !important;
     line-height: 1 !important;
     max-width: 100% !important;
   }
-
   .industries-page-mobile-fix h2,
   .systems-page-mobile-fix h2 {
     font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
     line-height: 1.03 !important;
     max-width: 100% !important;
   }
-
   .industries-page-mobile-fix p,
   .systems-page-mobile-fix p {
     width: 100% !important;
@@ -229,15 +203,134 @@
     word-break: normal !important;
     overflow-wrap: break-word !important;
   }
+
+  /* Internal technology pages: the breadcrumb link identifies detail routes. */
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) {
+    overflow-x: clip !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 2rem 1rem 3rem !important;
+    overflow: hidden !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type p {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.25rem 0 !important;
+    padding: 0 !important;
+    font-size: clamp(1rem, 4.8vw, 1.18rem) !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    color: rgba(255,255,255,.78) !important;
+    z-index: 3 !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type img:not([src*="operator"]):not([src*="background"]) {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    display: block !important;
+    width: min(78vw, 360px) !important;
+    max-width: 78vw !important;
+    height: auto !important;
+    margin: 1.5rem auto !important;
+    object-fit: contain !important;
+    z-index: 4 !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display: grid"],
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display:grid"] {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: .75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 1.5rem !important;
+    padding-top: 1.25rem !important;
+    border-top: 1px solid rgba(255,255,255,.18) !important;
+    z-index: 5 !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display: grid"] *,
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display:grid"] * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    text-align: left !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 3.5rem 1rem !important;
+    overflow: hidden !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) div[style*="display: grid"],
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) div[style*="display:grid"] {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    gap: 1rem !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) div[style*="border"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1.25rem !important;
+    overflow: hidden !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) h2,
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) h3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(1.8rem, 8vw, 2.7rem) !important;
+    line-height: 1.04 !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) p,
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:not(:first-of-type) span {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+  }
 }
 
 @media (max-width: 430px) {
   .technology-portfolio-card { min-height: 290px !important; height: 290px !important; }
   .technology-portfolio-title,
   .technologies-final-title { font-size: clamp(1.85rem, 8.5vw, 2.5rem) !important; }
-
   .industries-page-mobile-fix div[style*="display: grid"] > a,
-  .systems-page-mobile-fix div[style*="display: grid"] > a {
-    min-height: 230px !important;
+  .systems-page-mobile-fix div[style*="display: grid"] > a { min-height: 230px !important; }
+
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display: grid"],
+  main.technologies-page-mobile-fix:has(a[href$="/technologies"]) > section:first-of-type div[style*="display:grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 }
