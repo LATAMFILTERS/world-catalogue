@@ -141,6 +141,11 @@ const manufacturingDirectAnswer = [
   'Manufacturing facilities expose air intake, hydraulic, fuel, and lubrication systems to process dust, metal particles, coolant mist, fuel impurities, pressure cycling, lubricant degradation, and extended operating schedules. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so industrial operators can protect equipment reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across production and process operations.',
 ];
 
+const railwayDirectAnswer = [
+  'ELIMFILTERS® railway asset protection systems are engineered for diesel electric locomotives, passenger rail units, freight locomotives, auxiliary engines, pneumatic brake systems, and rail maintenance equipment operating through vibration, route schedules, airborne particulate, thermal variation, and extended service intervals. In rail operations, filtration is part of the reliability strategy because every interruption affects route continuity, passenger movement, freight delivery, and maintenance planning.',
+  'Railway environments expose air intake, fuel, lubrication, and pneumatic systems to dust, fuel impurities, moisture, vibration loading, thermal cycling, soot accumulation, and long haul operating stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so rail operators can protect locomotive reliability, preserve pneumatic performance, maintain service discipline, and reduce downtime risk across passenger, freight, and industrial rail networks.',
+];
+
 const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
 const constructionVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.';
 const oilGasVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.';
@@ -148,6 +153,7 @@ const marineVideoParagraph = 'The protection media is the core of every ELIMFILT
 const powerGenerationVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Power Generation applications, protection systems must perform under emergency readiness, long idle periods, fuel storage risk, thermal cycling, coolant contamination, and continuous duty demand. ELIMFILTERS® systems help power operators protect generator sets, turbines, fuel systems, cooling circuits, and auxiliary equipment from contamination related failure while maintaining readiness across prime, standby, and distributed power assets.';
 const trucksFleetsVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Trucks & Fleets applications, protection systems must perform under high mileage duty cycles, highway dust, fuel contamination, soot loading, thermal stress, vibration, and extended service intervals. ELIMFILTERS® systems help fleet operators protect heavy duty trucks, long haul tractors, commercial vehicles, and diesel support assets from contamination related failure while maintaining route availability and fleet uptime.';
 const manufacturingVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Manufacturing applications, protection systems must perform under process dust, hydraulic load, lubrication degradation, thermal stress, vibration, and continuous production demand. ELIMFILTERS® systems help industrial operators protect compressors, pumps, conveyors, hydraulic power units, industrial engines, and rotating machinery from contamination related failure while maintaining production continuity.';
+const railwayVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Railway applications, protection systems must perform under vibration loading, long haul schedules, airborne particulate, fuel contamination, pneumatic moisture risk, and thermal cycling. ELIMFILTERS® systems help rail operators protect locomotives, auxiliary engines, pneumatic systems, and rail support equipment from contamination related failure while maintaining passenger, freight, and industrial route continuity.';
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
@@ -162,6 +168,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const isPowerGeneration = isIndustry && item.name === 'Power Generation';
   const isTrucksFleets = isIndustry && item.name === 'Trucks Fleets';
   const isManufacturing = isIndustry && item.name === 'Manufacturing';
+  const isRailway = isIndustry && item.name === 'Railway';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -189,6 +196,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? [powerGenerationVideoParagraph]
     : isTrucksFleets ? [trucksFleetsVideoParagraph]
     : isManufacturing ? [manufacturingVideoParagraph]
+    : isRailway ? [railwayVideoParagraph]
     : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
       `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
       `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
@@ -201,6 +209,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? powerGenerationDirectAnswer
     : isTrucksFleets ? trucksFleetsDirectAnswer
     : isManufacturing ? manufacturingDirectAnswer
+    : isRailway ? railwayDirectAnswer
     : isIndustry && !isMining ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
     : undefined;
 
@@ -211,6 +220,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? ['MACROCORE™', 'SYNTEPORE™', 'AQUAGUARD™', 'SYNTRAX™', 'COOLTECH™']
     : isTrucksFleets ? ['MACROCORE™', 'SYNTEPORE™', 'SYNTRAX™', 'MICROKAPPA™', 'COOLTECH™']
     : isManufacturing ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™']
+    : isRailway ? ['SYNTEPORE™', 'SYNTRAX™', 'MACROCORE™', 'DRYCORE™']
     : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
 
   const protectedAssets = isAgriculture ? ['Tractors', 'Combines', 'Harvesters', 'Sprayers', 'Irrigation Engines', 'Field Support Equipment']
@@ -220,6 +230,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? ['Diesel Generator Sets', 'Gas Engines', 'Standby Power Units', 'Turbines', 'Fuel Storage Systems', 'Cooling Circuits']
     : isTrucksFleets ? ['Heavy Duty Trucks', 'Long Haul Tractors', 'Commercial Fleet Vehicles', 'Owner Operator Equipment', 'Regional Delivery Units', 'Diesel Support Assets']
     : isManufacturing ? ['Industrial Engines', 'Hydraulic Power Units', 'Compressors', 'Pumps', 'Production Lines', 'Rotating Machinery']
+    : isRailway ? ['Diesel Electric Locomotives', 'Passenger Rail Units', 'Freight Locomotives', 'Auxiliary Engines', 'Pneumatic Brake Systems', 'Rail Maintenance Equipment']
     : geoData?.protectedAssets;
 
   const heroTitle = isAgriculture ? 'Agricultural Filtration Systems'
@@ -229,6 +240,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? 'Power Generation Filtration Systems'
     : isTrucksFleets ? 'Truck Fleet Filtration Systems'
     : isManufacturing ? 'Manufacturing Filtration Systems'
+    : isRailway ? 'Railway Filtration Systems'
     : item.title;
   const heroSubtitle = isAgriculture ? 'AGRICULTURAL ASSETS'
     : isConstruction ? 'CONSTRUCTION ASSETS'
@@ -237,6 +249,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? 'POWER GENERATION ASSETS'
     : isTrucksFleets ? 'TRUCK FLEET ASSETS'
     : isManufacturing ? 'MANUFACTURING ASSETS'
+    : isRailway ? 'RAILWAY ASSETS'
     : item.subtitle || undefined;
   const heroTagline = isAgriculture ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.'
     : isConstruction ? 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.'
@@ -245,6 +258,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     : isPowerGeneration ? 'Power generation equipment cannot afford contamination related failure during emergency response, standby readiness, or continuous power demand. ELIMFILTERS® engineering protects generator sets, turbines, fuel systems, cooling circuits, lubrication systems, and auxiliary equipment operating under heat, fuel storage risk, vibration, and long service intervals.'
     : isTrucksFleets ? 'Commercial fleets cannot afford contamination related downtime across long haul, regional, and vocational routes. ELIMFILTERS® engineering protects heavy duty trucks, diesel engines, HPCR fuel systems, lubrication circuits, cooling systems, and cabin environments operating under highway dust, heat, soot loading, vibration, and extended mileage intervals.'
     : isManufacturing ? 'Manufacturing equipment cannot afford contamination related downtime across continuous production, process machinery, and industrial support systems. ELIMFILTERS® engineering protects industrial engines, hydraulic power units, compressors, pumps, conveyors, and rotating machinery operating under process dust, heat, vibration, and extended production schedules.'
+    : isRailway ? 'Railway equipment cannot afford contamination related downtime across passenger, freight, and industrial route networks. ELIMFILTERS® engineering protects locomotives, auxiliary engines, pneumatic brake systems, fuel systems, lubrication circuits, and air intake systems operating under vibration, airborne particulate, thermal cycling, and extended route schedules.'
     : item.description;
   const assetHeading = isOilGas ? 'Oil & Gas Asset Protection'
     : isTrucksFleets ? 'Truck Fleet Asset Protection'
