@@ -1971,9 +1971,10 @@ specifically because they suspected compromise.
 **Date:** 2026-07-13
 **Status:** Accepted
 **Branch:** `claude/phase-0-audit-review-wanxa3`
-**Closing commit:** *(recorded in a follow-up commit immediately after
-this one, per the same convention used for Phase 1's and Phase 2's
-closing commits — the hash cannot be known before the commit exists)*.
+**Closing commit:** `5f39ad9c` ("docs: ebp: Final Phase 3 correction-round
+audit; approve/freeze Phase 3 v1.0") — see `CHANGELOG.md`'s "Phase 3
+final correction-round audit; approved and frozen as v1.0" entry for
+this date.
 
 **Context:** Phase 3 was originally delivered (`Built`, not frozen) with
 a real schema, backend, dual Portal/Excel intake, and an 87-test suite.
