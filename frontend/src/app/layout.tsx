@@ -12,6 +12,7 @@ import './industries-risk-title-tweak.css';
 import './commercial-knowledge-visibility-guard.css';
 import './mobile-aesthetic-polish.css';
 import './mobile-critical-fix.css';
+import './mobile-critical-layout-fixes.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
