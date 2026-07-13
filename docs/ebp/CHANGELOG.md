@@ -5,6 +5,64 @@ logged here in reverse chronological order. Every entry that changes a
 phase's status must correspond to a row update in
 `IMPLEMENTATION_MASTER_INDEX.md` in the same commit.
 
+## 2026-07-13 — Phase 5 (Manufacturer Selection) philosophy and business rules defined — implementation not authorized
+
+- Before authorizing Phase 5 implementation, the project owner required
+  the Manufacturer Selection Engine's *philosophy and business rules* to
+  be fully defined first, independent of any API or schema design —
+  mirroring the exact discipline `ENGINEERING_RULE_ENGINE.md`/ADR-0038
+  established for Phase 4.
+- Added `docs/ebp/MANUFACTURER_SELECTION_ENGINE.md`: ten precisely
+  defined philosophy terms (Manufacturer Recommendation, Primary/
+  Secondary/Backup Manufacturer, Eligible/Preferred Manufacturer,
+  Selection Policy, Re-selection, Manual Override, Strategic
+  Allocation); seven non-negotiable Principles (never select on price
+  alone; engineering always has priority; full auditability;
+  versioning; never modifies Passport/Offer/Validation; only consumes
+  validated information; full reproducibility); four Evaluation Factor
+  dimensions — Engineering, Commercial, Operational, Strategic —
+  (dimensions only, explicitly no weights); the Eligibility gate (five
+  conditions, directly reusing Phase 4's `computeSelectionEligibility()`
+  contract per the correction round/ADR-0055); Exclusion conditions; the
+  Ranking philosophy (construction/recalculation/invalidation/review
+  triggers, explicitly no algorithm); Primary/Secondary/Backup
+  requirements and replacement/promotion/degradation rules; the Manual
+  Override model; the Versioning model (Selection Version/Effective
+  Date/Superseded/Historical, mirroring Phase 4's Validation Run
+  `STALE` treatment); the Re-selection trigger set; Dashboard Readiness
+  candidate events/KPIs/Alerts; and the AI-readiness rationale.
+- **ADR-0061** added to `DECISIONS.md`, registering
+  `MANUFACTURER_SELECTION_ENGINE.md` as the normative authority: every
+  future decision about Phase 5's data model, API, or code must derive
+  from it, not the reverse; any deviation requires a new superseding
+  ADR.
+- **`IMPLEMENTATION_MASTER_INDEX.md`** — Phase 05's row now references
+  `MANUFACTURER_SELECTION_ENGINE.md`/ADR-0061; a new note explains its
+  scope and confirms it does not advance Phase 5's status.
+- **`ROADMAP.md`** — added a "Phase 05 prerequisite" note after the
+  Phase Sequence table, pointing to `MANUFACTURER_SELECTION_ENGINE.md`
+  and its twelve open questions as a precondition for Phase 5's
+  implementation approval.
+- **Twelve Open Questions** recorded, all required before any Phase 5
+  code is written — highest priority: the ranking weighting/scoring
+  formula (left entirely undefined by design). Also flagged: demand-
+  signal scope; "no eligible candidate" representation; Backup
+  divergence rule; Manual Override role/duration/feedback-into-ranking;
+  Selection Policy ownership/versioning/scope; Concentration Index
+  formula; basis-recording format for factor attribution; Preferred
+  Manufacturer governance; whether the predecessor draft's Phase 3
+  Offer Approval sequencing rule (old ADR-0010/ADR-0011) still holds
+  given Phase 4's actual frozen Global Result Model; and Strategic
+  Allocation's boundary with Phase 9.
+- **No table, API, migration, or line of Phase 5 (or any other phase's)
+  code was written.** No frozen phase (0/1/2/3/4) documentation, schema,
+  endpoint, or test was changed.
+
+**Phase 5 (Manufacturer Selection) remains not started and not
+authorized.** Implementation is not authorized until all twelve open
+questions are answered and the project owner explicitly approves
+Phase 5's own spec.
+
 ## 2026-07-13 — Phase 4 (Engineering Compliance Validation) correction round — APPROVED / FROZEN v1.0
 
 - The project owner reviewed the initial "Built" implementation below

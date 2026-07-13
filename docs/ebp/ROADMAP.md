@@ -43,7 +43,24 @@ API/schema design. Phase 4's own spec (`phases/phase-04-validation-
 engine.md`) may not contradict that document; any deviation requires a
 new ADR that explicitly supersedes the relevant section. See
 `ENGINEERING_RULE_ENGINE.md`'s own "Open Questions" — all twelve must be
-answered before Phase 4 code is written.
+answered before Phase 4 code is written. **Phase 4 is now `APPROVED /
+FROZEN v1.0`** (see `IMPLEMENTATION_MASTER_INDEX.md`).
+
+**Phase 05 prerequisite (added 2026-07-13, ADR-0061):** before Phase 05's
+implementation can be authorized, the Selection Engine's *philosophy and
+business rules* — the ten philosophy terms, the seven Principles, the
+Evaluation Factor dimensions, Eligibility/Exclusion, the Ranking
+philosophy, Primary/Secondary/Backup rules, Manual Override, Versioning,
+and Re-selection triggers — must already be fully defined in
+`MANUFACTURER_SELECTION_ENGINE.md`, independent of any API/schema
+design, mirroring the exact discipline `ENGINEERING_RULE_ENGINE.md`
+established for Phase 4. Phase 5's own spec
+(`phases/phase-05-manufacturer-selection.md`) may not contradict that
+document; any deviation requires a new ADR that explicitly supersedes
+the relevant section. See `MANUFACTURER_SELECTION_ENGINE.md`'s own "Open
+Questions" — all twelve must be answered before Phase 5 code is written,
+the highest-priority being the ranking weighting/scoring formula, left
+entirely undefined by design.
 
 ## Phase Gate Definition
 

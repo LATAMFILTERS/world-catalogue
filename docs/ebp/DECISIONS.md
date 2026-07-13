@@ -3006,3 +3006,95 @@ authoring a bad rule in the first place (Decision 10 already ruled that
 out) — this validation is the only gate. Tested for direct cycles,
 indirect (`A→B→A`) cycles, CRITICAL-waivable-without-acknowledgement, and
 incomplete `default_behavior` in `tests/ebp-phase4/correction.test.js`.
+
+---
+
+# Phase 5 Preparation (2026-07-13)
+
+## ADR-0061 — `MANUFACTURER_SELECTION_ENGINE.md` is the normative authority for the Manufacturer Selection Engine's philosophy and business rules
+
+**Date:** 2026-07-13
+**Status:** Accepted — philosophy and business-rule definition only; no
+implementation authorized. Phase 5 remains not started.
+**Amends:** Nothing existing is altered. This ADR introduces a new
+document and references it from `IMPLEMENTATION_MASTER_INDEX.md` and
+`ROADMAP.md`; no frozen phase (0, 1, 2, 3, or 4) documentation is
+changed.
+
+**Context:** Before authorizing Phase 5 — Manufacturer Selection, the
+project owner required the same documentation-before-code discipline
+already applied to Phase 4 (`ENGINEERING_RULE_ENGINE.md`, ADR-0038): the
+Selection Engine's *philosophy and business rules* must be fully defined
+first, independent of any API or schema design — "Primero debemos
+definir completamente su filosofía y reglas de negocio." This is
+explicitly a documentation-only step: no table, API, migration, or
+Selection Engine code is authorized by this ADR.
+
+**Decision:**
+1. **`docs/ebp/MANUFACTURER_SELECTION_ENGINE.md` is created** and is the
+   authoritative reference for: the ten precisely-defined philosophy
+   terms (Manufacturer Recommendation, Primary/Secondary/Backup
+   Manufacturer, Eligible Manufacturer, Preferred Manufacturer,
+   Selection Policy, Re-selection, Manual Override, Strategic
+   Allocation), seven non-negotiable Principles (never select on price
+   alone; engineering always has priority; full auditability;
+   versioning; never modifies Passport/Offer/Validation; only consumes
+   validated information; full reproducibility), the four Evaluation
+   Factor dimensions (Engineering, Commercial, Operational, Strategic —
+   dimensions only, no weights), the Eligibility gate (five conditions,
+   directly reusing Phase 4's `computeSelectionEligibility()` contract
+   per the correction round/ADR-0055), the Exclusion conditions, the
+   Ranking philosophy (construction/recalculation/invalidation/review
+   triggers, no algorithm), the Primary/Secondary/Backup requirements
+   and replacement/promotion/degradation rules, the Manual Override
+   model (existence/authorization/audit/duration/traceability/feedback),
+   the Versioning model (Selection Version/Effective Date/Superseded/
+   Historical, mirroring Phase 4's Validation Run `STALE` treatment
+   exactly), the Re-selection trigger set, the Dashboard Readiness
+   candidate event/KPI/Alert lists, and the AI-readiness rationale.
+2. **Every future decision about Phase 5's data model, API, or code must
+   derive from `MANUFACTURER_SELECTION_ENGINE.md`, not the reverse.** If
+   Phase 5's eventual implementation needs to deviate from something
+   stated there, that deviation itself requires a new ADR that
+   explicitly supersedes the relevant section — the same freeze
+   discipline already governing Phase 0/1/2/3/4.
+3. **`phases/phase-05-manufacturer-selection.md`'s own future
+   spec-approval pass may not contradict
+   `MANUFACTURER_SELECTION_ENGINE.md`.** That phase doc remains
+   `Spec Drafted (revised)`, unapproved, and unauthorized for
+   implementation, unchanged by this ADR — this ADR does not itself
+   advance Phase 5's status. Note that the existing draft predates
+   Phase 4's actual frozen Global Result Model and correction round
+   (ADR-0051-0060); its "VALID"-based terminology and its old ADR-0010/
+   ADR-0011 sequencing rule are explicitly flagged in
+   `MANUFACTURER_SELECTION_ENGINE.md`'s Open Question 11 as needing
+   re-examination against the terms actually frozen in Phase 4, not
+   assumed still current.
+4. **Twelve open questions are recorded** in
+   `MANUFACTURER_SELECTION_ENGINE.md`'s own "Open Questions" section
+   (ranking weighting/scoring formula — the single highest-priority
+   question; demand-signal scope; "no eligible candidate"
+   representation; Backup divergence rule; Manual Override role and
+   duration; Manual Override feedback into ranking; Selection Policy
+   ownership/versioning/scope; Concentration Index formula;
+   basis-recording format for factor attribution; Preferred
+   Manufacturer governance; the Phase 3 Offer Approval sequencing
+   question inherited from the predecessor draft; and Strategic
+   Allocation's boundary with Phase 9) — **all twelve must be answered
+   before any Phase 5 code is written**, per the project owner's
+   explicit instruction.
+5. **Nothing is implemented by this ADR.** No table, migration, API, or
+   Selection Engine code exists as a result of this document or this
+   ADR. Phase 5 remains, structurally, exactly where it was before this
+   ADR — a `Spec Drafted (revised)`, unapproved, unimplemented phase —
+   with its normative behavioral foundation now written down instead of
+   implicit.
+
+**Consequences:** Any future work on Phase 5 must be checked against
+`MANUFACTURER_SELECTION_ENGINE.md` before any table, endpoint, or line of
+Selection Engine code is written — deviation without a superseding ADR
+is a process violation, identical to the standing rule for
+`ENGINEERING_RULE_ENGINE.md` and Phase 4. The twelve Open Questions are a
+hard gate: `IMPLEMENTATION_MASTER_INDEX.md` and `ROADMAP.md` must
+continue to show Phase 5 as not authorized until the project owner
+closes them.

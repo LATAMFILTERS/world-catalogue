@@ -40,7 +40,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
+| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised); Selection Engine philosophy/business rules normatively defined in [`MANUFACTURER_SELECTION_ENGINE.md`](MANUFACTURER_SELECTION_ENGINE.md), ADR-0061, twelve open questions unresolved | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
 | 08 | Distributor Portal | [phase-08-distributor-portal.md](phases/phase-08-distributor-portal.md) | Spec Drafted (revised) | — | — |
@@ -249,6 +249,33 @@ See ADR-0005.
   new ADR that explicitly supersedes the relevant prior entry, same
   discipline as Phase 0/1/2/3. Phase 5 (Manufacturer Selection) has not
   been started; this freeze does not authorize it.**
+- **`MANUFACTURER_SELECTION_ENGINE.md` (normative reference, added
+  2026-07-13, ADR-0061) — governs Phase 5, is not itself a phase, no row
+  in the table above.** Before authorizing Phase 5 implementation, the
+  project owner required the Selection Engine's *philosophy and business
+  rules* (not its API or schema) to be fully defined first — the same
+  documentation-before-code discipline `ENGINEERING_RULE_ENGINE.md`/
+  ADR-0038 established for Phase 4. Covers: ten precisely-defined
+  philosophy terms (Manufacturer Recommendation, Primary/Secondary/
+  Backup Manufacturer, Eligible/Preferred Manufacturer, Selection
+  Policy, Re-selection, Manual Override, Strategic Allocation), seven
+  non-negotiable Principles, four Evaluation Factor dimensions
+  (Engineering/Commercial/Operational/Strategic, no weights), the
+  Eligibility gate (reusing Phase 4's `computeSelectionEligibility()`
+  contract, ADR-0055), Exclusion conditions, the Ranking philosophy (no
+  algorithm), Primary/Secondary/Backup rules, the Manual Override model,
+  the Versioning model, Re-selection triggers, Dashboard Readiness
+  candidates, and AI-readiness rationale. **No table, API, migration, or
+  code was created. No frozen phase (0/1/2/3/4) was touched.** Twelve
+  open questions are recorded in that document's own "Open Questions"
+  section — the highest-priority being the ranking weighting/scoring
+  formula, entirely undefined by design — and **must all be answered
+  before any Phase 5 code is written**. Phase 5's own spec
+  (`phases/phase-05-manufacturer-selection.md`) is unchanged by this ADR
+  and remains `Spec Drafted (revised)`, unapproved; its predecessor
+  content (pre-dating Phase 4's actual frozen Global Result Model) is
+  flagged in Open Question 11 as needing re-examination, not assumed
+  still current. **Phase 5 remains not started and not authorized.**
 
 ## How to Use This File
 
