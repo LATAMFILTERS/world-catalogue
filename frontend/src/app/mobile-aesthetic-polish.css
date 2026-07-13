@@ -21,14 +21,16 @@
   }
 
   .industry-hero-section h1 + p {
-    max-width: 100% !important;
+    max-width: 38rem !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
     hyphens: none !important;
   }
 
   .industry-hero-section p {
-    max-width: 100% !important;
+    max-width: 38rem !important;
     text-wrap: pretty;
   }
 
@@ -40,17 +42,55 @@
   .product-desc-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
+    width: 100% !important;
   }
 
   .product-desc-grid > * {
     min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .product-desc-grid > *:has(img),
+  .product-desc-grid > *:has(video) {
+    width: min(100%, 720px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
   }
 
   .product-desc-grid img,
   .product-desc-grid video {
+    display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
-    height: auto;
+    max-width: 720px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-position: center !important;
+  }
+
+  .product-desc-grid p {
+    width: 100% !important;
+    max-width: 38rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    font-family: var(--font-body) !important;
+    font-size: 1rem !important;
+    line-height: 1.72 !important;
+    letter-spacing: normal !important;
+    text-wrap: pretty;
+  }
+
+  .product-desc-grid h2,
+  .product-desc-grid h3 {
+    max-width: 38rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
   }
 
   .technology-portfolio-grid {
@@ -95,6 +135,15 @@
 
   .industry-hero-section h1 {
     font-size: clamp(2rem, 10.5vw, 2.85rem) !important;
+  }
+
+  .product-desc-grid {
+    gap: 1.55rem !important;
+  }
+
+  .product-desc-grid p {
+    font-size: 0.98rem !important;
+    line-height: 1.68 !important;
   }
 
   .technology-portfolio-card {
