@@ -1132,4 +1132,89 @@ requires its own separate, explicit phase-gate approval from the project
 owner, exactly like any other phase. **Phase 4 (Engineering Compliance
 Validation) also remains not started and not authorized.**
 
+## 2026-07-13 — ENGINEERING_RULE_ENGINE.md: normative rule-engine behavior for Phase 4 (ADR-0038)
+
+Before authorizing Phase 4 implementation, the project owner required the
+Engineering Compliance Validation engine's *behavior* — not its API, not
+its schema — to be fully and formally defined first: "El motor no debe
+improvisar reglas. Debe ejecutar reglas previamente definidas."
+
+- **New document: `docs/ebp/ENGINEERING_RULE_ENGINE.md`** — the
+  authoritative reference for Phase 4's rule engine. Covers:
+  - **Philosophy:** precise, non-interchangeable definitions of
+    Engineering Compliance, Engineering Approval, Commercial Approval
+    (= the existing Offer Approval entity, Phase 3, ADR-0008 — explicitly
+    not re-defined here), Deviation, Exception, and Conditional Approval.
+  - **Ten Comparison Types:** Exact Match, Numeric Tolerance, Range,
+    Maximum, Minimum, Enumeration, Pattern, Boolean, Required Evidence,
+    Composite Rule, Conditional Rule — each illustrated against real,
+    frozen Phase 1 fields (`thread_spec`, `minimum_efficiency`,
+    `bypass_opening_pressure_kpa`, etc.), never invented field names.
+  - **Six states:** `PASS`/`FAIL`/`WARNING`/`NOT_APPLICABLE`/
+    `REQUIRES_REVIEW`/`REQUIRES_EXCEPTION`.
+  - **Five severities:** `CRITICAL`/`HIGH`/`MEDIUM`/`LOW`/`INFO`, with an
+    illustrative (not final) default gating behavior per level.
+  - **Exceptions:** always scoped to one (Offer Revision × Rule) pair,
+    never self-granted, never carried forward automatically to a later
+    revision, immutable once recorded.
+  - **Scoring:** philosophy only (a Severity-weighted numeric Score is a
+    possible future informational supplement) — explicitly not
+    implemented and never a substitute for the state/severity gating
+    logic.
+  - **Automatic Observations:** a versioned Observation Catalog, never
+    hardcoded explanation strings — the same "same term, same wording
+    everywhere" discipline as root `CLAUDE.md`'s AI Citation Layer.
+  - **Rule Catalog:** Rule ID/Name/Description/Comparison Type/Severity/
+    Category/Applies To/Default Behavior, with fourteen illustrative
+    starter entries grounded in real Phase 1 field names, explicitly
+    marked not exhaustive/not final.
+  - **Fourteen fixed Categories** (Dimensions, Thread, Media, Efficiency,
+    Beta Ratio, Burst Pressure, Collapse Pressure, Temperature, Seal,
+    Bypass Valve, Anti-drainback, Packaging, Documentation,
+    Certification).
+  - **The complete flow:** Passport → Offer → Rule Evaluation → Rule
+    Results → Compliance Summary → Engineering Decision → Offer Approval.
+  - **Dashboard Readiness:** candidate events (`RULE_EVALUATED`,
+    `RULE_FAILED`, `RULE_WARNING`, `VALIDATION_COMPLETED`,
+    `ENGINEERING_EXCEPTION_CREATED`, `ENGINEERING_EXCEPTION_APPROVED`),
+    feeding the existing Activity Events/KPI/Alert model (ADR-0037) — no
+    independent event system.
+  - **AI-readiness:** how structured, catalog-referenced rule results
+    (never free text) enable future queries like "why did this offer
+    fail," "which manufacturers fail most often," "which rule produces
+    the most rejections."
+  - **Twelve Open Questions** that must all be answered before any Phase
+    4 code is written (engineering-approval authority model,
+    `FAIL`→`REQUIRES_EXCEPTION` promotion, severity-to-gating mapping,
+    Composite/Conditional severity aggregation, the scoring formula's
+    existence and shape, Observation Catalog structure, Exception scope
+    beyond one pair, Conditional Approval's data shape, automatic vs.
+    human Engineering Decisions, Rule Catalog storage/versioning, the
+    relationship to Phase 1's `field_applicability` matrix, and the
+    precise scope of re-validation triggers).
+- **ADR-0038** added to `DECISIONS.md`, registering
+  `ENGINEERING_RULE_ENGINE.md` as the normative authority: every future
+  decision about Phase 4's data model, API, or code must derive from it,
+  not the reverse; any deviation requires a new superseding ADR.
+- **`IMPLEMENTATION_MASTER_INDEX.md`** — Phase 04's row now references
+  `ENGINEERING_RULE_ENGINE.md`/ADR-0038; a new note explains its scope
+  and confirms it does not advance Phase 4's status. **Also corrected a
+  stale leftover:** Phase 03's status table row still read `Built`
+  despite the prose already reflecting its `APPROVED / FROZEN v1.0`
+  freeze (ADR-0036) — the row now matches the prose.
+- **`ROADMAP.md`** — added a "Phase 04 prerequisite" note after the
+  Phase Sequence table, pointing to `ENGINEERING_RULE_ENGINE.md` and its
+  twelve open questions as a precondition for Phase 4's implementation
+  approval.
+- **No table, API, migration, or line of Phase 4 (or any other phase's)
+  code was written.** No frozen phase (0/1/2/3) documentation, schema,
+  endpoint, or test was changed — verified by `git diff --stat` (only
+  `docs/ebp/*.md` touched) and by re-running the full Phase 1 (59),
+  Phase 2 (100), and Phase 3 (126) test suites, all passing unmodified.
+
+**Phase 4 (Engineering Compliance Validation) remains not started and
+not authorized.** Implementation is not authorized until all twelve open
+questions are answered and the project owner explicitly approves Phase
+4's own spec.
+
 

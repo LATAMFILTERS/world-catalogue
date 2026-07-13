@@ -2218,3 +2218,80 @@ documentation of that architecture.
   Timeline reconstructions — never a transactional `ebp_*` table
   directly. This is now a standing architectural constraint, not a
   suggestion, for whoever eventually builds that project.
+
+## ADR-0038 — `ENGINEERING_RULE_ENGINE.md` is the normative authority for the Engineering Compliance Validation engine's behavior
+
+**Date:** 2026-07-13
+**Status:** Accepted — architecture and rule-behavior definition only; no
+implementation authorized. Phase 4 remains not started.
+**Amends:** Nothing existing is altered. This ADR introduces a new
+document and references it from `IMPLEMENTATION_MASTER_INDEX.md` and
+`ROADMAP.md`; no frozen phase (0/1/2/3) documentation is changed.
+
+**Context:** Before authorizing Phase 4 — Engineering Compliance
+Validation, the project owner required that the rule engine's *behavior*
+be fully defined first, independent of any API or schema design: "El
+motor no debe improvisar reglas. Debe ejecutar reglas previamente
+definidas." This is the same documentation-before-code discipline already
+governing every phase in this platform (`PROJECT_MANIFESTO.md` §4.1),
+applied specifically to the hardest, most structurally load-bearing part
+of Phase 4 — the comparison logic itself — before any data model or
+endpoint is drafted around it.
+
+**Decision:**
+1. **`docs/ebp/ENGINEERING_RULE_ENGINE.md` is created** and is the
+   authoritative reference for: the philosophy (Engineering Compliance,
+   Engineering Approval, Commercial Approval, Deviation, Exception,
+   Conditional Approval), the ten Comparison Types (Exact Match, Numeric
+   Tolerance, Range, Maximum, Minimum, Enumeration, Pattern, Boolean,
+   Required Evidence, Composite Rule, Conditional Rule), the six-state
+   model (`PASS`/`FAIL`/`WARNING`/`NOT_APPLICABLE`/`REQUIRES_REVIEW`/
+   `REQUIRES_EXCEPTION`), the five-level Severity scale (`CRITICAL`/
+   `HIGH`/`MEDIUM`/`LOW`/`INFO`), the Exception model, the Scoring
+   philosophy (not implemented), the Observation Catalog principle (no
+   hardcoded explanation strings, ever), the Rule Catalog shape (Rule
+   ID/Name/Description/Comparison Type/Severity/Category/Applies To/
+   Default Behavior) with fourteen fixed Categories, the complete
+   Passport → Offer → Rule Evaluation → Rule Results → Compliance
+   Summary → Engineering Decision → Offer Approval flow, the Dashboard
+   Readiness this engine will need (per ADR-0037), and the AI-readiness
+   rationale (per §12 of that document).
+2. **Every future decision about Phase 4's data model, API, or code must
+   derive from `ENGINEERING_RULE_ENGINE.md`, not the reverse.** If
+   Phase 4's eventual implementation needs to deviate from something
+   stated there, that deviation itself requires a new ADR that explicitly
+   supersedes the relevant section of that document — the same freeze
+   discipline already governing Phase 0/1/2/3.
+3. **`phases/phase-04-validation-engine.md`'s own future spec-approval
+   pass may not contradict `ENGINEERING_RULE_ENGINE.md`.** That phase
+   doc remains `Spec Drafted (revised)`, unapproved, and unauthorized for
+   implementation, unchanged by this ADR — this ADR does not itself
+   advance Phase 4's status.
+4. **Twelve open questions are recorded** in
+   `ENGINEERING_RULE_ENGINE.md`'s own "Open Questions" section (engineer-
+   approval authority model, `FAIL`→`REQUIRES_EXCEPTION` promotion,
+   severity-to-gating mapping, Composite/Conditional severity
+   aggregation, the scoring formula's existence and shape, the
+   Observation Catalog's exact structure, Exception scope beyond one
+   (Offer Revision × Rule) pair, Conditional Approval's data shape,
+   automatic vs. human Engineering Decisions, Rule Catalog storage/
+   versioning, the relationship to Phase 1's `field_applicability`
+   matrix, and the precise scope of re-validation triggers) — **all
+   twelve must be answered before any Phase 4 code is written**, per the
+   project owner's explicit instruction.
+5. **Nothing is implemented by this ADR.** No table, migration, API
+   route, or line of Phase 4 code exists as a result of this decision.
+
+**Consequences:**
+- Phase 4's eventual spec approval has a concrete, pre-agreed rule-
+  engine behavior to build against, rather than inventing comparison
+  semantics ad hoc during implementation — the same benefit
+  `PLATFORM_ARCHITECTURE.md` gave Phase 1 onward at Phase 0.
+- The twelve open questions are a concrete, trackable pre-implementation
+  checklist — Phase 4 cannot reasonably be approved for implementation
+  while they remain unanswered, since several (severity-to-gating
+  mapping, Rule Catalog storage) directly determine the eventual schema.
+- No existing frozen phase's documentation, schema, API, or test suite
+  was touched — verified by `git diff --stat` showing only new/updated
+  `docs/ebp/*.md` files (see the corresponding `CHANGELOG.md` entry).
+- Phase 4 remains not started and not authorized by this ADR.

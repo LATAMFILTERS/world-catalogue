@@ -35,6 +35,16 @@ scoped/estimated once Phase 0 is approved, but no phase's build order may be
 reshuffled without updating this table and logging the change in
 `DECISIONS.md`.
 
+**Phase 04 prerequisite (added 2026-07-13, ADR-0038):** before Phase 04's
+implementation can be authorized, its rule-engine *behavior* — comparison
+types, states, severity, exceptions, the Rule Catalog shape — must already
+be fully defined in `ENGINEERING_RULE_ENGINE.md`, independent of any
+API/schema design. Phase 4's own spec (`phases/phase-04-validation-
+engine.md`) may not contradict that document; any deviation requires a
+new ADR that explicitly supersedes the relevant section. See
+`ENGINEERING_RULE_ENGINE.md`'s own "Open Questions" — all twelve must be
+answered before Phase 4 code is written.
+
 ## Phase Gate Definition
 
 A phase is considered **ready to build** only when:

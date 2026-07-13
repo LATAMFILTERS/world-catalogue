@@ -38,8 +38,8 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **Built** | — | — |
-| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised) | — | — |
+| 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
+| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised); rule-engine behavior normatively defined in [`ENGINEERING_RULE_ENGINE.md`](ENGINEERING_RULE_ENGINE.md), ADR-0038 | — | — |
 | 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
@@ -154,6 +154,25 @@ See ADR-0005.
   authorized by ADR-0037 and requires its own separate phase-gate
   approval, same as any other phase. Phase 4 (Engineering Compliance
   Validation) remains not started and not authorized.**
+- **`ENGINEERING_RULE_ENGINE.md` (normative reference, added 2026-07-13,
+  ADR-0038) — governs Phase 4, is not itself a phase, no row in the table
+  above.** Before authorizing Phase 4 implementation, the project owner
+  required the rule engine's *behavior* (not its API or schema) to be
+  fully defined first: the philosophy (Engineering Compliance,
+  Engineering Approval, Commercial Approval, Deviation, Exception,
+  Conditional Approval), ten Comparison Types, a six-state model, a
+  five-level Severity scale, the Exception model, Scoring philosophy
+  (not implemented), the Observation Catalog principle, the Rule Catalog
+  shape and fourteen Categories, the full Passport→Offer→Rule
+  Evaluation→Compliance Summary→Engineering Decision→Offer Approval
+  flow, Dashboard Readiness, and AI-readiness rationale — see
+  `ENGINEERING_RULE_ENGINE.md` and ADR-0038. **No table, API, migration,
+  or code was created. No frozen phase was touched.** Twelve open
+  questions are recorded in that document's own "Open Questions" section
+  and **must all be answered before any Phase 4 code is written**. Phase
+  4's own spec (`phases/phase-04-validation-engine.md`) is unchanged by
+  this ADR and remains `Spec Drafted`, unapproved. **Phase 4 remains not
+  started and not authorized.**
 
 ## How to Use This File
 
