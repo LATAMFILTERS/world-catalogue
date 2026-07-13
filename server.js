@@ -161,7 +161,7 @@ app.use((req, res, next) => {
 });
 
 // Healthcheck FIRST — must respond before anything else can fail
-app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.0' }));
+app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.1-ld-diag' }));
 
 
 app.use(cors({
@@ -1476,6 +1476,36 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
   }
 });
 
+
+// ─── GET /api/debug/bad-jsonb-applications ────────────────────────────────────
+// Finds rows where vehicle_applications / equipment_applications hold a
+// non-array JSON value, which breaks any query calling jsonb_array_elements()
+// on that column directly (no typeof guard).
+app.get('/api/debug/bad-jsonb-applications', searchLimiter, async (req, res) => {
+  const ADMIN_KEY_LOCAL = process.env.ADMIN_KEY;
+  const authHeader = req.get('authorization') || '';
+  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
+  if (!ADMIN_KEY_LOCAL || providedKey !== ADMIN_KEY_LOCAL) {
+    return res.status(403).json({ error: 'forbidden' });
+  }
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, duty,
+        jsonb_typeof(vehicle_applications)   AS va_type,
+        jsonb_typeof(equipment_applications) AS ea_type
+      FROM elimfilters_catalog
+      WHERE (vehicle_applications   IS NOT NULL AND jsonb_typeof(vehicle_applications)   <> 'array')
+         OR (equipment_applications IS NOT NULL AND jsonb_typeof(equipment_applications) <> 'array')
+      LIMIT 50
+    `);
+    res.json({ success: true, count: rows.length, rows });
+  } catch (e) {
+    res.status(500).json({ success: false, error: e.message });
+  } finally {
+    client.release();
+  }
+});
 
 // ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
 app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
