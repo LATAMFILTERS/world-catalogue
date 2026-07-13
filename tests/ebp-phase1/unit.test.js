@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
 
 const validation = require('../../ebp/phase1/validation');
 const dto = require('../../ebp/phase1/dto');
+const actor = require('../../ebp/phase1/actor');
 
 test('validateLockedIdentification rejects missing fields', () => {
   const errors = validation.validateLockedIdentification({});
@@ -37,22 +38,36 @@ test('validateLockedIdentification rejects an invalid duty value', () => {
   assert.ok(errors.some((e) => e.startsWith('duty must be one of')));
 });
 
-test('resolveFieldApplicability: matrix value used when no override given', () => {
-  const resolved = validation.resolveFieldApplicability([{ field_name: 'bypass_valve_applicability', applicability: 'REQUIRED' }], {});
+test('resolveFieldApplicability: matrix value used when no override given, tagged source MATRIX', () => {
+  const { resolved, source } = validation.resolveFieldApplicability(
+    [{ field_name: 'bypass_valve_applicability', applicability: 'REQUIRED', approval_status: 'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL' }],
+    {}
+  );
   assert.equal(resolved.bypass_valve_applicability, 'REQUIRED');
+  assert.equal(source.bypass_valve_applicability, 'MATRIX');
 });
 
-test('resolveFieldApplicability: explicit override always wins over the matrix', () => {
-  const resolved = validation.resolveFieldApplicability(
+test('resolveFieldApplicability: explicit override always wins over the matrix, tagged source OVERRIDE', () => {
+  const { resolved, source } = validation.resolveFieldApplicability(
     [{ field_name: 'bypass_valve_applicability', applicability: 'REQUIRED' }],
     { bypass_valve_applicability: 'NOT_APPLICABLE' }
   );
   assert.equal(resolved.bypass_valve_applicability, 'NOT_APPLICABLE');
+  assert.equal(source.bypass_valve_applicability, 'OVERRIDE');
 });
 
-test('resolveFieldApplicability: ignores an override with an invalid value', () => {
-  const resolved = validation.resolveFieldApplicability([], { bypass_valve_applicability: 'MAYBE' });
+test('resolveFieldApplicability: ignores an override with an invalid value (no resolution, no source)', () => {
+  const { resolved, source } = validation.resolveFieldApplicability([], { bypass_valve_applicability: 'MAYBE' });
   assert.equal(resolved.bypass_valve_applicability, undefined);
+  assert.equal(source.bypass_valve_applicability, undefined);
+});
+
+test('APPLICABILITY_APPROVAL_STATUS exposes the exact PROVISIONAL/APPROVED marker strings', () => {
+  assert.equal(
+    validation.APPLICABILITY_APPROVAL_STATUS.PROVISIONAL,
+    'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL'
+  );
+  assert.equal(validation.APPLICABILITY_APPROVAL_STATUS.APPROVED, 'ENGINEERING_APPROVED');
 });
 
 test('unresolvedValveFields: flags both valve fields when nothing resolves them', () => {
@@ -109,6 +124,33 @@ test('applyPackagingDefaults: explicit values are never overwritten', () => {
   assert.equal(out.individual_box_required, false);
 });
 
+// ── Declared-actor semantics ─────────────────────────────────────────────────
+
+test('resolveDeclaredActor: uses the header value when present', () => {
+  const result = actor.resolveDeclaredActor('engineer@elimfilters.com');
+  assert.equal(result.declared_actor, 'engineer@elimfilters.com');
+  assert.equal(result.identity_mechanism, 'ADMIN_KEY_SHARED');
+});
+
+test('resolveDeclaredActor: falls back to admin-key-session when the header is absent, never unknown-engineering-actor', () => {
+  const result = actor.resolveDeclaredActor(undefined);
+  assert.equal(result.declared_actor, 'admin-key-session');
+  assert.notEqual(result.declared_actor, 'unknown-engineering-actor');
+});
+
+test('resolveDeclaredActor: falls back to admin-key-session for a blank/whitespace-only header', () => {
+  const result = actor.resolveDeclaredActor('   ');
+  assert.equal(result.declared_actor, 'admin-key-session');
+});
+
+test('resolveDeclaredActor: identity_mechanism is always ADMIN_KEY_SHARED in Phase 1, never authenticated_actor terminology', () => {
+  const withHeader = actor.resolveDeclaredActor('someone');
+  const withoutHeader = actor.resolveDeclaredActor(null);
+  assert.equal(withHeader.identity_mechanism, 'ADMIN_KEY_SHARED');
+  assert.equal(withoutHeader.identity_mechanism, 'ADMIN_KEY_SHARED');
+  assert.ok(!('authenticated_actor' in withHeader));
+});
+
 // ── DTOs (ADR-0009) ─────────────────────────────────────────────────────────
 
 const SAMPLE_ROW = {
@@ -125,6 +167,7 @@ const SAMPLE_ROW = {
   status: 'ACTIVE',
   supersedes_passport_id: null,
   created_by: 'engineer@elimfilters.com',
+  identity_mechanism: 'ADMIN_KEY_SHARED',
   created_at: '2026-07-13T00:00:00Z',
   activated_at: '2026-07-13T00:01:00Z',
   superseded_at: null,
@@ -140,6 +183,12 @@ test('toInternalPassportDTO includes both note fields', () => {
   const result = dto.toInternalPassportDTO(SAMPLE_ROW);
   assert.equal(result.engineering.manufacturer_instruction_notes, 'Use torque spec X');
   assert.equal(result.engineering.internal_engineering_notes, 'Do not quote below $2.10 FOB');
+});
+
+test('toInternalPassportDTO exposes created_by alongside identity_mechanism (declared, not authenticated)', () => {
+  const result = dto.toInternalPassportDTO(SAMPLE_ROW);
+  assert.equal(result.created_by, 'engineer@elimfilters.com');
+  assert.equal(result.identity_mechanism, 'ADMIN_KEY_SHARED');
 });
 
 test('toManufacturerPassportDTO strips internal_engineering_notes but keeps manufacturer_instruction_notes', () => {

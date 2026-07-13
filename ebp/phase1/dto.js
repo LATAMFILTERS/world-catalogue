@@ -25,7 +25,8 @@ function toInternalPassportDTO(row) {
     engineering_revision: row.engineering_revision,
     status: row.status,
     supersedes_passport_id: row.supersedes_passport_id,
-    created_by: row.created_by,
+    created_by: row.created_by, // a declared_actor label, not a verified/authenticated identity — see ebp/phase1/actor.js
+    identity_mechanism: row.identity_mechanism, // e.g. 'ADMIN_KEY_SHARED' — how strong (or weak) the created_by claim is
     created_at: row.created_at,
     activated_at: row.activated_at,
     superseded_at: row.superseded_at,

@@ -604,3 +604,72 @@ formally approves Phase 0.
   spec, which this same change converts to a complete, implementable
   specification before any code is written, per
   `CLAUDE_WORKFLOW.md` §3 (Documentation-First Requirement).
+
+---
+
+## ADR-0014 — A Passport cannot activate while it depends on a PROVISIONAL, unapproved applicability-matrix rule
+
+**Date:** 2026-07-13
+**Status:** Accepted
+**Scope:** Phase 1 implementation detail. Does not alter the frozen v1.0
+baseline (ADR-0001–ADR-0013) — this is an additive rule specific to how
+Phase 1's field-applicability matrix (introduced during Phase 1
+implementation, not part of the original Phase 0 baseline) governs
+Passport activation.
+
+**Context:** Phase 1's field-applicability matrix
+(`ebp_field_applicability_matrix`) was seeded with 40 rows as a starting
+point grounded in general filtration engineering practice, explicitly
+flagged as not yet reviewed by ELIMFILTERS engineering (see the phase-01
+doc's "Risks"). Left unaddressed, nothing would stop a Passport built on
+an unreviewed, possibly-wrong applicability rule from reaching `ACTIVE`
+status and being treated as a production-ready specification — silently
+converting a provisional starting guess into a de facto engineering
+authority.
+
+**Decision:**
+1. Every `ebp_field_applicability_matrix` row carries `approval_status`,
+   either `PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL` (the
+   default/seed state) or `ENGINEERING_APPROVED`.
+2. Every field resolved onto a Passport's `ebp_passport_engineering` row
+   is tagged with its provenance in `field_applicability_source`:
+   `MATRIX` (resolved from the applicability matrix) or `OVERRIDE`
+   (an explicit value supplied on the Passport itself, an engineering
+   decision already made at Passport-authoring time).
+3. **Creating a `DRAFT` Passport is never blocked by matrix review
+   state** — a Passport may be drafted, and its engineering data
+   authored, entirely against `PROVISIONAL` rules. This supports normal
+   iterative drafting and test/sample Passports.
+4. **Activating a Passport (`DRAFT` → `ACTIVE`) is blocked** if any field
+   on that revision is `MATRIX`-sourced and the corresponding matrix
+   row's *current* `approval_status` is not `ENGINEERING_APPROVED`.
+   `OVERRIDE`-sourced fields are exempt from this check — an explicit
+   override is already an engineering decision and does not need the
+   shared matrix's approval. The check re-reads the matrix's current
+   state at the moment of activation (not whatever it was when the
+   `DRAFT` was created), so approving a matrix row unblocks activation
+   for any Passport depending on it without requiring a new revision.
+5. There is exactly one policy, applied consistently at the SQL level
+   (`approval_status` CHECK constraint), the service layer
+   (`assertApplicabilityApprovedForActivation` in
+   `ebp/phase1/service.js`), and test coverage (unit + integration +
+   regression) — not two competing mechanisms and not left to
+   documentation alone.
+
+**Consequences:**
+- Until ELIMFILTERS engineering explicitly approves specific matrix rows
+  (`UPDATE ebp_field_applicability_matrix SET approval_status =
+  'ENGINEERING_APPROVED' WHERE ...`), no Passport that relies on the
+  matrix for any field can reach `ACTIVE`. This is intentional friction —
+  the alternative (allowing activation with an `ENGINEERING_REVIEW_
+  REQUIRED` marker) was considered and rejected in favor of a hard gate,
+  since Phase 1's architecture had enough room to implement the real
+  gate rather than a softer flag-only compromise.
+- A Passport that supplies explicit `field_applicability` overrides for
+  every field the matrix would otherwise resolve can activate
+  immediately regardless of matrix review state — this is by design, not
+  a loophole: an explicit override is ELIMFILTERS engineering directly
+  answering the question the matrix would otherwise answer on its
+  behalf.
+- `BUSINESS_RULES.md` §3 gains a short pointer to this ADR (the frozen
+  v1.0 baseline text itself is not altered — see that section's note).

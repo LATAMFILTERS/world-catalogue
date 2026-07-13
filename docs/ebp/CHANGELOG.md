@@ -362,7 +362,7 @@ Postgres instance (not mocked). Phase 1 status moves to `Built`.
 - **`ebp/phase1/service.js`** — orchestration: `createPassport`,
   `createRevision`, `activatePassport` (atomic supersession via row
   locks), `retirePassport`.
-- **`ebp/phase1/passports.routes.js`** — the ten-endpoint internal API
+- **`ebp/phase1/passports.routes.js`** — the eight-endpoint internal API
   surface (`create`, `get current`, `list revisions`, `get revision`,
   `create revision`, `activate`, `retire`, `applicability-matrix`).
 - **`server.js`** — mounts `/api/ebp/passports` behind the existing
@@ -392,3 +392,108 @@ Postgres instance (not mocked). Phase 1 status moves to `Built`.
   `403`.
 - **Phase 2 was not started.** No Manufacturer Registry table, route, or
   spec change was made in this session.
+
+## 2026-07-13 — Phase 1 post-implementation audit correction
+
+The project owner reviewed the "Built" Phase 1 delivery and found three
+issues before approving it: a miscounted API surface, actor terminology
+that overstated identity strength, and an applicability matrix that was
+seeded but not actually gated. All three are fixed in this change.
+
+- **Endpoint count corrected (10 → 8).** `ebp/phase1/passports.routes.js`,
+  `docs/ebp/phases/phase-01-product-engineering-passport.md`, and
+  `CHANGELOG.md`'s prior entry all previously said "ten endpoints" while
+  only eight routes are implemented. No routes were added or invented to
+  reach ten — the documentation was corrected to match the real,
+  8-route surface (`POST /`, `GET /applicability-matrix`, `GET /:sku`,
+  `GET /:sku/revisions`, `GET /:sku/revisions/:revision`, `POST
+  /:sku/revisions`, `POST /:id/activate`, `POST /:id/retire`).
+- **`ebp/phase1/actor.js`** (new) — `resolveDeclaredActor(headerValue)`
+  returns `{ declared_actor, identity_mechanism }`. `declared_actor` is
+  explicitly documented as a self-reported label, never named or treated
+  as an authenticated identity; its no-header fallback is the explicit
+  `'admin-key-session'`, not `'unknown-engineering-actor'`.
+  `identity_mechanism` is always `'ADMIN_KEY_SHARED'` in Phase 1.
+- **`migrations/ebp-phase1/003_actor_identity_and_applicability_approval.sql`**
+  (new) — additive migration: `identity_mechanism` on
+  `ebp_engineering_passports` and `ebp_passport_status_history`
+  (`DEFAULT 'ADMIN_KEY_SHARED'`); `approval_status` on
+  `ebp_field_applicability_matrix` (`DEFAULT
+  'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL'`, `CHECK`
+  against exactly that value or `'ENGINEERING_APPROVED'`);
+  `field_applicability_source` on `ebp_passport_engineering` (`JSONB`,
+  tags each resolved field `"MATRIX"` or `"OVERRIDE"`). `COMMENT ON
+  COLUMN` added throughout clarifying declared-actor semantics.
+- **`DECISIONS.md`** — added ADR-0014: a Passport revision cannot
+  activate (`DRAFT` → `ACTIVE`) while it depends on a `MATRIX`-sourced
+  field whose applicability-matrix row is not currently
+  `ENGINEERING_APPROVED`; `OVERRIDE`-sourced fields are exempt; drafting
+  is never blocked, only activation; the check re-reads the matrix's
+  current state at activation time. `BUSINESS_RULES.md` §3 gained a short
+  pointer to this ADR (frozen v1.0 baseline text itself unchanged).
+- **`ebp/phase1/validation.js`** — `resolveFieldApplicability` now
+  returns `{ resolved, source }` instead of a bare map, tagging each
+  field's provenance; added `APPLICABILITY_APPROVAL_STATUS` constants.
+- **`ebp/phase1/service.js`** — all actor parameters are now `{
+  declared_actor, identity_mechanism }` objects, not bare strings;
+  `insertEngineeringAndPackaging` persists `field_applicability_source`;
+  new `assertApplicabilityApprovedForActivation` enforces ADR-0014 inside
+  `activatePassport`'s existing transaction, before the supersession
+  logic runs.
+- **`ebp/phase1/repository.js`** — `fetchApplicabilityMatrix` now selects
+  `approval_status`; added `fetchApplicabilityApprovalFor` and
+  `fetchEngineeringSource`; `insertStatusHistory` gained an
+  `identityMechanism` parameter.
+- **`ebp/phase1/passports.routes.js`** — route-count comment corrected to
+  eight with an explicit numbered inventory; `actorFrom` now delegates to
+  `resolveDeclaredActor`.
+- **`ebp/phase1/dto.js`** — `toInternalPassportDTO` now exposes
+  `identity_mechanism` alongside `created_by`, with an inline comment
+  stating `created_by` is a declared label, not a verified identity.
+- **`migrations/ebp-phase1/validate.sql`** — three new checks: all seeded
+  applicability rows are `PROVISIONAL` by default; both
+  `identity_mechanism` columns exist with the `ADMIN_KEY_SHARED` default;
+  `field_applicability_source` exists on `ebp_passport_engineering`.
+- **`migrations/ebp-phase1/rollback.sql`** — added Option D (approve a
+  matrix row via `UPDATE`, the normal non-destructive path out of
+  `PROVISIONAL`); clarified that dropping a table also drops migration
+  `003`'s additive columns, no separate step needed.
+- **`tests/ebp-phase1/`** — grew from 43 to 59 tests: unit tests updated
+  for the new `resolveFieldApplicability` return shape and added for
+  `actor.js`; integration tests added for the ADR-0014 gate (blocked
+  while `PROVISIONAL`, unblocked after a direct SQL approval with no new
+  revision required, unblocked immediately for a fully `OVERRIDE`-sourced
+  Passport) and for declared-actor recording (default and
+  caller-supplied); regression tests added for the two new `CHECK`
+  constraints and the two new column defaults. One newly added regression
+  test was fixed for re-run idempotency (it used a fixed literal
+  category/subtype name that collided on a second run against the same
+  database; corrected to use the same per-run unique suffix already used
+  elsewhere in that file).
+- **Full re-verification from scratch:** test database dropped and
+  recreated; `001_schema.sql`, `002_seed_applicability_matrix.sql`, and
+  `003_actor_identity_and_applicability_approval.sql` applied in order;
+  `validate.sql` run (all 9 checks passed); the full 59-test suite run
+  three times consecutively against the same database with 59/59 passing
+  every time (confirming idempotency, not just a single lucky pass);
+  `rollback.sql` run and confirmed to drop all 5 EBP tables while leaving
+  `elimfilters_catalog` and `technologies` row counts unchanged in
+  structure; migrations reapplied to leave the database in a working
+  final state.
+- **Phase 2 was not started.** No Manufacturer Registry table, route, or
+  spec file was touched in this correction.
+
+## 2026-07-13 — Phase 1 approved and frozen — v1.0
+
+The project owner confirmed the post-implementation audit correction was
+satisfactory and formally approved Phase 1.
+
+- **`IMPLEMENTATION_MASTER_INDEX.md`** — Phase 01 row set to `APPROVED /
+  FROZEN v1.0`, approved by Project Owner on 2026-07-13.
+- **Branch:** `claude/phase-0-audit-review-wanxa3`.
+- **Closing commit:** `<PENDING — filled in by the immediately following
+  commit that records this entry; see git history for the Phase 1
+  freeze commit on this branch>`.
+- **No further changes to Phase 1's implementation are made in this
+  entry** — this is a status/approval-only change. Phase 2 remains not
+  started.

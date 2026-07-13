@@ -1,7 +1,10 @@
 -- =============================================================================
 -- EBP PHASE 1 — ROLLBACK
 -- File: rollback.sql
--- Purpose: Completely undo all Phase 1 EBP changes if needed
+-- Purpose: Completely undo all Phase 1 EBP changes if needed (schema from
+-- 001_schema.sql plus the additive columns from
+-- 003_actor_identity_and_applicability_approval.sql — dropping a table
+-- drops its columns, no separate step is needed for those).
 -- DOES NOT modify elimfilters_catalog, technologies, or any other existing
 -- catalog/KG table — Phase 1 only adds ebp_-prefixed tables.
 --
@@ -66,4 +69,13 @@ UPDATE ebp_field_applicability_matrix
 SET applicability = 'REQUIRED',
     notes = 'Corrected per ELIMFILTERS engineering review 2026-XX-XX'
 WHERE product_category = 'AIR' AND product_subtype = 'PANEL' AND field_name = 'micron_rating';
+*/
+
+-- Option D: Approve a matrix row after ELIMFILTERS engineering review
+-- (ADR-0014) — this is the normal, non-destructive way a row moves out of
+-- PROVISIONAL and unblocks activation for Passports that depend on it:
+/*
+UPDATE ebp_field_applicability_matrix
+SET approval_status = 'ENGINEERING_APPROVED'
+WHERE product_category = 'OIL' AND product_subtype = 'SPIN_ON' AND field_name = 'beta_ratio';
 */

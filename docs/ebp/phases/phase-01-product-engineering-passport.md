@@ -1,10 +1,22 @@
 # Phase 01 — Product Engineering Passport (PEP)
 
-**Status:** `In Build` (implementable specification — approved for
-implementation 2026-07-13, immediately following Phase 0's approval,
-ADR-0013)
+**Status:** `APPROVED / FROZEN v1.0`
+**Approved:** 2026-07-13, by the project owner, after a post-implementation
+audit correction (endpoint-count accuracy, declared-actor semantics,
+ADR-0014's applicability-approval activation gate).
+**Branch:** `claude/phase-0-audit-review-wanxa3`
+**Closing commit:** see the "Phase 1 approved and frozen — v1.0" entry in
+`CHANGELOG.md` for this date, which names the exact commit hash.
 **Depends on:** Phase 00 (`APPROVED / FROZEN v1.0`)
 **Blocks:** Phases 02, 03, 04, 08
+
+**Frozen scope:** the data model, API surface, declared-actor semantics,
+and the ADR-0014 applicability-approval gate described in this document
+may not change without a new ADR that explicitly supersedes the relevant
+prior entry. The seeded applicability-matrix *values* (not the mechanism)
+remain explicitly provisional and are expected to change as ELIMFILTERS
+engineering reviews them — that is normal, gated data maintenance, not an
+architecture change.
 
 **Correction notice (first round):** This revision replaces the original
 draft's generic "bill-of-materials category" concept (which implied a
@@ -37,6 +49,19 @@ rules, role-scoped DTOs, the full create/revise/activate/retire lifecycle,
 and the initial import strategy. Both prior open questions on data-entry
 actor and applicability matrix are resolved below (see "Decisions Made at
 Implementation," Deliverables, and Open Questions).
+
+**Correction notice (post-implementation audit, 2026-07-13):** Three
+issues found on review before freeze are fixed in this revision: (1) the
+API surface was miscounted as "ten endpoints" in this document, the
+implementation comments, and `CHANGELOG.md` — the real, implemented
+surface is **eight** endpoints (corrected throughout); (2) `created_by`/
+`changed_by` are now explicitly documented, and paired with a new
+`identity_mechanism` column, as **declared-actor labels — not verified/
+authenticated identities** — while auth remains a single shared
+`ADMIN_KEY` (see "Actor & Audit Semantics" below); (3) the seeded
+applicability matrix is now backed by a real, enforced activation gate
+(ADR-0014), not just a documentation warning — see "Applicability
+Approval Gate" below.
 
 ## Objective
 
@@ -121,12 +146,15 @@ questions)
 ## Key Entities / Data Model (implemented)
 
 All tables live in the existing Postgres database under the `ebp_`
-prefix, added via additive migrations
-(`migrations/ebp-phase1/001_schema.sql`), following the same convention as
-`migrations/kg-phase1/001_schema.sql` (idempotent `CREATE TABLE IF NOT
-EXISTS`, `COMMENT ON TABLE`/`COMMENT ON COLUMN`, explicit indexes). See
-`migrations/ebp-phase1/001_schema.sql`, `validate.sql`, and `rollback.sql`
-for the exact, executable DDL.
+prefix, added via additive migrations under `migrations/ebp-phase1/`
+(`001_schema.sql` creates the 5 tables; `002_seed_applicability_matrix.sql`
+seeds the matrix; `003_actor_identity_and_applicability_approval.sql`
+adds the declared-actor and applicability-approval columns described
+below), following the same convention as `migrations/kg-phase1/
+001_schema.sql` (idempotent `CREATE TABLE`/`ADD COLUMN IF NOT EXISTS`,
+`COMMENT ON TABLE`/`COMMENT ON COLUMN`, explicit indexes). See those
+files plus `validate.sql` and `rollback.sql` for the exact, executable
+DDL.
 
 ### 1. Locked Identification — `ebp_engineering_passports`
 
@@ -148,7 +176,8 @@ and the same auditability guarantee.
 | `engineering_revision` | `INTEGER NOT NULL` | Starts at 1; increments per new revision in a lineage. |
 | `status` | `VARCHAR(20) NOT NULL DEFAULT 'DRAFT'` | `CHECK (status IN ('DRAFT','ACTIVE','SUPERSEDED','RETIRED'))`. |
 | `supersedes_passport_id` | `UUID REFERENCES ebp_engineering_passports(id)` | Nullable; the prior revision this one replaces. |
-| `created_by` | `TEXT NOT NULL` | |
+| `created_by` | `TEXT NOT NULL` | A **declared_actor label** (self-reported via `x-ebp-actor`, or `'admin-key-session'`) — not a verified identity. See "Actor & Audit Semantics". |
+| `identity_mechanism` | `VARCHAR(30) NOT NULL DEFAULT 'ADMIN_KEY_SHARED'` | Migration `003`. How `created_by` was established; always `ADMIN_KEY_SHARED` in Phase 1. |
 | `created_at` | `TIMESTAMPTZ NOT NULL DEFAULT NOW()` | |
 | `activated_at` | `TIMESTAMPTZ` | |
 | `superseded_at` | `TIMESTAMPTZ` | |
@@ -191,6 +220,7 @@ REFERENCES ebp_engineering_passports(id) ON DELETE CASCADE`).
 | `antidrainback_valve_material` | `VARCHAR(200)` |
 | `required_test_standards` | `JSONB NOT NULL DEFAULT '[]'` (array of `{"code": "ISO 16889", "scope": "..."}`) |
 | `field_applicability` | `JSONB NOT NULL DEFAULT '{}'` — per-scalar-field `REQUIRED`/`NOT_APPLICABLE` marker, populated from `ebp_field_applicability_matrix` at creation and overridable by engineering (implements the "explicit `NOT_APPLICABLE`, never a silent null" rule) |
+| `field_applicability_source` | `JSONB NOT NULL DEFAULT '{}'` — migration `003`. Per-field provenance: `"MATRIX"` or `"OVERRIDE"`. Drives the ADR-0014 activation gate below — only `MATRIX`-sourced fields are checked against the matrix's current `approval_status`. |
 | `manufacturer_instruction_notes` | `TEXT` |
 | `internal_engineering_notes` | `TEXT` |
 | `created_at`, `updated_at` | `TIMESTAMPTZ NOT NULL DEFAULT NOW()` |
@@ -227,6 +257,7 @@ Global lookup, not versioned per-passport:
 | `product_subtype` | `VARCHAR(100) NOT NULL` |
 | `field_name` | `VARCHAR(100) NOT NULL` |
 | `applicability` | `VARCHAR(20) NOT NULL` `CHECK (IN ('REQUIRED','NOT_APPLICABLE'))` |
+| `approval_status` | `VARCHAR(60) NOT NULL DEFAULT 'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL'` `CHECK (IN ('PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL','ENGINEERING_APPROVED'))` — migration `003`, ADR-0014. |
 | `notes` | `TEXT` |
 
 `UNIQUE (product_category, product_subtype, field_name)`.
@@ -235,8 +266,10 @@ Global lookup, not versioned per-passport:
 
 Append-only audit log: `id SERIAL PK`, `passport_id UUID NOT NULL
 REFERENCES ebp_engineering_passports(id) ON DELETE CASCADE`,
-`from_status`, `to_status NOT NULL`, `changed_by NOT NULL`, `changed_at
-TIMESTAMPTZ NOT NULL DEFAULT NOW()`, `reason TEXT`.
+`from_status`, `to_status NOT NULL`, `changed_by NOT NULL` (declared_actor
+label — see "Actor & Audit Semantics"), `identity_mechanism NOT NULL
+DEFAULT 'ADMIN_KEY_SHARED'` (migration `003`), `changed_at TIMESTAMPTZ
+NOT NULL DEFAULT NOW()`, `reason TEXT`.
 
 ## Passport Lifecycle
 
@@ -248,7 +281,8 @@ the same transaction as the status change.
 2. **Revise** — `POST /api/ebp/passports/:elimfilters_code/revisions`
    creates a new `DRAFT` revision (`engineering_revision` + 1,
    `supersedes_passport_id` = current `ACTIVE` row's id, if any).
-3. **Activate** — `POST /api/ebp/passports/:id/activate` moves a `DRAFT`
+3. **Activate** — `POST /api/ebp/passports/:id/activate` first checks the
+   ADR-0014 applicability gate (below); if it passes, moves the `DRAFT`
    revision to `ACTIVE`, and — in the same transaction — moves the prior
    `ACTIVE` revision for that `elimfilters_code` (if any) to `SUPERSEDED`.
    This is the same "atomic supersession" discipline flagged as a risk for
@@ -274,10 +308,12 @@ the same transaction as the status change.
 - `GET /api/ebp/passports/applicability-matrix` — query the applicability
   matrix by `product_category`/`product_subtype`.
 
-All ten endpoints are internal-only in Phase 1 (`requireAdmin`). No
-Manufacturer- or Distributor-facing endpoint is stood up in this phase —
-those belong to Phases 3 and 8 and depend on the still-undecided
-Manufacturer/Distributor auth (ADR-0002).
+All eight endpoints listed above are internal-only in Phase 1
+(`requireAdmin`) — this is the complete, exact route surface implemented
+in `ebp/phase1/passports.routes.js`; no additional route exists in any
+other file. No Manufacturer- or Distributor-facing endpoint is stood up
+in this phase — those belong to Phases 3 and 8 and depend on the still-
+undecided Manufacturer/Distributor auth (ADR-0002).
 
 ## Permissions
 
@@ -290,6 +326,32 @@ Manufacturer/Distributor auth (ADR-0002).
   yet) — the DTO-level distinction (§ DTOs below) exists so Phase 3 can
   adopt the manufacturer-facing projection without redesigning it, not
   because Phase 1 itself exposes notes externally.
+
+## Actor & Audit Semantics
+
+`requireAdmin` proves the caller holds the single shared `ADMIN_KEY` — it
+does **not** prove *which person* is acting. Every write endpoint accepts
+an optional `x-ebp-actor` header and records it as `created_by` (on
+create) or `changed_by` (on every status transition), but that value is a
+**self-reported label supplied by the caller, not a verified identity**.
+
+- `ebp/phase1/actor.js` resolves this: `resolveDeclaredActor(headerValue)`
+  returns `{ declared_actor, identity_mechanism }`. If `x-ebp-actor` is
+  absent or blank, `declared_actor` defaults to the explicit
+  `'admin-key-session'` — never a term like `unknown-engineering-actor`
+  that could be misread as an identity gap rather than a deliberate
+  labeling choice.
+- `identity_mechanism` is always `'ADMIN_KEY_SHARED'` in Phase 1 —
+  recorded alongside `declared_actor` on both
+  `ebp_engineering_passports.identity_mechanism` and
+  `ebp_passport_status_history.identity_mechanism` (migration `003`), so
+  any reader of the audit trail sees, without inference, that the actor
+  claim behind a record is only as strong as "held the shared admin key,"
+  not "was this specific verified person."
+- Nothing here is named `authenticated_actor`, and no code path treats
+  `declared_actor` as strong evidence of who performed an action. A real
+  per-user identity system is an explicit future-phase dependency
+  (ADR-0002) — Phase 1 does not attempt to simulate one.
 
 ## Validation Rules (implemented as pure functions, unit-tested)
 
@@ -334,13 +396,41 @@ Manufacturer/Distributor auth (ADR-0002).
   (Phase 7), per `BUSINESS_RULES.md` §11, with this projection available
   for whatever minimal identification passthrough Phase 8 needs.
 
-## Field Applicability Matrix — Seed Dataset (flagged for engineering review)
+## Field Applicability Matrix — Seed Dataset (PROVISIONAL, gated)
 
 Seeded via `migrations/ebp-phase1/002_seed_applicability_matrix.sql` for a
 representative starting set of `(product_category, product_subtype)`
 pairs. **This is a reasonable starting point grounded in general
 filtration engineering practice, not an ELIMFILTERS-engineering-reviewed
-authority** — see Risks.
+authority** — see Risks. Every seeded row's `approval_status` defaults to
+`PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL` (migration `003`).
+
+### Applicability Approval Gate (ADR-0014)
+
+A Passport revision may always be **created and drafted** against
+`PROVISIONAL` rules — that's unaffected. But **`POST
+/api/ebp/passports/:id/activate` is blocked** if the revision has any
+engineering field whose value was resolved from the matrix
+(`field_applicability_source[field] === 'MATRIX'`) and that matrix row's
+*current* `approval_status` is not `ENGINEERING_APPROVED`. The check
+re-reads the matrix at the moment of activation, not whatever it was when
+the Passport was drafted — so approving a row later unblocks activation
+for any Passport depending on it, no new revision required.
+
+A field the Passport author supplied an explicit `field_applicability`
+override for is tagged `OVERRIDE`, not `MATRIX`, and is exempt from this
+gate — an explicit override is already an ELIMFILTERS engineering
+decision made directly on the Passport, independent of the shared
+matrix's review state.
+
+To approve a matrix row (normally done by ELIMFILTERS engineering after
+review, no Phase 1 endpoint exists for this yet — see Open Questions):
+
+```sql
+UPDATE ebp_field_applicability_matrix
+SET approval_status = 'ENGINEERING_APPROVED'
+WHERE product_category = 'OIL' AND product_subtype = 'SPIN_ON' AND field_name = 'beta_ratio';
+```
 
 | product_category | product_subtype | bypass_valve | antidrainback_valve | beta_ratio | micron_rating |
 |---|---|---|---|---|---|
@@ -376,6 +466,8 @@ override supplies a value).
 - ADR-0009 (note-field split — `manufacturer_instruction_notes` vs.
   `internal_engineering_notes`, each behind its own role-specific
   projection).
+- ADR-0014 (a Passport cannot activate while depending on a `PROVISIONAL`,
+  unapproved applicability-matrix rule it did not explicitly override).
 
 ## Integration Points
 
@@ -405,6 +497,13 @@ override supplies a value).
 - [x] Role-scoped DTOs — implemented as pure functions (internal wired to
   live endpoints; Manufacturer/Distributor projections implemented and
   unit-tested but not yet wired to a live endpoint, per scope).
+- [x] Declared-actor semantics — implemented (`ebp/phase1/actor.js`,
+  `identity_mechanism` columns); no code or documentation names the
+  recorded actor an authenticated identity.
+- [x] Applicability approval gate — implemented (ADR-0014): activation is
+  blocked on `MATRIX`-sourced, non-`ENGINEERING_APPROVED` fields;
+  `OVERRIDE`-sourced fields are exempt; the policy is applied consistently
+  in SQL (`CHECK` + default), the service layer, and tests.
 
 ## Exit Criteria
 
@@ -424,17 +523,25 @@ override supplies a value).
   window exists where zero or two revisions are `ACTIVE` for the same SKU
   — enforced by the partial unique index and a single-transaction
   activation endpoint, and covered by a regression test.
+- [x] A Passport depending on a `PROVISIONAL` matrix rule cannot reach
+  `ACTIVE`; the same Passport activates once the dependent row(s) are
+  `ENGINEERING_APPROVED`, or once every dependent field is given an
+  explicit override — covered by integration tests exercising both paths.
 
 ## Risks
 
 - **Risk: applicability matrix seed data is not ELIMFILTERS-engineering-
-  reviewed.** The seed dataset above is a defensible starting point, not
-  an authoritative one. Using Phase 1 for real production Passports before
-  ELIMFILTERS engineering reviews and corrects this matrix risks
-  incorrect `REQUIRED`/`NOT_APPLICABLE` markers reaching Phase 3/4. The
-  matrix is a normal, editable table specifically so this correction can
-  happen without a schema change — but the correction itself has not
-  happened and must before real sourcing decisions depend on it.
+  reviewed.** The seed dataset is a defensible starting point, not an
+  authoritative one. **This risk is now structurally contained, not just
+  documented:** ADR-0014's activation gate means no Passport can reach
+  `ACTIVE` while depending on an unreviewed `PROVISIONAL` row it didn't
+  explicitly override — so an unreviewed row can produce an incorrect
+  `DRAFT`, but cannot silently become a production-`ACTIVE` specification.
+  The residual risk is narrower: (a) no Phase 1 endpoint exists yet for
+  engineering to approve a row — it's a direct SQL `UPDATE` today (see
+  Open Questions); (b) a Passport author could route around the gate with
+  an incorrect explicit override, since overrides are exempt by design —
+  that remains a human-process risk, not a system gap.
 - **Risk: draft/pre-SKU products could accidentally leak into
   distributor-visible surfaces** if Phase 8 doesn't strictly filter by
   Passport status. Mitigated by `BUSINESS_RULES.md` §11 (distributor
@@ -469,3 +576,14 @@ override supplies a value).
   for Phase 1's exit criteria, but likely relevant once ELIMFILTERS
   engineering reviews the seed data — flagged for Phase 1 follow-up or
   Phase 4's spec approval, whichever comes first.
+- **New (post-implementation audit):** there is no API endpoint yet for
+  ELIMFILTERS engineering to set `approval_status = 'ENGINEERING_
+  APPROVED'` on a matrix row — it's a direct SQL `UPDATE` (see
+  "Applicability Approval Gate"). Adding a small admin endpoint for this
+  is a reasonable Phase 1 follow-up; not required for this phase's exit
+  criteria since the gate itself is what was mandated, not a UI for it.
+- **New (post-implementation audit):** should `declared_actor`/
+  `identity_mechanism` be extended to the Manufacturer/Distributor-facing
+  endpoints once Phases 3/8 exist, or does a real per-user identity
+  system (ADR-0002) replace this mechanism entirely at that point? Not
+  decided — likely the latter, but not blocking for Phase 1.

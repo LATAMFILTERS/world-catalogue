@@ -1,13 +1,24 @@
 'use strict';
 
 // EBP Phase 1 — internal API surface for the Product Engineering Passport.
-// All ten endpoints here are internal-only (mounted behind requireAdmin in
+// All eight routes here are internal-only (mounted behind requireAdmin in
 // server.js, same as every other admin endpoint) — see
 // docs/ebp/phases/phase-01-product-engineering-passport.md "Permissions".
+//
+// Route inventory (keep this list and the router below in sync):
+//   1. POST   /
+//   2. GET    /applicability-matrix
+//   3. GET    /:sku
+//   4. GET    /:sku/revisions
+//   5. GET    /:sku/revisions/:revision
+//   6. POST   /:sku/revisions
+//   7. POST   /:id/activate
+//   8. POST   /:id/retire
 
 const express = require('express');
 const repository = require('./repository');
 const service = require('./service');
+const { resolveDeclaredActor } = require('./actor');
 const { toInternalPassportDTO } = require('./dto');
 
 function errorToResponse(err) {
@@ -17,8 +28,12 @@ function errorToResponse(err) {
   return { status: 500, body: { error: 'internal_error' } };
 }
 
+// Returns { declared_actor, identity_mechanism } — declared_actor is a
+// self-reported label from the x-ebp-actor header (or the explicit
+// 'admin-key-session' default), never a verified identity. See
+// ebp/phase1/actor.js.
 function actorFrom(req) {
-  return req.get('x-ebp-actor') || 'unknown-engineering-actor';
+  return resolveDeclaredActor(req.get('x-ebp-actor'));
 }
 
 // Factory: createPassportsRouter(pool) — pool is the existing `pg` Pool

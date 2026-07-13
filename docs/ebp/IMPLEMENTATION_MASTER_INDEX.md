@@ -36,7 +36,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | # | Phase | Doc | Status | Approved by | Approved on |
 |---|---|---|---|---|---|
 | 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **Built** | Project Owner | 2026-07-13 |
+| 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | Spec Drafted (revised) | — | — |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | Spec Drafted (revised) | — | — |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised) | — | — |
@@ -59,13 +59,17 @@ See ADR-0005.
   through ADR-0013). The documentation baseline under `docs/ebp/` may not
   be altered without a new ADR that explicitly supersedes the relevant
   prior entry — see ADR-0013.
-- **Phase 01 — Product Engineering Passport** is `Built` as of 2026-07-13:
-  real, executable SQL migrations (`migrations/ebp-phase1/`), a real
-  backend module (`ebp/phase1/`) mounted in `server.js` at
-  `/api/ebp/passports` behind `requireAdmin`, and a 43-test suite
-  (unit + integration + regression, `tests/ebp-phase1/`) — all passing
-  against a real local Postgres instance. See the `CHANGELOG.md` entry for
-  this date for the full file/test/risk breakdown.
+- **Phase 01 — Product Engineering Passport** is `APPROVED / FROZEN v1.0`
+  as of 2026-07-13: real, executable SQL migrations
+  (`migrations/ebp-phase1/`, three files), a real backend module
+  (`ebp/phase1/`) mounted in `server.js` at `/api/ebp/passports` (eight
+  endpoints) behind `requireAdmin`, and a 59-test suite (unit + integration
+  + regression, `tests/ebp-phase1/`) — all passing against a real local
+  Postgres instance, re-verified from a from-scratch migration
+  immediately before this freeze. Declared-actor semantics (ADR-0011-
+  adjacent, not a numbered ADR) and the ADR-0014 applicability-approval
+  activation gate were added in a post-implementation audit correction
+  before this freeze — see the `CHANGELOG.md` entries for this date.
 - **Phases 02-09** remain `Spec Drafted` — first-pass drafts written during
   Phase 0 to prove the roadmap's dependency chain is coherent (see each
   file's own "Status" line). None are `Spec Approved`. **No implementation

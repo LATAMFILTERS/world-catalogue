@@ -131,4 +131,57 @@ test('EBP Phase 1 — regression guards', async (t) => {
     assert.equal(pkgRows.length, 0);
     assert.equal(histRows.length, 0);
   });
+
+  await t.test('REGRESSION: identity_mechanism defaults to ADMIN_KEY_SHARED on both ebp_engineering_passports and ebp_passport_status_history when not supplied', async () => {
+    const passportId = await insertPassport(6, 'DRAFT');
+    const { rows: passportRows } = await pool.query(
+      'SELECT identity_mechanism, created_by FROM ebp_engineering_passports WHERE id = $1',
+      [passportId]
+    );
+    assert.equal(passportRows[0].identity_mechanism, 'ADMIN_KEY_SHARED');
+    assert.equal(passportRows[0].created_by, 'regression-test');
+
+    await pool.query(
+      `INSERT INTO ebp_passport_status_history (passport_id, to_status, changed_by) VALUES ($1, 'DRAFT', 'regression-test')`,
+      [passportId]
+    );
+    const { rows: historyRows } = await pool.query(
+      'SELECT identity_mechanism FROM ebp_passport_status_history WHERE passport_id = $1',
+      [passportId]
+    );
+    assert.equal(historyRows[0].identity_mechanism, 'ADMIN_KEY_SHARED');
+  });
+
+  await t.test('REGRESSION: ebp_field_applicability_matrix rejects an approval_status value outside the two ADR-0014 states', async () => {
+    await assert.rejects(
+      () =>
+        pool.query(
+          `INSERT INTO ebp_field_applicability_matrix (product_category, product_subtype, field_name, applicability, approval_status)
+           VALUES ('REGRESSION_TEST_CATEGORY_2', 'REGRESSION_TEST_SUBTYPE_2', 'bypass_valve_applicability', 'REQUIRED', 'RUBBER_STAMPED')`
+        ),
+      (err) => {
+        assert.equal(err.code, '23514'); // check_violation
+        return true;
+      }
+    );
+  });
+
+  await t.test('REGRESSION: a newly seeded applicability row defaults to PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL, never silently ENGINEERING_APPROVED', async () => {
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_field_applicability_matrix (product_category, product_subtype, field_name, applicability)
+       VALUES ($1, $2, 'bypass_valve_applicability', 'REQUIRED')
+       RETURNING approval_status`,
+      [`REGRESSION_TEST_CATEGORY_3_${suffix}`, `REGRESSION_TEST_SUBTYPE_3_${suffix}`]
+    );
+    assert.equal(rows[0].approval_status, 'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL');
+  });
+
+  await t.test('REGRESSION: field_applicability_source defaults to an empty object, never null, on ebp_passport_engineering', async () => {
+    const passportId = await insertPassport(7, 'DRAFT');
+    const { rows } = await pool.query(
+      `INSERT INTO ebp_passport_engineering (passport_id) VALUES ($1) RETURNING field_applicability_source`,
+      [passportId]
+    );
+    assert.deepEqual(rows[0].field_applicability_source, {});
+  });
 });

@@ -56,3 +56,27 @@ WHERE status = 'ACTIVE'
 GROUP BY elimfilters_code
 HAVING COUNT(*) > 1;
 -- Expected: 0 rows
+
+-- 7. All seeded applicability rows start PROVISIONAL (ADR-0014) — none may
+--    be silently treated as ELIMFILTERS-engineering-approved by default
+SELECT COUNT(*) AS non_provisional_seed_rows
+FROM ebp_field_applicability_matrix
+WHERE approval_status <> 'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL';
+-- Expected: 0 (until engineering explicitly approves specific rows)
+
+-- 8. identity_mechanism columns exist and default correctly
+SELECT column_name, column_default
+FROM information_schema.columns
+WHERE table_name = 'ebp_engineering_passports' AND column_name = 'identity_mechanism';
+-- Expected: 1 row, default containing 'ADMIN_KEY_SHARED'
+
+SELECT column_name, column_default
+FROM information_schema.columns
+WHERE table_name = 'ebp_passport_status_history' AND column_name = 'identity_mechanism';
+-- Expected: 1 row, default containing 'ADMIN_KEY_SHARED'
+
+-- 9. field_applicability_source column exists on ebp_passport_engineering
+SELECT column_name
+FROM information_schema.columns
+WHERE table_name = 'ebp_passport_engineering' AND column_name = 'field_applicability_source';
+-- Expected: 1 row

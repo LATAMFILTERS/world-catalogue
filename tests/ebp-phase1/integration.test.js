@@ -8,7 +8,8 @@
 // Run: node --test tests/ebp-phase1/integration.test.js
 // Override the target DB with DATABASE_URL if not using the default local
 // test database this session created (postgresql://postgres:postgres@
-// localhost:5432/ebp_phase1_test, migrated via migrations/ebp-phase1/).
+// localhost:5432/ebp_phase1_test, migrated via migrations/ebp-phase1/
+// 001, 002, and 003).
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -45,11 +46,24 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
   const skuLD = `ELTEST${suffix}B`;
   const skuUnseeded = `ELTEST${suffix}C`;
   const skuUnseededOverride = `ELTEST${suffix}D`;
+  // A dedicated, uniquely-named category/subtype pair per test run, so this
+  // test's matrix-approval UPDATE can never affect any other test's rows
+  // (including OIL/SPIN_ON, which other tests rely on staying PROVISIONAL).
+  const gateCategory = `GATECAT${suffix}`;
+  const gateSubtype = `GATESUB${suffix}`;
+  const skuGate = `ELTEST${suffix}E`;
 
   await pool.query(
-    `INSERT INTO elimfilters_catalog (sku, duty, filter_type, sub_type) VALUES ($1,'HD','OIL','SPIN_ON'), ($2,'LD','OIL','SPIN_ON')
+    `INSERT INTO elimfilters_catalog (sku, duty, filter_type, sub_type) VALUES
+       ($1,'HD','OIL','SPIN_ON'), ($2,'LD','OIL','SPIN_ON'), ($3,'HD','OIL','SPIN_ON')
      ON CONFLICT (sku) DO NOTHING`,
-    [skuHD, skuLD]
+    [skuHD, skuLD, skuGate]
+  );
+  await pool.query(
+    `INSERT INTO ebp_field_applicability_matrix (product_category, product_subtype, field_name, applicability)
+     VALUES ($1, $2, 'bypass_valve_applicability', 'REQUIRED'), ($1, $2, 'antidrainback_valve_applicability', 'REQUIRED')
+     ON CONFLICT (product_category, product_subtype, field_name) DO NOTHING`,
+    [gateCategory, gateSubtype]
   );
 
   const { server, baseUrl } = await startTestServer(pool);
@@ -79,14 +93,22 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
     assert.equal(body.engineering_revision, 1);
     assert.equal(body.engineering.bypass_valve_applicability, 'REQUIRED');
     assert.equal(body.engineering.antidrainback_valve_applicability, 'REQUIRED');
+    assert.equal(body.engineering.field_applicability_source.bypass_valve_applicability, 'MATRIX');
     assert.equal(body.packaging.individual_box_required, true);
     revision1Id = body.id;
   });
 
-  await t.test('creates Passport revision 1 for a real LD SKU (proves both duty classes work)', async () => {
+  await t.test('created_by defaults to admin-key-session when x-ebp-actor is not sent, paired with identity_mechanism ADMIN_KEY_SHARED', async () => {
+    const res = await fetch(`${baseUrl}/${skuHD}`);
+    const body = await res.json();
+    assert.equal(body.created_by, 'admin-key-session');
+    assert.equal(body.identity_mechanism, 'ADMIN_KEY_SHARED');
+  });
+
+  await t.test('created_by records the caller-declared x-ebp-actor label when sent (still not an authenticated identity)', async () => {
     const res = await fetch(baseUrl, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', 'x-ebp-actor': 'jane@elimfilters.com' },
       body: JSON.stringify({
         elimfilters_code: skuLD,
         product_category: 'OIL',
@@ -98,6 +120,8 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
     assert.equal(res.status, 201);
     const body = await res.json();
     assert.equal(body.duty, 'LIGHT_DUTY');
+    assert.equal(body.created_by, 'jane@elimfilters.com');
+    assert.equal(body.identity_mechanism, 'ADMIN_KEY_SHARED');
   });
 
   await t.test('rejects a duplicate revision-1 create for the same SKU (409 conflict)', async () => {
@@ -133,6 +157,7 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
     assert.match(body.details.join(' | '), /unresolved applicability/);
   });
 
+  let overrideOnlyPassportId;
   await t.test('accepts creation for an unseeded category/subtype once given an explicit applicability override', async () => {
     const res = await fetch(baseUrl, {
       method: 'POST',
@@ -155,6 +180,15 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
     assert.equal(res.status, 201);
     const body = await res.json();
     assert.equal(body.engineering.field_applicability.bypass_valve_applicability, 'NOT_APPLICABLE');
+    assert.equal(body.engineering.field_applicability_source.bypass_valve_applicability, 'OVERRIDE');
+    overrideOnlyPassportId = body.id;
+  });
+
+  await t.test('ADR-0014 gate: a fully OVERRIDE-sourced Passport activates immediately, with no matrix dependency at all', async () => {
+    const res = await fetch(`${baseUrl}/${overrideOnlyPassportId}/activate`, { method: 'POST' });
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.equal(body.status, 'ACTIVE');
   });
 
   await t.test('rejects creation for a non-existent SKU that is not flagged as a pre-SKU draft', async () => {
@@ -174,7 +208,63 @@ test('EBP Phase 1 — Product Engineering Passport integration', async (t) => {
     assert.match(body.details.join(' | '), /does not exist in elimfilters_catalog/);
   });
 
-  await t.test('activates the DRAFT revision', async () => {
+  // ── ADR-0014 activation gate, isolated on its own category/subtype ────────
+
+  let gatePassportId;
+  await t.test('ADR-0014 gate: creating a DRAFT against PROVISIONAL matrix rules is never blocked', async () => {
+    const res = await fetch(baseUrl, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        elimfilters_code: skuGate,
+        product_category: gateCategory,
+        product_subtype: gateSubtype,
+        duty: 'HEAVY_DUTY',
+        packaging: { packaging_class: 'AUTOMOTIVE', elimfilters_target_quantity: 24 },
+      }),
+    });
+    assert.equal(res.status, 201);
+    const body = await res.json();
+    assert.equal(body.status, 'DRAFT');
+    assert.equal(body.engineering.field_applicability_source.bypass_valve_applicability, 'MATRIX');
+    gatePassportId = body.id;
+  });
+
+  await t.test('ADR-0014 gate: activation is BLOCKED (409) while the matrix rule is still PROVISIONAL', async () => {
+    const res = await fetch(`${baseUrl}/${gatePassportId}/activate`, { method: 'POST' });
+    assert.equal(res.status, 409);
+    const body = await res.json();
+    assert.match(body.message, /PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL/);
+    assert.match(body.message, /bypass_valve_applicability/);
+  });
+
+  await t.test('ADR-0014 gate: activation succeeds once ELIMFILTERS engineering approves the matrix row(s), with no new revision needed', async () => {
+    await pool.query(
+      `UPDATE ebp_field_applicability_matrix SET approval_status = 'ENGINEERING_APPROVED'
+       WHERE product_category = $1 AND product_subtype = $2`,
+      [gateCategory, gateSubtype]
+    );
+    const res = await fetch(`${baseUrl}/${gatePassportId}/activate`, { method: 'POST' });
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.equal(body.status, 'ACTIVE');
+  });
+
+  await t.test('applicability-matrix endpoint surfaces approval_status alongside applicability', async () => {
+    const res = await fetch(`${baseUrl}/applicability-matrix?product_category=${gateCategory}&product_subtype=${gateSubtype}`);
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    const byName = Object.fromEntries(body.fields.map((f) => [f.field_name, f.approval_status]));
+    assert.equal(byName.bypass_valve_applicability, 'ENGINEERING_APPROVED');
+  });
+
+  // ── OIL/SPIN_ON approved so the remaining lifecycle tests below can activate ──
+
+  await t.test('approves the OIL/SPIN_ON matrix rows so the primary lifecycle tests below can activate', async () => {
+    await pool.query(
+      `UPDATE ebp_field_applicability_matrix SET approval_status = 'ENGINEERING_APPROVED'
+       WHERE product_category = 'OIL' AND product_subtype = 'SPIN_ON'`
+    );
     const res = await fetch(`${baseUrl}/${revision1Id}/activate`, { method: 'POST' });
     assert.equal(res.status, 200);
     const body = await res.json();

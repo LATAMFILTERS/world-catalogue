@@ -3,9 +3,17 @@
 // EBP Phase 1 — orchestration layer: validation + repository + the
 // create/revise/activate/retire lifecycle, per
 // docs/ebp/phases/phase-01-product-engineering-passport.md.
+//
+// Actor parameter convention (all public functions below): `actor` is
+// always `{ declared_actor, identity_mechanism }` as produced by
+// ebp/phase1/actor.js — never a bare string. `declared_actor` is a
+// self-reported label, not a verified identity, while identity_mechanism
+// is 'ADMIN_KEY_SHARED' (single shared ADMIN_KEY, no per-user auth).
 
 const validation = require('./validation');
 const repository = require('./repository');
+
+const { APPLICABILITY_APPROVAL_STATUS } = validation;
 
 class ValidationError extends Error {
   constructor(errors) {
@@ -45,7 +53,10 @@ async function validateAndResolve(pool, payload) {
 
   const matrixRows = await repository.fetchApplicabilityMatrix(pool, payload.product_category, payload.product_subtype);
   const engineeringPayload = payload.engineering || {};
-  const resolvedApplicability = validation.resolveFieldApplicability(
+  // ADR-0014: creating a DRAFT is never blocked by matrix review state — a
+  // Passport may be drafted against PROVISIONAL applicability rules. Only
+  // activatePassport() (below) gates on approval_status.
+  const { resolved: resolvedApplicability, source: applicabilitySource } = validation.resolveFieldApplicability(
     matrixRows,
     engineeringPayload.field_applicability || {}
   );
@@ -57,10 +68,17 @@ async function validateAndResolve(pool, payload) {
   const pkgErrors = validation.validatePackaging(packagingPayload);
   if (pkgErrors.length) throw new ValidationError(pkgErrors);
 
-  return { resolvedApplicability, engineeringPayload, packagingPayload };
+  return { resolvedApplicability, applicabilitySource, engineeringPayload, packagingPayload };
 }
 
-async function insertEngineeringAndPackaging(client, passportId, resolvedApplicability, engineeringPayload, packagingPayload) {
+async function insertEngineeringAndPackaging(
+  client,
+  passportId,
+  resolvedApplicability,
+  applicabilitySource,
+  engineeringPayload,
+  packagingPayload
+) {
   await client.query(
     `INSERT INTO ebp_passport_engineering
       (passport_id, dimensions_tolerances, thread_spec, required_media, required_media_composition,
@@ -70,9 +88,9 @@ async function insertEngineeringAndPackaging(client, passportId, resolvedApplica
        bypass_valve_applicability, bypass_opening_pressure_kpa, bypass_pressure_tolerance_pct,
        bypass_valve_type, bypass_valve_material,
        antidrainback_valve_applicability, antidrainback_valve_material,
-       required_test_standards, field_applicability,
+       required_test_standards, field_applicability, field_applicability_source,
        manufacturer_instruction_notes, internal_engineering_notes)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28)`,
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29)`,
     [
       passportId,
       JSON.stringify(engineeringPayload.dimensions_tolerances || {}),
@@ -100,6 +118,7 @@ async function insertEngineeringAndPackaging(client, passportId, resolvedApplica
       engineeringPayload.antidrainback_valve_material || null,
       JSON.stringify(engineeringPayload.required_test_standards || []),
       JSON.stringify(resolvedApplicability),
+      JSON.stringify(applicabilitySource),
       engineeringPayload.manufacturer_instruction_notes || null,
       engineeringPayload.internal_engineering_notes || null,
     ]
@@ -125,7 +144,10 @@ async function insertEngineeringAndPackaging(client, passportId, resolvedApplica
 }
 
 async function createPassport(pool, payload, actor) {
-  const { resolvedApplicability, engineeringPayload, packagingPayload } = await validateAndResolve(pool, payload);
+  const { resolvedApplicability, applicabilitySource, engineeringPayload, packagingPayload } = await validateAndResolve(
+    pool,
+    payload
+  );
 
   const existing = await repository.fetchLatestRevision(pool, payload.elimfilters_code);
   if (existing) {
@@ -140,8 +162,8 @@ async function createPassport(pool, payload, actor) {
     const insert = await client.query(
       `INSERT INTO ebp_engineering_passports
         (elimfilters_code, is_pre_sku_draft, base_code, base_brand, product_category, product_subtype,
-         duty, technology_code, engineering_revision, status, created_by)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,1,'DRAFT',$9)
+         duty, technology_code, engineering_revision, status, created_by, identity_mechanism)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,1,'DRAFT',$9,$10)
        RETURNING id`,
       [
         payload.elimfilters_code,
@@ -152,12 +174,20 @@ async function createPassport(pool, payload, actor) {
         payload.product_subtype,
         payload.duty,
         payload.technology_code || null,
-        actor,
+        actor.declared_actor,
+        actor.identity_mechanism,
       ]
     );
     const passportId = insert.rows[0].id;
-    await insertEngineeringAndPackaging(client, passportId, resolvedApplicability, engineeringPayload, packagingPayload);
-    await repository.insertStatusHistory(client, passportId, null, 'DRAFT', actor, 'created');
+    await insertEngineeringAndPackaging(
+      client,
+      passportId,
+      resolvedApplicability,
+      applicabilitySource,
+      engineeringPayload,
+      packagingPayload
+    );
+    await repository.insertStatusHistory(client, passportId, null, 'DRAFT', actor.declared_actor, actor.identity_mechanism, 'created');
     await client.query('COMMIT');
     return passportId;
   } catch (err) {
@@ -173,7 +203,10 @@ async function createRevision(pool, sku, payload, actor) {
   if (!latest) throw new NotFoundError(`no existing Passport for ${sku}`);
 
   const mergedPayload = { ...payload, elimfilters_code: sku };
-  const { resolvedApplicability, engineeringPayload, packagingPayload } = await validateAndResolve(pool, mergedPayload);
+  const { resolvedApplicability, applicabilitySource, engineeringPayload, packagingPayload } = await validateAndResolve(
+    pool,
+    mergedPayload
+  );
 
   const activeRow = latest.status === 'ACTIVE' ? latest : await repository.fetchActivePassport(pool, sku);
   const nextRevision = latest.engineering_revision + 1;
@@ -184,8 +217,8 @@ async function createRevision(pool, sku, payload, actor) {
     const insert = await client.query(
       `INSERT INTO ebp_engineering_passports
         (elimfilters_code, is_pre_sku_draft, base_code, base_brand, product_category, product_subtype,
-         duty, technology_code, engineering_revision, status, supersedes_passport_id, created_by)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'DRAFT',$10,$11)
+         duty, technology_code, engineering_revision, status, supersedes_passport_id, created_by, identity_mechanism)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,'DRAFT',$10,$11,$12)
        RETURNING id`,
       [
         sku,
@@ -198,12 +231,28 @@ async function createRevision(pool, sku, payload, actor) {
         mergedPayload.technology_code || null,
         nextRevision,
         activeRow ? activeRow.id : null,
-        actor,
+        actor.declared_actor,
+        actor.identity_mechanism,
       ]
     );
     const passportId = insert.rows[0].id;
-    await insertEngineeringAndPackaging(client, passportId, resolvedApplicability, engineeringPayload, packagingPayload);
-    await repository.insertStatusHistory(client, passportId, null, 'DRAFT', actor, 'new revision created');
+    await insertEngineeringAndPackaging(
+      client,
+      passportId,
+      resolvedApplicability,
+      applicabilitySource,
+      engineeringPayload,
+      packagingPayload
+    );
+    await repository.insertStatusHistory(
+      client,
+      passportId,
+      null,
+      'DRAFT',
+      actor.declared_actor,
+      actor.identity_mechanism,
+      'new revision created'
+    );
     await client.query('COMMIT');
     return passportId;
   } catch (err) {
@@ -211,6 +260,44 @@ async function createRevision(pool, sku, payload, actor) {
     throw err;
   } finally {
     client.release();
+  }
+}
+
+// ADR-0014: a Passport revision may not activate while it still depends on
+// a PROVISIONAL applicability-matrix rule that hasn't been engineering-
+// approved. Fields resolved via an explicit OVERRIDE at creation time are
+// exempt (that was already an engineering decision) — only MATRIX-sourced
+// fields are checked, and they are re-checked against the matrix's
+// *current* approval_status (not whatever it was when the DRAFT was
+// created), so approving the matrix after drafting unblocks activation
+// without requiring a new revision.
+async function assertApplicabilityApprovedForActivation(client, passport) {
+  const source = await repository.fetchEngineeringSource(client, passport.id);
+  const matrixSourcedFields = Object.entries(source)
+    .filter(([, src]) => src === 'MATRIX')
+    .map(([field]) => field);
+
+  if (!matrixSourcedFields.length) return; // fully override-sourced (or no tracked fields) — nothing to gate
+
+  const currentApproval = await repository.fetchApplicabilityApprovalFor(
+    client,
+    passport.product_category,
+    passport.product_subtype,
+    matrixSourcedFields
+  );
+  const approvalByField = Object.fromEntries(currentApproval.map((row) => [row.field_name, row.approval_status]));
+
+  const blocking = matrixSourcedFields.filter(
+    (field) => approvalByField[field] !== APPLICABILITY_APPROVAL_STATUS.APPROVED
+  );
+
+  if (blocking.length) {
+    throw new ConflictError(
+      `Passport ${passport.id} cannot be activated: applicability for [${blocking.join(', ')}] is still ` +
+        `${APPLICABILITY_APPROVAL_STATUS.PROVISIONAL} for (${passport.product_category}, ${passport.product_subtype}). ` +
+        'Either ELIMFILTERS engineering must set approval_status = ENGINEERING_APPROVED on the matrix row(s), ' +
+        'or this Passport revision must supply an explicit field_applicability override for the affected field(s).'
+    );
   }
 }
 
@@ -231,6 +318,8 @@ async function activatePassport(pool, passportId, actor) {
       throw new ConflictError(`Passport ${passportId} is ${passport.status}; only DRAFT can be activated`);
     }
 
+    await assertApplicabilityApprovedForActivation(client, passport);
+
     const { rows: activeRows } = await client.query(
       `SELECT id FROM ebp_engineering_passports WHERE elimfilters_code = $1 AND status = 'ACTIVE' FOR UPDATE`,
       [passport.elimfilters_code]
@@ -240,13 +329,29 @@ async function activatePassport(pool, passportId, actor) {
         `UPDATE ebp_engineering_passports SET status = 'SUPERSEDED', superseded_at = NOW() WHERE id = $1`,
         [activeRows[0].id]
       );
-      await repository.insertStatusHistory(client, activeRows[0].id, 'ACTIVE', 'SUPERSEDED', actor, `superseded by ${passportId}`);
+      await repository.insertStatusHistory(
+        client,
+        activeRows[0].id,
+        'ACTIVE',
+        'SUPERSEDED',
+        actor.declared_actor,
+        actor.identity_mechanism,
+        `superseded by ${passportId}`
+      );
     }
 
     await client.query(`UPDATE ebp_engineering_passports SET status = 'ACTIVE', activated_at = NOW() WHERE id = $1`, [
       passportId,
     ]);
-    await repository.insertStatusHistory(client, passportId, 'DRAFT', 'ACTIVE', actor, 'activated');
+    await repository.insertStatusHistory(
+      client,
+      passportId,
+      'DRAFT',
+      'ACTIVE',
+      actor.declared_actor,
+      actor.identity_mechanism,
+      'activated'
+    );
     await client.query('COMMIT');
   } catch (err) {
     await client.query('ROLLBACK');
@@ -269,7 +374,15 @@ async function retirePassport(pool, passportId, actor, reason) {
       throw new ConflictError(`Passport ${passportId} is ${passport.status}; only ACTIVE or SUPERSEDED can be retired`);
     }
     await client.query(`UPDATE ebp_engineering_passports SET status = 'RETIRED' WHERE id = $1`, [passportId]);
-    await repository.insertStatusHistory(client, passportId, passport.status, 'RETIRED', actor, reason || null);
+    await repository.insertStatusHistory(
+      client,
+      passportId,
+      passport.status,
+      'RETIRED',
+      actor.declared_actor,
+      actor.identity_mechanism,
+      reason || null
+    );
     await client.query('COMMIT');
   } catch (err) {
     await client.query('ROLLBACK');

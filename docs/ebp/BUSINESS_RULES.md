@@ -67,6 +67,14 @@ rules above.
 
 ## 3. Product Engineering Passport (PEP) Rules
 
+**Phase 1 implementation addendum (ADR-0014, does not alter the frozen
+v1.0 baseline):** where a Passport's required engineering fields are
+resolved from Phase 1's field-applicability matrix, a Passport revision
+may not activate while it depends on a matrix rule that is still
+`PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL` — see ADR-0014
+and `phases/phase-01-product-engineering-passport.md`. Drafting is never
+blocked by this; only the `DRAFT` → `ACTIVE` transition is.
+
 - A Passport's **locked identification** fields (`elimfilters_code`,
   `base_code`, `base_brand`, `product_category`, `product_subtype`, `duty`,
   `technology_code`, `engineering_revision`, `status`) are set by
