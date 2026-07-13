@@ -3,19 +3,69 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+const MOBILE_QUERY = '(max-width: 860px)';
+
 export function MobileInternalLayoutFix() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const applyClasses = () => {
-      const main = document.querySelector('main');
-      if (!main) return;
+    const normalizedPath = (pathname || '/').replace(/\/+$/, '') || '/';
+    const isAbout = normalizedPath === '/about' || normalizedPath.endsWith('/about');
+    const isTechnologies =
+      normalizedPath === '/technologies' || normalizedPath.endsWith('/technologies');
 
-      const isMobile = window.matchMedia('(max-width: 860px)').matches;
+    const applyFixes = () => {
+      const main = document.querySelector<HTMLElement>('main');
+      if (!main || !window.matchMedia(MOBILE_QUERY).matches) return;
 
-      if (pathname === '/about' || pathname === '/about/') {
-        main.classList.add('about-page-mobile-fix');
+      if (!isAbout && !isTechnologies) return;
 
+      main.classList.toggle('about-page-mobile-fix', isAbout);
+      main.classList.toggle('technologies-page-mobile-fix', isTechnologies);
+      main.style.width = '100%';
+      main.style.maxWidth = '100%';
+      main.style.overflowX = 'clip';
+
+      main.querySelectorAll<HTMLElement>('section').forEach((section, index) => {
+        section.style.width = '100%';
+        section.style.maxWidth = '100vw';
+        section.style.overflowX = 'clip';
+        section.style.boxSizing = 'border-box';
+        if (index > 0) {
+          section.style.height = 'auto';
+          section.style.minHeight = 'auto';
+        }
+      });
+
+      main.querySelectorAll<HTMLElement>('div').forEach((element) => {
+        const computed = window.getComputedStyle(element);
+        if (computed.display === 'grid' && computed.gridTemplateColumns !== 'none') {
+          element.style.gridTemplateColumns = 'minmax(0, 1fr)';
+          element.style.width = '100%';
+          element.style.maxWidth = '100%';
+          element.style.minWidth = '0';
+        }
+
+        if (computed.display === 'flex') {
+          element.style.maxWidth = '100%';
+          element.style.minWidth = '0';
+          if (computed.flexWrap === 'nowrap' && element.scrollWidth > window.innerWidth) {
+            element.style.flexWrap = 'wrap';
+          }
+        }
+      });
+
+      main.querySelectorAll<HTMLElement>('h1, h2, h3, p, a, span').forEach((element) => {
+        element.style.maxWidth = '100%';
+        element.style.minWidth = '0';
+        element.style.whiteSpace = 'normal';
+        element.style.wordBreak = 'normal';
+        element.style.overflowWrap = 'break-word';
+        element.style.hyphens = 'none';
+        element.style.boxSizing = 'border-box';
+      });
+
+      if (isAbout) {
         main.querySelectorAll<HTMLElement>('div').forEach((element) => {
           const first = element.firstElementChild?.textContent?.trim();
           if (first && ['01', '02', '03', '04'].includes(first) && element.children.length === 3) {
@@ -26,57 +76,23 @@ export function MobileInternalLayoutFix() {
         main.querySelectorAll<HTMLElement>('p').forEach((element) => {
           if (element.textContent?.trim() === 'TECHNOLOGY PORTFOLIO') {
             const section = element.closest('section');
-            section?.classList.add('about-technology-section-mobile');
             const layout = section?.querySelector<HTMLElement>(':scope > div');
-            layout?.classList.add('about-technology-layout-mobile');
             const cards = layout?.children.item(1) as HTMLElement | null;
+            section?.classList.add('about-technology-section-mobile');
+            layout?.classList.add('about-technology-layout-mobile');
             cards?.classList.add('about-technology-cards-mobile');
           }
         });
-
-        if (isMobile) {
-          main.querySelectorAll<HTMLElement>('section').forEach((section, index) => {
-            section.style.maxWidth = '100%';
-            section.style.overflowX = 'clip';
-            section.style.boxSizing = 'border-box';
-            if (index > 0) {
-              section.style.minHeight = 'auto';
-              section.style.height = 'auto';
-            }
-          });
-
-          main.querySelectorAll<HTMLElement>('div').forEach((element) => {
-            const columns = element.style.gridTemplateColumns;
-            if (columns && columns !== 'none') {
-              element.style.gridTemplateColumns = 'minmax(0, 1fr)';
-              element.style.width = '100%';
-              element.style.maxWidth = '100%';
-              element.style.minWidth = '0';
-            }
-          });
-
-          main.querySelectorAll<HTMLElement>('h1, h2, h3, p, a, span').forEach((element) => {
-            element.style.maxWidth = '100%';
-            element.style.minWidth = '0';
-            element.style.wordBreak = 'normal';
-            element.style.overflowWrap = 'break-word';
-            element.style.whiteSpace = 'normal';
-            element.style.boxSizing = 'border-box';
-          });
-        }
-      }
-
-      if (pathname === '/technologies' || pathname === '/technologies/') {
-        main.classList.add('technologies-page-mobile-fix');
       }
     };
 
-    applyClasses();
-    window.addEventListener('resize', applyClasses);
-    const observer = new MutationObserver(applyClasses);
+    applyFixes();
+    window.addEventListener('resize', applyFixes);
+    const observer = new MutationObserver(applyFixes);
     observer.observe(document.body, { childList: true, subtree: true });
+
     return () => {
-      window.removeEventListener('resize', applyClasses);
+      window.removeEventListener('resize', applyFixes);
       observer.disconnect();
     };
   }, [pathname]);
@@ -95,17 +111,16 @@ export function MobileInternalLayoutFix() {
         .technologies-page-mobile-fix section {
           width: 100% !important;
           max-width: 100vw !important;
+          min-height: auto !important;
+          height: auto !important;
           overflow-x: clip !important;
           box-sizing: border-box !important;
         }
 
-        .about-page-mobile-fix section:not(:first-of-type) {
-          min-height: auto !important;
-          height: auto !important;
-        }
-
         .about-page-mobile-fix section > div,
-        .technologies-page-mobile-fix section > div {
+        .technologies-page-mobile-fix section > div,
+        .about-page-mobile-fix div > *,
+        .technologies-page-mobile-fix div > * {
           min-width: 0 !important;
           max-width: 100% !important;
           box-sizing: border-box !important;
@@ -117,22 +132,7 @@ export function MobileInternalLayoutFix() {
           width: 100% !important;
           max-width: 100% !important;
           min-width: 0 !important;
-          gap: 1.5rem !important;
-        }
-
-        .about-page-mobile-fix div[style*="display: flex"],
-        .technologies-page-mobile-fix div[style*="display: flex"] {
-          max-width: 100% !important;
-          min-width: 0 !important;
-        }
-
-        .about-page-mobile-fix div[style*="grid-template-columns"] > *,
-        .technologies-page-mobile-fix div[style*="grid-template-columns"] > *,
-        .about-page-mobile-fix div[style*="display: flex"] > *,
-        .technologies-page-mobile-fix div[style*="display: flex"] > * {
-          min-width: 0 !important;
-          max-width: 100% !important;
-          box-sizing: border-box !important;
+          gap: 1.25rem !important;
         }
 
         .about-page-mobile-fix p,
@@ -140,8 +140,8 @@ export function MobileInternalLayoutFix() {
           width: 100% !important;
           max-width: 100% !important;
           white-space: normal !important;
-          overflow-wrap: break-word !important;
           word-break: normal !important;
+          overflow-wrap: break-word !important;
           hyphens: none !important;
         }
 
@@ -149,16 +149,14 @@ export function MobileInternalLayoutFix() {
           display: grid !important;
           grid-template-columns: 44px minmax(0, 1fr) !important;
           column-gap: 1rem !important;
-          row-gap: 0.85rem !important;
+          row-gap: 0.9rem !important;
           padding: 1.4rem 0 !important;
-          align-items: start !important;
           min-height: auto !important;
           height: auto !important;
+          align-items: start !important;
         }
 
         .about-failure-row-mobile > h3 {
-          min-width: 0 !important;
-          max-width: 100% !important;
           font-size: clamp(1.15rem, 5.6vw, 1.5rem) !important;
           line-height: 1.08 !important;
         }
@@ -166,10 +164,9 @@ export function MobileInternalLayoutFix() {
         .about-failure-row-mobile > p {
           grid-column: 1 / -1 !important;
           width: 100% !important;
-          max-width: 100% !important;
           margin: 0 !important;
           font-size: 1rem !important;
-          line-height: 1.72 !important;
+          line-height: 1.7 !important;
           text-align: left !important;
         }
 
@@ -181,21 +178,8 @@ export function MobileInternalLayoutFix() {
           max-width: 100% !important;
         }
 
-        .about-technology-layout-mobile {
-          gap: 2rem !important;
-        }
-
-        .about-technology-cards-mobile {
-          gap: 0.8rem !important;
-        }
-
-        .about-technology-layout-mobile > *,
-        .about-technology-cards-mobile > a {
-          width: 100% !important;
-          max-width: 100% !important;
-          min-width: 0 !important;
-          box-sizing: border-box !important;
-        }
+        .about-technology-layout-mobile { gap: 2rem !important; }
+        .about-technology-cards-mobile { gap: 0.8rem !important; }
 
         .about-page-mobile-fix h1,
         .about-page-mobile-fix h2,
@@ -204,39 +188,16 @@ export function MobileInternalLayoutFix() {
         .technologies-page-mobile-fix h2,
         .technologies-page-mobile-fix h3 {
           max-width: 100% !important;
-          overflow-wrap: normal !important;
           word-break: normal !important;
+          overflow-wrap: normal !important;
           hyphens: none !important;
           text-wrap: balance;
         }
 
-        .about-page-mobile-fix h2 {
-          font-size: clamp(1.9rem, 9vw, 2.8rem) !important;
-          line-height: 1 !important;
-        }
-
+        .about-page-mobile-fix h2,
         .technologies-page-mobile-fix h2 {
-          font-size: clamp(1.8rem, 8.6vw, 2.7rem) !important;
-          line-height: 0.98 !important;
-          letter-spacing: -0.035em !important;
-        }
-
-        .technologies-page-mobile-fix p {
-          max-width: 38rem !important;
-          line-height: 1.7 !important;
-          text-align: left !important;
-        }
-
-        .technologies-page-mobile-fix img,
-        .technologies-page-mobile-fix video,
-        .about-page-mobile-fix img,
-        .about-page-mobile-fix video {
-          display: block !important;
-          width: auto !important;
-          max-width: 100% !important;
-          height: auto !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
+          font-size: clamp(1.65rem, 8.1vw, 2.8rem) !important;
+          line-height: 1 !important;
         }
       }
 
@@ -245,16 +206,6 @@ export function MobileInternalLayoutFix() {
         .technologies-page-mobile-fix section {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
-        }
-
-        .about-page-mobile-fix div[style*="display: grid"],
-        .technologies-page-mobile-fix div[style*="display: grid"] {
-          gap: 1.2rem !important;
-        }
-
-        .about-page-mobile-fix h2,
-        .technologies-page-mobile-fix h2 {
-          font-size: clamp(1.65rem, 8.1vw, 2.3rem) !important;
         }
       }
     `}</style>
