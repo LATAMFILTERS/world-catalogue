@@ -2,19 +2,22 @@ import type { CSSProperties } from 'react';
 
 interface Props {
   paragraphStyle: CSSProperties;
+  paragraphs?: string[];
 }
 
-const paragraphs = [
+const miningParagraphs = [
   'ELIMFILTERS® mining asset protection systems are engineered for hydraulic excavators, ultra class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment working in open pit and underground mining environments. Mining operations place every filtration system under pressure. Dust is constant, hydraulic loads are severe, fuel quality can vary from site to site, and lubrication systems must protect critical components through long service intervals.',
   'Mine sites can generate ambient dust concentrations of 5,000 to 15,000 mg/m³, which is 17 to 50 times higher than the ISO 5011 air filter test limit of 300 mg/m³. In high tonnage operations, unplanned equipment downtime can cost $100,000 to $180,000 per hour per machine. ELIMFILTERS® proprietary protection media is designed to control contamination across air intake, hydraulic, fuel, and lubrication systems so mining fleets can protect equipment value, maintain service discipline, and reduce downtime risk across demanding duty cycles.',
 ];
 
-export function MiningDirectAnswer({ paragraphStyle }: Props) {
+export function MiningDirectAnswer({ paragraphStyle, paragraphs }: Props) {
+  const content = paragraphs && paragraphs.length > 0 ? paragraphs : miningParagraphs;
+
   return (
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+        gridTemplateColumns: content.length > 1 ? 'repeat(2, minmax(0, 1fr))' : '1fr',
         gap: 'clamp(2rem, 4vw, 4rem)',
         width: 'min(1240px, calc(100vw - 4rem))',
         maxWidth: '1240px',
@@ -24,7 +27,7 @@ export function MiningDirectAnswer({ paragraphStyle }: Props) {
         alignItems: 'start',
       }}
     >
-      {paragraphs.map((paragraph) => (
+      {content.map((paragraph) => (
         <p
           key={paragraph}
           style={{
