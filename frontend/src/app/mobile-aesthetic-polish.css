@@ -93,13 +93,40 @@
     hyphens: none !important;
   }
 
+  .technology-portfolio-section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .technology-portfolio-title,
+  .technologies-difference-title,
+  .technologies-final-title {
+    max-width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: balance;
+  }
+
+  .technology-portfolio-title {
+    font-size: clamp(1.85rem, 8.2vw, 2.75rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 2rem !important;
+  }
+
   .technology-portfolio-grid {
     grid-template-columns: 1fr !important;
-    gap: 0.9rem !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
 
   .technology-portfolio-card {
+    display: block !important;
+    width: 100% !important;
     min-height: 330px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .technology-portfolio-logo-stage {
@@ -107,13 +134,18 @@
     left: 0.85rem !important;
     right: 0.85rem !important;
     height: 240px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .technology-portfolio-image {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
     object-position: center !important;
+    visibility: visible !important;
+    opacity: 0.94 !important;
   }
 
   .technology-portfolio-content {
@@ -124,6 +156,17 @@
     font-size: 0.68rem !important;
     letter-spacing: 0.13em !important;
     white-space: nowrap;
+  }
+
+  .technologies-final-cta {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .technologies-final-title {
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.025em !important;
   }
 }
 
@@ -146,11 +189,19 @@
     line-height: 1.68 !important;
   }
 
+  .technology-portfolio-title {
+    font-size: clamp(1.72rem, 7.8vw, 2.2rem) !important;
+  }
+
   .technology-portfolio-card {
     min-height: 305px !important;
   }
 
   .technology-portfolio-logo-stage {
     height: 215px !important;
+  }
+
+  .technologies-final-title {
+    font-size: clamp(1.72rem, 8vw, 2.25rem) !important;
   }
 }
