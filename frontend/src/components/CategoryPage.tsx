@@ -138,7 +138,13 @@ const agricultureDirectAnswer = [
   'Agricultural operations expose air intake, hydraulic, fuel, and lubrication systems to fine soil dust, organic debris, moisture, fuel variability, and extended operating hours. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so producers can protect equipment value, maintain service discipline, preserve engine and hydraulic reliability, and reduce downtime risk during critical field windows.',
 ];
 
+const constructionDirectAnswer = [
+  'ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, compactors, cranes, and articulated dump trucks working through abrasive dust, idle time, vibration, heat, and severe off road duty cycles. On active jobsites, filtration is part of the uptime plan because every machine supports a schedule, a crew, and a cost of delay.',
+  'Construction environments expose air intake, hydraulic, fuel, and lubrication systems to silica dust, fuel contamination, pressure spikes, thermal load, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so contractors can protect component life, maintain service discipline, preserve hydraulic reliability, and reduce downtime risk across demanding project conditions.',
+];
+
 const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
+const constructionVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.';
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
@@ -147,6 +153,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const isIndustry = category === 'industries';
   const isMining = isIndustry && item.name === 'Mining';
   const isAgriculture = isIndustry && item.name === 'Agriculture';
+  const isConstruction = isIndustry && item.name === 'Construction';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -170,20 +177,26 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     ? [miningVideoParagraph]
     : isAgriculture
       ? [agricultureVideoParagraph]
-      : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-        `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-        `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-      ]);
+      : isConstruction
+        ? [constructionVideoParagraph]
+        : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+          `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+          `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+        ]);
 
   const industryAnswerParagraphs = isAgriculture
     ? agricultureDirectAnswer
-    : isIndustry && !isMining
-      ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
-      : undefined;
+    : isConstruction
+      ? constructionDirectAnswer
+      : isIndustry && !isMining
+        ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+        : undefined;
 
   const techTags = isAgriculture
     ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™']
-    : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+    : isConstruction
+      ? ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™']
+      : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
 
   const protectedAssets = geoData?.protectedAssets ?? (isAgriculture ? [
     'Tractors',
@@ -192,10 +205,30 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     'Sprayers',
     'Irrigation Engines',
     'Field Support Equipment',
+  ] : isConstruction ? [
+    'Excavators',
+    'Wheel Loaders',
+    'Bulldozers',
+    'Motor Graders',
+    'Compactors',
+    'Articulated Dump Trucks',
   ] : undefined);
 
-  const heroTitle = isAgriculture ? 'Agricultural Filtration Systems' : item.title;
-  const heroSubtitle = isAgriculture ? 'AGRICULTURAL ASSETS' : item.subtitle || undefined;
+  const heroTitle = isAgriculture
+    ? 'Agricultural Filtration Systems'
+    : isConstruction
+      ? 'Construction Filtration Systems'
+      : item.title;
+  const heroSubtitle = isAgriculture
+    ? 'AGRICULTURAL ASSETS'
+    : isConstruction
+      ? 'CONSTRUCTION ASSETS'
+      : item.subtitle || undefined;
+  const heroTagline = isAgriculture
+    ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.'
+    : isConstruction
+      ? 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.'
+      : item.description;
 
   return (
     <>
@@ -235,7 +268,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
         <Hero
           title={heroTitle}
           subtitle={heroSubtitle}
-          tagline={isAgriculture ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.' : item.description}
+          tagline={heroTagline}
           ctaText={item.cta}
           backgroundImage={industryImage || bgImage}
         />
