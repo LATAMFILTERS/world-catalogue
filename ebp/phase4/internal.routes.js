@@ -21,6 +21,15 @@
 //   12. GET   /rule-catalog/:rule_id
 //   13. POST  /roles
 //   14. POST  /roles/revoke
+//   15. GET   /alerts
+//   16. POST  /alerts/:id/acknowledge
+//   17. POST  /alerts/:id/dismiss
+//   18. POST  /alerts/scan
+//   19. GET   /analytics/validation/overview
+//   20. GET   /analytics/validation/rules
+//   21. GET   /analytics/validation/manufacturers
+//   22. GET   /analytics/validation/alerts
+//   23. GET   /analytics/timeline/:entity_type/:entity_id
 
 const express = require('express');
 const repository = require('./repository');
@@ -235,4 +244,125 @@ function createRolesRouter(pool) {
   return router;
 }
 
-module.exports = { createValidationRouter, createRuleCatalogRouter, createRolesRouter };
+// Factory: createAlertsRouter(pool) — the minimal Alert Layer surface
+// (correction round, item 5). No Notification Center, no email — reads
+// and resolves structured alerts only.
+function createAlertsRouter(pool) {
+  const router = express.Router();
+
+  router.get('/', async (req, res) => {
+    try {
+      const { status, alert_type, offer_id } = req.query;
+      const rows = await service.listAlerts(pool, { status, alert_type, offer_id });
+      res.json({ alerts: rows.map(dto.toAlertDTO) });
+    } catch (err) {
+      console.error('[ebp/phase4] list alerts failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  router.post('/:id/acknowledge', async (req, res) => {
+    try {
+      const row = await service.acknowledgeAlert(pool, req.params.id, actorFrom(req));
+      res.json(dto.toAlertDTO(row));
+    } catch (err) {
+      const { status, body } = errorToResponse(err);
+      if (status === 500) console.error('[ebp/phase4] acknowledge alert failed', err);
+      res.status(status).json(body);
+    }
+  });
+
+  router.post('/:id/dismiss', async (req, res) => {
+    try {
+      const { reason } = req.body || {};
+      const row = await service.dismissAlert(pool, req.params.id, reason, actorFrom(req));
+      res.json(dto.toAlertDTO(row));
+    } catch (err) {
+      const { status, body } = errorToResponse(err);
+      if (status === 500) console.error('[ebp/phase4] dismiss alert failed', err);
+      res.status(status).json(body);
+    }
+  });
+
+  // Manual, on-demand equivalent of a future scheduled job (mirrors
+  // Phase 3's ADR-0031 "centralized effective status, no cron required"
+  // precedent) — raises CONDITION_DUE_SOON and
+  // ACTIVE_OFFER_WITHOUT_CURRENT_VALIDATION alerts.
+  router.post('/scan', async (req, res) => {
+    try {
+      const result = await service.scanTimeBasedAlerts(pool);
+      res.json(result);
+    } catch (err) {
+      console.error('[ebp/phase4] alert scan failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  return router;
+}
+
+// Factory: createAnalyticsRouter(pool) — the minimal Internal Analytics
+// API (correction round, item 6). No dashboard, no charts, no KPI
+// computation in the frontend — every number here is computed in SQL
+// against ebp_analytics_validation_summary / ebp_activity_events /
+// ebp_alerts, never a raw transactional table read directly by a client.
+// No manufacturer identity or other sensitive detail beyond what this
+// internal, requireAdmin-gated surface already exposes elsewhere.
+function createAnalyticsRouter(pool) {
+  const router = express.Router();
+
+  router.get('/validation/overview', async (req, res) => {
+    try {
+      const overview = await service.fetchValidationOverview(pool);
+      res.json(overview);
+    } catch (err) {
+      console.error('[ebp/phase4] analytics overview failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  router.get('/validation/rules', async (req, res) => {
+    try {
+      const rows = await service.fetchRuleFailureStats(pool);
+      res.json({ rules: rows });
+    } catch (err) {
+      console.error('[ebp/phase4] analytics rules failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  router.get('/validation/manufacturers', async (req, res) => {
+    try {
+      const rows = await service.fetchManufacturerFailureStats(pool);
+      res.json({ manufacturers: rows });
+    } catch (err) {
+      console.error('[ebp/phase4] analytics manufacturers failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  router.get('/validation/alerts', async (req, res) => {
+    try {
+      const { status, alert_type } = req.query;
+      const rows = await service.listAlerts(pool, { status: status || 'OPEN', alert_type });
+      res.json({ alerts: rows.map(dto.toAlertDTO) });
+    } catch (err) {
+      console.error('[ebp/phase4] analytics alerts failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  router.get('/timeline/:entity_type/:entity_id', async (req, res) => {
+    try {
+      const rows = await service.fetchTimelineForEntity(pool, req.params.entity_type, req.params.entity_id);
+      res.json({ entity_type: req.params.entity_type, entity_id: req.params.entity_id, events: rows });
+    } catch (err) {
+      console.error('[ebp/phase4] analytics timeline failed', err);
+      res.status(500).json({ error: 'internal_error' });
+    }
+  });
+
+  return router;
+}
+
+module.exports = { createValidationRouter, createRuleCatalogRouter, createRolesRouter, createAlertsRouter, createAnalyticsRouter };

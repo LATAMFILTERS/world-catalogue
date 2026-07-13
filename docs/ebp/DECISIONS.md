@@ -2644,3 +2644,365 @@ remaining entirely in Phase 3's existing table) — a single "status"
 column spanning all three is a schema defect by definition of this ADR,
 not a valid simplification. See `ENGINEERING_RULE_ENGINE.md`, "Global
 Result Model."
+
+---
+
+# Phase 4 Correction Round (2026-07-13, pre-freeze)
+
+The project owner reviewed the initial Phase 4 "Built" implementation and
+required a mandatory final correction before approval/freeze could be
+considered: strict Engineering Decision eligibility (with database-level
+enforcement), a defined effect for Exception decisions, an explicit
+ACCEPTED_BY_EXCEPTION disposition distinct from technical compliance,
+condition-driven re-evaluation of Engineering Decision eligibility,
+correct Activity Event entity identity for Rule Results, a minimal Alert
+Layer, a minimal Internal Analytics API, a hardened permanent
+ADMIN_OWNER bootstrap, and Rule Catalog publish-time validation. ADR-0052
+through ADR-0060 record these corrections.
+
+## ADR-0052 — Strict Engineering Decision eligibility, enforced in both service.js and a database trigger
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** The initial Phase 4 build validated only the caller's
+functional role and the existence of a CURRENT Validation Run before
+recording an Engineering Decision — it did not check whether the
+decision being requested was actually *eligible* given the Rule Results,
+Exceptions, and Offer state. This left a real gap: an
+`ENGINEERING_APPROVER` could record `APPROVED` on an offer with a
+`MECHANICALLY_FAIL` result, a `NON_WAIVABLE` rule still `FAIL`, or a
+pending (not yet `APPROVED`) Exception.
+
+**Decision:**
+- `APPROVED` requires, simultaneously: the Validation Run is `CURRENT`;
+  the Offer is not `REJECTED`/`SUPERSEDED`/`EXPIRED`/`WITHDRAWN` and has
+  not passed its `expires_at`; `mechanical_result = MECHANICALLY_PASS`;
+  zero Rule Results in `FAIL`; zero Rule Results in `REQUIRES_REVIEW`;
+  zero Rule Results in `REQUIRES_EXCEPTION` without a matching `APPROVED`
+  Exception; and the request carries no `conditions` (a decision needing
+  conditions is `CONDITIONALLY_APPROVED`, never `APPROVED`).
+- `CONDITIONALLY_APPROVED` requires the same Offer/Run/`FAIL`/
+  `REQUIRES_REVIEW`/Exception-resolution checks as `APPROVED`, but not
+  `mechanical_result = MECHANICALLY_PASS`, and requires at least one
+  structured condition (unchanged from Decision 08).
+- `REJECTED` may be recorded over any current result but requires a
+  non-empty `notes` reason.
+- `PENDING_REVIEW` can never be submitted as a human decision — it is
+  exclusively the system-generated initial state per Decision 09.
+- All of the above is enforced twice: in `service.js`
+  (`recordEngineeringDecision`) before any write is attempted, and
+  independently in a `BEFORE INSERT` trigger on `ebp_engineering_decisions`
+  (`ebp_enforce_engineering_decision_eligibility`,
+  `migrations/ebp-phase4/003_decision_guard.sql`) that re-derives the same
+  checks directly from `ebp_validation_runs`, `ebp_rule_results`,
+  `ebp_engineering_exceptions`, and `ebp_manufacturer_offers` — so a
+  future bug, ad hoc migration, or different code path can never insert
+  an ineligible `APPROVED`/`CONDITIONALLY_APPROVED` row.
+- A second trigger (`ebp_enforce_condition_requires_conditional_approval`)
+  independently guarantees a structured condition can never attach to
+  anything but a `CONDITIONALLY_APPROVED` decision.
+
+**Consequences:** `service.js` and the database trigger must be kept in
+sync if the eligibility rules ever change — a rule loosened in one place
+without the other either silently blocks legitimate decisions (trigger
+stricter than service) or creates a false sense of security (service
+stricter than trigger, but trigger the only thing actually guarding a
+direct-SQL bypass). Tested in `tests/ebp-phase4/correction.test.js`
+(HTTP-level and direct-SQL-level).
+
+## ADR-0053 — Approving or rejecting an Exception invalidates the current Validation Run and triggers automatic revalidation
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** Decision 07 (ADR-0045) scoped Exceptions precisely but never
+defined what happens to the Validation Run itself when an Exception is
+decided. Approving or rejecting an Exception is, in substance, a change
+to an evaluation input (Decision 12's "any relevant input change"
+trigger set) — leaving the existing Validation Run's `mechanical_result`
+and Rule Results untouched after such a decision would let an
+`ENGINEERING_APPROVER` reason about a Validation Run that no longer
+reflects the current state of its own Exceptions.
+
+**Decision:** `decideException` (approve or reject):
+1. Marks the offer's current `CURRENT` Validation Run `STALE` (reusing
+   the exact mechanism from Decision 12/ADR-0050 — never a special case).
+2. Emits `VALIDATION_MARKED_STALE`.
+3. Immediately (same logical operation, separate transaction)
+   auto-triggers a new Validation Run with `trigger = EXCEPTION_APPROVED`
+   or `EXCEPTION_REJECTED` (both added to `ebp_validation_runs.trigger`'s
+   CHECK constraint, `migrations/ebp-phase4/002_correction.sql`) — this is
+   deterministic and guarantees the new run captures the Exception's
+   resolution immediately, with no reliance on a human remembering to
+   manually re-run validation (this platform has no background job
+   infrastructure).
+4. Every Validation Run's `input_versions` (not only exception-triggered
+   ones) now always embeds the offer's complete Exception ledger —
+   `exception_id`, `rule_id`, `rule_version`, `status`, `decided_at` — for
+   full auditability regardless of what triggered the run.
+5. Because a re-validation always *creates a new row* (Decision 12), the
+   prior run's Rule Results are never rewritten — historical Rule Results
+   remain byte-identical forever.
+6. Recording a final Engineering Decision is structurally impossible
+   while the Validation Run is `STALE` — `recordEngineeringDecision`
+   only ever operates on the `CURRENT` run (already enforced by
+   `fetchCurrentValidationRun` returning nothing for a `STALE` offer
+   state).
+
+**Consequences:** An Exception decision is now guaranteed to be
+immediately followed by a fresh Validation Run — this means Exception
+decisions are slightly more expensive (a full rule-set re-evaluation),
+accepted as reasonable given Phase 4 v1.0's synchronous-only execution
+model (Risk already documented in `phase-04-validation-engine.md`).
+
+## ADR-0054 — ACCEPTED_BY_EXCEPTION: an approved Exception is a read-time projection, never a rewrite of the technical result
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** Without an explicit rule, a future developer could be
+tempted to have an approved Exception flip its Rule Result's `state` to
+`PASS` for convenience (e.g., to simplify a dashboard query) — this would
+directly contradict Decision 02's framing of an Exception as "authorizing
+acceptance of a deviation," never "converting a deviation into real
+technical compliance."
+
+**Decision:** `ebp_rule_results.state` is never rewritten by an Exception
+decision, at any time, for any reason — it remains `REQUIRES_EXCEPTION`
+(or `FAIL`, if a WAIVABLE rule failed before any Exception existed)
+forever, exactly as computed at evaluation time. A separate, purely
+computed field — `effective_disposition` — is derived at read time
+(`service.js`'s `computeEffectiveDisposition`, exposed via
+`dto.js`'s `toRuleResultDTO`): equal to `state` in every case except when
+`state = REQUIRES_EXCEPTION` and an `APPROVED` Exception exists for that
+exact `(offer_id, offer_revision, rule_id, rule_version)`, in which case
+`effective_disposition = ACCEPTED_BY_EXCEPTION`. This value is computed
+fresh on every read, never persisted, so a later-rejected or superseded
+Exception can never leave a stale "accepted" marker behind.
+
+**Consequences:** Any future analytics or reporting surface must query
+using `effective_disposition` (or recompute it identically) whenever it
+needs to distinguish "genuinely compliant" from "deviation formally
+accepted" — using raw `state` alone conflates them by design (both read
+as everything-except-`REQUIRES_EXCEPTION`-being-a-problem from a
+purely-technical standpoint), and using `effective_disposition` alone as
+if it were `state` would incorrectly suggest historical Rule Results were
+mutated. `mechanical_result` itself is entirely unaffected by Exception
+decisions — it remains computed purely from `state`, never
+`effective_disposition` (Decision 09's "never auto-converts" guarantee
+would otherwise be silently defeated).
+
+## ADR-0055 — Engineering Decision effective status (CURRENT / NEEDS_REVIEW), recomputed whenever a linked condition changes
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** Decision 08 defined Conditions as attached to a
+`CONDITIONALLY_APPROVED` decision, and the original Phase 4 build let a
+condition's `status` change (`OPEN` → `SATISFIED`/`OVERDUE`/`FAILED`/
+`WAIVED`/`CANCELLED`) without ever reflecting that change back onto the
+decision's own eligibility — an offer could look `CONDITIONALLY_APPROVED`
+and eligible even after one of its mandatory conditions had `FAILED`.
+
+**Decision:** `ebp_engineering_decisions` gains a `status` column
+(`CURRENT` / `NEEDS_REVIEW`, `migrations/ebp-phase4/002_correction.sql`)
+— never a rewrite of `decision`/`decided_by`/`notes`/`decided_at`,
+purely an effective-eligibility flag. Every time
+`updateConditionStatus` changes a condition, the decision's sibling
+conditions are re-read and the decision's `status` is recomputed:
+`NEEDS_REVIEW` if any sibling condition is `FAILED` or `OVERDUE`,
+`CURRENT` otherwise — never left stale, never toggled silently. A
+transition into `NEEDS_REVIEW` emits `ENGINEERING_DECISION_REQUIRES_REVIEW`.
+A new `computeSelectionEligibility(offerId)` service function (the gate a
+future Manufacturer Selection phase must call) returns `eligible: false`
+whenever: no `CURRENT` run exists; no `APPROVED`/`CONDITIONALLY_APPROVED`
+decision exists; the decision's `status` is `NEEDS_REVIEW`; or (for
+`CONDITIONALLY_APPROVED`) any mandatory condition is
+`OPEN`/`OVERDUE`/`FAILED`.
+
+**Consequences:** No Phase 5 code exists yet to call
+`computeSelectionEligibility`, so this ADR records the contract Phase 5
+must honor once it exists — it must never re-derive eligibility from
+`decision` alone, always through this function (or an equivalent
+recomputation covering conditions and `status`).
+
+## ADR-0056 — Rule Result Activity Events use the real ebp_rule_results row id as entity_id
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** The original Phase 4 build's `RULE_EVALUATED`/`RULE_PASSED`/
+`RULE_FAILED`/`RULE_WARNING`/`RULE_NOT_APPLICABLE` events all used
+`validation_run_id` as `entity_id` — collapsing every rule result within
+one Validation Run into a single "entity" for timeline-reconstruction
+purposes, which is wrong: a Validation Run and each of its Rule Results
+are different entities with different lifecycles.
+
+**Decision:** `repository.insertRuleResults` now returns the inserted
+rows (`RETURNING *`), and `service.js`'s `runValidation` emits each
+rule-result event using that row's real `id` as `entity_id`,
+`entity_type = RULE_RESULT`, `entity_version = "<rule_id>@<rule_version>"`,
+and `validation_run_id` inside `event_data` (never as the entity
+identity itself).
+
+**Consequences:** Any Activity Event query written against the old,
+incorrect shape (`entity_id = <a validation run id>` for these five
+event types) must be rewritten; `event_data->>'validation_run_id'` is the
+correct way to find all rule-result events for one run. Tested directly
+in `tests/ebp-phase4/correction.test.js`.
+
+## ADR-0057 — Minimal Alert Layer (ebp_alerts), deduplicated by (alert_type, entity_type, entity_id)
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** `ENGINEERING_RULE_ENGINE.md`/`phase-04-validation-engine.md`'s
+Dashboard Readiness sections listed candidate alert types from the
+start, but no table or generation logic existed — a real gap the
+correction round required closed before freeze, while explicitly
+scoping out a Notification Center or any outbound delivery (email, etc.).
+
+**Decision:** `ebp_alerts` (`migrations/ebp-phase4/002_correction.sql`):
+`alert_id`, `alert_type`, `severity`, `entity_type`, `entity_id`,
+`manufacturer_id`, `passport_id`, `offer_id`, `validation_run_id`,
+`status` (`OPEN`/`ACKNOWLEDGED`/`RESOLVED`/`DISMISSED`), `detected_at`,
+`due_at`, `resolved_at`, `resolution_reason`, `alert_data`,
+`correlation_id`. Deduplicated via a partial unique index on
+`(alert_type, entity_type, entity_id) WHERE status IN ('OPEN','ACKNOWLEDGED')`
+— a second raise for the same triple while one is still open is a
+no-op refresh, never a duplicate row. `ebp/phase4/alerts.js` implements
+the nine minimum alert types (`VALIDATION_PENDING_REVIEW`,
+`CRITICAL_RULE_FAILURE`, `REQUIRED_EVIDENCE_MISSING`, `EXCEPTION_PENDING`,
+`CONDITION_DUE_SOON`, `CONDITION_OVERDUE`, `CONDITION_FAILED`,
+`VALIDATION_STALE`, `ACTIVE_OFFER_WITHOUT_CURRENT_VALIDATION`), raised
+inline at the exact moment each condition occurs (Validation Run
+creation, Exception request/decision, Condition status change) except
+for the two inherently time-based ones (`CONDITION_DUE_SOON`,
+`ACTIVE_OFFER_WITHOUT_CURRENT_VALIDATION`), which are computed by an
+on-demand `POST /api/ebp/internal/alerts/scan` endpoint — the same
+"centralized effective status, no cron required" pattern Phase 3
+established for `OVERDUE` (ADR-0031), since this platform still has no
+background job infrastructure.
+
+**Consequences:** Time-based alerts are only as fresh as the last manual
+(or, in the future, scheduled) scan — acceptable for v1.0, documented as
+a risk. No notification is ever sent from this layer; a future
+Notification Center is explicitly out of scope here.
+
+## ADR-0058 — Minimal Internal Analytics API, reading only from existing analytics surfaces
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** ADR-0037 §8.6 reserved `/api/ebp/internal/analytics/*` but
+the original Phase 4 build left it entirely unimplemented. The
+correction round required a minimal, read-only surface — explicitly not
+a dashboard or chart-rendering layer.
+
+**Decision:** Five `requireAdmin`-gated `GET` endpoints under
+`/api/ebp/internal/analytics`: `/validation/overview` (mechanical-result
+and engineering-decision counts, aggregate exception/condition totals),
+`/validation/rules` (per-rule fail/requires-exception/warning counts),
+`/validation/manufacturers` (per-manufacturer fail/review/pass counts),
+`/validation/alerts` (open alerts by default, filterable), and
+`/timeline/:entity_type/:entity_id` (the full Activity Event history for
+one entity). Every number is computed in SQL against
+`ebp_analytics_validation_summary`, `ebp_rule_results`,
+`ebp_validation_runs`, and `ebp_activity_events`/`ebp_alerts` — never a
+raw transactional table read directly by a hypothetical frontend, and
+never a KPI computed client-side.
+
+**Consequences:** No manufacturer identity or other sensitive detail is
+exposed beyond what already exists on this internal, `requireAdmin`-only
+surface (`manufacturer_id` as a UUID, not a name/contact) — a future
+dashboard consuming this API must resolve names via Phase 2's own
+internal endpoints, never by this API embedding them.
+
+## ADR-0059 — Permanent, concurrency-safe ADMIN_OWNER bootstrap
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** The original Phase 4 build's bootstrap allowance checked
+the *current count* of active `ADMIN_OWNER` role assignments — meaning
+if the sole `ADMIN_OWNER` were ever revoked or deleted, the count would
+return to zero and the bootstrap path would silently reopen, an
+unintended and dangerous privilege-escalation window. It was also not
+provably race-safe under concurrent requests.
+
+**Decision:** `ebp_engineering_admin_bootstrap`
+(`migrations/ebp-phase4/002_correction.sql`) is a single-row-ever table —
+`id BOOLEAN PRIMARY KEY DEFAULT TRUE CHECK (id = TRUE)` structurally
+permits at most one row, ever, for the lifetime of the database.
+`assignRoleService` checks for this row's *existence* (not any role
+count) to decide whether the bootstrap path is still open; the actual
+`INSERT` happens inside the same transaction as the first `ADMIN_OWNER`
+role assignment, and a concurrent second bootstrap attempt fails with a
+unique-violation (`23505`) that is caught and surfaced as `409 Conflict`
+— the database itself serializes the race, not application logic. A
+successful bootstrap emits `ENGINEERING_ADMIN_OWNER_BOOTSTRAPPED`. This
+row is never deleted by any code path — revoking or deleting every
+`ADMIN_OWNER` assignment does not reopen the bootstrap allowance; a
+locked-out platform requires a manual, deliberate database intervention
+by an operator, never an automatic reopening.
+
+**Consequences:** There is now exactly one, permanent, well-defined
+moment when the bootstrap allowance is available — before this table
+has ever held a row. Tested for both properties directly (concurrent
+race → exactly one success; revoke-then-reattempt → still 403) in
+`tests/ebp-phase4/correction.test.js`.
+
+## ADR-0060 — Rule Catalog publish-time validation: cycles, completeness, gating integrity, and applicability shape
+
+**Date:** 2026-07-13
+**Status:** Accepted.
+
+**Context:** The original Phase 4 build let any `DRAFT` rule be published
+to `ACTIVE` as long as it wasn't already published — it never checked
+that a Composite rule's operands actually existed, that they didn't form
+a cycle (directly or indirectly through other Composite rules), that
+`default_behavior` carried the fields its own `comparison_type`
+requires, that severity/exception_policy combinations never silently
+weakened the fixed gating floor (Decision 03), or that a CRITICAL
+waivable rule declared itself as such explicitly (Decision 02).
+
+**Decision:** `publishRuleVersion` (`service.js`) now validates, before
+any `UPDATE`:
+1. **Completeness per `comparison_type`** — e.g. `RANGE` requires both
+   `min` and `max`; `ENUMERATION` requires a non-empty `allowed` array;
+   `CONDITIONAL` requires both `precondition` (field + operator) and a
+   fully-specified nested `then` (recursively validated).
+2. **Gating integrity** — a `default_behavior.suppress_blocking` flag is
+   rejected outright for `CRITICAL`/`HIGH` severities (Decision 03: harden
+   only, never weaken); a `CRITICAL` rule with anything other than
+   `NON_WAIVABLE` must set `default_behavior.critical_waivable_acknowledged
+   = true` or publication is rejected (Decision 02's "never silent").
+3. **Applicability shape** — `rule_applicability` may only use the six
+   recognized keys (Decision 11), with array-typed values for the
+   categorical ones.
+4. **Observation override shape** — `observation_overrides` keys must be
+   one of the six decided Rule Result states, and its values must match
+   the `OBS_[A-Z0-9_]+` naming convention.
+5. **Composite operand existence + cycle detection** — every
+   `operands.rule_ids` entry must reference a currently-`ACTIVE` rule
+   (never itself); a directed-graph traversal (`detectCompositeCycle`,
+   white/gray/black coloring) across all `ACTIVE` Composite rules plus
+   the candidate detects both direct (`A → A`) and indirect
+   (`A → B → A`, and longer) cycles, rejecting publication if any exist.
+6. **Supersession isolation** (unchanged, reconfirmed) —
+   `supersedeRuleVersion` only ever updates rows matching the exact
+   `rule_id` being published; no other `rule_id`'s `ACTIVE` version is
+   ever touched.
+
+Any failure in 1-5 raises a `ValidationError` (`400`) listing every
+violation found, never publishing a partially-valid rule.
+
+**Consequences:** Publishing a rule now requires the full dependency
+graph of `ACTIVE` Composite rules to be read and traversed — acceptable
+given the Rule Catalog's expected size (tens to low hundreds of rules,
+not thousands) for Phase 4 v1.0. No visual rule editor exists to prevent
+authoring a bad rule in the first place (Decision 10 already ruled that
+out) — this validation is the only gate. Tested for direct cycles,
+indirect (`A→B→A`) cycles, CRITICAL-waivable-without-acknowledgement, and
+incomplete `default_behavior` in `tests/ebp-phase4/correction.test.js`.

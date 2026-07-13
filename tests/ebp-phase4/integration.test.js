@@ -65,11 +65,17 @@ test('EBP Phase 4 — Engineering Compliance Validation integration', async (t) 
   const actorPattern = `test-%-${suffix}`;
   const rulePattern = `RULE-%-${suffix}`;
 
+  // The ADMIN_OWNER bootstrap allowance is permanent in production — the
+  // ebp_engineering_admin_bootstrap record is never deleted (correction
+  // round, item 7). This test suite exercises "bootstrap from zero" every
+  // run, so — test-database-only — it resets that one row here; production
+  // code never does this. A dedicated regression test covers "the bootstrap
+  // never reopens even if the ADMIN_OWNER is later revoked" without this
+  // reset.
+  await pool.query('DELETE FROM ebp_engineering_admin_bootstrap');
+
   t.after(async () => {
     server.close();
-    // Cleanup so a later run can bootstrap its own fresh ADMIN_OWNER again
-    // (this suite's ADMIN_OWNER bootstrap only ever succeeds once while any
-    // ADMIN_OWNER assignment exists — by design, see Decision 01, ADR-0039).
     await pool.query(
       `DELETE FROM ebp_engineering_conditions WHERE engineering_decision_id IN
          (SELECT id FROM ebp_engineering_decisions WHERE decided_by LIKE $1)`,
@@ -82,6 +88,8 @@ test('EBP Phase 4 — Engineering Compliance Validation integration', async (t) 
     await pool.query(`DELETE FROM ebp_rule_versions WHERE rule_id LIKE $1`, [rulePattern]);
     await pool.query(`DELETE FROM ebp_engineering_role_assignments WHERE declared_actor LIKE $1`, [actorPattern]);
     await pool.query(`DELETE FROM ebp_activity_events WHERE declared_actor LIKE $1`, [actorPattern]);
+    await pool.query(`DELETE FROM ebp_alerts WHERE offer_id IN (SELECT id FROM ebp_manufacturer_offers WHERE created_by = 'phase4-test')`);
+    await pool.query('DELETE FROM ebp_engineering_admin_bootstrap');
     await pool.end();
   });
 

@@ -924,10 +924,31 @@ becomes `STALE` (or an equivalent state) without being deleted or
 modified historically. Fine-grained optimization is deferred until there
 is real evidence of a performance problem.
 
+## Correction Round (2026-07-13, pre-freeze)
+
+After Phase 4 was first built, the project owner required a mandatory
+final correction before approval/freeze: strict Engineering Decision
+eligibility (with database-level enforcement, not service-layer only),
+a defined effect for Exception decisions (STALE + automatic
+revalidation, exception details embedded in `input_versions`), an
+explicit `ACCEPTED_BY_EXCEPTION` disposition kept structurally distinct
+from genuine technical compliance, condition-driven re-evaluation of
+Engineering Decision eligibility (`ebp_engineering_decisions.status`:
+`CURRENT` / `NEEDS_REVIEW`), correct Activity Event entity identity for
+Rule Results (the real `ebp_rule_results.id`, never
+`validation_run_id`), a minimal Alert Layer (`ebp_alerts`, nine alert
+types, deduplicated), a minimal Internal Analytics API, a permanent and
+concurrency-safe `ADMIN_OWNER` bootstrap, and Rule Catalog publish-time
+validation (dependency-cycle detection, completeness, gating integrity).
+See ADR-0052 through ADR-0060 in `DECISIONS.md` for the full detail of
+each correction, and `phases/phase-04-validation-engine.md` for the
+resulting as-built spec.
+
 ## Restrictions Confirmed
 
-No table was created by this document. No API was created. No migration
-was written. No code was written. No frozen phase (0, 1, 2, or 3) was
-modified. **Phase 4 was not started.** These decisions authorize Phase
-4's spec to be finalized and its implementation to proceed; they do not
-themselves implement anything.
+No table was created by this document itself. No frozen phase (0, 1, 2,
+or 3) was modified by these decisions or by the correction round.
+**Phase 4 is now `APPROVED / FROZEN v1.0`** (see
+`IMPLEMENTATION_MASTER_INDEX.md`) — implemented, corrected, tested (104
+tests, `tests/ebp-phase4/`), and approved by the project owner on
+2026-07-13. **Phase 5 has not been started.**

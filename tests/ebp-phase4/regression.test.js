@@ -185,11 +185,25 @@ test('EBP Phase 4 — regression guards', async (t) => {
   // ── Engineering Conditions invariants (Decision 08, ADR-0046) ────────────
 
   await t.test('conditions.status CHECK constraint only accepts the six decided statuses', async () => {
-    const { rows: runRows } = await pool.query(`SELECT id FROM ebp_validation_runs LIMIT 1`);
-    if (!runRows.length) return;
+    const { rows: offerRows } = await pool.query(
+      `SELECT id, passport_id FROM ebp_manufacturer_offers WHERE status NOT IN ('REJECTED','SUPERSEDED','EXPIRED','WITHDRAWN') AND (expires_at IS NULL OR expires_at > NOW()) LIMIT 1`
+    );
+    const { rows: mfrRows } = await pool.query(`SELECT id FROM ebp_manufacturers LIMIT 1`);
+    if (!offerRows.length || !mfrRows.length) return;
+    // A synthetic, zero-Rule-Result CURRENT run (offer_revision 998 avoids
+    // colliding with uq_ebp_validation_runs_one_current) so the
+    // decision-eligibility trigger's checks are trivially satisfied, and a
+    // CONDITIONALLY_APPROVED decision so the "condition requires a
+    // CONDITIONALLY_APPROVED decision" trigger (correction round) doesn't
+    // itself block this insert before the CHECK constraint even runs.
+    const runInsert = await pool.query(
+      `INSERT INTO ebp_validation_runs (passport_id, engineering_revision, manufacturer_id, offer_id, offer_revision, mechanical_result, trigger, input_versions, created_by, status)
+       VALUES ($1, 1, $2, $3, 998, 'REQUIRES_ENGINEERING_REVIEW', 'MANUAL_RERUN', '{}', 'regression-test', 'CURRENT') RETURNING id`,
+      [offerRows[0].passport_id, mfrRows[0].id, offerRows[0].id]
+    );
     const decisionInsert = await pool.query(
-      `INSERT INTO ebp_engineering_decisions (validation_run_id, decision, decided_by) VALUES ($1, 'PENDING_REVIEW', 'regression-test') RETURNING id`,
-      [runRows[0].id]
+      `INSERT INTO ebp_engineering_decisions (validation_run_id, decision, decided_by) VALUES ($1, 'CONDITIONALLY_APPROVED', 'regression-test') RETURNING id`,
+      [runInsert.rows[0].id]
     );
     await assert.rejects(
       () => pool.query(
@@ -200,6 +214,7 @@ test('EBP Phase 4 — regression guards', async (t) => {
       /violates check constraint/
     );
     await pool.query(`DELETE FROM ebp_engineering_decisions WHERE id = $1`, [decisionInsert.rows[0].id]);
+    await pool.query(`DELETE FROM ebp_validation_runs WHERE id = $1`, [runInsert.rows[0].id]);
   });
 
   // ── Consistency-audit fix: Phase 3's frozen compliance_status column ────

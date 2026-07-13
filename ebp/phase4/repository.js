@@ -103,6 +103,7 @@ async function fetchOfferContext(pool, offerId) {
   const { rows } = await pool.query(
     `SELECT o.id AS offer_id, o.offer_code, o.offer_revision, o.manufacturer_id,
             o.passport_id, o.engineering_revision, o.status AS offer_status,
+            o.expires_at AS offer_expires_at,
             p.product_category, p.product_subtype, p.duty, p.technology_code,
             row_to_json(pe.*) AS passport_spec
      FROM ebp_manufacturer_offers o
@@ -136,6 +137,7 @@ async function fetchOfferContext(pool, offerId) {
     passport_id: row.passport_id,
     engineering_revision: row.engineering_revision,
     offer_status: row.offer_status,
+    offer_expires_at: row.offer_expires_at,
     product_category: row.product_category,
     product_subtype: row.product_subtype,
     duty: row.duty,
@@ -206,15 +208,22 @@ async function setSupersededBy(client, id, supersededById) {
 
 // ─── Rule Results ────────────────────────────────────────────────────────────
 
+// Returns the inserted rows (with their real ebp_rule_results.id) in the
+// same order as `results` — callers must use these ids, never
+// validation_run_id, as the entity_id for per-rule Activity Events.
 async function insertRuleResults(client, validationRunId, results) {
+  const inserted = [];
   for (const r of results) {
-    await client.query(
+    const { rows } = await client.query(
       `INSERT INTO ebp_rule_results
          (validation_run_id, rule_id, rule_version, state, severity, observation_code, observation_params)
-       VALUES ($1,$2,$3,$4,$5,$6,$7)`,
+       VALUES ($1,$2,$3,$4,$5,$6,$7)
+       RETURNING *`,
       [validationRunId, r.rule_id, r.rule_version, r.state, r.severity, r.observation_code, JSON.stringify(r.observation_params || {})]
     );
+    inserted.push(rows[0]);
   }
+  return inserted;
 }
 
 async function fetchRuleResults(pool, validationRunId) {
@@ -298,6 +307,17 @@ async function fetchDecisionById(pool, id) {
   return rows[0] || null;
 }
 
+// Correction round — a condition later failing/going overdue must reopen
+// its decision's effective eligibility without rewriting the decision's own
+// history (decision/decided_by/notes/decided_at are never touched here).
+async function setDecisionStatus(client, decisionId, status) {
+  const { rows } = await client.query(
+    `UPDATE ebp_engineering_decisions SET status = $2 WHERE id = $1 RETURNING *`,
+    [decisionId, status]
+  );
+  return rows[0];
+}
+
 // ─── Engineering Conditions (Decision 08, ADR-0046) ─────────────────────────
 
 async function insertCondition(client, condition) {
@@ -347,6 +367,31 @@ async function fetchOverdueOpenConditions(pool) {
   const { rows } = await pool.query(
     `SELECT * FROM ebp_engineering_conditions
      WHERE status = 'OPEN' AND due_date IS NOT NULL AND due_date < CURRENT_DATE`
+  );
+  return rows;
+}
+
+async function fetchConditionsDueSoon(pool, withinDays) {
+  const { rows } = await pool.query(
+    `SELECT * FROM ebp_engineering_conditions
+     WHERE status = 'OPEN' AND due_date IS NOT NULL
+       AND due_date >= CURRENT_DATE AND due_date <= (CURRENT_DATE + $1::int)`,
+    [withinDays]
+  );
+  return rows;
+}
+
+// ─── Alert-scan support: offers with no CURRENT validation run ─────────────
+
+async function fetchActiveOffersWithoutCurrentValidation(pool) {
+  const { rows } = await pool.query(
+    `SELECT o.id AS offer_id, o.offer_code, o.offer_revision, o.manufacturer_id, o.passport_id
+     FROM ebp_manufacturer_offers o
+     WHERE o.status IN ('SUBMITTED', 'UNDER_REVIEW', 'VALIDATED')
+       AND NOT EXISTS (
+         SELECT 1 FROM ebp_validation_runs vr
+         WHERE vr.offer_id = o.id AND vr.offer_revision = o.offer_revision AND vr.status = 'CURRENT'
+       )`
   );
   return rows;
 }
@@ -411,6 +456,170 @@ async function fetchActiveRolesForActor(pool, declaredActor) {
   return rows.map((r) => r.role);
 }
 
+// ─── Permanent ADMIN_OWNER bootstrap (correction round) ─────────────────────
+// The id=TRUE primary key on ebp_engineering_admin_bootstrap makes this
+// insert atomically race-safe: two concurrent callers both attempting the
+// first bootstrap will have exactly one INSERT succeed and the other fail
+// with a unique-violation (23505) — the caller must catch that specific
+// error and treat it as "someone else already bootstrapped."
+async function insertBootstrapRecord(client, actorLabel) {
+  const { rows } = await client.query(
+    `INSERT INTO ebp_engineering_admin_bootstrap (id, bootstrapped_actor) VALUES (TRUE, $1) RETURNING *`,
+    [actorLabel]
+  );
+  return rows[0];
+}
+
+async function hasBootstrapped(pool) {
+  const { rows } = await pool.query(`SELECT 1 FROM ebp_engineering_admin_bootstrap LIMIT 1`);
+  return rows.length > 0;
+}
+
+// ─── Alert Layer (correction round, ADR-0037-aligned) ───────────────────────
+// raiseAlert is dedup-safe: ON CONFLICT on uq_ebp_alerts_open_dedup means a
+// second raise for the same (alert_type, entity_type, entity_id) while one
+// is still OPEN/ACKNOWLEDGED is a no-op (refreshes alert_data instead of
+// creating a duplicate row).
+
+async function raiseAlert(client, alert) {
+  const { rows } = await client.query(
+    `INSERT INTO ebp_alerts
+       (alert_type, severity, entity_type, entity_id, manufacturer_id, passport_id,
+        offer_id, validation_run_id, due_at, alert_data, correlation_id)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
+     ON CONFLICT (alert_type, entity_type, entity_id) WHERE status IN ('OPEN','ACKNOWLEDGED')
+     DO UPDATE SET alert_data = EXCLUDED.alert_data
+     RETURNING *`,
+    [
+      alert.alert_type,
+      alert.severity,
+      alert.entity_type,
+      alert.entity_id,
+      alert.manufacturer_id || null,
+      alert.passport_id || null,
+      alert.offer_id || null,
+      alert.validation_run_id || null,
+      alert.due_at || null,
+      JSON.stringify(alert.alert_data || {}),
+      alert.correlation_id || null,
+    ]
+  );
+  return rows[0];
+}
+
+async function resolveAlerts(client, alertType, entityType, entityId, resolutionReason) {
+  const { rows } = await client.query(
+    `UPDATE ebp_alerts SET status = 'RESOLVED', resolved_at = NOW(), resolution_reason = $4
+     WHERE alert_type = $1 AND entity_type = $2 AND entity_id = $3 AND status IN ('OPEN', 'ACKNOWLEDGED')
+     RETURNING *`,
+    [alertType, entityType, entityId, resolutionReason || null]
+  );
+  return rows;
+}
+
+async function fetchAlerts(pool, filters = {}) {
+  const clauses = [];
+  const params = [];
+  if (filters.status) {
+    params.push(filters.status);
+    clauses.push(`status = $${params.length}`);
+  }
+  if (filters.alert_type) {
+    params.push(filters.alert_type);
+    clauses.push(`alert_type = $${params.length}`);
+  }
+  if (filters.offer_id) {
+    params.push(filters.offer_id);
+    clauses.push(`offer_id = $${params.length}`);
+  }
+  const where = clauses.length ? `WHERE ${clauses.join(' AND ')}` : '';
+  const { rows } = await pool.query(`SELECT * FROM ebp_alerts ${where} ORDER BY detected_at DESC LIMIT 200`, params);
+  return rows;
+}
+
+async function fetchAlertById(pool, id) {
+  const { rows } = await pool.query(`SELECT * FROM ebp_alerts WHERE alert_id = $1`, [id]);
+  return rows[0] || null;
+}
+
+async function updateAlertStatus(client, id, status, resolutionReason) {
+  const { rows } = await client.query(
+    `UPDATE ebp_alerts SET status = $2, resolved_at = CASE WHEN $2 IN ('RESOLVED','DISMISSED') THEN NOW() ELSE resolved_at END, resolution_reason = COALESCE($3, resolution_reason)
+     WHERE alert_id = $1 RETURNING *`,
+    [id, status, resolutionReason || null]
+  );
+  return rows[0];
+}
+
+// ─── Internal Analytics API support (item 6, correction round) ─────────────
+// Reads only from ebp_analytics_validation_summary and ebp_activity_events
+// (never a raw transactional table directly, per ADR-0037 §8.3) — the
+// aggregation itself happens here in SQL, never recomputed in the frontend.
+
+async function fetchValidationOverview(pool) {
+  const { rows } = await pool.query(
+    `SELECT mechanical_result, COUNT(*)::int AS count
+     FROM ebp_analytics_validation_summary GROUP BY mechanical_result`
+  );
+  const { rows: decisionRows } = await pool.query(
+    `SELECT engineering_decision, COUNT(*)::int AS count
+     FROM ebp_analytics_validation_summary WHERE engineering_decision IS NOT NULL
+     GROUP BY engineering_decision`
+  );
+  const { rows: totalsRows } = await pool.query(
+    `SELECT COUNT(*)::int AS total_current_runs,
+            COALESCE(SUM(open_exceptions), 0)::int AS total_open_exceptions,
+            COALESCE(SUM(open_conditions), 0)::int AS total_open_conditions
+     FROM ebp_analytics_validation_summary`
+  );
+  return {
+    by_mechanical_result: rows,
+    by_engineering_decision: decisionRows,
+    totals: totalsRows[0],
+  };
+}
+
+async function fetchRuleFailureStats(pool) {
+  const { rows } = await pool.query(
+    `SELECT rr.rule_id, rr.rule_version, rv.rule_name, rv.severity,
+            COUNT(*) FILTER (WHERE rr.state = 'FAIL')::int AS fail_count,
+            COUNT(*) FILTER (WHERE rr.state = 'REQUIRES_EXCEPTION')::int AS requires_exception_count,
+            COUNT(*) FILTER (WHERE rr.state = 'WARNING')::int AS warning_count,
+            COUNT(*)::int AS total_evaluations
+     FROM ebp_rule_results rr
+     JOIN ebp_validation_runs vr ON vr.id = rr.validation_run_id
+     LEFT JOIN ebp_rule_versions rv ON rv.rule_id = rr.rule_id AND rv.rule_version = rr.rule_version
+     WHERE vr.status = 'CURRENT'
+     GROUP BY rr.rule_id, rr.rule_version, rv.rule_name, rv.severity
+     ORDER BY fail_count DESC, requires_exception_count DESC
+     LIMIT 50`
+  );
+  return rows;
+}
+
+async function fetchManufacturerFailureStats(pool) {
+  const { rows } = await pool.query(
+    `SELECT manufacturer_id,
+            COUNT(*) FILTER (WHERE mechanical_result = 'MECHANICALLY_FAIL')::int AS fail_count,
+            COUNT(*) FILTER (WHERE mechanical_result = 'REQUIRES_ENGINEERING_REVIEW')::int AS requires_review_count,
+            COUNT(*) FILTER (WHERE mechanical_result = 'MECHANICALLY_PASS')::int AS pass_count,
+            COUNT(*)::int AS total
+     FROM ebp_analytics_validation_summary
+     GROUP BY manufacturer_id
+     ORDER BY fail_count DESC
+     LIMIT 50`
+  );
+  return rows;
+}
+
+async function fetchTimelineForEntity(pool, entityType, entityId) {
+  const { rows } = await pool.query(
+    `SELECT * FROM ebp_activity_events WHERE entity_type = $1 AND entity_id = $2 ORDER BY event_timestamp ASC`,
+    [entityType, entityId]
+  );
+  return rows;
+}
+
 module.exports = {
   fetchOfferByCode,
   fetchActiveRuleVersions,
@@ -438,15 +647,29 @@ module.exports = {
   insertDecision,
   fetchLatestDecisionForRun,
   fetchDecisionById,
+  setDecisionStatus,
   insertCondition,
   fetchConditionsForDecision,
   fetchConditionById,
   updateConditionStatus,
   fetchOverdueOpenConditions,
+  fetchConditionsDueSoon,
+  fetchActiveOffersWithoutCurrentValidation,
   projectComplianceStatus,
   assignRole,
   revokeRole,
   actorHasRole,
   fetchActiveRolesForActor,
   countActiveAssignmentsForRole,
+  insertBootstrapRecord,
+  hasBootstrapped,
+  raiseAlert,
+  resolveAlerts,
+  fetchAlerts,
+  fetchAlertById,
+  updateAlertStatus,
+  fetchValidationOverview,
+  fetchRuleFailureStats,
+  fetchManufacturerFailureStats,
+  fetchTimelineForEntity,
 };

@@ -39,7 +39,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **Built** (not frozen); rule-engine behavior normatively defined in [`ENGINEERING_RULE_ENGINE.md`](ENGINEERING_RULE_ENGINE.md), ADR-0038, twelve open questions resolved 2026-07-13 (ADR-0039 through ADR-0051) | — | — |
+| 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
@@ -203,10 +203,52 @@ See ADR-0005.
   Result / Engineering Decision / Offer Approval, ADR-0051) is enforced
   structurally (separate columns/tables, separate CHECK constraints,
   tested that the engine never self-grants an Engineering Decision — see
-  Decision 09, ADR-0047). **Phase 4 is deliberately left `Built`, not
-  frozen — the project owner did not request a freeze this round.**
-  **Phase 5 (Manufacturer Selection) has not been started; this build
-  does not authorize it.**
+  Decision 09, ADR-0047).
+- **Phase 04 — Engineering Compliance Validation is `APPROVED / FROZEN
+  v1.0` as of 2026-07-13.** After the initial "Built" round above, the
+  project owner reviewed the implementation and required a mandatory
+  final correction before approval: strict Engineering Decision
+  eligibility enforced in **both** `service.js` and a database trigger
+  (`migrations/ebp-phase4/003_decision_guard.sql`); a defined effect for
+  Exception decisions (the current Validation Run is marked `STALE`,
+  `VALIDATION_MARKED_STALE` is emitted, and a new run is automatically
+  triggered with `trigger = EXCEPTION_APPROVED`/`EXCEPTION_REJECTED`,
+  embedding the full Exception ledger in every run's `input_versions`);
+  an explicit `ACCEPTED_BY_EXCEPTION` effective disposition, computed at
+  read time only, that never rewrites a Rule Result's historical `state`;
+  condition-driven re-evaluation of decision eligibility
+  (`ebp_engineering_decisions.status`: `CURRENT`/`NEEDS_REVIEW`, and a
+  `computeSelectionEligibility()` gate for the future Phase 5); corrected
+  Rule Result Activity Event identity (`entity_id` is the real
+  `ebp_rule_results.id`, never `validation_run_id`); a minimal Alert
+  Layer (`ebp_alerts`, nine alert types, deduplicated via a partial
+  unique index); a minimal Internal Analytics API (5 read-only
+  endpoints under `/api/ebp/internal/analytics`); a permanent,
+  concurrency-safe `ADMIN_OWNER` bootstrap
+  (`ebp_engineering_admin_bootstrap`, a single-row-ever table that never
+  reopens even if the bootstrapped `ADMIN_OWNER` is later revoked); and
+  Rule Catalog publish-time validation (Composite dependency-cycle
+  detection — direct and indirect, `default_behavior` completeness per
+  `comparison_type`, gating-integrity checks, and explicit
+  CRITICAL-waivable acknowledgement). ADR-0052 through ADR-0060 record
+  each correction — see `DECISIONS.md`. Two new migrations were added
+  (`migrations/ebp-phase4/002_correction.sql`,
+  `003_decision_guard.sql`), both additive and idempotent, verified via
+  a full migrate-from-scratch → `validate.sql` (21 checks) → rollback →
+  reapply cycle. The test suite grew from 73 to **104 tests** (33 unit +
+  27 integration + 13 regression + 31 new correction-round tests in
+  `tests/ebp-phase4/correction.test.js`), all passing, stable across
+  repeated runs — note that because the Rule Catalog and the
+  `ADMIN_OWNER` bootstrap are genuinely global, cross-file shared state
+  (unlike Phase 1-3's fully-isolated fixtures), the four Phase 4 test
+  files must be run as separate sequential processes, never as a single
+  `node --test tests/ebp-phase4/*.test.js` glob invocation — the
+  `npm run test:ebp-phase4` script enforces this. Re-ran and confirmed
+  unchanged: Phase 1 (59), Phase 2 (100), Phase 3 (126) — all still
+  passing. **This documentation baseline may not be altered without a
+  new ADR that explicitly supersedes the relevant prior entry, same
+  discipline as Phase 0/1/2/3. Phase 5 (Manufacturer Selection) has not
+  been started; this freeze does not authorize it.**
 
 ## How to Use This File
 

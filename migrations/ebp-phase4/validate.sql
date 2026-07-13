@@ -132,3 +132,38 @@ WHERE state NOT IN ('PASS', 'FAIL', 'WARNING', 'NOT_APPLICABLE', 'REQUIRES_REVIE
 -- reports distinct event_type values seen so far, for visual audit
 SELECT DISTINCT event_type FROM ebp_activity_events ORDER BY event_type;
 -- Expected: 0 rows on a fresh migration (no data yet)
+
+-- =============================================================================
+-- CORRECTION ROUND (002_correction.sql) CHECKS
+-- =============================================================================
+
+-- 16. Correction-round tables/columns exist
+SELECT tablename FROM pg_tables WHERE schemaname = 'public' AND tablename IN ('ebp_alerts', 'ebp_engineering_admin_bootstrap');
+-- Expected: 2 rows
+
+SELECT column_name FROM information_schema.columns WHERE table_name = 'ebp_engineering_decisions' AND column_name = 'status';
+-- Expected: 1 row
+
+-- 17. At most one row ever in the bootstrap table (PK id=TRUE enforces this structurally)
+SELECT COUNT(*) AS bootstrap_row_count FROM ebp_engineering_admin_bootstrap;
+-- Expected: 0 or 1, never more (PK guarantees this; informational only)
+
+-- 18. Alert dedup: never more than one OPEN/ACKNOWLEDGED alert per (alert_type, entity_type, entity_id)
+SELECT alert_type, entity_type, entity_id, COUNT(*) AS open_count
+FROM ebp_alerts
+WHERE status IN ('OPEN', 'ACKNOWLEDGED')
+GROUP BY alert_type, entity_type, entity_id
+HAVING COUNT(*) > 1;
+-- Expected: 0 rows
+
+-- 19. validation_runs.trigger CHECK includes the exception-decision-specific values
+SELECT pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conname = 'ebp_validation_runs_trigger_check';
+-- Expected: 1 row, definition mentions EXCEPTION_APPROVED and EXCEPTION_REJECTED
+
+-- 20. Every engineering_decisions.status is one of the two decided values
+SELECT id, status FROM ebp_engineering_decisions WHERE status NOT IN ('CURRENT', 'NEEDS_REVIEW');
+-- Expected: 0 rows
+
+-- 21. Every alerts.status is one of the four decided values
+SELECT alert_id, status FROM ebp_alerts WHERE status NOT IN ('OPEN', 'ACKNOWLEDGED', 'RESOLVED', 'DISMISSED');
+-- Expected: 0 rows

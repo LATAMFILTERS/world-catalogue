@@ -7,12 +7,18 @@
 
 const { renderObservation } = require('./observations');
 
+// `row.effective_disposition` (correction round, item 2): computed by
+// service.js — the same as `state` unless an APPROVED Exception exists
+// for a REQUIRES_EXCEPTION result, in which case it is
+// ACCEPTED_BY_EXCEPTION. Never stored on ebp_rule_results itself; this is
+// purely a read-time projection so historical rows are never rewritten.
 function toRuleResultDTO(row) {
   return {
     id: row.id,
     rule_id: row.rule_id,
     rule_version: row.rule_version,
     state: row.state,
+    effective_disposition: row.effective_disposition !== undefined ? row.effective_disposition : row.state,
     severity: row.severity,
     observation_code: row.observation_code,
     observation_params: row.observation_params,
@@ -48,6 +54,7 @@ function toDecisionDTO(decision) {
     id: decision.id,
     validation_run_id: decision.validation_run_id,
     decision: decision.decision,
+    status: decision.status, // CURRENT / NEEDS_REVIEW — correction round
     decided_by: decision.decided_by,
     identity_mechanism: decision.identity_mechanism,
     notes: decision.notes,
@@ -98,6 +105,7 @@ function toValidationSummaryDTO(summary) {
     engineering_decision: toDecisionDTO(summary.engineering_decision),
     exceptions: (summary.exceptions || []).map(toExceptionDTO),
     conditions: (summary.conditions || []).map(toConditionDTO),
+    selection_eligibility: summary.selection_eligibility || null,
   };
 }
 
@@ -126,6 +134,27 @@ function toRuleVersionDTO(row) {
   };
 }
 
+function toAlertDTO(row) {
+  return {
+    alert_id: row.alert_id,
+    alert_type: row.alert_type,
+    severity: row.severity,
+    entity_type: row.entity_type,
+    entity_id: row.entity_id,
+    manufacturer_id: row.manufacturer_id,
+    passport_id: row.passport_id,
+    offer_id: row.offer_id,
+    validation_run_id: row.validation_run_id,
+    status: row.status,
+    detected_at: row.detected_at,
+    due_at: row.due_at,
+    resolved_at: row.resolved_at,
+    resolution_reason: row.resolution_reason,
+    alert_data: row.alert_data,
+    correlation_id: row.correlation_id,
+  };
+}
+
 module.exports = {
   toRuleResultDTO,
   toValidationRunDTO,
@@ -134,4 +163,5 @@ module.exports = {
   toExceptionDTO,
   toValidationSummaryDTO,
   toRuleVersionDTO,
+  toAlertDTO,
 };

@@ -24,6 +24,22 @@
 -- ⚠️  Idempotent (IF EXISTS on all drops)
 -- =============================================================================
 
+-- Step -1: Drop the 003_decision_guard.sql triggers/functions first — they
+-- reference ebp_engineering_decisions/ebp_engineering_conditions and must
+-- go before those tables are dropped below (DROP TABLE ... CASCADE would
+-- remove the triggers anyway, but not the standalone trigger functions).
+DROP TRIGGER IF EXISTS trg_ebp_enforce_engineering_decision_eligibility ON ebp_engineering_decisions;
+DROP TRIGGER IF EXISTS trg_ebp_enforce_condition_requires_conditional_approval ON ebp_engineering_conditions;
+DROP FUNCTION IF EXISTS ebp_enforce_engineering_decision_eligibility();
+DROP FUNCTION IF EXISTS ebp_enforce_condition_requires_conditional_approval();
+
+-- Step 0: Drop the correction-round (002_correction.sql) objects next —
+-- ebp_alerts and ebp_engineering_admin_bootstrap have no dependents, and
+-- ebp_engineering_decisions.status is dropped along with its table in
+-- Step 2 below (no separate ALTER TABLE ... DROP COLUMN needed).
+DROP TABLE IF EXISTS ebp_alerts                       CASCADE;
+DROP TABLE IF EXISTS ebp_engineering_admin_bootstrap   CASCADE;
+
 -- Step 1: Drop the analytics view (depends on ebp_validation_runs and
 -- ebp_engineering_decisions)
 DROP VIEW IF EXISTS ebp_analytics_validation_summary;
@@ -59,7 +75,9 @@ WHERE schemaname = 'public'
     'ebp_engineering_decisions',
     'ebp_engineering_exceptions',
     'ebp_engineering_conditions',
-    'ebp_activity_events'
+    'ebp_activity_events',
+    'ebp_alerts',
+    'ebp_engineering_admin_bootstrap'
   );
 -- Expected: 0 rows (all Phase 4 tables dropped)
 

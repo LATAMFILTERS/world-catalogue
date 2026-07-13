@@ -535,10 +535,14 @@ const {
   createValidationRouter,
   createRuleCatalogRouter,
   createRolesRouter,
+  createAlertsRouter,
+  createAnalyticsRouter,
 } = require('./ebp/phase4/internal.routes');
 app.use('/api/ebp/internal/validation', adminLimiter, requireAdmin, createValidationRouter(pool));
 app.use('/api/ebp/internal/rule-catalog', adminLimiter, requireAdmin, createRuleCatalogRouter(pool));
 app.use('/api/ebp/internal/roles', adminLimiter, requireAdmin, createRolesRouter(pool));
+app.use('/api/ebp/internal/alerts', adminLimiter, requireAdmin, createAlertsRouter(pool));
+app.use('/api/ebp/internal/analytics', adminLimiter, requireAdmin, createAnalyticsRouter(pool));
 
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA

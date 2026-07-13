@@ -1,19 +1,29 @@
 # Phase 04 — Engineering Compliance Validation
 
-**Status:** Built (not frozen) — 2026-07-13. The project owner authorized
-implementation by resolving all twelve `ENGINEERING_RULE_ENGINE.md` open
-questions (Decisions 01-12, ADR-0039 through ADR-0050) plus the Global
-Result Model (ADR-0051), then explicitly directed implementation of
-Phase 4 only, with Phase 5 not to begin. Real migrations
-(`migrations/ebp-phase4/`), a real backend module (`ebp/phase4/`), and a
-73-test suite (`tests/ebp-phase4/`) exist and pass against a real local
-Postgres instance — see `IMPLEMENTATION_MASTER_INDEX.md` for the full
-delivery summary. **Deliberately left `Built`, not frozen — no freeze was
-requested this round.**
+**Status:** **APPROVED / FROZEN v1.0** — 2026-07-13. The project owner
+authorized implementation by resolving all twelve
+`ENGINEERING_RULE_ENGINE.md` open questions (Decisions 01-12, ADR-0039
+through ADR-0050) plus the Global Result Model (ADR-0051), then, after
+reviewing the initial "Built" implementation, required a mandatory final
+correction round (ADR-0052 through ADR-0060 — strict Engineering
+Decision eligibility enforced in both `service.js` and a database
+trigger, defined Exception-decision effects, `ACCEPTED_BY_EXCEPTION`
+disposition, condition-driven decision re-evaluation, correct Rule
+Result event identity, a minimal Alert Layer, a minimal Internal
+Analytics API, a permanent concurrency-safe `ADMIN_OWNER` bootstrap, and
+Rule Catalog publish-time validation). Real migrations
+(`migrations/ebp-phase4/`, 3 files), a real backend module
+(`ebp/phase4/`), and a 104-test suite (`tests/ebp-phase4/`) exist and
+pass against a real local Postgres instance, verified via a full
+migrate-from-scratch → `validate.sql` → rollback → reapply cycle — see
+`IMPLEMENTATION_MASTER_INDEX.md` for the full delivery summary. **This
+documentation baseline may not be altered without a new ADR that
+explicitly supersedes the relevant prior entry, same discipline as
+Phase 0/1/2/3.**
 **Depends on:** Phase 01 (`APPROVED / FROZEN v1.0`), Phase 02
 (`APPROVED / FROZEN v1.0`), Phase 03 (`APPROVED / FROZEN v1.0`),
 `docs/ebp/ENGINEERING_RULE_ENGINE.md` (normative, ADR-0038 through
-ADR-0051), `docs/ebp/PLATFORM_ARCHITECTURE.md` §8 (Observability &
+ADR-0060), `docs/ebp/PLATFORM_ARCHITECTURE.md` §8 (Observability &
 Intelligence Layer, ADR-0037 — Phase 4 is the first phase to actually
 implement it, not just document it).
 **Blocks:** Phase 05, 06, 07, 08, 09 (transitively — everything
@@ -248,10 +258,21 @@ Distributor-facing endpoint in this phase)
   `ADMIN_OWNER` be assigned with no prior role held (otherwise nobody
   could ever satisfy the check to create it) — `requireAdmin`'s shared
   `ADMIN_KEY` remains the real security boundary this sits behind.
-- `/api/ebp/internal/analytics/*` (reserved prefix, ADR-0037 §8.6) —
-  **not implemented this round.** `ebp_analytics_validation_summary` (the
-  view) exists and is queryable directly; a dedicated read endpoint over
-  it is deferred.
+- `GET /api/ebp/internal/alerts/` — list alerts (filterable by `status`,
+  `alert_type`, `offer_id`); `POST .../:id/acknowledge` and
+  `.../:id/dismiss`; `POST .../scan` — the on-demand equivalent of a
+  future scheduled job, raising `CONDITION_DUE_SOON` and
+  `ACTIVE_OFFER_WITHOUT_CURRENT_VALIDATION` (correction round, ADR-0057).
+- `GET /api/ebp/internal/analytics/validation/overview` — aggregate
+  Mechanical Compliance Result / Engineering Decision counts.
+- `GET /api/ebp/internal/analytics/validation/rules` — per-rule
+  fail/requires-exception/warning counts.
+- `GET /api/ebp/internal/analytics/validation/manufacturers` —
+  per-manufacturer fail/review/pass counts.
+- `GET /api/ebp/internal/analytics/validation/alerts` — open alerts
+  (correction round, ADR-0058).
+- `GET /api/ebp/internal/analytics/timeline/:entity_type/:entity_id` —
+  the full Activity Event history for one entity.
 
 ## Integration Points
 

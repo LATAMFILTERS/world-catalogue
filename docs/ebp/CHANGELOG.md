@@ -5,6 +5,129 @@ logged here in reverse chronological order. Every entry that changes a
 phase's status must correspond to a row update in
 `IMPLEMENTATION_MASTER_INDEX.md` in the same commit.
 
+## 2026-07-13 — Phase 4 (Engineering Compliance Validation) correction round — APPROVED / FROZEN v1.0
+
+- The project owner reviewed the initial "Built" implementation below
+  and required a mandatory final correction before approval/freeze.
+  ADR-0052 through ADR-0060 recorded in `DECISIONS.md`:
+  - **ADR-0052** — strict Engineering Decision eligibility, enforced in
+    both `service.js` and a new database trigger
+    (`ebp_enforce_engineering_decision_eligibility`,
+    `migrations/ebp-phase4/003_decision_guard.sql`): `APPROVED` requires
+    a `CURRENT` run, a valid non-expired offer, `mechanical_result =
+    MECHANICALLY_PASS`, zero `FAIL`/`REQUIRES_REVIEW` results, zero
+    unresolved `REQUIRES_EXCEPTION` results, and no attached conditions;
+    `CONDITIONALLY_APPROVED` requires the same minus the `PASS`
+    requirement, plus at least one condition; `REJECTED` requires a
+    documented reason; `PENDING_REVIEW` can never be submitted as a
+    human decision. A second trigger
+    (`ebp_enforce_condition_requires_conditional_approval`) guarantees a
+    condition can only ever attach to a `CONDITIONALLY_APPROVED`
+    decision.
+  - **ADR-0053** — approving/rejecting an Exception now marks the
+    current Validation Run `STALE`, emits `VALIDATION_MARKED_STALE`, and
+    automatically triggers a new run with `trigger = EXCEPTION_APPROVED`/
+    `EXCEPTION_REJECTED` (both added to the `trigger` CHECK constraint);
+    every run's `input_versions` now always embeds the offer's complete
+    Exception ledger (id/rule/version/status/decided_at). Historical
+    Rule Results are never rewritten.
+  - **ADR-0054** — `ACCEPTED_BY_EXCEPTION`: a purely read-time
+    `effective_disposition` projection (never stored) distinguishing an
+    approved-Exception deviation from genuine technical compliance;
+    `mechanical_result` remains computed from `state` only, never from
+    `effective_disposition`.
+  - **ADR-0055** — `ebp_engineering_decisions` gains a `status` column
+    (`CURRENT`/`NEEDS_REVIEW`), recomputed whenever a linked condition
+    changes (`NEEDS_REVIEW` if any sibling condition is `FAILED`/
+    `OVERDUE`); a new `computeSelectionEligibility()` service function is
+    the eligibility gate a future Phase 5 must call.
+  - **ADR-0056** — `RULE_EVALUATED`/`RULE_PASSED`/`RULE_FAILED`/
+    `RULE_WARNING`/`RULE_NOT_APPLICABLE` Activity Events now use the real
+    `ebp_rule_results.id` as `entity_id` (`repository.insertRuleResults`
+    now returns the inserted rows) — never `validation_run_id`.
+  - **ADR-0057** — minimal Alert Layer: `ebp_alerts` table (deduplicated
+    via a partial unique index on `(alert_type, entity_type, entity_id)
+    WHERE status IN ('OPEN','ACKNOWLEDGED')`), `ebp/phase4/alerts.js`
+    implementing the nine minimum alert types, most raised inline and
+    two (`CONDITION_DUE_SOON`, `ACTIVE_OFFER_WITHOUT_CURRENT_VALIDATION`)
+    via an on-demand `POST /api/ebp/internal/alerts/scan` endpoint
+    (mirrors Phase 3's ADR-0031 "no cron required" pattern). No
+    Notification Center, no email — structured alerts only.
+  - **ADR-0058** — minimal Internal Analytics API: 5
+    `requireAdmin`-gated `GET` endpoints under
+    `/api/ebp/internal/analytics` (`validation/overview`,
+    `validation/rules`, `validation/manufacturers`, `validation/alerts`,
+    `timeline/:entity_type/:entity_id`), reading only from
+    `ebp_analytics_validation_summary`/`ebp_rule_results`/
+    `ebp_activity_events`/`ebp_alerts` — no KPI ever computed
+    client-side, no manufacturer identity or sensitive detail beyond
+    this internal surface's existing scope.
+  - **ADR-0059** — permanent, concurrency-safe `ADMIN_OWNER` bootstrap:
+    `ebp_engineering_admin_bootstrap`, a single-row-ever table
+    (`id BOOLEAN PRIMARY KEY DEFAULT TRUE`) that structurally permits at
+    most one row for the database's lifetime; the bootstrap path checks
+    this row's *existence*, never the current count of active
+    `ADMIN_OWNER` assignments, so revoking the bootstrapped
+    `ADMIN_OWNER` can never reopen it; a concurrent second bootstrap
+    attempt fails on a unique-violation, caught and surfaced as `409`;
+    emits `ENGINEERING_ADMIN_OWNER_BOOTSTRAPPED`.
+  - **ADR-0060** — Rule Catalog publish-time validation:
+    `default_behavior` completeness per `comparison_type` (recursive for
+    `CONDITIONAL`'s nested `then`), rejection of any gating-weakening
+    `suppress_blocking` flag on `CRITICAL`/`HIGH` rules, mandatory
+    `critical_waivable_acknowledged` for a CRITICAL waivable rule,
+    `rule_applicability`/`observation_overrides` shape validation, and
+    Composite operand-existence + dependency-cycle detection (direct
+    `A→A` and indirect `A→B→A`, via a white/gray/black graph traversal
+    across all `ACTIVE` Composite rules).
+- **Migrations**: two new additive, idempotent files —
+  `migrations/ebp-phase4/002_correction.sql` (the bootstrap table, the
+  `decisions.status` column, the `ebp_alerts` table, the extended
+  `trigger` CHECK) and `003_decision_guard.sql` (the two database
+  triggers). `validate.sql` extended with 6 more checks (21 total);
+  `rollback.sql` extended to drop the new triggers/functions/tables
+  first. Verified via a full migrate-from-scratch →
+  `validate.sql` → rollback → reapply cycle: Phase 1/2/3 row counts and
+  the frozen `compliance_status` CHECK constraint unaffected throughout.
+- **Tests**: grew from 73 to **104** (33 unit + 27 integration + 13
+  regression + a new 31-test `tests/ebp-phase4/correction.test.js`
+  covering every scenario the correction round required: attempting to
+  approve a `MECHANICALLY_FAIL`/`NON_WAIVABLE`-FAIL/pending-exception
+  offer (rejected, including at the raw-SQL/trigger level); an approved
+  exception marking the run `STALE` and the new run's `input_versions`
+  correctly embedding it; an approved exception never counting as
+  technical `PASS` (`effective_disposition = ACCEPTED_BY_EXCEPTION`
+  while `state` stays `REQUIRES_EXCEPTION`); a condition `FAILED`
+  transition flipping the decision to `NEEDS_REVIEW` and blocking
+  selection eligibility, then a `SATISFIED` transition restoring it;
+  Rule Result events carrying the real `ebp_rule_results.id`; alert
+  dedup and resolution; all 5 Analytics endpoints; a concurrent-bootstrap
+  race (exactly one success) and a revoke-then-reattempt (still
+  blocked); and both a direct and an indirect Composite dependency
+  cycle). One pre-existing Phase 4 regression test
+  (`conditions.status CHECK constraint`) needed its fixture updated —
+  the new condition-requires-CONDITIONALLY_APPROVED trigger now fires
+  before that CHECK constraint would, so the test's synthetic decision
+  now correctly starts as `CONDITIONALLY_APPROVED` on a
+  zero-Rule-Result run. **Discovered during this round**: the Phase 4
+  Rule Catalog and `ADMIN_OWNER` bootstrap are genuinely global,
+  cross-file shared state (unlike Phase 1-3's fully-isolated per-file
+  fixtures) — running all four test files via a single
+  `node --test tests/ebp-phase4/*.test.js` glob lets Node's test runner
+  interleave them and corrupts each file's expectations; `package.json`'s
+  `test:ebp-phase4` script now chains four separate `node --test`
+  invocations instead.
+- Re-ran and confirmed unchanged: Phase 1 (59), Phase 2 (100), Phase 3
+  (126) — all still passing.
+- Docs updated: `ENGINEERING_RULE_ENGINE.md` (Correction Round section,
+  restrictions confirmed now reference `APPROVED / FROZEN v1.0`),
+  `phases/phase-04-validation-engine.md` (status line, API Surface
+  section extended with the Alerts/Analytics endpoints),
+  `IMPLEMENTATION_MASTER_INDEX.md` (status table row and detailed note).
+
+**Phase 4 is now `APPROVED / FROZEN v1.0`. Phase 5 (Manufacturer
+Selection) has not been started; this freeze does not authorize it.**
+
 ## 2026-07-13 — Phase 4 (Engineering Compliance Validation) Built (not frozen)
 
 - The project owner closed all twelve `ENGINEERING_RULE_ENGINE.md` open
