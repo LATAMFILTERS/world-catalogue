@@ -17,7 +17,7 @@ export default function TechnologiesPage() {
   };
 
   return (
-    <main style={main}>
+    <main className="technologies-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Link href="/" style={homeButton}>HOME</Link>
 
@@ -40,7 +40,7 @@ export default function TechnologiesPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={whyTitle}>Products replace parts Technologies control failure</h2>
+            <h2 className="technologies-difference-title" style={whyTitle}>Products replace parts Technologies control failure</h2>
           </div>
           <div>
             <p style={leadText}>A product number tells you what fits. A technology tells you why the asset is being protected and what operating risk is being reduced.</p>
@@ -51,10 +51,10 @@ export default function TechnologiesPage() {
 
       <TechnologiesPortfolio />
 
-      <section style={cta}>
+      <section className="technologies-final-cta" style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
+          <h2 className="technologies-final-title" style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
             <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
