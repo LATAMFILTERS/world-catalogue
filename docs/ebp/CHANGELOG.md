@@ -606,4 +606,60 @@ explicit instruction).
 - **Phase 3 was not started.** No Manufacturer Intake Portal / Factory
   Portal table, route, or spec change was made in this session.
 
+## 2026-07-13 — Phase 2 approved and frozen — v1.0
+
+The project owner reviewed the `Built` Phase 2 delivery, ran a closing
+audit, and formally approved Phase 2.
+
+- **Closing audit executed before freeze:** the 100-test Phase 2 suite
+  re-run (100/100); the 59-test Phase 1 suite re-run (59/59); `migrations/
+  ebp-phase2/validate.sql` re-run (8 tables, the effective-certification
+  view, the immutability trigger, the partial unique index, zero
+  data-integrity violations); `rollback.sql` re-run with 154 real
+  manufacturer rows (and their children) present, confirming clean removal
+  of all 8 Phase 2 structures while Phase 1 (5 tables), `elimfilters_
+  catalog` (26 rows), and `technologies` (1 row) remained byte-for-byte
+  unchanged; the schema was reapplied and both suites re-confirmed passing
+  when run independently (a combined single-process run surfaced a
+  test-isolation artifact — Phase 1's integration test inserting a catalog
+  row mid-snapshot of an unrelated Phase 2 regression assertion — which is
+  not a defect in either suite and does not affect either phase's
+  standalone correctness); the 16-endpoint `ebp/phase2/manufacturers.
+  routes.js` surface was confirmed against the router source; confirmed no
+  `ebp/phase3` module, no `migrations/ebp-phase3/` directory, and no Phase
+  3 mount in `server.js` exist.
+- **`docs/ebp/DECISIONS.md`** — added ADR-0022, closing the four decisions
+  the project owner made at approval time: `registered_on`'s meaning is
+  now formalized as unambiguous (the date ELIMFILTERS incorporated the
+  manufacturer into the registry — never founding date, relationship
+  start, qualification date, approval date, or first-production date); the
+  computed-view certification-validity design (ADR-0019) is approved as
+  final, with every later phase required to read `effective_status`, never
+  the raw `status` column; `country_code`/`timezone` syntactic-only
+  validation is accepted and tracked as controlled debt under the tag
+  `FUTURE_REFERENCE_DATA_VALIDATION`; and every fixed Phase 2 enum
+  (`condition_type`, `capability_type`, both status machines, etc.) may
+  only be extended via documentation + a new ADR + a migration + tests,
+  never a free-form value. No implementation change was required — Phase
+  2's code already matched all four decisions.
+- **`docs/ebp/phases/phase-02-manufacturer-registry.md`** — status header
+  updated to `APPROVED / FROZEN v1.0`; a "Freeze notice" section added; the
+  `registered_on` field description in "Key Entities" rewritten to the
+  formalized, unambiguous meaning; the "Risks" section rewritten to show
+  each prior risk as closed/accepted/governed per ADR-0022 rather than
+  left open; the stale "left in status `Built`" Exit Criteria note
+  corrected to reflect the freeze; the frozen-baseline notice extended to
+  state that Phase 2's own files/tables/rules now carry the same
+  protection Phase 0 and Phase 1 already have.
+- **`docs/ebp/IMPLEMENTATION_MASTER_INDEX.md`** — Phase 02 row set to
+  `APPROVED / FROZEN v1.0`, approved by Project Owner on 2026-07-13; the
+  phase-status notes section rewritten accordingly; Phases 03-09 note
+  corrected to Phases 04-09 (Phase 3 is now authorized).
+- **Branch:** `claude/phase-0-audit-review-wanxa3`.
+- **No further changes to Phase 2's implementation are made in this
+  entry** — this is a status/approval-only change, consistent with
+  ADR-0022 requiring no code changes. **Phase 3 — Manufacturer Intake
+  Portal / Factory Portal is authorized to begin immediately; no phase
+  beyond Phase 3 is authorized.**
+
 

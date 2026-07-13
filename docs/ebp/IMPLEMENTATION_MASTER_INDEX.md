@@ -37,7 +37,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 |---|---|---|---|---|---|
 | 00 | Foundation | [phase-00-foundation.md](phases/phase-00-foundation.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 01 | Product Engineering Passport | [phase-01-product-engineering-passport.md](phases/phase-01-product-engineering-passport.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **Built** | — | — |
+| 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | Spec Drafted (revised) | — | — |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | Spec Drafted (revised) | — | — |
 | 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised) | — | — |
@@ -70,25 +70,30 @@ See ADR-0005.
   adjacent, not a numbered ADR) and the ADR-0014 applicability-approval
   activation gate were added in a post-implementation audit correction
   before this freeze — see the `CHANGELOG.md` entries for this date.
-- **Phase 02 — Manufacturer Registry** is `Built` (not `APPROVED / FROZEN`)
-  as of 2026-07-13: real, executable SQL migrations
-  (`migrations/ebp-phase2/`, `001_schema.sql` + `validate.sql` +
-  `rollback.sql`, 8 tables + 1 effective-certification view), a real
-  backend module (`ebp/phase2/`) mounted in `server.js` at
-  `/api/ebp/manufacturers` (16 endpoints) behind `requireAdmin`, and a
-  100-test suite (unit + integration + regression,
+- **Phase 02 — Manufacturer Registry** is `APPROVED / FROZEN v1.0` as of
+  2026-07-13: real, executable SQL migrations (`migrations/ebp-phase2/`,
+  `001_schema.sql` + `validate.sql` + `rollback.sql`, 8 tables + 1
+  effective-certification view), a real backend module (`ebp/phase2/`)
+  mounted in `server.js` at `/api/ebp/manufacturers` (16 endpoints) behind
+  `requireAdmin`, and a 100-test suite (unit + integration + regression,
   `tests/ebp-phase2/`) — all passing against a real local Postgres
-  instance, including a full rollback-with-real-data verification
-  (130 manufacturers + children dropped cleanly, Phase 1/catalog/
-  technologies unchanged) and re-confirmation that Phase 1's own 59-test
-  suite still passes unmodified. See ADR-0015 through ADR-0021 in
-  `DECISIONS.md`. Per the project owner's explicit instruction, Phase 2 is
-  deliberately left at `Built`, not frozen — freezing is a separate, later
-  step. **Phase 3 (Manufacturer Intake Portal) has not been started.**
-- **Phases 03-09** remain `Spec Drafted` — first-pass drafts written during
+  instance, including a full rollback-with-real-data verification (154
+  manufacturers + children dropped cleanly, Phase 1/catalog/technologies
+  unchanged) and re-confirmation that Phase 1's own 59-test suite still
+  passes unmodified. Built with ADR-0015 through ADR-0021; four closing
+  decisions (`registered_on` semantics, certification-validity design
+  approval, `country_code`/`timezone` validation debt, enum-extension
+  governance) were resolved and recorded in ADR-0022 at approval time —
+  see `DECISIONS.md`. The documentation baseline for Phase 2
+  (`phases/phase-02-manufacturer-registry.md` and its cross-referenced
+  ADRs) may not be altered without a new ADR that explicitly supersedes
+  the relevant prior entry, same discipline as Phase 0/ADR-0013 and Phase
+  1. **Phase 3 (Manufacturer Intake Portal / Factory Portal) is authorized
+  to begin immediately; no phase beyond Phase 3 is authorized.**
+- **Phases 04-09** remain `Spec Drafted` — first-pass drafts written during
   Phase 0 to prove the roadmap's dependency chain is coherent (see each
   file's own "Status" line). None are `Spec Approved`. **No implementation
-  work may start on Phases 03-09 until each is explicitly approved in its
+  work may start on Phases 04-09 until each is explicitly approved in its
   own turn, per `CLAUDE_WORKFLOW.md`.**
 
 ## How to Use This File

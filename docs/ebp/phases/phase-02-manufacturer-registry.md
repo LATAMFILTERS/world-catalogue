@@ -1,7 +1,11 @@
 # Phase 02 — Manufacturer Registry
 
-**Status:** `In Build` (implementable specification — authorized to begin
-2026-07-13, immediately following Phase 1's approval and freeze)
+**Status:** `APPROVED / FROZEN v1.0` — approved 2026-07-13, branch
+`claude/phase-0-audit-review-wanxa3`. See ADR-0015 through ADR-0022 in
+`DECISIONS.md` and the "Phase 2 approved and frozen — v1.0" entry in
+`CHANGELOG.md` for the closing commit hash. Phase 3 — Manufacturer Intake
+Portal / Factory Portal is authorized to begin immediately; no phase
+beyond Phase 3 is authorized.
 **Depends on:** Phase 01 (`APPROVED / FROZEN v1.0`)
 **Blocks:** Phases 03, 04, 05, 06
 
@@ -12,20 +16,35 @@ status value, and makes explicit that a Manufacturer is the factory
 producing the *finished* filter — not a raw-material vendor. See ADR-0006
 in `DECISIONS.md`.
 
-**Implementable-spec notice (this revision, 2026-07-13):** Per the project
-owner's authorization to begin Phase 2 immediately following Phase 1's
-freeze, this document is converted from a first-pass draft to a complete,
+**Implementable-spec notice (2026-07-13):** Per the project owner's
+authorization to begin Phase 2 immediately following Phase 1's freeze,
+this document was converted from a first-pass draft to a complete,
 implementable specification: real SQL schema (8 tables), the
 `EFM-XXXX` generation algorithm, manufacturer and qualification status
 state machines, structured (non-free-text) qualification conditions, the
 internal API surface, and confidentiality DTOs. See ADR-0015 through
-ADR-0021 in `DECISIONS.md` for the specific decisions this resolves.
+ADR-0021 in `DECISIONS.md` for the specific decisions this resolved.
+
+**Freeze notice (2026-07-13):** The project owner reviewed the `Built`
+delivery and formally approved it. Four closing decisions were made at
+approval time and are recorded in ADR-0022: `registered_on`'s semantics
+are now unambiguous (see "Key Entities" below); the certification-
+validity view design (ADR-0019) is approved as final, with no scheduled
+job required; `country_code`/`timezone` syntactic-only validation is
+accepted and tracked as controlled debt under
+`FUTURE_REFERENCE_DATA_VALIDATION`; and every fixed enum introduced by
+this phase may only be extended via documentation + ADR + migration +
+tests, never a free-form value. No implementation change was required by
+the freeze — Phase 2's code already matched all four decisions.
 
 **Frozen-baseline notice:** Nothing in this phase modifies any Phase 0 or
 Phase 1 file, table, API, or rule. Phase 1's tables
 (`ebp_engineering_passports` and its children) are read-only reference
 material to Phase 2 (for family-vocabulary consistency, ADR-0016) — never
-written to, never altered.
+written to, never altered. As of this freeze, Phase 2's own files, tables,
+and rules carry the same protection: no future phase may modify them
+except via a new ADR that explains the impact and is strictly necessary
+for that phase.
 
 ## Objective
 
@@ -136,7 +155,7 @@ database, following the same convention as `migrations/ebp-phase1/`.
 | `status` | `VARCHAR(20) NOT NULL DEFAULT 'CANDIDATE'` | `CHECK` against the six states below. |
 | `status_reason` | `TEXT` | Reason for the current status (mirrors the latest status-history row for quick reads). |
 | `internal_notes` | `TEXT` | ELIMFILTERS-internal only (ADR-0021) — never returned to any non-internal consumer. |
-| `registered_on` | `DATE NOT NULL DEFAULT CURRENT_DATE` | Date this manufacturer was incorporated into the ELIMFILTERS registry. **Implementation note:** the request listed "fecha de incorporación" without further detail; interpreted as registry-onboarding date (settable at creation, e.g. for backfilled/historical records), distinct from `created_at`'s row-insert timestamp. |
+| `registered_on` | `DATE NOT NULL DEFAULT CURRENT_DATE` | **Formalized meaning (ADR-0022):** the date ELIMFILTERS formally incorporated the manufacturer into the Manufacturer Registry. Does **not** mean the manufacturer's founding date, the start of a commercial relationship, a qualification date, an approval date, or a first-production date. Settable at creation (e.g. for backfilled/historical records) and distinct from `created_at`'s row-insert timestamp — the two are never conflated. |
 | `created_by` | `TEXT NOT NULL` | Declared-actor label — see "Actor & Audit Semantics". |
 | `identity_mechanism` | `VARCHAR(30) NOT NULL DEFAULT 'ADMIN_KEY_SHARED'` | |
 | `created_at`, `updated_at` | `TIMESTAMPTZ NOT NULL DEFAULT NOW()` | |
@@ -419,34 +438,40 @@ verified (see Exit Criteria) to leave Phase 1's tables, the KG tables,
   under its scope touched).
 - [x] Phase 3 was not started.
 
-Phase 2 is left in status `Built` — **not** `APPROVED / FROZEN`, per the
-project owner's explicit instruction; freezing is a separate, later step.
+Phase 2 was left in status `Built` (not `APPROVED / FROZEN`) immediately
+after implementation, per the project owner's explicit instruction that
+freezing is a separate, later step. The project owner subsequently
+reviewed the `Built` delivery, closed the four decisions recorded in
+ADR-0022, and formally approved Phase 2 as `APPROVED / FROZEN v1.0` on
+2026-07-13 (see the "Freeze notice" at the top of this document).
 
-## Risks
+## Risks (as closed at freeze, ADR-0022)
 
-- **Risk: `country_code`/`timezone` have no lookup-table validation**,
-  only regex/non-empty checks — a typo'd country code would be accepted
-  if it happens to match the two-letter pattern. Acceptable for Phase 2's
-  scope (no `countries` table exists anywhere in this codebase to
-  reference), flagged for awareness if a future phase needs stricter
-  validation.
-- **Risk: `condition_type` enum growth.** ADR-0017's fixed `CHECK` list
-  covers the examples the project owner gave; a real qualification
-  condition not on that list would need a migration to add a new
-  `condition_type` value before it could be recorded structurally. This
-  is a deliberate trade-off (structure over unlimited flexibility), not
-  an oversight.
-- **Risk: no scheduled job for certification/capability expiry.** The
-  effective-status view (ADR-0019) guarantees correctness at read time,
-  but a certification's raw `status` column will not itself flip to
-  `EXPIRED` without either a future scheduled job or a manual admin
-  action — purely a reporting/audit-trail nicety, not a correctness gap,
-  since nothing ever trusts the raw column for validity.
-- **Risk: `registered_on` semantics were assumed, not confirmed.** The
-  project owner's field list included "fecha de incorporación" without
-  further detail; this spec documents the interpretation used
-  (registry-onboarding date) — flagged in case the intended meaning
-  differs.
+- **`registered_on` semantics — CLOSED.** Formalized as the date
+  ELIMFILTERS incorporated the manufacturer into the registry; see the
+  "Key Entities" table above and ADR-0022. No longer an open risk.
+- **`country_code`/`timezone` have no lookup-table validation, only
+  syntactic `CHECK`s — ACCEPTED as controlled debt, tag
+  `FUTURE_REFERENCE_DATA_VALIDATION` (ADR-0022).** A typo'd country code
+  is accepted if it matches the two-letter pattern; `timezone` is
+  accepted if non-empty. This is a deliberate, approved trade-off for the
+  MVP (no `countries`/IANA reference table exists anywhere in this
+  codebase), to be resolved by a future phase validating against real
+  reference data. No document or code comment may describe the current
+  check as verifying real-world existence.
+- **`condition_type` (and every other Phase 2 fixed enum) growth —
+  governed, not open, per ADR-0022.** Extending any fixed `CHECK`-backed
+  enum in this phase always requires all four of: a documentation update,
+  a new ADR, a migration, and new/updated tests. This was already the de
+  facto practice; ADR-0022 makes it a formal, standing rule for every
+  Phase 2 enum, not just `condition_type`.
+- **No scheduled job for certification/capability expiry — approved
+  as-is, not a gap (ADR-0022).** The effective-status view (ADR-0019) is
+  the final, approved design. A certification's raw `status` column will
+  not itself flip to `EXPIRED` without a manual admin action, but every
+  later phase is required to read `effective_status` (never the raw
+  `status` column) for validity, so this is a reporting/audit-trail
+  nicety, not a correctness gap.
 
 ## Open Questions
 

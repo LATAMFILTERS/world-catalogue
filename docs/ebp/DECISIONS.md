@@ -993,3 +993,84 @@ named.
 - Tests must prove that no Phase 2 API response ever includes a field not
   present in its DTO's explicit allow-list (i.e., the route layer never
   falls back to serializing a raw database row).
+
+## ADR-0022 — Phase 2 closure decisions: `registered_on` semantics, certification-validity approval, reference-data validation debt, enum-extension governance
+
+**Date:** 2026-07-13
+**Status:** Accepted — recorded at Phase 2's formal approval and freeze
+(`APPROVED / FROZEN v1.0`).
+
+**Context:** Phase 2's implementation spec (see `phases/phase-02-
+manufacturer-registry.md`, "Risks") flagged `registered_on`'s meaning as an
+interpretation, not a confirmed requirement, and left the certification-
+validity design, the `country_code`/`timezone` validation depth, and the
+governance for extending fixed enums as things a reviewer should either
+confirm or challenge before freezing. The project owner reviewed all four
+at approval time and closed them explicitly, rather than leaving them as
+carried-forward risks into Phase 3.
+
+**Decision:**
+
+1. **`registered_on` semantics (formalized, unambiguous).**
+   `ebp_manufacturers.registered_on` means exactly: *the date ELIMFILTERS
+   formally incorporated the manufacturer into the Manufacturer Registry.*
+   It does **not** mean the manufacturer's founding date, the start of a
+   commercial relationship, a qualification date, an approval date, or a
+   first-production date. `created_at` remains the technical row-insert
+   timestamp; `registered_on` remains the separate business-incorporation
+   date and may be backdated at creation for historical records — the two
+   fields are never conflated or merged.
+2. **Certification validity design — approved as-is.** The computed,
+   read-time `ebp_manufacturer_certifications_effective` view (ADR-0019)
+   is the final design for Phase 2's certification-validity model. No
+   scheduled job/cron is required to flip a stale `status` column. Every
+   later phase that reads certification validity **must** read
+   `effective_status` from this view (or an equivalent DTO field sourced
+   from it) — reading the raw `status` column directly and treating it as
+   current validity is a defect, not an acceptable shortcut, in any phase
+   from Phase 3 onward.
+3. **`country_code`/`timezone` validation — accepted as syntactic-only,
+   tracked as controlled debt.** For the MVP, `country_code` is validated
+   only against the ISO 3166-1 alpha-2 *format* (`^[A-Z]{2}$`) and
+   `timezone` only against a non-empty string expected to be an IANA
+   identifier — neither is checked against a real lookup table of actual
+   countries or actual IANA zones, so a syntactically valid but
+   non-existent value (e.g. `country_code = 'ZZ'`) is currently accepted.
+   This gap is registered as controlled technical debt under the tag
+   `FUTURE_REFERENCE_DATA_VALIDATION`, to be resolved in a future phase by
+   validating against complete ISO 3166 / IANA reference tables. It does
+   not block Phase 2's freeze. No document or code comment may describe
+   the current check as verifying real-world existence — it verifies
+   format only.
+4. **Enum extension governance.** The fixed `CHECK`-constrained enums
+   introduced in Phase 2 (`ebp_manufacturers.status`,
+   `ebp_manufacturer_qualifications.status`,
+   `ebp_manufacturer_qualification_conditions.condition_type`,
+   `ebp_manufacturer_capabilities.capability_type`,
+   `ebp_manufacturer_capabilities.review_status`,
+   `ebp_manufacturer_certifications.status`, and any future Phase 2+
+   enum-shaped `CHECK` constraint) may only ever be extended by all four
+   of: (1) a documentation update to the relevant phase spec and/or
+   `BUSINESS_RULES.md`, (2) a new ADR explaining why the new value is
+   needed and what it means, (3) a real migration adding the value to the
+   `CHECK` constraint, and (4) new/updated tests covering the added value.
+   Free-form/arbitrary enum values are never accepted at the application
+   layer as a workaround — this is the same discipline already applied to
+   Phase 1's `duty`/`packaging_class` enums, extended explicitly to every
+   Phase 2 enum.
+
+**Consequences:**
+- `phases/phase-02-manufacturer-registry.md`'s data-model section
+  documents `registered_on`'s meaning as authoritative and unambiguous,
+  replacing the prior "implementation note: interpreted as..." hedge.
+- The "Risks" section of that same document is updated: the
+  `registered_on` risk is closed (resolved by this ADR); the
+  `country_code`/`timezone` risk is reclassified from an open risk to
+  tracked debt under `FUTURE_REFERENCE_DATA_VALIDATION`; the
+  `condition_type` enum-growth risk is closed by this ADR's governance
+  rule (it was already the de facto practice, now formally required for
+  every Phase 2 enum, not just `condition_type`).
+- No code change was required by this ADR — Phase 2's implementation
+  already matched all four decisions; this ADR formalizes and closes them
+  as part of the freeze rather than leaving them as carried-forward risk
+  language.
