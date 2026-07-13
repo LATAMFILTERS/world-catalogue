@@ -106,60 +106,141 @@ function getIndustryTechGridCell(index: number, total: number) {
   return { gridColumn: `${position * 2 + 1} / span 2`, gridRow: isTop ? 1 : 2 };
 }
 
-const agricultureDirectAnswer = [
-  'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combines, harvesters, sprayers, irrigation engines, and field support equipment operating through heavy dust, crop residue, heat, vibration, and long seasonal duty cycles. During planting and harvest, filtration is not a routine maintenance detail. It is part of the protection strategy that keeps equipment productive when every hour in the field matters.',
-  'Agricultural operations expose air intake, hydraulic, fuel, and lubrication systems to fine soil dust, organic debris, moisture, fuel variability, and extended operating hours. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so producers can protect equipment value, maintain service discipline, preserve engine and hydraulic reliability, and reduce downtime risk during critical field windows.',
-];
-
-const constructionDirectAnswer = [
-  'ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, compactors, cranes, and articulated dump trucks working through abrasive dust, idle time, vibration, heat, and severe off road duty cycles. On active jobsites, filtration is part of the uptime plan because every machine supports a schedule, a crew, and a cost of delay.',
-  'Construction environments expose air intake, hydraulic, fuel, and lubrication systems to silica dust, fuel contamination, pressure spikes, thermal load, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so contractors can protect component life, maintain service discipline, preserve hydraulic reliability, and reduce downtime risk across demanding project conditions.',
-];
-
-const oilGasDirectAnswer = [
-  'ELIMFILTERS® oil and gas asset protection systems are engineered for drilling rigs, compressors, pumps, turbines, generators, hydraulic power units, and offshore support equipment operating in corrosive, remote, and continuous duty environments. In energy operations, filtration is part of the reliability strategy because access, downtime, service windows, and equipment replacement costs are tightly constrained.',
-  'Oil and gas environments expose air intake, fuel, hydraulic, and lubrication systems to salt laden air, moisture, airborne particulate, fuel contamination, pressure cycling, thermal stress, and vibration. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so energy operators can protect rotating equipment, preserve uptime, maintain service discipline, and reduce downtime risk across offshore, onshore, upstream, and energy support applications.',
-];
-
-const marineDirectAnswer = [
-  'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, deck machinery, steering systems, and onboard hydraulic equipment operating under salt air, humidity, vibration, and long duty cycles. At sea, filtration is part of the reliability strategy because service access, fuel quality, weather windows, and unscheduled port calls directly affect operational continuity.',
-  'Marine environments expose air intake, fuel, hydraulic, and lubrication systems to moisture, salinity, fuel water contamination, airborne salt particles, vibration loading, and extended engine operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so marine operators can protect engine reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across offshore, coastal, and commercial vessel applications.',
-];
-
-const powerGenerationDirectAnswer = [
-  'ELIMFILTERS® power generation asset protection systems are engineered for diesel generator sets, gas engines, standby power units, turbines, fuel storage systems, cooling circuits, and auxiliary hydraulic equipment operating under emergency readiness, long idle periods, heat, vibration, and continuous duty demand. In hospitals, utilities, data centers, industrial plants, and remote facilities, filtration is part of the reliability strategy because backup power must respond when failure is not acceptable.',
-  'Power generation environments expose air intake, fuel, lubrication, cooling, and hydraulic systems to dust, fuel degradation, moisture, microbial growth risk, thermal cycling, coolant contamination, and long service intervals between critical starts. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine reliability, preserve emergency readiness, maintain service discipline, and reduce downtime risk across prime, standby, and distributed power applications.',
-];
-
-const trucksFleetsDirectAnswer = [
-  'ELIMFILTERS® trucks and fleet asset protection systems are engineered for heavy duty trucks, long haul tractors, commercial fleet vehicles, owner operator equipment, regional delivery units, and diesel support assets operating through high mileage duty cycles, thermal load, vibration, airborne particulate, and extended service intervals. In fleet operations, filtration is part of the uptime strategy because every parked unit affects route performance, delivery commitments, maintenance planning, and operating cost.',
-  'Commercial fleet environments expose air intake, fuel, lubrication, cabin, and coolant systems to highway dust, fuel contamination, soot loading, heat, stop start operation, and long distance engine stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so fleet operators can protect HPCR fuel systems, preserve diesel engine reliability, maintain service discipline, and reduce downtime risk across long haul, vocational, and regional transportation operations.',
-];
-
-const manufacturingDirectAnswer = [
-  'ELIMFILTERS® manufacturing asset protection systems are engineered for industrial engines, hydraulic power units, compressors, pumps, conveyors, rotating machinery, and production line support equipment operating under continuous duty cycles, airborne particulate, thermal load, vibration, and maintenance pressure. In manufacturing environments, filtration is part of the production reliability strategy because every interruption affects output, labor planning, quality discipline, and operating cost.',
-  'Manufacturing facilities expose air intake, hydraulic, fuel, and lubrication systems to process dust, metal particles, coolant mist, fuel impurities, pressure cycling, lubricant degradation, and extended operating schedules. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so industrial operators can protect equipment reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across production and process operations.',
-];
-
-const railwayDirectAnswer = [
-  'ELIMFILTERS® railway asset protection systems are engineered for diesel electric locomotives, passenger rail units, freight locomotives, auxiliary engines, pneumatic brake systems, and rail maintenance equipment operating through vibration, route schedules, airborne particulate, thermal variation, and extended service intervals. In rail operations, filtration is part of the reliability strategy because every interruption affects route continuity, passenger movement, freight delivery, and maintenance planning.',
-  'Railway environments expose air intake, fuel, lubrication, and pneumatic systems to dust, fuel impurities, moisture, vibration loading, thermal cycling, soot accumulation, and long haul operating stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so rail operators can protect locomotive reliability, preserve pneumatic performance, maintain service discipline, and reduce downtime risk across passenger, freight, and industrial rail networks.',
-];
-
-const wasteMunicipalDirectAnswer = [
-  'ELIMFILTERS® municipal fleet asset protection systems are engineered for refuse collection trucks, emergency response vehicles, street sweepers, utility service vehicles, public works equipment, and municipal support fleets operating under stop and go duty cycles, urban dust, heat, vibration, idle time, and continuous public service pressure. In municipal operations, filtration is part of the service continuity strategy because every unavailable unit can affect sanitation, emergency response, road maintenance, and city infrastructure support.',
-  'Waste and municipal environments expose air intake, fuel, lubrication, cabin, coolant, and hydraulic systems to soot loading, urban particulate, fuel contamination, brake dust, organic debris, thermal cycling, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so municipalities can protect fleet availability, preserve emergency readiness, maintain service discipline, and reduce downtime risk across public service operations.',
-];
-
-const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
-const constructionVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.';
-const oilGasVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.';
-const marineVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Marine applications, protection systems must perform under salt air, humidity, fuel water contamination, vibration loading, corrosion risk, and long duration engine operation. ELIMFILTERS® systems help marine operators protect commercial vessels, workboats, fishing fleets, offshore support vessels, deck machinery, and onboard hydraulic systems from contamination related failure while maintaining service continuity at sea.';
-const powerGenerationVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Power Generation applications, protection systems must perform under emergency readiness, long idle periods, fuel storage risk, thermal cycling, coolant contamination, and continuous duty demand. ELIMFILTERS® systems help power operators protect generator sets, turbines, fuel systems, cooling circuits, and auxiliary equipment from contamination related failure while maintaining readiness across prime, standby, and distributed power assets.';
-const trucksFleetsVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Trucks & Fleets applications, protection systems must perform under high mileage duty cycles, highway dust, fuel contamination, soot loading, thermal stress, vibration, and extended service intervals. ELIMFILTERS® systems help fleet operators protect heavy duty trucks, long haul tractors, commercial vehicles, and diesel support assets from contamination related failure while maintaining route availability and fleet uptime.';
-const manufacturingVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Manufacturing applications, protection systems must perform under process dust, hydraulic load, lubrication degradation, thermal stress, vibration, and continuous production demand. ELIMFILTERS® systems help industrial operators protect compressors, pumps, conveyors, hydraulic power units, industrial engines, and rotating machinery from contamination related failure while maintaining production continuity.';
-const railwayVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Railway applications, protection systems must perform under vibration loading, long haul schedules, airborne particulate, fuel contamination, pneumatic moisture risk, and thermal cycling. ELIMFILTERS® systems help rail operators protect locomotives, auxiliary engines, pneumatic systems, and rail support equipment from contamination related failure while maintaining passenger, freight, and industrial route continuity.';
-const wasteMunicipalVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Waste & Municipal applications, protection systems must perform under stop and go duty cycles, urban dust, soot loading, organic debris, fuel contamination, coolant stress, and 24/7 public service demand. ELIMFILTERS® systems help municipalities protect refuse trucks, emergency response vehicles, street sweepers, utility fleets, and public works equipment from contamination related failure while maintaining city service continuity.';
+const industryProfiles: Record<string, {
+  title: string;
+  subtitle: string;
+  tagline: string;
+  answer: string[];
+  video: string;
+  assets: string[];
+  techTags: string[];
+  assetHeading?: string;
+}> = {
+  Agriculture: {
+    title: 'Agricultural Filtration Systems',
+    subtitle: 'AGRICULTURAL ASSETS',
+    tagline: 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.',
+    answer: [
+      'ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combines, harvesters, sprayers, irrigation engines, and field support equipment operating through heavy dust, crop residue, heat, vibration, and long seasonal duty cycles. During planting and harvest, filtration is not a routine maintenance detail. It is part of the protection strategy that keeps equipment productive when every hour in the field matters.',
+      'Agricultural operations expose air intake, hydraulic, fuel, and lubrication systems to fine soil dust, organic debris, moisture, fuel variability, and extended operating hours. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so producers can protect equipment value, maintain service discipline, preserve engine and hydraulic reliability, and reduce downtime risk during critical field windows.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.',
+    assets: ['Tractors', 'Combines', 'Harvesters', 'Sprayers', 'Irrigation Engines', 'Field Support Equipment'],
+    techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™'],
+  },
+  'Bus Coach': {
+    title: 'Bus & Coach Filtration Systems',
+    subtitle: 'BUS & COACH ASSETS',
+    tagline: 'Bus and coach fleets cannot afford contamination related downtime across public transit, school transportation, intercity routes, and commercial passenger service. ELIMFILTERS® engineering protects diesel engines, pneumatic brake systems, air intake systems, lubrication circuits, fuel systems, and cabin environments operating under stop and go duty cycles, urban dust, heat, soot loading, and passenger service demand.',
+    answer: [
+      'ELIMFILTERS® bus and coach asset protection systems are engineered for urban transit buses, school buses, intercity coaches, shuttle fleets, commercial passenger vehicles, and depot support equipment operating through high cycle stop and go routes, thermal load, vibration, airborne particulate, and extended daily service windows. In passenger transportation, filtration is part of the route continuity strategy because every unit removed from service affects schedules, passengers, maintenance planning, and fleet cost.',
+      'Bus and coach environments expose air intake, fuel, lubrication, pneumatic, and cabin systems to urban dust, soot loading, fuel contamination, moisture in compressed air circuits, cabin particulate exposure, heat, and repeated acceleration cycles. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine reliability, preserve braking system air quality, maintain cabin airflow discipline, and reduce downtime risk across public and commercial passenger fleets.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Bus & Coach applications, protection systems must perform under stop and go duty cycles, urban particulate exposure, soot loading, fuel contamination, pneumatic moisture risk, cabin air demand, vibration, and extended service intervals. ELIMFILTERS® systems help transit and passenger fleet operators protect buses, coaches, pneumatic systems, diesel engines, and cabin environments from contamination related failure while maintaining route availability.',
+    assets: ['Urban Transit Buses', 'School Buses', 'Intercity Coaches', 'Shuttle Fleets', 'Pneumatic Brake Systems', 'Passenger Cabin Environments'],
+    techTags: ['MACROCORE™', 'SYNTRAX™', 'DRYCORE™', 'MICROKAPPA™', 'SYNTEPORE™'],
+    assetHeading: 'Bus & Coach Asset Protection',
+  },
+  Construction: {
+    title: 'Construction Filtration Systems',
+    subtitle: 'CONSTRUCTION ASSETS',
+    tagline: 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.',
+    answer: [
+      'ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, compactors, cranes, and articulated dump trucks working through abrasive dust, idle time, vibration, heat, and severe off road duty cycles. On active jobsites, filtration is part of the uptime plan because every machine supports a schedule, a crew, and a cost of delay.',
+      'Construction environments expose air intake, hydraulic, fuel, and lubrication systems to silica dust, fuel contamination, pressure spikes, thermal load, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so contractors can protect component life, maintain service discipline, preserve hydraulic reliability, and reduce downtime risk across demanding project conditions.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.',
+    assets: ['Excavators', 'Wheel Loaders', 'Bulldozers', 'Motor Graders', 'Compactors', 'Articulated Dump Trucks'],
+    techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™'],
+  },
+  Manufacturing: {
+    title: 'Manufacturing Filtration Systems',
+    subtitle: 'MANUFACTURING ASSETS',
+    tagline: 'Manufacturing equipment cannot afford contamination related downtime across continuous production, process machinery, and industrial support systems. ELIMFILTERS® engineering protects industrial engines, hydraulic power units, compressors, pumps, conveyors, and rotating machinery operating under process dust, heat, vibration, and extended production schedules.',
+    answer: [
+      'ELIMFILTERS® manufacturing asset protection systems are engineered for industrial engines, hydraulic power units, compressors, pumps, conveyors, rotating machinery, and production line support equipment operating under continuous duty cycles, airborne particulate, thermal load, vibration, and maintenance pressure. In manufacturing environments, filtration is part of the production reliability strategy because every interruption affects output, labor planning, quality discipline, and operating cost.',
+      'Manufacturing facilities expose air intake, hydraulic, fuel, and lubrication systems to process dust, metal particles, coolant mist, fuel impurities, pressure cycling, lubricant degradation, and extended operating schedules. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so industrial operators can protect equipment reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across production and process operations.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Manufacturing applications, protection systems must perform under process dust, hydraulic load, lubrication degradation, thermal stress, vibration, and continuous production demand. ELIMFILTERS® systems help industrial operators protect compressors, pumps, conveyors, hydraulic power units, industrial engines, and rotating machinery from contamination related failure while maintaining production continuity.',
+    assets: ['Industrial Engines', 'Hydraulic Power Units', 'Compressors', 'Pumps', 'Production Lines', 'Rotating Machinery'],
+    techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™'],
+  },
+  Marine: {
+    title: 'Marine Filtration Systems',
+    subtitle: 'MARINE ASSETS',
+    tagline: 'Marine equipment cannot afford contamination related downtime at sea or offshore. ELIMFILTERS® engineering protects commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, and onboard hydraulic systems operating under salt air, humidity, fuel water contamination, vibration, and long service cycles.',
+    answer: [
+      'ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, deck machinery, steering systems, and onboard hydraulic equipment operating under salt air, humidity, vibration, and long duty cycles. At sea, filtration is part of the reliability strategy because service access, fuel quality, weather windows, and unscheduled port calls directly affect operational continuity.',
+      'Marine environments expose air intake, fuel, hydraulic, and lubrication systems to moisture, salinity, fuel water contamination, airborne salt particles, vibration loading, and extended engine operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so marine operators can protect engine reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across offshore, coastal, and commercial vessel applications.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Marine applications, protection systems must perform under salt air, humidity, fuel water contamination, vibration loading, corrosion risk, and long duration engine operation. ELIMFILTERS® systems help marine operators protect commercial vessels, workboats, fishing fleets, offshore support vessels, deck machinery, and onboard hydraulic systems from contamination related failure while maintaining service continuity at sea.',
+    assets: ['Commercial Vessels', 'Workboats', 'Fishing Fleets', 'Offshore Support Vessels', 'Marine Diesel Engines', 'Deck Machinery'],
+    techTags: ['MACROCORE™', 'AQUAGUARD™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™'],
+  },
+  'Oil Gas': {
+    title: 'Oil & Gas Filtration Systems',
+    subtitle: 'OIL & GAS ASSETS',
+    tagline: 'Oil & Gas equipment cannot afford contamination related downtime in remote, corrosive, and continuous duty environments. ELIMFILTERS® engineering protects compressors, pumps, turbines, generators, hydraulic systems, and offshore support assets operating under salt air, fuel contamination, thermal stress, and severe duty cycles.',
+    answer: [
+      'ELIMFILTERS® oil and gas asset protection systems are engineered for drilling rigs, compressors, pumps, turbines, generators, hydraulic power units, and offshore support equipment operating in corrosive, remote, and continuous duty environments. In energy operations, filtration is part of the reliability strategy because access, downtime, service windows, and equipment replacement costs are tightly constrained.',
+      'Oil and gas environments expose air intake, fuel, hydraulic, and lubrication systems to salt laden air, moisture, airborne particulate, fuel contamination, pressure cycling, thermal stress, and vibration. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so energy operators can protect rotating equipment, preserve uptime, maintain service discipline, and reduce downtime risk across offshore, onshore, upstream, and energy support applications.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.',
+    assets: ['Drilling Rigs', 'Compressors', 'Pumps', 'Turbines', 'Generators', 'Offshore Support Equipment'],
+    techTags: ['MACROCORE™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'],
+    assetHeading: 'Oil & Gas Asset Protection',
+  },
+  'Power Generation': {
+    title: 'Power Generation Filtration Systems',
+    subtitle: 'POWER GENERATION ASSETS',
+    tagline: 'Power generation equipment cannot afford contamination related failure during emergency response, standby readiness, or continuous power demand. ELIMFILTERS® engineering protects generator sets, turbines, fuel systems, cooling circuits, lubrication systems, and auxiliary equipment operating under heat, fuel storage risk, vibration, and long service intervals.',
+    answer: [
+      'ELIMFILTERS® power generation asset protection systems are engineered for diesel generator sets, gas engines, standby power units, turbines, fuel storage systems, cooling circuits, and auxiliary hydraulic equipment operating under emergency readiness, long idle periods, heat, vibration, and continuous duty demand. In hospitals, utilities, data centers, industrial plants, and remote facilities, filtration is part of the reliability strategy because backup power must respond when failure is not acceptable.',
+      'Power generation environments expose air intake, fuel, lubrication, cooling, and hydraulic systems to dust, fuel degradation, moisture, microbial growth risk, thermal cycling, coolant contamination, and long service intervals between critical starts. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine reliability, preserve emergency readiness, maintain service discipline, and reduce downtime risk across prime, standby, and distributed power applications.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Power Generation applications, protection systems must perform under emergency readiness, long idle periods, fuel storage risk, thermal cycling, coolant contamination, and continuous duty demand. ELIMFILTERS® systems help power operators protect generator sets, turbines, fuel systems, cooling circuits, and auxiliary equipment from contamination related failure while maintaining readiness across prime, standby, and distributed power assets.',
+    assets: ['Diesel Generator Sets', 'Gas Engines', 'Standby Power Units', 'Turbines', 'Fuel Storage Systems', 'Cooling Circuits'],
+    techTags: ['MACROCORE™', 'SYNTEPORE™', 'AQUAGUARD™', 'SYNTRAX™', 'COOLTECH™'],
+  },
+  Railway: {
+    title: 'Railway Filtration Systems',
+    subtitle: 'RAILWAY ASSETS',
+    tagline: 'Railway equipment cannot afford contamination related downtime across passenger, freight, and industrial route networks. ELIMFILTERS® engineering protects locomotives, auxiliary engines, pneumatic brake systems, fuel systems, lubrication circuits, and air intake systems operating under vibration, airborne particulate, thermal cycling, and extended route schedules.',
+    answer: [
+      'ELIMFILTERS® railway asset protection systems are engineered for diesel electric locomotives, passenger rail units, freight locomotives, auxiliary engines, pneumatic brake systems, and rail maintenance equipment operating through vibration, route schedules, airborne particulate, thermal variation, and extended service intervals. In rail operations, filtration is part of the reliability strategy because every interruption affects route continuity, passenger movement, freight delivery, and maintenance planning.',
+      'Railway environments expose air intake, fuel, lubrication, and pneumatic systems to dust, fuel impurities, moisture, vibration loading, thermal cycling, soot accumulation, and long haul operating stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so rail operators can protect locomotive reliability, preserve pneumatic performance, maintain service discipline, and reduce downtime risk across passenger, freight, and industrial rail networks.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Railway applications, protection systems must perform under vibration loading, long haul schedules, airborne particulate, fuel contamination, pneumatic moisture risk, and thermal cycling. ELIMFILTERS® systems help rail operators protect locomotives, auxiliary engines, pneumatic systems, and rail support equipment from contamination related failure while maintaining passenger, freight, and industrial route continuity.',
+    assets: ['Diesel Electric Locomotives', 'Passenger Rail Units', 'Freight Locomotives', 'Auxiliary Engines', 'Pneumatic Brake Systems', 'Rail Maintenance Equipment'],
+    techTags: ['SYNTEPORE™', 'SYNTRAX™', 'MACROCORE™', 'DRYCORE™'],
+  },
+  'Trucks Fleets': {
+    title: 'Truck Fleet Filtration Systems',
+    subtitle: 'TRUCK FLEET ASSETS',
+    tagline: 'Commercial fleets cannot afford contamination related downtime across long haul, regional, and vocational routes. ELIMFILTERS® engineering protects heavy duty trucks, diesel engines, HPCR fuel systems, lubrication circuits, cooling systems, and cabin environments operating under highway dust, heat, soot loading, vibration, and extended mileage intervals.',
+    answer: [
+      'ELIMFILTERS® trucks and fleet asset protection systems are engineered for heavy duty trucks, long haul tractors, commercial fleet vehicles, owner operator equipment, regional delivery units, and diesel support assets operating through high mileage duty cycles, thermal load, vibration, airborne particulate, and extended service intervals. In fleet operations, filtration is part of the uptime strategy because every parked unit affects route performance, delivery commitments, maintenance planning, and operating cost.',
+      'Commercial fleet environments expose air intake, fuel, lubrication, cabin, and coolant systems to highway dust, fuel contamination, soot loading, heat, stop start operation, and long distance engine stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so fleet operators can protect HPCR fuel systems, preserve diesel engine reliability, maintain service discipline, and reduce downtime risk across long haul, vocational, and regional transportation operations.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Trucks & Fleets applications, protection systems must perform under high mileage duty cycles, highway dust, fuel contamination, soot loading, thermal stress, vibration, and extended service intervals. ELIMFILTERS® systems help fleet operators protect heavy duty trucks, long haul tractors, commercial vehicles, and diesel support assets from contamination related failure while maintaining route availability and fleet uptime.',
+    assets: ['Heavy Duty Trucks', 'Long Haul Tractors', 'Commercial Fleet Vehicles', 'Owner Operator Equipment', 'Regional Delivery Units', 'Diesel Support Assets'],
+    techTags: ['MACROCORE™', 'SYNTEPORE™', 'SYNTRAX™', 'MICROKAPPA™', 'COOLTECH™'],
+    assetHeading: 'Truck Fleet Asset Protection',
+  },
+  'Waste Municipal': {
+    title: 'Municipal Fleet Filtration Systems',
+    subtitle: 'MUNICIPAL ASSETS',
+    tagline: 'Municipal fleets cannot afford contamination related downtime across sanitation, emergency response, public works, and utility service routes. ELIMFILTERS® engineering protects refuse trucks, emergency vehicles, street sweepers, utility units, public infrastructure fleets, and support equipment operating under stop and go duty cycles, urban dust, soot loading, organic debris, heat, and 24/7 service demand.',
+    answer: [
+      'ELIMFILTERS® municipal fleet asset protection systems are engineered for refuse collection trucks, emergency response vehicles, street sweepers, utility service vehicles, municipal support fleets, and public works equipment operating under high cycle urban service, stop and go duty, thermal load, soot exposure, organic debris, and maintenance pressure. In public service operations, filtration is part of the availability strategy because every unavailable unit can affect sanitation routes, emergency readiness, and city infrastructure continuity.',
+      'Municipal environments expose air intake, fuel, lubrication, cabin, and coolant systems to urban dust, soot loading, debris ingestion, fuel contamination, coolant stress, idling hours, and repeated daily duty cycles. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so municipalities can protect fleet reliability, preserve service readiness, maintain maintenance discipline, and reduce downtime risk across public works and emergency support fleets.',
+    ],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Waste & Municipal applications, protection systems must perform under stop and go duty cycles, urban dust, soot loading, organic debris, fuel contamination, coolant stress, and 24/7 public service demand. ELIMFILTERS® systems help municipal operators protect refuse trucks, emergency vehicles, street sweepers, utility units, and public works equipment from contamination related failure while maintaining public service continuity.',
+    assets: ['Refuse Collection Trucks', 'Emergency Response Vehicles', 'Street Sweepers', 'Utility Service Vehicles', 'Municipal Support Fleets', 'Public Works Equipment'],
+    techTags: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™', 'COOLTECH™'],
+    assetHeading: 'Municipal Fleet Asset Protection',
+  },
+};
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
@@ -167,15 +248,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const categoryLabel = CATEGORY_LABELS[category];
   const isIndustry = category === 'industries';
   const isMining = isIndustry && item.name === 'Mining';
-  const isAgriculture = isIndustry && item.name === 'Agriculture';
-  const isConstruction = isIndustry && item.name === 'Construction';
-  const isOilGas = isIndustry && item.name === 'Oil Gas';
-  const isMarine = isIndustry && item.name === 'Marine';
-  const isPowerGeneration = isIndustry && item.name === 'Power Generation';
-  const isTrucksFleets = isIndustry && item.name === 'Trucks Fleets';
-  const isManufacturing = isIndustry && item.name === 'Manufacturing';
-  const isRailway = isIndustry && item.name === 'Railway';
-  const isWasteMunicipal = isIndustry && item.name === 'Waste Municipal';
+  const profile = isIndustry ? industryProfiles[item.name] : undefined;
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -195,89 +268,27 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
 
   const miningVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Mining applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Every micron of contamination matters. ELIMFILTERS® systems help Mining operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination related failure.';
 
-  const videoParagraphs = isMining ? [miningVideoParagraph]
-    : isAgriculture ? [agricultureVideoParagraph]
-    : isConstruction ? [constructionVideoParagraph]
-    : isOilGas ? [oilGasVideoParagraph]
-    : isMarine ? [marineVideoParagraph]
-    : isPowerGeneration ? [powerGenerationVideoParagraph]
-    : isTrucksFleets ? [trucksFleetsVideoParagraph]
-    : isManufacturing ? [manufacturingVideoParagraph]
-    : isRailway ? [railwayVideoParagraph]
-    : isWasteMunicipal ? [wasteMunicipalVideoParagraph]
-    : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-      `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-      `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-    ]);
+  const videoParagraphs = isMining
+    ? [miningVideoParagraph]
+    : profile
+      ? [profile.video]
+      : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+        `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+        `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+      ]);
 
-  const industryAnswerParagraphs = isAgriculture ? agricultureDirectAnswer
-    : isConstruction ? constructionDirectAnswer
-    : isOilGas ? oilGasDirectAnswer
-    : isMarine ? marineDirectAnswer
-    : isPowerGeneration ? powerGenerationDirectAnswer
-    : isTrucksFleets ? trucksFleetsDirectAnswer
-    : isManufacturing ? manufacturingDirectAnswer
-    : isRailway ? railwayDirectAnswer
-    : isWasteMunicipal ? wasteMunicipalDirectAnswer
-    : isIndustry && !isMining ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
-    : undefined;
+  const industryAnswerParagraphs = profile
+    ? profile.answer
+    : isIndustry && !isMining
+      ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+      : undefined;
 
-  const techTags = isAgriculture ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™']
-    : isConstruction ? ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™']
-    : isOilGas ? ['MACROCORE™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™']
-    : isMarine ? ['MACROCORE™', 'AQUAGUARD™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™']
-    : isPowerGeneration ? ['MACROCORE™', 'SYNTEPORE™', 'AQUAGUARD™', 'SYNTRAX™', 'COOLTECH™']
-    : isTrucksFleets ? ['MACROCORE™', 'SYNTEPORE™', 'SYNTRAX™', 'MICROKAPPA™', 'COOLTECH™']
-    : isManufacturing ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™']
-    : isRailway ? ['SYNTEPORE™', 'SYNTRAX™', 'MACROCORE™', 'DRYCORE™']
-    : isWasteMunicipal ? ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™', 'COOLTECH™']
-    : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
-
-  const protectedAssets = isAgriculture ? ['Tractors', 'Combines', 'Harvesters', 'Sprayers', 'Irrigation Engines', 'Field Support Equipment']
-    : isConstruction ? ['Excavators', 'Wheel Loaders', 'Bulldozers', 'Motor Graders', 'Compactors', 'Articulated Dump Trucks']
-    : isOilGas ? ['Drilling Rigs', 'Compressors', 'Pumps', 'Turbines', 'Generators', 'Offshore Support Equipment']
-    : isMarine ? ['Commercial Vessels', 'Workboats', 'Fishing Fleets', 'Offshore Support Vessels', 'Marine Diesel Engines', 'Deck Machinery']
-    : isPowerGeneration ? ['Diesel Generator Sets', 'Gas Engines', 'Standby Power Units', 'Turbines', 'Fuel Storage Systems', 'Cooling Circuits']
-    : isTrucksFleets ? ['Heavy Duty Trucks', 'Long Haul Tractors', 'Commercial Fleet Vehicles', 'Owner Operator Equipment', 'Regional Delivery Units', 'Diesel Support Assets']
-    : isManufacturing ? ['Industrial Engines', 'Hydraulic Power Units', 'Compressors', 'Pumps', 'Production Lines', 'Rotating Machinery']
-    : isRailway ? ['Diesel Electric Locomotives', 'Passenger Rail Units', 'Freight Locomotives', 'Auxiliary Engines', 'Pneumatic Brake Systems', 'Rail Maintenance Equipment']
-    : isWasteMunicipal ? ['Refuse Collection Trucks', 'Emergency Response Vehicles', 'Street Sweepers', 'Utility Service Vehicles', 'Municipal Support Fleets', 'Public Works Equipment']
-    : geoData?.protectedAssets;
-
-  const heroTitle = isAgriculture ? 'Agricultural Filtration Systems'
-    : isConstruction ? 'Construction Filtration Systems'
-    : isOilGas ? 'Oil & Gas Filtration Systems'
-    : isMarine ? 'Marine Filtration Systems'
-    : isPowerGeneration ? 'Power Generation Filtration Systems'
-    : isTrucksFleets ? 'Truck Fleet Filtration Systems'
-    : isManufacturing ? 'Manufacturing Filtration Systems'
-    : isRailway ? 'Railway Filtration Systems'
-    : isWasteMunicipal ? 'Municipal Fleet Filtration Systems'
-    : item.title;
-  const heroSubtitle = isAgriculture ? 'AGRICULTURAL ASSETS'
-    : isConstruction ? 'CONSTRUCTION ASSETS'
-    : isOilGas ? 'OIL & GAS ASSETS'
-    : isMarine ? 'MARINE ASSETS'
-    : isPowerGeneration ? 'POWER GENERATION ASSETS'
-    : isTrucksFleets ? 'TRUCK FLEET ASSETS'
-    : isManufacturing ? 'MANUFACTURING ASSETS'
-    : isRailway ? 'RAILWAY ASSETS'
-    : isWasteMunicipal ? 'MUNICIPAL ASSETS'
-    : item.subtitle || undefined;
-  const heroTagline = isAgriculture ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.'
-    : isConstruction ? 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.'
-    : isOilGas ? 'Oil & Gas equipment cannot afford contamination related downtime in remote, corrosive, and continuous duty environments. ELIMFILTERS® engineering protects compressors, pumps, turbines, generators, hydraulic systems, and offshore support assets operating under salt air, fuel contamination, thermal stress, and severe duty cycles.'
-    : isMarine ? 'Marine equipment cannot afford contamination related downtime at sea or offshore. ELIMFILTERS® engineering protects commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, and onboard hydraulic systems operating under salt air, humidity, fuel water contamination, vibration, and long service cycles.'
-    : isPowerGeneration ? 'Power generation equipment cannot afford contamination related failure during emergency response, standby readiness, or continuous power demand. ELIMFILTERS® engineering protects generator sets, turbines, fuel systems, cooling circuits, lubrication systems, and auxiliary equipment operating under heat, fuel storage risk, vibration, and long service intervals.'
-    : isTrucksFleets ? 'Commercial fleets cannot afford contamination related downtime across long haul, regional, and vocational routes. ELIMFILTERS® engineering protects heavy duty trucks, diesel engines, HPCR fuel systems, lubrication circuits, cooling systems, and cabin environments operating under highway dust, heat, soot loading, vibration, and extended mileage intervals.'
-    : isManufacturing ? 'Manufacturing equipment cannot afford contamination related downtime across continuous production, process machinery, and industrial support systems. ELIMFILTERS® engineering protects industrial engines, hydraulic power units, compressors, pumps, conveyors, and rotating machinery operating under process dust, heat, vibration, and extended production schedules.'
-    : isRailway ? 'Railway equipment cannot afford contamination related downtime across passenger, freight, and industrial route networks. ELIMFILTERS® engineering protects locomotives, auxiliary engines, pneumatic brake systems, fuel systems, lubrication circuits, and air intake systems operating under vibration, airborne particulate, thermal cycling, and extended route schedules.'
-    : isWasteMunicipal ? 'Municipal fleets cannot afford contamination related downtime across sanitation, emergency response, utility service, and public works operations. ELIMFILTERS® engineering protects refuse trucks, emergency vehicles, street sweepers, utility units, and public infrastructure fleets operating under urban dust, soot loading, heat, stop and go duty cycles, and continuous service demand.'
-    : item.description;
-  const assetHeading = isOilGas ? 'Oil & Gas Asset Protection'
-    : isTrucksFleets ? 'Truck Fleet Asset Protection'
-    : isWasteMunicipal ? 'Municipal Fleet Asset Protection'
-    : `${item.name} Asset Protection`;
+  const techTags = profile?.techTags || item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+  const protectedAssets = profile?.assets || geoData?.protectedAssets;
+  const heroTitle = profile?.title || item.title;
+  const heroSubtitle = profile?.subtitle || item.subtitle || undefined;
+  const heroTagline = profile?.tagline || item.description;
+  const assetHeading = profile?.assetHeading || `${item.name} Asset Protection`;
 
   return (
     <>
