@@ -11,6 +11,8 @@ export function MobileInternalLayoutFix() {
       const main = document.querySelector('main');
       if (!main) return;
 
+      const isMobile = window.matchMedia('(max-width: 860px)').matches;
+
       if (pathname === '/about' || pathname === '/about/') {
         main.classList.add('about-page-mobile-fix');
 
@@ -31,6 +33,37 @@ export function MobileInternalLayoutFix() {
             cards?.classList.add('about-technology-cards-mobile');
           }
         });
+
+        if (isMobile) {
+          main.querySelectorAll<HTMLElement>('section').forEach((section, index) => {
+            section.style.maxWidth = '100%';
+            section.style.overflowX = 'clip';
+            section.style.boxSizing = 'border-box';
+            if (index > 0) {
+              section.style.minHeight = 'auto';
+              section.style.height = 'auto';
+            }
+          });
+
+          main.querySelectorAll<HTMLElement>('div').forEach((element) => {
+            const columns = element.style.gridTemplateColumns;
+            if (columns && columns !== 'none') {
+              element.style.gridTemplateColumns = 'minmax(0, 1fr)';
+              element.style.width = '100%';
+              element.style.maxWidth = '100%';
+              element.style.minWidth = '0';
+            }
+          });
+
+          main.querySelectorAll<HTMLElement>('h1, h2, h3, p, a, span').forEach((element) => {
+            element.style.maxWidth = '100%';
+            element.style.minWidth = '0';
+            element.style.wordBreak = 'normal';
+            element.style.overflowWrap = 'break-word';
+            element.style.whiteSpace = 'normal';
+            element.style.boxSizing = 'border-box';
+          });
+        }
       }
 
       if (pathname === '/technologies' || pathname === '/technologies/') {
@@ -39,9 +72,13 @@ export function MobileInternalLayoutFix() {
     };
 
     applyClasses();
+    window.addEventListener('resize', applyClasses);
     const observer = new MutationObserver(applyClasses);
     observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('resize', applyClasses);
+      observer.disconnect();
+    };
   }, [pathname]);
 
   return (
@@ -67,14 +104,26 @@ export function MobileInternalLayoutFix() {
           height: auto !important;
         }
 
-        .about-page-mobile-fix section > div[style*="grid-template-columns"],
-        .technologies-page-mobile-fix section > div[style*="grid-template-columns"] {
-          display: grid !important;
+        .about-page-mobile-fix section > div,
+        .technologies-page-mobile-fix section > div {
+          min-width: 0 !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .about-page-mobile-fix div[style*="display: grid"],
+        .technologies-page-mobile-fix div[style*="display: grid"] {
           grid-template-columns: minmax(0, 1fr) !important;
           width: 100% !important;
           max-width: 100% !important;
           min-width: 0 !important;
-          gap: 1.75rem !important;
+          gap: 1.5rem !important;
+        }
+
+        .about-page-mobile-fix div[style*="display: flex"],
+        .technologies-page-mobile-fix div[style*="display: flex"] {
+          max-width: 100% !important;
+          min-width: 0 !important;
         }
 
         .about-page-mobile-fix div[style*="grid-template-columns"] > *,
@@ -97,6 +146,7 @@ export function MobileInternalLayoutFix() {
         }
 
         .about-failure-row-mobile {
+          display: grid !important;
           grid-template-columns: 44px minmax(0, 1fr) !important;
           column-gap: 1rem !important;
           row-gap: 0.85rem !important;
@@ -111,9 +161,6 @@ export function MobileInternalLayoutFix() {
           max-width: 100% !important;
           font-size: clamp(1.15rem, 5.6vw, 1.5rem) !important;
           line-height: 1.08 !important;
-          overflow-wrap: normal !important;
-          word-break: normal !important;
-          hyphens: none !important;
         }
 
         .about-failure-row-mobile > p {
@@ -124,35 +171,26 @@ export function MobileInternalLayoutFix() {
           font-size: 1rem !important;
           line-height: 1.72 !important;
           text-align: left !important;
-          overflow-wrap: break-word !important;
-          word-break: normal !important;
-          hyphens: none !important;
         }
 
-        .about-technology-layout-mobile {
-          display: grid !important;
-          grid-template-columns: minmax(0, 1fr) !important;
-          gap: 2rem !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
-        .about-technology-layout-mobile > * {
-          min-width: 0 !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-
+        .about-technology-layout-mobile,
         .about-technology-cards-mobile {
           display: grid !important;
           grid-template-columns: minmax(0, 1fr) !important;
-          gap: 0.8rem !important;
           width: 100% !important;
           max-width: 100% !important;
         }
 
+        .about-technology-layout-mobile {
+          gap: 2rem !important;
+        }
+
+        .about-technology-cards-mobile {
+          gap: 0.8rem !important;
+        }
+
+        .about-technology-layout-mobile > *,
         .about-technology-cards-mobile > a {
-          display: block !important;
           width: 100% !important;
           max-width: 100% !important;
           min-width: 0 !important;
@@ -170,6 +208,11 @@ export function MobileInternalLayoutFix() {
           word-break: normal !important;
           hyphens: none !important;
           text-wrap: balance;
+        }
+
+        .about-page-mobile-fix h2 {
+          font-size: clamp(1.9rem, 9vw, 2.8rem) !important;
+          line-height: 1 !important;
         }
 
         .technologies-page-mobile-fix h2 {
@@ -204,11 +247,12 @@ export function MobileInternalLayoutFix() {
           padding-right: 1rem !important;
         }
 
-        .about-page-mobile-fix section > div[style*="grid-template-columns"],
-        .technologies-page-mobile-fix section > div[style*="grid-template-columns"] {
-          gap: 1.35rem !important;
+        .about-page-mobile-fix div[style*="display: grid"],
+        .technologies-page-mobile-fix div[style*="display: grid"] {
+          gap: 1.2rem !important;
         }
 
+        .about-page-mobile-fix h2,
         .technologies-page-mobile-fix h2 {
           font-size: clamp(1.65rem, 8.1vw, 2.3rem) !important;
         }
