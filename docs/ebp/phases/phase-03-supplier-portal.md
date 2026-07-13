@@ -1,9 +1,11 @@
 # Phase 03 — Manufacturer Intake Portal (Factory Portal)
 
-**Status:** `Built` — implemented 2026-07-13, immediately following Phase
-2's approval and freeze. **Not** `APPROVED / FROZEN` — freezing is a
-separate, later step, per the same discipline applied to Phase 1 and
-Phase 2.
+**Status:** `APPROVED / FROZEN v1.0` — implemented 2026-07-13, immediately
+following Phase 2's approval and freeze; reviewed by the project owner,
+who required a 9-point mandatory pre-freeze correction round (ADR-0030
+through ADR-0035); every item of that round is complete and re-audited
+(see "Final Correction-Round Audit" below); approved and frozen the same
+day, following the same discipline applied to Phase 1 and Phase 2.
 **Depends on:** Phase 01 (`APPROVED / FROZEN v1.0`), Phase 02
 (`APPROVED / FROZEN v1.0`)
 **Blocks:** Phase 04
@@ -510,8 +512,10 @@ to leave Phase 1, Phase 2, the KG tables, `elimfilters_catalog`, and
 
 ## Deliverables
 
-- [x] 12-table schema + effective-Offer view (`migrations/ebp-phase3/`),
-  migrated and verified against a real local Postgres instance.
+- [x] 13-table schema + 2 computed/effective views
+  (`migrations/ebp-phase3/`), migrated and verified against a real local
+  Postgres instance, including a full rollback-and-reapply-from-scratch
+  cycle as part of the final correction-round audit.
 - [x] Batch/Offer state machines, implemented in `ebp/phase3/validation.js`
   and enforced in `service.js` (never a generic status-set path; Phase 3's
   own offer-transition function structurally rejects writing
@@ -519,20 +523,29 @@ to leave Phase 1, Phase 2, the KG tables, `elimfilters_catalog`, and
 - [x] Factory authentication (ADR-0023), implemented
   (`ebp/phase3/factory-auth.js`) and tenant-isolated (every factory-facing
   repository/service function is scoped to the authenticated session's
-  `manufacturer_id`).
+  `manufacturer_id`); hardened in the correction round with CSRF
+  protection (ADR-0033) and cookie/session lifecycle alignment
+  (ADR-0035).
 - [x] Portal (`/portal/*`, `ebp/phase3/portal.routes.js`) and Excel
   (staged, hash-verified, `ebp/phase3/excel.js` + `staging.js`) dual
   intake, both producing the identical Offer lifecycle via the same
-  `service.createOfferRevision`.
-- [x] Internal (13 endpoints, `internal.routes.js`) and factory (15
+  `service.createOfferRevision`; the Portal's Excel flow and multi-field
+  Offer form are now full server-rendered UIs (ADR-0032/ADR-0032-fix), no
+  Postman/curl/API token ever required.
+- [x] Internal (13 endpoints, `internal.routes.js`) and factory (16
   endpoints, `factory.routes.js`) API surfaces, hard-split,
   `requireAdmin`/`requireFactorySession` respectively — confirmed by
   direct route-count grep against the router source.
-- [x] Full test suite (29 unit + 30 integration + 28 regression = 87
-  tests, counts confirmed by the `node --test` runner output, not
-  estimated) against real Postgres, covering every item in the project
-  owner's mandatory list — all passing, confirmed stable across 3
-  consecutive runs.
+- [x] Full test suite — **126 tests, counts confirmed by the `node
+  --test` runner output, not estimated** (grew from the original 87 across
+  the correction round: +6 staging-persistence/effective-OVERDUE
+  regression tests, +6 Excel-UI integration tests, +12 CSRF tests, +3
+  csrf.js unit tests, +5 errors.js unit tests +2 error-sanitization
+  integration tests, +4 cookie/session-lifecycle/password-reset
+  integration tests) against real Postgres, covering every item in the
+  project owner's original mandatory list AND the full 9-point pre-freeze
+  correction list — all passing, confirmed stable across 3 consecutive
+  runs on a freshly rolled-back-and-reapplied schema.
 
 ## Exit Criteria
 
@@ -563,15 +576,58 @@ to leave Phase 1, Phase 2, the KG tables, `elimfilters_catalog`, and
   data (batches, items, offers, documents) — verified by test (404, not a
   tenant-confirming 403), not assumed.
 - [x] Migrations and rollback both verified against a real Postgres
-  instance with real data present (120 batches, 68 offers, 29 factory
-  users, etc.), leaving Phase 1/Phase 2 completely untouched.
+  instance with real data present, leaving Phase 1/Phase 2 completely
+  untouched — re-verified once more at final freeze with a full
+  rollback-then-reapply-from-scratch cycle (547 batches, 236 offers, 80
+  factory users, 122 staging rows dropped cleanly; Phase 1's 8 tables,
+  1015 Manufacturers, and 78 catalog rows confirmed byte-for-byte
+  unchanged before/after).
 - [x] All tests pass, including the full Phase 1 (59) and Phase 2 (100)
   suites re-run unmodified.
-- [x] Phase 4 was not started.
+- [x] Phase 4 was not started (no `ebp/phase4/` module, no
+  `migrations/ebp-phase4/`, confirmed at final freeze).
 
-Phase 3 is left in status `Built` — **not** `APPROVED / FROZEN`; freezing
-is a separate, later step, per the same discipline applied to Phase 1 and
-Phase 2.
+### Final Correction-Round Audit (2026-07-13)
+
+The project owner's full 9-point mandatory pre-freeze correction list is
+now closed. Final audit performed against a freshly rolled-back-and-
+reapplied schema (not just the accumulating dev database):
+
+1. **Real Phase 3 test count: 126**, confirmed directly from the
+   `node --test` runner output, stable across 3 consecutive runs.
+2. **Phase 1: 59/59 passing**, re-run unmodified.
+3. **Phase 2: 100/100 passing**, re-run unmodified.
+4. **Tenant isolation with two distinct manufacturers**: verified by
+   test (a second manufacturer's batch/document/offer is never
+   reachable from the first's session — 404, not a tenant-confirming
+   403).
+5. **CSRF**: verified by test — valid, missing, and incorrect token on
+   both the session-bound synchronizer token (Excel upload/confirm,
+   logout) and the pre-session login double-submit cookie.
+6. **Multi-field PEP-driven Offer form**: verified by test on both the
+   JSON API and the Portal's own server-rendered HTML form (media,
+   efficiency, bypass valve, anti-drainback valve — not just two fields).
+7. **Complete Excel flow from the interface**: verified by test —
+   download, upload, stage, review (valid rows/errors/tamper detection),
+   explicit confirm, success/rejection report, entirely through
+   `/portal/*`, no API client.
+8. **Staging survives a process restart**: verified by a regression test
+   that opens a brand-new `Pool` (simulating zero shared in-memory state)
+   and reads a row written via the original one.
+9. **Migrations run from scratch**: rollback (`rollback.sql`) fully
+   dropped all 13 Phase 3 tables + 2 views, then `001_schema.sql` through
+   `004_session_csrf_token.sql` were reapplied in order with zero errors.
+10. **`validate.sql`**: all 15 checks pass against the freshly reapplied
+    schema.
+11. **Rollback confirmed isolated to Phase 3**: Phase 1's 8 tables, 1015
+    Manufacturer rows, and 78 catalog rows were identical before and
+    after the rollback-and-reapply cycle.
+12. **Phase 4 confirmed not started.**
+
+All conditions passed. Phase 3 is approved and frozen as `APPROVED /
+FROZEN v1.0`, per the same discipline applied to Phase 0, Phase 1, and
+Phase 2. See ADR-0036 in `DECISIONS.md` and the corresponding
+`CHANGELOG.md` entry for the closing commit.
 
 ## Bugs found and fixed during test-writing (before any freeze)
 

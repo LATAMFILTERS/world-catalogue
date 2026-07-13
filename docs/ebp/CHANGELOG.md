@@ -988,4 +988,72 @@ freeze entry.
   correction list except the final audit-and-freeze step itself.**
 - **Phase 4 was not started.**
 
+## 2026-07-13 — Phase 3 final correction-round audit; approved and frozen as v1.0 (ADR-0036)
+
+With all 8 implementation items of the project owner's 9-point mandatory
+correction list complete (ADR-0030 through ADR-0035), item 9 — the final
+audit — was performed against a **freshly rolled-back-and-reapplied
+schema**, not the accumulating development database, exactly as
+specified:
+
+1. **Real Phase 3 test count: 126**, confirmed directly from the
+   `node --test` runner output. Stable across 3 consecutive runs.
+2. **Phase 1: 59/59 passing**, re-run unmodified.
+3. **Phase 2: 100/100 passing**, re-run unmodified.
+4. **Tenant isolation with two distinct manufacturers**: confirmed via
+   the suite's existing coverage (a second manufacturer's batch,
+   document, and offer are never reachable from the first's session).
+5. **CSRF**: confirmed via the suite's existing coverage (valid, missing,
+   incorrect token on both the session-bound token and the login
+   double-submit cookie).
+6. **Multi-field PEP-driven Offer form**: confirmed via the suite's
+   existing coverage on both the JSON API and the Portal's own
+   server-rendered HTML form.
+7. **Complete Excel flow from the interface**: confirmed via the
+   suite's existing coverage (download/upload/stage/review/confirm,
+   tamper rejection, re-confirm rejection — all through `/portal/*`).
+8. **Staging survives a process restart**: confirmed via the existing
+   regression test that opens a brand-new `Pool`.
+9. **Migrations run from scratch**: `rollback.sql` dropped all 13 Phase
+   3 tables and 2 computed/effective views cleanly (verified: 0 rows
+   remaining for every dropped object); `001_schema.sql` through
+   `004_session_csrf_token.sql` reapplied in order with zero errors.
+10. **`validate.sql`**: all 15 checks pass against the freshly reapplied
+    schema.
+11. **Rollback isolation confirmed**: Phase 1's 8 tables, 1015
+    Manufacturer rows, and 78 `elimfilters_catalog` rows were identical
+    before (`ebp_manufacturers` count 1015) and after the rollback/
+    reapply cycle (`ebp_manufacturers` count 1015, `elimfilters_catalog`
+    count 78) — byte-for-byte unchanged.
+12. **Phase 4 confirmed not started** — no `ebp/phase4/` directory, no
+    `migrations/ebp-phase4/` directory.
+
+All twelve conditions passed.
+
+- **ADR-0036** added to `DECISIONS.md`: **Phase 03 — Manufacturer Intake
+  Portal (Factory Portal) is APPROVED and marked `APPROVED / FROZEN
+  v1.0`.** The schema (13 tables + 2 views), the Batch/Offer state
+  machines, the API surface split, the Factory-auth/CSRF/cookie model,
+  and the Portal/Excel dual-intake design established through
+  ADR-0023–ADR-0036 may not be altered without a new ADR that explicitly
+  supersedes the relevant prior entry — the same append-only discipline
+  already in force for Phase 0/Phase 1/Phase 2.
+- **`docs/ebp/phases/phase-03-supplier-portal.md`** — status line changed
+  to `APPROVED / FROZEN v1.0`; Deliverables/Exit Criteria updated to the
+  final 13-table/16-endpoint/126-test counts; a new "Final
+  Correction-Round Audit" section records all twelve final-audit results
+  verbatim.
+- **`docs/ebp/IMPLEMENTATION_MASTER_INDEX.md`** — Phase 03 row updated to
+  `APPROVED / FROZEN v1.0`, summarizing the full correction round and the
+  final audit.
+- **`migrations/ebp-phase3/rollback.sql`** — added an explicit check that
+  `ebp_manufacturer_request_batches_effective` (ADR-0031) is also gone
+  after rollback (it is dropped automatically via `CASCADE` when
+  `ebp_manufacturer_request_batches` is dropped; the verification query
+  was missing, not the drop itself).
+- **Phase 4 (Engineering Compliance Validation) is NOT authorized by this
+  entry.** It requires its own separate, explicit authorization from the
+  project owner before any work begins, per `CLAUDE_WORKFLOW.md`'s
+  phase-gate discipline. **No Phase 4 work was started in this session.**
+
 

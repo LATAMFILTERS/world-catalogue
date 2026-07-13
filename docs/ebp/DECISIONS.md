@@ -1965,3 +1965,84 @@ specifically because they suspected compromise.
   freshly-invited account has no live sessions yet) — included purely to
   keep the invariant absolute: every password-setting event revokes
   whatever sessions exist, with no special-cased exception.
+
+## ADR-0036 — Phase 3 approved and frozen as v1.0
+
+**Date:** 2026-07-13
+**Status:** Accepted
+**Branch:** `claude/phase-0-audit-review-wanxa3`
+**Closing commit:** *(recorded in a follow-up commit immediately after
+this one, per the same convention used for Phase 1's and Phase 2's
+closing commits — the hash cannot be known before the commit exists)*.
+
+**Context:** Phase 3 was originally delivered (`Built`, not frozen) with
+a real schema, backend, dual Portal/Excel intake, and an 87-test suite.
+The project owner reviewed it and found it "well underway, but not yet
+approved or frozen," requiring a mandatory 9-point correction round
+before any freeze:
+1. Audit the real test count (the delivered doc had incorrectly stated
+   34 unit tests, summing to 92 against an 87 total).
+2. Complete the Excel flow inside the Factory Portal itself — no
+   Postman/curl/API token.
+3. Replace the single free-typed field offer form with one driven by the
+   Batch Item's full applicable-field set from its locked PEP snapshot.
+4. Add CSRF protection to every state-changing Portal action.
+5. Never show internal errors (SQL, constraints, paths, tokens, hashes,
+   stack traces) to the Manufacturer.
+6. Align session cookie attributes with the 12-hour session and its
+   lifecycle (revocation on password reset, no email-existence
+   disclosure).
+7. Correctly resolve `OVERDUE` without requiring a cron job.
+8. Persist Excel staging in Postgres, not process memory.
+9. Run a final audit (real test counts for Phases 1/2/3, tenant
+   isolation, CSRF, the multi-field form, the complete Excel UI flow,
+   staging surviving a process restart, migrations from scratch,
+   `validate.sql`, rollback verified isolated from Phase 1/2, and
+   confirmation Phase 4 was not started) before any freeze decision.
+
+**Decision:**
+1. Items 1–8 were implemented and documented across ADR-0030 (Postgres-
+   persisted Excel staging), ADR-0031 (centralized effective `OVERDUE`,
+   no cron required), ADR-0032 (PEP-driven multi-field Offer form,
+   Portal/Excel parity — including a fix to the Portal's own HTML form,
+   which the first pass of this correction round had not yet upgraded to
+   match), ADR-0033 (CSRF protection: session-bound synchronizer token,
+   a double-submit cookie for the pre-session login form, `logout`
+   changed from `GET` to `POST`), ADR-0034 (error-response sanitization:
+   known service errors keep their curated message, anything unexpected
+   becomes a generic message plus a `request_id`), and ADR-0035
+   (cookie/session lifecycle: `Max-Age` aligned with the 12-hour session,
+   matching attributes on clear, session revocation on password
+   reset/accept-invite, verified email-existence non-disclosure).
+2. Item 9's final audit was performed against a **freshly rolled-back-
+   and-reapplied schema**, not the accumulating development database: all
+   13 Phase 3 tables and 2 computed views were dropped via `rollback.sql`,
+   Phase 1's 8 tables / 1015 Manufacturer rows / 78 catalog rows were
+   confirmed byte-identical before and after, then `001_schema.sql`
+   through `004_session_csrf_token.sql` were reapplied from scratch with
+   zero errors, `validate.sql`'s 15 checks all passed, and the full
+   Phase 1 (59), Phase 2 (100), and Phase 3 (126) suites all passed,
+   stable across 3 consecutive runs. Full detail: `phases/phase-03-
+   supplier-portal.md`, "Final Correction-Round Audit."
+3. **Phase 3 — Manufacturer Intake Portal (Factory Portal) is APPROVED
+   and marked `APPROVED / FROZEN v1.0`.**
+4. **Frozen** means: the schema (13 tables + 2 views), the Batch/Offer
+   state machines, the API surface split, the Factory-auth/CSRF/cookie
+   model, and the Portal/Excel dual-intake design established through
+   ADR-0023–ADR-0036 may not be altered without a new ADR that explicitly
+   supersedes the relevant prior entry — the same append-only discipline
+   already in force for Phase 0/Phase 1/Phase 2.
+5. **Phase 4 — Engineering Compliance Validation is not authorized by
+   this ADR.** Confirmed not started (no `ebp/phase4/`, no
+   `migrations/ebp-phase4/`) as of this freeze. A future ADR must
+   explicitly authorize it, per `CLAUDE_WORKFLOW.md`'s phase-gate
+   discipline.
+
+**Consequences:**
+- Phase 3's documentation baseline (`phases/phase-03-supplier-portal.md`,
+  this ADR range) is now version-locked the same way Phase 0/1/2's are.
+- Any future change to Phase 3's schema, API surface, or auth/session
+  model requires a new ADR, never a silent edit to an already-frozen one.
+- Phase 4 work may begin only on the project owner's own explicit,
+  separate authorization — not as a continuation of this session or this
+  ADR.

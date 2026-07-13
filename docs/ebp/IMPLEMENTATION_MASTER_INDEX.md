@@ -89,47 +89,47 @@ See ADR-0005.
   ADRs) may not be altered without a new ADR that explicitly supersedes
   the relevant prior entry, same discipline as Phase 0/ADR-0013 and Phase
   1.
-- **Phase 03 — Manufacturer Intake Portal (Factory Portal)** is `Built,
-  in mandatory pre-freeze correction` (not `APPROVED / FROZEN`) as of
-  2026-07-13: real, executable SQL migrations (`migrations/ebp-phase3/`,
-  now 13 tables + 2 effective/computed views), a real backend module
-  (`ebp/phase3/`) with a hard-split internal
-  (`/api/ebp/internal/manufacturer-batches`, 13 endpoints,
+- **Phase 03 — Manufacturer Intake Portal (Factory Portal)** is
+  `APPROVED / FROZEN v1.0` as of 2026-07-13: real, executable SQL
+  migrations (`migrations/ebp-phase3/`, 13 tables + 2 effective/computed
+  views), a real backend module (`ebp/phase3/`) with a hard-split
+  internal (`/api/ebp/internal/manufacturer-batches`, 13 endpoints,
   `requireAdmin`) and factory-facing (`/api/ebp/factory`, 16 endpoints,
   `requireFactorySession`) API surface, real Factory-user authentication
   (scrypt password hashing, opaque hashed session tokens — resolves
   ADR-0002 for Manufacturers only), a Portal-and-Excel dual intake flow
   (Excel via `exceljs`, uploads via `multer` — both new dependencies,
   documented in ADR-0027/ADR-0028), and a Factory Portal frontend
-  (`/portal/*`, server-rendered, `noindex/nofollow`) whose Excel flow is
-  now a full UI (download/upload/review/confirm — no Postman/curl/API
-  token needed, see the correction-round CHANGELOG entry). The project
-  owner reviewed Phase 3 and required a mandatory correction round before
-  any freeze; ADR-0030 (Postgres-persisted Excel staging), ADR-0031
-  (centralized effective `OVERDUE`, no cron required), ADR-0032
-  (PEP-driven multi-field Offer form, Portal/Excel parity — including a
-  fix to the Portal's own HTML offer form, which had not yet been
-  upgraded to match), ADR-0033 (CSRF protection: session-bound
-  synchronizer token on every Portal form, a double-submit cookie for
-  the pre-session login form, `logout` changed from `GET` to `POST`),
-  ADR-0034 (error-response sanitization: known service errors keep
-  their curated message, anything unexpected becomes a generic message
-  plus a `request_id`, closing two real leak vectors found in the
-  Portal's offer-submit and Excel-confirm error paths), and ADR-0035
-  (cookie/session lifecycle: the session cookie's `Max-Age` is now
-  aligned with the real 12-hour session TTL, clearing a cookie always
-  uses the identical attributes used to set it, and resetting a factory
-  user's password immediately revokes every one of that user's existing
-  sessions) are done. **This closes every item of the project owner's
-  9-point pre-freeze correction list except the final audit-and-freeze
-  step itself.** The test suite has grown from 87 to 126 tests (counts
-  confirmed by the `node --test` runner, `tests/ebp-phase3/`), all
-  passing against a real local Postgres instance, with Phase 1's 59-test
-  and Phase 2's 100-test suites re-confirmed unmodified. Built with
-  ADR-0023 through ADR-0035 — see `DECISIONS.md`. **Phase 3 will not be
-  marked `APPROVED / FROZEN` until
-  the full correction list is complete and re-audited. Phase 4
-  (Engineering Compliance Validation) has not been started.**
+  (`/portal/*`, server-rendered, `noindex/nofollow`) whose Excel flow and
+  Offer form are both full UIs (download/upload/review/confirm; one
+  fieldset per applicable PEP field) — no Postman/curl/API token ever
+  needed. The project owner reviewed Phase 3 as "well underway, but not
+  yet approved or frozen" and required a mandatory 9-point correction
+  round before any freeze; all 9 items are complete: ADR-0030
+  (Postgres-persisted Excel staging), ADR-0031 (centralized effective
+  `OVERDUE`, no cron required), ADR-0032 (PEP-driven multi-field Offer
+  form, Portal/Excel parity), ADR-0033 (CSRF protection: session-bound
+  synchronizer token, a double-submit cookie for the pre-session login
+  form, `logout` changed from `GET` to `POST`), ADR-0034 (error-response
+  sanitization: known service errors keep their curated message,
+  anything unexpected becomes a generic message plus a `request_id`),
+  ADR-0035 (cookie/session lifecycle: `Max-Age` aligned with the
+  12-hour session, matching attributes on clear, session revocation on
+  password reset), and a final audit (item 9) performed against a
+  **freshly rolled-back-and-reapplied schema**: all 13 Phase 3 tables +
+  2 views dropped and confirmed leaving Phase 1's 8 tables / 1015
+  Manufacturer rows / 78 catalog rows byte-identical, then migrations
+  001–004 reapplied from scratch with zero errors, `validate.sql`'s 15
+  checks all passing, and the full Phase 1 (59) / Phase 2 (100) / Phase 3
+  (126) suites all passing, stable across 3 consecutive runs. The test
+  suite grew from the original 87 to **126 tests** (counts confirmed by
+  the `node --test` runner, `tests/ebp-phase3/`) across the correction
+  round. Built with ADR-0023 through ADR-0036 — see `DECISIONS.md`
+  (ADR-0036 records the freeze decision itself). **Phase 4 (Engineering
+  Compliance Validation) has not been started** (no `ebp/phase4/`, no
+  `migrations/ebp-phase4/`, confirmed at freeze) **and is not authorized
+  by this freeze — a separate, explicit authorization is required before
+  any Phase 4 work begins.**
 - **Phases 04-09** remain `Spec Drafted` — first-pass drafts written during
   Phase 0 to prove the roadmap's dependency chain is coherent (see each
   file's own "Status" line). None are `Spec Approved`. **No implementation

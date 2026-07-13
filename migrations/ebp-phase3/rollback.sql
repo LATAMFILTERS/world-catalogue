@@ -59,6 +59,9 @@ WHERE schemaname = 'public'
 SELECT viewname FROM pg_views WHERE viewname = 'ebp_manufacturer_offers_effective';
 -- Expected: 0 rows
 
+SELECT viewname FROM pg_views WHERE viewname = 'ebp_manufacturer_request_batches_effective';
+-- Expected: 0 rows (dropped by CASCADE when ebp_manufacturer_request_batches is dropped, ADR-0031)
+
 -- Step 5: Verify Phase 1, Phase 2, catalog, and technologies are untouched
 SELECT tablename
 FROM pg_tables
