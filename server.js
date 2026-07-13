@@ -1369,7 +1369,9 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
           c.duty = 'LIGHT_DUTY'
           AND EXISTS (
             SELECT 1
-            FROM jsonb_array_elements(c.vehicle_applications) AS va
+            FROM jsonb_array_elements(
+              CASE WHEN jsonb_typeof(c.vehicle_applications) = 'array' THEN c.vehicle_applications ELSE '[]'::jsonb END
+            ) AS va
             WHERE
               UPPER(COALESCE(va->>'make','') || ' ' || COALESCE(va->>'model','')) LIKE $1
               ${engineCond}
@@ -1444,7 +1446,12 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
         params.push('%' + engine.toUpperCase() + '%');
         idx++;
       }
-      return `EXISTS (SELECT 1 FROM jsonb_array_elements(${col}) AS ea WHERE ${conds.join(' AND ')})`;
+      // CASE guard: jsonb_array_elements() throws if the column holds a
+      // non-array JSON value (legacy/malformed rows) instead of silently
+      // skipping, which would abort this query for every search.
+      return `EXISTS (SELECT 1 FROM jsonb_array_elements(
+        CASE WHEN jsonb_typeof(${col}) = 'array' THEN ${col} ELSE '[]'::jsonb END
+      ) AS ea WHERE ${conds.join(' AND ')})`;
     };
 
     // HD: equipment_applications
