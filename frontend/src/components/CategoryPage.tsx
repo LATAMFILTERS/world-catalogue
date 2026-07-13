@@ -54,32 +54,8 @@ function InlineVideo({ src }: { src: string }) {
   }, [inView]);
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '100%',
-        paddingBottom: '56.25%',
-        height: 0,
-        overflow: 'hidden',
-        borderRadius: '12px',
-        border: '1px solid rgba(255,241,45,0.2)',
-      }}
-    >
-      <video
-        ref={ref}
-        playsInline
-        muted
-        loop
-        preload="metadata"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-      >
+    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', border: '1px solid rgba(255,241,45,0.2)' }}>
+      <video ref={ref} playsInline muted loop preload="metadata" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
         <source src={src} type="video/mp4" />
       </video>
     </div>
@@ -115,10 +91,7 @@ function splitIntoEditorialParagraphs(text?: string): string[] {
   const sentences = clean.match(/[^.!?]+[.!?]+/g)?.map((sentence) => sentence.trim()) ?? [clean];
   if (sentences.length <= 2) return [clean];
   const midpoint = Math.ceil(sentences.length / 2);
-  return [
-    sentences.slice(0, midpoint).join(' '),
-    sentences.slice(midpoint).join(' '),
-  ].filter(Boolean);
+  return [sentences.slice(0, midpoint).join(' '), sentences.slice(midpoint).join(' ')].filter(Boolean);
 }
 
 function getIndustryTechGridCell(index: number, total: number) {
@@ -143,8 +116,14 @@ const constructionDirectAnswer = [
   'Construction environments expose air intake, hydraulic, fuel, and lubrication systems to silica dust, fuel contamination, pressure spikes, thermal load, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so contractors can protect component life, maintain service discipline, preserve hydraulic reliability, and reduce downtime risk across demanding project conditions.',
 ];
 
+const oilGasDirectAnswer = [
+  'ELIMFILTERS® oil and gas asset protection systems are engineered for drilling rigs, compressors, pumps, turbines, generators, hydraulic power units, and offshore support equipment operating in corrosive, remote, and continuous duty environments. In energy operations, filtration is part of the reliability strategy because access, downtime, service windows, and equipment replacement costs are tightly constrained.',
+  'Oil and gas environments expose air intake, fuel, hydraulic, and lubrication systems to salt laden air, moisture, airborne particulate, fuel contamination, pressure cycling, thermal stress, and vibration. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so energy operators can protect rotating equipment, preserve uptime, maintain service discipline, and reduce downtime risk across offshore, onshore, upstream, and energy support applications.',
+];
+
 const agricultureVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.';
 const constructionVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.';
+const oilGasVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.';
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
@@ -154,6 +133,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const isMining = isIndustry && item.name === 'Mining';
   const isAgriculture = isIndustry && item.name === 'Agriculture';
   const isConstruction = isIndustry && item.name === 'Construction';
+  const isOilGas = isIndustry && item.name === 'Oil Gas';
 
   let buttonHref = 'https://part-search.elimfilters.com';
   if (item.cta?.includes('MACROCORE')) {
@@ -179,26 +159,32 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
       ? [agricultureVideoParagraph]
       : isConstruction
         ? [constructionVideoParagraph]
-        : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-          `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-          `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-        ]);
+        : isOilGas
+          ? [oilGasVideoParagraph]
+          : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
+            `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
+            `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
+          ]);
 
   const industryAnswerParagraphs = isAgriculture
     ? agricultureDirectAnswer
     : isConstruction
       ? constructionDirectAnswer
-      : isIndustry && !isMining
-        ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
-        : undefined;
+      : isOilGas
+        ? oilGasDirectAnswer
+        : isIndustry && !isMining
+          ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description)
+          : undefined;
 
   const techTags = isAgriculture
     ? ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™']
     : isConstruction
       ? ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™']
-      : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+      : isOilGas
+        ? ['MACROCORE™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™']
+        : item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
 
-  const protectedAssets = geoData?.protectedAssets ?? (isAgriculture ? [
+  const protectedAssets = isAgriculture ? [
     'Tractors',
     'Combines',
     'Harvesters',
@@ -212,44 +198,46 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
     'Motor Graders',
     'Compactors',
     'Articulated Dump Trucks',
-  ] : undefined);
+  ] : isOilGas ? [
+    'Drilling Rigs',
+    'Compressors',
+    'Pumps',
+    'Turbines',
+    'Generators',
+    'Offshore Support Equipment',
+  ] : geoData?.protectedAssets;
 
   const heroTitle = isAgriculture
     ? 'Agricultural Filtration Systems'
     : isConstruction
       ? 'Construction Filtration Systems'
-      : item.title;
+      : isOilGas
+        ? 'Oil & Gas Filtration Systems'
+        : item.title;
   const heroSubtitle = isAgriculture
     ? 'AGRICULTURAL ASSETS'
     : isConstruction
       ? 'CONSTRUCTION ASSETS'
-      : item.subtitle || undefined;
+      : isOilGas
+        ? 'OIL & GAS ASSETS'
+        : item.subtitle || undefined;
   const heroTagline = isAgriculture
     ? 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.'
     : isConstruction
       ? 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.'
-      : item.description;
+      : isOilGas
+        ? 'Oil & Gas equipment cannot afford contamination related downtime in remote, corrosive, and continuous duty environments. ELIMFILTERS® engineering protects compressors, pumps, turbines, generators, hydraulic systems, and offshore support assets operating under salt air, fuel contamination, thermal stress, and severe duty cycles.'
+        : item.description;
+  const assetHeading = isOilGas ? 'Oil & Gas Asset Protection' : `${item.name} Asset Protection`;
 
   return (
     <>
       <main>
         {geoData?.schemas && geoData.schemas.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
+          <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         ))}
 
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 20,
-            background: 'rgba(0,0,0,0.6)',
-            borderBottom: '1px solid rgba(255,255,255,0.05)',
-            padding: '0.75rem 2rem',
-          }}
-        >
+        <div style={{ position: 'relative', zIndex: 20, background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 2rem' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Link href="/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
               {t('category.home', 'HOME')}
@@ -265,13 +253,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
           </div>
         </div>
 
-        <Hero
-          title={heroTitle}
-          subtitle={heroSubtitle}
-          tagline={heroTagline}
-          ctaText={item.cta}
-          backgroundImage={industryImage || bgImage}
-        />
+        <Hero title={heroTitle} subtitle={heroSubtitle} tagline={heroTagline} ctaText={item.cta} backgroundImage={industryImage || bgImage} />
 
         {(geoData?.directAnswer || isIndustry) && (
           <section style={{ padding: '4rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
@@ -307,7 +289,7 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
             <div style={{ maxWidth: isIndustry ? '1320px' : '1200px', margin: '0 auto' }}>
               <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isIndustry ? '56% 44%' : '60% 40%', gap: isIndustry ? '2.6rem' : '3rem', alignItems: 'center' }}>
                 <div>
-                  <h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{item.name} Asset Protection</h2>
+                  <h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{assetHeading}</h2>
                   {protectedAssets && protectedAssets.length > 0 && (
                     <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>
                       {protectedAssets.map((asset) => (
