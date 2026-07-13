@@ -3,14 +3,18 @@
 
   .technologies-page,
   .about-page-mobile-fix,
-  .technologies-page-mobile-fix {
+  .technologies-page-mobile-fix,
+  .industries-page-mobile-fix,
+  .systems-page-mobile-fix {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: clip !important;
   }
 
   .technologies-page > section,
-  .about-page-mobile-fix > section {
+  .about-page-mobile-fix > section,
+  .industries-page-mobile-fix > section,
+  .systems-page-mobile-fix > section {
     width: 100% !important;
     max-width: 100% !important;
     min-height: auto !important;
@@ -20,7 +24,9 @@
   }
 
   .technologies-page > section:first-of-type,
-  .about-page-mobile-fix > section:first-of-type {
+  .about-page-mobile-fix > section:first-of-type,
+  .industries-page-mobile-fix > section:first-of-type,
+  .systems-page-mobile-fix > section:first-of-type {
     min-height: 72svh !important;
   }
 
@@ -156,10 +162,82 @@
     max-width: 100% !important;
     min-width: 0 !important;
   }
+
+  .industries-page-mobile-fix section > div,
+  .systems-page-mobile-fix section > div,
+  .industries-page-mobile-fix div[style*="display: grid"],
+  .systems-page-mobile-fix div[style*="display: grid"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .industries-page-mobile-fix div[style*="display: grid"] > a,
+  .systems-page-mobile-fix div[style*="display: grid"] > a {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 260px !important;
+    height: auto !important;
+    padding: 1.25rem !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    background: #050505 !important;
+  }
+
+  .industries-page-mobile-fix div[style*="display: grid"] > a *,
+  .systems-page-mobile-fix div[style*="display: grid"] > a * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .industries-page-mobile-fix img,
+  .systems-page-mobile-fix img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .industries-page-mobile-fix h1,
+  .systems-page-mobile-fix h1 {
+    font-size: clamp(2.2rem, 10vw, 3.4rem) !important;
+    line-height: 1 !important;
+    max-width: 100% !important;
+  }
+
+  .industries-page-mobile-fix h2,
+  .systems-page-mobile-fix h2 {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    line-height: 1.03 !important;
+    max-width: 100% !important;
+  }
+
+  .industries-page-mobile-fix p,
+  .systems-page-mobile-fix p {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
 }
 
 @media (max-width: 430px) {
   .technology-portfolio-card { min-height: 290px !important; height: 290px !important; }
   .technology-portfolio-title,
   .technologies-final-title { font-size: clamp(1.85rem, 8.5vw, 2.5rem) !important; }
+
+  .industries-page-mobile-fix div[style*="display: grid"] > a,
+  .systems-page-mobile-fix div[style*="display: grid"] > a {
+    min-height: 230px !important;
+  }
 }
