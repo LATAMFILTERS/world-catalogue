@@ -32,7 +32,7 @@ export function Hero({
   const ctaRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const normalizedSubtitle = subtitle?.trim().replace(/\.$/, '');
-  const isApprovedAssetSubtitle = normalizedSubtitle === 'MINING ASSETS' || normalizedSubtitle === 'AGRICULTURAL ASSETS';
+  const isApprovedAssetSubtitle = normalizedSubtitle === 'MINING ASSETS' || normalizedSubtitle === 'AGRICULTURAL ASSETS' || normalizedSubtitle === 'CONSTRUCTION ASSETS';
 
   useEffect(() => {
     const elements = [
