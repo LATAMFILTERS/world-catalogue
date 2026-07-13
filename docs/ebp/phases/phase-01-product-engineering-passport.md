@@ -5,13 +5,23 @@ approved; no implementation authorized)
 **Depends on:** Phase 00
 **Blocks:** Phases 02, 03, 04, 08
 
-**Correction notice:** This revision replaces the original draft's generic
-"bill-of-materials category" concept (which implied a Supplier tier) with
-the agreed model: the Passport carries **locked, ELIMFILTERS-owned
-`required_*` engineering fields** directly. A Manufacturer answers those
-fields with its own `offered_*`/`actual_*` values on a **Manufacturer
-Product Offer** (Phase 3) — there is no intermediate Supplier or BOM-mapping
-entity. See ADR-0005 in `DECISIONS.md`.
+**Correction notice (first round):** This revision replaces the original
+draft's generic "bill-of-materials category" concept (which implied a
+Supplier tier) with the agreed model: the Passport carries **locked,
+ELIMFILTERS-owned `required_*` engineering fields** directly. A
+Manufacturer answers those fields with its own `offered_*`/`actual_*`
+values on a **Manufacturer Product Offer** (Phase 3) — there is no
+intermediate Supplier or BOM-mapping entity. See ADR-0005 in
+`DECISIONS.md`.
+
+**Correction notice (second round, this revision):** Required packaging
+(§3 below) no longer includes `manufacturer_recommended_quantity` or
+`elimfilters_approved_quantity` — neither belongs on the Passport. Both
+move to Phase 3 (the Manufacturer's proposal) and the new Offer Approval
+entity (ELIMFILTERS' final decision), respectively. See ADR-0008. The
+single "confidential manufacturing notes" field is replaced with two
+separately scoped fields, `manufacturer_instruction_notes` and
+`internal_engineering_notes`. See ADR-0009.
 
 ## Objective
 
@@ -96,8 +106,23 @@ editing the Passport.
 - Anti-drainback valve: required or not applicable
 - Anti-drainback valve material, when required
 - Required test standards (ISO/SAE/ASTM codes)
-- Confidential manufacturing notes (ELIMFILTERS-internal; never surfaced to
-  Distributor Portal under any circumstance, per `BUSINESS_RULES.md` §10)
+
+Two separately scoped note fields (ADR-0009) — never a single
+undifferentiated "confidential manufacturing notes" field:
+
+- `manufacturer_instruction_notes` — technical instructions a plant needs
+  to quote or produce correctly. Visible only to a Manufacturer that has
+  actually been sent this Passport in a Request Batch (Phase 3), and to
+  authorized ELIMFILTERS staff. Never surfaced to Distributor Portal or the
+  public.
+- `internal_engineering_notes` — ELIMFILTERS-internal information. Never
+  visible to any Manufacturer or Distributor; authorized internal roles
+  only.
+
+No API may return a generic serialization of "the Passport" that includes
+either note field by default — each consumer (Manufacturer Intake Portal,
+internal engineering tooling, Distributor/Pricing-facing surfaces) must be
+served from its own explicit, reviewed projection/DTO.
 
 A field marked "not applicable" for a given product subtype is recorded
 explicitly as `NOT_APPLICABLE`, not left null — Engineering Compliance
@@ -106,18 +131,32 @@ Validation (Phase 4) must be able to distinguish "not required" from
 
 ### 3. Required Packaging (`ebp_passport_packaging`, one row per Passport version)
 
-Per `BUSINESS_RULES.md` §3.1:
+Per `BUSINESS_RULES.md` §3.1, this table holds **only ELIMFILTERS'
+requirements** — never a Manufacturer's proposal or ELIMFILTERS' final
+approved decision (ADR-0008):
 
-- **Automotive:** individual box (default: yes), protective bag (when
-  applicable), master box (always required).
-- **Industrial:** individual box (default: no), bag/separator/protection
-  (when applicable), master box target quantity (normally 6, 12, or 24).
-- Three separate quantity fields, never merged:
-  - `elimfilters_target_quantity` — ELIMFILTERS' requirement.
-  - `manufacturer_recommended_quantity` — populated later, from the
-    Manufacturer's Offer (Phase 3); read-only from Phase 1's perspective.
-  - `elimfilters_approved_quantity` — ELIMFILTERS' final decision, set only
-    after review of the Manufacturer's recommendation.
+- `individual_box_required`
+- `protective_bag_required`
+- `separator_required`
+- `master_carton_required`
+- `elimfilters_target_quantity`
+- target dimensions or restrictions, when they exist
+- ELIMFILTERS-required packaging instructions
+
+Automotive/industrial defaults:
+
+- **Automotive:** `individual_box_required` default true, protective bag
+  when applicable, master carton always required.
+- **Industrial:** `individual_box_required` default false, bag/separator/
+  protection when applicable, master box target quantity normally 6, 12,
+  or 24.
+
+`manufacturer_recommended_quantity` (a Manufacturer's own proposal,
+per-Offer) and `elimfilters_approved_quantity` (ELIMFILTERS' final
+decision after review) are **not** Passport fields. They live on the
+Manufacturer Product Offer and on the new Offer Approval entity
+(`ebp_manufacturer_offer_approvals`), respectively — see Phase 3 and
+`BUSINESS_RULES.md` §3.1.B-C.
 
 ## Business Rules Enforced
 
@@ -128,6 +167,11 @@ Per `BUSINESS_RULES.md` §3.1:
 - ADR-0003 (SKU identity reuse; draft/pre-SKU state).
 - ADR-0005 (no Supplier/BOM-mapping entity; required fields answered
   directly by a Manufacturer Offer).
+- ADR-0008 (packaging data ownership split — the Passport holds only
+  ELIMFILTERS' requirement fields).
+- ADR-0009 (note-field split — `manufacturer_instruction_notes` vs.
+  `internal_engineering_notes`, each behind its own role-specific
+  projection).
 
 ## Integration Points
 
@@ -137,11 +181,13 @@ Per `BUSINESS_RULES.md` §3.1:
   `requireAdmin` pattern, pending a decision at approval).
 - Read by: Phase 2 (family qualification), Phase 3 (a Manufacturer Offer is
   structured as one `offered_*`/`actual_*` answer per applicable
-  `required_*` field here), Phase 4 (compliance validation compares
-  `required_*` here against `offered_*` on the Offer), Phase 8 (catalog
-  display to distributors, via Pricing Engine's output which references
-  Passport identification only — never the confidential manufacturing
-  notes).
+  `required_*` field here, and a Manufacturer's read access is limited to
+  Passports it was actually sent, seeing `manufacturer_instruction_notes`
+  but never `internal_engineering_notes`), Phase 4 (compliance validation
+  compares `required_*` here against `offered_*` on a specific Offer
+  revision), Phase 8 (catalog display to distributors, via Pricing
+  Engine's output which references Passport identification only — never
+  either note field or the required-packaging detail).
 
 ## Deliverables
 
@@ -173,14 +219,17 @@ Per `BUSINESS_RULES.md` §3.1:
   implicit.
 - **Risk: draft/pre-SKU products could accidentally leak into
   distributor-visible surfaces** if Phase 8 doesn't strictly filter by
-  Passport status. Mitigated by `BUSINESS_RULES.md` §10 (distributor
+  Passport status. Mitigated by `BUSINESS_RULES.md` §11 (distributor
   visibility requires `VALID` + priced), but worth flagging explicitly here
   since Passport is the root of that chain.
-- **Risk: confidential manufacturing notes exposure.** Because this field
-  lives on the same Passport record as public-safe identification fields,
-  any Phase 8 integration that naively serializes "the Passport" instead of
-  a reviewed projection risks leaking it. Phase 7/8 specs must treat this
-  as a named field to explicitly exclude, not rely on obscurity.
+- **Risk: note-field exposure across roles.** Because
+  `manufacturer_instruction_notes` and `internal_engineering_notes` live on
+  the same Passport engineering record as public-safe identification
+  fields, any integration that naively serializes "the Passport" instead
+  of a role-specific, reviewed projection risks leaking `internal_
+  engineering_notes` to a Manufacturer, or either field to a Distributor.
+  Phase 3/7/8 specs must treat both as named fields to explicitly exclude
+  per role, not rely on obscurity (ADR-0009).
 
 ## Open Questions
 
@@ -192,3 +241,8 @@ Per `BUSINESS_RULES.md` §3.1:
   required engineering fields (which subtypes require bypass/anti-
   drainback fields, etc.)? Needed before Phase 1's spec can be marked
   `Spec Approved`.
+- **Resolved this round:** whether a Manufacturer sees "confidential
+  manufacturing notes" — it now sees `manufacturer_instruction_notes` only,
+  scoped to Passports actually sent to it, and never `internal_engineering_
+  notes` (ADR-0009). See Phase 3's own open questions list, previously
+  carrying this as unresolved.

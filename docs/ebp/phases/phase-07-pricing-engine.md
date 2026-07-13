@@ -1,24 +1,28 @@
 # Phase 07 — Pricing Engine
 
-**Status:** Spec Drafted (revised, correction round 2026-07-13 — section
-references and confidentiality requirement corrected; not approved; no
-implementation authorized)
+**Status:** Spec Drafted (revised, second correction round 2026-07-13 —
+section references and confidentiality requirement corrected; not
+approved; no implementation authorized)
 **Depends on:** Phase 06
 **Blocks:** Phase 08
 
-**Correction notice:** Cross-references to `BUSINESS_RULES.md` are updated
-to its revised section numbering (Pricing Engine Rules is now §9,
-Distributor Portal Rules is now §10 — see `BUSINESS_RULES.md`'s correction
-notice). This phase's confidentiality obligation to Phase 8 is also made
-explicit: this is the module responsible for stripping manufacturer
-identity and cost-basis fields before its output ever reaches Distributor
-Portal. See ADR-0006 in `DECISIONS.md`.
+**Correction notice (first round):** Cross-references to
+`BUSINESS_RULES.md` were updated. This phase's confidentiality obligation
+to Phase 8 is also made explicit: this is the module responsible for
+stripping manufacturer identity and cost-basis fields before its output
+ever reaches Distributor Portal. See ADR-0006 in `DECISIONS.md`.
+
+**Correction notice (second round, this revision):** `BUSINESS_RULES.md`
+section numbers are updated again (Pricing Engine Rules is now §10,
+Distributor Portal Rules is now §11, Order Management Rules is now
+§12 — inserting a new Offer Approval section shifted every section after
+§6 by one).
 
 ## Objective
 
 Compute channel/region sell price from landed cost plus margin rules, as the
 single authoritative source of price data for every downstream module
-(`BUSINESS_RULES.md` §9), and produce a confidentiality-safe output for
+(`BUSINESS_RULES.md` §10), and produce a confidentiality-safe output for
 Distributor Portal that carries no manufacturer identity or cost-basis
 fields.
 
@@ -40,13 +44,13 @@ fields.
 - Landed cost computation itself (Phase 6) — Pricing consumes it
   exclusively.
 - Actual promotional/clearance pricing policy design — `BUSINESS_RULES.md`
-  §9 allows for logged exceptions but does not define a promotions system;
+  §10 allows for logged exceptions but does not define a promotions system;
   that would be a future, separate decision if pursued.
 
 ## Dependencies
 
 - Phase 6 (landed cost is the sole cost input; Pricing does not
-  independently estimate cost, per `BUSINESS_RULES.md` §9).
+  independently estimate cost, per `BUSINESS_RULES.md` §10).
 
 ## Key Entities / Data Model (sketch, not final)
 
@@ -63,11 +67,11 @@ fields.
   `sell_price`, `effective_from`. This (not the full record) is what Phase
   8 is ever given access to — `manufacturer_code`, `landed_cost_ref`, and
   `margin_applied` are not present in this projection at all, per
-  `BUSINESS_RULES.md` §9 and ADR-0006.
+  `BUSINESS_RULES.md` §10 and ADR-0006.
 
 ## Business Rules Enforced
 
-- `BUSINESS_RULES.md` §9 in full, including the requirement that Pricing
+- `BUSINESS_RULES.md` §10 in full, including the requirement that Pricing
   Engine's output to Phase 8 excludes manufacturer-identifying and
   cost-basis fields at the data-shape level.
 - Category Reframing Layer / AI Citation Layer language rules (root
@@ -78,9 +82,9 @@ fields.
 - Reads Phase 6 cost output exclusively for cost input.
 - Read by: Phase 8 (Distributor Portal reads only the
   `ebp_price_calculations_distributor_view` projection and holds no
-  independent pricing logic, per `BUSINESS_RULES.md` §10), Phase 9 (orders
+  independent pricing logic, per `BUSINESS_RULES.md` §11), Phase 9 (orders
   freeze a reference to the price at order time, per `BUSINESS_RULES.md`
-  §11).
+  §12).
 
 ## Deliverables
 

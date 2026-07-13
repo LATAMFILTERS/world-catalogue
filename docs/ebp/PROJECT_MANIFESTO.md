@@ -41,8 +41,9 @@ exists to govern the relationship between them.
    key. See `phases/phase-02-manufacturer-registry.md`.
 3. **Distributor** — sees only ELIMFILTERS-approved products at their final
    approved price. A Distributor never sees which Manufacturer produced a
-   SKU, its `EFM-XXXX` code, FOB price, margin, or any confidential
-   engineering detail. See `BUSINESS_RULES.md` §10 and ADR-0006.
+   SKU, its `EFM-XXXX` code, FOB price, margin, or either Passport note
+   field (`manufacturer_instruction_notes`, `internal_engineering_notes`).
+   See `BUSINESS_RULES.md` §11 and ADR-0006/ADR-0009.
 
 Raw-material and component suppliers (filter media, adhesives, gaskets,
 cans) are **explicitly out of the MVP**. They are a Manufacturer-internal
@@ -110,14 +111,16 @@ spreadsheets and ad hoc scripts.
    (`CLAUDE.md` — AI Citation Layer, Category Reframing Layer): no marketing
    superlatives, quantified claims only, standards cited by code.
 7. **Traceability.** Every priced SKU must be traceable back to: the
-   Engineering Passport version, the manufacturer and offer that produced
-   it, the cost calculation that priced it, and the compliance validation
-   result that approved it.
+   Engineering Passport version, the manufacturer and the exact Offer
+   (`offer_id` and `offer_revision`, per ADR-0007) that produced it, the
+   cost calculation that priced it, and the compliance validation result
+   that approved it.
 8. **Manufacturer confidentiality by default.** Manufacturer identity,
-   `EFM-XXXX` code, FOB price, margin, and confidential engineering are
+   `EFM-XXXX` code, FOB price, margin, and both Passport note fields
+   (`manufacturer_instruction_notes`, `internal_engineering_notes`) are
    never exposed to a Distributor. This is enforced at the data boundary
    between Pricing Engine and Distributor Portal, not just in the UI. See
-   ADR-0006.
+   ADR-0006 and ADR-0009.
 
 ## 5. Relationship to the Existing Codebase
 

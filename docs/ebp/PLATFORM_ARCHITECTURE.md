@@ -1,15 +1,24 @@
 # PLATFORM ARCHITECTURE — ELIMFILTERS Business Platform (EBP)
 
-**Status:** Phase 0 — Proposed, not yet built (revised, correction round,
-2026-07-13)
+**Status:** Phase 0 — Proposed, not yet built (revised, second correction
+round, 2026-07-13)
 **Depends on:** `PROJECT_MANIFESTO.md`, `BUSINESS_RULES.md`
 
-**Correction notice:** This revision replaces the original module map's
-`Supplier Portal` / `Passport × Manufacturer × Supplier` model with the
-agreed MVP chain: `Manufacturer Request Batch` → `Manufacturer Product
-Offer` → `Engineering Compliance Validation` on `Passport Version ×
-Manufacturer × Manufacturer Offer`. See ADR-0005 and ADR-0006 in
-`DECISIONS.md`.
+**Correction notice (first round):** This revision replaces the original
+module map's `Supplier Portal` / `Passport × Manufacturer × Supplier`
+model with the agreed MVP chain: `Manufacturer Request Batch` →
+`Manufacturer Product Offer` → `Engineering Compliance Validation` on
+`Passport Version × Manufacturer × Manufacturer Offer`. See ADR-0005 and
+ADR-0006 in `DECISIONS.md`.
+
+**Correction notice (second round, this revision):** A Manufacturer
+Product Offer is now versioned — many revisions per (Passport Version ×
+Manufacturer), exactly one active at a time (ADR-0007). A new **Offer
+Approval** step, distinct from technical validation, sits between
+Engineering Compliance Validation and Manufacturer Selection (ADR-0008).
+Passport notes are split into a manufacturer-visible field and an
+internal-only field, each served by its own role-specific projection
+(ADR-0009).
 
 This document describes the proposed technical architecture for EBP. Nothing
 in this document is implemented yet. It exists so that Phase 1 onward has an
@@ -67,21 +76,27 @@ chain** — see ADR-0005.
                  ┌───────────────────────────────────────┐
                  │  03 · Manufacturer Intake Portal        │  Request Batch →
                  │  (Factory Portal)                       │  Manufacturer
-                 │  → Manufacturer Product Offer           │  Product Offer
-                 │    (offered_*/actual_* fields, FOB,      │  (offered_*
-                 │     MOQ, lead time, capacity, packaging) │   response)
+                 │  → Manufacturer Product Offer (versioned│  Product Offer,
+                 │    offer_id/offer_revision, 8-state      │  many revisions,
+                 │    status, one active at a time — §5)    │  one active
+                 │  → Offer Approval (packaging final       │  (distinct from
+                 │    decision, elimfilters_approved_       │  Validation — §7)
+                 │    quantity — ebp_manufacturer_offer_    │
+                 │    approvals)                            │
                  └───────────────────┬─────────────────────┘
                                      ▼
                  ┌───────────────────────────────────────┐
                  │  04 · Engineering Compliance Validation │  Passport Version ×
-                 │  required_* vs offered_* per property   │  Manufacturer ×
-                 └───────────────────┬─────────────────────┘  Manufacturer Offer
+                 │  required_* vs offered_* per property,  │  Manufacturer Code ×
+                 │  bound to a specific Offer ID + Revision │  Offer ID × Revision
+                 └───────────────────┬─────────────────────┘
                                      ▼
                  ┌───────────────────────────────────────┐
                  │  05 · Manufacturer Selection            │  primary / secondary
-                 │  (FOB, packaging, MOQ, lead time,       │  / backup recommend.
-                 │   capacity, certs, evidence, quality)   │  ELIMFILTERS approves
-                 └───────────────────┬─────────────────────┘
+                 │  (FOB, packaging, MOQ, lead time,       │  / backup recommend.,
+                 │   capacity, certs, evidence, quality;    │  exact offer_id +
+                 │   only current-active + VALID offers)    │  offer_revision saved
+                 └───────────────────┬─────────────────────┘  ELIMFILTERS approves
                                      ▼
                  ┌───────────────────────────────────────┐
                  │  06 · Cost Engine                       │  FOB (from selected
@@ -116,18 +131,28 @@ chain** — see ADR-0005.
    one or more qualified Manufacturers and collects each Manufacturer's
    Product Offer: its `offered_*`/`actual_*` answer to every applicable
    `required_*` Passport property, plus FOB, MOQ, lead time, capacity,
-   recommended packaging quantity, and evidence. There is no supplier
-   tier modeled here — sourcing internal to the Manufacturer is its own
-   concern (ADR-0005).
-4. **Engineering Compliance Validation (04)** checks each (Passport Version
-   × Manufacturer × Manufacturer Offer) combination's `offered_*` values
-   against the Passport's `required_*` values and sets `compliance_status`
-   and an overall `VALID`/`INVALID` result. Nothing after this point may
-   reference an unvalidated combination.
-5. **Manufacturer Selection (05)** ranks `VALID` Offers by FOB, packaging,
-   MOQ, lead time, capacity, certifications, evidence, and quality history,
-   and recommends a primary, secondary, and backup Manufacturer.
-   ELIMFILTERS gives final approval.
+   its packaging proposal (`manufacturer_recommended_quantity`, proposed
+   dimensions, weights, protection, palletization), and evidence. A
+   Manufacturer may submit many versioned Offers for the same Passport
+   Version over time; only one is active at a time (ADR-0007). There is no
+   supplier tier modeled here — sourcing internal to the Manufacturer is
+   its own concern (ADR-0005). ELIMFILTERS separately records its own
+   **Offer Approval** decision per Offer — final approved packaging and
+   `elimfilters_approved_quantity` — in `ebp_manufacturer_offer_approvals`,
+   distinct from technical validation (ADR-0008).
+4. **Engineering Compliance Validation (04)** checks a specific (Passport
+   Version × Manufacturer Code × Offer ID × Offer Revision) combination's
+   `offered_*` values against the Passport's `required_*` values and sets
+   `compliance_status` and an overall `VALID`/`INVALID` result, bound
+   permanently to that exact Offer revision. Nothing after this point may
+   reference an unvalidated combination or a superseded/expired revision.
+5. **Manufacturer Selection (05)** ranks, among Offers that are both the
+   current active revision for their (Passport Version × Manufacturer) and
+   hold a current `VALID` result within its effectiveness window, by FOB,
+   packaging, MOQ, lead time, capacity, certifications, evidence, and
+   quality history — and recommends a primary, secondary, and backup
+   Manufacturer, recording the exact `offer_id`/`offer_revision` selected
+   for each tier. ELIMFILTERS gives final approval.
 6. **Cost Engine (06)** computes landed cost from the approved Offer's FOB
    price plus freight, duties, and overhead — it does not decompose the
    Manufacturer's internal cost structure.
@@ -153,7 +178,12 @@ deliverable):
 - `/api/ebp/passports` — Product Engineering Passport CRUD/read (Phase 1)
 - `/api/ebp/manufacturers` — Manufacturer Registry (Phase 2)
 - `/api/ebp/intake/batches` — Manufacturer Request Batch (Phase 3)
-- `/api/ebp/intake/offers` — Manufacturer Product Offer (Phase 3)
+- `/api/ebp/intake/offers` — Manufacturer Product Offer, versioned (Phase 3)
+  — reads/writes must always address a specific `offer_id`/`offer_revision`,
+  never "the Offer" for a Manufacturer/Passport pair.
+- `/api/ebp/intake/offer-approvals` — Offer Approval decisions against a
+  specific Offer revision (Phase 3, `ebp_manufacturer_offer_approvals`),
+  distinct from `/api/ebp/compliance` below.
 - `/api/ebp/compliance` — Engineering Compliance Validation (Phase 4)
 - `/api/ebp/selection` — Manufacturer Selection (Phase 5)
 - `/api/ebp/cost` — Cost Engine (Phase 6)
@@ -172,10 +202,13 @@ the authority on its actual endpoints once written and approved.
   validation status must be attributable (who/what/when) and retained, not
   overwritten in place.
 - **Confidentiality by construction:** any data path that can reach
-  Distributor Portal must be checked against `BUSINESS_RULES.md` §10-§11 at
+  Distributor Portal must be checked against `BUSINESS_RULES.md` §11-§12 at
   design time — manufacturer identity, `EFM-XXXX`, FOB, margin, and
-  confidential engineering are excluded at the data-shape level, not
-  filtered late in the UI layer.
+  Passport note fields are excluded at the data-shape level, not filtered
+  late in the UI layer. The same allow-list-projection discipline applies
+  to every role-specific Passport view (Manufacturer vs. internal
+  ELIMFILTERS vs. Distributor), per ADR-0009 — a generic "serialize the
+  Passport" response is never an acceptable implementation for any role.
 - **Backward compatibility:** no phase may alter existing catalog tables'
   schema or semantics. EBP reads from and adds foreign keys to the existing
   catalog; it does not migrate it.
@@ -202,3 +235,8 @@ traceability:
 - How is `EFM-XXXX` code collision-avoidance and generation handled
   (random with uniqueness check, sequential with obfuscation, etc.)? Not
   decided in Phase 0 — a concrete detail for Phase 2's spec approval.
+- Does Manufacturer Selection (Phase 5) require an Offer Approval record
+  (§7 / ADR-0008) in addition to a current `VALID` validation before an
+  Offer is even *recommended*, or is Offer Approval only required before
+  an order is actually fulfilled against it? Not decided in this
+  correction round — flagged in `phases/phase-05-manufacturer-selection.md`.

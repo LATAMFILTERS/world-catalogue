@@ -14,7 +14,8 @@ Do not mix EBP commits with unrelated World Catalogue/Knowledge System
 commits in the same commit — keep history attributable per project even when
 sharing a branch.
 
-## 1.1 Domain Model Terms (binding, corrected 2026-07-13)
+## 1.1 Domain Model Terms (binding, corrected 2026-07-13, extended second
+round 2026-07-13)
 
 The MVP has exactly three principal entities: **ELIMFILTERS**,
 **Manufacturer**, and **Distributor**. A raw-material/component **Supplier**
@@ -27,12 +28,22 @@ is not a mandatory MVP entity — see `BUSINESS_RULES.md` §1 and ADR-0005 in
   `manufacturer_code` (`EFM-XXXX`) per ADR-0006.
 - Build or expose any data path that lets Distributor-facing code (Phase 8
   or later) receive manufacturer identity, `EFM-XXXX`, FOB price, margin,
-  or confidential engineering notes — this must be excluded at the data
-  shape produced by Pricing Engine (Phase 7), not filtered after the fact.
+  Offer/offer-revision identifiers, or either Passport note field
+  (`manufacturer_instruction_notes`, `internal_engineering_notes`) — this
+  must be excluded at the data shape produced by Pricing Engine (Phase 7),
+  not filtered after the fact.
+- Model or enforce "exactly one Offer per Manufacturer and Passport" as a
+  storage constraint — a Manufacturer may submit many versioned Offers;
+  exactly one is active at a time, per ADR-0007.
+- Conflate Engineering Compliance Validation (technical compliance, Phase
+  4) with Offer Approval (ELIMFILTERS' commercial/operational acceptance
+  of an Offer's packaging, Phase 3, `ebp_manufacturer_offer_approvals`) —
+  they are separate gates, per ADR-0008.
 
-If a future request seems to reintroduce a Supplier concept or a
-manufacturer-identity leak toward Distributor Portal, stop and confirm with
-the project owner before proceeding — these are both points that have
+If a future request seems to reintroduce a Supplier concept, a
+manufacturer-identity leak toward Distributor Portal, a single-offer
+constraint, or a merger of Validation and Approval, stop and confirm with
+the project owner before proceeding — these are all points that have
 already been explicitly corrected once.
 
 ## 2. Phase Discipline (the core rule)
@@ -125,7 +136,7 @@ Once a phase reaches implementation (post-approval):
   introducing new tooling.
 - New EBP backend logic should include a way to verify it against seed/test
   data before it touches real catalog or pricing data, per the "no invented
-  data in shared environments" rule in `BUSINESS_RULES.md` §12.
+  data in shared environments" rule in `BUSINESS_RULES.md` §13.
 
 ## 9. Session Startup
 

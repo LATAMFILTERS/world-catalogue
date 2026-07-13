@@ -1,16 +1,26 @@
 # Phase 08 — Distributor Portal
 
-**Status:** Spec Drafted (revised, correction round 2026-07-13 — not
-approved; no implementation authorized)
+**Status:** Spec Drafted (revised, second correction round 2026-07-13 —
+not approved; no implementation authorized)
 **Depends on:** Phases 01, 07
 **Blocks:** Phase 09
 
-**Correction notice:** This revision makes explicit, as a first-class
-requirement (not an implied consequence), that a Distributor account must
-never receive Manufacturer identity, `EFM-XXXX` code, FOB price, margin, or
-confidential engineering data — under any field, export, or API response.
-This is enforced at the data Pricing Engine (Phase 7) produces for this
-phase, not by portal-side filtering alone. See ADR-0006 in `DECISIONS.md`.
+**Correction notice (first round):** This revision makes explicit, as a
+first-class requirement (not an implied consequence), that a Distributor
+account must never receive Manufacturer identity, `EFM-XXXX` code, FOB
+price, margin, or confidential engineering data — under any field, export,
+or API response. This is enforced at the data Pricing Engine (Phase 7)
+produces for this phase, not by portal-side filtering alone. See ADR-0006
+in `DECISIONS.md`.
+
+**Correction notice (second round, this revision):** `BUSINESS_RULES.md`
+section numbers are updated (Distributor Portal Rules is now §11, Order
+Management Rules is now §12). The Passport's single "confidential
+manufacturing notes" field is now two fields,
+`manufacturer_instruction_notes` and `internal_engineering_notes`
+(ADR-0009) — a Distributor must never see either, and neither field is
+ever part of the identification-only projection Phase 1 exposes to
+Pricing Engine's output.
 
 ## Objective
 
@@ -25,15 +35,18 @@ produced a SKU or what it costs ELIMFILTERS.
 - Distributor account model: identity, tier, region/currency (drives which
   Pricing Engine output applies).
 - Catalog browsing scoped to `VALID` + priced Passports only
-  (`BUSINESS_RULES.md` §10) — no draft, unvalidated, or unpriced products
+  (`BUSINESS_RULES.md` §11) — no draft, unvalidated, or unpriced products
   visible under any circumstance.
 - **Confidentiality enforcement as a first-class requirement:** no
   Distributor-facing view, export, or API response may ever contain
   Manufacturer identity (name or `EFM-XXXX` code), FOB price, margin,
-  landed-cost breakdown, or confidential engineering/manufacturing notes.
-  A Distributor sees the product (per its public-safe Passport
-  identification fields), its packaging as ELIMFILTERS-approved, and its
-  final sell price — nothing else from the internal chain.
+  landed-cost breakdown, Offer/Offer-revision identifiers, or either
+  Passport note field (`manufacturer_instruction_notes` or
+  `internal_engineering_notes`). A Distributor sees the product (per its
+  public-safe Passport identification fields), its packaging as
+  ELIMFILTERS-approved (`elimfilters_approved_quantity` and final
+  packaging from Offer Approval, Phase 3), and its final sell price —
+  nothing else from the internal chain.
 - Read-only integration with Pricing Engine output; the portal holds no
   independent pricing logic.
 - As a distinct, authenticated surface — not an extension of the public,
@@ -77,20 +90,22 @@ produced a SKU or what it costs ELIMFILTERS.
 
 ## Business Rules Enforced
 
-- `BUSINESS_RULES.md` §10 in full, including the explicit confidentiality
+- `BUSINESS_RULES.md` §11 in full, including the explicit confidentiality
   list (manufacturer identity, `EFM-XXXX`, FOB, margin, landed-cost
-  breakdown, confidential engineering notes).
+  breakdown, Offer/revision identifiers, both Passport note fields).
 - ADR-0006 (confidentiality enforced at the Pricing Engine → Distributor
-  Portal data boundary).
+  Portal data boundary) and ADR-0009 (note-field split; neither note field
+  is ever Distributor-visible).
 
 ## Integration Points
 
-- Reads Phase 1 (Passport display data — identification fields only),
-  Phase 7 (price, already stripped of confidential fields), Phase 4
-  (validity, transitively via what Phase 7 will even have priced).
+- Reads Phase 1 (Passport display data — identification fields only, never
+  either note field), Phase 7 (price, already stripped of confidential
+  fields), Phase 4 (validity, transitively via what Phase 7 will even have
+  priced).
 - Read by: Phase 9 (order placement happens from within this portal
   surface, and the same confidentiality boundary applies to any
-  distributor-visible order record, per `BUSINESS_RULES.md` §11).
+  distributor-visible order record, per `BUSINESS_RULES.md` §12).
 
 ## Deliverables
 
@@ -109,9 +124,10 @@ produced a SKU or what it costs ELIMFILTERS.
   currency, and sees zero draft/unvalidated/unpriced products under any
   navigation path.
 - An audit of every Phase 8 API response and exported view confirms zero
-  fields carrying manufacturer identity, `EFM-XXXX`, FOB, margin, or
-  confidential engineering notes — checked at the data-shape level, not
-  only the rendered UI.
+  fields carrying manufacturer identity, `EFM-XXXX`, FOB, margin, Offer/
+  revision identifiers, or either Passport note field
+  (`manufacturer_instruction_notes`, `internal_engineering_notes`) —
+  checked at the data-shape level, not only the rendered UI.
 
 ## Risks
 

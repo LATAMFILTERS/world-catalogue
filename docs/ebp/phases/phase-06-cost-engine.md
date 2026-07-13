@@ -5,18 +5,24 @@ approved; no implementation authorized)
 **Depends on:** Phases 02, 05
 **Blocks:** Phase 07
 
-**Correction notice:** This revision replaces the original "materials cost
-from Supplier data + conversion cost from Manufacturer data" breakdown with
-a single, simpler input: the **approved Manufacturer Offer's FOB price**
-(Phase 5) plus freight, duties, and overhead. Cost Engine does not
-decompose or re-derive a Manufacturer's internal cost structure — FOB is
-the Manufacturer's own commercial figure. See ADR-0005 in `DECISIONS.md`.
+**Correction notice (first round):** This revision replaces the original
+"materials cost from Supplier data + conversion cost from Manufacturer
+data" breakdown with a single, simpler input: the **approved Manufacturer
+Offer's FOB price** (Phase 5) plus freight, duties, and overhead. Cost
+Engine does not decompose or re-derive a Manufacturer's internal cost
+structure — FOB is the Manufacturer's own commercial figure. See ADR-0005
+in `DECISIONS.md`.
+
+**Correction notice (second round, this revision):** Because a
+Manufacturer's Offer is now versioned (ADR-0007), Cost Engine records the
+exact `offer_revision` alongside `offer_id` for full audit traceability
+back to the specific Offer revision that was costed.
 
 ## Objective
 
 Compute landed cost for an approved (Passport × Manufacturer × Manufacturer
-Offer) selection, as the single authoritative source of cost data for every
-downstream module (`BUSINESS_RULES.md` §8).
+Offer revision) selection, as the single authoritative source of cost data
+for every downstream module (`BUSINESS_RULES.md` §9).
 
 ## Scope
 
@@ -26,7 +32,7 @@ downstream module (`BUSINESS_RULES.md` §8).
   allocation.
 - Versioned cost records per (Passport, Manufacturer, effective date
   range) — a new calculation supersedes, does not overwrite, the prior one
-  (`BUSINESS_RULES.md` §8).
+  (`BUSINESS_RULES.md` §9).
 - Cost Engine operates only on `VALID`, ELIMFILTERS-approved selections
   (hard gate, transitively via Phase 5's approval step).
 
@@ -50,23 +56,24 @@ downstream module (`BUSINESS_RULES.md` §8).
 ## Key Entities / Data Model (sketch, not final)
 
 - `ebp_cost_calculations` — `passport_id`, `manufacturer_code`,
-  `offer_id` (the specific approved Offer this cost is based on),
-  `fob_price` (copied from the Offer at calculation time, for
-  traceability even if the Offer later changes), `freight_cost`,
+  `offer_id` + `offer_revision` (the specific approved Offer revision this
+  cost is based on — both stored explicitly per ADR-0007 for audit
+  traceability), `fob_price` (copied from the Offer at calculation time,
+  for traceability even if the Offer later changes), `freight_cost`,
   `duties_cost`, `overhead_allocation`, `landed_cost_total`, `currency`,
   `effective_from`, `effective_to` (null = current), `superseded_by`.
 
 ## Business Rules Enforced
 
-- `BUSINESS_RULES.md` §8 in full.
+- `BUSINESS_RULES.md` §9 in full.
 
 ## Integration Points
 
-- Reads Phase 2, Phase 5 (approved Offer and its FOB), Phase 4 (gate check,
-  transitively via Phase 5).
+- Reads Phase 2, Phase 5 (approved Offer revision and its FOB), Phase 4
+  (gate check, transitively via Phase 5).
 - Read by: Phase 7 (Pricing derives from this exclusively), Phase 9
   (historical cost may inform order-level reporting, though Order
-  Management does not recompute cost per `BUSINESS_RULES.md` §11).
+  Management does not recompute cost per `BUSINESS_RULES.md` §12).
 
 ## Deliverables
 

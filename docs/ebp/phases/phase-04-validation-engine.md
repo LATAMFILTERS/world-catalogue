@@ -6,14 +6,27 @@ approved; no implementation authorized)
 **Blocks:** Phases 05, 06, 07, 08, 09 (transitively — everything downstream
 requires a `VALID` result)
 
-**Correction notice:** This phase was originally drafted as a generic
-"Validation Engine" operating on `Passport × Manufacturer × Supplier`. That
-model is corrected: this phase operates on **Passport Version ×
-Manufacturer × Manufacturer Offer**, comparing the Offer's `offered_*`
-values directly against the Passport's `required_*` values. There is no
-Supplier tier to evaluate. See ADR-0005 in `DECISIONS.md`. The phase is
-renamed **Engineering Compliance Validation** to reflect this precisely;
-the file name (`phase-04-validation-engine.md`) is unchanged.
+**Correction notice (first round):** This phase was originally drafted as a
+generic "Validation Engine" operating on `Passport × Manufacturer ×
+Supplier`. That model is corrected: this phase operates on **Passport
+Version × Manufacturer × Manufacturer Offer**, comparing the Offer's
+`offered_*` values directly against the Passport's `required_*` values.
+There is no Supplier tier to evaluate. See ADR-0005 in `DECISIONS.md`. The
+phase is renamed **Engineering Compliance Validation** to reflect this
+precisely; the file name (`phase-04-validation-engine.md`) is unchanged.
+
+**Correction notice (second round, this revision):** Because a
+Manufacturer may now submit many versioned Offers for the same Passport
+Version (ADR-0007), this phase's operating tuple is made explicit:
+**Passport Version × Manufacturer Code × Offer ID × Offer Revision** — a
+validation result is permanently bound to one specific Offer revision, not
+just "the Manufacturer's Offer." A new Offer revision, an Offer expiring,
+or a Manufacturer status change all independently invalidate a prior
+result, in addition to a Passport revision change. This phase remains
+distinct from the new **Offer Approval** entity (Phase 3,
+`ebp_manufacturer_offer_approvals`) — Validation is technical-compliance
+only; it does not judge commercial/packaging acceptability. See ADR-0007
+and ADR-0008.
 
 ## Objective
 
@@ -34,19 +47,25 @@ and being correct.
 - Overall combination validity, per `BUSINESS_RULES.md` §6: the
   Manufacturer must be `QUALIFIED` (or `CONDITIONAL` with its condition
   satisfied) for the Passport's family, **and** every `required_*`
-  property must have a compliant `offered_*`/`actual_*` value — no waivers
-  by default.
-- Immutable, versioned validation results — a change to any input
-  (Passport `engineering_revision`, Manufacturer qualification status, or
-  the Offer itself) invalidates the prior result and requires
-  re-validation, without mutating history.
+  property must have a compliant `offered_*`/`actual_*` value on the
+  specific Offer revision evaluated — no waivers by default.
+- Immutable, versioned validation results — any of a Passport
+  `engineering_revision` change, a new Offer revision, a Manufacturer
+  qualification status change, or the Offer's own `expires_at` passing
+  invalidates the prior result and requires re-validation, without
+  mutating history.
 - An API/mechanism for downstream modules to query "is this (Passport
-  Version, Manufacturer, Offer) combination currently `VALID`."
+  Version, Manufacturer Code, Offer ID, Offer Revision) combination
+  currently `VALID`."
 
 **Out of scope:**
 - Deciding *which* Manufacturer/Offer to use when multiple are `VALID`
-  (Phase 5) — this phase only answers "is this specific Offer valid," not
-  "which is best."
+  (Phase 5) — this phase only answers "is this specific Offer revision
+  valid," not "which is best."
+- Whether ELIMFILTERS commercially/operationally accepts a `VALID` Offer's
+  packaging and terms — that is Offer Approval (Phase 3,
+  `ebp_manufacturer_offer_approvals`), a separate decision this phase does
+  not make (ADR-0008).
 - Cost or price implications of validity (Phases 6-7).
 - Any evaluation of a Supplier or raw-material tier — this does not exist
   in the model (ADR-0005).
@@ -64,9 +83,12 @@ and being correct.
 
 - `ebp_compliance_validations` — one row per validation attempt:
   `passport_id`, `passport_version` (`engineering_revision`),
-  `manufacturer_code`, `offer_id`, `result` (`VALID`/`INVALID`),
-  `field_results` (structured — one compliance_status per evaluated
-  `required_*`/`offered_*` pair), `evaluated_at`, `superseded_by`.
+  `manufacturer_code`, `offer_id`, `offer_revision` (both stored
+  explicitly, per ADR-0007, for human-readable audit traceability even
+  though `offer_id` alone already pins the exact revision), `result`
+  (`VALID`/`INVALID`), `field_results` (structured — one
+  compliance_status per evaluated `required_*`/`offered_*` pair),
+  `evaluated_at`, `superseded_by`.
 - Writing a `field_results` entry here is also how
   `ebp_manufacturer_offer_engineering_responses.compliance_status` (Phase
   3's table) gets populated — this phase is the only writer of that
@@ -79,10 +101,11 @@ and being correct.
 
 - `BUSINESS_RULES.md` §6 in full. This phase's entire purpose is
   implementing that section.
-- `BUSINESS_RULES.md` §12 ("no phase may bypass an earlier phase's gate";
-  "no Supplier dependency in the mandatory MVP chain") — this phase is the
-  mechanism that makes the first half enforceable for every phase after
-  it, and by construction cannot reintroduce the second.
+- `BUSINESS_RULES.md` §13 ("no phase may bypass an earlier phase's gate";
+  "no Supplier dependency in the mandatory MVP chain"; "no single-offer-
+  per-manufacturer restriction") — this phase is the mechanism that makes
+  the first rule enforceable for every phase after it, and by
+  construction cannot reintroduce the second or third.
 
 ## Integration Points
 
@@ -119,7 +142,7 @@ and being correct.
 
 - **Risk: this is the highest-consequence phase to get wrong.** Every
   downstream module trusts its output unconditionally per
-  `BUSINESS_RULES.md` §12. A logic bug here (e.g., a required field
+  `BUSINESS_RULES.md` §13. A logic bug here (e.g., a required field
   silently skipped, or a Supplier-shaped shortcut reintroduced) propagates
   directly into cost, pricing, and distributor-visible data. Recommend this
   phase gets the most scrutiny/testing of the entire roadmap before

@@ -2,7 +2,7 @@
 
 Architecture Decision Record (ADR) log. Each entry is append-only — a
 reversed decision gets a new entry that supersedes the old one; the old
-entry is not deleted or edited (auditability, per `BUSINESS_RULES.md` §12).
+entry is not deleted or edited (auditability, per `BUSINESS_RULES.md` §13).
 
 Format: `ADR-NNNN` · Date · Status (`Proposed` / `Accepted` / `Superseded by
 ADR-XXXX`) · Context · Decision · Consequences.
@@ -93,7 +93,7 @@ mode in ad hoc spreadsheet-based costing).
 landed cost. Pricing Engine (Phase 7) is the only module permitted to
 compute sell price. All other modules (Distributor Portal, Order
 Management, Manufacturer Selection) consume these outputs and do not
-recompute them. Codified in `BUSINESS_RULES.md` §8-9.
+recompute them. Codified in `BUSINESS_RULES.md` §9-10.
 
 **Consequences:** Phase 6 and 7 become hard dependencies for any module that
 displays a number to a distributor. This is intentional — it trades
@@ -200,4 +200,192 @@ commercially sensitive and must never reach a Distributor.
 point forward must treat `manufacturer_code` (not `legal_name`) as the
 join key, and must treat "is this field distributor-visible" as an
 explicit, reviewed decision per field, not a default. This is codified in
-`BUSINESS_RULES.md` §10 (Distributor Portal Rules).
+`BUSINESS_RULES.md` §11 (Distributor Portal Rules).
+
+---
+
+## ADR-0007 — A Manufacturer may submit many versioned Offers per Passport Version; exactly one stays active
+
+**Date:** 2026-07-13
+**Status:** Accepted — **supersedes** the "exactly one Offer per (Manufacturer,
+Passport version)" rule stated in the first correction round
+(`BUSINESS_RULES.md` §5 as revised 2026-07-13, and
+`phases/phase-03-supplier-portal.md`).
+
+**Context:** The first correction round (ADR-0005) fixed the domain model
+but still assumed a plant submits exactly one Offer per (Manufacturer,
+Passport Version) — as if a quote, once given, were final. In practice a
+plant re-quotes: it revises pricing, corrects an engineering answer,
+responds to ELIMFILTERS feedback after a rejected review, or requotes
+capacity/lead time months later for the same Passport Version. Treating
+this as a single mutable record would either silently overwrite prior
+commercial terms (destroying the audit trail Engineering Compliance
+Validation and Manufacturer Selection rely on) or force an artificial new
+Passport Version for what is really a commercial re-quote, not an
+engineering change.
+
+**Decision:**
+1. There may be **many** `Manufacturer Product Offer` records for the same
+   (`passport_version`, `manufacturer_code`) pair. A new Offer is a new
+   **revision**, never an overwrite of a prior one.
+2. Every Offer record carries: `offer_id` (unique per revision row),
+   `offer_revision` (sequence number within the lineage for that
+   Manufacturer/Passport Version), `status`, `submitted_at`,
+   `effective_from`, `expires_at` (nullable), `supersedes_offer_id`
+   (nullable — the prior `offer_id` this revision replaces, null for the
+   first revision in a lineage), and `created_by`.
+3. The Offer status lifecycle has exactly eight states: `DRAFT`,
+   `SUBMITTED`, `UNDER_REVIEW`, `VALIDATED`, `REJECTED`, `SUPERSEDED`,
+   `EXPIRED`, `WITHDRAWN`. `DRAFT` is manufacturer-side work-in-progress,
+   not yet visible to ELIMFILTERS as a submission.
+4. At any moment, **at most one** Offer among all revisions for a given
+   (`passport_version`, `manufacturer_code`) pair may hold an "active"
+   status (`SUBMITTED`, `UNDER_REVIEW`, or `VALIDATED`). Submitting a new
+   revision moves the prior active Offer to `SUPERSEDED` in the same
+   transaction — it is never left active alongside the new one, and it is
+   never deleted or edited in place.
+5. Engineering Compliance Validation (Phase 4) and Manufacturer Selection
+   (Phase 5) must reference a **specific** `offer_id` and `offer_revision`,
+   never just a Manufacturer and a Passport. A validation result or a
+   selection decision is permanently bound to the exact revision it
+   evaluated.
+
+**Consequences:**
+- `BUSINESS_RULES.md` §5, §6, and §8 (renumbered — see the `CHANGELOG.md`
+  entry for this correction round), and `phases/phase-03`, `phase-04`,
+  `phase-05`, `phase-06` are updated to reflect versioned Offers.
+- `ebp_compliance_validations` and `ebp_selection_recommendations` /
+  `ebp_selection_approvals` must store `offer_id` **and** `offer_revision`
+  explicitly, even though `offer_id` alone already pins an exact revision
+  under this model — the redundant `offer_revision` column exists for
+  human-readable audit traceability, not because it is strictly required
+  for uniqueness.
+- A Passport revision, a Manufacturer status change, or an Offer's own
+  `expires_at` passing all independently invalidate whatever validation
+  result depended on the now-stale combination, per the rule already
+  codified in `BUSINESS_RULES.md` §6 — this ADR does not change that
+  invalidation rule, it only makes explicit which exact Offer revision
+  each result was ever bound to.
+
+---
+
+## ADR-0008 — Packaging data ownership is split across PEP, Offer, and a new Offer Approval entity
+
+**Date:** 2026-07-13
+**Status:** Accepted — **corrects** `BUSINESS_RULES.md` §3.1 and
+`phases/phase-01-product-engineering-passport.md` as revised in the first
+correction round, which incorrectly described `manufacturer_recommended_
+quantity` and `elimfilters_approved_quantity` as Passport-owned fields.
+
+**Context:** The Product Engineering Passport (PEP) is defined,
+project-wide, as ELIMFILTERS' locked requirement — never editable by a
+Manufacturer (`BUSINESS_RULES.md` §3). The first correction round's
+packaging rule nonetheless described three quantity fields
+(`elimfilters_target_quantity`, `manufacturer_recommended_quantity`,
+`elimfilters_approved_quantity`) as if all three lived on the Passport.
+That is inconsistent with the Passport's own definition: a Manufacturer's
+recommended quantity is that Manufacturer's own proposal and varies by
+Manufacturer, so it cannot be a single locked field on a record ELIMFILTERS
+alone owns. Likewise, ELIMFILTERS' final approved quantity is a decision
+made *about* a specific Offer, after review — it is not a requirement set
+in advance.
+
+**Decision:**
+1. The PEP (`ebp_passport_packaging`, Phase 1) holds **only**
+   ELIMFILTERS' requirements: `individual_box_required`,
+   `protective_bag_required`, `separator_required`,
+   `master_carton_required`, `elimfilters_target_quantity`, target
+   dimensions/restrictions where they exist, and any ELIMFILTERS-required
+   packaging instructions. Nothing here is Manufacturer- or
+   decision-specific.
+2. The Manufacturer Product Offer (`ebp_manufacturer_offers` / its
+   packaging sub-record, Phase 3) holds that Manufacturer's own
+   **proposal**: `manufacturer_recommended_quantity`, proposed box
+   dimensions, net and gross weight, proposed units per box, proposed
+   protection method, proposed palletization, and observations/deviations.
+   This proposal belongs to the specific Offer revision (ADR-0007) that
+   submitted it.
+3. A new entity, **`ebp_manufacturer_offer_approvals`**, holds
+   ELIMFILTERS' decision about a specific Offer's packaging and commercial/
+   technical acceptability: `offer_id` (+ `offer_revision`), approval
+   status, final approved packaging, `elimfilters_approved_quantity`,
+   whether a proposed deviation was accepted or rejected, the responsible
+   approver, the reason, the date, and its own append-only history. This
+   entity is distinct from Engineering Compliance Validation (Phase 4):
+   Validation determines technical compliance with `required_*` fields;
+   Approval determines whether ELIMFILTERS commercially and operationally
+   accepts that Offer's proposal. A technically `VALID` Offer is **not**
+   automatically an approved Offer, and is not automatically a selected
+   Manufacturer (Phase 5's own approval step, `ebp_selection_approvals`,
+   remains a separate, later decision about *which* Offer is sourced
+   from).
+4. `manufacturer_recommended_quantity` and `elimfilters_approved_quantity`
+   are removed from the Passport data model everywhere they appear.
+
+**Consequences:**
+- `phases/phase-01-product-engineering-passport.md` §3 (Required Packaging)
+  is corrected to list only ELIMFILTERS-owned requirement fields.
+- `phases/phase-03-supplier-portal.md` gains the Offer's packaging-proposal
+  fields and the new `ebp_manufacturer_offer_approvals` entity.
+- `BUSINESS_RULES.md` §3.1 is rewritten to reflect the three-way split
+  (PEP / Offer / Approval) instead of describing all three quantities as
+  Passport fields.
+- A new `BUSINESS_RULES.md` section, "Manufacturer Offer Approval Rules"
+  (§7), documents this entity as its own gate, separate from both
+  Validation (§6) and Selection (§8).
+- Whether Manufacturer Selection (§8) requires an Offer Approval record in
+  addition to a current `VALID` validation before it can even be
+  *recommended* (vs. only before an order is fulfilled against it) is not
+  decided by this ADR — flagged as an open question in
+  `phases/phase-05-manufacturer-selection.md`.
+
+---
+
+## ADR-0009 — Passport notes are split into manufacturer-visible instructions and ELIMFILTERS-internal engineering notes
+
+**Date:** 2026-07-13
+**Status:** Accepted — **replaces** the single "confidential manufacturing
+notes" field described in `phases/phase-01-product-engineering-passport.md`
+and `BUSINESS_RULES.md` §3 as revised in the first correction round.
+
+**Context:** The original field, "confidential manufacturing notes," was
+treated as a single opaque blob without a defined audience. In practice two
+different audiences need two different things: a Manufacturer that has been
+assigned a Passport in a Request Batch needs certain technical instructions
+to quote and build correctly; ELIMFILTERS engineering staff separately keep
+notes that must never leave ELIMFILTERS, including notes about the
+Manufacturer relationship itself. Collapsing both into one field makes it
+structurally easy to leak the second category to a Manufacturer, or the
+first category to a Distributor, through a naive "serialize the whole
+Passport" API implementation.
+
+**Decision:**
+1. The single field is replaced by two fields:
+   - `manufacturer_instruction_notes` — ELIMFILTERS' technical instructions
+     a plant needs to quote or produce correctly. Visible only to the
+     Manufacturer(s) a Request Batch containing this Passport was actually
+     sent to, and to authorized ELIMFILTERS staff. Never visible to
+     Distributors or the public.
+   - `internal_engineering_notes` — ELIMFILTERS-internal information.
+     Never visible to any Manufacturer or Distributor. Only authorized
+     internal roles.
+2. No API endpoint may return a generic serialization of "the Passport"
+   that includes either field by default. Each consumer (Manufacturer
+   Intake Portal, internal engineering tooling, Distributor/Pricing-facing
+   surfaces) must be served by its own explicit, reviewed
+   projection/DTO — an allow-list per role, not a single shared shape with
+   fields hidden after the fact. This follows the same allow-list
+   discipline already required of Pricing Engine's Distributor-facing
+   projection (ADR-0006).
+
+**Consequences:**
+- `phases/phase-01-product-engineering-passport.md` §2 (Required
+  Engineering) lists both fields explicitly in place of the old single
+  field.
+- `phases/phase-03-supplier-portal.md`'s open question "does a Manufacturer
+  see confidential manufacturing notes" is resolved: it sees
+  `manufacturer_instruction_notes` only, scoped to Passports it was
+  actually sent, and never sees `internal_engineering_notes`.
+- `PLATFORM_ARCHITECTURE.md` §6 (Confidentiality by construction) is
+  extended to name role-specific Passport projections as a required
+  pattern, not just a Distributor-facing one.

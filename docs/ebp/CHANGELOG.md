@@ -134,3 +134,116 @@ every file below documents its own correction notice inline.
   (describing the correction itself or the explicit MVP exclusion).
 - **No production code was written in this change.** Phase 0 remains
   unapproved; Phases 01-09 remain `Spec Drafted`, not `Spec Approved`.
+
+## 2026-07-13 — Phase 0 second correction round: Offer versioning, packaging ownership, note-field split, Offer Approval entity
+
+**Phase 0 was reviewed again and still not approved.** The project owner
+identified three further modeling gaps left by the first correction round:
+(1) Manufacturer Product Offer was modeled as exactly one record per
+(Manufacturer, Passport Version), with no way to represent a re-quote or
+correction; (2) Manufacturer-proposed and ELIMFILTERS-approved packaging
+quantities were incorrectly described as Passport fields, when the
+Passport must hold only ELIMFILTERS' own requirements; (3) a single
+undifferentiated "confidential manufacturing notes" field conflated
+Manufacturer-visible instructions with ELIMFILTERS-internal-only
+information, and Engineering Compliance Validation was conflated with a
+distinct commercial/operational approval decision. This entry corrects all
+three. No prior history was deleted; the correction is recorded via
+ADR-0007, ADR-0008, and ADR-0009 in `DECISIONS.md`.
+
+- **`DECISIONS.md`** — added ADR-0007 (Manufacturer Product Offer
+  versioning: many Offers per Passport Version × Manufacturer, an
+  eight-state status lifecycle, exactly one active at a time, Validation
+  and Selection bound to a specific `offer_id`/`offer_revision`);
+  ADR-0008 (packaging data ownership split across the PEP,
+  the Offer, and a new `ebp_manufacturer_offer_approvals` entity; Offer
+  Approval is distinct from Engineering Compliance Validation); ADR-0009
+  (the single "confidential manufacturing notes" field is replaced by
+  `manufacturer_instruction_notes` and `internal_engineering_notes`, each
+  behind its own role-specific projection). Also fixed a stale `§8-9` cross-
+  reference in ADR-0004 and a stale `§12` reference in the file header,
+  both shifted by the new §7 insertion below.
+- **`BUSINESS_RULES.md`** — full rewrite to a 13-section structure: new
+  §7 "Manufacturer Offer Approval Rules"; §3.1 rewritten to the
+  PEP/Offer/Approval three-way packaging split; §3's note-field rule
+  replaced with the two-field split and a role-specific-projection
+  requirement; §5 (Manufacturer Intake) rewritten with the full Offer
+  status lifecycle and the single-active-revision rule; §6 (Validation)
+  rewritten to bind results to a specific `offer_id`/`offer_revision`;
+  §8 (Selection, was §7) rewritten to gate on current-active + `VALID`-
+  within-window Offers and to record exact `offer_id`/`offer_revision`
+  per tier; §9-§12 (Cost/Pricing/Distributor/Order, renumbered) updated
+  for the same traceability and note-field exclusions; §13 (Cross-Cutting)
+  gained an explicit "no single-offer-per-manufacturer restriction" rule.
+- **`PLATFORM_ARCHITECTURE.md`** — module map redrawn: Phase 03's box now
+  shows versioned Offers and the new Offer Approval step; Phase 04's box
+  is explicit about the Offer ID + Offer Revision binding; Phase 05's box
+  notes the current-active + `VALID` filter and exact offer id/revision
+  recording. Data Flow Summary points 3-5 rewritten to match. API surface
+  gained `/api/ebp/intake/offer-approvals`. Non-functional requirements
+  section extended to require role-specific Passport projections for
+  every audience, not just Distributor Portal. Open questions gained the
+  Offer-Approval-vs-Selection-ordering question.
+- **`phases/phase-01-product-engineering-passport.md`** — Required
+  Packaging (§3) rewritten to list only ELIMFILTERS-owned requirement
+  fields (`manufacturer_recommended_quantity` and
+  `elimfilters_approved_quantity` removed); the single note field
+  replaced with `manufacturer_instruction_notes` and
+  `internal_engineering_notes`; the prior open question on Manufacturer
+  visibility of manufacturing notes marked resolved.
+- **`phases/phase-03-supplier-portal.md`** — full rewrite: Manufacturer
+  Product Offer is now versioned with the full status lifecycle,
+  `offer_id`/`offer_revision`/`supersedes_offer_id`; Offer's packaging
+  fields are explicitly its own proposal (`manufacturer_recommended_
+  quantity` and related fields); new `ebp_manufacturer_offer_approvals`
+  entity and its full field set documented; prior open question on
+  Manufacturer visibility of confidential notes marked resolved; new open
+  questions added on Request Batch deadlines, Offer-Approval-vs-Selection
+  ordering, and Approval authorization.
+- **`phases/phase-04-validation-engine.md`** — Validation's operating tuple
+  made explicit as Passport Version × Manufacturer Code × Offer ID × Offer
+  Revision; re-validation triggers extended to include a new Offer
+  revision and Offer expiry, not just Passport/Manufacturer-status
+  changes; `ebp_compliance_validations` gains an explicit `offer_revision`
+  column; scope note added distinguishing Validation from the new Offer
+  Approval entity; section references updated to §6/§13.
+- **`phases/phase-05-manufacturer-selection.md`** — candidate filter
+  rewritten to require the current active revision **and** a current
+  `VALID` result within its effectiveness window; recommendation records
+  gained explicit `offer_revision` fields alongside each tier's
+  `offer_id`; new risk and open question added on whether Selection
+  should also require Offer Approval before recommending, not just before
+  fulfillment; section references updated to §8.
+- **`phases/phase-06-cost-engine.md`** — `ebp_cost_calculations` gains an
+  explicit `offer_revision` column alongside `offer_id`; section
+  references updated to §9/§12.
+- **`phases/phase-07-pricing-engine.md`** — section references updated
+  again (Pricing Engine Rules §10, Distributor Portal Rules §11, Order
+  Management Rules §12).
+- **`phases/phase-08-distributor-portal.md`** — confidentiality list
+  extended to explicitly name Offer/offer-revision identifiers and both
+  Passport note fields; section references updated to §11/§12.
+- **`phases/phase-09-order-management.md`** — order allocation now
+  references the specific `offer_id`/`offer_revision` selected;
+  distributor-visible projection explicitly excludes both Passport note
+  fields; section references updated to §12; new open question added on
+  whether fulfillment requires a recorded Offer Approval.
+- **`PROJECT_MANIFESTO.md`** — Distributor confidentiality language and
+  the traceability principle updated to name the two note fields and
+  `offer_id`/`offer_revision` explicitly; section reference updated to
+  §11.
+- **`CLAUDE_WORKFLOW.md`** — §1.1 extended with two new binding
+  prohibitions: no single-offer-per-manufacturer storage constraint, and
+  no conflation of Validation with Offer Approval; stale §12 reference
+  fixed to §13.
+- **Consistency audit performed:** every cross-reference to
+  `BUSINESS_RULES.md` section numbers was re-checked and corrected across
+  all files (inserting the new §7 Offer Approval section shifted every
+  subsequent section number by one again, on top of the first round's
+  shift). Confirmed no remaining "exactly one Offer per Manufacturer and
+  Passport" constraint, no `manufacturer_recommended_quantity` or
+  `elimfilters_approved_quantity` on the Passport, and no live
+  "confidential manufacturing notes" field — all surviving mentions of
+  these are explanatory/historical (describing the correction itself).
+- **No production code was written in this change.** Phase 0 remains
+  unapproved; Phases 01-09 remain `Spec Drafted`, not `Spec Approved`.
