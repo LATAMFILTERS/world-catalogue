@@ -24,6 +24,12 @@ This document describes the proposed technical architecture for EBP. Nothing
 in this document is implemented yet. It exists so that Phase 1 onward has an
 agreed target to build against.
 
+**Correction notice (third round, addition only, 2026-07-13):** §8 adds
+the **EBP Observability & Intelligence Layer**, a permanent cross-cutting
+capability present in every phase (not a phase itself), per ADR-0037 in
+`DECISIONS.md`. This is a pure addition — no existing section, module,
+or API surface described below is changed.
+
 ## 1. Existing System (as-found, Phase 0 audit)
 
 | Layer | Technology | Notes |
@@ -240,3 +246,117 @@ traceability:
   Offer is even *recommended*, or is Offer Approval only required before
   an order is actually fulfilled against it? Not decided in this
   correction round — flagged in `phases/phase-05-manufacturer-selection.md`.
+
+## 8. EBP Observability & Intelligence Layer (cross-cutting, ADR-0037)
+
+**Not a phase.** A permanent capability present in every phase, current
+and future. Its job is to make sure a future Executive Dashboard,
+Business Intelligence surface, and AI-assisted querying have everything
+they need from day one — events, metrics, KPIs, traceability, alerts —
+without each phase inventing its own siloed reporting mechanism. **Not
+implemented as of this ADR** — this section is the architecture and
+contracts a later, separately-authorized implementation round will build
+against, exactly the same "documentation before code" discipline as
+every phase in this platform (`PROJECT_MANIFESTO.md` §4.1).
+
+### 8.1 Activity Events (single canonical model)
+
+One reserved table design, `ebp_activity_events` — **no phase may stand
+up its own independent event system**:
+
+```
+event_id            UUID PK
+event_type          TEXT      -- phase-scoped vocabulary, e.g. 'BATCH_OVERDUE', 'OFFER_SUBMITTED'
+entity_type         TEXT      -- 'PASSPORT' | 'MANUFACTURER' | 'BATCH' | 'OFFER' | 'CERTIFICATION' | 'PRODUCT' | ...
+entity_id           UUID
+entity_version      TEXT      -- nullable (engineering_revision, offer_revision, ...)
+passport_id         UUID      -- nullable
+manufacturer_id     UUID      -- nullable
+batch_id            UUID      -- nullable
+offer_id            UUID      -- nullable
+user_id             UUID      -- nullable
+declared_actor      TEXT      -- same convention as ebp/phase1/actor.js and Phase 3's actorFromSession
+identity_mechanism  TEXT      -- 'ADMIN_KEY_SHARED' | 'FACTORY_SESSION' | future mechanisms
+correlation_id      UUID      -- same concept as Phase 3's request_id (ADR-0034), extended platform-wide
+event_timestamp     TIMESTAMPTZ
+event_data          JSONB     -- never password_hash/token_hash/storage_key or anything a phase's own DTO already excludes
+```
+
+Existing phase-specific audit trails (Phase 2's manufacturer/
+qualification/certification history tables, Phase 3's batch/offer
+status-history tables and `ebp_factory_user_audit_log`) are **not
+replaced** by this layer — a future implementation ADR decides whether/
+how they dual-write into `ebp_activity_events`, without altering their
+existing frozen behavior.
+
+### 8.2 Timeline (reconstructed, never duplicated)
+
+Full history for Passport, Manufacturer, Batch, Offer, Certification,
+and Product (minimum set) is a read-time query over
+`ebp_activity_events` filtered by `entity_type`/`entity_id`, ordered by
+`event_timestamp`. No separate timeline table is ever stored — the same
+computed-projection discipline already used for
+`ebp_manufacturer_offers_effective` (ADR-0019) and
+`ebp_manufacturer_request_batches_effective` (ADR-0031).
+
+### 8.3 Analytics Views (the only Dashboard-facing surface)
+
+Naming convention: `ebp_analytics_<domain>_summary` / `_overview`.
+Reserved examples: `ebp_analytics_manufacturer_summary`,
+`ebp_analytics_batch_summary`, `ebp_analytics_offer_summary`,
+`ebp_analytics_product_summary`, `ebp_analytics_dashboard_overview`.
+Always Postgres `VIEW`s, never materialized copies. **A future
+Dashboard/BI/AI layer never queries a transactional `ebp_*` table
+directly** — the same allow-list-projection discipline that already
+governs every role-specific DTO (ADR-0006/ADR-0009/ADR-0021) extends to
+reporting: Analytics Views are the confidentiality boundary for
+reporting, exactly as DTOs are the boundary for the API.
+
+### 8.4 KPI Layer
+
+Each phase exposes a small set of named, server-side-computed metrics
+(examples: total manufacturers, qualified manufacturers, batches
+created, overdue batches, average response time, offers submitted,
+offers approved, documents uploaded, certifications expiring), each
+backed by one authoritative query over Activity Events, transactional
+tables, or Analytics Views. **Never computed in a frontend** — the same
+single-source-of-truth-per-concern principle already binding Cost Engine
+and Pricing Engine (`PROJECT_MANIFESTO.md` §4.2) extends to metrics.
+
+### 8.5 Alert Layer
+
+Structured alert *records* (examples: Manufacturer suspended, Batch
+overdue, Offer expiring, Certification expiring, Engineering review
+required, Product without manufacturer, Only one qualified manufacturer)
+generated by rule evaluation against transactional state and/or Activity
+Events. **The Notification Center (delivery — email, in-app, Slack) is
+out of scope** and not designed here; only the alert record itself is.
+
+### 8.6 Internal Analytics API (reserved, not implemented)
+
+`/api/ebp/internal/analytics/*` is reserved, mirroring the existing
+`requireAdmin`-gated internal-surface convention (e.g. `/api/ebp/
+internal/manufacturer-batches`). No route file, `server.js` mount, or
+handler exists yet — only the prefix and its intended audience (internal/
+admin-gated, never Distributor- or Manufacturer-facing) are reserved.
+
+### 8.7 Dashboard Readiness (mandatory phase-doc section)
+
+From this ADR forward, every `phases/phase-NN-*.md` must end with a
+"Dashboard Readiness" section (format in `CLAUDE_WORKFLOW.md` §3.1)
+covering new events, KPIs, alerts, Analytics Views, APIs, Timeline
+impact, and future-AI impact. No phase may be approved without it.
+Phases 1, 2, and 3 have had this section appended retroactively,
+describing future readiness only — see each phase doc's own "Dashboard
+Readiness" section.
+
+### 8.8 What Is Deliberately Not Built Yet
+
+No dashboard, chart, executive report, widget, or analytics screen. No
+`ebp_activity_events` table (or any other table for this layer) has been
+migrated. No `ebp/observability/` module exists. No route is mounted. No
+existing phase's schema, migration, API, or behavior is touched by this
+section. Implementation is a future, separately-authorized round with
+its own real migrations, real tests, and real Postgres verification —
+the same discipline already applied to Phase 1/2/3 — never silently
+bundled into an unrelated phase's work.

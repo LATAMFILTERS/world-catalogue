@@ -41,8 +41,9 @@ A phase is considered **ready to build** only when:
 
 1. Its `phases/phase-NN-*.md` spec exists and covers: objective, scope
    (in/out), dependencies, data model sketch, business rules it enforces,
-   integration points, deliverables, exit criteria, risks, and open
-   questions.
+   integration points, deliverables, exit criteria, risks, open
+   questions, and (added 2026-07-13, ADR-0037, for any phase authorized
+   after Phase 3) a completed Dashboard Readiness section.
 2. All phases it depends on are marked `Approved` or `Built` in
    `IMPLEMENTATION_MASTER_INDEX.md`.
 3. The project owner has explicitly approved the spec (see
@@ -88,3 +89,26 @@ informational; the phase gate rule above still governs actual sequencing.
 - Manufacturer/Distributor identity provider selection (Phases 3 and 8
   depend on this being decided, but Phase 0 does not decide it — see
   `PLATFORM_ARCHITECTURE.md` §7 open questions, ADR-0002).
+
+## Cross-Cutting Capabilities (not phases, added 2026-07-13, ADR-0037)
+
+Some capabilities apply to every phase rather than occupying a slot in
+the Phase Sequence table above. They do not have a phase number, do not
+block or get blocked by phase dependencies, and are not "built" on their
+own calendar the way a phase is — they are a standing requirement every
+phase must satisfy.
+
+- **EBP Observability & Intelligence Layer** — every phase (current and
+  future) must produce Activity Events, expose KPIs, generate structured
+  alerts, and support Timeline reconstruction, so that a future Executive
+  Dashboard/BI/AI layer can be built entirely from that shared
+  infrastructure without ever reading a transactional table directly. See
+  `PLATFORM_ARCHITECTURE.md` §8 and ADR-0037 in `DECISIONS.md` for the
+  full architecture. **Not implemented yet** — architecture and contracts
+  only, per ADR-0037.
+- Starting with whichever phase is authorized after Phase 3, a phase's
+  `phases/phase-NN-*.md` doc is not considered complete for the Phase
+  Gate Definition above until it also has a completed "Dashboard
+  Readiness" section (`CLAUDE_WORKFLOW.md` §3.1). This is now part of
+  "Its `phases/phase-NN-*.md` spec exists and covers..." in the Phase
+  Gate Definition, item 1.

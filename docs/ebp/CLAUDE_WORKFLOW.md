@@ -74,6 +74,60 @@ For any phase, before any implementation:
    `PLATFORM_ARCHITECTURE.md`, update that document and log the change as a
    new entry in `DECISIONS.md`.
 
+## 3.1 Dashboard Readiness (mandatory, added 2026-07-13, ADR-0037)
+
+The **EBP Observability & Intelligence Layer** is a permanent, cross-
+cutting capability present in every phase — not a phase itself. See
+`PLATFORM_ARCHITECTURE.md` §8 and ADR-0037 in `DECISIONS.md`.
+
+- Every `phases/phase-NN-*.md` doc must end with a **"Dashboard
+  Readiness"** section before that phase can be approved. It must state,
+  even if the answer is "none":
+  - New Activity Events this phase would emit (event_type/entity_type).
+  - New KPIs this phase would expose.
+  - New Alerts this phase would generate.
+  - New Analytics Views this phase would need.
+  - New APIs this phase would need under `/api/ebp/internal/analytics/*`.
+  - How this phase's entities extend the Timeline (Passport, Manufacturer,
+    Batch, Offer, Certification, Product, or a new entity type).
+  - What this phase's data enables for future AI-assisted queries.
+- **No phase may be marked `Spec Approved` without this section
+  complete.** This extends the Approval Gate in §4 below — the project
+  owner still approves explicitly, but the section must exist first.
+- This section describes *readiness*, not implementation — a phase does
+  not need to build the Observability Layer itself, or even emit real
+  events yet, to satisfy this requirement. It needs to have thought
+  through and documented what it *would* emit once that layer's own
+  implementation is authorized.
+- Do not introduce a phase-specific event table, metrics table, or alert
+  table as a substitute for the shared model — see the binding rule in
+  §1.2.
+- Phases 1, 2, and 3 (already frozen before this rule existed) had this
+  section appended retroactively, describing future readiness only — see
+  each phase doc's own "Dashboard Readiness" section. This did not reopen
+  or change anything about those phases' frozen status, schema, or
+  behavior.
+
+## 1.2 Observability Terms (binding, added 2026-07-13, ADR-0037)
+
+- Do not create a phase-specific event, metrics, or alert table/system as
+  a substitute for `ebp_activity_events` / the KPI Layer / the Alert
+  Layer described in `PLATFORM_ARCHITECTURE.md` §8. There is exactly one
+  event ledger for the whole platform, once implemented.
+- Do not let a future Dashboard, BI tool, or AI query layer read a
+  transactional `ebp_*` table directly. It may only consume Activity
+  Events, Analytics Views (`ebp_analytics_*`), the KPI Layer, the Alert
+  Layer, and Timeline reconstructions.
+- Do not build the Notification Center (alert delivery — email, in-app,
+  Slack) as part of implementing the Alert Layer; they are separate,
+  and only the Alert Layer (the structured record) is currently in
+  scope for a future implementation round.
+- This layer's own future implementation (migrations, an `ebp/
+  observability/` module, the reserved `/api/ebp/internal/analytics/*`
+  routes) requires its own explicit phase-gate approval, exactly like any
+  other phase — it is not authorized by ADR-0037 itself, only its
+  architecture is.
+
 ## 4. Approval Gate
 
 A phase moves from `Spec Drafted` to `Spec Approved` in

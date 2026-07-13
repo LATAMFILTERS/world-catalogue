@@ -768,3 +768,58 @@ Phase 2. See ADR-0036 in `DECISIONS.md` and the corresponding
   DNS decision outside this repository's current scope; the code itself
   is already organized (`/portal/*`) so that a later reverse-proxy split
   requires no application-code change.
+
+## Dashboard Readiness (added 2026-07-13, ADR-0037; retroactive, does not reopen Phase 3's freeze)
+
+Per ADR-0037 in `DECISIONS.md` and `PLATFORM_ARCHITECTURE.md` §8, this
+section is a **pure addition** to this already-`APPROVED / FROZEN v1.0`
+document — it describes what Phase 3 *would* emit once the Observability
+& Intelligence Layer's own implementation is separately authorized. **No
+Phase 3 schema, endpoint, test, or behavior changes as a result of this
+section.** Phase 3 is the most "ready" of the three frozen phases for
+this layer: it already has real per-domain audit trails
+(`ebp_manufacturer_request_batch_status_history`,
+`ebp_manufacturer_offer_status_history`, `ebp_factory_user_audit_log`)
+and a per-request correlation id (`request_id`, ADR-0034) that is
+conceptually identical to Activity Events' `correlation_id`.
+
+- **New Activity Events:** `BATCH_CREATED`, `BATCH_SENT`, `BATCH_
+  RESPONDED`/`BATCH_CLOSED`/`BATCH_CANCELLED`, and `BATCH_OVERDUE`
+  (derived from `effective_status`, ADR-0031 — the event would be
+  recorded once, at the moment a read first observes the transition, not
+  polled); `OFFER_SUBMITTED`, `OFFER_SUPERSEDED`, `OFFER_WITHDRAWN`,
+  `OFFER_LATE_SUBMISSION` (when `late_submission` is set true);
+  `DOCUMENT_UPLOADED`; `FACTORY_USER_INVITED`/`FACTORY_USER_ACTIVATED`/
+  `FACTORY_USER_DISABLED`; `EXCEL_STAGED`/`EXCEL_CONFIRMED`/`EXCEL_
+  REJECTED`. `entity_type` is `'BATCH'` or `'OFFER'` as applicable;
+  `correlation_id` reuses the existing per-request `request_id`
+  (ADR-0034) directly — no new correlation mechanism is needed.
+- **New KPIs:** batches created; overdue batches (read from
+  `effective_status`, never recomputed independently, ADR-0031); average
+  response time (`submitted_at - sent_at`); offers submitted; late-
+  submission rate; documents uploaded.
+- **New Alerts:** "Batch overdue" (an `effective_status` of `OVERDUE`);
+  "Offer expiring" (`expires_at` approaching); "Engineering review
+  required" is a candidate alert that depends on Phase 4 (Engineering
+  Compliance Validation) existing and is flagged here as a future
+  cross-phase alert, not a Phase 3 deliverable; "Product without
+  manufacturer" spans Phase 1/2/3 data, same as noted in those phases'
+  own Dashboard Readiness sections.
+- **New Analytics Views:** `ebp_analytics_batch_summary`,
+  `ebp_analytics_offer_summary`.
+- **New APIs:** the reserved `/api/ebp/internal/analytics/*` prefix
+  (`PLATFORM_ARCHITECTURE.md` §8.6) is where these would eventually be
+  exposed — no new Phase 3 endpoint under `/api/ebp/internal/
+  manufacturer-batches` or `/api/ebp/factory` is proposed.
+- **Timeline impact:** Batch and Offer history is already fully present
+  via the existing status-history tables; once Activity Events is
+  implemented, the same history would additionally be expressed as a
+  filtered, time-ordered read over `ebp_activity_events`
+  (`PLATFORM_ARCHITECTURE.md` §8.2) — a future implementation ADR
+  decides whether the existing status-history tables dual-write into
+  Activity Events or Activity Events simply reads a union of them; either
+  way, no duplicate timeline table is introduced.
+- **Future-AI impact:** enables queries such as "which Manufacturer
+  responds fastest on average," "which Offers are about to expire,"
+  and "which Batches are chronically overdue by Manufacturer or product
+  family."

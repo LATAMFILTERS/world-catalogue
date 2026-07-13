@@ -2047,3 +2047,174 @@ before any freeze:
 - Phase 4 work may begin only on the project owner's own explicit,
   separate authorization — not as a continuation of this session or this
   ADR.
+
+## ADR-0037 — EBP Observability & Intelligence Layer: a permanent cross-cutting capability across all phases
+
+**Date:** 2026-07-13
+**Status:** Accepted — architecture and contracts only; no implementation
+in this ADR (see "Decision," item 8).
+**Amends:** `PROJECT_MANIFESTO.md`, `PLATFORM_ARCHITECTURE.md`,
+`ROADMAP.md`, `CLAUDE_WORKFLOW.md` (all part of the Phase 0
+`APPROVED / FROZEN v1.0` documentation baseline, ADR-0013) — this ADR is
+the explicit superseding authority required by ADR-0013 §3 to add to that
+baseline. It also authorizes an additive-only "Dashboard Readiness"
+section on Phase 1/2/3's own frozen docs (ADR-0014/ADR-0022/ADR-0036),
+under the same "new ADR that explicitly supersedes" mechanism each of
+those freezes requires. **No existing sentence in any of those six
+documents is altered, reworded, or removed by this ADR — every change is
+a pure addition.**
+
+**Context:** The project owner introduced this decision explicitly
+**before** Phase 4 begins, stating it is not itself a phase but a
+permanent capability that must be present across every current and
+future phase: "Esta NO es una fase del proyecto. Es una capa permanente
+presente en todas las fases actuales y futuras." Its purpose is to
+guarantee that everything a future Executive Dashboard, Business
+Intelligence layer, and AI-assisted querying will need — events,
+metrics, KPIs, traceability, alerts — is captured from day one, without
+retrofitting each phase later or letting each phase invent its own
+siloed event/metrics system. The project owner was explicit on scope:
+build the infrastructure that will feed the Dashboard, not the Dashboard
+itself — no dashboards, charts, executive reports, widgets, or analytics
+screens are in scope; only the architecture and, per item 8 below, the
+documentation of that architecture.
+
+**Decision:**
+
+1. **Activity Events — one canonical model, never per-module event
+   systems.** A single reserved table design, `ebp_activity_events`
+   (not yet migrated — see item 8), is the sole event ledger for the
+   entire platform:
+   ```
+   event_id            UUID PK
+   event_type          TEXT      -- e.g. 'BATCH_OVERDUE', 'OFFER_SUBMITTED', 'MANUFACTURER_SUSPENDED'
+   entity_type         TEXT      -- 'PASSPORT' | 'MANUFACTURER' | 'BATCH' | 'OFFER' | 'CERTIFICATION' | 'PRODUCT' | ...
+   entity_id           UUID
+   entity_version      TEXT      -- nullable; e.g. engineering_revision, offer_revision — whatever versioning concept the entity already has
+   passport_id         UUID      -- nullable; populated whenever the event traces to a Passport
+   manufacturer_id     UUID      -- nullable; populated whenever the event traces to a Manufacturer
+   batch_id            UUID      -- nullable
+   offer_id            UUID      -- nullable
+   user_id             UUID      -- nullable; a factory_user_id when applicable, never a distributor/admin credential
+   declared_actor       TEXT      -- reuses the Phase 1 actor.js / Phase 3 actorFromSession convention (ADR-0002-adjacent)
+   identity_mechanism  TEXT      -- 'ADMIN_KEY_SHARED' | 'FACTORY_SESSION' | future mechanisms, same enum discipline as existing phases
+   correlation_id      UUID      -- the same concept as Phase 3's request_id (ADR-0034), extended platform-wide
+   event_timestamp     TIMESTAMPTZ
+   event_data          JSONB     -- event-type-specific payload; never contains password_hash/token_hash/storage_key or any field a phase's own DTO already excludes
+   ```
+   No phase — current or future — may create its own independent event
+   table or event-emission mechanism. Any phase that needs to record
+   "something happened" writes to this one table (once implemented) with
+   an `entity_type`/`event_type` scoped to that phase's own vocabulary.
+   Existing phase-specific audit trails (Phase 1's implicit revision
+   chain, Phase 2's `ebp_manufacturer_*` history, Phase 3's
+   `ebp_manufacturer_request_batch_status_history`,
+   `ebp_manufacturer_offer_status_history`,
+   `ebp_factory_user_audit_log`) are **not replaced or migrated by this
+   ADR** — they remain each phase's own frozen system of record. A
+   future, separately-authorized implementation ADR decides whether/how
+   they are dual-written or backfilled into `ebp_activity_events`,
+   without altering their existing frozen behavior.
+
+2. **Timeline — reconstructed, never duplicated.** Any entity's full
+   history (minimum: Passport, Manufacturer, Batch, Offer, Certification,
+   Product) is a read-time query over `ebp_activity_events` filtered by
+   `entity_type`/`entity_id`, ordered by `event_timestamp`. There is no
+   separate "timeline" table. This mirrors the discipline already
+   established for computed status (`ebp_manufacturer_offers_effective`,
+   ADR-0019; `ebp_manufacturer_request_batches_effective`, ADR-0031): a
+   projection is always computed at read time from one source of truth,
+   never stored redundantly.
+
+3. **Analytics Views — the only surface a future Dashboard may query.**
+   Reserved naming convention: `ebp_analytics_<domain>_summary` /
+   `_overview` (examples: `ebp_analytics_manufacturer_summary`,
+   `ebp_analytics_batch_summary`, `ebp_analytics_offer_summary`,
+   `ebp_analytics_product_summary`, `ebp_analytics_dashboard_overview`).
+   These are always Postgres `VIEW`s (never materialized tables, never a
+   parallel denormalized copy) over `ebp_activity_events` and each
+   phase's own transactional tables. **A future Dashboard, BI tool, or
+   AI query layer never reads a transactional `ebp_*` table directly** —
+   the same allow-list-projection discipline already required for every
+   role-specific DTO in Phase 1/2/3 (internal-only DTOs, Distributor
+   confidentiality strip, ADR-0006/ADR-0009/ADR-0021) extends to
+   Analytics Views: they are the confidentiality boundary for reporting,
+   exactly as DTOs are the confidentiality boundary for the API.
+
+4. **KPI Layer — named, versioned, computed server-side only.** Each
+   phase exposes a small set of named metrics (examples given by the
+   project owner: total manufacturers, qualified manufacturers, batches
+   created, overdue batches, average response time, offers submitted,
+   offers approved, documents uploaded, certifications expiring) backed
+   by a query over Activity Events, transactional tables, or Analytics
+   Views. **KPIs are never computed in a frontend** — the same
+   "single source of truth per concern" principle already binding for
+   Cost Engine/Pricing Engine (`PROJECT_MANIFESTO.md` §4.2) extends to
+   metrics: a KPI has exactly one authoritative definition and query,
+   reused everywhere it's shown, never recalculated ad hoc per screen.
+
+5. **Alert Layer — structured rows, not a delivery mechanism.** Each
+   phase can produce structured alerts (examples given: Manufacturer
+   suspended, Batch overdue, Offer expiring, Certification expiring,
+   Engineering review required, Product without manufacturer, Only one
+   qualified manufacturer) as rows generated by rule evaluation against
+   transactional state and/or Activity Events. **The Notification Center
+   (delivery — email, in-app, Slack, etc.) is explicitly out of scope**
+   and is not designed by this ADR; only the alert *record* — what
+   happened, its severity, and what it references — is in scope.
+
+6. **Internal Analytics API — reserved, not implemented.** The path
+   prefix `/api/ebp/internal/analytics/*` is reserved for this layer,
+   mirroring the existing `requireAdmin`-gated internal-surface
+   convention already used by every phase (`/api/ebp/internal/
+   manufacturer-batches`, etc.). No route file, no `server.js` mount, and
+   no handler is created by this ADR — only the path and its intended
+   audience (internal/admin-gated, never Distributor- or Manufacturer-
+   facing) are reserved so no future phase accidentally claims that
+   prefix for something else.
+
+7. **Dashboard Readiness — a new mandatory section on every phase doc.**
+   From this ADR forward, `phases/phase-NN-*.md` must end with a
+   "Dashboard Readiness" section (format specified in
+   `CLAUDE_WORKFLOW.md`, amended by this ADR) covering: new events, new
+   KPIs, new alerts, new Analytics Views, new APIs, Timeline impact, and
+   future-AI impact. **No phase may be approved without this section
+   being complete** — this extends `CLAUDE_WORKFLOW.md`'s existing
+   Approval Gate (§4) and Documentation-First Requirement (§3). Phase
+   1/2/3, already frozen, are retrofitted with this section **as a pure
+   addition** describing what each phase *would* emit once this layer's
+   own implementation is authorized — this is a documentation exercise
+   describing readiness, not new behavior, and does not reopen or
+   modify any frozen decision in those phases.
+
+8. **Nothing described above is implemented by this ADR.** No migration
+   file is created under `migrations/`, no `ebp_activity_events` (or any
+   other) table exists yet, no `ebp/observability/` module exists, no
+   route is mounted, and no existing phase's code, schema, migration, or
+   API is touched. This ADR is the architecture-and-contract layer only,
+   exactly as the project owner specified ("No vamos a construir el
+   Dashboard ahora... Vamos a construir la infraestructura que lo
+   alimentará" — read together with "No construir todavía," repeated for
+   every functional component). Implementation is a future, separately-
+   authorized round — likely its own `migrations/ebp-observability/`
+   directory and `ebp/observability/` module, following the exact same
+   real-migration/real-tests/real-Postgres discipline already applied to
+   Phase 1/2/3 — never silently bundled into an unrelated phase's work.
+
+**Consequences:**
+- Every future phase (starting with Phase 4, whenever separately
+  authorized) must design its own event/KPI/alert emissions against this
+  shared model from day one, and its phase doc must include a completed
+  Dashboard Readiness section before it can be approved.
+- Phases 1, 2, and 3 remain exactly as frozen (ADR-0014/ADR-0022/
+  ADR-0036) — their schemas, APIs, tests, and behavior are unchanged.
+  Only a new, clearly-labeled "Dashboard Readiness" section is appended
+  to each phase doc, describing future readiness, not current behavior.
+- No new dependency, migration, table, route, or test was added in this
+  ADR — verified by `git diff --stat` showing only `docs/ebp/*.md`
+  changes (see the corresponding `CHANGELOG.md` entry).
+- A future Dashboard/BI/AI project is explicitly scoped to consume only:
+  Activity Events, Analytics Views, the KPI Layer, the Alert Layer, and
+  Timeline reconstructions — never a transactional `ebp_*` table
+  directly. This is now a standing architectural constraint, not a
+  suggestion, for whoever eventually builds that project.

@@ -587,3 +587,51 @@ override supplies a value).
   endpoints once Phases 3/8 exist, or does a real per-user identity
   system (ADR-0002) replace this mechanism entirely at that point? Not
   decided — likely the latter, but not blocking for Phase 1.
+
+## Dashboard Readiness (added 2026-07-13, ADR-0037; retroactive, does not reopen Phase 1's freeze)
+
+Per ADR-0037 in `DECISIONS.md` and `PLATFORM_ARCHITECTURE.md` §8, this
+section is a **pure addition** to this already-`APPROVED / FROZEN v1.0`
+document — it describes what Phase 1 *would* emit once the Observability
+& Intelligence Layer's own implementation is separately authorized. **No
+Phase 1 schema, endpoint, test, or behavior changes as a result of this
+section.**
+
+- **New Activity Events:** `PASSPORT_CREATED`, `PASSPORT_ACTIVATED`,
+  `PASSPORT_SUPERSEDED` (when a later revision supersedes this one, per
+  `supersedes_passport_id`), `PASSPORT_DRAFT_PROMOTED_TO_SKU` (when
+  `is_pre_sku_draft` transitions from `true` to `false`), and
+  `FIELD_APPLICABILITY_APPROVED` (when a `ebp_field_applicability_matrix`
+  row's `approval_status` becomes `ENGINEERING_APPROVED`, the ADR-0014
+  activation gate). `entity_type = 'PASSPORT'`, `entity_id = ebp_
+  engineering_passports.id`, `entity_version = engineering_revision`.
+- **New KPIs:** total Passports; active Passports; pre-SKU draft
+  Passports; Passports with at least one field still pending
+  `ENGINEERING_APPROVED` (the ADR-0014 gate); average revisions per
+  Passport lineage.
+- **New Alerts:** "Passport revision pending applicability approval"
+  (a `ebp_field_applicability_matrix` row awaiting engineering sign-off
+  for longer than a threshold). "Product without manufacturer" is a
+  candidate alert that spans Phase 1 + Phase 2/3 data (an active,
+  non-draft Passport with zero qualified Manufacturers or zero Batch
+  Items ever created against it) — it cannot be computed from Phase 1
+  data alone and is flagged here as a future cross-phase alert, not a
+  Phase 1 deliverable.
+- **New Analytics Views:** `ebp_analytics_product_summary` — per
+  `elimfilters_code`: current active `engineering_revision`, `status`,
+  `is_pre_sku_draft`, and (once Phase 2/3 data is joined) the count of
+  Manufacturers currently qualified/offering against it.
+- **New APIs:** none beyond the reserved `/api/ebp/internal/analytics/*`
+  prefix (`PLATFORM_ARCHITECTURE.md` §8.6) — no new Phase 1 endpoint is
+  proposed.
+- **Timeline impact:** a Passport's full history (creation → revisions
+  via `supersedes_passport_id` → activation → each field's applicability
+  approval) is already structurally reconstructable from Phase 1's
+  existing columns even before Activity Events exists; once implemented,
+  the same history would be expressed as a filtered, time-ordered read
+  over `ebp_activity_events` instead, per `PLATFORM_ARCHITECTURE.md`
+  §8.2 — never a second, duplicated timeline table.
+- **Future-AI impact:** enables queries such as "which products have the
+  most unstable specifications (highest revision count)," "which
+  products still have engineering fields pending approval," and "which
+  pre-SKU draft Passports are closest to a SKU launch."

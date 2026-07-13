@@ -8,6 +8,12 @@ in `DECISIONS.md`. This revision replaces the raw-material "Supplier"
 concept in the original draft with the agreed three-entity MVP model below.
 It does not change §1-§2's framing, only the entity model and the phase
 chain.
+**Revised (addition, does not alter any prior content):** 2026-07-13 — added
+Principle 9 (§4) and a new §8 describing the **EBP Observability &
+Intelligence Layer**, a permanent cross-cutting capability across all
+phases, per ADR-0037 in `DECISIONS.md`. This is a pure addition: no
+existing principle, entity, or phase-chain statement in this document is
+changed.
 
 ## 1. What EBP Is
 
@@ -121,6 +127,11 @@ spreadsheets and ad hoc scripts.
    never exposed to a Distributor. This is enforced at the data boundary
    between Pricing Engine and Distributor Portal, not just in the UI. See
    ADR-0006 and ADR-0009.
+9. **Observability and future BI/AI readiness, from day one.** Every phase
+   must produce the events, metrics, and alerts that a future Executive
+   Dashboard, Business Intelligence surface, and AI-assisted querying will
+   need — not retrofit them later. This is a permanent cross-cutting
+   capability, not a phase; see §8 and ADR-0037.
 
 ## 5. Relationship to the Existing Codebase
 
@@ -154,3 +165,34 @@ spreadsheets and ad hoc scripts.
   `CHANGELOG.md`, not silently edited.
 - No phase after Phase 0 begins implementation without explicit approval
   from the project owner, per `CLAUDE_WORKFLOW.md`.
+
+## 8. Observability & Intelligence Layer (cross-cutting, ADR-0037)
+
+**This is not a phase.** It is a permanent capability present in every
+current and future phase, added 2026-07-13 per ADR-0037 in
+`DECISIONS.md`, before Phase 4 was authorized to begin.
+
+- **Purpose:** guarantee that everything a future Executive Dashboard,
+  Business Intelligence surface, and AI-assisted querying will need —
+  events, metrics, KPIs, traceability, alerts — is captured from day one,
+  rather than retrofitted phase-by-phase later.
+- **What this is, at minimum:** a single canonical Activity Events model
+  (never independent per-module event systems); Timeline reconstruction
+  for Passport, Manufacturer, Batch, Offer, Certification, and Product,
+  computed from Activity Events, never stored as a duplicate; common
+  Analytics Views (`ebp_analytics_*`) as the only surface a future
+  Dashboard may query — it never reads a transactional table directly;
+  a KPI Layer of named, server-side-computed metrics; an Alert Layer of
+  structured alert records (not a notification-delivery mechanism); and
+  a reserved (not yet implemented) internal API surface at
+  `/api/ebp/internal/analytics/*`.
+- **What this is not, yet:** no dashboard, chart, executive report,
+  widget, or analytics screen exists. No migration, table, or route for
+  this layer has been created. See `PLATFORM_ARCHITECTURE.md` §8 for the
+  full architecture and ADR-0037 for the decision record.
+- **Binding on future phases:** starting with whichever phase is
+  authorized after Phase 3, every phase doc must include a completed
+  "Dashboard Readiness" section before it can be approved — see
+  `CLAUDE_WORKFLOW.md` §3.1. Phases 1, 2, and 3 (already frozen) have had
+  this section appended retroactively, describing future readiness only —
+  their frozen behavior, schema, and status are unchanged.

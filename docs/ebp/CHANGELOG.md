@@ -1056,4 +1056,80 @@ All twelve conditions passed.
   project owner before any work begins, per `CLAUDE_WORKFLOW.md`'s
   phase-gate discipline. **No Phase 4 work was started in this session.**
 
+## 2026-07-13 — EBP Observability & Intelligence Layer: cross-cutting architecture (ADR-0037)
+
+Before authorizing Phase 4, the project owner introduced a cross-cutting
+architectural decision spanning the whole platform: a permanent
+**Observability & Intelligence Layer**, present in every current and
+future phase, guaranteeing that everything a future Executive Dashboard,
+Business Intelligence surface, and AI-assisted querying will need —
+events, metrics, KPIs, traceability, alerts — is captured from day one.
+**Explicitly not a phase, and explicitly architecture-only in this
+round: no dashboard, migration, table, module, or route was built.**
+
+- **ADR-0037** added to `DECISIONS.md`, formalizing:
+  - A single canonical **Activity Events** model (`ebp_activity_events`,
+    reserved, not yet migrated) — `event_id`, `event_type`,
+    `entity_type`, `entity_id`, `entity_version`, `passport_id`,
+    `manufacturer_id`, `batch_id`, `offer_id`, `user_id`,
+    `declared_actor`, `identity_mechanism`, `correlation_id`,
+    `event_timestamp`, `event_data` (JSONB). No phase may build its own
+    independent event system.
+  - **Timeline** reconstruction (minimum: Passport, Manufacturer, Batch,
+    Offer, Certification, Product) as a read-time query over Activity
+    Events — never a duplicated timeline table, same discipline as the
+    existing effective-status views (ADR-0019, ADR-0031).
+  - **Analytics Views** (`ebp_analytics_manufacturer_summary`,
+    `_batch_summary`, `_offer_summary`, `_product_summary`,
+    `_dashboard_overview`) as the *only* surface a future Dashboard may
+    query — never a transactional table directly.
+  - A **KPI Layer** (named, server-side-computed metrics — total/
+    qualified manufacturers, batches created, overdue batches, average
+    response time, offers submitted, documents uploaded, certifications
+    expiring, etc.) — never computed in a frontend.
+  - An **Alert Layer** (structured alert records — Manufacturer
+    suspended, Batch overdue, Offer expiring, Certification expiring,
+    Engineering review required, Product without manufacturer, Only one
+    qualified manufacturer) — the Notification Center (delivery) is
+    explicitly out of scope.
+  - A reserved (not implemented) **Internal Analytics API** surface at
+    `/api/ebp/internal/analytics/*`.
+  - A new mandatory **Dashboard Readiness** section on every future
+    phase doc, required before that phase can be approved.
+- **`PROJECT_MANIFESTO.md`** — added Principle 9 and a new §8 describing
+  the layer, as a pure addition (no existing principle or entity
+  changed).
+- **`PLATFORM_ARCHITECTURE.md`** — added §8 with the full architecture
+  (8.1–8.8: Activity Events, Timeline, Analytics Views, KPI Layer, Alert
+  Layer, Internal Analytics API, Dashboard Readiness, and an explicit
+  "What Is Deliberately Not Built Yet" subsection).
+- **`ROADMAP.md`** — added a "Cross-Cutting Capabilities (not phases)"
+  section; the Phase Gate Definition's item 1 now also lists Dashboard
+  Readiness for any phase authorized after Phase 3.
+- **`CLAUDE_WORKFLOW.md`** — added §3.1 (Dashboard Readiness: mandatory
+  content and the approval-gate extension) and §1.2 (binding
+  Observability terms: no per-phase event/metrics/alert systems, no
+  direct transactional-table reads by a future Dashboard/BI/AI layer,
+  Notification Center out of scope, this layer's own implementation
+  requires its own separate phase-gate approval).
+- **Phase 1, 2, and 3 docs** (`phases/phase-01-product-engineering-
+  passport.md`, `phase-02-manufacturer-registry.md`, `phase-03-supplier-
+  portal.md`) — each gained a new, purely additive "Dashboard Readiness"
+  section describing candidate future events/KPIs/alerts/Analytics
+  Views/APIs/Timeline impact/AI impact specific to that phase. **No
+  existing sentence, schema, endpoint, test, or frozen status in any of
+  the three phase docs was changed.**
+
+**Confirmation nothing frozen was modified:** `git diff --stat` for this
+change touches only `docs/ebp/*.md` and `docs/ebp/phases/*.md` — zero
+changes to `ebp/`, `migrations/`, `tests/`, or `server.js`. The full
+Phase 1 (59), Phase 2 (100), and Phase 3 (126) test suites were re-run
+after this change and all still pass, unmodified — proving no frozen
+functionality, schema, or API was affected.
+
+**This layer's own implementation is NOT authorized by this entry** — it
+requires its own separate, explicit phase-gate approval from the project
+owner, exactly like any other phase. **Phase 4 (Engineering Compliance
+Validation) also remains not started and not authorized.**
+
 

@@ -135,6 +135,25 @@ See ADR-0005.
   file's own "Status" line). None are `Spec Approved`. **No implementation
   work may start on Phases 04-09 until each is explicitly approved in its
   own turn, per `CLAUDE_WORKFLOW.md`.**
+- **EBP Observability & Intelligence Layer (cross-cutting, added
+  2026-07-13, ADR-0037) — not a phase, no row in the table above.**
+  Before Phase 4 was authorized, the project owner introduced a
+  permanent capability present in every current and future phase:
+  Activity Events (one canonical model, `ebp_activity_events`), Timeline
+  reconstruction, Analytics Views (`ebp_analytics_*`), a KPI Layer, an
+  Alert Layer, and a reserved (not implemented) `/api/ebp/internal/
+  analytics/*` surface — see `PLATFORM_ARCHITECTURE.md` §8 and ADR-0037.
+  **Architecture and contracts only — no migration, table, module, or
+  route was created; no Phase 1/2/3 schema, endpoint, test, or behavior
+  was changed.** Phases 1, 2, and 3 each gained a new, purely additive
+  "Dashboard Readiness" section in their own docs describing future
+  readiness. Every phase authorized after Phase 3 must include a
+  completed Dashboard Readiness section (`CLAUDE_WORKFLOW.md` §3.1)
+  before it can be approved — this is now part of the Phase Gate
+  Definition (`ROADMAP.md`). **This layer's own implementation is not
+  authorized by ADR-0037 and requires its own separate phase-gate
+  approval, same as any other phase. Phase 4 (Engineering Compliance
+  Validation) remains not started and not authorized.**
 
 ## How to Use This File
 

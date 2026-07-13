@@ -490,3 +490,49 @@ ADR-0022, and formally approved Phase 2 as `APPROVED / FROZEN v1.0` on
   qualification conditions from actual manufacturers are recorded? Not
   needed for Phase 2's exit criteria; flagged for Phase 4/5 spec
   approval if it becomes a practical blocker.
+
+## Dashboard Readiness (added 2026-07-13, ADR-0037; retroactive, does not reopen Phase 2's freeze)
+
+Per ADR-0037 in `DECISIONS.md` and `PLATFORM_ARCHITECTURE.md` §8, this
+section is a **pure addition** to this already-`APPROVED / FROZEN v1.0`
+document — it describes what Phase 2 *would* emit once the Observability
+& Intelligence Layer's own implementation is separately authorized. **No
+Phase 2 schema, endpoint, test, or behavior changes as a result of this
+section.**
+
+- **New Activity Events:** `MANUFACTURER_REGISTERED`,
+  `MANUFACTURER_STATUS_CHANGED` (any transition among `CANDIDATE`/
+  `QUALIFIED`/`CONDITIONAL`/`SUSPENDED`/`RETIRED`), `QUALIFICATION_
+  GRANTED` (a new `ebp_manufacturer_qualifications` row), `CERTIFICATION_
+  ADDED`, `CERTIFICATION_EXPIRED` (an `effective_status` transition to
+  `EXPIRED`, ADR-0019), and `CAPABILITY_RECORDED`. `entity_type =
+  'MANUFACTURER'`, `entity_id = ebp_manufacturers.id`.
+- **New KPIs:** total manufacturers; qualified manufacturers (by
+  `status`); certifications expiring in 30/60/90 days (read from the
+  existing effective-certification view, ADR-0019 — never recomputed
+  independently); qualified manufacturers per product family.
+- **New Alerts:** "Manufacturer suspended" (a `MANUFACTURER_STATUS_
+  CHANGED` event to `SUSPENDED`); "Certification expiring" (an
+  `effective_status` approaching `EXPIRED` within a threshold window);
+  "Only one qualified manufacturer for a product family" — a candidate
+  alert spanning Phase 1 (product family) + Phase 2 (qualification
+  count) + Phase 3 (actual sourcing activity) data, flagged here as a
+  future cross-phase alert, not a Phase 2 deliverable on its own.
+- **New Analytics Views:** `ebp_analytics_manufacturer_summary` — per
+  `manufacturer_code`: `status`, qualification count, active
+  certification count, certifications expiring soon.
+- **New APIs:** none beyond the reserved `/api/ebp/internal/analytics/*`
+  prefix (`PLATFORM_ARCHITECTURE.md` §8.6) — no new Phase 2 endpoint is
+  proposed.
+- **Timeline impact:** a Manufacturer's full history (registration →
+  status transitions → qualifications granted → certification lifecycle)
+  is already structurally present across Phase 2's existing tables; once
+  Activity Events is implemented, the same history would be expressed as
+  a filtered, time-ordered read over `ebp_activity_events`, per
+  `PLATFORM_ARCHITECTURE.md` §8.2 — never a second, duplicated timeline
+  table.
+- **Future-AI impact:** enables queries such as "which manufacturer is
+  qualified for the most product families," "which manufacturers are at
+  risk of losing qualification due to expiring certifications this
+  month," and "which product families depend on too few qualified
+  manufacturers."
