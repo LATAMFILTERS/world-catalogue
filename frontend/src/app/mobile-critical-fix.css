@@ -1,0 +1,165 @@
+@media (max-width: 860px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+
+  .technologies-page,
+  .about-page-mobile-fix,
+  .technologies-page-mobile-fix {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  .technologies-page > section,
+  .about-page-mobile-fix > section {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .technologies-page > section:first-of-type,
+  .about-page-mobile-fix > section:first-of-type {
+    min-height: 72svh !important;
+  }
+
+  .technology-portfolio-section {
+    padding: 4rem 1rem !important;
+  }
+
+  .technology-portfolio-section > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .technology-portfolio-eyebrow {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+    font-size: .72rem !important;
+    letter-spacing: .22em !important;
+    line-height: 1.35 !important;
+  }
+
+  .technology-portfolio-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 2rem !important;
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.03em !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  .technology-portfolio-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .technology-portfolio-card {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 320px !important;
+    height: 320px !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    background: #050505 !important;
+  }
+
+  .technology-portfolio-logo-stage {
+    display: flex !important;
+    position: absolute !important;
+    inset: 1rem 1rem 4rem !important;
+    width: auto !important;
+    height: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .technology-portfolio-image {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    opacity: .95 !important;
+    visibility: visible !important;
+  }
+
+  .technology-portfolio-content {
+    display: flex !important;
+    position: absolute !important;
+    inset: 0 !important;
+    padding: 1rem !important;
+    justify-content: flex-end !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .technologies-final-cta {
+    padding: 4rem 1rem 6rem !important;
+  }
+
+  .technologies-final-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.02 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .about-failure-row-mobile {
+    display: grid !important;
+    grid-template-columns: 44px minmax(0,1fr) !important;
+    gap: .8rem 1rem !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1.5rem 0 !important;
+  }
+
+  .about-failure-row-mobile > p {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .about-technology-layout-mobile,
+  .about-technology-cards-mobile {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-technology-layout-mobile > *,
+  .about-technology-cards-mobile > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .technology-portfolio-card { min-height: 290px !important; height: 290px !important; }
+  .technology-portfolio-title,
+  .technologies-final-title { font-size: clamp(1.85rem, 8.5vw, 2.5rem) !important; }
+}
