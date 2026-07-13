@@ -51,7 +51,7 @@ export default function TechnologiesPage() {
         <div style={wrap}>
           <p style={eyebrow}>ASSET PROTECTION LOGIC</p>
           <h2 style={sectionTitle}>Each technology belongs to a protected system.</h2>
-          <p style={{ ...leadText, marginTop: '1.4rem' }}>MACROCORE™, SYNTEPORE™, AQUAGUARD™, SYNTRAX™, NANOFORCE™, COOLTECH™, DRYCORE™, INTEKCORE™, and MICROKAPPA™ form the engineering layer behind ELIMFILTERS® asset protection systems.</p>
+          <p style={{ ...leadText, marginTop: '1.4rem' }}>MACROCORE™, SYNTEPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™, THERMACORE™, DRYCORE™, INTEKCORE™, and MICROKAPPA™ form the engineering layer behind ELIMFILTERS® asset protection systems.</p>
         </div>
       </section>
 
