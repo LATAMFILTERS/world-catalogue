@@ -673,3 +673,323 @@ authority.
   behalf.
 - `BUSINESS_RULES.md` §3 gains a short pointer to this ADR (the frozen
   v1.0 baseline text itself is not altered — see that section's note).
+
+---
+
+## ADR-0015 — Manufacturer code generation: cryptographically random, retry-on-collision, permanent, never reused
+
+**Date:** 2026-07-13
+**Status:** Accepted
+**Scope:** Phase 2 implementation detail. Does not alter the frozen Phase 0
+or Phase 1 v1.0 baselines — this resolves the open question `PLATFORM_
+ARCHITECTURE.md` §7 already carried forward ("exact `EFM-XXXX` code
+generation scheme").
+
+**Context:** ADR-0006 mandated `manufacturer_code` in the format
+`EFM-XXXX` as the permanent, confidential functional key for a
+Manufacturer, but did not specify the generation algorithm. A sequential
+or name-derived code would leak information (approximate registration
+order, or the plant's identity) through the code itself, defeating the
+confidentiality purpose ADR-0006 established.
+
+**Decision:**
+1. The four-character suffix is drawn from a 32-character alphabet that
+   excludes visually ambiguous characters: `23456789ABCDEFGHJKLMNPQRSTUVWXYZ`
+   (digits `0`/`1` and letters `I`/`O` removed). This gives 32⁴ =
+   1,048,576 possible codes — far beyond any realistic manufacturer count.
+2. Each candidate is generated using `node:crypto`'s `randomInt` (a
+   cryptographically strong RNG), never `Math.random()` or a counter — so
+   a code is not trivially predictable from registration order or time.
+3. Generation happens **only** on the server, at manufacturer creation.
+   The create endpoint ignores any client-supplied `manufacturer_code`
+   entirely — there is no code path by which a caller can set it.
+4. On a `UNIQUE` constraint violation for `manufacturer_code`
+   specifically (vanishingly unlikely given the keyspace, but handled
+   correctly regardless), the service retries with a new random
+   candidate, up to 5 attempts, before raising an internal error.
+5. `manufacturer_code` is immutable after creation, enforced by a
+   database trigger (`prevent_manufacturer_code_change`) that raises an
+   error on any `UPDATE` that would change it — not merely an
+   application-layer convention.
+6. A `RETIRED` manufacturer's row, and therefore its `manufacturer_code`,
+   is **never deleted**. Because the `UNIQUE` constraint applies to the
+   full table regardless of `status`, a retired code can never be
+   reissued to a different manufacturer — no separate "used codes" table
+   is needed to enforce non-reuse.
+7. The stored format is enforced by `CHECK (manufacturer_code ~
+   '^EFM-[23456789ABCDEFGHJKLMNPQRSTUVWXYZ]{4}$')`. Because the character
+   class only contains uppercase letters and digits, this `CHECK` alone
+   guarantees canonical-case storage — a plain `UNIQUE` constraint on the
+   column is therefore sufficient for case-insensitive uniqueness; no
+   separate `UPPER()`-expression index is needed.
+
+**Consequences:**
+- `ebp/phase2/efm-code.js` implements generation and the format constant;
+  `ebp/phase2/repository.js`/`service.js` implement the retry loop and
+  rely on the DB `CHECK`/`UNIQUE`/trigger as the ultimate guarantee, not
+  just application discipline.
+- Tests must prove the trigger fires (an `UPDATE` attempting to change
+  `manufacturer_code` is rejected) and that the retry path is exercised
+  (a forced collision is retried and eventually succeeds).
+
+---
+
+## ADR-0016 — Manufacturer qualifications reuse Phase 1's product_category/product_subtype vocabulary; no parallel taxonomy
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** `BUSINESS_RULES.md` §4 already requires a Manufacturer's
+qualified families to be "a subset of families defined in the Product
+Engineering Passport taxonomy (Phase 1)." Phase 1 itself does not
+maintain a separate taxonomy *table* — `product_category`/
+`product_subtype` are validated free-text fields whose real vocabulary is
+whatever values appear in Passports and the `ebp_field_applicability_
+matrix` (see `phases/phase-01-product-engineering-passport.md`). Phase 2
+needs a family reference for qualifications and capabilities and must not
+invent a second, competing taxonomy.
+
+**Decision:**
+1. `ebp_manufacturer_qualifications.product_category` /
+   `product_subtype` are the same free-text-but-validated fields, using
+   the identical vocabulary convention as `ebp_engineering_passports`
+   (Phase 1) — not a foreign key to a new taxonomy table (none exists to
+   reference) and not a Phase-2-local enum.
+2. No `ebp_manufacturer_families` or similar lookup table is created.
+   Consistency between Phase 1's and Phase 2's vocabularies is a
+   documentation/process discipline (both reference the same category/
+   subtype strings), the same discipline Phase 1 already relies on for
+   its own applicability matrix.
+3. A qualification may exist for a `(product_category, product_subtype)`
+   pair before any Passport for that pair exists (a Manufacturer can be
+   pre-qualified for a family ELIMFILTERS plans to launch) — qualification
+   is therefore not FK-constrained against `ebp_engineering_passports`.
+
+**Consequences:**
+- If Phase 1 or a later phase ever introduces a real taxonomy table, this
+  ADR is superseded and both Phase 1's and Phase 2's category/subtype
+  columns would migrate to reference it together, not independently.
+- The "family taxonomy mismatch" risk already flagged in the original
+  Phase 2 draft is addressed structurally by `ebp_manufacturer_
+  qualification_conditions` (ADR-0017), which lets a qualification narrow
+  a broad family with a precise, structured dimensional/technical scope
+  instead of needing ever-finer-grained category/subtype strings.
+
+---
+
+## ADR-0017 — Qualification conditions are structured rows, not free text
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** `CONDITIONAL` qualification status (Phase 2) and Manufacturer
+status (also `CONDITIONAL`) require a specific, checkable condition — e.g.
+"qualified for OIL/SPIN_ON only up to 120mm outer diameter." A free-text
+condition field cannot be programmatically checked by a later phase (e.g.
+Phase 4's Engineering Compliance Validation checking "is this Manufacturer
+CONDITIONAL-satisfied for this SKU"), which the project's own frozen
+`BUSINESS_RULES.md` §4 already anticipates as a requirement.
+
+**Decision:**
+1. `ebp_manufacturer_qualification_conditions` stores one row per
+   condition, with a `condition_type` drawn from a fixed enum
+   (`MAX_OUTER_DIAMETER_MM`, `MAX_HEIGHT_MM`, `CONSTRUCTION_TYPE`,
+   `ALLOWED_MATERIAL`, `APPROVED_TECHNOLOGY`, `LOCATION_RESTRICTED`,
+   `INITIAL_SAMPLE_REQUIRED`, `MIN_MONTHLY_CAPACITY`) and a `parameters`
+   `JSONB` payload whose shape is documented per `condition_type` in
+   `phases/phase-02-manufacturer-registry.md`.
+2. Each condition row carries its own `is_satisfied` boolean and
+   `satisfied_at` timestamp, so "is this qualification's condition
+   currently met" is a direct, indexable query — not a text-parsing
+   exercise for a future phase.
+3. Free-text `notes` remains available per condition for human context,
+   but is never the sole record of what the condition actually requires.
+
+**Consequences:**
+- A future phase (4 or 5) checking "is this Manufacturer `CONDITIONAL`-
+  satisfied for this Passport" can query structured condition rows
+  directly instead of parsing prose — this ADR is what makes that
+  frozen-`BUSINESS_RULES.md`-§4 requirement actually implementable.
+- Adding a new `condition_type` in the future is an additive `CHECK`-
+  constraint change, not a schema redesign.
+
+---
+
+## ADR-0018 — Locations model the manufacturer's physical facilities and addresses; qualifications bind to a specific location
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** A corporate Manufacturer entity is not itself a production
+site — its factories are. Storing a single flat "address" on
+`ebp_manufacturers` would either force an arbitrary choice of "the"
+address for a multi-plant manufacturer, or duplicate address data once a
+proper Locations entity also exists. The Phase 2 request explicitly
+requires that "production qualification must be associable with a
+concrete physical location, not only the corporate manufacturer."
+
+**Decision:**
+1. `ebp_manufacturers` carries no flat address field. A manufacturer's
+   address(es) are represented entirely by its `ebp_manufacturer_
+   locations` rows (one of which is typically `HEADQUARTERS`).
+2. `ebp_manufacturer_qualifications.location_id` is `NOT NULL` — a
+   qualification always names the specific facility qualified, never
+   only the corporate manufacturer. `ebp_manufacturer_certifications.
+   location_id` is nullable (a certification may cover the whole
+   corporate entity or one specific site).
+3. Referential integrity between a qualification/certification's
+   `location_id` and `manufacturer_id` is enforced at the database level
+   via a composite foreign key: `ebp_manufacturer_locations` carries a
+   `UNIQUE (id, manufacturer_id)` constraint, and
+   `ebp_manufacturer_qualifications`/`ebp_manufacturer_certifications`
+   reference `(location_id, manufacturer_id)` together — a location
+   belonging to a *different* manufacturer can never be attached, and
+   this is a real constraint violation, not an application-layer check
+   that could be bypassed by a direct write.
+
+**Consequences:**
+- `phases/phase-02-manufacturer-registry.md`'s "Locations" section
+  documents this as the sole address model; "Manufacturer Master Record"
+  documents the deliberate absence of a flat address field, referencing
+  this ADR so the omission is not mistaken for an oversight.
+- Regression tests must prove the composite FK rejects a
+  location/manufacturer mismatch.
+
+---
+
+## ADR-0019 — Certification validity is computed at read time, never trusted from a possibly-stale stored status alone
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** A certification's `status` column records the last human
+action (`VERIFIED`, `REJECTED`, etc.), set at a point in time. Without a
+scheduled job, a certification verified as `VERIFIED` on issuance would
+continue reading as `VERIFIED` in the raw table indefinitely after its
+`expires_on` date passes — exactly the "an expired certification must not
+keep appearing as currently verified" failure the Phase 2 request
+prohibits. Phase 0/1's stack has no background job infrastructure today
+(`PLATFORM_ARCHITECTURE.md` §7, still an open item).
+
+**Decision:**
+1. `ebp_manufacturer_certifications.status` remains the human-set audit
+   value (what was decided, and when) — it is never silently rewritten by
+   a read.
+2. A SQL view, `ebp_manufacturer_certifications_effective`, computes
+   `effective_status`: `EXPIRED` whenever `status = 'VERIFIED'` and
+   `expires_on < CURRENT_DATE`, otherwise equal to `status`.
+3. Every code path that needs to know "is this certification currently
+   valid" (Phase 2's own DTOs, and any future phase checking
+   certification validity as part of a qualification decision) reads
+   `effective_status` from this view — never the raw `status` column for
+   that purpose.
+4. A future phase may add a scheduled job that physically transitions
+   `status` to `EXPIRED` with a proper status-history-style record; that
+   would be an optimization for reporting/query-plan reasons, not a
+   correctness requirement, since the view already guarantees correctness
+   at read time without one.
+
+**Consequences:**
+- `ebp/phase2/repository.js` exposes a `fetchCertificationsEffective`
+  function backed by the view; no other repository function is used to
+  answer "is this certification valid right now."
+- Tests must prove a `VERIFIED` certification with a past `expires_on`
+  reads `effective_status = 'EXPIRED'` through the view while its raw
+  `status` column is unchanged.
+
+---
+
+## ADR-0020 — Manufacturer status is a strict state machine; suspension always requires re-review to reactivate, retirement is terminal
+
+**Date:** 2026-07-13
+**Status:** Accepted
+
+**Context:** The Phase 2 request requires that "no arbitrary status
+changes" be permitted and that every transition be logged. Left
+undefined, an implementation could allow any status to move to any other
+status (e.g., `SUSPENDED` silently back to `QUALIFIED` with no re-review),
+undermining the reason a suspension happened in the first place.
+
+**Decision:** The only valid transitions for `ebp_manufacturers.status`
+are:
+
+```
+CANDIDATE     → UNDER_REVIEW, RETIRED
+UNDER_REVIEW  → CANDIDATE, CONDITIONAL, QUALIFIED, RETIRED
+CONDITIONAL   → UNDER_REVIEW, QUALIFIED, SUSPENDED, RETIRED
+QUALIFIED     → SUSPENDED, RETIRED
+SUSPENDED     → UNDER_REVIEW, RETIRED
+RETIRED       → (terminal — no outbound transition)
+```
+
+Notably: `SUSPENDED` can **never** transition directly back to
+`QUALIFIED` or `CONDITIONAL` — reactivation always passes through
+`UNDER_REVIEW` first, so a suspension's underlying issue is re-assessed,
+not silently waived. `RETIRED` is terminal: a retired Manufacturer is
+never reactivated under the same `manufacturer_code`; a real-world plant
+that returns after retirement is registered as a new Manufacturer with a
+new code (consistent with ADR-0015's non-reuse guarantee) — this is a
+deliberate choice, not a limitation of the model, since a `RETIRED` row's
+history should not silently resume as if nothing happened.
+
+Every transition, valid or attempted, records: `from_status`,
+`to_status`, `reason`, `declared_actor`, `identity_mechanism`,
+`changed_at`, and an optional `evidence_reference` — an invalid-transition
+attempt is rejected before any row is written, not logged as a failed
+mutation.
+
+**Consequences:**
+- `ebp/phase2/validation.js` encodes this transition table as the single
+  source of truth; `service.js`'s status-change function consults it
+  before writing, never allows the caller to bypass it via a generic
+  field-update endpoint.
+- Manufacturer Qualification status (`ebp_manufacturer_qualifications.
+  status`: `CANDIDATE`/`CONDITIONAL`/`QUALIFIED`/`SUSPENDED`/`REVOKED`)
+  follows an analogous, separately-encoded transition table, with
+  `REVOKED` (not `RETIRED`) as its terminal state, since revoking one
+  family qualification does not retire the whole Manufacturer.
+
+---
+
+## ADR-0021 — Manufacturer Registry confidentiality: every new entity gets an explicit internal-only DTO; no distributor-facing projection exists in Phase 2
+
+**Date:** 2026-07-13
+**Status:** Accepted — **extends** ADR-0006's confidentiality principle to
+the new entities Phase 2 introduces.
+
+**Context:** ADR-0006 established that manufacturer identity, `EFM-XXXX`,
+FOB, margin, and confidential engineering must never reach a Distributor,
+enforced at the data-shape level. Phase 2 introduces several new
+sub-entities (contacts, locations, certifications, capabilities,
+qualifications, internal notes) that did not exist when ADR-0006 was
+written and that are at least as sensitive as the fields ADR-0006 already
+named.
+
+**Decision:**
+1. Every Phase 2 read path is served by an explicit
+   `toInternalManufacturerDTO`-style projection — never a generic
+   `SELECT *`/`row_to_json` serialization exposed directly to an API
+   response. This mirrors the discipline already established for Phase 1
+   (ADR-0009).
+2. Phase 2 implements **no** Manufacturer/Distributor-facing projection
+   at all — there is no live endpoint, and no DTO function, that a future
+   Phase 3 (Factory Portal) or Phase 8 (Distributor Portal) could
+   accidentally wire up today. When those phases are built, they define
+   their own explicit, reviewed projection against this schema; Phase 2
+   does not pre-build one, so there is nothing half-finished to misuse.
+3. `ebp_manufacturers.internal_notes` is explicitly documented as
+   ELIMFILTERS-internal only, following the same pattern as Phase 1's
+   `internal_engineering_notes` (ADR-0009) — never returned to any
+   non-internal consumer, and excluded from any future Manufacturer- or
+   Distributor-facing projection by default (an allow-list, not a
+   deny-list, per the discipline `PLATFORM_ARCHITECTURE.md` §6 already
+   requires).
+
+**Consequences:**
+- `ebp/phase2/dto.js` contains exactly one exported projection function
+  (`toInternalManufacturerDTO`, plus small child-entity equivalents for
+  contacts/locations/certifications/capabilities/qualifications), all
+  internal-only, all used by every Phase 2 route.
+- Tests must prove that no Phase 2 API response ever includes a field not
+  present in its DTO's explicit allow-list (i.e., the route layer never
+  falls back to serializing a raw database row).

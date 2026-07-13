@@ -483,6 +483,14 @@ pool.on('connect', client => {
 const createEbpPassportsRouter = require('./ebp/phase1/passports.routes');
 app.use('/api/ebp/passports', adminLimiter, requireAdmin, createEbpPassportsRouter(pool));
 
+// ─── EBP Phase 2: Manufacturer Registry ───────────────────────────────────────
+// Internal-only surface (requireAdmin), per docs/ebp/phases/phase-02-
+// manufacturer-registry.md. Table migrations live under migrations/ebp-phase2/.
+// Never modifies Phase 1's tables — read-only reference to its category/
+// subtype vocabulary only (ADR-0016).
+const createEbpManufacturersRouter = require('./ebp/phase2/manufacturers.routes');
+app.use('/api/ebp/manufacturers', adminLimiter, requireAdmin, createEbpManufacturersRouter(pool));
+
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
 // function after every cross-reference resolution. Non-blocking — errors are

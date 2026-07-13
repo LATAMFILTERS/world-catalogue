@@ -164,6 +164,15 @@ only after review of a specific Offer's proposal.
 
 ## 4. Manufacturer Registry Rules
 
+**Note (additive, ADR-0020):** the qualification-status list below
+predates Phase 2 implementation and is non-exhaustive — it did not name an
+explicit "under review" state. Phase 2 implements a six-state machine
+(`CANDIDATE`, `UNDER_REVIEW`, `CONDITIONAL`, `QUALIFIED`, `SUSPENDED`,
+`RETIRED`) with `UNDER_REVIEW` as the mandatory re-assessment step every
+reactivation out of `SUSPENDED` must pass through. See ADR-0020 in
+`DECISIONS.md` for the full transition table. This note is additive only;
+no sentence below is altered or removed.
+
 - A Manufacturer record must specify: an internal database identifier, a
   permanent confidential `manufacturer_code` in the format `EFM-XXXX`
   (assigned once, at registration, and never reassigned or reused), legal

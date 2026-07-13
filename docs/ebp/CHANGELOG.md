@@ -496,3 +496,114 @@ satisfactory and formally approved Phase 1.
 - **No further changes to Phase 1's implementation are made in this
   entry** — this is a status/approval-only change. Phase 2 remains not
   started.
+
+## 2026-07-13 — Phase 2 (Manufacturer Registry) built
+
+With Phase 1 frozen, the project owner authorized starting Phase 2 only
+(explicitly not Phase 3 or later). Converts
+`phases/phase-02-manufacturer-registry.md` from `Spec Drafted` to an
+implementable spec and then implements it in full — real migrations, real
+backend module, real tests, all verified against a real local Postgres
+instance. Phase 1's tables, rows, and 59-test suite were re-verified
+unmodified throughout. Phase 2 status moves to `Built` (not `APPROVED /
+FROZEN` — freezing is a separate, later step per the project owner's
+explicit instruction).
+
+- **`docs/ebp/DECISIONS.md`** — added ADR-0015 through ADR-0021, closing
+  all nine decisions the project owner required before implementation:
+  `EFM-XXXX` generation algorithm (cryptographically random via
+  `node:crypto`, 32-char ambiguity-free alphabet, retry-on-collision,
+  DB-enforced format/immutability), reuse of Phase 1's `product_category`/
+  `product_subtype` vocabulary (no parallel taxonomy), structured
+  (typed-enum + JSONB) qualification conditions, Locations as the sole
+  address model with a composite FK binding qualifications/certifications/
+  capabilities to a specific `(manufacturer_id, location_id)` pair,
+  computed certification validity via a SQL view rather than a possibly-
+  stale stored column, the six-state Manufacturer and five-state
+  Qualification status machines (explicit transition tables, `RETIRED`/
+  `REVOKED` terminal), and confidentiality-by-construction (internal-only
+  DTOs, no Manufacturer/Distributor projection built in this phase).
+- **`docs/ebp/phases/phase-02-manufacturer-registry.md`** — full rewrite
+  into an implementable spec: real SQL schema (8 tables + 1 view), the
+  `EFM-XXXX` algorithm, both state machines, structured qualification
+  conditions, the 16-endpoint internal API surface, confidentiality/DTO
+  rules, and closed risks/open-questions sections.
+- **`migrations/ebp-phase2/001_schema.sql`** — `ebp_manufacturers` (soft
+  retirement, `manufacturer_code` immutability trigger),
+  `ebp_manufacturers_status_history` (append-only),
+  `ebp_manufacturer_contacts` (partial unique index enforcing one active
+  primary contact), `ebp_manufacturer_locations` (`UNIQUE(id,
+  manufacturer_id)` enabling composite FKs), `ebp_manufacturer_
+  certifications` (+ `ebp_manufacturer_certifications_effective` view),
+  `ebp_manufacturer_qualifications`, `ebp_manufacturer_qualification_
+  conditions`, `ebp_manufacturer_capabilities`. Idempotent (`CREATE TABLE
+  IF NOT EXISTS`), no FK or DDL dependency on Phase 1.
+- **`migrations/ebp-phase2/validate.sql`**, **`rollback.sql`** — both
+  executed for real: `validate.sql` confirmed all 8 tables, the view, the
+  immutability trigger, the partial unique index, the composite FK
+  constraint, and zero data-integrity violations; `rollback.sql` confirmed
+  (with 130 real manufacturer rows and their children present, not just an
+  empty schema) that all Phase 2 structures drop cleanly while
+  `ebp_engineering_passports` and its children (5 Phase 1 tables),
+  `elimfilters_catalog` (20 rows), and `technologies` (1 row) are left with
+  byte-for-byte unchanged row counts; the schema was then reapplied to
+  leave the database in a working state and idempotency was confirmed by
+  re-running `001_schema.sql` a second time with no errors.
+- **`ebp/phase2/efm-code.js`** — `generateUniqueManufacturerCode`
+  (retry-on-collision), `generateCandidate`, `isValidFormat` (ADR-0015).
+- **`ebp/phase2/validation.js`** — the Manufacturer and Qualification
+  status transition tables, all payload validators, and the fixed
+  `condition_type`/`capability_type` enums.
+- **`ebp/phase2/dto.js`** — `toInternalManufacturerDTO` and six sibling
+  internal-only projections (contacts, locations, certifications via the
+  effective-status view, capabilities, qualifications with nested
+  conditions) — no generic row serialization anywhere (ADR-0021).
+- **`ebp/phase2/repository.js`** — database access layer for all 8 tables.
+- **`ebp/phase2/service.js`** — orchestration: `createManufacturer`
+  (auto-generates and assigns the EFM code inside the creating
+  transaction), `transitionManufacturerStatus`/
+  `transitionQualificationStatus` (row-locked, state-machine-validated,
+  history-recording), and the contact/location/certification/capability/
+  qualification lifecycle functions.
+- **`ebp/phase2/manufacturers.routes.js`** — the 16-endpoint internal API
+  surface under `/api/ebp/manufacturers`, reusing
+  `ebp/phase1/actor.js`'s `resolveDeclaredActor` directly (not duplicated,
+  per the project owner's explicit instruction).
+- **`server.js`** — mounts `/api/ebp/manufacturers` behind the existing
+  `adminLimiter` + `requireAdmin` middleware, immediately after the Phase 1
+  mount. No existing route, table, or behavior modified.
+- **`tests/ebp-phase2/unit.test.js`**, **`integration.test.js`**,
+  **`regression.test.js`** — 100 tests total using Node's built-in test
+  runner (zero new npm dependencies): 34 unit tests (EFM code
+  format/collision-retry, both state machines, all payload validators, DTO
+  allow-list behavior), 41 integration subtests (full HTTP lifecycle
+  against a live server + live Postgres behind a real `requireAdmin`-style
+  gate, including the mandatory `403` without `ADMIN_KEY` check,
+  auto-generated-code creation, single-active-primary-contact enforcement,
+  certification effective-status after expiry, qualification-by-location-
+  and-family with structured conditions, and full
+  suspend/reactivate/retire lifecycle), 25 regression subtests (DB-level
+  guards independent of application code: case-insensitive
+  `manufacturer_code` uniqueness, format `CHECK`, immutability trigger,
+  composite-FK cross-manufacturer rejection, cascade-delete with no
+  orphans, all status/condition/capability `CHECK` constraints, and the
+  effective-certification view's expiry computation). **All 100 passed**
+  against a real local Postgres 16 instance, confirmed stable across 3
+  consecutive re-runs. Phase 1's own 59-test suite was re-run after this
+  work and still passes 59/59 unmodified.
+- **Two bugs found and fixed during test-writing** (both in this same
+  change, before any freeze): the certification-verify route was
+  hardcoding `effective_status` to the raw `status` column instead of
+  reading the computed effective-status view, defeating ADR-0019's
+  guarantee for the verify response specifically (fixed in
+  `ebp/phase2/service.js`'s `addCertification`/`verifyCertification`,
+  which now always re-fetch through
+  `ebp_manufacturer_certifications_effective`); and an early regression
+  test asserted a global zero count of `ebp_engineering_passports` rows
+  with `created_by = 'regression-test'`, which is false once Phase 1's own
+  regression suite has ever run in the same database — corrected to a
+  before/after row-count diff scoped to the Phase 2 test run itself.
+- **Phase 3 was not started.** No Manufacturer Intake Portal / Factory
+  Portal table, route, or spec change was made in this session.
+
+
