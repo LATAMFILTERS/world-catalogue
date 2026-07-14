@@ -30,6 +30,7 @@ const normalizedSku = slug(skuArg);
 const generatedPath = path.join(root, 'knowledge', 'generated', 'product-intelligence', 'skus', `${normalizedSku}.md`);
 const targetDir = path.join(root, 'knowledge', 'entities', 'skus');
 const targetPath = path.join(targetDir, `${normalizedSku}.md`);
+const evidencePath = path.join(root, 'knowledge', 'entities', 'evidence', `${evidenceId.split(':')[1]}.md`);
 
 if (!fs.existsSync(generatedPath)) {
   console.error(`[product-intelligence] generated SKU not found: ${generatedPath}`);
@@ -39,17 +40,24 @@ if (fs.existsSync(targetPath)) {
   console.error(`[product-intelligence] canonical SKU already exists: ${targetPath}`);
   process.exit(1);
 }
+if (!fs.existsSync(evidencePath)) {
+  console.error(`[product-intelligence] evidence entity not found: ${evidencePath}`);
+  process.exit(1);
+}
 
 let text = fs.readFileSync(generatedPath, 'utf8');
 if (/product-family:unknown|technology:unknown|system:unknown/.test(text)) {
   console.error('[product-intelligence] cannot promote a SKU with unresolved core mappings');
   process.exit(1);
 }
+if (/## Unresolved mappings\n\n-(?! None)/m.test(text)) {
+  console.error('[product-intelligence] cannot promote a SKU while unresolved mappings remain');
+  process.exit(1);
+}
 
 text = text
   .replace(/^status: under_review$/m, 'status: approved')
   .replace(/^evidence_status: under_review$/m, 'evidence_status: validated')
-  .replace(/(## Standards and evidence\n\n)?/m, '')
   .trimEnd();
 
 text += `\n\n## Promotion evidence\n\n- supported_by_evidence: \`${evidenceId}\`\n`;
