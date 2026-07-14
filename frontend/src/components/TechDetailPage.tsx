@@ -168,7 +168,7 @@ export function TechDetailPage({ data }: Props) {
             borderBottom: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {data.logoSrc && (
               <img
                 src={data.logoSrc}
