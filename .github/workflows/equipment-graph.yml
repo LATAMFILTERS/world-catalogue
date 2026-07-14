@@ -1,0 +1,67 @@
+name: Equipment Graph
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_path:
+        description: Catalogue JSON path
+        required: false
+        default: frontend/catalogue.json
+  push:
+    branches: [main]
+    paths:
+      - frontend/catalogue.json
+      - scripts/export-equipment-graph.mjs
+      - scripts/promote-equipment-entity.mjs
+      - knowledge/templates/equipment.md
+      - knowledge/templates/engine.md
+      - knowledge/templates/vehicle.md
+      - knowledge/templates/manufacturer.md
+      - docs/knowledge-graph/PHASE_4_EQUIPMENT_GRAPH.md
+      - .github/workflows/equipment-graph.yml
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve input
+        id: input
+        shell: bash
+        run: |
+          INPUT_PATH='${{ github.event.inputs.input_path }}'
+          if [ -z "$INPUT_PATH" ]; then INPUT_PATH='frontend/catalogue.json'; fi
+          echo "path=$INPUT_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Generate equipment graph candidates
+        run: node scripts/export-equipment-graph.mjs --input='${{ steps.input.outputs.path }}'
+
+      - name: Validate canonical knowledge
+        run: node scripts/validate-knowledge-v2.mjs
+
+      - name: Publish summary
+        shell: bash
+        run: |
+          echo '## Equipment Graph' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f knowledge/generated/equipment-graph/README.md ]; then
+            cat knowledge/generated/equipment-graph/README.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: equipment-graph-${{ github.sha }}
+          path: knowledge/generated/equipment-graph/
+          if-no-files-found: error
+          retention-days: 30
