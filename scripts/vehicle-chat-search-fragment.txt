@@ -28,20 +28,30 @@
       const uniqueTokens = [...new Set(vehicleTokens)].slice(0, 5);
       const primaryToken = uniqueTokens[0];
 
-      // PostgreSQL receives exactly one explicitly typed text parameter.
-      // The database only performs a broad make/model prefilter; exact token and
-      // year validation happens in Node below. This avoids dynamic LIKE/ALL
-      // parameter inference and keeps the SQL compatible with the production schema.
-      const vehicleRows = await client.query(
-        `SELECT c.*
-         FROM elimfilters_catalog c
-         WHERE c.vehicle_applications IS NOT NULL
-           AND jsonb_typeof(c.vehicle_applications) = 'array'
-           AND UPPER(c.vehicle_applications::text) LIKE $1::text
-         ORDER BY c.sku
-         LIMIT 500`,
-        ['%' + primaryToken + '%']
-      );
+      let vehicleRows;
+      try {
+        // POSITION avoids PostgreSQL LIKE operator inference entirely. The database
+        // performs only a broad text prefilter; exact make/model/year validation is
+        // completed below in Node against the parsed JSONB applications.
+        vehicleRows = await client.query(
+          `SELECT c.*
+           FROM elimfilters_catalog c
+           WHERE c.vehicle_applications IS NOT NULL
+             AND jsonb_typeof(c.vehicle_applications) = 'array'
+             AND POSITION($1::text IN UPPER(c.vehicle_applications::text)) > 0
+           ORDER BY c.sku
+           LIMIT 750`,
+          [primaryToken]
+        );
+      } catch (vehicleSearchError) {
+        console.error('[search:vehicle]', vehicleSearchError.code || '', vehicleSearchError.message);
+        return res.status(500).json({
+          success: false,
+          error: 'Vehicle search failed',
+          code: vehicleSearchError.code || null,
+          detail: vehicleSearchError.message
+        });
+      }
 
       const expandYear = (value) => {
         const n = Number(value);
@@ -100,7 +110,6 @@
       }).filter(product => product.matched_vehicle_applications.length > 0);
 
       if (vehicleProducts.length > 0) {
-        await enrichAlternatives(vehicleProducts, client);
         const engineOptions = [...new Set(vehicleProducts.flatMap(product =>
           product.matched_vehicle_applications.map(app => app.engine_code || app.engine || app.model_type || '')
         ).filter(Boolean))].slice(0, 20);
