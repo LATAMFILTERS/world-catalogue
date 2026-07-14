@@ -47,6 +47,7 @@ frontend/public/api/citation/
 elimfilters-vault/00-meta/CITATION_INDEX.json
 frontend/src/lib/jsonld-constants.generated.ts
 knowledge/generated/product-intelligence/
+knowledge/generated/equipment-graph/
 
 # Development/investigation scripts — never deploy
 audit_*.js
