@@ -116,33 +116,32 @@ try {
     ''
   );
 
-  if (!source.includes('.technology-applications-grid')) {
-    source = source.replace(
+  if (!source.includes('/* technology applications responsive matrix */')) {
+    const responsiveCss = [
+      '        /* technology applications responsive matrix */',
+      '        .technology-applications-grid {',
+      '          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;',
+      '        }',
+      '        @media (max-width: 1100px) {',
+      '          .technology-applications-grid {',
+      '            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;',
+      '          }',
+      '        }',
       '        @media (max-width: 768px) {',
-      [
-        '        .technology-applications-grid {',
-        '          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;',
-        '        }',
-        '        @media (max-width: 1100px) {',
-        '          .technology-applications-grid {',
-        '            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;',
-        '          }',
-        '        }',
-        '        @media (max-width: 768px) {',
-        '          .technology-applications-grid {',
-        '            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;',
-        '          }',
-      ].join('\n')
-    );
+      '          .technology-applications-grid {',
+      '            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;',
+      '          }',
+      '        }',
+      '        @media (max-width: 480px) {',
+      '          .technology-applications-grid {',
+      '            grid-template-columns: 1fr !important;',
+      '          }',
+      '        }',
+    ].join('\n');
 
     source = source.replace(
-      '        @media (max-width: 480px) {',
-      [
-        '        @media (max-width: 480px) {',
-        '          .technology-applications-grid {',
-        '            grid-template-columns: 1fr !important;',
-        '          }',
-      ].join('\n')
+      '      `}</style>',
+      `${responsiveCss}\n      \`}</style>`
     );
   }
 
