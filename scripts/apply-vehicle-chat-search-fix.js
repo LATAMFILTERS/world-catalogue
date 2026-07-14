@@ -132,8 +132,34 @@ source = source.replace('.filter(item => item.score >= bestScore - 15)', '.filte
 source = source.replace('vehicleProducts.filter(product => product.relevance_score >= topScore - 20)', 'vehicleProducts.filter(product => product.relevance_score >= topScore - 8)');
 source = source.replace('const engineOptions = [...engineMap.values()].slice(0, 8);', 'const engineOptions = [...engineMap.values()].slice(0, 5);');
 
+// A generic make/model/year query must never be treated as exact merely because
+// the current catalogue happens to contain one engine. Ask the customer to confirm
+// that engine (or market) before presenting the provisional filters as exact.
+source = source.replace(
+  'const needsEngineConfirmation = engineOptions.length > 1;',
+  `const queryIncludesEngine = uniqueTokens.slice(2).some(token =>
+          engineOptions.some(engine => normalizeVehicleText(engine).includes(token))
+        );
+        const needsEngineConfirmation = engineOptions.length > 0 && !queryIncludesEngine;`
+);
+source = source.replace(
+  '? `Encontré varias motorizaciones para ${makeToken} ${modelToken} ${requestedYear}. Confirma el motor para darte los filtros exactos.`',
+  '? `Encontré una o más aplicaciones posibles para ${makeToken} ${modelToken} ${requestedYear}. Confirma el motor o el mercado del vehículo para darte los filtros exactos.`'
+);
+source = source.replace(
+  '? `I found several engines for ${makeToken} ${modelToken} ${requestedYear}. Confirm the engine for exact filters.`',
+  '? `I found one or more possible applications for ${makeToken} ${modelToken} ${requestedYear}. Confirm the engine or vehicle market for exact filters.`'
+);
+source = source.replace(
+  'engine_options: engineOptions,',
+  "engine_options: engineOptions,\n          confirmation_required: needsEngineConfirmation ? 'engine_or_market' : null,"
+);
+
 if (source.includes('bestScore - 15') || source.includes('topScore - 20')) {
   throw new Error('Loose vehicle ranking thresholds remain');
+}
+if (source.includes('const needsEngineConfirmation = engineOptions.length > 1;')) {
+  throw new Error('Unsafe single-engine auto-confirmation remains');
 }
 
 if (changed) fs.writeFileSync(target, source, 'utf8');
