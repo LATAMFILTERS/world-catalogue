@@ -476,7 +476,7 @@ export default function Home() {
               style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
             >
               <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost  -  4x NANOFORCETM Hydraulic Filters</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost  -  4x NANOFORCE™ Hydraulic Filters</p>
                 <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
