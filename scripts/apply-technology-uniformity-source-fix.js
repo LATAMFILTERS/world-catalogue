@@ -16,9 +16,35 @@ try {
   let source = fs.readFileSync(filePath, 'utf8');
 
   if (!source.includes(marker)) {
+    const insertion = [
+      'export function TechDetailPage({ data }: Props) {',
+      '  const title = cleanText(data.heroTitle);',
+      '  const engineeringPrinciples: TechStage[] = [',
+      '    ...data.stages.map((stage) => ({',
+      '      ...stage,',
+      '      tag: cleanText(stage.tag),',
+      '      title: cleanText(stage.title),',
+      '      body: cleanText(stage.body),',
+      '      stat: cleanText(stage.stat),',
+      '      statLabel: cleanText(stage.statLabel),',
+      '    })),',
+      '    ...data.specs.map((spec, index) => ({',
+      "      number: String(data.stages.length + index + 1).padStart(2, '0'),",
+      "      tag: 'SYSTEM ATTRIBUTE',",
+      '      title: cleanText(spec.label),',
+      '      body: cleanText(spec.sub),',
+      '      stat: cleanText(spec.value),',
+      '      statLabel: cleanText(spec.sub),',
+      '    })),',
+      '  ];',
+      '  const engineeringHeading = data.specs.length > 0',
+      "    ? `${engineeringPrinciples.length} ENGINEERING PRINCIPLES FOR ${title} RELIABILITY.`",
+      "    : (data.stagesHeading ? cleanText(data.stagesHeading) : 'ENGINEERING PRINCIPLES FOR SYSTEM RELIABILITY.');",
+    ].join('\n');
+
     source = source.replace(
       "export function TechDetailPage({ data }: Props) {\n  const title = cleanText(data.heroTitle);",
-      `export function TechDetailPage({ data }: Props) {\n  const title = cleanText(data.heroTitle);\n  const engineeringPrinciples: TechStage[] = [\n    ...data.stages.map((stage) => ({\n      ...stage,\n      tag: cleanText(stage.tag),\n      title: cleanText(stage.title),\n      body: cleanText(stage.body),\n      stat: cleanText(stage.stat),\n      statLabel: cleanText(stage.statLabel),\n    })),\n    ...data.specs.map((spec, index) => ({\n      number: String(data.stages.length + index + 1).padStart(2, '0'),\n      tag: 'SYSTEM ATTRIBUTE',\n      title: cleanText(spec.label),\n      body: cleanText(spec.sub),\n      stat: cleanText(spec.value),\n      statLabel: cleanText(spec.sub),\n    })),\n  ];\n  const engineeringHeading = data.specs.length > 0\n    ? \\`${'${engineeringPrinciples.length}'} ENGINEERING PRINCIPLES FOR ${'${title}'} RELIABILITY.\\`\n    : (data.stagesHeading ? cleanText(data.stagesHeading) : 'ENGINEERING PRINCIPLES FOR SYSTEM RELIABILITY.');`
+      insertion
     );
   }
 
