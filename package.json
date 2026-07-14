@@ -6,7 +6,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "postinstall": "node scripts/apply-part-search-ui-fix.js",
+    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-syntrax-source-fix.js",
     "start": "node server.js",
     "dev": "node server.js",
     "build": "cd frontend && npm ci && npm run build"
