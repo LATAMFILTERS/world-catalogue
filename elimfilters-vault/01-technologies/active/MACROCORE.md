@@ -76,7 +76,7 @@ MACROCORE™ is ISO 5011 certified. The 62 PSI anti-collapse rating ensures the 
 - *(8 more applicable industries — see applicable_industries above)*
 
 ### Systems
-- [[AIRFILTER|Air Filtration System — Product Line]] (primary technology for this system)
+- [[AIR_INTAKE_PROTECTION|Air Filtration System — Product Line]] (primary technology for this system)
 
 ### Product Families
 - [[AIRFILTER_PRIMARY|Primary Intake Protection Family]] (primary implementation)

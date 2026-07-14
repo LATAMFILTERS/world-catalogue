@@ -84,7 +84,7 @@
           "SYNTRAX"
         ],
         "located_in_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "sensitive_to_contamination": [
           "PARTICLE_WEAR"
@@ -132,7 +132,7 @@
           "SYNTRAX"
         ],
         "located_in_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "typical_filter_families": [
           "AIRFILTER_PRIMARY"

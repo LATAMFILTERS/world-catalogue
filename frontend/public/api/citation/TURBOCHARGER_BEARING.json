@@ -35,7 +35,7 @@
       "SYNTRAX"
     ],
     "located_in_systems": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ],
     "typical_filter_families": [
       "AIRFILTER_PRIMARY"
@@ -63,9 +63,9 @@
         "href": "/api/citation/SYNTRAX.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "located_in_systems",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       },
       {
         "key": "AIRFILTER_PRIMARY",
