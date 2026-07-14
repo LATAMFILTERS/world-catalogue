@@ -76,13 +76,29 @@ try {
   }
 
   const block = source.slice(intekcoreStart, intekcoreEnd);
-  const stagesPattern = /    stagesHeading:[\s\S]*?    specs: \[[\s\S]*?\n    \],/;
+  const alreadyApplied =
+    block.includes("stagesHeading: 'SIX ENGINEERING PRINCIPLES FOR HOUSING RELIABILITY.'") &&
+    block.includes('    specs: [],') &&
+    block.includes("applicationsHeading: 'WHERE INTEKCORE™ HOUSING SYSTEMS OPERATE'");
 
-  if (!stagesPattern.test(block)) {
-    throw new Error('INTEKCORE stages/specs block not found');
+  if (alreadyApplied) {
+    console.log('[intekcore-source] already applied; no changes required');
+    process.exit(0);
   }
 
-  const updatedBlock = block.replace(stagesPattern, stagesReplacement);
+  const stagesStart = block.indexOf('    stagesHeading:');
+  const applicationsStart = block.indexOf('    applicationsHeading:');
+
+  if (stagesStart === -1 || applicationsStart === -1 || applicationsStart <= stagesStart) {
+    throw new Error('INTEKCORE stages/applications boundaries not found');
+  }
+
+  const updatedBlock =
+    block.slice(0, stagesStart) +
+    stagesReplacement +
+    '\n' +
+    block.slice(applicationsStart);
+
   source = source.slice(0, intekcoreStart) + updatedBlock + source.slice(intekcoreEnd);
 
   fs.writeFileSync(sourcePath, source, 'utf8');
