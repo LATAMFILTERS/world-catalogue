@@ -1,0 +1,44 @@
+name: Knowledge v2 Validation
+
+on:
+  pull_request:
+    paths:
+      - 'knowledge/**'
+      - 'scripts/validate-knowledge-v2.mjs'
+      - 'docs/knowledge-graph/**'
+      - '.github/workflows/knowledge-v2-validation.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'knowledge/**'
+      - 'scripts/validate-knowledge-v2.mjs'
+      - 'docs/knowledge-graph/**'
+      - '.github/workflows/knowledge-v2-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate canonical knowledge
+        run: node scripts/validate-knowledge-v2.mjs
+
+      - name: Confirm governing files
+        shell: bash
+        run: |
+          test -f docs/knowledge-graph/KNOWLEDGE_GRAPH_ARCHITECTURE_V2.md
+          test -f docs/knowledge-graph/ELIMFILTERS_ONTOLOGY_V2.yaml
+          test -f docs/knowledge-graph/PHASE_1_CANONICAL_KNOWLEDGE_IMPLEMENTATION.md
+          test -f knowledge/schemas/entity.schema.json
