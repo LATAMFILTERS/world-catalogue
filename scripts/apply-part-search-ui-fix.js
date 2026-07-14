@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const indexPath = path.join(__dirname, '..', 'part-search', 'index.html');
+const syntraxPath = path.join(__dirname, '..', 'frontend', 'out', 'technologies', 'syntrax', 'index.html');
 
 const approvedCss = `
 /* ELIMFILTERS approved Part Search typography */
@@ -97,5 +98,43 @@ try {
   console.log('[part-search-ui] applied');
 } catch (error) {
   console.error('[part-search-ui] failed:', error.message);
+  process.exitCode = 1;
+}
+
+const syntraxGridCss = `
+<style id="syntrax-specs-grid-fix">
+/* SYNTRAX specifications: exactly 3 cards per row on desktop, no filler panel */
+main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
+main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  background: transparent !important;
+}
+main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"] > div,
+main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] > div {
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 900px) {
+  main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
+  main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 600px) {
+  main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
+  main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>`;
+
+try {
+  let syntraxHtml = fs.readFileSync(syntraxPath, 'utf8');
+  syntraxHtml = syntraxHtml.replace(/<style id="syntrax-specs-grid-fix">[\s\S]*?<\/style>/gi, '');
+  syntraxHtml = syntraxHtml.replace('</head>', `${syntraxGridCss}\n</head>`);
+  fs.writeFileSync(syntraxPath, syntraxHtml, 'utf8');
+  console.log('[syntrax-grid] applied: 3x2 desktop, no filler panel');
+} catch (error) {
+  console.error('[syntrax-grid] failed:', error.message);
   process.exitCode = 1;
 }
