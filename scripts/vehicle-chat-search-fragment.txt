@@ -30,9 +30,6 @@
 
       let vehicleRows;
       try {
-        // POSITION avoids PostgreSQL LIKE operator inference entirely. The database
-        // performs only a broad text prefilter; exact make/model/year validation is
-        // completed below in Node against the parsed JSONB applications.
         vehicleRows = await client.query(
           `SELECT c.*
            FROM elimfilters_catalog c
@@ -100,12 +97,39 @@
         return uniqueTokens.every(token => haystack.includes(token));
       };
 
+      const categoryLabels = lang === 'es'
+        ? { cabin: 'Cabina', oil: 'Aceite', air: 'Aire de motor', fuel: 'Combustible', coolant: 'Refrigerante', transmission: 'Transmisión', other: 'Otros' }
+        : { cabin: 'Cabin', oil: 'Oil', air: 'Engine Air', fuel: 'Fuel', coolant: 'Coolant', transmission: 'Transmission', other: 'Other' };
+
+      const classifyVehicleFilter = (product) => {
+        const text = [
+          product.description,
+          product.filter_type,
+          product.filter_subtype,
+          product.installation_type,
+          product.technology,
+          product.elimfilters_sku
+        ].filter(Boolean).join(' ').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+        const sku = String(product.elimfilters_sku || '').toUpperCase();
+
+        if (/\b(CABIN|POLLEN|INTERIOR AIR|AIR CONDITIONING|HVAC|HABITACLE)\b/.test(text) || sku.startsWith('EC')) return 'cabin';
+        if (/\b(OIL|LUBE|LUBRICATION|ENGINE OIL)\b/.test(text) || sku.startsWith('EL')) return 'oil';
+        if (/\b(FUEL|DIESEL|GASOLINE|PETROL|WATER SEPARATOR)\b/.test(text) || sku.startsWith('EF')) return 'fuel';
+        if (/\b(COOLANT|COOLING|ANTIFREEZE)\b/.test(text)) return 'coolant';
+        if (/\b(TRANSMISSION|GEARBOX|ATF|CVT)\b/.test(text)) return 'transmission';
+        if (/\b(AIR FILTER|ENGINE AIR|AIR INTAKE|INTAKE AIR)\b/.test(text) || sku.startsWith('EA')) return 'air';
+        return 'other';
+      };
+
       const vehicleProducts = vehicleRows.rows.map(row => {
         const product = buildFilterData(row, lang);
         const applications = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
         product.matched_vehicle_applications = applications
           .filter(app => matchesTokens(app) && applicationCoversYear(app, requestedYear))
           .slice(0, 25);
+        product.raw_filter_type = product.filter_type;
+        product.result_category = classifyVehicleFilter(product);
+        product.result_category_label = categoryLabels[product.result_category];
         return product;
       }).filter(product => product.matched_vehicle_applications.length > 0);
 
@@ -114,9 +138,23 @@
           product.matched_vehicle_applications.map(app => app.engine_code || app.engine || app.model_type || '')
         ).filter(Boolean))].slice(0, 20);
 
+        const groupedResults = vehicleProducts.reduce((groups, product) => {
+          const key = product.result_category;
+          if (!groups[key]) groups[key] = [];
+          groups[key].push(product);
+          return groups;
+        }, {});
+
+        const categoryOrder = ['oil', 'air', 'cabin', 'fuel', 'coolant', 'transmission', 'other'];
+        const availableCategories = categoryOrder
+          .filter(key => groupedResults[key]?.length)
+          .map(key => ({ key, label: categoryLabels[key], count: groupedResults[key].length }));
+
         return res.json({
           success: true,
           results: vehicleProducts.slice(0, 30),
+          grouped_results: groupedResults,
+          available_categories: availableCategories,
           source: 'vehicle_natural_language',
           vehicle_query: {
             raw,
@@ -131,6 +169,8 @@
       return res.json({
         success: true,
         results: [],
+        grouped_results: {},
+        available_categories: [],
         source: 'vehicle_no_match',
         vehicle_query: { raw, year: requestedYear, tokens: uniqueTokens }
       });
