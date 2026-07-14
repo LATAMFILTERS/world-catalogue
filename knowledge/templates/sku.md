@@ -1,7 +1,7 @@
 ---
 id: sku:replace-me
 type: SKU
-n ame: REPLACE ME
+name: REPLACE ME
 status: under_review
 authority: canonical
 owner: ELIMFILTERS Product Intelligence
