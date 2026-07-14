@@ -1,0 +1,24 @@
+version: 1
+operational_source: elimfilters_catalog
+
+identity:
+  sku: [sku, part_number, partNumber, code, elimfilters_code]
+  name: [name, description, product_name, productName]
+  product_family: [product_family, productFamily, category, product_type, productType]
+  technology: [technology, technology_name, technologyName]
+  system: [system, protection_system, protectionSystem]
+
+relationships:
+  oem_codes: [oem_codes, oemCodes, oem_cross_references, oemCrossReferences]
+  competitor_codes: [competitor_codes, competitorCodes, cross_references, crossReferences]
+  equipment_applications: [equipment_applications, equipmentApplications, applications, equipment]
+  vehicle_applications: [vehicle_applications, vehicleApplications, vehicles]
+  industries: [industries, industry]
+
+rules:
+  missing_mapping: unresolved
+  default_status: under_review
+  default_evidence_status: under_review
+  default_product_family: product-family:unknown
+  default_technology: technology:unknown
+  default_system: system:unknown
