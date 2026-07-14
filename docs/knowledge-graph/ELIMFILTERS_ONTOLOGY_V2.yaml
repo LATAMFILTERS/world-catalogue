@@ -1,0 +1,216 @@
+version: 2.0.0
+name: ELIMFILTERS Knowledge Ontology
+namespace: https://elimfilters.com/knowledge/
+
+source_priority:
+  postgres: 1
+  obsidian: 2
+  source_code: 3
+  approved_documents: 4
+  graphify: 5
+  historical_reports: 6
+
+entity_types:
+  Brand:
+    required: [entity_id, canonical_name, status]
+  Technology:
+    required: [entity_id, canonical_name, status]
+  ProtectionSystem:
+    required: [entity_id, canonical_name, status]
+  ProductFamily:
+    required: [entity_id, canonical_name, status]
+  Product:
+    required: [entity_id, canonical_name, status]
+  SKU:
+    required: [entity_id, canonical_name, source_system, status]
+  Industry:
+    required: [entity_id, canonical_name, status]
+  EquipmentClass:
+    required: [entity_id, canonical_name, status]
+  Machine:
+    required: [entity_id, canonical_name, status]
+  Manufacturer:
+    required: [entity_id, canonical_name, status]
+  Engine:
+    required: [entity_id, canonical_name, status]
+  Component:
+    required: [entity_id, canonical_name, status]
+  Contaminant:
+    required: [entity_id, canonical_name, status]
+  FailureMode:
+    required: [entity_id, canonical_name, status]
+  Standard:
+    required: [entity_id, canonical_name, status]
+  TestMethod:
+    required: [entity_id, canonical_name, status]
+  EngineeringClaim:
+    required: [entity_id, canonical_name, claim_text, status]
+  Evidence:
+    required: [entity_id, canonical_name, evidence_type, status]
+  FieldValidation:
+    required: [entity_id, canonical_name, status]
+  LaboratoryValidation:
+    required: [entity_id, canonical_name, status]
+  SourceDocument:
+    required: [entity_id, canonical_name, source_uri, status]
+  WebPage:
+    required: [entity_id, canonical_name, route, status]
+  APIEndpoint:
+    required: [entity_id, canonical_name, route, status]
+  DatabaseTable:
+    required: [entity_id, canonical_name, status]
+  DatabaseColumn:
+    required: [entity_id, canonical_name, status]
+  SourceFile:
+    required: [entity_id, canonical_name, path, status]
+  Decision:
+    required: [entity_id, canonical_name, decision_text, status]
+  Conflict:
+    required: [entity_id, canonical_name, status]
+
+statuses:
+  - research
+  - inferred
+  - extracted
+  - approved
+  - validated
+  - disputed
+  - deprecated
+
+relationship_properties:
+  required:
+    - confidence
+    - status
+    - source_ids
+  optional:
+    - reviewed_by
+    - reviewed_at
+    - notes
+
+relationships:
+  TECHNOLOGY_PROTECTS_SYSTEM:
+    from: [Technology]
+    to: [ProtectionSystem]
+  TECHNOLOGY_USED_IN_INDUSTRY:
+    from: [Technology]
+    to: [Industry]
+  TECHNOLOGY_MITIGATES_CONTAMINANT:
+    from: [Technology]
+    to: [Contaminant]
+  TECHNOLOGY_PREVENTS_FAILURE_MODE:
+    from: [Technology]
+    to: [FailureMode]
+  TECHNOLOGY_VALIDATED_BY_STANDARD:
+    from: [Technology]
+    to: [Standard]
+  PRODUCT_USES_TECHNOLOGY:
+    from: [Product, ProductFamily]
+    to: [Technology]
+  SKU_INSTANCE_OF_PRODUCT:
+    from: [SKU]
+    to: [Product, ProductFamily]
+  SKU_APPLIES_TO_MACHINE:
+    from: [SKU]
+    to: [Machine]
+  PRODUCT_PROTECTS_COMPONENT:
+    from: [Product, ProductFamily]
+    to: [Component]
+  CONTAMINANT_CAUSES_FAILURE_MODE:
+    from: [Contaminant]
+    to: [FailureMode]
+  FAILURE_MODE_DAMAGES_COMPONENT:
+    from: [FailureMode]
+    to: [Component]
+  STANDARD_DEFINES_TEST_METHOD:
+    from: [Standard]
+    to: [TestMethod]
+  CLAIM_SUPPORTED_BY_EVIDENCE:
+    from: [EngineeringClaim]
+    to: [Evidence, FieldValidation, LaboratoryValidation]
+  EVIDENCE_DERIVED_FROM_SOURCE:
+    from: [Evidence, FieldValidation, LaboratoryValidation]
+    to: [SourceDocument]
+  MACHINE_USES_ENGINE:
+    from: [Machine]
+    to: [Engine]
+  MACHINE_OPERATES_IN_INDUSTRY:
+    from: [Machine]
+    to: [Industry]
+  MANUFACTURER_PRODUCES_MACHINE:
+    from: [Manufacturer]
+    to: [Machine]
+  WEBPAGE_DESCRIBES_ENTITY:
+    from: [WebPage]
+    to: [Brand, Technology, ProtectionSystem, ProductFamily, Product, SKU, Industry, Standard, Contaminant, FailureMode]
+  API_RETURNS_ENTITY:
+    from: [APIEndpoint]
+    to: [Technology, Product, SKU, Industry, Machine, Manufacturer]
+  SOURCE_FILE_IMPLEMENTS_WEBPAGE:
+    from: [SourceFile]
+    to: [WebPage]
+  SOURCE_FILE_IMPLEMENTS_API:
+    from: [SourceFile]
+    to: [APIEndpoint]
+  DATABASE_TABLE_STORES_ENTITY:
+    from: [DatabaseTable]
+    to: [Technology, Product, SKU, Machine, Manufacturer]
+  DATABASE_COLUMN_STORES_PROPERTY:
+    from: [DatabaseColumn]
+    to: [Technology, Product, SKU, Machine, Manufacturer]
+  DECISION_GOVERNS_ENTITY:
+    from: [Decision]
+    to: [Brand, Technology, ProtectionSystem, ProductFamily, Product, SKU, Industry, Standard, WebPage, APIEndpoint]
+  CONFLICTS_WITH:
+    from: [Conflict, EngineeringClaim, Decision, SourceDocument]
+    to: [Conflict, EngineeringClaim, Decision, SourceDocument]
+  SUPERSEDES:
+    from: [Decision, SourceDocument, EngineeringClaim]
+    to: [Decision, SourceDocument, EngineeringClaim]
+  DERIVED_FROM:
+    from: [EngineeringClaim, Evidence, Decision]
+    to: [SourceDocument, Evidence]
+  INFERRED_FROM:
+    from: [EngineeringClaim]
+    to: [EngineeringClaim, Evidence, SourceDocument]
+
+inference_rules:
+  - id: infer_sku_technology
+    when:
+      - SKU_INSTANCE_OF_PRODUCT
+      - PRODUCT_USES_TECHNOLOGY
+    create: SKU_USES_TECHNOLOGY
+    default_status: inferred
+    max_confidence: 0.90
+  - id: infer_failure_risk_reduction
+    when:
+      - TECHNOLOGY_MITIGATES_CONTAMINANT
+      - CONTAMINANT_CAUSES_FAILURE_MODE
+    create: TECHNOLOGY_REDUCES_RISK_OF_FAILURE_MODE
+    default_status: inferred
+    max_confidence: 0.80
+  - id: infer_sku_industry
+    when:
+      - SKU_APPLIES_TO_MACHINE
+      - MACHINE_OPERATES_IN_INDUSTRY
+    create: SKU_USED_IN_INDUSTRY
+    default_status: inferred
+    max_confidence: 0.85
+  - id: infer_claim_traceability
+    when:
+      - CLAIM_SUPPORTED_BY_EVIDENCE
+      - EVIDENCE_DERIVED_FROM_SOURCE
+    create: CLAIM_TRACEABLE_TO_SOURCE
+    default_status: extracted
+    max_confidence: 1.00
+
+publication_rules:
+  require_stable_entity_id: true
+  require_authoritative_source: true
+  require_approved_predicates: true
+  require_claim_provenance: true
+  allowed_statuses:
+    - approved
+    - validated
+  forbid_inferred_fitment_as_confirmed: true
+  forbid_inferred_compliance: true
+  forbid_inferred_inventory: true
