@@ -3,6 +3,15 @@
 // EBP Phase 5 — data access layer. Reads Phase 1/2/3/4 tables read-only;
 // writes only to Phase 5's own tables plus the shared ebp_activity_events/
 // ebp_alerts tables (both introduced by Phase 4, reused unmodified).
+//
+// Every function below accepts either a `pg.Pool` or an in-transaction
+// `pg.PoolClient` as its first argument — both expose `.query()`. Once a
+// caller has done `client = await pool.connect(); await client.query('BEGIN')`,
+// every subsequent call in that same logical operation MUST pass `client`,
+// never `pool` — passing `pool` there checks out a SECOND connection while
+// the first is still held, which self-deadlocks the moment concurrent
+// operations reach the pool's connection limit (architecture-review
+// correction, 2026-07-13 — see service.js's runSelection).
 
 async function fetchPassportContext(pool, passportId) {
   const { rows } = await pool.query(
@@ -24,16 +33,29 @@ async function fetchCandidateOffers(pool, passportId) {
   const { rows } = await pool.query(
     `SELECT o.id AS offer_id, o.offer_code, o.offer_revision, o.manufacturer_id,
             o.passport_id, o.engineering_revision, o.status AS offer_status,
-            o.expires_at, o.offer_validity_until, o.fob_price, o.moq,
+            o.expires_at, o.offer_validity_until, o.fob_price, o.currency, o.moq,
             o.tooling_cost, o.sample_cost, o.lead_time_days, o.monthly_capacity,
             m.status AS manufacturer_status, m.country_code, m.legal_name
      FROM ebp_manufacturer_offers o
      JOIN ebp_manufacturers m ON m.id = o.manufacturer_id
      WHERE o.passport_id = $1
-       AND o.status NOT IN ('SUPERSEDED', 'WITHDRAWN', 'REJECTED', 'DRAFT')`,
+       AND o.status NOT IN ('SUPERSEDED', 'WITHDRAWN', 'REJECTED', 'DRAFT')
+     ORDER BY o.id`,
     [passportId]
   );
   return rows;
+}
+
+// fetchApprovedExceptionCount: reads Phase 4's ebp_engineering_exceptions
+// read-only (Technical Priority Rule, Decision 01/ADR-0062 — an Offer
+// carrying APPROVED Exceptions competes but must be explicitly penalized).
+async function fetchApprovedExceptionCount(pool, offerId, offerRevision) {
+  const { rows } = await pool.query(
+    `SELECT COUNT(*)::int AS count FROM ebp_engineering_exceptions
+     WHERE offer_id = $1 AND offer_revision = $2 AND status = 'APPROVED'`,
+    [offerId, offerRevision]
+  );
+  return rows[0].count;
 }
 
 async function fetchManufacturerQualification(pool, manufacturerId, productCategory, productSubtype) {
@@ -60,6 +82,73 @@ async function fetchCertificationGapForManufacturer(pool, manufacturerId) {
     [manufacturerId]
   );
   return rows;
+}
+
+// ─── Bulk fetchers (architecture-review performance correction) ───────────
+// evaluateCandidateEligibility was issuing one query per candidate for each
+// of these four facts, producing O(N) round-trips for an N-candidate pool.
+// These bulk variants fetch every candidate's data in one query each,
+// called once per Selection Run before the eligibility loop — identical
+// results, O(1) round-trips instead of O(N). Phase 4's own
+// computeSelectionEligibility() is deliberately NOT batched here — Decision
+// 11/ADR-0072 requires calling it exactly as Phase 4 wrote it, per-offer,
+// never re-derived or batched independently.
+
+async function fetchLatestCommercialApprovalsBulk(pool, offerIds) {
+  if (!offerIds.length) return new Map();
+  const { rows } = await pool.query(
+    `SELECT DISTINCT ON (offer_id, offer_revision) offer_id, offer_revision, status
+     FROM ebp_offer_commercial_approvals
+     WHERE offer_id = ANY($1::uuid[])
+     ORDER BY offer_id, offer_revision, decided_at DESC`,
+    [offerIds]
+  );
+  const map = new Map();
+  for (const r of rows) map.set(`${r.offer_id}@${r.offer_revision}`, r);
+  return map;
+}
+
+async function fetchManufacturerQualificationsBulk(pool, manufacturerIds, productCategory, productSubtype) {
+  if (!manufacturerIds.length) return new Map();
+  const { rows } = await pool.query(
+    `SELECT DISTINCT ON (manufacturer_id) manufacturer_id, status
+     FROM ebp_manufacturer_qualifications
+     WHERE manufacturer_id = ANY($1::uuid[]) AND product_category = $2 AND product_subtype = $3
+     ORDER BY manufacturer_id, updated_at DESC`,
+    [manufacturerIds, productCategory, productSubtype]
+  );
+  const map = new Map();
+  for (const r of rows) map.set(r.manufacturer_id, r);
+  return map;
+}
+
+async function fetchCertificationGapCountsBulk(pool, manufacturerIds) {
+  if (!manufacturerIds.length) return new Map();
+  const { rows } = await pool.query(
+    `SELECT manufacturer_id, COUNT(*)::int AS gap_count
+     FROM ebp_manufacturer_certifications
+     WHERE manufacturer_id = ANY($1::uuid[])
+       AND (status IN ('EXPIRED', 'REVOKED', 'REJECTED') OR (expires_on IS NOT NULL AND expires_on < CURRENT_DATE))
+     GROUP BY manufacturer_id`,
+    [manufacturerIds]
+  );
+  const map = new Map();
+  for (const r of rows) map.set(r.manufacturer_id, r.gap_count);
+  return map;
+}
+
+async function fetchApprovedExceptionCountsBulk(pool, offerIds) {
+  if (!offerIds.length) return new Map();
+  const { rows } = await pool.query(
+    `SELECT offer_id, offer_revision, COUNT(*)::int AS count
+     FROM ebp_engineering_exceptions
+     WHERE offer_id = ANY($1::uuid[]) AND status = 'APPROVED'
+     GROUP BY offer_id, offer_revision`,
+    [offerIds]
+  );
+  const map = new Map();
+  for (const r of rows) map.set(`${r.offer_id}@${r.offer_revision}`, r.count);
+  return map;
 }
 
 async function fetchLatestCommercialApproval(pool, offerId, offerRevision) {
@@ -160,6 +249,19 @@ async function fetchPreferredManufacturers(pool, manufacturerId) {
   return rows;
 }
 
+// fetchPreferredManufacturerSetBulk: one query for every candidate's
+// Preferred-Manufacturer status, replacing an O(N) per-candidate loop.
+async function fetchPreferredManufacturerSetBulk(pool, manufacturerIds) {
+  if (!manufacturerIds.length) return new Set();
+  const { rows } = await pool.query(
+    `SELECT DISTINCT manufacturer_id FROM ebp_preferred_manufacturers
+     WHERE manufacturer_id = ANY($1::uuid[]) AND status = 'ACTIVE'
+       AND valid_from <= NOW() AND (valid_until IS NULL OR valid_until > NOW())`,
+    [manufacturerIds]
+  );
+  return new Set(rows.map((r) => r.manufacturer_id));
+}
+
 async function insertPreferredManufacturer(client, pref) {
   const { rows } = await client.query(
     `INSERT INTO ebp_preferred_manufacturers
@@ -214,17 +316,20 @@ async function fetchNextSelectionVersion(pool, passportId) {
 }
 
 async function markPriorRunsStale(client, passportId, newRunId) {
-  await client.query(
+  const { rows: staleRuns } = await client.query(
     `UPDATE ebp_selection_runs SET run_result = 'STALE', superseded_by = $2
-     WHERE passport_id = $1 AND id <> $2 AND run_result <> 'STALE'`,
+     WHERE passport_id = $1 AND id <> $2 AND run_result <> 'STALE'
+     RETURNING id`,
     [passportId, newRunId]
   );
-  await client.query(
+  const { rows: supersededDecisions } = await client.query(
     `UPDATE ebp_selection_decisions SET status = 'SUPERSEDED', updated_at = NOW()
      WHERE selection_run_id IN (SELECT id FROM ebp_selection_runs WHERE passport_id = $1 AND id <> $2)
-       AND status NOT IN ('SUPERSEDED', 'REJECTED')`,
+       AND status NOT IN ('SUPERSEDED', 'REJECTED')
+     RETURNING id, selection_run_id`,
     [passportId, newRunId]
   );
+  return { staleRunIds: staleRuns.map((r) => r.id), supersededDecisionIds: supersededDecisions.map((d) => d.id) };
 }
 
 async function insertSelectionRun(client, run) {
@@ -418,11 +523,14 @@ async function fetchSelectionOverview(pool) {
   return rows;
 }
 
+// Both concentration queries read exclusively from the
+// ebp_analytics_selection_concentration VIEW (003_analytics_concentration_
+// view.sql) — never ebp_selection_candidates/ebp_manufacturers directly
+// (ADR-0037 §8.3, architecture-review correction).
 async function fetchManufacturerShareForConcentration(pool) {
   const { rows } = await pool.query(
-    `SELECT manufacturer_id, COUNT(*) AS sku_count
-     FROM ebp_selection_candidates
-     WHERE tier = 'PRIMARY' AND selection_run_id IN (SELECT id FROM ebp_selection_runs WHERE run_result <> 'STALE')
+    `SELECT manufacturer_id, SUM(primary_sku_count)::int AS sku_count
+     FROM ebp_analytics_selection_concentration
      GROUP BY manufacturer_id`
   );
   return rows;
@@ -430,11 +538,9 @@ async function fetchManufacturerShareForConcentration(pool) {
 
 async function fetchCountryShareForConcentration(pool) {
   const { rows } = await pool.query(
-    `SELECT m.country_code, COUNT(*) AS sku_count
-     FROM ebp_selection_candidates c
-     JOIN ebp_manufacturers m ON m.id = c.manufacturer_id
-     WHERE c.tier = 'PRIMARY' AND c.selection_run_id IN (SELECT id FROM ebp_selection_runs WHERE run_result <> 'STALE')
-     GROUP BY m.country_code`
+    `SELECT country_code, SUM(primary_sku_count)::int AS sku_count
+     FROM ebp_analytics_selection_concentration
+     GROUP BY country_code`
   );
   return rows;
 }
@@ -442,9 +548,15 @@ async function fetchCountryShareForConcentration(pool) {
 module.exports = {
   fetchPassportContext,
   fetchCandidateOffers,
+  fetchApprovedExceptionCount,
   fetchManufacturerQualification,
   fetchCertificationGapForManufacturer,
   fetchLatestCommercialApproval,
+  fetchLatestCommercialApprovalsBulk,
+  fetchManufacturerQualificationsBulk,
+  fetchCertificationGapCountsBulk,
+  fetchApprovedExceptionCountsBulk,
+  fetchPreferredManufacturerSetBulk,
   insertCommercialApproval,
   fetchActiveSelectionPolicies,
   insertSelectionPolicy,

@@ -3196,7 +3196,7 @@ both unacceptable given Principle 2 (engineering always has priority).
 2. No Primary/Secondary/Backup is created. Excluded candidates and their
    exact exclusion reasons (§5) are retained on the run.
 3. `SELECTION_REVIEW_REQUIRED` fires; the
-   `PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` alert is raised.
+   `NO_ELIGIBLE_MANUFACTURER` alert is raised.
 4. The engine never automatically selects the least-bad ineligible
    candidate, under any circumstance, for any reason.
 
@@ -3523,3 +3523,131 @@ updated to show Phase 5 as authorized/in-build. `BUSINESS_RULES.md` §7/
 rewritten as an implementable spec deriving from
 `MANUFACTURER_SELECTION_ENGINE.md` and ADR-0062 through ADR-0074 without
 contradiction.
+
+## ADR-0075 — Phase 5 approved and frozen as v1.0
+
+**Date:** 2026-07-14
+**Status:** Accepted
+**Branch:** `claude/phase-0-audit-review-wanxa3`
+**Closing commit:** see `CHANGELOG.md`'s "Phase 5 final architecture
+review; approved and frozen as v1.0" entry for this date.
+
+**Context:** Phase 5 was originally delivered (`Built`, not frozen) with
+a real schema (`migrations/ebp-phase5/001_schema.sql`,
+`002_override_guard.sql`), backend (`ebp/phase5/*`), and a 35-test suite.
+The project owner reviewed it and required two mandatory rounds before
+any freeze:
+
+1. **2026-07-13 — a 12-point manual correction-round audit** (Selection
+   Policy hardcoding, Eligibility Gate bypass, Tie-Break reproducibility,
+   Manual Override safety, Commercial Approval separation, Selection Run
+   Lifecycle, Activity Events completeness, Alert Layer dedup/resolution,
+   Analytics-views-only consumption, regression across Phases 1–5, and a
+   risks list). Found and fixed six real defects:
+   - The Technical Priority Rule's exception penalty was computed but
+     never applied (hardcoded to 0) — an Offer carrying an `APPROVED`
+     Exception scored identically to a clean Offer.
+   - The tie-break path could assign Primary/Secondary/Backup tiers even
+     when all eight tie-break steps were exhausted with no winner —
+     violating the "the engine never guesses" invariant
+     (`MANUFACTURER_SELECTION_ENGINE.md` §6, step 8).
+   - `SELECTION_SUPERSEDED`/`SELECTION_MARKED_STALE` Activity Events did
+     not exist, and the Alert Layer had no resolve/list/acknowledge/
+     dismiss surface — alerts opened by a Selection Run could never
+     close.
+   - Concentration analytics queried `ebp_selection_candidates`/
+     `ebp_manufacturers` directly, bypassing the required Analytics View
+     convention (ADR-0037 §8.3) — fixed by a new view,
+     `ebp_analytics_selection_concentration`
+     (`003_analytics_concentration_view.sql`).
+   - A candidate pool spanning multiple currencies was silently ranked
+     using raw, incommensurable FOB numbers — fixed to produce an honest
+     `INSUFFICIENT_DATA` run result instead.
+   - A naming inconsistency (`PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` vs.
+     `NO_ELIGIBLE_MANUFACTURER`) between two sections of the same
+     documentation set was corrected repo-wide.
+
+   All six were fixed and covered by `tests/ebp-phase5/correction.test.js`
+   (5 tests at that point); the test suite grew from 35 to 40.
+
+2. **2026-07-14 — a final architecture review** (this ADR's immediate
+   predecessor), covering Performance, Indexes, Concurrency, the Policy
+   Engine, Manual Override, general architecture (duplicated logic, dead
+   code, maintenance risk), and a final Regression pass — full detail in
+   `PHASE5_ARCHITECTURE_REVIEW.md`, `PHASE5_PERFORMANCE_REPORT.md`,
+   `PHASE5_INDEX_AUDIT.md`, `PHASE5_CONCURRENCY_REPORT.md`,
+   `PHASE5_POLICY_AUDIT.md`, and `PHASE5_FINAL_RECOMMENDATION.md`. Found
+   and fixed three further defects, all against real Postgres data, none
+   reasoned about from code reading alone:
+   - **Connection-pool self-deadlock** — `runSelection` mixed
+     `pool.query()` with an already-open `client` transaction; under
+     concurrent load (10 simultaneous Selection Runs against the same
+     Passport) every connection in the pool was consumed waiting on a
+     second connection that would never free, hanging indefinitely.
+     Fixed by routing every in-transaction read through `client`, never
+     `pool`; verified via the same 10-concurrent-run stress test:
+     infinite hang → 93 ms.
+   - **Raw Postgres constraint-violation error leaked to the caller** —
+     the losing side of a concurrent Selection Run race saw a raw
+     `duplicate key value violates unique constraint ...` driver error
+     instead of a clean application error (data integrity was never at
+     risk; only the loser's error message was wrong). Fixed by
+     translating Postgres error `23505` on the `selection_version`
+     constraint into a `ConflictError`.
+   - **`GEOGRAPHIC_DIVERSIFICATION` (STRATEGIC-category factor) and
+     tie-break step 6 were both a hardcoded constant** (`normalized_value:
+     50` / `diversification_score: 50` for every candidate regardless of
+     actual pool composition) — the exact class of defect ADR-0068
+     prohibits. Fixed with a real, deterministic score computed once per
+     Selection Run from the eligible candidate pool's actual
+     manufacturer/country composition (a candidate whose manufacturer and
+     country are rarer in the pool scores higher).
+
+   All three were fixed and covered by two new tests in
+   `tests/ebp-phase5/correction.test.js` (concurrency stress test +
+   diversification-score test); the suite grew from 40 to **43**.
+
+**Decision:**
+1. Both correction rounds' fixes are accepted as-is; no further defect
+   was found in either round beyond what is listed above.
+2. The final regression pass was run to completion after every fix in
+   both rounds, against a clean state, with zero failures:
+   Phase 1 (59), Phase 2 (100), Phase 3 (126), Phase 4 (104, unmodified),
+   Phase 5 (43) — 432 tests total, 100% pass.
+3. **Phase 5 — Manufacturer Selection is APPROVED and marked `APPROVED /
+   FROZEN v1.0`.**
+4. **Frozen** means: the schema (`ebp_selection_policies`,
+   `ebp_offer_commercial_approvals`, `ebp_demand_signals`,
+   `ebp_preferred_manufacturers`, `ebp_selection_runs`,
+   `ebp_selection_candidates`, `ebp_selection_factor_scores`,
+   `ebp_selection_decisions`, `ebp_selection_overrides`,
+   `ebp_selection_role_assignments`, `ebp_analytics_selection_summary`,
+   `ebp_analytics_selection_concentration`), the eight-step tie-break
+   order, the Selection Run Result Model (ADR-0074), the Manual Override
+   two-actor/eligible-only guard, and the Selection Policy versioning
+   discipline established through ADR-0061–ADR-0075 may not be altered
+   without a new ADR that explicitly supersedes the relevant prior
+   entry — the same append-only discipline already in force for
+   Phase 0/1/2/3/4.
+5. **Phase 6 is not authorized by this ADR.** Confirmed not started (no
+   `ebp/phase6/`, no `migrations/ebp-phase6/`) as of this freeze. A
+   future ADR must explicitly authorize it, per `CLAUDE_WORKFLOW.md`'s
+   phase-gate discipline.
+
+**Consequences:**
+- Phase 5's documentation baseline (`MANUFACTURER_SELECTION_ENGINE.md`,
+  `phases/phase-05-manufacturer-selection.md`, this ADR range, and the
+  six `PHASE5_*.md` review reports) is now version-locked the same way
+  Phase 0/1/2/3/4's are.
+- Any future change to Phase 5's schema, scoring/tie-break mechanics, or
+  Manual Override model requires a new ADR, never a silent edit to an
+  already-frozen one.
+- The four risks recorded in `PHASE5_FINAL_RECOMMENDATION.md` §4 (no
+  automated pool-vs-client lint rule; two small tables' sequential scans
+  assumed-correct only at current volume; `runSelection`'s size as a
+  single transaction function; Phase 4's eligibility gate remaining
+  deliberately un-batched) are carried forward as documented, non-blocking
+  observations — none is an open defect.
+- Phase 6 work may begin only on the project owner's own explicit,
+  separate authorization — not as a continuation of this session or this
+  ADR.

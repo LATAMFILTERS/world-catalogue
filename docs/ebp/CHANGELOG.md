@@ -5,6 +5,137 @@ logged here in reverse chronological order. Every entry that changes a
 phase's status must correspond to a row update in
 `IMPLEMENTATION_MASTER_INDEX.md` in the same commit.
 
+## 2026-07-14 — Phase 5 (Manufacturer Selection) final architecture review — APPROVED / FROZEN v1.0
+
+- The project owner reviewed the 2026-07-13 correction round (below) and
+  required a further mandatory final architecture review before any
+  freeze decision — Performance, Indexes, Concurrency, Policy Engine,
+  Manual Override, general Architecture, and a final Regression pass —
+  explicitly instructing that any architectural issue found be fixed
+  first, and that Phase 6 not begin under any circumstances until Phase 5
+  was formally frozen. **ADR-0075** recorded in `DECISIONS.md`, closing
+  both this review and the 2026-07-13 correction round together.
+- **Performance** (`PHASE5_PERFORMANCE_REPORT.md`): a synthetic dataset
+  (1,996 manufacturers, 5,000 Passports, 16,993 Offers, including a
+  worst-case single Passport with an Offer from every manufacturer) was
+  seeded into a real Postgres instance; every critical-path query
+  (`fetchCandidateOffers`, all five bulk-fetch functions,
+  `fetchNextSelectionVersion`, `fetchCurrentSelectionRun`,
+  `markPriorRunsStale`, the concentration analytics view) was run under
+  `EXPLAIN ANALYZE`. No sequential scan was found on any table large
+  enough for it to matter; every query completed in under 6 ms at this
+  scale. Dataset fully deleted afterward.
+- **Indexes** (`PHASE5_INDEX_AUDIT.md`): every JOIN/WHERE/ORDER BY/GROUP
+  BY on the critical path confirmed index-backed via execution plan, not
+  assumption. No index added or removed.
+- **Concurrency** (`PHASE5_CONCURRENCY_REPORT.md`): a real 10-concurrent-
+  `runSelection()`-call stress test against the same Passport, fired via
+  `Promise.allSettled`, found a **critical self-deadlock** —
+  `runSelection` mixed `pool.query()` with an already-open `client`
+  transaction; under concurrent load, every connection in the pool was
+  consumed waiting on a second connection that would never free, hanging
+  indefinitely (confirmed via `pg_stat_activity`, required manually
+  terminating 10 stuck backend connections to recover). Fixed by routing
+  every in-transaction read (`fetchNextSelectionVersion`, all five bulk
+  fetches, `evaluateCandidateEligibility`) through `client`, never
+  `pool`, with the rule now stated explicitly in a `repository.js` header
+  comment. Re-verified: infinite hang → 93 ms. A **secondary defect** was
+  then found — the losing side of the version-number race saw a raw
+  Postgres `duplicate key value violates unique constraint` error instead
+  of a clean application error (data integrity itself was never at risk;
+  the `UNIQUE(passport_id, selection_version)` constraint always
+  guaranteed exactly one winner). Fixed by translating Postgres error
+  `23505` on the `selection_version` constraint into a `ConflictError`.
+  Both fixes are covered by a new permanent regression test (10 concurrent
+  calls, all settle, no duplicate `selection_version`, exactly one
+  non-STALE run afterward).
+- **Policy Engine** (`PHASE5_POLICY_AUDIT.md`): found and fixed a real
+  hardcoded value — `GEOGRAPHIC_DIVERSIFICATION` (a STRATEGIC-category
+  factor contributing to the weighted composite score) and tie-break step
+  6 ("better diversification versus already-assigned tiers," ADR-0062
+  §6) were both scored as a flat `50` for every candidate regardless of
+  actual pool composition, exactly the class of defect ADR-0068
+  prohibits. Fixed with a real, deterministic score computed once per
+  Selection Run from the eligible pool's actual manufacturer/country
+  distribution — a candidate whose manufacturer and country are rarer in
+  the pool scores higher. Every other weight, threshold, penalty, gate,
+  and diversification rule was confirmed to originate from
+  `ebp_selection_policies`, never engine code.
+- **Manual Override**: permissions, the two-actor/eligible-only database
+  trigger, and the immutable-after-decision audit trail all re-confirmed
+  against current code (`PHASE5_ARCHITECTURE_REVIEW.md` §3).
+- **Architecture**: no dead code found (the single-candidate repository
+  functions superseded by bulk fetchers remain in use by the no-bulk
+  fallback path and the commercial-approval routes); no unnecessary
+  abstraction introduced. Four non-blocking risks recorded for future
+  reference (no automated pool-vs-client lint rule; two small tables'
+  favorable sequential-scan plans hold only at current data volume;
+  `runSelection`'s size as a single transaction function; Phase 4's
+  eligibility gate remaining deliberately un-batched per ADR-0072).
+- **Tests**: two new tests added to `tests/ebp-phase5/correction.test.js`
+  (the concurrency stress test and a `GEOGRAPHIC_DIVERSIFICATION`
+  correctness test proving a rarer-country candidate scores and ranks
+  higher than an otherwise-identical common-country candidate). Suite
+  grew from 40 to **43** (16 unit + 15 integration + 4 regression + 8
+  correction).
+- Re-ran and confirmed unchanged after every fix: Phase 1 (59), Phase 2
+  (100), Phase 3 (126), Phase 4 (104) — all still passing, none modified.
+  **432 tests total across all five phases, 100% pass.**
+- Docs updated: `phases/phase-05-manufacturer-selection.md` (status line
+  now `APPROVED / FROZEN v1.0`), `IMPLEMENTATION_MASTER_INDEX.md` (status
+  table row and detailed note), `DECISIONS.md` (ADR-0075).
+
+**Phase 5 is now `APPROVED / FROZEN v1.0`. Phase 6 (Cost Engine) has not
+been started; this freeze does not authorize it.**
+
+## 2026-07-13 — Phase 5 (Manufacturer Selection) correction round: six defects found and fixed (still not frozen)
+
+- The project owner reviewed the "Built" implementation below and
+  required a mandatory 12-point correction-round audit before any
+  freeze/approval decision — Selection Policy hardcoding, Eligibility
+  Gate bypass, Tie-Break reproducibility, Manual Override safety,
+  Commercial Approval separation, Selection Run Lifecycle, Activity
+  Events completeness, Alert Layer dedup/resolution, Analytics-views-only
+  consumption, regression across Phases 1–5, and a risks list.
+- **Six real defects found and fixed**, each verified against real
+  Postgres data:
+  1. The Technical Priority Rule's exception penalty
+     (`policy.applyExceptionPenalty`) was computed but never applied to
+     the `ENGINEERING_ELIGIBILITY` factor score — an Offer carrying an
+     `APPROVED` Exception scored identically to a clean Offer. Fixed:
+     `buildFactorScores` now applies the real penalty and records it.
+  2. The tie-break path could assign Primary/Secondary/Backup tiers even
+     when a tie survived all eight tie-break steps — violating "the
+     engine never guesses" (`MANUFACTURER_SELECTION_ENGINE.md` §6, step
+     8). Fixed: `tiers = tied.length ? [] : assignTiers(...)`.
+  3. `SELECTION_SUPERSEDED`/`SELECTION_MARKED_STALE` Activity Events did
+     not exist, and the Alert Layer had no resolve/list/acknowledge/
+     dismiss surface. Fixed: both events now emitted per stale run;
+     `listAlerts`/`acknowledgeAlert`/`dismissAlert`/`scanTimeBasedAlerts`
+     added to `service.js`, with a new `createAlertsRouter` exposing them.
+  4. Concentration analytics queried `ebp_selection_candidates`/
+     `ebp_manufacturers` directly, bypassing the required Analytics View
+     convention (ADR-0037 §8.3). Fixed: new
+     `ebp_analytics_selection_concentration` view
+     (`003_analytics_concentration_view.sql`); both concentration queries
+     rewritten to read only from it.
+  5. A candidate pool spanning multiple currencies was silently ranked
+     using raw, incommensurable FOB numbers. Fixed: mixed-currency pools
+     now produce an honest `INSUFFICIENT_DATA` Selection Run Result.
+  6. A naming inconsistency (`PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` vs.
+     `NO_ELIGIBLE_MANUFACTURER`) between two sections of the documentation
+     set was corrected repo-wide.
+- **Migrations**: one new additive file,
+  `migrations/ebp-phase5/003_analytics_concentration_view.sql`, applied
+  and verified against the real Postgres test database.
+- **Tests**: `tests/ebp-phase5/correction.test.js` added (5 tests
+  covering all six fixes); suite grew from 35 to 40.
+- Re-ran and confirmed unchanged: Phase 1 (59), Phase 2 (100), Phase 3
+  (126), Phase 4 (104) — all still passing.
+- **Phase 5 remained `Built`, not frozen, at the close of this round** —
+  the project owner required a further final architecture review (see
+  the entry above) before any freeze decision.
+
 ## 2026-07-13 — Phase 5 (Manufacturer Selection) Built (not frozen): all twelve decisions closed, full implementation delivered
 
 - The project owner closed all twelve `MANUFACTURER_SELECTION_ENGINE.md`

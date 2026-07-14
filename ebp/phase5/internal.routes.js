@@ -261,6 +261,27 @@ function createAnalyticsRouter(pool) {
   return router;
 }
 
+function createAlertsRouter(pool) {
+  const router = express.Router();
+  router.get('/', async (req, res) => {
+    const rows = await service.listAlerts(pool, { status: req.query.status, alert_type: req.query.alert_type });
+    res.json({ alerts: rows });
+  });
+  router.post('/:id/acknowledge', async (req, res) => {
+    const row = await service.acknowledgeAlert(pool, req.params.id);
+    res.json(row);
+  });
+  router.post('/:id/dismiss', async (req, res) => {
+    const row = await service.dismissAlert(pool, req.params.id, req.body.reason);
+    res.json(row);
+  });
+  router.post('/scan', async (req, res) => {
+    const result = await service.scanTimeBasedAlerts(pool);
+    res.json(result);
+  });
+  return router;
+}
+
 module.exports = {
   createSelectionRouter,
   createCommercialApprovalRouter,
@@ -269,4 +290,5 @@ module.exports = {
   createDemandSignalsRouter,
   createRolesRouter,
   createAnalyticsRouter,
+  createAlertsRouter,
 };

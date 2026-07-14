@@ -16,6 +16,7 @@ const policyLib = require('./policy');
 const ranking = require('./ranking');
 const activityEvents = require('../phase4/activity-events');
 const phase4Service = require('../phase4/service');
+const phase4Repository = require('../phase4/repository');
 
 class ValidationError extends Error {
   constructor(errors) {
@@ -156,7 +157,13 @@ async function declareDemandSignal(pool, fields, actor) {
 
 // ─── Eligibility (seven-part gate, Decision 11/ADR-0072) ───────────────────
 
-async function evaluateCandidateEligibility(pool, offer, passportContext) {
+// evaluateCandidateEligibility: `bulk` (optional) supplies pre-fetched Maps
+// for points 5-7 (architecture-review performance correction — these three
+// checks no longer issue one query per candidate; see runSelectionPool
+// below). Point 2-4 (Phase 4's computeSelectionEligibility) remains a
+// per-offer call by design — it is never batched or re-derived (Decision
+// 11/ADR-0072).
+async function evaluateCandidateEligibility(db, offer, passportContext, bulk = null) {
   const reasons = [];
 
   // 1. Offer active/current + not expired
@@ -169,13 +176,15 @@ async function evaluateCandidateEligibility(pool, offer, passportContext) {
 
   // 2-4. CURRENT Validation Run + Engineering Decision + Conditions
   // (reuses Phase 4's computeSelectionEligibility exactly, never re-derived)
-  const phase4Eligibility = await phase4Service.computeSelectionEligibility(pool, offer.offer_id);
+  const phase4Eligibility = await phase4Service.computeSelectionEligibility(db, offer.offer_id);
   if (!phase4Eligibility.eligible) {
     reasons.push(`Phase 4 eligibility: ${phase4Eligibility.reason}`);
   }
 
   // 5. Offer Commercial Approval APPROVED (Phase 5, ADR-0072)
-  const commercialApproval = await repository.fetchLatestCommercialApproval(pool, offer.offer_id, offer.offer_revision);
+  const commercialApproval = bulk
+    ? bulk.commercialApprovals.get(`${offer.offer_id}@${offer.offer_revision}`)
+    : await repository.fetchLatestCommercialApproval(db, offer.offer_id, offer.offer_revision);
   if (!commercialApproval || commercialApproval.status !== 'APPROVED') {
     reasons.push('no APPROVED Offer Commercial Approval on file');
   }
@@ -184,15 +193,19 @@ async function evaluateCandidateEligibility(pool, offer, passportContext) {
   if (MANUFACTURER_INELIGIBLE_STATUSES.includes(offer.manufacturer_status)) {
     reasons.push(`Manufacturer status is ${offer.manufacturer_status}`);
   }
-  const qualification = await repository.fetchManufacturerQualification(pool, offer.manufacturer_id, passportContext.product_category, passportContext.product_subtype);
+  const qualification = bulk
+    ? bulk.qualifications.get(offer.manufacturer_id)
+    : await repository.fetchManufacturerQualification(db, offer.manufacturer_id, passportContext.product_category, passportContext.product_subtype);
   if (!qualification || !['QUALIFIED', 'CONDITIONAL'].includes(qualification.status)) {
     reasons.push('Manufacturer not QUALIFIED/CONDITIONAL-satisfied for this family');
   }
 
   // 7. Certifications current
-  const certGaps = await repository.fetchCertificationGapForManufacturer(pool, offer.manufacturer_id);
-  if (certGaps.length) {
-    reasons.push(`${certGaps.length} expired/invalid certification(s) on file`);
+  const certGapCount = bulk
+    ? (bulk.certGapCounts.get(offer.manufacturer_id) || 0)
+    : (await repository.fetchCertificationGapForManufacturer(db, offer.manufacturer_id)).length;
+  if (certGapCount) {
+    reasons.push(`${certGapCount} expired/invalid certification(s) on file`);
   }
 
   return { eligible: reasons.length === 0, reasons };
@@ -201,11 +214,11 @@ async function evaluateCandidateEligibility(pool, offer, passportContext) {
 // ─── Factor scoring (Decisions 01/09, ADR-0062/0070) ───────────────────────
 
 function buildFactorScores(offer, pool_context) {
-  const { fobRange, leadTimeRange, capacityRange, exceptionCount, approvedExceptionCount } = pool_context;
+  const { fobRange, leadTimeRange, capacityRange, approvedExceptionCount, penalties, diversificationScore } = pool_context;
   const scores = [];
 
   const fobNorm = policyLib.normalizeLinear(Number(offer.fob_price), fobRange.min, fobRange.max, true);
-  scores.push({ factor_code: 'FOB_PRICE', factor_category: 'COMMERCIAL', original_value: Number(offer.fob_price), unit: offer.currency || 'USD', normalized_value: fobNorm, reason_code: 'SEL_REASON_LOWEST_VALID_FOB' });
+  scores.push({ factor_code: 'FOB_PRICE', factor_category: 'COMMERCIAL', original_value: Number(offer.fob_price), unit: offer.currency, normalized_value: fobNorm, reason_code: 'SEL_REASON_LOWEST_VALID_FOB' });
 
   const leadNorm = policyLib.normalizeLinear(Number(offer.lead_time_days) || 0, leadTimeRange.min, leadTimeRange.max, true);
   scores.push({ factor_code: 'LEAD_TIME_DAYS', factor_category: 'OPERATIONAL', original_value: offer.lead_time_days, unit: 'days', normalized_value: leadNorm, reason_code: 'SEL_REASON_CAPACITY_BELOW_TARGET' });
@@ -213,13 +226,23 @@ function buildFactorScores(offer, pool_context) {
   const capNorm = policyLib.normalizeLinear(Number(offer.monthly_capacity) || 0, capacityRange.min, capacityRange.max, false);
   scores.push({ factor_code: 'MONTHLY_CAPACITY', factor_category: 'OPERATIONAL', original_value: offer.monthly_capacity, unit: 'units/month', normalized_value: capNorm, reason_code: 'SEL_REASON_CAPACITY_BELOW_TARGET' });
 
-  const engineeringBase = 100; // MECHANICALLY_PASS + APPROVED baseline before exception penalty
-  scores.push({ factor_code: 'ENGINEERING_ELIGIBILITY', factor_category: 'ENGINEERING', original_value: 'APPROVED', normalized_value: engineeringBase, reason_code: exceptionCount > 0 ? 'SEL_REASON_TECHNICAL_EXCEPTION_PENALTY' : 'SEL_REASON_LOWEST_VALID_FOB' });
+  // Technical Priority Rule (Decision 01/ADR-0062, MANUFACTURER_SELECTION_ENGINE.md
+  // §3A): an Offer carrying APPROVED Exceptions competes but must receive an
+  // explicit, traceable technical penalty — never scored as if it had zero
+  // Exceptions. Penalty magnitude is a Selection Policy parameter, never a
+  // hardcoded number.
+  const { penalized_score, penalty_applied } = policyLib.applyExceptionPenalty(100, approvedExceptionCount, penalties);
+  scores.push({
+    factor_code: 'ENGINEERING_ELIGIBILITY', factor_category: 'ENGINEERING', original_value: 'APPROVED',
+    normalized_value: penalized_score, penalty: penalty_applied,
+    reason_code: approvedExceptionCount > 0 ? 'SEL_REASON_TECHNICAL_EXCEPTION_PENALTY' : 'SEL_REASON_LOWEST_VALID_FOB',
+    explanation_params: { approved_exception_count: approvedExceptionCount },
+  });
 
   const validityDays = offer.offer_validity_until ? Math.max(0, Math.ceil((new Date(offer.offer_validity_until) - new Date()) / (1000 * 60 * 60 * 24))) : (offer.expires_at ? Math.max(0, Math.ceil((new Date(offer.expires_at) - new Date()) / (1000 * 60 * 60 * 24))) : null);
   scores.push({ factor_code: 'OFFER_VALIDITY_REMAINING', factor_category: 'COMMERCIAL', original_value: validityDays, unit: 'days', normalized_value: validityDays !== null ? policyLib.normalizeLinear(validityDays, 0, 365, false) : null, reason_code: 'SEL_REASON_OFFER_EXPIRES_SOON' });
 
-  scores.push({ factor_code: 'GEOGRAPHIC_DIVERSIFICATION', factor_category: 'STRATEGIC', original_value: offer.country_code, normalized_value: 50, reason_code: 'SEL_REASON_GEOGRAPHIC_DIVERSIFICATION' });
+  scores.push({ factor_code: 'GEOGRAPHIC_DIVERSIFICATION', factor_category: 'STRATEGIC', original_value: offer.country_code, normalized_value: diversificationScore, reason_code: 'SEL_REASON_GEOGRAPHIC_DIVERSIFICATION' });
 
   return scores;
 }
@@ -246,34 +269,56 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
   try {
     await client.query('BEGIN');
 
-    if (conflict || !policy) {
-      const version = await repository.fetchNextSelectionVersion(pool, passportId);
+    if (!policy && !conflict) {
+      // No ACTIVE policy resolvable at all yet (first-ever run) — bootstrap
+      // the default Selection Policy and retry. Not itself a conflict, so
+      // no Selection Run is recorded for this bootstrap step.
+      await client.query('COMMIT');
+      await ensureDefaultPolicy(pool, actor);
+      return runSelection(pool, passportId, trigger, actor, options);
+    }
+
+    if (conflict) {
+      const version = await repository.fetchNextSelectionVersion(client, passportId);
       const run = await repository.insertSelectionRun(client, {
         passport_id: passportId, engineering_revision: passportContext.engineering_revision || 1,
-        selection_version: version, selection_policy_id: policy ? policy.id : (policies[0] && policies[0].id),
+        selection_version: version, selection_policy_id: policies[0].id,
         demand_signal_id: demand ? demand.id : null, demand_not_provided: !demand,
         run_result: 'POLICY_CONFLICT', trigger, triggered_by: actor.declared_actor, input_versions: {},
       });
-      if (!policy) {
-        // no policy at all resolvable — bootstrap a default and let the caller retry
-        await client.query('COMMIT');
-        await ensureDefaultPolicy(pool, actor);
-        return runSelection(pool, passportId, trigger, actor, options);
-      }
       await repository.markPriorRunsStale(client, passportId, run.id);
       await activityEvents.emitEvent(client, { eventType: 'MANUFACTURER_SELECTION_STARTED', entityType: 'SELECTION_RUN', entityId: run.id, passportId, actor, eventData: { run_result: 'POLICY_CONFLICT' } });
+      await repository.raiseAlert(client, { alert_type: 'POLICY_CONFLICT', severity: 'HIGH', entity_type: 'SELECTION_RUN', entity_id: run.id, passport_id: passportId, alert_data: { scope_type: policies[0].scope_type, conflicting_policy_count: policies.length } });
+      await activityEvents.emitEvent(client, { eventType: 'SELECTION_REVIEW_REQUIRED', entityType: 'SELECTION_RUN', entityId: run.id, passportId, actor, eventData: { reason: 'POLICY_CONFLICT' } });
       await client.query('COMMIT');
       return { run, candidates: [] };
     }
 
-    const version = await repository.fetchNextSelectionVersion(pool, passportId);
+    const version = await repository.fetchNextSelectionVersion(client, passportId);
     const runResultPlaceholder = { passport_id: passportId, engineering_revision: passportContext.engineering_revision || 1, selection_version: version, selection_policy_id: policy.id, demand_signal_id: demand ? demand.id : null, demand_not_provided: !demand, trigger, triggered_by: actor.declared_actor };
 
     await activityEvents.emitEvent(client, { eventType: 'MANUFACTURER_SELECTION_STARTED', entityType: 'PASSPORT', entityId: passportId, passportId, actor, eventData: { selection_version: version } });
 
+    // Bulk-fetch points 5-7 of the eligibility gate for the whole candidate
+    // pool in four queries total, instead of one query per candidate per
+    // point (architecture-review performance correction — see
+    // evaluateCandidateEligibility's `bulk` parameter). Every read here
+    // uses `client` (the connection already checked out for this
+    // transaction), never `pool` — using `pool` here would check out a
+    // second connection per concurrent Selection Run and self-deadlock the
+    // moment concurrent runs reach the pool's connection limit (the
+    // concurrency-stress-test finding this correction round fixes).
+    const allOfferIds = offers.map((o) => o.offer_id);
+    const allManufacturerIds = [...new Set(offers.map((o) => o.manufacturer_id))];
+    const bulk = {
+      commercialApprovals: await repository.fetchLatestCommercialApprovalsBulk(client, allOfferIds),
+      qualifications: await repository.fetchManufacturerQualificationsBulk(client, allManufacturerIds, passportContext.product_category, passportContext.product_subtype),
+      certGapCounts: await repository.fetchCertificationGapCountsBulk(client, allManufacturerIds),
+    };
+
     const evaluated = [];
     for (const offer of offers) {
-      const { eligible, reasons } = await evaluateCandidateEligibility(pool, offer, passportContext);
+      const { eligible, reasons } = await evaluateCandidateEligibility(client, offer, passportContext, bulk);
       evaluated.push({ offer, eligible, exclusion_reason: eligible ? null : reasons.join('; ') });
     }
 
@@ -286,8 +331,21 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
         await repository.insertSelectionCandidate(client, { selection_run_id: run.id, offer_id: e.offer.offer_id, offer_revision: e.offer.offer_revision, manufacturer_id: e.offer.manufacturer_id, eligible: false, exclusion_reason: e.exclusion_reason });
         await activityEvents.emitEvent(client, { eventType: 'MANUFACTURER_EXCLUDED', entityType: 'SELECTION_CANDIDATE', entityId: run.id, offerId: e.offer.offer_id, manufacturerId: e.offer.manufacturer_id, passportId, actor, eventData: { reason: e.exclusion_reason } });
       }
-      await repository.raiseAlert(client, { alert_type: 'PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER', severity: 'HIGH', entity_type: 'PASSPORT', entity_id: passportId, passport_id: passportId, alert_data: {} });
+      await repository.raiseAlert(client, { alert_type: 'NO_ELIGIBLE_MANUFACTURER', severity: 'HIGH', entity_type: 'PASSPORT', entity_id: passportId, passport_id: passportId, alert_data: {} });
       await activityEvents.emitEvent(client, { eventType: 'SELECTION_REVIEW_REQUIRED', entityType: 'SELECTION_RUN', entityId: run.id, passportId, actor, eventData: { reason: 'NO_ELIGIBLE_CANDIDATE' } });
+      await client.query('COMMIT');
+      return { run, candidates: [] };
+    }
+
+    // Currency check: ranking normalizes raw FOB numbers directly; without an
+    // FX-conversion capability (out of scope for v1.0), mixing currencies in
+    // one candidate pool would silently rank incommensurable prices. Rather
+    // than fake a conversion, this is an honest INSUFFICIENT_DATA run.
+    const distinctCurrencies = new Set(eligibleOffers.map((o) => o.currency));
+    if (distinctCurrencies.size > 1) {
+      const run = await repository.insertSelectionRun(client, { ...runResultPlaceholder, run_result: 'INSUFFICIENT_DATA', input_versions: { candidates_considered: offers.length, eligible: eligibleOffers.length, reason: 'multiple currencies present, no FX conversion capability in v1.0', currencies: [...distinctCurrencies] } });
+      await repository.markPriorRunsStale(client, passportId, run.id);
+      await activityEvents.emitEvent(client, { eventType: 'SELECTION_REVIEW_REQUIRED', entityType: 'SELECTION_RUN', entityId: run.id, passportId, actor, eventData: { reason: 'INSUFFICIENT_DATA: mixed currencies' } });
       await client.query('COMMIT');
       return { run, candidates: [] };
     }
@@ -297,27 +355,56 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
     const leadTimeRange = rangeOf(eligibleOffers.map((o) => o.lead_time_days));
     const capacityRange = rangeOf(eligibleOffers.map((o) => o.monthly_capacity));
 
+    // Bulk-fetch exception counts and Preferred Manufacturer status for the
+    // eligible pool — same performance correction as above, applied to
+    // scoring's own per-candidate lookups.
+    const eligibleOfferIds = eligibleOffers.map((o) => o.offer_id);
+    const eligibleManufacturerIds = [...new Set(eligibleOffers.map((o) => o.manufacturer_id))];
+    const exceptionCounts = await repository.fetchApprovedExceptionCountsBulk(client, eligibleOfferIds);
+    const preferredManufacturerSet = await repository.fetchPreferredManufacturerSetBulk(client, eligibleManufacturerIds);
+
+    // Tie-break step 6, "better diversification versus already-assigned
+    // tiers" (MANUFACTURER_SELECTION_ENGINE.md §6): a real, deterministic,
+    // order-independent measure derived from the eligible pool itself —
+    // never a hardcoded constant (architecture-review correction,
+    // 2026-07-14). A candidate whose manufacturer/country is rarer in the
+    // eligible pool would diversify the outcome more if selected, so it
+    // scores higher; this makes the step a functioning tie-breaker instead
+    // of a permanent no-op.
+    const mfrCounts = new Map();
+    const countryCounts = new Map();
+    for (const offer of eligibleOffers) {
+      mfrCounts.set(offer.manufacturer_id, (mfrCounts.get(offer.manufacturer_id) || 0) + 1);
+      countryCounts.set(offer.country_code, (countryCounts.get(offer.country_code) || 0) + 1);
+    }
+    const diversificationScoreFor = (offer) => {
+      const mfrShare = mfrCounts.get(offer.manufacturer_id) / eligibleOffers.length;
+      const countryShare = countryCounts.get(offer.country_code) / eligibleOffers.length;
+      return Math.round((1 - (mfrShare + countryShare) / 2) * 100 * 100) / 100;
+    };
+
     const scored = [];
     for (const offer of eligibleOffers) {
-      const factorScores = buildFactorScores(offer, { fobRange, leadTimeRange, capacityRange, exceptionCount: 0, approvedExceptionCount: 0 });
+      const approvedExceptionCount = exceptionCounts.get(`${offer.offer_id}@${offer.offer_revision}`) || 0;
+      const diversificationScore = diversificationScoreFor(offer);
+      const factorScores = buildFactorScores(offer, { fobRange, leadTimeRange, capacityRange, approvedExceptionCount, penalties: policy.penalties, diversificationScore });
       const categoryScores = {};
       for (const cat of policyLib.CATEGORIES) {
         const forCat = factorScores.filter((f) => f.factor_category === cat);
         categoryScores[cat] = policyLib.computeCategoryScore(forCat) ?? 0;
       }
       const compositeScorePreBonus = policyLib.computeCompositeScore(categoryScores, policy.weights);
-      const preferredList = await repository.fetchPreferredManufacturers(pool, offer.manufacturer_id);
-      const isPreferred = preferredList.length > 0;
+      const isPreferred = preferredManufacturerSet.has(offer.manufacturer_id);
       const { composite_score_final, bonus_applied } = policyLib.applyPreferredManufacturerBonus(compositeScorePreBonus, isPreferred, policy.preferred_manufacturer_bonus);
 
       scored.push({
         offer, factorScores, categoryScores, compositeScorePreBonus, composite_score_final, bonus_applied,
         technical_quality_score: categoryScores.ENGINEERING,
-        fewer_exceptions_score: 100, // no exceptions modeled in v1.0 candidate pool yet
+        fewer_exceptions_score: factorScores.find((f) => f.factor_code === 'ENGINEERING_ELIGIBILITY').normalized_value,
         normalized_fob_score: factorScores.find((f) => f.factor_code === 'FOB_PRICE').normalized_value,
         lead_time_score: factorScores.find((f) => f.factor_code === 'LEAD_TIME_DAYS').normalized_value,
         capacity_score: factorScores.find((f) => f.factor_code === 'MONTHLY_CAPACITY').normalized_value,
-        diversification_score: 50,
+        diversification_score: diversificationScore,
         remaining_validity_score: factorScores.find((f) => f.factor_code === 'OFFER_VALIDITY_REMAINING').normalized_value || 0,
       });
     }
@@ -327,7 +414,16 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
 
     const runResult = tied.length ? 'TIE_REQUIRES_HUMAN_REVIEW' : 'RECOMMENDATION_READY';
     const run = await repository.insertSelectionRun(client, { ...runResultPlaceholder, run_result: runResult, input_versions: { candidates_considered: offers.length, eligible: eligibleOffers.length } });
-    await repository.markPriorRunsStale(client, passportId, run.id);
+    const { staleRunIds } = await repository.markPriorRunsStale(client, passportId, run.id);
+    for (const staleRunId of staleRunIds) {
+      await activityEvents.emitEvent(client, { eventType: 'SELECTION_MARKED_STALE', entityType: 'SELECTION_RUN', entityId: staleRunId, passportId, actor, eventData: { superseded_by: run.id } });
+      await activityEvents.emitEvent(client, { eventType: 'SELECTION_SUPERSEDED', entityType: 'SELECTION_RUN', entityId: staleRunId, passportId, actor, eventData: { superseded_by: run.id } });
+      // A tie or policy conflict on a now-superseded run is resolved by
+      // construction — the new run is a fresh, independent computation.
+      await phase4Repository.resolveAlerts(client, 'TIE_REQUIRES_REVIEW', 'SELECTION_RUN', staleRunId, 'Selection Run superseded by a new Re-selection');
+      await phase4Repository.resolveAlerts(client, 'POLICY_CONFLICT', 'SELECTION_RUN', staleRunId, 'Selection Run superseded by a new Re-selection');
+      await phase4Repository.resolveAlerts(client, 'SELECTION_STALE', 'SELECTION_RUN', staleRunId, 'Selection Run superseded by a new Re-selection');
+    }
 
     // Excluded candidates first
     for (const e of evaluated.filter((x) => !x.eligible)) {
@@ -335,8 +431,11 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
       await activityEvents.emitEvent(client, { eventType: 'MANUFACTURER_EXCLUDED', entityType: 'SELECTION_CANDIDATE', entityId: run.id, offerId: e.offer.offer_id, manufacturerId: e.offer.manufacturer_id, passportId, actor, eventData: { reason: e.exclusion_reason } });
     }
 
-    // Tier assignment: Primary/Secondary consecutive; Backup per diversification rule
-    const tiers = assignTiers(ranked, policy.diversification_rules);
+    // Tier assignment: Primary/Secondary consecutive; Backup per diversification
+    // rule. Never assigned on a tie surviving all eight tie-break steps — the
+    // engine never guesses; a human breaks it via Manual Override
+    // (MANUFACTURER_SELECTION_ENGINE.md §6, "Tie-Break Rules", step 8).
+    const tiers = tied.length ? [] : assignTiers(ranked, policy.diversification_rules);
 
     for (let i = 0; i < ranked.length; i++) {
       const candidateData = ranked[i];
@@ -354,18 +453,25 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
           selection_candidate_id: dbCandidate.id, factor_code: fs.factor_code, factor_category: fs.factor_category,
           original_value: fs.original_value, unit: fs.unit, source: 'ebp_manufacturer_offers', source_version: String(candidateData.offer.offer_revision),
           normalized_value: fs.normalized_value, weight, weighted_contribution: fs.normalized_value !== null ? Math.round(fs.normalized_value * weight * 100) / 100 : null,
-          reason_code: fs.reason_code,
+          penalty: fs.penalty || 0, reason_code: fs.reason_code, explanation_params: fs.explanation_params || {},
         });
       }
       await activityEvents.emitEvent(client, { eventType: 'MANUFACTURER_CANDIDATE_EVALUATED', entityType: 'SELECTION_CANDIDATE', entityId: dbCandidate.id, offerId: candidateData.offer.offer_id, manufacturerId: candidateData.offer.manufacturer_id, passportId, actor, eventData: { rank_position: i + 1, composite_score_final: candidateData.composite_score_final, tier: tierInfo.tier } });
-      if (tierInfo.tier === 'PRIMARY') await activityEvents.emitEvent(client, { eventType: 'PRIMARY_SELECTED', entityType: 'SELECTION_CANDIDATE', entityId: dbCandidate.id, offerId: candidateData.offer.offer_id, manufacturerId: candidateData.offer.manufacturer_id, passportId, actor, eventData: {} });
+      if (tierInfo.tier === 'PRIMARY') {
+        await activityEvents.emitEvent(client, { eventType: 'PRIMARY_SELECTED', entityType: 'SELECTION_CANDIDATE', entityId: dbCandidate.id, offerId: candidateData.offer.offer_id, manufacturerId: candidateData.offer.manufacturer_id, passportId, actor, eventData: {} });
+        await phase4Repository.resolveAlerts(client, 'PRODUCT_WITHOUT_PRIMARY', 'PASSPORT', passportId, 'Primary Manufacturer found in a later Selection Run');
+      }
       if (tierInfo.tier === 'SECONDARY') await activityEvents.emitEvent(client, { eventType: 'SECONDARY_SELECTED', entityType: 'SELECTION_CANDIDATE', entityId: dbCandidate.id, offerId: candidateData.offer.offer_id, manufacturerId: candidateData.offer.manufacturer_id, passportId, actor, eventData: {} });
       if (tierInfo.tier === 'BACKUP') {
         await activityEvents.emitEvent(client, { eventType: 'BACKUP_SELECTED', entityType: 'SELECTION_CANDIDATE', entityId: dbCandidate.id, offerId: candidateData.offer.offer_id, manufacturerId: candidateData.offer.manufacturer_id, passportId, actor, eventData: { backup_diversification_limited: tierInfo.backupDiversificationLimited } });
+        await phase4Repository.resolveAlerts(client, 'PRODUCT_WITHOUT_BACKUP', 'PASSPORT', passportId, 'Backup Manufacturer found in a later Selection Run');
         if (tierInfo.backupDiversificationLimited) {
           await repository.raiseAlert(client, { alert_type: 'BACKUP_DIVERSIFICATION_LIMITED', severity: 'LOW', entity_type: 'SELECTION_RUN', entity_id: run.id, passport_id: passportId, alert_data: {} });
         }
       }
+    }
+    if (!tied.length) {
+      await phase4Repository.resolveAlerts(client, 'NO_ELIGIBLE_MANUFACTURER', 'PASSPORT', passportId, 'Eligible Manufacturer(s) found in a later Selection Run');
     }
 
     if (!tiers.some((t) => t.tier === 'PRIMARY')) {
@@ -388,6 +494,15 @@ async function runSelection(pool, passportId, trigger, actor, options = {}) {
     return { run, decision, candidates: await repository.fetchCandidatesForRun(pool, run.id) };
   } catch (e) {
     await client.query('ROLLBACK');
+    // Concurrency stress-test finding (architecture review): two Selection
+    // Runs fired concurrently for the same Passport can both compute the
+    // same "next version" before either commits — data integrity is never
+    // at risk (the UNIQUE(passport_id, selection_version) constraint lets
+    // only one insert win), but the loser must see a clean, expected
+    // conflict, never a raw Postgres constraint-violation error.
+    if (e.code === '23505' && String(e.constraint || '').includes('selection_version')) {
+      throw new ConflictError('a concurrent Selection Run for this Passport already completed — retry');
+    }
     throw e;
   } finally {
     client.release();
@@ -570,6 +685,62 @@ async function revokeRoleService(pool, declaredActor, role, actor) {
   return repository.revokeRole(pool, declaredActor, role, actor.declared_actor);
 }
 
+// ─── Alert Layer (reuses Phase 4's ebp_alerts table and repository
+// functions directly — never a duplicated Alert Layer, ADR-0037) ───────────
+
+async function listAlerts(pool, filters) {
+  return phase4Repository.fetchAlerts(pool, filters);
+}
+
+async function acknowledgeAlert(pool, id) {
+  return phase4Repository.updateAlertStatus(pool, id, 'ACKNOWLEDGED', null);
+}
+
+async function dismissAlert(pool, id, reason) {
+  return phase4Repository.updateAlertStatus(pool, id, 'DISMISSED', reason);
+}
+
+// scanTimeBasedAlerts: the on-demand equivalent of a scheduled sweep, same
+// "no cron required, compute at read/explicit-trigger time" discipline as
+// Phase 4's own time-based alert scan (ADR-0031/ADR-0057). Raises
+// PRIMARY_OFFER_EXPIRING for an approved Primary whose Offer is within 14
+// days of expiring, and PRIMARY_MANUFACTURER_SUSPENDED for an approved
+// Primary whose Manufacturer has since become SUSPENDED.
+async function scanTimeBasedAlerts(pool) {
+  const { rows } = await pool.query(
+    `SELECT sd.id AS decision_id, sr.passport_id, sd.approved_primary_offer_id,
+            o.expires_at, o.offer_validity_until, m.status AS manufacturer_status, m.id AS manufacturer_id
+     FROM ebp_selection_decisions sd
+     JOIN ebp_selection_runs sr ON sr.id = sd.selection_run_id
+     JOIN ebp_manufacturer_offers o ON o.id = sd.approved_primary_offer_id
+     JOIN ebp_manufacturers m ON m.id = o.manufacturer_id
+     WHERE sd.status IN ('APPROVED', 'OVERRIDDEN') AND sr.run_result <> 'STALE'`
+  );
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    for (const row of rows) {
+      const expiry = row.offer_validity_until || row.expires_at;
+      if (expiry) {
+        const daysRemaining = Math.ceil((new Date(expiry) - new Date()) / (1000 * 60 * 60 * 24));
+        if (daysRemaining <= 14) {
+          await repository.raiseAlert(client, { alert_type: 'PRIMARY_OFFER_EXPIRING', severity: daysRemaining <= 0 ? 'CRITICAL' : 'MEDIUM', entity_type: 'PASSPORT', entity_id: row.passport_id, passport_id: row.passport_id, offer_id: row.approved_primary_offer_id, alert_data: { days_remaining: daysRemaining } });
+        }
+      }
+      if (row.manufacturer_status === 'SUSPENDED') {
+        await repository.raiseAlert(client, { alert_type: 'PRIMARY_MANUFACTURER_SUSPENDED', severity: 'CRITICAL', entity_type: 'PASSPORT', entity_id: row.passport_id, passport_id: row.passport_id, manufacturer_id: row.manufacturer_id, alert_data: {} });
+      }
+    }
+    await client.query('COMMIT');
+  } catch (e) {
+    await client.query('ROLLBACK');
+    throw e;
+  } finally {
+    client.release();
+  }
+  return { scanned: rows.length };
+}
+
 module.exports = {
   ValidationError, NotFoundError, ConflictError, UnauthorizedError,
   requireRole,
@@ -588,4 +759,8 @@ module.exports = {
   decideOverride,
   assignRole: assignRoleService,
   revokeRole: revokeRoleService,
+  listAlerts,
+  acknowledgeAlert,
+  dismissAlert,
+  scanTimeBasedAlerts,
 };

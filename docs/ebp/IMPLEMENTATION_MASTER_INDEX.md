@@ -40,7 +40,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | **Built** (not frozen) — real migrations (`migrations/ebp-phase5/`), backend module (`ebp/phase5/`), 35-test suite, all decisions closed (ADR-0062–ADR-0074) | — | — |
+| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-14 |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
 | 08 | Distributor Portal | [phase-08-distributor-portal.md](phases/phase-08-distributor-portal.md) | Spec Drafted (revised) | — | — |
@@ -313,6 +313,47 @@ See ADR-0005.
   own separate future review/approval act, exactly as every prior
   phase's freeze was a distinct, later decision from "Built." **Phase 6
   was not started.**
+- **Phase 05 — Manufacturer Selection** is now **`APPROVED / FROZEN
+  v1.0`** (2026-07-14, ADR-0075), following two mandatory rounds beyond
+  the "Built" entry above:
+  - **2026-07-13 correction round** — a 12-point manual audit found and
+    fixed six defects: the Technical Priority Rule's exception penalty
+    was never applied; the tie-break path could assign tiers on an
+    unresolved tie ("the engine never guesses" was violated); the
+    `SELECTION_SUPERSEDED`/`SELECTION_MARKED_STALE` Activity Events and
+    the Alert Layer's resolve/list/acknowledge/dismiss surface did not
+    exist; concentration analytics bypassed the required Analytics View
+    (fixed via a new `ebp_analytics_selection_concentration` view,
+    `003_analytics_concentration_view.sql`); and mixed-currency candidate
+    pools were silently ranked with incommensurable prices. Suite grew
+    35 → 40.
+  - **2026-07-14 final architecture review** — Performance, Indexes,
+    Concurrency, Policy Engine, Manual Override, and general-architecture
+    passes, each run against real Postgres data, not code reading alone
+    (full reports: `PHASE5_ARCHITECTURE_REVIEW.md`,
+    `PHASE5_PERFORMANCE_REPORT.md`, `PHASE5_INDEX_AUDIT.md`,
+    `PHASE5_CONCURRENCY_REPORT.md`, `PHASE5_POLICY_AUDIT.md`,
+    `PHASE5_FINAL_RECOMMENDATION.md`). Found and fixed three further
+    defects: a connection-pool self-deadlock (`pool.query()` mixed with
+    an open `client` transaction in `runSelection`, hanging indefinitely
+    under 10 concurrent Selection Runs — fixed by routing every
+    in-transaction read through `client`, verified 93 ms after the fix);
+    a raw Postgres constraint-violation error leaked to a losing
+    concurrent caller instead of a clean `ConflictError`; and a hardcoded
+    `GEOGRAPHIC_DIVERSIFICATION`/tie-break-step-6 constant (`50` for
+    every candidate regardless of real pool composition) — fixed with a
+    real, deterministic diversification score computed from the eligible
+    pool's actual manufacturer/country distribution. Suite grew 40 → 43
+    (16 unit + 15 integration + 4 regression + 8 correction).
+  - **Final regression, run to completion after every fix**: Phase 1
+    (59), Phase 2 (100), Phase 3 (126), Phase 4 (104, unmodified), Phase 5
+    (43) — 432 tests, 100% pass, zero failures.
+  - **Frozen** means the schema, tie-break order, Result Model, Manual
+    Override guard, and Selection Policy versioning discipline may not be
+    altered without a new ADR that explicitly supersedes ADR-0075 or an
+    earlier entry in its range. **Phase 6 was not started** and this
+    freeze does not authorize it — a future ADR must explicitly authorize
+    it, per `CLAUDE_WORKFLOW.md`'s phase-gate discipline.
 
 ## How to Use This File
 

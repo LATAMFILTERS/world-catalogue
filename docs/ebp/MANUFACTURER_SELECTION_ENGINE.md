@@ -717,7 +717,7 @@ seven-part gate (§4), the Selection Run still completes as a valid,
 recorded run — it is not an error and not silently skipped. It produces
 no Primary, Secondary, or Backup; the excluded candidates and their exact
 exclusion reasons (§5) are retained; `SELECTION_REVIEW_REQUIRED` (§11) is
-emitted; and the `PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` alert (§11) is
+emitted; and the `NO_ELIGIBLE_MANUFACTURER` alert (§11) is
 raised. The engine never automatically selects "the least-bad"
 ineligible candidate under any circumstance.
 
@@ -988,7 +988,7 @@ recorded Selection Run — `NO_ELIGIBLE_CANDIDATE` (§ "Result Model") —
 never an error, never a silently-skipped computation, and never an
 automatic "least-bad" fallback. No Primary/Secondary/Backup is created;
 excluded candidates and reasons are retained; `SELECTION_REVIEW_REQUIRED`
-fires; `PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` alert is raised.
+fires; `NO_ELIGIBLE_MANUFACTURER` alert is raised.
 
 ### Decision 04 — Backup divergence rule (ADR-0065)
 

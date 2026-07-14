@@ -1,14 +1,33 @@
 # Phase 05 — Manufacturer Selection
 
-**Status:** Spec Rewritten (implementable) — 2026-07-13, second pass. The
-project owner closed all twelve `MANUFACTURER_SELECTION_ENGINE.md` Open
-Questions (Decisions 01-12, ADR-0062 through ADR-0074) and authorized
-implementation, following the exact methodology used for Phase 4.
+**Status:** **APPROVED / FROZEN v1.0** — 2026-07-14. The project owner
+closed all twelve `MANUFACTURER_SELECTION_ENGINE.md` Open Questions
+(Decisions 01-12, ADR-0062 through ADR-0074) and authorized
+implementation, following the exact methodology used for Phase 4. After
+reviewing the initial "Built" implementation, the project owner required
+a mandatory correction round (2026-07-13 — six defects found and fixed:
+the Technical Priority Rule's exception penalty, tie-break-on-unresolved-
+tie, missing `SELECTION_SUPERSEDED`/`SELECTION_MARKED_STALE` events and
+Alert Layer resolution, an Analytics-View bypass, and silent mixed-
+currency ranking) followed by a final architecture review (2026-07-14 —
+three further defects found and fixed: a connection-pool self-deadlock
+under concurrent Selection Runs, a leaked raw Postgres error on a losing
+concurrent run, and a hardcoded `GEOGRAPHIC_DIVERSIFICATION`/tie-break-
+step-6 constant). Full detail: ADR-0075, `PHASE5_ARCHITECTURE_REVIEW.md`,
+`PHASE5_PERFORMANCE_REPORT.md`, `PHASE5_INDEX_AUDIT.md`,
+`PHASE5_CONCURRENCY_REPORT.md`, `PHASE5_POLICY_AUDIT.md`,
+`PHASE5_FINAL_RECOMMENDATION.md`. Real migrations
+(`migrations/ebp-phase5/`, 3 files), a real backend module
+(`ebp/phase5/`), and a 43-test suite (16 unit + 15 integration + 4
+regression + 8 correction) all pass. **Frozen** means the schema,
+tie-break order, Result Model, Manual Override guard, and Selection
+Policy versioning discipline may not be altered without a new ADR.
 **Depends on:** Phase 01 (`APPROVED / FROZEN v1.0`), Phase 02
 (`APPROVED / FROZEN v1.0`), Phase 03 (`APPROVED / FROZEN v1.0`), Phase 04
 (`APPROVED / FROZEN v1.0`), `docs/ebp/MANUFACTURER_SELECTION_ENGINE.md`
 (normative, ADR-0062 through ADR-0074).
-**Blocks:** Phase 06, 07, 08, 09 (transitively).
+**Blocks:** Phase 06, 07, 08, 09 (transitively). **Phase 6 is not
+authorized by this freeze** — confirmed not started as of 2026-07-14.
 
 **Correction notice (superseded by this rewrite):** Every prior revision
 of this document (aligned to `VALID`-result terminology and the old
@@ -338,7 +357,7 @@ Resolved Decisions and may not be collapsed)
   identical ranking) — verified by test.
 - Given zero Eligible Offers, Selection produces `NO_ELIGIBLE_CANDIDATE`,
   no tiers, `SELECTION_REVIEW_REQUIRED`, and the
-  `PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` alert — verified by test.
+  `NO_ELIGIBLE_MANUFACTURER` alert — verified by test.
 - Given two candidates with an identical composite score, the fixed
   eight-step tie-break resolves deterministically, or produces
   `TIE_REQUIRES_HUMAN_REVIEW` if all eight steps are exhausted —

@@ -11,7 +11,7 @@
     "build": "cd frontend && npm ci && npm run build",
     "test:ebp-phase1": "node --test tests/ebp-phase1/*.test.js",
     "test:ebp-phase4": "node --test tests/ebp-phase4/unit.test.js && node --test tests/ebp-phase4/integration.test.js && node --test tests/ebp-phase4/regression.test.js && node --test tests/ebp-phase4/correction.test.js",
-    "test:ebp-phase5": "node --test tests/ebp-phase5/unit.test.js && node --test tests/ebp-phase5/integration.test.js && node --test tests/ebp-phase5/regression.test.js"
+    "test:ebp-phase5": "node --test tests/ebp-phase5/unit.test.js && node --test tests/ebp-phase5/integration.test.js && node --test tests/ebp-phase5/regression.test.js && node --test tests/ebp-phase5/correction.test.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
