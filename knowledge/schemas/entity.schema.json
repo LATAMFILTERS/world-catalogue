@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/knowledge/entity.schema.json",
+  "title": "ELIMFILTERS Canonical Knowledge Entity",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "type",
+    "name",
+    "status",
+    "authority",
+    "owner",
+    "source",
+    "last_reviewed",
+    "evidence_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+:[a-z0-9-]+$"
+    },
+    "type": {
+      "enum": [
+        "Technology",
+        "ProtectionSystem",
+        "Industry",
+        "ProductFamily",
+        "SKU",
+        "Standard",
+        "FailureMode",
+        "Contaminant",
+        "EvidenceRecord",
+        "SourceDocument"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "status": {
+      "enum": ["draft", "under_review", "approved", "deprecated", "rejected"]
+    },
+    "authority": {
+      "enum": ["canonical", "operational", "working", "historical", "generated"]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 2
+    },
+    "source": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "last_reviewed": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "evidence_status": {
+      "enum": ["unverified", "under_review", "validated", "rejected", "not_required"]
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["predicate", "target"],
+        "properties": {
+          "predicate": {
+            "enum": [
+              "protects",
+              "belongs_to_system",
+              "applies_to_industry",
+              "mitigates",
+              "validated_by",
+              "supported_by",
+              "implemented_in",
+              "published_at",
+              "cross_references",
+              "supersedes",
+              "depends_on"
+            ]
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+:[a-z0-9-]+$"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "basis": {
+            "enum": ["extracted", "inferred", "approved"]
+          }
+        }
+      }
+    }
+  }
+}
