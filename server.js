@@ -179,7 +179,7 @@ app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out', { maxAge: '1h', etag: true, lastModified: true });
 const partSearchStatic = express.static('part-search', { maxAge: '1h', etag: true, lastModified: true });
 
-// Serve the Part Search document with the approved font layer and clean button text.
+// Serve Part Search with the frontend typography and normalized controls.
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) return next();
   const host = req.get('host') || req.hostname || '';
@@ -189,9 +189,9 @@ app.use((req, res, next) => {
     const indexPath = path.join(__dirname, 'part-search', 'index.html');
     let html = fs.readFileSync(indexPath, 'utf8');
     html = html
-      .replace('</head>', '  <link rel="stylesheet" href="/elim-ui-fix.css?v=20260713">\n</head>')
-      .replace(/SEARCH\s*(?:â†’|→|â†’|â†’)/g, 'SEARCH')
-      .replace(/<span class="input-icon" aria-hidden="true">[^<]*<\/span>/, '');
+      .replace('</head>', '  <link rel="stylesheet" href="/elim-ui-fix.css?v=20260713b">\n</head>')
+      .replace(/(<button\b[^>]*class="[^"]*btn-search[^"]*"[^>]*>)[\s\S]*?(<\/button>)/gi, '$1SEARCH$2')
+      .replace(/<span\b[^>]*class="[^"]*input-icon[^"]*"[^>]*>[\s\S]*?<\/span>/gi, '');
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     return res.type('html').send(html);
   } catch (error) {
