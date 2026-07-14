@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+.intro-label,
+.mode-tab,
+.logo-badge,
+.duty-chip,
+.btn-search,
+.footer-line,
+.status-msg,
+.field-label,
+.results-count,
+.results-mode,
+.ac-val,
+.ac-type {
+  font-family: 'Barlow Condensed', sans-serif !important;
+}
+
+.intro-label {
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.mode-tab,
+.duty-chip,
+.field-label {
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.input-icon {
+  display: none !important;
+}
+
+.input-wrap input {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400;
+  letter-spacing: 0.02em !important;
+  padding: 0.9rem 1rem !important;
+}
+
+.input-wrap input::placeholder {
+  color: rgba(255, 255, 255, 0.34) !important;
+  opacity: 1;
+}
+
+.btn-search {
+  min-width: 220px;
+  min-height: 56px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.25rem !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.btn-search::before,
+.btn-search::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  #ui {
+    justify-content: flex-start !important;
+    padding: 7.5rem 1rem 3rem !important;
+  }
+
+  .intro-label {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto 2rem !important;
+    font-size: clamp(1.55rem, 7.5vw, 2.15rem) !important;
+    line-height: 1.12;
+    text-align: center;
+  }
+
+  #search-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mode-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mode-tab {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 0.25rem !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .field-label {
+    font-size: 0.82rem !important;
+  }
+
+  .input-wrap {
+    min-height: 58px;
+  }
+
+  .input-wrap input {
+    width: 100%;
+    font-size: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  .form-footer {
+    margin-top: 1.25rem !important;
+  }
+
+  .btn-search {
+    width: min(100%, 360px);
+    min-width: 0;
+    min-height: 58px;
+    font-size: 1rem !important;
+    letter-spacing: 0.2em !important;
+  }
+}

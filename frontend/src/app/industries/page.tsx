@@ -65,8 +65,7 @@ export default function IndustriesPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>WHY INDUSTRY MATTERS</p>
-            <h2 style={sectionTitle}>The same filter does not face the same failure risk.</h2>
+            <h2 style={industryRiskTitle}>The same filter does not face the same failure risk.</h2>
           </div>
           <div>
             <p style={leadText}>
@@ -82,7 +81,6 @@ export default function IndustriesPage() {
       <section style={marketSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>INDUSTRY PORTFOLIO</p>
             <h2 style={sectionTitle}>Select the market. Protect the asset.</h2>
           </div>
 
@@ -104,7 +102,6 @@ export default function IndustriesPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>GLOBAL INDUSTRIAL READINESS</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             Each market requires a different protection conversation.
           </h2>
@@ -141,12 +138,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.34,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center 38%', opacity: 0.40,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.70) 48%, rgba(0,0,0,0.30) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.68) 48%, rgba(0,0,0,0.28) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.16), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
@@ -178,6 +175,11 @@ const twoCol: CSSProperties = {
 const sectionTitle: CSSProperties = {
   fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)',
   lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700,
+};
+
+const industryRiskTitle: CSSProperties = {
+  ...sectionTitle,
+  fontSize: 'clamp(2.3rem, 4.6vw, 4.14rem)',
 };
 
 const leadText: CSSProperties = {

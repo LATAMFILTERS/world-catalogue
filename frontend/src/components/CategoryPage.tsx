@@ -9,6 +9,7 @@ import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
 import { Hero } from './Hero';
 import { CTASection } from './CTASection';
 import { AnimateIn } from './AnimateIn';
+import { MiningDirectAnswer } from './MiningDirectAnswer';
 
 interface CategoryPageProps {
   item: CatalogueItem;
@@ -32,53 +33,19 @@ interface CategoryPageProps {
     preCtaQuote?: { line1: string; line2: string };
     operationalObjective?: { headline: string; lines: string[] };
   };
-  industryLinks?: {
-    contamination?: { href: string; label: string }[];
-    systems?: { href: string; label: string }[];
-    knowledge?: { href: string; label: string }[];
-  };
 }
 
 function InlineVideo({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { once: false, margin: '-10%' });
-
   useEffect(() => {
     if (!ref.current) return;
-    if (inView) {
-      ref.current.play().catch(() => {});
-    } else {
-      ref.current.pause();
-    }
+    if (inView) ref.current.play().catch(() => {});
+    else ref.current.pause();
   }, [inView]);
-
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '100%',
-        paddingBottom: '56.25%',
-        height: 0,
-        overflow: 'hidden',
-        borderRadius: '12px',
-        border: '1px solid rgba(255,241,45,0.2)',
-      }}
-    >
-      <video
-        ref={ref}
-        playsInline
-        muted
-        loop
-        preload="metadata"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-      >
+    <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', border: '1px solid rgba(255,241,45,0.2)' }}>
+      <video ref={ref} playsInline muted loop preload="metadata" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}>
         <source src={src} type="video/mp4" />
       </video>
     </div>
@@ -91,236 +58,104 @@ const CATEGORY_BG: Record<string, string> = {
   technologies: '/images/media-filtrante.png',
 };
 
-const bodyText = {
-  fontFamily: 'var(--font-body)',
-  fontSize: '0.95rem',
-  lineHeight: 1.75,
-  color: 'rgba(255,255,255,0.72)',
-};
+const bodyText = { fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.72)' };
+const sectionTitle = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.7rem, 3.2vw, 2.45rem)', color: '#fff', letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '1.5rem' };
 
-const sectionTitle = {
-  fontFamily: 'var(--font-display)',
-  fontWeight: 700,
-  fontSize: 'clamp(1.7rem, 3.2vw, 2.45rem)',
-  color: '#fff',
-  letterSpacing: '-0.02em',
-  lineHeight: 1.1,
-  marginBottom: '1.5rem',
+function splitIntoEditorialParagraphs(text?: string): string[] {
+  if (!text) return [];
+  const clean = text.trim();
+  const sentences = clean.match(/[^.!?]+[.!?]+/g)?.map((sentence) => sentence.trim()) ?? [clean];
+  if (sentences.length <= 2) return [clean];
+  const midpoint = Math.ceil(sentences.length / 2);
+  return [sentences.slice(0, midpoint).join(' '), sentences.slice(midpoint).join(' ')].filter(Boolean);
+}
+
+function getIndustryTechGridCell(index: number, total: number) {
+  const topCount = total === 4 ? 2 : Math.min(3, total);
+  const bottomCount = total - topCount;
+  const isTop = index < topCount;
+  const position = isTop ? index : index - topCount;
+  const count = isTop ? topCount : bottomCount;
+  if (count <= 1) return { gridColumn: '3 / span 2', gridRow: isTop ? 1 : 2 };
+  if (count === 2) return { gridColumn: position === 0 ? '2 / span 2' : '4 / span 2', gridRow: isTop ? 1 : 2 };
+  return { gridColumn: `${position * 2 + 1} / span 2`, gridRow: isTop ? 1 : 2 };
+}
+
+type IndustryProfile = { title: string; subtitle: string; tagline: string; answer: string[]; video: string; assets: string[]; techTags: string[]; assetHeading?: string };
+
+const industryProfiles: Record<string, IndustryProfile> = {
+  Agriculture: {
+    title: 'Agricultural Filtration Systems', subtitle: 'AGRICULTURAL ASSETS',
+    tagline: 'Agricultural equipment cannot afford contamination related downtime during planting, harvesting, and field service windows. ELIMFILTERS® engineering protects tractors, combines, sprayers, and support equipment operating in dust, crop residue, heat, and long seasonal duty cycles.',
+    answer: ['ELIMFILTERS® agricultural asset protection systems are engineered for tractors, combines, harvesters, sprayers, irrigation engines, and field support equipment operating through heavy dust, crop residue, heat, vibration, and long seasonal duty cycles. During planting and harvest, filtration is not a routine maintenance detail. It is part of the protection strategy that keeps equipment productive when every hour in the field matters.', 'Agricultural operations expose air intake, hydraulic, fuel, and lubrication systems to fine soil dust, organic debris, moisture, fuel variability, and extended operating hours. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so producers can protect equipment value, maintain service discipline, preserve engine and hydraulic reliability, and reduce downtime risk during critical field windows.'],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Agriculture applications, protection systems must perform under crop residue, soil dust, thermal load, hydraulic demand, and seasonal service pressure. ELIMFILTERS® systems help agricultural operations protect tractors, combines, harvesters, sprayers, and support equipment from contamination related failure while maintaining uptime through planting, harvest, and field service cycles.',
+    assets: ['Tractors', 'Combines', 'Harvesters', 'Sprayers', 'Irrigation Engines', 'Field Support Equipment'], techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™'],
+  },
+  Automotive: {
+    title: 'Automotive Filtration Systems', subtitle: 'AUTOMOTIVE ASSETS', assetHeading: 'Automotive Asset Protection',
+    tagline: 'Automotive fleets and commercial vehicles cannot afford contamination related downtime across urban, highway, mixed duty, and service operations. ELIMFILTERS® engineering protects passenger vehicles, light commercial units, delivery fleets, diesel engines, cabin environments, fuel systems, and lubrication circuits operating under traffic dust, heat, fuel variability, soot loading, and frequent service cycles.',
+    answer: ['ELIMFILTERS® automotive asset protection systems are engineered for passenger vehicles, light commercial vehicles, delivery fleets, service vans, diesel engines, fuel systems, lubrication circuits, air intake systems, and cabin airflow environments operating through urban traffic, highway duty, mixed service routes, heat, dust, and repeated start stop cycles. In automotive operations, filtration is part of the reliability strategy because every vehicle depends on clean airflow, clean fuel, clean oil, and controlled cabin air quality.', 'Automotive environments expose air intake, fuel, lubrication, and cabin systems to road dust, urban particulate, fuel contamination, oil soot, humidity, traffic heat, and high frequency duty cycles. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine efficiency, preserve fuel system reliability, maintain cabin airflow discipline, and reduce downtime risk across passenger, commercial, and mixed duty vehicle applications.'],
+    video: 'The protection media is the core of every ELIMFILTERS® system. In Automotive applications, protection systems must perform under urban particulate, highway dust, fuel contamination, lubrication stress, cabin air demand, thermal load, and repeated start stop operation. ELIMFILTERS® systems help automotive operators protect passenger vehicles, commercial vehicles, delivery fleets, engine systems, fuel systems, and cabin environments from contamination related failure while maintaining vehicle reliability.',
+    assets: ['Passenger Vehicles', 'Light Commercial Vehicles', 'Delivery Fleets', 'Service Vans', 'Diesel Engines', 'Cabin Airflow Systems'], techTags: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™'],
+  },
+  'Bus Coach': { title: 'Bus & Coach Filtration Systems', subtitle: 'BUS & COACH ASSETS', assetHeading: 'Bus & Coach Asset Protection', tagline: 'Bus and coach fleets cannot afford contamination related downtime across public transit, school transportation, intercity routes, and commercial passenger service. ELIMFILTERS® engineering protects diesel engines, pneumatic brake systems, air intake systems, lubrication circuits, fuel systems, and cabin environments operating under stop and go duty cycles, urban dust, heat, soot loading, and passenger service demand.', answer: ['ELIMFILTERS® bus and coach asset protection systems are engineered for urban transit buses, school buses, intercity coaches, shuttle fleets, commercial passenger vehicles, and depot support equipment operating through high cycle stop and go routes, thermal load, vibration, airborne particulate, and extended daily service windows. In passenger transportation, filtration is part of the route continuity strategy because every unit removed from service affects schedules, passengers, maintenance planning, and fleet cost.', 'Bus and coach environments expose air intake, fuel, lubrication, pneumatic, and cabin systems to urban dust, soot loading, fuel contamination, moisture in compressed air circuits, cabin particulate exposure, heat, and repeated acceleration cycles. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine reliability, preserve braking system air quality, maintain cabin airflow discipline, and reduce downtime risk across public and commercial passenger fleets.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Bus & Coach applications, protection systems must perform under stop and go duty cycles, urban particulate exposure, soot loading, fuel contamination, pneumatic moisture risk, cabin air demand, vibration, and extended service intervals. ELIMFILTERS® systems help transit and passenger fleet operators protect buses, coaches, pneumatic systems, diesel engines, and cabin environments from contamination related failure while maintaining route availability.', assets: ['Urban Transit Buses', 'School Buses', 'Intercity Coaches', 'Shuttle Fleets', 'Pneumatic Brake Systems', 'Passenger Cabin Environments'], techTags: ['MACROCORE™', 'SYNTRAX™', 'DRYCORE™', 'MICROKAPPA™', 'SYNTEPORE™'] },
+  Construction: { title: 'Construction Filtration Systems', subtitle: 'CONSTRUCTION ASSETS', tagline: 'Construction equipment cannot afford contamination related downtime on active jobsites. ELIMFILTERS® engineering protects excavators, loaders, dozers, graders, compactors, and dump trucks operating in abrasive dust, hydraulic load, heat, vibration, and severe off road duty cycles.', answer: ['ELIMFILTERS® construction asset protection systems are engineered for excavators, wheel loaders, bulldozers, motor graders, compactors, cranes, and articulated dump trucks working through abrasive dust, idle time, vibration, heat, and severe off road duty cycles. On active jobsites, filtration is part of the uptime plan because every machine supports a schedule, a crew, and a cost of delay.', 'Construction environments expose air intake, hydraulic, fuel, and lubrication systems to silica dust, fuel contamination, pressure spikes, thermal load, and repeated start stop operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so contractors can protect component life, maintain service discipline, preserve hydraulic reliability, and reduce downtime risk across demanding project conditions.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Construction applications, protection systems must perform under abrasive silica dust, hydraulic load, fuel variability, vibration, heat, and severe off road duty cycles. ELIMFILTERS® systems help construction operations protect excavators, loaders, dozers, graders, cranes, compactors, and dump trucks from contamination related failure while maintaining uptime across active jobsites.', assets: ['Excavators', 'Wheel Loaders', 'Bulldozers', 'Motor Graders', 'Compactors', 'Articulated Dump Trucks'], techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTEPORE™', 'SYNTRAX™'] },
+  Manufacturing: { title: 'Manufacturing Filtration Systems', subtitle: 'MANUFACTURING ASSETS', tagline: 'Manufacturing equipment cannot afford contamination related downtime across continuous production, process machinery, and industrial support systems. ELIMFILTERS® engineering protects industrial engines, hydraulic power units, compressors, pumps, conveyors, and rotating machinery operating under process dust, heat, vibration, and extended production schedules.', answer: ['ELIMFILTERS® manufacturing asset protection systems are engineered for industrial engines, hydraulic power units, compressors, pumps, conveyors, rotating machinery, and production line support equipment operating under continuous duty cycles, airborne particulate, thermal load, vibration, and maintenance pressure. In manufacturing environments, filtration is part of the production reliability strategy because every interruption affects output, labor planning, quality discipline, and operating cost.', 'Manufacturing facilities expose air intake, hydraulic, fuel, and lubrication systems to process dust, metal particles, coolant mist, fuel impurities, pressure cycling, lubricant degradation, and extended operating schedules. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so industrial operators can protect equipment reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across production and process operations.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Manufacturing applications, protection systems must perform under process dust, hydraulic load, lubrication degradation, thermal stress, vibration, and continuous production demand. ELIMFILTERS® systems help industrial operators protect compressors, pumps, conveyors, hydraulic power units, industrial engines, and rotating machinery from contamination related failure while maintaining production continuity.', assets: ['Industrial Engines', 'Hydraulic Power Units', 'Compressors', 'Pumps', 'Production Lines', 'Rotating Machinery'], techTags: ['MACROCORE™', 'NANOFORCE™', 'SYNTRAX™', 'SYNTEPORE™'] },
+  Marine: { title: 'Marine Filtration Systems', subtitle: 'MARINE ASSETS', tagline: 'Marine equipment cannot afford contamination related downtime at sea or offshore. ELIMFILTERS® engineering protects commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, and onboard hydraulic systems operating under salt air, humidity, fuel water contamination, vibration, and long service cycles.', answer: ['ELIMFILTERS® marine asset protection systems are engineered for commercial vessels, workboats, fishing fleets, offshore support vessels, marine diesel engines, deck machinery, steering systems, and onboard hydraulic equipment operating under salt air, humidity, vibration, and long duty cycles. At sea, filtration is part of the reliability strategy because service access, fuel quality, weather windows, and unscheduled port calls directly affect operational continuity.', 'Marine environments expose air intake, fuel, hydraulic, and lubrication systems to moisture, salinity, fuel water contamination, airborne salt particles, vibration loading, and extended engine operation. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so marine operators can protect engine reliability, preserve hydraulic performance, maintain service discipline, and reduce downtime risk across offshore, coastal, and commercial vessel applications.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Marine applications, protection systems must perform under salt air, humidity, fuel water contamination, vibration loading, corrosion risk, and long duration engine operation. ELIMFILTERS® systems help marine operators protect commercial vessels, workboats, fishing fleets, offshore support vessels, deck machinery, and onboard hydraulic systems from contamination related failure while maintaining service continuity at sea.', assets: ['Commercial Vessels', 'Workboats', 'Fishing Fleets', 'Offshore Support Vessels', 'Marine Diesel Engines', 'Deck Machinery'], techTags: ['MACROCORE™', 'AQUAGUARD™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™'] },
+  'Oil Gas': { title: 'Oil & Gas Filtration Systems', subtitle: 'OIL & GAS ASSETS', assetHeading: 'Oil & Gas Asset Protection', tagline: 'Oil & Gas equipment cannot afford contamination related downtime in remote, corrosive, and continuous duty environments. ELIMFILTERS® engineering protects compressors, pumps, turbines, generators, hydraulic systems, and offshore support assets operating under salt air, fuel contamination, thermal stress, and severe duty cycles.', answer: ['ELIMFILTERS® oil and gas asset protection systems are engineered for drilling rigs, compressors, pumps, turbines, generators, hydraulic power units, and offshore support equipment operating in corrosive, remote, and continuous duty environments. In energy operations, filtration is part of the reliability strategy because access, downtime, service windows, and equipment replacement costs are tightly constrained.', 'Oil and gas environments expose air intake, fuel, hydraulic, and lubrication systems to salt laden air, moisture, airborne particulate, fuel contamination, pressure cycling, thermal stress, and vibration. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so energy operators can protect rotating equipment, preserve uptime, maintain service discipline, and reduce downtime risk across offshore, onshore, upstream, and energy support applications.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Oil & Gas applications, protection systems must perform under corrosive atmosphere, salt air, fuel contamination, hydraulic pressure cycling, lubrication stress, vibration, and remote maintenance constraints. ELIMFILTERS® systems help energy operators protect compressors, turbines, pumps, generators, hydraulic equipment, and offshore support assets from contamination related failure while maintaining operational continuity.', assets: ['Drilling Rigs', 'Compressors', 'Pumps', 'Turbines', 'Generators', 'Offshore Support Equipment'], techTags: ['MACROCORE™', 'SYNTEPORE™', 'NANOFORCE™', 'SYNTRAX™', 'INTEKCORE™'] },
+  'Power Generation': { title: 'Power Generation Filtration Systems', subtitle: 'POWER GENERATION ASSETS', tagline: 'Power generation equipment cannot afford contamination related failure during emergency response, standby readiness, or continuous power demand. ELIMFILTERS® engineering protects generator sets, turbines, fuel systems, cooling circuits, lubrication systems, and auxiliary equipment operating under heat, fuel storage risk, vibration, and long service intervals.', answer: ['ELIMFILTERS® power generation asset protection systems are engineered for diesel generator sets, gas engines, standby power units, turbines, fuel storage systems, cooling circuits, and auxiliary hydraulic equipment operating under emergency readiness, long idle periods, heat, vibration, and continuous duty demand. In hospitals, utilities, data centers, industrial plants, and remote facilities, filtration is part of the reliability strategy because backup power must respond when failure is not acceptable.', 'Power generation environments expose air intake, fuel, lubrication, cooling, and hydraulic systems to dust, fuel degradation, moisture, microbial growth risk, thermal cycling, coolant contamination, and long service intervals between critical starts. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so operators can protect engine reliability, preserve emergency readiness, maintain service discipline, and reduce downtime risk across prime, standby, and distributed power applications.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Power Generation applications, protection systems must perform under emergency readiness, long idle periods, fuel storage risk, thermal cycling, coolant contamination, and continuous duty demand. ELIMFILTERS® systems help power operators protect generator sets, turbines, fuel systems, cooling circuits, and auxiliary equipment from contamination related failure while maintaining readiness across prime, standby, and distributed power assets.', assets: ['Diesel Generator Sets', 'Gas Engines', 'Standby Power Units', 'Turbines', 'Fuel Storage Systems', 'Cooling Circuits'], techTags: ['MACROCORE™', 'SYNTEPORE™', 'AQUAGUARD™', 'SYNTRAX™', 'COOLTECH™'] },
+  Railway: { title: 'Railway Filtration Systems', subtitle: 'RAILWAY ASSETS', tagline: 'Railway equipment cannot afford contamination related downtime across passenger, freight, and industrial route networks. ELIMFILTERS® engineering protects locomotives, auxiliary engines, pneumatic brake systems, fuel systems, lubrication circuits, and air intake systems operating under vibration, airborne particulate, thermal cycling, and extended route schedules.', answer: ['ELIMFILTERS® railway asset protection systems are engineered for diesel electric locomotives, passenger rail units, freight locomotives, auxiliary engines, pneumatic brake systems, and rail maintenance equipment operating through vibration, route schedules, airborne particulate, thermal variation, and extended service intervals. In rail operations, filtration is part of the reliability strategy because every interruption affects route continuity, passenger movement, freight delivery, and maintenance planning.', 'Railway environments expose air intake, fuel, lubrication, and pneumatic systems to dust, fuel impurities, moisture, vibration loading, thermal cycling, soot accumulation, and long haul operating stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so rail operators can protect locomotive reliability, preserve pneumatic performance, maintain service discipline, and reduce downtime risk across passenger, freight, and industrial rail networks.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Railway applications, protection systems must perform under vibration loading, long haul schedules, airborne particulate, fuel contamination, pneumatic moisture risk, and thermal cycling. ELIMFILTERS® systems help rail operators protect locomotives, auxiliary engines, pneumatic systems, and rail support equipment from contamination related failure while maintaining passenger, freight, and industrial route continuity.', assets: ['Diesel Electric Locomotives', 'Passenger Rail Units', 'Freight Locomotives', 'Auxiliary Engines', 'Pneumatic Brake Systems', 'Rail Maintenance Equipment'], techTags: ['SYNTEPORE™', 'SYNTRAX™', 'MACROCORE™', 'DRYCORE™'] },
+  'Trucks Fleets': { title: 'Truck Fleet Filtration Systems', subtitle: 'TRUCK FLEET ASSETS', assetHeading: 'Truck Fleet Asset Protection', tagline: 'Commercial fleets cannot afford contamination related downtime across long haul, regional, and vocational routes. ELIMFILTERS® engineering protects heavy duty trucks, diesel engines, HPCR fuel systems, lubrication circuits, cooling systems, and cabin environments operating under highway dust, heat, soot loading, vibration, and extended mileage intervals.', answer: ['ELIMFILTERS® trucks and fleet asset protection systems are engineered for heavy duty trucks, long haul tractors, commercial fleet vehicles, owner operator equipment, regional delivery units, and diesel support assets operating through high mileage duty cycles, thermal load, vibration, airborne particulate, and extended service intervals. In fleet operations, filtration is part of the uptime strategy because every parked unit affects route performance, delivery commitments, maintenance planning, and operating cost.', 'Commercial fleet environments expose air intake, fuel, lubrication, cabin, and coolant systems to highway dust, fuel contamination, soot loading, heat, stop start operation, and long distance engine stress. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so fleet operators can protect HPCR fuel systems, preserve diesel engine reliability, maintain service discipline, and reduce downtime risk across long haul, vocational, and regional transportation operations.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Trucks & Fleets applications, protection systems must perform under high mileage duty cycles, highway dust, fuel contamination, soot loading, thermal stress, vibration, and extended service intervals. ELIMFILTERS® systems help fleet operators protect heavy duty trucks, long haul tractors, commercial vehicles, and diesel support assets from contamination related failure while maintaining route availability and fleet uptime.', assets: ['Heavy Duty Trucks', 'Long Haul Tractors', 'Commercial Fleet Vehicles', 'Owner Operator Equipment', 'Regional Delivery Units', 'Diesel Support Assets'], techTags: ['MACROCORE™', 'SYNTEPORE™', 'SYNTRAX™', 'MICROKAPPA™', 'COOLTECH™'] },
+  'Waste Municipal': { title: 'Municipal Fleet Filtration Systems', subtitle: 'MUNICIPAL ASSETS', assetHeading: 'Municipal Fleet Asset Protection', tagline: 'Municipal fleets cannot afford contamination related downtime across sanitation, emergency response, public works, and utility service routes. ELIMFILTERS® engineering protects refuse trucks, emergency vehicles, street sweepers, utility units, public infrastructure fleets, and support equipment operating under stop and go duty cycles, urban dust, soot loading, organic debris, heat, and 24/7 service demand.', answer: ['ELIMFILTERS® municipal fleet asset protection systems are engineered for refuse collection trucks, emergency response vehicles, street sweepers, utility service vehicles, municipal support fleets, and public works equipment operating under high cycle urban service, stop and go duty, thermal load, soot exposure, organic debris, and maintenance pressure. In public service operations, filtration is part of the availability strategy because every unavailable unit can affect sanitation routes, emergency readiness, and city infrastructure continuity.', 'Municipal environments expose air intake, fuel, lubrication, cabin, and coolant systems to urban dust, soot loading, debris ingestion, fuel contamination, coolant stress, idling hours, and repeated daily duty cycles. ELIMFILTERS® proprietary protection media is designed to control contamination across these critical systems so municipalities can protect fleet reliability, preserve service readiness, maintain maintenance discipline, and reduce downtime risk across public works and emergency support fleets.'], video: 'The protection media is the core of every ELIMFILTERS® system. In Waste & Municipal applications, protection systems must perform under stop and go duty cycles, urban dust, soot loading, organic debris, fuel contamination, coolant stress, and 24/7 public service demand. ELIMFILTERS® systems help municipal operators protect refuse trucks, emergency vehicles, street sweepers, utility units, and public works equipment from contamination related failure while maintaining public service continuity.', assets: ['Refuse Collection Trucks', 'Emergency Response Vehicles', 'Street Sweepers', 'Utility Service Vehicles', 'Municipal Support Fleets', 'Public Works Equipment'], techTags: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'MICROKAPPA™', 'COOLTECH™'] },
 };
 
 export function CategoryPage({ item, category, industryImage, industryVideo, technologyLogo, geoData }: CategoryPageProps) {
   const { t } = useTranslation();
   const bgImage = CATEGORY_BG[category];
   const categoryLabel = CATEGORY_LABELS[category];
+  const isIndustry = category === 'industries';
+  const isMining = isIndustry && item.name === 'Mining';
+  const profile = isIndustry ? industryProfiles[item.name] : undefined;
 
   let buttonHref = 'https://part-search.elimfilters.com';
-  if (item.cta?.includes('MACROCORE')) {
-    buttonHref = '/technologies/macrocore';
-  } else if (item.cta?.includes('TECHNOLOGY')) {
-    buttonHref = '/technologies';
-  } else if (item.cta?.includes('SPECIFICATIONS')) {
-    buttonHref = '#technical-specs';
-  }
+  if (item.cta?.includes('MACROCORE')) buttonHref = '/technologies/macrocore';
+  else if (item.cta?.includes('TECHNOLOGY')) buttonHref = '/technologies';
+  else if (item.cta?.includes('SPECIFICATIONS')) buttonHref = '#technical-specs';
 
-  const advantages = item.benefits || [
-    'Extended service intervals reduce downtime',
-    'Contamination retention extends asset life',
-    'Total Asset Protection across critical systems',
-    'Cost-effective protection across duty cycles',
-  ];
+  const advantages = item.benefits || ['Extended service intervals reduce downtime', 'Contamination retention extends asset life', 'Total Asset Protection across critical systems', 'Cost-effective protection across duty cycles'];
+  const miningVideoParagraph = 'The protection media is the core of every ELIMFILTERS® system. In Mining applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment. Every micron of contamination matters. ELIMFILTERS® systems help Mining operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination related failure.';
+  const videoParagraphs = isMining ? [miningVideoParagraph] : profile ? [profile.video] : (item.videoBody && item.videoBody.length > 0 ? item.videoBody : [`The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`, `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`]);
+  const industryAnswerParagraphs = profile ? profile.answer : isIndustry && !isMining ? splitIntoEditorialParagraphs(geoData?.directAnswer ?? item.description) : undefined;
+  const techTags = profile?.techTags || item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™'];
+  const protectedAssets = profile?.assets || geoData?.protectedAssets;
+  const heroTitle = profile?.title || item.title;
+  const heroSubtitle = profile?.subtitle || item.subtitle || undefined;
+  const heroTagline = profile?.tagline || item.description;
+  const assetHeading = profile?.assetHeading || `${item.name} Asset Protection`;
 
   return (
     <>
       <main>
-        {geoData?.schemas && geoData.schemas.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        ))}
-
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 20,
-            background: 'rgba(0,0,0,0.6)',
-            borderBottom: '1px solid rgba(255,255,255,0.05)',
-            padding: '0.75rem 2rem',
-          }}
-        >
+        {geoData?.schemas && geoData.schemas.map((schema, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />)}
+        <div style={{ position: 'relative', zIndex: 20, background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 2rem' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Link href="/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
-              {t('category.home', 'HOME')}
-            </Link>
+            <Link href="/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{t('category.home', 'HOME')}</Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
-            <Link href={CATEGORY_URLS[category]} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
-              {categoryLabel.toUpperCase()}
-            </Link>
+            <Link href={CATEGORY_URLS[category]} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{categoryLabel.toUpperCase()}</Link>
             <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>→</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: '#FFF12D' }}>
-              {item.title}
-            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.1em', color: '#FFF12D' }}>{heroTitle}</span>
           </div>
         </div>
-
-        <Hero
-          title={item.title}
-          subtitle={item.subtitle || undefined}
-          tagline={item.description}
-          ctaText={item.cta}
-          backgroundImage={industryImage || bgImage}
-        />
-
-        {geoData?.directAnswer && (
-          <section style={{ padding: '4rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-              <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }}>
-                {geoData.directAnswer}
-              </p>
-            </div>
-          </section>
-        )}
-
-        {geoData?.operationalObjective && (
-          <section style={{ padding: '3.5rem 2rem', background: 'rgba(255,241,45,0.025)', borderBottom: '1px solid rgba(255,241,45,0.09)' }}>
-            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-              <AnimateIn>
-                <h2 style={sectionTitle}>{geoData.operationalObjective.headline}</h2>
-                {geoData.operationalObjective.lines.map((line, i) => (
-                  <p key={i} style={{ ...bodyText, marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.65rem' : 0 }}>
-                    {line}
-                  </p>
-                ))}
-              </AnimateIn>
-            </div>
-          </section>
-        )}
-
-        {industryVideo && (
-          <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: '60% 40%', gap: '3rem', alignItems: 'center' }}>
-                <div>
-                  <h2 style={sectionTitle}>{item.name} Asset Protection</h2>
-                  {geoData?.protectedAssets && geoData.protectedAssets.length > 0 && (
-                    <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>
-                      {geoData.protectedAssets.map((asset) => (
-                        <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
-                          · {asset}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  {(item.videoBody && item.videoBody.length > 0 ? item.videoBody : [
-                    `The protection media is the core of every ELIMFILTERS system. In ${item.name} applications, protection systems must perform under the specific contamination conditions, thermal demands, and operational duty cycles of that environment.`,
-                    `Every micron of contamination matters. ELIMFILTERS systems help ${item.name} operations maintain productivity, reduce maintenance interruptions, and protect critical equipment from contamination-related failure.`,
-                  ]).map((para, i) => (
-                    <p key={i} style={{ ...bodyText, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>
-                      {para}
-                    </p>
-                  ))}
-                </div>
-                <InlineVideo src={industryVideo} />
-              </div>
-            </div>
-          </section>
-        )}
-
-        {technologyLogo && (
-          <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.5) 100%)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ maxWidth: '400px' }}>
-              <img src={technologyLogo} alt={`${item.name} Logo`} style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-          </section>
-        )}
-
-        <section id="features" style={{ padding: '6rem 0', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
-            <AnimateIn direction="up">
-              <h2 style={sectionTitle}>Why ELIMFILTERS</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {advantages.map((benefit, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#FFF12D', fontWeight: 'bold', marginTop: '0.2rem' }}>•</span>
-                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimateIn>
-
-            <AnimateIn direction="up" delay={0.15}>
-              <div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: '2rem' }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', marginBottom: '1rem' }}>
-                  Technologies Applied
-                </h3>
-                {geoData?.techFocus && (
-                  <p style={{ ...bodyText, marginBottom: '1.1rem' }}>{geoData.techFocus}</p>
-                )}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  {(item.techTags || ['SYNTRAX™', 'NANOFORCE™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']).map((tech) => {
-                    const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-');
-                    return (
-                      <Link key={tech} href={`/technologies/${slug}`} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.62rem', letterSpacing: '0.05em', padding: '0.3rem 0.7rem', border: '1px solid rgba(255,241,45,0.25)', color: 'rgba(255,241,45,0.75)', background: 'rgba(255,241,45,0.04)', textDecoration: 'none' }}>
-                        {tech}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </AnimateIn>
-          </div>
-        </section>
-
-        {geoData?.preCtaQuote && (
-          <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center' }}>
-              <AnimateIn>
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
-                  {geoData.preCtaQuote.line1}
-                </p>
-                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>
-                  {geoData.preCtaQuote.line2}
-                </p>
-              </AnimateIn>
-            </div>
-          </section>
-        )}
-
-        <CTASection
-          title={geoData?.ctaTitle ?? 'Ready to Protect Your Equipment?'}
-          description={geoData?.ctaDescription ?? `Find the right asset protection system for your ${item.name.toLowerCase()} application. Cross-reference 500,000+ parts.`}
-          buttonText={item.cta}
-          buttonHref={buttonHref}
-        />
-
-        {geoData?.faq && geoData.faq.length > 0 && (
-          <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: geoData.faq.map(({ q, a }) => ({
-                  '@type': 'Question',
-                  name: q,
-                  acceptedAnswer: { '@type': 'Answer', text: a },
-                })),
-              })}}
-            />
-            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-              <h2 style={sectionTitle}>Common Questions</h2>
-              <div style={{ display: 'grid', gap: '1rem' }}>
-                {geoData.faq.map(({ q, a }) => (
-                  <details key={q} style={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '1rem 1.25rem', background: '#000' }}>
-                    <summary style={{ cursor: 'pointer', fontFamily: 'var(--font-display)', color: '#fff', fontWeight: 600 }}>{q}</summary>
-                    <p style={{ ...bodyText, marginTop: '0.8rem' }}>{a}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        <Hero title={heroTitle} subtitle={heroSubtitle} tagline={heroTagline} ctaText={item.cta} backgroundImage={industryImage || bgImage} />
+        {(geoData?.directAnswer || isIndustry) && <section style={{ padding: '4rem 2rem', background: '#000', borderBottom: '1px solid rgba(255,255,255,0.06)' }}><div style={{ maxWidth: isIndustry ? '1240px' : '900px', margin: '0 auto' }}>{isIndustry ? <MiningDirectAnswer paragraphStyle={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }} paragraphs={industryAnswerParagraphs} /> : <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.1rem)', lineHeight: 1.85, color: 'rgba(255,255,255,0.82)', fontFamily: 'var(--font-body)', width: '100%' }}>{geoData?.directAnswer}</p>}</div></section>}
+        {geoData?.operationalObjective && <section style={{ padding: '3.5rem 2rem', background: 'rgba(255,241,45,0.025)', borderBottom: '1px solid rgba(255,241,45,0.09)' }}><div style={{ maxWidth: '900px', margin: '0 auto' }}><AnimateIn><h2 style={sectionTitle}>{geoData.operationalObjective.headline}</h2>{geoData.operationalObjective.lines.map((line, i) => <p key={i} style={{ ...bodyText, marginBottom: i < geoData.operationalObjective!.lines.length - 1 ? '0.65rem' : 0 }}>{line}</p>)}</AnimateIn></div></section>}
+        {industryVideo && <section style={{ padding: '5rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}><div style={{ maxWidth: isIndustry ? '1320px' : '1200px', margin: '0 auto' }}><div className="product-desc-grid" style={{ display: 'grid', gridTemplateColumns: isIndustry ? '56% 44%' : '60% 40%', gap: isIndustry ? '2.6rem' : '3rem', alignItems: 'center' }}><div><h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>{assetHeading}</h2>{protectedAssets && protectedAssets.length > 0 && <div style={{ marginBottom: '1.5rem', display: 'grid', gap: '0.35rem' }}>{protectedAssets.map((asset) => <span key={asset} style={{ fontFamily: 'var(--font-body)', fontSize: isIndustry ? '1.008rem' : '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>· {asset}</span>)}</div>}{videoParagraphs.map((para, i) => <p key={i} style={{ ...bodyText, fontSize: isIndustry ? '1.064rem' : bodyText.fontSize, lineHeight: isIndustry ? 1.82 : bodyText.lineHeight, color: i === 0 ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.7)', marginBottom: '1rem' }}>{para}</p>)}</div><InlineVideo src={industryVideo} /></div></div></section>}
+        {technologyLogo && <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.5) 100%)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><div style={{ maxWidth: '400px' }}><img src={technologyLogo} alt={`${item.name} Logo`} style={{ width: '100%', height: 'auto', display: 'block' }} /></div></section>}
+        <section id="features" style={{ padding: '6rem 0', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}><div style={{ maxWidth: isIndustry ? '1320px' : '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: isIndustry ? '5rem' : '4rem', alignItems: 'start' }}><AnimateIn direction="up"><h2 style={isIndustry ? { ...sectionTitle, fontSize: 'calc(clamp(1.7rem, 3.2vw, 2.45rem) * 1.12)' } : sectionTitle}>Why ELIMFILTERS</h2><div style={{ display: 'flex', flexDirection: 'column', gap: isIndustry ? '1.15rem' : '1rem' }}>{advantages.map((benefit, i) => <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}><span style={{ color: '#FFF12D', fontWeight: 'bold', marginTop: '0.2rem' }}>•</span><span style={{ fontFamily: 'var(--font-body)', fontSize: isIndustry ? '1.064rem' : '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65 }}>{benefit}</span></div>)}</div></AnimateIn><AnimateIn direction="up" delay={0.15}><div style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.07)', padding: isIndustry ? '2.45rem' : '2rem' }}><h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: isIndustry ? '1.12rem' : '1rem', color: '#fff', marginBottom: isIndustry ? '1.4rem' : '1rem' }}>Technologies Applied</h3>{geoData?.techFocus && <p style={{ ...bodyText, marginBottom: '1.1rem' }}>{geoData.techFocus}</p>}<div style={isIndustry ? { display: 'grid', gridTemplateColumns: 'repeat(6, minmax(0, 1fr))', gap: '0.65rem', maxWidth: '620px' } : { display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>{techTags.map((tech, techIndex) => { const slug = tech.toLowerCase().replace(/™|®/g, '').replace(/\//g, '-').replace(/\s+/g, '-'); return <Link key={tech} href={`/technologies/${slug}`} style={{ fontFamily: 'var(--font-mono)', fontSize: isIndustry ? '0.72rem' : '0.62rem', letterSpacing: '0.05em', padding: isIndustry ? '0.72rem 1.05rem' : '0.3rem 0.7rem', border: '1px solid rgba(255,241,45,0.25)', color: 'rgba(255,241,45,0.75)', background: 'rgba(255,241,45,0.04)', textDecoration: 'none', ...(isIndustry ? { display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '48px', ...getIndustryTechGridCell(techIndex, techTags.length) } : {}) }}>{tech}</Link>; })}</div></div></AnimateIn></div></section>
+        {geoData?.preCtaQuote && <section style={{ padding: '3rem 2rem', background: '#000', borderTop: '1px solid rgba(255,255,255,0.06)' }}><div style={{ maxWidth: isIndustry ? '1180px' : '860px', margin: '0 auto', textAlign: 'center' }}><AnimateIn>{isIndustry ? <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.155rem, 2.625vw, 1.47rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, whiteSpace: 'nowrap' }}>{geoData.preCtaQuote.line1} <span style={{ color: '#FFF12D' }}>{geoData.preCtaQuote.line2}</span></p> : <><p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, marginBottom: '0.5rem' }}>{geoData.preCtaQuote.line1}</p><p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', fontWeight: 600, color: '#FFF12D', lineHeight: 1.6 }}>{geoData.preCtaQuote.line2}</p></>}</AnimateIn></div></section>}
+        <CTASection title={geoData?.ctaTitle ?? 'Ready to Protect Your Equipment?'} description={geoData?.ctaDescription ?? `Find the right asset protection system for your ${item.name.toLowerCase()} application. Cross-reference 500,000+ parts.`} buttonText={item.cta} buttonHref={buttonHref} />
+        {geoData?.faq && geoData.faq.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: geoData.faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }) }} />}
+        {geoData?.faq && geoData.faq.length > 0 && !isIndustry && <section style={{ padding: '5rem 2rem', background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)' }}><div style={{ maxWidth: '860px', margin: '0 auto' }}><h2 style={sectionTitle}>Common Questions</h2><div style={{ display: 'grid', gap: '1rem' }}>{geoData.faq.map(({ q, a }) => <details key={q} style={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '1rem 1.25rem', background: '#000' }}><summary style={{ cursor: 'pointer', fontFamily: 'var(--font-display)', color: '#fff', fontWeight: 600 }}>{q}</summary><p style={{ ...bodyText, marginTop: '0.8rem' }}>{a}</p></details>)}</div></div></section>}
       </main>
     </>
   );

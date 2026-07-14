@@ -158,21 +158,30 @@ export function TechDetailPage({ data }: Props) {
             justifyContent: 'center',
             alignItems: 'center',
             overflow: 'hidden',
-            backgroundImage: data.heroImage && data.logoSrc
-              ? `url('${data.logoSrc}'), linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url('${data.heroImage}')`
-              : data.heroImage
-                ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url('${data.heroImage}')`
-                : undefined,
-            backgroundBlendMode: data.logoSrc ? 'screen, normal, normal' : undefined,
-            backgroundSize: data.logoSrc ? 'clamp(260px, 32vw, 480px) auto, cover, cover' : 'cover',
-            backgroundPosition: data.logoSrc ? 'center 38%, center, center' : 'center',
-            backgroundRepeat: data.logoSrc ? 'no-repeat, no-repeat, no-repeat' : 'no-repeat',
+            backgroundImage: data.heroImage
+              ? `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%), url('${data.heroImage}')`
+              : undefined,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             backgroundColor: '#000',
             borderBottom: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {data.logoSrc && <div style={{ width: 'clamp(260px, 32vw, 480px)', height: 'clamp(173px, 21.3vw, 320px)', marginBottom: '2rem', flexShrink: 0 }} />}
+          <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%', padding: '0 2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {data.logoSrc && (
+              <img
+                src={data.logoSrc}
+                alt={title}
+                style={{
+                  width: 'clamp(260px, 32vw, 480px)',
+                  height: 'auto',
+                  marginBottom: '2rem',
+                  flexShrink: 0,
+                  mixBlendMode: 'screen',
+                }}
+              />
+            )}
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.3 }} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <p style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1rem)', maxWidth: '600px', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-display)', margin: '0 0 2rem' }}>
                 {cleanText(data.heroTagline)}
