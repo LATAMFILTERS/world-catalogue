@@ -26,19 +26,30 @@
     if (looksLikeVehicleQuestion) {
       const requestedYear = Number(vehicleYearMatch[1]);
       const uniqueTokens = [...new Set(vehicleTokens)].slice(0, 5);
-      const primaryToken = uniqueTokens[0];
+      const makeToken = uniqueTokens[0];
+      const modelToken = uniqueTokens[1] || '';
 
       let vehicleRows;
       try {
         vehicleRows = await client.query(
           `SELECT c.*
            FROM elimfilters_catalog c
-           WHERE c.vehicle_applications IS NOT NULL
+           WHERE c.duty = 'LIGHT_DUTY'
+             AND c.vehicle_applications IS NOT NULL
              AND jsonb_typeof(c.vehicle_applications) = 'array'
-             AND POSITION($1::text IN UPPER(c.vehicle_applications::text)) > 0
+             AND c.vehicle_applications @> jsonb_build_array(jsonb_build_object('make', $1::text))
+             AND EXISTS (
+               SELECT 1
+               FROM jsonb_array_elements(c.vehicle_applications) AS va
+               WHERE UPPER(
+                 COALESCE(va->>'model','') || ' ' ||
+                 COALESCE(va->>'model_family','') || ' ' ||
+                 COALESCE(va->>'model_type','')
+               ) LIKE $2::text
+             )
            ORDER BY c.sku
-           LIMIT 750`,
-          [primaryToken]
+           LIMIT 120`,
+          [makeToken, '%' + modelToken + '%']
         );
       } catch (vehicleSearchError) {
         console.error('[search:vehicle]', vehicleSearchError.code || '', vehicleSearchError.message);
@@ -124,54 +135,67 @@
       const vehicleProducts = vehicleRows.rows.map(row => {
         const product = buildFilterData(row, lang);
         const applications = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
-        product.matched_vehicle_applications = applications
+        const matchedApplications = applications
           .filter(app => matchesTokens(app) && applicationCoversYear(app, requestedYear))
           .slice(0, 25);
-        product.raw_filter_type = product.filter_type;
-        product.result_category = classifyVehicleFilter(product);
-        product.result_category_label = categoryLabels[product.result_category];
-        return product;
-      }).filter(product => product.matched_vehicle_applications.length > 0);
+        if (!matchedApplications.length) return null;
+
+        const category = classifyVehicleFilter(product);
+        return {
+          sku: product.elimfilters_sku,
+          category,
+          category_label: categoryLabels[category],
+          technology: product.technology || null,
+          filter_type: product.filter_type || null,
+          applications: matchedApplications.map(app => ({
+            make: app.make || null,
+            model: app.model || app.model_family || null,
+            model_type: app.model_type || null,
+            engine: app.engine_code || app.engine || null,
+            year_range: app.year_range || app.year || null,
+            ccm: app.ccm || null,
+            hp: app.hp || null,
+            kw: app.kw || null
+          }))
+        };
+      }).filter(Boolean);
 
       if (vehicleProducts.length > 0) {
         const engineOptions = [...new Set(vehicleProducts.flatMap(product =>
-          product.matched_vehicle_applications.map(app => app.engine_code || app.engine || app.model_type || '')
+          product.applications.map(app => app.engine || app.model_type || '')
         ).filter(Boolean))].slice(0, 20);
 
-        const groupedResults = vehicleProducts.reduce((groups, product) => {
-          const key = product.result_category;
-          if (!groups[key]) groups[key] = [];
-          groups[key].push(product);
-          return groups;
-        }, {});
-
         const categoryOrder = ['oil', 'air', 'cabin', 'fuel', 'coolant', 'transmission', 'other'];
-        const availableCategories = categoryOrder
-          .filter(key => groupedResults[key]?.length)
-          .map(key => ({ key, label: categoryLabels[key], count: groupedResults[key].length }));
+        const categories = categoryOrder
+          .map(key => ({
+            key,
+            label: categoryLabels[key],
+            products: vehicleProducts.filter(product => product.category === key)
+          }))
+          .filter(group => group.products.length > 0);
 
         return res.json({
           success: true,
-          results: vehicleProducts.slice(0, 30),
-          grouped_results: groupedResults,
-          available_categories: availableCategories,
-          source: 'vehicle_natural_language',
-          vehicle_query: {
-            raw,
-            year: requestedYear,
-            tokens: uniqueTokens,
-            needs_engine_confirmation: engineOptions.length > 1,
-            engine_options: engineOptions
-          }
+          source: 'vehicle_natural_language_compact',
+          vehicle: {
+            make: makeToken,
+            model: modelToken,
+            year: requestedYear
+          },
+          needs_engine_confirmation: engineOptions.length > 1,
+          engine_options: engineOptions,
+          categories,
+          total_products: vehicleProducts.length
         });
       }
 
       return res.json({
         success: true,
-        results: [],
-        grouped_results: {},
-        available_categories: [],
         source: 'vehicle_no_match',
-        vehicle_query: { raw, year: requestedYear, tokens: uniqueTokens }
+        vehicle: { make: makeToken, model: modelToken, year: requestedYear },
+        needs_engine_confirmation: false,
+        engine_options: [],
+        categories: [],
+        total_products: 0
       });
     }
