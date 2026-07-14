@@ -1,0 +1,62 @@
+name: Product Intelligence Graph
+
+on:
+  workflow_dispatch:
+    inputs:
+      catalogue_path:
+        description: Catalogue JSON path inside the repository
+        required: false
+        default: frontend/catalogue.json
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/export-product-intelligence.mjs'
+      - 'scripts/validate-product-intelligence.mjs'
+      - 'knowledge/schemas/sku.schema.json'
+      - 'knowledge/mappings/product-intelligence-field-map.yaml'
+      - '.github/workflows/product-intelligence-graph.yml'
+
+permissions:
+  contents: read
+
+env:
+  CATALOGUE_PATH: ${{ inputs.catalogue_path || 'frontend/catalogue.json' }}
+
+jobs:
+  generate-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify catalogue source
+        run: |
+          test -f "$CATALOGUE_PATH" || {
+            echo "Catalogue not found at $CATALOGUE_PATH"
+            exit 1
+          }
+
+      - name: Generate SKU intelligence entities
+        run: node scripts/export-product-intelligence.mjs "$CATALOGUE_PATH"
+
+      - name: Validate generated SKU intelligence
+        run: node scripts/validate-product-intelligence.mjs
+
+      - name: Summarize coverage
+        run: |
+          node -e "const c=require('./knowledge/generated/product-intelligence/coverage.json'); console.log(JSON.stringify({source:c.source,rows_seen:c.rows_seen,entities_written:c.entities_written,rows_skipped:c.rows_skipped,unresolved_count:c.unresolved_count},null,2))"
+
+      - name: Upload generated product intelligence
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-intelligence-${{ github.run_number }}
+          path: knowledge/generated/product-intelligence/
+          retention-days: 14
+          if-no-files-found: error
