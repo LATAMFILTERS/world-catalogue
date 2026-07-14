@@ -1,0 +1,46 @@
+name: OEM Knowledge Graph
+
+on:
+  workflow_dispatch:
+    inputs:
+      catalogue_path:
+        description: Relative path to exported catalogue JSON
+        required: true
+        default: catalogue-export.json
+  push:
+    paths:
+      - 'knowledge/entities/**'
+      - 'knowledge/templates/oem-code.md'
+      - 'knowledge/templates/cross-reference-assertion.md'
+      - 'scripts/export-oem-graph.mjs'
+      - 'scripts/promote-oem-assertion.mjs'
+      - 'scripts/validate-oem-graph.mjs'
+      - '.github/workflows/oem-knowledge-graph.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate canonical OEM graph
+        run: node scripts/validate-oem-graph.mjs
+
+  generate:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate OEM graph candidates
+        run: node scripts/export-oem-graph.mjs "${{ inputs.catalogue_path }}"
+      - name: Upload generated OEM graph
+        uses: actions/upload-artifact@v4
+        with:
+          name: oem-knowledge-graph-${{ github.run_id }}
+          path: knowledge/generated/oem-graph/
+          retention-days: 30
