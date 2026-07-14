@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const target = path.join(__dirname, '..', 'server-original.js');
+const fragmentPath = path.join(__dirname, 'vehicle-chat-search-fragment.txt');
 const marker = '// VEHICLE_CHAT_SEARCH_FIX_20260714';
 
 let source = fs.readFileSync(target, 'utf8');
@@ -15,142 +16,11 @@ if (!source.includes(anchor)) {
   throw new Error('Vehicle search patch anchor not found in server-original.js');
 }
 
-const patch = `    const q = raw.toUpperCase().replace(/[-\\s]/g, '');
+const fragment = fs.readFileSync(fragmentPath, 'utf8');
+if (!fragment.includes(marker)) {
+  throw new Error('Vehicle search fragment marker missing');
+}
 
-    ${marker}
-    // Natural-language vehicle lookup used by the public chatbot and /api/search.
-    // Example: \"¿Qué filtros usa un Toyota Corolla 2017?\"
-    // VIN decoding remains outside this flow and can continue to use NHTSA later.
-    const vehicleYearMatch = raw.match(/\\b(19\\d{2}|20\\d{2})\\b/);
-    const vehicleStopWords = new Set([
-      'A','AN','AND','ARE','CAR','CARS','DO','DOES','EL','EN','FILTER','FILTERS','FILTRO','FILTROS',
-      'FOR','HOW','LA','LAS','LOS','ME','MI','NEED','PARA','POR','QUE','QUÉ','THE','THIS','UN','UNA',
-      'USA','USE','USES','USO','USAR','UTILIZA','UTILIZAN','VEHICLE','VEHICULO','VEHÍCULO','WHAT','WHICH'
-    ]);
-    const vehicleTokens = raw
-      .normalize('NFKD')
-      .replace(/[\\u0300-\\u036f]/g, '')
-      .toUpperCase()
-      .replace(/\\b(19\\d{2}|20\\d{2})\\b/g, ' ')
-      .replace(/[^A-Z0-9]+/g, ' ')
-      .trim()
-      .split(/\\s+/)
-      .filter(Boolean)
-      .filter(token => token.length >= 2 && !vehicleStopWords.has(token));
-
-    const looksLikeVehicleQuestion = Boolean(vehicleYearMatch) && vehicleTokens.length >= 2 && /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(raw);
-
-    if (looksLikeVehicleQuestion) {
-      const requestedYear = Number(vehicleYearMatch[1]);
-      const uniqueTokens = [...new Set(vehicleTokens)].slice(0, 5);
-      const tokenConditions = uniqueTokens.map((_, i) => `
-        UPPER(
-          COALESCE(va->>'make','') || ' ' ||
-          COALESCE(va->>'model','') || ' ' ||
-          COALESCE(va->>'model_family','') || ' ' ||
-          COALESCE(va->>'model_type','')
-        ) LIKE $${i + 1}
-      `);
-      const tokenParams = uniqueTokens.map(token => '%' + token + '%');
-
-      const vehicleRows = await client.query(
-        `SELECT DISTINCT ON (c.sku) c.*
-         FROM elimfilters_catalog c
-         WHERE c.vehicle_applications IS NOT NULL
-           AND jsonb_typeof(c.vehicle_applications) = 'array'
-           AND EXISTS (
-             SELECT 1
-             FROM jsonb_array_elements(c.vehicle_applications) AS va
-             WHERE ${tokenConditions.join(' AND ')}
-           )
-         ORDER BY c.sku
-         LIMIT 80`,
-        tokenParams
-      );
-
-      const expandYear = (value) => {
-        const n = Number(value);
-        if (!Number.isFinite(n)) return null;
-        if (String(value).length === 4) return n;
-        return n <= 35 ? 2000 + n : 1900 + n;
-      };
-
-      const applicationCoversYear = (application, year) => {
-        if (!application || typeof application !== 'object') return false;
-        const rangeText = String(application.year_range || '').trim();
-        const yearText = String(application.year || '').trim();
-        const modelText = String(application.model || '');
-
-        const usaExact = modelText.match(/\\(USA\\)\\s*(19\\d{2}|20\\d{2})/i);
-        if (usaExact) return Number(usaExact[1]) === year;
-
-        const sourceText = rangeText || yearText;
-        if (!sourceText) return true;
-
-        const found = [...sourceText.matchAll(/(?:^|\\D)(19\\d{2}|20\\d{2}|\\d{2})(?=\\D|$)/g)]
-          .map(match => expandYear(match[1]))
-          .filter(Boolean);
-
-        if (!found.length) return true;
-        if (sourceText.includes('→') || sourceText.includes('->') || sourceText.includes('-')) {
-          const start = found[0];
-          const end = found.length > 1 ? found[found.length - 1] : null;
-          return year >= start && (end === null || year <= end);
-        }
-
-        // A single MM/YY entry is normally the start of production.
-        if (found.length === 1 && /\\d{1,2}\\/\\d{2}/.test(sourceText)) return year >= found[0];
-        return found.includes(year);
-      };
-
-      const matchesTokens = (application) => {
-        const haystack = [
-          application?.make,
-          application?.model,
-          application?.model_family,
-          application?.model_type
-        ].filter(Boolean).join(' ').normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').toUpperCase();
-        return uniqueTokens.every(token => haystack.includes(token));
-      };
-
-      const vehicleProducts = vehicleRows.rows.map(row => {
-        const product = buildFilterData(row, lang);
-        const applications = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
-        product.matched_vehicle_applications = applications
-          .filter(app => matchesTokens(app) && applicationCoversYear(app, requestedYear))
-          .slice(0, 25);
-        return product;
-      }).filter(product => product.matched_vehicle_applications.length > 0);
-
-      if (vehicleProducts.length > 0) {
-        await enrichAlternatives(vehicleProducts, client);
-        const engineOptions = [...new Set(vehicleProducts.flatMap(product =>
-          product.matched_vehicle_applications.map(app => app.engine_code || app.engine || app.model_type || '')
-        ).filter(Boolean))].slice(0, 20);
-
-        return res.json({
-          success: true,
-          results: vehicleProducts.slice(0, 30),
-          source: 'vehicle_natural_language',
-          vehicle_query: {
-            raw,
-            year: requestedYear,
-            tokens: uniqueTokens,
-            needs_engine_confirmation: engineOptions.length > 1,
-            engine_options: engineOptions
-          }
-        });
-      }
-
-      return res.json({
-        success: true,
-        results: [],
-        source: 'vehicle_no_match',
-        vehicle_query: { raw, year: requestedYear, tokens: uniqueTokens }
-      });
-    }
-`;
-
-source = source.replace(anchor, patch);
+source = source.replace(anchor, fragment);
 fs.writeFileSync(target, source, 'utf8');
 console.log('[vehicle-chat-search] natural-language vehicle lookup added to /api/search');
