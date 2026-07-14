@@ -103,7 +103,6 @@ try {
 
 const syntraxContentLayer = `
 <style id="syntrax-content-fix">
-/* SYNTRAX: compact 12-industry application grid */
 #syntrax-applications-grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -181,10 +180,10 @@ const syntraxContentLayer = `
     var heading = Array.from(document.querySelectorAll('main h2')).find(function (el) {
       return normalize(el.textContent).indexOf('WHERE SYNTRAX™ PROTECTS') !== -1;
     });
-    if (!heading) return false;
+    if (!heading) return;
 
     var section = heading.closest('section');
-    if (!section) return false;
+    if (!section) return;
 
     var intro = heading.parentElement && heading.parentElement.querySelector('p');
     if (intro) {
@@ -192,34 +191,47 @@ const syntraxContentLayer = `
       intro.style.maxWidth = '760px';
     }
 
+    var currentGrid = section.querySelector('#syntrax-applications-grid');
+    if (currentGrid && currentGrid.children.length === industries.length) return;
+
     var grids = Array.from(section.querySelectorAll('div')).filter(function (el) {
       var style = el.getAttribute('style') || '';
       return style.indexOf('grid-template-columns') !== -1 && el.querySelector('h3');
     });
-    var grid = grids[grids.length - 1];
-    if (!grid) return false;
+    var grid = grids[grids.length - 1] || currentGrid;
+    if (!grid) return;
 
     grid.id = 'syntrax-applications-grid';
     grid.removeAttribute('style');
     grid.innerHTML = industries.map(function (item) {
       return '<div class="syntrax-industry-card"><h3>' + item[0] + '</h3><p>' + item[1] + '</p></div>';
     }).join('');
-    return true;
   }
 
-  function applySyntraxContent() {
+  function enforceSyntraxContent() {
     removeRepeatedSpecs();
-    return rebuildApplications();
+    rebuildApplications();
   }
 
-  applySyntraxContent();
-  document.addEventListener('DOMContentLoaded', applySyntraxContent, { once: true });
-  window.addEventListener('load', applySyntraxContent, { once: true });
+  enforceSyntraxContent();
+  document.addEventListener('DOMContentLoaded', enforceSyntraxContent);
+  window.addEventListener('load', enforceSyntraxContent);
+
+  var attempts = 0;
+  var hydrationGuard = setInterval(function () {
+    enforceSyntraxContent();
+    attempts += 1;
+    if (attempts >= 80) clearInterval(hydrationGuard);
+  }, 250);
+
   var observer = new MutationObserver(function () {
-    if (applySyntraxContent()) observer.disconnect();
+    enforceSyntraxContent();
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });
-  setTimeout(function () { observer.disconnect(); applySyntraxContent(); }, 5000);
+  setTimeout(function () {
+    observer.disconnect();
+    enforceSyntraxContent();
+  }, 20000);
 })();
 </script>`;
 
@@ -230,7 +242,7 @@ try {
     .replace(/<style id="syntrax-content-fix">[\s\S]*?<\/style>\s*<script id="syntrax-content-script">[\s\S]*?<\/script>/gi, '');
   syntraxHtml = syntraxHtml.replace('</body>', `${syntraxContentLayer}\n</body>`);
   fs.writeFileSync(syntraxPath, syntraxHtml, 'utf8');
-  console.log('[syntrax-content] applied: redundant specs removed, 12-industry grid enabled');
+  console.log('[syntrax-content] applied after hydration: repeated specs removed, 12 industries enabled');
 } catch (error) {
   console.error('[syntrax-content] failed:', error.message);
   process.exitCode = 1;
