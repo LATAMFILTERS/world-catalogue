@@ -83,4 +83,57 @@ if (source.includes(slowVehicleQuery)) {
   throw new Error('Slow vehicle query remains but exact replacement block was not found');
 }
 
+// Open-ended legacy ranges such as "01/98 →" were previously treated as valid
+// forever. Rank by proximity to the requested year and reject implausibly old
+// open-ended applications so a 2017 query does not surface 1998/2006 generations.
+const oldScoreBlock = `        let score = 0;
+        score += year.explicit ? 60 : 5;
+        if (model === modelToken) score += 35;
+        else if (model.startsWith(modelToken + ' ')) score += 25;
+        else score += 15;
+
+        const queryHasCross = uniqueTokens.includes('CROSS');
+        if (!queryHasCross && modelToken === 'COROLLA' && /\\bCOROLLA CROSS\\b/.test(model)) score -= 45;
+        if (application?.engine_code || application?.engine) score += 8;
+        if (application?.ccm) score += 4;
+        return score;`;
+
+const newScoreBlock = `        const sourceYears = String(application?.year_range || application?.year || '').trim();
+        const datedStart = sourceYears.match(/\\b\\d{1,2}\\/(\\d{2}|\\d{4})\\b/);
+        const fullStart = sourceYears.match(/\\b(19\\d{2}|20\\d{2})\\b/);
+        const startYear = datedStart ? expandYear(datedStart[1]) : (fullStart ? Number(fullStart[1]) : null);
+        const isOpenEnded = (sourceYears.includes('→') || sourceYears.includes('->')) &&
+          !/\\b\\d{1,2}\\/(?:\\d{2}|\\d{4})\\s*(?:→|->)\\s*\\d{1,2}\\/(?:\\d{2}|\\d{4})\\b/.test(sourceYears);
+        const ageGap = startYear ? requestedYear - startYear : null;
+        if (isOpenEnded && ageGap !== null && ageGap > 12) return -1000;
+
+        let score = 0;
+        score += year.explicit ? 60 : 5;
+        if (ageGap !== null && ageGap >= 0) score += Math.max(0, 32 - (ageGap * 4));
+        if (model === modelToken) score += 35;
+        else if (model.startsWith(modelToken + ' ')) score += 25;
+        else score += 15;
+
+        const queryHasCross = uniqueTokens.includes('CROSS');
+        if (!queryHasCross && modelToken === 'COROLLA' && /\\bCOROLLA CROSS\\b/.test(model)) score -= 45;
+        if (application?.engine_code || application?.engine) score += 8;
+        if (application?.ccm) score += 4;
+        return score;`;
+
+if (source.includes(oldScoreBlock)) {
+  source = source.replace(oldScoreBlock, newScoreBlock);
+  changed = true;
+  console.log('[vehicle-chat-search] strict year proximity ranking enabled');
+} else if (!source.includes('strict year proximity ranking enabled') && !source.includes('const sourceYears = String(application?.year_range')) {
+  throw new Error('Vehicle relevance score block not found');
+}
+
+source = source.replace('.filter(item => item.score >= bestScore - 15)', '.filter(item => item.score >= bestScore - 8)');
+source = source.replace('vehicleProducts.filter(product => product.relevance_score >= topScore - 20)', 'vehicleProducts.filter(product => product.relevance_score >= topScore - 8)');
+source = source.replace('const engineOptions = [...engineMap.values()].slice(0, 8);', 'const engineOptions = [...engineMap.values()].slice(0, 5);');
+
+if (source.includes('bestScore - 15') || source.includes('topScore - 20')) {
+  throw new Error('Loose vehicle ranking thresholds remain');
+}
+
 if (changed) fs.writeFileSync(target, source, 'utf8');
