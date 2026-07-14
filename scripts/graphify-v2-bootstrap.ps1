@@ -9,6 +9,10 @@ if (-not (Get-Command graphify -ErrorAction SilentlyContinue)) {
     throw "graphify is not available in PATH"
 }
 
+if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
+    throw "Claude Code is not available in PATH"
+}
+
 $graphPath = Join-Path $repoRoot 'graphify-out\graph.json'
 if (-not (Test-Path $graphPath)) {
     throw "graphify-out\graph.json was not found. Run: graphify . --update --backend claude-cli"
@@ -17,10 +21,26 @@ if (-not (Test-Path $graphPath)) {
 $reportDir = Join-Path $repoRoot 'graphify-out\v2-audit'
 New-Item -ItemType Directory -Path $reportDir -Force | Out-Null
 
+if (-not $env:GRAPHIFY_MAX_WORKERS) {
+    $env:GRAPHIFY_MAX_WORKERS = '2'
+}
+if (-not $env:GRAPHIFY_API_TIMEOUT) {
+    $env:GRAPHIFY_API_TIMEOUT = '1200'
+}
+if (-not $env:GRAPHIFY_QUERY_LOG_DISABLE) {
+    $env:GRAPHIFY_QUERY_LOG_DISABLE = '1'
+}
+
 Write-Host "[KG-V2] Generating communities and GRAPH_REPORT.md..."
 graphify cluster-only .
 if ($LASTEXITCODE -ne 0) {
     throw "graphify cluster-only failed with exit code $LASTEXITCODE"
+}
+
+Write-Host "[KG-V2] Labeling communities with Claude Code..."
+graphify label --backend claude-cli
+if ($LASTEXITCODE -ne 0) {
+    throw "graphify label failed with exit code $LASTEXITCODE"
 }
 
 $queries = @(
