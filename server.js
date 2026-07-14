@@ -13,6 +13,7 @@ try {
     .replace(/'JetBrains Mono'\s*,\s*monospace/g, "'Chakra Petch', sans-serif")
     .replace(/<span\b[^>]*class=["'][^"']*input-icon[^"']*["'][^>]*>[\s\S]*?<\/span>/gi, '')
     .replace(/(<button\b[^>]*class=["'][^"']*btn-search[^"']*["'][^>]*>)[\s\S]*?(<\/button>)/gi, '$1SEARCH$2')
+    .replace(/(<span\b[^>]*class=["'][^"']*logo-badge[^"']*["'][^>]*>)[\s\S]*?(<\/span>)/gi, '$1HOME$2')
     .replace(/SEARCH\s*(?:â†’|→|Â→|Ã¢â€ â€™|â†’|â€º)/g, 'SEARCH');
 
   const finalLayer = `
@@ -113,13 +114,13 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   window.addEventListener('load', normalizePartSearch);
 })();
 </script>
-<!-- PART_SEARCH_UI_BUILD_20260713_2135 -->`;
+<!-- PART_SEARCH_UI_BUILD_20260713_2145 -->`;
 
   html = html.replace(/<style id="part-search-approved-ui">[\s\S]*?<!-- PART_SEARCH_UI_BUILD_[^>]*-->/gi, '');
   html = html.replace('</body>', `${finalLayer}\n</body>`);
 
   fs.writeFileSync(indexPath, html, 'utf8');
-  console.log('[part-search-ui] source normalized: PART_SEARCH_UI_BUILD_20260713_2135');
+  console.log('[part-search-ui] source normalized: PART_SEARCH_UI_BUILD_20260713_2145');
 } catch (error) {
   console.error('[part-search-ui]', error.message);
 }
