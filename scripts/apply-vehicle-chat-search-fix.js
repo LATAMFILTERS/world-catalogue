@@ -124,7 +124,7 @@ if (source.includes(oldScoreBlock)) {
   source = source.replace(oldScoreBlock, newScoreBlock);
   changed = true;
   console.log('[vehicle-chat-search] strict year proximity ranking enabled');
-} else if (!source.includes('strict year proximity ranking enabled') && !source.includes('const sourceYears = String(application?.year_range')) {
+} else if (!source.includes('const sourceYears = String(application?.year_range')) {
   throw new Error('Vehicle relevance score block not found');
 }
 
@@ -155,11 +155,109 @@ source = source.replace(
   "engine_options: engineOptions,\n          confirmation_required: needsEngineConfirmation ? 'engine_or_market' : null,"
 );
 
+// LD passenger-vehicle searches default to gasoline and North American market
+// unless the customer explicitly requests diesel or another market. This prevents
+// European diesel applications from becoming the primary answer for a generic
+// Toyota Corolla query in the public US catalogue experience.
+const marketAnchor = `      const normalizeVehicleText = (value) => String(value || '')
+        .normalize('NFKD')
+        .replace(/[\\u0300-\\u036f]/g, '')
+        .toUpperCase()
+        .replace(/[^A-Z0-9]+/g, ' ')
+        .trim();`;
+
+const marketBlock = `${marketAnchor}
+
+      const normalizedVehicleQuery = normalizeVehicleText(raw);
+      const requestedFuel = /\\b(DIESEL|DIESEL|D 4D|TDI|HDI|CDI|DCI|CRDI|TDCI)\\b/.test(normalizedVehicleQuery)
+        ? 'diesel'
+        : /\\b(GASOLINE|GASOLINA|PETROL|VVT|VVT I|VALVEMATIC)\\b/.test(normalizedVehicleQuery)
+          ? 'gasoline'
+          : 'gasoline';
+      const requestedMarket = /\\b(EUROPE|EUROPA|EUROPEAN|EUROPEO)\\b/.test(normalizedVehicleQuery)
+        ? 'EU'
+        : /\\b(USA|US|UNITED STATES|ESTADOS UNIDOS|NORTH AMERICA|NORTEAMERICA)\\b/.test(normalizedVehicleQuery)
+          ? 'US'
+          : 'US';
+
+      const applicationFuel = (application) => {
+        const text = normalizeVehicleText([
+          application?.model,
+          application?.model_type,
+          application?.engine_code,
+          application?.engine
+        ].filter(Boolean).join(' '));
+        if (/\\b(DIESEL|D 4D|TDI|HDI|CDI|DCI|CRDI|TDCI|1ND TV|2AD FHV|2AD FTV)\\b/.test(text)) return 'diesel';
+        if (/\\b(GASOLINE|PETROL|VVT|VVT I|VALVEMATIC|EFI)\\b/.test(text)) return 'gasoline';
+        return 'unknown';
+      };
+
+      const applicationMarket = (application) => {
+        const text = normalizeVehicleText([
+          application?.market,
+          application?.region,
+          application?.model,
+          application?.notes
+        ].filter(Boolean).join(' '));
+        if (/\\b(USA|US|NORTH AMERICA|CANADA|MEXICO)\\b/.test(text)) return 'US';
+        if (/\\b(EUROPE|EUROPEAN|EUROPA|E18|D 4D)\\b/.test(text)) return 'EU';
+        return 'unknown';
+      };`;
+
+if (source.includes(marketAnchor) && !source.includes('const requestedFuel =')) {
+  source = source.replace(marketAnchor, marketBlock);
+  changed = true;
+  console.log('[vehicle-chat-search] LD market and fuel context enabled');
+}
+
+const yearScoreAnchor = `        const year = yearEvidence(application, requestedYear);
+        if (!year.covers) return -1000;`;
+const fuelMarketGate = `${yearScoreAnchor}
+
+        const fuel = applicationFuel(application);
+        const market = applicationMarket(application);
+        if (requestedFuel === 'gasoline' && fuel === 'diesel') return -1000;
+        if (requestedFuel === 'diesel' && fuel === 'gasoline') return -1000;
+        if (requestedMarket === 'US' && market === 'EU') return -1000;`;
+if (source.includes(yearScoreAnchor) && !source.includes("requestedFuel === 'gasoline'")) {
+  source = source.replace(yearScoreAnchor, fuelMarketGate);
+  changed = true;
+}
+
+const returnScoreAnchor = `        if (application?.engine_code || application?.engine) score += 8;
+        if (application?.ccm) score += 4;
+        return score;`;
+const returnScoreWithContext = `        if (application?.engine_code || application?.engine) score += 8;
+        if (application?.ccm) score += 4;
+        if (fuel === requestedFuel) score += 30;
+        if (market === requestedMarket) score += 25;
+        return score;`;
+if (source.includes(returnScoreAnchor) && !source.includes('if (fuel === requestedFuel)')) {
+  source = source.replace(returnScoreAnchor, returnScoreWithContext);
+  changed = true;
+}
+
+source = source.replace(
+  "vehicle: { make: makeToken, model: modelToken, year: requestedYear },\n          message,",
+  "vehicle: { make: makeToken, model: modelToken, year: requestedYear },\n          selection_context: { duty: 'LIGHT_DUTY', fuel: requestedFuel, market: requestedMarket },\n          message,"
+);
+source = source.replace(
+  "vehicle: { make: makeToken, model: modelToken, year: requestedYear },\n        message: lang === 'es' ? 'No encontré una aplicación confirmada para ese vehículo.'",
+  "vehicle: { make: makeToken, model: modelToken, year: requestedYear },\n        selection_context: { duty: 'LIGHT_DUTY', fuel: requestedFuel, market: requestedMarket },\n        coverage_status: 'missing_confirmed_market_fuel_application',\n        message: lang === 'es' ? 'No encontré una aplicación confirmada de gasolina para ese vehículo y mercado. No mostraré aplicaciones diésel como sustituto.'"
+);
+source = source.replace(
+  ": 'No confirmed application was found for that vehicle.',",
+  ": 'No confirmed gasoline application was found for that vehicle and market. Diesel applications will not be shown as substitutes.',"
+);
+
 if (source.includes('bestScore - 15') || source.includes('topScore - 20')) {
   throw new Error('Loose vehicle ranking thresholds remain');
 }
 if (source.includes('const needsEngineConfirmation = engineOptions.length > 1;')) {
   throw new Error('Unsafe single-engine auto-confirmation remains');
+}
+if (!source.includes('const requestedFuel =') || !source.includes("requestedFuel === 'gasoline'")) {
+  throw new Error('LD market/fuel safeguards were not applied');
 }
 
 if (changed) fs.writeFileSync(target, source, 'utf8');
