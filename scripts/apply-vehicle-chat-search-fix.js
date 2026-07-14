@@ -39,13 +39,10 @@ if (!source.includes(marker)) {
   console.log('[vehicle-chat-search] vehicle lookup already present');
 }
 
-// Replace the unindexed full-JSON text scan that times out in production.
-// First narrow by exact make using JSONB containment, then expand only those
-// rows to match the model. Year and remaining tokens are validated in Node.
-const slowVehicleQuery = `        // POSITION avoids PostgreSQL LIKE operator inference entirely. The database
-        // performs only a broad text prefilter; exact make/model/year validation is
-        // completed below in Node against the parsed JSONB applications.
-        vehicleRows = await client.query(
+// Replace the unindexed full-column JSON text scan. The previous query converted
+// every vehicle_applications value to text and timed out. This query first uses
+// exact JSONB containment for the make, then inspects only that make's rows.
+const slowVehicleQuery = `        vehicleRows = await client.query(
           \`SELECT c.*
            FROM elimfilters_catalog c
            WHERE c.vehicle_applications IS NOT NULL
@@ -82,6 +79,8 @@ if (source.includes(slowVehicleQuery)) {
   source = source.replace(slowVehicleQuery, fastVehicleQuery);
   changed = true;
   console.log('[vehicle-chat-search] vehicle query optimized for JSONB make/model lookup');
+} else if (source.includes('POSITION($1::text IN UPPER(c.vehicle_applications::text))')) {
+  throw new Error('Slow vehicle query remains but exact replacement block was not found');
 }
 
 if (changed) fs.writeFileSync(target, source, 'utf8');
