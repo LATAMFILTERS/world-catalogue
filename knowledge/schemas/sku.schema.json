@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/sku.schema.json",
+  "title": "ELIMFILTERS Product Intelligence SKU",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "name",
+    "status",
+    "authority",
+    "owner",
+    "source",
+    "last_reviewed",
+    "evidence_status",
+    "sku",
+    "product_family",
+    "technology",
+    "system",
+    "lifecycle_status",
+    "synchronized_from",
+    "synchronized_at"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^sku:[a-z0-9-]+$"},
+    "type": {"const": "SKU"},
+    "name": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "under_review", "approved", "deprecated", "rejected"]},
+    "authority": {"const": "canonical"},
+    "owner": {"type": "string", "minLength": 1},
+    "source": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "last_reviewed": {"type": "string", "format": "date"},
+    "evidence_status": {"enum": ["unverified", "under_review", "validated", "rejected", "not_required"]},
+    "sku": {"type": "string", "minLength": 1},
+    "product_family": {"type": "string", "pattern": "^product-family:[a-z0-9-]+$"},
+    "technology": {"type": "string", "pattern": "^technology:[a-z0-9-]+$"},
+    "system": {"type": "string", "pattern": "^system:[a-z0-9-]+$"},
+    "lifecycle_status": {"enum": ["active", "inactive", "superseded", "unknown"]},
+    "synchronized_from": {"type": "string", "minLength": 1},
+    "synchronized_at": {"type": "string", "format": "date"}
+  },
+  "additionalProperties": true
+}
