@@ -26,6 +26,22 @@ Passport notes are split into `manufacturer_instruction_notes` and
 one relative to the first correction round — cross-references throughout
 `docs/ebp/` have been re-checked against the numbering below.
 
+**Correction notice (third round, 2026-07-13, Phase 5 decisions,
+ADR-0062 through ADR-0074):** §7 and §8 are rewritten. The entity
+originally called "Offer Approval" (ADR-0008/ADR-0011) was designed to
+include both an engineering-approval and a commercial-approval role, but
+was **never actually implemented** in Phase 3's real schema/code. It is
+renamed **Offer Commercial Approval**, scoped strictly to the
+`COMMERCIAL_APPROVER` decision, and built as a Phase 5 entity
+(`ebp_offer_commercial_approvals`) — never merged with Phase 4's
+`ebp_engineering_decisions`, which already is ELIMFILTERS' engineering
+approval record. §8 is rewritten around the seven-part eligibility gate,
+the four-category weighted ranking (Technical Quality 40% / Commercial
+Competitiveness 25% / Operational Capability 20% / Strategic Resilience
+15%), and the Selection Run/Recommendation/Decision Result Model. See
+`docs/ebp/MANUFACTURER_SELECTION_ENGINE.md` and ADR-0062 through
+ADR-0074 in `DECISIONS.md`.
+
 ## 1. Vocabulary (disambiguation)
 
 EBP introduces terms that are easy to confuse with existing catalog concepts
@@ -36,10 +52,10 @@ or with each other. This section is the tie-breaker.
 | **OEM** | Vehicle/equipment manufacturer whose part a SKU cross-references (FIAT, VW, Caterpillar, etc.). Already modeled in the existing `oems` table. | An EBP **Manufacturer** (below). |
 | **Manufacturer** | The factory engineering-approved to *produce* ELIMFILTERS-branded SKUs. Identified permanently and confidentially by an `EFM-XXXX` code (never by name as a functional key). New concept, defined in Phase 2. | The existing `oems` table. Also not "competitor brand" (Donaldson, Fleetguard, Mann) — reference brands for cross-referencing and SKU generation, not EBP manufacturing partners. |
 | **Manufacturer Request Batch** | A set of SKUs/Passports ELIMFILTERS assigns to one or more Manufacturers for a production-capability response. New concept, defined in Phase 3. | A purchase order. It is a request for capability/offer, not a commitment to buy. |
-| **Manufacturer Product Offer** | A specific Manufacturer's versioned response to a Passport within a Request Batch: its offered specification (`offered_*`/`actual_*` fields), FOB price, MOQ, lead time, capacity, packaging, and evidence. A Manufacturer may submit **many** Offers (revisions) for the same Passport Version over time, but at most one may be active at a time. New concept, defined in Phase 3. See §5 and ADR-0007. | The Passport itself. The Offer is the Manufacturer's *answer* to the Passport's *question*; they are never merged into one record. Also not the same as **Offer Approval** (§7) — an Offer being valid does not mean it is approved. |
-| **Offer Approval** | ELIMFILTERS' decision about whether a specific Manufacturer Offer's packaging and commercial/operational terms are accepted — distinct from Engineering Compliance Validation, which only checks technical compliance. New concept, defined in Phase 3. See §7 and ADR-0008. | Engineering Compliance Validation (§6). Also not Manufacturer Selection's own approval step (§8) — Offer Approval judges one Offer; Selection's approval judges which Offer is sourced from. |
+| **Manufacturer Product Offer** | A specific Manufacturer's versioned response to a Passport within a Request Batch: its offered specification (`offered_*`/`actual_*` fields), FOB price, MOQ, lead time, capacity, packaging, and evidence. A Manufacturer may submit **many** Offers (revisions) for the same Passport Version over time, but at most one may be active at a time. New concept, defined in Phase 3. See §5 and ADR-0007. | The Passport itself. The Offer is the Manufacturer's *answer* to the Passport's *question*; they are never merged into one record. Also not the same as **Offer Commercial Approval** (§7) — an Offer being technically eligible does not mean it is Commercially Approved. |
+| **Offer Commercial Approval** | ELIMFILTERS' `COMMERCIAL_APPROVER` decision about whether a specific Manufacturer Offer's packaging and commercial/operational terms (FOB, MOQ, lead time, capacity) are accepted — distinct from Engineering Compliance Validation and from the Engineering Decision (Phase 4), which only ever judge technical compliance. Designed under ADR-0008 as "Offer Approval," never built in Phase 3; built as a Phase 5 entity, ADR-0072. See §7. | Engineering Compliance Validation (§6) and the Phase 4 Engineering Decision — never merged with either. Also not Manufacturer Selection's own Selection Decision (§8) — Commercial Approval judges one Offer's commercial terms; Selection's decision judges which already-approved Offer is sourced from. |
 | **Product Engineering Passport (PEP)** | The canonical, ELIMFILTERS-owned technical specification of a SKU or product family: locked identification, required engineering, required packaging. New concept, defined in Phase 1. | The public-facing catalog/marketing description on `frontend/`. Also not a Manufacturer's Offer — the Passport is the requirement; the Offer is the response. The PEP never holds Manufacturer-proposed or ELIMFILTERS-approved-after-review values — see §3.1 and ADR-0008. |
-| **Engineering Compliance Validation** | The gate that checks whether a specific Manufacturer Offer revision satisfies a Passport's required fields. Operates on **Passport Version × Manufacturer Code × Offer ID × Offer Revision**. Formerly drafted as "Validation Engine" against a Supplier model — corrected by ADR-0005; bound to a specific Offer revision — corrected by ADR-0007. Defined in Phase 4. | Manufacturer *qualification* (Phase 2, family-level, not offer-specific). Also not Offer Approval (§7) — Validation is technical only. |
+| **Engineering Compliance Validation** | The gate that checks whether a specific Manufacturer Offer revision satisfies a Passport's required fields. Operates on **Passport Version × Manufacturer Code × Offer ID × Offer Revision**. Formerly drafted as "Validation Engine" against a Supplier model — corrected by ADR-0005; bound to a specific Offer revision — corrected by ADR-0007. Defined in Phase 4. | Manufacturer *qualification* (Phase 2, family-level, not offer-specific). Also not Offer Commercial Approval (§7) — Validation is technical only. |
 | **Supplier** (raw material/component vendor) | **Not an MVP entity.** Explicitly out of scope for Phases 00-09. See ADR-0005. If ever modeled, it would be a Manufacturer-internal concern (e.g., evidence attached to an Offer), not an independently validated EBP entity. | Do not design any Phase 01-09 deliverable to depend on a Supplier record. |
 | **Distributor** | A B2B account that sees only ELIMFILTERS-approved products at their final approved price. Never sees Manufacturer identity, `EFM-XXXX` code, FOB, margin, or confidential engineering. Defined in Phase 8. | Internal ELIMFILTERS staff, who may see full Manufacturer/Offer/cost detail depending on role (role model itself is a Phase 8 open question, not decided here). |
 | **Duty (HD/LD)** | Heavy Duty / Light Duty classification per root `CLAUDE.md`. | Not redefined by EBP; EBP inherits it as-is. |
@@ -139,8 +155,9 @@ proposal, scoped to its specific Offer revision:**
 - proposed palletization
 - observations and deviations
 
-**C. In Offer Approval (`ebp_manufacturer_offer_approvals`, §7) —
-ELIMFILTERS' final decision about a specific Offer, made after review:**
+**C. In Offer Commercial Approval (`ebp_offer_commercial_approvals`,
+§7, Phase 5) — ELIMFILTERS' final decision about a specific Offer, made
+after review:**
 - `elimfilters_approved_quantity`
 - final approved packaging
 - approval or rejection of any proposed deviation
@@ -159,8 +176,8 @@ Automotive/industrial defaults for the ELIMFILTERS-requirement side (A):
 `manufacturer_recommended_quantity` and `elimfilters_approved_quantity` are
 never stored on the Passport. Each Manufacturer may recommend a different
 quantity for the same product, so that value belongs to its individual
-Offer (B); ELIMFILTERS' final decision belongs to Offer Approval (C), made
-only after review of a specific Offer's proposal.
+Offer (B); ELIMFILTERS' final decision belongs to Offer Commercial
+Approval (C), made only after review of a specific Offer's proposal.
 
 ## 4. Manufacturer Registry Rules
 
@@ -182,7 +199,7 @@ no sentence below is altered or removed.
   `CONDITIONAL`, `SUSPENDED`, or `RETIRED`.
 - **`manufacturer_code` (`EFM-XXXX`), not `legal_name`, is the functional
   key.** Every other EBP module (Manufacturer Intake Portal, Engineering
-  Compliance Validation, Offer Approval, Manufacturer Selection, Cost
+  Compliance Validation, Offer Commercial Approval, Manufacturer Selection, Cost
   Engine) references a Manufacturer by its `EFM-XXXX` code. `legal_name` is
   descriptive metadata only and must never be used as a join key or as a
   Distributor-visible label (see §11). See ADR-0006.
@@ -317,83 +334,100 @@ sentence below is altered or removed.
 - Engineering Compliance Validation never references a Supplier record. It
   evaluates the Passport and the Offer only (ADR-0005).
 
-## 7. Manufacturer Offer Approval Rules
+## 7. Offer Commercial Approval Rules (rewritten 2026-07-13, ADR-0072)
 
-- **Offer Approval is not the same as Engineering Compliance Validation
-  (§6).** Validation determines whether an Offer complies technically with
-  the Passport's `required_*` fields. Approval determines whether
-  ELIMFILTERS commercially and operationally accepts that Offer's
-  proposal — principally its packaging and any declared deviations. A
-  technically `VALID` Offer is **not** automatically an approved Offer, and
-  approval of an Offer is not automatically a Manufacturer Selection
-  (§8 — Selection's own approval step is a separate, later decision about
-  *which* Offer is sourced from).
-- **Two independent roles govern approval, and their authority never
-  overlaps (ADR-0011):**
-  - **`ENGINEERING_APPROVER`** — approves technical compliance only. Never
-    approves FOB, margin, or other commercial terms.
-  - **`COMMERCIAL_APPROVER`** — approves FOB, MOQ, lead time, capacity,
-    final packaging, and other commercial/operational terms. Never
-    declares an Offer technically valid.
-  - **`ADMIN_OWNER`** — approves the final sourcing decision produced by
-    Manufacturer Selection (§8); may reject an Offer or a selection
-    outright; **can never convert a technically `INVALID` Offer into
-    `VALID` or `APPROVED`.**
-- An Offer reaches `APPROVED` (its Offer-status value, §5) only after all
-  three of the following hold for that exact `offer_id`/`offer_revision`
-  (ADR-0011):
-  1. Engineering Compliance Validation result = `VALID` (§6).
-  2. An `ENGINEERING_APPROVER` decision is recorded.
-  3. A `COMMERCIAL_APPROVER` decision is recorded.
-- Offer Approval is recorded in **`ebp_manufacturer_offer_approvals`**
-  (ADR-0008), keyed to a specific `offer_id` and `offer_revision`, and
-  holds, per decision (engineering and commercial recorded separately):
-  the approving user, their role at decision time, the date, the decision,
-  the reason, comments, final approved packaging, `elimfilters_approved_
-  quantity` (§3.1.C) and whether a proposed deviation was accepted or
-  rejected (commercial decision only), and its own append-only history —
-  a new approval decision supersedes, never overwrites, a prior one for
-  the same Offer revision.
-- Offer Approval may only be recorded against an Offer revision that is
-  the current active revision for its (Passport Version × Manufacturer)
-  pair (§5). An approval is not retroactively valid against a revision
-  that has since been superseded, expired, or withdrawn.
+- **Offer Commercial Approval is not the same as Engineering Compliance
+  Validation (§6) or an Engineering Decision (Phase 4).** Validation
+  determines whether an Offer complies technically with the Passport's
+  `required_*` fields; the Engineering Decision (`ebp_engineering_
+  decisions`, Phase 4) is ELIMFILTERS engineering's own human record of
+  that determination. Commercial Approval determines, separately,
+  whether ELIMFILTERS commercially and operationally accepts that
+  Offer's proposal — principally its packaging, FOB, MOQ, lead time,
+  capacity, and any declared deviations. A technically eligible Offer
+  (Engineering Decision `APPROVED`/`CONDITIONALLY_APPROVED`) is **not**
+  automatically Commercially Approved, and Commercial Approval is not
+  automatically a Manufacturer Selection (§8 — Selection's own decision
+  is a separate, later act about *which* Offer is sourced from).
+- **The old design (ADR-0008/ADR-0011) described an "engineering
+  approval" role inside this entity in addition to a commercial one.**
+  That component is never built here: Phase 4's `ebp_engineering_
+  decisions` already is ELIMFILTERS' engineering approval record.
+  Duplicating it inside a second table would create two competing
+  sources of truth for the same fact — exactly what the Global Result
+  Model (ADR-0051) exists to prevent. **This entity is scoped strictly
+  to the Commercial dimension.**
+- **One role governs this entity: `COMMERCIAL_APPROVER`** — approves
+  FOB, MOQ, lead time, capacity, tooling/sample cost, final packaging,
+  and other commercial/operational terms. Never declares an Offer
+  technically valid, and never records an Engineering Decision.
+  (`ADMIN_OWNER`'s role over the *sourcing* decision belongs to §8, not
+  to this entity.)
+- Commercial Approval is recorded in **`ebp_offer_commercial_approvals`**
+  (Phase 5, ADR-0072 — designed under ADR-0008 but never implemented in
+  Phase 3's real schema; built here instead), keyed to a specific
+  `offer_id` and `offer_revision`, and holds: the approving user, the
+  date, the decision (`PENDING`/`APPROVED`/`REJECTED`), the reason,
+  comments, and its own append-only history — a new decision supersedes,
+  never overwrites, a prior one for the same Offer revision.
+- Commercial Approval may only be recorded against an Offer revision
+  that is the current active revision for its (Passport Version ×
+  Manufacturer) pair (§5). An approval is not retroactively valid
+  against a revision that has since been superseded, expired, or
+  withdrawn.
 
-## 8. Manufacturer Selection Rules
+## 8. Manufacturer Selection Rules (rewritten 2026-07-13, Decisions 01-12/ADR-0062–ADR-0074)
 
 - An **official** Selection recommendation evaluates, per Passport, only
-  Offers that satisfy **all five** of the following (ADR-0010):
-  (a) the Offer is the current active revision for its (Passport Version ×
-  Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or
-  `REJECTED`; (b) Engineering Compliance Validation = `VALID`, current, and
-  bound to that exact `offer_id`/`offer_revision`; (c) that validation
-  result is within its effectiveness window (`effective_from` through
-  `expires_at`, where applicable); (d) Manufacturer Offer Approval (§7) =
-  `APPROVED`; (e) the Manufacturer is `QUALIFIED`, or `CONDITIONAL` with
-  its condition satisfied, for the Passport's family. An Offer failing any
-  of these is never an official candidate, including for manual
-  override — a manual override must instead produce a new `VALID` result
-  (§6) or a new Offer Approval decision (§7) rather than bypassing either.
+  Offers that satisfy **all seven** of the following (ADR-0072,
+  superseding the prior five-part ADR-0010 gate):
+  (a) the Offer is the current active revision for its (Passport Version
+  × Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or
+  `REJECTED`; (b) a `CURRENT` Validation Run exists, bound to that exact
+  `offer_id`/`offer_revision` (Phase 4); (c) the Engineering Decision is
+  `APPROVED` or `CONDITIONALLY_APPROVED` with `status = CURRENT`; (d) no
+  mandatory Condition is `OPEN`/`OVERDUE`/`FAILED`; (e) Offer Commercial
+  Approval (§7) = `APPROVED`; (f) the Manufacturer/location is
+  `QUALIFIED`, or `CONDITIONAL` with its condition satisfied, for the
+  Passport's family; (g) required certifications are `VERIFIED` and not
+  expired. An Offer failing any of these is never an official candidate,
+  including for Manual Override — an override may only choose among
+  Offers that already satisfy all seven (§4A/§8's own Manual Override
+  rule), never bypass any of them.
 - **`PRELIMINARY_COMPARISON`** — an internal, non-official comparison of
-  `VALID`-but-not-yet-`APPROVED` Offers is permitted for planning purposes,
-  but any such record must be permanently and explicitly labeled
-  `PRELIMINARY_COMPARISON` wherever stored or displayed, and can never be
-  promoted, converted, or silently reused as an official recommendation,
-  a Manufacturer Selection, or an Order allocation (ADR-0010). Producing
-  an official recommendation always re-evaluates the full five-part gate
-  above at the time the recommendation is made — it never reuses a
-  `PRELIMINARY_COMPARISON` result as-is.
-- Selection must consider, at minimum: mandatory technical compliance (the
-  `VALID` gate itself), FOB price, packaging, MOQ, lead time, monthly
-  capacity, certifications, evidence, and quality history where it exists.
+  technically-eligible-but-not-yet-Commercially-Approved Offers is
+  permitted for planning purposes, but any such record must be
+  permanently and explicitly labeled `PRELIMINARY_COMPARISON` wherever
+  stored or displayed, and can never be promoted, converted, or silently
+  reused as an official recommendation, a Manufacturer Selection, or an
+  Order allocation. Producing an official recommendation always
+  re-evaluates the full seven-part gate above at the time the
+  recommendation is made — it never reuses a `PRELIMINARY_COMPARISON`
+  result as-is.
+- Selection scores every Eligible candidate across four weighted
+  categories — Technical Quality (40%), Commercial Competitiveness
+  (25%), Operational Capability (20%), Strategic Resilience (15%) — per
+  the versioned Selection Policy in force (`MANUFACTURER_SELECTION_
+  ENGINE.md` §3A). No weight is ever hardcoded in engine code. Technical
+  eligibility is always a precondition to scoring, never a factor within
+  it (the Technical Priority Rule).
 - Selection must recommend three tiers, not a single winner: **primary**,
-  **secondary**, and **backup** Manufacturer. Final approval of the
-  recommendation always belongs to ELIMFILTERS — Selection recommends, it
-  does not auto-commit an order or auto-finalize sourcing.
-- Selection decisions must record the **exact `offer_id` and
-  `offer_revision`** evaluated and selected for each of the primary,
-  secondary, and backup tiers — not just the Manufacturer — along with the
-  full set of candidates considered and the basis for ranking.
+  **secondary**, and **backup** Manufacturer Offer, with Backup allowed
+  to diverge from strict rank order per the Selection Policy's
+  diversification rules. Final approval of the recommendation always
+  belongs to ELIMFILTERS via an explicit Selection Decision — the engine
+  recommends, it never auto-approves or auto-commits an order.
+- Selection Runs must record the **exact `offer_id` and `offer_revision`**
+  evaluated for every candidate (eligible or excluded) — not just the
+  Manufacturer — along with every candidate's full, factor-tagged score
+  basis, the ranking, and the exclusion reason for every non-candidate.
+- A tie in composite score is resolved by the fixed eight-step tie-break
+  order (`MANUFACTURER_SELECTION_ENGINE.md` §6); a tie surviving all
+  eight steps produces `TIE_REQUIRES_HUMAN_REVIEW`, never a
+  database-order or timestamp tiebreak.
+- A Passport with zero Eligible Offers produces a valid, recorded
+  `NO_ELIGIBLE_CANDIDATE` Selection Run — never an error, and never an
+  automatic "least-bad" fallback selection.
 
 ## 9. Cost Engine Rules
 

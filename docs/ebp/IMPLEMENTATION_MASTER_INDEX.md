@@ -40,7 +40,7 @@ correction. See ADR-0007/ADR-0008/ADR-0009 in `DECISIONS.md` and the
 | 02 | Manufacturer Registry | [phase-02-manufacturer-registry.md](phases/phase-02-manufacturer-registry.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 03 | Manufacturer Intake Portal (Factory Portal) | [phase-03-supplier-portal.md](phases/phase-03-supplier-portal.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
 | 04 | Engineering Compliance Validation | [phase-04-validation-engine.md](phases/phase-04-validation-engine.md) | **APPROVED / FROZEN v1.0** | Project Owner | 2026-07-13 |
-| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | Spec Drafted (revised); Selection Engine philosophy/business rules normatively defined in [`MANUFACTURER_SELECTION_ENGINE.md`](MANUFACTURER_SELECTION_ENGINE.md), ADR-0061, twelve open questions unresolved | — | — |
+| 05 | Manufacturer Selection | [phase-05-manufacturer-selection.md](phases/phase-05-manufacturer-selection.md) | **Built** (not frozen) — real migrations (`migrations/ebp-phase5/`), backend module (`ebp/phase5/`), 35-test suite, all decisions closed (ADR-0062–ADR-0074) | — | — |
 | 06 | Cost Engine | [phase-06-cost-engine.md](phases/phase-06-cost-engine.md) | Spec Drafted (revised) | — | — |
 | 07 | Pricing Engine | [phase-07-pricing-engine.md](phases/phase-07-pricing-engine.md) | Spec Drafted (revised) | — | — |
 | 08 | Distributor Portal | [phase-08-distributor-portal.md](phases/phase-08-distributor-portal.md) | Spec Drafted (revised) | — | — |
@@ -275,7 +275,44 @@ See ADR-0005.
   and remains `Spec Drafted (revised)`, unapproved; its predecessor
   content (pre-dating Phase 4's actual frozen Global Result Model) is
   flagged in Open Question 11 as needing re-examination, not assumed
-  still current. **Phase 5 remains not started and not authorized.**
+  still current. **Phase 5 remains not started and not authorized** —
+  superseded by the entry immediately below.
+- **Phase 05 — Manufacturer Selection** is **Built** (2026-07-13, not
+  frozen) after the project owner closed all twelve
+  `MANUFACTURER_SELECTION_ENGINE.md` Open Questions in a single pass
+  (Decisions 01-12, ADR-0062 through ADR-0074) — a Selection-Policy-
+  versioned multicriteria ranking (Technical Quality 40% / Commercial
+  Competitiveness 25% / Operational Capability 20% / Strategic
+  Resilience 15%), the seven-part eligibility gate (superseding the
+  predecessor's five-part ADR-0010 gate), a new Offer Commercial
+  Approval entity (`ebp_offer_commercial_approvals` — designed under
+  ADR-0008/ADR-0011 as "Offer Approval" but never actually built in
+  Phase 3's real schema; built here, scoped strictly to the Commercial
+  dimension, never merged with Phase 4's `ebp_engineering_decisions`),
+  a fixed eight-step tie-break order, an HHI-based Concentration Index,
+  structured factor-tagged explainability, Preferred Manufacturer and
+  Demand Signal entities, and a two-action Manual Override workflow
+  (`SELECTION_APPROVER` requests, `ADMIN_OWNER` approves/rejects, same
+  actor can never do both). `phases/phase-05-manufacturer-selection.md`
+  was rewritten as an implementable spec deriving from these decisions.
+  Real, executable, idempotent, reversible SQL migrations
+  (`migrations/ebp-phase5/`, 3 files: `001_schema.sql` — 11 tables + 1
+  analytics view; `002_override_guard.sql` — the two-actor/eligible-
+  candidate database trigger; `rollback.sql`/`validate.sql`), a real
+  backend module (`ebp/phase5/`: `policy.js`, `ranking.js`,
+  `repository.js`, `service.js`, `dto.js`, `internal.routes.js`), and a
+  35-test suite (16 unit + 15 integration + 4 regression,
+  `tests/ebp-phase5/`) all pass against a real local Postgres instance,
+  verified via a full migrate-from-scratch → `validate.sql` → rollback →
+  reapply cycle. Phase 5 reuses the shared `ebp_activity_events` and
+  `ebp_alerts` tables introduced by Phase 4 — it creates neither table
+  again, per ADR-0037. Phase 1 (59), Phase 2 (100), Phase 3 (126), and
+  Phase 4 (104) test suites were all re-run immediately after and still
+  pass, unmodified. **Phase 5 is Built but deliberately not frozen** —
+  per the project owner's explicit instruction, freezing requires its
+  own separate future review/approval act, exactly as every prior
+  phase's freeze was a distinct, later decision from "Built." **Phase 6
+  was not started.**
 
 ## How to Use This File
 

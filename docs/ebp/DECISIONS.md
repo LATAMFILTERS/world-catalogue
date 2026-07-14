@@ -3098,3 +3098,428 @@ is a process violation, identical to the standing rule for
 hard gate: `IMPLEMENTATION_MASTER_INDEX.md` and `ROADMAP.md` must
 continue to show Phase 5 as not authorized until the project owner
 closes them.
+
+---
+
+# Phase 5 Decisions — Second Pass (2026-07-13)
+
+The project owner closed all twelve Open Questions raised by
+`MANUFACTURER_SELECTION_ENGINE.md` in a single pass, following the exact
+methodology used for Phase 4 (`ENGINEERING_RULE_ENGINE.md` → ADR-0039
+through ADR-0051). ADR-0062 through ADR-0073 record each decision;
+ADR-0074 records the consolidated authorization to proceed to Phase 5
+implementation.
+
+## ADR-0062 — Selection ranking is a Selection-Policy-versioned multicriteria score (40/25/20/15), never hardcoded weights
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves `MANUFACTURER_SELECTION_ENGINE.md` Open
+Question 1, the single highest-priority question blocking Phase 5.
+
+**Context:** §6/§7 of the normative reference defined the ranking's
+philosophy but no arithmetic — no formula existed to combine Engineering,
+Commercial, Operational, and Strategic factors (§3) into an ordered
+list, making the ranking neither implementable nor reproducible
+(Principle 7).
+
+**Decision:**
+1. Phase 5 v1.0 uses a multicriteria, **Selection-Policy-versioned**
+   score. No weight is hardcoded in engine code.
+2. Base category weights: Technical Quality 40%, Commercial
+   Competitiveness 25%, Operational Capability 20%, Strategic Resilience
+   15% — summing to 100%.
+3. **Technical Priority Rule:** the composite score can never make an
+   ineligible Offer (§4) eligible; eligibility is evaluated first,
+   unconditionally. An Offer with an `APPROVED` Exception may compete but
+   must carry an explicit, traceable technical penalty. A
+   `CONDITIONALLY_APPROVED` Offer competes officially only once every
+   mandatory Condition is `SATISFIED`/`WAIVED`.
+4. Every factor is normalized to a 0-100 scale before weighting; the
+   normalization function and limits per factor belong to the Selection
+   Policy Version (ADR-0068), never to scattered magic numbers in code.
+5. Tie-break order (when composite scores, post-bonus, are identical):
+   Technical Quality score → fewer/lower-severity Exceptions → better
+   normalized FOB → shorter lead time → greater capacity → better
+   diversification vs. existing tiers → greater remaining Offer
+   validity → `TIE_REQUIRES_HUMAN_REVIEW` if still tied. Never resolved
+   by row order, `created_at`, or manufacturer code.
+
+**Consequences:** `MANUFACTURER_SELECTION_ENGINE.md` §3, §3A (new), and
+§6 are updated with the full weighting/normalization/tie-break model.
+`phases/phase-05-manufacturer-selection.md` must implement the Selection
+Policy entity and the scoring pipeline exactly as described.
+
+---
+
+## ADR-0063 — Demand signal is optional and declared; Phase 5 v1.0 does not depend on Phase 9 orders
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 2.
+
+**Context:** Phase 9 (Order Management) does not exist yet, and Selection
+must still function meaningfully — ranking on FOB/lead time/capacity
+without any demand context risks silently pretending capacity is
+unconstrained.
+
+**Decision:**
+1. Demand is an optional, explicitly declared input, never inferred:
+   `FORECAST` / `TARGET_VOLUME` / `SCENARIO` / `UNKNOWN`, with fields
+   `estimated_quantity`, `period`, `unit`, `source`, `confidence`,
+   `declared_at`, `author`.
+2. Absent a reliable demand signal, ranking still computes; the run is
+   marked `DEMAND_NOT_PROVIDED`; capacity/MOQ/cost evaluation falls back
+   to Selection-Policy-declared default assumptions, never silently
+   invented; the recommendation is never presented as volume-optimized.
+3. Phase 9, once built, supplies real demand through the identical input
+   shape — no Selection Engine redesign required.
+
+**Consequences:** `MANUFACTURER_SELECTION_ENGINE.md` gains a "Demand
+Signal" section. Phase 5's data model includes an `ebp_demand_signals`
+table, always optional (nullable reference from a Selection Run).
+
+---
+
+## ADR-0064 — "No eligible candidate" is a first-class, recorded Selection Run Result, never an error or a fallback selection
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 3.
+
+**Context:** Without an explicit representation, an implementation could
+either throw an unhandled error or, worse, silently promote the
+least-bad ineligible Offer when zero candidates pass the gate (§4) —
+both unacceptable given Principle 2 (engineering always has priority).
+
+**Decision:**
+1. A dedicated `Selection Run Result` value, `NO_ELIGIBLE_CANDIDATE`, is
+   part of the Result Model (ADR-0074's consolidated model). It is a
+   valid, permanently recorded outcome, never an error state.
+2. No Primary/Secondary/Backup is created. Excluded candidates and their
+   exact exclusion reasons (§5) are retained on the run.
+3. `SELECTION_REVIEW_REQUIRED` fires; the
+   `PRODUCT_WITHOUT_ELIGIBLE_MANUFACTURER` alert is raised.
+4. The engine never automatically selects the least-bad ineligible
+   candidate, under any circumstance, for any reason.
+
+**Consequences:** `phases/phase-05-manufacturer-selection.md` exit
+criteria must include a test asserting this exact behavior for a
+Passport with zero eligible Offers.
+
+---
+
+## ADR-0065 — Backup divergence is a Selection-Policy-configurable constraint, not a universal automatic rule
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 4.
+
+**Context:** §7 of the normative reference allowed Backup to diverge from
+strict rank order for supply-continuity reasons but did not decide
+whether this was automatic or policy-gated, nor what "sufficiently
+diversified" means.
+
+**Decision:**
+1. Divergence is governed by the Selection Policy in force for the
+   applicable scope, not hardcoded.
+2. The Policy declares: required divergence factors (different
+   Manufacturer; different factory location; different country;
+   different corporate group, once modeled; different/alternative
+   compatible technology), preferred factors, and permitted exceptions.
+3. If no sufficiently divergent Backup exists among Eligible candidates,
+   the Engine falls back to the next Eligible candidate in strict rank
+   order and marks the recommendation `BACKUP_DIVERSIFICATION_LIMITED`
+   — never silently presented as fully diversified. The
+   `BACKUP_DIVERSIFICATION_LIMITED` alert is raised.
+
+**Consequences:** Selection Policy schema includes a divergence-rules
+field (JSONB); the ranking pipeline must evaluate it as a distinct step
+after Primary/Secondary are assigned.
+
+---
+
+## ADR-0066 — Manual Override: three functional roles, two-action request/approval, per-version duration
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 5.
+
+**Context:** §8 left the authorized role and override duration open. A
+single-actor override authority risks the same "one person overrides
+technical reality" failure mode Phase 4's Decision 01/ADR-0039 and
+Decision 09/ADR-0047 were designed to prevent for Engineering Decisions.
+
+**Decision:**
+1. Three functional roles: `SELECTION_REVIEWER` (review only, cannot
+   approve an override), `SELECTION_APPROVER` (approves a recommended
+   Selection; may request a Manual Override), `ADMIN_OWNER` (approves or
+   rejects the requested override; can never make an ineligible Offer
+   eligible — mirrors Phase 4's `ADMIN_OWNER` boundary exactly).
+2. MVP identity model reuses `requireAdmin` with functional role
+   assignments; `declared_actor` + `identity_mechanism =
+   ADMIN_KEY_SHARED` are recorded (same convention as every prior
+   phase).
+3. A Manual Override always requires two separate, independently
+   recorded actions: a request (`SELECTION_APPROVER`) and an approval or
+   rejection (`ADMIN_OWNER`). The same declared actor can never perform
+   both for the same override — enforced at the service layer and, per
+   this platform's established double-enforcement pattern (Phase 4
+   correction round, ADR-0052), at the database layer via a trigger
+   check.
+4. **Duration:** resolved via the Result Model (ADR-0074) — an override
+   applies to exactly the Selection Version it was recorded against. A
+   Re-selection always starts a fresh `PENDING_REVIEW` Selection
+   Decision; it never automatically inherits a prior override.
+
+**Consequences:** `ebp_selection_overrides` records both the request and
+the approval/rejection as distinct rows/fields, with a database
+constraint preventing a single actor from satisfying both roles for one
+override.
+
+---
+
+## ADR-0067 — Manual Override never modifies the algorithm; override history is inert unless a future ADR says otherwise
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 6.
+
+**Decision:**
+1. A Manual Override never modifies the ranking formula, weights,
+   original composite score, Selection Policy, or historical
+   recommendations.
+2. The system retains, simultaneously and permanently: the algorithmic
+   recommendation, the finally approved selection, their diff, and the
+   override's documented reason.
+3. Override history may be read by a human as evidence toward a future,
+   *explicit* Preferred Manufacturer designation (ADR-0071) — this is
+   always a separate governance act, never an automatic consequence.
+4. Any machine-learned or automatic weight adjustment derived from
+   override patterns is explicitly out of scope for Phase 5 v1.0 and
+   requires its own future ADR.
+
+**Consequences:** No feedback loop from `ebp_selection_overrides` into
+`ebp_selection_policies` exists in Phase 5 v1.0 code, by design — a
+future such loop is a new ADR, not a silent enhancement.
+
+---
+
+## ADR-0068 — Selection Policy is versioned Postgres data with scoped specificity; ADMIN_OWNER governs publication
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 7.
+
+**Decision:**
+1. `ebp_selection_policies`: `policy_id`, `policy_version`, name,
+   description, scope, weights, criteria, normalization functions,
+   gates, penalties, diversification rules, tie-break parameters,
+   concentration thresholds, effective date, status
+   (`DRAFT`/`UNDER_REVIEW`/`ACTIVE`/`SUPERSEDED`/`RETIRED`), authorship,
+   audit trail.
+2. Scope may be platform-wide or scoped to product category, subtype,
+   duty, technology, or region. Most-specific scope wins when multiple
+   policies could apply; a conflict between two policies of *equal*
+   specificity blocks the calculation (`POLICY_CONFLICT`), never
+   resolved by an arbitrary tiebreak.
+3. An `ACTIVE` version is never edited in place; any change is a new
+   version. Every Selection Run references the exact policy version
+   used.
+4. `ADMIN_OWNER` creates and publishes policies; publication requires
+   audit and testing. No policy version may weaken a Phase 4 technical
+   gate — the Technical Priority Rule (ADR-0062) is fixed by
+   `MANUFACTURER_SELECTION_ENGINE.md`, not a policy parameter.
+
+**Consequences:** Phase 5's migrations include `ebp_selection_policies`
+as the first table created (every other Phase 5 table references a
+policy version).
+
+---
+
+## ADR-0069 — Concentration Index is a Herfindahl-Hirschman-style index, computed separately for SKU and volume, never merged with geographic concentration
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 8.
+
+**Decision:**
+1. `HHI = Σ(share_i²)`, `share_i` = a Manufacturer's proportion of SKUs
+   or assigned volume.
+2. `SKU_CONCENTRATION_HHI` — always computable from tier assignments.
+   `VOLUME_CONCENTRATION_HHI` — only computable once a demand/allocation
+   signal (ADR-0063) exists.
+3. `normalized_hhi = HHI × 10,000`. Interpretation thresholds (<1,500
+   low; 1,500-2,500 moderate; >2,500 high) are Selection Policy
+   parameters (ADR-0068), not fixed engine constants.
+4. Manufacturer concentration and country/geographic concentration are
+   always computed and reported as separate metrics, never merged into
+   one number.
+
+**Consequences:** Analytics View (`ebp_analytics_selection_summary`)
+exposes both HHI variants and both concentration axes as distinct
+columns.
+
+---
+
+## ADR-0070 — Factor explainability is a structured per-factor record with a controlled reason-code vocabulary, mirroring Phase 4's Observation Catalog
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 9.
+
+**Decision:**
+1. Every factor score produced is a structured record:
+   `factor_code`, `factor_category`, original value, unit, source,
+   source version, normalized value, weight, weighted contribution,
+   penalty, gate applied, status, `reason_code`, explanation parameters,
+   evidence/reference.
+2. Human-readable explanation text is generated from `reason_code` +
+   template — never stored as the sole record of "why," exactly Phase
+   4's Decision 06/ADR-0044 discipline applied to Selection.
+3. Illustrative `reason_code` vocabulary (extensible, versioned):
+   `SEL_REASON_LOWEST_VALID_FOB`,
+   `SEL_REASON_TECHNICAL_EXCEPTION_PENALTY`,
+   `SEL_REASON_CAPACITY_BELOW_TARGET`,
+   `SEL_REASON_GEOGRAPHIC_DIVERSIFICATION`,
+   `SEL_REASON_OFFER_EXPIRES_SOON`.
+
+**Consequences:** `ebp_selection_factor_scores` is a required table, one
+row per factor per candidate per Selection Run; no candidate's score may
+be recorded without its full set of factor rows.
+
+---
+
+## ADR-0071 — Preferred Manufacturer is a declared, versioned, scoped preference with a bounded, transparent bonus — never a gate
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 10.
+
+**Decision:**
+1. Scope: SKU, family, category, technology, or region. Required fields:
+   reason, validity window, scope, creator, approver, status
+   (`ACTIVE`/`EXPIRED`/`REVOKED`).
+2. May grant a limited, Selection-Policy-defined bonus, applied strictly
+   after `composite_score` is computed.
+3. Can never: make an ineligible Offer eligible; override a technical
+   failure; ignore a suspension; substitute for a required human
+   approval; hide a lower underlying score. The ranking always displays
+   pre-bonus score, bonus applied, and final score as three distinct
+   values.
+
+**Consequences:** `ebp_preferred_manufacturers` is its own governed,
+audited table, structurally separate from `ebp_selection_policies` (a
+preference is data a policy *reads*, not the policy itself).
+
+---
+
+## ADR-0072 — Offer Approval sequencing re-ratified as a seven-part gate; Phase 5 builds the never-implemented Commercial Approval entity, distinct from Engineering Decision
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 11; **supersedes**
+ADR-0010 and ADR-0011's five-part gate description with a seven-part
+gate reflecting Phase 4's actual frozen Global Result Model.
+
+**Context:** ADR-0010/ADR-0011 required, for an official Selection
+candidate: current-active-revision, `VALID`-within-window, `APPROVED`
+Offer Approval, `QUALIFIED`/`CONDITIONAL`-satisfied Manufacturer, and
+not expired/withdrawn/rejected/superseded — written before Phase 4's
+actual Global Result Model (Mechanical Compliance Result / Engineering
+Decision / Offer Approval as three distinct concepts, ADR-0051) existed
+in its current, frozen form. A repository audit (this decision round)
+confirms `ebp_manufacturer_offer_approvals` (ADR-0008/ADR-0011) was
+**designed but never implemented** in Phase 3's real schema or code —
+Phase 3's actual `001_schema.sql` and `ebp/phase3/*.js` contain no such
+table or logic.
+
+**Decision:**
+1. The sequencing principle is **re-ratified in substance** — Selection
+   still requires an approval gate beyond Phase 4 technical eligibility.
+2. The gate is restated as the **seven-part gate**
+   (`MANUFACTURER_SELECTION_ENGINE.md` §4): Offer active/current
+   revision; `CURRENT` Validation Run; Engineering Decision
+   `APPROVED`/`CONDITIONALLY_APPROVED` with `status = CURRENT`; no open/
+   overdue/failed mandatory Conditions; Commercial Approval `APPROVED`;
+   Manufacturer/location qualified; certifications current.
+3. Because the old design's "engineering approval" component duplicated
+   what Phase 4's `ebp_engineering_decisions` already is, Phase 5
+   **never re-implements or merges an engineering-approval role**. Phase
+   5 builds and owns only the **Commercial** component — an **Offer
+   Commercial Approval** entity (`ebp_offer_commercial_approvals`),
+   keyed to `(offer_id, offer_revision)`, decided exclusively by
+   `COMMERCIAL_APPROVER`, structurally separate from
+   `ebp_engineering_decisions` at all times.
+4. `PRELIMINARY_COMPARISON` (§4A) is retained unchanged in spirit: an
+   Offer satisfying the technical points of the gate but not yet
+   Commercial-Approved may appear only in a permanently, explicitly
+   labeled preliminary comparison — never promotable to an official
+   recommendation.
+
+**Consequences:** `phases/phase-05-manufacturer-selection.md`,
+`BUSINESS_RULES.md` §7 (renamed "Offer Commercial Approval Rules") and
+§8 are rewritten to reflect the seven-part gate and the Commercial-only
+scope of the new entity. Phase 3's frozen schema/docs are **not**
+altered — the entity was never built there, so there is nothing to
+migrate or deprecate; Phase 5's migration is purely additive.
+
+---
+
+## ADR-0073 — Selection vs. Strategic Allocation: advisory-only signals, Phase 9 owns real allocation
+
+**Date:** 2026-07-13
+**Status:** Accepted — resolves Open Question 12.
+
+**Decision:**
+1. Phase 5 decides Primary/Secondary/Backup, recommendation order,
+   eligibility, concentration risk, and a capacity recommendation.
+2. Phase 5 never decides final purchase quantities, order percentage
+   splits, real orders, production dates, containers, shipments, or
+   contractual volume allocation.
+3. Phase 5 may emit `suggested_allocation_percentage` and
+   `recommended_capacity_reserve`, both explicitly marked
+   `ADVISORY_ONLY`. No downstream phase may treat either as an executed
+   allocation.
+
+**Consequences:** Phase 9 (Order Management), when built, is the sole
+owner of real allocation; its own future spec must not re-derive
+allocation authority from Phase 5's advisory fields without its own ADR.
+
+---
+
+## ADR-0074 — Selection Run / Manufacturer Recommendation / Selection Decision: three permanently distinct concepts; Phase 5 implementation authorized to proceed
+
+**Date:** 2026-07-13
+**Status:** Accepted — consolidates ADR-0062 through ADR-0073;
+authorizes Phase 5 implementation to begin.
+
+**Context:** Decisions 01-12 above collectively imply a three-layer
+result model for Selection, exactly mirroring Phase 4's Global Result
+Model (ADR-0051). Without stating this as its own principle, a future
+implementation could collapse the mechanical run outcome and the human
+approval into one status column — the same ambiguity ADR-0051 exists to
+prevent for Phase 4.
+
+**Decision:**
+1. Three concepts remain structurally distinct, never merged into one
+   column: **Selection Run Result** (automatic:
+   `RECOMMENDATION_READY`/`NO_ELIGIBLE_CANDIDATE`/
+   `TIE_REQUIRES_HUMAN_REVIEW`/`INSUFFICIENT_DATA`/`POLICY_CONFLICT`/
+   `STALE`); **Manufacturer Recommendation** (the ranked candidate list,
+   scores, factors, exclusions, tiers — never itself an approval);
+   **Selection Decision** (always human:
+   `PENDING_REVIEW`/`APPROVED`/`OVERRIDDEN`/`REJECTED`/`SUPERSEDED`).
+2. The engine recommends; it never auto-approves a final selection. A
+   new Selection Run's Recommendation always starts its Selection
+   Decision at `PENDING_REVIEW`; the prior version's Selection Decision
+   becomes `SUPERSEDED`.
+3. All twelve Open Questions in `MANUFACTURER_SELECTION_ENGINE.md` are
+   now closed (ADR-0062 through ADR-0073). `phases/phase-05-
+   manufacturer-selection.md` is authorized to be rewritten as a fully
+   implementable spec, and from there, Phase 5 implementation
+   (migrations, backend module, tests) is authorized to begin —
+   following the exact same methodology as Phase 4 (spec → decisions →
+   implementable doc → audit → migrations → code → tests → Built).
+4. Phase 5, once built, is **not** automatically frozen — freezing
+   requires its own separate project-owner review and approval act,
+   exactly as every prior phase's freeze was a distinct, later decision
+   from "Built."
+5. Phase 6 remains not started and not authorized until Phase 5 is
+   independently reviewed.
+
+**Consequences:** `IMPLEMENTATION_MASTER_INDEX.md` and `ROADMAP.md` are
+updated to show Phase 5 as authorized/in-build. `BUSINESS_RULES.md` §7/
+§8 are rewritten. `phases/phase-05-manufacturer-selection.md` is
+rewritten as an implementable spec deriving from
+`MANUFACTURER_SELECTION_ENGINE.md` and ADR-0062 through ADR-0074 without
+contradiction.

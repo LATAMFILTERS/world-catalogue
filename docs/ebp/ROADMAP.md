@@ -57,10 +57,11 @@ design, mirroring the exact discipline `ENGINEERING_RULE_ENGINE.md`
 established for Phase 4. Phase 5's own spec
 (`phases/phase-05-manufacturer-selection.md`) may not contradict that
 document; any deviation requires a new ADR that explicitly supersedes
-the relevant section. See `MANUFACTURER_SELECTION_ENGINE.md`'s own "Open
-Questions" — all twelve must be answered before Phase 5 code is written,
-the highest-priority being the ranking weighting/scoring formula, left
-entirely undefined by design.
+the relevant section. **All twelve Open Questions were closed by the
+project owner on 2026-07-13 (Decisions 01-12, ADR-0062 through
+ADR-0074)** — see `MANUFACTURER_SELECTION_ENGINE.md`'s "Resolved
+Decisions" section. **Phase 5 is now `Built` (not frozen)** — see
+`IMPLEMENTATION_MASTER_INDEX.md` for the full delivery summary.
 
 ## Phase Gate Definition
 

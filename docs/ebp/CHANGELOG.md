@@ -5,6 +5,74 @@ logged here in reverse chronological order. Every entry that changes a
 phase's status must correspond to a row update in
 `IMPLEMENTATION_MASTER_INDEX.md` in the same commit.
 
+## 2026-07-13 — Phase 5 (Manufacturer Selection) Built (not frozen): all twelve decisions closed, full implementation delivered
+
+- The project owner closed all twelve `MANUFACTURER_SELECTION_ENGINE.md`
+  Open Questions in a single pass (Decisions 01-12, ADR-0062 through
+  ADR-0074), following the same methodology used for Phase 4, then
+  authorized implementation through to `Built`.
+- `MANUFACTURER_SELECTION_ENGINE.md` updated: §3A (weighting/
+  normalization/Technical Priority Rule), the seven-part eligibility
+  gate (§4, superseding the old five-part ADR-0010 gate), §4A
+  (Preliminary Comparison), tie-break rules (§6), Backup divergence as a
+  policy-configurable rule (§7), the two-action Manual Override model
+  (§8), the Selection Run/Recommendation/Decision Result Model (§9), the
+  full Re-selection trigger set (§10), finalized Dashboard Readiness
+  (§11), and new Demand Signal / Concentration Index / Factor
+  Explainability / Selection Policy Governance / Preferred Manufacturer
+  Governance / Selection-vs-Strategic-Allocation sections. The "Open
+  Questions" section is replaced by "Resolved Decisions."
+- ADR-0062 through ADR-0074 registered in `DECISIONS.md`, including
+  ADR-0072, which formally supersedes ADR-0010/ADR-0011's five-part gate
+  and resolves that `ebp_manufacturer_offer_approvals` (designed under
+  ADR-0008/ADR-0011) was never actually implemented in Phase 3's real
+  schema — Phase 5 builds it now, scoped strictly to the Commercial
+  dimension, as `ebp_offer_commercial_approvals`, never merged with
+  Phase 4's `ebp_engineering_decisions`.
+- `phases/phase-05-manufacturer-selection.md` rewritten as a fully
+  implementable spec deriving from the closed decisions.
+- `BUSINESS_RULES.md` §7 (renamed "Offer Commercial Approval Rules") and
+  §8 ("Manufacturer Selection Rules") rewritten; vocabulary table (§1)
+  updated to rename "Offer Approval" to "Offer Commercial Approval"
+  throughout.
+- **Real implementation delivered:**
+  - Migrations: `migrations/ebp-phase5/001_schema.sql` (11 tables + 1
+    analytics view), `002_override_guard.sql` (two-actor + eligible-
+    candidate-only database trigger), `rollback.sql`, `validate.sql`.
+    Additive-only against Phase 1/2/3/4; verified via a full
+    migrate-from-scratch → `validate.sql` → rollback → reapply cycle
+    against a real local Postgres instance.
+  - Backend module `ebp/phase5/`: `policy.js` (normalization/weighting/
+    penalty/bonus, no hardcoded weights), `ranking.js` (fixed eight-step
+    tie-break, Herfindahl-Hirschman Concentration Index), `repository.js`,
+    `service.js` (eligibility gate reusing Phase 4's
+    `computeSelectionEligibility()`, the full Selection Run pipeline,
+    Offer Commercial Approval, Selection Policy governance, Preferred
+    Manufacturer, Demand Signal, Manual Override two-step workflow, role
+    bootstrap), `dto.js`, `internal.routes.js` — mounted at
+    `/api/ebp/internal/selection`, `/commercial-approval`,
+    `/selection-policy`, `/preferred-manufacturers`, `/demand-signals`,
+    `/selection-roles`, `/analytics/selection/*`.
+  - Test suite `tests/ebp-phase5/`: 35 tests (16 unit, 15 integration, 4
+    regression) — all passing against a real local Postgres instance, no
+    mocks. Covers: role bootstrap, Selection Policy weight validation,
+    Offer Commercial Approval gating, full ranking with Primary/
+    Secondary/Backup tier assignment and factor-score recording,
+    Re-selection producing a new version and marking the prior `STALE`,
+    Selection Decision approval, Manual Override two-actor enforcement
+    (same actor cannot request and approve), `NO_ELIGIBLE_CANDIDATE`
+    representation, single-candidate-family behavior (no fabricated
+    Secondary/Backup), and concentration analytics.
+  - Phase 1 (59), Phase 2 (100), Phase 3 (126), and Phase 4 (104) test
+    suites were re-run immediately after and all still pass, unmodified.
+- Phase 5 reuses the shared `ebp_activity_events` and `ebp_alerts`
+  tables introduced by Phase 4 (ADR-0037) — it creates neither table
+  again.
+- `IMPLEMENTATION_MASTER_INDEX.md` and `ROADMAP.md` updated: Phase 5 is
+  now `Built` (not frozen) — freezing requires its own separate future
+  review/approval act, per the project owner's explicit instruction.
+- **Phase 6 was not started.**
+
 ## 2026-07-13 — Phase 5 (Manufacturer Selection) philosophy and business rules defined — implementation not authorized
 
 - Before authorizing Phase 5 implementation, the project owner required
