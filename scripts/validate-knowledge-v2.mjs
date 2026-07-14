@@ -17,6 +17,15 @@ const requiredFields = [
   'last_reviewed',
   'evidence_status',
 ];
+const skuRequiredFields = [
+  'sku',
+  'product_family',
+  'technology',
+  'system',
+  'lifecycle_status',
+  'synchronized_from',
+  'synchronized_at',
+];
 const allowedTypes = new Set([
   'Technology',
   'ProtectionSystem',
@@ -32,6 +41,7 @@ const allowedTypes = new Set([
 const allowedStatuses = new Set(['draft', 'under_review', 'approved', 'deprecated', 'rejected']);
 const allowedAuthorities = new Set(['canonical', 'operational', 'working', 'historical', 'generated']);
 const allowedEvidence = new Set(['unverified', 'under_review', 'validated', 'rejected', 'not_required']);
+const allowedLifecycle = new Set(['active', 'inactive', 'superseded', 'unknown']);
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -72,17 +82,21 @@ function parseFrontmatter(filePath) {
       activeList = null;
     }
   }
-  return data;
+  return { data, text: normalized };
 }
 
 const files = walk(entitiesRoot);
 const errors = [];
 const ids = new Map();
+const entities = [];
 
 for (const file of files) {
   const relative = path.relative(root, file).replaceAll('\\', '/');
   try {
-    const entity = parseFrontmatter(file);
+    const parsed = parseFrontmatter(file);
+    const entity = parsed.data;
+    entities.push({ entity, relative, text: parsed.text });
+
     for (const field of requiredFields) {
       if (!(field in entity) || entity[field] === '' || (Array.isArray(entity[field]) && entity[field].length === 0)) {
         errors.push(`${relative}: missing required field '${field}'`);
@@ -111,8 +125,45 @@ for (const file of files) {
     if (entity.authority && entity.authority !== 'canonical') {
       errors.push(`${relative}: files under knowledge/entities must use authority: canonical`);
     }
+
+    if (entity.type === 'SKU') {
+      for (const field of skuRequiredFields) {
+        if (!(field in entity) || entity[field] === '') errors.push(`${relative}: SKU missing required field '${field}'`);
+      }
+      if (entity.id && !/^sku:[a-z0-9-]+$/.test(entity.id)) errors.push(`${relative}: invalid SKU canonical id`);
+      if (entity.product_family && !/^product-family:[a-z0-9-]+$/.test(entity.product_family)) {
+        errors.push(`${relative}: invalid product_family relation '${entity.product_family}'`);
+      }
+      if (entity.technology && !/^technology:[a-z0-9-]+$/.test(entity.technology)) {
+        errors.push(`${relative}: invalid technology relation '${entity.technology}'`);
+      }
+      if (entity.system && !/^system:[a-z0-9-]+$/.test(entity.system)) {
+        errors.push(`${relative}: invalid system relation '${entity.system}'`);
+      }
+      if (entity.lifecycle_status && !allowedLifecycle.has(entity.lifecycle_status)) {
+        errors.push(`${relative}: unsupported lifecycle_status '${entity.lifecycle_status}'`);
+      }
+      if (entity.synchronized_at && !/^\d{4}-\d{2}-\d{2}$/.test(entity.synchronized_at)) {
+        errors.push(`${relative}: synchronized_at must use YYYY-MM-DD`);
+      }
+      if (entity.status === 'approved' && !/supported_by_evidence:\s*`evidence:[a-z0-9-]+`/.test(parsed.text)) {
+        errors.push(`${relative}: approved SKU requires a supported_by_evidence relationship`);
+      }
+    }
   } catch (error) {
     errors.push(`${relative}: ${error.message}`);
+  }
+}
+
+for (const { entity, relative, text } of entities) {
+  if (entity.type !== 'SKU') continue;
+  for (const field of ['product_family', 'technology', 'system']) {
+    const target = entity[field];
+    if (target && !ids.has(target)) errors.push(`${relative}: relation '${field}' targets missing entity '${target}'`);
+  }
+  const evidenceMatches = [...text.matchAll(/supported_by_evidence:\s*`(evidence:[a-z0-9-]+)`/g)];
+  for (const match of evidenceMatches) {
+    if (!ids.has(match[1])) errors.push(`${relative}: evidence target does not exist '${match[1]}'`);
   }
 }
 
