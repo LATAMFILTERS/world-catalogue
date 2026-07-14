@@ -468,7 +468,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
     heroTitle: 'THERMACORETM',
     heroSubtitle: 'SCA ADDITIVE',
     heroTagline: 'SCA additive release technology for thermal systems with cavitation prevention and extended cooling circuit protection. Controlled gradual dosing that maintains coolant chemistry within the protection corridor across the full service interval.',
-    heroImage: '/images/thermacore.avif',
+    heroImage: '/images/THERMACORE-CAMION.avif',
     heroStats: [
       { key: 'TECHNOLOGY', value: 'SCA RELEASE' },
       { key: 'FUNCTION', value: 'VAPOR PREVENTION' },
