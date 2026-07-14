@@ -61,6 +61,13 @@
         });
       }
 
+      const normalizeVehicleText = (value) => String(value || '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toUpperCase()
+        .replace(/[^A-Z0-9]+/g, ' ')
+        .trim();
+
       const expandYear = (value) => {
         const n = Number(value);
         if (!Number.isFinite(n)) return null;
@@ -68,17 +75,17 @@
         return n <= 35 ? 2000 + n : 1900 + n;
       };
 
-      const applicationCoversYear = (application, year) => {
-        if (!application || typeof application !== 'object') return false;
+      const yearEvidence = (application, year) => {
+        if (!application || typeof application !== 'object') return { covers: false, explicit: false };
         const rangeText = String(application.year_range || '').trim();
         const yearText = String(application.year || '').trim();
         const modelText = String(application.model || '');
 
         const usaExact = modelText.match(/\(USA\)\s*(19\d{2}|20\d{2})/i);
-        if (usaExact) return Number(usaExact[1]) === year;
+        if (usaExact) return { covers: Number(usaExact[1]) === year, explicit: true };
 
         const sourceText = rangeText || yearText;
-        if (!sourceText) return true;
+        if (!sourceText) return { covers: true, explicit: false };
 
         const datedYears = [...sourceText.matchAll(/\b\d{1,2}\/(\d{2}|\d{4})\b/g)]
           .map(match => expandYear(match[1]))
@@ -88,24 +95,39 @@
           const start = datedYears[0];
           const hasRange = sourceText.includes('→') || sourceText.includes('->');
           const end = hasRange && datedYears.length > 1 ? datedYears[datedYears.length - 1] : null;
-          return year >= start && (end === null || year <= end);
+          return { covers: year >= start && (end === null || year <= end), explicit: true };
         }
 
         const fullYears = [...sourceText.matchAll(/\b(19\d{2}|20\d{2})\b/g)]
           .map(match => Number(match[1]));
-        if (!fullYears.length) return true;
-        if (fullYears.length === 1) return fullYears[0] === year;
-        return year >= fullYears[0] && year <= fullYears[fullYears.length - 1];
+        if (!fullYears.length) return { covers: true, explicit: false };
+        if (fullYears.length === 1) return { covers: fullYears[0] === year, explicit: true };
+        return { covers: year >= fullYears[0] && year <= fullYears[fullYears.length - 1], explicit: true };
       };
 
-      const matchesTokens = (application) => {
-        const haystack = [
-          application?.make,
+      const scoreApplication = (application) => {
+        const make = normalizeVehicleText(application?.make);
+        const model = normalizeVehicleText([
           application?.model,
           application?.model_family,
           application?.model_type
-        ].filter(Boolean).join(' ').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
-        return uniqueTokens.every(token => haystack.includes(token));
+        ].filter(Boolean).join(' '));
+        if (make !== makeToken || !model.includes(modelToken)) return -1000;
+
+        const year = yearEvidence(application, requestedYear);
+        if (!year.covers) return -1000;
+
+        let score = 0;
+        score += year.explicit ? 60 : 5;
+        if (model === modelToken) score += 35;
+        else if (model.startsWith(modelToken + ' ')) score += 25;
+        else score += 15;
+
+        const queryHasCross = uniqueTokens.includes('CROSS');
+        if (!queryHasCross && modelToken === 'COROLLA' && /\bCOROLLA CROSS\b/.test(model)) score -= 45;
+        if (application?.engine_code || application?.engine) score += 8;
+        if (application?.ccm) score += 4;
+        return score;
       };
 
       const categoryLabels = lang === 'es'
@@ -113,14 +135,14 @@
         : { cabin: 'Cabin', oil: 'Oil', air: 'Engine Air', fuel: 'Fuel', coolant: 'Coolant', transmission: 'Transmission', other: 'Other' };
 
       const classifyVehicleFilter = (product) => {
-        const text = [
+        const text = normalizeVehicleText([
           product.description,
           product.filter_type,
           product.filter_subtype,
           product.installation_type,
           product.technology,
           product.elimfilters_sku
-        ].filter(Boolean).join(' ').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+        ].filter(Boolean).join(' '));
         const sku = String(product.elimfilters_sku || '').toUpperCase();
 
         if (/\b(CABIN|POLLEN|INTERIOR AIR|AIR CONDITIONING|HVAC|HABITACLE)\b/.test(text) || sku.startsWith('EC')) return 'cabin';
@@ -132,13 +154,34 @@
         return 'other';
       };
 
+      const applicationKey = (app) => [
+        normalizeVehicleText(app.make),
+        normalizeVehicleText(app.model || app.model_family),
+        normalizeVehicleText(app.model_type),
+        normalizeVehicleText(app.engine_code || app.engine),
+        normalizeVehicleText(app.year_range || app.year)
+      ].join('|');
+
       const vehicleProducts = vehicleRows.rows.map(row => {
         const product = buildFilterData(row, lang);
         const applications = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
-        const matchedApplications = applications
-          .filter(app => matchesTokens(app) && applicationCoversYear(app, requestedYear))
-          .slice(0, 25);
-        if (!matchedApplications.length) return null;
+        const ranked = applications
+          .map(app => ({ app, score: scoreApplication(app) }))
+          .filter(item => item.score > 0)
+          .sort((a, b) => b.score - a.score);
+
+        if (!ranked.length) return null;
+        const bestScore = ranked[0].score;
+        const seen = new Set();
+        const matchedApplications = ranked
+          .filter(item => item.score >= bestScore - 15)
+          .filter(item => {
+            const key = applicationKey(item.app);
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+          })
+          .slice(0, 8);
 
         const category = classifyVehicleFilter(product);
         return {
@@ -147,7 +190,8 @@
           category_label: categoryLabels[category],
           technology: product.technology || null,
           filter_type: product.filter_type || null,
-          applications: matchedApplications.map(app => ({
+          relevance_score: bestScore,
+          applications: matchedApplications.map(({ app, score }) => ({
             make: app.make || null,
             model: app.model || app.model_family || null,
             model_type: app.model_type || null,
@@ -155,37 +199,52 @@
             year_range: app.year_range || app.year || null,
             ccm: app.ccm || null,
             hp: app.hp || null,
-            kw: app.kw || null
+            kw: app.kw || null,
+            relevance_score: score
           }))
         };
-      }).filter(Boolean);
+      }).filter(Boolean).sort((a, b) => b.relevance_score - a.relevance_score || a.sku.localeCompare(b.sku));
 
       if (vehicleProducts.length > 0) {
-        const engineOptions = [...new Set(vehicleProducts.flatMap(product =>
-          product.applications.map(app => app.engine || app.model_type || '')
-        ).filter(Boolean))].slice(0, 20);
+        const topScore = vehicleProducts[0].relevance_score;
+        const topProducts = vehicleProducts.filter(product => product.relevance_score >= topScore - 20);
+
+        const engineMap = new Map();
+        topProducts.forEach(product => product.applications.forEach(app => {
+          const rawEngine = app.engine || app.model_type || '';
+          const key = normalizeVehicleText(rawEngine);
+          if (key && !engineMap.has(key)) engineMap.set(key, rawEngine);
+        }));
+        const engineOptions = [...engineMap.values()].slice(0, 8);
 
         const categoryOrder = ['oil', 'air', 'cabin', 'fuel', 'coolant', 'transmission', 'other'];
         const categories = categoryOrder
           .map(key => ({
             key,
             label: categoryLabels[key],
-            products: vehicleProducts.filter(product => product.category === key)
+            products: topProducts.filter(product => product.category === key).slice(0, 8)
           }))
           .filter(group => group.products.length > 0);
 
+        const needsEngineConfirmation = engineOptions.length > 1;
+        const message = needsEngineConfirmation
+          ? (lang === 'es'
+              ? `Encontré varias motorizaciones para ${makeToken} ${modelToken} ${requestedYear}. Confirma el motor para darte los filtros exactos.`
+              : `I found several engines for ${makeToken} ${modelToken} ${requestedYear}. Confirm the engine for exact filters.`)
+          : (lang === 'es'
+              ? `Encontré filtros compatibles para ${makeToken} ${modelToken} ${requestedYear}.`
+              : `Compatible filters found for ${makeToken} ${modelToken} ${requestedYear}.`);
+
         return res.json({
           success: true,
-          source: 'vehicle_natural_language_compact',
-          vehicle: {
-            make: makeToken,
-            model: modelToken,
-            year: requestedYear
-          },
-          needs_engine_confirmation: engineOptions.length > 1,
+          source: 'vehicle_natural_language_ranked',
+          vehicle: { make: makeToken, model: modelToken, year: requestedYear },
+          message,
+          needs_engine_confirmation: needsEngineConfirmation,
           engine_options: engineOptions,
           categories,
-          total_products: vehicleProducts.length
+          total_products: topProducts.length,
+          total_candidates_reviewed: vehicleProducts.length
         });
       }
 
@@ -193,6 +252,7 @@
         success: true,
         source: 'vehicle_no_match',
         vehicle: { make: makeToken, model: modelToken, year: requestedYear },
+        message: lang === 'es' ? 'No encontré una aplicación confirmada para ese vehículo.' : 'No confirmed application was found for that vehicle.',
         needs_engine_confirmation: false,
         engine_options: [],
         categories: [],
