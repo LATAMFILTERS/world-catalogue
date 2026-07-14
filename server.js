@@ -129,8 +129,11 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
 try {
   let resultsHtml = fs.readFileSync(resultsPath, 'utf8');
 
-  const technologyLinksLayer = `
-<script id="part-search-technology-links">
+  const resultsFixLayer = `
+<style id="part-search-results-fixes">
+.search-summary-mode { display: none !important; }
+</style>
+<script id="part-search-results-fixes-script">
 (function () {
   var technologyRoutes = {
     MACROCORE: 'macrocore',
@@ -156,27 +159,48 @@ try {
       .toUpperCase();
   }
 
-  function linkTechnologyBadges(root) {
-    (root || document).querySelectorAll('.badge-tech').forEach(function (badge) {
+  function normalizeResultsUi(root) {
+    var scope = root || document;
+
+    scope.querySelectorAll('.search-summary-mode').forEach(function (node) {
+      node.remove();
+    });
+
+    scope.querySelectorAll('.header-back').forEach(function (link) {
+      link.textContent = 'BACK TO SEARCH';
+      link.href = '/';
+    });
+
+    scope.querySelectorAll('.badge-tech').forEach(function (badge) {
       var key = canonicalTechnologyName(badge.textContent);
       var slug = technologyRoutes[key];
       if (!slug) return;
-      badge.href = 'https://elimfilters.com/technologies/' + slug + '/';
+      var canonicalUrl = 'https://elimfilters.com/technologies/' + slug + '/';
+      badge.href = canonicalUrl;
       badge.target = '_blank';
       badge.rel = 'noopener noreferrer';
+      badge.title = 'Learn more about ' + (badge.textContent || key).trim();
       badge.setAttribute('aria-label', 'Open ' + key + ' technology page');
     });
   }
 
   function start() {
-    linkTechnologyBadges(document);
+    normalizeResultsUi(document);
+
+    document.addEventListener('click', function (event) {
+      var badge = event.target.closest && event.target.closest('.badge-tech');
+      if (!badge) return;
+      var key = canonicalTechnologyName(badge.textContent);
+      var slug = technologyRoutes[key];
+      if (!slug) return;
+      event.preventDefault();
+      window.open('https://elimfilters.com/technologies/' + slug + '/', '_blank', 'noopener,noreferrer');
+    });
+
     new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         mutation.addedNodes.forEach(function (node) {
-          if (node.nodeType === 1) {
-            if (node.matches && node.matches('.badge-tech')) linkTechnologyBadges(node.parentNode || document);
-            else linkTechnologyBadges(node);
-          }
+          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode') ? node.parentNode || document : node);
         });
       });
     }).observe(document.body, { childList: true, subtree: true });
@@ -189,13 +213,15 @@ try {
   }
 })();
 </script>
-<!-- PART_SEARCH_TECH_LINKS_BUILD_20260713_2200 -->`;
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260714_0140 -->`;
 
-  resultsHtml = resultsHtml.replace(/<script id="part-search-technology-links">[\s\S]*?<!-- PART_SEARCH_TECH_LINKS_BUILD_[^>]*-->/gi, '');
-  resultsHtml = resultsHtml.replace('</body>', `${technologyLinksLayer}\n</body>`);
+  resultsHtml = resultsHtml
+    .replace(/<script id="part-search-technology-links">[\s\S]*?<!-- PART_SEARCH_TECH_LINKS_BUILD_[^>]*-->/gi, '')
+    .replace(/<style id="part-search-results-fixes">[\s\S]*?<!-- PART_SEARCH_RESULTS_FIXES_BUILD_[^>]*-->/gi, '');
+  resultsHtml = resultsHtml.replace('</body>', `${resultsFixLayer}\n</body>`);
 
   fs.writeFileSync(resultsPath, resultsHtml, 'utf8');
-  console.log('[part-search-results] technology badge links normalized');
+  console.log('[part-search-results] header cleaned and technology links normalized');
 } catch (error) {
   console.error('[part-search-results]', error.message);
 }
