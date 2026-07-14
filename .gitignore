@@ -7,7 +7,7 @@ scrape_reports/
 fleetguard-catalog*.json
 
 config/google-credentials.json
-C:\\Users\\
+C:\Users\
 sesion_*/
 *_results.json
 debug*.py
@@ -46,6 +46,7 @@ frontend/.next/
 frontend/public/api/citation/
 elimfilters-vault/00-meta/CITATION_INDEX.json
 frontend/src/lib/jsonld-constants.generated.ts
+knowledge/generated/product-intelligence/
 
 # Development/investigation scripts — never deploy
 audit_*.js
