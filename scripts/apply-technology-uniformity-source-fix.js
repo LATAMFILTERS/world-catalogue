@@ -112,6 +112,11 @@ try {
   );
 
   source = source.replace(
+    /\{data\.applicationsSubtext && <p style=\{\{ \.\.\.bodyCopy, maxWidth: '720px' \}\}>\{cleanText\(data\.applicationsSubtext\)\}<\/p>\}/,
+    "{data.applicationsSubtext && <p className=\"technology-applications-intro\" style={{ ...bodyCopy, maxWidth: '820px', textAlign: 'justify', textJustify: 'inter-word', marginRight: 'auto' }}>{cleanText(data.applicationsSubtext)}</p>}"
+  );
+
+  source = source.replace(
     /\n\s*\.specs-grid \{[\s\S]*?\n\s*\}\n\s*\}\n\s*@media \(max-width: 480px\) \{[\s\S]*?\n\s*\}\n\s*\}/,
     ''
   );
@@ -145,8 +150,29 @@ try {
     );
   }
 
+  if (!source.includes('/* technology applications intro formatting */')) {
+    const introCss = [
+      '        /* technology applications intro formatting */',
+      '        .technology-applications-intro {',
+      '          text-align: justify !important;',
+      '          text-justify: inter-word;',
+      '          max-width: 820px !important;',
+      '          display: -webkit-box;',
+      '          -webkit-box-orient: vertical;',
+      '          -webkit-line-clamp: 5;',
+      '          overflow: hidden;',
+      '          text-wrap: pretty;',
+      '        }',
+    ].join('\n');
+
+    source = source.replace(
+      '      `}</style>',
+      `${introCss}\n      \`}</style>`
+    );
+  }
+
   fs.writeFileSync(filePath, source, 'utf8');
-  console.log('[technology-uniformity] applied before Next build: two-paragraph introductions, unified principles and 12-industry matrix');
+  console.log('[technology-uniformity] applied before Next build: justified five-line application intros enabled');
 } catch (error) {
   console.error('[technology-uniformity] failed:', error.message);
   process.exitCode = 1;
