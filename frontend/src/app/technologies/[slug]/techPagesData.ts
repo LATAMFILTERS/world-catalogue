@@ -172,7 +172,7 @@ export const TECH_PAGES: Record<string, TechDetailData> = {
       { key: 'ANTI-COLLAPSE', value: '62 PSI' },
       { key: 'CERTIFICATION', value: 'ISO 5011' },
     ],
-    logoSrc: '/assets/MACROCORE.avif',
+    logoSrc: '/assets/logo-macrocore.png',
     systemHeadline: 'PROGRESSIVE DENSITY GRADIENT.\nNOT A SINGLE-LAYER BARRIER.',
     systemParagraphs: [
       'Single-density air filter elements reach their capacity limit at the surface  -  restricting airflow long before the interior protection capacity is utilized. MACROCORETM Progressive Density Gradient (PDG) distributes contamination load across the full depth of the protection matrix, utilizing every layer from entry surface to core barrier.',
