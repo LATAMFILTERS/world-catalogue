@@ -25,7 +25,7 @@ export function AIEntityCard({ kind, slug }: Props) {
   if (!context) return null;
 
   return (
-    <section className={styles.section} aria-label={`${context.entity.name} canonical engineering context`}>
+    <section hidden className={styles.section} aria-label={`${context.entity.name} canonical engineering context`}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <p className={styles.eyebrow}>CANONICAL ENGINEERING CONTEXT</p>

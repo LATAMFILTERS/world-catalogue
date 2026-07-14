@@ -1,14 +1,11 @@
-import Link from 'next/link';
 import { AIEntityCard } from '@/components/AIEntityCard';
 import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 import { getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getItemBySlug } from '@/lib/catalogue';
-import { compareEntityAuthority, getEntityAuthorityScore } from '@/lib/entity-authority';
+import { compareEntityAuthority } from '@/lib/entity-authority';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getConnectedEntities, getEntityNode, type EntityKind, type EntityNode } from '@/lib/entity-graph';
-import { getSemanticRecommendations } from '@/lib/semantic-recommendations';
-import { buildTopicCluster } from '@/lib/topical-authority';
 
 type ConnectionKind = 'technology' | 'system' | 'family' | 'industry' | 'standard' | 'failure';
 
@@ -140,63 +137,10 @@ export function ServerKnowledgeConnections({ kind, slug }: Props) {
   const config = buildGroups(kind, slug);
   if (!config) return null;
 
-  const cluster = buildTopicCluster(config.entityId);
-  const authority = getEntityAuthorityScore(config.entityId);
-
-  // AIEntityCard (rendered below) already lists these same relationship
-  // groups, so they're only used here to dedupe the recommendations below,
-  // not rendered a second time.
-  const displayedHrefs = new Set(
-    config.groups.flatMap((group) => group.links.map((link) => link.href)),
-  );
-  const recommendations = getSemanticRecommendations(config.entityId, { limit: 20 })
-    .filter((recommendation) => recommendation.reason === 'shared-context')
-    .filter((recommendation) => !displayedHrefs.has(recommendation.node.href))
-    .sort((a, b) => compareEntityAuthority(a.node, b.node))
-    .slice(0, 6)
-    .map((recommendation) => ({
-      href: recommendation.node.href,
-      name: recommendation.node.name,
-    }));
-
-  const topicalPath = cluster
-    ? [cluster.hub, ...cluster.recommended]
-      .filter((node, index, all) => node.id !== config.entityId && all.findIndex((candidate) => candidate.id === node.id) === index)
-      .sort(compareEntityAuthority)
-      .slice(0, 6)
-    : [];
-
-  const exploreGroups: Group[] = [];
-  if (recommendations.length > 0) exploreGroups.push({ label: 'Recommended Next', links: recommendations });
-  if (topicalPath.length > 0) exploreGroups.push({ label: 'Related Topics', links: topicalPath.map((node) => ({ href: node.href, name: node.name })) });
-
   return (
     <>
       <CanonicalEntitySchema kind={kind} slug={slug} />
       <AIEntityCard kind={kind} slug={slug} />
-      {exploreGroups.length > 0 && (
-        <section
-          className="structured-definition structured-definition--connections"
-          aria-label="Continue exploring related resources"
-          data-topic-cluster={cluster?.hub.id}
-          data-entity-authority={authority?.score}
-          data-authority-breadth={authority?.coverageBreadth}
-        >
-          <div className="structured-definition__inner">
-            <p className="structured-definition__eyebrow">CONTINUE EXPLORING</p>
-            <div className="structured-definition__grid">
-              {exploreGroups.map((group) => (
-                <article className="structured-definition__row" key={group.label}>
-                  <h3>{group.label}</h3>
-                  <div className="structured-definition__links">
-                    {group.links.map((link) => <Link key={`${group.label}-${link.href}`} href={link.href}>{link.name}</Link>)}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </>
   );
 }

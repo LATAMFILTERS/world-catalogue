@@ -79,17 +79,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  if (isRoute(pathname, '/technologies')) {
-    return {
-      kind: 'technologies',
-      eyebrow: 'RELATED PLATFORM PATHS',
-      title: pathname === '/technologies'
-        ? 'Connect each technology to systems, products, and operating environments.'
-        : 'Connect the technology to systems, products, and field application.',
-      items: [COMMON.systems, COMMON.families, COMMON.industries, COMMON.knowledge],
-    };
-  }
-
   if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',

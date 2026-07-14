@@ -258,7 +258,7 @@ export function TechDetailPage({ data }: Props) {
         {data.specs.length > 0 && (
           <section style={{ ...sectionBase, background: '#050505' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
+              <StaggerContainer className="specs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,0.05)' }}>
                 {data.specs.map((spec, idx) => (
                   <motion.div key={idx} variants={itemVariants} style={{ background: '#050505', padding: '2.25rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 900, color: '#FFF12D', fontFamily: 'var(--font-display)', lineHeight: 1 }}>{cleanText(spec.value)}</div>
@@ -356,6 +356,14 @@ export function TechDetailPage({ data }: Props) {
           .product-desc-grid {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+          .specs-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .specs-grid {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
