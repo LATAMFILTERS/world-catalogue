@@ -70,19 +70,22 @@
         const sourceText = rangeText || yearText;
         if (!sourceText) return true;
 
-        const found = [...sourceText.matchAll(/(?:^|\D)(19\d{2}|20\d{2}|\d{2})(?=\D|$)/g)]
+        const datedYears = [...sourceText.matchAll(/\b\d{1,2}\/(\d{2}|\d{4})\b/g)]
           .map(match => expandYear(match[1]))
           .filter(Boolean);
 
-        if (!found.length) return true;
-        if (sourceText.includes('→') || sourceText.includes('->') || sourceText.includes('-')) {
-          const start = found[0];
-          const end = found.length > 1 ? found[found.length - 1] : null;
+        if (datedYears.length) {
+          const start = datedYears[0];
+          const hasRange = sourceText.includes('→') || sourceText.includes('->');
+          const end = hasRange && datedYears.length > 1 ? datedYears[datedYears.length - 1] : null;
           return year >= start && (end === null || year <= end);
         }
 
-        if (found.length === 1 && /\d{1,2}\/\d{2}/.test(sourceText)) return year >= found[0];
-        return found.includes(year);
+        const fullYears = [...sourceText.matchAll(/\b(19\d{2}|20\d{2})\b/g)]
+          .map(match => Number(match[1]));
+        if (!fullYears.length) return true;
+        if (fullYears.length === 1) return fullYears[0] === year;
+        return year >= fullYears[0] && year <= fullYears[fullYears.length - 1];
       };
 
       const matchesTokens = (application) => {
