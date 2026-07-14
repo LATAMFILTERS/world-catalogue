@@ -6,13 +6,13 @@
     "node": "20.x"
   },
   "scripts": {
-    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-part-search-results-link-fix.js && node scripts/apply-syntrax-source-fix.js && node scripts/apply-intekcore-source-fix.js && node scripts/apply-technology-uniformity-source-fix.js",
+    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-part-search-results-link-fix.js && node scripts/apply-syntrax-source-fix.js && node scripts/apply-intekcore-source-fix.js && node scripts/apply-technology-uniformity-source-fix.js && node scripts/apply-about-who-we-are-fix.js",
     "start": "node server.js",
     "dev": "node server.js",
     "build": "cd frontend && npm ci && npm run build"
   },
   "dependencies": {
-    "cors": "^2.8.5",
+    "cors": "^16.4.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
