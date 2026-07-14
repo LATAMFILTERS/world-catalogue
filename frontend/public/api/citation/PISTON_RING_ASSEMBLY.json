@@ -34,7 +34,7 @@
       "SYNTRAX"
     ],
     "located_in_systems": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ],
     "sensitive_to_contamination": [
       "PARTICLE_WEAR"
@@ -59,9 +59,9 @@
         "href": "/api/citation/SYNTRAX.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "located_in_systems",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       },
       {
         "key": "PARTICLE_WEAR",

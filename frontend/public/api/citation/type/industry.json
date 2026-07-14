@@ -1,6 +1,6 @@
 {
   "type": "industry",
-  "count": 11,
+  "count": 12,
   "entities": [
     {
       "key": "AGRICULTURE",
@@ -246,6 +246,68 @@
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
+    },
+    {
+      "key": "MANUFACTURING",
+      "type": "industry",
+      "name": "Manufacturing",
+      "slug": "manufacturing",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "MANUFACTURING",
+      "tags": [
+        "industry",
+        "active",
+        "high-exposure",
+        "industrial",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/industries/manufacturing",
+        "concept": "Manufacturing Industry Filtration Requirements",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:dfdf173fc5ab566efcc9380a72682a38ff719596efbcaf212ebd9b47de3126fa"
+      },
+      "canonical": {
+        "definition": "Manufacturing is a HIGH contamination exposure industrial category for production assets, compressors, hydraulic presses, CNC equipment, material handling equipment, and industrial power units operating in facilities where particulate contamination, oil degradation, process dust, and hydraulic fluid cleanliness directly affect uptime, production throughput, and maintenance cost.",
+        "systems": "Hydraulic filtration, lube oil filtration, compressor and engine air intake filtration, cabin/operator-zone filtration, and industrial fluid cleanliness programs across production lines, fabrication plants, processing facilities, and plant support equipment.",
+        "failure_impact": "Particle contamination in hydraulic and lube circuits → valve sticking, actuator drift, bearing wear, compressor degradation, oil oxidation, and filter plugging → unplanned production cell downtime, delayed shipments, higher maintenance backlog, and shortened component life in high-utilization manufacturing environments.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic and lube filtration | ISO 4406: Fluid cleanliness code for hydraulic and lube circuits | ISO 5011: Air intake filtration performance standard for compressors and plant support engines",
+        "related_technologies": "NANOFORCE: Fine particle control for hydraulic and precision fluid systems | SYNTRAX: Full-flow lube protection for engines, compressors, and rotating equipment | MACROCORE: Air intake particle capture for compressors and diesel power units | MICROKAPPA: Operator-zone air filtration | INTEKCORE: Zero-bypass housing protection for intake systems",
+        "industrial_role": "Manufacturing converts contamination control into production continuity: in plants and processing facilities, filtration protects not only a single asset but the throughput of entire production cells, where hydraulic cleanliness, lube oil stability, and intake air protection determine whether equipment operates through planned maintenance windows or stops production unexpectedly."
+      },
+      "relationships": {
+        "relevant_contamination": [
+          "PARTICLE_WEAR",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "applicable_technologies": [
+          "NANOFORCE",
+          "SYNTRAX",
+          "MACROCORE",
+          "MICROKAPPA",
+          "INTEKCORE"
+        ],
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406",
+          "ISO_5011"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "HYDRAULIC_PRIMARY",
+          "LUBE_PRIMARY",
+          "AIRFILTER_PRIMARY",
+          "CABIN_PRIMARY"
+        ]
+      },
+      "vault_path": "elimfilters-vault/02-industries/MANUFACTURING.md"
     },
     {
       "key": "MARINE",

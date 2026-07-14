@@ -44,10 +44,10 @@
       "MACROCORE"
     ],
     "belongs_to_domain": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ],
     "belongs_to_product_system": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ]
   },
   "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md",
@@ -96,14 +96,14 @@
         "href": "/api/citation/MACROCORE.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "belongs_to_domain",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "belongs_to_product_system",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       }
     ]
   }

@@ -7,8 +7,8 @@ slug: airfilter
 description: "Multi-layer MACROCORE™ filtration elements for primary air intake protection in heavy-duty diesel engines. Covers the full range of engine sizes and configurations across mining, agriculture, construction, and commercial transport equipment — from small agricultural tractors to 400-tonne mining haul trucks."
 uses_technology: "[[MACROCORE]]"
 uses_tech_display: "MACROCORE™ / SYNTEPORE™"
-belongs_to_domain: "[[AIRFILTER]]"
-belongs_to_product_system: "[[AIRFILTER]]"
+belongs_to_domain: "[[AIR_INTAKE_PROTECTION]]"
+belongs_to_product_system: "[[AIR_INTAKE_PROTECTION]]"
 meets_standards:
   - "[[ISO_5011]]"
   - "[[SAE_J1539]]"
@@ -50,7 +50,7 @@ The family is the **terminal product node** in the air intake Part Search traver
 - [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]]
 
 ### System Context
-- [[AIRFILTER|Air Filtration System — Product Line]] (belongs to this system)
+- [[AIR_INTAKE_PROTECTION|Air Filtration System — Product Line]] (belongs to this system)
 
 ### Standards Compliance
 - [[ISO_5011|ISO 5011 — Air Filter Performance Test]] (all elements certified)

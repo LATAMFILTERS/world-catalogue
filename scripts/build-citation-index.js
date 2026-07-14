@@ -24,7 +24,9 @@ const VAULT_DIR = path.join(PROJECT_ROOT, 'elimfilters-vault');
 const OUTPUT_PATH = path.join(VAULT_DIR, '00-meta', 'CITATION_INDEX.json');
 
 const RETIRED_ENTITY_KEYS = new Set([
-  'HYDROCORE',
+  'AIRFILTER',
+  'AQUAGUARD',
+  'COOLTECH',
 ]);
 
 const MARKETING_TERMS = [

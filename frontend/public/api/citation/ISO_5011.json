@@ -46,7 +46,7 @@
       "POWER_GENERATION"
     ],
     "applicable_to_systems": [
-      "AIRFILTER"
+      "AIR_INTAKE_PROTECTION"
     ],
     "related_contamination": [
       "PARTICLE_WEAR"
@@ -103,9 +103,9 @@
         "href": "/api/citation/POWER_GENERATION.json"
       },
       {
-        "key": "AIRFILTER",
+        "key": "AIR_INTAKE_PROTECTION",
         "relation": "applicable_to_systems",
-        "href": "/api/citation/AIRFILTER.json"
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
       },
       {
         "key": "PARTICLE_WEAR",
