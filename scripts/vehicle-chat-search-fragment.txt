@@ -26,20 +26,21 @@
     if (looksLikeVehicleQuestion) {
       const requestedYear = Number(vehicleYearMatch[1]);
       const uniqueTokens = [...new Set(vehicleTokens)].slice(0, 5);
-      const tokenPatterns = uniqueTokens.map(token => '%' + token + '%');
+      const primaryToken = uniqueTokens[0];
 
-      // Use one explicitly typed text-array parameter. This avoids PostgreSQL
-      // inferring a LIKE operand as integer when several dynamic placeholders
-      // are generated in the same statement.
+      // PostgreSQL receives exactly one explicitly typed text parameter.
+      // The database only performs a broad make/model prefilter; exact token and
+      // year validation happens in Node below. This avoids dynamic LIKE/ALL
+      // parameter inference and keeps the SQL compatible with the production schema.
       const vehicleRows = await client.query(
         `SELECT c.*
          FROM elimfilters_catalog c
          WHERE c.vehicle_applications IS NOT NULL
            AND jsonb_typeof(c.vehicle_applications) = 'array'
-           AND UPPER(c.vehicle_applications::text) LIKE ALL($1::text[])
+           AND UPPER(c.vehicle_applications::text) LIKE $1::text
          ORDER BY c.sku
-         LIMIT 120`,
-        [tokenPatterns]
+         LIMIT 500`,
+        ['%' + primaryToken + '%']
       );
 
       const expandYear = (value) => {
