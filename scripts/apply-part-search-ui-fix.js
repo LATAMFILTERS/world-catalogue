@@ -101,40 +101,137 @@ try {
   process.exitCode = 1;
 }
 
-const syntraxGridCss = `
-<style id="syntrax-specs-grid-fix">
-/* SYNTRAX specifications: exactly 3 cards per row on desktop, no filler panel */
-main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
-main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  background: transparent !important;
+const syntraxContentLayer = `
+<style id="syntrax-content-fix">
+/* SYNTRAX: compact 12-industry application grid */
+#syntrax-applications-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  margin-top: 2rem !important;
 }
-main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"] > div,
-main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] > div {
-  border: 1px solid rgba(255,255,255,0.08) !important;
-  box-sizing: border-box !important;
+#syntrax-applications-grid .syntrax-industry-card {
+  min-height: 165px;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
-@media (max-width: 900px) {
-  main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
-  main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+#syntrax-applications-grid h3 {
+  margin: 0 0 .8rem;
+  color: #FFF12D;
+  font-family: var(--font-display);
+  font-size: .98rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+#syntrax-applications-grid p {
+  margin: 0;
+  color: rgba(255,255,255,.62);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  line-height: 1.55;
+}
+@media (max-width: 1050px) {
+  #syntrax-applications-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 760px) {
+  #syntrax-applications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 520px) {
+  #syntrax-applications-grid { grid-template-columns: 1fr !important; }
+  #syntrax-applications-grid .syntrax-industry-card { min-height: auto; }
+}
+</style>
+<script id="syntrax-content-script">
+(function () {
+  var industries = [
+    ['HEAVY TRANSPORT', 'Long-haul diesel engines operating under high soot loads and extended oil drain intervals.'],
+    ['POWER GENERATION', 'Continuous-duty generator sets requiring stable lubricant cleanliness for maximum uptime.'],
+    ['AGRICULTURE', 'Seasonal equipment exposed to moisture, oxidation and long storage periods.'],
+    ['MINING', 'Heavy-duty engines operating in abrasive dust environments with extreme contamination loads.'],
+    ['CONSTRUCTION', 'High-load equipment working continuously under severe vibration and airborne contaminants.'],
+    ['MANUFACTURING', 'Compressors, pumps and prime movers requiring precise lubrication control.'],
+    ['OIL & GAS', 'Engines and auxiliary equipment operating across demanding upstream and downstream environments.'],
+    ['MARINE', 'Propulsion and auxiliary engines exposed to humidity, salt and continuous operation.'],
+    ['RAILWAY', 'Locomotive diesel engines operating under prolonged high-load duty cycles.'],
+    ['AUTOBUSES Y TRANSPORTE', 'Passenger fleets requiring extended service intervals and dependable engine protection.'],
+    ['AUTOMOTIVE', 'Light-duty gasoline and diesel engines requiring stable lubrication protection.'],
+    ['WASTE MUNICIPAL', 'Refuse fleets operating under repetitive stop-and-go severe-duty conditions.']
+  ];
+
+  function normalize(value) {
+    return String(value || '').replace(/TM/g, '™').replace(/\s+/g, ' ').trim().toUpperCase();
   }
-}
-@media (max-width: 600px) {
-  main section div[style*="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"],
-  main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
-    grid-template-columns: 1fr !important;
+
+  function removeRepeatedSpecs() {
+    document.querySelectorAll('main section').forEach(function (section) {
+      var text = normalize(section.textContent);
+      if (text.indexOf('PROTECTION LAYERS') !== -1 &&
+          text.indexOf('OUTER INTERCEPT') !== -1 &&
+          text.indexOf('BYPASS VALVE') !== -1 &&
+          text.indexOf('OIL COMPATIBILITY') !== -1) {
+        section.remove();
+      }
+    });
   }
-}
-</style>`;
+
+  function rebuildApplications() {
+    var heading = Array.from(document.querySelectorAll('main h2')).find(function (el) {
+      return normalize(el.textContent).indexOf('WHERE SYNTRAX™ PROTECTS') !== -1;
+    });
+    if (!heading) return false;
+
+    var section = heading.closest('section');
+    if (!section) return false;
+
+    var intro = heading.parentElement && heading.parentElement.querySelector('p');
+    if (intro) {
+      intro.textContent = 'Validated across every major engine application where lubricant cleanliness directly affects asset reliability.';
+      intro.style.maxWidth = '760px';
+    }
+
+    var grids = Array.from(section.querySelectorAll('div')).filter(function (el) {
+      var style = el.getAttribute('style') || '';
+      return style.indexOf('grid-template-columns') !== -1 && el.querySelector('h3');
+    });
+    var grid = grids[grids.length - 1];
+    if (!grid) return false;
+
+    grid.id = 'syntrax-applications-grid';
+    grid.removeAttribute('style');
+    grid.innerHTML = industries.map(function (item) {
+      return '<div class="syntrax-industry-card"><h3>' + item[0] + '</h3><p>' + item[1] + '</p></div>';
+    }).join('');
+    return true;
+  }
+
+  function applySyntraxContent() {
+    removeRepeatedSpecs();
+    return rebuildApplications();
+  }
+
+  applySyntraxContent();
+  document.addEventListener('DOMContentLoaded', applySyntraxContent, { once: true });
+  window.addEventListener('load', applySyntraxContent, { once: true });
+  var observer = new MutationObserver(function () {
+    if (applySyntraxContent()) observer.disconnect();
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  setTimeout(function () { observer.disconnect(); applySyntraxContent(); }, 5000);
+})();
+</script>`;
 
 try {
   let syntraxHtml = fs.readFileSync(syntraxPath, 'utf8');
-  syntraxHtml = syntraxHtml.replace(/<style id="syntrax-specs-grid-fix">[\s\S]*?<\/style>/gi, '');
-  syntraxHtml = syntraxHtml.replace('</head>', `${syntraxGridCss}\n</head>`);
+  syntraxHtml = syntraxHtml
+    .replace(/<style id="syntrax-specs-grid-fix">[\s\S]*?<\/style>/gi, '')
+    .replace(/<style id="syntrax-content-fix">[\s\S]*?<\/style>\s*<script id="syntrax-content-script">[\s\S]*?<\/script>/gi, '');
+  syntraxHtml = syntraxHtml.replace('</body>', `${syntraxContentLayer}\n</body>`);
   fs.writeFileSync(syntraxPath, syntraxHtml, 'utf8');
-  console.log('[syntrax-grid] applied: 3x2 desktop, no filler panel');
+  console.log('[syntrax-content] applied: redundant specs removed, 12-industry grid enabled');
 } catch (error) {
-  console.error('[syntrax-grid] failed:', error.message);
+  console.error('[syntrax-content] failed:', error.message);
   process.exitCode = 1;
 }
