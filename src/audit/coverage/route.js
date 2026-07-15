@@ -22,9 +22,14 @@ function registerCoverageRoutes({ app, pool, limiter }) {
       const report = await runCoverageAudit(client, { make, segment, limit, gapLimit, afterSku });
       return res.json({
         success: true,
-        engine_version: 'coverage-audit-domain-v1',
+        engine_version: 'coverage-audit-domain-v2-quarantine',
         read_only: true,
         scope: { make: make || 'ALL', segment, sku_limit: limit, gap_limit: gapLimit, after_sku: afterSku || null },
+        policy: {
+          operational_data_only: true,
+          unknown_records_quarantined: true,
+          unknown_records_are_not_counted_as_coverage_gaps: true,
+        },
         limitation: 'This audit evaluates stored applications after domain normalization. Completely absent assets require an external reference universe.',
         ...report,
       });
