@@ -1,0 +1,65 @@
+name: Commercial Intelligence Graph
+
+on:
+  workflow_dispatch:
+    inputs:
+      export_path:
+        description: Sanitized commercial export JSON path already present in the runner workspace
+        required: false
+        default: commercial-export.sanitized.json
+  push:
+    paths:
+      - 'scripts/build-commercial-intelligence.mjs'
+      - 'scripts/validate-commercial-intelligence.mjs'
+      - 'knowledge/templates/commercial-*.md'
+      - 'knowledge/templates/supplier.md'
+      - 'knowledge/templates/selection-decision.md'
+      - 'knowledge/templates/inventory-position.md'
+      - 'knowledge/templates/approval-record.md'
+      - 'docs/knowledge-graph/PHASE_7_COMMERCIAL_INTELLIGENCE_GRAPH.md'
+      - '.github/workflows/commercial-intelligence-graph.yml'
+
+permissions:
+  contents: read
+
+env:
+  OUTPUT_DIR: knowledge/generated/commercial-intelligence
+
+jobs:
+  validate-architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate canonical knowledge
+        run: node scripts/validate-knowledge-v2.mjs
+
+  generate-private-artifact:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify sanitized export exists
+        shell: bash
+        run: |
+          test -f "${{ inputs.export_path }}" || {
+            echo "Sanitized export not found: ${{ inputs.export_path }}"
+            echo "Upload or generate the export in a controlled runner before executing this job."
+            exit 1
+          }
+      - name: Build commercial intelligence candidates
+        run: node scripts/build-commercial-intelligence.mjs --input="${{ inputs.export_path }}"
+      - name: Validate generated candidates
+        run: node scripts/validate-commercial-intelligence.mjs
+      - name: Upload restricted artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: commercial-intelligence-${{ github.run_id }}
+          path: knowledge/generated/commercial-intelligence/
+          retention-days: 7
+          if-no-files-found: error
