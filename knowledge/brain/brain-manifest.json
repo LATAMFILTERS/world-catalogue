@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "brain_id": "elimfilters-digital-brain",
+  "name": "ELIMFILTERS Digital Brain",
+  "status": "structural_complete",
+  "default_language": "en",
+  "canonical_root": "knowledge/entities",
+  "generated_root": "knowledge/generated",
+  "graph_root": "graphify-out",
+  "authority_order": [
+    "canonical_validated",
+    "operational_current",
+    "controlled_source",
+    "reviewed_working_knowledge",
+    "application_implementation",
+    "generated_semantic_inference",
+    "historical_unreviewed"
+  ],
+  "sources": [
+    {
+      "id": "canonical-knowledge",
+      "kind": "filesystem",
+      "location": "knowledge/entities",
+      "authority": "canonical_validated",
+      "sensitivity": "internal",
+      "write_policy": "reviewed_only"
+    },
+    {
+      "id": "postgresql-catalogue",
+      "kind": "postgresql",
+      "location_env": "DATABASE_URL",
+      "authority": "operational_current",
+      "sensitivity": "internal",
+      "write_policy": "read_only_by_default"
+    },
+    {
+      "id": "obsidian-vault",
+      "kind": "filesystem",
+      "location": "elimfilters-vault",
+      "authority": "reviewed_working_knowledge",
+      "sensitivity": "internal",
+      "write_policy": "human_reviewed"
+    },
+    {
+      "id": "graphify",
+      "kind": "knowledge_graph",
+      "location": "graphify-out/graph.json",
+      "authority": "generated_semantic_inference",
+      "sensitivity": "internal",
+      "write_policy": "generated"
+    },
+    {
+      "id": "website",
+      "kind": "codebase",
+      "location": "frontend",
+      "authority": "application_implementation",
+      "sensitivity": "public",
+      "write_policy": "version_controlled"
+    },
+    {
+      "id": "part-search",
+      "kind": "application",
+      "location": "part-search",
+      "authority": "application_implementation",
+      "sensitivity": "public",
+      "write_policy": "version_controlled"
+    },
+    {
+      "id": "commercial-intelligence",
+      "kind": "operational_export",
+      "location": "knowledge/generated/commercial-intelligence",
+      "authority": "operational_current",
+      "sensitivity": "confidential",
+      "write_policy": "sanitized_generated"
+    }
+  ],
+  "public_blocked_fields": [
+    "price",
+    "unit_cost",
+    "margin",
+    "payment_terms",
+    "banking",
+    "personal_email",
+    "personal_phone",
+    "customer_contact",
+    "supplier_contact",
+    "credentials",
+    "api_key",
+    "secret"
+  ],
+  "required_validators": [
+    "scripts/validate-knowledge-v2.mjs",
+    "scripts/validate-oem-graph.mjs",
+    "scripts/validate-failure-intelligence.mjs",
+    "scripts/validate-commercial-intelligence.mjs",
+    "scripts/validate-digital-brain.mjs"
+  ],
+  "principles": [
+    "provenance_first",
+    "no_silent_inference",
+    "least_privilege",
+    "read_only_operational_access",
+    "human_approval_for_high_impact_claims",
+    "generated_content_is_not_canonical"
+  ]
+}
