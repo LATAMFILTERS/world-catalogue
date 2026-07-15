@@ -1,0 +1,68 @@
+name: ELIMFILTERS Digital Brain
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample_query:
+        description: Optional query used to generate a governed context plan
+        required: false
+        default: Audit knowledge coverage and missing evidence
+      visibility:
+        description: Context visibility
+        required: true
+        default: internal
+        type: choice
+        options:
+          - public
+          - internal
+          - confidential
+  push:
+    branches: [main]
+    paths:
+      - 'knowledge/**'
+      - 'docs/knowledge-graph/**'
+      - 'scripts/validate-knowledge-v2.mjs'
+      - 'scripts/validate-oem-graph.mjs'
+      - 'scripts/validate-failure-intelligence.mjs'
+      - 'scripts/validate-commercial-intelligence.mjs'
+      - 'scripts/validate-digital-brain.mjs'
+      - 'scripts/audit-digital-brain.mjs'
+      - 'scripts/build-digital-brain-context.mjs'
+      - '.github/workflows/digital-brain.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate Digital Brain manifest
+        run: node scripts/validate-digital-brain.mjs
+
+      - name: Validate canonical knowledge
+        run: node scripts/validate-knowledge-v2.mjs
+
+      - name: Run master integrity audit
+        run: node scripts/audit-digital-brain.mjs
+
+      - name: Build governed context plan
+        env:
+          SAMPLE_QUERY: ${{ github.event.inputs.sample_query || 'Audit knowledge coverage and missing evidence' }}
+          VISIBILITY: ${{ github.event.inputs.visibility || 'internal' }}
+        run: node scripts/build-digital-brain-context.mjs "$SAMPLE_QUERY" --visibility="$VISIBILITY"
+
+      - name: Upload Digital Brain audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: elimfilters-digital-brain-${{ github.run_number }}
+          path: knowledge/generated/digital-brain/
+          retention-days: 14
+          if-no-files-found: error
