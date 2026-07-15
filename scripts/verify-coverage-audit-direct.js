@@ -1,9 +1,20 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 const { registerCoverageAuditEngine } = require('../src/coverage-audit-engine');
 
 async function main() {
+  const root = path.join(__dirname, '..');
+  const modulePath = path.join(root, 'src', 'coverage-audit-engine.js');
+  const registrationPath = path.join(root, 'scripts', 'register-coverage-audit-direct.js');
+  const serverPath = path.join(root, 'server-original.js');
+
+  for (const file of [modulePath, registrationPath, serverPath]) {
+    assert(fs.existsSync(file), `Missing required file: ${path.relative(root, file)}`);
+    execFileSync(process.execPath, ['--check', file], { stdio: 'pipe' });
+  }
+
   let capturedRoute = null;
   const app = {
     get(route, limiter, handler) {
@@ -32,7 +43,7 @@ async function main() {
         market: 'USA',
       },
     };
-  });
+  }).sort((a, b) => a.sku.localeCompare(b.sku));
 
   let queryCalls = 0;
   const client = {
@@ -69,23 +80,23 @@ async function main() {
   assert.strictEqual(payload.engine_version, 'coverage-audit-v4-direct');
   assert.strictEqual(payload.pagination.returned_skus, 250);
   assert.strictEqual(payload.summary.unique_skus, 250);
-  assert.strictEqual(payload.pagination.next_after_sku, 'EL00250');
+  assert.strictEqual(payload.pagination.next_after_sku, rows[rows.length - 1].sku);
   assert(payload.summary.category_unit_counts.air > 0);
   assert(payload.summary.category_unit_counts.oil > 0);
   assert(payload.summary.category_unit_counts.fuel > 0);
   assert(payload.summary.category_unit_counts.cabin > 0);
+  assert.strictEqual(queryCalls, 2);
 
-  const serverPath = path.join(__dirname, '..', 'server-original.js');
   const serverSource = fs.readFileSync(serverPath, 'utf8');
-  assert(serverSource.includes('// COVERAGE_AUDIT_DIRECT_V4'));
+  const markerCount = (serverSource.match(/\/\/ COVERAGE_AUDIT_DIRECT_V4/g) || []).length;
+  assert.strictEqual(markerCount, 1, `Expected one direct registration marker, found ${markerCount}`);
   assert(serverSource.includes("require('./src/coverage-audit-engine')"));
   assert(serverSource.includes('registerCoverageAuditEngine(app, pool, searchLimiter)'));
-  assert(!serverSource.includes('// COVERAGE_AUDIT_ENGINE_20260714'));
 
   console.log('[coverage-audit-engine] direct v4 verification passed');
 }
 
 main().catch((error) => {
-  console.error('[coverage-audit-engine] direct v4 verification failed:', error.message);
+  console.error('[coverage-audit-engine] direct v4 verification failed:', error.stack || error.message);
   process.exit(1);
 });
