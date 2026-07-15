@@ -25,25 +25,35 @@ async function main() {
     },
   };
 
-  const rows = Array.from({ length: 250 }, (_, index) => {
-    const n = String(index + 1).padStart(5, '0');
-    const prefix = index % 4 === 0 ? 'EA' : index % 4 === 1 ? 'EL' : index % 4 === 2 ? 'EF' : 'EC';
-    return {
-      sku: `${prefix}${n}`,
-      filter_type: prefix === 'EA' ? 'air' : prefix === 'EL' ? 'oil' : prefix === 'EF' ? 'fuel' : 'cabin',
-      sub_type: null,
-      duty: 'LIGHT_DUTY',
-      technology: null,
-      page_sku_count: 250,
-      application: {
-        make: 'TEST MAKE',
-        model: `MODEL ${n}`,
-        year_range: '01/20 → 12/20',
-        engine: index % 2 === 0 ? 'VVT-I FI' : 'DIESEL',
-        market: 'USA',
-      },
-    };
-  }).sort((a, b) => a.sku.localeCompare(b.sku));
+  const categories = [
+    ['air', 'EA'],
+    ['oil', 'EL'],
+    ['fuel', 'EF'],
+    ['cabin', 'EC'],
+  ];
+  const rows = [];
+  for (const [category, prefix] of categories) {
+    for (let index = 1; index <= 62; index += 1) {
+      const n = String(index).padStart(5, '0');
+      rows.push({
+        sku: `${prefix}${n}`,
+        filter_type: category,
+        sub_type: category === 'cabin' ? 'cabin' : null,
+        duty: 'LIGHT_DUTY',
+        technology: null,
+        audit_category: category,
+        category_sku_count: 62,
+        application: {
+          make: 'TEST MAKE',
+          model: `MODEL ${n}`,
+          year_range: '01/20 → 12/20',
+          engine: index % 2 === 0 ? 'VVT-I FI' : 'DIESEL',
+          market: 'USA',
+        },
+      });
+    }
+  }
+  rows.sort((a, b) => a.audit_category.localeCompare(b.audit_category) || a.sku.localeCompare(b.sku));
 
   let queryCalls = 0;
   const client = {
@@ -53,9 +63,10 @@ async function main() {
         assert.match(sql, /statement_timeout/);
         return { rows: [] };
       }
-      assert.match(sql, /WITH page_skus AS/);
-      assert.match(sql, /LIMIT \$4::int/);
-      assert.deepStrictEqual(params, ['', 'LIGHT_DUTY', '', 250]);
+      assert.match(sql, /WITH eligible AS/);
+      assert.match(sql, /ROW_NUMBER\(\) OVER \(PARTITION BY e\.audit_category/);
+      assert.match(sql, /category_rank <= \$7::int/);
+      assert.deepStrictEqual(params, ['', 'LIGHT_DUTY', '', '', '', '', 62]);
       return { rows };
     },
     release() {},
@@ -77,10 +88,15 @@ async function main() {
   await capturedRoute(req, res);
   assert.strictEqual(res.statusCode, 200);
   assert(payload && payload.success === true);
-  assert.strictEqual(payload.engine_version, 'coverage-audit-v4-direct');
-  assert.strictEqual(payload.pagination.returned_skus, 250);
-  assert.strictEqual(payload.summary.unique_skus, 250);
-  assert.strictEqual(payload.pagination.next_after_sku, rows[rows.length - 1].sku);
+  assert.strictEqual(payload.engine_version, 'coverage-audit-v5-balanced');
+  assert.strictEqual(payload.scope.per_category_quota, 62);
+  assert.strictEqual(payload.pagination.returned_skus, 248);
+  assert.strictEqual(payload.summary.unique_skus, 248);
+  assert.deepStrictEqual(payload.summary.category_sku_counts, { air: 62, oil: 62, fuel: 62, cabin: 62 });
+  assert.strictEqual(payload.pagination.next_cursors.air, 'EA00062');
+  assert.strictEqual(payload.pagination.next_cursors.oil, 'EL00062');
+  assert.strictEqual(payload.pagination.next_cursors.fuel, 'EF00062');
+  assert.strictEqual(payload.pagination.next_cursors.cabin, 'EC00062');
   assert(payload.summary.category_unit_counts.air > 0);
   assert(payload.summary.category_unit_counts.oil > 0);
   assert(payload.summary.category_unit_counts.fuel > 0);
@@ -93,10 +109,10 @@ async function main() {
   assert(serverSource.includes("require('./src/coverage-audit-engine')"));
   assert(serverSource.includes('registerCoverageAuditEngine(app, pool, searchLimiter)'));
 
-  console.log('[coverage-audit-engine] direct v4 verification passed');
+  console.log('[coverage-audit-engine] balanced v5 verification passed');
 }
 
 main().catch((error) => {
-  console.error('[coverage-audit-engine] direct v4 verification failed:', error.stack || error.message);
+  console.error('[coverage-audit-engine] balanced v5 verification failed:', error.stack || error.message);
   process.exit(1);
 });
