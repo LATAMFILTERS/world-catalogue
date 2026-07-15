@@ -9,6 +9,7 @@ on:
       - 'knowledge/entities/**'
       - 'elimfilters-vault/**'
       - 'scripts/check-postgres-readonly.mjs'
+      - 'scripts/readonly-sql-guard.mjs'
       - 'scripts/sync-obsidian-knowledge.mjs'
       - 'scripts/regenerate-graphify.sh'
       - '.github/workflows/digital-brain-operational-sync.yml'
@@ -22,10 +23,13 @@ jobs:
     timeout-minutes: 90
     env:
       DATABASE_URL_READONLY: ${{ secrets.DATABASE_URL_READONLY }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: ${{ vars.GROQ_MODEL || 'llama-3.3-70b-versatile' }}
+      GROQ_BASE_URL: https://api.groq.com/openai/v1
       ELIMFILTERS_CATALOG_TABLE: elimfilters_catalog
       GRAPHIFY_MAX_WORKERS: '2'
       GRAPHIFY_API_TIMEOUT: '1200'
+      GRAPHIFY_MAX_RETRIES: '8'
 
     steps:
       - uses: actions/checkout@v4
@@ -43,6 +47,9 @@ jobs:
       - name: Synchronize Obsidian knowledge index
         run: node scripts/sync-obsidian-knowledge.mjs
 
+      - name: Validate read-only SQL guard
+        run: node scripts/readonly-sql-guard.mjs --self-test
+
       - name: Install PostgreSQL client dependency
         if: env.DATABASE_URL_READONLY != ''
         run: npm install --no-save --ignore-scripts pg@8
@@ -56,16 +63,16 @@ jobs:
         run: echo '[operational-sync] DATABASE_URL_READONLY secret is missing; PostgreSQL synchronization skipped'
 
       - name: Install uv
-        if: env.ANTHROPIC_API_KEY != ''
+        if: env.GROQ_API_KEY != ''
         uses: astral-sh/setup-uv@v6
 
-      - name: Regenerate Graphify
-        if: env.ANTHROPIC_API_KEY != ''
+      - name: Regenerate Graphify with Groq
+        if: env.GROQ_API_KEY != ''
         run: bash scripts/regenerate-graphify.sh
 
-      - name: Graphify credentials not configured
-        if: env.ANTHROPIC_API_KEY == ''
-        run: echo '[operational-sync] ANTHROPIC_API_KEY secret is missing; Graphify semantic regeneration skipped'
+      - name: Groq credentials not configured
+        if: env.GROQ_API_KEY == ''
+        run: echo '[operational-sync] GROQ_API_KEY secret is missing; Graphify semantic regeneration skipped'
 
       - name: Run Digital Brain audit
         if: always()
