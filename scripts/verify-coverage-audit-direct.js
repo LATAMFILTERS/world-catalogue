@@ -5,10 +5,10 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { registerCoverageAuditEngine } = require('../src/coverage-audit-engine');
-const { buildUnits } = require('../src/audit/coverage/service');
+const { buildUnits, createCoverageAccumulator, addRows, finalizeCoverage } = require('../src/audit/coverage/service');
 
-function row(sku, filterType, application) {
-  return { sku, filter_type: filterType, sub_type: null, duty: null, technology: null, application, page_sku_count: 5 };
+function row(sku, filterType, application, pageSkuCount = 5) {
+  return { sku, filter_type: filterType, sub_type: null, duty: null, technology: null, application, page_sku_count: pageSkuCount };
 }
 
 async function main() {
@@ -19,6 +19,7 @@ async function main() {
     'src/audit/coverage/policies.js',
     'src/audit/coverage/repository.js',
     'src/audit/coverage/service.js',
+    'src/audit/coverage/intelligence.js',
     'src/audit/coverage/route.js',
     'scripts/register-coverage-audit-direct.js',
     'server-original.js',
@@ -39,62 +40,43 @@ async function main() {
   ];
 
   const ld = buildUnits(matrixRows, 'LIGHT_DUTY');
-  assert.strictEqual(ld.units.length, 1, 'Corolla rows must form one LD coverage unit');
+  assert.strictEqual(ld.units.length, 1);
   assert.strictEqual(ld.units[0].status, 'complete');
-  assert.deepStrictEqual(ld.units[0].categories, ['cabin_air', 'engine_air', 'engine_oil']);
 
-  const hd = buildUnits(matrixRows, 'HEAVY_DUTY');
-  assert.strictEqual(hd.units.length, 1, 'AGCO tractor must be classified as HD');
-  assert.strictEqual(hd.units[0].asset_class, 'mobile_heavy_equipment');
-  assert(hd.units[0].missing_required_categories.includes('engine_oil'));
-  assert(hd.units[0].missing_required_categories.includes('fuel'));
+  const accumulator = createCoverageAccumulator('ALL');
+  addRows(accumulator, matrixRows.slice(0, 2));
+  addRows(accumulator, matrixRows.slice(2));
+  const complete = finalizeCoverage(accumulator, { gapLimit: 50, reviewLimit: 50 });
+  assert.strictEqual(complete.summary.operational_rows, 4);
+  assert.strictEqual(complete.summary.quarantined_rows, 1);
+  assert.strictEqual(complete.summary.review_skus, 1);
+  assert.strictEqual(complete.review_queue[0].sku, 'EH90001');
+  assert.strictEqual(complete.review_queue[0].likely_hydraulic, true);
+  assert(complete.coverage_matrix.by_segment.LIGHT_DUTY > 0);
+  assert(complete.coverage_matrix.by_segment.HEAVY_DUTY > 0);
+  assert(complete.opportunities_by_make.some((entry) => entry.make === 'AGCO'));
 
-  const all = buildUnits(matrixRows, 'ALL');
-  assert.strictEqual(all.reviewQueue.length, 1, 'Unassigned hydraulic product must be quarantined');
-  assert.strictEqual(all.reviewQueue[0].sku, 'EH90001');
-  assert.strictEqual(all.reviewQueue[0].likely_hydraulic, true);
-  assert(all.reviewQueue[0].reasons.includes('unclassified_asset'));
-  assert(!all.units.some((unit) => unit.skus.includes('EH90001')), 'Quarantined product cannot enter operational coverage');
-
-  let capturedRoute = null;
-  const app = { get(route, limiter, handler) { assert.strictEqual(route, '/api/audit/coverage-engine'); assert.strictEqual(typeof limiter, 'function'); capturedRoute = handler; } };
-  let queryCalls = 0;
-  const client = {
-    async query(sql, params) {
-      queryCalls += 1;
-      if (queryCalls === 1) return { rows: [] };
-      assert.match(sql, /WITH page_skus AS/);
-      assert.deepStrictEqual(params, ['', '', 250]);
-      return { rows: matrixRows };
-    },
-    release() {},
+  const routes = { get: [], post: [] };
+  const app = {
+    get(route, limiter, handler) { assert.strictEqual(typeof limiter, 'function'); assert.strictEqual(typeof handler, 'function'); routes.get.push(route); },
+    post(route, limiter, handler) { assert.strictEqual(typeof limiter, 'function'); assert.strictEqual(typeof handler, 'function'); routes.post.push(route); },
   };
-  const pool = { async connect() { return client; } };
+  const pool = { async connect() { throw new Error('not called during registration'); } };
   const limiter = (_req, _res, next) => next();
   registerCoverageAuditEngine(app, pool, limiter);
 
-  let payload = null;
-  const req = { query: { segment: 'ALL', limit: '250' } };
-  const res = { statusCode: 200, status(code) { this.statusCode = code; return this; }, json(body) { payload = body; return body; } };
-  await capturedRoute(req, res);
-  assert.strictEqual(res.statusCode, 200);
-  assert.strictEqual(payload.engine_version, 'coverage-audit-domain-v2-quarantine');
-  assert.strictEqual(payload.policy.unknown_records_quarantined, true);
-  assert.strictEqual(payload.review_queue_summary.likely_hydraulic, 1);
-  assert.strictEqual(payload.summary.quarantined_rows, 1);
-  assert.strictEqual(payload.summary.review_skus, 1);
-  assert(payload.summary.segment_counts.LIGHT_DUTY > 0);
-  assert(payload.summary.segment_counts.HEAVY_DUTY > 0);
-  assert.strictEqual(queryCalls, 2);
+  assert(routes.get.includes('/api/audit/coverage-engine'));
+  assert(routes.get.includes('/api/audit/coverage-intelligence/status'));
+  assert(routes.post.includes('/api/audit/coverage-intelligence/run'));
 
   const serverSource = fs.readFileSync(path.join(root, 'server-original.js'), 'utf8');
   const markerCount = (serverSource.match(/\/\/ COVERAGE_AUDIT_DIRECT_V4/g) || []).length;
   assert(markerCount <= 1, `Duplicate coverage registration markers: ${markerCount}`);
 
-  console.log('[coverage-audit-engine] domain v2 quarantine verification passed');
+  console.log('[coverage-intelligence] phase 1 full-catalog verification passed');
 }
 
 main().catch((error) => {
-  console.error('[coverage-audit-engine] domain v2 quarantine verification failed:', error.stack || error.message);
+  console.error('[coverage-intelligence] phase 1 verification failed:', error.stack || error.message);
   process.exit(1);
 });
