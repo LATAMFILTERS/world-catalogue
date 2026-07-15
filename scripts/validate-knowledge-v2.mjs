@@ -30,6 +30,9 @@ const equipmentRequiredFields = ['manufacturer', 'model', 'synchronized_from', '
 const engineRequiredFields = ['manufacturer', 'model', 'synchronized_from', 'synchronized_at'];
 const vehicleRequiredFields = ['manufacturer', 'model', 'year_start', 'year_end', 'synchronized_from', 'synchronized_at'];
 const manufacturerRequiredFields = ['canonical_name'];
+const symptomRequiredFields = ['observable_on', 'measurement_type'];
+const scenarioRequiredFields = ['confidence', 'severity', 'affected_system', 'primary_failure_mode'];
+const recommendationRequiredFields = ['scenario', 'action_level'];
 const allowedTypes = new Set([
   'Technology',
   'ProtectionSystem',
@@ -45,11 +48,21 @@ const allowedTypes = new Set([
   'Equipment',
   'Engine',
   'Vehicle',
+  'OEMManufacturer',
+  'OEMCode',
+  'CompetitorCode',
+  'CrossReferenceAssertion',
+  'Symptom',
+  'FailureScenario',
+  'RecommendationRule',
 ]);
 const allowedStatuses = new Set(['draft', 'under_review', 'approved', 'deprecated', 'rejected']);
 const allowedAuthorities = new Set(['canonical', 'operational', 'working', 'historical', 'generated']);
 const allowedEvidence = new Set(['unverified', 'under_review', 'validated', 'rejected', 'not_required']);
 const allowedLifecycle = new Set(['active', 'inactive', 'superseded', 'unknown']);
+const allowedConfidence = new Set(['hypothesis', 'plausible', 'supported', 'validated', 'rejected']);
+const allowedSeverity = new Set(['low', 'moderate', 'high', 'critical']);
+const allowedActionLevels = new Set(['inspect', 'sample', 'review_selection', 'recommend_candidate', 'validated_recommendation']);
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -148,6 +161,30 @@ for (const file of files) {
       if (entity.synchronized_at && !/^\d{4}-\d{2}-\d{2}$/.test(entity.synchronized_at)) errors.push(`${relative}: synchronized_at must use YYYY-MM-DD`);
     }
     if (entity.type === 'Manufacturer' && entity.id && !/^manufacturer:[a-z0-9-]+$/.test(entity.id)) errors.push(`${relative}: invalid Manufacturer canonical id`);
+
+    if (entity.type === 'Symptom') {
+      requireFields(entity, relative, symptomRequiredFields, 'Symptom', errors);
+      if (entity.id && !/^symptom:[a-z0-9-]+$/.test(entity.id)) errors.push(`${relative}: invalid Symptom canonical id`);
+      if (entity.observable_on && !/^system:[a-z0-9-]+$/.test(entity.observable_on)) errors.push(`${relative}: invalid observable_on relation '${entity.observable_on}'`);
+    }
+
+    if (entity.type === 'FailureScenario') {
+      requireFields(entity, relative, scenarioRequiredFields, 'FailureScenario', errors);
+      if (entity.id && !/^failure-scenario:[a-z0-9-]+$/.test(entity.id)) errors.push(`${relative}: invalid FailureScenario canonical id`);
+      if (entity.confidence && !allowedConfidence.has(entity.confidence)) errors.push(`${relative}: unsupported confidence '${entity.confidence}'`);
+      if (entity.severity && !allowedSeverity.has(entity.severity)) errors.push(`${relative}: unsupported severity '${entity.severity}'`);
+      if (entity.affected_system && !/^system:[a-z0-9-]+$/.test(entity.affected_system)) errors.push(`${relative}: invalid affected_system relation '${entity.affected_system}'`);
+      if (entity.primary_failure_mode && !/^failure-mode:[a-z0-9-]+$/.test(entity.primary_failure_mode)) errors.push(`${relative}: invalid primary_failure_mode relation '${entity.primary_failure_mode}'`);
+      if (entity.confidence === 'validated' && entity.evidence_status !== 'validated') errors.push(`${relative}: validated scenario requires validated evidence_status`);
+    }
+
+    if (entity.type === 'RecommendationRule') {
+      requireFields(entity, relative, recommendationRequiredFields, 'RecommendationRule', errors);
+      if (entity.id && !/^recommendation-rule:[a-z0-9-]+$/.test(entity.id)) errors.push(`${relative}: invalid RecommendationRule canonical id`);
+      if (entity.scenario && !/^failure-scenario:[a-z0-9-]+$/.test(entity.scenario)) errors.push(`${relative}: invalid scenario relation '${entity.scenario}'`);
+      if (entity.action_level && !allowedActionLevels.has(entity.action_level)) errors.push(`${relative}: unsupported action_level '${entity.action_level}'`);
+      if (entity.action_level === 'validated_recommendation' && entity.evidence_status !== 'validated') errors.push(`${relative}: validated recommendation requires validated evidence_status`);
+    }
   } catch (error) {
     errors.push(`${relative}: ${error.message}`);
   }
@@ -165,6 +202,17 @@ for (const { entity, relative, text } of entities) {
   }
   if (['Equipment', 'Engine', 'Vehicle'].includes(entity.type) && entity.manufacturer && !ids.has(entity.manufacturer)) {
     errors.push(`${relative}: manufacturer relation targets missing entity '${entity.manufacturer}'`);
+  }
+  if (entity.type === 'Symptom' && entity.observable_on && !ids.has(entity.observable_on)) {
+    errors.push(`${relative}: observable_on targets missing entity '${entity.observable_on}'`);
+  }
+  if (entity.type === 'FailureScenario') {
+    for (const field of ['affected_system', 'primary_failure_mode']) {
+      if (entity[field] && !ids.has(entity[field])) errors.push(`${relative}: ${field} targets missing entity '${entity[field]}'`);
+    }
+  }
+  if (entity.type === 'RecommendationRule' && entity.scenario && !ids.has(entity.scenario)) {
+    errors.push(`${relative}: scenario targets missing entity '${entity.scenario}'`);
   }
 }
 
