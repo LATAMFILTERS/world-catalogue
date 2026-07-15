@@ -1,0 +1,84 @@
+name: ELIMFILTERS Digital Brain Operational Sync
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'knowledge/brain/**'
+      - 'knowledge/entities/**'
+      - 'elimfilters-vault/**'
+      - 'scripts/check-postgres-readonly.mjs'
+      - 'scripts/sync-obsidian-knowledge.mjs'
+      - 'scripts/regenerate-graphify.sh'
+      - '.github/workflows/digital-brain-operational-sync.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      DATABASE_URL_READONLY: ${{ secrets.DATABASE_URL_READONLY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ELIMFILTERS_CATALOG_TABLE: elimfilters_catalog
+      GRAPHIFY_MAX_WORKERS: '2'
+      GRAPHIFY_API_TIMEOUT: '1200'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate Digital Brain architecture
+        run: |
+          node scripts/audit-repository-contracts.mjs
+          node scripts/validate-digital-brain.mjs
+          node scripts/validate-knowledge-v2.mjs
+
+      - name: Synchronize Obsidian knowledge index
+        run: node scripts/sync-obsidian-knowledge.mjs
+
+      - name: Install PostgreSQL client dependency
+        if: env.DATABASE_URL_READONLY != ''
+        run: npm install --no-save --ignore-scripts pg@8
+
+      - name: Verify PostgreSQL read-only connection
+        if: env.DATABASE_URL_READONLY != ''
+        run: node scripts/check-postgres-readonly.mjs
+
+      - name: PostgreSQL connection not configured
+        if: env.DATABASE_URL_READONLY == ''
+        run: echo '[operational-sync] DATABASE_URL_READONLY secret is missing; PostgreSQL synchronization skipped'
+
+      - name: Install uv
+        if: env.ANTHROPIC_API_KEY != ''
+        uses: astral-sh/setup-uv@v6
+
+      - name: Regenerate Graphify
+        if: env.ANTHROPIC_API_KEY != ''
+        run: bash scripts/regenerate-graphify.sh
+
+      - name: Graphify credentials not configured
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo '[operational-sync] ANTHROPIC_API_KEY secret is missing; Graphify semantic regeneration skipped'
+
+      - name: Run Digital Brain audit
+        if: always()
+        run: node scripts/audit-digital-brain.mjs
+
+      - name: Upload operational synchronization artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: digital-brain-operational-sync-${{ github.run_number }}
+          path: |
+            knowledge/generated/digital-brain/
+            graphify-out/GRAPH_REPORT.md
+            graphify-out/graph.json
+          if-no-files-found: warn
+          retention-days: 14
