@@ -151,11 +151,14 @@ async function runFullCoverageIntelligence(pool, options = {}) {
 
 function startFullCoverageIntelligence(pool, options = {}) {
   if (state.status === 'running') return false;
-  setImmediate(() => {
-    runFullCoverageIntelligence(pool, options).catch((error) => {
-      console.error('[coverage-intelligence-phase1]', error.stack || error.message);
-    });
+
+  // Start the async function directly. It sets state.status='running' before
+  // reaching its first await, so the POST response and immediate status check
+  // cannot incorrectly report "idle" after accepting the run.
+  runFullCoverageIntelligence(pool, options).catch((error) => {
+    console.error('[coverage-intelligence-phase1]', error.stack || error.message);
   });
+
   return true;
 }
 
