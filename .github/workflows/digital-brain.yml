@@ -26,6 +26,7 @@ on:
       - 'scripts/validate-failure-intelligence.mjs'
       - 'scripts/validate-commercial-intelligence.mjs'
       - 'scripts/validate-digital-brain.mjs'
+      - 'scripts/validate-digital-brain-context.mjs'
       - 'scripts/audit-repository-contracts.mjs'
       - 'scripts/audit-digital-brain.mjs'
       - 'scripts/build-digital-brain-context.mjs'
@@ -65,6 +66,9 @@ jobs:
           SAMPLE_QUERY: ${{ github.event.inputs.sample_query || 'Audit knowledge coverage and missing evidence' }}
           VISIBILITY: ${{ github.event.inputs.visibility || 'internal' }}
         run: node scripts/build-digital-brain-context.mjs "$SAMPLE_QUERY" --visibility="$VISIBILITY"
+
+      - name: Validate governed context plan
+        run: node scripts/validate-digital-brain-context.mjs
 
       - name: Upload Digital Brain audit
         if: always()
