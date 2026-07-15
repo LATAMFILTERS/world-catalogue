@@ -1,0 +1,138 @@
+name: Finalize coverage architecture
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/finalize-coverage-architecture.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.20.2'
+
+      - name: Move coverage registration into permanent source
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          server = Path('server-original.js')
+          source = server.read_text(encoding='utf-8')
+
+          require_line = "const { registerCoverageRoutes } = require('./src/audit/coverage/route');"
+          if require_line not in source:
+              anchor = "const rateLimit = require('express-rate-limit');"
+              if anchor not in source:
+                  raise SystemExit('rateLimit import anchor not found')
+              source = source.replace(anchor, anchor + "\n" + require_line, 1)
+
+          old_block = """// COVERAGE_AUDIT_DIRECT_V4
+          const { registerCoverageAuditEngine } = require('./src/coverage-audit-engine');
+          registerCoverageAuditEngine(app, pool, searchLimiter);
+          console.log('[coverage-audit-engine] direct v4 registered');
+          """
+          source = source.replace(old_block, '')
+
+          registration = "registerCoverageRoutes({ app, pool, limiter: searchLimiter });"
+          if registration not in source:
+              anchor = """pool.on('connect', client => {
+            client.query(\"SET statement_timeout = '8000'\").catch(() => {});
+          });"""
+              if anchor not in source:
+                  raise SystemExit('pool registration anchor not found')
+              source = source.replace(anchor, anchor + "\n\n" + registration, 1)
+
+          if source.count(require_line) != 1:
+              raise SystemExit('coverage route import must appear exactly once')
+          if source.count(registration) != 1:
+              raise SystemExit('coverage route registration must appear exactly once')
+
+          server.write_text(source, encoding='utf-8')
+
+          package_path = Path('package.json')
+          package = json.loads(package_path.read_text(encoding='utf-8'))
+          commands = package['scripts']['postinstall'].split(' && ')
+          remove = {
+              'node scripts/apply-vehicle-coverage-audit.js',
+              'node --check src/coverage-audit-engine.js',
+              'node --check scripts/register-coverage-audit-direct.js',
+              'node scripts/register-coverage-audit-direct.js',
+          }
+          commands = [command for command in commands if command not in remove]
+          permanent_checks = [
+              'node --check src/audit/coverage/normalization.js',
+              'node --check src/audit/coverage/policies.js',
+              'node --check src/audit/coverage/repository.js',
+              'node --check src/audit/coverage/service.js',
+              'node --check src/audit/coverage/intelligence.js',
+              'node --check src/audit/coverage/route.js',
+              'node --check server-original.js',
+              'node scripts/verify-coverage-audit-direct.js',
+          ]
+          commands = [command for command in commands if command not in permanent_checks]
+          commands.extend(permanent_checks)
+          package['scripts']['postinstall'] = ' && '.join(commands)
+          package_path.write_text(json.dumps(package, indent=2) + '\n', encoding='utf-8')
+
+          verifier = Path('scripts/verify-coverage-audit-direct.js')
+          check = verifier.read_text(encoding='utf-8')
+          check = check.replace("const { registerCoverageAuditEngine } = require('../src/coverage-audit-engine');", "const { registerCoverageRoutes } = require('../src/audit/coverage/route');")
+          check = check.replace("    'src/coverage-audit-engine.js',\n", '')
+          check = check.replace("    'scripts/register-coverage-audit-direct.js',\n", '')
+          check = check.replace('  registerCoverageAuditEngine(app, pool, limiter);', '  registerCoverageRoutes({ app, pool, limiter });')
+          old_assert = """  const markerCount = (serverSource.match(/\\/\\/ COVERAGE_AUDIT_DIRECT_V4/g) || []).length;
+          assert(markerCount <= 1, `Duplicate coverage registration markers: ${markerCount}`);"""
+          new_assert = """  assert(!serverSource.includes('COVERAGE_AUDIT_DIRECT_V4'));
+          assert.strictEqual((serverSource.match(/registerCoverageRoutes\\(\\{ app, pool, limiter: searchLimiter \\}\\)/g) || []).length, 1);
+          assert.strictEqual((serverSource.match(/require\\('\.\\/src\\/audit\\/coverage\\/route'\\)/g) || []).length, 1);"""
+          if old_assert not in check:
+              raise SystemExit('legacy verifier assertion not found')
+          check = check.replace(old_assert, new_assert)
+          verifier.write_text(check, encoding='utf-8')
+
+          for obsolete in [
+              Path('scripts/register-coverage-audit-direct.js'),
+              Path('scripts/apply-vehicle-coverage-audit.js'),
+              Path('src/coverage-audit-engine.js'),
+          ]:
+              if obsolete.exists():
+                  obsolete.unlink()
+
+          workflow = Path('.github/workflows/finalize-coverage-architecture.yml')
+          if workflow.exists():
+              workflow.unlink()
+          PY
+
+      - name: Audit permanent architecture
+        run: |
+          node --check server-original.js
+          node --check src/audit/coverage/normalization.js
+          node --check src/audit/coverage/policies.js
+          node --check src/audit/coverage/repository.js
+          node --check src/audit/coverage/service.js
+          node --check src/audit/coverage/intelligence.js
+          node --check src/audit/coverage/route.js
+          node scripts/verify-coverage-audit-direct.js
+          node -e "const p=require('./package.json'); if(/register-coverage-audit-direct|apply-vehicle-coverage-audit|coverage-audit-engine\.js/.test(p.scripts.postinstall)) process.exit(1)"
+          test ! -e scripts/register-coverage-audit-direct.js
+          test ! -e scripts/apply-vehicle-coverage-audit.js
+          test ! -e src/coverage-audit-engine.js
+
+      - name: Commit permanent source architecture
+        run: |
+          git config user.name "ELIMFILTERS Architecture Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace coverage patches with permanent source architecture"
+          git push origin HEAD:main
