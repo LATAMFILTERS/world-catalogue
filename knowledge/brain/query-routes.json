@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "routes": [
     {
       "id": "product-selection",
       "intents": ["find_filter", "select_product", "protect_system"],
-      "required_sources": ["canonical-knowledge", "postgresql-catalogue"],
-      "optional_sources": ["equipment-graph", "failure-intelligence", "graphify"],
+      "required_sources": ["canonical-knowledge"],
+      "optional_sources": ["postgresql-catalogue", "product-intelligence", "equipment-graph", "failure-intelligence", "graphify"],
       "minimum_evidence": "supported",
       "output_sensitivity": "public_safe",
       "prohibited_conclusions": ["unvalidated_equivalence", "unvalidated_compatibility"]
@@ -13,8 +13,8 @@
     {
       "id": "cross-reference",
       "intents": ["cross_reference", "oem_lookup", "competitor_lookup"],
-      "required_sources": ["postgresql-catalogue", "canonical-knowledge"],
-      "optional_sources": ["graphify"],
+      "required_sources": ["canonical-knowledge"],
+      "optional_sources": ["postgresql-catalogue", "oem-graph", "graphify"],
       "minimum_evidence": "observed",
       "output_sensitivity": "public_safe",
       "required_disclosure": "assertion_level"
@@ -22,8 +22,8 @@
     {
       "id": "equipment-application",
       "intents": ["equipment_lookup", "vehicle_lookup", "engine_lookup"],
-      "required_sources": ["postgresql-catalogue"],
-      "optional_sources": ["canonical-knowledge", "graphify"],
+      "required_sources": ["canonical-knowledge"],
+      "optional_sources": ["postgresql-catalogue", "equipment-graph", "graphify"],
       "minimum_evidence": "application_record",
       "output_sensitivity": "public_safe",
       "prohibited_conclusions": ["fitment_without_source"]
@@ -32,7 +32,7 @@
       "id": "failure-intelligence",
       "intents": ["diagnose_risk", "failure_mode", "contamination_risk"],
       "required_sources": ["canonical-knowledge"],
-      "optional_sources": ["obsidian-vault", "graphify", "postgresql-catalogue"],
+      "optional_sources": ["failure-intelligence", "obsidian-vault", "graphify", "postgresql-catalogue"],
       "minimum_evidence": "supported",
       "output_sensitivity": "internal",
       "required_disclosure": "confidence_and_non_diagnostic_status"
@@ -57,8 +57,8 @@
     {
       "id": "knowledge-audit",
       "intents": ["coverage_gap", "conflict", "orphan_entity", "missing_evidence"],
-      "required_sources": ["canonical-knowledge", "graphify"],
-      "optional_sources": ["obsidian-vault", "postgresql-catalogue", "website"],
+      "required_sources": ["canonical-knowledge"],
+      "optional_sources": ["graphify", "obsidian-vault", "postgresql-catalogue", "website"],
       "minimum_evidence": "traceable_source",
       "output_sensitivity": "internal"
     }
