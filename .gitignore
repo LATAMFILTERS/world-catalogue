@@ -50,6 +50,7 @@ knowledge/generated/product-intelligence/
 knowledge/generated/equipment-graph/
 knowledge/generated/oem-graph/
 knowledge/generated/failure-intelligence/
+knowledge/generated/digital-brain/
 
 # Development/investigation scripts — never deploy
 audit_*.js
