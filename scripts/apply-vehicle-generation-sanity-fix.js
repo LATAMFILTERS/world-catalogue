@@ -5,62 +5,48 @@ const target = path.join(__dirname, '..', 'server-original.js');
 let source = fs.readFileSync(target, 'utf8');
 let changed = false;
 
-const marketFunctionEnd = `      const applicationMarket = (application) => {
-        const text = normalizeVehicleText([
-          application?.market,
-          application?.region,
-          application?.model,
-          application?.notes
-        ].filter(Boolean).join(' '));
-        if (/\\b(USA|US|NORTH AMERICA|CANADA|MEXICO)\\b/.test(text)) return 'US';
-        if (/\\b(EUROPE|EUROPEAN|EUROPA|E18|D 4D)\\b/.test(text)) return 'EU';
-        return 'unknown';
-      };`;
+// Install a generation/year guard directly inside scoreApplication. This avoids
+// relying on malformed imported year ranges such as E210 "08/10 →".
+const scoreAnchor = `        const year = yearEvidence(application, requestedYear);
+        if (!year.covers) return -1000;`;
 
-const generationBlock = `${marketFunctionEnd}
-
-      const generationYearCompatible = (application) => {
-        const make = normalizeVehicleText(application?.make);
-        const model = normalizeVehicleText([
+const guardedScore = `        const generationModel = normalizeVehicleText([
           application?.model,
           application?.model_family,
           application?.model_type
         ].filter(Boolean).join(' '));
-
-        // Toyota Corolla E210 started after the 2017 model year. Some imported
-        // records contain malformed open-ended dates such as 08/10, so the
-        // generation code must override that bad range rather than surface a
-        // newer-generation engine for a 2017 query.
-        if (make === 'TOYOTA' && model.includes('COROLLA')) {
-          if (/\\bE210\\b/.test(model) && requestedYear < 2018) return false;
-          if (/\\bE14\\b|\\bE15\\b/.test(model) && requestedYear > 2013) return false;
+        if (make === 'TOYOTA' && generationModel.includes('COROLLA')) {
+          if (/\\bE210\\b/.test(generationModel) && requestedYear < 2018) return -1000;
+          if (/\\bE14\\b|\\bE15\\b/.test(generationModel) && requestedYear > 2013) return -1000;
         }
 
-        return true;
-      };`;
+        const year = yearEvidence(application, requestedYear);
+        if (!year.covers) return -1000;`;
 
-if (source.includes(marketFunctionEnd) && !source.includes('const generationYearCompatible =')) {
-  source = source.replace(marketFunctionEnd, generationBlock);
-  changed = true;
-  console.log('[vehicle-chat-search] generation/year sanity registry enabled');
-}
-
-const gateAnchor = `        const fuel = applicationFuel(application);
-        const market = applicationMarket(application);
-        if (requestedFuel === 'gasoline' && fuel === 'diesel') return -1000;`;
-
-const gateWithGeneration = `        const fuel = applicationFuel(application);
-        const market = applicationMarket(application);
-        if (!generationYearCompatible(application)) return -1000;
-        if (requestedFuel === 'gasoline' && fuel === 'diesel') return -1000;`;
-
-if (source.includes(gateAnchor) && !source.includes('if (!generationYearCompatible(application))')) {
-  source = source.replace(gateAnchor, gateWithGeneration);
+if (source.includes(scoreAnchor) && !source.includes("generationModel.includes('COROLLA')")) {
+  source = source.replace(scoreAnchor, guardedScore);
   changed = true;
 }
 
-if (!source.includes('const generationYearCompatible =') || !source.includes('if (!generationYearCompatible(application))')) {
-  throw new Error('Vehicle generation sanity checks were not applied');
+// Add a visible logic version to the successful and no-match responses so the
+// phone test proves which deployment is actually serving the request.
+source = source.replace(
+  "source: 'vehicle_natural_language_ranked',",
+  "source: 'vehicle_natural_language_ranked',\n          vehicle_logic_version: '20260714-generation-v2',"
+);
+source = source.replace(
+  "source: 'vehicle_no_match',",
+  "source: 'vehicle_no_match',\n        vehicle_logic_version: '20260714-generation-v2',"
+);
+
+if (!source.includes("generationModel.includes('COROLLA')")) {
+  throw new Error('Inline Corolla generation guard was not applied');
+}
+if (!source.includes("vehicle_logic_version: '20260714-generation-v2'")) {
+  throw new Error('Vehicle logic deployment marker was not applied');
 }
 
-if (changed) fs.writeFileSync(target, source, 'utf8');
+if (changed || !fs.readFileSync(target, 'utf8').includes("vehicle_logic_version: '20260714-generation-v2'")) {
+  fs.writeFileSync(target, source, 'utf8');
+}
+console.log('[vehicle-chat-search] generation/year sanity v2 enabled');
