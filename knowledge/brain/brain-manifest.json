@@ -151,6 +151,12 @@
         "knowledge/generated/commercial-intelligence/summary.json",
         "knowledge/generated/commercial-intelligence/unresolved.json"
       ]
+    },
+    {
+      "validator": "scripts/validate-digital-brain-context.mjs",
+      "prerequisites": [
+        "knowledge/generated/digital-brain/context-pack.json"
+      ]
     }
   ],
   "principles": [
