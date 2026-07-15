@@ -20,9 +20,13 @@ interface Group {
 }
 
 function unique(nodes: EntityNode[]) {
-  return Array.from(new Map(nodes.map((node) => [node.id, node])).values())
-    .sort(compareEntityAuthority)
-    .map((node) => ({ href: node.href, name: node.name }));
+  const nodesById = new Map<string, EntityNode>();
+  for (const node of nodes) nodesById.set(node.id, node);
+
+  const uniqueNodes: EntityNode[] = Array.from(nodesById.values());
+  uniqueNodes.sort((a: EntityNode, b: EntityNode) => compareEntityAuthority(a, b));
+
+  return uniqueNodes.map((node) => ({ href: node.href, name: node.name }));
 }
 
 function connected(id: string, targetKind: EntityKind) {
