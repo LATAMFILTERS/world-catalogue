@@ -26,12 +26,16 @@ on:
       - 'scripts/validate-failure-intelligence.mjs'
       - 'scripts/validate-commercial-intelligence.mjs'
       - 'scripts/validate-digital-brain.mjs'
+      - 'scripts/audit-repository-contracts.mjs'
       - 'scripts/audit-digital-brain.mjs'
       - 'scripts/build-digital-brain-context.mjs'
       - '.github/workflows/digital-brain.yml'
 
 permissions:
   contents: read
+
+env:
+  NODE_VERSION: '20'
 
 jobs:
   validate-and-audit:
@@ -42,7 +46,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Audit repository contracts and script syntax
+        run: node scripts/audit-repository-contracts.mjs
 
       - name: Validate Digital Brain manifest
         run: node scripts/validate-digital-brain.mjs
@@ -60,9 +67,10 @@ jobs:
         run: node scripts/build-digital-brain-context.mjs "$SAMPLE_QUERY" --visibility="$VISIBILITY"
 
       - name: Upload Digital Brain audit
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: elimfilters-digital-brain-${{ github.run_number }}
           path: knowledge/generated/digital-brain/
           retention-days: 14
-          if-no-files-found: error
+          if-no-files-found: warn
