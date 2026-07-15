@@ -1,0 +1,52 @@
+name: Failure Intelligence Graph
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'knowledge/entities/contaminants/**'
+      - 'knowledge/entities/failure-modes/**'
+      - 'knowledge/entities/symptoms/**'
+      - 'knowledge/entities/failure-scenarios/**'
+      - 'knowledge/entities/recommendation-rules/**'
+      - 'knowledge/entities/technologies/**'
+      - 'knowledge/entities/product-families/**'
+      - 'knowledge/entities/evidence/**'
+      - 'scripts/build-failure-intelligence.mjs'
+      - 'scripts/validate-failure-intelligence.mjs'
+      - '.github/workflows/failure-intelligence-graph.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build failure intelligence matrix
+        shell: bash
+        run: |
+          set +e
+          node scripts/build-failure-intelligence.mjs
+          code=$?
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then
+            exit "$code"
+          fi
+
+      - name: Validate failure intelligence
+        run: node scripts/validate-failure-intelligence.mjs
+
+      - name: Upload failure intelligence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-intelligence-${{ github.sha }}
+          path: knowledge/generated/failure-intelligence/
+          if-no-files-found: error
+          retention-days: 30
