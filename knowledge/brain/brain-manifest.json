@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "brain_id": "elimfilters-digital-brain",
   "name": "ELIMFILTERS Digital Brain",
   "status": "structural_complete",
@@ -23,6 +23,7 @@
       "location": "knowledge/entities",
       "authority": "canonical_validated",
       "sensitivity": "internal",
+      "public_projection_allowed": true,
       "write_policy": "reviewed_only"
     },
     {
@@ -31,6 +32,7 @@
       "location_env": "DATABASE_URL",
       "authority": "operational_current",
       "sensitivity": "internal",
+      "public_projection_allowed": false,
       "write_policy": "read_only_by_default"
     },
     {
@@ -39,6 +41,7 @@
       "location": "elimfilters-vault",
       "authority": "reviewed_working_knowledge",
       "sensitivity": "internal",
+      "public_projection_allowed": false,
       "write_policy": "human_reviewed"
     },
     {
@@ -47,6 +50,43 @@
       "location": "graphify-out/graph.json",
       "authority": "generated_semantic_inference",
       "sensitivity": "internal",
+      "public_projection_allowed": false,
+      "write_policy": "generated"
+    },
+    {
+      "id": "product-intelligence",
+      "kind": "derived_module",
+      "location": "knowledge/generated/product-intelligence",
+      "authority": "generated_semantic_inference",
+      "sensitivity": "internal",
+      "public_projection_allowed": false,
+      "write_policy": "generated"
+    },
+    {
+      "id": "equipment-graph",
+      "kind": "derived_module",
+      "location": "knowledge/generated/equipment-graph",
+      "authority": "generated_semantic_inference",
+      "sensitivity": "internal",
+      "public_projection_allowed": false,
+      "write_policy": "generated"
+    },
+    {
+      "id": "oem-graph",
+      "kind": "derived_module",
+      "location": "knowledge/generated/oem-graph",
+      "authority": "generated_semantic_inference",
+      "sensitivity": "internal",
+      "public_projection_allowed": false,
+      "write_policy": "generated"
+    },
+    {
+      "id": "failure-intelligence",
+      "kind": "derived_module",
+      "location": "knowledge/generated/failure-intelligence",
+      "authority": "generated_semantic_inference",
+      "sensitivity": "internal",
+      "public_projection_allowed": false,
       "write_policy": "generated"
     },
     {
@@ -55,6 +95,7 @@
       "location": "frontend",
       "authority": "application_implementation",
       "sensitivity": "public",
+      "public_projection_allowed": true,
       "write_policy": "version_controlled"
     },
     {
@@ -63,6 +104,7 @@
       "location": "part-search",
       "authority": "application_implementation",
       "sensitivity": "public",
+      "public_projection_allowed": true,
       "write_policy": "version_controlled"
     },
     {
@@ -71,6 +113,7 @@
       "location": "knowledge/generated/commercial-intelligence",
       "authority": "operational_current",
       "sensitivity": "confidential",
+      "public_projection_allowed": false,
       "write_policy": "sanitized_generated"
     }
   ],
@@ -89,11 +132,26 @@
     "secret"
   ],
   "required_validators": [
+    "scripts/audit-repository-contracts.mjs",
     "scripts/validate-knowledge-v2.mjs",
     "scripts/validate-oem-graph.mjs",
-    "scripts/validate-failure-intelligence.mjs",
-    "scripts/validate-commercial-intelligence.mjs",
     "scripts/validate-digital-brain.mjs"
+  ],
+  "conditional_validators": [
+    {
+      "validator": "scripts/validate-failure-intelligence.mjs",
+      "prerequisites": [
+        "knowledge/generated/failure-intelligence/matrix.json",
+        "knowledge/generated/failure-intelligence/unresolved.json"
+      ]
+    },
+    {
+      "validator": "scripts/validate-commercial-intelligence.mjs",
+      "prerequisites": [
+        "knowledge/generated/commercial-intelligence/summary.json",
+        "knowledge/generated/commercial-intelligence/unresolved.json"
+      ]
+    }
   ],
   "principles": [
     "provenance_first",
