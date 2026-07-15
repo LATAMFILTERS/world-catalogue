@@ -5,10 +5,30 @@ const { evaluateCoverage } = require('./policies');
 const { fetchApplicationPage } = require('./repository');
 
 function unitKey(item) {
-  return [item.segment, item.assetClass, item.make, item.model, item.yearFrom ?? 'UNKNOWN', item.yearTo ?? 'OPEN', item.fuel, item.market].join('|');
+  return [item.segment, item.assetClass, item.make || 'UNKNOWN', item.model || 'UNKNOWN', item.yearFrom ?? 'UNKNOWN', item.yearTo ?? 'OPEN', item.fuel, item.market].join('|');
 }
 
-function reviewReason(item) {
+function createCoverageAccumulator(requestedSegment = 'ALL') {
+  return {
+    requestedSegment,
+    groups: new Map(),
+    reviewBySku: new Map(),
+    uniqueSkus: new Set(),
+    quality: {
+      rows_scanned: 0,
+      operational_rows: 0,
+      quarantined_rows: 0,
+      rows_missing_year: 0,
+      rows_unknown_fuel: 0,
+      rows_unknown_market: 0,
+      rows_unknown_segment: 0,
+      rows_missing_make: 0,
+      rows_missing_model: 0,
+    },
+  };
+}
+
+function reviewReasons(item) {
   const reasons = [];
   if (item.segment === 'UNKNOWN') reasons.push('unclassified_asset');
   if (!item.make) reasons.push('missing_make');
@@ -18,69 +38,48 @@ function reviewReason(item) {
   return reasons;
 }
 
-function toReviewItem(item) {
-  return {
-    sku: item.sku,
-    category: item.category,
-    make: item.make,
-    model: item.model,
-    year_from: item.yearFrom,
-    year_to: item.yearTo,
-    fuel: item.fuel,
-    market: item.market,
-    asset_class: item.assetClass,
-    segment: item.segment,
-    reasons: reviewReason(item),
-    likely_hydraulic: item.category === 'hydraulic',
-    confidence: item.confidence,
-    evidence: item.evidence,
-  };
-}
-
-function buildUnits(rows, requestedSegment) {
-  const groups = new Map();
-  const reviewMap = new Map();
-  const quality = {
-    rows_scanned: rows.length,
-    operational_rows: 0,
-    quarantined_rows: 0,
-    rows_missing_year: 0,
-    rows_unknown_fuel: 0,
-    rows_unknown_market: 0,
-    rows_unknown_segment: 0,
-    rows_missing_make: 0,
-    rows_missing_model: 0,
-  };
-  const uniqueSkus = new Set();
-  const reviewSkus = new Set();
+function addRows(accumulator, rows) {
+  accumulator.quality.rows_scanned += rows.length;
 
   for (const row of rows) {
     const item = normalizeApplication(row);
-    const isQuarantined = item.segment === 'UNKNOWN' || !item.make || !item.model;
+    if (accumulator.requestedSegment !== 'ALL' && accumulator.requestedSegment !== 'UNKNOWN' && item.segment !== accumulator.requestedSegment) continue;
 
-    if (isQuarantined) {
-      quality.quarantined_rows += 1;
-      if (item.segment === 'UNKNOWN') quality.rows_unknown_segment += 1;
-      if (!item.make) quality.rows_missing_make += 1;
-      if (!item.model) quality.rows_missing_model += 1;
-      reviewSkus.add(item.sku);
-      const key = [item.sku, item.make || 'UNKNOWN', item.model || 'UNKNOWN', item.category].join('|');
-      if (!reviewMap.has(key)) reviewMap.set(key, toReviewItem(item));
+    const quarantined = item.segment === 'UNKNOWN' || !item.make || !item.model;
+    if (quarantined) {
+      accumulator.quality.quarantined_rows += 1;
+      if (item.segment === 'UNKNOWN') accumulator.quality.rows_unknown_segment += 1;
+      if (!item.make) accumulator.quality.rows_missing_make += 1;
+      if (!item.model) accumulator.quality.rows_missing_model += 1;
+      if (!accumulator.reviewBySku.has(item.sku)) {
+        accumulator.reviewBySku.set(item.sku, {
+          sku: item.sku,
+          category: item.category,
+          segment: item.segment,
+          make: item.make,
+          model: item.model,
+          reasons: new Set(),
+          application_rows: 0,
+          likely_hydraulic: item.category === 'hydraulic',
+        });
+      }
+      const review = accumulator.reviewBySku.get(item.sku);
+      for (const reason of reviewReasons(item)) review.reasons.add(reason);
+      review.application_rows += 1;
       continue;
     }
 
-    if (requestedSegment === 'UNKNOWN') continue;
-    if (requestedSegment !== 'ALL' && item.segment !== requestedSegment) continue;
+    if (accumulator.requestedSegment === 'UNKNOWN') continue;
 
-    quality.operational_rows += 1;
-    uniqueSkus.add(item.sku);
-    if (item.yearFrom === null) quality.rows_missing_year += 1;
-    if (item.fuel === 'unknown') quality.rows_unknown_fuel += 1;
-    if (item.market === 'unknown') quality.rows_unknown_market += 1;
+    accumulator.quality.operational_rows += 1;
+    accumulator.uniqueSkus.add(item.sku);
+    if (item.yearFrom === null) accumulator.quality.rows_missing_year += 1;
+    if (item.fuel === 'unknown') accumulator.quality.rows_unknown_fuel += 1;
+    if (item.market === 'unknown') accumulator.quality.rows_unknown_market += 1;
 
     const key = unitKey(item);
-    if (!groups.has(key)) {
-      groups.set(key, {
+    if (!accumulator.groups.has(key)) {
+      accumulator.groups.set(key, {
         segment: item.segment,
         asset_class: item.assetClass,
         make: item.make,
@@ -95,41 +94,104 @@ function buildUnits(rows, requestedSegment) {
         confidence: item.confidence,
       });
     }
-    const group = groups.get(key);
+    const group = accumulator.groups.get(key);
     group.categories.add(item.category);
     group.skus.add(item.sku);
     group.application_rows += 1;
   }
 
-  const units = [...groups.values()].map((group) => evaluateCoverage({
+  return accumulator;
+}
+
+function materializeUnits(accumulator) {
+  return [...accumulator.groups.values()].map((group) => evaluateCoverage({
     ...group,
     categories: [...group.categories].sort(),
     skus: [...group.skus].sort().slice(0, 25),
     sku_count: group.skus.size,
   }));
-
-  const reviewQueue = [...reviewMap.values()]
-    .sort((a, b) => Number(b.likely_hydraulic) - Number(a.likely_hydraulic) || String(a.sku).localeCompare(String(b.sku)));
-
-  return { units, reviewQueue, quality, uniqueSkus, reviewSkus };
 }
 
-async function runCoverageAudit(client, options) {
-  const rows = await fetchApplicationPage(client, options);
-  const { units, reviewQueue, quality, uniqueSkus, reviewSkus } = buildUnits(rows, options.segment);
-
+function finalizeCoverage(accumulator, { gapLimit = 100, reviewLimit = 250 } = {}) {
+  const units = materializeUnits(accumulator);
   const statusCounts = {};
   const segmentCounts = {};
   const categoryCounts = {};
+  const makeStats = new Map();
+
   for (const unit of units) {
     statusCounts[unit.status] = (statusCounts[unit.status] || 0) + 1;
     segmentCounts[unit.segment] = (segmentCounts[unit.segment] || 0) + 1;
     for (const category of unit.categories) categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+
+    if (!makeStats.has(unit.make)) makeStats.set(unit.make, { make: unit.make, units: 0, complete: 0, partial: 0, needs_context: 0, opportunity_score: 0 });
+    const stat = makeStats.get(unit.make);
+    stat.units += 1;
+    if (unit.status === 'complete') stat.complete += 1;
+    if (unit.status === 'partial' || unit.status === 'no_core_coverage') stat.partial += 1;
+    if (unit.status === 'needs_context' || unit.status === 'needs_year') stat.needs_context += 1;
+    stat.opportunity_score += unit.missing_required_categories.length * Math.max(1, unit.sku_count);
   }
 
+  const priorityGaps = units
+    .filter((unit) => unit.status === 'partial' || unit.status === 'no_core_coverage')
+    .sort((a, b) => b.priority_score - a.priority_score || String(a.make).localeCompare(String(b.make)) || String(a.model).localeCompare(String(b.model)))
+    .slice(0, gapLimit);
+
+  const dataQualityQueue = units
+    .filter((unit) => unit.status === 'needs_context' || unit.status === 'needs_year')
+    .sort((a, b) => b.priority_score - a.priority_score)
+    .slice(0, gapLimit);
+
+  const reviewQueue = [...accumulator.reviewBySku.values()]
+    .map((item) => ({ ...item, reasons: [...item.reasons].sort() }))
+    .sort((a, b) => Number(b.likely_hydraulic) - Number(a.likely_hydraulic) || b.application_rows - a.application_rows || a.sku.localeCompare(b.sku))
+    .slice(0, reviewLimit);
+
+  return {
+    summary: {
+      ...accumulator.quality,
+      unique_skus: accumulator.uniqueSkus.size,
+      review_skus: accumulator.reviewBySku.size,
+      coverage_units: units.length,
+      status_counts: statusCounts,
+      segment_counts: segmentCounts,
+      category_unit_counts: categoryCounts,
+    },
+    coverage_matrix: {
+      by_segment: segmentCounts,
+      by_category: categoryCounts,
+      by_status: statusCounts,
+    },
+    priority_gaps: priorityGaps,
+    data_quality_queue: dataQualityQueue,
+    review_queue: reviewQueue,
+    opportunities_by_make: [...makeStats.values()]
+      .sort((a, b) => b.opportunity_score - a.opportunity_score || b.units - a.units || a.make.localeCompare(b.make))
+      .slice(0, 100),
+  };
+}
+
+function buildUnits(rows, requestedSegment) {
+  const accumulator = createCoverageAccumulator(requestedSegment);
+  addRows(accumulator, rows);
+  const report = finalizeCoverage(accumulator, { gapLimit: Number.MAX_SAFE_INTEGER, reviewLimit: Number.MAX_SAFE_INTEGER });
+  return {
+    units: materializeUnits(accumulator),
+    reviewQueue: report.review_queue,
+    quality: report.summary,
+    uniqueSkus: accumulator.uniqueSkus,
+    reviewSkus: new Set(accumulator.reviewBySku.keys()),
+  };
+}
+
+async function runCoverageAudit(client, options) {
+  const rows = await fetchApplicationPage(client, options);
+  const accumulator = createCoverageAccumulator(options.segment);
+  addRows(accumulator, rows);
+  const report = finalizeCoverage(accumulator, { gapLimit: options.gapLimit, reviewLimit: options.reviewLimit || 250 });
   const pageSkuCount = rows.length ? Number(rows[0].page_sku_count || 0) : 0;
   const nextAfterSku = rows.length ? rows[rows.length - 1].sku : null;
-  const requestedReviewOnly = options.segment === 'UNKNOWN';
 
   return {
     pagination: {
@@ -138,27 +200,14 @@ async function runCoverageAudit(client, options) {
       has_more: pageSkuCount === options.limit,
       next_after_sku: nextAfterSku,
     },
-    summary: {
-      ...quality,
-      unique_skus: uniqueSkus.size,
-      review_skus: reviewSkus.size,
-      coverage_units: units.length,
-      status_counts: statusCounts,
-      segment_counts: segmentCounts,
-      category_unit_counts: categoryCounts,
-    },
-    operational_coverage: requestedReviewOnly ? [] : units,
-    priority_gaps: requestedReviewOnly ? [] : units
-      .filter((unit) => unit.status !== 'complete')
-      .sort((a, b) => b.priority_score - a.priority_score || String(a.make).localeCompare(String(b.make)) || String(a.model).localeCompare(String(b.model)))
-      .slice(0, options.gapLimit),
-    review_queue: reviewQueue.slice(0, options.gapLimit),
-    review_queue_summary: {
-      total_items_in_page: reviewQueue.length,
-      likely_hydraulic: reviewQueue.filter((item) => item.likely_hydraulic).length,
-      policy: 'Quarantined records are excluded from operational coverage until make/model/asset classification is confirmed.',
-    },
+    ...report,
   };
 }
 
-module.exports = { runCoverageAudit, buildUnits };
+module.exports = {
+  runCoverageAudit,
+  buildUnits,
+  createCoverageAccumulator,
+  addRows,
+  finalizeCoverage,
+};
