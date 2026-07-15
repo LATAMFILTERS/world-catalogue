@@ -6,7 +6,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-part-search-results-link-fix.js && node scripts/apply-syntrax-source-fix.js && node scripts/apply-intekcore-source-fix.js && node scripts/apply-technology-uniformity-source-fix.js && node scripts/apply-about-who-we-are-fix.js && node scripts/apply-navigation-font-uniformity.js && node scripts/apply-vehicle-chat-search-fix.js && node scripts/apply-vehicle-generation-sanity-fix.js && node scripts/apply-vehicle-coverage-audit.js",
+    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-part-search-results-link-fix.js && node scripts/apply-syntrax-source-fix.js && node scripts/apply-intekcore-source-fix.js && node scripts/apply-technology-uniformity-source-fix.js && node scripts/apply-about-who-we-are-fix.js && node scripts/apply-navigation-font-uniformity.js && node scripts/apply-vehicle-chat-search-fix.js && node scripts/apply-vehicle-generation-sanity-fix.js && node scripts/apply-vehicle-coverage-audit.js && node scripts/apply-coverage-audit-engine.js",
     "start": "node server.js",
     "dev": "node server.js",
     "build": "cd frontend && npm ci && npm run build"
