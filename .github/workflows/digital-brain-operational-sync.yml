@@ -9,6 +9,7 @@ on:
       - 'knowledge/entities/**'
       - 'elimfilters-vault/**'
       - 'scripts/check-postgres-readonly.mjs'
+      - 'scripts/audit-catalog-application-coverage.mjs'
       - 'scripts/readonly-sql-guard.mjs'
       - 'scripts/sync-obsidian-knowledge.mjs'
       - 'scripts/regenerate-graphify.sh'
@@ -43,6 +44,7 @@ jobs:
           node scripts/audit-repository-contracts.mjs
           node scripts/validate-digital-brain.mjs
           node scripts/validate-knowledge-v2.mjs
+          node --check scripts/audit-catalog-application-coverage.mjs
 
       - name: Synchronize Obsidian knowledge index
         run: node scripts/sync-obsidian-knowledge.mjs
@@ -58,9 +60,13 @@ jobs:
         if: env.DATABASE_URL_READONLY != ''
         run: node scripts/check-postgres-readonly.mjs
 
+      - name: Run catalogue application coverage audit
+        if: env.DATABASE_URL_READONLY != ''
+        run: node scripts/audit-catalog-application-coverage.mjs
+
       - name: PostgreSQL connection not configured
         if: env.DATABASE_URL_READONLY == ''
-        run: echo '[operational-sync] DATABASE_URL_READONLY secret is missing; PostgreSQL synchronization skipped'
+        run: echo '[operational-sync] DATABASE_URL_READONLY secret is missing; PostgreSQL audit skipped'
 
       - name: Install uv
         if: env.GROQ_API_KEY != ''
