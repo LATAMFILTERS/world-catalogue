@@ -1,0 +1,44 @@
+name: Coverage Application Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/audit/coverage/**'
+      - 'src/coverage-audit-engine.js'
+      - 'scripts/verify-coverage-audit-direct.js'
+      - '.github/workflows/coverage-application-integrity.yml'
+  pull_request:
+    paths:
+      - 'src/audit/coverage/**'
+      - 'src/coverage-audit-engine.js'
+      - 'scripts/verify-coverage-audit-direct.js'
+      - '.github/workflows/coverage-application-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check coverage engine syntax
+        run: |
+          node --check src/audit/coverage/normalization.js
+          node --check src/audit/coverage/policies.js
+          node --check src/audit/coverage/repository.js
+          node --check src/audit/coverage/service.js
+          node --check src/audit/coverage/intelligence.js
+          node --check src/audit/coverage/route.js
+          node --check scripts/verify-coverage-audit-direct.js
+
+      - name: Verify application-source classification
+        run: node scripts/verify-coverage-audit-direct.js
