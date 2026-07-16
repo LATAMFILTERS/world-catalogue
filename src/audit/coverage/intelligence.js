@@ -3,7 +3,7 @@
 const { fetchApplicationPage, saveCoverageReport, loadLatestCoverageReport } = require('./repository');
 const { createCoverageAccumulator, addRows, finalizeCoverage } = require('./service');
 
-const ENGINE_VERSION = 'coverage-intelligence-phase1-v1';
+const ENGINE_VERSION = 'coverage-intelligence-phase2-application-sources-v2';
 const state = {
   status: 'idle',
   started_at: null,
@@ -94,9 +94,20 @@ async function runFullCoverageIntelligence(pool, options = {}) {
       scope: { make: make || 'ALL', segment },
       policy: {
         operational_data_only: true,
+        catalogue_rows_never_modified: true,
         unknown_records_quarantined: true,
         unknown_records_are_not_counted_as_coverage_gaps: true,
-        catalogue_source: 'elimfilters_catalog.vehicle_applications',
+        unsupported_causes_are_not_inferred: true,
+        catalogue_sources: [
+          'elimfilters_catalog.vehicle_applications',
+          'elimfilters_catalog.equipment_applications',
+          'elimfilters_catalog products without published applications',
+        ],
+      },
+      interpretation: {
+        no_published_application_is_not_equal_to_obsolete: true,
+        no_published_application_is_not_equal_to_oem_only: true,
+        lifecycle_and_license_status_require_external_evidence: true,
       },
       scan: {
         pages_processed: state.pages_processed,
@@ -151,14 +162,9 @@ async function runFullCoverageIntelligence(pool, options = {}) {
 
 function startFullCoverageIntelligence(pool, options = {}) {
   if (state.status === 'running') return false;
-
-  // Start the async function directly. It sets state.status='running' before
-  // reaching its first await, so the POST response and immediate status check
-  // cannot incorrectly report "idle" after accepting the run.
   runFullCoverageIntelligence(pool, options).catch((error) => {
-    console.error('[coverage-intelligence-phase1]', error.stack || error.message);
+    console.error('[coverage-intelligence]', error.stack || error.message);
   });
-
   return true;
 }
 
