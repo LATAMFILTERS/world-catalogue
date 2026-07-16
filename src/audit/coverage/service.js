@@ -5,7 +5,7 @@ const { evaluateCoverage } = require('./policies');
 const { fetchApplicationPage } = require('./repository');
 
 function unitKey(item) {
-  return [item.segment, item.assetClass, item.make || 'UNKNOWN', item.model || 'UNKNOWN', item.yearFrom ?? 'UNKNOWN', item.yearTo ?? 'OPEN', item.fuel, item.market].join('|');
+  return [item.segment, item.assetClass, item.application_source, item.make || 'UNKNOWN', item.model || 'UNKNOWN', item.yearFrom ?? 'UNKNOWN', item.yearTo ?? 'OPEN', item.fuel, item.market].join('|');
 }
 
 function createCoverageAccumulator(requestedSegment = 'ALL') {
@@ -18,24 +18,55 @@ function createCoverageAccumulator(requestedSegment = 'ALL') {
       rows_scanned: 0,
       operational_rows: 0,
       quarantined_rows: 0,
+      rows_vehicle_application: 0,
+      rows_equipment_application: 0,
+      rows_without_published_application: 0,
       rows_missing_year: 0,
       rows_unknown_fuel: 0,
       rows_unknown_market: 0,
       rows_unknown_segment: 0,
       rows_missing_make: 0,
       rows_missing_model: 0,
+      hydraulic_without_published_equipment: 0,
+      products_with_oem_codes_but_no_application: 0,
+      products_with_crossrefs_but_no_application: 0,
     },
   };
 }
 
 function reviewReasons(item) {
   const reasons = [];
-  if (item.segment === 'UNKNOWN') reasons.push('unclassified_asset');
+
+  if (!item.has_published_application) {
+    reasons.push('no_published_application');
+    if (item.category === 'hydraulic') reasons.push('hydraulic_without_published_equipment');
+    else reasons.push('product_without_published_application');
+    if (item.oem_code_count > 0) reasons.push('oem_reference_present_without_application');
+    if (item.competitor_code_count > 0) reasons.push('cross_reference_present_without_application');
+    reasons.push('lifecycle_or_oem_restriction_requires_verification');
+    return reasons;
+  }
+
+  if (item.segment === 'UNKNOWN') {
+    reasons.push(item.application_source === 'equipment' ? 'equipment_application_unclassified' : 'unclassified_asset');
+  }
   if (!item.make) reasons.push('missing_make');
   if (!item.model) reasons.push('missing_model');
-  if (item.category === 'hydraulic') reasons.push('possible_hydraulic_product_without_confirmed_equipment');
+  if (item.category === 'hydraulic' && item.application_source !== 'equipment') {
+    reasons.push('hydraulic_application_not_confirmed_as_equipment');
+  }
   if (item.category === 'other') reasons.push('uncertain_product_category');
   return reasons;
+}
+
+function suggestedDisposition(item) {
+  if (!item.has_published_application && item.category === 'hydraulic') return 'research_equipment_or_confirm_oem_only';
+  if (!item.has_published_application && item.oem_code_count > 0) return 'verify_oem_service_part_or_restricted_application';
+  if (!item.has_published_application && item.competitor_code_count > 0) return 'research_application_from_cross_reference_sources';
+  if (!item.has_published_application) return 'verify_active_obsolete_or_application_unpublished';
+  if (item.application_source === 'equipment' && item.segment === 'UNKNOWN') return 'normalize_equipment_identity';
+  if (!item.make || !item.model) return 'repair_application_identity';
+  return 'engineering_review';
 }
 
 function addRows(accumulator, rows) {
@@ -43,29 +74,46 @@ function addRows(accumulator, rows) {
 
   for (const row of rows) {
     const item = normalizeApplication(row);
+    if (item.application_source === 'vehicle') accumulator.quality.rows_vehicle_application += 1;
+    if (item.application_source === 'equipment') accumulator.quality.rows_equipment_application += 1;
+    if (!item.has_published_application) accumulator.quality.rows_without_published_application += 1;
+
     if (accumulator.requestedSegment !== 'ALL' && accumulator.requestedSegment !== 'UNKNOWN' && item.segment !== accumulator.requestedSegment) continue;
 
-    const quarantined = item.segment === 'UNKNOWN' || !item.make || !item.model;
+    const quarantined = !item.has_published_application || item.segment === 'UNKNOWN' || !item.make || !item.model;
     if (quarantined) {
       accumulator.quality.quarantined_rows += 1;
       if (item.segment === 'UNKNOWN') accumulator.quality.rows_unknown_segment += 1;
       if (!item.make) accumulator.quality.rows_missing_make += 1;
       if (!item.model) accumulator.quality.rows_missing_model += 1;
+      if (!item.has_published_application && item.category === 'hydraulic') accumulator.quality.hydraulic_without_published_equipment += 1;
+      if (!item.has_published_application && item.oem_code_count > 0) accumulator.quality.products_with_oem_codes_but_no_application += 1;
+      if (!item.has_published_application && item.competitor_code_count > 0) accumulator.quality.products_with_crossrefs_but_no_application += 1;
+
       if (!accumulator.reviewBySku.has(item.sku)) {
         accumulator.reviewBySku.set(item.sku, {
           sku: item.sku,
           category: item.category,
           segment: item.segment,
+          asset_class: item.assetClass,
+          application_source: item.application_source,
+          has_published_application: item.has_published_application,
           make: item.make,
           model: item.model,
+          oem_code_count: item.oem_code_count,
+          competitor_code_count: item.competitor_code_count,
           reasons: new Set(),
           application_rows: 0,
           likely_hydraulic: item.category === 'hydraulic',
+          suggested_disposition: suggestedDisposition(item),
+          classification_status: 'requires_evidence',
         });
       }
       const review = accumulator.reviewBySku.get(item.sku);
       for (const reason of reviewReasons(item)) review.reasons.add(reason);
       review.application_rows += 1;
+      review.oem_code_count = Math.max(review.oem_code_count, item.oem_code_count);
+      review.competitor_code_count = Math.max(review.competitor_code_count, item.competitor_code_count);
       continue;
     }
 
@@ -82,6 +130,7 @@ function addRows(accumulator, rows) {
       accumulator.groups.set(key, {
         segment: item.segment,
         asset_class: item.assetClass,
+        application_source: item.application_source,
         make: item.make,
         model: item.model,
         yearFrom: item.yearFrom,
@@ -117,6 +166,8 @@ function finalizeCoverage(accumulator, { gapLimit = 100, reviewLimit = 250 } = {
   const statusCounts = {};
   const segmentCounts = {};
   const categoryCounts = {};
+  const reviewReasonCounts = {};
+  const dispositionCounts = {};
   const makeStats = new Map();
 
   for (const unit of units) {
@@ -143,9 +194,16 @@ function finalizeCoverage(accumulator, { gapLimit = 100, reviewLimit = 250 } = {
     .sort((a, b) => b.priority_score - a.priority_score)
     .slice(0, gapLimit);
 
-  const reviewQueue = [...accumulator.reviewBySku.values()]
-    .map((item) => ({ ...item, reasons: [...item.reasons].sort() }))
-    .sort((a, b) => Number(b.likely_hydraulic) - Number(a.likely_hydraulic) || b.application_rows - a.application_rows || a.sku.localeCompare(b.sku))
+  const allReviewItems = [...accumulator.reviewBySku.values()]
+    .map((item) => ({ ...item, reasons: [...item.reasons].sort() }));
+
+  for (const item of allReviewItems) {
+    for (const reason of item.reasons) reviewReasonCounts[reason] = (reviewReasonCounts[reason] || 0) + 1;
+    dispositionCounts[item.suggested_disposition] = (dispositionCounts[item.suggested_disposition] || 0) + 1;
+  }
+
+  const reviewQueue = allReviewItems
+    .sort((a, b) => Number(b.likely_hydraulic) - Number(a.likely_hydraulic) || Number(!b.has_published_application) - Number(!a.has_published_application) || b.application_rows - a.application_rows || a.sku.localeCompare(b.sku))
     .slice(0, reviewLimit);
 
   return {
@@ -157,11 +215,15 @@ function finalizeCoverage(accumulator, { gapLimit = 100, reviewLimit = 250 } = {
       status_counts: statusCounts,
       segment_counts: segmentCounts,
       category_unit_counts: categoryCounts,
+      review_reason_counts: reviewReasonCounts,
+      suggested_disposition_counts: dispositionCounts,
     },
     coverage_matrix: {
       by_segment: segmentCounts,
       by_category: categoryCounts,
       by_status: statusCounts,
+      by_review_reason: reviewReasonCounts,
+      by_suggested_disposition: dispositionCounts,
     },
     priority_gaps: priorityGaps,
     data_quality_queue: dataQualityQueue,
