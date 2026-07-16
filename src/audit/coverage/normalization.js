@@ -82,8 +82,22 @@ function classifyProductCategory(row) {
   return 'other';
 }
 
-function classifyAsset(application) {
-  const text = normalizeText([application?.make, application?.model, application?.model_type, application?.notes].filter(Boolean).join(' '));
+function classifyAsset(application, applicationSource = 'vehicle') {
+  if (applicationSource === 'none') {
+    return { assetClass: 'unassigned_product', segment: 'UNKNOWN', confidence: 1 };
+  }
+
+  const text = normalizeText([application?.make, application?.model, application?.model_type, application?.equipment_type, application?.notes].filter(Boolean).join(' '));
+  if (applicationSource === 'equipment') {
+    if (/\b(COMPRESSOR|VACUUM|PUMP|GENERATOR|GENSET|STATIONARY|DENTAL SYSTEM|ROTARY VANE|TURBINE|POWER UNIT)\b/.test(text)) {
+      return { assetClass: 'industrial_equipment', segment: 'INDUSTRIAL', confidence: 0.92 };
+    }
+    if (/\b(TRUCK|BUS|COACH|TRACTOR|EXCAVATOR|LOADER|FORKLIFT|PAVER|COMBINE|HARVESTER|MINING|TERRATRAC|TRANSPORTER|DOZER|GRADER|CRANE)\b/.test(text)) {
+      return { assetClass: 'mobile_heavy_equipment', segment: 'HEAVY_DUTY', confidence: 0.9 };
+    }
+    return { assetClass: 'equipment_unclassified', segment: 'UNKNOWN', confidence: 0.35 };
+  }
+
   if (/\b(COMPRESSOR|VACUUM|PUMP|GENERATOR|GENSET|STATIONARY|DENTAL SYSTEM|ROTARY VANE)\b/.test(text)) {
     return { assetClass: 'industrial_equipment', segment: 'INDUSTRIAL', confidence: 0.9 };
   }
@@ -96,16 +110,33 @@ function classifyAsset(application) {
   return { assetClass: 'unknown', segment: 'UNKNOWN', confidence: 0 };
 }
 
+function relationshipCount(value) {
+  if (Array.isArray(value)) return value.length;
+  if (value && typeof value === 'object') return Object.keys(value).length;
+  if (typeof value === 'string') {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === '[]' || trimmed === '{}') return 0;
+    try {
+      const parsed = JSON.parse(trimmed);
+      return relationshipCount(parsed);
+    } catch {
+      return trimmed.split(/[,;|]/).filter(Boolean).length;
+    }
+  }
+  return 0;
+}
+
 function normalizeApplication(row) {
   const application = row.application || {};
+  const applicationSource = row.application_source || 'vehicle';
   const years = normalizeYears(application);
   const fuel = normalizeFuel(application);
   const market = normalizeMarket(application);
-  const asset = classifyAsset(application);
+  const asset = classifyAsset(application, applicationSource);
   return {
     sku: row.sku,
-    make: normalizeText(application.make) || null,
-    model: normalizeText([application.model, application.model_family, application.model_type].filter(Boolean).join(' ')) || null,
+    make: normalizeText(application.make || application.manufacturer || application.brand) || null,
+    model: normalizeText([application.model, application.model_family, application.model_type, application.equipment_type].filter(Boolean).join(' ')) || null,
     yearFrom: years.yearFrom,
     yearTo: years.yearTo,
     fuel: fuel.value,
@@ -113,9 +144,13 @@ function normalizeApplication(row) {
     assetClass: asset.assetClass,
     segment: asset.segment,
     category: classifyProductCategory(row),
+    application_source: applicationSource,
+    has_published_application: applicationSource !== 'none',
+    oem_code_count: relationshipCount(row.oem_codes),
+    competitor_code_count: relationshipCount(row.competitor_codes),
     confidence: { year: years.confidence, fuel: fuel.confidence, market: market.confidence, segment: asset.confidence },
-    evidence: { year: years.evidence },
+    evidence: { year: years.evidence, application_source: applicationSource },
   };
 }
 
-module.exports = { normalizeText, normalizeApplication, classifyProductCategory, classifyAsset };
+module.exports = { normalizeText, normalizeApplication, classifyProductCategory, classifyAsset, relationshipCount };
