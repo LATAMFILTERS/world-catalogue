@@ -24,19 +24,24 @@ function registerCoverageRoutes({ app, pool, limiter }) {
 
     const client = await pool.connect();
     try {
-      await client.query("SET LOCAL statement_timeout = '12000'");
+      await client.query("SET statement_timeout = '12000'");
       const report = await runCoverageAudit(client, { make, segment, limit, gapLimit, afterSku });
       return res.json({
         success: true,
-        engine_version: 'coverage-audit-domain-v2-quarantine',
+        engine_version: ENGINE_VERSION,
         read_only: true,
+        catalogue_rows_modified: false,
         scope: { make: make || 'ALL', segment, sku_limit: limit, gap_limit: gapLimit, after_sku: afterSku || null },
         policy: {
           operational_data_only: true,
+          vehicle_applications_included: true,
+          equipment_applications_included: true,
+          products_without_published_applications_included: true,
           unknown_records_quarantined: true,
           unknown_records_are_not_counted_as_coverage_gaps: true,
+          obsolete_or_oem_only_status_requires_external_evidence: true,
         },
-        limitation: 'This audit evaluates stored applications after domain normalization. Completely absent assets require an external reference universe.',
+        limitation: 'The audit identifies products without published applications but does not infer that they are obsolete, licensed, restricted, or OEM-only without external evidence.',
         ...report,
       });
     } catch (error) {
