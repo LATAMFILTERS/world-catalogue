@@ -8,8 +8,7 @@
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    posthog?: any;
+    posthog?: { capture?: (name: string, properties?: Record<string, unknown>) => void };
     clarity?: (type: string, key: string, value?: string) => void;
     dataLayer?: unknown[];
   }

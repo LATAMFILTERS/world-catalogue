@@ -85,7 +85,7 @@ function DieselWaterContaminationContent() {
             fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75,
             textAlign: 'justify', marginBottom: '1rem',
           }}>
-            The operational signal for diesel water contamination is almost never "water in fuel."
+            The operational signal for diesel water contamination is almost never &quot;water in fuel.&quot;
             It is unexplained short filter life: fuel filters that should last 500 operating hours
             plugging at 50–100 hours. It is injector failures arriving outside the normal replacement
             schedule. It is engine hard starts in cold mornings, or power loss under load from
@@ -369,7 +369,7 @@ function DieselWaterContaminationContent() {
             where water is present in bulk form and easily separated — rather than at the engine
             fuel filter, where coalescing efficiency is limited by fuel flow rate and microbial
             biomass may already have formed. A contaminated bulk fuel supply will defeat any
-            on-engine filtration system if the source contamination rate exceeds the filter's
+            on-engine filtration system if the source contamination rate exceeds the filter&apos;s
             water holding capacity.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>

@@ -78,7 +78,7 @@ export function CitationPanel({ citation, compact = false }: CitationPanelProps)
 
       {citation.claim && (
         <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', lineHeight: 1.6, marginBottom: '0.5rem' }}>
-          "{citation.claim}"
+          &ldquo;{citation.claim}&rdquo;
         </div>
       )}
 
