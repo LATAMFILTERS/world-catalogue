@@ -103,6 +103,14 @@ class TelegramClient:
             raise TelegramApiError(f"{method} failed: {data}")
         return data
 
+    def get_me(self) -> dict:
+        """Calls Telegram's ``getMe`` to confirm the bot token is valid and
+        the API is reachable. Used at startup so a bad token or network
+        outage fails fast and visibly instead of only surfacing inside the
+        poll loop's retry-and-log cycle."""
+        data = self._call("getMe", {})
+        return data.get("result", {})
+
     def get_updates(self, offset: int | None = None, poll_timeout: int = 25) -> list[TelegramMessage]:
         params: dict = {"timeout": poll_timeout}
         if offset is not None:

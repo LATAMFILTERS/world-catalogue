@@ -1,7 +1,9 @@
 import logging
 import time
 
-from kleo.app import KleoApp, setup_logging
+import pytest
+
+from kleo.app import KleoApp, log_startup_config, setup_logging, verify_telegram_connectivity
 from kleo.executor import ExecutionResult, FakeExecutor
 from kleo.storage import Storage
 from kleo.tasks import TaskStatus
@@ -123,6 +125,36 @@ def test_system_continues_after_restart_requeues_running_tasks(base_config, tmp_
     assert final.status in (TaskStatus.COMPLETED, TaskStatus.ERROR)
     assert len(executor.calls) == 1  # the requeued task was actually re-executed
     storage2.close()
+
+
+def test_verify_telegram_connectivity_logs_bot_username_on_success(caplog):
+    client = TelegramClient(
+        "123:fake",
+        transport=lambda *a, **k: {"ok": True, "result": {"id": 7, "username": "kleo_bot"}},
+    )
+    with caplog.at_level(logging.INFO, logger="kleo.app"):
+        me = verify_telegram_connectivity(client)
+
+    assert me == {"id": 7, "username": "kleo_bot"}
+    assert "kleo_bot" in caplog.text
+
+
+def test_verify_telegram_connectivity_exits_clearly_on_bad_token():
+    client = TelegramClient(
+        "123:fake",
+        transport=lambda *a, **k: {"ok": False, "error_code": 401, "description": "Unauthorized"},
+    )
+    with pytest.raises(SystemExit):
+        verify_telegram_connectivity(client)
+
+
+def test_log_startup_config_reports_projects_and_poll_interval(base_config, caplog):
+    with caplog.at_level(logging.INFO, logger="kleo.app"):
+        log_startup_config(base_config)
+
+    assert "world" in caplog.text
+    assert "999" in caplog.text  # authorized_chat_id from base_config
+    assert base_config.telegram_token not in caplog.text
 
 
 def test_no_token_is_printed_in_the_log_file(base_config, tmp_path):

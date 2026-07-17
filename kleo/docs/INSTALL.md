@@ -92,6 +92,13 @@ Esto arranca KLEO como proceso en segundo plano usando el entorno virtual,
 guarda su PID en `kleo\kleo.pid`, y escribe logs en `kleo\data\kleo.log`
 (rotativo, UTF-8) y `kleo\data\kleo-stdout.log` / `kleo-stderr.log`.
 
+Al iniciar, KLEO valida la configuración cargada y llama a `getMe` de
+Telegram para confirmar que el token es válido y la API es alcanzable; si
+falla, termina de inmediato con un mensaje claro en vez de reintentar en
+silencio. El script `start-kleo.ps1` espera unos segundos y verifica que el
+proceso siga vivo — si murió justo al iniciar, imprime las últimas líneas de
+`kleo-stderr.log` automáticamente en vez de reportar éxito.
+
 ## 6. Detener KLEO
 
 ```powershell

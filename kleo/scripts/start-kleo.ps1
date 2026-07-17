@@ -44,6 +44,22 @@ $process = Start-Process -FilePath $VenvPython `
 
 $process.Id | Out-File -FilePath $PidFile -Encoding utf8 -NoNewline
 
+Write-Host "Starting KLEO (PID $($process.Id)), verifying it stays up..."
+Start-Sleep -Seconds 2
+$stillRunning = Get-Process -Id $process.Id -ErrorAction SilentlyContinue
+
+if ($null -eq $stillRunning) {
+    Remove-Item -Path $PidFile -ErrorAction SilentlyContinue
+    Write-Host "KLEO exited immediately after starting (PID $($process.Id) is gone). It did not stay up." -ForegroundColor Red
+    Write-Host "Last lines of ${StdErrLog}:" -ForegroundColor Red
+    if (Test-Path $StdErrLog) {
+        Get-Content $StdErrLog -Tail 20
+    } else {
+        Write-Host "(no stderr log was written)"
+    }
+    exit 1
+}
+
 Write-Host "KLEO started (PID $($process.Id))."
 Write-Host "Logs: $StdOutLog / $StdErrLog"
 Write-Host "Stop with: scripts\stop-kleo.ps1"
