@@ -1,0 +1,4 @@
+# KLEO runtime has no third-party dependencies — the Telegram client uses
+# only the Python standard library (urllib) to keep the Windows install
+# footprint minimal. pytest is required to run the automated test suite.
+pytest>=8.0

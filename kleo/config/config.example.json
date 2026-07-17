@@ -1,0 +1,39 @@
+{
+  "projects": {
+    "world": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "phoenix": "C:\\Users\\VICTOR ABREU\\Documents\\PROJECT-PHOENIX",
+    "marketing": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-Marketing",
+    "commercial": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-Commercial",
+    "mcp": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-MCP",
+    "kleo": "C:\\Users\\VICTOR ABREU\\Documents\\KleoOS",
+    "elimfilters": "C:\\Users\\VICTOR ABREU\\Documents\\elimfilters"
+  },
+  "claude_path": "claude",
+  "claude_extra_args": [],
+  "claude_timeout_seconds": 900,
+  "db_path": "./data/kleo.db",
+  "log_path": "./data/kleo.log",
+  "poll_interval_seconds": 2.0,
+  "security": {
+    "require_confirmation": true,
+    "destructive_patterns": [
+      "\\brm\\s+-rf\\b",
+      "\\brmdir\\b",
+      "\\bdel\\s+/[sfq]",
+      "\\bRemove-Item\\b",
+      "\\bgit\\s+reset\\s+--hard\\b",
+      "\\bgit\\s+clean\\b",
+      "\\bDROP\\s+DATABASE\\b",
+      "\\bformat\\s+[a-zA-Z]:\\b"
+    ]
+  },
+  "mcp": {
+    "enabled": {
+      "github": false,
+      "gmail": false,
+      "gdrive": false,
+      "gcalendar": false,
+      "filesystem": true
+    }
+  }
+}
