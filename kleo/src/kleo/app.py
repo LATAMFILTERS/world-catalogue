@@ -76,29 +76,36 @@ def verify_telegram_connectivity(telegram: TelegramClient) -> dict:
 
 
 def format_result_message(task: Task, result: ExecutionResult) -> str:
-    """Builds the Telegram reply for a finished task: real stdout/stderr,
-    exit code, and git status/diff --stat — never a fabricated summary."""
+    """Build the Telegram reply without treating model prose as evidence."""
     lines = [f"Tarea #{task.id} — proyecto: {task.project}"]
     if result.cancelled:
         lines.append("Estado: CANCELADA")
     elif result.timed_out:
         lines.append("Estado: TIMEOUT")
-    elif result.exit_code == 0:
-        lines.append("Estado: COMPLETADA")
-    else:
+    elif result.exit_code != 0:
         lines.append(f"Estado: ERROR (exit code {result.exit_code})")
+    elif result.repository_changed:
+        lines.append("Estado: COMPLETADA CON CAMBIOS VERIFICADOS EN GIT")
+    else:
+        lines.append("Estado: EJECUTADA — SIN CAMBIOS VERIFICABLES EN EL REPOSITORIO")
 
-    lines.append("\nResumen (stdout de Claude Code):")
+    lines.append("\nSalida del agente (NO constituye evidencia por sí sola):")
     lines.append(result.stdout.strip() or "(sin salida)")
+
+    if result.exit_code == 0 and not result.repository_changed:
+        lines.append(
+            "\nVerificación KLEO: el proceso terminó con exit code 0, pero Git no detectó "
+            "ningún cambio producido durante esta tarea. No se certifica como completada."
+        )
 
     if result.stderr.strip():
         lines.append("\nErrores (stderr):")
         lines.append(result.stderr.strip())
 
-    lines.append("\ngit status:")
+    lines.append("\nEstado Git actual:")
     lines.append(result.git_status or "(sin cambios)")
 
-    lines.append("\ngit diff --stat:")
+    lines.append("\nDiferencias Git actuales (--stat):")
     lines.append(result.git_diff_stat or "(sin cambios)")
 
     return "\n".join(lines)
