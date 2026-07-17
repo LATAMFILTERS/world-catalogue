@@ -19,7 +19,7 @@ from kleo.executor import ClaudeCodeExecutor, ExecutionResult
 from kleo.security import SecretRedactor, install_redaction
 from kleo.storage import Storage
 from kleo.tasks import Task, TaskStatus, utcnow_iso
-from kleo.telegram_client import TelegramClient, TelegramMessage
+from kleo.telegram_client import TelegramApiError, TelegramClient, TelegramMessage
 
 logger = logging.getLogger("kleo.app")
 
@@ -45,6 +45,34 @@ def setup_logging(log_path: Path, token: str | None) -> None:
 
     redactor = SecretRedactor(secrets=(token,) if token else ())
     install_redaction(root, redactor)
+
+
+def log_startup_config(config: Config) -> None:
+    """Logs a one-line summary of the loaded configuration so an operator
+    checking the log after startup can see what KLEO picked up, without
+    exposing the token itself."""
+    logger.info(
+        "Config loaded: projects=%s poll_interval=%.1fs claude_path=%s "
+        "authorized_chat_id=%s",
+        config.projects.keys(),
+        config.poll_interval_seconds,
+        config.claude_path,
+        config.authorized_chat_id if config.authorized_chat_id is not None else "(unrestricted)",
+    )
+
+
+def verify_telegram_connectivity(telegram: TelegramClient) -> dict:
+    """Confirms the bot token is valid and Telegram is reachable before KLEO
+    starts polling. Raises SystemExit with a clear message on failure instead
+    of letting the poll loop retry silently forever."""
+    try:
+        me = telegram.get_me()
+    except TelegramApiError as exc:
+        raise SystemExit(
+            f"No se pudo conectar con Telegram (revisa TELEGRAM_BOT_TOKEN): {exc}"
+        ) from exc
+    logger.info("Connected to Telegram as @%s (id=%s)", me.get("username", "?"), me.get("id"))
+    return me
 
 
 def format_result_message(task: Task, result: ExecutionResult) -> str:
@@ -216,8 +244,10 @@ def build_app(config_path: str | None = None, env_path: str | None = None) -> Kl
             "TELEGRAM_BOT_TOKEN no está configurado (env o .env). Ver .env.example."
         )
     setup_logging(config.log_path, config.telegram_token)
+    log_startup_config(config)
     storage = Storage(config.db_path)
     telegram = TelegramClient(config.telegram_token)
+    verify_telegram_connectivity(telegram)
     executor = ClaudeCodeExecutor(
         claude_path=config.claude_path,
         extra_args=config.claude_extra_args,
@@ -228,7 +258,7 @@ def build_app(config_path: str | None = None, env_path: str | None = None) -> Kl
 
 def main() -> None:
     app = build_app()
-    logger.info("KLEO starting")
+    logger.info("KLEO ready: listening for Telegram messages")
     try:
         app.run_forever()
     except KeyboardInterrupt:

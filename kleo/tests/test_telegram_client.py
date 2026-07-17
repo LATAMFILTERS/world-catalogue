@@ -1,5 +1,8 @@
+import pytest
+
 from kleo.telegram_client import (
     TELEGRAM_MESSAGE_LIMIT,
+    TelegramApiError,
     TelegramClient,
     TelegramMessage,
     chunk_message,
@@ -62,6 +65,25 @@ def test_send_message_calls_transport_once_per_chunk():
     for call in calls:
         assert call["chat_id"] == 555
         assert len(call["text"]) <= 4000
+
+
+def test_get_me_returns_bot_info():
+    def fake_transport(url, params, timeout):
+        assert url.endswith("/getMe")
+        return {"ok": True, "result": {"id": 42, "username": "kleo_bot"}}
+
+    client = TelegramClient("123:fake", transport=fake_transport)
+    me = client.get_me()
+    assert me == {"id": 42, "username": "kleo_bot"}
+
+
+def test_get_me_raises_on_invalid_token():
+    def fake_transport(url, params, timeout):
+        return {"ok": False, "error_code": 401, "description": "Unauthorized"}
+
+    client = TelegramClient("123:fake", transport=fake_transport)
+    with pytest.raises(TelegramApiError):
+        client.get_me()
 
 
 def test_get_updates_advances_offset_via_update_id():
