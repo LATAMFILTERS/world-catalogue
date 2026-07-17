@@ -11,6 +11,7 @@ Design notes:
 
 from __future__ import annotations
 
+import hashlib
 import shutil
 import subprocess
 import threading
@@ -61,11 +62,66 @@ def _run_git(args: list[str], cwd: Path) -> str:
         return f"(git unavailable: {exc})"
 
 
+def _run_git_bytes(args: list[str], cwd: Path) -> bytes:
+    try:
+        proc = subprocess.run(
+            ["git", *args],
+            cwd=str(cwd),
+            capture_output=True,
+            timeout=30,
+        )
+        return proc.stdout
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return f"git unavailable: {exc}".encode("utf-8", errors="replace")
+
+
+def repository_fingerprint(cwd: str | Path) -> str:
+    """Fingerprint tracked modifications and untracked file contents.
+
+    This lets KLEO distinguish a real repository mutation from a model that
+    merely *claims* it changed something. Existing dirty state is allowed: the
+    fingerprint is captured before and after each task and only the delta is
+    considered evidence of work performed by that task.
+    """
+    root = Path(cwd)
+    digest = hashlib.sha256()
+    digest.update(_run_git_bytes(["diff", "--binary", "HEAD", "--"], root))
+
+    untracked = _run_git_bytes(
+        ["ls-files", "--others", "--exclude-standard", "-z"], root
+    ).split(b"\0")
+    for raw_name in sorted(name for name in untracked if name):
+        digest.update(b"\0UNTRACKED\0")
+        digest.update(raw_name)
+        path = root / raw_name.decode("utf-8", errors="surrogateescape")
+        try:
+            digest.update(path.read_bytes())
+        except OSError as exc:
+            digest.update(f"<unreadable:{exc}>".encode("utf-8", errors="replace"))
+    return digest.hexdigest()
+
+
 def collect_git_summary(cwd: str | Path) -> tuple[str, str]:
     """Return (git status --porcelain, git diff --stat) for *cwd*. Used both
     by the executor after a Claude Code run and by the /gitstatus command."""
     cwd = Path(cwd)
     return _run_git(["status", "--porcelain"], cwd), _run_git(["diff", "--stat"], cwd)
+
+
+def build_grounded_instruction(instruction: str) -> str:
+    """Wrap a user task with non-negotiable evidence rules for Claude Code."""
+    return f"""{instruction}
+
+REGLAS OBLIGATORIAS DE KLEO:
+1. Trabaja únicamente con archivos y comandos que existan realmente en el directorio actual.
+2. No inventes rutas, funciones, resultados, pruebas, commits ni flujos de llamada.
+3. Antes de afirmar que un archivo existe, verifícalo en disco. Antes de describir código, léelo.
+4. Excluye node_modules y artefactos generados salvo que la tarea los solicite expresamente.
+5. Si la tarea pide modificar el proyecto, realiza el cambio real y ejecuta una verificación apropiada.
+6. Si no puedes comprobar una afirmación, escribe literalmente: NO VERIFICADO.
+7. La salida final debe separar HECHOS VERIFICADOS, CAMBIOS REALES, PRUEBAS EJECUTADAS y LIMITACIONES.
+8. Un exit code 0 solo significa que el proceso terminó; no autoriza a declarar que una tarea quedó completada sin evidencia.
+"""
 
 
 @dataclass
@@ -77,6 +133,7 @@ class ExecutionResult:
     cancelled: bool = False
     git_status: str = ""
     git_diff_stat: str = ""
+    repository_changed: bool = False
 
 
 class ClaudeCodeExecutor:
@@ -118,7 +175,9 @@ class ClaudeCodeExecutor:
             raise FileNotFoundError(f"Project directory does not exist: {project_dir}")
 
         executable = detect_claude_executable(self.claude_path)
-        args = [executable, "-p", instruction, *self.extra_args]
+        before_fingerprint = repository_fingerprint(project_dir) if capture_git else ""
+        grounded_instruction = build_grounded_instruction(instruction)
+        args = [executable, "-p", grounded_instruction, *self.extra_args]
 
         proc = subprocess.Popen(
             args,
@@ -154,6 +213,7 @@ class ClaudeCodeExecutor:
                     timed_out = False
 
         git_status, git_diff_stat = collect_git_summary(project_dir) if capture_git else ("", "")
+        after_fingerprint = repository_fingerprint(project_dir) if capture_git else ""
 
         return ExecutionResult(
             exit_code=proc.returncode,
@@ -163,6 +223,7 @@ class ClaudeCodeExecutor:
             cancelled=cancelled,
             git_status=git_status,
             git_diff_stat=git_diff_stat,
+            repository_changed=bool(capture_git and before_fingerprint != after_fingerprint),
         )
 
 
@@ -171,7 +232,7 @@ class FakeExecutor:
     """Drop-in replacement for ``ClaudeCodeExecutor`` used in tests. Never
     spawns a process; returns a scripted or default result so the queue,
     storage, and Telegram formatting can be exercised without a real
-    Claude Code installation."""
+    ``claude`` binary."""
 
     scripted_result: ExecutionResult | None = None
     calls: list[tuple] = field(default_factory=list)
@@ -186,6 +247,7 @@ class FakeExecutor:
             stderr="",
             git_status="",
             git_diff_stat="",
+            repository_changed=False,
         )
 
     def cancel(self, task_id: int) -> bool:
