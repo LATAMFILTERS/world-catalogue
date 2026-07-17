@@ -1,10 +1,18 @@
 name: EBP Phase 1-5 Audit
 
 on:
+  pull_request:
+    paths:
+      - 'ebp/**'
+      - 'tests/ebp-phase*/**'
+      - 'migrations/ebp-phase*/**'
+      - 'server.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/ebp-audit.yml'
   push:
     branches:
-      - claude/phase-0-audit-review-wanxa3
-  pull_request:
+      - main
     paths:
       - 'ebp/**'
       - 'tests/ebp-phase*/**'
