@@ -128,13 +128,6 @@ export default function AboutPage() {
         <div aria-hidden="true" style={heroOverlay} />
 
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
-          <img
-            src="/images/logo-sin-fondo.avif"
-            alt="ELIMFILTERS registered trademark"
-            style={{ width: 'clamp(250px, 34vw, 470px)', height: 'auto', display: 'block', marginBottom: '2.2rem' }}
-          />
-
-          <p style={eyebrow}>ABOUT ELIMFILTERS®</p>
           <h1 style={heroTitle}>
             Engineering protection
             <br />
@@ -149,7 +142,6 @@ export default function AboutPage() {
       <section style={sectionSpacing}>
         <div style={twoColumnGrid}>
           <div>
-            <p style={eyebrow}>WHO WE ARE</p>
             <h2 style={sectionTitle}>A protection company built around equipment reliability.</h2>
           </div>
           <div>
@@ -165,7 +157,6 @@ export default function AboutPage() {
 
       <section style={purposeSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <p style={eyebrow}>OUR OBJECTIVE</p>
           <h2 style={{ ...sectionTitle, maxWidth: '960px' }}>Reduce the distance between contamination and failure.</h2>
           <p style={{ ...leadText, maxWidth: '850px', marginTop: '2rem' }}>
             Contamination becomes expensive long before a machine stops. It changes clearances, damages surfaces, destabilizes pressure, degrades fluids, reduces efficiency, and shortens component life. Our objective is to identify that risk early and engineer protection before the damage becomes operational.
@@ -175,7 +166,6 @@ export default function AboutPage() {
 
       <section style={sectionSpacing}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <p style={eyebrow}>HOW OUR TECHNOLOGIES ARE DEVELOPED</p>
           <h2 style={{ ...sectionTitle, maxWidth: '980px' }}>Mathematical modeling. AI-assisted simulation. Field validation.</h2>
           <p style={{ ...bodyText, maxWidth: '850px', marginTop: '1.8rem' }}>
             ELIMFILTERS® technologies are not created as marketing labels. Each one represents an engineering architecture derived from the behavior of contamination inside a specific protection domain. Mathematical analysis and AI-assisted simulation help us evaluate variables that cannot be understood from a part number alone, while controlled testing and field validation confirm whether the design performs under real operating conditions.
@@ -195,7 +185,6 @@ export default function AboutPage() {
 
       <section style={principlesSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <p style={eyebrow}>WHAT GUIDES US</p>
           <h2 style={sectionTitle}>Engineering decisions must protect real operating value.</h2>
           <div style={principlesGrid}>
             {PRINCIPLES.map((item) => (
@@ -210,7 +199,6 @@ export default function AboutPage() {
 
       <section style={closingSection}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>ELIMFILTERS®</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
             We do not begin with a filter. We begin with the asset that cannot afford to fail.
           </h2>
@@ -365,15 +353,6 @@ const principleTitle: React.CSSProperties = {
   fontSize: '1.3rem',
   lineHeight: 1.12,
   textTransform: 'uppercase',
-};
-
-const eyebrow: React.CSSProperties = {
-  color: '#FFF12D',
-  fontFamily: 'var(--font-display)',
-  fontSize: '0.78rem',
-  fontWeight: 700,
-  letterSpacing: '0.28em',
-  margin: '0 0 1rem',
 };
 
 const sectionTitle: React.CSSProperties = {

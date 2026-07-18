@@ -76,7 +76,6 @@ export default function DistributorsPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <p style={eyebrow}>AUTHORIZED DISTRIBUTION NETWORK</p>
           <h1 style={heroTitle}>
             Industrial
             <br />
@@ -97,7 +96,6 @@ export default function DistributorsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>NETWORK PURPOSE</p>
             <h2 style={sectionTitle}>Local access with technical selling power.</h2>
           </div>
           <div>
@@ -114,7 +112,6 @@ export default function DistributorsPage() {
       <section style={networkSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>AUTHORIZED PARTNERS</p>
             <h2 style={sectionTitle}>Current distributor coverage.</h2>
           </div>
 
@@ -144,7 +141,6 @@ export default function DistributorsPage() {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <p style={eyebrow}>PARTNER VALUE</p>
           <h2 style={sectionTitle}>What authorized distributors receive.</h2>
 
           <div style={partnerGrid}>
@@ -162,7 +158,6 @@ export default function DistributorsPage() {
       <section style={applicationCallout}>
         <div style={applicationInner}>
           <div>
-            <p style={eyebrow}>EXPAND THE NETWORK</p>
             <h2 style={sectionTitle}>
               Become an authorized distributor.
             </h2>
@@ -176,7 +171,6 @@ export default function DistributorsPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             Distribution becomes stronger when it sells protection, not only replacement parts.
           </h2>
@@ -216,11 +210,6 @@ const heroOverlay: CSSProperties = {
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-
-const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
-  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
-};
 
 const heroTitle: CSSProperties = {
   fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',

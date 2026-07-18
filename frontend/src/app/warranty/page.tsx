@@ -66,7 +66,6 @@ export default function WarrantyPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <p style={eyebrow}>WARRANTY AND SUPPORT</p>
           <h1 style={heroTitle}>
             Protection
             <br />
@@ -98,7 +97,6 @@ export default function WarrantyPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <p style={eyebrow}>SUPPORT PHILOSOPHY</p>
             <h2 style={sectionTitle}>Warranty is part of the asset protection system.</h2>
           </div>
           <div>
@@ -114,7 +112,6 @@ export default function WarrantyPage() {
 
       <section style={processSection}>
         <div style={wrap}>
-          <p style={eyebrow}>SUPPORT PROCESS</p>
           <h2 style={sectionTitle}>From claim evidence to support decision.</h2>
 
           <div style={processList}>
@@ -131,7 +128,6 @@ export default function WarrantyPage() {
       <section style={pillarSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>THREE SUPPORT PILLARS</p>
             <h2 style={sectionTitle}>Clear coverage. Technical review. Fast direction.</h2>
           </div>
 
@@ -149,7 +145,6 @@ export default function WarrantyPage() {
 
       <section style={coverageSection}>
         <div style={wrap}>
-          <p style={eyebrow}>COVERAGE AREAS</p>
           <h2 style={sectionTitle}>What support can review.</h2>
 
           <div style={coverageGrid}>
@@ -166,7 +161,6 @@ export default function WarrantyPage() {
       <section style={validationCallout}>
         <div style={validationInner}>
           <div>
-            <p style={eyebrow}>TECHNICAL VALIDATION</p>
             <h2 style={sectionTitle}>
               Validate before the problem becomes downtime.
             </h2>
@@ -180,7 +174,6 @@ export default function WarrantyPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             Support protects confidence before, during, and after installation.
           </h2>
@@ -220,11 +213,6 @@ const heroOverlay: CSSProperties = {
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-
-const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '0.78rem',
-  fontWeight: 700, letterSpacing: '0.28em', margin: '0 0 1rem',
-};
 
 const heroTitle: CSSProperties = {
   fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-0.055em',

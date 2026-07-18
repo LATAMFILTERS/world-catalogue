@@ -50,7 +50,6 @@ export default function IndustriesPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <p style={eyebrow}>INDUSTRIAL MARKETS</p>
           <h1 style={heroTitle}>
             Built For
             <br />
@@ -147,11 +146,6 @@ const heroOverlay: CSSProperties = {
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-
-const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: displayFont, fontSize: '0.75rem',
-  fontWeight: 700, letterSpacing: '0.34em', margin: '0 0 1.25rem', textTransform: 'uppercase',
-};
 
 const heroTitle: CSSProperties = {
   fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
