@@ -12,7 +12,7 @@ from kleo.security import requires_confirmation
 from kleo.storage import Storage
 from kleo.tasks import Task, TaskStatus
 
-HELP_TEXT = """KLEO — puente Telegram <-> Claude Code
+HELP_TEXT = """KLEO — puente Telegram <-> agente de código
 
 Comandos disponibles:
 /status - estado general de KLEO y del proyecto activo
@@ -24,7 +24,7 @@ Comandos disponibles:
 /confirm <task_id> - autoriza una tarea bloqueada por contener un patrón destructivo
 /help - muestra este mensaje
 
-Cualquier otro mensaje se encola como una tarea para Claude Code en el
+Cualquier otro mensaje se encola como una tarea para el agente configurado en el
 proyecto activo."""
 
 
