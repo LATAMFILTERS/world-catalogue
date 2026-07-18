@@ -2,81 +2,81 @@
   {
     "sku":"ET90500",
     "codigo_base":"500FH",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Housing"
   },
   {
     "sku":"ET90900",
     "codigo_base":"900FH",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Housing"
   },
   {
     "sku":"ET91000",
     "codigo_base":"1000FH",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Housing"
   },
   {
     "sku":"ET92010P",
     "codigo_base":"2010P",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":30
   },
   {
     "sku":"ET92010T",
     "codigo_base":"2010T",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":10
   },
   {
     "sku":"ET92010S",
     "codigo_base":"2010S",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":2
   },
   {
     "sku":"ET92020P",
     "codigo_base":"2020P",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":30
   },
   {
     "sku":"ET92020T",
     "codigo_base":"2020T",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":10
   },
   {
     "sku":"ET92020S",
     "codigo_base":"2020S",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":2
   },
   {
     "sku":"ET92040P",
     "codigo_base":"2040P",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":30
   },
   {
     "sku":"ET92040T",
     "codigo_base":"2040T",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":10
   },
   {
     "sku":"ET92040S",
     "codigo_base":"2040S",
-    "technology":"HYDROCORE/SERIES™",
+    "technology":"TURBOCOREâ„¢",
     "filter_type":"Fuel Water Separator Cartridge",
     "micron_rating":2
   }

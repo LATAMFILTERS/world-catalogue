@@ -45,7 +45,7 @@ TECH_MAP = {
     "EL8": "SYNTRAX™",
     "EF9": "SYNTEPORE™",
     "ES9": "HYDROCORE™",
-    "ET9": "HYDROCORE™",
+    "ET9": "TURBOCORE™",
     "EA1": "MACROCORE™",
     "EA2": "INTEKCORE™",
     "EH6": "NANOFORCE™",
