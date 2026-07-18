@@ -863,7 +863,7 @@ textarea {
 const TRANSLATIONS = {
   en: {
     searchPlaceholder: 'Search again...',
-    backToSearch:      'â† BACK TO SEARCH',
+    backToSearch:      'BACK TO SEARCH',
     loading:           'SEARCHING',
     noResultsTitle:    'NO RESULTS FOUND',
     noResultsDesc:     'No filters match "%s" â€” verify the reference or try a different search term.',
@@ -900,7 +900,7 @@ const TRANSLATIONS = {
   },
   es: {
     searchPlaceholder: 'Buscar de nuevo...',
-    backToSearch:      'â† VOLVER AL BUSCADOR',
+    backToSearch:      'VOLVER AL BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SIN RESULTADOS',
     noResultsDesc:     'NingÃºn filtro coincide con "%s" â€” verifica la referencia o intenta otro tÃ©rmino.',
@@ -937,7 +937,7 @@ const TRANSLATIONS = {
   },
   pt: {
     searchPlaceholder: 'Buscar novamente...',
-    backToSearch:      'â† VOLTAR AO BUSCADOR',
+    backToSearch:      'VOLTAR AO BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SEM RESULTADOS',
     noResultsDesc:     'Nenhum filtro corresponde a "%s" â€” verifique a referÃªncia ou tente outro termo.',
@@ -1321,7 +1321,7 @@ function renderCard(p, index) {
             ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
             ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
-            ${p.technology       ? `<a href="https://elimfilters.com/technologies/${p.technology.replace(/[â„¢Â®\s]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
+            ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>
         </div>
 

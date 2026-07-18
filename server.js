@@ -154,10 +154,16 @@ try {
     MARINECLEAN: 'commercial-lines/marineclean'
   };
 
+  // Strip ™/®/© BEFORE normalizing: NFKD compatibility decomposition turns ™
+  // into the literal letters "TM" (® into "(R)", etc.), so normalizing first
+  // leaves "TM" behind for the symbol-strip regex to find nothing to remove —
+  // "SYNTRAX™" became the key "SYNTRAXTM", which never matches technologyRoutes,
+  // so this override silently gave up and left the broken /technologies/
+  // syntraxtm/ link from the pre-patched page in place instead of fixing it.
   function canonicalTechnologyName(value) {
     return String(value || '')
-      .normalize('NFKD')
       .replace(/[™®©]/g, '')
+      .normalize('NFKD')
       .replace(/[^A-Za-z0-9]/g, '')
       .toUpperCase();
   }
