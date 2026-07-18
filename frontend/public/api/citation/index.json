@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-07-12T15:13:26.960Z",
-    "entity_count": 54,
+    "generated": "2026-07-18T01:48:30.160Z",
+    "entity_count": 60,
     "endpoint_base": "/api/citation",
     "query_patterns": {
       "entity_lookup": "/api/citation/[KEY].json",
@@ -27,23 +27,23 @@
         "technology",
         "active",
         "fuel",
-        "in-ud",
-        "part-search-node"
+        "water-separation",
+        "in-ud"
       ],
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/technologies/hydrocore",
-        "concept": "HYDROCORE Water-Separating Fuel Protection",
+        "concept": "HYDROCORE Fuel/Water Separation Protection",
         "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:8204a2d90ba342a7de7ac2e5670f2a951bc4bec75d3f1e1331c1de3619b6c04e"
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:85057fea4ca23accd5e69fb033fbb0fb106bc25361955bb7a69d99d0c73dee90"
       },
       "canonical": {
-        "definition": "HYDROCORE is a multi-stage coalescing fuel filtration technology that removes free water (>99% efficiency) and emulsified water (>95% efficiency) from diesel fuel using a coalescing-then-hydrophobic-barrier element architecture, preventing water-induced injector erosion and microbial fuel contamination in common-rail diesel engines operating at 1,800–2,500 bar injection pressure.",
-        "systems": "Diesel fuel systems in common-rail and unit-injector engines across agricultural, construction, marine, mining, power generation, railway, and road transport equipment; applicable to EN 590, ASTM D975, and B5–B20 biodiesel blends",
-        "failure_impact": "Water in diesel fuel above 200 mg/kg (ASTM D6304 EN 590 limit) or as free droplets at any concentration → water droplet cavitation at injector nozzle during 1,800–2,500 bar injection → nozzle tip erosion and needle seat wear → injector spray pattern degradation → fuel efficiency loss and incomplete combustion | Operational impact: injector replacement $800–$4,000 per unit; microbial growth in water-contaminated tanks causes filter-plugging biomass leading to fuel starvation events.",
-        "related_standards": "ASTM D6304: Coulometric Karl Fischer titration for water content in diesel fuel; HYDROCORE performance validated against ASTM D6304 output measurement | ISO 12937: ISO equivalent Karl Fischer method for water in petroleum products; European market compliance standard",
-        "related_technologies": "SYNTEPORE: Air-side filtration preventing moisture-laden intake air from contributing to crankcase condensation in lube circuits | SYNTRAX: Lube oil protection for engine bearings from the same high-humidity environments that drive fuel water contamination",
-        "industrial_role": "HYDROCORE water-separating fuel filtration is the primary engineering control preventing injector erosion in high-pressure common-rail diesel engines; in marine, mining, and remote power generation applications where fuel tank condensation is unavoidable, HYDROCORE coalescing separation determines whether injection systems reach design service life or fail prematurely from water-induced cavitation erosion."
+        "definition": "HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, replacing the deprecated AQUAGUARD name.",
+        "systems": "Diesel fuel cleanliness systems, fuel/water separators, spin-on separator filters, cartridge separator filters, turbine-style separator assemblies, and stored bulk fuel protection programs.",
+        "failure_impact": "Water contamination in diesel fuel can reduce fuel system reliability, increase maintenance events, accelerate corrosion, promote microbial contamination, and create filter plugging or fuel delivery restrictions.",
+        "related_standards": "ASTM D6304: water content measurement in petroleum products and diesel fuel | ISO 12937: international water determination method for petroleum products.",
+        "related_technologies": "SYNTEPORE: fuel media support for particle control and water-resistant media stability | SYNTRAX: lube oil protection for engines operating in severe-duty environments.",
+        "industrial_role": "HYDROCORE is the primary ELIMFILTERS technology for diesel water contamination control across marine, mining, construction, agriculture, power generation, railway, truck fleet, and municipal operations."
       },
       "relationships": {
         "applicable_industries": [
@@ -384,6 +384,55 @@
       },
       "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
     },
+    "THERMACORE": {
+      "key": "THERMACORE",
+      "type": "technology",
+      "name": "THERMACORE™",
+      "slug": "thermacore",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "THERMACORE",
+      "tags": [
+        "technology",
+        "active",
+        "cooling",
+        "coolant",
+        "heat-transfer",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/technologies/thermacore",
+        "concept": "THERMACORE Cooling System Protection",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:c50dc56923c990969b82a11cbeade72c0ee3383a63034b6d7b17fca4f9ae2c89"
+      },
+      "canonical": {
+        "definition": "THERMACORE is the ELIMFILTERS cooling system protection technology for coolant filtration and thermal-circuit contamination control, supporting heat-transfer efficiency, corrosion risk reduction, wet-liner protection, and overheating prevention in heavy-duty diesel and industrial equipment.",
+        "systems": "Cooling system protection circuits including coolant filters, radiators, heat exchangers, water pumps, wet-liner engines, diesel generators, off-highway equipment cooling loops, and truck fleet coolant systems.",
+        "failure_impact": "Coolant contamination, corrosion products, scale, or debris in cooling circuits → reduced heat transfer, water pump wear, radiator restriction, liner cavitation risk, overheating events, thermal stress, and unplanned downtime. In severe-duty equipment, cooling failure can stop the asset immediately even when air, fuel, lube, and hydraulic systems are otherwise protected.",
+        "related_standards": "ISO 4406: Cleanliness-code framework used across fluid contamination control programs; applicable as a reference cleanliness language when coolant-side particle contamination is measured and controlled in industrial maintenance programs.",
+        "related_technologies": "SYNTRAX: Lube oil protection in the same engines exposed to thermal stress | HYDROCORE: Fuel water protection for diesel engines operating in humid or condensation-prone environments | NANOFORCE: Fine-particle protection for hydraulic systems on the same equipment platform.",
+        "industrial_role": "THERMACORE closes the cooling-domain gap in ELIMFILTERS Total Asset Protection Systems by treating coolant filtration as a direct asset-protection system. It prevents cooling circuits from becoming the weak link that causes overheating, corrosion, liner damage, and downtime despite protection in air, fuel, lube, and hydraulic domains."
+      },
+      "relationships": {
+        "applicable_industries": [
+          "MINING",
+          "CONSTRUCTION",
+          "AGRICULTURE",
+          "POWER_GENERATION",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL"
+        ],
+        "related_standards": [
+          "ISO_4406"
+        ],
+        "addresses_contamination": [
+          "ENGINE_OIL_CONTAMINATION"
+        ]
+      },
+      "vault_path": "elimfilters-vault/01-technologies/active/THERMACORE.md"
+    },
     "AGRICULTURE": {
       "key": "AGRICULTURE",
       "type": "industry",
@@ -628,6 +677,68 @@
         ]
       },
       "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
+    },
+    "MANUFACTURING": {
+      "key": "MANUFACTURING",
+      "type": "industry",
+      "name": "Manufacturing",
+      "slug": "manufacturing",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "MANUFACTURING",
+      "tags": [
+        "industry",
+        "active",
+        "high-exposure",
+        "industrial",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/industries/manufacturing",
+        "concept": "Manufacturing Industry Filtration Requirements",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:dfdf173fc5ab566efcc9380a72682a38ff719596efbcaf212ebd9b47de3126fa"
+      },
+      "canonical": {
+        "definition": "Manufacturing is a HIGH contamination exposure industrial category for production assets, compressors, hydraulic presses, CNC equipment, material handling equipment, and industrial power units operating in facilities where particulate contamination, oil degradation, process dust, and hydraulic fluid cleanliness directly affect uptime, production throughput, and maintenance cost.",
+        "systems": "Hydraulic filtration, lube oil filtration, compressor and engine air intake filtration, cabin/operator-zone filtration, and industrial fluid cleanliness programs across production lines, fabrication plants, processing facilities, and plant support equipment.",
+        "failure_impact": "Particle contamination in hydraulic and lube circuits → valve sticking, actuator drift, bearing wear, compressor degradation, oil oxidation, and filter plugging → unplanned production cell downtime, delayed shipments, higher maintenance backlog, and shortened component life in high-utilization manufacturing environments.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic and lube filtration | ISO 4406: Fluid cleanliness code for hydraulic and lube circuits | ISO 5011: Air intake filtration performance standard for compressors and plant support engines",
+        "related_technologies": "NANOFORCE: Fine particle control for hydraulic and precision fluid systems | SYNTRAX: Full-flow lube protection for engines, compressors, and rotating equipment | MACROCORE: Air intake particle capture for compressors and diesel power units | MICROKAPPA: Operator-zone air filtration | INTEKCORE: Zero-bypass housing protection for intake systems",
+        "industrial_role": "Manufacturing converts contamination control into production continuity: in plants and processing facilities, filtration protects not only a single asset but the throughput of entire production cells, where hydraulic cleanliness, lube oil stability, and intake air protection determine whether equipment operates through planned maintenance windows or stops production unexpectedly."
+      },
+      "relationships": {
+        "relevant_contamination": [
+          "PARTICLE_WEAR",
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE"
+        ],
+        "applicable_technologies": [
+          "NANOFORCE",
+          "SYNTRAX",
+          "MACROCORE",
+          "MICROKAPPA",
+          "INTEKCORE"
+        ],
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406",
+          "ISO_5011"
+        ],
+        "common_problems": [
+          "ENGINE_OIL_CONTAMINATION",
+          "HYDRAULIC_VALVE_FAILURE",
+          "OPERATOR_DUST_EXPOSURE"
+        ],
+        "typical_product_families": [
+          "HYDRAULIC_PRIMARY",
+          "LUBE_PRIMARY",
+          "AIRFILTER_PRIMARY",
+          "CABIN_PRIMARY"
+        ]
+      },
+      "vault_path": "elimfilters-vault/02-industries/MANUFACTURING.md"
     },
     "MARINE": {
       "key": "MARINE",
@@ -1055,60 +1166,274 @@
       },
       "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
     },
-    "AIRFILTER": {
-      "key": "AIRFILTER",
+    "AIR_INTAKE_PROTECTION": {
+      "key": "AIR_INTAKE_PROTECTION",
       "type": "system",
-      "name": "Air Filter",
-      "slug": "airfilter",
+      "name": "Air Intake & Airflow Protection Systems",
+      "slug": "air-intake-protection",
       "status": "active",
       "in_unified_data": true,
-      "ud_key": "AIRFILTER",
+      "ud_key": "AIR_INTAKE_PROTECTION",
       "tags": [
         "system",
         "active",
         "air-intake",
-        "product-line",
+        "airflow",
+        "asset-protection",
         "in-ud"
       ],
       "citation": {
-        "source_url": "elimfilters.com/systems/airfilter",
-        "concept": "Air Filtration System",
+        "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
+        "concept": "Air Intake & Airflow Protection Systems",
         "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:ca487b617f183f36c27c556eb5c1b966180c23e82426f6f5ab9227bf11500f63"
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:7db5d4135a61894f97e0653d3afef76a54057fb5aa830a95a6e01da91058b4ee"
       },
       "canonical": {
-        "definition": "Air Filtration product system providing multi-layer particulate interception for diesel\nengine air intake paths, using MACROCORE™ Progressive Density Gradient elements achieving\n99.9%–99.98% efficiency under ISO 5011 certification.",
-        "systems": "Air Intake domain (product-line class); primary technology: MACROCORE™; supporting:\nSYNTEPORE™ (humid/marine), INTEKCORE™ (housing integrity)",
-        "failure_impact": "Air filter element bypass or saturation → abrasive particles enter combustion chamber →\npiston ring wear, cylinder scuffing, turbocharger bearing seizure → engine overhaul\ninterval 3,000–5,000 hours vs. 15,000–25,000 hours with controlled air filtration",
-        "related_standards": "ISO 5011: Air filter efficiency, restriction, and dust-holding capacity test |\nSAE J1539: Air intake contamination classification | ISO 16889: Multi-pass filter test",
-        "related_technologies": "MACROCORE: PDG primary element | SYNTEPORE: Synthetic marine/humid variant |\nINTEKCORE: Zero-bypass housing",
-        "industrial_role": "First line of defence in the contamination hierarchy — all downstream engine systems\n(lube oil, fuel, turbocharger) depend on the integrity of the air intake filtration system."
+        "definition": "Air Intake & Airflow Protection Systems are the ELIMFILTERS system domain controlling airborne particulate contamination, dust ingestion, airflow restriction, and bypass risk before air reaches engine combustion paths or protected intake circuits.",
+        "systems": "Primary air filters, secondary/safety air filters, radial seal filters, air cleaner housings, pre-cleaner integration, intake airflow paths, and zero-bypass housing architecture across diesel engines and severe-duty equipment.",
+        "failure_impact": "Uncontrolled air intake contamination → silica and mineral dust ingestion → turbocharger compressor erosion, piston ring wear, cylinder bore wear, compression loss, oil consumption increase, reduced engine life, and premature overhaul. Bypass through poor housing seal integrity can negate rated media efficiency even when the element itself is efficient.",
+        "related_standards": "ISO 5011: Inlet air cleaning equipment efficiency, restriction, and dust capacity testing | SAE J1539: Diesel engine air intake cleanliness and filtration performance classification.",
+        "related_technologies": "MACROCORE: Progressive-density air media for particulate capture | INTEKCORE: Zero-bypass radial seal housing architecture | SYNTEPORE: Synthetic media for humidity-stable air intake filtration.",
+        "industrial_role": "Air Intake & Airflow Protection is the front-line contamination defense for diesel engines operating in mining, agriculture, construction, marine, railway, power generation, oil & gas, truck fleets, and municipal equipment. It protects the asset before contaminants enter the combustion system."
       },
       "relationships": {
-        "related_standards": [
+        "applicable_industries": [
+          "AGRICULTURE",
+          "CONSTRUCTION",
+          "MINING",
+          "MARINE",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "RAILWAY",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL",
+          "AUTOMOTIVE",
+          "BUS_COACH"
+        ],
+        "applicable_technologies": [
+          "MACROCORE",
+          "INTEKCORE",
+          "SYNTEPORE"
+        ],
+        "applicable_standards": [
           "ISO_5011",
-          "SAE_J1539",
-          "ISO_16889"
-        ],
-        "related_contamination": [
-          "PARTICLE_WEAR"
-        ],
-        "supporting_technologies": [
-          "SYNTEPORE",
-          "INTEKCORE"
-        ],
-        "related_problems": [
-          "DUST_INGESTION"
-        ],
-        "product_families": [
-          "AIRFILTER_PRIMARY"
-        ],
-        "related_components": [
-          "TURBOCHARGER_BEARING"
+          "SAE_J1539"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/product-line/AIRFILTER.md"
+      "vault_path": "elimfilters-vault/03-systems/AIR_INTAKE_PROTECTION.md"
+    },
+    "COOLING_SYSTEM_PROTECTION": {
+      "key": "COOLING_SYSTEM_PROTECTION",
+      "type": "system",
+      "name": "Cooling System Protection",
+      "slug": "cooling-system-protection",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "COOLING_SYSTEM_PROTECTION",
+      "tags": [
+        "system",
+        "active",
+        "cooling",
+        "coolant",
+        "asset-protection",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/systems/cooling-system-protection",
+        "concept": "Cooling System Protection",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:3534002abc15acab484e2266c16fb28768bf274bd6d0c31631d580089f9b009d"
+      },
+      "canonical": {
+        "definition": "Cooling System Protection is the ELIMFILTERS system domain protecting coolant circuits from contamination, scale, corrosion, liner cavitation, heat-transfer loss, and overheating in diesel-powered industrial assets.",
+        "systems": "Coolant filters, coolant treatment circuits, cooling system protection elements, heavy-duty engine coolant loops, generator cooling circuits, and severe-duty thermal protection programs.",
+        "failure_impact": "Coolant contamination, scale, corrosion, or additive depletion → reduced heat transfer, liner pitting, cavitation erosion, overheating, gasket damage, engine derating, emergency shutdown, and premature engine failure.",
+        "related_standards": "Cooling system protection uses coolant quality monitoring, contamination control, and OEM heavy-duty coolant maintenance requirements to preserve heat-transfer performance and corrosion protection.",
+        "related_technologies": "THERMACORE: ELIMFILTERS cooling system protection technology for coolant circuit reliability and thermal asset protection.",
+        "industrial_role": "Cooling System Protection is critical where engines operate under high thermal load, extended duty cycles, dusty environments, standby generator readiness requirements, and remote maintenance conditions where overheating causes immediate downtime."
+      },
+      "relationships": {
+        "applicable_industries": [
+          "CONSTRUCTION",
+          "MINING",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL",
+          "AGRICULTURE"
+        ],
+        "applicable_technologies": [
+          "THERMACORE"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/COOLING_SYSTEM_PROTECTION.md"
+    },
+    "FUEL_CLEANLINESS_PROTECTION": {
+      "key": "FUEL_CLEANLINESS_PROTECTION",
+      "type": "system",
+      "name": "Fuel Cleanliness Protection Systems",
+      "slug": "fuel-cleanliness-protection",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "FUEL_CLEANLINESS_PROTECTION",
+      "tags": [
+        "system",
+        "active",
+        "fuel",
+        "diesel-water",
+        "asset-protection",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
+        "concept": "Fuel Cleanliness Protection Systems",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:07edca9de9d7dd77dad11de10199b4902c6588e297e74262085795edcd49af72"
+      },
+      "canonical": {
+        "definition": "Fuel Cleanliness Protection Systems are the ELIMFILTERS system domain controlling water, particles, microbial contamination, and fuel restriction before diesel fuel reaches pumps, injectors, and high-pressure common-rail components.",
+        "systems": "Fuel filters, fuel/water separators, turbine-style separation assemblies, spin-on fuel separators, cartridge fuel filters, bulk fuel protection, and fuel cleanliness programs for industrial diesel assets.",
+        "failure_impact": "Diesel water and particulate contamination → injector erosion, needle-seat wear, pump scoring, corrosion, microbial growth, filter plugging, fuel starvation, poor combustion, emergency start failure, and unplanned downtime. In high-pressure common-rail systems, small contamination events can create expensive injector and pump failures.",
+        "related_standards": "ASTM D6304: Coulometric Karl Fischer water measurement in petroleum products | ISO 12937: International Karl Fischer method for water in petroleum products and diesel fuel cleanliness programs.",
+        "related_technologies": "HYDROCORE: Water-separating fuel protection technology | SYNTEPORE: Synthetic fuel media supporting particle control and stable performance in fuel cleanliness systems.",
+        "industrial_role": "Fuel Cleanliness Protection determines whether stored or delivered diesel becomes a controlled energy source or a contamination pathway into injectors, pumps, generators, vessels, locomotives, trucks, and off-highway equipment."
+      },
+      "relationships": {
+        "applicable_industries": [
+          "AGRICULTURE",
+          "CONSTRUCTION",
+          "MARINE",
+          "MINING",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "RAILWAY",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL"
+        ],
+        "applicable_technologies": [
+          "HYDROCORE",
+          "SYNTEPORE"
+        ],
+        "applicable_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/FUEL_CLEANLINESS_PROTECTION.md"
+    },
+    "HYDRAULIC_PROTECTION": {
+      "key": "HYDRAULIC_PROTECTION",
+      "type": "system",
+      "name": "Hydraulic Systems",
+      "slug": "hydraulic-protection",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "HYDRAULIC_PROTECTION",
+      "tags": [
+        "system",
+        "active",
+        "hydraulic",
+        "fluid-power",
+        "asset-protection",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
+        "concept": "Hydraulic Systems",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:94d74c5c2a003d73b0ed61abc431c8e05f3e59fb97fedd90e0c09b23cc05b3d8"
+      },
+      "canonical": {
+        "definition": "Hydraulic Systems are the ELIMFILTERS system domain controlling fluid power contamination to protect pumps, valves, actuators, cylinders, seals, and proportional/servo control components from particle-induced wear and malfunction.",
+        "systems": "Hydraulic return filters, pressure filters, suction filters, breather filtration, offline/kidney-loop filtration, hydraulic reservoir protection, and ISO 4406 cleanliness control programs.",
+        "failure_impact": "Hydraulic particle contamination → valve spool stiction, pump scoring, actuator seal wear, pressure instability, flow restriction, heat generation, loss of control precision, unplanned downtime, and catastrophic fluid power failure.",
+        "related_standards": "ISO 16889: Multi-pass hydraulic filter performance and Beta ratio testing | ISO 4406: Fluid cleanliness code for hydraulic particle count control.",
+        "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration technology controlling fine particles and supporting target ISO cleanliness codes in severe-duty hydraulic circuits.",
+        "industrial_role": "Hydraulic Systems protect the movement, force, and control functions of mobile and industrial equipment. In construction, mining, manufacturing, agriculture, marine, railway, and oil & gas operations, hydraulic contamination directly converts into lost productivity and high-cost component replacement."
+      },
+      "relationships": {
+        "applicable_industries": [
+          "AGRICULTURE",
+          "CONSTRUCTION",
+          "MANUFACTURING",
+          "MARINE",
+          "MINING",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "RAILWAY",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL"
+        ],
+        "applicable_technologies": [
+          "NANOFORCE"
+        ],
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/HYDRAULIC_PROTECTION.md"
+    },
+    "LUBRICATION_PROTECTION": {
+      "key": "LUBRICATION_PROTECTION",
+      "type": "system",
+      "name": "Lubrication Systems",
+      "slug": "lubrication-protection",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "LUBRICATION_PROTECTION",
+      "tags": [
+        "system",
+        "active",
+        "lubrication",
+        "lube-oil",
+        "asset-protection",
+        "in-ud"
+      ],
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
+        "concept": "Lubrication Systems",
+        "version": "1.0",
+        "last_updated": "2026-07-11",
+        "content_hash": "sha256:89b59e62ba5295b8ea65ff04fe316994c44f4a376867267023ac25b873533d0f"
+      },
+      "canonical": {
+        "definition": "Lubrication Systems are the ELIMFILTERS system domain controlling engine oil, transmission oil, gearbox oil, and rotating equipment lubricant contamination to protect bearings, journals, gears, piston rings, turbochargers, and precision surfaces from abrasive wear and oil degradation.",
+        "systems": "Full-flow lube filters, bypass lube circuits, engine oil filtration, transmission oil filtration, gearbox filtration, rotating equipment lubricant protection, and oil cleanliness programs.",
+        "failure_impact": "Oil contamination → abrasive wear, bearing scoring, journal damage, piston ring wear, turbocharger bearing degradation, varnish formation, soot-driven viscosity change, reduced oil life, increased friction, elevated operating temperature, and premature overhaul.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio filtration performance testing | ISO 4406: Fluid cleanliness code for particle count targets in lube and hydraulic circuits.",
+        "related_technologies": "SYNTRAX: Full-flow lube oil protection technology | NANOFORCE: Sub-micron polishing and fine particle control supporting extended asset protection in severe-duty lube systems.",
+        "industrial_role": "Lubrication Systems transform oil filtration from a replacement part into a life-extension system for engines and rotating assets, especially where downtime, overhaul cost, and high-load duty cycles dominate total cost of ownership."
+      },
+      "relationships": {
+        "applicable_industries": [
+          "AGRICULTURE",
+          "AUTOMOTIVE",
+          "BUS_COACH",
+          "CONSTRUCTION",
+          "MANUFACTURING",
+          "MARINE",
+          "MINING",
+          "OIL_GAS",
+          "POWER_GENERATION",
+          "RAILWAY",
+          "TRUCKS_FLEETS",
+          "WASTE_MUNICIPAL"
+        ],
+        "applicable_technologies": [
+          "SYNTRAX",
+          "NANOFORCE"
+        ],
+        "applicable_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ]
+      },
+      "vault_path": "elimfilters-vault/03-systems/LUBRICATION_PROTECTION.md"
     },
     "CABIN": {
       "key": "CABIN",
@@ -1613,7 +1938,7 @@
           "POWER_GENERATION"
         ],
         "applicable_to_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "related_contamination": [
           "PARTICLE_WEAR"
@@ -1966,7 +2291,7 @@
           "SYNTRAX"
         ],
         "located_in_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "sensitive_to_contamination": [
           "PARTICLE_WEAR"
@@ -2014,7 +2339,7 @@
           "SYNTRAX"
         ],
         "located_in_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "typical_filter_families": [
           "AIRFILTER_PRIMARY"
@@ -2073,7 +2398,7 @@
           "TURBOCHARGER_BEARING"
         ],
         "affects_systems": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "recommended_product_families": [
           "AIRFILTER_PRIMARY"
@@ -2374,10 +2699,10 @@
           "MACROCORE"
         ],
         "belongs_to_domain": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ],
         "belongs_to_product_system": [
-          "AIRFILTER"
+          "AIR_INTAKE_PROTECTION"
         ]
       },
       "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md"
