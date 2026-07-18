@@ -813,13 +813,13 @@ const TECH_LOGO_MAP = {
   'intekcore': 'intekcore',
   'drycore': 'drycore',
   'duratech': 'duratech',
-  'cooltech': 'cooltech',
   'syntepore': 'syntepore', 'syntapore': 'syntepore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
-  'aquaguard': 'aquaguard',
   'marineclean': 'marineclean',
   'blueclean': 'blueclean',
+  'thermacore': 'thermacore',
+  'hydrocore': 'hydrocore',
 };
 
 function getTechLogo(tech) {
@@ -829,8 +829,17 @@ function getTechLogo(tech) {
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
 
-// Canonical technology name corrections (DB may have older/misspelled variants)
-const TECH_NAME_FIXES = { 'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™' };
+// Canonical technology name corrections (DB may have older/misspelled variants).
+// COOLTECH and AQUAGUARD were retired in favor of THERMACORE and HYDROCORE —
+// see scripts/migrations/run_014_rename_deprecated_technologies.js for the
+// one-time catalog rename. This map keeps API responses correct in the
+// meantime (and as a safety net after) regardless of when that migration runs.
+const TECH_NAME_FIXES = {
+  'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™',
+  'COOLTECH': 'THERMACORE', 'COOLTECH™': 'THERMACORE™',
+  'AQUAGUARD': 'HYDROCORE', 'AQUAGUARD™': 'HYDROCORE™',
+  'AQUAGUARD/SERIES™': 'HYDROCORE™',
+};
 
 // Deep-sanitizes every string leaf of an array of application objects
 // (equipment_applications / vehicle_applications) against mojibake.
@@ -1281,15 +1290,14 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     }
 
     // 3. Description full-text search
-    // description is JSONB ({"en": "...", "es": "..."}), not text — COALESCE
-    // against a text literal throws "invalid input syntax for type json" and
-    // turns every true no-match search into a 500. Pull the language values
-    // out as text before building the tsvector.
+    // Production schema stores description as TEXT, not JSONB. Using the
+    // ->> operator against a TEXT column throws (operator does not exist),
+    // turning every true no-match search into a 500 instead of an empty
+    // result. Cast directly to text before building the tsvector.
     const desc = await client.query(
       `SELECT * FROM elimfilters_catalog
-       WHERE to_tsvector('english',
-         COALESCE(description->>'en', '') || ' ' || COALESCE(description->>'es', '')
-       ) @@ plainto_tsquery('english', $1)
+       WHERE to_tsvector('english', COALESCE(description::text, ''))
+         @@ plainto_tsquery('english', $1)
        LIMIT 10`,
       [raw]
     );
