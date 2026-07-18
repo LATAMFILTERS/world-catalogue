@@ -1647,6 +1647,18 @@ function _validateImportRow(row) {
   return null;
 }
 
+// FRAM, NAPA, AC DELCO, PUROLATOR, CHAMPION, and SCT are Light Duty-only
+// brands in this catalog (confirmed by ELIMFILTERS) and must never end up
+// on a HEAVY_DUTY row — symmetric to LD_HD_ONLY_BRANDS above. This endpoint
+// previously stored whatever oem_codes/competitor_codes the caller sent
+// with no filtering, so a batch mixing in LD cross-reference data silently
+// wrote LD-only brand codes onto Donaldson-based HD products.
+const HD_LD_ONLY_BRANDS = new Set(['FRAM', 'NAPA', 'ACDELCO', 'AC DELCO', 'PUROLATOR', 'CHAMPION', 'SCT']);
+function stripLdOnlyBrandRefs(refs) {
+  if (!Array.isArray(refs)) return refs;
+  return refs.filter(r => !HD_LD_ONLY_BRANDS.has(normalizeBrandKey(r?.manufacturer || r?.brand || '')));
+}
+
 app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) => {
   const rows = Array.isArray(req.body) ? req.body : req.body?.products;
   if (!rows || !Array.isArray(rows)) return res.status(400).json({ error: 'Expected array of products' });
@@ -1663,8 +1675,8 @@ app.post('/api/import/donaldson', importLimiter, requireAdmin, async (req, res) 
       const sku = row.sku.trim().toUpperCase();
       const ft = _normalizeFilterType(row.filter_type);
 
-      const oem_codes        = row.oem_codes        ? JSON.stringify(row.oem_codes)        : null;
-      const competitor_codes = row.competitor_codes ? JSON.stringify(row.competitor_codes) : null;
+      const oem_codes        = row.oem_codes        ? JSON.stringify(stripLdOnlyBrandRefs(row.oem_codes))        : null;
+      const competitor_codes = row.competitor_codes ? JSON.stringify(stripLdOnlyBrandRefs(row.competitor_codes)) : null;
       const brand_crossrefs  = row.brand_crossrefs  ? JSON.stringify(row.brand_crossrefs)  : null;
       const alternatives     = row.alternatives     ? JSON.stringify(row.alternatives)     : null;
       const equipment_applications = row.equipment_applications ? JSON.stringify(row.equipment_applications) : null;
