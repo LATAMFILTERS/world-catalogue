@@ -1,5 +1,5 @@
-﻿"""Runs Claude Code against a project's working directory and reports back
-exactly what happened â€” no invented results.
+"""Runs Claude Code against a project's working directory and reports back
+exactly what happened — no invented results.
 
 Design notes:
 - Never uses ``shell=True``: arguments are always passed as a list.
@@ -141,14 +141,14 @@ def build_grounded_instruction(instruction: str) -> str:
     return f"""{instruction}
 
 REGLAS OBLIGATORIAS DE KLEO:
-1. Trabaja Ãºnicamente con archivos y comandos que existan realmente en el directorio actual.
+1. Trabaja únicamente con archivos y comandos que existan realmente en el directorio actual.
 2. No inventes rutas, funciones, resultados, pruebas, commits ni flujos de llamada.
-3. Antes de afirmar que un archivo existe, verifÃ­calo en disco. Antes de describir cÃ³digo, lÃ©elo.
+3. Antes de afirmar que un archivo existe, verifícalo en disco. Antes de describir código, léelo.
 4. Excluye node_modules y artefactos generados salvo que la tarea los solicite expresamente.
-5. Si la tarea pide modificar el proyecto, realiza el cambio real y ejecuta una verificaciÃ³n apropiada.
-6. Si no puedes comprobar una afirmaciÃ³n, escribe literalmente: NO VERIFICADO.
+5. Si la tarea pide modificar el proyecto, realiza el cambio real y ejecuta una verificación apropiada.
+6. Si no puedes comprobar una afirmación, escribe literalmente: NO VERIFICADO.
 7. La salida final debe separar HECHOS VERIFICADOS, CAMBIOS REALES, PRUEBAS EJECUTADAS y LIMITACIONES.
-8. Un exit code 0 solo significa que el proceso terminÃ³; no autoriza a declarar que una tarea quedÃ³ completada sin evidencia.
+8. Un exit code 0 solo significa que el proceso terminó; no autoriza a declarar que una tarea quedó completada sin evidencia.
 """
 
 
@@ -181,7 +181,7 @@ def run_test_command(command: str, cwd: str | Path, timeout_seconds: int = 600) 
     before KLEO reports the task as completed. Uses ``shell=True``
     deliberately: unlike the Claude Code invocation (which embeds untrusted
     Telegram message text and must never go through a shell), this command
-    string only ever comes from the operator's local config.json â€” never
+    string only ever comes from the operator's local config.json — never
     from a chat message."""
     try:
         proc = subprocess.run(
