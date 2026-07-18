@@ -1374,12 +1374,14 @@ function renderCard(p, index) {
                 ${apps.length
                   ? apps.map(a => {
                       if (typeof a === 'object') {
-                        // LD vehicle format: { make, model, engine, year, kw, hp }
+                        // LD vehicle format (legacy): { make, model, engine, year, kw, hp }
+                        // LD vehicle format (current): { make, model_family, model_type, engine_code, year, kw, hp }
                         // HD equipment format: { equipment, engine, year, type }
+                        const model = a.model || [a.model_family, a.model_type].filter(Boolean).join(' ');
                         const fullName = a.make
-                          ? (a.make + (a.model ? ' ' + a.model : ''))
-                          : (a.equipment || a.model || a.machine || '');
-                        let eng = a.engine || '';
+                          ? (a.make + (model ? ' ' + model : ''))
+                          : (a.equipment || model || a.machine || '');
+                        let eng = a.engine || a.engine_code || '';
                         if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
                         // For LD: show engine + power + year; for HD: show engine + type + year
                         const power = (a.kw || a.hp) ? [(a.kw ? a.kw + ' kW' : ''), (a.hp ? a.hp + ' hp' : '')].filter(Boolean).join('/') : '';
