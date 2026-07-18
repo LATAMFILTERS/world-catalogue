@@ -14,6 +14,7 @@ from __future__ import annotations
 import hashlib
 import shutil
 import subprocess
+import tempfile
 import threading
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -356,22 +357,39 @@ class OpenCodeExecutor(AgentExecutor):
             repository_fingerprint(project_dir) if capture_git else ""
         )
         grounded_instruction = build_grounded_instruction(instruction)
+
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            suffix=".md",
+            prefix="kleo_opencode_",
+            delete=False,
+        ) as prompt_file:
+            prompt_file.write(grounded_instruction)
+            prompt_path = Path(prompt_file.name)
+
         args = [
             executable,
             "run",
-            grounded_instruction,
+            "Ejecuta exactamente la tarea contenida en el archivo adjunto.",
+            "--file",
+            str(prompt_path),
             *self.extra_args,
         ]
 
-        proc = subprocess.Popen(
-            args,
-            cwd=str(project_dir),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
+        try:
+            proc = subprocess.Popen(
+                args,
+                cwd=str(project_dir),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+            )
+        except Exception:
+            prompt_path.unlink(missing_ok=True)
+            raise
 
         if task_id is not None:
             with self._lock:
@@ -390,6 +408,7 @@ class OpenCodeExecutor(AgentExecutor):
             if task_id is not None:
                 with self._lock:
                     self._processes.pop(task_id, None)
+            prompt_path.unlink(missing_ok=True)
 
         cancelled = False
         if task_id is not None:
