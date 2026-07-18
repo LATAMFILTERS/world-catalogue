@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMFILTERS â€” Search Results</title>
-  <meta name="description" content="ELIMFILTERS filter search results â€” cross-reference OEM and competitor codes.">
+  <title>ELIMFILTERS — Search Results</title>
+  <meta name="description" content="ELIMFILTERS filter search results — cross-reference OEM and competitor codes.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#000000">
 
@@ -462,7 +462,7 @@
       }
     }
 
-    /* Column wrappers â€” equal, with inner padding and dividers */
+    /* Column wrappers — equal, with inner padding and dividers */
     .columns-container > div {
       border-top: none;
       padding-top: 0;
@@ -829,7 +829,7 @@ textarea {
 
   <div class="search-summary" id="search-summary">
     <span class="search-summary-mode">PART NUMBER</span>
-    <span class="search-summary-main"><strong>â€”</strong></span>
+    <span class="search-summary-main"><strong>—</strong></span>
   </div>
 
   <a href="/index.html" class="header-back">â† BACK TO SEARCH</a>
@@ -849,7 +849,7 @@ textarea {
     <a href="https://elimfilters.com/knowledge-center">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1); font-size: 0.45rem;">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site â€” including but not limited to OEM codes and competitor cross-references â€” are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
@@ -858,7 +858,7 @@ textarea {
 'use strict';
 
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// i18n â€” TRANSLATION DICTIONARY (results page)
+// i18n — TRANSLATION DICTIONARY (results page)
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const TRANSLATIONS = {
   en: {
@@ -866,7 +866,7 @@ const TRANSLATIONS = {
     backToSearch:      'BACK TO SEARCH',
     loading:           'SEARCHING',
     noResultsTitle:    'NO RESULTS FOUND',
-    noResultsDesc:     'No filters match "%s" â€” verify the reference or try a different search term.',
+    noResultsDesc:     'No filters match "%s" — verify the reference or try a different search term.',
     newSearch:         'NEW SEARCH',
     errorTitle:        'CONNECTION ERROR',
     errorDesc:         'Could not reach the server. Check your connection and try again.',
@@ -903,7 +903,7 @@ const TRANSLATIONS = {
     backToSearch:      'VOLVER AL BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SIN RESULTADOS',
-    noResultsDesc:     'NingÃºn filtro coincide con "%s" â€” verifica la referencia o intenta otro tÃ©rmino.',
+    noResultsDesc:     'NingÃºn filtro coincide con "%s" — verifica la referencia o intenta otro tÃ©rmino.',
     newSearch:         'NUEVA BÃšSqueda',
     errorTitle:        'ERROR DE CONEXIÃ³N',
     errorDesc:         'No se pudo conectar al servidor. Verifica tu conexiÃ³n e intenta de nuevo.',
@@ -940,7 +940,7 @@ const TRANSLATIONS = {
     backToSearch:      'VOLTAR AO BUSCADOR',
     loading:           'BUSCANDO',
     noResultsTitle:    'SEM RESULTADOS',
-    noResultsDesc:     'Nenhum filtro corresponde a "%s" â€” verifique a referÃªncia ou tente outro termo.',
+    noResultsDesc:     'Nenhum filtro corresponde a "%s" — verifique a referÃªncia ou tente outro termo.',
     newSearch:         'NOVA BUSCA',
     errorTitle:        'ERRO DE CONEXÃƒO',
     errorDesc:         'NÃ£o foi possÃ­vel conectar ao servidor. Verifique sua conexÃ£o e tente novamente.',
@@ -1008,7 +1008,7 @@ detectLang().then(lang => {
 const API = '';
 const app = document.getElementById('app');
 
-// â”€â”€â”€ HTML escape â€” prevents XSS from URL parameters injected into innerHTML â”€â”€â”€
+// â”€â”€â”€ HTML escape — prevents XSS from URL parameters injected into innerHTML â”€â”€â”€
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
 // â”€â”€â”€ Parse URL parameters â”€â”€â”€
@@ -1031,7 +1031,7 @@ const dutyParam = (params.get('duty') || '').trim().toUpperCase();
 })();
 
 function showMixedDutyPrompt(data, searchTerm) {
-  document.title = `${searchTerm.toUpperCase()} â€” ELIMFILTERS Part Search`;
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
     summaryEl.innerHTML = `
@@ -1045,7 +1045,7 @@ function showMixedDutyPrompt(data, searchTerm) {
       <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.85rem;">âš  MULTIPLE EQUIPMENT CLASSES FOUND</div>
       <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:1.5rem;">
         The reference <strong style="color:#fff;">${_esc(searchTerm.toUpperCase())}</strong> appears in both Heavy Duty industrial filters and Light Duty passenger/light vehicle filters.
-        These are <strong style="color:#fff;">not interchangeable</strong> â€” different thread sizes, diameters and bypass pressures apply.
+        These are <strong style="color:#fff;">not interchangeable</strong> — different thread sizes, diameters and bypass pressures apply.
         Select your equipment class:
       </p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
@@ -1076,7 +1076,7 @@ function startWarmupTimer(term) {
     if (msg) {
       msg.innerHTML = `SEARCHING: ${_esc((term || '').toUpperCase())}<br>
         <span style="font-size:0.7rem;color:rgba(255,241,45,0.8);letter-spacing:0.06em;display:block;margin-top:0.6rem">
-          SERVER WARMING UP â€” FREE TIER Â· PLEASE WAIT ~60s
+          SERVER WARMING UP — FREE TIER Â· PLEASE WAIT ~60s
         </span>`;
     }
   }, 8000);
@@ -1228,7 +1228,7 @@ function formatRefs(arr, max = Infinity) {
     r.brand = finalBrand;
     return true;
   })
-  // A cross-reference chip with no manufacturer conveys nothing â€” it's a
+  // A cross-reference chip with no manufacturer conveys nothing — it's a
   // bare code, not a "reference" at all. Never render one, even if it's
   // the only entry for that code (the branch above only catches duplicates).
   .filter(r => r.brand)
@@ -1236,7 +1236,7 @@ function formatRefs(arr, max = Infinity) {
 }
 
 // Server pre-classifies oem_codes (equipment makers) and competitor_codes (filter brands).
-// Trust the server's classification â€” no client-side re-sorting needed.
+// Trust the server's classification — no client-side re-sorting needed.
 function splitCrossReferences(oemArr, compArr) {
   const sortByBrand = (a, b) => (a.brand || '').localeCompare(b.brand || '');
   const oem  = formatRefs(oemArr  || []).sort(sortByBrand);
@@ -1252,7 +1252,7 @@ function specHTML(label, value) {
 
 // â”€â”€â”€ Render Product Card â”€â”€â”€
 function renderCard(p, index) {
-  const sku = p.elimfilters_sku || p.sku || 'â€”';
+  const sku = p.elimfilters_sku || p.sku || '—';
 
   function dimFmt(mm) {
     if (!mm) return null;
@@ -1281,7 +1281,7 @@ function renderCard(p, index) {
   const pctStr = nomEff && !nomHasMicron ? nomEff.replace('%','').trim() : null;
   const effLabel = pctStr ? (T.specEfficiency || 'Efficiency') + ' ' + pctStr + '%' : (T.specEfficiency || 'Efficiency');
 
-  // Group 1 â€” physical dimensions
+  // Group 1 — physical dimensions
   const dimSpecs = [
     specHTML(T.specOD,       dimFmt(p.outer_diameter_mm)),
     specHTML(T.specThread,   p.thread_size),
@@ -1290,7 +1290,7 @@ function renderCard(p, index) {
     specHTML(T.specGasketID, dimFmt(p.gasket_id_mm)),
   ].filter(Boolean);
 
-  // Group 2 â€” filtration performance (Style omitted: already shown as badge)
+  // Group 2 — filtration performance (Style omitted: already shown as badge)
   const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
@@ -1442,7 +1442,7 @@ function renderCard(p, index) {
 // before this function is ever called, so it only ever renders a single,
 // duty-consistent result set.
 function renderResults(items, count, searchMode, searchTerm) {
-  document.title = `${searchTerm.toUpperCase()} â€” ELIMFILTERS Part Search`;
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
 
   const summaryEl = document.getElementById('search-summary');
   if (summaryEl) {
@@ -1487,7 +1487,7 @@ async function executeSearch() {
       if (!r.ok) throw new Error();
       const data = await r.json();
 
-      // mixed_duty: API found both HD and LD â€” show duty selection prompt
+      // mixed_duty: API found both HD and LD — show duty selection prompt
       if (data.mixed_duty) {
         showMixedDutyPrompt(data, query);
         return;
@@ -1543,7 +1543,7 @@ async function executeSearch() {
   }
 }
 
-// executeSearch() is called by detectLang().then() above â€” no boot call needed
+// executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
 </body>
