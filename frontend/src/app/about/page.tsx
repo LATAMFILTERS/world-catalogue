@@ -142,7 +142,16 @@ export default function AboutPage() {
       <section style={sectionSpacing}>
         <div style={twoColumnGrid}>
           <div>
-            <h2 style={sectionTitle}>A protection company built around equipment reliability.</h2>
+            <h2
+              style={{
+                ...sectionTitle,
+                fontSize: 'clamp(2.6rem, 5.2vw, 4.8rem)',
+                lineHeight: 0.94,
+                maxWidth: '720px',
+              }}
+            >
+              A protection company built around equipment reliability.
+            </h2>
           </div>
           <div>
             <p style={leadText}>
