@@ -82,21 +82,29 @@ El campo `mcp.enabled` en `config.json` controla qué integraciones MCP están
 activas (GitHub, Gmail, Google Drive, Google Calendar, filesystem). Todas
 empiezan deshabilitadas salvo `filesystem`.
 
-### Validación obligatoria del repositorio
+### Validación obligatoria del repositorio (fail-closed)
 
 Antes de ejecutar Claude Code para cualquier tarea, KLEO valida el estado
-real del repositorio del proyecto en disco:
+real del repositorio del proyecto en disco. Cada chequeo es fail-closed:
+si no se puede confirmar positivamente, la tarea se bloquea — nunca se
+asume un estado seguro por defecto.
 
 - la ruta configurada existe,
-- es la raíz de un repositorio Git (`git rev-parse --show-toplevel`),
-- el remote `origin` coincide con `expected_remotes[proyecto]` (si está
-  configurado — si no hay entrada, no se valida el remote),
-- se puede determinar la rama actual y el `HEAD`,
+- es **exactamente** la raíz de un repositorio Git — `Path(ruta).resolve()
+  == Path(git_root).resolve()`; un subdirectorio de un repo válido no basta
+  y bloquea con "La ruta configurada no es la raíz del repositorio",
+- el proyecto tiene una entrada en `expected_remotes` — **es obligatoria**,
+  no se puede omitir; si falta, la tarea se bloquea antes de llegar a
+  comparar el remote,
+- el remote `origin` coincide exactamente con `expected_remotes[proyecto]`,
+- `git branch --show-current` devuelve una rama real (no vacío) — un HEAD
+  en estado *detached* bloquea la tarea,
+- `git status --porcelain` se ejecuta correctamente — si el comando falla,
+  **nunca se interpreta como repositorio limpio**, bloquea la tarea,
 - no hay un merge, rebase o cherry-pick a medias.
 
 Si cualquiera de estas validaciones falla, **la tarea se bloquea antes de
-llamar a Claude Code** — nunca se ejecuta sobre un repositorio en un estado
-que no se pudo confirmar. Si todo pasa, KLEO manda a Telegram un mensaje
+llamar a Claude Code**. Si todo pasa, KLEO manda a Telegram un mensaje
 `ENTORNO VERIFICADO` con la ruta, raíz Git, remote, rama, HEAD inicial y
 estado (`git status --porcelain`) antes de arrancar Claude Code, y guarda
 esos mismos datos en la tarea (`env_verified`) para auditoría.
@@ -104,13 +112,21 @@ esos mismos datos en la tarea (`env_verified`) para auditoría.
 ```json
 {
   "expected_remotes": {
-    "world": "https://github.com/LATAMFILTERS/world-catalogue.git"
+    "world": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "phoenix": "https://github.com/LATAMFILTERS/PROJECT-PHOENIX.git",
+    "marketing": "https://github.com/LATAMFILTERS/ELIMFILTERS-Marketing.git",
+    "commercial": "https://github.com/LATAMFILTERS/ELIMFILTERS-Commercial.git",
+    "mcp": "https://github.com/LATAMFILTERS/ELIMFILTERS-MCP.git",
+    "kleo": "https://github.com/LATAMFILTERS/KleoOS.git",
+    "elimfilters": "https://github.com/LATAMFILTERS/elimfilters.git"
   }
 }
 ```
 
-Un proyecto sin entrada en `expected_remotes` se valida igual (ruta, repo
-Git, HEAD, merge/rebase en curso) pero sin exigir un remote específico.
+Todo proyecto que vaya a ejecutar tareas necesita su propia entrada aquí.
+Un proyecto sin `expected_remotes[proyecto]` configurado no podrá ejecutar
+ninguna tarea — KLEO lo bloqueará siempre, no hay forma de omitir este
+chequeo.
 
 ### Verificación automática con pruebas (`test_commands`)
 

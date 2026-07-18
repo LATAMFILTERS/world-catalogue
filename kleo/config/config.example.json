@@ -17,7 +17,13 @@
   },
   "test_timeout_seconds": 600,
   "expected_remotes": {
-    "world": "https://github.com/LATAMFILTERS/world-catalogue.git"
+    "world": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "phoenix": "https://github.com/LATAMFILTERS/PROJECT-PHOENIX.git",
+    "marketing": "https://github.com/LATAMFILTERS/ELIMFILTERS-Marketing.git",
+    "commercial": "https://github.com/LATAMFILTERS/ELIMFILTERS-Commercial.git",
+    "mcp": "https://github.com/LATAMFILTERS/ELIMFILTERS-MCP.git",
+    "kleo": "https://github.com/LATAMFILTERS/KleoOS.git",
+    "elimfilters": "https://github.com/LATAMFILTERS/elimfilters.git"
   },
   "db_path": "./data/kleo.db",
   "log_path": "./data/kleo.log",

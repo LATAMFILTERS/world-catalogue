@@ -1,10 +1,14 @@
 """Verifies a project's on-disk repository state before KLEO lets Claude
 Code touch it.
 
-Runs before every task: confirms the configured path exists, is a real git
-repository, points at the expected remote (when one is configured), and has
-no merge/rebase/cherry-pick left mid-flight. A task never reaches Claude
-Code unless every check passes — this is deliberately fail-closed.
+Runs before every task: confirms the configured path exists and is exactly
+the root of a real git repository (not a subdirectory of one), that it
+points at a mandatory expected remote, that HEAD resolves to a named branch
+(never a detached HEAD), that ``git status`` can actually be read, and that
+there is no merge/rebase/cherry-pick left mid-flight. A task never reaches
+Claude Code unless every check passes — this is deliberately fail-closed:
+anything that can't be positively confirmed blocks the task, it never falls
+back to treating an unknown state as safe.
 """
 
 from __future__ import annotations
@@ -59,7 +63,10 @@ def verify_repository(
     """Runs the full pre-flight check for *project* at *configured_path*.
     Returns a RepoVerification whose ``.ok`` is False (with ``.error`` set)
     the moment any check fails — callers must not run Claude Code unless
-    ``.ok`` is True."""
+    ``.ok`` is True. Every check here is fail-closed: anything that can't be
+    positively confirmed (an exact repo root, a configured remote, a named
+    branch, a readable working-tree status) blocks the task rather than
+    falling back to an assumption."""
     result = RepoVerification(project=project, configured_path=str(configured_path))
     path = Path(configured_path)
 
@@ -74,18 +81,37 @@ def verify_repository(
     result.git_root = toplevel
     root = Path(toplevel)
 
+    if path.resolve() != root.resolve():
+        result.error = (
+            "La ruta configurada no es la raíz del repositorio "
+            f"(ruta configurada: {path.resolve()}, raíz Git: {root.resolve()})"
+        )
+        return result
+
+    if not expected_remote:
+        result.error = (
+            f"El proyecto '{project}' no tiene 'expected_remote' configurado en "
+            "expected_remotes; es obligatorio para poder ejecutar tareas."
+        )
+        return result
+
     ok, remote_url = _git(["remote", "get-url", "origin"], root)
     result.remote_url = remote_url if ok and remote_url else None
-    if expected_remote:
-        if not result.remote_url or _normalize_remote(result.remote_url) != _normalize_remote(expected_remote):
-            result.error = (
-                f"El remote origin ({result.remote_url or '(sin remote)'}) no coincide "
-                f"con el esperado ({expected_remote})"
-            )
-            return result
+    if not result.remote_url or _normalize_remote(result.remote_url) != _normalize_remote(expected_remote):
+        result.error = (
+            f"El remote origin ({result.remote_url or '(sin remote)'}) no coincide "
+            f"con el esperado ({expected_remote})"
+        )
+        return result
 
     ok, branch = _git(["branch", "--show-current"], root)
-    result.branch = branch if ok else ""
+    if not ok or not branch:
+        result.error = (
+            f"No se pudo determinar la rama actual en '{toplevel}' "
+            "(HEAD podría estar en estado detached)"
+        )
+        return result
+    result.branch = branch
 
     ok, head = _git(["rev-parse", "HEAD"], root)
     if not ok or not head:
@@ -94,7 +120,10 @@ def verify_repository(
     result.head = head
 
     ok, status = _git(["status", "--porcelain"], root)
-    result.status = status if ok else ""
+    if not ok:
+        result.error = f"No se pudo determinar el estado del repositorio en '{toplevel}' (git status falló)"
+        return result
+    result.status = status
 
     ok, git_dir = _git(["rev-parse", "--git-dir"], root)
     git_dir_path = (root / git_dir) if ok and git_dir else (root / ".git")
