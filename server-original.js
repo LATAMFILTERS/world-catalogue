@@ -1879,6 +1879,19 @@ app.post('/api/import/mann-specs', importLimiter, requireAdmin, async (req, res)
 });
 
 // ─── POST /api/import/mann ───────────────────────────────────────────────────────────────────────────────
+// FLEETGUARD, DONALDSON, and BALDWIN are Heavy Duty-only brands in this
+// catalog and must never end up on a LIGHT_DUTY row — but this endpoint
+// previously stored whatever oem_codes/competitor_codes the caller sent
+// with no filtering, so a batch that mixed in HD cross-reference data
+// (e.g. reused from the Donaldson-based competitor matrix) silently wrote
+// HD-only brand codes onto MANN-based LD products. Strip them here so it
+// cannot happen again regardless of what the import payload contains.
+const LD_HD_ONLY_BRANDS = new Set(['FLEETGUARD', 'DONALDSON', 'BALDWIN']);
+function stripHdOnlyBrandRefs(refs) {
+  if (!Array.isArray(refs)) return refs;
+  return refs.filter(r => !LD_HD_ONLY_BRANDS.has(normalizeBrandKey(r?.manufacturer || r?.brand || '')));
+}
+
 const MANN_SKU_PREFIXES = {
   'Oil Filter':    'EL3',
   'Air Filter':    'EA3',
@@ -1931,8 +1944,8 @@ app.post('/api/import/mann', importLimiter, requireAdmin, async (req, res) => {
         continue;
       }
 
-      const oem_codes        = row.oem_codes        ? JSON.stringify(row.oem_codes)        : '[]';
-      const competitor_codes = row.competitor_codes ? JSON.stringify(row.competitor_codes) : '[]';
+      const oem_codes        = row.oem_codes        ? JSON.stringify(stripHdOnlyBrandRefs(row.oem_codes))        : '[]';
+      const competitor_codes = row.competitor_codes ? JSON.stringify(stripHdOnlyBrandRefs(row.competitor_codes)) : '[]';
       // LD vehicle fitment goes in vehicle_applications (what /api/search/vin and
       // /api/search/equipment query for duty='LIGHT_DUTY'), not equipment_applications
       // (that column is for Heavy Duty industrial equipment).
