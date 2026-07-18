@@ -15,7 +15,7 @@ from pathlib import Path
 
 from kleo.commands import handle_message
 from kleo.config import Config, load_config
-from kleo.executor import ClaudeCodeExecutor, ExecutionResult, TestResult, run_test_command
+from kleo.executor import AgentExecutor, ExecutionResult, TestResult, build_executor, run_test_command
 from kleo.repo_guard import format_env_verified_message, verify_repository
 from kleo.security import SecretRedactor, install_redaction
 from kleo.storage import Storage
@@ -137,7 +137,7 @@ class KleoApp:
         config: Config,
         storage: Storage,
         telegram: TelegramClient,
-        executor: ClaudeCodeExecutor,
+        executor: AgentExecutor,
     ):
         self.config = config
         self.storage = storage
@@ -316,11 +316,7 @@ def build_app(config_path: str | None = None, env_path: str | None = None) -> Kl
     storage = Storage(config.db_path)
     telegram = TelegramClient(config.telegram_token)
     verify_telegram_connectivity(telegram)
-    executor = ClaudeCodeExecutor(
-        claude_path=config.claude_path,
-        extra_args=config.claude_extra_args,
-        timeout_seconds=config.claude_timeout_seconds,
-    )
+    executor = build_executor(config)
     return KleoApp(config, storage, telegram, executor)
 
 
