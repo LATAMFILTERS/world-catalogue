@@ -16,6 +16,7 @@ from pathlib import Path
 from kleo.commands import handle_message
 from kleo.config import Config, load_config
 from kleo.executor import ClaudeCodeExecutor, ExecutionResult, TestResult, run_test_command
+from kleo.repo_guard import format_env_verified_message, verify_repository
 from kleo.security import SecretRedactor, install_redaction
 from kleo.storage import Storage
 from kleo.tasks import Task, TaskStatus, utcnow_iso
@@ -206,20 +207,46 @@ class KleoApp:
             return False
 
         project_path = self.config.projects.resolve(task.project)
-        if project_path is None or not project_path.is_dir():
+        if project_path is None:
             self.storage.mark_status(
                 task.id,
                 TaskStatus.ERROR,
-                error=f"Ruta del proyecto '{task.project}' no encontrada: {project_path}",
+                error=f"El proyecto '{task.project}' no está configurado.",
                 finished_at=utcnow_iso(),
             )
             self.telegram.send_message(
                 task.chat_id,
-                f"Tarea #{task.id} error: la ruta del proyecto '{task.project}' no existe en disco.",
+                f"Tarea #{task.id} error: el proyecto '{task.project}' no está configurado.",
             )
             return True
 
-        self.storage.mark_status(task.id, TaskStatus.RUNNING, started_at=utcnow_iso())
+        verification = verify_repository(
+            task.project, project_path, self.config.expected_remotes.get(task.project)
+        )
+        if not verification.ok:
+            logger.warning(
+                "Repo verification failed for task #%s (project=%s): %s",
+                task.id, task.project, verification.error,
+            )
+            self.storage.mark_status(
+                task.id,
+                TaskStatus.ERROR,
+                started_at=utcnow_iso(),
+                finished_at=utcnow_iso(),
+                error=verification.error,
+                env_verified=f"VERIFICACIÓN FALLIDA: {verification.error}",
+            )
+            self.telegram.send_message(
+                task.chat_id, f"Tarea #{task.id} bloqueada antes de ejecutar — {verification.error}"
+            )
+            return True
+
+        env_message = format_env_verified_message(verification)
+        self.storage.mark_status(
+            task.id, TaskStatus.RUNNING, started_at=utcnow_iso(), env_verified=env_message
+        )
+        self.telegram.send_message(task.chat_id, env_message)
+
         try:
             result = self.executor.run(project_path, task.instruction, task_id=task.id)
         except Exception as exc:  # executor/subprocess failure, not fabricated

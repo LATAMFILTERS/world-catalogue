@@ -82,6 +82,36 @@ El campo `mcp.enabled` en `config.json` controla qué integraciones MCP están
 activas (GitHub, Gmail, Google Drive, Google Calendar, filesystem). Todas
 empiezan deshabilitadas salvo `filesystem`.
 
+### Validación obligatoria del repositorio
+
+Antes de ejecutar Claude Code para cualquier tarea, KLEO valida el estado
+real del repositorio del proyecto en disco:
+
+- la ruta configurada existe,
+- es la raíz de un repositorio Git (`git rev-parse --show-toplevel`),
+- el remote `origin` coincide con `expected_remotes[proyecto]` (si está
+  configurado — si no hay entrada, no se valida el remote),
+- se puede determinar la rama actual y el `HEAD`,
+- no hay un merge, rebase o cherry-pick a medias.
+
+Si cualquiera de estas validaciones falla, **la tarea se bloquea antes de
+llamar a Claude Code** — nunca se ejecuta sobre un repositorio en un estado
+que no se pudo confirmar. Si todo pasa, KLEO manda a Telegram un mensaje
+`ENTORNO VERIFICADO` con la ruta, raíz Git, remote, rama, HEAD inicial y
+estado (`git status --porcelain`) antes de arrancar Claude Code, y guarda
+esos mismos datos en la tarea (`env_verified`) para auditoría.
+
+```json
+{
+  "expected_remotes": {
+    "world": "https://github.com/LATAMFILTERS/world-catalogue.git"
+  }
+}
+```
+
+Un proyecto sin entrada en `expected_remotes` se valida igual (ruta, repo
+Git, HEAD, merge/rebase en curso) pero sin exigir un remote específico.
+
 ### Verificación automática con pruebas (`test_commands`)
 
 Por cada proyecto en `test_commands`, KLEO corre ese comando después de que

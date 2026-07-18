@@ -16,6 +16,9 @@
     "world": "cd frontend && npm run lint && npm run type-check"
   },
   "test_timeout_seconds": 600,
+  "expected_remotes": {
+    "world": "https://github.com/LATAMFILTERS/world-catalogue.git"
+  },
   "db_path": "./data/kleo.db",
   "log_path": "./data/kleo.log",
   "poll_interval_seconds": 2.0,

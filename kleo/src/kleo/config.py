@@ -129,6 +129,7 @@ class Config:
     claude_timeout_seconds: int = 900
     test_commands: dict[str, str] = field(default_factory=dict)
     test_timeout_seconds: int = 600
+    expected_remotes: dict[str, str] = field(default_factory=dict)
 
 
 def _load_json(path: Path) -> dict:
@@ -205,4 +206,5 @@ def load_config(
             or raw.get("test_timeout_seconds")
             or 600
         ),
+        expected_remotes=dict(raw.get("expected_remotes", {})),
     )
