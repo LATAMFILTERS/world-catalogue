@@ -98,7 +98,7 @@ function DustIngestionContent() {
           }}>
             Dust ingestion does not require a visible filter failure. Elements operating near or
             past their rated dust-holding capacity allow progressively more fine particles through
-            as differential pressure rises. This "late-life ingestion" — where the filter is
+            as differential pressure rises. This &quot;late-life ingestion&quot; — where the filter is
             technically in service but no longer controlling contamination — accounts for a
             significant fraction of premature engine wear in fleets with poor service interval
             compliance.

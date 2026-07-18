@@ -1,16 +1,30 @@
 {
   "projects": {
     "world": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
-    "phoenix": "C:\\Users\\VICTOR ABREU\\Documents\\PROJECT-PHOENIX",
-    "marketing": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-Marketing",
-    "commercial": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-Commercial",
-    "mcp": "C:\\Users\\VICTOR ABREU\\Documents\\ELIMFILTERS-MCP",
-    "kleo": "C:\\Users\\VICTOR ABREU\\Documents\\KleoOS",
-    "elimfilters": "C:\\Users\\VICTOR ABREU\\Documents\\elimfilters"
+    "phoenix": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "marketing": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "commercial": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "mcp": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "kleo": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue",
+    "elimfilters": "C:\\Users\\VICTOR ABREU\\Documents\\world-catalogue"
   },
   "claude_path": "claude",
   "claude_extra_args": [],
   "claude_timeout_seconds": 900,
+  "test_commands": {
+    "kleo": "cd kleo && .venv\\Scripts\\python.exe -m pytest",
+    "world": "cd frontend && npm run lint && npm run type-check"
+  },
+  "test_timeout_seconds": 600,
+  "expected_remotes": {
+    "world": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "phoenix": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "marketing": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "commercial": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "mcp": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "kleo": "https://github.com/LATAMFILTERS/world-catalogue.git",
+    "elimfilters": "https://github.com/LATAMFILTERS/world-catalogue.git"
+  },
   "db_path": "./data/kleo.db",
   "log_path": "./data/kleo.log",
   "poll_interval_seconds": 2.0,

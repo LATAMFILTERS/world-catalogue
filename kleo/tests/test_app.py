@@ -1,5 +1,6 @@
 import logging
 import time
+from dataclasses import replace
 
 import pytest
 
@@ -59,6 +60,7 @@ def test_process_next_task_invokes_fake_executor_and_saves_result_to_sqlite(base
             stderr="",
             git_status="",
             git_diff_stat=" 1 file changed",
+            repository_changed=True,
         )
     )
     app, telegram, executor = _build_app(base_config, storage, executor=executor)
@@ -75,8 +77,8 @@ def test_process_next_task_invokes_fake_executor_and_saves_result_to_sqlite(base
     assert stored.result_summary == "did the work"
     assert stored.git_diff_stat == " 1 file changed"
 
-    assert len(telegram.sent) == 1
-    assert "did the work" in telegram.sent[0][1]
+    assert len(telegram.sent) == 2  # ENTORNO VERIFICADO, then the result
+    assert "did the work" in telegram.sent[1][1]
 
 
 def test_long_result_is_split_correctly_for_telegram(base_config, storage):
@@ -98,6 +100,140 @@ def test_long_result_is_split_correctly_for_telegram(base_config, storage):
     # every original output line survives somewhere across the split messages
     rejoined = "\n".join(chunk for _, chunk in telegram.sent)
     assert "line of output" in rejoined
+
+
+def test_process_next_task_sends_env_verified_message_before_running(base_config, storage):
+    app, telegram, executor = _build_app(base_config, storage)
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+
+    app.process_next_task()
+
+    assert len(executor.calls) == 1  # Claude Code ran, since the repo verified clean
+    assert "ENTORNO VERIFICADO" in telegram.sent[0][1]
+    # the default FakeExecutor result doesn't touch the repo, so KLEO must not
+    # claim a verified completion — it reports the unverifiable-changes state
+    assert "SIN CAMBIOS VERIFICABLES" in telegram.sent[1][1]
+    stored = storage.get_task(task.id)
+    assert stored.env_verified is not None
+    assert "ENTORNO VERIFICADO" in stored.env_verified
+
+
+def test_process_next_task_blocks_before_claude_code_when_path_is_not_a_git_repo(
+    base_config, storage, tmp_path
+):
+    non_git_dir = tmp_path / "not-a-repo"
+    non_git_dir.mkdir()
+    config = replace(
+        base_config,
+        projects=replace(base_config.projects, paths={**base_config.projects.paths, "world": non_git_dir}),
+    )
+    app, telegram, executor = _build_app(config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    assert executor.calls == []  # Claude Code must never run against an invalid repo
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.ERROR
+    assert "no es un repositorio Git" in stored.error
+    assert "no es un repositorio Git" in telegram.sent[0][1]
+
+
+def test_process_next_task_blocks_on_remote_mismatch(base_config, storage):
+    config = replace(base_config, expected_remotes={"world": "https://github.com/someone/else.git"})
+    app, telegram, executor = _build_app(config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    assert executor.calls == []
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.ERROR
+    assert "no coincide" in stored.error
+
+
+def test_task_completed_when_configured_test_command_passes(base_config, storage):
+    config = replace(base_config, test_commands={"world": "echo tests passed"})
+    executor = FakeExecutor(
+        scripted_result=ExecutionResult(
+            exit_code=0,
+            stdout="did the work",
+            stderr="",
+            git_status="",
+            git_diff_stat=" 1 file changed",
+            repository_changed=True,
+        )
+    )
+    app, telegram, executor = _build_app(config, storage, executor=executor)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert "tests passed" in stored.tests_run
+    assert "COMPLETADA" in telegram.sent[1][1]
+    assert "Pruebas" in telegram.sent[1][1]
+
+
+def test_task_marked_error_when_test_command_fails_even_if_claude_code_succeeded(base_config, storage):
+    config = replace(base_config, test_commands={"world": "exit 1"})
+    app, telegram, executor = _build_app(config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.ERROR
+    assert "exit 1" in stored.tests_run
+    assert "ERROR" in telegram.sent[1][1]
+    assert "las pruebas fallaron" in telegram.sent[1][1]
+
+
+def test_task_reads_completada_only_when_git_confirms_a_real_change(base_config, storage):
+    executor = FakeExecutor(
+        scripted_result=ExecutionResult(
+            exit_code=0,
+            stdout="did the work",
+            stderr="",
+            git_status=" M file.txt",
+            git_diff_stat=" 1 file changed",
+            repository_changed=True,
+        )
+    )
+    app, telegram, executor = _build_app(base_config, storage, executor=executor)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    app.process_next_task()
+
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert "COMPLETADA" in telegram.sent[1][1]
+    assert "SIN CAMBIOS VERIFICABLES" not in telegram.sent[1][1]
+
+
+def test_no_configured_test_command_skips_verification_as_before(base_config, storage):
+    assert base_config.test_commands == {}
+    app, telegram, executor = _build_app(base_config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    app.process_next_task()
+
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert stored.tests_run is None
+    assert "Pruebas" not in telegram.sent[1][1]
 
 
 def test_system_continues_after_restart_requeues_running_tasks(base_config, tmp_path):

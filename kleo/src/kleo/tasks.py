@@ -37,6 +37,7 @@ class Task:
     exit_code: int | None = None
     git_status: str | None = None
     git_diff_stat: str | None = None
+    env_verified: str | None = None
 
     def to_row(self) -> dict:
         return {
@@ -55,6 +56,7 @@ class Task:
             "exit_code": self.exit_code,
             "git_status": self.git_status,
             "git_diff_stat": self.git_diff_stat,
+            "env_verified": self.env_verified,
         }
 
     @classmethod

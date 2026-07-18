@@ -290,7 +290,7 @@ export default function PEPSearchPage() {
                 letterSpacing: '0.08em',
                 marginBottom: '0.75rem',
               }}>
-                NO RESULTS FOR "{query.toUpperCase()}"
+                NO RESULTS FOR &quot;{query.toUpperCase()}&quot;
               </p>
               <p style={{
                 fontFamily: 'Inter, sans-serif',
