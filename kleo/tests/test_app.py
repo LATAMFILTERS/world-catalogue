@@ -1,5 +1,6 @@
 import logging
 import time
+from dataclasses import replace
 
 import pytest
 
@@ -98,6 +99,52 @@ def test_long_result_is_split_correctly_for_telegram(base_config, storage):
     # every original output line survives somewhere across the split messages
     rejoined = "\n".join(chunk for _, chunk in telegram.sent)
     assert "line of output" in rejoined
+
+
+def test_task_completed_when_configured_test_command_passes(base_config, storage):
+    config = replace(base_config, test_commands={"world": "echo tests passed"})
+    app, telegram, executor = _build_app(config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert "tests passed" in stored.tests_run
+    assert "COMPLETADA" in telegram.sent[0][1]
+    assert "Pruebas" in telegram.sent[0][1]
+
+
+def test_task_marked_error_when_test_command_fails_even_if_claude_code_succeeded(base_config, storage):
+    config = replace(base_config, test_commands={"world": "exit 1"})
+    app, telegram, executor = _build_app(config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    processed = app.process_next_task()
+
+    assert processed is True
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.ERROR
+    assert "exit 1" in stored.tests_run
+    assert "ERROR" in telegram.sent[0][1]
+    assert "las pruebas fallaron" in telegram.sent[0][1]
+
+
+def test_no_configured_test_command_skips_verification_as_before(base_config, storage):
+    assert base_config.test_commands == {}
+    app, telegram, executor = _build_app(base_config, storage)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    app.process_next_task()
+
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert stored.tests_run is None
+    assert "Pruebas" not in telegram.sent[0][1]
 
 
 def test_system_continues_after_restart_requeues_running_tasks(base_config, tmp_path):

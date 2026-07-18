@@ -1,4 +1,5 @@
 import subprocess
+import sys
 
 import pytest
 
@@ -7,6 +8,7 @@ from kleo.executor import (
     ClaudeExecutableNotFound,
     FakeExecutor,
     detect_claude_executable,
+    run_test_command,
 )
 
 
@@ -79,6 +81,27 @@ def test_claude_code_executor_never_uses_shell_true(monkeypatch, tmp_path, fake_
 
     assert captured["shell"] is False
     assert isinstance(captured["args"], list)
+
+
+def test_run_test_command_reports_success(tmp_path):
+    result = run_test_command("echo all good", cwd=tmp_path)
+    assert result.exit_code == 0
+    assert result.passed is True
+    assert "all good" in result.stdout
+
+
+def test_run_test_command_reports_failure(tmp_path):
+    result = run_test_command("exit 1", cwd=tmp_path)
+    assert result.exit_code == 1
+    assert result.passed is False
+    assert result.timed_out is False
+
+
+def test_run_test_command_reports_timeout(tmp_path):
+    python = sys.executable
+    result = run_test_command(f'"{python}" -c "import time; time.sleep(5)"', cwd=tmp_path, timeout_seconds=0.2)
+    assert result.timed_out is True
+    assert result.passed is False
 
 
 def test_fake_executor_records_calls_and_returns_simulated_result():

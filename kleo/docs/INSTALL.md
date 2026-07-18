@@ -82,6 +82,25 @@ El campo `mcp.enabled` en `config.json` controla qué integraciones MCP están
 activas (GitHub, Gmail, Google Drive, Google Calendar, filesystem). Todas
 empiezan deshabilitadas salvo `filesystem`.
 
+### Verificación automática con pruebas (`test_commands`)
+
+Por cada proyecto en `test_commands`, KLEO corre ese comando después de que
+Claude Code termina (solo si Claude Code salió con éxito) y **solo marca la
+tarea como COMPLETADA si las pruebas también pasan** — si fallan, la tarea
+queda en ERROR y el mensaje de Telegram incluye la salida de las pruebas.
+Un proyecto sin entrada en `test_commands` se reporta como antes, sin este
+paso adicional.
+
+```json
+{
+  "test_commands": {
+    "kleo": "cd kleo && .venv\\Scripts\\python.exe -m pytest",
+    "world": "cd frontend && npm run lint && npm run type-check"
+  },
+  "test_timeout_seconds": 600
+}
+```
+
 ## 5. Iniciar KLEO
 
 ```powershell

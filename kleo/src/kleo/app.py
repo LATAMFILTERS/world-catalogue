@@ -15,7 +15,7 @@ from pathlib import Path
 
 from kleo.commands import handle_message
 from kleo.config import Config, load_config
-from kleo.executor import ClaudeCodeExecutor, ExecutionResult
+from kleo.executor import ClaudeCodeExecutor, ExecutionResult, TestResult, run_test_command
 from kleo.security import SecretRedactor, install_redaction
 from kleo.storage import Storage
 from kleo.tasks import Task, TaskStatus, utcnow_iso
@@ -75,18 +75,27 @@ def verify_telegram_connectivity(telegram: TelegramClient) -> dict:
     return me
 
 
-def format_result_message(task: Task, result: ExecutionResult) -> str:
+def format_result_message(
+    task: Task, result: ExecutionResult, test_result: TestResult | None = None
+) -> str:
     """Builds the Telegram reply for a finished task: real stdout/stderr,
-    exit code, and git status/diff --stat — never a fabricated summary."""
+    exit code, test results, and git status/diff --stat — never a fabricated
+    summary. A task only reads as COMPLETADA if Claude Code exited 0 *and*
+    the project's configured test command (if any) also passed."""
     lines = [f"Tarea #{task.id} — proyecto: {task.project}"]
     if result.cancelled:
         lines.append("Estado: CANCELADA")
     elif result.timed_out:
         lines.append("Estado: TIMEOUT")
-    elif result.exit_code == 0:
-        lines.append("Estado: COMPLETADA")
-    else:
+    elif result.exit_code != 0:
         lines.append(f"Estado: ERROR (exit code {result.exit_code})")
+    elif test_result is not None and not test_result.passed:
+        if test_result.timed_out:
+            lines.append("Estado: ERROR (las pruebas no terminaron a tiempo)")
+        else:
+            lines.append(f"Estado: ERROR (las pruebas fallaron, exit code {test_result.exit_code})")
+    else:
+        lines.append("Estado: COMPLETADA")
 
     lines.append("\nResumen (stdout de Claude Code):")
     lines.append(result.stdout.strip() or "(sin salida)")
@@ -94,6 +103,12 @@ def format_result_message(task: Task, result: ExecutionResult) -> str:
     if result.stderr.strip():
         lines.append("\nErrores (stderr):")
         lines.append(result.stderr.strip())
+
+    if test_result is not None:
+        status = "(timeout)" if test_result.timed_out else f"exit code {test_result.exit_code}"
+        lines.append(f"\nPruebas ({status}):")
+        combined = f"{test_result.stdout}\n{test_result.stderr}".strip()
+        lines.append(combined or "(sin salida)")
 
     lines.append("\ngit status:")
     lines.append(result.git_status or "(sin cambios)")
@@ -215,9 +230,21 @@ class KleoApp:
             self.telegram.send_message(task.chat_id, f"Tarea #{task.id} error: {exc}")
             return True
 
+        test_result: TestResult | None = None
+        tests_run_summary: str | None = None
+        if not result.cancelled and not result.timed_out and result.exit_code == 0:
+            test_command = self.config.test_commands.get(task.project)
+            if test_command:
+                test_result = run_test_command(
+                    test_command, project_path, timeout_seconds=self.config.test_timeout_seconds
+                )
+                status = "TIMEOUT" if test_result.timed_out else f"exit code {test_result.exit_code}"
+                output = f"{test_result.stdout}\n{test_result.stderr}".strip()
+                tests_run_summary = f"$ {test_command}\n{status}\n{output}"[:4000]
+
         if result.cancelled:
             final_status = TaskStatus.CANCELLED
-        elif result.exit_code == 0 and not result.timed_out:
+        elif result.exit_code == 0 and not result.timed_out and (test_result is None or test_result.passed):
             final_status = TaskStatus.COMPLETED
         else:
             final_status = TaskStatus.ERROR
@@ -231,9 +258,12 @@ class KleoApp:
             exit_code=result.exit_code,
             git_status=(result.git_status or "")[:4000],
             git_diff_stat=(result.git_diff_stat or "")[:4000],
+            tests_run=tests_run_summary,
         )
         updated_task = self.storage.get_task(task.id)
-        self.telegram.send_message(task.chat_id, format_result_message(updated_task, result))
+        self.telegram.send_message(
+            task.chat_id, format_result_message(updated_task, result, test_result)
+        )
         return True
 
 

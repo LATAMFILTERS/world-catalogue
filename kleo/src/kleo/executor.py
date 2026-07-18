@@ -79,6 +79,46 @@ class ExecutionResult:
     git_diff_stat: str = ""
 
 
+@dataclass
+class TestResult:
+    exit_code: int | None
+    stdout: str
+    stderr: str
+    timed_out: bool = False
+
+    @property
+    def passed(self) -> bool:
+        return not self.timed_out and self.exit_code == 0
+
+
+def run_test_command(command: str, cwd: str | Path, timeout_seconds: int = 600) -> TestResult:
+    """Runs *command* in *cwd* to verify a Claude Code change actually works
+    before KLEO reports the task as completed. Uses ``shell=True``
+    deliberately: unlike the Claude Code invocation (which embeds untrusted
+    Telegram message text and must never go through a shell), this command
+    string only ever comes from the operator's local config.json — never
+    from a chat message."""
+    try:
+        proc = subprocess.run(
+            command,
+            shell=True,
+            cwd=str(cwd),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=timeout_seconds,
+        )
+        return TestResult(exit_code=proc.returncode, stdout=proc.stdout or "", stderr=proc.stderr or "")
+    except subprocess.TimeoutExpired as exc:
+        return TestResult(
+            exit_code=None,
+            stdout=(exc.stdout or "") if isinstance(exc.stdout, str) else "",
+            stderr=(exc.stderr or "") if isinstance(exc.stderr, str) else "",
+            timed_out=True,
+        )
+
+
 class ClaudeCodeExecutor:
     """Executes ``claude`` as a subprocess for a given project directory."""
 

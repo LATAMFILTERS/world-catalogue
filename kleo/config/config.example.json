@@ -11,6 +11,11 @@
   "claude_path": "claude",
   "claude_extra_args": [],
   "claude_timeout_seconds": 900,
+  "test_commands": {
+    "kleo": "cd kleo && .venv\\Scripts\\python.exe -m pytest",
+    "world": "cd frontend && npm run lint && npm run type-check"
+  },
+  "test_timeout_seconds": 600,
   "db_path": "./data/kleo.db",
   "log_path": "./data/kleo.log",
   "poll_interval_seconds": 2.0,

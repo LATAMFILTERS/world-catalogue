@@ -127,6 +127,8 @@ class Config:
     phoenix_root: Path | None
     claude_extra_args: list[str] = field(default_factory=list)
     claude_timeout_seconds: int = 900
+    test_commands: dict[str, str] = field(default_factory=dict)
+    test_timeout_seconds: int = 600
 
 
 def _load_json(path: Path) -> dict:
@@ -196,5 +198,11 @@ def load_config(
             environ.get("KLEO_CLAUDE_TIMEOUT_SECONDS")
             or raw.get("claude_timeout_seconds")
             or 900
+        ),
+        test_commands=dict(raw.get("test_commands", {})),
+        test_timeout_seconds=int(
+            environ.get("KLEO_TEST_TIMEOUT_SECONDS")
+            or raw.get("test_timeout_seconds")
+            or 600
         ),
     )
