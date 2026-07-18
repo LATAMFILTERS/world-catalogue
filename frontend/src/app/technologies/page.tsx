@@ -25,7 +25,6 @@ export default function TechnologiesPage() {
         <div style={{ ...heroImage, backgroundImage: 'url(/images/operator-technology.avif)' }} />
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>PROPRIETARY TECHNOLOGIES</p>
           <h1 style={heroTitle}>
             Technology Built
             <br />
@@ -53,7 +52,6 @@ export default function TechnologiesPage() {
 
       <section className="technologies-final-cta" style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>TOTAL ASSET PROTECTION</p>
           <h2 className="technologies-final-title" style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
@@ -88,10 +86,6 @@ const heroOverlay: CSSProperties = {
   background: 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
 };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: displayFont, fontSize: '0.75rem',
-  fontWeight: 700, letterSpacing: '0.34em', margin: '0 0 1.25rem', textTransform: 'uppercase',
-};
 const heroTitle: CSSProperties = {
   fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
   lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',

@@ -81,8 +81,11 @@ def format_result_message(
 ) -> str:
     """Builds the Telegram reply for a finished task: real stdout/stderr,
     exit code, test results, and git status/diff --stat — never a fabricated
-    summary. A task only reads as COMPLETADA if Claude Code exited 0 *and*
-    the project's configured test command (if any) also passed."""
+    summary. A task only reads as COMPLETADA if Claude Code exited 0, the
+    project's configured test command (if any) also passed, *and* Git
+    actually detected a change in the repository (``repository_changed``,
+    computed from a before/after fingerprint — an exit code of 0 alone does
+    not prove anything happened)."""
     lines = [f"Tarea #{task.id} — proyecto: {task.project}"]
     if result.cancelled:
         lines.append("Estado: CANCELADA")
@@ -95,11 +98,19 @@ def format_result_message(
             lines.append("Estado: ERROR (las pruebas no terminaron a tiempo)")
         else:
             lines.append(f"Estado: ERROR (las pruebas fallaron, exit code {test_result.exit_code})")
+    elif not result.repository_changed:
+        lines.append("Estado: EJECUTADA — SIN CAMBIOS VERIFICABLES EN EL REPOSITORIO")
     else:
         lines.append("Estado: COMPLETADA")
 
-    lines.append("\nResumen (stdout de Claude Code):")
+    lines.append("\nSalida del agente (NO constituye evidencia por sí sola):")
     lines.append(result.stdout.strip() or "(sin salida)")
+
+    if result.exit_code == 0 and not result.repository_changed:
+        lines.append(
+            "\nVerificación KLEO: el proceso terminó con exit code 0, pero Git no detectó "
+            "ningún cambio producido durante esta tarea. No se certifica como completada."
+        )
 
     if result.stderr.strip():
         lines.append("\nErrores (stderr):")
@@ -111,10 +122,10 @@ def format_result_message(
         combined = f"{test_result.stdout}\n{test_result.stderr}".strip()
         lines.append(combined or "(sin salida)")
 
-    lines.append("\ngit status:")
+    lines.append("\nEstado Git actual:")
     lines.append(result.git_status or "(sin cambios)")
 
-    lines.append("\ngit diff --stat:")
+    lines.append("\nDiferencias Git actuales (--stat):")
     lines.append(result.git_diff_stat or "(sin cambios)")
 
     return "\n".join(lines)

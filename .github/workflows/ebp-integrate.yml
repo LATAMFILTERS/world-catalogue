@@ -1,0 +1,106 @@
+name: EBP Integration Recovery
+
+on:
+  push:
+    branches:
+      - automation/trigger-ebp-integration
+
+permissions:
+  contents: write
+
+jobs:
+  recover-audit-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build clean integration branch from main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main claude/phase-0-audit-review-wanxa3
+          git checkout -B automation/ebp-phase0-5-integration origin/main
+
+          # Import the recovered EBP implementation without bringing the stale branch history.
+          git checkout origin/claude/phase-0-audit-review-wanxa3 -- \
+            docs/ebp \
+            ebp \
+            migrations/ebp-phase1 \
+            migrations/ebp-phase2 \
+            migrations/ebp-phase3 \
+            migrations/ebp-phase4 \
+            migrations/ebp-phase5 \
+            tests/ebp-phase1 \
+            tests/ebp-phase2 \
+            tests/ebp-phase3 \
+            tests/ebp-phase4 \
+            tests/ebp-phase5
+
+          # Preserve current main application wiring and apply only the audited EBP package scripts.
+          node <<'NODE'
+          const fs = require('fs');
+          const mainPkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const recovered = JSON.parse(require('child_process').execFileSync('git', ['show', 'origin/claude/phase-0-audit-review-wanxa3:package.json'], {encoding:'utf8'}));
+          mainPkg.scripts = {
+            ...(mainPkg.scripts || {}),
+            'test:ebp-phase1': recovered.scripts['test:ebp-phase1'],
+            'test:ebp-phase2': recovered.scripts['test:ebp-phase2'],
+            'test:ebp-phase3': recovered.scripts['test:ebp-phase3'],
+            'test:ebp-phase4': recovered.scripts['test:ebp-phase4'],
+            'test:ebp-phase5': recovered.scripts['test:ebp-phase5'],
+            'test:ebp': recovered.scripts['test:ebp']
+          };
+          for (const [name, version] of Object.entries(recovered.dependencies || {})) {
+            if (!(name in (mainPkg.dependencies || {}))) {
+              mainPkg.dependencies = mainPkg.dependencies || {};
+              mainPkg.dependencies[name] = version;
+            }
+          }
+          fs.writeFileSync('package.json', JSON.stringify(mainPkg, null, 2) + '\n');
+          NODE
+
+          npm install --package-lock-only --ignore-scripts
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Syntax audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check server.js
+          find ebp -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+
+      - name: Execute EBP Phase 1-5 tests
+        run: npm run test:ebp
+
+      - name: Validate migration files are non-empty and structurally present
+        shell: bash
+        run: |
+          set -euo pipefail
+          for phase in 1 2 3 4 5; do
+            test -d "migrations/ebp-phase${phase}"
+            test -s "migrations/ebp-phase${phase}/validate.sql"
+            test -s "migrations/ebp-phase${phase}/rollback.sql"
+          done
+          find migrations/ebp-phase* -type f -name '*.sql' -empty -print -quit | grep -q . && {
+            echo 'Empty SQL migration file detected'; exit 1;
+          } || true
+
+      - name: Commit recovered integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add docs/ebp ebp migrations/ebp-phase* tests/ebp-phase* package.json package-lock.json
+          git commit -m "feat: recover and validate EBP phases 0-5 on current main"
+          git push --force-with-lease origin automation/ebp-phase0-5-integration

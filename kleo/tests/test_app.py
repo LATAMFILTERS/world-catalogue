@@ -60,6 +60,7 @@ def test_process_next_task_invokes_fake_executor_and_saves_result_to_sqlite(base
             stderr="",
             git_status="",
             git_diff_stat=" 1 file changed",
+            repository_changed=True,
         )
     )
     app, telegram, executor = _build_app(base_config, storage, executor=executor)
@@ -110,7 +111,9 @@ def test_process_next_task_sends_env_verified_message_before_running(base_config
 
     assert len(executor.calls) == 1  # Claude Code ran, since the repo verified clean
     assert "ENTORNO VERIFICADO" in telegram.sent[0][1]
-    assert "COMPLETADA" in telegram.sent[1][1]
+    # the default FakeExecutor result doesn't touch the repo, so KLEO must not
+    # claim a verified completion — it reports the unverifiable-changes state
+    assert "SIN CAMBIOS VERIFICABLES" in telegram.sent[1][1]
     stored = storage.get_task(task.id)
     assert stored.env_verified is not None
     assert "ENTORNO VERIFICADO" in stored.env_verified
@@ -156,7 +159,17 @@ def test_process_next_task_blocks_on_remote_mismatch(base_config, storage):
 
 def test_task_completed_when_configured_test_command_passes(base_config, storage):
     config = replace(base_config, test_commands={"world": "echo tests passed"})
-    app, telegram, executor = _build_app(config, storage)
+    executor = FakeExecutor(
+        scripted_result=ExecutionResult(
+            exit_code=0,
+            stdout="did the work",
+            stderr="",
+            git_status="",
+            git_diff_stat=" 1 file changed",
+            repository_changed=True,
+        )
+    )
+    app, telegram, executor = _build_app(config, storage, executor=executor)
 
     storage.set_active_project(999, "world")
     task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
@@ -184,6 +197,29 @@ def test_task_marked_error_when_test_command_fails_even_if_claude_code_succeeded
     assert "exit 1" in stored.tests_run
     assert "ERROR" in telegram.sent[1][1]
     assert "las pruebas fallaron" in telegram.sent[1][1]
+
+
+def test_task_reads_completada_only_when_git_confirms_a_real_change(base_config, storage):
+    executor = FakeExecutor(
+        scripted_result=ExecutionResult(
+            exit_code=0,
+            stdout="did the work",
+            stderr="",
+            git_status=" M file.txt",
+            git_diff_stat=" 1 file changed",
+            repository_changed=True,
+        )
+    )
+    app, telegram, executor = _build_app(base_config, storage, executor=executor)
+
+    storage.set_active_project(999, "world")
+    task = storage.create_task(chat_id=999, project="world", instruction="fix bug")
+    app.process_next_task()
+
+    stored = storage.get_task(task.id)
+    assert stored.status == TaskStatus.COMPLETED
+    assert "COMPLETADA" in telegram.sent[1][1]
+    assert "SIN CAMBIOS VERIFICABLES" not in telegram.sent[1][1]
 
 
 def test_no_configured_test_command_skips_verification_as_before(base_config, storage):

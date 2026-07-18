@@ -62,7 +62,6 @@ export default function SystemsPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <p style={eyebrow}>PROTECTION SYSTEMS</p>
           <h1 style={heroTitle}>
             Systems Built
             <br />
@@ -99,7 +98,6 @@ export default function SystemsPage() {
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>SYSTEM PORTFOLIO</p>
             <h2 style={sectionTitle}>Select the system. Control the failure mode.</h2>
           </div>
 
@@ -127,7 +125,6 @@ export default function SystemsPage() {
       <section style={searchCallout}>
         <div style={searchInner}>
           <div>
-            <p style={eyebrow}>PART SEARCH INTELLIGENCE</p>
             <h2 style={sectionTitle}>From system domain to real part number.</h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
               Use ELIMFILTERS part search to connect OEM numbers, competitive references, dimensions, and application logic back to the correct protection system.
@@ -141,7 +138,6 @@ export default function SystemsPage() {
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ ...eyebrow, textAlign: 'center' }}>PRODUCT FAMILIES</p>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             Explore filters and components by product family.
           </h2>
@@ -187,11 +183,6 @@ const heroOverlay: CSSProperties = {
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-
-const eyebrow: CSSProperties = {
-  color: '#FFF12D', fontFamily: displayFont, fontSize: '0.75rem',
-  fontWeight: 700, letterSpacing: '0.34em', margin: '0 0 1.25rem', textTransform: 'uppercase',
-};
 
 const heroTitle: CSSProperties = {
   fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em',
