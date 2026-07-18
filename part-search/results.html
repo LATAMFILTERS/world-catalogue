@@ -1385,9 +1385,10 @@ function renderCard(p, index) {
                         if (eng === '-' || eng.startsWith('- ')) eng = eng.replace(/^-+\s*/, '');
                         // For LD: show engine + power + year; for HD: show engine + type + year
                         const power = (a.kw || a.hp) ? [(a.kw ? a.kw + ' kW' : ''), (a.hp ? a.hp + ' hp' : '')].filter(Boolean).join('/') : '';
+                        const yr = a.year || a.year_range || '';
                         const yearType = isLD
-                          ? [power, a.year].filter(Boolean).join(' Â· ')
-                          : [a.year, a.type].filter(Boolean).join(' Â· ');
+                          ? [power, yr].filter(Boolean).join(' Â· ')
+                          : [yr, a.type].filter(Boolean).join(' Â· ');
                         if (!fullName) return '';
 
                         // First word as manufacturer accent, rest as model
