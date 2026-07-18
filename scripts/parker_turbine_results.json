@@ -1,83 +1,95 @@
 [
   {
-    "sku":"ET90500",
-    "codigo_base":"500FH",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Housing"
+    "sku": "ET90500",
+    "codigo_base": "500FH",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Housing",
+    "description_elimfilters": "ELIMFILTERS® ET90500 Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET90900",
-    "codigo_base":"900FH",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Housing"
+    "sku": "ET90900",
+    "codigo_base": "900FH",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Housing",
+    "description_elimfilters": "ELIMFILTERS® ET90900 Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET91000",
-    "codigo_base":"1000FH",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Housing"
+    "sku": "ET91000",
+    "codigo_base": "1000FH",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Housing",
+    "description_elimfilters": "ELIMFILTERS® ET91000 Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92010P",
-    "codigo_base":"2010P",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":30
+    "sku": "ET92010P",
+    "codigo_base": "2010P",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 30,
+    "description_elimfilters": "ELIMFILTERS® ET92010P Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92010T",
-    "codigo_base":"2010T",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":10
+    "sku": "ET92010T",
+    "codigo_base": "2010T",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 10,
+    "description_elimfilters": "ELIMFILTERS® ET92010T Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92010S",
-    "codigo_base":"2010S",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":2
+    "sku": "ET92010S",
+    "codigo_base": "2010S",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 2,
+    "description_elimfilters": "ELIMFILTERS® ET92010S Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92020P",
-    "codigo_base":"2020P",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":30
+    "sku": "ET92020P",
+    "codigo_base": "2020P",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 30,
+    "description_elimfilters": "ELIMFILTERS® ET92020P Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92020T",
-    "codigo_base":"2020T",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":10
+    "sku": "ET92020T",
+    "codigo_base": "2020T",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 10,
+    "description_elimfilters": "ELIMFILTERS® ET92020T Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92020S",
-    "codigo_base":"2020S",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":2
+    "sku": "ET92020S",
+    "codigo_base": "2020S",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 2,
+    "description_elimfilters": "ELIMFILTERS® ET92020S Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92040P",
-    "codigo_base":"2040P",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":30
+    "sku": "ET92040P",
+    "codigo_base": "2040P",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 30,
+    "description_elimfilters": "ELIMFILTERS® ET92040P Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92040T",
-    "codigo_base":"2040T",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":10
+    "sku": "ET92040T",
+    "codigo_base": "2040T",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 10,
+    "description_elimfilters": "ELIMFILTERS® ET92040T Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   },
   {
-    "sku":"ET92040S",
-    "codigo_base":"2040S",
-    "technology":"TURBOCORE™",
-    "filter_type":"Fuel Water Separator Cartridge",
-    "micron_rating":2
+    "sku": "ET92040S",
+    "codigo_base": "2040S",
+    "technology": "TURBOCORE™",
+    "filter_type": "Fuel Water Separator Cartridge",
+    "micron_rating": 2,
+    "description_elimfilters": "ELIMFILTERS® ET92040S Turbine-series fuel/water separator housing and element. TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel before it reaches the engine, protecting injectors from corrosion and abrasive wear."
   }
 ]
