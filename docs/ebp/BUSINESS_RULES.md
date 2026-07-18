@@ -1,69 +1,525 @@
-# ELIMFILTERS Business Platform — Business Rules
+# BUSINESS RULES — ELIMFILTERS Business Platform (EBP)
 
-## Product identity
+**Status:** Phase 0 — Foundation (revised, second correction round, 2026-07-13)
+**Authority:** This document is the canonical source for EBP domain rules.
+Where it overlaps with root `CLAUDE.md` (SKU architecture, language rules,
+positioning rules), root `CLAUDE.md` remains authoritative for the World
+Catalogue/catalog domain and is referenced, not restated in full, here.
 
-- `elimfilters_code` is the immutable canonical SKU identifier.
-- Every SKU has one Product Engineering Passport (PEP) and may have multiple revisions.
-- Base/reference codes and brands identify the market reference but do not replace the ELIMFILTERS SKU.
+**Correction notice (first round):** The original draft's
+`Passport × Manufacturer × Supplier` model was replaced with
+`Passport Version × Manufacturer × Manufacturer Offer`. Raw-material/
+component suppliers are not a mandatory MVP entity. See ADR-0005 and
+ADR-0006 in `DECISIONS.md`.
 
-## Engineering ownership
+**Correction notice (second round, this revision):** The first round still
+assumed exactly one Offer per (Manufacturer, Passport Version), described
+Manufacturer-proposed and ELIMFILTERS-approved packaging quantities as if
+they were Passport fields, and used a single undifferentiated
+"confidential manufacturing notes" field. This revision corrects all
+three: Offers are now versioned with a full status lifecycle (§5), Offer
+Approval is a new, distinct entity/section (§7), packaging data ownership
+is split across the PEP, the Offer, and Offer Approval (§3.1), and
+Passport notes are split into `manufacturer_instruction_notes` and
+`internal_engineering_notes` (§3). See ADR-0007, ADR-0008, and ADR-0009 in
+`DECISIONS.md`. Inserting §7 shifted every subsequent section number by
+one relative to the first correction round — cross-references throughout
+`docs/ebp/` have been re-checked against the numbering below.
 
-ELIMFILTERS exclusively defines and approves:
+**Correction notice (third round, 2026-07-13, Phase 5 decisions,
+ADR-0062 through ADR-0074):** §7 and §8 are rewritten. The entity
+originally called "Offer Approval" (ADR-0008/ADR-0011) was designed to
+include both an engineering-approval and a commercial-approval role, but
+was **never actually implemented** in Phase 3's real schema/code. It is
+renamed **Offer Commercial Approval**, scoped strictly to the
+`COMMERCIAL_APPROVER` decision, and built as a Phase 5 entity
+(`ebp_offer_commercial_approvals`) — never merged with Phase 4's
+`ebp_engineering_decisions`, which already is ELIMFILTERS' engineering
+approval record. §8 is rewritten around the seven-part eligibility gate,
+the four-category weighted ranking (Technical Quality 40% / Commercial
+Competitiveness 25% / Operational Capability 20% / Strategic Resilience
+15%), and the Selection Run/Recommendation/Decision Result Model. See
+`docs/ebp/MANUFACTURER_SELECTION_ENGINE.md` and ADR-0062 through
+ADR-0074 in `DECISIONS.md`.
 
-- Technology assignment
-- Required filtration media and construction
-- Efficiency, micron and beta targets where applicable
-- Adhesive, gasket, center tube, end cap and other material requirements
-- Bypass and anti-drainback requirements where applicable
-- Dimensions, thread and performance targets
-- Packaging policy
-- Engineering revision and approval status
+## 1. Vocabulary (disambiguation)
 
-A manufacturer may submit offered or actual values, compliance confirmations, deviations, evidence, and commercial information. It may never overwrite required values.
+EBP introduces terms that are easy to confuse with existing catalog concepts
+or with each other. This section is the tie-breaker.
 
-## Manufacturer identity
+| Term | Meaning in EBP | Not to be confused with |
+|---|---|---|
+| **OEM** | Vehicle/equipment manufacturer whose part a SKU cross-references (FIAT, VW, Caterpillar, etc.). Already modeled in the existing `oems` table. | An EBP **Manufacturer** (below). |
+| **Manufacturer** | The factory engineering-approved to *produce* ELIMFILTERS-branded SKUs. Identified permanently and confidentially by an `EFM-XXXX` code (never by name as a functional key). New concept, defined in Phase 2. | The existing `oems` table. Also not "competitor brand" (Donaldson, Fleetguard, Mann) — reference brands for cross-referencing and SKU generation, not EBP manufacturing partners. |
+| **Manufacturer Request Batch** | A set of SKUs/Passports ELIMFILTERS assigns to one or more Manufacturers for a production-capability response. New concept, defined in Phase 3. | A purchase order. It is a request for capability/offer, not a commitment to buy. |
+| **Manufacturer Product Offer** | A specific Manufacturer's versioned response to a Passport within a Request Batch: its offered specification (`offered_*`/`actual_*` fields), FOB price, MOQ, lead time, capacity, packaging, and evidence. A Manufacturer may submit **many** Offers (revisions) for the same Passport Version over time, but at most one may be active at a time. New concept, defined in Phase 3. See §5 and ADR-0007. | The Passport itself. The Offer is the Manufacturer's *answer* to the Passport's *question*; they are never merged into one record. Also not the same as **Offer Commercial Approval** (§7) — an Offer being technically eligible does not mean it is Commercially Approved. |
+| **Offer Commercial Approval** | ELIMFILTERS' `COMMERCIAL_APPROVER` decision about whether a specific Manufacturer Offer's packaging and commercial/operational terms (FOB, MOQ, lead time, capacity) are accepted — distinct from Engineering Compliance Validation and from the Engineering Decision (Phase 4), which only ever judge technical compliance. Designed under ADR-0008 as "Offer Approval," never built in Phase 3; built as a Phase 5 entity, ADR-0072. See §7. | Engineering Compliance Validation (§6) and the Phase 4 Engineering Decision — never merged with either. Also not Manufacturer Selection's own Selection Decision (§8) — Commercial Approval judges one Offer's commercial terms; Selection's decision judges which already-approved Offer is sourced from. |
+| **Product Engineering Passport (PEP)** | The canonical, ELIMFILTERS-owned technical specification of a SKU or product family: locked identification, required engineering, required packaging. New concept, defined in Phase 1. | The public-facing catalog/marketing description on `frontend/`. Also not a Manufacturer's Offer — the Passport is the requirement; the Offer is the response. The PEP never holds Manufacturer-proposed or ELIMFILTERS-approved-after-review values — see §3.1 and ADR-0008. |
+| **Engineering Compliance Validation** | The gate that checks whether a specific Manufacturer Offer revision satisfies a Passport's required fields. Operates on **Passport Version × Manufacturer Code × Offer ID × Offer Revision**. Formerly drafted as "Validation Engine" against a Supplier model — corrected by ADR-0005; bound to a specific Offer revision — corrected by ADR-0007. Defined in Phase 4. | Manufacturer *qualification* (Phase 2, family-level, not offer-specific). Also not Offer Commercial Approval (§7) — Validation is technical only. |
+| **Supplier** (raw material/component vendor) | **Not an MVP entity.** Explicitly out of scope for Phases 00-09. See ADR-0005. If ever modeled, it would be a Manufacturer-internal concern (e.g., evidence attached to an Offer), not an independently validated EBP entity. | Do not design any Phase 01-09 deliverable to depend on a Supplier record. |
+| **Distributor** | A B2B account that sees only ELIMFILTERS-approved products at their final approved price. Never sees Manufacturer identity, `EFM-XXXX` code, FOB, margin, or confidential engineering. Defined in Phase 8. | Internal ELIMFILTERS staff, who may see full Manufacturer/Offer/cost detail depending on role (role model itself is a Phase 8 open question, not decided here). |
+| **Duty (HD/LD)** | Heavy Duty / Light Duty classification per root `CLAUDE.md`. | Not redefined by EBP; EBP inherits it as-is. |
 
-- Every manufacturer receives a permanent confidential code in the format `EFM-XXXX` or an equivalent non-sequential generated identifier.
-- Manufacturer legal name, contacts, location, certifications, contracts, and banking details are restricted data.
-- One SKU may have several manufacturer proposals and several approved manufacturers.
+## 2. SKU and Catalog Rules (inherited, not modified)
 
-## Manufacturer proposal
+EBP does not redefine SKU generation, prefixes, or duty classification. It
+inherits, verbatim, the rules in root `CLAUDE.md` under "Product Catalog SKU
+Architecture":
 
-Every proposal is bound to:
+- HD prefixes (`EA1`, `EA2`, `ED4`, `EH6`, `EL8`, `EM9`, `ES9`, `EC1`, `EF9`,
+  `EW7`, `ET9`) and LD prefixes (`EL3`, `EA3`, `EC3`, `EF3`) are fixed.
+- LD SKU generation (last-4-digits rule, collision-rejection rule) is
+  unchanged.
+- No HD/LD mixing. No invented SKUs. No duplicate SKUs.
+- OEM codes vs. competitor codes remain separate fields; EBP does not merge
+  them.
 
-- One manufacturer code
-- One SKU
-- One PEP revision
-- One request batch
-- One submission version
+**EBP-specific addition:** every EBP Product Engineering Passport (Phase 1)
+must reference an *existing* SKU, identified by its permanent, immutable
+`elimfilters_code`, or an explicitly flagged *pre-SKU* draft product (a
+product in engineering review before a SKU is minted). A Passport may never
+invent or duplicate a SKU; SKU minting remains governed by the existing
+rules above.
 
-Proposal history is append-only. Corrections create a new version or auditable revision.
+## 3. Product Engineering Passport (PEP) Rules
 
-## Packaging
+**Phase 1 implementation addendum (ADR-0014, does not alter the frozen
+v1.0 baseline):** where a Passport's required engineering fields are
+resolved from Phase 1's field-applicability matrix, a Passport revision
+may not activate while it depends on a matrix rule that is still
+`PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL` — see ADR-0014
+and `phases/phase-01-product-engineering-passport.md`. Drafting is never
+blocked by this; only the `DRAFT` → `ACTIVE` transition is.
 
-- Automotive: individual branded box required unless ELIMFILTERS approves an exception.
-- Industrial: no individual box by default.
-- Protective bags, separators, caps, moisture barriers, or other protection may be required by product.
-- Industrial master-carton targets are generally 6, 12, or 24 units, but a manufacturer may submit a physical/logistical deviation.
-- Store target quantity, manufacturer recommendation, and final approved quantity separately.
+- A Passport's **locked identification** fields (`elimfilters_code`,
+  `base_code`, `base_brand`, `product_category`, `product_subtype`, `duty`,
+  `technology_code`, `engineering_revision`, `status`) are set by
+  ELIMFILTERS only and are never editable by a Manufacturer.
+- A Passport's **required engineering fields** (dimensions/tolerances,
+  thread, required media, required composition, minimum efficiency and its
+  particle-size basis, Beta Ratio/micron rating where applicable, required
+  adhesive, operating temperature, collapse pressure, burst pressure,
+  gasket material, center tube, end caps, bypass valve requirement and
+  opening pressure/tolerance/type/material where applicable, anti-drainback
+  valve requirement and material where applicable, required test standards)
+  are `required_*` fields: locked, defined by ELIMFILTERS, and never
+  editable by a Manufacturer.
+- A Passport's engineering data also carries two **separately scoped note
+  fields** (ADR-0009), never a single undifferentiated "confidential
+  manufacturing notes" field:
+  - `manufacturer_instruction_notes` — technical instructions a plant needs
+    to quote or produce correctly. Visible only to a Manufacturer that has
+    actually been sent this Passport in a Request Batch (Phase 3), and to
+    authorized ELIMFILTERS staff. Never visible to Distributors or the
+    public.
+  - `internal_engineering_notes` — ELIMFILTERS-internal information. Never
+    visible to any Manufacturer or Distributor. Only authorized internal
+    roles.
+  - No API may return a generic serialization of "the Passport" that
+    includes either field by default. Every consumer (Manufacturer Intake
+    Portal, internal engineering tooling, Distributor/Pricing-facing
+    surfaces) is served from its own explicit, reviewed projection/DTO — an
+    allow-list per role, not a single shared shape with fields hidden after
+    the fact.
+- A Passport's **required packaging** fields hold only ELIMFILTERS'
+  requirements — see §3.1. Manufacturer-proposed and ELIMFILTERS-approved-
+  after-review packaging values are never stored on the Passport (ADR-0008).
+- A new `engineering_revision` supersedes the prior one; it does not
+  overwrite it (auditability). Every Manufacturer Offer references a
+  specific Passport version; a Passport revision does not retroactively
+  alter a previously submitted Offer's validity — it triggers
+  re-validation per §6.
 
-## Selection engine
+### 3.1 Packaging Rules (ownership split — ADR-0008)
 
-The engine must first apply mandatory compliance gates. A non-compliant proposal cannot win solely because of price.
+Packaging-related data is split across three separately owned records.
+They are never merged into one field set:
 
-Eligible proposals are scored using documented weights that include at minimum:
+**A. In the PEP (`ebp_passport_packaging`, Phase 1) — ELIMFILTERS
+requirements only:**
+- `individual_box_required`
+- `protective_bag_required`
+- `separator_required`
+- `master_carton_required`
+- `elimfilters_target_quantity`
+- target dimensions or restrictions, when they exist
+- ELIMFILTERS-required packaging instructions
 
-- Technical compliance
-- FOB price
-- Packaging compliance and logistics
-- MOQ
-- Lead time
-- Capacity
-- Evidence and certifications
-- Historical quality and delivery performance when available
+**B. In the Manufacturer Product Offer (Phase 3) — that Manufacturer's own
+proposal, scoped to its specific Offer revision:**
+- `manufacturer_recommended_quantity`
+- proposed box dimensions
+- net weight and gross weight
+- proposed units per box
+- proposed protection method
+- proposed palletization
+- observations and deviations
 
-The engine recommends primary, secondary, and backup manufacturers per SKU. Final approval remains with ELIMFILTERS.
+**C. In Offer Commercial Approval (`ebp_offer_commercial_approvals`,
+§7, Phase 5) — ELIMFILTERS' final decision about a specific Offer, made
+after review:**
+- `elimfilters_approved_quantity`
+- final approved packaging
+- approval or rejection of any proposed deviation
+- responsible approver
+- date
+- reason
 
-## Distributor visibility
+Automotive/industrial defaults for the ELIMFILTERS-requirement side (A):
 
-A distributor may only see approved, published product and commercial data assigned to its account. It may never see manufacturer identity, FOB cost, internal engineering requirements, margins, other distributors' data, or unpublished products.
+- **Automotive products:** individual box by default; protective bag only
+  when applicable to the product; master box always required.
+- **Industrial products:** no individual box by default; bag, separator, or
+  protective element only when applicable; target quantity per master box
+  is normally 6, 12, or 24 units.
+
+`manufacturer_recommended_quantity` and `elimfilters_approved_quantity` are
+never stored on the Passport. Each Manufacturer may recommend a different
+quantity for the same product, so that value belongs to its individual
+Offer (B); ELIMFILTERS' final decision belongs to Offer Commercial
+Approval (C), made only after review of a specific Offer's proposal.
+
+## 4. Manufacturer Registry Rules
+
+**Note (additive, ADR-0020):** the qualification-status list below
+predates Phase 2 implementation and is non-exhaustive — it did not name an
+explicit "under review" state. Phase 2 implements a six-state machine
+(`CANDIDATE`, `UNDER_REVIEW`, `CONDITIONAL`, `QUALIFIED`, `SUSPENDED`,
+`RETIRED`) with `UNDER_REVIEW` as the mandatory re-assessment step every
+reactivation out of `SUSPENDED` must pass through. See ADR-0020 in
+`DECISIONS.md` for the full transition table. This note is additive only;
+no sentence below is altered or removed.
+
+- A Manufacturer record must specify: an internal database identifier, a
+  permanent confidential `manufacturer_code` in the format `EFM-XXXX`
+  (assigned once, at registration, and never reassigned or reused), legal
+  name, country and location(s), contacts, certifications, the product
+  families it is qualified to produce (a subset of the Phase 1 Passport
+  taxonomy), and a qualification status: `CANDIDATE`, `QUALIFIED`,
+  `CONDITIONAL`, `SUSPENDED`, or `RETIRED`.
+- **`manufacturer_code` (`EFM-XXXX`), not `legal_name`, is the functional
+  key.** Every other EBP module (Manufacturer Intake Portal, Engineering
+  Compliance Validation, Offer Commercial Approval, Manufacturer Selection, Cost
+  Engine) references a Manufacturer by its `EFM-XXXX` code. `legal_name` is
+  descriptive metadata only and must never be used as a join key or as a
+  Distributor-visible label (see §11). See ADR-0006.
+- A Manufacturer may not be referenced by Manufacturer Selection (Phase 5)
+  or Cost Engine (Phase 6) unless its status is `QUALIFIED` or
+  `CONDITIONAL` (with the specific condition satisfied for the SKU in
+  question — see the Manufacturer's own spec for how a condition is scoped
+  and checked).
+- Qualification status changes must be logged with a reason and timestamp
+  (auditability requirement, `PLATFORM_ARCHITECTURE.md` §6) — status is
+  never silently overwritten.
+- A Manufacturer's qualified product families must be a subset of families
+  defined in the Product Engineering Passport taxonomy (Phase 1); Phase 2
+  may not introduce a family taxonomy independent of Phase 1.
+
+## 5. Manufacturer Intake (Manufacturer Request Batch & Offer) Rules
+
+**Note (additive, ADR-0023/ADR-0024):** two rules below predate Phase 3
+implementation and are non-exhaustive. (1) Every Request Batch carries a
+mandatory `purpose` — `CAPABILITY_ASSESSMENT`, `COMMERCIAL_QUOTATION`, or
+`PRODUCTION_CANDIDATE` — which determines the eligibility gate applied
+before the batch may be sent: only `PRODUCTION_CANDIDATE` requires the
+target Manufacturer to be `QUALIFIED`/`CONDITIONAL` for every included
+product family; the other two purposes require only that the
+Manufacturer not be `SUSPENDED`/`RETIRED`. (2) A Manufacturer Offer may
+be submitted by a Manufacturer's own authenticated factory-user account
+(resolving ADR-0002 for Manufacturers), never the shared `ADMIN_KEY` —
+see ADR-0023 for the full authentication model. See ADR-0023/ADR-0024 in
+`DECISIONS.md` for the complete rules. This note is additive only; no
+sentence below is altered or removed.
+
+- A **Manufacturer Request Batch** is a set of Passports (SKUs) ELIMFILTERS
+  assigns to one or more Manufacturers for a capability/offer response. It
+  does not commit ELIMFILTERS to purchase.
+- Every Request Batch record carries: `batch_id`, `manufacturer_code`,
+  `created_at`, `sent_at`, `response_due_at`, `timezone`, `status`,
+  `created_by` (ADR-0012). There is **no fixed global deadline** —
+  ELIMFILTERS sets `response_due_at` per batch.
+- A Request Batch's status lifecycle has exactly seven states: `DRAFT`,
+  `SENT`, `PARTIALLY_RESPONDED`, `RESPONDED`, `OVERDUE`, `CLOSED`,
+  `CANCELLED`.
+- A Manufacturer Offer submitted after its batch's `response_due_at` may
+  still be received. It must be flagged `LATE_SUBMISSION = true`, and its
+  real `submitted_at` receipt time is preserved unmodified — lateness is
+  never silently normalized away, and a late Offer is never
+  system-rejected purely for being late (ADR-0012).
+- A Manufacturer may submit **many** Manufacturer Product Offers for the
+  same (`passport_version`, `manufacturer_code`) pair over time — a new
+  quote, correction, or update is a new **revision**, never an overwrite of
+  a prior one (ADR-0007). Multiple Manufacturers may each also submit
+  independent Offers for the same Passport — Offers are never merged or
+  averaged, across Manufacturers or across revisions.
+- Every Offer carries: `offer_id` (unique per revision), `offer_revision`
+  (sequence number within that Manufacturer/Passport Version's lineage),
+  `status`, `submitted_at`, `effective_from`, `expires_at` (nullable),
+  `supersedes_offer_id` (nullable — the prior `offer_id` this revision
+  replaces), and `created_by`.
+- The Offer status lifecycle has **nine** states: `DRAFT`, `SUBMITTED`,
+  `UNDER_REVIEW`, `VALIDATED`, `APPROVED`, `REJECTED`, `SUPERSEDED`,
+  `EXPIRED`, `WITHDRAWN` (extended from the original eight-state list in
+  ADR-0007 by ADR-0011, which added `APPROVED`). `DRAFT` is
+  manufacturer-side work-in-progress and is not visible to ELIMFILTERS as
+  a submission. `VALIDATED` reflects a current `VALID` Engineering
+  Compliance Validation result (§6) only. `APPROVED` is reached only after
+  `VALIDATED` **and** both an `ENGINEERING_APPROVER` and a
+  `COMMERCIAL_APPROVER` decision are recorded (§7, ADR-0011) — `VALIDATED`
+  alone is never treated as `APPROVED`.
+- Every Offer carries a `late_submission` boolean, set when its
+  `submitted_at` is after its Request Batch's `response_due_at`
+  (ADR-0012).
+- **At most one** Offer among all revisions for a given (`passport_version`,
+  `manufacturer_code`) pair may hold an active status (`SUBMITTED`,
+  `UNDER_REVIEW`, or `VALIDATED`) at any moment. Submitting a new revision
+  moves the prior active Offer to `SUPERSEDED` in the same transaction. The
+  full revision history is retained — a new Offer never overwrites or
+  deletes a prior one.
+- Every applicable Passport property that a Manufacturer answers must be
+  recorded as a pair, never mixed with the requirement:
+  - `required_*` (or `required_<field>`): locked, ELIMFILTERS-defined, from
+    the Passport (§3). The Manufacturer cannot edit this.
+  - `offered_*` / `actual_*`: the Manufacturer's own value for that
+    property, editable only by the Manufacturer, and scoped to a specific
+    Offer revision.
+  - `compliance_status`: set only by Engineering Compliance Validation
+    (Phase 4), never self-declared by the Manufacturer.
+  - `manufacturer_note`: free-text context supplied by the Manufacturer.
+  - `evidence_attachment`: supporting documentation (test reports,
+    certifications) supplied by the Manufacturer for that property.
+- A Manufacturer Offer must also carry: FOB price, MOQ, lead time, monthly
+  capacity, and its packaging proposal (§3.1.B: `manufacturer_recommended_
+  quantity`, proposed box dimensions, net/gross weight, proposed units per
+  box, proposed protection method, proposed palletization, observations/
+  deviations), plus any certifications/evidence not tied to a specific
+  engineering property.
+- A Manufacturer only ever sees `manufacturer_instruction_notes` for
+  Passports it has actually been sent in a Request Batch — never
+  `internal_engineering_notes` (§3, ADR-0009).
+- Raw-material or component sourcing internal to how a Manufacturer builds
+  its Offer is not modeled by EBP (ADR-0005). If a Manufacturer wants to
+  substantiate an `offered_*` value with a component supplier's
+  certificate, that certificate is recorded as an `evidence_attachment` on
+  the relevant property — it does not create an independent Supplier
+  record or relationship in EBP.
+
+## 6. Engineering Compliance Validation Rules
+
+- Engineering Compliance Validation is the **only** module permitted to set
+  `compliance_status` on any property of a Manufacturer Offer, or an
+  overall `VALID`/`INVALID` result on a combination.
+- Validation operates on, and is permanently bound to, the exact tuple
+  **Passport Version × Manufacturer Code × Offer ID × Offer Revision**
+  (ADR-0007) — never merely "Manufacturer and Passport." A validation
+  result names the specific Offer revision it evaluated.
+- A combination is `VALID` only if: the Manufacturer is `QUALIFIED` (or
+  `CONDITIONAL` with its condition satisfied) for the Passport's product
+  family, and every `required_*` property must have a corresponding
+  `offered_*`/`actual_*` value on that specific Offer revision that meets
+  the requirement — no waivers by default.
+- Validation results are versioned and immutable once issued. Any of the
+  following invalidates the prior result and requires re-validation,
+  without mutating or deleting the historical record:
+  - the underlying Passport changes (`engineering_revision` increments);
+  - the Offer changes (a new `offer_revision` is submitted);
+  - the Manufacturer's qualification status or condition changes;
+  - the Offer expires (`expires_at` passes).
+  A superseded result is retained and marked `superseded_by` the new
+  result's id — it is never edited or removed.
+- Manufacturer Selection, Cost Engine, Pricing Engine, and Distributor
+  Portal must refuse to operate on a combination without a current `VALID`
+  result bound to the specific Offer revision in use. This is a hard gate,
+  not a warning.
+- Engineering Compliance Validation never references a Supplier record. It
+  evaluates the Passport and the Offer only (ADR-0005).
+
+## 7. Offer Commercial Approval Rules (rewritten 2026-07-13, ADR-0072)
+
+- **Offer Commercial Approval is not the same as Engineering Compliance
+  Validation (§6) or an Engineering Decision (Phase 4).** Validation
+  determines whether an Offer complies technically with the Passport's
+  `required_*` fields; the Engineering Decision (`ebp_engineering_
+  decisions`, Phase 4) is ELIMFILTERS engineering's own human record of
+  that determination. Commercial Approval determines, separately,
+  whether ELIMFILTERS commercially and operationally accepts that
+  Offer's proposal — principally its packaging, FOB, MOQ, lead time,
+  capacity, and any declared deviations. A technically eligible Offer
+  (Engineering Decision `APPROVED`/`CONDITIONALLY_APPROVED`) is **not**
+  automatically Commercially Approved, and Commercial Approval is not
+  automatically a Manufacturer Selection (§8 — Selection's own decision
+  is a separate, later act about *which* Offer is sourced from).
+- **The old design (ADR-0008/ADR-0011) described an "engineering
+  approval" role inside this entity in addition to a commercial one.**
+  That component is never built here: Phase 4's `ebp_engineering_
+  decisions` already is ELIMFILTERS' engineering approval record.
+  Duplicating it inside a second table would create two competing
+  sources of truth for the same fact — exactly what the Global Result
+  Model (ADR-0051) exists to prevent. **This entity is scoped strictly
+  to the Commercial dimension.**
+- **One role governs this entity: `COMMERCIAL_APPROVER`** — approves
+  FOB, MOQ, lead time, capacity, tooling/sample cost, final packaging,
+  and other commercial/operational terms. Never declares an Offer
+  technically valid, and never records an Engineering Decision.
+  (`ADMIN_OWNER`'s role over the *sourcing* decision belongs to §8, not
+  to this entity.)
+- Commercial Approval is recorded in **`ebp_offer_commercial_approvals`**
+  (Phase 5, ADR-0072 — designed under ADR-0008 but never implemented in
+  Phase 3's real schema; built here instead), keyed to a specific
+  `offer_id` and `offer_revision`, and holds: the approving user, the
+  date, the decision (`PENDING`/`APPROVED`/`REJECTED`), the reason,
+  comments, and its own append-only history — a new decision supersedes,
+  never overwrites, a prior one for the same Offer revision.
+- Commercial Approval may only be recorded against an Offer revision
+  that is the current active revision for its (Passport Version ×
+  Manufacturer) pair (§5). An approval is not retroactively valid
+  against a revision that has since been superseded, expired, or
+  withdrawn.
+
+## 8. Manufacturer Selection Rules (rewritten 2026-07-13, Decisions 01-12/ADR-0062–ADR-0074)
+
+- An **official** Selection recommendation evaluates, per Passport, only
+  Offers that satisfy **all seven** of the following (ADR-0072,
+  superseding the prior five-part ADR-0010 gate):
+  (a) the Offer is the current active revision for its (Passport Version
+  × Manufacturer) pair — not `SUPERSEDED`, `EXPIRED`, `WITHDRAWN`, or
+  `REJECTED`; (b) a `CURRENT` Validation Run exists, bound to that exact
+  `offer_id`/`offer_revision` (Phase 4); (c) the Engineering Decision is
+  `APPROVED` or `CONDITIONALLY_APPROVED` with `status = CURRENT`; (d) no
+  mandatory Condition is `OPEN`/`OVERDUE`/`FAILED`; (e) Offer Commercial
+  Approval (§7) = `APPROVED`; (f) the Manufacturer/location is
+  `QUALIFIED`, or `CONDITIONAL` with its condition satisfied, for the
+  Passport's family; (g) required certifications are `VERIFIED` and not
+  expired. An Offer failing any of these is never an official candidate,
+  including for Manual Override — an override may only choose among
+  Offers that already satisfy all seven (§4A/§8's own Manual Override
+  rule), never bypass any of them.
+- **`PRELIMINARY_COMPARISON`** — an internal, non-official comparison of
+  technically-eligible-but-not-yet-Commercially-Approved Offers is
+  permitted for planning purposes, but any such record must be
+  permanently and explicitly labeled `PRELIMINARY_COMPARISON` wherever
+  stored or displayed, and can never be promoted, converted, or silently
+  reused as an official recommendation, a Manufacturer Selection, or an
+  Order allocation. Producing an official recommendation always
+  re-evaluates the full seven-part gate above at the time the
+  recommendation is made — it never reuses a `PRELIMINARY_COMPARISON`
+  result as-is.
+- Selection scores every Eligible candidate across four weighted
+  categories — Technical Quality (40%), Commercial Competitiveness
+  (25%), Operational Capability (20%), Strategic Resilience (15%) — per
+  the versioned Selection Policy in force (`MANUFACTURER_SELECTION_
+  ENGINE.md` §3A). No weight is ever hardcoded in engine code. Technical
+  eligibility is always a precondition to scoring, never a factor within
+  it (the Technical Priority Rule).
+- Selection must recommend three tiers, not a single winner: **primary**,
+  **secondary**, and **backup** Manufacturer Offer, with Backup allowed
+  to diverge from strict rank order per the Selection Policy's
+  diversification rules. Final approval of the recommendation always
+  belongs to ELIMFILTERS via an explicit Selection Decision — the engine
+  recommends, it never auto-approves or auto-commits an order.
+- Selection Runs must record the **exact `offer_id` and `offer_revision`**
+  evaluated for every candidate (eligible or excluded) — not just the
+  Manufacturer — along with every candidate's full, factor-tagged score
+  basis, the ranking, and the exclusion reason for every non-candidate.
+- A tie in composite score is resolved by the fixed eight-step tie-break
+  order (`MANUFACTURER_SELECTION_ENGINE.md` §6); a tie surviving all
+  eight steps produces `TIE_REQUIRES_HUMAN_REVIEW`, never a
+  database-order or timestamp tiebreak.
+- A Passport with zero Eligible Offers produces a valid, recorded
+  `NO_ELIGIBLE_CANDIDATE` Selection Run — never an error, and never an
+  automatic "least-bad" fallback selection.
+
+## 9. Cost Engine Rules
+
+- Cost Engine computes landed cost only from a combination holding a
+  current `VALID` Engineering Compliance Validation result for the exact
+  Offer revision selected (§8), using that Offer's FOB price as the base
+  cost input, plus freight, duties, and overhead allocation. Cost Engine
+  does not decompose or re-derive the Manufacturer's internal materials/
+  conversion cost breakdown — FOB is the Manufacturer's own commercial
+  figure and is treated as such.
+- Cost Engine output records the specific `offer_id` and `offer_revision`
+  it was costed from, for full traceability, and is versioned per
+  (Passport, Manufacturer, effective date range). A new cost calculation
+  does not overwrite a prior one; it supersedes it with a new effective
+  date, preserving history.
+- Cost Engine is the **only** module that computes landed cost. Pricing
+  Engine and Distributor Portal consume its output; they do not
+  independently estimate cost.
+
+## 10. Pricing Engine Rules
+
+- Sell price is derived from landed cost (Cost Engine) plus a margin rule
+  set by channel (distributor tier) and region/currency. Margin rules are
+  data, not hardcoded per-SKU exceptions, except where an explicit override
+  is logged (auditability).
+- Pricing Engine must enforce a price floor derived from landed cost — no
+  price may be published below landed cost without an explicit, logged
+  exception.
+- Pricing language and positioning must follow the Category Reframing Layer
+  and AI Citation Layer language rules in root `CLAUDE.md`: no commodity
+  race-to-bottom framing. Price is presented as one input to total cost of
+  ownership, not the headline.
+- Pricing Engine is the **only** module that computes sell price.
+  Distributor Portal and Order Management display and transact on its
+  output; they do not recompute price.
+- **Pricing Engine's output to Distributor Portal must not carry
+  manufacturer-identifying or cost-basis fields at all** — not FOB, not
+  `EFM-XXXX`, not margin, not landed-cost breakdown. This is a data-shape
+  requirement, not a UI-hiding requirement (ADR-0006).
+
+## 11. Distributor Portal Rules
+
+- A distributor account may only see priced, `VALID`-backed SKUs.
+  Unvalidated or unpriced products are not visible, even in draft form, to
+  distributor accounts.
+- A distributor account may **never** see: Manufacturer identity or
+  `EFM-XXXX` code, FOB price, margin, landed-cost breakdown, Offer
+  revision history, or any Passport note field (`manufacturer_instruction_
+  notes` or `internal_engineering_notes`), under any navigation path,
+  export, or API response. This is enforced by the data Pricing Engine
+  sends to Distributor Portal (§10), not by portal-side filtering alone.
+- Distributor-specific pricing (tier, region, currency) must come from
+  Pricing Engine; the portal itself holds no independent pricing logic.
+- Distributor Portal is a distinct, authenticated application surface. It
+  does not reuse the public/anonymous access model of `frontend/`.
+
+## 12. Order Management Rules
+
+- An order may only be created against a priced SKU backed by a `VALID`
+  Engineering Compliance Validation result for a specific Offer revision,
+  with a Manufacturer Selection decision on record (or an equivalent
+  decision made at order time using the same Selection rules).
+- Order status changes (placed → allocated → in production → shipped →
+  delivered → invoiced) must be logged sequentially; status may not skip
+  or be set out of order without an explicit, logged correction.
+- Order Management does not compute cost or price; it references Cost
+  Engine and Pricing Engine output as of order placement time and freezes
+  that reference for the life of the order (price protection).
+- Order Management surfaces to a Distributor follow the same
+  confidentiality rule as §11 — manufacturer identity, `EFM-XXXX`, FOB,
+  margin, and Offer/Passport note fields never appear in a
+  distributor-visible order record, only in ELIMFILTERS-internal views.
+
+## 13. Cross-Cutting Rules
+
+- **No phase may bypass an earlier phase's gate.** E.g., Cost Engine (06)
+  may not compute a cost for a combination that has no `VALID` Engineering
+  Compliance Validation result bound to the exact Offer revision used, even
+  temporarily, even in a non-production environment.
+- **No Supplier dependency in the mandatory MVP chain.** No Phase 01-09
+  spec may require a raw-material/component Supplier record to function.
+  See ADR-0005.
+- **No single-offer-per-manufacturer restriction.** No Phase 01-09 spec may
+  assume or enforce "exactly one Offer per Manufacturer and Passport" as a
+  historical or storage constraint. Multiple versioned Offers must always
+  be representable, with exactly one active at a time (§5, ADR-0007).
+- **No invented data.** No Manufacturer, Offer, cost, or price figure may
+  be fabricated for demo/testing purposes in a way that could be mistaken
+  for real data in shared environments. Test/seed data must be clearly
+  flagged as such.
+- **Language rules.** Any user-facing text produced by EBP modules
+  (Distributor Portal copy, order confirmations, pricing rationale) follows
+  the neutral, technical, non-marketing tone rules already codified in root
+  `CLAUDE.md` (AI Citation Layer §5, Category Reframing Layer language
+  rules).

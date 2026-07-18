@@ -1,49 +1,199 @@
-# Claude Code Workflow — ELIMFILTERS Business Platform
+# CLAUDE WORKFLOW — ELIMFILTERS Business Platform (EBP)
 
-## Session startup
+This document governs how Claude sessions do EBP work. It is scoped to
+`docs/ebp/` and any future `frontend`/`server.js` code that implements EBP
+phases. It does not override root `CLAUDE.md`'s rules for the existing World
+Catalogue/Knowledge System work — the two projects share a repository but are
+governed independently. Where the two could conflict (e.g., git branch,
+commit format), this document wins for anything under the EBP scope.
 
-Before changing any file, Claude Code must read, in order:
+## 1. Branch
 
-1. `docs/ebp/PROJECT_MANIFESTO.md`
-2. `docs/ebp/IMPLEMENTATION_MASTER_INDEX.md`
-3. `docs/ebp/BUSINESS_RULES.md`
-4. `docs/ebp/PLATFORM_ARCHITECTURE.md`
-5. `docs/ebp/ROADMAP.md`
-6. The complete documentation folder for the active phase
+All EBP work happens on the branch the session was assigned for EBP work.
+Do not mix EBP commits with unrelated World Catalogue/Knowledge System
+commits in the same commit — keep history attributable per project even when
+sharing a branch.
 
-Claude must inspect the repository before proposing architecture and must preserve the existing canonical product source of truth.
+## 1.1 Domain Model Terms (binding, corrected 2026-07-13, extended second
+round 2026-07-13)
 
-## Mandatory execution cycle
+The MVP has exactly three principal entities: **ELIMFILTERS**,
+**Manufacturer**, and **Distributor**. A raw-material/component **Supplier**
+is not a mandatory MVP entity — see `BUSINESS_RULES.md` §1 and ADR-0005 in
+`DECISIONS.md`. Do not:
 
-1. Confirm the active phase and scope.
-2. Audit existing code, database usage, routes, authentication, and documentation affected by that phase.
-3. List contradictions, risks, and missing decisions.
-4. Complete or correct the phase documentation before implementation.
-5. Define acceptance criteria and tests.
-6. Implement only the active phase on the current feature branch.
-7. Run relevant type checks, linting, tests, build, migration checks, and security validations.
-8. Audit the implementation against the approved documentation.
-9. Update `implementation-status.md`, `audit.md`, `decisions.md`, and `changelog.md`.
-10. Stop and report results. Do not begin the next phase automatically.
+- Introduce a `Supplier`-named table, route, or field as a dependency of any
+  Phase 01-09 deliverable.
+- Reference a Manufacturer by `legal_name` as a functional/join key — use
+  `manufacturer_code` (`EFM-XXXX`) per ADR-0006.
+- Build or expose any data path that lets Distributor-facing code (Phase 8
+  or later) receive manufacturer identity, `EFM-XXXX`, FOB price, margin,
+  Offer/offer-revision identifiers, or either Passport note field
+  (`manufacturer_instruction_notes`, `internal_engineering_notes`) — this
+  must be excluded at the data shape produced by Pricing Engine (Phase 7),
+  not filtered after the fact.
+- Model or enforce "exactly one Offer per Manufacturer and Passport" as a
+  storage constraint — a Manufacturer may submit many versioned Offers;
+  exactly one is active at a time, per ADR-0007.
+- Conflate Engineering Compliance Validation (technical compliance, Phase
+  4) with Offer Approval (ELIMFILTERS' commercial/operational acceptance
+  of an Offer's packaging, Phase 3, `ebp_manufacturer_offer_approvals`) —
+  they are separate gates, per ADR-0008.
 
-## Prohibitions
+If a future request seems to reintroduce a Supplier concept, a
+manufacturer-identity leak toward Distributor Portal, a single-offer
+constraint, or a merger of Validation and Approval, stop and confirm with
+the project owner before proceeding — these are all points that have
+already been explicitly corrected once.
 
-- Do not modify `main` directly.
-- Do not expose portal data through public routes, sitemap, navigation, or anonymous APIs.
-- Do not duplicate canonical product records.
-- Do not combine ELIMFILTERS required values and manufacturer-offered values in the same database fields.
-- Do not reveal manufacturer identity or FOB costs to distributor roles.
-- Do not introduce undocumented tables, endpoints, permissions, or business rules.
-- Do not mark work complete when tests or documentation are incomplete.
+## 2. Phase Discipline (the core rule)
 
-## Required final report for every phase
+- **Read `IMPLEMENTATION_MASTER_INDEX.md` first**, every session, before
+  doing anything else. It tells you the current phase and status.
+- **Never write production code for a phase whose status is not
+  `Spec Approved` or later.** Drafting/refining a spec doc is always
+  allowed; implementing against it is not, until approved.
+- **Stop at the end of a phase and wait for approval** before starting the
+  next phase's implementation, even if the next phase's spec already exists
+  in draft form. Draft specs for future phases exist to validate the
+  roadmap's coherence, not to authorize building them early.
+- If a session is asked to "continue" without a specific instruction, the
+  correct default is: pick up the current phase per the Master Index, do
+  not jump ahead.
 
-- Files created and modified
-- Database migrations
-- APIs and UI routes
-- Tests executed and results
-- Security controls verified
-- Documentation updated
-- Known limitations
-- Audit findings and score
-- Recommendation: approve, correct, or block
+## 3. Documentation-First Requirement
+
+For any phase, before any implementation:
+
+1. The phase's `phases/phase-NN-*.md` must be complete per the template
+   (see any existing phase file for structure).
+2. `BUSINESS_RULES.md` must be checked for rules that apply to the phase; if
+   the phase surfaces a new rule, add it to `BUSINESS_RULES.md` in the same
+   change, don't leave it only in the phase doc.
+3. If the phase changes the architecture described in
+   `PLATFORM_ARCHITECTURE.md`, update that document and log the change as a
+   new entry in `DECISIONS.md`.
+
+## 3.1 Dashboard Readiness (mandatory, added 2026-07-13, ADR-0037)
+
+The **EBP Observability & Intelligence Layer** is a permanent, cross-
+cutting capability present in every phase — not a phase itself. See
+`PLATFORM_ARCHITECTURE.md` §8 and ADR-0037 in `DECISIONS.md`.
+
+- Every `phases/phase-NN-*.md` doc must end with a **"Dashboard
+  Readiness"** section before that phase can be approved. It must state,
+  even if the answer is "none":
+  - New Activity Events this phase would emit (event_type/entity_type).
+  - New KPIs this phase would expose.
+  - New Alerts this phase would generate.
+  - New Analytics Views this phase would need.
+  - New APIs this phase would need under `/api/ebp/internal/analytics/*`.
+  - How this phase's entities extend the Timeline (Passport, Manufacturer,
+    Batch, Offer, Certification, Product, or a new entity type).
+  - What this phase's data enables for future AI-assisted queries.
+- **No phase may be marked `Spec Approved` without this section
+  complete.** This extends the Approval Gate in §4 below — the project
+  owner still approves explicitly, but the section must exist first.
+- This section describes *readiness*, not implementation — a phase does
+  not need to build the Observability Layer itself, or even emit real
+  events yet, to satisfy this requirement. It needs to have thought
+  through and documented what it *would* emit once that layer's own
+  implementation is authorized.
+- Do not introduce a phase-specific event table, metrics table, or alert
+  table as a substitute for the shared model — see the binding rule in
+  §1.2.
+- Phases 1, 2, and 3 (already frozen before this rule existed) had this
+  section appended retroactively, describing future readiness only — see
+  each phase doc's own "Dashboard Readiness" section. This did not reopen
+  or change anything about those phases' frozen status, schema, or
+  behavior.
+
+## 1.2 Observability Terms (binding, added 2026-07-13, ADR-0037)
+
+- Do not create a phase-specific event, metrics, or alert table/system as
+  a substitute for `ebp_activity_events` / the KPI Layer / the Alert
+  Layer described in `PLATFORM_ARCHITECTURE.md` §8. There is exactly one
+  event ledger for the whole platform, once implemented.
+- Do not let a future Dashboard, BI tool, or AI query layer read a
+  transactional `ebp_*` table directly. It may only consume Activity
+  Events, Analytics Views (`ebp_analytics_*`), the KPI Layer, the Alert
+  Layer, and Timeline reconstructions.
+- Do not build the Notification Center (alert delivery — email, in-app,
+  Slack) as part of implementing the Alert Layer; they are separate,
+  and only the Alert Layer (the structured record) is currently in
+  scope for a future implementation round.
+- This layer's own future implementation (migrations, an `ebp/
+  observability/` module, the reserved `/api/ebp/internal/analytics/*`
+  routes) requires its own explicit phase-gate approval, exactly like any
+  other phase — it is not authorized by ADR-0037 itself, only its
+  architecture is.
+
+## 4. Approval Gate
+
+A phase moves from `Spec Drafted` to `Spec Approved` in
+`IMPLEMENTATION_MASTER_INDEX.md` only when the project owner explicitly
+approves it in conversation. Claude does not self-approve a phase. If asked
+to "just start Phase N," and Phase N is not yet `Spec Approved`, surface that
+fact and ask for explicit approval rather than proceeding — this is a
+decision for the user, not an assumption to make silently.
+
+## 5. Commit Message Format
+
+Use the same type-tag convention as root `CLAUDE.md`, scoped with an `ebp:`
+prefix in the summary so EBP commits are greppable in shared history:
+
+```
+[type]: ebp: Brief description (50 chars max)
+
+Longer explanation if needed (wrap at 72 chars).
+- Bullet points for multiple changes
+- Reference specific docs/phases changed
+
+https://claude.ai/code/session_[ID]
+```
+
+Type tags: `feat`, `fix`, `content`, `design`, `build`, `docs`, `refactor`,
+`chore` — same meanings as root `CLAUDE.md`.
+
+Every commit that changes phase status must also update
+`IMPLEMENTATION_MASTER_INDEX.md` and add a `CHANGELOG.md` entry in the same
+commit.
+
+## 6. Working with Existing Systems
+
+- Treat `database/schema/*.sql`, `migrations/kg-phase*/*.sql`, and
+  `scripts/*` as **read-only reference material** unless a specific,
+  approved EBP phase explicitly calls for a change to them. Default
+  assumption: don't touch them.
+- New EBP tables are additive migrations only (`CREATE TABLE IF NOT EXISTS
+  ebp_...`), following the existing migration file-numbering convention
+  used under `migrations/kg-phaseN/`.
+- Reuse existing product identifiers (SKUs) and existing reference tables
+  (`technologies`, `oems`, `industries`) by foreign key. Never duplicate
+  their data into new EBP tables.
+
+## 7. When Something Is Ambiguous
+
+If a phase spec, business rule, or architecture point is ambiguous and the
+ambiguity would materially change what gets built, stop and ask rather than
+guessing — consistent with the general engagement rules for this account.
+Log the resolution in `DECISIONS.md` once answered so it isn't re-litigated
+in a future session.
+
+## 8. Testing and Local Verification (once code exists)
+
+Once a phase reaches implementation (post-approval):
+
+- Follow the existing repo's build/test conventions
+  (`npm run build`, `npm run type-check` for frontend work; existing
+  patterns in `server.js`/`scripts/` for backend work) rather than
+  introducing new tooling.
+- New EBP backend logic should include a way to verify it against seed/test
+  data before it touches real catalog or pricing data, per the "no invented
+  data in shared environments" rule in `BUSINESS_RULES.md` §13.
+
+## 9. Session Startup
+
+Every EBP session should begin by following `CLAUDE_START_PROMPT.md`
+verbatim. That file is the canonical entry point; this document is the
+detailed policy it points to.
