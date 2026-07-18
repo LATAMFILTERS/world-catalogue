@@ -926,15 +926,20 @@ function buildFilterData(row, lang = 'en'){
 
 
 // POST /api/kits — create a kit from filter SKUs + equipment name
+// kit_sku format: {EK5|EK3}{brandCode 2 digits}{sequence 2 digits} - e.g.
+// EK50101 = HD, brand code 01, kit #01 for that brand. Brand codes are
+// auto-assigned the first time a brand is used (kit_brand_codes table)
+// so no hardcoded brand list needs to be maintained.
 app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
-  const { name, equipment_ref, filter_skus } = req.body;
-  if (!name || !Array.isArray(filter_skus) || filter_skus.length === 0)
-    return res.status(400).json({ success: false, error: 'name and filter_skus[] required' });
-  if (name.length > 200 || (equipment_ref && equipment_ref.length > 500) || filter_skus.length > 100)
+  const { name, brand, equipment_ref, filter_skus } = req.body;
+  if (!name || !brand || !Array.isArray(filter_skus) || filter_skus.length === 0)
+    return res.status(400).json({ success: false, error: 'name, brand, and filter_skus[] required' });
+  if (name.length > 200 || brand.length > 100 || (equipment_ref && equipment_ref.length > 500) || filter_skus.length > 100)
     return res.status(400).json({ success: false, error: 'Input exceeds maximum length' });
 
   const client = await pool.connect();
   try {
+    const brandKey = brand.trim().toUpperCase();
 
     // Determine duty from the first filter found
     const sample = await client.query(
@@ -944,20 +949,33 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
     const duty = sample.rows[0]?.duty || 'LIGHT_DUTY';
     const prefix = duty === 'HEAVY_DUTY' ? 'EK5' : 'EK3';
 
-    // Generate next kit SKU
+    await client.query('BEGIN');
+
+    // Look up or auto-assign a 2-digit brand code
+    let brandCode;
+    const existingCode = await client.query('SELECT code FROM kit_brand_codes WHERE brand = $1', [brandKey]);
+    if (existingCode.rows.length) {
+      brandCode = existingCode.rows[0].code;
+    } else {
+      const maxCode = await client.query('SELECT MAX(code::int) AS max_code FROM kit_brand_codes');
+      const nextCode = maxCode.rows[0].max_code === null ? 0 : maxCode.rows[0].max_code + 1;
+      if (nextCode > 99) throw new Error('Brand code space exhausted (max 99 brands)');
+      brandCode = String(nextCode).padStart(2, '0');
+      await client.query('INSERT INTO kit_brand_codes (brand, code) VALUES ($1,$2)', [brandKey, brandCode]);
+    }
+
+    // Generate next sequential number within this prefix+brandCode
     const last = await client.query(
       `SELECT kit_sku FROM maintenance_kits WHERE kit_sku LIKE $1 ORDER BY kit_sku DESC LIMIT 1`,
-      [prefix + '%']
+      [prefix + brandCode + '%']
     );
-    const nextNum = last.rows.length
-      ? String(parseInt(last.rows[0].kit_sku.slice(3)) + 1).padStart(4, '0')
-      : '0001';
-    const kit_sku = prefix + nextNum;
+    const nextSeqNum = last.rows.length ? parseInt(last.rows[0].kit_sku.slice(5), 10) + 1 : 1;
+    if (nextSeqNum > 99) throw new Error(`Sequence space exhausted for brand ${brandKey} (max 99 kits)`);
+    const kit_sku = prefix + brandCode + String(nextSeqNum).padStart(2, '0');
 
-    await client.query('BEGIN');
     await client.query(
-      'INSERT INTO maintenance_kits (kit_sku, name, equipment_ref, duty) VALUES ($1,$2,$3,$4)',
-      [kit_sku, name, equipment_ref || null, duty]
+      'INSERT INTO maintenance_kits (kit_sku, name, brand, equipment_ref, duty) VALUES ($1,$2,$3,$4,$5)',
+      [kit_sku, name, brandKey, equipment_ref || null, duty]
     );
     for (const fsku of filter_skus) {
       if (!/^[A-Z]{2,3}[0-9]{4,7}[A-Z0-9]?$/.test(String(fsku).trim().toUpperCase())) continue;
@@ -968,7 +986,7 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
     }
     await client.query('COMMIT');
 
-    res.status(201).json({ success: true, kit_sku, duty, name, equipment_ref, filter_skus });
+    res.status(201).json({ success: true, kit_sku, duty, name, brand: brandKey, equipment_ref, filter_skus });
   } catch(e) {
     await client.query('ROLLBACK').catch(()=>{});
     console.error('[kits POST]', e.message);
@@ -1005,6 +1023,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
       kit: {
         kit_sku: kit.rows[0].kit_sku,
         name: kit.rows[0].name,
+        brand: kit.rows[0].brand,
         equipment_ref: kit.rows[0].equipment_ref,
         duty: kit.rows[0].duty,
         filters: components.rows.map(row => buildFilterData(row, lang))
