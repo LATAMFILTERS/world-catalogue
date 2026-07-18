@@ -383,7 +383,9 @@ ELIMFILTERS technologies by domain:
 - MICROKAPPA → cabin air (ISO 11155, DIN 71220)
 - DRYCORE → compressed air / pneumatic (ISO 8573)
 - THERMACORE → cooling system SCA additive
-- DURATECH → fleet maintenance master kits
+- INTEKCORE → zero-bypass radial seal filter housing, air intake (ISO 5011)
+- DURATECH → Commercial Line, fleet maintenance kits per vehicle/equipment
+- MARINECLEAN → Commercial Line, marine diesel and hydraulic filtration SKUs
 
 Failure chains (root cause → consequence):
 - Particles in oil → abrasive wear → bearing clearance reduction → seizure
@@ -400,9 +402,19 @@ setInterval(() => {
   }
 }, 3600000);
 
+// Maps the frontend's geo-detected language code (sent as `lang`) to the
+// language name used to hint the LLM. Short or ambiguous messages ("ok",
+// a bare part number) carry no language signal of their own, so this gives
+// Groq a starting point — the system prompt still tells it to switch if the
+// user's actual message is written in a different language.
+const CHAT_LANG_NAMES = {
+  es: 'Spanish', pt: 'Portuguese', fr: 'French', it: 'Italian', nl: 'Dutch',
+  ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ar: 'Arabic', fa: 'Persian', en: 'English',
+};
+
 app.post('/api/chat', searchLimiter, async (req, res) => {
   try {
-    const { message, sessionId } = req.body || {};
+    const { message, sessionId, lang } = req.body || {};
     if (!message || typeof message !== 'string' || !sessionId || typeof sessionId !== 'string') {
       return res.status(400).json({ error: 'Missing message or sessionId' });
     }
@@ -423,13 +435,18 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       return res.status(503).json({ error: 'Chat service not configured' });
     }
 
+    const langName = typeof lang === 'string' ? CHAT_LANG_NAMES[lang.toLowerCase()] : null;
+    const systemPrompt = langName
+      ? `${CHAT_SYSTEM_PROMPT}\n\nThe user's detected regional language is ${langName}. Respond in ${langName} unless their message is clearly written in a different language, in which case respond in that language instead.`
+      : CHAT_SYSTEM_PROMPT;
+
     const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
         messages: [
-          { role: 'system', content: CHAT_SYSTEM_PROMPT },
+          { role: 'system', content: systemPrompt },
           { role: 'user', content: message.trim() },
         ],
         max_tokens: 450,
