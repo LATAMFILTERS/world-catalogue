@@ -135,20 +135,23 @@ try {
 </style>
 <script id="part-search-results-fixes-script">
 (function () {
+  // COOLTECH and AQUAGUARD were retired (replaced by THERMACORE and HYDROCORE
+  // respectively) and must never reappear here. DURATECH and MARINECLEAN are
+  // Commercial Lines, not engineering technologies, so they route under
+  // /commercial-lines/ instead of /technologies/.
   var technologyRoutes = {
-    MACROCORE: 'macrocore',
-    MICROKAPPA: 'microkappa',
-    DRYCORE: 'drycore',
-    SYNTRAX: 'syntrax',
-    SYNTEPORE: 'syntepore',
-    NANOFORCE: 'nanoforce',
-    INTEKCORE: 'intekcore',
-    COOLTECH: 'cooltech',
-    HYDROCORE: 'hydrocore',
-    THERMACORE: 'thermacore',
-    DURATECH: 'duratech',
-    AQUAGUARD: 'aquaguard',
-    MARINECLEAN: 'marineclean'
+    MACROCORE: 'technologies/macrocore',
+    MICROKAPPA: 'technologies/microkappa',
+    DRYCORE: 'technologies/drycore',
+    SYNTRAX: 'technologies/syntrax',
+    SYNTEPORE: 'technologies/syntepore',
+    NANOFORCE: 'technologies/nanoforce',
+    INTEKCORE: 'technologies/intekcore',
+    HYDROCORE: 'technologies/hydrocore',
+    THERMACORE: 'technologies/thermacore',
+    TURBOCORE: 'technologies/turbocore',
+    DURATECH: 'commercial-lines/duratech',
+    MARINECLEAN: 'commercial-lines/marineclean'
   };
 
   function canonicalTechnologyName(value) {
@@ -173,9 +176,9 @@ try {
 
     scope.querySelectorAll('.badge-tech').forEach(function (badge) {
       var key = canonicalTechnologyName(badge.textContent);
-      var slug = technologyRoutes[key];
-      if (!slug) return;
-      var canonicalUrl = 'https://elimfilters.com/technologies/' + slug + '/';
+      var routePath = technologyRoutes[key];
+      if (!routePath) return;
+      var canonicalUrl = 'https://elimfilters.com/' + routePath + '/';
       badge.href = canonicalUrl;
       badge.target = '_blank';
       badge.rel = 'noopener noreferrer';
@@ -191,10 +194,10 @@ try {
       var badge = event.target.closest && event.target.closest('.badge-tech');
       if (!badge) return;
       var key = canonicalTechnologyName(badge.textContent);
-      var slug = technologyRoutes[key];
-      if (!slug) return;
+      var routePath = technologyRoutes[key];
+      if (!routePath) return;
       event.preventDefault();
-      window.open('https://elimfilters.com/technologies/' + slug + '/', '_blank', 'noopener,noreferrer');
+      window.open('https://elimfilters.com/' + routePath + '/', '_blank', 'noopener,noreferrer');
     });
 
     new MutationObserver(function (mutations) {
@@ -213,7 +216,7 @@ try {
   }
 })();
 </script>
-<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260714_0140 -->`;
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260718_0100 -->`;
 
   resultsHtml = resultsHtml
     .replace(/<script id="part-search-technology-links">[\s\S]*?<!-- PART_SEARCH_TECH_LINKS_BUILD_[^>]*-->/gi, '')

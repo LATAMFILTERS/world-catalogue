@@ -9,7 +9,6 @@
  * Platform declaration (2026-06-10):
  *   Active Technologies:  MACROCORE · SYNTEPORE · INTEKCORE · DRYCORE ·
  *                         HYDROCORE · SYNTRAX · NANOFORCE · THERMACORE · MICROKAPPA
- *   Deprecated (sunset):  AQUAGUARD (→ HYDROCORE)
  *   Ecosystems:           MARINECLEAN · DURATECH
  *
  * Migration status: Phase 2 Task 1 — file created, not yet consumed by any page.
@@ -31,8 +30,6 @@ export type TechnologyKey =
   | 'MICROKAPPA'
   | 'DRYCORE'
   | 'MARINECLEAN';
-
-export type DeprecatedTechnologyKey = never;
 
 export type EcosystemKey = 'MARINECLEAN' | 'DURATECH';
 
@@ -118,22 +115,6 @@ export interface UnifiedTechnology {
   readonly relatedStandards: StandardKey[];
   readonly addressesContamination: ContaminationKey[];
   readonly keyMetrics: Record<string, string>;
-}
-
-export interface DeprecatedTechnology {
-  readonly key: DeprecatedTechnologyKey;
-  readonly name: string;
-  readonly slug: string;
-  readonly replacedBy: TechnologyKey;
-  readonly replacedByName: string;
-  readonly domain: SystemDomain;
-  readonly logoFile: string;
-  readonly geoDefinition: string;
-  readonly deprecatedDate: string;
-  readonly sunsetNote: string;
-  readonly comparisonFunction: string;
-  readonly comparisonMetric: string;
-  readonly comparisonIndustries: string;
 }
 
 export interface EcosystemEntry {
@@ -358,7 +339,6 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
   },
 
   // TODO: verify THERMACORE performance data, logo asset, and product specifications.
-  // THERMACORE replaces COOLTECH (deprecated 2026-06-02). Functional domain: cooling system / SCA.
   THERMACORE: {
     key: 'THERMACORE',
     name: 'THERMACORE™',
@@ -367,7 +347,7 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     logoFile: 'logo-thermacore.png', // TODO: add image asset
     category: 'Coolant Filtration',
     tagline: 'SCA-Release Cooling System Protection',
-    geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. THERMACORE™ delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty commercial vehicles and stationary power generation. Replaces THERMACORE™ as the authoritative cooling system protection technology in the ELIMFILTERS platform.', // TODO: verify SCA release data and product-line details
+    geoDefinition: 'THERMACORE™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. THERMACORE™ delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty commercial vehicles and stationary power generation.', // TODO: verify SCA release data and product-line details
     comparisonFunction: 'SCA-releasing coolant protection',
     comparisonMetric: 'SCA restoration · liner cavitation prevention',
     comparisonIndustries: 'Trucks & Fleets, Bus & Coach, Power Gen',
@@ -450,31 +430,6 @@ export const TECHNOLOGIES: Record<TechnologyKey, UnifiedTechnology> = {
     relatedStandards: [],
     addressesContamination: [],
     keyMetrics: {},
-  },
-
-};
-
-// ============================================================================
-// DEPRECATED TECHNOLOGIES — 3 technologies retired 2026-06-10, erased globally
-// ============================================================================
-
-export const DEPRECATED_TECHNOLOGIES: Record<DeprecatedTechnologyKey, DeprecatedTechnology> = {
-
-  /** @deprecated Replaced by HYDROCORE. Migration complete 2026-06-11. This entry retained for historical reference only. */
-  AQUAGUARD: {
-    key: 'AQUAGUARD',
-    name: 'HYDROCORE™',
-    slug: 'hydrocore',
-    replacedBy: 'HYDROCORE',
-    replacedByName: 'HYDROCORE™',
-    domain: 'Fuel Cleanliness',
-    logoFile: 'logo-hydrocore.png',
-    geoDefinition: 'HYDROCORE™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture.',
-    deprecatedDate: '2026-06-02',
-    sunsetNote: 'Migration to HYDROCORE complete 2026-06-11. Remove this entry after confirming no consumers reference the AQUAGUARD key.',
-    comparisonFunction: 'Turbine-stage water separation',
-    comparisonMetric: '99.8% free water · 95% emulsified removal',
-    comparisonIndustries: 'Marine, Oil & Gas, Power Gen, Agriculture',
   },
 
 };
@@ -1106,11 +1061,6 @@ export function getIndustriesBySeverity(): UnifiedIndustry[] {
   return (Object.values(INDUSTRIES) as UnifiedIndustry[]).sort(
     (a, b) => (severityOrder[b.contaminationExposure] ?? 0) - (severityOrder[a.contaminationExposure] ?? 0)
   );
-}
-
-/** Returns deprecated technology entry with replacement pointer. */
-export function getDeprecatedTechnology(key: DeprecatedTechnologyKey): DeprecatedTechnology {
-  return DEPRECATED_TECHNOLOGIES[key];
 }
 
 /** Returns ecosystem entry. */

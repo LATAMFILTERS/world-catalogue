@@ -44,12 +44,12 @@ DATA_DIR = os.environ.get("DATA_DIR", os.path.dirname(os.path.abspath(__file__))
 TECH_MAP = {
     "EL8": "SYNTRAX™",
     "EF9": "NANOFORCE™",
-    "ES9": "AQUAGUARD™",
-    "ET9": "AQUAGUARD/SERIES™",
+    "ES9": "HYDROCORE™",
+    "ET9": "HYDROCORE™",
     "EA1": "MACROCORE™",
     "EA2": "INTEKCORE™",
     "EH6": "SYNTEPORE™",
-    "EW7": "COOLTECH™",
+    "EW7": "THERMACORE™",
     "EC1": "MICROKAPPA™",
     "ED4": "DRYCORE™",
 }
