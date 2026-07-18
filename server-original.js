@@ -941,8 +941,8 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
       'SELECT duty FROM elimfilters_catalog WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
       [filter_skus]
     );
-    const duty = sample.rows[0]?.duty || 'LD';
-    const prefix = duty === 'HD' ? 'EK3' : 'EK5';
+    const duty = sample.rows[0]?.duty || 'LIGHT_DUTY';
+    const prefix = duty === 'HEAVY_DUTY' ? 'EK5' : 'EK3';
 
     // Generate next kit SKU
     const last = await client.query(
