@@ -1,5 +1,5 @@
-"""Runs Claude Code against a project's working directory and reports back
-exactly what happened — no invented results.
+﻿"""Runs Claude Code against a project's working directory and reports back
+exactly what happened â€” no invented results.
 
 Design notes:
 - Never uses ``shell=True``: arguments are always passed as a list.
@@ -23,6 +23,10 @@ class ClaudeExecutableNotFound(RuntimeError):
     pass
 
 
+class OpenCodeExecutableNotFound(RuntimeError):
+    pass
+
+
 def detect_claude_executable(configured_path: str = "claude") -> str:
     """Resolve the Claude Code executable. Accepts an absolute/relative path
     to a file, or a bare command name to look up on PATH (trying common
@@ -43,6 +47,30 @@ def detect_claude_executable(configured_path: str = "claude") -> str:
     raise ClaudeExecutableNotFound(
         f"Could not find the Claude Code executable ('{configured_path}') on PATH. "
         "Set CLAUDE_CODE_PATH in .env or 'claude_path' in config.json."
+    )
+
+
+def detect_opencode_executable(configured_path: str = "opencode") -> str:
+    """Resolve the OpenCode executable from a file path or PATH."""
+    candidate = Path(configured_path)
+    if candidate.is_file():
+        return str(candidate)
+
+    search_names = [configured_path]
+    if not configured_path.lower().endswith((".exe", ".cmd", ".ps1", ".bat")):
+        search_names += [
+            f"{configured_path}{ext}"
+            for ext in (".exe", ".cmd", ".bat", ".ps1")
+        ]
+
+    for name in search_names:
+        found = shutil.which(name)
+        if found:
+            return found
+
+    raise OpenCodeExecutableNotFound(
+        f"Could not find the OpenCode executable ('{configured_path}') on PATH. "
+        "Set OPENCODE_PATH in .env or 'opencode_path' in config.json."
     )
 
 
@@ -113,14 +141,14 @@ def build_grounded_instruction(instruction: str) -> str:
     return f"""{instruction}
 
 REGLAS OBLIGATORIAS DE KLEO:
-1. Trabaja únicamente con archivos y comandos que existan realmente en el directorio actual.
+1. Trabaja Ãºnicamente con archivos y comandos que existan realmente en el directorio actual.
 2. No inventes rutas, funciones, resultados, pruebas, commits ni flujos de llamada.
-3. Antes de afirmar que un archivo existe, verifícalo en disco. Antes de describir código, léelo.
+3. Antes de afirmar que un archivo existe, verifÃ­calo en disco. Antes de describir cÃ³digo, lÃ©elo.
 4. Excluye node_modules y artefactos generados salvo que la tarea los solicite expresamente.
-5. Si la tarea pide modificar el proyecto, realiza el cambio real y ejecuta una verificación apropiada.
-6. Si no puedes comprobar una afirmación, escribe literalmente: NO VERIFICADO.
+5. Si la tarea pide modificar el proyecto, realiza el cambio real y ejecuta una verificaciÃ³n apropiada.
+6. Si no puedes comprobar una afirmaciÃ³n, escribe literalmente: NO VERIFICADO.
 7. La salida final debe separar HECHOS VERIFICADOS, CAMBIOS REALES, PRUEBAS EJECUTADAS y LIMITACIONES.
-8. Un exit code 0 solo significa que el proceso terminó; no autoriza a declarar que una tarea quedó completada sin evidencia.
+8. Un exit code 0 solo significa que el proceso terminÃ³; no autoriza a declarar que una tarea quedÃ³ completada sin evidencia.
 """
 
 
@@ -153,7 +181,7 @@ def run_test_command(command: str, cwd: str | Path, timeout_seconds: int = 600) 
     before KLEO reports the task as completed. Uses ``shell=True``
     deliberately: unlike the Claude Code invocation (which embeds untrusted
     Telegram message text and must never go through a shell), this command
-    string only ever comes from the operator's local config.json — never
+    string only ever comes from the operator's local config.json â€” never
     from a chat message."""
     try:
         proc = subprocess.run(
@@ -176,7 +204,23 @@ def run_test_command(command: str, cwd: str | Path, timeout_seconds: int = 600) 
         )
 
 
-class ClaudeCodeExecutor:
+class AgentExecutor:
+    """Base interface for all execution backends."""
+
+    def run(
+        self,
+        project_path: str | Path,
+        instruction: str,
+        task_id: int | None = None,
+        capture_git: bool = True,
+    ) -> ExecutionResult:
+        raise NotImplementedError
+
+    def cancel(self, task_id: int) -> bool:
+        raise NotImplementedError
+
+
+class ClaudeCodeExecutor(AgentExecutor):
     """Executes ``claude`` as a subprocess for a given project directory."""
 
     def __init__(
@@ -267,9 +311,121 @@ class ClaudeCodeExecutor:
         )
 
 
+class OpenCodeExecutor(AgentExecutor):
+    """Executes ``opencode run`` in a project directory."""
+
+    def __init__(
+        self,
+        opencode_path: str = "opencode",
+        extra_args: list[str] | None = None,
+        timeout_seconds: int = 900,
+    ):
+        self.opencode_path = opencode_path
+        self.extra_args = extra_args or []
+        self.timeout_seconds = timeout_seconds
+        self._lock = threading.Lock()
+        self._processes: dict[int, subprocess.Popen] = {}
+        self._cancel_requested: set[int] = set()
+
+    def cancel(self, task_id: int) -> bool:
+        with self._lock:
+            self._cancel_requested.add(task_id)
+            proc = self._processes.get(task_id)
+
+        if proc is None:
+            return False
+
+        proc.terminate()
+        return True
+
+    def run(
+        self,
+        project_path: str | Path,
+        instruction: str,
+        task_id: int | None = None,
+        capture_git: bool = True,
+    ) -> ExecutionResult:
+        project_dir = Path(project_path)
+        if not project_dir.is_dir():
+            raise FileNotFoundError(
+                f"Project directory does not exist: {project_dir}"
+            )
+
+        executable = detect_opencode_executable(self.opencode_path)
+        before_fingerprint = (
+            repository_fingerprint(project_dir) if capture_git else ""
+        )
+        grounded_instruction = build_grounded_instruction(instruction)
+        args = [
+            executable,
+            "run",
+            grounded_instruction,
+            *self.extra_args,
+        ]
+
+        proc = subprocess.Popen(
+            args,
+            cwd=str(project_dir),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+
+        if task_id is not None:
+            with self._lock:
+                self._processes[task_id] = proc
+
+        timed_out = False
+        try:
+            stdout, stderr = proc.communicate(
+                timeout=self.timeout_seconds
+            )
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            stdout, stderr = proc.communicate()
+            timed_out = True
+        finally:
+            if task_id is not None:
+                with self._lock:
+                    self._processes.pop(task_id, None)
+
+        cancelled = False
+        if task_id is not None:
+            with self._lock:
+                if task_id in self._cancel_requested:
+                    self._cancel_requested.discard(task_id)
+                    cancelled = True
+                    timed_out = False
+
+        git_status, git_diff_stat = (
+            collect_git_summary(project_dir)
+            if capture_git
+            else ("", "")
+        )
+        after_fingerprint = (
+            repository_fingerprint(project_dir) if capture_git else ""
+        )
+
+        return ExecutionResult(
+            exit_code=proc.returncode,
+            stdout=stdout or "",
+            stderr=stderr or "",
+            timed_out=timed_out,
+            cancelled=cancelled,
+            git_status=git_status,
+            git_diff_stat=git_diff_stat,
+            repository_changed=bool(
+                capture_git
+                and before_fingerprint != after_fingerprint
+            ),
+        )
+
+
 @dataclass
-class FakeExecutor:
-    """Drop-in replacement for ``ClaudeCodeExecutor`` used in tests. Never
+class FakeExecutor(AgentExecutor):
+    """Drop-in replacement for an executor used in tests. Never
     spawns a process; returns a scripted or default result so the queue,
     storage, and Telegram formatting can be exercised without a real
     ``claude`` binary."""
@@ -292,3 +448,24 @@ class FakeExecutor:
 
     def cancel(self, task_id: int) -> bool:
         return True
+
+
+def build_executor(config) -> AgentExecutor:
+    """Create the executor selected by ``agent_backend``."""
+    if config.agent_backend == "claude":
+        return ClaudeCodeExecutor(
+            claude_path=config.claude_path,
+            extra_args=config.claude_extra_args,
+            timeout_seconds=config.claude_timeout_seconds,
+        )
+
+    if config.agent_backend == "opencode":
+        return OpenCodeExecutor(
+            opencode_path=config.opencode_path,
+            extra_args=config.opencode_extra_args,
+            timeout_seconds=config.opencode_timeout_seconds,
+        )
+
+    raise ValueError(
+        f"Unsupported agent backend: {config.agent_backend!r}"
+    )

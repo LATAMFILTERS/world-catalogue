@@ -125,6 +125,10 @@ class Config:
     security: SecuritySettings
     mcp: McpAdapterSettings
     phoenix_root: Path | None
+    agent_backend: str = "opencode"
+    opencode_path: str = "opencode"
+    opencode_extra_args: list[str] = field(default_factory=list)
+    opencode_timeout_seconds: int = 900
     claude_extra_args: list[str] = field(default_factory=list)
     claude_timeout_seconds: int = 900
     test_commands: dict[str, str] = field(default_factory=dict)
@@ -169,7 +173,21 @@ def load_config(
     )
     authorized_chat_id = int(chat_id_raw) if chat_id_raw not in (None, "") else None
 
-    claude_path = environ.get("CLAUDE_CODE_PATH") or raw.get("claude_path") or "claude"
+    agent_backend = (
+        environ.get("KLEO_AGENT_BACKEND")
+        or raw.get("agent_backend")
+        or "opencode"
+    )
+    opencode_path = (
+        environ.get("OPENCODE_PATH")
+        or raw.get("opencode_path")
+        or "opencode"
+    )
+    claude_path = (
+        environ.get("CLAUDE_CODE_PATH")
+        or raw.get("claude_path")
+        or "claude"
+    )
 
     db_path = Path(environ.get("KLEO_DB_PATH") or raw.get("db_path") or "./data/kleo.db")
     log_path = Path(
@@ -194,6 +212,14 @@ def load_config(
         security=security,
         mcp=mcp,
         phoenix_root=phoenix_root,
+        agent_backend=agent_backend,
+        opencode_path=opencode_path,
+        opencode_extra_args=list(raw.get("opencode_extra_args", [])),
+        opencode_timeout_seconds=int(
+            environ.get("KLEO_OPENCODE_TIMEOUT_SECONDS")
+            or raw.get("opencode_timeout_seconds")
+            or 900
+        ),
         claude_extra_args=list(raw.get("claude_extra_args", [])),
         claude_timeout_seconds=int(
             environ.get("KLEO_CLAUDE_TIMEOUT_SECONDS")
