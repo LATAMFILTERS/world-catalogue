@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     error TEXT,
     exit_code INTEGER,
     git_status TEXT,
-    git_diff_stat TEXT
+    git_diff_stat TEXT,
+    env_verified TEXT
 );
 
 CREATE TABLE IF NOT EXISTS chat_state (
@@ -57,7 +58,16 @@ class Storage:
         self._conn.execute("PRAGMA journal_mode=WAL;")
         self._conn.execute("PRAGMA foreign_keys=ON;")
         self._conn.executescript(SCHEMA)
+        self._migrate_schema()
         self._conn.commit()
+
+    def _migrate_schema(self) -> None:
+        """Adds columns introduced after the initial schema to databases that
+        already exist on disk — ``CREATE TABLE IF NOT EXISTS`` does not add
+        columns to a table that's already there."""
+        existing = {row["name"] for row in self._conn.execute("PRAGMA table_info(tasks)")}
+        if "env_verified" not in existing:
+            self._conn.execute("ALTER TABLE tasks ADD COLUMN env_verified TEXT")
 
     def close(self) -> None:
         self._conn.close()

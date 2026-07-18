@@ -990,7 +990,7 @@ function ROI() {
       <Wrap style={{ position:'relative', zIndex:1 }}>
         <div className="reveal" style={{ textAlign:'center', marginBottom:'4rem' }}>
           <Eyebrow>ROI CALCULATOR</Eyebrow>
-          <H2>Your Fleet's Contamination<br /><span style={{ color: G }}>Cost — Calculated.</span></H2>
+          <H2>Your Fleet&apos;s Contamination<br /><span style={{ color: G }}>Cost — Calculated.</span></H2>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'1rem', color: W6,
             lineHeight:1.8, maxWidth:520, margin:'1rem auto 0' }}>
             Enter your fleet parameters. See the real cost of substandard filtration
@@ -1095,7 +1095,7 @@ function Industries() {
           alignItems:'flex-end', marginBottom:'4rem', flexWrap:'wrap', gap:'2rem' }}>
           <div>
             <Eyebrow>INDUSTRY COVERAGE</Eyebrow>
-            <H2>Built for the<br /><span style={{ color: G }}>World's Hardest Jobs.</span></H2>
+            <H2>Built for the<br /><span style={{ color: G }}>World&apos;s Hardest Jobs.</span></H2>
           </div>
           <p style={{ fontFamily:'Inter, sans-serif', fontSize:'0.95rem', color: W6,
             maxWidth:340, lineHeight:1.75 }}>

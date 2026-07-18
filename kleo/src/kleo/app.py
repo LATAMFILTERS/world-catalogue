@@ -15,7 +15,8 @@ from pathlib import Path
 
 from kleo.commands import handle_message
 from kleo.config import Config, load_config
-from kleo.executor import ClaudeCodeExecutor, ExecutionResult
+from kleo.executor import ClaudeCodeExecutor, ExecutionResult, TestResult, run_test_command
+from kleo.repo_guard import format_env_verified_message, verify_repository
 from kleo.security import SecretRedactor, install_redaction
 from kleo.storage import Storage
 from kleo.tasks import Task, TaskStatus, utcnow_iso
@@ -75,8 +76,16 @@ def verify_telegram_connectivity(telegram: TelegramClient) -> dict:
     return me
 
 
-def format_result_message(task: Task, result: ExecutionResult) -> str:
-    """Build the Telegram reply without treating model prose as evidence."""
+def format_result_message(
+    task: Task, result: ExecutionResult, test_result: TestResult | None = None
+) -> str:
+    """Builds the Telegram reply for a finished task: real stdout/stderr,
+    exit code, test results, and git status/diff --stat — never a fabricated
+    summary. A task only reads as COMPLETADA if Claude Code exited 0, the
+    project's configured test command (if any) also passed, *and* Git
+    actually detected a change in the repository (``repository_changed``,
+    computed from a before/after fingerprint — an exit code of 0 alone does
+    not prove anything happened)."""
     lines = [f"Tarea #{task.id} — proyecto: {task.project}"]
     if result.cancelled:
         lines.append("Estado: CANCELADA")
@@ -84,10 +93,15 @@ def format_result_message(task: Task, result: ExecutionResult) -> str:
         lines.append("Estado: TIMEOUT")
     elif result.exit_code != 0:
         lines.append(f"Estado: ERROR (exit code {result.exit_code})")
-    elif result.repository_changed:
-        lines.append("Estado: COMPLETADA CON CAMBIOS VERIFICADOS EN GIT")
-    else:
+    elif test_result is not None and not test_result.passed:
+        if test_result.timed_out:
+            lines.append("Estado: ERROR (las pruebas no terminaron a tiempo)")
+        else:
+            lines.append(f"Estado: ERROR (las pruebas fallaron, exit code {test_result.exit_code})")
+    elif not result.repository_changed:
         lines.append("Estado: EJECUTADA — SIN CAMBIOS VERIFICABLES EN EL REPOSITORIO")
+    else:
+        lines.append("Estado: COMPLETADA")
 
     lines.append("\nSalida del agente (NO constituye evidencia por sí sola):")
     lines.append(result.stdout.strip() or "(sin salida)")
@@ -101,6 +115,12 @@ def format_result_message(task: Task, result: ExecutionResult) -> str:
     if result.stderr.strip():
         lines.append("\nErrores (stderr):")
         lines.append(result.stderr.strip())
+
+    if test_result is not None:
+        status = "(timeout)" if test_result.timed_out else f"exit code {test_result.exit_code}"
+        lines.append(f"\nPruebas ({status}):")
+        combined = f"{test_result.stdout}\n{test_result.stderr}".strip()
+        lines.append(combined or "(sin salida)")
 
     lines.append("\nEstado Git actual:")
     lines.append(result.git_status or "(sin cambios)")
@@ -198,20 +218,46 @@ class KleoApp:
             return False
 
         project_path = self.config.projects.resolve(task.project)
-        if project_path is None or not project_path.is_dir():
+        if project_path is None:
             self.storage.mark_status(
                 task.id,
                 TaskStatus.ERROR,
-                error=f"Ruta del proyecto '{task.project}' no encontrada: {project_path}",
+                error=f"El proyecto '{task.project}' no está configurado.",
                 finished_at=utcnow_iso(),
             )
             self.telegram.send_message(
                 task.chat_id,
-                f"Tarea #{task.id} error: la ruta del proyecto '{task.project}' no existe en disco.",
+                f"Tarea #{task.id} error: el proyecto '{task.project}' no está configurado.",
             )
             return True
 
-        self.storage.mark_status(task.id, TaskStatus.RUNNING, started_at=utcnow_iso())
+        verification = verify_repository(
+            task.project, project_path, self.config.expected_remotes.get(task.project)
+        )
+        if not verification.ok:
+            logger.warning(
+                "Repo verification failed for task #%s (project=%s): %s",
+                task.id, task.project, verification.error,
+            )
+            self.storage.mark_status(
+                task.id,
+                TaskStatus.ERROR,
+                started_at=utcnow_iso(),
+                finished_at=utcnow_iso(),
+                error=verification.error,
+                env_verified=f"VERIFICACIÓN FALLIDA: {verification.error}",
+            )
+            self.telegram.send_message(
+                task.chat_id, f"Tarea #{task.id} bloqueada antes de ejecutar — {verification.error}"
+            )
+            return True
+
+        env_message = format_env_verified_message(verification)
+        self.storage.mark_status(
+            task.id, TaskStatus.RUNNING, started_at=utcnow_iso(), env_verified=env_message
+        )
+        self.telegram.send_message(task.chat_id, env_message)
+
         try:
             result = self.executor.run(project_path, task.instruction, task_id=task.id)
         except Exception as exc:  # executor/subprocess failure, not fabricated
@@ -222,9 +268,21 @@ class KleoApp:
             self.telegram.send_message(task.chat_id, f"Tarea #{task.id} error: {exc}")
             return True
 
+        test_result: TestResult | None = None
+        tests_run_summary: str | None = None
+        if not result.cancelled and not result.timed_out and result.exit_code == 0:
+            test_command = self.config.test_commands.get(task.project)
+            if test_command:
+                test_result = run_test_command(
+                    test_command, project_path, timeout_seconds=self.config.test_timeout_seconds
+                )
+                status = "TIMEOUT" if test_result.timed_out else f"exit code {test_result.exit_code}"
+                output = f"{test_result.stdout}\n{test_result.stderr}".strip()
+                tests_run_summary = f"$ {test_command}\n{status}\n{output}"[:4000]
+
         if result.cancelled:
             final_status = TaskStatus.CANCELLED
-        elif result.exit_code == 0 and not result.timed_out:
+        elif result.exit_code == 0 and not result.timed_out and (test_result is None or test_result.passed):
             final_status = TaskStatus.COMPLETED
         else:
             final_status = TaskStatus.ERROR
@@ -238,9 +296,12 @@ class KleoApp:
             exit_code=result.exit_code,
             git_status=(result.git_status or "")[:4000],
             git_diff_stat=(result.git_diff_stat or "")[:4000],
+            tests_run=tests_run_summary,
         )
         updated_task = self.storage.get_task(task.id)
-        self.telegram.send_message(task.chat_id, format_result_message(updated_task, result))
+        self.telegram.send_message(
+            task.chat_id, format_result_message(updated_task, result, test_result)
+        )
         return True
 
 
