@@ -931,11 +931,13 @@ function buildFilterData(row, lang = 'en'){
 // auto-assigned the first time a brand is used (kit_brand_codes table)
 // so no hardcoded brand list needs to be maintained.
 app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
-  const { name, brand, equipment_ref, filter_skus } = req.body;
+  const { name, brand, equipment_ref, filter_skus, suggested_addon_skus } = req.body;
   if (!name || !brand || !Array.isArray(filter_skus) || filter_skus.length === 0)
     return res.status(400).json({ success: false, error: 'name, brand, and filter_skus[] required' });
   if (name.length > 200 || brand.length > 100 || (equipment_ref && equipment_ref.length > 500) || filter_skus.length > 100)
     return res.status(400).json({ success: false, error: 'Input exceeds maximum length' });
+  if (suggested_addon_skus && (!Array.isArray(suggested_addon_skus) || suggested_addon_skus.length > 20))
+    return res.status(400).json({ success: false, error: 'suggested_addon_skus must be an array of at most 20 SKUs' });
 
   const client = await pool.connect();
   try {
@@ -984,9 +986,16 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
         [kit_sku, fsku.toUpperCase()]
       );
     }
+    for (const asku of (suggested_addon_skus || [])) {
+      if (!/^[A-Z]{2,3}[0-9]{4,7}[A-Z0-9]?$/.test(String(asku).trim().toUpperCase())) continue;
+      await client.query(
+        'INSERT INTO kit_suggested_addons (kit_sku, filter_sku) VALUES ($1,$2) ON CONFLICT DO NOTHING',
+        [kit_sku, asku.toUpperCase()]
+      );
+    }
     await client.query('COMMIT');
 
-    res.status(201).json({ success: true, kit_sku, duty, name, brand: brandKey, equipment_ref, filter_skus });
+    res.status(201).json({ success: true, kit_sku, duty, name, brand: brandKey, equipment_ref, filter_skus, suggested_addon_skus: suggested_addon_skus || [] });
   } catch(e) {
     await client.query('ROLLBACK').catch(()=>{});
     console.error('[kits POST]', e.message);
@@ -1018,6 +1027,14 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
       [kit_sku]
     );
 
+    const addons = await client.query(
+      `SELECT c.*, ka.kit_sku, ka.note
+       FROM elimfilters_catalog c
+       JOIN kit_suggested_addons ka ON ka.filter_sku = c.sku
+       WHERE ka.kit_sku = $1`,
+      [kit_sku]
+    );
+
     res.json({
       success: true,
       kit: {
@@ -1026,7 +1043,8 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
         brand: kit.rows[0].brand,
         equipment_ref: kit.rows[0].equipment_ref,
         duty: kit.rows[0].duty,
-        filters: components.rows.map(row => buildFilterData(row, lang))
+        filters: components.rows.map(row => buildFilterData(row, lang)),
+        suggested_addons: addons.rows.map(row => ({ ...buildFilterData(row, lang), note: row.note }))
       }
     });
   } catch(e) {
@@ -1038,6 +1056,45 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
 });
 
 // GET /api/filters/kits?sku=XXX — which kits contain this filter
+// POST /api/kits/:kit_sku/suggested-addons — add optional recommended
+// filters to an existing kit (e.g. an air filter offered alongside an
+// oil/fuel/coolant kit rather than bundled inside it, since it runs on
+// a different service interval and is a separate purchase decision)
+app.post('/api/kits/:kit_sku/suggested-addons', adminLimiter, requireAdmin, async (req, res) => {
+  const kit_sku = req.params.kit_sku.trim().toUpperCase();
+  const { filter_skus, note } = req.body;
+  if (!Array.isArray(filter_skus) || filter_skus.length === 0 || filter_skus.length > 20)
+    return res.status(400).json({ success: false, error: 'filter_skus[] required (max 20)' });
+  if (note && note.length > 300)
+    return res.status(400).json({ success: false, error: 'note exceeds maximum length' });
+
+  const client = await pool.connect();
+  try {
+    const kit = await client.query('SELECT kit_sku FROM maintenance_kits WHERE kit_sku = $1', [kit_sku]);
+    if (!kit.rows.length) return res.status(404).json({ success: false, error: 'Kit not found' });
+
+    const added = [];
+    await client.query('BEGIN');
+    for (const fsku of filter_skus) {
+      const clean = String(fsku).trim().toUpperCase();
+      if (!/^[A-Z]{2,3}[0-9]{4,7}[A-Z0-9]?$/.test(clean)) continue;
+      await client.query(
+        'INSERT INTO kit_suggested_addons (kit_sku, filter_sku, note) VALUES ($1,$2,$3) ON CONFLICT (kit_sku, filter_sku) DO UPDATE SET note = EXCLUDED.note',
+        [kit_sku, clean, note || null]
+      );
+      added.push(clean);
+    }
+    await client.query('COMMIT');
+    res.status(201).json({ success: true, kit_sku, suggested_addon_skus: added });
+  } catch(e) {
+    await client.query('ROLLBACK').catch(()=>{});
+    console.error('[kits suggested-addons POST]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
 app.get('/api/filters/kits', searchLimiter, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.json({ success: false, kits: [] });
