@@ -2619,6 +2619,15 @@ app.get('/api/instagram/webhook', (req, res) => {
 });
 
 app.post('/api/instagram/webhook', (req, res) => {
+  // Safe receipt log — confirms an event arrived without ever touching
+  // req.rawBody/signature/tokens, so it can't leak secrets even if logging
+  // is misconfigured or forwarded to a third-party log sink.
+  console.log('[instagram/webhook] Instagram event received', {
+    object: req.body?.object || 'unknown',
+    field: req.body?.entry?.[0]?.changes?.[0]?.field || 'none',
+    timestamp: new Date().toISOString(),
+  });
+
   const signatureHeader = req.get('x-hub-signature-256') || '';
 
   if (!INSTAGRAM_APP_SECRET || !req.rawBody) {
