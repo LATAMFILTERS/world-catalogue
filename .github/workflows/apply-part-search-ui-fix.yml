@@ -40,131 +40,131 @@ jobs:
 
           mobile_fix = r'''
 
-    /* ELIMFILTERS approved typography + clean search controls */
-    html, body,
-    button, input, select, textarea {
-      font-family: 'Barlow', sans-serif;
-    }
+          /* ELIMFILTERS approved typography + clean search controls */
+          html, body,
+          button, input, select, textarea {
+            font-family: 'Barlow', sans-serif;
+          }
 
-    .intro-label,
-    .mode-tab,
-    .logo-badge,
-    .duty-chip,
-    .btn-search,
-    .footer-line,
-    .status-msg,
-    .field-label {
-      font-family: 'Barlow Condensed', sans-serif;
-    }
+          .intro-label,
+          .mode-tab,
+          .logo-badge,
+          .duty-chip,
+          .btn-search,
+          .footer-line,
+          .status-msg,
+          .field-label {
+            font-family: 'Barlow Condensed', sans-serif;
+          }
 
-    .intro-label {
-      font-weight: 500;
-      letter-spacing: 0.12em;
-    }
+          .intro-label {
+            font-weight: 500;
+            letter-spacing: 0.12em;
+          }
 
-    .mode-tab,
-    .duty-chip,
-    .field-label {
-      font-weight: 500;
-      letter-spacing: 0.12em;
-    }
+          .mode-tab,
+          .duty-chip,
+          .field-label {
+            font-weight: 500;
+            letter-spacing: 0.12em;
+          }
 
-    .input-icon { display: none !important; }
+          .input-icon { display: none !important; }
 
-    .input-wrap input {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      padding: 0.9rem 1rem;
-    }
+          .input-wrap input {
+            font-family: 'Barlow', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            padding: 0.9rem 1rem;
+          }
 
-    .input-wrap input::placeholder {
-      color: rgba(255,255,255,0.34);
-      opacity: 1;
-    }
+          .input-wrap input::placeholder {
+            color: rgba(255,255,255,0.34);
+            opacity: 1;
+          }
 
-    .btn-search {
-      min-width: 220px;
-      min-height: 56px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.9rem 2.25rem;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border-radius: 3px;
-      overflow: hidden;
-    }
+          .btn-search {
+            min-width: 220px;
+            min-height: 56px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border-radius: 3px;
+            overflow: hidden;
+          }
 
-    .btn-search::before,
-    .btn-search::after {
-      content: none !important;
-      display: none !important;
-    }
+          .btn-search::before,
+          .btn-search::after {
+            content: none !important;
+            display: none !important;
+          }
 
-    @media (max-width: 640px) {
-      #ui {
-        justify-content: flex-start;
-        padding: 7.5rem 1rem 3rem;
-      }
+          @media (max-width: 640px) {
+            #ui {
+              justify-content: flex-start;
+              padding: 7.5rem 1rem 3rem;
+            }
 
-      .intro-label {
-        width: 100%;
-        max-width: 22rem;
-        margin: 0 auto 2rem;
-        font-size: clamp(1.55rem, 7.5vw, 2.15rem);
-        line-height: 1.12;
-        text-align: center;
-      }
+            .intro-label {
+              width: 100%;
+              max-width: 22rem;
+              margin: 0 auto 2rem;
+              font-size: clamp(1.55rem, 7.5vw, 2.15rem);
+              line-height: 1.12;
+              text-align: center;
+            }
 
-      #search-panel {
-        width: 100%;
-        max-width: 100%;
-      }
+            #search-panel {
+              width: 100%;
+              max-width: 100%;
+            }
 
-      .mode-tabs {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+            .mode-tabs {
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
 
-      .mode-tab {
-        width: 100%;
-        min-width: 0;
-        padding: 0.7rem 0.25rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.08em;
-      }
+            .mode-tab {
+              width: 100%;
+              min-width: 0;
+              padding: 0.7rem 0.25rem;
+              font-size: 0.82rem;
+              letter-spacing: 0.08em;
+            }
 
-      .field-label {
-        font-size: 0.82rem;
-      }
+            .field-label {
+              font-size: 0.82rem;
+            }
 
-      .input-wrap {
-        min-height: 58px;
-      }
+            .input-wrap {
+              min-height: 58px;
+            }
 
-      .input-wrap input {
-        width: 100%;
-        font-size: 1rem;
-        padding: 1rem;
-      }
+            .input-wrap input {
+              width: 100%;
+              font-size: 1rem;
+              padding: 1rem;
+            }
 
-      .form-footer {
-        margin-top: 1.25rem;
-      }
+            .form-footer {
+              margin-top: 1.25rem;
+            }
 
-      .btn-search {
-        width: min(100%, 360px);
-        min-width: 0;
-        min-height: 58px;
-        font-size: 1rem;
-        letter-spacing: 0.2em;
-      }
-    }
+            .btn-search {
+              width: min(100%, 360px);
+              min-width: 0;
+              min-height: 58px;
+              font-size: 1rem;
+              letter-spacing: 0.2em;
+            }
+          }
           '''
 
           marker = '</style>'
