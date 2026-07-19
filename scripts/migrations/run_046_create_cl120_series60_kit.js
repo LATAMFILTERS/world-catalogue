@@ -12,7 +12,7 @@
  * found and ruled out in oem_codes for several candidates):
  *   - Oil filter (x2, parallel): EL82100 (P552100)
  *   - Fuel filter - primary:     EF90463 (P550463, Detroit 23529664)
- *   - Fuel filter - secondary:   EF97917 (DBF7917, Detroit 23530707)
+ *   - Fuel filter - secondary:   EF96916 (P556916, Detroit 23518482/23533726)
  *   - Coolant filter:            EW74685 (P554685, Detroit 23524403)
  *   - Engine air filter:         EA17682 (P527682)
  *   - Transmission filter:       EL82518 (P552518)
@@ -34,7 +34,7 @@ const APPLY = process.argv.includes('--apply');
 const BRAND = 'FREIGHTLINER';
 const NAME = 'Freightliner Columbia CL120 (Detroit Diesel Series 60) Maintenance Kit';
 const EQUIPMENT_REF = 'FREIGHTLINER COLUMBIA CL120 + Detroit Diesel Series 60';
-const FILTER_SKUS = ['EL82100', 'EF90463', 'EF97917', 'EW74685', 'EA17682', 'EL82518'];
+const FILTER_SKUS = ['EL82100', 'EF90463', 'EF96916', 'EW74685', 'EA17682', 'EL82518'];
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
