@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const crypto = require('crypto');
 const { Client, Pool } = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
@@ -175,7 +176,13 @@ app.use(cors({
 }));
 // Import endpoints need larger body limit (Mann fitment can be 300+ rows per product)
 app.use('/api/import', express.json({ charset: 'utf-8', limit: '10mb' }));
-app.use(express.json({ charset: 'utf-8', limit: '1mb' }));
+// verify() stashes the raw bytes on req.rawBody so the Instagram webhook can
+// validate Meta's X-Hub-Signature-256 HMAC (parsed req.body isn't byte-identical).
+app.use(express.json({
+  charset: 'utf-8',
+  limit: '1mb',
+  verify: (req, res, buf) => { req.rawBody = buf; },
+}));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out', { maxAge: '1h', etag: true, lastModified: true });
 const partSearchStatic = express.static('part-search', { maxAge: '1h', etag: true, lastModified: true });
@@ -2584,6 +2591,55 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
     console.error('[ai/escalate]', err.message);
     res.status(500).json({ error: 'Failed to send escalation email' });
   }
+});
+
+// ─── Instagram Business API Webhook ──────────────────────────────────────────
+const INSTAGRAM_VERIFY_TOKEN = process.env.INSTAGRAM_VERIFY_TOKEN;
+const INSTAGRAM_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
+const INSTAGRAM_APP_SECRET = process.env.INSTAGRAM_APP_SECRET;
+const INSTAGRAM_ACCOUNT_ID = process.env.INSTAGRAM_ACCOUNT_ID;
+
+if (!INSTAGRAM_VERIFY_TOKEN || !INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_APP_SECRET || !INSTAGRAM_ACCOUNT_ID) {
+  console.warn('[instagram/webhook] one or more INSTAGRAM_* environment variables are not set — webhook will reject requests');
+}
+
+// Meta calls this during webhook subscription setup to confirm ownership.
+app.get('/api/instagram/webhook', (req, res) => {
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode === 'subscribe' && token && INSTAGRAM_VERIFY_TOKEN && token === INSTAGRAM_VERIFY_TOKEN) {
+    console.log(`[instagram/webhook] verification succeeded for account ${INSTAGRAM_ACCOUNT_ID || '(unset)'}`);
+    return res.status(200).send(challenge);
+  }
+
+  console.warn('[instagram/webhook] verification failed', { mode, tokenProvided: Boolean(token) });
+  return res.sendStatus(403);
+});
+
+app.post('/api/instagram/webhook', (req, res) => {
+  const signatureHeader = req.get('x-hub-signature-256') || '';
+
+  if (!INSTAGRAM_APP_SECRET || !req.rawBody) {
+    console.warn('[instagram/webhook] rejected event — app secret or raw body unavailable');
+    return res.sendStatus(403);
+  }
+
+  const expectedSignature = 'sha256=' + crypto.createHmac('sha256', INSTAGRAM_APP_SECRET).update(req.rawBody).digest('hex');
+  const providedBuffer = Buffer.from(signatureHeader);
+  const expectedBuffer = Buffer.from(expectedSignature);
+  const isValidSignature = providedBuffer.length === expectedBuffer.length
+    && crypto.timingSafeEqual(providedBuffer, expectedBuffer);
+
+  if (!isValidSignature) {
+    console.warn('[instagram/webhook] rejected event — invalid X-Hub-Signature-256');
+    return res.sendStatus(403);
+  }
+
+  console.log('[instagram/webhook] event received:', JSON.stringify(req.body));
+
+  res.sendStatus(200);
 });
 
 const PORT = process.env.PORT || 3001;
