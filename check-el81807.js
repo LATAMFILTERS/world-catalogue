@@ -1,6 +1,6 @@
 const { Client } = require('pg');
 const client = new Client({
-  connectionString: 'postgres://postgres:qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm@ballast.proxy.rlwy.net:18263/railway',
+  connectionString: process.env.LEGACY_DB_URL,
   ssl: { rejectUnauthorized: false }
 });
 client.connect()

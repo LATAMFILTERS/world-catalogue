@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """Full Knowledge Graph readiness audit - all 20 queries"""
+import os
 import psycopg2
 import psycopg2.extras
 import json
 import sys
 
-conn = psycopg2.connect(
-    host='ballast.proxy.rlwy.net',
-    port=18263,
-    database='railway',
-    user='postgres',
-    password='qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
-    sslmode='require'
-)
+LEGACY_DB_URL = os.environ.get('LEGACY_DB_URL')
+if not LEGACY_DB_URL:
+    print("Missing database configuration. Set LEGACY_DB_URL.", file=sys.stderr)
+    sys.exit(1)
+
+conn = psycopg2.connect(LEGACY_DB_URL, sslmode='require')
 conn.autocommit = True
 cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 

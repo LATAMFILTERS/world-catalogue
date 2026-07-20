@@ -38,9 +38,7 @@ const DB_CONFIG = (() => {
     };
   }
   return {
-    host: 'ballast.proxy.rlwy.net', port: 18263,
-    database: 'railway', user: 'postgres',
-    password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+    connectionString: process.env.LEGACY_DB_URL,
     ssl: { rejectUnauthorized: false },
   };
 })();

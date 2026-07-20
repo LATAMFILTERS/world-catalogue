@@ -21,11 +21,7 @@ const DB_URL = process.env.DATABASE_URL;
 const pool = DRY_RUN ? null : (DB_URL
   ? new Pool({ connectionString: DB_URL, ssl: { rejectUnauthorized: false } })
   : new Pool({
-      host:     'ballast.proxy.rlwy.net',
-      port:     18263,
-      database: 'railway',
-      user:     'postgres',
-      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+      connectionString: process.env.LEGACY_DB_URL,
       ssl:      { rejectUnauthorized: false },
     })
 );

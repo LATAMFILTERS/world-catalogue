@@ -1,11 +1,7 @@
 'use strict';
 const { Client } = require('pg');
 const client = new Client({
-  host: 'ballast.proxy.rlwy.net',
-  port: 18263,
-  database: 'railway',
-  user: 'postgres',
-  password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+  connectionString: process.env.LEGACY_DB_URL,
   ssl: { rejectUnauthorized: false }
 });
 

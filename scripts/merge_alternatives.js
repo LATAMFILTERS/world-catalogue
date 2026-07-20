@@ -23,11 +23,7 @@ const JSON_DIR = path.join(__dirname);   // JSON files live next to this script
 const POOL = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } })
   : new Pool({
-      host:     'ballast.proxy.rlwy.net',
-      port:     18263,
-      database: 'railway',
-      user:     'postgres',
-      password: 'qUiKsOlOyDSyHZogyqhhxTTPlAuuLEkm',
+      connectionString: process.env.LEGACY_DB_URL,
       ssl:      { rejectUnauthorized: false },
     });
 
