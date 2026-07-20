@@ -2661,7 +2661,12 @@ app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
     return res.status(502).json({ ok: false, error: 'Instagram account is not configured' });
   }
 
-  const graphUrl = `https://graph.facebook.com/v25.0/${encodeURIComponent(INSTAGRAM_ACCOUNT_ID)}?fields=id,username,account_type,media_count`;
+  // graph.instagram.com (not graph.facebook.com) — IGAA-prefixed tokens from
+  // the Instagram API with Instagram Login product are scoped to this host,
+  // and INSTAGRAM_ACCOUNT_ID must be the Instagram-scoped ID this host
+  // returns (different from the Page-linked ID graph.facebook.com uses for
+  // the same account).
+  const graphUrl = `https://graph.instagram.com/v25.0/${encodeURIComponent(INSTAGRAM_ACCOUNT_ID)}?fields=id,username,account_type,media_count`;
 
   try {
     const metaResponse = await fetch(graphUrl, {
