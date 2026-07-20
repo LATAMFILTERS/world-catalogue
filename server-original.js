@@ -2731,7 +2731,7 @@ app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
   // and INSTAGRAM_ACCOUNT_ID must be the Instagram-scoped ID this host
   // returns (different from the Page-linked ID graph.facebook.com uses for
   // the same account).
-  const graphUrl = `https://graph.instagram.com/v25.0/${encodeURIComponent(INSTAGRAM_ACCOUNT_ID)}?fields=id,username,account_type,media_count`;
+  const graphUrl = `https://graph.instagram.com/v25.0/me?fields=id,username,account_type,media_count`;
 
   try {
     const metaResponse = await fetch(graphUrl, {
