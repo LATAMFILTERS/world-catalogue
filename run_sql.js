@@ -5,10 +5,41 @@ const dotenv = require('dotenv');
 // Load environment variables from .env
 dotenv.config();
 
-const connectionString = process.env.DATABASE_URL;
+// DATABASE_URL is preferred; falls back to discrete PG* fields if it isn't
+// set. No credentials are hardcoded — the process exits before attempting a
+// connection if neither form is fully configured.
+function resolveConnectionConfig() {
+  if (process.env.DATABASE_URL) {
+    return {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      connectionTimeoutMillis: 20000,
+    };
+  }
 
-if (!connectionString) {
-  console.error("DATABASE_URL is not defined in .env");
+  const required = ['PGHOST', 'PGPORT', 'PGDATABASE', 'PGUSER', 'PGPASSWORD'];
+  const missing = required.filter(name => !process.env[name]);
+  if (missing.length > 0) {
+    return null;
+  }
+
+  return {
+    host: process.env.PGHOST,
+    port: Number(process.env.PGPORT),
+    database: process.env.PGDATABASE,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 20000,
+  };
+}
+
+const connectionConfig = resolveConnectionConfig();
+
+if (!connectionConfig) {
+  console.error(
+    "Missing database configuration. Set DATABASE_URL, or all of PGHOST, PGPORT, PGDATABASE, PGUSER, PGPASSWORD."
+  );
   process.exit(1);
 }
 
@@ -80,15 +111,7 @@ FROM ranked;
 `;
 
 async function main() {
-  const client = new Client({
-    host: 'dpg-d86ju1p9rddc739lc230-a.oregon-postgres.render.com',
-    port: 5432,
-    database: 'catalogo_elimfilters',
-    user: 'catalogo_elimfilters_user',
-    password: 'd1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf',
-    ssl: { rejectUnauthorized: false },
-    connectionTimeoutMillis: 20000
-  });
+  const client = new Client(connectionConfig);
 
   try {
     console.log("Connecting to database...");
