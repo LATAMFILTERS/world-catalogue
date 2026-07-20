@@ -1020,7 +1020,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
     if (!kit.rows.length) return res.status(404).json({ success: false, error: 'Kit not found' });
 
     const components = await client.query(
-      `SELECT c.*, kc.kit_sku
+      `SELECT c.*, kc.kit_sku, kc.qty
        FROM elimfilters_catalog c
        JOIN kit_components kc ON kc.filter_sku = c.sku
        WHERE kc.kit_sku = $1`,
@@ -1043,7 +1043,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
         brand: kit.rows[0].brand,
         equipment_ref: kit.rows[0].equipment_ref,
         duty: kit.rows[0].duty,
-        filters: components.rows.map(row => buildFilterData(row, lang)),
+        filters: components.rows.map(row => ({ ...buildFilterData(row, lang), qty: row.qty })),
         suggested_addons: addons.rows.map(row => ({ ...buildFilterData(row, lang), note: row.note }))
       }
     });
