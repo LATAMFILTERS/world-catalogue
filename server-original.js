@@ -2603,6 +2603,14 @@ if (!INSTAGRAM_VERIFY_TOKEN || !INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_APP_SECRET 
   console.warn('[instagram/webhook] one or more INSTAGRAM_* environment variables are not set — webhook will reject requests');
 }
 
+// Safe, non-reversible fingerprint of the configured app secret, logged once
+// at startup, so a mismatch between "what's in Render" and "what I meant to
+// paste" can be confirmed without ever printing the secret itself.
+if (INSTAGRAM_APP_SECRET) {
+  const fingerprint = crypto.createHash('sha256').update(INSTAGRAM_APP_SECRET).digest('hex').slice(0, 8);
+  console.log(`[instagram/webhook] INSTAGRAM_APP_SECRET loaded — length ${INSTAGRAM_APP_SECRET.length}, fingerprint ${fingerprint}`);
+}
+
 // Meta calls this during webhook subscription setup to confirm ownership.
 app.get('/api/instagram/webhook', (req, res) => {
   const mode = req.query['hub.mode'];
