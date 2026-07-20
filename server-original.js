@@ -2651,6 +2651,48 @@ app.post('/api/instagram/webhook', (req, res) => {
   res.sendStatus(200);
 });
 
+// Temporary, admin-protected diagnostic endpoint — confirms the configured
+// Instagram Business account credentials work against the real Meta Graph
+// API. INSTAGRAM_ACCESS_TOKEN is sent only as an outbound Authorization
+// header (never in the URL, never logged, never included in the response).
+app.get('/api/instagram/test', adminLimiter, requireAdmin, async (req, res) => {
+  if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_ACCOUNT_ID) {
+    console.warn('[instagram/test] rejected — INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_ACCOUNT_ID not configured');
+    return res.status(502).json({ ok: false, error: 'Instagram account is not configured' });
+  }
+
+  const graphUrl = `https://graph.facebook.com/v25.0/${encodeURIComponent(INSTAGRAM_ACCOUNT_ID)}?fields=id,username,account_type,media_count`;
+
+  try {
+    const metaResponse = await fetch(graphUrl, {
+      headers: { Authorization: `Bearer ${INSTAGRAM_ACCESS_TOKEN}` },
+    });
+    const data = await metaResponse.json().catch(() => ({}));
+
+    if (!metaResponse.ok || data.error) {
+      console.warn(`[instagram/test] Meta rejected the request — status ${metaResponse.status}`);
+      return res.status(502).json({
+        ok: false,
+        status: metaResponse.status,
+        error: (data.error && data.error.message) || 'Meta Graph API request failed',
+      });
+    }
+
+    console.log(`[instagram/test] Meta responded OK — status ${metaResponse.status}, account ${data.id || '(unknown)'}`);
+    return res.status(200).json({
+      ok: true,
+      status: metaResponse.status,
+      id: data.id,
+      username: data.username,
+      account_type: data.account_type,
+      media_count: data.media_count,
+    });
+  } catch (err) {
+    console.error('[instagram/test] request to Meta Graph API failed:', err.message);
+    return res.status(502).json({ ok: false, error: 'Failed to reach Meta Graph API' });
+  }
+});
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`[server] ✅ Listening on port ${PORT}`);
