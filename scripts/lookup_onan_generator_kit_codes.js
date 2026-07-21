@@ -17,6 +17,11 @@
  * /api/autocomplete uses), which has broader coverage than the static
  * CSV snapshot.
  *
+ * Also checks codigo_base against the last 4 digits of each Onan code
+ * (same "last 4 digits = codigo_base" convention documented in
+ * CLAUDE.md for MANN LD SKU generation, per user instruction
+ * 2026-07-21: "USA LA NUMERACION ONAN (ULTIMOS 4 NUMEROS)").
+ *
  * Pure SELECT - no --apply flag, nothing is written.
  */
 const { Client } = require('pg');
@@ -43,7 +48,10 @@ const client = new Client({
   await client.connect();
 
   for (const code of CODES) {
+    const digitsOnly = code.replace(/\D/g, '');
+    const last4 = digitsOnly.slice(-4);
     const normalized = code.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+
     const { rows } = await client.query(
       `SELECT sku, filter_type, duty, ref->>'code' AS matched_code, 'OEM' AS source
          FROM elimfilters_catalog, jsonb_array_elements(oem_codes) AS ref
@@ -51,10 +59,14 @@ const client = new Client({
         UNION ALL
        SELECT sku, filter_type, duty, ref->>'code' AS matched_code, 'COMPETITOR' AS source
          FROM elimfilters_catalog, jsonb_array_elements(competitor_codes) AS ref
-        WHERE UPPER(REGEXP_REPLACE(ref->>'code', '[^A-Za-z0-9]', '', 'g')) = $1`,
-      [normalized]
+        WHERE UPPER(REGEXP_REPLACE(ref->>'code', '[^A-Za-z0-9]', '', 'g')) = $1
+        UNION ALL
+       SELECT sku, filter_type, duty, codigo_base AS matched_code, 'CODIGO_BASE' AS source
+         FROM elimfilters_catalog
+        WHERE codigo_base = $2`,
+      [normalized, last4]
     );
-    console.log(`\n${code}  (normalized=${normalized})  -> ${rows.length} match(es)`);
+    console.log(`\n${code}  (normalized=${normalized}, last4=${last4})  -> ${rows.length} match(es)`);
     for (const r of rows) {
       console.log(`    sku=${r.sku}  filter_type=${r.filter_type}  duty=${r.duty}  matched_code=${r.matched_code}  source=${r.source}`);
     }
