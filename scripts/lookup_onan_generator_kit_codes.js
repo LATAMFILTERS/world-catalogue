@@ -20,7 +20,13 @@
  * Also checks codigo_base against the last 4 digits of each Onan code
  * (same "last 4 digits = codigo_base" convention documented in
  * CLAUDE.md for MANN LD SKU generation, per user instruction
- * 2026-07-21: "USA LA NUMERACION ONAN (ULTIMOS 4 NUMEROS)").
+ * 2026-07-21: "USA LA NUMERACION ONAN (ULTIMOS 4 NUMEROS)"). These Onan
+ * kits are HEAVY_DUTY (Donaldson-based codigo_base scheme, kit prefix
+ * EK5), NOT the MANN/LIGHT_DUTY scheme that also happens to use "last 4
+ * digits" - a bare numeric codigo_base collides across both duties, so
+ * the codigo_base branch is restricted to duty = 'HEAVY_DUTY' (per user
+ * correction 2026-07-21: initial unrestricted query returned only
+ * LIGHT_DUTY matches, which are wrong for this brand).
  *
  * Pure SELECT - no --apply flag, nothing is written.
  */
@@ -63,7 +69,7 @@ const client = new Client({
         UNION ALL
        SELECT sku, filter_type, duty, codigo_base AS matched_code, 'CODIGO_BASE' AS source
          FROM elimfilters_catalog
-        WHERE codigo_base = $2`,
+        WHERE codigo_base = $2 AND duty = 'HEAVY_DUTY'`,
       [normalized, last4]
     );
     console.log(`\n${code}  (normalized=${normalized}, last4=${last4})  -> ${rows.length} match(es)`);
