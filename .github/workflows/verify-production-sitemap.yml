@@ -1,0 +1,132 @@
+name: Verify Production Sitemap
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/generate-kc-sitemap.mjs
+      - frontend/src/app/sitemap.ts
+      - tests/sitemap-integrity.test.js
+      - .github/workflows/verify-production-sitemap.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify https://elimfilters.com/sitemap.xml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and validate production sitemap
+        run: |
+          python3 - <<'PYEOF'
+          import sys
+          import urllib.request
+          import urllib.error
+          import xml.etree.ElementTree as ET
+
+          SITEMAP_URL = "https://elimfilters.com/sitemap.xml"
+          EXPECTED_TOTAL = 317
+          EXPECTED_KC = 254
+          REQUIRED_KC_HUB = "https://elimfilters.com/knowledge-center"
+          RETIRED_FRAGMENTS = ["hydrocore-series", "aquaguard", "cooltech"]
+
+          failures = []
+
+          def fail(message):
+              failures.append(message)
+              print(f"[FAIL] {message}")
+
+          # ── 1. Download ──────────────────────────────────────────────────────
+          req = urllib.request.Request(SITEMAP_URL, headers={"User-Agent": "elimfilters-sitemap-verifier/1.0"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  status = resp.status
+                  body = resp.read()
+          except urllib.error.HTTPError as e:
+              status = e.code
+              body = e.read()
+          except urllib.error.URLError as e:
+              print(f"HTTP status: request failed — {e.reason}")
+              fail(f"could not reach {SITEMAP_URL}: {e.reason}")
+              status = None
+              body = b""
+
+          if status is not None:
+              print(f"HTTP status: {status}")
+          if status != 200:
+              fail(f"expected HTTP 200, got {status}")
+
+          # ── 2. Parse XML ─────────────────────────────────────────────────────
+          locs = []
+          if body:
+              try:
+                  root = ET.fromstring(body)
+                  locs = [el.text.strip() for el in root.findall(".//{*}loc") if el.text]
+              except ET.ParseError as e:
+                  fail(f"sitemap is not valid XML: {e}")
+
+          total = len(locs)
+          unique_locs = set(locs)
+          duplicate_count = total - len(unique_locs)
+          kc_locs = [
+              loc for loc in locs
+              if loc == REQUIRED_KC_HUB or loc.startswith(REQUIRED_KC_HUB + "/")
+          ]
+          kc_count = len(kc_locs)
+          turbocore_count = locs.count("https://elimfilters.com/technologies/turbocore")
+          hydrocore_count = locs.count("https://elimfilters.com/technologies/hydrocore")
+          retired_counts = {
+              fragment: sum(1 for loc in locs if fragment in loc.lower())
+              for fragment in RETIRED_FRAGMENTS
+          }
+
+          # ── 3. Report ────────────────────────────────────────────────────────
+          print(f"Total URLs: {total}")
+          print(f"Knowledge Center URLs: {kc_count}")
+          print(f"Duplicate URLs: {duplicate_count}")
+          print(f"/technologies/turbocore count: {turbocore_count}")
+          print(f"/technologies/hydrocore count: {hydrocore_count}")
+          for fragment, count in retired_counts.items():
+              print(f"Retired '{fragment}' count: {count}")
+
+          # ── 4. Assertions ────────────────────────────────────────────────────
+          if body:
+              if total != EXPECTED_TOTAL:
+                  fail(f"expected {EXPECTED_TOTAL} total URLs, got {total}")
+
+              if kc_count != EXPECTED_KC:
+                  fail(f"expected {EXPECTED_KC} Knowledge Center URLs, got {kc_count}")
+
+              if REQUIRED_KC_HUB not in locs:
+                  fail(f"missing required Knowledge Center hub URL: {REQUIRED_KC_HUB}")
+
+              if duplicate_count != 0:
+                  seen = {}
+                  dupes = []
+                  for loc in locs:
+                      seen[loc] = seen.get(loc, 0) + 1
+                  dupes = [loc for loc, n in seen.items() if n > 1]
+                  fail(f"found {duplicate_count} duplicate URL(s): {dupes}")
+
+              if turbocore_count != 1:
+                  fail(f"expected /technologies/turbocore exactly once, found {turbocore_count}")
+
+              if hydrocore_count != 1:
+                  fail(f"expected /technologies/hydrocore exactly once, found {hydrocore_count}")
+
+              for fragment, count in retired_counts.items():
+                  if count != 0:
+                      offenders = [loc for loc in locs if fragment in loc.lower()]
+                      fail(f"expected zero '{fragment}' URLs, found {count}: {offenders}")
+
+          # ── 5. Final verdict ─────────────────────────────────────────────────
+          print("")
+          if failures:
+              print(f"RESULT: FAIL ({len(failures)} check(s) failed)")
+              sys.exit(1)
+          else:
+              print("RESULT: PASS")
+          PYEOF
