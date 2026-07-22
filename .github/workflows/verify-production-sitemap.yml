@@ -1,5 +1,7 @@
 name: Verify Production Sitemap
 
+# Trigger production verification after initial workflow registration
+
 on:
   workflow_dispatch: {}
   push:
