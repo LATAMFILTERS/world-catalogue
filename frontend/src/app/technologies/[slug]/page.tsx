@@ -56,7 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item || !engineering) return { title: 'Not Found' };
 
   const url = `${BASE_URL}/technologies/${params.slug}`;
-  const title = `${item.title} | ELIMFILTERS Proprietary Technology`;
+  const title = `${item.title} Proprietary Technology`;
+  const socialTitle = `${item.title} | ELIMFILTERS Proprietary Technology`;
   return {
     title,
     description: engineering.definition,
@@ -70,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ],
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: socialTitle,
       description: engineering.definition,
       url,
       type: 'website',
@@ -82,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         alt: `${item.title} - ELIMFILTERS Technology`,
       }],
     },
-    twitter: { card: 'summary_large_image', title, description: engineering.definition },
+    twitter: { card: 'summary_large_image', title: socialTitle, description: engineering.definition },
   };
 }
 

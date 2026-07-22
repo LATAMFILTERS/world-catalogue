@@ -25,20 +25,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const sys = getProtectionSystemBySlug(params.slug);
   if (!sys) return { title: 'Not Found' };
   const url = `${BASE_URL}/systems/${sys.slug}`;
-  const title = `${sys.name} | ELIMFILTERS`;
+  const title = sys.name;
+  const socialTitle = `${sys.name} | ELIMFILTERS`;
   return {
     title,
     description: sys.tagline,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: socialTitle,
       description: sys.tagline,
       url,
       type: 'website',
       siteName: 'ELIMFILTERS World Catalogue',
       images: [{ url: `${BASE_URL}${sys.heroImage}`, width: 1200, height: 630, alt: sys.name }],
     },
-    twitter: { card: 'summary_large_image', title, description: sys.tagline },
+    twitter: { card: 'summary_large_image', title: socialTitle, description: sys.tagline },
   };
 }
 

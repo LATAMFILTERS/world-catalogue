@@ -26,10 +26,36 @@ const SYSTEM_LINES: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+  title: 'Protection Systems | Asset Protection Platform',
   description:
-    'Seven industrial protection systems engineered by ELIMFILTERS for air intake, fuel cleanliness, lubrication, hydraulic, cooling, cabin air, and compressed air protection.',
-  alternates: { canonical: `${BASE_URL}/systems` },
+    'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+  keywords: [
+    'industrial protection systems',
+    'air intake contamination control',
+    'fuel cleanliness protection',
+    'lubrication reliability engineering',
+    'hydraulic contamination control',
+    'cooling system protection',
+    'ELIMFILTERS',
+  ],
+  alternates: { canonical: `${BASE_URL}/systems/` },
+  openGraph: {
+    title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+    description:
+      'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+    url: `${BASE_URL}/systems/`,
+    type: 'website',
+    siteName: 'ELIMFILTERS World Catalogue',
+    images: [{ url: `${BASE_URL}/images/sistems-hero.avif`, width: 1200, height: 630 }],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+    description:
+      'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+    images: [`${BASE_URL}/images/sistems-hero.avif`],
+  },
 };
 
 export default function SystemsPage() {

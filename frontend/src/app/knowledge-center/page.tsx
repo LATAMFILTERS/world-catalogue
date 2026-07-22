@@ -33,8 +33,23 @@ const VALIDATED_REFERENCES = [
 const FEATURED_ARTICLES = ENGINEERING_ARTICLES.slice(0, 3);
 
 export const metadata = {
-  title: 'Knowledge Center | ELIMFILTERS',
+  title: 'Knowledge Center',
   description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
+  openGraph: {
+    title: 'Knowledge Center | ELIMFILTERS',
+    description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
+    url: 'https://elimfilters.com/knowledge-center/',
+    type: 'website',
+    siteName: 'ELIMFILTERS World Catalogue',
+    images: [{ url: 'https://elimfilters.com/images/knowledge-center-hero.avif', width: 1200, height: 630 }],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Knowledge Center | ELIMFILTERS',
+    description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
+    images: ['https://elimfilters.com/images/knowledge-center-hero.avif'],
+  },
 };
 
 export default function KnowledgeCenterPage() {
