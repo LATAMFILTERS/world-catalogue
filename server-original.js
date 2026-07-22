@@ -161,6 +161,64 @@ app.use((req, res, next) => {
   next();
 });
 
+// ─── SEO Redirects: retired pre-migration marketing URLs ───────────────────
+// Flat WordPress-era URLs and superseded /systems, /technologies slugs found
+// still receiving Search Console impressions after the Next.js migration.
+// Each destination was verified to exist in frontend/src/app before mapping.
+const LEGACY_MARKETING_REDIRECTS = {
+  '/mining': '/industries/mining',
+  '/mining/': '/industries/mining/',
+  '/technology': '/technologies',
+  '/technology/': '/technologies/',
+  '/oil-filtration': '/systems/lubrication',
+  '/oil-filtration/': '/systems/lubrication/',
+  '/gas-filters': '/systems/air-intake',
+  '/gas-filters/': '/systems/air-intake/',
+  '/marine-filters': '/industries/marine',
+  '/marine-filters/': '/industries/marine/',
+  '/dealer-portal': '/distributors',
+  '/dealer-portal/': '/distributors/',
+  '/about-elimfilters': '/about',
+  '/about-elimfilters/': '/about/',
+  '/contact-2': '/contact',
+  '/contact-2/': '/contact/',
+  '/industries-we-service': '/industries',
+  '/industries-we-service/': '/industries/',
+  '/power-generations-industry': '/industries/power-generation',
+  '/power-generations-industry/': '/industries/power-generation/',
+  '/duratech-technology': '/commercial-lines/duratech',
+  '/duratech-technology/': '/commercial-lines/duratech/',
+  '/coolant-filters': '/systems/cooling-system',
+  '/coolant-filters/': '/systems/cooling-system/',
+  '/trucks-fleets': '/industries/trucks-fleets',
+  '/trucks-fleets/': '/industries/trucks-fleets/',
+  '/systems/fuel': '/systems/fuel-cleanliness',
+  '/systems/fuel/': '/systems/fuel-cleanliness/',
+  '/systems/oil': '/systems/lubrication',
+  '/systems/oil/': '/systems/lubrication/',
+  '/systems/marine': '/industries/marine',
+  '/systems/marine/': '/industries/marine/',
+  '/technologies/cooltech': '/technologies/thermacore',
+  '/technologies/cooltech/': '/technologies/thermacore/',
+  '/technologies/hydrocore-series': '/technologies/hydrocore',
+  '/technologies/hydrocore-series/': '/technologies/hydrocore/',
+  '/technologies/turbocore-series': '/technologies/turbocore',
+  '/technologies/turbocore-series/': '/technologies/turbocore/',
+  '/technologies/duratech': '/commercial-lines/duratech',
+  '/technologies/duratech/': '/commercial-lines/duratech/',
+  '/technologies/marineclean': '/commercial-lines/marineclean',
+  '/technologies/marineclean/': '/commercial-lines/marineclean/',
+};
+
+app.use((req, res, next) => {
+  const target = LEGACY_MARKETING_REDIRECTS[req.path];
+  if (target) {
+    const queryString = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : '';
+    return res.redirect(301, target + queryString);
+  }
+  next();
+});
+
 // Healthcheck FIRST — must respond before anything else can fail
 app.get('/api/status', (req, res) => res.json({ status: 'ok', version: '3.8.1-ld-diag' }));
 
