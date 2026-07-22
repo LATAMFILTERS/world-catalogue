@@ -122,7 +122,7 @@ Technology:
 
 
 
-\* HYDROCORE/SERIES™
+\* TURBOCORE™
 
 
 
@@ -135,10 +135,6 @@ Technology:
 
 
 Technology:
-
-
-
-\* HYDROCORE/SERIES™
 
 
 

@@ -196,8 +196,6 @@ Verify official technologies:
 
 \* HYDROCORE™
 
-\* HYDROCORE/SERIES™
-
 \* SYNTRAX™
 
 \* NANOFORCE™

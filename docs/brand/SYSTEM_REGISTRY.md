@@ -66,7 +66,7 @@ Technologies:
 
 \* HYDROCORE™
 
-\* HYDROCORE/SERIES™
+\* TURBOCORE™
 
 
 

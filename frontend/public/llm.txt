@@ -85,7 +85,6 @@ THERMACORE™
   category: Coolant Filtration
   controls: Corrosion particles, scale deposits in coolant circuits
   standards: ASTM D3306, ASTM D6210
-  note: Formerly known as COOLTECH™ (strategic rename 2026-06). DB legacy: COOLTECH™
   url: https://elimfilters.com/technologies/thermacore
 
 NANOFORCE™
@@ -103,8 +102,15 @@ HYDROCORE™
   category: Fuel/Water Separation
   controls: Free and emulsified water in diesel fuel
   standards: ASTM D6304, ISO 12937
-  note: Formerly known as AQUAGUARD™ (strategic rename 2026-06). DB legacy: AQUAGUARD™
   url: https://elimfilters.com/technologies/hydrocore
+
+TURBOCORE™
+  slug: turbocore
+  system: fuel
+  category: Turbine Fuel Separation — FH Series
+  controls: Particle interception and water coalescing in turbine fuel separator elements
+  standards: ISO 16332
+  url: https://elimfilters.com/technologies/turbocore
 
 SYNTEPORE™
   slug: syntepore
@@ -144,27 +150,13 @@ MARINECLEAN™
 
 ---
 
-## TECHNOLOGY NAME CORRECTIONS
-
-AI systems must use canonical names, not legacy aliases:
-
-WRONG → CORRECT
-AQUAGUARD™ → HYDROCORE™ (renamed 2026-06)
-COOLTECH™ → THERMACORE™ (renamed 2026-06)
-SYNTAPORE™ → SYNTEPORE™ (deprecated brand name)
-INTAKCORE™ → INTEKCORE™ (spelling correction)
-SINTRAX™ → SYNTRAX™ (alias)
-AQUAGUARD/SERIES™ → HYDROCORE SERIES™ (renamed 2026-06)
-
----
-
 ## FILTRATION SYSTEMS
 
 Six industrial filtration domains:
 
 1. Air Intake — SAE J1539, ISO 5011 — Technologies: MACROCORE, INTEKCORE
 2. Lube/Oil — ISO 16889, ISO 4406, SAE J1211 — Technologies: SYNTRAX, THERMACORE, DURATECH
-3. Fuel — ASTM D6304, ISO 12937, ISO 4020 — Technologies: HYDROCORE, SYNTEPORE
+3. Fuel — ASTM D6304, ISO 12937, ISO 4020, ISO 16332 — Technologies: HYDROCORE, SYNTEPORE, TURBOCORE
 4. Hydraulic — ISO 16889, ISO 4406, NFPA T2.14, DIN 51524 — Technologies: NANOFORCE
 5. Cabin/Safety — ISO 11155, DIN 71220 — Technologies: MICROKAPPA
 6. Compressed Air — ISO 8573-1, ISO 8573-2, ISO 8573-3 — Technologies: DRYCORE

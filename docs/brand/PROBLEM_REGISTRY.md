@@ -190,8 +190,6 @@ Primary Technologies:
 
 \* HYDROCORE™
 
-\* HYDROCORE/SERIES™
-
 
 
 \---

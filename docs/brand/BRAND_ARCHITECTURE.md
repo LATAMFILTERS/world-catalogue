@@ -76,8 +76,6 @@ Technologies
 
 \* HYDROCORE™
 
-\* HYDROCORE/SERIES™
-
 \* SYNTRAX™
 
 \* NANOFORCE™

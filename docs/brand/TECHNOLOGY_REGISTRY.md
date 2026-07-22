@@ -84,7 +84,7 @@ Products:
 
 
 
-\* Air Dryers
+\* Air Dryers — pneumatic brake system air dryers
 
 
 
@@ -184,7 +184,7 @@ Active
 
 
 
-\## HYDROCORE/SERIES™
+\## TURBOCORE™
 
 
 
@@ -198,9 +198,7 @@ Products:
 
 
 
-\* FH Series
-
-\* FG Series
+\* FH Series (turbines and turbine elements)
 
 
 
