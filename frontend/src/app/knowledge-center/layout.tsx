@@ -3,7 +3,7 @@ import ClientNav from './ClientNav';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-center',
+    canonical: 'https://elimfilters.com/knowledge-center/',
   },
 };
 

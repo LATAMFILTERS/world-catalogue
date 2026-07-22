@@ -87,10 +87,10 @@ const industryGeoData: Record<string, GeoData> = {
       'Cabin Air Quality Protection',
     ],
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-center/systems/cabin-air-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -158,9 +158,9 @@ const industryGeoData: Record<string, GeoData> = {
       'Articulated Dump Trucks',
     ],
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -223,10 +223,10 @@ const industryGeoData: Record<string, GeoData> = {
     videoSectionName: 'BUS & COACH',
     techFocus: 'Primary Technology Focus: DRYCORE™ Pneumatic Protection',
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
-      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Compressed Air Protection', href: '/knowledge-center/standards/iso-8573-1/' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-center/systems/cabin-air-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -296,10 +296,10 @@ const industryGeoData: Record<string, GeoData> = {
       'Conveyor Systems',
     ],
     knowledgeLinks: [
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -370,10 +370,10 @@ const industryGeoData: Record<string, GeoData> = {
     ],
     techFocus: 'MARINECLEAN™ — Marine-specific complementary technology for offshore and salt-air operating environments.',
     knowledgeLinks: [
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -443,11 +443,11 @@ const industryGeoData: Record<string, GeoData> = {
       'Mineral Processing Equipment',
     ],
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-center/systems/cabin-air-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -456,8 +456,45 @@ const industryGeoData: Record<string, GeoData> = {
     ctaTitle: 'Ready to Protect Your Mining Equipment?',
     ctaDescription: 'Find the right mining asset protection system for your mining equipment application. Cross-reference 500,000+ parts.',
     directAnswer: 'ELIMFILTERS mining asset protection systems are engineered for hydraulic excavators, ultra-class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment operating in open-pit and underground mining environments. Mine sites generate ambient dust concentrations of 5,000–15,000 mg/m³ — 17–50 times the ISO 5011 air filter test limit of 300 mg/m³. Unplanned equipment downtime in high-tonnage mining operations costs $100,000–$180,000 per hour per machine. ELIMFILTERS proprietary protection media controls contamination across air intake, hydraulic, fuel, and lubrication systems throughout extended mining service intervals.',
-    faq: [],
-    schemas: [],
+    faq: [
+      {
+        q: 'What asset protection systems do mining excavators and haul trucks require?',
+        a: 'Mining excavators, haul trucks, wheel loaders, and drill rigs require air intake contamination control (MACROCORE™), hydraulic system protection (NANOFORCE™), lubrication cleanliness protection (SYNTRAX™), and fuel cleanliness protection (SYNTEPORE™). Mine sites generate ambient dust concentrations of 5,000–15,000 mg/m³, well above the ISO 5011 air filter test limit of 300 mg/m³, making air intake protection the first line of defense against abrasive wear across engine and hydraulic components.',
+      },
+      {
+        q: 'Why does mine site dust concentration require air intake protection beyond standard ISO 5011 test limits?',
+        a: 'ISO 5011 establishes a laboratory test limit of 300 mg/m³ for air filter performance evaluation. Open-pit and underground mine sites generate ambient dust concentrations of 5,000–15,000 mg/m³ — 17 to 50 times that reference level. Continuous exposure at these concentrations accelerates media loading and increases restriction, which is why mining air intake protection is engineered around sustained high-dust operating conditions rather than the ISO 5011 test condition alone.',
+      },
+      {
+        q: 'How does hydraulic contamination affect mining excavators and haul trucks?',
+        a: 'Hydraulic excavators, ultra-class haul trucks, and wheel loaders depend on high-pressure hydraulic circuits for digging, lifting, and load-bearing functions. Abrasive dust ingress and internally generated wear particles degrade hydraulic fluid cleanliness, increasing wear in pumps, valves, and actuators. NANOFORCE™ hydraulic protection is engineered to maintain fluid cleanliness targets across the pressure, flow, and duty-cycle demands of mining hydraulic equipment.',
+      },
+      {
+        q: 'What are the financial consequences of unplanned downtime in high-tonnage mining operations?',
+        a: 'Unplanned equipment downtime in high-tonnage mining operations costs $100,000–$180,000 per hour per machine. Because haul trucks, excavators, and processing equipment operate on continuous production cycles, contamination-related failures that stop a single machine directly affect site throughput. Asset protection systems engineered around mine site contamination conditions are intended to reduce the frequency of these unplanned stoppages.',
+      },
+    ],
+    schemas: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Mining Asset Protection Systems',
+        provider: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
+        description: 'Mining asset protection systems engineered for hydraulic excavators, ultra-class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment operating in open-pit and underground mining environments.',
+        areaServed: 'Global',
+        serviceType: 'Mining Contamination Control',
+        dateModified: '2026-05-25',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+          { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://elimfilters.com/industries/' },
+          { '@type': 'ListItem', position: 3, name: 'Mining Asset Protection Systems', item: 'https://elimfilters.com/industries/mining' },
+        ],
+      },
+    ],
   },
   'Oil Gas': {
     lastUpdated: 'May 2026',
@@ -475,11 +512,11 @@ const industryGeoData: Record<string, GeoData> = {
     ],
     techFocus: 'MARINECLEAN™ — Complementary technology for offshore and salt-air operating environments.',
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Compressed Air Protection', href: '/knowledge-center/standards/iso-8573-1/' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -560,9 +597,9 @@ const industryGeoData: Record<string, GeoData> = {
       ],
     },
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
       { label: 'Operational Readiness Protection' },
     ],
     preCtaQuote: {
@@ -640,10 +677,10 @@ const industryGeoData: Record<string, GeoData> = {
       ],
     },
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Compressed Air Protection', href: '/knowledge-system/standards/compressed-air-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Compressed Air Protection', href: '/knowledge-center/standards/iso-8573-1/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -724,10 +761,10 @@ const industryGeoData: Record<string, GeoData> = {
       ],
     },
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-center/systems/cabin-air-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -807,10 +844,10 @@ const industryGeoData: Record<string, GeoData> = {
       ],
     },
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Cabin Air Quality Protection', href: '/knowledge-system/standards/cabin-safety-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Cabin Air Quality Protection', href: '/knowledge-center/systems/cabin-air-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -875,10 +912,10 @@ const industryGeoData: Record<string, GeoData> = {
       'Hydraulic Protection',
     ],
     knowledgeLinks: [
-      { label: 'Air Intake & Airflow Protection', href: '/knowledge-system/standards/air-intake-systems' },
-      { label: 'Fuel Cleanliness Protection', href: '/knowledge-system/standards/fuel-systems' },
-      { label: 'Lubrication Protection', href: '/knowledge-system/standards/lube-oil-systems' },
-      { label: 'Hydraulic Protection', href: '/knowledge-system/standards/hydraulic-systems' },
+      { label: 'Air Intake & Airflow Protection', href: '/knowledge-center/systems/air-intake-protection/' },
+      { label: 'Fuel Cleanliness Protection', href: '/knowledge-center/systems/fuel-cleanliness-protection/' },
+      { label: 'Lubrication Protection', href: '/knowledge-center/systems/lubrication-protection/' },
+      { label: 'Hydraulic Protection', href: '/knowledge-center/systems/hydraulic-protection/' },
     ],
     preCtaQuote: {
       line1: 'We do not define ourselves by the products we sell.',
@@ -956,6 +993,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Transit fleet asset protection systems for diesel buses and coaches operating under continuous urban stop-and-go duty cycles. Engine, pneumatic, cabin air, and fuel system contamination control for passenger transport operations.'
     : item.name === 'Construction'
     ? 'Heavy construction equipment asset protection systems for excavators, loaders, bulldozers, and graders operating in silica dust concentrations of 3,000–10,000 mg/m³. Hydraulic, air intake, fuel, and lube oil contamination control for off-road multi-shift operations.'
+    : item.name === 'Mining'
+    ? 'Mining asset protection systems for hydraulic excavators, ultra-class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment operating in open-pit and underground environments. Air intake, hydraulic, fuel, and lubrication contamination control engineered for mine site dust concentrations of 5,000–15,000 mg/m³.'
     : item.name === 'Manufacturing'
     ? 'Industrial manufacturing asset protection systems for engines, hydraulic systems, compressors, pumps, conveyors, and production equipment. Air intake, lubrication, fuel, and hydraulic contamination control engineered for continuous production line operation.'
     : item.name === 'Marine'

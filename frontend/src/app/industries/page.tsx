@@ -17,8 +17,27 @@ const INDUSTRIES = [
 ];
 
 export const metadata = {
-  title: 'Industries | ELIMFILTERS Industrial Asset Protection',
+  title: 'Industries | Industrial Asset Protection',
   description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
+  keywords: ['industrial filtration industries', 'mining filtration', 'agriculture filtration', 'marine filtration', 'ELIMFILTERS industries', 'filtration by industry'],
+  alternates: {
+    canonical: 'https://elimfilters.com/industries/',
+  },
+  openGraph: {
+    title: 'Industries | ELIMFILTERS Industrial Asset Protection',
+    description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
+    url: 'https://elimfilters.com/industries/',
+    type: 'website',
+    siteName: 'ELIMFILTERS World Catalogue',
+    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industries | ELIMFILTERS Industrial Asset Protection',
+    description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
+    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+  },
 };
 
 export default function IndustriesPage() {
