@@ -1,0 +1,31 @@
+name: Production SEO GEO Audit
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit https://elimfilters.com (SEO + GEO)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run SEO/GEO audit against production
+        run: python3 scripts/seo-geo-audit/audit.py --out-dir seo-geo-audit-out
+
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-geo-audit-${{ github.run_number }}
+          path: seo-geo-audit-out/
+          retention-days: 90
