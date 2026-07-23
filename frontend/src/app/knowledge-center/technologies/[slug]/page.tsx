@@ -10,9 +10,17 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const tech = KC_TECHNOLOGIES.find((t) => t.slug === params.slug);
   if (!tech) return {};
+
+  const url = `https://elimfilters.com/knowledge-center/technologies/${params.slug}`;
   return {
-    alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/technologies/${params.slug}`,
+    title: `${tech.name} Filtration Technology`,
+    description: tech.tagline,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${tech.name} Filtration Technology | ELIMFILTERS`,
+      description: tech.tagline,
+      url,
+      type: 'article',
     },
   };
 }
