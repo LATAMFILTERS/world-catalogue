@@ -11,10 +11,16 @@ export const STATIC_CRAWL_ROUTES = [
   '/families',
   '/industries',
   '/knowledge-center',
-  '/knowledge-center/standards',
-  '/engineering',
   '/about',
   '/contact',
+  '/search',
+  '/distributors',
+  '/commercial-lines',
+  '/product-experience',
+  '/customer-intelligence',
+  '/distributor-application',
+  '/premium-preview',
+  '/warranty',
 ] as const;
 
 export interface CrawlProfile {
