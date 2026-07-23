@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate Video Sitemap
- * Creates Google Video Sitemap XML for all videos
+ * Creates XML video sitemap for Google Video Search indexing
  * Run: node scripts/generate-video-sitemap.mjs
  */
 
@@ -12,155 +12,124 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Video metadata (mirror of src/lib/video-metadata.ts)
-const VIDEOS = {
-  moleculas: {
-    title: 'ELIMFILTERS — Molecular Contamination Control',
-    description: 'Advanced contamination control systems engineered to reduce wear, minimize downtime, and extend equipment lifespan across industrial operations.',
-    thumbnailUrl: 'https://elimfilters.com/images/moleculas-thumb.jpg',
-    uploadDate: '2024-01-15T00:00:00Z',
-    duration: 'PT0H0M30S',
-    url: 'https://elimfilters.com',
-    contentUrl: 'https://elimfilters.com/images/moleculas.mp4',
+const BASE_URL = 'https://elimfilters.com';
+
+const VIDEOS = [
+  {
+    id: 'moleculas',
+    title: 'ELIMFILTERS Contamination Control Technology',
+    description: 'How ELIMFILTERS technologies protect industrial assets from contamination',
+    url: '/videos/moleculas',
+    thumbnail: '/video-thumbnails/moleculas.svg',
   },
-  agriculture: {
-    title: 'ELIMFILTERS — Agricultural Equipment Protection',
-    description: 'Filtration systems engineered for agricultural operations: tractors, combines, harvesters, sprayers protecting against crop residue, soil dust, and seasonal contamination.',
-    thumbnailUrl: 'https://elimfilters.com/industries/agriculture-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M15S',
-    url: 'https://elimfilters.com/industries/agriculture',
-    contentUrl: 'https://elimfilters.com/images/Agriculture-2.mp4',
+  {
+    id: 'agriculture',
+    title: 'Filtration Solutions for Agriculture',
+    description: 'Heavy-duty filtration for agricultural equipment and harvesting operations',
+    url: '/industries/agriculture',
+    thumbnail: '/video-thumbnails/agriculture.svg',
   },
-  automotive: {
-    title: 'ELIMFILTERS — Automotive Filtration Systems',
-    description: 'Protection systems for passenger vehicles and commercial fleets: engines, fuel systems, cabin air, hydraulic circuits protecting against urban particulate and highway contaminants.',
-    thumbnailUrl: 'https://elimfilters.com/industries/automotive-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M10S',
-    url: 'https://elimfilters.com/industries/automotive',
-    contentUrl: 'https://elimfilters.com/images/Autos-Vin4.mp4',
+  {
+    id: 'automotive',
+    title: 'Heavy-Duty Vehicle Filtration',
+    description: 'Comprehensive filtration systems for trucks and commercial vehicles',
+    url: '/industries/automotive',
+    thumbnail: '/video-thumbnails/automotive.svg',
   },
-  mining: {
-    title: 'ELIMFILTERS — Mining Equipment Asset Protection',
-    description: 'Heavy-duty filtration for mining operations: excavators, haul trucks, processing equipment protecting against abrasive dust, hydraulic stress, and extreme duty cycles.',
-    thumbnailUrl: 'https://elimfilters.com/industries/mining-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M20S',
-    url: 'https://elimfilters.com/industries/mining',
-    contentUrl: 'https://elimfilters.com/images/Minning4.mp4',
+  {
+    id: 'mining',
+    title: 'Mining Equipment Protection',
+    description: 'Industrial filtration for extreme mining conditions',
+    url: '/industries/mining',
+    thumbnail: '/video-thumbnails/mining.svg',
   },
-  construction: {
-    title: 'ELIMFILTERS — Construction Equipment Filtration',
-    description: 'Asset protection for construction: excavators, loaders, bulldozers, graders protecting against silica dust, hydraulic load, and severe jobsite conditions.',
-    thumbnailUrl: 'https://elimfilters.com/industries/construction-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M15S',
-    url: 'https://elimfilters.com/industries/construction',
-    contentUrl: 'https://elimfilters.com/images/construction-2.mp4',
+  {
+    id: 'construction',
+    title: 'Construction Equipment Filtration',
+    description: 'Filtration systems for construction and heavy equipment',
+    url: '/industries/construction',
+    thumbnail: '/video-thumbnails/construction.svg',
   },
-  'trucks-fleets': {
-    title: 'ELIMFILTERS — Fleet Truck Filtration Systems',
-    description: 'Protection systems for commercial trucking and logistics: long-haul trucks, delivery fleets, municipal vehicles protecting against highway dust and fuel contamination.',
-    thumbnailUrl: 'https://elimfilters.com/industries/trucks-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M10S',
-    url: 'https://elimfilters.com/industries/trucks-and-fleets',
-    contentUrl: 'https://elimfilters.com/images/Trucks&Feel-1.mp4',
+  {
+    id: 'trucks-fleets',
+    title: 'Fleet Maintenance Optimization',
+    description: 'Total cost of ownership optimization for commercial fleets',
+    url: '/industries/trucks-and-fleets',
+    thumbnail: '/video-thumbnails/trucks-fleets.svg',
   },
-  railway: {
-    title: 'ELIMFILTERS — Railway Locomotive Protection',
-    description: 'Filtration systems for locomotives and rail equipment: diesel locomotives, passenger rail, freight trains protecting against vibration, soot, and fuel contamination.',
-    thumbnailUrl: 'https://elimfilters.com/industries/railway-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M15S',
-    url: 'https://elimfilters.com/industries/railway',
-    contentUrl: 'https://elimfilters.com/images/Train-2.mp4',
+  {
+    id: 'railway',
+    title: 'Railway Systems Protection',
+    description: 'Filtration solutions for rail transport and locomotive systems',
+    url: '/industries/railway',
+    thumbnail: '/video-thumbnails/railway.svg',
   },
-  marine: {
-    title: 'ELIMFILTERS — Marine Vessel Filtration Systems',
-    description: 'Asset protection for maritime operations: commercial vessels, workboats, offshore equipment protecting against salt air, humidity, and fuel water contamination.',
-    thumbnailUrl: 'https://elimfilters.com/industries/marine-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M20S',
-    url: 'https://elimfilters.com/industries/marine',
-    contentUrl: 'https://elimfilters.com/images/Marino-1.mp4',
+  {
+    id: 'marine',
+    title: 'Marine Vessel Filtration',
+    description: 'Advanced filtration for maritime and ocean-going vessels',
+    url: '/industries/marine',
+    thumbnail: '/video-thumbnails/marine.svg',
   },
-  manufacturing: {
-    title: 'ELIMFILTERS — Industrial Manufacturing Protection',
-    description: 'Filtration systems for manufacturing facilities: industrial engines, hydraulic systems, compressors, production equipment protecting against process dust and contamination.',
-    thumbnailUrl: 'https://elimfilters.com/industries/manufacturing-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M15S',
-    url: 'https://elimfilters.com/industries/manufacturing',
-    contentUrl: 'https://elimfilters.com/images/Manufacture-1.mp4',
+  {
+    id: 'manufacturing',
+    title: 'Industrial Manufacturing Systems',
+    description: 'Filtration for precision manufacturing and production equipment',
+    url: '/industries/manufacturing',
+    thumbnail: '/video-thumbnails/manufacturing.svg',
   },
-  'power-generation': {
-    title: 'ELIMFILTERS — Power Generation Backup Systems',
-    description: 'Asset protection for power generation: generator sets, standby power units, turbines protecting against fuel degradation, thermal cycling, and long idle periods.',
-    thumbnailUrl: 'https://elimfilters.com/industries/power-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M15S',
-    url: 'https://elimfilters.com/industries/power-generation',
-    contentUrl: 'https://elimfilters.com/images/Power-1.mp4',
+  {
+    id: 'power-generation',
+    title: 'Power Generation Protection',
+    description: 'Filtration systems for power plants and electrical generation',
+    url: '/industries/power-generation',
+    thumbnail: '/video-thumbnails/power-generation.svg',
   },
-  'oil-gas': {
-    title: 'ELIMFILTERS — Oil & Gas Equipment Protection',
-    description: 'Filtration systems for energy operations: compressors, pumps, turbines, offshore equipment protecting against salt air, fuel contamination, and extreme duty cycles.',
-    thumbnailUrl: 'https://elimfilters.com/industries/oil-gas-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M20S',
-    url: 'https://elimfilters.com/industries/oil-and-gas',
-    contentUrl: 'https://elimfilters.com/images/Petro&Gas-1.mp4',
+  {
+    id: 'oil-gas',
+    title: 'Oil & Gas Operations',
+    description: 'Specialized filtration for upstream and downstream operations',
+    url: '/industries/oil-and-gas',
+    thumbnail: '/video-thumbnails/oil-gas.svg',
   },
-  'bus-coach': {
-    title: 'ELIMFILTERS — Transit Bus & Coach Protection',
-    description: 'Asset protection for public transit and passenger vehicles: city buses, school buses, coaches protecting against urban dust, soot loading, and stop-go duty cycles.',
-    thumbnailUrl: 'https://elimfilters.com/industries/bus-thumb.jpg',
-    uploadDate: '2024-02-01T00:00:00Z',
-    duration: 'PT0H1M10S',
-    url: 'https://elimfilters.com/industries/bus-and-coach',
-    contentUrl: 'https://elimfilters.com/images/buses-2.mp4',
+  {
+    id: 'bus-coach',
+    title: 'Transit & Coach Systems',
+    description: 'Reliable filtration for public transportation and coach services',
+    url: '/industries/bus-and-coach',
+    thumbnail: '/video-thumbnails/bus-coach.svg',
   },
-  'product-elimf': {
-    title: 'ELIMFILTERS Product Overview',
-    description: 'ELIMFILTERS filtration products: industrial-grade filter cartridges, housings, and systems engineered for asset protection across critical industrial domains.',
-    thumbnailUrl: 'https://elimfilters.com/products-thumb.jpg',
-    uploadDate: '2024-01-20T00:00:00Z',
-    duration: 'PT0H0M45S',
-    url: 'https://elimfilters.com/products',
-    contentUrl: 'https://elimfilters.com/images/product-elimf.mp4',
+  {
+    id: 'product-elimfilters',
+    title: 'ELIMFILTERS Product Systems',
+    description: 'Complete range of ELIMFILTERS filtration products and technologies',
+    url: '/products',
+    thumbnail: '/video-thumbnails/product-elimfilters.svg',
   },
-};
+];
 
 function generateVideoSitemap() {
-  const videoEntries = Object.entries(VIDEOS)
-    .map(([id, video]) => {
-      return `  <url>
-    <loc>${video.url}</loc>
+  const videoEntries = VIDEOS.map(
+    (video) => `
+  <url>
+    <loc>${BASE_URL}${video.url}</loc>
     <video:video>
+      <video:thumbnail_loc>${BASE_URL}${video.thumbnail}</video:thumbnail_loc>
       <video:title>${escapeXml(video.title)}</video:title>
       <video:description>${escapeXml(video.description)}</video:description>
-      <video:thumbnail_loc>${video.thumbnailUrl}</video:thumbnail_loc>
-      <video:duration>${video.duration.replace('PT', '').replace('H', ':').replace('M', ':').replace('S', '')}</video:duration>
-      <video:content_loc>${video.contentUrl}</video:content_loc>
-      <video:publication_date>${video.uploadDate}</video:publication_date>
     </video:video>
-  </url>`;
-    })
-    .join('\n');
+  </url>`
+  ).join('');
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${videoEntries}
 </urlset>`;
-
-  return sitemap;
 }
 
 function escapeXml(str) {
-  return str
+  return String(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -170,18 +139,18 @@ function escapeXml(str) {
 
 function main() {
   const outputDir = path.join(__dirname, '../frontend/out');
-  const outputFile = path.join(outputDir, 'video-sitemap.xml');
+  const sitemapFile = path.join(outputDir, 'video-sitemap.xml');
 
-  // Ensure output directory exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const sitemap = generateVideoSitemap();
-  fs.writeFileSync(outputFile, sitemap, 'utf-8');
+  const sitemapContent = generateVideoSitemap();
+  fs.writeFileSync(sitemapFile, sitemapContent, 'utf-8');
 
-  console.log(`[generate-video-sitemap] Generated video sitemap with ${Object.keys(VIDEOS).length} videos`);
-  console.log(`[generate-video-sitemap] Output: ${outputFile}`);
+  console.log(`[generate-video-sitemap] Generated video sitemap`);
+  console.log(`[generate-video-sitemap] Videos indexed: ${VIDEOS.length}`);
+  console.log(`[generate-video-sitemap] Output: ${sitemapFile}`);
 }
 
 main();
