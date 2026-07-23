@@ -73,6 +73,33 @@ CATEGORY_PREFIXES = [
     ("/engineering", "Legal / Corporate"),
 ]
 
+# Best-effort, documented heuristic mapping from page category to the
+# repo source most likely responsible for its markup. This is NOT a
+# guarantee of the exact file (dynamic routes serve many URLs from one
+# template) — it is reported in the summary as a starting point for
+# triage, always labeled as a heuristic.
+CATEGORY_SOURCE_FILE = {
+    "Homepage": "frontend/src/app/page.tsx",
+    "Systems": "frontend/src/app/systems/[slug]/page.tsx",
+    "Technologies": "frontend/src/app/technologies/[slug]/page.tsx",
+    "Industries": "frontend/src/app/industries/[slug]/page.tsx",
+    "Knowledge System": "frontend/src/app/knowledge-system/**/page.tsx",
+    "Knowledge Center": "frontend/src/app/knowledge-center/**/page.tsx",
+    "Product Search": "frontend/src/app/search/page.tsx or part-search/index.html",
+    "Legal / Corporate": "frontend/src/app/{about,contact,warranty,distributor,...}/page.tsx",
+    "Other": "unknown — not covered by the category heuristic",
+}
+
+# Cloudflare-managed paths that are never part of this app's own routing
+# (email obfuscation, CDN internals, etc.). They are not pages this repo
+# renders, so broken/odd behavior on them is not a finding here.
+IGNORED_LINK_PREFIXES = ("/cdn-cgi/",)
+
+
+def is_ignored_link(url: str) -> bool:
+    path = urllib.parse.urlparse(url).path
+    return any(path.startswith(p) for p in IGNORED_LINK_PREFIXES)
+
 
 def categorize(path: str) -> str:
     if path in ("", "/"):
@@ -183,6 +210,8 @@ class PageParser(HTMLParser):
         self._in_title = False
         self._in_h1 = False
         self._h1_buf = []
+        self._h1_hidden = False
+        self._h1_depth = 0
         self._in_jsonld = False
         self._jsonld_buf = []
         self._skip_text_tags = {"script", "style", "noscript"}
@@ -206,8 +235,19 @@ class PageParser(HTMLParser):
             if rel == "canonical":
                 self.canonical = attrs_d.get("href")
         elif tag == "h1":
-            self._in_h1 = True
-            self._h1_buf = []
+            if self._in_h1:
+                # Nested h1 (shouldn't happen in valid markup) — ignore the inner tag.
+                self._h1_depth += 1
+            else:
+                self._in_h1 = True
+                self._h1_depth = 1
+                self._h1_buf = []
+                # Next.js/React components (e.g. Framer Motion text-split
+                # animations) sometimes render a visually-hidden duplicate
+                # heading for accessibility (aria-hidden="true") alongside
+                # the real one. Only the real, screen-reader-visible H1
+                # should count for SEO purposes.
+                self._h1_hidden = (attrs_d.get("aria-hidden") or "").lower() == "true"
         elif tag == "h2":
             self.h2_count += 1
         elif tag == "h3":
@@ -228,8 +268,13 @@ class PageParser(HTMLParser):
         if tag == "title":
             self._in_title = False
         elif tag == "h1":
+            if self._h1_depth > 1:
+                self._h1_depth -= 1
+                return
             self._in_h1 = False
-            self.h1s.append("".join(self._h1_buf).strip())
+            text = "".join(self._h1_buf).strip()
+            if text and not self._h1_hidden:
+                self.h1s.append(text)
         elif tag == "script" and self._in_jsonld:
             self._in_jsonld = False
             self.jsonld_blocks.append("".join(self._jsonld_buf))
@@ -424,6 +469,8 @@ def audit_page(url: str) -> dict:
         parsed_href = urllib.parse.urlparse(absolute)
         if parsed_href.netloc == final_host and parsed_href.scheme in ("http", "https"):
             clean = absolute.split("#")[0]
+            if is_ignored_link(clean):
+                continue  # Cloudflare-managed paths (e.g. /cdn-cgi/l/email-protection), not app routes
             internal_links.add(clean)
 
     title = (parser.title or "").strip() or None
@@ -468,12 +515,26 @@ def check_link(url: str) -> dict:
 # Findings engine — deterministic rules over the collected records
 # ─────────────────────────────────────────────────────────────────────────
 
+IMPACT_CLASS = {
+    "CRÍTICO": "ERROR",
+    "ALTO": "ERROR",
+    "MEDIO": "ADVERTENCIA",
+    "BAJO": "OBSERVACIÓN",
+}
+
+
+def _normalized_path(url: str) -> str:
+    return urllib.parse.urlparse(url).path.rstrip("/") or "/"
+
+
 def build_findings(records: list[dict], broken_links: dict[str, dict]) -> list[dict]:
     findings = []
+    base_host = urllib.parse.urlparse(BASE_URL).netloc
 
     def add(url, category, severity, code, message):
         findings.append({
             "url": url, "page_category": category, "severity": severity,
+            "impact_class": IMPACT_CLASS[severity],
             "check": code, "message": message,
         })
 
@@ -527,18 +588,39 @@ def build_findings(records: list[dict], broken_links: dict[str, dict]) -> list[d
             if r["meta_description_len"] > DESC_MAX_LEN:
                 add(url, cat, "MEDIO", "description_too_long", f"Meta description is {r['meta_description_len']} chars (recommended <= {DESC_MAX_LEN})")
 
-        if r["h1_count"] == 0:
+        # Distinct visible H1 texts only — Next.js/React components (Framer
+        # Motion split-text animations in particular) sometimes render the
+        # same heading text through multiple nested/sibling elements that
+        # still resolve to one real <h1>; aria-hidden duplicates are already
+        # excluded during parsing (see PageParser.handle_endtag).
+        distinct_h1_texts = list(dict.fromkeys(r["h1s"]))
+        if len(distinct_h1_texts) == 0:
             add(url, cat, "ALTO", "missing_h1", "No H1 found")
-        elif r["h1_count"] > 1:
-            add(url, cat, "MEDIO", "multiple_h1", f"{r['h1_count']} H1 tags found: {r['h1s']}")
+        elif len(distinct_h1_texts) > 1:
+            add(url, cat, "MEDIO", "multiple_h1",
+                f"{len(distinct_h1_texts)} distinct H1 texts found: {distinct_h1_texts}")
 
         if not r.get("canonical"):
             add(url, cat, "ALTO", "missing_canonical", "No canonical link found")
         else:
             canon = r["canonical"]
-            if canon.rstrip("/") not in (url.rstrip("/"), r["final_url"].rstrip("/")):
+            resolved_canon = urllib.parse.urljoin(r["final_url"], canon)
+            canon_parsed = urllib.parse.urlparse(resolved_canon)
+
+            if canon_parsed.netloc and canon_parsed.netloc != base_host:
+                add(url, cat, "ALTO", "canonical_external",
+                    f"Canonical points to a different domain: {canon}")
+            elif _normalized_path(resolved_canon) in (_normalized_path(url), _normalized_path(r["final_url"])):
+                pass  # canonical to self — correct
+            elif _normalized_path(url).startswith(_normalized_path(resolved_canon) + "/"):
+                # e.g. /knowledge-center/fuel/injector-stiction canonicalizing
+                # to /knowledge-center/fuel — intentional hub consolidation,
+                # not an error. Still reported as an observation for visibility.
+                add(url, cat, "BAJO", "canonical_hub_consolidation",
+                    f"Canonical intentionally points to parent hub: {canon}")
+            else:
                 add(url, cat, "ALTO", "canonical_mismatch",
-                    f"Canonical points to a different URL: {canon}")
+                    f"Canonical points to an unrelated URL: {canon}")
 
         jl = r["jsonld"]
         if jl["invalid_count"] > 0:
@@ -581,22 +663,51 @@ def build_findings(records: list[dict], broken_links: dict[str, dict]) -> list[d
 SEVERITY_WEIGHT = {"CRÍTICO": 15, "ALTO": 8, "MEDIO": 3, "BAJO": 1}
 
 
-def compute_seo_score(findings: list[dict], total_urls: int) -> dict:
+def compute_seo_score(findings: list[dict], records: list[dict]) -> dict:
     """Deterministic, documented formula — not an arbitrary number.
-    score = 100 - sum(weight per finding), floored at 0, one deduction per
-    finding (a URL with 3 findings is deducted 3 times)."""
-    deduction = sum(SEVERITY_WEIGHT[f["severity"]] for f in findings)
-    score = max(0, 100 - deduction)
+
+    Computed per page first (each page starts at 100, loses weight[severity]
+    per finding on that page, floored at 0), then the site score is the mean
+    of those per-page scores. Averaging instead of a single sitewide
+    subtraction keeps the result meaningful as the number of audited pages
+    grows: with the old sitewide-sum formula, findings from hundreds of
+    pages accumulated into one deduction and collapsed the score to 0 long
+    before the site was actually broken. A page's own score can still hit 0
+    if it individually racks up enough weight, but one page's problems no
+    longer wipe out every other page's contribution to the total."""
+    findings_by_url: dict[str, list[dict]] = {}
+    for f in findings:
+        findings_by_url.setdefault(f["url"], []).append(f)
+
+    page_scores: dict[str, int] = {}
+    for r in records:
+        url = r["url"]
+        deduction = sum(SEVERITY_WEIGHT[f["severity"]] for f in findings_by_url.get(url, []))
+        page_scores[url] = max(0, 100 - deduction)
+
+    score = round(sum(page_scores.values()) / len(page_scores)) if page_scores else 0
+
     by_severity = {}
+    by_impact_class = {}
     for f in findings:
         by_severity[f["severity"]] = by_severity.get(f["severity"], 0) + 1
+        by_impact_class[f["impact_class"]] = by_impact_class.get(f["impact_class"], 0) + 1
+
+    total_deduction = sum(SEVERITY_WEIGHT[f["severity"]] for f in findings)
+
     return {
         "score": score,
-        "formula": "100 - sum(weight[severity] for each finding); weights: CRÍTICO=15, ALTO=8, MEDIO=3, BAJO=1; floored at 0",
-        "total_deduction": deduction,
+        "formula": (
+            "Per page: 100 - sum(weight[severity] for each finding on that page), floored at 0; "
+            "weights: CRÍTICO=15, ALTO=8, MEDIO=3, BAJO=1. "
+            "Site score = mean(all per-page scores), rounded."
+        ),
+        "total_deduction": total_deduction,
         "findings_by_severity": by_severity,
+        "findings_by_impact_class": by_impact_class,
         "total_findings": len(findings),
-        "total_urls_audited": total_urls,
+        "total_urls_audited": len(records),
+        "page_scores": page_scores,
     }
 
 
@@ -677,15 +788,26 @@ def write_summary_md(records, findings, seo_score, geo_summary, category_stats, 
 
     lines.append("## SEO Score")
     lines.append("")
-    lines.append(f"**{seo_score['score']} / 100**")
+    lines.append(f"**{seo_score['score']} / 100** (mean of all per-page scores)")
     lines.append("")
-    lines.append(f"Formula (deterministic, not arbitrary): `{seo_score['formula']}`")
-    lines.append(f"Total deduction: {seo_score['total_deduction']} points from {seo_score['total_findings']} finding(s).")
+    lines.append(f"Formula (deterministic, not arbitrary): {seo_score['formula']}")
+    lines.append(f"Total deduction across all pages: {seo_score['total_deduction']} points from {seo_score['total_findings']} finding(s).")
     lines.append("")
     lines.append("| Severity | Count |")
     lines.append("|---|---|")
     for sev in ("CRÍTICO", "ALTO", "MEDIO", "BAJO"):
         lines.append(f"| {sev} | {seo_score['findings_by_severity'].get(sev, 0)} |")
+    lines.append("")
+    lines.append("### By impact class")
+    lines.append("")
+    lines.append("- **ERROR** (CRÍTICO + ALTO) — real problems that should be fixed.")
+    lines.append("- **ADVERTENCIA** (MEDIO) — worth reviewing, not necessarily wrong.")
+    lines.append("- **OBSERVACIÓN** (BAJO) — informational signal, no action implied by itself.")
+    lines.append("")
+    lines.append("| Impact class | Count |")
+    lines.append("|---|---|")
+    for cls in ("ERROR", "ADVERTENCIA", "OBSERVACIÓN"):
+        lines.append(f"| {cls} | {seo_score['findings_by_impact_class'].get(cls, 0)} |")
     lines.append("")
 
     lines.append("## GEO Evaluation")
@@ -721,17 +843,47 @@ def write_summary_md(records, findings, seo_score, geo_summary, category_stats, 
         lines.append(f"| {cat} | {stats['urls']} | {stats['CRÍTICO']} | {stats['ALTO']} | {stats['MEDIO']} | {stats['BAJO']} |")
     lines.append("")
 
-    lines.append("## Top findings (first 100, sorted by severity)")
+    lines.append("## Top 20 problems by impact")
     lines.append("")
-    severity_order = {"CRÍTICO": 0, "ALTO": 1, "MEDIO": 2, "BAJO": 3}
-    top = sorted(findings, key=lambda f: severity_order[f["severity"]])[:100]
-    lines.append("| Severity | Category | URL | Check | Message |")
-    lines.append("|---|---|---|---|---|")
-    for f in top:
-        msg = f["message"].replace("|", "\\|")[:150]
-        lines.append(f"| {f['severity']} | {f['page_category']} | {f['url']} | {f['check']} | {msg} |")
+    lines.append("Impact = weight[severity] × number of pages affected by that specific check. "
+                  "\"Source file\" is a best-effort heuristic mapping from the affected pages' "
+                  "category to the repo template most likely responsible — dynamic routes serve "
+                  "many URLs from one template, so treat it as a starting point for triage, not "
+                  "a confirmed root cause.")
     lines.append("")
-    lines.append(f"Full findings ({len(findings)} total): see `seo-geo-findings.json`.")
+    priority_by_severity = {"CRÍTICO": "P0", "ALTO": "P1", "MEDIO": "P2", "BAJO": "P3"}
+    grouped: dict[str, dict] = {}
+    for f in findings:
+        g = grouped.setdefault(f["check"], {
+            "severity": f["severity"], "impact_class": f["impact_class"],
+            "urls": set(), "categories": set(),
+        })
+        g["urls"].add(f["url"])
+        g["categories"].add(f["page_category"])
+    impact_rows = []
+    for check, g in grouped.items():
+        impact = SEVERITY_WEIGHT[g["severity"]] * len(g["urls"])
+        source_files = sorted({CATEGORY_SOURCE_FILE.get(c, "unknown") for c in g["categories"]})
+        impact_rows.append({
+            "check": check, "severity": g["severity"], "impact_class": g["impact_class"],
+            "impact": impact, "affected_pages": len(g["urls"]),
+            "source_files": source_files,
+            "priority": priority_by_severity[g["severity"]],
+            "sample_urls": sorted(g["urls"])[:3],
+        })
+    impact_rows.sort(key=lambda x: x["impact"], reverse=True)
+    top20 = impact_rows[:20]
+    lines.append("| Priority | Check | Severity | Impact class | Affected pages | Impact score | Likely source file(s) | Example URL(s) |")
+    lines.append("|---|---|---|---|---|---|---|---|")
+    for row in top20:
+        sources = "; ".join(row["source_files"]).replace("|", "\\|")
+        examples = "; ".join(row["sample_urls"]).replace("|", "\\|")
+        lines.append(
+            f"| {row['priority']} | {row['check']} | {row['severity']} | {row['impact_class']} | "
+            f"{row['affected_pages']} | {row['impact']} | {sources} | {examples} |"
+        )
+    lines.append("")
+    lines.append(f"Full findings ({len(findings)} total, every affected URL): see `seo-geo-findings.json`.")
     lines.append("")
     lines.append("## Files in this artifact")
     lines.append("")
@@ -819,7 +971,7 @@ def main():
     print("[audit] computing findings")
     findings = build_findings(records, broken_links)
 
-    seo_score = compute_seo_score(findings, len(records))
+    seo_score = compute_seo_score(findings, records)
 
     indexable = [r for r in records if r.get("geo")]
     criteria_names = list(indexable[0]["geo"]["criteria"].keys()) if indexable else []
