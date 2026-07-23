@@ -61,7 +61,7 @@
           "AGRICULTURE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
+      "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
     },
     {
       "key": "ENGINE_OIL_CONTAMINATION",
@@ -127,7 +127,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
     },
     {
       "key": "FUEL_FILTER_PLUGGING",
@@ -184,7 +184,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+      "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md"
     },
     {
       "key": "HYDRAULIC_VALVE_FAILURE",
@@ -242,7 +242,7 @@
           "POWER_GENERATION"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+      "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
     },
     {
       "key": "OPERATOR_DUST_EXPOSURE",
@@ -300,7 +300,7 @@
           "WASTE_MUNICIPAL"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+      "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
     }
   ]
 }

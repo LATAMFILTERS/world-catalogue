@@ -45,7 +45,7 @@
       "DIESEL_WATER"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ISO_12937.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md",
   "_links": {
     "self": "/api/citation/ISO_12937.json",
     "type_index": "/api/citation/type/standard.json",

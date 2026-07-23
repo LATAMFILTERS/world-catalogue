@@ -32,7 +32,7 @@
           "DIN_71220"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\CABIN.md"
     },
     {
       "key": "FUEL",
@@ -64,7 +64,7 @@
           "ISO_12937"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/FUEL.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\FUEL.md"
     },
     {
       "key": "HYDRAULIC",
@@ -96,7 +96,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/HYDRAULIC.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\HYDRAULIC.md"
     },
     {
       "key": "OIL",
@@ -128,7 +128,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault/03-systems/protection-domain/OIL.md"
+      "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\OIL.md"
     }
   ]
 }

@@ -41,7 +41,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md",
+  "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md",
   "_links": {
     "self": "/api/citation/SAE_J1539.json",
     "type_index": "/api/citation/type/standard.json",

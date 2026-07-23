@@ -50,7 +50,7 @@
       "ISO_12937"
     ]
   },
-  "vault_path": "elimfilters-vault/03-systems/FUEL_CLEANLINESS_PROTECTION.md",
+  "vault_path": "elimfilters-vault\\03-systems\\FUEL_CLEANLINESS_PROTECTION.md",
   "_links": {
     "self": "/api/citation/FUEL_CLEANLINESS_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",
