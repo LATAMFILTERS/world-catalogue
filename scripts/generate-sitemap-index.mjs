@@ -40,6 +40,10 @@ function main() {
   const outputDir = path.join(__dirname, '../frontend/out');
   const indexFile = path.join(outputDir, 'sitemap-index.xml');
 
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
   const indexContent = generateSitemapIndex();
   fs.writeFileSync(indexFile, indexContent, 'utf-8');
 
