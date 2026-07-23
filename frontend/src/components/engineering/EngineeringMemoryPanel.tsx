@@ -33,7 +33,7 @@ export function EngineeringMemoryPanel({ entityId }: EngineeringMemoryPanelProps
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       style={{
-        background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.18)',
+        background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.24)',
         borderRadius: '6px', overflow: 'hidden',
       }}
     >

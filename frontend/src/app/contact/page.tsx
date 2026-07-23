@@ -166,7 +166,7 @@ export default function ContactPage() {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.68) 46%, rgba(0,0,0,0.24) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+              'linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.68) 46%, rgba(0,0,0,0.24) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)',
             zIndex: 1,
           }}
         />

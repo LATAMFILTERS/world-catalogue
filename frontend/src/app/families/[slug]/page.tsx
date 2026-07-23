@@ -267,7 +267,7 @@ const airCleanerHousingHeroImage: CSSProperties = {
 };
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 34%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 34%)',
 };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = {

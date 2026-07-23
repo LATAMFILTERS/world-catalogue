@@ -51,7 +51,7 @@ export default function EngineeringReferencePage() {
           padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           background:
-            'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.36) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+            'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.36) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
         }}
       >
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>

@@ -1289,7 +1289,7 @@ export function AssetProtectionConsultation() {
                   style={{
                     padding: '0.38rem 0.85rem', fontSize: '0.74rem',
                     fontFamily: 'JetBrains Mono, monospace',
-                    background: 'rgba(255,241,45,0.05)', border: '1px solid rgba(255,241,45,0.16)',
+                    background: 'rgba(255,241,45,0.05)', border: '1px solid rgba(255,241,45,0.26)',
                     borderRadius: '4px', color: '#FFF12D', textDecoration: 'none',
                   }}
                 >

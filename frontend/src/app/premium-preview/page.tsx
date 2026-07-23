@@ -145,7 +145,7 @@ const CSS = `
   .c-ring.expanded {
     width: 54px; height: 54px;
     top: -27px; left: -27px;
-    border-color: rgba(255,241,45,0.18);
+    border-color: rgba(255,241,45,0.24);
   }
 
   @keyframes ticker {
@@ -174,7 +174,7 @@ const CSS = `
 const G = '#FFF12D';
 const G2 = 'rgba(255,241,45,0.10)';
 const G3 = 'rgba(255,241,45,0.05)';
-const GB = 'rgba(255,241,45,0.18)';
+const GB = 'rgba(255,241,45,0.24)';
 const W6 = 'rgba(255,255,255,0.58)';
 const W3 = 'rgba(255,255,255,0.28)';
 const W1 = 'rgba(255,255,255,0.07)';
@@ -948,7 +948,7 @@ function Standards() {
           {specs.map((s, i) => (
             <div key={i} style={{
               background: S2, padding:'1.5rem 1.75rem',
-              borderLeft: i % 2 === 0 ? `3px solid ${G}` : `3px solid rgba(255,241,45,0.22)`,
+              borderLeft: i % 2 === 0 ? `3px solid ${G}` : `3px solid rgba(255,241,45,0.26)`,
             }}>
               <div style={{ fontFamily:'Inter, sans-serif', fontSize:'0.72rem',
                 color: W3, letterSpacing:'0.08em', marginBottom:'0.4rem', textTransform:'uppercase' }}>{s.label}</div>
@@ -1274,7 +1274,7 @@ function Footer() {
     <footer style={{ background:'#040404', borderTop:`1px solid rgba(255,241,45,0.08)`, position:'relative', overflow:'hidden' }}>
       {/* Top gradient */}
       <div style={{ position:'absolute', top:0, left:0, right:0, height:1,
-        background:'linear-gradient(90deg, transparent, rgba(255,241,45,0.18), transparent)' }} />
+        background:'linear-gradient(90deg, transparent, rgba(255,241,45,0.24), transparent)' }} />
 
       {/* CTA strip */}
       <div style={{ borderBottom:`1px solid ${W1}`, padding:'4rem 0' }}>

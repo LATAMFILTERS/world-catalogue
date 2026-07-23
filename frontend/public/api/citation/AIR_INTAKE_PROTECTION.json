@@ -53,7 +53,7 @@
       "SAE_J1539"
     ]
   },
-  "vault_path": "elimfilters-vault\\03-systems\\AIR_INTAKE_PROTECTION.md",
+  "vault_path": "elimfilters-vault/03-systems/AIR_INTAKE_PROTECTION.md",
   "_links": {
     "self": "/api/citation/AIR_INTAKE_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",

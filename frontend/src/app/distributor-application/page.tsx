@@ -192,7 +192,7 @@ export default function DistributorApplication() {
           display: 'flex',
           alignItems: 'center',
           background:
-            'radial-gradient(circle at top, rgba(255,241,45,0.16), transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 36%, rgba(255,241,45,0.08) 100%)',
+            'radial-gradient(circle at top, rgba(255,241,45,0.26), transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 36%, rgba(255,241,45,0.08) 100%)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           padding: '6rem clamp(1.25rem,5vw,2rem) 4rem',
         }}

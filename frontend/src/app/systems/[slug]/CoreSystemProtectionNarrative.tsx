@@ -17,8 +17,8 @@ const sectionStyle: CSSProperties = {
 };
 
 const shellStyle: CSSProperties = {
-  border: '1px solid rgba(255,241,45,0.18)',
-  background: 'linear-gradient(135deg, rgba(255,241,45,0.045), rgba(255,255,255,0.018) 42%, rgba(0,0,0,0.92))',
+  border: '1px solid rgba(255,241,45,0.24)',
+  background: 'linear-gradient(135deg, rgba(255,241,45,0.045), rgba(255,255,255,0.018) 42%, rgba(0,0,0,0.65))',
   padding: 'clamp(1.6rem, 3vw, 2.4rem)',
 };
 

@@ -148,7 +148,7 @@ export default function ProtectionSystemPage({ params }: Props) {
     inset: 0,
     background: isAirIntake
       ? 'linear-gradient(90deg, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.50) 34%, rgba(0,0,0,0.18) 72%, rgba(0,0,0,0.26) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.10), transparent 34%)'
-      : 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+      : 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.18) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
   };
 
   const heroContentStyle: CSSProperties = {

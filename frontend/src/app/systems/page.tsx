@@ -205,7 +205,7 @@ const heroImage: CSSProperties = {
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.34) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.18) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
@@ -311,7 +311,7 @@ const searchInner: CSSProperties = {
 const cta: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
   borderTop: '1px solid rgba(255,241,45,0.2)',
-  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.26), transparent 34%)',
 };
 
 const yellowButton: CSSProperties = {

@@ -209,7 +209,7 @@ const heroImage: CSSProperties = {
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.38) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
@@ -245,7 +245,7 @@ const statsGrid: CSSProperties = {
 };
 
 const statCard: CSSProperties = {
-  border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(0,0,0,0.5)',
+  border: '1px solid rgba(255,241,45,0.26)', background: 'rgba(0,0,0,0.5)',
   padding: '1.4rem', minHeight: '145px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
 };
 
@@ -370,7 +370,7 @@ const validationInner: CSSProperties = {
 const cta: CSSProperties = {
   padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
   borderTop: '1px solid rgba(255,241,45,0.2)',
-  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.16), transparent 34%)',
+  background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.26), transparent 34%)',
 };
 
 const yellowButton: CSSProperties = {

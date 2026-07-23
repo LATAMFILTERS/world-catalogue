@@ -57,7 +57,7 @@
           "SAE_J1539"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\AIR_INTAKE_PROTECTION.md"
+      "vault_path": "elimfilters-vault/03-systems/AIR_INTAKE_PROTECTION.md"
     },
     {
       "key": "COOLING_SYSTEM_PROTECTION",
@@ -104,7 +104,7 @@
           "THERMACORE"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\COOLING_SYSTEM_PROTECTION.md"
+      "vault_path": "elimfilters-vault/03-systems/COOLING_SYSTEM_PROTECTION.md"
     },
     {
       "key": "FUEL_CLEANLINESS_PROTECTION",
@@ -158,7 +158,7 @@
           "ISO_12937"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\FUEL_CLEANLINESS_PROTECTION.md"
+      "vault_path": "elimfilters-vault/03-systems/FUEL_CLEANLINESS_PROTECTION.md"
     },
     {
       "key": "HYDRAULIC_PROTECTION",
@@ -212,7 +212,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\HYDRAULIC_PROTECTION.md"
+      "vault_path": "elimfilters-vault/03-systems/HYDRAULIC_PROTECTION.md"
     },
     {
       "key": "LUBRICATION_PROTECTION",
@@ -269,7 +269,7 @@
           "ISO_4406"
         ]
       },
-      "vault_path": "elimfilters-vault\\03-systems\\LUBRICATION_PROTECTION.md"
+      "vault_path": "elimfilters-vault/03-systems/LUBRICATION_PROTECTION.md"
     }
   ]
 }

@@ -53,7 +53,7 @@
       "ISO_4406"
     ]
   },
-  "vault_path": "elimfilters-vault\\03-systems\\LUBRICATION_PROTECTION.md",
+  "vault_path": "elimfilters-vault/03-systems/LUBRICATION_PROTECTION.md",
   "_links": {
     "self": "/api/citation/LUBRICATION_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",

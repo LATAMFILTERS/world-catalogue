@@ -43,7 +43,7 @@
       "THERMACORE"
     ]
   },
-  "vault_path": "elimfilters-vault\\03-systems\\COOLING_SYSTEM_PROTECTION.md",
+  "vault_path": "elimfilters-vault/03-systems/COOLING_SYSTEM_PROTECTION.md",
   "_links": {
     "self": "/api/citation/COOLING_SYSTEM_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",

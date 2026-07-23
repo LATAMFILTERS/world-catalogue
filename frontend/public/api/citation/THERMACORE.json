@@ -45,7 +45,7 @@
       "ENGINE_OIL_CONTAMINATION"
     ]
   },
-  "vault_path": "elimfilters-vault\\01-technologies\\active\\THERMACORE.md",
+  "vault_path": "elimfilters-vault/01-technologies/active/THERMACORE.md",
   "_links": {
     "self": "/api/citation/THERMACORE.json",
     "type_index": "/api/citation/type/technology.json",

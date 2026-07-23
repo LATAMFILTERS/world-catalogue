@@ -289,7 +289,7 @@ export default function ChatBot() {
               borderRadius: "12px",
               overflow: "hidden",
               background: "#080808",
-              border: "1px solid rgba(255,241,45,0.18)",
+              border: "1px solid rgba(255,241,45,0.24)",
               boxShadow: "0 24px 64px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04)",
               display: "flex",
               flexDirection: "column",

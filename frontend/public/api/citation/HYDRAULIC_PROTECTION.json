@@ -50,7 +50,7 @@
       "ISO_4406"
     ]
   },
-  "vault_path": "elimfilters-vault\\03-systems\\HYDRAULIC_PROTECTION.md",
+  "vault_path": "elimfilters-vault/03-systems/HYDRAULIC_PROTECTION.md",
   "_links": {
     "self": "/api/citation/HYDRAULIC_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",
