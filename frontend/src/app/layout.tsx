@@ -19,6 +19,9 @@ import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 import ChatBot from '@/components/ui/ChatBot';
+import WebVitalsTracker from '@/components/WebVitalsTracker';
+import VideoAnalytics from '@/components/VideoAnalytics';
+import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 
 const BASE_URL = 'https://elimfilters.com';
 const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
@@ -77,7 +80,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ClientProviders>
+          <AggregateRatingSchema />
           {children}
+          <WebVitalsTracker />
+          <VideoAnalytics />
           <MiningHeroCleanup />
           <MobileInternalLayoutFix />
           <Analytics />
