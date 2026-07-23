@@ -11,7 +11,6 @@ const REDIRECTS: Record<string, string> = {
   'standards/iso-16889': '/knowledge-center/standards/iso-16889/',
   'standards/iso-4406': '/knowledge-center/standards/iso-4406/',
   'standards/iso-5011': '/knowledge-center/standards/iso-5011/',
-
   contamination: '/knowledge-center/engineering/',
   'contamination/hydraulic-system': '/knowledge-center/engineering/contamination-control/',
   'contamination/particle-wear': '/knowledge-center/engineering/contamination-control/',
@@ -20,24 +19,21 @@ const REDIRECTS: Record<string, string> = {
   'contamination/fuel-injector-wear': '/knowledge-center/engineering/fluid-cleanliness/',
   'contamination/compressed-air-contamination': '/knowledge-center/standards/iso-8573-1/',
   'contamination/coolant-contamination': '/knowledge-center/systems/cooling-system-protection/',
-
   fleet: '/knowledge-center/technical-library/',
   'fleet/reducing-downtime': '/knowledge-center/technical-library/',
   'fleet/fuel-efficiency': '/knowledge-center/technical-library/',
   'fleet/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
   'fleet/roi-calculator': '/knowledge-center/technical-library/',
-
   bridges: '/knowledge-center/',
   'bridges/industrial-filtration': '/knowledge-center/',
   'bridges/aftermarket-selection': '/knowledge-center/',
   'bridges/fleet-solutions': '/knowledge-center/technical-library/',
   'bridges/oem-replacement': '/knowledge-center/',
-
   compare: '/knowledge-center/',
   'compare/evaluation-framework': '/knowledge-center/technical-library/',
   'compare/oem-comparison': '/knowledge-center/',
   'compare/system-vs-commodity': '/knowledge-center/',
-  'compare/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
+  'compare/total-cost-of-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
 };
 
 export function generateStaticParams() {
@@ -49,30 +45,23 @@ function destinationFor(slug: string) {
 }
 
 function labelFor(slug: string) {
-  return slug
-    .split('/')
-    .map((part) => part.replace(/-/g, ' '))
-    .join(' — ')
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return slug.split('/').map((part) => part.replace(/-/g, ' ')).join(' — ').replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata {
   const slug = params.slug.join('/');
   const label = labelFor(slug);
   const destination = destinationFor(slug);
-
   return {
     title: `${label} | ELIMFILTERS Knowledge Center`,
     description: `Legacy ELIMFILTERS Knowledge System route for ${label}. Continue to the current engineering resource in the Knowledge Center.`,
     alternates: { canonical: `https://elimfilters.com${destination}` },
-    robots: { index: false, follow: true },
   };
 }
 
 export default function LegacyKnowledgeSystemPathRedirect({ params }: { params: { slug: string[] } }) {
   const slug = params.slug.join('/');
   const destination = destinationFor(slug);
-
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', fontFamily: 'Arial, sans-serif', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />
