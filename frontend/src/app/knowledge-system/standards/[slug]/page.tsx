@@ -17,18 +17,15 @@ function standardLabel(slug: string) {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const destination = `${BASE_DESTINATION}${params.slug}/`;
   const label = standardLabel(params.slug);
-
   return {
     title: `${label} Standard | ELIMFILTERS Knowledge Center`,
     description: `Legacy ELIMFILTERS Knowledge System route for the ${label} filtration standard. Continue to the current standards library page.`,
     alternates: { canonical: `https://elimfilters.com${destination}` },
-    robots: { index: false, follow: true },
   };
 }
 
 export default function LegacyKnowledgeSystemStandardRedirect({ params }: { params: { slug: string } }) {
   const destination = `${BASE_DESTINATION}${params.slug}/`;
-
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', fontFamily: 'Arial, sans-serif', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />
