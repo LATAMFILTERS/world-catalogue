@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-const DESTINATION = '/knowledge-center/engineering/particle-counting/';
+const DESTINATION = '/knowledge-center/engineering/contamination-control/';
 
 export const metadata: Metadata = {
-  title: 'Particle Science and Counting | ELIMFILTERS',
-  description: 'Engineering guidance on particle contamination, particle counting, and filtration performance.',
-  alternates: { canonical: 'https://elimfilters.com/knowledge-center/engineering/particle-counting/' },
+  title: 'Particle Science and Contamination Control',
+  description: 'Engineering guidance on particle contamination, wear mechanisms, cleanliness control, and filtration performance.',
+  alternates: { canonical: 'https://elimfilters.com/knowledge-center/engineering/contamination-control/' },
 };
 
 export default function ParticleScienceLegacyPage() {
@@ -14,7 +14,7 @@ export default function ParticleScienceLegacyPage() {
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${DESTINATION}');` }} />
       <meta httpEquiv="refresh" content={`0;url=${DESTINATION}`} />
       <section style={{ textAlign: 'center' }}>
-        <h1>Particle-science guidance has moved.</h1>
+        <h1>Particle Science and Contamination Control</h1>
         <a href={DESTINATION}>Open current resource</a>
       </section>
     </main>
