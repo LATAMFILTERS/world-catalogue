@@ -10,9 +10,9 @@ export const STATIC_CRAWL_ROUTES = [
   '/technologies',
   '/families',
   '/industries',
-  '/knowledge-system',
-  '/knowledge-system/standards',
-  '/knowledge-system/contamination',
+  '/knowledge-center',
+  '/knowledge-center/standards',
+  '/knowledge-center/contamination',
   '/about',
   '/contact',
 ] as const;
