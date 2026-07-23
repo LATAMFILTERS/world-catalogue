@@ -49,7 +49,6 @@ export const metadata: Metadata = {
   creator: 'ELIMFILTERS',
   publisher: 'ELIMFILTERS',
   category: 'Industrial Filtration',
-  alternates: { canonical: BASE_URL },
   openGraph: {
     type: 'website',
     locale: 'en_US',
