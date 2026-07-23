@@ -18,9 +18,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const destination = `${BASE_DESTINATION}${params.slug}/`;
   const label = standardLabel(params.slug);
   return {
-    title: `${label} Standard | ELIMFILTERS Knowledge Center`,
+    title: `${label} Legacy Standard`,
     description: `Legacy ELIMFILTERS Knowledge System route for the ${label} filtration standard. Continue to the current standards library page.`,
     alternates: { canonical: `https://elimfilters.com${destination}` },
+    robots: { index: false, follow: true },
   };
 }
 
