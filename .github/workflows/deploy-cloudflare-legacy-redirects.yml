@@ -2,9 +2,19 @@ name: Deploy Cloudflare legacy redirects
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "cloudflare/legacy-redirects/**"
+      - ".github/workflows/deploy-cloudflare-legacy-redirects.yml"
 
 permissions:
   contents: read
+
+concurrency:
+  group: cloudflare-legacy-redirects-production
+  cancel-in-progress: true
 
 jobs:
   deploy:
