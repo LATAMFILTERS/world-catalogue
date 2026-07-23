@@ -6,7 +6,7 @@
     "prebuild": "node ../scripts/normalize-retired-citation-keys.mjs && node ../scripts/build-citation-index.js && node ../scripts/sync-jsonld-constants.js && node ../scripts/generate-citation-api.js && node ../scripts/validate-air-intake-page-guard.mjs && node ../scripts/ensure-next-cache.mjs",
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node ../scripts/generate-kc-sitemap.mjs",
+    "postbuild": "node ../scripts/generate-kc-sitemap.mjs && node ../scripts/generate-video-sitemap.mjs",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",

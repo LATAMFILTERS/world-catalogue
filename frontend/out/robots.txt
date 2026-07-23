@@ -7,3 +7,4 @@ Disallow: /search?
 
 Host: https://elimfilters.com
 Sitemap: https://elimfilters.com/sitemap.xml
+Sitemap: https://elimfilters.com/video-sitemap.xml
