@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
   description: BRAND_DESCRIPTION,
   applicationName: 'ELIMFILTERS',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'industrial filtration',
     'asset protection systems',
