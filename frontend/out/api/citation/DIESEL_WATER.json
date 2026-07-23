@@ -36,7 +36,7 @@
       "HYDROCORE"
     ]
   },
-  "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md",
+  "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md",
   "_links": {
     "self": "/api/citation/DIESEL_WATER.json",
     "type_index": "/api/citation/type/contamination-mode.json",

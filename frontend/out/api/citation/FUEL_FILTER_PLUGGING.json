@@ -53,7 +53,7 @@
       "AUTOMOTIVE"
     ]
   },
-  "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md",
+  "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md",
   "_links": {
     "self": "/api/citation/FUEL_FILTER_PLUGGING.json",
     "type_index": "/api/citation/type/problem.json",

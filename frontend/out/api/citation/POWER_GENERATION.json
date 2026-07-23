@@ -56,7 +56,7 @@
       "HYDRAULIC_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md",
+  "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md",
   "_links": {
     "self": "/api/citation/POWER_GENERATION.json",
     "type_index": "/api/citation/type/industry.json",

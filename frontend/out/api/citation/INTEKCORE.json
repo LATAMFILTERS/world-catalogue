@@ -45,7 +45,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/INTEKCORE.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\INTEKCORE.md",
   "_links": {
     "self": "/api/citation/INTEKCORE.json",
     "type_index": "/api/citation/type/technology.json",

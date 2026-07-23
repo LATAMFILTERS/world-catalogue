@@ -68,7 +68,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
+        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
       }
     },
     {
@@ -130,7 +130,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+        "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md"
       }
     },
     {
@@ -175,7 +175,7 @@
             "HYDROCORE"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
       }
     },
     {
@@ -232,7 +232,7 @@
             "DIESEL_WATER"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/HYDROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
       }
     }
   ],

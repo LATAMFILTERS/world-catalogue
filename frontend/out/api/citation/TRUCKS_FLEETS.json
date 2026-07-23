@@ -57,7 +57,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md",
+  "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md",
   "_links": {
     "self": "/api/citation/TRUCKS_FLEETS.json",
     "type_index": "/api/citation/type/industry.json",

@@ -1,0 +1,704 @@
+[
+  {
+    "id": "01t4N0000048ng7QAA",
+    "sku": "A060Z347ONAN",
+    "part_number": "A060Z347",
+    "name": "Cummins Onan HGJBB Gas Generator Maintenance Kit - A060Z347",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "A030Y328",
+        "description": "FILTER-AIR",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2661",
+        "description": "FILTER-FUEL",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1652",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "A030Y328",
+        "description": "FILTER-AIR",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2661",
+        "description": "FILTER-FUEL",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1652",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048ng6QAA",
+    "sku": "A060Z345ONAN",
+    "part_number": "A060Z345",
+    "name": "Cummins Onan KY-B Generator Maintenance Kit - A060Z345",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0149-2457",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0140-3295",
+        "description": "FILTER-KIT-AIR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0305",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A063E183",
+        "description": "ONAMAX 10W30 1 QT",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0149-2457",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0140-3295",
+        "description": "FILTER-KIT-AIR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0305",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048ng5QAA",
+    "sku": "A060Z343ONAN",
+    "part_number": "A060Z343",
+    "name": "Cummins Onan HGJAD Gas Generator Maintenance Kit - A060Z343",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0147-0860",
+        "description": "FILTER-EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A063E183",
+        "description": "ONAMAX 10W30 1 QT",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0147-0860",
+        "description": "FILTER-EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048ng4QAA",
+    "sku": "A060Z229ONAN",
+    "part_number": "A060Z229",
+    "name": "Cummins Onan HDKCA/CB Diesel Generator Maintenance Kit - A060Z229",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3071",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0893",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2513",
+        "description": "FILTER- EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 6,
+        "is_oil": true,
+        "is_packaging": false
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3071",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0893",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2513",
+        "description": "FILTER- EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048ng3QAA",
+    "sku": "A060Z227ONAN",
+    "part_number": "A060Z227",
+    "name": "Onan HDKAH/AK Diesel Generator Kit - A060Z227",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0122-0833",
+        "description": "FILTER-OIL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0140-2897",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0147-0860",
+        "description": "FILTER-EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 3,
+        "is_oil": true,
+        "is_packaging": false
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0122-0833",
+        "description": "FILTER-OIL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0140-2897",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0147-0860",
+        "description": "FILTER-EFI FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048ng2QAA",
+    "sku": "A060Z222ONAN",
+    "part_number": "A060Z222",
+    "name": "Onan HDKBB Diesel Generator Maintenance Kit - A060Z222",
+    "brand": "Onan",
+    "components": [],
+    "components_catalog": []
+  },
+  {
+    "id": "01t4N0000048nWKQAY",
+    "sku": "A050E993ONAN",
+    "part_number": "A050E993",
+    "name": "Cummins Onan KY-LP Generator Maintenance Kit - A050E993",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3280",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0275",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A050E467",
+        "description": "BOX-SHIPPING",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E483",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E485",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A049J850",
+        "description": "INSTRUCTION SHEET",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3280",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0275",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048nWJQAY",
+    "sku": "A050E991ONAN",
+    "part_number": "A050E991",
+    "name": "Cummins Onan KY-Gas Generator Maintenance Kit - A050E991",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3280",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2457",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0275",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A050E467",
+        "description": "BOX-SHIPPING",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E478",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E480",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A049J850",
+        "description": "INSTRUCTION SHEET",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3280",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2457",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-0275",
+        "description": "SPARK PLUG",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048nUxQAI",
+    "sku": "A049E506ONAN",
+    "part_number": "A049E506",
+    "name": "Cummins Onan HGJAB-LP RV Generator Maintenance Kit - A049E506",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A050E467",
+        "description": "BOX-SHIPPING",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E469",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E472",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A049J848",
+        "description": "INSTRUCTION SHEET",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048nUwQAI",
+    "sku": "A049E501ONAN",
+    "part_number": "A049E501",
+    "name": "Cummins Onan HGJAB Gas Generator Maintenance Kit - A049E501",
+    "brand": "Onan",
+    "components": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2341-01",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0326-5336",
+        "description": "ONAMAX 15W40 1 QT (TEXT)",
+        "qty": 2,
+        "is_oil": true,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "A050E467",
+        "description": "BOX-SHIPPING",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E474",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A050E476",
+        "description": "SHIPPING-LABEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      },
+      {
+        "code": "A049J848",
+        "description": "INSTRUCTION SHEET",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": true
+      }
+    ],
+    "components_catalog": [
+      {
+        "code": "0140-3116",
+        "description": "ELEMENT-AIR CLNR",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0122-0836",
+        "description": "FILTER-OIL (TEXT)",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0149-2341-01",
+        "description": "FILTER-FUEL",
+        "qty": 1,
+        "is_oil": false,
+        "is_packaging": false
+      },
+      {
+        "code": "0167-1638",
+        "description": "SPARK PLUG",
+        "qty": 2,
+        "is_oil": false,
+        "is_packaging": false
+      }
+    ]
+  },
+  {
+    "id": "01t4N0000048nAfQAI",
+    "sku": "A034T573ONAN",
+    "part_number": "A034T573",
+    "name": "Onan EPA Compliant Fuel Control and Sensor Service Kit - A034T573",
+    "brand": "Onan",
+    "components": [],
+    "components_catalog": []
+  },
+  {
+    "id": "01t4N0000048nASQAY",
+    "sku": "A034P901ONAN",
+    "part_number": "A034P901",
+    "name": "Onan Oxygen Sensor Service Kit for GGLA/LB Products - A034P901",
+    "brand": "Onan",
+    "components": [],
+    "components_catalog": []
+  },
+  {
+    "id": "01t4N0000048mi0QAA",
+    "sku": "541-1519ONAN",
+    "part_number": "541-1519",
+    "name": "Onan Water Pump Service Kit Marine - 541-1519",
+    "brand": "Onan",
+    "components": [],
+    "components_catalog": []
+  }
+]

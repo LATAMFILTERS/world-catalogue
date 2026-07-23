@@ -56,7 +56,7 @@
       "HYDRAULIC_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/MARINE.md",
+  "vault_path": "elimfilters-vault\\02-industries\\MARINE.md",
   "_links": {
     "self": "/api/citation/MARINE.json",
     "type_index": "/api/citation/type/industry.json",
