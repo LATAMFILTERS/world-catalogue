@@ -1,13 +1,8 @@
-﻿import { Barlow, Chakra_Petch } from "next/font/google";
+import { Barlow } from "next/font/google";
 
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-const chakra = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
 });
 
 export const metadata = {
@@ -42,13 +37,15 @@ export default function InstagramLandingPage() {
           />
 
           <div
-            className={`${chakra.className} mb-5 border border-yellow-400/45 bg-black/45 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.34em] text-yellow-400 md:text-xs`}
+            className="mb-5 border border-yellow-400/45 bg-black/45 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.34em] text-yellow-400 md:text-xs"
+            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             Engineered For Severe Duty Operations
           </div>
 
           <h1
-            className={`${chakra.className} max-w-6xl text-[3.2rem] font-bold uppercase leading-[0.86] tracking-[-0.055em] md:text-[7.4rem]`}
+            className="max-w-6xl text-[3.2rem] font-bold uppercase leading-[0.86] tracking-[-0.055em] md:text-[7.4rem]"
+            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             Total Asset
             <span className="block text-yellow-400">Protection</span>
@@ -62,21 +59,30 @@ export default function InstagramLandingPage() {
           <div className="mt-8 grid w-full max-w-4xl grid-cols-1 gap-3 md:mt-9 md:grid-cols-3">
             <a
               href="https://part-search.elimfilters.com"
-              className={`${chakra.className} ${buttonBase} border-yellow-400 bg-yellow-400 text-black shadow-[0_0_28px_rgba(250,204,21,0.22)] hover:bg-white`}
+              className="border-yellow-400 bg-yellow-400 text-black shadow-[0_0_28px_rgba(250,204,21,0.22)] hover:bg-white"
+              style={{
+                ...{ borderStyle: 'solid', borderWidth: '1px', paddingLeft: '1.75rem', paddingRight: '1.75rem', paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'center', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.24em', transition: 'duration-300', fontFamily: 'system-ui, -apple-system, sans-serif'
+              }}
             >
               Find Your Part
             </a>
 
             <a
               href="/distributor-application"
-              className={`${chakra.className} ${buttonBase} border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black`}
+              className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+              style={{
+                ...{ borderStyle: 'solid', borderWidth: '1px', paddingLeft: '1.75rem', paddingRight: '1.75rem', paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'center', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.24em', transition: 'duration-300', fontFamily: 'system-ui, -apple-system, sans-serif'
+              }}
             >
               Distributors
             </a>
 
             <a
               href="/contact"
-              className={`${chakra.className} ${buttonBase} border-white/30 text-white hover:border-white hover:bg-white hover:text-black`}
+              className="border-white/30 text-white hover:border-white hover:bg-white hover:text-black"
+              style={{
+                ...{ borderStyle: 'solid', borderWidth: '1px', paddingLeft: '1.75rem', paddingRight: '1.75rem', paddingTop: '1rem', paddingBottom: '1rem', textAlign: 'center', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.24em', transition: 'duration-300', fontFamily: 'system-ui, -apple-system, sans-serif'
+              }}
             >
               Contact Sales
             </a>
@@ -84,7 +90,7 @@ export default function InstagramLandingPage() {
 
           <div className="mt-8 grid w-full max-w-4xl grid-cols-3 gap-2 md:mt-10 md:gap-3">
             <div className={statBox}>
-              <div className={`${chakra.className} text-lg font-bold text-yellow-400 md:text-2xl`}>
+              <div className="text-lg font-bold text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 20K+
               </div>
               <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white/45 md:text-[10px]">
@@ -93,7 +99,7 @@ export default function InstagramLandingPage() {
             </div>
 
             <div className={statBox}>
-              <div className={`${chakra.className} text-lg font-bold text-yellow-400 md:text-2xl`}>
+              <div className="text-lg font-bold text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 HD / LD
               </div>
               <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white/45 md:text-[10px]">
@@ -102,7 +108,7 @@ export default function InstagramLandingPage() {
             </div>
 
             <div className={statBox}>
-              <div className={`${chakra.className} text-lg font-bold text-yellow-400 md:text-2xl`}>
+              <div className="text-lg font-bold text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 OEM
               </div>
               <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white/45 md:text-[10px]">
@@ -113,10 +119,10 @@ export default function InstagramLandingPage() {
 
           <div className="mt-8 grid w-full gap-3 text-left md:mt-10 md:grid-cols-3 md:gap-4">
             <div className={panel}>
-              <div className={`${chakra.className} mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35`}>
+              <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 01 / Protection
               </div>
-              <h2 className={`${chakra.className} text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl`}>
+              <h2 className="text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 What We Protect
               </h2>
               <p className="mt-3 text-sm font-medium leading-6 text-white/68">
@@ -126,10 +132,10 @@ export default function InstagramLandingPage() {
             </div>
 
             <div className={panel}>
-              <div className={`${chakra.className} mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35`}>
+              <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 02 / Technology
               </div>
-              <h2 className={`${chakra.className} text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl`}>
+              <h2 className="text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 Filtration Systems
               </h2>
               <p className="mt-3 text-sm font-medium leading-6 text-white/68">
@@ -139,10 +145,10 @@ export default function InstagramLandingPage() {
             </div>
 
             <div className={panel}>
-              <div className={`${chakra.className} mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35`}>
+              <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-white/35" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 03 / Industries
               </div>
-              <h2 className={`${chakra.className} text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl`}>
+              <h2 className="text-xl font-bold uppercase tracking-tight text-yellow-400 md:text-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 Severe Duty
               </h2>
               <p className="mt-3 text-sm font-medium leading-6 text-white/68">
@@ -153,7 +159,8 @@ export default function InstagramLandingPage() {
           </div>
 
           <p
-            className={`${chakra.className} mt-8 max-w-5xl text-xl font-bold uppercase leading-tight tracking-[0.08em] text-yellow-400 md:mt-10 md:text-3xl`}
+            className="mt-8 max-w-5xl text-xl font-bold uppercase leading-tight tracking-[0.08em] text-yellow-400 md:mt-10 md:text-3xl"
+            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             Protect the asset. Reduce downtime. Extend service life.
           </p>
