@@ -25,7 +25,7 @@ const LEGACY_ROUTES: Record<string, string> = {
   'hydraulic-power-unit-design': '/knowledge-center/systems/hydraulic-protection/',
   'hydraulic-reservoir-design': '/knowledge-center/systems/hydraulic-protection/',
   'hydraulic-system-flushing': '/knowledge-center/engineering/contamination-control/',
-  'iso-11171-particle-counting': '/knowledge-center/engineering/particle-counting/',
+  'iso-11171-particle-counting': '/knowledge-center/engineering/contamination-control/',
   'iso-16889-multipass-test': '/knowledge-center/standards/iso-16889/',
   'iso-16889': '/knowledge-center/standards/iso-16889/',
   'iso-4406': '/knowledge-center/standards/iso-4406/',
@@ -38,13 +38,13 @@ const LEGACY_ROUTES: Record<string, string> = {
   'oil-analysis-methods': '/knowledge-center/engineering/oil-analysis-methods/',
   'oil-condition-monitoring': '/knowledge-center/engineering/oil-analysis-methods/',
   'particle-ingress-prevention': '/knowledge-center/engineering/contamination-control/',
-  'sae-j300-viscosity-classification': '/knowledge-center/engineering/lubrication-engineering/',
+  'sae-j300-viscosity-classification': '/knowledge-center/engineering/oil-analysis-methods/',
   'sae-j726-iso-5011-air-cleaner-test': '/knowledge-center/standards/iso-5011/',
   'seal-integrity': '/knowledge-center/engineering/seal-integrity/',
   'service-intervals': '/knowledge-center/engineering/service-intervals/',
   'testing-and-validation': '/knowledge-center/engineering/testing-and-validation/',
   'total-cost-of-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
-  'varnish-formation-lube-systems': '/knowledge-center/engineering/lubrication-engineering/',
+  'varnish-formation-lube-systems': '/knowledge-center/engineering/oil-analysis-methods/',
   'water-contamination-fuel': '/knowledge-center/engineering/water-contamination-fuel/',
 };
 
@@ -52,24 +52,52 @@ export function generateStaticParams() {
   return Object.keys(LEGACY_ROUTES).map((legacy) => ({ legacy }));
 }
 
+function labelFor(slug: string) {
+  return slug
+    .split('-')
+    .map((part) => {
+      const upper = part.toUpperCase();
+      if (['ISO', 'SAE', 'NFPA', 'HPCR', 'OEM'].includes(upper)) return upper;
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join(' ');
+}
+
 export function generateMetadata({ params }: { params: { legacy: string } }): Metadata {
   const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
+  const label = labelFor(params.legacy);
+  const description = `Access the current ELIMFILTERS engineering reference for ${label}, including contamination-control and filtration-system guidance.`;
+
   return {
-    title: 'Knowledge Center Resource | ELIMFILTERS',
-    description: 'This engineering resource is available at its current ELIMFILTERS Knowledge Center location.',
+    title: label,
+    description,
     alternates: { canonical: `https://elimfilters.com${destination}` },
+    openGraph: {
+      title: `${label} | ELIMFILTERS Knowledge Center`,
+      description,
+      url: `https://elimfilters.com${destination}`,
+      type: 'article',
+      siteName: 'ELIMFILTERS',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${label} | ELIMFILTERS Knowledge Center`,
+      description,
+    },
   };
 }
 
 export default function LegacyKnowledgeCenterPage({ params }: { params: { legacy: string } }) {
   const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
+  const label = labelFor(params.legacy);
+
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />
       <meta httpEquiv="refresh" content={`0;url=${destination}`} />
       <section style={{ maxWidth: 720, textAlign: 'center' }}>
-        <h1>This engineering resource has moved.</h1>
-        <p>Continue to the current ELIMFILTERS Knowledge Center page.</p>
+        <h1>{label}</h1>
+        <p>This engineering resource has moved to its current ELIMFILTERS Knowledge Center location.</p>
         <a href={destination}>Open current resource</a>
       </section>
     </main>
