@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 const DESTINATION = '/knowledge-center/engineering/contamination-control/';
 
 export const metadata: Metadata = {
-  title: 'Particle Counting and ISO 11171',
-  description: 'Engineering guidance on particle counting, ISO 11171 calibration, fluid cleanliness measurement, and contamination control.',
+  title: 'Particle Counting Legacy Route',
+  description: 'Legacy route for particle-counting guidance. Continue to the current contamination-control engineering resource.',
   alternates: { canonical: 'https://elimfilters.com/knowledge-center/engineering/contamination-control/' },
+  robots: { index: false, follow: true },
 };
 
 export default function ParticleCountingLegacyPage() {
