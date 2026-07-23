@@ -33,6 +33,10 @@ if (-not (Test-Path $DataDir)) {
 $StdOutLog = Join-Path $DataDir "kleo-stdout.log"
 $StdErrLog = Join-Path $DataDir "kleo-stderr.log"
 
+# Canonical ELIMFILTERS owner authorization. Process environment variables
+# take precedence over the local .env file loaded by KLEO.
+$env:TELEGRAM_AUTHORIZED_CHAT_ID = "7253939124"
+
 Write-Host "Starting KLEO from $KleoRoot ..."
 $process = Start-Process -FilePath $VenvPython `
     -ArgumentList "-m", "kleo.app" `
