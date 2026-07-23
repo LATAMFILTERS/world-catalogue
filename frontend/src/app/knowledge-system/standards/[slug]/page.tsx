@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { ENTITY_NODES } from '@/lib/entity-graph';
 
 const BASE_DESTINATION = '/knowledge-center/standards/';
@@ -7,6 +8,22 @@ export function generateStaticParams() {
     .filter((node) => node.kind === 'standard')
     .map((node) => node.id.replace('standard:', ''))
     .map((slug) => ({ slug }));
+}
+
+function standardLabel(slug: string) {
+  return slug.toUpperCase().replace(/-/g, ' ');
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const destination = `${BASE_DESTINATION}${params.slug}/`;
+  const label = standardLabel(params.slug);
+
+  return {
+    title: `${label} Standard | ELIMFILTERS Knowledge Center`,
+    description: `Legacy ELIMFILTERS Knowledge System route for the ${label} filtration standard. Continue to the current standards library page.`,
+    alternates: { canonical: `https://elimfilters.com${destination}` },
+    robots: { index: false, follow: true },
+  };
 }
 
 export default function LegacyKnowledgeSystemStandardRedirect({ params }: { params: { slug: string } }) {
