@@ -20,11 +20,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const system = KC_SYSTEMS.find((s) => s.slug === resolvedSlug);
   if (!system) return {};
 
+  const isAlias = resolvedSlug !== params.slug;
   const url = `https://elimfilters.com/knowledge-center/systems/${resolvedSlug}`;
   return {
-    title: `${system.title} System`,
-    description: system.description,
+    title: isAlias ? `${params.slug.replace(/-/g, ' ')} Legacy System` : `${system.title} System`,
+    description: isAlias ? `Legacy protection-system route. Continue to the current ${system.title} page.` : system.description,
     alternates: { canonical: url },
+    robots: isAlias ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${system.title} System | ELIMFILTERS`,
       description: system.description,
