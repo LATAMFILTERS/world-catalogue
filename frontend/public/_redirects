@@ -3,6 +3,10 @@
 # Both trailing-slash and non-trailing-slash variants are covered.
 # Wildcard catch-all at the bottom handles any unmapped subpaths.
 
+# ── Engineering legacy redirects ─────────────────────────────────────────────
+/knowledge-center/engineering/operator-health                 /knowledge-center/systems/cabin-air-protection 301
+/knowledge-center/engineering/operator-health/                /knowledge-center/systems/cabin-air-protection/ 301
+
 # ── Hub redirects ────────────────────────────────────────────────────────────
 /knowledge-system                                      /knowledge-center 301
 /knowledge-system/                                     /knowledge-center/ 301
@@ -33,7 +37,7 @@
 /knowledge-system/standards/iso-5011                   /knowledge-center/standards/iso-5011 301
 /knowledge-system/standards/iso-5011/                  /knowledge-center/standards/iso-5011/ 301
 
-# ── Contamination domain ──────────────────────────────────────────────────────
+# ── Contamination domain ─────────────────────────────────────────────────────
 /knowledge-system/contamination                        /knowledge-center/engineering 301
 /knowledge-system/contamination/                       /knowledge-center/engineering/ 301
 /knowledge-system/contamination/hydraulic-system       /knowledge-center/engineering/contamination-control 301
@@ -51,7 +55,7 @@
 /knowledge-system/contamination/coolant-contamination  /knowledge-center/systems/cooling-system-protection 301
 /knowledge-system/contamination/coolant-contamination/ /knowledge-center/systems/cooling-system-protection/ 301
 
-# ── Fleet optimization domain ─────────────────────────────────────────────────
+# ── Fleet optimization domain ────────────────────────────────────────────────
 /knowledge-system/fleet                                /knowledge-center/technical-library 301
 /knowledge-system/fleet/                               /knowledge-center/technical-library/ 301
 /knowledge-system/fleet/reducing-downtime              /knowledge-center/technical-library 301
@@ -63,7 +67,7 @@
 /knowledge-system/fleet/roi-calculator                 /knowledge-center/technical-library 301
 /knowledge-system/fleet/roi-calculator/                /knowledge-center/technical-library/ 301
 
-# ── Bridges domain ────────────────────────────────────────────────────────────
+# ── Bridges domain ───────────────────────────────────────────────────────────
 /knowledge-system/bridges                              /knowledge-center 301
 /knowledge-system/bridges/                             /knowledge-center/ 301
 /knowledge-system/bridges/industrial-filtration        /knowledge-center 301
@@ -75,7 +79,7 @@
 /knowledge-system/bridges/oem-replacement              /knowledge-center 301
 /knowledge-system/bridges/oem-replacement/             /knowledge-center/ 301
 
-# ── Compare domain ────────────────────────────────────────────────────────────
+# ── Compare domain ───────────────────────────────────────────────────────────
 /knowledge-system/compare                              /knowledge-center 301
 /knowledge-system/compare/                             /knowledge-center/ 301
 /knowledge-system/compare/evaluation-framework         /knowledge-center/technical-library 301
@@ -84,8 +88,8 @@
 /knowledge-system/compare/oem-comparison/              /knowledge-center/ 301
 /knowledge-system/compare/system-vs-commodity          /knowledge-center 301
 /knowledge-system/compare/system-vs-commodity/         /knowledge-center/ 301
-/knowledge-system/compare/total-cost-ownership         /knowledge-center/engineering/total-cost-of-ownership 301
-/knowledge-system/compare/total-cost-ownership/        /knowledge-center/engineering/total-cost-of-ownership/ 301
+/knowledge-system/compare/total-cost-of-ownership      /knowledge-center/engineering/total-cost-of-ownership 301
+/knowledge-system/compare/total-cost-of-ownership/     /knowledge-center/engineering/total-cost-of-ownership/ 301
 
-# ── Wildcard catch-all (any remaining /knowledge-system/* path) ───────────────
+# ── Wildcard catch-all (any remaining /knowledge-system/* path) ──────────────
 /knowledge-system/*                                    /knowledge-center/:splat 301
