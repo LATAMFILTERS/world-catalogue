@@ -15,3 +15,73 @@ services:
         sync: false
       - key: GODADDY_MAIL_PASS
         sync: false
+
+  # Static frontend serving elimfilters.com. These redirects must execute at the
+  # HTTP hosting layer, before Render attempts to resolve files in frontend/out.
+  - type: web
+    name: elimfilters-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./out
+    routes:
+      - type: redirect
+        source: /knowledge-system
+        destination: /knowledge-center/
+      - type: redirect
+        source: /knowledge-system/contamination
+        destination: /knowledge-center/engineering/
+      - type: redirect
+        source: /knowledge-system/contamination/particle-wear
+        destination: /knowledge-center/engineering/contamination-control/
+      - type: redirect
+        source: /knowledge-system/contamination/diesel-water
+        destination: /knowledge-center/engineering/fluid-cleanliness/
+      - type: redirect
+        source: /knowledge-system/contamination/hydraulic-system
+        destination: /knowledge-center/engineering/contamination-control/
+      - type: redirect
+        source: /knowledge-system/standards
+        destination: /knowledge-center/standards/
+      - type: redirect
+        source: /knowledge-system/standards/iso-16889
+        destination: /knowledge-center/standards/iso-16889/
+      - type: redirect
+        source: /knowledge-system/standards/iso-4406
+        destination: /knowledge-center/standards/iso-4406/
+      - type: redirect
+        source: /knowledge-system/standards/astm-d6304
+        destination: /knowledge-center/standards/astm-d6304/
+      - type: redirect
+        source: /knowledge-system/standards/iso-12937
+        destination: /knowledge-center/standards/iso-12937/
+      - type: redirect
+        source: /knowledge-system/standards/iso-5011
+        destination: /knowledge-center/standards/iso-5011/
+      - type: redirect
+        source: /knowledge-system/standards/din-51524
+        destination: /knowledge-center/standards/din-51524/
+      - type: redirect
+        source: /knowledge-system/standards/iso-16332
+        destination: /knowledge-center/standards/iso-16332/
+      - type: redirect
+        source: /knowledge-system/standards/nfpa-t2-14
+        destination: /knowledge-center/standards/nfpa-t2-14/
+      - type: redirect
+        source: /knowledge-system/standards/astm-d6210
+        destination: /knowledge-center/standards/astm-d6210/
+      - type: redirect
+        source: /knowledge-system/standards/eu-dir-2019-130
+        destination: /knowledge-center/standards/eu-dir-2019-130/
+      - type: redirect
+        source: /knowledge-system/standards/iso-11155
+        destination: /knowledge-center/standards/iso-11155/
+      - type: redirect
+        source: /knowledge-system/standards/iso-8573-1
+        destination: /knowledge-center/standards/iso-8573-1/
+      - type: redirect
+        source: /knowledge-system/standards/sae-j1539
+        destination: /knowledge-center/standards/sae-j1539/
+      - type: redirect
+        source: /knowledge-center/engineering/operator-health
+        destination: /knowledge-center/systems/cabin-air-protection/
