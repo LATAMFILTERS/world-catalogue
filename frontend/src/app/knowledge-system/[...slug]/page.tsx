@@ -53,9 +53,10 @@ export function generateMetadata({ params }: { params: { slug: string[] } }): Me
   const label = labelFor(slug);
   const destination = destinationFor(slug);
   return {
-    title: `${label} | ELIMFILTERS Knowledge Center`,
-    description: `Legacy ELIMFILTERS Knowledge System route for ${label}. Continue to the current engineering resource in the Knowledge Center.`,
+    title: `${label} Legacy Route`,
+    description: `Legacy ELIMFILTERS Knowledge System route for ${label}. Continue to the current Knowledge Center resource.`,
     alternates: { canonical: `https://elimfilters.com${destination}` },
+    robots: { index: false, follow: true },
   };
 }
 
