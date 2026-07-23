@@ -53,44 +53,30 @@ export function generateStaticParams() {
 }
 
 function labelFor(slug: string) {
-  return slug
-    .split('-')
-    .map((part) => {
-      const upper = part.toUpperCase();
-      if (['ISO', 'SAE', 'NFPA', 'HPCR', 'OEM'].includes(upper)) return upper;
-      return part.charAt(0).toUpperCase() + part.slice(1);
-    })
-    .join(' ');
+  return slug.split('-').map((part) => {
+    const upper = part.toUpperCase();
+    if (['ISO', 'SAE', 'NFPA', 'HPCR', 'OEM'].includes(upper)) return upper;
+    return part.charAt(0).toUpperCase() + part.slice(1);
+  }).join(' ');
 }
 
 export function generateMetadata({ params }: { params: { legacy: string } }): Metadata {
   const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
   const label = labelFor(params.legacy);
-  const description = `Access the current ELIMFILTERS engineering reference for ${label}, including contamination-control and filtration-system guidance.`;
-
+  const description = `Legacy route for ${label}. Continue to the current ELIMFILTERS engineering resource.`;
   return {
-    title: label,
+    title: `${label} Legacy Route`,
     description,
     alternates: { canonical: `https://elimfilters.com${destination}` },
-    openGraph: {
-      title: `${label} | ELIMFILTERS Knowledge Center`,
-      description,
-      url: `https://elimfilters.com${destination}`,
-      type: 'article',
-      siteName: 'ELIMFILTERS',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${label} | ELIMFILTERS Knowledge Center`,
-      description,
-    },
+    robots: { index: false, follow: true },
+    openGraph: { title: `${label} | ELIMFILTERS Knowledge Center`, description, url: `https://elimfilters.com${destination}`, type: 'article', siteName: 'ELIMFILTERS' },
+    twitter: { card: 'summary_large_image', title: `${label} | ELIMFILTERS Knowledge Center`, description },
   };
 }
 
 export default function LegacyKnowledgeCenterPage({ params }: { params: { legacy: string } }) {
   const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
   const label = labelFor(params.legacy);
-
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />
