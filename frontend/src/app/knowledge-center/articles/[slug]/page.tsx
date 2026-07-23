@@ -20,10 +20,12 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const destination = ARTICLE_REDIRECTS[params.slug] || '/knowledge-center/engineering/';
+  const label = params.slug.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
   return {
-    title: 'Engineering Article | ELIMFILTERS',
-    description: 'This article is available in the ELIMFILTERS engineering knowledge library.',
+    title: `${label} Legacy Article`,
+    description: `Legacy route for ${label}. Continue to the current ELIMFILTERS engineering article.`,
     alternates: { canonical: `https://elimfilters.com${destination}` },
+    robots: { index: false, follow: true },
   };
 }
 
