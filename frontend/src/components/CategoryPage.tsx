@@ -6,6 +6,8 @@ import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'motion/react';
 import { CatalogueItem, CATEGORY_LABELS, CATEGORY_URLS } from '@/lib/catalogue';
+import { getVideoMetadata } from '@/lib/video-metadata';
+import VideoSchema from './VideoSchema';
 import { Hero } from './Hero';
 import { CTASection } from './CTASection';
 import { AnimateIn } from './AnimateIn';
@@ -133,9 +135,14 @@ export function CategoryPage({ item, category, industryImage, industryVideo, tec
   const heroTagline = profile?.tagline || item.description;
   const assetHeading = profile?.assetHeading || `${item.name} Asset Protection`;
 
+  // Get video metadata for schema
+  const videoId = industryVideo ? (item.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and').replace(/[^\w-]/g, '')) : null;
+  const videoMetadata = videoId ? getVideoMetadata(videoId) : null;
+
   return (
     <>
       <main>
+        {videoMetadata && <VideoSchema video={videoMetadata} />}
         {geoData?.schemas && geoData.schemas.map((schema, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />)}
         <div style={{ position: 'relative', zIndex: 20, background: 'rgba(0,0,0,0.6)', borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '0.75rem 2rem' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import './hero-responsive.css';
 import './home-emergency-restore.css';
@@ -20,8 +19,9 @@ import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
 import ChatBot from '@/components/ui/ChatBot';
-
-const GA_ID = 'G-T7STY4TY9C';
+import WebVitalsTracker from '@/components/WebVitalsTracker';
+import VideoAnalytics from '@/components/VideoAnalytics';
+import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 
 const BASE_URL = 'https://elimfilters.com';
 const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
@@ -79,12 +79,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA_ID}');`}
-        </Script>
         <ClientProviders>
+          <AggregateRatingSchema />
           {children}
+          <WebVitalsTracker />
+          <VideoAnalytics />
           <MiningHeroCleanup />
           <MobileInternalLayoutFix />
           <Analytics />
