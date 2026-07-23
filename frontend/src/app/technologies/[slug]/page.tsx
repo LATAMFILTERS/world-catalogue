@@ -12,6 +12,18 @@ interface Props {
 
 const BASE_URL = 'https://elimfilters.com';
 
+const visuallyHiddenHeading = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+} as const;
+
 function resolveTechnology(slug: string): CatalogueItem | undefined {
   const catalogueItem = getItemBySlug('technologies', slug);
   const canonical = getCanonicalTechnology(slug);
@@ -187,8 +199,9 @@ export default function TechnologyPage({ params }: Props) {
     </>
   );
 
+  const semanticHeading = <h1 style={visuallyHiddenHeading}>{item.title} Proprietary Filtration Technology</h1>;
   const techData = TECH_PAGES[slug];
-  if (techData) return <>{schemas}<TechDetailPage data={techData} /></>;
+  if (techData) return <>{schemas}{semanticHeading}<TechDetailPage data={techData} /></>;
 
-  return <>{schemas}<CategoryPage item={item} category="technologies" /></>;
+  return <>{schemas}{semanticHeading}<CategoryPage item={item} category="technologies" /></>;
 }
