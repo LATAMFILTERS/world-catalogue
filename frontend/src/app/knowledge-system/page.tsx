@@ -6,10 +6,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-center/',
   },
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 export default function LegacyKnowledgeSystemRedirect() {
