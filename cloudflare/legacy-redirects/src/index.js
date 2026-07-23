@@ -41,18 +41,27 @@ const REDIRECTS = new Map([
   ["/knowledge-center/engineering/operator-health/", "/knowledge-center/systems/cabin-air-protection/"],
 ]);
 
+function permanentRedirect(url, destinationPath) {
+  const destination = new URL(destinationPath, url.origin);
+  destination.search = url.search;
+  return Response.redirect(destination.toString(), 301);
+}
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
-    const destinationPath = REDIRECTS.get(url.pathname);
+    const exactDestination = REDIRECTS.get(url.pathname);
 
-    if (!destinationPath) {
-      return fetch(request);
+    if (exactDestination) {
+      return permanentRedirect(url, exactDestination);
     }
 
-    const destination = new URL(destinationPath, url.origin);
-    destination.search = url.search;
+    // Safety net: no legacy /knowledge-system URL is allowed to reach Render
+    // and become a 404. Unknown legacy paths go to the Knowledge Center root.
+    if (url.pathname.startsWith("/knowledge-system/")) {
+      return permanentRedirect(url, "/knowledge-center/");
+    }
 
-    return Response.redirect(destination.toString(), 301);
+    return fetch(request);
   },
 };
