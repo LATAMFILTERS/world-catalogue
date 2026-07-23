@@ -1,9 +1,14 @@
 const DESTINATION = '/knowledge-center/';
 
 export const metadata = {
-  title: 'Redirecting to ELIMFILTERS Knowledge Center',
+  title: 'Legacy Knowledge System Redirect | ELIMFILTERS',
+  description: 'The legacy ELIMFILTERS Knowledge System hub has moved to the current engineering Knowledge Center.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-center/',
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 
