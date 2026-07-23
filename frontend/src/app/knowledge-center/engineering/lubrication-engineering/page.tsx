@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 const DESTINATION = '/knowledge-center/engineering/oil-analysis-methods/';
 
 export const metadata: Metadata = {
-  title: 'Lubrication Engineering and Oil Analysis',
-  description: 'Engineering guidance on lubricant condition, viscosity, oil analysis, varnish formation, and filtration-system reliability.',
+  title: 'Lubrication Engineering Legacy Route',
+  description: 'Legacy route for lubrication engineering. Continue to the current oil-analysis engineering resource.',
   alternates: { canonical: 'https://elimfilters.com/knowledge-center/engineering/oil-analysis-methods/' },
+  robots: { index: false, follow: true },
 };
 
 export default function LubricationEngineeringLegacyPage() {
