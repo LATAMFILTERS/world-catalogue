@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 const REDIRECTS: Record<string, string> = {
   standards: '/knowledge-center/standards/',
   'standards/lube-oil-systems': '/knowledge-center/systems/lubrication-protection/',
@@ -44,6 +46,27 @@ export function generateStaticParams() {
 
 function destinationFor(slug: string) {
   return REDIRECTS[slug] || '/knowledge-center/';
+}
+
+function labelFor(slug: string) {
+  return slug
+    .split('/')
+    .map((part) => part.replace(/-/g, ' '))
+    .join(' — ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata {
+  const slug = params.slug.join('/');
+  const label = labelFor(slug);
+  const destination = destinationFor(slug);
+
+  return {
+    title: `${label} | ELIMFILTERS Knowledge Center`,
+    description: `Legacy ELIMFILTERS Knowledge System route for ${label}. Continue to the current engineering resource in the Knowledge Center.`,
+    alternates: { canonical: `https://elimfilters.com${destination}` },
+    robots: { index: false, follow: true },
+  };
 }
 
 export default function LegacyKnowledgeSystemPathRedirect({ params }: { params: { slug: string[] } }) {
