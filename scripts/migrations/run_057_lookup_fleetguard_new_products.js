@@ -298,21 +298,42 @@ const client = new Client({
 
 (async () => {
   await client.connect();
+  console.log(`Connected. Checking ${CODES.length} codes in 2 batched queries...`);
+
+  const normalized = CODES.map(c => c.replace(/[^A-Za-z0-9]/g, '').toUpperCase());
+
+  const byNormCode = new Map();
+  console.log('Query 1/2: scanning oem_codes/competitor_codes...');
+  const { rows: refRows } = await client.query(
+    `SELECT UPPER(REGEXP_REPLACE(ref->>'code','[^A-Za-z0-9]','','g')) AS norm_code, sku, filter_type, duty
+       FROM elimfilters_catalog, jsonb_array_elements(oem_codes||competitor_codes) ref
+      WHERE UPPER(REGEXP_REPLACE(ref->>'code','[^A-Za-z0-9]','','g')) = ANY($1::text[])`,
+    [normalized]
+  );
+  console.log(`  -> ${refRows.length} raw matches`);
+  for (const r of refRows) {
+    if (!byNormCode.has(r.norm_code)) byNormCode.set(r.norm_code, []);
+    byNormCode.get(r.norm_code).push(r);
+  }
+
+  console.log('Query 2/2: checking codigo_base...');
+  const { rows: cbRows } = await client.query(
+    `SELECT codigo_base, sku, filter_type, duty FROM elimfilters_catalog WHERE codigo_base = ANY($1::text[])`,
+    [CODES]
+  );
+  console.log(`  -> ${cbRows.length} raw matches`);
+  const byRawCode = new Map();
+  for (const r of cbRows) {
+    if (!byRawCode.has(r.codigo_base)) byRawCode.set(r.codigo_base, []);
+    byRawCode.get(r.codigo_base).push(r);
+  }
+
   const found = [];
   const notFound = [];
-
-  for (const code of CODES) {
-    const normalized = code.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
-    const { rows } = await client.query(
-      `SELECT sku, filter_type, duty FROM elimfilters_catalog, jsonb_array_elements(oem_codes||competitor_codes) ref
-        WHERE UPPER(REGEXP_REPLACE(ref->>'code','[^A-Za-z0-9]','','g')) = $1
-        UNION
-       SELECT sku, filter_type, duty FROM elimfilters_catalog WHERE codigo_base = $2
-       LIMIT 3`,
-      [normalized, code]
-    );
-    if (rows.length) found.push({ code, matches: rows });
-    else notFound.push(code);
+  for (let i = 0; i < CODES.length; i++) {
+    const matches = [...(byNormCode.get(normalized[i]) || []), ...(byRawCode.get(CODES[i]) || [])];
+    if (matches.length) found.push({ code: CODES[i], matches });
+    else notFound.push(CODES[i]);
   }
 
   console.log(`\n${found.length}/${CODES.length} already in catalog:`);
