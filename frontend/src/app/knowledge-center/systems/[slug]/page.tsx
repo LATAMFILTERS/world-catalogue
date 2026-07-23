@@ -10,9 +10,17 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const system = KC_SYSTEMS.find((s) => s.slug === params.slug);
   if (!system) return {};
+
+  const url = `https://elimfilters.com/knowledge-center/systems/${params.slug}`;
   return {
-    alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/systems/${params.slug}`,
+    title: `${system.title} System`,
+    description: system.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${system.title} System | ELIMFILTERS`,
+      description: system.description,
+      url,
+      type: 'article',
     },
   };
 }
