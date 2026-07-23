@@ -69,7 +69,7 @@
             "AGRICULTURE"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
+        "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
       }
     },
     {
@@ -119,7 +119,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
       }
     },
     {
@@ -179,7 +179,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+        "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
       }
     }
   ],

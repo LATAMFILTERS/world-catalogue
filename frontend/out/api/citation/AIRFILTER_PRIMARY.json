@@ -50,7 +50,7 @@
       "AIR_INTAKE_PROTECTION"
     ]
   },
-  "vault_path": "elimfilters-vault\\08-product-families\\AIRFILTER_PRIMARY.md",
+  "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md",
   "_links": {
     "self": "/api/citation/AIRFILTER_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",

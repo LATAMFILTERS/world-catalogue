@@ -12,7 +12,7 @@ export const STATIC_CRAWL_ROUTES = [
   '/industries',
   '/knowledge-center',
   '/knowledge-center/standards',
-  '/knowledge-center/contamination',
+  '/engineering',
   '/about',
   '/contact',
 ] as const;

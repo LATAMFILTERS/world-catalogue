@@ -28,7 +28,7 @@
       "DIN_71220"
     ]
   },
-  "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\CABIN.md",
+  "vault_path": "elimfilters-vault/03-systems/protection-domain/CABIN.md",
   "_links": {
     "self": "/api/citation/CABIN.json",
     "type_index": "/api/citation/type/protection-domain.json",
