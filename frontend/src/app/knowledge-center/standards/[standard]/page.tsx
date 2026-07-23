@@ -23,12 +23,13 @@ export async function generateMetadata({ params }: { params: { standard: string 
   const std = KC_STANDARDS.find((s) => s.slug === resolvedSlug);
   if (!std) return {};
 
-  const canonicalSlug = std.slug;
-  const url = `https://elimfilters.com/knowledge-center/standards/${canonicalSlug}`;
+  const isAlias = resolvedSlug !== params.standard;
+  const url = `https://elimfilters.com/knowledge-center/standards/${resolvedSlug}`;
   return {
-    title: `${std.code}: ${std.title}`,
-    description: std.metaDescription,
+    title: isAlias ? `${params.standard.toUpperCase()} Legacy Standard` : `${std.code}: ${std.title}`,
+    description: isAlias ? `Legacy standards route. Continue to the current ${std.code} ELIMFILTERS reference.` : std.metaDescription,
     alternates: { canonical: url },
+    robots: isAlias ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${std.code}: ${std.title} | ELIMFILTERS`,
       description: std.metaDescription,
