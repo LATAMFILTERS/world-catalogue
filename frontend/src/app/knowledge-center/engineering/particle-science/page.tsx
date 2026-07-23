@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 const DESTINATION = '/knowledge-center/engineering/contamination-control/';
 
 export const metadata: Metadata = {
-  title: 'Particle Science and Contamination Control',
-  description: 'Engineering guidance on particle contamination, wear mechanisms, cleanliness control, and filtration performance.',
+  title: 'Particle Science Legacy Route',
+  description: 'Legacy route for particle-science guidance. Continue to the current contamination-control engineering resource.',
   alternates: { canonical: 'https://elimfilters.com/knowledge-center/engineering/contamination-control/' },
+  robots: { index: false, follow: true },
 };
 
 export default function ParticleScienceLegacyPage() {
