@@ -10,9 +10,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { topic: string } }): Promise<Metadata> {
   const article = ENGINEERING_ARTICLES.find((a) => a.slug === params.topic);
   if (!article) return {};
+
+  const url = `https://elimfilters.com/knowledge-center/engineering/${params.topic}`;
   return {
-    alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/engineering/${params.topic}`,
+    title: article.title,
+    description: article.metaDescription,
+    keywords: article.keywords,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${article.title} | ELIMFILTERS`,
+      description: article.metaDescription,
+      url,
+      type: 'article',
     },
   };
 }
