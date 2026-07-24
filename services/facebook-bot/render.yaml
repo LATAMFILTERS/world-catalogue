@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: elimfilters-facebook-bot
+    runtime: node
+    rootDir: services/facebook-bot
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
+      - key: NODE_ENV
+        value: production
+      - key: DRY_RUN
+        value: "true"
+      - key: META_APP_SECRET
+        sync: false
+      - key: META_VERIFY_TOKEN
+        sync: false
+      - key: META_PAGE_ACCESS_TOKEN
+        sync: false
+      - key: META_PAGE_ID
+        sync: false
+      - key: META_GRAPH_VERSION
+        value: v23.0
+      - key: KNOWLEDGE_BASE_URL
+        sync: false
+      - key: KNOWLEDGE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: REQUEST_TIMEOUT_MS
+        value: "15000"
+      - key: MAX_REPLY_LENGTH
+        value: "800"
