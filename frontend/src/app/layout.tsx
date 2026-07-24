@@ -18,7 +18,7 @@ import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
 import Analytics from '@/components/Analytics';
 import ConsentBanner from '@/components/ConsentBanner';
-import ChatBot from '@/components/ui/ChatBot';
+import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
 import AggregateRatingSchema from '@/components/AggregateRatingSchema';
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileInternalLayoutFix />
           <Analytics />
           <ConsentBanner />
-          <ChatBot />
+          <ChatBotRouteGuard />
         </ClientProviders>
       </body>
     </html>
