@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -127,10 +127,10 @@ export default function DistributorApplication() {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '0.95rem 1rem',
-    background: 'rgba(255,255,255,0.045)',
-    border: '1px solid rgba(255,255,255,0.14)',
+    background: 'rgba(255,255,255,0.085)',
+    border: '1px solid rgba(255,255,255,0.22)',
     borderRadius: 0,
-    color: 'rgba(255,255,255,0.9)',
+    color: 'rgba(255,255,255,0.95)',
     fontFamily: 'Barlow, Arial, sans-serif',
     fontSize: '0.95rem',
     boxSizing: 'border-box',
@@ -142,24 +142,24 @@ export default function DistributorApplication() {
     fontSize: '0.72rem',
     fontWeight: 800,
     marginBottom: '0.55rem',
-    color: 'rgba(255,255,255,0.58)',
+    color: 'rgba(255,255,255,0.78)',
     fontFamily: 'Chakra Petch, Arial Narrow, monospace',
     letterSpacing: '0.18em',
     textTransform: 'uppercase',
   };
 
   const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.65)';
-    e.currentTarget.style.background = 'rgba(255,255,255,0.075)';
+    e.currentTarget.style.borderColor = 'rgba(255,241,45,0.85)';
+    e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
   };
 
   const onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
-    e.currentTarget.style.background = 'rgba(255,255,255,0.045)';
+    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)';
+    e.currentTarget.style.background = 'rgba(255,255,255,0.085)';
   };
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'Barlow, Arial, sans-serif', overflowX: 'hidden' }}>
+    <main style={{ background: '#050811', color: '#fff', minHeight: '100vh', fontFamily: 'Barlow, Arial, sans-serif', overflowX: 'hidden' }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService) }} />
@@ -172,10 +172,10 @@ export default function DistributorApplication() {
           top: '1rem',
           right: '1rem',
           zIndex: 9999,
-          border: '1px solid rgba(255,241,45,0.45)',
+          border: '1px solid rgba(255,241,45,0.65)',
           padding: '0.55rem 1rem',
           color: '#FFF12D',
-          background: 'rgba(0,0,0,0.88)',
+          background: 'rgba(5,8,17,0.92)',
           textDecoration: 'none',
           fontFamily: 'Chakra Petch, Arial Narrow, monospace',
           fontWeight: 700,
@@ -192,8 +192,8 @@ export default function DistributorApplication() {
           display: 'flex',
           alignItems: 'center',
           background:
-            'radial-gradient(circle at top, rgba(255,241,45,0.26), transparent 34%), linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 36%, rgba(255,241,45,0.08) 100%)',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
+            'radial-gradient(circle at top, rgba(255,241,45,0.42), transparent 45%), linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 40%, rgba(56,189,248,0.15) 100%)',
+          borderBottom: '1px solid rgba(255,255,255,0.15)',
           padding: '6rem clamp(1.25rem,5vw,2rem) 4rem',
         }}
       >
