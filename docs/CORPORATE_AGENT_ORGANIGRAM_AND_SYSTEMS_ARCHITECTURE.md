@@ -1,86 +1,63 @@
-# ELIMFILTERS® — Organigramas de Agentes IA y Arquitectura Operativa Sincronizada
-**Versión**: 1.0  
+# ELIMFILTERS® — Organigrama de Agentes IA y Protocolo Operativo-Financiero Sincronizado
+**Versión**: 2.0  
 **Fecha de Emisión**: Julio 2026  
-**Estatus**: Especificación Oficial de Organigrama de Agentes, Optimización Logística y Flujo Sincronizado  
+**Estatus**: Política Oficial de Flujo Financiero, Producción MTO, Reportes Semanales y Entrega FOB  
 
 ---
 
 ## 1. Principio de Operación Sincronizada (Sin Silos)
 
-En **ELIMFILTERS®**, ningún Agente de IA trabaja de forma aislada. La infraestructura opera como una **Red Orquestada de Agentes Especializados (Multi-Agent Swarm System)** conectada en tiempo real a la base de datos relacional PostgreSQL.
-
-Cada agente cumple un rol de departamento dentro del organigrama corporativo y pasa el contexto del cliente y la transacción al siguiente agente de la cadena sin perder información.
+En **ELIMFILTERS®**, la red de Agentes de IA opera de forma 100% sincronizada. La responsabilidad corporativa de la empresa es **entregar los productos con la calidad ofrecida y en el puerto de entrega (FOB puerto de origen)**.
 
 ---
 
-## 2. Organigrama Corporativo de Agentes de IA
+## 2. Flujo Operativo-Financiero Paso a Paso (30% Anticipo / 70% B/L Original)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│                    DIRECCIÓN GENERAL: VICTOR ABREU (CEO)                                │
-│          Aprobaciones Ejecutivas Bicanal (Telegram + Email vabreu@elimfilters.com)      │
-└───────────────────────────────────────────┬─────────────────────────────────────────────┘
-                                            │
-                                            ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│              ORQUESTADOR GENERAL: AGENTE CONTROLADOR OPERATIVO (KLEO ENGINE)            │
-└───────┬───────────────────┬───────────────────┬───────────────────┬─────────────────────┘
-        │                   │                   │                   │
-        ▼                   ▼                   ▼                   ▼
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│ AGENTE        │   │ AGENTE        │   │ AGENTE        │   │ AGENTE        │
-│ COMERCIAL &   │   │ TÉCNICO &     │   │ OPTIMIZACIÓN  │   │ FÁBRICA &     │
-│ ONBOARDING    │   │ METROLOGÍA    │   │ LOGÍSTICA &   │   │ PROCESO MTO   │
-│ distribution_ │   │ support@      │   │ CONTENEDORES  │   │ supplychain@  │
-│ network@      │   │               │   │ supplychain@  │   │               │
-└───────┬───────┘   └───────┬───────┘   └───────┬───────┘   └───────┬───────┘
-        │                   │                   │                   │
-        └───────────────────┴─────────┬─────────┴───────────────────┘
-                                      │
-                                      ▼
-                        ┌───────────────────────────┐
-                        │ AGENTE DE FINANZAS &      │
-                        │ FACTURACIÓN               │
-                        │ finance@                  │
-                        └───────────────────────────┘
+│              PROTOCOLO OFICIAL DE FLUJO COMERCIAL, FINANCIERO Y FÁBRICA                 │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+
+  PASO 1: CONFIGURACIÓN DEL PEDIDO & CUBICAJE FCL (100%)
+  • Agente de Optimización Logística asesora al cliente hasta optimizar el contenedor (FCL).
+  • Transmite el pedido completo al Agente de Finanzas (finance@elimfilters.com).
+
+  PASO 2: GESTIÓN DE PAGO DEL 30% INICIAL & CARTA DE COMPROMISO
+  • Agente de Finanzas se comunica con el cliente y entrega instrucciones de pago del 30% inicial.
+  • Finanzas elabora la Carta de Compromiso especificando el pago del 70% restante antes de la entrega del B/L original en puerto de origen.
+
+  PASO 3: CONFIRMACIÓN BANCARIA Y AUTORIZACIÓN A FÁBRICA
+  • Finanzas confirma el dinero del 30% en banco.
+  • Finanzas autoriza al Agente de Cadena de Suministros (supplychain@elimfilters.com) a elaborar la Orden de Fabricación MTO.
+
+  PASO 4: INFORMES SEMANALES DE PROGRESO DE PRODUCCIÓN
+  • Cadena de Suministros realiza el seguimiento con las plantas y genera un Informe Semanal del Progreso de cada orden.
+  • Agente Comercial (distribution_network@elimfilters.com) transmite el informe semanal al cliente.
+
+  PASO 5: NOTIFICACIÓN DE MERCANCÍA LISTA & COBRO DEL 70% RESTANTE
+  • Al estar lista la producción en planta/puerto, se notifica al cliente para realizar el pago del 70% restante.
+
+  PASO 6: AUTORIZACIÓN FINAL DE ENTREGA & PAGO 100% A PLANTA
+  • Finanzas paga el 100% a la Planta y confirma la recepción del saldo en banco.
+  • Finanzas autoriza la liberación de la mercancía y la entrega del Bill of Lading (B/L) original.
 ```
 
 ---
 
-## 3. Roles y Funciones de los Agentes Especializados
+## 3. Matriz de Correos y Roles de los Agentes
 
-### 1. Agente Comercial & Onboarding (`distribution_network@elimfilters.com`)
-* **Función**: Primer contacto B2B en redes sociales, WhatsApp y web.
-* **Misión**: Clasifica perfil B2B vs. B2C. Redirige a los interesados en distribución a `https://elimfilters.com/distributor-application`. Precalifica al prospecto en tiempo real.
-
-### 2. Agente Técnico & Metrología (`support@elimfilters.com`)
-* **Función**: Consultor de ingeniería de filtración.
-* **Misión**: Valida compatibilidades de maquinaria pesada (Caterpillar, Komatsu, Volvo), normativas ISO 4406, códigos Beta y especificaciones de Kits DURATECH™.
-
-### 3. Agente de Optimización Logística & Cubicaje (`supplychain@elimfilters.com`) — *Ejemplo de Cubicaje 100% FCL*
-* **Función**: Asesor de empaque, estibado y llenado óptimo de contenedores en tiempo real.
-* **Algoritmo de Cálculo**:
-  * Contenedor 20ft Estándar: **33.2 m³** / Capacidad máxima de carga: **21,800 kg** (aprox. 10–11 estibas master).
-  * Contenedor 40ft High Cube (HC): **76.4 m³** / Capacidad máxima de carga: **26,500 kg** (aprox. 23–24 estibas master).
-* **Flujo Interactivo en Tiempo Real**:
-  1. Conforme el comprador selecciona sus Kits de Mantenimiento DURATECH™, el Agente calcula en segundo plano el volumen cúbico y peso total.
-  2. **Interacción con el Cliente**:
-     > *"Estimado Ing. Mendoza: Su orden actual de Kits DURATECH™ ocupa el **84.2% del volumen de un contenedor de 20ft** (27.9 m³ utilizados / 5.3 m³ disponibles).*  
-     > *Para aprovechar su flete marítimo al 100% (FCL - Full Container Load), le sugerimos agregar 110 Kits de Filtro de Aire EA10695 o 85 Kits Hidráulicos EH2014, completando exactamente el 100% de la capacidad sin aumentar el costo de transporte marítimo."*
-
-### 4. Agente de Fábrica & Proceso MTO (`supplychain@elimfilters.com`)
-* **Función**: Coordinador de manufactura Make-to-Order.
-* **Misión**: Una vez recibida la aprobación `/approve <id>` de Victor Abreu y el 50% de anticipo, emite la Orden de Trabajo (Work Order) a las plantas de producción y monitorea el estado del ensamble.
-
-### 5. Agente de Finanzas & Facturación (`finance@elimfilters.com`)
-* **Función**: Gestión monetaria y despacho de documentos de embarque.
-* **Misión**: Emite facturas pro-forma, valida depósitos del 50% de anticipo y procesa la cobranza final contra presentación del Bill of Lading (B/L).
+| Agente / Departamento | Correo Oficial | Responsabilidad Específica en el Flujo |
+|---|---|---|
+| **Agente Comercial & Ventas** | `distribution_network@elimfilters.com` | Onboarding B2B, precalificación y transmisión del **Informe Semanal de Progreso** al cliente. |
+| **Agente de Optimización Logística** | `supplychain@elimfilters.com` | Cálculo de cubicaje FCL (20ft / 40ft HC) e integración de Kits DURATECH™. |
+| **Agente de Finanzas & Cobranza** | `finance@elimfilters.com` | Cobro del **30% inicial**, emisión de **Carta de Compromiso (70% vs B/L original)**, confirmación bancaria y pago 100% a planta. |
+| **Agente de Cadena de Suministros** | `supplychain@elimfilters.com` | Elaboración de la Orden de Fabricación MTO, seguimiento en fábrica y emisión del **Informe Semanal de Progreso**. |
+| **Dirección General (CEO Office)** | `vabreu@elimfilters.com` | Supervisión bicanal y aprobación ejecutiva `/approve <id>` (Telegram + Email). |
 
 ---
 
-## 4. Trazabilidad Inmutable y Registro de Auditoría
+## 4. Compromiso de Calidad y Entrega (FOB Puerto de Origen)
 
-Toda la interacción entre agentes, datos volumétricos del contenedor, precalificación y aprobación del CEO queda asentada de forma inmutable en PostgreSQL en las siguientes tablas transaccionales:
-* `b2b_distributor_leads` (Datos de precalificación comercial)
-* `container_cubic_allocations` (Cálculo volumétrico y empaque del contenedor)
-* `authorization_audit_log` (Registro de aprobación por Victor Abreu vía Telegram o Email)
+Nuestra responsabilidad corporativa inviolable es:
+1. **Calidad Garantizada**: Entrega de productos producidos bajo control metrológico (ISO 4406 / ISO 16889) con vulcanización y empaque de fábrica sin resequedad.
+2. **Entrega en Puerto de Origen**: Cumplimiento del despacho aduanero de exportación y entrega a bordo del buque (Incoterm FOB) en el puerto de origen acordado.
