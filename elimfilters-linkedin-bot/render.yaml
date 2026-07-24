@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: elimfilters-linkedin-bot
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: LINKEDIN_CLIENT_ID
+        value: "866h35ln0x9989"
+      - key: LINKEDIN_CLIENT_SECRET
+        sync: false
+      - key: LINKEDIN_ORGANIZATION_ID
+        value: "133064152"
+      - key: LINKEDIN_VERIFY_TOKEN
+        value: elimfilters_linkedin_webhook_verify_2026
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: DRY_RUN
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
