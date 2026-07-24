@@ -1,13 +1,13 @@
 # ELIMFILTERS® — Matriz de Comunicaciones y Canales de Correo Corporativos
-**Versión**: 1.1  
+**Versión**: 1.2  
 **Fecha de Emisión**: Julio 2026  
-**Estatus**: Política Oficial de Comunicaciones, Logística de Fábrica y Canales Digitales  
+**Estatus**: Política Oficial de Comunicaciones, Logística de Fábrica y Autorización Ejecutiva (Human-in-the-Loop)  
 
 ---
 
 ## 1. Propósito y Alcance
 
-Este documento establece la estructura canónica de canales de correo electrónico corporativo de **ELIMFILTERS®**. Define la responsabilidad, el tipo de comunicación y las reglas de enrutamiento automatizado para garantizar el aislamiento entre clientes finales (B2C), aliados comerciales (B2B), consultas técnicas, interacciones financieras y la **coordinación automatizada por IA entre Plantas de Manufactura y Logística**.
+Este documento establece la estructura canónica de canales de correo electrónico corporativo de **ELIMFILTERS®**. Define la responsabilidad, el tipo de comunicación, el enrutamiento automatizado por Agentes de IA y el **Punto de Control de Autorización Ejecutiva Final por parte de Victor Abreu (CEO)**.
 
 ---
 
@@ -24,32 +24,34 @@ Este documento establece la estructura canónica de canales de correo electróni
 
 ---
 
-## 3. Flujo Automatizado de Agentes de IA en `supplychain@elimfilters.com`
+## 3. Flujo Automatizado con Autorización Ejecutiva Final (Victor Abreu - CEO)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│             FLUJO DE AGENTES IA: FACTORY & LOGISTICS ENGINE                 │
+│          FLUJO AUTOMATIZADO DE AGENTES IA + AUTORIZACIÓN DE VICTOR ABREU    │
 └─────────────────────────────────────────────────────────────────────────────┘
 
-  1. CONFIRMACIÓN DE ANTICIPO (50%)
-     └─ El sistema detecta el pago y activa al Agente de Suministro.
-                                  │
-                                  ▼
-  2. EMISIÓN DE ORDEN DE FABRICACIÓN (WORK ORDER)
-     └─ Agente IA envía especificaciones técnicas a la Planta desde supplychain@elimfilters.com.
-                                  │
-                                  ▼
-  3. MONITOREO DE PRODUCCIÓN (ROLLING STATUS)
-     └─ La Planta responde con actualizaciones de ensamble. El Agente IA actualiza PostgreSQL.
-                                  │
-                                  ▼
-  4. RECEPCIÓN DE DOCUMENTOS DE EMBARQUE (B/L & PACKING LIST)
-     └─ Naviera envía B/L a supplychain@elimfilters.com. Agente IA extrae datos y notifica a finance@elimfilters.com.
+  1. CAPTURA Y PRECALIFICACIÓN AUTOMÁTICA POR AGENTES DE IA
+     └─ Bots procesan la solicitud, enriquecen datos y preparan el expediente en PostgreSQL.
+
+  2. ENVÍO DE RESUMEN EJECUTIVO A TELEGRAM (VÍA KLEO BOT)
+     └─ Victor Abreu recibe una notificación de 1 página en Telegram con los datos clave:
+        • Empresa, País, Contacto, Volumen Estimado, Score de Precalificación.
+
+  3. APORTACIÓN O RECHAZO EN 1 CLIC (/approve <id> o /reject <id>)
+     └─ Victor Abreu autoriza desde su celular enviando /approve <id>.
+
+  4. EJECUCIÓN AUTOMÁTICA POST-APROBACIÓN
+     └─ Al recibir la aprobación, la IA dispara:
+        a) Correo oficial de exclusividad territorial desde distribution_network@elimfilters.com.
+        b) Orden de Trabajo a Fábrica desde supplychain@elimfilters.com.
+        c) Instrucción de cobro del 50% de anticipo desde finance@elimfilters.com.
 ```
 
 ---
 
 ## 4. Gobernanza y Seguridad de Datos
 
-* **Aislamiento B2B / B2C**: Las cuentas `supplychain@elimfilters.com`, `distribution_network@elimfilters.com`, `b2b@elimfilters.com` y `finance@elimfilters.com` son de carácter confidencial y no deben exponerse como canales de soporte minorista.
-* **Cumplimiento de Privacidad**: Toda dirección de correo capturada por los bots se almacena en la tabla transaccional `b2b_distributor_leads` de PostgreSQL con registro de origen.
+* **Punto de Control Unico (Human-in-the-Loop)**: Ningún contrato de exclusividad, orden de fábrica o compromiso comercial irreversible se emite sin la orden explícita de Victor Abreu vía Telegram.
+* **Aislamiento B2B / B2C**: Las cuentas `supplychain@elimfilters.com`, `distribution_network@elimfilters.com`, `b2b@elimfilters.com` y `finance@elimfilters.com` son de carácter confidencial y no se exponen a atención minorista.
+* **Cumplimiento de Privacidad**: Toda dirección de correo capturada por los bots se almacena en la tabla transaccional `b2b_distributor_leads` de PostgreSQL.
