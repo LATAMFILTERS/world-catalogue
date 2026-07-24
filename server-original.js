@@ -366,12 +366,24 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
 
   const esc = _escHtml;
   try {
+    // 1. Record lead into PostgreSQL b2b_distributor_leads table
+    try {
+      await pool.query(
+        `INSERT INTO b2b_distributor_leads (source_channel, company_name, contact_name, phone_or_email, country, city, estimated_volume, notes)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+        ['web', companyName, contactName, `${email} / ${phone || ''}`, country, state || null, req.body.estimatedVolume || null, message || null]
+      );
+    } catch (dbErr) {
+      console.error('[distributor db insert]', dbErr.message);
+    }
+
     const transporter = nodemailer.createTransport({
       host: 'smtpout.secureserver.net',
       port: 465,
       secure: true,
       auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
     });
+
     await transporter.sendMail({
       from: '"ELIMFILTERS Web" <info@elimfilters.com>',
       to: 'distribution_network@elimfilters.com',
@@ -395,6 +407,7 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
         ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
       `,
     });
+
     res.json({ ok: true });
   } catch (err) {
     console.error('[distributor]', err.code || 'SMTP error');

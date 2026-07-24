@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Distribuidores Autorizados B2B | ELIMFILTERS®</title>
+  <meta name="description" content="Súmese a la red oficial de distribuidores e importadores de ELIMFILTERS® en Latinoamérica. Exclusividad territorial, kits DURATECH™ y márgenes B2B protegidos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070a12;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(56, 189, 248, 0.15);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 70%),
+                        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+      pointer-events: none;
+      z-index: -1;
+    }
+    header {
+      padding: 24px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    .logo span { color: var(--accent); }
+    .badge {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .hero {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+    .form-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full { grid-column: span 2; }
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    input, select, textarea {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    button[type="submit"] {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
+      margin-top: 10px;
+    }
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(2, 132, 199, 0.6);
+    }
+    .success-box {
+      display: none;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <header>
+    <div class="logo">ELIMFILTERS<span>®</span></div>
+    <div class="badge">B2B Partner Portal</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Programa de Distribuidores e Importadores Exclusivos</h1>
+      <p>Súmese a la red oficial de comercialización industrial en Latinoamérica. Exclusividad de territorio, kits de mantenimiento Make-to-Order y márgenes protegidos.</p>
+    </section>
+
+    <div class="form-container">
+      <form id="b2b-form" onsubmit="handleB2BSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="companyName">Nombre de la Empresa *</label>
+            <input type="text" id="companyName" required placeholder="Ej: Importadora Industrial S.A.">
+          </div>
+          <div class="form-group">
+            <label for="contactName">Nombre del Contacto *</label>
+            <input type="text" id="contactName" required placeholder="Ej: Ing. Carlos Mendoza">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Corporativo *</label>
+            <input type="email" id="email" required placeholder="carlos@empresa.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono / WhatsApp *</label>
+            <input type="tel" id="phone" required placeholder="+57 300 123 4567">
+          </div>
+          <div class="form-group">
+            <label for="country">País de Operación *</label>
+            <input type="text" id="country" required placeholder="Ej: Colombia, México, Venezuela">
+          </div>
+          <div class="form-group">
+            <label for="estimatedVolume">Volumen Estimado de Compra *</label>
+            <select id="estimatedVolume" required>
+              <option value="">Seleccione una escala...</option>
+              <option value="Lote Inicial (50-200 unidades)">Lote Inicial (50-200 unidades)</option>
+              <option value="Contenedor 20ft">Contenedor 20ft (Volumen Mediano)</option>
+              <option value="Contenedor 40ft">Contenedor 40ft (Volumen Mayorista)</option>
+            </select>
+          </div>
+          <button type="submit" id="btn-submit">Enviar Solicitud de Territorio &rarr;</button>
+        </div>
+      </form>
+      <div class="success-box" id="success-message">
+        <h3>✅ Solicitud de Precalificación Recibida</h3>
+        <p>Hemos procesado su precalificación en tiempo real. En breve recibirá el <strong>Dossier Comercial Oficial B2B</strong> en su correo electrónico.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function handleB2BSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit');
+      btn.innerText = 'Procesando con IA...';
+      btn.disabled = true;
+
+      const payload = {
+        companyName: document.getElementById('companyName').value,
+        contactName: document.getElementById('contactName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        country: document.getElementById('country').value,
+        estimatedVolume: document.getElementById('estimatedVolume').value
+      };
+
+      try {
+        const res = await fetch('/api/distributor', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        document.getElementById('b2b-form').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+      } catch (err) {
+        alert('Error al enviar la solicitud. Intente nuevamente.');
+        btn.innerText = 'Enviar Solicitud de Territorio →';
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
