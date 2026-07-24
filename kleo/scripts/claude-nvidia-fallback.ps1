@@ -14,13 +14,13 @@ $backend = if ($env:KLEO_CLAUDE_BACKEND_PATH) {
 $primaryModel = if ($env:KLEO_PRIMARY_MODEL) {
     $env:KLEO_PRIMARY_MODEL
 } else {
-    "z-ai/glm-5.2"
+    "meta/llama-3.3-70b-instruct"
 }
 
 $fallbackModel = if ($env:KLEO_FALLBACK_MODEL) {
     $env:KLEO_FALLBACK_MODEL
 } else {
-    "moonshotai/kimi-k2.6"
+    "nvidia/nemotron-4-340b-instruct"
 }
 
 function Invoke-ClaudeModel {
