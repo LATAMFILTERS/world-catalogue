@@ -1,0 +1,487 @@
+{
+  "faq_001": {
+    "pregunta": "¿Qué significa realmente el código ISO 4406 16/14/11 en mi aceite de motor?",
+    "respuesta": "Indica rangos de particulas por ml: ≥16µm: 1,000–2,000; ≥14µm: 320–640; ≥11µm: 2,500–5,000. No es un límite duro — es un objetivo de control. Si se supera consistentemente, aumenta riesgo de desgaste abrasivo en cojinetes y superfases deslizantes.",
+    "ofre_profundicar": "Tengo un caso real de flota de camiones donde superar 17/15/12 aceleró el desgaste de cojinetes — ¿quieres ver el análisis de aceite tendencial?"
+  },
+  "faq_002": {
+    "pregunta": "¿Cómo sé qué objetivo ISO 4406 debo usar para mi sistema hidráulico de válvulas servo?",
+    "respuesta": "Para válvulas servo o proporcionales, se recomienda menudo 14/12/10 o 15/13/11, debido a la sensibilidad al desgaste de tres cuerpos en estrechos orificios de control. Depende del tipo de válvula, presión de operación y material del sello. No se usa un único código para todo hidráulico.",
+    "ofre_profundicar": "Puedo mostrarte las recomendaciones de fabricantes como Bosch Rexroth y Parker para distintos tipos de válvula — ¿te sirve?"
+  },
+  "faq_003": {
+    "pregunta": "¿ISO 16889 Beta Ratio 200 @ 4µm significa que filtra el 99.9% de todas las particulas?",
+    "respuesta": "No. βx=200 @ 4µm = 99.5% de eficiencia para particulas de 4µm y mayores. No dice nada sobre eficiencia para 2µm o 1µm. Para protección de inyectores HPCR o válvulas servo, se necesita eficiencia alta en rango 2–5µm — por eso se revisa βx @ 4µm, 6µm y 10µm juntos.",
+    "ofre_profundicar": "Tengo una gráfica de eficiencia vs. tamaño de partícula para NANOFORCE — ¿quieres verla?"
+  },
+  "faq_004": {
+    "pregunta": "¿El agua en diésel se mide en ppm — cuánto es demasiado antes de dañar inyectores?",
+    "respuesta": "Más de 50 ppm de agua libre aumenta riesgo de corrosión por ácido sulfúrico y crecimiento microbiano. Más de 100 ppm puede causar folleado de filtro, pérdida de poder lubricante y daño a bombas de inyección por cavitación. Se mide con Karl Fischer, no con reacciones de cloro.",
+    "ofre_profundicar": "Tengo datos de flotas peseras donde mantener <40 ppm agua redujo fallos de inyectores en un 70% con HYDROCORE™ — ¿quieres ver los números?"
+  },
+  "faq_005": {
+    "pregunta": "¿Qué significa la capacidad de suciedad de un filtro (ej. 80g) y cómo se relaciona con el punto de bypass?",
+    "respuesta": "Es la cantidad de particulas retenidas (en gramos) antes de que la caída de presión alcance el valor de bypass especificado (ej. 25 psi). No es vida fija — depende del ingreso de particulas por hora (g/h). A 2g/h de ingreso, 80g da ~400h de vida. A 5g/h, solo ~160h.",
+    "ofre_profundicar": "Puedo calcularte la vida estimada si me das tu ingreso aproximado de particulas (según ambiente: mina, carretera, puerto, etc.) — ¿quieres intentar?"
+  },
+  "faq_006": {
+    "pregunta": "¿Cómo afecta la presión de bypass al rendimiento del filtro y al sistema?",
+    "respuesta": "Una presión de bypass demasiado baja puede causar activación prematura y filtrado insuficiente. Una presión demasiado alta puede permitir que partículas dañinas pasen antes de que el medio se obstruya. Debe estar calibrada al sistema: válvulas sensibles requieren baja presión de tolerancia, sistemas robustos pueden usar valores más altos.",
+    "ofre_profundicar": "Tengo un rango típico de presiones de bypass por tipo de sistema (hidráulico, lube, combustible) — ¿quieres verlo?"
+  },
+  "faq_007": {
+    "pregunta": "¿Qué medios filtrantes son más resistentes al agua en diésel?",
+    "respuesta": "Medios de poliéster y nanofibra (como los usados en HYDROCORE™ y SYNTEPORE™) son más hidrofóbicos y resistentes al debilitamiento por agua que la celulosa estándar. El algodón y la pulpa de madera pierden eficiencia rápidamente en presencia de agua libre.",
+    "ofre_profundicar": "Puedo mostrarte resultados de prueba de hidrofobicidad para distintos medios — ¿te interesa?"
+  },
+  "faq_008": {
+    "pregunta": "¿Cómo sé si mi filtro está alcanzando su vida útil sin análisis de aceite?",
+    "respuesta": "No se puede saber con certeza. Señales como pérdida de potencia, aumento de temperatura o ruido pueden indicar problemas, pero no son específicas de saturación del filtro. El filtro puede estar obstruido sin síntomas claros, o parecer sucio pero aún eficaz. Solo el análisis de aceite tendencial o medición de presión diferencial dan una indicación confiable.",
+    "ofre_profundicar": "Tengo una guía de señales tempranas de saturación vs. otros fallos — ¿quieres que te la envíe?"
+  },
+  "faq_009": {
+    "pregunta": "¿El material del filtro afecta la compatibilidad con biodiésel o combustibles alternativos?",
+    "respuesta": "Sí. Medios de celulosa pueden degradarse o alojar crecimiento microbiano en mezclas de biodiésel >B20. Medios de sintético (poliéster, polipropileno) y nanofibra son más estables. Siempre verifica la compatibilidad química del medio con el tipo de combustible y mezcla que usas.",
+    "ofre_profundicar": "Tengo una tabla de compatibilidad de medios con diesel, biodiésel y mezclas de etanol — ¿quieres verla?"
+  },
+  "faq_010": {
+    "pregunta": "¿Cómo afecta la temperatura de operación al desempeño del filtro?",
+    "respuesta": "A temperaturas muy bajas, algunos medios pueden perder flexibilidad y aumentar la caída de presión. A temperaturas altas (>120°C), ciertos aglutinantes pueden debilitarse y liberar fibras. El rango de operación suele estar especificado por medio — excederlo puede reducir vida útil o causar fallo prematuro.",
+    "ofre_profundicar": "Puedo mostrarte las especificaciones de rango de temperatura para NANOFORCE, HYDROCORE™ y SYNTEPORE™ — ¿te sirve?"
+  },
+  "faq_011": {
+    "pregunta": "¿Qué es el flujo mínimo y por qué es importante al elegir un filtro?",
+    "respuesta": "Es el caudal mínimo que el filtro debe permitir a una caída de presión especificada (ej. 50 lpm @ 25 psi). Si el flujo real del sistema es menor, puede causar cavitación, flujo insuficiente o activación de válvulas de alivio. Un filtro con flujo insuficiente no protege — obstruye.",
+    "ofre_profundicar": "Tengo un rango de flujos mínimos para nuestras tecnologías por aplicación — ¿quieres compararlo con tu sistema?"
+  },
+  "faq_012": {
+    "pregunta": "¿Cómo afecta la orientación de instalación al desempeño del filtro?",
+    "respuesta": "Algunos diseños (como los de flujo hacia afuera o con válvula de drenaje) son sensibles a la orientación. Instalar al revés puede causar bypass inmediato, flujo reduzido o daño al medio. Siempre sigue la flecha de flujo marcada en el cuerpo del filtro.",
+    "ofre_profundicar": "Puedo enviarte un dibujo de instalación correcta para nuestros filtros más comunes — ¿quieres verlo?"
+  },
+  "faq_013": {
+    "pregunta": "¿Cómo sé que el medio filtrante no libera fibras o partículas al aceite?",
+    "respuesta": "Buscamos medios con bajo liberación de fibras (verificado por prueba de carga de particulas post-filtro). Liberación excesiva puede contribuir al conteo de particulas en aceite y dar falso positivo de ingreso externo. Los medios de nanofibra y poliéster tratado suelen tener baja liberación.",
+    "ofre_profundicar": "Tengo resultados de prueba de liberación de fibras para nuestros medios — ¿quieres verlos?"
+  },
+  "faq_014": {
+    "pregunta": "¿Qué papel juega el válvula de alivio (bypass valve) en el filtro?",
+    "respuesta": "Permite que el flujo continúe cuando la caída de presión supera un umbral, evitando falta de lubricación o sobrepresión. Pero si se activa con frecuencia, significa que el medio está obstruido o el flujo es insuficiente para la carga de particulas. No es una falla del filtro — es una señal de condición.",
+    "ofre_profundicar": "Puedo explicarte cómo interpretar la activación frecuente de bypass como indicador de necesidad de cambio — ¿quieres verlo?"
+  },
+  "faq_015": {
+    "pregunta": "¿Cómo afecta la vibración constante al desempeño y vida útil del filtro?",
+    "respuesta": "La vibración puede aflojar sellos, dañar el medio estructuralmente o causar fatiga en plasico y sellos de goma. En ambientes de alta vibración (ej. motores sin montajes elásticos o equipos de impacto), se recomienda revisar sellos y medio con mayor frecuencia.",
+    "ofre_profundicar": "Tengo una lista de críticos de vibración por tipo de equipo — ¿quieres que te la envíe?"
+  },
+  "faq_016": {
+    "pregunta": "¿Cómo afectan los pulsos de presión al medio filtrante con el tiempo?",
+    "respuesta": "Los pulsos repetidos pueden causar fatiga del medio, grietas en capas de nanofibra o deslaminado en medios compuestos. En sistemas de alta presión pulsatoria (ej. sistemas comunes rail o bombas de pistón axial), se valida resistencia a ciclos de presión en laboratorio.",
+    "ofre_profundicar": "Puedo mostrarte resultados de prueba de耐疲劳 (fatiga) para NANOFORCE bajo condiciones de pulsación — ¿quieres verlos?"
+  },
+  "faq_017": {
+    "pregunta": "¿Cómo afecta la suciedad blanda (como hollín o asfalto fundido) al desempeño del filtro?",
+    "respuesta": "Hollín y partículas blandas pueden obstruir medios finos más rápido que particulas duras similarmente calibradas, debido a su tendencia a aglomerarse y retener humedad. Algunos medios están tratados para resistir aglomeración de hollín.",
+    "ofre_profundicar": "Tengo resultados de prueba de retención de hollín para medios sintéticos — ¿quieres verlos?"
+  },
+  "faq_018": {
+    "pregunta": "¿Cómo afecta la carga estática al desempeño del filtro en ambientes secos y polvorientos?",
+    "respuesta": "En ambientes de baja humedad, la carga estática puede hacer que particulas finas se adhieran prematuramente al medio, reduciendo vida útil. Algunos medios incluyen tratamientos antiestáticos para mitigar este efecto.",
+    "ofre_profundicar": "Puedo mostrarte si nuestros medios incluyen tratamiento antiestático — ¿quieres verlo?"
+  },
+  "faq_019": {
+    "pregunta": "¿Cómo afecta la mezcla de aceite y agua (emulsión) al desempeño del filtro?",
+    "respuesta": "El agua emulsificada no se separa fácilmente en medios estándar y puede reducir la eficiencia de retenção de particulas al aumentar la viscosidad efectiva y promover coalescencia dentro del medio. Medios hidrofóbicos tratados tienen mejor desempeño en presencia de emulsión.",
+    "ofre_profundicar": "Tengo datos de desempeño en presencia de emulsión agua-aceite para HYDROCORE™ — ¿quieres verlos?"
+  },
+  "faq_020": {
+    "pregunta": "¿Qué papel juega el desgasificado previo al análisis de aceite?",
+    "respuesta": "El aceite puede contener aire disuelto que interfere con mediciones de viscosidad o conteo de particulas por láser. El desgasificado (calentado bajo vacío) elimina este error y mejora precisión, especialmente en muestras de operación reciente.",
+    "ofre_profundicar": "Puedo explicar el protocolo de desgasificado que usamos en nuestros laboratorio — ¿quieres verlo?"
+  },
+  "faq_021": {
+    "pregunta": "¿Cómo afecta el uso de aditivos en el aceite al medio filtrante?",
+    "respuesta": "Algunos aditivos (como los de zinc o molibdeno) pueden interactuar con ciertos medios a altas temperaturas, aunque es raro. En general, medios modernos son compatibles con paquetes aditivos estándar (ZDDP, detergentes, dispersantes). Siempre verifica compatibilidad si usas paquetes no convencionales.",
+    "ofre_profundicar": "Tengo una tabla de compatibilidad de medios con paquetes aditivos comunes — ¿quieres verla?"
+  },
+  "faq_022": {
+    "pregunta": "¿Cómo afecta la suciedad metálica (como desgaste de eje o caja) al desempeño del filtro?",
+    "respuesta": "Particulas metálicas son indicadores de desgaste interno, pero no obstruyen tanto como la sílice o tierra. Un aumento repentino de Fe, Cr o Ni en aceite suele señalar desgaste de componentes antes de que afecte la vida del filtro.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de desgaste metálico en análisis de aceite — ¿quieres verlo?"
+  },
+  "faq_023": {
+    "pregunta": "¿Cómo sé que mi filtro no está causando una caída de presión excesiva que afecta al flujo del sistema?",
+    "respuesta": "Medimos la presión diferencial en limpio y en operación. Si supera el valor especificado por el OEM (ej. 15 psi) en condiciones normales, puede indicar medio inadequado, flujo insuficiente o obstrucción prematura. Un filtro nunca debería reducir el flujo por debajo del mínimo requerido por el sistema.",
+    "ofre_profundicar": "Puedo mostrarte el rango de caída de presión en limpio para nuestras tecnologías — ¿quieres compararlo con tu especificación OEM?"
+  },
+  "faq_024": {
+    "pregunta": "¿Cómo afecta el tamaño de poro medio al desempeño en diferentes aplicaciones?",
+    "respuesta": "Un tamaño de poro medio bajo (ej. 5µm) retiene más particulas finas pero puede taparse rápido en ambientes de alta carga. Uno alto (ej. 20µm) dura más en polvo pero deja pasar más particulas dañinas a sistemas sensibles. Se elige según criticidad del componente y entorno de particulas.",
+    "ofre_profundicar": "Puedo mostrarte un mapa de tamaño de poro medio vs. aplicación recomendada para nuestras tecnologías — ¿quieres verlo?"
+  },
+  "faq_025": {
+    "pregunta": "¿Cómo afecta la orientación de flujo inverso al medio filtrante?",
+    "respuesta": "Algunos medios (especialmente los de capa única o sin refuerzo) pueden dañarse si el flujo invierte dirección (ej. por válvula de alivio defectuosa). Siempre verifica si el diseño es bidireccional o si requiere un check valve externo.",
+    "ofre_profundicar": "Puedo decirte si NANOFORCE, HYDROCORE™ y SYNTEPORE™ son resistentes a flujo inverso ocasional — ¿quieres verlo?"
+  },
+  "faq_026": {
+    "pregunta": "¿Cómo afecta la presencia de glicol o refrigerante en el aceite al desempeño del filtro?",
+    "respuesta": "El glicol puede formar geles o precipitados que obstruyen medios finos y dañarBombas de engranaje. Siempre se debe investigar la fuente de ingreso (junta de cabeza, sello de tubo) — el filtro solo retiene lo que entra, no evita la causa.",
+    "ofre_profundicar": "Puedo mostrarte los efeitos conhecidos de glicol en aceite y cómo detectarlos en análisis — ¿quieres verlo?"
+  },
+  "faq_027": {
+    "pregunta": "¿Cómo afecta el uso de filtros de repuesto de baja calidad al sistema a largo plazo?",
+    "respuesta": "Filtros con medio inadecuado, mala selladura o estructura débil pueden permitir paso de particulas, causar cavitación por flujo restringido o liberar fibras. El daño no es inmediato — se acumula en desgaste acelerado, pérdida de eficiencia o fallo prematuro de componentes costosos.",
+    "ofre_profundicar": "Tengo un caso de flota donde filtros de tercera parte causaron desgaste prematuro de inyectores — ¿quieres ver el análisis de aceite comparativo?"
+  },
+  "faq_028": {
+    "pregunta": "¿Cómo afecta la variación de temperatura diaria al medio filtrante en tanques de almacenamiento?",
+    "respuesta": "Los ciclos de calentamiento-enfriamiento pueden causar condensación interna en el tanque, lo que aumenta ingreso de agua. No afecta directamente al filtro, pero aumenta el desafío de separación de agua si el aceite almacenado se usa luego.",
+    "ofre_profundicar": "Puedo mostrarte cómo recomendamos almacenar diésel para minimizar condensación — ¿quieres verlo?"
+  },
+  "faq_029": {
+    "pregunta": "¿Cómo afecta la mezcla de combustibles (ej. diesel + kerosene) al desempeño del filtro?",
+    "respuesta": "Mezclar combustibles puede cambiar viscosidad, punto de inflamación y compatibilidad con medios. Algunos medios pueden hincharse, degradarse o perder eficiencia. Siempre verifica con el proveedor si tu mezcla está aprobada.",
+    "ofre_profundicar": "Tengo una guía de compatibilidad de medios con mezclas de diesel y kerosene — ¿quieres verla?"
+  },
+  "faq_030": {
+    "pregunta": "¿Cómo afecta la presencia de sólidos suspendidos en aceite nuevo al rendimiento inicial del filtro?",
+    "respuesta": "Incluso aceite nuevo puede contener particulas de fabricación o transporte. Si el nivel es alto, el filtro puede alcanzar bypass antes de lo esperado por vida útil teórica. Siempre se recomienda filtrado previo o análisis de aceite nuevo en operaciones críticas.",
+    "ofre_profundicar": "Puedo mostrarte un caso donde aceite nuevo con alto Si causó bypass prematuro — ¿quieres verlo?"
+  },
+  "faq_031": {
+    "pregunta": "¿Cómo afecta la fecha de fabricación al desempeño del filtro (vida útil en estante)?",
+    "respuesta": "Algunos medios (especialmente aquellos con aglutinantes de poliuretano o ciertos tratamientos) pueden degradarse con el tiempo, humedad o exposición a UV. Vida útil en estante suele ser 3–5 años si se almacena en lugar seco, oscuro y fresco.",
+    "ofre_profundicar": "Puedo mostrarte las condiciones recomendadas de almacenamiento para nuestros filtros — ¿quieres verlo?"
+  },
+  "faq_032": {
+    "pregunta": "¿Cómo afecta el uso de doble filtro (en paralelo o serie) al desempeño y vida útil?",
+    "respuesta": "En paralelo, aumenta flujo pero no necesariamente eficiencia. En serie, el primer filtro actúa como pre-filtro y puede extender la vida del segundo. Se usa en ambientes de alta carga cuando se necesita alta eficiencia y larga vida.",
+    "ofre_profundicar": "Puedo mostrarte esquemas de configuración en serie y paralelo para sistemas críticos — ¿quieres verlos?"
+  },
+  "faq_033": {
+    "pregunta": "¿Cómo sé que el medio filtrante no es frágil o se deshace bajo presión de impacto?",
+    "respuesta": "Validamos resistencia a impacto y presión de collapsing en laboratorio (ej. prueba de aplastamiento a 500 psi). Medios con estructura de nanofibra tratada o poliéster reforzado suelen tener alta resistencia a daño mecánico.",
+    "ofre_profundicar": "Tengo resultados de prueba de resistencia a collapsing para NANOFORCE — ¿quieres verlos?"
+  },
+  "faq_034": {
+    "pregunta": "¿Cómo afecta el flujo turbulento vs. laminar al desempeño del filtro?",
+    "respuesta": "El flujo turbulento puede aumentar la eficiencia de captura por mayor contacto particulas-medio, pero también aumenta desgaste mecánico y riesgo de liberación de fibras. El flujo laminar es más predecible pero puede dejar zonas de bajo contacto. Se diseña para el régimen esperado en la aplicación.",
+    "ofre_profundicar": "Puedo mostrarte el régimen de flujo esperado para NANOFORCE en sistemas hidráulicos de retroexcavadora — ¿quieres verlo?"
+  },
+  "faq_035": {
+    "pregunta": "¿Cómo afecta la carga electrostática al desempeño del filtro en ambientes de alta humedad?",
+    "respuesta": "En alta humedad, la carga estática se disipa más rápido, reduciendo riesgo de adherencia prematura de particulas. Algunos medios incluyen tratamientos higroscópicos para manejar humedad sin perder desempeño.",
+    "ofre_profundicar": "Puedo mostrarte si nuestros medios incluyen manejo de humedad activa — ¿quieres verlo?"
+  },
+  "faq_036": {
+    "pregunta": "¿Cómo afecta la presencia de bacterias o hongos en el aceite al desempeño del filtro?",
+    "respuesta": "El crecimiento microbiano forma biopelículas que obstruyen medios, generan ácidos y pueden corrosionar metales. Siempre se recomienda drenar agua libre, usar biocidas aprobados y mantener TBN adecuado.",
+    "ofre_profundicar": "Tengo un protocolo de manejo de crecimiento microbiano en sistemas de lubricación — ¿quieres verlo?"
+  },
+  "faq_037": {
+    "pregunta": "¿Cómo afecta el uso de aditivos anti-desgaste (como ZDDP) al medio filtrante?",
+    "respuesta": "ZDDP y similares son generalmente compatibles con medios sintéticos y de nanofibra. A altas temperaturas prolongadas, pueden formar depósitos que afectan flujo, pero raro es que dañen el medio directamente.",
+    "ofre_profundicar": "Tengo una tabla de compatibilidad de medios con ZDDP y otros aditivos anti-desgaste — ¿quieres verla?"
+  },
+  "faq_038": {
+    "pregunta": "¿Cómo afecta la presencia de partículas blandas (como polen o fibras vegetales) al desempeño del filtro?",
+    "respuesta": "Particulas blandas pueden aglomerarse y retener humedad, aumentando riesgo de folleado y crecimiento microbiano. Algunos medios incluyen tratamientos para resistir aglomeración de materia orgánica.",
+    "ofre_profundicar": "Tengo resultados de prueba de retención de polen para medios sintéticos — ¿quieres verlos?"
+  },
+  "faq_039": {
+    "pregunta": "¿Cómo afecta la presencia de partículas magnéticas (como polvo de hierro) al desempeño del filtro?",
+    "respuesta": "Particulas magnéticas pueden indican desgaste de componentes ferrosos (ej. ejes, engranajes, válvulas, bombas de aceite). No son las más dañinas por abrasión, pero su aumento suele señalar desgaste interno antes de que afecte vida del filtro.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de particulas ferrosas en análisis de aceite — ¿quieres verlo?"
+  },
+  "faq_040": {
+    "pregunta": "¿Cómo afecta la presencia de partículas no metálicas y duras (como cuarzo, feldespato) al desempeño del filtro?",
+    "respuesta": "Son las principales causantes de desgaste abrasivo en cojinetes, superfases deslizantes y sellos. Dureza Mohs >6–7. El silicio (Si) en análisis de aceite suele señalar ingreso de tierra o arena.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de Si en análisis de aceite como indicador de ingreso de tierra — ¿quieres verlo?"
+  },
+  "faq_041": {
+    "pregunta": "¿Cómo afecta la presencia de particules blandas y metálicas (como óxido de hierro) al desempeño del filtro?",
+    "respuesta": "Óxidos de hierro (Fe2O3, Fe3O4) son menos abrasivos que el metal puro, pero aún pueden contribuir al desgaste y obstruir medios finos. Su aumento suele señalar corrosión interna o degradación de componentes.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de óxido de hierro en análisis de aceite — ¿quieres verlo?"
+  },
+  "faq_042": {
+    "pregunta": "¿Cómo sé que el filtro que me venden no es un producto reciclado o reetiquetado?",
+    "respuesta": "Verificamos lote de fabricación, fecha, número de serie y trazabilidad de medio. Nunca revendemos productos usados. Cada filtro tiene código de lote vinculado a materia prima, medio aplicado y prueba de aceptación.",
+    "ofre_profundicar": "Puedo mostrarte nuestro proceso de trazabilidad de lote — ¿quieres verlo?"
+  },
+  "faq_043": {
+    "pregunta": "¿Cómo afecta la falta de mantenimiento de sello o rosca en el filtro al desempeño?",
+    "respuesta": "Un sello dañado o rosca dañada pueden permitir paso de particulas por fuera del medio (bypass externo) o causar fugas. Siempre revisamos estado de sello y rosca en recepción y antes de instalación.",
+    "ofre_profundicar": "Puedo mostrarte nuestra checklist de recepción para filtros — ¿quieres verla?"
+  },
+  "faq_044": {
+    "pregunta": "¿Cómo afecta el uso de lubricantes sintéticos (como PAO o ésteres) al medio filtrante?",
+    "respuesta": "Algunos medios pueden hincharse, degradarse o perder eficiencia en contacto prolongado con ésteres o PAO. Siempre verifica compatibilidad química del medio con el tipo de lubricante base que usas.",
+    "ofre_profundicar": "Tengo una tabla de compatibilidad de medios con lubricantes sintéticos comunes — ¿quieres verla?"
+  },
+  "faq_045": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de carbón (como de inyectores dañados) al desempeño del filtro?",
+    "respuesta": "Particulas de carbón son indicadores de combustión incompleta o inyectores dañados. No son abrasivas, pero su aumento suele señalar problemas de inyección, timing o calidad de combustible.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de carbono en análisis de aceite como indicador de inyección defectuosa — ¿quieres verlo?"
+  },
+  "faq_046": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de sulfato (como de combustible contaminado) al desempeño del filtro?",
+    "respuesta": "Sulfatos pueden indicar contaminación de combustible con aguas ácidas o productos de degradación. Pueden formar depósitos que afectan flujo y promover corrosión.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de sulfato en análisis de aceite como indicador de combustible degradado — ¿quieres verlo?"
+  },
+  "faq_047": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de nitrato (como de combustibles oxidados) al desempeño del filtro?",
+    "respuesta": "Nitratos pueden indicar oxidación avanzada de combustible o presencia de aditivos inestables. Pueden afectar estabilidad y promover formación de lodos.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de nitrato in análisis de aceite como indicador de combustible inestable — ¿quieres verlo?"
+  },
+  "faq_048": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de cloro (como de agua de mar o tratamiento) al desempeño del filtro?",
+    "respuesta": "Iones de cloro pueden promover corrosión por picoteo en aceros inoxidables y aleaciones de cobre. En ambientes marinos o de alta salinidad, su aumento requiere revisión de sellos y protección de componentes.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de cloro en análisis de aceite como indicador de ingreso de sal o agua de mar — ¿quieres verlo?"
+  },
+  "faq_049": {
+    "pregunta": "¿Cuánta suciedad (en gramos) soporta su filtro antes de llegar al punto de bypass?",
+    "respuesta": "Publicamos en cada hoja de tecnología:\n- NANOFORCE: 110 g @ βx=200 (4µm)\n- SYNTRAX: 90 g @ βx=1000 (1µm)\nEsto permite calcular vida estimada: (capacidad de suciedad) / (ingreso de particulas g/h) — basado en entorno (mina, carretera, puerto, etc.).",
+    "ofre_profundicar": "¿Quieres que calculemos juntos la vida estimada para tu operación específica?"
+  },
+  "faq_050": {
+    "pregunta": "¿Cómo afecta la variación de presión de entrada al desempeño del filtro?",
+    "respuesta": "Presiones de entrada variables pueden causar pulsos de presión que fatigan el medio o causan liberación de fibras si el diseño no está reforzado. En sistemas con bombas de desplazamiento variable, validamos resistencia a ciclos de presión.",
+    "ofre_profundicar": "Puedo mostrarte resultados de prueba de耐疲劳 (fatiga) bajo ciclos de presión para HYDROCORE™ — ¿quieres verlos?"
+  },
+  "faq_051": {
+    "pregunta": "¿Cómo afecta la presencia de aire espumoso en el aceite al desempeño del filtro?",
+    "respuesta": "El aire espumoso reduce la densidad efectiva del aceite y puede causar cavitación en bombas de engranaje o pistón. Siempre se recomienda revisar respiración del cárter, válvula PCV y tapa de llenado.",
+    "ofre_profundicar": "Puedo mostrarte los efectos del aire espumoso en lubricación y cómo detectarlo en análisis — ¿quieres verlo?"
+  },
+  "faq_052": {
+    "pregunta": "¿Cómo afecta el uso de aditivos de mejora de indice de viscosidad (VII) al medio filtrante?",
+    "respuesta": "Algunos VII a base de polímero pueden interacturar con medios a altas temperaturas, aunque es raro. En general, medios modernos son compatibles con paquetes aditivos estándar. Siempre verifica si usas paquetes no convencionales.",
+    "ofre_profundicar": "Tengo una tabla de compatibilidad de medios con VII comunes — ¿quieres verla?"
+  },
+  "faq_053": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de sílice libre (como de desgaste de molinos o minas) al desempeño del filtro?",
+    "respuesta": "El sílice libre (SiO2) es uno de los más duros y abrasivos que ingresan al aceite (Mohs ~7). Es un indicador fuerte de ingreso de tierra, arena o polvo de roca. Su aumento en aceite suele preceder desgaste acelerado en cojinetes y superfases.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de Si libre en análisis de aceite como indicador de ingreso de tierra abrasivo — ¿quieres verlo?"
+  },
+  "faq_054": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de sílice combinada (como en minerales o tierra) al desempeño del filtro?",
+    "respuesta": "El sílice en forma de complejos minerales (ej. aluminosilicatos) puede ser menos abrasivo que el sílice libre, pero aún contribuye al desgaste. Siempre se diferencia entre Si libre y Si total en análisis de aceite para entender fuente.",
+    "ofre_profundicar": "Puedo mostrarte cómo diferenciamos Si libre y Si total en análisis de aceite para entender si el ingreso es de tierra pura o materia mineral — ¿quieres verlo?"
+  },
+  "faq_055": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de apatita o fosfatos (como de aditivos de desgaste o limpiadores) al desempeño del filtro?",
+    "respuesta": "Fosfatos pueden indicar uso de aditivos anti-desgaste o limpiadores de inyectores. En altas concentraciones, pueden formar depósitos que afectan flujo o promover corrosión en ciertos metales.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de fosfato en análisis de aceite como indicador de aditivos o limpiadores — ¿quieres verlo?"
+  },
+  "faq_056": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de plomo (como de desgaste de baterías o soldadura) al desempeño del filtro?",
+    "respuesta": "El plomo (Pb) es denso y tóxico, pero poco abrasivo. Su aumento suele señalar ingreso de contaminantes externos (bles de batería, soldadura, pintura envejecida) más que desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de plomo en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_047": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de estaño (como de desgaste de soldadura o componentes de estaño) al desempeño del filtro?",
+    "respuesta": "El estaño (Sn) puede indicar desgaste de soldadura, componentes de estaño o entrada de soldadura residual. Poco abrasivo, pero su aumento suele señalar trabajo reciente o ingreso externo.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de estaño en análisis de aceite como indicador de ingreso externo o trabajo reciente — ¿quieres verlo?"
+  },
+  "faq_048": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de zinc (como de desgaste de componentes de zinc o aditivos) al desempeño del filtro?",
+    "respuesta": "El zinc (Zn) puede indicar desgaste de componentes galvanizados o aditivos anti-desgaste (ZDDP). En algunos casos, su aumento puede señalar funcionamiento normal de paquetes aditivos, no necesariamente desgaste.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de zinc en análisis de aceite como indicador de aditivos ZDDP — ¿quieres verlo?"
+  },
+  "faq_049": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de molibdeno (como de desgaste de componentes de molibdeno o aditivos) al desempeño del filtro?",
+    "respuesta": "El molibdeno (Mo) puede indicar desgaste de componentes de molibdeno (ej. ejes, engranajes) o aditivos de desgaste de alta temperatura. En algunos casos, su aumento puede señalar funcionamiento normal de paquetes aditivos especializados.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de molibdeno en análisis de aceite como indicador de aditivos de desgaste especializado — ¿quieres verlo?"
+  },
+  "faq_050": {
+    "pregunta": "¿Cómo afecta la presencia de plata (como de desgaste de contactos eléctricos o soldadura) al desempeño del filtro?",
+    "respuesta": "La plata (Ag) puede indicar desgaste de contactos eléctricos, soldadura fina o ingreso de metales preciosos. Poco abrasivo, pero su aumento suele señalar trabajo reciente en sistemas eléctricos o ingreso externo.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de plata en análisis de aceite como indicador de trabajo eléctrico o ingreso externo — ¿quieres verlo?"
+  },
+  "faq_051": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de oro (como de desgaste de contactos eléctricos o depósitos) al desempeño del filtro?",
+    "respuesta": "El oro (Au) es muy denso y poco abrasivo. Su aumento suele señalar ingreso externo (contactos eléctricos, soldadura, joyería) más que desgaste interno. Rara vez se ve en aceite de operación normal.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de oro en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_052": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de uranio o torio (como de fuentes radiactivas) al desempeño del filtro?",
+    "respuesta": "Estos elementos son extremadamente raros en aceite de operación normal. Su presencia casi siempre indica ingreso externo grave (contaminación ambiental o error de muestreo). No se espera verlo en condiciones estándar.",
+    "ofre_profundicar": "Si detectas niveles medibles de U o Th en aceite, recomendamos revisar el proceso de muestreo y fuente de ingreso — ¿ver activar un protocolo de investigación?"
+  },
+  "faq_053": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de plástico (como de desgaste de empaques o componentes plásticos) al desempeño del filtro?",
+    "respuesta": "Particulas de plástico son generalmente blandas y poco abrasivas, pero pueden indicar ingreso de material externo (embalaje, desgaste de componentes plásticos, regrind). Algunas son densas y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de plástico en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_054": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de caucho (como de desgaste de neumáticos o correas) al desempeño del filtro?",
+    "respuesta": "Particulas de caucho pueden indicar desgaste de neumáticos, correas de transmisión o componentes elastoméricos. Son blandas y de baja densidad, pero pueden afectar filtros de muy fina retenção si son fibrilares.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de caucho en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_055": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de vidrio (como de desgaste de componentes de vidrio o aislantes) al desempeño del filtro?",
+    "respuesta": "Particulas de vidrio son duras (Mohs ~5.5–6.5) y pueden causar desgaste abrasivo si son cristalinas. Pero más souventes indican ingreso externo (desgaste de lámparas, aislantes, componentes de vidrio).",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de vidrio en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_056": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de papel o celulosa (como de desgaste de empaques o filtros usados) al desempeño del filtro?",
+    "respuesta": "Particulas de celulosa o papel son generalmente blandas y pueden indicar ingreso de material externo (embalaje, filtros usados desgastados, material fibroso). Rara vez provienen de desgaste interno del motor o maquinaria.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de celulosa en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_057": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de madera (como de desgaste de componentes de madera o estructuras) al desempeño del filtro?",
+    "respuesta": "Particulas de madera son blandas y de baja densidad, pero pueden indicar ingreso de material externo (desgaste de pallets, estructuras de madera, embalaje). No provienen normalmente de desgaste interno de motor o maquinaria.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de madera en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_058": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de tejido o fibras sintéticas (como de desgaste de ropa o filtros) al desempeño del filtro?",
+    "respuesta": "Particulas de tejido o fibras sintéticas pueden indicar ingreso de material externo (ropa de trabajo, filtros usados, embalaje textiles). No provienen normalmente de desgaste interno de motor o maquinaria.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de fibras sintéticas en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_059": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de construcción (como de yeso, cemento o cal) al desempeño del filtro?",
+    "respuesta": "Particulas de yeso, cemento o cal pueden indicar ingreso de material externo (obra cercana, polvo de construcción, reentrada de vehículos limpios). Algunas son abrasivas y pueden afectar superfases delicadas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de yeso, cemento o cal en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_060": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de agrícola (como de polen, restos de cultivos o polvo de campo) al desempeño del filtro?",
+    "respuesta": "Polen, restos de cultivo y polvo de campo pueden indicar ingreso de material externo (viento, siembra, cosecha). Algunas son ligeras y pueden afectar filtros de muy fina retenção si son fibrilares.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de polen o polvo de campo en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_061": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de industrias (como de humo de fábrica, partículas metálicas de proceso) al desempeño del filtro?",
+    "respuesta": "Particulas de humo de fábrica, óxidos metálicos o partículas de proceso pueden indicar ingreso de material externo (planta cercana, descargas atmosfericas, reemisión de partículas industriales). Algunas son metálicas y abrasivas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de partículas de proceso en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_062": {
+    "pregunta": "¿Cómo afecta la presencia de particule de desecho urbano (como de papel, plástico, restos de comida) al desempeño del filtro?",
+    "respuesta": "Particulas de desecho urbano pueden indicar ingreso de material externo (basura cerca de vía, relleno sanitario, arrastre de agua de lluvia). Rara vez provienen de desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de desecho urbano en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_063": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos sólidos (como de lodos de tratamiento o compost) al desempeño del filtro?",
+    "respuesta": "Particulas de lodos de tratamiento o compost pueden indicar ingreso de material externo (descarga de planta,쓰레기 near vía, escorrentía de lluvia). Algunas son densas y fibrosas, y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de lodos de tratamiento o compost en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_064": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de pesticidas o herbicidas (como de cultivo cercano) al desempeño del filtro?",
+    "respuesta": "Particulas de pesticidas o herbicidas suelen ser organoclorados, organofosforados o carbamatos. Pueden indicar ingreso de material externo (deriva de vuelo, aplicación cercana, rejoneo de maquinaria). No provienen normalmente de desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de pesticidas o herbicidas en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_065": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de radionúclidos (como de medical o industrial) al desempeño del filtro?",
+    "respuesta": "Radionúclidos como yodo-131, tecnecio-99 o cesio-137 son extremadamente raros en aceite de operación normal. Su presencia casi siempre indica ingreso externo grave o error de muestreo. No se espera verlo en condiciones estándar.",
+    "ofre_profundicar": "Si detectas niveles medibles de radionúclidos en aceite, recomendamos revisar el proceso de muestreo y fuente de ingreso — ¿quieres activar un protocolo de investigación?"
+  },
+  "faq_066": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de llenado de空隙 (como de espuma, relleno de plástico o corcho) al desempeño del filtro?",
+    "respuesta": "Particulas de relleno pueden indicar ingreso de material externo (embalaje, aislantes, componentes de relleno). Algunas son ligeras y pueden afectar filtros de muy fina retención si son fibrilares o esponjosas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de relleno en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_067": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de aislamiento térmico (como de lana de roca o fibra de vidrio) al desempeño del filtro?",
+    "respuesta": "Particulas de aislamiento térmico pueden indicar ingreso de material externo (isla térmica alrededor de tubería, desgaste de componentes de aislamiento). Algunas son fibrosas y pueden afectar filtros de muy fina retenção si son deshilachadas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de aislamiento térmico en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_068": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de señalización o pintura (como de marcas viales o señales de tráfico) al desempeño del filtro?",
+    "respuesta": "Particulas de señalización o pintura pueden indicar ingreso de material externo (desgaste de señales, marcas viales, polvo de pigmento). Algunas son densas y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de señalización o pintura en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_069": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de ropa o textiles (como de desgaste de ropa de trabajo o mantas) al desempeño del filtro?",
+    "respuesta": "Particulas de ropa o textiles pueden indicar ingreso de material externo (ropa de trabajo, mantas de trabajo, embalaje textil). No provienen normalmente de desgaste interno de motor o maquinaria.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de ropa o textiles en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_070": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de herramientas (como de desgaste de llaves, destornilladores o alicates) al desempeño del filtro?",
+    "respuesta": "Particulas de herramientas pueden indicar ingreso de material externo (desgaste de herramientas, cajón de herramientas, ingreso accidental). Algunas son metálicas y duras, pero su aumento suele señalar trabajo reciente o ingreso externo.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de herramientas en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_071": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de monedas o metallics sueltos (como de cambio perdido o decoración) al desempeño del filtro?",
+    "respuesta": "Particulas de monedas o metallics sueltos pueden indicar ingreso de material externo (perdido en vía, decoración, restos de obra). Son metálicas y densas, pero rara vez provienen de desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de monedas sueltos en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_072": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de joyería o metales preciosos (como de anillos, collares o relojes) al desempeño del filtro?",
+    "respuesta": "Particulas de joyería o metales preciosos indican ingreso de material externo (joyería perdida, reloj desgastado, accesorio de trabajo). Son muy densas y poco abrasivas, pero su aumento suele señalar ingreso externo reciente.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de joyería en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_073": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos de oficina (como de grapas, clips o papel de oficina) al desempeño del filtro?",
+    "respuesta": "Particulas de grapas, clips o papel de oficina pueden indicar ingreso de material externo (escritorio cerca de vía, relleno de oficina, polvo de trabajo). Rara vez provienen de desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de grapas, clips o papel de oficina en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_074": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de alimentos o bebidas (como de derrames o residuos de consumo) al desempeño del filtro?",
+    "respuesta": "Particulas de alimentos o bebidas pueden indicar ingreso de material externo (derrame cerca de vía, basura de consumo, residuos de comida). Algunas son dulces, grasosas o pegajosas, y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de alimentos o bebidas en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_075": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos de construcción (como de ladrillo, bloque o tubería) al desempeño del filtro?",
+    "respuesta": "Particulas de ladrillo, bloque o tubería pueden indicar ingreso de material externo (obra cercana, demolición, relleno de tierra). Algunas son densas y abrasivas, y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de ladrillo, bloque o tubería en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_076": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos de industria (como de residuos de plomería o eléctricos) al desempeño del filtro?",
+    "respuesta": "Particulas de residuos de plomería (como de cobre, PVC o acero) o eléctricos (como de aluminio, acero o plástico) pueden indicar ingreso de material externo (desgaste de tubería, relleno de obra, escorrentía de lluvia). Algunas son metálicas y pueden afectar flujo o promover corrosión.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de residuos de plomería o eléctricos en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_077": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de restos de jardinería (como de tierra, piedra o mulch) al desempeño del filtro?",
+    "respuesta": "Particulas de tierra, piedra o mulch pueden indicar ingreso de material externo (jardín cerca de vía, relleno de paisajismo, escapulario de animales). Algunas son densas y abrasivas, y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendenicas de tierra, piedra o mulch en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_078": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de restos de oficina (como de toners, cartuchos o impresoras) al desempeño del filtro?",
+    "respuesta": "Particulas de toners, cartuchos o impresoras pueden indicar ingreso de material externo (desgaste de oficina cerca de vía, relleno de trabajo, residuos de impresión). Rara vez provienen de desgaste interno.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de toners, cartuchos o impresoras en análisis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_079": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de menores de edad (como de lápices, gomas o juguetes) al desempeño del filtro?",
+    "respuesta": "Particulas de lápices, gomas o juguetes pueden indicar ingreso de material externo (niños cerca de vía, relleno de jardín, restos de juego). Algunas son blandas y pueden afectar filtros de muy fina retenção si son fibrilares.",
+    "ofre_profundicar": "Puedo mostrarte cómo interpretamos tendencias de lápices, gomas o juguetes en analysis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_080": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos de limpieza (como de trapos, esponjas o productos de limpieza) al desempeño del filtro?",
+    "respuesta": "Particulas de trapos, esponjas o productos de limpieza pueden indicar ingreso de material externo (limpieza de vía, relleno de limpieza, derrames de productos). Algunas son fibrosas y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de trapos, esponjas o productos de limpieza en analysis de aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_081": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de restos de eventos ( como de confeti, globos o pulseras) al desempeño del filtro?",
+    "respuesta": "Particulas de confeti, globos o pulseras pueden indicar ingreso de material externo (evento cerca de vía, relleno de festividad, restos de celebración). Algunas son ligeras y pueden afectar filtros de very fina retenzione if sono fibrilares.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de confeti, globos o pulseras in analysis of aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_082": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de materiales de construcción (como de acero estructural, madera tratada o concreto) al desempeño del filtro?",
+    "respuesta": "Particulas de acero estructural, madera tratada o concreto pueden indicar ingreso de material externo (obra cercana, relleno de estructura, escapulario de animais). Algunas son densas y abrasivas, y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de acero estructural, madera tratada o concreto in analysis of aceite como indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_083": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de combustibles fósiles (como de residuos de refinación o derivados) al desempeño del filtro?",
+    "respuesta": "Particulas de residuos de refinación (como de nafta, lubrificantes usados o residuos de destilado) pueden indicar ingreso de material externo (derrama cerca de vía, basura industrial, residuos de proceso). Algunas son grasosas y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendencias de residuos de refinación o derivados in analysis of aceite as indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_084": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de organismos marinos (como de plancton, conchas o restos de coral) al desempeño del filtro?",
+    "respuesta": "Particulas de plancton, conchas o restos de coral pueden indicar ingreso de material externo (deriva oceánica, relleno costero, restos de vida marina). Algunas son blandas y pueden afectar filtros de very fina retenzione if sono fibrilares.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendenicas de organismos marinos in analysis of aceite as indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_085": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de materiales nucleares (como de uranio enriquecido o plutonio) al desempeño del filtro?",
+    "respuesta": "Particulas de uranio enriquecido o plutonio son extremadamente densas y radiactivas. Su presencia casi siempre indica ingreso externo grave o error de muestreo. No se espera verlo en condiciones estándar.",
+    "ofre_profundicar": "Si detectas niveles medibles de uranio enriquecido o plutonio en aceite, recomendamos revisar el proceso de muestreo y fuente de ingreso — ¿quieres activar un protocolo de investigación?"
+  },
+  "faq_086": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de residuos de agricultura (como de semillas, tubérculos o residuos de cosecha) al desempeño del filtro?",
+    "respuesta": "Particulas de semillas, tubérculos o residuos de cosecha pueden indicar ingreso de material externo (siembra cercana, cosecha, relleno de campo). Algunas son blandas y pueden afectar filtros de very fina retenzione if sono fibrilares.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendenicas de semillas, tubérculos o residuos de cosecha in analysis of aceite as indicador de ingreso externo — ¿quieres verlo?"
+  },
+  "faq_087": {
+    "pregunta": "¿Cómo afecta la presencia de partículas de materiales de laboratorio (como de vidrio de ensayo o plástico de prueba) al desempeño del filtro?",
+    "respuesta": "Particulas de vidrio de ensayo o plástico de prueba pueden indicar ingreso de material externo (desgaste de laboratorio cerca de vía, relleno de prueba, restos de experimento). Algunas son frágiles y pueden afectar flujo si son granuladas.",
+    "ofre_profundicar": "Puez mostrarte cómo interpretamos tendenicas de vidrio de ensayo o plástico de prueba in analysis of aceite as indicador de ingreso externo — ¿quieres verlo?"
+  }
+}

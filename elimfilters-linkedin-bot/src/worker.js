@@ -2,7 +2,7 @@ import { createNvidiaClient } from "./nvidia.js";
 import { createLinkedinClient } from "./linkedin.js";
 
 export function createWorker({ config, db }) {
-  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel });
+  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
   const linkedin = createLinkedinClient({
     clientId: config.linkedinClientId,
     clientSecret: config.linkedinClientSecret,

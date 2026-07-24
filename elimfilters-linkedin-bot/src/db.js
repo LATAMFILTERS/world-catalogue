@@ -7,6 +7,7 @@ export function createDb(connectionString) {
   });
 
   return {
+    pool,
     async init() {
       await pool.query(`
         CREATE TABLE IF NOT EXISTS linkedin_jobs (
