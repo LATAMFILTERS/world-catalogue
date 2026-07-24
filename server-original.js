@@ -1545,15 +1545,28 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
           )
         )
         OR
-        -- Heavy Duty: search in relational kg_product_equipment
+        -- Heavy Duty: search in equipment_applications JSONB OR relational kg_product_equipment
         (
           c.duty = 'HEAVY_DUTY'
-          AND EXISTS (
-            SELECT 1
-            FROM kg_product_equipment kpe
-            WHERE kpe.product_sku = c.sku
-              AND UPPER(COALESCE(kpe.make,'') || ' ' || COALESCE(kpe.model,'')) LIKE $${idxAfterLD + 1}
-              ${hdEngineCond}
+          AND (
+            EXISTS (
+              SELECT 1
+              FROM jsonb_array_elements(
+                CASE WHEN jsonb_typeof(c.equipment_applications) = 'array' THEN c.equipment_applications ELSE '[]'::jsonb END
+              ) AS ea
+              WHERE
+                UPPER(COALESCE(ea->>'make','') || ' ' || COALESCE(ea->>'model', ea->>'machine', '')) LIKE $${idxAfterLD + 1}
+                ${hdEngineCond}
+            )
+            OR
+            EXISTS (
+              SELECT 1
+              FROM kg_product_equipment kpe
+              JOIN kg_equipment_models km ON kpe.model_id = km.id
+              LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
+              WHERE kpe.product_sku = c.sku
+                AND UPPER(COALESCE(kmk.display_name,'') || ' ' || COALESCE(km.display_name,'')) LIKE $${idxAfterLD + 1}
+            )
           )
         )
       ORDER BY c.sku
@@ -1624,6 +1637,29 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     conditions.push(buildJsonbCond('equipment_applications'));
     // LD: vehicle_applications (industrial equipment also stored here)
     conditions.push(buildJsonbCond('vehicle_applications'));
+
+    // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
+    const kgConds = [];
+    if (make) {
+      kgConds.push(`UPPER(kmk.display_name) LIKE $${idx}`);
+      params.push('%' + make.toUpperCase() + '%');
+      idx++;
+    }
+    if (model) {
+      kgConds.push(`UPPER(km.display_name) LIKE $${idx}`);
+      params.push('%' + model.toUpperCase() + '%');
+      idx++;
+    }
+    if (kgConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM kg_product_equipment kpe
+        JOIN kg_equipment_models km ON kpe.model_id = km.id
+        LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
+        WHERE kpe.product_sku = elimfilters_catalog.sku
+          AND ${kgConds.join(' AND ')}
+      )`);
+    }
 
     const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
     const { rows } = await client.query(
