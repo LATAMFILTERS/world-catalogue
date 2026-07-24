@@ -86,7 +86,7 @@ services:
         source: /knowledge-center/engineering/operator-health
         destination: /knowledge-center/systems/cabin-air-protection/
 
-  # AI Assistant Services — WhatsApp, Instagram & LinkedIn Bots
+  # AI Assistant Services — WhatsApp, Instagram, LinkedIn & YouTube Bots
   - type: web
     name: elimfilters-whatsapp-bot
     runtime: node
@@ -155,6 +155,34 @@ services:
         value: "133064152"
       - key: LINKEDIN_VERIFY_TOKEN
         value: elimfilters_linkedin_webhook_verify_2026
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: DRY_RUN
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+
+  - type: web
+    name: elimfilters-youtube-bot
+    runtime: node
+    rootDir: elimfilters-youtube-bot
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: YOUTUBE_CHANNEL_ID
+        value: "UC_elimfilters_official"
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: YOUTUBE_VERIFY_TOKEN
+        value: elimfilters_youtube_webhook_verify_2026
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
