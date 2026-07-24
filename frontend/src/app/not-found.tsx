@@ -1,163 +1,140 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 
 export default function NotFound() {
   return (
-    <>
-      <Navigation />
-      <main style={{ background: '#000', minHeight: '100vh', color: '#fff', display: 'flex', flexDirection: 'column' }}>
+    <main
+      aria-labelledby="not-found-title"
+      style={{
+        position: 'relative',
+        minHeight: '100svh',
+        overflow: 'hidden',
+        background: '#000',
+        color: '#fff',
+        display: 'grid',
+        placeItems: 'center',
+        padding: 'clamp(1.5rem, 5vw, 4rem)',
+      }}
+    >
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background:
+            'radial-gradient(circle at 50% 45%, rgba(255,241,45,0.10), transparent 24%), linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+          backgroundSize: 'auto, 42px 42px, 42px 42px',
+          maskImage: 'linear-gradient(to bottom, black, transparent 88%)',
+        }}
+      />
 
-        <section style={{
-          flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '8rem 8% 6rem',
-        }}>
-          <div style={{ maxWidth: '640px', width: '100%' }}>
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          width: 'min(74vw, 780px)',
+          aspectRatio: '1',
+          border: '1px solid rgba(255,241,45,0.16)',
+          borderRadius: '50%',
+          boxShadow:
+            '0 0 0 34px rgba(255,241,45,0.025), 0 0 0 68px rgba(255,241,45,0.018)',
+        }}
+      />
 
-            {/* Error code */}
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                letterSpacing: '0.25em',
-                color: '#FFF12D',
-                textTransform: 'uppercase',
-                marginBottom: '1.5rem',
-              }}
-            >
-              ERROR 404 · PAGE NOT FOUND
-            </motion.p>
+      <section
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          width: 'min(100%, 920px)',
+          textAlign: 'center',
+        }}
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          style={{
+            margin: '0 0 1.75rem',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: 'clamp(0.64rem, 1.5vw, 0.78rem)',
+            fontWeight: 600,
+            letterSpacing: '0.3em',
+            textTransform: 'uppercase',
+            color: '#FFF12D',
+          }}
+        >
+          ELIMFILTERS // ROUTE CONTROL
+        </motion.p>
 
-            {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.08 }}
-              style={{
-                fontFamily: 'Titillium Web, sans-serif',
-                fontWeight: 700,
-                fontSize: 'clamp(2.4rem, 6vw, 4.5rem)',
-                lineHeight: 1,
-                letterSpacing: '-0.03em',
-                textTransform: 'uppercase',
-                color: '#fff',
-                margin: '0 0 1.5rem',
-              }}
-            >
-              This path<br />
-              <span style={{ color: '#FFF12D' }}>does not exist.</span>
-            </motion.h1>
+        <motion.h1
+          id="not-found-title"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, delay: 0.05 }}
+          style={{
+            margin: 0,
+            fontFamily: 'Titillium Web, sans-serif',
+            fontSize: 'clamp(8rem, 30vw, 20rem)',
+            fontWeight: 800,
+            lineHeight: 0.76,
+            letterSpacing: '-0.075em',
+            color: '#FFF12D',
+            textShadow: '0 0 50px rgba(255,241,45,0.14)',
+          }}
+        >
+          404
+        </motion.h1>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.95rem',
-                lineHeight: 1.75,
-                textAlign: 'justify',
-                color: 'rgba(255,255,255,0.45)',
-                marginBottom: '3rem',
-                maxWidth: '460px',
-              }}
-            >
-              The page you are looking for has been moved, removed, or never existed.
-              Use the navigation below to find what you need.
-            </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.18 }}
+          style={{ marginTop: 'clamp(2rem, 6vw, 4.5rem)' }}
+        >
+          <p
+            style={{
+              margin: '0 0 1rem',
+              fontFamily: 'Titillium Web, sans-serif',
+              fontSize: 'clamp(1.45rem, 4.5vw, 2.6rem)',
+              fontWeight: 700,
+              lineHeight: 1,
+              letterSpacing: '0.02em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Path outside the protection system.
+          </p>
 
-            {/* Navigation links */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                gap: '0.75rem',
-                marginBottom: '2.5rem',
-              }}
-            >
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'Products', href: '/systems' },
-                { label: 'Industries', href: '/industries' },
-                { label: 'Technologies', href: '/technologies' },
-                { label: 'Knowledge System', href: '/knowledge-system' },
-                { label: 'Contact', href: '/contact' },
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{
-                    display: 'block',
-                    padding: '0.75rem 1.25rem',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    fontFamily: 'Barlow, sans-serif',
-                    fontSize: '0.85rem',
-                    color: 'rgba(255,255,255,0.55)',
-                    textDecoration: 'none',
-                    transition: 'border-color 0.2s, color 0.2s',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = '#FFF12D';
-                    e.currentTarget.style.color = '#FFF12D';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.currentTarget.style.color = 'rgba(255,255,255,0.55)';
-                  }}
-                >
-                  {item.label} →
-                </Link>
-              ))}
-            </motion.div>
+          <p
+            style={{
+              maxWidth: '650px',
+              margin: '0 auto',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.52)',
+            }}
+          >
+            The requested page, link, or automated route is not active within ELIMFILTERS.
+            No product, technical record, or commercial destination exists at this address.
+          </p>
+        </motion.div>
 
-            {/* Part search CTA */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <a
-                href="https://part-search.elimfilters.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.85rem 1.75rem',
-                  background: '#FFF12D',
-                  color: '#000',
-                  fontFamily: 'Titillium Web, sans-serif',
-                  fontWeight: 700,
-                  fontSize: '0.85rem',
-                  letterSpacing: '0.08em',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  borderRadius: '3px',
-                }}
-              >
-                SEARCH PARTS CATALOGUE →
-              </a>
-            </motion.div>
-
-          </div>
-        </section>
-
-      </main>
-      <Footer />
-    </>
+        <motion.div
+          aria-hidden="true"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.7, delay: 0.32 }}
+          style={{
+            width: '86px',
+            height: '4px',
+            margin: '2.2rem auto 0',
+            background: '#FFF12D',
+            transformOrigin: 'center',
+          }}
+        />
+      </section>
+    </main>
   );
 }
