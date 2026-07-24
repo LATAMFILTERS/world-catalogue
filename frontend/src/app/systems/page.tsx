@@ -205,7 +205,7 @@ const heroImage: CSSProperties = {
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.18) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.22) 48%, rgba(0,0,0,0.10) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.42), transparent 45%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
