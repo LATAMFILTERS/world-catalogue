@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: elimfilters-facebook-bot
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: services/facebook-bot
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
+      - key: DRY_RUN
+        value: "true"
+      - key: META_GRAPH_API_VERSION
+        value: v23.0
+      - key: FACEBOOK_PAGE_ID
+        sync: false
+      - key: FACEBOOK_PAGE_ACCESS_TOKEN
+        sync: false
+      - key: FACEBOOK_VERIFY_TOKEN
+        generateValue: true
+      - key: META_APP_SECRET
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: KNOWLEDGE_BASE_URL
+        sync: false
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      - key: NVIDIA_NIM_MODEL
+        value: meta/llama-3.1-70b-instruct
