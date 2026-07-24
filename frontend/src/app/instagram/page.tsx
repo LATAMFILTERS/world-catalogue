@@ -8,226 +8,150 @@ export const metadata: Metadata = {
 
 const links = [
   {
-    index: '01',
-    label: 'FIND YOUR PART',
+    label: 'Find Your Part',
     description: 'Search by ELIMFILTERS, OEM, or competitor reference.',
     href: 'https://part-search.elimfilters.com',
     external: true,
+    primary: true,
   },
   {
-    index: '02',
-    label: 'BECOME A DISTRIBUTOR',
+    label: 'Become a Distributor',
     description: 'Commercial opportunities for qualified industrial partners.',
     href: '/distributors',
     external: false,
+    primary: false,
   },
   {
-    index: '03',
-    label: 'VISIT ELIMFILTERS.COM',
-    description: 'Explore systems, industries and technologies.',
-    href: '/',
-    external: false,
-  },
-  {
-    index: '04',
-    label: 'CONTACT ELIMFILTERS',
+    label: 'Contact ELIMFILTERS',
     description: 'Send a commercial or technical inquiry.',
     href: '/contact',
     external: false,
+    primary: false,
+  },
+  {
+    label: 'Visit ELIMFILTERS.com',
+    description: 'Explore systems, technologies, and industries.',
+    href: '/',
+    external: false,
+    primary: false,
   },
 ];
-
-const systems = ['AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING'];
 
 export default function InstagramLandingPage() {
   return (
     <main
       style={{
-        position: 'relative',
         minHeight: '100svh',
-        overflow: 'hidden',
-        background: '#000',
+        background: '#050505',
         color: '#fff',
+        padding: '28px 18px 40px',
         fontFamily: 'Inter, Arial, sans-serif',
-        padding: '28px 18px 42px',
       }}
     >
       <div
-        aria-hidden="true"
         style={{
-          position: 'absolute',
-          inset: 0,
-          background:
-            'linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px), radial-gradient(circle at 82% 10%, rgba(255,241,45,0.11), transparent 24%)',
-          backgroundSize: '38px 38px, 38px 38px, auto',
-          pointerEvents: 'none',
+          width: '100%',
+          maxWidth: 520,
+          margin: '0 auto',
         }}
-      />
-
-      <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 640, margin: '0 auto' }}>
-        <header
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            gap: 20,
-            paddingBottom: 22,
-            borderBottom: '1px solid rgba(255,255,255,0.12)',
-          }}
-        >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-              <span style={{ width: 34, height: 4, background: '#FFF12D', display: 'inline-block' }} />
-              <span
-                style={{
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: '0.22em',
-                }}
-              >
-                ELIMFILTERS®
-              </span>
-            </div>
-            <p
-              style={{
-                margin: 0,
-                color: 'rgba(255,255,255,0.48)',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 10,
-                letterSpacing: '0.14em',
-              }}
-            >
-              TOTAL ASSET PROTECTION SYSTEMS
-            </p>
+      >
+        <header style={{ textAlign: 'center', padding: '10px 8px 28px' }}>
+          <div
+            style={{
+              width: 64,
+              height: 64,
+              margin: '0 auto 18px',
+              borderRadius: '18px',
+              background: '#111',
+              border: '1px solid rgba(255,241,45,0.28)',
+              display: 'grid',
+              placeItems: 'center',
+              color: '#FFF12D',
+              fontFamily: 'Titillium Web, Arial, sans-serif',
+              fontSize: 34,
+              fontWeight: 800,
+              letterSpacing: '-0.08em',
+            }}
+          >
+            E
           </div>
 
-          <div style={{ textAlign: 'right' }}>
-            <div
-              style={{
-                color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 10,
-                letterSpacing: '0.18em',
-              }}
-            >
-              SOCIAL ENTRY
-            </div>
-            <div style={{ marginTop: 5, color: 'rgba(255,255,255,0.35)', fontSize: 10 }}>ROUTE: /INSTAGRAM</div>
-          </div>
-        </header>
-
-        <section style={{ padding: '38px 0 30px' }}>
           <p
             style={{
-              margin: '0 0 12px',
+              margin: 0,
               color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: 11,
-              letterSpacing: '0.24em',
+              fontSize: 13,
+              fontWeight: 800,
+              letterSpacing: '0.2em',
               textTransform: 'uppercase',
             }}
           >
-            INDUSTRIAL PROTECTION NETWORK
+            ELIMFILTERS®
           </p>
 
           <h1
             style={{
-              margin: 0,
-              maxWidth: 570,
+              margin: '12px 0 10px',
               fontFamily: 'Titillium Web, Arial, sans-serif',
-              fontSize: 'clamp(2.65rem, 11vw, 5.2rem)',
+              fontSize: 'clamp(2rem, 9vw, 3.1rem)',
+              lineHeight: 1,
               fontWeight: 800,
-              lineHeight: 0.9,
-              letterSpacing: '-0.055em',
-              textTransform: 'uppercase',
+              letterSpacing: '-0.04em',
             }}
           >
-            KEEP ASSETS
-            <br />
-            <span style={{ color: '#FFF12D' }}>WORKING.</span>
+            Total Asset Protection
           </h1>
 
           <p
             style={{
-              margin: '22px 0 0',
-              maxWidth: 540,
+              maxWidth: 420,
+              margin: '0 auto',
               color: 'rgba(255,255,255,0.62)',
               fontSize: 15,
-              lineHeight: 1.65,
+              lineHeight: 1.55,
             }}
           >
-            Protection for engines, hydraulics, fuel, air and cooling systems against contamination, failures and downtime.
+            Protecting engines, hydraulics, fuel, air, and cooling systems from contamination, failures, and downtime.
           </p>
-        </section>
+        </header>
 
-        <div
-          aria-label="ELIMFILTERS protection systems"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
-            gap: 1,
-            marginBottom: 28,
-            background: 'rgba(255,255,255,0.08)',
-            border: '1px solid rgba(255,255,255,0.08)',
-          }}
+        <section
+          aria-label="ELIMFILTERS links"
+          style={{ display: 'grid', gap: 12 }}
         >
-          {systems.map((system) => (
-            <div
-              key={system}
-              style={{
-                background: '#050505',
-                padding: '11px 4px',
-                textAlign: 'center',
-                color: 'rgba(255,255,255,0.55)',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: 8,
-                letterSpacing: '0.08em',
-              }}
-            >
-              {system}
-            </div>
-          ))}
-        </div>
-
-        <section aria-label="ELIMFILTERS links" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
           {links.map((link) => (
             <a
-              key={link.index}
+              key={link.label}
               href={link.href}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noreferrer' : undefined}
               style={{
-                display: 'grid',
-                gridTemplateColumns: '44px 1fr auto',
-                gap: 14,
+                display: 'flex',
                 alignItems: 'center',
-                padding: '18px 0',
-                borderBottom: '1px solid rgba(255,255,255,0.12)',
-                color: '#fff',
+                justifyContent: 'space-between',
+                gap: 16,
+                minHeight: 78,
+                padding: '16px 18px',
+                borderRadius: 14,
+                border: link.primary
+                  ? '1px solid #FFF12D'
+                  : '1px solid rgba(255,255,255,0.12)',
+                background: link.primary ? '#FFF12D' : '#111',
+                color: link.primary ? '#000' : '#fff',
                 textDecoration: 'none',
+                boxShadow: link.primary
+                  ? '0 10px 30px rgba(255,241,45,0.12)'
+                  : 'none',
               }}
             >
-              <span
-                style={{
-                  color: '#FFF12D',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: 11,
-                  letterSpacing: '0.1em',
-                }}
-              >
-                {link.index}
-              </span>
-
-              <span>
+              <span style={{ minWidth: 0 }}>
                 <span
                   style={{
                     display: 'block',
                     fontFamily: 'Titillium Web, Arial, sans-serif',
-                    fontSize: 16,
-                    fontWeight: 700,
-                    letterSpacing: '0.04em',
+                    fontSize: 18,
+                    fontWeight: 800,
+                    lineHeight: 1.1,
                   }}
                 >
                   {link.label}
@@ -235,8 +159,10 @@ export default function InstagramLandingPage() {
                 <span
                   style={{
                     display: 'block',
-                    marginTop: 4,
-                    color: 'rgba(255,255,255,0.46)',
+                    marginTop: 5,
+                    color: link.primary
+                      ? 'rgba(0,0,0,0.62)'
+                      : 'rgba(255,255,255,0.5)',
                     fontSize: 12,
                     lineHeight: 1.4,
                   }}
@@ -248,12 +174,19 @@ export default function InstagramLandingPage() {
               <span
                 aria-hidden="true"
                 style={{
-                  color: '#FFF12D',
-                  fontSize: 21,
-                  fontWeight: 300,
+                  flex: '0 0 auto',
+                  width: 34,
+                  height: 34,
+                  borderRadius: '50%',
+                  display: 'grid',
+                  placeItems: 'center',
+                  background: link.primary
+                    ? 'rgba(0,0,0,0.1)'
+                    : 'rgba(255,255,255,0.06)',
+                  fontSize: 18,
                 }}
               >
-                ↗
+                →
               </span>
             </a>
           ))}
@@ -261,19 +194,14 @@ export default function InstagramLandingPage() {
 
         <footer
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            gap: 16,
-            marginTop: 26,
+            padding: '26px 12px 0',
+            textAlign: 'center',
             color: 'rgba(255,255,255,0.34)',
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: 9,
-            letterSpacing: '0.08em',
+            fontSize: 11,
             lineHeight: 1.5,
           }}
         >
-          <span>EVERY MICRON MATTERS.</span>
-          <span style={{ textAlign: 'right' }}>ELIMFILTERS.COM</span>
+          ELIMFILTERS® · Every Micron Matters.
         </footer>
       </div>
     </main>
