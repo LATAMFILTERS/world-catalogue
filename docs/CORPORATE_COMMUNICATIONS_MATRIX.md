@@ -1,13 +1,13 @@
 # ELIMFILTERS® — Matriz de Comunicaciones y Canales de Correo Corporativos
-**Versión**: 1.3  
+**Versión**: 1.4  
 **Fecha de Emisión**: Julio 2026  
-**Estatus**: Política Oficial de Comunicaciones, Logística de Fábrica y Autorización Ejecutiva (Human-in-the-Loop)  
+**Estatus**: Política Oficial de Comunicaciones, Logística de Fábrica y Autorización Simétrica Dual (Telegram & Email)  
 
 ---
 
 ## 1. Propósito y Alcance
 
-Este documento establece la estructura canónica de canales de correo electrónico corporativo de **ELIMFILTERS®**. Define la responsabilidad, el tipo de comunicación, el enrutamiento automatizado por Agentes de IA y el **Punto de Control de Autorización Ejecutiva Final por parte de Victor Abreu (CEO)**.
+Este documento establece la estructura canónica de canales de correo electrónico corporativo de **ELIMFILTERS®**. Define la responsabilidad, el tipo de comunicación, el enrutamiento automatizado por Agentes de IA y el **Protocolo de Autorización Simétrica Dual y Auditoría por parte de Victor Abreu (CEO)**.
 
 ---
 
@@ -15,7 +15,7 @@ Este documento establece la estructura canónica de canales de correo electróni
 
 | Dirección de Correo | Tipo de Canal | Propósito Exclusivo | Enrutamiento / Origen de Tráfico |
 |---|---|---|---|
-| **`vabreu@elimfilters.com`** | **Dirección General (CEO Office)** | Recepción de Resúmenes Ejecutivos de Precalificación B2B, autorizaciones contractuales, copias de seguridad de auditoría y respaldo documental oficial. | Notificación dual automática (Telegram + Email) enviada a Victor Abreu para cada oportunidad B2B. |
+| **`vabreu@elimfilters.com`** | **Dirección General (CEO Office)** | Recepción de Expedientes Ejecutivos idénticos a los de Telegram, autorizaciones contractuales por correo y registro de auditoría máster. | Notificación dual simétrica automática enviada a Victor Abreu para cada oportunidad B2B. |
 | **`supplychain@elimfilters.com`** | **Fábricas, Logística & Agentes IA** | Comunicación automatizada entre la Red de Agentes de IA de ELIMFILTERS®, las Plantas de Manufactura, Operadores Logísticos Marítimos y Agentes de Carga. | Emisión automática de Órdenes de Trabajo (MTO), recepción de estados de producción y documentos de embarque (B/L). |
 | **`distribution_network@elimfilters.com`** | **Captación B2B Directa** | Recepción de solicitudes de precalificación, negociación de exclusividad territorial y acuerdos comerciales uno-a-uno con distribuidores e importadores. | Formulario `https://elimfilters.com/distributor-application` y prospectos precalificados por bots. |
 | **`b2b@elimfilters.com`** | **Marketing & Divulgación** | Envío de campañas de Email Marketing B2B, secuencias de nutrición (*nurturing*), boletines técnicos y anuncios de nuevos lanzamientos o tecnologías. | Campañas automatizadas de salida (*outbound*) y boletines periódicos a la base de datos B2B. |
@@ -25,33 +25,38 @@ Este documento establece la estructura canónica de canales de correo electróni
 
 ---
 
-## 3. Flujo Automatizado con Notificación Dual y Autorización Ejecutiva (Victor Abreu - CEO)
+## 3. Protocolo de Autorización Simétrica Dual (Telegram & Email)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│          FLUJO AUTOMATIZADO DE AGENTES IA + NOTIFICACIÓN DUAL A VICTOR ABREU │
+│          PROTOCOLO DE NOTIFICACIÓN IDÉNTICA Y AUTORIZACIÓN DUAL             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
-  1. CAPTURA Y PRECALIFICACIÓN AUTOMÁTICA POR AGENTES DE IA
-     └─ Bots procesan la solicitud, enriquecen datos y preparan el expediente en PostgreSQL.
+  1. EXPEDIENTE COMPLETO SIMÉTRICO ENVIADO SIMULTÁNEAMENTE:
+     ├─ a) Vía Telegram: Mensaje detallado en @ELIMFILTERS_Operations_Bot.
+     └─ b) Vía Correo: Expediente idéntico enviado a vabreu@elimfilters.com.
 
-  2. NOTIFICACIÓN DUAL SIMULTÁNEA A VICTOR ABREU
-     ├─ a) Mensaje conciso por Telegram en @ELIMFILTERS_Operations_Bot.
-     └─ b) Correo Ejecutivo de Resumen Documental enviado a vabreu@elimfilters.com.
+  2. CANALES DE AUTORIZACIÓN VÁLIDOS (VICTOR ABREU):
+     ├─ Vía Telegram: Comando /approve <lead_id> o botón de aprobación en el chat.
+     └─ Vía Email: Respuesta con la palabra "AUTORIZADO" o "APROBADO" a vabreu@elimfilters.com.
 
-  3. APROBACIÓN O RECHAZO EN 1 CLIC (/approve <id> o respuesta por email)
-     └─ Victor Abreu autoriza enviando /approve <id> desde Telegram o respondiendo al email.
+  3. REGISTRO DE AUDITORÍA DE AUTORIZACIÓN (PostgreSQL - authorization_audit_log):
+     └─ El sistema registra de forma inmutable:
+        • lead_id: ID de la oportunidad B2B.
+        • authorized_by: Victor Abreu (CEO).
+        • authorization_channel: 'telegram' | 'email'.
+        • timestamp: Hora y fecha exacta de aprobación.
+        • reference_hash: ID de mensaje Telegram o Message-ID de correo.
 
-  4. EJECUCIÓN AUTOMÁTICA POST-APROBACIÓN
-     └─ Al recibir la aprobación, la IA dispara:
-        a) Correo oficial de exclusividad territorial desde distribution_network@elimfilters.com.
-        b) Orden de Trabajo a Fábrica desde supplychain@elimfilters.com (con CC a vabreu@elimfilters.com).
-        c) Instrucción de cobro del 50% de anticipo desde finance@elimfilters.com.
+  4. EJECUCIÓN POST-APROBACIÓN (Disparada por cualquiera de los 2 canales):
+     a) Correo oficial de exclusividad desde distribution_network@elimfilters.com.
+     b) Orden de Trabajo a Fábrica desde supplychain@elimfilters.com (con CC a vabreu@elimfilters.com).
+     c) Instrucción de cobro del 50% de anticipo desde finance@elimfilters.com.
 ```
 
 ---
 
 ## 4. Gobernanza y Registro Documental
 
-* **Respaldo Documental Continuo**: La cuenta `vabreu@elimfilters.com` funciona como el archivo máster de auditoría corporativa, recibiendo copia carbón de todas las Órdenes de Trabajo enviadas a fábricas y contratos aprobados.
-* **Punto de Control Unico (Human-in-the-Loop)**: Ningún contrato de exclusividad, orden de fábrica o compromiso comercial irreversible se emite sin la orden explícita de Victor Abreu vía Telegram o Email.
+* **Inmutable Audit Log**: Toda aprobación (ya sea ejecutada por Telegram o por Email) queda asentada en la tabla `authorization_audit_log` para fines legales, contables y operativos.
+* **Punto de Control Unico (Human-in-the-Loop)**: Ningún contrato de exclusividad, orden de fábrica o compromiso comercial se emite sin la orden explícita de Victor Abreu vía Telegram o Email.
