@@ -41,20 +41,6 @@ const LIMIT_TEXT: Record<string, string> = {
   en: "You've reached the limit for this session. For further assistance, please email our engineering team at support@elimfilters.com.",
 };
 
-const LAST_MSG_TEXT: Record<string, string> = {
-  es: "Esta es tu última pregunta de esta sesión.",
-  pt: "Esta é sua última pergunta desta sessão.",
-  fr: "C'est votre dernière question pour cette session.",
-  it: "Questa è la tua ultima domanda per questa sessione.",
-  nl: "Dit is uw laatste vraag voor deze sessie.",
-  ru: "Это ваш последний вопрос в этой сессии.",
-  zh: "这是您本次会话的最后一个问题。",
-  ja: "これがこのセッションの最後の質問です。",
-  ar: "هذا هو سؤالك الأخير في هذه الجلسة.",
-  fa: "این آخرین سوال شما در این نشست است.",
-  en: "This is your last question for this session.",
-};
-
 const PLACEHOLDER_TEXT: Record<string, string> = {
   es: "Pregunta sobre filtros, normas, industrias...",
   pt: "Pergunte sobre filtros, normas, indústrias...",
@@ -223,14 +209,14 @@ export default function ChatBot() {
 
       setTyping(false);
 
-      if (data.limitReached || data.messagesLeft === 0) {
+      if (data.escalated) {
         setLimitReached(true);
         setMessages((m) => [
           ...m,
           {
             id: Date.now() + 1,
             from: "bot",
-            text: LIMIT_TEXT[lang] || LIMIT_TEXT.en,
+            text: data.reply || LIMIT_TEXT[lang] || LIMIT_TEXT.en,
             time: now(),
             isLimit: true,
           },
@@ -240,20 +226,6 @@ export default function ChatBot() {
 
       if (data.reply) {
         setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: data.reply, time: now() }]);
-        if (data.messagesLeft === 1) {
-          // Warn on last message
-          setTimeout(() => {
-            setMessages((m) => [
-              ...m,
-              {
-                id: Date.now() + 2,
-                from: "bot",
-                text: LAST_MSG_TEXT[lang] || LAST_MSG_TEXT.en,
-                time: now(),
-              },
-            ]);
-          }, 200);
-        }
       } else {
         setMessages((m) => [
           ...m,
