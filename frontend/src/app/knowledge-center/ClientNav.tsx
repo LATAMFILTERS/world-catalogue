@@ -38,15 +38,16 @@ export default function ClientNav() {
       }}>
         <Link href="/" style={{
           color: '#FFF12D',
-          fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.7rem',
+          fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+          fontSize: '0.82rem',
           fontWeight: 700,
           textDecoration: 'none',
           padding: '1rem 1.25rem 1rem 0',
           marginRight: '1rem',
           borderRight: '1px solid rgba(255,255,255,0.08)',
           whiteSpace: 'nowrap',
-          letterSpacing: '0.05em',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
         }}>
           ELIMFILTERS
         </Link>
@@ -55,12 +56,14 @@ export default function ClientNav() {
           return (
             <Link key={item.href} href={item.href} style={{
               color: active ? '#FFF12D' : 'rgba(255,255,255,0.5)',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.8rem',
-              fontWeight: active ? 600 : 400,
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: '0.82rem',
+              fontWeight: 700,
               textDecoration: 'none',
               padding: '1rem 0.875rem',
               whiteSpace: 'nowrap',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
               borderBottom: active ? '2px solid #FFF12D' : '2px solid transparent',
               transition: 'color 0.2s, border-color 0.2s',
             }}>
