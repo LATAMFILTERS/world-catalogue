@@ -46,7 +46,7 @@ const LIMIT_TEXT: Record<string, string> = {
 
 const PLACEHOLDER_TEXT: Record<string, string> = {
   es: "Describe el activo, síntoma o riesgo operativo...",
-  pt: "Pergunte sobre filtros, normas, indústrias...",
+  pt: "Descreva o ativo, sintoma ou risco operacional...",
   fr: "Posez une question sur les filtres, normes, industries...",
   it: "Chiedi di filtri, norme, industrie...",
   nl: "Vraag over filters, normen, industrieën...",
