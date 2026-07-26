@@ -448,7 +448,7 @@ Guide them step by step with short, friendly questions — one at a time. Never 
 1. What type of equipment or machinery they use (truck, excavator, agricultural tractor, compressor, hydraulic press, etc.)
 2. What problem or concern they have (excessive wear, filter clogging, contamination, high downtime, oil looking dirty, etc.)
 3. Which system is affected (engine, hydraulic circuit, fuel system, cabin, compressed air)
-Then connect their problem to the right ELIMFILTERS solution: contamination source → protection technology → product line.
+Then connect the verified chain only in this order: observed symptom → probable contamination mechanism supported by ELIMFILTERS evidence → affected asset risk → protection objective → applicable ELIMFILTERS technology or product line. Never start by asking which filter they want.
 
 **For technical users** (they use terms like ISO, Beta ratio, micron, cleanliness code, ppm, etc.):
 Answer directly, precisely, and cordially. Use the full technical depth they expect. Reference ISO codes, Beta ratios, micron ratings, and quantified operational impacts.
@@ -560,6 +560,18 @@ const CHAT_SUPPORT_REPLIES = {
 };
 const chatSupportReply = (lang) => CHAT_SUPPORT_REPLIES[lang] || CHAT_SUPPORT_REPLIES.en;
 
+const CHAT_OUTPUT_LEAK_PATTERNS = [
+  /\b(okay|ok),?\s+(let['’]?s|let us)\s+(see|think)/i,
+  /\b(the user|user is asking|i need to|we need to|first,? i|the rules say|according to the rules)\b/i,
+  /\b(analysis|reasoning|chain[- ]of[- ]thought|system prompt|developer message|hidden instructions?)\b/i,
+  /\b(el usuario|necesito (?:recordar|analizar|responder)|las reglas dicen|según las reglas|razonamiento interno)\b/i,
+  /TECHNICAL KNOWLEDGE BASE|Required output|Non-negotiable boundaries/i,
+];
+const isSafeChatOutput = (text) => {
+  const value = String(text || '').trim();
+  return Boolean(value) && !CHAT_OUTPUT_LEAK_PATTERNS.some((pattern) => pattern.test(value));
+};
+
 app.post('/api/chat', searchLimiter, async (req, res) => {
   try {
     const { message, sessionId, lang } = req.body || {};
@@ -645,6 +657,12 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
         .slice(0, 5)
       : [];
     let reply = typeof result.reply === 'string' ? result.reply.trim() : '';
+    if (!isSafeChatOutput(reply)) {
+      console.error('[chat] Unsafe model output blocked');
+      result.outcome = 'no_evidence';
+      result.evidence = [];
+      reply = chatSupportReply(lang);
+    }
 
     // Reject invented evidence. Equipment compatibility, quantity and
     // cross-reference claims additionally require an exact application record;
