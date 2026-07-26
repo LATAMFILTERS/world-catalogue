@@ -516,6 +516,14 @@ const CHAT_LANG_NAMES = {
   es: 'Spanish', pt: 'Portuguese', fr: 'French', it: 'Italian', nl: 'Dutch',
   ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ar: 'Arabic', fa: 'Persian', en: 'English',
 };
+const CHAT_SUPPORT_REPLIES = {
+  es: `No tengo información oficial suficiente para confirmarlo. Escribe a ${CHAT_SUPPORT_EMAIL} para que nuestro equipo lo revise.`,
+  pt: `Não tenho informações oficiais suficientes para confirmar isso. Escreva para ${CHAT_SUPPORT_EMAIL}.`,
+  fr: `Je ne dispose pas de suffisamment d'informations officielles pour le confirmer. Écrivez à ${CHAT_SUPPORT_EMAIL}.`,
+  it: `Non dispongo di informazioni ufficiali sufficienti per confermarlo. Scrivi a ${CHAT_SUPPORT_EMAIL}.`,
+  en: `I don't have enough official information to confirm that. Please contact ${CHAT_SUPPORT_EMAIL}.`,
+};
+const chatSupportReply = (lang) => CHAT_SUPPORT_REPLIES[lang] || CHAT_SUPPORT_REPLIES.en;
 
 app.post('/api/chat', searchLimiter, async (req, res) => {
   try {
@@ -535,7 +543,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       return res.json({
         escalated: true,
         unresolvedAttempts: session.unresolvedAttempts,
-        reply: `Our team can continue with your request at ${CHAT_SUPPORT_EMAIL}.`,
+        reply: chatSupportReply(lang),
       });
     }
     session.lastActivity = Date.now();
@@ -584,7 +592,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     } catch {
       console.error('[chat] Non-JSON model response rejected');
       result = {
-        reply: `I don't have enough verified ELIMFILTERS information to answer that safely. Please contact ${CHAT_SUPPORT_EMAIL}.`,
+        reply: chatSupportReply(lang),
         outcome: 'no_evidence',
         buyerType: session.buyerType,
         evidence: [],
@@ -605,7 +613,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     if (safeOutcome === 'no_evidence') {
       reply = reply.includes(CHAT_SUPPORT_EMAIL)
         ? reply
-        : `${reply ? `${reply} ` : ''}Please contact ${CHAT_SUPPORT_EMAIL}.`;
+        : chatSupportReply(lang);
     }
 
     session.unresolvedAttempts = safeOutcome === 'resolved'
@@ -623,7 +631,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     const escalated = safeOutcome === 'no_evidence'
       || session.unresolvedAttempts >= CHAT_UNRESOLVED_LIMIT;
     if (escalated && !reply.includes(CHAT_SUPPORT_EMAIL)) {
-      reply += ` Please contact ${CHAT_SUPPORT_EMAIL}.`;
+      reply = chatSupportReply(lang);
     }
 
     return res.json({
