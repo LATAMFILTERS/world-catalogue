@@ -17,17 +17,17 @@ const SUPPORT_EMAIL_HREF =
   "mailto:support@elimfilters.com?subject=ELIMFILTERS%20Technical%20Support%20Request";
 
 const WELCOME_TEXT: Record<string, string> = {
-  es: "Hola. Soy el Asistente de Protección de Activos de ELIMFILTERS. ¿En qué puedo ayudarte hoy?",
-  pt: "Olá. Sou o Assistente de Proteção de Ativos da ELIMFILTERS. Como posso ajudá-lo hoje?",
-  fr: "Bonjour. Je suis l'Assistant Protection des Actifs ELIMFILTERS. Comment puis-je vous aider aujourd'hui ?",
-  it: "Ciao. Sono l'Assistente di Protezione degli Asset di ELIMFILTERS. Come posso aiutarti oggi?",
-  nl: "Hallo. Ik ben de ELIMFILTERS Asset Protection Assistent. Hoe kan ik u vandaag helpen?",
-  ru: "Здравствуйте. Я Ассистент по защите активов ELIMFILTERS. Чем могу помочь сегодня?",
-  zh: "您好。我是ELIMFILTERS资产保护助手。今天有什么可以帮助您的？",
-  ja: "こんにちは。ELIMFILTERSアセットプロテクションアシスタントです。本日はどのようなご用件でしょうか？",
-  ar: "مرحباً. أنا مساعد حماية الأصول من ELIMFILTERS. كيف يمكنني مساعدتك اليوم؟",
-  fa: "سلام. من دستیار حفاظت از دارایی‌های ELIMFILTERS هستم. چطور می‌توانم امروز کمکتان کنم؟",
-  en: "Hello. I'm the ELIMFILTERS Asset Protection Assistant. How can I help you today?",
+  es: "Hola. Soy el Asistente de Protección de Activos de ELIMFILTERS. Para entender la causa, contame qué activo usás y qué problema estás observando.",
+  pt: "Olá. Sou o Assistente de Proteção de Ativos da ELIMFILTERS. Para entender a causa, diga qual ativo você opera e qual problema está observando.",
+  fr: "Bonjour. Je suis l’Assistant Protection des Actifs ELIMFILTERS. Pour comprendre la cause, indiquez l’équipement concerné et le problème observé.",
+  it: "Ciao. Sono l’Assistente di Protezione degli Asset ELIMFILTERS. Per capire la causa, indicami quale asset utilizzi e quale problema stai osservando.",
+  nl: "Hallo. Ik ben de ELIMFILTERS Asset Protection Assistent. Om de oorzaak te begrijpen: welk bedrijfsmiddel gebruikt u en welk probleem ziet u?",
+  ru: "Здравствуйте. Я ассистент ELIMFILTERS по защите активов. Чтобы определить причину, укажите оборудование и наблюдаемую проблему.",
+  zh: "您好。我是 ELIMFILTERS 资产保护助手。为判断根本原因，请说明您使用的设备以及观察到的问题。",
+  ja: "こんにちは。ELIMFILTERS資産保護アシスタントです。原因を把握するため、対象設備と発生している問題を教えてください。",
+  ar: "مرحباً. أنا مساعد حماية الأصول من ELIMFILTERS. لفهم السبب، أخبرني ما الأصل الذي تستخدمه وما المشكلة التي تلاحظها.",
+  fa: "سلام. من دستیار حفاظت از دارایی‌های ELIMFILTERS هستم. برای تشخیص علت، بگویید از چه تجهیزی استفاده می‌کنید و چه مشکلی مشاهده می‌کنید.",
+  en: "Hello. I'm the ELIMFILTERS Asset Protection Assistant. To identify the cause, tell me what asset you operate and what problem you are observing.",
 };
 
 const LIMIT_TEXT: Record<string, string> = {
@@ -45,7 +45,7 @@ const LIMIT_TEXT: Record<string, string> = {
 };
 
 const PLACEHOLDER_TEXT: Record<string, string> = {
-  es: "Pregunta sobre filtros, normas, industrias...",
+  es: "Describe el activo, síntoma o riesgo operativo...",
   pt: "Pergunte sobre filtros, normas, indústrias...",
   fr: "Posez une question sur les filtres, normes, industries...",
   it: "Chiedi di filtri, norme, industrie...",
@@ -55,7 +55,7 @@ const PLACEHOLDER_TEXT: Record<string, string> = {
   ja: "フィルター、規格、産業について質問...",
   ar: "اسأل عن المرشحات والمعايير والصناعات...",
   fa: "درباره فیلترها، استانداردها، صنایع بپرسید...",
-  en: "Ask about filters, standards, industries...",
+  en: "Describe the asset, symptom or operating risk...",
 };
 
 const WARMUP_TEXT: Record<string, string> = {
