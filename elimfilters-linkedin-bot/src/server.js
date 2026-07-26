@@ -55,8 +55,8 @@ app.get("/webhook", (req, res) => {
   const challenge = req.query["challenge"] || req.query["hub.challenge"];
   const token = req.query["verify_token"] || req.query["hub.verify_token"];
 
-  if (token === config.linkedinVerifyToken || token === "elimfilters_linkedin_webhook_verify_2026") {
-    return res.status(200).send(challenge || "OK");
+  if (token !== config.linkedinVerifyToken) {
+    return res.sendStatus(403);
   }
   return res.status(200).send(challenge || "OK");
 });
@@ -65,6 +65,12 @@ app.get("/webhook", (req, res) => {
 app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
+
+  const signature = req.get("x-li-signature");
+  if (!verifyLinkedinSignature(req.body, signature, config.linkedinClientSecret)) {
+    webhookStats.rejected++;
+    return res.sendStatus(401);
+  }
 
   let body;
   try {

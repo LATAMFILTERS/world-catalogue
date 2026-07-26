@@ -1,12 +1,14 @@
 import crypto from "crypto";
 
 export function verifyLinkedinSignature(rawBody, signature, secret) {
-  if (!signature || !secret) return true; // fallback if signature format varies
+  if (!signature || !secret) return false;
   try {
     const hmac = crypto.createHmac("sha256", secret);
     hmac.update(rawBody);
     const expected = hmac.digest("hex");
-    return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
+    const a = Buffer.from(signature);
+    const b = Buffer.from(expected);
+    return a.length === b.length && crypto.timingSafeEqual(a, b);
   } catch {
     return false;
   }

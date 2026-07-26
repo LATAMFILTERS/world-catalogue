@@ -100,7 +100,9 @@ services:
       - key: META_APP_SECRET
         sync: false
       - key: META_VERIFY_TOKEN
-        value: elimfilters_webhook_verify_2026_7f4c2e9a81d63b50
+        sync: false
+      - key: DRY_RUN
+        value: "true"
       - key: DATABASE_URL
         fromDatabase:
           name: elimfilters-instagram-db
@@ -132,7 +134,7 @@ services:
       - key: IG_APP_SECRET
         sync: false
       - key: IG_VERIFY_TOKEN
-        value: elimfilters_webhook_verify_2026_7f4c2e9a81d63b50
+        sync: false
       - key: NVIDIA_NIM_API_KEY
         sync: false
 
@@ -148,13 +150,13 @@ services:
       - key: NODE_VERSION
         value: "20"
       - key: LINKEDIN_CLIENT_ID
-        value: "866h35ln0x9989"
+        sync: false
       - key: LINKEDIN_CLIENT_SECRET
         sync: false
       - key: LINKEDIN_ORGANIZATION_ID
-        value: "133064152"
+        sync: false
       - key: LINKEDIN_VERIFY_TOKEN
-        value: elimfilters_linkedin_webhook_verify_2026
+        sync: false
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
@@ -182,7 +184,7 @@ services:
       - key: YOUTUBE_API_KEY
         sync: false
       - key: YOUTUBE_VERIFY_TOKEN
-        value: elimfilters_youtube_webhook_verify_2026
+        sync: false
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
