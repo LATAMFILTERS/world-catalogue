@@ -368,13 +368,13 @@ export default function ChatBot() {
                       fontWeight: msg.from === "user" ? 500 : 400,
                     }}
                   >
-                    {msg.isLimit ? (
+                    {msg.from === "bot" && msg.text.includes("support@elimfilters.com") ? (
                       <>
                         {msg.text.split("support@elimfilters.com").map((part, i, arr) =>
                           i < arr.length - 1 ? (
                             <span key={i}>
                               {part}
-                              <a href="mailto:support@elimfilters.com" style={{ color: "#FFF12D", textDecoration: "underline" }}>
+                              <a href="/contact" target="_blank" rel="noopener noreferrer" style={{ color: "#FFF12D", textDecoration: "underline" }}>
                                 support@elimfilters.com
                               </a>
                             </span>
@@ -432,7 +432,9 @@ export default function ChatBot() {
                 }}
               >
                 <a
-                  href="mailto:support@elimfilters.com"
+                  href="/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: "inline-block",
                     background: "#FFF12D",

@@ -671,8 +671,8 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     session.lastActivity = Date.now();
     _chatSessions.set(sessionId, session);
 
-    const escalated = safeOutcome === 'no_evidence'
-      || session.unresolvedAttempts >= CHAT_UNRESOLVED_LIMIT;
+    const supportRecommended = safeOutcome === 'no_evidence';
+    const escalated = session.unresolvedAttempts >= CHAT_UNRESOLVED_LIMIT;
     if (escalated && !reply.includes(CHAT_SUPPORT_EMAIL)) {
       reply = chatSupportReply(lang);
     }
@@ -682,6 +682,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       outcome: safeOutcome,
       buyerType,
       unresolvedAttempts: session.unresolvedAttempts,
+      supportRecommended,
       escalated,
     });
   } catch (err) {
