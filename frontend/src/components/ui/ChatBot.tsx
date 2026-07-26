@@ -13,6 +13,9 @@ type Message = {
 const now = () =>
   new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
+const SUPPORT_EMAIL_HREF =
+  "mailto:support@elimfilters.com?subject=ELIMFILTERS%20Technical%20Support%20Request";
+
 const WELCOME_TEXT: Record<string, string> = {
   es: "Hola. Soy el Asistente de Protección de Activos de ELIMFILTERS. ¿En qué puedo ayudarte hoy?",
   pt: "Olá. Sou o Assistente de Proteção de Ativos da ELIMFILTERS. Como posso ajudá-lo hoje?",
@@ -374,7 +377,7 @@ export default function ChatBot() {
                           i < arr.length - 1 ? (
                             <span key={i}>
                               {part}
-                              <a href="/contact" target="_blank" rel="noopener noreferrer" style={{ color: "#FFF12D", textDecoration: "underline" }}>
+                              <a href={SUPPORT_EMAIL_HREF} style={{ color: "#FFF12D", textDecoration: "underline" }}>
                                 support@elimfilters.com
                               </a>
                             </span>
@@ -432,9 +435,7 @@ export default function ChatBot() {
                 }}
               >
                 <a
-                  href="/contact"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={SUPPORT_EMAIL_HREF}
                   style={{
                     display: "inline-block",
                     background: "#FFF12D",
