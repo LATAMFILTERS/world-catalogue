@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link';
+import ContactEmailActions from './ContactEmailActions';
 
 const CONTACT_CHANNELS = [
   {
@@ -7,7 +8,7 @@ const CONTACT_CHANNELS = [
     description:
       'For industrial buyers, fleets, importers and regional partners looking to evaluate ELIMFILTERS coverage, availability and commercial opportunities.',
     email: 'info@elimfilters.com',
-    href: 'mailto:info@elimfilters.com?subject=Commercial%20Inquiry%20-%20ELIMFILTERS',
+    subject: 'Commercial Inquiry - ELIMFILTERS',
   },
   {
     label: 'Distributor Network',
@@ -15,7 +16,7 @@ const CONTACT_CHANNELS = [
     description:
       'For companies seeking distributor status, regional representation, territory development or severe-duty market coverage.',
     email: 'distribution_network@elimfilters.com',
-    href: 'mailto:distribution_network@elimfilters.com?subject=Distributor%20Network%20Inquiry',
+    subject: 'Distributor Network Inquiry',
   },
   {
     label: 'Technical Support',
@@ -23,7 +24,7 @@ const CONTACT_CHANNELS = [
     description:
       'For OEM cross-reference validation, product application questions, technical specifications and industrial asset protection support.',
     email: 'support@elimfilters.com',
-    href: 'mailto:support@elimfilters.com?subject=Technical%20Support%20Request',
+    subject: 'Technical Support Request',
   },
 ];
 
@@ -248,19 +249,18 @@ export default function ContactPage() {
             }}
           >
             {CONTACT_CHANNELS.map((channel) => (
-              <a
+              <article
                 key={channel.email}
-                href={channel.href}
                 style={{
-                  display: 'block',
+                  display: 'flex',
+                  flexDirection: 'column',
                   border: '1px solid rgba(255,255,255,0.1)',
                   background:
                     channel.label === 'Distributor Network'
                       ? 'rgba(255,241,45,0.045)'
                       : '#050505',
                   padding: '1.6rem',
-                  textDecoration: 'none',
-                  minHeight: '260px',
+                  minHeight: '300px',
                 }}
               >
                 <p
@@ -300,19 +300,8 @@ export default function ContactPage() {
                   {channel.description}
                 </p>
 
-                <span
-                  style={{
-                    color: '#FFF12D',
-                    fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                    fontSize: '0.8rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {channel.email}
-                </span>
-              </a>
+                <ContactEmailActions email={channel.email} subject={channel.subject} />
+              </article>
             ))}
           </div>
         </div>
