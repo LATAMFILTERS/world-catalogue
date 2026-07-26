@@ -121,6 +121,22 @@ async function detectLangAsync(): Promise<string> {
   }
 }
 
+function detectMessageLang(text: string): string | null {
+  const value = text.trim().toLowerCase();
+  if (!value) return null;
+  if (/[¿¡ñáéíóúü]/.test(value)
+    || /\b(cu[aá]ntos?|filtros?|aceite|cami[oó]n|motor|necesito|tengo|busco|para|con|usa|utiliza|lleva|ayuda)\b/i.test(value)) {
+    return "es";
+  }
+  if (/[ãõç]/.test(value) || /\b(quantos?|filtros?|caminh[aã]o|preciso|tenho|para|com|usa)\b/i.test(value)) {
+    return "pt";
+  }
+  if (/[àâçéèêëîïôùûüÿœ]/.test(value) || /\b(combien|filtres?|camion|moteur|besoin|avec|pour)\b/i.test(value)) {
+    return "fr";
+  }
+  return null;
+}
+
 function getWelcome(lang: string): Message {
   return { id: 0, from: "bot", text: WELCOME_TEXT[lang] || WELCOME_TEXT.en, time: now() };
 }
@@ -173,8 +189,15 @@ export default function ChatBot() {
 
   const send = async (text: string) => {
     if (!text.trim() || typing || limitReached) return;
+    const messageLang = detectMessageLang(text) || lang;
+    if (messageLang !== lang) setLang(messageLang);
     const userMsg: Message = { id: Date.now(), from: "user", text: text.trim(), time: now() };
-    setMessages((m) => [...m, userMsg]);
+    setMessages((m) => {
+      if (m.length === 1 && m[0].id === 0) {
+        return [getWelcome(messageLang), userMsg];
+      }
+      return [...m, userMsg];
+    });
     setInput("");
     setTyping(true);
 
@@ -186,7 +209,7 @@ export default function ChatBot() {
         const res = await fetch(`${apiBase}/api/chat`, {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ message: text.trim(), sessionId: getSessionId(), lang }),
+          body: JSON.stringify({ message: text.trim(), sessionId: getSessionId(), lang: messageLang }),
           signal: controller.signal,
         });
         clearTimeout(timeout);
@@ -195,7 +218,7 @@ export default function ChatBot() {
         clearTimeout(timeout);
         if (attempt === 0) {
           // Show warm-up message and retry once
-          setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: WARMUP_TEXT[lang] || WARMUP_TEXT.en, time: now() }]);
+          setMessages((m) => [...m, { id: Date.now() + 1, from: "bot", text: WARMUP_TEXT[messageLang] || WARMUP_TEXT.en, time: now() }]);
           await new Promise((r) => setTimeout(r, 3000));
           return doFetch(1);
         }
@@ -216,7 +239,7 @@ export default function ChatBot() {
           {
             id: Date.now() + 1,
             from: "bot",
-            text: data.reply || LIMIT_TEXT[lang] || LIMIT_TEXT.en,
+            text: data.reply || LIMIT_TEXT[messageLang] || LIMIT_TEXT.en,
             time: now(),
             isLimit: true,
           },
@@ -229,14 +252,14 @@ export default function ChatBot() {
       } else {
         setMessages((m) => [
           ...m,
-          { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[lang] || ERROR_TEXT.en, time: now() },
+          { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[messageLang] || ERROR_TEXT.en, time: now() },
         ]);
       }
     } catch {
       setTyping(false);
       setMessages((m) => [
         ...m,
-        { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[lang] || ERROR_TEXT.en, time: now() },
+        { id: Date.now() + 1, from: "bot", text: ERROR_TEXT[messageLang] || ERROR_TEXT.en, time: now() },
       ]);
     }
   };
