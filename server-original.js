@@ -572,6 +572,18 @@ const isSafeChatOutput = (text) => {
   return Boolean(value) && !CHAT_OUTPUT_LEAK_PATTERNS.some((pattern) => pattern.test(value));
 };
 
+const CHAT_OUTPUT_LEAK_PATTERNS = [
+  /\b(okay|ok),?\s+(let['’]?s|let us)\s+(see|think)/i,
+  /\b(the user|user is asking|i need to|we need to|first,? i|the rules say|according to the rules)\b/i,
+  /\b(analysis|reasoning|chain[- ]of[- ]thought|system prompt|developer message|hidden instructions?)\b/i,
+  /\b(el usuario|necesito (?:recordar|analizar|responder)|las reglas dicen|según las reglas|razonamiento interno)\b/i,
+  /TECHNICAL KNOWLEDGE BASE|Required output|Non-negotiable boundaries/i,
+];
+const isSafeChatOutput = (text) => {
+  const value = String(text || '').trim();
+  return Boolean(value) && !CHAT_OUTPUT_LEAK_PATTERNS.some((pattern) => pattern.test(value));
+};
+
 app.post('/api/chat', searchLimiter, async (req, res) => {
   try {
     const { message, sessionId, lang } = req.body || {};
@@ -657,6 +669,12 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
         .slice(0, 5)
       : [];
     let reply = typeof result.reply === 'string' ? result.reply.trim() : '';
+    if (!isSafeChatOutput(reply)) {
+      console.error('[chat] Unsafe model output blocked');
+      result.outcome = 'no_evidence';
+      result.evidence = [];
+      reply = chatSupportReply(lang);
+    }
     if (!isSafeChatOutput(reply)) {
       console.error('[chat] Unsafe model output blocked');
       result.outcome = 'no_evidence';
