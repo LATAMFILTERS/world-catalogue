@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const server=fs.readFileSync('server-original.js','utf8');
 const ui=fs.readFileSync('frontend/src/components/ui/ChatBot.tsx','utf8');
 
-assert.match(server,/Diagnose before prescribing/);
+assert.match(server,/Then connect the verified chain only in this order/);
 assert.match(server,/CHAT_OUTPUT_LEAK_PATTERNS/);
 assert.match(server,/Unsafe model output blocked/);
 assert.match(server,/buyerType: 'unknown'/);
