@@ -6,6 +6,7 @@ import i18n from '@/i18n';
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
+import { LanguageSelector } from './LanguageSelector';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -22,6 +23,19 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
     <I18nextProvider i18n={i18n}>
       <LanguageDetector />
       <ScrollProgress />
+
+      {/* Fixed Language Selector Header */}
+      <header
+        style={{
+          position: 'fixed',
+          top: '1.5rem',
+          right: '2rem',
+          zIndex: 999,
+        }}
+      >
+        <LanguageSelector />
+      </header>
+
       {children}
       <UniversalEndNavigation />
     </I18nextProvider>
