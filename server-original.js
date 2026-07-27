@@ -599,9 +599,9 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     session.lastActivity = Date.now();
     _chatSessions.set(sessionId, session);
 
-    const apiKey = process.env.GROQ_API_KEY;
+    const apiKey = process.env.NVIDIA_NIM_API_KEY;
     if (!apiKey) {
-      console.error('[chat] GROQ_API_KEY not set');
+      console.error('[chat] NVIDIA_NIM_API_KEY not set');
       return res.status(503).json({ error: 'Chat service not configured' });
     }
 
@@ -610,11 +610,11 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       ? `${CHAT_SYSTEM_PROMPT}\n\nThe user's detected regional language is ${langName}. Respond in ${langName} unless their message is clearly written in a different language, in which case respond in that language instead.`
       : CHAT_SYSTEM_PROMPT;
 
-    const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const nvidiaRes = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
+        model: 'meta/llama-3.1-70b-instruct',
         messages: [
           { role: 'system', content: systemPrompt },
           ...session.history.slice(-8),
@@ -626,15 +626,15 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       }),
     });
 
-    if (!groqRes.ok) {
-      const err = await groqRes.text();
-      console.error('[chat] Groq error:', groqRes.status, err.slice(0, 200));
+    if (!nvidiaRes.ok) {
+      const err = await nvidiaRes.text();
+      console.error('[chat] Nvidia NIM error:', nvidiaRes.status, err.slice(0, 200));
       return res.status(502).json({ error: 'LLM service error' });
     }
 
-    const data = await groqRes.json();
+    const data = await nvidiaRes.json();
     const rawReply = data.choices?.[0]?.message?.content?.trim();
-    if (!rawReply) throw new Error('Empty Groq response');
+    if (!rawReply) throw new Error('Empty Nvidia NIM response');
 
     let result;
     try {
