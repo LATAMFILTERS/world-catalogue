@@ -5,6 +5,7 @@ const { Client, Pool } = require('pg');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
+const OutlookMailService = require('./lib/outlook-mail');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -63,6 +64,16 @@ app.use((req, res, next) => {
   res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
   next();
 });
+
+// ─── Outlook Mail Service (Microsoft 365) ────────────────────────────────────────
+let outlookMailService = null;
+try {
+  outlookMailService = new OutlookMailService();
+  outlookMailService.validateConfig();
+} catch (err) {
+  console.warn('[outlook] Service initialization error:', err.message);
+  console.warn('[outlook] Email delivery may fail. Ensure AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID are set.');
+}
 
 // ─── SEO/GEO Redirects (knowledge-system -> knowledge-center) ───────────────────
 // Maps legacy routes to new structures. Covers trailing slashes and retains query parameters.
@@ -308,32 +319,27 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
   const safeCompany = _escHtml(company || '—');
   const safeMessage = _escHtml(message).replace(/\n/g, '<br>');
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtpout.secureserver.net',
-      port: 465,
-      secure: true,
-      auth: {
-        user: 'info@elimfilters.com',
-        pass: process.env.GODADDY_MAIL_PASS,
-      },
-    });
-    await transporter.sendMail({
-      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
-      to: 'info@elimfilters.com',
-      replyTo: safeEmail,
-      subject: `[Web Contact] ${safeName} — ${safeCompany}`,
-      html: `
-        <h2 style="color:#000">New contact from elimfilters.com</h2>
-        <table cellpadding="8" style="border-collapse:collapse;width:100%">
-          <tr><td><b>Name</b></td><td>${safeName}</td></tr>
-          <tr><td><b>Email</b></td><td>${safeEmail}</td></tr>
-          <tr><td><b>Phone</b></td><td>${safePhone}</td></tr>
-          <tr><td><b>Company</b></td><td>${safeCompany}</td></tr>
-        </table>
-        <h3>Message</h3>
-        <p style="background:#f5f5f5;padding:1rem">${safeMessage}</p>
-      `,
-    });
+    const htmlContent = `
+      <h2 style="color:#000">New contact from elimfilters.com</h2>
+      <table cellpadding="8" style="border-collapse:collapse;width:100%">
+        <tr><td><b>Name</b></td><td>${safeName}</td></tr>
+        <tr><td><b>Email</b></td><td>${safeEmail}</td></tr>
+        <tr><td><b>Phone</b></td><td>${safePhone}</td></tr>
+        <tr><td><b>Company</b></td><td>${safeCompany}</td></tr>
+      </table>
+      <h3>Message</h3>
+      <p style="background:#f5f5f5;padding:1rem">${safeMessage}</p>
+    `;
+
+    if (outlookMailService) {
+      await outlookMailService.send(
+        'info@elimfilters.com',
+        `[Web Contact] ${safeName} — ${safeCompany}`,
+        htmlContent
+      );
+    } else {
+      throw new Error('Outlook Mail Service not configured');
+    }
     res.json({ ok: true });
   } catch (err) {
     console.error('[contact]', err.message);
@@ -377,36 +383,33 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
       console.error('[distributor db insert]', dbErr.message);
     }
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtpout.secureserver.net',
-      port: 465,
-      secure: true,
-      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
-    });
+    const htmlContent = `
+      <h2 style="color:#000">New distributor application — elimfilters.com</h2>
+      <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
+        <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
+        <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
+        <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
+        <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
+        <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
+        <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
+        <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
+      </table>
+      ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
+    `;
 
-    await transporter.sendMail({
-      from: '"ELIMFILTERS Web" <info@elimfilters.com>',
-      to: 'distribution_network@elimfilters.com',
-      replyTo: esc(email),
-      subject: `[Distributor] ${esc(companyName)} — ${esc(country)}`,
-      html: `
-        <h2 style="color:#000">New distributor application — elimfilters.com</h2>
-        <table cellpadding="8" style="border-collapse:collapse;width:100%;font-family:sans-serif">
-          <tr style="background:#f5f5f5"><td><b>Company</b></td><td>${esc(companyName)}</td></tr>
-          <tr><td><b>Legal name</b></td><td>${esc(legalName || '—')}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Contact</b></td><td>${esc(contactName)}</td></tr>
-          <tr><td><b>Email</b></td><td>${esc(email)}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Phone</b></td><td>${esc(phone || '—')}</td></tr>
-          <tr><td><b>Country</b></td><td>${esc(country)}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>State/Region</b></td><td>${esc(state || '—')}</td></tr>
-          <tr><td><b>Employees</b></td><td>${esc(employees || '—')}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Years in business</b></td><td>${esc(yearsInBusiness || '—')}</td></tr>
-          <tr><td><b>Current products</b></td><td>${esc(currentProducts || '—')}</td></tr>
-          <tr style="background:#f5f5f5"><td><b>Service area</b></td><td>${esc(serviceArea || '—')}</td></tr>
-        </table>
-        ${message ? `<h3>Additional message</h3><p style="background:#f5f5f5;padding:1rem">${esc(message).replace(/\n/g, '<br>')}</p>` : ''}
-      `,
-    });
+    if (outlookMailService) {
+      await outlookMailService.send(
+        'distribution_network@elimfilters.com',
+        `[Distributor] ${esc(companyName)} — ${esc(country)}`,
+        htmlContent
+      );
+    } else {
+      throw new Error('Outlook Mail Service not configured');
+    }
 
     res.json({ ok: true });
   } catch (err) {
@@ -2893,23 +2896,22 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
   const safeSessionId  = _escHtml(session_id);
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtpout.secureserver.net',
-      port: 465,
-      secure: true,
-      auth: { user: 'info@elimfilters.com', pass: process.env.GODADDY_MAIL_PASS },
-    });
-    await transporter.sendMail({
-      from: '"ELIMFILTERS Chat" <info@elimfilters.com>',
-      to: 'info@elimfilters.com',
-      subject: `[Chat Escalation] Session ${safeSessionId} — ${usedLang.toUpperCase()}`,
-      html: `
-        <h2>Chat session escalated to human support</h2>
-        <p><b>Session:</b> ${safeSessionId} | <b>Language:</b> ${usedLang}</p>
-        <hr/>
-        <pre style="background:#f5f5f5;padding:1rem;font-family:monospace">${safeTranscript}</pre>
-      `,
-    });
+    const htmlContent = `
+      <h2>Chat session escalated to human support</h2>
+      <p><b>Session:</b> ${safeSessionId} | <b>Language:</b> ${usedLang}</p>
+      <hr/>
+      <pre style="background:#f5f5f5;padding:1rem;font-family:monospace">${safeTranscript}</pre>
+    `;
+
+    if (outlookMailService) {
+      await outlookMailService.send(
+        'support@elimfilters.com',
+        `[Chat Escalation] Session ${safeSessionId} — ${usedLang.toUpperCase()}`,
+        htmlContent
+      );
+    } else {
+      throw new Error('Outlook Mail Service not configured');
+    }
     res.json({ success: true });
   } catch (err) {
     console.error('[ai/escalate]', err.message);
