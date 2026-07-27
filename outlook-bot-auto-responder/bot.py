@@ -25,10 +25,16 @@ TENANT_ID = os.getenv("AZURE_TENANT_ID")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", "30"))
 
-# Emails a monitorear
+# Emails a monitorear (8 buzones de departamentos)
 TARGET_MAILBOXES = [
-    "info@elimfilters.com",
-    "support@elimfilters.com"
+    "info@elimfilters.com",                              # General
+    "support@elimfilters.com",                           # Soporte técnico
+    "distribution_network@elimfilters.com",              # Red de distribución
+    "finance@elimfilters.com",                           # Finanzas
+    "logistic@elimfilters.com",                          # Logística
+    "purchases@elimfilters.com",                         # Compras
+    "assetprotection@elimfilters.com",                   # Asset Protection
+    "sales@elimfilters.com"                              # Ventas
 ]
 
 # ===== INICIALIZAR GROQ =====
