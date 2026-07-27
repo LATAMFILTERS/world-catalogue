@@ -1,0 +1,34 @@
+{
+  "intents": [
+    {
+      "id": "pedido",
+      "keywords": ["pedido", "order", "purchase", "compra", "solicitar", "request"],
+      "response": "Gracias por tu pedido. Tu solicitud fue recibida y será procesada en 24 horas. Recibirás confirmación por correo. ¿Alguna pregunta? Estamos aquí para ayudarte."
+    },
+    {
+      "id": "soporte_tecnico",
+      "keywords": ["error", "problema", "falla", "no funciona", "issue", "technical", "técnico", "help", "ayuda"],
+      "response": "Gracias por reportar el problema. Tu ticket de soporte ha sido creado y nuestro equipo técnico lo revisará en las próximas 24-48 horas. Te contactaremos pronto con soluciones."
+    },
+    {
+      "id": "factura",
+      "keywords": ["factura", "invoice", "billing", "pago", "payment", "cobro", "cobranza"],
+      "response": "Gracias por tu consulta sobre facturación. Tu información se encuentra disponible en tu panel de cliente. Si necesitas asistencia, contáctanos."
+    },
+    {
+      "id": "consulta_tecnica",
+      "keywords": ["especificación", "specifications", "compatibilidad", "compatible", "información técnica", "specs", "technical info"],
+      "response": "Gracias por tu consulta técnica. Nuestro equipo de ingeniería revisará tu solicitud y te responderá dentro de 48 horas con información detallada."
+    },
+    {
+      "id": "devolucion",
+      "keywords": ["devolver", "return", "cambio", "exchange", "reembolso", "refund", "devolución"],
+      "response": "Recibimos tu solicitud de devolución/cambio. Procesaremos tu solicitud en 5-7 días hábiles. Recibirás una etiqueta de envío por correo."
+    },
+    {
+      "id": "general",
+      "keywords": [],
+      "response": "Gracias por tu correo. El equipo de ELIMFILTERS lo revisará y te responderá pronto. Apreciamos tu contacto."
+    }
+  ]
+}
