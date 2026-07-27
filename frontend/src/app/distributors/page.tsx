@@ -1,5 +1,9 @@
-﻿import Link from 'next/link';
+﻿'use client';
+
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 
 const DISTRIBUTORS = [
   {
@@ -31,22 +35,17 @@ const DISTRIBUTORS = [
   },
 ];
 
-const PARTNER_VALUE = [
-  ['Technology Portfolio', 'Access to ELIMFILTERS protection technologies across air, fuel, lube, hydraulic, cooling, cabin, and compressed air systems.'],
-  ['Engineering Support', 'Cross-reference validation, application guidance, dimensional review, and technical support for severe-duty customers.'],
-  ['Knowledge System', 'Sales support built around contamination control, ISO standards, failure modes, and asset protection logic.'],
-  ['Warranty Positioning', 'Distributor credibility supported by clear warranty language and replacement-focused customer protection.'],
-  ['Regional Expansion', 'A platform designed for LATAM, North America, and industrial markets that need technical filtration support.'],
-  ['Category Positioning', 'A stronger commercial position: asset protection systems, not commodity filter replacement.'],
+const PARTNER_VALUE_KEYS = [
+  ['distributors.partnerValue1', 'distributors.partnerValue1Desc'],
+  ['distributors.partnerValue2', 'distributors.partnerValue2Desc'],
+  ['distributors.partnerValue3', 'distributors.partnerValue3Desc'],
+  ['distributors.partnerValue4', 'distributors.partnerValue4Desc'],
+  ['distributors.partnerValue5', 'distributors.partnerValue5Desc'],
+  ['distributors.partnerValue6', 'distributors.partnerValue6Desc'],
 ];
 
-export const metadata = {
-  title: 'Authorized Distributors | ELIMFILTERS',
-  description:
-    'ELIMFILTERS authorized distributors provide local access to industrial asset protection systems, technical support, and filtration solutions across the Americas.',
-};
-
 export default function DistributorsPage() {
+  const { t } = useTranslation();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -69,7 +68,7 @@ export default function DistributorsPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <Link href="/" style={homeButton}>{t('distributors.homeLink')}</Link>
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/distributor-network.avif)' }} />
@@ -77,17 +76,15 @@ export default function DistributorsPage() {
 
         <div style={heroInner}>
           <h1 style={heroTitle}>
-            Industrial
-            <br />
-            Distribution Network
+            {t('distributors.heroTitle')}
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.
+            {t('distributors.heroLead')}
           </p>
 
           <div style={tagRow}>
-            {['LATAM', 'USA', 'CARIBBEAN', 'FLEETS', 'MINING', 'INDUSTRIAL'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
+            {['distributors.tag1', 'distributors.tag2', 'distributors.tag3', 'distributors.tag4', 'distributors.tag5', 'distributors.tag6'].map((key) => (
+              <span key={key} style={tag}>{t(key)}</span>
             ))}
           </div>
         </div>
@@ -96,14 +93,14 @@ export default function DistributorsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={sectionTitle}>Local access with technical selling power.</h2>
+            <h2 style={sectionTitle}>{t('distributors.section1Title')}</h2>
           </div>
           <div>
             <p style={leadText}>
-              Industrial customers need more than part numbers. They need local support, fast response, cross-reference confidence, and a supplier that understands contamination-driven failures.
+              {t('distributors.section1Lead')}
             </p>
             <p style={bodyText}>
-              The ELIMFILTERS distribution network is designed to support regional partners with product architecture, technical language, warranty positioning, and asset protection value.
+              {t('distributors.section1Body')}
             </p>
           </div>
         </div>
@@ -112,7 +109,7 @@ export default function DistributorsPage() {
       <section style={networkSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>Current distributor coverage.</h2>
+            <h2 style={sectionTitle}>{t('distributors.section2Title')}</h2>
           </div>
 
           <div style={distributorGrid}>
@@ -141,14 +138,14 @@ export default function DistributorsPage() {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>What authorized distributors receive.</h2>
+          <h2 style={sectionTitle}>{t('distributors.section3Title')}</h2>
 
           <div style={partnerGrid}>
-            {PARTNER_VALUE.map(([title, body], index) => (
-              <article key={title} style={partnerCard}>
+            {PARTNER_VALUE_KEYS.map(([titleKey, bodyKey], index) => (
+              <article key={titleKey} style={partnerCard}>
                 <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={partnerTitle}>{title}</h3>
-                <p style={partnerBody}>{body}</p>
+                <h3 style={partnerTitle}>{t(titleKey)}</h3>
+                <p style={partnerBody}>{t(bodyKey)}</p>
               </article>
             ))}
           </div>
@@ -159,23 +156,23 @@ export default function DistributorsPage() {
         <div style={applicationInner}>
           <div>
             <h2 style={sectionTitle}>
-              Become an authorized distributor.
+              {t('distributors.closingTitle')}
             </h2>
             <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}>
-              Join the ELIMFILTERS distribution network and represent a platform built around industrial asset protection, technical differentiation, and severe-duty market growth.
+              {t('distributors.closingBody')}
             </p>
           </div>
-          <Link href="/distributor-application" style={yellowButton}>APPLY NOW</Link>
+          <Link href="/distributor-application" style={yellowButton}>{t('distributors.closingButton')}</Link>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Distribution becomes stronger when it sells protection, not only replacement parts.
+            {t('distributors.closingTitle')}
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/distributor-application" style={yellowButton}>DISTRIBUTOR APPLICATION</Link>
+            <Link href="/distributor-application" style={yellowButton}>{t('distributors.closingButton')}</Link>
             <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
