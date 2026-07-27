@@ -605,10 +605,9 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       return res.status(503).json({ error: 'Chat service not configured' });
     }
 
-    const langName = typeof lang === 'string' ? CHAT_LANG_NAMES[lang.toLowerCase()] : null;
-    const systemPrompt = langName
-      ? `${CHAT_SYSTEM_PROMPT}\n\nThe user's detected regional language is ${langName}. Respond in ${langName} unless their message is clearly written in a different language, in which case respond in that language instead.`
-      : CHAT_SYSTEM_PROMPT;
+    // Let the model detect language from the user's message, not browser language
+    // The system prompt already instructs to "Detect the language of the user's latest meaningful message"
+    const systemPrompt = CHAT_SYSTEM_PROMPT;
 
     const nvidiaRes = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
       method: 'POST',
