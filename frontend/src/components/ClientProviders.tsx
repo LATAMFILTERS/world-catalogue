@@ -7,6 +7,8 @@ import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import { LanguageSelector } from './LanguageSelector';
+import { ABTestVariantDisplay } from './ABTestVariantDisplay';
+import { BreadcrumbNavigation } from './BreadcrumbNavigation';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -36,8 +38,12 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
         <LanguageSelector />
       </header>
 
+      {/* Breadcrumb Navigation */}
+      <BreadcrumbNavigation />
+
       {children}
       <UniversalEndNavigation />
+      <ABTestVariantDisplay />
     </I18nextProvider>
   );
 }
