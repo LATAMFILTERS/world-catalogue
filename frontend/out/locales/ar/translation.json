@@ -5,7 +5,10 @@
     "technologies": "التقنيات",
     "contact": "اتصال",
     "findMyFilter": "ابحث عن الفلتر الخاص بي",
-    "knowledge": "المعرفة"
+    "knowledge": "المعرفة",
+    "about": "حول",
+    "continueLabel": "متابعة على منصة ELIMFILTERS",
+    "explore": "استكشف"
   },
   "hero": {
     "tag": "// تكنولوجيا حماية الأصول",

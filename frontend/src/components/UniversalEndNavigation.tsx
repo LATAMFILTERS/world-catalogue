@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+import { trackNavigationClick } from '@/lib/analytics';
 
 interface NavItem {
   href: string;
@@ -12,7 +14,7 @@ interface NavItem {
 }
 
 interface NavigationConfig {
-  kind: 'families' | 'systems' | 'technologies' | 'industries' | 'knowledge';
+  kind: 'families' | 'systems' | 'technologies' | 'industries' | 'knowledge' | 'home';
   eyebrow: string;
   title: string;
   items: NavItem[];
@@ -52,11 +54,12 @@ const COMMON: Record<string, NavItem> = {
   },
 };
 
-function isRoute(pathname: string, base: string) {
+function isRoute(pathname: string, base: string): boolean {
   return pathname === base || pathname.startsWith(`${base}/`);
 }
 
 function navigationFor(pathname: string): NavigationConfig | null {
+  // Families routes
   if (isRoute(pathname, '/families')) {
     return {
       kind: 'families',
@@ -68,6 +71,7 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
+  // Systems routes
   if (isRoute(pathname, '/systems')) {
     return {
       kind: 'systems',
@@ -79,6 +83,19 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
+  // Technologies routes
+  if (isRoute(pathname, '/technologies')) {
+    return {
+      kind: 'technologies',
+      eyebrow: 'EXPLORE RELATED TECHNOLOGIES',
+      title: pathname === '/technologies'
+        ? 'Understand the engineering behind contamination control.'
+        : 'Explore related protection technologies and principles.',
+      items: [COMMON.systems, COMMON.industries, COMMON.knowledge, COMMON.search],
+    };
+  }
+
+  // Industries routes
   if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',
@@ -90,6 +107,7 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
+  // Knowledge System routes
   if (isRoute(pathname, '/knowledge-system')) {
     return {
       kind: 'knowledge',
@@ -109,14 +127,23 @@ const LEGACY_ENDING_MARKERS = [
   'continue through the platform',
   'related platform paths',
   'next engineering path',
+  'explore related',
+  'further reading',
+  'related resources',
 ];
 
 export function UniversalEndNavigation() {
   const pathname = usePathname();
   const config = navigationFor(pathname);
+  const { t } = useTranslation();
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    if (!config) return;
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!config || !hydrated) return;
 
     const main = document.querySelector('main');
     if (!main) return;
@@ -125,9 +152,10 @@ export function UniversalEndNavigation() {
     const sections = Array.from(main.querySelectorAll<HTMLElement>(':scope > section'));
 
     sections.forEach((section) => {
-      const heading = section.querySelector('h2, h3, p, span');
+      const heading = section.querySelector('h2, h3, p, span, [data-navigation-marker]');
       const text = heading?.textContent?.trim().toLowerCase() ?? '';
-      if (LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker))) {
+
+      if (text && LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker.toLowerCase()))) {
         section.dataset.universalEndNavHidden = 'true';
         section.style.display = 'none';
         hiddenSections.push(section);
@@ -140,31 +168,53 @@ export function UniversalEndNavigation() {
         delete section.dataset.universalEndNavHidden;
       });
     };
-  }, [config, pathname]);
+  }, [config, pathname, hydrated]);
 
-  if (!config) return null;
+  if (!config || !hydrated) return null;
 
   return (
-    <nav className={`universal-end-nav universal-end-nav--${config.kind}`} aria-label="Continue through the ELIMFILTERS platform">
+    <nav
+      className={`universal-end-nav universal-end-nav--${config.kind}`}
+      aria-label={t('nav.continueLabel', 'Continue through the ELIMFILTERS platform')}
+      role="navigation"
+    >
       <div className="universal-end-nav__inner">
         <p className="universal-end-nav__eyebrow">{config.eyebrow}</p>
         <h2 className="universal-end-nav__title">{config.title}</h2>
         <div className="universal-end-nav__grid">
           {config.items.map((item) => {
+            const handleNavigationClick = () => {
+              trackNavigationClick(config.kind, item.label.toLowerCase().replace(/\s+/g, '_'), 'universal_end');
+            };
+
             const content = (
               <>
                 <strong>{item.label}</strong>
                 <span>{item.description}</span>
-                <small>EXPLORE →</small>
+                <small>{t('nav.explore', 'EXPLORE')} →</small>
               </>
             );
 
             return item.external ? (
-              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="universal-end-nav__card">
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="universal-end-nav__card"
+                aria-label={`${item.label}: ${item.description}`}
+                onClick={handleNavigationClick}
+              >
                 {content}
               </a>
             ) : (
-              <Link key={item.href} href={item.href} className="universal-end-nav__card">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="universal-end-nav__card"
+                aria-label={`${item.label}: ${item.description}`}
+                onClick={handleNavigationClick}
+              >
                 {content}
               </Link>
             );

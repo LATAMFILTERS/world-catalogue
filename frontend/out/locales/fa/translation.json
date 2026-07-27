@@ -5,7 +5,10 @@
     "technologies": "فن آوری ها",
     "contact": "تماس بگیرید",
     "findMyFilter": "فیلتر من را پیدا کنید",
-    "knowledge": "دانش"
+    "knowledge": "دانش",
+    "about": "درباره",
+    "continueLabel": "ادامه در پلتفرم ELIMFILTERS",
+    "explore": "کاوش"
   },
   "hero": {
     "tag": "// فن آوری حفاظت از دارایی",

@@ -5,7 +5,10 @@
     "technologies": "Tecnologias",
     "contact": "Contato",
     "findMyFilter": "ENCONTRE MEU FILTRO",
-    "knowledge": "Conhecimento"
+    "knowledge": "Conhecimento",
+    "about": "Sobre",
+    "continueLabel": "Continue na plataforma ELIMFILTERS",
+    "explore": "EXPLORAR"
   },
   "hero": {
     "tag": "// TECNOLOGIA DE PROTEÇÃO DE ATIVOS",

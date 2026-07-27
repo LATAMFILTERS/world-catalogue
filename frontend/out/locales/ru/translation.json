@@ -5,7 +5,10 @@
     "technologies": "Технологии",
     "contact": "Контакт",
     "findMyFilter": "НАЙТИ МОЙ ФИЛЬТР",
-    "knowledge": "Знания"
+    "knowledge": "Знания",
+    "about": "О нас",
+    "continueLabel": "Продолжайте на платформе ELIMFILTERS",
+    "explore": "ИССЛЕДОВАТЬ"
   },
   "hero": {
     "tag": "// ТЕХНОЛОГИЯ ЗАЩИТЫ АКТИВОВ",

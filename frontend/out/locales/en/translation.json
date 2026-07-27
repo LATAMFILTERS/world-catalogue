@@ -5,7 +5,10 @@
     "technologies": "Technologies",
     "contact": "Contact",
     "findMyFilter": "FIND MY FILTER",
-    "knowledge": "Knowledge"
+    "knowledge": "Knowledge",
+    "about": "About",
+    "continueLabel": "Continue through the ELIMFILTERS platform",
+    "explore": "EXPLORE"
   },
   "hero": {
     "tag": "// ASSET PROTECTION TECHNOLOGY",

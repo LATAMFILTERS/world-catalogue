@@ -5,7 +5,10 @@
     "technologies": "Tecnologie",
     "contact": "Contatto",
     "findMyFilter": "TROVA IL MIO FILTRO",
-    "knowledge": "Conoscenza"
+    "knowledge": "Conoscenza",
+    "about": "Informazioni",
+    "continueLabel": "Continua sulla piattaforma ELIMFILTERS",
+    "explore": "ESPLORA"
   },
   "hero": {
     "tag": "// TECNOLOGIA PER LA PROTEZIONE DEL PATRIMONIO",

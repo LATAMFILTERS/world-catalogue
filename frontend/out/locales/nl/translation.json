@@ -5,7 +5,10 @@
     "technologies": "Technologieën",
     "contact": "Contact",
     "findMyFilter": "VIND MIJN FILTER",
-    "knowledge": "Kennis"
+    "knowledge": "Kennis",
+    "about": "Over",
+    "continueLabel": "Ga verder op het ELIMFILTERS-platform",
+    "explore": "VERKENNEN"
   },
   "hero": {
     "tag": "// TECHNOLOGIE VOOR ACTIVABESCHERMING",

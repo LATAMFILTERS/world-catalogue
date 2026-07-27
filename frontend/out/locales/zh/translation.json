@@ -5,7 +5,10 @@
     "technologies": "技术",
     "contact": "接触",
     "findMyFilter": "找到我的过滤器",
-    "knowledge": "知识库"
+    "knowledge": "知识库",
+    "about": "关于",
+    "continueLabel": "继续浏览 ELIMFILTERS 平台",
+    "explore": "探索"
   },
   "hero": {
     "tag": "// 资产保护技术",
