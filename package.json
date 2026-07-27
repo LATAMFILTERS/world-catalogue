@@ -18,6 +18,7 @@
     "test:ebp": "npm run test:ebp-phase1 && npm run test:ebp-phase2 && npm run test:ebp-phase3 && npm run test:ebp-phase4 && npm run test:ebp-phase5"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",

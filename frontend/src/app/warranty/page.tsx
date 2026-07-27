@@ -1,46 +1,41 @@
-﻿import Link from 'next/link';
+﻿'use client';
+
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 
-const STATS = [
-  ['10K KM', 'Minimum coverage distance'],
-  ['1000 HRS', 'Minimum coverage hours'],
-  ['100%', 'Non-prorated coverage'],
-  ['24H', 'Support response target'],
+const STATS_KEYS = ['warranty.statValue1', 'warranty.statValue2', 'warranty.statValue3', 'warranty.statValue4'];
+const STATS_LABELS = ['warranty.statLabel1', 'warranty.statLabel2', 'warranty.statLabel3', 'warranty.statLabel4'];
+
+const PILLARS_KEYS = [
+  ['warranty.pillarTitle1', 'warranty.pillarBody1'],
+  ['warranty.pillarTitle2', 'warranty.pillarBody2'],
+  ['warranty.pillarTitle3', 'warranty.pillarBody3'],
 ];
 
-const PILLARS = [
-  ['Direct Support', 'Defective filters are reviewed and replaced through ELIMFILTERS support channels to reduce operational downtime.'],
-  ['Asset Protection', 'Warranty language is built around protection confidence, technical validation, and product integrity.'],
-  ['Coverage Transparency', 'Coverage is communicated clearly so distributors, fleets, and industrial customers understand the support process.'],
+const COVERAGE_KEYS = [
+  'warranty.coverageItem1',
+  'warranty.coverageItem2',
+  'warranty.coverageItem3',
+  'warranty.coverageItem4',
+  'warranty.coverageItem5',
+  'warranty.coverageItem6',
+  'warranty.coverageItem7',
+  'warranty.coverageItem8',
 ];
 
-const COVERAGE = [
-  'Filter element defects',
-  'Housing leaks or defects',
-  'Bypass valve malfunctions',
-  'Pressure differential issues',
-  'Seal failures',
-  'Manufacturing defects',
-  'Premature media failure',
-  'Technical validation support',
+const PROCESS_KEYS = [
+  'warranty.processItem1',
+  'warranty.processItem2',
+  'warranty.processItem3',
+  'warranty.processItem4',
+  'warranty.processItem5',
+  'warranty.processItem6',
 ];
-
-const PROCESS = [
-  'Identify product and application',
-  'Submit technical evidence',
-  'Validate operating condition',
-  'Review failure mode',
-  'Issue support decision',
-  'Coordinate replacement path',
-];
-
-export const metadata = {
-  title: 'Warranty | ELIMFILTERS',
-  description:
-    'ELIMFILTERS warranty and support coverage for industrial asset protection systems, technical validation, replacement support, and distributor confidence.',
-};
 
 export default function WarrantyPage() {
+  const { t } = useTranslation();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WarrantyPromise',
@@ -59,7 +54,7 @@ export default function WarrantyPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <Link href="/" style={homeButton}>{t('warranty.homeLink')}</Link>
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/warranty-support.avif)' }} />
@@ -67,17 +62,15 @@ export default function WarrantyPage() {
 
         <div style={heroInner}>
           <h1 style={heroTitle}>
-            Protection
-            <br />
-            Backed By Support
+            {t('warranty.heroTitle')}
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS warranty coverage supports distributors, fleets, and industrial customers with a clear protection framework, technical validation, and replacement-focused support.
+            {t('warranty.heroLead')}
           </p>
 
           <div style={tagRow}>
-            {['SUPPORT', 'VALIDATION', 'REPLACEMENT', 'FLEETS', 'DISTRIBUTORS', 'ASSETS'].map((item) => (
-              <span key={item} style={tag}>{item}</span>
+            {['warranty.tagSupport', 'warranty.tagValidation', 'warranty.tagReplacement', 'warranty.tagFleets', 'warranty.tagDistributors', 'warranty.tagAssets'].map((key) => (
+              <span key={key} style={tag}>{t(key)}</span>
             ))}
           </div>
         </div>
@@ -85,10 +78,10 @@ export default function WarrantyPage() {
 
       <section style={statsSection}>
         <div style={statsGrid}>
-          {STATS.map(([value, label]) => (
-            <div key={value} style={statCard}>
-              <strong style={statValue}>{value}</strong>
-              <span style={statLabel}>{label}</span>
+          {STATS_KEYS.map((valueKey, idx) => (
+            <div key={valueKey} style={statCard}>
+              <strong style={statValue}>{t(valueKey)}</strong>
+              <span style={statLabel}>{t(STATS_LABELS[idx])}</span>
             </div>
           ))}
         </div>
@@ -97,14 +90,14 @@ export default function WarrantyPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={sectionTitle}>Warranty is part of the asset protection system.</h2>
+            <h2 style={sectionTitle}>{t('warranty.section1Title')}</h2>
           </div>
           <div>
             <p style={leadText}>
-              Industrial customers do not only need a replacement filter. They need confidence that the product, application, operating condition, and failure mode will be evaluated with technical discipline.
+              {t('warranty.section1Lead')}
             </p>
             <p style={bodyText}>
-              ELIMFILTERS support is structured to protect distributor credibility, reduce downtime pressure, and help customers make correct technical decisions when warranty questions appear.
+              {t('warranty.section1Body')}
             </p>
           </div>
         </div>
@@ -112,13 +105,13 @@ export default function WarrantyPage() {
 
       <section style={processSection}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>From claim evidence to support decision.</h2>
+          <h2 style={sectionTitle}>{t('warranty.section2Title')}</h2>
 
           <div style={processList}>
-            {PROCESS.map((item, index) => (
-              <div key={item} style={processRow}>
+            {PROCESS_KEYS.map((key, index) => (
+              <div key={key} style={processRow}>
                 <span style={processStep}>{String(index + 1).padStart(2, '0')}</span>
-                <strong style={processLabel}>{item}</strong>
+                <strong style={processLabel}>{t(key)}</strong>
               </div>
             ))}
           </div>
@@ -128,15 +121,15 @@ export default function WarrantyPage() {
       <section style={pillarSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>Clear coverage. Technical review. Fast direction.</h2>
+            <h2 style={sectionTitle}>{t('warranty.section3Title')}</h2>
           </div>
 
           <div style={pillarGrid}>
-            {PILLARS.map(([title, body], index) => (
-              <article key={title} style={pillarCard}>
+            {PILLARS_KEYS.map(([titleKey, bodyKey], index) => (
+              <article key={titleKey} style={pillarCard}>
                 <span style={pillarNumber}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={pillarTitle}>{title}</h3>
-                <p style={pillarBody}>{body}</p>
+                <h3 style={pillarTitle}>{t(titleKey)}</h3>
+                <p style={pillarBody}>{t(bodyKey)}</p>
               </article>
             ))}
           </div>
@@ -145,13 +138,13 @@ export default function WarrantyPage() {
 
       <section style={coverageSection}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>What support can review.</h2>
+          <h2 style={sectionTitle}>{t('warranty.section4Title')}</h2>
 
           <div style={coverageGrid}>
-            {COVERAGE.map((item) => (
-              <div key={item} style={coverageCard}>
+            {COVERAGE_KEYS.map((key) => (
+              <div key={key} style={coverageCard}>
                 <span style={check}>&#10003;</span>
-                <strong style={coverageText}>{item}</strong>
+                <strong style={coverageText}>{t(key)}</strong>
               </div>
             ))}
           </div>
@@ -162,24 +155,24 @@ export default function WarrantyPage() {
         <div style={validationInner}>
           <div>
             <h2 style={sectionTitle}>
-              Validate before the problem becomes downtime.
+              {t('warranty.section5Title')}
             </h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
-              For fleets, distributors, and industrial accounts, ELIMFILTERS can review the application, operating environment, and part selection before a warranty issue becomes a field failure.
+              {t('warranty.section5Body')}
             </p>
           </div>
-          <Link href="/contact" style={yellowButton}>CONTACT SUPPORT</Link>
+          <Link href="/contact" style={yellowButton}>{t('warranty.section5Button')}</Link>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Support protects confidence before, during, and after installation.
+            {t('warranty.closingTitle')}
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/contact" style={yellowButton}>REQUEST SUPPORT</Link>
-            <Link href="/systems" style={darkButton}>EXPLORE SYSTEMS</Link>
+            <Link href="/contact" style={yellowButton}>{t('warranty.closingButton1')}</Link>
+            <Link href="/systems" style={darkButton}>{t('warranty.closingButton2')}</Link>
           </div>
         </div>
       </section>

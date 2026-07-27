@@ -13,7 +13,17 @@ services:
         value: production
       - key: DATABASE_URL
         sync: false
-      - key: GODADDY_MAIL_PASS
+      - key: AZURE_CLIENT_ID
+        sync: false
+      - key: AZURE_CLIENT_SECRET
+        sync: false
+      - key: AZURE_TENANT_ID
+        sync: false
+      - key: OUTLOOK_MAILBOX_EMAIL
+        value: vabreu@elimfilters.com
+      - key: OUTLOOK_SMTP_PASSWORD
+        sync: false
+      - key: NVIDIA_NIM_API_KEY
         sync: false
 
   # Static frontend serving elimfilters.com. These redirects must execute at the

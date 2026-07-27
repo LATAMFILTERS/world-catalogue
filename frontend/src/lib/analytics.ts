@@ -74,6 +74,24 @@ export function trackKnowledgeTraversal(
   });
 }
 
+// ─── Navigation & Agentic UI Tracking ────────────────────────────────────
+
+export function trackNavigationClick(section: string, label: string, source: string) {
+  trackEvent('navigation_click', {
+    section,
+    label,
+    source,
+  });
+}
+
+export function trackContextualLink(linkType: string, target: string, context: string) {
+  trackEvent('contextual_link_click', {
+    link_type: linkType,
+    target_path: target,
+    context_source: context,
+  });
+}
+
 // ─── Phase B: Bridge Page Entry Points ───────────────────────────────────
 
 export function trackBridgeEntry(bridgePage: string, referrer?: string) {

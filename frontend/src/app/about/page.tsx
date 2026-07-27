@@ -1,69 +1,24 @@
-import Link from 'next/link';
+'use client';
 
-export const metadata = {
-  title: 'About ELIMFILTERS® | Industrial Asset Protection Engineering',
-  description:
-    'Learn how ELIMFILTERS® develops industrial asset protection systems through contamination analysis, mathematical engineering models, AI-assisted simulation, and field validation for severe-duty equipment.',
-  keywords: [
-    'ELIMFILTERS',
-    'industrial asset protection',
-    'contamination control engineering',
-    'AI-assisted filtration engineering',
-    'field-validated filtration technology',
-    'severe-duty equipment reliability',
-  ],
-  alternates: {
-    canonical: 'https://elimfilters.com/about/',
-  },
-  openGraph: {
-    title: 'About ELIMFILTERS® | Industrial Asset Protection Engineering',
-    description:
-      'ELIMFILTERS® combines mathematical engineering, AI-assisted simulation, contamination intelligence, and field validation to protect industrial assets.',
-    url: 'https://elimfilters.com/about/',
-    siteName: 'ELIMFILTERS®',
-    type: 'website',
-  },
-};
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 
 const ENGINEERING_METHOD = [
-  {
-    step: '01',
-    title: 'Understand the asset',
-    body: 'We begin with the machine, its operating environment, duty cycle, fluid system, contamination exposure, component tolerances, and failure consequences.',
-  },
-  {
-    step: '02',
-    title: 'Model the contamination risk',
-    body: 'Mathematical models and AI-assisted simulations are used to analyze particle behavior, flow conditions, pressure changes, thermal cycles, and expected contaminant loading.',
-  },
-  {
-    step: '03',
-    title: 'Engineer the protection architecture',
-    body: 'Media, geometry, sealing, structural materials, pressure response, and service requirements are defined as one integrated protection system rather than isolated product features.',
-  },
-  {
-    step: '04',
-    title: 'Validate under real operating conditions',
-    body: 'A technology is not considered complete at the simulation stage. Production designs must be confirmed through controlled testing and field validation before they become part of the ELIMFILTERS® platform.',
-  },
+  { step: '01', titleKey: 'about.engineeringMethod01Title', bodyKey: 'about.engineeringMethod01Body' },
+  { step: '02', titleKey: 'about.engineeringMethod02Title', bodyKey: 'about.engineeringMethod02Body' },
+  { step: '03', titleKey: 'about.engineeringMethod03Title', bodyKey: 'about.engineeringMethod03Body' },
+  { step: '04', titleKey: 'about.engineeringMethod04Title', bodyKey: 'about.engineeringMethod04Body' },
 ];
 
 const PRINCIPLES = [
-  {
-    title: 'Protect the asset, not the replacement part',
-    body: 'The value of filtration is measured by the component damage, downtime, labor, production loss, and asset-life reduction it prevents.',
-  },
-  {
-    title: 'Engineer from the failure mechanism',
-    body: 'We study how contamination reaches critical clearances and how wear develops before deciding what protection architecture the system requires.',
-  },
-  {
-    title: 'Connect engineering with operating reality',
-    body: 'Laboratory data establishes control. Field validation establishes relevance. Both are required to support a severe-duty industrial application.',
-  },
+  { titleKey: 'about.principle01Title', bodyKey: 'about.principle01Body' },
+  { titleKey: 'about.principle02Title', bodyKey: 'about.principle02Body' },
+  { titleKey: 'about.principle03Title', bodyKey: 'about.principle03Body' },
 ];
 
 export default function AboutPage() {
+  const { t } = useTranslation();
   const schemaOrganization = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -121,7 +76,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaAboutPage) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <Link href="/" style={homeButton}>{t('about.homeLink')}</Link>
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
@@ -129,12 +84,10 @@ export default function AboutPage() {
 
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
           <h1 style={heroTitle}>
-            Engineering protection
-            <br />
-            around the asset.
+            {t('about.heroTitle')}
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS® is an industrial asset protection company. We develop filtration and contamination-control systems to reduce wear, prevent avoidable failure, extend equipment life, and protect the economic value of severe-duty machinery.
+            {t('about.heroLead')}
           </p>
         </div>
       </section>
@@ -150,15 +103,15 @@ export default function AboutPage() {
                 maxWidth: '720px',
               }}
             >
-              A protection company built around equipment reliability.
+              {t('about.section1Title')}
             </h2>
           </div>
           <div>
             <p style={leadText}>
-              ELIMFILTERS® was created from direct experience with industrial filtration, equipment maintenance, distribution, and the operational consequences of contamination. That experience established a simple principle: the filter is not the final objective; the protected asset is.
+              {t('about.section1Lead')}
             </p>
             <p style={bodyText}>
-              Our role is to connect product engineering, contamination intelligence, technical standards, cross-reference data, application knowledge, and field evidence into a system that helps distributors, fleets, maintenance teams, and industrial operators make better protection decisions.
+              {t('about.section1Body')}
             </p>
           </div>
         </div>
@@ -166,26 +119,26 @@ export default function AboutPage() {
 
       <section style={purposeSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2 style={{ ...sectionTitle, maxWidth: '960px' }}>Reduce the distance between contamination and failure.</h2>
+          <h2 style={{ ...sectionTitle, maxWidth: '960px' }}>{t('about.section2Title')}</h2>
           <p style={{ ...leadText, maxWidth: '850px', marginTop: '2rem' }}>
-            Contamination becomes expensive long before a machine stops. It changes clearances, damages surfaces, destabilizes pressure, degrades fluids, reduces efficiency, and shortens component life. Our objective is to identify that risk early and engineer protection before the damage becomes operational.
+            {t('about.section2Lead')}
           </p>
         </div>
       </section>
 
       <section style={sectionSpacing}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2 style={{ ...sectionTitle, maxWidth: '980px' }}>Mathematical modeling. AI-assisted simulation. Field validation.</h2>
+          <h2 style={{ ...sectionTitle, maxWidth: '980px' }}>{t('about.section3Title')}</h2>
           <p style={{ ...bodyText, maxWidth: '850px', marginTop: '1.8rem' }}>
-            ELIMFILTERS® technologies are not created as marketing labels. Each one represents an engineering architecture derived from the behavior of contamination inside a specific protection domain. Mathematical analysis and AI-assisted simulation help us evaluate variables that cannot be understood from a part number alone, while controlled testing and field validation confirm whether the design performs under real operating conditions.
+            {t('about.section3Body')}
           </p>
 
           <div style={{ marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
             {ENGINEERING_METHOD.map((item) => (
               <div key={item.step} style={methodRow}>
                 <div style={stepNumber}>{item.step}</div>
-                <h3 style={methodTitle}>{item.title}</h3>
-                <p style={{ ...bodyText, margin: 0 }}>{item.body}</p>
+                <h3 style={methodTitle}>{t(item.titleKey)}</h3>
+                <p style={{ ...bodyText, margin: 0 }}>{t(item.bodyKey)}</p>
               </div>
             ))}
           </div>
@@ -194,12 +147,12 @@ export default function AboutPage() {
 
       <section style={principlesSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2 style={sectionTitle}>Engineering decisions must protect real operating value.</h2>
+          <h2 style={sectionTitle}>{t('about.section4Title')}</h2>
           <div style={principlesGrid}>
-            {PRINCIPLES.map((item) => (
-              <article key={item.title} style={principleCard}>
-                <h3 style={principleTitle}>{item.title}</h3>
-                <p style={{ ...bodyText, margin: '1.1rem 0 0' }}>{item.body}</p>
+            {PRINCIPLES.map((item, idx) => (
+              <article key={idx} style={principleCard}>
+                <h3 style={principleTitle}>{t(item.titleKey)}</h3>
+                <p style={{ ...bodyText, margin: '1.1rem 0 0' }}>{t(item.bodyKey)}</p>
               </article>
             ))}
           </div>
@@ -209,14 +162,14 @@ export default function AboutPage() {
       <section style={closingSection}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-            We do not begin with a filter. We begin with the asset that cannot afford to fail.
+            {t('about.closingTitle')}
           </h2>
           <p style={{ ...bodyText, maxWidth: '760px', margin: '1.8rem auto 0' }}>
-            The result is a growing industrial protection platform designed to turn engineering knowledge, validated technology, and product intelligence into measurable reliability support.
+            {t('about.closingDesc')}
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/contact" style={yellowButton}>CONTACT ELIMFILTERS</Link>
-            <Link href="/knowledge-system" style={darkButton}>EXPLORE OUR KNOWLEDGE SYSTEM</Link>
+            <Link href="/contact" style={yellowButton}>{t('about.contactButton')}</Link>
+            <Link href="/knowledge-system" style={darkButton}>{t('about.knowledgeButton')}</Link>
           </div>
         </div>
       </section>
