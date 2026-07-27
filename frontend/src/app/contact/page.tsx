@@ -1,51 +1,53 @@
-﻿import Link from 'next/link';
+﻿'use client';
+
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import '@/i18n';
 import ContactEmailActions from './ContactEmailActions';
 
-const CONTACT_CHANNELS = [
+// Email channels (static)
+const EMAIL_CHANNELS = [
   {
-    label: 'Commercial Inquiries',
-    title: 'Global Sales Contact',
-    description:
-      'For industrial buyers, fleets, importers and regional partners looking to evaluate ELIMFILTERS coverage, availability and commercial opportunities.',
     email: 'info@elimfilters.com',
     subject: 'Commercial Inquiry - ELIMFILTERS',
+    labelKey: 'contact.channel1Label',
+    titleKey: 'contact.channel1Title',
+    descKey: 'contact.channel1Desc',
   },
   {
-    label: 'Distributor Network',
-    title: 'Authorized Partner Review',
-    description:
-      'For companies seeking distributor status, regional representation, territory development or severe-duty market coverage.',
     email: 'distribution_network@elimfilters.com',
     subject: 'Distributor Network Inquiry',
+    labelKey: 'contact.channel2Label',
+    titleKey: 'contact.channel2Title',
+    descKey: 'contact.channel2Desc',
   },
   {
-    label: 'Technical Support',
-    title: 'Application And Cross Reference',
-    description:
-      'For OEM cross-reference validation, product application questions, technical specifications and industrial asset protection support.',
     email: 'support@elimfilters.com',
     subject: 'Technical Support Request',
+    labelKey: 'contact.channel3Label',
+    titleKey: 'contact.channel3Title',
+    descKey: 'contact.channel3Desc',
   },
 ];
 
-const CONTACT_PRIORITIES = [
-  'OEM cross-reference validation',
-  'Fleet and equipment coverage',
-  'Distributor qualification',
-  'Industrial sector alignment',
-  'Contamination control support',
-  'Regional availability planning',
+const PRIORITY_KEYS = [
+  'contact.priority1',
+  'contact.priority2',
+  'contact.priority3',
+  'contact.priority4',
+  'contact.priority5',
+  'contact.priority6',
 ];
 
-const INDUSTRIAL_SECTORS = [
-  'Mining',
-  'Construction',
-  'Agriculture',
-  'Truck Fleets',
-  'Marine',
-  'Oil And Gas',
-  'Power Generation',
-  'Industrial Equipment',
+const SECTOR_KEYS = [
+  'contact.sector1',
+  'contact.sector2',
+  'contact.sector3',
+  'contact.sector4',
+  'contact.sector5',
+  'contact.sector6',
+  'contact.sector7',
+  'contact.sector8',
 ];
 
 const schemaContact = {
@@ -94,6 +96,8 @@ const schemaBreadcrumb = {
 };
 
 export default function ContactPage() {
+  const { t } = useTranslation();
+
   return (
     <main
       style={{
@@ -133,7 +137,7 @@ export default function ContactPage() {
           letterSpacing: '0.18em',
         }}
       >
-        HOME
+        {t('contact.homeLink')}
       </Link>
 
       <section
@@ -183,7 +187,7 @@ export default function ContactPage() {
               marginBottom: '1.25rem',
             }}
           >
-            Contact ELIMFILTERS
+            {t('contact.heroTag')}
           </p>
 
           <h1
@@ -197,8 +201,8 @@ export default function ContactPage() {
               marginBottom: '1.5rem',
             }}
           >
-            Industrial Support
-            <span style={{ display: 'block', color: '#FFF12D' }}>Starts Here</span>
+            {t('contact.heroTitle')}
+            <span style={{ display: 'block', color: '#FFF12D' }}>{t('contact.heroSubtitle')}</span>
           </h1>
 
           <p
@@ -211,13 +215,11 @@ export default function ContactPage() {
               marginBottom: '2rem',
             }}
           >
-            Contact our team for commercial inquiries, distributor opportunities,
-            OEM cross-reference validation and technical support across severe-duty
-            industrial filtration applications.
+            {t('contact.heroDescription')}
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-            {['Commercial', 'Distributor Network', 'Technical Support'].map((item) => (
+            {[t('contact.heroCta1'), t('contact.heroCta2'), t('contact.heroCta3')].map((item) => (
               <span
                 key={item}
                 style={{
@@ -248,7 +250,7 @@ export default function ContactPage() {
               gap: '1rem',
             }}
           >
-            {CONTACT_CHANNELS.map((channel) => (
+            {EMAIL_CHANNELS.map((channel) => (
               <article
                 key={channel.email}
                 style={{
@@ -256,7 +258,7 @@ export default function ContactPage() {
                   flexDirection: 'column',
                   border: '1px solid rgba(255,255,255,0.1)',
                   background:
-                    channel.label === 'Distributor Network'
+                    channel.labelKey === 'contact.channel2Label'
                       ? 'rgba(255,241,45,0.045)'
                       : '#050505',
                   padding: '1.6rem',
@@ -274,7 +276,7 @@ export default function ContactPage() {
                     marginBottom: '1rem',
                   }}
                 >
-                  {channel.label}
+                  {t(channel.labelKey)}
                 </p>
 
                 <h2
@@ -287,7 +289,7 @@ export default function ContactPage() {
                     marginBottom: '1rem',
                   }}
                 >
-                  {channel.title}
+                  {t(channel.titleKey)}
                 </h2>
 
                 <p
@@ -297,7 +299,7 @@ export default function ContactPage() {
                     marginBottom: '1.5rem',
                   }}
                 >
-                  {channel.description}
+                  {t(channel.descKey)}
                 </p>
 
                 <ContactEmailActions email={channel.email} subject={channel.subject} />
@@ -334,7 +336,7 @@ export default function ContactPage() {
                 marginBottom: '1.2rem',
               }}
             >
-              What To Include
+              {t('contact.whatToIncludeTitle')}
             </h2>
 
             <p
@@ -344,8 +346,7 @@ export default function ContactPage() {
                 maxWidth: '560px',
               }}
             >
-              The more technical context you provide, the faster our team can route
-              your request to the right commercial or engineering contact.
+              {t('contact.whatToIncludeDesc')}
             </p>
           </div>
 
@@ -356,9 +357,9 @@ export default function ContactPage() {
               gap: '0.75rem',
             }}
           >
-            {CONTACT_PRIORITIES.map((item) => (
+            {PRIORITY_KEYS.map((key) => (
               <div
-                key={item}
+                key={key}
                 style={{
                   border: '1px solid rgba(255,255,255,0.1)',
                   background: 'rgba(255,255,255,0.035)',
@@ -368,7 +369,7 @@ export default function ContactPage() {
                   fontWeight: 600,
                 }}
               >
-                {item}
+                {t(key)}
               </div>
             ))}
           </div>
@@ -386,7 +387,7 @@ export default function ContactPage() {
               marginBottom: '1rem',
             }}
           >
-            Severe-Duty Markets
+            {t('contact.marketsTitle')}
           </h2>
 
           <p
@@ -397,8 +398,7 @@ export default function ContactPage() {
               marginBottom: '2rem',
             }}
           >
-            ELIMFILTERS supports industrial operators, fleets and distributors
-            serving critical equipment markets where uptime and contamination control matter.
+            {t('contact.marketsDesc')}
           </p>
 
           <div
@@ -408,9 +408,9 @@ export default function ContactPage() {
               gap: '0.75rem',
             }}
           >
-            {INDUSTRIAL_SECTORS.map((sector) => (
+            {SECTOR_KEYS.map((key) => (
               <div
-                key={sector}
+                key={key}
                 style={{
                   border: '1px solid rgba(255,255,255,0.1)',
                   background: 'rgba(255,255,255,0.035)',
@@ -422,7 +422,7 @@ export default function ContactPage() {
                   letterSpacing: '0.08em',
                 }}
               >
-                {sector}
+                {t(key)}
               </div>
             ))}
           </div>
