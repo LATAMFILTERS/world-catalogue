@@ -7,11 +7,23 @@
   window.ElimfiltersChatWidget = true;
 
   const CONFIG = {
-    apiEndpoint: "https://elimfilters-instagram-bot.onrender.com/webhook",
+    apiEndpoint: "/api/chat",
     brandName: "ELIMFILTERS AI",
     welcomeMessage: "¡Hola! Soy el asistente técnico oficial de ELIMFILTERS. ¿En qué puedo ayudarte hoy? Puedes darme un número de parte (ej: LF3914, P502042), un VIN o consultar sobre distribución B2B.",
     accentColor: "#10b981"
   };
+
+  // Detect user language and generate session ID
+  const getUserLanguage = () => {
+    const lang = navigator.language || navigator.userLanguage || 'en';
+    const langCode = lang.split('-')[0].toLowerCase();
+    const supportedLangs = ['es', 'pt', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa', 'en'];
+    return supportedLangs.includes(langCode) ? langCode : 'en';
+  };
+
+  const generateSessionId = () => 'chat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  const SESSION_ID = generateSessionId();
+  const USER_LANG = getUserLanguage();
 
   // Inject Styles
   const style = document.createElement("style");
@@ -269,23 +281,41 @@
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
     try {
-      // Send message to local or remote API endpoint
-      const response = await fetch("/api/search?q=" + encodeURIComponent(text));
+      // Send message to chat API with language detection
+      const response = await fetch(CONFIG.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: text,
+          sessionId: SESSION_ID,
+          lang: USER_LANG
+        })
+      });
+
       if (response.ok) {
         const data = await response.json();
-        if (data.results && data.results.length > 0) {
-          const item = data.results[0];
-          typingMsg.innerHTML = `<strong>Referencia encontrada:</strong> ${item.sku}<br>
-            <strong>Tipo:</strong> ${item.type || 'Filtro Industrial'}<br>
-            <a href="/results.html?q=${encodeURIComponent(item.sku)}" style="color:#10b981;font-weight:bold;text-decoration:underline;">Ver Ficha y Equivalencias DURATECH™</a>`;
+        if (data.reply) {
+          typingMsg.textContent = data.reply;
+          if (data.supportRecommended) {
+            const suggestionDiv = document.createElement("div");
+            suggestionDiv.className = "ef-msg ef-msg-bot";
+            suggestionDiv.style.fontSize = "12px";
+            suggestionDiv.style.opacity = "0.8";
+            const emailLink = USER_LANG === 'es'
+              ? `Si necesitas ayuda adicional, contacta a ${data.supportEmail || 'support@elimfilters.com'}.`
+              : `For additional support, contact ${data.supportEmail || 'support@elimfilters.com'}.`;
+            suggestionDiv.textContent = emailLink;
+            messagesContainer.appendChild(suggestionDiv);
+          }
         } else {
-          typingMsg.textContent = "Gracias por tu consulta. He registrado tu mensaje. Para verificar equivalencias exactas de " + text + " o contactar a un distribuidor autorizado en tu país, por favor visita https://part-search.elimfilters.com.";
+          typingMsg.textContent = "Error: No response from server. Please try again.";
         }
       } else {
-        typingMsg.textContent = "Para cotizaciones corporativas o cruces de número de parte, indícanos tu ciudad y país o busca en https://part-search.elimfilters.com.";
+        typingMsg.textContent = "Error connecting to chat service. Please try again later.";
       }
-    } catch {
-      typingMsg.textContent = "Para cotizaciones corporativas o cruces de número de parte, visita nuestro catálogo oficial en https://part-search.elimfilters.com.";
+    } catch (err) {
+      console.error('[chat-widget]', err);
+      typingMsg.textContent = "Connection error. Please try again later.";
     }
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
