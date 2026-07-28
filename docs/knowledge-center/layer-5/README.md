@@ -19,6 +19,8 @@ WhatsApp / Web / Instagram / Email / Distributor / Support
                          ↓
           Email notification with secure link
                          ↓
+             support@elimfilters.com
+                         ↓
             Internal Knowledge Review page
                          ↓
  Evidence review → Engineering review → Approval record
@@ -89,15 +91,15 @@ RETIRED
 - Publication requires an approval record and a production-eligible target record.
 - Failed email delivery must not lose the review item; the queue remains authoritative.
 
-## Initial notification target
+## Official notification mailbox
 
-The default shared mailbox is configurable. Recommended production address:
+All Layer 5 review alerts are routed to the existing shared support mailbox:
 
 ```text
-engineering_review@elimfilters.com
+support@elimfilters.com
 ```
 
-A separate mailbox such as `knowledge_review@elimfilters.com` may be used later without changing the workflow contract.
+The mailbox receives the notification summary and the secure link to the internal case. It is not the technical source of truth and does not approve knowledge by email reply.
 
 ## Implementation boundary
 
