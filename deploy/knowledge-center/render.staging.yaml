@@ -9,11 +9,19 @@ services:
     autoDeploy: false
     envVars:
       - key: NODE_ENV
+        value: production
+      - key: APP_ENV
         value: staging
       - key: DATABASE_URL
         sync: false
-      - key: API_KEYS_JSON
+      - key: DATABASE_SSL
+        value: "true"
+      - key: KNOWLEDGE_API_KEYS
         sync: false
+      - key: KNOWLEDGE_REVIEW_BASE_URL
+        value: https://knowledge-review-staging.onrender.com
+      - key: KNOWLEDGE_REVIEW_MAILBOX
+        value: support@elimfilters.com
       - key: LOG_LEVEL
         value: info
 
@@ -27,6 +35,8 @@ services:
     autoDeploy: false
     envVars:
       - key: NODE_ENV
+        value: production
+      - key: APP_ENV
         value: staging
       - key: DATABASE_URL
         sync: false
@@ -53,6 +63,8 @@ services:
     autoDeploy: false
     envVars:
       - key: NODE_ENV
+        value: production
+      - key: APP_ENV
         value: staging
       - key: DATABASE_URL
         sync: false
@@ -73,6 +85,8 @@ services:
     autoDeploy: false
     envVars:
       - key: NODE_ENV
+        value: production
+      - key: APP_ENV
         value: staging
       - key: KNOWLEDGE_CENTER_API_URL
         sync: false
