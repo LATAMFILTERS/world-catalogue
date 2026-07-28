@@ -3,7 +3,7 @@ services:
     name: knowledge-center-api-staging
     runtime: node
     rootDir: services/knowledge-center-api
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /health
     autoDeploy: false
@@ -29,7 +29,7 @@ services:
     name: knowledge-channel-gateway-staging
     runtime: node
     rootDir: services/knowledge-channel-gateway
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /health
     autoDeploy: false
@@ -57,7 +57,7 @@ services:
     name: knowledge-engine-runtime-staging
     runtime: node
     rootDir: services/knowledge-engine-runtime
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /health
     autoDeploy: false
@@ -79,7 +79,7 @@ services:
     name: knowledge-review-staging
     runtime: node
     rootDir: apps/knowledge-review
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /
     autoDeploy: false
