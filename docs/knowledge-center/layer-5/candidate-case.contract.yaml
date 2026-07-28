@@ -1,0 +1,102 @@
+schema_version: "1.0"
+entity: candidate_case
+purpose: governed intake and review record for operational technical evidence
+
+identity:
+  candidate_case_id:
+    format: "KC-{YYYY}-{SEQUENCE}"
+    required: true
+  created_at: {type: datetime, required: true}
+  created_by: {type: string, required: true}
+  source_channel:
+    required: true
+    enum: [WHATSAPP, WEB_CHAT, INSTAGRAM, EMAIL, DISTRIBUTOR, TECHNICAL_SUPPORT, INTERNAL_REPORT, INSPECTION, WARRANTY]
+  source_reference: {type: string, required: true}
+
+classification:
+  protection_system: {type: string, required: true}
+  technical_family: {type: string, required: true}
+  product_family: {type: string, required: false}
+  industry: {type: string, required: false}
+  country: {type: string, required: false}
+  distributor: {type: string, required: false}
+  asset_manufacturer: {type: string, required: false}
+  asset_model: {type: string, required: false}
+  installed_product: {type: string, required: false}
+
+technical_record:
+  symptoms: {type: array, required: true, min_items: 1}
+  operating_conditions: {type: array, required: false}
+  provisional_diagnosis: {type: string, required: false}
+  probable_causes: {type: array, required: false}
+  actions_taken: {type: array, required: false}
+  observed_result: {type: string, required: false}
+  contradictions: {type: array, required: false}
+  missing_evidence: {type: array, required: false}
+
+novelty:
+  classification:
+    enum: [KNOWN_CASE, VARIANT, ADDITIONAL_EVIDENCE, CONTRADICTION, POSSIBLE_NEW_CASE, INSUFFICIENT_INFORMATION, NON_TECHNICAL]
+    required: true
+  score:
+    type: integer
+    minimum: 0
+    maximum: 100
+    required: true
+  related_case_ids: {type: array, required: false}
+  cluster_id: {type: string, required: false}
+
+workflow:
+  status:
+    enum: [CAPTURED, INCOMPLETE, UNDER_ANALYSIS, DUPLICATE, CLUSTERED, DRAFTED, TECHNICAL_REVIEW, APPROVED, REJECTED, PUBLISHED]
+    required: true
+  priority:
+    enum: [LOW, NORMAL, HIGH, CRITICAL]
+    required: true
+  assigned_queue: {type: string, required: true}
+  assigned_reviewer: {type: string, required: false}
+  due_at: {type: datetime, required: false}
+  last_notified_at: {type: datetime, required: false}
+  notification_status:
+    enum: [NOT_REQUIRED, PENDING, SENT, DELIVERED, FAILED, ACKNOWLEDGED]
+    required: true
+
+resolution:
+  outcome:
+    enum: [RESOLVED, PARTIALLY_RESOLVED, NOT_RESOLVED, MISDIAGNOSED, AWAITING_VERIFICATION, UNKNOWN]
+    required: false
+  verified_by: {type: string, required: false}
+  verified_at: {type: datetime, required: false}
+  recurrence_observed: {type: boolean, required: false}
+  time_to_resolution_hours: {type: number, required: false}
+
+approval:
+  approval_record_id: {type: string, required: false}
+  approved_by: {type: string, required: false}
+  approved_at: {type: datetime, required: false}
+  publication_target: {type: string, required: false}
+  production_eligible: {type: boolean, required: true, default: false}
+
+attachments:
+  evidence_items:
+    type: array
+    item_fields:
+      evidence_id: string
+      type: [PHOTO, VIDEO, DOCUMENT, SENSOR_DATA, SAMPLE_RESULT, CONVERSATION, FIELD_NOTE]
+      storage_uri: string
+      checksum: string
+      captured_at: datetime
+      submitted_by: string
+      verification_status: [UNVERIFIED, VERIFIED, REJECTED]
+
+history:
+  state_transitions:
+    append_only: true
+    fields: [actor, timestamp, previous_state, new_state, reason]
+
+invariants:
+  - "APPROVED requires approval_record_id, approved_by, and approved_at"
+  - "PUBLISHED requires APPROVED history and production_eligible=true"
+  - "Email delivery failure must not remove or close the queue item"
+  - "Approval cannot be performed by an automated model identity"
+  - "Original evidence and rejected evidence remain immutable"
