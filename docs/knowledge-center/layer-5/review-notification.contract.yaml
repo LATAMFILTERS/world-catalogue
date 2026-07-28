@@ -10,12 +10,12 @@ source_of_truth:
 provider:
   preferred: MICROSOFT_GRAPH
   sender_mailbox_env: KNOWLEDGE_REVIEW_SENDER
-  default_sender: engineering_review@elimfilters.com
+  default_sender: support@elimfilters.com
+  default_recipient: support@elimfilters.com
   recipient_resolution:
     order:
       - assigned_reviewer
-      - assigned_queue_distribution_list
-      - fallback_review_mailbox
+      - support@elimfilters.com
   secrets:
     - MICROSOFT_TENANT_ID
     - MICROSOFT_CLIENT_ID
@@ -102,7 +102,7 @@ delivery_control:
     - preserve queue item
     - record provider error
     - retry according to policy
-    - notify fallback mailbox after final failure
+    - notify support@elimfilters.com after final failure
 
 acknowledgement:
   accepted_events:
