@@ -1,0 +1,92 @@
+schema_version: "1.0"
+object_type: product_technical_record
+id: "PR-0000"
+title: ""
+lifecycle_status: DRAFT
+production_eligible: false
+
+identity:
+  elimfilters_part_number: ""
+  product_name: ""
+  product_family: ""
+  protection_system: ""
+  filter_type_or_component: ""
+  technology: ""
+  status: ACTIVE
+
+specifications:
+  dimensions: []
+  thread_or_connection: []
+  media: []
+  efficiency: []
+  capacity: []
+  flow: []
+  restriction_or_pressure_drop: []
+  bypass_or_relief: []
+  collapse_or_burst: []
+  temperature: []
+  materials: []
+  seals: []
+  water_separation: []
+  other: []
+
+applications:
+  asset_classes: []
+  industries: []
+  operating_conditions: []
+  approved_applications: []
+  prohibited_or_unverified_applications: []
+
+performance_claims:
+  - claim_id: "CLM-0001"
+    statement: ""
+    measurement_basis: ""
+    standard_or_test_method: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+    approved_for_customer_use: false
+
+cross_references:
+  - brand: ""
+    part_number: ""
+    relationship: UNKNOWN
+    dimensional_match: UNKNOWN
+    functional_match: UNKNOWN
+    direct_replacement_approved: false
+    limitations: []
+    evidence_state: UNKNOWN
+    source_ids: []
+
+service_guidance:
+  fixed_interval_approved: false
+  interval_basis: ""
+  inspection_conditions: []
+  replacement_conditions: []
+  installation_notes: []
+  warnings: []
+
+asset_protection_role:
+  contamination_control_objective: ""
+  protected_components: []
+  controlled_failure_mechanisms: []
+  expected_system_effect: []
+  limitations: []
+
+relationships:
+  diagnostic_case_ids: []
+  asset_record_ids: []
+  engineering_principle_ids: []
+  source_record_ids: []
+
+validation:
+  author: ""
+  technical_reviewer: ""
+  approval_record_id: ""
+  last_reviewed_at: null
+  next_review_due_at: null
+
+revision:
+  version: "0.1.0"
+  created_at: null
+  updated_at: null
+  change_summary: "Initial draft"

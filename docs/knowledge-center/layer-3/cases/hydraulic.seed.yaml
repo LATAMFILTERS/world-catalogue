@@ -1,0 +1,65 @@
+schema_version: "1.0"
+protection_system: hydraulic
+status: ENGINEERING_DRAFT
+production_eligible: false
+cases:
+  - id: HYD-PRS-0001
+    title: Pressure filter reaches high differential pressure prematurely
+    technical_family: hydraulic_pressure_filtration
+    product_family: pressure_filters
+    technology: NANOFORCE
+    symptoms: [high_differential_pressure, bypass_risk, slow_actuation]
+    minimum_evidence: [cold_and_hot_dp, fluid_viscosity, service_hours, element_inspection, contamination_code]
+    probable_causes: [cold_high_viscosity, contamination_ingress, component_wear, undersized_filter, incorrect_element]
+    diagnostic_procedure: [compare cold_hot_dp, verify viscosity, inspect element debris, measure cleanliness, verify sizing]
+    stop_rules: [do_not_replace_repeatedly_without_identifying_debris_source]
+    corrective_actions: [correct fluid_or_sizing, repair contamination source, investigate wear]
+    verification: [stable_dp_at_operating_temperature, cleanliness_target_met]
+  - id: HYD-RET-0001
+    title: Return filter repeatedly bypasses
+    technical_family: hydraulic_return_filtration
+    product_family: return_filters
+    technology: NANOFORCE
+    symptoms: [bypass_indicator, reservoir_contamination, element_collapse_risk]
+    minimum_evidence: [return_flow_peak, dp, bypass_setting, fluid_temperature, element_application]
+    probable_causes: [surge_flow, cold_start, undersized_filter, blocked_element, incorrect_bypass_setting]
+    diagnostic_procedure: [measure_peak_return_flow, verify indicator and setting, compare temperature, inspect loading]
+    stop_rules: [do_not raise bypass_setting_without system engineering approval]
+    corrective_actions: [correct sizing, control surge, restore correct element and bypass configuration]
+    verification: [no_bypass_under_normal_cycle, acceptable_reservoir_cleanliness]
+  - id: HYD-SUC-0001
+    title: Pump cavitation associated with suction filtration
+    technical_family: hydraulic_suction_filtration
+    product_family: suction_filters
+    technology: NANOFORCE
+    symptoms: [pump_noise, foaming, pressure_instability, pump_damage]
+    minimum_evidence: [suction_vacuum, fluid_level, temperature, strainer_condition, hose_condition]
+    probable_causes: [blocked_strainer, cold_viscosity, air_leak, low_fluid, collapsed_hose]
+    diagnostic_procedure: [check_level, measure_vacuum, inspect hoses_and_seals, inspect strainer, assess fluid]
+    stop_rules: [stop_operation_if_severe_cavitation_or_loss_of_pump_supply]
+    corrective_actions: [restore_supply_path, repair_air_leaks, correct fluid and strainer]
+    verification: [normal_suction_vacuum, no_cavitation_noise]
+  - id: HYD-BRE-0001
+    title: Reservoir contamination caused by ineffective breather
+    technical_family: hydraulic_reservoir_protection
+    product_family: tank_breathers
+    technology: NANOFORCE
+    symptoms: [rising_particle_count, moisture_ingress, dirty_reservoir_headspace]
+    minimum_evidence: [breather_type_and_condition, reservoir_breathing_rate, environment, oil_analysis]
+    probable_causes: [missing_or_saturated_breather, undersized_airflow, damaged_seal, washdown_ingress]
+    diagnostic_procedure: [inspect breather and seals, calculate breathing demand, review environment, trend moisture_and_particles]
+    stop_rules: [do_not treat oil repeatedly while ingress path remains open]
+    corrective_actions: [install_correct_breather, seal_headspace, improve_washdown_protection]
+    verification: [moisture_and_particle_trend_improves]
+  - id: HYD-CAR-0001
+    title: Hydraulic cartridge element collapses or deforms
+    technical_family: hydraulic_element_integrity
+    product_family: cartridge_hydraulic_filters
+    technology: NANOFORCE
+    symptoms: [collapsed_element, debris_release, sudden_dp_change]
+    minimum_evidence: [element_photos, bypass_setting, dp_history, installed_part, fluid_temperature]
+    probable_causes: [blocked_bypass, wrong_element, extreme_dp, reverse_flow, cold_start_shock]
+    diagnostic_procedure: [retain_element, verify part and orientation, test bypass, review pressure transients, inspect housing]
+    stop_rules: [stop_operation_if_element_integrity_compromised]
+    corrective_actions: [correct_bypass_or_flow_path, install_correct_element, control_transients]
+    verification: [normal_dp_profile, no_repeat_deformation]

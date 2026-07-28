@@ -1,0 +1,79 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+system_template: cooling_system
+extends: ../diagnostic-case.template.yaml
+
+identity:
+  id: COOL-{{filter_type}}-{{sequence}}
+  title: ""
+  protection_system: cooling_system
+  filter_type: ""
+  lifecycle_status: draft
+
+required_scope:
+  asset_class: []
+  industries: []
+  applications: []
+  coolant_type: []
+  duty_cycle: []
+  environments: []
+
+system_specific_evidence:
+  coolant_condition:
+    coolant_specification_verified: UNKNOWN
+    concentration: UNKNOWN
+    freeze_point: UNKNOWN
+    boiling_protection: UNKNOWN
+    ph: UNKNOWN
+    nitrite_or_additive_level: UNKNOWN
+    conductivity: UNKNOWN
+    contamination: UNKNOWN
+  temperature_and_pressure:
+    operating_temperature: null
+    temperature_delta: null
+    system_pressure: null
+    cap_pressure_rating: null
+    units: UNKNOWN
+  visual_and_mechanical:
+    coolant_color: UNKNOWN
+    oil_presence: UNKNOWN
+    rust_or_scale: UNKNOWN
+    cavitation_evidence: UNKNOWN
+    hose_condition: UNKNOWN
+    radiator_condition: UNKNOWN
+    thermostat_function: UNKNOWN
+    water_pump_condition: UNKNOWN
+  filter_and_service:
+    coolant_filter_installed: UNKNOWN
+    filter_charge_type: UNKNOWN
+    filter_service_hours: null
+    coolant_service_history: UNKNOWN
+    mixed_coolant_suspected: UNKNOWN
+
+mandatory_hypothesis_families:
+  - incorrect_coolant_or_concentration
+  - additive_depletion_or_overcharge
+  - corrosion_or_scale
+  - cavitation
+  - oil_or_combustion_gas_ingress
+  - restricted_heat_transfer
+  - thermostat_or_pump_failure
+  - incorrect_filter_or_service_practice
+
+mandatory_risks:
+  - overheating
+  - liner_pitting
+  - corrosion
+  - seal_and_gasket_damage
+  - blocked_passages
+  - catastrophic_engine_damage
+  - unplanned_downtime
+
+stop_rules:
+  - stop_if_fluid_tests_and_temperature_evidence_support_safe_action
+  - escalate_if_combustion_gas_oil_ingress_or_severe_overheating_is_suspected
+  - do_not_recommend_additive_or_filter_charge_without_coolant_chemistry_verification
+
+coverage_target:
+  minimum_approved_cases_per_filter_type: 50
+  target_approved_cases_per_filter_type: 100

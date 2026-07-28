@@ -1,0 +1,72 @@
+schema_version: "1.0"
+object_type: knowledge_graph_contract
+status: APPROVED_ARCHITECTURE
+
+node_types:
+  - asset
+  - protection_system
+  - technical_family
+  - product_family
+  - product
+  - technology
+  - diagnostic_case
+  - failure_mechanism
+  - symptom
+  - evidence_requirement
+  - observation
+  - source
+  - approval_record
+  - standard
+  - industry
+  - application
+  - operating_environment
+
+required_edges:
+  - from: asset
+    relation: protected_by
+    to: protection_system
+  - from: protection_system
+    relation: contains
+    to: technical_family
+  - from: technical_family
+    relation: contains
+    to: product_family
+  - from: product_family
+    relation: includes
+    to: product
+  - from: product_family
+    relation: governed_by
+    to: technology
+  - from: diagnostic_case
+    relation: diagnoses
+    to: technical_family
+  - from: diagnostic_case
+    relation: evaluates
+    to: failure_mechanism
+  - from: diagnostic_case
+    relation: requires
+    to: evidence_requirement
+  - from: observation
+    relation: supported_by
+    to: source
+  - from: diagnostic_case
+    relation: approved_by
+    to: approval_record
+  - from: source
+    relation: evidence_for
+    to: observation
+
+traversal_rules:
+  - Start from normalized problem, asset, symptom, or product context.
+  - Resolve protection system before selecting diagnostic cases.
+  - Prefer exact technical-family relationships over lexical similarity.
+  - Product records may narrow a diagnosis but may not own reusable diagnostic logic.
+  - A diagnostic case is retrievable for production only when production_eligible is true.
+  - Every surfaced conclusion must retain paths to observations, sources, and approval records.
+
+integrity_rules:
+  - No orphan production diagnostic case.
+  - No product-to-diagnostic edge that bypasses technical family classification.
+  - No approved conclusion supported exclusively by UNKNOWN or CUSTOMER_REPORTED evidence.
+  - Contradictory observations must remain attached to the reasoning context.
+  - Taxonomy changes require Layer 2 registry revision and technical approval.

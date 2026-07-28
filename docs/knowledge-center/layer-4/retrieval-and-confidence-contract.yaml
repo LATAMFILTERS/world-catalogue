@@ -1,0 +1,87 @@
+schema_version: "1.0"
+object_type: retrieval_and_confidence_contract
+status: APPROVED_ARCHITECTURE
+
+retrieval:
+  mandatory_filters:
+    - lifecycle_status: APPROVED
+    - production_eligible: true
+  ranking_dimensions:
+    - protection_system_match
+    - technical_family_match
+    - symptom_match
+    - failure_mechanism_match
+    - evidence_requirement_match
+    - asset_class_match
+    - application_match
+    - industry_match
+    - duty_cycle_match
+    - operating_environment_match
+    - technology_match
+  lexical_search_role: candidate_generation_only
+  semantic_search_role: candidate_generation_only
+  graph_relationship_role: authoritative_scope_resolution
+  exclusion_rules:
+    - exclude_cases_with_unresolved_approval_record
+    - exclude_cases_outside_taxonomy_scope
+    - exclude_superseded_cases
+    - exclude_cases_with_failed_review_due_date_when_policy_requires_revalidation
+
+confidence:
+  score_range:
+    minimum: 0
+    maximum: 100
+  factors:
+    source_quality: 0.25
+    required_evidence_completeness: 0.25
+    symptom_and_mechanism_match: 0.20
+    contradiction_penalty: 0.15
+    application_context_match: 0.10
+    case_validation_strength: 0.05
+  bands:
+    high:
+      minimum: 85
+      behavior: conclusion_with_verification
+    moderate:
+      minimum: 65
+      maximum: 84
+      behavior: probable_assessment_with_missing_evidence
+    low:
+      minimum: 40
+      maximum: 64
+      behavior: preliminary_assessment_and_targeted_questions
+    insufficient:
+      maximum: 39
+      behavior: no_diagnostic_conclusion_and_escalate_or_collect_evidence
+  hard_caps:
+    customer_reported_only: 39
+    required_evidence_missing: 64
+    material_contradiction_unresolved: 64
+    no_approved_case_match: 0
+  release_rules:
+    - Confidence is not probability of truth; it is governed decision support strength.
+    - A score may not override STOP or ESCALATE rules.
+    - High confidence still requires a verification step.
+    - The response must identify material missing and contradictory evidence.
+
+response_profiles:
+  distributor:
+    emphasis: commercial_and_technical_action
+  mechanic:
+    emphasis: inspection_sequence_measurements_and_corrective_action
+  operator:
+    emphasis: observable_signs_stop_conditions_and_escalation
+  engineer:
+    emphasis: evidence_mechanisms_uncertainty_and_validation
+  maintenance_manager:
+    emphasis: risk_downtime_priority_and_prevention
+
+required_response_sections:
+  - assessment
+  - evidence_summary
+  - risk
+  - action
+  - verification
+  - confidence
+  - uncertainty
+  - escalation_when_applicable

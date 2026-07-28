@@ -1,0 +1,73 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+system_template: lube_oil
+extends: ../diagnostic-case.template.yaml
+
+identity:
+  id: OIL-{{filter_type}}-{{sequence}}
+  title: ""
+  protection_system: lube_oil
+  filter_type: ""
+  lifecycle_status: draft
+
+required_scope:
+  asset_class: []
+  industries: []
+  applications: []
+  lubricant_type: []
+  duty_cycle: []
+  environments: []
+
+system_specific_evidence:
+  oil_condition:
+    viscosity_result: UNKNOWN
+    soot_level: UNKNOWN
+    oxidation: UNKNOWN
+    fuel_dilution: UNKNOWN
+    coolant_presence: UNKNOWN
+    water_presence: UNKNOWN
+    wear_metals: UNKNOWN
+  pressure_and_flow:
+    oil_pressure: null
+    differential_pressure: null
+    bypass_indicator: UNKNOWN
+    units: UNKNOWN
+  filter_inspection:
+    media_collapse: UNKNOWN
+    metal_debris: UNKNOWN
+    sludge: UNKNOWN
+    seal_condition: UNKNOWN
+    cut_open_performed: UNKNOWN
+  service_history:
+    oil_hours_or_distance: null
+    filter_hours_or_distance: null
+    lubricant_specification_verified: UNKNOWN
+    top_off_rate: UNKNOWN
+    repeated_short_life: UNKNOWN
+
+mandatory_hypothesis_families:
+  - abrasive_wear_contamination
+  - soot_overload
+  - oxidation_or_sludge
+  - fuel_dilution
+  - coolant_or_water_ingress
+  - pressure_or_bypass_problem
+  - incorrect_lubricant_or_filter
+  - abnormal_component_wear
+
+mandatory_risks:
+  - bearing_damage
+  - accelerated_engine_wear
+  - oil_starvation
+  - blocked_oil_gallery
+  - catastrophic_component_failure
+  - unplanned_downtime
+
+stop_rules:
+  - stop_if_oil_analysis_and_filter_inspection_support_safe_action
+  - escalate_immediately_if_large_metal_particles_or_pressure_loss_are_present
+  - do_not_extend_service_interval_without validated trend data
+
+coverage_target:
+  minimum_approved_cases_per_filter_type: 50
+  target_approved_cases_per_filter_type: 100

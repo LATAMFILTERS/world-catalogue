@@ -1,0 +1,53 @@
+schema_version: "1.0"
+object_type: approval_record
+id: "AP-0000"
+title: ""
+lifecycle_status: DRAFT
+
+subject:
+  object_id: ""
+  object_type: ""
+  reviewed_version: ""
+  reviewed_commit: ""
+
+review:
+  reviewer: ""
+  reviewer_role: ""
+  review_date: null
+  technical_scope: []
+  standards_checked: []
+  source_ids_checked: []
+  evidence_states_checked: []
+
+findings:
+  blocking_issues: []
+  non_blocking_issues: []
+  unsupported_claims: []
+  unresolved_conflicts: []
+  required_changes: []
+  accepted_limitations: []
+
+approval:
+  decision: PENDING
+  approved_by: ""
+  approved_at: null
+  approval_scope: ""
+  customer_facing_use: false
+  internal_use: false
+  production_eligible: false
+  conditions: []
+  expires_at: null
+  next_review_due_at: null
+
+production_controls:
+  allowed_assistants: []
+  allowed_channels: []
+  restricted_fields: []
+  required_uncertainty_disclosures: []
+  escalation_conditions: []
+
+revision:
+  version: "0.1.0"
+  created_at: null
+  updated_at: null
+  change_summary: "Initial review record"

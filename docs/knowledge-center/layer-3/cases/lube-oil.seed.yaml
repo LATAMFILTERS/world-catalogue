@@ -1,0 +1,65 @@
+schema_version: "1.0"
+protection_system: lube_oil
+status: ENGINEERING_DRAFT
+production_eligible: false
+cases:
+  - id: OIL-FF-0001
+    title: Full-flow lube filter plugs before expected interval
+    technical_family: engine_lubrication_filtration
+    product_family: full_flow_lube_filters
+    technology: SYNTRAX
+    symptoms: [high_differential_pressure, bypass_activation, short_service_life]
+    minimum_evidence: [oil_hours, oil_analysis, differential_pressure, engine_condition, element_inspection]
+    probable_causes: [soot_overload, coolant_ingress, oxidation_sludge, wear_debris, incorrect_filter]
+    diagnostic_procedure: [verify_pressure, inspect_element, sample_oil, review combustion and cooling faults, verify application]
+    stop_rules: [do_not_extend_interval_when_bypass_or_abnormal_debris_is present]
+    corrective_actions: [correct contamination source, service oil and filter, investigate engine condition]
+    verification: [normal_pressure, acceptable_follow_up_oil_analysis]
+  - id: OIL-BYP-0001
+    title: Bypass lube filtration does not reduce contamination
+    technical_family: bypass_lubrication_filtration
+    product_family: bypass_lube_filters
+    technology: SYNTRAX
+    symptoms: [particle_count_or_soot_not_improving, no_temperature_change, no_flow_evidence]
+    minimum_evidence: [plumbing_route, flow_or_orifice_check, oil_analysis_trend, element_age]
+    probable_causes: [no_flow, blocked_orifice, incorrect_plumbing, saturated_element, unsuitable_expectation]
+    diagnostic_procedure: [verify circuit and pressure differential, inspect orifice, confirm flow, review contaminant type]
+    stop_rules: [do_not claim engine protection improvement without measurable circulation and trend]
+    corrective_actions: [restore correct bypass flow, correct plumbing, replace saturated element]
+    verification: [confirmed_flow, improving_oil_trend]
+  - id: OIL-CAR-0001
+    title: Cartridge lube filter leaks after service
+    technical_family: engine_lubrication_filtration
+    product_family: cartridge_lube_filters
+    technology: SYNTRAX
+    symptoms: [external_oil_leak, pressure_loss, oil_warning]
+    minimum_evidence: [cap_and_housing_photos, seal_location, torque, installed_element]
+    probable_causes: [misplaced_o_ring, reused_seal, damaged_cap, incorrect_element, excessive_torque]
+    diagnostic_procedure: [stop_and_clean area, inspect seal groove, verify element height, inspect cap, torque to specification]
+    stop_rules: [stop_operation_if_active_oil_loss_or_pressure_warning]
+    corrective_actions: [install correct new seal and element, replace damaged housing parts]
+    verification: [no_leak_at_temperature_and_pressure, stable_oil_pressure]
+  - id: OIL-PRS-0001
+    title: Low oil pressure persists after filter replacement
+    technical_family: engine_lubrication_filtration
+    product_family: lubrication_systems
+    technology: SYNTRAX
+    symptoms: [low_oil_pressure, warning_light, engine_noise]
+    minimum_evidence: [mechanical_pressure_test, oil_level_and_grade, filter_application, engine_temperature]
+    probable_causes: [low_oil_level, wrong_viscosity, pump_or_bearing_wear, pickup_restriction, incorrect_filter, faulty_sensor]
+    diagnostic_procedure: [confirm_with_mechanical_gauge, verify oil, verify filter, inspect pickup and pump path, assess engine wear]
+    stop_rules: [stop_operation_if_confirmed_pressure_below_safe_limit]
+    corrective_actions: [correct oil or filter issue, repair lubrication system fault]
+    verification: [pressure_within_specification_across_operating_range]
+  - id: OIL-CNT-0001
+    title: Abnormal metal or debris found in lube filter
+    technical_family: engine_lubrication_filtration
+    product_family: full_flow_and_bypass_filters
+    technology: SYNTRAX
+    symptoms: [visible_metal, abnormal_oil_analysis, recurring_filter_loading]
+    minimum_evidence: [debris_photos, laboratory_analysis, oil_sample, engine_history]
+    probable_causes: [bearing_wear, component_failure, post_repair_residue, corrosion, sampling_error]
+    diagnostic_procedure: [retain_element_and_sample, classify_debris, correlate_with_oil_analysis, inspect likely components]
+    stop_rules: [do_not_discard_element, stop_operation_if_large_ferrous_or_nonferrous_fragments_present]
+    corrective_actions: [escalate_engine_inspection, correct failure source, flush only under approved procedure]
+    verification: [follow_up_filter_and_oil_samples_show_no_progression]

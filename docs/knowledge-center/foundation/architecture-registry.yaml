@@ -1,0 +1,49 @@
+schema_version: "1.0"
+architecture:
+  name: ELIMFILTERS Knowledge Center
+  version: "1.0.0"
+  status: FROZEN
+  effective_date: "2026-07-28"
+  repository: LATAMFILTERS/world-catalogue
+  approval_vehicle: "PR #267"
+
+layers:
+  - id: 1
+    name: Governance
+    status: FROZEN
+    root: docs/knowledge-center
+  - id: 2
+    name: Taxonomy and Authoring Templates
+    status: FROZEN
+    root: docs/knowledge-center/templates
+  - id: 3
+    name: Engineering Library
+    status: IMPLEMENTED_AS_DRAFT_LIBRARY
+    production_boundary: engineering drafts remain production_eligible false until approved
+    root: docs/knowledge-center/layer-3
+  - id: 4
+    name: Knowledge Engine Architecture
+    status: ARCHITECTURE_APPROVED
+    production_boundary: contracts only; runtime not yet claimed
+    root: docs/knowledge-center/layer-4
+  - id: 5
+    name: Knowledge Evolution and Human Review
+    status: ARCHITECTURE_APPROVED
+    production_boundary: contracts only; database, UI, worker and Graph integration not yet claimed
+    notification_mailbox: support@elimfilters.com
+    root: docs/knowledge-center/layer-5
+
+change_control:
+  process: docs/knowledge-center/foundation/ARCHITECTURE_CHANGE_PROCESS.md
+  freeze_record: docs/knowledge-center/foundation/ARCHITECTURE_FREEZE_V1.md
+  acceptance_record: docs/knowledge-center/foundation/PHASE_1_ACCEPTANCE_CRITERIA.md
+  direct_unreviewed_changes_allowed: false
+  automated_approval_allowed: false
+
+next_phase:
+  id: 2
+  name: Data Platform
+  status: AUTHORIZED_NOT_STARTED
+  dependencies:
+    - Architecture Freeze v1.0 merged
+    - Phase 1 acceptance criteria satisfied

@@ -1,0 +1,33 @@
+schema_version: "1.0"
+layer: 3
+library_status: ENGINEERING_DRAFT
+production_eligible: false
+case_count: 25
+coverage_basis: materially_distinct_reasoning_paths
+systems:
+  air_intake_airflow:
+    file: cases/air-intake-airflow.seed.yaml
+    cases: [AIR-ENG-0001, AIR-ENG-0002, AIR-CAB-0001, AIR-DRY-0001, AIR-HSG-0001]
+  fuel_cleanliness:
+    file: cases/fuel-cleanliness.seed.yaml
+    cases: [FUEL-PRI-0001, FUEL-SEC-0001, FUEL-FWS-0001, FUEL-FH-0001, FUEL-FG-0001]
+  lube_oil:
+    file: cases/lube-oil.seed.yaml
+    cases: [OIL-FF-0001, OIL-BYP-0001, OIL-CAR-0001, OIL-PRS-0001, OIL-CNT-0001]
+  hydraulic:
+    file: cases/hydraulic.seed.yaml
+    cases: [HYD-PRS-0001, HYD-RET-0001, HYD-SUC-0001, HYD-BRE-0001, HYD-CAR-0001]
+  cooling_system:
+    file: cases/cooling-system.seed.yaml
+    cases: [COOL-BLK-0001, COOL-PRE-0001, COOL-CR-0001, COOL-CND-0001, COOL-RST-0001]
+release_gate:
+  required_status: APPROVED
+  approval_record_required: true
+  production_eligible_required: true
+  sources_required: true
+  technical_reviewer_required: true
+rules:
+  - Seed cases are not customer-facing knowledge.
+  - Each case must be expanded into the canonical diagnostic template before approval.
+  - A part number is linked through relationships and does not define a new case by itself.
+  - New technical families require an approved Layer 2 registry revision.

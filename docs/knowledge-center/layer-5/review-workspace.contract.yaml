@@ -1,0 +1,120 @@
+schema_version: "1.0"
+workspace: knowledge_review
+purpose: authenticated human review and approval of candidate technical knowledge
+
+routes:
+  queue: "/knowledge-review"
+  case_detail: "/knowledge-review/cases/{candidate_case_id}"
+
+queue_view:
+  required_columns:
+    - candidate_case_id
+    - priority
+    - status
+    - protection_system
+    - technical_family
+    - novelty_classification
+    - evidence_count
+    - assigned_reviewer
+    - created_at
+    - due_at
+    - notification_status
+  filters:
+    - status
+    - priority
+    - protection_system
+    - technical_family
+    - novelty_classification
+    - assigned_reviewer
+    - country
+    - overdue
+  default_sort:
+    - priority_desc
+    - due_at_asc
+    - created_at_asc
+
+case_detail:
+  required_sections:
+    - source_interaction
+    - asset_and_operating_context
+    - symptoms
+    - evidence_gallery
+    - missing_evidence
+    - provisional_reasoning
+    - contradictions
+    - related_cases
+    - cluster_context
+    - resolution_history
+    - state_history
+    - notification_history
+    - approval_history
+
+allowed_actions:
+  REQUEST_MORE_EVIDENCE:
+    target_status: INCOMPLETE
+    requires_reason: true
+  ASSIGN_REVIEWER:
+    target_status: unchanged
+    requires_reason: false
+  MARK_DUPLICATE:
+    target_status: DUPLICATE
+    requires_related_case_id: true
+    requires_reason: true
+  MERGE_WITH_EXISTING_CASE:
+    target_status: CLUSTERED
+    requires_related_case_id: true
+    requires_reason: true
+  RETURN_TO_DRAFT:
+    target_status: DRAFTED
+    requires_reason: true
+  SEND_TO_TECHNICAL_REVIEW:
+    target_status: TECHNICAL_REVIEW
+    requires_minimum_evidence: true
+  APPROVE:
+    target_status: APPROVED
+    requires_role: ENGINEERING_APPROVER
+    requires_approval_record: true
+    requires_reason: true
+  REJECT:
+    target_status: REJECTED
+    requires_role: ENGINEERING_APPROVER
+    requires_reason: true
+  PUBLISH:
+    target_status: PUBLISHED
+    requires_role: KNOWLEDGE_PUBLISHER
+    requires_prior_status: APPROVED
+    requires_approval_record: true
+    requires_production_eligible: true
+
+roles:
+  SUPPORT_REVIEWER:
+    permissions: [VIEW, ASSIGN, REQUEST_MORE_EVIDENCE, RETURN_TO_DRAFT, SEND_TO_TECHNICAL_REVIEW]
+  ENGINEERING_REVIEWER:
+    permissions: [VIEW, ASSIGN, REQUEST_MORE_EVIDENCE, MARK_DUPLICATE, MERGE_WITH_EXISTING_CASE, RETURN_TO_DRAFT, SEND_TO_TECHNICAL_REVIEW]
+  ENGINEERING_APPROVER:
+    permissions: [VIEW, APPROVE, REJECT]
+  KNOWLEDGE_PUBLISHER:
+    permissions: [VIEW, PUBLISH]
+  ADMIN:
+    permissions: [VIEW, ASSIGN, CONFIGURE_QUEUES, MANAGE_ROLES]
+
+security:
+  authentication_required: true
+  authorization: role_based
+  session_audit_required: true
+  approval_from_email_prohibited: true
+  model_identity_approval_prohibited: true
+  evidence_download_audited: true
+
+audit:
+  append_only_events:
+    - CASE_OPENED
+    - CASE_ASSIGNED
+    - EVIDENCE_REQUESTED
+    - EVIDENCE_VIEWED
+    - STATE_CHANGED
+    - DUPLICATE_MARKED
+    - CASE_MERGED
+    - CASE_APPROVED
+    - CASE_REJECTED
+    - CASE_PUBLISHED
