@@ -35,8 +35,8 @@ const COUNTRY_LANG: Record<string, string> = {
   IR: 'fa',
 };
 
-// Countries that use English natively — no language switcher shown
-const ENGLISH_ONLY = new Set(['US', 'CA']);
+// NO language switcher ever shown - language is determined ONLY by geolocation
+// NO user choice allowed
 
 const GEO_LANG_KEY = 'ef_geo_lang';
 const GEO_COUNTRY_KEY = 'ef_geo_country';
@@ -60,7 +60,7 @@ export async function detectGeoLanguage(): Promise<GeoResult> {
     return {
       language: cachedLang,
       country: cachedCountry,
-      showSwitcher: !ENGLISH_ONLY.has(cachedCountry),
+      showSwitcher: false,
     };
   }
 
@@ -77,7 +77,7 @@ export async function detectGeoLanguage(): Promise<GeoResult> {
     localStorage.setItem(GEO_COUNTRY_KEY, country);
     localStorage.setItem(GEO_TS_KEY, String(Date.now()));
 
-    return { language, country, showSwitcher: !ENGLISH_ONLY.has(country) };
+    return { language, country, showSwitcher: false };
   } catch {
     return { language: 'en', country: 'US', showSwitcher: false };
   }
