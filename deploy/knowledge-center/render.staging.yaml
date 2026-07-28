@@ -1,0 +1,82 @@
+services:
+  - type: web
+    name: knowledge-center-api-staging
+    runtime: node
+    rootDir: services/knowledge-center-api
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: DATABASE_URL
+        sync: false
+      - key: API_KEYS_JSON
+        sync: false
+      - key: LOG_LEVEL
+        value: info
+
+  - type: web
+    name: knowledge-channel-gateway-staging
+    runtime: node
+    rootDir: services/knowledge-channel-gateway
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: DATABASE_URL
+        sync: false
+      - key: KNOWLEDGE_CENTER_API_URL
+        sync: false
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+      - key: META_VERIFY_TOKEN
+        sync: false
+      - key: WEB_CHAT_SHARED_SECRET
+        sync: false
+      - key: INTERNAL_WORKER_SHARED_SECRET
+        sync: false
+
+  - type: web
+    name: knowledge-engine-runtime-staging
+    runtime: node
+    rootDir: services/knowledge-engine-runtime
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: DATABASE_URL
+        sync: false
+      - key: API_KEYS_JSON
+        sync: false
+      - key: CUSTOMER_CONFIDENCE_THRESHOLD
+        value: "0.90"
+      - key: INTERNAL_CONFIDENCE_THRESHOLD
+        value: "0.75"
+
+  - type: web
+    name: knowledge-review-staging
+    runtime: node
+    rootDir: apps/knowledge-review
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: staging
+      - key: KNOWLEDGE_CENTER_API_URL
+        sync: false
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: IDENTITY_GATEWAY_REQUIRED
+        value: "true"
