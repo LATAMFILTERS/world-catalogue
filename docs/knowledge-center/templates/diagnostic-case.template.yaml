@@ -1,0 +1,115 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+id: "DG-SYSTEM-0000"
+title: ""
+lifecycle_status: DRAFT
+production_eligible: false
+
+classification:
+  protection_system: ""
+  filter_type_or_component: ""
+  asset_classes: []
+  industries: []
+  applications: []
+  duty_cycles: []
+  operating_environments: []
+  affected_users: []
+  asset_owners: []
+  technologies: []
+  standards: []
+  tags: []
+
+problem_statement:
+  customer_language: []
+  normalized_condition: ""
+  engineering_scope: ""
+  exclusions: []
+
+symptoms:
+  primary: []
+  secondary: []
+  contradictory: []
+
+required_evidence:
+  minimum_to_assess:
+    - evidence_id: "EV-0001"
+      question_or_observation: ""
+      acceptable_inputs: []
+      required: true
+      stop_asking_when_obtained: true
+  supporting: []
+
+observations:
+  - observation_id: "OBS-0001"
+    statement: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+    confidence: 0.0
+
+hypotheses:
+  - hypothesis_id: "HYP-0001"
+    cause: ""
+    mechanism: ""
+    supporting_observation_ids: []
+    contradicting_observation_ids: []
+    probability_band: UNKNOWN
+    evidence_state: UNKNOWN
+    confidence: 0.0
+
+risk_assessment:
+  severity: UNKNOWN
+  urgency: UNKNOWN
+  affected_components: []
+  possible_failure_modes: []
+  operational_consequences: []
+  safety_consequences: []
+  stop_operation_conditions: []
+
+reasoning:
+  assessment_logic: []
+  sufficient_evidence_rule: ""
+  uncertainty_statement: ""
+  prohibited_conclusions: []
+
+recommendations:
+  immediate_actions: []
+  corrective_actions: []
+  preventive_actions: []
+  inspection_actions: []
+  laboratory_or_test_actions: []
+  product_or_system_recommendations: []
+  service_interval_guidance: []
+
+conversation_control:
+  minimum_questions: []
+  conditional_questions: []
+  stop_questioning_rule: ""
+  response_structure:
+    - technical_assessment
+    - evidence_summary
+    - risk
+    - recommended_action
+    - uncertainty
+  escalation_triggers: []
+  escalation_destination: "support@elimfilters.com"
+
+relationships:
+  related_diagnostic_ids: []
+  engineering_principle_ids: []
+  failure_mechanism_ids: []
+  asset_record_ids: []
+  product_record_ids: []
+  source_record_ids: []
+
+validation:
+  author: ""
+  technical_reviewer: ""
+  approval_record_id: ""
+  last_reviewed_at: null
+  next_review_due_at: null
+
+revision:
+  version: "0.1.0"
+  created_at: null
+  updated_at: null
+  change_summary: "Initial draft"
