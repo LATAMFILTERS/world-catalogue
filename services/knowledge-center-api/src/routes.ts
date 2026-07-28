@@ -38,7 +38,7 @@ routes.post('/knowledge-versions/:id/publications', requireRole('PUBLISHER','ADM
   res.status(202).json(await service.publish(z.string().uuid().parse(req.params.id),publishSchema.parse(req.body),req.actorId!));
 });
 routes.get('/notifications/queued', requireRole('NOTIFICATION_WORKER','ADMIN','SYSTEM'), async (_req,res) => {
-  const result=await pool.query(`SELECT * FROM knowledge_center.notification_deliveries WHERE delivery_status='QUEUED' ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 50`);
+  const result=await pool.query(`SELECT * FROM knowledge_center.notification_deliveries WHERE delivery_status='QUEUED' ORDER BY created_at LIMIT 50`);
   res.json(result.rows);
 });
 routes.patch('/notifications/:id', requireRole('NOTIFICATION_WORKER','ADMIN','SYSTEM'), async (req,res) => {
