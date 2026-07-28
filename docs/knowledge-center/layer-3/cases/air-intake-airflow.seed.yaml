@@ -1,0 +1,65 @@
+schema_version: "1.0"
+protection_system: air_intake_airflow
+status: ENGINEERING_DRAFT
+production_eligible: false
+cases:
+  - id: AIR-ENG-0001
+    title: Premature engine air-filter restriction
+    technical_family: engine_air_filtration
+    product_family: primary_air_filters
+    technology: MACROCORE
+    symptoms: [restriction_indicator_rises_early, power_loss, increased_fuel_consumption]
+    minimum_evidence: [restriction_reading, service_hours, filter_photos, duty_cycle, housing_inspection]
+    probable_causes: [extreme_dust_load, undersized_system, blocked_precleaner, moisture_caking, incorrect_element]
+    diagnostic_procedure: [verify_indicator, inspect_precleaner_and_inlet, inspect_media_pattern, compare_service_conditions, verify_element_application]
+    stop_rules: [do_not_replace_by_hours_alone, escalate_if_clean_side_dust_present]
+    corrective_actions: [restore_precleaner_flow, correct_application, replace_only_when_restriction_or_damage_supports_it]
+    verification: [restriction_returns_to_expected_range, no_clean_side_dust]
+  - id: AIR-ENG-0002
+    title: Dust found on clean side of engine air system
+    technical_family: engine_air_filtration
+    product_family: primary_and_safety_air_filters
+    technology: MACROCORE
+    symptoms: [clean_side_dust, turbo_or_engine_wear_indicators]
+    minimum_evidence: [clean_side_photos, seal_condition, housing_and_duct_inspection, installed_part_number]
+    probable_causes: [seal_bypass, media_rupture, housing_crack, duct_leak, incorrect_installation]
+    diagnostic_procedure: [stop_and_protect_engine, inspect_seals, inspect_media, pressure_or_smoke_test_ducting, verify_element_fit]
+    stop_rules: [stop_operation_if_active_dust_ingress, do_not_assume_filter_media_failure_without_path_evidence]
+    corrective_actions: [repair_ingress_path, replace_damaged_elements, clean_downstream_path, assess_engine]
+    verification: [sealed_intake_path, no_new_clean_side_dust]
+  - id: AIR-CAB-0001
+    title: Weak cabin airflow after filter replacement
+    technical_family: cabin_air_filtration
+    product_family: cabin_air_filters
+    technology: MICROKAPPA
+    symptoms: [low_vent_airflow, blower_noise, poor_defogging]
+    minimum_evidence: [installed_filter_orientation, filter_dimensions, evaporator_condition, blower_operation]
+    probable_causes: [reversed_filter, incorrect_filter, collapsed_media, blocked_evaporator, blower_fault]
+    diagnostic_procedure: [verify_orientation_and_fit, inspect_media, test_blower_speeds, inspect_evaporator_path]
+    stop_rules: [do_not_blame_filter_before_air_path_and_blower_checks]
+    corrective_actions: [correct_installation, use_correct_element, clean_air_path, repair_blower]
+    verification: [airflow_restored, no_abnormal_noise]
+  - id: AIR-DRY-0001
+    title: Air dryer purges continuously or too frequently
+    technical_family: compressed_air_treatment
+    product_family: air_dryer_cartridges
+    technology: DRYCORE
+    symptoms: [frequent_purge, compressor_overcycling, wet_air_system]
+    minimum_evidence: [purge_frequency, system_pressure, leakage_test, cartridge_age, governor_operation]
+    probable_causes: [system_air_leak, governor_fault, purge_valve_fault, saturated_cartridge, compressor_issue]
+    diagnostic_procedure: [check_leaks, verify_cut_in_cut_out, inspect_purge_valve, assess_cartridge_condition, assess_compressor]
+    stop_rules: [do_not_replace_cartridge_as_first_action_when_system_leak_exists]
+    corrective_actions: [repair_leaks_or_controls, service_purge_valve, replace_saturated_cartridge]
+    verification: [normal_purge_interval, dry_downstream_air]
+  - id: AIR-HSG-0001
+    title: Recurrent dust entry caused by air-cleaner housing
+    technical_family: air_intake_housings
+    product_family: housings_precleaners_and_components
+    technology: INTEKCORE
+    symptoms: [repeated_clean_side_dust, uneven_media_loading, loose_cover]
+    minimum_evidence: [housing_photos, latch_and_seal_condition, dust_evacuation_valve, mounting_alignment]
+    probable_causes: [warped_cover, damaged_seal_surface, failed_latch, blocked_evacuation, housing_crack]
+    diagnostic_procedure: [inspect_structure, verify_latch_load, inspect_seal_land, inspect_evacuation, leak_test]
+    stop_rules: [do_not_install_new_element_into_unresolved_leaking_housing]
+    corrective_actions: [repair_or_replace_housing_components, restore_mounting_and_evacuation]
+    verification: [housing_passes_leak_test, even_loading_pattern]

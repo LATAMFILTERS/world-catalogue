@@ -1,0 +1,65 @@
+schema_version: "1.0"
+protection_system: fuel_cleanliness
+status: ENGINEERING_DRAFT
+production_eligible: false
+cases:
+  - id: FUEL-PRI-0001
+    title: Primary fuel filter plugs prematurely
+    technical_family: engine_fuel_filtration
+    product_family: primary_fuel_filters
+    technology: HYDROCORE
+    symptoms: [short_service_life, restriction, power_loss]
+    minimum_evidence: [service_hours, restriction_or_vacuum, drained_sample, tank_history, element_inspection]
+    probable_causes: [dirty_tank, microbial_growth, wax_or_gel, excessive_water, incorrect_micron_rating]
+    diagnostic_procedure: [sample_upstream_fuel, inspect_element_loading, inspect_tank, verify fuel temperature and grade, verify application]
+    stop_rules: [do_not_treat_repeated_filter_plugging_as_filter_defect_without_fuel_evidence]
+    corrective_actions: [clean_tank, remediate_contamination, correct fuel handling, install correct element]
+    verification: [normal restriction trend, acceptable fuel sample]
+  - id: FUEL-SEC-0001
+    title: Secondary fuel filter restriction causes low power
+    technical_family: engine_fuel_filtration
+    product_family: secondary_fuel_filters
+    technology: HYDROCORE
+    symptoms: [low_power, hard_start, rail_pressure_drop]
+    minimum_evidence: [pressure_before_and_after_filter, fault_codes, service_hours, primary_filter_condition]
+    probable_causes: [fine_contamination, upstream_separator_failure, incorrect_element, collapsed_media, fuel_system_fault]
+    diagnostic_procedure: [measure differential pressure, inspect primary stage, verify installed element, inspect fuel quality, separate filter restriction from pump or injector fault]
+    stop_rules: [do_not_replace_injection_components_before confirming supply-side condition]
+    corrective_actions: [restore staged filtration, correct contamination source, replace confirmed restricted element]
+    verification: [fuel pressure restored, power restored, no recurring restriction]
+  - id: FUEL-FWS-0001
+    title: Water passes beyond fuel-water separator
+    technical_family: fuel_water_separation
+    product_family: fuel_water_separators
+    technology: HYDROCORE
+    symptoms: [water_downstream, injector_damage_risk, repeated_water_alarm]
+    minimum_evidence: [bowl_or_drain_sample, downstream_sample, flow_rate, installed_element, drain_practice]
+    probable_causes: [excessive_flow, saturated_element, emulsified_water, damaged_seal, incorrect_element, poor_drain_practice]
+    diagnostic_procedure: [confirm water type, inspect seals and bowl, verify flow capacity, verify element, review draining and fuel additives]
+    stop_rules: [stop_operation_if_free_water_reaches_high_pressure_fuel_system]
+    corrective_actions: [drain_and_clean_system, correct element and seals, address emulsification or source water]
+    verification: [downstream_sample_free_of_visible_water, alarm_normal]
+  - id: FUEL-FH-0001
+    title: FH turbine separator loses prime or draws air
+    technical_family: turbine_fuel_separation
+    product_family: fh_turbine_systems
+    technology: HYDROCORE_SERIES
+    symptoms: [hard_start, bubbles_in_bowl, loss_of_prime, unstable_fuel_supply]
+    minimum_evidence: [bowl_observation, inlet_vacuum, seal_condition, hose_and_fitting_inspection]
+    probable_causes: [lid_seal_leak, drain_leak, loose_fittings, cracked_bowl, excessive_suction_restriction]
+    diagnostic_procedure: [inspect visible bubbles, isolate suction sections, inspect seals and drain, vacuum_test, verify installation height]
+    stop_rules: [do_not classify as element restriction until air ingress is excluded]
+    corrective_actions: [repair suction leak, replace damaged seals or bowl, correct installation]
+    verification: [stable prime, no bubbles, normal inlet vacuum]
+  - id: FUEL-FG-0001
+    title: FG turbine system shows repeated high restriction
+    technical_family: turbine_fuel_separation
+    product_family: fg_turbine_systems
+    technology: HYDROCORE_SERIES
+    symptoms: [restriction_alarm, engine_starvation, frequent_element_changes]
+    minimum_evidence: [restriction_reading, flow demand, element_stage, fuel_sample, housing inspection]
+    probable_causes: [contaminated_bulk_fuel, undersized_assembly, wrong_element_stage, blocked_inlet, wax_or_microbes]
+    diagnostic_procedure: [verify gauge, compare rated flow, inspect inlet, inspect element loading, test fuel contamination]
+    stop_rules: [do_not increase_element_micron_rating_to_mask_source_contamination]
+    corrective_actions: [correct sizing or staging, clean supply system, remediate fuel]
+    verification: [restriction_stable_under_full_load, normal engine supply]

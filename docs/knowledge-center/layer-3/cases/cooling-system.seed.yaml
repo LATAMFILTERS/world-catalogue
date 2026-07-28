@@ -1,0 +1,65 @@
+schema_version: "1.0"
+protection_system: cooling_system
+status: ENGINEERING_DRAFT
+production_eligible: false
+cases:
+  - id: COOL-BLK-0001
+    title: Blank coolant filter plugs or restricts circulation
+    technical_family: coolant_filtration
+    product_family: blank_coolant_filters
+    technology: THERMACORE
+    symptoms: [short_filter_life, coolant_flow_concern, visible_debris]
+    minimum_evidence: [coolant_sample, service_history, filter_inspection, system_flush_history]
+    probable_causes: [corrosion_debris, sealant_or_stop_leak, scale, incompatible_coolant, post_repair_contamination]
+    diagnostic_procedure: [inspect_element, sample_coolant, review additives_and_repairs, inspect system contamination]
+    stop_rules: [do_not repeatedly replace filter without correcting coolant contamination]
+    corrective_actions: [correct coolant chemistry, clean system under approved procedure, eliminate contamination source]
+    verification: [stable_filter_interval, acceptable_coolant_condition]
+  - id: COOL-PRE-0001
+    title: Precharged coolant filter causes excessive additive concentration
+    technical_family: coolant_chemistry_control
+    product_family: precharged_coolant_filters
+    technology: THERMACORE
+    symptoms: [high_sca, deposits, water_pump_seal_risk]
+    minimum_evidence: [coolant_test_results, system_capacity, filter_charge, existing_additive_history]
+    probable_causes: [wrong_charge_level, additive_stacking, small_system_capacity, incorrect_maintenance_practice]
+    diagnostic_procedure: [test_chemistry, calculate_total_charge, verify system capacity, review prior additions]
+    stop_rules: [do_not_add_sca_without_measurement]
+    corrective_actions: [restore_chemistry_to_specification, use_correct_charge_or_blank_filter]
+    verification: [chemistry_within_target_range]
+  - id: COOL-CR-0001
+    title: Controlled-release coolant filter does not maintain chemistry
+    technical_family: coolant_chemistry_control
+    product_family: controlled_release_coolant_filters
+    technology: THERMACORE
+    symptoms: [sca_drops_early, corrosion_or_cavitation_risk, inconsistent_test_results]
+    minimum_evidence: [serial_coolant_tests, service_hours, coolant_type, system_capacity, filter_application]
+    probable_causes: [incorrect_filter, incompatible_coolant, excessive_makeup_water, leak, abnormal_release_environment]
+    diagnostic_procedure: [verify coolant and filter compatibility, trend chemistry, inspect leaks and makeup practice, verify capacity]
+    stop_rules: [do_not assume release failure from one unverified test]
+    corrective_actions: [correct compatibility, repair leaks, restore correct filter and coolant practice]
+    verification: [stable_chemistry_trend]
+  - id: COOL-CND-0001
+    title: Coolant conditioner filter associated with deposits or gel
+    technical_family: coolant_conditioning
+    product_family: conditioner_coolant_filters
+    technology: THERMACORE
+    symptoms: [gel_or_deposits, restricted_passages, overheating]
+    minimum_evidence: [coolant_sample, product_history, mixing_water_quality, filter_charge]
+    probable_causes: [chemical_incompatibility, excessive_additive, hard_water, mixed_coolant_technologies]
+    diagnostic_procedure: [identify_all_fluids_and_additives, test_sample, inspect deposits, review water quality]
+    stop_rules: [stop_adding_chemicals_until_compatibility_is_resolved]
+    corrective_actions: [restore_single_approved_coolant_strategy, clean system appropriately]
+    verification: [no_new_deposits, stable_temperature_and_chemistry]
+  - id: COOL-RST-0001
+    title: Rust or corrosion debris repeatedly loads coolant filter
+    technical_family: cooling_system_corrosion_control
+    product_family: coolant_filters
+    technology: THERMACORE
+    symptoms: [rust_colored_coolant, repeated_filter_loading, overheating_risk]
+    minimum_evidence: [coolant_analysis, corrosion_photos, maintenance_history, electrical_grounding_check]
+    probable_causes: [depleted_inhibitors, oxygen_ingress, poor_water_quality, mixed_metals, electrolysis]
+    diagnostic_procedure: [test_coolant, inspect cap_and_leaks, test grounds_and_stray_voltage, inspect affected components]
+    stop_rules: [do_not classify debris as filter_media_failure_without material identification]
+    corrective_actions: [correct chemistry_and_ingress, repair grounding_or_components, clean system]
+    verification: [corrosion_rate_and_debris_decline]
