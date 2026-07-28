@@ -1,0 +1,93 @@
+schema_version: "1.0"
+registry_type: diagnostic_system_templates
+base_template: ../diagnostic-case.template.yaml
+
+systems:
+  air_intake_airflow:
+    template: air-intake-diagnostic.template.yaml
+    prefix: AIR
+    protection_system_name: Air Intake & Airflow Protection
+    technologies:
+      - MACROCORE
+      - MICROKAPPA
+      - DRYCORE
+      - INTEKCORE
+    initial_filter_types:
+      - primary_air_filter
+      - secondary_safety_air_filter
+      - radial_seal_air_filter
+      - axial_seal_air_filter
+      - cabin_air_filter
+      - air_dryer_cartridge
+      - intake_housing_and_precleaner
+
+  fuel_cleanliness:
+    template: fuel-diagnostic.template.yaml
+    prefix: FUEL
+    protection_system_name: Fuel Cleanliness Protection
+    technologies:
+      - HYDROCORE
+      - HYDROCORE_SERIES
+      - MARINECLEAN
+    initial_filter_types:
+      - primary_fuel_filter
+      - secondary_fuel_filter
+      - fuel_water_separator
+      - turbine_fuel_water_separator
+      - fuel_filter_heater_assembly
+
+  lube_oil:
+    template: lube-oil-diagnostic.template.yaml
+    prefix: OIL
+    protection_system_name: Lube/Oil Protection
+    technologies:
+      - SYNTRAX
+    initial_filter_types:
+      - full_flow_lube_filter
+      - bypass_lube_filter
+      - combination_lube_filter
+      - transmission_oil_filter
+      - differential_or_gear_oil_filter
+
+  hydraulic:
+    template: hydraulic-diagnostic.template.yaml
+    prefix: HYD
+    protection_system_name: Hydraulic Protection
+    technologies:
+      - NANOFORCE
+    initial_filter_types:
+      - suction_filter
+      - pressure_filter
+      - return_filter
+      - pilot_filter
+      - case_drain_filter
+      - offline_kidney_loop_filter
+      - hydraulic_breather
+
+  cooling_system:
+    template: cooling-system-diagnostic.template.yaml
+    prefix: COOL
+    protection_system_name: Cooling System Protection
+    technologies:
+      - THERMACORE
+    initial_filter_types:
+      - coolant_filter_blank
+      - coolant_filter_precharged
+      - coolant_filter_controlled_release
+      - cooling_system_conditioner_filter
+
+coverage_policy:
+  measurement_unit: approved_diagnostic_cases_per_filter_type
+  minimum_per_filter_type: 50
+  target_per_filter_type: 100
+  system_template_count: 5
+  current_initial_filter_type_count: 28
+  minimum_initial_case_target: 1400
+  full_initial_case_target: 2800
+
+rules:
+  - Every diagnostic case must extend the base template and one system template.
+  - System-specific mandatory evidence and hypothesis families may not be removed.
+  - Filter types may be added only through technical review.
+  - Coverage is counted only for approved and production-eligible cases.
+  - Variants by application, industry, duty cycle, environment, asset class, and failure mechanism must represent materially distinct reasoning paths.
