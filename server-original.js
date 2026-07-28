@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
+const TranslationService = require('./lib/translation-service');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -74,6 +75,19 @@ try {
 } catch (err) {
   console.warn('[outlook] Service initialization error:', err.message);
   console.warn('[outlook] Email delivery may fail. Ensure AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID are set.');
+}
+
+// ─── Translation Service (Google Translate API) ───────────────────────────────────
+let translationService = null;
+try {
+  translationService = new TranslationService();
+  if (translationService.enabled) {
+    console.log('[translation] Service initialized - incoming emails will be translated to English');
+  } else {
+    console.warn('[translation] Service disabled - GOOGLE_TRANSLATE_API_KEY not configured');
+  }
+} catch (err) {
+  console.warn('[translation] Service initialization error:', err.message);
 }
 
 // Initialize Email Intent Classifier for smart routing
@@ -2933,6 +2947,7 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
 // POST /api/email/smart-route
 // Analyzes incoming emails and sends intelligent auto-responses
 // Routes messages to correct mailbox based on intent
+// Translates incoming emails to English for internal team
 app.post('/api/email/smart-route', async (req, res) => {
   try {
     const { senderName, senderEmail, subject, message, language = 'en' } = req.body;
@@ -2969,18 +2984,41 @@ app.post('/api/email/smart-route', async (req, res) => {
       }
     }
 
-    // Send internal notification to correct mailbox
+    // Translate email to English for internal team
+    let translationResult = { translated: false, subject, body: message, language: 'unknown' };
+    if (translationService) {
+      try {
+        translationResult = await translationService.translateEmailToEnglish(subject, message);
+      } catch (translationErr) {
+        console.warn(`[translation] Failed to translate email: ${translationErr.message}`);
+      }
+    }
+
+    // Build internal email with translated content
+    const internalSubject = translationResult.translated ? translationResult.subject : subject;
+    const internalMessage = translationResult.translated ? translationResult.body : message;
+    const detectedLanguage = translationResult.language || 'unknown';
+
     let internalHTMLContent = `
       <h2>New ${classification.type.toUpperCase()} Inquiry</h2>
       <table style="border-collapse: collapse; width: 100%;">
         <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>From</b></td><td style="padding:8px;border:1px solid #ddd;">${senderName}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;"><b>Email</b></td><td style="padding:8px;border:1px solid #ddd;">${senderEmail}</td></tr>
-        <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>Subject</b></td><td style="padding:8px;border:1px solid #ddd;">${subject}</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>Subject</b></td><td style="padding:8px;border:1px solid #ddd;">${internalSubject}</td></tr>
         <tr><td style="padding:8px;border:1px solid #ddd;"><b>Intent Type</b></td><td style="padding:8px;border:1px solid #ddd;"><strong>${classification.type}</strong> (${(classification.confidence * 100).toFixed(0)}% confidence)</td></tr>
-        <tr><td style="padding:8px;border:1px solid #ddd;"><b>Language</b></td><td style="padding:8px;border:1px solid #ddd;">${lang.toUpperCase()}</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>Original Language</b></td><td style="padding:8px;border:1px solid #ddd;">${detectedLanguage.toUpperCase()}${translationResult.translated ? ' (translated to English)' : ''}</td></tr>
       </table>
       <h3 style="margin-top:1.5rem">Message</h3>
-      <p style="background:#f5f5f5;padding:1rem;border-left:4px solid #FFF12D">${message.replace(/\n/g, '<br>')}</p>
+      <p style="background:#f5f5f5;padding:1rem;border-left:4px solid #FFF12D">${internalMessage.replace(/\n/g, '<br>')}</p>`;
+
+    // Add original language note if translation occurred
+    if (translationResult.translated && translationResult.originalBody) {
+      internalHTMLContent += `
+      <h3 style="margin-top:1.5rem">Original Message (${detectedLanguage.toUpperCase()})</h3>
+      <p style="background:#f9f9f9;padding:1rem;border-left:4px solid #ccc;font-size:12px;color:#666">${translationResult.originalBody.replace(/\n/g, '<br>')}</p>`;
+    }
+
+    internalHTMLContent += `
       <hr/>
       <p style="font-size:12px;color:#666"><strong>Auto-Response Sent:</strong> Yes</p>
       <p style="font-size:12px;color:#666"><strong>Redirect URL (if distributor):</strong> ${classification.type === 'distributor' ? classification.redirectUrl : 'N/A'}</p>
@@ -2990,7 +3028,7 @@ app.post('/api/email/smart-route', async (req, res) => {
       try {
         await outlookMailService.send(
           classification.respondTo,
-          `[${classification.type.toUpperCase()}] ${subject} — Auto-routed`,
+          `[${classification.type.toUpperCase()}] ${internalSubject} — Auto-routed`,
           internalHTMLContent,
           null,
           classification.type
@@ -3011,6 +3049,8 @@ app.post('/api/email/smart-route', async (req, res) => {
       respondedTo: senderEmail,
       redirectUrl: classification.type === 'distributor' ? classification.redirectUrl : null,
       autoResponseSent: true,
+      translationApplied: translationResult.translated,
+      detectedLanguage: detectedLanguage,
     });
   } catch (err) {
     console.error('[email/smart-route]', err.message);
