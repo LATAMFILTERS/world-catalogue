@@ -1,0 +1,126 @@
+schema_version: "1.0"
+service: knowledge_review_notification
+purpose: notify assigned human reviewers when governed review work is created or becomes urgent
+
+source_of_truth:
+  system: knowledge_center_database
+  record: candidate_case
+  rule: email is a notification only and never the approval record
+
+provider:
+  preferred: MICROSOFT_GRAPH
+  sender_mailbox_env: KNOWLEDGE_REVIEW_SENDER
+  default_sender: engineering_review@elimfilters.com
+  recipient_resolution:
+    order:
+      - assigned_reviewer
+      - assigned_queue_distribution_list
+      - fallback_review_mailbox
+  secrets:
+    - MICROSOFT_TENANT_ID
+    - MICROSOFT_CLIENT_ID
+    - MICROSOFT_CLIENT_SECRET
+  secret_storage_rule: credentials must never be committed to the repository
+
+triggers:
+  - event: CANDIDATE_CASE_CREATED
+    conditions:
+      - status in [CAPTURED, UNDER_ANALYSIS]
+      - novelty.classification in [CONTRADICTION, POSSIBLE_NEW_CASE, INSUFFICIENT_INFORMATION]
+  - event: TECHNICAL_REVIEW_REQUESTED
+    conditions:
+      - status == TECHNICAL_REVIEW
+  - event: PRIORITY_ESCALATED
+    conditions:
+      - priority in [HIGH, CRITICAL]
+  - event: EVIDENCE_ADDED
+    conditions:
+      - status in [INCOMPLETE, UNDER_ANALYSIS, TECHNICAL_REVIEW]
+  - event: REVIEW_OVERDUE
+    conditions:
+      - due_at < now
+      - status not in [APPROVED, REJECTED, PUBLISHED]
+  - event: NOTIFICATION_RETRY
+    conditions:
+      - notification_status == FAILED
+
+message_contract:
+  subject_template: "[Knowledge Review][{priority}] {candidate_case_id} — {protection_system} / {technical_family}"
+  required_fields:
+    - candidate_case_id
+    - priority
+    - status
+    - protection_system
+    - technical_family
+    - symptom_summary
+    - novelty_classification
+    - evidence_count
+    - missing_evidence_summary
+    - assigned_reviewer_or_queue
+    - due_at
+    - secure_review_url
+  call_to_action: OPEN_KNOWLEDGE_REVIEW
+  prohibited_content:
+    - access_tokens
+    - credentials
+    - complete sensitive conversations unless explicitly authorized
+    - approval controls executable from email
+    - definitive technical conclusion when record is not approved
+
+secure_link:
+  route_template: "/knowledge-review/cases/{candidate_case_id}"
+  requirements:
+    - authenticated session
+    - role-based authorization
+    - candidate access audit event
+    - no approval action through unsigned URL parameters
+
+priority_policy:
+  CRITICAL:
+    initial_delivery: immediate
+    reminder_interval_hours: 4
+    escalation_after_hours: 8
+  HIGH:
+    initial_delivery: immediate
+    reminder_interval_hours: 12
+    escalation_after_hours: 24
+  NORMAL:
+    initial_delivery: immediate
+    reminder_interval_hours: 48
+    escalation_after_hours: 96
+  LOW:
+    initial_delivery: digest_allowed
+    reminder_interval_hours: 168
+    escalation_after_hours: 336
+
+delivery_control:
+  idempotency_key: "{event_type}:{candidate_case_id}:{record_version}"
+  maximum_attempts: 5
+  retry_strategy: exponential_backoff
+  delivery_events: [QUEUED, SENT, DELIVERED, BOUNCED, FAILED, ACKNOWLEDGED]
+  on_failure:
+    - preserve queue item
+    - record provider error
+    - retry according to policy
+    - notify fallback mailbox after final failure
+
+acknowledgement:
+  accepted_events:
+    - reviewer opens secure review URL
+    - reviewer assigns case
+    - reviewer performs governed workflow action
+  rule: email open tracking alone is not acknowledgement
+
+audit_fields:
+  - notification_id
+  - candidate_case_id
+  - event_type
+  - recipient
+  - sender
+  - provider_message_id
+  - attempted_at
+  - delivered_at
+  - acknowledged_at
+  - attempt_count
+  - final_status
+  - failure_reason
