@@ -13,60 +13,61 @@ const SOCIAL = [
   { label: 'YouTube', href: 'https://www.youtube.com/@elimfilters9112', letter: 'Yt' },
 ];
 
-const NAV_COLUMNS = [
+const getFooterNavigation = (t: any) => [
   {
-    title: 'COMPANY',
+    title: t('footer.company', 'COMPANY'),
     links: [
-      { label: 'About Us', href: '/about', external: false },
-      { label: 'Our Philosophy', href: '/about/philosophy', external: false },
-      { label: 'Industries', href: '/industries', external: false },
-      { label: 'Protection Systems', href: '/systems', external: false },
-      { label: 'Distributors', href: '/distributors', external: false },
-      { label: 'Contact', href: '/contact', external: false },
+      { label: t('footer.aboutUs', 'About Us'), href: '/about', external: false },
+      { label: t('footer.philosophy', 'Our Philosophy'), href: '/about/philosophy', external: false },
+      { label: t('footer.industries', 'Industries'), href: '/industries', external: false },
+      { label: t('footer.protectionSystems', 'Protection Systems'), href: '/systems', external: false },
+      { label: t('footer.distributors', 'Distributors'), href: '/distributors', external: false },
+      { label: t('footer.contact', 'Contact'), href: '/contact', external: false },
     ],
   },
   {
-    title: 'PRODUCTS',
+    title: t('footer.products', 'PRODUCTS'),
     links: [
-      { label: 'Protection Systems', href: '/systems', external: false },
-      { label: 'Product Families', href: '/families', external: false },
-      { label: 'Part Search', href: 'https://part-search.elimfilters.com/', external: true },
-      { label: 'Technologies', href: '/technologies', external: false },
+      { label: t('footer.protectionSystems', 'Protection Systems'), href: '/systems', external: false },
+      { label: t('footer.productFamilies', 'Product Families'), href: '/families', external: false },
+      { label: t('footer.partSearch', 'Part Search'), href: 'https://part-search.elimfilters.com/', external: true },
+      { label: t('footer.technologies', 'Technologies'), href: '/technologies', external: false },
     ],
   },
   {
-    title: 'SUPPORT',
+    title: t('footer.support', 'SUPPORT'),
     links: [
-      { label: 'Technical Support', href: '/contact', external: false },
-      { label: 'Knowledge System', href: '/knowledge-system', external: false },
-      { label: 'Standards Library', href: '/knowledge-system/standards', external: false },
-      { label: 'Fleet Optimization', href: '/knowledge-system/fleet', external: false },
+      { label: t('footer.technicalSupport', 'Technical Support'), href: '/contact', external: false },
+      { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-system', external: false },
+      { label: t('footer.standardsLibrary', 'Standards Library'), href: '/knowledge-system/standards', external: false },
+      { label: t('footer.fleetOptimization', 'Fleet Optimization'), href: '/knowledge-system/fleet', external: false },
     ],
   },
   {
-    title: 'KNOWLEDGE',
+    title: t('footer.knowledge', 'KNOWLEDGE'),
     links: [
-      { label: 'Contamination', href: '/knowledge-system/contamination', external: false },
-      { label: 'Compare & Select', href: '/knowledge-system/compare', external: false },
-      { label: 'Filtration Science', href: '/knowledge-system/science', external: false },
-      { label: 'Industrial Bridges', href: '/knowledge-system/bridges', external: false },
+      { label: t('footer.contamination', 'Contamination'), href: '/knowledge-system/contamination', external: false },
+      { label: t('footer.compareSelect', 'Compare & Select'), href: '/knowledge-system/compare', external: false },
+      { label: t('footer.filtrationScience', 'Filtration Science'), href: '/knowledge-system/science', external: false },
+      { label: t('footer.industrialBridges', 'Industrial Bridges'), href: '/knowledge-system/bridges', external: false },
     ],
   },
   {
-    title: 'LEGAL',
+    title: t('footer.legal', 'LEGAL'),
     links: [
-      { label: 'Terms of Service', href: '/legal/terms', external: false },
-      { label: 'Privacy Policy', href: '/legal/privacy', external: false },
-      { label: 'AI Use Policy', href: '/legal/ai-policy', external: false },
-      { label: 'Copyright & DMCA', href: '/legal/copyright', external: false },
-      { label: 'Cross Reference Policy', href: '/legal/cross-reference', external: false },
-      { label: 'Legal Disclaimer', href: '/legal/disclaimer', external: false },
+      { label: t('footer.termsOfService', 'Terms of Service'), href: '/legal/terms', external: false },
+      { label: t('footer.privacyPolicy', 'Privacy Policy'), href: '/legal/privacy', external: false },
+      { label: t('footer.aiPolicy', 'AI Use Policy'), href: '/legal/ai-policy', external: false },
+      { label: t('footer.copyright', 'Copyright & DMCA'), href: '/legal/copyright', external: false },
+      { label: t('footer.crossReferencePolicy', 'Cross Reference Policy'), href: '/legal/cross-reference', external: false },
+      { label: t('footer.legalDisclaimer', 'Legal Disclaimer'), href: '/legal/disclaimer', external: false },
     ],
   },
 ];
 
 export function Footer() {
   const { t } = useTranslation();
+  const navColumns = getFooterNavigation(t);
 
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
@@ -97,136 +98,155 @@ export function Footer() {
                 { icon: '✉', text: 'info@elimfilters.com', href: 'mailto:info@elimfilters.com' },
                 { icon: '◎', text: 'Frisco, Texas — United States', href: null },
                 { icon: '◎', text: 'Caracas, Distrito Capital — Venezuela', href: null },
-              ].map((item) => (
-                <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ fontSize: '11px', color: 'rgba(255,241,45,0.4)', flexShrink: 0 }}>{item.icon}</span>
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <span style={{ fontSize: '12px', color: '#FFF12D', minWidth: '12px' }}>{item.icon}</span>
                   {item.href ? (
-                    <a href={item.href} style={contactStyle}
-                      onMouseEnter={e => (e.currentTarget.style.color = '#FFF12D')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
-                    >
+                    <a href={item.href} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
                       {item.text}
                     </a>
                   ) : (
-                    <span style={contactStyle}>{item.text}</span>
+                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>{item.text}</span>
                   )}
                 </div>
               ))}
             </div>
 
-            <div style={{ display: 'flex', gap: '8px' }}>
-              {SOCIAL.map((s) => (
+            <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+              {SOCIAL.map((item) => (
                 <motion.a
-                  key={s.label}
-                  href={s.href}
+                  key={item.href}
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={s.label}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.18 }}
                   style={{
-                    width: '34px', height: '34px',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'rgba(255,255,255,0.35)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,241,45,0.15)',
+                    color: 'rgba(255,241,45,0.6)',
+                    fontSize: '11px',
+                    fontWeight: 600,
                     textDecoration: 'none',
-                    fontSize: '10px',
-                    fontFamily: 'var(--font-display)',
-                    fontWeight: 700, letterSpacing: '0.5px',
-                    transition: 'border-color 0.2s, color 0.2s',
+                    fontFamily: 'JetBrains Mono, monospace',
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#FFF12D';
-                    e.currentTarget.style.color = '#FFF12D';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                    e.currentTarget.style.color = 'rgba(255,255,255,0.35)';
-                  }}
+                  whileHover={{ background: 'rgba(255,241,45,0.1)', borderColor: 'rgba(255,241,45,0.3)' }}
                 >
-                  {s.letter}
+                  {item.letter}
                 </motion.a>
               ))}
             </div>
           </div>
 
-          {NAV_COLUMNS.map((col) => (
-            <div key={col.title} style={{ minWidth: 0 }}>
-              <div style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 700, fontSize: '11px',
-                color: 'rgba(255,255,255,0.55)',
-                textTransform: 'uppercase', letterSpacing: '2.5px',
-                marginBottom: '20px',
-              }}>
-                {col.title}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px 24px' }}>
+            {navColumns.map((col, i) => (
+              <div key={i}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  color: '#FFF12D',
+                  margin: '0 0 16px 0',
+                }}>
+                  {col.title}
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {col.links.map((link, j) => (
+                    <li key={j}>
+                      {link.external ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontSize: '13px',
+                            color: 'rgba(255,255,255,0.6)',
+                            textDecoration: 'none',
+                            transition: 'color 0.2s',
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          style={{
+                            fontSize: '13px',
+                            color: 'rgba(255,255,255,0.6)',
+                            textDecoration: 'none',
+                            transition: 'color 0.2s',
+                            display: 'inline-block',
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              {col.links.map((link) =>
-                link.external ? (
-                  <div key={link.label} style={{ marginBottom: '12px' }}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={linkStyle}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
-                    >
-                      {link.label}
-                    </a>
-                  </div>
-                ) : (
-                  <div key={link.label} style={{ marginBottom: '12px' }}>
-                    <Link
-                      href={link.href}
-                      style={linkStyle}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
-                    >
-                      {link.label}
-                    </Link>
-                  </div>
-                )
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div style={{
-        maxWidth: '1400px', margin: '0 auto',
-        padding: '28px clamp(1.25rem, 5vw, 48px)',
-        marginTop: '48px',
-        borderTop: '1px solid rgba(255,255,255,0.05)',
-        display: 'flex', flexWrap: 'wrap',
-        alignItems: 'center', justifyContent: 'space-between',
-        gap: '8px 24px',
-      }}>
-        <span style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.2px' }}>
-          © 2015–2026 Kleo Technologies LLC · ELIMFILTERS® is a registered trademark. All rights reserved.
-        </span>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.1em' }}>
-          Kleo Technologies LLC · Frisco, Texas · Caracas, Venezuela · info@elimfilters.com
-        </span>
+        <div style={{
+          marginTop: '48px',
+          paddingTop: '24px',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px',
+        }}>
+          <p style={{
+            fontSize: '12px',
+            color: 'rgba(255,255,255,0.3)',
+            margin: 0,
+            fontFamily: 'var(--font-body)',
+          }}>
+            © 2024 ELIMFILTERS®. All rights reserved.
+          </p>
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Link
+              href="/legal/privacy"
+              style={{
+                fontSize: '12px',
+                color: 'rgba(255,255,255,0.4)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/legal/terms"
+              style={{
+                fontSize: '12px',
+                color: 'rgba(255,255,255,0.4)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+            >
+              Terms
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
-
-const contactStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-body)',
-  fontSize: '12px',
-  color: 'rgba(255,255,255,0.35)',
-  textDecoration: 'none',
-  transition: 'color 0.2s',
-};
-
-const linkStyle: React.CSSProperties = {
-  fontSize: '13px',
-  textDecoration: 'none',
-  color: 'rgba(255,255,255,0.4)',
-  display: 'block',
-  fontFamily: 'var(--font-body)',
-  lineHeight: 1.5,
-  transition: 'color 0.2s ease',
-};
