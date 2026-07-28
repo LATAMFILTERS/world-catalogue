@@ -1,0 +1,86 @@
+schema_version: "1.0"
+object_type: reasoning_engine_contract
+status: APPROVED_ARCHITECTURE
+
+input_contract:
+  required:
+    - problem_statement
+  optional:
+    - asset_context
+    - product_context
+    - operating_conditions
+    - observations
+    - user_role
+    - language
+
+reasoning_stages:
+  - stage: normalize_problem
+    output:
+      - normalized_condition
+      - explicit_symptoms
+      - missing_context
+  - stage: classify
+    output:
+      - protection_system
+      - technical_family
+      - product_family_candidates
+  - stage: retrieve
+    requirements:
+      - production_eligible_only
+      - retain_source_and_approval_links
+    output:
+      - candidate_diagnostic_cases
+  - stage: compare_evidence
+    output:
+      - supporting_observations
+      - contradicting_observations
+      - missing_required_evidence
+  - stage: manage_questions
+    rules:
+      - ask_minimum_questions_first
+      - ask_conditional_questions_only_when_triggered
+      - stop_asking_when_sufficient_evidence_rule_is_met
+  - stage: rank_hypotheses
+    output:
+      - ranked_hypotheses
+      - eliminated_hypotheses
+      - unresolved_hypotheses
+  - stage: apply_controls
+    rules:
+      - apply_stop_rules_before_recommendations
+      - apply_escalation_rules_before_definitive_conclusion
+      - require_verification_criteria_for_closure
+  - stage: assess_confidence
+    output:
+      - confidence_score
+      - confidence_band
+      - uncertainty_statement
+  - stage: generate_response
+    output:
+      - technical_assessment
+      - evidence_summary
+      - risk_summary
+      - recommended_action
+      - verification_step
+      - uncertainty
+      - escalation
+
+prohibited_behavior:
+  - use_draft_cases_for_customer_facing_conclusions
+  - infer_compatibility_from_dimensions_alone
+  - present_ranked_hypothesis_as_confirmed_without_required_evidence
+  - hide_material_contradictions
+  - fabricate_measurements_sources_or_field_history
+  - continue_questioning_after_a_stop_rule_is_satisfied
+  - expose_private_chain_of_thought
+
+escalation_conditions:
+  - safety_consequence_possible
+  - catastrophic_failure_possible
+  - contradictory_high_quality_evidence
+  - no_production_eligible_case_matches
+  - required_measurement_unavailable
+  - confidence_below_release_threshold
+  - request_requires_product_or_application_approval
+
+escalation_destination: support@elimfilters.com
