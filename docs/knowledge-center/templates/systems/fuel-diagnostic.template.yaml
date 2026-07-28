@@ -1,0 +1,75 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+system_template: fuel_cleanliness
+extends: ../diagnostic-case.template.yaml
+
+identity:
+  id: FUEL-{{filter_type}}-{{sequence}}
+  title: ""
+  protection_system: fuel_cleanliness
+  filter_type: ""
+  lifecycle_status: draft
+
+required_scope:
+  asset_class: []
+  industries: []
+  applications: []
+  fuel_type: []
+  duty_cycle: []
+  environments: []
+
+system_specific_evidence:
+  water_presence:
+    observed: UNKNOWN
+    free_water: UNKNOWN
+    emulsified_water: UNKNOWN
+    evidence_state: UNKNOWN
+  contamination:
+    sediment: UNKNOWN
+    microbial_growth: UNKNOWN
+    wax_or_gel: UNKNOWN
+    rust: UNKNOWN
+    unknown_material: UNKNOWN
+  pressure_and_flow:
+    inlet_restriction: null
+    differential_pressure: null
+    rail_or_supply_pressure: null
+    units: UNKNOWN
+  service_history:
+    filter_life_hours: null
+    repeated_plugging: UNKNOWN
+    tank_cleaning_history: UNKNOWN
+    fuel_source_changed: UNKNOWN
+  installed_system:
+    primary_filter: UNKNOWN
+    secondary_filter: UNKNOWN
+    water_separator: UNKNOWN
+    drain_function: UNKNOWN
+    heater_or_thermostat: UNKNOWN
+
+mandatory_hypothesis_families:
+  - water_contamination
+  - particulate_contamination
+  - microbial_contamination
+  - waxing_or_gelling
+  - air_ingress
+  - restriction_or_flow_loss
+  - incorrect_filter_or_installation
+  - tank_or_supply_source_contamination
+
+mandatory_risks:
+  - injector_damage
+  - pump_damage
+  - loss_of_power
+  - hard_start_or_no_start
+  - corrosion
+  - unplanned_downtime
+
+stop_rules:
+  - stop_if_evidence_identifies_contaminant_and_safe_containment_action
+  - escalate_if_metal_debris_or_high_pressure_system_damage_is_suspected
+  - do_not_treat_repeated_filter_plugging_as_a_filter_defect_without_source_analysis
+
+coverage_target:
+  minimum_approved_cases_per_filter_type: 50
+  target_approved_cases_per_filter_type: 100
