@@ -6,6 +6,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
+const EmailIntentClassifier = require('./lib/email-intent-classifier');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -74,6 +75,10 @@ try {
   console.warn('[outlook] Service initialization error:', err.message);
   console.warn('[outlook] Email delivery may fail. Ensure AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID are set.');
 }
+
+// Initialize Email Intent Classifier for smart routing
+const emailIntentClassifier = new EmailIntentClassifier();
+console.log('[email-classifier] Initialized with 6 intent types');
 
 // ─── SEO/GEO Redirects (knowledge-system -> knowledge-center) ───────────────────
 // Maps legacy routes to new structures. Covers trailing slashes and retains query parameters.
@@ -2921,6 +2926,95 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
   } catch (err) {
     console.error('[ai/escalate]', err.message);
     res.status(500).json({ error: 'Failed to send escalation email' });
+  }
+});
+
+// ─── Smart Email Intent Classifier & Auto-Responder ───────────────────────────
+// POST /api/email/smart-route
+// Analyzes incoming emails and sends intelligent auto-responses
+// Routes messages to correct mailbox based on intent
+app.post('/api/email/smart-route', async (req, res) => {
+  try {
+    const { senderName, senderEmail, subject, message, language = 'en' } = req.body;
+
+    // Validation
+    if (!senderName || !senderEmail || !subject || !message) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(senderEmail)) {
+      return res.status(400).json({ error: 'Invalid email address' });
+    }
+
+    // Classify email intent
+    const classification = emailIntentClassifier.classify(subject, message);
+    const lang = language.toLowerCase() === 'es' ? 'es' : 'en';
+    const autoResponse = classification.userResponse[lang] || classification.userResponse['en'];
+
+    console.log(`[email-classifier] ${classification.type} (${(classification.confidence * 100).toFixed(0)}% confidence) from ${senderEmail}`);
+
+    // Send auto-response to user
+    if (outlookMailService) {
+      try {
+        await outlookMailService.send(
+          senderEmail,
+          `Re: ${subject}`,
+          `<p>${autoResponse.replace(/\n/g, '</p><p>')}</p>`,
+          autoResponse,
+          classification.type
+        );
+        console.log(`[email-response] Auto-response sent to ${senderEmail}`);
+      } catch (responseErr) {
+        console.warn(`[email-response] Failed to send auto-response: ${responseErr.message}`);
+      }
+    }
+
+    // Send internal notification to correct mailbox
+    let internalHTMLContent = `
+      <h2>New ${classification.type.toUpperCase()} Inquiry</h2>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>From</b></td><td style="padding:8px;border:1px solid #ddd;">${senderName}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #ddd;"><b>Email</b></td><td style="padding:8px;border:1px solid #ddd;">${senderEmail}</td></tr>
+        <tr style="background:#f5f5f5"><td style="padding:8px;border:1px solid #ddd;"><b>Subject</b></td><td style="padding:8px;border:1px solid #ddd;">${subject}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #ddd;"><b>Intent Type</b></td><td style="padding:8px;border:1px solid #ddd;"><strong>${classification.type}</strong> (${(classification.confidence * 100).toFixed(0)}% confidence)</td></tr>
+        <tr><td style="padding:8px;border:1px solid #ddd;"><b>Language</b></td><td style="padding:8px;border:1px solid #ddd;">${lang.toUpperCase()}</td></tr>
+      </table>
+      <h3 style="margin-top:1.5rem">Message</h3>
+      <p style="background:#f5f5f5;padding:1rem;border-left:4px solid #FFF12D">${message.replace(/\n/g, '<br>')}</p>
+      <hr/>
+      <p style="font-size:12px;color:#666"><strong>Auto-Response Sent:</strong> Yes</p>
+      <p style="font-size:12px;color:#666"><strong>Redirect URL (if distributor):</strong> ${classification.type === 'distributor' ? classification.redirectUrl : 'N/A'}</p>
+    `;
+
+    if (outlookMailService) {
+      try {
+        await outlookMailService.send(
+          classification.respondTo,
+          `[${classification.type.toUpperCase()}] ${subject} — Auto-routed`,
+          internalHTMLContent,
+          null,
+          classification.type
+        );
+        console.log(`[email-internal] Internal notification sent to ${classification.respondTo}`);
+      } catch (internalErr) {
+        console.error(`[email-internal] Failed to send internal notification: ${internalErr.message}`);
+        throw internalErr;
+      }
+    }
+
+    // Response to sender
+    res.json({
+      success: true,
+      message: 'Email processed and routed successfully',
+      intent: classification.type,
+      confidence: classification.confidence,
+      respondedTo: senderEmail,
+      redirectUrl: classification.type === 'distributor' ? classification.redirectUrl : null,
+      autoResponseSent: true,
+    });
+  } catch (err) {
+    console.error('[email/smart-route]', err.message);
+    res.status(500).json({ error: 'Failed to process email' });
   }
 });
 
