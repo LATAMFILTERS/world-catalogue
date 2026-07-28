@@ -1,0 +1,68 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+system_template: air_intake_airflow
+extends: ../diagnostic-case.template.yaml
+
+identity:
+  id: AIR-{{filter_type}}-{{sequence}}
+  title: ""
+  protection_system: air_intake_airflow
+  filter_type: ""
+  lifecycle_status: draft
+
+required_scope:
+  asset_class: []
+  industries: []
+  applications: []
+  duty_cycle: []
+  environments: []
+
+system_specific_evidence:
+  restriction_indicator:
+    value: null
+    unit: "inH2O"
+    evidence_state: UNKNOWN
+  differential_pressure:
+    value: null
+    unit: "inH2O"
+    evidence_state: UNKNOWN
+  filter_condition:
+    outer_surface: UNKNOWN
+    inner_clean_side: UNKNOWN
+    seals: UNKNOWN
+    media_damage: UNKNOWN
+  intake_path:
+    precleaner_condition: UNKNOWN
+    housing_condition: UNKNOWN
+    duct_leaks: UNKNOWN
+    clamp_integrity: UNKNOWN
+    dust_ejection_function: UNKNOWN
+  operating_conditions:
+    dust_load: UNKNOWN
+    moisture_exposure: UNKNOWN
+    soot_or_oil_mist_exposure: UNKNOWN
+
+mandatory_hypothesis_families:
+  - excessive_dust_loading
+  - premature_restriction
+  - bypass_or_seal_leakage
+  - media_damage
+  - housing_or_duct_leak
+  - incorrect_element_or_installation
+  - moisture_or_contaminant_ingress
+
+mandatory_risks:
+  - engine_wear
+  - turbocharger_damage
+  - reduced_airflow
+  - increased_fuel_consumption
+  - unplanned_downtime
+
+stop_rules:
+  - stop_if_restriction_and_visual_evidence_support_safe_action
+  - escalate_if_clean_side_dust_or_media_failure_is_observed
+  - do_not_recommend_element_by_dimensions_alone
+
+coverage_target:
+  minimum_approved_cases_per_filter_type: 50
+  target_approved_cases_per_filter_type: 100
