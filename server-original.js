@@ -77,15 +77,11 @@ try {
   console.warn('[outlook] Email delivery may fail. Ensure AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, AZURE_TENANT_ID are set.');
 }
 
-// ─── Translation Service (Google Translate API) ───────────────────────────────────
+// ─── Translation Service (google-translate-free library - no API key needed) ────────
 let translationService = null;
 try {
   translationService = new TranslationService();
-  if (translationService.enabled) {
-    console.log('[translation] Service initialized - incoming emails will be translated to English');
-  } else {
-    console.warn('[translation] Service disabled - GOOGLE_TRANSLATE_API_KEY not configured');
-  }
+  console.log('[translation] Service initialized - incoming emails will be translated to English (local, no API key required)');
 } catch (err) {
   console.warn('[translation] Service initialization error:', err.message);
 }
