@@ -335,7 +335,9 @@ app.post('/api/contact', searchLimiter, async (req, res) => {
       await outlookMailService.send(
         'info@elimfilters.com',
         `[Web Contact] ${safeName} — ${safeCompany}`,
-        htmlContent
+        htmlContent,
+        null,
+        'contact'  // Routes to info@elimfilters.com
       );
     } else {
       throw new Error('Outlook Mail Service not configured');
@@ -405,7 +407,9 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
       await outlookMailService.send(
         'distribution_network@elimfilters.com',
         `[Distributor] ${esc(companyName)} — ${esc(country)}`,
-        htmlContent
+        htmlContent,
+        null,
+        'distributor'  // Routes to distribution_network@elimfilters.com
       );
     } else {
       throw new Error('Outlook Mail Service not configured');
@@ -2906,7 +2910,9 @@ app.post('/api/ai/escalate', searchLimiter, async (req, res) => {
       await outlookMailService.send(
         'support@elimfilters.com',
         `[Chat Escalation] Session ${safeSessionId} — ${usedLang.toUpperCase()}`,
-        htmlContent
+        htmlContent,
+        null,
+        'support'  // Routes to support@elimfilters.com
       );
     } else {
       throw new Error('Outlook Mail Service not configured');
