@@ -1,0 +1,152 @@
+schema_version: "1.0"
+manifest_type: knowledge_template_manifest
+canonical_repository: LATAMFILTERS/world-catalogue
+canonical_policy_path: docs/knowledge-center
+
+evidence_states:
+  - OFFICIAL_VERIFIED
+  - ELIMFILTERS_VALIDATED
+  - FIELD_VERIFIED
+  - CUSTOMER_REPORTED
+  - INFERRED
+  - PENDING_VERIFICATION
+  - UNKNOWN
+
+lifecycle_states:
+  - RESEARCH
+  - DRAFT
+  - TECHNICAL_REVIEW
+  - APPROVED
+  - REJECTED
+  - RETIRED
+
+object_types:
+  diagnostic_case:
+    template: diagnostic-case.template.yaml
+    id_prefix: DG-
+    required_paths:
+      - schema_version
+      - object_type
+      - id
+      - title
+      - lifecycle_status
+      - production_eligible
+      - classification.protection_system
+      - classification.filter_type_or_component
+      - problem_statement.customer_language
+      - problem_statement.normalized_condition
+      - required_evidence.minimum_to_assess
+      - hypotheses
+      - risk_assessment
+      - recommendations
+      - conversation_control.stop_questioning_rule
+      - conversation_control.escalation_triggers
+      - validation.approval_record_id
+    production_requirements:
+      lifecycle_status: APPROVED
+      production_eligible: true
+      approval_record_required: true
+
+  asset_technical_record:
+    template: asset-record.template.yaml
+    id_prefix: AR-
+    required_paths:
+      - schema_version
+      - object_type
+      - id
+      - title
+      - lifecycle_status
+      - production_eligible
+      - record_status
+      - identity.asset_type
+      - identity.manufacturer
+      - identity.model
+      - unknown_fields
+      - conflicts
+      - validation.approval_record_id
+    allowed_record_statuses:
+      - VERIFIED_OFFICIAL_DOCUMENTATION
+      - PARTIALLY_VERIFIED
+      - FIELD_DOCUMENTED_UNVERIFIED
+      - UNIDENTIFIED_ASSET
+
+  product_technical_record:
+    template: product-record.template.yaml
+    id_prefix: PR-
+    required_paths:
+      - schema_version
+      - object_type
+      - id
+      - title
+      - lifecycle_status
+      - production_eligible
+      - identity.elimfilters_part_number
+      - identity.protection_system
+      - identity.filter_type_or_component
+      - specifications
+      - applications
+      - performance_claims
+      - service_guidance
+      - validation.approval_record_id
+
+  source_record:
+    template: source-record.template.yaml
+    id_prefix: SR-
+    required_paths:
+      - schema_version
+      - object_type
+      - id
+      - title
+      - lifecycle_status
+      - source.source_type
+      - source.publisher_or_owner
+      - source.document_title
+      - source.access_date
+      - quality.authority_level
+      - claims
+    forced_values:
+      production_eligible: false
+
+  approval_record:
+    template: approval-record.template.yaml
+    id_prefix: AP-
+    required_paths:
+      - schema_version
+      - object_type
+      - id
+      - lifecycle_status
+      - subject.object_id
+      - subject.object_type
+      - subject.reviewed_version
+      - review.reviewer
+      - review.review_date
+      - approval.decision
+      - approval.production_eligible
+    allowed_decisions:
+      - PENDING
+      - APPROVED
+      - APPROVED_WITH_CONDITIONS
+      - REJECTED
+      - RETIRED
+
+cross_object_rules:
+  - rule_id: KC-001
+    description: Every production-eligible knowledge object must reference an approved approval record.
+  - rule_id: KC-002
+    description: Claude Code generated objects must begin in RESEARCH or DRAFT and production_eligible must be false.
+  - rule_id: KC-003
+    description: ELIMFILTERS_VALIDATED may only be assigned through explicit ELIMFILTERS technical approval.
+  - rule_id: KC-004
+    description: Every external factual claim must reference at least one source record and source location.
+  - rule_id: KC-005
+    description: UNKNOWN values must not be replaced by silent assumptions.
+  - rule_id: KC-006
+    description: Conflicting evidence must remain visible until resolved by a reviewer.
+  - rule_id: KC-007
+    description: Customer-facing assistants may retrieve only APPROVED and production-eligible knowledge objects.
+  - rule_id: KC-008
+    description: Source records are research evidence and are never customer-facing production objects.
+  - rule_id: KC-009
+    description: Diagnostic cases must define a sufficient-evidence and stop-questioning rule.
+  - rule_id: KC-010
+    description: Cross references must distinguish dimensional similarity from approved functional replacement.
