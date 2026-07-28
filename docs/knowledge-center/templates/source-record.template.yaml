@@ -1,0 +1,62 @@
+schema_version: "1.0"
+object_type: source_record
+id: "SR-0000"
+title: ""
+lifecycle_status: RESEARCH
+production_eligible: false
+
+source:
+  source_type: ""
+  publisher_or_owner: ""
+  document_title: ""
+  document_number: ""
+  revision_or_edition: ""
+  publication_date: null
+  access_date: null
+  language: ""
+  url: ""
+  local_archive_path: ""
+  checksum: ""
+  official_source: false
+
+quality:
+  authority_level: UNKNOWN
+  primary_or_secondary: UNKNOWN
+  scope: ""
+  limitations: []
+  known_conflicts: []
+  supersedes_source_ids: []
+  superseded_by_source_ids: []
+
+claims:
+  - claim_id: "SRC-CLM-0001"
+    normalized_claim: ""
+    source_location:
+      page: null
+      section: ""
+      table_or_figure: ""
+      line_or_paragraph: ""
+    quotation_or_extract: ""
+    interpretation: ""
+    evidence_state: UNKNOWN
+    applicable_models_or_conditions: []
+    limitations: []
+    linked_object_ids: []
+
+research_notes:
+  relevance: ""
+  unresolved_questions: []
+  comparison_notes: []
+  reviewer_comments: []
+
+validation:
+  researcher: ""
+  checked_by: ""
+  verified_at: null
+  approval_record_id: ""
+
+revision:
+  version: "0.1.0"
+  created_at: null
+  updated_at: null
+  change_summary: "Initial registration"
