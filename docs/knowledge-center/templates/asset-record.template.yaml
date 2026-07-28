@@ -1,0 +1,112 @@
+schema_version: "1.0"
+object_type: asset_technical_record
+id: "AR-ASSET-0000"
+title: ""
+lifecycle_status: DRAFT
+production_eligible: false
+record_status: UNIDENTIFIED_ASSET
+
+identity:
+  asset_type:
+    value: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+  manufacturer:
+    value: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+  model:
+    value: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+  serial_number:
+    value: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+  vin_or_equipment_id:
+    value: ""
+    evidence_state: UNKNOWN
+    source_ids: []
+  year:
+    value: null
+    evidence_state: UNKNOWN
+    source_ids: []
+  owner_or_fleet: ""
+  location: ""
+
+configuration:
+  application: ""
+  industry: ""
+  duty_cycle: ""
+  operating_environment: ""
+  hours_or_mileage: null
+  configuration_notes: []
+
+systems:
+  engine: {}
+  air_intake: {}
+  fuel: {}
+  lube_oil: {}
+  hydraulic: {}
+  cooling: {}
+  compressed_air: {}
+  transmission: {}
+  other: []
+
+installed_filters:
+  - position: ""
+    observed_part_number: ""
+    normalized_part_number: ""
+    manufacturer: ""
+    installation_status: UNKNOWN
+    evidence_state: UNKNOWN
+    source_ids: []
+    photo_ids: []
+
+capacities: []
+service_intervals: []
+fluids: []
+
+operating_conditions:
+  temperature_range: null
+  humidity: null
+  dust_exposure: null
+  water_exposure: null
+  fuel_quality_conditions: []
+  contamination_conditions: []
+  load_pattern: ""
+
+history:
+  failure_history: []
+  maintenance_history: []
+  modification_history: []
+  unresolved_conditions: []
+
+field_evidence:
+  photos: []
+  nameplates: []
+  invoices: []
+  maintenance_records: []
+  customer_statements: []
+  inspection_records: []
+
+unknown_fields: []
+conflicts: []
+
+relationships:
+  diagnostic_case_ids: []
+  product_record_ids: []
+  source_record_ids: []
+
+validation:
+  author: ""
+  technical_reviewer: ""
+  approval_record_id: ""
+  last_reviewed_at: null
+  next_review_due_at: null
+
+revision:
+  version: "0.1.0"
+  created_at: null
+  updated_at: null
+  change_summary: "Initial draft"
