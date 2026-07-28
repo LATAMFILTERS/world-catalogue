@@ -1,0 +1,82 @@
+schema_version: "1.0"
+object_type: diagnostic_case
+system_template: hydraulic
+extends: ../diagnostic-case.template.yaml
+
+identity:
+  id: HYD-{{filter_type}}-{{sequence}}
+  title: ""
+  protection_system: hydraulic
+  filter_type: ""
+  lifecycle_status: draft
+
+required_scope:
+  asset_class: []
+  industries: []
+  applications: []
+  hydraulic_fluid_type: []
+  circuit_type: []
+  duty_cycle: []
+  environments: []
+
+system_specific_evidence:
+  contamination_control:
+    iso_4406_code: UNKNOWN
+    particle_count_method: UNKNOWN
+    water_content: UNKNOWN
+    patch_test_result: UNKNOWN
+    sample_location: UNKNOWN
+  pressure_and_flow:
+    system_pressure: null
+    differential_pressure: null
+    return_pressure: null
+    case_drain_flow: null
+    units: UNKNOWN
+  fluid_condition:
+    viscosity: UNKNOWN
+    oxidation: UNKNOWN
+    varnish: UNKNOWN
+    aeration: UNKNOWN
+    foaming: UNKNOWN
+    thermal_degradation: UNKNOWN
+  filter_and_circuit:
+    suction_filter: UNKNOWN
+    pressure_filter: UNKNOWN
+    return_filter: UNKNOWN
+    offline_filter: UNKNOWN
+    breather_condition: UNKNOWN
+    bypass_indicator: UNKNOWN
+    reservoir_condition: UNKNOWN
+  failure_history:
+    pump_noise: UNKNOWN
+    slow_actuation: UNKNOWN
+    overheating: UNKNOWN
+    seal_failures: UNKNOWN
+    repeated_component_failure: UNKNOWN
+
+mandatory_hypothesis_families:
+  - particulate_contamination
+  - water_ingress
+  - air_ingress_or_cavitation
+  - varnish_or_oxidation
+  - incorrect_viscosity_or_fluid
+  - filter_bypass_or_restriction
+  - reservoir_or_breather_ingress
+  - active_component_wear
+
+mandatory_risks:
+  - pump_damage
+  - valve_sticking
+  - actuator_damage
+  - seal_failure
+  - loss_of_control
+  - unplanned_downtime
+
+stop_rules:
+  - stop_if_particle_count_and_circuit_evidence_support_safe_action
+  - escalate_if_control_loss_cavitation_or_active_metal_generation_is suspected
+  - do_not_assign_cleanliness_target_without_component_and_pressure_context
+
+coverage_target:
+  minimum_approved_cases_per_filter_type: 50
+  target_approved_cases_per_filter_type: 100
