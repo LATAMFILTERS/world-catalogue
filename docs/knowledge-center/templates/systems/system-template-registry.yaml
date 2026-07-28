@@ -1,5 +1,7 @@
-schema_version: "1.0"
+schema_version: "1.1"
 registry_type: diagnostic_system_templates
+layer_status: APPROVED
+approved_layer: 2
 base_template: ../diagnostic-case.template.yaml
 
 systems:
@@ -12,14 +14,30 @@ systems:
       - MICROKAPPA
       - DRYCORE
       - INTEKCORE
-    initial_filter_types:
-      - primary_air_filter
-      - secondary_safety_air_filter
-      - radial_seal_air_filter
-      - axial_seal_air_filter
-      - cabin_air_filter
-      - air_dryer_cartridge
-      - intake_housing_and_precleaner
+    technical_families:
+      air_filters:
+        product_families:
+          - primary_air_filters
+          - secondary_safety_air_filters
+          - radial_seal_air_filters
+          - axial_seal_air_filters
+      air_filter_housings:
+        technology: INTEKCORE
+        product_families:
+          - complete_air_filter_housings
+          - housing_components
+          - precleaners_and_dust_ejection_components
+      cabin_air_filters:
+        technology: MICROKAPPA
+        product_families:
+          - particulate_cabin_air_filters
+          - activated_carbon_cabin_air_filters
+      air_dryers:
+        technology: DRYCORE
+        product_families:
+          - air_dryer_cartridges
+          - coalescing_air_dryer_cartridges
+          - air_dryer_service_components
 
   fuel_cleanliness:
     template: fuel-diagnostic.template.yaml
@@ -29,12 +47,24 @@ systems:
       - HYDROCORE
       - HYDROCORE_SERIES
       - MARINECLEAN
-    initial_filter_types:
-      - primary_fuel_filter
-      - secondary_fuel_filter
-      - fuel_water_separator
-      - turbine_fuel_water_separator
-      - fuel_filter_heater_assembly
+    technical_families:
+      engine_fuel_filters:
+        product_families:
+          - primary_fuel_filters
+          - secondary_fuel_filters
+      fuel_water_separators:
+        technology: HYDROCORE
+        product_families:
+          - spin_on_fuel_water_separators
+          - cartridge_fuel_water_separator_elements
+          - complete_fuel_water_separator_assemblies
+      turbine_fuel_systems:
+        technology: HYDROCORE_SERIES
+        product_families:
+          - fh_turbine_elements
+          - fg_turbine_elements
+          - complete_turbine_assemblies
+          - turbine_bowls_heaters_and_service_components
 
   lube_oil:
     template: lube-oil-diagnostic.template.yaml
@@ -42,12 +72,17 @@ systems:
     protection_system_name: Lube/Oil Protection
     technologies:
       - SYNTRAX
-    initial_filter_types:
-      - full_flow_lube_filter
-      - bypass_lube_filter
-      - combination_lube_filter
-      - transmission_oil_filter
-      - differential_or_gear_oil_filter
+    scope_rule: engine_and_equipment_lubrication_only
+    technical_families:
+      lubrication_filters:
+        technology: SYNTRAX
+        product_families:
+          - spin_on_lube_filters
+          - cartridge_lube_filters
+          - full_flow_lube_filters
+          - bypass_lube_filters
+          - combination_lube_filters
+          - lubrication_filtration_systems
 
   hydraulic:
     template: hydraulic-diagnostic.template.yaml
@@ -55,14 +90,17 @@ systems:
     protection_system_name: Hydraulic Protection
     technologies:
       - NANOFORCE
-    initial_filter_types:
-      - suction_filter
-      - pressure_filter
-      - return_filter
-      - pilot_filter
-      - case_drain_filter
-      - offline_kidney_loop_filter
-      - hydraulic_breather
+    technical_families:
+      hydraulic_filters:
+        technology: NANOFORCE
+        product_families:
+          - pressure_filters
+          - return_filters
+          - suction_filters
+          - tank_breathers
+          - in_tank_filters
+          - spin_on_hydraulic_filters
+          - cartridge_hydraulic_filters
 
   cooling_system:
     template: cooling-system-diagnostic.template.yaml
@@ -70,24 +108,44 @@ systems:
     protection_system_name: Cooling System Protection
     technologies:
       - THERMACORE
-    initial_filter_types:
-      - coolant_filter_blank
-      - coolant_filter_precharged
-      - coolant_filter_controlled_release
-      - cooling_system_conditioner_filter
+    technical_families:
+      coolant_filters:
+        technology: THERMACORE
+        product_families:
+          - blank_coolant_filters
+          - precharged_coolant_filters
+          - controlled_release_coolant_filters
+          - coolant_conditioner_filters
 
 coverage_policy:
-  measurement_unit: approved_diagnostic_cases_per_filter_type
-  minimum_per_filter_type: 50
-  target_per_filter_type: 100
-  system_template_count: 5
-  current_initial_filter_type_count: 28
-  minimum_initial_case_target: 1400
-  full_initial_case_target: 2800
+  measurement_unit: approved_diagnostic_cases_per_technical_family
+  initial_library_role: foundational_starting_base
+  minimum_per_technical_family: 50
+  target_per_technical_family: 100
+  growth_policy: approved_field_cases_expand_the_library_after_layer_5_is_implemented
+  fixed_final_case_count: false
+
+mandatory_case_fields:
+  - protection_system
+  - technical_family
+  - product_family
+  - technology
+  - symptom
+  - probable_causes
+  - diagnostic_procedure
+  - evidence_required
+  - stop_rules
+  - corrective_actions
+  - verification
+  - approval_metadata
 
 rules:
   - Every diagnostic case must extend the base template and one system template.
+  - Diagnostics belong to a technical family and may reference many part numbers through relationships.
+  - Product family classification must follow this registry.
+  - Air includes engine air filtration, housings, cabin filtration, and air dryers.
+  - Fuel separates engine primary and secondary filters, fuel-water separators, and FH or FG turbine systems.
+  - Lube/Oil is restricted to lubrication filtration and must not absorb unrelated fluid systems.
   - System-specific mandatory evidence and hypothesis families may not be removed.
-  - Filter types may be added only through technical review.
   - Coverage is counted only for approved and production-eligible cases.
-  - Variants by application, industry, duty cycle, environment, asset class, and failure mechanism must represent materially distinct reasoning paths.
+  - New families require technical review and an approved registry revision.
