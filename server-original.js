@@ -443,7 +443,14 @@ const KNOWLEDGE_CENTER_API_KEY = process.env.KNOWLEDGE_CENTER_API_KEY;
 const KNOWLEDGE_ENGINE_RUNTIME_URL = process.env.KNOWLEDGE_ENGINE_RUNTIME_URL;
 const ENGINE_API_KEY = process.env.ENGINE_API_KEY;
 
-// Startup diagnostic logging (no secrets)
+// Startup diagnostic logging (no secrets exposed)
+const envDiagnostics = {
+  'KNOWLEDGE_CENTER_API_URL': { present: !!KNOWLEDGE_CENTER_API_URL, length: KNOWLEDGE_CENTER_API_URL?.length },
+  'KNOWLEDGE_CENTER_API_KEY': { present: !!KNOWLEDGE_CENTER_API_KEY, length: KNOWLEDGE_CENTER_API_KEY?.length },
+  'KNOWLEDGE_ENGINE_RUNTIME_URL': { present: !!KNOWLEDGE_ENGINE_RUNTIME_URL, length: KNOWLEDGE_ENGINE_RUNTIME_URL?.length },
+  'ENGINE_API_KEY': { present: !!ENGINE_API_KEY, length: ENGINE_API_KEY?.length },
+};
+console.log('[chatbot-env] Environment variables status:', JSON.stringify(envDiagnostics, null, 2));
 console.log('[chatbot-auth] Knowledge Center API configured:', !!KNOWLEDGE_CENTER_API_URL && !!KNOWLEDGE_CENTER_API_KEY);
 console.log('[chatbot-auth] Knowledge Engine Runtime configured:', !!KNOWLEDGE_ENGINE_RUNTIME_URL && !!ENGINE_API_KEY);
 if (KNOWLEDGE_ENGINE_RUNTIME_URL) console.log('[chatbot-auth] Knowledge Engine Runtime URL:', KNOWLEDGE_ENGINE_RUNTIME_URL);
