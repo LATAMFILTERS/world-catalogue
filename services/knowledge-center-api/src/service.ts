@@ -37,10 +37,10 @@ export class KnowledgeCenterService {
     const { pool } = await import('./db.js');
     const result = await pool.query(
       `SELECT c.*,
-        COALESCE((SELECT jsonb_agg(e ORDER BY e.occurred_at) FROM candidate_case_events e WHERE e.candidate_case_id=c.id),'[]'::jsonb) events,
-        COALESCE((SELECT jsonb_agg(a ORDER BY a.assigned_at DESC) FROM review_assignments a WHERE a.candidate_case_id=c.id),'[]'::jsonb) assignments,
-        COALESCE((SELECT jsonb_agg(d ORDER BY d.decided_at DESC) FROM review_decisions d WHERE d.candidate_case_id=c.id),'[]'::jsonb) decisions
-       FROM candidate_cases c WHERE c.id=$1`, [id]
+        COALESCE((SELECT jsonb_agg(e ORDER BY e.occurred_at) FROM knowledge_center.candidate_case_events e WHERE e.candidate_case_id=c.id),'[]'::jsonb) events,
+        COALESCE((SELECT jsonb_agg(a ORDER BY a.assigned_at DESC) FROM knowledge_center.review_assignments a WHERE a.candidate_case_id=c.id),'[]'::jsonb) assignments,
+        COALESCE((SELECT jsonb_agg(d ORDER BY d.decided_at DESC) FROM knowledge_center.review_decisions d WHERE d.candidate_case_id=c.id),'[]'::jsonb) decisions
+       FROM knowledge_center.candidate_cases c WHERE c.id=$1`, [id]
     );
     return result.rows[0] ?? null;
   }
