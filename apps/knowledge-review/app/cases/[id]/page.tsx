@@ -3,6 +3,8 @@ import { revalidatePath } from 'next/cache';
 import { notFound } from 'next/navigation';
 import { knowledgeApi } from '@/lib/api';
 
+export const dynamic = 'force-dynamic';
+
 async function transition(formData: FormData) {
   'use server';
   const id = String(formData.get('id'));
