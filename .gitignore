@@ -111,3 +111,4 @@ inject_*.js
 *_audit.js
 *_stats.js
 *_capacity.js
+dist/

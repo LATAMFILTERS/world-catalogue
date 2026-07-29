@@ -7,7 +7,6 @@ const schema = z.object({
   DATABASE_URL: z.string().min(1),
   DATABASE_SSL: z.enum(['true', 'false']).default('true'),
   KNOWLEDGE_API_KEYS: z.string().min(1),
-  KNOWLEDGE_REVIEW_BASE_URL: z.string().url(),
   KNOWLEDGE_REVIEW_MAILBOX: z.string().email().default('support@elimfilters.com'),
   REQUEST_BODY_LIMIT: z.string().default('1mb')
 });

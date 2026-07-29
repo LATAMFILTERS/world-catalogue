@@ -1,6 +1,0 @@
-Render frontend deploy marker
-Purpose: force frontend rebuild from current main after product family updates.
-Last requested by Victor: 2026-07-10
-Expected family updates:
-- /families/air-cleaner-housings/ uses /images/carcasa.jd.avif
-- /families/ shows Secondary / Safety Air Elements and no separate Safety Elements card

@@ -25,6 +25,14 @@ services:
         sync: false
       - key: NVIDIA_NIM_API_KEY
         sync: false
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        sync: false
+      - key: KNOWLEDGE_ENGINE_API_KEY
+        sync: false
 
   # Static frontend serving elimfilters.com. These redirects must execute at the
   # HTTP hosting layer, before Render attempts to resolve files in frontend/out.
@@ -96,7 +104,7 @@ services:
         source: /knowledge-center/engineering/operator-health
         destination: /knowledge-center/systems/cabin-air-protection/
 
-  # Knowledge Center API — Phase 2+ Staging
+  # Knowledge Center API — Candidate case intake and review workflow (Phase 2+ Staging)
   - type: web
     name: knowledge-center-api-staging
     runtime: node
@@ -120,12 +128,41 @@ services:
         value: "true"
       - key: KNOWLEDGE_API_KEYS
         sync: false
-      - key: KNOWLEDGE_REVIEW_BASE_URL
-        sync: false
       - key: KNOWLEDGE_REVIEW_MAILBOX
         value: support@elimfilters.com
       - key: REQUEST_BODY_LIMIT
         value: 1mb
+
+  # Knowledge Engine Runtime — Reasoning service for knowledge-backed answers (Phase 2+ Staging)
+  - type: web
+    name: knowledge-engine-runtime-staging
+    runtime: node
+    rootDir: services/knowledge-engine-runtime
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8086"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-knowledge-center-db
+          property: connectionString
+      - key: ENGINE_API_KEY
+        sync: false
+      - key: LOG_LEVEL
+        value: info
+      - key: MAX_RETRIEVAL_RECORDS
+        value: "12"
+      - key: MIN_ANSWER_CONFIDENCE
+        value: "0.72"
+      - key: MIN_PRODUCTION_CONFIDENCE
+        value: "0.85"
 
   # AI Assistant Services — WhatsApp, Instagram, LinkedIn & YouTube Bots
   - type: web
@@ -235,6 +272,34 @@ services:
           name: elimfilters-instagram-db
           property: connectionString
       - key: NVIDIA_NIM_API_KEY
+        sync: false
+
+  # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
+  - type: background_worker
+    name: notification-worker-staging
+    runtime: node
+    rootDir: services/notification-worker
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: NOTIFICATION_WORKER_ACTOR_ID
+        value: notification-worker-system
+      - key: LOG_LEVEL
+        value: info
+      - key: AZURE_CLIENT_ID
+        sync: false
+      - key: AZURE_CLIENT_SECRET
+        sync: false
+      - key: AZURE_TENANT_ID
         sync: false
 
 databases:
