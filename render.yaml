@@ -170,72 +170,78 @@ services:
         value: "0.85"
 
   # Knowledge Channel Gateway — Multi-channel message orchestration (WhatsApp, Meta, Teams) (Phase 2+ Staging)
-  - type: web
-    name: knowledge-channel-gateway-staging
-    runtime: node
-    rootDir: services/knowledge-channel-gateway
-    plan: starter
-    branch: claude/world-catalogue-build-thyf4l
-    buildCommand: npm ci && npm run build
-    startCommand: node dist/index.js
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: "3012"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: knowledge_center_staging
-          property: connectionString
-      - key: KNOWLEDGE_API_URL
-        value: https://knowledge-center-api-staging.onrender.com
-      - key: KNOWLEDGE_API_KEY
-        sync: false
-      - key: SYSTEM_ACTOR_ID
-        sync: false
-      - key: META_APP_SECRET
-        sync: false
-      - key: META_VERIFY_TOKEN
-        sync: false
-      - key: WEB_CHAT_SHARED_SECRET
-        sync: false
-      - key: MICROSOFT_GRAPH_TENANT_ID
-        sync: false
-      - key: MICROSOFT_GRAPH_CLIENT_ID
-        sync: false
-      - key: MICROSOFT_GRAPH_CLIENT_SECRET
-        sync: false
-      - key: MICROSOFT_GRAPH_MAILBOX
-        value: support@elimfilters.com
+  # TEMPORARILY DISABLED: Requires 6 secrets (KNOWLEDGE_API_KEY, SYSTEM_ACTOR_ID, META_APP_SECRET, META_VERIFY_TOKEN, WEB_CHAT_SHARED_SECRET, MICROSOFT_GRAPH_TENANT_ID)
+  # Re-enable once all secrets are configured in Render console
+  #
+  # - type: web
+  #   name: knowledge-channel-gateway-staging
+  #   runtime: node
+  #   rootDir: services/knowledge-channel-gateway
+  #   plan: starter
+  #   branch: claude/world-catalogue-build-thyf4l
+  #   buildCommand: npm ci && npm run build
+  #   startCommand: node dist/index.js
+  #   healthCheckPath: /health
+  #   envVars:
+  #     - key: NODE_VERSION
+  #       value: "20"
+  #     - key: NODE_ENV
+  #       value: production
+  #     - key: PORT
+  #       value: "3012"
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: knowledge_center_staging
+  #         property: connectionString
+  #     - key: KNOWLEDGE_API_URL
+  #       value: https://knowledge-center-api-staging.onrender.com
+  #     - key: KNOWLEDGE_API_KEY
+  #       sync: false
+  #     - key: SYSTEM_ACTOR_ID
+  #       sync: false
+  #     - key: META_APP_SECRET
+  #       sync: false
+  #     - key: META_VERIFY_TOKEN
+  #       sync: false
+  #     - key: WEB_CHAT_SHARED_SECRET
+  #       sync: false
+  #     - key: MICROSOFT_GRAPH_TENANT_ID
+  #       sync: false
+  #     - key: MICROSOFT_GRAPH_CLIENT_ID
+  #       sync: false
+  #     - key: MICROSOFT_GRAPH_CLIENT_SECRET
+  #       sync: false
+  #     - key: MICROSOFT_GRAPH_MAILBOX
+  #       value: support@elimfilters.com
 
   # Knowledge Review — Admin interface for case review and knowledge authoring (Phase 2+ Staging)
-  - type: web
-    name: knowledge-review-staging
-    runtime: node
-    rootDir: apps/knowledge-review
-    plan: starter
-    branch: claude/world-catalogue-build-thyf4l
-    buildCommand: npm ci && npm run build
-    startCommand: npm run start
-    healthCheckPath: /
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: NODE_ENV
-        value: production
-      - key: KNOWLEDGE_CENTER_API_URL
-        value: https://knowledge-center-api-staging.onrender.com
-      - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
-      - key: KNOWLEDGE_CENTER_ACTOR_ID
-        sync: false
-      - key: KNOWLEDGE_CENTER_ACTOR_ROLE
-        value: ADMIN
-      - key: NEXT_PUBLIC_APP_NAME
-        value: ELIMFILTERS Knowledge Review
+  # TEMPORARILY DISABLED: Requires secrets (KNOWLEDGE_CENTER_API_KEY, KNOWLEDGE_CENTER_ACTOR_ID)
+  # Re-enable once all secrets are configured in Render console
+  #
+  # - type: web
+  #   name: knowledge-review-staging
+  #   runtime: node
+  #   rootDir: apps/knowledge-review
+  #   plan: starter
+  #   branch: claude/world-catalogue-build-thyf4l
+  #   buildCommand: npm ci && npm run build
+  #   startCommand: npm run start
+  #   healthCheckPath: /
+  #   envVars:
+  #     - key: NODE_VERSION
+  #       value: "20"
+  #     - key: NODE_ENV
+  #       value: production
+  #     - key: KNOWLEDGE_CENTER_API_URL
+  #       value: https://knowledge-center-api-staging.onrender.com
+  #     - key: KNOWLEDGE_CENTER_API_KEY
+  #       sync: false
+  #     - key: KNOWLEDGE_CENTER_ACTOR_ID
+  #       sync: false
+  #     - key: KNOWLEDGE_CENTER_ACTOR_ROLE
+  #       value: ADMIN
+  #     - key: NEXT_PUBLIC_APP_NAME
+  #       value: ELIMFILTERS Knowledge Review
 
   # AI Assistant Services — WhatsApp, Instagram, LinkedIn & YouTube Bots
   - type: web
