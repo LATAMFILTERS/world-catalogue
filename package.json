@@ -6,7 +6,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "postinstall": "node scripts/apply-part-search-ui-fix.js && node scripts/apply-part-search-results-link-fix.js && node scripts/apply-technology-uniformity-source-fix.js && node scripts/apply-about-who-we-are-fix.js && node scripts/apply-navigation-font-uniformity.js && node scripts/apply-vehicle-chat-search-fix.js && node scripts/apply-vehicle-generation-sanity-fix.js && node scripts/apply-vehicle-coverage-audit.js && node --check src/coverage-audit-engine.js && node --check scripts/register-coverage-audit-direct.js && node scripts/register-coverage-audit-direct.js && node --check server-original.js && node scripts/verify-coverage-audit-direct.js",
+    "postinstall": "node scripts/postinstall-safe.js",
     "start": "node server.js",
     "dev": "node server.js",
     "build": "cd frontend && npm ci && npm run build",
