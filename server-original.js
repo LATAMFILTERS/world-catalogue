@@ -493,34 +493,50 @@ async function createCandidateCase(sessionId, message, buyerType) {
 }
 
 async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
-  if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !ENGINE_API_KEY) return null;
+  if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !ENGINE_API_KEY) {
+    console.warn('[query-engine] Preconditions not met: URL=%s, KEY=%s', !!KNOWLEDGE_ENGINE_RUNTIME_URL, !!ENGINE_API_KEY);
+    return null;
+  }
+
+  const requestBody = {
+    query: message,
+    audience: 'TECHNICAL_SUPPORT',
+    channel: 'WEB_CHAT',
+    correlationId: sessionId,
+    candidateCaseId: candidateCaseId,
+    context: { timestamp: new Date().toISOString() }
+  };
+
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     try {
+      console.log('[query-engine] Making request to: %s/api/knowledge-engine/v1/reason', KNOWLEDGE_ENGINE_RUNTIME_URL);
+      console.log('[query-engine] Request body: query_len=%d, audience=%s, channel=%s', message.length, requestBody.audience, requestBody.channel);
+
       const response = await fetch(`${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`, {
         method: 'POST',
         signal: controller.signal,
         headers: {
           'content-type': 'application/json',
-          'x-engine-api-key': ENGINE_API_KEY
+          'x-engine-api-key': ENGINE_API_KEY ? '[REDACTED]' : 'MISSING'
         },
-        body: JSON.stringify({
-          query: message,
-          audience: 'TECHNICAL_SUPPORT',
-          channel: 'WEB_CHAT',
-          correlationId: sessionId,
-          candidateCaseId: candidateCaseId,
-          context: { timestamp: new Date().toISOString() }
-        })
+        body: JSON.stringify(requestBody)
       });
+
+      console.log('[query-engine] Response status: %d', response.status);
+
       if (!response.ok) {
         const errorBody = await response.text().catch(() => '(no body)');
-        console.error('[knowledge-engine-runtime] Failed', { status: response.status, message: errorBody.slice(0, 200) });
+        console.error('[knowledge-engine-runtime] HTTP %d: %s', response.status, errorBody.slice(0, 200));
         return null;
       }
-      return await response.json();
+
+      const data = await response.json();
+      console.log('[query-engine] Response parsed: action=%s, confidence=%f, answer_len=%d, citations=%d',
+        data.action, data.confidence, data.answer?.length ?? 0, data.citations?.length ?? 0);
+      return data;
     } finally {
       clearTimeout(timeoutId);
     }
@@ -528,7 +544,7 @@ async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
     if (error.name === 'AbortError') {
       console.error('[knowledge-engine-runtime] Timeout (10s) querying knowledge engine');
     } else {
-      console.error('[knowledge-engine-runtime] Error:', error.message);
+      console.error('[knowledge-engine-runtime] Error: %s', error.message);
     }
     return null;
   }
@@ -721,13 +737,23 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       candidateCaseId = await createCandidateCase(sessionId, message, session.buyerType);
       if (candidateCaseId) {
         console.log(`[chat] Created candidate case: ${candidateCaseId}`);
+      } else {
+        console.warn('[chat] Failed to create candidate case', { KNOWLEDGE_CENTER_API_URL: !!KNOWLEDGE_CENTER_API_URL, KNOWLEDGE_CENTER_API_KEY: !!KNOWLEDGE_CENTER_API_KEY });
       }
+    } else {
+      console.warn('[chat] Candidate case creation skipped', { KNOWLEDGE_CENTER_API_URL: !!KNOWLEDGE_CENTER_API_URL, KNOWLEDGE_CENTER_API_KEY: !!KNOWLEDGE_CENTER_API_KEY });
     }
 
     // Try knowledge-engine-runtime first if available
     let engineResponse = null;
-    if (KNOWLEDGE_ENGINE_RUNTIME_URL && ENGINE_API_KEY && candidateCaseId) {
+    const shouldQueryRuntime = KNOWLEDGE_ENGINE_RUNTIME_URL && ENGINE_API_KEY && candidateCaseId;
+    console.log(`[chat-routing] Runtime query conditions: URL=${!!KNOWLEDGE_ENGINE_RUNTIME_URL}, KEY=${!!ENGINE_API_KEY}, caseId=${!!candidateCaseId}, should_query=${shouldQueryRuntime}`);
+
+    if (shouldQueryRuntime) {
+      console.log(`[chat-routing] Querying knowledge-engine-runtime at ${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`);
       engineResponse = await queryKnowledgeEngine(message, sessionId, candidateCaseId);
+      console.log(`[chat-routing] Runtime response: action=${engineResponse?.action}, confidence=${engineResponse?.confidence}, has_answer=${!!engineResponse?.answer}`);
+
       if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
         console.log(`[chat] Knowledge engine provided answer (confidence: ${engineResponse.confidence})`);
         const reply = engineResponse.answer;
@@ -752,10 +778,14 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       }
       if (engineResponse) {
         console.log(`[chat] Knowledge engine returned non-ANSWER action: ${engineResponse.action} (confidence: ${engineResponse.confidence})`);
+        if (engineResponse.escalationReason) console.log(`[chat-routing] Escalation reason: ${engineResponse.escalationReason}`);
+        if (engineResponse.verificationRequests?.length) console.log(`[chat-routing] Verification needed: ${engineResponse.verificationRequests.join('; ')}`);
       }
     } else {
-      console.warn('[chat] Knowledge engine not available', { KNOWLEDGE_ENGINE_RUNTIME_URL: !!KNOWLEDGE_ENGINE_RUNTIME_URL, ENGINE_API_KEY: !!ENGINE_API_KEY, candidateCaseId: !!candidateCaseId });
+      console.warn('[chat-routing] Knowledge engine not available', { KNOWLEDGE_ENGINE_RUNTIME_URL: !!KNOWLEDGE_ENGINE_RUNTIME_URL, ENGINE_API_KEY: !!ENGINE_API_KEY, candidateCaseId: !!candidateCaseId });
     }
+
+    console.log('[chat-routing] Falling through to generic LLM (Llama 3.3-70b)');
 
     const apiKey = process.env.NVIDIA_NIM_API_KEY;
     if (!apiKey) {
