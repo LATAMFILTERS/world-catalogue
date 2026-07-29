@@ -273,6 +273,15 @@ services:
           property: connectionString
       - key: NVIDIA_NIM_API_KEY
         sync: false
+      # Knowledge System Integration
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        value: https://knowledge-engine-runtime-staging.onrender.com
+      - key: ENGINE_API_KEY
+        sync: false
 
   # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
   - type: background_worker

@@ -1,7 +1,7 @@
 import { createNvidiaClient } from "./nvidia.js";
 import { createLinkedinClient } from "./linkedin.js";
 
-export function createWorker({ config, db }) {
+export function createWorker({ config, db, knowledgeSystem }) {
   const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
   const linkedin = createLinkedinClient({
     clientId: config.linkedinClientId,
@@ -17,7 +17,18 @@ export function createWorker({ config, db }) {
       for (const job of jobs) {
         try {
           console.log(`[LinkedIn Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
-          const replyText = await nvidia.generateReply(job.message_text);
+
+          let replyText;
+          if (knowledgeSystem && job.message_text && job.author_urn) {
+            const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id, job.author_urn);
+            if (knowledgeResponse.success && knowledgeResponse.answer) {
+              replyText = knowledgeResponse.answer;
+            } else {
+              replyText = await nvidia.generateReply(job.message_text);
+            }
+          } else {
+            replyText = await nvidia.generateReply(job.message_text);
+          }
 
           if (config.dryRun) {
             console.log(`[LinkedIn Worker] DRY_RUN=true: Draft reply for ${job.event_id} -> "${replyText}"`);
