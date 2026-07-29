@@ -19,8 +19,8 @@ export function createWorker({ config, db, knowledgeSystem }) {
           console.log(`[LinkedIn Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
 
           let replyText;
-          if (knowledgeSystem && job.message_text && job.author_urn) {
-            const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id, job.author_urn);
+          if (knowledgeSystem && job.message_text && job.event_id) {
+            const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
             if (knowledgeResponse.success && knowledgeResponse.answer) {
               replyText = knowledgeResponse.answer;
             } else {
