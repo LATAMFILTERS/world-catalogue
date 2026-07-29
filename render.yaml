@@ -30,7 +30,7 @@ services:
       - key: KNOWLEDGE_CENTER_API_KEY
         sync: false
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
-        sync: false
+        value: https://knowledge-engine-runtime-staging.onrender.com
       - key: KNOWLEDGE_ENGINE_API_KEY
         sync: false
 

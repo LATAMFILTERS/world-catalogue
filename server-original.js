@@ -744,6 +744,11 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
           source: 'knowledge_engine'
         });
       }
+      if (engineResponse) {
+        console.log(`[chat] Knowledge engine returned non-ANSWER action: ${engineResponse.action} (confidence: ${engineResponse.confidence})`);
+      }
+    } else {
+      console.warn('[chat] Knowledge engine not available', { KNOWLEDGE_ENGINE_RUNTIME_URL: !!KNOWLEDGE_ENGINE_RUNTIME_URL, KNOWLEDGE_ENGINE_API_KEY: !!KNOWLEDGE_ENGINE_API_KEY, candidateCaseId: !!candidateCaseId });
     }
 
     const apiKey = process.env.NVIDIA_NIM_API_KEY;
