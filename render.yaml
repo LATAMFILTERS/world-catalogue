@@ -156,6 +156,8 @@ services:
         fromDatabase:
           name: knowledge_center_staging
           property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
       - key: ENGINE_API_KEY
         sync: false
       - key: LOG_LEVEL
