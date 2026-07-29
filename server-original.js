@@ -446,31 +446,43 @@ const KNOWLEDGE_ENGINE_API_KEY = process.env.KNOWLEDGE_ENGINE_API_KEY;
 async function createCandidateCase(sessionId, message, buyerType) {
   if (!KNOWLEDGE_CENTER_API_URL || !KNOWLEDGE_CENTER_API_KEY) return null;
   try {
-    const response = await fetch(`${KNOWLEDGE_CENTER_API_URL}/api/knowledge-center/v1/candidate-cases`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': KNOWLEDGE_CENTER_API_KEY,
-        'x-actor-id': sessionId,
-        'x-actor-role': 'SYSTEM'
-      },
-      body: JSON.stringify({
-        externalId: `CHAT-${sessionId}-${Date.now()}`,
-        sourceChannel: 'WEB_CHAT',
-        priority: 'NORMAL',
-        symptomSummary: message.slice(0, 500),
-        assetSummary: { buyerType },
-        structuredIntake: { sessionId, initialMessage: message }
-      })
-    });
-    if (!response.ok) {
-      console.error('[knowledge-center-api] Failed to create case:', response.status);
-      return null;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+    try {
+      const response = await fetch(`${KNOWLEDGE_CENTER_API_URL}/api/knowledge-center/v1/candidate-cases`, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': KNOWLEDGE_CENTER_API_KEY,
+          'x-actor-id': sessionId,
+          'x-actor-role': 'SYSTEM'
+        },
+        body: JSON.stringify({
+          externalId: `CHAT-${sessionId}-${Date.now()}`,
+          sourceChannel: 'WEB_CHAT',
+          priority: 'NORMAL',
+          symptomSummary: message.slice(0, 500),
+          assetSummary: { buyerType },
+          structuredIntake: { sessionId, initialMessage: message }
+        })
+      });
+      if (!response.ok) {
+        console.error('[knowledge-center-api] Failed to create case:', response.status);
+        return null;
+      }
+      const data = await response.json();
+      return data.id;
+    } finally {
+      clearTimeout(timeoutId);
     }
-    const data = await response.json();
-    return data.id;
   } catch (error) {
-    console.error('[knowledge-center-api] Error creating candidate case:', error.message);
+    if (error.name === 'AbortError') {
+      console.error('[knowledge-center-api] Timeout (5s) creating candidate case');
+    } else {
+      console.error('[knowledge-center-api] Error creating candidate case:', error.message);
+    }
     return null;
   }
 }
@@ -478,28 +490,40 @@ async function createCandidateCase(sessionId, message, buyerType) {
 async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
   if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !KNOWLEDGE_ENGINE_API_KEY) return null;
   try {
-    const response = await fetch(`${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-engine-api-key': KNOWLEDGE_ENGINE_API_KEY
-      },
-      body: JSON.stringify({
-        query: message,
-        audience: 'TECHNICAL_SUPPORT',
-        channel: 'WEB_CHAT',
-        correlationId: sessionId,
-        candidateCaseId: candidateCaseId,
-        context: { timestamp: new Date().toISOString() }
-      })
-    });
-    if (!response.ok) {
-      console.error('[knowledge-engine-runtime] Failed:', response.status);
-      return null;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      const response = await fetch(`${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'content-type': 'application/json',
+          'x-engine-api-key': KNOWLEDGE_ENGINE_API_KEY
+        },
+        body: JSON.stringify({
+          query: message,
+          audience: 'TECHNICAL_SUPPORT',
+          channel: 'WEB_CHAT',
+          correlationId: sessionId,
+          candidateCaseId: candidateCaseId,
+          context: { timestamp: new Date().toISOString() }
+        })
+      });
+      if (!response.ok) {
+        console.error('[knowledge-engine-runtime] Failed:', response.status);
+        return null;
+      }
+      return await response.json();
+    } finally {
+      clearTimeout(timeoutId);
     }
-    return await response.json();
   } catch (error) {
-    console.error('[knowledge-engine-runtime] Error:', error.message);
+    if (error.name === 'AbortError') {
+      console.error('[knowledge-engine-runtime] Timeout (10s) querying knowledge engine');
+    } else {
+      console.error('[knowledge-engine-runtime] Error:', error.message);
+    }
     return null;
   }
 }
