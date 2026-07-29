@@ -11,7 +11,7 @@ routes.use(authenticate);
 
 routes.get('/health', async (_req, res) => {
   await pool.query('SELECT 1');
-  res.json({ status: 'ok', service: 'knowledge-center-api' });
+  res.json({ status: 'ok', service: 'knowledge-center-api', commit: process.env.RENDER_GIT_COMMIT || 'local' });
 });
 
 routes.post('/candidate-cases', requireRole('SUPPORT_REVIEWER','ENGINEERING_REVIEWER','ADMIN','SYSTEM'), async (req: ActorRequest,res) => {

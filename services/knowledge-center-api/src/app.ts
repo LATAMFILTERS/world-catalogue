@@ -17,7 +17,7 @@ app.use(pinoHttp({ redact: ['req.headers.x-api-key', 'req.body.credentials', 're
 app.get('/health', async (_req, res, next) => {
   try {
     await pool.query('SELECT 1');
-    res.status(200).json({ status: 'ok', service: 'knowledge-center-api' });
+    res.status(200).json({ status: 'ok', service: 'knowledge-center-api', commit: process.env.RENDER_GIT_COMMIT || 'local' });
   } catch (error) {
     next(error);
   }
