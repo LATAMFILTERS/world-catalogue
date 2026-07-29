@@ -26,11 +26,11 @@ services:
       - key: NVIDIA_NIM_API_KEY
         sync: false
       - key: KNOWLEDGE_CENTER_API_URL
-        value: https://knowledge-center-api-staging.onrender.com
+        sync: false
       - key: KNOWLEDGE_CENTER_API_KEY
         sync: false
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
-        value: https://knowledge-engine-runtime-staging.onrender.com
+        sync: false
       - key: ENGINE_API_KEY
         sync: false
 
