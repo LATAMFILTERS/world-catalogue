@@ -126,7 +126,7 @@ services:
           property: connectionString
       - key: DATABASE_SSL
         value: "true"
-      - key: KNOWLEDGE_API_KEYS
+      - key: KNOWLEDGE_CENTER_API_KEY
         sync: false
       - key: KNOWLEDGE_REVIEW_MAILBOX
         value: support@elimfilters.com

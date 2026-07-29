@@ -6,7 +6,7 @@ const schema = z.object({
   PORT: z.coerce.number().int().positive().default(3002),
   DATABASE_URL: z.string().min(1),
   DATABASE_SSL: z.enum(['true', 'false']).default('true'),
-  KNOWLEDGE_API_KEYS: z.string().min(1),
+  KNOWLEDGE_CENTER_API_KEY: z.string().min(1),
   KNOWLEDGE_REVIEW_MAILBOX: z.string().email().default('support@elimfilters.com'),
   REQUEST_BODY_LIMIT: z.string().default('1mb')
 });
@@ -18,6 +18,6 @@ if (!parsed.success) {
 
 export const config = {
   ...parsed.data,
-  apiKeys: new Set(parsed.data.KNOWLEDGE_API_KEYS.split(',').map((v) => v.trim()).filter(Boolean)),
+  apiKeys: new Set([parsed.data.KNOWLEDGE_CENTER_API_KEY]),
   databaseSsl: parsed.data.DATABASE_SSL === 'true'
 };
