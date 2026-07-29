@@ -514,13 +514,14 @@ async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
     try {
       console.log('[query-engine] Making request to: %s/api/knowledge-engine/v1/reason', KNOWLEDGE_ENGINE_RUNTIME_URL);
       console.log('[query-engine] Request body: query_len=%d, audience=%s, channel=%s', message.length, requestBody.audience, requestBody.channel);
+      console.log('[query-engine] Authentication: key_present=%s', !!ENGINE_API_KEY);
 
       const response = await fetch(`${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`, {
         method: 'POST',
         signal: controller.signal,
         headers: {
           'content-type': 'application/json',
-          'x-engine-api-key': ENGINE_API_KEY ? '[REDACTED]' : 'MISSING'
+          'x-engine-api-key': ENGINE_API_KEY
         },
         body: JSON.stringify(requestBody)
       });
