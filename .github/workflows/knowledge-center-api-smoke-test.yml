@@ -1,0 +1,71 @@
+name: Knowledge Center API Smoke Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'services/knowledge-center-api/**'
+      - 'migrations/knowledge-center-phase2/**'
+      - 'render.yaml'
+  schedule:
+    # Run daily at 6 AM UTC to catch deployment issues
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Base URL to test (e.g., https://knowledge-center-api-staging.onrender.com)'
+        required: false
+        default: 'https://knowledge-center-api-staging.onrender.com'
+
+env:
+  SMOKE_TIMEOUT: '60'
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    name: Smoke Test Knowledge Center API
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine target URL
+        id: target
+        run: |
+          if [ -n "${{ github.event.inputs.base_url }}" ]; then
+            echo "url=${{ github.event.inputs.base_url }}" >> $GITHUB_OUTPUT
+          else
+            echo "url=https://knowledge-center-api-staging.onrender.com" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Wait for deployment (if triggered by push)
+        if: github.event_name == 'push'
+        run: |
+          echo "Waiting for deployment to stabilize..."
+          sleep 30
+
+      - name: Run smoke test
+        env:
+          KNOWLEDGE_CENTER_BASE_URL: ${{ steps.target.outputs.url }}
+          KNOWLEDGE_API_KEYS: ${{ secrets.KNOWLEDGE_API_KEY_STAGING }}
+        run: |
+          cd services/knowledge-center-api
+          npm ci --prefer-offline
+          node scripts/smoke-test.mjs
+
+      - name: Report results
+        if: always()
+        run: |
+          echo "## Smoke Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target**: ${{ steps.target.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "- **Action**: Review Render deployment and logs" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi

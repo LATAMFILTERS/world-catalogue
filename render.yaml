@@ -96,6 +96,37 @@ services:
         source: /knowledge-center/engineering/operator-health
         destination: /knowledge-center/systems/cabin-air-protection/
 
+  # Knowledge Center API — Phase 2+ Staging
+  - type: web
+    name: knowledge-center-api-staging
+    runtime: node
+    rootDir: services/knowledge-center-api
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3002"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-knowledge-center-db
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
+      - key: KNOWLEDGE_API_KEYS
+        sync: false
+      - key: KNOWLEDGE_REVIEW_BASE_URL
+        sync: false
+      - key: KNOWLEDGE_REVIEW_MAILBOX
+        value: support@elimfilters.com
+      - key: REQUEST_BODY_LIMIT
+        value: 1mb
+
   # AI Assistant Services — WhatsApp, Instagram, LinkedIn & YouTube Bots
   - type: web
     name: elimfilters-whatsapp-bot
@@ -207,5 +238,7 @@ services:
         sync: false
 
 databases:
+  - name: elimfilters-knowledge-center-db
+    plan: starter
   - name: elimfilters-instagram-db
     plan: free
