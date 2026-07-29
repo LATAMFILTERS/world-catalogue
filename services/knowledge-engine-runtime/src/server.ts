@@ -5,6 +5,7 @@ import { reasoningRequestSchema } from './contracts.js';
 import { readiness, reason } from './runtime.js';
 
 const log=pino({level:process.env.LOG_LEVEL??'info'});
+log.info('DATABASE_URL is configured: %s', process.env.DATABASE_URL ? 'yes' : 'no');
 const app=express();
 app.use(helmet());
 app.use(express.json({limit:'1mb'}));
