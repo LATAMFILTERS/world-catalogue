@@ -3,7 +3,6 @@ services:
     name: elimfilters-search-pro
     runtime: node
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /api/status
