@@ -31,7 +31,7 @@ services:
         sync: false
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         value: https://knowledge-engine-runtime-staging.onrender.com
-      - key: KNOWLEDGE_ENGINE_API_KEY
+      - key: ENGINE_API_KEY
         sync: false
 
   # Static frontend serving elimfilters.com. These redirects must execute at the

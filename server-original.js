@@ -441,7 +441,12 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
 const KNOWLEDGE_CENTER_API_URL = process.env.KNOWLEDGE_CENTER_API_URL;
 const KNOWLEDGE_CENTER_API_KEY = process.env.KNOWLEDGE_CENTER_API_KEY;
 const KNOWLEDGE_ENGINE_RUNTIME_URL = process.env.KNOWLEDGE_ENGINE_RUNTIME_URL;
-const KNOWLEDGE_ENGINE_API_KEY = process.env.KNOWLEDGE_ENGINE_API_KEY;
+const ENGINE_API_KEY = process.env.ENGINE_API_KEY;
+
+// Startup diagnostic logging (no secrets)
+console.log('[chatbot-auth] Knowledge Center API configured:', !!KNOWLEDGE_CENTER_API_URL && !!KNOWLEDGE_CENTER_API_KEY);
+console.log('[chatbot-auth] Knowledge Engine Runtime configured:', !!KNOWLEDGE_ENGINE_RUNTIME_URL && !!ENGINE_API_KEY);
+if (KNOWLEDGE_ENGINE_RUNTIME_URL) console.log('[chatbot-auth] Knowledge Engine Runtime URL:', KNOWLEDGE_ENGINE_RUNTIME_URL);
 
 async function createCandidateCase(sessionId, message, buyerType) {
   if (!KNOWLEDGE_CENTER_API_URL || !KNOWLEDGE_CENTER_API_KEY) return null;
@@ -488,7 +493,7 @@ async function createCandidateCase(sessionId, message, buyerType) {
 }
 
 async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
-  if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !KNOWLEDGE_ENGINE_API_KEY) return null;
+  if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !ENGINE_API_KEY) return null;
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
@@ -499,7 +504,7 @@ async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
         signal: controller.signal,
         headers: {
           'content-type': 'application/json',
-          'x-engine-api-key': KNOWLEDGE_ENGINE_API_KEY
+          'x-engine-api-key': ENGINE_API_KEY
         },
         body: JSON.stringify({
           query: message,
@@ -511,7 +516,8 @@ async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
         })
       });
       if (!response.ok) {
-        console.error('[knowledge-engine-runtime] Failed:', response.status);
+        const errorBody = await response.text().catch(() => '(no body)');
+        console.error('[knowledge-engine-runtime] Failed', { status: response.status, message: errorBody.slice(0, 200) });
         return null;
       }
       return await response.json();
@@ -720,7 +726,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
 
     // Try knowledge-engine-runtime first if available
     let engineResponse = null;
-    if (KNOWLEDGE_ENGINE_RUNTIME_URL && KNOWLEDGE_ENGINE_API_KEY && candidateCaseId) {
+    if (KNOWLEDGE_ENGINE_RUNTIME_URL && ENGINE_API_KEY && candidateCaseId) {
       engineResponse = await queryKnowledgeEngine(message, sessionId, candidateCaseId);
       if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
         console.log(`[chat] Knowledge engine provided answer (confidence: ${engineResponse.confidence})`);
@@ -748,7 +754,7 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
         console.log(`[chat] Knowledge engine returned non-ANSWER action: ${engineResponse.action} (confidence: ${engineResponse.confidence})`);
       }
     } else {
-      console.warn('[chat] Knowledge engine not available', { KNOWLEDGE_ENGINE_RUNTIME_URL: !!KNOWLEDGE_ENGINE_RUNTIME_URL, KNOWLEDGE_ENGINE_API_KEY: !!KNOWLEDGE_ENGINE_API_KEY, candidateCaseId: !!candidateCaseId });
+      console.warn('[chat] Knowledge engine not available', { KNOWLEDGE_ENGINE_RUNTIME_URL: !!KNOWLEDGE_ENGINE_RUNTIME_URL, ENGINE_API_KEY: !!ENGINE_API_KEY, candidateCaseId: !!candidateCaseId });
     }
 
     const apiKey = process.env.NVIDIA_NIM_API_KEY;
