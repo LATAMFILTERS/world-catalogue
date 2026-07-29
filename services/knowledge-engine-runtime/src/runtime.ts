@@ -2,7 +2,16 @@ import crypto from 'node:crypto';
 import { Pool } from 'pg';
 import type { ControlAction, ReasoningRequest, ReasoningResponse, RetrievedRecord } from './contracts.js';
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+if (!process.env.DATABASE_URL) {
+  throw new Error('FATAL: DATABASE_URL environment variable is not set. Service cannot start without database connection.');
+}
+
+const poolConfig: any = { connectionString: process.env.DATABASE_URL };
+if (process.env.DATABASE_SSL === 'true') {
+  poolConfig.ssl = { rejectUnauthorized: false };
+}
+
+const pool = new Pool(poolConfig);
 const maxRecords = Number(process.env.MAX_RETRIEVAL_RECORDS ?? 12);
 const minAnswer = Number(process.env.MIN_ANSWER_CONFIDENCE ?? 0.72);
 const minProduction = Number(process.env.MIN_PRODUCTION_CONFIDENCE ?? 0.85);
