@@ -25,6 +25,14 @@ services:
         sync: false
       - key: NVIDIA_NIM_API_KEY
         sync: false
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        sync: false
+      - key: KNOWLEDGE_ENGINE_API_KEY
+        sync: false
 
   # Static frontend serving elimfilters.com. These redirects must execute at the
   # HTTP hosting layer, before Render attempts to resolve files in frontend/out.

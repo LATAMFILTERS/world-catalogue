@@ -437,6 +437,73 @@ app.post('/api/distributor', searchLimiter, async (req, res) => {
   }
 });
 
+// ─── Knowledge Center API Integration ────────────────────────────────────────
+const KNOWLEDGE_CENTER_API_URL = process.env.KNOWLEDGE_CENTER_API_URL;
+const KNOWLEDGE_CENTER_API_KEY = process.env.KNOWLEDGE_CENTER_API_KEY;
+const KNOWLEDGE_ENGINE_RUNTIME_URL = process.env.KNOWLEDGE_ENGINE_RUNTIME_URL;
+const KNOWLEDGE_ENGINE_API_KEY = process.env.KNOWLEDGE_ENGINE_API_KEY;
+
+async function createCandidateCase(sessionId, message, buyerType) {
+  if (!KNOWLEDGE_CENTER_API_URL || !KNOWLEDGE_CENTER_API_KEY) return null;
+  try {
+    const response = await fetch(`${KNOWLEDGE_CENTER_API_URL}/api/knowledge-center/v1/candidate-cases`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': KNOWLEDGE_CENTER_API_KEY,
+        'x-actor-id': sessionId,
+        'x-actor-role': 'SYSTEM'
+      },
+      body: JSON.stringify({
+        externalId: `CHAT-${sessionId}-${Date.now()}`,
+        sourceChannel: 'WEB_CHAT',
+        priority: 'NORMAL',
+        symptomSummary: message.slice(0, 500),
+        assetSummary: { buyerType },
+        structuredIntake: { sessionId, initialMessage: message }
+      })
+    });
+    if (!response.ok) {
+      console.error('[knowledge-center-api] Failed to create case:', response.status);
+      return null;
+    }
+    const data = await response.json();
+    return data.id;
+  } catch (error) {
+    console.error('[knowledge-center-api] Error creating candidate case:', error.message);
+    return null;
+  }
+}
+
+async function queryKnowledgeEngine(message, sessionId, candidateCaseId) {
+  if (!KNOWLEDGE_ENGINE_RUNTIME_URL || !KNOWLEDGE_ENGINE_API_KEY) return null;
+  try {
+    const response = await fetch(`${KNOWLEDGE_ENGINE_RUNTIME_URL}/api/knowledge-engine/v1/reason`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-engine-api-key': KNOWLEDGE_ENGINE_API_KEY
+      },
+      body: JSON.stringify({
+        query: message,
+        audience: 'TECHNICAL_SUPPORT',
+        channel: 'WEB_CHAT',
+        correlationId: sessionId,
+        candidateCaseId: candidateCaseId,
+        context: { timestamp: new Date().toISOString() }
+      })
+    });
+    if (!response.ok) {
+      console.error('[knowledge-engine-runtime] Failed:', response.status);
+      return null;
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('[knowledge-engine-runtime] Error:', error.message);
+    return null;
+  }
+}
+
 // ─── Chat API (Groq / Llama-3.3-70b) ────────────────────────────────────────
 const _chatSessions = new Map();
 const CHAT_UNRESOLVED_LIMIT = 5;
@@ -617,6 +684,43 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
     }
     session.lastActivity = Date.now();
     _chatSessions.set(sessionId, session);
+
+    // Attempt to create candidate case for knowledge center workflow
+    let candidateCaseId = null;
+    if (KNOWLEDGE_CENTER_API_URL && KNOWLEDGE_CENTER_API_KEY) {
+      candidateCaseId = await createCandidateCase(sessionId, message, session.buyerType);
+      if (candidateCaseId) {
+        console.log(`[chat] Created candidate case: ${candidateCaseId}`);
+      }
+    }
+
+    // Try knowledge-engine-runtime first if available
+    let engineResponse = null;
+    if (KNOWLEDGE_ENGINE_RUNTIME_URL && KNOWLEDGE_ENGINE_API_KEY && candidateCaseId) {
+      engineResponse = await queryKnowledgeEngine(message, sessionId, candidateCaseId);
+      if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
+        console.log(`[chat] Knowledge engine provided answer (confidence: ${engineResponse.confidence})`);
+        const reply = engineResponse.answer;
+        session.unresolvedAttempts = 0;
+        session.buyerType = session.buyerType || 'unknown';
+        session.history.push(
+          { role: 'user', content: message.trim() },
+          { role: 'assistant', content: reply }
+        );
+        session.history = session.history.slice(-8);
+        session.lastActivity = Date.now();
+        _chatSessions.set(sessionId, session);
+        return res.json({
+          reply,
+          outcome: 'resolved',
+          buyerType: session.buyerType,
+          unresolvedAttempts: session.unresolvedAttempts,
+          supportRecommended: false,
+          escalated: false,
+          source: 'knowledge_engine'
+        });
+      }
+    }
 
     const apiKey = process.env.NVIDIA_NIM_API_KEY;
     if (!apiKey) {
