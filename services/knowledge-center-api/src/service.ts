@@ -104,6 +104,54 @@ export class KnowledgeCenterService {
     });
   }
 
+  async convertCaseToKnowledge(caseId: string, input: any, actorId: string) {
+    return withTransaction(async (client) => {
+      // Verify case exists and is approved
+      const caseResult = await client.query('SELECT * FROM candidate_cases WHERE id=$1', [caseId]);
+      if (!caseResult.rowCount) throw new Error('Candidate case not found');
+      const candidateCase = caseResult.rows[0];
+      if (candidateCase.status !== 'APPROVED') throw new Error('Case must be in APPROVED status');
+      if (candidateCase.related_record_id) throw new Error('Case already converted to knowledge');
+
+      // Create knowledge record
+      const knowledgeExternalId = `KC-${candidateCase.external_id}-${Date.now()}`;
+      const recordResult = await client.query(
+        `INSERT INTO knowledge_records(external_id,record_type,owner_actor_id,lifecycle_status)
+         VALUES ($1,$2,$3,'DRAFT') RETURNING *`,
+        [knowledgeExternalId,input.recordType || 'DIAGNOSTIC',actorId]
+      );
+      const record = recordResult.rows[0];
+
+      // Create initial version
+      const versionResult = await client.query(
+        `INSERT INTO knowledge_record_versions(record_id,version_number,schema_version,title,summary,content,content_hash,change_reason,created_by)
+         VALUES ($1,1,$2,$3,$4,$5,encode(digest($5::text,'sha256'),'hex'),$6,$7) RETURNING *`,
+        [
+          record.id,
+          input.schemaVersion || '1.0',
+          input.title || candidateCase.symptom_summary?.slice(0, 100) || 'Auto-generated from candidate case',
+          input.summary || candidateCase.symptom_summary?.slice(0, 500),
+          input.content || { originalCaseId: caseId, source: 'AUTO_CONVERTED_FROM_CANDIDATE_CASE' },
+          `Converted from candidate case ${candidateCase.external_id}`,
+          actorId
+        ]
+      );
+
+      // Link case to knowledge record
+      await client.query('UPDATE candidate_cases SET related_record_id=$2,updated_at=now() WHERE id=$1', [caseId, record.id]);
+      await client.query('UPDATE knowledge_records SET current_version_id=$2 WHERE id=$1', [record.id, versionResult.rows[0].id]);
+
+      // Log the conversion
+      await client.query(
+        `INSERT INTO candidate_case_events(candidate_case_id,event_type,new_status,reason,actor_id,payload)
+         VALUES ($1,'CONVERTED_TO_KNOWLEDGE','APPROVED','Converted to knowledge record',$2,$3)`,
+        [caseId, actorId, { knowledgeRecordId: record.id }]
+      );
+
+      return { ...record, currentVersion: versionResult.rows[0] };
+    });
+  }
+
   private async queueNotification(client: pg.PoolClient, candidateCaseId: string, eventType: string, keyPart: string) {
     await client.query(
       `INSERT INTO notification_deliveries(candidate_case_id,event_type,idempotency_key,recipient,sender,delivery_status)
