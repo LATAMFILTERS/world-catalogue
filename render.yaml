@@ -167,58 +167,7 @@ services:
         value: "0.85"
 
 
-  # AI Assistant Services — WhatsApp, Instagram, LinkedIn & YouTube Bots
-  - type: web
-    name: elimfilters-whatsapp-bot
-    runtime: node
-    plan: free
-    buildCommand: npm ci
-    startCommand: npm start
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: META_APP_SECRET
-        sync: false
-      - key: META_VERIFY_TOKEN
-        sync: false
-      - key: DRY_RUN
-        value: "true"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: elimfilters-instagram-db
-          property: connectionString
-
-  - type: web
-    name: elimfilters-instagram-bot
-    runtime: node
-    rootDir: elimfilters-instagram-bot
-    plan: free
-    buildCommand: npm ci
-    startCommand: npm start
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: IG_ACCOUNT_ID
-        value: "17841402919099745"
-      - key: NVIDIA_MODEL
-        value: nvidia/nemotron-3-super-120b-a12b
-      - key: DRY_RUN
-        value: "true"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: elimfilters-instagram-db
-          property: connectionString
-      - key: IG_ACCESS_TOKEN
-        sync: false
-      - key: IG_APP_SECRET
-        sync: false
-      - key: IG_VERIFY_TOKEN
-        sync: false
-      - key: NVIDIA_NIM_API_KEY
-        sync: false
-
+  # LinkedIn Bot (Phase 2 Implementation)
   - type: web
     name: elimfilters-linkedin-bot
     runtime: node
@@ -237,34 +186,6 @@ services:
       - key: LINKEDIN_ORGANIZATION_ID
         sync: false
       - key: LINKEDIN_VERIFY_TOKEN
-        sync: false
-      - key: NVIDIA_MODEL
-        value: nvidia/nemotron-3-super-120b-a12b
-      - key: DRY_RUN
-        value: "true"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: elimfilters-instagram-db
-          property: connectionString
-      - key: NVIDIA_NIM_API_KEY
-        sync: false
-
-  - type: web
-    name: elimfilters-youtube-bot
-    runtime: node
-    rootDir: elimfilters-youtube-bot
-    plan: free
-    buildCommand: npm ci
-    startCommand: npm start
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: YOUTUBE_CHANNEL_ID
-        value: "UC_elimfilters_official"
-      - key: YOUTUBE_API_KEY
-        sync: false
-      - key: YOUTUBE_VERIFY_TOKEN
         sync: false
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
