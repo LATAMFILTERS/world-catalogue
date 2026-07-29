@@ -110,7 +110,6 @@ services:
     runtime: node
     rootDir: services/knowledge-center-api
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: node dist/server.js
     healthCheckPath: /health
@@ -140,7 +139,6 @@ services:
     runtime: node
     rootDir: services/knowledge-engine-runtime
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: node dist/server.js
     healthCheckPath: /health
@@ -358,7 +356,6 @@ services:
     runtime: node
     rootDir: services/notification-worker
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
