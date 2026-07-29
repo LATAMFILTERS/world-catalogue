@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { knowledgeApi } from '@/lib/api';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ReviewQueuePage() {
   const cases = await knowledgeApi.listCases();
   const open = cases.filter((item) => !['APPROVED','REJECTED','PUBLISHED','DUPLICATE'].includes(item.status));

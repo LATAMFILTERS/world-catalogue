@@ -1,11 +1,22 @@
 import { z } from 'zod';
 
-const env = z.object({
+const envSchema = z.object({
   KNOWLEDGE_CENTER_API_URL: z.string().url(),
   KNOWLEDGE_CENTER_API_KEY: z.string().min(12),
   KNOWLEDGE_CENTER_ACTOR_ID: z.string().uuid(),
   KNOWLEDGE_CENTER_ACTOR_ROLE: z.enum(['SUPPORT_REVIEWER','ENGINEERING_REVIEWER','APPROVER','PUBLISHER','ADMIN'])
-}).parse(process.env);
+});
+
+let env: z.infer<typeof envSchema>;
+let envLoaded = false;
+
+function getEnv() {
+  if (!envLoaded) {
+    env = envSchema.parse(process.env);
+    envLoaded = true;
+  }
+  return env;
+}
 
 export type ReviewCase = {
   id: string; external_id: string; status: string; priority: string;
@@ -15,14 +26,15 @@ export type ReviewCase = {
 };
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${env.KNOWLEDGE_CENTER_API_URL}${path}`, {
+  const config = getEnv();
+  const response = await fetch(`${config.KNOWLEDGE_CENTER_API_URL}${path}`, {
     ...init,
     cache: 'no-store',
     headers: {
       'content-type': 'application/json',
-      'x-api-key': env.KNOWLEDGE_CENTER_API_KEY,
-      'x-actor-id': env.KNOWLEDGE_CENTER_ACTOR_ID,
-      'x-actor-role': env.KNOWLEDGE_CENTER_ACTOR_ROLE,
+      'x-api-key': config.KNOWLEDGE_CENTER_API_KEY,
+      'x-actor-id': config.KNOWLEDGE_CENTER_ACTOR_ID,
+      'x-actor-role': config.KNOWLEDGE_CENTER_ACTOR_ROLE,
       ...(init?.headers ?? {})
     }
   });
