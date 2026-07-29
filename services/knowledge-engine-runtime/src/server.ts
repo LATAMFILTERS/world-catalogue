@@ -6,6 +6,7 @@ import { readiness, reason } from './runtime.js';
 
 const log=pino({level:process.env.LOG_LEVEL??'info'});
 log.info('DATABASE_URL is configured: %s', process.env.DATABASE_URL ? 'yes' : 'no');
+log.info('ENGINE_API_KEY is configured: %s (length: %d)', process.env.ENGINE_API_KEY ? 'yes' : 'no', process.env.ENGINE_API_KEY?.length ?? 0);
 const app=express();
 app.use(helmet());
 app.use(express.json({limit:'1mb'}));
