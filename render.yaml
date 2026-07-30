@@ -241,7 +241,7 @@ services:
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
-        value: "true"
+        value: "false"
       - key: DATABASE_URL
         fromDatabase:
           name: elimfilters-instagram-db
@@ -278,7 +278,7 @@ services:
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
-        value: "true"
+        value: "false"
       - key: DATABASE_URL
         fromDatabase:
           name: elimfilters-instagram-db
@@ -315,7 +315,7 @@ services:
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
-        value: "true"
+        value: "false"
       - key: DATABASE_URL
         fromDatabase:
           name: elimfilters-instagram-db
@@ -352,7 +352,7 @@ services:
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
-        value: "true"
+        value: "false"
       - key: DATABASE_URL
         fromDatabase:
           name: elimfilters-instagram-db
