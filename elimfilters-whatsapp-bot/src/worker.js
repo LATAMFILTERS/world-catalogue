@@ -41,23 +41,39 @@ export function createWorker({ config, db, knowledgeSystem }) {
           if (config.knowledgeCenterApiUrl && config.knowledgeCenterApiKey) {
             candidateCaseId = await createCandidateCase(config, session.session_id, job.message_text, 'WHATSAPP');
             if (candidateCaseId) {
-              logger.debug('Created candidate case', { caseId: candidateCaseId });
+              logger.info('✓ Created candidate case', { caseId: candidateCaseId });
             }
+          } else {
+            logger.warn('✗ Candidate case creation skipped', {
+              hasUrl: !!config.knowledgeCenterApiUrl,
+              hasKey: !!config.knowledgeCenterApiKey
+            });
           }
 
           // Step 2: Try Knowledge Engine Runtime (like web chat)
           let engineResponse = null;
           const shouldQueryEngine = config.knowledgeEngineRuntimeUrl && config.engineApiKey && candidateCaseId;
+          logger.info('Knowledge Engine Runtime check', {
+            hasUrl: !!config.knowledgeEngineRuntimeUrl,
+            hasKey: !!config.engineApiKey,
+            hasCaseId: !!candidateCaseId,
+            shouldQuery: shouldQueryEngine
+          });
+
           if (shouldQueryEngine) {
-            logger.debug('Querying Knowledge Engine Runtime');
+            logger.info('→ Querying Knowledge Engine Runtime at', { url: config.knowledgeEngineRuntimeUrl });
             engineResponse = await queryKnowledgeEngine(config, job.message_text, session.session_id, candidateCaseId);
 
             // If Knowledge Engine has high-confidence answer, use it
             if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
               responseText = engineResponse.answer;
               source = 'knowledge_engine';
-              logger.debug('Using Knowledge Engine response', { confidence: engineResponse.confidence });
+              logger.info('✓ Using Knowledge Engine response', { confidence: engineResponse.confidence, answerLength: engineResponse.answer.length });
+            } else {
+              logger.warn('✗ Knowledge Engine response invalid', { hasResponse: !!engineResponse, action: engineResponse?.action, hasAnswer: !!engineResponse?.answer });
             }
+          } else {
+            logger.warn('✗ Skipping Knowledge Engine (missing config)', { shouldQueryEngine });
           }
 
           // Step 3: Fallback to NVIDIA LLM with catalog lookup
