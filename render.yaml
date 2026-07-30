@@ -166,8 +166,17 @@ services:
       - key: MIN_PRODUCTION_CONFIDENCE
         value: "0.85"
 
-  # Knowledge Channel Gateway — DISABLED (Phase 2+)
-  # Requires 6 secrets: KNOWLEDGE_API_KEY, SYSTEM_ACTOR_ID, META_APP_SECRET, META_VERIFY_TOKEN, WEB_CHAT_SHARED_SECRET, MICROSOFT_GRAPH_TENANT_ID
+  # Knowledge Channel Gateway — COMPLETELY DISABLED
+  # Status: Not deployed, not in use
+  # Do NOT uncomment without providing all required secrets:
+  #   - KNOWLEDGE_API_KEY
+  #   - SYSTEM_ACTOR_ID
+  #   - META_APP_SECRET (Facebook App Secret)
+  #   - META_VERIFY_TOKEN (Facebook Webhook Verify Token)
+  #   - WEB_CHAT_SHARED_SECRET
+  #   - MICROSOFT_GRAPH_TENANT_ID
+  # Re-enable in Phase 2+ when secrets are available and service is needed.
+  # Remove this service from Render dashboard if it still exists there.
 
   # Knowledge Review — Candidate case intake and review workflow (Phase 2+ Staging)
   - type: web
