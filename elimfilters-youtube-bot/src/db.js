@@ -56,6 +56,18 @@ export function createDb(connectionString) {
         )
       `);
 
+      await pool.query(`
+        CREATE TABLE IF NOT EXISTS conversation_history (
+          id SERIAL PRIMARY KEY,
+          user_id TEXT NOT NULL,
+          platform TEXT NOT NULL,
+          role TEXT NOT NULL,
+          message TEXT NOT NULL,
+          created_at TIMESTAMPTZ DEFAULT NOW(),
+          INDEX idx_user_platform (user_id, platform, created_at DESC)
+        )
+      `);
+
       // Propagate Heavy Duty equipment applications across cross-references automatically
       try {
         await pool.query(`
@@ -259,6 +271,25 @@ export function createDb(connectionString) {
       const r = await pool.query(query, searchTerms.map(term => `%${term}%`));
       console.log(`[DB] Found ${r.rows.length} results for motor ${motorCode}`);
       return r.rows;
+    },
+
+    async saveConversation(userId, platform, role, message) {
+      await pool.query(
+        `INSERT INTO conversation_history (user_id, platform, role, message)
+         VALUES ($1, $2, $3, $4)`,
+        [userId, platform, role, message]
+      );
+    },
+
+    async getConversationHistory(userId, platform, limit = 10) {
+      const r = await pool.query(
+        `SELECT role, message, created_at FROM conversation_history
+         WHERE user_id = $1 AND platform = $2
+         ORDER BY created_at DESC
+         LIMIT $3`,
+        [userId, platform, limit]
+      );
+      return r.rows.reverse();
     }
   };
 }
