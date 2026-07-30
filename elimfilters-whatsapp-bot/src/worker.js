@@ -19,18 +19,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
         try {
           console.log(`[WhatsApp Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
 
-          // Crear o actualizar sesión
-          await db.createOrUpdateSession(job.from, 'whatsapp');
-
-          // Recuperar historial de conversación para contexto
-          const conversationHistory = await db.getConversationHistory(job.from, 'whatsapp', 10);
-          const conversationContext = conversationHistory.length > 0
-            ? `HISTORIAL DE CONVERSACIÓN ANTERIOR:\n${conversationHistory.map(h => `${h.role === 'user' ? 'USUARIO' : 'ASISTENTE'}: ${h.message}`).join('\n')}\n\nNUEVO MENSAJE DEL USUARIO:\n`
-            : '';
-
-          // Guardar mensaje del usuario en historial
-          await db.saveConversation(job.from, 'whatsapp', 'user', job.message_text);
-
           // Buscar productos en la BD
           let products = [];
           const text = job.message_text.trim().toUpperCase();
@@ -127,16 +115,15 @@ export function createWorker({ config, db, knowledgeSystem }) {
               replyText = `¡Hola! Bienvenido a ELIMFILTERS.\n\nPuedo ayudarte a encontrar filtros compatibles. Comparte:\n• Código OEM o modelo del filtro que usas\n• Marca/modelo de tu equipo (ej: Freightliner, Peterbilt)\n• Motor (ej: DD60, C13, Cummins)\n\n¿Cuál es tu consulta?`;
             } else {
               // Fallback a NVIDIA si no encuentra en BD
-              const messageWithContext = conversationContext + job.message_text;
               if (knowledgeSystem && job.message_text) {
-                const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(messageWithContext, job.event_id);
+                const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
                 if (knowledgeResponse.success && knowledgeResponse.answer) {
                   replyText = knowledgeResponse.answer;
                 } else {
-                  replyText = await nvidia.generateReply(messageWithContext);
+                  replyText = await nvidia.generateReply(job.message_text);
                 }
               } else {
-                replyText = await nvidia.generateReply(messageWithContext);
+                replyText = await nvidia.generateReply(job.message_text);
               }
             }
           }
@@ -150,7 +137,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
           // Enviar por WhatsApp
           await whatsapp.sendMessage(job.from, replyText);
           await db.complete(job.event_id, replyText);
-          await db.saveConversation(job.from, 'whatsapp', 'assistant', replyText);
           console.log(`[WhatsApp Worker] Sent reply to ${job.from}`);
         } catch (err) {
           console.error(`[WhatsApp Worker] Error processing ${job.event_id}:`, err.message);

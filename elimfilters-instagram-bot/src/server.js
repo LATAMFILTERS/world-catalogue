@@ -3,22 +3,13 @@ import { getConfig } from "./config.js";
 import { createDb } from "./db.js";
 import { createKnowledgeSystemClient } from "./knowledge-system.js";
 import { createWorker } from "./worker.js";
-import { createInactivityCleaner } from "./inactivity-cleaner.js";
-import { createInstagramClient } from "./instagram.js";
 
 const config = getConfig();
 const db = createDb(config.databaseUrl);
 await db.init();
 const knowledgeSystem = createKnowledgeSystemClient(config);
 
-const instagram = createInstagramClient({
-  accessToken: config.metaAccessToken,
-  instagramBusinessAccountId: config.instagramBusinessAccountId,
-  graphApiVersion: config.metaGraphApiVersion
-});
-
 const worker = createWorker({ config, db, knowledgeSystem });
-const inactivityCleaner = createInactivityCleaner({ db, whatsapp: null, instagram, youtube: null });
 const app = express();
 
 const webhookStats = {
@@ -133,9 +124,8 @@ app.post("/webhook", express.json({ limit: "1mb" }), async (req, res) => {
   setImmediate(() => worker.run().catch(console.error));
 });
 
-app.listen(config.port, () => {
-  console.log(`ELIMFILTERS Instagram bot listening on port ${config.port}; dryRun=${config.dryRun}`);
-  inactivityCleaner.start();
-});
+app.listen(config.port, () =>
+  console.log(`ELIMFILTERS Instagram bot listening on port ${config.port}; dryRun=${config.dryRun}`)
+);
 
 setInterval(() => worker.run().catch(console.error), 5 * 60 * 1000).unref();
