@@ -1,13 +1,12 @@
+import { createYouTubeClient } from "./youtube.js";
 import { createNvidiaClient } from "./nvidia.js";
-import { createLinkedinClient } from "./linkedin.js";
 
 export function createWorker({ config, db, knowledgeSystem }) {
-  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
-  const linkedin = createLinkedinClient({
-    clientId: config.linkedinClientId,
-    clientSecret: config.linkedinClientSecret,
-    organizationId: config.linkedinOrganizationId
+  const youtube = createYouTubeClient({
+    apiKey: config.youtubeApiKey
   });
+
+  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
 
   return {
     async run() {
@@ -16,35 +15,81 @@ export function createWorker({ config, db, knowledgeSystem }) {
 
       for (const job of jobs) {
         try {
-          console.log(`[LinkedIn Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
+          console.log(`[YouTube Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
+
+          // Buscar productos en la BD
+          let products = [];
+          const text = job.message_text.trim().toUpperCase();
+
+          // Intentar búsqueda por código OEM (P552100, etc.)
+          if (text.match(/^[A-Z]\d+$/)) {
+            products = await db.searchByOemCode(text);
+          }
+
+          // Si no hay resultados, intentar por código de competidor
+          if (!products.length && text.match(/^[A-Z]{2,}\d+$/)) {
+            products = await db.searchByCompetitorCode(text);
+          }
+
+          // Si no hay resultados, intentar por SKU (EL82100, etc.)
+          if (!products.length && text.match(/^EL\d+$/)) {
+            const product = await db.searchBySku(text);
+            if (product) products = [product];
+          }
+
+          // Si no hay resultados, búsqueda por palabra clave
+          if (!products.length) {
+            products = await db.searchByKeyword(text);
+          }
 
           let replyText;
-          if (knowledgeSystem && job.message_text && job.event_id) {
-            const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
-            if (knowledgeResponse.success && knowledgeResponse.answer) {
-              replyText = knowledgeResponse.answer;
+          if (products.length > 0) {
+            // Construir respuesta técnica con productos encontrados
+            const product = products[0];
+            replyText = `✅ Filtro ELIMFILTERS encontrado\n\n` +
+              `SKU: ${product.sku}\n` +
+              `Producto: ${product.product_name}\n` +
+              `Tipo: ${product.filter_type}\n`;
+
+            if (product.oem_codes && product.oem_codes.length > 0) {
+              replyText += `Códigos OEM: ${product.oem_codes.join(", ")}\n`;
+            }
+
+            if (product.competitor_codes && product.competitor_codes.length > 0) {
+              replyText += `Referencias: ${product.competitor_codes.join(", ")}\n`;
+            }
+
+            if (product.description) {
+              replyText += `Descripción: ${product.description}\n`;
+            }
+
+            replyText += `\n¿Necesitas más información técnica? Contáctanos.`;
+          } else {
+            // Fallback a NVIDIA si no encuentra en BD
+            if (knowledgeSystem && job.message_text) {
+              const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
+              if (knowledgeResponse.success && knowledgeResponse.answer) {
+                replyText = knowledgeResponse.answer;
+              } else {
+                replyText = await nvidia.generateReply(job.message_text);
+              }
             } else {
               replyText = await nvidia.generateReply(job.message_text);
             }
-          } else {
-            replyText = await nvidia.generateReply(job.message_text);
           }
 
           if (config.dryRun) {
-            console.log(`[LinkedIn Worker] DRY_RUN=true: Draft reply for ${job.event_id} -> "${replyText}"`);
+            console.log(`[YouTube Worker] DRY_RUN=true: Draft reply for ${job.event_id} -> "${replyText}"`);
             await db.complete(job.event_id, `[DRY_RUN DRAFT] ${replyText}`);
             continue;
           }
 
-          if (job.event_type === 'message' || job.event_type === 'dm') {
-            await linkedin.replyToDirectMessage({ senderUrn: job.author_urn, replyText });
-          } else {
-            await linkedin.replyToComment({ targetUrn: job.target_urn, commentId: job.event_id, replyText });
-          }
-
+          // Enviar por YouTube
+          await youtube.replyToComment(job.event_id, replyText);
           await db.complete(job.event_id, replyText);
+          console.log(`[YouTube Worker] Sent reply to comment ${job.event_id}`);
         } catch (err) {
-          console.error(`[LinkedIn Worker] Error processing ${job.event_id}:`, err.message);
+          console.error(`[YouTube Worker] Error processing ${job.event_id}:`, err.message);
           await db.fail(job.event_id, err.message);
         }
       }

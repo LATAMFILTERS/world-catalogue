@@ -32,6 +32,7 @@ export function createDb(connectionString) {
           author_urn TEXT,
           author_name TEXT,
           target_urn TEXT,
+          "from" TEXT,
           status TEXT NOT NULL DEFAULT 'pending',
           attempts INTEGER NOT NULL DEFAULT 0,
           response_text TEXT,
@@ -78,10 +79,10 @@ export function createDb(connectionString) {
 
     async enqueue(e) {
       const r = await pool.query(
-        `INSERT INTO linkedin_jobs (event_id, event_type, message_text, author_urn, author_name, target_urn)
-         VALUES ($1, $2, $3, $4, $5, $6)
+        `INSERT INTO linkedin_jobs (event_id, event_type, message_text, author_urn, author_name, target_urn, "from")
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
          ON CONFLICT (event_id) DO NOTHING`,
-        [e.id, e.type || 'comment', e.text, e.authorUrn, e.authorName, e.targetUrn]
+        [e.id, e.type || 'comment', e.text, e.authorUrn || e.from, e.authorName || e.fromName, e.targetUrn, e.from]
       );
       return r.rowCount === 1;
     },
@@ -154,6 +155,49 @@ export function createDb(connectionString) {
          WHERE status = 'completed' AND response_text IS NOT NULL AND response_text <> 'NO_REPLY'
          ORDER BY processed_at DESC LIMIT $1`,
         [limit]
+      );
+      return r.rows;
+    },
+
+    async searchByOemCode(oemCode) {
+      const r = await pool.query(
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
+         FROM elimfilters_catalog
+         WHERE oem_codes @> $1::jsonb
+         LIMIT 5`,
+        [JSON.stringify([oemCode])]
+      );
+      return r.rows;
+    },
+
+    async searchByCompetitorCode(competitorCode) {
+      const r = await pool.query(
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
+         FROM elimfilters_catalog
+         WHERE competitor_codes @> $1::jsonb
+         LIMIT 5`,
+        [JSON.stringify([competitorCode])]
+      );
+      return r.rows;
+    },
+
+    async searchBySku(sku) {
+      const r = await pool.query(
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
+         FROM elimfilters_catalog
+         WHERE sku = $1`,
+        [sku]
+      );
+      return r.rows[0] || null;
+    },
+
+    async searchByKeyword(keyword) {
+      const r = await pool.query(
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
+         FROM elimfilters_catalog
+         WHERE product_name ILIKE $1 OR description ILIKE $1
+         LIMIT 5`,
+        [`%${keyword}%`]
       );
       return r.rows;
     }
