@@ -15,7 +15,7 @@ export function getConfig() {
     databaseUrl: requireValue("DATABASE_URL", process.env.DATABASE_URL),
     nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
     nvidiaModel: process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
-    dryRun: (process.env.DRY_RUN || "false").toLowerCase() === "true",
+    dryRun: (process.env.DRY_RUN || "true").toLowerCase() === "true",
     // Knowledge System Integration
     KNOWLEDGE_CENTER_API_URL: process.env.KNOWLEDGE_CENTER_API_URL?.trim() || "https://knowledge-center-api-staging.onrender.com",
     KNOWLEDGE_CENTER_API_KEY: process.env.KNOWLEDGE_CENTER_API_KEY?.trim() || null,
