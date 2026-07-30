@@ -1,6 +1,7 @@
 import { createLogger } from "./logger.js";
 import { createYoutubeClient } from "./youtube-client.js";
 import { createNvidiaClient } from "./nvidia.js";
+import { createCandidateCase, queryKnowledgeEngine } from "./knowledge-engine.js";
 
 const logger = createLogger("YouTube-Bot");
 
@@ -28,15 +29,49 @@ export function createWorker({ config, db, knowledgeSystem }) {
           const session = await db.getOrCreateSession(job.author_channel_id || job.author_id, 'youtube');
           logContext.sessionId = session.session_id;
 
-          // Generate AI response using NVIDIA LLM + catalog lookup
-          const responseText = await nvidia.generateReply(job.message_text);
+          let responseText;
+          let source = 'fallback';
+
+          // Step 1: Try to create candidate case in Knowledge Center
+          let candidateCaseId = null;
+          if (config.knowledgeCenterApiUrl && config.knowledgeCenterApiKey) {
+            candidateCaseId = await createCandidateCase(config, session.session_id, job.message_text, 'YOUTUBE');
+            if (candidateCaseId) {
+              logger.debug('Created candidate case', { caseId: candidateCaseId });
+            }
+          }
+
+          // Step 2: Try Knowledge Engine Runtime (like web chat)
+          let engineResponse = null;
+          const shouldQueryEngine = config.knowledgeEngineRuntimeUrl && config.engineApiKey && candidateCaseId;
+          if (shouldQueryEngine) {
+            logger.debug('Querying Knowledge Engine Runtime');
+            engineResponse = await queryKnowledgeEngine(config, job.message_text, session.session_id, candidateCaseId);
+
+            // If Knowledge Engine has high-confidence answer, use it
+            if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
+              responseText = engineResponse.answer;
+              source = 'knowledge_engine';
+              logger.debug('Using Knowledge Engine response', { confidence: engineResponse.confidence });
+            }
+          }
+
+          // Step 3: Fallback to NVIDIA LLM with catalog lookup
+          if (!responseText) {
+            logger.debug('Falling back to NVIDIA LLM');
+            responseText = await nvidia.generateReply(job.message_text);
+            source = 'nvidia_llm';
+          }
+
           logContext.responseLength = responseText.length;
+          logContext.source = source;
 
           // Log conversation turn
           await db.logConversationTurn(session.session_id, {
             messageText: job.message_text,
             action: 'ai_response',
-            responseText
+            responseText,
+            source
           });
 
           // Send response via YouTube API
