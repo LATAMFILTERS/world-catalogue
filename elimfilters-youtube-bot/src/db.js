@@ -42,6 +42,20 @@ export function createDb(connectionString) {
         )
       `);
 
+      await pool.query(`
+        CREATE TABLE IF NOT EXISTS elimfilters_catalog (
+          sku TEXT PRIMARY KEY,
+          product_name TEXT NOT NULL,
+          filter_type TEXT,
+          oem_codes JSONB,
+          competitor_codes JSONB,
+          description TEXT,
+          duty TEXT,
+          equipment_applications JSONB,
+          created_at TIMESTAMPTZ DEFAULT NOW()
+        )
+      `);
+
       // Propagate Heavy Duty equipment applications across cross-references automatically
       try {
         await pool.query(`
