@@ -87,16 +87,30 @@ export function createWorker({ config, db, knowledgeSystem }) {
 
             replyText += `\n¿Necesitas más información técnica? Contáctanos.`;
           } else {
-            // Fallback a NVIDIA si no encuentra en BD
-            if (knowledgeSystem && job.message_text) {
-              const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
-              if (knowledgeResponse.success && knowledgeResponse.answer) {
-                replyText = knowledgeResponse.answer;
+            // Quick responses for greetings/common phrases (avoid NVIDIA delay)
+            const greeting_patterns = [
+              /^(hola|hi|hey|buenos días|buenas tardes|buenas noches|ola|oye|hey there)/i,
+              /^(gracias|thank you|thanks)/i,
+              /^(ayuda|help|soporte|support)/i
+            ];
+
+            const isGreeting = greeting_patterns.some(p => p.test(text));
+
+            if (isGreeting) {
+              console.log(`[Worker] Detected greeting, quick response`);
+              replyText = `¡Hola! Bienvenido a ELIMFILTERS.\n\nPuedo ayudarte a encontrar filtros compatibles. Comparte:\n• Código OEM o modelo del filtro que usas\n• Marca/modelo de tu equipo (ej: Freightliner, Peterbilt)\n• Motor (ej: DD60, C13, Cummins)\n\n¿Cuál es tu consulta?`;
+            } else {
+              // Fallback a NVIDIA si no encuentra en BD
+              if (knowledgeSystem && job.message_text) {
+                const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
+                if (knowledgeResponse.success && knowledgeResponse.answer) {
+                  replyText = knowledgeResponse.answer;
+                } else {
+                  replyText = await nvidia.generateReply(job.message_text);
+                }
               } else {
                 replyText = await nvidia.generateReply(job.message_text);
               }
-            } else {
-              replyText = await nvidia.generateReply(job.message_text);
             }
           }
 
