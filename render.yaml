@@ -3,7 +3,6 @@ services:
     name: elimfilters-search-pro
     runtime: node
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /api/status
@@ -27,11 +26,11 @@ services:
       - key: NVIDIA_NIM_API_KEY
         sync: false
       - key: KNOWLEDGE_CENTER_API_URL
-        value: https://knowledge-center-api-staging.onrender.com
+        sync: false
       - key: KNOWLEDGE_CENTER_API_KEY
         sync: false
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
-        value: https://knowledge-engine-runtime-staging.onrender.com
+        sync: false
       - key: ENGINE_API_KEY
         sync: false
 
@@ -111,7 +110,6 @@ services:
     runtime: node
     rootDir: services/knowledge-center-api
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: node dist/server.js
     healthCheckPath: /health
@@ -141,7 +139,6 @@ services:
     runtime: node
     rootDir: services/knowledge-engine-runtime
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: node dist/server.js
     healthCheckPath: /health
@@ -169,54 +166,36 @@ services:
       - key: MIN_PRODUCTION_CONFIDENCE
         value: "0.85"
 
-  # Knowledge Channel Gateway — Multi-channel message orchestration (WhatsApp, Meta, Teams) (Phase 2+ Staging)
-  # TEMPORARILY DISABLED: Requires 6 secrets (KNOWLEDGE_API_KEY, SYSTEM_ACTOR_ID, META_APP_SECRET, META_VERIFY_TOKEN, WEB_CHAT_SHARED_SECRET, MICROSOFT_GRAPH_TENANT_ID)
-  # Re-enable once all secrets are configured in Render console
-  #
-  # - type: web
-  #   name: knowledge-channel-gateway-staging
-  #   runtime: node
-  #   rootDir: services/knowledge-channel-gateway
-  #   plan: starter
-  #   branch: claude/world-catalogue-build-thyf4l
-  #   buildCommand: npm ci && npm run build
-  #   startCommand: node dist/index.js
-  #   healthCheckPath: /health
-  #   envVars:
-  #     - key: NODE_VERSION
-  #       value: "20"
-  #     - key: NODE_ENV
-  #       value: production
-  #     - key: PORT
-  #       value: "3012"
-  #     - key: DATABASE_URL
-  #       fromDatabase:
-  #         name: knowledge_center_staging
-  #         property: connectionString
-  #     - key: KNOWLEDGE_API_URL
-  #       value: https://knowledge-center-api-staging.onrender.com
-  #     - key: KNOWLEDGE_API_KEY
-  #       sync: false
-  #     - key: SYSTEM_ACTOR_ID
-  #       sync: false
-  #     - key: META_APP_SECRET
-  #       sync: false
-  #     - key: META_VERIFY_TOKEN
-  #       sync: false
-  #     - key: WEB_CHAT_SHARED_SECRET
-  #       sync: false
-  #     - key: MICROSOFT_GRAPH_TENANT_ID
-  #       sync: false
-  #     - key: MICROSOFT_GRAPH_CLIENT_ID
-  #       sync: false
-  #     - key: MICROSOFT_GRAPH_CLIENT_SECRET
-  #       sync: false
-  #     - key: MICROSOFT_GRAPH_MAILBOX
-  #       value: support@elimfilters.com
+  # Knowledge Channel Gateway — COMPLETELY DISABLED
+  # Status: Not deployed, not in use
+  # Do NOT uncomment without providing all required secrets:
+  #   - KNOWLEDGE_API_KEY
+  #   - SYSTEM_ACTOR_ID
+  #   - META_APP_SECRET (Facebook App Secret)
+  #   - META_VERIFY_TOKEN (Facebook Webhook Verify Token)
+  #   - WEB_CHAT_SHARED_SECRET
+  #   - MICROSOFT_GRAPH_TENANT_ID
+  # Re-enable in Phase 2+ when secrets are available and service is needed.
+  # Remove this service from Render dashboard if it still exists there.
 
-  # Knowledge Review — DISABLED
-  # DO NOT ENABLE: Requires KNOWLEDGE_CENTER_API_KEY and KNOWLEDGE_CENTER_ACTOR_ID secrets
-  # Not configured for current deployment phase. Enable in Phase 2+ after secrets setup.
+  # Knowledge Review — Candidate case intake and review workflow (Phase 2+ Staging)
+  - type: web
+    name: knowledge-review-staging
+    runtime: node
+    rootDir: apps/knowledge-review
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_CENTER_ACTOR_ID
+        sync: false
 
   # LinkedIn Bot (Phase 2 Implementation)
   - type: web
@@ -266,6 +245,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
@@ -305,6 +285,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
@@ -344,6 +325,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
@@ -372,14 +354,12 @@ services:
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
         sync: false
-
   # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
   - type: background_worker
     name: notification-worker-staging
     runtime: node
     rootDir: services/notification-worker
     plan: starter
-    branch: claude/world-catalogue-build-thyf4l
     buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
