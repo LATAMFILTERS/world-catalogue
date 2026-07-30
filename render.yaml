@@ -220,6 +220,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
@@ -257,6 +258,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
@@ -294,6 +296,7 @@ services:
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
+    # Force redeploy - Product database lookup implementation
     envVars:
       - key: NODE_VERSION
         value: "20"
