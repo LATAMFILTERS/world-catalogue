@@ -3,6 +3,28 @@ import express, { type Request } from 'express';
 import { Pool } from 'pg';
 import { z } from 'zod';
 
+// Check if required secrets are configured. If not, exit gracefully.
+// This service is disabled until all environment variables are provided.
+const requiredSecrets = [
+  'KNOWLEDGE_API_KEY',
+  'SYSTEM_ACTOR_ID',
+  'META_APP_SECRET',
+  'META_VERIFY_TOKEN',
+  'WEB_CHAT_SHARED_SECRET'
+];
+
+const missingSecrets = requiredSecrets.filter(key => !process.env[key]);
+if (missingSecrets.length > 0) {
+  console.log(JSON.stringify({
+    event: 'service_disabled',
+    reason: 'Missing required environment variables',
+    service: 'knowledge-channel-gateway',
+    missing_secrets: missingSecrets,
+    status: 'This service is disabled. Configure the above secrets to enable.'
+  }));
+  process.exit(0);
+}
+
 const required = z.object({
   PORT: z.coerce.number().int().positive().default(3012),
   DATABASE_URL: z.string().min(1),
