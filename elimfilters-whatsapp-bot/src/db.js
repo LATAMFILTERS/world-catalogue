@@ -177,9 +177,10 @@ export function createDb(connectionString) {
       const r = await pool.query(
         `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
          FROM elimfilters_catalog
-         WHERE oem_codes::text ILIKE $1
+         WHERE oem_codes @> jsonb_build_array(jsonb_build_object('code', $1))
+            OR oem_codes::text ILIKE $2
          LIMIT 5`,
-        [`%${oemCode}%`]
+        [oemCode, `%${oemCode}%`]
       );
       return r.rows;
     },
@@ -188,9 +189,10 @@ export function createDb(connectionString) {
       const r = await pool.query(
         `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
          FROM elimfilters_catalog
-         WHERE competitor_codes::text ILIKE $1
+         WHERE competitor_codes @> jsonb_build_array(jsonb_build_object('code', $1))
+            OR competitor_codes::text ILIKE $2
          LIMIT 5`,
-        [`%${competitorCode}%`]
+        [competitorCode, `%${competitorCode}%`]
       );
       return r.rows;
     },
