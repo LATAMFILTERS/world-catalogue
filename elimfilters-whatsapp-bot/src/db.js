@@ -25,13 +25,13 @@ export function createDb(connectionString) {
       `);
 
       await pool.query(`
-        CREATE TABLE IF NOT EXISTS linkedin_jobs (
+        CREATE TABLE IF NOT EXISTS whatsapp_messages (
           event_id TEXT PRIMARY KEY,
-          event_type TEXT NOT NULL DEFAULT 'comment',
+          type TEXT NOT NULL DEFAULT 'message',
+          phone_number_id TEXT,
+          from_number TEXT NOT NULL,
           message_text TEXT NOT NULL,
-          author_urn TEXT,
-          author_name TEXT,
-          target_urn TEXT,
+          message_timestamp BIGINT,
           status TEXT NOT NULL DEFAULT 'pending',
           attempts INTEGER NOT NULL DEFAULT 0,
           response_text TEXT,
@@ -117,10 +117,10 @@ export function createDb(connectionString) {
 
     async enqueue(e) {
       const r = await pool.query(
-        `INSERT INTO linkedin_jobs (event_id, event_type, message_text, author_urn, author_name, target_urn)
+        `INSERT INTO whatsapp_messages (event_id, type, phone_number_id, from_number, message_text, message_timestamp)
          VALUES ($1, $2, $3, $4, $5, $6)
          ON CONFLICT (event_id) DO NOTHING`,
-        [e.id, e.type || 'comment', e.text, e.authorUrn, e.authorName, e.targetUrn]
+        [e.event_id, e.type || 'message', e.phone_number_id, e.from_number, e.message_text, e.message_timestamp]
       );
       return r.rowCount === 1;
     },
@@ -147,13 +147,13 @@ export function createDb(connectionString) {
     async claim(limit = 3) {
       const r = await pool.query(
         `WITH selected AS (
-           SELECT event_id FROM linkedin_jobs
+           SELECT event_id FROM whatsapp_messages
            WHERE status = 'pending' AND attempts < 3
            ORDER BY created_at
            FOR UPDATE SKIP LOCKED
            LIMIT $1
          )
-         UPDATE linkedin_jobs j
+         UPDATE whatsapp_messages j
          SET status = 'processing', attempts = attempts + 1
          FROM selected
          WHERE j.event_id = selected.event_id
@@ -165,7 +165,7 @@ export function createDb(connectionString) {
 
     async complete(id, response) {
       await pool.query(
-        `UPDATE linkedin_jobs
+        `UPDATE whatsapp_messages
          SET status = 'completed', response_text = $2, processed_at = NOW(), error_text = NULL
          WHERE event_id = $1`,
         [id, response]
@@ -174,7 +174,7 @@ export function createDb(connectionString) {
 
     async fail(id, error) {
       await pool.query(
-        `UPDATE linkedin_jobs
+        `UPDATE whatsapp_messages
          SET status = CASE WHEN attempts >= 3 THEN 'failed' ELSE 'pending' END,
              error_text = $2
          WHERE event_id = $1`,
@@ -183,14 +183,14 @@ export function createDb(connectionString) {
     },
 
     async status() {
-      const r = await pool.query("SELECT status, COUNT(*)::int AS count FROM linkedin_jobs GROUP BY status");
+      const r = await pool.query("SELECT status, COUNT(*)::int AS count FROM whatsapp_messages GROUP BY status");
       return Object.fromEntries(r.rows.map(x => [x.status, x.count]));
     },
 
     async recentDrafts(limit = 10) {
       const r = await pool.query(
-        `SELECT response_text, processed_at FROM linkedin_jobs
-         WHERE status = 'completed' AND response_text IS NOT NULL AND response_text <> 'NO_REPLY'
+        `SELECT response_text, processed_at FROM whatsapp_messages
+         WHERE status = 'completed' AND response_text IS NOT NULL
          ORDER BY processed_at DESC LIMIT $1`,
         [limit]
       );
