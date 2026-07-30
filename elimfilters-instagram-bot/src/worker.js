@@ -19,6 +19,8 @@ export function createWorker({ config, db, knowledgeSystem }) {
         try {
           console.log(`[Instagram Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
 
+          await db.createOrUpdateSession(job.from, 'instagram');
+
           // Recuperar historial de conversación para contexto
           const conversationHistory = await db.getConversationHistory(job.from, 'instagram', 10);
           const conversationContext = conversationHistory.length > 0

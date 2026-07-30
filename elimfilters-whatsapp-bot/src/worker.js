@@ -19,6 +19,9 @@ export function createWorker({ config, db, knowledgeSystem }) {
         try {
           console.log(`[WhatsApp Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
 
+          // Crear o actualizar sesión
+          await db.createOrUpdateSession(job.from, 'whatsapp');
+
           // Recuperar historial de conversación para contexto
           const conversationHistory = await db.getConversationHistory(job.from, 'whatsapp', 10);
           const conversationContext = conversationHistory.length > 0

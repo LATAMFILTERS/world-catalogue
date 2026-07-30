@@ -68,6 +68,18 @@ export function createDb(connectionString) {
         )
       `);
 
+      await pool.query(`
+        CREATE TABLE IF NOT EXISTS conversation_sessions (
+          id SERIAL PRIMARY KEY,
+          user_id TEXT NOT NULL,
+          platform TEXT NOT NULL,
+          session_started_at TIMESTAMPTZ DEFAULT NOW(),
+          last_activity_at TIMESTAMPTZ DEFAULT NOW(),
+          status TEXT DEFAULT 'active',
+          UNIQUE(user_id, platform)
+        )
+      `);
+
       // Propagate Heavy Duty equipment applications across cross-references automatically
       try {
         await pool.query(`
@@ -290,6 +302,43 @@ export function createDb(connectionString) {
         [userId, platform, limit]
       );
       return r.rows.reverse();
+    },
+
+    async createOrUpdateSession(userId, platform) {
+      await pool.query(
+        `INSERT INTO conversation_sessions (user_id, platform, status)
+         VALUES ($1, $2, 'active')
+         ON CONFLICT (user_id, platform)
+         DO UPDATE SET last_activity_at = NOW(), status = 'active'`,
+        [userId, platform]
+      );
+    },
+
+    async getInactiveSessions(inactivityMinutes = 1) {
+      const r = await pool.query(
+        `SELECT id, user_id, platform FROM conversation_sessions
+         WHERE status = 'active'
+         AND last_activity_at < NOW() - INTERVAL '${inactivityMinutes} minutes'`
+      );
+      return r.rows;
+    },
+
+    async clearSessionHistory(userId, platform) {
+      await pool.query(
+        `DELETE FROM conversation_history
+         WHERE user_id = $1 AND platform = $2`,
+        [userId, platform]
+      );
+    },
+
+    async closeSession(userId, platform) {
+      await pool.query(
+        `UPDATE conversation_sessions
+         SET status = 'closed'
+         WHERE user_id = $1 AND platform = $2`,
+        [userId, platform]
+      );
+      await this.clearSessionHistory(userId, platform);
     }
   };
 }

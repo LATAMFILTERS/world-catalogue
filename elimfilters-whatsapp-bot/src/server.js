@@ -4,13 +4,22 @@ import { createDb } from "./db.js";
 import { createKnowledgeSystemClient } from "./knowledge-system.js";
 import { verifyLinkedinSignature, normalizeLinkedinEvents } from "./security.js";
 import { createWorker } from "./worker.js";
+import { createInactivityCleaner } from "./inactivity-cleaner.js";
+import { createWhatsAppClient } from "./whatsapp.js";
 
 const config = getConfig();
 const db = createDb(config.databaseUrl);
 await db.init();
 const knowledgeSystem = createKnowledgeSystemClient(config);
 
+const whatsapp = createWhatsAppClient({
+  accessToken: config.metaAccessToken,
+  phoneNumberId: config.whatsappPhoneNumberId,
+  graphApiVersion: config.metaGraphApiVersion
+});
+
 const worker = createWorker({ config, db, knowledgeSystem });
+const inactivityCleaner = createInactivityCleaner({ db, whatsapp, instagram: null, youtube: null });
 const app = express();
 
 const webhookStats = {
@@ -125,8 +134,9 @@ app.post("/webhook", express.json({ limit: "1mb" }), async (req, res) => {
   setImmediate(() => worker.run().catch(console.error));
 });
 
-app.listen(config.port, () =>
-  console.log(`ELIMFILTERS WhatsApp bot listening on port ${config.port}; dryRun=${config.dryRun}`)
-);
+app.listen(config.port, () => {
+  console.log(`ELIMFILTERS WhatsApp bot listening on port ${config.port}; dryRun=${config.dryRun}`);
+  inactivityCleaner.start();
+});
 
 setInterval(() => worker.run().catch(console.error), 5 * 60 * 1000).unref();
