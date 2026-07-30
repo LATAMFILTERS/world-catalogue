@@ -286,8 +286,6 @@ services:
       - key: ENGINE_API_KEY
         sync: false
 
-<<<<<<< HEAD
-=======
   - type: web
     name: elimfilters-youtube-bot
     runtime: node
@@ -324,8 +322,6 @@ services:
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
         sync: false
-
->>>>>>> claude/world-catalogue-build-thyf4l
   # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
   - type: background_worker
     name: notification-worker-staging

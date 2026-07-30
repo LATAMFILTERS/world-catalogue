@@ -39,8 +39,8 @@ app.get("/terms", (_req, res) =>
 app.get("/health", async (_req, res) =>
   res.json({
     ok: true,
-    service: "elimfilters-linkedin-bot",
-    organizationId: config.linkedinOrganizationId,
+    service: "elimfilters-whatsapp-bot",
+    businessAccountId: config.whatsappBusinessAccountId,
     dryRun: config.dryRun,
     queue: await db.status(),
     webhook: webhookStats
@@ -52,46 +52,81 @@ app.get("/review-drafts", async (_req, res) => {
   res.json({ ok: true, dryRun: true, drafts: await db.recentDrafts(10) });
 });
 
-// LinkedIn Webhook verification / challenge endpoint
+// WhatsApp Webhook verification / challenge endpoint (Meta)
 app.get("/webhook", (req, res) => {
-  const challenge = req.query["challenge"] || req.query["hub.challenge"];
-  const token = req.query["verify_token"] || req.query["hub.verify_token"];
+  const mode = req.query["hub.mode"];
+  const token = req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
 
-  if (token !== config.linkedinVerifyToken) {
-    return res.sendStatus(403);
+  if (mode === "subscribe" && token === config.whatsappVerifyToken) {
+    return res.status(200).send(challenge);
   }
-  return res.status(200).send(challenge || "OK");
+  return res.sendStatus(403);
 });
 
-// LinkedIn Webhook event receiver
-app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
+// WhatsApp Webhook event receiver (Meta)
+app.post("/webhook", express.json({ limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
 
-  const signature = req.get("x-li-signature");
-  if (!verifyLinkedinSignature(req.body, signature, config.linkedinClientSecret)) {
-    webhookStats.rejected++;
-    return res.sendStatus(401);
+  const body = req.body;
+
+  // Verify Meta signature
+  const signature = req.get("x-hub-signature-256");
+  if (signature && config.metaAppSecret) {
+    const crypto = (await import("crypto")).default;
+    const hash = crypto
+      .createHmac("sha256", config.metaAppSecret)
+      .update(JSON.stringify(body))
+      .digest("hex");
+
+    if (`sha256=${hash}` !== signature) {
+      webhookStats.rejected++;
+      return res.sendStatus(401);
+    }
   }
 
-  let body;
-  try {
-    body = JSON.parse(req.body.toString("utf8"));
-  } catch {
-    return res.sendStatus(400);
+  // Process only message events from target business account
+  if (!body.entry) return res.sendStatus(200);
+
+  for (const entry of body.entry) {
+    if (entry.id !== config.whatsappBusinessAccountId) continue;
+
+    const changes = entry.changes || [];
+    for (const change of changes) {
+      if (change.field !== "messages") continue;
+      if (!change.value || !change.value.messages) continue;
+
+      const messages = change.value.messages || [];
+      const contacts = change.value.contacts || [];
+
+      for (const msg of messages) {
+        if (msg.type !== "text") continue;
+        if (!msg.text || !msg.text.body) continue;
+
+        const sender = contacts.find(c => c.wa_id === msg.from);
+        const event = {
+          id: msg.id,
+          type: "message",
+          timestamp: msg.timestamp,
+          from: msg.from,
+          fromName: sender?.profile?.name || msg.from,
+          text: msg.text.body,
+          phoneNumberId: change.value.metadata?.phone_number_id
+        };
+
+        await db.enqueue(event);
+        webhookStats.lastEventCount++;
+      }
+    }
   }
 
-  const events = normalizeLinkedinEvents(body, config.linkedinOrganizationId);
-  webhookStats.lastEventCount = events.length;
-
-  await Promise.all(events.map(e => db.enqueue(e)));
   res.sendStatus(200);
-
   setImmediate(() => worker.run().catch(console.error));
 });
 
 app.listen(config.port, () =>
-  console.log(`ELIMFILTERS LinkedIn bot listening on port ${config.port}; dryRun=${config.dryRun}`)
+  console.log(`ELIMFILTERS WhatsApp bot listening on port ${config.port}; dryRun=${config.dryRun}`)
 );
 
 setInterval(() => worker.run().catch(console.error), 5 * 60 * 1000).unref();

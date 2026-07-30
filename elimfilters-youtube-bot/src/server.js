@@ -2,7 +2,6 @@ import express from "express";
 import { getConfig } from "./config.js";
 import { createDb } from "./db.js";
 import { createKnowledgeSystemClient } from "./knowledge-system.js";
-import { verifyLinkedinSignature, normalizeLinkedinEvents } from "./security.js";
 import { createWorker } from "./worker.js";
 
 const config = getConfig();
@@ -24,23 +23,23 @@ const legalPage = (title, body) => `<!doctype html><html lang="en"><head><meta c
 
 app.get("/privacy", (_req, res) =>
   res.type("html").send(legalPage("Privacy Policy", `
-<p>LATAM FILTERS PRO INC, operating the ELIMFILTERS brand, uses the official LinkedIn Developer API to assist with company page communications on the @elimfilters professional account.</p>
-<h2>Information processed</h2><p>We process incoming post comments, direct message content, sender URNs, timestamps, and metadata required to generate AI assistance.</p>
-<h2>Purpose and providers</h2><p>The information is used only to understand and respond to LinkedIn interactions, prevent duplicate processing and protect the service. Processing may involve LinkedIn, Render hosting, PostgreSQL storage and NVIDIA NIM. We do not sell personal information.</p>
+<p>LATAM FILTERS PRO INC, operating the ELIMFILTERS brand, uses the official YouTube Data API to assist with channel communications on the @elimfilters YouTube channel.</p>
+<h2>Information processed</h2><p>We process incoming comment content, commenter IDs, timestamps, and metadata required to generate AI assistance.</p>
+<h2>Purpose and providers</h2><p>The information is used only to understand and respond to YouTube comments, prevent duplicate processing and protect the service. Processing may involve YouTube, Render hosting, PostgreSQL storage and NVIDIA NIM. We do not sell personal information.</p>
 <h2>Contact</h2><p>ELIMFILTERS — <a href="mailto:elimfilters@gmail.com">elimfilters@gmail.com</a></p>`))
 );
 
 app.get("/terms", (_req, res) =>
   res.type("html").send(legalPage("Terms of Service", `
-<p>This service assists ELIMFILTERS with managing communications on its LinkedIn Organization Page. Use of LinkedIn remains subject to LinkedIn's User Agreement and API Terms.</p>
+<p>This service assists ELIMFILTERS with managing communications on its YouTube Channel. Use of YouTube remains subject to Google's Terms of Service and API Terms.</p>
 <p>Questions: <a href="mailto:elimfilters@gmail.com">elimfilters@gmail.com</a>.</p>`))
 );
 
 app.get("/health", async (_req, res) =>
   res.json({
     ok: true,
-    service: "elimfilters-linkedin-bot",
-    organizationId: config.linkedinOrganizationId,
+    service: "elimfilters-youtube-bot",
+    youtubeChannelId: config.youtubeChannelId,
     dryRun: config.dryRun,
     queue: await db.status(),
     webhook: webhookStats
@@ -52,46 +51,61 @@ app.get("/review-drafts", async (_req, res) => {
   res.json({ ok: true, dryRun: true, drafts: await db.recentDrafts(10) });
 });
 
-// LinkedIn Webhook verification / challenge endpoint
+// YouTube Webhook verification / challenge endpoint
 app.get("/webhook", (req, res) => {
-  const challenge = req.query["challenge"] || req.query["hub.challenge"];
-  const token = req.query["verify_token"] || req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
+  const token = req.query["hub.verify_token"];
 
-  if (token !== config.linkedinVerifyToken) {
+  if (token !== config.youtubeVerifyToken) {
     return res.sendStatus(403);
   }
   return res.status(200).send(challenge || "OK");
 });
 
-// LinkedIn Webhook event receiver
-app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
+// YouTube Webhook event receiver (Pub/Sub from YouTube)
+app.post("/webhook", express.json({ limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
 
-  const signature = req.get("x-li-signature");
-  if (!verifyLinkedinSignature(req.body, signature, config.linkedinClientSecret)) {
-    webhookStats.rejected++;
-    return res.sendStatus(401);
+  const body = req.body;
+
+  // YouTube Pub/Sub message format
+  if (body.subscription && body.message) {
+    // This is a test notification
+    if (body.message.data === "test") {
+      return res.sendStatus(200);
+    }
+
+    // Process actual updates (video comments, channel activity)
+    try {
+      const messageData = JSON.parse(Buffer.from(body.message.data, "base64").toString("utf-8"));
+
+      if (messageData.topicTitle && messageData.topicTitle.includes(config.youtubeChannelId)) {
+        // Video comment or activity update related to this channel
+        const event = {
+          id: body.message.messageId,
+          type: "youtube_activity",
+          timestamp: new Date().toISOString(),
+          channelId: config.youtubeChannelId,
+          data: messageData,
+          platform: "youtube"
+        };
+
+        await db.enqueue(event);
+        webhookStats.lastEventCount++;
+      }
+    } catch (err) {
+      console.error("Error parsing YouTube webhook data:", err);
+      webhookStats.rejected++;
+    }
   }
 
-  let body;
-  try {
-    body = JSON.parse(req.body.toString("utf8"));
-  } catch {
-    return res.sendStatus(400);
-  }
-
-  const events = normalizeLinkedinEvents(body, config.linkedinOrganizationId);
-  webhookStats.lastEventCount = events.length;
-
-  await Promise.all(events.map(e => db.enqueue(e)));
   res.sendStatus(200);
-
   setImmediate(() => worker.run().catch(console.error));
 });
 
 app.listen(config.port, () =>
-  console.log(`ELIMFILTERS LinkedIn bot listening on port ${config.port}; dryRun=${config.dryRun}`)
+  console.log(`ELIMFILTERS YouTube bot listening on port ${config.port}; dryRun=${config.dryRun}`)
 );
 
 setInterval(() => worker.run().catch(console.error), 5 * 60 * 1000).unref();

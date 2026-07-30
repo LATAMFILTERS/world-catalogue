@@ -8,13 +8,12 @@ function requireValue(name, val) {
 export function getConfig() {
   return {
     port: parseInt(process.env.PORT || "10000", 10),
-    linkedinClientId: requireValue("YOUTUBE_BOT_CLIENT_ID", process.env.YOUTUBE_BOT_CLIENT_ID),
-    linkedinClientSecret: requireValue("YOUTUBE_BOT_CLIENT_SECRET", process.env.YOUTUBE_BOT_CLIENT_SECRET),
-    linkedinOrganizationId: requireValue("YOUTUBE_BOT_ORGANIZATION_ID", process.env.YOUTUBE_BOT_ORGANIZATION_ID),
-    linkedinVerifyToken: requireValue("YOUTUBE_BOT_VERIFY_TOKEN", process.env.YOUTUBE_BOT_VERIFY_TOKEN),
+    youtubeApiKey: requireValue("YOUTUBE_API_KEY", process.env.YOUTUBE_API_KEY),
+    youtubeChannelId: requireValue("YOUTUBE_CHANNEL_ID", process.env.YOUTUBE_CHANNEL_ID),
+    youtubeVerifyToken: requireValue("YOUTUBE_VERIFY_TOKEN", process.env.YOUTUBE_VERIFY_TOKEN),
     databaseUrl: requireValue("DATABASE_URL", process.env.DATABASE_URL),
     nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
-    nvidiaModel: process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
+    nvidiaModel: process.env.NVIDIA_NIM_MODEL || process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
     dryRun: (process.env.DRY_RUN || "true").toLowerCase() === "true",
     // Knowledge System Integration
     KNOWLEDGE_CENTER_API_URL: process.env.KNOWLEDGE_CENTER_API_URL?.trim() || "https://knowledge-center-api-staging.onrender.com",
