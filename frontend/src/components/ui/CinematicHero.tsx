@@ -36,7 +36,7 @@ export default function CinematicHero() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          opacity: 0.32,
+          opacity: 0.52,
           zIndex: 0,
         }}
       >
@@ -49,7 +49,7 @@ export default function CinematicHero() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.50) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 40%)",
+            "linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 40%)",
           zIndex: 1,
         }}
       />
