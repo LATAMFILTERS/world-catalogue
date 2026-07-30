@@ -226,13 +226,37 @@ export function createDb(connectionString) {
 
     async searchByMotor(motorCode) {
       console.log(`[DB] Searching motor/application: ${motorCode}`);
-      const r = await pool.query(
-        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description, equipment_applications
-         FROM elimfilters_catalog
-         WHERE equipment_applications::text ILIKE $1
-         LIMIT 5`,
-        [`%${motorCode}%`]
-      );
+
+      // Map common motor codes to full names
+      const motorMap = {
+        'DD60': 'DETROIT DIESEL SERIES 60',
+        'DD50': 'DETROIT DIESEL SERIES 50',
+        'DD12': 'DETROIT DIESEL 12',
+        'C15': 'CATERPILLAR C15',
+        'C13': 'CATERPILLAR C13',
+        'C12': 'CATERPILLAR C12',
+        'CUMMINS': 'CUMMINS',
+        'MERCEDES': 'MERCEDES-BENZ'
+      };
+
+      // Extract potential motor codes from text
+      let searchTerms = [motorCode];
+      for (const [abbrev, fullName] of Object.entries(motorMap)) {
+        if (motorCode.toUpperCase().includes(abbrev)) {
+          searchTerms.push(fullName);
+        }
+      }
+
+      console.log(`[DB] Motor search terms: ${searchTerms.join(', ')}`);
+
+      // Build OR conditions for each search term
+      const conditions = searchTerms.map((_, i) => `equipment_applications::text ILIKE $${i + 1}`).join(' OR ');
+      const query = `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description, equipment_applications
+                     FROM elimfilters_catalog
+                     WHERE ${conditions}
+                     LIMIT 5`;
+
+      const r = await pool.query(query, searchTerms.map(term => `%${term}%`));
       console.log(`[DB] Found ${r.rows.length} results for motor ${motorCode}`);
       return r.rows;
     }
