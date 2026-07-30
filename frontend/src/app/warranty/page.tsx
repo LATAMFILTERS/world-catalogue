@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
+import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 
 const STATS_KEYS = ['warranty.statValue1', 'warranty.statValue2', 'warranty.statValue3', 'warranty.statValue4'];
@@ -54,7 +55,7 @@ export default function WarrantyPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>{t('warranty.homeLink')}</Link>
+      <PageHeader currentPage="Warranty" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/warranty-support.avif)' }} />
@@ -181,14 +182,6 @@ export default function WarrantyPage() {
 }
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
-
-const homeButton: CSSProperties = {
-  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
-  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
-};
 
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',

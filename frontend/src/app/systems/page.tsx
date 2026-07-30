@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { PageHeader } from '@/components/PageHeader';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
@@ -81,7 +82,7 @@ export default function SystemsPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <PageHeader currentPage="Systems" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/assets/hero-systems.avif)' }} />

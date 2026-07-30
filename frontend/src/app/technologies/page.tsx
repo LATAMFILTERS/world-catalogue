@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { TechnologiesPortfolio } from '@/components/TechnologiesPortfolio';
+import { PageHeader } from '@/components/PageHeader';
 
 export const metadata = {
   title: 'Proprietary Filtration Technologies',
@@ -41,7 +42,7 @@ export default function TechnologiesPage() {
   return (
     <main className="technologies-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Link href="/" style={homeButton}>HOME</Link>
+      <PageHeader currentPage="Technologies" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/operator-technology.avif)' }} />
@@ -90,13 +91,6 @@ const bodyFont = 'var(--font-body)';
 const approvedDisplayFont = "'Chakra Petch', 'Arial Narrow', monospace";
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-const homeButton: CSSProperties = {
-  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
-  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
-  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
-};
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
   padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',

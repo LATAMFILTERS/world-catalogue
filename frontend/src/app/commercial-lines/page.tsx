@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { PageHeader } from '@/components/PageHeader';
 
 const LINES = [
   {
@@ -48,7 +49,7 @@ export default function CommercialLinesPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <PageHeader currentPage="Commercial" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/commercial-lines-hero.avif)' }} />

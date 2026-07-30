@@ -1,4 +1,5 @@
 ﻿'use client';
+import { PageHeader } from '@/components/PageHeader';
 
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
@@ -68,7 +69,7 @@ export default function DistributorsPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>{t('distributors.homeLink')}</Link>
+      <PageHeader currentPage="Distributors" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/distributor-network.avif)' }} />

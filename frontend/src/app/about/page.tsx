@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 
 const ENGINEERING_METHOD = [
@@ -76,7 +77,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaAboutPage) }} />
 
-      <Link href="/" style={homeButton}>{t('about.homeLink')}</Link>
+      <PageHeader currentPage="About" />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
@@ -177,22 +178,6 @@ export default function AboutPage() {
   );
 }
 
-const homeButton: React.CSSProperties = {
-  position: 'fixed',
-  top: '1.1rem',
-  right: '1.35rem',
-  zIndex: 50,
-  background: 'rgba(0,0,0,0.78)',
-  border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D',
-  textDecoration: 'none',
-  fontFamily: 'var(--font-display)',
-  fontWeight: 700,
-  letterSpacing: '0.16em',
-  fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem',
-  backdropFilter: 'blur(14px)',
-};
 
 const heroSection: React.CSSProperties = {
   minHeight: '92vh',
