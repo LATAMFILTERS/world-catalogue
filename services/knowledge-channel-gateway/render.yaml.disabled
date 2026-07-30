@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: knowledge-channel-gateway
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: PORT
+        value: "3012"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: KNOWLEDGE_API_URL
+        value: "https://knowledge-center-api-staging.onrender.com/api/knowledge-center/v1"
+      - key: KNOWLEDGE_API_KEY
+        sync: false
+      - key: SYSTEM_ACTOR_ID
+        value: "00000000-0000-0000-0000-000000000000"
+      - key: META_APP_SECRET
+        sync: false
+      - key: META_VERIFY_TOKEN
+        sync: false
+      - key: WEB_CHAT_SHARED_SECRET
+        sync: false
+      - key: MICROSOFT_GRAPH_TENANT_ID
+        sync: false
+      - key: MICROSOFT_GRAPH_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_GRAPH_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_GRAPH_MAILBOX
+        value: "support@elimfilters.com"
+# Blueprint sync status refresh trigger

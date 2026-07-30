@@ -3,16 +3,88 @@ import express, { type Request } from 'express';
 import { Pool } from 'pg';
 import { z } from 'zod';
 
-const required = z.object({
-  PORT: z.coerce.number().int().positive().default(3012),
-  DATABASE_URL: z.string().min(1),
-  KNOWLEDGE_API_URL: z.string().url(),
-  KNOWLEDGE_API_KEY: z.string().min(16),
-  SYSTEM_ACTOR_ID: z.string().uuid(),
-  META_APP_SECRET: z.string().min(8),
-  META_VERIFY_TOKEN: z.string().min(8),
-  WEB_CHAT_SHARED_SECRET: z.string().min(8)
-}).parse(process.env);
+// Check if required secrets are configured
+const requiredSecrets = [
+  'KNOWLEDGE_API_KEY',
+  'SYSTEM_ACTOR_ID',
+  'META_APP_SECRET',
+  'META_VERIFY_TOKEN',
+  'WEB_CHAT_SHARED_SECRET'
+];
+
+const missingSecrets = requiredSecrets.filter(key => !process.env[key]);
+const isServiceDisabled = missingSecrets.length > 0;
+
+if (isServiceDisabled) {
+  console.log(JSON.stringify({
+    event: 'service_disabled',
+    reason: 'Missing required environment variables',
+    service: 'knowledge-channel-gateway',
+    missing_secrets: missingSecrets,
+    status: 'Service will start but return 503 on all endpoints until secrets are configured.'
+  }));
+}
+
+// Create minimal server when disabled, full server when enabled
+const app = express();
+app.disable('x-powered-by');
+app.use(express.json({ limit: '2mb' }));
+
+// Health check always works
+app.get('/health', (_req, res) => {
+  if (isServiceDisabled) {
+    return res.status(503).json({
+      status: 'disabled',
+      reason: 'Missing required secrets',
+      missing: missingSecrets,
+      service: 'knowledge-channel-gateway'
+    });
+  }
+  res.json({ status: 'ok', service: 'knowledge-channel-gateway' });
+});
+
+// If service is disabled, return 503 on all other endpoints
+if (isServiceDisabled) {
+  app.all('*', (_req, res) => {
+    res.status(503).json({
+      status: 'service_unavailable',
+      reason: 'knowledge-channel-gateway requires configuration',
+      missing_secrets: missingSecrets,
+      configure_and_redeploy: 'Add the above secrets to Render environment variables and redeploy'
+    });
+  });
+
+  const port = parseInt(process.env.PORT || '3012', 10);
+  const server = app.listen(port, () => {
+    console.log(JSON.stringify({
+      event: 'service_listening_disabled',
+      port,
+      service: 'knowledge-channel-gateway',
+      status: 'Listening but all endpoints return 503 (Service Unavailable)'
+    }));
+  });
+
+  process.on('SIGTERM', () => {
+    console.log('SIGTERM received, shutting down...');
+    server.close(() => process.exit(0));
+  });
+
+  process.on('SIGINT', () => {
+    console.log('SIGINT received, shutting down...');
+    server.close(() => process.exit(0));
+  });
+} else {
+  // Service is enabled, proceed with full initialization
+  const required = z.object({
+    PORT: z.coerce.number().int().positive().default(3012),
+    DATABASE_URL: z.string().min(1),
+    KNOWLEDGE_API_URL: z.string().url(),
+    KNOWLEDGE_API_KEY: z.string().min(16),
+    SYSTEM_ACTOR_ID: z.string().uuid(),
+    META_APP_SECRET: z.string().min(8),
+    META_VERIFY_TOKEN: z.string().min(8),
+    WEB_CHAT_SHARED_SECRET: z.string().min(8)
+  }).parse(process.env);
 
 const pool = new Pool({ connectionString: required.DATABASE_URL, max: 10 });
 const app = express();
@@ -159,5 +231,6 @@ app.post('/internal/email-events', async (req,res,next) => {
 
 app.use((error: unknown,_req:Request,res:express.Response,_next:express.NextFunction)=>{const message=error instanceof Error?error.message:'Unexpected error';res.status(error instanceof z.ZodError?400:500).json({error:'CHANNEL_GATEWAY_ERROR',message});});
 
-const server=app.listen(required.PORT,()=>console.log(JSON.stringify({event:'listening',port:required.PORT})));
-for(const signal of ['SIGINT','SIGTERM']) process.on(signal,()=>server.close(async()=>{await pool.end();process.exit(0);}));
+  const server=app.listen(required.PORT,()=>console.log(JSON.stringify({event:'listening',port:required.PORT})));
+  for(const signal of ['SIGINT','SIGTERM']) process.on(signal,()=>server.close(async()=>{await pool.end();process.exit(0);}));
+}

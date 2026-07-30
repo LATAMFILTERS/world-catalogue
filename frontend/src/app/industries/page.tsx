@@ -217,12 +217,12 @@ const marketCard: CSSProperties = {
 
 const marketImage: CSSProperties = {
   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.76, filter: 'brightness(1.12) contrast(1.04)',
+  opacity: 0.88, filter: 'brightness(1.12) contrast(1.04)',
 };
 
 const marketOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.42) 52%, rgba(0,0,0,0.78) 100%), linear-gradient(90deg, rgba(0,0,0,0.42), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.28) 52%, rgba(0,0,0,0.50) 100%), linear-gradient(90deg, rgba(0,0,0,0.28), transparent)',
 };
 
 const marketContent: CSSProperties = {
