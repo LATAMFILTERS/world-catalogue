@@ -22,15 +22,22 @@ export function createWorker({ config, db, knowledgeSystem }) {
           const text = job.message_text.trim().toUpperCase();
           console.log(`[Worker] Processing message: "${text.slice(0, 80)}..."`);
 
-          // Extraer códigos del mensaje (permite mensajes como "P552100" o "Donaldson P552100")
+          // Extraer códigos del mensaje
+          const motorMatch = text.match(/\b(DD|C|6BT|ISX)\d{1,4}\b/i);  // Motor codes: DD60, C15, 6BT, ISX500
           const oemCodeMatch = text.match(/[A-Z]\d{3,10}/);
           const competitorCodeMatch = text.match(/[A-Z]{2,}\d{3,10}/);
           const skuMatch = text.match(/EL\d{3,10}/);
 
-          console.log(`[Worker] Regex matches - OEM: ${oemCodeMatch?.[0]}, Competitor: ${competitorCodeMatch?.[0]}, SKU: ${skuMatch?.[0]}`);
+          console.log(`[Worker] Regex matches - Motor: ${motorMatch?.[0]}, OEM: ${oemCodeMatch?.[0]}, Competitor: ${competitorCodeMatch?.[0]}, SKU: ${skuMatch?.[0]}`);
 
-          // Intentar búsqueda por código OEM (P552100, etc.)
-          if (oemCodeMatch) {
+          // Intentar búsqueda por motor PRIMERO (DD60, C15, 6BT, etc.) - más probable
+          if (motorMatch) {
+            console.log(`[Worker] Attempting motor search for: ${motorMatch[0]}`);
+            products = await db.searchByMotor(motorMatch[0]);
+          }
+
+          // Si no hay resultados, intentar por código OEM (P552100, etc.)
+          if (!products.length && oemCodeMatch) {
             console.log(`[Worker] Attempting OEM search for: ${oemCodeMatch[0]}`);
             products = await db.searchByOemCode(oemCodeMatch[0]);
           }
@@ -52,12 +59,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
           if (!products.length) {
             console.log(`[Worker] Falling back to keyword search`);
             products = await db.searchByKeyword(text.slice(0, 50));
-          }
-
-          // Si aún sin resultados, buscar por motor (DD60, 6BT, etc.)
-          if (!products.length) {
-            console.log(`[Worker] Attempting motor/application search`);
-            products = await db.searchByMotor(text.slice(0, 50));
           }
 
           console.log(`[Worker] Search complete - found ${products.length} products`);
