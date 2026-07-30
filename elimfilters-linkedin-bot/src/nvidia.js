@@ -6,7 +6,7 @@ export function createNvidiaClient({ apiKey, model, pool }) {
       let catalogContext = "";
 
       // 1. Live Catalog Lookup - Cliente busca por códigos OEM/Competitor que CONOCE
-      // Objetivo: Traducir "Donaldson P552100" → "SKU EA10695"
+      // Objetivo: Traducir "Donaldson P552100" → "SKU EL82100"
       if (pool && typeof userMessage === "string") {
         const cleanedMsg = userMessage.trim().toUpperCase();
         const codeMatches = cleanedMsg.match(/\b[A-Z0-9\-]{3,15}\b/g) || [];
