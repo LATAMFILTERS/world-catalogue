@@ -186,7 +186,7 @@ services:
     plan: starter
     buildCommand: npm ci && npm run build
     startCommand: node server.js
-    healthCheckPath: /
+    healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
         value: "20"
