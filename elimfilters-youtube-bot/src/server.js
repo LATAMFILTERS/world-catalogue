@@ -22,6 +22,15 @@ const webhookStats = {
 // Middleware
 app.use(express.json({ limit: "1mb" }));
 
+// Root endpoint
+app.get("/", (_req, res) => {
+  res.json({
+    service: "elimfilters-youtube-bot",
+    status: "running",
+    webhook: "POST to /webhook to send messages"
+  });
+});
+
 // Health check
 app.get("/health", async (_req, res) => {
   res.json({
