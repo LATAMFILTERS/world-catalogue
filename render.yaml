@@ -214,34 +214,9 @@ services:
   #     - key: MICROSOFT_GRAPH_MAILBOX
   #       value: support@elimfilters.com
 
-  # Knowledge Review — Admin interface for case review and knowledge authoring (Phase 2+ Staging)
-  # TEMPORARILY DISABLED: Requires secrets (KNOWLEDGE_CENTER_API_KEY, KNOWLEDGE_CENTER_ACTOR_ID)
-  # Re-enable once all secrets are configured in Render console
-  #
-  # - type: web
-  #   name: knowledge-review-staging
-  #   runtime: node
-  #   rootDir: apps/knowledge-review
-  #   plan: starter
-  #   branch: claude/world-catalogue-build-thyf4l
-  #   buildCommand: npm ci && npm run build
-  #   startCommand: npm run start
-  #   healthCheckPath: /
-  #   envVars:
-  #     - key: NODE_VERSION
-  #       value: "20"
-  #     - key: NODE_ENV
-  #       value: production
-  #     - key: KNOWLEDGE_CENTER_API_URL
-  #       value: https://knowledge-center-api-staging.onrender.com
-  #     - key: KNOWLEDGE_CENTER_API_KEY
-  #       sync: false
-  #     - key: KNOWLEDGE_CENTER_ACTOR_ID
-  #       sync: false
-  #     - key: KNOWLEDGE_CENTER_ACTOR_ROLE
-  #       value: ADMIN
-  #     - key: NEXT_PUBLIC_APP_NAME
-  #       value: ELIMFILTERS Knowledge Review
+  # Knowledge Review — DISABLED
+  # DO NOT ENABLE: Requires KNOWLEDGE_CENTER_API_KEY and KNOWLEDGE_CENTER_ACTOR_ID secrets
+  # Not configured for current deployment phase. Enable in Phase 2+ after secrets setup.
 
   # LinkedIn Bot (Phase 2 Implementation)
   - type: web
