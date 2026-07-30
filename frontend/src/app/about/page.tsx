@@ -210,14 +210,14 @@ const heroImage: React.CSSProperties = {
   backgroundImage: 'url(/images/grupo-filters.avif)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  opacity: 0.32,
+  opacity: 0.48,
 };
 
 const heroOverlay: React.CSSProperties = {
   position: 'absolute',
   inset: 0,
   background:
-    'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 38%)',
+    'linear-gradient(90deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 38%)',
 };
 
 const heroTitle: React.CSSProperties = {

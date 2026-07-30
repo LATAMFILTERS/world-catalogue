@@ -252,22 +252,22 @@ const hero: CSSProperties = {
   borderBottom: '1px solid rgba(255,255,255,0.08)',
 };
 
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.32 };
+const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.48 };
 const primaryAirHeroImage: CSSProperties = {
   ...heroImage,
-  opacity: 0.52,
+  opacity: 0.64,
   objectPosition: '64% center',
   filter: 'contrast(1.08) saturate(1.04)',
 };
 const airCleanerHousingHeroImage: CSSProperties = {
   ...heroImage,
-  opacity: 0.58,
+  opacity: 0.68,
   objectPosition: '68% center',
   filter: 'contrast(1.08) saturate(1.05)',
 };
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 34%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.44) 45%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 34%)',
 };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = {
