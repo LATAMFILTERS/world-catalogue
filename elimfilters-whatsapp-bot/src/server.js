@@ -138,6 +138,7 @@ function verifyWhatsAppSignature(rawBody, signature, appSecret) {
 
 const port = config.port || 3000;
 app.listen(port, () => {
+  logger.info(`🚀 WHATSAPP BOT v2 STARTED - Knowledge Engine Runtime integration active`);
   logger.info(`WhatsApp bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
 

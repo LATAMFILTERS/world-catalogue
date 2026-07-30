@@ -102,6 +102,7 @@ app.post("/webhook", express.raw({ type: ["application/json", "application/atom+
 
 const port = config.port || 3000;
 app.listen(port, () => {
+  logger.info(`🚀 YOUTUBE BOT v2 STARTED - Knowledge Engine Runtime integration active`);
   logger.info(`YouTube bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
 
