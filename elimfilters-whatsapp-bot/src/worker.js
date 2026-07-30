@@ -111,7 +111,7 @@ export function createWorker({ config, db, knowledgeSystem }) {
           logger.info(`Processing message`, logContext, { messagePreview: job.message_text?.slice(0, 80) });
 
           // Get or create conversation session
-          const session = await db.getOrCreateSession(job.phone_number_id, 'whatsapp');
+          const session = await db.getOrCreateSession(job.from_number, 'whatsapp');
           logContext.sessionId = session.session_id;
 
           // Extract entities from message
