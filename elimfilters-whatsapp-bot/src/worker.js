@@ -231,7 +231,7 @@ export function createWorker({ config, db, knowledgeSystem }) {
           }
 
           try {
-            await whatsappClient.sendMessage(job.phone_number_id, responseText);
+            await whatsappClient.sendMessage(job.from_number, responseText);
             await db.complete(job.event_id, responseText);
             logger.info('Message sent successfully', logContext);
           } catch (sendErr) {

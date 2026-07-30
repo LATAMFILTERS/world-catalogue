@@ -1,16 +1,15 @@
 import express from "express";
 import { getConfig } from "./config.js";
 import { createDb } from "./db.js";
-import { createKnowledgeSystemClient } from "./knowledge-system.js";
-import { verifyLinkedinSignature, normalizeLinkedinEvents } from "./security.js";
+import { createLogger } from "./logger.js";
 import { createWorker } from "./worker.js";
 
+const logger = createLogger("YouTube-Server");
 const config = getConfig();
 const db = createDb(config.databaseUrl);
 await db.init();
-const knowledgeSystem = createKnowledgeSystemClient(config);
 
-const worker = createWorker({ config, db, knowledgeSystem });
+const worker = createWorker({ config, db });
 const app = express();
 
 const webhookStats = {
@@ -20,78 +19,71 @@ const webhookStats = {
   lastReceivedAt: null
 };
 
-const legalPage = (title, body) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} | ELIMFILTERS</title><style>body{font:16px/1.6 Arial,sans-serif;max-width:820px;margin:48px auto;padding:0 22px;color:#171717}h1,h2{color:#111}a{color:#195faa}.muted{color:#666}</style></head><body><h1>${title}</h1>${body}<p class="muted">Last updated: July 24, 2026</p></body></html>`;
+// Middleware
+app.use(express.json({ limit: "1mb" }));
 
-app.get("/privacy", (_req, res) =>
-  res.type("html").send(legalPage("Privacy Policy", `
-<p>LATAM FILTERS PRO INC, operating the ELIMFILTERS brand, uses the official LinkedIn Developer API to assist with company page communications on the @elimfilters professional account.</p>
-<h2>Information processed</h2><p>We process incoming post comments, direct message content, sender URNs, timestamps, and metadata required to generate AI assistance.</p>
-<h2>Purpose and providers</h2><p>The information is used only to understand and respond to LinkedIn interactions, prevent duplicate processing and protect the service. Processing may involve LinkedIn, Render hosting, PostgreSQL storage and NVIDIA NIM. We do not sell personal information.</p>
-<h2>Contact</h2><p>ELIMFILTERS — <a href="mailto:elimfilters@gmail.com">elimfilters@gmail.com</a></p>`))
-);
-
-app.get("/terms", (_req, res) =>
-  res.type("html").send(legalPage("Terms of Service", `
-<p>This service assists ELIMFILTERS with managing communications on its LinkedIn Organization Page. Use of LinkedIn remains subject to LinkedIn's User Agreement and API Terms.</p>
-<p>Questions: <a href="mailto:elimfilters@gmail.com">elimfilters@gmail.com</a>.</p>`))
-);
-
-app.get("/health", async (_req, res) =>
+// Health check
+app.get("/health", async (_req, res) => {
   res.json({
     ok: true,
-    service: "elimfilters-linkedin-bot",
-    organizationId: config.linkedinOrganizationId,
+    service: "elimfilters-youtube-bot",
     dryRun: config.dryRun,
     queue: await db.status(),
     webhook: webhookStats
-  })
-);
-
-app.get("/review-drafts", async (_req, res) => {
-  if (!config.dryRun) return res.sendStatus(404);
-  res.json({ ok: true, dryRun: true, drafts: await db.recentDrafts(10) });
+  });
 });
 
-// LinkedIn Webhook verification / challenge endpoint
+// YouTube Webhook verification (GET challenge)
 app.get("/webhook", (req, res) => {
-  const challenge = req.query["challenge"] || req.query["hub.challenge"];
-  const token = req.query["verify_token"] || req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
+  const verifyToken = req.query["hub.verify_token"];
 
-  if (token !== config.linkedinVerifyToken) {
+  if (verifyToken !== config.youtubeVerifyToken) {
+    logger.warn("Invalid verify token", { received: verifyToken });
     return res.sendStatus(403);
   }
-  return res.status(200).send(challenge || "OK");
+
+  logger.info("Webhook verified");
+  res.status(200).send(challenge);
 });
 
-// LinkedIn Webhook event receiver
-app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
+// YouTube Webhook event receiver (POST comments)
+app.post("/webhook", async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
 
-  const signature = req.get("x-li-signature");
-  if (!verifyLinkedinSignature(req.body, signature, config.linkedinClientSecret)) {
-    webhookStats.rejected++;
-    return res.sendStatus(401);
-  }
+  const body = req.body;
 
-  let body;
   try {
-    body = JSON.parse(req.body.toString("utf8"));
-  } catch {
-    return res.sendStatus(400);
+    // YouTube sends updates via PubSubHubbub (RSS feed notifications)
+    // In production, you would parse the RSS feed and extract comments
+    // For now, we'll accept the webhook but note that YouTube requires
+    // polling the API for new comments on subscribed videos
+
+    const events = [];
+    // TODO: Implement YouTube comment polling
+    // YouTube does not push comments directly; it only notifies that a video was updated
+    // You must then poll the YouTube Data API to fetch new comments
+
+    webhookStats.lastEventCount = events.length;
+
+    if (events.length > 0) {
+      await Promise.all(events.map(e => db.enqueue(e)));
+      logger.info(`Queued ${events.length} comments`, { events: webhookStats });
+      setImmediate(() => worker.run().catch(console.error));
+    }
+
+    res.sendStatus(200);
+  } catch (err) {
+    logger.logError({ action: "webhook_processing" }, err);
+    res.sendStatus(500);
   }
-
-  const events = normalizeLinkedinEvents(body, config.linkedinOrganizationId);
-  webhookStats.lastEventCount = events.length;
-
-  await Promise.all(events.map(e => db.enqueue(e)));
-  res.sendStatus(200);
-
-  setImmediate(() => worker.run().catch(console.error));
 });
 
-app.listen(config.port, () =>
-  console.log(`ELIMFILTERS LinkedIn bot listening on port ${config.port}; dryRun=${config.dryRun}`)
-);
+const port = config.port || 3000;
+app.listen(port, () => {
+  logger.info(`YouTube bot listening on port ${port}; dryRun=${config.dryRun}`);
+});
 
-setInterval(() => worker.run().catch(console.error), 5 * 60 * 1000).unref();
+// Periodic worker execution
+setInterval(() => worker.run().catch(console.error), 5000).unref();
