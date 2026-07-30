@@ -275,6 +275,8 @@ services:
         sync: false
       - key: WHATSAPP_VERIFY_TOKEN
         sync: false
+      - key: WHATSAPP_APP_SECRET
+        sync: false
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b
       - key: DRY_RUN
@@ -311,6 +313,8 @@ services:
       - key: INSTAGRAM_ACCESS_TOKEN
         sync: false
       - key: INSTAGRAM_VERIFY_TOKEN
+        sync: false
+      - key: INSTAGRAM_APP_SECRET
         sync: false
       - key: NVIDIA_MODEL
         value: nvidia/nemotron-3-super-120b-a12b

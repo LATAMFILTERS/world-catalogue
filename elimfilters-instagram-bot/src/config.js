@@ -8,10 +8,11 @@ function requireValue(name, val) {
 export function getConfig() {
   return {
     port: parseInt(process.env.PORT || "10000", 10),
-    linkedinClientId: requireValue("INSTAGRAM_BOT_CLIENT_ID", process.env.INSTAGRAM_BOT_CLIENT_ID),
-    linkedinClientSecret: requireValue("INSTAGRAM_BOT_CLIENT_SECRET", process.env.INSTAGRAM_BOT_CLIENT_SECRET),
-    linkedinOrganizationId: requireValue("INSTAGRAM_BOT_ORGANIZATION_ID", process.env.INSTAGRAM_BOT_ORGANIZATION_ID),
-    linkedinVerifyToken: requireValue("INSTAGRAM_BOT_VERIFY_TOKEN", process.env.INSTAGRAM_BOT_VERIFY_TOKEN),
+    // Instagram Business API Configuration
+    instagramBusinessAccountId: requireValue("INSTAGRAM_BUSINESS_ACCOUNT_ID", process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID),
+    instagramAccessToken: requireValue("INSTAGRAM_ACCESS_TOKEN", process.env.INSTAGRAM_ACCESS_TOKEN),
+    instagramVerifyToken: requireValue("INSTAGRAM_VERIFY_TOKEN", process.env.INSTAGRAM_VERIFY_TOKEN),
+    instagramAppSecret: requireValue("INSTAGRAM_APP_SECRET", process.env.INSTAGRAM_APP_SECRET),
     databaseUrl: requireValue("DATABASE_URL", process.env.DATABASE_URL),
     nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
     nvidiaModel: process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",

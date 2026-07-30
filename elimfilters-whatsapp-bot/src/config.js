@@ -8,10 +8,12 @@ function requireValue(name, val) {
 export function getConfig() {
   return {
     port: parseInt(process.env.PORT || "10000", 10),
-    linkedinClientId: requireValue("WHATSAPP_BOT_CLIENT_ID", process.env.WHATSAPP_BOT_CLIENT_ID),
-    linkedinClientSecret: requireValue("WHATSAPP_BOT_CLIENT_SECRET", process.env.WHATSAPP_BOT_CLIENT_SECRET),
-    linkedinOrganizationId: requireValue("WHATSAPP_BOT_ORGANIZATION_ID", process.env.WHATSAPP_BOT_ORGANIZATION_ID),
-    linkedinVerifyToken: requireValue("WHATSAPP_BOT_VERIFY_TOKEN", process.env.WHATSAPP_BOT_VERIFY_TOKEN),
+    // WhatsApp Business API Configuration
+    whatsappPhoneNumberId: requireValue("WHATSAPP_BUSINESS_ACCOUNT_ID", process.env.WHATSAPP_BUSINESS_ACCOUNT_ID),
+    whatsappAccessToken: requireValue("WHATSAPP_ACCESS_TOKEN", process.env.WHATSAPP_ACCESS_TOKEN),
+    whatsappBusinessAccountId: requireValue("WHATSAPP_BUSINESS_ACCOUNT_ID", process.env.WHATSAPP_BUSINESS_ACCOUNT_ID),
+    whatsappVerifyToken: requireValue("WHATSAPP_VERIFY_TOKEN", process.env.WHATSAPP_VERIFY_TOKEN),
+    whatsappAppSecret: requireValue("WHATSAPP_APP_SECRET", process.env.WHATSAPP_APP_SECRET),
     databaseUrl: requireValue("DATABASE_URL", process.env.DATABASE_URL),
     nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
     nvidiaModel: process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",

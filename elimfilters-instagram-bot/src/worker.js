@@ -1,11 +1,16 @@
 import { createLogger } from "./logger.js";
 import { buildProductResponse, buildFallbackResponse, buildNoMatchResponse, buildGreetingResponse } from "./response-builder.js";
 import { createNvidiaClient } from "./nvidia.js";
+import { createInstagramClient } from "./instagram-client.js";
 
 const logger = createLogger("Instagram-Bot");
 
 export function createWorker({ config, db, knowledgeSystem }) {
   const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
+  const instagramClient = createInstagramClient({
+    businessAccountId: config.instagramBusinessAccountId,
+    accessToken: config.instagramAccessToken
+  });
 
   const extractEntities = (messageText) => {
     const text = messageText.trim().toUpperCase();
@@ -196,9 +201,15 @@ export function createWorker({ config, db, knowledgeSystem }) {
             continue;
           }
 
-          // TODO: Integrate actual Instagram API call here
-          // await instagramClient.sendMessage(job.sender_id, responseText);
-          await db.complete(job.event_id, responseText);
+          try {
+            await instagramClient.sendMessage(job.sender_id, responseText);
+            await db.complete(job.event_id, responseText);
+            logger.info('Message sent successfully', logContext);
+          } catch (sendErr) {
+            logger.error('Failed to send Instagram message', logContext, { error: sendErr.message });
+            await db.fail(job.event_id, `Send failed: ${sendErr.message}`);
+            throw sendErr;
+          }
 
           logger.info('Message processed successfully', logContext);
         } catch (err) {

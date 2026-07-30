@@ -1,11 +1,17 @@
 import { createLogger } from "./logger.js";
 import { buildProductResponse, buildFallbackResponse, buildNoMatchResponse, buildGreetingResponse } from "./response-builder.js";
 import { createNvidiaClient } from "./nvidia.js";
+import { createWhatsAppClient } from "./whatsapp-client.js";
 
 const logger = createLogger("WhatsApp-Bot");
 
 export function createWorker({ config, db, knowledgeSystem }) {
   const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
+  const whatsappClient = createWhatsAppClient({
+    phoneNumberId: config.whatsappPhoneNumberId,
+    accessToken: config.whatsappAccessToken,
+    businessAccountId: config.whatsappBusinessAccountId
+  });
 
   // Entity extraction (NLU)
   const extractEntities = (messageText) => {
@@ -224,11 +230,15 @@ export function createWorker({ config, db, knowledgeSystem }) {
             continue;
           }
 
-          // TODO: Integrate actual WhatsApp API call here
-          // await whatsappClient.sendMessage(job.phone_number_id, responseText);
-          await db.complete(job.event_id, responseText);
-
-          logger.info('Message processed successfully', logContext);
+          try {
+            await whatsappClient.sendMessage(job.phone_number_id, responseText);
+            await db.complete(job.event_id, responseText);
+            logger.info('Message sent successfully', logContext);
+          } catch (sendErr) {
+            logger.error('Failed to send WhatsApp message', logContext, { error: sendErr.message });
+            await db.fail(job.event_id, `Send failed: ${sendErr.message}`);
+            throw sendErr;
+          }
         } catch (err) {
           logger.logError(logContext, err, { stage: 'processing' });
           await db.fail(job.event_id, err.message);
