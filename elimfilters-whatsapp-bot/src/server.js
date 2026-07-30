@@ -130,7 +130,7 @@ function verifyWhatsAppSignature(rawBody, signature, appSecret) {
 
 const port = config.port || 3000;
 app.listen(port, () => {
-  logger.info(`WhatsApp bot listening on port ${port}; dryRun=${config.dryRun}`);
+  logger.info(`WhatsApp bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
 
 // Periodic worker execution

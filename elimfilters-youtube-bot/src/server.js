@@ -94,7 +94,7 @@ app.post("/webhook", express.raw({ type: ["application/json", "application/atom+
 
 const port = config.port || 3000;
 app.listen(port, () => {
-  logger.info(`YouTube bot listening on port ${port}; dryRun=${config.dryRun}`);
+  logger.info(`YouTube bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
 
 // Periodic worker execution

@@ -127,7 +127,7 @@ function verifyInstagramSignature(rawBody, signature, appSecret) {
 
 const port = config.port || 3000;
 app.listen(port, () => {
-  logger.info(`Instagram bot listening on port ${port}; dryRun=${config.dryRun}`);
+  logger.info(`Instagram bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
 
 // Periodic worker execution
