@@ -54,6 +54,12 @@ export function createWorker({ config, db, knowledgeSystem }) {
             products = await db.searchByKeyword(text.slice(0, 50));
           }
 
+          // Si aún sin resultados, buscar por motor (DD60, 6BT, etc.)
+          if (!products.length) {
+            console.log(`[Worker] Attempting motor/application search`);
+            products = await db.searchByMotor(text.slice(0, 50));
+          }
+
           console.log(`[Worker] Search complete - found ${products.length} products`);
 
           let replyText;

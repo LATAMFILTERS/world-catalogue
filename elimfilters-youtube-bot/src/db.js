@@ -210,13 +210,30 @@ export function createDb(connectionString) {
     },
 
     async searchByKeyword(keyword) {
+      console.log(`[DB] Keyword search: ${keyword}`);
       const r = await pool.query(
-        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description, equipment_applications
          FROM elimfilters_catalog
-         WHERE product_name ILIKE $1 OR description ILIKE $1
+         WHERE product_name ILIKE $1
+            OR description ILIKE $1
+            OR equipment_applications::text ILIKE $2
          LIMIT 5`,
-        [`%${keyword}%`]
+        [`%${keyword}%`, `%${keyword}%`]
       );
+      console.log(`[DB] Keyword search found ${r.rows.length} results`);
+      return r.rows;
+    },
+
+    async searchByMotor(motorCode) {
+      console.log(`[DB] Searching motor/application: ${motorCode}`);
+      const r = await pool.query(
+        `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description, equipment_applications
+         FROM elimfilters_catalog
+         WHERE equipment_applications::text ILIKE $1
+         LIMIT 5`,
+        [`%${motorCode}%`]
+      );
+      console.log(`[DB] Found ${r.rows.length} results for motor ${motorCode}`);
       return r.rows;
     }
   };
