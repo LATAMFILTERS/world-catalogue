@@ -13,6 +13,14 @@ await db.init();
 const worker = createWorker({ config, db });
 const app = express();
 
+// Force Knowledge Engine Runtime to be configured
+if (!config.knowledgeEngineRuntimeUrl || !config.engineApiKey) {
+  logger.warn('WARNING: Knowledge Engine Runtime not fully configured', {
+    hasUrl: !!config.knowledgeEngineRuntimeUrl,
+    hasKey: !!config.engineApiKey
+  });
+}
+
 const webhookStats = {
   received: 0,
   rejected: 0,
