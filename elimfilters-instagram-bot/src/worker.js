@@ -22,32 +22,41 @@ export function createWorker({ config, db, knowledgeSystem }) {
           // Buscar productos en la BD
           let products = [];
           const text = job.message_text.trim().toUpperCase();
+          console.log(`[Worker] Processing message: "${text.slice(0, 80)}..."`);
 
           // Extraer códigos del mensaje (permite mensajes como "P552100" o "Donaldson P552100")
           const oemCodeMatch = text.match(/[A-Z]\d{3,10}/);
           const competitorCodeMatch = text.match(/[A-Z]{2,}\d{3,10}/);
           const skuMatch = text.match(/EL\d{3,10}/);
 
+          console.log(`[Worker] Regex matches - OEM: ${oemCodeMatch?.[0]}, Competitor: ${competitorCodeMatch?.[0]}, SKU: ${skuMatch?.[0]}`);
+
           // Intentar búsqueda por código OEM (P552100, etc.)
           if (oemCodeMatch) {
+            console.log(`[Worker] Attempting OEM search for: ${oemCodeMatch[0]}`);
             products = await db.searchByOemCode(oemCodeMatch[0]);
           }
 
           // Si no hay resultados, intentar por código de competidor
           if (!products.length && competitorCodeMatch) {
+            console.log(`[Worker] Attempting competitor search for: ${competitorCodeMatch[0]}`);
             products = await db.searchByCompetitorCode(competitorCodeMatch[0]);
           }
 
           // Si no hay resultados, intentar por SKU (EL82100, etc.)
           if (!products.length && skuMatch) {
+            console.log(`[Worker] Attempting SKU search for: ${skuMatch[0]}`);
             const product = await db.searchBySku(skuMatch[0]);
             if (product) products = [product];
           }
 
           // Si no hay resultados, búsqueda por palabra clave
           if (!products.length) {
+            console.log(`[Worker] Falling back to keyword search`);
             products = await db.searchByKeyword(text.slice(0, 50));
           }
+
+          console.log(`[Worker] Search complete - found ${products.length} products`);
 
           let replyText;
           if (products.length > 0) {

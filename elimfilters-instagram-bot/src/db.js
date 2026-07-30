@@ -174,26 +174,28 @@ export function createDb(connectionString) {
     },
 
     async searchByOemCode(oemCode) {
+      console.log(`[DB] Searching OEM code: ${oemCode}`);
       const r = await pool.query(
         `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
          FROM elimfilters_catalog
-         WHERE oem_codes @> jsonb_build_array(jsonb_build_object('code', $1))
-            OR oem_codes::text ILIKE $2
+         WHERE LOWER(oem_codes::text) LIKE LOWER($1)
          LIMIT 5`,
-        [oemCode, `%${oemCode}%`]
+        [`%${oemCode}%`]
       );
+      console.log(`[DB] Found ${r.rows.length} results for OEM code ${oemCode}`);
       return r.rows;
     },
 
     async searchByCompetitorCode(competitorCode) {
+      console.log(`[DB] Searching competitor code: ${competitorCode}`);
       const r = await pool.query(
         `SELECT sku, product_name, filter_type, oem_codes, competitor_codes, description
          FROM elimfilters_catalog
-         WHERE competitor_codes @> jsonb_build_array(jsonb_build_object('code', $1))
-            OR competitor_codes::text ILIKE $2
+         WHERE LOWER(competitor_codes::text) LIKE LOWER($1)
          LIMIT 5`,
-        [competitorCode, `%${competitorCode}%`]
+        [`%${competitorCode}%`]
       );
+      console.log(`[DB] Found ${r.rows.length} results for competitor code ${competitorCode}`);
       return r.rows;
     },
 
