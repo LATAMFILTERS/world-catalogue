@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 import ContactEmailActions from './ContactEmailActions';
 
@@ -119,26 +120,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
       />
 
-      <Link
-        href="/"
-        style={{
-          position: 'fixed',
-          top: '1rem',
-          right: '1rem',
-          zIndex: 9999,
-          border: '1px solid rgba(255,241,45,0.45)',
-          padding: '0.55rem 1rem',
-          color: '#FFF12D',
-          background: 'rgba(0,0,0,0.88)',
-          textDecoration: 'none',
-          fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-          fontWeight: 700,
-          fontSize: '0.72rem',
-          letterSpacing: '0.18em',
-        }}
-      >
-        {t('contact.homeLink')}
-      </Link>
+      <PageHeader currentPage="Contact" />
 
       <section
         style={{

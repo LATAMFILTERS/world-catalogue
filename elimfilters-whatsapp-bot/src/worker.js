@@ -1,145 +1,246 @@
-import { createWhatsAppClient } from "./whatsapp.js";
+import { createLogger } from "./logger.js";
+import { buildProductResponse, buildFallbackResponse, buildNoMatchResponse, buildGreetingResponse } from "./response-builder.js";
 import { createNvidiaClient } from "./nvidia.js";
+import { createWhatsAppClient } from "./whatsapp-client.js";
+
+const logger = createLogger("WhatsApp-Bot");
 
 export function createWorker({ config, db, knowledgeSystem }) {
-  const whatsapp = createWhatsAppClient({
-    accessToken: config.metaAccessToken,
+  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
+  const whatsappClient = createWhatsAppClient({
     phoneNumberId: config.whatsappPhoneNumberId,
-    graphApiVersion: config.metaGraphApiVersion
+    accessToken: config.whatsappAccessToken,
+    businessAccountId: config.whatsappBusinessAccountId
   });
 
-  const nvidia = createNvidiaClient({ apiKey: config.nvidiaApiKey, model: config.nvidiaModel, pool: db.pool });
+  // Entity extraction (NLU)
+  const extractEntities = (messageText) => {
+    const text = messageText.trim().toUpperCase();
+    const entities = {};
+
+    // Motor codes
+    const motorMatch = text.match(/\b(DD|C|6BT|ISX|MP8|S)\d{1,4}\b/i);
+    if (motorMatch) entities.motor_code = motorMatch[0];
+
+    // Brands
+    const brands = ['FREIGHTLINER', 'MACK', 'VOLVO', 'CUMMINS', 'DURAMAX', 'FORD', 'CHEVROLET', 'DODGE', 'RAM'];
+    for (const brand of brands) {
+      if (text.includes(brand)) {
+        entities.brand = brand;
+        break;
+      }
+    }
+
+    // OEM codes
+    const oemMatch = text.match(/[A-Z]\d{6,10}/);
+    if (oemMatch) entities.oem_code = oemMatch[0];
+
+    // SKU codes
+    const skuMatch = text.match(/EL\d{3,10}/);
+    if (skuMatch) entities.sku = skuMatch[0];
+
+    // Greetings
+    if (/^(hola|hi|hey|buenos|buenas)/i.test(text)) {
+      entities.is_greeting = true;
+    }
+
+    return entities;
+  };
+
+  // State machine transition logic
+  const transitionState = (currentState, extractedEntities, existingSession) => {
+    // If we have brand + motor, we can search catalog
+    if (extractedEntities.brand || extractedEntities.motor_code || extractedEntities.oem_code || extractedEntities.sku) {
+      return 'catalog_search';
+    }
+
+    // If we have some entities but not enough, ask for more
+    if (Object.keys(extractedEntities).length > 0 && !extractedEntities.is_greeting) {
+      return 'entity_verification';
+    }
+
+    // Default to extraction
+    return 'extraction';
+  };
+
+  // Execute catalog search
+  const executeCatalogSearch = async (session, entities) => {
+    let products = [];
+
+    // Priority: motor → OEM code → competitor → SKU → keyword
+    if (entities.motor_code) {
+      logger.debug('Searching by motor', { motor: entities.motor_code, sessionId: session.session_id });
+      products = await db.searchByMotor(entities.motor_code);
+    }
+
+    if (!products.length && entities.oem_code) {
+      logger.debug('Searching by OEM code', { oemCode: entities.oem_code, sessionId: session.session_id });
+      products = await db.searchByOemCode(entities.oem_code);
+    }
+
+    if (!products.length && entities.sku) {
+      logger.debug('Searching by SKU', { sku: entities.sku, sessionId: session.session_id });
+      const product = await db.searchBySku(entities.sku);
+      if (product) products = [product];
+    }
+
+    if (!products.length && (entities.brand || entities.motor_code)) {
+      logger.debug('Searching by keyword', { keyword: entities.brand || entities.motor_code, sessionId: session.session_id });
+      const keyword = `${entities.brand || ''} ${entities.motor_code || ''}`.trim();
+      products = await db.searchByKeyword(keyword);
+    }
+
+    return products;
+  };
 
   return {
     async run() {
       const jobs = await db.claim(5);
       if (!jobs.length) return;
 
+      // Cleanup expired sessions every run
+      const expiredCount = await db.cleanupExpiredSessions();
+      if (expiredCount > 0) {
+        logger.info(`Cleaned up ${expiredCount} expired sessions`, { action: 'cleanup' });
+      }
+
       for (const job of jobs) {
+        const logContext = { jobId: job.event_id, messageLength: job.message_text?.length || 0 };
+
         try {
-          console.log(`[WhatsApp Worker] Processing job ${job.event_id}: "${job.message_text.slice(0, 50)}..."`);
+          logger.info(`Processing message`, logContext, { messagePreview: job.message_text?.slice(0, 80) });
 
-          // Buscar productos en la BD
-          let products = [];
-          const text = job.message_text.trim().toUpperCase();
-          console.log(`[Worker] Processing message: "${text.slice(0, 80)}..."`);
+          // Get or create conversation session
+          const session = await db.getOrCreateSession(job.phone_number_id, 'whatsapp');
+          logContext.sessionId = session.session_id;
 
-          // Extraer códigos del mensaje
-          const motorMatch = text.match(/\b(DD|C|6BT|ISX)\d{1,4}\b/i);  // Motor codes: DD60, C15, 6BT, ISX500
-          const oemCodeMatch = text.match(/[A-Z]\d{3,10}/);
-          const competitorCodeMatch = text.match(/[A-Z]{2,}\d{3,10}/);
-          const skuMatch = text.match(/EL\d{3,10}/);
+          // Extract entities from message
+          const entities = extractEntities(job.message_text);
+          logContext.extractedEntities = entities;
 
-          console.log(`[Worker] Regex matches - Motor: ${motorMatch?.[0]}, OEM: ${oemCodeMatch?.[0]}, Competitor: ${competitorCodeMatch?.[0]}, SKU: ${skuMatch?.[0]}`);
+          // Determine next state
+          const nextState = transitionState(session.state, entities, session);
 
-          // Intentar búsqueda por motor PRIMERO (DD60, C15, 6BT, etc.) - más probable
-          if (motorMatch) {
-            console.log(`[Worker] Attempting motor search for: ${motorMatch[0]}`);
-            products = await db.searchByMotor(motorMatch[0]);
+          let responseText;
+
+          // Handle greeting
+          if (entities.is_greeting) {
+            responseText = buildGreetingResponse();
+            logger.info('Greeting detected', logContext);
+            await db.logConversationTurn(session.session_id, {
+              messageText: job.message_text,
+              extractedEntities: entities,
+              action: 'greeting',
+              responseText
+            });
           }
+          // Handle catalog search
+          else if (nextState === 'catalog_search') {
+            const products = await executeCatalogSearch(session, entities);
+            logContext.productsFound = products.length;
 
-          // Si no hay resultados, intentar por código OEM (P552100, etc.)
-          if (!products.length && oemCodeMatch) {
-            console.log(`[Worker] Attempting OEM search for: ${oemCodeMatch[0]}`);
-            products = await db.searchByOemCode(oemCodeMatch[0]);
-          }
+            if (products.length > 0) {
+              // Update session with found product
+              await db.updateSession(session.session_id, {
+                state: 'response',
+                brand: entities.brand || session.brand,
+                motor_code: entities.motor_code || session.motor_code,
+                last_recommended_sku: products[0].sku,
+                extracted_entities: { ...session.extracted_entities, ...entities }
+              });
 
-          // Si no hay resultados, intentar por código de competidor
-          if (!products.length && competitorCodeMatch) {
-            console.log(`[Worker] Attempting competitor search for: ${competitorCodeMatch[0]}`);
-            products = await db.searchByCompetitorCode(competitorCodeMatch[0]);
-          }
+              responseText = buildProductResponse(products[0], {
+                brand: entities.brand || session.brand,
+                motor_code: entities.motor_code || session.motor_code
+              });
 
-          // Si no hay resultados, intentar por SKU (EL82100, etc.)
-          if (!products.length && skuMatch) {
-            console.log(`[Worker] Attempting SKU search for: ${skuMatch[0]}`);
-            const product = await db.searchBySku(skuMatch[0]);
-            if (product) products = [product];
-          }
-
-          // Si no hay resultados, búsqueda por palabra clave
-          if (!products.length) {
-            console.log(`[Worker] Falling back to keyword search`);
-            products = await db.searchByKeyword(text.slice(0, 50));
-          }
-
-          console.log(`[Worker] Search complete - found ${products.length} products`);
-
-          let replyText;
-          if (products.length > 0) {
-            // Construir respuesta técnica profesional - Protección de Activos
-            const product = products[0];
-
-            // Extraer tecnología del nombre del producto (SYNTRAX, NANOFORCE, etc.)
-            const techName = product.product_name?.match(/(SYNTRAX|NANOFORCE|MACROCORE|HYDROCORE|DRYCORE|MICROKAPPA)/)?.[1] || 'tecnología ELIMFILTERS';
-
-            // Extraer homologación OEM si existe
-            const oemCodes = product.oem_codes ?
-              (Array.isArray(product.oem_codes) ?
-                product.oem_codes.map(o => typeof o === 'object' ? o.code : o).join(', ') :
-                String(product.oem_codes).replace(/[\[\]"']/g, '')) : '';
-
-            replyText = `✅ *PROTECCIÓN DE ACTIVOS: RECOMENDACIÓN TÉCNICA*\n\n` +
-              `*SKU ELIMFILTERS:* ${product.sku}\n` +
-              `*Aplicación:* ${product.product_name}\n` +
-              `*Tipo de filtración:* ${product.filter_type}\n`;
-
-            if (oemCodes) {
-              replyText += `*Homologación:* ${oemCodes}\n`;
-            }
-
-            replyText += `\n*¿POR QUÉ LO RECOMENDAMOS?*\n`;
-            replyText += `Nuestra media filtrante patentada ${techName} está desarrollada bajo formulaciones avanzadas, con una relación Beta de 200/75/20. Esto significa que puede retener partículas de hasta 20 micrones con una eficiencia del 75%, asegurando:\n\n` +
-              `• Reducción del desgarre abrasivo en componentes del motor\n` +
-              `• Prolongación de la vida útil del activo\n` +
-              `• Cumplimiento con normas ISO 16889 y especificaciones del fabricante\n\n`;
-
-            if (product.description) {
-              replyText += `*Especificación técnica:* ${product.description}\n\n`;
-            }
-
-            replyText += `*IMPORTANTE:* Esta recomendación se basa en especificaciones que exige el fabricante del motor. Verificar siempre el manual del fabricante para políticas de mantenimiento y reemplazo.\n\n` +
-              `¿Necesitas detalles técnicos adicionales o cotización?`;
-          } else {
-            // Quick responses for greetings/common phrases (avoid NVIDIA delay)
-            const greeting_patterns = [
-              /^(hola|hi|hey|buenos días|buenas tardes|buenas noches|ola|oye|hey there)/i,
-              /^(gracias|thank you|thanks)/i,
-              /^(ayuda|help|soporte|support)/i
-            ];
-
-            const isGreeting = greeting_patterns.some(p => p.test(text));
-
-            if (isGreeting) {
-              console.log(`[Worker] Detected greeting, quick response`);
-              replyText = `¡Hola! Bienvenido a ELIMFILTERS.\n\nPuedo ayudarte a encontrar filtros compatibles. Comparte:\n• Código OEM o modelo del filtro que usas\n• Marca/modelo de tu equipo (ej: Freightliner, Peterbilt)\n• Motor (ej: DD60, C13, Cummins)\n\n¿Cuál es tu consulta?`;
+              logger.info('Product found and recommended', logContext, { sku: products[0].sku });
+              await db.logConversationTurn(session.session_id, {
+                messageText: job.message_text,
+                extractedEntities: entities,
+                action: 'product_found',
+                responseText
+              });
             } else {
-              // Fallback a NVIDIA si no encuentra en BD
-              if (knowledgeSystem && job.message_text) {
-                const knowledgeResponse = await knowledgeSystem.getKnowledgeResponse(job.message_text, job.event_id);
-                if (knowledgeResponse.success && knowledgeResponse.answer) {
-                  replyText = knowledgeResponse.answer;
-                } else {
-                  replyText = await nvidia.generateReply(job.message_text);
-                }
-              } else {
-                replyText = await nvidia.generateReply(job.message_text);
-              }
+              // No products found - provide helpful fallback
+              responseText = buildNoMatchResponse({
+                brand: entities.brand || session.brand,
+                motor_code: entities.motor_code || session.motor_code
+              });
+
+              await db.updateSession(session.session_id, {
+                state: 'no_match',
+                extracted_entities: { ...session.extracted_entities, ...entities }
+              });
+
+              logger.warn('No products found', logContext);
+              await db.logConversationTurn(session.session_id, {
+                messageText: job.message_text,
+                extractedEntities: entities,
+                action: 'no_match',
+                responseText
+              });
             }
           }
+          // Handle entity verification (need more info)
+          else if (nextState === 'entity_verification') {
+            responseText = buildFallbackResponse({
+              brand: entities.brand || session.brand,
+              motor_code: entities.motor_code || session.motor_code
+            });
 
+            await db.updateSession(session.session_id, {
+              state: 'entity_verification',
+              extracted_entities: { ...session.extracted_entities, ...entities }
+            });
+
+            logger.info('Requesting entity verification', logContext);
+            await db.logConversationTurn(session.session_id, {
+              messageText: job.message_text,
+              extractedEntities: entities,
+              action: 'ask_for_details',
+              responseText
+            });
+          }
+          // Default extraction state
+          else {
+            responseText = buildFallbackResponse({
+              brand: session.brand,
+              motor_code: session.motor_code
+            });
+
+            await db.updateSession(session.session_id, {
+              state: 'extraction',
+              extracted_entities: { ...session.extracted_entities, ...entities }
+            });
+
+            logger.info('Initiating extraction', logContext);
+            await db.logConversationTurn(session.session_id, {
+              messageText: job.message_text,
+              extractedEntities: entities,
+              action: 'extract_entities',
+              responseText
+            });
+          }
+
+          // Send response via WhatsApp API
           if (config.dryRun) {
-            console.log(`[WhatsApp Worker] DRY_RUN=true: Draft reply for ${job.event_id} -> "${replyText}"`);
-            await db.complete(job.event_id, `[DRY_RUN DRAFT] ${replyText}`);
+            logger.info(`DRY_RUN: Draft response`, logContext, { responseLength: responseText.length });
+            await db.complete(job.event_id, `[DRY_RUN] ${responseText}`);
             continue;
           }
 
-          // Enviar por WhatsApp
-          await whatsapp.sendMessage(job.from, replyText);
-          await db.complete(job.event_id, replyText);
-          console.log(`[WhatsApp Worker] Sent reply to ${job.from}`);
+          try {
+            await whatsappClient.sendMessage(job.from_number, responseText);
+            await db.complete(job.event_id, responseText);
+            logger.info('Message sent successfully', logContext);
+          } catch (sendErr) {
+            logger.error('Failed to send WhatsApp message', logContext, { error: sendErr.message });
+            await db.fail(job.event_id, `Send failed: ${sendErr.message}`);
+            throw sendErr;
+          }
         } catch (err) {
-          console.error(`[WhatsApp Worker] Error processing ${job.event_id}:`, err.message);
+          logger.logError(logContext, err, { stage: 'processing' });
           await db.fail(job.event_id, err.message);
         }
       }

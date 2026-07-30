@@ -11,7 +11,7 @@ routes.use(authenticate);
 
 routes.get('/health', async (_req, res) => {
   await pool.query('SELECT 1');
-  res.json({ status: 'ok', service: 'knowledge-center-api', commit: process.env.RENDER_GIT_COMMIT || 'local' });
+  res.json({ status: 'ok', service: 'knowledge-center-api' });
 });
 
 routes.post('/candidate-cases', requireRole('SUPPORT_REVIEWER','ENGINEERING_REVIEWER','ADMIN','SYSTEM'), async (req: ActorRequest,res) => {
@@ -30,9 +30,6 @@ routes.post('/candidate-cases/:id/transitions', requireRole('SUPPORT_REVIEWER','
 });
 routes.post('/candidate-cases/:id/decisions', requireRole('ENGINEERING_REVIEWER','APPROVER','ADMIN'), async (req:ActorRequest,res) => {
   res.status(201).json(await service.decideCase(z.string().uuid().parse(req.params.id),reviewDecisionSchema.parse(req.body),req.actorId!));
-});
-routes.post('/candidate-cases/:id/convert-to-knowledge', requireRole('ENGINEERING_REVIEWER','ADMIN'), async (req:ActorRequest,res) => {
-  res.status(201).json(await service.convertCaseToKnowledge(z.string().uuid().parse(req.params.id),req.body,req.actorId!));
 });
 routes.post('/knowledge-records', requireRole('ENGINEERING_REVIEWER','ADMIN','SYSTEM'), async (req:ActorRequest,res) => {
   res.status(201).json(await service.createKnowledge(createKnowledgeSchema.parse(req.body),req.actorId!));

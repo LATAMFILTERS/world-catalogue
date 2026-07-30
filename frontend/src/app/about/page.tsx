@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
 
 const ENGINEERING_METHOD = [
@@ -76,7 +77,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaAboutPage) }} />
 
-      <Link href="/" style={homeButton}>{t('about.homeLink')}</Link>
+      <PageHeader currentPage="About" />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
@@ -177,22 +178,6 @@ export default function AboutPage() {
   );
 }
 
-const homeButton: React.CSSProperties = {
-  position: 'fixed',
-  top: '1.1rem',
-  right: '1.35rem',
-  zIndex: 50,
-  background: 'rgba(0,0,0,0.78)',
-  border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D',
-  textDecoration: 'none',
-  fontFamily: 'var(--font-display)',
-  fontWeight: 700,
-  letterSpacing: '0.16em',
-  fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem',
-  backdropFilter: 'blur(14px)',
-};
 
 const heroSection: React.CSSProperties = {
   minHeight: '92vh',
@@ -210,14 +195,14 @@ const heroImage: React.CSSProperties = {
   backgroundImage: 'url(/images/grupo-filters.avif)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  opacity: 0.32,
+  opacity: 0.48,
 };
 
 const heroOverlay: React.CSSProperties = {
   position: 'absolute',
   inset: 0,
   background:
-    'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 38%)',
+    'linear-gradient(90deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 38%)',
 };
 
 const heroTitle: React.CSSProperties = {

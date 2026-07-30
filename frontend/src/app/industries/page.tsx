@@ -1,3 +1,4 @@
+import { PageHeader } from '@/components/PageHeader';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
@@ -62,7 +63,7 @@ export default function IndustriesPage() {
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <Link href="/" style={homeButton}>HOME</Link>
+      <PageHeader currentPage="Industries" />
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/mineria-1.avif)' }} />
@@ -141,13 +142,6 @@ const bodyFont = 'var(--font-body)';
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 
-const homeButton: CSSProperties = {
-  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
-  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
-  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
-};
 
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
@@ -217,12 +211,12 @@ const marketCard: CSSProperties = {
 
 const marketImage: CSSProperties = {
   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-  opacity: 0.76, filter: 'brightness(1.12) contrast(1.04)',
+  opacity: 0.88, filter: 'brightness(1.12) contrast(1.04)',
 };
 
 const marketOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.42) 52%, rgba(0,0,0,0.78) 100%), linear-gradient(90deg, rgba(0,0,0,0.42), transparent)',
+  background: 'linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.28) 52%, rgba(0,0,0,0.50) 100%), linear-gradient(90deg, rgba(0,0,0,0.28), transparent)',
 };
 
 const marketContent: CSSProperties = {
