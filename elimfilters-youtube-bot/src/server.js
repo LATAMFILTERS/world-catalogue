@@ -19,9 +19,6 @@ const webhookStats = {
   lastReceivedAt: null
 };
 
-// Middleware
-app.use(express.json({ limit: "1mb" }));
-
 // Root endpoint
 app.get("/", (_req, res) => {
   res.json({
@@ -56,12 +53,18 @@ app.get("/webhook", (req, res) => {
   res.status(200).send(challenge);
 });
 
-// YouTube Webhook event receiver (POST comments)
-app.post("/webhook", async (req, res) => {
+// YouTube Webhook event receiver (POST comments) - use raw body
+app.post("/webhook", express.raw({ type: ["application/json", "application/atom+xml"], limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
 
-  const body = req.body;
+  let body;
+  try {
+    body = req.body.toString("utf8");
+  } catch (err) {
+    logger.error("Invalid body in webhook", { error: err.message });
+    return res.sendStatus(400);
+  }
 
   try {
     // YouTube sends updates via PubSubHubbub (RSS feed notifications)

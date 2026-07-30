@@ -20,9 +20,6 @@ const webhookStats = {
   lastReceivedAt: null
 };
 
-// Middleware
-app.use(express.json({ limit: "1mb" }));
-
 // Root endpoint
 app.get("/", (_req, res) => {
   res.json({
@@ -57,16 +54,24 @@ app.get("/webhook", (req, res) => {
   res.status(200).send(challenge);
 });
 
-// WhatsApp Webhook event receiver (POST messages)
-app.post("/webhook", async (req, res) => {
+// WhatsApp Webhook event receiver (POST messages) - use raw body for signature verification
+app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
 
-  const body = req.body;
+  let body;
+  try {
+    body = JSON.parse(req.body.toString("utf8"));
+  } catch (err) {
+    logger.error("Invalid JSON in webhook body", { error: err.message });
+    return res.sendStatus(400);
+  }
 
-  // Verify signature
+  const rawBody = req.body.toString("utf8");
+
+  // Verify signature using raw body
   const xHubSignature = req.get("x-hub-signature-256");
-  if (config.dryRun !== true && !verifyWhatsAppSignature(body, xHubSignature, config.whatsappAppSecret)) {
+  if (config.dryRun !== true && !verifyWhatsAppSignature(rawBody, xHubSignature, config.whatsappAppSecret)) {
     webhookStats.rejected++;
     logger.warn("Invalid signature", { received: xHubSignature });
     return res.sendStatus(401);
@@ -112,12 +117,12 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-// Signature verification for WhatsApp
-function verifyWhatsAppSignature(body, signature, appSecret) {
+// Signature verification for WhatsApp (must use raw body, not parsed JSON)
+function verifyWhatsAppSignature(rawBody, signature, appSecret) {
   if (!signature) return false;
   const hash = crypto
     .createHmac("sha256", appSecret)
-    .update(JSON.stringify(body))
+    .update(rawBody)
     .digest("hex");
   const expectedSignature = `sha256=${hash}`;
   return crypto.timingSafeEqual(signature, expectedSignature);
