@@ -1,7 +1,7 @@
 import { createLogger } from "./logger.js";
-import { buildProductResponse, buildFallbackResponse, buildNoMatchResponse, buildGreetingResponse } from "./response-builder.js";
 import { createNvidiaClient } from "./nvidia.js";
 import { createInstagramClient } from "./instagram-client.js";
+import { createCandidateCase, queryKnowledgeEngine } from "./knowledge-engine.js";
 
 const logger = createLogger("Instagram-Bot");
 
@@ -11,72 +11,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
     businessAccountId: config.instagramBusinessAccountId,
     accessToken: config.instagramAccessToken
   });
-
-  const extractEntities = (messageText) => {
-    const text = messageText.trim().toUpperCase();
-    const entities = {};
-
-    const motorMatch = text.match(/\b(DD|C|6BT|ISX|MP8|S)\d{1,4}\b/i);
-    if (motorMatch) entities.motor_code = motorMatch[0];
-
-    const brands = ['FREIGHTLINER', 'MACK', 'VOLVO', 'CUMMINS', 'DURAMAX', 'FORD', 'CHEVROLET', 'DODGE', 'RAM'];
-    for (const brand of brands) {
-      if (text.includes(brand)) {
-        entities.brand = brand;
-        break;
-      }
-    }
-
-    const oemMatch = text.match(/[A-Z]\d{6,10}/);
-    if (oemMatch) entities.oem_code = oemMatch[0];
-
-    const skuMatch = text.match(/EL\d{3,10}/);
-    if (skuMatch) entities.sku = skuMatch[0];
-
-    if (/^(hola|hi|hey|buenos|buenas)/i.test(text)) {
-      entities.is_greeting = true;
-    }
-
-    return entities;
-  };
-
-  const transitionState = (currentState, extractedEntities) => {
-    if (extractedEntities.brand || extractedEntities.motor_code || extractedEntities.oem_code || extractedEntities.sku) {
-      return 'catalog_search';
-    }
-    if (Object.keys(extractedEntities).length > 0 && !extractedEntities.is_greeting) {
-      return 'entity_verification';
-    }
-    return 'extraction';
-  };
-
-  const executeCatalogSearch = async (session, entities) => {
-    let products = [];
-
-    if (entities.motor_code) {
-      logger.debug('Searching by motor', { motor: entities.motor_code, sessionId: session.session_id });
-      products = await db.searchByMotor(entities.motor_code);
-    }
-
-    if (!products.length && entities.oem_code) {
-      logger.debug('Searching by OEM code', { oemCode: entities.oem_code, sessionId: session.session_id });
-      products = await db.searchByOemCode(entities.oem_code);
-    }
-
-    if (!products.length && entities.sku) {
-      logger.debug('Searching by SKU', { sku: entities.sku, sessionId: session.session_id });
-      const product = await db.searchBySku(entities.sku);
-      if (product) products = [product];
-    }
-
-    if (!products.length && (entities.brand || entities.motor_code)) {
-      logger.debug('Searching by keyword', { keyword: entities.brand || entities.motor_code, sessionId: session.session_id });
-      const keyword = `${entities.brand || ''} ${entities.motor_code || ''}`.trim();
-      products = await db.searchByKeyword(keyword);
-    }
-
-    return products;
-  };
 
   return {
     async run() {
@@ -94,109 +28,58 @@ export function createWorker({ config, db, knowledgeSystem }) {
         try {
           logger.info(`Processing message`, logContext, { messagePreview: job.message_text?.slice(0, 80) });
 
+          // Get or create session
           const session = await db.getOrCreateSession(job.sender_id || job.from, 'instagram');
           logContext.sessionId = session.session_id;
 
-          const entities = extractEntities(job.message_text);
-          logContext.extractedEntities = entities;
-
-          const nextState = transitionState(session.state, entities);
-
           let responseText;
+          let source = 'fallback';
 
-          if (entities.is_greeting) {
-            responseText = buildGreetingResponse();
-            logger.info('Greeting detected', logContext);
-            await db.logConversationTurn(session.session_id, {
-              messageText: job.message_text,
-              extractedEntities: entities,
-              action: 'greeting',
-              responseText
-            });
-          } else if (nextState === 'catalog_search') {
-            const products = await executeCatalogSearch(session, entities);
-            logContext.productsFound = products.length;
-
-            if (products.length > 0) {
-              await db.updateSession(session.session_id, {
-                state: 'response',
-                brand: entities.brand || session.brand,
-                motor_code: entities.motor_code || session.motor_code,
-                last_recommended_sku: products[0].sku,
-                extracted_entities: { ...session.extracted_entities, ...entities }
-              });
-
-              responseText = buildProductResponse(products[0], {
-                brand: entities.brand || session.brand,
-                motor_code: entities.motor_code || session.motor_code
-              });
-
-              logger.info('Product found and recommended', logContext, { sku: products[0].sku });
-              await db.logConversationTurn(session.session_id, {
-                messageText: job.message_text,
-                extractedEntities: entities,
-                action: 'product_found',
-                responseText
-              });
-            } else {
-              responseText = buildNoMatchResponse({
-                brand: entities.brand || session.brand,
-                motor_code: entities.motor_code || session.motor_code
-              });
-
-              await db.updateSession(session.session_id, {
-                state: 'no_match',
-                extracted_entities: { ...session.extracted_entities, ...entities }
-              });
-
-              logger.warn('No products found', logContext);
-              await db.logConversationTurn(session.session_id, {
-                messageText: job.message_text,
-                extractedEntities: entities,
-                action: 'no_match',
-                responseText
-              });
+          // Step 1: Try to create candidate case in Knowledge Center
+          let candidateCaseId = null;
+          if (config.knowledgeCenterApiUrl && config.knowledgeCenterApiKey) {
+            candidateCaseId = await createCandidateCase(config, session.session_id, job.message_text, 'INSTAGRAM');
+            if (candidateCaseId) {
+              logger.debug('Created candidate case', { caseId: candidateCaseId });
             }
-          } else if (nextState === 'entity_verification') {
-            responseText = buildFallbackResponse({
-              brand: entities.brand || session.brand,
-              motor_code: entities.motor_code || session.motor_code
-            });
-
-            await db.updateSession(session.session_id, {
-              state: 'entity_verification',
-              extracted_entities: { ...session.extracted_entities, ...entities }
-            });
-
-            logger.info('Requesting entity verification', logContext);
-            await db.logConversationTurn(session.session_id, {
-              messageText: job.message_text,
-              extractedEntities: entities,
-              action: 'ask_for_details',
-              responseText
-            });
-          } else {
-            responseText = buildFallbackResponse({
-              brand: session.brand,
-              motor_code: session.motor_code
-            });
-
-            await db.updateSession(session.session_id, {
-              state: 'extraction',
-              extracted_entities: { ...session.extracted_entities, ...entities }
-            });
-
-            logger.info('Initiating extraction', logContext);
-            await db.logConversationTurn(session.session_id, {
-              messageText: job.message_text,
-              extractedEntities: entities,
-              action: 'extract_entities',
-              responseText
-            });
           }
 
+          // Step 2: Try Knowledge Engine Runtime (like web chat)
+          let engineResponse = null;
+          const shouldQueryEngine = config.knowledgeEngineRuntimeUrl && config.engineApiKey && candidateCaseId;
+          if (shouldQueryEngine) {
+            logger.debug('Querying Knowledge Engine Runtime');
+            engineResponse = await queryKnowledgeEngine(config, job.message_text, session.session_id, candidateCaseId);
+
+            // If Knowledge Engine has high-confidence answer, use it
+            if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
+              responseText = engineResponse.answer;
+              source = 'knowledge_engine';
+              logger.debug('Using Knowledge Engine response', { confidence: engineResponse.confidence });
+            }
+          }
+
+          // Step 3: Fallback to NVIDIA LLM with catalog lookup
+          if (!responseText) {
+            logger.debug('Falling back to NVIDIA LLM');
+            responseText = await nvidia.generateReply(job.message_text);
+            source = 'nvidia_llm';
+          }
+
+          logContext.responseLength = responseText.length;
+          logContext.source = source;
+
+          // Log conversation turn
+          await db.logConversationTurn(session.session_id, {
+            messageText: job.message_text,
+            action: 'ai_response',
+            responseText,
+            source
+          });
+
+          // Send response via Instagram API
           if (config.dryRun) {
-            logger.info(`DRY_RUN: Draft response`, logContext, { responseLength: responseText.length });
+            logger.info(`DRY_RUN: Draft response`, logContext);
             await db.complete(job.event_id, `[DRY_RUN] ${responseText}`);
             continue;
           }
@@ -210,8 +93,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
             await db.fail(job.event_id, `Send failed: ${sendErr.message}`);
             throw sendErr;
           }
-
-          logger.info('Message processed successfully', logContext);
         } catch (err) {
           logger.logError(logContext, err, { stage: 'processing' });
           await db.fail(job.event_id, err.message);
