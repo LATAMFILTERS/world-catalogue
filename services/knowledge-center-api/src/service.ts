@@ -37,10 +37,10 @@ export class KnowledgeCenterService {
     const { pool } = await import('./db.js');
     const result = await pool.query(
       `SELECT c.*,
-        COALESCE((SELECT jsonb_agg(e ORDER BY e.occurred_at) FROM knowledge_center.candidate_case_events e WHERE e.candidate_case_id=c.id),'[]'::jsonb) events,
-        COALESCE((SELECT jsonb_agg(a ORDER BY a.assigned_at DESC) FROM knowledge_center.review_assignments a WHERE a.candidate_case_id=c.id),'[]'::jsonb) assignments,
-        COALESCE((SELECT jsonb_agg(d ORDER BY d.decided_at DESC) FROM knowledge_center.review_decisions d WHERE d.candidate_case_id=c.id),'[]'::jsonb) decisions
-       FROM knowledge_center.candidate_cases c WHERE c.id=$1`, [id]
+        COALESCE((SELECT jsonb_agg(e ORDER BY e.occurred_at) FROM candidate_case_events e WHERE e.candidate_case_id=c.id),'[]'::jsonb) events,
+        COALESCE((SELECT jsonb_agg(a ORDER BY a.assigned_at DESC) FROM review_assignments a WHERE a.candidate_case_id=c.id),'[]'::jsonb) assignments,
+        COALESCE((SELECT jsonb_agg(d ORDER BY d.decided_at DESC) FROM review_decisions d WHERE d.candidate_case_id=c.id),'[]'::jsonb) decisions
+       FROM candidate_cases c WHERE c.id=$1`, [id]
     );
     return result.rows[0] ?? null;
   }
@@ -101,54 +101,6 @@ export class KnowledgeCenterService {
         [versionId,input.approvalRecordId,input.targetEnvironment,actorId]
       );
       return result.rows[0];
-    });
-  }
-
-  async convertCaseToKnowledge(caseId: string, input: any, actorId: string) {
-    return withTransaction(async (client) => {
-      // Verify case exists and is approved
-      const caseResult = await client.query('SELECT * FROM candidate_cases WHERE id=$1', [caseId]);
-      if (!caseResult.rowCount) throw new Error('Candidate case not found');
-      const candidateCase = caseResult.rows[0];
-      if (candidateCase.status !== 'APPROVED') throw new Error('Case must be in APPROVED status');
-      if (candidateCase.related_record_id) throw new Error('Case already converted to knowledge');
-
-      // Create knowledge record
-      const knowledgeExternalId = `KC-${candidateCase.external_id}-${Date.now()}`;
-      const recordResult = await client.query(
-        `INSERT INTO knowledge_records(external_id,record_type,owner_actor_id,lifecycle_status)
-         VALUES ($1,$2,$3,'DRAFT') RETURNING *`,
-        [knowledgeExternalId,input.recordType || 'DIAGNOSTIC',actorId]
-      );
-      const record = recordResult.rows[0];
-
-      // Create initial version
-      const versionResult = await client.query(
-        `INSERT INTO knowledge_record_versions(record_id,version_number,schema_version,title,summary,content,content_hash,change_reason,created_by)
-         VALUES ($1,1,$2,$3,$4,$5,encode(digest($5::text,'sha256'),'hex'),$6,$7) RETURNING *`,
-        [
-          record.id,
-          input.schemaVersion || '1.0',
-          input.title || candidateCase.symptom_summary?.slice(0, 100) || 'Auto-generated from candidate case',
-          input.summary || candidateCase.symptom_summary?.slice(0, 500),
-          input.content || { originalCaseId: caseId, source: 'AUTO_CONVERTED_FROM_CANDIDATE_CASE' },
-          `Converted from candidate case ${candidateCase.external_id}`,
-          actorId
-        ]
-      );
-
-      // Link case to knowledge record
-      await client.query('UPDATE candidate_cases SET related_record_id=$2,updated_at=now() WHERE id=$1', [caseId, record.id]);
-      await client.query('UPDATE knowledge_records SET current_version_id=$2 WHERE id=$1', [record.id, versionResult.rows[0].id]);
-
-      // Log the conversion
-      await client.query(
-        `INSERT INTO candidate_case_events(candidate_case_id,event_type,new_status,reason,actor_id,payload)
-         VALUES ($1,'CONVERTED_TO_KNOWLEDGE','APPROVED','Converted to knowledge record',$2,$3)`,
-        [caseId, actorId, { knowledgeRecordId: record.id }]
-      );
-
-      return { ...record, currentVersion: versionResult.rows[0] };
     });
   }
 
