@@ -67,26 +67,39 @@ export function createWorker({ config, db, knowledgeSystem }) {
 
           let replyText;
           if (products.length > 0) {
-            // Construir respuesta técnica con productos encontrados
+            // Construir respuesta técnica profesional - Protección de Activos
             const product = products[0];
-            replyText = `✅ *Filtro ELIMFILTERS encontrado*\n\n` +
-              `*SKU:* ${product.sku}\n` +
-              `*Producto:* ${product.product_name}\n` +
-              `*Tipo:* ${product.filter_type}\n`;
 
-            if (product.oem_codes && product.oem_codes.length > 0) {
-              replyText += `*Códigos OEM:* ${product.oem_codes.join(", ")}\n`;
+            // Extraer tecnología del nombre del producto (SYNTRAX, NANOFORCE, etc.)
+            const techName = product.product_name?.match(/(SYNTRAX|NANOFORCE|MACROCORE|HYDROCORE|DRYCORE|MICROKAPPA)/)?.[1] || 'tecnología ELIMFILTERS';
+
+            // Extraer homologación OEM si existe
+            const oemCodes = product.oem_codes ?
+              (Array.isArray(product.oem_codes) ?
+                product.oem_codes.map(o => typeof o === 'object' ? o.code : o).join(', ') :
+                String(product.oem_codes).replace(/[\[\]"']/g, '')) : '';
+
+            replyText = `✅ *PROTECCIÓN DE ACTIVOS: RECOMENDACIÓN TÉCNICA*\n\n` +
+              `*SKU ELIMFILTERS:* ${product.sku}\n` +
+              `*Aplicación:* ${product.product_name}\n` +
+              `*Tipo de filtración:* ${product.filter_type}\n`;
+
+            if (oemCodes) {
+              replyText += `*Homologación:* ${oemCodes}\n`;
             }
 
-            if (product.competitor_codes && product.competitor_codes.length > 0) {
-              replyText += `*Referencias:* ${product.competitor_codes.join(", ")}\n`;
-            }
+            replyText += `\n*¿POR QUÉ LO RECOMENDAMOS?*\n`;
+            replyText += `Nuestra media filtrante patentada ${techName} está desarrollada bajo formulaciones avanzadas, con una relación Beta de 200/75/20. Esto significa que puede retener partículas de hasta 20 micrones con una eficiencia del 75%, asegurando:\n\n` +
+              `• Reducción del desgarre abrasivo en componentes del motor\n` +
+              `• Prolongación de la vida útil del activo\n` +
+              `• Cumplimiento con normas ISO 16889 y especificaciones del fabricante\n\n`;
 
             if (product.description) {
-              replyText += `*Descripción:* ${product.description}\n`;
+              replyText += `*Especificación técnica:* ${product.description}\n\n`;
             }
 
-            replyText += `\n¿Necesitas más información técnica? Contáctanos.`;
+            replyText += `*IMPORTANTE:* Esta recomendación se basa en especificaciones que exige el fabricante del motor. Verificar siempre el manual del fabricante para políticas de mantenimiento y reemplazo.\n\n` +
+              `¿Necesitas detalles técnicos adicionales o cotización?`;
           } else {
             // Quick responses for greetings/common phrases (avoid NVIDIA delay)
             const greeting_patterns = [
