@@ -166,6 +166,11 @@ services:
       - key: MIN_PRODUCTION_CONFIDENCE
         value: "0.85"
 
+  # Knowledge Channel Gateway — DISABLED (Phase 2+)
+  # Requires 6 secrets: KNOWLEDGE_API_KEY, SYSTEM_ACTOR_ID, META_APP_SECRET, META_VERIFY_TOKEN, WEB_CHAT_SHARED_SECRET, MICROSOFT_GRAPH_TENANT_ID
+
+  # Knowledge Review — DISABLED (Phase 2+)
+  # Requires 2 secrets: KNOWLEDGE_CENTER_API_KEY, KNOWLEDGE_CENTER_ACTOR_ID
 
   # LinkedIn Bot (Phase 2 Implementation)
   - type: web
@@ -197,7 +202,130 @@ services:
           property: connectionString
       - key: NVIDIA_NIM_API_KEY
         sync: false
+      # Knowledge System Integration
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        value: https://knowledge-engine-runtime-staging.onrender.com
+      - key: ENGINE_API_KEY
+        sync: false
 
+  - type: web
+    name: elimfilters-whatsapp-bot
+    runtime: node
+    rootDir: elimfilters-whatsapp-bot
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: WHATSAPP_BUSINESS_ACCOUNT_ID
+        sync: false
+      - key: WHATSAPP_ACCESS_TOKEN
+        sync: false
+      - key: WHATSAPP_VERIFY_TOKEN
+        sync: false
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: DRY_RUN
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      # Knowledge System Integration
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        value: https://knowledge-engine-runtime-staging.onrender.com
+      - key: ENGINE_API_KEY
+        sync: false
+
+  - type: web
+    name: elimfilters-instagram-bot
+    runtime: node
+    rootDir: elimfilters-instagram-bot
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: INSTAGRAM_BUSINESS_ACCOUNT_ID
+        sync: false
+      - key: INSTAGRAM_ACCESS_TOKEN
+        sync: false
+      - key: INSTAGRAM_VERIFY_TOKEN
+        sync: false
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: DRY_RUN
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      # Knowledge System Integration
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        value: https://knowledge-engine-runtime-staging.onrender.com
+      - key: ENGINE_API_KEY
+        sync: false
+
+<<<<<<< HEAD
+=======
+  - type: web
+    name: elimfilters-youtube-bot
+    runtime: node
+    rootDir: elimfilters-youtube-bot
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: YOUTUBE_CHANNEL_ID
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: YOUTUBE_VERIFY_TOKEN
+        sync: false
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b
+      - key: DRY_RUN
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: elimfilters-instagram-db
+          property: connectionString
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      # Knowledge System Integration
+      - key: KNOWLEDGE_CENTER_API_URL
+        value: https://knowledge-center-api-staging.onrender.com
+      - key: KNOWLEDGE_CENTER_API_KEY
+        sync: false
+      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
+        value: https://knowledge-engine-runtime-staging.onrender.com
+      - key: ENGINE_API_KEY
+        sync: false
+
+>>>>>>> claude/world-catalogue-build-thyf4l
   # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
   - type: background_worker
     name: notification-worker-staging
