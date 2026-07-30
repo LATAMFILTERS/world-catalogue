@@ -135,6 +135,9 @@ function verifyInstagramSignature(rawBody, signature, appSecret) {
 
 const port = config.port || 3000;
 app.listen(port, () => {
+  console.log("█████████████████████████████████████████████████████████");
+  console.log("█ INSTAGRAM BOT STARTING - RENDER REDEPLOY TEST 30/07/2026 █");
+  console.log("█████████████████████████████████████████████████████████");
   logger.info(`🚀 INSTAGRAM BOT v2 STARTED - Knowledge Engine Runtime integration active`);
   logger.info(`Instagram bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
 });
