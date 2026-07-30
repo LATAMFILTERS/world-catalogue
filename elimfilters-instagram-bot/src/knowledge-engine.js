@@ -60,7 +60,6 @@ export async function queryKnowledgeEngine(config, message, sessionId, candidate
     query: message,
     audience: 'TECHNICAL_SUPPORT',
     channel: 'INSTAGRAM',
-    correlationId: sessionId,
     candidateCaseId: candidateCaseId,
     context: { timestamp: new Date().toISOString() }
   };
