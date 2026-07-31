@@ -28,11 +28,11 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         sync: false
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         sync: false
       - key: ENGINE_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
   # Static frontend serving elimfilters.com. These redirects must execute at the
   # HTTP hosting layer, before Render attempts to resolve files in frontend/out.
@@ -127,9 +127,9 @@ services:
       - key: DATABASE_SSL
         value: "true"
       - key: KNOWLEDGE_API_KEYS
-        generateValue: true
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
       - key: KNOWLEDGE_REVIEW_BASE_URL
         value: https://internal.elimfilters.com
       - key: KNOWLEDGE_REVIEW_MAILBOX
@@ -160,7 +160,7 @@ services:
       - key: DATABASE_SSL
         value: "true"
       - key: ENGINE_API_KEY
-        generateValue: true
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
       - key: LOG_LEVEL
         value: info
       - key: MAX_RETRIEVAL_RECORDS
@@ -197,7 +197,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_CENTER_ACTOR_ID
         sync: false
 
@@ -235,11 +235,11 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         value: https://knowledge-center-api-staging.onrender.com
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
   - type: web
     name: elimfilters-whatsapp-bot
@@ -275,11 +275,11 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         value: https://knowledge-center-api-staging.onrender.com
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
   - type: web
     name: elimfilters-instagram-bot
@@ -315,11 +315,11 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         value: https://knowledge-center-api-staging.onrender.com
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
   - type: web
     name: elimfilters-youtube-bot
@@ -353,11 +353,11 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         value: https://knowledge-center-api-staging.onrender.com
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: KNOWLEDGE_ENGINE_RUNTIME_URL
         value: https://knowledge-engine-runtime-staging.onrender.com
       - key: ENGINE_API_KEY
-        sync: false
+        value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
   # Notification Worker — Processes queued notifications and delivers emails (Phase 2+ Staging)
   - type: background_worker
     name: notification-worker-staging
@@ -374,7 +374,7 @@ services:
       - key: KNOWLEDGE_CENTER_API_URL
         value: https://knowledge-center-api-staging.onrender.com
       - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
+        value: 7dbfe0ccc6fa56e6ca54470e3ed5e1d6e4b4e28c07d6cc5a083e6ecc5f60a68c
       - key: NOTIFICATION_WORKER_ACTOR_ID
         value: notification-worker-system
       - key: LOG_LEVEL
