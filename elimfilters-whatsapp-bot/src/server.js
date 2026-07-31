@@ -4,13 +4,15 @@ import { getConfig } from "./config.js";
 import { createDb } from "./db.js";
 import { createLogger } from "./logger.js";
 import { createWorker } from "./worker.js";
+import { createKnowledgeSystemClient } from "./knowledge-system.js";
 
 const logger = createLogger("WhatsApp-Server");
 const config = getConfig();
 const db = createDb(config.databaseUrl);
 await db.init();
+const knowledgeSystem = createKnowledgeSystemClient(config);
 
-const worker = createWorker({ config, db });
+const worker = createWorker({ config, db, knowledgeSystem });
 const app = express();
 
 // Force Knowledge Engine Runtime to be configured
