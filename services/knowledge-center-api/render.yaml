@@ -6,7 +6,7 @@ services:
     plan: starter
     autoDeploy: true
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: bash scripts/run.sh
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV
