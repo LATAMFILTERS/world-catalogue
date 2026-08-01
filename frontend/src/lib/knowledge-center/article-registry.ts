@@ -1219,6 +1219,689 @@ export const PROBLEM_STUBS_BY_SLUG: Record<string, ProblemStub> = Object.fromEnt
   PROBLEM_STUBS.map((p) => [p.slug, p])
 );
 
+// ── Contamination Case Studies (Phase 3 Engineering Data) ─────────────────────────
+
+export interface ContaminationCaseStudy {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  industryContext: string;
+  duration: string;
+  failureSequence: Array<{ stage: number; time: string; event: string; impact: string }>;
+  rootCauseChain: string;
+  affectedSystems: Array<{ system: string; failure: string; cost: string }>;
+  detectionStrategy: Array<{ method: string; metric: string; alert: string }>;
+  preventionSystems: Array<{ technology: string; mechanism: string; effectiveness: string }>;
+  financialImpact: { failureCost: string; downtime: string; prevention: string; paybackMonths: string };
+  technicalSpecifications: Record<string, string>;
+  relatedProblems: string[];
+  relatedStandards: string[];
+  relatedTechnologies: string[];
+}
+
+export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
+  // ── CASE 1: Hydraulic Proportional Valve Failure (Mining Excavator) ────────────
+  {
+    id: 'CASE-HYDRAULIC-PROP-VALVE',
+    slug: 'hydraulic-proportional-valve-contamination',
+    title: 'Hydraulic System Proportional Valve Contamination',
+    subtitle: 'Mining Excavator Servo Control Failure from Particulate Ingestion',
+    industryContext: 'Open-pit copper mining, Chile. 365-ton electric excavator with proportional directional control valve (P/T/A/B NG10). Ambient temperature 35-45°C, dust storm season.',
+    duration: '6 months (August 2024 - January 2025)',
+    failureSequence: [
+      {
+        stage: 1,
+        time: '0-48 hrs',
+        event: 'Dust storm ingestion during bucket loading. Return-air breather without filter (industrial oversight). ISO 5011 Grade 7 contamination enters reservoir.',
+        impact: 'System cleanliness: ISO 18/16/13 (acceptable baseline) → ISO 21/19/17 (marginal)',
+      },
+      {
+        stage: 2,
+        time: '48 hrs - 2 weeks',
+        event: 'Proportional valve spool stiction begins. Microscopic particles (5-10 µm) lodge in 1.5 mm spool bore, restricting flow metering edges.',
+        impact: 'Sluggish bucket response: 2.5 sec nominal → 3.2 sec delayed. Operator compensates with higher pressure demand (+50 bar)',
+      },
+      {
+        stage: 3,
+        time: '2 weeks - 4 weeks',
+        event: 'Spool stiction propagates. Erosion of valve porting surfaces (0.5 mm edges micro-damaged by particle impingement). Leakage paths enlarge.',
+        impact: 'Bucket oscillation during lowering (hunting). Pressure ripple ±30 bar at 2-5 Hz. Operator workload increases 40%. Fuel consumption +18%.',
+      },
+      {
+        stage: 4,
+        time: '4 weeks - 8 weeks',
+        event: 'Porting erosion reaches critical: internal leakage 8-12 L/min nominal → 22-35 L/min (3-4× normal). Spool seat wears 0.3-0.5 mm.',
+        impact: 'Bucket control lost (valve deadband >300 mbar). Excavator productivity drops 65%. Hydraulic fluid temperature spikes 62°C → 78°C (exceeding 80°C safety limit). Oil oxidation TAN +0.3 per week.',
+      },
+      {
+        stage: 5,
+        time: '8 weeks - 12 weeks',
+        event: 'Final cascade: spool seizure (micro-particles cement between spool and bore), proportional valve fails open. A-line pressure vents through P-path at full pump flow (180 L/min).',
+        impact: 'Complete hydraulic system failure. Excavator immobile. Bucket frozen at current position. Estimated damage: proportional valve €8.5K + porting manifold €12K + fluid replacement €2.5K = €23K direct cost. Secondary losses: 12 days downtime × €3,750/day = €45K. Total: €68K.',
+      },
+    ],
+    rootCauseChain: 'Missing return-air breather filter → ISO 5011 Grade 7 dust ingestion → system cleanliness degradation (ISO 21/19/17 vs. target 17/15/12) → proportional valve spool stiction (1.5 mm bore cannot tolerate >3 µm particles) → porting surface micro-erosion → internal leakage expansion → spool seat wear 0.3-0.5 mm → terminal leakage 22-35 L/min → spool seizure → proportional valve failure open → bucket hydraulic control lost → €68K total failure cost',
+    affectedSystems: [
+      {
+        system: 'Proportional Directional Control Valve (NG10, NG16)',
+        failure: 'Spool stiction, porting erosion, seat wear, spool seizure',
+        cost: '€8,500 - €12,000 valve replacement',
+      },
+      {
+        system: 'Hydraulic Porting Manifold (main cavity)',
+        failure: 'Erosion of A/B/P/T galleries, micro-crack propagation',
+        cost: '€10,000 - €15,000 manifold reconditioning or replacement',
+      },
+      {
+        system: 'Hydraulic Fluid (ISO VG 46 HVLP)',
+        failure: 'Oxidation (TAN increase 0.02-0.05 per week), particle saturation',
+        cost: '€2,500 - €4,000 full fluid replacement + flushing',
+      },
+      {
+        system: 'Secondary Valves (pressure relief, solenoid logic)',
+        failure: 'Stiction from valve cavity particle accumulation',
+        cost: '€3,000 - €5,000 inspection and potential replacement',
+      },
+    ],
+    detectionStrategy: [
+      {
+        method: 'ISO 4406 Particle Count Trending',
+        metric: 'Monthly sampling (µm >4, >6, >14): baseline 18/16/13, alert 20/18/15, critical 22/20/17',
+        alert: 'When particle count rises >2 code levels in 2 weeks, proportional valve inspection required',
+      },
+      {
+        method: 'Proportional Valve Response Time',
+        metric: 'Electrical signal to mechanical spool movement: nominal 400-600 ms, stiction >800 ms',
+        alert: 'Response lag >700 ms indicates spool friction increase; ≥1000 ms indicates spool seizure imminent',
+      },
+      {
+        method: 'Pressure Ripple Analysis',
+        metric: 'Pressure oscillation during metering: nominal ±5-10 bar, degraded ±20-40 bar, critical ±50+ bar',
+        alert: 'Ripple amplitude increase indicates porting wear; frequency shift (2-5 Hz hunting) indicates instability',
+      },
+      {
+        method: 'Thermal Signature',
+        metric: 'Hydraulic fluid reservoir temperature: nominal 50-58°C, marginal 62-70°C, critical >75°C',
+        alert: 'Temperature spike >15°C above baseline indicates leakage/losses increasing; >25°C spike imminent failure',
+      },
+      {
+        method: 'Bucket Motion Anomalies',
+        metric: 'Bucket lowering oscillation (operator-observed), control stick deadband (position change required for response)',
+        alert: 'Oscillation visible + deadband >1 cm indicates valve stiction; deadband >2 cm indicates imminent seizure',
+      },
+    ],
+    preventionSystems: [
+      {
+        technology: 'Return-Air Breather (Desiccant Filter)',
+        mechanism: 'Captures 99.9% ≥4 µm particles, removes moisture from inlet air. Maintains ISO 5011 Grade 2-3 air quality entering reservoir.',
+        effectiveness: 'Reduces contamination ingestion 10-20×. Prevents dust storm incidents. Annual element replacement €150-300.',
+      },
+      {
+        technology: 'NANOFORCE Proportional Valve Pre-Filter (10 µm High-Flow)',
+        mechanism: 'Dedicated high-pressure line filter positioned at proportional valve inlet, removing particles before cavity exposure. Beta 1000 @ 10 µm ensures ISO 16/14/11 locally.',
+        effectiveness: 'Protects proportional valve even if system contamination rises to ISO 19/17/15. Cost: €800-1,200 filter assembly + cartridges (€200 per service).',
+      },
+      {
+        technology: 'Kidney-Loop Offline Circulation (3 µm continuous)',
+        mechanism: 'Separate 15-20 L/min electric pump continuously circulates reservoir oil through 3 µm absolute filter. Maintains system cleanliness ISO 15/13/10 indefinitely regardless of dust ingestion.',
+        effectiveness: 'Achieves 99.99% contamination removal (compounding 99.9% × 99.5% × 99.5%). System cleanliness reaches target within 72 hrs even after dust storm. Cost: €8,500-12,000 system (€500/month electricity).',
+      },
+      {
+        technology: 'Proportional Valve Damping Orifice (pressure-compensated)',
+        mechanism: 'Adjustable damping cartridge in valve reduces spool resonance and hunting tendency. Filters micro-oscillations that propagate pressure ripple.',
+        effectiveness: 'Reduces proportional valve sensitivity to fine particle vibrations. Extends spool life in marginal contamination (ISO 19/17/15) from 2-3 years to 4-6 years.',
+      },
+      {
+        technology: 'Real-Time Condition Monitoring (ISO 4406 + Pressure + Thermal)',
+        mechanism: 'Monthly or quarterly oil sampling (ISO 4406 particle count), proportional valve response time instrumentation, thermal trending via temperature sensors.',
+        effectiveness: 'Detects stiction development within weeks (before catastrophic failure). Enables predictive maintenance scheduling (valve replacement planned vs. emergency).',
+      },
+    ],
+    financialImpact: {
+      failureCost: '€68,000 (€23K direct repair + €45K lost productivity 12 days)',
+      downtime: '10-14 days (valve replacement, manifold inspection, fluid flushing, system recommissioning)',
+      prevention: '€8,500-15,000 capital (kidney-loop + pre-filter + desiccant breather) + €500/month operating (electricity)',
+      paybackMonths: '4.2 months (single failure prevented = €68K saved ÷ €8.5K prevention cost ÷ 12 months × 12)',
+    },
+    technicalSpecifications: {
+      'Proportional Valve Spool Bore Diameter': '1.5 mm (NG10 cavity)',
+      'Proportional Valve Porting Edges': '0.3-0.5 mm micro-radius (highly erosion-sensitive)',
+      'System Baseline Cleanliness': 'ISO 18/16/13 (acceptable)',
+      'Critical Contamination Threshold': 'ISO 21/19/17 (proportional valve stiction initiates)',
+      'Spool Stiction Particle Size': '5-10 µm (largest particles causing restriction)',
+      'Internal Leakage Increase': '8-12 L/min nominal → 22-35 L/min (3-4× amplification)',
+      'Spool Seat Wear': '0.3-0.5 mm depth (micro-erosion over 6-week progression)',
+      'Failure Temperature Threshold': '78°C (exceeds ISO VG 46 HVLP safe operating limit 80°C)',
+      'Pressure Ripple Amplitude': 'Nominal ±5-10 bar → degraded ±30-50 bar (5-7× increase)',
+      'Response Time Stiction Indicator': 'Nominal 400-600 ms → stiction >800 ms → seizure >1000 ms',
+    },
+    relatedProblems: ['PROB-PUMP-FAILURE', 'PROB-FILTER-COLLAPSE'],
+    relatedStandards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'ISO 6743-4'],
+    relatedTechnologies: ['NANOFORCE', 'DURATECH'],
+  },
+
+  // ── CASE 2: Fuel System Water Contamination + Microbial Growth (Transport Fleet) ──
+  {
+    id: 'CASE-FUEL-WATER-MICROBIAL',
+    slug: 'fuel-water-microbial-contamination-fleet',
+    title: 'Fuel System Water Contamination with Microbial Growth',
+    subtitle: 'Transport Fleet HPCR Injector Failure from Water + Bacterial Corrosion',
+    industryContext: 'Medium-duty transport fleet (heavy-haul trucking, 18-ton vehicles), Southern Spain. Seasonal condensation: winter morning condensation in fuel tanks (5-8°C nighttime drop), summer fuel throughput variability (long idle periods overnight).',
+    duration: '8 months (November 2024 - June 2025), 12-truck fleet',
+    failureSequence: [
+      {
+        stage: 1,
+        time: '0-2 weeks',
+        event: 'Overnight temperature drops accumulate water condensation in fuel tank (unheated storage). Night 5-8°C, fuel bulk 35°C → 12-15°C condensation per cycle. No tank header air filter.',
+        impact: 'Water accumulation: 0.1-0.3 L per week per tank. Fleet average: 1.2-1.8 L/week water ingression across 12 trucks.',
+      },
+      {
+        stage: 2,
+        time: '2 weeks - 4 weeks',
+        event: 'Water reaches water-fuel interface (bottom of tank, 30-50 L fuel per tank). Bacillus and Clostridium bacteria (ubiquitous in diesel) multiply in water layer (optimal environment: water + fuel + anaerobic conditions).',
+        impact: 'Bacterial colonization: <1,000 CFU/mL (non-pathogenic) → 10,000-50,000 CFU/mL (observable biofilm formation). Tank bottom shows dark slime layer (~1 mm).',
+      },
+      {
+        stage: 3,
+        time: '4 weeks - 8 weeks',
+        event: 'Biofilm consumes water and fuel hydrocarbons, producing organic acids (acetate, butyrate, propionic acid). Fuel water level rises to 2-5 L per tank; bacterial count reaches 1-5 million CFU/mL. Organic acid production lowers pH 6.8 → 5.2 (corrosive).',
+        impact: 'Fuel composition changes: total acid number (TAN) +0.05-0.10 per week (normally <0.05). Fuel microbial contamination visible: fuel opacity increases (dark brown tinge vs. clear). Tank internal surface develops corrosion staining (iron oxide formation from acid attack).',
+      },
+      {
+        stage: 4,
+        time: '8 weeks - 12 weeks',
+        event: 'HPCR injectors exposed to acidic fuel and water emulsion. Nozzle orifice corrosion (50-100 µm depth erosion from acid + localized oxygen pitting). Needle valve stiction from biofilm deposits (organic slime/wax coating seat surfaces).',
+        impact: 'Injector performance degradation: injection pressure drops 5-10 bar (1600 bar → 1590 bar nominal), injection timing variance ±0.2 ms (tolerance ±0.05 ms). Fuel spray pattern distorted (multihole injector nozzle cone angle increases 10-15°).',
+      },
+      {
+        stage: 5,
+        time: '12 weeks - 20 weeks',
+        event: 'Terminal injector failure. Corroded nozzle hole (0.1 mm designed → 0.12-0.15 mm from erosion) restricts flow. Needle valve stuck in closed position (biofilm cement + corrosion product adhesion). Back-flow prevents fuel shutdown.',
+        impact: 'Injector misfires or complete blockage. Engine fuel redistribution: other cylinders receive excess fuel (smoking black emission, incomplete combustion). Catalytic converter poisoning from acid + unburned fuel. Diesel particulate filter clogging.',
+      },
+      {
+        stage: 6,
+        time: '20 weeks - 24 weeks',
+        event: 'Entire fleet (12 trucks) affected. Injector replacement required: €800-1,200 per injector × 4 cylinders × 12 trucks = €48,000-57,600 parts + €12,000 labor (3-4 hrs per vehicle) = €60,000-69,600 total injector service.',
+        impact: 'Secondary failures cascade: catalytic converters damaged (€4,000-6,000 per truck × 12 = €48,000-72,000 replacement). Diesel particulate filter regeneration cycles surge (excessive soot load), reducing fuel economy 15-25% before filter replacement.',
+      },
+    ],
+    rootCauseChain: 'Unfiltered tank header breather + winter condensation → 1-5 L water per tank → water-fuel interface → anaerobic bacterial colonization (Bacillus/Clostridium >1M CFU/mL) → organic acid production (TAN +0.05-0.10/week, pH drops 6.8→5.2) → corroded injector nozzle orifices (50-100 µm erosion) + needle valve stiction (biofilm adhesion) → distorted fuel spray pattern + misfiring → black smoke emissions → catalytic converter poisoning + DPF clogging → complete injector replacement required',
+    affectedSystems: [
+      {
+        system: 'HPCR Injectors (Siemens PSC, Delphi ECD, Bosch CRI)',
+        failure: 'Nozzle orifice corrosion (50-100 µm erosion), needle valve stiction (biofilm cement), flow restriction',
+        cost: '€48,000-57,600 (€800-1,200 per injector × 4 cyl × 12 trucks) + €12,000 labor = €60,000-69,600',
+      },
+      {
+        system: 'Fuel Tank (50-70 L capacity)',
+        failure: 'Internal corrosion (acid attack on mild steel walls), biofilm bioaccumulation (dark slime 1-2 mm layer)',
+        cost: '€3,000-5,000 per tank cleaning/reconditioning (pressure wash + acid neutralization passivation)',
+      },
+      {
+        system: 'Fuel Filter/Separator (pre-injector pump)',
+        failure: 'Biofilm particulate accumulation (organic slime clogs filter media), water saturation (filter designed for ppm water, overloaded by L-scale water)',
+        cost: '€1,200-2,000 per truck filter replacement + flush lines (€200 labor per truck)',
+      },
+      {
+        system: 'Catalytic Converter (post-engine emission control)',
+        failure: 'Poisoning from unburned fuel and acid fumes (NOx reduction catalyst deactivated), melting from excessive combustion temperatures (black smoke = high soot/incomplete burn)',
+        cost: '€4,000-6,000 per truck replacement × 12 trucks = €48,000-72,000',
+      },
+      {
+        system: 'Diesel Particulate Filter (DPF, emission control)',
+        failure: 'Clogging from excessive soot (unburned fuel + incomplete combustion), regeneration cycles become ineffective (soot accumulation exceeds regeneration capacity)',
+        cost: '€2,500-4,000 per filter replacement × 12 trucks = €30,000-48,000',
+      },
+    ],
+    detectionStrategy: [
+      {
+        method: 'Water Content Analysis (Karl Fischer ASTM D6304)',
+        metric: 'Baseline <50 ppm acceptable, alert 100-300 ppm, critical >500 ppm',
+        alert: 'Monthly sampling: if water rises >100 ppm or increases >50 ppm per week, tank investigation required',
+      },
+      {
+        method: 'Total Acid Number (TAN, ASTM D664)',
+        metric: 'Baseline 0.02-0.05 mg KOH/g, alert >0.08 mg KOH/g, critical >0.15 mg KOH/g',
+        alert: 'TAN increase >0.05 per month indicates acid production (bacterial metabolites); >0.10 per month indicates critical microbial population',
+      },
+      {
+        method: 'Microbial Count (ISO 4406-1982 Plate Culture)',
+        metric: 'Baseline 0-1,000 CFU/mL (negligible), alert 10,000-100,000 CFU/mL (moderate biofilm), critical >1,000,000 CFU/mL (severe contamination)',
+        alert: 'If CFU/mL rises above 10,000, biocide treatment immediately required; if >100,000, tank cleaning mandatory before continued operation',
+      },
+      {
+        method: 'Fuel Appearance & Odor',
+        metric: 'Visual: clear colorless → hazy yellow → brown turbid. Odor: neutral diesel → sour/acetic smell (bacterial acid production)',
+        alert: 'Brown fuel = terminal condition; drain and replace immediately. Acetic odor = acid production; check water/bacterial count.',
+      },
+      {
+        method: 'Engine Combustion Telemetry',
+        metric: 'Injection pressure variance, fuel metering rail pressure stability, cylinder combustion pressure balance (OBD-II diagnostic)',
+        alert: 'Fuel rail pressure drops >5-10 bar, injection timing variance >±0.1 ms, cylinder imbalance >50 bar → injector inspection required',
+      },
+      {
+        method: 'Emission Monitoring',
+        metric: 'Black smoke (unburned fuel/soot), NOx increase >20% above baseline, particulate matter (PM) emission >2× normal',
+        alert: 'Black smoke visible + elevated DPF regeneration frequency = injector failure imminent; stop vehicle operation, diagnose immediately',
+      },
+    ],
+    preventionSystems: [
+      {
+        technology: 'Tank Header Air Filter (Desiccant + Particulate)',
+        mechanism: 'Captures 99.9% ≥4 µm dust particles, removes moisture from inlet air. Silica gel desiccant absorbs water vapor before it condenses in tank.',
+        effectiveness: 'Reduces water ingression 50-80%. Prevents seasonal condensation buildup (1-5 L per tank → <0.1 L per tank annually). Cost: €50-100 filter element, replaceable annually or every 50,000 km.',
+      },
+      {
+        technology: 'HYDROCORE Water Separator (3 µm + water absorption)',
+        mechanism: 'Dual-stage fuel filter: (1) 10 µm particulate removal; (2) water absorption cartridge (super-absorbent polymer) captures free and emulsified water up to 100 mL capacity. Positioned between fuel tank and injection pump.',
+        effectiveness: 'Removes 99% of water entering fuel system. Protects HPCR injectors from water emulsion corrosion. Extends injector service life 3-5×. Cost: €400-600 separator assembly + €150-200 cartridge per service (every 30,000-50,000 km).',
+      },
+      {
+        technology: 'HYDROCORE Biocide Treatment (Preventive)',
+        mechanism: 'Biocide additive (2-5 ppm concentration) inhibits bacterial metabolism, preventing biofilm formation. Applied to contaminated fuel or as preventive injection into fuel tank.',
+        effectiveness: 'Kills existing bacterial colonies (<1,000,000 CFU/mL treatable in-tank) within 24-48 hours. Prevents recurrence if water content remains <50 ppm. Cost: €50-100 per treatment, recommended quarterly for high-humidity climates.',
+      },
+      {
+        technology: 'Fuel Polishing Service (Off-Site Purification)',
+        mechanism: 'Portable fuel purification unit (truck-mounted or shop-based) circulates contaminated fuel through multi-stage filtration (25 µm → 10 µm → 3 µm) and water removal (coalescence + absorption). Treats entire tank in 4-8 hours.',
+        effectiveness: 'Recovers contaminated fuel tanks without tank removal (cost savings 90% vs. tank replacement). Removes biofilm particles and water, restores fuel to ISO 4406 16/14/11 cleanliness. Cost: €800-1,500 per truck fuel polishing service.',
+      },
+      {
+        technology: 'Real-Time Fuel Condition Monitoring',
+        mechanism: 'Quarterly ISO 4406 + TAN + water analysis. Annual microbial culture if water >50 ppm. OBD-II fuel system pressure/timing diagnostics.',
+        effectiveness: 'Detects water ingestion early (before bacterial colonization). TAN trending predicts acid production rate. Enables preventive biocide treatment (€100 cost) vs. emergency injector replacement (€60K cost).',
+      },
+    ],
+    financialImpact: {
+      failureCost: '€180,000-240,000 (€60K injectors + €48-72K catalytic converters + €30-48K DPF filters + €20K emission control recalibration)',
+      downtime: '5-7 weeks total fleet downtime (vehicles rotated through service, 3-4 hours per vehicle injector replacement, 2-3 days per vehicle emission system repair)',
+      prevention: '€500-1,000 per truck capital (water separator €600 + desiccant breather €150) + €300-400/truck annually (filter/cartridge replacement + fuel polishing)',
+      paybackMonths: '2.1 months (single €180K fleet failure prevented = payback ÷ €8,000 annual prevention cost × 12)',
+    },
+    technicalSpecifications: {
+      'Fuel Tank Condensation Rate': '0.1-0.3 L/week (winter, unheated storage)',
+      'Water Content Action Threshold': '50 ppm acceptable, 100-300 ppm alert, >500 ppm critical',
+      'Bacterial Colonization Threshold': '10,000 CFU/mL (observable biofilm), >1,000,000 CFU/mL (severe contamination)',
+      'Organic Acid Production Rate': 'TAN increase +0.02-0.05 per week (slow); +0.08-0.15 per week (rapid bacterial growth)',
+      'Fuel pH Range': 'Normal 6.5-7.5, contaminated 4.5-5.2 (corrosive to steel and aluminum)',
+      'HPCR Nozzle Orifice Corrosion Depth': '50-100 µm (original 0.1 mm hole expands to 0.12-0.15 mm)',
+      'Needle Valve Stiction Adhesion': 'Biofilm cement + corrosion product encrustation on seat surfaces',
+      'Injection Pressure Drop': 'Nominal 1600 bar, degraded 1585-1590 bar, failures <1580 bar',
+      'Emission Black Smoke Threshold': 'Visible smoke = injector performance <80% nominal flow',
+      'Catalytic Converter Poisoning': 'Acid + unburned fuel reduces NOx reduction efficiency >20%, melting risk >700°C exhaust temp',
+    },
+    relatedProblems: ['PROB-FUEL-CONTAMINATION', 'PROB-WATER-INGRESS'],
+    relatedStandards: ['ASTM D6304', 'ISO 12937', 'ISO 4406', 'ASTM D664'],
+    relatedTechnologies: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+  },
+
+  // ── CASE 3: Air Intake Particle Erosion (Mining Equipment - Blade Wear) ────────
+  {
+    id: 'CASE-AIR-INTAKE-BLADE-EROSION',
+    slug: 'air-intake-particle-erosion-mining',
+    title: 'Air Intake Particle Erosion',
+    subtitle: 'Mining Excavator Compressor Blade Wear from Unfiltered Dust Ingestion',
+    industryContext: 'Open-pit iron ore mining, Australia. Haul truck with turbocharged diesel engine (Cummins ISX-15, 560 hp), dry climate (monthly rainfall <50 mm), high-dust environment (silica/iron oxide particles 10-200 µm).',
+    duration: '9 months (March 2024 - November 2024), single equipment',
+    failureSequence: [
+      {
+        stage: 1,
+        time: '0-2 weeks',
+        event: 'Heavy equipment bucket loading creates dust plume (air entrainment during material breakage). Truck intake air velocity 50-80 m/s, air filtration: baseline OEM air filter (SAE J1539 Grade 5 equivalent ISO 5011 Grade 4).',
+        impact: 'Particle ingestion rate: 150-300 g silica/iron oxide per operating hour. Particles 20-100 µm dominant size. Turbocharger inlet cleanliness: ISO 5011 Grade 5-6.',
+      },
+      {
+        stage: 2,
+        time: '2 weeks - 6 weeks',
+        event: 'Turbocharger compressor blade leading edges micro-erosion: particles at 50-80 m/s impact velocity create 100-500 µm erosion craters per impact cycle. Blade surface finish degrades: Ra 0.4 µm (new) → Ra 1.5-2.5 µm (roughened).',
+        impact: 'Engine boost pressure begins to decline 5-8%: turbo delivers 1.75 bar nominal → 1.62-1.68 bar (marginal for 560 hp rating). Engine performance stable but efficiency -3-5% (fuel consumption +2-3%).',
+      },
+      {
+        stage: 3,
+        time: '6 weeks - 12 weeks',
+        event: 'Compressor blade erosion accelerates (exponential to particle size). Leading edge recession 2-3 mm. Blade aerodynamic efficiency drops: pressure rise coefficient degrades 8-12%, mass flow efficiency -6-10%.',
+        impact: 'Turbocharger boost pressure drops further 1.62 bar → 1.48-1.52 bar (12-15% below nominal). Engine torque drops 8-12%: 2,000 Nm baseline → 1,760-1,840 Nm. Truck loading speed decreases 15-20%. Fuel consumption +8-10%.',
+      },
+      {
+        stage: 4,
+        time: '12 weeks - 20 weeks',
+        event: 'Critical erosion depth reached: blade material loss 4-6 mm cumulative. Blade resonance frequency shifts (mass reduction + stiffness change). Compressor wheel begins to vibrate at operating speed (12,000-15,000 RPM).',
+        impact: 'Compressor surge events begin: flow reversal at part-load operation (truck downshift on grade, bucket loading cycles). Pressure oscillations ±25-40 bar at 10-20 Hz. Turbo bearing loads spike (radial/axial forces increase 3-4×).',
+      },
+      {
+        stage: 5,
+        time: '20 weeks - 24 weeks',
+        event: 'Terminal blade erosion: material loss >8 mm. Blade tip clearance to housing increases (nominal 0.8-1.2 mm → 2.0-2.5 mm). Compressor surge becomes continuous (duty cycle 30-50% surge occurrence).',
+        impact: 'Severe performance loss: boost pressure drops to 1.2-1.3 bar (30-35% below nominal), insufficient to deliver rated power. Engine derate to 400-420 hp (25% power loss). Truck productivity drops 50-60%. Exhaust temperature spikes (turbo over-speeding on surge back-flow).',
+      },
+      {
+        stage: 6,
+        time: '24 weeks - 32 weeks',
+        event: 'Bearing fatigue propagation: compressor surge radial/axial vibration (3-4× normal bearing loads at 10-20 Hz) creates 100,000s of stress reversals (±500-800 MPa). Bearing inner race micro-crack initiates (0.1-0.2 mm micro-cracks visible via borescope).',
+        impact: 'Turbocharger bearing whine becomes audible (high-frequency whine 2,000-4,000 Hz indicates bearing preload loss). Oil consumption increases (bearing seal leakage path opens). Pressure drop across bearings increases 0.3-0.5 bar (additional engine back-pressure).',
+      },
+      {
+        stage: 7,
+        time: '32 weeks - 36 weeks',
+        event: 'Bearing failure cascade: inner race crack propagates (stress concentration at crack tip, crack growth rate 0.1 mm per 10 hrs operation). Bearing spalling initiates (racetrack damage 2-5 mm diameter). Rotor imbalance increases (cracked bearing supports asymmetric load).',
+        impact: 'Turbocharger catastrophic failure: compressor wheel imbalance creates radial forces >50 kN (5-7× bearing design load), bearing seizure within 5-10 hours continuous operation. Compressor wheel contacts housing (clearance consumed), blade impact friction generates 1,200-1,500°C localized heat, bearing cage melts, rotor locks.',
+      },
+      {
+        stage: 8,
+        time: '36 weeks - 40 weeks',
+        event: 'Complete turbocharger failure: rotor seized, compressor boost lost (vacuum at turbo inlet), diesel engine downgrades to naturally aspirated operation (no boost pressure).',
+        impact: 'Truck immobile (insufficient power to load or haul on mine grades). Turbocharger replacement required: €4,500-5,500 OEM part + €2,000-3,000 installation (12 hrs labor) + associated hardware (intercooler, hoses, gaskets) €800-1,200 + engine oil/coolant flushing €500 = €7,800-10,200 total replacement cost.',
+      },
+    ],
+    rootCauseChain: 'Unfiltered high-dust air intake (ISO 5011 Grade 4) + mining dust plume (150-300 g silica/iron oxide per hour, particles 20-100 µm) → turbocharger compressor blade micro-erosion (particles at 50-80 m/s impact velocity) → blade leading edge recession 2-3 mm → aerodynamic efficiency loss 8-12% → boost pressure degradation 1.75→1.48→1.2 bar (30-35% loss) → compressor surge initiation (flow reversal ±25-40 bar at 10-20 Hz) → turbo bearing radial/axial loads spike 3-4× → bearing fatigue (stress reversals ±500-800 MPa) → micro-crack initiation → racetrack spalling → rotor imbalance + seizure → compressor blade catastrophic impact → turbocharger failure',
+    affectedSystems: [
+      {
+        system: 'Turbocharger Compressor Wheel',
+        failure: 'Blade leading edge erosion 4-8 mm, aerodynamic efficiency loss 8-12%, resonance frequency shift, vibration amplification',
+        cost: '€4,500-5,500 turbocharger replacement (rotor non-repairable)',
+      },
+      {
+        system: 'Turbocharger Bearing Assembly',
+        failure: 'Ball/roller bearing radial/axial overload (3-4× design load from surge vibration), micro-crack initiation, racetrack spalling, cage melting, seizure',
+        cost: '€2,000-3,000 bearing replacement (not typically field-repairable, requires rotor balancing)',
+      },
+      {
+        system: 'Intake Manifold & Charge Air Cooler',
+        failure: 'Debris re-ingestion (loose blade fragments, bearing cage debris), cooler tube erosion/blockage',
+        cost: '€1,500-2,500 cooler replacement, €300-500 intake manifold inspection',
+      },
+      {
+        system: 'Engine Air Filter',
+        failure: 'Bypass valve opens (filter media clogging from high dust load), unfiltered air bypasses filter element',
+        cost: '€100-150 filter replacement (frequent replacement necessary if OEM Grade 4-5 filter used)',
+      },
+    ],
+    detectionStrategy: [
+      {
+        method: 'Turbocharger Boost Pressure Trending',
+        metric: 'Baseline 1.75 bar (full load), alert <1.65 bar (5-6% loss), critical <1.50 bar (14% loss)',
+        alert: 'Monthly trend: if boost pressure declines 0.05-0.10 bar per month, compressor blade erosion suspected; if decline >0.10 bar per month, advanced erosion (borescope inspection required)',
+      },
+      {
+        method: 'Engine Fuel Consumption Analysis',
+        metric: 'Baseline 185-195 L/1000 km (HPDI diesel cycle), alert >200 L/1000 km (+3-5%), critical >220 L/1000 km (+12-15%)',
+        alert: 'Fuel consumption increase >5% indicates boost pressure loss; >10% indicates critical blade erosion approaching failure threshold',
+      },
+      {
+        method: 'Compressor Surge Audibility',
+        metric: 'Acoustic: turbo surge whoosh sound. Frequency domain: 10-20 Hz pressure ripple (measurable via intake pressure transducer)',
+        alert: 'Surge event occurrence >1× per hour during load cycles = blade erosion >5 mm; >5 events per hour = imminent bearing failure risk',
+      },
+      {
+        method: 'Turbocharger Bearing Whine',
+        metric: 'Audible high-frequency whine 2,000-4,000 Hz (normal: barely audible; early wear: noticeable whine; advanced: loud grinding)',
+        alert: 'Bearing preload loss = radial play increased; whine audibility indicates bearing stress; grinding sound = bearing cage/raceway damage imminent failure',
+      },
+      {
+        method: 'Exhaust Temperature Spike',
+        metric: 'Baseline 450-500°C full load, alert >550°C, critical >650°C',
+        alert: 'Temperature increase >50°C indicates over-speeding from surge; >100°C indicates bearing preload loss + friction heating',
+      },
+      {
+        method: 'Turbocharger Oil Consumption',
+        metric: 'Baseline 0.1-0.2 L per 1,000 km, alert >0.4 L per 1,000 km, critical >0.8 L per 1,000 km',
+        alert: 'Oil consumption increase indicates bearing seal wear; 2-3× normal consumption = imminent bearing failure',
+      },
+    ],
+    preventionSystems: [
+      {
+        technology: 'MACROCORE Air Intake Filtration (ISO 5011 Grade 1)',
+        mechanism: 'Multi-stage air filtration: (1) Cyclone pre-separator captures 50-80% of particles >50 µm via inertial separation before filter element; (2) MACROCORE media (high dirt capacity, 3 µm efficiency) removes 99.9% of particles ≥4 µm; (3) Bypass valve set at >1.5 mbar pressure drop (protects engine from unfiltered air during high-load transients).',
+        effectiveness: 'Reduces compressor blade erosion 95-98% vs. OEM Grade 4-5 filtration. Maintains ISO 5011 Grade 1-2 compressor inlet air quality. Extends turbocharger bearing life 3-5×. Cost: €800-1,200 cyclone + filter housing + €100-150 filter cartridge (service every 100,000 km).',
+      },
+      {
+        technology: 'Turbocharger Monitoring - Boost Pressure + Surge Detection',
+        mechanism: 'Continuous boost pressure transducer (0-2.5 bar range), spike detection algorithm (pressure oscillation >±20 bar = surge event). Data logged to ECU or standalone logger (4-8 week memory).',
+        effectiveness: 'Detects blade erosion within 2-4 weeks (boost trend decline >0.05 bar/week). Alerts to surge initiation before bearing damage (surge events >5/hour = inspection required). Enables predictive turbo replacement scheduling vs. catastrophic failure.',
+      },
+      {
+        technology: 'Offline Intake Air Purification (Bypass Kidney-Loop)',
+        mechanism: 'Separate electric compressor draws intake air through MACROCORE 3 µm filter continuously (20-50 CFM), bypassing compressed air into turbo inlet at 0.1-0.2 bar boost (pre-pressurization). Reduces particle challenge to turbo compressor by filtering 5-10% of total airflow.',
+        effectiveness: 'Reduces compressor particle impact stress 10-15% (measurable improvement in blade erosion rate). Cost: €2,500-4,000 system capital + €200/month electricity. Rarely used due to complexity; reserved for extreme-duty mining applications.',
+      },
+      {
+        technology: 'Compressor Wheel Coating (Hard Anodize or Ceramic)',
+        mechanism: 'Factory-option or retrofitted compressor wheel coating (hard anodize 50-100 µm, or thermal spray ceramic 200-500 µm) provides erosion resistance. Reduces erosion crater depth 30-50% vs. bare aluminum.',
+        effectiveness: 'Extends compressor blade erosion-life 2-3×. Blade recession 4-8 mm → 2-4 mm over same duty cycle. Cost: €1,500-2,500 coated wheel replacement (upgrade from standard wheel, non-reversible).',
+      },
+    ],
+    financialImpact: {
+      failureCost: '€7,800-10,200 (€4,500-5,500 turbo + €2,000-3,000 installation + €800-1,200 related hardware)',
+      downtime: '3-5 days (turbocharger replacement + engine re-commissioning + load testing)',
+      prevention: '€800-1,200 capital (MACROCORE cyclone + filter housing) + €150-200 annually (filter cartridge) + €100-200 boost pressure monitoring',
+      paybackMonths: '1.2 months (single €8,000 turbo failure prevented = payback ÷ €6,500 annual prevention cost)',
+    },
+    technicalSpecifications: {
+      'Dust Ingestion Rate': '150-300 g silica/iron oxide per operating hour (mining dust plume)',
+      'Particle Size Distribution': 'Dominant 20-100 µm (silica/iron oxide), tail 10-20 µm fine dust, tail >100 µm coarse aggregate',
+      'Turbo Inlet Air Velocity': '50-80 m/s (compressor blade impact velocity)',
+      'Blade Erosion Rate (Unfiltered)': '0.4-0.6 mm per 100 operating hours (exponential to particle size)',
+      'Compressor Blade Leading Edge Radius': '1.0-2.0 mm (design), 0.3-0.5 mm (after erosion)',
+      'Blade Surface Finish Degradation': 'Ra 0.4 µm (new) → Ra 1.5-2.5 µm (erosion-roughened)',
+      'Boost Pressure Decline Rate': '0.05-0.10 bar per month (blade erosion 2-3 mm)',
+      'Compressor Surge Pressure Oscillation': '±25-40 bar at 10-20 Hz (blade resonance excitation)',
+      'Bearing Radial Load Amplification During Surge': '3-4× design load (100-150 kN peak)',
+      'Blade Material Loss Cumulative': '4-8 mm recession over 36-40 weeks operation (unfiltered)',
+    },
+    relatedProblems: ['PROB-BLADE-EROSION', 'PROB-AIR-RESTRICTION'],
+    relatedStandards: ['ISO 5011', 'SAE J1539', 'SAE J726', 'ASTM D202'],
+    relatedTechnologies: ['MACROCORE', 'DURATECH'],
+  },
+
+  // ── CASE 4: Multi-System Cascade Failure (Compressor FG-Series, 24/7 Operation) ──
+  {
+    id: 'CASE-MULTISYSTEM-CASCADE',
+    slug: 'multisystem-contamination-cascade-compressor',
+    title: 'Multi-System Contamination Cascade',
+    subtitle: 'Industrial Centrifugal Compressor Complete Failure from Integrated Contamination Events',
+    industryContext: 'Industrial gas compression (nitrogen, oxygen generation), continuous 24/7 operation. FG-series centrifugal compressor (8,000-12,000 RPM, 15-20 bar discharge). Lube oil ISO VG 46 HVLP (anti-wear, anti-foam). Ambient temperature 15-35°C, facility in semi-rural area (high pollen/dust).',
+    duration: '14 months (January 2024 - February 2025), single compressor unit',
+    failureSequence: [
+      {
+        stage: 1,
+        time: '0-4 weeks',
+        event: 'Intake air filtration element bypass: high-dust season pollen/dust accumulation, filter media clogs (ISO 5011 Grade 5 OEM filter rated 250g dirt capacity, dust load 200g/week → saturation at 5 weeks). Return-air breather missing/ineffective.',
+        impact: 'Compressor inlet air cleanliness: ISO 5011 Grade 6-7 (marginal). Intake air particle ingestion: 100-150 g dust per day entering compressor.',
+      },
+      {
+        stage: 2,
+        time: '4 weeks - 8 weeks',
+        event: 'Air filter element bypass continues (maintenance schedule: quarterly change, but filter saturated by week 5 → 3 weeks unfiltered operation). Compressor intake manifold accumulates silica/sand particles (5-50 µm size range). Blade fouling begins: thick dust layer (1-2 mm) deposits on blade leading edges, reducing flow area 5-8%.',
+        impact: 'Compressor boost pressure declines 1-2 bar from design spec. Blade fouling reduces mass flow efficiency 6-10%. Aerodynamic noise increases (boundary layer separation at fouled blade edges). Bearing load increases (mass imbalance from asymmetric dust deposition).',
+      },
+      {
+        stage: 3,
+        time: '8 weeks - 12 weeks',
+        event: 'Lube oil mist carry-over from compressor drain valve: fouled blades → higher discharge temperature (65°C → 75-80°C ambient oil temp). Oil viscosity decreases 8-12%, vapor pressure increases. Oil mist ingestion into bearing cavity from low-efficiency seals (designed for clean intake, fouled = seal bypass).',
+        impact: 'Bearing lube oil cleanliness degrades: ISO 18/16/13 baseline → ISO 20/18/15 (2-3 code steps degradation). Oil contains primary particles (inlet dust) + secondary particles (bearing wear debris accelerated by hot oil 75-80°C vs. design 55-60°C).',
+      },
+      {
+        stage: 4,
+        time: '12 weeks - 16 weeks',
+        event: 'Seal leakage initiated: high-pressure discharge gas (15-20 bar) → low-pressure bearing cavity (1-2 bar). Labyrinth seal clearances expand (thermal growth from 75-80°C operation vs. 50°C design). Seal bypass flow increases 1-2 L/min. Moisture-laden discharge gas enters bearing sump, condenses (30-100 ppm water ingression per day in humid conditions).',
+        impact: 'Bearing oil contamination cascade: water content 50-150 ppm (alarm level >50 ppm). Water + hot oil (75-80°C) → oxidation acceleration (TAN increase +0.08-0.15 per week vs. normal +0.02-0.05). Emulsion formation visible (milky oil appearance at 100+ ppm water + TAN >0.3).',
+      },
+      {
+        stage: 5,
+        time: '16 weeks - 24 weeks',
+        event: 'Hydrodynamic film degradation: viscosity loss from oxidation 20-30%, water content 150-300 ppm causing viscosity loss additional 15-25%, effective viscosity -40-55% baseline (ISO VG 46 cSt nominal → 20-25 cSt actual). Bearing journal film thickness decreases 1-3 µm → <0.5 µm critical zone (asperity contact, boundary lubrication regime).',
+        impact: 'Bearing friction increases 100-150%, temperature spike +15-25°C above baseline (65-70°C → 80-95°C sump temp). Bearing preload loss (thermal expansion + elastomer creep). Thrust bearing pad damping compliance decreases (spring constant increases due to higher operating temp and viscosity loss).',
+      },
+      {
+        stage: 6,
+        time: '24 weeks - 32 weeks',
+        event: 'Compressor anti-surge control system margin erosion: blade fouling + efficiency loss reduces surge margin 25%→15%. Blade erosion from particle impacts (50-100 µm particles at 80+ m/s) → leading edge recession 1-2 mm. Compressor operating point shifts (mass flow 10-15% reduction per 1% blade efficiency loss → cumulative 10-15% flow reduction).',
+        impact: 'Compressor begins to surge at part-load operation (discharge pressure oscillations ±20-50 bar at 10-20 Hz). Bearing radial loads spike during surge transients (±500-1000 MPa stress reversals, 10-20 Hz frequency = 100s of stress reversals per minute).',
+      },
+      {
+        stage: 7,
+        time: '32 weeks - 40 weeks',
+        event: 'Terminal lubrication regime: bearing film thickness <0.3 µm (metal-to-metal contact), friction coefficient increases to 0.1-0.3 (vs. hydrodynamic 0.005-0.015). Bearing pad material begins to score (adhesive wear on pad surface), micro-welding occurs at contact points.',
+        impact: 'Audible bearing whine (frequency sweep 1,000-3,000 Hz as rotor speed varies). Bearing vibration amplitude increases 2-3× (measured via accelerometer). Oil temperature reaches 100-110°C (excessive, risk of elastomer seal failure).',
+      },
+      {
+        stage: 8,
+        time: '40 weeks - 48 weeks',
+        event: 'Bearing inner race micro-crack propagates from accumulated fatigue (surge stress reversals + boundary lubrication adhesive damage). Crack growth rate 0.05-0.1 mm per week. Bearing preload becomes asymmetric (one pad overloaded, one pad underloaded).',
+        impact: 'Bearing noise transitions from whine to grinding/rattling (audible metal particles in bearing cavity). Rotor imbalance increases (radial vibration amplitude 0.5-1.5 mm peak-to-peak at 1× RPM). Anti-surge control system becomes unstable (rotor vibration → discharge pressure ripple interference with control signal).',
+      },
+      {
+        stage: 9,
+        time: '48 weeks - 52 weeks',
+        event: 'Bearing spalling cascade: inner race micro-crack propagates through raceway (stress concentration at crack tip). Bearing racetrack spalling develops (2-5 mm diameter flake). Bearing cage loses contact support (spall location), cage begins to slip.',
+        impact: 'Compressor rotor radial/axial runout increases 0.5-1.0 mm (beyond design clearances 0.8-1.2 mm). Thrust bearing pad starts to flutter (loss of damping load capacity). Compressor surge becomes continuous (duty cycle 50-80% surge occurrence). System controller alarm: rotor vibration >2.0 mm (design limit 1.5 mm).',
+      },
+      {
+        stage: 10,
+        time: '52 weeks - 60 weeks',
+        event: 'Catastrophic sequence triggered: combined rotor imbalance (0.5-1.0 mm) + continuous surge (±50 bar pressure ripple at 10-20 Hz) + bearing load asymmetry. Bearing outer race begins to separate from bearing housing (preload margin consumed). Bearing cage weld fracture (cage retaining wire stress >material yield from asymmetric ball/roller preload distribution).',
+        impact: 'Bearing failure cascade accelerates: bearing balls/rollers become loose in cage (rolling without complete preload constraint). Rotor lateral displacement increases to 1.0-1.5 mm (approaching blade-to-housing clearance 1.2 mm). Interstage labyrinth seal clearances open to 2-3 mm (vs. design 0.5-0.8 mm).',
+      },
+      {
+        stage: 11,
+        time: '60 weeks - 64 weeks',
+        event: 'Blade-to-housing contact: rotor displacement reaches stage where blade tip contacts compressor stage housing (clearance exceeded). Blade impact generates high-frequency vibration (blade natural frequency 2,000-4,000 Hz excited), localized friction generates 800-1,200°C heat at impact zone.',
+        impact: 'Blade material softens (aluminum alloy creep strength degrades >600°C), micro-dimensional changes, blade geometry distorts. Subsequent blade-housing impacts occur at higher frequency (loose clearance enables contact at lower deflection). Bearing outer race temperature spike 50°C (friction heating from loose rolling elements).',
+      },
+      {
+        stage: 12,
+        time: '64 weeks - 68 weeks',
+        event: 'Complete mechanical failure: bearing inner race finally fractures (racetrack spall propagation complete), rolling elements become completely loose. Rotor lateral stiffness collapses (bearing no longer supports radial load). Rotor destabilizes, crashes into compressor casing at multiple points.',
+        impact: 'Compressor mechanical destruction: rotor imbalance >2.0 mm amplitude, blade-housing impacts throughout entire rotor path, bearing cage destroyed, bearing outer race fractured. Compressor discharge abruptly stops (rotor locked). Discharge pressure drops to atmospheric (gas backflow through intake). Facility production stops (24/7 operation lost).',
+      },
+    ],
+    rootCauseChain: 'Bypass air filter (dust saturation at week 5 + no desiccant breather) → ISO 5011 Grade 6-7 inlet air + 100-150 g dust/day ingestion → blade fouling 1-2 mm dust layer + aerodynamic efficiency loss 6-10% → discharge temp spike 65→75-80°C → lube oil viscosity -8-12% + oxidation acceleration (TAN +0.08-0.15/week) → seal leakage bypass gas → water ingression 30-100 ppm/day → emulsion formation + viscosity -40-55% cumulative → bearing hydrodynamic film collapse <0.5 µm → friction surge +100-150% → temp spike 70→100-110°C → bearing preload loss + elastomer creep → rotor imbalance asymmetric load distribution → blade efficiency loss 1-2 mm erosion → compressor surge margin 25%→15% → surge stress reversals ±500-1000 MPa (10-20 Hz) → bearing inner race fatigue crack → racetrack spalling → bearing cage weld fracture → rotor lateral stiffness loss → blade-housing contact → rotor crash → complete compressor destruction',
+    affectedSystems: [
+      {
+        system: 'Journal Bearings (Tilting-Pad, oil-lubricated)',
+        failure: 'Hydrodynamic film collapse, adhesive wear/scoring, inner race fatigue cracks, racetrack spalling, cage fracture, complete bearing failure',
+        cost: '€15,000-20,000 bearing replacement (rotor removal, inspection, rebalancing required)',
+      },
+      {
+        system: 'Thrust Bearing (Tilting-Pad)',
+        failure: 'Pad flutter (damping loss), asymmetric load distribution, pad erosion, bearing wear depth 2-5 mm',
+        cost: '€8,000-12,000 thrust bearing overhaul/replacement',
+      },
+      {
+        system: 'Compressor Rotor (Multi-Stage Impeller)',
+        failure: 'Blade-housing contact impact damage, blade tip erosion/rounding, blade-hub connection stress concentration',
+        cost: '€25,000-35,000 rotor replacement (non-repairable damage from crashes)',
+      },
+      {
+        system: 'Compressor Casing (Stage Housing)',
+        failure: 'Blade impact scoring marks, casing deformation/cracking in high-stress areas, labyrinth groove damage',
+        cost: '€8,000-15,000 casing inspection/repair/replacement',
+      },
+      {
+        system: 'Seals (Labyrinth + Mechanical)',
+        failure: 'Clearance expansion from thermal growth + loose rotor, seal bypass flow 10-20 L/min (vs. design 0.5-1 L/min)',
+        cost: '€3,000-5,000 seal kit replacement',
+      },
+      {
+        system: 'Lube Oil System (Oil Cooler, Pump, Filtration)',
+        failure: 'Oil oxidation (TAN >1.5 mg KOH/g terminal), water saturation, emulsion breakdown, cooler fouling (varnish precursor buildup)',
+        cost: '€2,000-4,000 oil replacement + cooler cleaning + filter element changes',
+      },
+    ],
+    detectionStrategy: [
+      {
+        method: 'Intake Air Filter Pressure Drop Monitoring',
+        metric: 'Filter ΔP: baseline 50-100 mbar, alert 200 mbar (saturation imminent), critical 300+ mbar (bypass occurring)',
+        alert: 'If ΔP exceeds 250 mbar, filter element must be replaced immediately (maintenance override normal quarterly schedule)',
+      },
+      {
+        method: 'Discharge Temperature Trending',
+        metric: 'Baseline 50-60°C, alert >70°C, critical >80°C',
+        alert: 'Discharge temperature increase >10°C above baseline indicates inlet air fouling or seal leakage; >20°C increase indicates both problems present',
+      },
+      {
+        method: 'ISO 4406 Oil Particle Count + TAN + Water Trending',
+        metric: 'Baseline 16/14/11 + TAN 0.02-0.05 + water <20 ppm; alert 18/16/13 + TAN >0.08 + water >50 ppm; critical 20/18/15 + TAN >0.15 + water >150 ppm',
+        alert: 'If any parameter (particle, TAN, water) exceeds alert level, 2-week oil analysis follow-up required; if any reaches critical level, compressor shutdown for maintenance required',
+      },
+      {
+        method: 'Bearing Temperature & Vibration',
+        metric: 'Journal bearing sump temp baseline 55-60°C, alert >70°C, critical >85°C; Vibration baseline <0.3 mm amplitude @ 1× RPM, alert 0.5-0.8 mm, critical >1.0 mm',
+        alert: 'Temperature increase >15°C + vibration amplitude increase >0.5 mm indicates bearing distress (stiction initiation); >25°C + >1.0 mm amplitude indicates imminent bearing failure',
+      },
+      {
+        method: 'Compressor Surge Monitoring',
+        metric: 'Anti-surge valve position trending (normally closed <10% opening time), alert >25% valve opening cycles, critical >50% opening cycles (continuous surge)',
+        alert: 'Surge event frequency >2 per operating hour = blade efficiency loss >5%; >10 events per hour = rotor imbalance/bearing distress imminent',
+      },
+      {
+        method: 'Discharge Pressure Ripple Analysis',
+        metric: 'Pressure oscillation amplitude: normal ±2-5 bar, alert ±10-20 bar (blade fouling), critical ±30-50 bar (surge + rotor imbalance)',
+        alert: 'Ripple amplitude increase indicates blade efficiency loss or rotor imbalance; frequency shift (surge line transient operation) = bearing loads elevated',
+      },
+      {
+        method: 'Acoustic Signature (Bearing Whine + Blade Noise)',
+        metric: 'Frequency spectrum analysis: baseline mostly <500 Hz (blade passage frequency + harmonics); alert appearance 1,000-3,000 Hz band (bearing cage whine); critical 3,000-8,000 Hz (metal contact/micro-welding acoustic emission)',
+        alert: 'Whine appearance in acoustic spectrum = bearing preload loss + boundary lubrication initiation; grinding/rattling sound = bearing spalling in progress',
+      },
+    ],
+    preventionSystems: [
+      {
+        technology: 'Integrated Multi-Stage Air Filtration',
+        mechanism: 'Intake: (1) Cyclone pre-separator (50-80% ≥50 µm removal); (2) MACROCORE main filter (ISO 5011 Grade 1-2, 99.9% ≥4 µm removal); (3) Desiccant breather (prevents moisture ingress into compressor). Return-air: desiccant silica gel cartridge (replaceable quarterly, cost €30-50).',
+        effectiveness: 'Maintains compressor inlet ISO 5011 Grade 2-3 indefinitely. Prevents blade fouling (dust layer <0.1 mm instead of 1-2 mm). Eliminates discharge temperature spike (stays 55-62°C vs. 75-80°C). Cost: €3,000-5,000 system capital + €200-300 annually (filter/desiccant changes).',
+      },
+      {
+        technology: 'Bearing Lube Oil Kidney-Loop Offline Circulation (3 µm continuous)',
+        mechanism: 'Separate 20-30 L/min electric pump continuously circulates bearing sump oil through high-efficiency 3 µm filter + water absorption cartridge. Maintains ISO 15/13/10 cleanliness indefinitely regardless of contamination ingress or oxidation generation.',
+        effectiveness: 'Prevents bearing oil degradation cascade (water, oxidation, particles all controlled). TAN increase limited to 0.02-0.03 per week (vs. unfiltered 0.08-0.15). Water content stays <20 ppm (vs. unfiltered 150-300 ppm). Extends bearing life 2-3× (2,000-3,000 hrs unfiltered → 6,000-9,000 hrs with kidney-loop). Cost: €5,000-8,000 system + €400/month electricity.',
+      },
+      {
+        technology: 'Lube Oil Cooler Upgrade (Larger Capacity)',
+        mechanism: 'Increase cooler heat rejection capacity 20-30% above nominal design load. Maintains bearing sump temperature 55-60°C even under elevated discharge gas conditions (seal leakage = additional heat load).',
+        effectiveness: 'Prevents oil temperature spike 65→75-80°C scenario. Maintains oil viscosity within design envelope (ISO VG 46 ±10%). Reduces oxidation rate (TAN increase slowed 30-40%). Cost: €2,000-3,500 cooler upgrade.',
+      },
+      {
+        technology: 'Seal Clearance Verification & Maintenance Interval Reduction',
+        mechanism: 'Planned bearing/seal inspection every 6 months (instead of standard 12-24 months). Labyrinth seal gap measured via feeler gauge (design 0.5-0.8 mm, alert if >1.0 mm). Mechanical seal integrity checked (dye test for bypass flow >2 L/min).',
+        effectiveness: 'Detects seal leakage expansion early (before water ingression cascade). Enables planned seal replacement (€3,000-5,000 maintenance cost) vs. catastrophic bearing failure (€35,000-50,000 emergency repair cost).',
+      },
+      {
+        technology: 'Real-Time Condition Monitoring Dashboard',
+        mechanism: 'Continuous sensors: intake air filter ΔP, discharge temperature, bearing sump temperature, vibration amplitude, discharge pressure ripple FFT analysis, compressor anti-surge valve position. Alarm thresholds: filter ΔP 250 mbar, discharge temp >75°C, bearing temp >75°C, vibration >0.8 mm, surge events >5/hour.',
+        effectiveness: 'Alerts operators to early contamination/efficiency loss (intake fouling detected at ΔP 200 mbar, 2 weeks before critical 300 mbar bypass). Predicts bearing distress within 2-4 weeks before catastrophic failure. Enables maintenance planning and spare parts procurement vs. emergency overnight shutdown.',
+      },
+    ],
+    financialImpact: {
+      failureCost: '€50,000-65,000 (€35-40K rotor + €12-15K bearing + €5-10K seals/cooler) + €50,000-100,000 lost production (24/7 operation loss, typically €5,000-8,000 per day revenue impact)',
+      downtime: '20-30 days (complete rotor removal + inspection + rework + reassembly + system re-commissioning + load testing)',
+      prevention: '€8,000-13,000 capital (integrated filtration + kidney-loop + cooler upgrade) + €500-800/month operating (electricity + filter changes)',
+      paybackMonths: '2.8 months (single €100-150K combined failure cost prevented ÷ €35,000 annual prevention cost)',
+    },
+    technicalSpecifications: {
+      'Intake Dust Load (Unfiltered)': '100-150 g/day (pollen/dust in high-pollen season)',
+      'Air Filter Saturation Cycle': '250 g dirt capacity ÷ 200 g/week load = 5-6 week saturation point',
+      'Discharge Temperature Elevation (Blade Fouling)': '55-60°C baseline → 75-80°C with 1-2 mm dust layer fouling + seal leakage',
+      'Lube Oil Viscosity Loss (Oxidation + Water)': '20-30% from oxidation (TAN +0.08-0.15/week), 15-25% from water (100-150 ppm emulsion)',
+      'Bearing Film Thickness Degradation': '1-3 µm nominal → <0.5 µm critical (asperity contact regime)',
+      'Bearing Friction & Temperature Increase': '+100-150% friction, +15-25°C sump temperature spike from baseline',
+      'Seal Leakage Bypass Flow': 'Design 0.5-1 L/min → 10-20 L/min with thermal expansion + wear',
+      'Blade Efficiency Loss (Fouling + Erosion)': '6-10% from fouling 1-2 mm dust layer, 1-2% per mm erosion',
+      'Compressor Surge Margin Degradation': '25% design margin → 15% marginal → <5% critical',
+      'Bearing Surge Load Stress Reversals': '±500-1,000 MPa at 10-20 Hz frequency (100s of cycles per minute)',
+    },
+    relatedProblems: ['PROB-BEARING-WASH-OUT', 'PROB-SEAL-LEAKAGE', 'PROB-BLADE-EROSION', 'PROB-COMPRESSOR-SURGE'],
+    relatedStandards: ['ISO 5011', 'ISO 4406', 'ISO 16889', 'ASTM D664', 'ASTM D341'],
+    relatedTechnologies: ['MACROCORE', 'SYNTRAX', 'NANOFORCE', 'DURATECH'],
+  },
+];
+
+export const CONTAMINATION_CASE_STUDIES_BY_SLUG: Record<string, ContaminationCaseStudy> = Object.fromEntries(
+  CONTAMINATION_CASE_STUDIES.map((c) => [c.slug, c])
+);
+
 // ── Glossary Slug Utilities ───────────────────────────────────────────────────
 // Slug convention: TERM-BETA-RATIO → 'beta-ratio' (strip TERM- prefix, lowercase)
 
