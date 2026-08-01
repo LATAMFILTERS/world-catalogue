@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
@@ -8,12 +9,47 @@ import {
   PROBLEM_SEVERITY_COLORS,
 } from '@/lib/knowledge-center';
 import type { ProblemStub } from '@/lib/knowledge-center';
+import type { ProblemFaqItem } from '@/lib/knowledge-center/article-registry';
 import {
   ArticleBreadcrumb,
   WarningBox,
   SpecificationTable,
   ArticleSchema,
 } from '@/components/knowledge-center';
+
+function FaqAccordion({ faqs }: { faqs: ProblemFaqItem[] }) {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      {faqs.map((faq, i) => (
+        <div key={i} style={{ border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.015)' }}>
+          <button
+            onClick={() => setOpenIdx(openIdx === i ? null : i)}
+            style={{
+              width: '100%', background: 'none', border: 'none', padding: '1rem 1.25rem',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
+              cursor: 'pointer', textAlign: 'left', gap: '1rem',
+            }}
+          >
+            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#fff', lineHeight: 1.4 }}>
+              {faq.question}
+            </span>
+            <span style={{ color: '#FFF12D', fontSize: '1.1rem', flexShrink: 0, marginTop: '1px' }}>
+              {openIdx === i ? '−' : '+'}
+            </span>
+          </button>
+          {openIdx === i && (
+            <div style={{ padding: '0 1.25rem 1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', textAlign: 'justify', marginTop: '0.75rem' }}>
+                {faq.answer}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const CATEGORY_ORDER_INDEX: Record<string, number> = {
   'mechanical-wear': 0,
@@ -105,39 +141,135 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
-          <WarningBox variant="draft">
-            This Problem Graph entity is registered with permanent identifier{' '}
-            <span style={{ fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.7)', fontSize: '0.8rem' }}>
-              {problem.id}
-            </span>
-            . Engineering content — definition, failure progression, affected components, contamination sources,
-            and technology recommendations — is scheduled for the Phase 3 Engineering Data Layer.
-          </WarningBox>
-        </motion.div>
+        {/* Definition section */}
+        {problem.definition && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            style={{ marginBottom: '2.5rem' }}
+          >
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,241,45,0.5)',
+              marginBottom: '0.75rem',
+            }}>
+              DEFINITION
+            </p>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.68)',
+              textAlign: 'justify',
+            }}>
+              {problem.definition}
+            </p>
+          </motion.div>
+        )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-        >
-          <SpecificationTable
-            title="KC-00 Governance Metadata"
-            labelWidth="200px"
-            rows={[
-              { label: 'Permanent ID', value: problem.id },
-              { label: 'Entity Type', value: 'Problem (PROB-xxx)' },
-              { label: 'Category', value: PROBLEM_CATEGORY_LABELS[problem.category] },
-              { label: 'Severity', value: problem.severity.charAt(0).toUpperCase() + problem.severity.slice(1) },
-              { label: 'Status', value: 'Draft' },
-              { label: 'Content Phase', value: 'Phase 3 — Engineering Data Layer' },
-            ]}
-          />
-        </motion.div>
+        {/* Key Parameters */}
+        {problem.keyParameters && problem.keyParameters.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.12 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.65rem',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,255,255,0.3)',
+              marginBottom: '1rem',
+            }}>
+              KEY PARAMETERS
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gap: '1px',
+              background: 'rgba(255,241,45,0.08)',
+              border: '1px solid rgba(255,241,45,0.12)',
+            }}>
+              {problem.keyParameters.map((param) => (
+                <div key={param.label} style={{ background: '#000', padding: '1.1rem 1.25rem' }}>
+                  <p style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
+                    color: '#FFF12D',
+                    marginBottom: '0.2rem',
+                  }}>
+                    {param.value}
+                  </p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)' }}>
+                    {param.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Sections */}
+        {problem.sections && problem.sections.map((section, i) => (
+          <motion.section
+            key={section.heading}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.14 + i * 0.06 }}
+            style={{ marginBottom: '2.5rem' }}
+          >
+            <p style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.6rem',
+              letterSpacing: '0.1em',
+              color: 'rgba(255,241,45,0.5)',
+              marginBottom: '0.5rem',
+            }}>
+              {String(i + 1).padStart(2, '0')} /
+            </p>
+            <h2 style={{
+              fontFamily: 'Outfit, sans-serif',
+              fontWeight: 600,
+              fontSize: '1.2rem',
+              color: '#fff',
+              marginBottom: '0.875rem',
+              lineHeight: 1.2,
+              textAlign: 'justify',
+            }}>
+              {section.heading}
+            </h2>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.93rem',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.68)',
+              textAlign: 'justify',
+            }}>
+              {section.body}
+            </p>
+          </motion.section>
+        ))}
+
+        {/* FAQ Section */}
+        {problem.faqs && problem.faqs.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,241,45,0.5)', marginBottom: '1.25rem' }}>
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+            <FaqAccordion faqs={problem.faqs} />
+          </motion.div>
+        )}
 
         {/* Related problems — pill links (same category) */}
         {relatedProblems.length > 0 && (
