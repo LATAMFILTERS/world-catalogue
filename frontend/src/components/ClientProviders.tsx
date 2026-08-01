@@ -7,7 +7,6 @@ import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import { ABTestVariantDisplay } from './ABTestVariantDisplay';
-import { BreadcrumbNavigation } from './BreadcrumbNavigation';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -24,7 +23,6 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
     <I18nextProvider i18n={i18n}>
       <LanguageDetector />
       <ScrollProgress />
-      <BreadcrumbNavigation />
 
       {children}
       <UniversalEndNavigation />

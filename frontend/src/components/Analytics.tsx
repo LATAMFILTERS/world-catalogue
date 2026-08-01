@@ -6,12 +6,10 @@ import { usePathname } from 'next/navigation';
 import { trackKnowledgePageView } from '@/lib/analytics';
 import { useConsent } from '@/lib/useConsent';
 
-const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com';
 
-// Semantic domain map — identifies which domain a path belongs to
 const DOMAIN_MAP: Record<string, string> = {
   'lube-oil-systems': 'Contamination Control Systems',
   'air-intake-systems': 'Air Intake Filtration Systems',
@@ -55,61 +53,39 @@ export default function Analytics() {
   const pathname = usePathname();
   const { consent } = useConsent();
 
-  const firePageView = useCallback(
-    (path: string) => {
-      // GA4 SPA page view
-      if (typeof window !== 'undefined' && window.gtag && GA_ID) {
-        window.gtag('config', GA_ID, { page_path: path });
-      }
-      // PostHog SPA page view
-      if (typeof window !== 'undefined' && window.posthog?.capture) {
-        window.posthog.capture('$pageview');
-      }
-      // Knowledge System semantic tracking
-      if (path.includes('/knowledge-system')) {
-        trackKnowledgePageView(path, resolveDomain(path), resolveConceptId(path));
-      }
-    },
-    []
-  );
+  const firePageView = useCallback((path: string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: path,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    }
+    if (typeof window !== 'undefined' && window.posthog?.capture) {
+      window.posthog.capture('$pageview');
+    }
+    if (path.includes('/knowledge-system')) {
+      trackKnowledgePageView(path, resolveDomain(path), resolveConceptId(path));
+    }
+  }, []);
 
   useEffect(() => {
-    if (consent === 'accepted') firePageView(pathname);
-  }, [pathname, firePageView, consent]);
+    if (typeof window === 'undefined' || !window.gtag) return;
 
-  // Only render tracking scripts after explicit consent
-  if (consent !== 'accepted') return null;
+    const granted = consent === 'accepted';
+    window.gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+
+    if (granted) firePageView(pathname);
+  }, [pathname, firePageView, consent]);
 
   return (
     <>
-      {/* ── Google Analytics 4 ── */}
-      {GA_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', {
-                page_path: window.location.pathname,
-                send_page_view: true,
-                custom_map: {
-                  dimension1: 'semantic_domain',
-                  dimension2: 'concept_id',
-                  dimension3: 'page_type'
-                }
-              });
-            `}
-          </Script>
-        </>
-      )}
-
-      {/* ── PostHog (CDN — no npm required) ── */}
-      {POSTHOG_KEY && (
+      {consent === 'accepted' && POSTHOG_KEY && (
         <Script id="posthog-init" strategy="afterInteractive">
           {`
             !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString()+" (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId setPersonPropertiesForFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -128,8 +104,7 @@ export default function Analytics() {
         </Script>
       )}
 
-      {/* ── Microsoft Clarity ── */}
-      {CLARITY_ID && (
+      {consent === 'accepted' && CLARITY_ID && (
         <Script id="clarity-init" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
