@@ -1,187 +1,43 @@
 'use client';
 
 import '@/i18n';
-
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 const SECTIONS = [
-  {
-    title: '1. Purpose and Scope',
-    body: `This Privacy Policy defines how ELIMFILTERS collects, uses, protects, and governs personal and operational data across all ELIMFILTERS digital platforms, including elimfilters.com, the Part Search platform, the Knowledge System, distributor tools, and any APIs or services operated by ELIMFILTERS.
-
-The core principle of this policy is that data must be collected with purpose, protected with discipline, and used responsibly to improve asset protection outcomes — not to exploit users or generate revenue through data resale.`,
-  },
-  {
-    title: '2. Data We Collect',
-    body: `ELIMFILTERS may collect the following categories of data depending on how you interact with our platforms:
-
-Contact and identity data: name, email address, company name, job title, country, and phone number, collected when you submit forms, register an account, or request distributor information.
-
-Equipment and asset data: equipment type, OEM references, operating environment, and maintenance parameters, collected when you use Part Search or submit technical inquiries.
-
-Search and usage data: search queries, pages visited, filter selections, and interaction patterns, collected automatically through platform analytics to improve search accuracy and content relevance.
-
-AI interaction data: queries submitted to AI-assisted features, technical questions, and recommendation requests.
-
-Distributor business data: sales data, territory information, and account credentials, collected as part of distributor partner programs.`,
-  },
-  {
-    title: '3. How We Use Your Data',
-    body: `Data collected by ELIMFILTERS is used to:
-
-— Respond to technical inquiries, warranty claims, and distributor support requests
-— Improve Part Search accuracy and product recommendation quality
-— Deliver relevant Knowledge System content and technical documentation
-— Build and refine asset protection recommendations for industrial equipment
-— Operate and improve platform performance, security, and reliability
-— Support distributor network management and territory reporting
-— Comply with applicable legal obligations
-
-ELIMFILTERS does not sell, rent, or trade personal data to third parties for advertising or marketing purposes.`,
-  },
-  {
-    title: '4. AI and Machine Learning Systems',
-    body: `ELIMFILTERS operates AI systems for product recommendations, knowledge retrieval, and technical guidance. These systems process search queries, equipment data, and usage patterns to improve recommendation quality.
-
-AI systems must not expose private customer data in their outputs. AI training processes are governed by internal data classification standards that restrict access to personally identifiable information.
-
-Interactions with AI-assisted features may be retained to improve model performance. Users may request deletion of interaction history under the rights described in Section 7.`,
-  },
-  {
-    title: '5. Data Sharing',
-    body: `ELIMFILTERS shares data only under the following conditions:
-
-Service providers: Third-party providers operating hosting, analytics, email delivery, or CRM infrastructure under contractual data processing agreements requiring equivalent protection standards.
-
-Distributors: Equipment and product inquiry data may be shared with authorized ELIMFILTERS distributors in your region to facilitate local support. Distributor partners are bound by confidentiality obligations.
-
-Legal requirements: Data may be disclosed when required by applicable law, court order, or governmental authority. ELIMFILTERS will notify affected users where legally permitted to do so.
-
-ELIMFILTERS does not share data with advertising networks, data brokers, or social media platforms for targeting purposes.`,
-  },
-  {
-    title: '6. Data Protection',
-    body: `ELIMFILTERS implements technical and organizational measures to protect collected data against unauthorized access, disclosure, alteration, or destruction:
-
-— Encrypted transmission (TLS) for all platform communications
-— Access control for internal systems handling customer data
-— Audit logging for administrative access to customer records
-— Secure credential storage following industry-standard hashing practices
-— Regular security review of data handling processes
-
-No transmission method over the internet or electronic storage is 100% secure. ELIMFILTERS applies reasonable protection measures consistent with the sensitivity of the data collected.`,
-  },
-  {
-    title: '7. Your Rights',
-    body: `Where applicable under local privacy regulations, you have the right to:
-
-Access: Request a copy of personal data ELIMFILTERS holds about you.
-Correction: Request correction of inaccurate or incomplete data.
-Deletion: Request deletion of your personal data, subject to legal retention requirements.
-Export: Request a portable copy of your data in a standard format.
-Restriction: Request that processing of your data be restricted in certain circumstances.
-Objection: Object to processing based on legitimate interests.
-
-To exercise any of these rights, contact ELIMFILTERS at info@elimfilters.com with your request. ELIMFILTERS will respond within a reasonable timeframe consistent with applicable law.`,
-  },
-  {
-    title: '8. Data Retention',
-    body: `ELIMFILTERS retains data for as long as necessary to fulfil the purpose for which it was collected, to maintain platform functionality, or to comply with applicable legal requirements. When data is no longer needed, it is securely deleted or anonymized.
-
-Distributor data is retained for the duration of the distributor relationship and for applicable post-termination periods required by law or contract.`,
-  },
-  {
-    title: '9. Cookies and Analytics',
-    body: `ELIMFILTERS platforms use cookies and similar technologies to maintain session state, analyze traffic patterns, and improve user experience. Analytics tools may collect aggregated data about page visits, search queries, and feature usage.
-
-Users may manage cookie preferences through their browser settings. Disabling cookies may limit certain platform functionality.`,
-  },
-  {
-    title: '10. Updates to This Policy',
-    body: `ELIMFILTERS may update this Privacy Policy to reflect changes in platform functionality, data handling practices, or applicable regulations. Material changes will be indicated by an updated effective date. Continued use of ELIMFILTERS platforms following a policy update constitutes acceptance of the revised policy.`,
-  },
-  {
-    title: '11. Contact',
-    body: `For privacy-related inquiries, data subject requests, or concerns about data handling practices, contact ELIMFILTERS at info@elimfilters.com.`,
-  },
+  { title: '1. Scope', body: `This Privacy Policy explains how ELIMFILTERS collects, uses, discloses, retains, and protects information across elimfilters.com, Part Search, the Knowledge System, distributor tools, APIs, web chat, email, WhatsApp, Instagram, Facebook, LinkedIn, and other ELIMFILTERS-operated digital services.` },
+  { title: '2. Information We Collect', body: `Depending on your interaction, we may collect contact and identity information; company, role, country, and distributor information; account and authentication data; equipment, vehicle, engine, OEM-reference, operating-condition, maintenance, warranty, quotation, order, and support information; search queries and navigation activity; AI and bot conversations; files, photographs, and technical documents you submit; device, browser, IP address, approximate location, logs, identifiers, cookie choices, and diagnostic information; and records required for security, fraud prevention, legal compliance, and dispute resolution.` },
+  { title: '3. Sources of Information', body: `Information may come directly from you, your employer or distributor organization, authorized partners, platform activity, connected communication channels, service providers, public business sources, and lawful third-party product or equipment data. Do not submit personal or confidential information that is unnecessary for the requested service.` },
+  { title: '4. Purposes of Processing', body: `We use information to operate and secure the services; authenticate users; answer technical, sales, warranty, support, and distributor inquiries; provide search, cross-reference, quotation, and product recommendations; process communications and commercial requests; personalize and improve content; detect abuse and attacks; maintain audit records; comply with law and contracts; enforce policies; protect rights and safety; and develop, test, evaluate, and improve ELIMFILTERS systems.` },
+  { title: '5. AI and Automated Systems', body: `AI-assisted features may process prompts, conversation history, equipment details, search results, and supporting documents. Outputs may be generated automatically and may not be reviewed by a person. Interactions may be logged for service delivery, quality evaluation, safety, security, audit, troubleshooting, and improvement. ELIMFILTERS does not intend for users to submit regulated data, unnecessary sensitive personal information, or third-party trade secrets. Automated recommendations do not replace application-specific human validation.` },
+  { title: '6. Service Providers and Other Disclosures', body: `We may disclose information to providers supporting hosting, databases, content delivery, security, monitoring, analytics, artificial intelligence, communications, email, customer relationship management, payments, logistics, and professional services. Current analytics may include Google Analytics 4, PostHog, and Microsoft Clarity when consent is provided. Communications may be processed through Microsoft 365 and Meta-operated channels such as WhatsApp, Instagram, or Facebook. Regional inquiry information may be shared with an authorized ELIMFILTERS distributor where necessary to provide requested local support. We may also disclose information for legal compliance, corporate transactions, protection of rights, or with your direction or consent. We do not sell personal information for monetary consideration.` },
+  { title: '7. Advertising and Profiling', body: `ELIMFILTERS does not currently disclose personal information to data brokers or use personal information for cross-context behavioral advertising. If these practices change, we will update this Policy and provide legally required notices and opt-out mechanisms before applying the change to covered information.` },
+  { title: '8. Legal Bases for International Users', body: `Where a legal basis is required, processing may rely on performance of a contract or requested pre-contract steps, compliance with legal obligations, legitimate interests in operating and protecting industrial services, consent for optional analytics or marketing, and establishment or defense of legal claims. Consent may be withdrawn without affecting processing already lawfully performed.` },
+  { title: '9. Cookies and Analytics', body: `Strictly necessary technologies support security, sessions, language, and consent storage. Optional analytics should load only after consent. Analytics providers may receive technical identifiers and usage information. Details are provided in the Cookie Policy. Browser controls may also block or delete cookies, although doing so can impair functionality.` },
+  { title: '10. Retention', body: `We retain information only as long as reasonably necessary for the purpose collected, contractual obligations, account administration, support history, security, audit, fraud prevention, warranty or transaction records, legal claims, and applicable law. Retention varies by category. Information may be deleted, aggregated, or de-identified when no longer required. Distributor and commercial records may be retained after termination where required by contract, tax, accounting, warranty, or limitation periods.` },
+  { title: '11. Security', body: `ELIMFILTERS uses reasonable administrative, technical, and organizational safeguards appropriate to the nature of the information, including encrypted transmission, access controls, credential protection, logging, least-privilege practices, backups, and security review. No system is completely secure. Users must protect credentials and promptly report suspected compromise.` },
+  { title: '12. International Transfers', body: `ELIMFILTERS and its providers may process information in the United States and other countries where infrastructure or personnel are located. Where required, transfers are supported by contractual, organizational, or other legally recognized safeguards. Privacy protections and government-access rules may differ between countries.` },
+  { title: '13. Your Privacy Rights', body: `Depending on applicable law, you may request access, correction, deletion, portability, restriction, or information about processing; object to certain processing; withdraw consent; and opt out of covered sale, targeted advertising, or profiling practices if introduced. We may verify identity and authority before acting. Authorized agents may be required to provide proof of authorization. Some requests may be limited by legal, security, contractual, evidentiary, or operational exceptions.` },
+  { title: '14. Requests and Appeals', body: `Submit a privacy request to info@elimfilters.com and identify the account, communication channel, or interaction involved. We will respond within the period required by applicable law. If a covered request is denied, you may appeal by replying with “Privacy Appeal” and explaining the basis for reconsideration. We will provide the result and any further complaint options required by law.` },
+  { title: '15. Children', body: `The services are intended for business and industrial users and are not directed to children. ELIMFILTERS does not knowingly collect personal information from children under 13. If you believe a child submitted information, contact us so it can be reviewed and deleted where appropriate.` },
+  { title: '16. Third-Party Services', body: `Links, embedded tools, social platforms, and communication channels operated by third parties are governed by their own privacy practices. ELIMFILTERS is not responsible for independent third-party processing outside its control.` },
+  { title: '17. Changes and Contact', body: `We may update this Policy when services, providers, laws, or practices change. Material revisions will be identified by the effective date and, where appropriate, additional notice or renewed consent. Privacy questions and requests may be sent to info@elimfilters.com.` },
 ];
 
 const RELATED = [
-  { label: 'Terms of Service', href: '/legal/terms' },
-  { label: 'AI Use Policy', href: '/legal/ai-policy' },
-  { label: 'Copyright & DMCA Policy', href: '/legal/copyright' },
-  { label: 'Cross Reference Policy', href: '/legal/cross-reference' },
-  { label: 'Legal Disclaimer', href: '/legal/disclaimer' },
+  { label:'Terms of Service', href:'/legal/terms' },
+  { label:'Cookie Policy', href:'/legal/cookies' },
+  { label:'Acceptable Use Policy', href:'/legal/acceptable-use' },
+  { label:'AI Use Policy', href:'/legal/ai-policy' },
+  { label:'Copyright & DMCA Policy', href:'/legal/copyright' },
 ];
 
 export default function PrivacyPolicyPage() {
-  return (
-    <>
-      <Navigation />
-      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
-        <div style={{ padding: '1.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
-            ← ELIMFILTERS
-          </Link>
-        </div>
-
-        <section style={{ padding: '4rem 8% 3rem', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', opacity: 0.8, marginBottom: '1rem', textTransform: 'uppercase' }}>
-              {'// Legal · Privacy'}
-            </p>
-            <h1 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', margin: '0 0 1rem', lineHeight: 1.15, textAlign: 'justify' }}>
-              Privacy Policy
-            </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-              Last updated: June 2026
-            </p>
-          </motion.div>
-        </section>
-
-        <div style={{ maxWidth: '820px', margin: '0 auto', padding: '4rem 8%' }}>
-          {SECTIONS.map((s, i) => (
-            <motion.section
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-            >
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem', lineHeight: 1.3, textAlign: 'justify' }}>
-                {s.title}
-              </h2>
-              {s.body.split('\n\n').map((para, j) => (
-                <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                  {para}
-                </p>
-              ))}
-            </motion.section>
-          ))}
-
-          <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,241,45,0.12)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textTransform: 'uppercase' }}>
-              Related Legal Documents
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-              {RELATED.map((r) => (
-                <Link key={r.href} href={r.href} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', padding: '0.4rem 0.85rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.4)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
-      </main>
-      <Footer />
-    </>
-  );
+  return <><Navigation /><main style={{ background:'#000', color:'#fff', minHeight:'100vh' }}>
+    <div style={{ padding:'1.5rem 8%', borderBottom:'1px solid rgba(255,255,255,0.04)' }}><Link href="/" style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', letterSpacing:'0.14em', color:'rgba(255,255,255,0.4)', textDecoration:'none' }}>← ELIMFILTERS</Link></div>
+    <section style={{ padding:'4rem 8% 3rem', borderBottom:'1px solid rgba(255,241,45,0.08)' }}><motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.5}}><p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}>{'// Legal · Privacy'}</p><h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', margin:'0 0 1rem' }}>Privacy Policy</h1><p style={{ color:'rgba(255,255,255,0.45)', margin:0 }}>Last updated: August 2026</p></motion.div></section>
+    <div style={{ maxWidth:'820px', margin:'0 auto', padding:'4rem 8%' }}>{SECTIONS.map((s,i)=><section key={i} style={{ marginBottom:'2.5rem', paddingBottom:'2.5rem', borderBottom:'1px solid rgba(255,255,255,0.05)' }}><h2 style={{ fontSize:'1.05rem', color:'#FFF12D', marginBottom:'0.9rem' }}>{s.title}</h2><p style={{ fontSize:'0.92rem', color:'rgba(255,255,255,0.7)', lineHeight:1.8 }}>{s.body}</p></section>)}<div style={{ display:'flex', flexWrap:'wrap', gap:'0.75rem' }}>{RELATED.map(r=><Link key={r.href} href={r.href} style={{ fontSize:'0.82rem', color:'rgba(255,255,255,0.6)', textDecoration:'none', padding:'0.4rem 0.85rem', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'4px' }}>{r.label}</Link>)}</div></div>
+  </main><Footer /></>;
 }
