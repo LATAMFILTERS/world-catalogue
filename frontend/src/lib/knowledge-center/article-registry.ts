@@ -214,8 +214,62 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Adhesive Wear',
     category: 'mechanical-wear',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
     relatedSystems: ['lubrication-protection', 'hydraulic-protection'],
+    metaDescription: 'Adhesive wear caused by metal-to-metal contact and oil film breakdown. Temperature, pressure, and filtration effects.',
+    definition: 'Adhesive wear occurs when the lubricating oil film between moving surfaces breaks down, causing direct metal-to-metal contact. When surfaces slide under load without adequate lubrication, localized pressure and temperature spikes (>150°C) cause microscopic welding and shearing of surface asperities. Material transfers from one surface to the other, creating rough spots that accelerate wear exponentially.',
+    relatedStandards: ['ISO 16889', 'ISO 4406', 'ASTM D4378'],
+    relatedTechnologies: ['SYNTRAX', 'DURATECH'],
+    sections: [
+      {
+        heading: 'Metal-to-Metal Contact Mechanism',
+        body: 'Adhesive wear initiates when oil film thickness drops below 0.1 µm (film thickness depends on viscosity, load, and speed per Stribeck curve). Once film breaks: (1) Surface asperities (micro-peaks 0.1–1 µm height) contact directly under load; (2) Localized contact pressure exceeds 2–5 GPa (at 1 cm² contact area with 10 kN load); (3) Temperature at asperity contact rises to 150–300°C from friction; (4) Surface material softens, asperities weld together and shear as relative motion continues; (5) Transferred material builds up on one surface, then shears off as a particle (10–100 µm), leaving a crater. Adhesive wear rate accelerates exponentially once initiated — initial wear creates rough spots that increase contact pressure further.',
+      },
+      {
+        heading: 'Oil Film Breakdown Triggers',
+        body: 'Five conditions cause film breakdown: (1) Contaminating particles >3 µm breaking film by acting as "micro-gears" forcing surfaces together; (2) Insufficient oil viscosity — low viscosity oil cannot maintain film thickness under load; viscosity drop from 46 cSt (nominal) to 30 cSt reduces film thickness 30–40%; (3) Extreme pressure/temperature — shock loads exceeding design envelope collapse film temporarily; high temperatures (>80°C) reduce oil viscosity 5–10% per 10°C; (4) Oil oxidation and additive depletion — aged oil loses anti-wear additives (zinc, molybdenum) that normally create protective boundary films; (5) Moisture and corrosive acids — water and oxidation acids reduce oil film strength and promote micro-corrosion pitting, reducing surface smoothness and film carrying capacity.',
+      },
+      {
+        heading: 'Hydraulic System Vulnerability to Adhesive Wear',
+        body: 'Hydraulic systems are particularly susceptible to adhesive wear in proportional valves, spool-bore assemblies, and pump port plates where clearances are tight (1–5 µm) and pressures extreme (200–350 bar). A proportional valve spool maintains hydraulic control through a precise 2–4 µm gap between spool and bore. Any particle >3 µm increases spool contact pressure; combined with pressure spikes (300 bar × 10 cm² spool = 30,000 N force) and temperature rises from proportional valve throttling action, adhesive wear initiates rapidly. Spool wear increases clearance from 3 µm to 5–10 µm within 500–1000 hours, destroying precision control and causing loss of proportional response (pilot pressure no longer controls main spool position reliably).',
+      },
+      {
+        heading: 'Contamination + Temperature Synergy',
+        body: 'Adhesive wear is a synergistic effect of contamination AND temperature: contaminating particles reduce effective oil film (by being trapped in film gaps), AND elevated temperature reduces viscosity and film strength. In high-temperature operations (desert mining, tropical climates), baseline oil temperature rises 60–70°C; this alone reduces viscosity 30–40%, thinning film. Adding particle contamination (ISO 19/17/14 vs. target 16/14/11) further reduces film thickness 20–30%, resulting in cumulative 50–70% film reduction. The combined effect accelerates adhesive wear 10–20×. Prevention requires BOTH temperature control (adequate cooling) AND contamination control (multi-stage filtration).',
+      },
+      {
+        heading: 'Prevention: Anti-Wear Additives + Filtration',
+        body: 'Two-part adhesive wear prevention: (1) Oil anti-wear (AW) additives — zinc dialkyldithiophosphate (ZDDP) and molybdenum form protective boundary films under extreme pressure, allowing film to recover after pressure spikes; premium synthetic oils (SYNTRAX) contain enhanced AW packages; (2) Contamination control — particle removal prevents mechanical film breakdown; clean ISO 16/14/11 oil maintains film thickness 0.5–1 µm even under 200 bar pressure and 70°C temperature. Operating margins improve dramatically: oil film becomes resilient, can recover after transient pressure spikes, accommodates micro-asperities without welding. Result: Adhesive wear rate drops 10–50× compared to commodity oil + poor filtration approach.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between adhesive and abrasive wear?',
+        answer: 'Abrasive wear: hard particles (silica, oxides) act as grinding tools cutting surfaces; wear is proportional to particle size and quantity; prevention is particle removal via filtration. Adhesive wear: metal surfaces directly contact under load; material transfers between surfaces and shears off; wear rate increases exponentially once initiated. Prevention requires both adequate film thickness (viscosity, cleanliness, cooling) and anti-wear additives. Abrasive wear is "slow grinding"; adhesive wear is "rapid welding and material loss".',
+      },
+      {
+        question: 'Why do contaminating particles trigger adhesive wear if they are smaller than the load?',
+        answer: 'Particles don\'t need to "break" the film by force; they act as "spacers" in the oil gap. A 3 µm particle in a 4 µm film gap forces the particle into the asperity peaks, acting as a micro-gear that increases local contact pressure 10–50×. This localized pressure spike causes micro-welding at the particle-surface interface. Additionally, particle presence disrupts hydrodynamic film formation — the particle creates eddy currents and turbulence that prevent smooth oil flow, thinning the film around the particle location.',
+      },
+      {
+        question: 'Can adhesive wear be reversed once started?',
+        answer: 'Not fully. Once adhesive wear initiates, surface roughness increases (from Ra 0.1 µm to Ra 0.5–1.5 µm), and rough surfaces are mechanically locked (high friction angles prevent smooth sliding). Even if contamination is removed and oil replaced, rough surfaces continue to generate adhesive wear at accelerated rate due to increased contact pressures. Prevention is far superior to cure: maintain clean oil (ISO 16/14/11), adequate viscosity (46 cSt nominal), and anti-wear additives from the start. Early detection (ferrous wear particles rising in oil analysis) allows component replacement before permanent surface damage.',
+      },
+      {
+        question: 'How does temperature increase adhesive wear risk?',
+        answer: 'Temperature affects viscosity (film thickness) and anti-wear additive stability. At +10°C temperature rise: viscosity drops 10–15% (reducing film thickness proportionally), anti-wear additive effectiveness decreases 5–10% (less protection at pressure spikes), oxidation rate doubles (aged oil loses additives faster). In a hot climate (ambient 40°C) with inadequate cooling (oil temp 85°C vs. 65°C nominal), combined viscosity loss is 30–40%, film thickness drops 30–40%, and additive protection is 20–30% lower. This creates "perfect storm" for adhesive wear: thin film + weak chemical protection + high contact pressures. Solution: Active oil cooling (thermostat-controlled) + premium high-viscosity-index oil (SYNTRAX) + multi-stage filtration.',
+      },
+      {
+        question: 'Why is adhesive wear common in proportional valves but rare in cylinders?',
+        answer: 'Proportional valve spools operate at: (1) tight clearances (2–4 µm spool-bore gap) where even 1 µm particles force metal contact; (2) high pressure differentials (200–300 bar across spool) creating 20,000–30,000 N forces on small spool area; (3) high fluid velocity (5–10 m/sec) creating high shear stress. Cylinders, by contrast, operate at: (1) loose clearances (20–50 µm rod seal gaps); (2) lower pressure (100–150 bar); (3) slower fluid velocity. The same oil cleanliness level (ISO 19/17/14) is catastrophic for proportional valves but tolerable for cylinders. This is why system cleanliness targets must be set by the MOST SENSITIVE component (proportional valve at 16/14/11), not the average.',
+      },
+    ],
+    keyParameters: [
+      { label: 'Critical film thickness', value: '0.1–1 µm' },
+      { label: 'Asperity contact temperature', value: '150–300°C' },
+      { label: 'Proportional valve spool clearance', value: '2–4 µm' },
+      { label: 'Wear rate increase (per temp +10°C)', value: '+50–100%' },
+    ],
   },
   {
     id: CANONICAL_PROBLEM_IDS.BEARING_WEAR,
@@ -286,8 +340,62 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     name: 'Injector Wear',
     category: 'mechanical-wear',
     severity: 'high',
-    status: 'draft',
+    status: 'published',
     relatedSystems: ['fuel-cleanliness-protection'],
+    metaDescription: 'HPCR injector wear from particulate contamination and water corrosion. Orifice blockage, needle stiction, erosion mechanisms.',
+    definition: 'Injector wear is the degradation of high-pressure common rail (HPCR) injector needle valves and nozzle orifices caused by particulate contamination and water corrosion. The microscopic tolerances (0.1 mm nozzle holes, 0.5–1 µm needle seat) cannot tolerate contamination >2 µm. Wear manifests as erosion, stiction (stick-slip), and orifice blockage, causing injection timing errors, uneven fuel distribution, and complete injector failure.',
+    relatedStandards: ['ASTM D6304', 'ISO 12937', 'SAE J1739'],
+    relatedTechnologies: ['SYNTEPORE', 'HYDROCORE', 'TURBOCORE'],
+    sections: [
+      {
+        heading: 'HPCR Injector Design and Failure Sensitivity',
+        body: 'HPCR injectors operate at 1600–2000 bar (160–200 MPa) pressure, 10× higher than legacy fuel systems. Nozzle tip orifices are 0.1–0.15 mm diameter (100–150 µm); pilot valve spool clearances are 0.5–1 µm (micron-scale). These tolerances create "stone in a dam" failure mode: a single hard particle >4 µm entering a 0.1 mm orifice blocks fuel flow. Multiple needle valve cycles (25,000 cycles/second at 1500 RPM) generate high-frequency stress that propagates into micro-cracks in valve seats and orifice walls. Modern OEM fuel systems have zero tolerance for contamination; even "clean" commodity diesel at 4 µm particle size is destructive to HPCR systems.',
+      },
+      {
+        heading: 'Three Injector Failure Mechanisms',
+        body: 'Mode 1 — Orifice blockage: particle >3 µm lodges in nozzle hole, restricting spray pattern and causing uneven fuel distribution; result is rough idle, white smoke (unburned fuel), misfires. Mode 2 — Needle stiction (stick-slip): particles embed in valve seat surface (0.5 µm seat width), creating micro-friction spikes that seize needle valve intermittently; stiction causes erratic injection timing, delayed fuel delivery (100–500 microseconds timing variance), extended cranking. Mode 3 — Erosion/pitting: particles striking needle valve during 25,000 cycles/sec motion micro-cut valve seat, destroying sealing geometry; pitting depth >10 µm on a 0.5 µm seat completely destroys seal. All three modes require full injector replacement ($800–1200 per injector × 6–8 injectors per engine = $4800–9600 per failure event).',
+      },
+      {
+        heading: 'Water Contamination and HPCR Corrosion',
+        body: 'Water in diesel fuel causes four HPCR-specific failure mechanisms: (1) Corrosion of injector bore and needle valve surfaces — free water reacts with acidic compounds in diesel (sulfuric acid from fuel oxidation, organic acids from microbial growth), pitting injector components within 100–200 operating hours; corrosion depth >50 µm in critical areas destroys sealing geometry; (2) Microorganism-accelerated corrosion — water-diesel interfaces host Bacillus and Clostridium bacteria, producing organic acids (acetate, butyrate) that accelerate corrosion 3–5×; biofilm deposits block fuel passages; (3) Emulsion formation — water suspended as tiny droplets in diesel creates slug flow, jamming needle valves and blocking pilot fuel drain lines (0.5–1 mm diameter); (4) Cavitation in high-pressure fuel rail — water vapor bubbles form during fuel expansion through injector orifices, collapsing violently and damaging orifice walls (pressure pulses >2000 bar for 1–10 microseconds). Critical water thresholds: >100 ppm triggers corrosion pitting; >200 ppm initiates microbial growth; >300 ppm causes visible performance degradation; >500 ppm system failure within 1–2 weeks.',
+      },
+      {
+        heading: 'Detection and Prevention Strategy',
+        body: 'Injector wear detection: (1) ISO 4406 fuel analysis for particle counts (target <4 µm particles for HPCR); (2) Karl Fischer testing for water content (critical threshold >200 ppm); (3) Injector performance testing — modern OBD-II systems detect injection timing variance (>50 microseconds); rough idle and white smoke indicate stiction/blockage. Prevention requires three-stage fuel protection: (1) SYNTEPORE fuel filtration (10 µm absolute, Beta 1000) capturing particulates before fuel rail; (2) HYDROCORE water separator (99% water removal to <50 ppm) preventing corrosion; (3) TURBOCORE 3-stage fuel polishing for proactive tank treatment. Regular Karl Fischer testing (monthly during rainy season, quarterly otherwise) allows early detection of water ingress before corroded fuel reaches injectors.',
+      },
+      {
+        heading: 'Real-World Case Study: Commercial Fleet Fuel System Protection',
+        body: 'Heavy-duty truck fleet, 25 vehicles, tropical climate (coastal Malaysia). Baseline: Commodity fuel filters + standard tank breathers. Problem: 8–10 injector failures per year across fleet ($96K–120K annual cost). Failure pattern: Every 4–6 weeks, 1–2 vehicles experience rough idle and white smoke, requiring injector removal and replacement. Root cause analysis: Fuel samples showed ISO 6/4/2 particle cleanliness (HPCR target: <2/0/0, essentially "clean") and 400–800 ppm water during rainy season (monsoon moisture ingress through breather). Implementation: (1) Desiccant breathers on all 25 fuel tanks (silica-gel, rechargeable); (2) HYDROCORE water separator filters on all fuel systems (dual-stage coalescing); (3) Monthly Karl Fischer testing on fuel samples; (4) Annual fuel polishing service at regional depot. Results after 12 months: Water levels maintained <50 ppm year-round (vs. baseline 400–800 ppm); fuel cleanliness improved to <4/2/0; zero injector failures in year 1 (vs. baseline 8–10/year). Cost impact: Equipment investment $35K (breathers, filters, testing equipment), maintenance $12K/year (fuel polishing, testing) = $47K total first-year cost. Savings: 8 injector replacements avoided × $8K average cost = $64K first-year savings, plus improved fuel economy (+2–3% from cleaner combustion), plus eliminated downtime. 18-month payback, 10-year fleet savings: $480K+.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Why can\'t commodity diesel filters protect HPCR injectors?',
+        answer: 'Commodity diesel filters are rated 20–25 µm absolute (Beta 200 @ 20 µm), allowing 50% of particles >20 µm to pass. HPCR injectors fail at >4 µm particles. A commodity filter allowing even 1% of 5 µm particles to pass is catastrophic — 100 µm³ of fuel passing through 0.1 mm nozzle orifices at 1000 liters/hour = millions of 5 µm particles per minute reaching injectors. SYNTEPORE 10 µm filtration (Beta 1000 @ 10 µm) captures 99.9% of particles >10 µm and 95%+ of 4–10 µm range, protecting orifices. The particle size threshold is the critical difference.',
+      },
+      {
+        question: 'How is water detected in diesel before it damages injectors?',
+        answer: 'Karl Fischer coulometric titration (ASTM D6304) is the standard method. Procedure: (1) Fuel sample collected in sealed container immediately after tank sampling (prevents air exposure, which artificially increases measured water); (2) 100–500 mL sample injected into Karl Fischer titration cell; (3) Water reacts with reagent producing measurable electrical signal proportional to water content; (4) Result: ppm water (50–2000 ppm range). Critical thresholds: <50 ppm (safe); 50–100 ppm (monitor closely); 100–200 ppm (activate water separator immediately); >200 ppm (microbial growth likely, emergency action). Frequency: monthly baseline, weekly during rainy season, immediately after suspected water ingress event.',
+      },
+      {
+        question: 'Can corroded injectors be repaired or must they be replaced?',
+        answer: 'Corroded HPCR injectors cannot be repaired. Corrosion pitting in critical areas (needle valve seat, orifice wall) destroys precision geometry. Even after removing corrosion deposits and polishing surfaces, pitting remains and leakage results. OEM guidance: replace immediately upon detection of corrosion (verified by white smoke, rough idle, fuel pressure variance, or injector removal inspection). Some shops attempt "cleaning" with ultrasonic solvents, but this only removes loose deposits, not embedded pitting. Full replacement ($800–1200 per injector) is required; preventive water separation avoids this cost.',
+      },
+      {
+        question: 'How do desiccant breathers prevent water ingress in fuel tanks?',
+        answer: 'Tank breathing occurs during temperature cycles: cool overnight (tank contracts, draws air in through breather); warm daytime (tank expands, pushes air out). Standard breathers allow ambient air to enter; if relative humidity is 80%+ (tropical climates), ambient air at 25°C and 80% RH contains ~13 grams water per cubic meter. Over 6 months (rainy season), 1000 m³ of humid air entering tank = ~13 kg water accumulation. Desiccant breathers use silica-gel or molecular sieve material that absorbs moisture from incoming air, reducing humidity from 80% to 5–10%. Breather cartridges are rechargeable (silica-gel returns to blue color when charged); typical recharge interval is 6–12 months depending on climate. Net effect: tank water ingress drops from 100–500 ppm to <20 ppm during high-humidity seasons.',
+      },
+      {
+        question: 'Why does microbial growth accelerate fuel system corrosion?',
+        answer: 'Fuel-water interface bacteria (Bacillus, Clostridium) consume diesel hydrocarbons and water, producing organic acids (acetate, butyrate, propionic acid). These acids lower fuel pH from neutral (6.5–7.5) to acidic (4.0–5.0). Acidic fuel aggressively corrodes injector bore steel, needle valve surface, and fuel rail components. Additionally, bacterial biofilm deposits (dark slime visible on tank bottom and fuel filters) contain dissolved salts and organic acids that are highly corrosive. One month of heavy microbial growth (>1 million CFU/mL) can generate corrosion depth of 50–100 µm, destroying critical sealing surfaces. Prevention: (1) maintain water <100 ppm to prevent bacterial colonies; (2) biocide treatment if microbial contamination is detected (bacterial count >10,000 CFU/mL); (3) regular fuel polishing removes accumulated biofilm.',
+      },
+    ],
+    keyParameters: [
+      { label: 'HPCR operating pressure', value: '1600–2000 bar' },
+      { label: 'Nozzle orifice diameter', value: '0.1–0.15 mm' },
+      { label: 'Needle valve spool clearance', value: '0.5–1 µm' },
+      { label: 'Critical water threshold', value: '>200 ppm (microbial growth)' },
+    ],
   },
   // Contamination (4)
   {
