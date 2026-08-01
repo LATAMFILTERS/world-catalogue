@@ -482,7 +482,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         question: 'What damage occurs when unfiltered dust enters cylinders?',
-        body: 'Unfiltered dust (2–50 µm particles) entering cylinders causes: (1) piston crown erosion — dust at combustion temperatures oxidizes and micro-cuts piston surface; (2) cylinder wall wear — abrasive particles wear the cross-hatch honing finish, degrading oil film retention and ring sealing; (3) piston ring stiction — dust accumulation in ring grooves increases friction; (4) valve seat erosion — dust particles in exhaust flow strike valve seats and stems. A single 100-hour period of bypass operation (dust ingestion) can reduce remaining engine life by 20–30%.',
+        answer: 'Unfiltered dust (2–50 µm particles) entering cylinders causes: (1) piston crown erosion — dust at combustion temperatures oxidizes and micro-cuts piston surface; (2) cylinder wall wear — abrasive particles wear the cross-hatch honing finish, degrading oil film retention and ring sealing; (3) piston ring stiction — dust accumulation in ring grooves increases friction; (4) valve seat erosion — dust particles in exhaust flow strike valve seats and stems. A single 100-hour period of bypass operation (dust ingestion) can reduce remaining engine life by 20–30%.',
       },
       {
         question: 'Why do premium air filters with higher dirt capacity reduce bypass risk?',
