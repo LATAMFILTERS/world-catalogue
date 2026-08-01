@@ -1,6 +1,6 @@
 # Fuentes Externas - Protección de Activos Industriales
 
-*Generado: 2026-08-01 02:40:46*
+*Generado: 2026-08-01 04:02:44*
 
 ## ISO Standards
 
