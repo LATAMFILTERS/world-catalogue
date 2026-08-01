@@ -249,17 +249,23 @@ class NotebookLMDocumentationSystem:
         # Hacer pregunta al notebook
         cmd = [
             "notebooklm", "-p", self.profile,
-            "ask", prompt,
-            "--output", f"docs/external_analysis_{asset_type}.md"
+            "ask", prompt
         ]
 
         result = subprocess.run(cmd, capture_output=True, text=True)
 
         if result.returncode == 0:
-            print(f"✅ Análisis generado")
+            # Guardar salida a archivo
+            output_path = Path(f"docs/external_analysis_{asset_type}.md")
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+
+            with open(output_path, "w") as f:
+                f.write(result.stdout)
+
+            print(f"✅ Análisis generado: {output_path}")
             return True
         else:
-            print(f"⚠️  {result.stderr}")
+            print(f"⚠️  Error: {result.stderr}")
             return False
 
     def save_config(self):
