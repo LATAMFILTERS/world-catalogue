@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { useConsent } from '@/lib/useConsent';
 
@@ -23,7 +24,7 @@ export default function ConsentBanner() {
             left: '50%',
             transform: 'translateX(-50%)',
             zIndex: 9000,
-            width: 'min(640px, calc(100vw - 2rem))',
+            width: 'min(680px, calc(100vw - 2rem))',
             background: 'rgba(10,10,10,0.97)',
             border: '1px solid rgba(255,241,45,0.2)',
             borderRadius: '6px',
@@ -36,68 +37,17 @@ export default function ConsentBanner() {
             flexWrap: 'wrap',
           }}
         >
-          <p
-            style={{
-              flex: 1,
-              minWidth: '200px',
-              fontFamily: 'Outfit, sans-serif',
-              fontSize: '0.82rem',
-              lineHeight: 1.6,
-              color: 'rgba(255,255,255,0.65)',
-              margin: 0,
-            }}
-          >
-            We use analytics (GA4, PostHog, Clarity) to improve the ELIMFILTERS platform.
-            No personal data is shared with third parties.
+          <p style={{ flex: 1, minWidth: '220px', fontFamily: 'Outfit, sans-serif', fontSize: '0.82rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
+            We use optional analytics providers, including GA4, PostHog, and Microsoft Clarity, to understand platform usage and improve our services. We do not sell personal information. See our{' '}
+            <Link href="/legal/cookies" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Cookie Policy</Link>
+            {' '}and{' '}
+            <Link href="/legal/privacy" style={{ color: '#FFF12D', textDecoration: 'underline' }}>Privacy Policy</Link>.
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexShrink: 0 }}>
-            <button
-              onClick={decline}
-              style={{
-                padding: '0.5rem 1rem',
-                background: 'transparent',
-                border: '1px solid rgba(255,255,255,0.18)',
-                borderRadius: '4px',
-                color: 'rgba(255,255,255,0.5)',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                letterSpacing: '0.1em',
-                cursor: 'pointer',
-                transition: 'border-color 0.2s, color 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-                e.currentTarget.style.color = 'rgba(255,255,255,0.8)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)';
-                e.currentTarget.style.color = 'rgba(255,255,255,0.5)';
-              }}
-            >
+            <button onClick={decline} style={{ padding: '0.5rem 1rem', background: 'transparent', border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', color: 'rgba(255,255,255,0.7)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.1em', cursor: 'pointer' }}>
               DECLINE
             </button>
-            <button
-              onClick={accept}
-              style={{
-                padding: '0.5rem 1.25rem',
-                background: '#FFF12D',
-                border: 'none',
-                borderRadius: '4px',
-                color: '#000',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.7rem',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                cursor: 'pointer',
-                transition: 'box-shadow 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 16px rgba(255,241,45,0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
+            <button onClick={accept} style={{ padding: '0.5rem 1.25rem', background: '#FFF12D', border: 'none', borderRadius: '4px', color: '#000', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', cursor: 'pointer' }}>
               ACCEPT
             </button>
           </div>
