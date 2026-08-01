@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import './hero-responsive.css';
 import './home-emergency-restore.css';
@@ -24,6 +25,7 @@ import VideoAnalytics from '@/components/VideoAnalytics';
 import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 
 const BASE_URL = 'https://elimfilters.com';
+const GA_ID = 'G-0XJP6FLV55';
 const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
 const BRAND_DESCRIPTION = 'ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets across mining, construction, agriculture, power generation, marine, and heavy-duty transportation.';
 
@@ -81,6 +83,31 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script id="ga4-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', {
+              send_page_view: false,
+              anonymize_ip: true
+            });
+          `}
+        </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+      </head>
       <body>
         <ClientProviders>
           <AggregateRatingSchema />
