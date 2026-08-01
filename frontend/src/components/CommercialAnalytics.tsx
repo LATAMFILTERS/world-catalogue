@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import { useConsent } from '@/lib/useConsent';
 
 type EventParams = Record<string, string | number | boolean | undefined>;
@@ -31,7 +30,7 @@ function readCampaign(): EventParams {
     try {
       sessionStorage.setItem(CAMPAIGN_KEY, JSON.stringify(current));
     } catch {
-      // Ignore unavailable storage.
+      // Storage may be unavailable.
     }
     return current;
   }
@@ -46,7 +45,7 @@ function readCampaign(): EventParams {
 
 function sendEvent(name: string, params: EventParams = {}) {
   const gtag = getGtag();
-  if (!gtag) return;
+  if (!gtag || typeof window === 'undefined') return;
 
   gtag('event', name, {
     page_path: window.location.pathname,
@@ -74,8 +73,75 @@ function classifyContactLink(url: URL) {
   return 'general_contact';
 }
 
+function requestUrl(input: RequestInfo | URL): string {
+  if (typeof input === 'string') return input;
+  if (input instanceof URL) return input.href;
+  return input.url;
+}
+
+function parseBody(init?: RequestInit): Record<string, unknown> {
+  if (!init?.body || typeof init.body !== 'string') return {};
+  try {
+    return JSON.parse(init.body) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
+
+function trackSuccessfulRequest(urlValue: string, init?: RequestInit) {
+  let url: URL;
+  try {
+    url = new URL(urlValue, window.location.origin);
+  } catch {
+    return;
+  }
+
+  const path = url.pathname.toLowerCase();
+  const payload = parseBody(init);
+
+  if (path === '/api/distributor') {
+    sendEvent('distributor_application_submit', {
+      lead_type: 'distributor',
+      form_name: 'authorized_distributor_application',
+    });
+    sendEvent('generate_lead', {
+      lead_type: 'distributor',
+      form_name: 'authorized_distributor_application',
+    });
+    return;
+  }
+
+  if (path === '/api/lead-capture') {
+    const leadType = typeof payload.leadType === 'string' ? payload.leadType : 'unknown';
+    sendEvent('lead_capture_submit', {
+      lead_type: leadType,
+      form_name: 'conversion_lead_capture',
+    });
+    sendEvent('generate_lead', {
+      lead_type: leadType,
+      form_name: 'conversion_lead_capture',
+    });
+    return;
+  }
+
+  if (path.includes('/api/contact') || path.includes('/api/commercial')) {
+    sendEvent('commercial_form_submit', {
+      lead_type: 'commercial',
+      form_name: path.split('/').filter(Boolean).pop() || 'contact',
+    });
+    sendEvent('generate_lead', { lead_type: 'commercial' });
+    return;
+  }
+
+  if (path.includes('/api/support')) {
+    sendEvent('technical_support_submit', {
+      lead_type: 'technical_support',
+      form_name: path.split('/').filter(Boolean).pop() || 'support',
+    });
+  }
+}
+
 export default function CommercialAnalytics() {
-  const pathname = usePathname();
   const { consent } = useConsent();
 
   useEffect(() => {
@@ -94,14 +160,14 @@ export default function CommercialAnalytics() {
       const analyticsAction = interactive.getAttribute('data-analytics-event');
 
       if (analyticsAction) {
-        sendEvent(analyticsAction, { link_text: label, button_location: pathname });
+        sendEvent(analyticsAction, { link_text: label, button_location: window.location.pathname });
         return;
       }
 
       if (!href) {
         const marker = `${interactive.id} ${interactive.className} ${label}`.toLowerCase();
         if (marker.includes('chat') || marker.includes('assistant') || marker.includes('support bot')) {
-          sendEvent('chat_started', { button_text: label, button_location: pathname });
+          sendEvent('chat_started', { button_text: label, button_location: window.location.pathname });
         }
         return;
       }
@@ -130,7 +196,7 @@ export default function CommercialAnalytics() {
         sendEvent('part_search_opened', {
           link_text: label,
           destination: url.href,
-          button_location: pathname,
+          button_location: window.location.pathname,
         });
         return;
       }
@@ -174,8 +240,15 @@ export default function CommercialAnalytics() {
       sendEvent('form_submit_attempt', {
         form_id: form.id || form.getAttribute('name') || 'unnamed_form',
         form_action: form.getAttribute('action') || window.location.pathname,
-        form_location: pathname,
+        form_location: window.location.pathname,
       });
+    };
+
+    const originalFetch = window.fetch.bind(window);
+    window.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+      const response = await originalFetch(input, init);
+      if (response.ok) trackSuccessfulRequest(requestUrl(input), init);
+      return response;
     };
 
     document.addEventListener('click', onClick, true);
@@ -184,8 +257,9 @@ export default function CommercialAnalytics() {
     return () => {
       document.removeEventListener('click', onClick, true);
       document.removeEventListener('submit', onSubmit, true);
+      window.fetch = originalFetch;
     };
-  }, [consent, pathname]);
+  }, [consent]);
 
   return null;
 }
