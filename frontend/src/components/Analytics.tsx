@@ -6,12 +6,11 @@ import { usePathname } from 'next/navigation';
 import { trackKnowledgePageView } from '@/lib/analytics';
 import { useConsent } from '@/lib/useConsent';
 
-const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? 'G-0XJP6FLV55';
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com';
 
-// Semantic domain map — identifies which domain a path belongs to
 const DOMAIN_MAP: Record<string, string> = {
   'lube-oil-systems': 'Contamination Control Systems',
   'air-intake-systems': 'Air Intake Filtration Systems',
@@ -55,60 +54,47 @@ export default function Analytics() {
   const pathname = usePathname();
   const { consent } = useConsent();
 
-  const firePageView = useCallback(
-    (path: string) => {
-      // GA4 SPA page view
-      if (typeof window !== 'undefined' && window.gtag && GA_ID) {
-        window.gtag('config', GA_ID, { page_path: path });
-      }
-      // PostHog SPA page view
-      if (typeof window !== 'undefined' && window.posthog?.capture) {
-        window.posthog.capture('$pageview');
-      }
-      // Knowledge System semantic tracking
-      if (path.includes('/knowledge-system')) {
-        trackKnowledgePageView(path, resolveDomain(path), resolveConceptId(path));
-      }
-    },
-    []
-  );
+  const firePageView = useCallback((path: string) => {
+    if (typeof window !== 'undefined' && window.gtag && GA_ID) {
+      window.gtag('config', GA_ID, { page_path: path });
+    }
+    if (typeof window !== 'undefined' && window.posthog?.capture) {
+      window.posthog.capture('$pageview');
+    }
+    if (path.includes('/knowledge-system')) {
+      trackKnowledgePageView(path, resolveDomain(path), resolveConceptId(path));
+    }
+  }, []);
 
   useEffect(() => {
     if (consent === 'accepted') firePageView(pathname);
   }, [pathname, firePageView, consent]);
 
-  // Only render tracking scripts after explicit consent
   if (consent !== 'accepted') return null;
 
   return (
     <>
-      {/* ── Google Analytics 4 ── */}
-      {GA_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', {
-                page_path: window.location.pathname,
-                send_page_view: true,
-                custom_map: {
-                  dimension1: 'semantic_domain',
-                  dimension2: 'concept_id',
-                  dimension3: 'page_type'
-                }
-              });
-            `}
-          </Script>
-        </>
-      )}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', {
+            page_path: window.location.pathname,
+            send_page_view: true,
+            custom_map: {
+              dimension1: 'semantic_domain',
+              dimension2: 'concept_id',
+              dimension3: 'page_type'
+            }
+          });
+        `}
+      </Script>
 
-      {/* ── PostHog (CDN — no npm required) ── */}
       {POSTHOG_KEY && (
         <Script id="posthog-init" strategy="afterInteractive">
           {`
@@ -128,7 +114,6 @@ export default function Analytics() {
         </Script>
       )}
 
-      {/* ── Microsoft Clarity ── */}
       {CLARITY_ID && (
         <Script id="clarity-init" strategy="afterInteractive">
           {`
