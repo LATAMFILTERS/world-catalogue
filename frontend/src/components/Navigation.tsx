@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
 
+const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,7 +43,6 @@ export function Navigation() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Logo */}
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             <img
@@ -53,7 +54,6 @@ export function Navigation() {
           </Link>
         </motion.div>
 
-        {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
@@ -72,7 +72,7 @@ export function Navigation() {
             style={{
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'var(--font-display)',
+              fontFamily: HEADER_DISPLAY_FONT,
               fontWeight: 700,
               fontSize: '0.82rem',
               letterSpacing: '0.1em',
@@ -86,7 +86,6 @@ export function Navigation() {
           </motion.a>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'none' }}
@@ -110,7 +109,6 @@ export function Navigation() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -157,7 +155,7 @@ export function Navigation() {
                   href="https://part-search.elimfilters.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
+                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
                 >
                   {t('nav.findMyFilter', 'FIND MY FILTER')} →
                 </a>
@@ -194,7 +192,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
         style={{
           color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
           textDecoration: 'none',
-          fontFamily: 'var(--font-body)',
+          fontFamily: HEADER_DISPLAY_FONT,
           fontSize: '0.95rem',
           fontWeight: 600,
           letterSpacing: '0.025em',
@@ -226,7 +224,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 const mobileLinkStyle: React.CSSProperties = {
   color: 'rgba(255,255,255,0.85)',
   textDecoration: 'none',
-  fontFamily: 'var(--font-body)',
+  fontFamily: HEADER_DISPLAY_FONT,
   fontSize: '1rem',
   fontWeight: 600,
   letterSpacing: '0.025em',
