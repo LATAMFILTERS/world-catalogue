@@ -111,6 +111,12 @@ export const CANONICAL_PROBLEM_IDS = {
 
   // Biological
   MICROBIAL_GROWTH:   'PROB-MICROBIAL-GROWTH',
+
+  // Turbine-Specific (FH/FG Series)
+  BLADE_EROSION:      'PROB-BLADE-EROSION',
+  BEARING_WASH_OUT:   'PROB-BEARING-WASH-OUT',
+  SEAL_LEAKAGE:       'PROB-SEAL-LEAKAGE',
+  COMPRESSOR_SURGE:   'PROB-COMPRESSOR-SURGE',
 } as const;
 
 export type CanonicalProblemId = typeof CANONICAL_PROBLEM_IDS[keyof typeof CANONICAL_PROBLEM_IDS];
