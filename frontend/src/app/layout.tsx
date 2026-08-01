@@ -18,6 +18,7 @@ import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
 import Analytics from '@/components/Analytics';
+import CommercialAnalytics from '@/components/CommercialAnalytics';
 import ConsentBanner from '@/components/ConsentBanner';
 import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
@@ -117,6 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MiningHeroCleanup />
           <MobileInternalLayoutFix />
           <Analytics />
+          <CommercialAnalytics />
           <ConsentBanner />
           <ChatBotRouteGuard />
         </ClientProviders>
