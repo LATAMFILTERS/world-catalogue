@@ -1,80 +1,36 @@
 'use client';
 
 import '@/i18n';
-
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 const SECTIONS = [
-  {
-    title: '1. Acceptance of Terms',
-    body: `By accessing or using any ELIMFILTERS digital platform, including elimfilters.com, the Part Search platform, the Knowledge System, and any associated APIs or services, you agree to be bound by these Terms of Service. If you do not agree to these terms, you must discontinue use immediately.
-
-These terms apply to all visitors, users, distributors, and technical personnel accessing ELIMFILTERS platforms for any purpose.`,
-  },
-  {
-    title: '2. Platform Purpose',
-    body: `ELIMFILTERS digital platforms are designed to support industrial asset protection through contamination control education, product information, part search, and distributor support.
-
-All content — including Knowledge System articles, technical specifications, cross-reference data, and AI-generated recommendations — is provided for informational purposes in support of engineering and purchasing decisions. Content does not constitute professional engineering advice and must be validated by qualified engineers before implementation.`,
-  },
-  {
-    title: '3. Intellectual Property',
-    body: `All content published on ELIMFILTERS platforms — including text, technical documentation, product data, filtration system architectures, technology descriptions, proprietary technology names (MACROCORE™, NANOFORCE™, SYNTRAX™, DURATECH™, MARINECLEAN™, and others), imagery, and code — is the exclusive property of ELIMFILTERS or its licensors.
-
-Unauthorized reproduction, redistribution, scraping, or commercial use of any ELIMFILTERS content without express written permission is prohibited. Educational and research use with proper attribution is permitted under the conditions defined in the Copyright & DMCA Policy.`,
-  },
-  {
-    title: '4. Cross-Reference Data',
-    body: `Cross-reference data on ELIMFILTERS platforms identifies compatible or equivalent filtration products for equipment maintenance purposes. Cross-reference relationships are not warranties of identical performance, media technology, or lifecycle.
-
-OEM part numbers referenced on this platform are the property of their respective manufacturers. Their use is for identification purposes only and does not imply any affiliation, endorsement, or partnership between ELIMFILTERS and any OEM manufacturer.
-
-Users are responsible for validating fitment, function, and performance requirements before installation. See the Cross Reference Policy for detailed classification rules.`,
-  },
-  {
-    title: '5. AI-Generated Content',
-    body: `ELIMFILTERS platforms may include AI-assisted features for product recommendations, knowledge retrieval, and technical guidance. All AI outputs are generated based on ELIMFILTERS engineering data and industry standards.
-
-AI recommendations are advisory only. Critical filtration decisions — particularly for high-value industrial assets, hazardous operating environments, or warranty-sensitive applications — must be reviewed and validated by qualified personnel before implementation.
-
-See the AI Use Policy for full terms governing AI interactions on this platform.`,
-  },
-  {
-    title: '6. Distributor and Account Obligations',
-    body: `Distributors and authorized partners accessing ELIMFILTERS platform tools, pricing data, or inventory systems agree to maintain the confidentiality of access credentials and business data. Account sharing, resale of platform access, or unauthorized extraction of catalog data is prohibited.
-
-Distributor obligations are additionally governed by the applicable Distributor Agreement.`,
-  },
-  {
-    title: '7. Limitation of Liability',
-    body: `ELIMFILTERS provides platforms and content on an "as available" basis. To the fullest extent permitted by applicable law, ELIMFILTERS disclaims liability for:
-
-— Equipment failures resulting from incorrect product selection based on platform data
-— Downtime, operational loss, or consequential damages arising from reliance on platform content
-— Inaccuracies in third-party cross-reference data
-— Service interruptions or data loss
-
-Users accept full responsibility for validating product selections against their specific equipment and operating conditions.`,
-  },
-  {
-    title: '8. Modifications',
-    body: `ELIMFILTERS reserves the right to modify these Terms of Service at any time. Continued use of the platform following modification constitutes acceptance of the updated terms. Material changes will be communicated through platform notices where feasible.`,
-  },
-  {
-    title: '9. Governing Law',
-    body: `These Terms of Service are governed by applicable law in the jurisdiction of ELIMFILTERS's principal place of business. Disputes shall be resolved through good-faith negotiation before any formal proceedings are initiated.`,
-  },
-  {
-    title: '10. Contact',
-    body: `For questions regarding these Terms of Service, contact ELIMFILTERS at info@elimfilters.com.`,
-  },
+  { title: '1. Acceptance and Eligibility', body: `By accessing or using elimfilters.com, Part Search, the Knowledge System, distributor tools, APIs, bots, AI-assisted services, or other ELIMFILTERS digital platforms, you agree to these Terms of Service and the policies incorporated by reference. If you use the services for a company or other organization, you represent that you are authorized to bind that organization. You must be legally capable of entering a binding agreement and may not use the services where prohibited by law.` },
+  { title: '2. Platform Purpose', body: `The services support industrial contamination control, product research, technical education, cross-reference lookup, distributor operations, and asset-protection decision support. Content and recommendations are informational and do not replace application-specific review by qualified engineering, maintenance, safety, warranty, or procurement personnel.` },
+  { title: '3. Accounts and Access', body: `You must provide accurate information, protect credentials, use only authorized accounts, and promptly report suspected compromise. Account sharing, resale of access, credential transfer, or access outside an authorized distributor or customer organization is prohibited. ELIMFILTERS may impose reasonable usage, security, geographic, feature, or rate limits.` },
+  { title: '4. Acceptable Use', body: `Use of the services is subject to the Acceptable Use Policy. You may not scrape, crawl, harvest, reverse engineer, attack, disrupt, bypass safeguards, extract data in bulk, train competing models, reconstruct proprietary datasets, introduce malicious content, or use the services to violate law or third-party rights.` },
+  { title: '5. Intellectual Property', body: `The services, software, databases, technical documentation, product data, system architectures, images, text, and proprietary technology names, including MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTRAX™, NANOFORCE™, HYDROCORE™, HYDROCORE/SERIES™, THERMACORE™, MARINECLEAN™, and DURACTECH™, are owned by ELIMFILTERS or its licensors. Except for the limited right to use the services under these Terms, no rights are transferred. Unauthorized reproduction, redistribution, commercial exploitation, or removal of notices is prohibited.` },
+  { title: '6. User Submissions', body: `You retain ownership of lawful content you submit. You grant ELIMFILTERS a limited, worldwide, non-exclusive license to host, process, reproduce, analyze, and transmit submitted content as necessary to operate, secure, support, and improve the requested services. You represent that you have authority to submit the content and that it does not violate confidentiality, privacy, export-control, intellectual-property, or other legal obligations.` },
+  { title: '7. Cross-Reference and OEM Data', body: `Cross-reference relationships identify potentially compatible products and are not warranties of identical construction, media, efficiency, capacity, service life, certification, or performance. OEM names and part numbers belong to their respective owners and are used solely for identification. Users must validate dimensions, specifications, equipment configuration, operating conditions, warranty requirements, and current OEM documentation before purchase or installation.` },
+  { title: '8. AI-Assisted Features', body: `AI outputs may contain errors, omissions, outdated information, or incomplete assumptions and may not be reviewed by a human. Outputs are advisory only. Do not submit unnecessary personal data, regulated data, third-party confidential information, or trade secrets. ELIMFILTERS may process and retain interactions for service delivery, safety, security, audit, support, and improvement as described in the Privacy Policy and AI Use Policy.` },
+  { title: '9. Orders, Quotes, Availability, and Pricing', body: `Unless expressly stated in a separate signed agreement, platform listings, availability indicators, lead times, and quotations are informational and may change. An order is not accepted until confirmed by ELIMFILTERS or an authorized seller. Taxes, shipping, duties, minimum quantities, payment terms, warranties, returns, territories, and product-specific conditions may be governed by separate commercial documents.` },
+  { title: '10. Distributor Obligations', body: `Distributors and authorized partners must protect confidential business data, credentials, prices, leads, customer information, territory information, and platform materials. Access may not be shared, sublicensed, resold, or used outside the authorized relationship. Additional obligations are governed by the applicable Distributor Agreement, confidentiality agreement, data-processing terms, or other signed contract.` },
+  { title: '11. Suspension and Termination', body: `ELIMFILTERS may suspend, restrict, or terminate access when reasonably necessary for security, nonpayment, legal compliance, platform integrity, investigation of misuse, protection of intellectual property, or material violation of these Terms. Where practicable, notice and an opportunity to cure may be provided. Provisions concerning ownership, confidentiality, disclaimers, liability, indemnification, disputes, and accrued obligations survive termination.` },
+  { title: '12. Disclaimers', body: `THE SERVICES AND CONTENT ARE PROVIDED “AS IS” AND “AS AVAILABLE” TO THE MAXIMUM EXTENT PERMITTED BY LAW. ELIMFILTERS DISCLAIMS IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, COMPLETENESS, AVAILABILITY, AND ERROR-FREE OPERATION. ELIMFILTERS DOES NOT WARRANT THAT A CROSS REFERENCE, AI OUTPUT, SEARCH RESULT, OR TECHNICAL STATEMENT IS SUITABLE FOR A PARTICULAR EQUIPMENT CONFIGURATION OR OPERATING CONDITION.` },
+  { title: '13. Limitation of Liability', body: `TO THE MAXIMUM EXTENT PERMITTED BY LAW, ELIMFILTERS WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES; LOSS OF PROFITS, REVENUE, DATA, GOODWILL, PRODUCTION, OR USE; EQUIPMENT DAMAGE; DOWNTIME; OR COSTS OF SUBSTITUTE GOODS OR SERVICES ARISING FROM USE OF OR RELIANCE ON THE SERVICES. ELIMFILTERS'S AGGREGATE LIABILITY ARISING FROM THE SERVICES WILL NOT EXCEED THE GREATER OF US$100 OR THE AMOUNT PAID BY THE CLAIMANT FOR THE RELEVANT DIGITAL SERVICE DURING THE SIX MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, EXCEPT WHERE LAW PROHIBITS THAT LIMITATION.` },
+  { title: '14. Indemnification', body: `To the extent permitted by law, you agree to defend, indemnify, and hold harmless ELIMFILTERS and its personnel from third-party claims, losses, liabilities, and reasonable costs arising from your unlawful use, violation of these Terms, misuse of technical information, infringement of third-party rights, unauthorized submissions, or use of the services on behalf of an organization without authority.` },
+  { title: '15. Privacy and Electronic Communications', body: `Data processing is governed by the Privacy Policy and Cookie Policy. By providing contact information, you authorize service, security, transaction, support, and account communications. Marketing communications will be handled according to applicable law and available opt-out controls.` },
+  { title: '16. Governing Law and Disputes', body: `These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law principles. Before filing a claim, the parties will attempt in good faith to resolve the dispute through written notice describing the claim and requested relief. Unless a separate signed agreement provides otherwise, exclusive venue for proceedings concerning these Terms will lie in the state or federal courts serving Collin County, Texas, and each party consents to personal jurisdiction there. Nothing prevents either party from seeking temporary or injunctive relief to protect security, confidential information, or intellectual-property rights.` },
+  { title: '17. General Terms', body: `Neither party is liable for delay caused by events beyond reasonable control. If any provision is unenforceable, the remaining provisions remain effective. Failure to enforce a provision is not a waiver. You may not assign these Terms without written consent; ELIMFILTERS may assign them in connection with a reorganization, financing, merger, sale, or transfer of the relevant business. These Terms and incorporated policies constitute the agreement governing general platform use unless superseded by a signed agreement.` },
+  { title: '18. Changes and Contact', body: `ELIMFILTERS may update these Terms to reflect changes in services, law, security, or business operations. Material changes will be identified by an updated effective date and, where appropriate, an additional notice. Questions or legal notices may be sent to info@elimfilters.com.` },
 ];
 
-const RELATED: { label: string; href: string }[] = [
+const RELATED = [
   { label: 'Privacy Policy', href: '/legal/privacy' },
+  { label: 'Cookie Policy', href: '/legal/cookies' },
+  { label: 'Acceptable Use Policy', href: '/legal/acceptable-use' },
   { label: 'AI Use Policy', href: '/legal/ai-policy' },
   { label: 'Copyright & DMCA Policy', href: '/legal/copyright' },
   { label: 'Cross Reference Policy', href: '/legal/cross-reference' },
@@ -82,74 +38,9 @@ const RELATED: { label: string; href: string }[] = [
 ];
 
 export default function TermsOfServicePage() {
-  return (
-    <>
-      <Navigation />
-      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
-        {/* Back nav */}
-        <div style={{ padding: '1.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
-            ← ELIMFILTERS
-          </Link>
-        </div>
-
-        {/* Hero */}
-        <section style={{ padding: '4rem 8% 3rem', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', opacity: 0.8, marginBottom: '1rem', textTransform: 'uppercase' }}>
-              {'// Legal · Terms'}
-            </p>
-            <h1 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', margin: '0 0 1rem', lineHeight: 1.15, textAlign: 'justify' }}>
-              Terms of Service
-            </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-              Last updated: June 2026
-            </p>
-          </motion.div>
-        </section>
-
-        {/* Content */}
-        <div style={{ maxWidth: '820px', margin: '0 auto', padding: '4rem 8%' }}>
-          {SECTIONS.map((s, i) => (
-            <motion.section
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-            >
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem', lineHeight: 1.3, textAlign: 'justify' }}>
-                {s.title}
-              </h2>
-              {s.body.split('\n\n').map((para, j) => (
-                <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                  {para}
-                </p>
-              ))}
-            </motion.section>
-          ))}
-
-          {/* Related legal links */}
-          <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,241,45,0.12)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textTransform: 'uppercase' }}>
-              Related Legal Documents
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-              {RELATED.map((r) => (
-                <Link key={r.href} href={r.href} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', padding: '0.4rem 0.85rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', transition: 'color 0.2s, border-color 0.2s' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.4)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
-      </main>
-      <Footer />
-    </>
-  );
+  return <><Navigation /><main style={{ background:'#000', color:'#fff', minHeight:'100vh' }}>
+    <div style={{ padding:'1.5rem 8%', borderBottom:'1px solid rgba(255,255,255,0.04)' }}><Link href="/" style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', letterSpacing:'0.14em', color:'rgba(255,255,255,0.4)', textDecoration:'none' }}>← ELIMFILTERS</Link></div>
+    <section style={{ padding:'4rem 8% 3rem', borderBottom:'1px solid rgba(255,241,45,0.08)' }}><motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.5}}><p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}>{'// Legal · Terms'}</p><h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', margin:'0 0 1rem' }}>Terms of Service</h1><p style={{ color:'rgba(255,255,255,0.45)', margin:0 }}>Last updated: August 2026</p></motion.div></section>
+    <div style={{ maxWidth:'820px', margin:'0 auto', padding:'4rem 8%' }}>{SECTIONS.map((s,i)=><section key={i} style={{ marginBottom:'2.5rem', paddingBottom:'2.5rem', borderBottom:'1px solid rgba(255,255,255,0.05)' }}><h2 style={{ fontSize:'1.05rem', color:'#FFF12D', marginBottom:'0.9rem' }}>{s.title}</h2>{s.body.split('\n\n').map((p,j)=><p key={j} style={{ fontSize:'0.92rem', color:'rgba(255,255,255,0.7)', lineHeight:1.8 }}>{p}</p>)}</section>)}<div style={{ display:'flex', flexWrap:'wrap', gap:'0.75rem' }}>{RELATED.map(r=><Link key={r.href} href={r.href} style={{ fontSize:'0.82rem', color:'rgba(255,255,255,0.6)', textDecoration:'none', padding:'0.4rem 0.85rem', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'4px' }}>{r.label}</Link>)}</div></div>
+  </main><Footer /></>;
 }
