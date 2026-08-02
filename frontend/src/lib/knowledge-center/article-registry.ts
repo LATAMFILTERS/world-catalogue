@@ -1247,8 +1247,8 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
     slug: 'hydraulic-proportional-valve-contamination',
     title: 'Hydraulic System Proportional Valve Contamination',
     subtitle: 'Mining Excavator Servo Control Failure from Particulate Ingestion',
-    industryContext: 'Open-pit copper mining, Chile. 365-ton electric excavator with proportional directional control valve (P/T/A/B NG10). Ambient temperature 35-45°C, dust storm season.',
-    duration: '6 months (August 2024 - January 2025)',
+    industryContext: '⚠️ ESCENARIO ILUSTRATIVO - Based on ISO 4406 contamination mechanics. ✓ DATOS VERIFICADOS: Particles ≥4µm damage servo/proportional valves, ≥6µm accelerate wear, ≥14µm cause blockages (https://www.torontech.com/articles/full-iso-4406-chart-cleanliness-guide/). 75-90% of hydraulic failures attributed to contamination (https://www.hydraflu.com/decoding-iso-4406-contamination-control-in-hydraulic-systems/).',
+    duration: '⚠️ 6 months (illustrative timeline - actual progression depends on contamination ingestion rate and system load)',
     failureSequence: [
       {
         stage: 1,
@@ -1387,8 +1387,8 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
     slug: 'fuel-water-microbial-contamination-fleet',
     title: 'Fuel System Water Contamination with Microbial Growth',
     subtitle: 'Transport Fleet HPCR Injector Failure from Water + Bacterial Corrosion',
-    industryContext: 'Medium-duty transport fleet (heavy-haul trucking, 18-ton vehicles), Southern Spain. Seasonal condensation: winter morning condensation in fuel tanks (5-8°C nighttime drop), summer fuel throughput variability (long idle periods overnight).',
-    duration: '8 months (November 2024 - June 2025), 12-truck fleet',
+    industryContext: '⚠️ ESCENARIO ILUSTRATIVO - Based on ASTM D6304/D6469 standards. ✓ DATOS VERIFICADOS: Water content <200 ppm generally safe (https://dieselcraft.com/how-to-test-diesel-fuel-for-water-contamination/). ASTM D6469 identifies microbial contamination as single most overlooked cause of fuel system failures (https://www.bellperformance.com/bell-performs-blog/fuel-tests-that-actually-predict-failure-understanding-astm-d6469-and-microbial-testing/). Bacterial growth causes organic acid formation reducing pH (documented environmental degradation mechanism).',
+    duration: '⚠️ 8 months (illustrative - actual bacterial colonization rate depends on water content, temperature, and storage conditions)',
     failureSequence: [
       {
         stage: 1,
@@ -1543,8 +1543,8 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
     slug: 'air-intake-particle-erosion-mining',
     title: 'Air Intake Particle Erosion',
     subtitle: 'Mining Excavator Compressor Blade Wear from Unfiltered Dust Ingestion',
-    industryContext: 'Open-pit iron ore mining, Australia. Haul truck with turbocharged diesel engine (Cummins ISX-15, 560 hp), dry climate (monthly rainfall <50 mm), high-dust environment (silica/iron oxide particles 10-200 µm).',
-    duration: '9 months (March 2024 - November 2024), single equipment',
+    industryContext: '⚠️ ESCENARIO ILUSTRATIVO - Turbomachinery dust ingestion mechanics from academic research. ✓ DATOS VERIFICADOS: Particle size is dominant factor in blade erosion (2.37× more influential than velocity, 3.21× more than density) (https://www.sciencedirect.com/science/article/abs/pii/S0360544223005790). Dust ingestion in hostile environments causes drastic drop in aerodynamic performance and lifecycle (https://www.academia.edu/127450042/Turbomachinery_performance_degradation_due_to_erosion_effect). Impact angle affects erosion (24-30° for flaky particles, 45-60° for spherical) (https://link.springer.com/article/10.1007/s11668-025-02113-x).',
+    duration: '⚠️ 9 months (illustrative - actual erosion timeline depends on particle size distribution and ingestion rate)',
     failureSequence: [
       {
         stage: 1,
@@ -1701,8 +1701,8 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
     slug: 'multisystem-contamination-cascade-compressor',
     title: 'Multi-System Contamination Cascade',
     subtitle: 'Industrial Centrifugal Compressor Complete Failure from Integrated Contamination Events',
-    industryContext: 'Industrial gas compression (nitrogen, oxygen generation), continuous 24/7 operation. FG-series centrifugal compressor (8,000-12,000 RPM, 15-20 bar discharge). Lube oil ISO VG 46 HVLP (anti-wear, anti-foam). Ambient temperature 15-35°C, facility in semi-rural area (high pollen/dust).',
-    duration: '14 months (January 2024 - February 2025), single compressor unit',
+    industryContext: '⚠️ ESCENARIO ILUSTRATIVO - Multi-system contamination cascade based on bearing life standards. ✓ DATOS VERIFICADOS: Contamination factor (eC) reduces bearing life dramatically - at eC=0.2 achieves ~20% of calculated life (https://evolution.skf.com/contamination-and-bearing-life/). Water contamination reduces life 32-48% (even 1% water content) (https://reliabilitysolutions.net/resources/blog/particle-contamination-bearings-impact-on-bearing-life/). Water reduces effective oil viscosity and disrupts elastohydrodynamic film (https://www.mesys.ag/?p=1340). Bearing life modification factor (aISO) depends on lubrication, contamination, and cleanliness.',
+    duration: '⚠️ 14 months (illustrative - actual cascading failures depend on contamination entry rates and system thermal load)',
     failureSequence: [
       {
         stage: 1,
