@@ -1,0 +1,21 @@
+﻿{
+    "feature":  "home",
+    "experiments":  [
+                        {
+                            "variants":  [
+                                             "A",
+                                             "B"
+                                         ],
+                            "name":  "hero-test",
+                            "active":  true
+                        },
+                        {
+                            "variants":  [
+                                             "control",
+                                             "variant"
+                                         ],
+                            "name":  "layout-test",
+                            "active":  true
+                        }
+                    ]
+}

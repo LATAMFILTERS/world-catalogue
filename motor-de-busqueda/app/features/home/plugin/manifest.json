@@ -1,0 +1,29 @@
+﻿{
+    "ssr":  true,
+    "csr":  true,
+    "architecture":  "plugin-engine",
+    "lazy":  true,
+    "plugins":  [
+                    {
+                        "key":  "hero",
+                        "name":  "Hero"
+                    },
+                    {
+                        "key":  "industries",
+                        "name":  "Industries"
+                    },
+                    {
+                        "key":  "technologies",
+                        "name":  "Technologies"
+                    },
+                    {
+                        "key":  "stats",
+                        "name":  "Stats"
+                    },
+                    {
+                        "key":  "cta",
+                        "name":  "CTA"
+                    }
+                ],
+    "feature":  "home"
+}

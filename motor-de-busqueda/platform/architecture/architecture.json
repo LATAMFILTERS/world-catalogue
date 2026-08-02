@@ -1,0 +1,13 @@
+﻿{
+  "platform": "global-scale-ui-system",
+  "layers": [
+    "edge-network",
+    "cdn-distribution",
+    "runtime-federation",
+    "frontend-os",
+    "control-plane",
+    "feature-services",
+    "data-layer",
+    "observability-plane"
+  ]
+}

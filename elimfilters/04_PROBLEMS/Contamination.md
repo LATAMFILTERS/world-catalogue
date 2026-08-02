@@ -1,0 +1,63 @@
+type: problem
+
+affects:
+  - "[[Engine]]"
+  - "[[Fuel Pump]]"
+  - "[[Fuel Injector]]"
+  - "[[Hydraulic Pump]]"
+  - "[[Hydraulic Valve]]"
+  - "[[Hydraulic Cylinder]]"
+  - "[[Turbocharger]]"
+  - "[[Bearings]]"
+  - "[[Compressor]]"
+  - "[[Radiator]]"
+  - "[[Reservoir]]"
+  - "[[Transmission]]"
+
+causes:
+  - "[[Wear]]"
+  - "[[Pressure Loss]]"
+  - "[[Fluid Degradation]]"
+  - "[[Overheating]]"
+  - "[[Corrosion]]"
+  - "[[Particle Contamination]]"
+  - "[[Dust Ingestion]]"
+  - "[[Water Contamination]]"
+
+reduced_by:
+  - "[[Air Filters]]"
+  - "[[Fuel Filters]]"
+  - "[[Fuel Separator Filters]]"
+  - "[[Hydraulic Filters]]"
+  - "[[Coolant Filters]]"
+  - "[[Lube Filters]]"
+  - "[[Cabin Air Filters]]"
+  - "[[Housing Filters]]"
+  - "[[Marine Filters]]"
+  - "[[Air Dryer Filters]]"
+  - "[[Turbine Fuel Separator]]"
+
+common_in:
+  - "[[Truck Fleets]]"
+  - "[[Construction]]"
+  - "[[Mining]]"
+  - "[[Agriculture]]"
+  - "[[Manufacturing]]"
+  - "[[Marine]]"
+  - "[[Oil & Gas]]"
+  - "[[Power Generation]]"
+  - "[[Railway]]"
+  - "[[Waste Municipal]]"
+  - "[[Bus Coach]]"
+  - "[[Automotive]]"
+
+systems:
+  - "[[Air Intake Systems]]"
+  - "[[Fuel Systems]]"
+  - "[[Fuel Separator Systems]]"
+  - "[[Hydraulic Systems]]"
+  - "[[Cooling Systems]]"
+  - "[[Lubrication Systems]]"
+  - "[[Air Dryer Systems]]"
+  - "[[Marine Filters Systems]]"
+  - "[[Turbine Fuel Systems]]"

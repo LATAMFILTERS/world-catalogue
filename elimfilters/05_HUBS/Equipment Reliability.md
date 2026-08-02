@@ -1,0 +1,73 @@
+type: hub
+
+focuses_on:
+  - "[[Preventive Maintenance]]"
+  - "[[Predictive Maintenance]]"
+  - "[[Failure Prevention]]"
+  - "[[Contamination Control]]"
+  - "[[System Efficiency]]"
+  - "[[Equipment Protection]]"
+  - "[[Uptime Optimization]]"
+
+controls:
+  - "[[Contamination]]"
+  - "[[Wear]]"
+  - "[[Pressure Loss]]"
+  - "[[Overheating]]"
+  - "[[Corrosion]]"
+  - "[[Cavitation]]"
+  - "[[Water Contamination]]"
+  - "[[Particle Contamination]]"
+  - "[[Fuel Contamination]]"
+  - "[[Oil Contamination]]"
+
+protects:
+  - "[[Engine]]"
+  - "[[Fuel Pump]]"
+  - "[[Fuel Injector]]"
+  - "[[Hydraulic Pump]]"
+  - "[[Hydraulic Valve]]"
+  - "[[Hydraulic Cylinder]]"
+  - "[[Turbocharger]]"
+  - "[[Bearings]]"
+  - "[[Compressor]]"
+  - "[[Transmission]]"
+  - "[[Radiator]]"
+  - "[[Reservoir]]"
+
+uses:
+  - "[[Air Filters]]"
+  - "[[Fuel Filters]]"
+  - "[[Fuel Separator Filters]]"
+  - "[[Hydraulic Filters]]"
+  - "[[Coolant Filters]]"
+  - "[[Lube Filters]]"
+  - "[[Housing Filters]]"
+  - "[[Marine Filters]]"
+  - "[[Air Dryer Filters]]"
+  - "[[Turbine Fuel Separator]]"
+
+systems:
+  - "[[Air Intake Systems]]"
+  - "[[Fuel Systems]]"
+  - "[[Fuel Separator Systems]]"
+  - "[[Hydraulic Systems]]"
+  - "[[Cooling Systems]]"
+  - "[[Lubrication Systems]]"
+  - "[[Air Dryer Systems]]"
+  - "[[Marine Filters Systems]]"
+  - "[[Turbine Fuel Systems]]"
+
+industries:
+  - "[[Truck Fleets]]"
+  - "[[Construction]]"
+  - "[[Mining]]"
+  - "[[Agriculture]]"
+  - "[[Manufacturing]]"
+  - "[[Marine]]"
+  - "[[Oil & Gas]]"
+  - "[[Power Generation]]"
+  - "[[Railway]]"
+  - "[[Waste Municipal]]"
+  - "[[Bus Coach]]"
+  - "[[Automotive]]"
