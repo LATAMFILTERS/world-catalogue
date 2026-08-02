@@ -7,8 +7,8 @@
   },
   "scripts": {
     "postinstall": "node scripts/postinstall-safe.js",
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node server-protocol.js",
+    "dev": "node server-protocol.js",
     "build": "cd frontend && npm ci && npm run build",
     "test:ebp-phase1": "node --test tests/ebp-phase1/*.test.js",
     "test:ebp-phase2": "node --test tests/ebp-phase2/*.test.js",
