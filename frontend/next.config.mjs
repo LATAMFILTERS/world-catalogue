@@ -4,11 +4,17 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    formats: ['image/webp', 'image/avif'],
   },
+  compress: true,
+  poweredByHeader: false,
   eslint: {
-    // Keep Render deploys unblocked while legacy lint debt is audited separately.
     ignoreDuringBuilds: true,
   },
+  env: {
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || '',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'https://api.elimfilters.com'
+  }
 };
 
 export default nextConfig;
