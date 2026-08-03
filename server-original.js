@@ -949,12 +949,6 @@ pool.on('connect', client => {
   client.query("SET statement_timeout = '8000'").catch(() => {});
 });
 
-// COVERAGE_AUDIT_DIRECT_V4
-const { registerCoverageAuditEngine } = require('./src/coverage-audit-engine');
-registerCoverageAuditEngine(app, pool, searchLimiter);
-console.log('[coverage-audit-engine] direct v4 registered');
-
-
 // ─── A: Real-time Learning Loop ───────────────────────────────────────────────
 // Fire-and-forget: updates manufacturer_learning_weights via PostgreSQL EMA
 // function after every cross-reference resolution. Non-blocking — errors are
