@@ -34,14 +34,16 @@ services:
       - key: ENGINE_API_KEY
         value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
-  # Static frontend serving elimfilters.com. These redirects must execute at the
-  # HTTP hosting layer, before Render attempts to resolve files in frontend/out.
+  # Frontend serving elimfilters.com with Phase 5A support
   - type: web
     name: elimfilters-frontend
-    runtime: static
+    runtime: node
     rootDir: frontend
     buildCommand: npm ci && npm run build
-    staticPublishPath: ./out
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
     routes:
       # Knowledge-system routes are now served from static files in ./out
       # No redirects - serve Phase 5A and other pages directly
