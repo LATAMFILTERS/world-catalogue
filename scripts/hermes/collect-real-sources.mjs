@@ -19,13 +19,14 @@ import path from 'node:path';
 import process from 'node:process';
 import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS } from './collect-real-sources-core.mjs';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
+import { isDryRunActive } from './hermes-core.mjs';
 
 const legacyConfigPath = process.argv[2] || 'hermes/config/real-sources.json';
 const organizationsPath = process.env.HERMES_SOURCE_ORGANIZATIONS_PATH || 'hermes/config/source-organizations.json';
 const endpointsPath = process.env.HERMES_SOURCE_ENDPOINTS_PATH || 'hermes/config/source-endpoints.json';
 const forceLegacy = String(process.env.HERMES_COLLECTION_USE_LEGACY_SOURCES || 'false').toLowerCase() === 'true';
 
-const dryRun = String(process.env.HERMES_COLLECTION_DRY_RUN ?? 'true').toLowerCase() !== 'false';
+const dryRun = isDryRunActive();
 const timeoutMs = Number(process.env.HERMES_COLLECTION_TIMEOUT_MS || DEFAULT_TIMEOUT_MS);
 const maxBytes = Number(process.env.HERMES_COLLECTION_MAX_BYTES || DEFAULT_MAX_BYTES);
 

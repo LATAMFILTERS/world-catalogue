@@ -27,6 +27,18 @@ concurrency:
 jobs:
   weekly-collection:
     runs-on: ubuntu-latest
+    env:
+      # Job-level, not step-level: GitHub Actions step `env:` blocks do NOT
+      # carry over to later steps, so this must be set once here rather than
+      # duplicated per step. Every step below — collect, validate, and
+      # report — reads this same value via hermes-core.mjs's
+      # isDryRunActive()/resolveRealCandidatesInputDir(), so they always
+      # agree on whether to read/write hermes/real-candidates-previews (DRY
+      # RUN) or hermes/real-candidates (LIVE). Defaults to the safe/off
+      # value. A human must set this as a repository Variable (not a
+      # secret, it holds no credentials) to move HERMES from reporting-only
+      # to producing real candidates.
+      HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -51,11 +63,6 @@ jobs:
 
       - name: Collect real sources
         if: steps.guard.outputs.proceed == 'true'
-        env:
-          # Both default to the safe/off value. A human must set these as
-          # repository Variables (not secrets, they hold no credentials) to
-          # move HERMES from reporting-only to producing real candidates.
-          HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
         run: npm run hermes:collect
 
       - name: Validate real candidates
