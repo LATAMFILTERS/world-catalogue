@@ -20,15 +20,42 @@ if (candidate.approval_required !== true) throw new Error('approval_required mus
 if (candidate.sync_status !== 'NOT_READY' && candidate.sync_status !== 'READY') throw new Error(`Unsupported sync_status: ${candidate.sync_status}`);
 if (!candidate.proposed_target_folder || !candidate.proposed_target_entity) throw new Error('Target folder and entity are required');
 
+const governedFolders = new Set([
+  '01-technologies',
+  '02-industries',
+  '03-systems',
+  '04-standards',
+  '05-contamination',
+  '06-components',
+  '07-problems',
+  '08-product-families',
+  '09-products',
+  '10-case-studies',
+  '11-articles',
+  '12-oems',
+  '13-equipment',
+  '14-intelligence',
+  '15-filter-media',
+  '16-suppliers',
+  '17-technology-watch'
+]);
+
+const normalizedTargetFolder = String(candidate.proposed_target_folder).replaceAll('\\', '/').replace(/\/$/, '');
+if (!governedFolders.has(normalizedTargetFolder)) {
+  throw new Error(`Target folder is not governed: ${candidate.proposed_target_folder}`);
+}
+
 const isSynthetic = candidate.entity_code.startsWith('HERMES_TEST_') || String(candidate.source_url || '').includes('example.invalid');
 if (live && isSynthetic && !allowSynthetic) {
   throw new Error('Synthetic publication is blocked. Set HERMES_ALLOW_SYNTHETIC_PUBLISH=true only for an explicit local test.');
 }
 
 const vaultRoot = path.resolve('elimfilters-vault');
-const targetDir = path.resolve(vaultRoot, candidate.proposed_target_folder);
+const targetDir = path.resolve(vaultRoot, normalizedTargetFolder);
 if (!targetDir.startsWith(vaultRoot + path.sep)) throw new Error('Target folder escapes the vault');
-if (!fs.existsSync(targetDir) || !fs.statSync(targetDir).isDirectory()) throw new Error(`Target folder does not exist: ${targetDir}`);
+
+// Git does not preserve empty directories. Create only folders from the governed allowlist.
+fs.mkdirSync(targetDir, { recursive: true });
 
 const safeEntity = String(candidate.proposed_target_entity).replace(/[^A-Za-z0-9_-]/g, '_');
 const targetPath = path.join(targetDir, `${safeEntity}.md`);
@@ -65,9 +92,9 @@ const audit = {
   timestamp: now,
   mode: live ? 'LIVE' : 'DRY_RUN',
   outcome,
-  target_path: path.relative(process.cwd(), targetPath).replaceAll('\\', '/'),
-  preview_path: path.relative(process.cwd(), previewPath).replaceAll('\\', '/'),
-  backup_path: backupPath ? path.relative(process.cwd(), backupPath).replaceAll('\\', '/') : null,
+  target_path: path.relative(process.cwd(), targetPath).replaceAll('\\','/'),
+  preview_path: path.relative(process.cwd(), previewPath).replaceAll('\\','/'),
+  backup_path: backupPath ? path.relative(process.cwd(), backupPath).replaceAll('\\','/') : null,
   note_sha256: noteHash,
   synthetic_test: isSynthetic,
   database_write: false,
