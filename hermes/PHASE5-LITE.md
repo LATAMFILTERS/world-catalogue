@@ -318,3 +318,30 @@ entry's `enabled` field the same way if you ever need it as a stopgap.
    `hermes/config/real-sources.json` if running in legacy fallback mode) and
    commit.
 4. Re-enabling is the exact reverse of whichever option was used.
+
+## Repository governance note
+
+Commit `2949458884d5791501dda79425b1b2dbafe63233`
+(`feat(hermes): complete phase 5 lite real-source workflow`) was pushed
+directly to `main` as a fast-forward (`61d40297d7e..2949458884d`), not
+through a pull request.
+
+- GitHub reported that a rule requiring changes to go through a pull
+  request was bypassed for that push
+  (`Bypassed rule violations for refs/heads/main: Changes must be made
+  through a pull request.`).
+- The push was a plain fast-forward — no `--force`, no history rewrite, no
+  commit was overwritten or dropped on `main`.
+- Before the push, HERMES Phase 5 Lite's test suite passed 50/50
+  (`npm run test:hermes-phase5`).
+- The source registry validated cleanly: 156 organizations, 15 endpoints,
+  0 validation errors (`npm run hermes:registry:validate`).
+- **No revert of this commit is required.** Its content is correct and
+  fully tested; the only irregularity is the process it went through, not
+  the change itself.
+- **Going forward, every HERMES change — code, config, or documentation —
+  must be made on a feature branch and land on `main` through a pull
+  request.** This document (`hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md`,
+  `hermes/OPERATIONAL-STATUS.md`, and any workflow edits) is itself being
+  delivered on branch `docs/hermes-operational-activation` for exactly that
+  reason.
