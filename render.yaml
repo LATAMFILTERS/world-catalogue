@@ -43,17 +43,8 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
     routes:
-      # Phase 5A private portal - NO redirect
-      - type: rewrite
-        source: /knowledge-system/phase5a-private*
-        destination: /knowledge-system/phase5a-private/index.html
-      - type: rewrite
-        source: /knowledge-system/phase5a-private-status*
-        destination: /knowledge-system/phase5a-private-status/index.html
-      # Default knowledge-system redirect
-      - type: redirect
-        source: /knowledge-system
-        destination: /knowledge-center/
+      # Knowledge-system routes are now served from static files in ./out
+      # No redirects - serve Phase 5A and other pages directly
       - type: redirect
         source: /knowledge-system/contamination
         destination: /knowledge-center/engineering/
