@@ -18,8 +18,23 @@ function makeDirs() {
     realCandidatesDir: path.join(base, 'real-candidates'),
     sourceCacheDir: path.join(base, 'source-cache'),
     previewDir: path.join(base, 'previews'),
-    auditDir: path.join(base, 'audit')
+    auditDir: path.join(base, 'audit'),
+    baselinePath: path.join(base, 'baselines', 'source-baseline.json'),
+    baselinePreviewPath: path.join(base, 'baselines', 'source-baseline.preview.json')
   };
+}
+
+// Most fixture bodies below are short (they're testing something other than
+// the content-length threshold), so tests that aren't specifically about
+// EMPTY_CONTENT/INSUFFICIENT_CONTENT pass minContentLength: 1 throughout.
+const NO_MIN_LENGTH = { minContentLength: 1 };
+
+/** Seeds a real (non-DRY-RUN, non-preview) baseline entry via a real baselineMode run, so
+ * a later comparison-mode run against DIFFERENT content can reach CHANGED instead of
+ * BASELINE_REQUIRED. Returns nothing — the baseline file itself is the effect. */
+async function seedBaseline(dirs, src, body) {
+  const fetchImpl = htmlResponse(200, body);
+  await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [src], dryRun: false, baselineMode: true, fetchImpl });
 }
 
 function htmlResponse(status, body) {
@@ -40,12 +55,14 @@ function source(overrides = {}) {
   };
 }
 
-test('valid source produces exactly one candidate in LIVE mode', async () => {
+test('a source with an established baseline and genuinely changed content produces exactly one candidate in LIVE mode', async () => {
   const dirs = makeDirs();
-  const fetchImpl = async () => ({ ok: true, status: 200, text: async () => '<html><title>New Standard</title><body>Content A</body></html>' });
-  const summary = await runCollection({ ...dirs, sources: [source()], dryRun: false, fetchImpl, now: () => new Date('2026-08-03T00:00:00Z') });
+  await seedBaseline(dirs, source(), '<html><title>Old Standard</title><body>Content A</body></html>');
+  const fetchImpl = async () => ({ ok: true, status: 200, text: async () => '<html><title>New Standard</title><body>Content B — genuinely different from the baseline</body></html>' });
+  const summary = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [source()], dryRun: false, fetchImpl, now: () => new Date('2026-08-03T00:00:00Z') });
   assert.equal(summary.created, 1);
   assert.equal(summary.previewed, 0);
+  assert.equal(summary.changed, 1);
   const files = fs.readdirSync(dirs.realCandidatesDir).filter((f) => f.endsWith('.json'));
   assert.equal(files.length, 1);
   const candidate = JSON.parse(fs.readFileSync(path.join(dirs.realCandidatesDir, files[0]), 'utf8'));
@@ -53,17 +70,19 @@ test('valid source produces exactly one candidate in LIVE mode', async () => {
   assert.equal(candidate.approval_required, true);
   assert.equal(candidate.sync_status, 'NOT_READY');
   assert.match(candidate.source_hash, /^[a-f0-9]{64}$/);
+  assert.equal(candidate.change_classification, 'CHANGE_DETECTED_REQUIRES_RESEARCH');
 });
 
 test('a source that is down (network error) is recorded as FETCH_ERROR and does not abort the run', async () => {
   const dirs = makeDirs();
   const failing = source({ id: 'down_source', url: 'https://example.test/down' });
   const ok = source({ id: 'ok_source', url: 'https://example.test/ok' });
+  await seedBaseline(dirs, ok, '<html><body>old content for ok_source</body></html>');
   const fetchImpl = async (url) => {
     if (url.includes('down')) throw new Error('ECONNREFUSED');
-    return { ok: true, status: 200, text: async () => '<html><body>fine</body></html>' };
+    return { ok: true, status: 200, text: async () => '<html><body>fine — genuinely new content for ok_source</body></html>' };
   };
-  const summary = await runCollection({ ...dirs, sources: [failing, ok], dryRun: false, fetchImpl });
+  const summary = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [failing, ok], dryRun: false, fetchImpl });
   assert.equal(summary.fetch_errors, 1);
   assert.equal(summary.created, 1);
   const errorResult = summary.results.find((r) => r.id === 'down_source');
@@ -85,36 +104,44 @@ test('a source that never responds is aborted after the configured timeout', asy
   assert.match(summary.results[0].error, /timeout after 40ms/);
 });
 
-test('unchanged content on a second run produces no new candidate (duplicate content is not re-reported)', async () => {
+test('unchanged content relative to the baseline produces no candidate, on any run', async () => {
   const dirs = makeDirs();
   const body = '<html><title>Same</title><body>identical content</body></html>';
+  await seedBaseline(dirs, source(), body);
   const fetchImpl = htmlResponse(200, body);
-  const first = await runCollection({ ...dirs, sources: [source()], dryRun: false, fetchImpl });
-  assert.equal(first.created, 1);
-  const second = await runCollection({ ...dirs, sources: [source()], dryRun: false, fetchImpl });
+  const first = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [source()], dryRun: false, fetchImpl });
+  assert.equal(first.created, 0);
+  assert.equal(first.unchanged, 1);
+  const second = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [source()], dryRun: false, fetchImpl });
   assert.equal(second.created, 0);
   assert.equal(second.unchanged, 1);
-  const files = fs.readdirSync(dirs.realCandidatesDir).filter((f) => f.endsWith('.json'));
-  assert.equal(files.length, 1, 'no second file should have been written for unchanged content');
+  const files = fs.existsSync(dirs.realCandidatesDir) ? fs.readdirSync(dirs.realCandidatesDir).filter((f) => f.endsWith('.json')) : [];
+  assert.equal(files.length, 0, 'no candidate file should ever be written for unchanged content');
 });
 
-test('two different sources producing byte-identical content are deduplicated by source_hash', async () => {
+test('two different sources producing byte-identical CHANGED content are deduplicated by source_hash', async () => {
   const dirs = makeDirs();
-  const body = '<html><title>Shared</title><body>same bytes everywhere</body></html>';
-  const fetchImpl = htmlResponse(200, body);
+  const sharedBody = '<html><title>Shared</title><body>same bytes everywhere</body></html>';
   const sourceA = source({ id: 'source_a', url: 'https://example.test/a' });
   const sourceB = source({ id: 'source_b', url: 'https://example.test/b' });
-  await runCollection({ ...dirs, sources: [sourceA], dryRun: false, fetchImpl });
-  const second = await runCollection({ ...dirs, sources: [sourceB], dryRun: false, fetchImpl });
+  // Each source starts from its OWN distinct baseline, so both independently
+  // reach CHANGED when they later converge on the same shared body.
+  await seedBaseline(dirs, sourceA, '<html><body>old content A</body></html>');
+  await seedBaseline(dirs, sourceB, '<html><body>old content B</body></html>');
+  const fetchImpl = htmlResponse(200, sharedBody);
+  const first = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [sourceA], dryRun: false, fetchImpl });
+  assert.equal(first.created, 1);
+  const second = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [sourceB], dryRun: false, fetchImpl });
   assert.equal(second.duplicates, 1);
   assert.equal(second.created, 0);
 });
 
 test('a source whose category has no candidate_type/target mapping is rejected, not silently written', async () => {
   const dirs = makeDirs();
-  const fetchImpl = htmlResponse(200, '<html><body>content</body></html>');
   const badSource = source({ category: 'not_a_real_category' });
-  const summary = await runCollection({ ...dirs, sources: [badSource], dryRun: false, fetchImpl });
+  await seedBaseline(dirs, badSource, '<html><body>old content</body></html>');
+  const fetchImpl = htmlResponse(200, '<html><body>genuinely new content</body></html>');
+  const summary = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [badSource], dryRun: false, fetchImpl });
   assert.equal(summary.created, 0);
   assert.equal(summary.results[0].status, 'BUILD_ERROR');
   const files = fs.existsSync(dirs.realCandidatesDir) ? fs.readdirSync(dirs.realCandidatesDir) : [];
@@ -135,8 +162,9 @@ test('a candidate object that fails hermes-core schema validation is rejected be
 
 test('DRY RUN writes previews only; hermes/real-candidates equivalent is never touched', async () => {
   const dirs = makeDirs();
-  const fetchImpl = htmlResponse(200, '<html><title>Preview me</title><body>content</body></html>');
-  const summary = await runCollection({ ...dirs, sources: [source()], dryRun: true, fetchImpl });
+  await seedBaseline(dirs, source(), '<html><title>Old</title><body>old content</body></html>');
+  const fetchImpl = htmlResponse(200, '<html><title>Preview me</title><body>genuinely new content</body></html>');
+  const summary = await runCollection({ ...dirs, ...NO_MIN_LENGTH, sources: [source()], dryRun: true, fetchImpl });
   assert.equal(summary.mode, 'DRY_RUN');
   assert.equal(summary.previewed, 1);
   assert.equal(summary.created, 0);

@@ -14,6 +14,25 @@ const rawArg = process.argv[2];
 const input = rawArg === '--auto' ? resolveRealCandidatesInputDir() : (rawArg || 'hermes/test-candidates');
 if (rawArg === '--auto') console.log(`[HERMES report] --auto resolved to ${input}`);
 const outputDir = path.resolve(process.argv[3] || 'hermes/reports');
+
+// Only the real-candidates pipeline (hermes:report:real, signaled by
+// '--auto') attaches the collector's own per-source stats (sources
+// checked/unchanged/changed/etc.) — the separate hermes/test-candidates
+// pipeline never had a real collector run behind it, so it never renders
+// this section, even if a stale collection audit happens to exist from an
+// unrelated earlier run.
+function loadLatestCollectionSummary() {
+  const auditDir = path.resolve('elimfilters-vault/94-sync-log');
+  if (!fs.existsSync(auditDir)) return null;
+  const files = fs.readdirSync(auditDir).filter((f) => /^collection-\d+\.collection\.json$/.test(f)).sort();
+  if (!files.length) return null;
+  try {
+    return JSON.parse(fs.readFileSync(path.join(auditDir, files.at(-1)), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+const collectionSummary = rawArg === '--auto' ? loadLatestCollectionSummary() : null;
 const now = new Date();
 const end = now.toISOString();
 const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
@@ -42,12 +61,29 @@ const packageData = {
   groups,
   duplicates: duplicates.map((r) => ({ entity_code: r.candidate.entity_code, duplicate_of: r.duplicateOf })),
   invalid: invalid.map((r) => ({ entity_code: r.candidate.entity_code, errors: r.errors })),
+  source_collection: collectionSummary ? {
+    baseline_mode: collectionSummary.baseline_mode ?? false,
+    sources_checked: collectionSummary.sources_checked ?? collectionSummary.sources_enabled ?? 0,
+    unchanged: collectionSummary.unchanged ?? 0,
+    changed: collectionSummary.changed ?? 0,
+    empty_content: collectionSummary.empty_content ?? 0,
+    insufficient_content: collectionSummary.insufficient_content ?? 0,
+    failed: collectionSummary.failed ?? collectionSummary.fetch_errors ?? 0,
+    baseline_required: collectionSummary.baseline_required ?? 0,
+    candidates_created: collectionSummary.candidates_created ?? collectionSummary.created ?? 0,
+    candidates_suppressed: collectionSummary.candidates_suppressed ?? collectionSummary.duplicates ?? 0
+  } : null,
   publication_boundary: 'NO_DATABASE_WRITES',
   approval_authority: 'Victor Abreu'
 };
 
 const lines = [
-  '# HERMES Weekly Intelligence Review', '',
+  '# HERMES Weekly Intelligence Review', ''
+];
+if (packageData.source_collection?.baseline_mode) {
+  lines.push('**INITIAL BASELINE — NO INTELLIGENCE CANDIDATES GENERATED**', '');
+}
+lines.push(
   `Generated: ${end}`, `Reporting period: ${start} — ${end}`, '',
   '## Summary', '',
   `- Candidates scanned: ${packageData.totals.scanned}`,
@@ -56,7 +92,22 @@ const lines = [
   `- Invalid candidates: ${packageData.totals.invalid}`,
   `- Needs additional research: ${packageData.totals.needs_research}`, '',
   '> This report is review-only. It performs no writes to Obsidian canonical folders, PostgreSQL, pgvector, Part Search, or unified-data.ts.', ''
-];
+);
+if (packageData.source_collection) {
+  const sc = packageData.source_collection;
+  lines.push(
+    '## Source Collection', '',
+    `- Sources checked: ${sc.sources_checked}`,
+    `- Unchanged: ${sc.unchanged}`,
+    `- Changed: ${sc.changed}`,
+    `- Empty content: ${sc.empty_content}`,
+    `- Insufficient content: ${sc.insufficient_content}`,
+    `- Failed: ${sc.failed}`,
+    `- Baseline required: ${sc.baseline_required}`,
+    `- Candidates created: ${sc.candidates_created}`,
+    `- Candidates suppressed: ${sc.candidates_suppressed}`, ''
+  );
+}
 for (const [type, candidates] of Object.entries(groups).sort()) {
   lines.push(`## ${type.replaceAll('_', ' ')}`, '');
   for (const c of candidates) {

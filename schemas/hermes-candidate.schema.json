@@ -59,7 +59,9 @@
     "endpoint_id": { "type": "string", "description": "hermes/config/source-endpoints.json id, present only for candidates produced from the governed source registry." },
     "category": { "type": "string", "description": "Source organization category (e.g. oem_heavy_duty, filtration_competitor, standards) copied from the source registry or the legacy real-sources.json entry." },
     "region": { "type": "string", "description": "Source organization region, present only for candidates produced from the governed source registry." },
-    "trust_level": { "enum": ["high", "medium", "low"], "description": "Source trust_level copied from the source registry or the legacy real-sources.json entry." }
+    "trust_level": { "enum": ["high", "medium", "low"], "description": "Source trust_level copied from the source registry or the legacy real-sources.json entry." },
+    "extracted_snippet": { "type": "string", "description": "Short, literal excerpt of the changed page's normalized text, present only on a CHANGED candidate — never invented, never a summary." },
+    "change_classification": { "enum": ["CHANGE_DETECTED_REQUIRES_RESEARCH"], "description": "Set when a whole-page hash diff proved content changed but HERMES could not identify the specific changed item; confidence is capped and human research is required before treating this as a confirmed update." }
   },
   "allOf": [
     {

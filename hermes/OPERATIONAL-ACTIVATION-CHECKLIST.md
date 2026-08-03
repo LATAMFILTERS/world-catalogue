@@ -26,6 +26,15 @@ Configure under **Settings → Secrets and variables → Actions → Variables**
 
 - `HERMES_COLLECTION_DRY_RUN=true`
 - `HERMES_EMAIL_LIVE=false`
+- `HERMES_BASELINE_MODE=true`
+
+`HERMES_BASELINE_MODE=true` means every run — including the first manual
+one — only bootstraps/refreshes `hermes/baselines/source-baseline.json`
+and never produces a candidate. This is intentional and is never
+auto-disabled by code; only set the `HERMES_BASELINE_MODE` Variable to
+`false` after a baseline run has been reviewed (section D) and looks
+correct, so that a later run with genuinely changed content can produce a
+real candidate to review.
 
 These are the same values the workflow already defaults to when the
 Variables are unset — setting them explicitly here just makes the current

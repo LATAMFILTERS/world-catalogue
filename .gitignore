@@ -124,6 +124,7 @@ hermes/rollback-previews/
 hermes/backups/
 hermes/email-previews/
 hermes/publication-previews/
+hermes/baselines/
 hermes/reports/*
 !hermes/reports/source-coverage-report.md
 !hermes/reports/source-coverage-report.json

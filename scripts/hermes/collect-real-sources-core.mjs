@@ -11,12 +11,23 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { isDateTime, validateCandidate } from './hermes-core.mjs';
+import {
+  DEFAULT_MIN_CONTENT_LENGTH,
+  classifyContentSufficiency,
+  loadBaseline,
+  saveBaseline,
+  buildBaselineEntry,
+  withUpdatedEntry,
+  compareAgainstBaseline
+} from './source-baseline-core.mjs';
 
 export const USER_AGENT = 'ELIMFILTERS-HERMES/1.0 (+source-monitor; contact: elimfilters@gmail.com)';
 export const DEFAULT_TIMEOUT_MS = 15000;
 export const DEFAULT_MAX_BYTES = 3_000_000; // hard cap on bytes read from any single source
 export const DEFAULT_SNIPPET_CHARS = 4000; // minimal raw evidence retained in source-cache
 export const DEFAULT_RSS_ITEM_LIMIT = 10;
+export const EVIDENCE_SNIPPET_CHARS = 220; // short excerpt carried onto a CHANGED candidate as evidence
+export { DEFAULT_MIN_CONTENT_LENGTH };
 
 // Category -> governed target folder + candidate_type. Kept in sync with the
 // allowlists enforced by scripts/hermes/hermes-core.mjs and
@@ -123,6 +134,22 @@ export function extractTitle(html) {
   return title || null;
 }
 
+// Conservative, non-inventive publish-date extraction: only recognizes the
+// two well-established markup conventions for it (the OpenGraph/article
+// meta tag, and an HTML5 <time datetime> attribute). If neither is present
+// or the value doesn't parse as a real date, returns null rather than
+// guessing.
+export function extractPublishedAt(html) {
+  const text = String(html);
+  const metaMatch =
+    /<meta[^>]+property=["']article:published_time["'][^>]*content=["']([^"']+)["']/i.exec(text) ||
+    /<meta[^>]+content=["']([^"']+)["'][^>]*property=["']article:published_time["']/i.exec(text);
+  const timeMatch = /<time[^>]+datetime=["']([^"']+)["']/i.exec(text);
+  const candidate = metaMatch?.[1] || timeMatch?.[1];
+  if (!candidate || !isDateTime(candidate)) return null;
+  return new Date(candidate).toISOString();
+}
+
 export function parseRssItems(xml, limit = DEFAULT_RSS_ITEM_LIMIT) {
   const items = [];
   const itemRe = /<(item|entry)[\s\S]*?>([\s\S]*?)<\/\1>/gi;
@@ -203,14 +230,24 @@ function safeEntityFragment(value) {
     .replace(/^_+|_+$/g, '') || 'UNKNOWN';
 }
 
-export function buildCandidate({ source, contentHash, title, capturedAt, publishedAt = null }) {
+export function buildCandidate({ source, contentHash, title, capturedAt, publishedAt = null, snippet = null, changeClassification = null }) {
   const rule = CATEGORY_RULES[source.category];
   if (!rule) return { candidate: null, error: `no candidate_type/target mapping for category: ${source.category}` };
 
   const idFragment = safeEntityFragment(source.id);
   const hashFragment = contentHash.slice(0, 8).toUpperCase();
-  const trust = TRUST_CONFIDENCE[source.trust_level] ?? 0.5;
+  const baseTrust = TRUST_CONFIDENCE[source.trust_level] ?? 0.5;
+  // A whole-page hash diff proves the page changed, but not WHAT changed —
+  // HERMES cannot point at a specific new article from that alone, so
+  // confidence is capped lower and the proposed_action says so explicitly.
+  // This never applies to RSS items, which already carry a real title/link.
+  const trust = changeClassification ? Math.min(baseTrust, 0.4) : baseTrust;
   const evidenceLevel = source.official ? 'PRIMARY' : 'SECONDARY_VERIFIED';
+
+  let proposedAction = `Review recently detected content change on ${source.name} (${source.url}) for potential ${source.category.replaceAll('_', ' ')} updates. HERMES only flags that content changed; a human must confirm what changed and whether canonical notes require an update.`;
+  if (changeClassification === 'CHANGE_DETECTED_REQUIRES_RESEARCH') {
+    proposedAction += ' HERMES could not identify the specific item that changed on this page — do not treat this as a confirmed new product, technology, or standard until a human researches and verifies the actual change.';
+  }
 
   const candidate = {
     entity_type: 'intelligence_candidate',
@@ -228,7 +265,7 @@ export function buildCandidate({ source, contentHash, title, capturedAt, publish
     evidence_level: evidenceLevel,
     claim_scope: 'SOURCE_REPORTED',
     affected_entities: [idFragment, safeEntityFragment(source.category)],
-    proposed_action: `Review recently detected content change on ${source.name} (${source.url}) for potential ${source.category.replaceAll('_', ' ')} updates. HERMES only flags that content changed; a human must confirm what changed and whether canonical notes require an update.`,
+    proposed_action: proposedAction,
     proposed_target_folder: rule.targetFolder,
     proposed_target_entity: null,
     deduplication_key: `real-${source.id}-${contentHash.slice(0, 32)}`,
@@ -247,6 +284,8 @@ export function buildCandidate({ source, contentHash, title, capturedAt, publish
   if (source.organization_id) candidate.organization_id = source.organization_id;
   if (source.endpoint_id) candidate.endpoint_id = source.endpoint_id;
   if (source.region) candidate.region = source.region;
+  if (snippet) candidate.extracted_snippet = snippet;
+  if (changeClassification) candidate.change_classification = changeClassification;
   return { candidate, error: null };
 }
 
@@ -292,7 +331,16 @@ export async function runCollection(options) {
     maxBytes = DEFAULT_MAX_BYTES,
     userAgent = USER_AGENT,
     fetchImpl,
-    now = () => new Date()
+    now = () => new Date(),
+    // Governed baseline (see source-baseline-core.mjs). BASELINE_MODE
+    // bootstraps/refreshes the baseline for ACTIVE endpoints without ever
+    // producing a candidate. Outside baseline mode, a source with no
+    // baseline entry yet is BASELINE_REQUIRED — never silently seeded —
+    // and only a hash that differs from the stored baseline is CHANGED.
+    baselineMode = false,
+    minContentLength = DEFAULT_MIN_CONTENT_LENGTH,
+    baselinePath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-baseline.json'),
+    baselinePreviewPath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-baseline.preview.json')
   } = options;
 
   const sources = providedSources ?? loadSourcesConfig(configPath).sources;
@@ -304,6 +352,18 @@ export async function runCollection(options) {
 
   const existingSignatures = loadExistingSignatures(realCandidatesDir);
   const results = [];
+  // A fresh in-memory copy is compared/updated during this run; it is only
+  // ever persisted (to the real file or, in DRY RUN, the preview file) at
+  // the very end, and only for sources that produced sufficient content —
+  // a down or empty source can never overwrite a previously valid entry.
+  let workingBaseline = loadBaseline(baselinePath);
+  let baselineDirty = false;
+  let changedCount = 0;
+
+  function applyBaselineUpdate(source, entry) {
+    workingBaseline = withUpdatedEntry(workingBaseline, source.id, entry);
+    baselineDirty = true;
+  }
 
   function recordCandidate(candidate, sourceId) {
     const validationErrors = validateCandidate(candidate);
@@ -373,6 +433,12 @@ export async function runCollection(options) {
         seen_guids: mergedGuids
       });
 
+      if (items.length === 0) {
+        // An empty/unparseable feed is not "nothing new" — it's no usable
+        // evidence at all, same family as EMPTY_CONTENT for HTML sources.
+        results.push({ id: source.id, status: 'EMPTY_CONTENT' });
+        continue;
+      }
       if (!newItems.length) {
         results.push({ id: source.id, status: 'UNCHANGED' });
         continue;
@@ -380,6 +446,9 @@ export async function runCollection(options) {
       for (const item of newItems) {
         const contentHash = itemHash(item);
         const publishedAt = item.pubDate && !Number.isNaN(Date.parse(item.pubDate)) ? new Date(item.pubDate).toISOString() : null;
+        // RSS items already carry real, structured evidence (title + link)
+        // — unlike a whole-page HTML hash diff, so no change_classification
+        // downgrade is applied here.
         const { candidate, error: buildError } = buildCandidate({ source, contentHash, title: item.title, capturedAt, publishedAt });
         if (buildError) { results.push({ id: source.id, status: 'BUILD_ERROR', error: buildError }); continue; }
         recordCandidate(candidate, source.id);
@@ -391,8 +460,11 @@ export async function runCollection(options) {
     const normalized = normalizeHtmlToText(fetchResult.text);
     const contentHash = sha256Hex(normalized);
     const title = extractTitle(fetchResult.text);
-    const snippet = normalized.slice(0, DEFAULT_SNIPPET_CHARS);
+    const rawSnippet = normalized.slice(0, DEFAULT_SNIPPET_CHARS);
 
+    // hermes/source-cache/ is unconditional, informational raw-evidence
+    // bookkeeping (debugging aid) — it is no longer what gates candidate
+    // creation; the governed baseline below is.
     writeJson(cachePath, {
       source_id: source.id,
       source_url: source.url,
@@ -403,35 +475,103 @@ export async function runCollection(options) {
       content_length: fetchResult.text.length,
       content_hash: contentHash,
       title,
-      raw_snippet: snippet
+      raw_snippet: rawSnippet
     });
 
-    if (previousCache?.content_hash === contentHash) {
+    const sufficiency = classifyContentSufficiency(normalized, contentHash, minContentLength);
+    if (sufficiency === 'EMPTY_CONTENT' || sufficiency === 'INSUFFICIENT_CONTENT') {
+      // Never invalid, never fatal, never allowed to overwrite a baseline —
+      // this is "the source gave us no usable evidence this run", not "the
+      // source changed" and not "HERMES produced a broken candidate".
+      results.push({ id: source.id, status: sufficiency, content_length: normalized.length });
+      continue;
+    }
+
+    const baselineEntryNow = () => buildBaselineEntry({
+      organizationId: source.organization_id ?? null,
+      endpointId: source.id,
+      sourceUrl: source.url,
+      normalizedHash: contentHash,
+      observedAt: capturedAt,
+      contentLength: normalized.length,
+      responseStatus: fetchResult.status
+    });
+
+    if (baselineMode) {
+      // Bootstrapping/refreshing the baseline is the entire point of this
+      // mode — it never produces a candidate, by design.
+      applyBaselineUpdate(source, baselineEntryNow());
+      results.push({ id: source.id, status: 'BASELINE_RECORDED' });
+      continue;
+    }
+
+    const comparison = compareAgainstBaseline(workingBaseline, source.id, contentHash);
+    if (comparison.status === 'BASELINE_REQUIRED') {
+      // No prior baseline exists for this endpoint — HERMES has nothing to
+      // compare against, so it reports the gap instead of guessing that
+      // "first ever observation" means "something changed".
+      results.push({ id: source.id, status: 'BASELINE_REQUIRED' });
+      continue;
+    }
+    if (comparison.status === 'UNCHANGED') {
+      // Refresh observed_at/content_length/response_status so the baseline
+      // reflects the latest confirmed-unchanged observation, without
+      // altering the hash itself.
+      applyBaselineUpdate(source, baselineEntryNow());
       results.push({ id: source.id, status: 'UNCHANGED' });
       continue;
     }
 
-    const { candidate, error: buildError } = buildCandidate({ source, contentHash, title, capturedAt });
+    // CHANGED: a real, prior baseline exists and the hash differs.
+    changedCount += 1;
+    const publishedAt = extractPublishedAt(fetchResult.text);
+    const evidenceSnippet = normalized.slice(0, EVIDENCE_SNIPPET_CHARS);
+    const { candidate, error: buildError } = buildCandidate({
+      source,
+      contentHash,
+      title,
+      capturedAt,
+      publishedAt,
+      snippet: evidenceSnippet,
+      changeClassification: 'CHANGE_DETECTED_REQUIRES_RESEARCH'
+    });
     if (buildError) { results.push({ id: source.id, status: 'BUILD_ERROR', error: buildError }); continue; }
     recordCandidate(candidate, source.id);
+    applyBaselineUpdate(source, baselineEntryNow());
   }
 
+  const baselineOutputPath = dryRun ? baselinePreviewPath : baselinePath;
+  if (baselineDirty) saveBaseline(baselineOutputPath, workingBaseline);
+
   const summary = {
-    schema_version: '1.0.0',
+    schema_version: '1.1.0',
     run_type: 'hermes_real_source_collection',
     actor: 'HERMES_AUTOMATION',
     approval_authority: 'Victor Abreu',
     generated_at: now().toISOString(),
     mode: dryRun ? 'DRY_RUN' : 'LIVE',
+    baseline_mode: baselineMode,
     sources_total: sources.length,
     sources_enabled: sources.filter((s) => s.enabled === true).length,
+    sources_checked: sources.filter((s) => s.enabled === true).length,
     created: results.filter((r) => r.status === 'CREATED').length,
     previewed: results.filter((r) => r.status === 'PREVIEWED').length,
     unchanged: results.filter((r) => r.status === 'UNCHANGED').length,
+    changed: changedCount,
+    empty_content: results.filter((r) => r.status === 'EMPTY_CONTENT').length,
+    insufficient_content: results.filter((r) => r.status === 'INSUFFICIENT_CONTENT').length,
+    baseline_required: results.filter((r) => r.status === 'BASELINE_REQUIRED').length,
+    baseline_recorded: results.filter((r) => r.status === 'BASELINE_RECORDED').length,
     duplicates: results.filter((r) => r.status === 'DUPLICATE').length,
     fetch_errors: results.filter((r) => r.status === 'FETCH_ERROR').length,
+    failed: results.filter((r) => r.status === 'FETCH_ERROR').length,
     invalid: results.filter((r) => r.status === 'INVALID_CANDIDATE').length,
     disabled: results.filter((r) => r.status === 'SKIPPED_DISABLED').length,
+    candidates_created: results.filter((r) => r.status === 'CREATED').length,
+    candidates_previewed: results.filter((r) => r.status === 'PREVIEWED').length,
+    candidates_suppressed: results.filter((r) => r.status === 'DUPLICATE').length,
+    baseline_updated: baselineDirty,
+    baseline_output_path: baselineDirty ? baselineOutputPath : null,
     approval_required: true,
     database_write: false,
     pgvector_write: false,
