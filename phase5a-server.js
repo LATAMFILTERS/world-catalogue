@@ -215,5 +215,6 @@ app.post('/api/phase5a-submit', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Phase 5A Portal running on port ${PORT}`);
+  console.log(`✅ Phase 5A Portal running on port ${PORT}`);
+  console.log(`📍 Serving Phase 5A private portal exclusively`);
 });
