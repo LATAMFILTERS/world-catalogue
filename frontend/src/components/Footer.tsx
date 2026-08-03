@@ -142,7 +142,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px 24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '32px 24px', minWidth: 0 }}>
             {navColumns.map((col, i) => (
               <div key={i}>
                 <h3 style={{

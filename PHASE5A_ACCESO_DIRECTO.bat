@@ -8,7 +8,7 @@ REM USO: Doble-click para entrar al portal
 REM ========================================
 
 REM Abre el portal privado en el navegador por defecto
-start http://localhost:3000/knowledge-system/phase5a-private?token=phase5a-victor-2026
+start https://phase5a-portal.onrender.com/knowledge-system/phase5a-private?token=phase5a-victor-2026
 
 REM Muestra un mensaje
 echo.
@@ -17,7 +17,7 @@ echo PHASE 5A Portal abierto en el navegador
 echo ========================================
 echo.
 echo Si el navegador no abre automaticamente:
-echo - Copia esta URL: http://localhost:3000/knowledge-system/phase5a-private?token=phase5a-victor-2026
+echo - Copia esta URL: https://phase5a-portal.onrender.com/knowledge-system/phase5a-private?token=phase5a-victor-2026
 echo - Pégala en la barra de direcciones
 echo.
 pause

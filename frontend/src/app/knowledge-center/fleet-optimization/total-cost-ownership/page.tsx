@@ -7,7 +7,7 @@ export default function TotalCostOwnershipPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       {/* Back Navigation */}
-      <Link href="/fleet-optimization" style={{
+      <Link href="/knowledge-center/fleet-optimization" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',

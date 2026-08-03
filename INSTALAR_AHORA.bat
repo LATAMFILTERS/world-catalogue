@@ -33,7 +33,7 @@ $shortcut1.IconLocation = 'C:\Windows\System32\cmd.exe,0';^
 $shortcut1.Save();^
 ^
 $shortcut2 = $shell.CreateShortcut((Join-Path $desktop 'Phase 5A - Portal (URL).lnk'));^
-$shortcut2.TargetPath = 'http://localhost:3000/knowledge-system/phase5a-private?token=phase5a-victor-2026';^
+$shortcut2.TargetPath = 'https://phase5a-portal.onrender.com/knowledge-system/phase5a-private?token=phase5a-victor-2026';^
 $shortcut2.Description = 'PHASE 5A - Portal Privado';^
 $shortcut2.IconLocation = 'C:\Windows\System32\url.dll,0';^
 $shortcut2.Save();^

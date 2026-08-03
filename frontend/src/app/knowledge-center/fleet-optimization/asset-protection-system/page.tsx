@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 export default function AssetProtectionSystemPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/fleet-optimization" style={{
+      <Link href="/knowledge-center/fleet-optimization" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',
@@ -355,7 +355,7 @@ export default function AssetProtectionSystemPage() {
           Explore asset protection frameworks and operational data
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/fleet-optimization/total-cost-ownership" style={{
+          <Link href="/knowledge-center/fleet-optimization/total-cost-ownership" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
@@ -368,7 +368,7 @@ export default function AssetProtectionSystemPage() {
           }}>
             TCO Analysis →
           </Link>
-          <Link href="/fleet-optimization/contamination-control-strategy" style={{
+          <Link href="/knowledge-center/fleet-optimization/contamination-control-strategy" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
