@@ -5,7 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'frontend', 'public')));
 
 const VALID_TOKENS = ['phase5a-victor-2026'];
 
