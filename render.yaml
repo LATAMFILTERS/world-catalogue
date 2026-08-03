@@ -104,7 +104,7 @@ services:
 
   # Phase 5A Portal — Dynamic server for Phase 5A private portal (Victor)
   - type: web
-    name: phase5a-portal-server
+    name: phase5a-portal
     runtime: node
     buildCommand: npm install --prefix .
     startCommand: node phase5a-server.js
