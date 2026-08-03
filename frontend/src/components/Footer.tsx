@@ -76,7 +76,7 @@ export function Footer() {
           className="footer-main-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(240px, 1.35fr) repeat(5, minmax(120px, 1fr))',
+            gridTemplateColumns: 'repeat(6, minmax(150px, 1fr))',
             gap: 'clamp(2rem, 4vw, 4.5rem)',
             alignItems: 'start',
           }}
