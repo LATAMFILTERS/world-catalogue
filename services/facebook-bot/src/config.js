@@ -13,14 +13,20 @@ function first(...values) {
   return values.map(value => value?.trim()).find(Boolean) || "";
 }
 
+function positiveInteger(name, value, fallback) {
+  const parsed = Number(value ?? fallback);
+  if (!Number.isInteger(parsed) || parsed <= 0) throw new Error(`${name} must be a positive integer`);
+  return parsed;
+}
+
 export function getConfig() {
   return {
     port: Number(process.env.PORT || 10000),
     nodeEnv: process.env.NODE_ENV || "production",
     facebookPageId: required("FACEBOOK_PAGE_ID"),
     facebookPageAccessToken: required(
-      "META_ACCESS_TOKEN or FACEBOOK_PAGE_ACCESS_TOKEN",
-      first(process.env.META_ACCESS_TOKEN, process.env.FACEBOOK_PAGE_ACCESS_TOKEN)
+      "FACEBOOK_PAGE_ACCESS_TOKEN or META_ACCESS_TOKEN",
+      first(process.env.FACEBOOK_PAGE_ACCESS_TOKEN, process.env.META_ACCESS_TOKEN)
     ),
     facebookVerifyToken: required(
       "META_VERIFY_TOKEN or FACEBOOK_VERIFY_TOKEN",
@@ -32,9 +38,9 @@ export function getConfig() {
     ),
     graphApiVersion: process.env.META_GRAPH_API_VERSION || "v23.0",
     databaseUrl: process.env.DATABASE_URL || "",
-    knowledgeBaseUrl: process.env.KNOWLEDGE_BASE_URL || "",
-    nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
-    nvidiaModel: process.env.NVIDIA_NIM_MODEL || "meta/llama-3.1-70b-instruct",
+    botProtocolUrl: first(process.env.BOT_PROTOCOL_URL, "https://part-search.elimfilters.com"),
+    botProtocolApiKey: required("BOT_PROTOCOL_API_KEY"),
+    botProtocolTimeoutMs: positiveInteger("BOT_PROTOCOL_TIMEOUT_MS", process.env.BOT_PROTOCOL_TIMEOUT_MS, 8000),
     dryRun: bool("DRY_RUN", true)
   };
 }
