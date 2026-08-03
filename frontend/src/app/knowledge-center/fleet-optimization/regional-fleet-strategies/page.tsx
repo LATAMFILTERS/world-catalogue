@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 export default function RegionalFleetStrategiesPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/fleet-optimization" style={{
+      <Link href="/knowledge-center/fleet-optimization" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',
@@ -239,7 +239,7 @@ export default function RegionalFleetStrategiesPage() {
           Related Fleet Optimization resources
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/fleet-optimization/equipment-lifecycle-optimization" style={{
+          <Link href="/knowledge-center/fleet-optimization/equipment-lifecycle-optimization" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
@@ -252,7 +252,7 @@ export default function RegionalFleetStrategiesPage() {
           }}>
             Equipment Lifecycle →
           </Link>
-          <Link href="/fleet-optimization/asset-protection-system" style={{
+          <Link href="/knowledge-center/fleet-optimization/asset-protection-system" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',

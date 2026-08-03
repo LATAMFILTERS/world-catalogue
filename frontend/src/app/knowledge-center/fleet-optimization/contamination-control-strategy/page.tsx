@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 export default function ContaminationControlStrategyPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/fleet-optimization" style={{
+      <Link href="/knowledge-center/fleet-optimization" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',

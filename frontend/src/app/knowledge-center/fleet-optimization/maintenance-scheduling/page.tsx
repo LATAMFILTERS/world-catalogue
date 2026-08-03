@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 export default function MaintenanceSchedulingPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/fleet-optimization" style={{
+      <Link href="/knowledge-center/fleet-optimization" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',
@@ -326,7 +326,7 @@ export default function MaintenanceSchedulingPage() {
           Related Fleet Optimization strategies
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/fleet-optimization/predictive-monitoring" style={{
+          <Link href="/knowledge-center/fleet-optimization/predictive-monitoring" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
@@ -339,7 +339,7 @@ export default function MaintenanceSchedulingPage() {
           }}>
             Predictive Monitoring →
           </Link>
-          <Link href="/fleet-optimization/contamination-control-strategy" style={{
+          <Link href="/knowledge-center/fleet-optimization/contamination-control-strategy" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
