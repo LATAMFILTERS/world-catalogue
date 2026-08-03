@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0.0",
+  "description": "HERMES Phase 5 Lite — conservative list of official/public sources. All entries are single-page fetches (no crawling, no JS execution). source_type is 'html' unless an RSS endpoint has been explicitly confirmed by a human — do not guess RSS URLs.",
+  "notes": "Edit this file to add or disable sources. Set enabled=false to stop a source from being polled without deleting its record. See hermes/PHASE5-LITE.md for the review procedure.",
+  "sources": {
+    "OEM": [
+      {
+        "id": "volvo_trucks_news",
+        "name": "Volvo Trucks — Newsroom",
+        "category": "OEM",
+        "url": "https://www.volvotrucks.com/en-en/news.html",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "high",
+        "notes": "Official Volvo Trucks global newsroom index page."
+      },
+      {
+        "id": "john_deere_home",
+        "name": "John Deere — Corporate site",
+        "category": "OEM",
+        "url": "https://www.deere.com/en/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Corporate homepage used as a conservative anchor page; no dedicated newsroom URL confirmed yet."
+      },
+      {
+        "id": "komatsu_home",
+        "name": "Komatsu — Corporate site",
+        "category": "OEM",
+        "url": "https://www.komatsu.com/en/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Corporate homepage used as a conservative anchor page; no dedicated press-release URL confirmed yet."
+      }
+    ],
+    "filtration_manufacturers": [
+      {
+        "id": "donaldson_news",
+        "name": "Donaldson Company — News",
+        "category": "filtration_manufacturers",
+        "url": "https://www.donaldson.com/en-us/about-us/news/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "high",
+        "notes": "Official Donaldson corporate news index."
+      },
+      {
+        "id": "mann_hummel_home",
+        "name": "MANN+HUMMEL — Corporate site",
+        "category": "filtration_manufacturers",
+        "url": "https://www.mann-hummel.com/en/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Corporate homepage used as a conservative anchor page; dedicated newsroom path not yet confirmed."
+      },
+      {
+        "id": "mahle_news",
+        "name": "MAHLE — News and press",
+        "category": "filtration_manufacturers",
+        "url": "https://www.mahle.com/en/news-and-press/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "high",
+        "notes": "Official MAHLE news and press index."
+      }
+    ],
+    "standards": [
+      {
+        "id": "sae_news",
+        "name": "SAE International — News",
+        "category": "standards",
+        "url": "https://www.sae.org/news",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "high",
+        "notes": "Official SAE International news index."
+      },
+      {
+        "id": "nfpa_news",
+        "name": "NFPA — News and Research",
+        "category": "standards",
+        "url": "https://www.nfpa.org/News-and-Research",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "high",
+        "notes": "Official NFPA news and research hub (relevant to NFPA T2.14 hydraulic cleanliness)."
+      },
+      {
+        "id": "iso_home",
+        "name": "ISO — Corporate site",
+        "category": "standards",
+        "url": "https://www.iso.org/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "ISO homepage; the site has returned bot-protection responses (HTTP 403) during manual checks. Kept enabled because errors per source are tolerated; review manually if it never succeeds."
+      }
+    ],
+    "suppliers": [
+      {
+        "id": "ahlstrom_home",
+        "name": "Ahlstrom — Corporate site",
+        "category": "suppliers",
+        "url": "https://www.ahlstrom.com/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Filter media supplier corporate homepage."
+      },
+      {
+        "id": "hollingsworth_vose_home",
+        "name": "Hollingsworth & Vose — Corporate site",
+        "category": "suppliers",
+        "url": "https://www.hollingsworth-vose.com/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Filter media supplier corporate homepage."
+      },
+      {
+        "id": "freudenberg_filter_home",
+        "name": "Freudenberg Filtration Technologies — Corporate site",
+        "category": "suppliers",
+        "url": "https://www.freudenberg-filter.com/en/",
+        "source_type": "html",
+        "enabled": true,
+        "official": true,
+        "trust_level": "medium",
+        "notes": "Filter media / component supplier corporate homepage."
+      }
+    ],
+    "technical_publications": [
+      {
+        "id": "hydraulics_pneumatics",
+        "name": "Hydraulics & Pneumatics",
+        "category": "technical_publications",
+        "url": "https://www.hydraulicspneumatics.com/",
+        "source_type": "html",
+        "enabled": true,
+        "official": false,
+        "trust_level": "medium",
+        "notes": "Independent trade publication covering hydraulic/pneumatic contamination control and standards."
+      },
+      {
+        "id": "filtration_separation",
+        "name": "Filtration+Separation",
+        "category": "technical_publications",
+        "url": "https://www.filtsep.com/",
+        "source_type": "html",
+        "enabled": true,
+        "official": false,
+        "trust_level": "medium",
+        "notes": "Independent filtration industry publication; has returned bot-protection responses (HTTP 403) during manual checks."
+      },
+      {
+        "id": "diesel_progress",
+        "name": "Diesel Progress",
+        "category": "technical_publications",
+        "url": "https://www.dieselprogress.com/",
+        "source_type": "html",
+        "enabled": true,
+        "official": false,
+        "trust_level": "medium",
+        "notes": "Independent trade publication covering diesel/off-highway equipment industry news."
+      }
+    ]
+  }
+}

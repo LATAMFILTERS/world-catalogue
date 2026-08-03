@@ -54,7 +54,12 @@
     "rejection_reason": { "type": ["string", "null"] },
     "sync_status": { "enum": ["NOT_READY", "READY", "SYNCED", "FAILED"] },
     "sync_target": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "organization_id": { "type": "string", "description": "hermes/config/source-organizations.json id, present only for candidates produced from the governed source registry." },
+    "endpoint_id": { "type": "string", "description": "hermes/config/source-endpoints.json id, present only for candidates produced from the governed source registry." },
+    "category": { "type": "string", "description": "Source organization category (e.g. oem_heavy_duty, filtration_competitor, standards) copied from the source registry or the legacy real-sources.json entry." },
+    "region": { "type": "string", "description": "Source organization region, present only for candidates produced from the governed source registry." },
+    "trust_level": { "enum": ["high", "medium", "low"], "description": "Source trust_level copied from the source registry or the legacy real-sources.json entry." }
   },
   "allOf": [
     {

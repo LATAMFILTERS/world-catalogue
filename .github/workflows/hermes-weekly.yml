@@ -1,0 +1,92 @@
+name: HERMES Weekly Intelligence Collection
+
+# GitHub Actions cron always runs in UTC and does not observe daylight
+# saving time. "8:00 AM America/Chicago" is 13:00 UTC during Central
+# Daylight Time (UTC-5, roughly mid-March to early November) and 14:00 UTC
+# during Central Standard Time (UTC-6, the rest of the year). Both crons are
+# scheduled below; the "Guard against DST duplicate run" step computes the
+# actual current America/Chicago local hour and skips the rest of the job
+# unless it is really 08:xx local time, so only one of the two scheduled
+# firings ever does real work. Manual workflow_dispatch runs always proceed
+# regardless of local time. Known limitation: in the single week where the
+# US DST transition itself happens, the two triggers can both land outside
+# 08:xx local (or, rarely, both land inside it) — see hermes/PHASE5-LITE.md.
+on:
+  schedule:
+    - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT (UTC-5)
+    - cron: '0 14 * * 1' # 08:00 America/Chicago during CST (UTC-6)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hermes-weekly
+  cancel-in-progress: false
+
+jobs:
+  weekly-collection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Guard against DST duplicate run
+        id: guard
+        run: |
+          HOUR=$(node -e "console.log(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'2-digit',hour12:false}).format(new Date()))")
+          echo "Current America/Chicago hour: $HOUR"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$HOUR" != "08" ]; then
+            echo "This is the DST-shifted cron firing outside the 08:xx America/Chicago window; skipping the rest of the job."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Collect real sources
+        if: steps.guard.outputs.proceed == 'true'
+        env:
+          # Both default to the safe/off value. A human must set these as
+          # repository Variables (not secrets, they hold no credentials) to
+          # move HERMES from reporting-only to producing real candidates.
+          HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
+        run: npm run hermes:collect
+
+      - name: Validate real candidates
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:validate:real
+
+      - name: Generate weekly review report
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:report:real
+
+      - name: Send weekly review email
+        if: steps.guard.outputs.proceed == 'true'
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
+          HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
+          # Defaults to off. A human must set the HERMES_EMAIL_LIVE
+          # repository Variable to 'true' to actually send mail.
+          HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
+        run: npm run hermes:email:real
+
+      - name: Upload HERMES artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-weekly-collection
+          path: |
+            hermes/real-candidates
+            hermes/reports
+            hermes/source-cache
+            elimfilters-vault/94-sync-log
+          if-no-files-found: warn

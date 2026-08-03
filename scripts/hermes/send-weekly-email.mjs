@@ -8,6 +8,7 @@ const OutlookMailService = require('../../lib/outlook-mail.js');
 
 const reportsDir = path.resolve(process.argv[2] || 'hermes/reports');
 const recipient = process.env.HERMES_REVIEW_EMAIL;
+const senderEmail = process.env.HERMES_SENDER_EMAIL;
 const live = process.env.HERMES_EMAIL_LIVE === 'true';
 
 const files = fs.existsSync(reportsDir)
@@ -20,7 +21,8 @@ const reportPath = path.join(reportsDir, reportName);
 const text = fs.readFileSync(reportPath, 'utf8');
 const date = reportName.match(/\d{4}-\d{2}-\d{2}/)?.[0] || 'current';
 const subject = `[HERMES] Weekly Intelligence Review — ${date}`;
-const html = `<div style="font-family:Arial,sans-serif;max-width:760px"><h2>${subject}</h2><p>This report contains candidates only. No database or canonical knowledge changes have been made.</p><pre style="white-space:pre-wrap;font-family:Arial,sans-serif">${text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}</pre></div>`;
+const decisionNotice = 'This report is candidates-only. HERMES has not written to PostgreSQL, pgvector, unified-data, the frontend, the chatbot, or any canonical Obsidian note. No change of any kind will be applied unless Victor Abreu reviews and explicitly approves it.';
+const html = `<div style="font-family:Arial,sans-serif;max-width:760px"><h2>${subject}</h2><p><strong>${decisionNotice}</strong></p><pre style="white-space:pre-wrap;font-family:Arial,sans-serif">${text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}</pre></div>`;
 
 if (!live) {
   const preview = path.join(reportsDir, `hermes-email-preview-${date}.html`);
@@ -33,5 +35,6 @@ if (!recipient) throw new Error('HERMES_REVIEW_EMAIL is required for live sendin
 
 const mail = new OutlookMailService();
 mail.validateConfig();
+if (senderEmail) mail.emailMap.default = senderEmail;
 await mail.send(recipient, subject, html, text, 'default');
 console.log(`[HERMES email] sent to ${recipient}`);
