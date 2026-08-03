@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { trackNavigationClick } from '@/lib/analytics';
@@ -137,10 +137,24 @@ export function UniversalEndNavigation() {
   const config = navigationFor(pathname);
   const { t } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setHydrated(true);
   }, []);
+
+  useEffect(() => {
+    if (!hydrated || !navRef.current) return;
+
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    // Insert UniversalEndNavigation before the footer
+    const parent = footer.parentElement;
+    if (parent && navRef.current.parentElement !== parent) {
+      parent.insertBefore(navRef.current, footer);
+    }
+  }, [hydrated]);
 
   useEffect(() => {
     if (!config || !hydrated) return;
@@ -174,6 +188,7 @@ export function UniversalEndNavigation() {
 
   return (
     <nav
+      ref={navRef}
       className={`universal-end-nav universal-end-nav--${config.kind}`}
       aria-label={t('nav.continueLabel', 'Continue through the ELIMFILTERS platform')}
       role="navigation"
