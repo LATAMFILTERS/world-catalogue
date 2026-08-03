@@ -40,7 +40,7 @@ services:
     runtime: node
     rootDir: frontend
     buildCommand: npm ci && npm run build
-    startCommand: node server.js
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
