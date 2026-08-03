@@ -3,7 +3,13 @@ const assert = require('node:assert/strict');
 
 const { applyProtocolGuardrails } = require('../lib/bot-protocol-guardrails');
 const { formatForChannel } = require('../lib/bot-protocol-channel-format');
-const { memoryKey, mergeContext, memoryFromResponse } = require('../lib/bot-protocol-memory');
+const {
+  memoryKey,
+  mergeContext,
+  memoryFromResponse,
+  isNewDiagnosticStart,
+  resetDiagnosticMemory
+} = require('../lib/bot-protocol-memory');
 
 test('uses channel and conversation for isolated memory', () => {
   assert.equal(
@@ -22,6 +28,45 @@ test('preserves diagnostic context across messages', () => {
   assert.deepEqual(merged.symptoms, ['power_loss']);
   assert.equal(merged.duration, 'dos semanas');
   assert.equal(merged.history.length, 2);
+});
+
+test('detects a new diagnostic problem after a completed diagnostic', () => {
+  const stored = {
+    active_intent: 'diagnostic',
+    equipment_tokens: ['MACK', 'MP8'],
+    symptoms: ['pressure_loss'],
+    duration: 'dos días',
+    operating_context: 'fleet',
+    impact: 'power_loss'
+  };
+
+  assert.equal(
+    isNewDiagnosticStart('Tengo caída de presión de aceite que debo hacer?', stored),
+    true
+  );
+  assert.equal(isNewDiagnosticStart('Pérdida de potencia', stored), false);
+});
+
+test('clears only the previous diagnostic state when a new problem starts', () => {
+  const reset = resetDiagnosticMemory({
+    active_intent: 'diagnostic',
+    equipment_tokens: ['MACK', 'MP8'],
+    symptoms: ['pressure_loss'],
+    duration: 'dos días',
+    operating_context: 'fleet',
+    impact: 'power_loss',
+    history: ['consulta anterior'],
+    unresolved_attempts: 3
+  });
+
+  assert.deepEqual(reset.equipment_tokens, []);
+  assert.deepEqual(reset.symptoms, []);
+  assert.equal(reset.duration, null);
+  assert.equal(reset.operating_context, null);
+  assert.equal(reset.impact, null);
+  assert.deepEqual(reset.history, []);
+  assert.equal(reset.active_intent, null);
+  assert.equal(reset.unresolved_attempts, 0);
 });
 
 test('blocks unverified recommendations after five unresolved attempts', () => {
