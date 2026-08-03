@@ -1,0 +1,5 @@
+Force Render deployment for bot protocol continuity fixes.
+Requested: 2026-08-03T01:13:00-05:00
+Includes commits:
+- f0f51e59eff5bd1a861a67d7db82f5a5cd98a955
+- 6936c65aaf43fe4c63525d3602224e2e9d3dceda
