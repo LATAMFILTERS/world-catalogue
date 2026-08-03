@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'motion/react';
@@ -93,9 +93,8 @@ const PROMPTS_ES = {
   improvements: 'Prompt 4: Sugerir mejoras'
 };
 
-export default function Phase5APrivatePage() {
+function Phase5APrivateContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentTab, setCurrentTab] = useState<'status' | 'prompts' | 'submit'>('status');
   const [outputs, setOutputs] = useState<OutputState>({
@@ -107,6 +106,7 @@ export default function Phase5APrivatePage() {
   const [submitStatus, setSubmitStatus] = useState<SubmitResponse | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const token = searchParams.get('token');
@@ -115,6 +115,7 @@ export default function Phase5APrivatePage() {
     } else {
       setIsAuthenticated(false);
     }
+    setIsLoaded(true);
   }, [searchParams]);
 
   const copyPrompt = async (promptKey: keyof typeof PROMPTS) => {
@@ -155,6 +156,16 @@ export default function Phase5APrivatePage() {
       setIsSubmitting(false);
     }
   };
+
+  if (!isLoaded) {
+    return (
+      <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ fontSize: '1.2rem' }}>Cargando...</p>
+        </div>
+      </main>
+    );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -481,5 +492,13 @@ export default function Phase5APrivatePage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Phase5APrivatePage() {
+  return (
+    <Suspense fallback={<div style={{ background: '#000', minHeight: '100vh' }} />}>
+      <Phase5APrivateContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'motion/react';
@@ -21,16 +21,18 @@ interface IntegrationStatus {
   error?: string;
 }
 
-export default function Phase5APrivateStatusPage() {
+function Phase5APrivateStatusContent() {
   const searchParams = useSearchParams();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [status, setStatus] = useState<IntegrationStatus>({ status: 'loading' });
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const token = searchParams.get('token');
     if (token && VALID_TOKENS.includes(token)) {
       setIsAuthenticated(true);
     }
+    setIsLoaded(true);
   }, [searchParams]);
 
   useEffect(() => {
@@ -53,6 +55,12 @@ export default function Phase5APrivateStatusPage() {
     const interval = setInterval(fetchStatus, 30000);
     return () => clearInterval(interval);
   }, [isAuthenticated]);
+
+  if (!isLoaded) {
+    return (
+      <main style={{ background: '#000', minHeight: '100vh' }} />
+    );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -313,5 +321,13 @@ export default function Phase5APrivateStatusPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Phase5APrivateStatusPage() {
+  return (
+    <Suspense fallback={<div style={{ background: '#000', minHeight: '100vh' }} />}>
+      <Phase5APrivateStatusContent />
+    </Suspense>
   );
 }
