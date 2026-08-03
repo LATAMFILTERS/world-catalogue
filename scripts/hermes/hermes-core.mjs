@@ -23,6 +23,25 @@ export function isDateTime(value) {
   return typeof value === 'string' && value.length > 0 && !Number.isNaN(Date.parse(value));
 }
 
+// Single source of truth for "is DRY RUN currently active" — every HERMES
+// script that needs to know must call this instead of re-parsing
+// HERMES_COLLECTION_DRY_RUN itself, so the collector and the
+// report/validate pipeline can never drift into disagreeing about which
+// directory holds this run's candidates.
+export function isDryRunActive(env = process.env) {
+  return String(env.HERMES_COLLECTION_DRY_RUN ?? 'true').toLowerCase() !== 'false';
+}
+
+// hermes/config/real-sources.json / source-organizations.json + endpoints
+// only ever produce candidates in one of two places, depending on that same
+// flag: hermes/real-candidates-previews (DRY RUN — collect-real-sources.mjs
+// never persists here) or hermes/real-candidates (LIVE — persisted for
+// review). validate-candidates.mjs and generate-weekly-report.mjs use this
+// to read from whichever one this run actually wrote to.
+export function resolveRealCandidatesInputDir(env = process.env) {
+  return isDryRunActive(env) ? 'hermes/real-candidates-previews' : 'hermes/real-candidates';
+}
+
 export function validateCandidate(c) {
   const errors = [];
   const required = ['entity_type','entity_code','workflow_status','candidate_type','source_type','source_url','source_publisher','captured_at','confidence','evidence_level','claim_scope','affected_entities','proposed_action','proposed_target_folder','deduplication_key','approval_required','sync_status','source_hash'];
