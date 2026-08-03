@@ -35,7 +35,7 @@ implicit in code.
 ## C. Sender
 
 - The sending mailbox must be a corporate ELIMFILTERS account.
-- **Status: pending confirmation from Victor Abreu.**
+- **Status: PENDING CONFIRMATION FROM VICTOR.**
 - No specific address is assumed anywhere in this checklist or in code. The
   `HERMES_SENDER_EMAIL` secret is left for Victor to set once a mailbox is
   designated; until then the underlying Microsoft Graph service falls back
