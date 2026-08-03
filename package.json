@@ -17,7 +17,7 @@
     "test:ebp-phase5": "node --test tests/ebp-phase5/*.test.js",
     "test:ebp": "npm run test:ebp-phase1 && npm run test:ebp-phase2 && npm run test:ebp-phase3 && npm run test:ebp-phase4 && npm run test:ebp-phase5",
     "test:chatbot": "node --test tests/chatbot-routing-integration.test.js",
-    "test:bot-protocol": "node --test tests/bot-protocol-guardrails.test.js tests/bot-protocol-final.test.js tests/bot-protocol-integration.test.js",
+    "test:bot-protocol": "node --test tests/bot-protocol-guardrails.test.js tests/bot-protocol-final.test.js tests/bot-protocol-integration.test.js tests/bot-protocol-catalog-research.test.js",
     "test": "npm run test:bot-protocol && npm run test:chatbot && npm run test:ebp"
   },
   "dependencies": {
