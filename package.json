@@ -15,6 +15,8 @@
     "hermes:email": "node scripts/hermes/send-weekly-email.mjs hermes/reports",
     "hermes:decision": "node scripts/hermes/apply-review-decision.mjs",
     "hermes:publish": "node scripts/hermes/publish-approved-candidate.mjs",
+    "hermes:update": "node scripts/hermes/update-existing-note.mjs",
+    "hermes:rollback": "node scripts/hermes/rollback-note-update.mjs",
     "hermes:phase1": "npm run hermes:validate && npm run hermes:report",
     "hermes:phase2": "npm run hermes:phase1 && npm run hermes:email",
     "test:ebp-phase1": "node --test tests/ebp-phase1/*.test.js",
