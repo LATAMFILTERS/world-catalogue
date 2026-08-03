@@ -71,7 +71,7 @@ export function Footer() {
 
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) clamp(1.25rem, 5vw, 48px) 0' }}>
         <div
           className="footer-main-grid"
           style={{
@@ -79,6 +79,8 @@ export function Footer() {
             gridTemplateColumns: 'repeat(6, minmax(150px, 1fr))',
             gap: 'clamp(2rem, 4vw, 4.5rem)',
             alignItems: 'start',
+            paddingBottom: '48px',
+            borderBottom: '1px solid rgba(255,255,255,0.05)',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', minWidth: 0 }}>
@@ -206,14 +208,14 @@ export function Footer() {
         </div>
 
         <div style={{
-          marginTop: '48px',
-          paddingTop: '24px',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          marginTop: '0',
+          paddingTop: '32px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '16px',
+          width: '100%',
         }}>
           <p style={{
             fontSize: '12px',
