@@ -102,6 +102,17 @@ services:
         source: /knowledge-center/engineering/operator-health
         destination: /knowledge-center/systems/cabin-air-protection/
 
+  # Phase 5A Portal — Dynamic server for Phase 5A private portal (Victor)
+  - type: web
+    name: phase5a-portal-server
+    runtime: node
+    buildCommand: npm install --prefix .
+    startCommand: node phase5a-server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+
   # Knowledge Center API — Candidate case intake and review workflow (Phase 2+ Staging)
   - type: web
     name: knowledge-center-api-staging
