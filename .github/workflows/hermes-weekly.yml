@@ -39,6 +39,15 @@ jobs:
       # secret, it holds no credentials) to move HERMES from reporting-only
       # to producing real candidates.
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
+      # Defaults to 'true' — the first (and every subsequent, until a human
+      # changes this) run only bootstraps/refreshes
+      # hermes/baselines/source-baseline.json and produces zero candidates.
+      # This is deliberate, not a placeholder: HERMES_BASELINE_MODE never
+      # flips to 'false' on its own. Only set the HERMES_BASELINE_MODE
+      # repository Variable to 'false' once a manual baseline run has been
+      # reviewed and looks correct — see
+      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md.
+      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -95,5 +104,6 @@ jobs:
             hermes/real-candidates
             hermes/reports
             hermes/source-cache
+            hermes/baselines
             elimfilters-vault/94-sync-log
           if-no-files-found: warn
