@@ -142,9 +142,8 @@ export function Footer() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '32px 24px', minWidth: 0 }}>
-            {navColumns.map((col, i) => (
-              <div key={i}>
+          {navColumns.map((col, i) => (
+            <div key={i}>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '11px',
@@ -196,7 +195,6 @@ export function Footer() {
                 </ul>
               </div>
             ))}
-          </div>
         </div>
 
         <div style={{
