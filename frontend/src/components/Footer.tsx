@@ -72,7 +72,15 @@ export function Footer() {
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
-        <div className="footer-main-grid">
+        <div
+          className="footer-main-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(240px, 1.35fr) repeat(5, minmax(120px, 1fr))',
+            gap: 'clamp(2rem, 4vw, 4.5rem)',
+            alignItems: 'start',
+          }}
+        >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', minWidth: 0 }}>
             <div>
               <img
