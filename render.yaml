@@ -34,8 +34,7 @@ services:
       - key: ENGINE_API_KEY
         value: 93ce3ebe855277527c8b9c9df404d495492fa058e0def67cd5699823e10e6130
 
-  # Static frontend serving elimfilters.com. These redirects must execute at the
-  # HTTP hosting layer, before Render attempts to resolve files in frontend/out.
+  # Static frontend serving elimfilters.com
   - type: web
     name: elimfilters-frontend
     runtime: static
@@ -43,9 +42,8 @@ services:
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
     routes:
-      - type: redirect
-        source: /knowledge-system
-        destination: /knowledge-center/
+      # Knowledge-system routes are now served from static files in ./out
+      # No redirects - serve Phase 5A and other pages directly
       - type: redirect
         source: /knowledge-system/contamination
         destination: /knowledge-center/engineering/
@@ -103,6 +101,17 @@ services:
       - type: redirect
         source: /knowledge-center/engineering/operator-health
         destination: /knowledge-center/systems/cabin-air-protection/
+
+  # Phase 5A Portal — Dynamic server for Phase 5A private portal (Victor)
+  - type: web
+    name: phase5a-portal
+    runtime: node
+    buildCommand: npm install --prefix .
+    startCommand: node phase5a-server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
 
   # Knowledge Center API — Candidate case intake and review workflow (Phase 2+ Staging)
   - type: web
