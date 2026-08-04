@@ -123,8 +123,8 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%' }}>
-              <div style={{ display: 'flex', gap: '4px', alignItems: 'center', flexWrap: 'wrap', fontSize: '12px' }}>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'nowrap', justifyContent: 'center', width: '100%' }}>
+              <div style={{ display: 'flex', gap: '4px', alignItems: 'center', flexWrap: 'nowrap', fontSize: '12px', whiteSpace: 'nowrap' }}>
                 <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
