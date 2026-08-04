@@ -1,25 +1,48 @@
-// HERMES — governed baseline promotion.
-// The ONLY thing this module is allowed to write is
-// hermes/baselines/source-baseline.json (and its own timestamped backups
-// under hermes/baselines/backups/). It never touches candidates, never
-// touches PostgreSQL/pgvector/unified-data, never touches a canonical
-// Obsidian note. Every write is preceded by strict, all-or-nothing
-// validation and, when replacing an existing file, a backup — and every
-// write to the real file itself is atomic (temp file + rename) so a
-// mid-write failure can never leave a corrupt or partial baseline.
+// HERMES — governed baseline promotion, persisted durably.
+//
+// GitHub Actions runners are ephemeral: a baseline written only to
+// hermes/baselines/source-baseline.json inside the runner's filesystem
+// disappears the moment the job ends, so the following week's run would
+// have nothing to compare against. The durable copy lives on a dedicated
+// git branch — hermes-state — as state/source-baseline.json,
+// state/backups/source-baseline.<timestamp>.json (max 5 kept), and
+// state/promotion-audit.json. See git-state-branch.mjs for the plumbing
+// that reads/writes that branch without ever touching the checked-out
+// working tree.
+//
+// The ONLY durable writes this module ever performs are the three paths
+// above, all under refs/heads/hermes-state — never candidates, never
+// PostgreSQL/pgvector/unified-data, never a canonical Obsidian note, never
+// elimfilters-vault/94-sync-log. Every promotion/rollback is preceded by
+// strict, all-or-nothing validation and a backup of whatever it replaces,
+// and every write is a single git commit pushed non-force (so a concurrent
+// modification is rejected by git itself, never silently overwritten) and
+// then verified by re-reading the remote ref.
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { isDateTime } from './hermes-core.mjs';
 import { EMPTY_STRING_SHA256 } from './source-baseline-core.mjs';
+import {
+  resolveRemoteBranchSha,
+  fetchStateBranch,
+  readFileAtCommit,
+  listTreeAtCommit,
+  commitFilesAndPush
+} from './git-state-branch.mjs';
 
 // The one and only value that authorizes a promotion or rollback. Never
 // logged in full by any caller — only whether it was present/matched.
 export const APPROVAL_TOKEN_VALUE = 'VICTOR_ABREU_APPROVED';
 export const MAX_BACKUPS = 5;
+export const MAX_AUDIT_EVENTS = 20;
+export const STATE_BRANCH = 'hermes-state';
+export const STATE_BASELINE_PATH = 'state/source-baseline.json';
+export const STATE_BACKUPS_DIR = 'state/backups';
+export const STATE_AUDIT_PATH = 'state/promotion-audit.json';
 
-export function sha256HexOfFile(filePath) {
-  return crypto.createHash('sha256').update(fs.readFileSync(filePath)).digest('hex');
+export function sha256HexOfString(content) {
+  return crypto.createHash('sha256').update(content, 'utf8').digest('hex');
 }
 
 /**
@@ -30,6 +53,10 @@ export function sha256HexOfFile(filePath) {
  */
 export function isAuthorized({ baselineMode, dryRun, promote, approvalToken }) {
   return baselineMode === true && dryRun === true && promote === true && approvalToken === APPROVAL_TOKEN_VALUE;
+}
+
+export function isRollbackAuthorized({ approvalToken }) {
+  return approvalToken === APPROVAL_TOKEN_VALUE;
 }
 
 /**
@@ -75,38 +102,97 @@ function timestampForFilename(date) {
   return date.toISOString().replace(/[:.]/g, '-');
 }
 
-/** Deletes the oldest backups beyond maxBackups, keeping the most recent ones. */
-export function rotateBackups(backupDir, maxBackups = MAX_BACKUPS) {
-  if (!fs.existsSync(backupDir)) return;
-  const files = fs.readdirSync(backupDir).filter((f) => /^source-baseline\..*\.bak\.json$/.test(f)).sort();
-  while (files.length > maxBackups) {
-    const oldest = files.shift();
-    fs.unlinkSync(path.join(backupDir, oldest));
+/** A backup filename must be exactly this shape — never taken as a free-form path. */
+export function isValidBackupName(name) {
+  return typeof name === 'string' && /^source-baseline\.\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z\.json$/.test(name);
+}
+
+function readCurrentState({ cwd, remote }) {
+  const sha = fetchStateBranch({ cwd, remote, branch: STATE_BRANCH });
+  if (!sha) return { sha: null, baseline: null, backups: [], audit: [] };
+
+  const baselineRaw = readFileAtCommit({ cwd, sha, filePath: STATE_BASELINE_PATH });
+  const baseline = baselineRaw != null ? JSON.parse(baselineRaw) : null;
+
+  const backupNames = listTreeAtCommit({ cwd, sha, dirPath: STATE_BACKUPS_DIR })
+    .filter(isValidBackupName)
+    .sort();
+  const backups = backupNames
+    .map((name) => ({ name, content: readFileAtCommit({ cwd, sha, filePath: `${STATE_BACKUPS_DIR}/${name}` }) }))
+    .filter((b) => b.content != null);
+
+  const auditRaw = readFileAtCommit({ cwd, sha, filePath: STATE_AUDIT_PATH });
+  let audit = [];
+  if (auditRaw != null) {
+    try {
+      const parsed = JSON.parse(auditRaw);
+      if (Array.isArray(parsed)) audit = parsed;
+    } catch {
+      audit = [];
+    }
   }
+  return { sha, baseline, backups, audit };
+}
+
+function buildFileSet({ baselineContent, backups, auditEvents }) {
+  const files = [{ path: STATE_BASELINE_PATH, content: baselineContent }];
+  for (const backup of backups) files.push({ path: `${STATE_BACKUPS_DIR}/${backup.name}`, content: backup.content });
+  files.push({ path: STATE_AUDIT_PATH, content: JSON.stringify(auditEvents, null, 2) + '\n' });
+  return files;
 }
 
 /**
- * Write-then-rename: the target file is only ever replaced by a single
- * atomic rename, so a crash mid-write leaves either the old file intact or
- * the new one complete — never a half-written baseline.
+ * Restores hermes/baselines/source-baseline.json — the local, gitignored,
+ * ephemeral operational copy the collector reads — from the durable
+ * hermes-state branch. Never fabricates a baseline: if the branch or the
+ * file inside it does not exist, the local path is left untouched, so the
+ * collector's own loadBaseline() naturally treats every source as
+ * BASELINE_REQUIRED rather than silently seeding one.
  */
-function atomicWriteFile(targetPath, content) {
-  const dir = path.dirname(targetPath);
-  fs.mkdirSync(dir, { recursive: true });
-  const tempPath = path.join(dir, `.tmp-${path.basename(targetPath)}-${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2)}`);
-  fs.writeFileSync(tempPath, content, 'utf8');
-  fs.renameSync(tempPath, targetPath);
+export function restoreBaselineFromState({ cwd = process.cwd(), remote = 'origin', localBaselinePath }) {
+  let sha;
+  try {
+    sha = fetchStateBranch({ cwd, remote, branch: STATE_BRANCH });
+  } catch (error) {
+    // Never fabricate a baseline because the remote could not even be
+    // reached — fail closed into BASELINE_REQUIRED, same as "branch does
+    // not exist yet", and leave the local path untouched.
+    return { status: 'BASELINE_REQUIRED', reason: `could not read '${STATE_BRANCH}' from '${remote}': ${error.message}`, remote_sha: null };
+  }
+  if (!sha) {
+    return { status: 'BASELINE_REQUIRED', reason: `remote branch '${STATE_BRANCH}' does not exist yet`, remote_sha: null };
+  }
+  const raw = readFileAtCommit({ cwd, sha, filePath: STATE_BASELINE_PATH });
+  if (raw == null) {
+    return { status: 'BASELINE_REQUIRED', reason: `${STATE_BASELINE_PATH} does not exist on '${STATE_BRANCH}'`, remote_sha: sha };
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (error) {
+    return { status: 'BASELINE_REQUIRED', reason: `${STATE_BASELINE_PATH} is not valid JSON: ${error.message}`, remote_sha: sha };
+  }
+  fs.mkdirSync(path.dirname(localBaselinePath), { recursive: true });
+  fs.writeFileSync(localBaselinePath, raw.endsWith('\n') ? raw : `${raw}\n`, 'utf8');
+  return { status: 'RESTORED', remote_sha: sha, sources: Object.keys(parsed.sources || {}).length };
 }
 
 /**
- * Promotes hermes/baselines/source-baseline.preview.json to
- * hermes/baselines/source-baseline.json. Caller is responsible for the
- * env-var authorization check (isAuthorized) — this function assumes it has
- * already been granted and focuses purely on validate → backup → atomic
- * write. Never partially writes: if validation fails, the real file (and
- * any existing backup) is left completely untouched.
+ * Promotes a freshly generated, already-validated preview baseline
+ * (hermes/baselines/source-baseline.preview.json, produced by a
+ * HERMES_BASELINE_MODE=true collection run) onto the hermes-state branch.
+ * Caller is responsible for the env-var authorization check (isAuthorized).
+ *
+ * Sequence: load + validate preview -> read current state from
+ * hermes-state -> back up the baseline being replaced (if any) -> build the
+ * new commit (new baseline + pruned backups [max 5] + appended audit event)
+ * -> push non-force -> verify by re-reading the remote ref. A promotion is
+ * only ever reported PROMOTED after that final remote verification
+ * succeeds; any failure at any step leaves hermes-state completely
+ * untouched (git only moves the ref after the object graph is fully built,
+ * and a rejected push moves nothing at all).
  */
-export function promoteBaseline({ previewPath, realPath, backupDir, registry, minContentLength, now = () => new Date() }) {
+export function promoteBaselineToState({ cwd = process.cwd(), remote = 'origin', previewPath, registry, minContentLength, now = () => new Date() }) {
   const nowIso = now().toISOString();
 
   if (!fs.existsSync(previewPath)) {
@@ -124,57 +210,142 @@ export function promoteBaseline({ previewPath, realPath, backupDir, registry, mi
     return { status: 'FAILED', reason: 'baseline preview failed validation', errors, promoted_at: nowIso };
   }
 
-  let backupPath = null;
-  if (fs.existsSync(realPath)) {
-    fs.mkdirSync(backupDir, { recursive: true });
-    backupPath = path.join(backupDir, `source-baseline.${timestampForFilename(now())}.bak.json`);
-    fs.copyFileSync(realPath, backupPath);
-    rotateBackups(backupDir);
+  // A local write is never treated as persistence — if the hermes-state
+  // branch cannot even be read (remote misconfigured, unreachable, no
+  // network), promotion must fail closed rather than silently proceed as
+  // if it had a valid current state.
+  let current;
+  try {
+    current = readCurrentState({ cwd, remote });
+  } catch (error) {
+    return { status: 'FAILED', reason: `could not read current hermes-state from '${remote}': ${error.message}`, promoted_at: nowIso, errors: [] };
+  }
+  const newBaselineContent = `${JSON.stringify(baseline, null, 2)}\n`;
+
+  let backups = current.backups;
+  let backupName = null;
+  if (current.baseline) {
+    backupName = `source-baseline.${timestampForFilename(now())}.json`;
+    const backupContent = `${JSON.stringify(current.baseline, null, 2)}\n`;
+    backups = [...backups, { name: backupName, content: backupContent }].sort((a, b) => a.name.localeCompare(b.name));
+  }
+  while (backups.length > MAX_BACKUPS) backups.shift();
+
+  const auditEvent = {
+    event: 'PROMOTED',
+    timestamp: nowIso,
+    sources_promoted: Object.keys(baseline.sources).length,
+    baseline_sha256: sha256HexOfString(newBaselineContent),
+    backup_created: backupName ? `${STATE_BACKUPS_DIR}/${backupName}` : null,
+    previous_state_commit: current.sha
+  };
+  const auditEvents = [...current.audit, auditEvent].slice(-MAX_AUDIT_EVENTS);
+  const files = buildFileSet({ baselineContent: newBaselineContent, backups, auditEvents });
+
+  let pushResult;
+  try {
+    pushResult = commitFilesAndPush({
+      cwd, remote, branch: STATE_BRANCH, parentSha: current.sha, files,
+      message: `chore(hermes-state): promote baseline (${auditEvent.sources_promoted} sources)`
+    });
+  } catch (error) {
+    if (error.conflict) {
+      return { status: 'FAILED', reason: `concurrent modification detected — '${STATE_BRANCH}' changed during promotion; nothing was written`, promoted_at: nowIso, errors: [] };
+    }
+    return { status: 'FAILED', reason: `git push failed: ${error.message}`, promoted_at: nowIso, errors: [] };
   }
 
-  const serialized = JSON.stringify(baseline, null, 2) + '\n';
-  try {
-    atomicWriteFile(realPath, serialized);
-  } catch (error) {
-    // Nothing beyond the (already-created) backup was touched — the rename
-    // either happens completely or not at all, so realPath still holds
-    // whatever it held before this call if the rename itself failed.
-    return { status: 'FAILED', reason: `atomic write failed: ${error.message}`, promoted_at: nowIso, backup_path: backupPath, errors: [] };
+  const verifiedSha = resolveRemoteBranchSha({ cwd, remote, branch: STATE_BRANCH });
+  if (verifiedSha !== pushResult.commitSha) {
+    return { status: 'FAILED', reason: 'promotion was pushed but remote verification did not match — treating as failed out of caution', promoted_at: nowIso, errors: [] };
   }
 
   return {
     status: 'PROMOTED',
     promoted_at: nowIso,
-    sources_promoted: Object.keys(baseline.sources).length,
-    baseline_sha256: sha256HexOfFile(realPath),
-    backup_path: backupPath,
-    real_path: realPath,
+    sources_promoted: auditEvent.sources_promoted,
+    baseline_sha256: auditEvent.baseline_sha256,
+    backup_path: backupName ? `${STATE_BACKUPS_DIR}/${backupName}` : null,
+    state_branch: STATE_BRANCH,
+    state_branch_commit: pushResult.commitSha,
+    remote_verified: true,
     candidates_written: 0,
     writes_outside_baseline: 0
   };
 }
 
 /**
- * Restores hermes/baselines/source-baseline.json from a specific, existing
- * backup file. Caller is responsible for the approval-token check.
+ * Restores state/source-baseline.json on hermes-state from a specific,
+ * existing backup already on that branch. Caller is responsible for the
+ * approval-token check. The baseline being replaced is itself backed up
+ * first, same as a promotion.
  */
-export function rollbackBaseline({ backupPath, realPath, now = () => new Date() }) {
+export function rollbackBaselineInState({ cwd = process.cwd(), remote = 'origin', backupName, now = () => new Date() }) {
   const nowIso = now().toISOString();
-  if (!fs.existsSync(backupPath)) {
-    return { status: 'FAILED', reason: `backup not found at ${backupPath}`, rolled_back_at: nowIso };
+  if (!isValidBackupName(backupName)) {
+    return { status: 'FAILED', reason: `invalid backup name: ${backupName}`, rolled_back_at: nowIso };
   }
-  let parsed;
+
+  let current;
   try {
-    parsed = JSON.parse(fs.readFileSync(backupPath, 'utf8'));
+    current = readCurrentState({ cwd, remote });
   } catch (error) {
-    return { status: 'FAILED', reason: `backup is not valid JSON: ${error.message}`, rolled_back_at: nowIso };
+    return { status: 'FAILED', reason: `could not read current hermes-state from '${remote}': ${error.message}`, rolled_back_at: nowIso };
   }
-  const content = JSON.stringify(parsed, null, 2) + '\n';
-  atomicWriteFile(realPath, content);
+  if (!current.sha) {
+    return { status: 'FAILED', reason: `remote branch '${STATE_BRANCH}' does not exist`, rolled_back_at: nowIso };
+  }
+  const target = current.backups.find((b) => b.name === backupName);
+  if (!target) {
+    return { status: 'FAILED', reason: `backup '${backupName}' not found on '${STATE_BRANCH}'`, rolled_back_at: nowIso };
+  }
+
+  let backups = current.backups.filter((b) => b.name !== backupName);
+  let replacedBackupName = null;
+  if (current.baseline) {
+    replacedBackupName = `source-baseline.${timestampForFilename(now())}.json`;
+    backups = [...backups, { name: replacedBackupName, content: `${JSON.stringify(current.baseline, null, 2)}\n` }]
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
+  while (backups.length > MAX_BACKUPS) backups.shift();
+
+  const restoredContent = target.content;
+  const auditEvent = {
+    event: 'ROLLED_BACK',
+    timestamp: nowIso,
+    restored_from: `${STATE_BACKUPS_DIR}/${backupName}`,
+    baseline_sha256: sha256HexOfString(restoredContent),
+    backup_created: replacedBackupName ? `${STATE_BACKUPS_DIR}/${replacedBackupName}` : null,
+    previous_state_commit: current.sha
+  };
+  const auditEvents = [...current.audit, auditEvent].slice(-MAX_AUDIT_EVENTS);
+  const files = buildFileSet({ baselineContent: restoredContent, backups, auditEvents });
+
+  let pushResult;
+  try {
+    pushResult = commitFilesAndPush({
+      cwd, remote, branch: STATE_BRANCH, parentSha: current.sha, files,
+      message: `chore(hermes-state): rollback baseline to ${backupName}`
+    });
+  } catch (error) {
+    if (error.conflict) {
+      return { status: 'FAILED', reason: `concurrent modification detected — '${STATE_BRANCH}' changed during rollback; nothing was written`, rolled_back_at: nowIso };
+    }
+    return { status: 'FAILED', reason: `git push failed: ${error.message}`, rolled_back_at: nowIso };
+  }
+
+  const verifiedSha = resolveRemoteBranchSha({ cwd, remote, branch: STATE_BRANCH });
+  if (verifiedSha !== pushResult.commitSha) {
+    return { status: 'FAILED', reason: 'rollback was pushed but remote verification did not match — treating as failed out of caution', rolled_back_at: nowIso };
+  }
+
   return {
     status: 'ROLLED_BACK',
     rolled_back_at: nowIso,
-    restored_from: backupPath,
-    baseline_sha256: sha256HexOfFile(realPath)
+    restored_from: `${STATE_BACKUPS_DIR}/${backupName}`,
+    baseline_sha256: auditEvent.baseline_sha256,
+    state_branch: STATE_BRANCH,
+    state_branch_commit: pushResult.commitSha,
+    remote_verified: true
   };
 }

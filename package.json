@@ -28,6 +28,7 @@
     "hermes:registry:coverage": "node scripts/hermes/generate-source-coverage-report.mjs",
     "hermes:registry:discovery-backlog": "node scripts/hermes/generate-source-discovery-backlog.mjs",
     "hermes:preflight": "node scripts/hermes/operational-preflight.mjs",
+    "hermes:baseline:restore": "node scripts/hermes/restore-baseline-from-state.mjs",
     "hermes:baseline:promote": "node scripts/hermes/promote-baseline.mjs",
     "hermes:baseline:rollback": "node scripts/hermes/rollback-baseline.mjs",
     "test:hermes-phase5": "node --test tests/hermes-phase5/",

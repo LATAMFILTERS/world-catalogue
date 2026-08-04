@@ -11,6 +11,16 @@ name: HERMES Weekly Intelligence Collection
 # regardless of local time. Known limitation: in the single week where the
 # US DST transition itself happens, the two triggers can both land outside
 # 08:xx local (or, rarely, both land inside it) — see hermes/PHASE5-LITE.md.
+#
+# Durable state: GitHub Actions runners are ephemeral — nothing written only
+# to the runner's filesystem survives past the job. The governed source
+# baseline (hermes/baselines/source-baseline.json when checked out locally)
+# is therefore never the durable copy; the durable copy lives on the
+# dedicated `hermes-state` branch (state/source-baseline.json,
+# state/backups/*, state/promotion-audit.json), read and written only via
+# scripts/hermes/git-state-branch.mjs plumbing that never touches this
+# workflow's checkout of `main`. See hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md
+# section H.
 on:
   schedule:
     - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT (UTC-5)
@@ -18,13 +28,14 @@ on:
   workflow_dispatch:
     inputs:
       promote_baseline:
-        description: 'Promote the reviewed baseline preview to the real baseline. Manual-only — this input does not exist on the schedule trigger, so a scheduled run can never promote.'
+        description: 'Promote a freshly generated baseline preview onto the hermes-state branch. Manual-only — this input does not exist on the schedule trigger, so a scheduled run can never promote. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret to be set correctly; the token itself is never entered here.'
         type: boolean
         default: false
-      approval_token:
-        description: 'Exact approval token required to authorize promotion (see hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md). Leave blank unless promote_baseline is true.'
+      rollback_backup_name:
+        description: 'Exact backup filename under state/backups/ on hermes-state to restore (e.g. source-baseline.2026-08-04T04-29-21-909Z.json). Leave blank unless you are rolling back. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret.'
         type: string
         required: false
+        default: ''
 
 permissions:
   contents: read
@@ -34,7 +45,92 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Writes exclusively to the hermes-state branch, never to main. Only ever
+  # runs on an explicit manual dispatch with promote_baseline=true — the
+  # `github.event.inputs` object does not exist at all on a schedule
+  # trigger, so this job structurally cannot run from the cron triggers,
+  # independent of any Variable, default, or code path inside the scripts it
+  # calls.
+  promote-baseline:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: hermes-baseline-state
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate a fresh baseline preview
+        env:
+          HERMES_BASELINE_MODE: 'true'
+          HERMES_COLLECTION_DRY_RUN: 'true'
+        run: npm run hermes:collect
+
+      - name: Promote preview to hermes-state
+        id: promote
+        continue-on-error: true
+        env:
+          HERMES_BASELINE_MODE: 'true'
+          HERMES_BASELINE_PROMOTE: 'true'
+          HERMES_COLLECTION_DRY_RUN: 'true'
+          # Sourced ONLY from the repository secret — never from a
+          # workflow_dispatch input, which would be visible in the run's
+          # trigger UI/logs. If this secret is unset or wrong, promotion
+          # reports NOT_AUTHORIZED and writes nothing to hermes-state.
+          HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
+        run: npm run hermes:baseline:promote
+
+      - name: Upload promotion artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-baseline-promotion
+          path: hermes/baselines
+          if-no-files-found: warn
+
+  # Same write scope and manual-only trigger guarantee as promote-baseline
+  # above. Shares the hermes-baseline-state concurrency group so a
+  # promotion and a rollback can never race each other either.
+  rollback-baseline:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.rollback_backup_name != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: hermes-baseline-state
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Roll back hermes-state baseline
+        env:
+          HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
+        run: npm run hermes:baseline:rollback -- "${{ github.event.inputs.rollback_backup_name }}"
+
+  # Read-only against hermes-state (fetch + git show only — never a push),
+  # so `contents: read` is sufficient. Waits on both write jobs (even when
+  # skipped, e.g. every scheduled run) so that if this same dispatch also
+  # promoted or rolled back, the baseline this job restores and compares
+  # against is already the up-to-date one.
   weekly-collection:
+    needs: [promote-baseline, rollback-baseline]
+    if: always()
     runs-on: ubuntu-latest
     env:
       # Job-level, not step-level: GitHub Actions step `env:` blocks do NOT
@@ -48,18 +144,13 @@ jobs:
       # secret, it holds no credentials) to move HERMES from reporting-only
       # to producing real candidates.
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
-      # Defaults to 'true' — the first (and every subsequent, until a human
-      # changes this) run only bootstraps/refreshes
-      # hermes/baselines/source-baseline.json and produces zero candidates.
-      # This is deliberate, not a placeholder: HERMES_BASELINE_MODE never
-      # flips to 'false' on its own. Only set the HERMES_BASELINE_MODE
-      # repository Variable to 'false' once a manual baseline run has been
-      # reviewed and looks correct — see
-      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md. A manual promotion run
-      # (promote_baseline=true) always forces this to 'true' regardless of
-      # the Variable, since promotion needs a freshly-generated preview to
-      # validate and promote.
-      HERMES_BASELINE_MODE: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true') && 'true' || (vars.HERMES_BASELINE_MODE || 'true') }}
+      # Defaults to 'true' — every run only bootstraps/refreshes the local,
+      # ephemeral hermes/baselines/source-baseline.json (itself restored
+      # from hermes-state just before this) and produces zero candidates,
+      # until a human sets the HERMES_BASELINE_MODE repository Variable to
+      # 'false' after reviewing a baseline run. See
+      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md.
+      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -82,27 +173,21 @@ jobs:
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Restore baseline from hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:baseline:restore
+
+      - name: Download promotion result (if this dispatch also promoted)
+        if: steps.guard.outputs.proceed == 'true' && needs.promote-baseline.result == 'success'
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: hermes-baseline-promotion
+          path: hermes/baselines
+
       - name: Collect real sources
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
-
-      - name: Promote baseline (manual only — never on schedule)
-        # github.event.inputs only ever has values on a workflow_dispatch
-        # run; a schedule-triggered run has no inputs at all, so this step
-        # structurally cannot run from the cron triggers above, independent
-        # of any Variable or default.
-        if: steps.guard.outputs.proceed == 'true' && github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
-        # A failed or unauthorized promotion must not prevent the later
-        # report/email steps from running — they are what surfaces "BASELINE
-        # PROMOTION FAILED"/"NOT AUTHORIZED" to Victor. The step's own
-        # pass/fail marker in the Actions log still reflects what happened.
-        continue-on-error: true
-        env:
-          HERMES_BASELINE_MODE: 'true'
-          HERMES_BASELINE_PROMOTE: 'true'
-          HERMES_COLLECTION_DRY_RUN: 'true'
-          HERMES_BASELINE_APPROVAL_TOKEN: ${{ github.event.inputs.approval_token }}
-        run: npm run hermes:baseline:promote
 
       - name: Validate real candidates
         if: steps.guard.outputs.proceed == 'true'

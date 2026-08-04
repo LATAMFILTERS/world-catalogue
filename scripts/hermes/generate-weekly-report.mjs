@@ -35,14 +35,16 @@ function loadLatestCollectionSummary() {
 const collectionSummary = rawArg === '--auto' ? loadLatestCollectionSummary() : null;
 
 // Same restriction as the collection summary above — only ever attached to
-// the real-candidates pipeline.
+// the real-candidates pipeline. Read from the local, gitignored, ephemeral
+// handoff file promote-baseline.mjs writes in the same job — never from
+// elimfilters-vault (promotion no longer writes there at all; the durable
+// record of what was promoted lives on the hermes-state branch, not in this
+// checkout).
 function loadLatestPromotionSummary() {
-  const auditDir = path.resolve('elimfilters-vault/94-sync-log');
-  if (!fs.existsSync(auditDir)) return null;
-  const files = fs.readdirSync(auditDir).filter((f) => /^promotion-\d+\.promotion\.json$/.test(f)).sort();
-  if (!files.length) return null;
+  const localResultPath = path.resolve('hermes/baselines/promotion-result.local.json');
+  if (!fs.existsSync(localResultPath)) return null;
   try {
-    return JSON.parse(fs.readFileSync(path.join(auditDir, files.at(-1)), 'utf8'));
+    return JSON.parse(fs.readFileSync(localResultPath, 'utf8'));
   } catch {
     return null;
   }
@@ -109,6 +111,9 @@ const packageData = {
     baseline_sha256: promotionSummary.baseline_sha256 ?? null,
     timestamp: promotionSummary.timestamp ?? null,
     backup_path: promotionSummary.backup_path ?? null,
+    state_branch: promotionSummary.state_branch ?? null,
+    state_branch_commit: promotionSummary.state_branch_commit ?? null,
+    remote_verified: promotionSummary.remote_verified ?? false,
     candidates_written: promotionSummary.candidates_written ?? 0,
     writes_outside_baseline: promotionSummary.writes_outside_baseline ?? 0
   } : null,
@@ -159,6 +164,9 @@ if (packageData.baseline_promotion) {
     `- Baseline SHA-256: ${bp.baseline_sha256 || 'n/a'}`,
     `- Timestamp: ${bp.timestamp || 'n/a'}`,
     `- Backup created: ${bp.backup_path || 'none (no prior baseline existed)'}`,
+    `- State branch: ${bp.state_branch || 'n/a'}`,
+    `- State branch commit: ${bp.state_branch_commit || 'n/a'}`,
+    `- Remote verified: ${bp.remote_verified}`,
     `- Candidates written by promotion: ${bp.candidates_written}`,
     `- Writes outside the baseline file: ${bp.writes_outside_baseline}`, ''
   );
