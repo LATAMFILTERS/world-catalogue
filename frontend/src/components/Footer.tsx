@@ -58,7 +58,6 @@ const getFooterNavigation = (t: any) => [
       { label: t('footer.termsOfService', 'Terms of Service'), href: '/legal/terms', external: false },
       { label: t('footer.privacyPolicy', 'Privacy Policy'), href: '/legal/privacy', external: false },
       { label: t('footer.aiPolicy', 'AI Use Policy'), href: '/legal/ai-policy', external: false },
-      { label: t('footer.copyright', 'Copyright & DMCA'), href: '/legal/copyright', external: false },
       { label: t('footer.crossReferencePolicy', 'Cross Reference Policy'), href: '/legal/cross-reference', external: false },
       { label: t('footer.legalDisclaimer', 'Legal Disclaimer'), href: '/legal/disclaimer', external: false },
     ],
@@ -90,6 +89,16 @@ export function Footer() {
                 alt="Kleo Technologies"
                 style={{ maxHeight: '40px', maxWidth: '130px', objectFit: 'contain', display: 'block' }}
               />
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '11px',
+                color: 'rgba(255,255,255,0.5)',
+                lineHeight: 1.6,
+                maxWidth: '240px',
+                margin: '12px 0 0 0',
+              }}>
+                {t('footer.elimfiltersCopyright', '© 2015–2026 KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration')}
+              </p>
             </div>
 
             <p style={{
