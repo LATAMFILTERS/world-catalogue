@@ -33,6 +33,35 @@ function loadLatestCollectionSummary() {
   }
 }
 const collectionSummary = rawArg === '--auto' ? loadLatestCollectionSummary() : null;
+
+// Same restriction as the collection summary above — only ever attached to
+// the real-candidates pipeline.
+function loadLatestPromotionSummary() {
+  const auditDir = path.resolve('elimfilters-vault/94-sync-log');
+  if (!fs.existsSync(auditDir)) return null;
+  const files = fs.readdirSync(auditDir).filter((f) => /^promotion-\d+\.promotion\.json$/.test(f)).sort();
+  if (!files.length) return null;
+  try {
+    return JSON.parse(fs.readFileSync(path.join(auditDir, files.at(-1)), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+const promotionSummary = rawArg === '--auto' ? loadLatestPromotionSummary() : null;
+
+// One of the four required banners. A promotion record (if one exists at
+// all) always takes precedence over the generic "preview only" state, since
+// it is more specific, more recent evidence about what actually happened.
+function baselinePromotionBanner() {
+  if (promotionSummary) {
+    if (promotionSummary.status === 'PROMOTED') return 'BASELINE PROMOTED';
+    if (promotionSummary.status === 'PROMOTION_NOT_AUTHORIZED') return 'BASELINE PROMOTION NOT AUTHORIZED';
+    if (promotionSummary.status === 'PROMOTION_FAILED') return 'BASELINE PROMOTION FAILED';
+  }
+  if (collectionSummary?.baseline_mode) return 'BASELINE PREVIEW ONLY';
+  return null;
+}
+
 const now = new Date();
 const end = now.toISOString();
 const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
@@ -73,6 +102,16 @@ const packageData = {
     candidates_created: collectionSummary.candidates_created ?? collectionSummary.created ?? 0,
     candidates_suppressed: collectionSummary.candidates_suppressed ?? collectionSummary.duplicates ?? 0
   } : null,
+  baseline_promotion: promotionSummary ? {
+    status: promotionSummary.status,
+    banner: baselinePromotionBanner(),
+    sources_promoted: promotionSummary.sources_promoted ?? 0,
+    baseline_sha256: promotionSummary.baseline_sha256 ?? null,
+    timestamp: promotionSummary.timestamp ?? null,
+    backup_path: promotionSummary.backup_path ?? null,
+    candidates_written: promotionSummary.candidates_written ?? 0,
+    writes_outside_baseline: promotionSummary.writes_outside_baseline ?? 0
+  } : null,
   publication_boundary: 'NO_DATABASE_WRITES',
   approval_authority: 'Victor Abreu'
 };
@@ -82,6 +121,9 @@ const lines = [
 ];
 if (packageData.source_collection?.baseline_mode) {
   lines.push('**INITIAL BASELINE — NO INTELLIGENCE CANDIDATES GENERATED**', '');
+}
+if (packageData.baseline_promotion?.banner) {
+  lines.push(`**${packageData.baseline_promotion.banner}**`, '');
 }
 lines.push(
   `Generated: ${end}`, `Reporting period: ${start} — ${end}`, '',
@@ -106,6 +148,19 @@ if (packageData.source_collection) {
     `- Baseline required: ${sc.baseline_required}`,
     `- Candidates created: ${sc.candidates_created}`,
     `- Candidates suppressed: ${sc.candidates_suppressed}`, ''
+  );
+}
+if (packageData.baseline_promotion) {
+  const bp = packageData.baseline_promotion;
+  lines.push(
+    '## Baseline Promotion', '',
+    `- Status: ${bp.banner}`,
+    `- Sources promoted: ${bp.sources_promoted}`,
+    `- Baseline SHA-256: ${bp.baseline_sha256 || 'n/a'}`,
+    `- Timestamp: ${bp.timestamp || 'n/a'}`,
+    `- Backup created: ${bp.backup_path || 'none (no prior baseline existed)'}`,
+    `- Candidates written by promotion: ${bp.candidates_written}`,
+    `- Writes outside the baseline file: ${bp.writes_outside_baseline}`, ''
   );
 }
 for (const [type, candidates] of Object.entries(groups).sort()) {

@@ -16,6 +16,15 @@ on:
     - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT (UTC-5)
     - cron: '0 14 * * 1' # 08:00 America/Chicago during CST (UTC-6)
   workflow_dispatch:
+    inputs:
+      promote_baseline:
+        description: 'Promote the reviewed baseline preview to the real baseline. Manual-only — this input does not exist on the schedule trigger, so a scheduled run can never promote.'
+        type: boolean
+        default: false
+      approval_token:
+        description: 'Exact approval token required to authorize promotion (see hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md). Leave blank unless promote_baseline is true.'
+        type: string
+        required: false
 
 permissions:
   contents: read
@@ -46,8 +55,11 @@ jobs:
       # flips to 'false' on its own. Only set the HERMES_BASELINE_MODE
       # repository Variable to 'false' once a manual baseline run has been
       # reviewed and looks correct — see
-      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md.
-      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
+      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md. A manual promotion run
+      # (promote_baseline=true) always forces this to 'true' regardless of
+      # the Variable, since promotion needs a freshly-generated preview to
+      # validate and promote.
+      HERMES_BASELINE_MODE: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true') && 'true' || (vars.HERMES_BASELINE_MODE || 'true') }}
     steps:
       - uses: actions/checkout@v4
 
@@ -73,6 +85,24 @@ jobs:
       - name: Collect real sources
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
+
+      - name: Promote baseline (manual only — never on schedule)
+        # github.event.inputs only ever has values on a workflow_dispatch
+        # run; a schedule-triggered run has no inputs at all, so this step
+        # structurally cannot run from the cron triggers above, independent
+        # of any Variable or default.
+        if: steps.guard.outputs.proceed == 'true' && github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
+        # A failed or unauthorized promotion must not prevent the later
+        # report/email steps from running — they are what surfaces "BASELINE
+        # PROMOTION FAILED"/"NOT AUTHORIZED" to Victor. The step's own
+        # pass/fail marker in the Actions log still reflects what happened.
+        continue-on-error: true
+        env:
+          HERMES_BASELINE_MODE: 'true'
+          HERMES_BASELINE_PROMOTE: 'true'
+          HERMES_COLLECTION_DRY_RUN: 'true'
+          HERMES_BASELINE_APPROVAL_TOKEN: ${{ github.event.inputs.approval_token }}
+        run: npm run hermes:baseline:promote
 
       - name: Validate real candidates
         if: steps.guard.outputs.proceed == 'true'

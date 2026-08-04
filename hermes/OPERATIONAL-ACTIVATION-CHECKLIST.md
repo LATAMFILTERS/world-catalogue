@@ -113,4 +113,33 @@ If anything looks wrong at any point:
    (e.g. suspected leak, offboarding, or routine rotation), then update the
    GitHub secret with the new value.
 
+## H. Promoting the baseline preview
+
+`hermes/baselines/source-baseline.preview.json` is only ever a candidate for
+promotion — it never replaces `hermes/baselines/source-baseline.json` (the
+one comparison mode actually reads from) on its own. To promote it:
+
+1. Review the preview (locally via `npm run hermes:baseline:promote` after a
+   `HERMES_BASELINE_MODE=true HERMES_COLLECTION_DRY_RUN=true` collection, or
+   from a downloaded workflow artifact) and confirm every source has a real
+   `normalized_hash`, HTTP 200, and sufficient `content_length`.
+2. Trigger the workflow manually (**Actions → HERMES Weekly Intelligence
+   Collection → Run workflow**) with `promote_baseline` set to `true` and
+   `approval_token` set to the exact approval token value (see
+   `scripts/hermes/promote-baseline-core.mjs` — it is not written down here
+   or anywhere else in this repository; treat it like a credential).
+3. Promotion only ever happens when **all** of `HERMES_BASELINE_MODE=true`,
+   `HERMES_BASELINE_PROMOTE=true`, `HERMES_COLLECTION_DRY_RUN=true`, and an
+   exact token match hold at once — any one missing or wrong yields
+   `BASELINE PROMOTION NOT AUTHORIZED` in the report, and nothing is
+   written.
+4. A validation failure (empty-content hash, disabled/non-ACTIVE endpoint,
+   stale timestamp, etc.) yields `BASELINE PROMOTION FAILED` — the previous
+   real baseline (if any) is left completely untouched.
+5. The only file this ever writes is
+   `hermes/baselines/source-baseline.json`, with a timestamped backup (max
+   5 kept) under `hermes/baselines/backups/` whenever a prior baseline
+   existed. To undo a promotion: `HERMES_BASELINE_APPROVAL_TOKEN=<token>
+   npm run hermes:baseline:rollback -- <backup-filename>`.
+
 This mirrors the "Emergency procedure" section in `hermes/PHASE5-LITE.md`.
