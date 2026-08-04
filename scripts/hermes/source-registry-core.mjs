@@ -121,6 +121,11 @@ export function validateRegistry({ organizations, endpoints }) {
     if (!ALLOWED_STATUSES.has(endpoint.status)) errors.push(`${endpoint.id}: invalid status "${endpoint.status}"`);
     if (endpoint.url && DISALLOWED_URL_PATTERN.test(endpoint.url)) errors.push(`${endpoint.id}: url targets a login/account/cart/admin path, which is not an allowed collector target`);
     if (endpoint.url && CATALOG_URL_PATTERN.test(endpoint.url)) errors.push(`${endpoint.id}: url targets a full product catalog listing, which is not an allowed collector target`);
+    if (endpoint.fallback_url) {
+      if (!/^https:\/\//i.test(endpoint.fallback_url)) errors.push(`${endpoint.id}: fallback_url must be HTTPS`);
+      if (DISALLOWED_URL_PATTERN.test(endpoint.fallback_url)) errors.push(`${endpoint.id}: fallback_url targets a login/account/cart/admin path, which is not an allowed collector target`);
+      if (CATALOG_URL_PATTERN.test(endpoint.fallback_url)) errors.push(`${endpoint.id}: fallback_url targets a full product catalog listing, which is not an allowed collector target`);
+    }
 
     const org = orgById.get(endpoint.organization_id);
     if (!org) {
@@ -131,6 +136,12 @@ export function validateRegistry({ organizations, endpoints }) {
     const orgHost = hostnameOf(org.official_domain);
     if (endpointHost && orgHost && !endpointHost.endsWith(orgHost) && !orgHost.endsWith(endpointHost)) {
       errors.push(`${endpoint.id}: url host "${endpointHost}" does not match organization "${org.id}" official domain host "${orgHost}"`);
+    }
+    if (endpoint.fallback_url) {
+      const fallbackHost = hostnameOf(endpoint.fallback_url);
+      if (fallbackHost && orgHost && !fallbackHost.endsWith(orgHost) && !orgHost.endsWith(fallbackHost)) {
+        errors.push(`${endpoint.id}: fallback_url host "${fallbackHost}" does not match organization "${org.id}" official domain host "${orgHost}"`);
+      }
     }
     if (endpoint.enabled === true && endpoint.status !== 'ACTIVE') {
       errors.push(`${endpoint.id}: enabled=true requires status=ACTIVE`);

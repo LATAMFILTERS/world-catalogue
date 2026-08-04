@@ -1147,8 +1147,8 @@
         "hydraulic_filters",
         "cabin_filters"
       ],
-      "notes": "",
-      "status": "ACTIVE",
+      "notes": "Endpoint diagnosed as a client-side rendered React app (the entire deere.com domain, not just one page) with no server-rendered text — see hermes/config/source-endpoints.json. Excluded pending a server-rendered alternative.",
+      "status": "REVIEW_REQUIRED",
       "discovery_required": false
     },
     {
@@ -3600,8 +3600,8 @@
         "test_methods",
         "classification_codes"
       ],
-      "notes": "",
-      "status": "ACTIVE",
+      "notes": "Endpoint diagnosed as a client-side rendered Angular app (noscript block references a hashed Angular build asset) with no server-rendered article text — see hermes/config/source-endpoints.json. HERMES_COLLECTION_MIN_CONTENT_LENGTH was not lowered to force this through. Excluded pending a server-rendered alternative.",
+      "status": "REVIEW_REQUIRED",
       "discovery_required": false
     },
     {
