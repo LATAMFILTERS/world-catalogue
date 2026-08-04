@@ -267,7 +267,10 @@ test('Knowledge Engine unavailable does not break the response', async () => {
     await sendMessage('Hace una semana', { conversationId });
     const { status, body } = await sendMessage('Carretera. No sé el filtro.', { conversationId });
     assert.equal(status, 200);
-    assert.equal(body.intelligence.knowledge_status, 'error');
+    // The obsidian-knowledge-client adapter normalizes every upstream
+    // failure mode (not_configured/timeout/error) into 'unavailable' — see
+    // lib/knowledge-governance/obsidian-knowledge-client.js VALID_STATUS.
+    assert.equal(body.intelligence.knowledge_status, 'unavailable');
     assert.ok(body.answer && body.answer.length > 0);
   } finally {
     global.fetch = originalFetch;

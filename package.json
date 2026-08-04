@@ -43,7 +43,8 @@
     "test:bot-protocol": "node --test tests/bot-protocol-guardrails.test.js tests/bot-protocol-catalog-research.test.js tests/bot-protocol-catalog.test.js tests/bot-protocol-memory.test.js tests/bot-protocol-orchestrator.test.js tests/bot-protocol-security.test.js",
     "test:bot-e2e": "node --test tests/bot-protocol-e2e.test.js",
     "test:knowledge-governance": "node --test tests/knowledge-governance-authority-policy.test.js tests/knowledge-governance-technical-evidence.test.js tests/knowledge-governance-oem-maintenance.test.js tests/knowledge-governance-knowledge-gap.test.js tests/knowledge-governance-hermes-research.test.js tests/knowledge-governance-obsidian-publication.test.js tests/knowledge-governance-sku-authority.test.js tests/knowledge-governance-response-governance.test.js tests/knowledge-governance-orchestrator-integration.test.js",
-    "test": "npm run test:bot-protocol && npm run test:bot-e2e && npm run test:knowledge-governance && npm run test:chatbot && npm run test:ebp"
+    "test:knowledge-pipeline": "node --test tests/knowledge-pipeline-obsidian-client.test.js tests/knowledge-pipeline-knowledge-gap-store.test.js tests/knowledge-pipeline-hermes-client.test.js tests/knowledge-pipeline-oem-and-practices.test.js tests/knowledge-pipeline-category-recommender.test.js tests/knowledge-pipeline-sku-and-catalog.test.js tests/knowledge-pipeline-e2e-http.test.js",
+    "test": "npm run test:bot-protocol && npm run test:bot-e2e && npm run test:knowledge-governance && npm run test:knowledge-pipeline && npm run test:chatbot && npm run test:ebp"
   },
   "dependencies": {
     "axios": "^1.7.7",

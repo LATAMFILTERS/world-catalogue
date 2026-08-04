@@ -27,11 +27,17 @@ test('createEmptyState matches the canonical conversation-state shape', () => {
   const state = createEmptyState();
   assert.deepEqual(Object.keys(state).sort(), [
     'conversationHistory', 'duration', 'equipment', 'impact', 'installedFilter',
-    'intent', 'operatingContext', 'pendingField', 'phase', 'symptoms',
+    'intent', 'knowledgeGap', 'oemMaintenance', 'operatingContext', 'pendingField',
+    'phase', 'productRecommendation', 'symptoms', 'technicalKnowledge',
     'unresolvedAttempts', 'updatedAt', 'validatedProducts'
   ].sort());
   assert.deepEqual(state.equipment, { brand: null, model: null, engine: null, year: null });
   assert.deepEqual(state.installedFilter, { type: null, brand: null, reference: null, status: null });
+  // Bloque 2 (knowledge governance pipeline) pointers — see spec section 9.
+  assert.deepEqual(state.technicalKnowledge, { status: null, sourceIds: [], lastQuery: null, validatedAt: null });
+  assert.deepEqual(state.oemMaintenance, { status: null, system: null, component: null, evidenceId: null });
+  assert.deepEqual(state.knowledgeGap, { requestId: null, deduplicationKey: null, status: null, hermesResearchId: null });
+  assert.deepEqual(state.productRecommendation, { categories: [], validatedSkus: [] });
 });
 
 test('normalizeState dedupes symptoms by code+system', () => {
