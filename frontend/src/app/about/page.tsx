@@ -26,7 +26,7 @@ export default function AboutPage() {
     '@id': 'https://elimfilters.com/#organization',
     name: 'ELIMFILTERS®',
     alternateName: 'ELIMFILTERS',
-    legalName: 'Kleo Technologies LLC',
+    legalName: 'Kleo Technology LLC',
     url: 'https://elimfilters.com',
     logo: {
       '@type': 'ImageObject',
@@ -34,9 +34,9 @@ export default function AboutPage() {
     },
     email: 'info@elimfilters.com',
     areaServed: 'Worldwide',
-    slogan: 'Industrial Asset Protection Systems',
+    slogan: 'Global Industrial Filtration Brand',
     description:
-      'ELIMFILTERS® is an industrial asset protection company that develops contamination-control technologies through mathematical engineering models, AI-assisted simulation, controlled testing, and field validation.',
+      'ELIMFILTERS® is a global industrial filtration brand owned by Kleo Technology LLC. We develop advanced contamination-control technologies through mathematical engineering models, AI-assisted simulation, controlled testing, and field validation. Products are available exclusively through authorized distributors.',
     knowsAbout: [
       'Industrial asset protection',
       'Contamination control',
@@ -51,6 +51,7 @@ export default function AboutPage() {
       addressLocality: 'Frisco',
       addressRegion: 'TX',
       addressCountry: 'US',
+      addressType: 'Legal Headquarters',
     },
   };
 

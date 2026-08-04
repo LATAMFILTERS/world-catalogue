@@ -132,9 +132,9 @@ export function Footer() {
                   info@elimfilters.com
                 </a>
                 <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Frisco, Texas — United States</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
                 <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Caracas, Distrito Capital</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
               </div>
 
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
