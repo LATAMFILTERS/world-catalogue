@@ -1,0 +1,10 @@
+[
+  {
+    "event": "PROMOTED",
+    "timestamp": "2026-08-04T12:56:09.796Z",
+    "sources_promoted": 10,
+    "baseline_sha256": "72b28043ce5af4379a7adf0dab7bcab4571f1a658227bc2653d9d76de8fb6715",
+    "backup_created": null,
+    "previous_state_commit": null
+  }
+]
