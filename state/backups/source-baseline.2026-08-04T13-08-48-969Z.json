@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-04T13:08:47.776Z",
+  "generated_at": "2026-08-04T13:05:38.258Z",
   "sources": {
     "volvo_trucks__news": {
       "organization_id": "volvo_trucks",
       "endpoint_id": "volvo_trucks__news",
       "source_url": "https://www.volvotrucks.com/en-en/news.html",
       "normalized_hash": "faddc6428baadfc991cd2dc07c488a3298974cd2ad14417c4619e1d8d9797bf2",
-      "observed_at": "2026-08-04T13:08:42.994Z",
+      "observed_at": "2026-08-04T13:05:32.033Z",
       "content_length": 5008,
       "response_status": 200
     },
@@ -16,7 +16,7 @@
       "endpoint_id": "komatsu__newsroom",
       "source_url": "https://www.komatsu.com/en/",
       "normalized_hash": "6bc714c0ccc69071d8738933ebad62e4b4bbe27f71a2c9322a8ede21102cd614",
-      "observed_at": "2026-08-04T13:08:43.030Z",
+      "observed_at": "2026-08-04T13:05:32.172Z",
       "content_length": 5699,
       "response_status": 200
     },
@@ -25,7 +25,7 @@
       "endpoint_id": "donaldson__news",
       "source_url": "https://www.donaldson.com/en-us/about-us/news/",
       "normalized_hash": "058bd45b724b5e0e20391ccc381a646ec9d6367575cb884c4a26a8dcc996be0e",
-      "observed_at": "2026-08-04T13:08:43.227Z",
+      "observed_at": "2026-08-04T13:05:32.605Z",
       "content_length": 5243,
       "response_status": 200
     },
@@ -34,7 +34,7 @@
       "endpoint_id": "mann_hummel__newsroom",
       "source_url": "https://www.mann-hummel.com/en/",
       "normalized_hash": "5e874c4f9a46e544666d4424d6205869ca8a359769c36c533d265289f676c791",
-      "observed_at": "2026-08-04T13:08:44.131Z",
+      "observed_at": "2026-08-04T13:05:33.554Z",
       "content_length": 17159,
       "response_status": 200
     },
@@ -43,7 +43,7 @@
       "endpoint_id": "mahle__press_releases",
       "source_url": "https://www.mahle.com/en/",
       "normalized_hash": "22c9d44b1b03909828db81b0ad636e4ecc3a3be0105be02542f744589a3582b4",
-      "observed_at": "2026-08-04T13:08:44.793Z",
+      "observed_at": "2026-08-04T13:05:34.363Z",
       "content_length": 5348,
       "response_status": 200
     },
@@ -52,7 +52,7 @@
       "endpoint_id": "nfpa__news",
       "source_url": "https://community.nfpa.org/news",
       "normalized_hash": "119bc7e8d1c1126f44c88eb5a00efa5312ff8b9c0a115a56a382d238581ca228",
-      "observed_at": "2026-08-04T13:08:45.117Z",
+      "observed_at": "2026-08-04T13:05:35.082Z",
       "content_length": 5334,
       "response_status": 200
     },
@@ -61,17 +61,8 @@
       "endpoint_id": "ahlstrom__newsroom",
       "source_url": "https://www.ahlstrom.com/",
       "normalized_hash": "f86f9487465ce2ce6273a68c1cddf3e33cd56134a1a3df6c4aeb59896165ef2a",
-      "observed_at": "2026-08-04T13:08:45.493Z",
+      "observed_at": "2026-08-04T13:05:35.408Z",
       "content_length": 4637,
-      "response_status": 200
-    },
-    "hollingsworth_vose__newsroom": {
-      "organization_id": "hollingsworth_vose",
-      "endpoint_id": "hollingsworth_vose__newsroom",
-      "source_url": "https://www.hollingsworth-vose.com/",
-      "normalized_hash": "01b2dd8b86581a766da26a177172aafe6b94d65991e3182645c5b4c356a66194",
-      "observed_at": "2026-08-04T13:08:45.539Z",
-      "content_length": 4928,
       "response_status": 200
     },
     "freudenberg_filtration__newsroom": {
@@ -79,7 +70,7 @@
       "endpoint_id": "freudenberg_filtration__newsroom",
       "source_url": "https://www.freudenberg-filter.com/en/",
       "normalized_hash": "853d79e942f4bddd658ab03ca86a9c88916d677ccf5bd90087e059ea42b0709d",
-      "observed_at": "2026-08-04T13:08:46.401Z",
+      "observed_at": "2026-08-04T13:05:36.340Z",
       "content_length": 10645,
       "response_status": 200
     },
@@ -88,7 +79,7 @@
       "endpoint_id": "hydraulics_pneumatics__news",
       "source_url": "https://www.hydraulicspneumatics.com/",
       "normalized_hash": "c216a9e06f94432c0d306627ff25c10526188108ed4afe0fe936d535a724099e",
-      "observed_at": "2026-08-04T13:08:47.776Z",
+      "observed_at": "2026-08-04T13:05:38.258Z",
       "content_length": 12324,
       "response_status": 200
     }
