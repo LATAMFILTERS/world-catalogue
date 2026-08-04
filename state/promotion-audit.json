@@ -6,5 +6,13 @@
     "baseline_sha256": "72b28043ce5af4379a7adf0dab7bcab4571f1a658227bc2653d9d76de8fb6715",
     "backup_created": null,
     "previous_state_commit": null
+  },
+  {
+    "event": "PROMOTED",
+    "timestamp": "2026-08-04T13:05:38.400Z",
+    "sources_promoted": 9,
+    "baseline_sha256": "ee2d4bf3175132748ed8c05c5d38e2ae8cc2557e1dd7ebc5a21ba74890a8fc87",
+    "backup_created": "state/backups/source-baseline.2026-08-04T13-05-39-406Z.json",
+    "previous_state_commit": "f66a2cac3e2e2db302998f307bc3cd69696d9670"
   }
 ]
