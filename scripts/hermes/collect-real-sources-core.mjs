@@ -106,7 +106,11 @@ export function sourcesFromRegistry({ organizations, endpoints }) {
       trust_level: org.trust_level,
       organization_id: org.id,
       endpoint_id: endpoint.id,
-      region: org.region
+      region: org.region,
+      // Only ever tried when the primary url returns successfully but with
+      // empty/insufficient content — never on a network failure. Optional;
+      // absent for the vast majority of endpoints.
+      fallback_url: endpoint.fallback_url || null
     });
   }
   return sources;
@@ -457,9 +461,35 @@ export async function runCollection(options) {
     }
 
     // Default path: whole-page HTML fetch, hashed after normalization.
-    const normalized = normalizeHtmlToText(fetchResult.text);
-    const contentHash = sha256Hex(normalized);
-    const title = extractTitle(fetchResult.text);
+    let effectiveFetchResult = fetchResult;
+    let effectiveUrl = source.url;
+    let usedFallback = false;
+    let normalized = normalizeHtmlToText(effectiveFetchResult.text);
+    let contentHash = sha256Hex(normalized);
+    let sufficiency = classifyContentSufficiency(normalized, contentHash, minContentLength);
+
+    // A configured fallback_url is only ever tried when the PRIMARY url
+    // returned successfully but with empty/insufficient content — never on
+    // a network failure (that stays FETCH_ERROR), and never when the
+    // primary already has sufficient content.
+    if (sufficiency !== 'SUFFICIENT' && source.fallback_url) {
+      const fallbackFetchResult = await fetchWithLimits({ url: source.fallback_url, timeoutMs, maxBytes, userAgent, fetchImpl });
+      if (fallbackFetchResult.ok) {
+        const fallbackNormalized = normalizeHtmlToText(fallbackFetchResult.text);
+        const fallbackHash = sha256Hex(fallbackNormalized);
+        const fallbackSufficiency = classifyContentSufficiency(fallbackNormalized, fallbackHash, minContentLength);
+        if (fallbackSufficiency === 'SUFFICIENT') {
+          effectiveFetchResult = fallbackFetchResult;
+          effectiveUrl = source.fallback_url;
+          usedFallback = true;
+          normalized = fallbackNormalized;
+          contentHash = fallbackHash;
+          sufficiency = fallbackSufficiency;
+        }
+      }
+    }
+
+    const title = extractTitle(effectiveFetchResult.text);
     const rawSnippet = normalized.slice(0, DEFAULT_SNIPPET_CHARS);
 
     // hermes/source-cache/ is unconditional, informational raw-evidence
@@ -467,41 +497,49 @@ export async function runCollection(options) {
     // creation; the governed baseline below is.
     writeJson(cachePath, {
       source_id: source.id,
-      source_url: source.url,
+      source_url: effectiveUrl,
+      primary_url: source.url,
+      used_fallback: usedFallback,
       fetched_at: capturedAt,
-      http_status: fetchResult.status,
+      http_status: effectiveFetchResult.status,
       ok: true,
-      truncated: fetchResult.truncated,
-      content_length: fetchResult.text.length,
+      truncated: effectiveFetchResult.truncated,
+      content_length: effectiveFetchResult.text.length,
       content_hash: contentHash,
       title,
       raw_snippet: rawSnippet
     });
 
-    const sufficiency = classifyContentSufficiency(normalized, contentHash, minContentLength);
     if (sufficiency === 'EMPTY_CONTENT' || sufficiency === 'INSUFFICIENT_CONTENT') {
       // Never invalid, never fatal, never allowed to overwrite a baseline —
       // this is "the source gave us no usable evidence this run", not "the
       // source changed" and not "HERMES produced a broken candidate".
-      results.push({ id: source.id, status: sufficiency, content_length: normalized.length });
+      results.push({
+        id: source.id, status: sufficiency, content_length: normalized.length,
+        fallback_configured: Boolean(source.fallback_url), fallback_attempted: Boolean(source.fallback_url), used_fallback: usedFallback
+      });
       continue;
     }
+
+    // Everything downstream (baseline entries, the candidate itself) refers
+    // to whichever URL actually produced the content being evaluated.
+    const effectiveSource = usedFallback ? { ...source, url: effectiveUrl } : source;
 
     const baselineEntryNow = () => buildBaselineEntry({
       organizationId: source.organization_id ?? null,
       endpointId: source.id,
-      sourceUrl: source.url,
+      sourceUrl: effectiveUrl,
       normalizedHash: contentHash,
       observedAt: capturedAt,
       contentLength: normalized.length,
-      responseStatus: fetchResult.status
+      responseStatus: effectiveFetchResult.status
     });
 
     if (baselineMode) {
       // Bootstrapping/refreshing the baseline is the entire point of this
       // mode — it never produces a candidate, by design.
       applyBaselineUpdate(source, baselineEntryNow());
-      results.push({ id: source.id, status: 'BASELINE_RECORDED' });
+      results.push({ id: source.id, status: 'BASELINE_RECORDED', used_fallback: usedFallback });
       continue;
     }
 
@@ -510,7 +548,7 @@ export async function runCollection(options) {
       // No prior baseline exists for this endpoint — HERMES has nothing to
       // compare against, so it reports the gap instead of guessing that
       // "first ever observation" means "something changed".
-      results.push({ id: source.id, status: 'BASELINE_REQUIRED' });
+      results.push({ id: source.id, status: 'BASELINE_REQUIRED', used_fallback: usedFallback });
       continue;
     }
     if (comparison.status === 'UNCHANGED') {
@@ -518,16 +556,16 @@ export async function runCollection(options) {
       // reflects the latest confirmed-unchanged observation, without
       // altering the hash itself.
       applyBaselineUpdate(source, baselineEntryNow());
-      results.push({ id: source.id, status: 'UNCHANGED' });
+      results.push({ id: source.id, status: 'UNCHANGED', used_fallback: usedFallback });
       continue;
     }
 
     // CHANGED: a real, prior baseline exists and the hash differs.
     changedCount += 1;
-    const publishedAt = extractPublishedAt(fetchResult.text);
+    const publishedAt = extractPublishedAt(effectiveFetchResult.text);
     const evidenceSnippet = normalized.slice(0, EVIDENCE_SNIPPET_CHARS);
     const { candidate, error: buildError } = buildCandidate({
-      source,
+      source: effectiveSource,
       contentHash,
       title,
       capturedAt,

@@ -17,14 +17,14 @@
     {
       "id": "john_deere__newsroom",
       "organization_id": "john_deere",
-      "url": "https://www.deere.com/en/",
+      "url": "https://www.deere.com/en/news/",
       "endpoint_type": "newsroom",
       "source_type": "html",
-      "status": "ACTIVE",
-      "enabled": true,
+      "status": "REVIEW_REQUIRED",
+      "enabled": false,
       "verified_at": "2026-08-03T00:00:00.000Z",
       "http_status_observed": 200,
-      "notes": ""
+      "notes": "Diagnosed via scripts/hermes/diagnose-source-endpoint.mjs: HTTP 200, but normalized text is only ~70 chars against a ~214KB raw body. The page (and the deere.com domain generally, including the homepage) is a client-side rendered React app (<div id=\"root\">, \"Please enable JavaScript to use this website.\"). No server-rendered text is available at this or any deere.com URL tried; needs either a different server-rendered endpoint not yet found, or is out of scope until HERMES supports rendering (it deliberately does not run a browser)."
     },
     {
       "id": "komatsu__newsroom",
@@ -65,14 +65,15 @@
     {
       "id": "mahle__press_releases",
       "organization_id": "mahle",
-      "url": "https://www.mahle.com/en/news-and-press/",
-      "endpoint_type": "press_releases",
+      "url": "https://www.mahle.com/en/",
+      "fallback_url": "https://www.mahle.com/en/investor-relations/financial-news/",
+      "endpoint_type": "newsroom",
       "source_type": "html",
       "status": "ACTIVE",
       "enabled": true,
       "verified_at": "2026-08-03T00:00:00.000Z",
       "http_status_observed": 200,
-      "notes": ""
+      "notes": "Replaced /en/news-and-press/, which returned an empty/near-empty body (~95 bytes) on a real run and hashed to the well-known SHA-256 of an empty string. The homepage returns real content (~5.3K normalized chars) and includes the site's news block. fallback_url is only ever tried by the collector if the primary url returns empty/insufficient content; also verified ~5.4K normalized chars."
     },
     {
       "id": "sae_international__news",
@@ -80,23 +81,23 @@
       "url": "https://www.sae.org/news",
       "endpoint_type": "news",
       "source_type": "html",
-      "status": "ACTIVE",
-      "enabled": true,
+      "status": "REVIEW_REQUIRED",
+      "enabled": false,
       "verified_at": "2026-08-03T00:00:00.000Z",
       "http_status_observed": 200,
-      "notes": ""
+      "notes": "Diagnosed via scripts/hermes/diagnose-source-endpoint.mjs: HTTP 200, but normalized text is only ~62 chars (just the page title) against a ~15KB raw body. The raw HTML contains a <noscript> block referencing a hashed Angular build asset (styles.<hash>.css) — a client-side rendered Angular app with no server-rendered article text. HERMES_COLLECTION_MIN_CONTENT_LENGTH was NOT lowered to force this endpoint to pass; it stays excluded until a server-rendered alternative is found or rendering support is added (out of scope for now)."
     },
     {
       "id": "nfpa__news",
       "organization_id": "nfpa",
-      "url": "https://www.nfpa.org/News-and-Research",
+      "url": "https://community.nfpa.org/news",
       "endpoint_type": "news",
       "source_type": "html",
       "status": "ACTIVE",
       "enabled": true,
       "verified_at": "2026-08-03T00:00:00.000Z",
       "http_status_observed": 200,
-      "notes": ""
+      "notes": "Replaced /News-and-Research, which returned insufficient normalized content (~<200 chars) on a real run. The NFPA Xchange community news page returns real content (~5.3K normalized chars)."
     },
     {
       "id": "iso__newsroom",
