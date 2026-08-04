@@ -54,6 +54,11 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 const app = express();
 app.set('trust proxy', 1);
 
+// Mounts /api/bot/protocol (+ /image) once, explicitly, right after the app
+// is created — no express-module patching, no load-order dependency between
+// server.js and server-protocol.js.
+require('./lib/install-bot-protocol').installBotProtocol(app);
+
 // ─── HTTPS enforcement + security headers (production only) ────────────────────────────────────────
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
