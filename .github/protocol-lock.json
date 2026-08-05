@@ -1,0 +1,7 @@
+{
+  "status": "OPEN",
+  "scope": "protocol-guardrails",
+  "reason": "Install permanent repository locks, mandatory validation, ownership, and deployment safeguards.",
+  "opened_by": "elimfilters",
+  "opened_at": "2026-08-05T17:00:00-05:00"
+}
