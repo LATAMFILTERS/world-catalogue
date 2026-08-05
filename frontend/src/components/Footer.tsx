@@ -114,20 +114,7 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'nowrap', justifyContent: 'center', width: '100%' }}>
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'nowrap', fontSize: 'clamp(10px, 2vw, 12px)', whiteSpace: 'nowrap' }}>
-                <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
-                >
-                  info@elimfilters.com
-                </a>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
-              </div>
-
+            <div style={{ display: 'flex', gap: '48px', alignItems: 'center', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               {SOCIAL.map((item) => (
                 <motion.a
@@ -155,6 +142,19 @@ export function Footer() {
                   {item.letter}
                 </motion.a>
               ))}
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'nowrap', fontSize: 'clamp(10px, 2vw, 12px)', whiteSpace: 'nowrap' }}>
+                <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+                >
+                  info@elimfilters.com
+                </a>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
               </div>
             </div>
           </div>
