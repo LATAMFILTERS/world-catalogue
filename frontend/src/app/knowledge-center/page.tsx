@@ -1,210 +1,484 @@
+'use client';
+
 import Link from 'next/link';
-import { PageHeader } from '@/components/PageHeader';
-import type { CSSProperties } from 'react';
-import {
-  ENGINEERING_ARTICLES,
-  KC_STANDARDS,
-  KC_SYSTEMS,
-  KC_INDUSTRIES,
-  KC_TECHNOLOGIES,
-} from '@/lib/knowledge-center-data';
-import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
+import { motion } from 'motion/react';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
+import '@/i18n';
+import { useTranslation } from 'react-i18next';
 
-const displayFont = 'Chakra Petch, Arial Narrow, monospace';
-const bodyFont = 'Barlow, Arial, sans-serif';
-
-const SECTIONS = [
-  { href: '/knowledge-center/engineering', label: 'Engineering', title: 'Engineering Principles', count: `${ENGINEERING_ARTICLES.length} Articles`, description: 'Filtration theory, media science, airflow, fluid cleanliness, and contamination control fundamentals.' },
-  { href: '/knowledge-center/standards', label: 'Standards', title: 'Industry Standards', count: `${KC_STANDARDS.length} Standards`, description: 'ISO, ASTM, SAE, and NAS references explained for testing, validation, and technical selection.' },
-  { href: '/knowledge-center/systems', label: 'Systems', title: 'Protection Systems', count: `${KC_SYSTEMS.length} Systems`, description: 'Air, fuel, lube, hydraulic, cooling, cabin, and compressed air protection domains.' },
-  { href: '/knowledge-center/industries', label: 'Industries', title: 'Industry Applications', count: `${KC_INDUSTRIES.length} Industries`, description: 'Contamination profiles, operating exposure, and filtration risk by industrial market.' },
-  { href: '/knowledge-center/technologies', label: 'Technologies', title: 'Technology Registry', count: `${KC_TECHNOLOGIES.length} Technologies`, description: 'ELIMFILTERS proprietary protection architectures mapped to failure mechanisms.' },
-  { href: '/knowledge-center/technical-library', label: 'Library', title: 'Technical Library', count: 'Field Guides', description: 'Specification guides, selection frameworks, procedures, and technical references.' },
-  { href: '/knowledge-center/engineering-reference', label: 'Reference', title: 'Engineering Reference Library', count: `${ERL_SECTIONS.length} Sections`, description: 'Structured reference library for standards, filtration science, performance metrics, and reliability.' },
-  { href: '/knowledge-center/search', label: 'Search', title: 'Knowledge Search', count: 'AI Indexed', description: 'Search by symptom, equipment, industry, standard, system, or technology.' },
-];
-
-const VALIDATED_REFERENCES = [
-  { value: 'ISO 4406', body: 'Hydraulic fluid cleanliness is classified using solid-particle contamination codes.', source: 'ISO 4406:2021' },
-  { value: 'ISO 16889', body: 'Hydraulic filter element performance is evaluated through multi-pass testing.', source: 'ISO 16889 Multi-Pass Test' },
-  { value: 'B10(c) >= 200', body: 'Beta 200 corresponds to approximately 99.5% efficiency at the rated particle size.', source: 'Beta Ratio Formula' },
-  { value: 'PARTICLE CONTROL', body: 'Cleaner hydraulic fluid reduces abrasive wear, valve sticking, pump damage, and reliability loss.', source: 'Hydraulic Contamination Control' },
-];
-
-const FEATURED_ARTICLES = ENGINEERING_ARTICLES.slice(0, 3);
-
-export const metadata = {
-  title: 'Knowledge Center',
-  description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
-  openGraph: {
-    title: 'Knowledge Center | ELIMFILTERS',
-    description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
-    url: 'https://elimfilters.com/knowledge-center/',
-    type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
-    images: [{ url: 'https://elimfilters.com/images/knowledge-center-hero.avif', width: 1200, height: 630 }],
-    locale: 'en_US',
+const KNOWLEDGE_SECTIONS = [
+  {
+    id: 'standards',
+    title: 'Industrial Standards',
+    description: 'Technical standards for industrial filtration systems (ISO, ASTM, SAE, NFPA)',
+    icon: '📋',
+    href: '/knowledge-system/standards',
+    count: '6 domains',
+    color: 'rgba(63,81,181,0.1)',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Knowledge Center | ELIMFILTERS',
-    description: 'ELIMFILTERS Knowledge Center for industrial filtration engineering, contamination control, standards, technologies, systems, and asset protection reference.',
-    images: ['https://elimfilters.com/images/knowledge-center-hero.avif'],
+  {
+    id: 'contamination',
+    title: 'Contamination Control',
+    description: 'Case studies and root cause analysis of contamination in industrial systems',
+    icon: '🔬',
+    href: '/knowledge-system/contamination',
+    count: '3+ case studies',
+    color: 'rgba(255,152,0,0.1)',
   },
-};
+  {
+    id: 'technologies',
+    title: 'Filtration Technologies',
+    description: 'ELIMFILTERS proprietary technologies and their engineering applications',
+    icon: '⚙️',
+    href: '/technologies',
+    count: '12 technologies',
+    color: 'rgba(76,175,80,0.1)',
+  },
+  {
+    id: 'fleet',
+    title: 'Fleet Optimization',
+    description: 'Total cost of ownership analysis and fleet management strategies',
+    icon: '🚛',
+    href: '/knowledge-system/fleet',
+    count: '5+ strategies',
+    color: 'rgba(33,150,243,0.1)',
+  },
+  {
+    id: 'industries',
+    title: 'Industry-Specific Guides',
+    description: 'Tailored filtration solutions for agriculture, mining, energy, marine, and more',
+    icon: '🏭',
+    href: '/industries',
+    count: '12 industries',
+    color: 'rgba(233,30,99,0.1)',
+  },
+  {
+    id: 'glossary',
+    title: 'Technical Glossary',
+    description: 'Definitions and technical terms for industrial filtration and asset protection',
+    icon: '📖',
+    href: '/knowledge-system/glossary',
+    count: '100+ terms',
+    color: 'rgba(121,85,72,0.1)',
+  },
+];
 
 export default function KnowledgeCenterPage() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'ELIMFILTERS Knowledge Center',
-    url: 'https://elimfilters.com/knowledge-center',
-    description: 'Engineering documentation for contamination control, filtration system design, and asset protection across industrial applications.',
-    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-  };
+  const { t } = useTranslation();
 
   return (
-    <main style={main}>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <>
+      <Navigation />
 
-      <PageHeader currentPage="KnowledgeCenter" />
+      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+        {/* Hero Section */}
+        <section style={{
+          padding: 'clamp(6rem, 12vw, 10rem) clamp(1.25rem, 5vw, 4rem)',
+          background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.5) 100%), linear-gradient(180deg, rgba(63,81,181,0.1) 0%, transparent 50%)',
+          borderBottom: '1px solid rgba(255,241,45,0.1)',
+        }}>
+          <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: 'clamp(0.7rem, 1.5vw, 0.85rem)',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: '#FFF12D',
+                marginBottom: '1.5rem',
+                fontWeight: 600,
+              }}>
+                // TECHNICAL RESOURCES FOR INDUSTRIAL ASSET PROTECTION
+              </p>
 
-      <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/images/knowledge-center-hero.avif)' }} />
-        <div style={heroOverlay} />
-        <div style={heroInner}>
-          <h1 style={heroTitle}>Engineering<br /><span style={{ color: '#FFF12D' }}>Intelligence Library</span></h1>
-          <p style={heroLead}>ELIMFILTERS organizes contamination control, filtration standards, protection systems, proprietary technologies, and industrial application logic into a technical reference platform.</p>
-          <div style={tagRow}>{['STANDARDS', 'SYSTEMS', 'TECHNOLOGIES', 'FAILURE MODES', 'INDUSTRIES', 'AI SEARCH'].map((item) => <span key={item} style={tag}>{item}</span>)}</div>
-        </div>
-      </section>
+              <h1 style={{
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.01em',
+                lineHeight: 1.05,
+                color: '#fff',
+                marginBottom: '2rem',
+                maxWidth: '900px',
+              }}>
+                Knowledge Center
+              </h1>
 
-      <section style={section}>
-        <div style={twoCol}>
-          <div><h2 style={sectionTitle}>Knowledge turns filtration into engineering decisions.</h2></div>
-          <div>
-            <p style={leadText}>Industrial filtration is not only a catalogue problem. It is a contamination control problem tied to standards, failure mechanisms, operating exposure, and asset risk.</p>
-            <p style={bodyText}>The Knowledge Center supports distributors, engineers, fleets, and AI systems with structured, citable, technical information.</p>
+              <p style={{
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
+                lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.8)',
+                maxWidth: '800px',
+                marginBottom: '2rem',
+              }}>
+                Comprehensive technical resources on industrial filtration standards, contamination control, asset protection engineering, and fleet optimization.
+              </p>
+
+              <p style={{
+                fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
+                lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.65)',
+                maxWidth: '850px',
+              }}>
+                ELIMFILTERS Knowledge Center provides engineering-grade documentation for industrial professionals, fleet managers, equipment designers, and procurement specialists.
+              </p>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={validatedSection}>
-        <div style={wrap}>
-          <h2 style={sectionTitle}>Validated hydraulic contamination references.</h2>
-          <div style={validatedGrid}>
-            {VALIDATED_REFERENCES.map((item) => (
-              <div key={item.value} style={validatedCard}>
-                <strong style={validatedValue}>{item.value}</strong>
-                <p style={validatedBody}>{item.body}</p>
-                <span style={validatedSource}>{item.source}</span>
-              </div>
+        {/* Knowledge Sections Grid */}
+        <section style={{
+          padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem)',
+          maxWidth: '1400px',
+          margin: '0 auto',
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: 'clamp(2rem, 3vw, 2.5rem)',
+          }}>
+            {KNOWLEDGE_SECTIONS.map((section, idx) => (
+              <motion.div
+                key={section.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: idx * 0.05 }}
+                style={{
+                  background: section.color,
+                  border: '1px solid rgba(255,241,45,0.15)',
+                  borderRadius: '8px',
+                  padding: 'clamp(2rem, 4vw, 2.5rem)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1.5rem',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,241,45,0.35)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,241,45,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,241,45,0.15)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
+                  <div style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
+                    {section.icon}
+                  </div>
+                  <span style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.7rem',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: '#FFF12D',
+                    fontWeight: 600,
+                  }}>
+                    {section.count}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 style={{
+                    fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                    fontSize: 'clamp(1.3rem, 2vw, 1.6rem)',
+                    fontWeight: 700,
+                    color: '#fff',
+                    marginBottom: '0.75rem',
+                    lineHeight: 1.2,
+                  }}>
+                    {section.title}
+                  </h3>
+                  <p style={{
+                    fontSize: 'clamp(0.95rem, 1.5vw, 1rem)',
+                    lineHeight: 1.6,
+                    color: 'rgba(255,255,255,0.7)',
+                    margin: 0,
+                  }}>
+                    {section.description}
+                  </p>
+                </div>
+
+                <Link href={section.href} style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#FFF12D',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  marginTop: 'auto',
+                  transition: 'all 0.2s ease',
+                }}>
+                  Explore →
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={domainSection}>
-        <div style={wrapWide}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}><h2 style={sectionTitle}>Structured technical reference by domain.</h2></div>
-          <div style={domainGrid}>
-            {SECTIONS.map((section) => (
-              <Link key={section.href} href={section.href} style={domainCard}>
-                <p style={domainLabel}>{section.label}</p>
-                <h3 style={domainTitle}>{section.title}</h3>
-                <p style={domainBody}>{section.description}</p>
-                <span style={domainCount}>{section.count}</span>
-                <span style={explore}>OPEN DOMAIN</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Featured Resources */}
+        <section style={{
+          padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem)',
+          background: 'rgba(255,241,45,0.02)',
+          borderTop: '1px solid rgba(255,241,45,0.1)',
+          borderBottom: '1px solid rgba(255,241,45,0.1)',
+          maxWidth: '1400px',
+          margin: '0 auto',
+        }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 style={{
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.01em',
+              color: '#fff',
+              marginBottom: '3rem',
+              lineHeight: 1.2,
+            }}>
+              Get Started
+            </h2>
 
-      <section style={featuredSection}>
-        <div style={wrap}>
-          <div style={splitHeader}><div><h2 style={sectionTitle}>Start with core principles.</h2></div><Link href="/knowledge-center/engineering" style={yellowButton}>VIEW ALL ARTICLES</Link></div>
-          <div style={featuredGrid}>
-            {FEATURED_ARTICLES.map((article) => (
-              <Link key={article.slug} href={`/knowledge-center/engineering/${article.slug}`} style={featuredCard}>
-                <p style={featuredMeta}>{article.category} / {article.readTime}</p>
-                <h3 style={featuredTitle}>{article.title}</h3>
-                <p style={featuredBody}>{article.subtitle}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '2rem',
+            }}>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                style={{
+                  background: 'rgba(33,150,243,0.08)',
+                  border: '1px solid rgba(33,150,243,0.2)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
+                <h3 style={{
+                  fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                  fontSize: '1.3rem',
+                  fontWeight: 700,
+                  color: '#fff',
+                  margin: 0,
+                }}>
+                  New to Filtration?
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'rgba(255,255,255,0.65)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  Start with industry guides and fundamental concepts for asset protection systems.
+                </p>
+                <Link href="/industries" style={{
+                  display: 'inline-block',
+                  color: '#FFF12D',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}>
+                  Browse Industries →
+                </Link>
+              </motion.div>
 
-      <section style={standardsSection}>
-        <div style={wrap}>
-          <div style={splitHeader}><div><h2 style={sectionTitle}>Technical references that anchor the platform.</h2></div><Link href="/knowledge-center/standards" style={darkButton}>ALL STANDARDS</Link></div>
-          <div style={standardsGrid}>{KC_STANDARDS.slice(0, 10).map((standard) => <Link key={standard.slug} href={`/knowledge-center/standards/${standard.slug}`} style={standardCard}><strong style={standardCode}>{standard.code}</strong><span style={standardScope}>{standard.scope}</span></Link>)}</div>
-        </div>
-      </section>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                style={{
+                  background: 'rgba(76,175,80,0.08)',
+                  border: '1px solid rgba(76,175,80,0.2)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
+                <h3 style={{
+                  fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                  fontSize: '1.3rem',
+                  fontWeight: 700,
+                  color: '#fff',
+                  margin: 0,
+                }}>
+                  Technical Standards?
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'rgba(255,255,255,0.65)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  Access ISO, ASTM, and SAE standards documentation for filtration system design.
+                </p>
+                <Link href="/knowledge-system/standards" style={{
+                  display: 'inline-block',
+                  color: '#FFF12D',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}>
+                  View Standards →
+                </Link>
+              </motion.div>
 
-      <section style={searchCallout}>
-        <div style={searchInner}>
-          <div><h2 style={sectionTitle}>Search knowledge by symptom, standard, system, or technology.</h2><p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>Use Knowledge Search to connect field symptoms, equipment types, standards, and contamination modes to the right technical reference.</p></div>
-          <Link href="/knowledge-center/search" style={yellowButton}>SEARCH KNOWLEDGE</Link>
-        </div>
-      </section>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                style={{
+                  background: 'rgba(255,152,0,0.08)',
+                  border: '1px solid rgba(255,152,0,0.2)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
+                <h3 style={{
+                  fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                  fontSize: '1.3rem',
+                  fontWeight: 700,
+                  color: '#fff',
+                  margin: 0,
+                }}>
+                  Contamination Issues?
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  color: 'rgba(255,255,255,0.65)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  Explore root cause analysis and case studies for equipment contamination problems.
+                </p>
+                <Link href="/knowledge-system/contamination" style={{
+                  display: 'inline-block',
+                  color: '#FFF12D',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}>
+                  View Case Studies →
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
 
-      <section style={cta}>
-        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>The stronger the knowledge base, the stronger the protection decision.</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}><Link href="/engineering/asset-protection" style={yellowButton}>ASSET PROTECTION</Link><Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link></div>
-        </div>
-      </section>
-    </main>
+        {/* CTA Section */}
+        <section style={{
+          padding: 'clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem)',
+          maxWidth: '1400px',
+          margin: '0 auto',
+          textAlign: 'center',
+        }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 style={{
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.01em',
+              color: '#fff',
+              marginBottom: '1.5rem',
+              lineHeight: 1.2,
+            }}>
+              Ready to Optimize Your Filtration System?
+            </h2>
+
+            <p style={{
+              fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
+              lineHeight: 1.7,
+              color: 'rgba(255,255,255,0.7)',
+              marginBottom: '2.5rem',
+              maxWidth: '700px',
+              margin: '0 auto 2.5rem auto',
+            }}>
+              Connect with an authorized ELIMFILTERS distributor in your region to implement industrial asset protection solutions tailored to your equipment.
+            </p>
+
+            <Link href="/distributors" style={{
+              display: 'inline-block',
+              background: '#FFF12D',
+              color: '#000',
+              textDecoration: 'none',
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              fontSize: '0.9rem',
+              padding: '1rem 2.5rem',
+              textTransform: 'uppercase',
+              borderRadius: '2px',
+              transition: 'all 0.2s ease',
+            }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 28px rgba(255,241,45,0.55)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Find a Distributor
+            </Link>
+          </motion.div>
+        </section>
+      </main>
+
+      <Footer />
+
+      {/* Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "ELIMFILTERS Knowledge Center",
+          "description": "Comprehensive technical resources on industrial filtration standards, contamination control, and asset protection engineering",
+          "url": "https://elimfilters.com/knowledge-center",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://elimfilters.com/#organization",
+            "name": "ELIMFILTERS",
+            "owner": {
+              "@type": "Organization",
+              "name": "Kleo Technology LLC"
+            }
+          }
+        })}
+      </script>
+    </>
   );
 }
-
-const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-const hero: CSSProperties = { minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.45 };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)' };
-const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
-const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 0.88, fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)', maxWidth: '1120px', margin: 0, textTransform: 'uppercase' };
-const heroLead: CSSProperties = { marginTop: '2rem', maxWidth: '800px', color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600 };
-const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
-const tag: CSSProperties = { border: '1px solid rgba(255,255,255,0.14)', background: 'rgba(255,255,255,0.04)', padding: '0.75rem 1rem', fontFamily: displayFont, fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.16em', fontWeight: 700, color: 'rgba(255,255,255,0.72)' };
-const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)' };
-const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.95, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
-const leadText: CSSProperties = { color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
-const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
-const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
-const validatedSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'linear-gradient(180deg, rgba(255,241,45,0.04), rgba(255,255,255,0.01))', borderTop: '1px solid rgba(255,241,45,0.26)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const validatedGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginTop: '2.4rem' };
-const validatedCard: CSSProperties = { minHeight: '220px', border: '1px solid rgba(255,241,45,0.24)', background: 'rgba(255,241,45,0.03)', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const validatedValue: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: 'clamp(1.3rem, 2.2vw, 2rem)', letterSpacing: '0.08em' };
-const validatedBody: CSSProperties = { color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, margin: '1rem 0' };
-const validatedSource: CSSProperties = { color: 'rgba(255,255,255,0.38)', fontFamily: displayFont, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase' };
-const domainSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
-const domainGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '1rem' };
-const domainCard: CSSProperties = { minHeight: '320px', padding: '1.35rem', border: '1px solid rgba(255,255,255,0.1)', background: '#050505', color: '#fff', textDecoration: 'none', display: 'flex', flexDirection: 'column' };
-const domainLabel: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0 };
-const domainTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.35rem, 2vw, 1.9rem)', lineHeight: 1.02, margin: '1rem 0 0', textTransform: 'uppercase' };
-const domainBody: CSSProperties = { color: 'rgba(255,255,255,0.58)', lineHeight: 1.65, margin: '1rem 0 0' };
-const domainCount: CSSProperties = { marginTop: 'auto', color: 'rgba(255,255,255,0.45)', fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.12em', paddingTop: '1rem' };
-const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.72rem', marginTop: '1rem' };
-const featuredSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,255,255,0.02)' };
-const splitHeader: CSSProperties = { display: 'flex', justifyContent: 'space-between', gap: '2rem', alignItems: 'end', marginBottom: '2.2rem', flexWrap: 'wrap' };
-const featuredGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' };
-const featuredCard: CSSProperties = { minHeight: '260px', padding: '1.35rem', border: '1px solid rgba(255,255,255,0.1)', background: '#030303', textDecoration: 'none', color: '#fff' };
-const featuredMeta: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0 };
-const featuredTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.35rem, 2vw, 1.9rem)', lineHeight: 1.02, margin: '1rem 0', textTransform: 'uppercase' };
-const featuredBody: CSSProperties = { color: 'rgba(255,255,255,0.58)', lineHeight: 1.65 };
-const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
-const standardsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.8rem' };
-const standardCard: CSSProperties = { minHeight: '150px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.02)', padding: '1rem', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const standardCode: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '1.1rem', letterSpacing: '0.08em' };
-const standardScope: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '0.9rem', lineHeight: 1.5 };
-const searchCallout: CSSProperties = { padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(90deg, rgba(255,241,45,0.12), transparent)' };
-const searchInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' };
-const cta: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.26), transparent 34%)' };
-const yellowButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem', textTransform: 'uppercase' };
-const darkButton: CSSProperties = { display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.82rem', padding: '1rem 1.25rem', border: '1px solid rgba(255,241,45,0.4)', textTransform: 'uppercase' };
