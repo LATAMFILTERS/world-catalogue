@@ -5,14 +5,14 @@ import { PageHeader } from '@/components/PageHeader';
 
 export const metadata = {
   title: 'Proprietary Filtration Technologies',
-  description: 'ELIMFILTERS 11 proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, DURATECH, MARINECLEAN, MICROKAPPA.',
+  description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
   keywords: ['SYNTRAX filter technology', 'NANOFORCE filtration', 'INTEKCORE fuel filter', 'MACROCORE air filter', 'proprietary filtration technology', 'ELIMFILTERS'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
   },
   openGraph: {
     title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: 'ELIMFILTERS 11 proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, DURATECH, MARINECLEAN, MICROKAPPA.',
+    description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
     url: 'https://elimfilters.com/technologies/',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: 'ELIMFILTERS 11 proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, DURATECH, MARINECLEAN, MICROKAPPA.',
+    description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
@@ -35,7 +35,7 @@ export default function TechnologiesPage() {
     name: 'ELIMFILTERS Proprietary Technologies',
     url: 'https://elimfilters.com/technologies',
     description: 'Engineering technologies behind ELIMFILTERS asset protection systems.',
-    numberOfItems: 11,
+    numberOfItems: 9,
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
   };
 
