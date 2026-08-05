@@ -88,10 +88,22 @@ export function buildSnapshot(rows, metadata = {}) {
   };
 }
 
+const SELECT_COLUMNS = `
+  id, sku, codigo_base, filter_type, technology, thread_size,
+  height_mm, outer_diameter_mm, inner_diameter_mm, gasket_od_mm, gasket_id_mm,
+  micron_rating, bypass_valve_psi, iso_test_method, anti_drainback_valve,
+  nominal_efficiency, filter_media, oem_codes, competitor_codes,
+  equipment_applications, burst_pressure_psi, collapse_pressure_psi, created_at,
+  alternative_products, description, enrichment_data, specs, duty, image_url,
+  donaldson_url, sub_type, vehicle_applications, is_primary, name,
+  installation_type, attachment_type, brand_crossrefs, alternatives
+`;
+
 export async function exportCatalogueSnapshot({
   connectionString = process.env.DATABASE_URL,
   outputDir = 'hermes/catalogue-snapshots',
   limit = null,
+  batchSize = 500,
   poolFactory = (config) => new Pool(config)
 } = {}) {
   if (!connectionString) throw new Error('DATABASE_URL is required');
@@ -102,69 +114,80 @@ export async function exportCatalogueSnapshot({
     options: '-c default_transaction_read_only=on'
   });
 
+  fs.mkdirSync(outputDir, { recursive: true });
+  const generatedAt = new Date().toISOString();
+  const stamp = generatedAt.replace(/[:.]/g, '-');
+  const output = path.join(outputDir, `elimfilters-catalogue-${stamp}.json`);
+  const fd = fs.openSync(output, 'w');
+  const hash = crypto.createHash('sha256');
+  let rowCount = 0;
+  let offset = 0;
+  let firstProduct = true;
+
   try {
     await pool.query('BEGIN READ ONLY');
-    const params = [];
-    let sql = `
-      SELECT
-        id,
-        sku,
-        codigo_base,
-        filter_type,
-        technology,
-        thread_size,
-        height_mm,
-        outer_diameter_mm,
-        inner_diameter_mm,
-        gasket_od_mm,
-        gasket_id_mm,
-        micron_rating,
-        bypass_valve_psi,
-        iso_test_method,
-        anti_drainback_valve,
-        nominal_efficiency,
-        filter_media,
-        oem_codes,
-        competitor_codes,
-        equipment_applications,
-        burst_pressure_psi,
-        collapse_pressure_psi,
-        created_at,
-        alternative_products,
-        description,
-        enrichment_data,
-        specs,
-        duty,
-        image_url,
-        donaldson_url,
-        sub_type,
-        vehicle_applications,
-        is_primary,
-        name,
-        installation_type,
-        attachment_type,
-        brand_crossrefs,
-        alternatives
-      FROM elimfilters_catalog
-      ORDER BY sku
-    `;
-    if (Number.isInteger(limit) && limit > 0) {
-      params.push(limit);
-      sql += ' LIMIT $1';
+
+    const header = {
+      schema_version: '1.0.0',
+      generated_at: generatedAt,
+      source: 'postgresql.elimfilters_catalog',
+      read_only: true,
+      publication_enabled: false,
+      metadata: { limit: limit ?? null, batch_size: batchSize }
+    };
+    const headerJson = JSON.stringify(header).slice(0, -1);
+    fs.writeSync(fd, `${headerJson},"products":[`);
+    hash.update('[');
+
+    while (true) {
+      const remaining = Number.isInteger(limit) && limit > 0 ? limit - rowCount : batchSize;
+      if (remaining <= 0) break;
+      const pageSize = Math.min(batchSize, remaining);
+      const result = await pool.query(
+        `SELECT ${SELECT_COLUMNS} FROM elimfilters_catalog ORDER BY sku, id LIMIT $1 OFFSET $2`,
+        [pageSize, offset]
+      );
+
+      if (result.rows.length === 0) break;
+
+      for (const row of result.rows) {
+        const productJson = JSON.stringify(normalizeCatalogueRow(row));
+        const separator = firstProduct ? '' : ',';
+        fs.writeSync(fd, `${separator}${productJson}`);
+        hash.update(`${separator}${productJson}`);
+        firstProduct = false;
+        rowCount += 1;
+      }
+
+      offset += result.rows.length;
+      if (result.rows.length < pageSize) break;
     }
-    const result = await pool.query(sql, params);
+
+    hash.update(']');
+    const sha256 = hash.digest('hex');
+    fs.writeSync(fd, `],"row_count":${rowCount},"sha256":"${sha256}"}\n`);
     await pool.query('COMMIT');
 
-    const snapshot = buildSnapshot(result.rows, { limit: limit ?? null });
-    fs.mkdirSync(outputDir, { recursive: true });
-    const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const output = path.join(outputDir, `elimfilters-catalogue-${stamp}.json`);
-    fs.writeFileSync(output, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
-    return { output, snapshot };
+    return {
+      output,
+      snapshot: {
+        schema_version: '1.0.0',
+        generated_at: generatedAt,
+        source: 'postgresql.elimfilters_catalog',
+        read_only: true,
+        publication_enabled: false,
+        row_count: rowCount,
+        sha256,
+        metadata: { limit: limit ?? null, batch_size: batchSize }
+      }
+    };
   } catch (error) {
     try { await pool.query('ROLLBACK'); } catch {}
+    try { fs.closeSync(fd); } catch {}
+    try { fs.rmSync(output, { force: true }); } catch {}
     throw error;
   } finally {
+    try { fs.closeSync(fd); } catch {}
     await pool.end();
   }
 }
