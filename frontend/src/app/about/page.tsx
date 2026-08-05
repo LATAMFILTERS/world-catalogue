@@ -161,6 +161,52 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Kleo Technology & Distributors Section */}
+      <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.15)', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 4vw, 3.5rem)' }}>
+          <div>
+            <p style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Corporate Structure</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>
+                <strong style={{ color: '#FFF12D' }}>Brand Owner:</strong> Kleo Technology LLC
+              </li>
+              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>
+                <strong style={{ color: '#FFF12D' }}>Legal Headquarters:</strong> Frisco, Texas, USA
+              </li>
+              <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>
+                <strong style={{ color: '#FFF12D' }}>Operating Model:</strong> 100% distributor-based (no direct sales)
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Distributor Network</p>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.7, margin: '0 0 1rem 0' }}>
+              ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions.
+            </p>
+            <Link href="/distributors" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              Find a Distributor →
+            </Link>
+          </div>
+
+          <div>
+            <p style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Knowledge Resources</p>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.7, margin: '0 0 1rem 0' }}>
+              Comprehensive technical documentation on filtration standards, contamination control, and industrial applications.
+            </p>
+            <Link href="/knowledge-system" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              Access Knowledge Center →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section style={closingSection}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
