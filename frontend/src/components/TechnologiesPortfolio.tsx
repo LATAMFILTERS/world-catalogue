@@ -10,6 +10,8 @@ const technologies = [
   ['thermacore', 'THERMACORE™', '/assets/THERMACORE.avif'],
   ['drycore', 'DRYCORE™', '/assets/DRYCORE.avif'],
   ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE.avif'],
+  ['duratech', 'DURATECH™', '/assets/DURATECH.avif'],
+  ['marineclean', 'MARINECLEAN™', '/assets/MARINECLEAN.avif'],
   ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA.avif'],
 ];
 
