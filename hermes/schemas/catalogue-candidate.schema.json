@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/hermes/catalogue-candidate.schema.json",
+  "title": "HERMES Catalogue Intelligence Candidate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "change_type",
+    "manufacturer",
+    "source_urls",
+    "source_date",
+    "status"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "candidate_id": { "type": "string", "minLength": 8 },
+    "change_type": {
+      "enum": [
+        "new_product",
+        "application_update",
+        "cross_reference",
+        "supersession",
+        "discontinuation",
+        "technical_change",
+        "catalogue_correction",
+        "catalogue_conflict",
+        "coverage_gap",
+        "environmental_improvement"
+      ]
+    },
+    "manufacturer": { "type": "string", "minLength": 1 },
+    "part_number": { "type": ["string", "null"] },
+    "product_family": { "type": ["string", "null"] },
+    "applications": { "type": "array" },
+    "dimensions": { "type": "object" },
+    "cross_references": { "type": "array" },
+    "superseded_by": { "type": ["string", "null"] },
+    "source_urls": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "format": "uri" }
+    },
+    "source_date": { "type": "string" },
+    "confidence": { "enum": ["low", "medium", "high"] },
+    "environmental_impact": {
+      "type": "object",
+      "properties": {
+        "environmental_relevance": { "type": ["string", "null"] },
+        "carbon_impact": { "type": ["string", "number", "null"] },
+        "energy_impact": { "type": ["string", "number", "null"] },
+        "water_impact": { "type": ["string", "number", "null"] },
+        "waste_impact": { "type": ["string", "number", "null"] },
+        "recyclability": { "type": ["string", "number", "null"] },
+        "hazardous_materials": { "type": ["string", "array", "null"] },
+        "resource_efficiency": { "type": ["string", "number", "null"] },
+        "equipment_life_extension": { "type": ["string", "number", "null"] },
+        "fluid_life_extension": { "type": ["string", "number", "null"] },
+        "fuel_efficiency": { "type": ["string", "number", "null"] },
+        "circular_economy": { "type": ["string", "null"] },
+        "regulatory_risk": { "type": ["string", "null"] },
+        "environmental_severity": { "enum": ["none", "low", "medium", "high", "critical", null] }
+      },
+      "additionalProperties": true
+    },
+    "status": {
+      "enum": [
+        "VERIFIED_OFFICIAL",
+        "VERIFIED_MULTI_SOURCE",
+        "REVIEW_REQUIRED",
+        "CONFLICTING_DATA",
+        "INSUFFICIENT_DATA",
+        "REJECTED",
+        "APPROVED_FOR_PUBLICATION",
+        "PUBLISHED"
+      ]
+    },
+    "approval": {
+      "type": ["object", "null"],
+      "properties": {
+        "approved_by": { "type": "string" },
+        "approved_at": { "type": "string" },
+        "decision_note": { "type": "string" }
+      }
+    },
+    "catalogue_comparison": { "type": "object" },
+    "validation_errors": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
