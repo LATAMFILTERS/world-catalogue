@@ -6,7 +6,8 @@ const assert = require('node:assert/strict');
 const {
   PROTOCOL_VERSION,
   isReplacementElementRequest,
-  extractApplicationEntities
+  extractApplicationEntities,
+  shouldDeferReferenceToCanonical
 } = require('../lib/bot-protocol-unified-orchestrator');
 const {
   normalizeState,
@@ -76,9 +77,9 @@ test('uses Parker-authorized turbine housing matrix', () => {
 });
 
 test('maps each turbine housing to the correct replacement element series', () => {
-  assert.equal(compatibleSeriesFromProduct({ codigo_base: '500FH', filter_type: 'Fuel Water Separator Housing' }), '2010');
-  assert.equal(compatibleSeriesFromProduct({ codigo_base: '900FH', filter_type: 'Fuel Water Separator Housing' }), '2040');
-  assert.equal(compatibleSeriesFromProduct({ codigo_base: '1000FH', filter_type: 'Fuel Water Separator Housing' }), '2020');
+  assert.equal(compatibleSeriesFromProduct({ sku: 'ET90500', codigo_base: '500FH', filter_type: 'Fuel Water Separator Housing' }), '2010');
+  assert.equal(compatibleSeriesFromProduct({ sku: 'ET90900', codigo_base: '900FH', filter_type: 'Fuel Water Separator Housing' }), '2040');
+  assert.equal(compatibleSeriesFromProduct({ sku: 'ET91000', codigo_base: '1000FH', filter_type: 'Fuel Water Separator Housing' }), '2020');
 });
 
 test('structured compatibility overrides legacy description text', () => {
@@ -102,10 +103,28 @@ test('supports transitional description fallback only for unmapped legacy rows',
 
 test('extracts Racor housing model from catalog authority fields', () => {
   assert.equal(racorHousingModel({ codigo_base: '1000FH' }), '1000FH');
-  assert.equal(racorHousingModel({ oem_codes: [{ code: '900FG' }] }), '900FG');
+  assert.equal(racorHousingModel({ description: 'Cross-reference: Parker Racor 900FG.' }), '900FG');
 });
 
 test('recognizes only catalog products explicitly typed as housings', () => {
-  assert.equal(isHousing({ filter_type: 'Fuel Water Separator Housing' }), true);
-  assert.equal(isHousing({ filter_type: 'Fuel Water Separator Cartridge', description: 'Cross-reference 1000FH' }), false);
+  assert.equal(isHousing({ filter_type: 'Fuel Housing' }), true);
+  assert.equal(isHousing({ filter_type: 'Fuel Filter Element', description: 'Cross-reference 1000FH' }), false);
+});
+
+test('active diagnostic data collection keeps a supplied filter reference in the canonical flow', () => {
+  const state = normalizeState({
+    ...createEmptyState(),
+    intent: 'diagnostic',
+    phase: 'collecting_diagnostic_data',
+    pendingField: 'operating_and_filter'
+  });
+
+  assert.equal(
+    shouldDeferReferenceToCanonical('Carretera. Tiene Donaldson P552100.', state, false),
+    true
+  );
+  assert.equal(
+    shouldDeferReferenceToCanonical('¿Cuál es la equivalencia de P552100?', state, false),
+    false
+  );
 });
