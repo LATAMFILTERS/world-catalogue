@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { pathToFileURL } from 'node:url';
 
 const STATUSES = new Set([
   'VERIFIED_OFFICIAL',
@@ -74,9 +75,6 @@ function compareCandidate(candidate, catalogIndex, raw) {
   const result = { exists: Boolean(current), differences: [], current };
   if (!current) return result;
 
-  // Candidate `status` is workflow governance metadata, not catalogue product data.
-  // Compare only catalogue fields explicitly supplied by the discovery so defaults
-  // such as [] or {} cannot create false-positive changes.
   const comparableFields = [
     'product_family',
     'applications',
@@ -104,6 +102,86 @@ function compareCandidate(candidate, catalogIndex, raw) {
   }
 
   return result;
+}
+
+export async function readRelevantCatalogueProducts(file, wantedKeys) {
+  const matches = [];
+  const stream = fs.createReadStream(file, { encoding: 'utf8', highWaterMark: 1024 * 1024 });
+
+  let header = '';
+  let productsStarted = false;
+  let collecting = false;
+  let objectText = '';
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for await (const chunk of stream) {
+    for (let index = 0; index < chunk.length; index += 1) {
+      const character = chunk[index];
+
+      if (!productsStarted) {
+        header += character;
+        const markerIndex = header.indexOf('"products"');
+        if (markerIndex === -1) {
+          if (header.length > 64) header = header.slice(-64);
+          continue;
+        }
+
+        const arrayIndex = header.indexOf('[', markerIndex);
+        if (arrayIndex === -1) {
+          if (header.length > 256) header = header.slice(markerIndex);
+          continue;
+        }
+
+        productsStarted = true;
+        header = '';
+        continue;
+      }
+
+      if (!collecting) {
+        if (character === ']') return matches;
+        if (character !== '{') continue;
+        collecting = true;
+        objectText = '{';
+        depth = 1;
+        inString = false;
+        escaped = false;
+        continue;
+      }
+
+      objectText += character;
+
+      if (inString) {
+        if (escaped) {
+          escaped = false;
+        } else if (character === '\\') {
+          escaped = true;
+        } else if (character === '"') {
+          inString = false;
+        }
+        continue;
+      }
+
+      if (character === '"') {
+        inString = true;
+      } else if (character === '{') {
+        depth += 1;
+      } else if (character === '}') {
+        depth -= 1;
+        if (depth === 0) {
+          const product = JSON.parse(objectText);
+          if (wantedKeys.has(productKey(product))) matches.push(product);
+          collecting = false;
+          objectText = '';
+        }
+      }
+    }
+  }
+
+  if (!productsStarted) throw new Error('Catalogue snapshot does not contain a products array');
+  if (collecting) throw new Error('Catalogue snapshot ended inside a product object');
+  return matches;
 }
 
 export function buildCatalogueCandidates({ discoveries, catalog }) {
@@ -172,20 +250,40 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
   };
 }
 
-function main() {
+async function main() {
   const [discoveriesPath, catalogPath, outputDir = 'hermes/catalogue-candidates'] = process.argv.slice(2);
   if (!discoveriesPath || !catalogPath) {
     console.error('Usage: node scripts/hermes/catalogue-intelligence.mjs <discoveries.json> <catalog.json> [output-dir]');
     process.exit(2);
   }
+
   const discoveriesRaw = readJson(discoveriesPath);
   const discoveries = Array.isArray(discoveriesRaw) ? discoveriesRaw : (discoveriesRaw.discoveries || discoveriesRaw.candidates || []);
-  const catalog = readJson(catalogPath);
+  const wantedKeys = new Set(discoveries
+    .filter((item) => item.change_type !== 'coverage_gap')
+    .map((item) => productKey(item)));
+  const catalog = await readRelevantCatalogueProducts(catalogPath, wantedKeys);
   const report = buildCatalogueCandidates({ discoveries, catalog });
+
   fs.mkdirSync(outputDir, { recursive: true });
   const file = path.join(outputDir, `catalogue-candidates-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
   fs.writeFileSync(file, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
-  console.log(JSON.stringify({ output: file, ...report.summary }, null, 2));
+  console.log(JSON.stringify({
+    output: file,
+    catalogue_matches_loaded: catalog.length,
+    ...report.summary,
+    dry_run: report.dry_run,
+    publication_enabled: report.publication_enabled
+  }, null, 2));
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) main();
+const isDirectRun = process.argv[1]
+  ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+  : false;
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(`[HERMES catalogue intelligence] ${error.message}`);
+    process.exit(1);
+  });
+}

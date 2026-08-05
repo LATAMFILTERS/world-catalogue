@@ -32,6 +32,7 @@
     "hermes:baseline:promote": "node scripts/hermes/promote-baseline.mjs",
     "hermes:baseline:rollback": "node scripts/hermes/rollback-baseline.mjs",
     "hermes:catalogue": "node scripts/hermes/catalogue-intelligence.mjs",
+    "hermes:catalogue:snapshot": "node scripts/hermes/export-catalogue-snapshot.mjs",
     "test:hermes-phase5": "node --test tests/hermes-phase5/",
     "test:hermes-phase6": "node --test tests/hermes-phase6/",
     "test:hermes-readiness": "node --test tests/hermes-readiness/",
