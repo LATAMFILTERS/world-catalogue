@@ -114,7 +114,7 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'nowrap', justifyContent: 'center', width: '100%' }}>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'nowrap', fontSize: 'clamp(10px, 2vw, 12px)', whiteSpace: 'nowrap' }}>
                 <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
@@ -227,6 +227,8 @@ export function Footer() {
             color: 'rgba(255,255,255,0.65)',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.6,
+            width: '100%',
+            textTransform: 'lowercase',
           }}>
             <p style={{ margin: '0 0 8px 0' }}>
               © 2015–2026 ELIMFILTERS®. All rights reserved. ELIMFILTERS® is a registered trademark of Kleo Technology LLC.
