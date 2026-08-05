@@ -13,8 +13,8 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-2: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.55);
-  --text-subtle: rgba(255, 255, 255, 0.35);
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --text-subtle: rgba(255, 255, 255, 0.65);
 
   /* ELIMFILTERS APPROVED TYPOGRAPHY SYSTEM
    * ELIM Display Font = Chakra Petch
