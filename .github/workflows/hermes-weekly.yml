@@ -46,13 +46,26 @@ concurrency:
 
 jobs:
   # Writes exclusively to the hermes-state branch, never to main. Only ever
-  # runs on an explicit manual dispatch with promote_baseline=true — the
-  # `github.event.inputs` object does not exist at all on a schedule
-  # trigger, so this job structurally cannot run from the cron triggers,
-  # independent of any Variable, default, or code path inside the scripts it
-  # calls.
+  # runs on an explicit manual dispatch with promote_baseline literally
+  # true — the `github.event.inputs` object does not exist at all on a
+  # schedule trigger, so this job structurally cannot run from the cron
+  # triggers, independent of any Variable, default, or code path inside the
+  # scripts it calls.
+  #
+  # Gate uses BOTH the typed `inputs.*` context (a real boolean for a
+  # `type: boolean` workflow_dispatch input — the context GitHub introduced
+  # specifically so callers don't have to compare against the string
+  # representation) AND the raw `github.event.inputs.*` string, ANDed
+  # together. This is deliberate belt-and-suspenders: `github.event.inputs`
+  # always serializes workflow_dispatch inputs as strings regardless of
+  # their declared type, and relying on that string form alone
+  # (`== 'true'`) previously let a run submitted with promote_baseline=false
+  # still execute this job — confirmed 2026-08-04 by a real run where
+  # `promote_baseline=false` nonetheless produced a new hermes-state commit,
+  # a new backup, and a BASELINE PROMOTED banner. Both checks below must
+  # independently agree it is exactly true.
   promote-baseline:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
+    if: github.event_name == 'workflow_dispatch' && inputs.promote_baseline == true && github.event.inputs.promote_baseline == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -69,7 +82,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Redundant with the job-level `if:` above by design — a second,
+      # independently-evaluated gate on the step itself, so a defect in one
+      # gate can never be sufficient on its own to run this step.
       - name: Generate a fresh baseline preview
+        if: inputs.promote_baseline == true && github.event.inputs.promote_baseline == 'true'
         env:
           HERMES_BASELINE_MODE: 'true'
           HERMES_COLLECTION_DRY_RUN: 'true'
@@ -77,10 +94,18 @@ jobs:
 
       - name: Promote preview to hermes-state
         id: promote
+        if: inputs.promote_baseline == true && github.event.inputs.promote_baseline == 'true'
         continue-on-error: true
         env:
           HERMES_BASELINE_MODE: 'true'
-          HERMES_BASELINE_PROMOTE: 'true'
+          # The THIRD, independent barrier: this is no longer a hardcoded
+          # literal. It is derived from the exact same two-context check as
+          # the job/step `if:` conditions above, so even if a future change
+          # somehow let this step execute despite promote_baseline being
+          # false, promote-baseline.mjs's own isAuthorized() check (which
+          # requires this to be the literal string 'true') would still
+          # refuse to promote and report NOT AUTHORIZED instead.
+          HERMES_BASELINE_PROMOTE: ${{ (inputs.promote_baseline == true && github.event.inputs.promote_baseline == 'true') && 'true' || 'false' }}
           HERMES_COLLECTION_DRY_RUN: 'true'
           # Sourced ONLY from the repository secret — never from a
           # workflow_dispatch input, which would be visible in the run's
@@ -90,7 +115,7 @@ jobs:
         run: npm run hermes:baseline:promote
 
       - name: Upload promotion artifacts
-        if: always()
+        if: always() && (inputs.promote_baseline == true && github.event.inputs.promote_baseline == 'true')
         uses: actions/upload-artifact@v4
         with:
           name: hermes-baseline-promotion

@@ -43,9 +43,19 @@ const previewPath = path.resolve('hermes/baselines/source-baseline.preview.json'
 // source of truth — that is exclusively the hermes-state branch.
 const localResultPath = path.resolve('hermes/baselines/promotion-result.local.json');
 
+// Stamped onto every record so a later reader (generate-weekly-report.mjs)
+// can refuse to trust this file unless it was written by the CURRENT
+// GitHub Actions run — this file is gitignored/local-only and every job
+// gets a fresh checkout, but a stale copy could otherwise leak forward via
+// a mis-scoped artifact download or a re-run of the same job. Both are
+// null outside Actions (local dev/tests), where no scoping is possible or
+// needed.
+const runId = process.env.GITHUB_RUN_ID || null;
+const runAttempt = process.env.GITHUB_RUN_ATTEMPT || null;
+
 function writeLocalResult(record) {
   fs.mkdirSync(path.dirname(localResultPath), { recursive: true });
-  fs.writeFileSync(localResultPath, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
+  fs.writeFileSync(localResultPath, `${JSON.stringify({ ...record, run_id: runId, run_attempt: runAttempt }, null, 2)}\n`, 'utf8');
   return localResultPath;
 }
 

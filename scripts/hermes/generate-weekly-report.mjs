@@ -40,14 +40,33 @@ const collectionSummary = rawArg === '--auto' ? loadLatestCollectionSummary() : 
 // elimfilters-vault (promotion no longer writes there at all; the durable
 // record of what was promoted lives on the hermes-state branch, not in this
 // checkout).
+//
+// A record is only ever trusted if it was stamped with the CURRENT
+// GitHub Actions run's id AND attempt. Without this check, a compare-only
+// run (promote_baseline=false, promote-baseline job skipped) could still
+// end up showing a stale PROMOTED banner if this gitignored file somehow
+// survived from an earlier run/attempt on the same runner, or via a
+// mis-scoped artifact download — this is what actually happened on
+// 2026-08-04. Outside Actions (GITHUB_RUN_ID unset — local dev/tests) no
+// scoping is applied, since there is no run to compare against.
 function loadLatestPromotionSummary() {
   const localResultPath = path.resolve('hermes/baselines/promotion-result.local.json');
   if (!fs.existsSync(localResultPath)) return null;
+  let parsed;
   try {
-    return JSON.parse(fs.readFileSync(localResultPath, 'utf8'));
+    parsed = JSON.parse(fs.readFileSync(localResultPath, 'utf8'));
   } catch {
     return null;
   }
+  const currentRunId = process.env.GITHUB_RUN_ID || null;
+  if (currentRunId) {
+    const currentRunAttempt = process.env.GITHUB_RUN_ATTEMPT || null;
+    if (parsed.run_id !== currentRunId || parsed.run_attempt !== currentRunAttempt) {
+      console.warn(`[HERMES report] ignoring promotion-result.local.json — stamped for run_id=${parsed.run_id} attempt=${parsed.run_attempt}, this run is ${currentRunId}/${currentRunAttempt}`);
+      return null;
+    }
+  }
+  return parsed;
 }
 const promotionSummary = rawArg === '--auto' ? loadLatestPromotionSummary() : null;
 

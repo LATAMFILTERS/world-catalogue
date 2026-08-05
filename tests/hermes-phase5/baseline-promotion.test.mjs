@@ -373,9 +373,9 @@ test('6) both the promote and rollback workflow steps source the token exclusive
 test('7) the promote-baseline and rollback-baseline jobs are gated on workflow_dispatch inputs, which schedule runs never have', () => {
   const workflowText = fs.readFileSync(WORKFLOW_PATH, 'utf8');
 
-  const promoteJobMatch = /promote-baseline:\s*\n([\s\S]{0,600})/.exec(workflowText);
+  const promoteJobMatch = /promote-baseline:\s*\n([\s\S]{0,900})/.exec(workflowText);
   assert.ok(promoteJobMatch, 'expected a promote-baseline job');
-  assert.match(promoteJobMatch[1], /if:\s*github\.event_name == 'workflow_dispatch' && github\.event\.inputs\.promote_baseline == 'true'/);
+  assert.match(promoteJobMatch[1], /if:\s*github\.event_name == 'workflow_dispatch' && inputs\.promote_baseline == true && github\.event\.inputs\.promote_baseline == 'true'/);
 
   const rollbackJobMatch = /rollback-baseline:\s*\n([\s\S]{0,600})/.exec(workflowText);
   assert.ok(rollbackJobMatch, 'expected a rollback-baseline job');
@@ -384,7 +384,7 @@ test('7) the promote-baseline and rollback-baseline jobs are gated on workflow_d
 
 test('7b) the promotion step still forces HERMES_COLLECTION_DRY_RUN=true, independent of any repository Variable', () => {
   const workflowText = fs.readFileSync(WORKFLOW_PATH, 'utf8');
-  const promoteStepMatch = /Promote preview to hermes-state[\s\S]{0,700}/.exec(workflowText);
+  const promoteStepMatch = /Promote preview to hermes-state[\s\S]{0,1400}/.exec(workflowText);
   assert.ok(promoteStepMatch);
   assert.match(promoteStepMatch[0], /HERMES_COLLECTION_DRY_RUN:\s*'true'/);
 });
