@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { pathToFileURL } from 'node:url';
 
 const STATUSES = new Set([
   'VERIFIED_OFFICIAL',
@@ -74,9 +75,6 @@ function compareCandidate(candidate, catalogIndex, raw) {
   const result = { exists: Boolean(current), differences: [], current };
   if (!current) return result;
 
-  // Candidate `status` is workflow governance metadata, not catalogue product data.
-  // Compare only catalogue fields explicitly supplied by the discovery so defaults
-  // such as [] or {} cannot create false-positive changes.
   const comparableFields = [
     'product_family',
     'applications',
@@ -185,7 +183,18 @@ function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   const file = path.join(outputDir, `catalogue-candidates-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
   fs.writeFileSync(file, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
-  console.log(JSON.stringify({ output: file, ...report.summary }, null, 2));
+  console.log(JSON.stringify({ output: file, ...report.summary, dry_run: report.dry_run, publication_enabled: report.publication_enabled }, null, 2));
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) main();
+const isDirectRun = process.argv[1]
+  ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+  : false;
+
+if (isDirectRun) {
+  try {
+    main();
+  } catch (error) {
+    console.error(`[HERMES catalogue intelligence] ${error.message}`);
+    process.exit(1);
+  }
+}
