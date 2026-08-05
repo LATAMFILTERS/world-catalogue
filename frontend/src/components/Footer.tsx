@@ -69,7 +69,7 @@ export function Footer() {
   const navColumns = getFooterNavigation(t);
 
   return (
-    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }} role="contentinfo" aria-label="Site footer">
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) clamp(1.25rem, 5vw, 48px) 0' }}>
         <div
           className="footer-main-grid"

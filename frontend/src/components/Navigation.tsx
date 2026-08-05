@@ -42,6 +42,7 @@ export function Navigation() {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
+        role="banner"
       >
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
@@ -54,7 +55,7 @@ export function Navigation() {
           </Link>
         </motion.div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile" aria-label="Main navigation">
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
@@ -85,13 +86,14 @@ export function Navigation() {
           >
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
-        </div>
+        </nav>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'none' }}
           className="show-mobile"
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
         >
           <div style={{ width: '24px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
             {[0, 1, 2].map((i) => (

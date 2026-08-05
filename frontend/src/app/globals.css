@@ -99,6 +99,34 @@ a[href="#content"]:focus,
   text-decoration: none !important;
 }
 
+/* WCAG AAA Focus Indicators */
+*:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.3);
+}
+
+/* Dark theme focus adjustment for ELIMFILTERS */
+body {
+  --focus-color: #FFF12D;
+  --focus-shadow: rgba(255, 241, 45, 0.2);
+}
+
+a:focus-visible:not([href="#main-content"]):not([href="#content"]),
+button:focus-visible {
+  outline-color: var(--focus-color);
+  box-shadow: 0 0 0 4px var(--focus-shadow);
+}
+
 /* Visual cleanup for a legacy encoded marker in the home asset-protection card. */
 main ul[style*="list-style"] li > span:first-child {
   font-size: 0 !important;

@@ -26,6 +26,7 @@ import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
 import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-0XJP6FLV55';
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ClientProviders>
+          <SkipNavigation />
           <AggregateRatingSchema />
           {children}
           <WebVitalsTracker />
