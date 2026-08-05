@@ -36,7 +36,7 @@ export default function AboutPage() {
     areaServed: 'Worldwide',
     slogan: 'Global Industrial Filtration Brand',
     description:
-      'ELIMFILTERS® is a global industrial filtration brand owned by Kleo Technology LLC. We develop advanced contamination-control technologies through mathematical engineering models, AI-assisted simulation, controlled testing, and field validation. Products are available exclusively through authorized distributors.',
+      'ELIMFILTERS® is Kleo Technology LLC\'s global industrial filtration brand. We develop advanced contamination-control technologies through mathematical engineering models, AI-assisted simulation, controlled testing, and field validation. Products are available exclusively through authorized distributors.',
     knowsAbout: [
       'Industrial asset protection',
       'Contamination control',

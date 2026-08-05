@@ -357,7 +357,7 @@ export default function Home() {
           visibility: 'hidden',
         }}>
           <p>
-            ELIMFILTERS® is a global industrial filtration brand owned by Kleo Technology LLC. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
+            ELIMFILTERS® is Kleo Technology LLC's global industrial filtration brand. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
           </p>
         </div>
 
