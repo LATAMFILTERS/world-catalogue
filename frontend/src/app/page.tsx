@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { GlobalBrandSection } from '@/components/GlobalBrandSection';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import CinematicHero from '@/components/ui/CinematicHero';
@@ -378,6 +379,9 @@ export default function Home() {
 
         {/* â”€â”€ HERO â”€â”€ */}
         <CinematicHero />
+
+        {/* â”€â”€ GLOBAL BRAND SECTION â”€â”€ */}
+        <GlobalBrandSection />
 
         {/* â”€â”€ ENGINEERING ENTRY â”€â”€ */}
 

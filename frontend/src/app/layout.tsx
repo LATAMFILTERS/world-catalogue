@@ -25,6 +25,7 @@ import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
 import AggregateRatingSchema from '@/components/AggregateRatingSchema';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-0XJP6FLV55';
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <SchemaMarkup />
         <Script id="ga4-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
