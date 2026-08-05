@@ -7,29 +7,68 @@ import pg from 'pg';
 
 const { Pool } = pg;
 
+function compactObject(object) {
+  return Object.fromEntries(Object.entries(object).filter(([, value]) => value !== null && value !== undefined));
+}
+
 export function normalizeCatalogueRow(row) {
+  const dimensions = compactObject({
+    thread_size: row.thread_size ?? null,
+    height_mm: row.height_mm ?? null,
+    outer_diameter_mm: row.outer_diameter_mm ?? null,
+    inner_diameter_mm: row.inner_diameter_mm ?? null,
+    gasket_od_mm: row.gasket_od_mm ?? null,
+    gasket_id_mm: row.gasket_id_mm ?? null
+  });
+
+  const technical_specs = compactObject({
+    micron_rating: row.micron_rating ?? null,
+    bypass_valve_psi: row.bypass_valve_psi ?? null,
+    iso_test_method: row.iso_test_method ?? null,
+    anti_drainback_valve: row.anti_drainback_valve ?? null,
+    nominal_efficiency: row.nominal_efficiency ?? null,
+    filter_media: row.filter_media ?? null,
+    burst_pressure_psi: row.burst_pressure_psi ?? null,
+    collapse_pressure_psi: row.collapse_pressure_psi ?? null,
+    installation_type: row.installation_type ?? null,
+    attachment_type: row.attachment_type ?? null,
+    is_primary: row.is_primary ?? null
+  });
+
+  const vehicleApplications = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
+  const equipmentApplications = Array.isArray(row.equipment_applications) ? row.equipment_applications : [];
+  const oemCodes = Array.isArray(row.oem_codes) ? row.oem_codes : [];
+  const competitorCodes = Array.isArray(row.competitor_codes) ? row.competitor_codes : [];
+  const brandCrossrefs = Array.isArray(row.brand_crossrefs) ? row.brand_crossrefs : [];
+
   return {
+    id: row.id ?? null,
     sku: row.sku,
+    codigo_base: row.codigo_base ?? null,
     brand: 'ELIMFILTERS',
+    name: row.name ?? null,
     part_number: row.sku,
     duty: row.duty ?? null,
     product_family: row.filter_type ?? null,
+    sub_type: row.sub_type ?? null,
+    technology: row.technology ?? null,
     description: row.description ?? null,
-    status: row.status ?? null,
-    dimensions: row.dimensions ?? {},
-    applications: [
-      ...(Array.isArray(row.vehicle_applications) ? row.vehicle_applications : []),
-      ...(Array.isArray(row.equipment_applications) ? row.equipment_applications : [])
-    ],
-    vehicle_applications: row.vehicle_applications ?? [],
-    equipment_applications: row.equipment_applications ?? [],
-    oem_codes: row.oem_codes ?? [],
-    competitor_codes: row.competitor_codes ?? [],
-    cross_references: [
-      ...(Array.isArray(row.oem_codes) ? row.oem_codes : []),
-      ...(Array.isArray(row.competitor_codes) ? row.competitor_codes : [])
-    ],
-    source_updated_at: row.updated_at ?? null
+    dimensions,
+    technical_specs,
+    specs: row.specs ?? {},
+    applications: [...vehicleApplications, ...equipmentApplications],
+    vehicle_applications: vehicleApplications,
+    equipment_applications: equipmentApplications,
+    oem_codes: oemCodes,
+    competitor_codes: competitorCodes,
+    brand_crossrefs: brandCrossrefs,
+    cross_references: [...oemCodes, ...competitorCodes, ...brandCrossrefs],
+    alternative_products: row.alternative_products ?? [],
+    alternatives: row.alternatives ?? [],
+    enrichment_data: row.enrichment_data ?? {},
+    image_url: row.image_url ?? null,
+    donaldson_url: row.donaldson_url ?? null,
+    source_created_at: row.created_at ?? null
   };
 }
 
@@ -68,17 +107,44 @@ export async function exportCatalogueSnapshot({
     const params = [];
     let sql = `
       SELECT
+        id,
         sku,
-        duty,
+        codigo_base,
         filter_type,
-        description,
-        status,
-        dimensions,
-        vehicle_applications,
-        equipment_applications,
+        technology,
+        thread_size,
+        height_mm,
+        outer_diameter_mm,
+        inner_diameter_mm,
+        gasket_od_mm,
+        gasket_id_mm,
+        micron_rating,
+        bypass_valve_psi,
+        iso_test_method,
+        anti_drainback_valve,
+        nominal_efficiency,
+        filter_media,
         oem_codes,
         competitor_codes,
-        updated_at
+        equipment_applications,
+        burst_pressure_psi,
+        collapse_pressure_psi,
+        created_at,
+        alternative_products,
+        description,
+        enrichment_data,
+        specs,
+        duty,
+        image_url,
+        donaldson_url,
+        sub_type,
+        vehicle_applications,
+        is_primary,
+        name,
+        installation_type,
+        attachment_type,
+        brand_crossrefs,
+        alternatives
       FROM elimfilters_catalog
       ORDER BY sku
     `;
