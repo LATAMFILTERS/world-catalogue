@@ -59,6 +59,7 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-system">{t('nav.knowledge', 'Knowledge')}</NavLink>
+          <NavLink href="/distributors">{t('nav.distributors', 'Distributors')}</NavLink>
           <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 

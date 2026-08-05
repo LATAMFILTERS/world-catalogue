@@ -227,20 +227,26 @@ export function Footer() {
           marginTop: '0',
           paddingTop: '32px',
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
+          flexDirection: 'column',
           gap: '16px',
           width: '100%',
         }}>
-          <p style={{
+          <div style={{
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.3)',
-            margin: 0,
+            color: 'rgba(255,255,255,0.4)',
             fontFamily: 'var(--font-body)',
+            lineHeight: 1.6,
           }}>
-            © 2024 ELIMFILTERS®. All rights reserved.
-          </p>
+            <p style={{ margin: '0 0 8px 0' }}>
+              © 2015–2026 ELIMFILTERS®. All rights reserved. ELIMFILTERS® is a registered trademark of Kleo Technology LLC.
+            </p>
+            <p style={{ margin: '0 0 8px 0' }}>
+              Legal Headquarters: Frisco, Texas, USA | Operating globally through authorized distributors worldwide
+            </p>
+            <p style={{ margin: 0 }}>
+              ELIMFILTERS® products are available exclusively through our network of authorized distributors. We do not sell directly to end users.
+            </p>
+          </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/legal/privacy"
