@@ -288,13 +288,13 @@ function EngineeringEntrySection() {
                 {card.label}
               </div>
               <div style={{
-                color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.6,
               }}>
                 {card.description}
               </div>
               <div style={{
                 marginTop: '1rem', fontSize: '0.75rem',
-                color: 'rgba(255,255,255,0.25)',
+                color: 'rgba(255,255,255,0.65)',
               }}>
                 {card.external ? 'part-search.elimfilters.com ->' : 'Explore ->'}
               </div>
@@ -465,9 +465,9 @@ export default function Home() {
                   style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.08)', padding: '2rem', borderRadius: '2px' }}
                 >
                   <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '0.4rem' }}>{item.label}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)', marginBottom: '0.4rem' }}>{item.label}</p>
                   <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: '#f87171', marginBottom: '0.75rem' }}>{item.cost}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.65, textAlign: 'justify' }}>{item.desc}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -484,7 +484,7 @@ export default function Home() {
                 <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>
+                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, textAlign: 'left' }}>
                   4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
                   <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost  -  it is the lowest-cost insurance available.</strong>
                 </p>

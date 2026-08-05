@@ -131,9 +131,9 @@ export function Footer() {
                 >
                   info@elimfilters.com
                 </a>
-                <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
                 <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
-                <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+                <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
                 <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
               </div>
 
@@ -233,7 +233,7 @@ export function Footer() {
         }}>
           <div style={{
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(255,255,255,0.65)',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.6,
           }}>
@@ -252,12 +252,12 @@ export function Footer() {
               href="/legal/privacy"
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
               Privacy
             </Link>
@@ -265,12 +265,12 @@ export function Footer() {
               href="/legal/terms"
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
               Terms
             </Link>
