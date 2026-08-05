@@ -64,24 +64,45 @@ function validateCandidate(candidate) {
   return errors;
 }
 
-function compareCandidate(candidate, catalogIndex) {
+function hasOwn(object, field) {
+  return Object.prototype.hasOwnProperty.call(object, field);
+}
+
+function compareCandidate(candidate, catalogIndex, raw) {
   const key = productKey(candidate);
   const current = catalogIndex.get(key) || null;
   const result = { exists: Boolean(current), differences: [], current };
   if (!current) return result;
 
-  const fields = ['product_family', 'status', 'superseded_by'];
-  for (const field of fields) {
-    if (candidate[field] != null && JSON.stringify(candidate[field]) !== JSON.stringify(current[field])) {
-      result.differences.push({ field, current: current[field] ?? null, proposed: candidate[field] });
+  // Candidate `status` is workflow governance metadata, not catalogue product data.
+  // Compare only catalogue fields explicitly supplied by the discovery so defaults
+  // such as [] or {} cannot create false-positive changes.
+  const comparableFields = [
+    'product_family',
+    'applications',
+    'cross_references',
+    'dimensions',
+    'superseded_by',
+    'catalogue_status',
+    'environmental_impact'
+  ];
+
+  for (const field of comparableFields) {
+    if (!hasOwn(raw, field)) continue;
+
+    const currentField = field === 'catalogue_status' ? 'status' : field;
+    const proposed = candidate[field];
+    const existing = current[currentField];
+
+    if (JSON.stringify(proposed) !== JSON.stringify(existing)) {
+      result.differences.push({
+        field: currentField,
+        current: existing ?? null,
+        proposed
+      });
     }
   }
 
-  for (const field of ['applications', 'cross_references', 'dimensions']) {
-    if (candidate[field] != null && JSON.stringify(candidate[field]) !== JSON.stringify(current[field])) {
-      result.differences.push({ field, current: current[field] ?? null, proposed: candidate[field] });
-    }
-  }
   return result;
 }
 
@@ -102,6 +123,7 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
       dimensions: raw.dimensions || {},
       cross_references: raw.cross_references || [],
       superseded_by: raw.superseded_by || null,
+      catalogue_status: raw.catalogue_status || null,
       source_urls: raw.source_urls || [],
       source_date: raw.source_date || null,
       confidence: raw.confidence || 'medium',
@@ -114,7 +136,7 @@ export function buildCatalogueCandidates({ discoveries, catalog }) {
 
     candidate.candidate_id = candidate.candidate_id || stableId(candidate);
     candidate.validation_errors = validateCandidate(candidate);
-    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex);
+    candidate.catalogue_comparison = compareCandidate(candidate, catalogIndex, raw);
 
     if (candidate.validation_errors.length) {
       candidate.status = 'INSUFFICIENT_DATA';
