@@ -114,8 +114,8 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', gap: '48px', alignItems: 'center', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '32px', alignItems: 'center', justifyContent: 'center', width: '100%', flexWrap: 'nowrap', overflow: 'hidden' }}>
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexShrink: 0 }}>
               {SOCIAL.map((item) => (
                 <motion.a
                   key={item.href}
@@ -136,6 +136,7 @@ export function Footer() {
                     fontWeight: 600,
                     textDecoration: 'none',
                     fontFamily: 'JetBrains Mono, monospace',
+                    flexShrink: 0,
                   }}
                   whileHover={{ background: 'rgba(255,241,45,0.1)', borderColor: 'rgba(255,241,45,0.3)' }}
                 >
@@ -144,7 +145,7 @@ export function Footer() {
               ))}
               </div>
 
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'nowrap', fontSize: 'clamp(10px, 2vw, 12px)', whiteSpace: 'nowrap' }}>
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: 'clamp(9px, 1.8vw, 11px)', whiteSpace: 'nowrap', flexShrink: 0 }}>
                 <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
