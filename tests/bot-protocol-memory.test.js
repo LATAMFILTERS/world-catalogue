@@ -26,13 +26,14 @@ test('greeting detection ignores a greeting attached to a technical query', () =
 test('createEmptyState matches the canonical conversation-state shape', () => {
   const state = createEmptyState();
   assert.deepEqual(Object.keys(state).sort(), [
-    'conversationHistory', 'duration', 'equipment', 'impact', 'installedFilter',
+    'conversationHistory', 'duration', 'equipment', 'identifiedHousing', 'impact', 'installedFilter',
     'intent', 'knowledgeGap', 'oemMaintenance', 'operatingContext', 'pendingField',
     'phase', 'productRecommendation', 'symptoms', 'technicalKnowledge',
     'unresolvedAttempts', 'updatedAt', 'validatedProducts'
   ].sort());
   assert.deepEqual(state.equipment, { brand: null, model: null, engine: null, year: null });
   assert.deepEqual(state.installedFilter, { type: null, brand: null, reference: null, status: null });
+  assert.deepEqual(state.identifiedHousing, { sku: null, externalReference: null, compatibleSeries: [] });
   // Bloque 2 (knowledge governance pipeline) pointers — see spec section 9.
   assert.deepEqual(state.technicalKnowledge, { status: null, sourceIds: [], lastQuery: null, validatedAt: null });
   assert.deepEqual(state.oemMaintenance, { status: null, system: null, component: null, evidenceId: null });
@@ -63,6 +64,7 @@ test('a completed diagnostic followed by a new reported problem resets diagnosti
   const reset = resetDiagnosticState(state);
   assert.deepEqual(reset.equipment, { brand: null, model: null, engine: null, year: null });
   assert.deepEqual(reset.symptoms, []);
+  assert.deepEqual(reset.identifiedHousing, { sku: null, externalReference: null, compatibleSeries: [] });
   assert.equal(reset.intent, null);
 });
 
