@@ -96,18 +96,9 @@ export function Footer() {
                   color: 'rgba(255,255,255,0.5)',
                   lineHeight: 1.4,
                   maxWidth: '240px',
-                  margin: '0 0 4px 0',
-                }}>
-                  {t('footer.elimfiltersCopyright', 'KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration')}
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '10px',
-                  color: 'rgba(255,255,255,0.35)',
-                  lineHeight: 1.2,
                   margin: 0,
                 }}>
-                  {t('footer.elimfiltersYear', '2015–2026')}
+                  {t('footer.elimfiltersCopyright', 'KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration')}
                 </p>
               </div>
             </div>
