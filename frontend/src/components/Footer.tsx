@@ -114,7 +114,7 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', gap: '32px', alignItems: 'center', justifyContent: 'center', width: '100%', flexWrap: 'nowrap', overflow: 'hidden' }}>
+            <div style={{ display: 'flex', gap: '32px', alignItems: 'center', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexShrink: 0 }}>
               {SOCIAL.map((item) => (
                 <motion.a
