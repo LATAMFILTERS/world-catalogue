@@ -9,7 +9,8 @@ const {
   codesFromJsonArray,
   codesFromJsonObject,
   productReferenceSet,
-  exactReferenceMatch
+  exactReferenceMatch,
+  referenceContainmentPayloads
 } = require('../lib/bot-protocol-catalog');
 
 test('extracts P552100 without treating 2007 as a filter reference', () => {
@@ -21,10 +22,7 @@ test('extracts and normalizes multiple filter references', () => {
 });
 
 test('extracts numeric OEM and competitor references but excludes years', () => {
-  assert.deepEqual(
-    extractReferences('Mack 2024 usa OEM 3315476 y WIX 51516'),
-    ['3315476', '51516']
-  );
+  assert.deepEqual(extractReferences('Mack 2024 usa OEM 3315476 y WIX 51516'), ['3315476', '51516']);
 });
 
 test('extracts numeric references containing separators', () => {
@@ -53,10 +51,7 @@ test('reads standard OEM and competitor JSON objects', () => {
 });
 
 test('reads legacy manufacturer-pipe-code strings', () => {
-  assert.deepEqual(
-    codesFromJsonArray(['CUMMINS | 3315476', 'CAT | 1R0716']),
-    ['3315476', '1R0716']
-  );
+  assert.deepEqual(codesFromJsonArray(['CUMMINS | 3315476', 'CAT | 1R0716']), ['3315476', '1R0716']);
 });
 
 test('reads brand_crossrefs arrays instead of silently discarding them', () => {
@@ -97,9 +92,17 @@ test('exact matching supports references from every authority field', () => {
   assert.equal(exactReferenceMatch(product, ['NOTREAL']), false);
 });
 
-test('PostgreSQL cross-reference query uses a typed scalar parameter', () => {
+test('builds JSONB containment payloads for known cross-reference key variants', () => {
+  const payloads = referenceContainmentPayloads('RE52987').map(JSON.parse);
+  assert.ok(payloads.some(value => value[0].code === 'RE52987'));
+  assert.ok(payloads.some(value => value[0].partNumber === 'RE52987'));
+  assert.ok(payloads.some(value => value[0].oem_code === 'RE52987'));
+});
+
+test('PostgreSQL cross-reference query avoids regexp full-table scans', () => {
   const source = fs.readFileSync(path.join(__dirname, '../lib/bot-protocol-catalog.js'), 'utf8');
-  assert.equal(source.includes('$1[1]'), false, 'unknown PostgreSQL parameters must never be subscripted');
-  assert.match(source, /LIKE \('\%' \|\| \$1::text \|\| '\%'\)/);
-  assert.match(source, /\[normalizedReference\]/);
+  assert.equal(source.includes('$1[1]'), false);
+  assert.equal(source.includes("regexp_replace(upper(coalesce(c.oem_codes::text"), false);
+  assert.match(source, /c\.oem_codes @> ANY\(\$1::jsonb\[\]\)/);
+  assert.match(source, /c\.competitor_codes @> ANY\(\$1::jsonb\[\]\)/);
 });
