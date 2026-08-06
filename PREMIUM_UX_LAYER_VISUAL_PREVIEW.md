@@ -414,13 +414,11 @@ SCROLL POSITION: Exits pinned zone + 100px
 
 **What the card image communicates:**
 - MACROCORE: Amber-lit filter media cross-section — fibrous depth, visible layering
-- AQUAGUARD: Water droplets beading off hydrophobic membrane surface
 - NANOFORCE: Abstract visualization of nanofiber mesh (SEM-style aesthetic)
 - SYNTRAX: Oil flowing through clean synthetic media — viscosity visible
 - MICROKAPPA: Human-scale — clean white cabin air filter against dark background
 - DRYCORE: Compressed air flowing through dryer element — condensate visible
 - DURATECH: Exploded view of high-capacity element construction
-- COOLTECH: Cross-section showing coolant filter media with deposit capture
 - INTEKCORE: Side-by-side with MACROCORE to show the composite distinction
 
 ---
@@ -973,7 +971,6 @@ The site uses clamp() for responsive typography and auto-fit grids. This makes t
 │                                   │
 │  → Technologies                  │
 │    MACROCORE  NANOFORCE  SYNTRAX │
-│    AQUAGUARD  +5 more            │
 │                                   │
 │  → Knowledge System              │
 │    Standards  Contamination      │
@@ -1320,7 +1317,6 @@ On the Knowledge System hub, before the section cards appear, a brief network vi
                          |
                     ● ISO 16889 ──────── ● MACROCORE™
                     ● ISO 4406  ─────────● NANOFORCE™
-                    ● ISO 5011  ─────────● AQUAGUARD™
                          |
                     ● Reducing Downtime ─● Fleet Optimization
                     ● Total Cost of Ownership

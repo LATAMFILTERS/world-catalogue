@@ -121,7 +121,6 @@ INPUT QUERY
 ```javascript
 const TECHNOLOGY_NAMES = new Set([
   'NANOFORCE', 'MACROCORE', 'SYNTRAX', 'SYNTEPORE', 'INTEKCORE',
-  'MICROKAPPA', 'DURATECH', 'AQUAGUARD', 'COOLTECH', 'DRYCORE',
   'GASULTRA', 'MARINECLEAN', 'BLUECLEAN',
   // Legacy names that map to canonical:
   'SYNTAPORE', 'SINTRAX', 'INTAKCORE'
@@ -261,7 +260,6 @@ WHERE concept_slug = $1 AND concept_type = 'technology';
 -- 'AIR FILTER'    → 'air-intake'  (also matches air-intake system)
 -- 'COMPRESSED AIR'→ 'compressed-air'
 -- 'AIR DRYER'     → 'compressed-air'
--- 'COOLANT'       → 'lube-oil'   (cooltech is lube-oil system)
 
 -- Get products for this system (plus any technology sub-filter from query)
 SELECT ec.sku, ec.description, ec.filter_type, ec.technology,
@@ -662,7 +660,6 @@ const SYSTEM_KEYWORD_MAP = {
   'COMPRESSED AIR': 'compressed-air',
   'AIR DRYER':      'compressed-air',
   'COMPRESSOR':     'compressed-air',
-  'COOLANT':        'lube-oil',     // COOLTECH is in lube-oil system
   'COOLANT FILTER': 'lube-oil',
   'TURBINE':        'fuel',         // turbine filter_type is in fuel system
 };

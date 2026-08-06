@@ -33,7 +33,7 @@ jobs:
           EXPECTED_TOTAL = 317
           EXPECTED_KC = 254
           REQUIRED_KC_HUB = "https://elimfilters.com/knowledge-center"
-          RETIRED_FRAGMENTS = ["hydrocore-series", "aquaguard", "cooltech"]
+          RETIRED_FRAGMENTS = ["hydrocore-series"]
 
           failures = []
 

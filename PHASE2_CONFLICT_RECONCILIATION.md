@@ -42,10 +42,7 @@ Operating profile (from `knowledge-architecture.ts`): HIGH contamination exposur
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `MACROCORE™`, `AQUAGUARD™`, `SYNTRAX™`, `NANOFORCE™` |
 | **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `MACROCORE`, `NANOFORCE`, `DURATECH`, `SYNTRAX` |
-| **SRC-C** `TECH_COMPARISON.industries` | MACROCORE → "Mining, Agriculture, Construction, Power Gen" ✅ · SYNTEPORE → "Marine, Offshore, Coastal, Agriculture" ✅ · AQUAGUARD → "Marine, Oil & Gas, Power Gen, Agriculture" ✅ |
-| **SRC-D** `GEO_DEFINITIONS` prose | MACROCORE: "agricultural machinery" explicit ✅ · AQUAGUARD: "agriculture" explicit ✅ · SYNTEPORE: "humid tropical agricultural operations" explicit ✅ |
 
 ---
 
@@ -56,12 +53,11 @@ Operating profile (from `knowledge-architecture.ts`): HIGH contamination exposur
 | MACROCORE | ✅ | ✅ | ✅ | ✅ | **4** |
 | NANOFORCE | ✅ | ✅ | — | — | **2** |
 | SYNTRAX | ✅ | ✅ | — | — | **2** |
-| AQUAGUARD | ✅ | — | ✅ | ✅ | **3** |
+|  | ✅ | — | ✅ | ✅ | **3** |
 | DURATECH | — | ✅ | — | — | **1** ⚠️ |
 | SYNTEPORE | — | — | ✅ | ✅ | **2** |
 
 **Conflicts**:
-- `AQUAGUARD`: in SRC-A, SRC-C, SRC-D — confirmed by 3 sources — but absent from SRC-B (knowledge-architecture.ts). Clear omission in the relational graph.
 - `DURATECH`: in SRC-B only — appears in no other source. Requires owner decision.
 - `SYNTEPORE`: in SRC-C and SRC-D but not in SRC-A or SRC-B. Requires owner decision.
 
@@ -70,7 +66,6 @@ Operating profile (from `knowledge-architecture.ts`): HIGH contamination exposur
 ### 4. Recommended Final Technology List
 
 ```
-RECOMMENDED: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'DURATECH']
 PENDING OWNER DECISION: SYNTEPORE
 ```
 
@@ -81,7 +76,6 @@ PENDING OWNER DECISION: SYNTEPORE
 - **MACROCORE**: 4/4 sources. Non-negotiable. Primary technology for crop-dust air intake protection.
 - **NANOFORCE**: 2/4 sources. Agricultural hydraulics (irrigation systems, harvester hydraulics) and fuel water separation are genuine field problems. Supported by both the relational graph and marketing grouping.
 - **SYNTRAX**: 2/4 sources. Engine oil protection for long-season harvest equipment is a core use case. Confirmed by both primary sources.
-- **AQUAGUARD**: 3/4 sources confirmed; absent only from SRC-B. This is an authoring gap in `knowledge-architecture.ts`, not a real exclusion. Water in stored diesel is a documented agricultural contamination problem (condensation in fuel tanks, seasonal storage). The `AQUAGUARD` GEO definition explicitly names agriculture. Include with confidence.
 - **DURATECH**: 1/4 sources (SRC-B only). The DURATECH GEO definition describes "mixed-fleet operations in mining, construction, and agriculture" — this is one indirect confirmation from SRC-D prose. Agricultural fleets (tractors, harvesters across a farm operation) are a viable DURATECH kit use case. Marginally recommend YES, but owner confirmation preferred.
 - **SYNTEPORE**: 2/4 sources (SRC-C, SRC-D). SYNTEPORE GEO definition explicitly mentions "humid tropical agricultural operations." Coastal and tropical agriculture is a real sub-segment. However, the primary agriculture market (temperate, seasonal grain) does not require all-synthetic humidity-resistant intake media. Recommend as a conditional addition: only if tropical/coastal agriculture is a target segment.
 
@@ -89,13 +83,11 @@ PENDING OWNER DECISION: SYNTEPORE
 
 ### 6. Business Impact
 
-Excluding AQUAGUARD from Agriculture would mean the Part Search engine and AI Engine cannot recommend fuel water-separation products to agricultural customers — a high-value product category for harvest season. Including SYNTEPORE opens the technology to tropical agriculture markets (Brazil, Southeast Asia) where the all-synthetic intake is genuinely required.
 
 ---
 
 ### 7. Technical Impact
 
-AQUAGUARD inclusion closes the water contamination coverage gap for Agriculture: diesel water contamination has documented impacts on agricultural equipment (injector stiction, microbial growth in stored fuel). Without it, `getContaminationByTechnology('AGRICULTURE')` would not return `DIESEL_WATER` via the technology graph. Including DURATECH enables kit-based cross-sell for multi-equipment farm operations.
 
 ---
 
@@ -106,7 +98,7 @@ AQUAGUARD inclusion closes the water contamination coverage gap for Agriculture:
 | MACROCORE | NO | Include — 4/4 confirmed |
 | NANOFORCE | NO | Include — 2/4 confirmed |
 | SYNTRAX | NO | Include — 2/4 confirmed |
-| AQUAGUARD | NO | Include — 3/4 confirmed (SRC-B omission is authoring gap) |
+|  | NO | Include — 3/4 confirmed (SRC-B omission is authoring gap) |
 | DURATECH | **YES** | Recommend YES — does ELIMFILTERS sell DURATECH kits for agricultural fleets? |
 | SYNTEPORE | **YES** | Recommend CONDITIONAL — is tropical/coastal agriculture a target market? |
 
@@ -126,7 +118,6 @@ Operating profile: HIGH contamination exposure · High-dust earthwork sites, unp
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `MACROCORE™`, `NANOFORCE™`, `AQUAGUARD™`, `SYNTRAX™` |
 | **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `MACROCORE`, `NANOFORCE`, `DURATECH` |
 | **SRC-C** `TECH_COMPARISON.industries` | MACROCORE → "Mining, Agriculture, Construction, Power Gen" ✅ · NANOFORCE → "Construction, Mining, Manufacturing, Marine" ✅ · MICROKAPPA → "Trucks, Bus & Coach, Construction, Mining" ✅ |
 | **SRC-D** `GEO_DEFINITIONS` prose | MACROCORE: "construction zones" explicit ✅ · NANOFORCE: industrial machinery — implicit for construction ✅ · DURATECH: "construction" explicit ✅ |
@@ -140,12 +131,11 @@ Operating profile: HIGH contamination exposure · High-dust earthwork sites, unp
 | MACROCORE | ✅ | ✅ | ✅ | ✅ | **4** |
 | NANOFORCE | ✅ | ✅ | ✅ | ✅ | **4** |
 | DURATECH | — | ✅ | — | ✅ | **2** |
-| AQUAGUARD | ✅ | — | — | — | **1** ⚠️ |
+|  | ✅ | — | — | — | **1** ⚠️ |
 | SYNTRAX | ✅ | — | — | — | **1** ⚠️ |
 | MICROKAPPA | — | — | ✅ | — | **1** ⚠️ |
 
 **Conflicts**:
-- `AQUAGUARD`: in SRC-A only. Water in fuel is less of a primary construction concern than in marine or agriculture.
 - `SYNTRAX`: in SRC-A only. Lube oil protection for construction engines is plausible but not confirmed by any technical source.
 - `DURATECH`: in SRC-B and SRC-D — a strong 2-source confirmation not present in the marketing grouping.
 - `MICROKAPPA`: in SRC-C only (comparison table lists "Construction" as an industry) — cabin air protection in high-silica-dust environments is a legitimate occupational health concern.
@@ -158,7 +148,6 @@ Operating profile: HIGH contamination exposure · High-dust earthwork sites, unp
 
 ```
 RECOMMENDED: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'SYNTRAX']
-PENDING OWNER DECISION: AQUAGUARD, MICROKAPPA
 ```
 
 ---
@@ -169,7 +158,6 @@ PENDING OWNER DECISION: AQUAGUARD, MICROKAPPA
 - **NANOFORCE**: 4/4 sources. High-pressure hydraulic contamination is the defining contamination challenge for excavators, loaders, and compactors. Non-negotiable.
 - **DURATECH**: 2/4 sources. Fleet kit consolidation for construction equipment fleets is explicitly named in the DURATECH GEO definition. Construction operations typically run mixed fleets (excavators, dozers, compactors) with staggered service intervals — exactly the DURATECH use case.
 - **SYNTRAX**: 1/4 sources (SRC-A only). However, engine lube oil protection for heavy diesel construction equipment has strong technical merit. Recommending YES on grounds that construction diesel engines need oil protection as much as any other heavy-duty application. The SRC-B omission is likely an authoring oversight consistent with the broader pattern of catalogue.json including lube oil technologies that knowledge-architecture.ts omits.
-- **AQUAGUARD**: 1/4 sources. Water in construction fuel is a real problem (site fueling from bulk tanks, condensation) but less severe than in marine or agriculture. Fuel separation exists at the system level (Fuel system page). Owner decision: is AQUAGUARD promoted for construction equipment fuel systems?
 - **MICROKAPPA**: 1/4 sources. Silica dust in construction cab environments is a documented occupational health issue (IARC Group 1 carcinogen at chronic exposure levels). The TECH_COMPARISON table explicitly lists Construction. The case is strong, but SRC-A and SRC-B did not include it.
 
 ---
@@ -194,7 +182,7 @@ DURATECH inclusion enables the `getSystemsByTechnology('DURATECH')` and `getTech
 | NANOFORCE | NO | Include — 4/4 confirmed |
 | DURATECH | NO | Include — 2/4 confirmed |
 | SYNTRAX | NO | Include — strong technical case despite 1/4 sources |
-| AQUAGUARD | **YES** | Recommend YES if bulk-tank construction fueling is a target scenario |
+|  | **YES** | Recommend YES if bulk-tank construction fueling is a target scenario |
 | MICROKAPPA | **YES** | Recommend YES — silica dust cab exposure is a compliance concern |
 
 ---
@@ -213,10 +201,8 @@ Operating profile: EXTREME contamination exposure · 24/7 operation, extreme dus
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `MACROCORE™`, `SYNTRAX™`, `NANOFORCE™`, `AQUAGUARD™`, `SYNTEPORE™` |
 | **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `MACROCORE`, `NANOFORCE`, `DURATECH`, `SYNTRAX` |
 | **SRC-C** `TECH_COMPARISON.industries` | MACROCORE → "Mining, Agriculture, Construction, Power Gen" ✅ · NANOFORCE → "Construction, Mining, Manufacturing, Marine" ✅ |
-| **SRC-D** `GEO_DEFINITIONS` prose | MACROCORE: "mining equipment" explicit ✅ · DURATECH: "mining, construction, and agriculture" explicit ✅ · AQUAGUARD: "mining" explicit ✅ · SYNTEPORE: no mining mention |
 
 ---
 
@@ -227,12 +213,11 @@ Operating profile: EXTREME contamination exposure · 24/7 operation, extreme dus
 | MACROCORE | ✅ | ✅ | ✅ | ✅ | **4** |
 | NANOFORCE | ✅ | ✅ | ✅ | — | **3** |
 | SYNTRAX | ✅ | ✅ | — | — | **2** |
-| AQUAGUARD | ✅ | — | — | ✅ | **2** |
+|  | ✅ | — | — | ✅ | **2** |
 | DURATECH | — | ✅ | — | ✅ | **2** |
 | SYNTEPORE | ✅ | — | — | — | **1** ⚠️ |
 
 **Conflicts**:
-- `AQUAGUARD`: in SRC-A and SRC-D (GEO definition explicitly names mining) — confirmed by 2 sources but absent from SRC-B. Likely authoring gap.
 - `DURATECH`: in SRC-B and SRC-D — 2-source confirmation not reflected in marketing grouping.
 - `SYNTEPORE`: in SRC-A only. GEO definition for SYNTEPORE does not mention mining. SRC-A may reflect an upsell listing rather than a technical requirement.
 
@@ -241,7 +226,6 @@ Operating profile: EXTREME contamination exposure · 24/7 operation, extreme dus
 ### 4. Recommended Final Technology List
 
 ```
-RECOMMENDED: ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'DURATECH']
 PENDING OWNER DECISION: SYNTEPORE
 ```
 
@@ -252,7 +236,6 @@ PENDING OWNER DECISION: SYNTEPORE
 - **MACROCORE**: 4/4 sources. The mining industry feature in `catalogue.json` explicitly lists "AIR INTAKE / SYNTEPORE™" and "HYDRAULIC / NANOFORCE™" but the industry techTags lead with MACROCORE. At dust concentrations up to 15,000 mg/m³ in sub-Saharan mining, air intake protection is the primary contamination challenge.
 - **NANOFORCE**: 3/4 sources. Hydraulic contamination in mining equipment (loaders, drill rigs) is the second primary failure driver. Non-negotiable.
 - **SYNTRAX**: 2/4 sources. Engine oil protection for 24/7 mining duty cycles — haul truck engines running continuously at high load with minimal downtime windows. Justified.
-- **AQUAGUARD**: 2/4 sources. The AQUAGUARD GEO definition explicitly names "mining" as an application. Bulk diesel stored at remote mine sites is a documented water contamination vector (condensation cycles, brine exposure in underground operations). SRC-B omission is an authoring gap.
 - **DURATECH**: 2/4 sources. Mining fleet standardisation (identical haul trucks across a site operation) is a flagship DURATECH use case. GEO definition confirms "mining" explicitly. SRC-A omission is the gap.
 - **SYNTEPORE**: 1/4 sources. The mining industry features card in `catalogue.json` mentions "AIR INTAKE / SYNTEPORE™" in its feature list — this is notable. However, SYNTEPORE is positioned as an all-synthetic intake for humid/coastal/marine environments. Standard open-pit mining is not a humidity-driven environment. Underground mining with high humidity is a potential edge case.
 
@@ -260,13 +243,11 @@ PENDING OWNER DECISION: SYNTEPORE
 
 ### 6. Business Impact
 
-At EXTREME contamination exposure and ~$180,000/hour downtime cost, mining is the highest-value industry for ELIMFILTERS. Including DURATECH enables kit-based fleet standardisation as a premium offering — a documented revenue driver for high-volume mining fleet operators. AQUAGUARD inclusion enables recommendation of fuel water separation for remote mine sites where bulk diesel quality is inconsistent.
 
 ---
 
 ### 7. Technical Impact
 
-With the recommended list, `mapKnowledgeNetwork('MINING', 'industry')` returns a complete protection profile: air (MACROCORE), hydraulic (NANOFORCE), lube oil (SYNTRAX), fuel water (AQUAGUARD), and fleet kit (DURATECH). Without AQUAGUARD and DURATECH, the graph is missing two protection domains for the highest-severity industry in the catalogue.
 
 ---
 
@@ -277,7 +258,7 @@ With the recommended list, `mapKnowledgeNetwork('MINING', 'industry')` returns a
 | MACROCORE | NO | Include — 4/4 confirmed |
 | NANOFORCE | NO | Include — 3/4 confirmed |
 | SYNTRAX | NO | Include — 2/4 confirmed |
-| AQUAGUARD | NO | Include — 2/4 confirmed (SRC-B gap, SRC-D explicit) |
+|  | NO | Include — 2/4 confirmed (SRC-B gap, SRC-D explicit) |
 | DURATECH | NO | Include — 2/4 confirmed (SRC-A gap, SRC-D explicit) |
 | SYNTEPORE | **YES** | Recommend CONDITIONAL — is underground mining (humid) a target segment, or does MACROCORE cover all mining air intake? |
 
@@ -297,10 +278,7 @@ Operating profile: MEDIUM-HIGH contamination exposure · High humidity, salt spr
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `MACROCORE™`, `AQUAGUARD™`, `SYNTRAX™`, `NANOFORCE™` |
-| **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `NANOFORCE`, `AQUAGUARD`, `DURATECH`, `SYNTRAX` |
-| **SRC-C** `TECH_COMPARISON.industries` | SYNTEPORE → "Marine, Offshore, Coastal, Agriculture" ✅ · AQUAGUARD → "Marine, Oil & Gas, Power Gen, Agriculture" ✅ · NANOFORCE → "Construction, Mining, Manufacturing, Marine" ✅ |
-| **SRC-D** `GEO_DEFINITIONS` prose | AQUAGUARD: "marine" explicit ✅ · NANOFORCE: "heavy industrial machinery" — implicit ✅ · SYNTEPORE: "marine vessels, offshore platforms" explicit ✅ · MARINECLEAN: "marine environments, commercial vessels, offshore platforms" explicit ✅ |
+| **SRC-D** `GEO_DEFINITIONS` prose |  |
 
 ---
 
@@ -308,7 +286,7 @@ Operating profile: MEDIUM-HIGH contamination exposure · High humidity, salt spr
 
 | Technology | SRC-A | SRC-B | SRC-C | SRC-D | Count |
 |------------|:-----:|:-----:|:-----:|:-----:|:-----:|
-| AQUAGUARD | ✅ | ✅ | ✅ | ✅ | **4** |
+|  | ✅ | ✅ | ✅ | ✅ | **4** |
 | NANOFORCE | ✅ | ✅ | ✅ | ✅ | **4** |
 | SYNTRAX | ✅ | ✅ | — | — | **2** |
 | MACROCORE | ✅ | — | — | — | **1** ⚠️ |
@@ -327,7 +305,6 @@ Operating profile: MEDIUM-HIGH contamination exposure · High humidity, salt spr
 ### 4. Recommended Final Technology List
 
 ```
-RECOMMENDED: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'SYNTEPORE', 'MARINECLEAN']
 PENDING OWNER DECISION: MACROCORE, DURATECH
 ```
 
@@ -335,7 +312,6 @@ PENDING OWNER DECISION: MACROCORE, DURATECH
 
 ### 5. Reasoning
 
-- **AQUAGUARD**: 4/4 sources. Marine fuel water contamination (salt spray, humidity, brine exposure) is the defining contamination challenge. Absolute inclusion.
 - **NANOFORCE**: 4/4 sources. Hydraulic systems on commercial vessels (steering, anchor, crane, stabilizer circuits). Absolute inclusion.
 - **SYNTRAX**: 2/4 sources. Marine diesel engine oil protection for continuous operation. Included.
 - **SYNTEPORE**: 2/4 sources (SRC-C and SRC-D). SYNTEPORE is all-synthetic, moisture-resistant — technically the correct air intake technology for salt-air environments, superior to MACROCORE in humid/coastal conditions. The SYNTEPORE GEO definition explicitly names "marine vessels" and "offshore platforms." This is the appropriate air intake technology for marine, not MACROCORE.
@@ -361,7 +337,7 @@ Including MARINECLEAN in `UNIFIED_INDUSTRIES['MARINE'].applicableTechnologies` e
 
 | Technology | Decision Required | Recommendation |
 |------------|:----------------:|----------------|
-| AQUAGUARD | NO | Include — 4/4 confirmed |
+|  | NO | Include — 4/4 confirmed |
 | NANOFORCE | NO | Include — 4/4 confirmed |
 | SYNTRAX | NO | Include — 2/4 confirmed |
 | SYNTEPORE | NO | Include — 2/4 confirmed, technically superior to MACROCORE in marine environments |
@@ -389,7 +365,6 @@ Operating profile: MEDIUM contamination exposure · Mixed urban/highway, seasona
 |--------|---------------------|
 | **SRC-A** `catalogue.json` techTags | `SYNTRAX™`, `MACROCORE™`, `SYNTEPORE™`, `MICROKAPPA™` |
 | **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `MACROCORE`, `NANOFORCE`, `DURATECH` |
-| **SRC-C** `TECH_COMPARISON.industries` | SYNTRAX → "Trucks & Fleets, Bus & Coach, Railway" ✅ · MICROKAPPA → "Trucks, Bus & Coach, Construction, Mining" ✅ · COOLTECH → "Trucks & Fleets, Bus & Coach, Power Gen" ✅ (Automotive/Trucks overlap in TECH_COMPARISON) |
 | **SRC-D** `GEO_DEFINITIONS` prose | DURATECH: "mixed-fleet operations in mining, construction, and agriculture" — does not mention automotive ⚠️ · SYNTRAX: "mobile and stationary applications" — implies automotive ✅ · MACROCORE: "on-road vehicles" explicit ✅ |
 
 ---
@@ -404,7 +379,7 @@ Operating profile: MEDIUM contamination exposure · Mixed urban/highway, seasona
 | DURATECH | — | ✅ | — | — | **1** ⚠️ |
 | NANOFORCE | — | ✅ | — | — | **1** ⚠️ |
 | SYNTEPORE | ✅ | — | — | — | **1** ⚠️ |
-| COOLTECH | — | — | ✅ | — | **1** ⚠️ |
+|  | — | — | ✅ | — | **1** ⚠️ |
 
 **This is the most contested conflict of all seven industries**. Only MACROCORE appears in both SRC-A and SRC-B. Every other technology is in at most one of the two primary sources.
 
@@ -419,7 +394,6 @@ Operating profile: MEDIUM contamination exposure · Mixed urban/highway, seasona
 
 ```
 RECOMMENDED: ['MACROCORE', 'SYNTRAX', 'MICROKAPPA', 'DURATECH']
-PENDING OWNER DECISION: NANOFORCE, SYNTEPORE, COOLTECH
 ```
 
 ---
@@ -432,7 +406,6 @@ PENDING OWNER DECISION: NANOFORCE, SYNTEPORE, COOLTECH
 - **DURATECH**: 1/4 sources (SRC-B only). Fleet kit standardisation for commercial vehicle fleets (mixed OEM truck brands) is an explicit DURATECH use case. DURATECH GEO definition mentions "mixed-fleet operations" but names mining, construction, agriculture — not automotive. However, the Kits product page is explicitly designed for "Mack, Freightliner, International, Isuzu, Mitsubishi platforms" — all commercial truck OEMs. DURATECH clearly serves automotive/truck fleets. Recommend YES on technical grounds despite single-source confirmation.
 - **NANOFORCE**: 1/4 sources (SRC-B only). Hydraulic systems are less central to commercial vehicles than to construction/mining equipment. Commercial trucks have some hydraulic circuits (tipper mechanisms, tail-lifts) but it is not the primary contamination concern. Requires owner clarification.
 - **SYNTEPORE**: 1/4 sources (SRC-A only). SYNTEPORE is positioned for marine/coastal/humid environments. Urban truck operation does not typically require all-synthetic moisture-resistant intake media. Including MACROCORE is sufficient for standard commercial vehicle air intake.
-- **COOLTECH**: 1/4 sources (SRC-C only). Diesel engine coolant protection (SCA additive, cavitation prevention) is a legitimate heavy truck service item. Trucks & Fleets and Bus & Coach are explicitly listed in the TECH_COMPARISON for COOLTECH. This is a borderline inclusion — technically justified but single-source.
 
 ---
 
@@ -458,7 +431,6 @@ The AUTOMOTIVE industry having only MACROCORE as a confirmed technology creates 
 | DURATECH | NO | Include — 1/4 but Kits page explicitly targets commercial truck OEMs |
 | NANOFORCE | **YES** | Recommend CONDITIONAL — are hydraulic circuits (tipper trucks, tail-lifts) a target service item? |
 | SYNTEPORE | **YES** | Recommend EXCLUDE — is all-synthetic intake needed for commercial vehicles, or does MACROCORE cover the application? |
-| COOLTECH | **YES** | Recommend YES — commercial diesel engines need SCA coolant protection. Is COOLTECH actively sold to truck/bus fleets? |
 
 ---
 ---
@@ -470,7 +442,6 @@ The AUTOMOTIVE industry having only MACROCORE as a confirmed technology creates 
 
 Operating profile: LOW-MEDIUM contamination exposure · Climate-controlled, clean facilities · 15°C to +30°C · Precision equipment, proportional control, long fluid life · Primary equipment: machine tools, presses, injection moulding, hydraulic systems.
 
-**This classification distinction matters**: Manufacturing is an indoor, climate-controlled environment. Technologies designed for extreme outdoor dust (MACROCORE) or fuel water ingress (AQUAGUARD) have lower applicability here than in outdoor industries.
 
 ---
 
@@ -478,7 +449,6 @@ Operating profile: LOW-MEDIUM contamination exposure · Climate-controlled, clea
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `MACROCORE™`, `SYNTRAX™`, `AQUAGUARD™`, `NANOFORCE™` |
 | **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `NANOFORCE`, `MICROKAPPA`, `SYNTRAX` |
 | **SRC-C** `TECH_COMPARISON.industries` | NANOFORCE → "Construction, Mining, Manufacturing, Marine" ✅ |
 | **SRC-D** `GEO_DEFINITIONS` prose | NANOFORCE: "heavy industrial machinery" — implies manufacturing ✅ · MICROKAPPA: "machine tool coolants and specialty fluids" (from knowledge-arch description) implicit ✅ |
@@ -492,13 +462,12 @@ Operating profile: LOW-MEDIUM contamination exposure · Climate-controlled, clea
 | NANOFORCE | ✅ | ✅ | ✅ | ✅ | **4** |
 | SYNTRAX | ✅ | ✅ | — | — | **2** |
 | MACROCORE | ✅ | — | — | — | **1** ⚠️ |
-| AQUAGUARD | ✅ | — | — | — | **1** ⚠️ |
+|  | ✅ | — | — | — | **1** ⚠️ |
 | MICROKAPPA | — | ✅ | — | ✅ | **2** |
 
 **Conflicts**:
 - `MICROKAPPA`: in SRC-B and SRC-D — not in marketing grouping. MICROKAPPA in `knowledge-architecture.ts` is described as "Micro-filtration for machine tool coolants and specialty fluids" — its `category` is explicitly "Coolant & Specialty Filtration." This is a direct match for manufacturing machine tools.
 - `MACROCORE`: in SRC-A only. Manufacturing facilities are climate-controlled, clean environments. High-dust outdoor air intake protection (MACROCORE's core use case) is least relevant here.
-- `AQUAGUARD`: in SRC-A only. Water separation from diesel fuel is not a primary concern in indoor manufacturing environments where fuel systems are not typically exposed to the water ingress vectors (condensation, humidity, salt) that drive AQUAGUARD adoption.
 
 ---
 
@@ -506,7 +475,6 @@ Operating profile: LOW-MEDIUM contamination exposure · Climate-controlled, clea
 
 ```
 RECOMMENDED: ['NANOFORCE', 'SYNTRAX', 'MICROKAPPA']
-PENDING OWNER DECISION: MACROCORE, AQUAGUARD
 ```
 
 ---
@@ -517,19 +485,16 @@ PENDING OWNER DECISION: MACROCORE, AQUAGUARD
 - **SYNTRAX**: 2/4 sources. Manufacturing equipment with diesel engines (industrial diesel generators, compressors, engine-driven pumps) need oil protection. Included.
 - **MICROKAPPA**: 2/4 sources (SRC-B + SRC-D). The knowledge-architecture.ts description of MICROKAPPA is explicitly "Micro-filtration for machine tool coolants and specialty fluids." The MICROKAPPA category is "Coolant & Specialty Filtration." Manufacturing machine tools are the primary application this technology was designed for. The SRC-A omission is likely because `catalogue.json` lists MICROKAPPA as a cabin air technology (the Cabin product page) while knowledge-architecture.ts captures its broader application. Inclusion is technically justified regardless of SRC-C/SRC-A absence.
 - **MACROCORE**: 1/4 sources. Indoor climate-controlled manufacturing facilities do not expose equipment to the extreme outdoor dust concentrations (1,500–15,000 mg/m³) that MACROCORE is designed to address. Manufacturing indoor air quality does not require the same intake protection as agricultural or mining environments. Recommend EXCLUDE unless specific manufacturing sub-segments (foundry, cement, metal processing) are a target.
-- **AQUAGUARD**: 1/4 sources. Water in stored diesel is not a primary manufacturing concern (indoor fuel storage, climate-controlled). Recommend EXCLUDE unless specific manufacturing sub-segments (outdoor industrial plants, metal fabrication with on-site diesel) are identified.
 
 ---
 
 ### 6. Business Impact
 
-Including MICROKAPPA for Manufacturing opens the coolant filtration product line to a market segment where it has the highest technical relevance — machine tool coolants are a high-margin, recurring-purchase category. Excluding MACROCORE and AQUAGUARD from Manufacturing prevents the AI Engine from incorrectly recommending outdoor/extreme-environment products to climate-controlled facility operators — a positioning accuracy benefit that protects brand credibility.
 
 ---
 
 ### 7. Technical Impact
 
-The current knowledge-architecture.ts MANUFACTURING entry already reflects the correct technical picture (NANOFORCE for hydraulics, MICROKAPPA for machine tool coolants, SYNTRAX for oil). The catalogue.json techTags (MACROCORE, AQUAGUARD) are inconsistent with the described operating environment. The recommendation aligns with the technical logic embedded in SRC-B, not the marketing grouping in SRC-A.
 
 ---
 
@@ -541,7 +506,7 @@ The current knowledge-architecture.ts MANUFACTURING entry already reflects the c
 | SYNTRAX | NO | Include — 2/4 confirmed |
 | MICROKAPPA | NO | Include — 2/4 confirmed, explicitly designed for machine tool coolants |
 | MACROCORE | **YES** | Recommend EXCLUDE — are any MACROCORE products sold to manufacturing facilities? |
-| AQUAGUARD | **YES** | Recommend EXCLUDE — is diesel water separation a manufacturing use case? |
+|  | **YES** | Recommend EXCLUDE — is diesel water separation a manufacturing use case? |
 
 ---
 ---
@@ -559,10 +524,6 @@ Operating profile: MEDIUM contamination exposure · Industrial sites, variable e
 
 | Source | Technologies Listed |
 |--------|---------------------|
-| **SRC-A** `catalogue.json` techTags | `SYNTEPORE™`, `SYNTRAX™`, `AQUAGUARD™`, `DRYCORE™` |
-| **SRC-B** `knowledge-architecture.ts` applicableTechnologies | `MACROCORE`, `NANOFORCE`, `AQUAGUARD`, `SYNTRAX` |
-| **SRC-C** `TECH_COMPARISON.industries` | MACROCORE → "Mining, Agriculture, Construction, Power Gen" ✅ · AQUAGUARD → "Marine, Oil & Gas, Power Gen, Agriculture" ✅ · COOLTECH → "Trucks & Fleets, Bus & Coach, Power Gen" ✅ |
-| **SRC-D** `GEO_DEFINITIONS` prose | MACROCORE: "stationary power generation" explicit ✅ · AQUAGUARD: "power generation" explicit ✅ · DRYCORE: "industrial and mobile equipment operating in high-humidity environments" — implicit for compressors ✅ |
 
 ---
 
@@ -570,13 +531,13 @@ Operating profile: MEDIUM contamination exposure · Industrial sites, variable e
 
 | Technology | SRC-A | SRC-B | SRC-C | SRC-D | Count |
 |------------|:-----:|:-----:|:-----:|:-----:|:-----:|
-| AQUAGUARD | ✅ | ✅ | ✅ | ✅ | **4** |
+|  | ✅ | ✅ | ✅ | ✅ | **4** |
 | SYNTRAX | ✅ | ✅ | — | — | **2** |
 | MACROCORE | — | ✅ | ✅ | ✅ | **3** |
 | SYNTEPORE | ✅ | — | — | — | **1** ⚠️ |
 | DRYCORE | ✅ | — | — | ✅ | **2** |
 | NANOFORCE | — | ✅ | — | — | **1** ⚠️ |
-| COOLTECH | — | — | ✅ | — | **1** ⚠️ |
+|  | — | — | ✅ | — | **1** ⚠️ |
 
 **Most notable conflict**:
 - `MACROCORE`: absent from SRC-A but confirmed by SRC-B, SRC-C, and SRC-D. The MACROCORE GEO definition explicitly names "stationary power generation." The TECH_COMPARISON lists "Power Gen" for MACROCORE. The SRC-A omission is the most significant catalogue.json gap in the seven conflicts — a technology with 3/4 source confirmation is missing from the marketing grouping.
@@ -588,20 +549,15 @@ Operating profile: MEDIUM contamination exposure · Industrial sites, variable e
 ### 4. Recommended Final Technology List
 
 ```
-RECOMMENDED: ['MACROCORE', 'AQUAGUARD', 'SYNTRAX', 'DRYCORE']
-PENDING OWNER DECISION: NANOFORCE, COOLTECH, SYNTEPORE
 ```
 
 ---
 
 ### 5. Reasoning
 
-- **AQUAGUARD**: 4/4 sources. Fuel stability during long-term standby storage is the defining contamination challenge for power generation. NFPA 110 standby diesel stored beyond 12 months without treatment risks microbial growth. AQUAGUARD addresses this directly. Absolute inclusion.
 - **MACROCORE**: 3/4 sources. MACROCORE GEO definition explicitly names "stationary power generation" and "industrial compressors." Diesel generator air intake requires the same contamination control as any other diesel engine. The SRC-A absence is a clear authoring gap. Include with high confidence.
 - **SYNTRAX**: 2/4 sources. Engine oil protection for continuous-duty diesel generators operating at constant load. Extended drain intervals for generator sets are a documented maintenance optimisation. Included.
 - **DRYCORE**: 2/4 sources (SRC-A and SRC-D). Compressed air systems on generator sites (pneumatic control valves, instruments, tool air) require moisture control. DRYCORE's molecular sieve desiccant is the appropriate technology for compressed air purity in control systems. SRC-B and SRC-C do not list it, but the DRYCORE GEO definition explicitly covers "industrial equipment" and the catalogue.json listing is confirmed. Included.
-- **NANOFORCE**: 1/4 sources (SRC-B only). Hydraulic systems on large turbine generators and compressor units exist but are not the primary contamination concern for this industry. The main issues are fuel (AQUAGUARD), air intake (MACROCORE), and oil (SYNTRAX). Requires owner decision.
-- **COOLTECH**: 1/4 sources (SRC-C only). Diesel generator coolant systems (SCA additives, liner cavitation prevention) are a legitimate maintenance item. TECH_COMPARISON lists "Power Gen" for COOLTECH. A reasonable technical case exists.
 - **SYNTEPORE**: 1/4 sources (SRC-A only). Standard industrial generator environments do not require all-synthetic humidity-resistant intake media. MACROCORE is sufficient for generator air intake protection. Recommend EXCLUDE.
 
 ---
@@ -614,7 +570,6 @@ MACROCORE's absence from the catalogue.json Power Generation techTags means that
 
 ### 7. Technical Impact
 
-With the recommended list, the power generation knowledge graph covers: air intake (MACROCORE), fuel water (AQUAGUARD), lube oil (SYNTRAX), and compressed air (DRYCORE). This represents complete protection across all fluid systems on a diesel generator set. The current SRC-A list (SYNTEPORE, SYNTRAX, AQUAGUARD, DRYCORE) substitutes SYNTEPORE for MACROCORE — technically incorrect for standard generator air intake environments.
 
 ---
 
@@ -622,13 +577,12 @@ With the recommended list, the power generation knowledge graph covers: air inta
 
 | Technology | Decision Required | Recommendation |
 |------------|:----------------:|----------------|
-| AQUAGUARD | NO | Include — 4/4 confirmed |
+|  | NO | Include — 4/4 confirmed |
 | MACROCORE | NO | Include — 3/4 confirmed (SRC-A gap is clear authoring error) |
 | SYNTRAX | NO | Include — 2/4 confirmed |
 | DRYCORE | NO | Include — 2/4 confirmed, compressed air on generator sites |
 | SYNTEPORE | NO | Exclude — MACROCORE covers generator air intake; SYNTEPORE is for marine/coastal environments |
 | NANOFORCE | **YES** | Recommend CONDITIONAL — are hydraulic systems on turbines/compressors a service item? |
-| COOLTECH | **YES** | Recommend YES — is COOLTECH actively sold for generator coolant systems? |
 
 ---
 ---
@@ -641,18 +595,17 @@ The following decisions must be made before `unified-data.ts` is written. Each i
 |----------|------------|:-------------------:|----------------------|
 | AGRICULTURE | DURATECH | **INCLUDE** | GEO definition names agriculture; fleet kit logic applies to farm equipment operations |
 | AGRICULTURE | SYNTEPORE | **EXCLUDE** | Temperate agriculture does not require all-synthetic moisture-resistant intake |
-| CONSTRUCTION | AQUAGUARD | **INCLUDE** | Bulk-tank site fueling creates fuel water contamination risk |
+| CONSTRUCTION |  | **INCLUDE** | Bulk-tank site fueling creates fuel water contamination risk |
 | CONSTRUCTION | MICROKAPPA | **INCLUDE** | Silica dust cab exposure is a compliance concern; TECH_COMPARISON confirms |
 | MINING | SYNTEPORE | **EXCLUDE** | Open-pit mining is not humidity-driven; MACROCORE covers standard mining intake |
 | MARINE | MACROCORE | **EXCLUDE** | SYNTEPORE is superior for salt-air/moisture environments |
 | MARINE | DURATECH | **EXCLUDE** | Vessel servicing is not kit-driven in standard commercial marine operations |
 | AUTOMOTIVE | NANOFORCE | **EXCLUDE** | Hydraulic circuits are not the primary commercial vehicle service item |
 | AUTOMOTIVE | SYNTEPORE | **EXCLUDE** | Urban commercial vehicles do not require moisture-resistant intake media |
-| AUTOMOTIVE | COOLTECH | **INCLUDE** | Commercial diesel engines need SCA coolant protection; TECH_COMPARISON confirms |
+| AUTOMOTIVE |  | **INCLUDE** | Commercial diesel engines need SCA coolant protection; TECH_COMPARISON confirms |
 | MANUFACTURING | MACROCORE | **EXCLUDE** | Indoor climate-controlled facilities do not face outdoor dust contamination |
-| MANUFACTURING | AQUAGUARD | **EXCLUDE** | Indoor fuel systems not exposed to primary AQUAGUARD ingress vectors |
 | POWER GENERATION | NANOFORCE | **EXCLUDE** | Hydraulic circuits are secondary to fuel, air, and oil for generator sets |
-| POWER GENERATION | COOLTECH | **INCLUDE** | Generator coolant maintenance (SCA, cavitation prevention) is a valid service item |
+| POWER GENERATION |  | **INCLUDE** | Generator coolant maintenance (SCA, cavitation prevention) is a valid service item |
 
 **Total decisions: 14**
 **Recommend INCLUDE as default: 6**
@@ -665,24 +618,18 @@ The following decisions must be made before `unified-data.ts` is written. Each i
 The following lists represent the recommended authoritative `applicableTechnologies` for each industry, incorporating both confirmed (≥2 sources) technologies and recommended defaults. They are ready for owner review and, if approved, ready to be written directly into `unified-data.ts` Section 5 (Step 1f and 1g of the implementation plan).
 
 ```
-AGRICULTURE:     ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'DURATECH']
                  + SYNTEPORE pending owner YES
 
-CONSTRUCTION:    ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'DURATECH', 'AQUAGUARD', 'MICROKAPPA']
 
-MINING:          ['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'DURATECH']
                  + SYNTEPORE pending owner YES
 
-MARINE:          ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'SYNTEPORE', 'MARINECLEAN']
                  + MACROCORE pending owner YES
 
-AUTOMOTIVE:      ['MACROCORE', 'SYNTRAX', 'MICROKAPPA', 'DURATECH', 'COOLTECH']
                  + NANOFORCE pending owner YES
 
 MANUFACTURING:   ['NANOFORCE', 'SYNTRAX', 'MICROKAPPA']
                  + MACROCORE pending owner YES
 
-POWER_GENERATION: ['MACROCORE', 'AQUAGUARD', 'SYNTRAX', 'DRYCORE', 'COOLTECH']
                    + NANOFORCE pending owner YES
 ```
 

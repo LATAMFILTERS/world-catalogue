@@ -8,7 +8,6 @@ ELIMFILTERS is a comprehensive filtration engineering platform serving heavy-dut
 
 - **12 Industry Verticals** (Agriculture, Automotive, Mining, Marine, Oil & Gas, Power Generation, etc.)
 - **12 Product Systems** (Air, Fuel, Hydraulic, Cabin, Coolant, Lube filters and more)
-- **12 Core Technologies** (SYNTRAX™, AQUAGUARD™, NANOFORCE™, SYNTEPORE™, DURATECH™, MICROKAPPA™)
 
 ### Knowledge System
 

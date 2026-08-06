@@ -23,9 +23,7 @@ From `update-lube-descriptions` endpoint, the following filter_type values are e
 | Oil Filter | SYNTRAX | Spin-On (alternate label for Lube Filter) |
 | Hydraulic Filter | NANOFORCE | Spin-On, Cartridge |
 | Fuel Filter | SYNTEPORE | Inline, Spin-On, Cartridge |
-| Fuel/Water Separator | AQUAGUARD | Spin-On, Cartridge |
 | Cabin Air Filter | MICROKAPPA | — |
-| Coolant Filter | COOLTECH | Spin-On |
 | Crankcase Ventilation Filter | (varies) | — |
 
 **Additional types likely in DB:**

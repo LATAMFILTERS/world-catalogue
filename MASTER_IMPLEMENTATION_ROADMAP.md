@@ -153,7 +153,6 @@ Eliminate the four parallel, unsynchronized data registries (knowledge-architect
   - `UnifiedProduct` — catalogue products (systems), unchanged but typed
 
 **2.3 — Migrate All 12 Technologies**
-- Add the 6 missing technologies to `knowledge-architecture.ts`: SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, Aquaguard Series
 - For each, populate: `relatedStandards[]`, `addressesContamination[]`, `applicableIndustries[]`, `keyMetrics{}`, `description`, plus the GEO prose definition
 - Verify all 12 technology slugs match `getTechLogoFile()` mappings exactly
 
@@ -522,10 +521,8 @@ Expand the Contamination section from 3 case studies into a comprehensive Failur
 
 Based on gaps identified in contamination coverage, create four new case study pages:
 
-- **Coolant System Contamination** (`/contamination/coolant-system`): Liner pitting, cavitation erosion, silicate gelation, SCA depletion, scale deposits. Related technology: COOLTECH. Standard: ASTM D3306, ASTM D6210.
 - **Compressed Air Contamination** (`/contamination/compressed-air`): Oil vapor carryover, liquid water accumulation, particulate from compressor wear, microbial growth in desiccant dryers. Related technology: DRYCORE. Standard: ISO 8573-1.
 - **Cabin Air Contamination** (`/contamination/cabin-air`): PM2.5/PM10 diesel exhaust particulate, operator occupational exposure, allergen transmission, pesticide vapor in agricultural cabs. Related technology: MICROKAPPA. Standard: ISO 11155, EU Directive 2019/130.
-- **Fuel Microbial Contamination** (`/contamination/fuel-microbial`): ULSD microbial growth (Hormoconis resinae), tank corrosion, filter plugging, fuel quality degradation. Related technology: AQUAGUARD. Standard: ASTM D6304, IP 385.
 
 **6.3 — Build the Root Cause Analysis (RCA) Tool**
 - Create `/knowledge-system/contamination/rca` — an interactive decision tree

@@ -157,7 +157,6 @@ Footer                    Link grid              ■■     LOW
 
 2. **A performance curve:** Beta ratio graphs are standard in filtration engineering. An interactive or animated performance curve (efficiency vs. particle size) would be unprecedented for an industrial filtration brand's website and would signal to engineering buyers that this is a technical peer, not a supplier.
 
-3. **An application context scene:** Every technology should be shown in its operating environment. DRYCORE in a compressed air line. AQUAGUARD protecting a high-pressure common rail injector. Not stock photography — illustrated or rendered industrial contexts.
 
 ### 3.4 Industry Pages — Opportunities
 
@@ -363,7 +362,6 @@ Expected result: Tighter visual experience, more intentional typography hierarch
 Apple's iPhone pages open with the device static, then a scroll triggers it into motion. ELIMFILTERS equivalent: a filtration system cross-section static, then a scroll triggers fluid flow and particle capture animation. The technology reveals itself.
 
 **2. Feature isolation**  
-Apple dedicates full viewport sections to single features. Each ELIMFILTERS technology (MACROCORE, AQUAGUARD, etc.) deserves its own full-viewport moment before the comparison table.
 
 **3. Text arrives last**  
 Apple animations typically move before text appears. Text explains what you've already seen. ELIMFILTERS: contamination particle animation plays, then "MACROCORE™ captures particles at 18µm absolute" appears. The text lands with weight because the viewer already understood the mechanism.

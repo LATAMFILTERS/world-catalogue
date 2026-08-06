@@ -24,7 +24,6 @@ The Single Source of Truth migration is effectively complete for all cleanly rem
 | `frontend/src/app/technologies/page.tsx` | ~~GEO_DEFINITIONS, TECH_COMPARISON~~ | REMOVED in Task 4 |
 | `frontend/src/app/systems/page.tsx` | `SYSTEMS`, `TECH_MAP` | CANNOT MIGRATE — unique content |
 | `frontend/src/app/home/page.tsx` | `FAILURE_MODES`, `STATS`, `CTA_SLIDES` | CANNOT MIGRATE — UI display data |
-| `frontend/src/components/AquaguardPage.tsx` | `STAGES`, `SPECS`, `APPLICATIONS` | CANNOT MIGRATE — product-specific data |
 | `frontend/src/app/knowledge-system/standards/air-intake-systems/page.tsx` | `STANDARDS`, `TECHNOLOGIES` | CANNOT MIGRATE — see analysis |
 | `frontend/src/app/knowledge-system/standards/lube-oil-systems/page.tsx` | `STANDARDS`, `TECHNOLOGIES` | CANNOT MIGRATE — see analysis |
 | `frontend/src/app/knowledge-system/standards/fuel-systems/page.tsx` | `STANDARDS`, `TECHNOLOGIES` | CANNOT MIGRATE — see analysis |

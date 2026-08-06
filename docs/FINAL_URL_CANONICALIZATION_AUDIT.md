@@ -36,30 +36,18 @@ These slugs were reachable via browser/crawler as /technologies/<slug>.
 
 | # | Historical Slug       | Current Canonical Slug | Rename Reason                         |
 |---|-----------------------|------------------------|---------------------------------------|
-| 1 | aquaguard             | hydrocore              | Strategic rename: stronger brand      |
-| 2 | aquaguard-series      | hydrocore-series       | Same rename, series variant           |
-| 3 | cooltech              | thermacore             | Strategic rename: thermal specificity |
 
-### A1 — aquaguard → hydrocore
 
 Redirect implemented:       YES — HTTP 301 (render.yaml, rule 1 and 2)
-Client-side fallback:       YES — frontend/src/app/technologies/aquaguard/page.tsx
 sitemap.xml status:         REMOVED (was line 258, replaced with /technologies/hydrocore)
-sitemap-ai.xml status:      NOT LISTED (aquaguard never in ai sitemap; hydrocore IS listed)
 llm.txt status:             DOCUMENTED in corrections table
-  "AQUAGUARD™ → HYDROCORE™ (renamed 2026-06)"
-out/ directory:             frontend/out/technologies/aquaguard/ EXISTS (redirect page)
 Risk assessment:            ZERO — 301 fires at CDN edge before any file is served
 
-### A2 — aquaguard-series → hydrocore-series
 
 Redirect implemented:       YES — HTTP 301 (render.yaml, rule 5 and 6)
 Client-side fallback:       NO — render.yaml 301 is the sole redirect mechanism
-sitemap.xml status:         NEVER LISTED (aquaguard-series was never in sitemap)
 sitemap-ai.xml status:      NOT LISTED (neither was hydrocore-series)
 llm.txt status:             DOCUMENTED in corrections table
-  "AQUAGUARD/SERIES™ → HYDROCORE SERIES™ (renamed 2026-06)"
-out/ directory:             frontend/out/technologies/aquaguard-series/ DOES NOT EXIST
   (no file at that path — render.yaml 301 intercepts before rewrite)
 Risk assessment:            LOW — 301 handles server-side; no file needed
 
@@ -67,15 +55,10 @@ Note: hydrocore-series canonical page exists at
 frontend/out/technologies/hydrocore-series/ and is served correctly.
 Not yet in sitemap.xml or sitemap-ai.xml (pre-launch variant, acceptable gap).
 
-### A3 — cooltech → thermacore
 
 Redirect implemented:       YES — HTTP 301 (render.yaml, rule 3 and 4)
-Client-side fallback:       YES — frontend/src/app/technologies/cooltech/page.tsx
 sitemap.xml status:         REMOVED (was line 276, replaced with /technologies/thermacore)
-sitemap-ai.xml status:      NOT LISTED (cooltech never in ai sitemap; thermacore IS listed)
 llm.txt status:             DOCUMENTED in corrections table
-  "COOLTECH™ → THERMACORE™ (renamed 2026-06)"
-out/ directory:             frontend/out/technologies/cooltech/ EXISTS (redirect page)
 Risk assessment:            ZERO — 301 fires at CDN edge before any file is served
 
 ---
@@ -90,8 +73,6 @@ exposed as public-facing /technologies/<slug> URLs. No redirect needed.
 | 1 | SYNTAPORE  | syntepore      | Deprecated brand | 005_populate CASE expr  |
 | 2 | SINTRAX    | syntrax        | Known alias      | 005_populate CASE expr  |
 | 3 | INTAKCORE  | intekcore      | DB typo          | 005_populate CASE expr  |
-| 4 | AQUAGUARD  | hydrocore      | Strategic rename | 005_populate CASE expr  |
-| 5 | COOLTECH   | thermacore     | Strategic rename | 005_populate CASE expr  |
 
 All five are mapped via the CASE normalization expression in:
   migrations/kg-phase1/005_populate_product_technologies.sql
@@ -128,12 +109,6 @@ All 11 KG-seeded technologies (9 ACTIVE + 2 PRE_LAUNCH).
 
 Route evaluation order (top to bottom — first match wins):
 
-1. REDIRECT /technologies/aquaguard  → /technologies/hydrocore  (301)
-2. REDIRECT /technologies/aquaguard/ → /technologies/hydrocore/ (301)
-3. REDIRECT /technologies/cooltech   → /technologies/thermacore (301)
-4. REDIRECT /technologies/cooltech/  → /technologies/thermacore/(301)
-5. REDIRECT /technologies/aquaguard-series  → /technologies/hydrocore-series  (301)
-6. REDIRECT /technologies/aquaguard-series/ → /technologies/hydrocore-series/ (301)
 7. REWRITE  /*                        → /index.html (SPA catch-all)
 
 No conflicts. Rules 1-6 are exact path matches; rule 7 is a wildcard.
@@ -145,12 +120,6 @@ Exact matches always evaluated before wildcards by Render routing engine.
 
 | URL                              | HTTP Code | Location Header              | Crawler: all bots |
 |----------------------------------|-----------|------------------------------|-------------------|
-| /technologies/aquaguard          | 301       | /technologies/hydrocore      | YES — follows     |
-| /technologies/aquaguard/         | 301       | /technologies/hydrocore/     | YES — follows     |
-| /technologies/cooltech           | 301       | /technologies/thermacore     | YES — follows     |
-| /technologies/cooltech/          | 301       | /technologies/thermacore/    | YES — follows     |
-| /technologies/aquaguard-series   | 301       | /technologies/hydrocore-series | YES — follows   |
-| /technologies/aquaguard-series/  | 301       | /technologies/hydrocore-series/| YES — follows   |
 | /technologies/hydrocore          | 200       | —                            | YES — indexes     |
 | /technologies/thermacore         | 200       | —                            | YES — indexes     |
 | /technologies/hydrocore-series   | 200       | —                            | YES — indexes     |
@@ -168,9 +137,6 @@ Zero orphaned technology URLs:        CONFIRMED
   All historical slugs redirect to canonical destinations.
 
 Zero historical slugs without redirects: CONFIRMED
-  aquaguard        → 301 → hydrocore         (render.yaml rules 1-2)
-  aquaguard-series → 301 → hydrocore-series  (render.yaml rules 5-6)
-  cooltech         → 301 → thermacore        (render.yaml rules 3-4)
 
 Zero technology names outside taxonomy:  CONFIRMED
   No public page, sitemap entry, or llm.txt entry references any name

@@ -20,10 +20,8 @@ The authoritative technology platform is confirmed as **9 technologies**. Three 
 | `SYNTEPORE` | SYNTEPORE™ | Air Intake (marine / humid) |
 | `INTEKCORE` | INTEKCORE™ | Air Intake (housing) |
 | `DRYCORE` | DRYCORE™ | Compressed Air |
-| `AQUAGUARD` | AQUAGUARD™ | Fuel Cleanliness |
 | `NANOFORCE` | NANOFORCE™ | Hydraulic |
 | `SYNTRAX` | SYNTRAX™ | Lubrication |
-| `COOLTECH` | COOLTECH™ | Cooling System |
 | `MICROKAPPA` | MICROKAPPA™ | Cabin Protection |
 
 ### Deprecated Technologies — Remove From All Sources
@@ -31,8 +29,6 @@ The authoritative technology platform is confirmed as **9 technologies**. Three 
 | Key | Display Name | Reason | Replacement Logic |
 |-----|-------------|--------|-------------------|
 | `DURATECH` | DURATECH™ | Removed from platform | Oil filtration domain transfers fully to SYNTRAX |
-| `MARINECLEAN` | MARINECLEAN™ | Removed from platform | Marine filtration covered by AQUAGUARD + SYNTEPORE + NANOFORCE |
-| `AQUAGUARD_SERIES` | AQUAGUARD/SERIES™ | Removed as separate entity | Consolidated into AQUAGUARD technology |
 
 ### Impact of DURATECH Removal on Knowledge Graph
 
@@ -147,25 +143,19 @@ RAILWAY, BUS_COACH, MANUFACTURING, OIL_GAS, POWER_GENERATION
 
 ---
 
-### AQUAGUARD™
 
 | Field | Value |
 |-------|-------|
-| Key | `AQUAGUARD` |
-| Slug | `aquaguard` |
-| Logo | `logo-aquaguard.png` |
 | System Domain | `Fuel Cleanliness` |
 | Category | Fuel Water Separation |
 | Tagline | Turbine-Stage Water Extraction — 99.8% Efficiency |
 
-**Note**: AQUAGUARD_SERIES (FH 900/1000 product line) is deprecated as a separate entity. The three-stage turbine fuel separator product line is now attributed to AQUAGUARD as the underlying technology. References to "AQUAGUARD/SERIES™" in content are updated to "AQUAGUARD™ Turbine Series" or simply "AQUAGUARD™."
 
 **Applicable Industries**:
 ```
 AGRICULTURE, MARINE, POWER_GENERATION, OIL_GAS, CONSTRUCTION,
 MINING, TRUCKS_FLEETS
 ```
-*Rationale*: AQUAGUARD applies wherever diesel is stored or used in environments subject to water ingress: agricultural bulk tank condensation, marine brine/humidity, generator standby storage, offshore fuel quality, construction site fueling, mine site fuel logistics, and long-haul fuel system water accumulation.
 
 **Addresses Contamination**: `DIESEL_WATER`, `PARTICLE_WEAR`
 *(Stage 3 precision barrier also captures fuel-borne particles)*
@@ -226,13 +216,9 @@ POWER_GENERATION, RAILWAY, TRUCKS_FLEETS, WASTE_MUNICIPAL, OIL_GAS
 
 ---
 
-### COOLTECH™
 
 | Field | Value |
 |-------|-------|
-| Key | `COOLTECH` |
-| Slug | `cooltech` |
-| Logo | `logo-cooltech.png` |
 | System Domain | `Cooling System` |
 | Category | Coolant Filtration |
 | Tagline | SCA Additive Release — Liner Cavitation Prevention |
@@ -241,7 +227,6 @@ POWER_GENERATION, RAILWAY, TRUCKS_FLEETS, WASTE_MUNICIPAL, OIL_GAS
 ```
 AUTOMOTIVE, BUS_COACH, TRUCKS_FLEETS, POWER_GENERATION, MANUFACTURING
 ```
-*Rationale*: COOLTECH applies to heavy diesel engines with high thermal loading where SCA depletion and liner pitting are failure modes: commercial vehicles (automotive, trucks, bus & coach), continuous-duty diesel generators (power generation), and industrial diesel-driven machinery (manufacturing).
 
 **Addresses Contamination**: `COOLANT_CONTAMINATION`
 
@@ -276,7 +261,6 @@ WASTE_MUNICIPAL, MANUFACTURING
 
 ## 2. Industries — Final Authoritative Technology Mappings
 
-Twelve industry entries. Each entry incorporates the conflict reconciliation decisions from `PHASE2_CONFLICT_RECONCILIATION.md` with all deprecated technologies (`DURATECH`, `MARINECLEAN`, `AQUAGUARD_SERIES`) removed.
 
 Changes from the previous reconciled lists are shown in the `Δ` column.
 
@@ -293,7 +277,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
@@ -301,7 +284,7 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | MACROCORE | 4/4 confirmed | No change |
 | NANOFORCE | 2/4 confirmed | No change |
 | SYNTRAX | 2/4 confirmed | No change |
-| AQUAGUARD | 3/4 confirmed | No change |
+|  | 3/4 confirmed | No change |
 | ~~DURATECH~~ | Was recommended INCLUDE | **Removed — deprecated** |
 | SYNTEPORE | Owner decision pending | Excluded pending YES |
 
@@ -321,7 +304,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'SYNTRAX', 'MICROKAPPA', 'COOLTECH']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
@@ -329,7 +311,7 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | MACROCORE | 3/4 confirmed | No change |
 | SYNTRAX | 3/4 confirmed | No change |
 | MICROKAPPA | 2/4 confirmed | No change |
-| COOLTECH | 1/4 (TECH_COMPARISON) | No change — default INCLUDE applied |
+|  | 1/4 (TECH_COMPARISON) | No change — default INCLUDE applied |
 | ~~DURATECH~~ | Was recommended INCLUDE | **Removed — deprecated** |
 | NANOFORCE | Owner decision pending | Excluded pending YES |
 | SYNTEPORE | Owner decision pending | Excluded pending YES |
@@ -378,7 +360,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD', 'MICROKAPPA']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
@@ -386,7 +367,7 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | MACROCORE | 4/4 confirmed | No change |
 | NANOFORCE | 4/4 confirmed | No change |
 | SYNTRAX | 1/4 (strong technical case) | No change |
-| AQUAGUARD | Default INCLUDE | No change |
+|  | Default INCLUDE | No change |
 | MICROKAPPA | Default INCLUDE | No change |
 | ~~DURATECH~~ | Was recommended INCLUDE | **Removed — deprecated** |
 
@@ -406,7 +387,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['NANOFORCE', 'SYNTRAX', 'MICROKAPPA', 'COOLTECH', 'DRYCORE']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
@@ -414,10 +394,10 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | NANOFORCE | 4/4 confirmed | No change |
 | SYNTRAX | 2/4 confirmed | No change |
 | MICROKAPPA | 2/4 confirmed | No change |
-| COOLTECH | Added | Not in previous conflict analysis — industrial diesel equipment needs coolant protection |
+|  | Added | Not in previous conflict analysis — industrial diesel equipment needs coolant protection |
 | DRYCORE | Added | Not in previous conflict analysis — pneumatic production systems require ISO 8573-1 air purity |
 | MACROCORE | Owner decision pending | Excluded pending YES |
-| AQUAGUARD | Owner decision pending | Excluded pending YES |
+|  | Owner decision pending | Excluded pending YES |
 
 **Relevant Contamination**: `HYDRAULIC_CONTAMINATION`, `PARTICLE_WEAR`, `CABIN_AIR_CONTAMINATION`, `COOLANT_CONTAMINATION`, `COMPRESSED_AIR_MOISTURE`
 **Applicable Standards**: `NFPA_T214`, `ISO_16889`, `DIN_51524`, `ISO_8573_1`, `ISO_11155`
@@ -435,20 +415,18 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'SYNTEPORE']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
 |------------|:-----------------:|-------------------------------|
 | NANOFORCE | 4/4 confirmed | No change |
-| AQUAGUARD | 4/4 confirmed | No change |
+|  | 4/4 confirmed | No change |
 | SYNTRAX | 2/4 confirmed | No change |
 | SYNTEPORE | 2/4 confirmed | No change |
 | ~~MARINECLEAN~~ | Was recommended INCLUDE | **Removed — deprecated** |
 | MACROCORE | Owner decision pending | Excluded pending YES |
 | ~~DURATECH~~ | Was recommended EXCLUDE | Removed — deprecated |
 
-**Impact of MARINECLEAN removal**: MARINE no longer has a dedicated corrosion-resistant hardware technology in its profile. AQUAGUARD and SYNTEPORE provide the functional coverage (water separation and salt-resistant intake), but the IMO-certified housing/corrosion protection that MARINECLEAN provided has no direct replacement in the 9-technology platform. This is an acknowledged coverage gap — marine hardware corrosion protection is a customer need that is no longer addressed by a named technology in the platform.
 
 **Relevant Contamination**: `DIESEL_WATER`, `HYDRAULIC_CONTAMINATION`, `PARTICLE_WEAR`
 **Applicable Standards**: `ASTM_D6304`, `ISO_16889`, `ISO_5011`, `ISO_12937`, `ISO_14540`
@@ -466,7 +444,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'NANOFORCE', 'SYNTRAX', 'AQUAGUARD']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
@@ -474,7 +451,7 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | MACROCORE | 4/4 confirmed | No change |
 | NANOFORCE | 3/4 confirmed | No change |
 | SYNTRAX | 2/4 confirmed | No change |
-| AQUAGUARD | 2/4 confirmed | No change |
+|  | 2/4 confirmed | No change |
 | ~~DURATECH~~ | Was recommended INCLUDE | **Removed — deprecated** |
 | SYNTEPORE | Owner decision pending | Excluded pending YES |
 
@@ -494,7 +471,6 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'AQUAGUARD', 'SYNTRAX', 'DRYCORE']
 ```
 
 *Source*: `catalogue.json` techTags (all four technologies are in the final platform — no conflicts, no deprecations affect this entry)
@@ -502,7 +478,7 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 | Technology | Basis |
 |------------|-------|
 | MACROCORE | Air intake for gas turbines and engine-driven compressors on offshore/onshore platforms |
-| AQUAGUARD | Fuel water separation — offshore fuel storage subject to humidity, brine, condensation cycles |
+|  | Fuel water separation — offshore fuel storage subject to humidity, brine, condensation cycles |
 | SYNTRAX | Lube oil protection for rotating equipment (turbines, compressors, pumps) at continuous load |
 | DRYCORE | Instrument air purity — offshore control valve systems require ISO 8573-1 air quality |
 
@@ -522,16 +498,15 @@ Changes from the previous reconciled lists are shown in the `Δ` column.
 
 **Final applicableTechnologies**:
 ```
-['MACROCORE', 'AQUAGUARD', 'SYNTRAX', 'DRYCORE', 'COOLTECH']
 ```
 
 | Technology | Source Confidence | Δ from conflict reconciliation |
 |------------|:-----------------:|-------------------------------|
-| AQUAGUARD | 4/4 confirmed | No change |
+|  | 4/4 confirmed | No change |
 | MACROCORE | 3/4 confirmed (SRC-A gap was authoring error) | No change |
 | SYNTRAX | 2/4 confirmed | No change |
 | DRYCORE | 2/4 confirmed | No change |
-| COOLTECH | Default INCLUDE | No change |
+|  | Default INCLUDE | No change |
 | SYNTEPORE | Excluded | No change |
 | NANOFORCE | Owner decision pending | Excluded pending YES |
 
@@ -638,16 +613,15 @@ These systems require no decision — their primary technologies are all in the 
 |--------|------|:------------:|-----------------|:-------------:|
 | Airfilter | `airfilter` | MACROCORE | — | Air Intake |
 | Cabin | `cabin` | MICROKAPPA | — | Cabin Protection |
-| Coolant | `coolant` | COOLTECH | — | Cooling System |
+| Coolant | `coolant` |  | — | Cooling System |
 | Dryer | `dryer` | DRYCORE | — | Compressed Air |
-| Fuel | `fuel` | SYNTEPORE | AQUAGUARD | Fuel Cleanliness |
+| Fuel | `fuel` | SYNTEPORE |  | Fuel Cleanliness |
 | Housing | `housing` | INTEKCORE | MACROCORE | Air Intake |
 | Hydraulic | `hydraulic` | NANOFORCE | — | Hydraulic |
 | Oil | `oil` | SYNTRAX | — | Lubrication |
-| Water | `water` | AQUAGUARD | — | Fuel Cleanliness |
+| Water | `water` |  | — | Fuel Cleanliness |
 
 **Supporting technology notes**:
-- **Fuel** system: SYNTEPORE is the multi-stage fuel filter media (ISO 16332 for injector defense); AQUAGUARD is the water separation stage within the same system. Both are active technologies.
 - **Housing** system: INTEKCORE is the housing architecture; MACROCORE is the filter element that mounts within it. Frequently sold together.
 
 ---
@@ -656,27 +630,16 @@ These systems require no decision — their primary technologies are all in the 
 
 ---
 
-#### Aquaguard Series System
 
 | | |
 |---|---|
-| Slug | `aquaguard-series` *(URL must be preserved — existing indexed route)* |
-| Current primary tech | `AQUAGUARD_SERIES` (deprecated) |
-| New primary tech | `AQUAGUARD` |
 
-**Resolution**: The `aquaguard-series` system slug and URL path are preserved — this is an existing indexed route. The system's primary technology attribution changes from the deprecated `AQUAGUARD_SERIES` entity to the active `AQUAGUARD` technology.
 
-**Content update required**: The system description references "AQUAGUARD/SERIES™ FH 900 and 1000" product models. The product line itself (FH 900/1000 turbine separator) still exists as a product — only the separate AQUAGUARD_SERIES technology entity is deprecated. The system description can retain FH 900/1000 model references but attributes them to AQUAGUARD™ rather than AQUAGUARD/SERIES™.
 
 **Final mapping**:
 ```
-System: Aquaguard Series
-Slug:   aquaguard-series   (preserved — do not change)
-Key:    AQUAGUARD_SYSTEM
-Primary technology:    AQUAGUARD
 Supporting tech:       —
 System domain:         Fuel Cleanliness
-Description note:      FH 900/1000 product references retained; tech attribution updated to AQUAGUARD™
 ```
 
 ---
@@ -726,11 +689,8 @@ Impact: /systems/kits route would be removed.
 
 With MARINECLEAN deprecated, two paths are available:
 
-**Option A — Reassign to AQUAGUARD + SYNTEPORE as dual-primary**:
 ```
-Primary technology: AQUAGUARD
 Supporting tech: SYNTEPORE, NANOFORCE
-Rationale: AQUAGUARD provides fuel water separation (marine's primary contamination challenge).
            SYNTEPORE provides salt-resistant air intake.
            Together they cover the key marine contamination domains.
 Impact: The IMO certification, naval-grade alloy construction, and H2S resistance claims
@@ -741,9 +701,7 @@ Impact: The IMO certification, naval-grade alloy construction, and H2S resistanc
 **Option B — Deprecate the Marine system**:
 ```
 Remove the Marine product system from the platform.
-Marine customers are directed to AQUAGUARD and SYNTEPORE technologies directly.
 Impact: /systems/marine route would be removed.
-        Marine industry page still exists and references AQUAGUARD + SYNTEPORE + NANOFORCE.
 ```
 
 **Recommendation**: Owner decision required before proceeding. This is the most significant consequence of MARINECLEAN's deprecation. The Marine system was the only system built entirely around a deprecated technology with no direct functional equivalent in the 9-technology platform.
@@ -760,7 +718,6 @@ Every file that must be updated when `unified-data.ts` is implemented. These are
 
 | File | References to Remove | Action |
 |------|---------------------|--------|
-| `catalogue.json` | Technologies array: `Aquaguard Series`, `Duratech`, `Marineclean` entries (3 of 12) | Remove 3 technology entries; keep products/systems pending owner decision on Kits and Marine |
 | `catalogue.json` | Products: `Kits` (DURATECH reference in description), `Marine` (MARINECLEAN reference) | Pending owner decision |
 | `catalogue.json` | Industries `techTags`: DURATECH in TRUCKS_FLEETS | Remove DURATECH from TRUCKS_FLEETS techTags |
 | `knowledge-architecture.ts` | `TECHNOLOGIES.DURATECH` record | Remove entire record — replaced by SYNTRAX |
@@ -774,17 +731,14 @@ Every file that must be updated when `unified-data.ts` is implemented. These are
 
 | File | Reference | Action |
 |------|-----------|--------|
-| `technologies/page.tsx` | `GEO_DEFINITIONS['aquaguard-series']` | Remove entry |
 | `technologies/page.tsx` | `GEO_DEFINITIONS['duratech']` | Remove entry |
 | `technologies/page.tsx` | `GEO_DEFINITIONS['marineclean']` | Remove entry |
-| `technologies/page.tsx` | `TECH_COMPARISON` | No action needed — DURATECH, MARINECLEAN, AQUAGUARD_SERIES were already absent from this table (they were the 3 missing entries). The 9-technology comparison table is already aligned with the final platform. |
 | `technologies/page.tsx` | JSON-LD `numberOfItems` | Update from `9` to `9` — no change needed (already correct) |
 
 ### 4.3 Technology Detail Pages
 
 | File | Reference | Action |
 |------|-----------|--------|
-| `techPagesData.ts` | `'aquaguard-series'` entry | Remove — deprecated entity |
 | `techPagesData.ts` | `'duratech'` entry | Remove — deprecated entity |
 | `techPagesData.ts` | `'marineclean'` entry | Remove — deprecated entity |
 
@@ -792,7 +746,6 @@ Every file that must be updated when `unified-data.ts` is implemented. These are
 
 | File | Reference | Action |
 |------|-----------|--------|
-| `systems/page.tsx` | `slug: 'aquaguard-series'` reference | Update to use AQUAGUARD primary tech attribution |
 
 ### 4.5 Knowledge System Pages (22 files)
 
@@ -800,7 +753,6 @@ These pages reference DURATECH in canonical knowledge blocks and technology list
 
 | Page | DURATECH context | Replacement |
 |------|-----------------|-------------|
-| `knowledge-system/page.tsx` | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD` | Replace DURATECH with SYNTRAX |
 | `knowledge-system/bridges/page.tsx` | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH` | Replace DURATECH with SYNTRAX |
 | `knowledge-system/bridges/aftermarket-selection/page.tsx` | DURATECH in technology list | Replace with SYNTRAX |
 | `knowledge-system/bridges/fleet-solutions/page.tsx` | DURATECH in technology list | Replace with SYNTRAX |
@@ -811,14 +763,12 @@ These pages reference DURATECH in canonical knowledge blocks and technology list
 | `knowledge-system/compare/total-cost-ownership/page.tsx` | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX` | Remove DURATECH |
 | `knowledge-system/contamination/particle-wear/page.tsx` | DURATECH in contamination description + Related_Technologies | Replace with SYNTRAX; update technical description |
 | `knowledge-system/contamination/hydraulic-system/page.tsx` | `DURATECH™ return line filters` in technical description | Replace with SYNTRAX or remove sentence if not applicable |
-| `knowledge-system/fleet/page.tsx` | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD` | Replace DURATECH with SYNTRAX |
 | `knowledge-system/fleet/reducing-downtime/page.tsx` | DURATECH role description + Related_Technologies | Replace with SYNTRAX; update role |
 | `knowledge-system/fleet/fuel-efficiency/page.tsx` | DURATECH role description | Replace with SYNTRAX; update role |
 | `knowledge-system/fleet/total-cost-ownership/page.tsx` | DURATECH role description + Related_Technologies | Replace with SYNTRAX; update role |
 | `knowledge-system/science/page.tsx` | `DURATECH (extended lifecycle)` in canonical block | Replace with SYNTRAX |
 | `knowledge-system/standards/lube-oil-systems/page.tsx` | DURATECH role + Related_Technologies | Replace with SYNTRAX |
 | `knowledge-system/standards/cabin-safety-systems/page.tsx` | DURATECH in technology listing | Remove — DURATECH is not a cabin safety technology |
-| `knowledge-system/standards/compressed-air-systems/page.tsx` | `slug: 'aquaguard-series'` reference | Update to `aquaguard` |
 
 ---
 
@@ -834,14 +784,11 @@ This section reconciles the final platform against the earlier planning document
 | SYNTEPORE | ✅ Included | No change |
 | INTEKCORE | ✅ Included | No change |
 | DRYCORE | ✅ Included | No change |
-| AQUAGUARD | ✅ Included | Note: absorbs AQUAGUARD_SERIES identity |
 | NANOFORCE | ✅ Included | No change |
 | SYNTRAX | ✅ Included | Now sole oil filtration technology; absorbs DURATECH's oil wear role |
-| COOLTECH | ✅ Included | No change |
+|  | ✅ Included | No change |
 | MICROKAPPA | ✅ Included | No change |
 | ~~DURATECH~~ | ❌ Removed | Deprecated — oil filtration role absorbed by SYNTRAX |
-| ~~MARINECLEAN~~ | ❌ Removed | Deprecated — marine coverage now via AQUAGUARD + SYNTEPORE |
-| ~~AQUAGUARD_SERIES~~ | ❌ Removed | Deprecated — consolidated into AQUAGUARD |
 
 ### 5.2 UNIFIED_INDUSTRIES: 12 entries (unchanged count)
 
@@ -853,7 +800,6 @@ All 12 industries remain. Changes are technology list updates only:
 | AUTOMOTIVE | DURATECH | −1 |
 | BUS_COACH | None | 0 |
 | CONSTRUCTION | DURATECH | −1 |
-| MANUFACTURING | None | 0 (+COOLTECH, +DRYCORE added) |
 | MARINE | MARINECLEAN, DURATECH | −2 |
 | MINING | DURATECH | −1 |
 | OIL_GAS | None | 0 |
@@ -867,7 +813,6 @@ All 12 industries remain. Changes are technology list updates only:
 | System | Status | Change |
 |--------|--------|--------|
 | Airfilter | ✅ Clean | No change |
-| Aquaguard Series | ✅ Resolved | Primary tech: AQUAGUARD_SERIES → AQUAGUARD |
 | Cabin | ✅ Clean | No change |
 | Coolant | ✅ Clean | No change |
 | Dryer | ✅ Clean | No change |
@@ -875,7 +820,6 @@ All 12 industries remain. Changes are technology list updates only:
 | Housing | ✅ Clean | No change |
 | Hydraulic | ✅ Clean | No change |
 | Kits | ⚠️ Owner decision | Option A (SYNTRAX) or Option B (deprecate) |
-| Marine | ⚠️ Owner decision | Option A (AQUAGUARD primary) or Option B (deprecate) |
 | Oil | ✅ Clean | No change |
 | Water | ✅ Clean | No change |
 
@@ -884,12 +828,9 @@ All 12 industries remain. Changes are technology list updates only:
 ```typescript
 // BEFORE (12):
 type TechnologyKey = 'MACROCORE' | 'NANOFORCE' | 'MICROKAPPA' | 'SYNTRAX'
-  | 'AQUAGUARD' | 'DURATECH' | 'SYNTEPORE' | 'INTEKCORE'
-  | 'DRYCORE' | 'COOLTECH' | 'MARINECLEAN' | 'AQUAGUARD_SERIES';
 
 // AFTER (9):
 type TechnologyKey = 'MACROCORE' | 'NANOFORCE' | 'MICROKAPPA' | 'SYNTRAX'
-  | 'AQUAGUARD' | 'SYNTEPORE' | 'INTEKCORE' | 'DRYCORE' | 'COOLTECH';
 ```
 
 ---
@@ -901,17 +842,14 @@ Two system decisions and several technology inclusion decisions remain open. Imp
 | # | Decision | Options | Default if no input |
 |---|----------|---------|:-------------------:|
 | 1 | Kits system primary technology | Option A: SYNTRAX-anchored kit / Option B: Deprecate Kits system | Option A (SYNTRAX) |
-| 2 | Marine system primary technology | Option A: AQUAGUARD-primary marine / Option B: Deprecate Marine system | Owner must decide — no safe default |
 | 3 | AGRICULTURE: include SYNTEPORE? | YES (tropical ag) / NO (temperate ag only) | NO |
 | 4 | CONSTRUCTION: include NANOFORCE? | Already included in final list — no decision needed | Included |
 | 5 | MINING: include SYNTEPORE? | YES (underground humid mining) / NO (open-pit only) | NO |
 | 6 | MARINE: include MACROCORE? | YES / NO (SYNTEPORE covers marine air intake) | NO |
 | 7 | AUTOMOTIVE: include NANOFORCE? | YES (tipper hydraulics, tail-lifts) / NO | NO |
 | 8 | MANUFACTURING: include MACROCORE? | YES (some outdoor-adjacent plants) / NO (indoor only) | NO |
-| 9 | MANUFACTURING: include AQUAGUARD? | YES (outdoor fuel systems) / NO (indoor only) | NO |
 | 10 | POWER_GENERATION: include NANOFORCE? | YES (turbine/compressor hydraulics) / NO | NO |
 
-**Decision #2 (Marine system) is the only blocking decision.** All other entries can be written with defaults and corrected after owner input. The Marine system cannot be authored in `unified-data.ts` until the owner confirms whether it is retained (with AQUAGUARD as primary) or deprecated.
 
 ---
 

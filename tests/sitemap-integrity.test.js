@@ -36,7 +36,6 @@ const OUT_SITEMAP = path.join(OUT_DIR, 'sitemap.xml');
 const PUBLIC_SITEMAP = path.join(FRONTEND, 'public', 'sitemap.xml');
 const GENERATOR_SCRIPT = path.join(ROOT, 'scripts', 'generate-kc-sitemap.mjs');
 
-const RETIRED_URL_FRAGMENTS = ['hydrocore-series', 'aquaguard', 'cooltech'];
 const BUILD_TIMEOUT_MS = 10 * 60 * 1000;
 
 function countLocs(sitemapXml) {

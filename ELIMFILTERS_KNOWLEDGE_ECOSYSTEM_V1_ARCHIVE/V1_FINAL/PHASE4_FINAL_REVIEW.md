@@ -36,7 +36,6 @@ Five dangling wikilink keys exist in the current graph: `CABIN`, `FUEL`, `HYDRAU
 
 `DIN_51524` remains a single-reference stub (referenced only by SYNTRAX). Optional to create.
 
-Deprecated technology notes (AQUAGUARD, COOLTECH) and ecosystem notes (MARINECLEAN, DURATECH) defined in Phase 3A scope were never created. These represent historical context, not active traversal paths.
 
 ### What remains strategic
 
@@ -242,7 +241,6 @@ The platform is architecturally sound and functionally complete for its primary 
 - 5 System entity notes (CABIN, FUEL, HYDRAULIC, OIL, AIR system nodes — non-air domains)
 - DIN_51524 standard note
 - INTEKCORE and SYNTEPORE ProductFamily notes
-- Deprecated technology notes (AQUAGUARD, COOLTECH)
 - Ecosystem notes (MARINECLEAN, DURATECH)
 - `CITATION_CHANGELOG.md`
 - JSON-LD on Fleet and Comparison pages

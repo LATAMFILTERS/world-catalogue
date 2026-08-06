@@ -32,7 +32,6 @@
 | E5 | System | 17 (12+5) | `AIRFILTER`, `AIR_INTAKE_DOMAIN` | `03-systems/` |
 | E6 | Technology | 13 | `MACROCORE` | `01-technologies/` |
 | E7 | ProductFamily | ~30 | `AIRFILTER_PRIMARY` | `08-product-families/` |
-| E8 | Product | ~36 (curated) | `AQUAGUARD_SERIES_900FH` | `09-products/` |
 | E9 | Standard | 23 | `ISO_16889` | `04-standards/` |
 | E10 | TechnicalArticle | ~16 | `TA_LUBE_OIL_SYSTEMS` | `11-articles/` |
 | E11 | CaseStudy | 6 | `CS_DIESEL_WATER` | `10-case-studies/` |
@@ -578,15 +577,9 @@ These TODO flags are inherited from UD and must be preserved until verified.
 
 ```mermaid
 graph LR
-    AQUAGUARD["AQUAGUARD™\n(deprecated)"]
-    COOLTECH["COOLTECH™\n(deprecated)"]
     HYDROCORE["HYDROCORE™\n(active)"]
     THERMOCORE["THERMOCORE™\n(active)"]
 
-    AQUAGUARD -->|replaced_by| HYDROCORE
-    COOLTECH -->|replaced_by| THERMOCORE
-    HYDROCORE -.->|predecessor backlink| AQUAGUARD
-    THERMOCORE -.->|predecessor backlink| COOLTECH
 ```
 
 ---

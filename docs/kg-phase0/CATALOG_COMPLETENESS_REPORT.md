@@ -106,11 +106,8 @@ Rarely populated:
 | Air Filter | ~800-1000 | High | High | ~100% MACROCORE |
 | Lube Filter | ~1500-2000 | High | Medium | ~100% SYNTRAX |
 | Hydraulic Filter | ~400-600 | Medium | Medium | ~100% NANOFORCE |
-| Fuel Filter | ~300-500 | Medium | Low | ~100% SYNTEPORE/AQUAGUARD |
 | Cabin Air Filter | ~100-200 | Medium | Low | ~100% MICROKAPPA |
-| Fuel/Water Sep. | ~200-300 | Medium | Low | ~100% AQUAGUARD |
 | Air Housing | ~50-100 | Low | Low | ~100% INTEKCORE |
-| Coolant Filter | ~50-100 | Medium | Low | ~100% COOLTECH |
 | Air Dryer | ~50-100 | Low | Low | ~100% DRYCORE |
 | Crankcase Vent. | ~50-100 | Low | Low | Varies |
 
@@ -137,10 +134,8 @@ The `update-lube-descriptions` admin endpoint (line 36) batch-updated descriptio
 - Air Filter Primary (radial, axial, tetramax, powercore) → MACROCORE™ (EN + ES)
 - Air Filter Secondary → MACROCORE™ (EN + ES)
 - Air Dryer → DRYCORE™ description (EN + ES)
-- Coolant Filter → COOLTECH™ description (EN + ES)
 - Hydraulic Filter Spin-On → NANOFORCE™ description (EN + ES)
 - Hydraulic Filter Cartridge → NANOFORCE™ description (EN + ES)
-- Fuel/Water Separator (spinon, cartridge) → AQUAGUARD™ description (EN + ES)
 - Fuel Filter (inline, spinon, cartridge) → SYNTEPORE™ description (EN + ES)
 - Crankcase Ventilation → description applied
 

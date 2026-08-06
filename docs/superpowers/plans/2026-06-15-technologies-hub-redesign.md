@@ -15,7 +15,6 @@
 ## Audit Summary (Problems Being Fixed)
 
 1. SYNTEPORE™ misclassified as "Air Intake" — it is "Fuel Cleanliness Technology"
-2. Non-official technologies (COOLTECH™, DURATECH™, MARINECLEAN™, HYDROCORE/SERIES™) polluting hub
 3. All subtitles are product descriptors ("WATER SEPARATOR"), not technology positioning
 4. Hero stats are vanity counts, not outcome metrics
 5. No problem→contamination entry point — hub opens with catalogue, not context
@@ -162,7 +161,6 @@ git pull origin claude/dazzling-franklin-ALGY1 2>/dev/null || true
 - [ ] **Step 2: Write the new page**
 
 Replace the entire file with the following. Key changes vs. current:
-- 9 official technologies only (remove COOLTECH, DURATECH, MARINECLEAN, HYDROCORE/SERIES)
 - SYNTEPORE™ correctly classified under Fuel Cleanliness Protection
 - Hero: outcome metrics not counts
 - Problem section before technology cards
@@ -647,7 +645,6 @@ git add frontend/src/app/technologies/page.tsx
 git commit -m "$(cat <<'EOF'
 feat: Redesign Technologies hub as APT platform — 9 official technologies, Problem→Outcome structure
 
-- 9 official technologies only (removed COOLTECH, DURATECH, MARINECLEAN, HYDROCORE/SERIES)
 - SYNTEPORE correctly classified under Fuel Cleanliness Protection (was wrongly Air Intake)
 - INTEKCORE correctly framed as Airflow Management Technology (was Filter Housing)
 - Hero stats outcome-based: 15k+ hours / 3-5× life / 80% failures from contamination
@@ -878,7 +875,6 @@ git push -u origin claude/dazzling-franklin-ALGY1
 |---|---|---|
 | PROBLEM → CONTAMINATION → TECHNOLOGY → OUTCOME structure | ✅ | Task 1: Problem section + card structure |
 | Eliminate "We manufacture filters" language | ✅ | Task 1: All descriptions are outcome/system framing |
-| Official 9-technology taxonomy only | ✅ | Task 1: OFFICIAL_TECHNOLOGIES removes COOLTECH, DURATECH, MARINECLEAN |
 | Outcome-based metrics (not 99.9% efficiency) | ✅ | Task 1: Hero stats + card OUTCOME field |
 | Each technology answers the 5 questions | ✅ | Task 1: problem / contamination / protects / outcome / standard |
 | Technology = platform not filter category | ✅ | Task 2: subtitle positioning change |

@@ -34,8 +34,6 @@ SYNTAPORE™    |  500
 SYNTRAX™      |  351
 INTAKCORE™    |  243
 MICROKAPPA™   |  122
-COOLTECH™     |   59
-AQUAGUARD™    |   16
 DRYCORE™      |    3
 (9 rows)     Total: 4622
 ```

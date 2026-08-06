@@ -35,8 +35,6 @@ elimfilters-vault/
 │   │   ├── THERMOCORE.md
 │   │   └── MICROKAPPA.md
 │   ├── deprecated/
-│   │   ├── AQUAGUARD.md
-│   │   └── COOLTECH.md
 │   └── ecosystems/
 │       ├── MARINECLEAN.md
 │       └── DURATECH.md
@@ -57,7 +55,6 @@ elimfilters-vault/
 │
 ├── 03-systems/
 │   ├── AIRFILTER.md
-│   ├── AQUAGUARD_SERIES.md
 │   ├── CABIN.md
 │   ├── COOLANT.md
 │   ├── DRYER.md
@@ -262,7 +259,6 @@ domain: ""                      # SystemDomain
 primary_technology: ""          # TechnologyKey
 supporting_technologies: []     # TechnologyKey list (may be empty)
 
-description: ""                 # Optional — only for product-line prose (e.g. AQUAGUARD_SERIES)
 
 tags: [system]
 ---
@@ -431,24 +427,17 @@ tags: [technology, active, air-intake]
 
 ### 4.2 Deprecated Technologies (2)
 
-**AQUAGUARD.md — full definition:**
 
 ```yaml
 ---
 type: technology
 status: deprecated
-key: AQUAGUARD
-name: "AQUAGUARD™"
-slug: aquaguard
 domain: Fuel Cleanliness
-logo_file: logo-aquaguard.png
 
-geo_definition: "AQUAGUARD™ is a hydrophobic water-separation filtration technology that removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency. Engineered for Common Rail and turbine fuel systems, it protects precision injector assets from corrosion, cavitation, and microbial contamination in mining, marine, power generation, and agriculture."
 
 deprecated_date: 2026-06-02
 replaced_by: HYDROCORE
 replaced_by_name: "HYDROCORE™"
-sunset_note: "AQUAGUARD product pages remain live. New content and canonical blocks reference HYDROCORE. Remove from TechnologyKey union after full consumer migration."
 
 comparison_function: "Turbine-stage water separation"
 comparison_metric: "99.8% free water · 95% emulsified removal"
@@ -458,24 +447,17 @@ tags: [technology, deprecated, fuel-cleanliness]
 ---
 ```
 
-**COOLTECH.md — full definition:**
 
 ```yaml
 ---
 type: technology
 status: deprecated
-key: COOLTECH
-name: "COOLTECH™"
-slug: cooltech
 domain: Cooling System
-logo_file: logo-cooltech.png
 
-geo_definition: "COOLTECH™ is a Supplemental Coolant Additive (SCA) release technology integrated into coolant filtration systems. It delivers controlled additive dosing to prevent liner pitting, cavitation erosion, and scale deposits in diesel engine cooling circuits, extending coolant service intervals and protecting thermal system integrity in heavy-duty trucks and stationary power generation."
 
 deprecated_date: 2026-06-02
 replaced_by: THERMOCORE
 replaced_by_name: "THERMOCORE™"
-sunset_note: "COOLTECH product pages remain live. New content and canonical blocks reference THERMOCORE. Remove from TechnologyKey union after full consumer migration."
 
 comparison_function: "DCA-replenishing coolant protection"
 comparison_metric: "SCA restoration · liner cavitation prevention"
@@ -646,7 +628,6 @@ tags: [system, air-intake]
 | File | key | name | slug | domain | primary_technology | supporting_technologies |
 |------|-----|------|------|--------|--------------------|------------------------|
 | AIRFILTER.md | AIRFILTER | Air Filter | airfilter | Air Intake | MACROCORE | — |
-| AQUAGUARD_SERIES.md | AQUAGUARD_SERIES | Aquaguard Series | aquaguard-series | Fuel Cleanliness | HYDROCORE | — |
 | CABIN.md | CABIN | Cabin Filter | cabin | Cabin Protection | MICROKAPPA | — |
 | COOLANT.md | COOLANT | Coolant Filter | coolant | Cooling System | THERMOCORE | MICROKAPPA |
 | DRYER.md | DRYER | Air Dryer | dryer | Compressed Air | DRYCORE | — |
@@ -658,9 +639,7 @@ tags: [system, air-intake]
 | OIL.md | OIL | Lube Oil Filter | oil | Lubrication | SYNTRAX | — |
 | WATER.md | WATER | Fuel Water Separator | water | Fuel Cleanliness | HYDROCORE | — |
 
-**AQUAGUARD_SERIES** additionally requires:
 ```yaml
-description: "AQUAGUARD/SERIES™ is ELIMFILTERS®' heavy-duty turbine fuel filter/water separator line, delivering three-stage asset protection: Stage 1 intercepts solid particles, Stage 2 coalesces and removes emulsified water, and Stage 3 provides a final polishing barrier. The FH 900FH and 1000FH models are designed for high-flow turbine fuel systems in power generation and large-scale mining operations."
 ```
 
 ---
@@ -1021,7 +1000,7 @@ Standard display aliases per entity type:
 | Entity type | Link format | Example |
 |-------------|-------------|---------|
 | Active technology | `[[KEY\|NAME™]]` | `[[MACROCORE\|MACROCORE™]]` |
-| Deprecated technology | `[[KEY\|NAME™ (deprecated)]]` | `[[AQUAGUARD\|AQUAGUARD™ (deprecated)]]` |
+| Deprecated technology | `[[KEY\|NAME™ (deprecated)]]` |  |
 | Ecosystem | `[[KEY\|NAME™ Ecosystem]]` | `[[DURATECH\|DURATECH™ Ecosystem]]` |
 | Industry | `[[KEY\|Display Name]]` | `[[TRUCKS_FLEETS\|Trucks & Fleets]]` |
 | Standard | `[[KEY\|CODE — Name]]` | `[[ISO_16889\|ISO 16889 — Multi-Pass Filter Test]]` |
@@ -1133,7 +1112,6 @@ Deprecated technology notes must link to their replacement in the Relationships 
 
 **Status:** Deprecated — replaced by [[HYDROCORE|HYDROCORE™]]
 
-**Sunset note:** AQUAGUARD product pages remain live. New canonical content references HYDROCORE.
 
 **Was applicable to:** [[MARINE|Marine]] · [[OIL_GAS|Oil & Gas]] · [[POWER_GENERATION|Power Generation]] · [[AGRICULTURE|Agriculture]]
 
@@ -1145,7 +1123,7 @@ And the replacement active technology must back-reference its predecessor:
 ```markdown
 ## Relationships
 
-**Replaces:** [[AQUAGUARD|AQUAGUARD™ (deprecated)]]
+**Replaces:** 
 
 **Resolves:** [[DIESEL_WATER|Diesel Water Contamination]] · [[PARTICLE_WEAR|Particle Wear in Engines]]
 ...
@@ -1237,8 +1215,8 @@ Total notes: 65
 [[MICROKAPPA|MICROKAPPA™]] · Cabin Protection
 
 ### Deprecated (2)
-[[AQUAGUARD|AQUAGUARD™]] → replaced by [[HYDROCORE|HYDROCORE™]]
-[[COOLTECH|COOLTECH™]] → replaced by [[THERMOCORE|THERMOCORE™]]
+ → replaced by [[HYDROCORE|HYDROCORE™]]
+ → replaced by [[THERMOCORE|THERMOCORE™]]
 
 ### Ecosystems (2)
 [[MARINECLEAN|MARINECLEAN™]] · Marine program
@@ -1260,7 +1238,6 @@ Total notes: 65
 
 ## Systems (12)
 [[AIRFILTER|Air Filter]] · Air Intake · MACROCORE
-[[AQUAGUARD_SERIES|Aquaguard Series]] · Fuel Cleanliness · HYDROCORE
 [[CABIN|Cabin Filter]] · Cabin Protection · MICROKAPPA
 [[COOLANT|Coolant Filter]] · Cooling System · THERMOCORE
 [[DRYER|Air Dryer]] · Compressed Air · DRYCORE

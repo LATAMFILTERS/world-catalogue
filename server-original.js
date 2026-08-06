@@ -229,8 +229,6 @@ const LEGACY_MARKETING_REDIRECTS = {
   '/systems/oil/': '/systems/lubrication/',
   '/systems/marine': '/industries/marine',
   '/systems/marine/': '/industries/marine/',
-  '/technologies/cooltech': '/technologies/thermacore',
-  '/technologies/cooltech/': '/technologies/thermacore/',
   '/technologies/hydrocore-series': '/technologies/turbocore',
   '/technologies/hydrocore-series/': '/technologies/turbocore/',
   '/technologies/turbocore-series': '/technologies/turbocore',
@@ -1302,15 +1300,11 @@ function getTechLogo(tech) {
 }
 
 // Canonical technology name corrections (DB may have older/misspelled variants).
-// COOLTECH and AQUAGUARD were retired in favor of THERMACORE and HYDROCORE —
 // see scripts/migrations/run_014_rename_deprecated_technologies.js for the
 // one-time catalog rename. This map keeps API responses correct in the
 // meantime (and as a safety net after) regardless of when that migration runs.
 const TECH_NAME_FIXES = {
   'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™',
-  'COOLTECH': 'THERMACORE', 'COOLTECH™': 'THERMACORE™',
-  'AQUAGUARD': 'HYDROCORE', 'AQUAGUARD™': 'HYDROCORE™',
-  'AQUAGUARD/SERIES™': 'HYDROCORE™',
 };
 
 // Deep-sanitizes every string leaf of an array of application objects

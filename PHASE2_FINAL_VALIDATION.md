@@ -224,7 +224,6 @@ Fields in `techPagesData.ts` that have **no equivalent field** in `UnifiedTechno
 | `heroTagline` | `string` | "Three-stage graduated asset protection..." | Longer marketing tagline (UD `tagline` is shorter) |
 | `heroImage` | `string` | `/images/turbine-plant.avif` | Primary hero image path |
 | `heroStats` | `{key: string, value: string}[]` | `[{key:'900FH', value:'90 GPH'}]` | 3-item spec summary for hero display |
-| `logoSrc` | `string` | `/images/aquaguardseries(fn).avif` | Full logo image path (UD `logoFile` is filename only, PNG) |
 | `systemHeadline` | `string` | `'THREE-STAGE DEFENSE.\nFULL CONTAMINATION SPECTRUM.'` | System section headline |
 | `systemParagraphs` | `string[]` | 2–3 editorial paragraphs | Architecture description for detail page |
 | `stages` | `TechStage[]` | `{number, tag, title, body, stat, statLabel}` | Product mechanism stages (1–3 per tech) |

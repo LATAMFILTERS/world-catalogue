@@ -37,7 +37,6 @@ const REDIRECT_CASES = [
   ['/systems/fuel/', '/systems/fuel-cleanliness/'],
   ['/systems/oil/', '/systems/lubrication/'],
   ['/systems/marine/', '/industries/marine/'],
-  ['/technologies/cooltech/', '/technologies/thermacore/'],
   ['/technologies/hydrocore-series/', '/technologies/turbocore/'],
   ['/technologies/turbocore-series/', '/technologies/turbocore/'],
   ['/technologies/duratech/', '/commercial-lines/duratech/'],

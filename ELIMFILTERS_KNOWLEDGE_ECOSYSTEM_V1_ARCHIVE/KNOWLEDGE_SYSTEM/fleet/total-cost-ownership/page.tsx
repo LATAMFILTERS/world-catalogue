@@ -14,7 +14,6 @@ const TECHNOLOGIES = [
   { name: 'NANOFORCE', slug: 'nanoforce', role: 'Extended-interval synthetic fuel and hydraulic media reduces filter replacement frequency while maintaining target cleanliness codes across longer operating periods.' },
   { name: 'DURATECH', slug: 'duratech', role: 'Dual-stage engine oil filtration reduces engine reconditioning frequency, extending the interval between major overhauls that represent the largest single maintenance cost events.' },
   { name: 'SYNTRAX', slug: 'syntrax', role: 'Synthetic fluid formulations with 4,000+ hour service life reduce fluid replacement cost and disposal frequency in hydraulic and transmission systems.' },
-  { name: 'AQUAGUARD', slug: 'aquaguard', role: 'Preventing injector damage from water contamination defers injector replacement events that typically cost 800 to 2,500 USD per set for heavy diesel applications.' },
   { name: 'MICROKAPPA', slug: 'microkappa', role: 'Coolant system contamination control extends coolant service life and prevents thermal system degradation that leads to costly head gasket and heat exchanger failures.' },
 ];
 

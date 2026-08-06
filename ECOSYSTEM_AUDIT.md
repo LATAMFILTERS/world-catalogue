@@ -105,7 +105,6 @@ Air Filters · Fuel Filters · Oil Filters · Hydraulic Filters · Cabin Filters
 
 ### 1.6 Technologies (12 in catalogue.json, 9 displayed on hub)
 
-MACROCORE™ · SYNTEPORE™ · INTEKCORE™ · DRYCORE™ · AQUAGUARD™ · SYNTRAX™ · NANOFORCE™ · COOLTECH™ · MICROKAPPA™ · MARINECLEAN™ · DURATECH™ · Aquaguard Series
 
 Technology logos: 12 `.png` files in `/public/assets/`  
 Technology definitions: `techPagesData.ts` per-page data + `GEO_DEFINITIONS` object in technologies hub
@@ -209,8 +208,7 @@ Documented in `CLAUDE.md` with full `CANONICAL KNOWLEDGE BLOCK` format:
 ### 2.4 technology Registry
 
 Two technology registries exist in parallel but are not synchronized:
-- `knowledge-architecture.ts`: 6 technologies (MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, AQUAGUARD, DURATECH)
-- `catalogue.json` + `techPagesData.ts`: 12 technologies (adds SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, Aquaguard Series)
+- `knowledge-architecture.ts`: 6 technologies (MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, DURATECH)
 - `GEO_DEFINITIONS` in `technologies/page.tsx`: 12 prose definitions
 
 These three registries are independent with no shared source of truth.
@@ -316,7 +314,6 @@ Strategy defined (see Semantic Ranking Layer). Sparse implementation:
 | `Hero` | `Hero.tsx` | Page hero sections | ✅ Medium |
 
 **Product-specific page components** (in `/components/`, one per product type):
-AirfilterPage, AquaguardPage, CabinPage, CoolantPage, DryerPage, FuelPage, FuelSeparatorPage, HousingPage, HydraulicPage, KitsPage, MarinePage, OilPage
 
 These are template components instantiated by `/products/[slug]/page.tsx` and `/systems/[slug]/SystemPageClient.tsx`.
 

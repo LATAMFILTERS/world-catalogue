@@ -121,8 +121,6 @@ All cross-references between entities use typed string literal unions, not bare 
 // Technology keys — 12 entries
 type TechnologyKey =
   | 'MACROCORE' | 'NANOFORCE' | 'MICROKAPPA' | 'SYNTRAX'
-  | 'AQUAGUARD' | 'DURATECH' | 'SYNTEPORE' | 'INTEKCORE'
-  | 'DRYCORE' | 'COOLTECH' | 'MARINECLEAN' | 'AQUAGUARD_SERIES';
 
 // Industry keys — 12 entries
 type IndustryKey =
@@ -132,7 +130,6 @@ type IndustryKey =
 
 // System keys — 12 entries
 type SystemKey =
-  | 'AIR_FILTER' | 'AQUAGUARD_SERIES_SYSTEM' | 'CABIN' | 'COOLANT'
   | 'DRYER' | 'FUEL' | 'HOUSING' | 'HYDRAULIC'
   | 'KITS' | 'MARINE_SYSTEM' | 'OIL' | 'WATER';
 
@@ -211,8 +208,6 @@ interface UnifiedTechnology {
 ```
 
 **Entry count**: 12
-**Fully sourced from existing data**: MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, AQUAGUARD, DURATECH (all fields present across registries)
-**Requires authoring of relational fields**: SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, AQUAGUARD_SERIES (rendering + GEO_DEFINITIONS + comparison data exist; `relatedStandards`, `addressesContamination`, `applicableIndustries`, `keyMetrics` must be authored or marked `// TODO: verify`)
 
 ---
 
@@ -311,17 +306,13 @@ The `techTags` field in `catalogue.json` products provides the starting point. E
 | System (slug) | Primary Tech | Supporting Techs | Derivation source |
 |---|---|---|---|
 | `airfilter` | MACROCORE | — | techTags: MACROCORE™ |
-| `aquaguard-series` | AQUAGUARD_SERIES | AQUAGUARD | techTags: AQUAGUARD/SERIES™, AQUAGUARD™ |
 | `cabin` | MICROKAPPA | — | techTags: MICROKAPPA™ |
-| `coolant` | COOLTECH | — | techTags: COOLTECH™ |
 | `dryer` | DRYCORE | — | techTags: DRYCORE™ |
-| `fuel` | SYNTEPORE | AQUAGUARD | techTags: AQUAGUARD™, SYNTEPORE™ |
 | `housing` | INTEKCORE | MACROCORE | techTags: INTEKCORE™, MACROCORE™ |
 | `hydraulic` | NANOFORCE | — | techTags: NANOFORCE™ |
 | `kits` | DURATECH | — | techTags: DURATECH™ |
 | `marine` | MARINECLEAN | — | techTags: MARINECLEAN™ |
 | `oil` | SYNTRAX | — | techTags: SYNTRAX™ |
-| `water` | AQUAGUARD | — | techTags: AQUAGUARD™ |
 
 ---
 
@@ -391,7 +382,6 @@ interface UnifiedContaminationMode {
 | `PARTICLE_WEAR` | Migrate | Full data present — update keys |
 | `HYDRAULIC_CONTAMINATION` | Migrate | Full data present — update keys |
 | `CABIN_AIR_CONTAMINATION` | **Author** | PM2.5, diesel particulate, allergens, VOC — resolvedBy: MICROKAPPA |
-| `COOLANT_CONTAMINATION` | **Author** | Scale deposits, cavitation, liner pitting — resolvedBy: COOLTECH |
 | `COMPRESSED_AIR_MOISTURE` | **Author** | Valve corrosion, freeze events, seal degradation — resolvedBy: DRYCORE |
 
 ---
@@ -486,11 +476,9 @@ Execute sub-tasks in this exact order. Each sub-task ends with a `npm run type-c
       because TypeScript validates string literal union membership, not object existence
 
 1d  Write UNIFIED_TECHNOLOGIES — 6 migrated entries
-    (MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, AQUAGUARD, DURATECH)
     → type-check: all relatedStandards, addressesContamination, applicableIndustries typed ✅
 
 1e  Write UNIFIED_TECHNOLOGIES — 6 authored entries
-    (SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, AQUAGUARD_SERIES)
     → Mark unverifiable relational fields: // TODO: verify — [field] not confirmed by ≥2 sources
     → type-check: all 12 technology entries compile ✅
 
@@ -555,7 +543,6 @@ FINAL: npm run build
 
     npm run build — must produce 89 pages, zero errors
     Spot-check 6 routes: /technologies/macrocore, /technologies/syntrax,
-    /industries/bus-coach, /industries/oil-gas, /systems/airfilter, /systems/aquaguard-series
 ```
 
 ---
@@ -594,7 +581,6 @@ FINAL: npm run build
     Build the comparison table rows from Object.values(UNIFIED_TECHNOLOGIES)
     Filter to technologies that have comparisonFunction defined
     Map to the same { name, slug, system, func, metric, industries } shape
-    All 12 technologies now have this data (AQUAGUARD_SERIES, DURATECH, MARINECLEAN added)
 
 4d  Update JSON-LD itemList numberOfItems to 12 (was hardcoded to 9)
 
@@ -712,7 +698,6 @@ The `TechnologyRecord`, `StandardRecord`, `ContaminationRecord`, `IndustryRecord
 | `TECH_COMPARISON` constant | 9-entry inline array (lines 23–33) | Removed — derived from `UNIFIED_TECHNOLOGIES` |
 | JSON-LD `numberOfItems` | Hardcoded `9` | Updated to `12` |
 | JSON-LD description | References "Nine exclusive protection architectures" | Updated to reflect all 12 |
-| Comparison table | Renders 9 rows | Renders 12 rows (AQUAGUARD_SERIES, DURATECH, MARINECLEAN added) |
 | Import | No unified-data import | `import { UNIFIED_TECHNOLOGIES } from '@/lib/unified-data'` added |
 
 No other changes to this file. All JSX structure, styling, animations, and FAQ content unchanged.
@@ -759,7 +744,6 @@ Items to update:
 **Action**: Delete the inline `const TECH_COMPARISON = [ ... ]` block (lines 23–33)
 **When**: Step 4
 **Why**: Content migrated to `systemDomain`, `comparisonFunction`, `comparisonMetric` fields on each `UnifiedTechnology`. A page-level constant cannot be consumed by Part Search or AI Engine.
-**Content preserved**: Yes — all 9 existing rows are moved to `unified-data.ts`, plus 3 new rows for AQUAGUARD_SERIES, DURATECH, MARINECLEAN are authored.
 
 ---
 
@@ -882,7 +866,6 @@ After Step 5, manually verify 12 representative routes:
 | `/technologies` | 12 technologies visible in comparison table |
 | `/technologies/macrocore` | Page loads, hero content correct |
 | `/technologies/syntrax` | System domain shown as Lubrication (not air intake) |
-| `/technologies/aquaguard-series` | Separate entry from `/technologies/aquaguard` |
 | `/industries/mining` | Correct technology list from reconciled source |
 | `/industries/bus-coach` | Page loads (one of the 5 previously un-relational industries) |
 | `/systems/airfilter` | Page loads, MACROCORE as primary technology |
@@ -1010,18 +993,14 @@ Industry: CONSTRUCTION
 ────────────────────────────────────────────────────────────────────
 Source                          | Technologies listed
 ────────────────────────────────────────────────────────────────────
-catalogue.json techTags         | MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX
 knowledge-architecture.ts       | MACROCORE, NANOFORCE, DURATECH
 techPagesData.ts applications   | [check each technology's applications[].sector]
 TECH_COMPARISON.industries      | NANOFORCE: "Construction, Mining, Manufacturing, Marine"
                                 | MACROCORE: "Mining, Agriculture, Construction, Power Gen"
 ────────────────────────────────────────────────────────────────────
 Appears in ≥ 2 sources:         | MACROCORE ✅, NANOFORCE ✅
-Appears in 1 source only:       | AQUAGUARD (catalogue only), SYNTRAX (catalogue only),
                                 | DURATECH (knowledge-arch only)
 ────────────────────────────────────────────────────────────────────
-Authoritative list (draft):     | MACROCORE, NANOFORCE, [AQUAGUARD? SYNTRAX? DURATECH?]
-Decision required from owner:   | Are AQUAGUARD, SYNTRAX, DURATECH applicable to CONSTRUCTION?
 ```
 
 Repeat for AGRICULTURE, MINING, MARINE, AUTOMOTIVE, MANUFACTURING, POWER_GENERATION.

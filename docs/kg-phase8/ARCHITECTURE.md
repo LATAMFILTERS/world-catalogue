@@ -482,13 +482,11 @@ knowledge URLs to signal highest importance to AI crawlers.
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-system/technologies/aquaguard</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-system/technologies/cooltech</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -642,8 +640,6 @@ SYNTRAX™    — Lube / Oil Filtration (synthetic lube media)
 DURATECH™   — Lube / Oil Filtration (extended service)
   slug: duratech, URL: https://elimfilters.com/knowledge-system/technologies/duratech
 
-COOLTECH™   — Coolant Filtration (lube-oil system)
-  slug: cooltech, URL: https://elimfilters.com/knowledge-system/technologies/cooltech
 
 MARINECLEAN™ — Marine Lube Filtration
   slug: marineclean, URL: https://elimfilters.com/knowledge-system/technologies/marineclean
@@ -654,8 +650,6 @@ BLUECLEAN™  — Marine / Environmental Lube Filtration
 SYNTEPORE™  — Fuel Filtration (formerly SYNTAPORE)
   slug: syntepore, URL: https://elimfilters.com/knowledge-system/technologies/syntepore
 
-AQUAGUARD™  — Fuel / Water Separation
-  slug: aquaguard, URL: https://elimfilters.com/knowledge-system/technologies/aquaguard
 
 MICROKAPPA™ — Cabin / Operator Safety Filtration
   slug: microkappa, URL: https://elimfilters.com/knowledge-system/technologies/microkappa

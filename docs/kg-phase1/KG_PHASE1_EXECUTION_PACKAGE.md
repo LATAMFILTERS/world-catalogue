@@ -87,11 +87,9 @@ CREATE TABLE IF NOT EXISTS kg_technologies (
 | gasultra | GASULTRA™ | compressed-air | logo-gasultra.png | 0 |
 | syntrax | SYNTRAX™ | **lube-oil** ← CORRECTED | logo-sintrax.png | 351 |
 | duratech | DURATECH™ | lube-oil | logo-duratech.png | 0 |
-| cooltech | COOLTECH™ | lube-oil | logo-cooltech.png | 59 |
 | marineclean | MARINECLEAN™ | lube-oil | logo-marineclean.png | 0 |
 | blueclean | BLUECLEAN™ | lube-oil | logo-blueclean.png | 0 |
 | nanoforce | NANOFORCE™ | hydraulic | logo-nanoforce.png | 1,962 |
-| aquaguard | AQUAGUARD™ | fuel | logo-aquaguard.png | 16 |
 | syntepore | SYNTEPORE™ | fuel | logo-syntepore.png | 500 |
 | microkappa | MICROKAPPA™ | **cabin** ← CORRECTED | logo-microkappa.png | 122 |
 
@@ -149,8 +147,6 @@ CREATE TABLE IF NOT EXISTS kg_product_technologies (
 | SYNTRAX™ | syntrax | 351 |
 | INTAKCORE™ | **intekcore** ← corrected | 243 |
 | MICROKAPPA™ | microkappa | 122 |
-| COOLTECH™ | cooltech | 59 |
-| AQUAGUARD™ | aquaguard | 16 |
 | DRYCORE™ | drycore | 3 |
 
 ---

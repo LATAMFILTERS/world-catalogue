@@ -16,7 +16,6 @@
 | NANOFORCE | NANOFORCE™ | Fuel & Hydraulic Filtration | nanoforce | DIESEL_WATER, PARTICLE_WEAR, HYDRAULIC_CONTAMINATION | AGRICULTURE, CONSTRUCTION, MARINE, POWER_GEN, AUTOMOTIVE |
 | MICROKAPPA | MICROKAPPA™ | Coolant & Specialty Filtration | microkappa | PARTICLE_WEAR, HYDRAULIC_CONTAMINATION | MANUFACTURING, AUTOMOTIVE, MARINE |
 | SYNTRAX | SYNTRAX™ | Synthetic Fluid Technology | syntrax | DIESEL_WATER, HYDRAULIC_CONTAMINATION | MINING, CONSTRUCTION, MARINE, POWER_GEN |
-| AQUAGUARD | AQUAGUARD™ | Water Removal Technology | aquaguard | DIESEL_WATER, HYDRAULIC_CONTAMINATION | MARINE, AGRICULTURE, OUTDOOR_EQUIPMENT, POWER_GEN |
 | DURATECH | DURATECH™ | Engine Oil Filtration | duratech | PARTICLE_WEAR | AGRICULTURE, CONSTRUCTION, AUTOMOTIVE, MARINE |
 
 ### ⚠️ CRITICAL DISCREPANCIES VS. DB
@@ -39,7 +38,6 @@
 INTEKCORE  — Air Housing / Precleaner technology
 DRYCORE    — Air Dryer technology
 GASULTRA   — Compressed Air technology
-COOLTECH   — Coolant Filter technology
 SYNTEPORE  — Fuel Filter technology
 MARINECLEAN — Marine Filter technology
 BLUECLEAN  — Specialty technology
@@ -55,10 +53,7 @@ BLUECLEAN  — Specialty technology
 
 | Code | Name | Slug | Criticality | Technologies | Contamination |
 |------|------|------|------------|-------------|--------------|
-| ISO 16889 | Cleanliness Coding System | iso-16889 | PRIMARY | MACROCORE, NANOFORCE, MICROKAPPA, AQUAGUARD, DURATECH | PARTICLE_WEAR, HYDRAULIC_CONTAMINATION |
 | ISO 4406 | Legacy Cleanliness Code | iso-4406 | SECONDARY | DURATECH, NANOFORCE | PARTICLE_WEAR |
-| ISO 5011 | Filter Integrity Testing | iso-5011 | PRIMARY | MACROCORE, NANOFORCE, MICROKAPPA, AQUAGUARD, DURATECH | PARTICLE_WEAR, HYDRAULIC_CONTAMINATION |
-| ASTM D6304 | Karl Fischer Titration | astm-d6304 | PRIMARY | NANOFORCE, AQUAGUARD, SYNTRAX | DIESEL_WATER |
 | SAE J1539 | Air Intake Cleanliness | sae-j1539 | PRIMARY | MACROCORE | PARTICLE_WEAR |
 | NFPA T2.14 | Machine Tool Hydraulic Fluids | nfpa-t214 | PRIMARY | NANOFORCE, SYNTRAX | HYDRAULIC_CONTAMINATION |
 
@@ -79,9 +74,7 @@ BLUECLEAN  — Specialty technology
 
 | ID | Name | Slug | Root Causes | Failure Modes | Resolved By |
 |----|------|------|------------|--------------|-------------|
-| DIESEL_WATER | Diesel Water Contamination | diesel-water | ATMOSPHERIC_BREATHING, CONDENSATION, STORAGE_CORROSION, TRANSFER_CONTAMINATION | INJECTOR_STICTION, MICROBIAL_GROWTH, FUEL_GUM_FORMATION | NANOFORCE, AQUAGUARD, SYNTRAX |
 | PARTICLE_WEAR | Particle Wear in Engines | particle-wear | AIR_INTAKE_INGESTION, FUEL_CONTAMINATION, INTERNAL_GENERATION, OIL_CIRCULATION | TWO_BODY_WEAR, THREE_BODY_WEAR, ADHESIVE_WEAR, BEARING_SPALLING | MACROCORE, NANOFORCE, DURATECH |
-| HYDRAULIC_CONTAMINATION | Hydraulic System Contamination | hydraulic-system | MANUFACTURING_RESIDUE, SEAL_DEGRADATION, EXTERNAL_INGESTION, PUMP_WEAR | VALVE_SPOOL_STICTION, ORIFICE_BLOCKAGE, PUMP_SWASHPLATE_STICTION | NANOFORCE, AQUAGUARD, SYNTRAX, MICROKAPPA |
 
 **Quantified impacts (key data for AI Citation Layer):**
 ```
@@ -124,10 +117,8 @@ HYDRAULIC_CONTAMINATION:
 | AGRICULTURE | Agriculture | agriculture | HIGH | COMBINES, TRACTORS, HARVESTERS | MACROCORE, NANOFORCE, DURATECH, SYNTRAX |
 | CONSTRUCTION | Construction | construction | HIGH | EXCAVATORS, BULLDOZERS, LOADERS | MACROCORE, NANOFORCE, DURATECH |
 | MINING | Mining | mining | EXTREME | HAUL_TRUCKS, DRILL_RIGS, LOADERS | MACROCORE, NANOFORCE, DURATECH, SYNTRAX |
-| MARINE | Marine | marine | MEDIUM-HIGH | FISHING_VESSELS, CARGO_SHIPS | NANOFORCE, AQUAGUARD, DURATECH, SYNTRAX |
 | AUTOMOTIVE | Automotive | automotive | MEDIUM | HEAVY_TRUCKS, BUSES | MACROCORE, NANOFORCE, DURATECH |
 | MANUFACTURING | Manufacturing | manufacturing | LOW-MEDIUM | MACHINE_TOOLS, PRESSES | NANOFORCE, MICROKAPPA, SYNTRAX |
-| POWER_GENERATION | Power Generation | power-generation | MEDIUM | DIESEL_GENERATORS, TURBINES | MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX |
 
 **Missing industries (referenced elsewhere):**
 - Food & Beverage (mentioned in CLAUDE.md)
@@ -180,7 +171,6 @@ All return data from the TypeScript static objects:
 
 | Category | TS Count | DB/Real Count | Missing |
 |---------|---------|--------------|---------|
-| Technologies | 6 | 13+ | INTEKCORE, DRYCORE, GASULTRA, COOLTECH, SYNTEPORE, MARINECLEAN, BLUECLEAN |
 | Standards | 6 | 12+ | ISO 11155, DIN 71220, ISO 12937, DIN 51524, SAE J726, etc. |
 | Contamination modes | 3 | 5+ | Varnish formation, Cabin PM2.5, Compressed air moisture |
 | Industries | 7 | 9+ | Food & Beverage, Forestry/Logging, Oil & Gas |

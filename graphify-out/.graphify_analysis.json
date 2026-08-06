@@ -462,11 +462,6 @@
       "frontend_src_components_animatein_props",
       "frontend_src_components_animatein_staggercontainer",
       "frontend_src_components_animatein_vectors",
-      "frontend_src_components_aquaguardpage",
-      "frontend_src_components_aquaguardpage_applications",
-      "frontend_src_components_aquaguardpage_hydrocorepage",
-      "frontend_src_components_aquaguardpage_specs",
-      "frontend_src_components_aquaguardpage_stages",
       "frontend_src_components_cabinpage",
       "frontend_src_components_cabinpage_cabinpage",
       "frontend_src_components_coolantpage",
@@ -6109,12 +6104,8 @@
       "frontend_src_app_customer_intelligence_page_customerintelligencepage"
     ],
     "343": [
-      "frontend_src_app_technologies_aquaguard_page",
-      "frontend_src_app_technologies_aquaguard_page_aquaguardredirect"
     ],
     "344": [
-      "frontend_src_app_technologies_cooltech_page",
-      "frontend_src_app_technologies_cooltech_page_cooltechredirect"
     ],
     "345": [
       "frontend_src_components_customcursor",

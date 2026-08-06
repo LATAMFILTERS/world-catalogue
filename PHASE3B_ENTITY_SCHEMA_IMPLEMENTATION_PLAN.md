@@ -228,7 +228,6 @@ The Industry entity provides **filtration context** for the Part Search traversa
 ```
 [User selects Industry: AGRICULTURE]
     ↓ applicable_technologies[]
-[Technology candidates: MACROCORE, SYNTRAX, NANOFORCE, AQUAGUARD]
     ↓ implemented_in (ProductFamily.uses_technology)
 [Product families matching industry + technology]
     ↓ contains (Product.belongs_to_family)
@@ -558,9 +557,7 @@ tags: [technology, active]       # replace active with deprecated or ecosystem a
 Examples:
 - `[[MACROCORE|MACROCORE™ — Multi-Stage Depth Filtration]]`
 - `[[NANOFORCE|NANOFORCE™ — Sub-Micron Particle Removal]]`
-- `[[AQUAGUARD|AQUAGUARD™ — Deprecated (replaced by AQUAGUARD/SERIES)]]`
 
-**Deprecated technology backlink rule**: The deprecated note `AQUAGUARD.md` must link to `[[AQUAGUARD_SERIES|AQUAGUARD/SERIES™]]`. The successor note `AQUAGUARD_SERIES.md` must include: `predecessor: [[AQUAGUARD|AQUAGUARD™ — Deprecated]]`.
 
 **Ecosystem display alias**: `[[MARINECLEAN|MARINECLEAN™ — Marine Certification Program]]`
 
@@ -751,7 +748,6 @@ Component is a **filter context** in Part Search, not a traversal node:
 [User: "I need a filter for my fuel injectors"]
     ↓ component lookup: FUEL_INJECTOR
     ↓ sensitive_to_contamination → DIESEL_WATER, PARTICLE_WEAR (fuel domain)
-    ↓ protected_by_technologies → AQUAGUARD_SERIES
     ↓ typical_filter_families → FUEL_CLEANLINESS
     ↓ contains → SKU results
 ```
@@ -906,7 +902,6 @@ Problem is the **primary user entry point** for Part Search:
 User input: "My fuel injectors are failing prematurely"
     ↓ NLP intent classification → Problem key: INJECTOR_STICTION
     ↓ root_contamination → DIESEL_WATER
-    ↓ DIESEL_WATER.resolved_by → AQUAGUARD_SERIES
     ↓ recommended_product_families → FUEL_CLEANLINESS, WATER_SEPARATION
     ↓ filtered by: industry context + equipment type
     ↓ SKU results with confidence ranking
@@ -1195,7 +1190,6 @@ tags: [product-family, active]
 
 Examples:
 - `[[AIRFILTER_PRIMARY|Primary Intake Protection (MACROCORE™)]]`
-- `[[FUEL_CLEANLINESS|Fuel Cleanliness Module (AQUAGUARD™)]]`
 - `[[HYDRAULIC_CCU|Hydraulic Contamination Control Unit (NANOFORCE™)]]`
 
 ### 7.6 unified-data.ts Mapping
@@ -1343,7 +1337,6 @@ tags: [product, active]
 
 ### 8.4 Note on Vault Scope vs Part Search Database
 
-The Obsidian vault holds **one representative note per product line** (e.g. one note for `AQUAGUARD_SERIES_PRODUCTS` representing the 900FH and 1000FH families), not individual SKUs.
 
 Individual SKUs (ELF-AF-XXXX, cross-references to 500k+ OEM numbers) are managed in the Part Search database with its own data model. The vault's Product entity provides the **canonical product description** and **knowledge graph linkage** for the product line.
 
@@ -1362,7 +1355,6 @@ Individual SKUs (ELF-AF-XXXX, cross-references to 500k+ OEM numbers) are managed
 **Display alias convention**: `[[KEY|Product Name (SKU)]]`
 
 Examples:
-- `[[AQUAGUARD_SERIES_900FH|AQUAGUARD/SERIES™ 900FH (Fuel Protection)]]`
 - `[[MACROCORE_HEAVY_DUTY|MACROCORE™ Heavy Duty Air Filter]]`
 
 ### 8.7 unified-data.ts Mapping
@@ -1801,7 +1793,6 @@ elimfilters-vault/
 ├── 01-technologies/
 │   ├── active/           (9 notes: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, DRYCORE,
 │   │                               INTEKCORE, MICROKAPPA, HYDROCORE, THERMOCORE)
-│   ├── deprecated/       (2 notes: AQUAGUARD, COOLTECH)
 │   └── ecosystems/       (2 notes: MARINECLEAN, DURATECH)
 ├── 02-industries/        (12 notes)
 ├── 03-systems/

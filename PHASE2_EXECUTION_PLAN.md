@@ -44,12 +44,9 @@ The application maintains **five independent data registries** — none synchron
 
 **Entity counts**:
 - Industries: **12** — Agriculture, Automotive, Bus Coach, Construction, Manufacturing, Marine, Mining, Oil Gas, Power Generation, Railway, Trucks Fleets, Waste Municipal
-- Products/Systems: **12** — Airfilter, Aquaguard Series, Cabin, Coolant, Dryer, Fuel, Housing, Hydraulic, Kits, Marine, Oil, Water
-- Technologies: **12** — Aquaguard Series, Aquaguard, Cooltech, Drycore, Duratech, Intekcore, Macrocore, Marineclean, Microkappa, Nanoforce, Syntepore, Syntrax
 
 **Schema fields available**: `name`, `file`, `title`, `subtitle`, `description`, `features[]`, `benefits[]`, `techTags[]`, `stats{}`, `cta`, `videoBody[]?`, `engineeringBody?`, `statistic?`, `statisticSource?`
 
-**Cross-reference method**: `techTags: ['MACROCORE™', 'AQUAGUARD™']` — loose display strings with ™ symbols. No foreign key. No compile-time validation. A typo (`MACRCORE™`) is silent at build time and invisible at runtime.
 
 **Critical gaps**: No contamination modes. No standards. No relational mappings. No contamination exposure levels. No equipment lists. No operating conditions. No performance metrics with ISO context.
 
@@ -62,7 +59,6 @@ The application maintains **five independent data registries** — none synchron
 **Purpose**: Relational graph — technologies ↔ standards ↔ contamination modes ↔ industries
 
 **Entity counts**:
-- Technologies: **6** of 12 — MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, AQUAGUARD, DURATECH
 - Industries: **7** of 12 — AGRICULTURE, CONSTRUCTION, MINING, MARINE, AUTOMOTIVE, MANUFACTURING, POWER_GENERATION
 - Standards: **6** — ISO_16889, ISO_4406, ISO_5011, ASTM_D6304, SAE_J1539, NFPA_T214
 - Contamination Modes: **3** — DIESEL_WATER, PARTICLE_WEAR, HYDRAULIC_CONTAMINATION
@@ -86,7 +82,6 @@ The application maintains **five independent data registries** — none synchron
 **Consumed by**: `/technologies/[slug]/page.tsx` — the technology detail page renderer
 **Purpose**: Narrative content — hero sections, system explanations, stage breakdowns, application sectors, testimonials, CTAs
 
-**Entity count**: **12** — all technologies: `aquaguard-series`, `syntrax`, `nanoforce`, `macrocore`, `intekcore`, `syntepore`, `aquaguard`, `cooltech`, `drycore`, `duratech`, `marineclean`, `microkappa`
 
 **Schema fields**: `categoryTag`, `heroTitle`, `heroSubtitle`, `heroTagline`, `heroImage`, `heroStats[]`, `logoSrc`, `systemHeadline`, `systemParagraphs[]`, `productImageSrc`, `productImageCaption`, `stagesHeading`, `stages[{number, tag, title, body, stat, statLabel}]`, `specs[]`, `applicationsHeading`, `applicationsSubtext`, `applications[{sector, detail}]`, `testimonial{quote, role, sector}`, `ctaTag`, `ctaHeading`, `ctaBody`
 
@@ -113,8 +108,6 @@ The application maintains **five independent data registries** — none synchron
 **Consumed by**: That page only — renders the technology comparison table on the hub
 **Purpose**: Technical comparison data for the hub page table
 
-**Entity count**: **9** of 12 — Macrocore, Syntepore, Intekcore, Drycore, Aquaguard, Syntrax, Nanoforce, Cooltech, Microkappa
-**Missing from table**: Aquaguard Series, Duratech, Marineclean
 
 **Schema per row**: `name`, `slug`, `system`, `func`, `metric`, `industries`
 
@@ -142,7 +135,6 @@ The application maintains **five independent data registries** — none synchron
 
 | Display Name | Generated Slug | Existing URL Path |
 |---|---|---|
-| `Aquaguard Series` | `aquaguard-series` | `/technologies/aquaguard-series` ✅ |
 | `Syntrax` | `syntrax` | `/technologies/syntrax` ✅ |
 | `Bus Coach` | `bus-coach` | `/industries/bus-coach` ✅ |
 | `Oil Gas` | `oil-gas` | `/industries/oil-gas` ✅ |
@@ -221,29 +213,21 @@ Technology-to-industry relationships are expressed in two places with different 
 
 | Source | Format | Example (MACROCORE applicable industries) |
 |---|---|---|
-| `catalogue.json` industries `techTags` | Loose string array with ™ | Agriculture has `['MACROCORE™', 'AQUAGUARD™', 'SYNTRAX™', 'NANOFORCE™']` |
 | `knowledge-architecture.ts` TECHNOLOGIES `applicableIndustries` | Typed constant key array | `MACROCORE.applicableIndustries = ['AGRICULTURE', 'MINING', 'CONSTRUCTION', 'POWER_GEN', 'MARINE']` |
 | `TECH_COMPARISON` rows `industries` | Free text string | `'Mining, Agriculture, Construction, Power Gen'` |
 
 **Conflict example — Construction industry technologies**:
-- `catalogue.json` Construction `techTags`: `['MACROCORE™', 'NANOFORCE™', 'AQUAGUARD™', 'SYNTRAX™']`
 - `knowledge-architecture.ts` CONSTRUCTION `applicableTechnologies`: `['MACROCORE', 'NANOFORCE', 'DURATECH']`
-- These two sources disagree: catalogue.json includes AQUAGUARD and SYNTRAX for Construction; knowledge-architecture.ts includes DURATECH but not AQUAGUARD or SYNTRAX.
 
 **Resolution**: `unified-data.ts` defines the authoritative `applicableTechnologies[]` array per industry using typed constant keys. The `techTags` field is retained on `UnifiedSystem` for backwards compatibility during migration but marked deprecated.
 
 ---
 
-### 3.3 Aquaguard / Aquaguard Series — Ambiguous Duplication
 
-Both `catalogue.json` and `techPagesData.ts` maintain separate entries for `Aquaguard` and `Aquaguard Series`. These are architecturally distinct:
 
 | Entity | What it is |
 |---|---|
-| `AQUAGUARD™` | The hydrophobic water-separation technology/media — the core filtration mechanism. Present in `knowledge-architecture.ts` as `AQUAGUARD`. |
-| `AQUAGUARD/SERIES™` | The FH 900/1000 product line — a three-stage housing system that uses `AQUAGUARD™` as its Stage 3 barrier. Not in `knowledge-architecture.ts`. |
 
-**Resolution**: Two distinct entities in `unified-data.ts`. `AQUAGUARD` is the technology. `AQUAGUARD_SERIES` is the product line. The relationship is expressed as `AQUAGUARD_SERIES.primaryTechnology = 'AQUAGUARD'`.
 
 ---
 
@@ -255,13 +239,7 @@ The most significant data conflict in the codebase. For the seven industries tha
 
 | Industry | catalogue.json techTags | knowledge-architecture.ts applicableTechnologies | Conflict |
 |---|---|---|---|
-| Agriculture | MACROCORE, AQUAGUARD, SYNTRAX, NANOFORCE | MACROCORE, NANOFORCE, DURATECH, SYNTRAX | Missing AQUAGUARD in knowledge-arch; missing DURATECH in catalogue |
-| Construction | MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX | MACROCORE, NANOFORCE, DURATECH | Missing AQUAGUARD+SYNTRAX in knowledge-arch; missing DURATECH in catalogue |
-| Mining | MACROCORE, SYNTRAX, NANOFORCE, AQUAGUARD, SYNTEPORE | MACROCORE, NANOFORCE, DURATECH, SYNTRAX | Missing AQUAGUARD+SYNTEPORE in knowledge-arch; missing DURATECH in catalogue |
-| Marine | MACROCORE, AQUAGUARD, SYNTRAX, NANOFORCE | NANOFORCE, AQUAGUARD, DURATECH, SYNTRAX | Missing MACROCORE in knowledge-arch; missing DURATECH in catalogue |
 | Automotive | SYNTRAX, MACROCORE, SYNTEPORE, MICROKAPPA | MACROCORE, NANOFORCE, DURATECH | Missing SYNTRAX+SYNTEPORE+MICROKAPPA in knowledge-arch; missing NANOFORCE in catalogue |
-| Manufacturing | MACROCORE, SYNTRAX, AQUAGUARD, NANOFORCE | NANOFORCE, MICROKAPPA, SYNTRAX | MACROCORE+AQUAGUARD in catalogue only; MICROKAPPA in knowledge-arch only |
-| Power Generation | SYNTEPORE, SYNTRAX, AQUAGUARD, DRYCORE | MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX | SYNTEPORE+DRYCORE in catalogue only; MACROCORE+NANOFORCE in knowledge-arch only |
 
 **Root cause**: The two sources were authored independently with different intent. `catalogue.json` reflects marketing-level technology groupings. `knowledge-architecture.ts` reflects technical contamination-based assignments. Neither is the complete picture.
 
@@ -327,17 +305,13 @@ All 12 systems in `catalogue.json` products array have display content but no re
 | System | Technology used | In `catalogue.json` as | Has standard references? | Has contamination links? | Has industry links? |
 |---|---|---|---|---|---|
 | Airfilter | MACROCORE | `techTags: ['MACROCORE™']` | No | No | No |
-| Aquaguard Series | AQUAGUARD + AQUAGUARD_SERIES | `techTags: ['AQUAGUARD/SERIES™', 'AQUAGUARD™']` | No | No | No |
 | Cabin | MICROKAPPA | `techTags: ['MICROKAPPA™']` | No | No | No |
-| Coolant | COOLTECH | `techTags: ['COOLTECH™']` | No | No | No |
 | Dryer | DRYCORE | `techTags: ['DRYCORE™']` | No | No | No |
-| Fuel | SYNTEPORE + AQUAGUARD | `techTags: ['AQUAGUARD™', 'SYNTEPORE™']` | No | No | No |
 | Housing | INTEKCORE + MACROCORE | `techTags: ['INTEKCORE™', 'MACROCORE™']` | No | No | No |
 | Hydraulic | NANOFORCE | `techTags: ['NANOFORCE™']` | No | No | No |
 | Kits | DURATECH | `techTags: ['DURATECH™']` | No | No | No |
 | Marine | MARINECLEAN | `techTags: ['MARINECLEAN™']` | No | No | No |
 | Oil | SYNTRAX | `techTags: ['SYNTRAX™']` | No | No | No |
-| Water | AQUAGUARD | `techTags: ['AQUAGUARD™']` | No | No | No |
 
 Every relational link for systems must be authored from scratch in `unified-data.ts`. The `techTags` strings are the only starting point.
 
@@ -354,7 +328,6 @@ Their only technology linkage is the loose `techTags` strings in `catalogue.json
 
 ### 5.3 Six Technologies Have No Relational Data
 
-SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, and AQUAGUARD_SERIES have full display content and narrative content but zero presence in `knowledge-architecture.ts`. They have:
 - No related standards
 - No contamination modes addressed
 - No applicable industries (typed)
@@ -376,10 +349,10 @@ The `system` field in `TECH_COMPARISON` provides the only canonical mapping of t
 |---|---|
 | Air Intake | MACROCORE, SYNTEPORE, INTEKCORE |
 | Compressed Air | DRYCORE |
-| Fuel Cleanliness | AQUAGUARD |
+| Fuel Cleanliness |  |
 | Lubrication | SYNTRAX |
 | Hydraulic | NANOFORCE |
-| Cooling System | COOLTECH |
+| Cooling System |  |
 | Cabin Protection | MICROKAPPA |
 
 This taxonomy exists only in an inline constant on one page. It is not referenced by any other data structure. Part Search and AI Engine both need this domain classification to route queries to the correct filtration system. It must be elevated to a first-class field in `unified-data.ts`.
@@ -655,7 +628,6 @@ CONTAMINATION MODE: Diesel Water Contamination
 ROOT CAUSES: Atmospheric breathing → Condensation → Storage corrosion → Transfer contamination
 FAILURE CHAIN: Injector stiction → Fuel delivery corrosion → Microbial growth → Lubricity loss
 OPERATIONAL IMPACT: Hard starting +5–15s | Fuel consumption +3–8% | Equipment availability -12–18%
-RESOLVING TECHNOLOGIES: NANOFORCE, AQUAGUARD, SYNTRAX
 APPLICABLE STANDARD: ASTM D6304 (water content in fuels) | ISO 12937
 SOURCE: elimfilters.com/knowledge-system/contamination/diesel-water
 ```
@@ -886,7 +858,6 @@ Sub-tasks in strict order:
 **1b. Migrate + correct 6 existing standards from knowledge-architecture.ts; author 5 missing**
 **1c. Migrate + correct 3 existing contamination modes; author 3 missing** (Cabin Air, Coolant Contamination, Compressed Air Moisture)
 **1d. Migrate 6 existing technologies from knowledge-architecture.ts** — carry all typed fields, add `geoDefinition` from GEO_DEFINITIONS, add `systemDomain`/`comparisonFunction`/`comparisonMetric` from TECH_COMPARISON, add `logoFile` from getTechLogoFile(), add explicit `slug`
-**1e. Author 6 missing technologies** (SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, AQUAGUARD_SERIES) — use techPagesData.ts + GEO_DEFINITIONS + catalogue.json as source material; mark unverifiable fields `// TODO: verify`
 **1f. Migrate 7 existing industries** — carry all typed fields, add rendering content from catalogue.json; apply reconciled applicableTechnologies from Step 0a
 **1g. Author 5 missing industries** (BUS_COACH, RAILWAY, TRUCKS_FLEETS, OIL_GAS, WASTE_MUNICIPAL) — use catalogue.json content + techTags cross-reference as starting point; mark unverifiable relational fields `// TODO: verify`
 **1h. Author 12 systems** — use catalogue.json products content + techTags to derive relational fields; all systems are entirely new relational entries
@@ -934,7 +905,6 @@ export {
 **4a.** Import `UNIFIED_TECHNOLOGIES` in `technologies/page.tsx`
 **4b.** Replace `GEO_DEFINITIONS[slug]` with `tech.geoDefinition` (tech is the matched `UnifiedTechnology` entry)
 **4c.** Replace the `TECH_COMPARISON` array with a derived view from `UNIFIED_TECHNOLOGIES` filtered and mapped to the comparison table format
-**4d.** Add Aquaguard Series, Duratech, Marineclean to the comparison table (they now have `comparisonFunction` and `comparisonMetric` fields)
 
 → **Build check**: `npm run build` — 89 pages. Technologies hub page JSON-LD output must be structurally identical to pre-migration output (same technologies, same descriptions).
 
@@ -1043,7 +1013,6 @@ export {
 
 | Dependency | Type | Impact if Absent |
 |---|---|---|
-| Technical validation of 6 missing technology relational fields | Content authoring — project owner input | SYNTEPORE, INTEKCORE, DRYCORE, COOLTECH, MARINECLEAN, AQUAGUARD_SERIES `applicableIndustries` and `relatedStandards` may be incorrect if authored without owner verification. Phase 2 proceeds with `// TODO: verify` annotations; Phase 4 depends on these being resolved. |
 | Industry knowledge for 5 missing industries | Content authoring — project owner input | BUS_COACH, RAILWAY, TRUCKS_FLEETS, OIL_GAS, WASTE_MUNICIPAL `contaminationExposure` ratings and `applicableStandards` require owner confirmation. |
 | Resolution of technology-industry conflicts (Section 4.1) | Content authority decision | The 7 industries with conflicting technology lists need a single authoritative answer. This is a product/business decision, not a technical one. |
 | Part Search API access (for Phase 5) | Infrastructure | Phase 2 does not require Part Search. But the `systemDomain` taxonomy written in Step 1 must anticipate Part Search's query routing needs. |
@@ -1143,7 +1112,6 @@ STEP 6 — Data integrity validation
 - [ ] `knowledge-architecture.ts` is a thin re-export file (< 30 lines)
 - [ ] ISO 16889 and ISO 4406 descriptions are corrected
 - [ ] SYNTRAX system domain is `'Lubrication'` (not air intake)
-- [ ] `AQUAGUARD` and `AQUAGUARD_SERIES` are distinct entries with a documented relationship
 - [ ] All `// TODO: verify` annotations are listed in a known-issues tracking comment at the top of `unified-data.ts`
 - [ ] `COMPARISON_TOPICS`, `FLEET_OPTIMIZATION`, `EDUCATIONAL_PATHWAYS` are re-exported from `unified-data.ts`
 - [ ] Part Search consumption data structure (`systemDomain`, `applicableIndustries`, `addressesContamination`) is present on all 12 `UnifiedTechnology` entries

@@ -23,11 +23,9 @@ From `TECH_LOGO_MAP` (server.js lines 633–647) — these are the technologies 
 | INTEKCORE | INTEKCORE™ | logo-intekcore.png | Air Housing |
 | DRYCORE | DRYCORE™ | logo-drycore.png | Compressed Air |
 | DURATECH | DURATECH™ | logo-duratech.png | Lube (heavy duty) |
-| COOLTECH | COOLTECH™ | logo-cooltech.png | Coolant |
 | SYNTEPORE | SYNTEPORE™ | logo-syntepore.png | Fuel |
 | MICROKAPPA | MICROKAPPA™ | logo-microkappa.png | Cabin Air |
 | GASULTRA | GASULTRA™ | logo-gasultra.png | Compressed Air |
-| AQUAGUARD | AQUAGUARD™ | logo-aquaguard.png | Fuel/Water |
 | MARINECLEAN | MARINECLEAN™ | logo-marineclean.png | Marine |
 | BLUECLEAN | BLUECLEAN™ | logo-blueclean.png | Specialty |
 
@@ -68,9 +66,7 @@ From `update-lube-descriptions` endpoint (lines 36–406):
 | SYNTRAX | Lube Filter | Centrifuge |
 | MICROKAPPA | Cabin Air Filter | — |
 | NANOFORCE | Hydraulic Filter | Spin-On, Cartridge |
-| AQUAGUARD | Fuel/Water Separator | Spin-On, Cartridge |
 | SYNTEPORE | Fuel Filter | Inline, Spin-On, Cartridge |
-| COOLTECH | Coolant Filter | — |
 | DURATECH | (heavy duty lube variants) | Spin-On |
 | MARINECLEAN | (marine filters) | — |
 | GASULTRA | (compressed air) | — |
@@ -89,10 +85,8 @@ From `update-lube-descriptions` endpoint (lines 36–406):
 | syntrax | lube-oil | Yes |
 | duratech | lube-oil | Yes |
 | nanoforce | hydraulic | Yes |
-| aquaguard | fuel | Yes |
 | syntepore | fuel | Yes |
 | microkappa | cabin | Yes |
-| cooltech | lube-oil | Adjacent |
 | marineclean | lube-oil, fuel | Marine context |
 | blueclean | lube-oil | Specialty |
 
@@ -109,10 +103,8 @@ From `update-lube-descriptions` endpoint (lines 36–406):
 | syntrax | agriculture, mining, construction, marine, automotive |
 | duratech | mining, construction (extreme duty) |
 | nanoforce | construction, mining, manufacturing |
-| aquaguard | agriculture, marine, automotive |
 | syntepore | agriculture, automotive, marine |
 | microkappa | agriculture, mining, construction, automotive |
-| cooltech | agriculture, construction, automotive |
 | marineclean | marine |
 | blueclean | specialty |
 
@@ -121,8 +113,6 @@ From `update-lube-descriptions` endpoint (lines 36–406):
 ## ALIGNMENT WITH knowledge-architecture.ts
 
 The TypeScript file lists these technologies with full metadata:
-- MACROCORE, NANOFORCE, SYNTRAX, AQUAGUARD, DURATECH, MICROKAPPA
-- COOLTECH, INTEKCORE, DRYCORE (mentioned in CLAUDE.md/architecture)
 - SYNTEPORE, GASULTRA, MARINECLEAN, BLUECLEAN (in TECH_LOGO_MAP)
 
 **Gap:** knowledge-architecture.ts may only document 6-9 technologies but DB has 14. The KG must document ALL 14.
@@ -148,8 +138,6 @@ ORDER BY filter_type, cnt DESC;
 SELECT technology, COUNT(*) FROM elimfilters_catalog 
 WHERE technology NOT IN (
   'MACROCORE', 'INTEKCORE', 'DRYCORE', 'GASULTRA',
-  'SYNTRAX', 'SINTRAX', 'DURATECH', 'COOLTECH',
-  'NANOFORCE', 'AQUAGUARD', 'SYNTEPORE', 'SYNTAPORE',
   'MICROKAPPA', 'MARINECLEAN', 'BLUECLEAN'
 ) AND technology IS NOT NULL
 GROUP BY technology;

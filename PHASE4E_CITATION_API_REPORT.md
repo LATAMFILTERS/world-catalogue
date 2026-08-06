@@ -52,9 +52,6 @@ Five query patterns available as static files:
 
 ```
 ├ ● /technologies/[slug]                                4.34 kB         161 kB
-├   ├ /technologies/aquaguard-series
-├   ├ /technologies/aquaguard
-├   ├ /technologies/cooltech
 │   └ [+9 more paths]
 └ ○ /warranty                                           2.43 kB         129 kB
 + First Load JS shared by all                           87.3 kB

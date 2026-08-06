@@ -25,8 +25,8 @@ Last updated: 2026-06-03
 
 | Key | Replaced By | Status |
 |-----|-------------|--------|
-| AQUAGUARD | HYDROCORE | ⬜ Pending |
-| COOLTECH | THERMOCORE | ⬜ Pending |
+ | HYDROCORE | ⬜ Pending |
+ | THERMOCORE | ⬜ Pending |
 
 ### Ecosystems (0 of 2 created)
 

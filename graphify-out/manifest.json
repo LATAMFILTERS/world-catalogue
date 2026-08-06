@@ -2419,12 +2419,10 @@
     "ast_hash": "58291764416e5a923e4e6ae4227beb64",
     "semantic_hash": "58291764416e5a923e4e6ae4227beb64"
   },
-  "frontend/src/app/technologies/aquaguard/page.tsx": {
     "mtime": 1783508407.8029897,
     "ast_hash": "bfe01deae4f8750abf7524e24e6f8eb3",
     "semantic_hash": "bfe01deae4f8750abf7524e24e6f8eb3"
   },
-  "frontend/src/app/technologies/cooltech/page.tsx": {
     "mtime": 1783508407.8029897,
     "ast_hash": "3d73934914d5caf6e933c7f78b8ab2d2",
     "semantic_hash": "3d73934914d5caf6e933c7f78b8ab2d2"
@@ -2464,7 +2462,6 @@
     "ast_hash": "4ff34ce1d157b00ceb513d928cf285c8",
     "semantic_hash": "4ff34ce1d157b00ceb513d928cf285c8"
   },
-  "frontend/src/components/AquaguardPage.tsx": {
     "mtime": 1783508407.805835,
     "ast_hash": "dbfb6518cdcb940084134e8e8e79da67",
     "semantic_hash": "dbfb6518cdcb940084134e8e8e79da67"

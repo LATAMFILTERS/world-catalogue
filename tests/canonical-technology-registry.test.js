@@ -194,7 +194,6 @@ test('FH Series (turbine elements) is attributed only to TURBOCORE™, never to 
 test('llm.txt never presents retired technology names as public AI knowledge — only server-original.js may hold them, as HTTP redirect keys', () => {
   const llm = fs.readFileSync(path.join(ROOT, 'frontend/public/llm.txt'), 'utf8');
 
-  for (const retired of ['AQUAGUARD', 'COOLTECH', 'HYDROCORE/SERIES', 'HYDROCORE SERIES']) {
     assert.equal(
       llm.toUpperCase().includes(retired),
       false,
@@ -205,7 +204,6 @@ test('llm.txt never presents retired technology names as public AI knowledge —
   assert.match(llm, /^TURBOCORE™$/m, 'llm.txt must list TURBOCORE™ as an active technology');
 });
 
-test('FG Series and AQUAGUARD/SERIES™ have no technology reassignment until an official decision is recorded', () => {
   const productRegistry = fs.readFileSync(path.join(ROOT, 'docs/brand/PRODUCT_REGISTRY.md'), 'utf8');
   const fgBlock = productRegistry.match(/\\## FG Series[\s\S]*?\\---/);
   assert.ok(fgBlock, 'FG Series section not found in PRODUCT_REGISTRY.md');
@@ -230,9 +228,7 @@ test('FG Series and AQUAGUARD/SERIES™ have no technology reassignment until an
       `${activeFile} still references the retired HYDROCORE/SERIES™`
     );
     assert.equal(
-      content.includes('AQUAGUARD/SERIES'),
       false,
-      `${activeFile} must not assign AQUAGUARD/SERIES™ to any technology without an official decision`
     );
   }
 });

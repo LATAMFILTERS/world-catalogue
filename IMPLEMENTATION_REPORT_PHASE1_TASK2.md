@@ -49,7 +49,6 @@ In `knowledge-architecture.ts`, the `CONSTRUCTION` industry definition listed `'
 applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'NANOFORCE_HYDRAULIC', 'DURATECH'],
 ```
 
-`NANOFORCE_HYDRAULIC` does not exist as a key in the `TECHNOLOGIES` record. The `TECHNOLOGIES` object defines exactly six keys: `MACROCORE`, `NANOFORCE`, `MICROKAPPA`, `SYNTRAX`, `AQUAGUARD`, `DURATECH`.
 
 **Runtime consequence** — Any call to `getTechnologyByIndustry('CONSTRUCTION')` executes:
 ```typescript

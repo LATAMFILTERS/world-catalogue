@@ -249,8 +249,6 @@ No files outside `elimfilters-vault/` were modified in this task.
 - Create 8 remaining active technology notes: SYNTEPORE, INTEKCORE, DRYCORE, HYDROCORE (with TODO flags), SYNTRAX, NANOFORCE, THERMOCORE (with TODO flags), MICROKAPPA
 
 **Priority 4 (complete 01-technologies/ deprecated and ecosystems):**
-- Create AQUAGUARD.md (deprecated → HYDROCORE)
-- Create COOLTECH.md (deprecated → THERMOCORE)
 - Create MARINECLEAN.md (ecosystem)
 - Create DURATECH.md (ecosystem)
 

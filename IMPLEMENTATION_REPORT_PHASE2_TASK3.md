@@ -70,12 +70,11 @@ All 7 query functions preserved with identical signatures. Data now sourced from
 
 ### getAllTechnologiesByFeature — feature map updated
 
-Old map referenced AQUAGUARD and DURATECH (now deprecated/ecosystem).
 Updated to use correct active technology replacements per owner decisions:
 
 | Feature | Old | New |
 |---------|-----|-----|
-| waterRemoval | NANOFORCE, AQUAGUARD, SYNTRAX | NANOFORCE, **HYDROCORE**, SYNTRAX |
+| waterRemoval | NANOFORCE, SYNTRAX | NANOFORCE, **HYDROCORE**, SYNTRAX |
 | particleCapture | MACROCORE, NANOFORCE, DURATECH, MICROKAPPA | MACROCORE, NANOFORCE, **SYNTRAX**, MICROKAPPA |
 | wearProtection | DURATECH, SYNTRAX | **SYNTRAX**, NANOFORCE |
 | costEffective | MACROCORE, DURATECH | MACROCORE, **SYNTRAX** |
@@ -88,12 +87,11 @@ Updated to use correct active technology replacements per owner decisions:
 
 | Before | After |
 |--------|-------|
-| 6 entries (MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, AQUAGUARD, DURATECH) | 13 entries derived from unified-data.ts |
+| 6 entries (MACROCORE, NANOFORCE, MICROKAPPA, SYNTRAX, DURATECH) | 13 entries derived from unified-data.ts |
 | Hardcoded inline | Derived from UD_TECHNOLOGIES (9 active) + UD_DEPRECATED (2) + UD_ECOSYSTEMS (2) |
 
 New active technologies added: SYNTEPORE, INTEKCORE, DRYCORE, HYDROCORE, THERMOCORE
 
-AQUAGUARD and DURATECH preserved in the map as deprecated/ecosystem entries (for legacy
 string-based lookups). Their entries now contain correct metadata (replacedBy, deprecatedDate,
 programType) instead of stale product data.
 
@@ -124,8 +122,8 @@ New contamination modes added: COMPRESSED_AIR_MOISTURE, COOLANT_CONTAMINATION, C
 
 resolvedBy updated per owner decisions:
 - PARTICLE_WEAR: was ['MACROCORE', 'NANOFORCE', 'DURATECH'] → now ['MACROCORE', 'NANOFORCE', 'SYNTRAX']
-- DIESEL_WATER: was ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX'] → now ['NANOFORCE', 'HYDROCORE', 'SYNTRAX']
-- HYDRAULIC_CONTAMINATION: was ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'MICROKAPPA'] → now ['NANOFORCE', 'HYDROCORE', 'SYNTRAX', 'MICROKAPPA']
+- DIESEL_WATER: was ['NANOFORCE', 'SYNTRAX'] → now ['NANOFORCE', 'HYDROCORE', 'SYNTRAX']
+- HYDRAULIC_CONTAMINATION: was ['NANOFORCE', 'SYNTRAX', 'MICROKAPPA'] → now ['NANOFORCE', 'HYDROCORE', 'SYNTRAX', 'MICROKAPPA']
 
 `applicableIndustries` field is now computed dynamically — no longer hardcoded strings.
 
@@ -143,7 +141,6 @@ unified-data.ts — no key change required.
 
 ### Kept Inline (no change from unified-data.ts)
 
-- `COMPARISON_TOPICS` — updated relevantTechnologies to use HYDROCORE instead of AQUAGUARD
 - `FLEET_OPTIMIZATION` — unchanged
 - `EDUCATIONAL_PATHWAYS` — unchanged
 
@@ -157,7 +154,6 @@ unified-data.ts — no key change required.
 | `STANDARDS` | SHAPE PRESERVED | Same type (StandardRecord), more entries, data from UD |
 | `CONTAMINATION_MODES` | SHAPE PRESERVED | Same type (ContaminationRecord), more entries, data from UD |
 | `INDUSTRIES` | SHAPE PRESERVED | Same type (IndustryRecord), more entries, data from UD |
-| `COMPARISON_TOPICS` | UNCHANGED | Still inline, updated AQUAGUARD → HYDROCORE in relevantTechnologies |
 | `FLEET_OPTIMIZATION` | UNCHANGED | Still inline |
 | `EDUCATIONAL_PATHWAYS` | UNCHANGED | Still inline |
 | `getTechnologyByIndustry` | UNCHANGED | Same signature |
@@ -211,9 +207,6 @@ applicableIndustries arrays that existed in the old inline data.
 
 ## Risks
 
-**Risk 1 — AQUAGUARD/DURATECH legacy lookup behavior change**
-Functions that previously returned full product data for AQUAGUARD and DURATECH (e.g.,
-`getTechnologyByIndustry('MARINE')` which returned AQUAGUARD) now return the deprecated/
 ecosystem metadata format for those keys. Impact: zero, since no pages consume these functions.
 
 **Risk 2 — POWER_GEN key change**

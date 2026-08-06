@@ -63,8 +63,6 @@ elimfilters-vault/
 │   │   ├── THERMOCORE.md
 │   │   └── MICROKAPPA.md
 │   ├── deprecated/
-│   │   ├── AQUAGUARD.md
-│   │   └── COOLTECH.md
 │   └── ecosystems/
 │       ├── MARINECLEAN.md
 │       └── DURATECH.md
@@ -86,7 +84,6 @@ elimfilters-vault/
 ├── 03-systems/
 │   ├── product-systems/
 │   │   ├── AIRFILTER.md
-│   │   ├── AQUAGUARD_SERIES.md
 │   │   ├── CABIN.md
 │   │   ├── COOLANT.md
 │   │   ├── DRYER.md
@@ -863,7 +860,6 @@ Central nodes: `MACROCORE`, `SYNTEPORE`, `INTEKCORE`
 Connected: `PARTICLE_WEAR`, `ISO_5011`, `SAE_J1539`, `AGRICULTURE`, `MINING`, `CONSTRUCTION`, `air-intake-systems (KB)`
 
 **Cluster 2 — Fuel & Water Hub**
-Central nodes: `HYDROCORE`, `AQUAGUARD` (deprecated, still linked)
 Connected: `DIESEL_WATER`, `ASTM_D6304`, `ISO_12937`, `MARINE`, `OIL_GAS`, `fuel-systems (KB)`, all injector problem notes
 
 **Cluster 3 — Hydraulic Hub**

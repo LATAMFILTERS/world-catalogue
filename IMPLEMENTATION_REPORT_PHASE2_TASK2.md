@@ -23,9 +23,6 @@
 ```typescript
 export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
-    'Aquaguard Series': 'logo-aquaguard.png',
-    Aquaguard: 'logo-aquaguard.png',
-    Cooltech: 'logo-cooltech.png',
     Drycore: 'logo-drycore.png',
     Duratech: 'logo-duratech.png',
     Intekcore: 'logo-intekcore.png',
@@ -43,7 +40,6 @@ export function getTechLogoFile(name: string): string {
 ### After (derived from unified-data.ts):
 ```typescript
 const _techLogoBySlug: Record<string, string> = {
-  'aquaguard-series': DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile,
   ...Object.fromEntries(Object.values(TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
   ...Object.fromEntries(Object.values(DEPRECATED_TECHNOLOGIES).map((t) => [t.slug, t.logoFile])),
   ...Object.fromEntries(Object.values(ECOSYSTEMS).map((e) => [e.slug, e.logoFile])),
@@ -94,9 +90,6 @@ All 12 legacy logo mappings preserved via slug derivation:
 
 | Input name | Slug derived | Logo file |
 |------------|-------------|-----------|
-| Aquaguard Series | aquaguard-series | logo-aquaguard.png (special case) |
-| Aquaguard | aquaguard | logo-aquaguard.png |
-| Cooltech | cooltech | logo-cooltech.png |
 | Drycore | drycore | logo-drycore.png |
 | Duratech | duratech | logo-duratech.png |
 | Intekcore | intekcore | logo-intekcore.png |
@@ -129,16 +122,10 @@ New mappings added automatically (not in legacy map):
 
 ## Special Cases Handled
 
-### 'aquaguard-series' slug collision
-The slug 'aquaguard-series' is both:
-- A System key in unified-data.ts (`SYSTEMS.AQUAGUARD_SERIES`)
-- A legacy input to `getTechLogoFile()` from the 'Aquaguard Series' technology name
 
 The module-level constant adds an explicit override before the spread operations:
 ```
-'aquaguard-series': DEPRECATED_TECHNOLOGIES.AQUAGUARD.logoFile
 ```
-This ensures 'Aquaguard Series' → 'logo-aquaguard.png' (correct), not the SYSTEMS entry.
 
 ### SYNTRAX logo filename
 `logo-sintrax.png` is an intentional typo in the asset filename. This is preserved

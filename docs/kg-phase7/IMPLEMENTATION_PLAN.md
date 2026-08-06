@@ -282,7 +282,6 @@ async function handleClass2(techNameRaw, client) {
     'SYNTEPORE': 'syntepore', 'SYNTAPORE': 'syntepore',
     'INTEKCORE': 'intekcore', 'INTAKCORE': 'intekcore',
     'MICROKAPPA': 'microkappa', 'DURATECH': 'duratech',
-    'AQUAGUARD': 'aquaguard', 'COOLTECH': 'cooltech',
     'DRYCORE': 'drycore', 'GASULTRA': 'gasultra',
     'MARINECLEAN': 'marineclean', 'BLUECLEAN': 'blueclean',
   };

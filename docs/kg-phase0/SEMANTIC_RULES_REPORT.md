@@ -288,13 +288,11 @@ All 13 technologies use ™ trademark suffix in display names:
 | nanoforce | NANOFORCE™ |
 | syntrax | SYNTRAX™ |
 | duratech | DURATECH™ |
-| aquaguard | AQUAGUARD™ |
 | microkappa | MICROKAPPA™ |
 | intekcore | INTEKCORE™ |
 | drycore | DRYCORE™ |
 | gasultra | GASULTRA™ |
 | syntepore | SYNTEPORE™ |
-| cooltech | COOLTECH™ |
 | marineclean | MARINECLEAN™ |
 | blueclean | BLUECLEAN™ |
 

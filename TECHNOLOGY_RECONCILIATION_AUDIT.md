@@ -8,8 +8,6 @@ Generated: 2026-06-02 | Scope: Full repository (excluding `frontend/out/` build 
 
 | Technology | Decision | Implementation |
 |-----------|----------|---------------|
-| **AQUAGUARD** | ✅ **Deprecate with sunset plan** | Mark `@deprecated` in `unified-data.ts`. Keep existing product pages live. Stop referencing in new canonical blocks and `TechnologyKey` union. Set future removal milestone. |
-| **COOLTECH** | ✅ **Deprecate with sunset plan** | Mark `@deprecated` in `unified-data.ts`. Keep existing product pages live. Stop referencing in new canonical blocks and `TechnologyKey` union. Set future removal milestone. |
 | **Content errors** | ✅ **Fix now as part of implementation** | Correct all 8 DURATECH-as-filtration-media content errors during `unified-data.ts` implementation. Replace with correct technology attributions (SYNTRAX for oil filtration, NANOFORCE for hydraulic return-line, DRYCORE for compressed air). |
 | **MARINECLEAN** | ✅ Ecosystem (pre-declared) | Reframe from technology peer to Ecosystem entry. No product page deletion. |
 | **DURATECH** | ✅ Ecosystem (pre-declared) | Reframe from technology peer to Ecosystem entry. Replace filtration-media descriptions with correct technology attributions. |
@@ -30,7 +28,6 @@ MACROCORE · MICROKAPPA · DRYCORE · INTEKCORE · HYDROCORE · THERMOCORE · SY
 MARINECLEAN · DURATECH
 ```
 
-> **Note**: HYDROCORE and THERMOCORE replace AQUAGUARD and COOLTECH relative to the previous 9-technology platform documented in PHASE2_FINAL_RECONCILIATION.md. AQUAGUARD and COOLTECH are not in the active platform and are not classified as Ecosystems.
 
 ---
 
@@ -49,8 +46,6 @@ MARINECLEAN · DURATECH
 
 | Term | Source Files (frontend/src) | Other Source (server.js, catalogue.json) | Documentation Files | Build Artifacts | Total Files |
 |------|----------------------------|------------------------------------------|---------------------|-----------------|-------------|
-| AQUAGUARD | 26 | 2 | 10 | 22 (excluded) | 60 |
-| COOLTECH | 6 | 2 | 7 | 5 (excluded) | 20 |
 | MARINECLEAN | 3 | 2 | 7 | 2 (excluded) | 14 |
 | DURATECH | 22 | 2 | 12 | 13 (excluded) | 49 |
 
@@ -58,129 +53,58 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 
 ---
 
-## 4. AQUAGUARD Audit
 
 **Platform status**: Not in active technology platform. Not classified as Ecosystem.
-**Current state**: Fully live technology with two distinct product lines (AQUAGUARD™ and AQUAGUARD/SERIES™), product pages, catalogue entries, knowledge system canonical blocks, and industry-page FAQ answers.
 **Required classification**: All source code occurrences are Active Technology References requiring owner decision before `unified-data.ts` implementation.
 
 ### 4.1 Core Data Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/catalogue.json` | 481–501 | **AT** | Technology array entry: `"name": "Aquaguard Series"`, `"title": "AQUAGUARD/SERIES™"`, techTags |
-| `frontend/catalogue.json` | 818–829 | **AT** | Technology array entry: `"name": "Aquaguard"`, `"title": "AQUAGUARD™"`, techTags |
-| `frontend/catalogue.json` | 26, 122, 155, 193, 218, 232, 268, 309 | **AT** | Product techTags in Industries and Products sections: `"AQUAGUARD™"` listed in industry associations and product metadata |
 | `frontend/catalogue.json` | 618, 786 | **AT** | Additional product/system techTag references |
-| `server.js` | 104–109 | **AT** | Product descriptions for Fuel/Water Separator Spin-On and Cartridge: `"Its AQUAGUARD™ technology achieves three-phase water interception"` |
-| `server.js` | 644 | **AT** | Slug routing: `'aquaguard': 'aquaguard'` |
 
 ### 4.2 Library / Architecture Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/lib/catalogue.ts` | 68 | **AT** | `getTechLogoFile()`: `'Aquaguard Series': 'logo-aquaguard.png'` |
-| `frontend/src/lib/catalogue.ts` | 69 | **AT** | `getTechLogoFile()`: `Aquaguard: 'logo-aquaguard.png'` |
-| `frontend/src/lib/knowledge-architecture.ts` | 153–158 | **AT** | `TECHNOLOGIES.AQUAGUARD` full registry entry: `{ id: 'aquaguard', name: 'AQUAGUARD™', slug: 'aquaguard', ... }` |
-| `frontend/src/lib/knowledge-architecture.ts` | 203 | **AT** | Standard `applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'AQUAGUARD', 'DURATECH']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 227 | **AT** | Standard `applicableTo: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'AQUAGUARD', 'DURATECH']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 239 | **AT** | Standard `applicableTo: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 288 | **AT** | Contamination mode `resolvedBy: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 326 | **AT** | Contamination mode `resolvedBy: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX', 'MICROKAPPA']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 395 | **AT** | Industry `applicableTechnologies: ['NANOFORCE', 'AQUAGUARD', 'DURATECH', 'SYNTRAX']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 446 | **AT** | Industry `applicableTechnologies: ['MACROCORE', 'NANOFORCE', 'AQUAGUARD', 'SYNTRAX']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 467 | **AT** | Comparison topic `relevantTechnologies: ['MACROCORE', 'NANOFORCE', 'MICROKAPPA', 'DURATECH', 'AQUAGUARD']` |
-| `frontend/src/lib/knowledge-architecture.ts` | 586 | **AT** | Comparison topic `waterRemoval: ['NANOFORCE', 'AQUAGUARD', 'SYNTRAX']` |
 
 ### 4.3 Technology Display Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/technologies/page.tsx` | 9 | **AT** | `GEO_DEFINITIONS['aquaguard-series']`: full AQUAGUARD/SERIES™ marketing definition string |
-| `frontend/src/app/technologies/page.tsx` | 10 | **AT** | `GEO_DEFINITIONS['aquaguard']`: full AQUAGUARD™ marketing definition string |
-| `frontend/src/app/technologies/page.tsx` | 28 | **AT** | `TECH_COMPARISON` row: `{ name: 'AQUAGUARD™', slug: 'aquaguard', system: 'Fuel Cleanliness', ... }` |
-| `frontend/src/app/technologies/page.tsx` | 42, 50 | **AT** | FAQ answers treating AQUAGUARD™ as currently live technology with ISO/ASTM specs |
-| `frontend/src/app/technologies/[slug]/techPagesData.ts` | 5–78 | **AT** | Full `aquaguard-series` tech page data block: hero, stages, applications, CTA (73 lines) |
-| `frontend/src/app/technologies/[slug]/techPagesData.ts` | 470–543 | **AT** | Full `aquaguard` tech page data block: hero, mechanisms, stages, applications, CTA (73 lines) |
-| `frontend/src/app/technologies/layout.tsx` | 8 | **AT** | SEO metadata keywords: `'AQUAGUARD fuel filter'` |
 
 ### 4.4 Component Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/components/AquaguardPage.tsx` | 1–260+ | **AT** | Dedicated full-page React component for AQUAGUARD/SERIES™ product line (entire file) |
-| `frontend/src/components/FuelSeparatorPage.tsx` | 172 | **AT** | Product description: `"AQUAGUARD™ asset protection system"` three-stage architecture |
-| `frontend/src/components/CategoryPage.tsx` | 631 | **AT** | Fallback tech tag list: `['SYNTRAX™', 'NANOFORCE™', 'AQUAGUARD™', 'MACROCORE™', 'SYNTEPORE™', 'INTEKCORE™']` |
 
 ### 4.5 Routing / Application Shell Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/layout.tsx` | 31 | **AT** | Root metadata keywords: `'AQUAGUARD filter'` |
-| `frontend/src/app/contact/page.tsx` | 587 | **AT** | Contact page: `'SYNTRAX™ / NANOFORCE™ / AQUAGUARD™'` — technology inquiry grouping |
-| `frontend/src/app/page.tsx` | 959 | **AT** | Home page FAQ answer: `"AQUAGUARD™ fuel filters extend change intervals through superior water separation"` |
 
 ### 4.6 Systems Pages
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/systems/page.tsx` | 95, 101–102, 109, 116, 119 | **AT** | Fuel/Water Separator system cards: `tech: 'AQUAGUARD™'`; system technologies array |
-| `frontend/src/app/systems/page.tsx` | 274 | **AT** | Technology footer navigation entry: `name: 'AQUAGUARD™'` |
-| `frontend/src/app/systems/[slug]/page.tsx` | (multiple) | **AT** | Fuel system product detail pages rendering AQUAGUARD technology data |
-| `frontend/src/app/systems/[slug]/layout.tsx` | (multiple) | **AT** | Layout metadata for AQUAGUARD system pages |
-| `frontend/src/app/systems/[slug]/SystemPageClient.tsx` | (multiple) | **AT** | Client-side AQUAGUARD product rendering |
-| `frontend/src/app/products/[slug]/page.tsx` | (multiple) | **AT** | Product pages consuming AQUAGUARD techTags from catalogue.json |
 
 ### 4.7 Industries Page
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/industries/[slug]/page.tsx` | 145 | **AT** | Construction industry FAQ: `"AQUAGUARD™ fuel system protection achieves 99.8% free water removal"` |
-| `frontend/src/app/industries/[slug]/page.tsx` | 239 | **AT** | Manufacturing industry FAQ: AQUAGUARD™ in technology recommendation list |
-| `frontend/src/app/industries/[slug]/page.tsx` | 292, 300 | **AT** | Marine industry FAQ: AQUAGUARD™ recommended for marine diesel water separation |
-| `frontend/src/app/industries/[slug]/page.tsx` | 345, 353 | **AT** | Oil & Gas / Offshore FAQ: AQUAGUARD™ turbine-stage water separation recommendation |
-| `frontend/src/app/industries/[slug]/page.tsx` | 398, 402, 414 | **AT** | Power Generation FAQ: AQUAGUARD™ for standby generator fuel maintenance |
-| `frontend/src/app/industries/[slug]/page.tsx` | 451, 463 | **AT** | Railway FAQ: AQUAGUARD™ for locomotive fuel water separation |
-| `frontend/src/app/industries/[slug]/page.tsx` | 504, 508 | **AT** | Trucks & Fleets FAQ: AQUAGUARD™ HPCR injection protection |
-| `frontend/src/app/industries/[slug]/page.tsx` | 557 | **AT** | Waste Municipal FAQ: AQUAGUARD™ fuel protection |
-| `frontend/src/app/industries/[slug]/page.tsx` | 608, 623–624 | **AT** | Agriculture FAQ: AQUAGUARD™ turbine separator recommendation |
 
 ### 4.8 Knowledge System Pages
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/knowledge-system/page.tsx` | 434 | **AT** | Canonical block: `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD, DRYCORE` |
-| `frontend/src/app/knowledge-system/contamination/page.tsx` | 222 | **AT** | Canonical block: `Related_Technologies: MACROCORE, NANOFORCE, AQUAGUARD, SYNTRAX` |
-| `frontend/src/app/knowledge-system/contamination/diesel-water/page.tsx` | 31 | **AT** | Technology description body: AQUAGUARD™ superabsorbent polymer core mechanism |
-| `frontend/src/app/knowledge-system/contamination/diesel-water/page.tsx` | 340 | **AT** | Canonical block: `Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE` |
-| `frontend/src/app/knowledge-system/contamination/hydraulic-system/page.tsx` | 31 | **AT** | Technology description body: AQUAGUARD™ water-removal cartridges in hydraulic system |
-| `frontend/src/app/knowledge-system/science/page.tsx` | 494 | **AT** | Canonical block: `AQUAGUARD (water separation)` |
-| `frontend/src/app/knowledge-system/standards/page.tsx` | 243 | **AT** | Canonical block: `Related_Technologies: MACROCORE, NANOFORCE, DRYCORE, AQUAGUARD, MICROKAPPA` |
-| `frontend/src/app/knowledge-system/standards/fuel-systems/page.tsx` | 16 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores...' }` |
-| `frontend/src/app/knowledge-system/standards/fuel-systems/page.tsx` | 255 | **AT** | Canonical block: `Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE` |
-| `frontend/src/app/knowledge-system/standards/hydraulic-systems/page.tsx` | 18 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water removal technology...' }` |
-| `frontend/src/app/knowledge-system/standards/compressed-air-systems/page.tsx` | 21–22 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard-series' }` *(note: AQUAGUARD in a compressed air context — likely incorrect placement)* |
-| `frontend/src/app/knowledge-system/fleet/page.tsx` | 218 | **AT** | Canonical block: `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD` |
-| `frontend/src/app/knowledge-system/fleet/reducing-downtime/page.tsx` | 16 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard', role: 'Water extraction from fuel...' }` |
-| `frontend/src/app/knowledge-system/fleet/fuel-efficiency/page.tsx` | 14 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard', role: 'Superabsorbent polymer cores...' }` |
-| `frontend/src/app/knowledge-system/fleet/fuel-efficiency/page.tsx` | 459 | **AT** | Canonical block: `Related_Technologies: AQUAGUARD, MACROCORE, NANOFORCE` |
-| `frontend/src/app/knowledge-system/fleet/total-cost-ownership/page.tsx` | 17 | **AT** | Technology card: `{ name: 'AQUAGUARD', slug: 'aquaguard', role: 'Preventing injector damage...' }` |
-| `frontend/src/app/knowledge-system/fleet/total-cost-ownership/page.tsx` | 512 | **AT** | Canonical block: `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX` *(AQUAGUARD absent here)* |
 
 ### 4.9 Documentation Files (Historical — No Action Required)
 
 | File | Classification | Nature |
 |------|---------------|--------|
-| `PHASE2_FINAL_RECONCILIATION.md` | **HR** + **DT** | AQUAGUARD classified as active platform technology in Phase 2 planning (now superseded by new platform declaration) |
 | `PHASE2_CONFLICT_RECONCILIATION.md` | **HR** | Conflict analysis documents across 4 sources — planning record |
-| `PHASE2_EXECUTION_PLAN.md` | **HR** | Architecture mapping that listed AQUAGUARD in the 12-tech platform — historical state |
-| `UNIFIED_DATA_IMPLEMENTATION_PLAN.md` | **HR** | Migration plan that included AQUAGUARD as active technology — superseded |
 | `ECOSYSTEM_AUDIT.md` | **HR** | Lists full 12-tech inventory — historical snapshot |
-| `MASTER_IMPLEMENTATION_ROADMAP.md` | **HR** | Roadmap referencing AQUAGUARD as active technology — historical |
-| `README.md` | **HR** | Lists `AQUAGUARD™` in "12 Core Technologies" — outdated technology list |
-| `IMPLEMENTATION_REPORT_PHASE1_TASK2.md` | **HR** | Implementation report mentioning AQUAGUARD — historical |
 
-### 4.10 AQUAGUARD Classification Summary
 
 | Classification | Count (Source Files) | Count (Doc Files) |
 |---------------|---------------------|-------------------|
@@ -189,11 +113,9 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 | Ecosystem Reference (ER) | 0 | 0 |
 | Historical Reference (HR) | 0 | 9 |
 
-**Owner Decision Required**: AQUAGUARD is not in the active platform and is not classified as an Ecosystem. Its source code presence is extensive (26 files, full product pages, 2 dedicated components, full catalogue entries). A decision is required on whether to: (A) remove all AQUAGUARD source references, or (B) reclassify AQUAGUARD as a deprecated technology with a sunset plan. Neither path is the default — this is a blocking owner decision.
 
 ---
 
-## 5. COOLTECH Audit
 
 **Platform status**: Not in active technology platform. Not classified as Ecosystem.
 **Current state**: Fully live technology with product page, catalogue entry, and knowledge system canonical block references.
@@ -203,54 +125,33 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/catalogue.json` | 547 | **AT** | Product array entry description: `"COOLTECH™ Coolant Filter System uses active SCA (Supplemental Coolant Additive) release technology"` |
-| `frontend/catalogue.json` | 562 | **AT** | Product techTags: `"COOLTECH™"` |
-| `frontend/catalogue.json` | 839–841 | **AT** | Technology array entry: `"name": "Cooltech"`, `"file": "cooltech.html"`, `"title": "COOLTECH™"` |
-| `server.js` | 92–93 | **AT** | Bilingual product description (EN/ES): `"COOLTECH™ technology delivers controlled SCA additive release"` |
-| `server.js` | 640 | **AT** | Slug routing: `'cooltech': 'cooltech'` |
 
 ### 5.2 Library Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/lib/catalogue.ts` | 70 | **AT** | `getTechLogoFile()`: `Cooltech: 'logo-cooltech.png'` |
 
 ### 5.3 Technology Display Files
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/technologies/page.tsx` | 11 | **AT** | `GEO_DEFINITIONS['cooltech']`: full COOLTECH™ SCA technology definition |
-| `frontend/src/app/technologies/page.tsx` | 31 | **AT** | `TECH_COMPARISON` row: `{ name: 'COOLTECH™', slug: 'cooltech', system: 'Cooling System', ... }` |
-| `frontend/src/app/technologies/[slug]/techPagesData.ts` | 546–618 | **AT** | Full `cooltech` tech page data block: hero, mechanisms, liner cavitation, thermal transfer, applications (72 lines) |
 
 ### 5.4 Systems Page
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/systems/page.tsx` | 221 | **AT** | Coolant system card: `tech: 'COOLTECH™'` |
-| `frontend/src/app/systems/page.tsx` | 231 | **AT** | Coolant system technologies array: `['COOLTECH™', 'MICROKAPPA™']` |
-| `frontend/src/app/systems/page.tsx` | 295 | **AT** | Technology footer navigation: `name: 'COOLTECH™'` |
 
 ### 5.5 Knowledge System Pages
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/knowledge-system/bridges/industrial-filtration/page.tsx` | 1186 | **AT** | Canonical block technology list: `COOLTECH (Temperature-resistant media for extreme conditions)` — *Note: COOLTECH is a coolant additive technology, not temperature-resistant filtration media; this description is technically inaccurate* |
-| `frontend/src/app/knowledge-system/bridges/industrial-filtration/page.tsx` | 1261 | **AT** | JSON keywords array: `"COOLTECH"` |
-| `frontend/src/app/knowledge-system/standards/compressed-air-systems/page.tsx` | 279 | **AT** | Canonical block: `Related_Technologies: DRYCORE, COOLTECH, MACROCORE` — *Note: COOLTECH is a coolant filter technology; its presence in a compressed air canonical block is likely a content error* |
 
 ### 5.6 Documentation Files (Historical — No Action Required)
 
 | File | Classification | Nature |
 |------|---------------|--------|
-| `PHASE2_FINAL_RECONCILIATION.md` | **HR** | COOLTECH classified as active platform technology — superseded |
-| `PHASE2_CONFLICT_RECONCILIATION.md` | **HR** | Conflict analysis: COOLTECH inclusion decisions for AUTOMOTIVE, POWER_GENERATION — planning record |
-| `PHASE2_EXECUTION_PLAN.md` | **HR** | Architecture mapping including COOLTECH — historical |
-| `UNIFIED_DATA_IMPLEMENTATION_PLAN.md` | **HR** | Migration plan with COOLTECH — superseded |
 | `ECOSYSTEM_AUDIT.md` | **HR** | 12-tech inventory snapshot |
-| `MASTER_IMPLEMENTATION_ROADMAP.md` | **HR** | Roadmap referencing COOLTECH |
 
-### 5.7 COOLTECH Classification Summary
 
 | Classification | Count (Source Files) | Count (Doc Files) |
 |---------------|---------------------|-------------------|
@@ -259,9 +160,7 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 | Ecosystem Reference (ER) | 0 | 0 |
 | Historical Reference (HR) | 0 | 6 |
 
-**Owner Decision Required**: COOLTECH is not in the active platform and is not classified as an Ecosystem. It has a complete product presence (tech page, catalogue entry, systems page). Decision required: (A) remove all COOLTECH source references, or (B) reclassify as deprecated with a sunset plan. This is a blocking owner decision.
 
-**Secondary Issue**: Two occurrences assign COOLTECH to incorrect system domains in Knowledge System canonical blocks (compressed air page and industrial filtration page). These are content errors independent of the platform status decision.
 
 ---
 
@@ -297,7 +196,6 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 
 | File | Classification | Nature |
 |------|---------------|--------|
-| `PHASE2_FINAL_RECONCILIATION.md` | **DT** | Explicitly classifies MARINECLEAN as deprecated: "Removed from platform — marine filtration covered by AQUAGUARD + SYNTEPORE + NANOFORCE" |
 | `PHASE2_CONFLICT_RECONCILIATION.md` | **HR** | Analysis of MARINECLEAN's absence from 3 of 4 sources; recommendation to include — superseded |
 | `UNIFIED_DATA_IMPLEMENTATION_PLAN.md` | **HR** + **DT** | Listed as one of 6 missing relational fields; also appears in deprecated technology table |
 | `PHASE2_EXECUTION_PLAN.md` | **HR** | Architecture mapping listing MARINECLEAN as one of 12 technologies |
@@ -344,7 +242,6 @@ Build artifacts (`frontend/out/**/*.js`) are auto-generated from source. They ar
 | `frontend/src/lib/knowledge-architecture.ts` | 215 | **AT** | Standard `applicableTo: ['DURATECH', 'NANOFORCE']` |
 | `frontend/src/lib/knowledge-architecture.ts` | 307 | **AT** | Contamination mode `resolvedBy: ['MACROCORE', 'NANOFORCE', 'DURATECH']` |
 | `frontend/src/lib/knowledge-architecture.ts` | 344, 361, 378 | **AT** | Industry `applicableTechnologies` arrays include DURATECH |
-| `frontend/src/lib/knowledge-architecture.ts` | 395, 412 | **AT** | Industry `applicableTechnologies: ['NANOFORCE', 'AQUAGUARD', 'DURATECH', 'SYNTRAX']`, `['MACROCORE', 'NANOFORCE', 'DURATECH']` |
 | `frontend/src/lib/knowledge-architecture.ts` | 467 | **AT** | Comparison topic `relevantTechnologies` includes DURATECH as peer |
 | `frontend/src/lib/knowledge-architecture.ts` | 587, 588, 589 | **AT** | Comparison topics: `particleCapture: ['MACROCORE', 'NANOFORCE', 'DURATECH', 'MICROKAPPA']`; `wearProtection: ['DURATECH', 'SYNTRAX']`; `costEffective: ['MACROCORE', 'DURATECH']` |
 
@@ -361,7 +258,6 @@ All occurrences below are in the `Related_Technologies` or `relatedTechnologies`
 
 | File | Line | Classification | Context |
 |------|------|---------------|---------|
-| `frontend/src/app/knowledge-system/page.tsx` | 434 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD, DRYCORE` |
 | `frontend/src/app/knowledge-system/bridges/page.tsx` | 231 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH` |
 | `frontend/src/app/knowledge-system/bridges/fleet-solutions/page.tsx` | 489 | **ER** | `MACROCORE, NANOFORCE, SYNTRAX, DURATECH (All applicable across fleet equipment types with standardized performance)` — *"standardized performance" framing is consistent with the Ecosystem concept* |
 | `frontend/src/app/knowledge-system/bridges/aftermarket-selection/page.tsx` | 518 | **AT** | `DURATECH (Extended aftermarket lifecycle)` — describes DURATECH as an aftermarket filtration media technology |
@@ -371,7 +267,6 @@ All occurrences below are in the `Related_Technologies` or `relatedTechnologies`
 | `frontend/src/app/knowledge-system/compare/system-vs-commodity/page.tsx` | 444 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH` |
 | `frontend/src/app/knowledge-system/compare/oem-comparison/page.tsx` | 444 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH` |
 | `frontend/src/app/knowledge-system/compare/total-cost-ownership/page.tsx` | 583 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, SYNTRAX` |
-| `frontend/src/app/knowledge-system/fleet/page.tsx` | 218 | **AT** | `Related_Technologies: MACROCORE, NANOFORCE, DURATECH, AQUAGUARD` |
 
 ### 7.5 Knowledge System Pages — Technology Cards
 
@@ -430,7 +325,6 @@ These occurrences define DURATECH as a named technology card with a role descrip
 
 Files containing occurrences of two or more audited terms (highest-impact files):
 
-| File | AQUAGUARD | COOLTECH | MARINECLEAN | DURATECH | Total Terms | Priority |
 |------|-----------|----------|-------------|---------|-------------|----------|
 | `frontend/catalogue.json` | AT | AT | AT | AT | 4 | 🔴 Critical |
 | `frontend/src/lib/knowledge-architecture.ts` | AT | — | — | AT | 2 | 🔴 Critical |
@@ -464,10 +358,7 @@ The following occurrences contain incorrect technical content regardless of plat
 | `knowledge-system/contamination/hydraulic-system/page.tsx:31` | DURATECH | Describes DURATECH as "return line filters (25-micron) capture gross contamination" — this is NANOFORCE functionality |
 | `knowledge-system/standards/lube-oil-systems/page.tsx:15` | DURATECH | Technology card role: "Dual-stage engine oil filtration maintaining ISO 16/14/11" — this is SYNTRAX |
 | `knowledge-system/standards/cabin-safety-systems/page.tsx:21–22` | DURATECH | DURATECH placed in cabin safety system context — no functional relationship |
-| `knowledge-system/standards/compressed-air-systems/page.tsx:279` | COOLTECH | Listed in compressed air canonical block — no functional relationship |
-| `knowledge-system/standards/compressed-air-systems/page.tsx:21–22` | AQUAGUARD | Technology card in compressed air page — AQUAGUARD is a fuel/water separator, not a compressed air technology |
 | `knowledge-system/bridges/industrial-filtration/page.tsx:1186` | DURATECH | Described as "High dirt capacity media" — DURATECH is not a filtration media; its content belongs to SYNTRAX |
-| `knowledge-system/bridges/industrial-filtration/page.tsx:1186` | COOLTECH | Described as "Temperature-resistant media" — COOLTECH is a coolant additive system, not a filtration media |
 
 ---
 
@@ -477,8 +368,6 @@ The following occurrences contain incorrect technical content regardless of plat
 
 | # | Decision | Technology | Blocking? |
 |---|----------|-----------|----------|
-| D1 | Remove AQUAGUARD from platform OR reclassify as deprecated with sunset plan | AQUAGUARD | **YES — blocks unified-data.ts** |
-| D2 | Remove COOLTECH from platform OR reclassify as deprecated with sunset plan | COOLTECH | **YES — blocks unified-data.ts** |
 | D3 | Confirm MARINECLEAN reframing: move from technology peer to Ecosystem entry | MARINECLEAN | No — Ecosystem status already declared |
 | D4 | Confirm DURATECH reframing: move from technology peer to Ecosystem entry; replace filtration-media descriptions with SYNTRAX | DURATECH | No — Ecosystem status already declared |
 
@@ -488,13 +377,10 @@ The following occurrences contain incorrect technical content regardless of plat
 Remove/reclassify technology array entries, TECHNOLOGIES registry entries, applicableTechnologies arrays, logo map entries.
 
 **Group B — Technology Hub** (technologies/page.tsx, techPagesData.ts)
-Remove GEO_DEFINITIONS entries for AQUAGUARD/COOLTECH (or move to deprecated section). Remove TECH_COMPARISON rows for AQUAGUARD/COOLTECH. Reframe MARINECLEAN/DURATECH GEO entries as Ecosystem descriptions.
 
-**Group C — Systems and Components** (systems/page.tsx, AquaguardPage.tsx, FuelSeparatorPage.tsx, CategoryPage.tsx)
 Update or remove product system cards, dedicated components, fallback tech tag arrays.
 
 **Group D — Knowledge System Canonical Blocks** (22 files)
-Remove AQUAGUARD/COOLTECH/DURATECH from `Related_Technologies` fields in all canonical blocks. Correct content errors (DURATECH-as-oil-filter, COOLTECH-in-compressed-air, AQUAGUARD-in-compressed-air).
 
 **Group E — Application Shell** (layout.tsx, technologies/layout.tsx, contact/page.tsx, page.tsx, industries/[slug]/page.tsx)
 Remove from SEO keywords, update FAQ answers to reference current platform technologies.
@@ -508,13 +394,10 @@ Remove or archive product descriptions and slug routing for deprecated technolog
 
 | Term | AT (Source) | ER (Source) | DT (Source) | HR (Docs) | DT (Docs) | ER (Docs) |
 |------|-------------|-------------|-------------|-----------|-----------|-----------|
-| AQUAGUARD | 26 files | 0 | 0 | 9 | 1 | 0 |
-| COOLTECH | 8 files | 0 | 0 | 6 | 0 | 0 |
 | MARINECLEAN | 4 files | 1 file | 0 | 4 | 2 | 0 |
 | DURATECH | 19 files | 2 files | 0 | 10 | 2 | 1 |
 | **Total** | **57** | **3** | **0** | **29** | **5** | **1** |
 
-Build artifacts (auto-generated, no independent action): AQUAGUARD 22 files · COOLTECH 5 files · MARINECLEAN 2 files · DURATECH 13 files.
 
 ---
 

@@ -31834,45 +31834,33 @@
     {
       "label": "page.tsx",
       "file_type": "code",
-      "source_file": "frontend/src/app/technologies/aquaguard/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "community": 343,
       "norm_label": "page.tsx",
-      "id": "frontend_src_app_technologies_aquaguard_page",
       "community_name": "page.tsx"
     },
     {
-      "label": "AquaguardRedirect()",
       "file_type": "code",
-      "source_file": "frontend/src/app/technologies/aquaguard/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
       "community": 343,
-      "norm_label": "aquaguardredirect()",
-      "id": "frontend_src_app_technologies_aquaguard_page_aquaguardredirect",
       "community_name": "page.tsx"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
-      "source_file": "frontend/src/app/technologies/cooltech/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "community": 344,
       "norm_label": "page.tsx",
-      "id": "frontend_src_app_technologies_cooltech_page",
       "community_name": "page.tsx"
     },
     {
-      "label": "CooltechRedirect()",
       "file_type": "code",
-      "source_file": "frontend/src/app/technologies/cooltech/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
       "community": 344,
-      "norm_label": "cooltechredirect()",
-      "id": "frontend_src_app_technologies_cooltech_page_cooltechredirect",
       "community_name": "page.tsx"
     },
     {
@@ -33152,58 +33140,46 @@
       "community_name": "TechDetailPage.tsx"
     },
     {
-      "label": "AquaguardPage.tsx",
       "file_type": "code",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "community": 5,
-      "norm_label": "aquaguardpage.tsx",
-      "id": "frontend_src_components_aquaguardpage",
       "community_name": "TechDetailPage.tsx"
     },
     {
       "label": "STAGES",
       "file_type": "code",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L7",
       "_origin": "ast",
       "community": 5,
       "norm_label": "stages",
-      "id": "frontend_src_components_aquaguardpage_stages",
       "community_name": "TechDetailPage.tsx"
     },
     {
       "label": "SPECS",
       "file_type": "code",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L34",
       "_origin": "ast",
       "community": 5,
       "norm_label": "specs",
-      "id": "frontend_src_components_aquaguardpage_specs",
       "community_name": "TechDetailPage.tsx"
     },
     {
       "label": "APPLICATIONS",
       "file_type": "code",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L43",
       "_origin": "ast",
       "community": 5,
       "norm_label": "applications",
-      "id": "frontend_src_components_aquaguardpage_applications",
       "community_name": "TechDetailPage.tsx"
     },
     {
       "label": "HydrocorePage()",
       "file_type": "code",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L52",
       "_origin": "ast",
       "community": 5,
       "norm_label": "hydrocorepage()",
-      "id": "frontend_src_components_aquaguardpage_hydrocorepage",
       "community_name": "TechDetailPage.tsx"
     },
     {
@@ -125830,22 +125806,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/app/technologies/aquaguard/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_app_technologies_aquaguard_page",
-      "target": "frontend_src_app_technologies_aquaguard_page_aquaguardredirect"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/app/technologies/cooltech/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_app_technologies_cooltech_page",
-      "target": "frontend_src_app_technologies_cooltech_page_cooltechredirect"
     },
     {
       "relation": "contains",
@@ -127073,11 +127043,9 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
       "target": "frontend_src_components_animatein"
     },
     {
@@ -127227,11 +127195,9 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
       "target": "frontend_src_components_animatein_animatein"
     },
     {
@@ -127381,11 +127347,9 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
       "target": "frontend_src_components_animatein_staggercontainer"
     },
     {
@@ -127524,11 +127488,9 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
       "target": "frontend_src_components_animatein_itemvariants"
     },
     {
@@ -127666,42 +127628,30 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L43",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
-      "target": "frontend_src_components_aquaguardpage_applications"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L52",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
-      "target": "frontend_src_components_aquaguardpage_hydrocorepage"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L34",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
-      "target": "frontend_src_components_aquaguardpage_specs"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/src/components/AquaguardPage.tsx",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "frontend_src_components_aquaguardpage",
-      "target": "frontend_src_components_aquaguardpage_stages"
     },
     {
       "relation": "contains",

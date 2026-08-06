@@ -135,7 +135,6 @@ try {
 </style>
 <script id="part-search-results-fixes-script">
 (function () {
-  // COOLTECH and AQUAGUARD were retired (replaced by THERMACORE and HYDROCORE
   // respectively) and must never reappear here. DURATECH and MARINECLEAN are
   // Commercial Lines, not engineering technologies, so they route under
   // /commercial-lines/ instead of /technologies/.

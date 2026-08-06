@@ -303,13 +303,11 @@ Where `tech-slug` = `technology_value.replace(/[™®\s]/g, '').toLowerCase()`
 /technologies/nanoforce/
 /technologies/syntrax/
 /technologies/duratech/
-/technologies/aquaguard/
 /technologies/microkappa/
 /technologies/intekcore/
 /technologies/drycore/
 /technologies/gasultra/
 /technologies/syntepore/
-/technologies/cooltech/
 /technologies/marineclean/
 /technologies/blueclean/
 ```

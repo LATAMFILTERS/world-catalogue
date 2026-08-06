@@ -28,7 +28,6 @@
 
 41 vault notes across 8 entity types. 335 directed graph edges. 97.3%+ resolution ratio (42/43 referenced keys have notes). The Part Search traversal path — Problem → ContaminationMode → Technology → ProductFamily — is fully connected across all 5 product domains (air, fuel, hydraulic, cabin, lube oil). All 41 notes have complete AI Retrieval canonical blocks, correct YAML schemas per Phase 3B, and Phase 3C-compliant wikilink conventions.
 
-Remaining 15%: INTEKCORE and SYNTEPORE ProductFamily notes (2 terminal nodes without families), the DIN_51524 stub (1 dangling reference, 1 ref count), deprecated technology notes (AQUAGUARD, COOLTECH), and ecosystem notes (MARINECLEAN, DURATECH) defined in Phase 3A but never created.
 
 **Stability: HIGH**
 

@@ -275,7 +275,6 @@ UD SYNC VERSION  — last UD cross-reference check
 
 ### 4.4 Deprecation Model
 
-Deprecated entities (e.g. AQUAGUARD → HYDROCORE) are never deleted from the index. They receive:
 - `status: deprecated`
 - `superseded_by: "[KEY]"`
 - `deprecated_date: "[ISO 8601]"`
