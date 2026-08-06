@@ -55,7 +55,7 @@ const INDUSTRY_NAMES: Record<string, string> = {
 };
 
 export function getStandardHref(standard: string): string {
-  return `/knowledge-system/standards/${normalizeStandardId(standard)}`;
+  return `/knowledge-center/standards/${normalizeStandardId(standard)}/`;
 }
 
 const industrySlugs = unique([
@@ -79,7 +79,7 @@ const standardNodes = Array.from(standardNameById.entries()).map(([id, name]) =>
   id: `standard:${id}`,
   kind: 'standard' as const,
   name,
-  href: `/knowledge-system/standards/${id}`,
+  href: `/knowledge-center/standards/${id}/`,
 }));
 
 export const ENTITY_NODES: readonly EntityNode[] = [
