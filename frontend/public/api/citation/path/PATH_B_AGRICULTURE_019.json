@@ -205,10 +205,10 @@
           "concept": "HYDROCORE Fuel/Water Separation Protection",
           "version": "1.0",
           "last_updated": "2026-07-11",
-          "content_hash": "sha256:85057fea4ca23accd5e69fb033fbb0fb106bc25361955bb7a69d99d0c73dee90"
+          "content_hash": "sha256:469920664a7ccdb49c40fa0fd9cf8f1449bae4021f70392281f8ab8ea3c2c8b6"
         },
         "canonical": {
-          "definition": "HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, replacing the deprecated AQUAGUARD name.",
+          "definition": "HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, engineered to remove free and emulsified water contamination from stored and operational diesel fuel.",
           "systems": "Diesel fuel cleanliness systems, fuel/water separators, spin-on separator filters, cartridge separator filters, turbine-style separator assemblies, and stored bulk fuel protection programs.",
           "failure_impact": "Water contamination in diesel fuel can reduce fuel system reliability, increase maintenance events, accelerate corrosion, promote microbial contamination, and create filter plugging or fuel delivery restrictions.",
           "related_standards": "ASTM D6304: water content measurement in petroleum products and diesel fuel | ISO 12937: international water determination method for petroleum products.",

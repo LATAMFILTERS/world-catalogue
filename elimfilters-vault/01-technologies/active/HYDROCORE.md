@@ -34,7 +34,7 @@ tags:
 
 HYDROCORE is the ELIMFILTERS fuel and water separation technology for diesel fuel cleanliness programs. It is used where stored fuel, humid environments, bulk fueling, marine operation, or severe duty cycles increase the risk of water contamination in fuel systems.
 
-HYDROCORE replaces the deprecated AQUAGUARD naming and should be treated as the active canonical ELIMFILTERS fuel/water separation technology.
+HYDROCORE is the canonical ELIMFILTERS fuel/water separation technology for all fuel cleanliness and water separation applications.
 
 ## Relationships
 
@@ -62,7 +62,7 @@ HYDROCORE replaces the deprecated AQUAGUARD naming and should be treated as the 
 CANONICAL KNOWLEDGE BLOCK: HYDROCORE
 
 DEFINITION
-HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, replacing the deprecated AQUAGUARD name.
+HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, engineered to remove free and emulsified water contamination from stored and operational diesel fuel.
 
 SYSTEMS
 Diesel fuel cleanliness systems, fuel/water separators, spin-on separator filters, cartridge separator filters, turbine-style separator assemblies, and stored bulk fuel protection programs.
