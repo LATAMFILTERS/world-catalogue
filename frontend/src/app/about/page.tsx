@@ -197,7 +197,7 @@ export default function AboutPage() {
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.7, margin: '0 0 1rem 0' }}>
               Comprehensive technical documentation on filtration standards, contamination control, and industrial applications.
             </p>
-            <Link href="/knowledge-system" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
+            <Link href="/knowledge-center/" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
@@ -217,7 +217,7 @@ export default function AboutPage() {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <Link href="/contact" style={yellowButton}>{t('about.contactButton')}</Link>
-            <Link href="/knowledge-system" style={darkButton}>{t('about.knowledgeButton')}</Link>
+            <Link href="/knowledge-center/" style={darkButton}>{t('about.knowledgeButton')}</Link>
           </div>
         </div>
       </section>
