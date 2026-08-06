@@ -31,74 +31,50 @@ export function GlobalBrandSection() {
             Global Brand, <span style={{ color: '#FFF12D' }}>Local Support</span>
           </h2>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(1.5rem, 3vw, 2.5rem)',
-            marginBottom: '2.5rem',
-          }}>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
-            >
-              <p style={{
-                color: 'rgba(255,255,255,0.8)',
-                fontSize: 'clamp(1rem, 1.6vw, 1.2rem)',
-                lineHeight: 1.7,
-                margin: 0,
-              }}>
-                <strong style={{ color: '#FFF12D' }}>ELIMFILTERS®</strong> is <strong>Kleo Technology LLC's</strong> global industrial filtration brand.
-              </p>
-              <p style={{
-                color: 'rgba(255,255,255,0.65)',
-                fontSize: '1rem',
-                lineHeight: 1.7,
-                margin: 0,
-              }}>
-                We do not sell directly to end users. All products are available exclusively through our network of authorized distributors across the Americas and other regions.
-              </p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            style={{
+              background: 'rgba(255,241,45,0.05)',
+              border: '2px solid rgba(255,241,45,0.2)',
+              borderRadius: '8px',
+              padding: 'clamp(2rem, 4vw, 2.5rem)',
+              marginBottom: '2.5rem',
+            }}
+          >
+            <p style={{
+              color: '#FFF12D',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.85rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              marginBottom: '1rem',
+              margin: '0 0 1.5rem 0',
+            }}>
+              Operating Model — Authorized Distributor Network
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              style={{
-                background: 'rgba(255,241,45,0.05)',
-                border: '1px solid rgba(255,241,45,0.15)',
-                borderRadius: '2px',
-                padding: 'clamp(1.5rem, 3vw, 2rem)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-              }}
-            >
-              <p style={{
-                color: '#FFF12D',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.85rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                marginBottom: '0.75rem',
-              }}>
-                Operating Model
-              </p>
-              <p style={{
-                color: 'rgba(255,255,255,0.8)',
-                fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)',
-                fontWeight: 600,
-                lineHeight: 1.5,
-                margin: 0,
-              }}>
-                100% distributor-based<br />
-                <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', fontWeight: 400 }}>No direct sales</span>
-              </p>
-            </motion.div>
-          </div>
+            <p style={{
+              color: 'rgba(255,255,255,0.9)',
+              fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
+              lineHeight: 1.8,
+              margin: '0 0 1.5rem 0',
+            }}>
+              ELIMFILTERS opera a través de una red global de distribuidores autorizados certificados en cada región. Estos distribuidores especializados atienden directamente a puntos de venta, centros de servicio, operadores de flota e industria, proporcionando expertise técnico en sistemas ELIMFILTERS y garantizando cumplimiento de estándares internacionales.
+            </p>
+
+            <p style={{
+              color: 'rgba(255,255,255,0.8)',
+              fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
+              lineHeight: 1.7,
+              margin: 0,
+            }}>
+              <strong style={{ color: '#FFF12D' }}>Estándares de Cumplimiento Global:</strong><br/>
+              ISO 16889 (Beta Ratio) · ISO 4406 (Cleanliness Codes) · ASTM D6304 (Fuel Filtration) · SAE J1539 (Air Intake) · NFPA T2.14 (Hydraulic Systems) · ISO 11155 (Cabin Air) · ISO 8573 (Compressed Air)
+            </p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
