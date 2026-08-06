@@ -956,7 +956,7 @@ function SearchPageInner() {
                   <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.88rem', marginBottom: '1.5rem' }}>
                     The Knowledge Graph did not find engineering context for &ldquo;{query}&rdquo;. Try describing the symptom differently — for example &ldquo;filter blinding&rdquo; instead of &ldquo;filter is dirty&rdquo;.
                   </p>
-                  <a href="/knowledge-system" style={{ color: '#FFF12D', fontSize: '0.85rem', textDecoration: 'none' }}>
+                  <a href="/knowledge-center/" style={{ color: '#FFF12D', fontSize: '0.85rem', textDecoration: 'none' }}>
                     Browse the Engineering Knowledge System →
                   </a>
                 </motion.div>

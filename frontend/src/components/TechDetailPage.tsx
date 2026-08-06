@@ -329,9 +329,9 @@ export function TechDetailPage({ data }: Props) {
             </AnimateIn>
             <StaggerContainer style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
               {[
-                { href: '/knowledge-system/standards', code: 'STD', title: 'International Standards', text: 'ISO cleanliness codes, particle counting, and filter integrity testing.' },
-                { href: '/knowledge-system/contamination', code: 'FAIL', title: 'Contamination & Failure', text: 'Root causes, degradation mechanisms, and failure prevention.' },
-                { href: '/knowledge-system/fleet', code: 'FLEET', title: 'Fleet Optimization', text: 'Maintenance strategies, performance tracking, and operational efficiency.' },
+                { href: '/knowledge-center/standards/', code: 'STD', title: 'International Standards', text: 'ISO cleanliness codes, particle counting, and filter integrity testing.' },
+                { href: '/knowledge-center/engineering/', code: 'FAIL', title: 'Contamination & Failure', text: 'Root causes, degradation mechanisms, and failure prevention.' },
+                { href: '/knowledge-center/technical-library/', code: 'FLEET', title: 'Fleet Optimization', text: 'Maintenance strategies, performance tracking, and operational efficiency.' },
               ].map((item) => (
                 <motion.div key={item.href} variants={itemVariants}>
                   <Link href={item.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
