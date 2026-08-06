@@ -1,0 +1,203 @@
+name: One-off guarded legacy knowledge-link migration
+
+on:
+  push:
+    branches:
+      - fix/legacy-knowledge-links
+    paths:
+      - '.github/workflows/one-off-fix-legacy-knowledge-links.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/legacy-knowledge-links
+          fetch-depth: 0
+
+      - name: Replace only verified legacy internal URLs
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          root = Path('frontend')
+          app = root / 'src' / 'app'
+
+          mappings = {
+              '/knowledge-system': '/knowledge-center/',
+              '/knowledge-system/': '/knowledge-center/',
+              '/knowledge-system/index': '/knowledge-center/',
+              '/knowledge-system/index/': '/knowledge-center/',
+              '/knowledge-system/science': '/knowledge-center/engineering/',
+              '/knowledge-system/science/': '/knowledge-center/engineering/',
+              '/knowledge-system/standards': '/knowledge-center/standards/',
+              '/knowledge-system/standards/': '/knowledge-center/standards/',
+              '/knowledge-system/standards/lube-oil-systems': '/knowledge-center/systems/lubrication-protection/',
+              '/knowledge-system/standards/lube-oil-systems/': '/knowledge-center/systems/lubrication-protection/',
+              '/knowledge-system/standards/hydraulic-systems': '/knowledge-center/systems/hydraulic-protection/',
+              '/knowledge-system/standards/hydraulic-systems/': '/knowledge-center/systems/hydraulic-protection/',
+              '/knowledge-system/standards/air-intake-systems': '/knowledge-center/systems/air-intake-protection/',
+              '/knowledge-system/standards/air-intake-systems/': '/knowledge-center/systems/air-intake-protection/',
+              '/knowledge-system/standards/fuel-systems': '/knowledge-center/systems/fuel-cleanliness-protection/',
+              '/knowledge-system/standards/fuel-systems/': '/knowledge-center/systems/fuel-cleanliness-protection/',
+              '/knowledge-system/standards/cabin-safety-systems': '/knowledge-center/systems/cabin-air-protection/',
+              '/knowledge-system/standards/cabin-safety-systems/': '/knowledge-center/systems/cabin-air-protection/',
+              '/knowledge-system/standards/compressed-air-systems': '/knowledge-center/standards/iso-8573-1/',
+              '/knowledge-system/standards/compressed-air-systems/': '/knowledge-center/standards/iso-8573-1/',
+              '/knowledge-system/standards/iso-16889': '/knowledge-center/standards/iso-16889/',
+              '/knowledge-system/standards/iso-16889/': '/knowledge-center/standards/iso-16889/',
+              '/knowledge-system/standards/iso-4406': '/knowledge-center/standards/iso-4406/',
+              '/knowledge-system/standards/iso-4406/': '/knowledge-center/standards/iso-4406/',
+              '/knowledge-system/standards/iso-5011': '/knowledge-center/standards/iso-5011/',
+              '/knowledge-system/standards/iso-5011/': '/knowledge-center/standards/iso-5011/',
+              '/knowledge-system/contamination': '/knowledge-center/engineering/',
+              '/knowledge-system/contamination/': '/knowledge-center/engineering/',
+              '/knowledge-system/contamination/hydraulic-system': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/hydraulic-system/': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/particle-wear': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/particle-wear/': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/diesel-water': '/knowledge-center/engineering/fluid-cleanliness/',
+              '/knowledge-system/contamination/diesel-water/': '/knowledge-center/engineering/fluid-cleanliness/',
+              '/knowledge-system/contamination/varnish-formation': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/varnish-formation/': '/knowledge-center/engineering/contamination-control/',
+              '/knowledge-system/contamination/fuel-injector-wear': '/knowledge-center/engineering/fluid-cleanliness/',
+              '/knowledge-system/contamination/fuel-injector-wear/': '/knowledge-center/engineering/fluid-cleanliness/',
+              '/knowledge-system/contamination/compressed-air-contamination': '/knowledge-center/standards/iso-8573-1/',
+              '/knowledge-system/contamination/compressed-air-contamination/': '/knowledge-center/standards/iso-8573-1/',
+              '/knowledge-system/contamination/coolant-contamination': '/knowledge-center/systems/cooling-system-protection/',
+              '/knowledge-system/contamination/coolant-contamination/': '/knowledge-center/systems/cooling-system-protection/',
+              '/knowledge-system/fleet': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/reducing-downtime': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/reducing-downtime/': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/fuel-efficiency': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/fuel-efficiency/': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/total-cost-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
+              '/knowledge-system/fleet/total-cost-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/',
+              '/knowledge-system/fleet/roi-calculator': '/knowledge-center/technical-library/',
+              '/knowledge-system/fleet/roi-calculator/': '/knowledge-center/technical-library/',
+              '/knowledge-system/bridges': '/knowledge-center/',
+              '/knowledge-system/bridges/': '/knowledge-center/',
+              '/knowledge-system/bridges/industrial-filtration': '/knowledge-center/',
+              '/knowledge-system/bridges/industrial-filtration/': '/knowledge-center/',
+              '/knowledge-system/bridges/aftermarket-selection': '/knowledge-center/',
+              '/knowledge-system/bridges/aftermarket-selection/': '/knowledge-center/',
+              '/knowledge-system/bridges/fleet-solutions': '/knowledge-center/technical-library/',
+              '/knowledge-system/bridges/fleet-solutions/': '/knowledge-center/technical-library/',
+              '/knowledge-system/bridges/oem-replacement': '/knowledge-center/',
+              '/knowledge-system/bridges/oem-replacement/': '/knowledge-center/',
+              '/knowledge-system/compare': '/knowledge-center/',
+              '/knowledge-system/compare/': '/knowledge-center/',
+              '/knowledge-system/compare/evaluation-framework': '/knowledge-center/technical-library/',
+              '/knowledge-system/compare/evaluation-framework/': '/knowledge-center/technical-library/',
+              '/knowledge-system/compare/oem-comparison': '/knowledge-center/',
+              '/knowledge-system/compare/oem-comparison/': '/knowledge-center/',
+              '/knowledge-system/compare/system-vs-commodity': '/knowledge-center/',
+              '/knowledge-system/compare/system-vs-commodity/': '/knowledge-center/',
+              '/knowledge-system/compare/total-cost-of-ownership': '/knowledge-center/engineering/total-cost-of-ownership/',
+              '/knowledge-system/compare/total-cost-of-ownership/': '/knowledge-center/engineering/total-cost-of-ownership/',
+          }
+
+          authorized = [
+              root / 'src/components/Navigation.tsx',
+              root / 'src/components/Footer.tsx',
+              root / 'src/components/UniversalEndNavigation.tsx',
+              root / 'src/components/TechDetailPage.tsx',
+              root / 'src/app/page.tsx',
+              root / 'src/app/search/page.tsx',
+              root / 'src/app/about/page.tsx',
+              root / 'src/app/knowledge-center/fleet-optimization/page.tsx',
+              root / 'src/app/families/[slug]/page.tsx',
+              root / 'src/lib/entity-graph.ts',
+              root / 'src/lib/rich-results-schema.ts',
+          ]
+          authorized += sorted((root / 'src/components').glob('Structured*Definition.tsx'))
+
+          def target_exists(url: str) -> bool:
+              rel = url.strip('/')
+              return (app / rel / 'page.tsx').exists() or (app / rel).is_dir()
+
+          missing = sorted({dst for dst in mappings.values() if not target_exists(dst)})
+          if missing:
+              raise SystemExit('Unverified destination(s): ' + ', '.join(missing))
+
+          literal = re.compile(r'(?P<q>[\"\'`])(?P<url>(?:https://(?:www\.)?elimfilters\.com)?/knowledge-system[^\"\'`?#]*)(?P=q)')
+          changed = []
+          pending = []
+
+          for path in authorized:
+              if not path.exists():
+                  continue
+              original = path.read_text(encoding='utf-8')
+
+              def replace(match):
+                  full = match.group('url')
+                  prefix = ''
+                  relative = full
+                  for origin in ('https://www.elimfilters.com', 'https://elimfilters.com'):
+                      if full.startswith(origin):
+                          prefix = origin
+                          relative = full[len(origin):]
+                          break
+                  if 'duratech' in relative.lower() or 'marineclean' in relative.lower():
+                      pending.append((str(path), relative, 'protected technology'))
+                      return match.group(0)
+                  destination = mappings.get(relative)
+                  if destination is None:
+                      pending.append((str(path), relative, 'no exact verified redirect'))
+                      return match.group(0)
+                  return f"{match.group('q')}{prefix}{destination}{match.group('q')}"
+
+              updated = literal.sub(replace, original)
+              if updated != original:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+
+          print('Changed files:')
+          for item in changed:
+              print('  ', item)
+          print('Pending exact references:')
+          for item in sorted(set(pending)):
+              print('  ', *item)
+
+      - name: Verify protected active tree and remaining references
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! git diff --name-only | grep -E '^frontend/src/app/knowledge-system/(faqs|market|phase5a-|resources)/'
+          ! git diff | grep -Ei 'duratech|marineclean'
+          echo 'Remaining /knowledge-system references in authorized files:'
+          grep -nH '/knowledge-system' \
+            frontend/src/components/Navigation.tsx \
+            frontend/src/components/Footer.tsx \
+            frontend/src/components/UniversalEndNavigation.tsx \
+            frontend/src/components/TechDetailPage.tsx \
+            frontend/src/components/Structured*Definition.tsx \
+            frontend/src/app/page.tsx \
+            frontend/src/app/search/page.tsx \
+            frontend/src/app/about/page.tsx \
+            frontend/src/app/knowledge-center/fleet-optimization/page.tsx \
+            'frontend/src/app/families/[slug]/page.tsx' \
+            frontend/src/lib/entity-graph.ts \
+            frontend/src/lib/rich-results-schema.ts || true
+          git diff --check
+
+      - name: Commit guarded migration and remove one-off workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/one-off-fix-legacy-knowledge-links.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add frontend/src
+          if git diff --cached --quiet; then
+            echo 'No verified source changes to commit.'
+            exit 1
+          fi
+          git commit -m 'fix(seo): point verified legacy links to knowledge center'
+          git push origin HEAD:fix/legacy-knowledge-links
