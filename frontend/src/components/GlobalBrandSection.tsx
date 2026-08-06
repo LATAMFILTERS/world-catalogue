@@ -53,7 +53,7 @@ export function GlobalBrandSection() {
               marginBottom: '1rem',
               margin: '0 0 1.5rem 0',
             }}>
-              Operating Model — Authorized Distributor Network
+              OPERATING MODEL — AUTHORIZED DISTRIBUTOR NETWORK
             </p>
 
             <p style={{
