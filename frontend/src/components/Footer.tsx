@@ -235,21 +235,15 @@ export function Footer() {
           width: '100%',
         }}>
           <div style={{
-            fontSize: '12px',
+            fontSize: '10px',
             color: 'rgba(255,255,255,0.65)',
             fontFamily: 'var(--font-body)',
-            lineHeight: 1.6,
+            lineHeight: 1.5,
             width: '100%',
             textTransform: 'lowercase',
           }}>
-            <p style={{ margin: '0 0 8px 0' }}>
-              © KLEO TECHNOLOGY LLC. All rights reserved. ELIMFILTERS® is a registered trademark of Kleo Technology LLC.
-            </p>
-            <p style={{ margin: '0 0 8px 0' }}>
-              Legal Headquarters: Frisco, Texas, USA | Operating globally through authorized distributors worldwide
-            </p>
             <p style={{ margin: 0 }}>
-              ELIMFILTERS® products are available exclusively through our network of authorized distributors. We do not sell directly to end users.
+              © KLEO TECHNOLOGY LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. Available exclusively through authorized distributors worldwide — we do not sell directly to end users.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
