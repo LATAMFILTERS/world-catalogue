@@ -1,0 +1,34 @@
+﻿{
+    "lazy":  true,
+    "server":  true,
+    "type":  "plugin-feature",
+    "client":  true,
+    "plugins":  [
+                    {
+                        "key":  "hero",
+                        "name":  "Hero",
+                        "importPath":  "./components/Hero"
+                    },
+                    {
+                        "key":  "industries",
+                        "name":  "Industries",
+                        "importPath":  "./components/Industries"
+                    },
+                    {
+                        "key":  "technologies",
+                        "name":  "Technologies",
+                        "importPath":  "./components/Technologies"
+                    },
+                    {
+                        "key":  "stats",
+                        "name":  "Stats",
+                        "importPath":  "./components/Stats"
+                    },
+                    {
+                        "key":  "cta",
+                        "name":  "CTA",
+                        "importPath":  "./components/CTA"
+                    }
+                ],
+    "feature":  "home"
+}

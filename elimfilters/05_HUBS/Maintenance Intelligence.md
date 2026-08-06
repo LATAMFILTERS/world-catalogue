@@ -1,0 +1,60 @@
+type: hub
+
+focuses_on:
+  - "[[Preventive Maintenance]]"
+  - "[[Predictive Maintenance]]"
+  - "[[Failure Prevention]]"
+  - "[[Equipment Reliability]]"
+  - "[[Contamination Control]]"
+  - "[[System Efficiency]]"
+  - "[[Uptime Optimization]]"
+
+monitors:
+  - "[[Contamination]]"
+  - "[[Particle Contamination]]"
+  - "[[Fuel Contamination]]"
+  - "[[Water Contamination]]"
+  - "[[Oil Contamination]]"
+  - "[[Coolant Contamination]]"
+  - "[[Pressure Loss]]"
+  - "[[Overheating]]"
+  - "[[Wear]]"
+  - "[[Corrosion]]"
+  - "[[Cavitation]]"
+
+optimizes:
+  - "[[Engine]]"
+  - "[[Fuel Systems]]"
+  - "[[Hydraulic Systems]]"
+  - "[[Cooling Systems]]"
+  - "[[Lubrication Systems]]"
+  - "[[Air Intake Systems]]"
+  - "[[Air Dryer Systems]]"
+  - "[[Marine Filters Systems]]"
+  - "[[Turbine Fuel Systems]]"
+
+uses:
+  - "[[Air Filters]]"
+  - "[[Fuel Filters]]"
+  - "[[Fuel Separator Filters]]"
+  - "[[Hydraulic Filters]]"
+  - "[[Coolant Filters]]"
+  - "[[Lube Filters]]"
+  - "[[Housing Filters]]"
+  - "[[Marine Filters]]"
+  - "[[Air Dryer Filters]]"
+  - "[[Turbine Fuel Separator]]"
+
+industries:
+  - "[[Truck Fleets]]"
+  - "[[Construction]]"
+  - "[[Mining]]"
+  - "[[Agriculture]]"
+  - "[[Manufacturing]]"
+  - "[[Marine]]"
+  - "[[Oil & Gas]]"
+  - "[[Power Generation]]"
+  - "[[Railway]]"
+  - "[[Waste Municipal]]"
+  - "[[Bus Coach]]"
+  - "[[Automotive]]"

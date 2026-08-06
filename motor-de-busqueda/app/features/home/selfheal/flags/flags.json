@@ -1,0 +1,8 @@
+﻿{
+    "feature":  "home",
+    "flags":  {
+                  "newHero":  true,
+                  "newStats":  true,
+                  "experimentalLayout":  false
+              }
+}

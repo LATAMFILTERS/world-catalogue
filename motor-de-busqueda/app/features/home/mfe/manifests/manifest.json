@@ -1,0 +1,38 @@
+﻿{
+    "mode":  "distributed",
+    "apps":  [
+                 {
+                     "scope":  "hero",
+                     "name":  "Hero",
+                     "version":  "1.0.0",
+                     "entry":  "https://cdn.example.com/home/Hero/remoteEntry.js"
+                 },
+                 {
+                     "scope":  "industries",
+                     "name":  "Industries",
+                     "version":  "1.0.0",
+                     "entry":  "https://cdn.example.com/home/Industries/remoteEntry.js"
+                 },
+                 {
+                     "scope":  "technologies",
+                     "name":  "Technologies",
+                     "version":  "1.0.0",
+                     "entry":  "https://cdn.example.com/home/Technologies/remoteEntry.js"
+                 },
+                 {
+                     "scope":  "stats",
+                     "name":  "Stats",
+                     "version":  "1.0.0",
+                     "entry":  "https://cdn.example.com/home/Stats/remoteEntry.js"
+                 },
+                 {
+                     "scope":  "cta",
+                     "name":  "CTA",
+                     "version":  "1.0.0",
+                     "entry":  "https://cdn.example.com/home/CTA/remoteEntry.js"
+                 }
+             ],
+    "updatedAt":  "2026-05-16T01:05:20.3884464-05:00",
+    "system":  "micro-frontend-engine",
+    "feature":  "home"
+}
