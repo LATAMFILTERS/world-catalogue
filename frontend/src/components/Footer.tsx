@@ -243,7 +243,7 @@ export function Footer() {
             textTransform: 'lowercase',
           }}>
             <p style={{ margin: '0 0 8px 0' }}>
-              © 2015–2026 ELIMFILTERS®. All rights reserved. ELIMFILTERS® is a registered trademark of Kleo Technology LLC.
+              © KLEO TECHNOLOGY LLC. All rights reserved. ELIMFILTERS® is a registered trademark of Kleo Technology LLC.
             </p>
             <p style={{ margin: '0 0 8px 0' }}>
               Legal Headquarters: Frisco, Texas, USA | Operating globally through authorized distributors worldwide
