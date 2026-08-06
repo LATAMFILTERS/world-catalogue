@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
   extractReferences,
@@ -93,4 +95,11 @@ test('exact matching supports references from every authority field', () => {
   assert.equal(exactReferenceMatch(product, ['AF25139M']), true);
   assert.equal(exactReferenceMatch(product, ['W94025']), true);
   assert.equal(exactReferenceMatch(product, ['NOTREAL']), false);
+});
+
+test('PostgreSQL cross-reference query uses a typed scalar parameter', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../lib/bot-protocol-catalog.js'), 'utf8');
+  assert.equal(source.includes('$1[1]'), false, 'unknown PostgreSQL parameters must never be subscripted');
+  assert.match(source, /LIKE \('\%' \|\| \$1::text \|\| '\%'\)/);
+  assert.match(source, /\[normalizedReference\]/);
 });
