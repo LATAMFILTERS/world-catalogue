@@ -41,10 +41,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function standardHref(std: string) {
   const key = std.toLowerCase();
-  if (key.includes('iso 16889')) return '/knowledge-system/standards/iso-16889';
-  if (key.includes('iso 4406')) return '/knowledge-system/standards/iso-4406';
-  if (key.includes('iso 5011')) return '/knowledge-system/standards/iso-5011';
-  return '/knowledge-system/standards';
+  if (key.includes('iso 16889')) return '/knowledge-center/standards/iso-16889/';
+  if (key.includes('iso 4406')) return '/knowledge-center/standards/iso-4406/';
+  if (key.includes('iso 5011')) return '/knowledge-center/standards/iso-5011/';
+  return '/knowledge-center/standards/';
 }
 
 export default function FamilyPage({ params }: Props) {
@@ -228,7 +228,7 @@ export default function FamilyPage({ params }: Props) {
             <Link href="/families" style={platformLink}>All Families</Link>
             <Link href="/systems" style={platformLink}>Systems</Link>
             <Link href="/technologies" style={platformLink}>Technologies</Link>
-            <Link href="/knowledge-system" style={platformLink}>Knowledge</Link>
+            <Link href="/knowledge-center/" style={platformLink}>Knowledge</Link>
           </div>
         </div>
       </section>

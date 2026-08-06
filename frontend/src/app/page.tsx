@@ -200,7 +200,7 @@ const JOURNEY_CARDS = [
     icon: '04',
     accent: 'rgba(125,211,252,0.06)',
     border: 'rgba(125,211,252,0.18)',
-    href: '/knowledge-system',
+    href: '/knowledge-center/',
     external: false,
   },
 ] as const;

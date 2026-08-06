@@ -51,7 +51,7 @@ export default function FleetOptimizationHub() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-      <Link href="/knowledge-system" style={{
+      <Link href="/knowledge-center/" style={{
         display: 'inline-block',
         padding: '1rem 2rem',
         color: '#FFF12D',
@@ -247,7 +247,7 @@ export default function FleetOptimizationHub() {
           Related Knowledge System sections
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/knowledge-system/standards" style={{
+          <Link href="/knowledge-center/standards/" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
@@ -260,7 +260,7 @@ export default function FleetOptimizationHub() {
           }}>
             Industrial Standards →
           </Link>
-          <Link href="/knowledge-system/contamination" style={{
+          <Link href="/knowledge-center/engineering/" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',
