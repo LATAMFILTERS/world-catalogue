@@ -74,7 +74,7 @@ function uniqueLinks(nodes: ReturnType<typeof getIncomingEntities>) {
 
 export function StructuredStandardDefinition() {
   const pathname = usePathname();
-  const match = pathname.match(/^\/knowledge-system\/standards\/([^/]+)\/?$/);
+  const match = pathname.match(/^\/knowledge-center\/standards\/([^/]+)\/?$/);
   if (!match) return null;
 
   const slug = match[1];
@@ -101,8 +101,8 @@ export function StructuredStandardDefinition() {
     {
       label: 'Related Knowledge',
       links: [
-        { href: '/knowledge-system/standards', name: 'Standards Library' },
-        { href: '/knowledge-system', name: 'Knowledge System' },
+        { href: '/knowledge-center/standards/', name: 'Standards Library' },
+        { href: '/knowledge-center/', name: 'Knowledge System' },
       ],
     },
   ].filter((row) => row.content || (row.links && row.links.length > 0));

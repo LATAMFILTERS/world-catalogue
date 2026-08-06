@@ -32,7 +32,7 @@ function parentUrlForKind(kind: SchemaEntityKind): string {
   if (kind === 'system') return `${BASE_URL}/systems`;
   if (kind === 'family') return `${BASE_URL}/families`;
   if (kind === 'industry') return `${BASE_URL}/industries`;
-  if (kind === 'standard') return `${BASE_URL}/knowledge-system/standards`;
+  if (kind === 'standard') return `${BASE_URL}/knowledge-center/standards/`;
   return `${BASE_URL}/knowledge-system/contamination`;
 }
 

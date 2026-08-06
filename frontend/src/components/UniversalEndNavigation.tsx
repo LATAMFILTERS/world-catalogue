@@ -42,7 +42,7 @@ const COMMON: Record<string, NavItem> = {
     description: 'See how operating environment, duty cycle, and downtime risk change the protection requirement.',
   },
   knowledge: {
-    href: '/knowledge-system',
+    href: '/knowledge-center/',
     label: 'Knowledge System',
     description: 'Continue into standards, contamination mechanisms, engineering principles, and reliability guidance.',
   },
@@ -108,11 +108,11 @@ function navigationFor(pathname: string): NavigationConfig | null {
   }
 
   // Knowledge System routes
-  if (isRoute(pathname, '/knowledge-system')) {
+  if (isRoute(pathname, '/knowledge-center')) {
     return {
       kind: 'knowledge',
       eyebrow: 'APPLY THE KNOWLEDGE',
-      title: pathname === '/knowledge-system'
+      title: pathname === '/knowledge-center'
         ? 'Turn technical knowledge into an asset protection decision.'
         : 'Turn technical understanding into a protection decision.',
       items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],

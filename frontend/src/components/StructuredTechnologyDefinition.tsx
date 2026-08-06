@@ -60,7 +60,7 @@ export function StructuredTechnologyDefinition() {
     },
     {
       label: 'Related Knowledge',
-      links: [{ href: '/knowledge-system', name: 'Knowledge System' }],
+      links: [{ href: '/knowledge-center/', name: 'Knowledge System' }],
     },
   ].filter((row) => row.content || (row.links && row.links.length > 0));
 

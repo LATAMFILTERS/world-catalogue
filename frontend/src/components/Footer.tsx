@@ -40,18 +40,18 @@ const getFooterNavigation = (t: any) => [
     title: t('footer.support', 'SUPPORT'),
     links: [
       { label: t('footer.technicalSupport', 'Technical Support'), href: '/contact', external: false },
-      { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-system', external: false },
-      { label: t('footer.standardsLibrary', 'Standards Library'), href: '/knowledge-system/standards', external: false },
-      { label: t('footer.fleetOptimization', 'Fleet Optimization'), href: '/knowledge-system/fleet', external: false },
+      { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-center/', external: false },
+      { label: t('footer.standardsLibrary', 'Standards Library'), href: '/knowledge-center/standards/', external: false },
+      { label: t('footer.fleetOptimization', 'Fleet Optimization'), href: '/knowledge-center/technical-library/', external: false },
     ],
   },
   {
     title: t('footer.knowledge', 'KNOWLEDGE'),
     links: [
-      { label: t('footer.contamination', 'Contamination'), href: '/knowledge-system/contamination', external: false },
-      { label: t('footer.compareSelect', 'Compare & Select'), href: '/knowledge-system/compare', external: false },
-      { label: t('footer.filtrationScience', 'Filtration Science'), href: '/knowledge-system/science', external: false },
-      { label: t('footer.industrialBridges', 'Industrial Bridges'), href: '/knowledge-system/bridges', external: false },
+      { label: t('footer.contamination', 'Contamination'), href: '/knowledge-center/engineering/', external: false },
+      { label: t('footer.compareSelect', 'Compare & Select'), href: '/knowledge-center/', external: false },
+      { label: t('footer.filtrationScience', 'Filtration Science'), href: '/knowledge-center/engineering/', external: false },
+      { label: t('footer.industrialBridges', 'Industrial Bridges'), href: '/knowledge-center/', external: false },
     ],
   },
   {
