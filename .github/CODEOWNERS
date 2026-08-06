@@ -1,0 +1,13 @@
+# Default repository owner
+* @elimfilters
+
+# Central bot protocol and channel adapters
+/lib/bot-protocol-*.js @elimfilters
+/lib/bot-conversation-orchestrator.js @elimfilters
+/lib/install-bot-protocol.js @elimfilters
+/server-protocol.js @elimfilters
+/tests/bot-protocol-*.test.js @elimfilters
+/.github/workflows/bot-protocol-validation.yml @elimfilters
+/.github/protocol-lock.json @elimfilters
+/scripts/verify-protocol-lock.js @elimfilters
+/package.json @elimfilters
