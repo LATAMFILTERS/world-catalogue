@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export function GlobalBrandSection() {
+  const { t } = useTranslation();
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
@@ -53,7 +55,7 @@ export function GlobalBrandSection() {
               marginBottom: '1rem',
               margin: '0 0 1.5rem 0',
             }}>
-              Operating Model — Authorized Distributor Network
+              {t('operatingModel.title')}
             </p>
 
             <p style={{
@@ -62,7 +64,7 @@ export function GlobalBrandSection() {
               lineHeight: 1.8,
               margin: '0 0 1.5rem 0',
             }}>
-              ELIMFILTERS opera a través de una red global de distribuidores autorizados certificados en cada región. Estos distribuidores especializados atienden directamente a puntos de venta, centros de servicio, operadores de flota e industria, proporcionando expertise técnico en sistemas ELIMFILTERS y garantizando cumplimiento de estándares internacionales.
+              {t('operatingModel.description')}
             </p>
 
             <p style={{
@@ -71,8 +73,8 @@ export function GlobalBrandSection() {
               lineHeight: 1.7,
               margin: 0,
             }}>
-              <strong style={{ color: '#FFF12D' }}>Estándares de Cumplimiento Global:</strong><br/>
-              ISO 16889 (Beta Ratio) · ISO 4406 (Cleanliness Codes) · ASTM D6304 (Fuel Filtration) · SAE J1539 (Air Intake) · NFPA T2.14 (Hydraulic Systems) · ISO 11155 (Cabin Air) · ISO 8573 (Compressed Air)
+              <strong style={{ color: '#FFF12D' }}>{t('operatingModel.standardsLabel')}</strong><br/>
+              {t('operatingModel.standards')}
             </p>
           </motion.div>
 

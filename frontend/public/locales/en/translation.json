@@ -485,6 +485,12 @@
     "closingBody": "ELIMFILTERS supports qualified industrial partners with portfolio access, engineering resources, and regional market positioning. Submit your company information for commercial review.",
     "closingButton": "APPLY FOR DISTRIBUTOR STATUS"
   },
+  "operatingModel": {
+    "title": "Operating Model — Authorized Distributor Network",
+    "description": "ELIMFILTERS operates through a global network of authorized and certified distributors in each region. These specialized distributors directly serve sales points, service centers, fleet operators, and industry, providing technical expertise in ELIMFILTERS systems and guaranteeing compliance with international standards.",
+    "standardsLabel": "Global Compliance Standards:",
+    "standards": "ISO 16889 (Beta Ratio) · ISO 4406 (Cleanliness Codes) · ASTM D6304 (Fuel Filtration) · SAE J1539 (Air Intake) · NFPA T2.14 (Hydraulic Systems) · ISO 11155 (Cabin Air) · ISO 8573 (Compressed Air)"
+  },
   "instagram": {
     "heroTitle": "Total Asset Protection",
     "heroDesc": "Protecting engines, hydraulics, fuel, air, and cooling systems from contamination, failures, and downtime.",

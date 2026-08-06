@@ -482,6 +482,12 @@
     "closingBody": "ELIMFILTERS supports qualified industrial partners with portfolio access, engineering resources, and regional market positioning. Submit your company information for commercial review.",
     "closingButton": "APPLY FOR DISTRIBUTOR STATUS"
   },
+  "operatingModel": {
+    "title": "Modelo de Negocio — Red de Distribuidores Autorizados",
+    "description": "ELIMFILTERS opera a través de una red global de distribuidores autorizados y certificados en cada región. Estos distribuidores especializados atienden directamente a puntos de venta, centros de servicio, operadores de flota e industria, proporcionando expertise técnico en sistemas ELIMFILTERS y garantizando cumplimiento de estándares internacionales.",
+    "standardsLabel": "Estándares de Cumplimiento Global:",
+    "standards": "ISO 16889 (Beta Ratio) · ISO 4406 (Códigos de Limpieza) · ASTM D6304 (Filtración de Combustible) · SAE J1539 (Aire de Admisión) · NFPA T2.14 (Sistemas Hidráulicos) · ISO 11155 (Aire de Cabina) · ISO 8573 (Aire Comprimido)"
+  },
   "instagram": {
     "heroTitle": "Total Asset Protection",
     "heroDesc": "Protecting engines, hydraulics, fuel, air, and cooling systems from contamination, failures, and downtime.",
