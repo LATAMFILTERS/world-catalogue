@@ -42,8 +42,8 @@ const COMMON: Record<string, NavItem> = {
     description: 'See how operating environment, duty cycle, and downtime risk change the protection requirement.',
   },
   knowledge: {
-    href: '/knowledge-system',
-    label: 'Knowledge System',
+    href: '/knowledge-center/',
+    label: 'Knowledge Center',
     description: 'Continue into standards, contamination mechanisms, engineering principles, and reliability guidance.',
   },
   search: {
@@ -59,7 +59,6 @@ function isRoute(pathname: string, base: string): boolean {
 }
 
 function navigationFor(pathname: string): NavigationConfig | null {
-  // Families routes
   if (isRoute(pathname, '/families')) {
     return {
       kind: 'families',
@@ -71,7 +70,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Systems routes
   if (isRoute(pathname, '/systems')) {
     return {
       kind: 'systems',
@@ -83,7 +81,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Technologies routes
   if (isRoute(pathname, '/technologies')) {
     return {
       kind: 'technologies',
@@ -95,7 +92,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Industries routes
   if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',
@@ -107,12 +103,11 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Knowledge System routes
-  if (isRoute(pathname, '/knowledge-system')) {
+  if (isRoute(pathname, '/knowledge-center')) {
     return {
       kind: 'knowledge',
       eyebrow: 'APPLY THE KNOWLEDGE',
-      title: pathname === '/knowledge-system'
+      title: pathname === '/knowledge-center'
         ? 'Turn technical knowledge into an asset protection decision.'
         : 'Turn technical understanding into a protection decision.',
       items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],
@@ -149,7 +144,6 @@ export function UniversalEndNavigation() {
     const footer = document.querySelector('footer');
     if (!footer) return;
 
-    // Insert UniversalEndNavigation before the footer
     const parent = footer.parentElement;
     if (parent && navRef.current.parentElement !== parent) {
       parent.insertBefore(navRef.current, footer);
