@@ -2,6 +2,8 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+
+// Deployment trigger - footer centered contact info section
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 
