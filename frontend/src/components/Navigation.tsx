@@ -59,7 +59,7 @@ export function Navigation() {
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
-          <NavLink href="/knowledge-center">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
+          <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
           <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
@@ -134,7 +134,7 @@ export function Navigation() {
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
-                { href: '/knowledge-system', label: t('nav.knowledge', 'Knowledge') },
+                { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
                 { href: '/about', label: t('nav.about', 'About') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
