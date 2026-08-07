@@ -1,0 +1,55 @@
+name: Run Spin-On Pilot Selector
+
+on:
+  push:
+    branches:
+      - claude/create-elimfilters-manuals-iFz1q
+    paths:
+      - '.github/workflows/run-spinon-pilot-selector.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  select-spinon-pilot:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: claude/create-elimfilters-manuals-iFz1q
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install runtime dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Verify database secret
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "DATABASE_URL repository secret is not configured."
+            exit 2
+          fi
+
+      - name: Run Spin-On selector
+        run: node product-identity/scripts/select-spinon-pilot.mjs
+
+      - name: Show selected matrix
+        run: cat product-identity/hd-standard/pilots/spin-on-pilot.v1.json
+
+      - name: Commit pilot matrix
+        run: |
+          git config user.name "ELIMFILTERS Product Identity Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add product-identity/hd-standard/pilots/spin-on-pilot.v1.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "data: generate Spin-On HD pilot matrix"
+            git push origin HEAD:claude/create-elimfilters-manuals-iFz1q
+          fi
