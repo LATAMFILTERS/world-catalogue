@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import pg from 'pg';
 
 const { Pool } = pg;
@@ -68,7 +69,7 @@ function buildMaster(row, existing = {}) {
   const construction = deriveConstruction(row) || existing.construction || null;
   const technology = normalizeTechnology(row, familyInfo.defaultTechnology);
 
-  return {
+  const master = {
     sku: row.sku,
     segment: String(row.duty || '').toUpperCase().includes('LIGHT') ? 'LD' : 'HD',
     family: familyInfo.family,
@@ -124,17 +125,24 @@ function buildMaster(row, existing = {}) {
       geometry_locked: true,
       source_image_required: true,
       approved_master_image: existing.media?.approved_master_image ?? null
-    },
-    gate: {
-      missing_for_factory_release: [
-        ...(row.height_mm == null ? ['height_mm'] : []),
-        ...(row.outer_diameter_mm == null ? ['outer_diameter_mm'] : []),
-        ...(construction === 'spin_on' && !row.thread_size ? ['thread_size'] : []),
-        ...(existing.production?.printable_area?.height_mm == null ? ['printable_area.height_mm'] : []),
-        ...(existing.production?.qr_url == null ? ['qr_url'] : [])
-      ]
     }
   };
+
+  const missing = [
+    ...(row.height_mm == null ? ['height_mm'] : []),
+    ...(row.outer_diameter_mm == null ? ['outer_diameter_mm'] : []),
+    ...(construction === 'spin_on' && !row.thread_size ? ['thread_size'] : []),
+    ...(master.production.printable_area?.height_mm == null ? ['printable_area.height_mm'] : []),
+    ...(master.production.qr_url == null ? ['qr_url'] : []),
+    ...(master.production.template_id == null ? ['template_id'] : [])
+  ];
+
+  master.gate = {
+    missing_for_factory_release: missing,
+    factory_release_allowed: missing.length === 0
+  };
+  master.production.factory_ready = master.gate.factory_release_allowed;
+  return master;
 }
 
 const SELECT_COLUMNS = `
@@ -184,7 +192,11 @@ export async function syncProductMasters({
       }
       const master = buildMaster(row, existing);
       report.processed += 1;
-      report.products.push({ sku: row.sku, missing: master.gate.missing_for_factory_release });
+      report.products.push({
+        sku: row.sku,
+        factory_ready: master.production.factory_ready,
+        missing: master.gate.missing_for_factory_release
+      });
       if (!dryRun) {
         fs.writeFileSync(file, `${JSON.stringify(master, null, 2)}\n`);
         report.written += 1;
@@ -206,7 +218,11 @@ async function main() {
   console.log(JSON.stringify(report, null, 2));
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isDirectRun = process.argv[1]
+  ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+  : false;
+
+if (isDirectRun) {
   main().catch((error) => {
     console.error(`[product-identity sync] ${error.message}`);
     process.exit(1);
