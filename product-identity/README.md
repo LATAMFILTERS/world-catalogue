@@ -32,7 +32,7 @@ HD families in scope:
 - `hd-standard/` — HD product-printing logic and physical templates
 - `schemas/` — machine-readable product master contracts
 - `production-master/` — one production master JSON per SKU
-- `scripts/` — read-only synchronization from World Catalogue into Product Master JSON
+- `scripts/` — read-only synchronization and guarded template assignment
 - `ai-media/` — deterministic image/video transformation rules
 
 ## Catalogue → Product Master synchronization
@@ -54,6 +54,29 @@ DATABASE_URL=<World Catalogue PostgreSQL connection string>
 The sync imports available technical data including height, outer/inner diameter, thread, gasket dimensions, filter family, technology, technical test method, media, pressure specifications and verified cross references.
 
 Manufacturing-only data such as printable area, artwork template and approved QR destination is preserved from the existing Product Master and is never invented from catalogue data.
+
+## HD template assignment
+
+Template assignment is intentionally split into two decisions:
+
+1. Template family is assigned from verified construction, such as `HD_SPINON`, `HD_PANEL`, `HD_AIR_RADIAL`, `HD_CARTRIDGE`, `HD_ELEMENT`, `HD_SEPARATOR_BOWL`, or `HD_HOUSING`.
+2. Dimensional size class (`XS`, `S`, `M`, `L`, `XL`) remains unassigned until pilot measurements establish approved thresholds.
+
+This prevents arbitrary size cutoffs from entering production data.
+
+```bash
+node product-identity/scripts/assign-hd-template.mjs --dry-run
+node product-identity/scripts/assign-hd-template.mjs --sku=EL82100 --dry-run
+node product-identity/scripts/assign-hd-template.mjs --sku=EL82100
+```
+
+The registry lives at:
+
+```text
+product-identity/hd-standard/templates/template-registry.v1.json
+```
+
+Until approved pilot thresholds are populated, the engine may set `production.template_family`, but it will leave `production.template_id` and `production.size_class` null and keep the SKU blocked from factory release.
 
 ## Factory release gate
 
