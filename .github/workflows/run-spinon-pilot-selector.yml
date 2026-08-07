@@ -1,11 +1,13 @@
 name: Run Spin-On Pilot Selector
 
 on:
-  push:
+  pull_request:
     branches:
-      - claude/create-elimfilters-manuals-iFz1q
+      - main
     paths:
+      - 'product-identity/**'
       - '.github/workflows/run-spinon-pilot-selector.yml'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,7 +18,7 @@ jobs:
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL_READONLY }}
     steps:
-      - name: Checkout
+      - name: Checkout feature branch
         uses: actions/checkout@v4
         with:
           ref: claude/create-elimfilters-manuals-iFz1q
@@ -42,7 +44,7 @@ jobs:
       - name: Show selected matrix
         run: cat product-identity/hd-standard/pilots/spin-on-pilot.v1.json
 
-      - name: Commit pilot matrix
+      - name: Commit pilot matrix to feature branch
         run: |
           git config user.name "ELIMFILTERS Product Identity Bot"
           git config user.email "actions@users.noreply.github.com"
