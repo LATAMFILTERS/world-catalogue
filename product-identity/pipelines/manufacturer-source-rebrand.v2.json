@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.5",
+  "schema_version": "2.6",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
@@ -7,20 +7,23 @@
   "execution_scope": {
     "applies_to_all_skus": true,
     "applies_to_all_positions": true,
-    "rule": "NO_RENDER_WITHOUT_VERIFIED_CURRENT_SKU_SCREENSHOT_ARTIFACT",
-    "screen_must_be_captured_or_provided_for_current_sku_execution": true,
-    "screen_must_match_current_manufacturer_and_part_number": true,
-    "screen_from_another_sku_forbidden": true,
-    "screen_from_prior_execution_requires_explicit_same_sku_binding": true,
-    "image_generation_tool_call_forbidden_until_screen_gate_passes": true
+    "rule": "NO_RENDER_WITHOUT_VERIFIED_FRESH_OFFICIAL_SOURCE_IMAGE",
+    "manual_screenshot_required": false,
+    "automated_source_acquisition_required": true,
+    "automated_source_script": "product-identity/scripts/acquire-manufacturer-source.mjs",
+    "cache_forbidden": true,
+    "previous_render_as_geometry_source_forbidden": true,
+    "image_generation_tool_call_forbidden_until_source_gate_passes": true
   },
-  "screenshot_evidence_gate": {
+  "source_evidence_gate": {
     "required": true,
-    "artifact_must_exist": true,
-    "artifact_must_be_visually_inspected_before_render": true,
-    "manufacturer_text_must_match_current_manufacturer": true,
-    "part_number_text_must_match_current_part_number": true,
-    "source_image_visible_in_artifact": true,
+    "product_page_must_be_official_manufacturer_host": true,
+    "product_page_must_contain_current_part_number": true,
+    "official_source_image_must_be_resolved_from_current_product_page": true,
+    "official_source_image_artifact_must_exist": true,
+    "official_source_image_sha256_required": true,
+    "automated_screenshot_created_for_audit": true,
+    "automated_screenshot_is_not_a_manual_gate": true,
     "geometry_signature_must_be_recorded_before_render": true,
     "geometry_signature_required_fields": [
       "overall_body_proportions",
@@ -34,17 +37,15 @@
     ],
     "forbid_generic_spin_on_substitution": true,
     "forbid_geometry_from_previous_sku": true,
-    "render_must_reference_current_screenshot_artifact": true,
     "failure_action": "STOP_BEFORE_IMAGE_TOOL_CALL"
   },
   "lineage_verification": {
     "mode": "APPLICATION_VERIFIED",
     "engine_edit_op_is_authoritative": false,
     "engine_edit_op_null_is_not_a_reject_by_itself": true,
-    "reason": "Current image engine metadata may return edit_op null even when a current-turn source image is supplied. Lineage is therefore proven by application evidence, not by that metadata field alone.",
     "required_evidence": [
-      "CURRENT_SKU_SCREENSHOT_ARTIFACT_ID_OR_PATH",
-      "CURRENT_SKU_SCREENSHOT_CONTENT_HASH_WHEN_AVAILABLE",
+      "CURRENT_SKU_SOURCE_EVIDENCE_PATH",
+      "CURRENT_SKU_OFFICIAL_IMAGE_SHA256",
       "MANUFACTURER_AND_PART_NUMBER_BINDING",
       "RECORDED_SOURCE_GEOMETRY_SIGNATURE",
       "LIVE_DATABASE_RESOLUTION_RESULT",
@@ -53,15 +54,6 @@
       "OUTPUT_GEN_ID",
       "POST_RENDER_GEOMETRY_MATCH_PASS",
       "POST_RENDER_ARTWORK_MATCH_PASS"
-    ],
-    "reject_if": [
-      "CURRENT_SKU_SCREENSHOT_ARTIFACT_MISSING",
-      "CURRENT_SKU_BINDING_MISSING",
-      "SOURCE_GEOMETRY_SIGNATURE_MISSING",
-      "LIVE_DATABASE_RESOLUTION_MISSING",
-      "OUTPUT_GEN_ID_MISSING",
-      "POST_RENDER_GEOMETRY_MATCH_FAIL",
-      "POST_RENDER_ARTWORK_MATCH_FAIL"
     ]
   },
   "preflight": {
@@ -70,22 +62,21 @@
     "required_result": {"manifest_status": "PASS", "image_generation_enabled": true},
     "must_execute_live_database_lookup": true,
     "must_execute_technology_asset_resolution": true,
-    "must_validate_current_sku_screenshot": true,
-    "must_validate_screenshot_artifact_binding": true,
+    "must_validate_source_evidence_binding": true,
     "must_validate_geometry_signature": true
   },
+  "manifest_builder": "product-identity/scripts/build-render-manifest.mjs",
   "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
   "state_machine": ["SOURCE_LOCKED","GEOMETRY_APPROVED","PAINT_LITHO_APPROVED","FINAL_APPROVED"],
   "mandatory_chain": [
-    "MANUFACTURER_URL",
-    "CURRENT_SKU_REAL_SCREENSHOT",
-    "SCREENSHOT_ARTIFACT_EXISTS",
-    "SCREENSHOT_VISUALLY_INSPECTED",
-    "SCREENSHOT_SKU_MATCH_PASS",
+    "MANUFACTURER_CATEGORY_OR_PRODUCT_PAGE",
+    "CURRENT_SKU_OFFICIAL_PRODUCT_PAGE",
+    "AUTOMATED_OFFICIAL_SOURCE_ACQUISITION",
+    "OFFICIAL_SOURCE_IMAGE_ARTIFACT_EXISTS",
+    "OFFICIAL_SOURCE_IMAGE_SHA256_RECORDED",
+    "FRESH_SOURCE_NO_CACHE_PASS",
+    "AUTOMATED_AUDIT_SCREENSHOT_RECORDED",
     "GEOMETRY_SIGNATURE_RECORDED",
-    "REAL_SOURCE_IMAGE",
-    "SOURCE_IMAGE_SKU_MATCH_PASS",
-    "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
     "LIVE_DATABASE_LOOKUP",
     "SKU_RESOLVED",
     "FILTER_TYPE_RESOLVED",
@@ -99,7 +90,8 @@
     "PHASE_3",
     "USER_APPROVAL",
     "APPLICATION_LINEAGE_EVIDENCE_RECORDED",
-    "SAVE_JSON_AND_MASTER"
+    "SAVE_JSON_AND_MASTER",
+    "STORE_APPROVED_RENDER"
   ],
   "database": {
     "table": "world_catalogue.elimfilters_catalog",
@@ -129,9 +121,7 @@
   },
   "phase_1": {
     "mode": "GEOMETRY_ONLY",
-    "requires_real_source_edit": true,
-    "requires_current_sku_screenshot": true,
-    "requires_current_sku_source_image": true,
+    "requires_current_official_source_image": true,
     "requires_geometry_signature_match": true,
     "rebrand_allowed": false
   },
@@ -149,27 +139,15 @@
     "single_view_requires_protected_opposite_view": true,
     "whole_composition_regeneration_allowed": false
   },
-  "legacy_master_policy": {
-    "preserve_explicit_user_approval": true,
-    "do_not_falsely_claim_modern_lineage_pass": true,
-    "pre_enforcement_master_may_remain_locked_reference": true,
-    "future_regeneration_must_use_current_pipeline": true,
-    "legacy_geometry_may_be_reused_only_for_same_exact_sku": true,
-    "legacy_color_or_lithography_rules_conflicting_with_current_authority_must_be_retired_before_reuse": true,
-    "records_with_legacy_graphite_or_white_lithography_must_be_marked_migration_required": true
-  },
   "pre_tool_call_reject_if": [
-    "CURRENT_SKU_SCREENSHOT_MISSING",
-    "SCREENSHOT_ARTIFACT_MISSING",
-    "SCREENSHOT_NOT_VISUALLY_INSPECTED",
-    "CURRENT_SKU_SCREENSHOT_UNVERIFIED",
-    "SCREENSHOT_PART_NUMBER_MISMATCH",
-    "SCREENSHOT_MANUFACTURER_MISMATCH",
+    "OFFICIAL_PRODUCT_PAGE_MISSING",
+    "OFFICIAL_PRODUCT_PAGE_PART_NUMBER_MISMATCH",
+    "OFFICIAL_SOURCE_IMAGE_MISSING",
+    "OFFICIAL_SOURCE_IMAGE_SKU_MISMATCH",
+    "SOURCE_EVIDENCE_HASH_MISSING",
+    "CACHE_OR_PREVIOUS_MASTER_USED",
     "GEOMETRY_SIGNATURE_MISSING",
     "GENERIC_SPIN_ON_GEOMETRY_SUBSTITUTION",
-    "CURRENT_SKU_SOURCE_IMAGE_MISSING",
-    "SOURCE_IMAGE_PART_NUMBER_MISMATCH",
-    "GEOMETRY_NOT_EXTRACTED_FROM_CURRENT_SOURCE",
     "LIVE_DATABASE_LOOKUP_NOT_EXECUTED",
     "SKU_NOT_RESOLVED",
     "TECHNOLOGY_NOT_RESOLVED",
@@ -192,5 +170,5 @@
     "PIPELINE_TEXT_PRESENT"
   ],
   "presentation_rule": "Rejected renders must not be presented as candidates.",
-  "operator_rule": "Before any image tool call, open and visually inspect the current SKU screenshot artifact, record its geometry signature, and bind the render to that artifact. After render, record application-level lineage evidence and validate geometry/artwork before presenting."
+  "operator_rule": "For every SKU, acquire a fresh verified official manufacturer image automatically from the current official product page. A manually supplied screenshot is not required. Never use cache or a prior render as geometry source."
 }
