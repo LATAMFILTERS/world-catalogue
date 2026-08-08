@@ -1,0 +1,81 @@
+{
+  "schema_version": "2.0",
+  "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "text_to_image_allowed": false,
+  "state_machine": ["SOURCE_LOCKED", "GEOMETRY_APPROVED", "PAINT_LITHO_APPROVED", "FINAL_APPROVED"],
+  "mandatory_chain": [
+    "MANUFACTURER_URL",
+    "REAL_SCREENSHOT",
+    "REAL_SOURCE_IMAGE",
+    "LIVE_DATABASE_LOOKUP",
+    "SKU_RESOLVED",
+    "FILTER_TYPE_RESOLVED",
+    "TECHNOLOGY_RESOLVED",
+    "OFFICIAL_ASSETS_RESOLVED",
+    "MANIFEST_PASS",
+    "PHASE_1",
+    "USER_APPROVAL",
+    "PHASE_2",
+    "USER_APPROVAL",
+    "PHASE_3",
+    "USER_APPROVAL",
+    "SAVE_JSON_AND_MASTER"
+  ],
+  "gates": [
+    "SOURCE_SCREENSHOT_REQUIRED",
+    "SOURCE_IMAGE_REQUIRED",
+    "DATABASE_SKU_REQUIRED",
+    "TECHNOLOGY_ASSET_REQUIRED",
+    "LOGO_ASSET_REQUIRED",
+    "MANIFEST_PASS_REQUIRED",
+    "EDIT_ONLY_REQUIRED",
+    "PHASE_APPROVAL_REQUIRED",
+    "PROTECTED_VIEW_LOCK_REQUIRED",
+    "RESULT_LINEAGE_REQUIRED"
+  ],
+  "render_block_rule": "IF manifest_status != PASS THEN IMAGE_GENERATION_DISABLED",
+  "result_reject_rule": "IF edit_op IS NULL OR source_lineage_missing THEN REJECT_OUTPUT",
+  "database": {
+    "table": "world_catalogue.elimfilters_catalog",
+    "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
+    "exact_match_count": 1,
+    "fallback_allowed": false
+  },
+  "artwork": {
+    "container_hex": "#414141",
+    "lithography_hex": "#CBCBCB",
+    "logo": "frontend/public/assets/logo-elimfilters.png",
+    "technology_directory": "frontend/public/assets/",
+    "claim": "TOTAL ASSET PROTECTION",
+    "descriptor": "Powered Filtration"
+  },
+  "phase_1": {
+    "mode": "GEOMETRY_ONLY",
+    "requires_real_source_edit": true,
+    "rebrand_allowed": false
+  },
+  "phase_2": {
+    "mode": "PAINT_LITHOGRAPHY_ONLY",
+    "requires_state": "GEOMETRY_APPROVED",
+    "requires_approved_geometry_master": true
+  },
+  "phase_3": {
+    "mode": "MICRO_ADJUSTMENT_ONLY",
+    "requires_state": "PAINT_LITHO_APPROVED",
+    "single_view_requires_protected_opposite_view": true,
+    "whole_composition_regeneration_allowed": false
+  },
+  "forbidden": [
+    "INFERRED_SKU",
+    "REMEMBERED_SKU",
+    "INFERRED_TECHNOLOGY",
+    "SYNTHETIC_SCREENSHOT",
+    "SYNTHETIC_SOURCE",
+    "GENERATED_LOGO",
+    "GENERATED_TECHNOLOGY_MARK",
+    "TEXT_TO_IMAGE_FALLBACK",
+    "UNAPPROVED_PHASE_ADVANCE"
+  ]
+}
