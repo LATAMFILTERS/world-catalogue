@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.5",
+  "schemaVersion": "1.6",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -51,6 +51,35 @@
     },
     "productionNote": "HEX/RGB are the digital master appearance values derived from the approved gray filter reference. A physical coating supplier must color-match the approved master sample/reference; do not substitute an arbitrary RAL or Pantone without physical validation."
   },
+  "lithographyColorAuthority": {
+    "status": "MASTER_LOCKED",
+    "officialName": "ELIMFILTERS LITHOGRAPHY SILVER",
+    "digitalMaster": {
+      "hex": "#CBCBCB",
+      "rgb": [203, 203, 203]
+    },
+    "finish": "METALLIC_SILVER_SATIN",
+    "appliesTo": [
+      "OFFICIAL_LOGO",
+      "TOTAL_ASSET_PROTECTION",
+      "SKU",
+      "PRODUCT_DESCRIPTOR",
+      "TECHNOLOGY_ARTWORK",
+      "POWERED_FILTRATION",
+      "INSTALLATION_ROTATION_DIRECTION_MARKS"
+    ],
+    "rules": {
+      "singleLithographyColorSystem": true,
+      "preserveSilverAppearance": true,
+      "doNotUsePureWhite": true,
+      "doNotShiftToBlueSilver": true,
+      "doNotUseChromeMirrorFinish": true,
+      "doNotIntroduceSecondaryPrintColors": true,
+      "sameColorBothSides": true,
+      "renderHighlightsMayVaryButBasePrintColorMustRemainMaster": true
+    },
+    "productionNote": "HEX/RGB define the approved digital appearance. Physical ink or direct-print coating must be color-matched on the ELIMFILTERS DARK CHARCOAL container because substrate, ink system, curing and sheen affect the final appearance. Do not assign an arbitrary RAL or Pantone without a validated physical print sample."
+  },
   "installationRotationDirectionMarks": {
     "required": true,
     "officialName": "Installation Rotation Direction Marks",
@@ -100,7 +129,9 @@
     "typography": "LOCKED_TO_APPROVED_MASTER",
     "spacing": "PROPORTIONALLY_ADAPTED_TO_CONTAINER",
     "alignment": "LOCKED_TO_APPROVED_MASTER",
-    "printColor": "WHITE_SILVER",
+    "printColor": "ELIMFILTERS_LITHOGRAPHY_SILVER",
+    "printColorHex": "#CBCBCB",
+    "printFinish": "METALLIC_SILVER_SATIN",
     "canFinish": "ELIMFILTERS_DARK_CHARCOAL_SEMI_MATTE",
     "canBaseColorHex": "#414141",
     "directionalMarks": "INSTALLATION_ROTATION_DIRECTION_MARKS_LOCKED_RELATIVE_POSITION",
@@ -144,6 +175,8 @@
     "officialLogoMustComeFromLockedAsset": true,
     "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
     "containerColorMustUseMasterAuthority": true,
+    "lithographyColorMustUseMasterAuthority": true,
+    "allLithographyElementsMustUseApprovedSilverUnlessAuthorityIsRevised": true,
     "installationRotationDirectionMarksRequired": true,
     "installationRotationDirectionMarksMustRemainLocked": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
@@ -160,6 +193,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, use ELIMFILTERS DARK CHARCOAL #414141 as the container base-color authority, preserve the approved visual hierarchy, include the locked Installation Rotation Direction Marks in the upper print band below the metal rim, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
+    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, use ELIMFILTERS DARK CHARCOAL #414141 as the container base-color authority and ELIMFILTERS LITHOGRAPHY SILVER #CBCBCB with metallic silver satin appearance for all approved lithography elements. Preserve the approved visual hierarchy, include the locked Installation Rotation Direction Marks in the upper print band below the metal rim, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
   }
 }
