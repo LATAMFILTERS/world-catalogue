@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.3",
+  "schemaVersion": "1.4",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -31,6 +31,24 @@
       "THERMACORE®",
       "DRYCORE®"
     ]
+  },
+  "installationRotationDirectionMarks": {
+    "required": true,
+    "officialName": "Installation Rotation Direction Marks",
+    "location": "UPPER_PRINT_BAND_BELOW_METAL_RIM",
+    "function": "Indicate the installation tightening/rotation direction of the filter",
+    "status": "LOCKED_ARTWORK_ELEMENT",
+    "rules": {
+      "preserveApprovedArrowStyle": true,
+      "preserveRotationDirection": true,
+      "preserveRelativePosition": true,
+      "preserveRelativeSpacing": true,
+      "adaptProportionallyToContainer": true,
+      "sameMarksBothSides": true,
+      "doNotRemove": true,
+      "doNotReplaceWithGenericArrows": true,
+      "doNotAddUnapprovedCharacters": true
+    }
   },
   "containerAdaptiveLayout": {
     "required": true,
@@ -65,7 +83,7 @@
     "alignment": "LOCKED_TO_APPROVED_MASTER",
     "printColor": "WHITE_SILVER",
     "canFinish": "DARK_CHARCOAL",
-    "directionalMarks": "LOCKED_RELATIVE_POSITION",
+    "directionalMarks": "INSTALLATION_ROTATION_DIRECTION_MARKS_LOCKED_RELATIVE_POSITION",
     "duplicateArtworkOnOppositeSide": true
   },
   "technologyMatrix": {
@@ -105,6 +123,8 @@
     "technologyMustComeFromFilterCategory": true,
     "officialLogoMustComeFromLockedAsset": true,
     "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
+    "installationRotationDirectionMarksRequired": true,
+    "installationRotationDirectionMarksMustRemainLocked": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
     "printLayoutMustUseExactContainerPrintableArea": true,
     "artworkMustScaleProportionallyToContainer": true,
@@ -119,6 +139,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, preserve the approved visual hierarchy, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
+    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, preserve the approved visual hierarchy, include the locked Installation Rotation Direction Marks in the upper print band below the metal rim, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
   }
 }
