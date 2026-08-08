@@ -1,9 +1,20 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
   "text_to_image_allowed": false,
+  "preflight": {
+    "required": true,
+    "script": "product-identity/scripts/preflight-product-image.mjs",
+    "required_result": {
+      "manifest_status": "PASS",
+      "image_generation_enabled": true
+    },
+    "must_execute_live_database_lookup": true,
+    "must_execute_technology_asset_resolution": true
+  },
+  "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
   "state_machine": ["SOURCE_LOCKED", "GEOMETRY_APPROVED", "PAINT_LITHO_APPROVED", "FINAL_APPROVED"],
   "mandatory_chain": [
     "MANUFACTURER_URL",
@@ -14,7 +25,7 @@
     "FILTER_TYPE_RESOLVED",
     "TECHNOLOGY_RESOLVED",
     "OFFICIAL_ASSETS_RESOLVED",
-    "MANIFEST_PASS",
+    "PREFLIGHT_PASS",
     "PHASE_1",
     "USER_APPROVAL",
     "PHASE_2",
@@ -23,25 +34,12 @@
     "USER_APPROVAL",
     "SAVE_JSON_AND_MASTER"
   ],
-  "gates": [
-    "SOURCE_SCREENSHOT_REQUIRED",
-    "SOURCE_IMAGE_REQUIRED",
-    "DATABASE_SKU_REQUIRED",
-    "TECHNOLOGY_ASSET_REQUIRED",
-    "LOGO_ASSET_REQUIRED",
-    "MANIFEST_PASS_REQUIRED",
-    "EDIT_ONLY_REQUIRED",
-    "PHASE_APPROVAL_REQUIRED",
-    "PROTECTED_VIEW_LOCK_REQUIRED",
-    "RESULT_LINEAGE_REQUIRED"
-  ],
-  "render_block_rule": "IF manifest_status != PASS THEN IMAGE_GENERATION_DISABLED",
-  "result_reject_rule": "IF edit_op IS NULL OR source_lineage_missing THEN REJECT_OUTPUT",
   "database": {
     "table": "world_catalogue.elimfilters_catalog",
     "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
     "exact_match_count": 1,
-    "fallback_allowed": false
+    "fallback_allowed": false,
+    "remembered_value_allowed": false
   },
   "artwork": {
     "container_hex": "#414141",
@@ -49,7 +47,9 @@
     "logo": "frontend/public/assets/logo-elimfilters.png",
     "technology_directory": "frontend/public/assets/",
     "claim": "TOTAL ASSET PROTECTION",
-    "descriptor": "Powered Filtration"
+    "descriptor": "Powered Filtration",
+    "manufacturer_white_allowed_in_phase_2": false,
+    "secondary_print_colors_allowed": false
   },
   "phase_1": {
     "mode": "GEOMETRY_ONLY",
@@ -59,7 +59,10 @@
   "phase_2": {
     "mode": "PAINT_LITHOGRAPHY_ONLY",
     "requires_state": "GEOMETRY_APPROVED",
-    "requires_approved_geometry_master": true
+    "requires_approved_geometry_master": true,
+    "body_color_required": "#414141",
+    "lithography_color_required": "#CBCBCB",
+    "manufacturer_white_body_is_hard_reject": true
   },
   "phase_3": {
     "mode": "MICRO_ADJUSTMENT_ONLY",
@@ -67,15 +70,18 @@
     "single_view_requires_protected_opposite_view": true,
     "whole_composition_regeneration_allowed": false
   },
-  "forbidden": [
-    "INFERRED_SKU",
-    "REMEMBERED_SKU",
-    "INFERRED_TECHNOLOGY",
-    "SYNTHETIC_SCREENSHOT",
-    "SYNTHETIC_SOURCE",
-    "GENERATED_LOGO",
-    "GENERATED_TECHNOLOGY_MARK",
-    "TEXT_TO_IMAGE_FALLBACK",
-    "UNAPPROVED_PHASE_ADVANCE"
-  ]
+  "post_render_reject_if": [
+    "EDIT_OP_NULL_OR_MISSING",
+    "SOURCE_LINEAGE_MISSING",
+    "BODY_REMAINS_MANUFACTURER_WHITE",
+    "BODY_NOT_414141_DARK_CHARCOAL",
+    "LITHOGRAPHY_NOT_CBCBCB_SILVER",
+    "SKU_MISMATCH",
+    "TECHNOLOGY_MISMATCH",
+    "GEOMETRY_DRIFT",
+    "PROTECTED_VIEW_CHANGED",
+    "COMPETITOR_BRANDING_PRESENT",
+    "SECONDARY_COLORS_PRESENT"
+  ],
+  "presentation_rule": "Rejected renders must not be presented as candidates."
 }
