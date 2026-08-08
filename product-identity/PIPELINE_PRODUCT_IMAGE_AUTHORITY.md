@@ -1,108 +1,51 @@
-# ELIMFILTERS Product Image Pipeline Authority
+# ELIMFILTERS Product Image Pipeline Authority v2
 
-Status: ACTIVE
+Status: ACTIVE / FAIL-CLOSED
 
-Purpose: enforce source-image editing with immutable SKU geometry, phased approvals, per-view protection, and exact SKU continuity. The pipeline is not text-to-image.
+The product-image workflow is executable enforcement, not prose guidance.
 
-## Authority order
+## Mandatory order
 
-1. Exact manufacturer image controls physical geometry.
-2. Approved phase master controls later geometry/composition.
-3. `world_catalogue.elimfilters_catalog` controls ELIMFILTERS SKU.
-4. Cylindrical print authority controls paint/lithography.
+`manufacturer URL -> browser screenshot -> real source image -> live DB SKU/filter type -> technology + official assets -> manifest PASS -> Phase 1 -> explicit approval -> Phase 2 -> explicit approval -> Phase 3 -> explicit approval -> save approved JSON/master`.
 
-## State machine
+No image tool may run before manifest PASS.
 
-`SOURCE_LOCKED -> GEOMETRY_APPROVED -> PAINT_LITHO_APPROVED -> FINAL_APPROVED`
+## Gates
 
-## Independent view locks
+- `SOURCE_SCREENSHOT_REQUIRED`: persist a real browser screenshot.
+- `SOURCE_IMAGE_REQUIRED`: persist exact manufacturer source image bytes.
+- `DATABASE_SKU_REQUIRED`: query `world_catalogue.elimfilters_catalog` live with `resolve-competitor-sku.mjs`; exactly one exact match.
+- `TECHNOLOGY_ASSET_REQUIRED`: derive technology from catalog result/filter type and resolve exactly one official binary asset from `frontend/public/assets/`.
+- `LOGO_ASSET_REQUIRED`: `frontend/public/assets/logo-elimfilters.png` must exist.
+- `MANIFEST_PASS_REQUIRED`: manifest must pass schema/file/gate validation.
+- `EDIT_ONLY_REQUIRED`: every render is an edit of exact source/approved master.
+- `PHASE_APPROVAL_REQUIRED`: explicit user approval before advance.
+- `PROTECTED_VIEW_LOCK_REQUIRED`: opposite approved view is immutable during single-view fixes.
+- `RESULT_LINEAGE_REQUIRED`: render metadata must prove edit lineage; null/missing edit operation is rejected.
 
-A two-filter composition contains two independently protected views: `VERTICAL_VIEW` and `HORIZONTAL_VIEW`.
+## Phase rules
 
-Once one view is approved, later edits to the other view may not change the approved view in any way: geometry, paint, lithography, lighting, pose, position, scale, perspective, shadows, crop, or relative placement.
+Phase 1: geometry only. Preserve source silhouette, proportions, seams, rim, baseplate, thread, gasket, inlet holes, construction, perspective, relative scale, crop and composition.
 
-Scoped corrections must use a localized edit/mask. Re-rendering the whole composition for a one-view correction is invalid.
+Phase 2: only paint + authorized lithography over approved Phase-1 master. Container `#414141`; lithography `#CBCBCB`; official ELIMFILTERS logo; TOTAL ASSET PROTECTION; exact DB SKU; product descriptor; exact official technology; Powered Filtration; approved installation marks.
 
-## Phase 1 — Geometry only
+Phase 3: only explicitly requested micro-adjustment. Declare target view/property. A whole-composition regeneration for a one-view correction is invalid.
 
-Use the real manufacturer source. Preserve exact silhouette, dimensions/proportions, seams, rim, baseplate, thread, gasket, hole count/shape/positions, construction details, perspective, orientation, relative scale, crop and composition. No rebrand/repaint.
+## Failure behavior
 
-Approval freezes the exact geometry master.
+Any gate failure sets manifest `FAIL`, disables image generation and returns the exact STOP reason. Never use remembered SKU, remembered technology, another SKU's geometry, synthetic screenshot/source, generated logo/technology mark, or text-to-image fallback.
 
-## Phase 2 — Paint + lithography only
+## Executables
 
-Input MUST be the approved Phase 1 master.
+- `product-identity/scripts/capture-manufacturer-screenshot.mjs`
+- `product-identity/scripts/fetch-manufacturer-image.mjs`
+- `product-identity/scripts/resolve-competitor-sku.mjs`
+- `product-identity/scripts/resolve-technology-asset.mjs`
+- `product-identity/scripts/build-render-manifest.mjs`
+- `product-identity/scripts/validate-render-manifest.mjs`
+- `product-identity/scripts/run-image-phase.mjs`
+- `product-identity/scripts/validate-render-result.mjs`
 
-Allowed changes only: container surface paint and authorized lithography.
-
-Paint: `#414141`, ELIMFILTERS DARK CHARCOAL, semi-matte industrial.
-Lithography: `#CBCBCB`, ELIMFILTERS LITHOGRAPHY SILVER, metallic satin.
-
-Required hierarchy:
-1. Installation Rotation Direction Marks
-2. official ELIMFILTERS logo
-3. TOTAL ASSET PROTECTION
-4. exact DB-resolved ELIMFILTERS SKU
-5. product descriptor
-6. official technology artwork/name
-7. Powered Filtration
-
-## SKU continuity
-
-The database-resolved SKU is immutable across both views and all later phases.
-
-A reference image can donate layout, typography, spacing and hierarchy only. It may NEVER donate the SKU value.
-
-Both vertical and horizontal views must carry the same current target SKU. A candidate containing a previous SKU, reference SKU, competitor code used as SKU, or a different SKU between views is invalid.
-
-## Phase 3 — Micro-adjustments only
-
-Declare `target_view` and `target_property` before edit.
-
-If editing only horizontal lithography, vertical is a protected frozen region. If editing only vertical, horizontal is protected.
-
-Only the requested property may change. All other pixels/features are immutable.
-
-## Render manifest
-
-Before every image call record:
-- phase
-- competitor_code
-- resolved_sku for Phase 2+
-- source/master image id/path
-- active target view
-- protected view(s)
-- target property
-- edit mask/scope
-- prior approved protected-view master id/path
-- immutable elements
-- allowed changes
-- official logo asset path for Phase 2+
-- official technology asset path for Phase 2+
-- `RENDER_INPUTS_VERIFIED=true`
-
-Missing field = STOP.
-
-## Tool enforcement
-
-Every valid operation must be an edit of the exact referenced source/master. If the tool performs a new full generation, lacks source lineage, or cannot preserve the protected view, reject the result and do not present it.
-
-## Pre-display QC
-
-Geometry: silhouette, proportions, seams, baseplate, thread, gasket, hole pattern, perspective, relative scale, composition.
-
-Phase 2+: exact resolved SKU on both views, official assets, charcoal/silver only, authorized hierarchy, no extra text/colors.
-
-Scoped edit: protected view unchanged; only requested view/property changed; no geometry, paint, lighting, pose, scale, position, or artwork drift outside edit scope.
-
-Any mismatch means rejection.
-
-## Control cases
-
-LF670 geometry is unique and cannot be reused.
-LF3620 must use its own exact Fleetguard source geometry.
-Approved EL81670 imagery may be used only as style/layout guidance; its SKU must never be copied to LF3620 or any other product.
-
-## Claude skill
-
-Operational enforcement: `.claude/skills/elimfilters-product-image-pipeline/SKILL.md`
+Machine contract: `product-identity/pipelines/manufacturer-source-rebrand.v2.json`.
+Manifest schema: `product-identity/pipelines/render-manifest.schema.json`.
+Legacy `manufacturer-source-rebrand.v1.json` is retired and deleted.
