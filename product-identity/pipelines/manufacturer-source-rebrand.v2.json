@@ -1,19 +1,50 @@
 {
-  "schema_version": "2.2",
+  "schema_version": "2.3",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
   "text_to_image_allowed": false,
+  "execution_scope": {
+    "applies_to_all_skus": true,
+    "applies_to_all_positions": true,
+    "rule": "NO_RENDER_WITHOUT_CURRENT_SKU_SCREENSHOT",
+    "screen_must_be_captured_or_provided_for_current_sku_execution": true,
+    "screen_must_match_current_manufacturer_and_part_number": true,
+    "screen_from_another_sku_forbidden": true,
+    "screen_from_prior_execution_requires_explicit_same_sku_binding": true,
+    "image_generation_tool_call_forbidden_until_screen_gate_passes": true
+  },
   "preflight": {
     "required": true,
     "script": "product-identity/scripts/preflight-product-image.mjs",
     "required_result": {"manifest_status": "PASS", "image_generation_enabled": true},
     "must_execute_live_database_lookup": true,
-    "must_execute_technology_asset_resolution": true
+    "must_execute_technology_asset_resolution": true,
+    "must_validate_current_sku_screenshot": true
   },
   "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
   "state_machine": ["SOURCE_LOCKED","GEOMETRY_APPROVED","PAINT_LITHO_APPROVED","FINAL_APPROVED"],
-  "mandatory_chain": ["MANUFACTURER_URL","REAL_SCREENSHOT","REAL_SOURCE_IMAGE","LIVE_DATABASE_LOOKUP","SKU_RESOLVED","FILTER_TYPE_RESOLVED","TECHNOLOGY_RESOLVED","OFFICIAL_ASSETS_RESOLVED","PREFLIGHT_PASS","PHASE_1","USER_APPROVAL","PHASE_2","USER_APPROVAL","PHASE_3","USER_APPROVAL","SAVE_JSON_AND_MASTER"],
+  "mandatory_chain": [
+    "MANUFACTURER_URL",
+    "CURRENT_SKU_REAL_SCREENSHOT",
+    "SCREENSHOT_SKU_MATCH_PASS",
+    "REAL_SOURCE_IMAGE",
+    "SOURCE_IMAGE_SKU_MATCH_PASS",
+    "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
+    "LIVE_DATABASE_LOOKUP",
+    "SKU_RESOLVED",
+    "FILTER_TYPE_RESOLVED",
+    "TECHNOLOGY_RESOLVED",
+    "OFFICIAL_ASSETS_RESOLVED",
+    "PREFLIGHT_PASS",
+    "PHASE_1",
+    "USER_APPROVAL",
+    "PHASE_2",
+    "USER_APPROVAL",
+    "PHASE_3",
+    "USER_APPROVAL",
+    "SAVE_JSON_AND_MASTER"
+  ],
   "database": {
     "table": "world_catalogue.elimfilters_catalog",
     "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
@@ -43,6 +74,8 @@
   "phase_1": {
     "mode": "GEOMETRY_ONLY",
     "requires_real_source_edit": true,
+    "requires_current_sku_screenshot": true,
+    "requires_current_sku_source_image": true,
     "rebrand_allowed": false
   },
   "phase_2": {
@@ -68,6 +101,21 @@
     "legacy_color_or_lithography_rules_conflicting_with_current_authority_must_be_retired_before_reuse": true,
     "records_with_legacy_graphite_or_white_lithography_must_be_marked_migration_required": true
   },
+  "pre_tool_call_reject_if": [
+    "CURRENT_SKU_SCREENSHOT_MISSING",
+    "CURRENT_SKU_SCREENSHOT_UNVERIFIED",
+    "SCREENSHOT_PART_NUMBER_MISMATCH",
+    "SCREENSHOT_MANUFACTURER_MISMATCH",
+    "CURRENT_SKU_SOURCE_IMAGE_MISSING",
+    "SOURCE_IMAGE_PART_NUMBER_MISMATCH",
+    "GEOMETRY_NOT_EXTRACTED_FROM_CURRENT_SOURCE",
+    "LIVE_DATABASE_LOOKUP_NOT_EXECUTED",
+    "SKU_NOT_RESOLVED",
+    "TECHNOLOGY_NOT_RESOLVED",
+    "OFFICIAL_ASSETS_NOT_RESOLVED",
+    "PREFLIGHT_NOT_PASS"
+  ],
   "post_render_reject_if": ["EDIT_OP_NULL_OR_MISSING","SOURCE_LINEAGE_MISSING","BODY_REMAINS_MANUFACTURER_WHITE","BODY_NOT_414141_DARK_CHARCOAL","LITHOGRAPHY_NOT_CBCBCB_SILVER","SKU_MISMATCH","TECHNOLOGY_MISMATCH","GEOMETRY_DRIFT","PROTECTED_VIEW_CHANGED","COMPETITOR_BRANDING_PRESENT","SECONDARY_COLORS_PRESENT","VALIDATION_UI_PRESENT","PIPELINE_TEXT_PRESENT"],
-  "presentation_rule": "Rejected renders must not be presented as candidates."
+  "presentation_rule": "Rejected renders must not be presented as candidates.",
+  "operator_rule": "If CURRENT_SKU_REAL_SCREENSHOT is not PASS, do not call any image generation tool. Stop at the screenshot gate and obtain the correct source first."
 }
