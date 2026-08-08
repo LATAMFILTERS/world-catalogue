@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
+  "status": "ACTIVE",
+  "mode": "FAIL_CLOSED_SOURCE_IMAGE_EDIT_ONLY",
+  "text_to_image_allowed": false,
+  "synthetic_source_allowed": false,
+  "simulated_screenshot_allowed": false,
+  "required_authorities": [
+    "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "product-identity/ai-media/image-generation-rules.v1.json",
+    "product-identity/brand-dna/elimfilters-brand.v1.json"
+  ],
+  "required_assets": {
+    "manufacturer_source_image": {
+      "required": true,
+      "must_be_real": true,
+      "must_match_exact_reference_code": true
+    },
+    "official_logo": {
+      "required": true,
+      "path": "frontend/public/assets/logo-elimfilters.png",
+      "must_be_loaded_as_binary_asset": true,
+      "recreation_allowed": false
+    },
+    "technology_artwork": {
+      "required": true,
+      "directory": "frontend/public/assets/",
+      "must_be_loaded_as_binary_asset": true,
+      "recreation_allowed": false
+    }
+  },
+  "catalog_gate": {
+    "required": true,
+    "source": "world_catalogue.elimfilters_catalog",
+    "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
+    "exact_match_count_required": 1,
+    "infer_sku_allowed": false,
+    "hardcoded_fallback_allowed": false,
+    "on_zero_matches": "STOP_SKU_NOT_FOUND",
+    "on_multiple_matches": "STOP_SKU_AMBIGUOUS"
+  },
+  "geometry_lock": {
+    "enabled": true,
+    "preserve": [
+      "overall_shape",
+      "height_to_diameter_ratio",
+      "top_bottom_seams",
+      "baseplate_geometry",
+      "thread_geometry",
+      "gasket_geometry",
+      "inlet_hole_count",
+      "inlet_hole_shape",
+      "inlet_hole_positions",
+      "valves",
+      "construction_features",
+      "perspective",
+      "orientation",
+      "relative_scale_between_views"
+    ],
+    "mechanical_redraw_allowed": false,
+    "geometry_from_other_sku_allowed": false
+  },
+  "editable_surface_only": [
+    "container_surface_color",
+    "authorized_lithography"
+  ],
+  "artwork": {
+    "container_color": {
+      "name": "ELIMFILTERS DARK CHARCOAL",
+      "hex": "#414141"
+    },
+    "lithography_color": {
+      "name": "ELIMFILTERS LITHOGRAPHY SILVER",
+      "hex": "#CBCBCB"
+    },
+    "required_elements": [
+      "INSTALLATION_ROTATION_DIRECTION_MARKS",
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL_ASSET_PROTECTION",
+      "EXACT_RESOLVED_SKU",
+      "PRODUCT_DESCRIPTOR",
+      "OFFICIAL_TECHNOLOGY_ARTWORK",
+      "POWERED_FILTRATION"
+    ],
+    "same_artwork_both_sides": true,
+    "extra_text_allowed": false,
+    "secondary_colors_allowed": false
+  },
+  "forbidden_output_elements": [
+    "QR",
+    "OEM_REFERENCE_TEXT",
+    "COMPETITOR_REFERENCE_TEXT",
+    "TECHNICAL_SPEC_PANEL",
+    "EFFICIENCY_CLAIMS",
+    "SERVICE_LIFE_CLAIMS",
+    "WEBSITE_URL",
+    "MARKETING_BADGES",
+    "DECORATIVE_ICONS",
+    "GERMAN_QUALITY",
+    "GENERATED_LOGO",
+    "GENERATED_TECHNOLOGY_LOGO",
+    "UNAPPROVED_ROTATION_CHARACTERS"
+  ],
+  "pre_render_gates": [
+    "REAL_SOURCE_IMAGE_LOADED",
+    "EXACT_SKU_RESOLVED_FROM_DATABASE",
+    "OFFICIAL_LOGO_BINARY_LOADED",
+    "OFFICIAL_TECHNOLOGY_BINARY_LOADED",
+    "GEOMETRY_INVARIANTS_RECORDED"
+  ],
+  "pre_display_qc": [
+    "SKU_MATCH",
+    "LOGO_ASSET_MATCH",
+    "TECHNOLOGY_ASSET_MATCH",
+    "BASEPLATE_MATCH",
+    "THREAD_MATCH",
+    "GASKET_MATCH",
+    "HOLE_PATTERN_MATCH",
+    "PROPORTIONS_MATCH",
+    "CHARCOAL_SILVER_ONLY",
+    "NO_EXTRA_TEXT",
+    "ROTATION_MARKS_VALID"
+  ],
+  "failure_behavior": "STOP_AND_FLAG_FOR_REVIEW",
+  "pilot_approval": {
+    "automatic_approval_allowed": false,
+    "explicit_user_approval_required": true,
+    "advance_to_next_sku_before_approval": false,
+    "batch_automation_before_user_authorization": false
+  }
+}
