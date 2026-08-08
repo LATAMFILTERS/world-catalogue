@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -11,6 +11,12 @@
       "technology"
     ],
     "allOtherArtworkLocked": true
+  },
+  "brandArtworkAuthority": {
+    "repository": "LATAMFILTERS/world-catalogue",
+    "branch": "main",
+    "officialLogoAsset": "frontend/public/assets/logo-elimfilters.png",
+    "rule": "This file is the sole official ELIMFILTERS logo source for cylindrical print artwork. Use the asset exactly as provided; do not redraw, recreate, restyle, alter proportions, substitute typography, or infer a replacement logo."
   },
   "technologyArtworkAuthority": {
     "repository": "LATAMFILTERS/world-catalogue",
@@ -48,6 +54,7 @@
   },
   "lockedArtwork": {
     "brand": "Elimfilters®",
+    "brandLogoAsset": "frontend/public/assets/logo-elimfilters.png",
     "brandClaim": "TOTAL ASSET PROTECTION",
     "productDescriptorPlacement": "LOCKED_RELATIVE_POSITION",
     "skuPlacement": "LOCKED_RELATIVE_POSITION",
@@ -96,6 +103,7 @@
   "productionRules": {
     "skuMustComeFromCatalogDatabase": true,
     "technologyMustComeFromFilterCategory": true,
+    "officialLogoMustComeFromLockedAsset": true,
     "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
     "printLayoutMustUseExactContainerPrintableArea": true,
@@ -111,6 +119,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, preserve the approved visual hierarchy and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
+    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, preserve the approved visual hierarchy, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
   }
 }
