@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -26,19 +26,39 @@
       "DRYCORE®"
     ]
   },
+  "containerAdaptiveLayout": {
+    "required": true,
+    "rule": "The approved cylindrical print layout must be proportionally adapted to the exact printable area of each filter container while preserving the approved hierarchy, relative spacing, alignment and visual balance.",
+    "sourceDimensions": "EXACT_SKU_CONTAINER_DIMENSIONS",
+    "printableArea": "MANUFACTURER_OR_PRODUCTION_PRINTABLE_AREA",
+    "adaptation": {
+      "scaleArtworkToContainer": true,
+      "preserveAspectAndHierarchy": true,
+      "preserveRelativeElementPositions": true,
+      "preserveSafeMargins": true,
+      "centerWithinPrintableArea": true,
+      "preventClipping": true,
+      "preventOverlap": true,
+      "preventDistortion": true,
+      "allowProportionalScalingOnly": true,
+      "sameDistributionBothSides": true
+    },
+    "priority": "FIT THE AUTHORIZED ARTWORK TO THE CONTAINER; DO NOT FORCE THE CONTAINER TO MATCH ANOTHER SKU'S LAYOUT SIZE",
+    "notes": "Large and small filters use the same authorized visual system, but artwork size and spacing must be proportionally fitted to the available cylindrical print area of the exact container."
+  },
   "lockedArtwork": {
     "brand": "Elimfilters®",
     "brandClaim": "TOTAL ASSET PROTECTION",
-    "productDescriptorPlacement": "LOCKED",
-    "skuPlacement": "LOCKED",
-    "technologyPlacement": "LOCKED",
+    "productDescriptorPlacement": "LOCKED_RELATIVE_POSITION",
+    "skuPlacement": "LOCKED_RELATIVE_POSITION",
+    "technologyPlacement": "LOCKED_RELATIVE_POSITION",
     "technologyDescriptor": "Powered Filtration",
     "typography": "LOCKED_TO_APPROVED_MASTER",
-    "spacing": "LOCKED_TO_APPROVED_MASTER",
+    "spacing": "PROPORTIONALLY_ADAPTED_TO_CONTAINER",
     "alignment": "LOCKED_TO_APPROVED_MASTER",
     "printColor": "WHITE_SILVER",
     "canFinish": "DARK_CHARCOAL",
-    "directionalMarks": "LOCKED_TO_APPROVED_MASTER",
+    "directionalMarks": "LOCKED_RELATIVE_POSITION",
     "duplicateArtworkOnOppositeSide": true
   },
   "technologyMatrix": {
@@ -78,7 +98,10 @@
     "technologyMustComeFromFilterCategory": true,
     "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
+    "printLayoutMustUseExactContainerPrintableArea": true,
+    "artworkMustScaleProportionallyToContainer": true,
     "doNotReuseGeometryAcrossDifferentSkus": true,
+    "doNotReuseAbsoluteArtworkDimensionsAcrossDifferentContainers": true,
     "doNotAddTechnicalCharactersOrExtraText": true,
     "doNotUseGermanQuality": true,
     "brandClaimMustBe": "TOTAL ASSET PROTECTION",
@@ -88,6 +111,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, preserve the approved artwork exactly. Change only the SKU and the technology according to the filter category. The technology artwork itself must be taken from frontend/public/assets/. Physical can geometry, cap, base, thread presentation and proportions are SKU-specific and are not controlled by this artwork authority."
+    "notes": "For each filter, preserve the approved visual hierarchy and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
   }
 }
