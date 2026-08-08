@@ -1,10 +1,13 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "status": "ACTIVE",
   "fail_closed": true,
-  "pre_render_required": [
-    "REAL_MANUFACTURER_SCREENSHOT",
-    "REAL_MANUFACTURER_SOURCE_IMAGE",
+  "pre_tool_call_required": [
+    "CURRENT_SKU_REAL_MANUFACTURER_SCREENSHOT",
+    "CURRENT_SKU_SCREENSHOT_SKU_MATCH_PASS",
+    "CURRENT_SKU_REAL_MANUFACTURER_SOURCE_IMAGE",
+    "CURRENT_SKU_SOURCE_IMAGE_SKU_MATCH_PASS",
+    "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
     "LIVE_DATABASE_SKU_RESOLUTION",
     "FILTER_TYPE_RESOLUTION",
     "TECHNOLOGY_RESOLUTION",
@@ -12,6 +15,15 @@
     "OFFICIAL_TECHNOLOGY_BINARY",
     "MANIFEST_PASS"
   ],
+  "tool_call_block_rule": "IF any pre_tool_call_required gate != PASS THEN IMAGE_GENERATION_TOOL_CALL_FORBIDDEN",
+  "screenshot_gate": {
+    "required_for_every_sku": true,
+    "required_for_every_render_attempt": true,
+    "manufacturer_must_match_current_sku": true,
+    "part_number_must_match_current_sku": true,
+    "other_sku_screenshot_forbidden": true,
+    "geometry_must_be_derived_from_this_screen_or_its_exact_source_image": true
+  },
   "phase_2_required_values": {
     "container_color_hex": "#414141",
     "lithography_color_hex": "#CBCBCB",
