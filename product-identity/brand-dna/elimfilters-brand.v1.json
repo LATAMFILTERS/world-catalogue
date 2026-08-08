@@ -1,32 +1,33 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "brand": "ELIMFILTERS",
-  "status": "approved_hd_phase_1",
+  "status": "approved_hd_phase_1_authority_aligned",
+  "authority_file": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
   "identity": {
-    "primary_logotype": "ELIMFILTERS",
-    "primary_isotype": "E",
-    "tagline": "Total Asset Protection",
+    "primary_logotype_asset": "frontend/public/assets/logo-elimfilters.png",
+    "tagline": "TOTAL ASSET PROTECTION",
     "deprecated": ["German Quality", "legacy isotype", "legacy product logo"]
   },
-  "colors": {
-    "yellow": {"hex": "#FFF12D", "rgb": [255, 241, 45]},
-    "black": {"hex": "#000000", "rgb": [0, 0, 0]},
-    "dark_gray": {"hex": "#3E3E37", "rgb": [62, 62, 63]},
-    "gray": {"hex": "#606060", "rgb": [96, 96, 96]}
-  },
-  "typography_reference": {
-    "primary": "Microgramma",
-    "secondary": "Harmonia Sans Pro Cyr",
-    "vectorial": "Opine Heavy"
+  "cylindrical_product_colors": {
+    "container": {"official_name": "ELIMFILTERS DARK CHARCOAL", "hex": "#414141", "rgb": [65, 65, 65], "finish": "SEMI_MATTE_INDUSTRIAL_COATING"},
+    "lithography": {"official_name": "ELIMFILTERS LITHOGRAPHY SILVER", "hex": "#CBCBCB", "rgb": [203, 203, 203], "finish": "METALLIC_SILVER_SATIN"}
   },
   "product_identity_rules": {
     "geometry_locked": true,
     "preserve_source_geometry": true,
-    "allowed_visual_changes": ["paint_color", "lithography", "logotype", "isotype", "product_code", "product_type", "technology", "qr", "approved_oem_equivalences", "applicable_standards"],
-    "prohibited_visual_changes": ["diameter", "height", "thread", "baseplate", "holes", "gasket_geometry", "valves", "seams", "proportions", "construction_features"]
+    "source_geometry_must_be_real_manufacturer_image": true,
+    "allowed_visual_changes": ["container_paint_color", "authorized_lithography", "catalog_resolved_product_code", "catalog_resolved_product_type", "authority_resolved_technology"],
+    "prohibited_visual_changes": ["diameter", "height", "thread", "baseplate", "hole_count", "hole_shape", "hole_positions", "gasket_geometry", "valves", "seams", "proportions", "construction_features", "perspective"],
+    "prohibited_added_content": ["qr", "oem_equivalence_text", "technical_spec_panels", "extra_icons", "unapproved_performance_claims", "secondary_print_colors"]
   },
   "required_assets": {
-    "current_logotype_vector": "REQUIRED_BEFORE_FACTORY_RELEASE",
-    "current_isotype_vector": "REQUIRED_BEFORE_FACTORY_RELEASE"
+    "official_logo": "frontend/public/assets/logo-elimfilters.png",
+    "technology_assets_directory": "frontend/public/assets/"
+  },
+  "asset_rules": {
+    "do_not_redraw_logo": true,
+    "do_not_recreate_logo_with_text": true,
+    "do_not_invent_isotype": true,
+    "do_not_redraw_technology_assets": true
   }
 }
