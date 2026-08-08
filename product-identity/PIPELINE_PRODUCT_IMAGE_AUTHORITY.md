@@ -2,121 +2,106 @@
 
 Status: ACTIVE
 
-Purpose: enforce source-image editing with immutable SKU geometry and phased approvals. The pipeline is not text-to-image.
+Purpose: enforce source-image editing with immutable SKU geometry, phased approvals, per-view protection, and exact SKU continuity. The pipeline is not text-to-image.
 
 ## Authority order
 
 1. Exact manufacturer image controls physical geometry.
-2. Approved phase master controls geometry/composition of subsequent phases.
+2. Approved phase master controls later geometry/composition.
 3. `world_catalogue.elimfilters_catalog` controls ELIMFILTERS SKU.
-4. Cylindrical print authority controls paint and lithography.
-
-Missing/ambiguous inputs stop execution.
+4. Cylindrical print authority controls paint/lithography.
 
 ## State machine
 
 `SOURCE_LOCKED -> GEOMETRY_APPROVED -> PAINT_LITHO_APPROVED -> FINAL_APPROVED`
 
-### Phase 0 — Source lock
+## Independent view locks
 
-Required: exact manufacturer code, exact manufacturer source image bytes, and sufficient spin-on base/thread/gasket/hole visibility. A browser screenshot may document the source, but synthetic/recreated screenshots or products are invalid.
+A two-filter composition contains two independently protected views: `VERTICAL_VIEW` and `HORIZONTAL_VIEW`.
 
-### Phase 1 — Geometry only
+Once one view is approved, later edits to the other view may not change the approved view in any way: geometry, paint, lithography, lighting, pose, position, scale, perspective, shadows, crop, or relative placement.
 
-Purpose: preserve and approve physical geometry. No ELIMFILTERS branding is applied here.
+Scoped corrections must use a localized edit/mask. Re-rendering the whole composition for a one-view correction is invalid.
 
-The real manufacturer source image must be the referenced edit target. Preserve silhouette, height/diameter ratio, body length, seams, rim, baseplate, thread, gasket, hole count/shape/positions, valves, perspective, orientation, relative scale, crop and composition.
+## Phase 1 — Geometry only
 
-Do not recolor, relabel or rebrand during Phase 1 unless the user explicitly requests a neutral geometry proof; even then it must remain a source-image edit, never reconstruction.
+Use the real manufacturer source. Preserve exact silhouette, dimensions/proportions, seams, rim, baseplate, thread, gasket, hole count/shape/positions, construction details, perspective, orientation, relative scale, crop and composition. No rebrand/repaint.
 
-Approval freezes the exact image lineage as `GEOMETRY_APPROVED`.
+Approval freezes the exact geometry master.
 
-### Phase 2 — Paint + lithography only
+## Phase 2 — Paint + lithography only
 
-Input MUST be the approved Phase 1 geometry master. Do not regenerate a new product.
+Input MUST be the approved Phase 1 master.
 
-Allowed changes only:
-- container surface paint;
-- authorized lithography.
+Allowed changes only: container surface paint and authorized lithography.
 
-Paint: `ELIMFILTERS DARK CHARCOAL` `#414141`, semi-matte industrial.
-
-Lithography: `ELIMFILTERS LITHOGRAPHY SILVER` `#CBCBCB`, metallic silver satin.
+Paint: `#414141`, ELIMFILTERS DARK CHARCOAL, semi-matte industrial.
+Lithography: `#CBCBCB`, ELIMFILTERS LITHOGRAPHY SILVER, metallic satin.
 
 Required hierarchy:
 1. Installation Rotation Direction Marks
-2. official ELIMFILTERS logo asset
+2. official ELIMFILTERS logo
 3. TOTAL ASSET PROTECTION
 4. exact DB-resolved ELIMFILTERS SKU
 5. product descriptor
 6. official technology artwork/name
 7. Powered Filtration
 
-Same artwork both sides, proportionally fitted. Mechanical geometry remains immutable.
+## SKU continuity
 
-### Phase 3 — Micro-adjustments only
+The database-resolved SKU is immutable across both views and all later phases.
 
-Only the explicitly requested view/property may change. Declare target view (`VERTICAL_ONLY`, `HORIZONTAL_ONLY`, `BOTH`) and target property before edit. Everything else is immutable. No cumulative unsolicited changes.
+A reference image can donate layout, typography, spacing and hierarchy only. It may NEVER donate the SKU value.
 
-## Catalog gate
+Both vertical and horizontal views must carry the same current target SKU. A candidate containing a previous SKU, reference SKU, competitor code used as SKU, or a different SKU between views is invalid.
 
-Resolve exact SKU with:
+## Phase 3 — Micro-adjustments only
 
-```bash
-node product-identity/scripts/resolve-competitor-sku.mjs --code=<COMPETITOR_CODE> --brand=<BRAND> --duty=HEAVY_DUTY
-```
+Declare `target_view` and `target_property` before edit.
 
-Exactly one catalog-backed match required. No inferred, remembered, or competitor-derived SKU.
+If editing only horizontal lithography, vertical is a protected frozen region. If editing only vertical, horizontal is protected.
 
-## Binary artwork gate
-
-Phase 2+ requires actual binary assets physically loaded into the edit:
-- `frontend/public/assets/logo-elimfilters.png`
-- exact approved technology asset from `frontend/public/assets/`
-
-Text descriptions do not satisfy this gate.
+Only the requested property may change. All other pixels/features are immutable.
 
 ## Render manifest
 
-Before every image-tool call record:
+Before every image call record:
 - phase
 - competitor_code
-- resolved_sku when Phase 2+
-- source_image_id_or_path
-- source_image_is_real_manufacturer=true
-- geometry_master_id_or_path when Phase 2+
-- official_logo_asset_path when Phase 2+
-- official_technology_asset_path when Phase 2+
-- edit_scope
-- immutable_elements
-- allowed_changes
-- RENDER_INPUTS_VERIFIED=true
+- resolved_sku for Phase 2+
+- source/master image id/path
+- active target view
+- protected view(s)
+- target property
+- edit mask/scope
+- prior approved protected-view master id/path
+- immutable elements
+- allowed changes
+- official logo asset path for Phase 2+
+- official technology asset path for Phase 2+
+- `RENDER_INPUTS_VERIFIED=true`
 
-Missing required field = STOP.
+Missing field = STOP.
 
-## Image-tool enforcement
+## Tool enforcement
 
-Every valid operation must be an EDIT of a real referenced source/master image. If the operation has no referenced image lineage, behaves as text-to-image/new generation, or reports no edit source, reject it automatically and do not present it as valid output.
-
-## Prohibited output
-
-No QR, OEM/cross-reference text, technical specs, efficiency/service-life claims, websites, badges, decorative icons, secondary print colors, GERMAN QUALITY, arbitrary rotation characters, generated replacement logo, or generated replacement technology artwork.
+Every valid operation must be an edit of the exact referenced source/master. If the tool performs a new full generation, lacks source lineage, or cannot preserve the protected view, reject the result and do not present it.
 
 ## Pre-display QC
 
-Compare candidate against immutable source/master: silhouette, proportions, seams, baseplate, thread, gasket, hole pattern, perspective, relative scale and composition. Phase 2+ must also match exact SKU, official assets, charcoal `#414141`, silver `#CBCBCB`, approved hierarchy and no extra text/colors.
+Geometry: silhouette, proportions, seams, baseplate, thread, gasket, hole pattern, perspective, relative scale, composition.
 
-Any mismatch means reject internally.
+Phase 2+: exact resolved SKU on both views, official assets, charcoal/silver only, authorized hierarchy, no extra text/colors.
 
-## Pilot approval policy
+Scoped edit: protected view unchanged; only requested view/property changed; no geometry, paint, lighting, pose, scale, position, or artwork drift outside edit scope.
 
-No automatic approval, no advance on silence, no next SKU before explicit approval, and no batch automation before user authorization.
+Any mismatch means rejection.
 
 ## Control cases
 
-LF670 geometry is unique to LF670 and must never be reused.
-
-LF3620 must use its own exact Fleetguard source image and geometry. LF670 hole pattern, proportions, crop or reconstructed geometry are prohibited.
+LF670 geometry is unique and cannot be reused.
+LF3620 must use its own exact Fleetguard source geometry.
+Approved EL81670 imagery may be used only as style/layout guidance; its SKU must never be copied to LF3620 or any other product.
 
 ## Claude skill
 
