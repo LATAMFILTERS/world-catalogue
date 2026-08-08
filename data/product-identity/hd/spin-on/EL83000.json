@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "recordType": "ELIMFILTERS_HD_PRODUCT_IDENTITY",
+  "sku": "EL83000",
+  "product": {
+    "brand": "ELIMFILTERS",
+    "filterType": "LUBE",
+    "productLabel": "Lube Filter",
+    "duty": "HD",
+    "installationType": "SPIN-ON",
+    "technology": "SYNTRAX™",
+    "technologyDescriptor": "Powered Filtration"
+  },
+  "technicalData": {
+    "thread": "2 1/4-12 UN",
+    "height_mm": 297,
+    "outerDiameter_mm": 118,
+    "micronRating": 17,
+    "collapsePressure_psi": 149,
+    "pressureValve": true,
+    "standard": "ISO 4548-12"
+  },
+  "artwork": {
+    "status": "APPROVED",
+    "approvedOn": "2026-08-08",
+    "format": "DIRECT_CAN_PRINT",
+    "printCoverage": "BOTH_SIDES",
+    "sides": {
+      "sideA": {
+        "layout": "APPROVED_MASTER",
+        "print": [
+          "A 3/4 TO B",
+          "B 3/4 TO C",
+          "Elimfilters®",
+          "GERMAN QUALITY",
+          "EL83000",
+          "Lube Filter",
+          "SINTRAX®",
+          "Powered Filtration"
+        ]
+      },
+      "sideB": {
+        "layout": "SAME_AS_SIDE_A",
+        "print": [
+          "A 3/4 TO B",
+          "B 3/4 TO C",
+          "Elimfilters®",
+          "GERMAN QUALITY",
+          "EL83000",
+          "Lube Filter",
+          "SINTRAX®",
+          "Powered Filtration"
+        ]
+      }
+    },
+    "visualLock": {
+      "topCap": "APPROVED",
+      "bodyColor": "DARK_CHARCOAL",
+      "printColor": "WHITE_SILVER",
+      "backgroundForMasterImage": "WHITE",
+      "geometryLocked": true,
+      "typographyPlacementLocked": true,
+      "topDirectionalMarksLocked": true
+    },
+    "sourceAsset": {
+      "filename": "763581D0-88C2-4A5E-A268-536BDCF9F46B.jpeg",
+      "role": "APPROVED_VISUAL_REFERENCE"
+    }
+  },
+  "workflow": {
+    "family": "HD",
+    "pilotSequence": "SPIN-ON",
+    "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
+    "notes": "Approved EL83000 direct-print master. Artwork is printed on both sides. Preserve cap geometry, can proportions, charcoal finish, markings and approved label hierarchy."
+  }
+}
