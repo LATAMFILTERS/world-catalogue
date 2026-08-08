@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "recordType": "ELIMFILTERS_HD_PRODUCT_IDENTITY",
   "sku": "EL82100",
   "product": {
@@ -13,14 +13,7 @@
     "positioningLine": "TOTAL ASSET PROTECTION"
   },
   "crossReference": {
-    "primaryBase": {
-      "manufacturer": "DONALDSON",
-      "code": "P552100"
-    },
-    "physicalReference": {
-      "manufacturer": "FLEETGUARD",
-      "code": "LF3620"
-    },
+    "physicalReference": {"manufacturer": "FLEETGUARD", "code": "LF3620"},
     "catalogResolution": "LF3620 → EL82100"
   },
   "technicalData": {
@@ -34,15 +27,7 @@
     "approvedOn": "2026-08-08",
     "format": "DIRECT_CAN_PRINT",
     "designation": "AUTHORIZED_PRODUCT_MASTER",
-    "visualReferenceSku": "EL82100",
-    "print": [
-      "OFFICIAL_ELIMFILTERS_LOGO",
-      "TOTAL ASSET PROTECTION",
-      "EL82100",
-      "Lube Filter",
-      "SINTRAX®",
-      "Powered Filtration"
-    ],
+    "print": ["OFFICIAL_ELIMFILTERS_LOGO","TOTAL ASSET PROTECTION","EL82100","Lube Filter","SINTRAX®","Powered Filtration"],
     "visualLock": {
       "bodyColorHex": "#414141",
       "paintFinish": "SEMI_MATTE_INDUSTRIAL_COATING",
@@ -53,9 +38,7 @@
       "geometryLocked": true,
       "paintLocked": true,
       "lithographyLocked": true,
-      "typographyPlacementLocked": true,
       "skuLocked": true,
-      "positioningLineLocked": true,
       "legacyGermanQualityForbidden": true
     },
     "approvedRender": {
@@ -63,15 +46,23 @@
       "genId": "7b73c420-cb44-4f56-9cf5-528e0fe90cd0",
       "approvalState": "FINAL_APPROVED",
       "approvedBy": "USER",
-      "approvedAt": "2026-08-08T15:46:00-05:00",
-      "replacesGenId": "7c935e28-49b3-48c6-a87d-3bdc353c863e",
       "qualityAssessment": "99_PERCENT_APPROVED"
     }
+  },
+  "pipelineProvenance": {
+    "visualMasterPredatesStrictEditLineageEnforcement": true,
+    "userApprovalRemainsValid": true,
+    "doNotClaimV2_1RenderLineagePass": true,
+    "futureRegenerationMustUseCurrentPipeline": true,
+    "futureRegenerationRequiresEditOnly": true,
+    "futureRegenerationRequiresManifestPass": true,
+    "futureRegenerationRequiresLiveDatabaseLookup": true,
+    "futureRegenerationRequiresOfficialAssets": true
   },
   "workflow": {
     "family": "HD",
     "pilotSequence": "SPIN-ON",
     "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
-    "notes": "Latest approved EL82100 master replaces the previous saved visual reference. Preserve exact LF3620 geometry, #414141 charcoal body, #CBCBCB silver lithography, EL82100 identity, Lube Filter designation, TOTAL ASSET PROTECTION, SINTRAX® and Powered Filtration."
+    "notes": "Approved EL82100 visual master remains locked. Its user approval is preserved, while future regeneration must comply with the current fail-closed pipeline and strict edit lineage."
   }
 }
