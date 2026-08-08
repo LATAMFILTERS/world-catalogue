@@ -30,7 +30,7 @@ export default function KnowledgeCenterPage() {
           <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#FFF12D', marginBottom: '1.5rem', fontWeight: 600 }}>
-                // {architecture.platform} / GOVERNED KNOWLEDGE
+                {`// ${architecture.platform} / GOVERNED KNOWLEDGE`}
               </p>
               <h1 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '1.75rem', maxWidth: '940px' }}>
                 Knowledge that strengthens asset-protection decisions.
