@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.3",
+  "schema_version": "2.4",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
@@ -7,12 +7,35 @@
   "execution_scope": {
     "applies_to_all_skus": true,
     "applies_to_all_positions": true,
-    "rule": "NO_RENDER_WITHOUT_CURRENT_SKU_SCREENSHOT",
+    "rule": "NO_RENDER_WITHOUT_VERIFIED_CURRENT_SKU_SCREENSHOT_ARTIFACT",
     "screen_must_be_captured_or_provided_for_current_sku_execution": true,
     "screen_must_match_current_manufacturer_and_part_number": true,
     "screen_from_another_sku_forbidden": true,
     "screen_from_prior_execution_requires_explicit_same_sku_binding": true,
     "image_generation_tool_call_forbidden_until_screen_gate_passes": true
+  },
+  "screenshot_evidence_gate": {
+    "required": true,
+    "artifact_must_exist": true,
+    "artifact_must_be_visually_inspected_before_render": true,
+    "manufacturer_text_must_match_current_manufacturer": true,
+    "part_number_text_must_match_current_part_number": true,
+    "source_image_visible_in_artifact": true,
+    "geometry_signature_must_be_recorded_before_render": true,
+    "geometry_signature_required_fields": [
+      "overall_body_proportions",
+      "upright_horizontal_composition",
+      "top_rim_geometry",
+      "baseplate_or_open_end_type",
+      "thread_geometry",
+      "gasket_geometry",
+      "inlet_hole_or_support_pattern",
+      "central_support_or_perforation_pattern"
+    ],
+    "forbid_generic_spin_on_substitution": true,
+    "forbid_geometry_from_previous_sku": true,
+    "render_must_reference_current_screenshot_artifact": true,
+    "failure_action": "STOP_BEFORE_IMAGE_TOOL_CALL"
   },
   "preflight": {
     "required": true,
@@ -20,14 +43,19 @@
     "required_result": {"manifest_status": "PASS", "image_generation_enabled": true},
     "must_execute_live_database_lookup": true,
     "must_execute_technology_asset_resolution": true,
-    "must_validate_current_sku_screenshot": true
+    "must_validate_current_sku_screenshot": true,
+    "must_validate_screenshot_artifact_binding": true,
+    "must_validate_geometry_signature": true
   },
   "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
   "state_machine": ["SOURCE_LOCKED","GEOMETRY_APPROVED","PAINT_LITHO_APPROVED","FINAL_APPROVED"],
   "mandatory_chain": [
     "MANUFACTURER_URL",
     "CURRENT_SKU_REAL_SCREENSHOT",
+    "SCREENSHOT_ARTIFACT_EXISTS",
+    "SCREENSHOT_VISUALLY_INSPECTED",
     "SCREENSHOT_SKU_MATCH_PASS",
+    "GEOMETRY_SIGNATURE_RECORDED",
     "REAL_SOURCE_IMAGE",
     "SOURCE_IMAGE_SKU_MATCH_PASS",
     "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
@@ -76,6 +104,7 @@
     "requires_real_source_edit": true,
     "requires_current_sku_screenshot": true,
     "requires_current_sku_source_image": true,
+    "requires_geometry_signature_match": true,
     "rebrand_allowed": false
   },
   "phase_2": {
@@ -103,9 +132,13 @@
   },
   "pre_tool_call_reject_if": [
     "CURRENT_SKU_SCREENSHOT_MISSING",
+    "SCREENSHOT_ARTIFACT_MISSING",
+    "SCREENSHOT_NOT_VISUALLY_INSPECTED",
     "CURRENT_SKU_SCREENSHOT_UNVERIFIED",
     "SCREENSHOT_PART_NUMBER_MISMATCH",
     "SCREENSHOT_MANUFACTURER_MISMATCH",
+    "GEOMETRY_SIGNATURE_MISSING",
+    "GENERIC_SPIN_ON_GEOMETRY_SUBSTITUTION",
     "CURRENT_SKU_SOURCE_IMAGE_MISSING",
     "SOURCE_IMAGE_PART_NUMBER_MISMATCH",
     "GEOMETRY_NOT_EXTRACTED_FROM_CURRENT_SOURCE",
@@ -117,5 +150,5 @@
   ],
   "post_render_reject_if": ["EDIT_OP_NULL_OR_MISSING","SOURCE_LINEAGE_MISSING","BODY_REMAINS_MANUFACTURER_WHITE","BODY_NOT_414141_DARK_CHARCOAL","LITHOGRAPHY_NOT_CBCBCB_SILVER","SKU_MISMATCH","TECHNOLOGY_MISMATCH","GEOMETRY_DRIFT","PROTECTED_VIEW_CHANGED","COMPETITOR_BRANDING_PRESENT","SECONDARY_COLORS_PRESENT","VALIDATION_UI_PRESENT","PIPELINE_TEXT_PRESENT"],
   "presentation_rule": "Rejected renders must not be presented as candidates.",
-  "operator_rule": "If CURRENT_SKU_REAL_SCREENSHOT is not PASS, do not call any image generation tool. Stop at the screenshot gate and obtain the correct source first."
+  "operator_rule": "Before any image tool call, open and visually inspect the current SKU screenshot artifact, record its geometry signature, and bind the render to that artifact. If any of those steps is missing, stop."
 }
