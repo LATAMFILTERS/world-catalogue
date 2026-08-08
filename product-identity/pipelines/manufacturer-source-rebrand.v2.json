@@ -1,13 +1,22 @@
 {
-  "schema_version": "2.7",
+  "schema_version": "2.8",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
   "text_to_image_allowed": false,
+  "single_executor": {
+    "required": true,
+    "script": "product-identity/scripts/prepare-product-render.mjs",
+    "output": "ELIMFILTERS_AUTHORIZED_RENDER_PACKET",
+    "rule": "NO_RENDER_OR_CHAT_IMAGE_TOOL_CALL_WITHOUT_A_CURRENT_PASS_PACKET",
+    "ad_hoc_prompt_values_forbidden": true,
+    "remembered_sku_forbidden": true,
+    "remembered_colors_forbidden": true,
+    "remembered_technology_forbidden": true
+  },
   "execution_scope": {
     "applies_to_all_skus": true,
     "applies_to_all_positions": true,
-    "rule": "NO_RENDER_WITHOUT_VERIFIED_FRESH_OFFICIAL_SOURCE_IMAGE",
     "manual_screenshot_required": false,
     "automated_source_acquisition_required": true,
     "automated_source_script": "product-identity/scripts/acquire-manufacturer-source.mjs",
@@ -16,7 +25,7 @@
     "cross_manufacturer_fallback_forbidden": true,
     "cache_forbidden": true,
     "previous_render_as_geometry_source_forbidden": true,
-    "image_generation_tool_call_forbidden_until_source_gate_passes": true
+    "image_generation_tool_call_forbidden_until_authorized_packet_passes": true
   },
   "source_evidence_gate": {
     "required": true,
@@ -29,76 +38,10 @@
     "automated_screenshot_is_best_effort_audit_evidence": true,
     "automated_screenshot_is_not_a_render_gate": true,
     "transient_408_429_500_502_503_504_may_retry_or_fallback": true,
-    "geometry_signature_must_be_recorded_before_render": true,
-    "geometry_signature_required_fields": [
-      "overall_body_proportions",
-      "upright_horizontal_composition",
-      "top_rim_geometry",
-      "baseplate_or_open_end_type",
-      "thread_geometry",
-      "gasket_geometry",
-      "inlet_hole_or_support_pattern",
-      "central_support_or_perforation_pattern"
-    ],
     "forbid_generic_spin_on_substitution": true,
     "forbid_geometry_from_previous_sku": true,
     "failure_action": "STOP_BEFORE_IMAGE_TOOL_CALL"
   },
-  "lineage_verification": {
-    "mode": "APPLICATION_VERIFIED",
-    "engine_edit_op_is_authoritative": false,
-    "engine_edit_op_null_is_not_a_reject_by_itself": true,
-    "required_evidence": [
-      "CURRENT_SKU_SOURCE_EVIDENCE_PATH",
-      "CURRENT_SKU_OFFICIAL_IMAGE_SHA256",
-      "MANUFACTURER_AND_PART_NUMBER_BINDING",
-      "RESOLVED_OFFICIAL_PAGE_URL",
-      "RECORDED_SOURCE_GEOMETRY_SIGNATURE",
-      "LIVE_DATABASE_RESOLUTION_RESULT",
-      "RESOLVED_TECHNOLOGY",
-      "RESOLVED_OFFICIAL_ASSETS",
-      "OUTPUT_GEN_ID",
-      "POST_RENDER_GEOMETRY_MATCH_PASS",
-      "POST_RENDER_ARTWORK_MATCH_PASS"
-    ]
-  },
-  "preflight": {
-    "required": true,
-    "script": "product-identity/scripts/preflight-product-image.mjs",
-    "required_result": {"manifest_status": "PASS", "image_generation_enabled": true},
-    "must_execute_live_database_lookup": true,
-    "must_execute_technology_asset_resolution": true,
-    "must_validate_source_evidence_binding": true,
-    "must_validate_geometry_signature": true
-  },
-  "manifest_builder": "product-identity/scripts/build-render-manifest.mjs",
-  "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
-  "state_machine": ["SOURCE_LOCKED","GEOMETRY_APPROVED","PAINT_LITHO_APPROVED","FINAL_APPROVED"],
-  "mandatory_chain": [
-    "MANUFACTURER_CATEGORY_OR_PRODUCT_PAGE",
-    "AUTOMATED_OFFICIAL_SOURCE_ACQUISITION",
-    "TRANSIENT_HTTP_RETRY_OR_SAME_MANUFACTURER_FALLBACK_IF_NEEDED",
-    "RESOLVED_OFFICIAL_PAGE_SKU_MATCH_PASS",
-    "OFFICIAL_SOURCE_IMAGE_ARTIFACT_EXISTS",
-    "OFFICIAL_SOURCE_IMAGE_SHA256_RECORDED",
-    "FRESH_SOURCE_NO_CACHE_PASS",
-    "GEOMETRY_SIGNATURE_RECORDED",
-    "LIVE_DATABASE_LOOKUP",
-    "SKU_RESOLVED",
-    "FILTER_TYPE_RESOLVED",
-    "TECHNOLOGY_RESOLVED",
-    "OFFICIAL_ASSETS_RESOLVED",
-    "PREFLIGHT_PASS",
-    "PHASE_1",
-    "USER_APPROVAL",
-    "PHASE_2",
-    "USER_APPROVAL",
-    "PHASE_3",
-    "USER_APPROVAL",
-    "APPLICATION_LINEAGE_EVIDENCE_RECORDED",
-    "SAVE_JSON_AND_MASTER",
-    "STORE_APPROVED_RENDER"
-  ],
   "database": {
     "table": "world_catalogue.elimfilters_catalog",
     "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
@@ -113,29 +56,39 @@
     "technology_directory": "frontend/public/assets/",
     "claim": "TOTAL ASSET PROTECTION",
     "descriptor": "Powered Filtration",
-    "manufacturer_white_allowed_in_phase_2": false,
-    "secondary_print_colors_allowed": false
+    "manufacturer_white_allowed": false,
+    "secondary_print_colors_allowed": false,
+    "german_quality_allowed": false,
+    "arbitrary_technical_characters_allowed": false
   },
-  "phase_1": {
-    "mode": "GEOMETRY_ONLY",
-    "requires_current_official_source_image": true,
-    "requires_geometry_signature_match": true,
-    "rebrand_allowed": false
-  },
-  "phase_2": {
-    "mode": "PAINT_LITHOGRAPHY_ONLY",
-    "requires_state": "GEOMETRY_APPROVED",
-    "requires_approved_geometry_master": true,
-    "body_color_required": "#414141",
-    "lithography_color_required": "#CBCBCB",
-    "manufacturer_white_body_is_hard_reject": true
-  },
-  "phase_3": {
-    "mode": "MICRO_ADJUSTMENT_ONLY",
-    "requires_state": "PAINT_LITHO_APPROVED",
-    "single_view_requires_protected_opposite_view": true,
-    "whole_composition_regeneration_allowed": false
-  },
+  "render_packet_required_fields": [
+    "source.official_image_path",
+    "source.official_image_sha256",
+    "identity.elimfilters_sku",
+    "identity.filter_type",
+    "identity.technology",
+    "identity.technology_asset_path",
+    "identity.logo_asset_path",
+    "artwork_lock.body_color_hex",
+    "artwork_lock.lithography_color_hex",
+    "geometry_lock.source_of_truth"
+  ],
+  "mandatory_chain": [
+    "CURRENT_OFFICIAL_MANUFACTURER_PAGE",
+    "AUTOMATED_OFFICIAL_SOURCE_ACQUISITION",
+    "OFFICIAL_SOURCE_IMAGE_HASH",
+    "LIVE_DATABASE_LOOKUP",
+    "SKU_RESOLVED",
+    "FILTER_TYPE_RESOLVED",
+    "TECHNOLOGY_RESOLVED",
+    "OFFICIAL_ASSETS_HASHED",
+    "AUTHORIZED_RENDER_PACKET_PASS",
+    "SOURCE_REFERENCED_RENDER",
+    "POST_RENDER_VALIDATION",
+    "USER_APPROVAL",
+    "SAVE_JSON_AND_MASTER",
+    "STORE_APPROVED_RENDER"
+  ],
   "presentation_rule": "Rejected renders must not be presented as candidates.",
-  "operator_rule": "Acquire a fresh official manufacturer image for every SKU. On transient manufacturer-page failures, retry and use only same-manufacturer official pages that contain the exact current part number. Never use cache, another manufacturer, another SKU, or a prior render as geometry source."
+  "operator_rule": "For every SKU, execute prepare-product-render.mjs first. Values may only come from its PASS packet. If the packet is absent or stale, do not call any image generator."
 }
