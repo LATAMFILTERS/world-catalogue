@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "status": "ACTIVE",
   "fail_closed": true,
   "pre_render_required": [
@@ -17,7 +17,18 @@
     "lithography_color_hex": "#CBCBCB",
     "render_mode": "EDIT_ONLY",
     "competitor_branding_allowed": false,
-    "secondary_colors_allowed": false
+    "secondary_colors_allowed": false,
+    "validation_ui_allowed": false,
+    "pipeline_text_allowed": false,
+    "database_text_allowed": false,
+    "source_url_text_allowed": false
+  },
+  "legacy_record_gate": {
+    "legacy_graphite_gray_allowed_for_new_render": false,
+    "legacy_white_lithography_allowed_for_new_render": false,
+    "legacy_geometry_may_be_reused_only_for_same_exact_sku": true,
+    "legacy_user_approval_may_be_preserved": true,
+    "legacy_provenance_must_not_be_claimed_as_current_lineage_pass": true
   },
   "post_render_hard_rejects": [
     "EDIT_OP_NULL_OR_MISSING",
@@ -30,7 +41,11 @@
     "GEOMETRY_DRIFT",
     "PROTECTED_VIEW_CHANGED",
     "COMPETITOR_BRANDING_PRESENT",
-    "SECONDARY_COLORS_PRESENT"
+    "SECONDARY_COLORS_PRESENT",
+    "VALIDATION_UI_PRESENT",
+    "PIPELINE_TEXT_PRESENT",
+    "DATABASE_TEXT_PRESENT",
+    "SOURCE_URL_TEXT_PRESENT"
   ],
   "presentation_rule": "A rejected render must never be shown to the user as a candidate."
 }
