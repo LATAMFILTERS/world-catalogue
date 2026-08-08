@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.4",
+  "schemaVersion": "1.5",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -31,6 +31,25 @@
       "THERMACORE®",
       "DRYCORE®"
     ]
+  },
+  "containerColorAuthority": {
+    "status": "MASTER_LOCKED",
+    "officialName": "ELIMFILTERS DARK CHARCOAL",
+    "visualReference": "APPROVED_GRAY_FILTER_MASTER",
+    "digitalMaster": {
+      "hex": "#414141",
+      "rgb": [65, 65, 65]
+    },
+    "finish": "SEMI_MATTE_INDUSTRIAL_COATING",
+    "rules": {
+      "useAsContainerBaseColor": true,
+      "preserveNeutralCharcoalAppearance": true,
+      "doNotUsePureBlack": true,
+      "doNotShiftToBlueGray": true,
+      "doNotUseGlossFinish": true,
+      "lightingAndRenderHighlightsMayVaryButBaseColorMustRemainMaster": true
+    },
+    "productionNote": "HEX/RGB are the digital master appearance values derived from the approved gray filter reference. A physical coating supplier must color-match the approved master sample/reference; do not substitute an arbitrary RAL or Pantone without physical validation."
   },
   "installationRotationDirectionMarks": {
     "required": true,
@@ -82,7 +101,8 @@
     "spacing": "PROPORTIONALLY_ADAPTED_TO_CONTAINER",
     "alignment": "LOCKED_TO_APPROVED_MASTER",
     "printColor": "WHITE_SILVER",
-    "canFinish": "DARK_CHARCOAL",
+    "canFinish": "ELIMFILTERS_DARK_CHARCOAL_SEMI_MATTE",
+    "canBaseColorHex": "#414141",
     "directionalMarks": "INSTALLATION_ROTATION_DIRECTION_MARKS_LOCKED_RELATIVE_POSITION",
     "duplicateArtworkOnOppositeSide": true
   },
@@ -123,6 +143,7 @@
     "technologyMustComeFromFilterCategory": true,
     "officialLogoMustComeFromLockedAsset": true,
     "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
+    "containerColorMustUseMasterAuthority": true,
     "installationRotationDirectionMarksRequired": true,
     "installationRotationDirectionMarksMustRemainLocked": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
@@ -139,6 +160,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, preserve the approved visual hierarchy, include the locked Installation Rotation Direction Marks in the upper print band below the metal rim, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
+    "notes": "For each filter, use the official logo only from frontend/public/assets/logo-elimfilters.png, use ELIMFILTERS DARK CHARCOAL #414141 as the container base-color authority, preserve the approved visual hierarchy, include the locked Installation Rotation Direction Marks in the upper print band below the metal rim, and change only SKU and technology according to category. Technology artwork must come from frontend/public/assets/. The complete layout must then be proportionally fitted to the exact printable area of that SKU's container. Physical can geometry, cap, base, thread presentation and proportions remain SKU-specific."
   }
 }
