@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.4",
+  "schema_version": "2.5",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
@@ -37,6 +37,33 @@
     "render_must_reference_current_screenshot_artifact": true,
     "failure_action": "STOP_BEFORE_IMAGE_TOOL_CALL"
   },
+  "lineage_verification": {
+    "mode": "APPLICATION_VERIFIED",
+    "engine_edit_op_is_authoritative": false,
+    "engine_edit_op_null_is_not_a_reject_by_itself": true,
+    "reason": "Current image engine metadata may return edit_op null even when a current-turn source image is supplied. Lineage is therefore proven by application evidence, not by that metadata field alone.",
+    "required_evidence": [
+      "CURRENT_SKU_SCREENSHOT_ARTIFACT_ID_OR_PATH",
+      "CURRENT_SKU_SCREENSHOT_CONTENT_HASH_WHEN_AVAILABLE",
+      "MANUFACTURER_AND_PART_NUMBER_BINDING",
+      "RECORDED_SOURCE_GEOMETRY_SIGNATURE",
+      "LIVE_DATABASE_RESOLUTION_RESULT",
+      "RESOLVED_TECHNOLOGY",
+      "RESOLVED_OFFICIAL_ASSETS",
+      "OUTPUT_GEN_ID",
+      "POST_RENDER_GEOMETRY_MATCH_PASS",
+      "POST_RENDER_ARTWORK_MATCH_PASS"
+    ],
+    "reject_if": [
+      "CURRENT_SKU_SCREENSHOT_ARTIFACT_MISSING",
+      "CURRENT_SKU_BINDING_MISSING",
+      "SOURCE_GEOMETRY_SIGNATURE_MISSING",
+      "LIVE_DATABASE_RESOLUTION_MISSING",
+      "OUTPUT_GEN_ID_MISSING",
+      "POST_RENDER_GEOMETRY_MATCH_FAIL",
+      "POST_RENDER_ARTWORK_MATCH_FAIL"
+    ]
+  },
   "preflight": {
     "required": true,
     "script": "product-identity/scripts/preflight-product-image.mjs",
@@ -71,6 +98,7 @@
     "USER_APPROVAL",
     "PHASE_3",
     "USER_APPROVAL",
+    "APPLICATION_LINEAGE_EVIDENCE_RECORDED",
     "SAVE_JSON_AND_MASTER"
   ],
   "database": {
@@ -148,7 +176,21 @@
     "OFFICIAL_ASSETS_NOT_RESOLVED",
     "PREFLIGHT_NOT_PASS"
   ],
-  "post_render_reject_if": ["EDIT_OP_NULL_OR_MISSING","SOURCE_LINEAGE_MISSING","BODY_REMAINS_MANUFACTURER_WHITE","BODY_NOT_414141_DARK_CHARCOAL","LITHOGRAPHY_NOT_CBCBCB_SILVER","SKU_MISMATCH","TECHNOLOGY_MISMATCH","GEOMETRY_DRIFT","PROTECTED_VIEW_CHANGED","COMPETITOR_BRANDING_PRESENT","SECONDARY_COLORS_PRESENT","VALIDATION_UI_PRESENT","PIPELINE_TEXT_PRESENT"],
+  "post_render_reject_if": [
+    "APPLICATION_LINEAGE_EVIDENCE_MISSING",
+    "SOURCE_BINDING_MISSING",
+    "BODY_REMAINS_MANUFACTURER_WHITE",
+    "BODY_NOT_414141_DARK_CHARCOAL",
+    "LITHOGRAPHY_NOT_CBCBCB_SILVER",
+    "SKU_MISMATCH",
+    "TECHNOLOGY_MISMATCH",
+    "GEOMETRY_DRIFT",
+    "PROTECTED_VIEW_CHANGED",
+    "COMPETITOR_BRANDING_PRESENT",
+    "SECONDARY_COLORS_PRESENT",
+    "VALIDATION_UI_PRESENT",
+    "PIPELINE_TEXT_PRESENT"
+  ],
   "presentation_rule": "Rejected renders must not be presented as candidates.",
-  "operator_rule": "Before any image tool call, open and visually inspect the current SKU screenshot artifact, record its geometry signature, and bind the render to that artifact. If any of those steps is missing, stop."
+  "operator_rule": "Before any image tool call, open and visually inspect the current SKU screenshot artifact, record its geometry signature, and bind the render to that artifact. After render, record application-level lineage evidence and validate geometry/artwork before presenting."
 }
