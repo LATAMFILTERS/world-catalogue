@@ -1,118 +1,50 @@
 {
-  "schema": "elimfilters.product-identity.visual-master.v1",
-  "status": "APPROVED_FINAL",
+  "schema": "elimfilters.product-identity.visual-master.v2.1",
+  "status": "MIGRATION_REQUIRED_BEFORE_REUSE",
+  "pilot_position": "2/20",
   "sku": "EL80428",
-  "codigo_base": "LF3970",
   "product_family": "HD_SPINON",
-  "filter_type": "oil",
+  "filter_type": "LUBE",
   "display_filter_type": "Lube Filter",
-  "technology": "SINTRAX",
+  "technology": "SINTRAX®",
   "technology_descriptor": "Powered Filtration",
   "source": {
     "brand": "FLEETGUARD",
     "part_number": "LF3970",
-    "image_url": "https://atmus.widen.net/content/7mko6wy9jp/original/LF3970.jpg",
     "geometry_source": true,
-    "approved_for_visual_transformation": true
+    "real_manufacturer_source_required": true,
+    "real_manufacturer_screenshot_required": true
   },
   "master_geometry": {
     "state": "LOCKED",
-    "rule": "Do not regenerate, reinterpret, simplify or redesign the approved product geometry.",
-    "preserve": [
-      "overall_body_shape",
-      "body_proportions",
-      "camera_perspective",
-      "upright_filter_position",
-      "horizontal_filter_position",
-      "threaded_base",
-      "thread_depth",
-      "thread_profile_visible_in_source",
-      "base_plate_hole_pattern",
-      "outer_gasket_ring",
-      "center_thread_geometry",
-      "lighting",
-      "shadows",
-      "background"
-    ],
     "mechanical_ground_truth": "SOURCE_IMAGE",
-    "dimensions_ground_truth": "ELIMFILTERS_DATABASE"
+    "preserve": ["overall_body_shape","body_proportions","camera_perspective","upright_filter_position","horizontal_filter_position","threaded_base","thread_depth","base_plate_hole_pattern","outer_gasket_ring","center_thread_geometry","lighting","shadows","background"]
   },
-  "surface_finish": {
-    "state": "LOCKED",
-    "color_name": "approved graphite gray",
-    "finish": "satin metallic",
-    "reference_rule": "Use the same approved graphite gray body finish and subtle surface pattern as the approved EL87900 visual standard."
+  "target_surface_finish": {
+    "container_color_hex": "#414141",
+    "finish": "SEMI_MATTE_INDUSTRIAL_COATING"
   },
-  "front_lithography": {
-    "state": "APPROVED_LOCKED",
-    "color": "white",
-    "elements_top_to_bottom": [
-      {
-        "id": "installation_marks",
-        "content": [
-          "A 3/4 TO B",
-          "B 3/4 TO C"
-        ],
-        "placement": "upper perimeter"
-      },
-      {
-        "id": "brand",
-        "content": "Elimfilters®"
-      },
-      {
-        "id": "brand_claim",
-        "content": "TOTAL ASSET PROTECTION"
-      },
-      {
-        "id": "sku",
-        "content": "EL80428"
-      },
-      {
-        "id": "filter_type",
-        "content": "Lube Filter"
-      },
-      {
-        "id": "technology",
-        "content": "SINTRAX"
-      },
-      {
-        "id": "technology_descriptor",
-        "content": "Powered Filtration"
-      }
-    ],
-    "prohibited_text": [
-      "GERMAN QUALITY"
-    ]
+  "target_lithography": {
+    "color_hex": "#CBCBCB",
+    "finish": "METALLIC_SILVER_SATIN",
+    "elements_top_to_bottom": ["APPROVED_INSTALLATION_ROTATION_MARKS","OFFICIAL_ELIMFILTERS_LOGO","TOTAL ASSET PROTECTION","EL80428","Lube Filter","SINTRAX®","Powered Filtration"],
+    "rear_strategy": "SAME_AS_FRONT_180_DEGREES",
+    "extra_text_allowed": false,
+    "secondary_colors_allowed": false
   },
-  "rear_lithography": {
-    "strategy": "DUPLICATE_FRONT_180_DEGREES",
-    "state": "APPROVED",
-    "reason": "Keep brand and SKU visible regardless of final tightening orientation after installation.",
-    "rotation_degrees": 180,
-    "content_reference": "front_lithography"
+  "pipeline_compliance": {
+    "required_version": "2.1",
+    "live_database_lookup_required": true,
+    "technology_asset_resolution_required": true,
+    "official_binary_assets_required": true,
+    "manifest_pass_required": true,
+    "edit_only_required": true,
+    "result_lineage_required": true,
+    "legacy_master_compliant": false
   },
-  "edit_policy": {
-    "geometry_editing": false,
-    "surface_color_editing": false,
-    "camera_editing": false,
-    "background_editing": false,
-    "lighting_editing": false,
-    "mechanical_component_editing": false,
-    "lithography_editing": "ONLY_BY_EXPLICIT_NEW_APPROVAL"
-  },
-  "acceptance_rules": [
-    "Geometry must remain identical to the approved LF3970 master composition.",
-    "Base plate, hole pattern, gasket and visible center thread must preserve the source geometry.",
-    "Body color must remain the approved graphite gray satin finish used by EL87900.",
-    "Front lithography must use EL80428 and TOTAL ASSET PROTECTION.",
-    "GERMAN QUALITY must not appear.",
-    "The approved front face is duplicated at 180 degrees on the opposite side."
-  ],
   "approval": {
-    "geometry": "APPROVED",
-    "surface_finish": "APPROVED",
-    "front_lithography": "APPROVED",
-    "rear_strategy": "APPROVED",
-    "master_state": "FROZEN"
+    "geometry": "APPROVED_LOCKED",
+    "legacy_visual_master": "PRESERVED",
+    "current_v2_1_master": "PENDING_REGENERATION"
   }
 }
