@@ -1,201 +1,70 @@
 ---
 name: elimfilters-product-image-pipeline
-description: Mandatory fail-closed workflow for ELIMFILTERS cylindrical product imagery. Requires exact real manufacturer source imagery, immutable geometry lineage, phased approvals, catalog SKU resolution, official repository artwork assets, per-view locking, and exact edit scope. Text-to-image reconstruction is prohibited.
-activation: Trigger whenever a user asks to generate, create, edit, transform, render, rebrand, approve, or automate an ELIMFILTERS filter image.
+description: Blocking fail-closed workflow for ELIMFILTERS product imagery. Requires real manufacturer screenshot and source image, live catalog SKU resolution, technology/asset resolution, validated manifest PASS, edit-only image lineage, phased approvals, and protected-view locks.
+activation: Trigger for every ELIMFILTERS filter image generation, edit, rebrand, approval, or batch workflow.
 ---
 
-# ELIMFILTERS Product Image Pipeline
+# ELIMFILTERS Product Image Pipeline v2
 
-Mandatory and fail-closed. Never bypass a gate to make progress.
+This skill is blocking, not advisory.
 
-## Root rule
+## Absolute execution rule
 
-NEVER reconstruct a product from text. Every render must edit an exact referenced source/master image. If the image tool has no real source lineage, STOP.
+No image generation/edit is allowed unless a persisted render manifest has `manifest_status: PASS`.
+
+Required chain:
+`MANUFACTURER_URL -> REAL_SCREENSHOT -> REAL_SOURCE_IMAGE -> LIVE_DB_LOOKUP -> SKU -> FILTER_TYPE -> TECHNOLOGY -> OFFICIAL_BINARY_ASSETS -> MANIFEST_PASS -> PHASE_1 -> USER_APPROVAL -> PHASE_2 -> USER_APPROVAL -> PHASE_3 -> USER_APPROVAL -> SAVE_JSON_AND_MASTER`.
+
+Never infer, remember, copy, or hardcode SKU/technology to bypass a failed gate.
+
+## Mandatory executable gates
+
+1. `SOURCE_SCREENSHOT_REQUIRED`: run `capture-manufacturer-screenshot.mjs`; persist a real browser screenshot.
+2. `SOURCE_IMAGE_REQUIRED`: run `fetch-manufacturer-image.mjs`; persist real manufacturer image bytes.
+3. `DATABASE_SKU_REQUIRED`: run `resolve-competitor-sku.mjs` against `world_catalogue.elimfilters_catalog`; exactly one match.
+4. `TECHNOLOGY_ASSET_REQUIRED`: run `resolve-technology-asset.mjs`; technology must derive from live catalog filter type/technology and resolve to exactly one official asset under `frontend/public/assets/`.
+5. `LOGO_ASSET_REQUIRED`: official `frontend/public/assets/logo-elimfilters.png` must exist as binary.
+6. `MANIFEST_PASS_REQUIRED`: run `build-render-manifest.mjs`, then `validate-render-manifest.mjs`.
+7. `EDIT_ONLY_REQUIRED`: render must edit the exact source/approved master. New text-to-image generation is invalid.
+8. `PHASE_APPROVAL_REQUIRED`: no phase advance without explicit user approval.
+9. `PROTECTED_VIEW_LOCK_REQUIRED`: single-view fixes use localized scope; opposite approved view is immutable.
+10. `RESULT_LINEAGE_REQUIRED`: after render, run `validate-render-result.mjs`; `edit_op`/source lineage missing or null => REJECT_OUTPUT.
+
+Any failed gate disables image generation. Do not substitute a simulated image.
 
 ## State machine
+`SOURCE_LOCKED -> GEOMETRY_APPROVED -> PAINT_LITHO_APPROVED -> FINAL_APPROVED`.
 
-`SOURCE_LOCKED -> GEOMETRY_APPROVED -> PAINT_LITHO_APPROVED -> FINAL_APPROVED`
+## Phase 1 — geometry only
+Use the real manufacturer source as edit target. Preserve silhouette, proportions, seams, rim, baseplate, thread, gasket, inlet-hole count/shape/positions, valves/construction, perspective, orientation, relative scale, crop and composition. No ELIMFILTERS paint/lithography.
 
-## View model
+## Phase 2 — paint + lithography only
+Prerequisite `GEOMETRY_APPROVED`. Input is the exact approved Phase-1 master.
 
-Every two-filter composition is treated as two independent locked views:
+Only allowed changes: can paint and authorized lithography.
+- container: `#414141`, semi-matte industrial.
+- lithography: `#CBCBCB`, metallic silver satin.
+- official ELIMFILTERS logo binary.
+- `TOTAL ASSET PROTECTION`.
+- exact live-DB-resolved SKU.
+- live-resolved product descriptor/filter type.
+- exact resolved official technology asset/name.
+- `Powered Filtration`.
+- approved installation rotation marks.
 
-- `VERTICAL_VIEW`
-- `HORIZONTAL_VIEW`
+No QR, OEM/cross-reference print, specs, claims, website, German Quality, secondary colors, generated logo, generated technology mark, or arbitrary characters.
 
-Each view has its own:
-- geometry lock;
-- lithography lock;
-- approval state;
-- source/master image lineage;
-- immutable pixel region outside the active edit mask.
+## Phase 3 — micro-adjustments only
+Declare `target_view` and `target_property`. `VERTICAL_ONLY` freezes horizontal; `HORIZONTAL_ONLY` freezes vertical. Only requested property may change. Whole-composition regeneration for a one-view correction is invalid.
 
-Approval of one view freezes that view. A later edit to the other view MUST NOT alter, regenerate, relight, reposition, rescale, repaint, relabel, or re-render the approved view.
+## SKU and technology continuity
+SKU comes only from executable DB lookup for the current competitor code. Technology comes only from that lookup/filter-type mapping plus official asset resolution. Visual references may donate layout/typography only, never SKU, technology, geometry, or product identity.
 
-## Phase 0 — SOURCE LOCK
+## Output enforcement
+If render metadata shows `edit_op: null`, absent source lineage, changed protected view, wrong SKU/technology, wrong geometry, or extra artwork: reject internally and do not present.
 
-Required:
-- exact manufacturer code;
-- exact manufacturer product page/direct image;
-- real source image bytes physically available to image tool;
-- spin-on baseplate/thread/gasket/hole pattern visible;
-- upright/horizontal composition recorded.
-
-Synthetic/recreated manufacturer imagery is prohibited.
-
-## Phase 1 — GEOMETRY ONLY
-
-No ELIMFILTERS branding work. Preserve exact manufacturer geometry and composition:
-- silhouette;
-- height/diameter ratio;
-- body length;
-- rims/seams;
-- baseplate;
-- thread;
-- gasket;
-- inlet-hole count/shape/positions;
-- valves/construction details;
-- perspective;
-- orientation;
-- relative scale;
-- crop/composition.
-
-User approval creates `GEOMETRY_APPROVED` and freezes the geometry master.
-
-## Phase 2 — PAINT + LITHOGRAPHY ONLY
-
-Prerequisite: `GEOMETRY_APPROVED`.
-
-Input MUST be the approved geometry master. No new product generation.
-
-Allowed changes only:
-- container paint;
-- authorized lithography.
-
-Paint: `#414141` ELIMFILTERS DARK CHARCOAL, semi-matte industrial.
-Lithography: `#CBCBCB` ELIMFILTERS LITHOGRAPHY SILVER, metallic satin.
-
-Required artwork:
-- official ELIMFILTERS logo binary;
-- `TOTAL ASSET PROTECTION`;
-- exact DB-resolved ELIMFILTERS SKU;
-- approved product descriptor;
-- official technology artwork/name;
-- `Powered Filtration`;
-- approved Installation Rotation Direction Marks.
-
-### SKU continuity rule
-
-The resolved SKU is established once per target product and becomes immutable for all views and all later phases.
-
-Never copy a SKU from:
-- a previous image;
-- a visual reference image;
-- another approved product;
-- another view;
-- remembered context.
-
-Both `VERTICAL_VIEW` and `HORIZONTAL_VIEW` must print the same exact current resolved SKU for the target product.
-
-A visual reference may control typography, spacing, hierarchy, or placement only; it may NEVER donate its SKU value.
-
-## Phase 3 — MICRO-ADJUSTMENTS ONLY
-
-Prerequisite: `PAINT_LITHO_APPROVED`.
-
-Before edit, declare:
-- `target_view`: `VERTICAL_ONLY`, `HORIZONTAL_ONLY`, or `BOTH`;
-- `target_property`: exact property being changed.
-
-If target is `HORIZONTAL_ONLY`, then `VERTICAL_VIEW` is a frozen protected region and must remain pixel-equivalent to the approved version.
-
-If target is `VERTICAL_ONLY`, then `HORIZONTAL_VIEW` is frozen.
-
-Only the requested property may change. No cumulative unsolicited changes.
-
-Examples:
-- horizontal lithography correction -> only horizontal printed surface changes;
-- vertical SKU typography correction -> only vertical SKU typography changes;
-- geometry, paint, lighting, pose, scale, camera, shadows, and the opposite view remain unchanged.
-
-## Catalog gate
-
-Resolve SKU from `world_catalogue.elimfilters_catalog` using:
-
-`node product-identity/scripts/resolve-competitor-sku.mjs --code=<CODE> --brand=<BRAND> --duty=HEAVY_DUTY`
-
-Exactly one match required. No inferred/manual/remembered fallback.
-
-## Binary artwork gate
-
-Before Phase 2, physically load:
-- `frontend/public/assets/logo-elimfilters.png`;
-- exact approved technology asset from `frontend/public/assets/`.
-
-Text descriptions do not satisfy this gate.
-
-## Render manifest
-
-Before every image call record:
-- phase;
-- competitor_code;
-- resolved_sku when Phase 2+;
-- source/master image id/path;
-- source image real=true;
-- active target view;
-- protected view(s);
-- target property;
-- edit mask/scope;
-- immutable elements;
-- allowed changes;
-- prior approved view master id/path when one view is frozen;
-- `RENDER_INPUTS_VERIFIED=true`.
-
-Missing field = STOP.
-
-## Tool-call enforcement
-
-Valid operation must be an EDIT of the exact referenced source/master.
-
-If operation is effectively new generation, if `edit_op`/source lineage is absent, or if protected view cannot be preserved, REJECT and do not present.
-
-## Pre-display QC
-
-Always compare candidate against current approved master.
-
-Geometry QC:
-- silhouette;
-- proportions;
-- baseplate;
-- thread;
-- gasket;
-- hole pattern;
-- seams;
-- perspective;
-- relative scale;
-- composition.
-
-Phase 2+ QC:
-- current resolved SKU appears identically on both views;
-- no SKU from reference/previous product leaked into image;
-- official logo/technology assets;
-- charcoal/silver only;
-- authorized hierarchy;
-- no extra text/colors.
-
-Scoped-edit QC:
-- protected view is unchanged;
-- only requested view/property changed;
-- no geometry, paint, lighting, position, scale, or artwork drift outside mask.
-
-Any mismatch = reject internally.
-
-## Control rules
-
-LF670 geometry is unique to LF670 and cannot be reused.
-LF3620 must use its own exact Fleetguard source geometry.
-Approved EL81670 imagery is a style/layout reference only and must never donate its SKU to LF3620 or another product.
-
-## Output
-
-On success, show image with minimal commentary. On gate failure, state only the failing gate and stop.
+## Authority
+Canonical machine contract: `product-identity/pipelines/manufacturer-source-rebrand.v2.json`.
+Canonical manifest schema: `product-identity/pipelines/render-manifest.schema.json`.
+Operational authority: `product-identity/PIPELINE_PRODUCT_IMAGE_AUTHORITY.md`.
+Legacy v1 pipeline is retired and must not be used.
