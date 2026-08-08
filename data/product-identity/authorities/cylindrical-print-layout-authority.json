@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
+  "authorityStatus": "ACTIVE",
+  "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
+  "scope": "All cylindrical direct-print ELIMFILTERS filters using this approved visual system",
+  "coreRule": {
+    "sameArtworkBothSides": true,
+    "onlyVariableFields": [
+      "sku",
+      "technology"
+    ],
+    "allOtherArtworkLocked": true
+  },
+  "lockedArtwork": {
+    "brand": "Elimfilters®",
+    "brandClaim": "TOTAL ASSET PROTECTION",
+    "productDescriptorPlacement": "LOCKED",
+    "skuPlacement": "LOCKED",
+    "technologyPlacement": "LOCKED",
+    "technologyDescriptor": "Powered Filtration",
+    "typography": "LOCKED_TO_APPROVED_MASTER",
+    "spacing": "LOCKED_TO_APPROVED_MASTER",
+    "alignment": "LOCKED_TO_APPROVED_MASTER",
+    "printColor": "WHITE_SILVER",
+    "canFinish": "DARK_CHARCOAL",
+    "directionalMarks": "LOCKED_TO_APPROVED_MASTER",
+    "duplicateArtworkOnOppositeSide": true
+  },
+  "technologyMatrix": {
+    "LUBE_OIL": {
+      "technology": "SINTRAX®",
+      "display": "SINTRAX®",
+      "descriptor": "Powered Filtration"
+    },
+    "FUEL": {
+      "technology": "SYNTAPORE®",
+      "display": "SYNTAPORE®",
+      "descriptor": "Powered Filtration"
+    },
+    "HYDRAULIC": {
+      "technology": "NANOFORCE®",
+      "display": "NANOFORCE®",
+      "descriptor": "Powered Filtration"
+    },
+    "FUEL_WATER_SEPARATOR": {
+      "technology": "HYDRACORE®",
+      "display": "HYDRACORE®",
+      "descriptor": "Powered Filtration"
+    },
+    "COOLANT": {
+      "technology": "THERMACORE®",
+      "display": "THERMACORE®",
+      "descriptor": "Powered Filtration"
+    },
+    "AIR_DRYER": {
+      "technology": "DRYCORE®",
+      "display": "DRYCORE®",
+      "descriptor": "Powered Filtration"
+    }
+  },
+  "productionRules": {
+    "skuMustComeFromCatalogDatabase": true,
+    "technologyMustComeFromFilterCategory": true,
+    "physicalGeometryMustComeFromExactSkuReference": true,
+    "doNotReuseGeometryAcrossDifferentSkus": true,
+    "doNotAddTechnicalCharactersOrExtraText": true,
+    "doNotUseGermanQuality": true,
+    "brandClaimMustBe": "TOTAL ASSET PROTECTION",
+    "artworkChangesRequireAuthorityRevision": true
+  },
+  "workflow": {
+    "approvalState": "MASTER_AUTHORITY",
+    "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
+    "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
+    "notes": "For each filter, preserve the approved artwork exactly. Change only the SKU and the technology according to the filter category. Physical can geometry, cap, base, thread presentation and proportions are SKU-specific and are not controlled by this artwork authority."
+  }
+}
