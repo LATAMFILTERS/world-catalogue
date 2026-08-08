@@ -1,9 +1,118 @@
 {
+  "schema": "elimfilters.product-identity.visual-master.v1",
+  "status": "APPROVED_FINAL",
   "sku": "EL87900",
   "codigo_base": "DBL7900",
-  "source_brand": "FLEETGUARD",
-  "source_part_number": "LF14000NN",
-  "image_url": "https://atmus.widen.net/content/gjnjbycxmj/original/LF14000NN.jpg",
-  "geometry_source": true,
-  "approved_for_visual_transformation": true
+  "product_family": "HD_SPINON",
+  "filter_type": "oil",
+  "display_filter_type": "Lube Filter",
+  "technology": "SINTRAX",
+  "technology_descriptor": "Powered Filtration",
+  "source": {
+    "brand": "FLEETGUARD",
+    "part_number": "LF14000NN",
+    "image_url": "https://atmus.widen.net/content/gjnjbycxmj/original/LF14000NN.jpg",
+    "geometry_source": true,
+    "approved_for_visual_transformation": true
+  },
+  "master_geometry": {
+    "state": "LOCKED",
+    "rule": "Do not regenerate, reinterpret, simplify or redesign the approved product geometry.",
+    "preserve": [
+      "overall_body_shape",
+      "body_proportions",
+      "camera_perspective",
+      "upright_filter_position",
+      "horizontal_filter_position",
+      "special_threaded_base",
+      "thread_depth",
+      "thread_profile_visible_in_source",
+      "outer_black_ring",
+      "internal_support_geometry",
+      "perforated_center_core",
+      "lighting",
+      "shadows",
+      "background"
+    ],
+    "mechanical_ground_truth": "SOURCE_IMAGE",
+    "dimensions_ground_truth": "ELIMFILTERS_DATABASE"
+  },
+  "surface_finish": {
+    "state": "LOCKED",
+    "color_name": "approved graphite gray",
+    "finish": "satin metallic",
+    "reference_rule": "Use only the approved gray body finish. Do not inherit any typography or layout from the color reference image."
+  },
+  "front_lithography": {
+    "state": "APPROVED_LOCKED",
+    "color": "white",
+    "elements_top_to_bottom": [
+      {
+        "id": "installation_marks",
+        "content": [
+          "A 3/4 TO B",
+          "B 3/4 TO C"
+        ],
+        "placement": "upper perimeter"
+      },
+      {
+        "id": "brand",
+        "content": "Elimfilters®"
+      },
+      {
+        "id": "brand_claim",
+        "content": "TOTAL ASSET PROTECTION"
+      },
+      {
+        "id": "sku",
+        "content": "EL87900"
+      },
+      {
+        "id": "filter_type",
+        "content": "Lube Filter"
+      },
+      {
+        "id": "technology",
+        "content": "SINTRAX"
+      },
+      {
+        "id": "technology_descriptor",
+        "content": "Powered Filtration"
+      }
+    ],
+    "prohibited_text": [
+      "GERMAN QUALITY"
+    ]
+  },
+  "rear_lithography": {
+    "strategy": "DUPLICATE_FRONT_180_DEGREES",
+    "state": "APPROVED",
+    "reason": "Keep brand and SKU visible regardless of final tightening orientation after installation.",
+    "rotation_degrees": 180,
+    "content_reference": "front_lithography"
+  },
+  "edit_policy": {
+    "geometry_editing": false,
+    "surface_color_editing": false,
+    "camera_editing": false,
+    "background_editing": false,
+    "lighting_editing": false,
+    "mechanical_component_editing": false,
+    "lithography_editing": "ONLY_BY_EXPLICIT_NEW_APPROVAL"
+  },
+  "acceptance_rules": [
+    "Geometry must remain identical to the approved master composition.",
+    "Special threaded base and visible thread depth must not be regenerated as a conventional spin-on base.",
+    "Body color must remain the approved graphite gray satin finish.",
+    "Front lithography must use EL87900 and TOTAL ASSET PROTECTION.",
+    "GERMAN QUALITY must not appear.",
+    "The approved front face is duplicated at 180 degrees on the opposite side."
+  ],
+  "approval": {
+    "geometry": "APPROVED",
+    "surface_finish": "APPROVED",
+    "front_lithography": "APPROVED",
+    "rear_strategy": "APPROVED",
+    "master_state": "FROZEN"
+  }
 }
