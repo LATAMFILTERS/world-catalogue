@@ -3,37 +3,43 @@
   "segment": "HD",
   "family": "oil_filter",
   "construction": "spin_on",
-  "technology": "SYNTRAX",
+  "technology": "SINTRAX®",
   "technical_source": {
-    "source": "world_catalogue",
-    "verified": false,
-    "height_mm": null,
-    "outer_diameter_mm": null,
-    "thread": null,
-    "gasket": null,
-    "crossrefs": [],
-    "standards": []
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "cross_reference": {
+      "manufacturer": "FLEETGUARD",
+      "code": "LF3620"
+    }
   },
   "production": {
-    "template_id": null,
-    "printable_area": {
-      "height_mm": null,
-      "circumference_mm": null
-    },
-    "qr_url": null,
-    "factory_ready": false
+    "template_authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "factory_ready": true
   },
   "lithography": {
-    "front": ["ELIMFILTERS", "Total Asset Protection", "EL82100", "Oil Filter", "SYNTRAX"],
-    "rear": ["E", "QR", "Equivalent to: up to 3 verified OEM references", "applicable verified standards"]
+    "body_color_hex": "#414141",
+    "print_color_hex": "#CBCBCB",
+    "front": [
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL ASSET PROTECTION",
+      "EL82100",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "rear": "SAME_AS_FRONT",
+    "extra_text_allowed": false
   },
   "media": {
     "geometry_locked": true,
-    "source_image_required": true,
-    "approved_master_image": null
+    "geometry_reference": "FLEETGUARD_LF3620",
+    "approved_master_gen_id": "7c935e28-49b3-48c6-a87d-3bdc353c863e",
+    "approval_state": "FINAL_APPROVED",
+    "pilot_position": "4/20"
   },
   "notes": [
-    "Pilot SKU only. No dimensions, OEM references, standards or QR URL may be invented.",
-    "Template size class is assigned only after verified World Catalogue data and printable-area measurements are available."
+    "User-approved replacement master on 2026-08-08.",
+    "This replaces the previous EL82100 visual master.",
+    "Physical geometry is unique to LF3620/EL82100 and must not be replaced by EL81670 or another SKU geometry."
   ]
 }
