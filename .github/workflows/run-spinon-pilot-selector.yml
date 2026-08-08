@@ -18,10 +18,10 @@ jobs:
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL_READONLY }}
     steps:
-      - name: Checkout feature branch
+      - name: Checkout triggering branch
         uses: actions/checkout@v4
         with:
-          ref: claude/create-elimfilters-manuals-iFz1q
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -44,14 +44,17 @@ jobs:
       - name: Show selected matrix
         run: cat product-identity/hd-standard/pilots/spin-on-pilot.v1.json
 
-      - name: Commit pilot matrix to feature branch
+      - name: Commit pilot matrix
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "ELIMFILTERS Product Identity Bot"
           git config user.email "actions@users.noreply.github.com"
           git add product-identity/hd-standard/pilots/spin-on-pilot.v1.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "data: generate Spin-On HD pilot matrix"
-            git push origin HEAD:claude/create-elimfilters-manuals-iFz1q
+            exit 0
           fi
+          git commit -m "data: generate Spin-On HD pilot matrix"
+          TARGET_BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          git push origin "HEAD:${TARGET_BRANCH}"
