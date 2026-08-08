@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "status": "ACTIVE",
   "fail_closed": true,
   "pre_tool_call_required": [
-    "CURRENT_SKU_REAL_MANUFACTURER_SCREENSHOT",
-    "CURRENT_SKU_SCREENSHOT_SKU_MATCH_PASS",
-    "CURRENT_SKU_REAL_MANUFACTURER_SOURCE_IMAGE",
+    "CURRENT_SKU_OFFICIAL_PRODUCT_PAGE",
+    "CURRENT_SKU_VERIFIED_OFFICIAL_SOURCE_IMAGE",
     "CURRENT_SKU_SOURCE_IMAGE_SKU_MATCH_PASS",
+    "FRESH_SOURCE_NO_CACHE_PASS",
     "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
     "LIVE_DATABASE_SKU_RESOLUTION",
     "FILTER_TYPE_RESOLUTION",
@@ -16,20 +16,27 @@
     "MANIFEST_PASS"
   ],
   "tool_call_block_rule": "IF any pre_tool_call_required gate != PASS THEN IMAGE_GENERATION_TOOL_CALL_FORBIDDEN",
-  "screenshot_gate": {
+  "source_gate": {
     "required_for_every_sku": true,
     "required_for_every_render_attempt": true,
-    "manufacturer_must_match_current_sku": true,
-    "part_number_must_match_current_sku": true,
-    "other_sku_screenshot_forbidden": true,
-    "geometry_must_be_derived_from_this_screen_or_its_exact_source_image": true
+    "primary_geometry_authority": "VERIFIED_OFFICIAL_MANUFACTURER_SOURCE_IMAGE",
+    "manual_screenshot_required": false,
+    "automated_screenshot_role": "AUDIT_EVIDENCE_ONLY",
+    "manufacturer_host_must_match_current_sku": true,
+    "product_page_must_contain_current_part_number": true,
+    "official_image_must_be_resolved_from_current_product_page": true,
+    "other_sku_source_forbidden": true,
+    "cached_source_forbidden": true,
+    "previous_render_as_geometry_source_forbidden": true,
+    "geometry_must_be_derived_from_current_official_source_image": true
   },
   "lineage_gate": {
     "mode": "APPLICATION_VERIFIED",
     "engine_edit_op_required": false,
     "engine_edit_op_null_is_not_failure_by_itself": true,
     "required": [
-      "CURRENT_SKU_SCREENSHOT_ARTIFACT_REFERENCE",
+      "CURRENT_SKU_SOURCE_EVIDENCE_REFERENCE",
+      "CURRENT_SKU_OFFICIAL_IMAGE_HASH",
       "CURRENT_SKU_BINDING",
       "SOURCE_GEOMETRY_SIGNATURE",
       "LIVE_DATABASE_RESOLUTION_EVIDENCE",
@@ -50,13 +57,6 @@
     "pipeline_text_allowed": false,
     "database_text_allowed": false,
     "source_url_text_allowed": false
-  },
-  "legacy_record_gate": {
-    "legacy_graphite_gray_allowed_for_new_render": false,
-    "legacy_white_lithography_allowed_for_new_render": false,
-    "legacy_geometry_may_be_reused_only_for_same_exact_sku": true,
-    "legacy_user_approval_may_be_preserved": true,
-    "legacy_provenance_must_not_be_claimed_as_current_lineage_pass": true
   },
   "post_render_hard_rejects": [
     "APPLICATION_LINEAGE_EVIDENCE_MISSING",
