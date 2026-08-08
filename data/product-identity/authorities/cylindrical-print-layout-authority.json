@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
   "authorityStatus": "ACTIVE",
   "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
@@ -11,6 +11,20 @@
       "technology"
     ],
     "allOtherArtworkLocked": true
+  },
+  "technologyArtworkAuthority": {
+    "repository": "LATAMFILTERS/world-catalogue",
+    "branch": "main",
+    "authoritativeDirectory": "frontend/public/assets/",
+    "rule": "Technology visual assets must be sourced exclusively from frontend/public/assets/. Do not recreate, redraw, restyle, substitute, or infer technology artwork when an authoritative asset exists there.",
+    "appliesTo": [
+      "SINTRAX®",
+      "SYNTAPORE®",
+      "NANOFORCE®",
+      "HYDRACORE®",
+      "THERMACORE®",
+      "DRYCORE®"
+    ]
   },
   "lockedArtwork": {
     "brand": "Elimfilters®",
@@ -62,6 +76,7 @@
   "productionRules": {
     "skuMustComeFromCatalogDatabase": true,
     "technologyMustComeFromFilterCategory": true,
+    "technologyArtworkMustComeFromAuthoritativeAssetsDirectory": true,
     "physicalGeometryMustComeFromExactSkuReference": true,
     "doNotReuseGeometryAcrossDifferentSkus": true,
     "doNotAddTechnicalCharactersOrExtraText": true,
@@ -73,6 +88,6 @@
     "approvalState": "MASTER_AUTHORITY",
     "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork",
     "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
-    "notes": "For each filter, preserve the approved artwork exactly. Change only the SKU and the technology according to the filter category. Physical can geometry, cap, base, thread presentation and proportions are SKU-specific and are not controlled by this artwork authority."
+    "notes": "For each filter, preserve the approved artwork exactly. Change only the SKU and the technology according to the filter category. The technology artwork itself must be taken from frontend/public/assets/. Physical can geometry, cap, base, thread presentation and proportions are SKU-specific and are not controlled by this artwork authority."
   }
 }
