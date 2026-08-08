@@ -1,0 +1,62 @@
+{
+  "sku": "EL83000",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SINTRAX®",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "cross_reference": {
+      "manufacturer": "FLEETGUARD",
+      "code": "LF9009"
+    }
+  },
+  "source_geometry": {
+    "manufacturer": "FLEETGUARD",
+    "code": "LF9009",
+    "image_url": "https://www.fleetguard.com/cdn-cgi/image/format=auto,onerror=redirect/https://atmus.widen.net/content/eyga7e3lzy/original/LF9009.jpg",
+    "screenshot_required_for_future_regeneration": true,
+    "geometry_locked": true
+  },
+  "production": {
+    "template_authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "factory_ready": true
+  },
+  "lithography": {
+    "body_color_hex": "#414141",
+    "print_color_hex": "#CBCBCB",
+    "front": [
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL ASSET PROTECTION",
+      "EL83000",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "rear": "SAME_AS_FRONT",
+    "extra_text_allowed": false,
+    "german_quality_forbidden": true
+  },
+  "media": {
+    "geometry_locked": true,
+    "geometry_reference": "FLEETGUARD_LF9009",
+    "approved_master_gen_id": "8f8da46d-7275-49e3-a1a1-d897a98195c3",
+    "approval_state": "FINAL_APPROVED",
+    "pilot_position": "3/20",
+    "approved_by": "USER",
+    "approved_at": "2026-08-08T16:46:00-05:00"
+  },
+  "pipeline_provenance": {
+    "source_screenshot_reviewed": true,
+    "render_metadata_edit_op_null": true,
+    "strict_edit_lineage_pass_claimed": false,
+    "future_regeneration_requires_current_pipeline": true,
+    "future_regeneration_requires_screenshot_first": true
+  },
+  "notes": [
+    "This production master replaces the previous EL83000 visual/lithography authority.",
+    "LF9009 geometry is unique to EL83000 and must not be replaced by any other SKU geometry.",
+    "Use TOTAL ASSET PROTECTION; GERMAN QUALITY is prohibited."
+  ]
+}
