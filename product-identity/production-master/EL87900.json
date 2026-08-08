@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "recordType": "ELIMFILTERS_PRODUCTION_MASTER",
   "sku": "EL87900",
   "pilotPosition": "1/20",
@@ -25,9 +25,17 @@
     "geometryReference": "FLEETGUARD_LF14000NN",
     "geometryLocked": true,
     "artworkLocked": true,
-    "intendedImagePath": "product-identity/approved-images/EL87900.png",
     "imageSha256": "2c814df469e37000539c02d0c06136fc96f25fb1920289a969ffd422cd7234a7",
-    "pixelDimensions": "1448x1086"
+    "pixelDimensions": "1448x1086",
+    "storage": {
+      "provider": "CLOUDFLARE_R2",
+      "bucket": "elimfilters-renders",
+      "objectKey": "fleetguard/page-1/01-20/EL87900-LF14000NN-1of20-approved.png/EL87900-LF14000NN-1of20-approved.png",
+      "contentType": "image/png",
+      "observedSize": "1.11 MB",
+      "uploadVerified": true,
+      "verifiedAt": "2026-08-08T17:46:00-05:00"
+    }
   },
   "geometryLock": {
     "specialOpenEnd": true,
