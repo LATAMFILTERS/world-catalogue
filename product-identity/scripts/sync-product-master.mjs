@@ -7,18 +7,14 @@ import pg from 'pg';
 const { Pool } = pg;
 
 const FAMILY_MAP = {
-  oil: { family: 'oil_filter', defaultTechnology: 'SYNTRAX' },
-  lube: { family: 'oil_filter', defaultTechnology: 'SYNTRAX' },
-  fuel: { family: 'fuel_filter', defaultTechnology: 'HYDROCORE' },
-  'fuel/water separator': { family: 'fuel_water_separator', defaultTechnology: 'HYDROCORE' },
-  'fuel water separator': { family: 'fuel_water_separator', defaultTechnology: 'HYDROCORE' },
-  hydraulic: { family: 'hydraulic_filter', defaultTechnology: 'NANOFORCE' },
-  coolant: { family: 'coolant_filter', defaultTechnology: 'THERMACORE' },
-  air: { family: 'air_filter', defaultTechnology: 'MACROCORE' },
-  cabin: { family: 'cabin_filter', defaultTechnology: 'MICROKAPPA' },
-  'air dryer': { family: 'air_dryer', defaultTechnology: 'DRYCORE' },
-  crankcase: { family: 'crankcase_ventilation_filter', defaultTechnology: null },
-  ccv: { family: 'crankcase_ventilation_filter', defaultTechnology: null }
+  oil: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SINTRAX®' },
+  lube: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SINTRAX®' },
+  fuel: { family: 'fuel_filter', authorityCategory: 'FUEL', defaultTechnology: 'SYNTAPORE®' },
+  'fuel/water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDRACORE®' },
+  'fuel water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDRACORE®' },
+  hydraulic: { family: 'hydraulic_filter', authorityCategory: 'HYDRAULIC', defaultTechnology: 'NANOFORCE®' },
+  coolant: { family: 'coolant_filter', authorityCategory: 'COOLANT', defaultTechnology: 'THERMACORE®' },
+  'air dryer': { family: 'air_dryer', authorityCategory: 'AIR_DRYER', defaultTechnology: 'DRYCORE®' }
 };
 
 function normalizeFamily(filterType = '') {
@@ -26,12 +22,7 @@ function normalizeFamily(filterType = '') {
   for (const [key, value] of Object.entries(FAMILY_MAP)) {
     if (normalized.includes(key)) return value;
   }
-  return { family: normalized.replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'unknown', defaultTechnology: null };
-}
-
-function normalizeTechnology(row, fallback) {
-  const value = row.technology ? String(row.technology).trim() : null;
-  return value || fallback || null;
+  return { family: normalized.replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'unknown', authorityCategory: null, defaultTechnology: null };
 }
 
 function normalizeCrossrefs(row) {
@@ -65,16 +56,18 @@ function deriveConstruction(row) {
 function buildMaster(row, existing = {}) {
   const familyInfo = normalizeFamily(row.filter_type);
   const crossrefs = normalizeCrossrefs(row);
-  const applicableStandards = [row.iso_test_method].filter(Boolean);
   const construction = deriveConstruction(row) || existing.construction || null;
-  const technology = normalizeTechnology(row, familyInfo.defaultTechnology);
+  const technology = familyInfo.defaultTechnology;
+  const descriptor = row.filter_type || familyInfo.family;
 
   const master = {
     sku: row.sku,
     segment: String(row.duty || '').toUpperCase().includes('LIGHT') ? 'LD' : 'HD',
     family: familyInfo.family,
+    authority_category: familyInfo.authorityCategory,
     construction,
     technology,
+    authority_file: 'data/product-identity/authorities/cylindrical-print-layout-authority.json',
     technical_source: {
       source: 'world_catalogue.elimfilters_catalog',
       verified: true,
@@ -82,12 +75,9 @@ function buildMaster(row, existing = {}) {
       outer_diameter_mm: row.outer_diameter_mm ?? null,
       inner_diameter_mm: row.inner_diameter_mm ?? null,
       thread: row.thread_size ?? null,
-      gasket: {
-        od_mm: row.gasket_od_mm ?? null,
-        id_mm: row.gasket_id_mm ?? null
-      },
+      gasket: { od_mm: row.gasket_od_mm ?? null, id_mm: row.gasket_id_mm ?? null },
       crossrefs,
-      standards: applicableStandards,
+      standards: [row.iso_test_method].filter(Boolean),
       filter_media: row.filter_media ?? null,
       micron_rating: row.micron_rating ?? null,
       bypass_valve_psi: row.bypass_valve_psi ?? null,
@@ -99,32 +89,34 @@ function buildMaster(row, existing = {}) {
     },
     production: {
       template_id: existing.production?.template_id ?? null,
-      printable_area: existing.production?.printable_area ?? {
-        height_mm: null,
-        circumference_mm: null
-      },
-      qr_url: existing.production?.qr_url ?? null,
+      printable_area: existing.production?.printable_area ?? { height_mm: null, circumference_mm: null },
       factory_ready: false
     },
     lithography: {
-      front: [
-        'ELIMFILTERS',
-        'Total Asset Protection',
+      same_artwork_both_sides: true,
+      elements: [
+        'OFFICIAL_LOGO:frontend/public/assets/logo-elimfilters.png',
+        'TOTAL ASSET PROTECTION',
         row.sku,
-        row.filter_type || familyInfo.family,
-        technology
+        descriptor,
+        technology,
+        'Powered Filtration',
+        'Installation Rotation Direction Marks'
       ].filter(Boolean),
-      rear: [
-        'E',
-        'QR',
-        'Equivalent to: up to 3 verified OEM references',
-        'applicable verified standards'
-      ]
+      container_color_hex: '#414141',
+      print_color_hex: '#CBCBCB',
+      extra_text_allowed: false,
+      qr_allowed: false,
+      oem_equivalence_text_allowed: false,
+      technical_spec_panel_allowed: false
     },
     media: {
       geometry_locked: true,
-      source_image_required: true,
-      approved_master_image: existing.media?.approved_master_image ?? null
+      real_source_image_required: true,
+      synthetic_geometry_reference_forbidden: true,
+      official_logo_asset_required: 'frontend/public/assets/logo-elimfilters.png',
+      approved_master_image: existing.media?.approved_master_image ?? null,
+      explicit_user_image_approval_required: true
     }
   };
 
@@ -133,13 +125,16 @@ function buildMaster(row, existing = {}) {
     ...(row.outer_diameter_mm == null ? ['outer_diameter_mm'] : []),
     ...(construction === 'spin_on' && !row.thread_size ? ['thread_size'] : []),
     ...(master.production.printable_area?.height_mm == null ? ['printable_area.height_mm'] : []),
-    ...(master.production.qr_url == null ? ['qr_url'] : []),
-    ...(master.production.template_id == null ? ['template_id'] : [])
+    ...(master.production.template_id == null ? ['template_id'] : []),
+    ...(familyInfo.authorityCategory == null ? ['authority_category'] : []),
+    ...(technology == null ? ['technology'] : [])
   ];
 
   master.gate = {
     missing_for_factory_release: missing,
-    factory_release_allowed: missing.length === 0
+    factory_release_allowed: missing.length === 0 && Boolean(master.media.approved_master_image),
+    batch_generation_allowed: false,
+    next_sku_requires_explicit_image_approval: true
   };
   master.production.factory_ready = master.gate.factory_release_allowed;
   return master;
@@ -153,60 +148,27 @@ const SELECT_COLUMNS = `
   installation_type, attachment_type, oem_codes, competitor_codes, brand_crossrefs
 `;
 
-export async function syncProductMasters({
-  connectionString = process.env.DATABASE_URL,
-  sku = null,
-  outputDir = 'product-identity/production-master',
-  dryRun = false,
-  poolFactory = (config) => new Pool(config)
-} = {}) {
+export async function syncProductMasters({ connectionString = process.env.DATABASE_URL, sku = null, outputDir = 'product-identity/production-master', dryRun = false, poolFactory = (config) => new Pool(config) } = {}) {
   if (!connectionString) throw new Error('DATABASE_URL is required');
-
-  const pool = poolFactory({
-    connectionString,
-    application_name: 'product-identity-readonly-sync',
-    options: '-c default_transaction_read_only=on'
-  });
-
+  const pool = poolFactory({ connectionString, application_name: 'product-identity-readonly-sync', options: '-c default_transaction_read_only=on' });
   try {
     const params = [];
     let where = `WHERE COALESCE(UPPER(duty), 'HD') NOT LIKE '%LIGHT%'`;
-    if (sku) {
-      params.push(sku);
-      where += ` AND sku = $${params.length}`;
-    }
-
-    const result = await pool.query(
-      `SELECT ${SELECT_COLUMNS} FROM elimfilters_catalog ${where} ORDER BY sku`,
-      params
-    );
-
+    if (sku) { params.push(sku); where += ` AND sku = $${params.length}`; }
+    const result = await pool.query(`SELECT ${SELECT_COLUMNS} FROM elimfilters_catalog ${where} ORDER BY sku`, params);
     fs.mkdirSync(outputDir, { recursive: true });
     const report = { processed: 0, written: 0, dry_run: dryRun, products: [] };
-
     for (const row of result.rows) {
       const file = path.join(outputDir, `${row.sku}.json`);
       let existing = {};
-      if (fs.existsSync(file)) {
-        try { existing = JSON.parse(fs.readFileSync(file, 'utf8')); } catch {}
-      }
+      if (fs.existsSync(file)) { try { existing = JSON.parse(fs.readFileSync(file, 'utf8')); } catch {} }
       const master = buildMaster(row, existing);
       report.processed += 1;
-      report.products.push({
-        sku: row.sku,
-        factory_ready: master.production.factory_ready,
-        missing: master.gate.missing_for_factory_release
-      });
-      if (!dryRun) {
-        fs.writeFileSync(file, `${JSON.stringify(master, null, 2)}\n`);
-        report.written += 1;
-      }
+      report.products.push({ sku: row.sku, factory_ready: master.production.factory_ready, missing: master.gate.missing_for_factory_release });
+      if (!dryRun) { fs.writeFileSync(file, `${JSON.stringify(master, null, 2)}\n`); report.written += 1; }
     }
-
     return report;
-  } finally {
-    await pool.end();
-  }
+  } finally { await pool.end(); }
 }
 
 async function main() {
@@ -218,13 +180,5 @@ async function main() {
   console.log(JSON.stringify(report, null, 2));
 }
 
-const isDirectRun = process.argv[1]
-  ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
-  : false;
-
-if (isDirectRun) {
-  main().catch((error) => {
-    console.error(`[product-identity sync] ${error.message}`);
-    process.exit(1);
-  });
-}
+const isDirectRun = process.argv[1] ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href : false;
+if (isDirectRun) main().catch((error) => { console.error(`[product-identity sync] ${error.message}`); process.exit(1); });
