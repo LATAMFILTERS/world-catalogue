@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "brand": "ELIMFILTERS",
+  "status": "approved_hd_phase_1",
+  "identity": {
+    "primary_logotype": "ELIMFILTERS",
+    "primary_isotype": "E",
+    "tagline": "Total Asset Protection",
+    "deprecated": ["German Quality", "legacy isotype", "legacy product logo"]
+  },
+  "colors": {
+    "yellow": {"hex": "#FFF12D", "rgb": [255, 241, 45]},
+    "black": {"hex": "#000000", "rgb": [0, 0, 0]},
+    "dark_gray": {"hex": "#3E3E37", "rgb": [62, 62, 63]},
+    "gray": {"hex": "#606060", "rgb": [96, 96, 96]}
+  },
+  "typography_reference": {
+    "primary": "Microgramma",
+    "secondary": "Harmonia Sans Pro Cyr",
+    "vectorial": "Opine Heavy"
+  },
+  "product_identity_rules": {
+    "geometry_locked": true,
+    "preserve_source_geometry": true,
+    "allowed_visual_changes": ["paint_color", "lithography", "logotype", "isotype", "product_code", "product_type", "technology", "qr", "approved_oem_equivalences", "applicable_standards"],
+    "prohibited_visual_changes": ["diameter", "height", "thread", "baseplate", "holes", "gasket_geometry", "valves", "seams", "proportions", "construction_features"]
+  },
+  "required_assets": {
+    "current_logotype_vector": "REQUIRED_BEFORE_FACTORY_RELEASE",
+    "current_isotype_vector": "REQUIRED_BEFORE_FACTORY_RELEASE"
+  }
+}
