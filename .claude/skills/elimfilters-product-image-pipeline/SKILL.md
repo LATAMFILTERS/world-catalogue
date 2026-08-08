@@ -1,185 +1,253 @@
 ---
 name: elimfilters-product-image-pipeline
-description: Mandatory fail-closed workflow for creating or editing ELIMFILTERS cylindrical product images from real manufacturer source imagery. Preserves exact SKU geometry and forces catalog SKU resolution plus official GitHub artwork assets before any image-generation/editing step.
-activation: Trigger whenever a user asks to generate, create, edit, transform, render, rebrand, approve, or automate an ELIMFILTERS filter image, especially when Fleetguard/Donaldson/manufacturer imagery, a competitor part number, a product URL, a screenshot, a SKU, lithography, logo, color, baseplate, thread, gasket, or spin-on geometry is involved.
+description: Mandatory fail-closed workflow for ELIMFILTERS cylindrical product imagery. Requires exact real manufacturer source imagery, immutable geometry lineage, phased approvals, catalog SKU resolution, and official repository artwork assets. Text-to-image reconstruction is prohibited.
+activation: Trigger whenever a user asks to generate, create, edit, transform, render, rebrand, approve, or automate an ELIMFILTERS filter image, especially when manufacturer imagery, a product URL, screenshot, competitor code, SKU, geometry, paint, lithography, logo, baseplate, thread, gasket, or spin-on geometry is involved.
 ---
 
 # ELIMFILTERS Product Image Pipeline
 
-This skill is mandatory for ELIMFILTERS product-image work. It is fail-closed. Do not bypass a gate to make progress.
+This skill is mandatory and fail-closed. Do not bypass a gate to make progress.
 
-## Non-negotiable rule
+## Root execution rule
 
-NEVER create an ELIMFILTERS product image from text alone when a real source product image is required.
+NEVER reconstruct a product from text.
 
-The image operation MUST be an edit/transformation grounded in the real manufacturer product image and the actual official artwork assets. A text-only recreation, simulated screenshot, reconstructed product, inferred baseplate, generated logo, generated technology mark, or guessed SKU is prohibited.
+Every render must have explicit image lineage. The exact manufacturer image supplied or captured from the exact product page must be the physical geometry donor. If that image is not physically attached/referenced to the image-edit operation, STOP.
 
-If a required binary/image source is not physically available to the image-editing operation, STOP. Do not generate a substitute.
+A valid manufacturer URL, screenshot description, part number, JSON record, prompt, or remembered geometry is NOT a substitute for the actual source image bytes.
 
-## Sources of authority
+## Phase state machine
 
-Read these before every render/edit job:
+Every SKU moves through these phases only:
 
-1. `data/product-identity/authorities/cylindrical-print-layout-authority.json`
-2. `product-identity/ai-media/image-generation-rules.v1.json`
-3. `product-identity/brand-dna/elimfilters-brand.v1.json`
-4. Exact SKU production master in `product-identity/production-master/<SKU>.json` when it exists.
-5. Exact source-image record in `product-identity/source-images/<SKU>.json` or pilot record when applicable.
-6. `product-identity/PIPELINE_PRODUCT_IMAGE_AUTHORITY.md`
-7. `product-identity/pipelines/manufacturer-source-rebrand.v1.json`
+`SOURCE_LOCKED -> GEOMETRY_APPROVED -> PAINT_LITHO_APPROVED -> FINAL_APPROVED`
 
-If these conflict, the central cylindrical authority controls visual artwork; exact manufacturer image controls physical geometry; catalog DB controls SKU/cross-reference.
+No phase may silently perform work assigned to another phase.
 
-## Required pipeline — execute in this order
+### PHASE 0 — SOURCE LOCK
 
-### Gate 1 — Real manufacturer source
-
-Obtain the exact manufacturer product image from the user-provided page or direct manufacturer image URL.
+Purpose: establish the exact physical donor before any image generation/editing.
 
 Required:
-- real source image, not an AI reconstruction;
-- exact competitor/manufacturer code visible or independently verified;
-- exact geometry visible;
-- for spin-on filters, the baseplate/thread/gasket/hole pattern must be visible in the source set.
-
-A browser screenshot is acceptable as audit evidence, but the clean manufacturer product image is preferred as the geometry source.
+- exact manufacturer code;
+- exact manufacturer product page or direct image;
+- actual source image bytes physically available to the image tool;
+- baseplate/thread/gasket/hole pattern visible for spin-on products;
+- source composition recorded: upright view, horizontal view, relative scale, perspective and crop.
 
 Forbidden:
-- generating a screenshot;
-- creating a visual approximation of the source page;
-- using image search as a substitute when the user supplied the exact manufacturer page;
-- borrowing geometry from another SKU.
+- simulated screenshot;
+- AI-generated manufacturer product;
+- image search substitute when exact user-supplied source exists;
+- geometry borrowed from another SKU;
+- changing paint, lithography or brand during source lock.
 
-If source cannot be obtained: `STOP_SOURCE_MISSING`.
+If missing: `STOP_SOURCE_MISSING`.
 
-### Gate 2 — Catalog resolution
+### PHASE 1 — GEOMETRY ONLY
 
-Resolve competitor code to ELIMFILTERS SKU from `world_catalogue.elimfilters_catalog` using the repository resolver.
+Purpose: validate that the exact source geometry can be preserved. This is NOT a branding phase.
 
-Command pattern:
+Absolute rule: PHASE 1 may not redesign, recolor, relabel or rebrand the product.
+
+The output must preserve the source manufacturer image geometry and composition exactly enough to serve as the immutable geometry master.
+
+Locked:
+- overall silhouette;
+- height/diameter ratio;
+- body length;
+- top opening/rim;
+- top and bottom seam positions;
+- baseplate shape and stamped rings;
+- central thread opening and thread appearance;
+- gasket geometry;
+- inlet-hole count;
+- inlet-hole shape;
+- angular positions and spacing of inlet holes;
+- valves/construction features;
+- upright/horizontal orientation;
+- relative scale of both filters;
+- camera perspective;
+- crop/composition.
+
+PHASE 1 must use the real manufacturer source as the referenced edit target. If the image tool cannot consume that source, STOP. Do not call text-to-image.
+
+The source manufacturer paint and lithography remain unchanged during this phase unless the user explicitly requests a neutral geometry proof. Even then, geometry must come from a source-image edit, never reconstruction.
+
+User approval of PHASE 1 creates `GEOMETRY_APPROVED` and freezes that exact image lineage for later phases.
+
+### PHASE 2 — PAINT + LITHOGRAPHY ONLY
+
+Prerequisite: `GEOMETRY_APPROVED`.
+
+Input image MUST be the approved PHASE 1 geometry master, not a newly regenerated product.
+
+Only permitted changes:
+- can/container surface paint;
+- authorized lithography placed on the existing can surface.
+
+Mechanical pixels/features are immutable. Do not recreate the filter.
+
+Paint authority:
+- `ELIMFILTERS DARK CHARCOAL`
+- `#414141`
+- semi-matte industrial coating appearance.
+
+Lithography authority:
+- `ELIMFILTERS LITHOGRAPHY SILVER`
+- `#CBCBCB`
+- metallic silver satin appearance.
+
+Required artwork:
+- official ELIMFILTERS logo binary from `frontend/public/assets/logo-elimfilters.png`;
+- `TOTAL ASSET PROTECTION`;
+- exact database-resolved ELIMFILTERS SKU;
+- approved product descriptor;
+- official technology artwork/name from `frontend/public/assets/`;
+- `Powered Filtration`;
+- approved Installation Rotation Direction Marks;
+- same artwork both sides, fitted proportionally to exact printable area.
+
+Forbidden:
+- manufacturer/competitor branding left on final ELIMFILTERS artwork;
+- generated/recreated ELIMFILTERS logo;
+- generated/recreated technology logo when official asset exists;
+- white can when authority requires charcoal;
+- black, yellow, red or other secondary lithography;
+- QR;
+- OEM/cross-reference text;
+- technical specification panels;
+- performance/service-life claims;
+- website URLs;
+- badges/icons;
+- GERMAN QUALITY;
+- arbitrary characters or generic arrows.
+
+User approval creates `PAINT_LITHO_APPROVED`.
+
+### PHASE 3 — MICRO-ADJUSTMENTS ONLY
+
+Prerequisite: `PAINT_LITHO_APPROVED`.
+
+Only the explicitly requested element may change.
+
+Mandatory scope lock before edit:
+- target view: `VERTICAL_ONLY`, `HORIZONTAL_ONLY`, or `BOTH`;
+- target property: e.g. `SKU_TYPOGRAPHY_ONLY`, `LITHOGRAPHY_POSITION_ONLY`, `SPACING_ONLY`.
+
+Everything outside that scope is immutable.
+
+Example: if user asks to change only SKU font on vertical filter, horizontal filter must remain pixel/geometry/layout-equivalent to previously approved version.
+
+No cumulative unsolicited changes.
+
+Explicit approval creates `FINAL_APPROVED`.
+
+## Catalog resolution gate
+
+Before any ELIMFILTERS artwork is placed, resolve competitor code to ELIMFILTERS SKU from `world_catalogue.elimfilters_catalog`.
+
+Command:
 `node product-identity/scripts/resolve-competitor-sku.mjs --code=<CODE> --brand=<BRAND> --duty=HEAVY_DUTY`
 
 Rules:
-- zero exact matches → STOP;
-- multiple conflicting matches → STOP;
+- exactly one catalog-backed match required;
+- zero matches -> STOP;
+- conflicting matches -> STOP;
 - no inferred SKU;
-- no SKU built from competitor number;
-- no hardcoded fallback unless the catalog itself contains that exact resolved relation.
+- no competitor-number-derived SKU;
+- no remembered/manual fallback.
 
-The resolved SKU is the ONLY SKU allowed in the artwork.
+## Binary artwork gate
 
-### Gate 3 — Physical geometry lock
+Before PHASE 2, physically load the actual repository assets into the edit operation:
+- `frontend/public/assets/logo-elimfilters.png`;
+- exact approved technology binary from `frontend/public/assets/`.
 
-Treat source manufacturer image pixels/geometry as immutable except surface appearance.
+Text descriptions of those assets do not satisfy this gate.
 
-Preserve exactly:
-- overall silhouette;
+If an asset cannot be physically loaded/materialized into the image operation: `STOP_ASSET_MISSING`.
+
+## Required render manifest
+
+Before every image-tool call, establish a render manifest containing:
+- `phase`;
+- `competitor_code`;
+- `resolved_sku` when phase >= 2;
+- `source_image_id_or_path`;
+- `source_image_is_real_manufacturer=true`;
+- `geometry_master_id_or_path` for phase >= 2;
+- `official_logo_asset_path` for phase >= 2;
+- `official_technology_asset_path` for phase >= 2;
+- `edit_scope`;
+- `immutable_elements`;
+- `allowed_changes`;
+- `RENDER_INPUTS_VERIFIED=true`.
+
+If any field required by the current phase is missing, do not call the image tool.
+
+## Tool-call enforcement
+
+The image operation must be an EDIT of the exact referenced source/master image.
+
+A call that has no usable referenced image target is invalid for this pipeline, even if the prompt says “preserve geometry”.
+
+If the tool reports or behaves as text-to-image/new generation (`edit_op` absent/null, source image not referenced, or no source lineage), REJECT the result automatically and do not present it as a valid phase output.
+
+## Pre-display QC
+
+Before showing any candidate, compare against the current immutable source/master:
+- silhouette;
 - height/diameter ratio;
-- top and bottom seam geometry;
-- baseplate geometry;
-- thread opening and thread appearance;
-- gasket location and geometry;
-- hole count, hole shape, angular positions, relative spacing and visible pattern;
-- valves and construction details;
-- perspective and orientation of each product view;
-- relative scale between multiple views.
+- baseplate;
+- thread;
+- gasket;
+- hole count and positions;
+- seams;
+- perspective;
+- relative scale and composition.
 
-Do not redraw the baseplate. Do not regenerate the thread. Do not alter hole count.
+For PHASE 2+ also verify:
+- exact resolved SKU;
+- official logo asset;
+- official technology asset;
+- charcoal `#414141` container;
+- silver `#CBCBCB` lithography;
+- authorized hierarchy only;
+- no extra text/colors.
 
-If the generated/edit output changes any locked mechanical feature: REJECT output; do not present it as a candidate.
+Any mismatch = reject internally; do not present as a candidate.
 
-### Gate 4 — Load official binary artwork
+## Sources of authority
 
-The following assets must be physically loaded from repository files into the edit operation, not described by text and not recreated:
+Read before work:
+1. `data/product-identity/authorities/cylindrical-print-layout-authority.json`
+2. `product-identity/ai-media/image-generation-rules.v1.json`
+3. `product-identity/brand-dna/elimfilters-brand.v1.json`
+4. `product-identity/PIPELINE_PRODUCT_IMAGE_AUTHORITY.md`
+5. `product-identity/pipelines/manufacturer-source-rebrand.v1.json`
+6. exact SKU production/source/pilot records when applicable.
 
-- Logo: `frontend/public/assets/logo-elimfilters.png`
-- Technology artwork: exact approved file in `frontend/public/assets/` for the resolved category/technology.
+Conflict order:
+- exact manufacturer image controls physical geometry;
+- approved phase master controls subsequent-phase geometry/composition;
+- catalog DB controls SKU;
+- cylindrical authority controls ELIMFILTERS paint/lithography.
 
-The official logo must be used as the actual source asset. Typography resembling the logo is NOT acceptable.
+## Pilot approval gate
 
-If an official asset cannot be loaded/materialized/downloaded: `STOP_ASSET_MISSING`.
+During pilot validation:
+- never auto-approve;
+- never advance on silence;
+- never process next SKU before explicit approval;
+- never start batch automation before user authorization.
 
-### Gate 5 — Artwork authority
+## Fleetguard control examples
 
-Apply only the approved cylindrical artwork:
-- container: `ELIMFILTERS DARK CHARCOAL`, digital master `#414141`;
-- lithography: `ELIMFILTERS LITHOGRAPHY SILVER`, digital master `#CBCBCB`;
-- official ELIMFILTERS logo asset;
-- `TOTAL ASSET PROTECTION`;
-- exact resolved ELIMFILTERS SKU;
-- approved product descriptor;
-- technology artwork/name from category;
-- `Powered Filtration`;
-- approved Installation Rotation Direction Marks;
-- same artwork on both sides, adapted proportionally to exact container printable area.
+LF670: approved geometry includes the exact six-hole visible baseplate arrangement from its real Fleetguard source. That geometry must never be reused for another SKU.
 
-No extra text.
-
-Forbidden unless central authority is revised:
-- yellow brand graphics;
-- pure white lithography;
-- black secondary print;
-- QR codes;
-- OEM/cross-reference text on can artwork;
-- technical spec panels;
-- efficiency/performance claims;
-- website URLs;
-- badges/icons;
-- `GERMAN QUALITY`;
-- arbitrary arrows or technical characters;
-- generated replacement logo;
-- generated replacement technology logo.
-
-### Gate 6 — Edit, do not reconstruct
-
-The image model/tool must receive the real manufacturer image as the referenced image target/source.
-
-Instruction semantics:
-- preserve source geometry and composition;
-- change only can surface color and authorized lithography;
-- leave exposed metal, gasket, thread and mechanical parts physically unchanged except unavoidable lighting integration;
-- do not create a new product from scratch.
-
-If the tool cannot reference the real source image and official artwork assets in the same job, STOP rather than run text-to-image.
-
-### Gate 7 — Pre-display QC
-
-Before showing a candidate image, verify:
-- source was real manufacturer image;
-- exact catalog SKU used;
-- official logo asset used;
-- official technology asset used;
-- baseplate matches source;
-- thread matches source;
-- gasket matches source;
-- hole count/pattern matches source;
-- proportions match source;
-- charcoal and silver system only;
-- no unauthorized text or colors;
-- SKU is present and readable;
-- no hallucinated characters in rotation marks;
-- product descriptor and technology are correct.
-
-Any failure = reject internally and regenerate only from the same authoritative inputs. Never rationalize a deviation.
-
-## Human approval gate
-
-During pilot validation, generated image status is always `PENDING_USER_APPROVAL`.
-
-Do not:
-- mark it approved automatically;
-- advance to next SKU;
-- start batch automation;
-- treat silence as approval.
-
-Only an explicit user approval closes the SKU.
-
-## Fleetguard pilot rule
-
-For the current Fleetguard Spin-On Lube pilot, items are processed sequentially. Existing approved items remain locked. Unapproved item must be completed and explicitly approved before moving forward.
-
-For LF670 specifically, the manufacturer source geometry includes the real six-hole visible baseplate pattern and its exact central thread/gasket arrangement. Do not substitute another baseplate or infer geometry from specifications.
+LF3620: must use its own exact Fleetguard source image. LF670 geometry, hole pattern, proportions, crop, or reconstructed approximations are prohibited.
 
 ## Output language
 
-When execution succeeds, show the candidate image with minimal commentary. When a gate fails, state the exact failing gate and stop. Do not fill the gap with a simulated image.
+When successful, show the image with minimal commentary. When a gate fails, state only the exact failing gate and stop. Never fill a failed gate with a simulated image.
