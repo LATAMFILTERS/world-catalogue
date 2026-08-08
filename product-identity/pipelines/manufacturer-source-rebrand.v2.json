@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.1",
+  "schema_version": "2.2",
   "pipeline_id": "ELIMFILTERS_MANUFACTURER_SOURCE_REBRAND",
   "status": "ACTIVE",
   "fail_closed": true,
@@ -7,33 +7,13 @@
   "preflight": {
     "required": true,
     "script": "product-identity/scripts/preflight-product-image.mjs",
-    "required_result": {
-      "manifest_status": "PASS",
-      "image_generation_enabled": true
-    },
+    "required_result": {"manifest_status": "PASS", "image_generation_enabled": true},
     "must_execute_live_database_lookup": true,
     "must_execute_technology_asset_resolution": true
   },
   "hard_render_gates": "product-identity/pipelines/render-hard-gates.v1.json",
-  "state_machine": ["SOURCE_LOCKED", "GEOMETRY_APPROVED", "PAINT_LITHO_APPROVED", "FINAL_APPROVED"],
-  "mandatory_chain": [
-    "MANUFACTURER_URL",
-    "REAL_SCREENSHOT",
-    "REAL_SOURCE_IMAGE",
-    "LIVE_DATABASE_LOOKUP",
-    "SKU_RESOLVED",
-    "FILTER_TYPE_RESOLVED",
-    "TECHNOLOGY_RESOLVED",
-    "OFFICIAL_ASSETS_RESOLVED",
-    "PREFLIGHT_PASS",
-    "PHASE_1",
-    "USER_APPROVAL",
-    "PHASE_2",
-    "USER_APPROVAL",
-    "PHASE_3",
-    "USER_APPROVAL",
-    "SAVE_JSON_AND_MASTER"
-  ],
+  "state_machine": ["SOURCE_LOCKED","GEOMETRY_APPROVED","PAINT_LITHO_APPROVED","FINAL_APPROVED"],
+  "mandatory_chain": ["MANUFACTURER_URL","REAL_SCREENSHOT","REAL_SOURCE_IMAGE","LIVE_DATABASE_LOOKUP","SKU_RESOLVED","FILTER_TYPE_RESOLVED","TECHNOLOGY_RESOLVED","OFFICIAL_ASSETS_RESOLVED","PREFLIGHT_PASS","PHASE_1","USER_APPROVAL","PHASE_2","USER_APPROVAL","PHASE_3","USER_APPROVAL","SAVE_JSON_AND_MASTER"],
   "database": {
     "table": "world_catalogue.elimfilters_catalog",
     "resolver": "product-identity/scripts/resolve-competitor-sku.mjs",
@@ -50,6 +30,15 @@
     "descriptor": "Powered Filtration",
     "manufacturer_white_allowed_in_phase_2": false,
     "secondary_print_colors_allowed": false
+  },
+  "render_purity": {
+    "validation_ui_must_never_appear_in_product_render": true,
+    "manifest_text_must_never_appear_in_product_render": true,
+    "database_text_must_never_appear_in_product_render": true,
+    "source_urls_must_never_appear_in_product_render": true,
+    "pipeline_status_text_must_never_appear_in_product_render": true,
+    "manufacturer_branding_must_never_appear_in_phase_2_plus": true,
+    "only_authorized_product_artwork_may_be_visible": true
   },
   "phase_1": {
     "mode": "GEOMETRY_ONLY",
@@ -70,18 +59,15 @@
     "single_view_requires_protected_opposite_view": true,
     "whole_composition_regeneration_allowed": false
   },
-  "post_render_reject_if": [
-    "EDIT_OP_NULL_OR_MISSING",
-    "SOURCE_LINEAGE_MISSING",
-    "BODY_REMAINS_MANUFACTURER_WHITE",
-    "BODY_NOT_414141_DARK_CHARCOAL",
-    "LITHOGRAPHY_NOT_CBCBCB_SILVER",
-    "SKU_MISMATCH",
-    "TECHNOLOGY_MISMATCH",
-    "GEOMETRY_DRIFT",
-    "PROTECTED_VIEW_CHANGED",
-    "COMPETITOR_BRANDING_PRESENT",
-    "SECONDARY_COLORS_PRESENT"
-  ],
+  "legacy_master_policy": {
+    "preserve_explicit_user_approval": true,
+    "do_not_falsely_claim_modern_lineage_pass": true,
+    "pre_enforcement_master_may_remain_locked_reference": true,
+    "future_regeneration_must_use_current_pipeline": true,
+    "legacy_geometry_may_be_reused_only_for_same_exact_sku": true,
+    "legacy_color_or_lithography_rules_conflicting_with_current_authority_must_be_retired_before_reuse": true,
+    "records_with_legacy_graphite_or_white_lithography_must_be_marked_migration_required": true
+  },
+  "post_render_reject_if": ["EDIT_OP_NULL_OR_MISSING","SOURCE_LINEAGE_MISSING","BODY_REMAINS_MANUFACTURER_WHITE","BODY_NOT_414141_DARK_CHARCOAL","LITHOGRAPHY_NOT_CBCBCB_SILVER","SKU_MISMATCH","TECHNOLOGY_MISMATCH","GEOMETRY_DRIFT","PROTECTED_VIEW_CHANGED","COMPETITOR_BRANDING_PRESENT","SECONDARY_COLORS_PRESENT","VALIDATION_UI_PRESENT","PIPELINE_TEXT_PRESENT"],
   "presentation_rule": "Rejected renders must not be presented as candidates."
 }
