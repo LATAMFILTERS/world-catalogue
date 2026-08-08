@@ -1,0 +1,905 @@
+{
+  "sku": "EF97440",
+  "segment": "HD",
+  "family": "fuel_filter",
+  "construction": "spin_on",
+  "technology": "SYNTEPORE™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "174.00",
+    "outer_diameter_mm": "93.00",
+    "inner_diameter_mm": null,
+    "thread": "1-14 UN",
+    "gasket": {
+      "od_mm": "72.00",
+      "id_mm": "62.00"
+    },
+    "crossrefs": [
+      {
+        "brand": "LPM",
+        "code": "00013505994",
+        "verified": true
+      },
+      {
+        "brand": "WALGAHN-MOTOREN",
+        "code": "00811464",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "025039",
+        "verified": true
+      },
+      {
+        "brand": "VERMEER",
+        "code": "102387001",
+        "verified": true
+      },
+      {
+        "brand": "ORENSTEIN-KOPPEL",
+        "code": "102604",
+        "verified": true
+      },
+      {
+        "brand": "TEREX",
+        "code": "102604",
+        "verified": true
+      },
+      {
+        "brand": "PH-HARNISCHFEGER",
+        "code": "1046Z545",
+        "verified": true
+      },
+      {
+        "brand": "MASSEY-FERGUSON",
+        "code": "1055915M3",
+        "verified": true
+      },
+      {
+        "brand": "ISUZU",
+        "code": "1132400440",
+        "verified": true
+      },
+      {
+        "brand": "MISFAT",
+        "code": "12431300",
+        "verified": true
+      },
+      {
+        "brand": "DRESSER",
+        "code": "127581",
+        "verified": true
+      },
+      {
+        "brand": "AUSTOFT",
+        "code": "136947",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN MOTORS CORPORATION",
+        "code": "14240001",
+        "verified": true
+      },
+      {
+        "brand": "EXMAN",
+        "code": "14240001",
+        "verified": true
+      },
+      {
+        "brand": "EXXEL",
+        "code": "14240001",
+        "verified": true
+      },
+      {
+        "brand": "FILTRATION-LTD",
+        "code": "14590",
+        "verified": true
+      },
+      {
+        "brand": "ONAN",
+        "code": "1492231",
+        "verified": true
+      },
+      {
+        "brand": "MAGNETI-MARELLI",
+        "code": "154076390240",
+        "verified": true
+      },
+      {
+        "brand": "ERF",
+        "code": "156172",
+        "verified": true
+      },
+      {
+        "brand": "NISSAN",
+        "code": "1644499011",
+        "verified": true
+      },
+      {
+        "brand": "WIRTGEN",
+        "code": "1901",
+        "verified": true
+      },
+      {
+        "brand": "INGERSOLL-RAND",
+        "code": "1P2299",
+        "verified": true
+      },
+      {
+        "brand": "TOWMOTOR",
+        "code": "1P2299",
+        "verified": true
+      },
+      {
+        "brand": "VOLVO",
+        "code": "1R0711",
+        "verified": true
+      },
+      {
+        "brand": "MACK",
+        "code": "2191P557440",
+        "verified": true
+      },
+      {
+        "brand": "ZETTELMEYER",
+        "code": "2288369",
+        "verified": true
+      },
+      {
+        "brand": "GENERAL-MOTORS",
+        "code": "25011493",
+        "verified": true
+      },
+      {
+        "brand": "DELUXE",
+        "code": "269",
+        "verified": true
+      },
+      {
+        "brand": "HY-MAC",
+        "code": "2707056",
+        "verified": true
+      },
+      {
+        "brand": "HYMAC",
+        "code": "2707056",
+        "verified": true
+      },
+      {
+        "brand": "CASE",
+        "code": "28025",
+        "verified": true
+      },
+      {
+        "brand": "STEIGER",
+        "code": "2825",
+        "verified": true
+      },
+      {
+        "brand": "ATLAS-COPCO",
+        "code": "2900535200",
+        "verified": true
+      },
+      {
+        "brand": "ATLAS-WEYHAUSEN",
+        "code": "2900535200",
+        "verified": true
+      },
+      {
+        "brand": "MORBARK",
+        "code": "29245028",
+        "verified": true
+      },
+      {
+        "brand": "TIM",
+        "code": "2Y8670",
+        "verified": true
+      },
+      {
+        "brand": "CARRIER-TRANSICOLD",
+        "code": "3000302",
+        "verified": true
+      },
+      {
+        "brand": "TRANSICOLD",
+        "code": "3000302",
+        "verified": true
+      },
+      {
+        "brand": "NACCO",
+        "code": "3027062",
+        "verified": true
+      },
+      {
+        "brand": "WHITE",
+        "code": "303498387",
+        "verified": true
+      },
+      {
+        "brand": "MITSUBISHI",
+        "code": "3256220300D",
+        "verified": true
+      },
+      {
+        "brand": "JCB",
+        "code": "32919402",
+        "verified": true
+      },
+      {
+        "brand": "MERCEDES-BENZ",
+        "code": "3764770001",
+        "verified": true
+      },
+      {
+        "brand": "FMC",
+        "code": "3A11554",
+        "verified": true
+      },
+      {
+        "brand": "JOHNBEAN",
+        "code": "3A11554",
+        "verified": true
+      },
+      {
+        "brand": "LINK-BELT",
+        "code": "3A11554",
+        "verified": true
+      },
+      {
+        "brand": "DONIT",
+        "code": "432104",
+        "verified": true
+      },
+      {
+        "brand": "DIESEL-TECHNIC",
+        "code": "464582",
+        "verified": true
+      },
+      {
+        "brand": "STEWART-STEVENSON",
+        "code": "49489",
+        "verified": true
+      },
+      {
+        "brand": "JOHN-DEERE",
+        "code": "4S00247",
+        "verified": true
+      },
+      {
+        "brand": "KOLBENSCHMIDT",
+        "code": "50013041",
+        "verified": true
+      },
+      {
+        "brand": "JOY",
+        "code": "5194215",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN-PARTS",
+        "code": "523",
+        "verified": true
+      },
+      {
+        "brand": "BLOUNT",
+        "code": "538323",
+        "verified": true
+      },
+      {
+        "brand": "FILTRAUTO-UK",
+        "code": "592CAT",
+        "verified": true
+      },
+      {
+        "brand": "EIMCO",
+        "code": "64107171",
+        "verified": true
+      },
+      {
+        "brand": "SANDVIK",
+        "code": "64107171",
+        "verified": true
+      },
+      {
+        "brand": "TAMROCK",
+        "code": "64107171",
+        "verified": true
+      },
+      {
+        "brand": "UNITED-CENTRAL-INDUSTRIAL-SUPPLY",
+        "code": "688988",
+        "verified": true
+      },
+      {
+        "brand": "BOWMAKER",
+        "code": "6L7440",
+        "verified": true
+      },
+      {
+        "brand": "AG CHEM EQUIPMENT",
+        "code": "702142C1",
+        "verified": true
+      },
+      {
+        "brand": "BARBER-GREENE",
+        "code": "702142C1",
+        "verified": true
+      },
+      {
+        "brand": "AG-CHEM-EQUIPMENT",
+        "code": "720369",
+        "verified": true
+      },
+      {
+        "brand": "AGCO",
+        "code": "720369",
+        "verified": true
+      },
+      {
+        "brand": "DYNAPAC",
+        "code": "752047",
+        "verified": true
+      },
+      {
+        "brand": "HITACHI",
+        "code": "76575245",
+        "verified": true
+      },
+      {
+        "brand": "CATERPILLAR",
+        "code": "7S1220",
+        "verified": true
+      },
+      {
+        "brand": "GREY-FRIARS",
+        "code": "804S",
+        "verified": true
+      },
+      {
+        "brand": "BIG-A",
+        "code": "850",
+        "verified": true
+      },
+      {
+        "brand": "CARQUEST",
+        "code": "86352",
+        "verified": true
+      },
+      {
+        "brand": "SAVARA",
+        "code": "92815917",
+        "verified": true
+      },
+      {
+        "brand": "GROVE",
+        "code": "9414100362",
+        "verified": true
+      },
+      {
+        "brand": "FORD",
+        "code": "9576P557440",
+        "verified": true
+      },
+      {
+        "brand": "COMPAIR",
+        "code": "9826250480002",
+        "verified": true
+      },
+      {
+        "brand": "DEMAG",
+        "code": "988694",
+        "verified": true
+      },
+      {
+        "brand": "GALION",
+        "code": "99876",
+        "verified": true
+      },
+      {
+        "brand": "HEAVY-DUTY-AIR",
+        "code": "A16005",
+        "verified": true
+      },
+      {
+        "brand": "PARTMO-FILTERS",
+        "code": "A1P2299",
+        "verified": true
+      },
+      {
+        "brand": "AVELING-BARFORD",
+        "code": "ABP3001579",
+        "verified": true
+      },
+      {
+        "brand": "ALLIANCE",
+        "code": "ABPN10GFF5078",
+        "verified": true
+      },
+      {
+        "brand": "AIR-MAZE",
+        "code": "AMF185",
+        "verified": true
+      },
+      {
+        "brand": "COOPERS",
+        "code": "AZF076",
+        "verified": true
+      },
+      {
+        "brand": "PBR",
+        "code": "BG1505",
+        "verified": true
+      },
+      {
+        "brand": "ROMAN",
+        "code": "CBOS6172",
+        "verified": true
+      },
+      {
+        "brand": "PURFLUX",
+        "code": "CS163A",
+        "verified": true
+      },
+      {
+        "brand": "SOPARIS",
+        "code": "CVN9215",
+        "verified": true
+      },
+      {
+        "brand": "MASTE",
+        "code": "DK77F",
+        "verified": true
+      },
+      {
+        "brand": "CLEAN",
+        "code": "DN264",
+        "verified": true
+      },
+      {
+        "brand": "FREIGHTLINER",
+        "code": "DNP557440",
+        "verified": true
+      },
+      {
+        "brand": "BERGERAT-MONNOYEUR",
+        "code": "E6777",
+        "verified": true
+      },
+      {
+        "brand": "POCLAIN",
+        "code": "F0950549",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "F144",
+        "verified": true
+      },
+      {
+        "brand": "ASAS",
+        "code": "F232",
+        "verified": true
+      },
+      {
+        "brand": "AMC",
+        "code": "FC24030",
+        "verified": true
+      },
+      {
+        "brand": "FAMEL",
+        "code": "FCS42",
+        "verified": true
+      },
+      {
+        "brand": "DIAMOND",
+        "code": "FD744",
+        "verified": true
+      },
+      {
+        "brand": "FSA",
+        "code": "FF2004",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "FF557440",
+        "verified": true
+      },
+      {
+        "brand": "FLEETRITE",
+        "code": "FFR8185",
+        "verified": true
+      },
+      {
+        "brand": "UNICO",
+        "code": "FI91703",
+        "verified": true
+      },
+      {
+        "brand": "CHAMP",
+        "code": "FP440F",
+        "verified": true
+      },
+      {
+        "brand": "CHAMPION-LABORATORIES",
+        "code": "FP440F",
+        "verified": true
+      },
+      {
+        "brand": "SOGEFI",
+        "code": "FT4737",
+        "verified": true
+      },
+      {
+        "brand": "GUARDIAN",
+        "code": "G033352",
+        "verified": true
+      },
+      {
+        "brand": "GUIOT",
+        "code": "GF1104",
+        "verified": true
+      },
+      {
+        "brand": "GIF",
+        "code": "GF609",
+        "verified": true
+      },
+      {
+        "brand": "GONHER",
+        "code": "GP110",
+        "verified": true
+      },
+      {
+        "brand": "HAVAM",
+        "code": "HD0395",
+        "verified": true
+      },
+      {
+        "brand": "TEXACO",
+        "code": "HDF11",
+        "verified": true
+      },
+      {
+        "brand": "TECAFILTRES",
+        "code": "KC28",
+        "verified": true
+      },
+      {
+        "brand": "ASAHI",
+        "code": "KF1560",
+        "verified": true
+      },
+      {
+        "brand": "KELTEC",
+        "code": "KL185019",
+        "verified": true
+      },
+      {
+        "brand": "KENWORTH",
+        "code": "KW185",
+        "verified": true
+      },
+      {
+        "brand": "MOPAR",
+        "code": "L309",
+        "verified": true
+      },
+      {
+        "brand": "AP-LOCKHEED",
+        "code": "LK81300",
+        "verified": true
+      },
+      {
+        "brand": "M",
+        "code": "MP455",
+        "verified": true
+      },
+      {
+        "brand": "MARINE-PERFORMANCE",
+        "code": "MPL377",
+        "verified": true
+      },
+      {
+        "brand": "STANDPIPE",
+        "code": "NO",
+        "verified": true
+      },
+      {
+        "brand": "TEHO",
+        "code": "OK63",
+        "verified": true
+      },
+      {
+        "brand": "THERMO-KING",
+        "code": "P300030200",
+        "verified": true
+      },
+      {
+        "brand": "PETERBILT",
+        "code": "P5",
+        "verified": true
+      },
+      {
+        "brand": "PHILLIPS-66",
+        "code": "P53",
+        "verified": true
+      },
+      {
+        "brand": "CONTINENTAL",
+        "code": "PC1104",
+        "verified": true
+      },
+      {
+        "brand": "WYTWORNIA-FILTROW",
+        "code": "PD101",
+        "verified": true
+      },
+      {
+        "brand": "AIR-REFINER",
+        "code": "PF185",
+        "verified": true
+      },
+      {
+        "brand": "PERRY",
+        "code": "PF269",
+        "verified": true
+      },
+      {
+        "brand": "MICROPORE",
+        "code": "PHM1104",
+        "verified": true
+      },
+      {
+        "brand": "CO-OP",
+        "code": "PL6L7440",
+        "verified": true
+      },
+      {
+        "brand": "CYCLONE",
+        "code": "PM6L7440",
+        "verified": true
+      },
+      {
+        "brand": "TECFIL",
+        "code": "PS744",
+        "verified": true
+      },
+      {
+        "brand": "QUAKER-STATE",
+        "code": "QS1104",
+        "verified": true
+      },
+      {
+        "brand": "TECNOCAR",
+        "code": "RN180",
+        "verified": true
+      },
+      {
+        "brand": "WGB",
+        "code": "S269CP",
+        "verified": true
+      },
+      {
+        "brand": "SURE",
+        "code": "SFF8290",
+        "verified": true
+      },
+      {
+        "brand": "SCHUPP",
+        "code": "SK3510",
+        "verified": true
+      },
+      {
+        "brand": "HIFI",
+        "code": "SN185",
+        "verified": true
+      },
+      {
+        "brand": "JURA",
+        "code": "SN185",
+        "verified": true
+      },
+      {
+        "brand": "ALCO",
+        "code": "SP941",
+        "verified": true
+      },
+      {
+        "brand": "WOODGATE",
+        "code": "WGF232",
+        "verified": true
+      },
+      {
+        "brand": "FODEN-TRUCKS",
+        "code": "Y05004301",
+        "verified": true
+      },
+      {
+        "brand": "PACCAR",
+        "code": "Y05008005",
+        "verified": true
+      },
+      {
+        "brand": "RYCO",
+        "code": "Z51",
+        "verified": true
+      },
+      {
+        "brand": "GUD",
+        "code": "Z575",
+        "verified": true
+      },
+      {
+        "brand": "FIL",
+        "code": "ZP512F",
+        "verified": true
+      },
+      {
+        "brand": "UFI",
+        "code": "2431300",
+        "verified": true
+      },
+      {
+        "brand": "MANN-HUMMEL",
+        "code": "988694",
+        "verified": true
+      },
+      {
+        "brand": "SAKURA",
+        "code": "EX14240001",
+        "verified": true
+      },
+      {
+        "brand": "FIAAM",
+        "code": "FT4737",
+        "verified": true
+      },
+      {
+        "brand": "HENGST",
+        "code": "H19WK01",
+        "verified": true
+      },
+      {
+        "brand": "KNECHT",
+        "code": "KC28",
+        "verified": true
+      },
+      {
+        "brand": "LUBER-FINER",
+        "code": "LFF4294",
+        "verified": true
+      },
+      {
+        "brand": "PARKER",
+        "code": "PER231",
+        "verified": true
+      },
+      {
+        "brand": "SOFIMA",
+        "code": "S0810NR",
+        "verified": true
+      },
+      {
+        "brand": "HYSTER",
+        "code": "3027062",
+        "verified": true
+      },
+      {
+        "brand": "KOMATSU",
+        "code": "6003118281",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FF5254",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FF5336",
+        "verified": true
+      },
+      {
+        "brand": "BOSCH",
+        "code": "1457434180",
+        "verified": true
+      },
+      {
+        "brand": "WIX",
+        "code": "33352",
+        "verified": true
+      },
+      {
+        "brand": "HASTINGS",
+        "code": "984",
+        "verified": true
+      },
+      {
+        "brand": "MANN",
+        "code": "988694",
+        "verified": true
+      },
+      {
+        "brand": "BALDWIN",
+        "code": "BF1248",
+        "verified": true
+      },
+      {
+        "brand": "MOTORCRAFT",
+        "code": "FD71",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FF185",
+        "verified": true
+      },
+      {
+        "brand": "MAHLE",
+        "code": "KC28",
+        "verified": true
+      }
+    ],
+    "standards": [
+      "SAE J1985"
+    ],
+    "filter_media": null,
+    "micron_rating": "9",
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": "100",
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:04.384Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 16182
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EF97440",
+      "fuel",
+      "SYNTEPORE™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

@@ -34,7 +34,7 @@ function dimensionMetric(master, surface) {
   const ph = Number(printable.height_mm);
   const pc = Number(printable.circumference_mm);
 
-  if (surface === 'cylinder' && Number.isFinite(ph) && Number.isFinite(pc)) {
+  if (surface === 'cylinder' && printable.height_mm != null && printable.circumference_mm != null && Number.isFinite(ph) && Number.isFinite(pc)) {
     return { kind: 'printable_area_mm2', value: ph * pc };
   }
   if (Number.isFinite(h) && Number.isFinite(od)) {

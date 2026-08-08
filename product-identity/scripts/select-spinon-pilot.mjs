@@ -26,7 +26,10 @@ function uniquePush(target, seen, row, reason) {
     height_mm: row.height_mm,
     outer_diameter_mm: row.outer_diameter_mm,
     thread_size: row.thread_size ?? null,
-    selection_reason: reason
+    duty: row.duty ?? null,
+    construction: 'spin_on',
+    selection_reason: reason,
+    source: 'world_catalogue'
   });
 }
 
@@ -57,6 +60,11 @@ export async function selectSpinOnPilot({
           OR LOWER(COALESCE(attachment_type, '')) LIKE '%spin%'
           OR LOWER(COALESCE(sub_type, '')) LIKE '%spin%'
         )
+        -- Excludes rows outside physically plausible bounds for an HD spin-on
+        -- cartridge (catches unit-mismatch and single-point data errors without
+        -- altering source data)
+        AND height_mm::numeric BETWEEN 20 AND 600
+        AND outer_diameter_mm::numeric BETWEEN 20 AND 250
       ORDER BY sku
     `);
 

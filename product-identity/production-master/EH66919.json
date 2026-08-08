@@ -1,0 +1,98 @@
+{
+  "sku": "EH66919",
+  "segment": "HD",
+  "family": "hydraulic_filter",
+  "construction": "spin_on",
+  "technology": "NANOFORCE™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "146.81",
+    "outer_diameter_mm": "92.96",
+    "inner_diameter_mm": null,
+    "thread": "1 1/2-16 UN",
+    "gasket": {
+      "od_mm": "86.00",
+      "id_mm": "73.40"
+    },
+    "crossrefs": [
+      {
+        "brand": "CARQUEST",
+        "code": "84401",
+        "verified": true
+      },
+      {
+        "brand": "BALDWIN",
+        "code": "BT8316-MPG",
+        "verified": true
+      },
+      {
+        "brand": "HASTINGS",
+        "code": "HF961",
+        "verified": true
+      },
+      {
+        "brand": "MANN",
+        "code": "W10008",
+        "verified": true
+      }
+    ],
+    "standards": [],
+    "filter_media": null,
+    "micron_rating": null,
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": null,
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:03.337Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 13647.4576
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EH66919",
+      "hydraulic",
+      "NANOFORCE™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}
