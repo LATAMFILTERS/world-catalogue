@@ -1,0 +1,73 @@
+{
+  "schema_version": "2.0",
+  "scope": "FLEETGUARD_SPINON_LUBE_PAGE_1_POSITIONS_01_05",
+  "pipeline_required": "2.2",
+  "audited_at": "2026-08-08T15:59:00-05:00",
+  "positions": [
+    {
+      "position": "1/20",
+      "fleetguard": "LF14000NN",
+      "elimfilters": "EL87900",
+      "geometry": "APPROVED_LOCKED",
+      "visual_protocol": "LEGACY",
+      "current_status": "MIGRATION_REQUIRED_BEFORE_REUSE",
+      "required_target_body": "#414141",
+      "required_target_lithography": "#CBCBCB",
+      "future_render_requires_pipeline_pass": true
+    },
+    {
+      "position": "2/20",
+      "fleetguard": "LF3970",
+      "elimfilters": "EL80428",
+      "geometry": "APPROVED_LOCKED",
+      "visual_protocol": "LEGACY",
+      "current_status": "MIGRATION_REQUIRED_BEFORE_REUSE",
+      "required_target_body": "#414141",
+      "required_target_lithography": "#CBCBCB",
+      "future_render_requires_pipeline_pass": true
+    },
+    {
+      "position": "3/20",
+      "fleetguard": "LF9009",
+      "elimfilters": null,
+      "geometry": "NOT_YET_APPROVED",
+      "current_status": "PENDING_FULL_PIPELINE_EXECUTION",
+      "live_database_resolution_required": true
+    },
+    {
+      "position": "4/20",
+      "fleetguard": "LF3620",
+      "elimfilters": "EL82100",
+      "geometry": "APPROVED_LOCKED",
+      "visual_master": "FINAL_APPROVED",
+      "legacy_provenance": true,
+      "user_approval_preserved": true,
+      "future_regeneration_requires_pipeline_pass": true,
+      "do_not_claim_legacy_render_lineage_as_v2_2_pass": true
+    },
+    {
+      "position": "5/20",
+      "fleetguard": "LF670",
+      "elimfilters": "EL81670",
+      "geometry": "APPROVED_LOCKED",
+      "visual_master": "FINAL_APPROVED",
+      "legacy_provenance": true,
+      "user_approval_preserved": true,
+      "future_regeneration_requires_pipeline_pass": true,
+      "do_not_claim_legacy_render_lineage_as_v2_2_pass": true
+    }
+  ],
+  "global_rules": {
+    "real_manufacturer_screenshot_required": true,
+    "real_manufacturer_source_required": true,
+    "live_database_lookup_required": true,
+    "technology_asset_resolution_required": true,
+    "official_logo_asset_required": true,
+    "manifest_pass_required": true,
+    "edit_only_required": true,
+    "body_hex": "#414141",
+    "lithography_hex": "#CBCBCB",
+    "render_purity_required": true,
+    "validation_ui_forbidden_in_product_render": true
+  }
+}
