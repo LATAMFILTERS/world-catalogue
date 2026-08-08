@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "recordType": "ELIMFILTERS_HD_PRODUCT_IDENTITY",
+  "sku": "EL82100",
+  "product": {
+    "brand": "ELIMFILTERS",
+    "filterType": "LUBE",
+    "productLabel": "Lube Filter",
+    "duty": "HD",
+    "installationType": "SPIN-ON",
+    "technology": "SYNTRAX™",
+    "technologyDescriptor": "Powered Filtration",
+    "positioningLine": "TOTAL ASSET PROTECTION"
+  },
+  "crossReference": {
+    "primaryBase": {
+      "manufacturer": "DONALDSON",
+      "code": "P552100"
+    },
+    "physicalReference": {
+      "manufacturer": "FLEETGUARD",
+      "code": "LF3620"
+    },
+    "catalogResolution": "LF3620 → EL82100"
+  },
+  "technicalData": {
+    "source": "elimfilters_catalog",
+    "status": "USE_DATABASE_RECORD",
+    "inheritFromApprovedCatalogRecord": true,
+    "doNotInferFromOtherSku": true
+  },
+  "artwork": {
+    "status": "AUTHORIZED",
+    "approvedOn": "2026-08-08",
+    "format": "DIRECT_CAN_PRINT",
+    "designation": "AUTHORIZED_PRODUCT_MASTER",
+    "visualReferenceSku": "EL82100",
+    "print": [
+      "Elimfilters®",
+      "TOTAL ASSET PROTECTION",
+      "EL82100",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "visualLock": {
+      "bodyColor": "DARK_CHARCOAL",
+      "paintFinish": "APPROVED_ELIMFILTERS_GRAY",
+      "printColor": "WHITE_SILVER",
+      "backgroundForMasterImage": "WHITE",
+      "geometryReference": "FLEETGUARD_LF3620",
+      "geometryLocked": true,
+      "paintLocked": true,
+      "lithographyLocked": true,
+      "typographyPlacementLocked": true,
+      "skuLocked": true,
+      "positioningLineLocked": true,
+      "positioningLine": "TOTAL ASSET PROTECTION",
+      "legacyGermanQualityForbidden": true
+    },
+    "sourceAsset": {
+      "filename": "filtros_industriales_elimfilters_en_estudio_blanco.png",
+      "role": "AUTHORIZED_EL82100_VISUAL_REFERENCE",
+      "status": "MASTER_REFERENCE"
+    }
+  },
+  "workflow": {
+    "family": "HD",
+    "pilotSequence": "SPIN-ON",
+    "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
+    "notes": "Authorized EL82100 master. Preserve the approved LF3620-specific physical geometry, ELIMFILTERS dark-charcoal paint, approved ELIMFILTERS lithography, TOTAL ASSET PROTECTION positioning line, EL82100 SKU, Lube Filter designation and SYNTRAX Powered Filtration identity. Do not reuse geometry or technical specifications from EL83000 or any other SKU."
+  }
+}
