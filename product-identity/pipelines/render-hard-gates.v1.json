@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "pre_render_required": [
+    "REAL_MANUFACTURER_SCREENSHOT",
+    "REAL_MANUFACTURER_SOURCE_IMAGE",
+    "LIVE_DATABASE_SKU_RESOLUTION",
+    "FILTER_TYPE_RESOLUTION",
+    "TECHNOLOGY_RESOLUTION",
+    "OFFICIAL_LOGO_BINARY",
+    "OFFICIAL_TECHNOLOGY_BINARY",
+    "MANIFEST_PASS"
+  ],
+  "phase_2_required_values": {
+    "container_color_hex": "#414141",
+    "lithography_color_hex": "#CBCBCB",
+    "render_mode": "EDIT_ONLY",
+    "competitor_branding_allowed": false,
+    "secondary_colors_allowed": false
+  },
+  "post_render_hard_rejects": [
+    "EDIT_OP_NULL_OR_MISSING",
+    "SOURCE_LINEAGE_MISSING",
+    "BODY_REMAINS_MANUFACTURER_WHITE",
+    "BODY_NOT_414141_DARK_CHARCOAL",
+    "LITHOGRAPHY_NOT_CBCBCB_SILVER",
+    "SKU_MISMATCH",
+    "TECHNOLOGY_MISMATCH",
+    "GEOMETRY_DRIFT",
+    "PROTECTED_VIEW_CHANGED",
+    "COMPETITOR_BRANDING_PRESENT",
+    "SECONDARY_COLORS_PRESENT"
+  ],
+  "presentation_rule": "A rejected render must never be shown to the user as a candidate."
+}
