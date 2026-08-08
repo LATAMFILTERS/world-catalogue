@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "status": "ACTIVE",
   "fail_closed": true,
   "pre_tool_call_required": [
@@ -24,10 +24,26 @@
     "other_sku_screenshot_forbidden": true,
     "geometry_must_be_derived_from_this_screen_or_its_exact_source_image": true
   },
+  "lineage_gate": {
+    "mode": "APPLICATION_VERIFIED",
+    "engine_edit_op_required": false,
+    "engine_edit_op_null_is_not_failure_by_itself": true,
+    "required": [
+      "CURRENT_SKU_SCREENSHOT_ARTIFACT_REFERENCE",
+      "CURRENT_SKU_BINDING",
+      "SOURCE_GEOMETRY_SIGNATURE",
+      "LIVE_DATABASE_RESOLUTION_EVIDENCE",
+      "RESOLVED_TECHNOLOGY_EVIDENCE",
+      "OFFICIAL_ASSET_EVIDENCE",
+      "OUTPUT_GEN_ID",
+      "POST_RENDER_GEOMETRY_MATCH_PASS",
+      "POST_RENDER_ARTWORK_MATCH_PASS"
+    ]
+  },
   "phase_2_required_values": {
     "container_color_hex": "#414141",
     "lithography_color_hex": "#CBCBCB",
-    "render_mode": "EDIT_ONLY",
+    "render_mode": "SOURCE_REFERENCED_TRANSFORMATION",
     "competitor_branding_allowed": false,
     "secondary_colors_allowed": false,
     "validation_ui_allowed": false,
@@ -43,8 +59,8 @@
     "legacy_provenance_must_not_be_claimed_as_current_lineage_pass": true
   },
   "post_render_hard_rejects": [
-    "EDIT_OP_NULL_OR_MISSING",
-    "SOURCE_LINEAGE_MISSING",
+    "APPLICATION_LINEAGE_EVIDENCE_MISSING",
+    "SOURCE_BINDING_MISSING",
     "BODY_REMAINS_MANUFACTURER_WHITE",
     "BODY_NOT_414141_DARK_CHARCOAL",
     "LITHOGRAPHY_NOT_CBCBCB_SILVER",
