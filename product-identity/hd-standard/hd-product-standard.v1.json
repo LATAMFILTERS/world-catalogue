@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "segment": "HD",
+  "individual_box_default": false,
+  "families": [
+    "oil_filter",
+    "fuel_filter",
+    "fuel_water_separator",
+    "air_filter",
+    "cabin_air_filter",
+    "hydraulic_filter",
+    "coolant_filter",
+    "crankcase_ventilation_filter",
+    "air_dryer_cartridge",
+    "special_element",
+    "housing"
+  ],
+  "front_face_priority": [
+    "logotype",
+    "tagline",
+    "product_code",
+    "filter_type",
+    "technology"
+  ],
+  "rear_face_priority": [
+    "isotype",
+    "qr",
+    "approved_oem_equivalences",
+    "applicable_standards"
+  ],
+  "oem_equivalence": {
+    "label": "Equivalent to",
+    "max_printed": 3,
+    "source": "world_catalogue_verified_crossrefs"
+  },
+  "qr": {
+    "destination": "canonical_product_technical_sheet",
+    "required_when_printable_area_allows": true
+  },
+  "factory_owned_markings": [
+    "lot_code",
+    "manufacturing_date_or_batch_marking"
+  ],
+  "excluded_from_body_lithography": [
+    "long_installation_instructions",
+    "long_application_lists",
+    "full_cross_reference_lists",
+    "extended_technical_specifications"
+  ],
+  "spin_on_top_plate": {
+    "installation_rotation_arrow": "allowed_when_product_specific_and_factory_verified",
+    "generic_instruction_text": false
+  },
+  "small_surface_degradation_order": [
+    "applicable_standards",
+    "third_oem_equivalence",
+    "second_oem_equivalence",
+    "technology",
+    "tagline"
+  ],
+  "never_remove": [
+    "logotype",
+    "product_code",
+    "filter_type"
+  ],
+  "release_policy": "No dimensional thresholds are guessed. Template assignment requires verified physical dimensions and printable-area measurements."
+}
