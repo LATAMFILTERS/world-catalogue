@@ -29,7 +29,7 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             marginBottom: '1.25rem',
           }}>
-            // {architecture.platform}
+            {`// ${architecture.platform}`}
           </p>
 
           <h2 style={{
