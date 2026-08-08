@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1",
+  "schemaVersion": "1.2",
   "recordType": "ELIMFILTERS_HD_PRODUCT_IDENTITY",
   "sku": "EL82100",
   "product": {
@@ -24,7 +24,7 @@
     "catalogResolution": "LF3620 → EL82100"
   },
   "technicalData": {
-    "source": "elimfilters_catalog",
+    "source": "world_catalogue.elimfilters_catalog",
     "status": "USE_DATABASE_RECORD",
     "inheritFromApprovedCatalogRecord": true,
     "doNotInferFromOtherSku": true
@@ -60,15 +60,18 @@
     },
     "approvedRender": {
       "pilotPosition": "4/20",
-      "genId": "7c935e28-49b3-48c6-a87d-3bdc353c863e",
+      "genId": "7b73c420-cb44-4f56-9cf5-528e0fe90cd0",
       "approvalState": "FINAL_APPROVED",
-      "approvedBy": "USER"
+      "approvedBy": "USER",
+      "approvedAt": "2026-08-08T15:46:00-05:00",
+      "replacesGenId": "7c935e28-49b3-48c6-a87d-3bdc353c863e",
+      "qualityAssessment": "99_PERCENT_APPROVED"
     }
   },
   "workflow": {
     "family": "HD",
     "pilotSequence": "SPIN-ON",
     "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
-    "notes": "New approved EL82100 master replaces the previous visual reference. Preserve exact LF3620 geometry, approved ELIMFILTERS charcoal paint and silver lithography. Do not reuse EL81670 or any other SKU geometry."
+    "notes": "Latest approved EL82100 master replaces the previous saved visual reference. Preserve exact LF3620 geometry, #414141 charcoal body, #CBCBCB silver lithography, EL82100 identity, Lube Filter designation, TOTAL ASSET PROTECTION, SINTRAX® and Powered Filtration."
   }
 }
