@@ -12,8 +12,19 @@ const code=String(a.code||'').toUpperCase();
 const brand=String(a.brand||'').toUpperCase();
 const phase=String(a.phase||'').toUpperCase();
 if(!code||!brand||!phase)fail('STOP_REQUIRED_ARGUMENT_MISSING');
-if(!await fileOK(a.screenshot))fail('STOP_SOURCE_SCREENSHOT_MISSING');
-if(!await fileOK(a['source-image']))fail('STOP_SOURCE_IMAGE_MISSING');
+
+let sourceEvidence = null;
+if(a['source-evidence']){
+  if(!await fileOK(a['source-evidence']))fail('STOP_SOURCE_EVIDENCE_MISSING');
+  try{sourceEvidence=JSON.parse(await fs.readFile(a['source-evidence'],'utf8'))}catch{fail('STOP_SOURCE_EVIDENCE_INVALID')}
+  if(sourceEvidence.manufacturer!==brand||sourceEvidence.part_number!==code)fail('STOP_SOURCE_EVIDENCE_SKU_MISMATCH');
+  if(sourceEvidence.verified_fresh_source!==true||sourceEvidence.cache_used===true||sourceEvidence.previous_master_used===true)fail('STOP_FRESH_SOURCE_POLICY_FAILED');
+}
+
+const sourceImage = a['source-image'] || sourceEvidence?.source_image_path;
+const screenshot = a.screenshot || sourceEvidence?.screenshot_path || null;
+if(!await fileOK(sourceImage))fail('STOP_SOURCE_IMAGE_MISSING');
+if(!sourceEvidence && !await fileOK(screenshot))fail('STOP_SOURCE_PROVENANCE_MISSING');
 if(!await fileOK('frontend/public/assets/logo-elimfilters.png'))fail('STOP_LOGO_ASSET_MISSING');
 
 let db;try{db=run('product-identity/scripts/resolve-competitor-sku.mjs',[`--code=${code}`,`--brand=${brand}`,'--duty=HEAVY_DUTY'])}catch(e){fail('STOP_DATABASE_RESOLUTION_FAILED',{detail:e.message})}
@@ -32,8 +43,11 @@ console.log(JSON.stringify({
   phase,
   competitor_brand:brand,
   competitor_code:code,
-  screenshot_path:a.screenshot,
-  source_image_path:a['source-image'],
+  source_acquisition_mode:sourceEvidence?'AUTOMATED_OFFICIAL_SOURCE':'MANUAL_VERIFIED_SOURCE',
+  source_evidence_path:a['source-evidence']||null,
+  screenshot_path:screenshot,
+  screenshot_required:false,
+  source_image_path:sourceImage,
   resolved_sku:db.elimfilters_sku,
   filter_type:db.filter_type,
   technology:tech.technology,
@@ -41,7 +55,7 @@ console.log(JSON.stringify({
   logo_asset_path:'frontend/public/assets/logo-elimfilters.png',
   container_color_hex:'#414141',
   lithography_color_hex:'#CBCBCB',
-  render_mode:'EDIT_ONLY',
+  render_mode:'SOURCE_REFERENCED_TRANSFORMATION',
   geometry_master_path:a['geometry-master']||null,
   hard_gate_policy:'product-identity/pipelines/render-hard-gates.v1.json'
 },null,2));
