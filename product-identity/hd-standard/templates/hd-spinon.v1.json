@@ -1,0 +1,27 @@
+{
+  "template_family": "HD_SPINON",
+  "version": "1.0",
+  "surface": "cylinder",
+  "size_classes": ["XS", "S", "M", "L", "XL"],
+  "classification": {
+    "method": "verified_dimensions_and_printable_area",
+    "thresholds_status": "pending_pilot_measurement",
+    "rule": "Do not assign dimensional thresholds until representative HD pilot SKUs are measured."
+  },
+  "front_zones": [
+    {"id": "A", "content": ["logotype", "tagline"], "priority": 1},
+    {"id": "B", "content": ["product_code", "filter_type"], "priority": 1},
+    {"id": "C", "content": ["technology"], "priority": 2}
+  ],
+  "rear_zones": [
+    {"id": "D", "content": ["isotype", "qr"], "priority": 2},
+    {"id": "E", "content": ["approved_oem_equivalences"], "max_items": 3, "priority": 3},
+    {"id": "F", "content": ["applicable_standards"], "priority": 4}
+  ],
+  "top_plate": {
+    "rotation_arrow": "product_specific_factory_verified_only",
+    "long_installation_copy": "prohibited"
+  },
+  "minimum_content": ["logotype", "product_code", "filter_type"],
+  "overflow_rule": "Remove lowest-priority optional content rather than shrinking text below approved legibility limits."
+}

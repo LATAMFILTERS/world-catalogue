@@ -1,0 +1,495 @@
+{
+  "sku": "EL80710",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SYNTRAX™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "95.00",
+    "outer_diameter_mm": "94.00",
+    "inner_diameter_mm": null,
+    "thread": "1-12 UN",
+    "gasket": {
+      "od_mm": "72.00",
+      "id_mm": "62.00"
+    },
+    "crossrefs": [
+      {
+        "brand": "ZETOR",
+        "code": "0040571203",
+        "verified": true
+      },
+      {
+        "brand": "LINDE",
+        "code": "016-000-000-200",
+        "verified": true
+      },
+      {
+        "brand": "BECK-ARNLEY",
+        "code": "041-8041",
+        "verified": true
+      },
+      {
+        "brand": "VERA",
+        "code": "10-00330",
+        "verified": true
+      },
+      {
+        "brand": "IPD",
+        "code": "10074",
+        "verified": true
+      },
+      {
+        "brand": "ITM",
+        "code": "11-13101",
+        "verified": true
+      },
+      {
+        "brand": "VOLVO-CARS",
+        "code": "11700375",
+        "verified": true
+      },
+      {
+        "brand": "MANITOU",
+        "code": "137183",
+        "verified": true
+      },
+      {
+        "brand": "MAGNETI-MARELLI",
+        "code": "150180006700",
+        "verified": true
+      },
+      {
+        "brand": "CHARLES-MACHINE-WORKS",
+        "code": "195814",
+        "verified": true
+      },
+      {
+        "brand": "DITCH WITCH",
+        "code": "195814",
+        "verified": true
+      },
+      {
+        "brand": "MPA",
+        "code": "2203",
+        "verified": true
+      },
+      {
+        "brand": "POCLAIN",
+        "code": "2432-52",
+        "verified": true
+      },
+      {
+        "brand": "GENERAL-MOTORS",
+        "code": "25012636",
+        "verified": true
+      },
+      {
+        "brand": "NEW-HOLLAND",
+        "code": "276516",
+        "verified": true
+      },
+      {
+        "brand": "JCB",
+        "code": "3291550",
+        "verified": true
+      },
+      {
+        "brand": "TWA MICRON @ BETA=2",
+        "code": "35.00MICRON",
+        "verified": true
+      },
+      {
+        "brand": "INGERSOLL-RAND",
+        "code": "35292358",
+        "verified": true
+      },
+      {
+        "brand": "CATERPILLAR",
+        "code": "3I2020",
+        "verified": true
+      },
+      {
+        "brand": "VERMEER",
+        "code": "52683001",
+        "verified": true
+      },
+      {
+        "brand": "NISSAN",
+        "code": "58396-47601",
+        "verified": true
+      },
+      {
+        "brand": "TWA MICRON @ BETA=20",
+        "code": "60.00MICRON",
+        "verified": true
+      },
+      {
+        "brand": "CROSLAND",
+        "code": "660",
+        "verified": true
+      },
+      {
+        "brand": "FILTRAUTO-UK",
+        "code": "660",
+        "verified": true
+      },
+      {
+        "brand": "M-A-N",
+        "code": "6750358596",
+        "verified": true
+      },
+      {
+        "brand": "LIEBHERR",
+        "code": "7020038",
+        "verified": true
+      },
+      {
+        "brand": "HENSCHEL",
+        "code": "711-922-853",
+        "verified": true
+      },
+      {
+        "brand": "TWA MICRON @ BETA=75",
+        "code": "75.00MICRON",
+        "verified": true
+      },
+      {
+        "brand": "CARQUEST",
+        "code": "85600EST",
+        "verified": true
+      },
+      {
+        "brand": "BIG-A",
+        "code": "92283",
+        "verified": true
+      },
+      {
+        "brand": "GREYFRIARS",
+        "code": "924S",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92768",
+        "verified": true
+      },
+      {
+        "brand": "GROVE",
+        "code": "9414100776",
+        "verified": true
+      },
+      {
+        "brand": "MASSEY-FERGUSON",
+        "code": "971238001",
+        "verified": true
+      },
+      {
+        "brand": "MERCEDES-BENZ",
+        "code": "971238001",
+        "verified": true
+      },
+      {
+        "brand": "ATLAS-COPCO",
+        "code": "9712-5401-03",
+        "verified": true
+      },
+      {
+        "brand": "DEUTZ",
+        "code": "A1H4123",
+        "verified": true
+      },
+      {
+        "brand": "CENEX",
+        "code": "CO2819",
+        "verified": true
+      },
+      {
+        "brand": "FORD",
+        "code": "F2NN-6714-AB",
+        "verified": true
+      },
+      {
+        "brand": "LUCAS-GIRLING",
+        "code": "F3781",
+        "verified": true
+      },
+      {
+        "brand": "MITSUBISHI",
+        "code": "FP100074",
+        "verified": true
+      },
+      {
+        "brand": "COOPERS-FIAAM",
+        "code": "FT5925",
+        "verified": true
+      },
+      {
+        "brand": "JIFFY-LUBE",
+        "code": "HL2842",
+        "verified": true
+      },
+      {
+        "brand": "ALCOA MARINE",
+        "code": "KO1577",
+        "verified": true
+      },
+      {
+        "brand": "ALCOA-MARINE",
+        "code": "KO1577",
+        "verified": true
+      },
+      {
+        "brand": "AMC",
+        "code": "KO1577",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN MOTORS CORPORATION",
+        "code": "KO1577",
+        "verified": true
+      },
+      {
+        "brand": "GROUP-7",
+        "code": "L45189",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L72",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "LF550710",
+        "verified": true
+      },
+      {
+        "brand": "FLEETRITE",
+        "code": "LFR-83417",
+        "verified": true
+      },
+      {
+        "brand": "PURFLUX",
+        "code": "LS479A",
+        "verified": true
+      },
+      {
+        "brand": "STANDPIPE",
+        "code": "NO",
+        "verified": true
+      },
+      {
+        "brand": "UNOCAL",
+        "code": "OF1283",
+        "verified": true
+      },
+      {
+        "brand": "SERVICE-1",
+        "code": "OF260",
+        "verified": true
+      },
+      {
+        "brand": "CARCARE",
+        "code": "OF2842",
+        "verified": true
+      },
+      {
+        "brand": "IAPCO",
+        "code": "OF921",
+        "verified": true
+      },
+      {
+        "brand": "PHILLIPS-66",
+        "code": "P54",
+        "verified": true
+      },
+      {
+        "brand": "MASTER-PARTS",
+        "code": "PH-2819",
+        "verified": true
+      },
+      {
+        "brand": "CHAMP-LAB",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "GRAND-PRIX",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "MARATHON",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "MARATHON-LETOURNEAU",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "MIGHTY",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "WARNER",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "SECURITY",
+        "code": "PH-2842",
+        "verified": true
+      },
+      {
+        "brand": "PERFORMAX",
+        "code": "PO-122",
+        "verified": true
+      },
+      {
+        "brand": "QUAKER-STATE",
+        "code": "PO-122",
+        "verified": true
+      },
+      {
+        "brand": "HIFI",
+        "code": "SO3417",
+        "verified": true
+      },
+      {
+        "brand": "JURA",
+        "code": "SO3417",
+        "verified": true
+      },
+      {
+        "brand": "SCHUPP",
+        "code": "SP3415",
+        "verified": true
+      },
+      {
+        "brand": "GUD",
+        "code": "Z216",
+        "verified": true
+      },
+      {
+        "brand": "KNECHT",
+        "code": "AW5",
+        "verified": true
+      },
+      {
+        "brand": "FIAAM",
+        "code": "FT4653",
+        "verified": true
+      },
+      {
+        "brand": "DEUTSCH",
+        "code": "PH2819",
+        "verified": true
+      },
+      {
+        "brand": "PARKER",
+        "code": "RL-222",
+        "verified": true
+      },
+      {
+        "brand": "CARQUEST",
+        "code": "85533",
+        "verified": true
+      },
+      {
+        "brand": "HENGST",
+        "code": "E51H",
+        "verified": true
+      },
+      {
+        "brand": "HENGST",
+        "code": "EY51H",
+        "verified": true
+      },
+      {
+        "brand": "HIFI-FILTER",
+        "code": "SH56151",
+        "verified": true
+      },
+      {
+        "brand": "BALDWIN",
+        "code": "BT292",
+        "verified": true
+      },
+      {
+        "brand": "MANN",
+        "code": "W921",
+        "verified": true
+      },
+      {
+        "brand": "Wix",
+        "code": "51533",
+        "verified": true
+      }
+    ],
+    "standards": [
+      "ISO 4572"
+    ],
+    "filter_media": null,
+    "micron_rating": "40",
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": "75",
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:01.332Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 8930
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EL80710",
+      "oil",
+      "SYNTRAX™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

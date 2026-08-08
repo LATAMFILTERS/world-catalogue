@@ -1,0 +1,39 @@
+{
+  "sku": "EL82100",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SYNTRAX",
+  "technical_source": {
+    "source": "world_catalogue",
+    "verified": false,
+    "height_mm": null,
+    "outer_diameter_mm": null,
+    "thread": null,
+    "gasket": null,
+    "crossrefs": [],
+    "standards": []
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false
+  },
+  "lithography": {
+    "front": ["ELIMFILTERS", "Total Asset Protection", "EL82100", "Oil Filter", "SYNTRAX"],
+    "rear": ["E", "QR", "Equivalent to: up to 3 verified OEM references", "applicable verified standards"]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "notes": [
+    "Pilot SKU only. No dimensions, OEM references, standards or QR URL may be invented.",
+    "Template size class is assigned only after verified World Catalogue data and printable-area measurements are available."
+  ]
+}

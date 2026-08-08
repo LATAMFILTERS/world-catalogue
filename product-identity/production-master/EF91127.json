@@ -1,0 +1,79 @@
+{
+  "sku": "EF91127",
+  "segment": "HD",
+  "family": "fuel_filter",
+  "construction": "spin_on",
+  "technology": "SYNTEPORE™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "132.20",
+    "outer_diameter_mm": "93.00",
+    "inner_diameter_mm": null,
+    "thread": "15/16-16 UN",
+    "gasket": {
+      "od_mm": "72.00",
+      "id_mm": "62.00"
+    },
+    "crossrefs": [],
+    "standards": [
+      "SAE J1985"
+    ],
+    "filter_media": null,
+    "micron_rating": "12",
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": null,
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:02.222Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 12294.599999999999
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EF91127",
+      "fuel",
+      "SYNTEPORE™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

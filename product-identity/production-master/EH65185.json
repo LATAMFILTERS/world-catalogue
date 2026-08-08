@@ -1,0 +1,390 @@
+{
+  "sku": "EH65185",
+  "segment": "HD",
+  "family": "hydraulic_filter",
+  "construction": "spin_on",
+  "technology": "NANOFORCE™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "208.53",
+    "outer_diameter_mm": "151.00",
+    "inner_diameter_mm": null,
+    "thread": "1 3/8-12 UN",
+    "gasket": {
+      "od_mm": "70.00",
+      "id_mm": "63.00"
+    },
+    "crossrefs": [
+      {
+        "brand": "LOESING",
+        "code": "020314",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "020344",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "020452",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "20314",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "20344",
+        "verified": true
+      },
+      {
+        "brand": "LOESING",
+        "code": "20452",
+        "verified": true
+      },
+      {
+        "brand": "ARGO",
+        "code": "7243788",
+        "verified": true
+      },
+      {
+        "brand": "ARGO",
+        "code": "7243789",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "91130",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "91132",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92447",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92448",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92449",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92450",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92451",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92454",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92455",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92456",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92457",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92457",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92483",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92484",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92485",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92488",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92489",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92490",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92491",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92492",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92492",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92494",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92495",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92497",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92498",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92721",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92729",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92729",
+        "verified": true
+      },
+      {
+        "brand": "AMERICAN PARTS",
+        "code": "92731",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "92817",
+        "verified": true
+      },
+      {
+        "brand": "KNECHT",
+        "code": "HC114",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "HF165354",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "HF165672",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "HF170949",
+        "verified": true
+      },
+      {
+        "brand": "VMC",
+        "code": "HF176208",
+        "verified": true
+      },
+      {
+        "brand": "GREYFRIARS",
+        "code": "HS7694",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L457",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L489",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L490",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L7130",
+        "verified": true
+      },
+      {
+        "brand": "KRALINATOR",
+        "code": "L7132",
+        "verified": true
+      },
+      {
+        "brand": "EPPENSTEINER",
+        "code": "168300H10205SV",
+        "verified": true
+      },
+      {
+        "brand": "SEPARATION-TECHNOLOGIES",
+        "code": "3830DGHV08",
+        "verified": true
+      },
+      {
+        "brand": "MP-PRODUCTS",
+        "code": "6003006",
+        "verified": true
+      },
+      {
+        "brand": "PARKER-HANNIFIN",
+        "code": "927662",
+        "verified": true
+      },
+      {
+        "brand": "PARKER-HANNIFIN",
+        "code": "927662Q",
+        "verified": true
+      },
+      {
+        "brand": "AIR-REFINER",
+        "code": "ARH0883LV10",
+        "verified": true
+      },
+      {
+        "brand": "HYDAC",
+        "code": "H83008010BNV",
+        "verified": true
+      },
+      {
+        "brand": "PALL",
+        "code": "HC8300FKS8Z",
+        "verified": true
+      },
+      {
+        "brand": "PALL",
+        "code": "HC8300FUS8Z",
+        "verified": true
+      },
+      {
+        "brand": "PTI",
+        "code": "P83100KFV",
+        "verified": true
+      },
+      {
+        "brand": "FLUITEK",
+        "code": "PO600813U71",
+        "verified": true
+      },
+      {
+        "brand": "VICKERS",
+        "code": "V0411V2C10",
+        "verified": true
+      },
+      {
+        "brand": "VICKERS",
+        "code": "V0411V2V10",
+        "verified": true
+      }
+    ],
+    "standards": [
+      "ISO 16889"
+    ],
+    "filter_media": null,
+    "micron_rating": null,
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": null,
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:09.143Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 31488.03
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EH65185",
+      "hydraulic",
+      "NANOFORCE™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

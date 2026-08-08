@@ -1,0 +1,113 @@
+{
+  "sku": "EL83400",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SYNTRAX™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "52.00",
+    "outer_diameter_mm": "76.00",
+    "inner_diameter_mm": null,
+    "thread": "M14 x 1.5",
+    "gasket": {
+      "od_mm": "71.80",
+      "id_mm": "62.00"
+    },
+    "crossrefs": [
+      {
+        "brand": "QUINCY",
+        "code": "2023400100",
+        "verified": true
+      },
+      {
+        "brand": "QUINCY COMPRESSOR",
+        "code": "2023400100",
+        "verified": true
+      },
+      {
+        "brand": "QUINCY COMPRESSOR",
+        "code": "2023400101",
+        "verified": true
+      },
+      {
+        "brand": "SURE",
+        "code": "SFO3400",
+        "verified": true
+      },
+      {
+        "brand": "HIFI",
+        "code": "SH70282",
+        "verified": true
+      },
+      {
+        "brand": "SAKURA",
+        "code": "C42020",
+        "verified": true
+      },
+      {
+        "brand": "HIFI-FILTER",
+        "code": "SH70282",
+        "verified": true
+      }
+    ],
+    "standards": [],
+    "filter_media": null,
+    "micron_rating": "17",
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": "102",
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:00.368Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 3952
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EL83400",
+      "oil",
+      "SYNTRAX™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

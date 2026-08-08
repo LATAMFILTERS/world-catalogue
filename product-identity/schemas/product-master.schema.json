@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/product-master.schema.json",
+  "title": "ELIMFILTERS Product Master",
+  "type": "object",
+  "required": ["sku", "segment", "family", "construction", "technical_source", "production", "media"],
+  "properties": {
+    "sku": {"type": "string", "minLength": 2},
+    "segment": {"enum": ["HD", "LD"]},
+    "family": {"type": "string"},
+    "construction": {"type": "string"},
+    "technology": {"type": ["string", "null"]},
+    "technical_source": {
+      "type": "object",
+      "required": ["source", "verified"],
+      "properties": {
+        "source": {"const": "world_catalogue"},
+        "verified": {"type": "boolean"},
+        "height_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "outer_diameter_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "thread": {"type": ["string", "null"]},
+        "gasket": {"type": ["object", "null"]},
+        "crossrefs": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
+        "standards": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "production": {
+      "type": "object",
+      "required": ["template_id", "printable_area", "factory_ready"],
+      "properties": {
+        "template_id": {"type": ["string", "null"]},
+        "printable_area": {
+          "type": "object",
+          "properties": {
+            "height_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "circumference_mm": {"type": ["number", "null"], "exclusiveMinimum": 0}
+          }
+        },
+        "qr_url": {"type": ["string", "null"]},
+        "factory_ready": {"type": "boolean"}
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": ["geometry_locked", "source_image_required"],
+      "properties": {
+        "geometry_locked": {"const": true},
+        "source_image_required": {"const": true},
+        "approved_master_image": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "segment": "HD",
+  "assignment_policy": {
+    "source_of_truth": "World Catalogue verified geometry and dimensions",
+    "no_invented_thresholds": true,
+    "size_class_status": "pilot_calibration_required",
+    "rule": "Assign template family from verified construction. Assign XS/S/M/L/XL only after approved dimensional thresholds are populated."
+  },
+  "template_families": {
+    "spin_on": {
+      "template_family": "HD_SPINON",
+      "surface": "cylinder",
+      "size_classes": ["XS", "S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "panel": {
+      "template_family": "HD_PANEL",
+      "surface": "planar",
+      "size_classes": ["S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "radial": {
+      "template_family": "HD_AIR_RADIAL",
+      "surface": "cylindrical_element",
+      "size_classes": ["S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "cartridge": {
+      "template_family": "HD_CARTRIDGE",
+      "surface": "product_specific",
+      "size_classes": ["S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "element": {
+      "template_family": "HD_ELEMENT",
+      "surface": "product_specific",
+      "size_classes": ["S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "bowl": {
+      "template_family": "HD_SEPARATOR_BOWL",
+      "surface": "product_specific",
+      "size_classes": ["S", "M", "L"],
+      "thresholds": null
+    },
+    "housing": {
+      "template_family": "HD_HOUSING",
+      "surface": "product_specific",
+      "size_classes": ["S", "M", "L", "XL"],
+      "thresholds": null
+    },
+    "unknown": {
+      "template_family": "HD_SPECIAL",
+      "surface": "manual_review",
+      "size_classes": [],
+      "thresholds": null
+    }
+  }
+}
