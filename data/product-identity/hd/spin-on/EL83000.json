@@ -21,13 +21,14 @@
     "standard": "ISO 4548-12"
   },
   "artwork": {
-    "status": "APPROVED",
+    "status": "AUTHORIZED",
     "approvedOn": "2026-08-08",
     "format": "DIRECT_CAN_PRINT",
     "printCoverage": "BOTH_SIDES",
+    "designation": "AUTHORIZED_LITHOGRAPHY_MASTER",
     "sides": {
       "sideA": {
-        "layout": "APPROVED_MASTER",
+        "layout": "AUTHORIZED_MASTER",
         "print": [
           "A 3/4 TO B",
           "B 3/4 TO C",
@@ -54,23 +55,25 @@
       }
     },
     "visualLock": {
-      "topCap": "APPROVED",
+      "topCap": "AUTHORIZED",
       "bodyColor": "DARK_CHARCOAL",
       "printColor": "WHITE_SILVER",
       "backgroundForMasterImage": "WHITE",
       "geometryLocked": true,
       "typographyPlacementLocked": true,
-      "topDirectionalMarksLocked": true
+      "topDirectionalMarksLocked": true,
+      "lithographyLocked": true
     },
     "sourceAsset": {
-      "filename": "763581D0-88C2-4A5E-A268-536BDCF9F46B.jpeg",
-      "role": "APPROVED_VISUAL_REFERENCE"
+      "filename": "034F4AFC-5AE6-4739-AB9E-1F964F506945.jpeg",
+      "role": "AUTHORIZED_LITHOGRAPHY_VISUAL_REFERENCE",
+      "status": "MASTER_REFERENCE"
     }
   },
   "workflow": {
     "family": "HD",
     "pilotSequence": "SPIN-ON",
     "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
-    "notes": "Approved EL83000 direct-print master. Artwork is printed on both sides. Preserve cap geometry, can proportions, charcoal finish, markings and approved label hierarchy."
+    "notes": "Authorized EL83000 lithography master. This exact visual hierarchy, typography placement, can finish, top cap, directional markings and two-sided print configuration are locked for production reference."
   }
 }
