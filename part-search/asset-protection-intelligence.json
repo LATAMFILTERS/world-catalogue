@@ -1,0 +1,18 @@
+{
+  "platform": "Asset Protection Intelligence",
+  "surface": "Part Search",
+  "role": "Product intelligence interface",
+  "brand_mantra": ["Safety", "Reliability", "Efficiency"],
+  "authorities": {
+    "sku": "World Catalogue / PostgreSQL",
+    "technical_knowledge": "Approved Knowledge / Obsidian-equivalent records",
+    "external_discovery": "HERMES"
+  },
+  "rules": {
+    "may_invent_sku": false,
+    "may_invent_cross_reference": false,
+    "may_publish_unreviewed_hermes_discovery": false,
+    "requires_catalogue_authority_for_product_result": true
+  },
+  "flow": "User intent -> Part Search -> World Catalogue authority -> validated product result"
+}

@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { ASSET_PROTECTION_INTELLIGENCE } from '@/lib/asset-protection-intelligence';
 
 export function GlobalBrandSection() {
+  const architecture = ASSET_PROTECTION_INTELLIGENCE;
+
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
@@ -18,6 +21,17 @@ export function GlobalBrandSection() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
+          <p style={{
+            color: '#FFF12D',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.78rem',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            marginBottom: '1.25rem',
+          }}>
+            {`// ${architecture.platform}`}
+          </p>
+
           <h2 style={{
             fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
             fontWeight: 700,
@@ -25,65 +39,83 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             letterSpacing: '0.01em',
             lineHeight: 1.05,
-            color: 'rgba(255,255,255,0.85)',
-            marginBottom: '2rem',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '1.6rem',
+            maxWidth: '980px',
           }}>
-            Global Brand, <span style={{ color: '#FFF12D' }}>Local Support</span>
+            One platform for <span style={{ color: '#FFF12D' }}>asset protection intelligence</span>
           </h2>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{
-              background: 'rgba(255,241,45,0.05)',
-              border: '2px solid rgba(255,241,45,0.2)',
-              borderRadius: '8px',
-              padding: 'clamp(2rem, 4vw, 2.5rem)',
-              marginBottom: '2.5rem',
-            }}
-          >
-            <p style={{
-              color: '#FFF12D',
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.85rem',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              marginBottom: '1rem',
-              margin: '0 0 1.5rem 0',
-            }}>
-              OPERATING MODEL — AUTHORIZED DISTRIBUTOR NETWORK
-            </p>
+          <p style={{
+            color: 'rgba(255,255,255,0.72)',
+            fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
+            lineHeight: 1.8,
+            maxWidth: '900px',
+            margin: '0 0 2rem 0',
+          }}>
+            ELIMFILTERS connects engineered filtration, governed technical knowledge, product intelligence and digital tools in one system built to support better decisions across critical assets.
+          </p>
 
-            <p style={{
-              color: 'rgba(255,255,255,0.9)',
-              fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
-              lineHeight: 1.8,
-              margin: '0 0 1.5rem 0',
-            }}>
-              ELIMFILTERS operates through a global network of authorized and certified distributors in each region. These specialized distributors directly serve sales points, service centers, fleet operators, and industry, providing technical expertise in ELIMFILTERS systems and guaranteeing compliance with international standards.
-            </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '0.9rem',
+            marginBottom: '2.5rem',
+          }}>
+            {[
+              ['HERMES', architecture.systems.hermes.role, 'Discovers and routes new technical evidence.'],
+              ['KNOWLEDGE', architecture.systems.obsidian.role, 'Preserves reviewed institutional and technical memory.'],
+              ['PRODUCT INTELLIGENCE', architecture.systems.catalogue.role, 'Keeps SKU, applications and cross-references governed.'],
+              ['PART SEARCH', architecture.systems.partSearch.role, 'Turns validated catalogue data into fast discovery.'],
+            ].map(([title, role, body]) => (
+              <div key={title} style={{
+                padding: '1.25rem',
+                background: 'rgba(255,255,255,0.025)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}>
+                <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 0.65rem' }}>
+                  {role}
+                </p>
+                <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
+                  {title}
+                </h3>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
 
-            <p style={{
-              color: 'rgba(255,255,255,0.8)',
-              fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
-              lineHeight: 1.7,
-              margin: 0,
-            }}>
-              <strong style={{ color: '#FFF12D' }}>Global Compliance Standards:</strong><br/>
-              ISO 16889 (Beta Ratio) · ISO 4406 (Cleanliness Codes) · ASTM D6304 (Fuel Filtration) · SAE J1539 (Air Intake) · NFPA T2.14 (Hydraulic Systems) · ISO 11155 (Cabin Air) · ISO 8573 (Compressed Air)
-            </p>
-          </motion.div>
+          <div style={{
+            display: 'flex',
+            gap: '0.7rem',
+            flexWrap: 'wrap',
+            marginBottom: '2.5rem',
+          }}>
+            {architecture.mantra.map((value) => (
+              <span key={value} style={{
+                border: '1px solid rgba(255,241,45,0.28)',
+                color: 'rgba(255,255,255,0.82)',
+                padding: '0.6rem 0.85rem',
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: '0.72rem',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+              }}>
+                {value}
+              </span>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
           >
-            <Link href="/distributors" style={{
+            <Link href="/knowledge-center" style={{
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
@@ -91,24 +123,14 @@ export function GlobalBrandSection() {
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.85rem',
-              padding: 'clamp(0.75rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.5rem)',
+              fontSize: '0.82rem',
+              padding: '0.95rem 1.35rem',
               textTransform: 'uppercase',
-              transition: 'all 0.2s ease',
-            }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 28px rgba(255,241,45,0.55)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              Find a Distributor
+            }}>
+              Explore Knowledge
             </Link>
 
-            <Link href="/about" style={{
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{
               display: 'inline-block',
               background: 'transparent',
               color: '#FFF12D',
@@ -116,48 +138,28 @@ export function GlobalBrandSection() {
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.85rem',
-              padding: 'clamp(0.75rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.5rem)',
+              fontSize: '0.82rem',
+              padding: '0.95rem 1.35rem',
               textTransform: 'uppercase',
               border: '1px solid rgba(255,241,45,0.4)',
-              transition: 'all 0.2s ease',
-            }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.8)';
-                e.currentTarget.style.backgroundColor = 'rgba(255,241,45,0.08)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.4)';
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
-              About ELIMFILTERS
-            </Link>
+            }}>
+              Search Product Intelligence
+            </a>
 
-            <Link href="/knowledge-system" style={{
+            <Link href="/distributors" style={{
               display: 'inline-block',
               background: 'transparent',
-              color: 'rgba(255,255,255,0.7)',
+              color: 'rgba(255,255,255,0.72)',
               textDecoration: 'none',
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.85rem',
-              padding: 'clamp(0.75rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.5rem)',
+              fontSize: '0.82rem',
+              padding: '0.95rem 1.35rem',
               textTransform: 'uppercase',
               border: '1px solid rgba(255,255,255,0.2)',
-              transition: 'all 0.2s ease',
-            }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-                e.currentTarget.style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
-                e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
-              }}
-            >
-              Knowledge Center
+            }}>
+              Global Network
             </Link>
           </motion.div>
         </motion.div>
