@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "mode": "source_product_rebrand",
+  "purpose": "Generate ELIMFILTERS product imagery from a verified reference image while preserving physical geometry.",
+  "inputs_required": [
+    "source_product_image",
+    "product_master_json",
+    "brand_dna_json"
+  ],
+  "geometry_policy": {
+    "lock": true,
+    "preserve": [
+      "overall_shape",
+      "height_to_diameter_ratio",
+      "thread_geometry",
+      "baseplate_geometry",
+      "holes",
+      "gasket_geometry",
+      "valves",
+      "seams",
+      "end_caps",
+      "construction_features"
+    ]
+  },
+  "editable_surface": [
+    "paint_color",
+    "lithography",
+    "approved_brand_marks",
+    "product_code",
+    "filter_type",
+    "technology_name",
+    "qr_graphic",
+    "approved_oem_equivalences",
+    "applicable_verified_standards"
+  ],
+  "data_policy": {
+    "technical_source": "world_catalogue_only",
+    "invent_missing_data": false,
+    "factory_ready_required_for_production_artwork": true
+  },
+  "consistency": {
+    "brand_color_source": "brand-dna/elimfilters-brand.v1.json",
+    "lithography_source": "production-master/<SKU>.json",
+    "template_source": "hd-standard/templates/",
+    "master_image_status_required_for_downstream_video": "approved"
+  },
+  "output_classes": [
+    "catalog_master",
+    "technical_sheet_visual",
+    "social_media_source",
+    "video_source_frame"
+  ]
+}
