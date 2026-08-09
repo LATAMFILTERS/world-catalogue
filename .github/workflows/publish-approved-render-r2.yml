@@ -1,0 +1,127 @@
+name: Publish Approved Render to R2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'product-identity/approved-images/*.png'
+  workflow_dispatch:
+    inputs:
+      image_path:
+        description: 'Repository path to one approved PNG'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-approved-render-r2-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      R2_BUCKET: elimfilters-renders
+      CDN_BASE: https://cdn.elimfilters.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Validate secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$R2_ACCOUNT_ID"
+          test -n "$AWS_ACCESS_KEY_ID"
+          test -n "$AWS_SECRET_ACCESS_KEY"
+
+      - name: Ensure AWS CLI
+        shell: bash
+        run: |
+          if ! command -v aws >/dev/null 2>&1; then
+            python -m pip install --user awscli
+            echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          fi
+
+      - name: Resolve approved images
+        id: images
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            printf '%s\n' "${{ inputs.image_path }}" > /tmp/approved-images.txt
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'product-identity/approved-images/*.png' > /tmp/approved-images.txt
+          fi
+          sed -i '/^[[:space:]]*$/d' /tmp/approved-images.txt
+          test -s /tmp/approved-images.txt
+          cat /tmp/approved-images.txt
+
+      - name: Upload, verify and record
+        shell: bash
+        run: |
+          set -euo pipefail
+          endpoint="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+
+          while IFS= read -r image; do
+            test -f "$image"
+            base="$(basename "$image")"
+
+            if [[ ! "$base" =~ ^(EL[0-9A-Z]+)-([A-Z0-9-]+)-([0-9]+)of([0-9]+)-approved\.png$ ]]; then
+              echo "INVALID_APPROVED_FILENAME:$base" >&2
+              exit 2
+            fi
+
+            sku="${BASH_REMATCH[1]}"
+            competitor="${BASH_REMATCH[2]}"
+            pos="${BASH_REMATCH[3]}"
+            total="${BASH_REMATCH[4]}"
+            printf -v pos2 '%02d' "$pos"
+            printf -v total2 '%02d' "$total"
+
+            key="fleetguard/page-1/${pos2}-${total2}/${base}"
+            sha256="$(sha256sum "$image" | awk '{print $1}')"
+            cdn_url="${CDN_BASE}/${key}"
+
+            aws s3 cp "$image" "s3://${R2_BUCKET}/${key}" \
+              --endpoint-url "$endpoint" \
+              --content-type image/png \
+              --cache-control 'public,max-age=31536000,immutable' \
+              --only-show-errors
+
+            aws s3api head-object \
+              --bucket "$R2_BUCKET" \
+              --key "$key" \
+              --endpoint-url "$endpoint" >/tmp/r2-head.json
+
+            node product-identity/scripts/update-r2-storage-record.mjs \
+              "--sku=${sku}" \
+              "--bucket=${R2_BUCKET}" \
+              "--key=${key}" \
+              "--cdn-url=${cdn_url}" \
+              "--sha256=${sha256}"
+
+            echo "PUBLISHED ${sku} ${competitor} -> ${cdn_url}"
+          done < /tmp/approved-images.txt
+
+      - name: Commit publication records
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- product-identity/production-master product-identity/source-images; then
+            echo 'No JSON publication changes.'
+            exit 0
+          fi
+          git config user.name 'ELIMFILTERS Render Publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add product-identity/production-master product-identity/source-images
+          git commit -m 'chore(product-images): record verified R2 publication [skip ci]'
+          git push
