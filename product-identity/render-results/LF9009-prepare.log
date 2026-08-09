@@ -2,7 +2,24 @@ file:///home/runner/work/world-catalogue/world-catalogue/product-identity/script
   if (r.status !== 0) throw new Error((r.stderr || r.stdout || `FAILED:${script}`).trim());
                             ^
 
-Error: [crossref resolver] SSL/TLS required
+Error: {
+  "status": "STOP_REVIEW",
+  "reason": "AMBIGUOUS_EXACT_CATALOG_MATCH",
+  "source_code": "LF9009",
+  "source_brand": "FLEETGUARD",
+  "matches": [
+    {
+      "sku": "EL83000",
+      "filter_type": "oil",
+      "duty": "HEAVY_DUTY"
+    },
+    {
+      "sku": "EL87300",
+      "filter_type": "oil",
+      "duty": "HEAVY_DUTY"
+    }
+  ]
+}
     at runJson (file:///home/runner/work/world-catalogue/world-catalogue/product-identity/scripts/prepare-product-render.mjs:26:29)
     at file:///home/runner/work/world-catalogue/world-catalogue/product-identity/scripts/prepare-product-render.mjs:44:12
     at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
