@@ -28,65 +28,85 @@ function runJson(script, argv) {
     maxBuffer: 1024 * 1024 * 64
   });
   if (r.status !== 0) {
-    return {
-      ok: false,
-      status: r.status,
-      error: (r.stderr || r.stdout || `FAILED:${script}`).trim()
-    };
+    return { ok: false, status: r.status, error: (r.stderr || r.stdout || `FAILED:${script}`).trim() };
   }
   try { return { ok: true, value: JSON.parse(r.stdout) }; }
   catch { return { ok: false, status: r.status, error: `INVALID_JSON:${r.stdout.slice(0, 4000)}` }; }
 }
 
 async function autoScroll(page) {
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let total = 0;
-      const step = 700;
-      const timer = setInterval(() => {
-        window.scrollBy(0, step);
-        total += step;
-        if (total >= document.body.scrollHeight + 2500) {
-          clearInterval(timer);
-          resolve();
-        }
-      }, 180);
-    });
-  });
-  await page.waitForTimeout(1200);
+  for (let i = 0; i < 18; i++) {
+    await page.mouse.wheel(0, 1200);
+    await page.waitForTimeout(350);
+  }
+  await page.waitForTimeout(1500);
 }
 
 async function collectFleetguardProducts() {
   const browser = await chromium.launch({ headless: true });
   try {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
-    const response = await page.goto(categoryUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    if (!response?.ok()) throw new Error(`Fleetguard category HTTP ${response?.status() || 0}`);
-    await page.waitForTimeout(1800);
-    await autoScroll(page);
+    const observed = [];
 
-    const rows = await page.evaluate(() => {
-      const out = [];
-      const seen = new Set();
-      for (const a of document.querySelectorAll('a[href]')) {
-        const href = a.href || '';
-        const text = (a.textContent || '').trim().toUpperCase();
-        const m = href.match(/\/product\/([A-Z0-9_-]+)/i);
-        const part = m?.[1]?.toUpperCase() || (text.match(/\bLF\d+[A-Z0-9-]*\b/) || [])[0];
-        if (!part || !/^LF[A-Z0-9-]+$/i.test(part)) continue;
-        const key = part.toUpperCase();
-        if (seen.has(key)) continue;
-        seen.add(key);
-        out.push({ part_number: key, product_url: href });
-      }
-      return out;
+    page.on('response', async (response) => {
+      const type = response.request().resourceType();
+      if (!['xhr', 'fetch', 'document'].includes(type)) return;
+      const ct = (response.headers()['content-type'] || '').toLowerCase();
+      if (!ct.includes('json') && !ct.includes('text')) return;
+      try {
+        const text = await response.text();
+        const matches = text.match(/\bLF\d+[A-Z0-9-]*\b/gi) || [];
+        for (const m of matches) observed.push(m.toUpperCase());
+      } catch {}
     });
 
-    if (rows.length < count) {
-      throw new Error(`Only ${rows.length} unique Fleetguard product links were discovered; requested ${count}`);
+    const response = await page.goto(categoryUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    if (!response?.ok()) throw new Error(`Fleetguard category HTTP ${response?.status() || 0}`);
+    await page.waitForTimeout(2500);
+    await autoScroll(page);
+
+    const domCodes = await page.evaluate(() => {
+      const ordered = [];
+      const pushMatches = (value) => {
+        if (!value) return;
+        const ms = String(value).match(/\bLF\d+[A-Z0-9-]*\b/gi) || [];
+        for (const m of ms) ordered.push(m.toUpperCase());
+      };
+
+      for (const el of document.querySelectorAll('a[href], img, [data-product-code], [data-part-number], article, li')) {
+        pushMatches(el.getAttribute?.('href'));
+        pushMatches(el.getAttribute?.('src'));
+        pushMatches(el.getAttribute?.('alt'));
+        pushMatches(el.getAttribute?.('data-product-code'));
+        pushMatches(el.getAttribute?.('data-part-number'));
+        pushMatches(el.textContent);
+      }
+      pushMatches(document.body?.innerText || '');
+      for (const r of performance.getEntriesByType('resource')) pushMatches(r.name || '');
+      return ordered;
+    });
+
+    const all = [...domCodes, ...observed];
+    const seen = new Set();
+    const rows = [];
+    for (const code of all) {
+      const part = String(code).toUpperCase();
+      if (!/^LF\d+[A-Z0-9-]*$/.test(part) || seen.has(part)) continue;
+      seen.add(part);
+      rows.push({ part_number: part, product_url: `https://www.fleetguard.com/product/${part}` });
+      if (rows.length >= count) break;
     }
 
-    return rows.slice(0, count);
+    if (rows.length < count) {
+      const debugDir = path.join(outDir, 'debug');
+      await fs.mkdir(debugDir, { recursive: true });
+      await page.screenshot({ path: path.join(debugDir, 'category-page.png'), fullPage: true }).catch(() => {});
+      await fs.writeFile(path.join(debugDir, 'category-text.txt'), await page.locator('body').innerText().catch(() => ''));
+      await fs.writeFile(path.join(debugDir, 'observed-codes.json'), JSON.stringify({ domCodes, observed }, null, 2));
+      throw new Error(`Only ${rows.length} unique Fleetguard LF codes were discovered; requested ${count}. Debug saved to ${debugDir}`);
+    }
+
+    return rows;
   } finally {
     await browser.close();
   }
@@ -96,7 +116,7 @@ await fs.mkdir(outDir, { recursive: true });
 
 const products = await collectFleetguardProducts();
 const batch = {
-  schema: 'elimfilters.fleetguard-page-batch.v1',
+  schema: 'elimfilters.fleetguard-page-batch.v2',
   page: pageNumber,
   requested_count: count,
   category_url: categoryUrl,
@@ -135,13 +155,7 @@ for (let i = 0; i < products.length; i++) {
     });
     console.log('PASS');
   } else {
-    batch.products.push({
-      position,
-      competitor_sku: product.part_number,
-      product_url: product.product_url,
-      status: 'STOP_REVIEW',
-      error: prep.error
-    });
+    batch.products.push({ position, competitor_sku: product.part_number, product_url: product.product_url, status: 'STOP_REVIEW', error: prep.error });
     console.log('STOP_REVIEW');
   }
 
