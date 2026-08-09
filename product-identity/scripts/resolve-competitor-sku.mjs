@@ -32,6 +32,17 @@ function exactMatches(row, sourceCode, sourceBrand) {
   });
 }
 
+function sslConfigFor(connectionString) {
+  try {
+    const url = new URL(connectionString);
+    const host = url.hostname.toLowerCase();
+    if (host === 'localhost' || host === '127.0.0.1') return undefined;
+    return { rejectUnauthorized: false };
+  } catch {
+    return { rejectUnauthorized: false };
+  }
+}
+
 export async function resolveCompetitorSku({
   sourceCode,
   sourceBrand = null,
@@ -45,7 +56,8 @@ export async function resolveCompetitorSku({
   const pool = poolFactory({
     connectionString,
     application_name: 'product-identity-exact-crossref-resolver',
-    options: '-c default_transaction_read_only=on'
+    options: '-c default_transaction_read_only=on',
+    ssl: sslConfigFor(connectionString)
   });
 
   try {
