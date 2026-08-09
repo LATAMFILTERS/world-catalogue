@@ -23,7 +23,7 @@
   "source_image_sha256": "c860cf8888a53abbbb49f635355f82e4bfe499fce1e1e521037b75948a26bb91",
   "source_image_bytes": 41186,
   "screenshot_path": "product-identity/source-assets/LF9009/LF9009-official-page.png",
-  "screenshot_sha256": "48cb80043a21ee02c49c3f1c1d09b25d7082cc83017ecf33a253000c9c551402",
+  "screenshot_sha256": "8567382e5783501b8809c87d293e5975123e6a0f756143f31428e364769b229d",
   "screenshot_role": "BEST_EFFORT_AUTOMATED_AUDIT_EVIDENCE_NOT_RENDER_GATE",
   "cache_used": false,
   "previous_master_used": false,
