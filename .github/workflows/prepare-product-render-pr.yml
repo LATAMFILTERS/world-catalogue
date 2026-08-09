@@ -50,14 +50,24 @@ jobs:
           console.log(`product_url=${j.product_url}`);
           NODE
       - name: Prepare packet
+        id: prepare
+        continue-on-error: true
+        shell: bash
         run: |
-          test -n "$DATABASE_URL"
+          set -o pipefail
+          mkdir -p product-identity/render-results
+          code='${{ steps.req.outputs.code }}'
+          if [ -z "$DATABASE_URL" ]; then
+            echo 'DATABASE_URL_READONLY_MISSING' | tee "product-identity/render-results/${code}-prepare.log"
+            exit 2
+          fi
           node product-identity/scripts/prepare-product-render.mjs \
             "--brand=${{ steps.req.outputs.brand }}" \
-            "--code=${{ steps.req.outputs.code }}" \
+            "--code=${code}" \
             "--product-url=${{ steps.req.outputs.product_url }}" \
-            --phase=PHASE_2
+            --phase=PHASE_2 2>&1 | tee "product-identity/render-results/${code}-prepare.log"
       - name: Build compact visual evidence
+        if: steps.prepare.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
@@ -65,7 +75,6 @@ jobs:
           evidence="product-identity/source-assets/${code}/${code}-source-evidence.json"
           source_path=$(node -p "JSON.parse(require('fs').readFileSync('$evidence','utf8')).source_image_path")
           screenshot_path=$(node -p "JSON.parse(require('fs').readFileSync('$evidence','utf8')).screenshot_path || ''")
-          mkdir -p product-identity/render-results
           python3 - "$source_path" "product-identity/render-results/${code}-official-source-preview.jpg" <<'PY'
           from PIL import Image
           import sys
@@ -86,31 +95,37 @@ jobs:
           PY
             base64 -w0 "product-identity/render-results/${code}-official-page-preview.jpg" > "product-identity/render-results/${code}-official-page-preview.b64"
           fi
-      - name: Upload preparation artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: render-prep-${{ steps.req.outputs.code }}
-          path: |
-            product-identity/source-assets/${{ steps.req.outputs.code }}/
-            product-identity/render-packets/${{ steps.req.outputs.code }}.phase_2.authorized.json
-            product-identity/render-results/${{ steps.req.outputs.code }}-official-source-preview.jpg
-            product-identity/render-results/${{ steps.req.outputs.code }}-official-page-preview.jpg
-          if-no-files-found: error
-          retention-days: 7
-      - name: Commit packet and compact evidence on push
-        if: github.event_name == 'push'
+      - name: Write status
+        if: always() && steps.req.outputs.code != ''
+        shell: bash
+        run: |
+          code='${{ steps.req.outputs.code }}'
+          mkdir -p product-identity/render-results
+          outcome='${{ steps.prepare.outcome }}'
+          if [ "$outcome" = 'success' ]; then status='PASS'; else status='FAIL'; fi
+          node - "$code" "$status" "$outcome" <<'NODE'
+          const fs=require('fs'); const [code,status,outcome]=process.argv.slice(2);
+          const log=`product-identity/render-results/${code}-prepare.log`;
+          const packet=`product-identity/render-packets/${code}.phase_2.authorized.json`;
+          const obj={code,status,outcome,log:fs.existsSync(log)?fs.readFileSync(log,'utf8').slice(-12000):'',packet_path:fs.existsSync(packet)?packet:null,updated_at:new Date().toISOString()};
+          fs.writeFileSync(`product-identity/render-results/${code}-status.json`,JSON.stringify(obj,null,2)+'\n');
+          NODE
+      - name: Commit preparation result on push
+        if: always() && github.event_name == 'push' && steps.req.outputs.code != ''
         shell: bash
         run: |
           set -euo pipefail
           code='${{ steps.req.outputs.code }}'
           git config user.name 'ELIMFILTERS Render Prep Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add "product-identity/source-assets/${code}/${code}-source-evidence.json" \
-                  "product-identity/render-packets/${code}.phase_2.authorized.json" \
-                  "product-identity/render-results/${code}-official-source-preview.b64"
-          if [ -f "product-identity/render-results/${code}-official-page-preview.b64" ]; then
-            git add "product-identity/render-results/${code}-official-page-preview.b64"
-          fi
+          git add "product-identity/render-results/${code}-status.json" "product-identity/render-results/${code}-prepare.log"
+          if [ -f "product-identity/source-assets/${code}/${code}-source-evidence.json" ]; then git add "product-identity/source-assets/${code}/${code}-source-evidence.json"; fi
+          if [ -f "product-identity/render-packets/${code}.phase_2.authorized.json" ]; then git add "product-identity/render-packets/${code}.phase_2.authorized.json"; fi
+          if [ -f "product-identity/render-results/${code}-official-source-preview.b64" ]; then git add "product-identity/render-results/${code}-official-source-preview.b64"; fi
+          if [ -f "product-identity/render-results/${code}-official-page-preview.b64" ]; then git add "product-identity/render-results/${code}-official-page-preview.b64"; fi
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "chore(product-images): prepare authorized render ${code}"
+          git commit -m "chore(product-images): render prep result ${code}"
           git push
+      - name: Fail job if preparation failed
+        if: steps.prepare.outcome != 'success'
+        run: exit 1
