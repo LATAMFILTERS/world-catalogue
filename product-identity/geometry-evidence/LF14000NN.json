@@ -1,0 +1,20 @@
+{
+  "manufacturer": "FLEETGUARD",
+  "competitor_code": "LF14000NN",
+  "source_image_sha256": "a143d953307cdda9b35fa714e0a54de00954ae6632518fc85c0d7e9aabb11a14",
+  "screenshot_sha256": "a4d9b41a265c15d0e61ce9a4e7e4cf5c170fa6156e6e1ad574dab22afa32f92c",
+  "vertical_filter_geometry": "Tall slender cylindrical spin-on filter standing upright; straight body walls with slightly rounded shoulder and black upper rim; preserve exact height-to-diameter ratio from current LF14000NN source.",
+  "horizontal_filter_geometry": "Second LF14000NN filter lying horizontally behind/left of upright filter with the open attachment end facing the viewer; preserve exact orientation, overlap, perspective and relative scale.",
+  "overall_silhouette": "Two long cylindrical filters, one upright and one horizontal, both with the same LF14000NN body diameter and distinctive long-body proportions.",
+  "body_proportions": "Approximately 11.60 inch length to 4.68 inch OD class; preserve the current source image proportions rather than generic spin-on proportions.",
+  "top_rim": "Dark/black rolled rim visible on the upright filter; preserve rim thickness and contour exactly as source.",
+  "baseplate_or_open_end": "Special LF14000NN open-end geometry, not a conventional multi-inlet-hole spin-on baseplate: large central threaded inner ring with surrounding black internal structural support.",
+  "thread_geometry": "Large central female threaded opening corresponding to LF14000NN M95X2.5-7H configuration; preserve apparent diameter, depth and visible thread orientation from source.",
+  "gasket_geometry": "Outer black sealing/ring structure around the open end; preserve exact annular thickness and seating position visible in source.",
+  "inlet_hole_count_shape_and_positions": "No conventional ring of oval inlet holes is visible; do not substitute another SKU baseplate pattern.",
+  "support_pattern": "Distinct black internal star/spoke support structure surrounding the center opening; preserve spoke count, angles, spacing and depth as visible in current source.",
+  "central_support_or_perforation_pattern": "Perforated cylindrical center core/basket visible inside the special open end; preserve hole density, cylindrical depth and relationship to threaded ring/support structure.",
+  "camera_perspective": "Three-quarter studio perspective matching current official source; upright filter front/side visible and horizontal open end aimed toward camera.",
+  "relative_scale": "Horizontal and vertical filters are the same physical SKU and diameter; preserve source-relative scale and overlap.",
+  "composition": "White studio background with upright filter foreground/right and horizontal filter behind/left; special open end clearly visible and mechanically dominant in the horizontal view."
+}
