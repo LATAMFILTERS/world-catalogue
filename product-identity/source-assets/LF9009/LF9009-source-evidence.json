@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "acquisition_mode": "AUTOMATED_OFFICIAL_SOURCE_RESILIENT",
+  "manufacturer": "FLEETGUARD",
+  "part_number": "LF9009",
+  "requested_product_url": "https://www.fleetguard.com/product/LF9009",
+  "requested_product_host": "www.fleetguard.com",
+  "resolved_official_page_url": "https://www.fleetguard.com/product/LF9009",
+  "resolved_official_page_host": "www.fleetguard.com",
+  "product_page_part_match": true,
+  "transient_http_fallback_used": false,
+  "acquisition_attempts": [
+    {
+      "url": "https://www.fleetguard.com/product/LF9009",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "source_image_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/eyga7e3lzy/original/LF9009.jpg",
+  "source_image_final_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/eyga7e3lzy/original/LF9009.jpg",
+  "source_image_match_evidence": "NETWORK_RESOURCE_PART_MATCH",
+  "source_image_path": "product-identity/source-assets/LF9009/LF9009-official-source.jpg",
+  "source_image_sha256": "c860cf8888a53abbbb49f635355f82e4bfe499fce1e1e521037b75948a26bb91",
+  "source_image_bytes": 41186,
+  "screenshot_path": "product-identity/source-assets/LF9009/LF9009-official-page.png",
+  "screenshot_sha256": "40e5ceecf83b413ad4161a7677b488e9b04e1c0151169c6417ebf08d5f8a68d3",
+  "screenshot_role": "BEST_EFFORT_AUTOMATED_AUDIT_EVIDENCE_NOT_RENDER_GATE",
+  "cache_used": false,
+  "previous_master_used": false,
+  "verified_fresh_source": true
+}
