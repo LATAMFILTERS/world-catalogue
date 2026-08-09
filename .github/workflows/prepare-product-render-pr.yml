@@ -1,0 +1,56 @@
+name: Prepare Product Render PR
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'product-identity/render-requests/*.json'
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL_READONLY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install runtime
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Resolve request
+        id: req
+        shell: bash
+        run: |
+          set -euo pipefail
+          request=$(find product-identity/render-requests -maxdepth 1 -type f -name '*.json' | sort | tail -n 1)
+          test -n "$request"
+          node - "$request" >> "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs'); const j=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+          console.log(`brand=${String(j.brand).toUpperCase()}`);
+          console.log(`code=${String(j.code).toUpperCase()}`);
+          console.log(`product_url=${j.product_url}`);
+          NODE
+      - name: Prepare packet
+        run: |
+          test -n "$DATABASE_URL"
+          node product-identity/scripts/prepare-product-render.mjs \
+            "--brand=${{ steps.req.outputs.brand }}" \
+            "--code=${{ steps.req.outputs.code }}" \
+            "--product-url=${{ steps.req.outputs.product_url }}" \
+            --phase=PHASE_2
+      - name: Upload preparation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: render-prep-${{ steps.req.outputs.code }}
+          path: |
+            product-identity/source-assets/${{ steps.req.outputs.code }}/
+            product-identity/render-packets/${{ steps.req.outputs.code }}.phase_2.authorized.json
+          if-no-files-found: error
+          retention-days: 7
