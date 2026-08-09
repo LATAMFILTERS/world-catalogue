@@ -1,0 +1,8 @@
+{
+  "code": "LF9009",
+  "status": "FAIL",
+  "outcome": "failure",
+  "log": "DATABASE_URL_READONLY_MISSING\n",
+  "packet_path": null,
+  "updated_at": "2026-08-09T01:54:22.464Z"
+}
