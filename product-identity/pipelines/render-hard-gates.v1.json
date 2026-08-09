@@ -1,27 +1,44 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "2.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "pre_tool_call_required": [
+    "FLEETGUARD_SPINON_LUBE_CATALOG_PAGE_RESOLVED",
+    "CURRENT_SKU_READ_FROM_CATALOG_PAGE",
     "CURRENT_SKU_OFFICIAL_PRODUCT_PAGE",
     "CURRENT_SKU_VERIFIED_OFFICIAL_SOURCE_IMAGE",
+    "CURRENT_SKU_SCREENSHOT_REQUIRED_PASS",
     "CURRENT_SKU_SOURCE_IMAGE_SKU_MATCH_PASS",
     "FRESH_SOURCE_NO_CACHE_PASS",
-    "GEOMETRY_EXTRACTED_FROM_CURRENT_SOURCE",
+    "GEOMETRY_VERTICAL_EXTRACTED_FROM_CURRENT_SOURCE",
+    "GEOMETRY_HORIZONTAL_EXTRACTED_FROM_CURRENT_SOURCE",
+    "CAP_THREAD_GASKET_INLET_GEOMETRY_EXTRACTED",
     "LIVE_DATABASE_SKU_RESOLUTION",
     "FILTER_TYPE_RESOLUTION",
     "TECHNOLOGY_RESOLUTION",
     "OFFICIAL_LOGO_BINARY",
     "OFFICIAL_TECHNOLOGY_BINARY",
-    "MANIFEST_PASS"
+    "AUTHORIZED_RENDER_PACKET_PASS"
   ],
   "tool_call_block_rule": "IF any pre_tool_call_required gate != PASS THEN IMAGE_GENERATION_TOOL_CALL_FORBIDDEN",
+  "catalog_gate": {
+    "manufacturer": "FLEETGUARD",
+    "category": "SPIN_ON_LUBE",
+    "catalog_url": "https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-lubricante/filtros-de-lubricante-giratorios/0ZGPL0000000FSv4AM",
+    "expected_pages": 46,
+    "expected_items_per_page": 20,
+    "read_order": "PAGE_ORDER_THEN_SKU_ORDER_AS_RENDERED",
+    "sku_must_be_discovered_from_catalog": true,
+    "manual_or_remembered_sku_entry_forbidden": true
+  },
   "source_gate": {
     "required_for_every_sku": true,
     "required_for_every_render_attempt": true,
     "primary_geometry_authority": "VERIFIED_OFFICIAL_MANUFACTURER_SOURCE_IMAGE",
     "manual_screenshot_required": false,
-    "automated_screenshot_role": "AUDIT_EVIDENCE_ONLY",
+    "automated_screenshot_required": true,
+    "screenshot_must_exist": true,
+    "screenshot_must_be_hash_bound": true,
     "manufacturer_host_must_match_current_sku": true,
     "product_page_must_contain_current_part_number": true,
     "official_image_must_be_resolved_from_current_product_page": true,
@@ -30,12 +47,47 @@
     "previous_render_as_geometry_source_forbidden": true,
     "geometry_must_be_derived_from_current_official_source_image": true
   },
+  "geometry_gate": {
+    "required": true,
+    "source": "CURRENT_SKU_SCREENSHOT_AND_OFFICIAL_SOURCE_IMAGE",
+    "must_capture": [
+      "vertical_filter_geometry",
+      "horizontal_filter_geometry",
+      "overall_silhouette",
+      "body_proportions",
+      "top_rim",
+      "baseplate_or_open_end",
+      "thread_geometry",
+      "gasket_geometry",
+      "inlet_hole_count_shape_and_positions",
+      "support_pattern",
+      "central_support_or_perforation_pattern",
+      "camera_perspective",
+      "relative_scale",
+      "composition"
+    ],
+    "cap_detail_priority": "CRITICAL",
+    "generic_geometry_allowed": false,
+    "other_sku_geometry_allowed": false,
+    "previous_render_geometry_allowed": false,
+    "missing_any_required_field_action": "STOP_RENDER"
+  },
+  "identity_gate": {
+    "elimfilters_sku_source": "LIVE_POSTGRES_WORLD_CATALOGUE",
+    "technology_source": "LIVE_DB_PLUS_OFFICIAL_REPOSITORY_ASSET",
+    "logo_source": "frontend/public/assets/logo-elimfilters.png",
+    "technology_assets_root": "frontend/public/assets/",
+    "remembered_or_hardcoded_sku_forbidden": true,
+    "remembered_or_hardcoded_technology_forbidden": true
+  },
   "lineage_gate": {
     "mode": "APPLICATION_VERIFIED",
     "engine_edit_op_required": false,
     "engine_edit_op_null_is_not_failure_by_itself": true,
     "required": [
+      "CATALOG_PAGE_REFERENCE",
       "CURRENT_SKU_SOURCE_EVIDENCE_REFERENCE",
+      "CURRENT_SKU_SCREENSHOT_HASH",
       "CURRENT_SKU_OFFICIAL_IMAGE_HASH",
       "CURRENT_SKU_BINDING",
       "SOURCE_GEOMETRY_SIGNATURE",
@@ -59,6 +111,9 @@
     "source_url_text_allowed": false
   },
   "post_render_hard_rejects": [
+    "CATALOG_BINDING_MISSING",
+    "SCREENSHOT_MISSING",
+    "GEOMETRY_SIGNATURE_INCOMPLETE",
     "APPLICATION_LINEAGE_EVIDENCE_MISSING",
     "SOURCE_BINDING_MISSING",
     "BODY_REMAINS_MANUFACTURER_WHITE",
