@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "acquisition_mode": "AUTOMATED_OFFICIAL_SOURCE_RESILIENT",
+  "manufacturer": "FLEETGUARD",
+  "part_number": "LF14000NN",
+  "requested_product_url": "https://www.fleetguard.com/product/lf14000nn/01t5x000008FDTrAAO",
+  "requested_product_host": "www.fleetguard.com",
+  "resolved_official_page_url": "https://www.fleetguard.com/product/lf14000nn/01t5x000008FDTrAAO",
+  "resolved_official_page_host": "www.fleetguard.com",
+  "product_page_part_match": true,
+  "transient_http_fallback_used": false,
+  "acquisition_attempts": [
+    {
+      "url": "https://www.fleetguard.com/product/lf14000nn/01t5x000008FDTrAAO",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "source_image_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/gjnjbycxmj/original/LF14000NN.jpg",
+  "source_image_final_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/gjnjbycxmj/original/LF14000NN.jpg",
+  "source_image_match_evidence": "NETWORK_RESOURCE_PART_MATCH",
+  "source_image_path": "product-identity/source-assets/LF14000NN/LF14000NN-official-source.jpg",
+  "source_image_sha256": "a143d953307cdda9b35fa714e0a54de00954ae6632518fc85c0d7e9aabb11a14",
+  "source_image_bytes": 43737,
+  "screenshot_path": "product-identity/source-assets/LF14000NN/LF14000NN-official-page.png",
+  "screenshot_sha256": "a4d9b41a265c15d0e61ce9a4e7e4cf5c170fa6156e6e1ad574dab22afa32f92c",
+  "screenshot_role": "BEST_EFFORT_AUTOMATED_AUDIT_EVIDENCE_NOT_RENDER_GATE",
+  "cache_used": false,
+  "previous_master_used": false,
+  "verified_fresh_source": true
+}
