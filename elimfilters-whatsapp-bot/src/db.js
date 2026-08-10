@@ -336,6 +336,22 @@ export function createDb(connectionString) {
       return result.rows.reverse();
     },
 
+    // READ-ONLY, migration-transition use only: the last N user messages for
+    // this session, oldest first, as a flat array of strings -- used solely
+    // to build a one-time context_seed for the central Conversation Engine
+    // (see protocol-client.js / worker.js). This is history, never the
+    // product catalog -- it must never be used for, or confused with, a
+    // product/code lookup.
+    async getRecentMessagesForSeed(sessionId, limit = 20) {
+      const result = await pool.query(
+        `SELECT message_text FROM conversation_logs
+         WHERE session_id = $1 AND message_text IS NOT NULL AND message_text <> ''
+         ORDER BY timestamp DESC LIMIT $2`,
+        [sessionId, limit]
+      );
+      return result.rows.map(r => r.message_text).reverse();
+    },
+
     async cleanupExpiredSessions() {
       const result = await pool.query(
         `DELETE FROM conversation_sessions WHERE expires_at < NOW() RETURNING session_id`

@@ -1,9 +1,9 @@
 {
-  "status": "OPEN",
+  "status": "CLOSED",
   "scope": "support-email-capture-flow",
-  "reason": "Add the central AWAITING_SUPPORT_EMAIL flow (immediate email capture on a verified catalog no-match, replacing the 5-unresolved-attempts wait for that case), a support-lead ticket registered idempotently via the existing escalation infrastructure, and the supportLead/conversationState contract fields, plus the matching multichannel contract tests.",
+  "reason": "Add the central AWAITING_SUPPORT_EMAIL flow (immediate email capture on a verified catalog no-match, replacing the 5-unresolved-attempts wait for that case), a support-lead ticket registered idempotently via the existing escalation infrastructure, and the supportLead/conversationState contract fields, plus the matching multichannel contract tests. Full protocol test suite verified passing (174/174) before close.",
   "opened_by": "elimfilters",
   "opened_at": "2026-08-10T16:53:37-00:00",
   "closed_by": "elimfilters",
-  "closed_at": "2026-08-05T17:18:00-05:00"
+  "closed_at": "2026-08-10T16:56:11-00:00"
 }
