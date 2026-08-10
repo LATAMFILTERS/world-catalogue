@@ -26,11 +26,13 @@ test('greeting detection ignores a greeting attached to a technical query', () =
 test('createEmptyState matches the canonical conversation-state shape', () => {
   const state = createEmptyState();
   assert.deepEqual(Object.keys(state).sort(), [
-    'conversationHistory', 'duration', 'equipment', 'identifiedHousing', 'impact', 'installedFilter',
+    'conversationHistory', 'distributionQualificationConfirmed', 'distributionQualificationPending',
+    'duration', 'equipment', 'identifiedHousing', 'impact', 'installedFilter',
     'intent', 'knowledgeGap', 'oemMaintenance', 'operatingContext', 'pendingField',
-    'phase', 'productRecommendation', 'symptoms', 'technicalKnowledge',
+    'phase', 'productRecommendation', 'supportLead', 'symptoms', 'technicalKnowledge',
     'unresolvedAttempts', 'updatedAt', 'validatedProducts'
   ].sort());
+  assert.deepEqual(state.supportLead, { status: null, email: null, created: false, ticketId: null, createdAt: null });
   assert.deepEqual(state.equipment, { brand: null, model: null, engine: null, year: null });
   assert.deepEqual(state.installedFilter, { type: null, brand: null, reference: null, status: null });
   assert.deepEqual(state.identifiedHousing, { sku: null, externalReference: null, compatibleSeries: [] });

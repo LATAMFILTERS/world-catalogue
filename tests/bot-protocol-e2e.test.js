@@ -176,6 +176,40 @@ test('the conversation can change intent mid-flow (diagnostic -> commercial)', a
   assert.equal(body.intent, 'commercial_inquiry');
 });
 
+// ── 7b. B2B distributor-application link: only after qualification, never for B2C ──
+
+test('distribution_inquiry asks for qualification first, then reveals the distributor-application link only after it is answered', async () => {
+  const conversationId = `distribution-${Date.now()}`;
+  const first = await sendMessage('Quiero ser distribuidor autorizado en mi país', { conversationId });
+  assert.equal(first.body.intent, 'distribution_inquiry');
+  assert.doesNotMatch(first.body.answer, /distributor-application/);
+  assert.match(first.body.answer, /pa[ií]s|territorio|experiencia/i);
+
+  const second = await sendMessage('Argentina, flota propia de 40 camiones, 8 años en el rubro de filtración', { conversationId });
+  assert.equal(second.body.intent, 'distribution_inquiry');
+  assert.match(second.body.answer, /https:\/\/elimfilters\.com\/distributor-application/);
+});
+
+test('commercial_inquiry (generic "where to buy") never receives the distributor-application link', async () => {
+  const conversationId = `commercial-no-link-${Date.now()}`;
+  const first = await sendMessage('Necesito cotización para 10 unidades', { conversationId });
+  assert.equal(first.body.intent, 'commercial_inquiry');
+  assert.doesNotMatch(first.body.answer, /distributor-application/);
+
+  const second = await sendMessage('Argentina, entrega en Buenos Aires', { conversationId });
+  assert.doesNotMatch(second.body.answer, /distributor-application/);
+});
+
+test('a B2C diagnostic/product conversation never surfaces the distributor-application link at any point', async () => {
+  const conversationId = `b2c-no-link-${Date.now()}`;
+  const t1 = await sendMessage('Tengo un Freightliner 2007 con Detroit Series 60. Cuando calienta baja la presión de aceite.', { conversationId });
+  assert.doesNotMatch(t1.body.answer, /distributor-application/);
+  const t2 = await sendMessage('Hace tres días', { conversationId });
+  assert.doesNotMatch(t2.body.answer, /distributor-application/);
+  const t3 = await sendMessage('Carretera, filtro Donaldson P552100', { conversationId });
+  assert.doesNotMatch(t3.body.answer, /distributor-application/);
+});
+
 // ── 8. A new failure reported after a completed diagnostic resets state ────
 
 test('a new failure reported after a completed diagnostic does not blend with the old one', async () => {
@@ -217,6 +251,59 @@ test('Freightliner/Detroit pressure-loss script resolves P552100 to EL82100 only
   assert.equal(t4.body.evidence.products[0].sku, 'EL82100');
   assert.match(t4.body.answer, /EL82100/);
   assert.doesNotMatch(t4.body.answer, /el filtro es la causa|caus[oó] la falla/i);
+});
+
+// ── 9b. Confirms the engine REALLY queries the canonical catalog and the ──
+// Knowledge Center before recommending a SKU -- not just that the response
+// happens to be correct, but that both dependencies were actually invoked.
+
+test('recommending a SKU actually invokes both the canonical Postgres catalog and the Knowledge Center, in that order of availability', async () => {
+  let catalogQueryCount = 0;
+  __setProtocolPoolForTests({
+    connect: async () => {
+      const real = fakeCatalogClient();
+      return {
+        async query(sql, params) {
+          if (/FROM elimfilters_catalog/i.test(String(sql))) catalogQueryCount += 1;
+          return real.query(sql, params);
+        },
+        release: () => real.release()
+      };
+    }
+  });
+
+  let knowledgeEngineFetchCount = 0;
+  const originalFetch = global.fetch;
+  process.env.KNOWLEDGE_ENGINE_RUNTIME_URL = 'https://fake-knowledge-engine.invalid';
+  process.env.ENGINE_API_KEY = 'fake-engine-key';
+  global.fetch = async (url, ...rest) => {
+    if (String(url).includes('fake-knowledge-engine.invalid')) {
+      knowledgeEngineFetchCount += 1;
+      throw new Error('simulated -- we only need to prove it was CALLED, not that it succeeds');
+    }
+    return originalFetch(url, ...rest);
+  };
+
+  try {
+    const conversationId = `catalog-and-knowledge-invoked-${Date.now()}`;
+    await sendMessage('Tengo un Freightliner 2007 con Detroit Series 60. Cuando calienta baja la presión de aceite.', { conversationId });
+    await sendMessage('Principalmente en ralentí caliente y a veces prende la luz.', { conversationId });
+    await sendMessage('Hace cuatro días. El aceite tiene 6,000 millas.', { conversationId });
+    const { body } = await sendMessage('Carretera, con bastante ralentí. Tiene Donaldson P552100.', { conversationId });
+
+    // Both dependencies were actually called at least once for this
+    // conversation -- not mocked away, not skipped.
+    assert.ok(catalogQueryCount > 0, 'the canonical elimfilters_catalog table must actually be queried');
+    assert.ok(knowledgeEngineFetchCount > 0, 'the Knowledge Center (knowledge-engine-runtime) must actually be called');
+    // And only once both ran does the response carry a recommended SKU.
+    assert.equal(body.evidence.validated, true);
+    assert.match(body.answer, /EL82100/);
+  } finally {
+    global.fetch = originalFetch;
+    delete process.env.KNOWLEDGE_ENGINE_RUNTIME_URL;
+    delete process.env.ENGINE_API_KEY;
+    installFakePool();
+  }
 });
 
 // ── 10. Nonexistent reference never returns a SKU ───────────────────────────
@@ -381,4 +468,50 @@ test('unauthenticated requests are rejected before reaching the orchestrator', a
     body: JSON.stringify({ message: 'Hola', conversation_id: 'no-auth', channel: 'whatsapp' })
   });
   assert.equal(response.status, 401);
+});
+
+// ── 15. context_seed: applied once for a brand-new conversation, never duplicated ──
+
+test('context_seed is applied for a brand-new conversation and reported as applied', async () => {
+  const conversationId = `seed-fresh-${Date.now()}`;
+  const seed = [
+    'Tengo un Mack MP8 2019',
+    'Pierde potencia en subida',
+    'Instalado filtro Donaldson P552100'
+  ];
+  const { body } = await sendMessage('¿Qué me recomendás?', {
+    conversationId,
+    extra: { context_seed: seed }
+  });
+  assert.equal(body.memory.context_seed_applied, true);
+  assert.ok(body.state.conversationHistory.includes('Pierde potencia en subida'), 'seeded history should be present in saved state');
+});
+
+test('context_seed is ignored (never re-applied) once a conversation already exists for that id', async () => {
+  const conversationId = `seed-existing-${Date.now()}`;
+  await sendMessage('Tengo un Mack con pérdida de potencia', { conversationId });
+
+  const { body } = await sendMessage('otro mensaje', {
+    conversationId,
+    extra: { context_seed: ['esto no debería aplicarse', 'porque la conversación ya existe'] }
+  });
+  assert.equal(body.memory.context_seed_applied, false);
+  assert.ok(!body.state.conversationHistory.includes('esto no debería aplicarse'), 'a context_seed delivered after the conversation already exists must be a no-op');
+});
+
+test('context_seed delivered twice for the same brand-new conversation is applied only once (idempotent)', async () => {
+  const conversationId = `seed-duplicate-delivery-${Date.now()}`;
+  const seed = ['mensaje histórico A', 'mensaje histórico B'];
+
+  const first = await sendMessage('primer mensaje real', { conversationId, extra: { context_seed: seed } });
+  assert.equal(first.body.memory.context_seed_applied, true);
+
+  // Simulate the adapter retrying/re-delivering the same webhook or seed
+  // payload against a conversation that, from the engine's point of view,
+  // now already exists.
+  const second = await sendMessage('segundo mensaje real', { conversationId, extra: { context_seed: seed } });
+  assert.equal(second.body.memory.context_seed_applied, false);
+  // The seeded text should appear at most once in history, not duplicated.
+  const occurrences = second.body.state.conversationHistory.filter(m => m === 'mensaje histórico A').length;
+  assert.equal(occurrences, 1);
 });
