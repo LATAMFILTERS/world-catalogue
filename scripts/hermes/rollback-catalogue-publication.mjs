@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { COLUMN_GROUPS, logicalValue } from './publish-catalogue-plan.mjs';
+import { COLUMN_GROUPS, catalogueBackupHash, logicalValue } from './publish-catalogue-plan.mjs';
 
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -19,6 +19,8 @@ export function validateCatalogueBackup(backup) {
   assert(Array.isArray(backup.operations) && backup.operations.length > 0, 'Backup operations are required');
   assert(backup.operations.every((op) => COLUMN_GROUPS[op.field]), 'Backup contains an unsupported field');
   assert(typeof backup.plan_sha256 === 'string' && /^[a-f0-9]{64}$/.test(backup.plan_sha256), 'Backup plan hash is invalid');
+  assert(typeof backup.backup_sha256 === 'string' && /^[a-f0-9]{64}$/.test(backup.backup_sha256), 'Backup checksum is invalid');
+  assert(catalogueBackupHash(backup) === backup.backup_sha256, 'Catalogue backup checksum mismatch');
   return true;
 }
 
