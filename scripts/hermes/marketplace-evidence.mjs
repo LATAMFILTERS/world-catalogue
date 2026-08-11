@@ -14,8 +14,15 @@ function stableId(value) {
   return crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex').slice(0, 24);
 }
 
-function validHttpUrl(value) {
-  try { const url = new URL(value); return url.protocol === 'https:' || url.protocol === 'http:'; } catch { return false; }
+function validMarketplaceUrl(value, marketplace) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return false;
+    const host = url.hostname.toLowerCase().replace(/^www\./, '');
+    if (marketplace === 'amazon') return /^amazon\.[a-z.]+$/.test(host) || host === 'amzn.to';
+    if (marketplace === 'ebay') return /(^|\.)ebay\.[a-z.]+$/.test(host);
+    return false;
+  } catch { return false; }
 }
 
 export function validateMarketplaceListing(listing) {
@@ -23,7 +30,8 @@ export function validateMarketplaceListing(listing) {
   if (!MARKETPLACES.has(String(listing?.marketplace || '').toLowerCase())) errors.push('marketplace must be amazon or ebay');
   if (!listing?.listing_id) errors.push('listing_id required');
   if (!listing?.seller_id && !listing?.seller_name) errors.push('seller identity required');
-  if (!validHttpUrl(listing?.url)) errors.push('valid listing url required');
+  const marketplace = String(listing?.marketplace || '').toLowerCase();
+  if (!validMarketplaceUrl(listing?.url, marketplace)) errors.push('listing url must be HTTPS and belong to the declared marketplace');
   if (!listing?.manufacturer && !listing?.brand) errors.push('manufacturer required');
   if (!listing?.part_number) errors.push('part_number required');
   if (!listing?.captured_at || Number.isNaN(Date.parse(listing.captured_at))) errors.push('captured_at required');
@@ -31,6 +39,7 @@ export function validateMarketplaceListing(listing) {
 }
 
 function listingIdentity(listing) {
+  if (listing.seller_identity) return `GLOBAL:${normalize(listing.seller_identity)}`;
   return `${String(listing.marketplace).toLowerCase()}:${normalize(listing.seller_id || listing.seller_name)}`;
 }
 
@@ -82,6 +91,7 @@ export function buildMarketplaceEvidence(listings, generatedAt = new Date().toIS
         listing_id: item.listing_id,
         seller_id: item.seller_id || null,
         seller_name: item.seller_name || null,
+        seller_identity: item.seller_identity || null,
         url: item.url,
         title: item.title || null,
         captured_at: item.captured_at,
