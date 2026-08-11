@@ -1,9 +1,9 @@
 {
-  "status": "CLOSED",
-  "scope": "support-email-capture-flow",
-  "reason": "Add the central AWAITING_SUPPORT_EMAIL flow (immediate email capture on a verified catalog no-match, replacing the 5-unresolved-attempts wait for that case), a support-lead ticket registered idempotently via the existing escalation infrastructure, and the supportLead/conversationState contract fields, plus the matching multichannel contract tests. Full protocol test suite verified passing (174/174) before close.",
+  "status": "OPEN",
+  "scope": "bot-protocol-catalog-statement-timeout-fix",
+  "reason": "Fix resolveStatementTimeout() in lib/bot-protocol-db.js: it forced every caller-requested statement_timeout up to a 30s floor via Math.max(MIN, requested), silently overriding searchByApplication's intended 8000ms and searchCompatibleElements's intended 5000ms (and autocomplete-fast.js's 700ms). Root-caused via live measurement after a customer reported the web chat not responding: a free-text application query took 54.7s end-to-end on production. Split the old MIN into DEFAULT_STATEMENT_TIMEOUT_MS (used only when a caller omits the option, unchanged at 30000ms) and a much lower MIN_STATEMENT_TIMEOUT_MS (250ms, a sanity floor against 0/negative input) so an explicit shorter caller request is honored instead of raised. Companion to migration 066 (new indexes on elimfilters_catalog), applied and measured first per explicit instruction.",
   "opened_by": "elimfilters",
-  "opened_at": "2026-08-10T16:53:37-00:00",
-  "closed_by": "elimfilters",
-  "closed_at": "2026-08-10T16:56:11-00:00"
+  "opened_at": "2026-08-11T02:40:00-00:00",
+  "closed_by": null,
+  "closed_at": null
 }
