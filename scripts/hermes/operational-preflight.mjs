@@ -2,8 +2,9 @@
 // HERMES operational preflight — a read-only safety check run before any
 // real (non-DRY-RUN) HERMES operation. It never connects to anything
 // (no network, no Microsoft Graph, no database), never prints a secret
-// VALUE (only whether one is PRESENT or MISSING), and never mutates any
-// file. Exit code 0 means the system is currently in a safe/off state;
+// VALUE (only whether one is PRESENT or MISSING), and only writes its two
+// local audit reports under hermes/reports/. Exit code 0 means the system
+// is currently in a safe/off state;
 // non-zero means a dangerous condition was found and must be resolved
 // before proceeding.
 import fs from 'node:fs';
