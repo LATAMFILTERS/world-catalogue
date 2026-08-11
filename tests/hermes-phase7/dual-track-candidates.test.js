@@ -39,3 +39,11 @@ test('bundle identifiers are deterministic for idempotent retries', () => {
   const second = buildDualTrackCandidates({ officialEvidence: official }).bundles[0].research_bundle_id;
   assert.equal(first, second);
 });
+
+test('new products from OEM organizations are not classified as competitor updates', () => {
+  const oemProduct = { discoveries: [{
+    ...official.discoveries[0], change_type: 'new_product', organization_category: 'oem_heavy_duty'
+  }] };
+  const candidate = buildDualTrackCandidates({ officialEvidence: oemProduct }).bundles[0].knowledge_candidate;
+  assert.equal(candidate.candidate_type, 'oem_update');
+});
