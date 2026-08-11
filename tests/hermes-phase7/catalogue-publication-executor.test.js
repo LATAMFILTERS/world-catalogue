@@ -59,6 +59,9 @@ test('backs up, verifies and commits one controlled update', async () => {
     const out=await executeCataloguePublicationPlan({ plan:plan(), pool:fake.pool, backupDir:dir, apply:true });
     assert.equal(out.outcome,'PUBLISHED');
     assert.ok(fs.existsSync(out.backup_path));
+    const savedBackup=JSON.parse(fs.readFileSync(out.backup_path,'utf8'));
+    assert.match(savedBackup.backup_sha256,/^[a-f0-9]{64}$/);
+    assert.equal(savedBackup.before.sku,'EA10001');
     assert.ok(fake.queries.includes('COMMIT'));
     assert.ok(!fake.queries.includes('ROLLBACK'));
   } finally { fs.rmSync(dir,{ recursive:true, force:true }); delete process.env.HERMES_CATALOGUE_PUBLISH_LIVE; }
