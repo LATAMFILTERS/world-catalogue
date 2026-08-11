@@ -19,6 +19,14 @@ function canonical(value) {
   return value;
 }
 function hash(value) { return crypto.createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex'); }
+export function catalogueBackupCore(backup) {
+  return {
+    schema_version: backup.schema_version, created_at: backup.created_at,
+    plan_sha256: backup.plan_sha256, research_bundle_id: backup.research_bundle_id,
+    target_sku: backup.target_sku, operations: backup.operations, before: backup.before
+  };
+}
+export function catalogueBackupHash(backup) { return hash(catalogueBackupCore(backup)); }
 function assert(condition, message) { if (!condition) throw new Error(message); }
 
 function planCore(plan) {
@@ -91,7 +99,9 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     for (const operation of plan.operations) assert(hash(logicalValue(row, operation.field)) === hash(operation.before), `Stale snapshot for ${operation.field}; publication aborted`);
     fs.mkdirSync(backupDir, { recursive: true });
     backupPath = path.join(backupDir, `${plan.target_sku}-${Date.now()}-${plan.plan_sha256.slice(0, 12)}.json`);
-    fs.writeFileSync(backupPath, `${JSON.stringify({ schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row }, null, 2)}\n`, { flag: 'wx' });
+    const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
+    backup.backup_sha256 = catalogueBackupHash(backup);
+    fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
     const update = compileUpdate(plan);
     const changed = await client.query(update.sql, update.values);
     assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');
