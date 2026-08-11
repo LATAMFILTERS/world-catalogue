@@ -1,0 +1,52 @@
+name: HERMES Safety Audit
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/hermes/**'
+      - 'tests/hermes-phase*/**'
+      - 'tests/hermes-readiness/**'
+      - 'hermes/**'
+      - '.github/workflows/hermes-*.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hermes/**'
+      - 'tests/hermes-phase*/**'
+      - 'tests/hermes-readiness/**'
+      - 'hermes/**'
+      - '.github/workflows/hermes-*.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hermes-safety-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Phase 7 contracts
+        run: npm run test:hermes-phase7
+      - name: Operational readiness
+        run: npm run test:hermes-readiness
+      - name: Safe-state preflight
+        env:
+          HERMES_COLLECTION_DRY_RUN: 'true'
+          HERMES_EMAIL_LIVE: 'false'
+          HERMES_CATALOGUE_PUBLISH_LIVE: 'false'
+          HERMES_CATALOGUE_ROLLBACK_LIVE: 'false'
+        run: npm run hermes:preflight

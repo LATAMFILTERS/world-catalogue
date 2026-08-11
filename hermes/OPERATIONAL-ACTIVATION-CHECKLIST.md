@@ -21,7 +21,10 @@ Configure under **Settings → Secrets and variables → Actions → Secrets**:
   preview or roll back (section H); collection/report/email never read it.
   Never entered into any workflow_dispatch input form.
 
-None of these exist yet in this repository as of this checklist's creation.
+Secret values are never stored in this repository. Victor confirmed that the
+Microsoft Azure/Graph transport is configured; before each activation, verify
+the required secret names are present in GitHub Actions without exposing their
+values.
 
 ## B. Initial safe Variables
 
@@ -46,14 +49,13 @@ implicit in code.
 
 ## C. Sender
 
-- The sending mailbox must be a corporate ELIMFILTERS account.
-- **Status: PENDING CONFIRMATION FROM VICTOR.**
-- No specific address is assumed anywhere in this checklist or in code. The
-  `HERMES_SENDER_EMAIL` secret is left for Victor to set once a mailbox is
-  designated; until then the underlying Microsoft Graph service falls back
-  to its own existing default (`info@elimfilters.com`, used elsewhere in the
-  app for contact-form mail) — which may or may not be the mailbox HERMES
-  should ultimately send from. Do not treat that fallback as a decision.
+- The active transport is the existing Microsoft Azure/Graph integration.
+- The sending mailbox must be a confirmed corporate ELIMFILTERS account and
+  is supplied through `HERMES_SENDER_EMAIL`; this repository does not record
+  or guess its address.
+- Victor confirmed the review recipient as `vabreu@elimfilters.com`.
+- The Gmail account created during setup is not the active transport. It may
+  remain an inactive contingency only and must not silently replace Azure.
 
 ## D. First manual workflow run
 
@@ -65,9 +67,8 @@ implicit in code.
    review the logs for each step.
 6. Confirm in the logs and artifact contents:
    - Zero files were written to `hermes/real-candidates` (previews only, in
-     `hermes/real-candidates-previews` — note that folder is not currently
-     part of the uploaded artifact set; the absence of real candidates is
-     what matters here).
+     `hermes/real-candidates-previews`, which is included in the uploaded
+     artifact set).
    - `hermes/reports/hermes-weekly-*.md` was generated.
    - No step logged an error from the "Send weekly review email" step
      other than a DRY RUN preview notice.

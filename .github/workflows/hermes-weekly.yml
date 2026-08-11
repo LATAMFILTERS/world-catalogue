@@ -218,6 +218,7 @@ jobs:
           name: hermes-weekly-collection
           path: |
             hermes/real-candidates
+            hermes/real-candidates-previews
             hermes/reports
             hermes/source-cache
             hermes/baselines

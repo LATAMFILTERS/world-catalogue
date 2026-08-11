@@ -2,8 +2,9 @@
 // HERMES operational preflight — a read-only safety check run before any
 // real (non-DRY-RUN) HERMES operation. It never connects to anything
 // (no network, no Microsoft Graph, no database), never prints a secret
-// VALUE (only whether one is PRESENT or MISSING), and never mutates any
-// file. Exit code 0 means the system is currently in a safe/off state;
+// VALUE (only whether one is PRESENT or MISSING), and only writes its two
+// local audit reports under hermes/reports/. Exit code 0 means the system
+// is currently in a safe/off state;
 // non-zero means a dangerous condition was found and must be resolved
 // before proceeding.
 import fs from 'node:fs';
@@ -48,7 +49,10 @@ const REQUIRED_FILES = [
   'scripts/hermes/apply-review-decision.mjs',
   'scripts/hermes/publish-approved-candidate.mjs',
   'scripts/hermes/update-existing-note.mjs',
-  'scripts/hermes/rollback-note-update.mjs'
+  'scripts/hermes/rollback-note-update.mjs',
+  'scripts/hermes/catalogue-publication-plan.mjs',
+  'scripts/hermes/publish-catalogue-plan.mjs',
+  'scripts/hermes/rollback-catalogue-publication.mjs'
 ];
 let missingFiles = 0;
 for (const file of REQUIRED_FILES) {
@@ -106,6 +110,8 @@ workflowCheck('workflow:secrets_via_context_only', 'every AZURE_*/HERMES_SENDER_
 const DANGEROUS_FLAGS = [
   { name: 'HERMES_COLLECTION_DRY_RUN', dangerousWhen: (v) => String(v ?? 'true').toLowerCase() === 'false' },
   { name: 'HERMES_EMAIL_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
+  { name: 'HERMES_CATALOGUE_PUBLISH_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
+  { name: 'HERMES_CATALOGUE_ROLLBACK_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
   { name: 'HERMES_PUBLISH_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
   { name: 'HERMES_UPDATE_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
   { name: 'HERMES_ROLLBACK_LIVE', dangerousWhen: (v) => String(v ?? 'false').toLowerCase() === 'true' },
@@ -184,7 +190,8 @@ try { packageJson = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, 'package.jso
 const REQUIRED_SCRIPTS = [
   'hermes:collect', 'hermes:validate:real', 'hermes:report:real', 'hermes:email:real', 'hermes:weekly',
   'hermes:registry:validate', 'hermes:registry:coverage', 'hermes:preflight',
-  'test:hermes-phase5', 'test:hermes-readiness'
+  'test:hermes-phase5', 'test:hermes-phase7', 'test:hermes-readiness',
+  'hermes:catalogue:publication-plan', 'hermes:catalogue:publish-plan', 'hermes:catalogue:rollback'
 ];
 let missingScripts = 0;
 for (const script of REQUIRED_SCRIPTS) {

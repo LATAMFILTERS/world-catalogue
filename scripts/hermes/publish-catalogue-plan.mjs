@@ -5,7 +5,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { PUBLISHABLE_CATALOGUE_FIELDS } from './catalogue-publication-plan.mjs';
 
-const COLUMN_GROUPS = {
+export const COLUMN_GROUPS = {
   filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'],
   equipment_applications: ['equipment_applications'], oem_codes: ['oem_codes'],
   competitor_codes: ['competitor_codes'], brand_crossrefs: ['brand_crossrefs'],
@@ -19,6 +19,14 @@ function canonical(value) {
   return value;
 }
 function hash(value) { return crypto.createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex'); }
+export function catalogueBackupCore(backup) {
+  return {
+    schema_version: backup.schema_version, created_at: backup.created_at,
+    plan_sha256: backup.plan_sha256, research_bundle_id: backup.research_bundle_id,
+    target_sku: backup.target_sku, operations: backup.operations, before: backup.before
+  };
+}
+export function catalogueBackupHash(backup) { return hash(catalogueBackupCore(backup)); }
 function assert(condition, message) { if (!condition) throw new Error(message); }
 
 function planCore(plan) {
@@ -39,6 +47,8 @@ export function validateCataloguePublicationPlan(plan, { now = Date.now(), maxAg
   assert(!Number.isNaN(Date.parse(plan.generated_at)) && now - Date.parse(plan.generated_at) <= maxAgeMs && Date.parse(plan.generated_at) <= now + 60_000, 'Publication plan is expired or future-dated');
   assert(plan.operations.every((op) => PUBLISHABLE_CATALOGUE_FIELDS.has(op.field)), 'Plan contains a non-publishable field');
   assert(new Set(plan.operations.map((op) => op.field)).size === plan.operations.length, 'Plan contains duplicate field operations');
+  assert(Array.isArray(plan.approval.approved_fields), 'approved_fields is required');
+  assert(hash([...plan.operations.map((op) => op.field)].sort()) === hash([...plan.approval.approved_fields].sort()), 'Plan operations do not match approved_fields');
   assert(hash(planCore(plan)) === plan.plan_sha256, 'Publication plan hash mismatch');
   return true;
 }
@@ -83,13 +93,15 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     await client.query('BEGIN');
     await client.query("SET LOCAL lock_timeout = '5s'");
     await client.query("SET LOCAL statement_timeout = '30s'");
-    const locked = await client.query(`SELECT ${columns.join(', ')} FROM elimfilters_catalog WHERE sku = $1 FOR UPDATE`, [plan.target_sku]);
+    const locked = await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 FOR UPDATE', [plan.target_sku]);
     assert(locked.rowCount === 1, `Expected exactly one existing row for ${plan.target_sku}`);
     const row = locked.rows[0];
     for (const operation of plan.operations) assert(hash(logicalValue(row, operation.field)) === hash(operation.before), `Stale snapshot for ${operation.field}; publication aborted`);
     fs.mkdirSync(backupDir, { recursive: true });
     backupPath = path.join(backupDir, `${plan.target_sku}-${Date.now()}-${plan.plan_sha256.slice(0, 12)}.json`);
-    fs.writeFileSync(backupPath, `${JSON.stringify({ created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, target_sku: plan.target_sku, before: row }, null, 2)}\n`, { flag: 'wx' });
+    const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
+    backup.backup_sha256 = catalogueBackupHash(backup);
+    fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
     const update = compileUpdate(plan);
     const changed = await client.query(update.sql, update.values);
     assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');

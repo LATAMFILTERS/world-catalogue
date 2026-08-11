@@ -35,10 +35,11 @@ endpoints are confirmed and added).
 
 ```bash
 npm run test:hermes-phase5
+npm run test:hermes-phase7
 npm run test:hermes-readiness
 ```
 
-Both must report all tests passing. Do not proceed on a red test run.
+All three must report all tests passing. Do not proceed on a red test run.
 
 ## 4. Manual workflow execution
 
@@ -53,8 +54,9 @@ manually" to trigger **HERMES Weekly Intelligence Collection** via
 
 Download the `hermes-weekly-collection` artifact from the completed run
 (see `hermes/GITHUB-ACTIONS-ACTIVATION.md` → "Downloading artifacts").
-Confirm all four expected paths are present:
-`hermes/real-candidates/`, `hermes/reports/`, `hermes/source-cache/`,
+Confirm all five expected paths are present:
+`hermes/real-candidates/`, `hermes/real-candidates-previews/`,
+`hermes/reports/`, `hermes/source-cache/`, and
 `elimfilters-vault/94-sync-log/`.
 
 ## 6. Candidate verification
@@ -102,7 +104,7 @@ Confirm, from the artifact and the run log:
 - [ ] Step 2 registry: PASS
 - [ ] Step 3 tests: all green
 - [ ] Step 4 workflow run: completed without an unexpected error
-- [ ] Step 5 artifacts: all four paths present
+- [ ] Step 5 artifacts: all five paths present
 - [ ] Step 6 candidates: all valid
 - [ ] Step 7 email preview: reviewed and looks correct
 - [ ] Step 8 zero-writes: confirmed

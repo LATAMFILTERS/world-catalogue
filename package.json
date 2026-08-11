@@ -55,7 +55,8 @@
     "test:knowledge-pipeline": "node --test tests/knowledge-pipeline-obsidian-client.test.js tests/knowledge-pipeline-knowledge-gap-store.test.js tests/knowledge-pipeline-hermes-client.test.js tests/knowledge-pipeline-oem-and-practices.test.js tests/knowledge-pipeline-category-recommender.test.js tests/knowledge-pipeline-sku-and-catalog.test.js tests/knowledge-pipeline-e2e-http.test.js",
     "test": "npm run test:bot-protocol && npm run test:bot-e2e && npm run test:knowledge-governance && npm run test:knowledge-pipeline && npm run test:chatbot && npm run test:ebp",
     "hermes:catalogue:publication-plan": "node scripts/hermes/catalogue-publication-plan.mjs",
-    "hermes:catalogue:publish-plan": "node scripts/hermes/publish-catalogue-plan.mjs"
+    "hermes:catalogue:publish-plan": "node scripts/hermes/publish-catalogue-plan.mjs",
+    "hermes:catalogue:rollback": "node scripts/hermes/rollback-catalogue-publication.mjs"
   },
   "dependencies": {
     "axios": "^1.7.7",
