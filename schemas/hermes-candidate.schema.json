@@ -27,6 +27,7 @@
   "properties": {
     "entity_type": { "const": "intelligence_candidate" },
     "entity_code": { "type": "string", "pattern": "^HERMES_[A-Z0-9_]+$" },
+    "research_bundle_id": { "type": "string", "pattern": "^HERMES_BUNDLE_[A-F0-9]{24}$", "description": "Stable link between a governed knowledge candidate and its catalogue candidate." },
     "workflow_status": {
       "enum": ["CAPTURED", "NORMALIZED", "PENDING_REVIEW", "NEEDS_RESEARCH", "APPROVED", "REJECTED", "READY_TO_SYNC", "SYNCED", "SYNC_FAILED", "SUPERSEDED"]
     },
