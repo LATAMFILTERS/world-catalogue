@@ -13,11 +13,12 @@ function targetFor(changeType) {
   return '09-products';
 }
 
-function candidateTypeFor(changeType) {
+function candidateTypeFor(changeType, organizationCategory) {
   if (changeType === 'application_update') return 'application_update';
   if (changeType === 'coverage_gap') return 'coverage_gap';
   if (changeType === 'cross_reference' || changeType === 'supersession') return 'oem_reference_update';
   if (changeType === 'technical_change') return 'technical_bulletin';
+  if (changeType === 'new_product' && String(organizationCategory || '').startsWith('oem_')) return 'oem_update';
   return 'competitor_product_update';
 }
 
@@ -28,7 +29,7 @@ function officialEvidenceItems(report) {
     origin: 'official', evidence_id: item.evidence_id, evidence_level: 'PRIMARY',
     workflow_status: item.workflow_status, source_type: item.source_type,
     source_url: item.source_url, source_hash: item.source_hash,
-    source_publisher: item.organization_name, captured_at: item.captured_at,
+    source_publisher: item.organization_name, organization_category: item.organization_category, captured_at: item.captured_at,
     change_type: item.change_type, manufacturer: item.manufacturer, part_number: item.part_number,
     product_family: item.product_family, applications: item.applications || [], dimensions: item.dimensions || {},
     technical_specs: item.technical_specs || {}, cross_references: item.cross_references || [],
@@ -67,7 +68,7 @@ export function buildDualTrackCandidates({ officialEvidence = null, marketplaceE
       entity_type: 'intelligence_candidate', entity_code: researchBundleId,
       research_bundle_id: researchBundleId,
       workflow_status: needsResearch ? 'NEEDS_RESEARCH' : 'PENDING_REVIEW',
-      candidate_type: candidateTypeFor(item.change_type), source_type: item.source_type,
+      candidate_type: candidateTypeFor(item.change_type, item.organization_category), source_type: item.source_type,
       source_url: item.source_url, source_publisher: item.source_publisher,
       published_at: null, captured_at: item.captured_at, last_verified_at: item.captured_at,
       confidence: item.evidence_level === 'PRIMARY' ? 0.95 : (item.evidence_level === 'SECONDARY_VERIFIED' ? 0.7 : 0.4),
