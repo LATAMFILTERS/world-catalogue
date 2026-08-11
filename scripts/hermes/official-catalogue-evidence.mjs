@@ -50,6 +50,12 @@ export function validateOfficialEvidence(record, organizations) {
   const organization = (organizations || []).find((item) => item.id === record?.organization_id);
   if (!organization) errors.push('known organization_id required');
   if (!SOURCE_TYPES.has(record?.source_type)) errors.push('unsupported official source_type');
+  if (organization && record?.source_type === 'oem_catalogue' && !String(organization.category || '').startsWith('oem_')) {
+    errors.push('oem_catalogue requires an OEM organization category');
+  }
+  if (organization && record?.source_type === 'aftermarket_catalogue' && organization.category !== 'filtration_competitor') {
+    errors.push('aftermarket_catalogue requires a filtration_competitor organization category');
+  }
   if (!CHANGE_TYPES.has(record?.change_type || 'new_product')) errors.push('unsupported change_type');
   if (!record?.manufacturer) errors.push('manufacturer required');
   if ((record?.change_type || 'new_product') !== 'coverage_gap' && !record?.part_number) errors.push('part_number required');
