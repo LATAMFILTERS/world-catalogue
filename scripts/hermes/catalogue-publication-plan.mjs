@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url';
 export const PUBLISHABLE_CATALOGUE_FIELDS = new Set([
   'filter_type', 'duty', 'technology', 'dimensions', 'technical_specs',
   'equipment_applications', 'oem_codes', 'competitor_codes',
-  'brand_crossrefs', 'superseded_by', 'catalogue_status'
+  'brand_crossrefs'
 ]);
 
 function canonical(value) {
@@ -32,6 +32,11 @@ function assert(condition, message) {
 
 function normalizeSku(value) {
   return String(value || '').trim().toUpperCase();
+}
+
+function snapshotValue(product, field) {
+  return field === 'filter_type' ? (product.product_family ?? null) :
+    (Object.hasOwn(product, field) ? product[field] : null);
 }
 
 export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = new Date().toISOString() }) {
@@ -68,12 +73,12 @@ export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = n
 
   const operations = approvedFields.map((field) => ({
     field,
-    before: Object.hasOwn(current, field) ? current[field] : null,
+    before: snapshotValue(current, field),
     after: proposedValues[field]
   })).filter((operation) => hash(operation.before) !== hash(operation.after));
   assert(operations.length > 0, 'No catalogue change remains after comparison with the current snapshot');
 
-  const snapshotIdentity = { sku: targetSku, values: Object.fromEntries(approvedFields.map((field) => [field, Object.hasOwn(current, field) ? current[field] : null])) };
+  const snapshotIdentity = { sku: targetSku, values: Object.fromEntries(approvedFields.map((field) => [field, snapshotValue(current, field)])) };
   const planCore = {
     schema_version: '1.0.0', research_bundle_id: bundle.research_bundle_id,
     target_sku: targetSku, change_type: candidate.change_type,
