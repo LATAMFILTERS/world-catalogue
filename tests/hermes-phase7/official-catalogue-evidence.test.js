@@ -42,3 +42,15 @@ test('rejects unknown organizations and duplicate evidence', () => {
   assert.equal(duplicate.summary.official_discoveries, 1);
   assert.equal(duplicate.summary.rejected, 1);
 });
+
+test('rejects OEM and aftermarket category cross-classification', () => {
+  const wrongAftermarket = buildOfficialCatalogueEvidence([{ ...base, source_type: 'aftermarket_catalogue' }], organizations);
+  const competitorOrganizations = [{
+    id: 'donaldson', name: 'Donaldson', category: 'filtration_competitor', official_domain: 'https://www.donaldson.com'
+  }];
+  const wrongOem = buildOfficialCatalogueEvidence([{
+    ...base, organization_id: 'donaldson', source_type: 'oem_catalogue', source_url: 'https://www.donaldson.com/item'
+  }], competitorOrganizations);
+  assert.match(wrongAftermarket.rejected[0].errors.join(' '), /filtration_competitor/);
+  assert.match(wrongOem.rejected[0].errors.join(' '), /OEM organization/);
+});
