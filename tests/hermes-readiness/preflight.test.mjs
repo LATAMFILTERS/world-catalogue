@@ -117,3 +117,12 @@ test('operational-preflight.mjs never imports fetch-capable network modules or a
   assert.doesNotMatch(source, /\bfetch\(/);
   assert.doesNotMatch(source, /axios/);
 });
+
+
+test('preflight detects catalogue publication and rollback live gates as dangerous', () => {
+  for (const name of ['HERMES_CATALOGUE_PUBLISH_LIVE', 'HERMES_CATALOGUE_ROLLBACK_LIVE']) {
+    const { report } = runPreflight({ [name]: 'true' });
+    assert.equal(report.safe, false, `expected ${name}=true to be unsafe`);
+    assert.equal(report.checks.find((c) => c.id === `env:${name}`).status, 'DANGEROUS');
+  }
+});
