@@ -200,9 +200,11 @@ jobs:
       - name: Send weekly review email
         if: steps.guard.outputs.proceed == 'true'
         env:
-          HERMES_EMAIL_PROVIDER: gmail
+          HERMES_EMAIL_PROVIDER: outlook
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
-          HERMES_GMAIL_APP_PASSWORD: ${{ secrets.HERMES_GMAIL_APP_PASSWORD }}
           HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
           # Defaults to off. A human must set the HERMES_EMAIL_LIVE
           # repository Variable to 'true' to actually send mail.
