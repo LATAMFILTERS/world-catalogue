@@ -1,4 +1,4 @@
-import { CANONICAL_TECHNOLOGIES, type TechnologySlug } from './canonical-technologies';
+import { type TechnologySlug } from './canonical-technologies';
 import { getFailureKnowledgeProfile } from './failure-knowledge';
 import { getFamilyBySlug } from './product-families-data';
 import { getProtectionSystemBySlug } from './protection-systems-data';
@@ -12,114 +12,32 @@ export interface CanonicalEngineeringDefinition {
 }
 
 const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinition> = {
-  macrocore: {
-    name: 'MACROCORE™',
-    definition: 'A progressive-density engine air filtration architecture for primary and secondary intake protection.',
-    engineeringPrinciple: 'Layered media zones distribute contaminant loading through the media depth while balancing efficiency, dust capacity, and airflow restriction.',
-    controlStrategy: 'Match media configuration, sealing geometry, restriction limits, and service interval to the intake duty cycle and contamination load.',
-    operationalImpact: 'Reduced particulate ingestion helps protect cylinders, piston rings, turbochargers, and combustion-system efficiency.',
-  },
-  microkappa: {
-    name: 'MICROKAPPA™',
-    definition: 'A cabin-air protection architecture for particulate, allergen, odor, and selected gaseous-contaminant control.',
-    engineeringPrinciple: 'Mechanical and electrostatic particle capture can be combined with adsorption layers according to the operator-environment requirement.',
-    controlStrategy: 'Select media layers around particle exposure, odor loading, airflow demand, and cabin pressure-drop limits.',
-    operationalImpact: 'Improved operator-air quality supports comfort, visibility, and sustained equipment operation in contaminated environments.',
-  },
-  syntrax: {
-    name: 'SYNTRAX™',
-    definition: 'A lubrication filtration architecture for controlling soot agglomerates, wear debris, and oxidation byproducts.',
-    engineeringPrinciple: 'Full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across changing oil viscosity.',
-    controlStrategy: 'Match filtration performance, bypass behavior, anti-drainback function, and service interval to engine duty and lubricant condition.',
-    operationalImpact: 'Cleaner lubricant helps preserve bearings, journals, valve-train components, and oil-film integrity.',
-  },
-  syntepore: {
-    name: 'SYNTEPORE™',
-    definition: 'A diesel-fuel filtration architecture for primary and secondary particulate control.',
-    engineeringPrinciple: 'Staged synthetic media targets the particle population that threatens precision pumps and injector clearances.',
-    controlStrategy: 'Apply the required efficiency, capacity, flow, and pressure-drop performance at each fuel-filtration stage.',
-    operationalImpact: 'Cleaner fuel helps maintain injector metering, pump durability, combustion quality, and fuel-system reliability.',
-  },
-  nanoforce: {
-    name: 'NANOFORCE™',
-    definition: 'A hydraulic filtration architecture for high-pressure circuits and precision fluid-power components.',
-    engineeringPrinciple: 'Beta-rated media and collapse-resistant construction are matched to flow, pressure, particle size, temperature, and duty cycle.',
-    controlStrategy: 'Set cleanliness targets around the most sensitive component and validate filter selection against ISO 16889 and ISO 4406 requirements.',
-    operationalImpact: 'Controlled fluid cleanliness helps reduce valve stiction, pump wear, leakage, and loss of hydraulic precision.',
-  },
-  thermacore: {
-    name: 'THERMACORE™',
-    definition: 'A cooling-system protection architecture for coolant cleanliness and controlled additive support.',
-    engineeringPrinciple: 'Particulate removal and controlled additive release protect wet liners, passages, seals, and heat-transfer surfaces.',
-    controlStrategy: 'Match coolant-filter chemistry, capacity, flow, and service interval to coolant volume and engine requirements.',
-    operationalImpact: 'Stable coolant condition helps reduce corrosion, scale, cavitation exposure, and thermal-performance loss.',
-  },
-  intekcore: {
-    name: 'INTEKCORE™',
-    definition: 'An air-cleaner housing and sealing architecture for controlled airflow and bypass prevention.',
-    engineeringPrinciple: 'Housing geometry, structural integrity, element retention, and seal loading work together to preserve the protected intake boundary.',
-    controlStrategy: 'Validate housing sizing, inlet routing, restriction, dust evacuation, element fit, and sealing under the intended duty cycle.',
-    operationalImpact: 'Reliable sealing and airflow management reduce unfiltered-air ingress and protect intake-system performance.',
-  },
-  drycore: {
-    name: 'DRYCORE™',
-    definition: 'An air-dryer filtration architecture for moisture control in pneumatic braking and instrument-air systems.',
-    engineeringPrinciple: 'Molecular-sieve desiccant adsorbs water vapor before it can condense, freeze, or corrode pneumatic components.',
-    controlStrategy: 'Match desiccant capacity, purge behavior, airflow, and replacement interval to compressor duty and ambient moisture exposure.',
-    operationalImpact: 'Dry compressed air helps protect valves, actuators, controls, and braking-system reliability.',
-  },
-  hydrocore: {
-    name: 'HYDROCORE™',
-    definition: 'A fuel-water separation architecture for free and emulsified water control in diesel fuel systems.',
-    engineeringPrinciple: 'Staged separation, droplet coalescence, gravity collection, and a hydrophobic barrier remove water while supporting particulate control.',
-    controlStrategy: 'Select separation efficiency, flow capacity, collection volume, drainage, and service interval for the fuel quality and duty cycle.',
-    operationalImpact: 'Reduced water exposure helps protect pumps, injectors, fuel lubricity, and storage-system cleanliness.',
-  },
-  turbocore: {
-    name: 'TURBOCORE™',
-    definition: 'A dedicated fuel-separation architecture for Turbine Series FH and FG systems.',
-    engineeringPrinciple: 'Multi-stage turbine flow management separates water and contamination before final fuel delivery to the protected circuit.',
-    controlStrategy: 'Configure the FH or FG assembly around required flow, separation duty, collection capacity, installation, and maintenance access.',
-    operationalImpact: 'Staged turbine separation improves bulk fuel conditioning and reduces contamination exposure in demanding applications.',
-  },
+  macrocore: { name:'MACROCORE™', definition:'A progressive-density engine air filtration architecture for primary and secondary intake protection.', engineeringPrinciple:'Layered media zones distribute contaminant loading through the media depth while balancing efficiency, dust capacity, and airflow restriction.', controlStrategy:'Match media configuration, sealing geometry, restriction limits, and service interval to the intake duty cycle and contamination load.', operationalImpact:'Reduced particulate ingestion helps protect cylinders, piston rings, turbochargers, and combustion-system efficiency.' },
+  microkappa: { name:'MICROKAPPA™', definition:'A cabin-air filtration architecture within the Air Intake & Airflow Protection system.', engineeringPrinciple:'Mechanical and electrostatic particle capture can be combined with adsorption layers according to operator-environment requirements.', controlStrategy:'Select media layers around particle exposure, odor loading, airflow demand, and cabin pressure-drop limits.', operationalImpact:'Improved operator-air quality supports comfort and sustained equipment operation in contaminated environments.' },
+  drycore: { name:'DRYCORE™', definition:'An air-dryer filtration architecture for moisture control in pneumatic and compressed-air systems.', engineeringPrinciple:'Desiccant and separation stages control water vapor, condensate, oil aerosol, and particulate exposure according to system duty.', controlStrategy:'Match drying capacity, purge behavior, airflow, and service interval to compressor duty and ambient conditions.', operationalImpact:'Controlled compressed-air quality helps protect valves, actuators, controls, and braking-system reliability.' },
+  intekcore: { name:'INTEKCORE™', definition:'An air-cleaner housing and sealing architecture for controlled airflow and bypass prevention.', engineeringPrinciple:'Housing geometry, structural integrity, element retention, and seal loading preserve the protected intake boundary.', controlStrategy:'Validate housing sizing, inlet routing, restriction, dust evacuation, element fit, and sealing under the intended duty cycle.', operationalImpact:'Reliable sealing and airflow management reduce unfiltered-air ingress and protect intake-system performance.' },
+  syntrax: { name:'SYNTRAX™', definition:'A lubrication filtration architecture for controlling soot agglomerates, wear debris, and oxidation byproducts.', engineeringPrinciple:'Full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across changing oil viscosity.', controlStrategy:'Match filtration performance, bypass behavior, anti-drainback function, and service interval to engine duty and lubricant condition.', operationalImpact:'Cleaner lubricant helps preserve bearings, journals, valve-train components, and oil-film integrity.' },
+  nanoforce: { name:'NANOFORCE™', definition:'A hydraulic filtration architecture for high-pressure circuits and precision fluid-power components.', engineeringPrinciple:'Beta-rated media and collapse-resistant construction are matched to flow, pressure, particle size, temperature, and duty cycle.', controlStrategy:'Set cleanliness targets around the most sensitive component and validate filter selection against applicable cleanliness and filter-test standards.', operationalImpact:'Controlled fluid cleanliness helps reduce valve stiction, pump wear, leakage, and loss of hydraulic precision.' },
+  hydrocore: { name:'HYDROCORE™', definition:'A fuel cleanliness architecture combining particulate filtration and fuel-water separation for diesel systems.', engineeringPrinciple:'Staged particle interception, water coalescence, collection, and hydrophobic separation are selected according to fuel quality and system sensitivity.', controlStrategy:'Match filtration efficiency, separation performance, flow capacity, drainage, and service interval to the protected fuel system.', operationalImpact:'Cleaner, drier fuel helps protect pumps, injectors, combustion quality, and fuel-system reliability.' },
+  'hydrocore-series': { name:'HYDROCORE/SERIES™', definition:'A turbine-style FH and FG fuel-water separation architecture for demanding diesel applications.', engineeringPrinciple:'Multi-stage flow management separates bulk water and contamination before final fuel delivery to the protected circuit.', controlStrategy:'Configure the FH or FG assembly around required flow, separation duty, collection capacity, installation, and maintenance access.', operationalImpact:'Staged turbine separation supports bulk fuel conditioning and reduces contamination exposure in demanding applications.' },
+  thermacore: { name:'THERMACORE™', definition:'A cooling-system protection architecture for coolant cleanliness and controlled additive support.', engineeringPrinciple:'Particulate removal and controlled chemistry support protect wet liners, passages, seals, and heat-transfer surfaces.', controlStrategy:'Match coolant-filter chemistry, capacity, flow, and service interval to coolant volume and engine requirements.', operationalImpact:'Stable coolant condition helps reduce corrosion, scale, cavitation exposure, and thermal-performance loss.' },
+  marineclean: { name:'MARINECLEAN™', definition:'A marine filtration architecture for contamination control across fuel, lubrication, hydraulic, and air systems exposed to marine duty.', engineeringPrinciple:'System selection accounts for water exposure, corrosion risk, sustained load, vibration, and service accessibility in marine environments.', controlStrategy:'Coordinate filtration stages and maintenance around vessel duty, fluid cleanliness targets, water exposure, and equipment requirements.', operationalImpact:'Controlled contamination supports propulsion, auxiliary-system, and onboard equipment reliability.' },
+  duractech: { name:'DURACTECH™', definition:'A severe-duty filtration kit architecture that coordinates multiple service items around one maintenance event.', engineeringPrinciple:'Matched filtration components are grouped by asset and duty cycle to preserve system compatibility and maintenance consistency.', controlStrategy:'Validate every kit component against the protected asset, operating conditions, service interval, and applicable filtration requirements.', operationalImpact:'Coordinated service planning reduces selection errors and supports consistent asset-protection maintenance.' },
 };
 
-export function getTechnologyEngineering(slug: string): CanonicalEngineeringDefinition | undefined {
-  return TECHNOLOGY_ENGINEERING[slug as TechnologySlug];
-}
+export function getTechnologyEngineering(slug: string): CanonicalEngineeringDefinition | undefined { return TECHNOLOGY_ENGINEERING[slug as TechnologySlug]; }
 
 export function getSystemEngineering(slug: string): CanonicalEngineeringDefinition | undefined {
-  const system = getProtectionSystemBySlug(slug);
-  if (!system) return undefined;
-  return {
-    name: system.name,
-    definition: system.overview,
-    engineeringPrinciple: system.engineeringPrinciple,
-    controlStrategy: `Coordinate the technologies and product families assigned to ${system.name} around the protected asset, contamination boundary, applicable standard, and operating duty cycle.`,
-    operationalImpact: `Consistent ${system.name.toLowerCase()} reduces contamination exposure and supports asset reliability across the service interval.`,
-  };
+  const system = getProtectionSystemBySlug(slug); if (!system) return undefined;
+  return { name: system.name, definition: system.overview, engineeringPrinciple: system.engineeringPrinciple, controlStrategy: `Coordinate the technologies and product families assigned to ${system.name} around the protected asset, contamination boundary, applicable standard, and operating duty cycle.`, operationalImpact: `Consistent ${system.name.toLowerCase()} reduces contamination exposure and supports asset reliability across the service interval.` };
 }
 
 export function getFamilyEngineering(slug: string): CanonicalEngineeringDefinition | undefined {
-  const family = getFamilyBySlug(slug);
-  if (!family) return undefined;
-  return {
-    name: family.name,
-    definition: family.purpose,
-    engineeringPrinciple: family.engineering,
-    controlStrategy: `Select ${family.name.toLowerCase()} by protected system, duty class, applicable standard, flow or airflow requirement, and service condition.`,
-    operationalImpact: `${family.name} supports the contamination-control objective of the ${family.protectionSystem.replace(/-/g, ' ')} domain.`,
-  };
+  const family = getFamilyBySlug(slug); if (!family) return undefined;
+  return { name: family.name, definition: family.purpose, engineeringPrinciple: family.engineering, controlStrategy: `Select ${family.name.toLowerCase()} by protected system, duty class, applicable standard, flow or airflow requirement, and service condition.`, operationalImpact: `${family.name} supports the contamination-control objective of the ${family.protectionSystem.replace(/-/g, ' ')} domain.` };
 }
 
 export function getFailureEngineering(slug: string): CanonicalEngineeringDefinition | undefined {
-  const failure = getFailureKnowledgeProfile(slug);
-  if (!failure) return undefined;
-  return {
-    name: failure.name,
-    definition: failure.definition,
-    engineeringPrinciple: failure.mechanism,
-    controlStrategy: failure.controlStrategy,
-    operationalImpact: failure.operationalImpact,
-  };
+  const failure = getFailureKnowledgeProfile(slug); if (!failure) return undefined;
+  return { name: failure.name, definition: failure.definition, engineeringPrinciple: failure.mechanism, controlStrategy: failure.controlStrategy, operationalImpact: failure.operationalImpact };
 }
