@@ -6,7 +6,7 @@ intekcore:{slug:'intekcore',name:'INTEKCORE™',domain:'air-intake',role:'Air ho
 syntrax:{slug:'syntrax',name:'SYNTRAX™',domain:'lubrication',role:'Lube and oil filtration'},
 nanoforce:{slug:'nanoforce',name:'NANOFORCE™',domain:'hydraulic',role:'Hydraulic filtration'},
 syntapore:{slug:'syntapore',name:'SYNTAPORE™',domain:'fuel-cleanliness',role:'Primary and secondary diesel fuel filtration for spin-on and cartridge elements'},
-turbocor:{slug:'turbocor',name:'TURBOCOR™',domain:'fuel-cleanliness',role:'FH and FG turbine fuel-water separation systems and replacement elements'},
+turbocore:{slug:'turbocore',name:'TURBOCORE™',domain:'fuel-cleanliness',role:'FH and FG turbine fuel-water separation systems and replacement elements'},
 thermacore:{slug:'thermacore',name:'THERMACORE™',domain:'cooling-system',role:'Cooling-system protection'},
 marineclean:{slug:'marineclean',name:'MARINECLEAN™',domain:'marine',role:'Marine filtration architecture'},
 duractech:{slug:'duractech',name:'DURACTECH™',domain:'severe-duty',role:'Severe-duty filtration kit architecture'}
