@@ -11,6 +11,14 @@ export const STATIC_CRAWL_ROUTES = [
   '/families',
   '/industries',
   '/knowledge-center',
+  '/knowledge-center/systems',
+  '/knowledge-center/contamination',
+  '/knowledge-center/standards',
+  '/knowledge-center/problems',
+  '/knowledge-center/industries',
+  '/knowledge-center/diagrams',
+  '/knowledge-center/glossary',
+  '/knowledge-center/search',
   '/about',
   '/contact',
   '/search',
@@ -19,7 +27,6 @@ export const STATIC_CRAWL_ROUTES = [
   '/product-experience',
   '/customer-intelligence',
   '/distributor-application',
-  '/premium-preview',
   '/warranty',
 ] as const;
 
@@ -66,19 +73,19 @@ function clampPriority(value: number): number {
 
 function frequencyForTier(tier: CrawlProfile['crawlTier']): CrawlProfile['changeFrequency'] {
   if (tier === 1) return 'weekly';
-  if (tier === 2) return 'monthly';
   return 'monthly';
 }
 
 function staticProfile(path: (typeof STATIC_CRAWL_ROUTES)[number]): CrawlProfile {
-  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : 1;
+  const knowledgeCore = path.startsWith('/knowledge-center');
+  const tier: CrawlProfile['crawlTier'] = path === '/' || knowledgeCore ? 1 : path === '/contact' || path === '/about' ? 4 : 1;
   return {
     path,
     url: `${BASE_URL}${path}`,
-    priority: path === '/' ? 1 : tier === 1 ? 0.92 : 0.55,
-    changeFrequency: path === '/' ? 'weekly' : 'monthly',
+    priority: path === '/' ? 1 : knowledgeCore ? 0.94 : tier === 1 ? 0.92 : 0.55,
+    changeFrequency: path === '/' || knowledgeCore ? 'weekly' : 'monthly',
     crawlTier: tier,
-    authority: path === '/' ? 100 : 80,
+    authority: path === '/' ? 100 : knowledgeCore ? 90 : 80,
     connectionCount: 0,
   };
 }
