@@ -12,7 +12,7 @@ const retired = [
   ['hydro', 'core'],
   ['synte', 'pore'],
   ['synte', 'for'],
-  ['turbo', 'core'],
+  ['turbo', 'cor'],
   ['aqua', 'guard'],
   ['dura', 'tech'],
 ].map((parts) => parts.join('').toLowerCase());
