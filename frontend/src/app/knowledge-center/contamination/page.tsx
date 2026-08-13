@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const contaminationDomains = [
-  { title: 'Particle Contamination', path: ['SOURCE', 'INGRESS', 'SURFACE', 'WEAR'], href: '/knowledge-center/engineering/particle-science/' },
+  { title: 'Particle Contamination', path: ['SOURCE', 'INGRESS', 'SURFACE', 'WEAR'], href: '/knowledge-center/engineering/contamination-control/' },
   { title: 'Water Contamination', path: ['STORAGE', 'WATER', 'FUEL', 'SYSTEM RISK'], href: '/knowledge-center/search/' },
   { title: 'Chemical Degradation', path: ['FLUID', 'DEGRADATION', 'DEPOSITS', 'CONTROL'], href: '/knowledge-center/search/' },
   { title: 'Biological Contamination', path: ['WATER', 'MICROBIAL GROWTH', 'BIOMASS', 'RESTRICTION'], href: '/knowledge-center/search/' },
