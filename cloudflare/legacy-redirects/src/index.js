@@ -37,8 +37,16 @@ const REDIRECTS = new Map([
   ["/knowledge-system/standards/iso-8573-1/", "/knowledge-center/standards/iso-8573-1/"],
   ["/knowledge-system/standards/sae-j1539", "/knowledge-center/standards/sae-j1539/"],
   ["/knowledge-system/standards/sae-j1539/", "/knowledge-center/standards/sae-j1539/"],
-  ["/knowledge-center/engineering/operator-health", "/knowledge-center/systems/cabin-air-protection/"],
-  ["/knowledge-center/engineering/operator-health/", "/knowledge-center/systems/cabin-air-protection/"],
+  ["/knowledge-center/engineering/operator-health", "/knowledge-center/systems/air-intake-protection/"],
+  ["/knowledge-center/engineering/operator-health/", "/knowledge-center/systems/air-intake-protection/"],
+  ["/knowledge-center/systems/cabin-air-protection", "/knowledge-center/systems/air-intake-protection/"],
+  ["/knowledge-center/systems/cabin-air-protection/", "/knowledge-center/systems/air-intake-protection/"],
+  ["/knowledge-center/technologies/syntepore", "/knowledge-center/technologies/hydrocore/"],
+  ["/knowledge-center/technologies/syntepore/", "/knowledge-center/technologies/hydrocore/"],
+  ["/knowledge-center/technologies/turbocore", "/knowledge-center/technologies/hydrocore-series/"],
+  ["/knowledge-center/technologies/turbocore/", "/knowledge-center/technologies/hydrocore-series/"],
+  ["/knowledge-center/technologies/duratech", "/knowledge-center/technologies/duractech/"],
+  ["/knowledge-center/technologies/duratech/", "/knowledge-center/technologies/duractech/"],
 ]);
 
 function permanentRedirect(url, destinationPath) {
@@ -51,17 +59,8 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     const exactDestination = REDIRECTS.get(url.pathname);
-
-    if (exactDestination) {
-      return permanentRedirect(url, exactDestination);
-    }
-
-    // Safety net: no legacy /knowledge-system URL is allowed to reach Render
-    // and become a 404. Unknown legacy paths go to the Knowledge Center root.
-    if (url.pathname.startsWith("/knowledge-system/")) {
-      return permanentRedirect(url, "/knowledge-center/");
-    }
-
+    if (exactDestination) return permanentRedirect(url, exactDestination);
+    if (url.pathname.startsWith("/knowledge-system/")) return permanentRedirect(url, "/knowledge-center/");
     return fetch(request);
   },
 };
