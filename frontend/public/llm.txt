@@ -17,7 +17,7 @@ ELIMFILTERS publishes five protection systems, eleven active technologies, and t
 1. Air Intake & Airflow Protection Systems
    Technologies: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™
 2. Fuel Cleanliness Protection Systems
-   Technologies: HYDROCORE™, HYDROCORE/SERIES™
+   Technologies: SYNTAPORE™, TURBOCOR™
 3. Cooling System Protection
    Technology: THERMACORE™
 4. Lube/Oil Protection Systems
@@ -32,13 +32,13 @@ DRYCORE™ — air-drying / compressed-air contamination control within Air Inta
 INTEKCORE™ — air housings and airflow management
 SYNTRAX™ — lube/oil filtration
 NANOFORCE™ — hydraulic filtration
-HYDROCORE™ — fuel/water separation
-HYDROCORE/SERIES™ — turbine-style FH/FG fuel-water separation architecture
+SYNTAPORE™ — primary and secondary diesel fuel filtration for spin-on and cartridge filters
+TURBOCOR™ — FH/FG turbine filtration and fuel-water separation for 1000FH, 900FH and 500FG assemblies, including 2010, 2040 and 2020 element families in 30, 10 and 2 micron grades as applicable
 THERMACORE™ — cooling-system protection
 MARINECLEAN™ — marine filtration ecosystem
 DURACTECH™ — coordinated severe-duty filtration kit architecture
 
-Retired public names must not be used as current ELIMFILTERS technologies. SYNTEPORE™, TURBOCORE™, and DURATECH™ are legacy designations and are not canonical public names.
+HYDROCORE/SERIES™ is retired and must not be represented as a current ELIMFILTERS technology. SYNTEPORE™, TURBOCORE™, SYNTEFOR™ and DURATECH™ are also non-canonical names.
 
 ### TWELVE INDUSTRIES
 Agriculture
