@@ -69,14 +69,14 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     standards: ['ISO 4020', 'ISO 16332'],
     relatedSystems: ['fuel-cleanliness-protection'],
     relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'marine', 'oil-gas', 'power-generation', 'railway'],
-    worksWith: ['TURBOCOR™'],
+    worksWith: ['TURBOCORE™'],
   },
   {
-    slug: 'turbocor',
-    name: 'TURBOCOR™',
+    slug: 'turbocore',
+    name: 'TURBOCORE™',
     domain: 'Fuel Cleanliness Protection Systems',
     tagline: 'FH/FG turbine fuel-filtration and fuel/water-separation technology.',
-    engineeringPrinciple: 'TURBOCOR™ is the canonical ELIMFILTERS technology for FH and FG turbine-style fuel filtration and water-separation assemblies. Its scope includes 1000FH, 900FH and 500FG assemblies and the corresponding 2010, 2040 and 2020 element families in 30, 10 and 2 micron grades where applicable. Flow, separation efficiency, restriction and service limits are model- and element-specific and must be verified against validated product data.',
+    engineeringPrinciple: 'TURBOCORE™ is the canonical ELIMFILTERS technology for FH and FG turbine-style fuel filtration and water-separation assemblies. Its scope includes 1000FH, 900FH and 500FG assemblies and the corresponding 2010, 2040 and 2020 element families in 30, 10 and 2 micron grades where applicable. Flow, separation efficiency, restriction and service limits are model- and element-specific and must be verified against validated product data.',
     contamination: ['Diesel-fuel particulate', 'Free water', 'Entrained water'],
     performanceSpecs: [
       { label: 'Assembly families', value: '1000FH · 900FH · 500FG' },
@@ -138,7 +138,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     standards: [],
     relatedSystems: ['air-intake-protection', 'fuel-cleanliness-protection', 'lubrication-protection', 'hydraulic-protection', 'cooling-system-protection'],
     relatedIndustries: ['marine'],
-    worksWith: ['MACROCORE™', 'SYNTAPORE™', 'TURBOCOR™', 'SYNTRAX™', 'NANOFORCE™', 'THERMACORE™'],
+    worksWith: ['MACROCORE™', 'SYNTAPORE™', 'TURBOCORE™', 'SYNTRAX™', 'NANOFORCE™', 'THERMACORE™'],
   },
   {
     slug: 'duractech',
@@ -151,6 +151,6 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     standards: [],
     relatedSystems: ['air-intake-protection', 'fuel-cleanliness-protection', 'lubrication-protection', 'hydraulic-protection', 'cooling-system-protection'],
     relatedIndustries: ['mining', 'construction', 'agriculture', 'truck-fleets', 'waste-municipal'],
-    worksWith: ['MACROCORE™', 'SYNTAPORE™', 'TURBOCOR™', 'SYNTRAX™', 'NANOFORCE™', 'THERMACORE™'],
+    worksWith: ['MACROCORE™', 'SYNTAPORE™', 'TURBOCORE™', 'SYNTRAX™', 'NANOFORCE™', 'THERMACORE™'],
   },
 ];
