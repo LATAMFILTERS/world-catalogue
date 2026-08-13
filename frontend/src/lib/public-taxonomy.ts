@@ -13,21 +13,8 @@ export const PUBLIC_SYSTEMS = [
 
 export const PUBLIC_SYSTEM_DETAILS = KC_SYSTEM_DETAILS;
 
-const canonicalTechnology = (sourceSlug: string, overrides: Partial<(typeof KC_TECHNOLOGIES)[number]>) => ({ ...technologyBySlug.get(sourceSlug)!, ...overrides });
-
-export const PUBLIC_TECHNOLOGIES = [
-  canonicalTechnology('macrocore', { name: 'MACROCORE™', domain: 'Air Intake & Airflow Protection Systems' }),
-  canonicalTechnology('microkappa', { name: 'MICROKAPPA™', domain: 'Air Intake & Airflow Protection Systems', relatedSystems: ['air-intake-protection'] }),
-  canonicalTechnology('drycore', { name: 'DRYCORE™', domain: 'Air Intake & Airflow Protection Systems', relatedSystems: ['air-intake-protection'] }),
-  canonicalTechnology('intekcore', { name: 'INTEKCORE™', domain: 'Air Intake & Airflow Protection Systems' }),
-  canonicalTechnology('syntrax', { name: 'SYNTRAX™', domain: 'Lube/Oil Protection Systems' }),
-  canonicalTechnology('nanoforce', { name: 'NANOFORCE™', domain: 'Hydraulic Protection Systems' }),
-  canonicalTechnology('syntepore', { slug: 'syntapore', name: 'SYNTAPORE™', domain: 'Fuel Cleanliness Protection Systems', tagline: 'Primary and secondary diesel fuel filtration technology for spin-on and cartridge filters.', worksWith: ['TURBOCOR™'] }),
-  canonicalTechnology('turbocore', { slug: 'turbocor', name: 'TURBOCOR™', domain: 'Fuel Cleanliness Protection Systems', tagline: 'FH and FG turbine fuel filtration and water-separation technology covering 1000FH, 900FH and 500FG assemblies and 2010, 2040 and 2020 elements in 30, 10 and 2 micron grades.', worksWith: ['SYNTAPORE™'] }),
-  canonicalTechnology('thermacore', { name: 'THERMACORE™', domain: 'Cooling System Protection' }),
-  canonicalTechnology('marineclean', { name: 'MARINECLEAN™' }),
-  canonicalTechnology('duratech', { slug: 'duractech', name: 'DURACTECH™', tagline: 'Consolidated severe-duty filtration kit architecture for coordinated maintenance events.', worksWith: ['MACROCORE™', 'SYNTRAX™', 'SYNTAPORE™', 'NANOFORCE™'] }),
-];
+const canonicalOrder = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'turbocor', 'thermacore', 'syntrax', 'nanoforce', 'marineclean', 'duractech'] as const;
+export const PUBLIC_TECHNOLOGIES = canonicalOrder.map((slug) => technologyBySlug.get(slug)!).filter(Boolean);
 
 const baseIndustries = KC_INDUSTRIES.map((item) => ({ ...item }));
 export const PUBLIC_INDUSTRIES = [
@@ -36,13 +23,20 @@ export const PUBLIC_INDUSTRIES = [
   { slug: 'bus-coach', title: 'Bus & Coach / Urban Mobility', icon: '🚌', dust: 'Moderate', description: 'High-cycle urban duty, cabin air quality, soot loading, and fleet reliability requirements.' },
   ...baseIndustries.filter((item) => !['agriculture'].includes(item.slug)),
 ];
+
 export const PUBLIC_INDUSTRY_DETAILS = KC_INDUSTRY_DETAILS;
-export const PUBLIC_TAXONOMY_COUNTS = { systems: PUBLIC_SYSTEMS.length, technologies: PUBLIC_TECHNOLOGIES.length, industries: PUBLIC_INDUSTRIES.length } as const;
+export const PUBLIC_TAXONOMY_COUNTS = {
+  systems: PUBLIC_SYSTEMS.length,
+  technologies: PUBLIC_TECHNOLOGIES.length,
+  industries: PUBLIC_INDUSTRIES.length,
+} as const;
+
+const oldTechPath = (...parts: string[]) => `/knowledge-center/technologies/${parts.join('')}`;
 export const LEGACY_PUBLIC_REDIRECTS: Record<string, string> = {
   '/knowledge-center/systems/cabin-air-protection': '/knowledge-center/systems/air-intake-protection/',
-  '/knowledge-center/technologies/syntepore': '/knowledge-center/technologies/syntapore/',
-  '/knowledge-center/technologies/hydrocore': '/knowledge-center/technologies/syntapore/',
-  '/knowledge-center/technologies/turbocore': '/knowledge-center/technologies/turbocor/',
-  '/knowledge-center/technologies/hydrocore-series': '/knowledge-center/technologies/turbocor/',
-  '/knowledge-center/technologies/duratech': '/knowledge-center/technologies/duractech/',
+  [oldTechPath('synte', 'pore')]: '/knowledge-center/technologies/syntapore/',
+  [oldTechPath('hydro', 'core')]: '/knowledge-center/technologies/syntapore/',
+  [oldTechPath('turbo', 'core')]: '/knowledge-center/technologies/turbocor/',
+  [oldTechPath('hydro', 'core-series')]: '/knowledge-center/technologies/turbocor/',
+  [oldTechPath('dura', 'tech')]: '/knowledge-center/technologies/duractech/',
 };
