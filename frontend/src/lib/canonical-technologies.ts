@@ -5,8 +5,8 @@ drycore:{slug:'drycore',name:'DRYCORE™',domain:'air-intake',role:'Air-dryer fi
 intekcore:{slug:'intekcore',name:'INTEKCORE™',domain:'air-intake',role:'Air housings and sealing'},
 syntrax:{slug:'syntrax',name:'SYNTRAX™',domain:'lubrication',role:'Lube and oil filtration'},
 nanoforce:{slug:'nanoforce',name:'NANOFORCE™',domain:'hydraulic',role:'Hydraulic filtration'},
-hydrocore:{slug:'hydrocore',name:'HYDROCORE™',domain:'fuel-cleanliness',role:'Fuel filtration and water separation'},
-'hydrocore-series':{slug:'hydrocore-series',name:'HYDROCORE/SERIES™',domain:'fuel-cleanliness',role:'FH and FG turbine-style fuel-water separation'},
+syntefor:{slug:'syntefor',name:'SYNTEFOR™',domain:'fuel-cleanliness',role:'Primary and secondary diesel fuel filtration for spin-on and cartridge elements'},
+turbocor:{slug:'turbocor',name:'TURBOCOR™',domain:'fuel-cleanliness',role:'FH and FG turbine fuel-water separation systems and replacement elements'},
 thermacore:{slug:'thermacore',name:'THERMACORE™',domain:'cooling-system',role:'Cooling-system protection'},
 marineclean:{slug:'marineclean',name:'MARINECLEAN™',domain:'marine',role:'Marine filtration architecture'},
 duractech:{slug:'duractech',name:'DURACTECH™',domain:'severe-duty',role:'Severe-duty filtration kit architecture'}
