@@ -1,5 +1,5 @@
 name = "elimfilters-legacy-redirects"
-main = "src/index.js"
+main = "src/index-v2.js"
 compatibility_date = "2026-07-23"
 workers_dev = false
 
@@ -7,5 +7,7 @@ routes = [
   { pattern = "elimfilters.com/knowledge-system*", zone_name = "elimfilters.com" },
   { pattern = "www.elimfilters.com/knowledge-system*", zone_name = "elimfilters.com" },
   { pattern = "elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" },
-  { pattern = "www.elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" }
+  { pattern = "www.elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" },
+  { pattern = "elimfilters.com/knowledge-center/technologies/*", zone_name = "elimfilters.com" },
+  { pattern = "www.elimfilters.com/knowledge-center/technologies/*", zone_name = "elimfilters.com" }
 ]
