@@ -1,257 +1,40 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'motion/react';
 import { getPublishedTerms, termIdToSlug, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TermCategory } from '@/lib/knowledge-center';
 
 export default function GlossaryPage() {
-  const allTerms = getPublishedTerms(); // already sorted alphabetically
-
-  // Group terms by category
-  const categories = Object.keys(TERM_CATEGORY_LABELS) as TermCategory[];
-  const byCategory = new Map<TermCategory, typeof allTerms>();
-  for (const cat of categories) {
-    const catTerms = allTerms.filter((t) => t.category === cat);
-    if (catTerms.length > 0) byCategory.set(cat, catTerms);
-  }
+  const terms = getPublishedTerms();
+  const categories = (Object.keys(TERM_CATEGORY_LABELS) as TermCategory[]).filter((category) => terms.some((term) => term.category === category));
 
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
-      {/* Hero */}
-      <section style={{
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
-      }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-          >
-            <p style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.7rem',
-              letterSpacing: '0.1em',
-              color: '#FFF12D',
-              textTransform: 'uppercase',
-              marginBottom: '1.25rem',
-            }}>
-              KC-00 — Terminology Registry
-            </p>
-            <h1 style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontWeight: 700,
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              lineHeight: 1.15,
-              marginBottom: '1.25rem',
-              color: '#fff',
-            }}>
-              Engineering Terminology Glossary
-            </h1>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '1.05rem',
-              lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
-              textAlign: 'justify',
-            }}>
-              {allTerms.length} canonical engineering terms across {byCategory.size} technical categories.
-              Each term carries a permanent{' '}
-              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem' }}>TERM-xxx</span>{' '}
-              identifier and is referenced by ID across all Knowledge Center articles — definitions
-              are never written inline.
-            </p>
-          </motion.div>
-
-          {/* Category nav pills */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '2rem' }}
-          >
-            {categories.filter((c) => byCategory.has(c)).map((cat) => (
-              <a
-                key={cat}
-                href={`#cat-${cat}`}
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.62rem',
-                  letterSpacing: '0.06em',
-                  color: 'rgba(255,255,255,0.4)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '4px',
-                  padding: '3px 10px',
-                  textDecoration: 'none',
-                }}
-              >
-                {TERM_CATEGORY_LABELS[cat]} ({byCategory.get(cat)!.length})
-              </a>
-            ))}
-          </motion.div>
-        </div>
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', padding: 'clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4rem)' }}>
+      <section style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <Link href="/knowledge-center/" style={{ color: 'rgba(255,255,255,.45)', textDecoration: 'none' }}>← KNOWLEDGE CENTER</Link>
+        <p style={{ color: '#FFF12D', letterSpacing: '.12em', marginTop: '2rem' }}>TECHNICAL GLOSSARY</p>
+        <h1 style={{ fontSize: 'clamp(2.2rem,5vw,3.8rem)', margin: '1rem 0' }}>Controlled Engineering Terminology</h1>
+        <p style={{ color: 'rgba(255,255,255,.62)', lineHeight: 1.75, maxWidth: '760px' }}>{terms.length} governed filtration and contamination-control terms used consistently across ELIMFILTERS technical content.</p>
+        <Link href="/knowledge-center/search/" style={{ color: '#FFF12D', textDecoration: 'none', fontWeight: 700 }}>Search technical terminology →</Link>
       </section>
 
-      {/* Categories */}
-      <div style={{
-        maxWidth: '860px',
-        margin: '0 auto',
-        padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
-      }}>
-        {categories.filter((cat) => byCategory.has(cat)).map((cat, catIndex) => {
-          const catTerms = byCategory.get(cat)!;
+      <section style={{ maxWidth: '1000px', margin: '3rem auto 0' }}>
+        {categories.map((category) => {
+          const categoryTerms = terms.filter((term) => term.category === category);
           return (
-            <motion.section
-              key={cat}
-              id={`cat-${cat}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: catIndex * 0.06 }}
-              style={{ marginBottom: '3.5rem' }}
-            >
-              {/* Category heading */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'baseline',
-                gap: '1rem',
-                marginBottom: '1.25rem',
-                paddingBottom: '0.75rem',
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
-              }}>
-                <h2 style={{
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.15rem',
-                  color: '#fff',
-                }}>
-                  {TERM_CATEGORY_LABELS[cat]}
-                </h2>
-                <span style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.6rem',
-                  color: 'rgba(255,255,255,0.2)',
-                }}>
-                  {catTerms.length} {catTerms.length === 1 ? 'term' : 'terms'}
-                </span>
-              </div>
-
-              {/* Terms in this category */}
-              {catTerms.map((term) => {
-                const slug = termIdToSlug(term.id);
-                return (
-                  <Link
-                    key={term.id}
-                    href={`/knowledge-center/glossary/${slug}`}
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    <motion.div
-                      whileHover={{ borderLeftColor: '#FFF12D', background: 'rgba(255,255,255,0.02)' }}
-                      style={{
-                        borderLeft: '2px solid rgba(255,255,255,0.08)',
-                        padding: '1.1rem 1.5rem',
-                        marginBottom: '0.4rem',
-                        transition: 'border-left-color 0.2s, background 0.2s',
-                      }}
-                    >
-                      {/* Term ID + aliases */}
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
-                        <span style={{
-                          fontFamily: 'JetBrains Mono, monospace',
-                          fontSize: '0.6rem',
-                          color: 'rgba(255,255,255,0.22)',
-                          letterSpacing: '0.06em',
-                        }}>
-                          {term.id}
-                        </span>
-                        {term.aliases.slice(0, 2).map((alias) => (
-                          <span key={alias} style={{
-                            fontFamily: 'JetBrains Mono, monospace',
-                            fontSize: '0.58rem',
-                            color: 'rgba(255,255,255,0.15)',
-                            letterSpacing: '0.04em',
-                          }}>
-                            {alias}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Term name */}
-                      <p style={{
-                        fontFamily: 'Outfit, sans-serif',
-                        fontWeight: 600,
-                        fontSize: '1.0rem',
-                        color: '#fff',
-                        marginBottom: '0.4rem',
-                      }}>
-                        {term.term}
-                      </p>
-
-                      {/* Definition excerpt */}
-                      <p style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.85rem',
-                        color: 'rgba(255,255,255,0.45)',
-                        lineHeight: 1.6,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                        textAlign: 'justify',
-                      }}>
-                        {term.definition}
-                      </p>
-
-                      {/* Standards */}
-                      {term.applicableStandards.length > 0 && (
-                        <div style={{ marginTop: '0.55rem', display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                          {term.applicableStandards.map((std) => (
-                            <span key={std} style={{
-                              fontFamily: 'JetBrains Mono, monospace',
-                              fontSize: '0.58rem',
-                              color: 'rgba(255,241,45,0.45)',
-                              border: '1px solid rgba(255,241,45,0.12)',
-                              borderRadius: '3px',
-                              padding: '1px 6px',
-                            }}>
-                              {std}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </motion.div>
+            <article key={category} style={{ marginBottom: '3rem' }}>
+              <h2 style={{ borderBottom: '1px solid rgba(255,255,255,.1)', paddingBottom: '.7rem' }}>{TERM_CATEGORY_LABELS[category]}</h2>
+              <div style={{ display: 'grid', gap: '.5rem' }}>
+                {categoryTerms.map((term) => (
+                  <Link key={term.id} href={`/knowledge-center/glossary/${termIdToSlug(term.id)}/`} style={{ color: '#fff', textDecoration: 'none', borderLeft: '2px solid rgba(255,241,45,.35)', background: '#050505', padding: '1rem 1.2rem' }}>
+                    <strong style={{ display: 'block', marginBottom: '.35rem' }}>{term.term}</strong>
+                    <p style={{ color: 'rgba(255,255,255,.5)', fontSize: '.86rem', lineHeight: 1.55, margin: 0 }}>{term.definition}</p>
+                    {term.aliases.length ? <small style={{ display: 'block', color: 'rgba(255,255,255,.3)', marginTop: '.5rem' }}>Also referenced as: {term.aliases.slice(0, 3).join(' · ')}</small> : null}
                   </Link>
-                );
-              })}
-            </motion.section>
+                ))}
+              </div>
+            </article>
           );
         })}
-      </div>
-
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'DefinedTermSet',
-            '@id': 'https://elimfilters.com/knowledge-center/glossary',
-            'name': 'ELIMFILTERS Engineering Terminology Glossary',
-            'description': 'Canonical definitions for filtration engineering terms, each identified by a permanent TERM-xxx identifier.',
-            'url': 'https://elimfilters.com/knowledge-center/glossary',
-            'isPartOf': { '@id': 'https://elimfilters.com/knowledge-center' },
-            'author': { '@id': 'https://elimfilters.com/#organization' },
-            'hasDefinedTerm': allTerms.map((t) => ({
-              '@type': 'DefinedTerm',
-              '@id': `https://elimfilters.com/knowledge-center/glossary/${termIdToSlug(t.id)}`,
-              'name': t.term,
-              'identifier': t.id,
-            })),
-          }),
-        }}
-      />
+      </section>
     </main>
   );
 }
