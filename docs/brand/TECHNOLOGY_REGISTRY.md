@@ -22,7 +22,7 @@ Air-intake housings and airflow-management components. Status: Active.
 ## FUEL CLEANLINESS PROTECTION SYSTEMS
 
 ### SYNTAPORE™
-Primary and secondary diesel fuel filtration in spin-on and cartridge configurations. Status: Active.
+Fuel filter technology for primary and secondary diesel fuel filtration, including spin-on filters and fuel filter cartridges. Status: Active.
 
 ### TURBOCORE™
 FH/FG turbine-style fuel filtration and fuel/water separation. Assemblies: 1000FH, 900FH and 500FG. Element families: 2010, 2040 and 2020. Micron grades: 30, 10 and 2 µm where applicable. Status: Active.
@@ -47,8 +47,8 @@ Hydraulic filtration for fluid-power circuits. Status: Active.
 ### MARINECLEAN™
 Marine filtration architecture across applicable protection systems. Status: Active.
 
-### DURACTECH™
-Coordinated severe-duty filtration architecture across applicable protection systems. Status: Active.
+### DURATECH™
+Coordinated filter kit solutions across applicable protection systems for vehicles, trucks, machinery and equipment maintenance applications. Status: Active.
 
 ## GOVERNANCE
 
