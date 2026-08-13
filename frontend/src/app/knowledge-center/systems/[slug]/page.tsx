@@ -1,6 +1,14 @@
-import { PUBLIC_SYSTEMS, PUBLIC_SYSTEM_DETAILS } from '@/lib/public-taxonomy';
+import { CANONICAL_PUBLIC_SYSTEMS, CANONICAL_PUBLIC_SYSTEM_DETAILS } from '@/lib/public-systems';
 import { notFound } from 'next/navigation';
 import SystemContent from './SystemContent';
 
-export function generateStaticParams(){return PUBLIC_SYSTEMS.map((s)=>({slug:s.slug}));}
-export default function SystemPage({params}:{params:{slug:string}}){const system=PUBLIC_SYSTEMS.find((s)=>s.slug===params.slug);if(!system)return notFound();const detail=PUBLIC_SYSTEM_DETAILS[params.slug]??null;return <SystemContent system={system} detail={detail}/>;}
+export function generateStaticParams() {
+  return CANONICAL_PUBLIC_SYSTEMS.map((system) => ({ slug: system.slug }));
+}
+
+export default function SystemPage({ params }: { params: { slug: string } }) {
+  const system = CANONICAL_PUBLIC_SYSTEMS.find((item) => item.slug === params.slug);
+  if (!system) return notFound();
+  const detail = CANONICAL_PUBLIC_SYSTEM_DETAILS[params.slug] ?? null;
+  return <SystemContent system={system} detail={detail} />;
+}
