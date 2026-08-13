@@ -5,7 +5,7 @@ const technologyBySlug = new Map(KC_TECHNOLOGIES.map((item) => [item.slug, item]
 
 export const PUBLIC_SYSTEMS = [
   { ...systemBySlug.get('air-intake-protection')!, title: 'Air Intake & Airflow Protection Systems', description: 'Protection of engine intake, cabin air, compressed-air drying, and airflow integrity through coordinated contamination control.', technologies: ['MACROCORE™', 'MICROKAPPA™', 'DRYCORE™', 'INTEKCORE™'], standards: ['ISO 5011', 'ISO 11155', 'ISO 8573-1'] },
-  { ...systemBySlug.get('fuel-cleanliness-protection')!, title: 'Fuel Cleanliness Protection Systems', technologies: ['SYNTAPORE™', 'TURBOCOR™'] },
+  { ...systemBySlug.get('fuel-cleanliness-protection')!, title: 'Fuel Cleanliness Protection Systems', technologies: ['SYNTAPORE™', 'TURBOCORE™'] },
   { ...systemBySlug.get('cooling-system-protection')!, title: 'Cooling System Protection', technologies: ['THERMACORE™'] },
   { ...systemBySlug.get('lubrication-protection')!, title: 'Lube/Oil Protection Systems', technologies: ['SYNTRAX™'] },
   { ...systemBySlug.get('hydraulic-protection')!, title: 'Hydraulic Protection Systems', technologies: ['NANOFORCE™'] },
@@ -13,7 +13,7 @@ export const PUBLIC_SYSTEMS = [
 
 export const PUBLIC_SYSTEM_DETAILS = KC_SYSTEM_DETAILS;
 
-const canonicalOrder = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'turbocor', 'thermacore', 'syntrax', 'nanoforce', 'marineclean', 'duractech'] as const;
+const canonicalOrder = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'turbocore', 'thermacore', 'syntrax', 'nanoforce', 'marineclean', 'duractech'] as const;
 export const PUBLIC_TECHNOLOGIES = canonicalOrder.map((slug) => technologyBySlug.get(slug)!).filter(Boolean);
 
 const baseIndustries = KC_INDUSTRIES.map((item) => ({ ...item }));
@@ -36,7 +36,7 @@ export const LEGACY_PUBLIC_REDIRECTS: Record<string, string> = {
   '/knowledge-center/systems/cabin-air-protection': '/knowledge-center/systems/air-intake-protection/',
   [oldTechPath('synte', 'pore')]: '/knowledge-center/technologies/syntapore/',
   [oldTechPath('hydro', 'core')]: '/knowledge-center/technologies/syntapore/',
-  [oldTechPath('turbo', 'core')]: '/knowledge-center/technologies/turbocor/',
-  [oldTechPath('hydro', 'core-series')]: '/knowledge-center/technologies/turbocor/',
+  [oldTechPath('turbo', 'cor')]: '/knowledge-center/technologies/turbocore/',
+  [oldTechPath('hydro', 'core-series')]: '/knowledge-center/technologies/turbocore/',
   [oldTechPath('dura', 'tech')]: '/knowledge-center/technologies/duractech/',
 };
