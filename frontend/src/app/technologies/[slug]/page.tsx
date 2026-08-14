@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CategoryPage } from '@/components/CategoryPage';
-import { TechDetailPage } from '@/components/TechDetailPage';
 import { CANONICAL_TECHNOLOGY_LIST, getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getTechnologyEngineering } from '@/lib/canonical-engineering';
-import { getItemBySlug, type CatalogueItem } from '@/lib/catalogue';
-import { TECH_PAGES } from './techPagesData';
+import type { CatalogueItem } from '@/lib/catalogue';
 
 interface Props {
   params: { slug: string };
@@ -37,21 +35,11 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
 
-  // Public technology routes are canonical-only. Legacy catalogue entries must
-  // never recreate a retired technology page.
+  // Canonical public technology routes must be built exclusively from the
+  // governed technology and engineering registries. Legacy catalogue/detail
+  // copy is intentionally excluded because it contains historical claims that
+  // are not part of the current Claim Registry.
   if (!canonical || !engineering) return undefined;
-
-  const catalogueItem = getItemBySlug('technologies', slug);
-  if (catalogueItem) {
-    return {
-      ...catalogueItem,
-      name: canonical.name.replace('™', ''),
-      title: canonical.name,
-      subtitle: canonical.role,
-      description: engineering.definition,
-      engineeringBody: engineering.engineeringPrinciple,
-    };
-  }
 
   return {
     name: canonical.name.replace('™', ''),
@@ -59,11 +47,14 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
     title: canonical.name,
     subtitle: canonical.role,
     description: engineering.definition,
-    features: [engineering.engineeringPrinciple, engineering.controlStrategy],
+    features: [
+      engineering.engineeringPrinciple,
+      engineering.controlStrategy,
+    ],
     benefits: [engineering.operationalImpact],
-    techTags: [canonical.domain, canonical.name],
+    techTags: [],
     stats: {},
-    cta: 'Explore ELIMFILTERS protection systems',
+    cta: 'FIND MY PART',
     engineeringBody: engineering.engineeringPrinciple,
   };
 }
@@ -203,7 +194,8 @@ function breadcrumbSchema(item: CatalogueItem, slug: string) {
 
 export default function TechnologyPage({ params }: Props) {
   const item = resolveTechnology(params.slug);
-  if (!item) notFound();
+  const engineering = getTechnologyEngineering(params.slug);
+  if (!item || !engineering) notFound();
 
   const slug = params.slug;
   const articleSchema = technologySchema(item, slug);
@@ -219,8 +211,29 @@ export default function TechnologyPage({ params }: Props) {
   );
 
   const semanticHeading = <h1 style={visuallyHiddenHeading}>{item.title} Proprietary Filtration Technology</h1>;
-  const techData = TECH_PAGES[slug];
-  if (techData) return <>{schemas}{semanticHeading}<TechDetailPage data={techData} /></>;
 
-  return <>{schemas}{semanticHeading}<CategoryPage item={item} category="technologies" /></>;
+  return (
+    <>
+      {schemas}
+      {semanticHeading}
+      <CategoryPage
+        item={item}
+        category="technologies"
+        geoData={{
+          directAnswer: engineering.definition,
+          ctaTitle: `Apply ${item.title} to the correct system`,
+          ctaDescription: 'Use ELIMFILTERS Part Search to identify the correct filtration component for the equipment, application, and protected system.',
+          operationalObjective: {
+            headline: 'Engineering Objective',
+            lines: [engineering.engineeringPrinciple, engineering.controlStrategy],
+          },
+          faq: [
+            { q: `What is ${item.title}?`, a: engineering.definition },
+            { q: `How does ${item.title} work?`, a: engineering.engineeringPrinciple },
+            { q: `What does ${item.title} protect?`, a: engineering.operationalImpact },
+          ],
+        }}
+      />
+    </>
+  );
 }
