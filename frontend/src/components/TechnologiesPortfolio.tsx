@@ -3,8 +3,8 @@ import type { CSSProperties } from 'react';
 
 const technologies = [
   ['macrocore', 'MACROCORE™', '/assets/MACROCORE.avif'],
-  ['syntepore', 'SYNTEPORE™', '/assets/SYNTEPORE.avif'],
-  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE.avif'],
+  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE.avif'],
+  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE.avif'],
   ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX.avif'],
   ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE.avif'],
   ['thermacore', 'THERMACORE™', '/assets/THERMACORE.avif'],
