@@ -5,7 +5,7 @@ const CANONICAL = 'https://elimfilters.com/contact/';
 export const metadata: Metadata = {
   title: 'Contact & Technical Support',
   description:
-    'Contact ELIMFILTERS for technical validation, dealer inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
+    'Contact ELIMFILTERS for technical validation, authorized distributor inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
   alternates: {
     canonical: CANONICAL,
     languages: {
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact & Technical Support',
     description:
-      'Contact ELIMFILTERS for technical validation, dealer inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
+      'Contact ELIMFILTERS for technical validation, authorized distributor inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
     url: CANONICAL,
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
+    siteName: 'ELIMFILTERS',
     images: [
       {
         url: 'https://elimfilters.com/assets/logo-elimfilters.png',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact ELIMFILTERS | Industrial Filtration Support',
     description:
-      'Reach our global filtration team for technical support, OEM cross-references, and distributor inquiries.',
+      'Reach ELIMFILTERS for technical support, OEM cross-reference intake, and authorized distributor inquiries.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
