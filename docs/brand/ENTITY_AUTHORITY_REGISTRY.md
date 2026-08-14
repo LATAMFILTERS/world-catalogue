@@ -85,6 +85,18 @@ Entity signals must reinforce:
 
 ELIMFILTERS = Industrial Filtration Engineering + Asset Protection Systems
 
+## Third-Party Validation Layer
+
+External evidence is governed by `docs/brand/THIRD_PARTY_AUTHORITY_REGISTRY.md`.
+
+Third-party sources may validate entity existence, filtration-category association, market presence and external recognition. They must not redefine ELIMFILTERS technologies, engineering claims or canonical positioning.
+
+Authority order:
+
+Canonical Registry → Validated Technical Evidence → Current Official Site → Qualified Third-Party Evidence → External Platform Copy → Historical Commentary
+
+For SEO Omnichannel, GEO and AI retrieval, every external source must be classified by authority tier before its claims are propagated.
+
 ## Official Terminology
 
 Use:
