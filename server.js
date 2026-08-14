@@ -4,8 +4,23 @@ const path = require('path');
 const indexPath = path.join(__dirname, 'part-search', 'index.html');
 const resultsPath = path.join(__dirname, 'part-search', 'results.html');
 
+function normalizeMojibake(text) {
+  return String(text || '')
+    .replace(/â€”/g, '—')
+    .replace(/â€“/g, '–')
+    .replace(/â†’/g, '→')
+    .replace(/Â→/g, '→')
+    .replace(/Ã¢â€ â€™/g, '→')
+    .replace(/â€º/g, '›')
+    .replace(/â„¢/g, '™')
+    .replace(/Â®/g, '®')
+    .replace(/Â©/g, '©')
+    .replace(/Âµ/g, 'µ')
+    .replace(/â”€/g, '─');
+}
+
 try {
-  let html = fs.readFileSync(indexPath, 'utf8');
+  let html = normalizeMojibake(fs.readFileSync(indexPath, 'utf8'));
 
   html = html
     .replace(/<link[^>]+fonts\.googleapis\.com[^>]*>/gi, '')
@@ -14,7 +29,7 @@ try {
     .replace(/<span\b[^>]*class=["'][^"']*input-icon[^"']*["'][^>]*>[\s\S]*?<\/span>/gi, '')
     .replace(/(<button\b[^>]*class=["'][^"']*btn-search[^"']*["'][^>]*>)[\s\S]*?(<\/button>)/gi, '$1SEARCH$2')
     .replace(/(<span\b[^>]*class=["'][^"']*logo-badge[^"']*["'][^>]*>)[\s\S]*?(<\/span>)/gi, '$1HOME$2')
-    .replace(/SEARCH\s*(?:â†’|→|Â→|Ã¢â€ â€™|â†’|â€º)/g, 'SEARCH');
+    .replace(/SEARCH\s*(?:→|›)/g, 'SEARCH');
 
   const finalLayer = `
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +116,7 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   window.addEventListener('load', normalizePartSearch);
 })();
 </script>
-<!-- PART_SEARCH_UI_BUILD_20260813_CANONICAL -->`;
+<!-- PART_SEARCH_UI_BUILD_20260814_UTF8_CANONICAL -->`;
 
   html = html.replace(/<style id="part-search-approved-ui">[\s\S]*?<!-- PART_SEARCH_UI_BUILD_[^>]*-->/gi, '');
   html = html.replace('</body>', `${finalLayer}\n</body>`);
@@ -113,7 +128,7 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
 }
 
 try {
-  let resultsHtml = fs.readFileSync(resultsPath, 'utf8');
+  let resultsHtml = normalizeMojibake(fs.readFileSync(resultsPath, 'utf8'));
 
   const resultsFixLayer = `
 <style id="part-search-results-fixes">
@@ -194,7 +209,7 @@ try {
   else start();
 })();
 </script>
-<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260813_CANONICAL -->`;
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260814_UTF8_CANONICAL -->`;
 
   resultsHtml = resultsHtml
     .replace(/<script id="part-search-technology-links">[\s\S]*?<!-- PART_SEARCH_TECH_LINKS_BUILD_[^>]*-->/gi, '')

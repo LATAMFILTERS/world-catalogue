@@ -9,7 +9,7 @@ import { ASSET_PROTECTION_INTELLIGENCE } from '@/lib/asset-protection-intelligen
 const KNOWLEDGE_SECTIONS = [
   { id: 'standards', title: 'Industrial Standards', description: 'Governed technical standards and measurement frameworks for industrial filtration and contamination control.', href: '/knowledge-center/standards', count: 'Standards', color: 'rgba(63,81,181,0.1)' },
   { id: 'contamination', title: 'Contamination Control', description: 'Root-cause knowledge covering particles, water, restriction, degradation and failure mechanisms.', href: '/knowledge-center/contamination', count: 'Diagnostics', color: 'rgba(255,152,0,0.1)' },
-  { id: 'technologies', title: 'Protection Technologies', description: 'ELIMFILTERS technology architectures and the engineering problems each system is designed to control.', href: '/technologies', count: 'Technology', color: 'rgba(76,175,80,0.1)' },
+  { id: 'technologies', title: 'Protection Technologies', description: 'Canonical ELIMFILTERS technology architectures and the engineering problems each technology is designed to control.', href: '/knowledge-center/technologies', count: '9 core technologies', color: 'rgba(76,175,80,0.1)' },
   { id: 'fleet', title: 'Fleet Optimization', description: 'Reliability, service-life and total-cost strategies for fleets and critical equipment operations.', href: '/knowledge-center/fleet-optimization', count: 'Operations', color: 'rgba(33,150,243,0.1)' },
   { id: 'industries', title: 'Industry Intelligence', description: 'Asset-protection context for agriculture, mining, construction, marine, power generation and other critical industries.', href: '/industries', count: '12 industries', color: 'rgba(233,30,99,0.1)' },
   { id: 'glossary', title: 'Technical Glossary', description: 'Shared terminology for filtration, contamination, reliability, standards and asset protection.', href: '/knowledge-center/glossary', count: 'Reference', color: 'rgba(121,85,72,0.1)' },
@@ -95,9 +95,11 @@ export default function KnowledgeCenterPage() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
+          '@id': 'https://elimfilters.com/knowledge-center/#collection',
           name: 'ELIMFILTERS Asset Protection Intelligence Knowledge Center',
           description: 'Governed technical knowledge, product intelligence and industrial asset protection resources from ELIMFILTERS.',
-          url: 'https://elimfilters.com/knowledge-center',
+          url: 'https://elimfilters.com/knowledge-center/',
+          isPartOf: { '@id': 'https://elimfilters.com/#website' },
           publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         })}
       </script>

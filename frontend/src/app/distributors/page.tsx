@@ -1,10 +1,19 @@
-﻿'use client';
 import { PageHeader } from '@/components/PageHeader';
-
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
-import { useTranslation } from 'react-i18next';
-import '@/i18n';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Authorized Distributors | ELIMFILTERS',
+  description: 'ELIMFILTERS authorized distributors provide regional industrial filtration coverage, application support, and asset protection expertise across the Americas.',
+  alternates: { canonical: 'https://elimfilters.com/distributors/' },
+  openGraph: {
+    title: 'Authorized Distributors | ELIMFILTERS',
+    description: 'Regional ELIMFILTERS distribution partners supporting industrial filtration and asset protection applications.',
+    url: 'https://elimfilters.com/distributors/',
+    type: 'website',
+  },
+};
 
 const DISTRIBUTORS = [
   {
@@ -36,22 +45,55 @@ const DISTRIBUTORS = [
   },
 ];
 
-const PARTNER_VALUE_KEYS = [
-  ['distributors.partnerValue1', 'distributors.partnerValue1Desc'],
-  ['distributors.partnerValue2', 'distributors.partnerValue2Desc'],
-  ['distributors.partnerValue3', 'distributors.partnerValue3Desc'],
-  ['distributors.partnerValue4', 'distributors.partnerValue4Desc'],
-  ['distributors.partnerValue5', 'distributors.partnerValue5Desc'],
-  ['distributors.partnerValue6', 'distributors.partnerValue6Desc'],
+const TAGS = [
+  'Industrial Filtration',
+  'Asset Protection',
+  'Application Support',
+  'Regional Coverage',
+  'Technical Service',
+  'Fleet Support',
+];
+
+const PARTNER_VALUES = [
+  {
+    title: 'Technical Capability',
+    body: 'Partners must be able to support industrial filtration applications with disciplined product identification and application context.',
+  },
+  {
+    title: 'Territory Knowledge',
+    body: 'Local market knowledge helps match equipment, operating environments, and service requirements to the correct ELIMFILTERS protection system.',
+  },
+  {
+    title: 'Application Support',
+    body: 'Authorized distributors support customers with cross-reference intake, equipment context, and escalation of technical questions when required.',
+  },
+  {
+    title: 'Inventory Discipline',
+    body: 'Regional availability is managed around real fleet and industrial demand rather than undifferentiated commodity stocking.',
+  },
+  {
+    title: 'Brand Governance',
+    body: 'Partners represent ELIMFILTERS using approved technical language, current product taxonomy, and consistent asset-protection positioning.',
+  },
+  {
+    title: 'Customer Continuity',
+    body: 'The distribution model is designed to support repeatable service, equipment lifecycle protection, and long-term account continuity.',
+  },
 ];
 
 export default function DistributorsPage() {
-  const { t } = useTranslation();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    '@id': 'https://elimfilters.com/distributors/#authorized-distributors',
     name: 'ELIMFILTERS Authorized Distributors',
-    url: 'https://elimfilters.com/distributors',
+    url: 'https://elimfilters.com/distributors/',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': 'https://elimfilters.com/#website',
+      url: 'https://elimfilters.com/',
+      name: 'ELIMFILTERS',
+    },
     numberOfItems: DISTRIBUTORS.length,
     itemListElement: DISTRIBUTORS.map((item, index) => ({
       '@type': 'ListItem',
@@ -61,6 +103,11 @@ export default function DistributorsPage() {
         name: item.company,
         address: item.address,
         areaServed: item.country,
+        memberOf: {
+          '@type': 'Organization',
+          '@id': 'https://elimfilters.com/#organization',
+          name: 'ELIMFILTERS',
+        },
       },
     })),
   };
@@ -76,16 +123,14 @@ export default function DistributorsPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <h1 style={heroTitle}>
-            {t('distributors.heroTitle')}
-          </h1>
+          <h1 style={heroTitle}>Authorized Distribution Network</h1>
           <p style={heroLead}>
-            {t('distributors.heroLead')}
+            ELIMFILTERS works with qualified regional distributors that support industrial filtration applications, asset protection strategy, and dependable product access in their markets.
           </p>
 
           <div style={tagRow}>
-            {['distributors.tag1', 'distributors.tag2', 'distributors.tag3', 'distributors.tag4', 'distributors.tag5', 'distributors.tag6'].map((key) => (
-              <span key={key} style={tag}>{t(key)}</span>
+            {TAGS.map((label) => (
+              <span key={label} style={tag}>{label}</span>
             ))}
           </div>
         </div>
@@ -94,14 +139,14 @@ export default function DistributorsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={sectionTitle}>{t('distributors.section1Title')}</h2>
+            <h2 style={sectionTitle}>Regional Coverage. Technical Accountability.</h2>
           </div>
           <div>
             <p style={leadText}>
-              {t('distributors.section1Lead')}
+              Authorized distributors extend ELIMFILTERS technical and commercial coverage while preserving one global product and technology language.
             </p>
             <p style={bodyText}>
-              {t('distributors.section1Body')}
+              Each relationship is built around regional service capability, application knowledge, brand governance, and reliable support for fleets, industrial operators, and equipment owners.
             </p>
           </div>
         </div>
@@ -110,7 +155,7 @@ export default function DistributorsPage() {
       <section style={networkSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>{t('distributors.section2Title')}</h2>
+            <h2 style={sectionTitle}>Authorized Distributors</h2>
           </div>
 
           <div style={distributorGrid}>
@@ -139,14 +184,14 @@ export default function DistributorsPage() {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <h2 style={sectionTitle}>{t('distributors.section3Title')}</h2>
+          <h2 style={sectionTitle}>Partner Standards</h2>
 
           <div style={partnerGrid}>
-            {PARTNER_VALUE_KEYS.map(([titleKey, bodyKey], index) => (
-              <article key={titleKey} style={partnerCard}>
+            {PARTNER_VALUES.map((item, index) => (
+              <article key={item.title} style={partnerCard}>
                 <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={partnerTitle}>{t(titleKey)}</h3>
-                <p style={partnerBody}>{t(bodyKey)}</p>
+                <h3 style={partnerTitle}>{item.title}</h3>
+                <p style={partnerBody}>{item.body}</p>
               </article>
             ))}
           </div>
@@ -156,24 +201,22 @@ export default function DistributorsPage() {
       <section style={applicationCallout}>
         <div style={applicationInner}>
           <div>
-            <h2 style={sectionTitle}>
-              {t('distributors.closingTitle')}
-            </h2>
+            <h2 style={sectionTitle}>Become an ELIMFILTERS Authorized Distributor</h2>
             <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}>
-              {t('distributors.closingBody')}
+              Submit your company profile, service territory, technical capabilities, and target industries for commercial review.
             </p>
           </div>
-          <Link href="/distributor-application" style={yellowButton}>{t('distributors.closingButton')}</Link>
+          <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            {t('distributors.closingTitle')}
+            Build Regional Coverage With ELIMFILTERS
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/distributor-application" style={yellowButton}>{t('distributors.closingButton')}</Link>
+            <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
             <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
@@ -183,14 +226,6 @@ export default function DistributorsPage() {
 }
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
-
-const homeButton: CSSProperties = {
-  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
-  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)',
-  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
-};
 
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',

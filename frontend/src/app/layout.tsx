@@ -24,7 +24,6 @@ import ConsentBanner from '@/components/ConsentBanner';
 import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
-import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import SkipNavigation from '@/components/SkipNavigation';
 
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: BASE_URL,
+    url: `${BASE_URL}/`,
     siteName: 'ELIMFILTERS',
     title: BRAND_TITLE,
     description: BRAND_DESCRIPTION,
@@ -116,7 +115,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ClientProviders>
           <SkipNavigation />
-          <AggregateRatingSchema />
           {children}
           <WebVitalsTracker />
           <VideoAnalytics />

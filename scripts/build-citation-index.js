@@ -26,7 +26,6 @@ const OUTPUT_PATH = path.join(VAULT_DIR, '00-meta', 'CITATION_INDEX.json');
 const RETIRED_ENTITY_KEYS = new Set([
   'AIRFILTER',
   'AQUAGUARD',
-  'THERMACORE',
 ]);
 
 const MARKETING_TERMS = [
@@ -263,7 +262,7 @@ function extractAiRetrievalBlock(bodyText) {
 
 function parseNote(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
-  content = content.replace(/\r\n/g, '\n');
+  content = content.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
   const relPath = path.relative(PROJECT_ROOT, filePath);
 
   const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);

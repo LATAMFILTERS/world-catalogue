@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fam = getFamilyBySlug(params.slug);
   if (!fam) return { title: 'Not Found' };
 
-  const url = `${BASE_URL}/families/${fam.slug}`;
+  const url = `${BASE_URL}/families/${fam.slug}/`;
   const title = `${fam.name} | ELIMFILTERS Product Family`;
 
   return {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: fam.purpose,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS World Catalogue',
+      siteName: 'ELIMFILTERS',
     },
     twitter: { card: 'summary', title, description: fam.purpose },
   };
@@ -67,53 +67,43 @@ export default function FamilyPage({ params }: Props) {
       ? airCleanerHousingHeroImage
       : heroImage;
 
+  const familyUrl = `${BASE_URL}/families/${fam.slug}/`;
+
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Families', item: `${BASE_URL}/families` },
-      { '@type': 'ListItem', position: 3, name: fam.name, item: `${BASE_URL}/families/${fam.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Families', item: `${BASE_URL}/families/` },
+      { '@type': 'ListItem', position: 3, name: fam.name, item: familyUrl },
     ],
   };
 
   const productGroupSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProductGroup',
-    '@id': `${BASE_URL}/families/${fam.slug}#productgroup`,
+    '@id': `${familyUrl}#productgroup`,
     name: fam.name,
     description: fam.purpose,
-    url: `${BASE_URL}/families/${fam.slug}`,
-    brand: { '@type': 'Brand', name: 'ELIMFILTERS' },
+    url: familyUrl,
+    brand: { '@type': 'Brand', '@id': `${BASE_URL}/#brand`, name: 'ELIMFILTERS' },
     manufacturer: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
     category: 'Industrial Filtration',
     variesBy: ['Duty Class'],
     hasVariant: [
       ...(fam.hdPrefix ? [{
         '@type': 'Product',
-        '@id': `${BASE_URL}/families/${fam.slug}#variant-hd`,
+        '@id': `${familyUrl}#variant-hd`,
         name: `${fam.name} - Heavy Duty (HD)`,
         description: `Heavy Duty ${fam.name} series. SKU prefix: ${fam.hdPrefix}.`,
-        offers: {
-          '@type': 'Offer',
-          availability: 'https://schema.org/InStock',
-          priceCurrency: 'USD',
-          url: 'https://part-search.elimfilters.com',
-          seller: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
-        },
+        brand: { '@type': 'Brand', '@id': `${BASE_URL}/#brand`, name: 'ELIMFILTERS' },
       }] : []),
       ...(fam.ldPrefix ? [{
         '@type': 'Product',
-        '@id': `${BASE_URL}/families/${fam.slug}#variant-ld`,
+        '@id': `${familyUrl}#variant-ld`,
         name: `${fam.name} - Light Duty (LD)`,
         description: `Light Duty ${fam.name} series. SKU prefix: ${fam.ldPrefix}.`,
-        offers: {
-          '@type': 'Offer',
-          availability: 'https://schema.org/InStock',
-          priceCurrency: 'USD',
-          url: 'https://part-search.elimfilters.com',
-          seller: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
-        },
+        brand: { '@type': 'Brand', '@id': `${BASE_URL}/#brand`, name: 'ELIMFILTERS' },
       }] : []),
     ],
   };
@@ -123,7 +113,7 @@ export default function FamilyPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productGroupSchema) }} />
 
-      <Link href="/families" style={backButton}>← FAMILIES</Link>
+      <Link href="/families/" style={backButton}>← FAMILIES</Link>
 
       <header style={hero}>
         <img src={heroSrc} alt={fam.name} fetchPriority="high" style={heroImageStyle} />
@@ -134,7 +124,7 @@ export default function FamilyPage({ params }: Props) {
           <div style={tagRow}>
             {fam.hdPrefix && <span style={tag}>HD PREFIX {fam.hdPrefix}</span>}
             {fam.ldPrefix && <span style={tag}>LD PREFIX {fam.ldPrefix}</span>}
-            {sys && <Link href={`/systems/${sys.slug}`} style={tagLink}>{sys.name}</Link>}
+            {sys && <Link href={`/systems/${sys.slug}/`} style={tagLink}>{sys.name}</Link>}
           </div>
         </div>
       </header>
@@ -161,13 +151,13 @@ export default function FamilyPage({ params }: Props) {
 
             <div style={compactStack}>
               {sys && (
-                <Link href={`/systems/${sys.slug}`} style={compactLinkCard}>
+                <Link href={`/systems/${sys.slug}/`} style={compactLinkCard}>
                   <span style={anchorLabel}>Protection system</span>
                   <strong style={compactTitle}>{sys.name}</strong>
                   <span style={explore}>VIEW SYSTEM</span>
                 </Link>
               )}
-              <Link href={`/technologies/${fam.primaryTechnology}`} style={compactLinkCardYellow}>
+              <Link href={`/technologies/${fam.primaryTechnology}/`} style={compactLinkCardYellow}>
                 <span style={anchorLabel}>Primary technology</span>
                 <strong style={compactTitle}>{fam.primaryTechnology.replace(/-/g, ' ')}</strong>
                 <span style={explore}>VIEW TECHNOLOGY</span>
@@ -201,7 +191,7 @@ export default function FamilyPage({ params }: Props) {
                   <h3 style={cardTitle}>Heavy Duty Series</h3>
                   <div style={productList}>
                     {fam.hdProducts.map((pn) => (
-                      <Link key={pn} href={`/products/${pn.toLowerCase()}`} style={productLink}>{pn}</Link>
+                      <Link key={pn} href={`/products/${pn.toLowerCase()}/`} style={productLink}>{pn}</Link>
                     ))}
                   </div>
                 </div>
@@ -211,7 +201,7 @@ export default function FamilyPage({ params }: Props) {
                   <h3 style={cardTitle}>Light Duty Series</h3>
                   <div style={productList}>
                     {fam.ldProducts.map((pn) => (
-                      <Link key={pn} href={`/products/${pn.toLowerCase()}`} style={productLink}>{pn}</Link>
+                      <Link key={pn} href={`/products/${pn.toLowerCase()}/`} style={productLink}>{pn}</Link>
                     ))}
                   </div>
                 </div>
@@ -225,9 +215,9 @@ export default function FamilyPage({ params }: Props) {
         <div style={platformInner}>
           <span style={platformLabel}>Continue through the platform</span>
           <div style={platformLinks}>
-            <Link href="/families" style={platformLink}>All Families</Link>
-            <Link href="/systems" style={platformLink}>Systems</Link>
-            <Link href="/technologies" style={platformLink}>Technologies</Link>
+            <Link href="/families/" style={platformLink}>All Families</Link>
+            <Link href="/systems/" style={platformLink}>Systems</Link>
+            <Link href="/technologies/" style={platformLink}>Technologies</Link>
             <Link href="/knowledge-center/" style={platformLink}>Knowledge</Link>
           </div>
         </div>

@@ -3,6 +3,18 @@ import type { CSSProperties } from 'react';
 import { TechnologiesPortfolio } from '@/components/TechnologiesPortfolio';
 import { PageHeader } from '@/components/PageHeader';
 
+const canonicalTechnologies = [
+  ['MACROCORE™', 'macrocore', 'Engine air contamination control and intake-system protection.'],
+  ['MICROKAPPA™', 'microkappa', 'Occupant-compartment air quality and cabin-system protection.'],
+  ['DRYCORE™', 'drycore', 'Pneumatic brake-system air protection.'],
+  ['INTEKCORE™', 'intekcore', 'Controlled air intake and filtration-system integration.'],
+  ['SYNTAPORE™', 'syntapore', 'Fuel contamination control and fuel-system protection.'],
+  ['TURBOCORE™', 'turbocore', 'Fuel-water separation for approved turbine-style fuel-system applications.'],
+  ['SYNTRAX™', 'syntrax', 'Lubricant cleanliness and engine/component protection.'],
+  ['NANOFORCE™', 'nanoforce', 'Hydraulic-fluid contamination control and hydraulic-component protection.'],
+  ['THERMACORE™', 'thermacore', 'Cooling-system cleanliness and component protection.'],
+] as const;
+
 export const metadata = {
   title: 'Industrial Filtration Engineering Technologies',
   description: 'ELIMFILTERS protection technologies: MACROCORE, MICROKAPPA, DRYCORE, INTEKCORE, SYNTAPORE, TURBOCORE, SYNTRAX, NANOFORCE and THERMACORE.',
@@ -33,10 +45,28 @@ export default function TechnologiesPage() {
     '@type': 'CollectionPage',
     '@id': 'https://elimfilters.com/technologies/#collection',
     name: 'ELIMFILTERS Protection Technologies',
-    url: 'https://elimfilters.com/technologies',
+    url: 'https://elimfilters.com/technologies/',
     description: 'Industrial filtration engineering technologies within ELIMFILTERS Asset Protection Systems.',
-    numberOfItems: 9,
+    numberOfItems: canonicalTechnologies.length,
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: canonicalTechnologies.length,
+      itemListElement: canonicalTechnologies.map(([name, slug, description], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'DefinedTerm',
+          '@id': `https://elimfilters.com/technologies/${slug}/#technology`,
+          name,
+          description,
+          url: `https://elimfilters.com/technologies/${slug}/`,
+          inDefinedTermSet: {
+            '@id': 'https://elimfilters.com/technologies/#collection',
+          },
+        },
+      })),
+    },
   };
 
   return (
@@ -77,8 +107,8 @@ export default function TechnologiesPage() {
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 className="technologies-final-title" style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
-            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+            <Link href="/systems/" style={yellowButton}>EXPLORE SYSTEMS</Link>
+            <Link href="/contact/" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
       </section>

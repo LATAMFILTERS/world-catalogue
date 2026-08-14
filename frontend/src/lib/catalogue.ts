@@ -47,21 +47,6 @@ export const CATEGORY_URLS: Record<string, string> = {
   technologies: '/technologies',
 };
 
-export const CATEGORY_ICONS: Record<string, string[]> = {
-  Agriculture: ['🌾'],
-  Automotive: ['🚗'],
-  'Bus Coach': ['🚌'],
-  Construction: ['🏗'],
-  Manufacturing: ['🏭'],
-  Marine: ['⚓'],
-  Mining: ['⛏'],
-  'Oil Gas': ['🛢'],
-  'Power Generation': ['⚡'],
-  Railway: ['🚂'],
-  'Trucks Fleets': ['🚛'],
-  'Waste Municipal': ['♻'],
-};
-
 export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
     'Turbocore Series': 'logo-turbocore.png',
