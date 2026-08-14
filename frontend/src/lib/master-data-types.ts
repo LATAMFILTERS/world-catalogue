@@ -1,4 +1,4 @@
-import { TechnologyKey, EcosystemKey, SystemKey } from './unified-data';
+import { TechnologyKey, EcosystemKey, SystemKey } from './canonical-entity-types';
 import { ProtectionSystemKey } from './protection-systems-data';
 import { DocumentationPending } from './product-registry-types';
 import { FamilyKey } from './product-families-data';

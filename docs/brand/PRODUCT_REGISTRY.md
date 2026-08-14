@@ -1,304 +1,82 @@
-\# PRODUCT\_REGISTRY
+# PRODUCT_REGISTRY
 
+Status: Active
 
+---
 
-Status: Draft
+# AIR INTAKE & AIRFLOW PROTECTION
 
-
-
-\---
-
-
-
-\# AIR INTAKE \& AIRFLOW PROTECTION
-
-
-
-\## Air Filters
-
-
-
+## Air Filters
 Technology:
+- MACROCORE™
 
-
-
-\* MACROCORE™
-
-
-
-\---
-
-
-
-\## Cabin Air Filters
-
-
-
+## Cabin Air Filters
 Technology:
+- MICROKAPPA™
 
-
-
-\* MICROKAPPA™
-
-
-
-\---
-
-
-
-\## Air Dryers
-
-
-
+## Air Dryers
 Technology:
+- DRYCORE™
 
-
-
-\* DRYCORE™
-
-
-
-\---
-
-
-
-\## Air Intake Housings
-
-
-
+## Air Intake Housings
 Technology:
+- INTEKCORE™
 
+---
 
+# FUEL CLEANLINESS PROTECTION
 
-\* INTEKCORE™
-
-
-
-\---
-
-
-
-\# FUEL CLEANLINESS PROTECTION
-
-
-
-\## Fuel Filters
-
-
-
+## Fuel Filters
 Technology:
+- SYNTAPORE™
 
-
-
-\* SYNTEPORE™
-
-
-
-\---
-
-
-
-\## Fuel Water Separators
-
-
-
+## Fuel Water Separators
 Technology:
+- TURBOCORE™ where applicable to approved turbine/FH/FG architecture
 
-
-
-\* HYDROCORE™
-
-
-
-\---
-
-
-
-\## FH Series
-
-
-
+## FH Series
 Technology:
+- TURBOCORE™
 
-
-
-\* TURBOCORE™
-
-
-
-\---
-
-
-
-\## FG Series
-
-
-
+## FG Series
 Technology:
+- TURBOCORE™
 
+---
 
+# LUBRICATION PROTECTION
 
-\---
-
-
-
-\# LUBRICATION PROTECTION
-
-
-
-\## Lube Filters
-
-
-
+## Lube Filters
 Technology:
+- SYNTRAX™
 
+---
 
+# HYDRAULIC PROTECTION
 
-\* SYNTRAX™
-
-
-
-\---
-
-
-
-\# HYDRAULIC PROTECTION
-
-
-
-\## Hydraulic Filters
-
-
-
+## Hydraulic Filters
 Technology:
+- NANOFORCE™
 
+---
 
+# COOLING SYSTEM PROTECTION
 
-\* NANOFORCE™
-
-
-
-\---
-
-
-
-\# COOLING SYSTEM PROTECTION
-
-
-
-\## Coolant Filters
-
-
-
+## Coolant Filters
 Technology:
+- THERMACORE™
 
+---
 
+# SPECIALIZED SOLUTIONS
 
-\* THERMACORE™
+## Marine Filtration Systems
+Technology / Solution:
+- MARINECLEAN™
 
-
-
-\---
-
-
-
-\# SOLUTIONS
-
-
-
-\## Maintenance Kits
-
-
-
-Classification:
-
-
-
-\* Solution
-
-
-
-\---
-
-
-
-\## Service Kits
-
-
-
-Classification:
-
-
-
-\* Solution
-
-
-
-\---
-
-
-
-\## Fleet Packages
-
-
-
-Classification:
-
-
-
-\* Solution
-
-
-
-\---
-
-
-
-\## Industry Packages
-
-
-
-Classification:
-
-
-
-\* Solution
-
-
-
-\---
-
-
-
-\## Asset Protection Programs
-
-
-
-Classification:
-
-
-
-\* Solution
-
-
-
-\---
-
-
+## Integrated Maintenance and Asset Protection Kits
+Technology / Solution:
+- DURATECH™
 
 Rule:
-
-
-
-Solutions are not Products.
-
-
-
-Products belong to Systems.
-
-
-
-Solutions may contain Products from multiple Systems.
-
-
-
+Products belong to protection systems. Solutions may contain products from multiple systems. The filter is the means; asset protection is the objective.

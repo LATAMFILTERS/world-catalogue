@@ -3,8 +3,8 @@ import type { CSSProperties } from 'react';
 
 const technologies = [
   ['macrocore', 'MACROCORE™', '/assets/MACROCORE.avif'],
-  ['syntepore', 'SYNTEPORE™', '/assets/SYNTEPORE.avif'],
-  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE.avif'],
+  ['syntapore', 'SYNTAPORE™', '/assets/logo-elimfilters.png'],
+  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE.avif'],
   ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX.avif'],
   ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE.avif'],
   ['thermacore', 'THERMACORE™', '/assets/THERMACORE.avif'],
@@ -27,57 +27,14 @@ export function TechnologiesPortfolio() {
             hyphens: none !important;
             -webkit-hyphens: none !important;
           }
-
-          .technology-portfolio-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1rem !important;
-          }
-
-          .technology-portfolio-card {
-            position: relative !important;
-            display: flex !important;
-            flex-direction: column !important;
-            width: 100% !important;
-            min-height: 0 !important;
-            overflow: hidden !important;
-          }
-
-          .technology-portfolio-logo-stage {
-            position: relative !important;
-            inset: auto !important;
-            width: 100% !important;
-            height: 230px !important;
-            padding: 0.85rem !important;
-            flex: 0 0 auto !important;
-          }
-
-          .technology-portfolio-image {
-            display: block !important;
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            object-position: center !important;
-            opacity: 0.94 !important;
-          }
-
-          .technology-portfolio-content {
-            position: relative !important;
-            inset: auto !important;
-            min-height: 70px !important;
-            padding: 1.1rem 1.2rem !important;
-            justify-content: center !important;
-          }
-
-          .technology-portfolio-explore {
-            white-space: nowrap !important;
-          }
+          .technology-portfolio-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+          .technology-portfolio-card { position: relative !important; display: flex !important; flex-direction: column !important; width: 100% !important; min-height: 0 !important; overflow: hidden !important; }
+          .technology-portfolio-logo-stage { position: relative !important; inset: auto !important; width: 100% !important; height: 230px !important; padding: 0.85rem !important; flex: 0 0 auto !important; }
+          .technology-portfolio-image { display: block !important; width: 100% !important; height: 100% !important; object-fit: contain !important; object-position: center !important; opacity: 0.94 !important; }
+          .technology-portfolio-content { position: relative !important; inset: auto !important; min-height: 70px !important; padding: 1.1rem 1.2rem !important; justify-content: center !important; }
+          .technology-portfolio-explore { white-space: nowrap !important; }
         }
-
-        @media (max-width: 430px) {
-          .technology-portfolio-logo-stage {
-            height: 205px !important;
-          }
-        }
+        @media (max-width: 430px) { .technology-portfolio-logo-stage { height: 205px !important; } }
       `}</style>
       <div style={wrap}>
         <p className="technology-portfolio-eyebrow" style={eyebrow}>TECHNOLOGY PORTFOLIO</p>

@@ -1,7 +1,7 @@
 import {
   TechnologyKey,
   EcosystemKey,
-} from './unified-data';
+} from './canonical-entity-types';
 import { ProtectionSystemKey } from './protection-systems-data';
 import { FamilyKey } from './product-families-data';
 
