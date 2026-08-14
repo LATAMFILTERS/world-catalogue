@@ -1,4 +1,4 @@
-﻿---
+---
 type: technology
 status: active
 key: SYNTAPORE
