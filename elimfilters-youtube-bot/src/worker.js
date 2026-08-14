@@ -2,6 +2,7 @@ import { createLogger } from "./logger.js";
 import { createYoutubeClient } from "./youtube-client.js";
 import { createNvidiaClient } from "./nvidia.js";
 import { createCandidateCase, queryKnowledgeEngine } from "./knowledge-engine.js";
+import { queryCentralProtocol } from "./protocol-client.js";
 
 const logger = createLogger("YouTube-Bot");
 
@@ -25,64 +26,56 @@ export function createWorker({ config, db, knowledgeSystem }) {
         try {
           logger.info(`Processing message`, logContext, { messagePreview: job.message_text?.slice(0, 80) });
 
-          // Get or create session
           const session = await db.getOrCreateSession(job.author_channel_id || job.author_id, 'youtube');
           logContext.sessionId = session.session_id;
 
           let responseText;
           let source = 'fallback';
 
-          // Step 1: Try to create candidate case in Knowledge Center
+          if (config.botProtocolApiKey) {
+            try {
+              const protocol = await queryCentralProtocol(config, {
+                message: job.message_text,
+                conversationId: session.session_id
+              });
+              if (protocol?.answer) {
+                responseText = protocol.answer;
+                source = 'central_protocol';
+              }
+            } catch (protocolError) {
+              logger.warn('Central protocol unavailable', { error: protocolError.message });
+            }
+          }
+
           let candidateCaseId = null;
-          if (config.knowledgeCenterApiUrl && config.knowledgeCenterApiKey) {
+          if (!responseText && config.knowledgeCenterApiUrl && config.knowledgeCenterApiKey) {
             candidateCaseId = await createCandidateCase(config, session.session_id, job.message_text, 'YOUTUBE');
             if (candidateCaseId) {
-              logger.info('✓ Created candidate case', { caseId: candidateCaseId });
+              logger.info('Created candidate case', { caseId: candidateCaseId });
             }
-          } else {
-            logger.warn('✗ Candidate case creation skipped', {
-              hasUrl: !!config.knowledgeCenterApiUrl,
-              hasKey: !!config.knowledgeCenterApiKey
-            });
           }
 
-          // Step 2: Try Knowledge Engine Runtime (like web chat)
           let engineResponse = null;
-          const shouldQueryEngine = config.knowledgeEngineRuntimeUrl && config.engineApiKey && candidateCaseId;
-          logger.info('Knowledge Engine Runtime check', {
-            hasUrl: !!config.knowledgeEngineRuntimeUrl,
-            hasKey: !!config.engineApiKey,
-            hasCaseId: !!candidateCaseId,
-            shouldQuery: shouldQueryEngine
-          });
+          const shouldQueryEngine = !responseText && config.knowledgeEngineRuntimeUrl && config.engineApiKey && candidateCaseId;
 
           if (shouldQueryEngine) {
-            logger.info('→ Querying Knowledge Engine Runtime at', { url: config.knowledgeEngineRuntimeUrl });
             engineResponse = await queryKnowledgeEngine(config, job.message_text, session.session_id, candidateCaseId);
-
-            // If Knowledge Engine has high-confidence answer, use it
             if (engineResponse && engineResponse.action === 'ANSWER' && engineResponse.answer) {
               responseText = engineResponse.answer;
-              source = 'knowledge_engine';
-              logger.info('✓ Using Knowledge Engine response', { confidence: engineResponse.confidence, answerLength: engineResponse.answer.length });
-            } else {
-              logger.warn('✗ Knowledge Engine response invalid', { hasResponse: !!engineResponse, action: engineResponse?.action, hasAnswer: !!engineResponse?.answer });
+              source = 'knowledge_engine_fallback';
+              logger.info('Using Knowledge Engine fallback', { confidence: engineResponse.confidence, answerLength: engineResponse.answer.length });
             }
-          } else {
-            logger.warn('✗ Skipping Knowledge Engine (missing config)', { shouldQueryEngine });
           }
 
-          // Step 3: Fallback to NVIDIA LLM with catalog lookup
           if (!responseText) {
-            logger.debug('Falling back to NVIDIA LLM');
+            logger.warn('Using NVIDIA fallback because central protocol and Knowledge Engine did not return an answer');
             responseText = await nvidia.generateReply(job.message_text);
-            source = 'nvidia_llm';
+            source = 'nvidia_fallback';
           }
 
           logContext.responseLength = responseText.length;
           logContext.source = source;
 
-          // Log conversation turn
           await db.logConversationTurn(session.session_id, {
             messageText: job.message_text,
             action: 'ai_response',
@@ -90,7 +83,6 @@ export function createWorker({ config, db, knowledgeSystem }) {
             source
           });
 
-          // Send response via YouTube API
           if (config.dryRun) {
             logger.info(`DRY_RUN: Draft response`, logContext);
             await db.complete(job.event_id, `[DRY_RUN] ${responseText}`);
