@@ -32,7 +32,12 @@ function runNpm(args, cwd) {
 
 run(process.execPath, ['scripts/validate-canonical-taxonomy.mjs']);
 run(process.execPath, ['scripts/validate-legacy-catalogue-dependency.mjs']);
-run(process.execPath, ['--test', 'tests/canonical-technology-registry.test.js']);
+run(process.execPath, [
+  '--test',
+  'tests/canonical-technology-registry.test.js',
+  'tests/canonical-cooling-taxonomy.test.js',
+  'tests/omnichannel-canonical-taxonomy.test.js',
+]);
 
 if (full) {
   const frontend = path.join(root, 'frontend');
@@ -41,6 +46,6 @@ if (full) {
 }
 
 console.log(full
-  ? 'Manual pre-merge validation passed, including frontend type-check and build.'
+  ? 'Manual pre-merge validation passed, including canonical taxonomy regressions, frontend type-check and build.'
   : 'Manual canonical pre-merge validation passed. Use --full to include frontend type-check and build.'
 );
