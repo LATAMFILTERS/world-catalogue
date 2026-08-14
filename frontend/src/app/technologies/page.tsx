@@ -107,8 +107,8 @@ export default function TechnologiesPage() {
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 className="technologies-final-title" style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
-            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+            <Link href="/systems/" style={yellowButton}>EXPLORE SYSTEMS</Link>
+            <Link href="/contact/" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
       </section>
