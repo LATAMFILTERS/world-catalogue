@@ -10,6 +10,10 @@
  * copies public/ directly to out/, so these files are available at /api/citation/
  * in the deployed site without any server runtime.
  *
+ * IMPORTANT: the output directory is rebuilt from scratch on every write run.
+ * This prevents retired or renamed entity JSON files from remaining publicly
+ * reachable after they disappear from the canonical citation index.
+ *
  * Run from project root:
  *   node scripts/generate-citation-api.js
  *   node scripts/generate-citation-api.js --validate  (dry-run, no writes)
@@ -18,16 +22,12 @@
 const fs = require('fs');
 const path = require('path');
 
-// ─── Config ───────────────────────────────────────────────────────────────────
-
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CI_PATH = path.join(PROJECT_ROOT, 'elimfilters-vault', '00-meta', 'CITATION_INDEX.json');
 const PM_PATH = path.join(PROJECT_ROOT, 'elimfilters-vault', '00-meta', 'PART_SEARCH_MAP.json');
 const OUT_DIR = path.join(PROJECT_ROOT, 'frontend', 'public', 'api', 'citation');
 
 const validateOnly = process.argv.includes('--validate');
-
-// ─── Load Sources ─────────────────────────────────────────────────────────────
 
 if (!fs.existsSync(CI_PATH)) {
   console.error('ERROR: CITATION_INDEX.json not found at', CI_PATH);
@@ -40,12 +40,10 @@ if (!fs.existsSync(PM_PATH)) {
 
 const ci = JSON.parse(fs.readFileSync(CI_PATH, 'utf8'));
 const pm = JSON.parse(fs.readFileSync(PM_PATH, 'utf8'));
-const entities = ci.entities;
-const edges = ci.graph.edges;
-const danglingKeys = ci.graph.dangling_keys || [];
-const paths = pm.traversal_paths;
-
-// ─── Validation ───────────────────────────────────────────────────────────────
+const entities = ci.entities || {};
+const edges = ci.graph?.edges || [];
+const danglingKeys = ci.graph?.dangling_keys || [];
+const paths = pm.traversal_paths || [];
 
 let errorCount = 0;
 let warningCount = 0;
@@ -60,27 +58,22 @@ function logWarning(msg) {
   warningCount++;
 }
 
-// Validate entities
 const entityKeys = Object.keys(entities);
 if (entityKeys.length === 0) {
   logError('No entities found in CITATION_INDEX.json');
 }
 
-// Validate paths
 if (paths.length === 0) {
   logError('No traversal paths found in PART_SEARCH_MAP.json');
 }
 
-// Check each path's steps resolve to known entity keys
 paths.forEach(p => {
-  p.steps.forEach(step => {
+  (p.steps || []).forEach(step => {
     if (!entities[step.key]) {
       logWarning(`Path ${p.path_id} step key ${step.key} not in entities (may be dangling)`);
     }
   });
 });
-
-// ─── Validate-only mode ───────────────────────────────────────────────────────
 
 if (validateOnly) {
   console.log('CITATION API VALIDATOR — Phase 4E');
@@ -94,8 +87,6 @@ if (validateOnly) {
   console.log('Validation complete (--validate mode, no files written)');
   process.exit(errorCount > 0 ? 1 : 0);
 }
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -112,7 +103,6 @@ function trackWrite(filePath, data) {
   fileCount++;
 }
 
-// Build _links.related for an entity from edge list
 function buildRelatedLinks(key) {
   const related = [];
   edges.forEach(edge => {
@@ -127,14 +117,12 @@ function buildRelatedLinks(key) {
   return related;
 }
 
-// ─── Setup Output Directories ─────────────────────────────────────────────────
-
+// Rebuild from a clean directory so stale/retired entity files cannot survive.
+fs.rmSync(OUT_DIR, { recursive: true, force: true });
 ensureDir(OUT_DIR);
 ensureDir(path.join(OUT_DIR, 'type'));
 ensureDir(path.join(OUT_DIR, 'path'));
 ensureDir(path.join(OUT_DIR, 'path', 'by-entry'));
-
-// ─── Generate index.json ─────────────────────────────────────────────────────
 
 const now = new Date().toISOString();
 
@@ -159,8 +147,6 @@ const indexData = {
 
 trackWrite(path.join(OUT_DIR, 'index.json'), indexData);
 
-// ─── Generate [KEY].json (one per entity) ────────────────────────────────────
-
 entityKeys.forEach(key => {
   const entity = entities[key];
   const related = buildRelatedLinks(key);
@@ -177,8 +163,6 @@ entityKeys.forEach(key => {
   trackWrite(path.join(OUT_DIR, `${key}.json`), entityFile);
 });
 
-// ─── Generate type/ files ────────────────────────────────────────────────────
-
 const typeMap = {};
 entityKeys.forEach(key => {
   const entity = entities[key];
@@ -189,7 +173,6 @@ entityKeys.forEach(key => {
 
 const allTypes = Object.keys(typeMap).sort();
 
-// type/index.json
 const typeIndex = {
   type_count: allTypes.length,
   types: allTypes.map(t => ({
@@ -200,19 +183,14 @@ const typeIndex = {
 };
 trackWrite(path.join(OUT_DIR, 'type', 'index.json'), typeIndex);
 
-// type/[type].json
 allTypes.forEach(t => {
   const typeFile = {
     type: t,
     count: typeMap[t].length,
     entities: typeMap[t],
   };
-  // Normalize type name for filename: contamination-mode → contamination-mode.json
-  const filename = `${t}.json`;
-  trackWrite(path.join(OUT_DIR, 'type', filename), typeFile);
+  trackWrite(path.join(OUT_DIR, 'type', `${t}.json`), typeFile);
 });
-
-// ─── Generate graph.json ─────────────────────────────────────────────────────
 
 const graphData = {
   edge_count: edges.length,
@@ -221,8 +199,6 @@ const graphData = {
   edges,
 };
 trackWrite(path.join(OUT_DIR, 'graph.json'), graphData);
-
-// ─── Generate path/index.json ────────────────────────────────────────────────
 
 const validPathCount = paths.filter(p => p.valid).length;
 
@@ -242,11 +218,8 @@ const pathIndex = {
 };
 trackWrite(path.join(OUT_DIR, 'path', 'index.json'), pathIndex);
 
-// ─── Generate path/[path_id].json ────────────────────────────────────────────
-
 paths.forEach(p => {
-  // Embed full citation records for each step
-  const enrichedSteps = p.steps.map(step => ({
+  const enrichedSteps = (p.steps || []).map(step => ({
     key: step.key,
     type: step.type,
     name: step.name,
@@ -254,110 +227,43 @@ paths.forEach(p => {
   }));
 
   const pathFile = {
-    path_id: p.path_id,
-    path_type: p.path_type,
-    entry_node: p.entry_node,
-    entry_type: p.entry_type || null,
-    industry: p.industry || null,
-    valid: p.valid,
+    ...p,
     steps: enrichedSteps,
-    terminal_product_families: p.terminal_product_families || [],
   };
 
   trackWrite(path.join(OUT_DIR, 'path', `${p.path_id}.json`), pathFile);
 });
 
-// ─── Generate path/by-entry/[KEY].json ───────────────────────────────────────
-
-// Build entry→paths map
-const byEntryMap = {};
+const byEntry = {};
 paths.forEach(p => {
-  const entryKey = p.entry_node;
-  if (!byEntryMap[entryKey]) byEntryMap[entryKey] = [];
-  byEntryMap[entryKey].push({
-    path_id: p.path_id,
-    path_type: p.path_type,
-    entry_node: p.entry_node,
-    entry_type: p.entry_type || null,
-    industry: p.industry || null,
-    valid: p.valid,
-    terminal_product_families: p.terminal_product_families || [],
-    href: `/api/citation/path/${p.path_id}.json`,
-  });
+  if (!p.entry_node) return;
+  if (!byEntry[p.entry_node]) byEntry[p.entry_node] = [];
+  byEntry[p.entry_node].push(p);
 });
 
-Object.keys(byEntryMap).forEach(entryKey => {
-  const byEntryFile = {
-    entry_key: entryKey,
-    path_count: byEntryMap[entryKey].length,
-    paths: byEntryMap[entryKey],
+Object.entries(byEntry).forEach(([entryKey, entryPaths]) => {
+  const data = {
+    entry_node: entryKey,
+    path_count: entryPaths.length,
+    paths: entryPaths.map(p => ({
+      path_id: p.path_id,
+      path_type: p.path_type,
+      industry: p.industry || null,
+      valid: p.valid,
+      terminal_product_families: p.terminal_product_families || [],
+      href: `/api/citation/path/${p.path_id}.json`,
+    })),
   };
-  trackWrite(path.join(OUT_DIR, 'path', 'by-entry', `${entryKey}.json`), byEntryFile);
+  trackWrite(path.join(OUT_DIR, 'path', 'by-entry', `${entryKey}.json`), data);
 });
-
-// ─── Generate README.md ───────────────────────────────────────────────────────
-
-const readmeContent = `# ELIMFILTERS Citation API — Static Endpoints
-
-This directory contains pre-generated static JSON files serving the ELIMFILTERS
-Knowledge Vault citation index. Files are regenerated automatically on every
-\`npm run build\` via the prebuild script.
-
-## Endpoints
-
-| Pattern | File | Description |
-|---------|------|-------------|
-| \`/api/citation/index.json\` | index.json | All ${entityKeys.length} entity records |
-| \`/api/citation/[KEY].json\` | MACROCORE.json etc | Single entity lookup with _links |
-| \`/api/citation/graph.json\` | graph.json | Full edge list (${edges.length} edges) |
-| \`/api/citation/type/index.json\` | type/index.json | All entity types list |
-| \`/api/citation/type/[type].json\` | type/technology.json etc | Type scan |
-| \`/api/citation/path/index.json\` | path/index.json | All path summaries |
-| \`/api/citation/path/[path_id].json\` | path/PATH_A_*.json etc | Path with embedded citation records |
-| \`/api/citation/path/by-entry/[KEY].json\` | path/by-entry/MINING.json etc | Paths by entry node |
-
-## Query Patterns
-
-\`\`\`
-entity_lookup:   /api/citation/[KEY].json
-type_scan:       /api/citation/type/[type].json
-graph:           /api/citation/graph.json
-path_traversal:  /api/citation/path/[path_id].json
-paths_by_entry:  /api/citation/path/by-entry/[KEY].json
-\`\`\`
-
-## Source
-
-Generated from:
-- \`elimfilters-vault/00-meta/CITATION_INDEX.json\`
-- \`elimfilters-vault/00-meta/PART_SEARCH_MAP.json\`
-
-Generator: \`scripts/generate-citation-api.js\`
-Last generated: ${now}
-`;
-
-fs.writeFileSync(path.join(OUT_DIR, 'README.md'), readmeContent, 'utf8');
-
-// ─── Summary ─────────────────────────────────────────────────────────────────
-
-const entityFileCount = entityKeys.length;
-const typeFileCount = allTypes.length + 1; // +1 for index
-const pathFileCount = paths.length + 1 + Object.keys(byEntryMap).length; // paths + index + by-entry
-const graphFileCount = 1;
-const indexFileCount = 1;
 
 console.log('CITATION API GENERATOR — Phase 4E');
 console.log('==================================');
-console.log(`Entity files:     ${entityFileCount}`);
-console.log(`Type files:       ${typeFileCount} (${allTypes.length} types + 1 index)`);
-console.log(`Graph file:       ${graphFileCount}`);
-console.log(`Path files:       ${paths.length} paths + 1 index + ${Object.keys(byEntryMap).length} by-entry`);
-console.log(`Index file:       ${indexFileCount}`);
-console.log(`Total files:      ${fileCount}`);
-console.log(`Output:           ${path.relative(PROJECT_ROOT, OUT_DIR)}`);
-console.log('');
-console.log('Entity types generated:');
-allTypes.forEach(t => console.log(`  ${t}: ${typeMap[t].length} entities`));
-console.log('');
-console.log('By-entry keys:');
-Object.keys(byEntryMap).forEach(k => console.log(`  ${k}: ${byEntryMap[k].length} paths`));
+console.log('Entities:          ', entityKeys.length);
+console.log('Types:             ', allTypes.length);
+console.log('Paths:             ', paths.length);
+console.log('Files written:     ', fileCount);
+console.log('Warnings:          ', warningCount);
+console.log('Output:            ', path.relative(PROJECT_ROOT, OUT_DIR));
+
+if (errorCount > 0) process.exit(1);
