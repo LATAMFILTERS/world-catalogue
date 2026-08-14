@@ -4,25 +4,25 @@ import { TechnologiesPortfolio } from '@/components/TechnologiesPortfolio';
 import { PageHeader } from '@/components/PageHeader';
 
 export const metadata = {
-  title: 'Proprietary Filtration Technologies',
-  description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
-  keywords: ['SYNTRAX filter technology', 'NANOFORCE filtration', 'INTEKCORE fuel filter', 'MACROCORE air filter', 'proprietary filtration technology', 'ELIMFILTERS'],
+  title: 'Industrial Filtration Engineering Technologies',
+  description: 'ELIMFILTERS protection technologies: MACROCORE, MICROKAPPA, DRYCORE, INTEKCORE, SYNTAPORE, TURBOCORE, SYNTRAX, NANOFORCE and THERMACORE.',
+  keywords: ['industrial filtration engineering', 'asset protection systems', 'ELIMFILTERS technologies', 'contamination control', 'equipment reliability'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
   },
   openGraph: {
-    title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
+    title: 'Industrial Filtration Engineering Technologies | ELIMFILTERS',
+    description: 'Protection technologies engineered within ELIMFILTERS Asset Protection Systems.',
     url: 'https://elimfilters.com/technologies/',
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
+    siteName: 'ELIMFILTERS',
     images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Proprietary Filtration Technologies | ELIMFILTERS',
-    description: 'ELIMFILTERS proprietary filtration technologies: MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, HYDROCORE, THERMACORE, DRYCORE, INTEKCORE, MICROKAPPA.',
+    title: 'Industrial Filtration Engineering Technologies | ELIMFILTERS',
+    description: 'Protection technologies engineered within ELIMFILTERS Asset Protection Systems.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
@@ -32,9 +32,9 @@ export default function TechnologiesPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': 'https://elimfilters.com/technologies/#collection',
-    name: 'ELIMFILTERS Proprietary Technologies',
+    name: 'ELIMFILTERS Protection Technologies',
     url: 'https://elimfilters.com/technologies',
-    description: 'Engineering technologies behind ELIMFILTERS asset protection systems.',
+    description: 'Industrial filtration engineering technologies within ELIMFILTERS Asset Protection Systems.',
     numberOfItems: 9,
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
   };
@@ -62,11 +62,11 @@ export default function TechnologiesPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 className="technologies-difference-title" style={whyTitle}>Products replace parts Technologies control failure</h2>
+            <h2 className="technologies-difference-title" style={whyTitle}>The filter is the means. Asset protection is the objective.</h2>
           </div>
           <div>
-            <p style={leadText}>A product number tells you what fits. A technology tells you why the asset is being protected and what operating risk is being reduced.</p>
-            <p style={bodyText}>Systems define the protection domain. Technologies define the engineering architecture. Product families deliver the field implementation.</p>
+            <p style={leadText}>A product number tells you what fits. A technology defines the protection function and the operating risk being controlled.</p>
+            <p style={bodyText}>Systems define the protection domain. Technologies define the engineering architecture. Filtration components deliver the field implementation.</p>
           </div>
         </div>
       </section>
