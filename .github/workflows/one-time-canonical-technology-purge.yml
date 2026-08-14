@@ -1,0 +1,115 @@
+name: One-time canonical technology purge
+
+on:
+  push:
+    branches:
+      - fix/purge-retired-technology-names
+
+permissions:
+  contents: write
+
+jobs:
+  purge:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/purge-retired-technology-names
+          fetch-depth: 0
+      - name: Rewrite repository tree to canonical technology taxonomy
+        shell: python
+        run: |
+          from pathlib import Path
+          import os
+
+          root = Path('.')
+          excluded_dirs = {'.git', 'node_modules', '.next', 'dist', 'build', 'coverage'}
+          binary_ext = {'.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3'}
+          replacements = [
+              ('HYDROCORE/SERIES™', 'TURBOCORE™'),
+              ('HYDROCORE/SERIES', 'TURBOCORE'),
+              ('Hydrocore/Series™', 'TURBOCORE™'),
+              ('Hydrocore/Series', 'TURBOCORE'),
+              ('hydrocore/series', 'turbocore'),
+              ('HYDROCORE™', 'TURBOCORE™'),
+              ('HYDROCORE', 'TURBOCORE'),
+              ('Hydrocore', 'Turbocore'),
+              ('hydrocore', 'turbocore'),
+              ('SYNTEPORE™', 'SYNTAPORE™'),
+              ('SYNTEPORE', 'SYNTAPORE'),
+              ('Syntepore', 'Syntapore'),
+              ('syntepore', 'syntapore'),
+              ('COOLTECH™', 'THERMACORE™'),
+              ('COOLTECH', 'THERMACORE'),
+              ('Cooltech', 'Thermacore'),
+              ('cooltech', 'thermacore'),
+          ]
+
+          for path in list(root.rglob('*')):
+              if not path.is_file():
+                  continue
+              if any(part in excluded_dirs for part in path.parts):
+                  continue
+              if path.suffix.lower() in binary_ext:
+                  continue
+              try:
+                  raw = path.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              new = raw
+              for old, current in replacements:
+                  new = new.replace(old, current)
+              if new != raw:
+                  path.write_text(new, encoding='utf-8')
+
+          # Rename text/source files whose paths still carry a superseded identifier.
+          path_replacements = [
+              ('HYDROCORE', 'TURBOCORE'), ('Hydrocore', 'Turbocore'), ('hydrocore', 'turbocore'),
+              ('SYNTEPORE', 'SYNTAPORE'), ('Syntepore', 'Syntapore'), ('syntepore', 'syntapore'),
+              ('COOLTECH', 'THERMACORE'), ('Cooltech', 'Thermacore'), ('cooltech', 'thermacore'),
+          ]
+          candidates = sorted([p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts], key=lambda p: len(p.parts), reverse=True)
+          for src in candidates:
+              if not src.exists():
+                  continue
+              target = str(src)
+              for old, current in path_replacements:
+                  target = target.replace(old, current)
+              if target == str(src):
+                  continue
+              dst = Path(target)
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              if dst.exists():
+                  src.unlink()
+              else:
+                  src.rename(dst)
+
+          # Remove this one-time workflow from the resulting tree.
+          Path('.github/workflows/one-time-canonical-technology-purge.yml').unlink(missing_ok=True)
+
+      - name: Verify superseded identifiers are absent
+        shell: bash
+        run: |
+          set -e
+          if git grep -n -i -E 'hydrocore|syntepore|cooltech' -- ':!*.png' ':!*.jpg' ':!*.jpeg' ':!*.webp' ':!*.avif' ':!*.pdf'; then
+            echo 'Superseded identifier remains in repository text.' >&2
+            exit 1
+          fi
+          if find . -not -path './.git/*' -type f | grep -i -E 'hydrocore|syntepore|cooltech'; then
+            echo 'Superseded identifier remains in a repository path.' >&2
+            exit 1
+          fi
+
+      - name: Commit purge result
+        shell: bash
+        run: |
+          set -e
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Purge superseded technology identifiers repository-wide'
+          git push origin HEAD:fix/purge-retired-technology-names
