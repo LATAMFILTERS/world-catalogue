@@ -65,6 +65,30 @@ test('Knowledge Center systems metadata describes exactly the five canonical sys
   assert.doesNotMatch(systems, /cabin air protection systems/i);
 });
 
+test('public systems collection exposes exactly the five-system architecture', () => {
+  const systems = read('frontend/src/app/systems/page.tsx');
+  assert.match(systems, /Five canonical ELIMFILTERS protection systems/i);
+  assert.match(systems, /Cabin-air filtration and pneumatic air-dryer protection remain functions inside Air Intake & Airflow Protection/i);
+  assert.doesNotMatch(systems, /'cabin-air':/);
+  assert.doesNotMatch(systems, /'compressed-air':/);
+  assert.match(systems, /url: `\$\{BASE_URL\}\/systems\/`/);
+  assert.match(systems, /url: `\$\{BASE_URL\}\/systems\/\$\{system\.slug\}\/`/);
+  assert.match(systems, /siteName: 'ELIMFILTERS'/);
+});
+
+test('public industries collection exposes twelve governed application domains', () => {
+  const industries = read('frontend/src/app/industries/page.tsx');
+  const expected = [
+    'mining', 'agriculture', 'construction', 'oil-gas', 'marine', 'power-generation',
+    'trucks-fleets', 'manufacturing', 'railway', 'waste-municipal', 'bus-coach', 'automotive',
+  ];
+  for (const slug of expected) assert.ok(industries.includes(`['${slug}',`), `missing industry ${slug}`);
+  assert.match(industries, /12 ELIMFILTERS application domains/i);
+  assert.match(industries, /siteName: 'ELIMFILTERS'/);
+  assert.match(industries, /url: `\$\{BASE_URL\}\/industries\/`/);
+  assert.match(industries, /url: `\$\{BASE_URL\}\/industries\/\$\{slug\}\/`/);
+});
+
 test('core system and family routes use one trailing-slash brand identity', () => {
   const systems = read('frontend/src/app/systems/[slug]/page.tsx');
   const families = read('frontend/src/app/families/[slug]/page.tsx');
