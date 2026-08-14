@@ -78,15 +78,6 @@ DURATECH™
 - role: integrated maintenance and asset-protection kits
 - On-Road differentiation: governed 15,000 km protection interval for approved truck and commercial-vehicle applications, subject to ELIMFILTERS-approved application, installation and maintenance conditions
 
-## RETIRED / NON-CANONICAL TECHNOLOGY NAMES
-The following names are not active ELIMFILTERS technologies and must not be presented as current:
-- SYNTEPORE™
-- HYDROCORE™
-- HYDROCORE/SERIES™
-- COOLTECH™
-
-Do not infer current products, specifications or engineering claims from archived content containing these retired names.
-
 ## KNOWLEDGE CENTER
 URL: https://elimfilters.com/knowledge-center
 Purpose: Industrial filtration engineering reference organized around standards, protection systems, contamination control, technologies, industries and technical knowledge.
