@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node ../scripts/validate-canonical-taxonomy.mjs && node ../scripts/validate-legacy-catalogue-dependency.mjs && node ../scripts/build-citation-index.js && node ../scripts/generate-citation-api.js && node ../scripts/validate-air-intake-page-guard.mjs && node ../scripts/ensure-next-cache.mjs",
+    "prebuild": "node ../scripts/cloudflare-phase4-diagnostic.mjs prebuild",
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "node ../scripts/generate-kc-sitemap.mjs && node ../scripts/generate-video-sitemap.mjs && node ../scripts/generate-sitemap-index.mjs",
+    "build": "node ../scripts/cloudflare-phase4-diagnostic.mjs build",
+    "postbuild": "node ../scripts/cloudflare-phase4-diagnostic.mjs postbuild",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
