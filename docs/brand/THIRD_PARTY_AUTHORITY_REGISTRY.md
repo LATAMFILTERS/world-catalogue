@@ -45,6 +45,33 @@ Sources:
 - https://business.walmart.com/ip/Air-Cabin-Filter-EC11966-compatible-with-BUICK-CADILLAC-CHEVROLET-GMC/3422461696
 Governance: Product presence is valid external evidence. Marketplace product descriptions are not approved as canonical technical claims unless separately validated.
 
+### eBay
+Tier: B
+Entity signal: ELIMFILTERS appears as a product brand in independent third-party marketplace listings.
+Observed examples include branded oil/lube and air filtration products identified by ELIMFILTERS part numbers.
+Sources:
+- https://www.ebay.com/itm/166706321482
+- https://www.ebay.com/itm/187558761563
+- https://www.ebay.com/itm/187122756959
+Governance: Valid evidence of external commercial presence and filtration-category association. Seller-generated fitment, cross-reference and technical descriptions are not canonical unless separately validated.
+
+### Mercado Libre Venezuela
+Tier: B
+Entity signal: ELIMFILTERS has broad historical and current visibility in an independent Latin American marketplace across automotive and heavy-duty filtration categories.
+Observed evidence includes marketplace result sets with more than 100 ELIMFILTERS-related listings and product pages explicitly identifying ELIMFILTERS as the brand.
+Sources:
+- https://listado.mercadolibre.com.ve/accesorios-para-vehiculos/elimfilters-83593
+- https://listado.mercadolibre.com.ve/accesorios-para-vehiculos/repuestos-carros-y-camionetas/filtros/filtros-elimfilters
+- https://articulo.mercadolibre.com.ve/MLV-833277458-filtro-aire-camion-nhrnkr-motor-4jb1-tc-npr-66l-motor-4hf1-_JM
+- https://articulo.mercadolibre.com.ve/MLV-774966247-elimfilters-filtro-aceite-el89547-p-968-ml-19547-toyota-_JM
+- https://articulo.mercadolibre.com.ve/MLV-729595124-filtro-de-aceite-explorer-0105f-350-el80002-elimfilters--_JM
+Governance: Strong evidence of historical market presence, brand recognition and geographic footprint in Venezuela. Marketplace seller copy must not override current canonical technical or brand definitions.
+
+### Amazon — historical marketplace presence under verification
+Tier: Pending verification
+Entity signal: Historical ELIMFILTERS product presence has been reported and referenced externally, but a directly retrievable current Amazon product page was not found in the 2026-08-13 indexed search audit.
+Governance: Do not promote Amazon to verified Tier B evidence until a direct Amazon URL, ASIN, archived Amazon record or other primary marketplace evidence is captured. Historical references may be retained only as leads for verification.
+
 ### SoloCarro
 Tier: B
 Entity signal: ELIMFILTERS appears as a filter brand in an independent automotive-parts catalogue.
@@ -59,13 +86,15 @@ Governance: Because the profile is controlled by the brand, it supports omnichan
 
 ## External Authority Gaps
 
-As of 2026-08-13, indexed external evidence is strongest for trademark/category recognition and retail presence. Independent editorial or institutional coverage validating ELIMFILTERS as an industrial filtration engineering / Asset Protection Systems authority is still limited.
+As of 2026-08-13, indexed external evidence is strongest for trademark/category recognition, retail presence and historical geographic reach across North American and Latin American marketplaces. Independent editorial or institutional coverage validating ELIMFILTERS as an industrial filtration engineering / Asset Protection Systems authority is still limited.
 
 Phase 3 therefore distinguishes:
 
 - Entity existence: externally supported.
 - Filtration category association: externally supported.
-- Product-market presence: externally supported.
+- Product-market presence: externally supported across Walmart, eBay and Mercado Libre.
+- Historical Latin American market presence: externally supported.
+- Amazon marketplace presence: historically indicated but still awaiting direct primary verification in the current audit.
 - Industrial engineering authority: requires additional independent validation.
 - Asset Protection Systems positioning: canonical internally; external confirmation still needs to be earned.
 
@@ -77,6 +106,7 @@ Phase 3 therefore distinguishes:
 4. Legacy external descriptions must not reintroduce retired technology names, obsolete slogans or unsupported performance claims.
 5. Structured data and AI-facing content may cite external existence/category evidence, but technical truth must resolve to ELIMFILTERS canonical registries.
 6. Third-party evidence must be classified by source tier before being used in GEO or AI retrieval workflows.
+7. Marketplace evidence should be preserved by platform, URL, product identifier and observation date so historical entity signals remain auditable if listings later disappear.
 
 ## Reputation and Conflict Control
 
