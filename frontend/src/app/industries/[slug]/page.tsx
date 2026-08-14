@@ -95,6 +95,27 @@ export default function IndustryPage({ params }: Props) {
   const url = `${BASE_URL}/industries/${params.slug}/`;
   const description = industryMetaDescription[item.name] || item.description;
 
+  // Do not pass legacy catalogue marketing claims into the public industry
+  // template. The industry name remains the lookup key for the template's
+  // qualitative operating-context profile; all generic benefits/stats below
+  // are evidence-neutral and system-level.
+  const governedItem = {
+    ...item,
+    description,
+    features: [
+      'Application-specific contamination assessment',
+      'Protection-system mapping by equipment duty',
+      'Product identification through governed application evidence',
+    ],
+    benefits: [
+      'Supports contamination-control planning around the protected asset',
+      'Connects operating conditions to the appropriate protection system',
+      'Keeps product and technology selection tied to documented application evidence',
+    ],
+    stats: {},
+    cta: 'IDENTIFY THE APPLICATION PATH',
+  };
+
   const governedGeo = {
     ctaTitle: `Identify the protection architecture for your ${item.name.toLowerCase()} application`,
     ctaDescription: 'Use the equipment, protected system, duty cycle and available application evidence to identify the appropriate ELIMFILTERS product and technology path.',
@@ -127,7 +148,7 @@ export default function IndustryPage({ params }: Props) {
 
   return (
     <CategoryPage
-      item={item}
+      item={governedItem}
       category="industries"
       industryImage={media.image}
       industryVideo={media.video}
