@@ -26,6 +26,14 @@ test('canonical technology routes do not consume legacy claim-heavy detail data'
   assert.match(source, /engineering\.operationalImpact/);
 });
 
+test('legacy core technology detail dataset remains physically absent', () => {
+  assert.equal(
+    fs.existsSync(path.join(root, 'frontend/src/app/technologies/[slug]/techPagesData.ts')),
+    false,
+    'claim-heavy techPagesData.ts must not return to the canonical technology route',
+  );
+});
+
 test('canonical technology routes do not publish unsupported quantitative marketing claims inline', () => {
   const source = read('frontend/src/app/technologies/[slug]/page.tsx');
 
