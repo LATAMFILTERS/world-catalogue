@@ -81,6 +81,14 @@ Observed evidence: COLSAISA's public LinkedIn company profile identifies the com
 Source: https://www.linkedin.com/company/colsaisa
 Governance: Use as independent evidence of Colombian distribution footprint and third-party brand association. Do not inherit unrelated marketing statements or technical claims from the distributor profile.
 
+### TROY, SRL — Dominican Republic distributor footprint
+Tier: C + independent business-existence corroboration
+Entity signal: ELIMFILTERS identifies TROY, SRL as its authorized distributor for the Dominican Republic, while an independent Waze business listing corroborates TROY, SRL as an operating business in Santo Domingo.
+Sources:
+- https://elimfilters.com/distributors/
+- https://www.waze.com/live-map/directions/do/santo-domingo/santo-domingo/troy%2C-srl?to=place.ChIJF3FuIxKLr44RJIz660wLgUc
+Governance: The ELIMFILTERS distributor directory is the canonical source for current authorization status. The Waze listing supports independent business existence/location only; it does not independently validate the ELIMFILTERS relationship.
+
 ### Alafia C.A. — Venezuela historical distributor signal
 Tier: B-limited / social archive mirror
 Entity signal: A Venezuelan automotive filters and parts distributor publicly identified `#ElimFilters` among the brands it distributed.
@@ -97,6 +105,11 @@ Governance: Use only for historical entity-presence and reputation monitoring. U
 Tier: Pending verification
 Entity signal: Historical ELIMFILTERS product presence has been reported and referenced externally, but a directly retrievable current Amazon product page was not found in the 2026-08-13 indexed search audit.
 Governance: Do not promote Amazon to verified Tier B evidence until a direct Amazon URL, ASIN, archived Amazon record or other primary marketplace evidence is captured. Historical references may be retained only as leads for verification.
+
+### Panama — historical presence under verification
+Tier: Pending verification
+Entity signal: Historical references indicate ELIMFILTERS presence in Panama, but the current audit has not yet located a sufficiently strong independent distributor, marketplace, registry or industry source that directly validates the relationship.
+Governance: Do not present a Panama distributor or current commercial presence as independently verified until a primary or qualified third-party source is captured.
 
 ### SoloCarro
 Tier: B
@@ -122,8 +135,10 @@ Phase 3 therefore distinguishes:
 - Historical United States retail visibility: externally supported.
 - Historical Latin American market presence: externally supported.
 - Colombian distributor association: externally supported.
+- Dominican Republic distributor relationship: canonically confirmed by ELIMFILTERS; TROY business existence independently corroborated.
 - Venezuelan historical distribution footprint: externally supported with source-quality limitations.
 - Historical industrial-property filing footprint in Venezuela: externally supported through a bulletin mirror, pending primary-record confirmation for legal assertions.
+- Panama market presence: historical indication only; independent current verification still pending.
 - Amazon marketplace presence: historically indicated but still awaiting direct primary verification in the current audit.
 - Industrial engineering authority: requires additional independent validation.
 - Asset Protection Systems positioning: canonical internally; external confirmation still needs to be earned.
