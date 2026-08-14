@@ -15,7 +15,15 @@ function positiveInteger(name, value, fallback) {
   return parsed;
 }
 
+function centralProtocolEnabled(apiKey) {
+  const explicit = process.env.USE_CENTRAL_PROTOCOL?.trim();
+  if (explicit) return explicit.toLowerCase() === "true";
+  return Boolean(apiKey);
+}
+
 export function getConfig() {
+  const botProtocolApiKey = process.env.BOT_PROTOCOL_API_KEY?.trim() || "";
+
   return {
     port: parseInt(process.env.PORT || "10000", 10),
     // WhatsApp Business API Configuration
@@ -32,20 +40,20 @@ export function getConfig() {
     nvidiaApiKey: process.env.NVIDIA_NIM_API_KEY || "",
     nvidiaModel: process.env.NVIDIA_MODEL || "nvidia/nemotron-3-super-120b-a12b",
     dryRun: (process.env.DRY_RUN || "true").toLowerCase() === "true",
-    // Knowledge System Integration (legacy independent path -- still used
-    // only when useCentralProtocol is false; see worker.js)
+    // Knowledge System Integration (legacy independent path). This remains
+    // available only as an explicit rollback path or while BOT_PROTOCOL_API_KEY
+    // has not yet been provisioned on the deployed service.
     knowledgeCenterApiUrl: process.env.KNOWLEDGE_CENTER_API_URL?.trim() || "https://knowledge-center-api-staging.onrender.com",
     knowledgeCenterApiKey: process.env.KNOWLEDGE_CENTER_API_KEY?.trim() || null,
     knowledgeEngineRuntimeUrl: process.env.KNOWLEDGE_ENGINE_RUNTIME_URL?.trim() || "https://knowledge-engine-runtime-staging.onrender.com",
     engineApiKey: process.env.ENGINE_API_KEY?.trim() || null,
-    // Central Conversation Engine adapter (protocol-client.js). Defaults to
-    // false -- the legacy independent stack (nvidia.js/knowledge.js/
-    // knowledge-engine.js/product-search.js) stays the active path until
-    // this is explicitly flipped to true, per channel, as a controlled
-    // rollout. Flipping it back to false is the rollback.
-    useCentralProtocol: (process.env.USE_CENTRAL_PROTOCOL || "false").toLowerCase() === "true",
+    // Central Conversation Engine is automatically preferred as soon as its
+    // credential exists. USE_CENTRAL_PROTOCOL=false remains an explicit
+    // controlled rollback; USE_CENTRAL_PROTOCOL=true can force the central
+    // route and surface a safe support message if the protocol is unavailable.
+    useCentralProtocol: centralProtocolEnabled(botProtocolApiKey),
     botProtocolUrl: first(process.env.BOT_PROTOCOL_URL, "https://part-search.elimfilters.com"),
-    botProtocolApiKey: process.env.BOT_PROTOCOL_API_KEY || "",
+    botProtocolApiKey,
     botProtocolTimeoutMs: positiveInteger("BOT_PROTOCOL_TIMEOUT_MS", process.env.BOT_PROTOCOL_TIMEOUT_MS, 8000)
   };
 }
