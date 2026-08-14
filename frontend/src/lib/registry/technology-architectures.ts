@@ -7,7 +7,7 @@
  *
  * EDR: EDR-A-002 — Why Technology Architecture Became the Core Engineering Entity
  * EDR: EDR-C-001 — Engineering Rationale for MACROCORE Technology Architecture
- * EDR: EDR-C-002 — Engineering Rationale for HYDROCORE Technology Architecture
+ * EDR: EDR-C-002 — Engineering Rationale for TURBOCORE Technology Architecture
  * EDR: EDR-C-003 — Engineering Rationale for SYNTRAX Technology Architecture
  * EDR: EDR-C-004 — Engineering Rationale for NANOFORCE Technology Architecture
  *
@@ -15,8 +15,8 @@
  *   MACROCORE   → Air Intake              (ISO 5011, SAE J726)
  *   SYNTRAX     → Engine Lube Oil         (ISO 16889, ISO 4406)
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
- *   SYNTEPORE   → Fuel HPCR               (ASTM D6304, ISO 12937)
- *   HYDROCORE   → Fuel Water Separation   (ASTM D6304)
+ *   SYNTAPORE   → Fuel HPCR               (ASTM D6304, ISO 12937)
+ *   TURBOCORE   → Fuel Water Separation   (ASTM D6304)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
  *   INTEKCORE   → Filter Housing Systems
@@ -592,168 +592,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── HYDROCORE — Fuel Water Separation ────────────────────────────────
-
-  'TECH-HYDROCORE': {
-    entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-HYDROCORE',
-    technologyName: 'HYDROCORE',
-    commercialName: 'HYDROCORE™',
-    systemDomain: 'Fuel Water Separation',
-    primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    maturity: MATURITY.PUBLISHED,
-    createdDate: '2026-07-01',
-
-    canonicalDefinition:
-      'HYDROCORE is the fuel water separation technology implementing coalescence and hydrophobic repulsion to remove free and emulsified water from diesel fuel before it reaches the fuel injection system. It is classified as a Fuel Water Separation technology — not a hydraulic technology and not a multi-domain technology — because its engineering principles address the specific phase-state challenge of water-in-fuel contamination.',
-
-    systemContext:
-      'Applies to diesel fuel supply systems in all compression-ignition engines. Primary installation points: fuel pre-filter position (upstream of fuel transfer pump) and primary fuel filter housing with integrated water separation bowl. Critical in: long-haul transport, standby power generation, agricultural storage systems, and any application using stored diesel fuel susceptible to condensation water accumulation.',
-
-    industrialRole:
-      'Free water in diesel fuel at concentrations above 200 ppm causes: hydraulic fracture of high-pressure common rail injector tips (at 1,800+ bar injection pressure), injector stiction from water-induced lacquer deposits, and injector tip corrosion from dissolved acids in the water phase. Water content of stored diesel increases by 50–200 ppm per week of storage in above-ground tanks through thermal cycling. HYDROCORE intercepts this water before it reaches the injection circuit, protecting injector service life from a failure mode that is predictable, progressive, and preventable.',
-
-    protectionMedia: [
-      {
-        type: 'Coalescing medium',
-        description:
-          'High-surface-area fiber matrix providing repeated droplet contact surfaces. Dispersed water droplets (5–50 µm) contact fibers and merge into settleable droplets (>100 µm).',
-        micronRating: '10 µm particle filtration',
-        mediaConstruction: 'Borosilicate glass microfiber, hydrophilic surface treatment',
-      },
-      {
-        type: 'Hydrophobic barrier',
-        description:
-          'Final stage hydrophobic membrane prevents any coalesced or un-coalesced water from transiting to the fuel delivery circuit.',
-        micronRating: '2–30 µm selectable',
-        mediaConstruction: 'PTFE-coated or fluoropolymer membrane, hydrophobic surface energy <30 mN/m',
-      },
-    ],
-
-    engineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
-
-    materials: [
-      {
-        component: 'Coalescing fiber',
-        material: 'Borosilicate glass microfiber with hydrophilic surface treatment',
-        justification:
-          'Hydrophilic surface treatment maximizes water droplet contact area and promotes coalescence versus hydrophobic surfaces that repel droplets before coalescence can complete.',
-      },
-      {
-        component: 'Hydrophobic barrier layer',
-        material: 'PTFE-coated glass fiber or polytetrafluoroethylene membrane',
-        justification:
-          'PTFE surface energy (~18 mN/m) is well below water surface tension (72 mN/m), providing reliable hydrophobic repulsion across the operating differential pressure range.',
-      },
-      {
-        component: 'Water collection bowl',
-        material: 'Transparent polysulfone',
-        justification:
-          'Visual water level monitoring without draining. Polysulfone is diesel-compatible and UV-stable for outdoor installation.',
-      },
-    ],
-
-    construction: [
-      {
-        feature: 'Coalesce-then-repel architecture',
-        description:
-          'Coalescing stage first (hydrophilic) grows water droplets to settleable size; repulsion stage second (hydrophobic) provides final barrier. Sequence is functional — reversing the stages reduces effectiveness.',
-        engineeringBasis:
-          'Coalescence requires droplet-surface contact; hydrophilic surfaces promote wetting and coalescence. Hydrophobic surfaces repel droplets, so a hydrophobic first stage would repel the very droplets it is intended to coalesce.',
-      },
-      {
-        feature: 'Transparent water collection bowl with drain valve',
-        description:
-          'Separated water accumulates in sealed bowl below the element. Visual level indicator and manual or automatic drain valve.',
-        engineeringBasis:
-          'Water that is separated must be removed from the system or it re-emulsifies under vibration and fuel flow. The bowl provides temporary storage with visual service indicator.',
-      },
-      {
-        feature: 'Water-in-fuel sensor port (optional)',
-        description:
-          'Electrical port for capacitance-type WIF sensor providing dashboard warning on water level in collection bowl.',
-        engineeringBasis:
-          'ISO 4020 requires WIF warning systems on diesel engines over a defined threshold power. Sensor integration converts the mechanical filter housing into a condition-monitoring device.',
-      },
-    ],
-
-    flowDynamics: [
-      {
-        parameter: 'Rated fuel flow',
-        value: 'Model-dependent',
-        unit: 'L/h at 40°C fuel viscosity',
-        standardRef: 'ISO 16332',
-      },
-      {
-        parameter: 'Water separation efficiency',
-        value: '>95',
-        unit: '% free water removal',
-        standardRef: 'ISO 16332',
-      },
-    ],
-
-    captureMechanisms: [
-      {
-        contaminantClass: 'Free water (droplets >10 µm)',
-        mechanism: 'Coalescence followed by gravitational settling',
-        efficiency: '>95% per ISO 16332',
-        particleSizeRange: '>10 µm droplets',
-      },
-      {
-        contaminantClass: 'Emulsified water (droplets 1–10 µm)',
-        mechanism: 'Coalescing medium — surface contact → droplet growth → settling',
-        efficiency: '>85% per ISO 16332 test conditions',
-        particleSizeRange: '1–10 µm droplets',
-      },
-      {
-        contaminantClass: 'Fuel particulate (>10 µm)',
-        mechanism: 'Depth filtration through coalescing medium',
-        efficiency: 'β10(c) ≥ 75 typical',
-        particleSizeRange: '>10 µm',
-      },
-    ],
-
-    performanceProfile: [
-      {
-        metric: 'Free water separation efficiency',
-        value: '>95',
-        unit: '% at rated flow',
-        evidenceSource: 'ISO 16332 fuel/water separator test protocol',
-        standardRef: 'ISO 16332',
-      },
-      {
-        metric: 'Water content of delivered fuel',
-        value: '<200',
-        unit: 'ppm (target for HPCR injection systems)',
-        evidenceSource: 'ASTM D6304 Karl Fischer titration on filtered fuel samples',
-        standardRef: 'ASTM D6304',
-      },
-    ],
-
-    failureModes: [
-      {
-        id: 'FM-FUEL-001',
-        rootCauseChain:
-          'Free water in diesel > 200 ppm → water transit to HPCR injection rail at 1,800 bar → hydraulic fracture force on injector tip → injector tip cracking → injection pattern distortion → combustion inefficiency and injector replacement',
-        measuredConsequence:
-          'HPCR injector replacement cost: USD 400–2,000 per injector. 6-cylinder engine: USD 2,400–12,000 per water contamination event.',
-        operationalImpact:
-          'Single water contamination event causing injector failure results in vehicle off-service for 2–5 days (parts availability dependent). Fleet operators experiencing recurring fuel water contamination report 15–25% of unscheduled maintenance events attributable to injection system water damage.',
-        preventedByThisTechnology: true,
-      },
-    ],
-
-    versionHistory: [
-      {
-        version: '1.0.0',
-        publishedDate: '2026-07-01',
-        approvedBy: 'Technology Authority + Quality Authority',
-        changeNote: 'Initial publication — Engineering Foundation Phase 1',
-        edrRef: 'EDR-C-002-v1.0',
-      },
-    ],
-  },
-
+  // ── TURBOCORE — Fuel Water Separation ────────────────────────────────
   // ── TURBOCORE — Three-Stage Fuel Filtration / Water Separation ──────────
 
   'TECH-TURBOCORE': {
@@ -767,10 +606,10 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'TURBOCORE is the three-stage heavy-duty fuel filter and water separator technology addressing the complete diesel fuel contamination spectrum in sequence: Stage 1 applies inertial separation (HYDROCORE™ rotation principle) for coarse particle capture and initial free water separation; Stage 2 applies coalescing medium for emulsified water aggregation and gravity separation; Stage 3 applies a hydrophobic barrier preventing any water carry-over to the HPCR injection circuit. Designed for high-flow-rate diesel systems (90–180 GPH) in power generation, mining, agriculture, and heavy transport.',
+      'TURBOCORE is the three-stage heavy-duty fuel filter and water separator technology addressing the complete diesel fuel contamination spectrum in sequence: Stage 1 applies inertial separation (TURBOCORE™ rotation principle) for coarse particle capture and initial free water separation; Stage 2 applies coalescing medium for emulsified water aggregation and gravity separation; Stage 3 applies a hydrophobic barrier preventing any water carry-over to the HPCR injection circuit. Designed for high-flow-rate diesel systems (90–180 GPH) in power generation, mining, agriculture, and heavy transport.',
 
     systemContext:
-      'Applies to heavy-duty diesel fuel supply systems where single-stage filtration is insufficient for the contamination load. Primary installation in: high-capacity standby power generation sets, mining haul trucks and drilling rigs, large agricultural equipment with high-flow Common Rail fuel systems, and commercial marine auxiliary diesel. Flow rates 90–180 GPH distinguish TURBOCORE applications from single-stage HYDROCORE installations (typically <40 GPH).',
+      'Applies to heavy-duty diesel fuel supply systems where single-stage filtration is insufficient for the contamination load. Primary installation in: high-capacity standby power generation sets, mining haul trucks and drilling rigs, large agricultural equipment with high-flow Common Rail fuel systems, and commercial marine auxiliary diesel. Flow rates 90–180 GPH distinguish TURBOCORE applications from single-stage TURBOCORE installations (typically <40 GPH).',
 
     industrialRole:
       'High-flow diesel systems operating in contaminated environments (mining dust, stored fuel with water accumulation, high-humidity marine environments) subject the fuel supply to simultaneous particle and water contamination at rates that exceed single-stage filter capacity. TURBOCORE three-stage architecture distributes the contamination load: Stage 1 removes coarse particles and bulk free water (protecting Stage 2 from overloading); Stage 2 resolves emulsified water the inertial stage cannot separate; Stage 3 provides a final absolute water barrier. The staged approach extends service life of each stage relative to a single combined element.',
@@ -1107,26 +946,26 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── SYNTEPORE — Fuel HPCR Filtration ─────────────────────────────────
+  // ── SYNTAPORE — Fuel HPCR Filtration ─────────────────────────────────
 
-  'TECH-SYNTEPORE': {
+  'TECH-SYNTAPORE': {
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-SYNTEPORE',
-    technologyName: 'SYNTEPORE',
-    commercialName: 'SYNTEPORE™',
+    id: 'TECH-SYNTAPORE',
+    technologyName: 'SYNTAPORE',
+    commercialName: 'SYNTAPORE™',
     systemDomain: 'Fuel HPCR',
     primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 19438'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'SYNTEPORE is the fuel filtration technology for High-Pressure Common Rail (HPCR) injection systems, implementing absolute-rated synthetic media filtration to achieve sub-4 µm fuel cleanliness targets required by HPCR injector manufacturers. It addresses both particulate contamination and residual water contamination in the secondary fuel filtration stage — between the primary water separator and the high-pressure injection pump inlet.',
+      'SYNTAPORE is the fuel filtration technology for High-Pressure Common Rail (HPCR) injection systems, implementing absolute-rated synthetic media filtration to achieve sub-4 µm fuel cleanliness targets required by HPCR injector manufacturers. It addresses both particulate contamination and residual water contamination in the secondary fuel filtration stage — between the primary water separator and the high-pressure injection pump inlet.',
 
     systemContext:
       'Applies to the secondary fuel filtration position in HPCR diesel fuel systems operating at injection pressures of 1,600–2,500 bar. HPCR injector plunger-barrel clearances of 1–3 µm define the contamination sensitivity: particles above 4 µm cause immediate plunger scoring at the operating pressure. Critical in: Euro IV/V/VI trucks, Tier 4 Final agricultural engines, modern construction equipment with electronic injection management.',
 
     industrialRole:
-      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTEPORE maintains the sub-4 µm fuel cleanliness code (ISO 4406 equivalent: 12/10/7 or tighter) specified by HPCR injector manufacturers for rated injector service life of 10,000–15,000 hours.',
+      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTAPORE maintains the sub-4 µm fuel cleanliness code (ISO 4406 equivalent: 12/10/7 or tighter) specified by HPCR injector manufacturers for rated injector service life of 10,000–15,000 hours.',
 
     protectionMedia: [
       {
@@ -1181,7 +1020,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         description:
           'Secondary water scavenging after primary water separator catches residual dissolved water not removed by coalescence.',
         engineeringBasis:
-          'Primary water separators (HYDROCORE) remove free and emulsified water. Dissolved water at 100–500 ppm passes through primary separation unchanged. SYNTEPORE integrated scavenging removes residual dissolved water phase, protecting injectors from the acid corrosion mechanism.',
+          'Primary water separators (TURBOCORE) remove free and emulsified water. Dissolved water at 100–500 ppm passes through primary separation unchanged. SYNTAPORE integrated scavenging removes residual dissolved water phase, protecting injectors from the acid corrosion mechanism.',
       },
     ],
 
@@ -1227,7 +1066,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         metric: 'Achievable fuel cleanliness',
         value: 'ISO 4406 12/10/7',
         unit: 'ISO 4406 code',
-        evidenceSource: 'Particle count measurement downstream of SYNTEPORE in HPCR fuel circuit',
+        evidenceSource: 'Particle count measurement downstream of SYNTAPORE in HPCR fuel circuit',
         standardRef: 'ISO 4406',
       },
     ],
@@ -1240,7 +1079,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         measuredConsequence:
           'HPCR injector service life at correct cleanliness (ISO 12/10/7): 10,000–15,000 hours. At uncontrolled cleanliness (ISO 18/16/13): 2,000–4,000 hours. Injector replacement cost: USD 400–2,000 per injector × 6 cylinders.',
         operationalImpact:
-          'Premature injector failure in Tier 4 Final engines triggers emissions system non-compliance warnings, requiring immediate engine shutdown in regulated jurisdictions. Off-service time: 2–5 days. SYNTEPORE fuel cleanliness maintenance prevents this failure mode.',
+          'Premature injector failure in Tier 4 Final engines triggers emissions system non-compliance warnings, requiring immediate engine shutdown in regulated jurisdictions. Off-service time: 2–5 days. SYNTAPORE fuel cleanliness maintenance prevents this failure mode.',
         preventedByThisTechnology: true,
       },
     ],
@@ -1608,7 +1447,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'N/A — structural housing system',
         description:
-          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, SYNTEPORE).',
+          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, SYNTAPORE).',
         micronRating: 'Defined by installed element technology',
         mediaConstruction: 'Cast aluminum, ductile iron, or stainless steel housing body',
       },
@@ -1751,7 +1590,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Kit assembly — application-matched elements',
         description:
-          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE or SYNTEPORE (hydraulic/fuel), HYDROCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
+          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE or SYNTAPORE (hydraulic/fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
         micronRating: 'Defined by each element technology in the kit',
         mediaConstruction: 'Assembled kit with element compatibility verified against OEM service documentation',
       },
@@ -1764,7 +1603,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         component: 'Kit elements',
         material: 'Per individual element technology specifications',
         justification:
-          'DURATECH kit contains the same elements as ordered individually — MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, SYNTEPORE, MICROKAPPA — in the correct configurations for the target application. Material specifications are inherited from each element technology.',
+          'DURATECH kit contains the same elements as ordered individually — MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, SYNTAPORE, MICROKAPPA — in the correct configurations for the target application. Material specifications are inherited from each element technology.',
       },
       {
         component: 'Kit packaging',

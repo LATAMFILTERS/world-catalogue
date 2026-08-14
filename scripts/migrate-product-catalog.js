@@ -10,7 +10,7 @@
  *
  * Flags:
  *   (none)      Run DDL only (001_product_catalog_schema.sql)
- *   --seed      Also run seed data (002_hydrocore_seed_data.sql)
+ *   --seed      Also run seed data (002_TURBOCORE_seed_data.sql)
  *   --validate  Run validation queries and print results
  *   --all       DDL + seed + validate
  *
@@ -57,9 +57,9 @@ async function main() {
 
     // ── Step 2: Seed data ────────────────────────────────────────────────────
     if (RUN_SEED) {
-      console.log('[migrate-product-catalog] Running seed: 002_hydrocore_seed_data.sql');
+      console.log('[migrate-product-catalog] Running seed: 002_TURBOCORE_seed_data.sql');
       const seed = fs.readFileSync(
-        path.join(MIGRATIONS_DIR, '002_hydrocore_seed_data.sql'), 'utf8'
+        path.join(MIGRATIONS_DIR, '002_TURBOCORE_seed_data.sql'), 'utf8'
       );
       await client.query(seed);
       console.log('[migrate-product-catalog] Seed data OK');

@@ -40,7 +40,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'TECH-MACROCORE',
       'TECH-SYNTRAX',
       'TECH-NANOFORCE',
-      'TECH-HYDROCORE',
+      'TECH-TURBOCORE',
       'TECH-MARINECLEAN',
     ],
     implementsPrincipleIds: ['EP-SEP-001'],
@@ -72,7 +72,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'Biofuel blends B5–B20',
     ],
     employedByTechnologyIds: [
-      'TECH-SYNTEPORE',
+      'TECH-SYNTAPORE',
 
     ],
     implementsPrincipleIds: ['EP-SEP-001'],
@@ -134,7 +134,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'Lube oil (for coolant water removal)',
     ],
     employedByTechnologyIds: [
-      'TECH-HYDROCORE',
+      'TECH-TURBOCORE',
       'TECH-TURBOCORE',
       'TECH-MARINECLEAN',
     ],
@@ -167,7 +167,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'Light fuel oil',
     ],
     employedByTechnologyIds: [
-      'TECH-HYDROCORE',
+      'TECH-TURBOCORE',
       'TECH-TURBOCORE',
       'TECH-MARINECLEAN',
     ],

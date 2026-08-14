@@ -42,7 +42,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'MICROKAPPA™ required', value: 'Yes — silicosis risk' },
       { label: 'ISO 4406 hydraulic target', value: '16/14/11' },
     ],
-    technologies: ['MACROCORE™', 'INTEKCORE™', 'MICROKAPPA™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    technologies: ['MACROCORE™', 'INTEKCORE™', 'MICROKAPPA™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'TURBOCORE™'],
     standards: ['ISO 5011', 'ISO 4406', 'ISO 16889', 'ISO 11155-1'],
     systems: ['Air Intake Protection', 'Cabin Air Protection', 'Hydraulic Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection'],
     sections: [
@@ -104,7 +104,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Pre-cleaner life extension', value: '3–5× primary element' },
       { label: 'Season length', value: '6–12 weeks (high dust)' },
     ],
-    technologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'NANOFORCE™', 'HYDROCORE™'],
+    technologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'NANOFORCE™', 'TURBOCORE™'],
     standards: ['ISO 5011', 'ISO 4406', 'ISO 16889'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Cabin Air Protection', 'Fuel Cleanliness Protection'],
     sections: [
@@ -133,7 +133,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Urban interval', value: '30,000–80,000 km' },
       { label: 'EGR soot contamination', value: 'Up to 5% soot in lube oil' },
     ],
-    technologies: ['MACROCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'SYNTEPORE™'],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'SYNTAPORE™'],
     standards: ['ISO 5011', 'ISO 16889', 'SAE J1858'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cabin Air Protection'],
     sections: [
@@ -162,7 +162,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'IMO compliance', value: 'Required for international voyages' },
       { label: 'MARINECLEAN™', value: 'IMO-certified ecosystem' },
     ],
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™'],
+    technologies: ['SYNTAPORE™', 'TURBOCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™'],
     standards: ['ISO 12937', 'ASTM D6304', 'ISO 16889', 'ISO 4406'],
     systems: ['Fuel Cleanliness Protection', 'Lubrication Protection', 'Hydraulic Protection'],
     sections: [
@@ -191,7 +191,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Instrument air class', value: 'ISO 8573-1 Class 1:4:1' },
       { label: 'Drilling dust type', value: 'Barite, silica, formation minerals' },
     ],
-    technologies: ['MACROCORE™', 'DRYCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    technologies: ['MACROCORE™', 'DRYCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'TURBOCORE™'],
     standards: ['ISO 5011', 'ISO 8573-1', 'ISO 16889', 'ISO 4406'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
     sections: [
@@ -248,7 +248,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Standby diesel readiness', value: 'Fuel polishing required' },
       { label: 'Typical genset lube interval', value: '250–500 hrs or calendar' },
     ],
-    technologies: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'HYDROCORE™', 'THERMACORE™'],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'SYNTAPORE™', 'TURBOCORE™', 'THERMACORE™'],
     standards: ['ISO 5011', 'ISO 16889', 'SAE J1858', 'ISO 12937', 'ASTM D6304'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cooling System Protection'],
     sections: [
@@ -258,7 +258,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       },
       {
         heading: 'Standby Diesel Readiness',
-        body: 'Emergency diesel generators (hospital, data center, critical infrastructure) must start and reach full load within 10–30 seconds. Fuel stored in standby tanks accumulates water over months of thermal cycling and atmospheric breathing. HYDROCORE™ fuel polishing — circulating standby fuel through a water separator and fine filter at regular intervals — maintains fuel quality and ensures injector readiness without draining and refilling tanks.',
+        body: 'Emergency diesel generators (hospital, data center, critical infrastructure) must start and reach full load within 10–30 seconds. Fuel stored in standby tanks accumulates water over months of thermal cycling and atmospheric breathing. TURBOCORE™ fuel polishing — circulating standby fuel through a water separator and fine filter at regular intervals — maintains fuel quality and ensures injector readiness without draining and refilling tanks.',
       },
     ],
   },

@@ -193,7 +193,7 @@ These routes are marked "TEMP" or "DELETE AFTER USE" and are still active in pro
 HD Prefixes:
   EA1 = Air Filter, HD (from MACROCORE™ technology)
   EL8 = Lube Filter, HD (from SYNTRAX™ technology)
-  EF9 = Fuel Filter, HD (from HYDROCORE™/SYNTEPORE™)
+  EF9 = Fuel Filter, HD (from TURBOCORE™/SYNTAPORE™)
   ES9 = Lube Separator, HD
   EH6 = Hydraulic Filter, HD (from NANOFORCE™)
   EC1 = Cabin Filter, HD (from MICROKAPPA™)
@@ -213,7 +213,7 @@ Example: EL81348 = EL8 (lube, HD) + 1348 (last 4 digits of Donaldson P551348)
 |--------|-----------|-----------------|-------|
 | AIRFILTER_PRIMARY | MACROCORE™ | ~120 SKUs | Mining, off-road |
 | CABIN_PRIMARY | MICROKAPPA™ | ~65 SKUs | Operator protection |
-| FUEL_PRIMARY | HYDROCORE™ | ~85 SKUs | Water separation |
+| FUEL_PRIMARY | TURBOCORE™ | ~85 SKUs | Water separation |
 | LUBE_PRIMARY | SYNTRAX™ | ~110 SKUs | Engine/bearing protection |
 | HYDRAULIC_PRIMARY | NANOFORCE™ | ~95 SKUs | Proportional valve protection |
 
@@ -315,7 +315,7 @@ The ELIMFILTERS AI is a multi-phase initiative to turn the knowledge platform in
 
 - **49 entities** compiled: 12 technologies + 11 industries + 5 contamination modes + 5 product families + standards + commercial lines
 - **505 edges** with 1.0 resolution ratio (all relationships resolve)
-- **97/99 traversal paths** valid (2 gaps are pre-existing: INTEKCORE and SYNTEPORE missing ProductFamily links)
+- **97/99 traversal paths** valid (2 gaps are pre-existing: INTEKCORE and SYNTAPORE missing ProductFamily links)
 - **0 compilation errors**
 
 ### 3.5 What's Blocking AI Launch

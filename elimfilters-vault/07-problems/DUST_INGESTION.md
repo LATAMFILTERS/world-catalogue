@@ -29,7 +29,7 @@ industry_frequency:
   - "[[AGRICULTURE]]"
 resolved_by_technologies:
   - "[[MACROCORE]]"
-  - "[[SYNTEPORE]]"
+  - "[[SYNTAPORE]]"
   - "[[INTEKCORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -77,7 +77,7 @@ Dust ingestion problems often go undetected until oil analysis reveals elevated 
 
 ### Solution Technologies
 - [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (primary solution)
-- [[SYNTEPORE|SYNTEPORE™ — All-Synthetic Intake]] (humid/marine variant)
+- [[SYNTAPORE|SYNTAPORE™ — All-Synthetic Intake]] (humid/marine variant)
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Housing]] (housing seal integrity)
 
 ### Governing Standards
@@ -96,7 +96,7 @@ DUST_INGESTION
     ↓ root_contamination
 PARTICLE_WEAR
     ↓ resolved_by
-MACROCORE (primary), SYNTEPORE (humid/marine), INTEKCORE (housing)
+MACROCORE (primary), SYNTAPORE (humid/marine), INTEKCORE (housing)
     ↓ ProductFamily lookup
 AIRFILTER_PRIMARY
     ↓ Part Search API
@@ -133,7 +133,7 @@ SAE J1539: Air intake contamination classification defining acceptable limits
 RELATED_TECHNOLOGIES
 MACROCORE: 99.9%–99.98% efficiency PDG air filtration — primary prevention |
 INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |
-SYNTEPORE: All-synthetic element for humid environments where cellulose media degrades
+SYNTAPORE: All-synthetic element for humid environments where cellulose media degrades
 
 INDUSTRIAL_ROLE
 Dust ingestion is the highest-frequency, highest-cost contamination event in mining and

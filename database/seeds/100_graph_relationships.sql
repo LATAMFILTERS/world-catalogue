@@ -30,7 +30,7 @@ s.code='AIR_INTAKE'
 AND
 r.code='PROTECTS';
 
--- SYNTEPORE
+-- SYNTAPORE
 
 INSERT INTO knowledge_edges
 (source_node_id,relationship_type_id,target_node_id,confidence_score)
@@ -46,7 +46,7 @@ FROM knowledge_nodes t,
      graph_relationship_types r
 
 WHERE
-t.code='SYNTEPORE'
+t.code='SYNTAPORE'
 AND
 s.code='FUEL_CLEANLINESS'
 AND

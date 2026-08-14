@@ -80,10 +80,10 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     usedInSystems: ['SYS-HYDRAULIC'],
   },
 
-  'TECH-SYNTEPORE': {
-    id: 'TECH-SYNTEPORE',
-    name: 'SYNTEPORE',
-    slug: 'syntepore',
+  'TECH-SYNTAPORE': {
+    id: 'TECH-SYNTAPORE',
+    name: 'SYNTAPORE',
+    slug: 'SYNTAPORE',
     domain: 'Fuel HPCR Filtration',
     contaminationTarget: ['particulate', 'fuel-borne-particles'],
     status: 'published',
@@ -98,29 +98,6 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     usedInSystems: ['SYS-FUEL-CLEANLINESS'],
   },
 
-  'TECH-HYDROCORE': {
-    id: 'TECH-HYDROCORE',
-    name: 'HYDROCORE',
-    slug: 'hydrocore',
-    domain: 'Fuel Water Separation',
-    contaminationTarget: ['free-water', 'emulsified-water'],
-    status: 'published',
-    version: '1.0',
-    created: '2026-07-04',
-    lastModified: '2026-07-04',
-    contentPhase: 3,
-    tagline: 'Coalescing fuel-water separation',
-    engineeringPrinciple: 'Coalescing media achieving >95% free water removal per ASTM D6304',
-    implementsStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
-    addressesProblems: [
-      'PROB-INJECTOR-WEAR',
-      'PROB-WATER-INGRESS',
-      'PROB-FUEL-CONTAMINATION',
-      'PROB-CAVITATION',
-      'PROB-MICROBIAL-GROWTH',
-    ],
-    usedInSystems: ['SYS-FUEL-CLEANLINESS'],
-  },
 
   'TECH-TURBOCORE': {
     id: 'TECH-TURBOCORE',

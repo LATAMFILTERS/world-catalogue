@@ -3,7 +3,7 @@
 // parameters) so scripts/hermes/collect-real-sources.mjs and the test suite
 // share one implementation without ever hitting the real filesystem/network
 // from tests. This module never writes to elimfilters-vault canonical
-// folders and never talks to PostgreSQL/pgvector/unified-data — its only
+// folders and never talks to PostgreSQL/pgvector/legacy catalogue layer — its only
 // outputs are hermes/real-candidates, hermes/source-cache and an audit
 // record in elimfilters-vault/94-sync-log.
 

@@ -15,7 +15,7 @@
 | 2. JSON-LD: Technologies hub | MEDIUM | LOW | LOW | None | NO |
 | 3. JSON-LD: Fleet pages | LOW | LOW | LOW | None | NO |
 | 4. JSON-LD: Comparison pages | LOW | LOW | LOW | None | NO |
-| 5. PART_SEARCH_MAP coverage | MEDIUM | LOW | MEDIUM | Vault notes for INTEKCORE/SYNTEPORE PF | NO |
+| 5. PART_SEARCH_MAP coverage | MEDIUM | LOW | MEDIUM | Vault notes for INTEKCORE/SYNTAPORE PF | NO |
 | 6. Validation scripts in package.json | MEDIUM | LOW | LOW | None | NO — but reduces risk for all others |
 
 ---
@@ -100,18 +100,18 @@ Comparison pages are the most commercially motivated pages in the Knowledge Syst
 
 ### Option 5 — Improve PART_SEARCH_MAP Coverage
 
-**What it is**: Create ProductFamily vault notes for INTEKCORE (Zero-Bypass Housing family) and SYNTEPORE (All-Synthetic Intake family) to resolve the 2 remaining invalid traversal paths (PATH_C_INTEKCORE and PATH_C_SYNTEPORE), then rebuild the map.
+**What it is**: Create ProductFamily vault notes for INTEKCORE (Zero-Bypass Housing family) and SYNTAPORE (All-Synthetic Intake family) to resolve the 2 remaining invalid traversal paths (PATH_C_INTEKCORE and PATH_C_SYNTAPORE), then rebuild the map.
 
 **Business impact: MEDIUM**
-Completing the map to 100% validity closes the last structural gaps in the Part Search citation chain. When the `citations=true` API parameter is eventually built, it will have complete coverage. However, INTEKCORE and SYNTEPORE serve niche applications (marine/humid environments and zero-bypass housing), so the commercial impact of the 2 missing paths is lower than the remaining gaps look numerically.
+Completing the map to 100% validity closes the last structural gaps in the Part Search citation chain. When the `citations=true` API parameter is eventually built, it will have complete coverage. However, INTEKCORE and SYNTAPORE serve niche applications (marine/humid environments and zero-bypass housing), so the commercial impact of the 2 missing paths is lower than the remaining gaps look numerically.
 
 **Technical risk: LOW**
 Standard vault note creation — same process as Phase 4B.1.
 
 **Effort: MEDIUM**
-Two vault notes plus compiler rebuild. Notes require domain knowledge for the INTEKCORE housing product family and the SYNTEPORE synthetic-media specialty range.
+Two vault notes plus compiler rebuild. Notes require domain knowledge for the INTEKCORE housing product family and the SYNTAPORE synthetic-media specialty range.
 
-**Dependency**: Requires correct characterisation of the INTEKCORE and SYNTEPORE product families, which are less clearly defined in the vault than MACROCORE.
+**Dependency**: Requires correct characterisation of the INTEKCORE and SYNTAPORE product families, which are less clearly defined in the vault than MACROCORE.
 
 **Blocks AI/Part Search: NO** — but improves completeness before the citation API goes live.
 

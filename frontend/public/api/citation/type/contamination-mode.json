@@ -40,7 +40,7 @@
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
     },
     {
       "key": "DIESEL_WATER",
@@ -61,14 +61,14 @@
         "concept": "Diesel Water Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:4d19f133e8b1e464058d974a77e23a94e8e66766e0fe854c293c8bf4c4cc39aa"
+        "content_hash": "sha256:61e8fb37187a49dfdc3c2d428608a86d33b9fd27b5b0d05482f6e735b94d2c33"
       },
       "canonical": {
         "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
         "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
         "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
         "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
-        "related_technologies": "HYDROCORE: Primary coalescing water separation technology; separates free and emulsified water from diesel before injector delivery",
+        "related_technologies": "TURBOCORE: Primary coalescing water separation technology; separates free and emulsified water from diesel before injector delivery",
         "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
       },
       "relationships": {
@@ -77,10 +77,10 @@
           "ISO_12937"
         ],
         "resolved_by": [
-          "HYDROCORE"
+          "TURBOCORE"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/DIESEL_WATER.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
     },
     {
       "key": "HYDRAULIC_CONTAMINATION",
@@ -101,14 +101,14 @@
         "concept": "Hydraulic System Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:13a03cb41b7aa90756be4178b97fa2e8da544eb392b65ffb1f2ff9dca148d10a"
+        "content_hash": "sha256:90cbf9a36f7cf03ed1605396714c318665428b2b3379f8b51eb129806c6cefc2"
       },
       "canonical": {
         "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
         "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
         "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | HYDROCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | TURBOCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
         "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
       },
       "relationships": {
@@ -119,12 +119,12 @@
         ],
         "resolved_by": [
           "NANOFORCE",
-          "HYDROCORE",
+          "TURBOCORE",
           "SYNTRAX",
           "MICROKAPPA"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/HYDRAULIC_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
     },
     {
       "key": "PARTICLE_WEAR",
@@ -169,7 +169,7 @@
           "SYNTRAX"
         ]
       },
-      "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
     }
   ]
 }

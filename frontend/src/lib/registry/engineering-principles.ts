@@ -35,7 +35,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     standardRefs: ['ISO 16889', 'ISO 4406', 'SAE J1858'],
     implementedByTechnologies: [
       'TECH-MACROCORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE',
-      'TECH-HYDROCORE', 'TECH-MICROKAPPA', 'TECH-SYNTEPORE',
+      'TECH-TURBOCORE', 'TECH-MICROKAPPA', 'TECH-SYNTAPORE',
       'TECH-THERMACORE', 'TECH-INTEKCORE',
       'TECH-DRYCORE', 'TECH-MARINECLEAN', 'TECH-TURBOCORE',
     ],
@@ -63,7 +63,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'The medium acts as a mechanical sieve. Particles larger than the pore opening are physically blocked at the surface. Surface loading increases pressure drop and eventually reaches terminal differential pressure, requiring element replacement. Suitable when particle distribution is narrow and above the surface rating.',
     standardRefs: ['ISO 2941', 'ISO 3723', 'ISO 3724'],
-    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTEPORE'],
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTAPORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -140,7 +140,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Dispersed water droplets (<20 µm) in diesel fuel cannot settle by gravity alone in normal service conditions — surface tension and flow turbulence keep them suspended. A coalescing medium provides high surface area where droplets repeatedly contact fibers. Each contact event causes partial merging (coalescence). As merged droplets grow above ~100 µm, gravitational settling force exceeds suspension forces and water drops fall to the collection sump. The principle operates independently of flow rate within design limits.',
     standardRefs: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
+    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-TURBOCORE', 'TECH-DRYCORE', 'TECH-MARINECLEAN'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -165,7 +165,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Surface energy of the medium is below the surface tension of water (~72 mN/m at 20°C). Water droplets arriving at the hydrophobic surface form high-contact-angle beads (>90°) and cannot spread or penetrate. The critical breakthrough pressure — the minimum differential pressure required to force water through — exceeds design operating pressures. At higher differential pressures, the barrier integrity must be verified by the manufacturer against operating conditions.',
     standardRefs: ['ASTM D6304', 'ISO 16332'],
-    implementedByTechnologies: ['TECH-HYDROCORE', 'TECH-TURBOCORE'],
+    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-TURBOCORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -217,7 +217,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Fiber diameter directly controls particle capture efficiency for diffusion-dominated submicron capture (finer fibers increase capture probability). Fiber surface treatments modify hydrophilicity/hydrophobicity, chemical compatibility with specific fluids, and resistance to fiber migration under flow. Glass microfiber media achieves stable Beta ratios under high-temperature, high-differential-pressure conditions where cellulose media undergoes structural collapse.',
     standardRefs: ['ISO 16889', 'ISO 3968', 'ISO 3724'],
-    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-SYNTEPORE'],
+    implementedByTechnologies: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-SYNTAPORE'],
     versionHistory: [
       {
         version: '1.0.0',
@@ -244,7 +244,7 @@ export const ENGINEERING_PRINCIPLES: Record<string, EngineeringPrinciple> = {
     phenomenonDescription:
       'Optical particle counters illuminate a fluid sample and detect light extinction events caused by particles passing through the measurement zone. The counter tallies particles by size class. The ISO 4406 reporting format compresses raw counts into codes: code 17 = 640–1,300 particles/mL; code 16 = 320–640 particles/mL, etc. The three-code format enables specification of cleanliness targets for different system sensitivities. Proportional valve systems targeting ISO 17/15/12 require finer filtration than systems tolerating ISO 19/17/14.',
     standardRefs: ['ISO 4406', 'ISO 11500', 'ISO 16889'],
-    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-SYNTEPORE', 'TECH-DURATECH'],
+    implementedByTechnologies: ['TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-SYNTAPORE', 'TECH-DURATECH'],
     versionHistory: [
       {
         version: '1.0.0',

@@ -22,10 +22,10 @@
   },
   "canonical": {
     "definition": "Air Filtration product system providing multi-layer particulate interception for diesel\nengine air intake paths, using MACROCORE™ Progressive Density Gradient elements achieving\n99.9%–99.98% efficiency under ISO 5011 certification.",
-    "systems": "Air Intake domain (product-line class); primary technology: MACROCORE™; supporting:\nSYNTEPORE™ (humid/marine), INTEKCORE™ (housing integrity)",
+    "systems": "Air Intake domain (product-line class); primary technology: MACROCORE™; supporting:\nSYNTAPORE™ (humid/marine), INTEKCORE™ (housing integrity)",
     "failure_impact": "Air filter element bypass or saturation → abrasive particles enter combustion chamber →\npiston ring wear, cylinder scuffing, turbocharger bearing seizure → engine overhaul\ninterval 3,000–5,000 hours vs. 15,000–25,000 hours with controlled air filtration",
     "related_standards": "ISO 5011: Air filter efficiency, restriction, and dust-holding capacity test |\nSAE J1539: Air intake contamination classification | ISO 16889: Multi-pass filter test",
-    "related_technologies": "MACROCORE: PDG primary element | SYNTEPORE: Synthetic marine/humid variant |\nINTEKCORE: Zero-bypass housing",
+    "related_technologies": "MACROCORE: PDG primary element | SYNTAPORE: Synthetic marine/humid variant |\nINTEKCORE: Zero-bypass housing",
     "industrial_role": "First line of defence in the contamination hierarchy — all downstream engine systems\n(lube oil, fuel, turbocharger) depend on the integrity of the air intake filtration system."
   },
   "relationships": {
@@ -38,7 +38,7 @@
       "PARTICLE_WEAR"
     ],
     "supporting_technologies": [
-      "SYNTEPORE",
+      "SYNTAPORE",
       "INTEKCORE"
     ],
     "related_problems": [
@@ -77,9 +77,9 @@
         "href": "/api/citation/PARTICLE_WEAR.json"
       },
       {
-        "key": "SYNTEPORE",
+        "key": "SYNTAPORE",
         "relation": "supporting_technologies",
-        "href": "/api/citation/SYNTEPORE.json"
+        "href": "/api/citation/SYNTAPORE.json"
       },
       {
         "key": "INTEKCORE",

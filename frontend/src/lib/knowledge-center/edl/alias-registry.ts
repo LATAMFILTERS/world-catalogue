@@ -173,39 +173,39 @@ export const EDL_ALIASES: AliasRegistry = {
     notes: 'European (DIN) terminology for hydraulic fluid',
   },
 
-  // ── HPCR / Common Rail Aliases → TECH-SYNTEPORE ────────────────────────
+  // ── HPCR / Common Rail Aliases → TECH-SYNTAPORE ────────────────────────
 
   'ALIAS-HPCR': {
     id: 'ALIAS-HPCR',
     alias: 'HPCR',
-    canonicalId: 'TECH-SYNTEPORE',
+    canonicalId: 'TECH-SYNTAPORE',
     canonicalType: 'TECH',
     confidence: 'common',
-    notes: 'High-Pressure Common Rail; the filtration technology protecting HPCR injectors is SYNTEPORE',
+    notes: 'High-Pressure Common Rail; the filtration technology protecting HPCR injectors is SYNTAPORE',
   },
 
   'ALIAS-COMMON-RAIL': {
     id: 'ALIAS-COMMON-RAIL',
     alias: 'Common rail',
-    canonicalId: 'TECH-SYNTEPORE',
+    canonicalId: 'TECH-SYNTAPORE',
     canonicalType: 'TECH',
     confidence: 'common',
-    notes: 'Common rail injection system filtration is the SYNTEPORE domain',
+    notes: 'Common rail injection system filtration is the SYNTAPORE domain',
   },
 
   'ALIAS-HIGH-PRESSURE-COMMON-RAIL': {
     id: 'ALIAS-HIGH-PRESSURE-COMMON-RAIL',
     alias: 'High pressure common rail',
-    canonicalId: 'TECH-SYNTEPORE',
+    canonicalId: 'TECH-SYNTAPORE',
     canonicalType: 'TECH',
     confidence: 'exact',
-    notes: 'Full form of HPCR; the primary contamination protection technology is SYNTEPORE',
+    notes: 'Full form of HPCR; the primary contamination protection technology is SYNTAPORE',
   },
 
   'ALIAS-HPCR-INJECTOR': {
     id: 'ALIAS-HPCR-INJECTOR',
     alias: 'HPCR injector protection',
-    canonicalId: 'TECH-SYNTEPORE',
+    canonicalId: 'TECH-SYNTAPORE',
     canonicalType: 'TECH',
     confidence: 'exact',
   },
@@ -213,7 +213,7 @@ export const EDL_ALIASES: AliasRegistry = {
   'ALIAS-COMMON-RAIL-FUEL-FILTER': {
     id: 'ALIAS-COMMON-RAIL-FUEL-FILTER',
     alias: 'Common rail fuel filter',
-    canonicalId: 'TECH-SYNTEPORE',
+    canonicalId: 'TECH-SYNTAPORE',
     canonicalType: 'TECH',
     confidence: 'common',
   },

@@ -1,7 +1,7 @@
 # PHASE 3E — Vault Expansion Report
 
-**Date**: 2026-06-03  
-**Branch**: `claude/dazzling-franklin-ALGY1`  
+**Date**: 2026-06-03
+**Branch**: `claude/dazzling-franklin-ALGY1`
 **Phase**: 3E — Resolve PARTICLE_WEAR dangling links, expand core nodes
 
 ---
@@ -13,7 +13,7 @@
 | 1 | `elimfilters-vault/05-contamination/PARTICLE_WEAR.md` | contamination-mode | PARTICLE_WEAR | true |
 | 2 | `elimfilters-vault/04-standards/SAE_J1539.md` | standard | SAE_J1539 | true |
 | 3 | `elimfilters-vault/04-standards/ISO_16889.md` | standard | ISO_16889 | true |
-| 4 | `elimfilters-vault/01-technologies/active/SYNTEPORE.md` | technology | SYNTEPORE | true |
+| 4 | `elimfilters-vault/01-technologies/active/SYNTAPORE.md` | technology | SYNTAPORE | true |
 | 5 | `elimfilters-vault/01-technologies/active/INTEKCORE.md` | technology | INTEKCORE | true |
 | 6 | `elimfilters-vault/01-technologies/active/SYNTRAX.md` | technology | SYNTRAX | true |
 | 7 | `elimfilters-vault/02-industries/AGRICULTURE.md` | industry | AGRICULTURE | true |
@@ -22,7 +22,7 @@
 | 10 | `elimfilters-vault/06-components/PISTON_RING_ASSEMBLY.md` | component | PISTON_RING_ASSEMBLY | false |
 | 11 | `elimfilters-vault/06-components/ENGINE_BEARING_JOURNAL.md` | component | ENGINE_BEARING_JOURNAL | false |
 
-**Notes from unified-data.ts**: 9 (PARTICLE_WEAR, SAE_J1539, ISO_16889, SYNTEPORE, INTEKCORE, SYNTRAX, AGRICULTURE, CONSTRUCTION, ISO_4406)  
+**Notes from unified-data.ts**: 9 (PARTICLE_WEAR, SAE_J1539, ISO_16889, SYNTAPORE, INTEKCORE, SYNTRAX, AGRICULTURE, CONSTRUCTION, ISO_4406)
 **Vault-only notes**: 2 (PISTON_RING_ASSEMBLY, ENGINE_BEARING_JOURNAL)
 
 ---
@@ -37,7 +37,7 @@ From Phase 3D grep analysis (dangling link counts):
 - `INTEKCORE` — 4 references
 - `CONSTRUCTION` — 4 references
 - `AGRICULTURE` — 4 references
-- `SYNTEPORE` — 3 references
+- `SYNTAPORE` — 3 references
 - `ISO_16889` — 3 references
 - `SYNTRAX` — 2 references
 - `NANOFORCE` — 1 reference
@@ -57,7 +57,7 @@ All 8 targeted dangling link keys have been resolved by creating the correspondi
 | `INTEKCORE` | `01-technologies/active/INTEKCORE.md` | 4 references |
 | `CONSTRUCTION` | `02-industries/CONSTRUCTION.md` | 4 references |
 | `AGRICULTURE` | `02-industries/AGRICULTURE.md` | 4 references |
-| `SYNTEPORE` | `01-technologies/active/SYNTEPORE.md` | 3 references |
+| `SYNTAPORE` | `01-technologies/active/SYNTAPORE.md` | 3 references |
 | `ISO_16889` | `04-standards/ISO_16889.md` | 3 references |
 | `SYNTRAX` | `01-technologies/active/SYNTRAX.md` | 2 references |
 | `ISO_4406` | `04-standards/ISO_4406.md` | (new — required by ISO_16889 and SYNTRAX) |
@@ -74,18 +74,18 @@ The 11 new notes introduce wikilinks to entities not yet created in the vault:
 | Key | Referenced In |
 |---|---|
 | `NANOFORCE` | PARTICLE_WEAR, SAE_J1539 (AI Retrieval), ISO_16889, ISO_4406, SYNTRAX, AGRICULTURE, CONSTRUCTION, ENGINE_BEARING_JOURNAL |
-| `HYDROCORE` | AGRICULTURE, CONSTRUCTION |
+| `TURBOCORE` | AGRICULTURE, CONSTRUCTION |
 | `MICROKAPPA` | CONSTRUCTION |
 
 ### Industries (not yet created)
 | Key | Referenced In |
 |---|---|
-| `MARINE` | SYNTEPORE, SYNTRAX |
-| `OIL_GAS` | SYNTEPORE, SYNTRAX |
-| `RAILWAY` | SYNTEPORE, INTEKCORE, SYNTRAX |
-| `TRUCKS_FLEETS` | SYNTEPORE, INTEKCORE, SYNTRAX |
-| `WASTE_MUNICIPAL` | SYNTEPORE, SYNTRAX |
-| `POWER_GENERATION` | SYNTEPORE, SYNTRAX |
+| `MARINE` | SYNTAPORE, SYNTRAX |
+| `OIL_GAS` | SYNTAPORE, SYNTRAX |
+| `RAILWAY` | SYNTAPORE, INTEKCORE, SYNTRAX |
+| `TRUCKS_FLEETS` | SYNTAPORE, INTEKCORE, SYNTRAX |
+| `WASTE_MUNICIPAL` | SYNTAPORE, SYNTRAX |
+| `POWER_GENERATION` | SYNTAPORE, SYNTRAX |
 | `AUTOMOTIVE` | SYNTRAX |
 | `BUS_COACH` | SYNTRAX |
 
@@ -134,7 +134,7 @@ Phase 3E created the following new bidirectional relationship paths in the vault
 
 ### Technology-to-Standard Paths
 - SYNTRAX → ISO_4406, ISO_16889, DIN_51524
-- SYNTEPORE → ISO_5011, SAE_J1539
+- SYNTAPORE → ISO_5011, SAE_J1539
 - INTEKCORE → ISO_5011
 
 ### Component Protection Paths
@@ -151,7 +151,7 @@ Based on dangling links across all Phase 3D + 3E notes, the following keys requi
 
 ### High Priority (most references)
 1. `NANOFORCE` — 8+ references; technology; in_unified_data: true
-2. `HYDROCORE` — 2 references; technology; in_unified_data: true
+2. `TURBOCORE` — 2 references; technology; in_unified_data: true
 3. `DIESEL_WATER` — 2 references; contamination-mode; in_unified_data: true
 4. `HYDRAULIC_CONTAMINATION` — 1 reference; contamination-mode; in_unified_data: true
 
@@ -184,9 +184,9 @@ Priority order based on reference frequency and domain coverage:
 | Priority | Key | Type | Rationale |
 |---|---|---|---|
 | 1 | `NANOFORCE` | technology | 8+ dangling references; core lube technology; high network impact |
-| 2 | `HYDROCORE` | technology | 2 references; hydraulic domain gap; CONSTRUCTION/AGRICULTURE need it |
+| 2 | `TURBOCORE` | technology | 2 references; hydraulic domain gap; CONSTRUCTION/AGRICULTURE need it |
 | 3 | `DIESEL_WATER` | contamination-mode | 2 references; AGRICULTURE primary contamination gap |
-| 4 | `MARINE` | industry | 2 references; SYNTEPORE primary use-case; offshore/maritime domain |
+| 4 | `MARINE` | industry | 2 references; SYNTAPORE primary use-case; offshore/maritime domain |
 | 5 | `TRUCKS_FLEETS` | industry | 3 references; high-volume fleet application; multi-technology hub |
 | 6 | `RAILWAY` | industry | 3 references; locomotive diesel application; SYNTRAX + INTEKCORE applicable |
 | 7 | `HYDRAULIC_CONTAMINATION` | contamination-mode | 1 reference; CONSTRUCTION key contamination gap |

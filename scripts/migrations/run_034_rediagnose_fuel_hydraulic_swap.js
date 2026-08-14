@@ -5,8 +5,8 @@
  *
  * run_032's DURATECH pilot candidates for Freightliner CL120 + DD15
  * surfaced HD rows with the Fuel/Hydraulic technology swap again -
- * fuel rows on NANOFORCE (should be SYNTEPORE) and hydraulic rows on
- * SYNTEPORE (should be NANOFORCE) - even though run_022 already fixed
+ * fuel rows on NANOFORCE (should be SYNTAPORE) and hydraulic rows on
+ * SYNTAPORE (should be NANOFORCE) - even though run_022 already fixed
  * this once. The affected rows this time have Fleetguard-style
  * codigo_base values (HF..., ST..., TF..., FF...) rather than
  * Donaldson P-codes, suggesting they came from a different/later
@@ -32,7 +32,7 @@ const client = new Client({
 (async () => {
   await client.connect();
 
-  console.log('\n=== Fuel rows with technology = NANOFORCE (expected: SYNTEPORE) ===');
+  console.log('\n=== Fuel rows with technology = NANOFORCE (expected: SYNTAPORE) ===');
   const { rows: fuelWrong } = await client.query(`
     SELECT sku, codigo_base, filter_type, technology
     FROM elimfilters_catalog
@@ -43,11 +43,11 @@ const client = new Client({
   fuelWrong.slice(0, 15).forEach(r => console.log(`  ${r.sku}  (${r.codigo_base})  ${r.filter_type}`));
   if (fuelWrong.length > 15) console.log(`  ... and ${fuelWrong.length - 15} more`);
 
-  console.log('\n=== Hydraulic rows with technology = SYNTEPORE (expected: NANOFORCE) ===');
+  console.log('\n=== Hydraulic rows with technology = SYNTAPORE (expected: NANOFORCE) ===');
   const { rows: hydWrong } = await client.query(`
     SELECT sku, codigo_base, filter_type, technology
     FROM elimfilters_catalog
-    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTEPORE™'
+    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTAPORE™'
     ORDER BY sku
   `);
   console.log(`Count: ${hydWrong.length}`);

@@ -9,7 +9,7 @@ const STAGES = [
     number: '01',
     tag: 'STAGE 1',
     title: 'INERTIAL INTERCEPTION',
-    body: 'HYDROCORE™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force alone. No moving parts. Zero mechanical dependency. The intercepted mass accumulates in the sealed base chamber — permanently separated from the fuel path before the protection sequence even begins.',
+    body: 'TURBOCORE™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force alone. No moving parts. Zero mechanical dependency. The intercepted mass accumulates in the sealed base chamber — permanently separated from the fuel path before the protection sequence even begins.',
     stat: '100%',
     statLabel: 'Macro-particle removal at entry',
   },
@@ -24,8 +24,8 @@ const STAGES = [
   {
     number: '03',
     tag: 'STAGE 3',
-    title: 'HYDROCORE™ PRECISION BARRIER',
-    body: 'The final HYDROCORE™ hydrophobic protection barrier intercepts sub-micron contamination and dissolved water before the fuel enters the high-pressure injection circuit. The barrier architecture repels water molecules at contact — they cannot pass through regardless of differential pressure. Available in 2, 10 and 30 micron defense ratings to match your injection system\'s exact protection requirement.',
+    title: 'TURBOCORE™ PRECISION BARRIER',
+    body: 'The final TURBOCORE™ hydrophobic protection barrier intercepts sub-micron contamination and dissolved water before the fuel enters the high-pressure injection circuit. The barrier architecture repels water molecules at contact — they cannot pass through regardless of differential pressure. Available in 2, 10 and 30 micron defense ratings to match your injection system\'s exact protection requirement.',
     stat: '2µm',
     statLabel: 'Minimum precision barrier rating',
   },
@@ -49,7 +49,7 @@ const APPLICATIONS = [
   { sector: 'RAILWAY', detail: 'Diesel locomotives and rolling stock requiring absolute fuel circuit integrity across extreme temperature and humidity ranges over extended service intervals.' },
 ];
 
-export function HydrocorePage() {
+export function TURBOCOREPage() {
   return (
     <>
       <Link href="/"
@@ -86,7 +86,7 @@ export function HydrocorePage() {
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', lineHeight: 1.0, marginBottom: '0.5rem' }}>
-              HYDROCORE
+              TURBOCORE
             </motion.h1>
             <motion.h2 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontSize: 'clamp(1.4rem, 4vw, 2.8rem)', fontWeight: 700, fontFamily: 'Titillium Web, sans-serif', color: '#FFF12D', marginBottom: '2rem' }}>
@@ -123,7 +123,7 @@ export function HydrocorePage() {
                   Conventional fuel filters intercept particles. TURBOCORE™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.25rem' }}>
-                  The 900FH and 1000FH models deploy HYDROCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
+                  The 900FH and 1000FH models deploy TURBOCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif' }}>
                   The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.

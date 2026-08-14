@@ -8,19 +8,19 @@
 -- CONFIRMED technology values in DB (from live audit Q1, Q13):
 --   NANOFORCE™   → 1,962  → slug: nanoforce
 --   MACROCORE™   → 1,366  → slug: macrocore
---   SYNTAPORE™   →   500  → slug: syntepore  ← DEPRECATED NAME, maps to syntepore
+--   SYNTAPORE™   →   500  → slug: SYNTAPORE  ← DEPRECATED NAME, maps to SYNTAPORE
 --   SYNTRAX™     →   351  → slug: syntrax
 --   INTAKCORE™   →   243  → slug: intekcore  ← DB TYPO, canonical is intekcore
 --   MICROKAPPA™  →   122  → slug: microkappa
---   COOLTECH™    →    59  → slug: thermacore  ← DB still stores COOLTECH™; slug renamed
---   AQUAGUARD™   →    16  → slug: hydrocore   ← DB still stores AQUAGUARD™; slug renamed
+--   THERMACORE™    →    59  → slug: thermacore  ← DB still stores THERMACORE™; slug renamed
+--   AQUAGUARD™   →    16  → slug: TURBOCORE   ← DB still stores AQUAGUARD™; slug renamed
 --   DRYCORE™     →     3  → slug: drycore
 --   TOTAL: 4,622  (100% technology fill rate)
 --
 -- ADDITIONAL aliases handled defensively (may appear after new imports):
 --   SINTRAX™     → slug: syntrax   (known alias)
 --   INTEKCORE™   → slug: intekcore (canonical form — not yet in DB but may appear)
---   SYNTEPORE™   → slug: syntepore (correct name — not yet in DB but may appear)
+--   SYNTAPORE™   → slug: SYNTAPORE (correct name — not yet in DB but may appear)
 --   DURATECH™    → slug: duratech     (0 products, PRE_LAUNCH)
 --   MARINECLEAN™ → slug: marineclean  (0 products, PRE_LAUNCH)
 -- (GASULTRA™ and BLUECLEAN™ excluded from KG — not seeded)
@@ -39,7 +39,7 @@ FROM (
     LOWER(
       REGEXP_REPLACE(
         CASE UPPER(REGEXP_REPLACE(ec.technology, '[™®\s]', '', 'g'))
-          WHEN 'SYNTAPORE'  THEN 'SYNTEPORE'
+          WHEN 'SYNTAPORE'  THEN 'SYNTAPORE'
           WHEN 'SINTRAX'    THEN 'SYNTRAX'
           WHEN 'INTAKCORE'  THEN 'INTEKCORE'
         ELSE REGEXP_REPLACE(ec.technology, '[™®\s]', '', 'g')
@@ -61,11 +61,11 @@ ORDER BY product_count DESC;
 --   3. Lowercase → join to kg_technologies.slug
 --
 -- DB VALUE → KG SLUG mapping (full table):
---   SYNTAPORE  → syntepore   (deprecated brand name)
+--   SYNTAPORE  → SYNTAPORE   (deprecated brand name)
 --   SINTRAX    → syntrax     (alias)
 --   INTAKCORE  → intekcore   (DB typo, canonical is intekcore)
---   AQUAGUARD  → hydrocore   (STRATEGIC RENAME: AQUAGUARD™ → HYDROCORE™)
---   COOLTECH   → thermacore  (STRATEGIC RENAME: COOLTECH™ → THERMACORE™)
+--   AQUAGUARD  → TURBOCORE   (STRATEGIC RENAME: AQUAGUARD™ → TURBOCORE™)
+--   THERMACORE   → thermacore  (STRATEGIC RENAME: THERMACORE™ → THERMACORE™)
 --   All others → lowercase(strip(value)) — matches slug directly
 
 INSERT INTO kg_product_technologies (product_sku, technology_id)
@@ -76,11 +76,11 @@ FROM elimfilters_catalog ec
 JOIN kg_technologies kt ON kt.slug = LOWER(
     REGEXP_REPLACE(
       CASE UPPER(REGEXP_REPLACE(ec.technology, '[™®[:space:]]', '', 'g'))
-        WHEN 'SYNTAPORE'  THEN 'SYNTEPORE'
+        WHEN 'SYNTAPORE'  THEN 'SYNTAPORE'
         WHEN 'SINTRAX'    THEN 'SYNTRAX'
         WHEN 'INTAKCORE'  THEN 'INTEKCORE'
-        WHEN 'AQUAGUARD'  THEN 'HYDROCORE'
-        WHEN 'COOLTECH'   THEN 'THERMACORE'
+        WHEN 'AQUAGUARD'  THEN 'TURBOCORE'
+        WHEN 'THERMACORE'   THEN 'THERMACORE'
       ELSE REGEXP_REPLACE(ec.technology, '[™®[:space:]]', '', 'g')
       END,
       '[™®[:space:]]', '', 'g'
@@ -137,12 +137,12 @@ ORDER BY COUNT(kptec.product_sku) DESC;
 -- slug        | display_name   | category               | mapped_products
 -- nanoforce   | NANOFORCE™     | Hydraulic Filtration   | 1,962
 -- macrocore   | MACROCORE™     | Air Intake Filtration  | 1,366
--- syntepore   | SYNTEPORE™     | Fuel Filtration        |   500  ← was SYNTAPORE in DB
+-- SYNTAPORE   | SYNTAPORE™     | Fuel Filtration        |   500  ← was SYNTAPORE in DB
 -- syntrax     | SYNTRAX™       | Lube / Oil Filtration  |   351
 -- intekcore   | INTEKCORE™     | Air Housing & Precl.   |   243  ← was INTAKCORE in DB
 -- microkappa  | MICROKAPPA™    | Cabin Air Filtration   |   122
--- thermacore  | THERMACORE™    | Coolant Filtration     |    59  ← DB stores COOLTECH™
--- hydrocore   | HYDROCORE™     | Fuel/Water Separation  |    16  ← DB stores AQUAGUARD™
+-- thermacore  | THERMACORE™    | Coolant Filtration     |    59  ← DB stores THERMACORE™
+-- TURBOCORE   | TURBOCORE™     | Fuel/Water Separation  |    16  ← DB stores AQUAGUARD™
 -- drycore     | DRYCORE™       | Air Dryer Technology   |     3
 -- duratech    | DURATECH™      | Heavy-Duty Engine Oil  |     0  ← PRE_LAUNCH
 -- marineclean | MARINECLEAN™   | Marine Filtration      |     0  ← PRE_LAUNCH

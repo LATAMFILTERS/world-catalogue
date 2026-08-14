@@ -62,11 +62,11 @@ export const CATEGORY_ICONS: Record<string, string[]> = {
   'Waste Municipal': ['♻'],
 };
 
-// Map technology name to logo file
 export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
     'Turbocore Series': 'logo-turbocore.png',
-    Hydrocore: 'logo-hydrocore.png',
+    Turbocore: 'logo-turbocore.png',
+    Syntapore: 'logo-syntapore.png',
     Drycore: 'logo-drycore.png',
     Duratech: 'logo-duratech.png',
     Intekcore: 'logo-intekcore.png',
@@ -74,8 +74,8 @@ export function getTechLogoFile(name: string): string {
     Marineclean: 'logo-marineclean.png',
     Microkappa: 'logo-microkappa.png',
     Nanoforce: 'logo-nanoforce.png',
-    Syntepore: 'logo-syntepore.png',
     Syntrax: 'logo-sintrax.png',
+    Thermacore: 'logo-thermacore.png',
   };
   return logoMap[name] || 'logo-elimfilters.png';
 }

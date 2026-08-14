@@ -44,8 +44,8 @@ systems:
     prefix: FUEL
     protection_system_name: Fuel Cleanliness Protection
     technologies:
-      - HYDROCORE
-      - HYDROCORE_SERIES
+      - TURBOCORE
+      - TURBOCORE_SERIES
       - MARINECLEAN
     technical_families:
       engine_fuel_filters:
@@ -53,13 +53,13 @@ systems:
           - primary_fuel_filters
           - secondary_fuel_filters
       fuel_water_separators:
-        technology: HYDROCORE
+        technology: TURBOCORE
         product_families:
           - spin_on_fuel_water_separators
           - cartridge_fuel_water_separator_elements
           - complete_fuel_water_separator_assemblies
       turbine_fuel_systems:
-        technology: HYDROCORE_SERIES
+        technology: TURBOCORE_SERIES
         product_families:
           - fh_turbine_elements
           - fg_turbine_elements

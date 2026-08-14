@@ -28,15 +28,15 @@ Integrated intelligence ecosystems are extremely difficult to copy.
 
 Assets:
 
-- MACROCORE™
-- SYNTEPORE™
-- SYNTRAX™
-- NANOFORCE™
-- HYDROCORE™
-- THERMACORE™
-- MICROKAPPA™
-- DRYCORE™
-- INTEKCORE™
+- MACROCOREï¿½
+- SYNTAPOREï¿½
+- SYNTRAXï¿½
+- NANOFORCEï¿½
+- TURBOCOREï¿½
+- THERMACOREï¿½
+- MICROKAPPAï¿½
+- DRYCOREï¿½
+- INTEKCOREï¿½
 
 Advantage:
 

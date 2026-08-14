@@ -227,7 +227,7 @@ The construction pitch is the strongest multi-domain argument in the ELIMFILTERS
 - Air filtration (MACROCORE) for engine protection in silica dust
 - Hydraulic filtration (NANOFORCE) for proportional valve protection in excavators and loaders
 - Cabin air (MICROKAPPA) for operator health (PM10 compliance) on sites near demolition or aggregate crushing
-- Fuel filtration (HYDROCORE) for machines using stored fuel in remote locations
+- Fuel filtration (TURBOCORE) for machines using stored fuel in remote locations
 - Lube oil (SYNTRAX) for engine bearing protection across the fleet
 
 This is a USD $4,000–$8,000 per machine per year multi-domain opportunity. Lead with air — it is the easiest technical conversation — then expand to hydraulic and cabin once the initial relationship is established.

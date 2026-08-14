@@ -118,13 +118,13 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/technologies/hydrocore</loc>
+    <loc>https://elimfilters.com/technologies/TURBOCORE</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/technologies/hydrocore-series</loc>
+    <loc>https://elimfilters.com/technologies/TURBOCORE-series</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -148,7 +148,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/technologies/syntepore</loc>
+    <loc>https://elimfilters.com/technologies/SYNTAPORE</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -260,7 +260,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/systems/hydrocore-series</loc>
+    <loc>https://elimfilters.com/systems/TURBOCORE-series</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1967,7 +1967,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center\technologies\hydrocore</loc>
+    <loc>https://elimfilters.com/knowledge-center\technologies\TURBOCORE</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2009,7 +2009,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://elimfilters.com/knowledge-center\technologies\syntepore</loc>
+    <loc>https://elimfilters.com/knowledge-center\technologies\SYNTAPORE</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

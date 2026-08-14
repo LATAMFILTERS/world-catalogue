@@ -98,7 +98,7 @@ Assessment: **Complete.**
 |--------|-------|
 | Total traversal paths | 99 |
 | Valid paths | 97 (98%) |
-| Invalid paths | 2 (pre-existing Type C — INTEKCORE, SYNTEPORE) |
+| Invalid paths | 2 (pre-existing Type C — INTEKCORE, SYNTAPORE) |
 | Type A valid (Problem → PF) | 12/12 (100%) |
 | Type B valid (Industry → PF) | 80/80 (100%) |
 | Type C valid (Technology → PF) | 5/7 (71%) |
@@ -109,7 +109,7 @@ Assessment: **Complete.**
 
 Every industry can reach every product family relevant to its contamination exposure via the traversal map. The `citations=true` Part Search parameter can be implemented against the current API without further vault changes.
 
-The 2 invalid Type C paths do not affect Problem-based or Industry-based traversal. INTEKCORE and SYNTEPORE are reachable from DUST_INGESTION and route correctly to AIRFILTER_PRIMARY; they simply share a terminal product family with MACROCORE rather than having dedicated product family notes.
+The 2 invalid Type C paths do not affect Problem-based or Industry-based traversal. INTEKCORE and SYNTAPORE are reachable from DUST_INGESTION and route correctly to AIRFILTER_PRIMARY; they simply share a terminal product family with MACROCORE rather than having dedicated product family notes.
 Assessment: **Ready for integration.**
 
 ---
@@ -196,7 +196,7 @@ Assessment: **Production-ready.**
 Fleet, Compare, Bridges (4 of 5), science, compressed-air-systems, and three ISO standard deep-dive pages lack structured data.
 Severity: Medium. Affects search crawlability and LLM page-level citation. Does not affect the citation API or Part Search traversal.
 
-**Gap 2 — INTEKCORE and SYNTEPORE ProductFamily notes**
+**Gap 2 — INTEKCORE and SYNTAPORE ProductFamily notes**
 Two technologies share AIRFILTER_PRIMARY with MACROCORE rather than having dedicated terminal product families. Creates 2 invalid Type C paths.
 Severity: Low. Both technologies route correctly to AIRFILTER_PRIMARY. Only affects technology-specific SKU filtering in Part Search.
 
@@ -256,7 +256,7 @@ The following are documented for awareness. No implementation is recommended or 
 
 **LLM tool integration** — Defining a tool schema against `/api/citation/[KEY].json` would allow AI assistants to retrieve canonical ELIMFILTERS definitions at inference time with version attribution.
 
-**INTEKCORE and SYNTEPORE ProductFamily notes** — Two vault notes would resolve the 2 remaining invalid Type C paths and enable technology-specific SKU filtering.
+**INTEKCORE and SYNTAPORE ProductFamily notes** — Two vault notes would resolve the 2 remaining invalid Type C paths and enable technology-specific SKU filtering.
 
 **Compressed air domain** — ISO 8573 is referenced in the Knowledge System but absent from the vault. A contamination mode node and technology node would complete the 6-domain coverage.
 
@@ -315,8 +315,8 @@ The vault's `version: 1.0` fields are manually maintained. If canonical definiti
 **R3 — unified_data.ts divergence**
 The vault's ProductFamily and Problem nodes are not in `unified-data.ts`. If product catalogue data changes (new SKUs, discontinued families), the vault will not automatically reflect it. Resolution: the vault tracks conceptual entities; the product catalogue tracks SKUs. These are correctly separate. The risk is that Part Search paths point to families with no live SKUs — acceptable for V1, requires monitoring.
 
-**R4 — INTEKCORE and SYNTEPORE ProductFamily gap**
-If Part Search `citations=true` is implemented, queries specifically for INTEKCORE or SYNTEPORE products will route to AIRFILTER_PRIMARY and cannot be distinguished from MACROCORE results at the ProductFamily level. Acceptable for V1; requires 2 vault notes to resolve.
+**R4 — INTEKCORE and SYNTAPORE ProductFamily gap**
+If Part Search `citations=true` is implemented, queries specifically for INTEKCORE or SYNTAPORE products will route to AIRFILTER_PRIMARY and cannot be distinguished from MACROCORE results at the ProductFamily level. Acceptable for V1; requires 2 vault notes to resolve.
 
 **R5 — DIN_51524 dangling reference**
 SYNTRAX.md references `[[DIN_51524]]` which has no vault note. If the compiler is upgraded to treat W005 warnings as errors, this will fail the build. Resolution: create a DIN_51524 vault note or remove the reference from SYNTRAX.md.

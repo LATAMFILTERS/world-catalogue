@@ -185,7 +185,7 @@ export default function TotalCostOwnershipPage() {
             textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
-            System approach: Install premium multi-stage filtration (MACROCORE, SYNTRAX, HYDROCORE), implement ISO 4406 cleanliness targets (16/14/11 for engine lube oil), quarterly contamination monitoring, kidney-loop offline circulation, preventive maintenance based on condition not calendar. Goal: Extend equipment life 50–80%, reduce downtime 80–90%, eliminate unplanned failures.
+            System approach: Install premium multi-stage filtration (MACROCORE, SYNTRAX, TURBOCORE), implement ISO 4406 cleanliness targets (16/14/11 for engine lube oil), quarterly contamination monitoring, kidney-loop offline circulation, preventive maintenance based on condition not calendar. Goal: Extend equipment life 50–80%, reduce downtime 80–90%, eliminate unplanned failures.
           </p>
           <div style={{
             background: 'rgba(255,241,45,0.04)',

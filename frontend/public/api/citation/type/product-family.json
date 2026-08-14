@@ -22,14 +22,14 @@
         "concept": "Primary Intake Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:30980fc7d226b1651895431311bfbb8cd9d81e3545897c1c6382115881b0fd22"
+        "content_hash": "sha256:7c313f81645a06774590e96af15af854eb116a283470322f63a8da28aff58543"
       },
       "canonical": {
         "definition": "Primary Intake Protection — the MACROCORE™-technology filter element family for\nprimary-duty air intake applications in heavy-duty diesel engines, covering approximately\n120 SKUs across mining, agricultural, construction, and commercial transport\nconfigurations, all ISO 5011 certified to 99.9%–99.98% efficiency.",
         "systems": "Air Intake domain; belongs to AIRFILTER product-line system; implements MACROCORE™\nProgressive Density Gradient technology",
         "failure_impact": "Selecting incorrect element from this family (wrong size, wrong efficiency class) or\nexceeding service interval → reduced filtration performance → dust ingestion → engine\noverhaul interval compression (see DUST_INGESTION)",
         "related_standards": "ISO 5011: All elements in this family are ISO 5011 certified |\nSAE J1539: Contamination classification standard confirming element specification suitability",
-        "related_technologies": "MACROCORE: Primary element technology (PDG multi-layer construction) |\nSYNTEPORE: Alternative family for humid/marine environments (not in this family)",
+        "related_technologies": "MACROCORE: Primary element technology (PDG multi-layer construction) |\nSYNTAPORE: Alternative family for humid/marine environments (not in this family)",
         "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon filtration requirement in heavy-duty equipment — air intake protection. It connects\nthe MACROCORE™ technology specification to the specific SKU that fits a given engine\nmake and model."
       },
       "relationships": {
@@ -54,7 +54,7 @@
           "AIR_INTAKE_PROTECTION"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/AIRFILTER_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\AIRFILTER_PRIMARY.md"
     },
     {
       "key": "CABIN_PRIMARY",
@@ -110,7 +110,7 @@
           "CABIN"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/CABIN_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\CABIN_PRIMARY.md"
     },
     {
       "key": "FUEL_PRIMARY",
@@ -132,14 +132,14 @@
         "concept": "Primary Fuel Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:639214634cf68f5e5563e12d0f8044389b8cc2204d803c0891a816a17a8c27eb"
+        "content_hash": "sha256:694f23440eed13b32abe4e8649c588ccb77a44cefac3ed0c5bbca25fdd7d7b33"
       },
       "canonical": {
-        "definition": "Primary Fuel Protection — the HYDROCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
-        "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
+        "definition": "Primary Fuel Protection — the TURBOCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
+        "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements TURBOCORE™\ncoalescing water-separation technology",
         "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement at 3,000–8,000 hours instead of 15,000+ hours",
         "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination — validates element performance claims",
-        "related_technologies": "HYDROCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
+        "related_technologies": "TURBOCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
         "industrial_role": "This product family is the principal contamination control implementation for diesel\nfuel water contamination — the leading cause of HPCR injector failure in agricultural,\nmarine, and mining equipment operating in high-humidity or bulk-storage environments."
       },
       "relationships": {
@@ -156,7 +156,7 @@
           "TRUCKS_FLEETS"
         ],
         "uses_technology": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "belongs_to_domain": [
           "FUEL"
@@ -165,7 +165,7 @@
           "FUEL"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md"
     },
     {
       "key": "HYDRAULIC_PRIMARY",
@@ -187,14 +187,14 @@
         "concept": "Primary Hydraulic Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:6447fffd2aa19484aa43588c358344d730379e45dcad678afb54d621611d3dd2"
+        "content_hash": "sha256:de8bf3e20c7ed8d8e52c2ae17502d152bb938361c9e78e108b601ca0ac365565"
       },
       "canonical": {
         "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nBeta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness\nacross agriculture, construction, mining, oil/gas, and power generation applications.",
         "systems": "Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements\nNANOFORCE™ nanofibre-layered glass media technology",
         "failure_impact": "Incorrect element selection (wrong Beta ratio class or wrong collapse pressure rating)\nor extended service interval → particle contamination exceeds ISO 18/16/13 threshold →\nproportional valve spool erosion → valve stiction and position error → hydraulic\nactuator failure; pump bearing wear reduces service life from 10,000 hours to 2,000–3,000\nhours",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥\n1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |\nNFPA T2.14: Collapse pressure rating standard for element structural integrity",
-        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |\nHYDROCORE: Water removal from hydraulic systems where water contamination co-exists\n(separate family)",
+        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |\nTURBOCORE: Water removal from hydraulic systems where water contamination co-exists\n(separate family)",
         "industrial_role": "This product family is the principal contamination control implementation for hydraulic\nparticle contamination — the single largest cause of proportional valve and piston pump\nfailure in mobile construction, mining, and agricultural equipment operating precision\nhydraulic circuits above 200 bar."
       },
       "relationships": {
@@ -220,7 +220,7 @@
           "HYDRAULIC"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/HYDRAULIC_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\HYDRAULIC_PRIMARY.md"
     },
     {
       "key": "LUBE_PRIMARY",
@@ -280,7 +280,7 @@
           "OIL"
         ]
       },
-      "vault_path": "elimfilters-vault/08-product-families/LUBE_PRIMARY.md"
+      "vault_path": "elimfilters-vault\\08-product-families\\LUBE_PRIMARY.md"
     }
   ]
 }

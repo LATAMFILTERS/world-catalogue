@@ -1,68 +1,12 @@
 {
-  "edge_count": 596,
-  "node_count": 60,
-  "dangling_keys": [],
+  "edge_count": 567,
+  "node_count": 57,
+  "dangling_keys": [
+    "SYNTAPORE",
+    "THERMACORE",
+    "TURBOCORE"
+  ],
   "edges": [
-    {
-      "from": "HYDROCORE",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "MARINE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "OIL_GAS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "ASTM_D6304",
-      "relation": "related_standards"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "ISO_12937",
-      "relation": "related_standards"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "DIESEL_WATER",
-      "relation": "addresses_contamination"
-    },
     {
       "from": "INTEKCORE",
       "to": "MINING",
@@ -294,51 +238,6 @@
       "relation": "addresses_contamination"
     },
     {
-      "from": "SYNTEPORE",
-      "to": "MARINE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "OIL_GAS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "ISO_5011",
-      "relation": "related_standards"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "SAE_J1539",
-      "relation": "related_standards"
-    },
-    {
-      "from": "SYNTEPORE",
-      "to": "PARTICLE_WEAR",
-      "relation": "addresses_contamination"
-    },
-    {
       "from": "SYNTRAX",
       "to": "AGRICULTURE",
       "relation": "applicable_industries"
@@ -414,46 +313,6 @@
       "relation": "addresses_contamination"
     },
     {
-      "from": "THERMACORE",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "ISO_4406",
-      "relation": "related_standards"
-    },
-    {
-      "from": "THERMACORE",
-      "to": "ENGINE_OIL_CONTAMINATION",
-      "relation": "addresses_contamination"
-    },
-    {
       "from": "AGRICULTURE",
       "to": "PARTICLE_WEAR",
       "relation": "relevant_contamination"
@@ -480,7 +339,7 @@
     },
     {
       "from": "AGRICULTURE",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -640,7 +499,7 @@
     },
     {
       "from": "BUS_COACH",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -725,7 +584,7 @@
     },
     {
       "from": "CONSTRUCTION",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -910,7 +769,7 @@
     },
     {
       "from": "MARINE",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -925,7 +784,7 @@
     },
     {
       "from": "MARINE",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1010,7 +869,7 @@
     },
     {
       "from": "MINING",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1115,7 +974,7 @@
     },
     {
       "from": "OIL_GAS",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1195,12 +1054,12 @@
     },
     {
       "from": "POWER_GENERATION",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
       "from": "POWER_GENERATION",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1270,7 +1129,7 @@
     },
     {
       "from": "RAILWAY",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1360,7 +1219,7 @@
     },
     {
       "from": "TRUCKS_FLEETS",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1450,7 +1309,7 @@
     },
     {
       "from": "WASTE_MUNICIPAL",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1565,7 +1424,7 @@
     },
     {
       "from": "AIR_INTAKE_PROTECTION",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1665,12 +1524,12 @@
     },
     {
       "from": "FUEL_CLEANLINESS_PROTECTION",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
       "from": "FUEL_CLEANLINESS_PROTECTION",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1875,7 +1734,7 @@
     },
     {
       "from": "ASTM_D6304",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -1995,7 +1854,7 @@
     },
     {
       "from": "ISO_12937",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -2080,7 +1939,7 @@
     },
     {
       "from": "ISO_5011",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -2165,7 +2024,7 @@
     },
     {
       "from": "SAE_J1539",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -2200,7 +2059,7 @@
     },
     {
       "from": "DIESEL_WATER",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "resolved_by"
     },
     {
@@ -2225,7 +2084,7 @@
     },
     {
       "from": "HYDRAULIC_CONTAMINATION",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "resolved_by"
     },
     {
@@ -2360,7 +2219,7 @@
     },
     {
       "from": "DUST_INGESTION",
-      "to": "SYNTEPORE",
+      "to": "SYNTAPORE",
       "relation": "resolved_by_technologies"
     },
     {
@@ -2510,7 +2369,7 @@
     },
     {
       "from": "FUEL_FILTER_PLUGGING",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "resolved_by_technologies"
     },
     {
@@ -2835,7 +2694,7 @@
     },
     {
       "from": "FUEL_PRIMARY",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "uses_technology"
     },
     {

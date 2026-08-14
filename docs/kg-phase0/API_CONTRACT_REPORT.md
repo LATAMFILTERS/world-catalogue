@@ -233,7 +233,7 @@ href = `https://elimfilters.com/technologies/${p.technology.replace(/[™®\s]/g
 | `SYNTRAX™` | `syntrax` |
 | `MACROCORE™` | `macrocore` |
 | `NANOFORCE™` | `nanoforce` |
-| `SYNTEPORE™` | `syntepore` |
+| `SYNTAPORE™` | `SYNTAPORE` |
 | `MICROKAPPA™` | `microkappa` |
 
 ---
@@ -308,8 +308,8 @@ Where `tech-slug` = `technology_value.replace(/[™®\s]/g, '').toLowerCase()`
 /technologies/intekcore/
 /technologies/drycore/
 /technologies/gasultra/
-/technologies/syntepore/
-/technologies/cooltech/
+/technologies/SYNTAPORE/
+/technologies/THERMACORE/
 /technologies/marineclean/
 /technologies/blueclean/
 ```

@@ -542,7 +542,7 @@ export const KC_COMPARISONS: KCComparison[] = [
     ],
 
     relatedStandards:    ['iso-16889', 'iso-5011', 'iso-3724'],
-    relatedTechnologies: ['SYNTRAX', 'NANOFORCE', 'SYNTEPORE', 'MACROCORE'],
+    relatedTechnologies: ['SYNTRAX', 'NANOFORCE', 'SYNTAPORE', 'MACROCORE'],
     relatedSystems:      ['hydraulic', 'lube-oil', 'fuel', 'air-intake'],
     relatedTerms:        ['dust-holding-capacity', 'filtration-efficiency', 'beta-ratio', 'depth-filtration'],
     relatedArticles:     ['filter-media-science', 'filter-media-engineering', 'service-intervals', 'total-cost-of-ownership'],
@@ -681,7 +681,7 @@ export const KC_COMPARISONS: KCComparison[] = [
     ],
 
     relatedStandards:    ['iso-16889', 'iso-11171'],
-    relatedTechnologies: ['NANOFORCE', 'SYNTRAX', 'MACROCORE', 'SYNTEPORE'],
+    relatedTechnologies: ['NANOFORCE', 'SYNTRAX', 'MACROCORE', 'SYNTAPORE'],
     relatedSystems:      ['hydraulic', 'lube-oil', 'fuel', 'air-intake'],
     relatedTerms:        ['depth-filtration', 'surface-filtration', 'beta-ratio', 'dirt-holding-capacity', 'differential-pressure'],
     relatedArticles:     ['filter-media-science', 'filter-media-engineering', 'fluid-cleanliness'],
@@ -946,7 +946,7 @@ export const KC_COMPARISONS: KCComparison[] = [
     ],
 
     relatedStandards:    ['iso-16332', 'iso-12937', 'astm-d6304'],
-    relatedTechnologies: ['SYNTEPORE', 'HYDROCORE', 'TURBOCORE'],
+    relatedTechnologies: ['SYNTAPORE', 'TURBOCORE', 'TURBOCORE'],
     relatedSystems:      ['fuel'],
     relatedTerms:        ['water-contamination', 'filtration-efficiency', 'differential-pressure', 'beta-ratio'],
     relatedArticles:     ['diesel-fuel-filtration', 'hpcr-fuel-system-cleanliness', 'water-contamination-fuel', 'service-intervals'],

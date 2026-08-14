@@ -129,7 +129,7 @@ for (const [category, ids] of Object.entries(byCategory).sort()) {
     );
   }
 }
-lines.push('## Governance', '', '> This backlog performs no writes to PostgreSQL, pgvector, unified-data, or any canonical Obsidian note. Promoting an organization out of DISCOVERY_REQUIRED requires a human to manually confirm a specific, reachable, non-catalog/login/cart URL and add it to hermes/config/source-endpoints.json.', '');
+lines.push('## Governance', '', '> This backlog performs no writes to PostgreSQL, pgvector, legacy catalogue layer, or any canonical Obsidian note. Promoting an organization out of DISCOVERY_REQUIRED requires a human to manually confirm a specific, reachable, non-catalog/login/cart URL and add it to hermes/config/source-endpoints.json.', '');
 
 fs.writeFileSync(path.join(outputDir, 'source-discovery-backlog.md'), lines.join('\n') + '\n', 'utf8');
 

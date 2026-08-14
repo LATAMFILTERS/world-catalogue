@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the official classification model governing all ELIMFILTERS® technologies.
+This document defines the official classification model governing all ELIMFILTERSï¿½ technologies.
 
 The objective is to establish a consistent relationship between:
 
@@ -27,31 +27,31 @@ SKUs are commercial implementations of products.
 
 ## Official Technology Platforms
 
-### MACROCORE™
+### MACROCOREï¿½
 Domain: Air Intake Protection
 
-### SYNTEPORE™
+### SYNTAPOREï¿½
 Domain: Fuel Cleanliness Protection
 
-### SYNTRAX™
+### SYNTRAXï¿½
 Domain: Lubrication Protection
 
-### NANOFORCE™
+### NANOFORCEï¿½
 Domain: Hydraulic Protection
 
-### HYDROCORE™
+### TURBOCOREï¿½
 Domain: Fuel Water Separation
 
-### THERMACORE™
+### THERMACOREï¿½
 Domain: Cooling System Protection
 
-### MICROKAPPA™
+### MICROKAPPAï¿½
 Domain: Cabin Environment Protection
 
-### DRYCORE™
+### DRYCOREï¿½
 Domain: Compressed Air Protection
 
-### INTEKCORE™
+### INTEKCOREï¿½
 Domain: Airflow Management
 
 ## Governance Rule

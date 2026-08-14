@@ -21,7 +21,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-LUBRICATION', 'SYS-HYDRAULIC', 'SYS-CABIN-AIR'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-HYDROCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-TURBOCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA'],
     standards: ['STD-ISO-5011', 'STD-ISO-16889', 'STD-ISO-4406', 'STD-ASTM-D6304', 'STD-ISO-11155-1'],
   },
 
@@ -36,7 +36,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-HYDRAULIC', 'SYS-LUBRICATION', 'SYS-CABIN-AIR'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA'],
     standards: ['STD-ISO-5011', 'STD-SAE-J1539', 'STD-ISO-16889', 'STD-ISO-4406', 'STD-ASTM-D6304'],
   },
 
@@ -51,7 +51,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-CABIN-AIR', 'SYS-LUBRICATION', 'SYS-HYDRAULIC'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-MICROKAPPA', 'TECH-SYNTRAX', 'TECH-NANOFORCE'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-MICROKAPPA', 'TECH-SYNTRAX', 'TECH-NANOFORCE'],
     standards: ['STD-ISO-5011', 'STD-SAE-J1539', 'STD-ASTM-D6304', 'STD-ISO-11155-1', 'STD-DIN-71220'],
   },
 
@@ -66,7 +66,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-LUBRICATION', 'SYS-CABIN-AIR', 'SYS-COOLING'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA', 'TECH-THERMACORE'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-SYNTRAX', 'TECH-MICROKAPPA', 'TECH-THERMACORE'],
     standards: ['STD-ISO-5011', 'STD-SAE-J1539', 'STD-ASTM-D6304', 'STD-ISO-4406', 'STD-ISO-11155-1'],
   },
 
@@ -81,7 +81,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-FUEL-CLEANLINESS', 'SYS-HYDRAULIC', 'SYS-LUBRICATION'],
-    technologies: ['TECH-MARINECLEAN', 'TECH-HYDROCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-TURBOCORE'],
+    technologies: ['TECH-MARINECLEAN', 'TECH-TURBOCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-TURBOCORE'],
     standards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16889', 'STD-ISO-4406'],
   },
 
@@ -96,7 +96,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-HYDRAULIC', 'SYS-LUBRICATION', 'SYS-COMPRESSED-AIR', 'SYS-FUEL-CLEANLINESS'],
-    technologies: ['TECH-MACROCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-DRYCORE', 'TECH-SYNTEPORE'],
+    technologies: ['TECH-MACROCORE', 'TECH-NANOFORCE', 'TECH-SYNTRAX', 'TECH-DRYCORE', 'TECH-SYNTAPORE'],
     standards: ['STD-ISO-5011', 'STD-ISO-16889', 'STD-ISO-4406', 'STD-ISO-8573-1', 'STD-NFPA-T2-14'],
   },
 
@@ -126,7 +126,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-LUBRICATION', 'SYS-HYDRAULIC', 'SYS-COOLING'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-THERMACORE'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-THERMACORE'],
     standards: ['STD-ISO-5011', 'STD-ASTM-D6304', 'STD-ISO-16889', 'STD-ISO-4406'],
   },
 
@@ -156,7 +156,7 @@ export const EDL_INDUSTRIES: EDLIndustryRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     systems: ['SYS-AIR-INTAKE', 'SYS-FUEL-CLEANLINESS', 'SYS-HYDRAULIC', 'SYS-CABIN-AIR'],
-    technologies: ['TECH-MACROCORE', 'TECH-SYNTEPORE', 'TECH-NANOFORCE', 'TECH-MICROKAPPA'],
+    technologies: ['TECH-MACROCORE', 'TECH-SYNTAPORE', 'TECH-NANOFORCE', 'TECH-MICROKAPPA'],
     standards: ['STD-ISO-5011', 'STD-ASTM-D6304', 'STD-ISO-16889', 'STD-ISO-11155-1'],
   },
 

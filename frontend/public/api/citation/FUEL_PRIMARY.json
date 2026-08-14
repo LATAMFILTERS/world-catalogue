@@ -18,14 +18,14 @@
     "concept": "Primary Fuel Protection Product Family",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:639214634cf68f5e5563e12d0f8044389b8cc2204d803c0891a816a17a8c27eb"
+    "content_hash": "sha256:694f23440eed13b32abe4e8649c588ccb77a44cefac3ed0c5bbca25fdd7d7b33"
   },
   "canonical": {
-    "definition": "Primary Fuel Protection — the HYDROCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
-    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
+    "definition": "Primary Fuel Protection — the TURBOCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
+    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements TURBOCORE™\ncoalescing water-separation technology",
     "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement at 3,000–8,000 hours instead of 15,000+ hours",
     "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination — validates element performance claims",
-    "related_technologies": "HYDROCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
+    "related_technologies": "TURBOCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
     "industrial_role": "This product family is the principal contamination control implementation for diesel\nfuel water contamination — the leading cause of HPCR injector failure in agricultural,\nmarine, and mining equipment operating in high-humidity or bulk-storage environments."
   },
   "relationships": {
@@ -42,7 +42,7 @@
       "TRUCKS_FLEETS"
     ],
     "uses_technology": [
-      "HYDROCORE"
+      "TURBOCORE"
     ],
     "belongs_to_domain": [
       "FUEL"
@@ -51,7 +51,7 @@
       "FUEL"
     ]
   },
-  "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md",
+  "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md",
   "_links": {
     "self": "/api/citation/FUEL_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",
@@ -97,9 +97,9 @@
         "href": "/api/citation/TRUCKS_FLEETS.json"
       },
       {
-        "key": "HYDROCORE",
+        "key": "TURBOCORE",
         "relation": "uses_technology",
-        "href": "/api/citation/HYDROCORE.json"
+        "href": "/api/citation/TURBOCORE.json"
       },
       {
         "key": "FUEL",

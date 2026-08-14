@@ -31,7 +31,7 @@ industry_frequency:
   - "[[TRUCKS_FLEETS]]"
   - "[[AUTOMOTIVE]]"
 resolved_by_technologies:
-  - "[[HYDROCORE]]"
+  - "[[TURBOCORE]]"
 applicable_standards:
   - "[[ASTM_D6304]]"
   - "[[ISO_12937]]"
@@ -75,14 +75,14 @@ Cold-weather filter plugging combines water contamination with wax crystallisati
 - [[AUTOMOTIVE|Automotive]] (LOW-MEDIUM — commercial diesel passenger vehicles with retail fuel; filter plugging risk lower but present in humid climates)
 
 ### Solution Technologies
-- [[HYDROCORE|HYDROCORE™ — Water-Separation Fuel Filtration]] (primary: fuel/water separation and high-efficiency particulate capture protecting injection systems)
+- [[TURBOCORE|TURBOCORE™ — Water-Separation Fuel Filtration]] (primary: fuel/water separation and high-efficiency particulate capture protecting injection systems)
 
 ### Governing Standards
 - [[ASTM_D6304|ASTM D6304]] — standard test for water in diesel fuel; compliance baseline for storage and system monitoring
 - [[ISO_12937|ISO 12937]] — diesel fuel water content test method used for fleet fuel quality monitoring
 
 ### Recommended Product Families
-- [[FUEL_PRIMARY|Primary Fuel System Protection (HYDROCORE™)]]
+- [[FUEL_PRIMARY|Primary Fuel System Protection (TURBOCORE™)]]
 
 ---
 
@@ -93,12 +93,12 @@ FUEL_FILTER_PLUGGING
     ↓ root_contamination
 DIESEL_WATER
     ↓ resolved_by
-HYDROCORE (primary)
+TURBOCORE (primary)
     ↓ ProductFamily lookup
-FUEL_PRIMARY (via HYDROCORE)
+FUEL_PRIMARY (via TURBOCORE)
     ↓ Part Search API
 GET /api/part-search?problem=FUEL_FILTER_PLUGGING&industry=AGRICULTURE
-→ SKU results: HYDROCORE™ fuel/water separator elements for tractors and harvesters
+→ SKU results: TURBOCORE™ fuel/water separator elements for tractors and harvesters
 ```
 
 ---
@@ -130,13 +130,13 @@ ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel qua
 ISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Fuel/water separation and high-efficiency particulate capture protecting
+TURBOCORE: Fuel/water separation and high-efficiency particulate capture protecting
 high-pressure common rail injection systems from water and contamination damage
 
 INDUSTRIAL_ROLE
 Fuel filter plugging is the most operationally disruptive fuel contamination event because
 it is rapid-onset and temperature-sensitive. It is the primary commercial target of the
-FUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform.
+FUEL_PRIMARY product family and the sole focus of the TURBOCORE technology platform.
 
 CITATION_REFERENCE
 source: elimfilters.com/knowledge-center/engineering/fluid-cleanliness

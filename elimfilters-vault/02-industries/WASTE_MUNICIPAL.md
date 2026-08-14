@@ -18,7 +18,7 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[HYDROCORE]]"
+  - "[[TURBOCORE]]"
   - "[[MICROKAPPA]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -58,7 +58,7 @@ Diesel fuel water contamination in municipal fleet vehicles is driven by the sho
 - [[MACROCORE|MACROCORE — Heavy-duty air intake filtration for refuse vehicle and street sweeper diesel engines operating in high-particulate urban environments with diverse particle size distributions]]
 - [[NANOFORCE|NANOFORCE — Sub-micron lube oil polishing in municipal vehicle fleet circuits with elevated soot loading from stop-start duty cycles; maintains ISO 4406 cleanliness under high cold-start contamination rates]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for municipal vehicle diesel engine bearing protection with soot agglomerate capture capability for stop-start soot-intensive duty cycles]]
-- [[HYDROCORE|HYDROCORE — Diesel fuel water separation for municipal refuse vehicle fleets; coalescing separation prevents water accumulation-driven microbial growth and fuel filter failure events across fleet]]
+- [[TURBOCORE|TURBOCORE — Diesel fuel water separation for municipal refuse vehicle fleets; coalescing separation prevents water accumulation-driven microbial growth and fuel filter failure events across fleet]]
 - [[MICROKAPPA|MICROKAPPA — ISO 11155-certified cabin air filtration with activated carbon option for refuse vehicle and street sweeper operator protection from biological aerosol, PM2.5, and chemical vapors]]
 
 ### Applicable Standards
@@ -85,7 +85,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for refuse vehicle and street sweeper engine intake systems | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio test for hydraulic system filtration on refuse vehicle compaction systems | ISO 11155: Cabin air filter test for operator health compliance in biological and chemical exposure environments
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | HYDROCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments
+SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | TURBOCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments
 
 INDUSTRIAL_ROLE
 Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations.

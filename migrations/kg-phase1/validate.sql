@@ -123,12 +123,12 @@ ORDER BY product_count DESC;
 -- Expected:
 --   nanoforce:    1,962   (ACTIVE)
 --   macrocore:    1,366   (ACTIVE)
---   syntepore:      500   (ACTIVE — was SYNTAPORE in DB)
+--   SYNTAPORE:      500   (ACTIVE — was SYNTAPORE in DB)
 --   syntrax:        351   (ACTIVE)
 --   intekcore:      243   (ACTIVE — was INTAKCORE in DB)
 --   microkappa:     122   (ACTIVE)
---   thermacore:      59   (ACTIVE — DB stores COOLTECH™)
---   hydrocore:       16   (ACTIVE — DB stores AQUAGUARD™)
+--   thermacore:      59   (ACTIVE — DB stores THERMACORE™)
+--   TURBOCORE:       16   (ACTIVE — DB stores AQUAGUARD™)
 --   drycore:          3   (ACTIVE)
 --   duratech:         0   (PRE_LAUNCH — no catalog products yet)
 --   marineclean:      0   (PRE_LAUNCH — no catalog products yet)
@@ -154,7 +154,7 @@ WHERE UPPER(REGEXP_REPLACE(ec.technology, '[™®[:space:]]', '', 'g'))
   != UPPER(kt.slug)
 ORDER BY raw_value;
 -- Expected:
---   SYNTAPORE™  → syntepore  (500 products)
+--   SYNTAPORE™  → SYNTAPORE  (500 products)
 --   INTAKCORE™  → intekcore  (243 products)
 -- Any other rows = unexpected normalization, investigate
 
@@ -224,7 +224,7 @@ JOIN kg_systems ks_prod ON ks_prod.id = kps.system_id
 WHERE ks_tech.slug != ks_prod.slug
 LIMIT 20;
 -- Expected: 0 rows (tech system = product system for all products)
--- If rows appear: investigate cooltech (lube-oil) and turbine (fuel/aquaguard) assignments
+-- If rows appear: investigate THERMACORE (lube-oil) and turbine (fuel/aquaguard) assignments
 
 -- E2: Products with multiple technology assignments (should not exist for Phase 1)
 SELECT product_sku, COUNT(*) AS tech_count

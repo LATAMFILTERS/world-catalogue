@@ -12,7 +12,7 @@
 //
 // The ONLY durable writes this module ever performs are the three paths
 // above, all under refs/heads/hermes-state — never candidates, never
-// PostgreSQL/pgvector/unified-data, never a canonical Obsidian note, never
+// PostgreSQL/pgvector/legacy catalogue layer, never a canonical Obsidian note, never
 // elimfilters-vault/94-sync-log. Every promotion/rollback is preceded by
 // strict, all-or-nothing validation and a backup of whatever it replaces,
 // and every write is a single git commit pushed non-force (so a concurrent

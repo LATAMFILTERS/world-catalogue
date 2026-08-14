@@ -67,7 +67,7 @@ RELATED_STANDARDS
 ISO 4406: Cleanliness-code framework used across fluid contamination control programs; applicable as a reference cleanliness language when coolant-side particle contamination is measured and controlled in industrial maintenance programs.
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Lube oil protection in the same engines exposed to thermal stress | HYDROCORE: Fuel water protection for diesel engines operating in humid or condensation-prone environments | NANOFORCE: Fine-particle protection for hydraulic systems on the same equipment platform.
+SYNTRAX: Lube oil protection in the same engines exposed to thermal stress | TURBOCORE: Fuel water protection for diesel engines operating in humid or condensation-prone environments | NANOFORCE: Fine-particle protection for hydraulic systems on the same equipment platform.
 
 INDUSTRIAL_ROLE
 THERMACORE closes the cooling-domain gap in ELIMFILTERS Total Asset Protection Systems by treating coolant filtration as a direct asset-protection system. It prevents cooling circuits from becoming the weak link that causes overheating, corrosion, liner damage, and downtime despite protection in air, fuel, lube, and hydraulic domains.

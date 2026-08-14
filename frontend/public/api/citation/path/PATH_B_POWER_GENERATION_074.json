@@ -29,14 +29,14 @@
           "concept": "Power Generation Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:0d6e5b09a250c74dca4848a88e13dae38c91d46fba800d22b3cbae1f3ba49b5f"
+          "content_hash": "sha256:41a128db1487071781389aa33da7f9ac693b0881fea2793f92935869083b6afc"
         },
         "canonical": {
           "definition": "Power generation is a HIGH contamination exposure industrial category for stationary diesel generators, gas turbines, and CHP plants where contamination-driven failure during emergency activation has outage costs of $100,000–$1,000,000+ per event — driven by standby fuel water accumulation causing emergency startup failure, turbine compressor blade erosion from inlet air particles, and lube circuit contamination reducing generator MTBF from 20,000+ hours to 6,000–8,000 hours.",
           "systems": "Diesel generator engine air intake, fuel storage and delivery, lube oil circuits, gas turbine inlet air systems, CHP plant hydraulic control circuits",
           "failure_impact": "Standby generator fuel water accumulation above 500 ppm → filter plugging and microbial biomass → engine fuel starvation at emergency start → outage at the moment backup power is required | Gas turbine compressor blade erosion from inlet particles >5 µm → 1% blade efficiency loss per particle event cycle → 1.5–2% fuel consumption increase per MWh | Diesel generator lube oil at ISO 4406 19/17/14 → MTBF 6,000–8,000 hours vs. 20,000+ hours at 15/13/10.",
           "related_standards": "ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring",
-          "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | HYDROCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTEPORE: Gas turbine inlet air filtration for compressor blade protection",
+          "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTAPORE: Gas turbine inlet air filtration for compressor blade protection",
           "industrial_role": "Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector."
         },
         "relationships": {
@@ -49,8 +49,8 @@
             "MACROCORE",
             "NANOFORCE",
             "SYNTRAX",
-            "HYDROCORE",
-            "SYNTEPORE"
+            "TURBOCORE",
+            "SYNTAPORE"
           ],
           "applicable_standards": [
             "ISO_5011",
@@ -68,7 +68,7 @@
             "HYDRAULIC_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
+        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
       }
     },
     {
@@ -139,7 +139,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -189,7 +189,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -251,7 +251,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/SYNTRAX.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
       }
     }
   ],

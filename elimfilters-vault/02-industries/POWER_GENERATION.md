@@ -18,8 +18,8 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[HYDROCORE]]"
-  - "[[SYNTEPORE]]"
+  - "[[TURBOCORE]]"
+  - "[[SYNTAPORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
   - "[[ISO_16889]]"
@@ -44,9 +44,9 @@ tags:
 
 Power generation is a HIGH contamination exposure industry for stationary and mobile diesel generator sets, gas turbine power units, combined heat and power (CHP) plants, and emergency backup power systems. The contamination exposure classification is HIGH due to the combination of continuous or semi-continuous high-duty operation, long periods of standby during which fuel degrades and water contamination accumulates in diesel tanks, and the exceptionally high operational consequence of power generation equipment failure. Generator sets supporting hospital critical systems, data centre UPS backup, or grid-support peaker plants face economic outage costs of $100,000–$1,000,000+ per event — costs that dwarf filter system investment by orders of magnitude, making filtration reliability the highest priority maintenance variable.
 
-Stationary diesel generator sets face a contamination challenge specific to their operating pattern: long standby periods (days to months) during which diesel fuel in the day tank and main storage degrades through oxidation, water accumulates through condensation cycles in partially filled tanks, and microbial growth develops at tank water interfaces. When the generator starts under emergency conditions, it draws from a fuel system that may contain free water, microbial biomass, and oxidation products — a combination that can cause immediate fuel filter plugging and engine shutdown during the emergency event it was installed to prevent. ASTM D6304 fuel quality monitoring, regular fuel polishing, and HYDROCORE coalescing filtration on the fuel system are the primary engineering controls preventing standby fuel quality degradation from causing generator failure during emergency activation.
+Stationary diesel generator sets face a contamination challenge specific to their operating pattern: long standby periods (days to months) during which diesel fuel in the day tank and main storage degrades through oxidation, water accumulates through condensation cycles in partially filled tanks, and microbial growth develops at tank water interfaces. When the generator starts under emergency conditions, it draws from a fuel system that may contain free water, microbial biomass, and oxidation products — a combination that can cause immediate fuel filter plugging and engine shutdown during the emergency event it was installed to prevent. ASTM D6304 fuel quality monitoring, regular fuel polishing, and TURBOCORE coalescing filtration on the fuel system are the primary engineering controls preventing standby fuel quality degradation from causing generator failure during emergency activation.
 
-Gas turbines and CHP plants in continuous power generation applications face air intake contamination as the primary challenge. Gas turbine inlet air must be filtered to remove particles that cause compressor blade erosion — particles above 5 µm cause measurable erosion of compressor blades at the leading edge, reducing aerodynamic efficiency and increasing fuel consumption. SYNTEPORE synthetic media gas turbine inlet air filtration maintains blade cleanliness and compressor efficiency over 8,000–10,000 operating hours between filter change intervals, equivalent to one year of continuous operation. Each percentage point of compressor efficiency loss from blade erosion translates to approximately 1.5–2% increase in fuel consumption per megawatt-hour generated — measurable economic impact in continuous power generation operations.
+Gas turbines and CHP plants in continuous power generation applications face air intake contamination as the primary challenge. Gas turbine inlet air must be filtered to remove particles that cause compressor blade erosion — particles above 5 µm cause measurable erosion of compressor blades at the leading edge, reducing aerodynamic efficiency and increasing fuel consumption. SYNTAPORE synthetic media gas turbine inlet air filtration maintains blade cleanliness and compressor efficiency over 8,000–10,000 operating hours between filter change intervals, equivalent to one year of continuous operation. Each percentage point of compressor efficiency loss from blade erosion translates to approximately 1.5–2% increase in fuel consumption per megawatt-hour generated — measurable economic impact in continuous power generation operations.
 
 ## Relationships
 
@@ -59,8 +59,8 @@ Gas turbines and CHP plants in continuous power generation applications face air
 - [[MACROCORE|MACROCORE — High-efficiency air intake filtration for diesel generator sets in industrial outdoor environments with elevated dust exposure]]
 - [[NANOFORCE|NANOFORCE — Kidney-loop lube oil polishing for generator engine lube circuits targeting 20,000+ hour MTBF through ISO 4406 15/13/10 cleanliness maintenance]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for diesel generator engine crankshaft bearing protection in continuous and standby operating modes]]
-- [[HYDROCORE|HYDROCORE — Fuel water separation for standby diesel generator day tank and main storage fuel polishing; prevents emergency failure from water-contaminated standby fuel]]
-- [[SYNTEPORE|SYNTEPORE — Synthetic media gas turbine inlet air filtration; compressor blade protection and efficiency preservation over extended continuous operation intervals]]
+- [[TURBOCORE|TURBOCORE — Fuel water separation for standby diesel generator day tank and main storage fuel polishing; prevents emergency failure from water-contaminated standby fuel]]
+- [[SYNTAPORE|SYNTAPORE — Synthetic media gas turbine inlet air filtration; compressor blade protection and efficiency preservation over extended continuous operation intervals]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test; governs intake air filter selection for diesel generator sets and gas turbine inlet air systems]]
@@ -85,7 +85,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | HYDROCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTEPORE: Gas turbine inlet air filtration for compressor blade protection
+MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTAPORE: Gas turbine inlet air filtration for compressor blade protection
 
 INDUSTRIAL_ROLE
 Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector.

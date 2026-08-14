@@ -59,7 +59,7 @@
       "family": "turbine_series",
       "target_count": 10,
       "status": "queued",
-      "notes": "HYDROCORE/SERIES turbine-style assemblies are calibrated after housings because they combine body, bowl and element presentation constraints."
+      "notes": "TURBOCORE turbine-style assemblies are calibrated after housings because they combine body, bowl and element presentation constraints."
     }
   ]
 }

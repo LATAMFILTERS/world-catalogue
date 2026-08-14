@@ -17,7 +17,7 @@ Product family for removing free water and particulate contamination from diesel
 
 ## Relationships
 
-- implements: `technology:hydrocore`
+- implements: `technology:TURBOCORE`
 - belongs_to_system: `system:fuel`
 - controls: `contaminant:water`
 - mitigates: `failure-mode:corrosion`

@@ -1,22 +1,19 @@
 ---
-id: failure-mode:corrosion
+id: failure:corrosion
 type: FailureMode
 name: Corrosion
 status: approved
-authority: canonical
-owner: ELIMFILTERS Engineering
-source:
-  - docs/brand/CLAIM_REGISTRY.md
-last_reviewed: 2026-07-14
-evidence_status: validated
+authority: ELIMFILTERS Engineering
 ---
 
 # Corrosion
 
-Chemical or electrochemical degradation of metallic components promoted by water, acids, salts or degraded fluids.
+Corrosion can be accelerated by moisture, contaminated fluids and unsuitable operating conditions.
 
-## Relationships
+## Relevant protection relationships
 
-- caused_by: `contaminant:water`
-- mitigated_by: `technology:hydrocore`
-- relevant_to: `technology:intekcore`
+- Fuel Cleanliness Protection → SYNTAPORE™, TURBOCORE™
+- Cooling System Protection → THERMACORE™
+- Marine specialized solution → MARINECLEAN™
+
+Specific corrosion-control claims require application-level technical validation.

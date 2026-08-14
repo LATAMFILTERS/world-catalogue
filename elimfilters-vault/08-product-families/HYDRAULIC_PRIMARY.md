@@ -117,7 +117,7 @@ NFPA T2.14: Collapse pressure rating standard for element structural integrity
 RELATED_TECHNOLOGIES
 NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |
 SYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |
-HYDROCORE: Water removal from hydraulic systems where water contamination co-exists
+TURBOCORE: Water removal from hydraulic systems where water contamination co-exists
 (separate family)
 
 INDUSTRIAL_ROLE

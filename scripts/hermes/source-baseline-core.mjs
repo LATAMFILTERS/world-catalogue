@@ -7,7 +7,7 @@
 //
 // Pure functions only — no fs access except loadBaseline/saveBaseline,
 // which take an explicit path so callers (and tests) control exactly where
-// reads/writes happen. Never touches PostgreSQL, pgvector, unified-data, or
+// reads/writes happen. Never touches PostgreSQL, pgvector, legacy catalogue layer, or
 // any canonical Obsidian note.
 import fs from 'node:fs';
 import path from 'node:path';

@@ -24,7 +24,7 @@ export const ENGINEERING_RULES: EngineeringRule[] = [
     condition: (env, p) => p.waterRisk === 'EXTREME' || p.waterRisk === 'HIGH',
     reference: 'ISO-4406 Fuel Water Separation Standards',
     justification: 'High water risk requires advanced coalescence technology to prevent injector tip failure and pump cavitation.',
-    action: { technology: 'HYDROCORE™', systemType: 'Fuel System', required: true, priority: 'CRITICAL' }
+    action: { technology: 'TURBOCORE™', systemType: 'Fuel System', required: true, priority: 'CRITICAL' }
   },
 
   // CABIN AIR RULES
@@ -51,7 +51,7 @@ export const ENGINEERING_RULES: EngineeringRule[] = [
     condition: (env, p) => p.fuelQualityRisk === 'EXTREME' || p.fuelQualityRisk === 'HIGH' || env.industry === 'MINING',
     reference: 'ELIM-ENG-FUEL-012 Fuel Quality Defense Protocol',
     justification: 'Poor fuel quality or remote storage tanks necessitate multi-layer synthetic media to prevent premature plugging and power loss.',
-    action: { technology: 'SYNTEPORE™', systemType: 'Fuel System', required: true, priority: 'HIGH' }
+    action: { technology: 'SYNTAPORE™', systemType: 'Fuel System', required: true, priority: 'HIGH' }
   },
 
   // COMPRESSED AIR RULES

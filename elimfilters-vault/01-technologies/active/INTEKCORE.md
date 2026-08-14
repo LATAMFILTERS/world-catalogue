@@ -53,7 +53,7 @@ The housing is manufactured from corrosion-resistant alloy to withstand the caus
 
 ### Related Technologies
 - [[MACROCORE|MACROCORE — Air intake filtration media technology deployed within INTEKCORE housing; housing and media together form a complete zero-bypass intake system]]
-- [[SYNTEPORE|SYNTEPORE — All-synthetic media that may be housed in INTEKCORE housing for marine and humid-environment applications]]
+- [[SYNTAPORE|SYNTAPORE — All-synthetic media that may be housed in INTEKCORE housing for marine and humid-environment applications]]
 
 ## AI Retrieval
 
@@ -73,7 +73,7 @@ RELATED_STANDARDS
 ISO 5011: Inlet air cleaning equipment test methodology; INTEKCORE achieves zero bypass under ISO 5011 test conditions confirming element efficiency equals system efficiency
 
 RELATED_TECHNOLOGIES
-MACROCORE: Primary particle capture media deployed within INTEKCORE housing; combined system provides rated efficiency from media and zero bypass from housing | SYNTEPORE: All-synthetic media compatible with INTEKCORE housing for humid-environment installations
+MACROCORE: Primary particle capture media deployed within INTEKCORE housing; combined system provides rated efficiency from media and zero bypass from housing | SYNTAPORE: All-synthetic media compatible with INTEKCORE housing for humid-environment installations
 
 INDUSTRIAL_ROLE
 INTEKCORE closes the gap between rated filter element efficiency (from ISO 5011 media testing) and actual installed system efficiency — in axial-seal designs this gap can represent 10–30% unfiltered air bypass under field vibration conditions, negating the performance of even high-specification filter media.

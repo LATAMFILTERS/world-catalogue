@@ -367,13 +367,13 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-01-020',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-HYDROCORE',
+    entityId: 'TECH-TURBOCORE',
     entityVersion: '1.0.0',
     archivedDate: '2026-07-01',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-HYDROCORE',
-      name: 'HYDROCORE',
+      id: 'TECH-TURBOCORE',
+      name: 'TURBOCORE',
       systemDomain: 'Fuel Water Separation',
       primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
       engineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
@@ -405,13 +405,13 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-01-022',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-SYNTEPORE',
+    entityId: 'TECH-SYNTAPORE',
     entityVersion: '1.0.0',
     archivedDate: '2026-07-01',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-SYNTEPORE',
-      name: 'SYNTEPORE',
+      id: 'TECH-SYNTAPORE',
+      name: 'SYNTAPORE',
       systemDomain: 'Fuel HPCR',
       primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 16889'],
       engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-PHS-001', 'EP-INS-001', 'EP-CHE-002'],

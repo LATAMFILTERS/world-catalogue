@@ -137,55 +137,55 @@ Examples:
 
 ## ELIMFILTERS Technologies
 
-### MACROCORE™
+### MACROCOREï¿½
 
 Air Intake Protection
 
 ---
 
-### SYNTEPORE™
+### SYNTAPOREï¿½
 
 Fuel Cleanliness Protection
 
 ---
 
-### SYNTRAX™
+### SYNTRAXï¿½
 
 Lubrication Protection
 
 ---
 
-### NANOFORCE™
+### NANOFORCEï¿½
 
 Hydraulic Protection
 
 ---
 
-### HYDROCORE™
+### TURBOCOREï¿½
 
 Water Separation Protection
 
 ---
 
-### THERMACORE™
+### THERMACOREï¿½
 
 Cooling Protection
 
 ---
 
-### MICROKAPPA™
+### MICROKAPPAï¿½
 
 Cabin Protection
 
 ---
 
-### DRYCORE™
+### DRYCOREï¿½
 
 Compressed Air Protection
 
 ---
 
-### INTEKCORE™
+### INTEKCOREï¿½
 
 Airflow Management
 

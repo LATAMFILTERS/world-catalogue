@@ -24,7 +24,7 @@ export const KC_SYSTEMS = [
     title: 'Fuel Cleanliness Protection',
     description: 'Removing water and particles from diesel fuel to protect high-pressure common rail injectors. Water above 200 ppm causes injector stiction and micro-pitting.',
     icon: '⛽',
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'DURATECH™', 'MARINECLEAN™'],
+    technologies: ['SYNTAPORE™', 'TURBOCORE™', 'DURATECH™', 'MARINECLEAN™'],
     standards: ['ISO 12937', 'ASTM D6304'],
     challenges: ['Water contamination', 'HPCR injector protection', 'Microbial growth', 'Fuel polishing'],
   },
@@ -127,7 +127,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Two-Stage Protection Strategy',
-        body: 'Fuel protection requires two complementary technologies: SYNTEPORE™ for particle removal (β₄(c) ≥200) and HYDROCORE™ for free water removal (≥96%). The pre-filter/coarse separator (HYDROCORE™) is installed upstream to remove bulk water and coarse particles. The final element (SYNTEPORE™) provides fine particle protection at the injection pump inlet. This sequence protects both the lift pump (10–15 µm clearances) and the high-pressure pump and injectors (1–3 µm clearances).',
+        body: 'Fuel protection requires two complementary technologies: SYNTAPORE™ for particle removal (β₄(c) ≥200) and TURBOCORE™ for free water removal (≥96%). The pre-filter/coarse separator (TURBOCORE™) is installed upstream to remove bulk water and coarse particles. The final element (SYNTAPORE™) provides fine particle protection at the injection pump inlet. This sequence protects both the lift pump (10–15 µm clearances) and the high-pressure pump and injectors (1–3 µm clearances).',
       },
       {
         heading: 'Water Contamination Pathways',

@@ -1016,8 +1016,8 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 - Water >200 ppm causes injector corrosion, microbe-facilitated degradation
 
 **Three-stage protection strategy:**
-1. Primary particulate filtration: >10 µm particles removed (SYNTEPORE™)
-2. Water separation: coalescing element (HYDROCORE™)
+1. Primary particulate filtration: >10 µm particles removed (SYNTAPORE™)
+2. Water separation: coalescing element (TURBOCORE™)
 3. Final HPCR stage: <4 µm particle removal (TURBOCORE™)
 
 **Standards:** ASTM D6304 (water content, Karl Fischer), ISO 12937, ISO 16332 (fuel filter test)
@@ -1173,7 +1173,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 ---
 
-### SYNTEPORE™
+### SYNTAPORE™
 
 **Domain:** Fuel Cleanliness — HPCR Injector Protection
 
@@ -1251,7 +1251,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 ---
 
-### HYDROCORE™
+### TURBOCORE™
 
 **Domain:** Fuel Water Separation
 
@@ -1323,7 +1323,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 **ELIMFILTERS® engineering response:**
 - Air: MACROCORE™ with INTEKCORE™ pre-cleaner; restriction monitoring mandatory; 2–4× standard interval reduction in extreme dust
-- Fuel: Three-stage SYNTEPORE™ + HYDROCORE™ + TURBOCORE™ with water-in-fuel alarm
+- Fuel: Three-stage SYNTAPORE™ + TURBOCORE™ + TURBOCORE™ with water-in-fuel alarm
 - Hydraulic: NANOFORCE™ with offline kidney loop to ISO 15/13/10; bypass indicator monitoring
 - Cabin: MICROKAPPA™ H13-class; pressurization system inspection quarterly
 
@@ -1396,7 +1396,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 **MARINECLEAN™ ecosystem:** Marine-specific product package addressing multi-system contamination control with salt-resistant materials and IMO-compatible certifications.
 
-**Critical service point — tank microbiological management:** Diesel fuel biocide treatment (Biobor JF or equivalent) + HYDROCORE™ water separation addresses microbial contamination before it reaches injector systems.
+**Critical service point — tank microbiological management:** Diesel fuel biocide treatment (Biobor JF or equivalent) + TURBOCORE™ water separation addresses microbial contamination before it reaches injector systems.
 
 ### 17.6 Truck Fleets
 
@@ -1459,7 +1459,7 @@ This section maps each technical domain to the corresponding ELIMFILTERS® Knowl
 | Airflow Engineering | Airflow Engineering, Air Restriction | ISO 5011 | Air Intake Protection | Mining, Construction, Agriculture | MACROCORE™, INTEKCORE™ |
 | Seal Integrity | Seal Integrity, Failure Analysis | — | All systems | All | All |
 | Filter Media Science | Filter Media Science, Materials Engineering | ISO 16889, ISO 5011, ISO 29463 | Air Intake, Lube Oil, Hydraulic | All | SYNTRAX™, NANOFORCE™, MICROKAPPA™ |
-| Fluid Cleanliness | Fluid Cleanliness | ISO 4406, NAS 1638, ISO 11171 | Hydraulic, Lube Oil, Fuel | Mining, O&G, Power Gen | NANOFORCE™, SYNTRAX™, SYNTEPORE™ |
+| Fluid Cleanliness | Fluid Cleanliness | ISO 4406, NAS 1638, ISO 11171 | Hydraulic, Lube Oil, Fuel | Mining, O&G, Power Gen | NANOFORCE™, SYNTRAX™, SYNTAPORE™ |
 | Air Restriction | Air Restriction, Airflow Engineering | ISO 5011 | Air Intake Protection | Mining, Agriculture, Construction | MACROCORE™ |
 | Dust Holding Capacity | Airflow Engineering, Service Intervals | ISO 5011 | Air Intake Protection | Mining, Agriculture, Construction | MACROCORE™ |
 | Pressure Drop | Airflow Engineering, Air Restriction | ISO 5011, ISO 16889 | All systems | All | All |

@@ -29,14 +29,14 @@
           "concept": "Waste & Municipal Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:828416406162f8c6088de615112f72e72f7a6212a7fe7f9b165dbbbd320e7a7e"
+          "content_hash": "sha256:61dd44e7c57219e6c6938efcae866dd4c72de9be253a23e42be200e1d033021d"
         },
         "canonical": {
           "definition": "Waste & Municipal is a HIGH contamination exposure industrial category for diesel refuse collection, street sweeping, and municipal utility equipment, characterised by stop-start duty cycles generating 2–3× baseline lube oil soot loading, operator cab exposure to biological aerosols and urban PM2.5, and >90% fleet availability requirements that make contamination-related unplanned maintenance a direct service delivery failure.",
           "systems": "Refuse collection vehicle diesel engine lube and air intake systems, street sweeper engine intake in maximum-particulate operating environments, municipal vehicle diesel fuel circuits with short-trip condensation accumulation, cab air supply systems for biological aerosol and PM2.5 protection",
           "failure_impact": "Stop-start cold-start cycles at 300–600 events/shift → elevated soot in lube oil at 2–3× sustained-load rates → accelerated bearing wear if lube filtration does not capture soot agglomerates | Short-trip duty → progressive fuel tank water accumulation → microbial growth (Hormoconis resinae) → simultaneous multi-vehicle fuel filter plugging during summer → fleet availability crisis | Operational Impact: contamination-related events account for 20–30% of unplanned municipal fleet maintenance; refuse collection schedule disruption has direct public service consequences.",
           "related_standards": "ISO 5011: Air filtration performance test for refuse vehicle and street sweeper engine intake systems | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio test for hydraulic system filtration on refuse vehicle compaction systems | ISO 11155: Cabin air filter test for operator health compliance in biological and chemical exposure environments",
-          "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | HYDROCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
+          "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | TURBOCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
           "industrial_role": "Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations."
         },
         "relationships": {
@@ -49,7 +49,7 @@
             "MACROCORE",
             "NANOFORCE",
             "SYNTRAX",
-            "HYDROCORE",
+            "TURBOCORE",
             "MICROKAPPA"
           ],
           "applicable_standards": [
@@ -67,7 +67,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
+        "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md"
       }
     },
     {
@@ -130,7 +130,7 @@
             "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
@@ -175,7 +175,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
@@ -202,14 +202,14 @@
           "concept": "MICROKAPPA Cabin Air Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:c02b644691a5b1f5eda29aa4788626e91a88d58b4b8d732f4f85f01cb9d2b31b"
+          "content_hash": "sha256:1a4f23f5ab7fa87d411113d74b15c0405e709342896f952f4fbdf06b93832c9c"
         },
         "canonical": {
           "definition": "MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contaminants) that removes >95% of PM10 and >85% of PM2.5 particulate contamination from operator cab air supply in industrial equipment, protecting occupants from respirable crystalline silica, agricultural dust, diesel particulate matter, and chemical vapors.",
           "systems": "Operator cab HVAC air supply filtration in agricultural machinery, construction equipment, mining vehicles, railway locomotives, road transport trucks, and municipal refuse vehicles; available with activated carbon stage for chemical vapor co-removal",
           "failure_impact": "Cab air filtration below ISO 11155 PM10 efficiency in high-dust environments → operator respirable crystalline silica (RCS) exposure above occupational exposure limits (EU OEL: 0.1 mg/m³ RCS as quartz) → silicosis risk with cumulative exposure over multi-year operation | Short-term: diesel particulate matter and agricultural pesticide vapor exposure causing acute respiratory irritation | Operational impact: worker compensation liability, regulatory enforcement under EU Directive 2004/37/EC, and operator absenteeism from occupational respiratory disease.",
           "related_standards": "ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework",
-          "related_technologies": "SYNTEPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
+          "related_technologies": "SYNTAPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
           "industrial_role": "MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation."
         },
         "relationships": {
@@ -229,7 +229,7 @@
             "CABIN_AIR_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],

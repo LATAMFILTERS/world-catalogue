@@ -43,8 +43,8 @@ DATA_DIR = os.environ.get("DATA_DIR", os.path.dirname(os.path.abspath(__file__))
 # Technology assigned per prefix
 TECH_MAP = {
     "EL8": "SYNTRAX™",
-    "EF9": "SYNTEPORE™",
-    "ES9": "HYDROCORE™",
+    "EF9": "SYNTAPORE™",
+    "ES9": "TURBOCORE™",
     "ET9": "TURBOCORE™",
     "EA1": "MACROCORE™",
     "EA2": "INTEKCORE™",

@@ -4,39 +4,39 @@ INSERT INTO technologies
 (code,name,system_domain,contamination_threat,protection_objective)
 VALUES
 
-('MACROCORE','MACROCORE™','Air Intake Protection',
+('MACROCORE','MACROCOREï¿½','Air Intake Protection',
 'Airborne Particulate Contamination',
 'Protect engines from airborne contamination'),
 
-('SYNTEPORE','SYNTEPORE™','Fuel Cleanliness Protection',
+('SYNTAPORE','SYNTAPOREï¿½','Fuel Cleanliness Protection',
 'Fuel-Borne Contamination',
 'Protect fuel systems and injectors'),
 
-('SYNTRAX','SYNTRAX™','Lubrication Protection',
+('SYNTRAX','SYNTRAXï¿½','Lubrication Protection',
 'Lubrication Contamination',
 'Protect rotating components'),
 
-('NANOFORCE','NANOFORCE™','Hydraulic Protection',
+('NANOFORCE','NANOFORCEï¿½','Hydraulic Protection',
 'Sub-Micron Hydraulic Contamination',
 'Maintain hydraulic cleanliness'),
 
-('HYDROCORE','HYDROCORE™','Water Separation',
+('TURBOCORE','TURBOCOREï¿½','Water Separation',
 'Water Contamination',
 'Remove water contamination'),
 
-('THERMACORE','THERMACORE™','Cooling System Protection',
+('THERMACORE','THERMACOREï¿½','Cooling System Protection',
 'Coolant Degradation',
 'Maintain thermal efficiency'),
 
-('MICROKAPPA','MICROKAPPA™','Cabin Protection',
+('MICROKAPPA','MICROKAPPAï¿½','Cabin Protection',
 'Airborne Pollutants',
 'Protect occupants'),
 
-('DRYCORE','DRYCORE™','Compressed Air Protection',
+('DRYCORE','DRYCOREï¿½','Compressed Air Protection',
 'Moisture Contamination',
 'Protect pneumatic systems'),
 
-('INTEKCORE','INTEKCORE™','Airflow Management',
+('INTEKCORE','INTEKCOREï¿½','Airflow Management',
 'Air Restriction',
 'Maintain engineered airflow')
 

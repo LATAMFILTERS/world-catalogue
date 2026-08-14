@@ -66,7 +66,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Hydraulic fluid power — Fluids — Method for coding the level of contamination by solid particles',
     scope:
       'Defines the three-number contamination code for reporting particle cleanliness levels in hydraulic and lube oil fluids. The code format is X/Y/Z where X = particles >4 µm(c), Y = particles >6 µm(c), Z = particles >14 µm(c), per 1 mL of fluid. Each number corresponds to a range code per Table 1 of the standard. Lower numbers represent cleaner fluids.',
-    applicableTechnologyIds: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-SYNTEPORE'],
+    applicableTechnologyIds: ['TECH-SYNTRAX', 'TECH-NANOFORCE', 'TECH-SYNTAPORE'],
     applicableEngineeringPrincipleIds: ['EP-INS-001', 'EP-TRB-001'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
@@ -132,7 +132,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration',
     scope:
       'Defines the Karl Fischer coulometric titration method for quantifying water content in petroleum products and fuels. Detection range: 10–25,000 ppm water by mass. Required for measuring water content in diesel fuel for HPCR injection system protection assessments. The <200 ppm water target for HPCR fuels is verified using this test method.',
-    applicableTechnologyIds: ['TECH-HYDROCORE', 'TECH-SYNTEPORE'],
+    applicableTechnologyIds: ['TECH-TURBOCORE', 'TECH-SYNTAPORE'],
     applicableEngineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
@@ -154,7 +154,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Diesel fuel and petrol filters for internal combustion engines — Filtration efficiency using particle counting and contaminant retention capacity',
     scope:
       'Defines the multi-pass test method for evaluating fuel filter efficiency using particle counting. Uses AC Ultra Fine test contaminant. Specifies Beta ratio measurement for fuel filter applications. Applicable to primary and secondary fuel filters for diesel and petrol engines.',
-    applicableTechnologyIds: ['TECH-SYNTEPORE'],
+    applicableTechnologyIds: ['TECH-SYNTAPORE'],
     applicableEngineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
@@ -198,7 +198,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Diesel engines — Fuel filters — Test method for water separation efficiency',
     scope:
       'Defines the test method for evaluating water separation efficiency of fuel water separators. Uses controlled water injection into fuel flow and measures downstream water concentration by Karl Fischer titration. Applicable to primary fuel water separators in diesel engine fuel systems.',
-    applicableTechnologyIds: ['TECH-HYDROCORE'],
+    applicableTechnologyIds: ['TECH-TURBOCORE'],
     applicableEngineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',

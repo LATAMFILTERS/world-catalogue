@@ -1,44 +1,31 @@
-# ELIMFILTERS Canonical Entity Index
+# CANONICAL ENTITY INDEX
 
-Last reviewed: 2026-07-14
+Authority: ELIMFILTERS Engineering
 
-## Technologies (10)
+## Organization
 
-- `technology:macrocore` — MACROCORE™
-- `technology:nanoforce` — NANOFORCE™
-- `technology:syntrax` — SYNTRAX™
-- `technology:hydrocore` — HYDROCORE™
-- `technology:microkappa` — MICROKAPPA™
-- `technology:thermacore` — THERMACORE™
-- `technology:drycore` — DRYCORE™
-- `technology:intekcore` — INTEKCORE™
-- `technology:marineclean` — MARINECLEAN™
-- `technology:duratech` — DURATECH™
+ELIMFILTERS — Industrial Filtration Engineering / Asset Protection Systems
 
-## Protection systems (6)
+## Systems
 
-- `system:lube-oil` — Lube/Oil Systems
-- `system:air-intake` — Air Intake & Airflow Protection Systems
-- `system:cabin-human-safety` — Cabin / Human Safety Systems
-- `system:fuel-cleanliness` — Fuel Cleanliness Systems
-- `system:hydraulic` — Hydraulic Systems
-- `system:compressed-air` — Compressed Air Systems
+- Air Intake & Airflow Protection
+- Fuel Cleanliness Protection
+- Lubrication Protection
+- Hydraulic Protection
+- Cooling System Protection
 
-## Industries (12)
+## Technologies
 
-- `industry:agriculture` — Agriculture
-- `industry:automotive` — Automotive
-- `industry:bus-coach` — Bus & Coach
-- `industry:construction` — Construction
-- `industry:manufacturing` — Manufacturing
-- `industry:marine` — Marine
-- `industry:mining` — Mining
-- `industry:oil-gas` — Oil & Gas
-- `industry:power-generation` — Power Generation
-- `industry:railway` — Railway
-- `industry:truck-fleets` — Truck Fleets
-- `industry:waste-municipal` — Waste & Municipal
+- technology:macrocore — MACROCORE™
+- technology:microkappa — MICROKAPPA™
+- technology:drycore — DRYCORE™
+- technology:intekcore — INTEKCORE™
+- technology:syntapore — SYNTAPORE™
+- technology:turbocore — TURBOCORE™
+- technology:syntrax — SYNTRAX™
+- technology:nanoforce — NANOFORCE™
+- technology:thermacore — THERMACORE™
+- solution:marineclean — MARINECLEAN™
+- solution:duratech — DURATECH™
 
-## Governance
-
-The individual Markdown files under `knowledge/entities/` are authoritative. This index is navigational and must not override entity metadata.
+Only entities in this index may be treated as current ELIMFILTERS technology or solution entities.

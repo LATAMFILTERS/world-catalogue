@@ -70,7 +70,7 @@ Valve Damage
 
 ?
 
-NANOFORCE™
+NANOFORCEï¿½
 
 ?
 
@@ -104,7 +104,7 @@ Injector Failure
 
 ?
 
-HYDROCORE™
+TURBOCOREï¿½
 
 ?
 

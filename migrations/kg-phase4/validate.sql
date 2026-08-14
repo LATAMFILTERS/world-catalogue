@@ -95,9 +95,9 @@ SELECT concept_slug
 FROM kg_canonical_blocks
 WHERE concept_type = 'technology'
 ORDER BY concept_slug;
--- Expected slugs: aquaguard, blueclean, cooltech, drycore, duratech,
+-- Expected slugs: aquaguard, blueclean, THERMACORE, drycore, duratech,
 --                 gasultra, intekcore, macrocore, marineclean, microkappa,
---                 nanoforce, syntepore, syntrax
+--                 nanoforce, SYNTAPORE, syntrax
 
 -- B5: All 6 expected system slugs present
 -- Expected: exactly these 6 rows

@@ -225,7 +225,7 @@ export default function OurPhilosophyPage() {
                 5. Why We Developed Proprietary Technologies
               </h2>
               <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.68)', lineHeight: 1.8, textAlign: 'justify' }}>
-                Standard off-the-shelf filters cannot provide adequate protection for high-value industrial machinery operating in extreme conditions. We developed specialized, proprietary technologies like MACROCORE™, SYNTEPORE™, and NANOFORCE™ because each system domain exhibits unique contamination profiles and failure pathways. Our proprietary structures allow us to optimize media configuration for specific fluids, pressures, and contaminants.
+                Standard off-the-shelf filters cannot provide adequate protection for high-value industrial machinery operating in extreme conditions. We developed specialized, proprietary technologies like MACROCORE™, SYNTAPORE™, and NANOFORCE™ because each system domain exhibits unique contamination profiles and failure pathways. Our proprietary structures allow us to optimize media configuration for specific fluids, pressures, and contaminants.
               </p>
             </motion.div>
 

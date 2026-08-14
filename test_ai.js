@@ -11,12 +11,12 @@ PROPRIETARY TECHNOLOGIES:
 - DURATECH: Extended lifecycle synthesis, chemical resistance.
 - MICROKAPPA: HEPA-class cabin air, PM2.5 + activated carbon.
 - INTEKCORE: Air intake, high-pressure housing, thermal cycling rated.
-- HYDROCORE: Multi-stage coalescing water separation for fuel systems, free water removal >99%, emulsified water >95%.
+- TURBOCORE: Multi-stage coalescing water separation for fuel systems, free water removal >99%, emulsified water >95%.
 
 TRIBOLOGY & OIL ANALYSIS RULES:
 - High Silicon (Si > 15-20ppm) + High Iron (Fe): Indicates dust ingestion. Air filtration failure. Recommend MACROCORE/INTEKCORE to stop cylinder wear.
 - High Sodium (Na) / Potassium (K): Indicates coolant leak into oil. Recommend THERMACORE inspection.
-- Water in Diesel (>200ppm): Indicates coalescer failure. Causes injector stiction/corrosion. Recommend HYDROCORE upgrade.
+- Water in Diesel (>200ppm): Indicates coalescer failure. Causes injector stiction/corrosion. Recommend TURBOCORE upgrade.
 - High Copper (Cu) / Lead (Pb): Bearing wear, usually secondary to high soot/dirt. Recommend SYNTRAX for lube oil.
 
 FAILURE DIAGNOSTIC TREE:
