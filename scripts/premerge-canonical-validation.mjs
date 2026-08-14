@@ -37,6 +37,7 @@ run(process.execPath, [
   'tests/canonical-technology-registry.test.js',
   'tests/canonical-cooling-taxonomy.test.js',
   'tests/omnichannel-canonical-taxonomy.test.js',
+  'tests/i18n-crawler-ssr.test.js',
 ]);
 
 if (full) {
@@ -46,6 +47,6 @@ if (full) {
 }
 
 console.log(full
-  ? 'Manual pre-merge validation passed, including canonical taxonomy regressions, frontend type-check and build.'
+  ? 'Manual pre-merge validation passed, including canonical taxonomy, crawler-visible i18n, frontend type-check and build.'
   : 'Manual canonical pre-merge validation passed. Use --full to include frontend type-check and build.'
 );
