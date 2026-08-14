@@ -5,14 +5,21 @@ const root = path.resolve(import.meta.dirname, '..');
 const excludedDirs = new Set(['.git', 'node_modules', '.next', 'dist', 'build', 'coverage']);
 const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3']);
 
-// Hex keeps superseded labels out of the current repository text while still
-// allowing the guard to detect them in file contents and paths.
+// Hex keeps retired labels out of current repository text while still allowing
+// the guard to detect them in file contents and paths.
 const forbidden = [
   '485944524f434f5245',
   '53594e5445504f5245',
-  '434f4f4c54454348',
   '53594e5445464f52',
+  '434f4f4c54454348',
   '445552414354454348',
+  '4e414e4f434f5245',
+  '49534f4755415244',
+  '50554c5345434f5245',
+  '454c494d434f5245',
+  '44494553454c434f5245',
+  '5457454c564520544543484e4f4c4f47494553',
+  '31322050524f505249455441525920544543484e4f4c4f47494553',
 ].map((hex) => Buffer.from(hex, 'hex').toString('utf8'));
 
 const violations = [];
@@ -46,7 +53,7 @@ function walk(dir) {
 walk(root);
 
 if (violations.length) {
-  console.error('Canonical taxonomy guard failed. Superseded identifiers remain:');
+  console.error('Canonical taxonomy guard failed. Retired identifiers remain:');
   for (const item of [...new Set(violations)].sort()) console.error(`- ${item}`);
   process.exit(1);
 }
