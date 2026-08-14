@@ -46,3 +46,11 @@ test('canonical technology routes do not publish unsupported quantitative market
     assert.doesNotMatch(source, pattern);
   }
 });
+
+test('shared CTA uses evidence-neutral product discovery language', () => {
+  const source = read('frontend/src/components/CTASection.tsx');
+  assert.doesNotMatch(source, /500,000\+/i);
+  assert.doesNotMatch(source, /every major OEM/i);
+  assert.doesNotMatch(source, /perfect match/i);
+  assert.match(source, /equipment, application, and protected system/i);
+});
