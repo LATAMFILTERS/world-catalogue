@@ -29,6 +29,10 @@ function technologyUrl(slug: string) {
   return `${BASE_URL}/technologies/${slug}/`;
 }
 
+function technologyEntityUrl(slug: string) {
+  return `${technologyUrl(slug)}#technology`;
+}
+
 function resolveTechnology(slug: string): CatalogueItem | undefined {
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
@@ -135,8 +139,10 @@ function technologySchema(item: CatalogueItem, slug: string) {
     },
     about: {
       '@type': 'DefinedTerm',
+      '@id': technologyEntityUrl(slug),
       name: item.title,
       description: engineering.definition,
+      url,
       inDefinedTermSet: `${BASE_URL}/technologies/`,
     },
     abstract: engineering.engineeringPrinciple,
