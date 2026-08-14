@@ -9,6 +9,7 @@ export type EquipmentId = string;
 export type EngineId = string;
 export type ApplicationId = string;
 
+// 1. OEM REGISTRY
 export interface OemEntry {
   id: OemId;
   name: string;
@@ -19,27 +20,30 @@ export interface OemEntry {
   documentationStatus: 'COMPLETE' | 'PARTIAL' | DocumentationPending;
 }
 
+// 2. OEM PART REGISTRY
 export interface OemPartEntry {
-  id: OemPartId;
+  id: OemPartId; // Usually OEM ID + Part Number
   oemId: OemId;
   oemPartNumber: string;
   category: string;
   duty: 'HD' | 'LD' | DocumentationPending;
   productType: string;
-  crossReferences: string[];
+  crossReferences: string[]; // ELIMFILTERS part numbers
   applications: ApplicationId[];
   equipment: EquipmentId[];
   engines: EngineId[];
   status: 'ACTIVE' | 'OBSOLETE' | DocumentationPending;
 }
 
+// 3. CROSS REFERENCE REGISTRY
 export interface CrossReferenceEntry {
-  id: string;
+  id: string; // Composite ID
   oemPartId: OemPartId;
   elimfiltersPartNumber: string;
   validationStatus: 'VALIDATED' | 'PENDING_VALIDATION' | DocumentationPending;
 }
 
+// 4. EQUIPMENT REGISTRY
 export interface EquipmentEntry {
   id: EquipmentId;
   manufacturer: OemId;
@@ -49,9 +53,10 @@ export interface EquipmentEntry {
   engineId: EngineId | DocumentationPending;
   protectionSystems: ProtectionSystemKey[];
   applications: ApplicationId[];
-  supportedProducts: string[];
+  supportedProducts: string[]; // ELIMFILTERS part numbers
 }
 
+// 5. ENGINE REGISTRY
 export interface EngineEntry {
   id: EngineId;
   manufacturer: OemId;
@@ -61,22 +66,34 @@ export interface EngineEntry {
   applications: ApplicationId[];
   equipment: EquipmentId[];
   protectionSystems: ProtectionSystemKey[];
-  supportedProducts: string[];
+  supportedProducts: string[]; // ELIMFILTERS part numbers
 }
 
+// 6. APPLICATION REGISTRY
 export interface ApplicationEntry {
-  id: ApplicationId;
+  id: ApplicationId; // e.g. "excavator", "loader"
   name: string;
   category: string;
   description: string | DocumentationPending;
 }
 
+// 9. PRODUCT PLATFORM REGISTRY
 export interface ProductPlatformEntry {
-  key: EcosystemKey;
+  id: EcosystemKey; // 'MARINECLEAN' | 'DURATECH'
   name: string;
-  slug: string;
   description: string;
-  technologies: TechnologyKey[];
-  systems: SystemKey[];
-  status: 'ACTIVE' | 'IN_DEVELOPMENT' | DocumentationPending;
+  supportedTechnologies: TechnologyKey[];
+  supportedFamilies: FamilyKey[];
+  supportedIndustries: string[];
+}
+
+// 10. PRODUCT FAMILY REGISTRY (Extended from existing definition)
+export interface ProductFamilyEntry {
+  id: FamilyKey;
+  name: string;
+  protectionSystem: ProtectionSystemKey;
+  technology: TechnologyKey;
+  platform: EcosystemKey | null;
+  duty: 'HD' | 'LD' | 'MIXED';
+  supportedProducts: string[]; // ELIMFILTERS part numbers
 }
