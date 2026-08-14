@@ -7,7 +7,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/api/citation/',
+          '/llm.txt',
+          '/llms.txt',
+        ],
         disallow: [
           '/api/',
           '/admin/',
@@ -17,6 +22,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
+      `${BASE_URL}/sitemap-index.xml`,
       `${BASE_URL}/sitemap.xml`,
       `${BASE_URL}/sitemap-ai.xml`,
       `${BASE_URL}/video-sitemap.xml`,
