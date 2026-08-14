@@ -24,7 +24,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const sys = getProtectionSystemBySlug(params.slug);
   if (!sys) return { title: 'Not Found' };
-  const url = `${BASE_URL}/systems/${sys.slug}`;
+  const url = `${BASE_URL}/systems/${sys.slug}/`;
   const title = sys.name;
   const socialTitle = `${sys.name} | ELIMFILTERS`;
   return {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: sys.tagline,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS World Catalogue',
+      siteName: 'ELIMFILTERS',
       images: [{ url: `${BASE_URL}${sys.heroImage}`, width: 1200, height: 630, alt: sys.name }],
     },
     twitter: { card: 'summary_large_image', title: socialTitle, description: sys.tagline },
@@ -123,6 +123,7 @@ export default function ProtectionSystemPage({ params }: Props) {
 
   const families = getFamiliesByProtectionSystem(sys.slug);
   const isAirIntake = sys.slug === 'air-intake';
+  const systemUrl = `${BASE_URL}/systems/${sys.slug}/`;
 
   const heroStyle: CSSProperties = {
     position: 'relative',
@@ -185,19 +186,19 @@ export default function ProtectionSystemPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Systems', item: `${BASE_URL}/systems` },
-      { '@type': 'ListItem', position: 3, name: sys.name, item: `${BASE_URL}/systems/${sys.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Systems', item: `${BASE_URL}/systems/` },
+      { '@type': 'ListItem', position: 3, name: sys.name, item: systemUrl },
     ],
   };
 
   const systemSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': `${BASE_URL}/systems/${sys.slug}#service`,
+    '@id': `${systemUrl}#service`,
     name: sys.name,
     description: sys.overview,
-    url: `${BASE_URL}/systems/${sys.slug}`,
+    url: systemUrl,
     serviceType: 'Industrial Asset Protection',
     provider: {
       '@type': 'Organization',
@@ -217,7 +218,7 @@ export default function ProtectionSystemPage({ params }: Props) {
         <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '1.25rem clamp(1.5rem, 5vw, 4rem) 0', display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
           {[
             { href: '/', label: 'Home' },
-            { href: '/systems', label: 'Systems' },
+            { href: '/systems/', label: 'Systems' },
             { label: sys.name },
           ].map((crumb, i, arr) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -271,14 +272,14 @@ export default function ProtectionSystemPage({ params }: Props) {
           <h2 style={h2Style}>Primary Technologies</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {sys.primaryTechnologies.map((slug) => (
-              <Link key={slug} href={`/technologies/${slug}`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', transition: 'background 0.2s' }}>
+              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', transition: 'background 0.2s' }}>
                 <p style={{ ...labelStyle, color: '#FFF12D' }}>Primary</p>
                 <p style={cardTitle}>{slug.replace(/-/g, ' ')}</p>
                 <p style={mutedLinkLabel}>View Technology →</p>
               </Link>
             ))}
             {sys.supportingTechnologies.map((slug) => (
-              <Link key={slug} href={`/technologies/${slug}`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
                 <p style={{ ...labelStyle, color: 'rgba(255,255,255,0.44)' }}>Supporting</p>
                 <p style={{ ...cardTitle, color: 'rgba(255,255,255,0.75)' }}>{slug.replace(/-/g, ' ')}</p>
                 <p style={mutedLinkLabel}>View Technology →</p>
@@ -294,7 +295,7 @@ export default function ProtectionSystemPage({ params }: Props) {
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
               {families.map((fam) => (
-                <Link key={fam.key} href={`/families/${fam.slug}`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                <Link key={fam.key} href={`/families/${fam.slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
                     {fam.hdPrefix && <span style={{ ...labelStyle, fontSize: '0.58rem', color: '#FFF12D', background: 'rgba(255,241,45,0.08)', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>HD</span>}
                     {fam.ldPrefix && <span style={{ ...labelStyle, fontSize: '0.58rem', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.05)', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>LD</span>}
