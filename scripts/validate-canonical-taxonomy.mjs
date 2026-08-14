@@ -2,11 +2,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
-const excludedDirs = new Set(['.git', 'node_modules', '.next', 'dist', 'build', 'coverage']);
+const excludedDirs = new Set([
+  '.git', 'node_modules', '.next', 'dist', 'build', 'coverage',
+  'ELIMFILTERS_KNOWLEDGE_ECOSYSTEM_V1_ARCHIVE',
+  'graphify-out',
+]);
+const excludedFiles = new Set([
+  'frontend/tsconfig.tsbuildinfo',
+]);
 const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3']);
 
 // Hex keeps retired labels out of current repository text while still allowing
-// the guard to detect them in file contents and paths.
+// the guard to detect them in active file contents and paths.
 const forbidden = [
   '485944524f434f5245',
   '53594e5445504f5245',
@@ -34,6 +41,8 @@ function walk(dir) {
       walk(full);
       continue;
     }
+
+    if (excludedFiles.has(rel)) continue;
 
     const upperPath = rel.toUpperCase();
     for (const token of forbidden) {
