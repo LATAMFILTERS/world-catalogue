@@ -1,53 +1,20 @@
 ---
 type: technology
-tech_status: active
+status: active
 key: THERMACORE
 name: "THERMACORE™"
 slug: thermacore
-tagline: "Cooling System Protection — Heat Transfer and Coolant Cleanliness Control"
 domain: Cooling
 category: Coolant Filtration
-applicable_industries:
-  - "[[MINING]]"
-  - "[[CONSTRUCTION]]"
-  - "[[AGRICULTURE]]"
-  - "[[POWER_GENERATION]]"
-  - "[[TRUCKS_FLEETS]]"
-  - "[[WASTE_MUNICIPAL]]"
-related_standards:
-  - "[[ISO_4406]]"
-addresses_contamination:
-  - "[[ENGINE_OIL_CONTAMINATION]]"
-key_metrics:
-  protection_role: "Coolant-side contamination control, heat-transfer protection, and corrosion risk reduction"
-  system_scope: "Coolant filters, cooling loops, heat exchangers, wet liners, radiators, and heavy-duty diesel cooling circuits"
-in_unified_data: true
-ud_key: THERMACORE
-tags:
-  - technology
-  - active
-  - cooling
-  - coolant
-  - heat-transfer
-  - in-ud
+system: Cooling System Protection
+source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
-THERMACORE is the ELIMFILTERS cooling system protection technology for heavy-duty diesel engines and industrial power units. It is engineered to support coolant cleanliness, reduce abrasive contamination in cooling circuits, protect heat-transfer surfaces, and help prevent cooling-system degradation that can lead to overheating, corrosion, liner cavitation, and unplanned downtime.
+# THERMACORE™
 
-Cooling systems operate as asset-protection circuits, not secondary accessories. When coolant contamination, corrosion products, scale, silicate dropout, or debris circulate through radiators, heat exchangers, water pumps, and wet-liner engines, heat transfer efficiency declines and thermal stress increases. THERMACORE positions coolant filtration as part of the total asset protection architecture for diesel equipment operating in high-load, high-temperature, or long-service-interval environments.
+THERMACORE™ is the ELIMFILTERS cooling-system protection architecture for coolant cleanliness and component protection within Cooling System Protection.
 
-## Relationships
-
-### Applicable Industries
-- [[MINING|MINING — Mining haul trucks and drilling equipment operate under high thermal load and continuous-duty cycles where cooling system failure creates immediate downtime risk]]
-- [[CONSTRUCTION|CONSTRUCTION — Construction equipment faces dust, vibration, and variable duty cycles that increase cooling-system stress]]
-- [[AGRICULTURE|AGRICULTURE — Seasonal agricultural machinery requires reliable cooling performance during harvest peaks and high ambient temperature operation]]
-- [[POWER_GENERATION|POWER_GENERATION — Standby and prime power engines require coolant stability for emergency-start reliability and long storage intervals]]
-- [[TRUCKS_FLEETS|TRUCKS_FLEETS — Long-haul and mixed fleets require cooling protection to prevent overheating and corrosion-related failures]]
-- [[WASTE_MUNICIPAL|WASTE_MUNICIPAL — Stop-start municipal duty cycles elevate thermal cycling and cooling system stress]]
-
-### Related Systems
-- [[COOLING_SYSTEM_PROTECTION|COOLING_SYSTEM_PROTECTION — THERMACORE is the primary ELIMFILTERS technology applied to coolant filtration and thermal protection circuits]]
+Its engineering role is to support cleanliness of passages, seals and heat-transfer surfaces within the approved cooling-system maintenance strategy. Filter chemistry, capacity, flow and service interval must be matched to the engine and coolant requirements.
 
 ## AI Retrieval
 
@@ -55,26 +22,26 @@ Cooling systems operate as asset-protection circuits, not secondary accessories.
 CANONICAL KNOWLEDGE BLOCK: THERMACORE
 
 DEFINITION
-THERMACORE is the ELIMFILTERS cooling system protection technology for coolant filtration and thermal-circuit contamination control, supporting heat-transfer efficiency, corrosion risk reduction, wet-liner protection, and overheating prevention in heavy-duty diesel and industrial equipment.
+THERMACORE is the ELIMFILTERS cooling-system protection architecture for coolant cleanliness and component protection.
 
 SYSTEMS
-Cooling system protection circuits including coolant filters, radiators, heat exchangers, water pumps, wet-liner engines, diesel generators, off-highway equipment cooling loops, and truck fleet coolant systems.
+Cooling System Protection; approved engine and equipment coolant-filtration applications.
 
 FAILURE_IMPACT
-Coolant contamination, corrosion products, scale, or debris in cooling circuits → reduced heat transfer, water pump wear, radiator restriction, liner cavitation risk, overheating events, thermal stress, and unplanned downtime. In severe-duty equipment, cooling failure can stop the asset immediately even when air, fuel, lube, and hydraulic systems are otherwise protected.
+Poor coolant condition or uncontrolled cooling-system contamination can affect passages, seals, heat-transfer surfaces and other protected cooling-system components, reducing thermal-system stability and reliability.
 
 RELATED_STANDARDS
-ISO 4406: Cleanliness-code framework used across fluid contamination control programs; applicable as a reference cleanliness language when coolant-side particle contamination is measured and controlled in industrial maintenance programs.
+Applicable coolant, engine and maintenance requirements must be selected for the approved application. The technology name alone does not imply a universal cleanliness code, chemistry specification or certification claim.
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Lube oil protection in the same engines exposed to thermal stress | TURBOCORE: Fuel water protection for diesel engines operating in humid or condensation-prone environments | NANOFORCE: Fine-particle protection for hydraulic systems on the same equipment platform.
+THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs general fuel filtration and TURBOCORE governs approved turbine-style fuel separation; these technologies protect separate system domains.
 
 INDUSTRIAL_ROLE
-THERMACORE closes the cooling-domain gap in ELIMFILTERS Total Asset Protection Systems by treating coolant filtration as a direct asset-protection system. It prevents cooling circuits from becoming the weak link that causes overheating, corrosion, liner damage, and downtime despite protection in air, fuel, lube, and hydraulic domains.
+THERMACORE provides the coolant-cleanliness and component-protection layer of ELIMFILTERS Cooling System Protection. Selection is governed by engine requirements, coolant chemistry, filter capacity, system flow and service interval.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-center/technologies/thermacore
-concept: THERMACORE Cooling System Protection
-version: 1.0
-last_updated: 2026-07-11
+source: https://elimfilters.com/knowledge-center/technologies/thermacore/
+concept: THERMACORE Cooling System Protection Technology
+version: 2.0
+last_updated: 2026-08-14
 ```
