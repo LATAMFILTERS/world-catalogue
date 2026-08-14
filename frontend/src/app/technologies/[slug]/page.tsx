@@ -25,6 +25,10 @@ const visuallyHiddenHeading = {
   border: 0,
 } as const;
 
+function technologyUrl(slug: string) {
+  return `${BASE_URL}/technologies/${slug}/`;
+}
+
 function resolveTechnology(slug: string): CatalogueItem | undefined {
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
@@ -74,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `${BASE_URL}/technologies/${params.slug}`;
+  const url = technologyUrl(params.slug);
   const title = `${item.title} Proprietary Technology`;
   const socialTitle = `${item.title} | ELIMFILTERS Proprietary Technology`;
   return {
@@ -109,15 +113,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function technologySchema(item: CatalogueItem, slug: string) {
   const engineering = getTechnologyEngineering(slug);
   if (!engineering) return null;
+  const url = technologyUrl(slug);
 
   return {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    '@id': `${BASE_URL}/technologies/${slug}#article`,
+    '@id': `${url}#article`,
     headline: item.title,
     name: item.title,
     description: engineering.definition,
-    url: `${BASE_URL}/technologies/${slug}`,
+    url,
     author: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
@@ -132,7 +137,7 @@ function technologySchema(item: CatalogueItem, slug: string) {
       '@type': 'DefinedTerm',
       name: item.title,
       description: engineering.definition,
-      inDefinedTermSet: `${BASE_URL}/technologies`,
+      inDefinedTermSet: `${BASE_URL}/technologies/`,
     },
     abstract: engineering.engineeringPrinciple,
     keywords: [
@@ -144,8 +149,9 @@ function technologySchema(item: CatalogueItem, slug: string) {
     ],
     isPartOf: {
       '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
       name: 'ELIMFILTERS',
-      url: BASE_URL,
+      url: `${BASE_URL}/`,
     },
   };
 }
@@ -182,9 +188,9 @@ function breadcrumbSchema(item: CatalogueItem, slug: string) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies` },
-      { '@type': 'ListItem', position: 3, name: item.title, item: `${BASE_URL}/technologies/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies/` },
+      { '@type': 'ListItem', position: 3, name: item.title, item: technologyUrl(slug) },
     ],
   };
 }
