@@ -24,6 +24,16 @@ test('core crawl profiles normalize URLs to the trailing-slash policy', () => {
   assert.ok(source.includes('.map((node) => canonicalUrl(node.href))'));
 });
 
+test('failure entities resolve to current Knowledge Center canonicals, never legacy Knowledge System routes', () => {
+  const failures = read('frontend/src/lib/failure-knowledge.ts');
+  const graph = read('frontend/src/lib/entity-graph.ts');
+
+  assert.ok(failures.includes("href: '/knowledge-center/engineering/contamination-control/'"));
+  assert.ok(failures.includes("href: '/knowledge-center/engineering/fluid-cleanliness/'"));
+  assert.ok(graph.includes('href: failure.href'));
+  assert.doesNotMatch(graph, /\/knowledge-system\/contamination\//);
+});
+
 test('Knowledge Center sitemap generator emits trailing-slash URLs', () => {
   const source = read('scripts/generate-kc-sitemap.mjs');
   assert.ok(source.includes(".replace(/\\\\/g, '/')"));
