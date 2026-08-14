@@ -23,3 +23,35 @@ test('contact page remains connected to the shared i18n source', () => {
   assert.match(source, /import ['"]@\/i18n['"]/);
   assert.match(source, /useTranslation\(\)/);
 });
+
+test('English contact crawler-critical keys resolve to human-readable copy', () => {
+  const translation = JSON.parse(read('frontend/public/locales/en/translation.json'));
+  const contact = translation.contact;
+  assert.ok(contact && typeof contact === 'object', 'English contact translations must exist');
+
+  const required = [
+    'heroTag',
+    'heroTitle',
+    'heroSubtitle',
+    'heroDescription',
+    'heroCta1',
+    'heroCta2',
+    'heroCta3',
+    'channel1Label',
+    'channel1Title',
+    'channel1Desc',
+    'channel2Label',
+    'channel2Title',
+    'channel2Desc',
+    'channel3Label',
+    'channel3Title',
+    'channel3Desc',
+  ];
+
+  for (const key of required) {
+    const value = contact[key];
+    assert.equal(typeof value, 'string', `contact.${key} must be a string`);
+    assert.ok(value.trim().length > 2, `contact.${key} must contain crawler-visible copy`);
+    assert.notEqual(value, `contact.${key}`, `contact.${key} must not resolve to its translation key`);
+  }
+});
