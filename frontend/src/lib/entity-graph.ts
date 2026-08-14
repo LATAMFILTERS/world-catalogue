@@ -113,7 +113,7 @@ export const ENTITY_NODES: readonly EntityNode[] = [
     id: `failure:${failure.key}`,
     kind: 'failure' as const,
     name: failure.name,
-    href: `/knowledge-system/contamination/${failure.key}`,
+    href: failure.href,
   })),
 ];
 
