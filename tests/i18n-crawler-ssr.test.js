@@ -11,11 +11,35 @@ function read(rel) {
   return fs.readFileSync(path.join(root, rel), 'utf8').replace(/^\uFEFF/, '');
 }
 
-test('client i18n preloads English resources before static rendering', () => {
+test('client i18n preloads governed English resources before static rendering', () => {
   const source = read('frontend/src/i18n.ts');
   assert.match(source, /import enTranslation from ['"]\.\.\/public\/locales\/en\/translation\.json['"]/);
-  assert.match(source, /resources:\s*\{[\s\S]*?en:\s*\{[\s\S]*?translation:\s*enTranslation/);
+  assert.match(source, /const governedEnTranslation = cloneTranslation\(enTranslation\)/);
+  assert.match(source, /for \(const \[key, value\] of Object\.entries\(GOVERNED_EN_OVERRIDES\)\)/);
+  assert.match(source, /resources:\s*\{[\s\S]*?en:\s*\{[\s\S]*?translation:\s*governedEnTranslation/);
   assert.match(source, /partialBundledLanguages:\s*true/);
+});
+
+test('default-locale strategic governance replaces unsupported home claims before init', () => {
+  const source = read('frontend/src/i18n.ts');
+  const requiredOverrides = [
+    'home.economicStats.0.value',
+    'home.economicStats.1.value',
+    'home.economicStats.2.value',
+    'home.problemIntro',
+    'home.problemBadgeNum',
+    'home.whyP2',
+    'home.whyCheckItems.1',
+    'home.whyCardItems.3',
+    'home.techItems.0.desc',
+    'home.sciDesc',
+    'home.llmP1',
+    'home.llmP2',
+  ];
+
+  for (const key of requiredOverrides) {
+    assert.ok(source.includes(`'${key}'`), `${key} must be governed before i18n initialization`);
+  }
 });
 
 test('contact page remains connected to the shared i18n source', () => {
