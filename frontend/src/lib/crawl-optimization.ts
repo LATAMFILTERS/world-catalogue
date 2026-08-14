@@ -16,10 +16,8 @@ export const STATIC_CRAWL_ROUTES = [
   '/search',
   '/distributors',
   '/commercial-lines',
-  '/product-experience',
   '/customer-intelligence',
   '/distributor-application',
-  '/premium-preview',
   '/warranty',
 ] as const;
 
