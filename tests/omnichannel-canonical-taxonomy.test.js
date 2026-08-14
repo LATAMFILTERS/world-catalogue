@@ -39,6 +39,19 @@ test('explicit governed technology takes precedence over inference', () => {
   );
 });
 
+test('Facebook and Instagram route governed responses directly through the central protocol', () => {
+  const facebook = read('services/facebook-bot/src/knowledge.js');
+  const instagram = read('elimfilters-instagram-bot/src/worker.js');
+
+  assert.match(facebook, /\/api\/bot\/protocol/);
+  assert.match(facebook, /x-bot-protocol-key/);
+  assert.doesNotMatch(facebook, /nvidia|knowledge_engine|generateReply\(/i);
+
+  assert.match(instagram, /queryCentralProtocol/);
+  assert.match(instagram, /const responseText = protocol\.answer/);
+  assert.doesNotMatch(instagram, /nvidia|knowledge_engine/i);
+});
+
 test('WhatsApp automatically prefers central protocol when its credential is provisioned', () => {
   const config = read('elimfilters-whatsapp-bot/src/config.js');
   assert.match(config, /return Boolean\(apiKey\)/);
