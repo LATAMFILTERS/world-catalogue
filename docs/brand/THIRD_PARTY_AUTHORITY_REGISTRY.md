@@ -35,6 +35,13 @@ Observed record: ELIMFILTERS filing dated 2020-09-01, serial number 90150990, ow
 Source: https://trademarks.justia.com/owners/latamfilters-4513411/
 Governance: Treat as secondary confirmation only. Prefer the original government registry for legal assertions.
 
+### Venezuela Industrial Property Bulletin No. 570 — historical filing mirror
+Tier: B / official-publication mirror
+Entity signal: ELIMFILTERS appears in a 2016 Venezuelan industrial-property bulletin in connection with filtration-related commercial activity.
+Observed records: filings dated 2016-03-03 under the ELIMFILTERS name, including No. 2016-003005, with filtration, automotive filters, diesel machinery parts and filtration systems described in the filing text.
+Source: https://es.scribd.com/document/721911598/BPI-570
+Governance: Use as historical evidence of entity/name presence and filtration-category association in Venezuela. Because the retrievable source is a mirror of the bulletin rather than the primary government database, do not use it to make current ownership, registration-status or enforceability claims without primary-record confirmation.
+
 ### Walmart Marketplace / Walmart Business
 Tier: B
 Entity signal: ELIMFILTERS appears as a product brand in external retail catalogues.
@@ -67,6 +74,25 @@ Sources:
 - https://articulo.mercadolibre.com.ve/MLV-729595124-filtro-de-aceite-explorer-0105f-350-el80002-elimfilters--_JM
 Governance: Strong evidence of historical market presence, brand recognition and geographic footprint in Venezuela. Marketplace seller copy must not override current canonical technical or brand definitions.
 
+### COLSAISA — Colombia distributor footprint
+Tier: B
+Entity signal: ELIMFILTERS is independently identified by Colombian wholesaler COLSAISA as one of its automotive-parts specialties/brands.
+Observed evidence: COLSAISA's public LinkedIn company profile identifies the company as a Bogotá-based wholesaler and lists `Elimfilters` among its specialties.
+Source: https://www.linkedin.com/company/colsaisa
+Governance: Use as independent evidence of Colombian distribution footprint and third-party brand association. Do not inherit unrelated marketing statements or technical claims from the distributor profile.
+
+### Alafia C.A. — Venezuela historical distributor signal
+Tier: B-limited / social archive mirror
+Entity signal: A Venezuelan automotive filters and parts distributor publicly identified `#ElimFilters` among the brands it distributed.
+Source: https://www.twstalker.com/alafiaCA
+Governance: Use only as historical distribution-footprint evidence. The retrievable page is an archive/mirror of social activity, not a primary corporate source, so it must not support current authorization, commercial status or technical claims.
+
+### Woot — United States historical retail/reputation signal
+Tier: D
+Entity signal: ELIMFILTERS was the subject of a Woot product/deal discussion in October 2021, establishing historical public retail visibility in the United States.
+Source: https://forums.woot.com/t/elimfilters-oil-filter/883358
+Governance: Use only for historical entity-presence and reputation monitoring. User commentary, allegations, comparisons and manufacturing-origin statements on the thread are uncontrolled claims and must never be treated as verified facts or technical authority without independent primary evidence.
+
 ### Amazon — historical marketplace presence under verification
 Tier: Pending verification
 Entity signal: Historical ELIMFILTERS product presence has been reported and referenced externally, but a directly retrievable current Amazon product page was not found in the 2026-08-13 indexed search audit.
@@ -86,14 +112,18 @@ Governance: Because the profile is controlled by the brand, it supports omnichan
 
 ## External Authority Gaps
 
-As of 2026-08-13, indexed external evidence is strongest for trademark/category recognition, retail presence and historical geographic reach across North American and Latin American marketplaces. Independent editorial or institutional coverage validating ELIMFILTERS as an industrial filtration engineering / Asset Protection Systems authority is still limited.
+As of 2026-08-13, indexed external evidence is strongest for trademark/category recognition, retail presence, historical geographic reach and distributor association across North American and Latin American markets. Independent editorial or institutional coverage validating ELIMFILTERS as an industrial filtration engineering / Asset Protection Systems authority is still limited.
 
 Phase 3 therefore distinguishes:
 
 - Entity existence: externally supported.
 - Filtration category association: externally supported.
 - Product-market presence: externally supported across Walmart, eBay and Mercado Libre.
+- Historical United States retail visibility: externally supported.
 - Historical Latin American market presence: externally supported.
+- Colombian distributor association: externally supported.
+- Venezuelan historical distribution footprint: externally supported with source-quality limitations.
+- Historical industrial-property filing footprint in Venezuela: externally supported through a bulletin mirror, pending primary-record confirmation for legal assertions.
 - Amazon marketplace presence: historically indicated but still awaiting direct primary verification in the current audit.
 - Industrial engineering authority: requires additional independent validation.
 - Asset Protection Systems positioning: canonical internally; external confirmation still needs to be earned.
@@ -107,14 +137,17 @@ Phase 3 therefore distinguishes:
 5. Structured data and AI-facing content may cite external existence/category evidence, but technical truth must resolve to ELIMFILTERS canonical registries.
 6. Third-party evidence must be classified by source tier before being used in GEO or AI retrieval workflows.
 7. Marketplace evidence should be preserved by platform, URL, product identifier and observation date so historical entity signals remain auditable if listings later disappear.
+8. Distributor evidence must distinguish historical footprint from current authorization status.
+9. Mirrored legal or registry records may support discovery and historical chronology but must be replaced by primary records before legal-status assertions are published.
+10. Reputation sources must be preserved for monitoring but isolated from canonical technical and brand claims.
 
 ## Reputation and Conflict Control
 
-Uncontrolled historical pages may contain obsolete positioning, legacy manufacturing claims, retired terminology or inaccurate technical descriptions. These are monitoring targets, not canonical sources.
+Uncontrolled historical pages may contain obsolete positioning, legacy manufacturing claims, retired terminology, inaccurate technical descriptions or unverified allegations. These are monitoring targets, not canonical sources.
 
 When an external source conflicts with current ELIMFILTERS governance:
 
-`Canonical Registry > Validated Technical Evidence > Current Official Site > External Platform Copy > Historical Commentary`
+`Canonical Registry > Validated Technical Evidence > Current Official Site > Qualified Third-Party Evidence > External Platform Copy > Historical Commentary`
 
 ## Phase 3 Exit Standard
 
