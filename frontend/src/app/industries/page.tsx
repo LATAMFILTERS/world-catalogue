@@ -15,29 +15,31 @@ const INDUSTRIES = [
   ['waste-municipal', 'Waste Municipal', '/images/wasted-municipal.avif', 'Stop-start duty, dust ingestion, hydraulic load, and public-service uptime.'],
   ['bus-coach', 'Bus & Coach', '/images/bus-hero.avif', 'Passenger uptime, cabin air, engine protection, and predictable route service.'],
   ['automotive', 'Automotive', '/images/Automotive-1.avif', 'Light-duty protection, service reliability, and high-volume application coverage.'],
-];
+] as const;
+
+const BASE_URL = 'https://elimfilters.com';
 
 export const metadata = {
   title: 'Industries | Industrial Asset Protection',
-  description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
+  description: 'Industrial asset protection across 12 ELIMFILTERS application domains including mining, agriculture, construction, marine, oil and gas, power generation, transportation, railway, manufacturing and municipal operations.',
   keywords: ['industrial filtration industries', 'mining filtration', 'agriculture filtration', 'marine filtration', 'ELIMFILTERS industries', 'filtration by industry'],
   alternates: {
-    canonical: 'https://elimfilters.com/industries/',
+    canonical: `${BASE_URL}/industries/`,
   },
   openGraph: {
     title: 'Industries | ELIMFILTERS Industrial Asset Protection',
-    description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
-    url: 'https://elimfilters.com/industries/',
+    description: 'Industrial asset protection across 12 ELIMFILTERS application domains.',
+    url: `${BASE_URL}/industries/`,
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
-    images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
+    siteName: 'ELIMFILTERS',
+    images: [{ url: `${BASE_URL}/assets/logo-elimfilters.png`, width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industries | ELIMFILTERS Industrial Asset Protection',
-    description: 'Industrial asset protection for severe-duty markets including mining, agriculture, construction, marine, oil and gas, power generation, truck fleets, railway, and manufacturing.',
-    images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
+    description: 'Industrial asset protection across 12 ELIMFILTERS application domains.',
+    images: [`${BASE_URL}/assets/logo-elimfilters.png`],
   },
 };
 
@@ -45,16 +47,17 @@ export default function IndustriesPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    '@id': `${BASE_URL}/industries/#industries`,
     name: 'ELIMFILTERS Industrial Markets',
-    url: 'https://elimfilters.com/industries',
+    url: `${BASE_URL}/industries/`,
     numberOfItems: INDUSTRIES.length,
     itemListElement: INDUSTRIES.map(([slug, label], index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
-        '@type': 'Thing',
+        '@type': 'WebPage',
         name: label,
-        url: `https://elimfilters.com/industries/${slug}`,
+        url: `${BASE_URL}/industries/${slug}/`,
       },
     })),
   };
@@ -105,7 +108,7 @@ export default function IndustriesPage() {
 
           <div style={marketGrid}>
             {INDUSTRIES.map(([slug, label, image, line]) => (
-              <Link key={slug} href={`/industries/${slug}`} style={marketCard}>
+              <Link key={slug} href={`/industries/${slug}/`} style={marketCard}>
                 <img src={image} alt={label} style={marketImage} />
                 <div style={marketOverlay} />
                 <div style={marketContent}>
@@ -128,8 +131,8 @@ export default function IndustriesPage() {
             ELIMFILTERS helps distributors and industrial operators connect the correct technology portfolio to the operating reality of each market.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/contact" style={yellowButton}>CONTACT ELIMFILTERS</Link>
-            <Link href="/distributor-application" style={darkButton}>DISTRIBUTOR REVIEW</Link>
+            <Link href="/contact/" style={yellowButton}>CONTACT ELIMFILTERS</Link>
+            <Link href="/distributor-application/" style={darkButton}>DISTRIBUTOR REVIEW</Link>
           </div>
         </div>
       </section>
@@ -141,7 +144,6 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-
 
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
