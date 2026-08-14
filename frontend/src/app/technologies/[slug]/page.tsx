@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { CategoryPage } from '@/components/CategoryPage';
 import { TechDetailPage } from '@/components/TechDetailPage';
 import { CANONICAL_TECHNOLOGY_LIST, getCanonicalTechnology } from '@/lib/canonical-technologies';
@@ -25,11 +26,15 @@ const visuallyHiddenHeading = {
 } as const;
 
 function resolveTechnology(slug: string): CatalogueItem | undefined {
-  const catalogueItem = getItemBySlug('technologies', slug);
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
 
-  if (catalogueItem && canonical && engineering) {
+  // Public technology routes are canonical-only. Legacy catalogue entries must
+  // never recreate a retired technology page.
+  if (!canonical || !engineering) return undefined;
+
+  const catalogueItem = getItemBySlug('technologies', slug);
+  if (catalogueItem) {
     return {
       ...catalogueItem,
       name: canonical.name.replace('™', ''),
@@ -39,9 +44,6 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
       engineeringBody: engineering.engineeringPrinciple,
     };
   }
-
-  if (catalogueItem) return catalogueItem;
-  if (!canonical || !engineering) return undefined;
 
   return {
     name: canonical.name.replace('™', ''),
@@ -65,7 +67,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = resolveTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
-  if (!item || !engineering) return { title: 'Not Found' };
+  if (!item || !engineering) {
+    return {
+      title: 'Not Found',
+      robots: { index: false, follow: false },
+    };
+  }
 
   const url = `${BASE_URL}/technologies/${params.slug}`;
   const title = `${item.title} Proprietary Technology`;
@@ -87,7 +94,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: engineering.definition,
       url,
       type: 'website',
-      siteName: 'ELIMFILTERS World Catalogue',
+      siteName: 'ELIMFILTERS',
       images: [{
         url: 'https://elimfilters.com/assets/logo-elimfilters.png',
         width: 1200,
@@ -137,7 +144,7 @@ function technologySchema(item: CatalogueItem, slug: string) {
     ],
     isPartOf: {
       '@type': 'WebSite',
-      name: 'ELIMFILTERS World Catalogue',
+      name: 'ELIMFILTERS',
       url: BASE_URL,
     },
   };
@@ -184,7 +191,7 @@ function breadcrumbSchema(item: CatalogueItem, slug: string) {
 
 export default function TechnologyPage({ params }: Props) {
   const item = resolveTechnology(params.slug);
-  if (!item) return null;
+  if (!item) notFound();
 
   const slug = params.slug;
   const articleSchema = technologySchema(item, slug);
