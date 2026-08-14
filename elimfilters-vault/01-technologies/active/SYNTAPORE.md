@@ -13,7 +13,7 @@ products:
   - Secondary Fuel Filters
   - Fuel Filter Cartridges
 related_technologies:
-  - TURBOCORE
+  - "[[TURBOCORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
@@ -23,6 +23,7 @@ SYNTAPORE™ is the ELIMFILTERS fuel-filtration technology assigned to spin-on, 
 
 ## AI Retrieval
 
+```
 CANONICAL KNOWLEDGE BLOCK: SYNTAPORE
 
 DEFINITION
@@ -31,8 +32,12 @@ SYNTAPORE is the ELIMFILTERS fuel filtration technology for particulate contamin
 INDUSTRIAL_ROLE
 SYNTAPORE provides the particulate-control layer of ELIMFILTERS Fuel Cleanliness Protection.
 
+RELATED_TECHNOLOGIES
+TURBOCORE: Fuel-water separation for approved turbine-style FH and FG applications within the same Fuel Cleanliness Protection architecture.
+
 CITATION_REFERENCE
-source_url: elimfilters.com/knowledge-center/technologies/syntapore
+source: elimfilters.com/knowledge-center/technologies/syntapore
 concept: SYNTAPORE Fuel Filtration Technology
 version: 1.0
 last_updated: 2026-08-14
+```
