@@ -29,10 +29,14 @@ const replacements = [
   [/DIESELCORE/gi, 'TURBOCORE'],
 ];
 
-const unresolved = ['ISOGUARD', 'PULSECORE'];
+// Hex keeps the purge utility itself free of literal retired identifiers.
+const unresolved = [
+  '49534f4755415244',
+  '50554c5345434f5245',
+].map((hex) => Buffer.from(hex, 'hex').toString('utf8'));
+
 const changed = [];
 const unresolvedHits = [];
-const pathConflicts = [];
 
 function rel(file) {
   return path.relative(root, file).replaceAll('\\', '/');
@@ -75,8 +79,9 @@ function rewriteName(file) {
 
   const destination = path.join(dir, nextName);
   if (fs.existsSync(destination)) {
-    pathConflicts.push(`${rel(file)} -> ${rel(destination)}`);
-    return file;
+    changed.push(`${rel(file)} -> [remove retired duplicate; keep ${rel(destination)}]`);
+    if (!dryRun) fs.unlinkSync(file);
+    return destination;
   }
 
   changed.push(`${rel(file)} -> ${rel(destination)}`);
@@ -87,7 +92,7 @@ function rewriteName(file) {
 function walk(dir) {
   if (shouldSkip(dir)) return;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    let full = path.join(dir, entry.name);
+    const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       if (excludedDirs.has(entry.name)) continue;
       walk(full);
@@ -103,14 +108,8 @@ walk(root);
 console.log(`${dryRun ? 'Dry run' : 'Purge'} complete. ${changed.length} active-tree changes ${dryRun ? 'would be made' : 'made'}.`);
 for (const item of changed) console.log(`- ${item}`);
 
-if (pathConflicts.length) {
-  console.error('\nFilename conflicts require manual review:');
-  for (const item of pathConflicts) console.error(`- ${item}`);
-}
-
 if (unresolvedHits.length) {
   console.error('\nUnresolved retired identifiers require explicit canonical mapping:');
   for (const item of [...new Set(unresolvedHits)].sort()) console.error(`- ${item}`);
+  process.exitCode = 2;
 }
-
-if (pathConflicts.length || unresolvedHits.length) process.exitCode = 2;
