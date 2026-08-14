@@ -6,7 +6,6 @@ const dryRun = process.argv.includes('--dry-run');
 
 const excludedDirs = new Set([
   '.git', 'node_modules', '.next', 'dist', 'build', 'coverage',
-  'ELIMFILTERS_KNOWLEDGE_ECOSYSTEM_V1_ARCHIVE',
   'graphify-out',
 ]);
 const excludedFiles = new Set([
