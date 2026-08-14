@@ -1,194 +1,41 @@
-\# BRAND\_ARCHITECTURE
+# ELIMFILTERS BRAND ARCHITECTURE
 
+Status: Canonical
 
+## Entity
 
-Version: 1.0 Draft
+ELIMFILTERS™
 
+Primary category: **Industrial Filtration Engineering**
+Strategic positioning: **Asset Protection Systems**
 
+Core principle: **The filter is the means. Asset protection is the objective.**
 
-\---
+## Architecture
 
+ELIMFILTERS
+→ Industrial Filtration Engineering
+→ Asset Protection Systems
+→ Protection Technologies
+→ Filtration Components
+→ Industrial Applications
+→ Protected Assets
+→ Reliability & Availability
 
+## Five protection systems
 
-\# ELIMFILTERS BRAND HIERARCHY
+1. Air Intake & Airflow Protection
+2. Fuel Cleanliness Protection
+3. Lubrication Protection
+4. Hydraulic Protection
+5. Cooling System Protection
 
+## Core technologies
 
+MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · TURBOCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
-ELIMFILTERS®
+## Specialized solutions
 
+MARINECLEAN™ · DURATECH™
 
-
-Master Brand
-
-
-
-↓
-
-
-
-Platforms
-
-
-
-\* MARINECLEAN™
-
-\* DURATECH™
-
-
-
-↓
-
-
-
-Systems
-
-
-
-\* Air Intake \& Airflow Protection
-
-\* Fuel Cleanliness Protection
-
-\* Lubrication Protection
-
-\* Hydraulic Protection
-
-\* Cooling System Protection
-
-
-
-↓
-
-
-
-Technologies
-
-
-
-\* MACROCORE™
-
-\* MICROKAPPA™
-
-\* DRYCORE™
-
-\* INTEKCORE™
-
-\* SYNTEPORE™
-
-\* HYDROCORE™
-
-\* SYNTRAX™
-
-\* NANOFORCE™
-
-\* THERMACORE™
-
-
-
-↓
-
-
-
-Products
-
-
-
-\* Air Filters
-
-\* Cabin Air Filters
-
-\* Air Dryers
-
-\* Air Intake Housings
-
-\* Fuel Filters
-
-\* Fuel Water Separators
-
-\* FH Series
-
-\* FG Series
-
-\* Lube Filters
-
-\* Hydraulic Filters
-
-\* Coolant Filters
-
-
-
-\---
-
-
-
-\# BRAND RULES
-
-
-
-The ELIMFILTERS® brand always has priority over all sub-brands.
-
-
-
-Technologies never replace the ELIMFILTERS brand.
-
-
-
-Platforms never replace the ELIMFILTERS brand.
-
-
-
-Products never replace the ELIMFILTERS brand.
-
-
-
-All technologies must reinforce the ELIMFILTERS master brand.
-
-
-
-\---
-
-
-
-\# EXAMPLES
-
-
-
-Correct:
-
-
-
-ELIMFILTERS® SYNTEPORE™
-
-
-
-ELIMFILTERS® NANOFORCE™
-
-
-
-ELIMFILTERS® THERMACORE™
-
-
-
-ELIMFILTERS® DURATECH™
-
-
-
-ELIMFILTERS® MARINECLEAN™
-
-
-
-Incorrect:
-
-
-
-SYNTEPORE™ as a standalone corporate brand.
-
-
-
-NANOFORCE™ as a standalone company identity.
-
-
-
-THERMACORE™ replacing ELIMFILTERS branding.
-
-
-
+Public communication must subordinate individual filters to the system-level asset-protection objective.
