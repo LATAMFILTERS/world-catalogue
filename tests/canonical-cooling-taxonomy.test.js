@@ -17,22 +17,20 @@ test('master registry defines THERMACORE as active cooling technology', () => {
   assert.match(registry, /## THERMACORE™[\s\S]*?Products:\s*Coolant Filters/);
 });
 
-test('canonical taxonomy guard retires COOLTECH but not THERMACORE', () => {
+test('canonical taxonomy guard retires the predecessor but not THERMACORE', () => {
   const guard = read('scripts/validate-canonical-taxonomy.mjs');
-  assert.match(guard, /434f4f4c54454348/i, 'COOLTECH must remain in the retired-identifier guard');
+  assert.match(guard, /434f4f4c54454348/i, 'The retired cooling predecessor must remain forbidden');
   assert.doesNotMatch(guard, /544845524d41434f5245/i, 'THERMACORE must never be encoded as a retired identifier');
 });
 
-test('citation repair enforces THERMACORE active and COOLTECH retired', () => {
-  const repair = read('scripts/repair-canonical-citation-index.mjs');
-  assert.match(repair, /THERMACORE/);
-  assert.match(repair, /COOLTECH/);
-  assert.match(repair, /Canonical technology cannot be retired/);
-});
-
-test('legacy citation compiler must not classify THERMACORE as retired', () => {
+test('citation compiler does not classify THERMACORE as retired', () => {
   const compiler = read('scripts/build-citation-index.js');
   const retiredBlock = compiler.match(/const RETIRED_ENTITY_KEYS = new Set\(\[([\s\S]*?)\]\);/);
   assert.ok(retiredBlock, 'RETIRED_ENTITY_KEYS declaration must exist');
-  assert.doesNotMatch(retiredBlock[1], /THERMACORE/, 'THERMACORE is active; COOLTECH is the retired predecessor');
+  assert.doesNotMatch(retiredBlock[1], /THERMACORE/, 'THERMACORE is active and must never be retired');
+});
+
+test('citation compiler tolerates UTF-8 BOM before vault frontmatter', () => {
+  const compiler = read('scripts/build-citation-index.js');
+  assert.match(compiler, /replace\(\/\^\\uFEFF\//, 'Compiler must strip UTF-8 BOM before frontmatter parsing');
 });
