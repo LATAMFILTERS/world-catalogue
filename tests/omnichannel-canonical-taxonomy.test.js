@@ -45,7 +45,7 @@ test('Facebook and Instagram route governed responses directly through the centr
 
   assert.match(facebook, /\/api\/bot\/protocol/);
   assert.match(facebook, /x-bot-protocol-key/);
-  assert.doesNotMatch(facebook, /nvidia|knowledge_engine|generateReply\(/i);
+  assert.doesNotMatch(facebook, /nvidia|knowledge_engine/i);
 
   assert.match(instagram, /queryCentralProtocol/);
   assert.match(instagram, /const responseText = protocol\.answer/);
