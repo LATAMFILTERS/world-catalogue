@@ -21,3 +21,12 @@ test('unverified ratings metadata sources are absent from active frontend code',
   assert.equal(fs.existsSync(path.join(root, 'frontend/src/lib/ratings-metadata.ts')), false);
   assert.equal(fs.existsSync(path.join(root, 'frontend/src/components/AggregateRatingSchema.tsx')), false);
 });
+
+test('product-family schema does not invent inventory availability or offers', () => {
+  const family = read('frontend/src/app/families/[slug]/page.tsx');
+  assert.doesNotMatch(family, /schema\.org\/InStock/);
+  assert.doesNotMatch(family, /'@type':\s*'Offer'/);
+  assert.doesNotMatch(family, /priceCurrency/);
+  assert.match(family, /'@type':\s*'ProductGroup'/);
+  assert.match(family, /'@type':\s*'Product'/);
+});
