@@ -2,7 +2,15 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const { inferTechnology } = require('../lib/bot-protocol-channel-format');
+
+const root = path.resolve(__dirname, '..');
+
+function read(rel) {
+  return fs.readFileSync(path.join(root, rel), 'utf8').replace(/^\uFEFF/, '');
+}
 
 const cases = [
   [{ filter_type: 'Fuel Filter' }, 'SYNTAPORE™'],
@@ -29,4 +37,27 @@ test('explicit governed technology takes precedence over inference', () => {
     inferTechnology({ filter_type: 'Fuel Filter', technology: 'SYNTAPORE™' }),
     'SYNTAPORE™'
   );
+});
+
+test('WhatsApp automatically prefers central protocol when its credential is provisioned', () => {
+  const config = read('elimfilters-whatsapp-bot/src/config.js');
+  assert.match(config, /return Boolean\(apiKey\)/);
+  assert.match(config, /USE_CENTRAL_PROTOCOL/);
+  assert.match(config, /useCentralProtocol: centralProtocolEnabled\(botProtocolApiKey\)/);
+});
+
+test('configured omnichannel workers never fall through to an independent AI after central-protocol failure', () => {
+  const linkedin = read('elimfilters-linkedin-bot/src/worker.js');
+  const youtube = read('elimfilters-youtube-bot/src/worker.js');
+  const whatsapp = read('elimfilters-whatsapp-bot/src/worker.js');
+
+  for (const [name, source] of [['LinkedIn', linkedin], ['YouTube', youtube]]) {
+    assert.match(source, /if \(config\.botProtocolApiKey\)/, `${name} must gate the governed central route on its credential`);
+    assert.match(source, /SAFE_SUPPORT_MESSAGE/, `${name} must use a deterministic safe response on governed-protocol failure`);
+    assert.match(source, /else \{[\s\S]*legacy/i, `${name} legacy reasoning must be isolated to the no-central-credential branch`);
+  }
+
+  assert.match(whatsapp, /if \(config\.useCentralProtocol\)/);
+  assert.match(whatsapp, /central_protocol_failure_safe_message/);
+  assert.match(whatsapp, /else \{[\s\S]*Legacy independent path/i);
 });
