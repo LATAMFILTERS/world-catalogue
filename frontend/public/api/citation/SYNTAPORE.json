@@ -1,0 +1,24 @@
+{
+  "key": "SYNTAPORE",
+  "type": "technology",
+  "name": "SYNTAPORE™",
+  "slug": "syntapore",
+  "status": "active",
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/technologies/syntapore",
+    "concept": "SYNTAPORE Fuel Filtration",
+    "version": "1.0",
+    "last_updated": "2026-08-13"
+  },
+  "canonical": {
+    "definition": "SYNTAPORE is the ELIMFILTERS fuel-filtration technology for spin-on, primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection.",
+    "system": "Fuel Cleanliness Protection",
+    "products": [
+      "Spin-on Fuel Filters",
+      "Primary Fuel Filters",
+      "Secondary Fuel Filters",
+      "Fuel Filter Cartridges"
+    ],
+    "related_technology": "TURBOCORE™ for approved turbine/FH/FG fuel-separation applications"
+  }
+}
