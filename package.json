@@ -9,7 +9,7 @@
     "postinstall": "node scripts/postinstall-safe.js",
     "start": "node server-protocol.js",
     "dev": "node server-protocol.js",
-    "build": "cd frontend && npm ci && npm run build",
+    "build": "cd frontend && npm ci && npm run build && cd .. && node scripts/sync-static-export.mjs",
     "hermes:validate": "node scripts/hermes/validate-candidates.mjs hermes/test-candidates",
     "hermes:report": "node scripts/hermes/generate-weekly-report.mjs hermes/test-candidates hermes/reports",
     "hermes:email": "node scripts/hermes/send-weekly-email.mjs hermes/reports",
