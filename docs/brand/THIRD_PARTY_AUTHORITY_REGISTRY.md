@@ -1,6 +1,7 @@
 # ELIMFILTERS™ Third-Party Authority Registry
 
-Status: Active
+Status: Frozen — Phase 3 Baseline
+Freeze date: 2026-08-13
 Owner: Brand Governance
 Purpose: External entity validation for SEO Omnichannel, GEO and AI retrieval.
 
@@ -11,6 +12,19 @@ Third-party evidence may confirm that ELIMFILTERS™ exists as a brand, appears 
 Canonical internal authority remains:
 - `docs/brand/ENTITY_AUTHORITY_REGISTRY.md`
 - `docs/brand/TECHNOLOGY_REGISTRY.md`
+- `docs/brand/CLAIM_REGISTRY.md`
+
+Current strategic positioning:
+
+ELIMFILTERS = Industrial Filtration Engineering + Asset Protection Systems
+
+Core philosophy:
+
+The filter is the means. Asset protection is the objective.
+
+Legacy positioning note:
+
+`German Quality` is historical brand language and is not the current strategic positioning.
 
 ## Validation Tiers
 
@@ -26,7 +40,7 @@ Use for omnichannel identity consistency, not as independent proof of engineerin
 ### Tier D — Uncontrolled historical commentary
 Monitor for reputation and entity-conflict risk. Never treat as canonical evidence.
 
-## Verified External Signals — 2026-08-13
+## Verified External Signals — Frozen 2026-08-13
 
 ### Trademark reference — Justia Trademarks
 Tier: B / registry mirror
@@ -123,25 +137,34 @@ Entity signal: ELIMFILTERS identity, Frisco location and filtration-related acti
 Source: https://www.linkedin.com/in/elimfilters
 Governance: Because the profile is controlled by the brand, it supports omnichannel consistency but is not independent validation.
 
-## External Authority Gaps
+## Phase 3 Strength Assessment — Frozen Baseline
 
-As of 2026-08-13, indexed external evidence is strongest for trademark/category recognition, retail presence, historical geographic reach and distributor association across North American and Latin American markets. Independent editorial or institutional coverage validating ELIMFILTERS as an industrial filtration engineering / Asset Protection Systems authority is still limited.
+Overall Phase 3 external-authority score at freeze: 8.1 / 10.
 
-Phase 3 therefore distinguishes:
+Assessment dimensions:
 
-- Entity existence: externally supported.
-- Filtration category association: externally supported.
-- Product-market presence: externally supported across Walmart, eBay and Mercado Libre.
-- Historical United States retail visibility: externally supported.
-- Historical Latin American market presence: externally supported.
-- Colombian distributor association: externally supported.
-- Dominican Republic distributor relationship: canonically confirmed by ELIMFILTERS; TROY business existence independently corroborated.
-- Venezuelan historical distribution footprint: externally supported with source-quality limitations.
-- Historical industrial-property filing footprint in Venezuela: externally supported through a bulletin mirror, pending primary-record confirmation for legal assertions.
-- Panama market presence: historical indication only; independent current verification still pending.
-- Amazon marketplace presence: historically indicated but still awaiting direct primary verification in the current audit.
-- Industrial engineering authority: requires additional independent validation.
-- Asset Protection Systems positioning: canonical internally; external confirmation still needs to be earned.
+- Entity existence: 9.5 / 10
+- External commercial presence: 9.5 / 10
+- Geographic external footprint: 8.5 / 10
+- Source quality and diversity: 8.0 / 10
+- Independent technical authority: 5.5 / 10
+- SEO / GEO omnichannel consistency: 7.5 / 10
+- Internal evidence governance: 10 / 10
+
+Interpretation:
+
+Phase 3 is strong in entity existence, historical continuity, marketplace presence and regional commercial footprint. The principal remaining weakness is independent external validation of ELIMFILTERS specifically as an Industrial Filtration Engineering / Asset Protection Systems authority rather than merely as a filter brand or seller.
+
+## External Authority Gaps — Frozen
+
+The following remain open and must not be represented as completed:
+
+- 3–5 qualified independent technical or industry references associating ELIMFILTERS with industrial filtration engineering, contamination control, reliability or asset protection.
+- 1–2 external technical references linking to or citing ELIMFILTERS Knowledge Center material.
+- Direct primary verification of historical Amazon marketplace presence.
+- Qualified independent verification of Panama commercial/distributor presence.
+- Stronger independent confirmation of the TROY / ELIMFILTERS commercial relationship beyond ELIMFILTERS-controlled authorization data.
+- Continued migration of public/indexed legacy language so `German Quality`, retired technology names and product-centric positioning do not compete with the new entity definition.
 
 ## SEO Omnichannel Rules
 
@@ -155,6 +178,7 @@ Phase 3 therefore distinguishes:
 8. Distributor evidence must distinguish historical footprint from current authorization status.
 9. Mirrored legal or registry records may support discovery and historical chronology but must be replaced by primary records before legal-status assertions are published.
 10. Reputation sources must be preserved for monitoring but isolated from canonical technical and brand claims.
+11. External references to ELIMFILTERS as a generic filter seller must not override the canonical Industrial Filtration Engineering / Asset Protection Systems identity.
 
 ## Reputation and Conflict Control
 
@@ -164,13 +188,10 @@ When an external source conflicts with current ELIMFILTERS governance:
 
 `Canonical Registry > Validated Technical Evidence > Current Official Site > Qualified Third-Party Evidence > External Platform Copy > Historical Commentary`
 
-## Phase 3 Exit Standard
+## Phase 3 Freeze Rule
 
-Phase 3 internal implementation is complete when:
-- external evidence is inventoried and tiered;
-- entity validation rules are documented;
-- canonical sources cannot be overridden by marketplace or historical copy;
-- SEO Omnichannel propagation rules incorporate source authority;
-- authority gaps are explicitly separated from validated external signals.
+This document represents the frozen Phase 3 baseline as of 2026-08-13.
 
-External authority itself remains a measurable ecosystem outcome and must be monitored independently from repository completion.
+Future evidence may be appended through a new governed phase or explicit Phase 3 amendment, but this baseline must not be silently rewritten. New external evidence must preserve source tier, observation date, authority limits and relationship to the canonical ELIMFILTERS positioning.
+
+Phase 3 repository implementation is considered internally complete at this freeze point. External authority remains an ecosystem outcome and continues to be measured independently.
