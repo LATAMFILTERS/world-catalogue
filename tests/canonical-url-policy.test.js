@@ -65,6 +65,21 @@ test('Knowledge Center systems metadata describes exactly the five canonical sys
   assert.doesNotMatch(systems, /cabin air protection systems/i);
 });
 
+test('core system and family routes use one trailing-slash brand identity', () => {
+  const systems = read('frontend/src/app/systems/[slug]/page.tsx');
+  const families = read('frontend/src/app/families/[slug]/page.tsx');
+  const familyIndex = read('frontend/src/app/families/page.tsx');
+
+  assert.ok(systems.includes("const url = `${BASE_URL}/systems/${sys.slug}/`;"));
+  assert.ok(systems.includes("siteName: 'ELIMFILTERS'"));
+  assert.ok(systems.includes("url: systemUrl"));
+  assert.ok(families.includes("const url = `${BASE_URL}/families/${fam.slug}/`;"));
+  assert.ok(families.includes("siteName: 'ELIMFILTERS'"));
+  assert.ok(familyIndex.includes("canonical: `${BASE_URL}/families/`"));
+  assert.ok(familyIndex.includes("url: `${BASE_URL}/families/`"));
+  assert.ok(familyIndex.includes("url: `${BASE_URL}/families/${family.slug}/`"));
+});
+
 test('technology portfolio and Knowledge Center definitions share one entity ID pattern', () => {
   const portfolio = read('frontend/src/app/technologies/[slug]/page.tsx');
   const knowledge = read('frontend/src/app/knowledge-center/technologies/[slug]/page.tsx');
