@@ -17,9 +17,9 @@ export const CANONICAL_TECHNOLOGIES = {
     domain: 'lubrication',
     role: 'Lubrication and oil filtration',
   },
-  syntepore: {
-    slug: 'syntepore',
-    name: 'SYNTEPORE™',
+  syntapore: {
+    slug: 'syntapore',
+    name: 'SYNTAPORE™',
     domain: 'fuel-cleanliness',
     role: 'Primary and secondary fuel filtration',
   },
@@ -45,19 +45,13 @@ export const CANONICAL_TECHNOLOGIES = {
     slug: 'drycore',
     name: 'DRYCORE™',
     domain: 'air-intake',
-    role: 'Air-dryer filtration',
-  },
-  hydrocore: {
-    slug: 'hydrocore',
-    name: 'HYDROCORE™',
-    domain: 'fuel-cleanliness',
-    role: 'Fuel-water separation filtration',
+    role: 'Pneumatic brake-system air dryer filtration',
   },
   turbocore: {
     slug: 'turbocore',
     name: 'TURBOCORE™',
     domain: 'fuel-cleanliness',
-    role: 'Turbine FH and FG systems',
+    role: 'Turbine FH and FG fuel-separation systems',
   },
 } as const;
 
