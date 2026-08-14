@@ -40,6 +40,31 @@ test('Knowledge Center sitemap generator emits trailing-slash URLs', () => {
   assert.ok(source.includes("return `${BASE_URL}/${rel.replace(/^\\/+|\\/+$/g, '')}/`;"));
 });
 
+test('Knowledge Center primary layouts use trailing-slash canonicals', () => {
+  const layouts = {
+    'frontend/src/app/knowledge-center/search/layout.tsx': 'https://elimfilters.com/knowledge-center/search/',
+    'frontend/src/app/knowledge-center/standards/layout.tsx': 'https://elimfilters.com/knowledge-center/standards/',
+    'frontend/src/app/knowledge-center/systems/layout.tsx': 'https://elimfilters.com/knowledge-center/systems/',
+    'frontend/src/app/knowledge-center/industries/layout.tsx': 'https://elimfilters.com/knowledge-center/industries/',
+    'frontend/src/app/knowledge-center/technologies/layout.tsx': 'https://elimfilters.com/knowledge-center/technologies/',
+  };
+
+  for (const [file, canonical] of Object.entries(layouts)) {
+    assert.ok(read(file).includes(`canonical: '${canonical}'`), `${file} must use ${canonical}`);
+  }
+});
+
+test('Knowledge Center systems metadata describes exactly the five canonical systems', () => {
+  const systems = read('frontend/src/app/knowledge-center/systems/layout.tsx');
+  assert.match(systems, /five canonical ELIMFILTERS protection systems/i);
+  assert.match(systems, /Air Intake & Airflow/);
+  assert.match(systems, /Fuel Cleanliness/);
+  assert.match(systems, /Lubrication/);
+  assert.match(systems, /Hydraulic/);
+  assert.match(systems, /Cooling System Protection/);
+  assert.doesNotMatch(systems, /cabin air protection systems/i);
+});
+
 test('technology portfolio and Knowledge Center definitions share one entity ID pattern', () => {
   const portfolio = read('frontend/src/app/technologies/[slug]/page.tsx');
   const knowledge = read('frontend/src/app/knowledge-center/technologies/[slug]/page.tsx');
