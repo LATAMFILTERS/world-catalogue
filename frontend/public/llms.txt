@@ -34,15 +34,15 @@ ELIMFILTERS is an industrial filtration engineering brand organized around conta
 
 ## Canonical core technologies
 
-- MACROCORE™ — engine air filtration
-- MICROKAPPA™ — cabin air filtration
-- DRYCORE™ — pneumatic brake-system air drying
-- INTEKCORE™ — air-intake housing and sealing architecture
-- SYNTAPORE™ — diesel fuel filtration
-- TURBOCORE™ — approved turbine-style fuel conditioning and separation
-- SYNTRAX™ — lubrication filtration
-- NANOFORCE™ — hydraulic filtration
-- THERMACORE™ — coolant filtration
+- MACROCORE™ — engine air contamination control
+- MICROKAPPA™ — cabin air protection
+- DRYCORE™ — pneumatic brake-system air protection
+- INTEKCORE™ — controlled air-intake housing and filtration-system integration
+- SYNTAPORE™ — fuel contamination control and fuel-system protection
+- TURBOCORE™ — fuel-water separation for approved turbine-style applications
+- SYNTRAX™ — lubricant cleanliness and engine/component protection
+- NANOFORCE™ — hydraulic-fluid contamination control
+- THERMACORE™ — cooling-system cleanliness and component protection
 
 ## Specialized solutions
 
