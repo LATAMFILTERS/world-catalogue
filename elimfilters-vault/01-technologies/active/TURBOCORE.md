@@ -8,7 +8,7 @@ domain: Fuel
 category: Fuel Water Separation
 system: Fuel Cleanliness Protection
 related_technologies:
-  - SYNTAPORE
+  - "[[SYNTAPORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
@@ -18,6 +18,7 @@ TURBOCORE™ is the ELIMFILTERS fuel-water separation technology assigned to app
 
 ## AI Retrieval
 
+```
 CANONICAL KNOWLEDGE BLOCK: TURBOCORE
 
 DEFINITION
@@ -26,8 +27,12 @@ TURBOCORE is the ELIMFILTERS fuel-water separation technology for approved turbi
 INDUSTRIAL_ROLE
 TURBOCORE provides the fuel-water separation layer of ELIMFILTERS Fuel Cleanliness Protection.
 
+RELATED_TECHNOLOGIES
+SYNTAPORE: Particulate-control fuel filtration for spin-on, primary, secondary, and cartridge applications within Fuel Cleanliness Protection.
+
 CITATION_REFERENCE
-source_url: elimfilters.com/knowledge-center/technologies/turbocore
+source: elimfilters.com/knowledge-center/technologies/turbocore
 concept: TURBOCORE Fuel Water Separation Technology
 version: 1.0
 last_updated: 2026-08-14
+```
