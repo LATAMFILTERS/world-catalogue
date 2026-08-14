@@ -69,15 +69,15 @@ CREATE TABLE IF NOT EXISTS standards (
 );
 
 INSERT INTO technologies (code, name, system_domain, contamination_threat, protection_objective) VALUES
-('MACROCORE', 'MACROCORE™', 'Air Intake Protection', 'Airborne Particulate Contamination', 'Protect engines from airborne dust and particle ingestion'),
-('SYNTEPORE', 'SYNTEPORE™', 'Fuel Cleanliness Protection', 'Fuel-Borne Particulate Contamination', 'Protect fuel systems and injection components'),
-('SYNTRAX', 'SYNTRAX™', 'Lubrication Protection', 'Oil Contamination and Wear Particles', 'Protect bearings, lubrication circuits and rotating components'),
-('NANOFORCE', 'NANOFORCE™', 'Hydraulic Protection', 'Sub-Micron Hydraulic Contamination', 'Maintain hydraulic cleanliness and component reliability'),
-('HYDROCORE', 'HYDROCORE™', 'Fuel Water Separation', 'Water Contamination', 'Protect fuel systems from water-induced failure'),
-('THERMACORE', 'THERMACORE™', 'Cooling System Protection', 'Coolant Degradation', 'Maintain cooling system integrity and heat-transfer performance'),
-('MICROKAPPA', 'MICROKAPPA™', 'Cabin Environment Protection', 'Airborne Pollutants', 'Protect occupants and HVAC systems'),
-('DRYCORE', 'DRYCORE™', 'Compressed Air Protection', 'Moisture Contamination', 'Protect pneumatic and air brake systems'),
-('INTEKCORE', 'INTEKCORE™', 'Airflow Management', 'Airflow Restriction and Housing Failure', 'Maintain engineered air intake performance')
+('MACROCORE', 'MACROCOREï¿½', 'Air Intake Protection', 'Airborne Particulate Contamination', 'Protect engines from airborne dust and particle ingestion'),
+('SYNTAPORE', 'SYNTAPOREï¿½', 'Fuel Cleanliness Protection', 'Fuel-Borne Particulate Contamination', 'Protect fuel systems and injection components'),
+('SYNTRAX', 'SYNTRAXï¿½', 'Lubrication Protection', 'Oil Contamination and Wear Particles', 'Protect bearings, lubrication circuits and rotating components'),
+('NANOFORCE', 'NANOFORCEï¿½', 'Hydraulic Protection', 'Sub-Micron Hydraulic Contamination', 'Maintain hydraulic cleanliness and component reliability'),
+('TURBOCORE', 'TURBOCOREï¿½', 'Fuel Water Separation', 'Water Contamination', 'Protect fuel systems from water-induced failure'),
+('THERMACORE', 'THERMACOREï¿½', 'Cooling System Protection', 'Coolant Degradation', 'Maintain cooling system integrity and heat-transfer performance'),
+('MICROKAPPA', 'MICROKAPPAï¿½', 'Cabin Environment Protection', 'Airborne Pollutants', 'Protect occupants and HVAC systems'),
+('DRYCORE', 'DRYCOREï¿½', 'Compressed Air Protection', 'Moisture Contamination', 'Protect pneumatic and air brake systems'),
+('INTEKCORE', 'INTEKCOREï¿½', 'Airflow Management', 'Airflow Restriction and Housing Failure', 'Maintain engineered air intake performance')
 ON CONFLICT (code) DO NOTHING;
 
 INSERT INTO systems (code, name, description) VALUES

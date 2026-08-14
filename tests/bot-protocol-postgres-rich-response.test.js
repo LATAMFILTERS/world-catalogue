@@ -32,8 +32,8 @@ test('catalog database supports individual PG variables and catalogo_elimfilters
   assert.equal(config.source, 'PG_COMPONENTS');
 });
 
-test('fuel and water separator products use HYDROCORE technology when PostgreSQL has no explicit technology value', () => {
-  assert.equal(inferTechnology({ filter_type: 'Fuel Filter and Water Separator Cartridge' }), 'HYDROCORE™');
+test('fuel and water separator products use TURBOCORE technology when PostgreSQL has no explicit technology value', () => {
+  assert.equal(inferTechnology({ filter_type: 'Fuel Filter and Water Separator Cartridge' }), 'TURBOCORE™');
 });
 
 test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', () => {
@@ -45,7 +45,7 @@ test('validated PostgreSQL cross-reference returns a natural English answer with
         sku: 'ES91424',
         filter_type: 'fuel filter and water separator cartridge',
         description: 'Designed to remove water and harmful particles from fuel systems in John Deere agricultural and industrial equipment',
-        technology: 'HYDROCORE™'
+        technology: 'TURBOCORE™'
       }]
     }
   };
@@ -55,6 +55,6 @@ test('validated PostgreSQL cross-reference returns a natural English answer with
   assert.match(answer, /RE52987/);
   assert.match(answer, /ES91424/);
   assert.match(answer, /fuel filter and water separator cartridge/i);
-  assert.match(answer, /HYDROCORE™/);
+  assert.match(answer, /TURBOCORE™/);
   assert.match(answer, /asset protection/i);
 });

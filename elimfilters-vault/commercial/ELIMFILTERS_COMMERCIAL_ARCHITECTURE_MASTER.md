@@ -271,8 +271,8 @@ Each technology platform is engineered to address specific contamination mechani
 | MACROCORE™ | Air intake particulate capture | ISO 5011, SAE J726 |
 | SYNTRAX™ | Engine lubrication — synthetic media | ISO 16889, ISO 4406 |
 | NANOFORCE™ | Hydraulic cleanliness — sub-micron | ISO 16889, NFPA T2.14 |
-| SYNTEPORE™ | Fuel cleanliness — HPCR injector protection | ASTM D6304, ISO 12937 |
-| HYDROCORE™ | Fuel water separation | ASTM D6304 |
+| SYNTAPORE™ | Fuel cleanliness — HPCR injector protection | ASTM D6304, ISO 12937 |
+| TURBOCORE™ | Fuel water separation | ASTM D6304 |
 | TURBOCORE™ | Fuel three-stage protection | ISO 16332 |
 | THERMACORE™ | Cooling system SCA additive | — |
 | DRYCORE™ | Compressed air — pneumatic systems | ISO 8573-1/2/3 |

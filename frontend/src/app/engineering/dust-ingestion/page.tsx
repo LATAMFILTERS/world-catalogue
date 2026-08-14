@@ -319,10 +319,10 @@ function DustIngestionContent() {
                 href: '/engineering/technologies/TECH-INTEKCORE',
               },
               {
-                tech: 'SYNTEPORE™',
+                tech: 'SYNTAPORE™',
                 role: 'Humid environment intake',
                 description: 'All-synthetic intake filter media for high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation. Applied in marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
-                href: '/engineering/technologies/TECH-SYNTEPORE',
+                href: '/engineering/technologies/TECH-SYNTAPORE',
               },
             ].map((item) => (
               <Link key={item.tech} href={item.href} style={{ textDecoration: 'none' }}>
@@ -546,7 +546,7 @@ function DustIngestionContent() {
           },
           mentions: {
             standards: ['ISO 5011', 'SAE J1539'],
-            technologies: ['MACROCORE', 'INTEKCORE', 'SYNTEPORE'],
+            technologies: ['MACROCORE', 'INTEKCORE', 'SYNTAPORE'],
             contaminationModes: ['silica dust', 'abrasive wear', 'particle ingestion', 'blow-by contamination'],
             industries: ['Mining', 'Construction', 'Agriculture'],
           },

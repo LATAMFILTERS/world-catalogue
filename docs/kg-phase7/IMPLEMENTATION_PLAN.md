@@ -275,14 +275,14 @@ async function handleClass1(term, client) {
 
 ```javascript
 async function handleClass2(techNameRaw, client) {
-  // Resolve tech name to slug (handles SYNTAPORE → syntepore, INTAKCORE → intekcore)
+  // Resolve tech name to slug (handles SYNTAPORE → SYNTAPORE, INTAKCORE → intekcore)
   const TECH_NAME_TO_SLUG = {
     'NANOFORCE': 'nanoforce', 'MACROCORE': 'macrocore',
     'SYNTRAX': 'syntrax', 'SINTRAX': 'syntrax',
-    'SYNTEPORE': 'syntepore', 'SYNTAPORE': 'syntepore',
+    'SYNTAPORE': 'SYNTAPORE', 'SYNTAPORE': 'SYNTAPORE',
     'INTEKCORE': 'intekcore', 'INTAKCORE': 'intekcore',
     'MICROKAPPA': 'microkappa', 'DURATECH': 'duratech',
-    'AQUAGUARD': 'aquaguard', 'COOLTECH': 'cooltech',
+    'AQUAGUARD': 'aquaguard', 'THERMACORE': 'THERMACORE',
     'DRYCORE': 'drycore', 'GASULTRA': 'gasultra',
     'MARINECLEAN': 'marineclean', 'BLUECLEAN': 'blueclean',
   };
@@ -466,7 +466,7 @@ Class 1 queries (SKU/part number):
 Class 2 queries (technology):
   - "NANOFORCE"        → expect: hydraulic filters, all NANOFORCE
   - "macrocore filter" → expect: air filters, all MACROCORE
-  - "SYNTAPORE"        → expect: fuel filters (legacy name → syntepore)
+  - "SYNTAPORE"        → expect: fuel filters (legacy name → SYNTAPORE)
 
 Class 3 queries (system):
   - "hydraulic filter" → expect: hydraulic system products

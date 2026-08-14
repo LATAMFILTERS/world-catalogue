@@ -17,6 +17,6 @@ Product family for particulate control and cleanliness protection in diesel fuel
 
 ## Relationships
 
-- implements: `technology:syntepore`
+- implements: `technology:SYNTAPORE`
 - belongs_to_system: `system:fuel`
 - controls: `contaminant:solid-particles`

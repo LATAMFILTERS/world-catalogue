@@ -23,14 +23,14 @@
         "concept": "Dust Ingestion — Air Intake Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:a07552b71de8731f4289386e3198ca87e12d4aa984b750f690d069f9182de847"
+        "content_hash": "sha256:d7a0902eca41f637b4892ebc50deae2d2d62d29d34adf743b970e6b0a42fe1f6"
       },
       "canonical": {
         "definition": "Dust ingestion — engine contamination via the air intake path — is the leading cause of\npremature abrasive wear in off-highway diesel engines, occurring when ambient particulate\nbypasses or passes through the air filtration system and enters the combustion chamber.",
         "systems": "Air Intake; affected components: turbocharger bearings, piston rings, cylinder walls;\nprimary industries: Mining (EXTREME), Construction (HIGH), Agriculture (HIGH)",
         "failure_impact": "Fine silica and hardrock particles → abrasive wear on piston rings and cylinder walls\n→ blow-by increase → oil contamination → ring sticking → compression loss 10–25%\n→ engine overhaul interval 3,000–5,000 hours vs. 15,000–25,000 hours managed |\nOperational Impact: $21M–$60M+ per event at mining downtime rates ($180,000/hour)",
         "related_standards": "ISO 5011: Air filter efficiency and dust-holding capacity test |\nSAE J1539: Air intake contamination classification defining acceptable limits",
-        "related_technologies": "MACROCORE: 99.9%–99.98% efficiency PDG air filtration — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |\nSYNTEPORE: All-synthetic element for humid environments where cellulose media degrades",
+        "related_technologies": "MACROCORE: 99.9%–99.98% efficiency PDG air filtration — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |\nSYNTAPORE: All-synthetic element for humid environments where cellulose media degrades",
         "industrial_role": "Dust ingestion is the highest-frequency, highest-cost contamination event in mining and\nconstruction. It is a maintenance discipline failure as much as a product specification\nproblem — correct change interval compliance accounts for the majority of prevention."
       },
       "relationships": {
@@ -40,7 +40,7 @@
         ],
         "resolved_by_technologies": [
           "MACROCORE",
-          "SYNTEPORE",
+          "SYNTAPORE",
           "INTEKCORE"
         ],
         "affects_components": [
@@ -61,7 +61,7 @@
           "AGRICULTURE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/DUST_INGESTION.md"
+      "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
     },
     {
       "key": "ENGINE_OIL_CONTAMINATION",
@@ -127,7 +127,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+      "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
     },
     {
       "key": "FUEL_FILTER_PLUGGING",
@@ -150,15 +150,15 @@
         "concept": "Fuel Filter Plugging — Fuel System Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:4e0ee8e53861cf5ea0aed1a16047e055266469a3179276714d52da5a1d74b752"
+        "content_hash": "sha256:fb2517d29e3efd55edbf5633d1603c1b65fd6a542b92d6d60e2a42eec0655cde"
       },
       "canonical": {
         "definition": "Fuel filter plugging — premature blockage of diesel fuel filters by water contamination,\nmicrobial growth, and associated debris — is the most frequent fuel system maintenance\nevent in off-highway, marine, and stationary engine applications.",
         "systems": "Fuel; affected components: fuel filter elements, injector needles, high-pressure fuel pumps;\nprimary industries: Agriculture, Marine, Mining, Oil & Gas, Power Generation, Trucks/Fleets",
         "failure_impact": "Water contamination in diesel → microbial growth at fuel-water interface\n→ biofilm and debris plugging fuel filter → restricted fuel flow → injection pressure drop\n→ engine power loss or shutdown; water slug in common rail injectors (1,200–2,500 bar)\n→ hydraulic hammer erosion of injector needle seats → injector failure |\nOperational Impact: fuel filter life reduction from 500 hours to 50–100 hours under\nactive microbial contamination; injector service life 15,000 hours reduced to 3,000–6,000 hours",
         "related_standards": "ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel quality monitoring |\nISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring",
-        "related_technologies": "HYDROCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
-        "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform."
+        "related_technologies": "TURBOCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
+        "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the TURBOCORE technology platform."
       },
       "relationships": {
         "applicable_standards": [
@@ -166,7 +166,7 @@
           "ISO_12937"
         ],
         "resolved_by_technologies": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "recommended_product_families": [
           "FUEL_PRIMARY"
@@ -184,7 +184,7 @@
           "AUTOMOTIVE"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md"
+      "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md"
     },
     {
       "key": "HYDRAULIC_VALVE_FAILURE",
@@ -242,7 +242,7 @@
           "POWER_GENERATION"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/HYDRAULIC_VALVE_FAILURE.md"
+      "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
     },
     {
       "key": "OPERATOR_DUST_EXPOSURE",
@@ -300,7 +300,7 @@
           "WASTE_MUNICIPAL"
         ]
       },
-      "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+      "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
     }
   ]
 }

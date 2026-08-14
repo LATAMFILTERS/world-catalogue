@@ -41,10 +41,10 @@ Protection Source
 
 Examples:
 
-- MACROCORE™
-- SYNTEPORE™
-- SYNTRAX™
-- NANOFORCE™
+- MACROCOREï¿½
+- SYNTAPOREï¿½
+- SYNTRAXï¿½
+- NANOFORCEï¿½
 
 ---
 

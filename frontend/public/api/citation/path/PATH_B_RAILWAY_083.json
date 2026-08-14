@@ -29,14 +29,14 @@
           "concept": "Railway Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:ea5f012f3cb094f30f60e5d719e7722218f2f3a257c4fdfbdd47a021ac7a7874"
+          "content_hash": "sha256:9c819685d5595b9599a2f003022fa3bef941944e112d40ac774da40c8a68f0ba"
         },
         "canonical": {
           "definition": "Railway is a HIGH contamination exposure industrial category for diesel locomotive and maintenance-of-way equipment, characterised by extended high-load duty cycles generating elevated lube oil soot, ballast silica dust exposure creating operator respiratory risk, and overhaul economics where locomotive engine failure costs $500,000–$2,000,000 per event making contamination control the primary reliability investment.",
           "systems": "Diesel locomotive engine lube and air intake systems, fuel circuits on extended-service-interval railway equipment, hydraulic systems on rail-mounted cranes and MoW equipment, cab air supply systems on ballast maintenance vehicles",
           "failure_impact": "Lube oil particle contamination above ISO 4406 19/17/14 in locomotive engines → bearing journal abrasive wear → crankshaft bearing seizure → unplanned engine overhaul | Particle contamination accounts for 35–45% of unplanned locomotive engine failures | Operational Impact: $500,000–$2,000,000 per engine overhaul event; MoW operator RCS exposure above 0.1 mg/m³ OEL triggers occupational health enforcement and worker compensation liability.",
           "related_standards": "ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection",
-          "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTEPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
+          "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTAPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
           "industrial_role": "Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations."
         },
         "relationships": {
@@ -47,7 +47,7 @@
           ],
           "applicable_technologies": [
             "MACROCORE",
-            "SYNTEPORE",
+            "SYNTAPORE",
             "SYNTRAX",
             "INTEKCORE",
             "MICROKAPPA"
@@ -67,7 +67,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/RAILWAY.md"
+        "vault_path": "elimfilters-vault\\02-industries\\RAILWAY.md"
       }
     },
     {
@@ -130,7 +130,7 @@
             "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/OPERATOR_DUST_EXPOSURE.md"
+        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
@@ -175,7 +175,7 @@
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/CABIN_AIR_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
@@ -202,14 +202,14 @@
           "concept": "MICROKAPPA Cabin Air Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:c02b644691a5b1f5eda29aa4788626e91a88d58b4b8d732f4f85f01cb9d2b31b"
+          "content_hash": "sha256:1a4f23f5ab7fa87d411113d74b15c0405e709342896f952f4fbdf06b93832c9c"
         },
         "canonical": {
           "definition": "MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contaminants) that removes >95% of PM10 and >85% of PM2.5 particulate contamination from operator cab air supply in industrial equipment, protecting occupants from respirable crystalline silica, agricultural dust, diesel particulate matter, and chemical vapors.",
           "systems": "Operator cab HVAC air supply filtration in agricultural machinery, construction equipment, mining vehicles, railway locomotives, road transport trucks, and municipal refuse vehicles; available with activated carbon stage for chemical vapor co-removal",
           "failure_impact": "Cab air filtration below ISO 11155 PM10 efficiency in high-dust environments → operator respirable crystalline silica (RCS) exposure above occupational exposure limits (EU OEL: 0.1 mg/m³ RCS as quartz) → silicosis risk with cumulative exposure over multi-year operation | Short-term: diesel particulate matter and agricultural pesticide vapor exposure causing acute respiratory irritation | Operational impact: worker compensation liability, regulatory enforcement under EU Directive 2004/37/EC, and operator absenteeism from occupational respiratory disease.",
           "related_standards": "ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework",
-          "related_technologies": "SYNTEPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
+          "related_technologies": "SYNTAPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
           "industrial_role": "MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation."
         },
         "relationships": {
@@ -229,7 +229,7 @@
             "CABIN_AIR_CONTAMINATION"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MICROKAPPA.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],

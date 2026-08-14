@@ -40,7 +40,7 @@ RELATED_STANDARDS
 ISO 4406: Particle cleanliness codes maintained across all circuits covered by DURATECH kit | ISO 16889: Filter efficiency ratings applicable to kit components
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTEPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)
+MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTAPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)
 
 INDUSTRIAL_ROLE
 DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance.

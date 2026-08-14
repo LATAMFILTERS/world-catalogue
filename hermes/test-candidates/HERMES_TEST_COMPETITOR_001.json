@@ -13,7 +13,7 @@
   "confidence": 0.95,
   "evidence_level": "PRIMARY",
   "claim_scope": "SOURCE_REPORTED",
-  "affected_entities": ["COMPETITIVE_INTELLIGENCE", "MACROCORE", "HYDROCORE"],
+  "affected_entities": ["COMPETITIVE_INTELLIGENCE", "MACROCORE", "TURBOCORE"],
   "proposed_action": "Create an approved intelligence record after review and compare documented claims with ELIMFILTERS coverage.",
   "proposed_target_folder": "14-intelligence",
   "proposed_target_entity": "COMPETITOR_TEST_TECH_2026",

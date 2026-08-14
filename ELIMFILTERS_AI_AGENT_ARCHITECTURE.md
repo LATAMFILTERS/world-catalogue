@@ -194,7 +194,7 @@ The following categories are within the agent's authority. All answers must be t
 ### 2.4 ELIMFILTERS Technology Explanations
 
 - "What is MACROCORE and what contamination does it control?"
-- "What is the difference between NANOFORCE and SYNTEPORE?"
+- "What is the difference between NANOFORCE and SYNTAPORE?"
 - "Which ELIMFILTERS technology should I use for a high-pressure hydraulic system?"
 - "What is SYNTRAX designed for?"
 - "How does AQUAGUARD protect fuel systems from water contamination?"
@@ -504,7 +504,7 @@ The agent has four distinct knowledge sources. Each has a defined scope, access 
 **Coverage:** 45 entities, 505 directed edges, 97 traversal paths
 
 **What it contains:**
-- Technology entities (MACROCORE, NANOFORCE, SYNTRAX, SYNTEPORE, AQUAGUARD, DURATECH, and others)
+- Technology entities (MACROCORE, NANOFORCE, SYNTRAX, SYNTAPORE, AQUAGUARD, DURATECH, and others)
 - Standard entities (ISO 16889, ISO 4406, SAE J1539, ASTM D6304, ISO 11155, ISO 8573, and others)
 - Contamination mode entities (DUST_INGESTION, ENGINE_OIL_CONTAMINATION, FUEL_FILTER_PLUGGING, HYDRAULIC_VALVE_FAILURE, OPERATOR_DUST_EXPOSURE)
 - Industry entities (AGRICULTURE, AUTOMOTIVE, BUS_COACH, CONSTRUCTION, MARINE, MINING, OIL_GAS, POWER_GENERATION, RAILWAY, TRUCKS_FLEETS, WASTE_MUNICIPAL)

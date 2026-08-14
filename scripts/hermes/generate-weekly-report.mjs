@@ -138,7 +138,7 @@ lines.push(
   `- Duplicates suppressed: ${packageData.totals.duplicates_suppressed}`,
   `- Invalid candidates: ${packageData.totals.invalid}`,
   `- Needs additional research: ${packageData.totals.needs_research}`, '',
-  '> This report is review-only. It performs no writes to Obsidian canonical folders, PostgreSQL, pgvector, Part Search, or unified-data.ts.', ''
+  '> This report is review-only. It performs no writes to Obsidian canonical folders, PostgreSQL, pgvector, Part Search, or legacy catalogue layer.ts.', ''
 );
 if (packageData.source_collection) {
   const sc = packageData.source_collection;

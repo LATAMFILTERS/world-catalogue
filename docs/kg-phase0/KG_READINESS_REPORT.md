@@ -50,7 +50,7 @@ The ELIMFILTERS catalog and codebase are ready for KG Phase 1 (schema creation).
 ### 2.1 Verified Clean (from code analysis)
 | Item | Status |
 |------|--------|
-| Technology normalization rules | ✅ Ready (SINTRAX→SYNTRAX, SYNTAPORE→SYNTEPORE in code) |
+| Technology normalization rules | ✅ Ready (SINTRAX→SYNTRAX, SYNTAPORE→SYNTAPORE in code) |
 | Filter type vocabulary | ✅ 15 known values + mapping to 6 kg_systems slugs |
 | Security (codigo_base) | ✅ Fixed in all public endpoints |
 | SKU prefix pattern | ✅ EA1/ED4/EH6/EL8/EM9/ES9/ET9/EC1/EF9/EW7 documented |
@@ -75,7 +75,7 @@ The ELIMFILTERS catalog and codebase are ready for KG Phase 1 (schema creation).
 | SYNTRAX/NANOFORCE category swap in knowledge-architecture.ts | 🔴 CRITICAL | TS swaps hydraulic/lube. KG must use DB. |
 | Only 6 of 13 technologies in knowledge-architecture.ts | 🟡 MEDIUM | KG will add all 13 — TS is client of KG, not source |
 | SINTRAX alias for SYNTRAX in DB | 🟡 MEDIUM | Handled in server.js — must apply on KG seed |
-| SYNTAPORE deprecated name in DB | 🟡 MEDIUM | Map to SYNTEPORE on seed |
+| SYNTAPORE deprecated name in DB | 🟡 MEDIUM | Map to SYNTAPORE on seed |
 | Equipment applications ~50% populated | 🟡 MEDIUM | scrape_equipment.py run in progress |
 | filter_type = NULL for some products | 🟢 LOW | Products won't get kg_systems assignment |
 | JSONB format inconsistency (4 variants) | 🟡 MEDIUM | Parsers handle all variants |
@@ -244,7 +244,7 @@ node scripts/audit-catalog.js  # On Render Shell
 ### Phase 3 — Product Links (2-3 hours)
 - `kg_product_systems` from filter_type mapping (see FILTER_TYPE_MAPPING.md)
 - `kg_product_technologies` from technology column (see TECHNOLOGY_AUDIT.md)
-- Handle SINTRAX→SYNTRAX and SYNTAPORE→SYNTEPORE normalization
+- Handle SINTRAX→SYNTRAX and SYNTAPORE→SYNTAPORE normalization
 
 ### Phase 4 — Equipment (4-6 hours)
 - Extract unique manufacturers from equipment_applications JSONB
@@ -358,7 +358,7 @@ kg_canonical_blocks         -- machine-readable definitions for AI citation
 3. SYNTRAX → Lube Oil (NOT Hydraulic)
 4. NANOFORCE → Hydraulic (NOT Lube Oil)
 5. SINTRAX maps to `syntrax` slug
-6. SYNTAPORE maps to `syntepore` slug
+6. SYNTAPORE maps to `SYNTAPORE` slug
 7. knowledge-architecture.ts is a KG CLIENT after Phase 8 (not source of truth)
 8. DB (`elimfilters_catalog`) is the product source of truth for Phase 3-5
 9. All content must follow PROHIBITED/REQUIRED language rules (SEMANTIC_RULES_REPORT.md)

@@ -13,10 +13,10 @@
 |---|-----|------|------------|-------------|------------------|-------|------|---------------|----------------------|---------------------------|
 | 1 | EL83400 | oil | SYNTRAX™ | 52.00 | 76.00 | M14 x 1.5 | HEAVY_DUTY | spin_on | size_quantile_0 (mínimo) | 3,952 |
 | 2 | EL80710 | oil | SYNTRAX™ | 95.00 | 94.00 | 1-12 UN | HEAVY_DUTY | spin_on | size_quantile_10 | 8,930 |
-| 3 | EF91127 | fuel | SYNTEPORE™ | 132.20 | 93.00 | 15/16-16 UN | HEAVY_DUTY | spin_on | size_quantile_22 | 12,294.6 |
+| 3 | EF91127 | fuel | SYNTAPORE™ | 132.20 | 93.00 | 15/16-16 UN | HEAVY_DUTY | spin_on | size_quantile_22 | 12,294.6 |
 | 4 | EH66919 | hydraulic | NANOFORCE™ | 146.81 | 92.96 | 1 1/2-16 UN | HEAVY_DUTY | spin_on | size_quantile_35 | 13,647.5 |
-| 5 | EF97440 | fuel | SYNTEPORE™ | 174.00 | 93.00 | 1-14 UN | HEAVY_DUTY | spin_on | size_quantile_50 (mediana) | 16,182 |
-| 6 | EF93201 | fuel | SYNTEPORE™ | 219.30 | 93.00 | 1-14 UN | HEAVY_DUTY | spin_on | size_quantile_65 | 20,394.9 |
+| 5 | EF97440 | fuel | SYNTAPORE™ | 174.00 | 93.00 | 1-14 UN | HEAVY_DUTY | spin_on | size_quantile_50 (mediana) | 16,182 |
+| 6 | EF93201 | fuel | SYNTAPORE™ | 219.30 | 93.00 | 1-14 UN | HEAVY_DUTY | spin_on | size_quantile_65 | 20,394.9 |
 | 7 | EL81604 | oil | SYNTRAX™ | 232.00 | 108.00 | 1-12 UN | HEAVY_DUTY | spin_on | size_quantile_78 | 25,056 |
 | 8 | EH64737 | hydraulic | NANOFORCE™ | 296.00 | 116.40 | 1 3/8-12 UN | HEAVY_DUTY | spin_on | size_quantile_90 | 34,454.4 |
 | 9 | EH64721 | hydraulic | NANOFORCE™ | 367.90 | 119.40 | 1 3/4-12 UN | HEAVY_DUTY | spin_on | size_quantile_100 (máximo) | 43,927.3 |

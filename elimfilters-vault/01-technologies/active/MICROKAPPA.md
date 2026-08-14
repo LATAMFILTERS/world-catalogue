@@ -73,7 +73,7 @@ RELATED_STANDARDS
 ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework
 
 RELATED_TECHNOLOGIES
-SYNTEPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden
+SYNTAPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden
 
 INDUSTRIAL_ROLE
 MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation.

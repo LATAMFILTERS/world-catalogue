@@ -3,7 +3,7 @@
   "segment": "HD",
   "family": "fuel_filter",
   "construction": "spin_on",
-  "technology": "SYNTEPORE™",
+  "technology": "SYNTAPORE™",
   "technical_source": {
     "source": "world_catalogue.elimfilters_catalog",
     "verified": true,
@@ -879,7 +879,7 @@
       "Total Asset Protection",
       "EF97440",
       "fuel",
-      "SYNTEPORE™"
+      "SYNTAPORE™"
     ],
     "rear": [
       "E",

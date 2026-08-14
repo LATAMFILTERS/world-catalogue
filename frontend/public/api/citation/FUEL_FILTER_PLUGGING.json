@@ -19,15 +19,15 @@
     "concept": "Fuel Filter Plugging — Fuel System Problem",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:4e0ee8e53861cf5ea0aed1a16047e055266469a3179276714d52da5a1d74b752"
+    "content_hash": "sha256:fb2517d29e3efd55edbf5633d1603c1b65fd6a542b92d6d60e2a42eec0655cde"
   },
   "canonical": {
     "definition": "Fuel filter plugging — premature blockage of diesel fuel filters by water contamination,\nmicrobial growth, and associated debris — is the most frequent fuel system maintenance\nevent in off-highway, marine, and stationary engine applications.",
     "systems": "Fuel; affected components: fuel filter elements, injector needles, high-pressure fuel pumps;\nprimary industries: Agriculture, Marine, Mining, Oil & Gas, Power Generation, Trucks/Fleets",
     "failure_impact": "Water contamination in diesel → microbial growth at fuel-water interface\n→ biofilm and debris plugging fuel filter → restricted fuel flow → injection pressure drop\n→ engine power loss or shutdown; water slug in common rail injectors (1,200–2,500 bar)\n→ hydraulic hammer erosion of injector needle seats → injector failure |\nOperational Impact: fuel filter life reduction from 500 hours to 50–100 hours under\nactive microbial contamination; injector service life 15,000 hours reduced to 3,000–6,000 hours",
     "related_standards": "ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel quality monitoring |\nISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring",
-    "related_technologies": "HYDROCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
-    "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the HYDROCORE technology platform."
+    "related_technologies": "TURBOCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
+    "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the TURBOCORE technology platform."
   },
   "relationships": {
     "applicable_standards": [
@@ -35,7 +35,7 @@
       "ISO_12937"
     ],
     "resolved_by_technologies": [
-      "HYDROCORE"
+      "TURBOCORE"
     ],
     "recommended_product_families": [
       "FUEL_PRIMARY"
@@ -53,7 +53,7 @@
       "AUTOMOTIVE"
     ]
   },
-  "vault_path": "elimfilters-vault/07-problems/FUEL_FILTER_PLUGGING.md",
+  "vault_path": "elimfilters-vault\\07-problems\\FUEL_FILTER_PLUGGING.md",
   "_links": {
     "self": "/api/citation/FUEL_FILTER_PLUGGING.json",
     "type_index": "/api/citation/type/problem.json",
@@ -69,9 +69,9 @@
         "href": "/api/citation/ISO_12937.json"
       },
       {
-        "key": "HYDROCORE",
+        "key": "TURBOCORE",
         "relation": "resolved_by_technologies",
-        "href": "/api/citation/HYDROCORE.json"
+        "href": "/api/citation/TURBOCORE.json"
       },
       {
         "key": "FUEL_PRIMARY",

@@ -1,4 +1,4 @@
----
+﻿---
 type: technology
 status: active
 key: SYNTAPORE
@@ -21,10 +21,18 @@ source: docs/brand/TECHNOLOGY_REGISTRY.md
 
 SYNTAPORE™ is the ELIMFILTERS fuel-filtration technology assigned to spin-on, primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection.
 
-Its role is contamination control within the fuel system. Product-level filters are the means used to support the protection objective of the complete asset.
+## AI Retrieval
 
-## Relationships
+CANONICAL KNOWLEDGE BLOCK: SYNTAPORE
 
-- System: Fuel Cleanliness Protection
-- Related technology: TURBOCORE™ for approved turbine/FH/FG fuel-separation applications
-- Brand principle: The filter is the means. Asset protection is the objective.
+DEFINITION
+SYNTAPORE is the ELIMFILTERS fuel filtration technology for particulate contamination control in spin-on, primary, secondary, and cartridge fuel-filter applications within Fuel Cleanliness Protection.
+
+INDUSTRIAL_ROLE
+SYNTAPORE provides the particulate-control layer of ELIMFILTERS Fuel Cleanliness Protection.
+
+CITATION_REFERENCE
+source_url: elimfilters.com/knowledge-center/technologies/syntapore
+concept: SYNTAPORE Fuel Filtration Technology
+version: 1.0
+last_updated: 2026-08-14

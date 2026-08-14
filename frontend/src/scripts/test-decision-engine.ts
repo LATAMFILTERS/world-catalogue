@@ -36,7 +36,7 @@ const miningEnv: OperatingEnvironment = {
 const miningRec = evaluateAssetStrategy('ASSET-MINING-001', miningEnv);
 
 assert('Mining env triggers MACROCORE™ technology for dust', miningRec.recommendedTechnologies.includes('MACROCORE™'));
-assert('Mining env triggers SYNTEPORE™ technology for fuel', miningRec.recommendedTechnologies.includes('SYNTEPORE™'));
+assert('Mining env triggers SYNTAPORE™ technology for fuel', miningRec.recommendedTechnologies.includes('SYNTAPORE™'));
 assert('Mining env triggers MICROKAPPA™ technology for cabin air', miningRec.recommendedTechnologies.includes('MICROKAPPA™'));
 assert('Mining env triggers NANOFORCE™ technology for hydraulics', miningRec.recommendedTechnologies.includes('NANOFORCE™'));
 
@@ -60,7 +60,7 @@ const marineEnv: OperatingEnvironment = {
 
 const marineRec = evaluateAssetStrategy('ASSET-MARINE-001', marineEnv);
 
-assert('Marine env triggers HYDROCORE™ technology for water separation', marineRec.recommendedTechnologies.includes('HYDROCORE™'));
+assert('Marine env triggers TURBOCORE™ technology for water separation', marineRec.recommendedTechnologies.includes('TURBOCORE™'));
 assert('Marine env elevates Fuel System maintenance priority', marineRec.maintenanceStrategy.criticalSystems.includes('Fuel System'));
 assert('Traceability includes reference to Water/Fuel Risk Profile', marineRec.trace.some(t => t.reference.includes('Water/Fuel Risk Profile') || t.reference.includes('ISO-4406')));
 

@@ -36,8 +36,8 @@ const DATA: TechDetailData = {
     {
       number: '02',
       tag: 'FUEL CLEANLINESS',
-      title: 'Fuel Filter — HYDROCORE™ or SYNTEPORE™',
-      body: 'Fuel element selected to match injection system pressure specification. HYDROCORE™ for water-separation requirements; SYNTEPORE™ for HPCR systems requiring sub-4µm particle removal. Prevents injector stiction and tip erosion.',
+      title: 'Fuel Filter — TURBOCORE™ or SYNTAPORE™',
+      body: 'Fuel element selected to match injection system pressure specification. TURBOCORE™ for water-separation requirements; SYNTAPORE™ for HPCR systems requiring sub-4µm particle removal. Prevents injector stiction and tip erosion.',
       stat: '4µm',
       statLabel: 'HPCR Particle Target',
     },

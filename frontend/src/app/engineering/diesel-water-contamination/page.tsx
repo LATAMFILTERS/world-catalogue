@@ -250,7 +250,7 @@ function DieselWaterContaminationContent() {
               },
               {
                 code: 'ISO 16332',
-                scope: 'Fuel filter water separation efficiency test. Defines coalescing efficiency measurement methodology for fuel-water separators — the standard used to rate HYDROCORE™ and equivalent water separation filter elements.',
+                scope: 'Fuel filter water separation efficiency test. Defines coalescing efficiency measurement methodology for fuel-water separators — the standard used to rate TURBOCORE™ and equivalent water separation filter elements.',
               },
             ].map((std) => (
               <div key={std.code} style={{
@@ -293,16 +293,16 @@ function DieselWaterContaminationContent() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               {
-                tech: 'HYDROCORE™',
+                tech: 'TURBOCORE™',
                 role: 'Primary water separation',
                 description: 'Coalescing media that captures and separates free and emulsified water from diesel fuel before injector delivery. Primary defence against water contamination; applies ISO 16332 rated coalescing efficiency. Required on all fuel circuits where bulk storage condensation risk exists.',
-                href: '/engineering/technologies/TECH-HYDROCORE',
+                href: '/engineering/technologies/TECH-TURBOCORE',
               },
               {
-                tech: 'SYNTEPORE™',
+                tech: 'SYNTAPORE™',
                 role: 'High-pressure injector protection',
                 description: 'All-synthetic fuel filter media for high-pressure common rail (HPCR) systems. Protects injectors at 1,600–2,500 bar operating pressure from particle contamination produced by microbial biomass breakdown and corrosion debris after water contamination events.',
-                href: '/engineering/technologies/TECH-SYNTEPORE',
+                href: '/engineering/technologies/TECH-SYNTAPORE',
               },
               {
                 tech: 'TURBOCORE™',
@@ -416,8 +416,8 @@ function DieselWaterContaminationContent() {
             fontSize: '0.87rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7,
             marginBottom: '1.5rem', textAlign: 'justify',
           }}>
-            Product selection follows technology selection. HYDROCORE™ for water separation,
-            SYNTEPORE™ for HPCR injector protection, TURBOCORE™ for three-stage systems.
+            Product selection follows technology selection. TURBOCORE™ for water separation,
+            SYNTAPORE™ for HPCR injector protection, TURBOCORE™ for three-stage systems.
             Equipment make and model determine the correct element dimensions, thread specification,
             and bypass pressure rating.
           </p>
@@ -532,7 +532,7 @@ function DieselWaterContaminationContent() {
           },
           mentions: {
             standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-            technologies: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+            technologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE'],
             contaminationModes: ['water ingress', 'microbial growth', 'filter plugging', 'injector erosion'],
           },
           url: 'https://elimfilters.com/engineering/diesel-water-contamination',

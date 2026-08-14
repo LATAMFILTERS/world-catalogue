@@ -14,7 +14,7 @@
     {
       "number": 3,
       "question": "¿Cuál es el impacto real del agua en combustible diésel?",
-      "answer": "ASTM D6304 mide agua en combustible. Problemas: (1) Corrosión: agua causa oxidación de tanques (0.1% agua = 5-10% aceleración corrosión). (2) Microbios: agua >500 ppm permite crecimiento bacteriano/fúngico, reduciendo vida de combustible 50-70%. (3) Injector stiction: agua causa depósitos en inyectores HPCR, pérdida eficiencia 8-12%, aumento consumo combustible. Solución: separador agua-combustible (HYDROCORE) reduce agua a <50 ppm, protege inversión $50K-200K en motor."
+      "answer": "ASTM D6304 mide agua en combustible. Problemas: (1) Corrosión: agua causa oxidación de tanques (0.1% agua = 5-10% aceleración corrosión). (2) Microbios: agua >500 ppm permite crecimiento bacteriano/fúngico, reduciendo vida de combustible 50-70%. (3) Injector stiction: agua causa depósitos en inyectores HPCR, pérdida eficiencia 8-12%, aumento consumo combustible. Solución: separador agua-combustible (TURBOCORE) reduce agua a <50 ppm, protege inversión $50K-200K en motor."
     },
     {
       "number": 4,

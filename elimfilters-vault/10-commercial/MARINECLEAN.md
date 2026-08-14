@@ -40,7 +40,7 @@ RELATED_STANDARDS
 IMO marine equipment certification requirements | ISO 16889: Filter efficiency applicable to marine lube and hydraulic circuits | ASTM D6304: Water content testing for marine diesel fuel
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Marine engine lube oil filtration | HYDROCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTEPORE: HPCR marine diesel fuel filtration
+SYNTRAX: Marine engine lube oil filtration | TURBOCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTAPORE: HPCR marine diesel fuel filtration
 
 INDUSTRIAL_ROLE
 MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations.

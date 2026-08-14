@@ -45,7 +45,7 @@ Technology is engineered protection.
 
 # Official Technology Platforms
 
-## MACROCORE™
+## MACROCOREï¿½
 
 Mission:
 
@@ -57,7 +57,7 @@ Airborne Particulate Contamination
 
 ---
 
-## SYNTEPORE™
+## SYNTAPOREï¿½
 
 Mission:
 
@@ -69,7 +69,7 @@ Fuel-Borne Particulate Contamination
 
 ---
 
-## SYNTRAX™
+## SYNTRAXï¿½
 
 Mission:
 
@@ -81,7 +81,7 @@ Oil Contamination
 
 ---
 
-## NANOFORCE™
+## NANOFORCEï¿½
 
 Mission:
 
@@ -93,7 +93,7 @@ Sub-Micron Hydraulic Contamination
 
 ---
 
-## HYDROCORE™
+## TURBOCOREï¿½
 
 Mission:
 
@@ -105,7 +105,7 @@ Water Contamination
 
 ---
 
-## THERMACORE™
+## THERMACOREï¿½
 
 Mission:
 
@@ -117,7 +117,7 @@ Coolant Degradation
 
 ---
 
-## MICROKAPPA™
+## MICROKAPPAï¿½
 
 Mission:
 
@@ -129,7 +129,7 @@ Airborne Pollutants
 
 ---
 
-## DRYCORE™
+## DRYCOREï¿½
 
 Mission:
 
@@ -141,7 +141,7 @@ Moisture Contamination
 
 ---
 
-## INTEKCORE™
+## INTEKCOREï¿½
 
 Mission:
 

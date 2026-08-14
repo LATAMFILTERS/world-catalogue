@@ -226,7 +226,7 @@ export default function FleetOptimizationHub() {
             color: 'rgba(255,255,255,0.68)',
             textAlign: 'justify',
           }}>
-            Fleet Optimization sits at the operational apex of ELIMFILTERS Knowledge System. The hierarchy flows: <strong>Contamination</strong> (root cause) → <strong>Asset Degradation</strong> (impact) → <strong>Standards & Measurement</strong> (assessment via ISO 4406, ISO 16889, ASTM D6304) → <strong>Protection Technologies</strong> (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE) → <strong>Product Implementation</strong> (specific filters and systems) → <strong>Fleet Optimization</strong> (operational strategy). Fleet Optimization pages translate technical knowledge into business outcomes: extend equipment life, reduce failures, lower total cost of ownership.
+            Fleet Optimization sits at the operational apex of ELIMFILTERS Knowledge System. The hierarchy flows: <strong>Contamination</strong> (root cause) → <strong>Asset Degradation</strong> (impact) → <strong>Standards & Measurement</strong> (assessment via ISO 4406, ISO 16889, ASTM D6304) → <strong>Protection Technologies</strong> (MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE) → <strong>Product Implementation</strong> (specific filters and systems) → <strong>Fleet Optimization</strong> (operational strategy). Fleet Optimization pages translate technical knowledge into business outcomes: extend equipment life, reduce failures, lower total cost of ownership.
           </p>
         </motion.section>
       </div>

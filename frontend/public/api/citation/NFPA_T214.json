@@ -45,7 +45,7 @@
       "HYDRAULIC_CONTAMINATION"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md",
+  "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md",
   "_links": {
     "self": "/api/citation/NFPA_T214.json",
     "type_index": "/api/citation/type/standard.json",

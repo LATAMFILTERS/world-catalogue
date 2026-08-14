@@ -16,7 +16,7 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[HYDROCORE]]"
+  - "[[TURBOCORE]]"
   - "[[INTEKCORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -57,7 +57,7 @@ The seasonal operating pattern of agricultural equipment creates compounding con
 - [[MACROCORE|MACROCORE — Primary air intake particle capture for combines and tractors operating in high-dust harvest environments]]
 - [[NANOFORCE|NANOFORCE — Sub-micron lube oil polishing for engine protection in high-contamination seasonal operation]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration maintaining ISO 4406 16/14/11 in tractor and harvester engine lube circuits]]
-- [[HYDROCORE|HYDROCORE — Hydraulic circuit filtration for combine harvester hydraulic systems exposed to crop debris and dust]]
+- [[TURBOCORE|TURBOCORE — Hydraulic circuit filtration for combine harvester hydraulic systems exposed to crop debris and dust]]
 - [[INTEKCORE|INTEKCORE — Zero-bypass radial seal housing for air intake systems on combines and tractors with frequent filter service intervals]]
 
 ### Applicable Standards
@@ -87,7 +87,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method
 
 RELATED_TECHNOLOGIES
-MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | HYDROCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation
+MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | TURBOCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation
 
 INDUSTRIAL_ROLE
 Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime.

@@ -36,7 +36,7 @@ SELECT COUNT(*) AS product_count FROM elimfilters_catalog;
 -- Expected: 4622
 
 SELECT COUNT(DISTINCT technology) AS distinct_technologies FROM elimfilters_catalog;
--- Expected: 9 (NANOFORCE™, MACROCORE™, SYNTAPORE™, SYNTRAX™, INTAKCORE™, MICROKAPPA™, COOLTECH™, AQUAGUARD™, DRYCORE™)
+-- Expected: 9 (NANOFORCE™, MACROCORE™, SYNTAPORE™, SYNTRAX™, INTAKCORE™, MICROKAPPA™, THERMACORE™, AQUAGUARD™, DRYCORE™)
 ```
 
 ---

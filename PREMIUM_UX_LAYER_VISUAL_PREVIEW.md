@@ -341,7 +341,7 @@ SCROLL POSITION: Exits pinned zone + 100px
 [Prose narrative section]
 
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ MACROCORE™      │ │ SYNTEPORE™      │ │ INTEKCORE™      │
+│ MACROCORE™      │ │ SYNTAPORE™      │ │ INTEKCORE™      │
 │ Air Intake      │ │ Air Intake      │ │ Air Intake      │
 │ [description]   │ │ [description]   │ │ [description]   │
 │ [feature pills] │ │ [feature pills] │ │ [feature pills] │
@@ -399,7 +399,7 @@ SCROLL POSITION: Exits pinned zone + 100px
           ┌─────────────────────────┐  ← card 2 (partially visible)
           │  ░░░░░░░░░░░░░░░░░░░░  │
           │  [Next technology image]│
-          │  SYNTEPORE™            │
+          │  SYNTAPORE™            │
           └─────────────────────────┘
                     ┌──────────────┐  ← card 3 (edge hint)
                     │  ...         │
@@ -420,7 +420,7 @@ SCROLL POSITION: Exits pinned zone + 100px
 - MICROKAPPA: Human-scale — clean white cabin air filter against dark background
 - DRYCORE: Compressed air flowing through dryer element — condensate visible
 - DURATECH: Exploded view of high-capacity element construction
-- COOLTECH: Cross-section showing coolant filter media with deposit capture
+- THERMACORE: Cross-section showing coolant filter media with deposit capture
 - INTEKCORE: Side-by-side with MACROCORE to show the composite distinction
 
 ---

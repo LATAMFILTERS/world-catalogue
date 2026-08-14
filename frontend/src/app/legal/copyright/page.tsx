@@ -12,7 +12,7 @@ const SECTIONS = [
     title: '1. Ownership of Content',
     body: `All content published on ELIMFILTERS digital platforms — including but not limited to technical documentation, Knowledge System articles, filtration system architecture descriptions, product specifications, contamination analysis, industrial standards interpretations, proprietary technology descriptions, imagery, diagrams, code, and data structures — is the exclusive intellectual property of ELIMFILTERS or its licensors.
 
-Proprietary technology names including MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTEPORE™, SYNTRAX™, NANOFORCE™, HYDROCORE™, THERMACORE™, DURATECH™, and MARINECLEAN™ are trademarks of ELIMFILTERS. These marks may not be used without express written permission.`,
+Proprietary technology names including MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, SYNTRAX™, NANOFORCE™, TURBOCORE™, THERMACORE™, DURATECH™, and MARINECLEAN™ are trademarks of ELIMFILTERS. These marks may not be used without express written permission.`,
   },
   {
     title: '2. Permitted Uses',

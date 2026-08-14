@@ -324,10 +324,10 @@ function HydraulicContaminationContent() {
                 mechanism: 'Particle contamination — bulk load',
               },
               {
-                tech: 'HYDROCORE™',
+                tech: 'TURBOCORE™',
                 role: 'Water separation',
                 description: 'Coalescing media for free and emulsified water removal from hydraulic fluid. Prevents water-accelerated fluid oxidation and varnish precursor formation. Applied in reservoir return-line housings.',
-                href: '/engineering/technologies/TECH-HYDROCORE',
+                href: '/engineering/technologies/TECH-TURBOCORE',
                 mechanism: 'Water contamination',
               },
               {
@@ -571,7 +571,7 @@ function HydraulicContaminationContent() {
           },
           mentions: {
             standards: ['ISO 4406', 'ISO 16889', 'NFPA T2.14', 'DIN 51524'],
-            technologies: ['NANOFORCE', 'SYNTRAX', 'HYDROCORE', 'MICROKAPPA'],
+            technologies: ['NANOFORCE', 'SYNTRAX', 'TURBOCORE', 'MICROKAPPA'],
             contaminationModes: ['particle wear', 'silt contamination', 'varnish formation', 'water ingress'],
           },
           url: 'https://elimfilters.com/engineering/hydraulic-contamination',

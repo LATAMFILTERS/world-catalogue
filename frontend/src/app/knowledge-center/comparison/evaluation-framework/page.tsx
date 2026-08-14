@@ -33,7 +33,7 @@ export default function EvaluationFrameworkPage() {
         'Is bypass pressure ≥filter collapse rating?',
         'Does bypass threshold prevent uncontrolled contamination ingestion?'
       ],
-      example: 'Fuel filter SYNTEPORE: 3.0 bar bypass protects injectors from starvation during cold engine start'
+      example: 'Fuel filter SYNTAPORE: 3.0 bar bypass protects injectors from starvation during cold engine start'
     },
     {
       step: 4,

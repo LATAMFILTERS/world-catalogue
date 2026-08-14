@@ -53,7 +53,7 @@ export const FAILURE_KNOWLEDGE: Record<FailureKnowledgeKey, FailureKnowledgeProf
     definition: 'Diesel water contamination is the presence of free, emulsified, or dissolved water in fuel storage, transfer, and injection systems.',
     mechanism: 'Water promotes corrosion, reduces lubricity, supports microbial growth, and creates erosion or stiction risk inside high-pressure injection components.',
     operationalImpact: 'Fuel quality degrades, injectors lose metering precision, combustion quality declines, and the probability of pump and injector failure increases.',
-    controlStrategy: 'Control storage and transfer practices, drain collected water, monitor fuel condition, and use staged particle filtration with HYDROCORE™ separation or TURBOCORE™ Turbine FH/FG systems according to the application.',
+    controlStrategy: 'Control storage and transfer practices, drain collected water, monitor fuel condition, and use staged particle filtration with TURBOCORE™ separation or TURBOCORE™ Turbine FH/FG systems according to the application.',
     ...relationships('diesel-water'),
   },
 };

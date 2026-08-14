@@ -1107,16 +1107,16 @@
       "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_092.json"
     },
     {
-      "path_id": "PATH_C_HYDROCORE_093",
+      "path_id": "PATH_C_TURBOCORE_093",
       "path_type": "C",
-      "entry_node": "HYDROCORE",
+      "entry_node": "TURBOCORE",
       "entry_type": "technology",
       "industry": null,
       "valid": true,
       "terminal_product_families": [
         "FUEL_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_HYDROCORE_093.json"
+      "href": "/api/citation/path/PATH_C_TURBOCORE_093.json"
     },
     {
       "path_id": "PATH_C_INTEKCORE_094",
@@ -1165,14 +1165,14 @@
       "href": "/api/citation/path/PATH_C_NANOFORCE_097.json"
     },
     {
-      "path_id": "PATH_C_SYNTEPORE_098",
+      "path_id": "PATH_C_SYNTAPORE_098",
       "path_type": "C",
-      "entry_node": "SYNTEPORE",
+      "entry_node": "SYNTAPORE",
       "entry_type": "technology",
       "industry": null,
       "valid": false,
       "terminal_product_families": [],
-      "href": "/api/citation/path/PATH_C_SYNTEPORE_098.json"
+      "href": "/api/citation/path/PATH_C_SYNTAPORE_098.json"
     },
     {
       "path_id": "PATH_C_SYNTRAX_099",

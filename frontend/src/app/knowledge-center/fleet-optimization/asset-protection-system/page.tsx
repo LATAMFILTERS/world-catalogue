@@ -172,7 +172,7 @@ export default function AssetProtectionSystemPage() {
                 threat: 'Water + particles damaging HPCR injectors',
                 standard: 'ASTM D6304 / ISO 12937',
                 impact: 'Injector corrosion + stiction, $800–1200 per injector failure',
-                solution: 'SYNTEPORE + HYDROCORE (10 µm + water separator + 4 µm fine filter)',
+                solution: 'SYNTAPORE + TURBOCORE (10 µm + water separator + 4 µm fine filter)',
               },
               {
                 domain: 'Lube Oil Protection',

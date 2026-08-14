@@ -87,7 +87,7 @@ RELATED_STANDARDS
 ISO 4406: Three-number cleanliness code; NANOFORCE targets 15/13/10 by removing sub-micron particle counts across ≥4/≥6/≥14 µm thresholds | ISO 16889: Multi-pass Beta ratio test; NANOFORCE rated Beta(x[c]) ≥ 1000 at 5 µm absolute
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | HYDROCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits
+SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | TURBOCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits
 
 INDUSTRIAL_ROLE
 NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%.

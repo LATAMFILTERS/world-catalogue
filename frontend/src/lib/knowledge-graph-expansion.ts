@@ -59,14 +59,14 @@ const concepts: readonly ExpandedConcept[] = [
     kind: 'protection-strategy',
     name: 'Depth Filtration',
     description: 'A contamination-control strategy that captures particles through the thickness of the media rather than only at the surface.',
-    relatedEntityIds: ['technology:macrocore', 'technology:syntrax', 'technology:nanoforce', 'technology:syntepore'],
+    relatedEntityIds: ['technology:macrocore', 'technology:syntrax', 'technology:nanoforce', 'technology:syntapore'],
   },
   {
     id: 'protection-strategy:water-separation',
     kind: 'protection-strategy',
     name: 'Fuel-Water Separation',
     description: 'A fuel protection strategy that separates and removes water before it reaches injection equipment.',
-    relatedEntityIds: ['technology:hydrocore', 'technology:turbocore', 'failure:diesel-water'],
+    relatedEntityIds: ['technology:turbocore', 'technology:turbocore', 'failure:diesel-water'],
   },
   {
     id: 'maintenance-objective:extended-service-interval',

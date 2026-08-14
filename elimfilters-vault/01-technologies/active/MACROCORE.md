@@ -113,7 +113,7 @@ intake filters | SAE J1539: Air intake contamination classification for diesel e
 ISO 16889: Multi-pass filter test and Beta ratio classification (supporting standard)
 
 RELATED_TECHNOLOGIES
-SYNTEPORE: All-synthetic air intake variant for high-humidity and marine environments |
+SYNTAPORE: All-synthetic air intake variant for high-humidity and marine environments |
 INTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events
 
 INDUSTRIAL_ROLE

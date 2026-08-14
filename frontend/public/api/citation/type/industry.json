@@ -22,14 +22,14 @@
         "concept": "Agriculture Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:5fc8f26a4b47c40efb2be4b564299e9dda6aebfdb4ba730fffa72be173a2bd78"
+        "content_hash": "sha256:ab8cc0350447447076bfb387567e25f01804963c43733a80e6cb873bb56be194"
       },
       "canonical": {
         "definition": "Agriculture is a HIGH contamination exposure industrial category for diesel-powered equipment, characterized by airborne dust concentrations above 100 mg/m³ during harvest operations, outdoor fuel storage water contamination risks, and seasonal intensive-operation periods that accumulate high contamination loads without daily maintenance oversight.",
         "systems": "Air intake filtration, lube oil filtration, hydraulic filtration, fuel filtration across combines, tractors, and harvesters",
         "failure_impact": "Harvest-season dust ingestion >100 mg/m³ with degraded intake filtration → silica particle entry into combustion chambers → piston ring and cylinder bore abrasive wear → compression loss 10–25%; engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours | Compounded by water-contaminated diesel fuel → injector stiction and corrosion → fuel system failure.",
         "related_standards": "ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method",
-        "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | HYDROCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
+        "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | TURBOCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
         "industrial_role": "Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime."
       },
       "relationships": {
@@ -41,7 +41,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "INTEKCORE"
         ],
         "applicable_standards": [
@@ -63,7 +63,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/AGRICULTURE.md"
+      "vault_path": "elimfilters-vault\\02-industries\\AGRICULTURE.md"
     },
     {
       "key": "AUTOMOTIVE",
@@ -119,7 +119,7 @@
           "FUEL_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/AUTOMOTIVE.md"
+      "vault_path": "elimfilters-vault\\02-industries\\AUTOMOTIVE.md"
     },
     {
       "key": "BUS_COACH",
@@ -140,14 +140,14 @@
         "concept": "Bus & Coach Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:53dae340f1c38575d34dd3d8c0489748f720ea17ace99a281161725454dbdae6"
+        "content_hash": "sha256:e841fc603d3dc14966c4b9077e77c3eee946c2ed53c75c1edb87d7b8d519b882"
       },
       "canonical": {
         "definition": "Bus & Coach is a MODERATE contamination exposure industrial category for public and passenger transport vehicle operations, with contamination risk driven by high-cycle urban stop-start engine soot loading, depot fuel tank condensation water accumulation, and passenger cabin PM2.5 exposure in traffic-congested urban corridors where ambient diesel particulate concentrations regularly exceed WHO 24-hour guidelines of 15 µg/m³.",
         "systems": "Urban transit bus diesel engine lube oil circuits, bulk depot fuel storage and vehicle fuel supply systems, bus and coach passenger compartment and driver cab HVAC filtration",
         "failure_impact": "Stop-start urban operation soot loading in bus lube oil above ISO 4406 19/17/14 → accelerated bearing journal wear → engine seizure → unplanned engine replacement | Engine replacement cost: $40,000–$80,000 per vehicle | Depot fuel condensation above 200 mg/kg total water → injector tip cavitation erosion across common-rail fleet → injector replacement $800–$4,000/unit across fleet size | Unfiltered passenger cabin PM2.5 at 50–150 µg/m³ urban ambient → 35–50% of routes expose passengers above WHO 15 µg/m³ guideline | Operational Impact: cumulative respiratory health liability and schedule disruption costs exceed filtration investment by order of magnitude in large transit fleets.",
         "related_standards": "ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification",
-        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection",
+        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection",
         "industrial_role": "Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory."
       },
       "relationships": {
@@ -159,7 +159,7 @@
         "applicable_technologies": [
           "MACROCORE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -177,7 +177,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
+      "vault_path": "elimfilters-vault\\02-industries\\BUS_COACH.md"
     },
     {
       "key": "CONSTRUCTION",
@@ -200,14 +200,14 @@
         "concept": "Construction Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:769a5e1daeb005779b2c28a0b465fd59ece7fd8576604f771cd7288d17c3d5fe"
+        "content_hash": "sha256:795ee7f8f7146d4907981b04e6b2bc14ffddee7fb7948b68cb8f21bebb55ca34"
       },
       "canonical": {
         "definition": "Construction is a HIGH contamination exposure industrial category for heavy equipment, with concurrent silica-bearing airborne dust, hydraulic system wear particle generation, diesel fuel water contamination, and operator cabin air quality hazards all simultaneously present in excavator, loader, bulldozer, and compactor operations.",
         "systems": "Air intake filtration, hydraulic circuit filtration, lube oil filtration, fuel filtration, cabin air filtration across all heavy construction equipment categories",
         "failure_impact": "Hydraulic contamination above ISO 4406 17/15/12 → proportional valve spool sticktion and internal leakage → machine productivity loss and valve replacement ($5,000–$25,000 per valve) | Air intake failure → silica dust ingestion → piston ring abrasive wear → engine overhaul at 3,000–5,000 hours | Cabin air contamination above PM10 limits → operator chronic respiratory exposure at active earthmoving sites.",
         "related_standards": "SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles",
-        "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | HYDROCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
+        "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | TURBOCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
         "industrial_role": "Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs."
       },
       "relationships": {
@@ -221,7 +221,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "MICROKAPPA",
           "INTEKCORE"
         ],
@@ -245,7 +245,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md"
+      "vault_path": "elimfilters-vault\\02-industries\\CONSTRUCTION.md"
     },
     {
       "key": "MANUFACTURING",
@@ -307,7 +307,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/MANUFACTURING.md"
+      "vault_path": "elimfilters-vault\\02-industries\\MANUFACTURING.md"
     },
     {
       "key": "MARINE",
@@ -328,15 +328,15 @@
         "concept": "Marine Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:0d4160bcf04fe44a74a4a2675edd8bc05500734dffba288781ff3abe0ad17a57"
+        "content_hash": "sha256:d18811e37a68e52edfb46432dc5cb3f2cce2b6f000ceb507cb8057419adc24ef"
       },
       "canonical": {
         "definition": "Marine is a HIGH contamination exposure industrial category for diesel-powered vessels and offshore equipment, characterised by near-100% ambient relative humidity accelerating fuel tank condensation and lube oil emulsification, salt-air intake environments degrading conventional filter media, and the operational consequence that engine failure at sea is catastrophic — no recovery option and IMO/classification society regulatory compliance requirements for fuel and hydraulic filtration.",
         "systems": "Marine diesel engine air intake, fuel systems, lube oil circuits, hydraulic deck and steering systems across fishing vessels, cargo ships, offshore platforms, and work boats",
         "failure_impact": "Marine humidity → fuel tank water accumulation above 500 ppm → microbial growth (Hormoconis resinae) → filter-plugging biomass formation → fuel starvation → propulsion loss at sea | Salt-air intake without synthetic media → cellulose media moisture absorption → structural collapse → engine bypass → abrasive wear | Operational impact: injector replacement $800–$4,000/unit; 30–40% of marine fuel filter failures from microbial contamination.",
         "related_standards": "ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks",
-        "related_technologies": "SYNTEPORE: Salt-air resistant synthetic media for marine diesel engine intake filtration | HYDROCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments",
-        "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and HYDROCORE coalescing filtration the primary engineering controls for fleet reliability."
+        "related_technologies": "SYNTAPORE: Salt-air resistant synthetic media for marine diesel engine intake filtration | TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments",
+        "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and TURBOCORE coalescing filtration the primary engineering controls for fleet reliability."
       },
       "relationships": {
         "relevant_contamination": [
@@ -345,10 +345,10 @@
           "HYDRAULIC_CONTAMINATION"
         ],
         "applicable_technologies": [
-          "SYNTEPORE",
+          "SYNTAPORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -367,7 +367,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/MARINE.md"
+      "vault_path": "elimfilters-vault\\02-industries\\MARINE.md"
     },
     {
       "key": "MINING",
@@ -392,14 +392,14 @@
         "concept": "Mining Industrial Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:5b098caa0323de4d7bb43c7cd15757920543497d5352884f3d1fa568865bcc72"
+        "content_hash": "sha256:0d14a02d9179e69d34691101db38140f652d7c46ce68f03d3c23ca1939439d14"
       },
       "canonical": {
         "definition": "Mining operations present EXTREME contamination exposure — silica and hardrock particulate\nconcentrations 50× above ISO 5011 test standards — requiring multi-system filtration\nprotection across air intake, hydraulic, lube oil, and fuel domains for 24/7 asset\nreliability.",
         "systems": "Air Intake, Hydraulic, Lubrication, Fuel Cleanliness; primary equipment: haul trucks,\ndrill rigs, loaders, crushers operating in open-cut and underground environments",
         "failure_impact": "Uncontrolled particle ingestion → engine overhaul interval reduced from 25,000 to\n3,000 hours → unplanned downtime at ~$180,000/hour per machine → cascading supply\nchain disruption | Hydraulic contamination → proportional valve stiction → haul truck\nhydraulic failure → production stoppage",
         "related_standards": "ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic cleanliness\nmulti-pass test | SAE J1539: Air intake contamination classification for diesel engines",
-        "related_technologies": "MACROCORE: Progressive density gradient air intake protection (99.9%–99.98% efficiency) |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nHYDROCORE: Fuel water separation (condensation and bulk fuel contamination control)",
+        "related_technologies": "MACROCORE: Progressive density gradient air intake protection (99.9%–99.98% efficiency) |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
         "industrial_role": "Mining is the highest-consequence filtration environment — equipment downtime costs\nexceed $180,000/hour and component replacement costs reach $150,000+ per engine\noverhaul. Contamination control is a supply-chain continuity decision, not a\nmaintenance cost decision."
       },
       "relationships": {
@@ -412,7 +412,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "INTEKCORE"
         ],
         "applicable_standards": [
@@ -435,7 +435,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/MINING.md"
+      "vault_path": "elimfilters-vault\\02-industries\\MINING.md"
     },
     {
       "key": "OIL_GAS",
@@ -456,14 +456,14 @@
         "concept": "Oil & Gas Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:c80702515096ef1b7461e26d3b27ac6643c687ff50f500a32ac4756bf81f4a51"
+        "content_hash": "sha256:1d4967779bf29e78bd4533ee2ac3244fca29246105d69b6fe8ef507678bd5e76"
       },
       "canonical": {
         "definition": "Oil & Gas is an EXTREME contamination exposure industrial category for diesel and gas-powered drilling, compression, and pipeline equipment operating in remote locations where equipment failure costs $15,000–$50,000/day in downtime and compressor bearing failure costs $200,000+ per event — driven by desert silica dust in air intake, gas condensate in compressor lube oil, H₂S-accelerated oil acidification, and extended service intervals enforced by remote logistics constraints.",
         "systems": "Drilling rig diesel engine air intake and lube circuits, gas compressor lube oil systems, pump jack engine lube circuits, wellhead hydraulic systems, pipeline compressor station filtration",
         "failure_impact": "Drilling rig air intake bypass in desert environment → silica ingestion at several g/hour → piston ring and bore abrasive wear → compression loss and engine seizure | Compressor lube oil above ISO 4406 15/13/10 → bearing abrasive wear at high-cycle compression loads → bearing seizure → $200,000+ rebuild cost + production loss | Remote location → extended repair timeline 5–15× greater than onshore industrial sites.",
         "related_standards": "ISO 5011: Air filtration performance standard for drilling engine and compressor intake systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for drilling and compressor system element selection | ISO 4406: Fluid cleanliness code; compressor lube target 15/13/10; drilling hydraulic target 16/14/11",
-        "related_technologies": "MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service | SYNTEPORE: Synthetic media for gas compressor inlet air systems with condensate resistance",
+        "related_technologies": "MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service | SYNTAPORE: Synthetic media for gas compressor inlet air systems with condensate resistance",
         "industrial_role": "Oil and gas filtration is uniquely high-stakes because the economic consequence of contamination-driven failure — measured in daily downtime costs and six-figure rebuild costs — dwarfs filter cost by 100–1,000×; maintaining ISO 4406 target codes in compressor lube circuits and high-efficiency air intake protection in drilling environments are the primary engineering controls preventing the unplanned failures that dominate oil and gas operational cost."
       },
       "relationships": {
@@ -476,7 +476,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "SYNTEPORE"
+          "SYNTAPORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -494,7 +494,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/OIL_GAS.md"
+      "vault_path": "elimfilters-vault\\02-industries\\OIL_GAS.md"
     },
     {
       "key": "POWER_GENERATION",
@@ -515,14 +515,14 @@
         "concept": "Power Generation Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:0d6e5b09a250c74dca4848a88e13dae38c91d46fba800d22b3cbae1f3ba49b5f"
+        "content_hash": "sha256:41a128db1487071781389aa33da7f9ac693b0881fea2793f92935869083b6afc"
       },
       "canonical": {
         "definition": "Power generation is a HIGH contamination exposure industrial category for stationary diesel generators, gas turbines, and CHP plants where contamination-driven failure during emergency activation has outage costs of $100,000–$1,000,000+ per event — driven by standby fuel water accumulation causing emergency startup failure, turbine compressor blade erosion from inlet air particles, and lube circuit contamination reducing generator MTBF from 20,000+ hours to 6,000–8,000 hours.",
         "systems": "Diesel generator engine air intake, fuel storage and delivery, lube oil circuits, gas turbine inlet air systems, CHP plant hydraulic control circuits",
         "failure_impact": "Standby generator fuel water accumulation above 500 ppm → filter plugging and microbial biomass → engine fuel starvation at emergency start → outage at the moment backup power is required | Gas turbine compressor blade erosion from inlet particles >5 µm → 1% blade efficiency loss per particle event cycle → 1.5–2% fuel consumption increase per MWh | Diesel generator lube oil at ISO 4406 19/17/14 → MTBF 6,000–8,000 hours vs. 20,000+ hours at 15/13/10.",
         "related_standards": "ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring",
-        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | HYDROCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTEPORE: Gas turbine inlet air filtration for compressor blade protection",
+        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTAPORE: Gas turbine inlet air filtration for compressor blade protection",
         "industrial_role": "Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector."
       },
       "relationships": {
@@ -535,8 +535,8 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE",
-          "SYNTEPORE"
+          "TURBOCORE",
+          "SYNTAPORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -554,7 +554,7 @@
           "HYDRAULIC_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/POWER_GENERATION.md"
+      "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
     },
     {
       "key": "RAILWAY",
@@ -575,14 +575,14 @@
         "concept": "Railway Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:ea5f012f3cb094f30f60e5d719e7722218f2f3a257c4fdfbdd47a021ac7a7874"
+        "content_hash": "sha256:9c819685d5595b9599a2f003022fa3bef941944e112d40ac774da40c8a68f0ba"
       },
       "canonical": {
         "definition": "Railway is a HIGH contamination exposure industrial category for diesel locomotive and maintenance-of-way equipment, characterised by extended high-load duty cycles generating elevated lube oil soot, ballast silica dust exposure creating operator respiratory risk, and overhaul economics where locomotive engine failure costs $500,000–$2,000,000 per event making contamination control the primary reliability investment.",
         "systems": "Diesel locomotive engine lube and air intake systems, fuel circuits on extended-service-interval railway equipment, hydraulic systems on rail-mounted cranes and MoW equipment, cab air supply systems on ballast maintenance vehicles",
         "failure_impact": "Lube oil particle contamination above ISO 4406 19/17/14 in locomotive engines → bearing journal abrasive wear → crankshaft bearing seizure → unplanned engine overhaul | Particle contamination accounts for 35–45% of unplanned locomotive engine failures | Operational Impact: $500,000–$2,000,000 per engine overhaul event; MoW operator RCS exposure above 0.1 mg/m³ OEL triggers occupational health enforcement and worker compensation liability.",
         "related_standards": "ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection",
-        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTEPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
+        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTAPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
         "industrial_role": "Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations."
       },
       "relationships": {
@@ -593,7 +593,7 @@
         ],
         "applicable_technologies": [
           "MACROCORE",
-          "SYNTEPORE",
+          "SYNTAPORE",
           "SYNTRAX",
           "INTEKCORE",
           "MICROKAPPA"
@@ -613,7 +613,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/RAILWAY.md"
+      "vault_path": "elimfilters-vault\\02-industries\\RAILWAY.md"
     },
     {
       "key": "TRUCKS_FLEETS",
@@ -634,14 +634,14 @@
         "concept": "Trucks & Fleets Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:dbbf5703d3f93275ab7ac81b87db635752b3d8c39c6b3d8123a3a95726d939a2"
+        "content_hash": "sha256:9c3bebb55c833b6c0a447066d7cbde24e6948e02684789f839ffc5939dd3c33d"
       },
       "canonical": {
         "definition": "Trucks & Fleets is a MODERATE contamination exposure industrial category for on-highway diesel vehicles — long-haul trucks, distribution vehicles, delivery vans, bus fleets — where EGR soot contamination in Euro VI lube circuits, fuel quality variation across fleet fuelling networks, and fleet-scale procurement standardisation across multiple OEM brands create the primary filtration engineering and economic challenges.",
         "systems": "Long-haul truck diesel engine air intake and lube circuits, fleet fuel storage and delivery filtration, EGR-equipped engine lube oil management, truck driver cab air quality filtration across 100–5,000 vehicle managed fleets",
         "failure_impact": "EGR soot above 2% by weight in lube oil → soot-induced viscosity increase → oil film thinning at journal bearings → accelerated bearing wear → engine rebuild at 300,000–500,000 km instead of 1,000,000+ km | Fleet fuel water contamination → common-rail injector erosion at 1,600–2,500 bar → injector replacement $800–$4,000/unit across fleet | Fleet standardisation gap → unplanned engine downtime 10–18% higher than optimised fleets.",
         "related_standards": "ISO 5011: Air filtration performance test across truck OEM specifications | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Lube and hydraulic filtration Beta ratio test for truck engine fluid systems | ISO 11155: Cabin air filter test standard for truck driver health compliance",
-        "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with soot capture above 2% by weight | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | HYDROCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
+        "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with soot capture above 2% by weight | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | TURBOCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
         "industrial_role": "Trucks & Fleets filtration is primarily an economic optimisation problem at fleet scale — the aggregate financial impact of standardising filtration across 100+ vehicle fleets (15–25% procurement cost reduction; 10–18% unplanned downtime reduction) creates measurable ROI from system-level filtration investment that commodity product selection approaches cannot capture."
       },
       "relationships": {
@@ -654,7 +654,7 @@
           "MACROCORE",
           "INTEKCORE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -674,7 +674,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/TRUCKS_FLEETS.md"
+      "vault_path": "elimfilters-vault\\02-industries\\TRUCKS_FLEETS.md"
     },
     {
       "key": "WASTE_MUNICIPAL",
@@ -695,14 +695,14 @@
         "concept": "Waste & Municipal Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:828416406162f8c6088de615112f72e72f7a6212a7fe7f9b165dbbbd320e7a7e"
+        "content_hash": "sha256:61dd44e7c57219e6c6938efcae866dd4c72de9be253a23e42be200e1d033021d"
       },
       "canonical": {
         "definition": "Waste & Municipal is a HIGH contamination exposure industrial category for diesel refuse collection, street sweeping, and municipal utility equipment, characterised by stop-start duty cycles generating 2–3× baseline lube oil soot loading, operator cab exposure to biological aerosols and urban PM2.5, and >90% fleet availability requirements that make contamination-related unplanned maintenance a direct service delivery failure.",
         "systems": "Refuse collection vehicle diesel engine lube and air intake systems, street sweeper engine intake in maximum-particulate operating environments, municipal vehicle diesel fuel circuits with short-trip condensation accumulation, cab air supply systems for biological aerosol and PM2.5 protection",
         "failure_impact": "Stop-start cold-start cycles at 300–600 events/shift → elevated soot in lube oil at 2–3× sustained-load rates → accelerated bearing wear if lube filtration does not capture soot agglomerates | Short-trip duty → progressive fuel tank water accumulation → microbial growth (Hormoconis resinae) → simultaneous multi-vehicle fuel filter plugging during summer → fleet availability crisis | Operational Impact: contamination-related events account for 20–30% of unplanned municipal fleet maintenance; refuse collection schedule disruption has direct public service consequences.",
         "related_standards": "ISO 5011: Air filtration performance test for refuse vehicle and street sweeper engine intake systems | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio test for hydraulic system filtration on refuse vehicle compaction systems | ISO 11155: Cabin air filter test for operator health compliance in biological and chemical exposure environments",
-        "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | HYDROCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
+        "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron lube polishing maintaining ISO 4406 cleanliness under elevated cold-start contamination | TURBOCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
         "industrial_role": "Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations."
       },
       "relationships": {
@@ -715,7 +715,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "HYDROCORE",
+          "TURBOCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -733,7 +733,7 @@
           "CABIN_PRIMARY"
         ]
       },
-      "vault_path": "elimfilters-vault/02-industries/WASTE_MUNICIPAL.md"
+      "vault_path": "elimfilters-vault\\02-industries\\WASTE_MUNICIPAL.md"
     }
   ]
 }

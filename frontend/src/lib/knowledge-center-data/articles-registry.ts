@@ -1385,7 +1385,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the information architecture hierarchy that ELIMFILTERS uses to structure industrial asset protection?',
-        answer: 'The ELIMFILTERS information architecture hierarchy frames the complete engineering knowledge chain for industrial asset protection: (1) Contamination — identifying root contamination sources (silica from air intake, water from condensation, metallic wear particles, chemical degradation products); (2) Asset Degradation — mapping how each contamination type degrades specific components (abrasive wear of bearing surfaces, corrosion of valve seats, lacquer formation on servo spools); (3) Standards and Measurement — applying ISO 4406, ISO 5011, ISO 8573, and related standards to quantify contamination and set targets; (4) Protection Technologies — selecting ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, DRYCORE, and MICROKAPPA technologies matched to each contamination challenge; (5) Product Implementation — specifying the correct filter element for each circuit position; (6) Fleet Optimization — applying condition monitoring and interval optimization across the full asset fleet; (7) Sustainability Impact — quantifying contamination control contribution to equipment longevity, oil consumption reduction, and waste minimization.',
+        answer: 'The ELIMFILTERS information architecture hierarchy frames the complete engineering knowledge chain for industrial asset protection: (1) Contamination — identifying root contamination sources (silica from air intake, water from condensation, metallic wear particles, chemical degradation products); (2) Asset Degradation — mapping how each contamination type degrades specific components (abrasive wear of bearing surfaces, corrosion of valve seats, lacquer formation on servo spools); (3) Standards and Measurement — applying ISO 4406, ISO 5011, ISO 8573, and related standards to quantify contamination and set targets; (4) Protection Technologies — selecting ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTAPORE, DRYCORE, and MICROKAPPA technologies matched to each contamination challenge; (5) Product Implementation — specifying the correct filter element for each circuit position; (6) Fleet Optimization — applying condition monitoring and interval optimization across the full asset fleet; (7) Sustainability Impact — quantifying contamination control contribution to equipment longevity, oil consumption reduction, and waste minimization.',
       },
       {
         question: 'How does a multi-circuit contamination failure cascade through a hydraulic mining excavator?',
@@ -1469,7 +1469,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Integrated program vs commodity', value: '3–5× lower downtime' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 5011'],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
     keywords: ['asset protection', 'contamination budget', 'protection architecture', 'system design', 'contamination control'],
   },
@@ -2225,10 +2225,10 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Mapping: Hydraulic System Protection',
-        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. HYDROCORE™ coalescing media removes free and emulsified water from hydraulic fluid, preventing water-accelerated fluid oxidation and varnish precursor formation; applied in reservoir return-line housings. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
+        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. TURBOCORE™ coalescing media removes free and emulsified water from hydraulic fluid, preventing water-accelerated fluid oxidation and varnish precursor formation; applied in reservoir return-line housings. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
         callout: [
           { label: 'NANOFORCE™ rating', value: 'β₁₀(c) ≥ 1000; servo/proportional valve circuits' },
-          { label: 'HYDROCORE™ application', value: 'Water separation in reservoir return-line housings' },
+          { label: 'TURBOCORE™ application', value: 'Water separation in reservoir return-line housings' },
           { label: 'MICROKAPPA™ application', value: 'Reservoir breather ingress prevention' },
         ],
       },
@@ -2244,7 +2244,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Kidney-loop flow rate', value: '5–15% system volume/min' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'HYDROCORE™', 'MICROKAPPA™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'TURBOCORE™', 'MICROKAPPA™'],
     relatedSystems: ['Hydraulic Protection'],
     keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop', 'varnish formation', 'contamination pathways'],
     commonMistakes: [
@@ -2360,7 +2360,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How do centrifugal fuel-water separators differ from coalescing fuel filters in water removal mechanism?',
-        answer: 'Centrifugal separators use angular momentum to separate water from diesel based on density difference (water 1.00 g/mL vs. diesel 0.82–0.85 g/mL). The rotational field creates a centrifugal acceleration of 50–500×g — water droplets migrate outward and collect in a peripheral bowl while fuel exits from the center. Centrifugal separators are effective for separating free water droplets above 50–100 µm diameter but have minimal effect on emulsified water (droplets <10 µm) or dissolved water. Coalescing fuel filters use hydrophobic synthetic media that causes fine water droplets to merge (coalesce) into larger droplets that then settle under gravity to the water collection bowl. Coalescing filters remove droplets as small as 0.5 µm, making them effective against fuel emulsions. HYDROCORE combines coalescing media for fine water removal with a sediment filtration layer for particle capture in a single filter element.',
+        answer: 'Centrifugal separators use angular momentum to separate water from diesel based on density difference (water 1.00 g/mL vs. diesel 0.82–0.85 g/mL). The rotational field creates a centrifugal acceleration of 50–500×g — water droplets migrate outward and collect in a peripheral bowl while fuel exits from the center. Centrifugal separators are effective for separating free water droplets above 50–100 µm diameter but have minimal effect on emulsified water (droplets <10 µm) or dissolved water. Coalescing fuel filters use hydrophobic synthetic media that causes fine water droplets to merge (coalesce) into larger droplets that then settle under gravity to the water collection bowl. Coalescing filters remove droplets as small as 0.5 µm, making them effective against fuel emulsions. TURBOCORE combines coalescing media for fine water removal with a sediment filtration layer for particle capture in a single filter element.',
       },
       {
         question: 'What fuel system components are most vulnerable to water-induced failure?',
@@ -2459,7 +2459,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Coalescing Filter Technology and Water Removal',
-        body: 'Fuel filter water separators use coalescence to remove emulsified and free water from fuel. Coalescence media (glass fiber or hydrophilic synthetic with controlled surface energy) cause small water droplets to collide, adhere, and grow into larger droplets that settle by gravity to the water sump. Separation efficiency is expressed as water dropout rate at a specified fuel flow rate and initial water concentration. Stage 1 (coalescer): emulsified water droplets (1–10 µm) coalesce to >100 µm on the coalescing media surface. Stage 2 (separator shell): coalesced droplets settle through the quiescent zone below the coalescer to the water collection bowl. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) measures particulate levels that accompany water separation testing. HYDROCORE™ coalescing technology combines sub-10 µm particle capture with water separation in a single element, eliminating the separate secondary stage in applications where space is constrained.',
+        body: 'Fuel filter water separators use coalescence to remove emulsified and free water from fuel. Coalescence media (glass fiber or hydrophilic synthetic with controlled surface energy) cause small water droplets to collide, adhere, and grow into larger droplets that settle by gravity to the water sump. Separation efficiency is expressed as water dropout rate at a specified fuel flow rate and initial water concentration. Stage 1 (coalescer): emulsified water droplets (1–10 µm) coalesce to >100 µm on the coalescing media surface. Stage 2 (separator shell): coalesced droplets settle through the quiescent zone below the coalescer to the water collection bowl. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) measures particulate levels that accompany water separation testing. TURBOCORE™ coalescing technology combines sub-10 µm particle capture with water separation in a single element, eliminating the separate secondary stage in applications where space is constrained.',
         callout: [
           { label: 'Coalescence droplet range', value: '1–10 µm (initial) → >100 µm (coalesced)' },
           { label: 'Separation mechanism', value: 'Gravity settling after coalescence' },
@@ -2495,7 +2495,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Microbial prevention threshold', value: '<50 ppm tank water' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
     commonMistakes: [
@@ -2927,11 +2927,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     faqs: [
       {
         question: 'What are the particle cleanliness requirements for diesel fuel entering a common rail pump?',
-        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Primary fuel filter elements for HPCR applications are rated at β10(c) ≥ 200 or better to achieve this cleanliness from typical supply fuel (ISO 18/16/13 from bulk storage). SYNTEPORE media achieves β7(c) ≥ 200, providing enhanced protection at the critical 7 µm particle size range where pump plunger wear is most sensitive.',
+        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Primary fuel filter elements for HPCR applications are rated at β10(c) ≥ 200 or better to achieve this cleanliness from typical supply fuel (ISO 18/16/13 from bulk storage). SYNTAPORE media achieves β7(c) ≥ 200, providing enhanced protection at the critical 7 µm particle size range where pump plunger wear is most sensitive.',
       },
       {
         question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
-        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications is ≥95% of emulsified water (droplets 0.5–5 µm) at rated flow rate and 40°C fuel temperature. HYDROCORE coalescing media achieves ≥98% water separation efficiency under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet 95% water separation allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
+        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications is ≥95% of emulsified water (droplets 0.5–5 µm) at rated flow rate and 40°C fuel temperature. TURBOCORE coalescing media achieves ≥98% water separation efficiency under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet 95% water separation allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
       },
       {
         question: 'What is the effect of low-temperature wax crystal formation on fuel filter performance?',
@@ -2959,7 +2959,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the service interval for fuel-water separator bowl draining in marine diesel applications?',
-        answer: 'Marine diesel fuel system water separator bowl drainage intervals depend on sea conditions, fuel supply quality, and tank venting arrangements. Typical intervals: (1) After each bunkering operation — new fuel deliveries may contain free water; drain immediately after settling (1 hour per metre of tank depth). (2) Daily in high-humidity tropical climates — condensation accumulates overnight. (3) After heavy sea conditions — wave-induced fuel sloshing re-suspends settled water and sediment, increasing free water at filter inlet. The HYDROCORE separator bowl should be visually inspected at each engine pre-start check — visible water layer above the lower drain port trigger point requires immediate drain-off and recording in the engine room log. IMO MARPOL Annex I requirements for oil content of drained water may apply depending on vessel class and separator discharge arrangement.',
+        answer: 'Marine diesel fuel system water separator bowl drainage intervals depend on sea conditions, fuel supply quality, and tank venting arrangements. Typical intervals: (1) After each bunkering operation — new fuel deliveries may contain free water; drain immediately after settling (1 hour per metre of tank depth). (2) Daily in high-humidity tropical climates — condensation accumulates overnight. (3) After heavy sea conditions — wave-induced fuel sloshing re-suspends settled water and sediment, increasing free water at filter inlet. The TURBOCORE separator bowl should be visually inspected at each engine pre-start check — visible water layer above the lower drain port trigger point requires immediate drain-off and recording in the engine room log. IMO MARPOL Annex I requirements for oil content of drained water may apply depending on vessel class and separator discharge arrangement.',
       },
       {
         question: 'How is fuel filter performance validated for common rail systems after filter element replacement?',
@@ -3056,7 +3056,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Housing burst safety factor', value: '6× working pressure (ISO 4020)' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™', 'TURBOCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['diesel fuel filtration', 'ISO 4020', 'HPCR', 'water separation', 'coalescing filter', 'fuel cleanliness', 'cold filter plugging point', 'EN 590'],
     fieldDiagnostics: {
@@ -3284,11 +3284,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Selection for Operating Environment',
-        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery. SYNTEPORE™ all-synthetic intake filter media is applied in high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation — marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
+        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery. SYNTAPORE™ all-synthetic intake filter media is applied in high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation — marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
         callout: [
           { label: 'MACROCORE™ efficiency', value: '99.9%–99.98% (ISO 5011) for off-highway engines' },
           { label: 'INTEKCORE™ function', value: 'Zero-bypass housing integrity at sealing interfaces' },
-          { label: 'SYNTEPORE™ application', value: 'High-humidity environments replacing cellulose media' },
+          { label: 'SYNTAPORE™ application', value: 'High-humidity environments replacing cellulose media' },
         ],
       },
       {
@@ -3303,7 +3303,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Pre-cleaner life extension', value: '3–10× primary element life' },
     ],
     relatedStandards: ['ISO 5011', 'ISO 29463', 'SAE J1539'],
-    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTAPORE™'],
     relatedSystems: ['Air Intake Protection'],
     keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration', 'dust ingestion', 'abrasive wear'],
     fieldDiagnostics: {
@@ -4006,7 +4006,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How does the surface energy of filter media fiber affect water separation in fuel and hydraulic systems?',
-        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. HYDROCORE coalescing media uses a hydrophobic surface treatment that achieves >98% free water separation efficiency from diesel fuel emulsions at 0.5–5 µm droplet size range, as tested per ISO 4020. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
+        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. TURBOCORE coalescing media uses a hydrophobic surface treatment that achieves >98% free water separation efficiency from diesel fuel emulsions at 0.5–5 µm droplet size range, as tested per ISO 4020. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
       },
       {
         question: 'What is the significance of fiber orientation in filter media performance?',
@@ -4086,7 +4086,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Media Selection for Specific Filtration Domains',
-        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: coalescing-capable synthetic media with β₃(c) ≥ 200 for particles, plus water coalescing layer; ASTM D6304 water removal verification required (SYNTEPORE™ architecture). Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
+        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: coalescing-capable synthetic media with β₃(c) ≥ 200 for particles, plus water coalescing layer; ASTM D6304 water removal verification required (SYNTAPORE™ architecture). Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
       },
       {
         heading: 'End-Cap and Sealing Engineering',
@@ -4105,7 +4105,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'ISO 2941 collapse test multiplier', value: '10× rated working Δp' },
     ],
     relatedStandards: ['ISO 16889', 'ISO 11171', 'ISO 2941', 'ISO 2942', 'ISO 3968', 'ISO 5011'],
-    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'MACROCORE™'],
+    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'MACROCORE™'],
     relatedSystems: ['Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection', 'Air Intake Protection'],
     keywords: [
       'filter media engineering', 'beta ratio', 'ISO 16889', 'dirt holding capacity', 'glass fibre media',
@@ -4176,7 +4176,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       version: '1.0',
       lastEngineeringReview: '2026-07-05',
       nextScheduledReview: '2027-01-05',
-      responsibleRegistry: 'EDL-TECHNOLOGIES (SYNTRAX, NANOFORCE, SYNTEPORE, MACROCORE)',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (SYNTRAX, NANOFORCE, SYNTAPORE, MACROCORE)',
       evidenceStatus: 'ISO 16889:2022 verified; ISO 2941:2010 verified; ISO 2942:2014 verified; fibre diameter ranges from published media engineering literature; DHC estimates from ISO 16889 multi-pass test data',
     },
   },
@@ -4302,7 +4302,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Marine engine oil drain (large bore)', value: '2,000+ hours typical' },
     ],
     relatedStandards: ['ISO 8217', 'ASTM D6304', 'ISO 19438', 'ISO 4020', 'ISO 17359', 'ASTM D7468'],
-    relatedTechnologies: ['MARINECLEAN™', 'HYDROCORE™', 'SYNTEPORE™', 'SYNTRAX™'],
+    relatedTechnologies: ['MARINECLEAN™', 'TURBOCORE™', 'SYNTAPORE™', 'SYNTRAX™'],
     relatedSystems: ['Fuel Cleanliness Protection', 'Lubrication Protection'],
     keywords: [
       'marine diesel filtration', 'ISO 8217', 'MARPOL sulphur', 'saltwater contamination',
@@ -5074,7 +5074,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Breather improvement factor', value: 'β₃ vs β₂₅: ~10³× ingression reduction' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171', 'ISO 16232', 'ISO 23309'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™', 'SYNTAPORE™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Air Intake Protection'],
     keywords: [
       'contamination ingression rate', 'cleanliness budget', 'ISO 4406 modelling', 'filter sizing',
@@ -8467,7 +8467,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Biodiesel Max Blend', value: 'B7 (EN 590:2022)' },
     ],
     relatedStandards: ['ISO 23369', 'ISO 12156-1', 'ASTM D6304', 'EN 590', 'ASTM D975', 'ISO 12937'],
-    relatedTechnologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™', 'TURBOCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['HPCR fuel system', 'common rail injection', 'ISO 23369', 'ISO 12156-1 HFRR', 'fuel filter beta ratio', 'fuel cleanliness', 'water contamination fuel', 'ASTM D6304', 'EN 590', 'ULSD lubricity', 'fuel injection cleanliness', 'diesel fuel specification'],
     fieldDiagnostics: {

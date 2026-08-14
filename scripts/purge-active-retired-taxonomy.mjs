@@ -17,16 +17,16 @@ const binaryExt = new Set([
 ]);
 
 const replacements = [
-  [/HYDROCORE\/SERIES/gi, 'TURBOCORE'],
-  [/HYDROCORE\s+SERIES/gi, 'TURBOCORE'],
-  [/HYDROCORE/gi, 'TURBOCORE'],
-  [/SYNTEPORE/gi, 'SYNTAPORE'],
-  [/SYNTEFOR/gi, 'SYNTAPORE'],
-  [/COOLTECH/gi, 'THERMACORE'],
-  [/DURACTECH/gi, 'DURATECH'],
-  [/NANOCORE/gi, 'NANOFORCE'],
-  [/ELIMCORE/gi, 'INTEKCORE'],
-  [/DIESELCORE/gi, 'TURBOCORE'],
+  [/TURBOCORE\/SERIES/gi, 'TURBOCORE'],
+  [/TURBOCORE\s+SERIES/gi, 'TURBOCORE'],
+  [/TURBOCORE/gi, 'TURBOCORE'],
+  [/SYNTAPORE/gi, 'SYNTAPORE'],
+  [/SYNTAPORE/gi, 'SYNTAPORE'],
+  [/THERMACORE/gi, 'THERMACORE'],
+  [/DURATECH/gi, 'DURATECH'],
+  [/NANOFORCE/gi, 'NANOFORCE'],
+  [/INTEKCORE/gi, 'INTEKCORE'],
+  [/TURBOCORE/gi, 'TURBOCORE'],
 ];
 
 // Hex keeps the purge utility itself free of literal retired identifiers.

@@ -116,15 +116,15 @@ Technology exists to interrupt the failure chain.
 
 Official ELIMFILTERS Technologies:
 
-- MACROCORE™
-- SYNTEPORE™
-- SYNTRAX™
-- NANOFORCE™
-- HYDROCORE™
-- THERMACORE™
-- MICROKAPPA™
-- DRYCORE™
-- INTEKCORE™
+- MACROCOREï¿½
+- SYNTAPOREï¿½
+- SYNTRAXï¿½
+- NANOFORCEï¿½
+- TURBOCOREï¿½
+- THERMACOREï¿½
+- MICROKAPPAï¿½
+- DRYCOREï¿½
+- INTEKCOREï¿½
 
 Technologies are protection platforms.
 

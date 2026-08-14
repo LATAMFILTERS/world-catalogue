@@ -251,7 +251,7 @@ export function renderCoverageReportMarkdown(report) {
   }
   lines.push(
     '## Governance', '',
-    '> This report is descriptive only. It performs no writes to canonical Obsidian folders, PostgreSQL, pgvector, or unified-data.ts. The collector only ever fetches endpoints with status=ACTIVE; DISCOVERY_REQUIRED organizations are tracked here as a backlog, not fetched.', ''
+    '> This report is descriptive only. It performs no writes to canonical Obsidian folders, PostgreSQL, pgvector, or legacy catalogue layer.ts. The collector only ever fetches endpoints with status=ACTIVE; DISCOVERY_REQUIRED organizations are tracked here as a backlog, not fetched.', ''
   );
   return lines.join('\n');
 }

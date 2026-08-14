@@ -203,9 +203,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -259,9 +259,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -574,9 +574,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -640,9 +640,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -871,9 +871,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -1267,9 +1267,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -1498,9 +1498,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -1564,9 +1564,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -1861,9 +1861,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -1927,9 +1927,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2158,9 +2158,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2224,9 +2224,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2422,9 +2422,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2488,9 +2488,9 @@
           "name": "Hydraulic System Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2818,9 +2818,9 @@
           "name": "Diesel Water Contamination"
         },
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -2994,16 +2994,16 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_HYDROCORE_093",
+      "path_id": "PATH_C_TURBOCORE_093",
       "path_type": "C",
-      "entry_node": "HYDROCORE",
+      "entry_node": "TURBOCORE",
       "entry_type": "technology",
       "industry": null,
       "steps": [
         {
-          "key": "HYDROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "HYDROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
@@ -3085,16 +3085,16 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_SYNTEPORE_098",
+      "path_id": "PATH_C_SYNTAPORE_098",
       "path_type": "C",
-      "entry_node": "SYNTEPORE",
+      "entry_node": "SYNTAPORE",
       "entry_type": "technology",
       "industry": null,
       "steps": [
         {
-          "key": "SYNTEPORE",
+          "key": "SYNTAPORE",
           "type": "technology",
-          "name": "SYNTEPORE — All-Synthetic Intake Media"
+          "name": "SYNTAPORE — All-Synthetic Intake Media"
         }
       ],
       "terminal_product_families": [],
@@ -3249,7 +3249,7 @@
         "PATH_B_POWER_GENERATION_075",
         "PATH_B_POWER_GENERATION_077",
         "PATH_B_TRUCKS_FLEETS_087",
-        "PATH_C_HYDROCORE_093"
+        "PATH_C_TURBOCORE_093"
       ],
       "entry_problems": [
         "FUEL_FILTER_PLUGGING",
@@ -3266,9 +3266,9 @@
         "TRUCKS_FLEETS"
       ],
       "entry_technologies": [
-        "HYDROCORE"
+        "TURBOCORE"
       ],
-      "uses_technology": "HYDROCORE",
+      "uses_technology": "TURBOCORE",
       "meets_standards": [
         "ASTM_D6304",
         "ISO_12937"
@@ -3418,7 +3418,7 @@
     "product_families_unreachable": [],
     "technologies_without_families": [
       "INTEKCORE",
-      "SYNTEPORE"
+      "SYNTAPORE"
     ],
     "problems_without_paths": []
   }

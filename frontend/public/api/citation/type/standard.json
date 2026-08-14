@@ -23,22 +23,22 @@
         "concept": "ASTM D6304 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:1b261f72fbbf8f3d4734ad5a44afb3f91698932bd8d79565a2b8c0e7800fc925"
+        "content_hash": "sha256:9f6247f49b13378dbfb73180cf20f998576d70b769cdc6066bbeb71c4fe45128"
       },
       "canonical": {
         "definition": "ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration, quantifying total water concentration in diesel fuel as mg/kg (ppm) by mass — providing the primary analytical tool for monitoring water contamination in fuel storage, delivery, and filtration systems against the EN 590 limit of 200 mg/kg.",
         "systems": "Diesel fuel quality monitoring in bulk storage tanks, vehicle fuel systems, marine fuel management, and oilfield fuel supply verification; used as the performance validation method for water-separating fuel filtration technologies",
         "failure_impact": "Diesel fuel above 200 mg/kg total water (ASTM D6304) or free water at any concentration above dissolved saturation (50–100 mg/kg) → water droplets entering common-rail injection system at 1,800–2,500 bar → cavitation erosion at injector nozzle tip and needle seat → spray pattern degradation → incomplete combustion and power loss | Without ASTM D6304 monitoring, water accumulation in storage tanks progresses to microbial growth and filter-plugging biomass formation before detection | Operational Impact: injector replacement $800–$4,000/unit; microbial contamination causes 30–40% of fuel filter failures in marine and remote-site diesel fleets.",
         "related_standards": "ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304",
-        "related_technologies": "HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims",
-        "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification."
+        "related_technologies": "TURBOCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for TURBOCORE coalescing efficiency claims",
+        "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when TURBOCORE water separation is required and whether it is performing to specification."
       },
       "relationships": {
         "related_standards": [
           "ISO_12937"
         ],
         "applicable_to_technologies": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "applicable_to_industries": [
           "AGRICULTURE",
@@ -52,7 +52,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md"
     },
     {
       "key": "DIN_51524",
@@ -79,7 +79,7 @@
         "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_51524.md"
     },
     {
       "key": "DIN_71220",
@@ -128,7 +128,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/DIN_71220.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md"
     },
     {
       "key": "ISO_11155",
@@ -180,7 +180,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_11155.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md"
     },
     {
       "key": "ISO_12937",
@@ -203,14 +203,14 @@
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:136e6fcc524ac15e1b4fd19797282a5d71232d86ab8d4132914a7452ee2dd4fc"
+        "content_hash": "sha256:f5cb4c097c2ceee9fae251c41f4b4314d8334b8921c9f75c1ccaf19dcbca0cfd"
       },
       "canonical": {
         "definition": "ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products as mg/kg (ppm), functionally equivalent to ASTM D6304 and serving as the European and international market reference method for EN 590 diesel fuel water content compliance and ISO 8217 marine fuel water management.",
         "systems": "Diesel fuel bulk storage quality monitoring, marine fuel management, power generation facility fuel quality verification, and international fleet fuel compliance programs in markets where EN 590 and ISO 8217 apply",
         "failure_impact": "Diesel fuel exceeding ISO 12937 EN 590 limit of 200 mg/kg total water → free water droplet formation above dissolved saturation (50–100 mg/kg) → free water entering common-rail injection at 1,800–2,500 bar → cavitation erosion of injector nozzle tip and needle seat geometry → spray pattern degradation and combustion inefficiency | In marine applications, water-contaminated fuel above 200 mg/kg triggers microbial growth in marine diesel tanks between voyages | Operational Impact: injector replacement $800–$4,000/unit; marine fuel tank microbial contamination causes complete fuel polishing events costing $10,000–$50,000 per vessel.",
         "related_standards": "ASTM D6304: North American equivalent coulometric Karl Fischer method; same electrochemical principle, equivalent results; cross-reference acknowledged in both standards; cited in North American vs European regulatory contexts for identical contamination scenarios",
-        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet comparison is the performance validation protocol for HYDROCORE water separation efficiency claims in European and international markets",
+        "related_technologies": "TURBOCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet comparison is the performance validation protocol for TURBOCORE water separation efficiency claims in European and international markets",
         "industrial_role": "ISO 12937 is the European and international market measurement standard enabling diesel fuel water contamination control — fleet operators and fuel system engineers in EN 590 and ISO 8217 jurisdictions depend on ISO 12937 testing to detect water accumulation before it exceeds injector protection thresholds and to validate that water-separating filtration is performing to specification."
       },
       "relationships": {
@@ -218,7 +218,7 @@
           "ASTM_D6304"
         ],
         "applicable_to_technologies": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "applicable_to_industries": [
           "MARINE",
@@ -229,7 +229,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_12937.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md"
     },
     {
       "key": "ISO_16889",
@@ -280,7 +280,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_16889.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md"
     },
     {
       "key": "ISO_4406",
@@ -327,7 +327,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_4406.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md"
     },
     {
       "key": "ISO_5011",
@@ -350,14 +350,14 @@
         "concept": "ISO 5011 — Air Filter Performance Test",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:32212b5f9d4aa2bd28b5471c7150771d466381940c7a8a04542774836d877a77"
+        "content_hash": "sha256:ccae0deba0603bf62bed13302e55d8f305b473d5885319d03e6f8131b9d7f906"
       },
       "canonical": {
         "definition": "ISO 5011 is the standardised laboratory test method for measuring air intake filter\nefficiency (%), flow restriction (kPa), and dust-holding capacity (g) for internal\ncombustion engine applications using ISO 12103-1 A2 fine test dust.",
-        "systems": "Air Intake domain; governs: MACROCORE™, SYNTEPORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
+        "systems": "Air Intake domain; governs: MACROCORE™, SYNTAPORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
         "failure_impact": "When ISO 5011 performance requirements are not met: insufficient particle capture →\nabrasive dust reaches combustion chamber → piston ring wear → cylinder scuffing →\nengine overhaul intervals reduced from 25,000 hours to 3,000–5,000 hours",
         "related_standards": "SAE J1539: Air intake contamination classification — companion standard defining\nacceptable dust concentration targets in intake air",
-        "related_technologies": "MACROCORE: 99.9%–99.98% efficiency at rated test dust | SYNTEPORE: ISO 5011 compliant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe ISO 5011-certified element",
+        "related_technologies": "MACROCORE: 99.9%–99.98% efficiency at rated test dust | SYNTAPORE: ISO 5011 compliant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe ISO 5011-certified element",
         "industrial_role": "ISO 5011 is the measurement framework that makes air filtration performance auditable.\nWithout ISO 5011 certification, filter performance claims are unverifiable — the test\nmethod defines the minimum evidence standard for responsible filtration specification\nin industrial, mining, and agricultural equipment."
       },
       "relationships": {
@@ -366,7 +366,7 @@
         ],
         "applicable_to_technologies": [
           "MACROCORE",
-          "SYNTEPORE",
+          "SYNTAPORE",
           "INTEKCORE"
         ],
         "applicable_to_industries": [
@@ -383,7 +383,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_5011.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md"
     },
     {
       "key": "NFPA_T214",
@@ -432,7 +432,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md"
+      "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md"
     },
     {
       "key": "SAE_J1539",
@@ -455,14 +455,14 @@
         "concept": "SAE J1539 Air Intake Cleanliness",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:7b9d850b22dcbacc487a5dacf57c9e7ff29b03864c50dfb1115631162d5e4094"
+        "content_hash": "sha256:011c8ebb7ef6ff1ad4dbf79f70f31f1951c8f2d6e7bcadadd9387f665601c464"
       },
       "canonical": {
         "definition": "SAE J1539 is the Society of Automotive Engineers classification standard defining air intake cleanliness requirements and test protocols for diesel engines, using SAE Fine Test Dust (ISO 12103-1 A2) to evaluate filtration performance in terms of dust ingestion limits and particle size distribution.",
         "systems": "Diesel engine air intake systems across all on-highway and off-highway equipment categories",
         "failure_impact": "Non-compliant air cleaner performance under SAE J1539 criteria → elevated silica and environmental dust ingestion → particle entry into combustion chamber → piston ring and cylinder bore abrasive wear → compression loss 10–25% and engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours.",
         "related_standards": "ISO 5011: ISO-framework equivalent test methodology for inlet air cleaning equipment | ISO 4406: Fluid cleanliness code used to measure downstream lube circuit contamination resulting from air ingestion failure",
-        "related_technologies": "MACROCORE: Air intake particulate capture technology rated to SAE J1539 dust challenge performance | SYNTEPORE: All-synthetic intake media maintaining SAE J1539 performance under high-humidity conditions",
+        "related_technologies": "MACROCORE: Air intake particulate capture technology rated to SAE J1539 dust challenge performance | SYNTAPORE: All-synthetic intake media maintaining SAE J1539 performance under high-humidity conditions",
         "industrial_role": "SAE J1539 provides the measurable performance criterion for comparing and selecting air intake filtration elements — it is the quantitative link between filter specification and engine protection against particle wear in operating environments."
       },
       "relationships": {
@@ -471,13 +471,13 @@
         ],
         "applicable_to_technologies": [
           "MACROCORE",
-          "SYNTEPORE"
+          "SYNTAPORE"
         ],
         "related_contamination": [
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md"
+      "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md"
     }
   ]
 }

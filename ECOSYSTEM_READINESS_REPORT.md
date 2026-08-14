@@ -28,7 +28,7 @@
 
 41 vault notes across 8 entity types. 335 directed graph edges. 97.3%+ resolution ratio (42/43 referenced keys have notes). The Part Search traversal path — Problem → ContaminationMode → Technology → ProductFamily — is fully connected across all 5 product domains (air, fuel, hydraulic, cabin, lube oil). All 41 notes have complete AI Retrieval canonical blocks, correct YAML schemas per Phase 3B, and Phase 3C-compliant wikilink conventions.
 
-Remaining 15%: INTEKCORE and SYNTEPORE ProductFamily notes (2 terminal nodes without families), the DIN_51524 stub (1 dangling reference, 1 ref count), deprecated technology notes (AQUAGUARD, COOLTECH), and ecosystem notes (MARINECLEAN, DURATECH) defined in Phase 3A but never created.
+Remaining 15%: INTEKCORE and SYNTAPORE ProductFamily notes (2 terminal nodes without families), the DIN_51524 stub (1 dangling reference, 1 ref count), deprecated technology notes (AQUAGUARD, THERMACORE), and ecosystem notes (MARINECLEAN, DURATECH) defined in Phase 3A but never created.
 
 **Stability: HIGH**
 
@@ -85,9 +85,9 @@ The Citation Index is the central artifact that makes every downstream AI/SEO in
 
 **Completion: 89%**
 
-`PART_SEARCH_MAP.json` contains 19 traversal paths across 3 types (A: Problem→PF, B: Industry→PF, C: Technology→PF). 17 of 19 paths are valid (89%). The 2 invalid paths both fail V003 (no terminal ProductFamily) for INTEKCORE and SYNTEPORE — both are structural gaps in the vault, not logic errors. The compiler (`scripts/build-part-search-map.js`) builds from CITATION_INDEX.json without external dependencies.
+`PART_SEARCH_MAP.json` contains 19 traversal paths across 3 types (A: Problem→PF, B: Industry→PF, C: Technology→PF). 17 of 19 paths are valid (89%). The 2 invalid paths both fail V003 (no terminal ProductFamily) for INTEKCORE and SYNTAPORE — both are structural gaps in the vault, not logic errors. The compiler (`scripts/build-part-search-map.js`) builds from CITATION_INDEX.json without external dependencies.
 
-Remaining 11%: INTEKCORE and SYNTEPORE ProductFamily notes needed for 100% path validity. The `citations=true` Part Search API parameter (Phase 4B scope) is not implemented. No integration with the live `/api/part-search` endpoint.
+Remaining 11%: INTEKCORE and SYNTAPORE ProductFamily notes needed for 100% path validity. The `citations=true` Part Search API parameter (Phase 4B scope) is not implemented. No integration with the live `/api/part-search` endpoint.
 
 **Stability: MEDIUM**
 
@@ -102,7 +102,7 @@ The map is not consumed by any live system. All risk is in the rebuild dependenc
 - No `citations=true` parameter on Part Search API — the entire map is computed but unused in production
 - Rebuild of map requires two manual commands (compiler then map builder)
 - No pre-build automation
-- INTEKCORE and SYNTEPORE product family gaps leave 2 paths invalid
+- INTEKCORE and SYNTAPORE product family gaps leave 2 paths invalid
 
 **Business Impact: HIGH (deferred)**
 
@@ -185,7 +185,7 @@ The only risk: the vault and UD can drift out of sync. 29 vault notes have `in_u
 
 - No automated cross-validation between vault notes and UD records (the `ud_anchor` design from Phase 4 plan is specified but not implemented)
 - Vault notes that are `in_unified_data: true` must be manually re-verified after any UD change
-- HYDROCORE and THERMOCORE have `# TODO: verify exact metrics` annotations in vault notes (flagged in Phase 3B, never resolved)
+- TURBOCORE and THERMOCORE have `# TODO: verify exact metrics` annotations in vault notes (flagged in Phase 3B, never resolved)
 - UD does not reference vault keys — the relationship is one-directional (vault knows about UD; UD does not know about vault)
 
 **Business Impact: HIGH**

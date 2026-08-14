@@ -17,7 +17,7 @@
 // calls into. The only durable writes this script performs are
 // state/source-baseline.json, state/backups/*, and state/promotion-audit.json
 // on the hermes-state branch — never a candidate, never a canonical note,
-// never PostgreSQL/pgvector/unified-data, and never anything under
+// never PostgreSQL/pgvector/legacy catalogue layer, and never anything under
 // elimfilters-vault/. It also writes one local, gitignored, ephemeral file
 // (hermes/baselines/promotion-result.local.json) purely so the "Generate
 // weekly review report" step later in the same job can render what

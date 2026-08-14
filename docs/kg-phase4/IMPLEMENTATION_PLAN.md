@@ -80,12 +80,12 @@ drycore      — Compressed Air Drying
 gasultra     — Compressed Air Coalescing
 syntrax      — Lube / Engine Oil Filtration (CORRECTED from hydraulic)
 duratech     — Lube / Engine Oil Extended Life
-cooltech     — Lube / Coolant Filtration
+THERMACORE     — Lube / Coolant Filtration
 marineclean  — Lube / Marine Engine Oil
 blueclean    — Lube / Specialty Fluid
 nanoforce    — Hydraulic Filtration (CORRECTED, not lube)
 aquaguard    — Fuel / Water Separation
-syntepore    — Fuel Filtration Media
+SYNTAPORE    — Fuel Filtration Media
 microkappa   — Cabin Air Filtration (CORRECTED from coolant)
 ```
 

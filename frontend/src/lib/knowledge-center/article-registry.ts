@@ -345,7 +345,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     metaDescription: 'HPCR injector wear from particulate contamination and water corrosion. Orifice blockage, needle stiction, erosion mechanisms.',
     definition: 'Injector wear is the degradation of high-pressure common rail (HPCR) injector needle valves and nozzle orifices caused by particulate contamination and water corrosion. The microscopic tolerances (0.1 mm nozzle holes, 0.5–1 µm needle seat) cannot tolerate contamination >2 µm. Wear manifests as erosion, stiction (stick-slip), and orifice blockage, causing injection timing errors, uneven fuel distribution, and complete injector failure.',
     relatedStandards: ['ASTM D6304', 'ISO 12937', 'SAE J1739'],
-    relatedTechnologies: ['SYNTEPORE', 'HYDROCORE', 'TURBOCORE'],
+    relatedTechnologies: ['SYNTAPORE', 'TURBOCORE', 'TURBOCORE'],
     sections: [
       {
         heading: 'HPCR Injector Design and Failure Sensitivity',
@@ -361,17 +361,17 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         heading: 'Detection and Prevention Strategy',
-        body: 'Injector wear detection: (1) ISO 4406 fuel analysis for particle counts (target <4 µm particles for HPCR); (2) Karl Fischer testing for water content (critical threshold >200 ppm); (3) Injector performance testing — modern OBD-II systems detect injection timing variance (>50 microseconds); rough idle and white smoke indicate stiction/blockage. Prevention requires three-stage fuel protection: (1) SYNTEPORE fuel filtration (10 µm absolute, Beta 1000) capturing particulates before fuel rail; (2) HYDROCORE water separator (99% water removal to <50 ppm) preventing corrosion; (3) TURBOCORE 3-stage fuel polishing for proactive tank treatment. Regular Karl Fischer testing (monthly during rainy season, quarterly otherwise) allows early detection of water ingress before corroded fuel reaches injectors.',
+        body: 'Injector wear detection: (1) ISO 4406 fuel analysis for particle counts (target <4 µm particles for HPCR); (2) Karl Fischer testing for water content (critical threshold >200 ppm); (3) Injector performance testing — modern OBD-II systems detect injection timing variance (>50 microseconds); rough idle and white smoke indicate stiction/blockage. Prevention requires three-stage fuel protection: (1) SYNTAPORE fuel filtration (10 µm absolute, Beta 1000) capturing particulates before fuel rail; (2) TURBOCORE water separator (99% water removal to <50 ppm) preventing corrosion; (3) TURBOCORE 3-stage fuel polishing for proactive tank treatment. Regular Karl Fischer testing (monthly during rainy season, quarterly otherwise) allows early detection of water ingress before corroded fuel reaches injectors.',
       },
       {
         heading: 'Real-World Case Study: Commercial Fleet Fuel System Protection',
-        body: 'Heavy-duty truck fleet, 25 vehicles, tropical climate (coastal Malaysia). Baseline: Commodity fuel filters + standard tank breathers. Problem: 8–10 injector failures per year across fleet ($96K–120K annual cost). Failure pattern: Every 4–6 weeks, 1–2 vehicles experience rough idle and white smoke, requiring injector removal and replacement. Root cause analysis: Fuel samples showed ISO 6/4/2 particle cleanliness (HPCR target: <2/0/0, essentially "clean") and 400–800 ppm water during rainy season (monsoon moisture ingress through breather). Implementation: (1) Desiccant breathers on all 25 fuel tanks (silica-gel, rechargeable); (2) HYDROCORE water separator filters on all fuel systems (dual-stage coalescing); (3) Monthly Karl Fischer testing on fuel samples; (4) Annual fuel polishing service at regional depot. Results after 12 months: Water levels maintained <50 ppm year-round (vs. baseline 400–800 ppm); fuel cleanliness improved to <4/2/0; zero injector failures in year 1 (vs. baseline 8–10/year). Cost impact: Equipment investment $35K (breathers, filters, testing equipment), maintenance $12K/year (fuel polishing, testing) = $47K total first-year cost. Savings: 8 injector replacements avoided × $8K average cost = $64K first-year savings, plus improved fuel economy (+2–3% from cleaner combustion), plus eliminated downtime. 18-month payback, 10-year fleet savings: $480K+.',
+        body: 'Heavy-duty truck fleet, 25 vehicles, tropical climate (coastal Malaysia). Baseline: Commodity fuel filters + standard tank breathers. Problem: 8–10 injector failures per year across fleet ($96K–120K annual cost). Failure pattern: Every 4–6 weeks, 1–2 vehicles experience rough idle and white smoke, requiring injector removal and replacement. Root cause analysis: Fuel samples showed ISO 6/4/2 particle cleanliness (HPCR target: <2/0/0, essentially "clean") and 400–800 ppm water during rainy season (monsoon moisture ingress through breather). Implementation: (1) Desiccant breathers on all 25 fuel tanks (silica-gel, rechargeable); (2) TURBOCORE water separator filters on all fuel systems (dual-stage coalescing); (3) Monthly Karl Fischer testing on fuel samples; (4) Annual fuel polishing service at regional depot. Results after 12 months: Water levels maintained <50 ppm year-round (vs. baseline 400–800 ppm); fuel cleanliness improved to <4/2/0; zero injector failures in year 1 (vs. baseline 8–10/year). Cost impact: Equipment investment $35K (breathers, filters, testing equipment), maintenance $12K/year (fuel polishing, testing) = $47K total first-year cost. Savings: 8 injector replacements avoided × $8K average cost = $64K first-year savings, plus improved fuel economy (+2–3% from cleaner combustion), plus eliminated downtime. 18-month payback, 10-year fleet savings: $480K+.',
       },
     ],
     faqs: [
       {
         question: 'Why can\'t commodity diesel filters protect HPCR injectors?',
-        answer: 'Commodity diesel filters are rated 20–25 µm absolute (Beta 200 @ 20 µm), allowing 50% of particles >20 µm to pass. HPCR injectors fail at >4 µm particles. A commodity filter allowing even 1% of 5 µm particles to pass is catastrophic — 100 µm³ of fuel passing through 0.1 mm nozzle orifices at 1000 liters/hour = millions of 5 µm particles per minute reaching injectors. SYNTEPORE 10 µm filtration (Beta 1000 @ 10 µm) captures 99.9% of particles >10 µm and 95%+ of 4–10 µm range, protecting orifices. The particle size threshold is the critical difference.',
+        answer: 'Commodity diesel filters are rated 20–25 µm absolute (Beta 200 @ 20 µm), allowing 50% of particles >20 µm to pass. HPCR injectors fail at >4 µm particles. A commodity filter allowing even 1% of 5 µm particles to pass is catastrophic — 100 µm³ of fuel passing through 0.1 mm nozzle orifices at 1000 liters/hour = millions of 5 µm particles per minute reaching injectors. SYNTAPORE 10 µm filtration (Beta 1000 @ 10 µm) captures 99.9% of particles >10 µm and 95%+ of 4–10 µm range, protecting orifices. The particle size threshold is the critical difference.',
       },
       {
         question: 'How is water detected in diesel before it damages injectors?',
@@ -418,7 +418,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     metaDescription: 'Water contamination in fuel and oil systems. Microbial growth, corrosion, Karl Fischer testing (ASTM D6304).',
     definition: 'Water ingress is the entry and accumulation of water (free, emulsified, or dissolved) in fuel, lubricating oil, or hydraulic fluid systems. Water promotes microbial growth at fluid-water interfaces, accelerates oxidation and acid formation, corrodes fuel injectors and valve components, and reduces viscosity. Critical threshold: >200 ppm free water triggers exponential microbial growth and component damage.',
     relatedStandards: ['ASTM D6304', 'ISO 12937', 'ASTM D4378', 'ISO 3448'],
-    relatedTechnologies: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE', 'DRYCORE'],
+    relatedTechnologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE', 'DRYCORE'],
     sections: [
       {
         heading: 'Water Entry Pathways',
@@ -438,11 +438,11 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         heading: 'Prevention: Multi-Layer Water Control',
-        body: 'Water ingress prevention requires blocking entry routes and removing ingressed water: (1) Desiccant breathers (silica-gel type) replace standard air breathers, absorbing atmospheric moisture before humid air enters tank—reduces ingression 50–70%; (2) Water separator filters (HYDROCORE technology with coalescing media) capture free water at fuel filter stage, gravity-draining 95%+ of separated water before reaching injectors; (3) Fuel polishing units (portable or skid-mounted) with 3-micron particulate filter + water separator for proactive tank treatment; (4) Sealed fuel caps and inspection covers to minimize tank opening and moisture entry; (5) Regular tank cleaning every 2–3 years in humid climates, removing accumulated microbiota and sediment. Combined approach: desiccant breather + water separator filter + quarterly Karl Fischer testing reduces water-related failures to near zero.',
+        body: 'Water ingress prevention requires blocking entry routes and removing ingressed water: (1) Desiccant breathers (silica-gel type) replace standard air breathers, absorbing atmospheric moisture before humid air enters tank—reduces ingression 50–70%; (2) Water separator filters (TURBOCORE technology with coalescing media) capture free water at fuel filter stage, gravity-draining 95%+ of separated water before reaching injectors; (3) Fuel polishing units (portable or skid-mounted) with 3-micron particulate filter + water separator for proactive tank treatment; (4) Sealed fuel caps and inspection covers to minimize tank opening and moisture entry; (5) Regular tank cleaning every 2–3 years in humid climates, removing accumulated microbiota and sediment. Combined approach: desiccant breather + water separator filter + quarterly Karl Fischer testing reduces water-related failures to near zero.',
       },
       {
         heading: 'Tropical Fleet Operations Case Study',
-        body: 'Tropical shipping fleet, 8 vessels, heavy fuel oil + diesel auxiliary engines. Baseline: Standard tank breathers, no water monitoring. Problem: 60% unplanned engine shutdowns per year due to fuel system contamination (suspected water ingress). Failure pattern: Every 4–6 weeks, 1–2 vessels experience fuel starvation caused by injector stiction, requiring 2–3 day port time for injector replacement ($18,000 per event). Implementation: (1) Desiccant breathers on all 16 fuel tanks (main + auxiliary); (2) Water separator filters (HYDROCORE dual-stage) on all fuel systems; (3) Monthly Karl Fischer testing on samples from each tank; (4) Annual fuel polishing service at major ports. Results: After 6 months, detected water levels <50 ppm on all tanks (vs. baseline 300–800 ppm during rainy season). Zero fuel-related shutdowns in year 1. Maintenance cost: $50,000 (breathers, filters, testing, polishing) reduced failures by ~$432,000 (8 vessels × 6 events/year × $9,000 per event). Net 6-month payback, 10-year savings: $4.3M+ per fleet.',
+        body: 'Tropical shipping fleet, 8 vessels, heavy fuel oil + diesel auxiliary engines. Baseline: Standard tank breathers, no water monitoring. Problem: 60% unplanned engine shutdowns per year due to fuel system contamination (suspected water ingress). Failure pattern: Every 4–6 weeks, 1–2 vessels experience fuel starvation caused by injector stiction, requiring 2–3 day port time for injector replacement ($18,000 per event). Implementation: (1) Desiccant breathers on all 16 fuel tanks (main + auxiliary); (2) Water separator filters (TURBOCORE dual-stage) on all fuel systems; (3) Monthly Karl Fischer testing on samples from each tank; (4) Annual fuel polishing service at major ports. Results: After 6 months, detected water levels <50 ppm on all tanks (vs. baseline 300–800 ppm during rainy season). Zero fuel-related shutdowns in year 1. Maintenance cost: $50,000 (breathers, filters, testing, polishing) reduced failures by ~$432,000 (8 vessels × 6 events/year × $9,000 per event). Net 6-month payback, 10-year savings: $4.3M+ per fleet.',
       },
     ],
     faqs: [
@@ -460,7 +460,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         question: 'Can water separators remove all water from contaminated fuel?',
-        answer: 'Water separator filters (coalescing media type like HYDROCORE) capture 95–98% of free and emulsified water. Dissolved water (molecular water in fuel solution, <50 ppm) passes through. For heavily contaminated fuel (>500 ppm water), a two-stage approach works best: (1) Primary water separator removes bulk free water, (2) Fuel polishing unit (portable filtration + water separation) removes remaining emulsion and dissolved water over several circulation cycles.',
+        answer: 'Water separator filters (coalescing media type like TURBOCORE) capture 95–98% of free and emulsified water. Dissolved water (molecular water in fuel solution, <50 ppm) passes through. For heavily contaminated fuel (>500 ppm water), a two-stage approach works best: (1) Primary water separator removes bulk free water, (2) Fuel polishing unit (portable filtration + water separation) removes remaining emulsion and dissolved water over several circulation cycles.',
       },
       {
         question: 'Why do tropical regions experience more water ingress failures?',
@@ -485,7 +485,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     metaDescription: 'Fuel contamination: HPCR injector damage, particulate & water ingress, biodiesel compatibility. ASTM D6304 water testing.',
     definition: 'Fuel contamination refers to solid particles (>4 µm), water (free or emulsified), and microorganisms suspended in diesel or biodiesel fuel. Modern high-pressure common rail (HPCR) injectors with 0.1–0.15 mm nozzle orifices and 0.5–1 µm valve seats are extremely sensitive to particulate and water contamination, failing catastrophically within 500–1000 hours of exposure to contaminated fuel.',
     relatedStandards: ['ASTM D6304', 'ISO 12937', 'ASTM D4378', 'ISO 16332'],
-    relatedTechnologies: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE', 'DRYCORE'],
+    relatedTechnologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE', 'DRYCORE'],
     sections: [
       {
         heading: 'HPCR Injector Design & Contamination Sensitivity',
@@ -505,11 +505,11 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         heading: 'Fuel Filtration & Protection Strategy',
-        body: 'HPCR fuel protection requires multiple filtration stages: (1) Bulk fuel storage filtration — 25 µm particle filter + water separator tank-inlet filter preventing new oil contamination during transfer into vehicle tanks; (2) Primary fuel filter (main filter) — 10 µm absolute (Beta 1000 @ 10 µm) removing particles and 90–95% free water before fuel reaches fuel pump; (3) Secondary fuel filter (fine filter) — 4 µm absolute or tighter (Beta 1000 @ 4 µm), protecting HPCR fuel rail and injectors from finer particles; (4) Pilot fuel drain filtration — 10 µm filter on injector pilot fuel return circuit, preventing wear particles from pilot spool degradation from re-circulating into main fuel rail. Modern ELIMFILTERS SYNTEPORE + HYDROCORE combination provides sequential 10 µm + 4 µm particle removal + water separation (95%+ efficiency at free water level) in a single cartridge, meeting HPCR protection requirements. Fuel polishing of existing tanks (portable 3 µm filter + water separator cart) required when transitioning to biodiesel blends.',
+        body: 'HPCR fuel protection requires multiple filtration stages: (1) Bulk fuel storage filtration — 25 µm particle filter + water separator tank-inlet filter preventing new oil contamination during transfer into vehicle tanks; (2) Primary fuel filter (main filter) — 10 µm absolute (Beta 1000 @ 10 µm) removing particles and 90–95% free water before fuel reaches fuel pump; (3) Secondary fuel filter (fine filter) — 4 µm absolute or tighter (Beta 1000 @ 4 µm), protecting HPCR fuel rail and injectors from finer particles; (4) Pilot fuel drain filtration — 10 µm filter on injector pilot fuel return circuit, preventing wear particles from pilot spool degradation from re-circulating into main fuel rail. Modern ELIMFILTERS SYNTAPORE + TURBOCORE combination provides sequential 10 µm + 4 µm particle removal + water separation (95%+ efficiency at free water level) in a single cartridge, meeting HPCR protection requirements. Fuel polishing of existing tanks (portable 3 µm filter + water separator cart) required when transitioning to biodiesel blends.',
       },
       {
         heading: 'Heavy-Duty Diesel Fleet Fuel Contamination Prevention',
-        body: 'Regional distribution fleet, 25 class-8 trucks, fuel stored in on-site 5000-gallon bulk tank. Problem: Frequent injector failures (2–3 failures per truck per year, total 50–75 injector replacements annually at $800 each = $40K–60K/year). Investigation: Fuel samples showed 300–500 ppm water (from tank venting, precipitation), ISO cleanliness 22/20/16. Implementation: (1) Desiccant breather on bulk tank (prevents rain water and humid air ingress); (2) 25 µm pre-filter on fuel transfer pump (vehicle fill-up line); (3) Dual-stage in-vehicle filtration — SYNTEPORE 10 µm primary + HYDROCORE 4 µm secondary with integrated water separator; (4) Monthly Karl Fischer testing on bulk tank; (5) Annual fuel polishing service when water exceeded 50 ppm. Results: Fuel water reduced from 300–500 ppm to <50 ppm (below microbial growth threshold). Injector failures dropped to 0–1 per truck per year (92% reduction). Maintenance cost savings: $38K–60K annually. ROI: Equipment investment ($3K per truck × 25 = $75K) recovered in 1.5 years, then $40K+ annual savings. 5-year savings: $175K+ per fleet.',
+        body: 'Regional distribution fleet, 25 class-8 trucks, fuel stored in on-site 5000-gallon bulk tank. Problem: Frequent injector failures (2–3 failures per truck per year, total 50–75 injector replacements annually at $800 each = $40K–60K/year). Investigation: Fuel samples showed 300–500 ppm water (from tank venting, precipitation), ISO cleanliness 22/20/16. Implementation: (1) Desiccant breather on bulk tank (prevents rain water and humid air ingress); (2) 25 µm pre-filter on fuel transfer pump (vehicle fill-up line); (3) Dual-stage in-vehicle filtration — SYNTAPORE 10 µm primary + TURBOCORE 4 µm secondary with integrated water separator; (4) Monthly Karl Fischer testing on bulk tank; (5) Annual fuel polishing service when water exceeded 50 ppm. Results: Fuel water reduced from 300–500 ppm to <50 ppm (below microbial growth threshold). Injector failures dropped to 0–1 per truck per year (92% reduction). Maintenance cost savings: $38K–60K annually. ROI: Equipment investment ($3K per truck × 25 = $75K) recovered in 1.5 years, then $40K+ annual savings. 5-year savings: $175K+ per fleet.',
       },
     ],
     faqs: [
@@ -527,7 +527,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         question: 'How do water separators prevent injector water damage?',
-        answer: 'Coalescing water separator filters (HYDROCORE technology) use oleophobic (water-attracting) media that allows diesel to pass while capturing water droplets. Captured water droplets coalesce into larger drops that sink and drain by gravity at the bottom of the filter bowl. This removes 90–95% of free water before fuel reaches the HPCR fuel rail. Emulsified water (tiny droplets dispersed throughout fuel) requires additional fuel polishing via portable tank treatment systems.',
+        answer: 'Coalescing water separator filters (TURBOCORE technology) use oleophobic (water-attracting) media that allows diesel to pass while capturing water droplets. Captured water droplets coalesce into larger drops that sink and drain by gravity at the bottom of the filter bowl. This removes 90–95% of free water before fuel reaches the HPCR fuel rail. Emulsified water (tiny droplets dispersed throughout fuel) requires additional fuel polishing via portable tank treatment systems.',
       },
       {
         question: 'What is the critical water level that causes HPCR injector corrosion?',
@@ -620,7 +620,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     metaDescription: 'Cavitation in hydraulic systems: vapor bubble formation, cavity collapse erosion, pump damage, prevention through pressure control.',
     definition: 'Cavitation is the rapid formation and collapse of vapor bubbles (cavities) in flowing liquid, occurring when local pressure drops below the liquid\'s vapor pressure. In hydraulic systems, cavitation happens in pump inlet lines, proportional valve spools, and orifice restrictions. Cavity collapse creates violent pressure waves (>2000 bar for microseconds) that damage component surfaces through erosion, pitting, and material loss.',
     relatedStandards: ['ISO 16889', 'ISO 4413', 'NFPA T2.14'],
-    relatedTechnologies: ['NANOFORCE', 'SYNTEPORE'],
+    relatedTechnologies: ['NANOFORCE', 'SYNTAPORE'],
     sections: [
       {
         heading: 'Cavitation Physics in Hydraulic Systems',
@@ -683,7 +683,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
     metaDescription: 'Hydraulic pump failure: cavitation, abrasive wear, load-carrying capacity loss. ISO 16889 fluid cleanliness targets. Predictive monitoring strategies.',
     definition: 'Pump failure is the catastrophic loss of a hydraulic pump\'s ability to generate flow and maintain pressure due to cavitation erosion, abrasive particle wear degrading internal clearances, or internal component seizure. Hydraulic pumps operate with clearances of 1–5 µm; a single contamination event introducing 10–50 µm particles causes wear that reduces clearance below critical thresholds, increasing leakage and reducing pump displacement. Complete pump failure requires replacement (€8,000–25,000 per pump) and 3–7 day downtime for system flushing and fluid replacement.',
     relatedStandards: ['ISO 16889', 'ISO 4413', 'NFPA T2.14', 'ISO 6162'],
-    relatedTechnologies: ['NANOFORCE', 'SYNTEPORE', 'DURATECH'],
+    relatedTechnologies: ['NANOFORCE', 'SYNTAPORE', 'DURATECH'],
     sections: [
       {
         heading: 'Hydraulic Pump Types and Contamination Sensitivity',
@@ -1494,12 +1494,12 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
         effectiveness: 'Reduces water ingression 50-80%. Prevents seasonal condensation buildup (1-5 L per tank → <0.1 L per tank annually). Cost: €50-100 filter element, replaceable annually or every 50,000 km.',
       },
       {
-        technology: 'HYDROCORE Water Separator (3 µm + water absorption)',
+        technology: 'TURBOCORE Water Separator (3 µm + water absorption)',
         mechanism: 'Dual-stage fuel filter: (1) 10 µm particulate removal; (2) water absorption cartridge (super-absorbent polymer) captures free and emulsified water up to 100 mL capacity. Positioned between fuel tank and injection pump.',
         effectiveness: 'Removes 99% of water entering fuel system. Protects HPCR injectors from water emulsion corrosion. Extends injector service life 3-5×. Cost: €400-600 separator assembly + €150-200 cartridge per service (every 30,000-50,000 km).',
       },
       {
-        technology: 'HYDROCORE Biocide Treatment (Preventive)',
+        technology: 'TURBOCORE Biocide Treatment (Preventive)',
         mechanism: 'Biocide additive (2-5 ppm concentration) inhibits bacterial metabolism, preventing biofilm formation. Applied to contaminated fuel or as preventive injection into fuel tank.',
         effectiveness: 'Kills existing bacterial colonies (<1,000,000 CFU/mL treatable in-tank) within 24-48 hours. Prevents recurrence if water content remains <50 ppm. Cost: €50-100 per treatment, recommended quarterly for high-humidity climates.',
       },
@@ -1534,7 +1534,7 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
     },
     relatedProblems: ['PROB-FUEL-CONTAMINATION', 'PROB-WATER-INGRESS'],
     relatedStandards: ['ASTM D6304', 'ISO 12937', 'ISO 4406', 'ASTM D664'],
-    relatedTechnologies: ['HYDROCORE', 'SYNTEPORE', 'TURBOCORE'],
+    relatedTechnologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE'],
   },
 
   // ── CASE 3: Air Intake Particle Erosion (Mining Equipment - Blade Wear) ────────

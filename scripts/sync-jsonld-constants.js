@@ -106,7 +106,7 @@ const standardsIndexData = {
 };
 
 // 3. JSONLD_AIR_INTAKE_SYSTEMS — TechArticle + DefinedTermSet
-const airIntakeKeys = ['ISO_5011', 'SAE_J1539', 'MACROCORE', 'SYNTEPORE', 'INTEKCORE'];
+const airIntakeKeys = ['ISO_5011', 'SAE_J1539', 'MACROCORE', 'SYNTAPORE', 'INTEKCORE'];
 const airIntakeData = {
   '@context': 'https://schema.org',
   '@type': ['TechArticle', 'DefinedTermSet'],
@@ -116,12 +116,12 @@ const airIntakeData = {
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
-  keywords: 'air intake filtration, ISO 5011, SAE J1539, MACROCORE, SYNTEPORE, INTEKCORE, engine air filter, diesel air intake',
+  keywords: 'air intake filtration, ISO 5011, SAE J1539, MACROCORE, SYNTAPORE, INTEKCORE, engine air filter, diesel air intake',
   about: standardKeys.filter(k => ['ISO_5011', 'SAE_J1539'].includes(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),
-  mentions: ['MACROCORE', 'SYNTEPORE', 'INTEKCORE'].filter(k => entity(k)).map(k => ({
+  mentions: ['MACROCORE', 'SYNTAPORE', 'INTEKCORE'].filter(k => entity(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),
@@ -184,7 +184,7 @@ const cabinData = {
 };
 
 // 6. JSONLD_FUEL_SYSTEMS — TechArticle + DefinedTermSet
-const fuelKeys = ['ASTM_D6304', 'ISO_12937', 'HYDROCORE'];
+const fuelKeys = ['ASTM_D6304', 'ISO_12937', 'TURBOCORE'];
 const fuelData = {
   '@context': 'https://schema.org',
   '@type': ['TechArticle', 'DefinedTermSet'],
@@ -194,12 +194,12 @@ const fuelData = {
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
-  keywords: 'fuel filtration, ASTM D6304, ISO 12937, HYDROCORE, diesel water contamination, Karl Fischer titration, fuel filter',
+  keywords: 'fuel filtration, ASTM D6304, ISO 12937, TURBOCORE, diesel water contamination, Karl Fischer titration, fuel filter',
   about: ['ASTM_D6304', 'ISO_12937'].filter(k => entity(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),
-  mentions: ['HYDROCORE'].filter(k => entity(k)).map(k => ({
+  mentions: ['TURBOCORE'].filter(k => entity(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),
@@ -283,12 +283,12 @@ const dieselWaterData = {
   author: { '@type': 'Organization', name: 'ELIMFILTERS' },
   publisher: { '@type': 'Organization', name: 'ELIMFILTERS', url: 'https://elimfilters.com' },
   dateModified: '2026-06-03',
-  keywords: 'diesel water contamination, fuel contamination, ASTM D6304, ISO 12937, HYDROCORE, Karl Fischer titration, injector damage, fuel filter',
+  keywords: 'diesel water contamination, fuel contamination, ASTM D6304, ISO 12937, TURBOCORE, Karl Fischer titration, injector damage, fuel filter',
   about: ['ASTM_D6304', 'ISO_12937'].filter(k => entity(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),
-  mentions: ['HYDROCORE'].filter(k => entity(k)).map(k => ({
+  mentions: ['TURBOCORE'].filter(k => entity(k)).map(k => ({
     '@type': 'Thing',
     name: entityName(k),
   })),

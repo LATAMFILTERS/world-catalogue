@@ -6,7 +6,7 @@ label: "Primary Intake Protection"
 slug: airfilter
 description: "Multi-layer MACROCORE™ filtration elements for primary air intake protection in heavy-duty diesel engines. Covers the full range of engine sizes and configurations across mining, agriculture, construction, and commercial transport equipment — from small agricultural tractors to 400-tonne mining haul trucks."
 uses_technology: "[[MACROCORE]]"
-uses_tech_display: "MACROCORE™ / SYNTEPORE™"
+uses_tech_display: "MACROCORE™ / SYNTAPORE™"
 belongs_to_domain: "[[AIR_INTAKE_PROTECTION]]"
 belongs_to_product_system: "[[AIR_INTAKE_PROTECTION]]"
 meets_standards:
@@ -29,7 +29,7 @@ tags:
   - part-search-node
 ---
 
-The Primary Intake Protection family is the core of the ELIMFILTERS® air filtration product range. It contains all MACROCORE™-technology filter elements designed for primary duty in engine air intake systems — excluding housing assemblies (INTEKCORE™ family) and synthetic-media variants for special environments (SYNTEPORE™ family).
+The Primary Intake Protection family is the core of the ELIMFILTERS® air filtration product range. It contains all MACROCORE™-technology filter elements designed for primary duty in engine air intake systems — excluding housing assemblies (INTEKCORE™ family) and synthetic-media variants for special environments (SYNTAPORE™ family).
 
 This family covers approximately 120 ELIMFILTERS® SKUs spanning:
 - Round element configurations (spin-on and service-element types)
@@ -112,7 +112,7 @@ SAE J1539: Contamination classification standard confirming element specificatio
 
 RELATED_TECHNOLOGIES
 MACROCORE: Primary element technology (PDG multi-layer construction) |
-SYNTEPORE: Alternative family for humid/marine environments (not in this family)
+SYNTAPORE: Alternative family for humid/marine environments (not in this family)
 
 INDUSTRIAL_ROLE
 This product family is the principal contamination control implementation for the most

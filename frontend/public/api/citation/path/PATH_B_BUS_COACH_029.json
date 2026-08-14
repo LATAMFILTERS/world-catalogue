@@ -29,14 +29,14 @@
           "concept": "Bus & Coach Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:53dae340f1c38575d34dd3d8c0489748f720ea17ace99a281161725454dbdae6"
+          "content_hash": "sha256:e841fc603d3dc14966c4b9077e77c3eee946c2ed53c75c1edb87d7b8d519b882"
         },
         "canonical": {
           "definition": "Bus & Coach is a MODERATE contamination exposure industrial category for public and passenger transport vehicle operations, with contamination risk driven by high-cycle urban stop-start engine soot loading, depot fuel tank condensation water accumulation, and passenger cabin PM2.5 exposure in traffic-congested urban corridors where ambient diesel particulate concentrations regularly exceed WHO 24-hour guidelines of 15 µg/m³.",
           "systems": "Urban transit bus diesel engine lube oil circuits, bulk depot fuel storage and vehicle fuel supply systems, bus and coach passenger compartment and driver cab HVAC filtration",
           "failure_impact": "Stop-start urban operation soot loading in bus lube oil above ISO 4406 19/17/14 → accelerated bearing journal wear → engine seizure → unplanned engine replacement | Engine replacement cost: $40,000–$80,000 per vehicle | Depot fuel condensation above 200 mg/kg total water → injector tip cavitation erosion across common-rail fleet → injector replacement $800–$4,000/unit across fleet size | Unfiltered passenger cabin PM2.5 at 50–150 µg/m³ urban ambient → 35–50% of routes expose passengers above WHO 15 µg/m³ guideline | Operational Impact: cumulative respiratory health liability and schedule disruption costs exceed filtration investment by order of magnitude in large transit fleets.",
           "related_standards": "ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification",
-          "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection",
+          "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection",
           "industrial_role": "Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory."
         },
         "relationships": {
@@ -48,7 +48,7 @@
           "applicable_technologies": [
             "MACROCORE",
             "SYNTRAX",
-            "HYDROCORE",
+            "TURBOCORE",
             "MICROKAPPA"
           ],
           "applicable_standards": [
@@ -66,7 +66,7 @@
             "CABIN_PRIMARY"
           ]
         },
-        "vault_path": "elimfilters-vault/02-industries/BUS_COACH.md"
+        "vault_path": "elimfilters-vault\\02-industries\\BUS_COACH.md"
       }
     },
     {
@@ -137,7 +137,7 @@
             "AUTOMOTIVE"
           ]
         },
-        "vault_path": "elimfilters-vault/07-problems/ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
       }
     },
     {
@@ -187,7 +187,7 @@
             "SYNTRAX"
           ]
         },
-        "vault_path": "elimfilters-vault/05-contamination/PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
       }
     },
     {
@@ -214,14 +214,14 @@
           "concept": "MACROCORE™ Air Intake Filtration Technology",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:1b1682ed59ba0dc724f3b877ac57e312154015e43b258251f10b8c2c2f103c7e"
+          "content_hash": "sha256:280fe1399efea77f1c4a87e184928660f565a803270801b03319723bda392759"
         },
         "canonical": {
           "definition": "Progressive Density Gradient (PDG) multi-layer air intake filtration system achieving\n99.9%–99.98% particle interception efficiency under ISO 5011 certification with a 62 PSI\nanti-collapse structural rating for heavy-duty combustion engines.",
           "systems": "Air Intake domain; applicable industries: Mining, Agriculture, Construction, Marine,\nAutomotive, Bus & Coach, Railway, Trucks & Fleets, Oil & Gas, Power Generation,\nWaste & Municipal (11 of 12 industry verticals)",
           "failure_impact": "Without adequate air intake filtration: dust ingestion → abrasive particle wear on piston\nrings, cylinder walls, and turbocharger bearings → compression loss 10–25% → oil\nconsumption increase 15–40% → engine overhaul interval reduced from 15,000–25,000 hours\nto 3,000–5,000 hours",
           "related_standards": "ISO 5011: Standardised efficiency, restriction, and dust-holding capacity test for air\nintake filters | SAE J1539: Air intake contamination classification for diesel engines |\nISO 16889: Multi-pass filter test and Beta ratio classification (supporting standard)",
-          "related_technologies": "SYNTEPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
+          "related_technologies": "SYNTAPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
           "industrial_role": "MACROCORE™ is the primary contamination control mechanism for the air intake path — the\nsingle largest source of abrasive particle ingestion in off-highway diesel engines.\nCorrect air filtration selection and maintenance is the highest-leverage intervention\nfor extending engine overhaul intervals in mining, agriculture, and construction."
         },
         "relationships": {
@@ -247,7 +247,7 @@
             "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
       }
     }
   ],

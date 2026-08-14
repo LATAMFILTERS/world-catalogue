@@ -379,8 +379,8 @@ export default function WaterContaminationPathways({ className, style }: SvgDiag
         PREVENTION TECHNOLOGIES
       </text>
       {[
-        { t: 'HYDROCORE — coalescing water separator, bulk free-water removal', y: 463 },
-        { t: 'SYNTEPORE — glass-fiber fuel media, hydrophobic coating repels water', y: 477 },
+        { t: 'TURBOCORE — coalescing water separator, bulk free-water removal', y: 463 },
+        { t: 'SYNTAPORE — glass-fiber fuel media, hydrophobic coating repels water', y: 477 },
         { t: 'TURBOCORE — 3-stage fuel treatment: pre-filter + coalesce + final', y: 491 },
         { t: 'Desiccant breather recommended on all non-pressurised vent ports', y: 503 },
       ].map(row => (

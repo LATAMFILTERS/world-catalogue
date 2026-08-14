@@ -68,20 +68,20 @@ VALUES
   -- DURATECH controls lube oil particle wear (extended drain)
   ('duratech',    'technology', 'particle-wear',            'contamination_mode', 'controls', 3),
 
-  -- COOLTECH controls coolant contamination (coolant degradation mode)
+  -- THERMACORE controls coolant contamination (coolant degradation mode)
   ('thermacore',    'technology', 'particle-wear',            'contamination_mode', 'controls', 1),  -- removes coolant-borne particles
 
   -- MARINECLEAN controls particle wear in marine environment
   ('marineclean', 'technology', 'particle-wear',            'contamination_mode', 'controls', 3),
 
   -- AQUAGUARD controls diesel water and microbial growth (by removing water)
-  ('hydrocore',   'technology', 'diesel-water',             'contamination_mode', 'controls', 3),
-  ('hydrocore',   'technology', 'microbial-growth',         'contamination_mode', 'controls', 3),  -- removes water substrate
-  ('hydrocore',   'technology', 'hydraulic-contamination',  'contamination_mode', 'controls', 2),  -- water removal from hydraulic fluid
+  ('TURBOCORE',   'technology', 'diesel-water',             'contamination_mode', 'controls', 3),
+  ('TURBOCORE',   'technology', 'microbial-growth',         'contamination_mode', 'controls', 3),  -- removes water substrate
+  ('TURBOCORE',   'technology', 'hydraulic-contamination',  'contamination_mode', 'controls', 2),  -- water removal from hydraulic fluid
 
-  -- SYNTEPORE controls particle wear in fuel injection systems
-  ('syntepore',   'technology', 'particle-wear',            'contamination_mode', 'controls', 2),
-  ('syntepore',   'technology', 'diesel-water',             'contamination_mode', 'controls', 1),  -- downstream of water separator
+  -- SYNTAPORE controls particle wear in fuel injection systems
+  ('SYNTAPORE',   'technology', 'particle-wear',            'contamination_mode', 'controls', 2),
+  ('SYNTAPORE',   'technology', 'diesel-water',             'contamination_mode', 'controls', 1),  -- downstream of water separator
 
   -- BLUECLEAN controls particle wear in ATF/specialty fluid systems
   ('blueclean',   'technology', 'particle-wear',            'contamination_mode', 'controls', 2)
@@ -109,8 +109,8 @@ VALUES
   ('blueclean',     'technology', 'lube-oil',       'system', 'controls', 2),  -- ATF/specialty fluid
 
   -- Fuel technologies
-  ('hydrocore',     'technology', 'fuel',           'system', 'controls', 3),
-  ('syntepore',     'technology', 'fuel',           'system', 'controls', 3),
+  ('TURBOCORE',     'technology', 'fuel',           'system', 'controls', 3),
+  ('SYNTAPORE',     'technology', 'fuel',           'system', 'controls', 3),
 
   -- Cabin technology
   ('microkappa',    'technology', 'cabin',          'system', 'controls', 3),
@@ -121,7 +121,7 @@ VALUES
 
   -- Cross-system links (technologies with secondary system coverage)
   ('nanoforce',     'technology', 'fuel',           'system', 'controls', 1),  -- water removal in some fuel applications
-  ('hydrocore',     'technology', 'hydraulic',      'system', 'controls', 2),  -- water removal from hydraulic fluid
+  ('TURBOCORE',     'technology', 'hydraulic',      'system', 'controls', 2),  -- water removal from hydraulic fluid
   ('syntrax',       'technology', 'hydraulic',      'system', 'controls', 1)   -- some SYNTRAX products overlap hydraulic-adjacent
 
 ON CONFLICT (source_concept_slug, source_type, target_concept_slug, target_type, link_type) DO NOTHING;
@@ -159,7 +159,7 @@ VALUES
   ('intekcore',   'technology', 'macrocore',    'technology', 'related', 3),
 
   -- Fuel water separator + fuel particle filter (two-stage fuel filtration)
-  ('hydrocore',   'technology', 'syntepore',    'technology', 'related', 3),
+  ('TURBOCORE',   'technology', 'SYNTAPORE',    'technology', 'related', 3),
 
   -- Desiccant dryer + coalescer (compressed air treatment train)
   ('drycore',     'technology', 'gasultra',     'technology', 'related', 3),
@@ -173,7 +173,7 @@ VALUES
   ('syntrax',     'technology', 'thermacore',     'technology', 'related', 2),
 
   -- Marine technology relationships
-  ('marineclean', 'technology', 'hydrocore',    'technology', 'related', 2)
+  ('marineclean', 'technology', 'TURBOCORE',    'technology', 'related', 2)
 
 ON CONFLICT (source_concept_slug, source_type, target_concept_slug, target_type, link_type) DO NOTHING;
 

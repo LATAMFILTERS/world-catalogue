@@ -40,7 +40,7 @@ Examples:
 ```text
 diagnostic-fuel-water-separator-repeated-drainage-dg-fuel-0001.yaml
 asset-cummins-isx15-ar-engine-0001.yaml
-product-hydrocore-ef12345-pr-0001.yaml
+product-TURBOCORE-ef12345-pr-0001.yaml
 source-cummins-service-manual-sr-0001.yaml
 approval-dg-fuel-0001-ap-0001.yaml
 ```

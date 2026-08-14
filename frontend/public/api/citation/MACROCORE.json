@@ -18,14 +18,14 @@
     "concept": "MACROCORE™ Air Intake Filtration Technology",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:1b1682ed59ba0dc724f3b877ac57e312154015e43b258251f10b8c2c2f103c7e"
+    "content_hash": "sha256:280fe1399efea77f1c4a87e184928660f565a803270801b03319723bda392759"
   },
   "canonical": {
     "definition": "Progressive Density Gradient (PDG) multi-layer air intake filtration system achieving\n99.9%–99.98% particle interception efficiency under ISO 5011 certification with a 62 PSI\nanti-collapse structural rating for heavy-duty combustion engines.",
     "systems": "Air Intake domain; applicable industries: Mining, Agriculture, Construction, Marine,\nAutomotive, Bus & Coach, Railway, Trucks & Fleets, Oil & Gas, Power Generation,\nWaste & Municipal (11 of 12 industry verticals)",
     "failure_impact": "Without adequate air intake filtration: dust ingestion → abrasive particle wear on piston\nrings, cylinder walls, and turbocharger bearings → compression loss 10–25% → oil\nconsumption increase 15–40% → engine overhaul interval reduced from 15,000–25,000 hours\nto 3,000–5,000 hours",
     "related_standards": "ISO 5011: Standardised efficiency, restriction, and dust-holding capacity test for air\nintake filters | SAE J1539: Air intake contamination classification for diesel engines |\nISO 16889: Multi-pass filter test and Beta ratio classification (supporting standard)",
-    "related_technologies": "SYNTEPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
+    "related_technologies": "SYNTAPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
     "industrial_role": "MACROCORE™ is the primary contamination control mechanism for the air intake path — the\nsingle largest source of abrasive particle ingestion in off-highway diesel engines.\nCorrect air filtration selection and maintenance is the highest-leverage intervention\nfor extending engine overhaul intervals in mining, agriculture, and construction."
   },
   "relationships": {
@@ -51,7 +51,7 @@
       "PARTICLE_WEAR"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md",
   "_links": {
     "self": "/api/citation/MACROCORE.json",
     "type_index": "/api/citation/type/technology.json",

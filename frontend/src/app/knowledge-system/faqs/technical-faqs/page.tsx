@@ -287,7 +287,7 @@ export default function TechnicalFAQsPage() {
 
             <p>
               <strong>RELATED_TECHNOLOGIES</strong><br />
-              MACROCORE: Air intake volumetric efficiency | SYNTRAX: Engine lube oil cleanliness targets | NANOFORCE: Hydraulic system proportional valve protection | HYDROCORE, SYNTEPORE, TURBOCORE: Fuel system contamination control
+              MACROCORE: Air intake volumetric efficiency | SYNTRAX: Engine lube oil cleanliness targets | NANOFORCE: Hydraulic system proportional valve protection | TURBOCORE, SYNTAPORE, TURBOCORE: Fuel system contamination control
             </p>
 
             <p>

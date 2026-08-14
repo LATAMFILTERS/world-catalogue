@@ -12,7 +12,7 @@ OFERTA_DE_PROFUNDIZAR: Tengo una gráfica de eficiencia vs. tamaño de partícul
 
 PREGUNTA: ¿El agua en diésel se mide en ppm — cuánto es demasiado antes de dañar inyectores?
 RESPUESTA: Más de 50 ppm de agua libre aumenta riesgo de corrosión por ácido sulfúrico y crecimiento microbiano. Más de 100 ppm puede causar folleado de filtro, pérdida de poder lubricante y daño a bombas de inyección por cavitación. Se mide con Karl Fischer, no con reacciones de cloro.
-OFERTA_DE_PROFUNDIZAR: Tengo datos de flotas peseras donde mantener <40 ppm agua redujo fallos de inyectores en un 70% con HYDROCORE™ — ¿quieres ver los números?
+OFERTA_DE_PROFUNDIZAR: Tengo datos de flotas peseras donde mantener <40 ppm agua redujo fallos de inyectores en un 70% con TURBOCORE™ — ¿quieres ver los números?
 
 PREGUNTA: ¿Qué significa la capacidad de suciedad de un filtro (ej. 80g) y cómo se relaciona con el punto de bypass?
 RESPUESTA: Es la cantidad de particulas retenidas (en gramos) antes de que la caída de presión alcance el valor de bypass especificado (ej. 25 psi). No es vida fija — depende del ingreso de particulas por hora (g/h). A 2g/h de ingreso, 80g da ~400h de vida. A 5g/h, solo ~160h.
@@ -23,7 +23,7 @@ RESPUESTA: Una presión de bypass demasiado baja puede causar activación premat
 OFERTA_DE_PROFUNDIZAR: Tengo un rango típico de presiones de bypass por tipo de sistema (hidráulico, lube, combustible) — ¿quieres verlo?
 
 PREGUNTA: ¿Qué medios filtrantes son más resistentes al agua en diésel?
-RESPUESTA: Medios de poliéster y nanofibra (como los usados en HYDROCORE™ y SYNTEPORE™) son más hidrofóbicos y resistentes al debilitamiento por agua que la celulosa estándar. El algodón y la pulpa de madera pierden eficiencia rápidamente en presencia de agua libre.
+RESPUESTA: Medios de poliéster y nanofibra (como los usados en TURBOCORE™ y SYNTAPORE™) son más hidrofóbicos y resistentes al debilitamiento por agua que la celulosa estándar. El algodón y la pulpa de madera pierden eficiencia rápidamente en presencia de agua libre.
 OFERTA_DE_PROFUNDIZAR: Puedo mostrarte resultados de prueba de hidrofobicidad para distintos medios — ¿te interesa?
 
 PREGUNTA: ¿Cómo sé si mi filtro está alcanzando su vida útil sin análisis de aceite?
@@ -36,7 +36,7 @@ OFERTA_DE_PROFUNDIZAR: Tengo una tabla de compatibilidad de medios con diesel, b
 
 PREGUNTA: ¿Cómo afecta la temperatura de operación al desempeño del filtro?
 RESPUESTA: A temperaturas muy bajas, algunos medios pueden perder flexibilidad y aumentar la caída de presión. A temperaturas altas (>120°C), ciertos aglutinantes pueden debilitarse y liberar fibras. El rango de operación suele estar especificado por medio — excederlo puede reducir vida útil o causar fallo prematuro.
-OFERTA_DE_PROFUNDIZAR: Puedo mostrarte las especificaciones de rango de temperatura para NANOFORCE, HYDROCORE™ y SYNTEPORE™ — ¿te sirve?
+OFERTA_DE_PROFUNDIZAR: Puedo mostrarte las especificaciones de rango de temperatura para NANOFORCE, TURBOCORE™ y SYNTAPORE™ — ¿te sirve?
 
 PREGUNTA: ¿Qué es el flujo mínimo y por qué es importante al elegir un filtro?
 RESPUESTA: Es el caudal mínimo que el filtro debe permitir a una caída de presión especificada (ej. 50 lpm @ 25 psi). Si el flujo real del sistema es menor, puede causar cavitación, flujo insuficiente o activación de válvulas de alivio. Un filtro con flujo insuficiente no protege — obstruye.
@@ -72,7 +72,7 @@ OFERTA_DE_PROFUNDIZAR: Puedo mostrarte si nuestros medios incluyen tratamiento a
 
 PREGUNTA: ¿Cómo afecta la mezcla de aceite y agua (emulsión) al desempeño del filtro?
 RESPUESTA: El agua emulsificada no se separa fácilmente en medios estándar y puede reducir la eficiencia de retenção de particulas al aumentar la viscosidad efectiva y promover coalescencia dentro del medio. Medios hidrofóbicos tratados tienen mejor desempeño en presencia de emulsión.
-OFERTA_DE_PROFUNDIZAR: Tengo datos de desempeño en presencia de emulsión agua-aceite para HYDROCORE™ — ¿quieres verlos?
+OFERTA_DE_PROFUNDIZAR: Tengo datos de desempeño en presencia de emulsión agua-aceite para TURBOCORE™ — ¿quieres verlos?
 
 PREGUNTA: ¿Qué papel juega el desgasificado previo al análisis de aceite?
 RESPUESTA: El aceite puede contener aire disuelto que interfere con mediciones de viscosidad o conteo de particulas por láser. El desgasificado (calentado bajo vacío) elimina este error y mejora precisión, especialmente en muestras de operación reciente.
@@ -96,7 +96,7 @@ OFERTA_DE_PROFUNDIZAR: Puedo mostrarte un mapa de tamaño de poro medio vs. apli
 
 PREGUNTA: ¿Cómo afecta la orientación de flujo inverso al medio filtrante?
 RESPUESTA: Algunos medios (especialmente los de capa única o sin refuerzo) pueden dañarse si el flujo invierte dirección (ej. por válvula de alivio defectuosa). Siempre verifica si el diseño es bidireccional o si requiere un check valve externo.
-OFERTA_DE_PROFUNDIZAR: Puedo decirte si NANOFORCE, HYDROCORE™ y SYNTEPORE™ son resistentes a flujo inverso ocasional — ¿quieres verlo?
+OFERTA_DE_PROFUNDIZAR: Puedo decirte si NANOFORCE, TURBOCORE™ y SYNTAPORE™ son resistentes a flujo inverso ocasional — ¿quieres verlo?
 
 PREGUNTA: ¿Cómo afecta la presencia de glicol o refrigerante en el aceite al desempeño del filtro?
 RESPUESTA: El glicol puede formar geles o precipitados que obstruyen medios finos y dañarBombas de engranaje. Siempre se debe investigar la fuente de ingreso (junta de cabeza, sello de tubo) — el filtro solo retiene lo que entra, no evita la causa.
@@ -203,7 +203,7 @@ OFERTA_DE_PROFUNDIZAR: ¿Quieres que calculemos juntos la vida estimada para tu 
 
 PREGUNTA: ¿Cómo afecta la variación de presión de entrada al desempeño del filtro?
 RESPUESTA: Presiones de entrada variables pueden causar pulsos de presión que fatigan el medio o causan liberación de fibras si el diseño no está reforzado. En sistemas con bombas de desplazamiento variable, validamos resistencia a ciclos de presión.
-OFERTA_DE_PROFUNDIZAR: Puedo mostrarte resultados de prueba de耐疲劳 (fatiga) bajo ciclos de presión para HYDROCORE™ — ¿quieres verlos?
+OFERTA_DE_PROFUNDIZAR: Puedo mostrarte resultados de prueba de耐疲劳 (fatiga) bajo ciclos de presión para TURBOCORE™ — ¿quieres verlos?
 
 PREGUNTA: ¿Cómo afecta la presencia de aire espumoso en el aceite al desempeño del filtro?
 RESPUESTA: El aire espumoso reduce la densidad efectiva del aceite y puede causar cavitación en bombas de engranaje o pistón. Siempre se recomienda revisar respiración del cárter, válvula PCV y tapa de llenado.
