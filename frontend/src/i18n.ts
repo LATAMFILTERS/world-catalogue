@@ -3,6 +3,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
+import enTranslation from '../public/locales/en/translation.json';
 
 const SUPPORTED = ['en', 'es', 'pt', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa'];
 
@@ -30,6 +31,12 @@ if (!i18n.isInitialized) {
       fallbackLng: 'en',
       supportedLngs: SUPPORTED,
       load: 'languageOnly',
+      resources: {
+        en: {
+          translation: enTranslation,
+        },
+      },
+      partialBundledLanguages: true,
       backend: {
         loadPath: '/locales/{{lng}}/translation.json',
       },
