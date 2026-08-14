@@ -27,7 +27,10 @@ function read(key) {
 test('all nine core technologies have active citation-grade vault notes', () => {
   for (const [key, slug] of technologies) {
     const note = read(key);
-    assert.match(note, new RegExp(`^---[\\s\\S]*?type:\\s*technology[\\s\\S]*?key:\\s*${key}[\\s\\S]*?status:\\s*active[\\s\\S]*?---`, 'm'), `${key} frontmatter must be active technology`);
+    const frontmatter = note.match(/^---\n([\s\S]*?)\n---/m)?.[1] || '';
+    assert.match(frontmatter, /^type:\s*technology\s*$/m, `${key} type must be technology`);
+    assert.match(frontmatter, new RegExp(`^key:\\s*${key}\\s*$`, 'm'), `${key} frontmatter key must match file`);
+    assert.match(frontmatter, /^status:\s*active\s*$/m, `${key} status must be active`);
     assert.ok(note.includes('## AI Retrieval'), `${key} must include AI Retrieval`);
     assert.ok(note.includes(`CANONICAL KNOWLEDGE BLOCK: ${key}`), `${key} canonical knowledge block must use current key`);
     assert.ok(note.includes('DEFINITION\n'), `${key} must define the technology`);
