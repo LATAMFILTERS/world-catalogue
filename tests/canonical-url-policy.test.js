@@ -18,22 +18,23 @@ test('Next static export uses trailing slash canonicals', () => {
 
 test('core crawl profiles normalize URLs to the trailing-slash policy', () => {
   const source = read('frontend/src/lib/crawl-optimization.ts');
-  assert.match(source, /function canonicalUrl\(path: string\)/);
-  assert.match(source, /pathname !== '\/' && !pathname\.endsWith\('\/'\)/);
-  assert.match(source, /url:\s*canonicalUrl\(entity\.href\)/);
+  assert.ok(source.includes('function canonicalUrl(path: string): string'));
+  assert.ok(source.includes("pathname !== '/' && !pathname.endsWith('/')"));
+  assert.ok(source.includes('url: canonicalUrl(entity.href)'));
+  assert.ok(source.includes('.map((node) => canonicalUrl(node.href))'));
 });
 
 test('Knowledge Center sitemap generator emits trailing-slash URLs', () => {
   const source = read('scripts/generate-kc-sitemap.mjs');
-  assert.match(source, /return `\$\{BASE_URL\}\/\$\{rel\.replace\([\s\S]*?\}\/-?`/);
-  assert.match(source, /replace\(\/\\\\\/g, '\/'\)/);
+  assert.ok(source.includes(".replace(/\\\\/g, '/')"));
+  assert.ok(source.includes("return `${BASE_URL}/${rel.replace(/^\\/+|\\/+$/g, '')}/`;"));
 });
 
 test('technology portfolio and Knowledge Center definitions share one entity ID pattern', () => {
   const portfolio = read('frontend/src/app/technologies/[slug]/page.tsx');
   const knowledge = read('frontend/src/app/knowledge-center/technologies/[slug]/page.tsx');
-  assert.match(portfolio, /return `\$\{technologyUrl\(slug\)\}#technology`/);
-  assert.match(knowledge, /return `\$\{BASE_URL\}\/technologies\/\$\{slug\}\/\#technology`/);
+  assert.ok(portfolio.includes('return `${technologyUrl(slug)}#technology`;'));
+  assert.ok(knowledge.includes('return `${BASE_URL}/technologies/${slug}/#technology`;'));
   assert.match(portfolio, /alternates:\s*\{ canonical: url \}/);
   assert.match(knowledge, /alternates:\s*\{ canonical: url \}/);
 });
