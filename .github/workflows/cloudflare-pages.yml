@@ -5,6 +5,13 @@ on:
     branches:
       - frontend-draft-cloudflare
       - main
+    # This deploys the checked-out `public/` directory verbatim -- a push
+    # that doesn't touch it has nothing new to deploy. Restricting to that
+    # path (plus the workflow file itself) cut ~1,800 redundant runs/month
+    # without changing what gets published.
+    paths:
+      - 'public/**'
+      - '.github/workflows/cloudflare-pages.yml'
 
 jobs:
   deploy:

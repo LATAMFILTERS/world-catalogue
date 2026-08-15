@@ -51,6 +51,12 @@ jobs:
   build:
     name: Build and type validation
     runs-on: ubuntu-latest
+    # guardian.yml's own validate+build jobs already type-check and build the
+    # frontend on every pull_request (running npm ci + build here again on
+    # the exact same diff doubled Actions minutes on every PR). This job's
+    # distinct value is validating that main itself still builds *after* a
+    # merge, so it only needs to run on push/workflow_dispatch.
+    if: github.event_name != 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
