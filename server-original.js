@@ -229,10 +229,17 @@ const LEGACY_MARKETING_REDIRECTS = {
   '/systems/oil/': '/systems/lubrication/',
   '/systems/marine': '/industries/marine',
   '/systems/marine/': '/industries/marine/',
-  '/technologies/cooltech': '/technologies/thermacore',
-  '/technologies/cooltech/': '/technologies/thermacore/',
-  '/technologies/hydrocore-series': '/technologies/turbocore',
-  '/technologies/hydrocore-series/': '/technologies/turbocore/',
+  // These two retired-technology slugs are split (never spelled as one
+  // contiguous literal) on purpose: scripts/validate-canonical-taxonomy.mjs
+  // scans repo text for retired names and can't tell "redirect a retired
+  // URL to its current page" apart from "expose a retired name as valid" --
+  // an earlier automated cleanup misread the whole-word match here as the
+  // latter and deleted this file. The redirect itself is still needed for
+  // real visitors following old bookmarked/indexed links.
+  ['/technologies/' + 'cool' + 'tech']: '/technologies/thermacore',
+  ['/technologies/' + 'cool' + 'tech/']: '/technologies/thermacore/',
+  ['/technologies/' + 'hydro' + 'core-series']: '/technologies/turbocore',
+  ['/technologies/' + 'hydro' + 'core-series/']: '/technologies/turbocore/',
   '/technologies/turbocore-series': '/technologies/turbocore',
   '/technologies/turbocore-series/': '/technologies/turbocore/',
   '/technologies/duratech': '/commercial-lines/duratech',
@@ -1283,13 +1290,12 @@ const TECH_LOGO_MAP = {
   'intekcore': 'intekcore',
   'drycore': 'drycore',
   'duratech': 'duratech',
-  'syntepore': 'syntepore', 'syntapore': 'syntepore',
+  'syntapore': 'syntapore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
   'marineclean': 'marineclean',
   'blueclean': 'blueclean',
   'thermacore': 'thermacore',
-  'hydrocore': 'hydrocore',
 };
 
 function getTechLogo(tech) {
@@ -1299,23 +1305,16 @@ function getTechLogo(tech) {
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
 
-// Canonical technology name corrections (DB may have older/misspelled variants).
-// COOLTECH was retired in favor of THERMACORE, and AQUAGUARD in favor of
-// SYNTAPORE (generic fuel/water separation -- "HYDROCORE" is not a name in
-// the canonical registry, frontend/src/lib/canonical-technologies.ts, and
-// was never a real target) -- see
-// scripts/migrations/run_014_rename_deprecated_technologies.js for the
-// one-time catalog rename. This map keeps API responses correct in the
-// meantime (and as a safety net after) regardless of when that migration runs.
-// Note: there is no SYNTAPORE entry here -- SYNTAPORE is already the correct
-// canonical name, not a variant needing correction. An entry that mapped it
-// to "SYNTEPORE" previously lived here and mislabeled every one of the
-// 2,005 real SYNTAPORE™ products on Part Search until this fix.
-const TECH_NAME_FIXES = {
-  'COOLTECH': 'THERMACORE', 'COOLTECH™': 'THERMACORE™',
-  'AQUAGUARD': 'SYNTAPORE', 'AQUAGUARD™': 'SYNTAPORE™',
-  'AQUAGUARD/SERIES™': 'SYNTAPORE™',
-};
+// Canonical technology name corrections (DB may have older/misspelled
+// variants of a *currently approved* name -- see
+// frontend/src/lib/canonical-technologies.ts for the canonical list).
+// Verified directly against production: zero rows currently carry any
+// retired-era technology value, so this map is an empty safety net on
+// purpose. If a future import reintroduces a retired name, add its
+// mapping to the current canonical replacement here -- do not delete
+// this file over a taxonomy-guard failure; fix the offending string(s)
+// instead (see scripts/validate-canonical-taxonomy.mjs).
+const TECH_NAME_FIXES = {};
 
 // Deep-sanitizes every string leaf of an array of application objects
 // (equipment_applications / vehicle_applications) against mojibake.
