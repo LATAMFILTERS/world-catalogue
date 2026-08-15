@@ -296,6 +296,65 @@ export default function KnowledgeCenterPage() {
           </div>
         </section>
 
+        <section style={{ padding: 'clamp(3.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem)', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,241,45,0.1)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.01em', marginBottom: '2rem', color: 'rgba(255,255,255,0.85)' }}>Related Resources</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.5 }}>
+                <Link href="/systems/" style={{
+                  display: 'block',
+                  padding: '1.5rem',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  textDecoration: 'none',
+                  color: '#fff',
+                  borderRadius: '2px',
+                  height: '100%',
+                }}>
+                  <div style={{ fontWeight: 700, marginBottom: '0.5rem', fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem' }}>Protection Systems</div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Barlow, Arial, sans-serif' }}>
+                    Asset protection architecture
+                  </div>
+                </Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.5, delay: 0.1 }}>
+                <Link href="/industries/" style={{
+                  display: 'block',
+                  padding: '1.5rem',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  textDecoration: 'none',
+                  color: '#fff',
+                  borderRadius: '2px',
+                  height: '100%',
+                }}>
+                  <div style={{ fontWeight: 700, marginBottom: '0.5rem', fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem' }}>Industries</div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Barlow, Arial, sans-serif' }}>
+                    Application-specific protection
+                  </div>
+                </Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.5, delay: 0.2 }}>
+                <Link href="/families/" style={{
+                  display: 'block',
+                  padding: '1.5rem',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,241,45,0.2)',
+                  textDecoration: 'none',
+                  color: '#fff',
+                  borderRadius: '2px',
+                  height: '100%',
+                }}>
+                  <div style={{ fontWeight: 700, marginBottom: '0.5rem', fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem' }}>Product Families</div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Barlow, Arial, sans-serif' }}>
+                    Filter systems by duty class
+                  </div>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         <section style={{ padding: 'clamp(4rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem)' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: '2rem', alignItems: 'center' }}>
             <div>
