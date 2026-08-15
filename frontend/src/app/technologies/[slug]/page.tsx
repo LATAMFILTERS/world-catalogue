@@ -35,7 +35,7 @@ const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
   syntrax: '/images/syntrax.avif',
   nanoforce: '/images/nanoforce-mecanico.avif',
   thermacore: '/images/THERMACORE-CAMION.avif',
-  hydrocore: '/assets/HYDROCORE.avif',
+  hydrocore: '/images/fuellseparator-hero.avif',
 };
 
 const PROTECTED_ELEMENTS: Readonly<Record<TechnologySlug, readonly string[]>> = {
@@ -224,19 +224,39 @@ export default function TechnologyPage({ params }: Props) {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <img
-          src={technologyAsset}
-          alt={canonical.name}
-          style={{
-            position: 'relative',
-            zIndex: 2,
-            width: 'min(520px, 48vw)',
-            height: 'auto',
-            display: 'block',
-            mixBlendMode: 'screen',
-            filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))',
-          }}
-        />
+        {slug === 'hydrocore' ? (
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(3.2rem, 8vw, 7rem)',
+              fontWeight: 700,
+              letterSpacing: '-0.035em',
+              lineHeight: 0.95,
+              color: '#fff',
+              textAlign: 'center',
+              textShadow: '0 3px 18px rgba(0,0,0,0.75)',
+            }}
+          >
+            {canonical.name}
+          </div>
+        ) : (
+          <img
+            src={technologyAsset}
+            alt={canonical.name}
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              width: 'min(520px, 48vw)',
+              height: 'auto',
+              display: 'block',
+              mixBlendMode: 'screen',
+              filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))',
+            }}
+          />
+        )}
       </section>
 
       <nav aria-label="Breadcrumb" style={{ borderTop: '1px solid rgba(255,241,45,0.14)', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '1rem 2rem' }}>
