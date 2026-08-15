@@ -11,6 +11,18 @@ interface Props {
 
 const BASE_URL = 'https://elimfilters.com';
 
+const TECHNOLOGY_ASSETS: Readonly<Record<string, string>> = {
+  macrocore: '/assets/MACROCORE.avif',
+  microkappa: '/assets/MICROKAPPA.avif',
+  drycore: '/assets/DRYCORE.avif',
+  intekcore: '/assets/INTEKCORE.avif',
+  syntapore: '/assets/SYNTAPORE.avif',
+  turbocore: '/assets/TURBOCORE.avif',
+  syntrax: '/assets/SYNTRAX.avif',
+  nanoforce: '/assets/NANOFORCE.avif',
+  thermacore: '/assets/THERMACORE.avif',
+};
+
 const visuallyHiddenHeading = {
   position: 'absolute',
   width: '1px',
@@ -35,10 +47,6 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
 
-  // Canonical public technology routes must be built exclusively from the
-  // governed technology and engineering registries. Legacy catalogue/detail
-  // copy is intentionally excluded because it contains historical claims that
-  // are not part of the current Claim Registry.
   if (!canonical || !engineering) return undefined;
 
   return {
@@ -47,10 +55,7 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
     title: canonical.name,
     subtitle: canonical.role,
     description: engineering.definition,
-    features: [
-      engineering.engineeringPrinciple,
-      engineering.controlStrategy,
-    ],
+    features: [engineering.engineeringPrinciple, engineering.controlStrategy],
     benefits: [engineering.operationalImpact],
     techTags: [],
     stats: {},
@@ -66,27 +71,20 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = resolveTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
-  if (!item || !engineering) {
-    return {
-      title: 'Not Found',
-      robots: { index: false, follow: false },
-    };
+  const technologyAsset = TECHNOLOGY_ASSETS[params.slug];
+  if (!item || !engineering || !technologyAsset) {
+    return { title: 'Not Found', robots: { index: false, follow: false } };
   }
 
   const url = technologyUrl(params.slug);
   const title = `${item.title} Proprietary Technology`;
   const socialTitle = `${item.title} | ELIMFILTERS Proprietary Technology`;
+  const socialImage = `${BASE_URL}${technologyAsset}`;
+
   return {
     title,
     description: engineering.definition,
-    keywords: [
-      item.title,
-      `${item.title} filtration technology`,
-      `${item.name.toLowerCase()} filter`,
-      'ELIMFILTERS technology',
-      'industrial filtration technology',
-      'asset protection',
-    ],
+    keywords: [item.title, `${item.title} filtration technology`, `${item.name.toLowerCase()} filter`, 'ELIMFILTERS technology', 'industrial filtration technology', 'asset protection'],
     alternates: { canonical: url },
     openGraph: {
       title: socialTitle,
@@ -94,14 +92,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS',
-      images: [{
-        url: 'https://elimfilters.com/assets/logo-elimfilters.png',
-        width: 1200,
-        height: 630,
-        alt: `${item.title} - ELIMFILTERS Technology`,
-      }],
+      images: [{ url: socialImage, width: 1200, height: 630, alt: `${item.title} - ELIMFILTERS Technology` }],
     },
-    twitter: { card: 'summary_large_image', title: socialTitle, description: engineering.definition },
+    twitter: { card: 'summary_large_image', title: socialTitle, description: engineering.definition, images: [socialImage] },
   };
 }
 
@@ -118,16 +111,8 @@ function technologySchema(item: CatalogueItem, slug: string) {
     name: item.title,
     description: engineering.definition,
     url,
-    author: {
-      '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
-      name: 'ELIMFILTERS',
-    },
-    publisher: {
-      '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
-      name: 'ELIMFILTERS',
-    },
+    author: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
     about: {
       '@type': 'DefinedTerm',
       '@id': technologyEntityUrl(slug),
@@ -137,19 +122,8 @@ function technologySchema(item: CatalogueItem, slug: string) {
       inDefinedTermSet: `${BASE_URL}/technologies/`,
     },
     abstract: engineering.engineeringPrinciple,
-    keywords: [
-      item.title,
-      'industrial filtration technology',
-      'contamination control',
-      'asset protection',
-      'ELIMFILTERS',
-    ],
-    isPartOf: {
-      '@type': 'WebSite',
-      '@id': `${BASE_URL}/#website`,
-      name: 'ELIMFILTERS',
-      url: `${BASE_URL}/`,
-    },
+    keywords: [item.title, 'industrial filtration technology', 'contamination control', 'asset protection', 'ELIMFILTERS'],
+    isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, name: 'ELIMFILTERS', url: `${BASE_URL}/` },
   };
 }
 
@@ -161,21 +135,9 @@ function faqSchema(item: CatalogueItem, slug: string) {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      {
-        '@type': 'Question',
-        name: `What is ${item.title}?`,
-        acceptedAnswer: { '@type': 'Answer', text: engineering.definition },
-      },
-      {
-        '@type': 'Question',
-        name: `How does ${item.title} work?`,
-        acceptedAnswer: { '@type': 'Answer', text: engineering.engineeringPrinciple },
-      },
-      {
-        '@type': 'Question',
-        name: `What does ${item.title} protect?`,
-        acceptedAnswer: { '@type': 'Answer', text: engineering.operationalImpact },
-      },
+      { '@type': 'Question', name: `What is ${item.title}?`, acceptedAnswer: { '@type': 'Answer', text: engineering.definition } },
+      { '@type': 'Question', name: `How does ${item.title} work?`, acceptedAnswer: { '@type': 'Answer', text: engineering.engineeringPrinciple } },
+      { '@type': 'Question', name: `What does ${item.title} protect?`, acceptedAnswer: { '@type': 'Answer', text: engineering.operationalImpact } },
     ],
   };
 }
@@ -195,38 +157,29 @@ function breadcrumbSchema(item: CatalogueItem, slug: string) {
 export default function TechnologyPage({ params }: Props) {
   const item = resolveTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
-  if (!item || !engineering) notFound();
+  const technologyAsset = TECHNOLOGY_ASSETS[params.slug];
+  if (!item || !engineering || !technologyAsset) notFound();
 
   const slug = params.slug;
   const articleSchema = technologySchema(item, slug);
   const questionsSchema = faqSchema(item, slug);
   const breadcrumbs = breadcrumbSchema(item, slug);
 
-  const schemas = (
+  return (
     <>
       {articleSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />}
       {questionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(questionsSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
-    </>
-  );
-
-  const semanticHeading = <h1 style={visuallyHiddenHeading}>{item.title} Proprietary Filtration Technology</h1>;
-
-  return (
-    <>
-      {schemas}
-      {semanticHeading}
+      <h1 style={visuallyHiddenHeading}>{item.title} Proprietary Filtration Technology</h1>
       <CategoryPage
         item={item}
         category="technologies"
+        technologyLogo={technologyAsset}
         geoData={{
           directAnswer: engineering.definition,
           ctaTitle: `Apply ${item.title} to the correct system`,
           ctaDescription: 'Use ELIMFILTERS Part Search to identify the correct filtration component for the equipment, application, and protected system.',
-          operationalObjective: {
-            headline: 'Engineering Objective',
-            lines: [engineering.engineeringPrinciple, engineering.controlStrategy],
-          },
+          operationalObjective: { headline: 'Engineering Objective', lines: [engineering.engineeringPrinciple, engineering.controlStrategy] },
           faq: [
             { q: `What is ${item.title}?`, a: engineering.definition },
             { q: `How does ${item.title} work?`, a: engineering.engineeringPrinciple },
