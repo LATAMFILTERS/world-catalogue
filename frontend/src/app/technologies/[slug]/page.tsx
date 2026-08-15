@@ -23,6 +23,18 @@ const TECHNOLOGY_ASSETS: Readonly<Record<string, string>> = {
   thermacore: '/assets/THERMACORE.avif',
 };
 
+const TECHNOLOGY_HERO_IMAGES: Readonly<Record<string, string>> = {
+  macrocore: '/images/mecanica-air.avif',
+  microkappa: '/images/cabin-hero.avif',
+  drycore: '/images/airdryer-hero.avif',
+  intekcore: '/images/intekcor-hero.avif',
+  syntapore: '/images/hero-syntapore.avif',
+  turbocore: '/images/TURBOCORE-hero.avif',
+  syntrax: '/images/syntrax.avif',
+  nanoforce: '/images/nanoforce-mecanico.avif',
+  thermacore: '/images/THERMACORE-CAMION.avif',
+};
+
 const visuallyHiddenHeading = {
   position: 'absolute',
   width: '1px',
@@ -158,7 +170,8 @@ export default function TechnologyPage({ params }: Props) {
   const item = resolveTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
   const technologyAsset = TECHNOLOGY_ASSETS[params.slug];
-  if (!item || !engineering || !technologyAsset) notFound();
+  const technologyHero = TECHNOLOGY_HERO_IMAGES[params.slug];
+  if (!item || !engineering || !technologyAsset || !technologyHero) notFound();
 
   const slug = params.slug;
   const articleSchema = technologySchema(item, slug);
@@ -174,6 +187,7 @@ export default function TechnologyPage({ params }: Props) {
       <CategoryPage
         item={item}
         category="technologies"
+        industryImage={technologyHero}
         technologyLogo={technologyAsset}
         geoData={{
           directAnswer: engineering.definition,
