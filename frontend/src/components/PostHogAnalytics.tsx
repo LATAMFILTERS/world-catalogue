@@ -1,13 +1,17 @@
 'use client';
 
 import { useEffect } from 'react';
-import Script from 'next/script';
 
-declare global {
-  interface Window {
-    posthog?: any;
-  }
-}
+type PostHogClient = {
+  init?: (
+    key: string,
+    options: {
+      api_host: string;
+      autocapture: boolean;
+      sessionRecording: boolean;
+    }
+  ) => void;
+};
 
 export default function PostHogAnalytics() {
   const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
@@ -16,18 +20,16 @@ export default function PostHogAnalytics() {
   useEffect(() => {
     if (typeof window === 'undefined' || !posthogKey) return;
 
-    // Load PostHog script
     const script = document.createElement('script');
     script.src = `${posthogHost}/static/js/web.js`;
     script.async = true;
     script.onload = () => {
-      if (window.posthog) {
-        window.posthog.init(posthogKey, {
-          api_host: posthogHost,
-          autocapture: true,
-          sessionRecording: false,
-        });
-      }
+      const posthog = (window as Window & { posthog?: PostHogClient }).posthog;
+      posthog?.init?.(posthogKey, {
+        api_host: posthogHost,
+        autocapture: true,
+        sessionRecording: false,
+      });
     };
     document.head.appendChild(script);
 
