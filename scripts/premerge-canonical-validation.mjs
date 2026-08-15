@@ -38,6 +38,7 @@ run(process.execPath, [
   'tests/canonical-cooling-taxonomy.test.js',
   'tests/omnichannel-canonical-taxonomy.test.js',
   'tests/i18n-crawler-ssr.test.js',
+  'tests/global-language-policy.test.js',
   'tests/canonical-url-policy.test.js',
   'tests/citation-core-technology-notes.test.js',
   'tests/citation-api-generation-policy.test.js',
@@ -55,6 +56,6 @@ if (full) {
 }
 
 console.log(full
-  ? 'Manual pre-merge validation passed, including canonical taxonomy, citation-grade core technologies, clean Citation API generation, evidence-governed structured data, public technology and industry claims, specialized solutions, canonical URL policy, crawler-visible i18n, Render blueprint security, frontend type-check and build.'
+  ? 'Manual pre-merge validation passed, including canonical taxonomy, citation-grade core technologies, clean Citation API generation, evidence-governed structured data, public technology and industry claims, specialized solutions, canonical URL policy, crawler-visible i18n, single-language geolocation policy, Render blueprint security, frontend type-check and build.'
   : 'Manual canonical pre-merge validation passed. Use --full to include frontend type-check and build.'
 );
