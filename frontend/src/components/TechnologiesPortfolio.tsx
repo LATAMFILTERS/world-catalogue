@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 
 const technologies = [
   ['macrocore', 'MACROCORE™', '/assets/MACROCORE.avif'],
-  ['syntapore', 'SYNTAPORE™', '/assets/logo-elimfilters.png'],
+  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE.avif'],
   ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE.avif'],
   ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX.avif'],
   ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE.avif'],
