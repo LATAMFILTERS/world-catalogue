@@ -1,84 +1,77 @@
 #!/usr/bin/env node
 
 /**
- * Safe postinstall script that gracefully handles missing frontend/out directory
- * Runs on both CI/CD (where frontend/out might not be built yet) and development
+ * Safe postinstall for CI/CD and local development.
+ * Legacy server mutation is intentionally not part of install-time behavior.
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
-// Check if frontend/out exists (i.e., frontend has been built)
-const frontendOutDir = path.join(__dirname, '..', 'frontend', 'out');
+const root = path.join(__dirname, '..');
+const frontendOutDir = path.join(root, 'frontend', 'out');
 const isFrontendBuilt = fs.existsSync(frontendOutDir);
 
 if (!isFrontendBuilt) {
   console.log('[postinstall] ℹ Frontend not built yet (frontend/out missing). Skipping frontend patches.');
   console.log('[postinstall] ℹ This is normal for CI/CD environments where frontend builds separately.');
-  console.log('[postinstall] ℹ Proceeding with syntax checks only.\n');
+  console.log('[postinstall] ℹ Proceeding with source checks only.\n');
 }
 
 const scripts = [
-  { name: 'apply-part-search-ui-fix.js', requiresFrontend: true },
-  { name: 'apply-part-search-results-link-fix.js', requiresFrontend: true },
-  { name: 'apply-technology-uniformity-source-fix.js', requiresFrontend: true },
-  { name: 'apply-about-who-we-are-fix.js', requiresFrontend: true },
-  { name: 'apply-navigation-font-uniformity.js', requiresFrontend: true },
-  { name: 'apply-vehicle-chat-search-fix.js', requiresFrontend: true },
-  { name: 'apply-vehicle-generation-sanity-fix.js', requiresFrontend: true },
-  { name: 'apply-vehicle-coverage-audit.js', requiresFrontend: true },
+  'apply-part-search-ui-fix.js',
+  'apply-part-search-results-link-fix.js',
+  'apply-technology-uniformity-source-fix.js',
+  'apply-about-who-we-are-fix.js',
+  'apply-navigation-font-uniformity.js',
+  'apply-vehicle-chat-search-fix.js',
+  'apply-vehicle-generation-sanity-fix.js',
+  'apply-vehicle-coverage-audit.js',
 ];
 
 const checks = [
-  { file: 'src/coverage-audit-engine.js', type: 'syntax' },
-  { file: 'scripts/register-coverage-audit-direct.js', type: 'syntax' },
-  { file: 'server-original.js', type: 'syntax' },
+  'src/coverage-audit-engine.js',
+  'scripts/verify-coverage-audit-direct.js',
 ];
 
 let failed = false;
 
-// Run frontend patch scripts only if frontend is built
 if (isFrontendBuilt) {
   for (const script of scripts) {
     try {
-      console.log(`[postinstall] ⟳ ${script.name}...`);
-      execSync(`node scripts/${script.name}`, { stdio: 'inherit' });
-    } catch (error) {
-      console.error(`[postinstall] ✗ ${script.name} failed`);
+      console.log(`[postinstall] ⟳ ${script}...`);
+      execFileSync(process.execPath, [path.join('scripts', script)], { stdio: 'inherit', cwd: root });
+    } catch {
+      console.error(`[postinstall] ✗ ${script} failed`);
       failed = true;
     }
   }
 }
 
-// Run syntax checks (always required)
-for (const check of checks) {
+for (const file of checks) {
+  const absolute = path.join(root, file);
+  if (!fs.existsSync(absolute)) {
+    console.error(`[postinstall] ✗ Missing required file: ${file}`);
+    failed = true;
+    continue;
+  }
   try {
-    console.log(`[postinstall] ⟳ Checking ${check.file}...`);
-    execSync(`node --check ${check.file}`, { stdio: 'pipe' });
-    console.log(`[postinstall] ✓ ${check.file}`);
-  } catch (error) {
-    console.error(`[postinstall] ✗ Syntax check failed: ${check.file}`);
+    console.log(`[postinstall] ⟳ Checking ${file}...`);
+    execFileSync(process.execPath, ['--check', absolute], { stdio: 'pipe' });
+    console.log(`[postinstall] ✓ ${file}`);
+  } catch {
+    console.error(`[postinstall] ✗ Syntax check failed: ${file}`);
     failed = true;
   }
 }
 
-// Run critical registration script
-try {
-  console.log('[postinstall] ⟳ Registering coverage audit...');
-  execSync('node scripts/register-coverage-audit-direct.js', { stdio: 'inherit' });
-} catch (error) {
-  console.error('[postinstall] ✗ Coverage audit registration failed');
-  failed = true;
-}
-
-// Run verification only if everything else succeeded
 if (!failed) {
   try {
-    console.log('[postinstall] ⟳ Verifying coverage audit...');
-    execSync('node scripts/verify-coverage-audit-direct.js', { stdio: 'inherit' });
-  } catch (error) {
-    console.error('[postinstall] ✗ Verification failed');
+    console.log('[postinstall] ⟳ Verifying coverage audit modules...');
+    execFileSync(process.execPath, [path.join('scripts', 'verify-coverage-audit-direct.js')], { stdio: 'inherit', cwd: root });
+  } catch {
+    console.error('[postinstall] ✗ Coverage audit verification failed');
     failed = true;
   }
 }
@@ -86,7 +79,7 @@ if (!failed) {
 if (failed) {
   console.error('\n[postinstall] ✗ Some postinstall steps failed');
   process.exit(1);
-} else {
-  console.log('\n[postinstall] ✓ All postinstall steps completed');
-  process.exit(0);
 }
+
+console.log('\n[postinstall] ✓ All postinstall steps completed');
+process.exit(0);
