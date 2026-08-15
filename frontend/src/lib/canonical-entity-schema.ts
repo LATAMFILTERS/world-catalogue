@@ -61,11 +61,24 @@ function absoluteUrl(path: string): string {
   return path.startsWith('http') ? path : `${BASE_URL}${path}`;
 }
 
+function entitySlug(node: EntityNode): string {
+  return node.id.slice(node.id.indexOf(':') + 1);
+}
+
+function schemaEntityId(kind: SchemaEntityKind, slug: string, url: string): string {
+  if (kind === 'technology') return `${url}#technology`;
+  return `${url}#${kind}-${slug}`;
+}
+
 function reference(node: EntityNode): SchemaReference {
   const url = absoluteUrl(node.href);
+  const slug = entitySlug(node);
+  const id = node.kind === 'organization'
+    ? ORGANIZATION_ID
+    : schemaEntityId(node.kind as SchemaEntityKind, slug, url);
   return {
     '@type': 'Thing',
-    '@id': `${url}#entity`,
+    '@id': id,
     name: node.name,
     url,
   };
@@ -129,7 +142,7 @@ export function buildCanonicalEntitySchema(
   return {
     '@context': 'https://schema.org',
     '@type': TYPE_BY_KIND[kind],
-    '@id': `${url}#entity`,
+    '@id': schemaEntityId(kind, slug, url),
     name: context.entity.name,
     url,
     description: context.definition,
@@ -140,7 +153,7 @@ export function buildCanonicalEntitySchema(
     about: about.length ? about : undefined,
     subjectOf: context.retrievalPassages.map((passage, index) => ({
       '@type': 'Thing' as const,
-      '@id': `${url}#passage-${index + 1}`,
+      '@id': `${schemaEntityId(kind, slug, url)}-passage-${index + 1}`,
       name: passage,
       url,
     })),
