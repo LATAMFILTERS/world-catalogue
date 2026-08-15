@@ -41,8 +41,9 @@ Each portfolio URL and Knowledge Center definition below describes the same cano
 - MICROKAPPA™ — cabin air protection — https://elimfilters.com/technologies/microkappa/ — https://elimfilters.com/knowledge-center/technologies/microkappa/
 - DRYCORE™ — pneumatic brake-system air protection — https://elimfilters.com/technologies/drycore/ — https://elimfilters.com/knowledge-center/technologies/drycore/
 - INTEKCORE™ — controlled air-intake housing and filtration-system integration — https://elimfilters.com/technologies/intekcore/ — https://elimfilters.com/knowledge-center/technologies/intekcore/
-- SYNTAPORE™ — fuel contamination control and fuel-system protection — https://elimfilters.com/technologies/syntapore/ — https://elimfilters.com/knowledge-center/technologies/syntapore/
-- TURBOCORE™ — fuel-water separation for approved turbine-style applications — https://elimfilters.com/technologies/turbocore/ — https://elimfilters.com/knowledge-center/technologies/turbocore/
+- SYNTAPORE™ — fuel particulate contamination control — https://elimfilters.com/technologies/syntapore/ — https://elimfilters.com/knowledge-center/technologies/syntapore/
+- HYDROCORE™ — standard non-turbine spin-on and cartridge fuel/water separation — https://elimfilters.com/technologies/hydrocore/ — https://elimfilters.com/knowledge-center/technologies/hydrocore/
+- TURBOCORE™ — Turbine Series FH/FG fuel separation and 2010/2020/2040 replacement elements — https://elimfilters.com/technologies/turbocore/ — https://elimfilters.com/knowledge-center/technologies/turbocore/
 - SYNTRAX™ — lubricant cleanliness and engine/component protection — https://elimfilters.com/technologies/syntrax/ — https://elimfilters.com/knowledge-center/technologies/syntrax/
 - NANOFORCE™ — hydraulic-fluid contamination control — https://elimfilters.com/technologies/nanoforce/ — https://elimfilters.com/knowledge-center/technologies/nanoforce/
 - THERMACORE™ — cooling-system cleanliness and component protection — https://elimfilters.com/technologies/thermacore/ — https://elimfilters.com/knowledge-center/technologies/thermacore/
