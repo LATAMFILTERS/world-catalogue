@@ -13,16 +13,31 @@ interface PageHeaderProps {
   currentPage?: string;
 }
 
+const PAGE_KEYS: Record<string, string> = {
+  contact: 'nav.contact',
+  about: 'nav.about',
+  industries: 'nav.industries',
+  systems: 'nav.systems',
+  technologies: 'nav.technologies',
+  distributors: 'nav.distributors',
+};
+
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const { t } = useTranslation();
+
+  const localizeLabel = (label: string) => {
+    const key = PAGE_KEYS[label.trim().toLowerCase()];
+    return key ? t(key, { defaultValue: label }) : label;
+  };
+
   const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: '/' }];
 
   if (breadcrumbs) {
-    trail.push(...breadcrumbs);
+    trail.push(...breadcrumbs.map((crumb) => ({ ...crumb, label: localizeLabel(crumb.label) })));
   }
 
   if (currentPage) {
-    trail.push({ label: currentPage });
+    trail.push({ label: localizeLabel(currentPage) });
   }
 
   return (
