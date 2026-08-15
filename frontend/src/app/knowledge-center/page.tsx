@@ -4,89 +4,308 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
-import { ASSET_PROTECTION_INTELLIGENCE } from '@/lib/asset-protection-intelligence';
 
 const KNOWLEDGE_SECTIONS = [
-  { id: 'standards', title: 'Industrial Standards', description: 'Governed technical standards and measurement frameworks for industrial filtration and contamination control.', href: '/knowledge-center/standards', count: 'Standards', color: 'rgba(63,81,181,0.1)' },
-  { id: 'contamination', title: 'Contamination Control', description: 'Root-cause knowledge covering particles, water, restriction, degradation and failure mechanisms.', href: '/knowledge-center/contamination', count: 'Diagnostics', color: 'rgba(255,152,0,0.1)' },
-  { id: 'technologies', title: 'Protection Technologies', description: 'Canonical ELIMFILTERS technology architectures and the engineering problems each technology is designed to control.', href: '/knowledge-center/technologies', count: '9 core technologies', color: 'rgba(76,175,80,0.1)' },
-  { id: 'fleet', title: 'Fleet Optimization', description: 'Reliability, service-life and total-cost strategies for fleets and critical equipment operations.', href: '/knowledge-center/fleet-optimization', count: 'Operations', color: 'rgba(33,150,243,0.1)' },
-  { id: 'industries', title: 'Industry Intelligence', description: 'Asset-protection context for agriculture, mining, construction, marine, power generation and other critical industries.', href: '/industries', count: '12 industries', color: 'rgba(233,30,99,0.1)' },
-  { id: 'glossary', title: 'Technical Glossary', description: 'Shared terminology for filtration, contamination, reliability, standards and asset protection.', href: '/knowledge-center/glossary', count: 'Reference', color: 'rgba(121,85,72,0.1)' },
+  {
+    id: 'standards',
+    index: '01',
+    title: 'Industrial Standards',
+    description: 'Measurement frameworks, cleanliness codes and filtration test standards used to support technical decisions.',
+    href: '/knowledge-center/standards',
+    label: 'ISO / TEST METHODS',
+  },
+  {
+    id: 'problems',
+    index: '02',
+    title: 'Contamination & Failure Modes',
+    description: 'Root-cause knowledge for particle wear, water contamination, restriction, degradation and system failure mechanisms.',
+    href: '/knowledge-center/problems',
+    label: 'DIAGNOSTICS / ROOT CAUSE',
+  },
+  {
+    id: 'technologies',
+    index: '03',
+    title: 'Protection Technologies',
+    description: 'ELIMFILTERS technology architectures organized by contamination domain, protection objective and operating environment.',
+    href: '/knowledge-center/technologies',
+    label: 'FILTRATION ENGINEERING',
+  },
+  {
+    id: 'systems',
+    index: '04',
+    title: 'Asset Protection Systems',
+    description: 'Technical relationships between air intake, fuel, lubrication, hydraulic and cooling systems across critical equipment.',
+    href: '/knowledge-center/systems',
+    label: 'SYSTEM ARCHITECTURE',
+  },
+  {
+    id: 'fleet',
+    index: '05',
+    title: 'Fleet Optimization',
+    description: 'Reliability, service-life and total-cost strategies for fleets, maintenance organizations and critical assets.',
+    href: '/knowledge-center/fleet-optimization',
+    label: 'RELIABILITY / TCO',
+  },
+  {
+    id: 'glossary',
+    index: '06',
+    title: 'Technical Glossary',
+    description: 'Consistent terminology for filtration, contamination control, maintenance, reliability and asset protection.',
+    href: '/knowledge-center/glossary',
+    label: 'ENGINEERING REFERENCE',
+  },
 ];
 
-export default function KnowledgeCenterPage() {
-  const architecture = ASSET_PROTECTION_INTELLIGENCE;
+const DECISION_PATH = [
+  ['01', 'Identify the operating condition'],
+  ['02', 'Define the contamination or failure mode'],
+  ['03', 'Reference the applicable technical framework'],
+  ['04', 'Select the protection strategy'],
+  ['05', 'Validate the product application'],
+];
 
+function TechnicalFlowGraphic() {
+  return (
+    <div
+      aria-label="Technical contamination control process diagram"
+      style={{
+        position: 'relative',
+        minHeight: '330px',
+        border: '1px solid rgba(255,255,255,0.09)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.008))',
+        overflow: 'hidden',
+      }}
+    >
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        opacity: 0.35,
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
+        backgroundSize: '34px 34px',
+      }} />
+
+      <div style={{ position: 'relative', padding: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '2rem' }}>
+          <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.12em', color: '#FFF12D' }}>
+            CONTAMINATION CONTROL LOGIC
+          </span>
+          <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.32)' }}>
+            TECHNICAL REFERENCE
+          </span>
+        </div>
+
+        <svg viewBox="0 0 620 220" role="img" aria-hidden="true" style={{ width: '100%', height: 'auto', display: 'block' }}>
+          <defs>
+            <linearGradient id="signalLine" x1="0" x2="1">
+              <stop offset="0%" stopColor="#FFF12D" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#FFF12D" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+          <line x1="52" y1="110" x2="568" y2="110" stroke="rgba(255,255,255,0.14)" strokeWidth="2" />
+          <path d="M52 110 C140 110 150 64 230 64 C310 64 312 156 398 156 C474 156 488 110 568 110" fill="none" stroke="url(#signalLine)" strokeWidth="3" />
+          {[52, 230, 398, 568].map((x, i) => (
+            <g key={x}>
+              <circle cx={x} cy={i === 1 ? 64 : i === 2 ? 156 : 110} r="9" fill="#050505" stroke="#FFF12D" strokeWidth="2" />
+              <circle cx={x} cy={i === 1 ? 64 : i === 2 ? 156 : 110} r="3" fill="#FFF12D" />
+            </g>
+          ))}
+          <text x="36" y="145" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="JetBrains Mono, monospace">SOURCE</text>
+          <text x="190" y="43" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="JetBrains Mono, monospace">MEASURE</text>
+          <text x="360" y="190" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="JetBrains Mono, monospace">CONTROL</text>
+          <text x="522" y="145" fill="rgba(255,255,255,0.5)" fontSize="12" fontFamily="JetBrains Mono, monospace">VERIFY</text>
+        </svg>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+          gap: '0.6rem',
+          marginTop: '0.5rem',
+        }}>
+          {[
+            ['INPUT', 'Operating conditions'],
+            ['CONTROL', 'Protection strategy'],
+            ['OUTPUT', 'Reliability decision'],
+          ].map(([label, value]) => (
+            <div key={label} style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '0.65rem' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', color: '#FFF12D', fontSize: '0.55rem', letterSpacing: '0.1em', margin: '0 0 0.3rem' }}>{label}</p>
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.72rem', lineHeight: 1.45, margin: 0 }}>{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function KnowledgeCenterPage() {
   return (
     <>
       <Navigation />
-      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+      <main style={{ background: '#030303', color: '#fff', minHeight: '100vh' }}>
         <section style={{
-          padding: 'clamp(6rem, 12vw, 10rem) clamp(1.25rem, 5vw, 4rem)',
-          background: 'linear-gradient(135deg, rgba(255,241,45,0.08) 0%, rgba(0,0,0,0.5) 100%), linear-gradient(180deg, rgba(63,81,181,0.1) 0%, transparent 50%)',
-          borderBottom: '1px solid rgba(255,241,45,0.1)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          background: 'radial-gradient(circle at 15% 0%, rgba(255,241,45,0.08), transparent 34%), #030303',
+          padding: 'clamp(5.5rem, 10vw, 8.5rem) clamp(1.25rem, 5vw, 4rem) clamp(4rem, 7vw, 6rem)',
         }}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#FFF12D', marginBottom: '1.5rem', fontWeight: 600 }}>
-                {`// ${architecture.platform} / GOVERNED KNOWLEDGE`}
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(340px, 0.8fr)', gap: 'clamp(2rem, 5vw, 5rem)', alignItems: 'center' }}>
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
+              <p style={{
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.72rem',
+                letterSpacing: '0.17em',
+                textTransform: 'uppercase',
+                color: '#FFF12D',
+                margin: '0 0 1.25rem',
+                fontWeight: 600,
+              }}>
+                ELIMFILTERS / TECHNICAL KNOWLEDGE CENTER
               </p>
-              <h1 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '1.75rem', maxWidth: '940px' }}>
-                Knowledge that strengthens asset-protection decisions.
+
+              <h1 style={{
+                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: 'clamp(2.7rem, 5.4vw, 5rem)',
+                textTransform: 'uppercase',
+                letterSpacing: '-0.025em',
+                lineHeight: 0.98,
+                margin: '0 0 1.7rem',
+                maxWidth: '780px',
+              }}>
+                Engineering knowledge for better asset decisions.
               </h1>
-              <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.15rem, 2.3vw, 1.5rem)', lineHeight: 1.6, color: 'rgba(255,255,255,0.8)', maxWidth: '860px', marginBottom: '1.5rem' }}>
-                ELIMFILTERS connects reviewed technical knowledge, product intelligence and continuously discovered evidence without confusing discovery with authority.
+
+              <p style={{
+                fontFamily: 'Inter, Arial, sans-serif',
+                fontSize: 'clamp(1.02rem, 1.7vw, 1.22rem)',
+                lineHeight: 1.7,
+                color: 'rgba(255,255,255,0.68)',
+                maxWidth: '720px',
+                margin: '0 0 2rem',
+              }}>
+                Technical references for filtration, contamination control, equipment reliability and industrial asset protection — structured for engineers, maintenance leaders, fleet managers and technical decision-makers.
               </p>
-              <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.12rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.62)', maxWidth: '900px' }}>
-                HERMES identifies new evidence and knowledge gaps. The governed knowledge layer preserves reviewed technical memory. The World Catalogue remains the authority for ELIMFILTERS product data and SKU relationships.
-              </p>
+
+              <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+                <Link href="/knowledge-center/standards" style={{
+                  background: '#FFF12D',
+                  color: '#050505',
+                  textDecoration: 'none',
+                  fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  fontSize: '0.76rem',
+                  padding: '0.95rem 1.25rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Browse technical references
+                </Link>
+                <Link href="/knowledge-center/problems" style={{
+                  border: '1px solid rgba(255,255,255,0.16)',
+                  color: '#fff',
+                  textDecoration: 'none',
+                  fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  fontSize: '0.76rem',
+                  padding: '0.95rem 1.25rem',
+                  textTransform: 'uppercase',
+                }}>
+                  Diagnose a problem
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.55, delay: 0.12 }}>
+              <TechnicalFlowGraphic />
             </motion.div>
           </div>
         </section>
 
-        <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
-              {[
-                ['HERMES', 'DISCOVERY', 'Finds and routes new external evidence into governed review.'],
-                ['OBSIDIAN', 'SECOND BRAIN', 'Structures reviewed institutional and technical knowledge.'],
-                ['WORLD CATALOGUE', 'PRODUCT AUTHORITY', 'Authorizes ELIMFILTERS SKU, applications, dimensions and cross-references.'],
-                ['PART SEARCH', 'PRODUCT INTELLIGENCE', 'Turns validated catalogue data into fast technical discovery.'],
-              ].map(([name, role, body]) => (
-                <article key={name} style={{ padding: '1.3rem', background: '#050505', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', letterSpacing: '0.12em', margin: '0 0 0.65rem' }}>{role}</p>
-                  <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem' }}>{name}</h2>
-                  <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{body}</p>
-                </article>
+        <section style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '1.2rem clamp(1.25rem, 5vw, 4rem)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', gap: '1rem 2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)' }}>REFERENCE DOMAINS</span>
+            {['AIR INTAKE', 'FUEL', 'LUBRICATION', 'HYDRAULICS', 'COOLING', 'RELIABILITY'].map((item) => (
+              <span key={item} style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.09em', color: 'rgba(255,255,255,0.62)' }}>{item}</span>
+            ))}
+          </div>
+        </section>
+
+        <section style={{ padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4rem)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 0.65fr) minmax(0, 1.35fr)', gap: 'clamp(2rem, 5vw, 5rem)', alignItems: 'end', marginBottom: '2.2rem' }}>
+              <div>
+                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.14em', color: '#FFF12D', margin: '0 0 0.8rem' }}>KNOWLEDGE ARCHITECTURE</p>
+                <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(2rem, 3.4vw, 3.1rem)', lineHeight: 1.05, textTransform: 'uppercase', margin: 0 }}>Start with the technical question.</h2>
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, margin: 0, maxWidth: '720px' }}>
+                The Knowledge Center is organized around the way technical teams investigate problems: identify the condition, understand the mechanism, reference the standard, select the protection approach and validate the application.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', borderTop: '1px solid rgba(255,255,255,0.09)', borderLeft: '1px solid rgba(255,255,255,0.09)' }}>
+              {KNOWLEDGE_SECTIONS.map((section, idx) => (
+                <motion.div key={section.id} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-50px' }} transition={{ duration: 0.35, delay: idx * 0.04 }}>
+                  <Link href={section.href} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                    <article style={{
+                      minHeight: '255px',
+                      height: '100%',
+                      padding: '1.7rem',
+                      borderRight: '1px solid rgba(255,255,255,0.09)',
+                      borderBottom: '1px solid rgba(255,255,255,0.09)',
+                      background: '#050505',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: 'background 180ms ease, border-color 180ms ease',
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+                        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D' }}>{section.index}</span>
+                        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.54rem', letterSpacing: '0.09em', color: 'rgba(255,255,255,0.28)', textAlign: 'right' }}>{section.label}</span>
+                      </div>
+                      <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.35rem', lineHeight: 1.15, margin: '1.8rem 0 0.8rem', color: '#fff' }}>{section.title}</h3>
+                      <p style={{ color: 'rgba(255,255,255,0.56)', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{section.description}</p>
+                      <div style={{ marginTop: 'auto', paddingTop: '1.4rem', display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+                        <span style={{ width: '28px', height: '1px', background: '#FFF12D', display: 'inline-block' }} />
+                        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.08em', color: '#FFF12D' }}>OPEN REFERENCE</span>
+                      </div>
+                    </article>
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem)', maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.2rem' }}>
-            {KNOWLEDGE_SECTIONS.map((section, idx) => (
-              <motion.article key={section.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.5, delay: idx * 0.05 }} style={{ background: section.color, border: '1px solid rgba(255,241,45,0.15)', padding: 'clamp(1.7rem, 3vw, 2.2rem)', display: 'flex', flexDirection: 'column', minHeight: '245px' }}>
-                <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#FFF12D', fontWeight: 600 }}>{section.count}</span>
-                <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.45rem', margin: '1rem 0 0.8rem' }}>{section.title}</h2>
-                <p style={{ color: 'rgba(255,255,255,0.68)', lineHeight: 1.65, margin: 0 }}>{section.description}</p>
-                <Link href={section.href} style={{ color: '#FFF12D', textDecoration: 'none', fontWeight: 700, marginTop: 'auto', paddingTop: '1.4rem' }}>Explore →</Link>
-              </motion.article>
-            ))}
+        <section style={{ padding: 'clamp(4rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4rem)', background: '#070707', borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.8fr) minmax(0, 1.2fr)', gap: 'clamp(2rem, 6vw, 6rem)' }}>
+            <div>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.14em', color: '#FFF12D', margin: '0 0 0.8rem' }}>DECISION PATH</p>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(2rem, 3.2vw, 3rem)', textTransform: 'uppercase', lineHeight: 1.06, margin: '0 0 1.2rem' }}>From operating condition to protection strategy.</h2>
+              <p style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.7, maxWidth: '520px', margin: 0 }}>
+                Technical content should reduce ambiguity, not add to it. Each reference is intended to support a clear chain of reasoning from field condition to engineering action.
+              </p>
+            </div>
+
+            <div>
+              {DECISION_PATH.map(([step, text], i) => (
+                <div key={step} style={{ display: 'grid', gridTemplateColumns: '54px 1fr', gap: '1rem', padding: '1rem 0', borderTop: i === 0 ? '1px solid rgba(255,255,255,0.09)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.09)' }}>
+                  <span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#FFF12D', fontSize: '0.7rem' }}>{step}</span>
+                  <span style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', color: 'rgba(255,255,255,0.82)', fontSize: '1rem' }}>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section style={{ padding: 'clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem)', borderTop: '1px solid rgba(255,241,45,0.1)', textAlign: 'center' }}>
-          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-            <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.16em', textTransform: 'uppercase', fontSize: '0.75rem' }}>Safety. Reliability. Efficiency.</p>
-            <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.7rem)', textTransform: 'uppercase', margin: '1rem 0 1.5rem' }}>
-              Move from knowledge to the right product decision.
-            </h2>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.82rem', padding: '1rem 1.5rem', textTransform: 'uppercase' }}>Search Product Intelligence</a>
-              <Link href="/distributors" style={{ border: '1px solid rgba(255,241,45,0.4)', color: '#FFF12D', textDecoration: 'none', fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.82rem', padding: '1rem 1.5rem', textTransform: 'uppercase' }}>Global Network</Link>
+        <section style={{ padding: 'clamp(4rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', gap: '2rem', alignItems: 'center' }}>
+            <div>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.62rem', letterSpacing: '0.12em', color: '#FFF12D', margin: '0 0 0.7rem' }}>APPLICATION INTELLIGENCE</p>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.7rem, 2.8vw, 2.5rem)', textTransform: 'uppercase', margin: '0 0 0.6rem' }}>Connect technical knowledge to the correct application.</h2>
+              <p style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.65, margin: 0, maxWidth: '760px' }}>Use product intelligence after the operating condition, system and protection requirement are understood.</p>
             </div>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#050505', textDecoration: 'none', fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, letterSpacing: '0.08em', fontSize: '0.75rem', padding: '1rem 1.25rem', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+              Search Product Intelligence
+            </a>
           </div>
         </section>
       </main>
@@ -96,8 +315,8 @@ export default function KnowledgeCenterPage() {
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           '@id': 'https://elimfilters.com/knowledge-center/#collection',
-          name: 'ELIMFILTERS Asset Protection Intelligence Knowledge Center',
-          description: 'Governed technical knowledge, product intelligence and industrial asset protection resources from ELIMFILTERS.',
+          name: 'ELIMFILTERS Technical Knowledge Center',
+          description: 'Technical references for industrial filtration, contamination control, reliability and asset protection.',
           url: 'https://elimfilters.com/knowledge-center/',
           isPartOf: { '@id': 'https://elimfilters.com/#website' },
           publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
