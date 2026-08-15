@@ -45,6 +45,7 @@ run(process.execPath, [
   'tests/public-technology-claims-governance.test.js',
   'tests/specialized-solutions-governance.test.js',
   'tests/industry-public-claims-governance.test.js',
+  'tests/render-blueprint-security.test.js',
 ]);
 
 if (full) {
@@ -54,6 +55,6 @@ if (full) {
 }
 
 console.log(full
-  ? 'Manual pre-merge validation passed, including canonical taxonomy, citation-grade core technologies, clean Citation API generation, evidence-governed structured data, public technology and industry claims, specialized solutions, canonical URL policy, crawler-visible i18n, frontend type-check and build.'
+  ? 'Manual pre-merge validation passed, including canonical taxonomy, citation-grade core technologies, clean Citation API generation, evidence-governed structured data, public technology and industry claims, specialized solutions, canonical URL policy, crawler-visible i18n, Render blueprint security, frontend type-check and build.'
   : 'Manual canonical pre-merge validation passed. Use --full to include frontend type-check and build.'
 );
