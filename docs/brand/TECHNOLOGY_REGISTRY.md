@@ -58,6 +58,13 @@ Micron ratings:
 - 2 µm
 Protection role: Fuel/water separation and turbine-style fuel-system protection.
 
+## HYDROCORE™
+System: Fuel Cleanliness Protection
+Products:
+- Spin-on Fuel/Water Separators
+- Cartridge Fuel/Water Separators
+Protection role: Standard (non-turbine) fuel/water separation and fuel-system protection. Reserved for separator applications outside the Turbine-style FH/FG architecture governed by TURBOCORE™.
+
 ## SYNTRAX™
 System: Lubrication Protection
 Products: Lube Filters

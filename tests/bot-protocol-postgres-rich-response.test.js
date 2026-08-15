@@ -33,13 +33,19 @@ test('catalog database supports individual PG variables and catalogo_elimfilters
   assert.equal(config.source, 'PG_COMPONENTS');
 });
 
-test('a generic (non-turbine) fuel/water separator falls back to SYNTAPORE, not TURBOCORE', () => {
+test('a generic (non-turbine) fuel/water separator falls back to HYDROCORE, not TURBOCORE or SYNTAPORE', () => {
   // TURBOCORE™ is scoped to "Turbine FH and FG fuel-separation systems" in
   // the canonical registry (frontend/src/lib/canonical-technologies.ts) --
   // a plain spin-on cartridge with no turbine/Racor signal is not that
-  // product family, and SYNTAPORE™ ("primary and secondary fuel
-  // filtration") is the technology that actually applies to it.
-  assert.equal(inferTechnology({ filter_type: 'Fuel Filter and Water Separator Cartridge', sku: 'ES91424' }), 'SYNTAPORE™');
+  // product family. SYNTAPORE™ is scoped to plain fuel filtration only
+  // (no separator function), so a genuine water separator that isn't a
+  // turbine housing is HYDROCORE™.
+  assert.equal(inferTechnology({ filter_type: 'Fuel Filter and Water Separator Cartridge', sku: 'ES91424' }), 'HYDROCORE™');
+});
+
+test('a plain (non-separator) fuel filter is SYNTAPORE, not HYDROCORE', () => {
+  assert.equal(inferTechnology({ filter_type: 'Primary Diesel Fuel Filter' }), 'SYNTAPORE™');
+  assert.equal(inferTechnology({ filter_type: 'fuel' }), 'SYNTAPORE™');
 });
 
 test('a Racor-style turbine FH/FG housing still infers TURBOCORE', () => {

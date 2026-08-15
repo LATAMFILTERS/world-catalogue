@@ -18,6 +18,7 @@ const CORE_TECHNOLOGIES = [
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],
+  ['HYDROCORE', 'hydrocore'],
 ];
 
 if (!fs.existsSync(INDEX_PATH)) {
@@ -77,4 +78,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Canonical citation index verified: ${CORE_TECHNOLOGIES.length}/9 core technologies are citation-grade, canonically sourced, and non-dangling.`);
+console.log(`Canonical citation index verified: ${CORE_TECHNOLOGIES.length}/${CORE_TECHNOLOGIES.length} core technologies are citation-grade, canonically sourced, and non-dangling.`);

@@ -9,6 +9,7 @@ category: Fuel Water Separation
 system: Fuel Cleanliness Protection
 related_technologies:
   - "[[SYNTAPORE]]"
+  - "[[HYDROCORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
@@ -36,7 +37,7 @@ RELATED_STANDARDS
 Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.
 
 RELATED_TECHNOLOGIES
-SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic or general-purpose fuel-filter technology.
+SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.
 
 INDUSTRIAL_ROLE
 TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements.

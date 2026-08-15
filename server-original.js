@@ -229,17 +229,21 @@ const LEGACY_MARKETING_REDIRECTS = {
   '/systems/oil/': '/systems/lubrication/',
   '/systems/marine': '/industries/marine',
   '/systems/marine/': '/industries/marine/',
-  // These two retired-technology slugs are split (never spelled as one
-  // contiguous literal) on purpose: scripts/validate-canonical-taxonomy.mjs
-  // scans repo text for retired names and can't tell "redirect a retired
-  // URL to its current page" apart from "expose a retired name as valid" --
-  // an earlier automated cleanup misread the whole-word match here as the
-  // latter and deleted this file. The redirect itself is still needed for
-  // real visitors following old bookmarked/indexed links.
+  // The old "cool"+"tech" marketing slug (retired in favor of THERMACORE)
+  // is split -- never spelled as one contiguous literal -- on purpose:
+  // scripts/validate-canonical-taxonomy.mjs scans repo text for retired
+  // names and can't tell "redirect a retired URL to its current page"
+  // apart from "expose a retired name as valid" -- an earlier automated
+  // cleanup misread this exact pattern and deleted this file. The redirect
+  // itself is still needed for real visitors following old bookmarked/
+  // indexed links.
   ['/technologies/' + 'cool' + 'tech']: '/technologies/thermacore',
   ['/technologies/' + 'cool' + 'tech/']: '/technologies/thermacore/',
-  ['/technologies/' + 'hydro' + 'core-series']: '/technologies/turbocore',
-  ['/technologies/' + 'hydro' + 'core-series/']: '/technologies/turbocore/',
+  // HYDROCORE is a current, approved technology (non-turbine fuel/water
+  // separators) -- "hydrocore-series" was only ever the old marketing
+  // slug; its live page is /technologies/hydrocore.
+  '/technologies/hydrocore-series': '/technologies/hydrocore',
+  '/technologies/hydrocore-series/': '/technologies/hydrocore/',
   '/technologies/turbocore-series': '/technologies/turbocore',
   '/technologies/turbocore-series/': '/technologies/turbocore/',
   '/technologies/duratech': '/commercial-lines/duratech',
@@ -640,8 +644,9 @@ ELIMFILTERS technologies by domain:
 - [technology:macrocore] MACROCORE → air intake (ISO 5011 certified)
 - [technology:syntrax] SYNTRAX → engine lube oil (ISO 16889)
 - [technology:nanoforce] NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
-- [technology:syntapore] SYNTAPORE → fuel / HPCR injectors, primary and secondary fuel filtration including standard (non-turbine) fuel/water separators (ASTM D6304)
-- [technology:turbocore] TURBOCORE → turbine FH and FG fuel-separation systems only, e.g. Racor-style turbine housings and their 2010/2020/2040-series replacement elements (ISO 16332). Never use TURBOCORE for a generic fuel or fuel/water-separator filter that isn't a turbine housing -- that is SYNTAPORE.
+- [technology:syntapore] SYNTAPORE → primary and secondary spin-on/cartridge diesel fuel filters upstream of pumps and injectors -- NOT water separators, NOT turbine systems (ASTM D6304)
+- [technology:hydrocore] HYDROCORE → standard (non-turbine) spin-on and cartridge fuel/water separators, e.g. a generic Racor-style separator that is not a Turbine Series FH/FG housing
+- [technology:turbocore] TURBOCORE → turbine FH and FG fuel-separation systems only, e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements (ISO 16332). Never use TURBOCORE for a generic fuel or fuel/water-separator filter that isn't a turbine housing -- that is HYDROCORE (or SYNTAPORE if it isn't a separator at all).
 - [technology:microkappa] MICROKAPPA → cabin air (ISO 11155, DIN 71220)
 - [technology:drycore] DRYCORE → compressed air / pneumatic (ISO 8573)
 - [technology:thermacore] THERMACORE → cooling system SCA additive
@@ -687,6 +692,7 @@ const CHAT_VALID_EVIDENCE_IDS = new Set([
   'technology:syntrax',
   'technology:nanoforce',
   'technology:syntapore',
+  'technology:hydrocore',
   'technology:turbocore',
   'technology:microkappa',
   'technology:drycore',
@@ -1291,6 +1297,7 @@ const TECH_LOGO_MAP = {
   'drycore': 'drycore',
   'duratech': 'duratech',
   'syntapore': 'syntapore',
+  'hydrocore': 'hydrocore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
   'marineclean': 'marineclean',

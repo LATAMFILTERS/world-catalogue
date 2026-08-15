@@ -21,7 +21,7 @@ export const CANONICAL_TECHNOLOGIES = {
     slug: 'syntapore',
     name: 'SYNTAPORE™',
     domain: 'fuel-cleanliness',
-    role: 'Primary and secondary fuel filtration',
+    role: 'Primary and secondary spin-on/cartridge fuel filtration (not water separators, not turbine systems)',
   },
   nanoforce: {
     slug: 'nanoforce',
@@ -52,6 +52,12 @@ export const CANONICAL_TECHNOLOGIES = {
     name: 'TURBOCORE™',
     domain: 'fuel-cleanliness',
     role: 'Turbine FH and FG fuel-separation systems',
+  },
+  hydrocore: {
+    slug: 'hydrocore',
+    name: 'HYDROCORE™',
+    domain: 'fuel-cleanliness',
+    role: 'Non-turbine fuel/water separators (spin-on and cartridge)',
   },
 } as const;
 

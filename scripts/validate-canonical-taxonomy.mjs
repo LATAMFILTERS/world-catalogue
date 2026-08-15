@@ -14,7 +14,6 @@ const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','
 // Hex keeps retired labels out of current repository text while still allowing
 // the guard to detect them in active file contents and paths.
 const forbidden = [
-  '485944524f434f5245',
   '53594e5445504f5245',
   '53594e5445464f52',
   '434f4f4c54454348',

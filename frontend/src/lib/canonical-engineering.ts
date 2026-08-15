@@ -75,6 +75,13 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
     controlStrategy: 'Configure the assembly around required flow, separation duty, element micron rating, installation and maintenance access.',
     operationalImpact: 'Staged fuel conditioning reduces contamination exposure in demanding fuel-system applications.',
   },
+  hydrocore: {
+    name: 'HYDROCORE™',
+    definition: 'A fuel/water separation architecture for spin-on and cartridge separators outside the Turbine Series FH/FG application.',
+    engineeringPrinciple: 'Coalescing and separation media remove free and emulsified water from diesel fuel ahead of the primary filtration stage, without the staged turbine-housing architecture reserved for TURBOCORE™.',
+    controlStrategy: 'Match separation efficiency, water-holding capacity, flow and service interval to the fuel-contamination profile and duty cycle of standard (non-turbine) fuel systems.',
+    operationalImpact: 'Reduced water carryover helps protect injectors and high-pressure pumps from water-related erosion and corrosion.',
+  },
 };
 
 export function getTechnologyEngineering(slug: string): CanonicalEngineeringDefinition | undefined {
