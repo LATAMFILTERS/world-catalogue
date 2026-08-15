@@ -633,9 +633,8 @@ ELIMFILTERS technologies by domain:
 - [technology:macrocore] MACROCORE → air intake (ISO 5011 certified)
 - [technology:syntrax] SYNTRAX → engine lube oil (ISO 16889)
 - [technology:nanoforce] NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
-- [technology:syntepore] SYNTEPORE → fuel / HPCR injectors (ASTM D6304)
-- [technology:hydrocore] HYDROCORE → fuel water separation (ASTM D6304)
-- [technology:turbocore] TURBOCORE → fuel 3-stage filtration (ISO 16332)
+- [technology:syntapore] SYNTAPORE → fuel / HPCR injectors, primary and secondary fuel filtration including standard (non-turbine) fuel/water separators (ASTM D6304)
+- [technology:turbocore] TURBOCORE → turbine FH and FG fuel-separation systems only, e.g. Racor-style turbine housings and their 2010/2020/2040-series replacement elements (ISO 16332). Never use TURBOCORE for a generic fuel or fuel/water-separator filter that isn't a turbine housing -- that is SYNTAPORE.
 - [technology:microkappa] MICROKAPPA → cabin air (ISO 11155, DIN 71220)
 - [technology:drycore] DRYCORE → compressed air / pneumatic (ISO 8573)
 - [technology:thermacore] THERMACORE → cooling system SCA additive
@@ -680,8 +679,7 @@ const CHAT_VALID_EVIDENCE_IDS = new Set([
   'technology:macrocore',
   'technology:syntrax',
   'technology:nanoforce',
-  'technology:syntepore',
-  'technology:hydrocore',
+  'technology:syntapore',
   'technology:turbocore',
   'technology:microkappa',
   'technology:drycore',
@@ -1302,15 +1300,21 @@ function getTechLogo(tech) {
 }
 
 // Canonical technology name corrections (DB may have older/misspelled variants).
-// COOLTECH and AQUAGUARD were retired in favor of THERMACORE and HYDROCORE —
-// see scripts/migrations/run_014_rename_deprecated_technologies.js for the
+// COOLTECH was retired in favor of THERMACORE, and AQUAGUARD in favor of
+// SYNTAPORE (generic fuel/water separation -- "HYDROCORE" is not a name in
+// the canonical registry, frontend/src/lib/canonical-technologies.ts, and
+// was never a real target) -- see
+// scripts/migrations/run_014_rename_deprecated_technologies.js for the
 // one-time catalog rename. This map keeps API responses correct in the
 // meantime (and as a safety net after) regardless of when that migration runs.
+// Note: there is no SYNTAPORE entry here -- SYNTAPORE is already the correct
+// canonical name, not a variant needing correction. An entry that mapped it
+// to "SYNTEPORE" previously lived here and mislabeled every one of the
+// 2,005 real SYNTAPORE™ products on Part Search until this fix.
 const TECH_NAME_FIXES = {
-  'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™',
   'COOLTECH': 'THERMACORE', 'COOLTECH™': 'THERMACORE™',
-  'AQUAGUARD': 'HYDROCORE', 'AQUAGUARD™': 'HYDROCORE™',
-  'AQUAGUARD/SERIES™': 'HYDROCORE™',
+  'AQUAGUARD': 'SYNTAPORE', 'AQUAGUARD™': 'SYNTAPORE™',
+  'AQUAGUARD/SERIES™': 'SYNTAPORE™',
 };
 
 // Deep-sanitizes every string leaf of an array of application objects
