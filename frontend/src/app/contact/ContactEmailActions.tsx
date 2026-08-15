@@ -5,12 +5,20 @@ import { useState } from 'react';
 type ContactEmailActionsProps = {
   email: string;
   subject: string;
+  emailLabel: string;
+  copyLabel: string;
+  copiedLabel: string;
 };
 
-export default function ContactEmailActions({ email, subject }: ContactEmailActionsProps) {
+export default function ContactEmailActions({
+  email,
+  subject,
+  emailLabel,
+  copyLabel,
+  copiedLabel,
+}: ContactEmailActionsProps) {
   const [copied, setCopied] = useState(false);
   const mailtoHref = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`;
 
   const copyEmail = async () => {
     try {
@@ -18,7 +26,7 @@ export default function ContactEmailActions({ email, subject }: ContactEmailActi
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      window.prompt('Copia esta dirección de correo:', email);
+      window.prompt(`${copyLabel}:`, email);
     }
   };
 
@@ -54,13 +62,10 @@ export default function ContactEmailActions({ email, subject }: ContactEmailActi
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem', marginTop: '1rem' }}>
         <a href={mailtoHref} style={actionStyle}>
-          Enviar correo
-        </a>
-        <a href={gmailHref} target="_blank" rel="noreferrer" style={actionStyle}>
-          Abrir en Gmail
+          {emailLabel}
         </a>
         <button type="button" onClick={copyEmail} style={actionStyle} aria-live="polite">
-          {copied ? 'Correo copiado' : 'Copiar dirección'}
+          {copied ? copiedLabel : copyLabel}
         </button>
       </div>
     </div>
