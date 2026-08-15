@@ -28,13 +28,15 @@ Protect fuel systems from particles and water contamination.
 
 Technologies:
 - SYNTAPORE™
+- HYDROCORE™
 - TURBOCORE™
 
 Products:
 - Fuel Filters
-- Fuel Water Separators
+- Standard Fuel Water Separators
 - FH Series
 - FG Series
+- 2010 / 2020 / 2040 replacement elements
 
 ---
 
