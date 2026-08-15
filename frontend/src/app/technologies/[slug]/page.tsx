@@ -22,9 +22,7 @@ const TECHNOLOGY_ASSETS: Readonly<Record<TechnologySlug, string>> = {
   syntrax: '/assets/SYNTRAX.avif',
   nanoforce: '/assets/NANOFORCE.avif',
   thermacore: '/assets/THERMACORE.avif',
-  // TODO: no dedicated HYDROCORE logo asset exists yet -- reusing SYNTAPORE's
-  // (its closest fuel-domain relative) until a real HYDROCORE.avif is supplied.
-  hydrocore: '/assets/SYNTAPORE.avif',
+  hydrocore: '/assets/HYDROCORE.avif',
 };
 
 const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
@@ -37,9 +35,7 @@ const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
   syntrax: '/images/syntrax.avif',
   nanoforce: '/images/nanoforce-mecanico.avif',
   thermacore: '/images/THERMACORE-CAMION.avif',
-  // TODO: no dedicated HYDROCORE hero photo exists yet -- reusing SYNTAPORE's
-  // until a real one is supplied.
-  hydrocore: '/images/hero-syntapore.avif',
+  hydrocore: '/assets/HYDROCORE.avif',
 };
 
 const PROTECTED_ELEMENTS: Readonly<Record<TechnologySlug, readonly string[]>> = {
