@@ -65,3 +65,21 @@ test('contact page uses translation keys for its visible editorial content', () 
   assert.match(contact, /t\('contact\.routingTitle'\)/);
   assert.match(contact, /t\('contact\.sectorsTitle'\)/);
 });
+
+test('contact email actions follow the active locale and never hardcode one language', () => {
+  const actions = read('frontend/src/app/contact/ContactEmailActions.tsx');
+  for (const language of ['en', 'es', 'pt', 'fr', 'it', 'nl', 'ru', 'zh', 'ja', 'ar', 'fa']) {
+    assert.match(actions, new RegExp(`\\b${language}:\\s*\\{`), `missing contact action labels for ${language}`);
+  }
+  assert.match(actions, /i18n\.resolvedLanguage/);
+  assert.match(actions, /labels\.email/);
+  assert.match(actions, /labels\.copy/);
+  assert.doesNotMatch(actions, />\s*Enviar correo\s*</);
+  assert.doesNotMatch(actions, />\s*Abrir en Gmail\s*</);
+});
+
+test('production client providers never mount the retired A/B debug panel', () => {
+  const providers = read('frontend/src/components/ClientProviders.tsx');
+  assert.doesNotMatch(providers, /ABTestVariantDisplay/);
+  assert.equal(fs.existsSync(path.join(root, 'frontend/src/components/ABTestVariantDisplay.tsx')), false);
+});
