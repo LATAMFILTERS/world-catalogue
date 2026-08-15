@@ -54,6 +54,11 @@ TURBOCORE™
 - element families: 2010, 2040, 2020
 - micron ratings: 30 µm, 10 µm, 2 µm
 
+HYDROCORE™
+- slug: hydrocore
+- system: Fuel Cleanliness Protection
+- products: standard (non-turbine) spin-on and cartridge fuel/water separators
+
 SYNTRAX™
 - slug: syntrax
 - system: Lubrication Protection

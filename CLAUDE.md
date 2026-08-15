@@ -16,7 +16,7 @@ Principle = The filter is the means. Asset protection is the objective.
 
 ## Approved technologies
 
-MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · TURBOCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
+MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · TURBOCORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
 Specialized solutions: MARINECLEAN™ · DURATECH™.
 

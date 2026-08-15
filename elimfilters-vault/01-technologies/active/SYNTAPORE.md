@@ -14,12 +14,13 @@ products:
   - Fuel Filter Cartridges
 related_technologies:
   - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
 # SYNTAPORE™
 
-SYNTAPORE™ is the ELIMFILTERS diesel-fuel filtration architecture assigned to primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection.
+SYNTAPORE™ is the ELIMFILTERS diesel-fuel filtration architecture assigned to primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection. It is scoped to plain fuel filtration only -- a fuel/water separator application (spin-on or cartridge) is HYDROCORE™, and a Turbine Series FH/FG separator application is TURBOCORE™.
 
 Its engineering role is to stage particulate-contamination control before fuel reaches pumps and injectors. Efficiency, capacity, flow and pressure-drop performance must be matched to each approved fuel-filtration stage.
 
@@ -41,7 +42,7 @@ RELATED_STANDARDS
 Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.
 
 RELATED_TECHNOLOGIES
-TURBOCORE: Dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. SYNTAPORE governs general staged diesel-fuel particulate filtration and must not be represented as an engine-air technology.
+TURBOCORE: Dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.
 
 INDUSTRIAL_ROLE
 SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components.
