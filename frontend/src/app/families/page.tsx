@@ -9,9 +9,9 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
 export const metadata: Metadata = {
-  title: 'Product Families | ELIMFILTERS',
+  title: 'Industrial Filter Product Families & Protection Systems | ELIMFILTERS',
   description:
-    'ELIMFILTERS product families organize industrial filtration products by protection system, duty class, technology architecture, and application role.',
+    'Browse ELIMFILTERS product families organized by system, duty class, and application. Find the right filtration products for your asset protection strategy.',
   alternates: { canonical: `${BASE_URL}/families/` },
 };
 

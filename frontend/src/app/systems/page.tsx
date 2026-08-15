@@ -23,16 +23,18 @@ const SYSTEM_LINES: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: 'Protection Systems | ELIMFILTERS',
+  title: 'Industrial Asset Protection Systems | Contamination Control | ELIMFILTERS',
   description:
-    'Five canonical ELIMFILTERS protection systems: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling System Protection.',
+    'Explore five ELIMFILTERS protection systems for air intake, fuel, lubrication, hydraulic, and cooling system contamination control. Prevent equipment failure with engineered asset protection.',
   keywords: [
-    'industrial protection systems',
-    'air intake contamination control',
-    'fuel cleanliness protection',
+    'asset protection systems',
+    'contamination control',
+    'air intake protection',
+    'fuel cleanliness',
     'lubrication protection',
-    'hydraulic contamination control',
+    'hydraulic protection',
     'cooling system protection',
+    'industrial filtration',
     'ELIMFILTERS',
   ],
   alternates: { canonical: `${BASE_URL}/systems/` },

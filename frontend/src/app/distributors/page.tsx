@@ -4,14 +4,16 @@ import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Authorized Distributors | ELIMFILTERS',
-  description: 'ELIMFILTERS authorized distributors provide regional industrial filtration coverage, application support, and asset protection expertise across the Americas.',
+  title: 'ELIMFILTERS Authorized Distributor Network | Regional Coverage',
+  description: 'Find ELIMFILTERS authorized distributors in Dominican Republic, Colombia, and USA. Local industrial filtration expertise, regional support, and asset protection solutions.',
+  keywords: ['distributor network', 'industrial filtration', 'authorized distributors', 'regional coverage'],
   alternates: { canonical: 'https://elimfilters.com/distributors/' },
   openGraph: {
-    title: 'Authorized Distributors | ELIMFILTERS',
-    description: 'Regional ELIMFILTERS distribution partners supporting industrial filtration and asset protection applications.',
+    title: 'ELIMFILTERS Authorized Distributor Network | Regional Coverage',
+    description: 'Find ELIMFILTERS authorized distributors — regional coverage, technical support, and asset protection expertise.',
     url: 'https://elimfilters.com/distributors/',
     type: 'website',
+    siteName: 'ELIMFILTERS',
   },
 };
 
