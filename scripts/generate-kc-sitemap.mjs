@@ -43,8 +43,10 @@ function walkDir(dir, results = []) {
 }
 
 function buildUrl(indexPath) {
-  const rel = relative(OUT_DIR, indexPath).replace(/\/index\.html$/, '').replace(/\\index\.html$/, '');
-  return `${BASE_URL}/${rel}`;
+  const rel = relative(OUT_DIR, indexPath)
+    .replace(/\\/g, '/')
+    .replace(/\/index\.html$/, '');
+  return `${BASE_URL}/${rel.replace(/^\/+|\/+$/g, '')}/`;
 }
 
 function priorityFor(url) {

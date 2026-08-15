@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Filtration by Industry | ELIMFILTERS Knowledge Center',
   description: 'Engineering guidance for filtration challenges across mining, agriculture, construction, transportation, marine, energy, and manufacturing.',
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-center/industries',
+    canonical: 'https://elimfilters.com/knowledge-center/industries/',
   },
 };
 

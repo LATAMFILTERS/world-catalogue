@@ -1,12 +1,19 @@
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
 
 const target = path.join(__dirname, '..', 'server-original.js');
+
+if (!fs.existsSync(target)) {
+  console.log('[coverage-audit-engine] legacy server-original.js is not present; direct registration skipped');
+  process.exit(0);
+}
+
 let source = fs.readFileSync(target, 'utf8');
 const marker = '// COVERAGE_AUDIT_DIRECT_V4';
 const registration = `${marker}\nconst { registerCoverageAuditEngine } = require('./src/coverage-audit-engine');\nregisterCoverageAuditEngine(app, pool, searchLimiter);\nconsole.log('[coverage-audit-engine] direct v4 registered');`;
 
-// Remove any previous direct-registration block so this script is idempotent.
 source = source.replace(
   /\n?\/\/ COVERAGE_AUDIT_DIRECT_V4\nconst \{ registerCoverageAuditEngine \} = require\('\.\/src\/coverage-audit-engine'\);\nregisterCoverageAuditEngine\(app, pool, searchLimiter\);\nconsole\.log\('\[coverage-audit-engine\] direct v4 registered'\);\n?/g,
   '\n'

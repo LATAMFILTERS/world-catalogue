@@ -6,17 +6,8 @@ const full = process.argv.includes('--full');
 
 function run(command, args, cwd = root) {
   console.log(`> ${command} ${args.join(' ')}`);
-  const result = spawnSync(command, args, {
-    cwd,
-    stdio: 'inherit',
-    shell: false,
-    env: process.env,
-  });
-
-  if (result.error) {
-    console.error(result.error.message);
-    process.exit(1);
-  }
+  const result = spawnSync(command, args, { cwd, stdio: 'inherit', shell: false, env: process.env });
+  if (result.error) { console.error(result.error.message); process.exit(1); }
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
@@ -32,7 +23,23 @@ function runNpm(args, cwd) {
 
 run(process.execPath, ['scripts/validate-canonical-taxonomy.mjs']);
 run(process.execPath, ['scripts/validate-legacy-catalogue-dependency.mjs']);
-run(process.execPath, ['--test', 'tests/canonical-technology-registry.test.js']);
+run(process.execPath, [
+  '--test',
+  'tests/canonical-technology-registry.test.js',
+  'tests/canonical-cooling-taxonomy.test.js',
+  'tests/omnichannel-canonical-taxonomy.test.js',
+  'tests/i18n-crawler-ssr.test.js',
+  'tests/global-language-policy.test.js',
+  'tests/canonical-url-policy.test.js',
+  'tests/enterprise-entity-identity.test.js',
+  'tests/citation-core-technology-notes.test.js',
+  'tests/citation-api-generation-policy.test.js',
+  'tests/structured-data-evidence-policy.test.js',
+  'tests/public-technology-claims-governance.test.js',
+  'tests/specialized-solutions-governance.test.js',
+  'tests/industry-public-claims-governance.test.js',
+  'tests/render-blueprint-security.test.js',
+]);
 
 if (full) {
   const frontend = path.join(root, 'frontend');
@@ -41,6 +48,6 @@ if (full) {
 }
 
 console.log(full
-  ? 'Manual pre-merge validation passed, including frontend type-check and build.'
+  ? 'Manual pre-merge validation passed, including canonical taxonomy, enterprise entity identity, citation-grade core technologies, clean Citation API generation, evidence-governed structured data, public technology and industry claims, specialized solutions, canonical URL policy, crawler-visible i18n, single-language geolocation policy, Render blueprint security, frontend type-check and build.'
   : 'Manual canonical pre-merge validation passed. Use --full to include frontend type-check and build.'
 );

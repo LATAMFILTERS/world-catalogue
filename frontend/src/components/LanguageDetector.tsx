@@ -6,17 +6,30 @@ import { detectGeoLanguage } from '@/lib/geoLanguage';
 
 /**
  * Silent geo-language detection — no UI rendered.
- * Detects user country via IP, applies the correct language via i18next,
- * and persists the result in localStorage (TTL: 7 days).
- * Mount once inside I18nextProvider (ClientProviders).
+ * English is the official/default language. A localized language is applied
+ * only after its translation bundle has loaded, preventing partial bilingual
+ * rendering while i18next is still fetching resources.
  */
 export function LanguageDetector() {
   useEffect(() => {
-    detectGeoLanguage().then(({ language }) => {
-      if (i18n.language?.slice(0, 2) !== language) {
-        i18n.changeLanguage(language);
+    let active = true;
+
+    void detectGeoLanguage().then(async ({ language }) => {
+      if (!active) return;
+      const current = i18n.language?.slice(0, 2) || 'en';
+      if (current === language) return;
+
+      try {
+        await i18n.loadLanguages(language);
+        if (active) await i18n.changeLanguage(language);
+      } catch {
+        if (active && current !== 'en') await i18n.changeLanguage('en');
       }
     });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   return null;

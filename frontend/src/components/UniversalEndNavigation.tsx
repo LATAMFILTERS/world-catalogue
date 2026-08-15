@@ -49,7 +49,7 @@ const COMMON: Record<string, NavItem> = {
   search: {
     href: 'https://part-search.elimfilters.com',
     label: 'Part Search',
-    description: 'Connect the engineering path to OEM, competitor, dimensional, and application references.',
+    description: 'Connect the engineering path to OEM, dimensional, and application references.',
     external: true,
   },
 };
@@ -59,7 +59,6 @@ function isRoute(pathname: string, base: string): boolean {
 }
 
 function navigationFor(pathname: string): NavigationConfig | null {
-  // Families routes
   if (isRoute(pathname, '/families')) {
     return {
       kind: 'families',
@@ -71,7 +70,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Systems routes
   if (isRoute(pathname, '/systems')) {
     return {
       kind: 'systems',
@@ -83,7 +81,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Technologies routes
   if (isRoute(pathname, '/technologies')) {
     return {
       kind: 'technologies',
@@ -95,7 +92,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Industries routes
   if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',
@@ -107,7 +103,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
     };
   }
 
-  // Knowledge System routes
   if (isRoute(pathname, '/knowledge-center')) {
     return {
       kind: 'knowledge',
@@ -135,9 +130,10 @@ const LEGACY_ENDING_MARKERS = [
 export function UniversalEndNavigation() {
   const pathname = usePathname();
   const config = navigationFor(pathname);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
 
   useEffect(() => {
     setHydrated(true);
@@ -145,11 +141,8 @@ export function UniversalEndNavigation() {
 
   useEffect(() => {
     if (!hydrated || !navRef.current) return;
-
     const footer = document.querySelector('footer');
     if (!footer) return;
-
-    // Insert UniversalEndNavigation before the footer
     const parent = footer.parentElement;
     if (parent && navRef.current.parentElement !== parent) {
       parent.insertBefore(navRef.current, footer);
@@ -157,8 +150,7 @@ export function UniversalEndNavigation() {
   }, [hydrated]);
 
   useEffect(() => {
-    if (!config || !hydrated) return;
-
+    if (!config || !hydrated || language !== 'en') return;
     const main = document.querySelector('main');
     if (!main) return;
 
@@ -168,8 +160,7 @@ export function UniversalEndNavigation() {
     sections.forEach((section) => {
       const heading = section.querySelector('h2, h3, p, span, [data-navigation-marker]');
       const text = heading?.textContent?.trim().toLowerCase() ?? '';
-
-      if (text && LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker.toLowerCase()))) {
+      if (text && LEGACY_ENDING_MARKERS.some((marker) => text.includes(marker))) {
         section.dataset.universalEndNavHidden = 'true';
         section.style.display = 'none';
         hiddenSections.push(section);
@@ -182,9 +173,12 @@ export function UniversalEndNavigation() {
         delete section.dataset.universalEndNavHidden;
       });
     };
-  }, [config, pathname, hydrated]);
+  }, [config, pathname, hydrated, language]);
 
-  if (!config || !hydrated) return null;
+  // This component's editorial copy is currently governed in English only.
+  // Do not inject English into a localized page. Localized routes retain their
+  // native page ending until a fully translated navigation bundle is approved.
+  if (!config || !hydrated || language !== 'en') return null;
 
   return (
     <nav

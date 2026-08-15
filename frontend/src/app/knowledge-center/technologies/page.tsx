@@ -70,7 +70,7 @@ export default function TechnologiesPage() {
               maxWidth: '620px',
             }}
           >
-            Nine proprietary filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the ISO standards that govern performance measurement, and the industrial systems it protects.
+            Nine canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports.
           </motion.p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function TechnologiesPage() {
                       color: 'rgba(255,255,255,0.3)',
                       marginBottom: '0.5rem',
                     }}>
-                      KEY SPEC
+                      GOVERNED SPEC
                     </p>
                     <p style={{
                       fontFamily: 'JetBrains Mono, monospace',
@@ -187,9 +187,11 @@ export default function TechnologiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
+        '@id': 'https://elimfilters.com/knowledge-center/technologies/#collection',
         name: 'ELIMFILTERS Technology Registry — Filtration Technologies',
-        description: 'Nine proprietary ELIMFILTERS filtration technologies mapped to contamination domains, ISO standards, and industrial protection systems.',
-        url: 'https://elimfilters.com/knowledge-center/technologies',
+        description: 'Nine canonical core ELIMFILTERS filtration technologies mapped to contamination domains, technical standards where applicable, and industrial protection systems.',
+        url: 'https://elimfilters.com/knowledge-center/technologies/',
+        isPartOf: { '@id': 'https://elimfilters.com/knowledge-center/#collection' },
         publisher: {
           '@type': 'Organization',
           '@id': 'https://elimfilters.com/#organization',

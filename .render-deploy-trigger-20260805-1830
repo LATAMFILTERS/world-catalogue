@@ -1,3 +1,0 @@
-Trigger production deployment after protocol hardening.
-Expected protocol fix commit in history: 1cf3746b23607ceaea4fdb3d9d007299d81920cd
-Current main includes subsequent web-chat central protocol fixes.

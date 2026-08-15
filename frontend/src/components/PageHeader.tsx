@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 export interface Breadcrumb {
   label: string;
@@ -12,16 +13,31 @@ interface PageHeaderProps {
   currentPage?: string;
 }
 
+const PAGE_KEYS: Record<string, string> = {
+  contact: 'nav.contact',
+  about: 'nav.about',
+  industries: 'nav.industries',
+  systems: 'nav.systems',
+  technologies: 'nav.technologies',
+  distributors: 'nav.distributors',
+};
+
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
-  // Build breadcrumb trail: HOME / [parent] / [current]
-  const trail: Breadcrumb[] = [{ label: 'HOME', href: '/' }];
+  const { t } = useTranslation();
+
+  const localizeLabel = (label: string) => {
+    const key = PAGE_KEYS[label.trim().toLowerCase()];
+    return key ? t(key, { defaultValue: label }) : label;
+  };
+
+  const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: '/' }];
 
   if (breadcrumbs) {
-    trail.push(...breadcrumbs);
+    trail.push(...breadcrumbs.map((crumb) => ({ ...crumb, label: localizeLabel(crumb.label) })));
   }
 
   if (currentPage) {
-    trail.push({ label: currentPage });
+    trail.push({ label: localizeLabel(currentPage) });
   }
 
   return (
@@ -45,7 +61,7 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
       fontWeight: 700,
     }}>
       {trail.map((crumb, idx) => (
-        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div key={`${crumb.label}-${idx}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           {crumb.href ? (
             <Link href={crumb.href} style={{
               color: '#FFF12D',

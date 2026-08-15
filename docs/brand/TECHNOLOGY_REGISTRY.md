@@ -18,7 +18,7 @@ Products: Air Filters
 Protection role: Engine air contamination control and intake-system protection.
 
 ## MICROKAPPA™
-System: Cabin Air Protection
+System: Air Intake & Airflow Protection
 Products: Cabin Air Filters
 Protection role: Occupant-compartment air quality and cabin-system protection.
 
@@ -42,7 +42,8 @@ Products:
 Protection role: Fuel contamination control and fuel-system protection.
 
 ## TURBOCORE™
-System: Turbine Fuel Separation Protection
+System: Fuel Cleanliness Protection
+Application architecture: Turbine-style fuel separation
 Applications:
 - 1000FH
 - 900FH

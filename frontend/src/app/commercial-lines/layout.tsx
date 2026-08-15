@@ -1,36 +1,36 @@
 import type { Metadata } from 'next';
 
-const DESC = 'ELIMFILTERS® Commercial Lines — MARINECLEAN™ salt-resistant marine filtration and DURATECH™ fleet master kit system. Integrated product lines for marine, offshore, fleet, mining, construction, and agriculture operations.';
+const DESC = 'ELIMFILTERS specialized Asset Protection Systems solutions: MARINECLEAN™ for marine operating environments and DURATECH™ for integrated maintenance and asset-protection kits.';
 
 export const metadata: Metadata = {
-  title: 'Commercial Lines — MARINECLEAN™ & DURATECH™ | ELIMFILTERS®',
+  title: 'Specialized Asset Protection Solutions | ELIMFILTERS',
   description: DESC,
-  keywords: ['MARINECLEAN marine filtration', 'DURATECH fleet kits', 'commercial filtration lines', 'marine filter IMO certified', 'fleet maintenance kits', 'mixed fleet filter standardisation', 'salt resistant filtration', 'ELIMFILTERS commercial lines'],
+  keywords: [
+    'ELIMFILTERS specialized solutions',
+    'MARINECLEAN',
+    'DURATECH',
+    'marine asset protection',
+    'integrated maintenance kits',
+    'industrial contamination control',
+  ],
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://elimfilters.com/commercial-lines/',
   },
   openGraph: {
-    title: 'Commercial Lines — MARINECLEAN™ & DURATECH™ | ELIMFILTERS®',
+    title: 'Specialized Asset Protection Solutions | ELIMFILTERS',
     description: DESC,
     url: 'https://elimfilters.com/commercial-lines/',
     type: 'website',
-    siteName: 'ELIMFILTERS® World Catalogue',
+    siteName: 'ELIMFILTERS',
     images: [{ url: 'https://elimfilters.com/assets/logo-elimfilters.png', width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@elimfilters',
-    title: 'Commercial Lines — MARINECLEAN™ & DURATECH™ | ELIMFILTERS®',
+    title: 'Specialized Asset Protection Solutions | ELIMFILTERS',
     description: DESC,
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
-  },
-  other: {
-    'geo.region': 'US-TX',
-    'geo.placename': 'Frisco, Texas',
-    'geo.position': '33.1507;-96.8236',
-    ICBM: '33.1507, -96.8236',
   },
 };
 

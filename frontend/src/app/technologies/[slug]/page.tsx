@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CategoryPage } from '@/components/CategoryPage';
-import { TechDetailPage } from '@/components/TechDetailPage';
 import { CANONICAL_TECHNOLOGY_LIST, getCanonicalTechnology } from '@/lib/canonical-technologies';
 import { getTechnologyEngineering } from '@/lib/canonical-engineering';
-import { getItemBySlug, type CatalogueItem } from '@/lib/catalogue';
-import { TECH_PAGES } from './techPagesData';
+import type { CatalogueItem } from '@/lib/catalogue';
 
 interface Props {
   params: { slug: string };
@@ -25,25 +23,23 @@ const visuallyHiddenHeading = {
   border: 0,
 } as const;
 
+function technologyUrl(slug: string) {
+  return `${BASE_URL}/technologies/${slug}/`;
+}
+
+function technologyEntityUrl(slug: string) {
+  return `${technologyUrl(slug)}#technology`;
+}
+
 function resolveTechnology(slug: string): CatalogueItem | undefined {
   const canonical = getCanonicalTechnology(slug);
   const engineering = getTechnologyEngineering(slug);
 
-  // Public technology routes are canonical-only. Legacy catalogue entries must
-  // never recreate a retired technology page.
+  // Canonical public technology routes must be built exclusively from the
+  // governed technology and engineering registries. Legacy catalogue/detail
+  // copy is intentionally excluded because it contains historical claims that
+  // are not part of the current Claim Registry.
   if (!canonical || !engineering) return undefined;
-
-  const catalogueItem = getItemBySlug('technologies', slug);
-  if (catalogueItem) {
-    return {
-      ...catalogueItem,
-      name: canonical.name.replace('™', ''),
-      title: canonical.name,
-      subtitle: canonical.role,
-      description: engineering.definition,
-      engineeringBody: engineering.engineeringPrinciple,
-    };
-  }
 
   return {
     name: canonical.name.replace('™', ''),
@@ -51,11 +47,14 @@ function resolveTechnology(slug: string): CatalogueItem | undefined {
     title: canonical.name,
     subtitle: canonical.role,
     description: engineering.definition,
-    features: [engineering.engineeringPrinciple, engineering.controlStrategy],
+    features: [
+      engineering.engineeringPrinciple,
+      engineering.controlStrategy,
+    ],
     benefits: [engineering.operationalImpact],
-    techTags: [canonical.domain, canonical.name],
+    techTags: [],
     stats: {},
-    cta: 'Explore ELIMFILTERS protection systems',
+    cta: 'FIND MY PART',
     engineeringBody: engineering.engineeringPrinciple,
   };
 }
@@ -74,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `${BASE_URL}/technologies/${params.slug}`;
+  const url = technologyUrl(params.slug);
   const title = `${item.title} Proprietary Technology`;
   const socialTitle = `${item.title} | ELIMFILTERS Proprietary Technology`;
   return {
@@ -109,15 +108,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function technologySchema(item: CatalogueItem, slug: string) {
   const engineering = getTechnologyEngineering(slug);
   if (!engineering) return null;
+  const url = technologyUrl(slug);
 
   return {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    '@id': `${BASE_URL}/technologies/${slug}#article`,
+    '@id': `${url}#article`,
     headline: item.title,
     name: item.title,
     description: engineering.definition,
-    url: `${BASE_URL}/technologies/${slug}`,
+    url,
     author: {
       '@type': 'Organization',
       '@id': `${BASE_URL}/#organization`,
@@ -130,9 +130,11 @@ function technologySchema(item: CatalogueItem, slug: string) {
     },
     about: {
       '@type': 'DefinedTerm',
+      '@id': technologyEntityUrl(slug),
       name: item.title,
       description: engineering.definition,
-      inDefinedTermSet: `${BASE_URL}/technologies`,
+      url,
+      inDefinedTermSet: `${BASE_URL}/technologies/`,
     },
     abstract: engineering.engineeringPrinciple,
     keywords: [
@@ -144,8 +146,9 @@ function technologySchema(item: CatalogueItem, slug: string) {
     ],
     isPartOf: {
       '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
       name: 'ELIMFILTERS',
-      url: BASE_URL,
+      url: `${BASE_URL}/`,
     },
   };
 }
@@ -182,16 +185,17 @@ function breadcrumbSchema(item: CatalogueItem, slug: string) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies` },
-      { '@type': 'ListItem', position: 3, name: item.title, item: `${BASE_URL}/technologies/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies/` },
+      { '@type': 'ListItem', position: 3, name: item.title, item: technologyUrl(slug) },
     ],
   };
 }
 
 export default function TechnologyPage({ params }: Props) {
   const item = resolveTechnology(params.slug);
-  if (!item) notFound();
+  const engineering = getTechnologyEngineering(params.slug);
+  if (!item || !engineering) notFound();
 
   const slug = params.slug;
   const articleSchema = technologySchema(item, slug);
@@ -207,8 +211,29 @@ export default function TechnologyPage({ params }: Props) {
   );
 
   const semanticHeading = <h1 style={visuallyHiddenHeading}>{item.title} Proprietary Filtration Technology</h1>;
-  const techData = TECH_PAGES[slug];
-  if (techData) return <>{schemas}{semanticHeading}<TechDetailPage data={techData} /></>;
 
-  return <>{schemas}{semanticHeading}<CategoryPage item={item} category="technologies" /></>;
+  return (
+    <>
+      {schemas}
+      {semanticHeading}
+      <CategoryPage
+        item={item}
+        category="technologies"
+        geoData={{
+          directAnswer: engineering.definition,
+          ctaTitle: `Apply ${item.title} to the correct system`,
+          ctaDescription: 'Use ELIMFILTERS Part Search to identify the correct filtration component for the equipment, application, and protected system.',
+          operationalObjective: {
+            headline: 'Engineering Objective',
+            lines: [engineering.engineeringPrinciple, engineering.controlStrategy],
+          },
+          faq: [
+            { q: `What is ${item.title}?`, a: engineering.definition },
+            { q: `How does ${item.title} work?`, a: engineering.engineeringPrinciple },
+            { q: `What does ${item.title} protect?`, a: engineering.operationalImpact },
+          ],
+        }}
+      />
+    </>
+  );
 }

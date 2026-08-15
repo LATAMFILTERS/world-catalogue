@@ -18,6 +18,18 @@ const APPROVED = [
   'THERMACORE',
 ];
 
+const EXPECTED_SYSTEMS = {
+  MACROCORE: 'Air Intake & Airflow Protection',
+  MICROKAPPA: 'Air Intake & Airflow Protection',
+  DRYCORE: 'Air Intake & Airflow Protection',
+  INTEKCORE: 'Air Intake & Airflow Protection',
+  SYNTAPORE: 'Fuel Cleanliness Protection',
+  TURBOCORE: 'Fuel Cleanliness Protection',
+  SYNTRAX: 'Lubrication Protection',
+  NANOFORCE: 'Hydraulic Protection',
+  THERMACORE: 'Cooling System Protection',
+};
+
 function canonicalSource() {
   return fs.readFileSync(path.join(ROOT, 'frontend/src/lib/canonical-technologies.ts'), 'utf8');
 }
@@ -25,6 +37,10 @@ function canonicalSource() {
 function extractNames() {
   const src = canonicalSource();
   return Array.from(src.matchAll(/name:\s*'([A-Z0-9]+)™'/g), (m) => m[1]);
+}
+
+function technologyRegistry() {
+  return fs.readFileSync(path.join(ROOT, 'docs/brand/TECHNOLOGY_REGISTRY.md'), 'utf8');
 }
 
 test('canonical registry contains exactly the nine approved core technologies', () => {
@@ -38,6 +54,30 @@ test('fuel technologies resolve only to the approved fuel-cleanliness architectu
     assert.ok(block, `${key} block missing`);
     assert.match(block[0], /domain:\s*'fuel-cleanliness'/);
   }
+});
+
+test('technology governance assigns all nine core technologies to the five canonical systems', () => {
+  const registry = technologyRegistry();
+  const declaredSystems = new Set();
+
+  for (const [key, expectedSystem] of Object.entries(EXPECTED_SYSTEMS)) {
+    const block = registry.match(new RegExp(`## ${key}™\\n([\\s\\S]*?)(?=\\n## |\\n# SPECIALIZED SOLUTIONS)`));
+    assert.ok(block, `${key} governance block missing`);
+    const system = block[1].match(/^System:\s*(.+)$/m)?.[1]?.trim();
+    assert.equal(system, expectedSystem, `${key} must belong to ${expectedSystem}`);
+    declaredSystems.add(system);
+  }
+
+  assert.deepEqual(
+    [...declaredSystems].sort(),
+    [
+      'Air Intake & Airflow Protection',
+      'Fuel Cleanliness Protection',
+      'Lubrication Protection',
+      'Hydraulic Protection',
+      'Cooling System Protection',
+    ].sort(),
+  );
 });
 
 test('human governance registries contain every approved technology', () => {

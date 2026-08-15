@@ -1,0 +1,20 @@
+/*
+ * ELIMFILTERS Phase 4 consolidated site stylesheet entrypoint.
+ * Import order is intentional and preserves the existing production cascade.
+ * Keep globals.css separate as the base design system; this file owns the
+ * governed responsive/editorial compatibility layer.
+ */
+@import './hero-responsive.css';
+@import './home-emergency-restore.css';
+@import './systems-cleanup.css';
+@import './air-intake-hero-restore.css';
+@import './air-intake-visible-cleanup.css';
+@import './core-systems-editorial.css';
+@import './air-intake-narrative-section-fix.css';
+@import './industries-risk-title-tweak.css';
+@import './commercial-knowledge-visibility-guard.css';
+@import './mobile-aesthetic-polish.css';
+@import './mobile-critical-fix.css';
+@import './mobile-critical-layout-fixes.css';
+@import './technologies-mobile-fix.css';
+@import './universal-end-navigation.css';

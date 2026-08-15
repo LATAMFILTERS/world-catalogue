@@ -11,7 +11,7 @@ interface CTASectionProps {
 
 export function CTASection({
   title = "Ready to Upgrade?",
-  description = "Find the exact filter for your application. Our system cross-references 500,000+ parts across every major OEM to find your perfect match.",
+  description = "Find the correct filtration component for your equipment, application, and protected system using ELIMFILTERS Part Search.",
   buttonText = "FIND MY FILTER",
   buttonHref = "https://part-search.elimfilters.com",
 }: CTASectionProps) {

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getItemBySlug } from '@/lib/catalogue';
-import { TECH_PAGES } from '@/app/technologies/[slug]/techPagesData';
+import { getTechnologyEngineering } from '@/lib/canonical-engineering';
 import { getIncomingEntities, getRelatedEntities } from '@/lib/entity-graph';
 
 interface DefinitionRow {
@@ -23,14 +23,14 @@ export function StructuredTechnologyDefinition() {
 
   const slug = match[1];
   const item = getItemBySlug('technologies', slug);
-  if (!item) return null;
+  const engineering = getTechnologyEngineering(slug);
+  if (!item || !engineering) return null;
 
-  const techData = TECH_PAGES[slug];
   const entityId = `technology:${slug}`;
 
-  const systems = getIncomingEntities(entityId, 'uses-technology');
-  const families = getIncomingEntities(entityId, 'uses-technology').filter((node) => node.kind === 'family');
-  const systemNodes = systems.filter((node) => node.kind === 'system');
+  const incoming = getIncomingEntities(entityId, 'uses-technology');
+  const families = incoming.filter((node) => node.kind === 'family');
+  const systemNodes = incoming.filter((node) => node.kind === 'system');
 
   const standardsMap = new Map<string, { href: string; name: string }>();
   [...systemNodes, ...families].forEach((node) => {
@@ -39,13 +39,11 @@ export function StructuredTechnologyDefinition() {
     });
   });
 
-  const operatingPrinciple = techData?.systemParagraphs?.[0];
-  const engineeringFunction = techData?.heroTagline || item.description;
-
   const rows: DefinitionRow[] = [
-    { label: 'Definition', content: item.description },
-    { label: 'Engineering Function', content: engineeringFunction },
-    { label: 'Operating Principle', content: operatingPrinciple },
+    { label: 'Definition', content: engineering.definition },
+    { label: 'Engineering Principle', content: engineering.engineeringPrinciple },
+    { label: 'Control Strategy', content: engineering.controlStrategy },
+    { label: 'Operational Impact', content: engineering.operationalImpact },
     {
       label: 'Protection Systems',
       links: systemNodes.map((node) => ({ href: node.href, name: node.name })),
@@ -69,7 +67,7 @@ export function StructuredTechnologyDefinition() {
       <div className="structured-definition__inner">
         <p className="structured-definition__eyebrow">STRUCTURED TECHNOLOGY DEFINITION</p>
         <h2 id={`structured-definition-${slug}`} className="structured-definition__title">
-          {item.title || humanize(slug)}
+          {engineering.name || item.title || humanize(slug)}
         </h2>
 
         <div className="structured-definition__grid">

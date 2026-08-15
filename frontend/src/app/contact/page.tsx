@@ -54,15 +54,19 @@ const SECTOR_KEYS = [
 const schemaContact = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
+  '@id': 'https://elimfilters.com/contact/#contact-page',
   name: 'Contact ELIMFILTERS',
   url: 'https://elimfilters.com/contact/',
   description:
-    'Contact ELIMFILTERS for industrial filtration, asset protection, distributor opportunities, OEM cross-reference support and technical inquiries.',
+    'Contact ELIMFILTERS for industrial filtration, asset protection, authorized distributor opportunities, OEM cross-reference support and technical inquiries.',
+  isPartOf: {
+    '@id': 'https://elimfilters.com/#website',
+  },
   mainEntity: {
     '@type': 'Organization',
+    '@id': 'https://elimfilters.com/#organization',
     name: 'ELIMFILTERS',
-    legalName: 'Kleo Technologies LLC',
-    url: 'https://elimfilters.com',
+    url: 'https://elimfilters.com/',
     email: 'info@elimfilters.com',
     contactPoint: [
       {
@@ -79,7 +83,7 @@ const schemaContact = {
       },
       {
         '@type': 'ContactPoint',
-        contactType: 'Distributor network',
+        contactType: 'Authorized distributor network',
         email: 'distribution_network@elimfilters.com',
         availableLanguage: ['English', 'Spanish'],
       },
@@ -91,7 +95,7 @@ const schemaBreadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
     { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://elimfilters.com/contact/' },
   ],
 };
@@ -260,31 +264,34 @@ export default function ContactPage() {
                 >
                   {t(channel.labelKey)}
                 </p>
-
                 <h2
                   style={{
-                    color: '#fff',
                     fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                    fontSize: '1.65rem',
-                    lineHeight: 1,
+                    fontSize: '1.4rem',
                     textTransform: 'uppercase',
+                    lineHeight: 1.05,
                     marginBottom: '1rem',
                   }}
                 >
                   {t(channel.titleKey)}
                 </h2>
-
                 <p
                   style={{
-                    color: 'rgba(255,255,255,0.64)',
+                    color: 'rgba(255,255,255,0.6)',
                     lineHeight: 1.65,
                     marginBottom: '1.5rem',
+                    flexGrow: 1,
                   }}
                 >
                   {t(channel.descKey)}
                 </p>
-
-                <ContactEmailActions email={channel.email} subject={channel.subject} />
+                <ContactEmailActions
+                  email={channel.email}
+                  subject={channel.subject}
+                  emailLabel={t('contact.emailButton')}
+                  copyLabel={t('contact.copyButton')}
+                  copiedLabel={t('contact.copiedButton')}
+                />
               </article>
             ))}
           </div>
@@ -293,118 +300,136 @@ export default function ContactPage() {
 
       <section
         style={{
-          padding: '4rem clamp(1.25rem,5vw,2rem)',
-          background: '#050505',
-          borderTop: '1px solid rgba(255,255,255,0.07)',
+          padding: '5rem clamp(1.25rem,5vw,2rem)',
+          background: 'rgba(255,255,255,0.02)',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}
       >
-        <div
-          style={{
-            maxWidth: '1180px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'start',
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-                lineHeight: 0.95,
-                textTransform: 'uppercase',
-                marginBottom: '1.2rem',
-              }}
-            >
-              {t('contact.whatToIncludeTitle')}
-            </h2>
-
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.66)',
-                lineHeight: 1.7,
-                maxWidth: '560px',
-              }}
-            >
-              {t('contact.whatToIncludeDesc')}
-            </p>
-          </div>
-
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '0.75rem',
+              gridTemplateColumns: 'minmax(0,0.9fr) minmax(0,1.1fr)',
+              gap: 'clamp(2rem,6vw,5rem)',
+              alignItems: 'start',
             }}
           >
-            {PRIORITY_KEYS.map((key) => (
-              <div
-                key={key}
+            <div>
+              <p
                 style={{
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  background: 'rgba(255,255,255,0.035)',
-                  padding: '1rem',
-                  color: 'rgba(255,255,255,0.72)',
-                  lineHeight: 1.55,
-                  fontWeight: 600,
+                  color: '#FFF12D',
+                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  marginBottom: '1rem',
                 }}
               >
-                {t(key)}
-              </div>
-            ))}
+                {t('contact.routingTag')}
+              </p>
+              <h2
+                style={{
+                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                  fontSize: 'clamp(2.2rem,5vw,4.6rem)',
+                  lineHeight: 0.92,
+                  textTransform: 'uppercase',
+                  maxWidth: '620px',
+                }}
+              >
+                {t('contact.routingTitle')}
+              </h2>
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '1rem',
+              }}
+            >
+              {PRIORITY_KEYS.map((key, index) => (
+                <div
+                  key={key}
+                  style={{
+                    borderTop: '2px solid #FFF12D',
+                    paddingTop: '1rem',
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'block',
+                      color: 'rgba(255,255,255,0.28)',
+                      fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                      fontSize: '0.7rem',
+                      marginBottom: '0.65rem',
+                    }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.55 }}>{t(key)}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '4rem clamp(1.25rem,5vw,2rem)', background: '#000' }}>
+      <section style={{ padding: '5rem clamp(1.25rem,5vw,2rem)', background: '#000' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2
+          <p
             style={{
+              color: '#FFF12D',
               fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-              fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-              lineHeight: 0.95,
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              letterSpacing: '0.18em',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
           >
-            {t('contact.marketsTitle')}
-          </h2>
-
-          <p
+            {t('contact.sectorsTag')}
+          </p>
+          <h2
             style={{
-              maxWidth: '720px',
-              color: 'rgba(255,255,255,0.62)',
-              lineHeight: 1.65,
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: 'clamp(2.2rem,5vw,4.6rem)',
+              lineHeight: 0.92,
+              textTransform: 'uppercase',
               marginBottom: '2rem',
             }}
           >
-            {t('contact.marketsDesc')}
-          </p>
-
+            {t('contact.sectorsTitle')}
+          </h2>
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-              gap: '0.75rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1px',
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            {SECTOR_KEYS.map((key) => (
+            {SECTOR_KEYS.map((key, index) => (
               <div
                 key={key}
                 style={{
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  background: 'rgba(255,255,255,0.035)',
-                  padding: '1rem',
-                  fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                  color: 'rgba(255,255,255,0.78)',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
+                  background: '#050505',
+                  padding: '1.4rem',
                 }}
               >
-                {t(key)}
+                <span
+                  style={{
+                    display: 'block',
+                    color: '#FFF12D',
+                    fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+                    fontSize: '0.68rem',
+                    marginBottom: '0.8rem',
+                  }}
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.55 }}>{t(key)}</p>
               </div>
             ))}
           </div>
@@ -413,75 +438,63 @@ export default function ContactPage() {
 
       <section
         style={{
-          padding: '4rem clamp(1.25rem,5vw,2rem) 5rem',
-          background: '#050505',
-          borderTop: '1px solid rgba(255,255,255,0.07)',
+          padding: '5rem clamp(1.25rem,5vw,2rem)',
+          borderTop: '1px solid rgba(255,241,45,0.2)',
+          background: 'radial-gradient(circle at 50% 0%, rgba(255,241,45,0.12), transparent 38%)',
         }}
       >
-        <div
-          style={{
-            maxWidth: '1180px',
-            margin: '0 auto',
-            border: '1px solid rgba(255,241,45,0.28)',
-            background:
-              'linear-gradient(135deg, rgba(255,241,45,0.07), rgba(255,255,255,0.025))',
-            padding: 'clamp(1.5rem,4vw,2.5rem)',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
-            alignItems: 'center',
-          }}
-        >
-          <div>
-            <p
+        <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
+          <h2
+            style={{
+              fontFamily: 'Chakra Petch, Arial Narrow, monospace',
+              fontSize: 'clamp(2.2rem,5vw,4.8rem)',
+              lineHeight: 0.92,
+              textTransform: 'uppercase',
+              marginBottom: '1.3rem',
+            }}
+          >
+            {t('contact.finalTitle')}
+          </h2>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.62)',
+              maxWidth: '720px',
+              margin: '0 auto 2rem',
+              lineHeight: 1.7,
+            }}
+          >
+            {t('contact.finalDescription')}
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.85rem' }}>
+            <a
+              href="mailto:info@elimfilters.com?subject=Commercial%20Inquiry%20-%20ELIMFILTERS"
               style={{
-                color: '#FFF12D',
+                background: '#FFF12D',
+                color: '#000',
+                textDecoration: 'none',
                 fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                fontSize: '0.72rem',
                 fontWeight: 700,
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                marginBottom: '0.8rem',
+                letterSpacing: '0.12em',
+                fontSize: '0.82rem',
+                padding: '1rem 1.25rem',
               }}
             >
-              Authorized Partner Program
-            </p>
-
-            <h2
-              style={{
-                fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                fontSize: 'clamp(1.9rem, 4vw, 3.2rem)',
-                lineHeight: 0.95,
-                textTransform: 'uppercase',
-                marginBottom: '1rem',
-              }}
-            >
-              Seeking Distributor Status?
-            </h2>
-
-            <p style={{ color: 'rgba(255,255,255,0.66)', lineHeight: 1.7, margin: 0 }}>
-              Use the distributor application to submit territory, sector and company
-              information for commercial review.
-            </p>
-          </div>
-
-          <div style={{ textAlign: 'right' }}>
+              {t('contact.finalCta1')}
+            </a>
             <Link
               href="/distributor-application"
               style={{
-                display: 'inline-block',
-                background: '#FFF12D',
-                color: '#000',
-                padding: '1rem 1.25rem',
+                border: '1px solid rgba(255,241,45,0.35)',
+                color: '#FFF12D',
                 textDecoration: 'none',
                 fontFamily: 'Chakra Petch, Arial Narrow, monospace',
-                fontSize: '0.8rem',
                 fontWeight: 700,
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
+                letterSpacing: '0.12em',
+                fontSize: '0.82rem',
+                padding: '1rem 1.25rem',
               }}
             >
-              Apply For Review
+              {t('contact.finalCta2')}
             </Link>
           </div>
         </div>
@@ -489,4 +502,3 @@ export default function ContactPage() {
     </main>
   );
 }
-
