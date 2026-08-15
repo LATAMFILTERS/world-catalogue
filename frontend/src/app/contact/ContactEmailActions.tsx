@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
 type ContactEmailActionsProps = {
   email: string;
   subject: string;
+  emailLabel?: string;
+  copyLabel?: string;
+  copiedLabel?: string;
 };
 
 type ActionLabels = {
