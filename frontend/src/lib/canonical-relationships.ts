@@ -31,7 +31,7 @@ export const SYSTEM_RELATIONSHIPS = {
     relatedSystems: ['fuel-cleanliness', 'lubrication', 'cooling-system'],
   },
   'fuel-cleanliness': {
-    primaryTechnologies: ['syntapore', 'turbocore', 'turbocore'] as TechnologySlug[],
+    primaryTechnologies: ['syntapore', 'hydrocore', 'turbocore'] as TechnologySlug[],
     supportingTechnologies: [] as TechnologySlug[],
     productFamilies: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
     standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
@@ -70,7 +70,7 @@ export const FAMILY_RELATIONSHIPS = {
   'air-cleaner-housings': { system: 'air-intake', technology: 'intekcore', standards: ['ISO 5011'] },
   'primary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
   'secondary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
-  'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'turbocore', standards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'] },
+  'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'hydrocore', standards: ['ASTM D6304', 'ISO 12937'] },
   'oil-filters': { system: 'lubrication', technology: 'syntrax', standards: ['ISO 4406', 'ISO 16889'] },
   'hydraulic-filters': { system: 'hydraulic', technology: 'nanoforce', standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524'] },
   'coolant-filters': { system: 'cooling-system', technology: 'thermacore', standards: ['ASTM D6210'] },
@@ -92,7 +92,7 @@ export const FAILURE_RELATIONSHIPS = {
     industries: ['mining', 'construction', 'agriculture', 'trucks-fleets', 'power-generation', 'marine'],
   },
   'diesel-water': {
-    systems: ['fuel-cleanliness'], technologies: ['syntapore', 'turbocore', 'turbocore'],
+    systems: ['fuel-cleanliness'], technologies: ['syntapore', 'hydrocore', 'turbocore'],
     families: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
     standards: ['astm-d6304', 'iso-12937', 'iso-16332'],
     industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets'],
