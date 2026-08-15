@@ -52,7 +52,7 @@ services:
         destination: /industries/manufacturing/
       - type: redirect
         source: /premium-preview
-        destination: /
+        destination: /technologies/
       - type: redirect
         source: /knowledge-system/contamination
         destination: /knowledge-center/engineering/
