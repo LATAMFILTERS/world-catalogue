@@ -9,13 +9,17 @@ import '@/i18n';
 const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
 
 export function Navigation() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
+    // Check initial scroll position
+    handler();
     window.addEventListener('scroll', handler, { passive: true });
+    setMounted(true);
     return () => window.removeEventListener('scroll', handler);
   }, []);
 

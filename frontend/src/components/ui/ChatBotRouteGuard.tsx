@@ -8,6 +8,7 @@ const MOBILE_BREAKPOINT = 768;
 
 export default function ChatBotRouteGuard() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -16,9 +17,15 @@ export default function ChatBotRouteGuard() {
 
     syncViewport();
     mediaQuery.addEventListener('change', syncViewport);
+    setMounted(true);
 
     return () => mediaQuery.removeEventListener('change', syncViewport);
   }, []);
+
+  // Don't render conditionally until after hydration to prevent mismatch
+  if (!mounted) {
+    return <ChatBot />;
+  }
 
   if (pathname === '/instagram' && isMobile) {
     return null;
