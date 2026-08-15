@@ -57,16 +57,16 @@ const DOMAIN_PROFILES: readonly ContentIntelligenceProfile[] = [
   },
   {
     phase: '6.1.3-fuel-cleanliness',
-    entityIds: ['system:fuel-cleanliness', 'technology:SYNTAPORE', 'technology:TURBOCORE', 'technology:turbocore', 'family:primary-fuel', 'family:secondary-fuel', 'family:fuel-water-separators', 'failure:diesel-water'],
-    engineeringSummary: 'Fuel-cleanliness protection combines staged particulate removal, free and emulsified water separation, coalescence, collection, drainage, and bulk-fuel conditioning.',
+    entityIds: ['system:fuel-cleanliness', 'technology:syntapore', 'technology:hydrocore', 'technology:turbocore', 'family:primary-fuel', 'family:secondary-fuel', 'family:fuel-water-separators', 'failure:diesel-water'],
+    engineeringSummary: 'Fuel-cleanliness protection combines staged particulate removal, standard fuel/water separation, Turbine Series fuel conditioning, collection, drainage, and contamination control ahead of precision fuel-system components.',
     retrievalPassages: [
-      'SYNTAPORE™ controls particulate contamination in primary and secondary diesel-fuel stages.',
-      'TURBOCORE™ separates free and emulsified water through staged coalescence, gravity collection, and hydrophobic control.',
-      'TURBOCORE™ is dedicated to Turbine Series FH and FG fuel-conditioning systems.',
+      'SYNTAPORE™ controls particulate contamination in primary and secondary diesel-fuel filtration stages.',
+      'HYDROCORE™ provides fuel/water separation for standard non-turbine spin-on and cartridge separator applications.',
+      'TURBOCORE™ is dedicated to Turbine Series FH and FG fuel-separation systems and their 2010, 2020, and 2040 replacement elements.',
     ],
     canonicalAnswers: [
-      { question: 'Which technologies define ELIMFILTERS fuel cleanliness?', answer: 'SYNTAPORE™, TURBOCORE™, and TURBOCORE™.' },
-      { question: 'What is the difference between TURBOCORE™ and TURBOCORE™?', answer: 'TURBOCORE™ is the fuel-water separation architecture for separator elements and assemblies, while TURBOCORE™ is dedicated to Turbine Series FH and FG systems.' },
+      { question: 'Which technologies define ELIMFILTERS fuel cleanliness?', answer: 'SYNTAPORE™, HYDROCORE™, and TURBOCORE™.' },
+      { question: 'What is the difference between HYDROCORE™ and TURBOCORE™?', answer: 'HYDROCORE™ covers standard non-turbine spin-on and cartridge fuel/water separators. TURBOCORE™ is dedicated to Turbine Series FH/FG systems and their 2010, 2020, and 2040 replacement elements.' },
     ],
     requiredSections: ['Particle control', 'Water separation', 'Coalescence', 'Fuel lubricity protection', 'Injector risk', 'Bulk-fuel conditioning', 'Standards', 'Drain and service strategy'],
   },
