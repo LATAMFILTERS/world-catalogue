@@ -1,6 +1,8 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import fs from 'node:fs';
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
 
 const render = fs.readFileSync('render.yaml', 'utf8');
 
