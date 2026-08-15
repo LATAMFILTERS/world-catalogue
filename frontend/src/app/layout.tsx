@@ -24,6 +24,8 @@ import ConsentBanner from '@/components/ConsentBanner';
 import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
+import PostHogAnalytics from '@/components/PostHogAnalytics';
+import UserRegistrationTracker from '@/components/UserRegistrationTracker';
 import AggregateRatingSchema from '@/components/AggregateRatingSchema';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import SkipNavigation from '@/components/SkipNavigation';
@@ -124,6 +126,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileInternalLayoutFix />
           <Analytics />
           <CommercialAnalytics />
+          <PostHogAnalytics />
+          <UserRegistrationTracker />
           <ConsentBanner />
           <ChatBotRouteGuard />
         </ClientProviders>
