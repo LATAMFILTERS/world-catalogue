@@ -19,6 +19,7 @@ const CORE = [
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],
+  ['HYDROCORE', 'hydrocore'],
 ];
 
 const RETIRED_PUBLIC_KEYS = ['AIRFILTER', 'AQUAGUARD'];
