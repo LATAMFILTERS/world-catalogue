@@ -69,9 +69,9 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     ...relationships('secondary-fuel'),
   },
   'fuel-water-separators': {
-    key: 'fuel-water-separators', name: 'Fuel Water Separators', slug: 'fuel-water-separators', dutyClass: 'HD', hdPrefix: 'EF9', ldPrefix: null,
+    key: 'fuel-water-separators', name: 'Fuel Water Separators', slug: 'fuel-water-separators', dutyClass: 'HD', hdPrefix: 'ES9', ldPrefix: null,
     purpose: 'Fuel-water separators remove free and emulsified water while supporting particulate control in diesel fuel systems.',
-    engineering: 'TURBOCORE™ combines staged separation, droplet coalescence, gravity collection, and a final hydrophobic barrier appropriate to the application.',
+    engineering: 'HYDROCORE™ combines staged separation, droplet coalescence, water collection, and a final hydrophobic barrier for standard non-turbine spin-on and cartridge fuel/water separator applications.',
     construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuellseparator-hero.avif',
     ...relationships('fuel-water-separators'),
   },
