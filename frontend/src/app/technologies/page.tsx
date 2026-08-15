@@ -8,8 +8,9 @@ const canonicalTechnologies = [
   ['MICROKAPPA™', 'microkappa', 'Occupant-compartment air quality and cabin-system protection.'],
   ['DRYCORE™', 'drycore', 'Pneumatic brake-system air protection.'],
   ['INTEKCORE™', 'intekcore', 'Controlled air intake and filtration-system integration.'],
-  ['SYNTAPORE™', 'syntapore', 'Fuel contamination control and fuel-system protection.'],
-  ['TURBOCORE™', 'turbocore', 'Fuel-water separation for approved turbine-style fuel-system applications.'],
+  ['SYNTAPORE™', 'syntapore', 'Fuel particulate contamination control and fuel-system protection.'],
+  ['HYDROCORE™', 'hydrocore', 'Fuel-water separation for standard non-turbine spin-on and cartridge separator applications.'],
+  ['TURBOCORE™', 'turbocore', 'Fuel-water separation for approved Turbine Series FH/FG applications and 2010/2020/2040 replacement elements.'],
   ['SYNTRAX™', 'syntrax', 'Lubricant cleanliness and engine/component protection.'],
   ['NANOFORCE™', 'nanoforce', 'Hydraulic-fluid contamination control and hydraulic-component protection.'],
   ['THERMACORE™', 'thermacore', 'Cooling-system cleanliness and component protection.'],
@@ -17,7 +18,7 @@ const canonicalTechnologies = [
 
 export const metadata = {
   title: 'Industrial Filtration Engineering Technologies',
-  description: 'ELIMFILTERS protection technologies: MACROCORE, MICROKAPPA, DRYCORE, INTEKCORE, SYNTAPORE, TURBOCORE, SYNTRAX, NANOFORCE and THERMACORE.',
+  description: 'ELIMFILTERS protection technologies: MACROCORE, MICROKAPPA, DRYCORE, INTEKCORE, SYNTAPORE, HYDROCORE, TURBOCORE, SYNTRAX, NANOFORCE and THERMACORE.',
   keywords: ['industrial filtration engineering', 'asset protection systems', 'ELIMFILTERS technologies', 'contamination control', 'equipment reliability'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
