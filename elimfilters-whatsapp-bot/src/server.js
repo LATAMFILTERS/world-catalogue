@@ -130,12 +130,18 @@ app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), as
 // Signature verification for WhatsApp (must use raw body, not parsed JSON)
 function verifyWhatsAppSignature(rawBody, signature, appSecret) {
   if (!signature) return false;
-  const hash = crypto
-    .createHmac("sha256", appSecret)
-    .update(rawBody)
-    .digest("hex");
-  const expectedSignature = `sha256=${hash}`;
-  return crypto.timingSafeEqual(signature, expectedSignature);
+  try {
+    const hash = crypto
+      .createHmac("sha256", appSecret)
+      .update(rawBody)
+      .digest("hex");
+    const expectedSignature = `sha256=${hash}`;
+    const a = Buffer.from(signature);
+    const b = Buffer.from(expectedSignature);
+    return a.length === b.length && crypto.timingSafeEqual(a, b);
+  } catch {
+    return false;
+  }
 }
 
 const port = config.port || 3000;
