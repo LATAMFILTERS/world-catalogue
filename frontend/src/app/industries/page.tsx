@@ -20,9 +20,9 @@ const INDUSTRIES = [
 const BASE_URL = 'https://elimfilters.com';
 
 export const metadata = {
-  title: 'Industries | Industrial Asset Protection',
-  description: 'Industrial asset protection across 12 ELIMFILTERS application domains including mining, agriculture, construction, marine, oil and gas, power generation, transportation, railway, manufacturing and municipal operations.',
-  keywords: ['industrial filtration industries', 'mining filtration', 'agriculture filtration', 'marine filtration', 'ELIMFILTERS industries', 'filtration by industry'],
+  title: 'Industrial Filtration by Application | 12 Industries | ELIMFILTERS Asset Protection',
+  description: 'Filtration solutions for 12 industries: mining, agriculture, marine, oil & gas, power generation, transportation, manufacturing, and more. Industry-specific contamination control strategies.',
+  keywords: ['industrial filtration', 'mining filtration systems', 'marine filtration', 'agriculture equipment filtration', 'filtration by industry', 'contamination control', 'asset protection'],
   alternates: {
     canonical: `${BASE_URL}/industries/`,
   },
