@@ -26,7 +26,14 @@ export const SYSTEM_RELATIONSHIPS = {
     primaryTechnologies: ['macrocore'] as TechnologySlug[],
     supportingTechnologies: ['intekcore', 'microkappa', 'drycore'] as TechnologySlug[],
     productFamilies: ['primary-air', 'secondary-air', 'air-cleaner-housings', 'cabin-filters', 'air-dryer-filters'],
-    standards: ['ISO 5011', 'SAE J1539', 'ISO 11155', 'ISO 8573-1', 'EU Dir. 2019/130'],
+    // Standards are intentionally not modeled at system level: air-intake spans
+    // sub-domains (engine intake, cabin air, pneumatic air-drying) with distinct,
+    // non-interchangeable standards. A system-level list lets the entity graph
+    // attribute any one standard to every technology sharing this system,
+    // regardless of which sub-domain it actually applies to. Standards are
+    // modeled per product family (FAMILY_RELATIONSHIPS below), each of which
+    // maps to exactly one technology.
+    standards: [] as string[],
     industries: ['mining', 'agriculture', 'construction', 'trucks-fleets', 'power-generation', 'marine', 'oil-gas', 'railway', 'bus-coach', 'manufacturing', 'waste-municipal'],
     relatedSystems: ['fuel-cleanliness', 'lubrication', 'cooling-system'],
   },
@@ -65,7 +72,7 @@ export const SYSTEM_RELATIONSHIPS = {
 } as const;
 
 export const FAMILY_RELATIONSHIPS = {
-  'primary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011', 'SAE J1539'] },
+  'primary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011'] },
   'secondary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011'] },
   'air-cleaner-housings': { system: 'air-intake', technology: 'intekcore', standards: ['ISO 5011'] },
   'primary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },

@@ -6,6 +6,10 @@ import { getTechnologyEngineering } from '@/lib/canonical-engineering';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getTechnologyEditorial } from '@/lib/technology-editorial';
 import TechnologyEditorial from '@/components/TechnologyEditorial';
+import MacrocoreConceptDiagram from '@/components/technologies/MacrocoreConceptDiagram';
+import { EngineeringAssessmentCTA } from '@/components/technologies/EngineeringAssessmentCTA';
+import { ApplicationCards } from '@/components/technologies/ApplicationCards';
+import { MACROCORE_APPLICATIONS } from '@/lib/macrocore-applications';
 
 interface Props {
   params: { slug: string };
@@ -51,6 +55,22 @@ const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug, string>> = {
   thermacore: 'Applied in heavy-duty cooling circuits where coolant cleanliness, additive condition, flow and service interval must remain compatible with the approved cooling-system maintenance strategy.',
   hydrocore: 'Applied in standard spin-on and cartridge fuel/water separators where free and emulsified water must be removed ahead of the fuel-filtration stage.',
 };
+
+// MACROCORE-specific pre-sales copy. Sourced exclusively from
+// docs/brand/TECHNOLOGY_REGISTRY.md, elimfilters-vault/01-technologies/active/MACROCORE.md (v2.0),
+// canonical-engineering.ts and technology-editorial.ts. No figures, standards codes beyond ISO 5011,
+// or architecture claims not already present in those sources.
+const MACROCORE_H1 = 'Dust Does Not Need to Be Dramatic to Be Expensive.';
+
+const MACROCORE_CAPABILITY_STRIP = [
+  'Primary & Secondary Engine Air Filtration',
+  'Air Intake & Airflow Protection System',
+  'Evaluated Using ISO 5011 Test Methods',
+  'Engineering-Matched Selection',
+] as const;
+
+const PARAMETERS_QUALIFICATION =
+  'Published product-level performance values should be tied to validated test data for the specific element or assembly rather than treated as universal values for the technology.';
 
 function technologyUrl(slug: string) {
   return `${BASE_URL}/technologies/${slug}/`;
@@ -184,6 +204,7 @@ export default function TechnologyPage({ params }: Props) {
   const technologyAsset = TECHNOLOGY_ASSETS[slug];
   const technologyHero = TECHNOLOGY_HERO_IMAGES[slug];
   const system = getProtectionSystemBySlug(canonical.domain);
+  const isMacrocore = slug === 'macrocore';
 
   const articleSchema = technologySchema(slug);
   const questionsSchema = faqSchema(slug);
@@ -238,16 +259,132 @@ export default function TechnologyPage({ params }: Props) {
       <section style={{ padding: '6.5rem 2rem 5.5rem' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.82fr) minmax(0, 1.18fr)', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-intro-grid">
           <div>
-            <div style={sectionLabel}>ELIMFILTERS PROPRIETARY TECHNOLOGY</div>
-            <h1 style={{ ...sectionHeading, fontSize: 'clamp(2.8rem, 6vw, 5.2rem)' }}>{canonical.name}</h1>
+            <div style={sectionLabel}>{isMacrocore ? `ELIMFILTERS PROPRIETARY TECHNOLOGY — ${canonical.name}` : 'ELIMFILTERS PROPRIETARY TECHNOLOGY'}</div>
+            <h1 style={{ ...sectionHeading, fontSize: isMacrocore ? 'clamp(2.2rem, 4.4vw, 3.6rem)' : 'clamp(2.8rem, 6vw, 5.2rem)' }}>
+              {isMacrocore ? MACROCORE_H1 : canonical.name}
+            </h1>
             <p style={{ ...bodyCopy, marginTop: '1.3rem', color: '#fff', fontWeight: 600 }}>{canonical.role}</p>
           </div>
           <div>
             <p style={{ ...bodyCopy, fontSize: 'clamp(1.1rem, 1.8vw, 1.34rem)', color: 'rgba(255,255,255,0.9)', marginTop: 0 }}>{engineering.definition}</p>
             <p style={{ ...bodyCopy, marginTop: '1.5rem' }}>{APPLICATION_CONTEXT[slug]}</p>
+
+            {isMacrocore && (
+              <>
+                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', margin: '1.75rem 0 0', padding: 0, listStyle: 'none' }}>
+                  {MACROCORE_CAPABILITY_STRIP.map((item) => (
+                    <li
+                      key={item}
+                      style={{
+                        border: '1px solid rgba(255,241,45,0.25)',
+                        background: 'rgba(255,241,45,0.04)',
+                        color: 'rgba(255,255,255,0.85)',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.7rem',
+                        letterSpacing: '0.04em',
+                        padding: '0.55rem 0.85rem',
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2rem' }}>
+                  <EngineeringAssessmentCTA />
+                  <a
+                    href="https://part-search.elimfilters.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      color: '#fff',
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                      padding: '1rem 1.35rem',
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 700,
+                      fontSize: '0.8rem',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Find an OEM Equivalent
+                  </a>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
+
+      {isMacrocore && (
+        <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: '#050505' }}>
+          <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0,0.72fr) minmax(0,1.28fr)', gap: 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-editorial-chapter">
+            <div>
+              <div style={sectionLabel}>HOW MACROCORE™ IS EVALUATED</div>
+              <h2 style={sectionHeading}>Airflow and separation have to coexist.</h2>
+            </div>
+            <div>
+              <p style={{ ...bodyCopy, marginTop: 0, color: 'rgba(255,255,255,0.9)' }}>{engineering.engineeringPrinciple}</p>
+              <p style={{ ...bodyCopy, marginTop: '1.2rem' }}>{engineering.controlStrategy}</p>
+              <div style={{ marginTop: '2.5rem' }}>
+                <MacrocoreConceptDiagram />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isMacrocore && (
+        <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+          <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0,0.72fr) minmax(0,1.28fr)', gap: 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-editorial-chapter">
+            <div>
+              <div style={sectionLabel}>PARAMETERS AN ENGINEERING REVIEW CONSIDERS</div>
+              <h2 style={sectionHeading}>{editorial.parameters.title}</h2>
+            </div>
+            <div>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.7rem' }}>
+                {[...editorial.parameters.items, ...editorial.selection.items].map((item) => (
+                  <li key={item} style={{ ...bodyCopy, margin: 0, display: 'grid', gridTemplateColumns: '18px 1fr', gap: '0.7rem', alignItems: 'start' }}>
+                    <span aria-hidden="true" style={{ color: '#FFF12D', lineHeight: 1.8 }}>—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p style={{ ...bodyCopy, marginTop: '1.75rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.55)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem' }}>
+                {PARAMETERS_QUALIFICATION}
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isMacrocore && (
+        <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: '#050505' }}>
+          <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+            <div style={sectionLabel}>OPERATING ENVIRONMENTS</div>
+            <h2 style={{ ...sectionHeading, marginBottom: '2rem' }}>Where MACROCORE™ is evaluated for air-intake protection.</h2>
+            <ApplicationCards applications={MACROCORE_APPLICATIONS} />
+            <Link
+              href="/industries/"
+              style={{
+                display: 'inline-block',
+                marginTop: '2rem',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.72rem',
+                letterSpacing: '0.08em',
+                color: '#FFF12D',
+                textDecoration: 'none',
+                borderBottom: '1px solid rgba(255,241,45,0.45)',
+                paddingBottom: '0.25rem',
+              }}
+            >
+              EXPLORE ALL INDUSTRIES →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <TechnologyEditorial editorial={editorial} />
 
@@ -277,7 +414,8 @@ export default function TechnologyPage({ params }: Props) {
             <p style={{ ...bodyCopy, maxWidth: '780px', marginTop: '1.2rem' }}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, component exposure or uncertain filtration architecture, use the Knowledge Center as the technical path into an application review.</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', minWidth: '220px' }}>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#000', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>FIND MY PART</a>
+            {isMacrocore && <EngineeringAssessmentCTA label="REQUEST AN ENGINEERING ASSESSMENT" />}
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: isMacrocore ? 'transparent' : '#FFF12D', color: isMacrocore ? '#FFF12D' : '#000', border: isMacrocore ? '1px solid rgba(255,241,45,0.4)' : 'none', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>{isMacrocore ? 'FIND AN OEM EQUIVALENT' : 'FIND MY PART'}</a>
             <Link href="/knowledge-center/" style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#fff', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>TECHNICAL REVIEW PATH</Link>
           </div>
         </div>
