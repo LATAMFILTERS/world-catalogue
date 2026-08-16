@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useConsent } from "@/lib/useConsent";
 
 type Message = {
   id: number;
@@ -155,10 +156,21 @@ function getSessionId(): string {
   return id;
 }
 
+function hasSeenChat(): boolean {
+  if (typeof window === "undefined") return false;
+  return sessionStorage.getItem("elim_chat_seen") === "1";
+}
+
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
+  const [hasUnread, setHasUnread] = useState(() => !hasSeenChat());
   const [lang, setLang] = useState<string>(() => detectLangSync());
   const [messages, setMessages] = useState<Message[]>(() => [getWelcome(detectLangSync())]);
+  const { consent } = useConsent();
+  const bannerPending = consent === "pending";
+  const baseOffset = "calc(1.5rem + env(safe-area-inset-bottom))";
+  const raisedOffset = "calc(1.5rem + 128px + env(safe-area-inset-bottom))";
+  const fabBottom = bannerPending ? raisedOffset : baseOffset;
 
   // Resolve geo-language async — updates welcome message if lang changes after detection
   useEffect(() => {
@@ -280,9 +292,10 @@ export default function ChatBot() {
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             style={{
               position: "fixed",
-              bottom: "5.5rem",
+              bottom: `calc(${fabBottom} + 4rem)`,
               right: "1.5rem",
               width: "clamp(300px, 90vw, 360px)",
+              maxHeight: "calc(100dvh - 8rem)",
               zIndex: 9999,
               borderRadius: "12px",
               overflow: "hidden",
@@ -535,12 +548,16 @@ export default function ChatBot() {
 
       {/* FAB trigger button */}
       <motion.button
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          setOpen((o) => !o);
+          setHasUnread(false);
+          try { sessionStorage.setItem("elim_chat_seen", "1"); } catch { /* storage unavailable */ }
+        }}
         whileHover={{ scale: 1.07 }}
         whileTap={{ scale: 0.93 }}
         style={{
           position: "fixed",
-          bottom: "1.5rem",
+          bottom: fabBottom,
           right: "1.5rem",
           width: 52,
           height: 52,
@@ -572,14 +589,14 @@ export default function ChatBot() {
         </AnimatePresence>
       </motion.button>
 
-      {/* Unread dot when closed */}
-      {!open && (
+      {/* Unread dot — shown only until the visitor has ever opened the chat */}
+      {!open && hasUnread && (
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           style={{
             position: "fixed",
-            bottom: "calc(1.5rem + 38px)",
+            bottom: `calc(${fabBottom} + 38px)`,
             right: "1.5rem",
             width: 10,
             height: 10,

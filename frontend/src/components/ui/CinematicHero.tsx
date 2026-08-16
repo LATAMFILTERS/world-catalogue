@@ -14,6 +14,7 @@ export default function CinematicHero() {
 
   return (
     <section
+      className="elim-hero-section"
       style={{
         position: "relative",
         minHeight: "100vh",
@@ -216,9 +217,13 @@ export default function CinematicHero() {
           font-family: Chakra Petch, Arial Narrow, monospace !important;
         }
 
+        .elim-hero-section {
+          min-height: 100svh !important;
+        }
+
         @media (max-width: 860px) {
           section {
-            padding: 120px 7% 0 !important;
+            padding: 100px 7% 24px !important;
             align-items: flex-start !important;
           }
         }

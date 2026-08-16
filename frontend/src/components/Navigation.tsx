@@ -12,6 +12,7 @@ export function Navigation() {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export function Navigation() {
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '1.4rem 2rem 0.9rem',
+          padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -49,13 +50,32 @@ export function Navigation() {
         role="banner"
       >
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
-            <img
-              src="/assets/logo-elimfilters.png"
-              alt="ELIMFILTERS"
-              className="nav-logo"
-              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
+          <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
+            {logoError ? (
+              <span
+                style={{
+                  fontFamily: HEADER_DISPLAY_FONT,
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)',
+                  letterSpacing: '-0.01em',
+                  color: '#fff',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                ELIMFILTERS
+              </span>
+            ) : (
+              <img
+                src="/assets/logo-elimfilters.png"
+                alt="ELIMFILTERS — Total Asset Protection"
+                className="nav-logo"
+                width={1959}
+                height={528}
+                onError={() => setLogoError(true)}
+                style={{ objectFit: 'contain', height: 'clamp(28px, 6.5vw, 44px)', width: 'auto', display: 'block' }}
+              />
+            )}
           </Link>
         </motion.div>
 
@@ -93,7 +113,7 @@ export function Navigation() {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'none' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }}
           className="show-mobile"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={menuOpen}
