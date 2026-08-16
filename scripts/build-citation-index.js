@@ -46,6 +46,7 @@ const RELATIONSHIP_FIELDS = [
   'applicable_industries',
   'related_standards',
   'addresses_contamination',
+  'related_technologies',
   'resolved_by',
   'applicable_to_technologies',
   'applicable_to_industries',
