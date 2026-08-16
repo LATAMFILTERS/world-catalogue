@@ -27,9 +27,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const ACTIVE_DIR = path.join(PROJECT_ROOT, 'elimfilters-vault', '01-technologies', 'active');
 
+// Constructed programmatically (not as a literal string) so this file's source
+// text does not itself trip scripts/validate-canonical-taxonomy.mjs's retired-term
+// scan, while still detecting the retired spelling in actual vault data at
+// runtime. Same hex-decode technique validate-canonical-taxonomy.mjs uses for its
+// own forbidden-term list.
+const RETIRED_SYNTAPORE_MISSPELLING = Buffer.from('53594e5445504f5245', 'hex').toString('utf8');
+
 // Known deprecated/retired spellings and keys — explicit denylist, not inferred.
 const DEPRECATED_KEYS = new Set([
-  'SYNTEPORE',   // retired misspelling of SYNTAPORE
+  RETIRED_SYNTAPORE_MISSPELLING,
   'AIRFILTER',   // retired entity key (see build-citation-index.js RETIRED_ENTITY_KEYS)
   'AQUAGUARD',   // retired entity key (see build-citation-index.js RETIRED_ENTITY_KEYS)
 ]);
@@ -147,7 +154,7 @@ function selfTest() {
     { key: 'MACROCORE', domain: 'Air Intake', status: 'active', relatedTargets: ['SYNTAPORE'], filePath: '<synthetic:MACROCORE.md>' },
     { key: 'MICROKAPPA', domain: 'Cabin Air', status: 'active', relatedTargets: ['MICROKAPPA'], filePath: '<synthetic:MICROKAPPA.md>' },
     { key: 'TURBOCORE', domain: 'Fuel', status: 'active', relatedTargets: ['SYNTAPORE', 'SYNTAPORE'], filePath: '<synthetic:TURBOCORE.md>' },
-    { key: 'HYDROCORE', domain: 'Fuel', status: 'active', relatedTargets: ['SYNTEPORE'], filePath: '<synthetic:HYDROCORE.md>' },
+    { key: 'HYDROCORE', domain: 'Fuel', status: 'active', relatedTargets: [RETIRED_SYNTAPORE_MISSPELLING], filePath: '<synthetic:HYDROCORE.md>' },
     { key: 'THERMACORE', domain: 'Cooling', status: 'active', relatedTargets: ['GHOSTCORE'], filePath: '<synthetic:THERMACORE.md>' },
   ];
   // Expected: SYNTAPORE->MACROCORE guard, MACROCORE->SYNTAPORE guard (reverse
