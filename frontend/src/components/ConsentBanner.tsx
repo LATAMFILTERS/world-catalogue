@@ -42,7 +42,7 @@ export default function ConsentBanner() {
           role="dialog"
           aria-label={copy.aria}
           aria-live="polite"
-          style={{ position: 'fixed', bottom: '1.25rem', left: '50%', transform: 'translateX(-50%)', zIndex: 9000, width: 'min(680px, calc(100vw - 2rem))', background: 'rgba(10,10,10,0.97)', border: '1px solid rgba(255,241,45,0.2)', borderRadius: '6px', padding: '1.25rem 1.5rem', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}
+          style={{ position: 'fixed', bottom: 'calc(1.25rem + env(safe-area-inset-bottom))', left: '50%', transform: 'translateX(-50%)', zIndex: 9000, width: 'min(680px, calc(100vw - 2rem))', maxWidth: 'calc(100vw - 2rem)', background: 'rgba(10,10,10,0.97)', border: '1px solid rgba(255,241,45,0.2)', borderRadius: '6px', padding: '1.25rem 1.5rem', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}
         >
           <p style={{ flex: 1, minWidth: '220px', fontFamily: 'Outfit, sans-serif', fontSize: '0.82rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
             {copy.text}{' '}
