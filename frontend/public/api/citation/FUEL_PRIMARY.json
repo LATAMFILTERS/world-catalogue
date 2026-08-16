@@ -18,20 +18,17 @@
     "concept": "Primary Fuel Protection Product Family",
     "version": "2.0",
     "last_updated": "2026-08-15",
-    "content_hash": "sha256:810a9e11db6e11355d4bb2d7f2778de07d29f225e85dd5e8a4d8424937f87cc0"
+    "content_hash": "sha256:abe10eb558e2e226864df040d1760b202557ef3764daa08359a1d592fa258092"
   },
   "canonical": {
     "definition": "Primary Fuel Protection — the SYNTAPORE™-technology filter element family for diesel\nfuel particulate filtration (primary, secondary and cartridge, no water-separation\nfunction), covering 1,903 SKUs across agricultural, marine, mining, power generation,\nand commercial transport applications.",
     "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements SYNTAPORE™\nparticulate-filtration technology",
     "failure_impact": "Selecting incorrect element from this family (wrong efficiency class or wrong flow\nrate) or exceeding service interval → residual particulate reaches injectors and\nhigh-pressure pumps → injector stiction and premature wear → HPCR fuel system failure",
-    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard, relevant where water\ncontent must also be verified for the application",
+    "related_standards": "SYNTAPORE governs plain diesel-fuel particulate filtration; no water-content or\nwater-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for\nwater-content standards.",
     "related_technologies": "HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --\na distinct product family (FUEL_WATER_SEPARATOR), not covered here | TURBOCORE:\nFuel-separation architecture reserved for approved Turbine Series FH/FG applications\n(FUEL_TURBINE family) | MACROCORE: Upstream pre-cleaner for high-contamination bulk air\nenvironments (not in this family)",
     "industrial_role": "This product family is the principal particulate-contamination control implementation\nfor diesel fuel systems that do not require a separate water-separation stage."
   },
   "relationships": {
-    "meets_standards": [
-      "ASTM_D6304"
-    ],
     "target_industries": [
       "AGRICULTURE",
       "MARINE",
@@ -55,11 +52,6 @@
     "self": "/api/citation/FUEL_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",
     "related": [
-      {
-        "key": "ASTM_D6304",
-        "relation": "meets_standards",
-        "href": "/api/citation/ASTM_D6304.json"
-      },
       {
         "key": "AGRICULTURE",
         "relation": "target_industries",

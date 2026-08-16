@@ -1,5 +1,5 @@
 {
-  "edge_count": 565,
+  "edge_count": 562,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -2535,11 +2535,6 @@
     },
     {
       "from": "FUEL_PRIMARY",
-      "to": "ASTM_D6304",
-      "relation": "meets_standards"
-    },
-    {
-      "from": "FUEL_PRIMARY",
       "to": "AGRICULTURE",
       "relation": "target_industries"
     },
@@ -2637,16 +2632,6 @@
       "from": "FUEL_TURBINE",
       "to": "FUEL",
       "relation": "belongs_to_product_system"
-    },
-    {
-      "from": "FUEL_WATER_SEPARATOR",
-      "to": "ASTM_D6304",
-      "relation": "meets_standards"
-    },
-    {
-      "from": "FUEL_WATER_SEPARATOR",
-      "to": "ISO_12937",
-      "relation": "meets_standards"
     },
     {
       "from": "FUEL_WATER_SEPARATOR",
