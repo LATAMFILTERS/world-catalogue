@@ -3,52 +3,53 @@ import type { TechnologyEditorial as Editorial, EditorialKey } from '@/lib/techn
 
 const heading: CSSProperties = {
   fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(1.7rem, 3vw, 2.7rem)',
-  lineHeight: 1.08,
-  letterSpacing: '-0.025em',
+  fontSize: 'clamp(2rem, 3.6vw, 3.2rem)',
+  lineHeight: 1.05,
+  letterSpacing: '-0.03em',
   color: '#fff',
   margin: 0,
 };
 
-const copy: CSSProperties = {
-  fontFamily: 'var(--font-body)',
-  fontSize: '1rem',
-  lineHeight: 1.8,
-  color: 'rgba(255,255,255,0.76)',
+const subheading: CSSProperties = {
+  fontFamily: 'var(--font-display)',
+  fontSize: 'clamp(1.15rem, 2vw, 1.45rem)',
+  lineHeight: 1.25,
+  color: '#fff',
+  margin: '0 0 0.8rem',
 };
 
-const label: CSSProperties = {
+const copy: CSSProperties = {
+  fontFamily: 'var(--font-body)',
+  fontSize: 'clamp(1rem, 1.25vw, 1.08rem)',
+  lineHeight: 1.82,
+  color: 'rgba(255,255,255,0.78)',
+};
+
+const eyebrow: CSSProperties = {
   fontFamily: 'var(--font-mono)',
   fontSize: '0.68rem',
   letterSpacing: '0.16em',
   color: '#FFF12D',
   textTransform: 'uppercase',
-  marginBottom: '0.85rem',
+  marginBottom: '0.9rem',
 };
 
-const MICRO_LABELS: Record<EditorialKey, readonly string[]> = {
-  problem: ['WHAT SHOWS UP FIRST', 'THE OPERATING PROBLEM', 'WHERE THE TROUBLE STARTS'],
-  applications: ['WHERE THIS SHOWS UP', 'IN THE FIELD', 'TYPICAL DUTY'],
-  contamination: ['WHAT IS MOVING THROUGH THE SYSTEM', 'CONTAMINATION PATH', 'WHAT THE SYSTEM IS FIGHTING'],
-  mechanism: ['WHAT IS HAPPENING INSIDE', 'ENGINEERING LOGIC', 'HOW THE PROTECTION WORKS'],
-  protectedAssets: ['WHAT IS REALLY AT RISK', 'DOWNSTREAM OF THE FILTER', 'COMPONENTS WE ARE PROTECTING'],
-  selection: ['BEFORE SPECIFYING', 'SELECTION CHECKPOINT', 'WHAT WE CHECK FIRST'],
-  parameters: ['NUMBERS THAT ACTUALLY MATTER', 'ENGINEERING VARIABLES', 'WHAT CHANGES THE DECISION'],
-  conditions: ['WHEN DUTY CHANGES THE ANSWER', 'REAL OPERATING CONDITIONS', 'SEVERE-DUTY CHECK'],
-  service: ['WHAT MAINTENANCE SEES', 'SERVICE REALITY', 'WHEN THE TREND CHANGES'],
-  mistakes: ['WHAT GOES WRONG IN PRACTICE', 'COMMON FIELD MISS', 'WHERE SELECTION FAILS'],
-  standards: ['ENGINEERING REFERENCE', 'TEST BASIS', 'HOW PERFORMANCE SHOULD BE READ'],
-  families: ['HOW IT CONNECTS TO THE PRODUCT', 'PORTFOLIO CONNECTION', 'FROM TECHNOLOGY TO APPLICATION'],
-  industries: ['WHERE THE DUTY GETS EXPENSIVE', 'OPERATING ENVIRONMENTS', 'WHERE THIS MATTERS MOST'],
-  faq: ['QUESTIONS WE HEAR IN THE FIELD', 'WHAT MAINTENANCE USUALLY ASKS', 'TECHNICAL REVIEW QUESTIONS'],
-  commercialDecision: ['WHEN IT STOPS BEING A PART-NUMBER QUESTION', 'BEFORE THE NEXT PURCHASE', 'WHEN A TECHNICAL REVIEW MAKES SENSE'],
-  fieldNote: ['FIELD NOTE', 'FROM THE SHOP FLOOR', 'WHAT EXPERIENCE TEACHES'],
+type Chapter = {
+  id: string;
+  label: string;
+  keys: readonly EditorialKey[];
 };
 
-function microLabel(key: EditorialKey, index: number) {
-  const choices = MICRO_LABELS[key];
-  return choices[index % choices.length];
-}
+const CHAPTERS: readonly Chapter[] = [
+  { id: 'operating-reality', label: 'OPERATING REALITY', keys: ['problem', 'fieldNote', 'contamination'] },
+  { id: 'engineering', label: 'HOW THE SYSTEM BEHAVES', keys: ['mechanism', 'protectedAssets'] },
+  { id: 'application', label: 'APPLICATION ENVIRONMENT', keys: ['applications', 'conditions', 'industries'] },
+  { id: 'selection', label: 'SPECIFICATION & SELECTION', keys: ['selection', 'parameters', 'mistakes'] },
+  { id: 'service', label: 'SERVICE & DIAGNOSIS', keys: ['service'] },
+  { id: 'technical-basis', label: 'TECHNICAL BASIS', keys: ['standards', 'families'] },
+  { id: 'faq', label: 'QUESTIONS FROM THE FIELD', keys: ['faq'] },
+  { id: 'decision', label: 'WHEN A TECHNICAL REVIEW MAKES SENSE', keys: ['commercialDecision'] },
+];
 
 function highValueClose(editorial: Editorial) {
   const problem = editorial.problem.title;
@@ -56,143 +57,170 @@ function highValueClose(editorial: Editorial) {
   if (problem.startsWith('Dust does not need to be dramatic')) {
     return 'For an intake review, the useful inputs are the engine and housing, current element, actual duty cycle, restriction history, service interval and any evidence of dust on the clean side. That keeps the decision focused on airflow, sealing and contamination control rather than on a familiar label or a cross-reference alone.';
   }
-
   if (problem.startsWith('Cabin filtration is an operating-environment issue')) {
-    return 'For a cabin-air review, the useful evidence is practical: equipment model, housing arrangement, airflow direction, operator complaints, dust environment, current service interval and any recurring evaporator or blower issues. That separates a simple replacement from an HVAC and operator-environment decision.';
+    return 'For a cabin-air review, the useful evidence is practical: equipment model, housing arrangement, airflow direction, operator complaints, dust environment, current service interval and any recurring evaporator or blower issues.';
   }
-
   if (problem.startsWith('Water in compressed air')) {
     return 'A fleet review should include dryer model, cartridge history, compressor duty, purge behavior, reservoir findings, climate and any recurring pneumatic or cold-weather events. Those inputs reveal whether the cartridge is the root cause or only the component receiving the symptom.';
   }
-
   if (problem.startsWith('A perfect element cannot compensate')) {
-    return 'For an intake-package review, the useful inputs are engine airflow, housing and element references, inlet and outlet geometry, installation envelope, service clearance, vibration exposure and any dust-track evidence. That allows the housing and element to be evaluated as one protected boundary.';
+    return 'For an intake-package review, the useful inputs are engine airflow, housing and element references, inlet and outlet geometry, installation envelope, service clearance, vibration exposure and any dust-track evidence.';
   }
-
   if (problem.startsWith('Modern fuel systems do not tolerate casual contamination control')) {
-    return 'A useful fuel-filtration review starts with the filter position, engine and equipment, current element, fuel source, service interval, restriction history and any injector or pump events. The objective is to understand what each stage is being asked to remove before another cross-reference is accepted.';
+    return 'A useful fuel-filtration review starts with the filter position, engine and equipment, current element, fuel source, service interval, restriction history and any injector or pump events.';
   }
-
   if (problem.startsWith('Water is not just another contaminant')) {
     return 'For a recurring water-in-fuel problem, the separator reference is only one input. Tank condition, fuel source, transfer practice, drain history, equipment duty and downstream failures help determine whether the real issue is at the element, the installation or farther upstream in the fuel-handling chain.';
   }
-
   if (problem.startsWith('Turbine-style fuel conditioning is an architecture')) {
-    return 'For a staged separator review, the assembly size, element position, required flow, current rating, drain arrangement, installation access and fuel-quality history all matter. The goal is to preserve the intended sequence of separation and filtration instead of treating every element that fits the housing as equivalent.';
+    return 'For a staged separator review, the assembly size, element position, required flow, current rating, drain arrangement, installation access and fuel-quality history all matter. The goal is to preserve the intended sequence of separation and filtration.';
   }
-
   if (problem.startsWith('Oil carries evidence')) {
-    return 'A lubrication review becomes useful when the engine, current filter, oil grade, drain interval, duty cycle, oil-analysis trend and any bearing or turbocharger history are considered together. That is the information needed to judge capacity and contamination control as part of the maintenance program, not as a stand-alone filter purchase.';
+    return 'A lubrication review becomes useful when the engine, current filter, oil grade, drain interval, duty cycle, oil-analysis trend and any bearing or turbocharger history are considered together.';
   }
-
   if (problem.startsWith('Hydraulic components fail in clear oil')) {
-    return 'A useful hydraulic review starts with the circuit, filter location, normal and peak flow, fluid and temperature range, current housing and element, sensitive components, failure history and any available cleanliness data. With that information, the discussion can move from replacement filters to a measurable cleanliness strategy.';
+    return 'A useful hydraulic review starts with the circuit, filter location, normal and peak flow, fluid and temperature range, current housing and element, sensitive components, failure history and any available cleanliness data.';
   }
-
   if (problem.startsWith('Cooling-system deposits do not have to block')) {
-    return 'For a cooling-system review, the engine or equipment, coolant type, current filter, service interval, repair history, contamination findings and any coolant-analysis data should be considered together. That keeps filtration in its proper role: one control inside the complete coolant-maintenance strategy.';
+    return 'For a cooling-system review, the engine or equipment, coolant type, current filter, service interval, repair history, contamination findings and any coolant-analysis data should be considered together.';
   }
-
   return null;
 }
 
 function faqHeading(editorial: Editorial) {
   const problem = editorial.problem.title;
-  if (problem.startsWith('Cabin filtration')) return 'Questions that come up when airflow, operator comfort and contamination are reviewed together.';
-  if (problem.startsWith('Water in compressed air')) return 'Questions that come up when moisture keeps showing up downstream.';
-  if (problem.startsWith('A perfect element')) return 'Questions that come up when the element looks right but the intake still fails.';
-  if (problem.startsWith('Modern fuel systems')) return 'Questions that come up when fuel-filter position matters more than the label on the box.';
-  if (problem.startsWith('Water is not just another contaminant')) return 'Questions that come up when water keeps returning to the fuel system.';
-  if (problem.startsWith('Turbine-style fuel conditioning')) return 'Questions that come up when a staged assembly is reviewed as a system.';
-  if (problem.startsWith('Oil carries evidence')) return 'Questions that come up when filter life is read alongside oil condition and engine duty.';
-  if (problem.startsWith('Hydraulic components fail in clear oil')) return 'Questions that come up when cleanliness targets replace visual judgment.';
-  if (problem.startsWith('Cooling-system deposits')) return 'Questions that come up when coolant cleanliness and chemistry are kept separate.';
-  if (problem.startsWith('Dust does not need to be dramatic')) return 'Questions that come up when restriction, sealing and dust loading are reviewed together.';
-  return 'Questions that come up when the application is reviewed properly.';
+  if (problem.startsWith('Cabin filtration')) return 'What maintenance teams usually ask when airflow and contamination are reviewed together.';
+  if (problem.startsWith('Water in compressed air')) return 'What needs to be answered when moisture keeps showing up downstream.';
+  if (problem.startsWith('A perfect element')) return 'What to check when the element looks correct but the intake still fails.';
+  if (problem.startsWith('Modern fuel systems')) return 'What to clarify before treating every fuel-filter position the same way.';
+  if (problem.startsWith('Water is not just another contaminant')) return 'What to investigate when water keeps returning to the fuel system.';
+  if (problem.startsWith('Turbine-style fuel conditioning')) return 'What to verify before changing an element inside a staged assembly.';
+  if (problem.startsWith('Oil carries evidence')) return 'What to ask when filter life is evaluated together with oil condition and engine duty.';
+  if (problem.startsWith('Hydraulic components fail in clear oil')) return 'What to establish when cleanliness targets replace visual judgment.';
+  if (problem.startsWith('Cooling-system deposits')) return 'What to separate clearly between coolant cleanliness and coolant chemistry.';
+  if (problem.startsWith('Dust does not need to be dramatic')) return 'What to verify when restriction, sealing and dust loading are reviewed together.';
+  return 'Questions that matter during a technical application review.';
 }
 
-function TextBlock({ keyName, title, body, index, editorial }: { keyName: EditorialKey; title: string; body: string; index: number; editorial: Editorial }) {
-  const reverse = index % 2 === 1;
-  const close = keyName === 'commercialDecision' ? highValueClose(editorial) : null;
-
+function TextFacet({ title, body, emphasize = false }: { title: string; body: string; emphasize?: boolean }) {
   return (
-    <section style={{ padding: keyName === 'commercialDecision' ? '5.25rem 2rem' : '4.5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: keyName === 'commercialDecision' ? 'linear-gradient(180deg, rgba(255,241,45,0.035), #000)' : index % 3 === 1 ? '#050505' : '#000' }}>
-      <div className="technology-editorial-split" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: reverse ? '1.15fr 0.85fr' : '0.85fr 1.15fr', gap: 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }}>
-        {reverse ? (
-          <div>
-            <p style={{ ...copy, fontSize: 'clamp(1.05rem,1.5vw,1.2rem)', margin: 0 }}>{body}</p>
-            {close && <p style={{ ...copy, margin: '1.25rem 0 0', color: 'rgba(255,255,255,0.92)' }}>{close}</p>}
-          </div>
-        ) : null}
-        <div>
-          <div style={label}>{microLabel(keyName, index)}</div>
-          <h2 style={heading}>{title}</h2>
-        </div>
-        {!reverse ? (
-          <div>
-            <p style={{ ...copy, fontSize: 'clamp(1.05rem,1.5vw,1.2rem)', margin: 0 }}>{body}</p>
-            {close && <p style={{ ...copy, margin: '1.25rem 0 0', color: 'rgba(255,255,255,0.92)' }}>{close}</p>}
-          </div>
-        ) : null}
-      </div>
-    </section>
+    <div style={{ padding: '1.45rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+      <h3 style={subheading}>{title}</h3>
+      <p style={{ ...copy, margin: 0, color: emphasize ? 'rgba(255,255,255,0.93)' : copy.color }}>{body}</p>
+    </div>
   );
 }
 
-function ListBlock({ keyName, title, items, index }: { keyName: EditorialKey; title: string; items: readonly string[]; index: number }) {
+function ListFacet({ title, items }: { title: string; items: readonly string[] }) {
   return (
-    <section style={{ padding: '4.75rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: index % 3 === 2 ? '#050505' : '#000' }}>
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={label}>{microLabel(keyName, index)}</div>
-        <h2 style={{ ...heading, maxWidth: '850px' }}>{title}</h2>
-        <div className="technology-editorial-list" style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(2,minmax(0,1fr))', gap: '1px', background: 'rgba(255,255,255,0.09)' }}>
-          {items.map((item, i) => (
-            <div key={item} style={{ background: '#080808', padding: '1.4rem 1.5rem', display: 'grid', gridTemplateColumns: '38px 1fr', gap: '0.8rem', alignItems: 'start' }}>
-              <span style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,241,45,0.72)', fontSize: '0.7rem' }}>{String(i + 1).padStart(2, '0')}</span>
-              <span style={{ ...copy, margin: 0, fontSize: '0.96rem', color: 'rgba(255,255,255,0.88)' }}>{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div style={{ padding: '1.45rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+      <h3 style={subheading}>{title}</h3>
+      <ul style={{ margin: '0.85rem 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: '0.7rem' }}>
+        {items.map((item) => (
+          <li key={item} style={{ ...copy, margin: 0, display: 'grid', gridTemplateColumns: '18px 1fr', gap: '0.7rem', alignItems: 'start' }}>
+            <span aria-hidden="true" style={{ color: '#FFF12D', lineHeight: 1.8 }}>—</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-function FAQBlock({ editorial, index }: { editorial: Editorial; index: number }) {
+function FAQFacet({ editorial }: { editorial: Editorial }) {
   return (
-    <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: '#050505' }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-        <div style={label}>{microLabel('faq', index)}</div>
-        <h2 style={heading}>{faqHeading(editorial)}</h2>
-        <div style={{ marginTop: '2.4rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-          {editorial.faq.map((item) => (
-            <details key={item.question} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '1.15rem 0' }}>
-              <summary style={{ cursor: 'pointer', fontFamily: 'var(--font-display)', fontSize: '1.02rem', color: '#fff', lineHeight: 1.4 }}>{item.question}</summary>
-              <p style={{ ...copy, margin: '0.9rem 0 0', maxWidth: '880px' }}>{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div style={{ marginTop: '1.8rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+      {editorial.faq.map((item) => (
+        <details key={item.question} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '1.1rem 0' }}>
+          <summary style={{ cursor: 'pointer', fontFamily: 'var(--font-display)', fontSize: '1.02rem', color: '#fff', lineHeight: 1.4 }}>{item.question}</summary>
+          <p style={{ ...copy, margin: '0.85rem 0 0', maxWidth: '900px' }}>{item.answer}</p>
+        </details>
+      ))}
+    </div>
   );
 }
 
-function renderKey(key: EditorialKey, editorial: Editorial, index: number) {
-  if (key === 'faq') return <FAQBlock key={key} editorial={editorial} index={index} />;
+function renderFacet(key: EditorialKey, editorial: Editorial) {
+  if (key === 'faq') return <FAQFacet key={key} editorial={editorial} />;
   const value = editorial[key];
   if (!value) return null;
-  if ('items' in value) return <ListBlock key={key} keyName={key} title={value.title} items={value.items} index={index} />;
-  return <TextBlock key={key} keyName={key} title={value.title} body={value.copy} index={index} editorial={editorial} />;
+  if ('items' in value) return <ListFacet key={key} title={value.title} items={value.items} />;
+  return <TextFacet key={key} title={value.title} body={value.copy} emphasize={key === 'fieldNote' || key === 'commercialDecision'} />;
+}
+
+function chapterHeading(chapter: Chapter, editorial: Editorial) {
+  if (chapter.id === 'faq') return faqHeading(editorial);
+  const firstAvailable = chapter.keys.find((key) => editorial.flow.includes(key));
+  if (!firstAvailable) return chapter.label;
+  const value = editorial[firstAvailable];
+  if (firstAvailable === 'faq') return faqHeading(editorial);
+  return 'title' in value ? value.title : chapter.label;
+}
+
+function chapterOrder(editorial: Editorial) {
+  return [...CHAPTERS]
+    .map((chapter) => ({
+      chapter,
+      position: Math.min(...chapter.keys.map((key) => {
+        const idx = editorial.flow.indexOf(key);
+        return idx === -1 ? Number.MAX_SAFE_INTEGER : idx;
+      })),
+    }))
+    .filter(({ position }) => position !== Number.MAX_SAFE_INTEGER)
+    .sort((a, b) => a.position - b.position)
+    .map(({ chapter }) => chapter);
 }
 
 export default function TechnologyEditorial({ editorial }: { editorial: Editorial }) {
+  const chapters = chapterOrder(editorial);
+  const close = highValueClose(editorial);
+
   return (
     <div>
-      {editorial.flow.map((key, index) => renderKey(key, editorial, index))}
+      {chapters.map((chapter, index) => {
+        const keys = chapter.keys.filter((key) => editorial.flow.includes(key));
+        const primary = keys[0];
+        const secondaryKeys = keys.slice(1);
+        const isDecision = chapter.id === 'decision';
+
+        return (
+          <section
+            key={chapter.id}
+            style={{
+              padding: isDecision ? '5.5rem 2rem' : '5rem 2rem',
+              borderTop: '1px solid rgba(255,255,255,0.07)',
+              background: isDecision
+                ? 'linear-gradient(180deg, rgba(255,241,45,0.035), #000)'
+                : index % 2 === 1 ? '#050505' : '#000',
+            }}
+          >
+            <div className="technology-editorial-chapter" style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0,0.72fr) minmax(0,1.28fr)', gap: 'clamp(2.5rem, 7vw, 7rem)', alignItems: 'start' }}>
+              <div>
+                <div style={eyebrow}>{chapter.label}</div>
+                <h2 style={heading}>{chapterHeading(chapter, editorial)}</h2>
+              </div>
+
+              <div>
+                {primary && primary !== 'faq' ? (() => {
+                  const value = editorial[primary];
+                  if ('items' in value) return <ListFacet title={value.title} items={value.items} />;
+                  return <p style={{ ...copy, margin: 0, fontSize: 'clamp(1.08rem,1.55vw,1.22rem)', color: 'rgba(255,255,255,0.91)' }}>{value.copy}</p>;
+                })() : primary === 'faq' ? <FAQFacet editorial={editorial} /> : null}
+
+                {secondaryKeys.map((key) => renderFacet(key, editorial))}
+
+                {isDecision && close ? (
+                  <p style={{ ...copy, margin: '1.5rem 0 0', color: 'rgba(255,255,255,0.94)', fontSize: '1.06rem' }}>{close}</p>
+                ) : null}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
       <style>{`
         @media (max-width: 860px) {
-          .technology-editorial-split,
-          .technology-editorial-list { grid-template-columns: 1fr !important; }
+          .technology-editorial-chapter { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>
