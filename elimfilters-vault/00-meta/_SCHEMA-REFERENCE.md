@@ -56,8 +56,9 @@ API under `frontend/public/api/citation/**`) in a later regeneration phase.
 Rules (enforced by `scripts/validate-related-technologies.mjs`):
 - Every target MUST be a `[[KEY]]` wikilink resolving to another `type: technology`,
   `tech_status: active` entity's `key` field. Unknown keys fail.
-- Deprecated/retired spellings (e.g. `SYNTEPORE`, and any key in
-  `build-citation-index.js`'s `RETIRED_ENTITY_KEYS`) fail.
+- Deprecated/retired spellings (see `DEPRECATED_KEYS` in
+  `scripts/validate-related-technologies.mjs` for the authoritative list, and any
+  key in `build-citation-index.js`'s `RETIRED_ENTITY_KEYS`) fail.
 - Self-relations (a technology listing itself) fail.
 - Duplicate targets within one entity's list fail.
 - A relationship MUST NOT be added on the basis of prose similarity, shared `system`,
