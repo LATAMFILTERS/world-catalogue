@@ -9,16 +9,16 @@ type TechnologyCard = readonly [
 ];
 
 const technologies: readonly TechnologyCard[] = [
-  ['macrocore', 'MACROCORE™', '/assets/MACROCORE.avif', 1.02],
-  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE.avif', 1.0],
-  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE.avif', 0.94],
-  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE.avif', 0.98],
-  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX.avif', 0.98],
-  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE.avif', 0.94],
-  ['thermacore', 'THERMACORE™', '/assets/THERMACORE.avif', 0.94],
-  ['drycore', 'DRYCORE™', '/assets/DRYCORE.avif', 1.0],
-  ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE.avif', 0.96],
-  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA.avif', 0.96],
+  ['macrocore', 'MACROCORE™', '/assets/MACROCORE_final.avif', 1.02],
+  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 1.0],
+  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 0.94],
+  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE_final.avif', 0.98],
+  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 0.98],
+  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 0.94],
+  ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 0.94],
+  ['drycore', 'DRYCORE™', '/assets/DRYCORE_final.avif', 1.0],
+  ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE_final.avif', 0.96],
+  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 0.96],
 ];
 
 export function TechnologiesPortfolio() {
