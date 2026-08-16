@@ -60,8 +60,14 @@ dist/
 */dist/
 
 # Static export and generated knowledge artifacts
-frontend/public/api/citation/
-elimfilters-vault/00-meta/CITATION_INDEX.json
+#
+# Phase E governance decision (Option A, approved): the Citation API publication
+# tree (frontend/public/api/citation/**) and its direct upstream intermediate
+# (elimfilters-vault/00-meta/CITATION_INDEX.json) are tracked normally so that
+# Git artifact set == deployable artifact set, and a vault change's downstream
+# effect is visible in a normal diff instead of requiring `git add -f`. This
+# matches elimfilters-vault/00-meta/PART_SEARCH_MAP.json, which was already
+# tracked. See scripts/validate-citation-tracking.mjs.
 frontend/src/lib/jsonld-constants.generated.ts
 knowledge/generated/product-intelligence/
 knowledge/generated/equipment-graph/
