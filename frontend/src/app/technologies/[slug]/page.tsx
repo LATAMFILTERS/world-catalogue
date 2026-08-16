@@ -14,16 +14,16 @@ interface Props {
 const BASE_URL = 'https://elimfilters.com';
 
 const TECHNOLOGY_ASSETS: Readonly<Record<TechnologySlug, string>> = {
-  macrocore: '/assets/MACROCORE.avif',
-  microkappa: '/assets/MICROKAPPA.avif',
-  drycore: '/assets/DRYCORE.avif',
-  intekcore: '/assets/INTEKCORE.avif',
-  syntapore: '/assets/SYNTAPORE.avif',
-  turbocore: '/assets/TURBOCORE.avif',
-  syntrax: '/assets/SYNTRAX.avif',
-  nanoforce: '/assets/NANOFORCE.avif',
-  thermacore: '/assets/THERMACORE.avif',
-  hydrocore: '/assets/HYDROCORE.avif',
+  macrocore: '/assets/MACROCORE_final.avif',
+  microkappa: '/assets/MICROKAPPA_final.avif',
+  drycore: '/assets/DRYCORE_final.avif',
+  intekcore: '/assets/INTEKCORE_final.avif',
+  syntapore: '/assets/SYNTAPORE_final.avif',
+  turbocore: '/assets/TURBOCORE_final.avif',
+  syntrax: '/assets/SYNTRAX_final.avif',
+  nanoforce: '/assets/NANOFORCE_final.avif',
+  thermacore: '/assets/THERMACORE_final.avif',
+  hydrocore: '/assets/HYDROCORE_final.avif',
 };
 
 const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
@@ -210,39 +210,19 @@ export default function TechnologyPage({ params }: Props) {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {slug === 'hydrocore' ? (
-          <div
-            aria-hidden="true"
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(3.2rem, 8vw, 7rem)',
-              fontWeight: 700,
-              letterSpacing: '-0.035em',
-              lineHeight: 0.95,
-              color: '#fff',
-              textAlign: 'center',
-              textShadow: '0 3px 18px rgba(0,0,0,0.75)',
-            }}
-          >
-            {canonical.name}
-          </div>
-        ) : (
-          <img
-            src={technologyAsset}
-            alt={canonical.name}
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              width: 'min(520px, 48vw)',
-              height: 'auto',
-              display: 'block',
-              mixBlendMode: 'screen',
-              filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))',
-            }}
-          />
-        )}
+        <img
+          src={technologyAsset}
+          alt={canonical.name}
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            width: 'min(520px, 48vw)',
+            height: 'auto',
+            display: 'block',
+            mixBlendMode: 'screen',
+            filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))',
+          }}
+        />
       </section>
 
       <nav aria-label="Breadcrumb" style={{ borderTop: '1px solid rgba(255,241,45,0.14)', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '1rem 2rem' }}>
