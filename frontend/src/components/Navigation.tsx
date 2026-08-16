@@ -73,7 +73,7 @@ export function Navigation() {
                 width={1959}
                 height={528}
                 onError={() => setLogoError(true)}
-                style={{ objectFit: 'contain', height: 'clamp(28px, 6.5vw, 44px)', width: 'auto', display: 'block' }}
+                style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }}
               />
             )}
           </Link>
