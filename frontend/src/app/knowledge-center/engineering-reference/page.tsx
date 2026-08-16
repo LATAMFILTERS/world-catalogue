@@ -183,6 +183,59 @@ export default function EngineeringReferencePage() {
         </div>
       </section>
 
+      {/* CTA Section: Key Terms Reference */}
+      <section style={{
+        padding: '3rem clamp(1.25rem, 4vw, 4rem)',
+        marginTop: '2rem',
+        background: 'rgba(255,241,45,0.05)',
+        borderTop: '1px solid rgba(255,241,45,0.2)',
+        borderBottom: '1px solid rgba(255,241,45,0.2)',
+      }}>
+        <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 style={{
+              fontFamily: displayFont,
+              fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
+              fontWeight: 700,
+              marginBottom: '1rem',
+              color: '#fff',
+              letterSpacing: '0.01em',
+            }}>
+              Key Terms Reference
+            </h3>
+            <p style={{
+              marginBottom: '1.5rem',
+              color: 'rgba(255,255,255,0.7)',
+              fontFamily: bodyFont,
+              fontSize: '1rem',
+              lineHeight: 1.6,
+              maxWidth: '680px',
+            }}>
+              Don't know a term? Check our complete technical glossary with canonical definitions for filtration, contamination control, and engineering terminology.
+            </p>
+            <Link href="/knowledge-center/glossary/" style={{
+              display: 'inline-block',
+              padding: '0.75rem 1.5rem',
+              background: '#FFF12D',
+              color: '#000',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontFamily: displayFont,
+              letterSpacing: '0.05em',
+              fontSize: '0.8rem',
+              textTransform: 'uppercase',
+            }}>
+              Browse Technical Glossary →
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

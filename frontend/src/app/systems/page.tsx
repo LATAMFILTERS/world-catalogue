@@ -175,6 +175,18 @@ export default function SystemsPage() {
           </div>
         </div>
       </section>
+
+      <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.1)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Deep Dive into System Architecture</h2>
+          <p style={{ ...bodyText, maxWidth: '720px', marginBottom: '1.5rem' }}>
+            Learn the engineering reference standards, testing methods, and technical strategies behind each protection system in our Knowledge Center.
+          </p>
+          <Link href="/knowledge-center/systems/" style={yellowButton}>
+            Read the Engineering Reference for Each System →
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
