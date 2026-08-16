@@ -18,8 +18,9 @@ const STEPS = [
 const wrap: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '1.6rem',
-  width: '100%',
+  gap: '1.8rem',
+  width: 'calc(100% + clamp(360px, 34vw, 500px))',
+  marginLeft: 'calc(-1 * clamp(360px, 34vw, 500px))',
 };
 
 const svgWrap: CSSProperties = {
@@ -27,17 +28,17 @@ const svgWrap: CSSProperties = {
   maxWidth: 'none',
 };
 
-const BOX_WIDTH = 260;
-const BOX_GAP = 110;
-const MARGIN_X = 20;
+const BOX_WIDTH = 300;
+const BOX_GAP = 120;
+const MARGIN_X = 24;
 const DIAGRAM_WIDTH = MARGIN_X * 2 + STEPS.length * BOX_WIDTH + (STEPS.length - 1) * BOX_GAP;
 
 const textAlt: CSSProperties = {
   fontFamily: 'var(--font-body)',
-  fontSize: 'clamp(0.9rem, 1.15vw, 1rem)',
-  lineHeight: 1.75,
+  fontSize: 'clamp(0.98rem, 1.25vw, 1.08rem)',
+  lineHeight: 1.8,
   letterSpacing: '0.01em',
-  color: 'rgba(255,255,255,0.62)',
+  color: 'rgba(255,255,255,0.68)',
   width: '100%',
 };
 
@@ -49,11 +50,11 @@ const textAlt: CSSProperties = {
  */
 export default function MacrocoreConceptDiagram() {
   return (
-    <div style={wrap}>
+    <div style={wrap} className="macrocore-diagram-wrap">
       <svg
         role="img"
         aria-labelledby="macrocore-diagram-title macrocore-diagram-desc"
-        viewBox={`0 0 ${DIAGRAM_WIDTH} 220`}
+        viewBox={`0 0 ${DIAGRAM_WIDTH} 240`}
         width="100%"
         height="auto"
         xmlns="http://www.w3.org/2000/svg"
@@ -81,19 +82,19 @@ export default function MacrocoreConceptDiagram() {
                 x={x}
                 y={56}
                 width={BOX_WIDTH}
-                height={100}
+                height={112}
                 rx={2}
                 fill="rgba(255,255,255,0.03)"
                 stroke={i === 1 ? 'rgba(255,241,45,0.5)' : 'rgba(255,255,255,0.16)'}
                 strokeWidth={1}
               />
-              <foreignObject x={x + 16} y={78} width={BOX_WIDTH - 32} height={58}>
+              <foreignObject x={x + 18} y={80} width={BOX_WIDTH - 36} height={70}>
                 <div
                   style={{
                     fontFamily: 'var(--font-body)',
-                    fontSize: '0.9rem',
-                    lineHeight: 1.3,
-                    color: i === 1 ? '#FFF12D' : 'rgba(255,255,255,0.86)',
+                    fontSize: '1rem',
+                    lineHeight: 1.35,
+                    color: i === 1 ? '#FFF12D' : 'rgba(255,255,255,0.88)',
                     fontWeight: i === 1 ? 700 : 600,
                     textAlign: 'center',
                   }}
@@ -104,9 +105,9 @@ export default function MacrocoreConceptDiagram() {
               {i < STEPS.length - 1 && (
                 <line
                   x1={x + BOX_WIDTH}
-                  y1={106}
+                  y1={112}
                   x2={x + BOX_WIDTH + BOX_GAP - 6}
-                  y2={106}
+                  y2={112}
                   stroke="rgba(255,241,45,0.45)"
                   strokeWidth={1.5}
                   markerEnd="url(#macrocore-arrow)"
@@ -118,13 +119,22 @@ export default function MacrocoreConceptDiagram() {
       </svg>
 
       {/* Accessible text-equivalent of the diagram above, always present in the DOM */}
-      <ol style={{ ...textAlt, listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+      <ol style={{ ...textAlt, listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
         {STEPS.map((step, i) => (
           <li key={step.label}>
             {i + 1}. {step.label} — {step.detail}
           </li>
         ))}
       </ol>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .macrocore-diagram-wrap {
+            width: 100% !important;
+            margin-left: 0 !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
