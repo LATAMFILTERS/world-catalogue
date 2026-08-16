@@ -1,31 +1,7 @@
 {
   "entry_key": "AUTOMOTIVE",
-  "path_count": 4,
+  "path_count": 5,
   "paths": [
-    {
-      "path_id": "PATH_B_AUTOMOTIVE_025",
-      "path_type": "B",
-      "entry_node": "AUTOMOTIVE",
-      "entry_type": "industry",
-      "industry": "AUTOMOTIVE",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_025.json"
-    },
-    {
-      "path_id": "PATH_B_AUTOMOTIVE_026",
-      "path_type": "B",
-      "entry_node": "AUTOMOTIVE",
-      "entry_type": "industry",
-      "industry": "AUTOMOTIVE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_026.json"
-    },
     {
       "path_id": "PATH_B_AUTOMOTIVE_027",
       "path_type": "B",
@@ -34,7 +10,7 @@
       "industry": "AUTOMOTIVE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "AIRFILTER_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AUTOMOTIVE_027.json"
     },
@@ -46,9 +22,45 @@
       "industry": "AUTOMOTIVE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AUTOMOTIVE_028.json"
+    },
+    {
+      "path_id": "PATH_B_AUTOMOTIVE_029",
+      "path_type": "B",
+      "entry_node": "AUTOMOTIVE",
+      "entry_type": "industry",
+      "industry": "AUTOMOTIVE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_029.json"
+    },
+    {
+      "path_id": "PATH_B_AUTOMOTIVE_030",
+      "path_type": "B",
+      "entry_node": "AUTOMOTIVE",
+      "entry_type": "industry",
+      "industry": "AUTOMOTIVE",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_WATER_SEPARATOR"
+      ],
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_030.json"
+    },
+    {
+      "path_id": "PATH_B_AUTOMOTIVE_031",
+      "path_type": "B",
+      "entry_node": "AUTOMOTIVE",
+      "entry_type": "industry",
+      "industry": "AUTOMOTIVE",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_TURBINE"
+      ],
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_031.json"
     }
   ]
 }

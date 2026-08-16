@@ -1,6 +1,6 @@
 {
   "entry_key": "FUEL_FILTER_PLUGGING",
-  "path_count": 1,
+  "path_count": 2,
   "paths": [
     {
       "path_id": "PATH_A_FUEL_FILTER_PLUGGING_007",
@@ -10,9 +10,21 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "FUEL_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_007.json"
+    },
+    {
+      "path_id": "PATH_A_FUEL_FILTER_PLUGGING_008",
+      "path_type": "A",
+      "entry_node": "FUEL_FILTER_PLUGGING",
+      "entry_type": "problem",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_TURBINE"
+      ],
+      "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_008.json"
     }
   ]
 }

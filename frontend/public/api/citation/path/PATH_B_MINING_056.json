@@ -33,14 +33,14 @@
           "concept": "Mining Industrial Filtration",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:0d14a02d9179e69d34691101db38140f652d7c46ce68f03d3c23ca1939439d14"
+          "content_hash": "sha256:27ab01f3da840cdc8bc5b8da2383a08cc5a8bfbcfa025015590c810304339fcf"
         },
         "canonical": {
           "definition": "Mining operations present EXTREME contamination exposure — silica and hardrock particulate\nconcentrations 50× above ISO 5011 test standards — requiring multi-system filtration\nprotection across air intake, hydraulic, lube oil, and fuel domains for 24/7 asset\nreliability.",
           "systems": "Air Intake, Hydraulic, Lubrication, Fuel Cleanliness; primary equipment: haul trucks,\ndrill rigs, loaders, crushers operating in open-cut and underground environments",
           "failure_impact": "Uncontrolled particle ingestion → engine overhaul interval reduced from 25,000 to\n3,000 hours → unplanned downtime at ~$180,000/hour per machine → cascading supply\nchain disruption | Hydraulic contamination → proportional valve stiction → haul truck\nhydraulic failure → production stoppage",
           "related_standards": "ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic cleanliness\nmulti-pass test | SAE J1539: Air intake contamination classification for diesel engines",
-          "related_technologies": "MACROCORE: Progressive density gradient air intake protection (99.9%–99.98% efficiency) |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
+          "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
           "industrial_role": "Mining is the highest-consequence filtration environment — equipment downtime costs\nexceed $180,000/hour and component replacement costs reach $150,000+ per engine\noverhaul. Contamination control is a supply-chain continuity decision, not a\nmaintenance cost decision."
         },
         "relationships": {
@@ -80,13 +80,13 @@
       }
     },
     {
-      "key": "ENGINE_OIL_CONTAMINATION",
+      "key": "DUST_INGESTION",
       "type": "problem",
-      "name": "Engine Oil Contamination",
+      "name": "Dust Ingestion",
       "citation_record": {
-        "key": "ENGINE_OIL_CONTAMINATION",
+        "key": "DUST_INGESTION",
         "type": "problem",
-        "name": "Engine Oil Contamination",
+        "name": "Dust Ingestion",
         "slug": null,
         "status": "active",
         "in_unified_data": false,
@@ -94,41 +94,44 @@
         "tags": [
           "problem",
           "active",
-          "lube-oil",
+          "air-intake",
           "not-in-ud",
           "part-search-entry",
-          "exposure-high"
+          "exposure-extreme"
         ],
         "citation": {
           "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Engine Oil Contamination — Lube Circuit Problem",
+          "concept": "Dust Ingestion — Air Intake Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:4b8a3044d83f87619b563eb245228f6856be9b6690c8039108174307d6997b20"
+          "content_hash": "sha256:adb3acb27b3e8f632aa4bb34863826d0a35597155b87da9facf6bffa1273ebae"
         },
         "canonical": {
-          "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
-          "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
-          "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
-          "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
-          "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |\nNANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil",
-          "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
+          "definition": "Dust ingestion — engine contamination via the air intake path — is the leading cause of\npremature abrasive wear in off-highway diesel engines, occurring when ambient particulate\nbypasses or passes through the air filtration system and enters the combustion chamber.",
+          "systems": "Air Intake; affected components: turbocharger bearings, piston rings, cylinder walls;\nprimary industries: Mining (EXTREME), Construction (HIGH), Agriculture (HIGH)",
+          "failure_impact": "Fine silica and hardrock particles → abrasive wear on piston rings and cylinder walls\n→ blow-by increase → oil contamination → ring sticking → compression loss 10–25%\n→ engine overhaul interval 3,000–5,000 hours vs. 15,000–25,000 hours managed |\nOperational Impact: $21M–$60M+ per event at mining downtime rates ($180,000/hour)",
+          "related_standards": "ISO 5011: Air filter efficiency and dust-holding capacity test |\nSAE J1539: Air intake contamination classification defining acceptable limits",
+          "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |\nSYNTAPORE: All-synthetic element for humid environments where cellulose media degrades",
+          "industrial_role": "Dust ingestion is the highest-frequency, highest-cost contamination event in mining and\nconstruction. It is a maintenance discipline failure as much as a product specification\nproblem — correct change interval compliance accounts for the majority of prevention."
         },
         "relationships": {
           "applicable_standards": [
-            "ISO_16889",
-            "ISO_4406"
+            "ISO_5011",
+            "SAE_J1539"
           ],
           "resolved_by_technologies": [
-            "SYNTRAX",
-            "NANOFORCE"
+            "MACROCORE",
+            "SYNTAPORE",
+            "INTEKCORE"
           ],
           "affects_components": [
-            "ENGINE_BEARING_JOURNAL",
-            "PISTON_RING_ASSEMBLY"
+            "TURBOCHARGER_BEARING"
+          ],
+          "affects_systems": [
+            "AIR_INTAKE_PROTECTION"
           ],
           "recommended_product_families": [
-            "LUBE_PRIMARY"
+            "AIRFILTER_PRIMARY"
           ],
           "root_contamination": [
             "PARTICLE_WEAR"
@@ -136,18 +139,10 @@
           "industry_frequency": [
             "MINING",
             "CONSTRUCTION",
-            "AGRICULTURE",
-            "TRUCKS_FLEETS",
-            "MARINE",
-            "OIL_GAS",
-            "POWER_GENERATION",
-            "RAILWAY",
-            "BUS_COACH",
-            "WASTE_MUNICIPAL",
-            "AUTOMOTIVE"
+            "AGRICULTURE"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
       }
     },
     {
@@ -201,68 +196,46 @@
       }
     },
     {
-      "key": "NANOFORCE",
+      "key": "MACROCORE",
       "type": "technology",
-      "name": "NANOFORCE™",
+      "name": "MACROCORE™",
       "citation_record": {
-        "key": "NANOFORCE",
+        "key": "MACROCORE",
         "type": "technology",
-        "name": "NANOFORCE™",
-        "slug": "nanoforce",
+        "name": "MACROCORE™",
+        "slug": "macrocore",
         "status": "active",
-        "in_unified_data": true,
-        "ud_key": "NANOFORCE",
-        "tags": [
-          "technology",
-          "active",
-          "lube-oil",
-          "hydraulic",
-          "in-ud",
-          "part-search-node"
-        ],
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
-          "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
-          "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:e92375b2d4b63296ae892c75af0396f2d90aa67e722811e8b56180a227a296dc"
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
+          "concept": "MACROCORE Engine Air Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:42f42ede3a47c788a446fc6a07fc5f5d3f1fa9219ef3cbc562e5bfb0dd082697"
         },
         "canonical": {
-          "definition": "NANOFORCE is a sub-micron lube oil and hydraulic fluid filtration technology deployed in kidney-loop or bypass circuit configurations, achieving ISO 4406 cleanliness codes of 15/13/10 or better through Beta(x[c]) ≥ 1000 efficiency at 5 µm absolute — targeting the 1–5 µm particle size range that conventional full-flow filters pass and that is the primary abrasive threat at precision bearing clearances.",
-          "systems": "Engine lube oil kidney-loop circuits, hydraulic fluid bypass circuits, transmission fluid polishing circuits across diesel-powered heavy equipment and industrial power systems",
-          "failure_impact": "Sub-micron particles (1–5 µm) bypass conventional full-flow filters and recirculate in oil → abrasive wear at journal bearing hydrodynamic film interfaces (15–50 µm clearance) → progressive clearance increase → oil film breakdown at load peaks → bearing fatigue and seizure | Operational impact: bearing life at ISO 4406 15/13/10 is 5–8× greater than commodity filtration at 19/17/14; proportional valve failure rate in hydraulics at 15/13/10 is 70–80% lower than at 17/15/12.",
-          "related_standards": "ISO 4406: Three-number cleanliness code; NANOFORCE targets 15/13/10 by removing sub-micron particle counts across ≥4/≥6/≥14 µm thresholds | ISO 16889: Multi-pass Beta ratio test; NANOFORCE rated Beta(x[c]) ≥ 1000 at 5 µm absolute",
-          "related_technologies": "SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | TURBOCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits",
-          "industrial_role": "NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%."
+          "definition": "MACROCORE is the ELIMFILTERS engine air filtration architecture for primary and secondary intake protection.",
+          "systems": "Air Intake & Airflow Protection.",
+          "failure_impact": "Inadequate intake contamination control can expose cylinders, piston rings, turbochargers and other protected engine components to airborne particulate contamination.",
+          "related_standards": "ISO 5011: Air-cleaner performance testing relevant to approved engine air-filtration applications.",
+          "related_technologies": "INTEKCORE: Air-cleaner housing and sealing architecture used to preserve the protected intake boundary and support controlled airflow.",
+          "industrial_role": "MACROCORE provides the engine-air filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media configuration, sealing integrity, airflow management and service interval must be matched to the intended intake duty cycle and contamination load."
         },
         "relationships": {
-          "applicable_industries": [
-            "AGRICULTURE",
-            "AUTOMOTIVE",
-            "BUS_COACH",
-            "CONSTRUCTION",
-            "MARINE",
-            "MINING",
-            "POWER_GENERATION",
-            "OIL_GAS",
-            "RAILWAY",
-            "TRUCKS_FLEETS",
-            "WASTE_MUNICIPAL"
-          ],
           "related_standards": [
-            "ISO_4406",
-            "ISO_16889"
+            "ISO_5011"
           ],
-          "addresses_contamination": [
-            "PARTICLE_WEAR",
-            "HYDRAULIC_CONTAMINATION"
+          "related_technologies": [
+            "INTEKCORE"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
       }
     }
   ],
   "terminal_product_families": [
-    "HYDRAULIC_PRIMARY"
+    "AIRFILTER_PRIMARY"
   ]
 }

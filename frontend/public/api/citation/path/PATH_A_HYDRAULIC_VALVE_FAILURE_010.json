@@ -119,69 +119,44 @@
       }
     },
     {
-      "key": "SYNTRAX",
+      "key": "TURBOCORE",
       "type": "technology",
-      "name": "SYNTRAX — Full-Flow Lube Protection",
+      "name": "TURBOCORE™",
       "citation_record": {
-        "key": "SYNTRAX",
+        "key": "TURBOCORE",
         "type": "technology",
-        "name": "SYNTRAX — Full-Flow Lube Protection",
-        "slug": "syntrax",
+        "name": "TURBOCORE™",
+        "slug": "turbocore",
         "status": "active",
-        "in_unified_data": true,
-        "ud_key": "SYNTRAX",
-        "tags": [
-          "technology",
-          "active",
-          "lube-oil",
-          "full-flow",
-          "iso-4406",
-          "bearing-protection",
-          "in-ud"
-        ],
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
-          "concept": "SYNTRAX Full-Flow Lube Protection",
-          "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:951017803767ebe0fa30e6585498d2392c32466575dc3363e9c4ece640495dce"
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
+          "concept": "TURBOCORE Fuel Water Separation Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:cd57faaaace4313eba17933c57b6137beddc857e02292f006015bed713e71849"
         },
         "canonical": {
-          "definition": "SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits by combining high-efficiency particulate capture (ISO 16889 Beta ratio rated) with soot agglomerate removal above 2% by weight concentration, preventing both abrasive particle wear and soot-induced oil degradation.",
-          "systems": "Engine lube oil circuits, hydraulic power circuits, transmission fluid systems across diesel-powered on-highway and off-highway equipment",
-          "failure_impact": "Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.",
-          "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 1 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
-          "related_technologies": "NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by",
-          "industrial_role": "SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories."
+          "definition": "TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications.",
+          "systems": "Fuel Cleanliness Protection; approved turbine-style FH and FG fuel-separation applications.",
+          "failure_impact": "Inadequate staged fuel conditioning or separation can increase particulate and water-contamination exposure in protected diesel fuel-system applications.",
+          "related_standards": "Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.",
+          "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.",
+          "industrial_role": "TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements."
         },
         "relationships": {
-          "applicable_industries": [
-            "AGRICULTURE",
-            "AUTOMOTIVE",
-            "BUS_COACH",
-            "CONSTRUCTION",
-            "MARINE",
-            "MINING",
-            "POWER_GENERATION",
-            "RAILWAY",
-            "TRUCKS_FLEETS",
-            "WASTE_MUNICIPAL",
-            "OIL_GAS"
-          ],
-          "related_standards": [
-            "ISO_4406",
-            "ISO_16889",
-            "DIN_51524"
-          ],
-          "addresses_contamination": [
-            "PARTICLE_WEAR"
+          "related_technologies": [
+            "SYNTAPORE",
+            "HYDROCORE"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
       }
     }
   ],
   "terminal_product_families": [
-    "LUBE_PRIMARY"
+    "FUEL_TURBINE"
   ]
 }
