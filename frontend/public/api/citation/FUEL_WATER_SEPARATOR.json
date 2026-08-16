@@ -18,21 +18,17 @@
     "concept": "Fuel Water Separation Product Family",
     "version": "1.0",
     "last_updated": "2026-08-15",
-    "content_hash": "sha256:39fe06e8f0f5b65e98743f786941f48b539c44c01ff3ab782cb7f3cbf7597195"
+    "content_hash": "sha256:0ca0c05a15f33e17fa949f3349cb210f7bd22fd083da3c50ea66d52ed988c6a5"
   },
   "canonical": {
-    "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,\nmarine, mining, power generation, and commercial transport applications, meeting\nASTM D6304 and ISO 12937 water content standards.",
+    "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
     "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
     "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement well before its rated service life",
-    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination — validates element performance claims",
+    "related_standards": "HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is\ncurrently approved as a direct canonical relationship for this family.",
     "related_technologies": "HYDROCORE: Primary element technology (coalescing water separation) for standard\n(non-turbine) applications | TURBOCORE: The equivalent separation technology reserved\nfor approved Turbine Series FH/FG applications (a distinct product family, FUEL_TURBINE)\n| SYNTAPORE: Plain primary/secondary fuel filtration -- does not perform a\nwater-separation function (not in this family)",
     "industrial_role": "This product family is the standard (non-turbine) implementation for diesel fuel water\ncontamination — a leading cause of HPCR injector failure in agricultural, marine, and\nmining equipment operating in high-humidity or bulk-storage environments."
   },
   "relationships": {
-    "meets_standards": [
-      "ASTM_D6304",
-      "ISO_12937"
-    ],
     "target_industries": [
       "AGRICULTURE",
       "MARINE",
@@ -56,16 +52,6 @@
     "self": "/api/citation/FUEL_WATER_SEPARATOR.json",
     "type_index": "/api/citation/type/product-family.json",
     "related": [
-      {
-        "key": "ASTM_D6304",
-        "relation": "meets_standards",
-        "href": "/api/citation/ASTM_D6304.json"
-      },
-      {
-        "key": "ISO_12937",
-        "relation": "meets_standards",
-        "href": "/api/citation/ISO_12937.json"
-      },
       {
         "key": "AGRICULTURE",
         "relation": "target_industries",

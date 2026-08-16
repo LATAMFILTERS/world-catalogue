@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-16T20:14:40.231Z",
+    "generated": "2026-08-16T21:16:39.630Z",
     "source_index": "elimfilters-vault/00-meta/CITATION_INDEX.json",
     "source_index_version": "1.0",
     "path_count": 110,
@@ -3613,9 +3613,7 @@
         "SYNTAPORE"
       ],
       "uses_technology": "SYNTAPORE",
-      "meets_standards": [
-        "ASTM_D6304"
-      ],
+      "meets_standards": [],
       "target_industries": [
         "AGRICULTURE",
         "MARINE",
@@ -3705,10 +3703,7 @@
         "HYDROCORE"
       ],
       "uses_technology": "HYDROCORE",
-      "meets_standards": [
-        "ASTM_D6304",
-        "ISO_12937"
-      ],
+      "meets_standards": [],
       "target_industries": [
         "AGRICULTURE",
         "MARINE",

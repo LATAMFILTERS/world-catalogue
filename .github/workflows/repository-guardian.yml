@@ -48,6 +48,67 @@ jobs:
 
           echo "No forbidden generated artifacts changed."
 
+  verify-generation-determinism:
+    name: Verify Citation API generation is deterministic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine changed files
+        id: changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" > changed-files.txt
+          elif [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ] && git cat-file -e "${{ github.event.before }}" 2>/dev/null; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > changed-files.txt
+          else
+            # workflow_dispatch, or a push with no valid prior SHA (e.g. new
+            # branch/history) — treat as relevant so the check still runs.
+            printf 'elimfilters-vault/00-meta/CITATION_INDEX.json\n' > changed-files.txt
+          fi
+          echo "Changed files:"
+          cat changed-files.txt
+          RELEVANT_REGEX='^(elimfilters-vault/|scripts/build-citation-index\.js$|scripts/build-part-search-map\.js$|scripts/generate-citation-api\.js$|scripts/validate-generation-determinism\.mjs$)'
+          if grep -E "$RELEVANT_REGEX" changed-files.txt > /dev/null; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "relevant=false" >> "$GITHUB_OUTPUT"
+            echo "No Citation API / vault / generator changes — skipping determinism check."
+          fi
+
+      - name: Setup Node.js
+        if: steps.changed.outputs.relevant == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: First generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: |
+          node scripts/build-citation-index.js
+          node scripts/build-part-search-map.js
+          node scripts/generate-citation-api.js
+
+      - name: Snapshot first generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: node scripts/validate-generation-determinism.mjs --snapshot "$RUNNER_TEMP/citation-manifest-1.json"
+
+      - name: Second generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: |
+          node scripts/build-citation-index.js
+          node scripts/build-part-search-map.js
+          node scripts/generate-citation-api.js
+
+      - name: Compare against first generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: node scripts/validate-generation-determinism.mjs --compare "$RUNNER_TEMP/citation-manifest-1.json"
+
   build:
     name: Build and type validation
     runs-on: ubuntu-latest

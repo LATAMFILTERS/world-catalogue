@@ -9,8 +9,6 @@ uses_technology: "[[SYNTAPORE]]"
 uses_tech_display: "SYNTAPORE™"
 belongs_to_domain: "[[FUEL]]"
 belongs_to_product_system: "[[FUEL]]"
-meets_standards:
-  - "[[ASTM_D6304]]"
 performance_rating: "EN 590 compliant; staged particulate efficiency per approved fuel-filtration stage"
 target_industries:
   - "[[AGRICULTURE]]"
@@ -36,7 +34,7 @@ This family covers 1,903 ELIMFILTERS® SKUs (verified directly against the produ
 - Cartridge secondary filters for HPCR diesel engines (injector protection, fine-stage filtration)
 - Staged particulate-filtration elements across engine sizes and configurations
 
-All elements in this family use SYNTAPORE™ media construction and are compliant with ASTM D6304 where water-in-fuel measurement is relevant to the application. OEM cross-references cover major diesel equipment from Case IH, John Deere, Perkins, Cummins, Caterpillar, Volvo, and Yanmar.
+All elements in this family use SYNTAPORE™ media construction for staged diesel-fuel particulate filtration. OEM cross-references cover major diesel equipment from Case IH, John Deere, Perkins, Cummins, Caterpillar, Volvo, and Yanmar.
 
 The family is the **terminal product node** in the fuel Part Search traversal path for plain (non-separator) fuel-filtration applications.
 
@@ -49,9 +47,6 @@ The family is the **terminal product node** in the fuel Part Search traversal pa
 
 ### System Context
 - [[FUEL|Fuel Filtration System — Product Line]] (belongs to this system)
-
-### Standards Compliance
-- [[ASTM_D6304|ASTM D6304 — Water Content in Diesel Fuel (Karl Fischer method)]]
 
 ### Target Industries
 - [[AGRICULTURE|Agriculture — Seasonal Fuel Storage and Tank Contamination Risk]]
@@ -102,8 +97,9 @@ rate) or exceeding service interval → residual particulate reaches injectors a
 high-pressure pumps → injector stiction and premature wear → HPCR fuel system failure
 
 RELATED_STANDARDS
-ASTM D6304: Karl Fischer water content measurement standard, relevant where water
-content must also be verified for the application
+SYNTAPORE governs plain diesel-fuel particulate filtration; no water-content or
+water-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for
+water-content standards.
 
 RELATED_TECHNOLOGIES
 HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --
