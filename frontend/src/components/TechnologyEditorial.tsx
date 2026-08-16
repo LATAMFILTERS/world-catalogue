@@ -57,15 +57,58 @@ function highValueClose(editorial: Editorial) {
     return 'For an intake review, the useful inputs are the engine and housing, current element, actual duty cycle, restriction history, service interval and any evidence of dust on the clean side. That keeps the decision focused on airflow, sealing and contamination control rather than on a familiar label or a cross-reference alone.';
   }
 
+  if (problem.startsWith('Cabin filtration is an operating-environment issue')) {
+    return 'For a cabin-air review, the useful evidence is practical: equipment model, housing arrangement, airflow direction, operator complaints, dust environment, current service interval and any recurring evaporator or blower issues. That separates a simple replacement from an HVAC and operator-environment decision.';
+  }
+
+  if (problem.startsWith('Water in compressed air')) {
+    return 'A fleet review should include dryer model, cartridge history, compressor duty, purge behavior, reservoir findings, climate and any recurring pneumatic or cold-weather events. Those inputs reveal whether the cartridge is the root cause or only the component receiving the symptom.';
+  }
+
+  if (problem.startsWith('A perfect element cannot compensate')) {
+    return 'For an intake-package review, the useful inputs are engine airflow, housing and element references, inlet and outlet geometry, installation envelope, service clearance, vibration exposure and any dust-track evidence. That allows the housing and element to be evaluated as one protected boundary.';
+  }
+
+  if (problem.startsWith('Modern fuel systems do not tolerate casual contamination control')) {
+    return 'A useful fuel-filtration review starts with the filter position, engine and equipment, current element, fuel source, service interval, restriction history and any injector or pump events. The objective is to understand what each stage is being asked to remove before another cross-reference is accepted.';
+  }
+
+  if (problem.startsWith('Water is not just another contaminant')) {
+    return 'For a recurring water-in-fuel problem, the separator reference is only one input. Tank condition, fuel source, transfer practice, drain history, equipment duty and downstream failures help determine whether the real issue is at the element, the installation or farther upstream in the fuel-handling chain.';
+  }
+
+  if (problem.startsWith('Turbine-style fuel conditioning is an architecture')) {
+    return 'For a staged separator review, the assembly size, element position, required flow, current rating, drain arrangement, installation access and fuel-quality history all matter. The goal is to preserve the intended sequence of separation and filtration instead of treating every element that fits the housing as equivalent.';
+  }
+
+  if (problem.startsWith('Oil carries evidence')) {
+    return 'A lubrication review becomes useful when the engine, current filter, oil grade, drain interval, duty cycle, oil-analysis trend and any bearing or turbocharger history are considered together. That is the information needed to judge capacity and contamination control as part of the maintenance program, not as a stand-alone filter purchase.';
+  }
+
   if (problem.startsWith('Hydraulic components fail in clear oil')) {
     return 'A useful hydraulic review starts with the circuit, filter location, normal and peak flow, fluid and temperature range, current housing and element, sensitive components, failure history and any available cleanliness data. With that information, the discussion can move from replacement filters to a measurable cleanliness strategy.';
   }
 
-  if (problem.startsWith('Water in fuel')) {
-    return 'For a recurring water-in-fuel problem, the separator reference is only one input. Tank condition, fuel source, transfer practice, drain history, equipment duty and downstream failures help determine whether the real issue is at the element, the installation or farther upstream in the fuel-handling chain.';
+  if (problem.startsWith('Cooling-system deposits do not have to block')) {
+    return 'For a cooling-system review, the engine or equipment, coolant type, current filter, service interval, repair history, contamination findings and any coolant-analysis data should be considered together. That keeps filtration in its proper role: one control inside the complete coolant-maintenance strategy.';
   }
 
   return null;
+}
+
+function faqHeading(editorial: Editorial) {
+  const problem = editorial.problem.title;
+  if (problem.startsWith('Cabin filtration')) return 'Questions that come up when airflow, operator comfort and contamination are reviewed together.';
+  if (problem.startsWith('Water in compressed air')) return 'Questions that come up when moisture keeps showing up downstream.';
+  if (problem.startsWith('A perfect element')) return 'Questions that come up when the element looks right but the intake still fails.';
+  if (problem.startsWith('Modern fuel systems')) return 'Questions that come up when fuel-filter position matters more than the label on the box.';
+  if (problem.startsWith('Water is not just another contaminant')) return 'Questions that come up when water keeps returning to the fuel system.';
+  if (problem.startsWith('Turbine-style fuel conditioning')) return 'Questions that come up when a staged assembly is reviewed as a system.';
+  if (problem.startsWith('Oil carries evidence')) return 'Questions that come up when filter life is read alongside oil condition and engine duty.';
+  if (problem.startsWith('Hydraulic components fail in clear oil')) return 'Questions that come up when cleanliness targets replace visual judgment.';
+  if (problem.startsWith('Cooling-system deposits')) return 'Questions that come up when coolant cleanliness and chemistry are kept separate.';
+  if (problem.startsWith('Dust does not need to be dramatic')) return 'Questions that come up when restriction, sealing and dust loading are reviewed together.';
+  return 'Questions that come up when the application is reviewed properly.';
 }
 
 function TextBlock({ keyName, title, body, index, editorial }: { keyName: EditorialKey; title: string; body: string; index: number; editorial: Editorial }) {
@@ -120,7 +163,7 @@ function FAQBlock({ editorial, index }: { editorial: Editorial; index: number })
     <section style={{ padding: '5rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)', background: '#050505' }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
         <div style={label}>{microLabel('faq', index)}</div>
-        <h2 style={heading}>Questions that come up when the application is reviewed properly.</h2>
+        <h2 style={heading}>{faqHeading(editorial)}</h2>
         <div style={{ marginTop: '2.4rem', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
           {editorial.faq.map((item) => (
             <details key={item.question} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '1.15rem 0' }}>
