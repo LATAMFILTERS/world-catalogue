@@ -67,7 +67,7 @@ export function Navigation() {
               </span>
             ) : (
               <img
-                src="/assets/logo-elimfilters.png"
+                src="/assets/Elimfilters_logo_oficial.avif"
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 width={1959}
