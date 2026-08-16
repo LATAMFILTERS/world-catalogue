@@ -8,17 +8,24 @@ type TechnologyCard = readonly [
   visualScale: number,
 ];
 
+/**
+ * Per-asset optical normalization.
+ * The *_final.avif files intentionally keep their original black canvas,
+ * but each wordmark occupies a different percentage of that canvas.
+ * These factors equalize the apparent height of the white technology names
+ * without modifying the source artwork.
+ */
 const technologies: readonly TechnologyCard[] = [
   ['macrocore', 'MACROCORE™', '/assets/MACROCORE_final.avif', 1.02],
-  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 1.0],
-  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 0.94],
+  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 0.95],
+  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 1.54],
   ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE_final.avif', 0.98],
-  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 0.98],
-  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 0.94],
-  ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 0.94],
-  ['drycore', 'DRYCORE™', '/assets/DRYCORE_final.avif', 1.0],
+  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 0.88],
+  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 1.13],
+  ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 1.21],
+  ['drycore', 'DRYCORE™', '/assets/DRYCORE_final.avif', 0.82],
   ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE_final.avif', 0.96],
-  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 0.96],
+  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 1.08],
 ];
 
 export function TechnologiesPortfolio() {
