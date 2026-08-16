@@ -9,23 +9,21 @@ type TechnologyCard = readonly [
 ];
 
 /**
- * Per-asset optical normalization.
- * The *_final.avif files intentionally keep their original black canvas,
- * but each wordmark occupies a different percentage of that canvas.
- * These factors equalize the apparent height of the white technology names
- * without modifying the source artwork.
+ * Optical normalization measured from the rendered production cards.
+ * Target: ~20 px apparent height for the white technology name at the
+ * current desktop card geometry. Source artwork is preserved unchanged.
  */
 const technologies: readonly TechnologyCard[] = [
-  ['macrocore', 'MACROCORE™', '/assets/MACROCORE_final.avif', 1.02],
-  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 0.95],
-  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 1.54],
-  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE_final.avif', 0.98],
-  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 0.88],
-  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 1.13],
-  ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 1.21],
-  ['drycore', 'DRYCORE™', '/assets/DRYCORE_final.avif', 0.82],
-  ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE_final.avif', 0.96],
-  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 1.08],
+  ['macrocore', 'MACROCORE™', '/assets/MACROCORE_final.avif', 1.074],
+  ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 1.000],
+  ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 1.100],
+  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE_final.avif', 1.089],
+  ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 1.035],
+  ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 0.983],
+  ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 1.152],
+  ['drycore', 'DRYCORE™', '/assets/DRYCORE_final.avif', 0.911],
+  ['intekcore', 'INTEKCORE™', '/assets/INTEKCORE_final.avif', 1.129],
+  ['microkappa', 'MICROKAPPA™', '/assets/MICROKAPPA_final.avif', 1.029],
 ];
 
 export function TechnologiesPortfolio() {
