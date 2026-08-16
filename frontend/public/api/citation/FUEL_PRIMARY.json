@@ -16,22 +16,21 @@
   "citation": {
     "source_url": "elimfilters.com/systems/fuel-primary",
     "concept": "Primary Fuel Protection Product Family",
-    "version": "1.0",
-    "last_updated": "2026-06-03",
-    "content_hash": "sha256:694f23440eed13b32abe4e8649c588ccb77a44cefac3ed0c5bbca25fdd7d7b33"
+    "version": "2.0",
+    "last_updated": "2026-08-15",
+    "content_hash": "sha256:810a9e11db6e11355d4bb2d7f2778de07d29f225e85dd5e8a4d8424937f87cc0"
   },
   "canonical": {
-    "definition": "Primary Fuel Protection — the TURBOCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
-    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements TURBOCORE™\ncoalescing water-separation technology",
-    "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement at 3,000–8,000 hours instead of 15,000+ hours",
-    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination — validates element performance claims",
-    "related_technologies": "TURBOCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
-    "industrial_role": "This product family is the principal contamination control implementation for diesel\nfuel water contamination — the leading cause of HPCR injector failure in agricultural,\nmarine, and mining equipment operating in high-humidity or bulk-storage environments."
+    "definition": "Primary Fuel Protection — the SYNTAPORE™-technology filter element family for diesel\nfuel particulate filtration (primary, secondary and cartridge, no water-separation\nfunction), covering 1,903 SKUs across agricultural, marine, mining, power generation,\nand commercial transport applications.",
+    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements SYNTAPORE™\nparticulate-filtration technology",
+    "failure_impact": "Selecting incorrect element from this family (wrong efficiency class or wrong flow\nrate) or exceeding service interval → residual particulate reaches injectors and\nhigh-pressure pumps → injector stiction and premature wear → HPCR fuel system failure",
+    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard, relevant where water\ncontent must also be verified for the application",
+    "related_technologies": "HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --\na distinct product family (FUEL_WATER_SEPARATOR), not covered here | TURBOCORE:\nFuel-separation architecture reserved for approved Turbine Series FH/FG applications\n(FUEL_TURBINE family) | MACROCORE: Upstream pre-cleaner for high-contamination bulk air\nenvironments (not in this family)",
+    "industrial_role": "This product family is the principal particulate-contamination control implementation\nfor diesel fuel systems that do not require a separate water-separation stage."
   },
   "relationships": {
     "meets_standards": [
-      "ASTM_D6304",
-      "ISO_12937"
+      "ASTM_D6304"
     ],
     "target_industries": [
       "AGRICULTURE",
@@ -42,7 +41,7 @@
       "TRUCKS_FLEETS"
     ],
     "uses_technology": [
-      "TURBOCORE"
+      "SYNTAPORE"
     ],
     "belongs_to_domain": [
       "FUEL"
@@ -60,11 +59,6 @@
         "key": "ASTM_D6304",
         "relation": "meets_standards",
         "href": "/api/citation/ASTM_D6304.json"
-      },
-      {
-        "key": "ISO_12937",
-        "relation": "meets_standards",
-        "href": "/api/citation/ISO_12937.json"
       },
       {
         "key": "AGRICULTURE",
@@ -97,9 +91,9 @@
         "href": "/api/citation/TRUCKS_FLEETS.json"
       },
       {
-        "key": "TURBOCORE",
+        "key": "SYNTAPORE",
         "relation": "uses_technology",
-        "href": "/api/citation/TURBOCORE.json"
+        "href": "/api/citation/SYNTAPORE.json"
       },
       {
         "key": "FUEL",

@@ -18,14 +18,14 @@
     "concept": "Primary Intake Protection Product Family",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:7c313f81645a06774590e96af15af854eb116a283470322f63a8da28aff58543"
+    "content_hash": "sha256:dc8e07bc45b99c677b7f6de63b8871f060ea7bbe560e458d365291a6f68a5e2c"
   },
   "canonical": {
-    "definition": "Primary Intake Protection — the MACROCORE™-technology filter element family for\nprimary-duty air intake applications in heavy-duty diesel engines, covering approximately\n120 SKUs across mining, agricultural, construction, and commercial transport\nconfigurations, all ISO 5011 certified to 99.9%–99.98% efficiency.",
-    "systems": "Air Intake domain; belongs to AIRFILTER product-line system; implements MACROCORE™\nProgressive Density Gradient technology",
+    "definition": "Primary Intake Protection — the MACROCORE™-technology filter element family for\nprimary-duty air intake applications in heavy-duty diesel engines, covering approximately\n120 SKUs across mining, agricultural, construction, and commercial transport\nconfigurations, all tested to ISO 5011.",
+    "systems": "Air Intake domain; belongs to AIRFILTER product-line system; implements MACROCORE™\nengine air filtration technology",
     "failure_impact": "Selecting incorrect element from this family (wrong size, wrong efficiency class) or\nexceeding service interval → reduced filtration performance → dust ingestion → engine\noverhaul interval compression (see DUST_INGESTION)",
-    "related_standards": "ISO 5011: All elements in this family are ISO 5011 certified |\nSAE J1539: Contamination classification standard confirming element specification suitability",
-    "related_technologies": "MACROCORE: Primary element technology (PDG multi-layer construction) |\nSYNTAPORE: Alternative family for humid/marine environments (not in this family)",
+    "related_standards": "ISO 5011: All elements in this family are tested to this standard |\nSAE J1539: Contamination classification standard confirming element specification suitability",
+    "related_technologies": "MACROCORE: Primary intake filtration element technology |\nSYNTAPORE: Alternative family for humid/marine environments (not in this family)",
     "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon filtration requirement in heavy-duty equipment — air intake protection. It connects\nthe MACROCORE™ technology specification to the specific SKU that fits a given engine\nmake and model."
   },
   "relationships": {

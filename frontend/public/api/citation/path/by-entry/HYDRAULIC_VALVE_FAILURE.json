@@ -3,18 +3,6 @@
   "path_count": 4,
   "paths": [
     {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_008",
-      "path_type": "A",
-      "entry_node": "HYDRAULIC_VALVE_FAILURE",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_008.json"
-    },
-    {
       "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_009",
       "path_type": "A",
       "entry_node": "HYDRAULIC_VALVE_FAILURE",
@@ -22,7 +10,7 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "FUEL_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_009.json"
     },
@@ -34,7 +22,7 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_010.json"
     },
@@ -46,9 +34,21 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "CABIN_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_011.json"
+    },
+    {
+      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_012",
+      "path_type": "A",
+      "entry_node": "HYDRAULIC_VALVE_FAILURE",
+      "entry_type": "problem",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_012.json"
     }
   ]
 }

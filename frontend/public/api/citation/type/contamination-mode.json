@@ -61,14 +61,14 @@
         "concept": "Diesel Water Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:61e8fb37187a49dfdc3c2d428608a86d33b9fd27b5b0d05482f6e735b94d2c33"
+        "content_hash": "sha256:a69236bff43abe3537e7589cccbc7a2dce39f59d9ffe2ec49c9957096d87fdb5"
       },
       "canonical": {
         "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
         "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
         "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
         "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
-        "related_technologies": "TURBOCORE: Primary coalescing water separation technology; separates free and emulsified water from diesel before injector delivery",
+        "related_technologies": "HYDROCORE: Standard (non-turbine) coalescing water separation technology; separates free and emulsified water from diesel before injector delivery | TURBOCORE: The equivalent water-separation technology for approved Turbine Series FH/FG applications",
         "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
       },
       "relationships": {
@@ -77,6 +77,7 @@
           "ISO_12937"
         ],
         "resolved_by": [
+          "HYDROCORE",
           "TURBOCORE"
         ]
       },

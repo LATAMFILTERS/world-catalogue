@@ -119,61 +119,39 @@
       }
     },
     {
-      "key": "MICROKAPPA",
+      "key": "SYNTRAX",
       "type": "technology",
-      "name": "MICROKAPPA™",
+      "name": "SYNTRAX™",
       "citation_record": {
-        "key": "MICROKAPPA",
+        "key": "SYNTRAX",
         "type": "technology",
-        "name": "MICROKAPPA™",
-        "slug": "microkappa",
+        "name": "SYNTRAX™",
+        "slug": "syntrax",
         "status": "active",
-        "in_unified_data": true,
-        "ud_key": "MICROKAPPA",
-        "tags": [
-          "technology",
-          "active",
-          "cabin",
-          "in-ud",
-          "part-search-node"
-        ],
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
-          "concept": "MICROKAPPA Cabin Air Filtration",
-          "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:1a4f23f5ab7fa87d411113d74b15c0405e709342896f952f4fbdf06b93832c9c"
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
+          "concept": "SYNTRAX Lubrication Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:c97225eb00550ebe6f835f7ff3d4a41aaae47d9f5a1f309a105517d4b16800c6"
         },
         "canonical": {
-          "definition": "MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contaminants) that removes >95% of PM10 and >85% of PM2.5 particulate contamination from operator cab air supply in industrial equipment, protecting occupants from respirable crystalline silica, agricultural dust, diesel particulate matter, and chemical vapors.",
-          "systems": "Operator cab HVAC air supply filtration in agricultural machinery, construction equipment, mining vehicles, railway locomotives, road transport trucks, and municipal refuse vehicles; available with activated carbon stage for chemical vapor co-removal",
-          "failure_impact": "Cab air filtration below ISO 11155 PM10 efficiency in high-dust environments → operator respirable crystalline silica (RCS) exposure above occupational exposure limits (EU OEL: 0.1 mg/m³ RCS as quartz) → silicosis risk with cumulative exposure over multi-year operation | Short-term: diesel particulate matter and agricultural pesticide vapor exposure causing acute respiratory irritation | Operational impact: worker compensation liability, regulatory enforcement under EU Directive 2004/37/EC, and operator absenteeism from occupational respiratory disease.",
-          "related_standards": "ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework",
-          "related_technologies": "SYNTAPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
-          "industrial_role": "MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation."
+          "definition": "SYNTRAX is the ELIMFILTERS lubrication filtration architecture for controlling wear debris and lubricant contamination.",
+          "systems": "Lubrication Protection; approved engine and equipment lubricant filtration applications.",
+          "failure_impact": "Uncontrolled lubricant contamination can accelerate wear of bearings, journals and other lubricated components and can reduce the stability of the protected lubrication system across the service interval.",
+          "related_standards": "Applicable cleanliness and filter-performance standards must be selected for the approved lubricant system and application. The technology name alone does not imply a universal cleanliness code, Beta ratio, service-life extension or certification claim.",
+          "related_technologies": "NANOFORCE protects hydraulic fluid-power systems and must not be represented as an auxiliary or polishing stage of SYNTRAX unless an approved application explicitly establishes that relationship.",
+          "industrial_role": "SYNTRAX provides the lubricant-contamination control layer of ELIMFILTERS Lubrication Protection. Filtration performance and service interval are matched to engine duty, lubricant condition, contaminant load and the requirements of the protected components."
         },
-        "relationships": {
-          "applicable_industries": [
-            "AGRICULTURE",
-            "CONSTRUCTION",
-            "MINING",
-            "RAILWAY",
-            "TRUCKS_FLEETS",
-            "WASTE_MUNICIPAL"
-          ],
-          "related_standards": [
-            "ISO_11155",
-            "DIN_71220"
-          ],
-          "addresses_contamination": [
-            "CABIN_AIR_CONTAMINATION"
-          ]
-        },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
+        "relationships": {},
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
       }
     }
   ],
   "terminal_product_families": [
-    "CABIN_PRIMARY"
+    "LUBE_PRIMARY"
   ]
 }

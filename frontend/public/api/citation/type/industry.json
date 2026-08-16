@@ -392,14 +392,14 @@
         "concept": "Mining Industrial Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:0d14a02d9179e69d34691101db38140f652d7c46ce68f03d3c23ca1939439d14"
+        "content_hash": "sha256:27ab01f3da840cdc8bc5b8da2383a08cc5a8bfbcfa025015590c810304339fcf"
       },
       "canonical": {
         "definition": "Mining operations present EXTREME contamination exposure — silica and hardrock particulate\nconcentrations 50× above ISO 5011 test standards — requiring multi-system filtration\nprotection across air intake, hydraulic, lube oil, and fuel domains for 24/7 asset\nreliability.",
         "systems": "Air Intake, Hydraulic, Lubrication, Fuel Cleanliness; primary equipment: haul trucks,\ndrill rigs, loaders, crushers operating in open-cut and underground environments",
         "failure_impact": "Uncontrolled particle ingestion → engine overhaul interval reduced from 25,000 to\n3,000 hours → unplanned downtime at ~$180,000/hour per machine → cascading supply\nchain disruption | Hydraulic contamination → proportional valve stiction → haul truck\nhydraulic failure → production stoppage",
         "related_standards": "ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic cleanliness\nmulti-pass test | SAE J1539: Air intake contamination classification for diesel engines",
-        "related_technologies": "MACROCORE: Progressive density gradient air intake protection (99.9%–99.98% efficiency) |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
+        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
         "industrial_role": "Mining is the highest-consequence filtration environment — equipment downtime costs\nexceed $180,000/hour and component replacement costs reach $150,000+ per engine\noverhaul. Contamination control is a supply-chain continuity decision, not a\nmaintenance cost decision."
       },
       "relationships": {
