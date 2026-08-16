@@ -111,11 +111,11 @@ function TextFacet({ title, body, emphasize = false }: { title: string; body: st
   );
 }
 
-function ListFacet({ title, items }: { title: string; items: readonly string[] }) {
+function ListFacet({ title, items, showTitle = true }: { title: string; items: readonly string[]; showTitle?: boolean }) {
   return (
     <div style={{ padding: '1.45rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-      <h3 style={subheading}>{title}</h3>
-      <ul style={{ margin: '0.85rem 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: '0.7rem' }}>
+      {showTitle && <h3 style={subheading}>{title}</h3>}
+      <ul style={{ margin: showTitle ? '0.85rem 0 0' : 0, padding: 0, listStyle: 'none', display: 'grid', gap: '0.7rem' }}>
         {items.map((item) => (
           <li key={item} style={{ ...copy, margin: 0, display: 'grid', gridTemplateColumns: '18px 1fr', gap: '0.7rem', alignItems: 'start' }}>
             <span aria-hidden="true" style={{ color: '#FFF12D', lineHeight: 1.8 }}>—</span>
@@ -203,7 +203,7 @@ export default function TechnologyEditorial({ editorial }: { editorial: Editoria
               <div>
                 {primary && primary !== 'faq' ? (() => {
                   const value = editorial[primary];
-                  if ('items' in value) return <ListFacet title={value.title} items={value.items} />;
+                  if ('items' in value) return <ListFacet title={value.title} items={value.items} showTitle={false} />;
                   return <p style={{ ...copy, margin: 0, fontSize: 'clamp(1.08rem,1.55vw,1.22rem)', color: 'rgba(255,255,255,0.91)' }}>{value.copy}</p>;
                 })() : primary === 'faq' ? <FAQFacet editorial={editorial} /> : null}
 
