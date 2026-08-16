@@ -20,10 +20,14 @@ const card: CSSProperties = {
 const cardLabel: CSSProperties = {
   fontFamily: 'var(--font-display)',
   fontWeight: 700,
-  fontSize: '1.05rem',
+  fontSize: 'clamp(0.82rem, 1.1vw, 1.05rem)',
   textTransform: 'uppercase',
-  letterSpacing: '0.01em',
+  letterSpacing: '0.005em',
   margin: 0,
+  whiteSpace: 'nowrap',
+  overflowWrap: 'normal',
+  wordBreak: 'keep-all',
+  hyphens: 'none',
 };
 
 const cardDesc: CSSProperties = {
