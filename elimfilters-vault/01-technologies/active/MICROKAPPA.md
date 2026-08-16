@@ -7,6 +7,9 @@ slug: microkappa
 domain: Cabin Air
 category: Cabin Air Filtration
 system: Air Intake & Airflow Protection
+related_technologies:
+  - "[[MACROCORE]]"
+  - "[[INTEKCORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 

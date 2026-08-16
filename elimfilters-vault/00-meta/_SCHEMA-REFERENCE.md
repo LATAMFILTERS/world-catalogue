@@ -35,11 +35,48 @@ Source of truth for field names, types, and sync status.
 | `applicable_industries` | wikilink[] | YES (min 1) | bidirectional | `applicableIndustries` |
 | `related_standards` | wikilink[] | YES (min 1) | bidirectional | `relatedStandards` |
 | `addresses_contamination` | wikilink[] | YES (min 1) | bidirectional | `addressesContamination` |
+| `related_technologies` | wikilink[] | NO | No | — |
 | `key_metrics` | object | NO | bidirectional | `keyMetrics` |
 | `hero_tagline` | string | NO | vault only | — |
 | `system_headline` | string | NO | vault only | — |
 | `system_paragraphs` | string[] | NO | vault only | — |
 | `ud_key` | string | YES | No | — |
+
+### `related_technologies` governance
+
+`related_technologies` is the ONLY authoritative source for technology-to-technology
+relationships. It is structured (wikilink array of canonical `key` values), not prose.
+It is not synced to Unified Data (Synced to UD: No, same as `tech_status`/`ud_key`) —
+but it is not vault-trapped either. Its propagation chain is: authored in vault
+frontmatter → parsed by `scripts/build-citation-index.js` → represented structurally
+as `entities.{KEY}.relationships.related_technologies` in `CITATION_INDEX.json` →
+intended to propagate into downstream generated publication artifacts (the Citation
+API under `frontend/public/api/citation/**`) in a later regeneration phase.
+
+Rules (enforced by `scripts/validate-related-technologies.mjs`):
+- Every target MUST be a `[[KEY]]` wikilink resolving to another `type: technology`,
+  `tech_status: active` entity's `key` field. Unknown keys fail.
+- Deprecated/retired spellings (see `DEPRECATED_KEYS` in
+  `scripts/validate-related-technologies.mjs` for the authoritative list, and any
+  key in `build-citation-index.js`'s `RETIRED_ENTITY_KEYS`) fail.
+- Self-relations (a technology listing itself) fail.
+- Duplicate targets within one entity's list fail.
+- A relationship MUST NOT be added on the basis of prose similarity, shared `system`,
+  shared `related_standards`, shared `applicable_industries`, or any historical
+  Citation API JSON content — only an explicit, already-stated positive relationship
+  in that entity's own `## AI Retrieval` `RELATED_TECHNOLOGIES` prose qualifies as
+  evidence to populate this field. A negative disambiguation ("X must not be
+  represented as Y") is not evidence FOR a relationship and must not populate this
+  field with Y.
+- SYNTAPORE (`domain: Fuel`) must never appear in `related_technologies` for any
+  Air Intake / Air Dryer / Cabin Air domain technology, and no Air Intake / Air Dryer
+  / Cabin Air technology may appear in SYNTAPORE's own `related_technologies` — this
+  guard is explicit and hardcoded in the validator, not domain-inferred generally.
+
+The free-text `RELATED_TECHNOLOGIES` section inside `## AI Retrieval` remains the
+human-readable narrative and is unchanged by this field; `related_technologies` is
+the machine-checkable structured mirror of whatever positive relationships that
+prose already states.
 
 ## Technology — Deprecated
 

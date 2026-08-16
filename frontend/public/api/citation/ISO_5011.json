@@ -19,14 +19,14 @@
     "concept": "ISO 5011 — Air Filter Performance Test",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:ccae0deba0603bf62bed13302e55d8f305b473d5885319d03e6f8131b9d7f906"
+    "content_hash": "sha256:1ea4393012b7237fcc53e72066a49e497efdedfcea58e409a29367ee19457f9a"
   },
   "canonical": {
     "definition": "ISO 5011 is the standardised laboratory test method for measuring air intake filter\nefficiency (%), flow restriction (kPa), and dust-holding capacity (g) for internal\ncombustion engine applications using ISO 12103-1 A2 fine test dust.",
     "systems": "Air Intake domain; governs: MACROCORE™, SYNTAPORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
     "failure_impact": "When ISO 5011 performance requirements are not met: insufficient particle capture →\nabrasive dust reaches combustion chamber → piston ring wear → cylinder scuffing →\nengine overhaul intervals reduced from 25,000 hours to 3,000–5,000 hours",
     "related_standards": "SAE J1539: Air intake contamination classification — companion standard defining\nacceptable dust concentration targets in intake air",
-    "related_technologies": "MACROCORE: 99.9%–99.98% efficiency at rated test dust | SYNTAPORE: ISO 5011 compliant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe ISO 5011-certified element",
+    "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection | SYNTAPORE: ISO 5011 relevant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe filtration element",
     "industrial_role": "ISO 5011 is the measurement framework that makes air filtration performance auditable.\nWithout ISO 5011 certification, filter performance claims are unverifiable — the test\nmethod defines the minimum evidence standard for responsible filtration specification\nin industrial, mining, and agricultural equipment."
   },
   "relationships": {

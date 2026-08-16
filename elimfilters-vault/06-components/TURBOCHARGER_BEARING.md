@@ -63,7 +63,7 @@ In mining applications, where intake dust concentrations may exceed 10,000 mg/m�
 - [[ISO_5011|ISO 5011 — Air Filter Performance Test]] — governs air intake protection for this component
 
 ### Technologies That Protect This Component
-- [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (air-side particle control)
+- [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (air-side particle control)
 - [[SYNTRAX|SYNTRAX™ — Full-Flow Lube Protection]] (oil-side particle control)
 
 ### Systems
@@ -105,8 +105,7 @@ ISO 5011: Air filter efficiency test — defines protection standard for air-sid
 contamination reaching this component
 
 RELATED_TECHNOLOGIES
-MACROCORE: Intake particle capture preventing air-side contamination (99.9%–99.98%
-efficiency) | SYNTRAX: Full-flow lube oil protection maintaining ISO 4406 16/14/11
+MACROCORE: Intake particle capture preventing air-side contamination | SYNTRAX: Full-flow lube oil protection maintaining ISO 4406 16/14/11
 cleanliness at bearing oil feed
 
 INDUSTRIAL_ROLE

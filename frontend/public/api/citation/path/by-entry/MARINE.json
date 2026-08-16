@@ -1,43 +1,7 @@
 {
   "entry_key": "MARINE",
-  "path_count": 8,
+  "path_count": 9,
   "paths": [
-    {
-      "path_id": "PATH_B_MARINE_044",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MARINE_044.json"
-    },
-    {
-      "path_id": "PATH_B_MARINE_045",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MARINE_045.json"
-    },
-    {
-      "path_id": "PATH_B_MARINE_046",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MARINE_046.json"
-    },
     {
       "path_id": "PATH_B_MARINE_047",
       "path_type": "B",
@@ -46,7 +10,7 @@
       "industry": "MARINE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_PRIMARY"
+        "AIRFILTER_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MARINE_047.json"
     },
@@ -70,7 +34,7 @@
       "industry": "MARINE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MARINE_049.json"
     },
@@ -82,7 +46,7 @@
       "industry": "MARINE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_MARINE_050.json"
     },
@@ -94,9 +58,57 @@
       "industry": "MARINE",
       "valid": true,
       "terminal_product_families": [
-        "CABIN_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_B_MARINE_051.json"
+    },
+    {
+      "path_id": "PATH_B_MARINE_052",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MARINE_052.json"
+    },
+    {
+      "path_id": "PATH_B_MARINE_053",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_TURBINE"
+      ],
+      "href": "/api/citation/path/PATH_B_MARINE_053.json"
+    },
+    {
+      "path_id": "PATH_B_MARINE_054",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MARINE_054.json"
+    },
+    {
+      "path_id": "PATH_B_MARINE_055",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MARINE_055.json"
     }
   ]
 }

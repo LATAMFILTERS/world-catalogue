@@ -9,6 +9,17 @@ const excludedDirs = new Set([
 const excludedFiles = new Set([
   'frontend/tsconfig.tsbuildinfo',
 ]);
+// Legitimate historical/archival directories that are not canonical or
+// deployable source surfaces. scripts/migrations/backups/ is a gitignored-by-
+// design, pre-mutation safety-snapshot directory written by scripts/migrations/
+// run_0XX*.js scripts before any database write (see e.g. run_068's own header
+// comment: "written to scripts/migrations/backups/ (gitignored)") — it holds
+// point-in-time JSON/SQL snapshots of database rows, not source, vault, frontend,
+// generated publication, or canonical registry content. Keep this list narrow:
+// only exact, verified archival paths, never a blanket exclusion.
+const excludedDirPaths = new Set([
+  'scripts/migrations/backups',
+]);
 const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3']);
 
 // Hex keeps retired labels out of current repository text while still allowing
@@ -36,6 +47,7 @@ function walk(dir) {
     const rel = path.relative(root, full).replaceAll('\\', '/');
 
     if (entry.isDirectory()) {
+      if (excludedDirPaths.has(rel)) continue;
       walk(full);
       continue;
     }

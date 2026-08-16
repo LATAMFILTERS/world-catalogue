@@ -9,9 +9,6 @@ uses_technology: "[[HYDROCORE]]"
 uses_tech_display: "HYDROCORE™"
 belongs_to_domain: "[[FUEL]]"
 belongs_to_product_system: "[[FUEL]]"
-meets_standards:
-  - "[[ASTM_D6304]]"
-  - "[[ISO_12937]]"
 performance_rating: ">99% free water separation; >95% emulsified water removal; EN 590 compliant"
 target_industries:
   - "[[AGRICULTURE]]"
@@ -37,7 +34,7 @@ This family covers 102 ELIMFILTERS® SKUs (verified directly against the product
 - Cartridge fuel/water separators for HPCR diesel engines (injector protection)
 - Heavy-duty separators for mining and power generation applications
 
-All elements in this family use HYDROCORE™ coalescing media construction and are compliant with ASTM D6304 (water-in-fuel measurement) and ISO 12937 (water content by Karl Fischer method). A separator built for the approved Turbine Series FH/FG architecture is TURBOCORE™, not HYDROCORE™ -- see the FUEL_TURBINE family.
+All elements in this family use HYDROCORE™ coalescing media construction for diesel fuel water separation. A separator built for the approved Turbine Series FH/FG architecture is TURBOCORE™, not HYDROCORE™ -- see the FUEL_TURBINE family.
 
 The family is the **terminal product node** in the fuel Part Search traversal path for standard (non-turbine) separator applications: a user who presents contamination `DIESEL_WATER`, specifies industry `MARINE` or `AGRICULTURE`, and has no turbine/Racor signal will be directed to SKUs from this family.
 
@@ -50,10 +47,6 @@ The family is the **terminal product node** in the fuel Part Search traversal pa
 
 ### System Context
 - [[FUEL|Fuel Filtration System — Product Line]] (belongs to this system)
-
-### Standards Compliance
-- [[ASTM_D6304|ASTM D6304 — Water Content in Diesel Fuel (Karl Fischer method)]]
-- [[ISO_12937|ISO 12937 — Petroleum Products Water Content Determination]]
 
 ### Target Industries
 - [[AGRICULTURE|Agriculture — Seasonal Fuel Storage and Tank Contamination Risk]]
@@ -92,8 +85,7 @@ CANONICAL KNOWLEDGE BLOCK: Fuel Water Separation Family
 DEFINITION
 Fuel Water Separation — the HYDROCORE™-technology filter element family for standard
 (non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,
-marine, mining, power generation, and commercial transport applications, meeting
-ASTM D6304 and ISO 12937 water content standards.
+marine, mining, power generation, and commercial transport applications.
 
 SYSTEMS
 Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™
@@ -106,8 +98,8 @@ injector tip corrosion and nozzle deposit formation → HPCR fuel system failure
 injector replacement well before its rated service life
 
 RELATED_STANDARDS
-ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |
-ISO 12937: Petroleum products water determination — validates element performance claims
+HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is
+currently approved as a direct canonical relationship for this family.
 
 RELATED_TECHNOLOGIES
 HYDROCORE: Primary element technology (coalescing water separation) for standard

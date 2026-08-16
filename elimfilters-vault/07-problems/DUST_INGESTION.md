@@ -76,7 +76,7 @@ Dust ingestion problems often go undetected until oil analysis reveals elevated 
 - [[AGRICULTURE|Agriculture — Crop Residue and Fine Dust]]
 
 ### Solution Technologies
-- [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (primary solution)
+- [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (primary solution)
 - [[SYNTAPORE|SYNTAPORE™ — All-Synthetic Intake]] (humid/marine variant)
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Housing]] (housing seal integrity)
 
@@ -131,7 +131,7 @@ ISO 5011: Air filter efficiency and dust-holding capacity test |
 SAE J1539: Air intake contamination classification defining acceptable limits
 
 RELATED_TECHNOLOGIES
-MACROCORE: 99.9%–99.98% efficiency PDG air filtration — primary prevention |
+MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |
 INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |
 SYNTAPORE: All-synthetic element for humid environments where cellulose media degrades
 

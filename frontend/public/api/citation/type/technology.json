@@ -1,52 +1,96 @@
 {
   "type": "technology",
-  "count": 5,
+  "count": 10,
   "entities": [
+    {
+      "key": "DRYCORE",
+      "type": "technology",
+      "name": "DRYCORE™",
+      "slug": "drycore",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/drycore/",
+        "concept": "DRYCORE Air Dryer Filtration Technology",
+        "version": "1.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:ff8bb83d4e5625f018fbcfe15dd572b70b2e8415a544b053a3dd8c172bc81ccc"
+      },
+      "canonical": {
+        "definition": "DRYCORE is the ELIMFILTERS air-dryer filtration architecture for moisture control in pneumatic brake systems.",
+        "systems": "Air Intake & Airflow Protection; compressed-air and pneumatic brake-system protection.",
+        "failure_impact": "Inadequate moisture control in compressed-air circuits can allow condensation to affect valves, actuators and other pneumatic components, reducing braking-system reliability.",
+        "related_standards": "Applicable compressed-air and vehicle-system requirements must be selected for the approved application; no universal certification claim is implied by the technology name alone.",
+        "related_technologies": "DRYCORE protects a pneumatic compressed-air pathway and must not be represented as an engine-air or cabin-air filtration substitute.",
+        "industrial_role": "DRYCORE provides the moisture-control layer for pneumatic brake-system air within ELIMFILTERS Air Intake & Airflow Protection. Selection is governed by compressor duty, moisture exposure, airflow, purge behavior, capacity and service interval."
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\DRYCORE.md"
+    },
+    {
+      "key": "HYDROCORE",
+      "type": "technology",
+      "name": "HYDROCORE™",
+      "slug": "hydrocore",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
+        "concept": "HYDROCORE Fuel Water Separation Technology",
+        "version": "1.0",
+        "last_updated": "2026-08-15",
+        "content_hash": "sha256:da013411952f48852f7f70b7b852b165505f9421996d66d9003e3e9295754252"
+      },
+      "canonical": {
+        "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators.",
+        "systems": "Fuel Cleanliness Protection; standard spin-on and cartridge fuel/water separator applications outside the Turbine Series FH/FG architecture.",
+        "failure_impact": "Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
+        "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.",
+        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection -- SYNTAPORE is scoped to plain fuel filtration and does not perform the water-separation function reserved for HYDROCORE. TURBOCORE: Dedicated fuel-separation architecture reserved for approved turbine-style FH and FG applications -- HYDROCORE is reserved for standard (non-turbine) separator housings and must not be represented as a Turbine Series FH/FG technology.",
+        "industrial_role": "HYDROCORE provides the standard (non-turbine) fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
+      },
+      "relationships": {
+        "related_technologies": [
+          "SYNTAPORE",
+          "TURBOCORE"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
+    },
     {
       "key": "INTEKCORE",
       "type": "technology",
-      "name": "INTEKCORE — Zero-Bypass Radial Seal Housing",
+      "name": "INTEKCORE™",
       "slug": "intekcore",
       "status": "active",
-      "in_unified_data": true,
-      "ud_key": "INTEKCORE",
-      "tags": [
-        "technology",
-        "active",
-        "air-intake",
-        "housing",
-        "zero-bypass",
-        "radial-seal",
-        "in-ud"
-      ],
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-center/technologies/intekcore",
-        "concept": "INTEKCORE Zero-Bypass Radial Seal Housing",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:c8d416cc4db856ab8954f9234f97986b01cdab5384a86d0bd318fa418154d770"
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/intekcore/",
+        "concept": "INTEKCORE Air Cleaner Housing and Sealing Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:a2bbdaf4e969ec11738c2f1f27dfc25e4c5e8901510d6abf97005196e7a5e8d4"
       },
       "canonical": {
-        "definition": "INTEKCORE is a zero-bypass radial seal air filter housing technology that eliminates installation-induced and vibration-induced bypass in diesel engine intake systems through a self-centering radial interference seal between filter element end-cap and housing bore, independent of axial clamping force.",
-        "systems": "Diesel engine air intake systems on heavy-duty off-highway equipment in mining, agriculture, construction, and on-highway applications",
-        "failure_impact": "Axial-seal housing bypass under vibration or improper installation → unfiltered air path bypassing filter element → silica and environmental dust ingestion into combustion chamber → piston ring and cylinder bore abrasive wear → compression loss 10–25% | INTEKCORE eliminates this failure mode through radial seal geometry that maintains positive seal under vibration and variable clamping torque.",
-        "related_standards": "ISO 5011: Inlet air cleaning equipment test methodology; INTEKCORE achieves zero bypass under ISO 5011 test conditions confirming element efficiency equals system efficiency",
-        "related_technologies": "MACROCORE: Primary particle capture media deployed within INTEKCORE housing; combined system provides rated efficiency from media and zero bypass from housing | SYNTAPORE: All-synthetic media compatible with INTEKCORE housing for humid-environment installations",
-        "industrial_role": "INTEKCORE closes the gap between rated filter element efficiency (from ISO 5011 media testing) and actual installed system efficiency — in axial-seal designs this gap can represent 10–30% unfiltered air bypass under field vibration conditions, negating the performance of even high-specification filter media."
+        "definition": "INTEKCORE is the ELIMFILTERS air-cleaner housing and sealing architecture for controlled airflow and bypass prevention.",
+        "systems": "Air Intake & Airflow Protection; engine air-cleaner housing and element-retention architecture.",
+        "failure_impact": "Inadequate housing integrity, element fit or seal loading can create an unfiltered-air ingress path that bypasses the intended filtration boundary and exposes protected engine components to airborne contamination.",
+        "related_standards": "ISO 5011 provides relevant air-cleaner performance test methods for approved intake applications; the technology name alone does not imply a universal performance or certification claim.",
+        "related_technologies": "MACROCORE: Engine-air filtration architecture used for primary and secondary intake protection. INTEKCORE governs the housing, retention and sealing boundary; MACROCORE governs the filtration layer. SYNTAPORE is a fuel technology and is not an INTEKCORE air-media variant.",
+        "industrial_role": "INTEKCORE provides the housing and sealing layer of ELIMFILTERS Air Intake & Airflow Protection. Reliable sealing and airflow management support intake-system performance by reducing unfiltered-air ingress risk."
       },
       "relationships": {
-        "applicable_industries": [
-          "MINING",
-          "AGRICULTURE",
-          "CONSTRUCTION",
-          "RAILWAY",
-          "TRUCKS_FLEETS"
-        ],
         "related_standards": [
           "ISO_5011"
         ],
-        "addresses_contamination": [
-          "PARTICLE_WEAR"
+        "related_technologies": [
+          "MACROCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\INTEKCORE.md"
@@ -57,51 +101,30 @@
       "name": "MACROCORE™",
       "slug": "macrocore",
       "status": "active",
-      "in_unified_data": true,
-      "ud_key": "MACROCORE",
-      "tags": [
-        "technology",
-        "active",
-        "air-intake",
-        "in-ud",
-        "part-search-node"
-      ],
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/technologies/macrocore",
-        "concept": "MACROCORE™ Air Intake Filtration Technology",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:280fe1399efea77f1c4a87e184928660f565a803270801b03319723bda392759"
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
+        "concept": "MACROCORE Engine Air Filtration Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:42f42ede3a47c788a446fc6a07fc5f5d3f1fa9219ef3cbc562e5bfb0dd082697"
       },
       "canonical": {
-        "definition": "Progressive Density Gradient (PDG) multi-layer air intake filtration system achieving\n99.9%–99.98% particle interception efficiency under ISO 5011 certification with a 62 PSI\nanti-collapse structural rating for heavy-duty combustion engines.",
-        "systems": "Air Intake domain; applicable industries: Mining, Agriculture, Construction, Marine,\nAutomotive, Bus & Coach, Railway, Trucks & Fleets, Oil & Gas, Power Generation,\nWaste & Municipal (11 of 12 industry verticals)",
-        "failure_impact": "Without adequate air intake filtration: dust ingestion → abrasive particle wear on piston\nrings, cylinder walls, and turbocharger bearings → compression loss 10–25% → oil\nconsumption increase 15–40% → engine overhaul interval reduced from 15,000–25,000 hours\nto 3,000–5,000 hours",
-        "related_standards": "ISO 5011: Standardised efficiency, restriction, and dust-holding capacity test for air\nintake filters | SAE J1539: Air intake contamination classification for diesel engines |\nISO 16889: Multi-pass filter test and Beta ratio classification (supporting standard)",
-        "related_technologies": "SYNTAPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
-        "industrial_role": "MACROCORE™ is the primary contamination control mechanism for the air intake path — the\nsingle largest source of abrasive particle ingestion in off-highway diesel engines.\nCorrect air filtration selection and maintenance is the highest-leverage intervention\nfor extending engine overhaul intervals in mining, agriculture, and construction."
+        "definition": "MACROCORE is the ELIMFILTERS engine air filtration architecture for primary and secondary intake protection.",
+        "systems": "Air Intake & Airflow Protection.",
+        "failure_impact": "Inadequate intake contamination control can expose cylinders, piston rings, turbochargers and other protected engine components to airborne particulate contamination.",
+        "related_standards": "ISO 5011: Air-cleaner performance testing relevant to approved engine air-filtration applications.",
+        "related_technologies": "INTEKCORE: Air-cleaner housing and sealing architecture used to preserve the protected intake boundary and support controlled airflow.",
+        "industrial_role": "MACROCORE provides the engine-air filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media configuration, sealing integrity, airflow management and service interval must be matched to the intended intake duty cycle and contamination load."
       },
       "relationships": {
-        "applicable_industries": [
-          "AGRICULTURE",
-          "CONSTRUCTION",
-          "MINING",
-          "MARINE",
-          "AUTOMOTIVE",
-          "BUS_COACH",
-          "RAILWAY",
-          "TRUCKS_FLEETS",
-          "OIL_GAS",
-          "POWER_GENERATION",
-          "WASTE_MUNICIPAL"
-        ],
         "related_standards": [
-          "ISO_5011",
-          "SAE_J1539",
-          "ISO_16889"
+          "ISO_5011"
         ],
-        "addresses_contamination": [
-          "PARTICLE_WEAR"
+        "related_technologies": [
+          "INTEKCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
@@ -112,45 +135,28 @@
       "name": "MICROKAPPA™",
       "slug": "microkappa",
       "status": "active",
-      "in_unified_data": true,
-      "ud_key": "MICROKAPPA",
-      "tags": [
-        "technology",
-        "active",
-        "cabin",
-        "in-ud",
-        "part-search-node"
-      ],
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-center/technologies/microkappa",
-        "concept": "MICROKAPPA Cabin Air Filtration",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:1a4f23f5ab7fa87d411113d74b15c0405e709342896f952f4fbdf06b93832c9c"
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/microkappa/",
+        "concept": "MICROKAPPA Cabin Air Protection Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:4a0e42cb44643a3de65e84621f0d1a1ce3923a783adb97bc13655fd29755d6eb"
       },
       "canonical": {
-        "definition": "MICROKAPPA is a cabin air filtration technology certified to ISO 11155-1 (particulate) and ISO 11155-2 (gaseous contaminants) that removes >95% of PM10 and >85% of PM2.5 particulate contamination from operator cab air supply in industrial equipment, protecting occupants from respirable crystalline silica, agricultural dust, diesel particulate matter, and chemical vapors.",
-        "systems": "Operator cab HVAC air supply filtration in agricultural machinery, construction equipment, mining vehicles, railway locomotives, road transport trucks, and municipal refuse vehicles; available with activated carbon stage for chemical vapor co-removal",
-        "failure_impact": "Cab air filtration below ISO 11155 PM10 efficiency in high-dust environments → operator respirable crystalline silica (RCS) exposure above occupational exposure limits (EU OEL: 0.1 mg/m³ RCS as quartz) → silicosis risk with cumulative exposure over multi-year operation | Short-term: diesel particulate matter and agricultural pesticide vapor exposure causing acute respiratory irritation | Operational impact: worker compensation liability, regulatory enforcement under EU Directive 2004/37/EC, and operator absenteeism from occupational respiratory disease.",
-        "related_standards": "ISO 11155-1: Particulate filtration efficiency test for cabin air filters; MICROKAPPA PM10 (>95%) and PM2.5 (>85%) efficiency rated to this standard | ISO 11155-2: Gaseous contaminant removal test; MICROKAPPA activated carbon option certified to this standard | DIN 71220: German automotive vehicle interior air quality standard; secondary compliance framework",
-        "related_technologies": "SYNTAPORE: Air intake filtration for engine protection — parallel system to MICROKAPPA operator protection, both addressing particulate contamination in vehicle air intake pathways | MACROCORE: Engine air pre-cleaner that reduces gross ambient dust load; indirectly reduces cab pressurisation system contamination burden",
-        "industrial_role": "MICROKAPPA cabin air filtration is the primary engineering control converting operator health protection from a regulatory compliance checkbox into a measurable, certifiable outcome — ISO 11155-1 certification provides documented evidence of PM10/PM2.5 efficiency that satisfies occupational health regulatory requirements in EU and equivalent national frameworks for high-dust industrial equipment operation."
+        "definition": "MICROKAPPA is the ELIMFILTERS cabin-air protection architecture for particulate and selected gaseous-contaminant control.",
+        "systems": "Air Intake & Airflow Protection; operator cabin HVAC filtration.",
+        "failure_impact": "Inadequate cabin-air filtration can increase operator exposure to airborne particulate contamination and can reduce HVAC air-quality performance in demanding operating environments.",
+        "related_standards": "Applicable cabin-air test standards and occupational requirements must be matched to the approved application and filtration configuration; no universal certification or efficiency claim is implied by the technology name alone.",
+        "related_technologies": "MACROCORE: Engine-air filtration architecture for primary and secondary engine intake protection. INTEKCORE: Air-cleaner housing and sealing architecture for the protected engine-intake boundary. These technologies protect different air pathways and must not be represented as cabin-air substitutes.",
+        "industrial_role": "MICROKAPPA provides the operator-environment filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media selection is governed by the operating environment, exposure requirement, airflow demand and HVAC pressure-drop constraints."
       },
       "relationships": {
-        "applicable_industries": [
-          "AGRICULTURE",
-          "CONSTRUCTION",
-          "MINING",
-          "RAILWAY",
-          "TRUCKS_FLEETS",
-          "WASTE_MUNICIPAL"
-        ],
-        "related_standards": [
-          "ISO_11155",
-          "DIN_71220"
-        ],
-        "addresses_contamination": [
-          "CABIN_AIR_CONTAMINATION"
+        "related_technologies": [
+          "MACROCORE",
+          "INTEKCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
@@ -161,112 +167,149 @@
       "name": "NANOFORCE™",
       "slug": "nanoforce",
       "status": "active",
-      "in_unified_data": true,
-      "ud_key": "NANOFORCE",
-      "tags": [
-        "technology",
-        "active",
-        "lube-oil",
-        "hydraulic",
-        "in-ud",
-        "part-search-node"
-      ],
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
-        "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:e92375b2d4b63296ae892c75af0396f2d90aa67e722811e8b56180a227a296dc"
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/nanoforce/",
+        "concept": "NANOFORCE Hydraulic Filtration Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:43bb24050dd038584ac0ff20e0d482bfdb272cd55f45d15bfe01b9dec00b64f0"
       },
       "canonical": {
-        "definition": "NANOFORCE is a sub-micron lube oil and hydraulic fluid filtration technology deployed in kidney-loop or bypass circuit configurations, achieving ISO 4406 cleanliness codes of 15/13/10 or better through Beta(x[c]) ≥ 1000 efficiency at 5 µm absolute — targeting the 1–5 µm particle size range that conventional full-flow filters pass and that is the primary abrasive threat at precision bearing clearances.",
-        "systems": "Engine lube oil kidney-loop circuits, hydraulic fluid bypass circuits, transmission fluid polishing circuits across diesel-powered heavy equipment and industrial power systems",
-        "failure_impact": "Sub-micron particles (1–5 µm) bypass conventional full-flow filters and recirculate in oil → abrasive wear at journal bearing hydrodynamic film interfaces (15–50 µm clearance) → progressive clearance increase → oil film breakdown at load peaks → bearing fatigue and seizure | Operational impact: bearing life at ISO 4406 15/13/10 is 5–8× greater than commodity filtration at 19/17/14; proportional valve failure rate in hydraulics at 15/13/10 is 70–80% lower than at 17/15/12.",
-        "related_standards": "ISO 4406: Three-number cleanliness code; NANOFORCE targets 15/13/10 by removing sub-micron particle counts across ≥4/≥6/≥14 µm thresholds | ISO 16889: Multi-pass Beta ratio test; NANOFORCE rated Beta(x[c]) ≥ 1000 at 5 µm absolute",
-        "related_technologies": "SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | TURBOCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits",
-        "industrial_role": "NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%."
+        "definition": "NANOFORCE is the ELIMFILTERS hydraulic filtration architecture for contamination control in fluid-power systems.",
+        "systems": "Hydraulic Protection; approved hydraulic fluid-power filtration applications.",
+        "failure_impact": "Uncontrolled hydraulic-fluid contamination can accelerate wear, contribute to valve stiction and reduce the precision and reliability of fluid-power components.",
+        "related_standards": "ISO 16889 provides a recognized multi-pass test method for hydraulic filter performance. ISO 4406 provides a recognized fluid-cleanliness coding framework. Application-specific targets and performance values must be established from approved engineering requirements; the technology name alone does not imply a universal Beta ratio or cleanliness code.",
+        "related_technologies": "SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. TURBOCORE is a fuel-separation technology and must not be represented as a hydraulic technology.",
+        "industrial_role": "NANOFORCE provides the hydraulic-fluid contamination-control layer of ELIMFILTERS Hydraulic Protection. Selection is governed by the cleanliness requirement of the most sensitive component together with system flow, pressure, temperature, contaminant load and duty cycle."
       },
       "relationships": {
-        "applicable_industries": [
-          "AGRICULTURE",
-          "AUTOMOTIVE",
-          "BUS_COACH",
-          "CONSTRUCTION",
-          "MARINE",
-          "MINING",
-          "POWER_GENERATION",
-          "OIL_GAS",
-          "RAILWAY",
-          "TRUCKS_FLEETS",
-          "WASTE_MUNICIPAL"
-        ],
         "related_standards": [
-          "ISO_4406",
-          "ISO_16889"
-        ],
-        "addresses_contamination": [
-          "PARTICLE_WEAR",
-          "HYDRAULIC_CONTAMINATION"
+          "ISO_16889",
+          "ISO_4406"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
     },
     {
-      "key": "SYNTRAX",
+      "key": "SYNTAPORE",
       "type": "technology",
-      "name": "SYNTRAX — Full-Flow Lube Protection",
-      "slug": "syntrax",
+      "name": "SYNTAPORE™",
+      "slug": "syntapore",
       "status": "active",
-      "in_unified_data": true,
-      "ud_key": "SYNTRAX",
-      "tags": [
-        "technology",
-        "active",
-        "lube-oil",
-        "full-flow",
-        "iso-4406",
-        "bearing-protection",
-        "in-ud"
-      ],
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
       "citation": {
-        "source_url": "elimfilters.com/knowledge-center/technologies/syntrax",
-        "concept": "SYNTRAX Full-Flow Lube Protection",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:951017803767ebe0fa30e6585498d2392c32466575dc3363e9c4ece640495dce"
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/syntapore/",
+        "concept": "SYNTAPORE Fuel Filtration Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:d4f4f4ce563b6b5728afccaa5a9b01d33485c3d04d55a3fb4f7579cc6f269385"
       },
       "canonical": {
-        "definition": "SYNTRAX is a full-flow lube oil filtration technology that maintains ISO 4406 cleanliness at 16/14/11 in engine and hydraulic lube circuits by combining high-efficiency particulate capture (ISO 16889 Beta ratio rated) with soot agglomerate removal above 2% by weight concentration, preventing both abrasive particle wear and soot-induced oil degradation.",
-        "systems": "Engine lube oil circuits, hydraulic power circuits, transmission fluid systems across diesel-powered on-highway and off-highway equipment",
-        "failure_impact": "Lube oil at ISO 4406 >19/17/14 with soot >2% by weight → abrasive particle micro-cutting at bearing journals (15–50 µm clearance) and piston rings → progressive clearance loss → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours (at 16/14/11) to 3,000–5,000 hours (at 19/17/14+). Overhaul cost: $50,000–$200,000+ per engine rebuild.",
-        "related_standards": "ISO 4406: Three-number cleanliness code; SYNTRAX targets 16/14/11 (≥4/≥6/≥14 µm particle counts per 1 mL) | ISO 16889: Multi-pass Beta ratio test methodology; SYNTRAX efficiency ratings derived from this standard | DIN 51524: Hydraulic fluid specification; SYNTRAX qualified to DIN 51524 fluid compatibility requirements",
-        "related_technologies": "NANOFORCE: Complementary sub-micron polishing filter for additional particle removal below SYNTRAX primary filtration threshold | MACROCORE: Air-side particle prevention technology reducing contamination load entering lube circuit via blow-by",
-        "industrial_role": "SYNTRAX full-flow lube filtration is the single controllable variable with the largest impact on engine bearing lifespan — maintaining ISO 4406 16/14/11 versus commodity performance extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours across all diesel-powered equipment categories."
+        "definition": "SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications.",
+        "systems": "Fuel Cleanliness Protection; approved diesel-fuel filtration applications.",
+        "failure_impact": "Uncontrolled particulate contamination in diesel fuel can increase contamination exposure at pumps, injectors and other precision fuel-system components.",
+        "related_standards": "Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.",
+        "related_technologies": "TURBOCORE: Dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.",
+        "industrial_role": "SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components."
       },
       "relationships": {
-        "applicable_industries": [
-          "AGRICULTURE",
-          "AUTOMOTIVE",
-          "BUS_COACH",
-          "CONSTRUCTION",
-          "MARINE",
-          "MINING",
-          "POWER_GENERATION",
-          "RAILWAY",
-          "TRUCKS_FLEETS",
-          "WASTE_MUNICIPAL",
-          "OIL_GAS"
-        ],
-        "related_standards": [
-          "ISO_4406",
-          "ISO_16889",
-          "DIN_51524"
-        ],
-        "addresses_contamination": [
-          "PARTICLE_WEAR"
+        "related_technologies": [
+          "TURBOCORE",
+          "HYDROCORE"
         ]
       },
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTAPORE.md"
+    },
+    {
+      "key": "SYNTRAX",
+      "type": "technology",
+      "name": "SYNTRAX™",
+      "slug": "syntrax",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
+        "concept": "SYNTRAX Lubrication Filtration Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:c97225eb00550ebe6f835f7ff3d4a41aaae47d9f5a1f309a105517d4b16800c6"
+      },
+      "canonical": {
+        "definition": "SYNTRAX is the ELIMFILTERS lubrication filtration architecture for controlling wear debris and lubricant contamination.",
+        "systems": "Lubrication Protection; approved engine and equipment lubricant filtration applications.",
+        "failure_impact": "Uncontrolled lubricant contamination can accelerate wear of bearings, journals and other lubricated components and can reduce the stability of the protected lubrication system across the service interval.",
+        "related_standards": "Applicable cleanliness and filter-performance standards must be selected for the approved lubricant system and application. The technology name alone does not imply a universal cleanliness code, Beta ratio, service-life extension or certification claim.",
+        "related_technologies": "NANOFORCE protects hydraulic fluid-power systems and must not be represented as an auxiliary or polishing stage of SYNTRAX unless an approved application explicitly establishes that relationship.",
+        "industrial_role": "SYNTRAX provides the lubricant-contamination control layer of ELIMFILTERS Lubrication Protection. Filtration performance and service interval are matched to engine duty, lubricant condition, contaminant load and the requirements of the protected components."
+      },
+      "relationships": {},
       "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+    },
+    {
+      "key": "THERMACORE",
+      "type": "technology",
+      "name": "THERMACORE™",
+      "slug": "thermacore",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/thermacore/",
+        "concept": "THERMACORE Cooling System Protection Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:a02e4f7c20f53cb3cf57c3c6280014b91308ef422a3c4c241d8cf109722c5db7"
+      },
+      "canonical": {
+        "definition": "THERMACORE is the ELIMFILTERS cooling-system protection architecture for coolant cleanliness and component protection.",
+        "systems": "Cooling System Protection; approved engine and equipment coolant-filtration applications.",
+        "failure_impact": "Poor coolant condition or uncontrolled cooling-system contamination can affect passages, seals, heat-transfer surfaces and other protected cooling-system components, reducing thermal-system stability and reliability.",
+        "related_standards": "Applicable coolant, engine and maintenance requirements must be selected for the approved application. The technology name alone does not imply a universal cleanliness code, chemistry specification or certification claim.",
+        "related_technologies": "THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs general fuel filtration and TURBOCORE governs approved turbine-style fuel separation; these technologies protect separate system domains.",
+        "industrial_role": "THERMACORE provides the coolant-cleanliness and component-protection layer of ELIMFILTERS Cooling System Protection. Selection is governed by engine requirements, coolant chemistry, filter capacity, system flow and service interval."
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\THERMACORE.md"
+    },
+    {
+      "key": "TURBOCORE",
+      "type": "technology",
+      "name": "TURBOCORE™",
+      "slug": "turbocore",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
+        "concept": "TURBOCORE Fuel Water Separation Technology",
+        "version": "2.0",
+        "last_updated": "2026-08-14",
+        "content_hash": "sha256:cd57faaaace4313eba17933c57b6137beddc857e02292f006015bed713e71849"
+      },
+      "canonical": {
+        "definition": "TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications.",
+        "systems": "Fuel Cleanliness Protection; approved turbine-style FH and FG fuel-separation applications.",
+        "failure_impact": "Inadequate staged fuel conditioning or separation can increase particulate and water-contamination exposure in protected diesel fuel-system applications.",
+        "related_standards": "Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.",
+        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.",
+        "industrial_role": "TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements."
+      },
+      "relationships": {
+        "related_technologies": [
+          "SYNTAPORE",
+          "HYDROCORE"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
     }
   ]
 }

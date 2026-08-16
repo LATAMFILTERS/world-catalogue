@@ -1,36 +1,17 @@
 {
-  "edge_count": 567,
-  "node_count": 57,
-  "dangling_keys": [
-    "SYNTAPORE",
-    "THERMACORE",
-    "TURBOCORE"
-  ],
+  "edge_count": 562,
+  "node_count": 67,
+  "dangling_keys": [],
   "edges": [
     {
-      "from": "INTEKCORE",
-      "to": "MINING",
-      "relation": "applicable_industries"
+      "from": "HYDROCORE",
+      "to": "SYNTAPORE",
+      "relation": "related_technologies"
     },
     {
-      "from": "INTEKCORE",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "INTEKCORE",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "INTEKCORE",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "INTEKCORE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
+      "from": "HYDROCORE",
+      "to": "TURBOCORE",
+      "relation": "related_technologies"
     },
     {
       "from": "INTEKCORE",
@@ -39,63 +20,8 @@
     },
     {
       "from": "INTEKCORE",
-      "to": "PARTICLE_WEAR",
-      "relation": "addresses_contamination"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "MARINE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "AUTOMOTIVE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "BUS_COACH",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "OIL_GAS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
+      "to": "MACROCORE",
+      "relation": "related_technologies"
     },
     {
       "from": "MACROCORE",
@@ -104,118 +30,23 @@
     },
     {
       "from": "MACROCORE",
-      "to": "SAE_J1539",
-      "relation": "related_standards"
+      "to": "INTEKCORE",
+      "relation": "related_technologies"
     },
     {
-      "from": "MACROCORE",
+      "from": "MICROKAPPA",
+      "to": "MACROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "MICROKAPPA",
+      "to": "INTEKCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "NANOFORCE",
       "to": "ISO_16889",
       "relation": "related_standards"
-    },
-    {
-      "from": "MACROCORE",
-      "to": "PARTICLE_WEAR",
-      "relation": "addresses_contamination"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "ISO_11155",
-      "relation": "related_standards"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "DIN_71220",
-      "relation": "related_standards"
-    },
-    {
-      "from": "MICROKAPPA",
-      "to": "CABIN_AIR_CONTAMINATION",
-      "relation": "addresses_contamination"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "AUTOMOTIVE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "BUS_COACH",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "MARINE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "OIL_GAS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "NANOFORCE",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
     },
     {
       "from": "NANOFORCE",
@@ -223,94 +54,24 @@
       "relation": "related_standards"
     },
     {
-      "from": "NANOFORCE",
-      "to": "ISO_16889",
-      "relation": "related_standards"
+      "from": "SYNTAPORE",
+      "to": "TURBOCORE",
+      "relation": "related_technologies"
     },
     {
-      "from": "NANOFORCE",
-      "to": "PARTICLE_WEAR",
-      "relation": "addresses_contamination"
+      "from": "SYNTAPORE",
+      "to": "HYDROCORE",
+      "relation": "related_technologies"
     },
     {
-      "from": "NANOFORCE",
-      "to": "HYDRAULIC_CONTAMINATION",
-      "relation": "addresses_contamination"
+      "from": "TURBOCORE",
+      "to": "SYNTAPORE",
+      "relation": "related_technologies"
     },
     {
-      "from": "SYNTRAX",
-      "to": "AGRICULTURE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "AUTOMOTIVE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "BUS_COACH",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "CONSTRUCTION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "MARINE",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "MINING",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "POWER_GENERATION",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "RAILWAY",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "TRUCKS_FLEETS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "WASTE_MUNICIPAL",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "OIL_GAS",
-      "relation": "applicable_industries"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "ISO_4406",
-      "relation": "related_standards"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "ISO_16889",
-      "relation": "related_standards"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "DIN_51524",
-      "relation": "related_standards"
-    },
-    {
-      "from": "SYNTRAX",
-      "to": "PARTICLE_WEAR",
-      "relation": "addresses_contamination"
+      "from": "TURBOCORE",
+      "to": "HYDROCORE",
+      "relation": "related_technologies"
     },
     {
       "from": "AGRICULTURE",
@@ -2059,6 +1820,11 @@
     },
     {
       "from": "DIESEL_WATER",
+      "to": "HYDROCORE",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "DIESEL_WATER",
       "to": "TURBOCORE",
       "relation": "resolved_by"
     },
@@ -2593,6 +2359,51 @@
       "relation": "belongs_to_product_system"
     },
     {
+      "from": "AIR_HOUSING",
+      "to": "ISO_5011",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "INTEKCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
       "from": "CABIN_PRIMARY",
       "to": "ISO_11155",
       "relation": "meets_standards"
@@ -2653,14 +2464,74 @@
       "relation": "belongs_to_product_system"
     },
     {
-      "from": "FUEL_PRIMARY",
-      "to": "ASTM_D6304",
-      "relation": "meets_standards"
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
     },
     {
-      "from": "FUEL_PRIMARY",
-      "to": "ISO_12937",
-      "relation": "meets_standards"
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "DRYCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "THERMACORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "COOLING_SYSTEM_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "COOLING_SYSTEM_PROTECTION",
+      "relation": "belongs_to_product_system"
     },
     {
       "from": "FUEL_PRIMARY",
@@ -2694,7 +2565,7 @@
     },
     {
       "from": "FUEL_PRIMARY",
-      "to": "TURBOCORE",
+      "to": "SYNTAPORE",
       "relation": "uses_technology"
     },
     {
@@ -2704,6 +2575,106 @@
     },
     {
       "from": "FUEL_PRIMARY",
+      "to": "FUEL",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "ASTM_D6304",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "ISO_12937",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "TURBOCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "FUEL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "FUEL",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "HYDROCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "FUEL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
       "to": "FUEL",
       "relation": "belongs_to_product_system"
     },

@@ -196,68 +196,46 @@
       }
     },
     {
-      "key": "NANOFORCE",
+      "key": "MACROCORE",
       "type": "technology",
-      "name": "NANOFORCE™",
+      "name": "MACROCORE™",
       "citation_record": {
-        "key": "NANOFORCE",
+        "key": "MACROCORE",
         "type": "technology",
-        "name": "NANOFORCE™",
-        "slug": "nanoforce",
+        "name": "MACROCORE™",
+        "slug": "macrocore",
         "status": "active",
-        "in_unified_data": true,
-        "ud_key": "NANOFORCE",
-        "tags": [
-          "technology",
-          "active",
-          "lube-oil",
-          "hydraulic",
-          "in-ud",
-          "part-search-node"
-        ],
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
-          "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
-          "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:e92375b2d4b63296ae892c75af0396f2d90aa67e722811e8b56180a227a296dc"
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
+          "concept": "MACROCORE Engine Air Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:42f42ede3a47c788a446fc6a07fc5f5d3f1fa9219ef3cbc562e5bfb0dd082697"
         },
         "canonical": {
-          "definition": "NANOFORCE is a sub-micron lube oil and hydraulic fluid filtration technology deployed in kidney-loop or bypass circuit configurations, achieving ISO 4406 cleanliness codes of 15/13/10 or better through Beta(x[c]) ≥ 1000 efficiency at 5 µm absolute — targeting the 1–5 µm particle size range that conventional full-flow filters pass and that is the primary abrasive threat at precision bearing clearances.",
-          "systems": "Engine lube oil kidney-loop circuits, hydraulic fluid bypass circuits, transmission fluid polishing circuits across diesel-powered heavy equipment and industrial power systems",
-          "failure_impact": "Sub-micron particles (1–5 µm) bypass conventional full-flow filters and recirculate in oil → abrasive wear at journal bearing hydrodynamic film interfaces (15–50 µm clearance) → progressive clearance increase → oil film breakdown at load peaks → bearing fatigue and seizure | Operational impact: bearing life at ISO 4406 15/13/10 is 5–8× greater than commodity filtration at 19/17/14; proportional valve failure rate in hydraulics at 15/13/10 is 70–80% lower than at 17/15/12.",
-          "related_standards": "ISO 4406: Three-number cleanliness code; NANOFORCE targets 15/13/10 by removing sub-micron particle counts across ≥4/≥6/≥14 µm thresholds | ISO 16889: Multi-pass Beta ratio test; NANOFORCE rated Beta(x[c]) ≥ 1000 at 5 µm absolute",
-          "related_technologies": "SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | TURBOCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits",
-          "industrial_role": "NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%."
+          "definition": "MACROCORE is the ELIMFILTERS engine air filtration architecture for primary and secondary intake protection.",
+          "systems": "Air Intake & Airflow Protection.",
+          "failure_impact": "Inadequate intake contamination control can expose cylinders, piston rings, turbochargers and other protected engine components to airborne particulate contamination.",
+          "related_standards": "ISO 5011: Air-cleaner performance testing relevant to approved engine air-filtration applications.",
+          "related_technologies": "INTEKCORE: Air-cleaner housing and sealing architecture used to preserve the protected intake boundary and support controlled airflow.",
+          "industrial_role": "MACROCORE provides the engine-air filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media configuration, sealing integrity, airflow management and service interval must be matched to the intended intake duty cycle and contamination load."
         },
         "relationships": {
-          "applicable_industries": [
-            "AGRICULTURE",
-            "AUTOMOTIVE",
-            "BUS_COACH",
-            "CONSTRUCTION",
-            "MARINE",
-            "MINING",
-            "POWER_GENERATION",
-            "OIL_GAS",
-            "RAILWAY",
-            "TRUCKS_FLEETS",
-            "WASTE_MUNICIPAL"
-          ],
           "related_standards": [
-            "ISO_4406",
-            "ISO_16889"
+            "ISO_5011"
           ],
-          "addresses_contamination": [
-            "PARTICLE_WEAR",
-            "HYDRAULIC_CONTAMINATION"
+          "related_technologies": [
+            "INTEKCORE"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
       }
     }
   ],
   "terminal_product_families": [
-    "HYDRAULIC_PRIMARY"
+    "AIRFILTER_PRIMARY"
   ]
 }

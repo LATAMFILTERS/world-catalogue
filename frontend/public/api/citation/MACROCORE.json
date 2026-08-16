@@ -25,9 +25,12 @@
   "relationships": {
     "related_standards": [
       "ISO_5011"
+    ],
+    "related_technologies": [
+      "INTEKCORE"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/MACROCORE.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md",
   "_links": {
     "self": "/api/citation/MACROCORE.json",
     "type_index": "/api/citation/type/technology.json",
@@ -36,6 +39,11 @@
         "key": "ISO_5011",
         "relation": "related_standards",
         "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "INTEKCORE",
+        "relation": "related_technologies",
+        "href": "/api/citation/INTEKCORE.json"
       }
     ]
   }
