@@ -351,7 +351,7 @@ export default function Home() {
           visibility: 'hidden',
         }}>
           <p>
-            ELIMFILTERS® is Kleo Technology LLC's global industrial filtration brand. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
+            ELIMFILTERS® is Kleo Technology LLC's global industrial filtration brand. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications.
           </p>
         </div>
 
@@ -397,7 +397,7 @@ export default function Home() {
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
-                  {t('home.problemIntro', '80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
+                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
@@ -420,7 +420,7 @@ export default function Home() {
                 <motion.div className="problem-badge" initial={{ opacity: 0, scale: 0.75 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   style={{ position: 'absolute', bottom: -20, right: -20, background: '#FFF12D', color: '#000', padding: '1.5rem', borderRadius: '2px', maxWidth: '180px', boxShadow: '0 8px 40px rgba(255,241,45,0.35)' }}>
                   <p style={{ fontSize: '1.75rem', fontWeight: 900, lineHeight: 1, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeNum', '80%')}</p>
-                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeDesc', 'Of premature failures are caused by contamination.')}</p>
+                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeDesc', 'Of premature hydraulic component failures are caused by contamination.')}</p>
                 </motion.div>
               </motion.div>
             </SpotlightCard>
@@ -437,17 +437,20 @@ export default function Home() {
               viewport={{ once: true, margin: '-80px' }}
             >
 
-              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '2.5rem' }}>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.25rem' }}>
                 One Contamination Event.<br />
-                <span style={{ color: '#FFF12D' }}>$62,000 In Losses.</span>
+                <span style={{ color: '#FFF12D' }}>A Cascade Of Losses.</span>
               </h2>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, maxWidth: '760px', marginBottom: '2.5rem' }}>
+                A single contamination failure rarely stays contained. It escalates from a damaged component to a full assembly replacement, to fluid and system recertification, to unplanned downtime that stalls the whole operation — costs that compound far beyond the part that failed.
+              </p>
             </motion.div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
-                { label: 'Hydraulic Pump Replacement', cost: '$18,000-$32,000', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
-                { label: 'System Flush + Fluid', cost: '$4,000-$6,000', icon: '06', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
-                { label: 'Unplanned Downtime (5-8 days)', cost: '$40,000-$80,000', icon: '07', desc: 'Lost production on a 50-ton excavator: $5,000-$10,000/day. 5-8 days of downtime compounds cost rapidly.' },
+                { label: 'Component Damage', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals, often requiring full assembly replacement rather than a simple part swap.' },
+                { label: 'System Recovery', icon: '06', desc: 'Contaminated fluid must be fully purged. Lines flushed, fluid replaced, system recertified before the equipment can safely return to service.' },
+                { label: 'Unplanned Downtime', icon: '07', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor — the cost that compounds the fastest.' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -458,8 +461,7 @@ export default function Home() {
                   style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.08)', padding: '2rem', borderRadius: '2px' }}
                 >
                   <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)', marginBottom: '0.4rem' }}>{item.label}</p>
-                  <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: '#f87171', marginBottom: '0.75rem' }}>{item.cost}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)', marginBottom: '0.6rem' }}>{item.label}</p>
                   <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
                 </motion.div>
               ))}
@@ -470,18 +472,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true, margin: '-60px' }}
-              style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
+              style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px' }}
             >
-              <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost — 4x NANOFORCE™ Hydraulic Filters</p>
-                <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, textAlign: 'left' }}>
-                  4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
-                  <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
-                </p>
-              </div>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem', textTransform: 'uppercase' }}>Prevention vs. Failure</p>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, maxWidth: '760px' }}>
+                Scheduled filter replacement is a routine maintenance line item. A contamination-driven failure is not.
+                <br />
+                <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
+              </p>
             </motion.div>
           </div>
         </section>

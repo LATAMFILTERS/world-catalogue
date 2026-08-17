@@ -164,9 +164,9 @@
     "problemTag": "// DIAGNOSTIC DES RISQUES OPÉRATIONNELS",
     "problemH1": "CE QUE VOUS NE VOYEZ PAS",
     "problemH2": "ARRÊTE VOTRE OPÉRATION.",
-    "problemIntro": "80 % des pannes prématurées des équipements sont causées par la contamination. Une filtration inefficace permet à des particules invisibles d'agir comme du papier de verre à l'intérieur des composants critiques — surfaces de paliers, orifices d'injecteurs, tiroirs hydrauliques.",
+    "problemIntro": "Jusqu'à 80 % des pannes prématurées des composants hydrauliques sont causées par la contamination. Une filtration inefficace permet à des particules invisibles d'agir comme du papier de verre à l'intérieur des composants critiques — surfaces de paliers, orifices d'injecteurs, tiroirs hydrauliques.",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Des pannes prématurées sont causées par la contamination.",
+    "problemBadgeDesc": "Des pannes prématurées des composants hydrauliques sont causées par la contamination.",
     "failModes": [
       {
         "title": "Érosion des Injecteurs",

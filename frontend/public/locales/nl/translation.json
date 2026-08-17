@@ -164,9 +164,9 @@
     "problemTag": "// OPERATIONELE RISICODIAGNOSE",
     "problemH1": "WAT U NIET KUNT ZIEN",
     "problemH2": "STOPT UW OPERATIE.",
-    "problemIntro": "80% van de vroegtijdige apparatuurstoringen worden veroorzaakt door verontreiniging. Inefficiënte filtratie laat onzichtbare deeltjes werken als schuurpapier binnen kritieke componenten — lagervlakken, injecteuropeningen, hydraulische spoelen.",
+    "problemIntro": "Tot 80% van de vroegtijdige storingen van hydraulische componenten wordt veroorzaakt door verontreiniging. Inefficiënte filtratie laat onzichtbare deeltjes werken als schuurpapier binnen kritieke componenten — lagervlakken, injecteuropeningen, hydraulische spoelen.",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Van voortijdige storingen worden veroorzaakt door verontreiniging.",
+    "problemBadgeDesc": "Van voortijdige storingen van hydraulische componenten wordt veroorzaakt door verontreiniging.",
     "failModes": [
       {
         "title": "Injector-erosie",
