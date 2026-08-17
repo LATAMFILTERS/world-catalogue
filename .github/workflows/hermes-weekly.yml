@@ -45,12 +45,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Writes exclusively to the hermes-state branch, never to main. Only ever
-  # runs on an explicit manual dispatch with promote_baseline=true — the
-  # `github.event.inputs` object does not exist at all on a schedule
-  # trigger, so this job structurally cannot run from the cron triggers,
-  # independent of any Variable, default, or code path inside the scripts it
-  # calls.
   promote-baseline:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
     runs-on: ubuntu-latest
@@ -61,20 +55,16 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Generate a fresh baseline preview
         env:
           HERMES_BASELINE_MODE: 'true'
           HERMES_COLLECTION_DRY_RUN: 'true'
         run: npm run hermes:collect
-
       - name: Promote preview to hermes-state
         id: promote
         continue-on-error: true
@@ -82,13 +72,8 @@ jobs:
           HERMES_BASELINE_MODE: 'true'
           HERMES_BASELINE_PROMOTE: 'true'
           HERMES_COLLECTION_DRY_RUN: 'true'
-          # Sourced ONLY from the repository secret — never from a
-          # workflow_dispatch input, which would be visible in the run's
-          # trigger UI/logs. If this secret is unset or wrong, promotion
-          # reports NOT_AUTHORIZED and writes nothing to hermes-state.
           HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
         run: npm run hermes:baseline:promote
-
       - name: Upload promotion artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -97,9 +82,6 @@ jobs:
           path: hermes/baselines
           if-no-files-found: warn
 
-  # Same write scope and manual-only trigger guarantee as promote-baseline
-  # above. Shares the hermes-baseline-state concurrency group so a
-  # promotion and a rollback can never race each other either.
   rollback-baseline:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.rollback_backup_name != ''
     runs-on: ubuntu-latest
@@ -110,46 +92,22 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Roll back hermes-state baseline
         env:
           HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
         run: npm run hermes:baseline:rollback -- "${{ github.event.inputs.rollback_backup_name }}"
 
-  # Read-only against hermes-state (fetch + git show only — never a push),
-  # so `contents: read` is sufficient. Waits on both write jobs (even when
-  # skipped, e.g. every scheduled run) so that if this same dispatch also
-  # promoted or rolled back, the baseline this job restores and compares
-  # against is already the up-to-date one.
   weekly-collection:
     needs: [promote-baseline, rollback-baseline]
     if: always()
     runs-on: ubuntu-latest
     env:
-      # Job-level, not step-level: GitHub Actions step `env:` blocks do NOT
-      # carry over to later steps, so this must be set once here rather than
-      # duplicated per step. Every step below — collect, validate, and
-      # report — reads this same value via hermes-core.mjs's
-      # isDryRunActive()/resolveRealCandidatesInputDir(), so they always
-      # agree on whether to read/write hermes/real-candidates-previews (DRY
-      # RUN) or hermes/real-candidates (LIVE). Defaults to the safe/off
-      # value. A human must set this as a repository Variable (not a
-      # secret, it holds no credentials) to move HERMES from reporting-only
-      # to producing real candidates.
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
-      # Defaults to 'true' — every run only bootstraps/refreshes the local,
-      # ephemeral hermes/baselines/source-baseline.json (itself restored
-      # from hermes-state just before this) and produces zero candidates,
-      # until a human sets the HERMES_BASELINE_MODE repository Variable to
-      # 'false' after reviewing a baseline run. See
-      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md.
       HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
     steps:
       - uses: actions/checkout@v4
@@ -185,15 +143,25 @@ jobs:
           name: hermes-baseline-promotion
           path: hermes/baselines
 
-      - name: Collect real sources
+      - name: Collect governed known sources
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
 
-      # A source hash change is only a signal. Groq Compound must resolve it
-      # through live web search / website evidence before review.
-      - name: Resolve detected changes with Groq
+      # The source registry is not the mission boundary. HERMES also performs
+      # a mission-driven live-web sweep across the complete filtration
+      # ecosystem so new organizations/topics can be discovered even when no
+      # endpoint was previously registered.
+      - name: Sweep complete filtration industry with Groq
         if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
-        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:sweep
+
+      # A known-source hash change is only a signal. Groq must resolve it into
+      # concrete evidence before it is eligible for Victor's review.
+      - name: Resolve detected source changes with Groq
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
@@ -216,8 +184,6 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
           HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
-          # Defaults to off. A human must set the HERMES_EMAIL_LIVE
-          # repository Variable to 'true' to actually send mail.
           HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
         run: npm run hermes:email:real
 
@@ -232,5 +198,6 @@ jobs:
             hermes/reports
             hermes/source-cache
             hermes/baselines
+            hermes/industry-sweep
             elimfilters-vault/94-sync-log
           if-no-files-found: warn
