@@ -8,19 +8,11 @@ name: HERMES Weekly Intelligence Collection
 # actual current America/Chicago local hour and skips the rest of the job
 # unless it is really 08:xx local time, so only one of the two scheduled
 # firings ever does real work. Manual workflow_dispatch runs always proceed
-# regardless of local time. Known limitation: in the single week where the
-# US DST transition itself happens, the two triggers can both land outside
-# 08:xx local (or, rarely, both land inside it) — see hermes/PHASE5-LITE.md.
+# regardless of local time.
 #
-# Durable state: GitHub Actions runners are ephemeral — nothing written only
-# to the runner's filesystem survives past the job. The governed source
-# baseline (hermes/baselines/source-baseline.json when checked out locally)
-# is therefore never the durable copy; the durable copy lives on the
-# dedicated `hermes-state` branch (state/source-baseline.json,
-# state/backups/*, state/promotion-audit.json), read and written only via
-# scripts/hermes/git-state-branch.mjs plumbing that never touches this
-# workflow's checkout of `main`. See hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md
-# section H.
+# Durable state: GitHub Actions runners are ephemeral. The governed source
+# baseline lives on the dedicated `hermes-state` branch and is restored for
+# each weekly run before source collection.
 on:
   schedule:
     - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT (UTC-5)
@@ -28,11 +20,11 @@ on:
   workflow_dispatch:
     inputs:
       promote_baseline:
-        description: 'Promote a freshly generated baseline preview onto the hermes-state branch. Manual-only — this input does not exist on the schedule trigger, so a scheduled run can never promote. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret to be set correctly; the token itself is never entered here.'
+        description: 'Promote a freshly generated baseline preview onto the hermes-state branch. Manual-only. Requires HERMES_BASELINE_APPROVAL_TOKEN.'
         type: boolean
         default: false
       rollback_backup_name:
-        description: 'Exact backup filename under state/backups/ on hermes-state to restore (e.g. source-baseline.2026-08-04T04-29-21-909Z.json). Leave blank unless you are rolling back. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret.'
+        description: 'Exact backup filename under state/backups/ on hermes-state to restore. Leave blank unless rolling back.'
         type: string
         required: false
         default: ''
@@ -45,12 +37,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Writes exclusively to the hermes-state branch, never to main. Only ever
-  # runs on an explicit manual dispatch with promote_baseline=true — the
-  # `github.event.inputs` object does not exist at all on a schedule
-  # trigger, so this job structurally cannot run from the cron triggers,
-  # independent of any Variable, default, or code path inside the scripts it
-  # calls.
   promote-baseline:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
     runs-on: ubuntu-latest
@@ -82,10 +68,6 @@ jobs:
           HERMES_BASELINE_MODE: 'true'
           HERMES_BASELINE_PROMOTE: 'true'
           HERMES_COLLECTION_DRY_RUN: 'true'
-          # Sourced ONLY from the repository secret — never from a
-          # workflow_dispatch input, which would be visible in the run's
-          # trigger UI/logs. If this secret is unset or wrong, promotion
-          # reports NOT_AUTHORIZED and writes nothing to hermes-state.
           HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
         run: npm run hermes:baseline:promote
 
@@ -97,9 +79,6 @@ jobs:
           path: hermes/baselines
           if-no-files-found: warn
 
-  # Same write scope and manual-only trigger guarantee as promote-baseline
-  # above. Shares the hermes-baseline-state concurrency group so a
-  # promotion and a rollback can never race each other either.
   rollback-baseline:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.rollback_backup_name != ''
     runs-on: ubuntu-latest
@@ -123,33 +102,12 @@ jobs:
           HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
         run: npm run hermes:baseline:rollback -- "${{ github.event.inputs.rollback_backup_name }}"
 
-  # Read-only against hermes-state (fetch + git show only — never a push),
-  # so `contents: read` is sufficient. Waits on both write jobs (even when
-  # skipped, e.g. every scheduled run) so that if this same dispatch also
-  # promoted or rolled back, the baseline this job restores and compares
-  # against is already the up-to-date one.
   weekly-collection:
     needs: [promote-baseline, rollback-baseline]
     if: always()
     runs-on: ubuntu-latest
     env:
-      # Job-level, not step-level: GitHub Actions step `env:` blocks do NOT
-      # carry over to later steps, so this must be set once here rather than
-      # duplicated per step. Every step below — collect, validate, and
-      # report — reads this same value via hermes-core.mjs's
-      # isDryRunActive()/resolveRealCandidatesInputDir(), so they always
-      # agree on whether to read/write hermes/real-candidates-previews (DRY
-      # RUN) or hermes/real-candidates (LIVE). Defaults to the safe/off
-      # value. A human must set this as a repository Variable (not a
-      # secret, it holds no credentials) to move HERMES from reporting-only
-      # to producing real candidates.
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
-      # Defaults to 'true' — every run only bootstraps/refreshes the local,
-      # ephemeral hermes/baselines/source-baseline.json (itself restored
-      # from hermes-state just before this) and produces zero candidates,
-      # until a human sets the HERMES_BASELINE_MODE repository Variable to
-      # 'false' after reviewing a baseline run. See
-      # hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md.
       HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
     steps:
       - uses: actions/checkout@v4
@@ -189,6 +147,18 @@ jobs:
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
 
+      # Mandatory resolution stage. Collection only detects that something
+      # changed. HERMES follows same-domain news/article/bulletin links and
+      # Groq must convert the signal into a concrete evidence-backed finding
+      # before it can enter Victor's approval queue.
+      - name: Resolve detected changes with Groq
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'llama-3.3-70b-versatile' }}
+        run: npm run hermes:research
+
       - name: Validate real candidates
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:validate:real
@@ -206,8 +176,6 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
           HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
-          # Defaults to off. A human must set the HERMES_EMAIL_LIVE
-          # repository Variable to 'true' to actually send mail.
           HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
         run: npm run hermes:email:real
 
