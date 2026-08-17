@@ -15,7 +15,6 @@ relevant_contamination:
   - "[[DIESEL_WATER]]"
   - "[[HYDRAULIC_CONTAMINATION]]"
 applicable_technologies:
-  - "[[SYNTAPORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
   - "[[TURBOCORE]]"
@@ -46,7 +45,7 @@ Marine is a HIGH contamination exposure industry for diesel-powered vessels and 
 
 Marine diesel engines face a dual contamination challenge at the fuel-water interface: condensation-driven water accumulation in fuel tanks creates conditions for sulphate-reducing bacteria and Hormoconis resinae fungal growth, producing acidic metabolic byproducts and filter-plugging biomass mats that cause fuel starvation events. ASTM D6304 monitoring of water content in marine fuel tanks is a standard fleet management requirement for commercial marine operators; IMO and classification society requirements (Lloyd's, DNV, Bureau Veritas) specify fuel treatment and filtration standards as part of vessel survey. Marine fuel quality is additionally complicated by the use of high-sulphur heavy fuel oil (HFO) on larger vessels, which introduces particulate contamination and wax crystallisation at cold temperatures that require heated fuel filtration systems.
 
-Air intake filtration for marine diesel engines faces the challenge of filtering salt-laden humid air without media degradation from salt crystal deposition or media hydrophilicity. SYNTAPORE synthetic media is specifically formulated for salt-air resistance, maintaining filter efficiency and structural integrity in marine air intake environments where conventional cellulose filter media absorbs moisture, loses structural rigidity, and allows bypass in high-humidity conditions. Hydraulic systems on deck cranes, steering gear, and cargo handling equipment face ingress contamination from sea spray and salt-humid air at cylinder rod seals and reservoir breathers.
+Air intake filtration for marine diesel engines faces the challenge of filtering salt-laden humid air without media degradation from salt crystal deposition or media hydrophilicity, where conventional cellulose filter media absorbs moisture, loses structural rigidity, and allows bypass in high-humidity conditions. Hydraulic systems on deck cranes, steering gear, and cargo handling equipment face ingress contamination from sea spray and salt-humid air at cylinder rod seals and reservoir breathers.
 
 ## Relationships
 
@@ -56,7 +55,6 @@ Air intake filtration for marine diesel engines faces the challenge of filtering
 - [[HYDRAULIC_CONTAMINATION|HYDRAULIC_CONTAMINATION — Deck crane and steering hydraulic systems exposed to sea spray ingress via cylinder rod seals and reservoir breathers]]
 
 ### Applicable Technologies
-- [[SYNTAPORE|SYNTAPORE — Salt-air resistant synthetic media air filtration for marine diesel engine intake systems in high-humidity and salt-spray environments]]
 - [[NANOFORCE|NANOFORCE — Sub-micron lube oil polishing in marine diesel engine kidney-loop circuits; protects bearings in humidity-accelerated contamination environments]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for marine diesel engine crankshaft bearing protection in continuous high-load operating conditions]]
 - [[TURBOCORE|TURBOCORE — Diesel fuel water separation for marine fuel systems; coalescing separation of condensation and sea-spray water ingress from fuel before injector delivery]]
@@ -85,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks
 
 RELATED_TECHNOLOGIES
-SYNTAPORE: Salt-air resistant synthetic media for marine diesel engine intake filtration | TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments
+TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments
 
 INDUSTRIAL_ROLE
 Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and TURBOCORE coalescing filtration the primary engineering controls for fleet reliability.

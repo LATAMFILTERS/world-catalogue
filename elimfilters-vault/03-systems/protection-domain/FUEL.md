@@ -26,7 +26,7 @@ The fuel domain addresses particle and water contamination in diesel fuel circui
 
 ## Primary Technology
 
-SYNTAPORE — HPCR-rated fuel filter elements for sub-4 µm particle removal. TURBOCORE — coalescing water separator elements for free and emulsified water removal.
+SYNTAPORE — diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications. TURBOCORE — coalescing water separator elements for free and emulsified water removal.
 
 ## Failure Mechanism
 
@@ -50,7 +50,7 @@ RELATED_STANDARDS
 ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent
 
 RELATED_TECHNOLOGIES
-SYNTAPORE: HPCR-rated fuel filter elements for sub-4 µm particle removal | TURBOCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments
+SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | TURBOCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments
 
 INDUSTRIAL_ROLE
 Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure.

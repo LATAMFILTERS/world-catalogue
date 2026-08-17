@@ -2495,7 +2495,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Microbial prevention threshold', value: '<50 ppm tank water' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
     commonMistakes: [
@@ -2927,7 +2927,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     faqs: [
       {
         question: 'What are the particle cleanliness requirements for diesel fuel entering a common rail pump?',
-        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Primary fuel filter elements for HPCR applications are rated at β10(c) ≥ 200 or better to achieve this cleanliness from typical supply fuel (ISO 18/16/13 from bulk storage). SYNTAPORE media achieves β7(c) ≥ 200, providing enhanced protection at the critical 7 µm particle size range where pump plunger wear is most sensitive.',
+        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Applicable fuel-filter test methods and application requirements must be selected for the approved system — the technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim. SYNTAPORE particulate media is engineered for the HPCR primary and secondary filtration role.',
       },
       {
         question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
@@ -3284,11 +3284,10 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Selection for Operating Environment',
-        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery. SYNTAPORE™ all-synthetic intake filter media is applied in high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation — marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
+        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery.',
         callout: [
           { label: 'MACROCORE™ efficiency', value: '99.9%–99.98% (ISO 5011) for off-highway engines' },
           { label: 'INTEKCORE™ function', value: 'Zero-bypass housing integrity at sealing interfaces' },
-          { label: 'SYNTAPORE™ application', value: 'High-humidity environments replacing cellulose media' },
         ],
       },
       {
@@ -3303,7 +3302,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Pre-cleaner life extension', value: '3–10× primary element life' },
     ],
     relatedStandards: ['ISO 5011', 'ISO 29463', 'SAE J1539'],
-    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTAPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
     relatedSystems: ['Air Intake Protection'],
     keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration', 'dust ingestion', 'abrasive wear'],
     fieldDiagnostics: {
@@ -4086,7 +4085,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Media Selection for Specific Filtration Domains',
-        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: coalescing-capable synthetic media with β₃(c) ≥ 200 for particles, plus water coalescing layer; ASTM D6304 water removal verification required (SYNTAPORE™ architecture). Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
+        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: particulate-capable synthetic media for primary and secondary particle removal (SYNTAPORE™ architecture); a separate coalescing water-separation stage handles free and emulsified water removal. Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
       },
       {
         heading: 'End-Cap and Sealing Engineering',
@@ -5074,7 +5073,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Breather improvement factor', value: 'β₃ vs β₂₅: ~10³× ingression reduction' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171', 'ISO 16232', 'ISO 23309'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™', 'SYNTAPORE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Air Intake Protection'],
     keywords: [
       'contamination ingression rate', 'cleanliness budget', 'ISO 4406 modelling', 'filter sizing',
@@ -8467,7 +8466,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Biodiesel Max Blend', value: 'B7 (EN 590:2022)' },
     ],
     relatedStandards: ['ISO 23369', 'ISO 12156-1', 'ASTM D6304', 'EN 590', 'ASTM D975', 'ISO 12937'],
-    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['HPCR fuel system', 'common rail injection', 'ISO 23369', 'ISO 12156-1 HFRR', 'fuel filter beta ratio', 'fuel cleanliness', 'water contamination fuel', 'ASTM D6304', 'EN 590', 'ULSD lubricity', 'fuel injection cleanliness', 'diesel fuel specification'],
     fieldDiagnostics: {

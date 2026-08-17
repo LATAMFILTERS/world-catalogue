@@ -67,7 +67,7 @@ export const ENGINEERING_DIAGRAMS: KCDiagram[] = [
     diagramType: 'schematic',
     governingStandards: ['STD-ISO-16889', 'STD-ISO-11171'],
     applicableSystems: ['hydraulic-protection', 'lubrication-protection', 'fuel-cleanliness-protection'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'SYNTAPORE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™'],
     relatedArticles: [
       'beta-ratio',
       'iso-16889',
@@ -282,7 +282,7 @@ export const ENGINEERING_DIAGRAMS: KCDiagram[] = [
     diagramType: 'flow',
     governingStandards: ['STD-ISO-16332', 'STD-ASTM-D6304', 'STD-ISO-12937'],
     applicableSystems: ['fuel-cleanliness-protection'],
-    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'HYDROCORE™'],
     relatedArticles: [
       'diesel-fuel-filtration',
       'hpcr-fuel-system-cleanliness',
@@ -609,7 +609,7 @@ export const ENGINEERING_DIAGRAMS: KCDiagram[] = [
     diagramType: 'flow',
     governingStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
     applicableSystems: ['fuel-cleanliness', 'hydraulic-protection'],
-    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™', 'TURBOCORE™'],
     relatedArticles: [
       'water-contamination-fuel',
       'diesel-fuel-filtration',

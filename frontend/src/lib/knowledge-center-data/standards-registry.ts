@@ -1307,7 +1307,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-MICROBIAL-CONTAMINATION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Confusing free water and dissolved water in Karl Fischer results. ISO 12937 coulometric KF measures total water (dissolved + free + emulsified) — a result of 80 ppm in diesel does not mean free water is absent if phase separation has occurred.',
@@ -1413,7 +1413,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-WATER-SEPARATION-EFFICIENCY', 'TERM-COALESCING', 'TERM-HPCR',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Selecting coulometric Karl Fischer (ASTM D6304) for high-water-content samples (>1000 ppm). Coulometric KF is designed for low water content — volumetric KF (ASTM D1744) is more appropriate for high-water petroleum products.',
@@ -1521,7 +1521,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-INJECTOR-STICTION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™', 'SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™'],
     relatedArticles: ['fuel-water-contamination', 'hpcr-fuel-system-protection', 'iso-16332'],
     commonMistakes: [
       'Specifying water separation efficiency at a single test flow rate as the only performance criterion. ISO 16332 water separation efficiency varies significantly with flow — a separator rated at 95% efficiency at rated flow may drop to 60% at 150% of rated flow.',
@@ -1588,7 +1588,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 19438:2003, Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity, ISO Geneva',
-        relevance: 'Complementary fuel particle filtration test standard applied to SYNTAPORE™ primary fuel filter elements; works alongside ISO 16332 water separation testing to characterize complete three-stage HPCR fuel protection system performance.',
+        relevance: 'Complementary fuel particle filtration test standard for HPCR fuel filter elements; works alongside ISO 16332 water separation testing to characterize complete HPCR fuel protection system performance.',
       },
     ],
   },
@@ -1943,7 +1943,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'HPCR Protection Specification',
-        body: 'For HPCR injection systems operating at 1,600–2,500 bar injection pressure, injector nozzle tip orifices of 100–150 µm diameter, and pump plunger clearances of 1–2 µm, particle contamination above 6 µm at the injector inlet causes abrasive wear of precision surfaces. ISO 19438 Beta ratio qualification at β₆(c) ≥ 200 is the minimum filtration performance required for HPCR injector protection. SYNTAPORE™ fuel filter elements are qualified to ISO 19438 at β₆(c) ≥ 200 for HPCR applications.',
+        body: 'For HPCR injection systems operating at 1,600–2,500 bar injection pressure, injector nozzle tip orifices of 100–150 µm diameter, and pump plunger clearances of 1–2 µm, particle contamination above 6 µm at the injector inlet causes abrasive wear of precision surfaces. ISO 19438 Beta ratio qualification at β₆(c) ≥ 200 is the minimum filtration performance required for HPCR injector protection.',
       },
     ],
     keyParams: [
@@ -1958,7 +1958,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-ABSOLUTE-EFFICIENCY', 'TERM-MULTI-PASS-TEST',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'filter-media-science'],
-    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['TURBOCORE™'],
     relatedArticles: ['hpcr-fuel-system-protection', 'fuel-water-contamination', 'beta-ratio', 'filter-media-engineering'],
     commonMistakes: [
       'Specifying fuel filter performance using ISO 4548 (lube oil filter method) when ISO 19438 is the applicable standard for fuel applications. Different test fluids, viscosities, and contaminant specifications make the tests non-comparable.',
@@ -1972,15 +1972,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What fuel cleanliness class does ISO 19438 target for HPCR injection system protection?',
-        answer: 'HPCR injection systems operating at 1,600–2,500 bar injection pressure require fuel cleanliness at ISO 4406 code 12/10/8 at the injector inlet — meaning fewer than 1,300 particles/mL ≥4 µm(c), fewer than 320 particles/mL ≥6 µm(c), and fewer than 20 particles/mL ≥14 µm(c). Achieving ISO 12/10/8 from typical diesel fuel storage quality of ISO 18/16/13 (one of the dirtiest practical fuel supply conditions) requires filtration with Beta ratio β₄(c) ≥ 4,000 at the 4 µm channel. SYNTAPORE™ elements achieving β₆(c) ≥ 200 under ISO 19438 test conditions reduce fuel cleanliness from ISO 18/16/13 supply quality to ISO 13/11/8 at the injection system inlet — within HPCR injector protection targets.',
+        answer: 'HPCR injection systems operating at 1,600–2,500 bar injection pressure require fuel cleanliness at ISO 4406 code 12/10/8 at the injector inlet — meaning fewer than 1,300 particles/mL ≥4 µm(c), fewer than 320 particles/mL ≥6 µm(c), and fewer than 20 particles/mL ≥14 µm(c). Achieving ISO 12/10/8 from typical diesel fuel storage quality of ISO 18/16/13 (one of the dirtiest practical fuel supply conditions) requires filtration with Beta ratio β₄(c) ≥ 4,000 at the 4 µm channel.',
       },
       {
         question: 'How does ISO 19438 test fluid differ from ISO 16889, and why does this matter?',
         answer: 'ISO 16889 uses ISO VG 15 hydraulic oil as the test fluid; ISO 19438 uses diesel fuel or ISO VG 15 mineral oil depending on the test protocol version. The viscosity difference is significant: diesel fuel at 20°C has a kinematic viscosity of approximately 2–4 cSt versus 15 cSt for ISO VG 15. At lower viscosity, particle transport through filter media is faster (lower drag forces on particles), which generally results in lower particle capture efficiency at the same media construction. Beta ratio results from ISO 19438 (fuel conditions) and ISO 16889 (hydraulic oil conditions) for nominally identical filter media are not numerically equivalent — fuel filter Beta ratios are typically 20–40% lower than equivalent hydraulic filter media tested under ISO 16889 conditions.',
-      },
-      {
-        question: 'What is the minimum ISO 19438 Beta ratio for SYNTAPORE™ HPCR fuel filter elements?',
-        answer: 'SYNTAPORE™ fuel filter elements for HPCR diesel injection protection are qualified at β₆(c) ≥ 200 under ISO 19438 test conditions, corresponding to ≥99.5% efficiency at the ≥6 µm(c) particle size. At typical fuel contamination levels entering the filter (ISO 18/16/13 supply quality), β₆(c) = 200 provides outlet fuel quality of approximately ISO 13/11/8. For stage 3 final polishing in the TURBOCORE™ three-stage fuel system, SYNTAPORE™ β₄(c) ≥ 200 qualification covers the critical 4 µm size range for HPCR injectors with the tightest clearances (≤2 µm spool clearance).',
       },
       {
         question: 'How does ISO 19438 address fuel compatibility with synthetic filter media?',
@@ -1988,7 +1984,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What contaminant retention capacity does ISO 19438 specify for diesel fuel filters?',
-        answer: 'ISO 19438 includes contaminant retention capacity (CRC) measurement alongside Beta ratio efficiency testing. CRC measures the total grams of ISO 12103-1 A2 Fine test dust the fuel filter retains before differential pressure rises to a specified terminal value — directly analogous to dust holding capacity (DHC) in ISO 16889 hydraulic filter testing. CRC provides the basis for fuel filter service interval estimation: dividing CRC by the field fuel contamination ingestion rate (grams per litre × litres per hour fuel consumption) gives predicted service interval in operating hours. For a 12 L diesel engine consuming 30 L/h at rated power and fuel with 1 mg/L particle contamination: particle ingestion rate = 0.03 g/h; a SYNTAPORE™ element with ISO 19438 CRC of 15 g would reach terminal restriction in 500 operating hours.',
+        answer: 'ISO 19438 includes contaminant retention capacity (CRC) measurement alongside Beta ratio efficiency testing. CRC measures the total grams of ISO 12103-1 A2 Fine test dust the fuel filter retains before differential pressure rises to a specified terminal value — directly analogous to dust holding capacity (DHC) in ISO 16889 hydraulic filter testing. CRC provides the basis for fuel filter service interval estimation: dividing CRC by the field fuel contamination ingestion rate (grams per litre × litres per hour fuel consumption) gives predicted service interval in operating hours. For a 12 L diesel engine consuming 30 L/h at rated power and fuel with 1 mg/L particle contamination: particle ingestion rate = 0.03 g/h; a fuel filter element with ISO 19438 CRC of 15 g would reach terminal restriction in 500 operating hours.',
       },
       {
         question: 'How does ISO 19438 particle counting relate to ISO 11171 APC calibration?',
@@ -1996,11 +1992,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Why does ISO 19438 testing matter for aftermarket fuel filter selection?',
-        answer: 'Aftermarket diesel fuel filter selection by dimensional fit alone (thread size, bowl geometry, port dimensions) provides no assurance that the replacement element provides equivalent HPCR injection system protection. An aftermarket element with identical dimensions but without ISO 19438 Beta ratio testing may achieve β₆(c) = 5–20 (efficiency 80–95%) versus the OEM SYNTAPORE™ element\'s β₆(c) ≥ 200 (efficiency ≥99.5%). At the same fuel contamination level, the lower-efficiency aftermarket element allows 10–50× more particles into the injection system per unit volume — causing measurable HPCR injector wear increase detectable within 250–500 operating hours by elevated iron and chromium in fuel from wear debris.',
+        answer: 'Aftermarket diesel fuel filter selection by dimensional fit alone (thread size, bowl geometry, port dimensions) provides no assurance that the replacement element provides equivalent HPCR injection system protection. An aftermarket element with identical dimensions but without ISO 19438 Beta ratio testing may achieve substantially lower particle capture efficiency than a properly qualified OEM element. At the same fuel contamination level, the lower-efficiency aftermarket element allows 10–50× more particles into the injection system per unit volume — causing measurable HPCR injector wear increase detectable within 250–500 operating hours by elevated iron and chromium in fuel from wear debris.',
       },
       {
         question: 'What is the relationship between ISO 19438 and ISO 16332 in a complete diesel fuel protection system?',
-        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: SYNTAPORE™ (ISO 19438 qualified for particles) and TURBOCORE™ (ISO 16332 qualified for water) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
+        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438 qualified) and water separation (ISO 16332 qualified, TURBOCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
       },
       {
         question: 'How does ISO 19438 treat test dust selection for fuel filter qualification?',
@@ -2026,7 +2022,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation) together provide complete HPCR fuel protection qualification for the SYNTAPORE™ + TURBOCORE™ fuel system.',
+        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation, TURBOCORE™) together provide complete HPCR fuel protection qualification.',
       },
     ],
   },

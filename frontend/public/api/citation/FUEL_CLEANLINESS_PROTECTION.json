@@ -19,14 +19,14 @@
     "concept": "Fuel Cleanliness Protection Systems",
     "version": "1.0",
     "last_updated": "2026-07-11",
-    "content_hash": "sha256:c87ec92dc3d4c9980e629d6888e4af59a923ea75772778cf476401b0a89df32b"
+    "content_hash": "sha256:4a1a49ba8f85b307dbdcad66b511669bc961def129b31d774ce21ca8fca2b361"
   },
   "canonical": {
     "definition": "Fuel Cleanliness Protection Systems are the ELIMFILTERS system domain controlling water, particles, microbial contamination, and fuel restriction before diesel fuel reaches pumps, injectors, and high-pressure common-rail components.",
     "systems": "Fuel filters, fuel/water separators, turbine-style separation assemblies, spin-on fuel separators, cartridge fuel filters, bulk fuel protection, and fuel cleanliness programs for industrial diesel assets.",
     "failure_impact": "Diesel water and particulate contamination → injector erosion, needle-seat wear, pump scoring, corrosion, microbial growth, filter plugging, fuel starvation, poor combustion, emergency start failure, and unplanned downtime. In high-pressure common-rail systems, small contamination events can create expensive injector and pump failures.",
     "related_standards": "ASTM D6304: Coulometric Karl Fischer water measurement in petroleum products | ISO 12937: International Karl Fischer method for water in petroleum products and diesel fuel cleanliness programs.",
-    "related_technologies": "TURBOCORE: Water-separating fuel protection technology | SYNTAPORE: Synthetic fuel media supporting particle control and stable performance in fuel cleanliness systems.",
+    "related_technologies": "TURBOCORE: Water-separating fuel protection technology | SYNTAPORE: Diesel-fuel particulate filtration technology for primary, secondary and cartridge fuel-filter applications within fuel cleanliness systems.",
     "industrial_role": "Fuel Cleanliness Protection determines whether stored or delivered diesel becomes a controlled energy source or a contamination pathway into injectors, pumps, generators, vessels, locomotives, trucks, and off-highway equipment."
   },
   "relationships": {

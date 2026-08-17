@@ -328,14 +328,14 @@
         "concept": "Marine Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:d18811e37a68e52edfb46432dc5cb3f2cce2b6f000ceb507cb8057419adc24ef"
+        "content_hash": "sha256:2f62f81ee7723fe6f302979018bc132f0aaf65d3ef02797d3396d565f072c941"
       },
       "canonical": {
         "definition": "Marine is a HIGH contamination exposure industrial category for diesel-powered vessels and offshore equipment, characterised by near-100% ambient relative humidity accelerating fuel tank condensation and lube oil emulsification, salt-air intake environments degrading conventional filter media, and the operational consequence that engine failure at sea is catastrophic — no recovery option and IMO/classification society regulatory compliance requirements for fuel and hydraulic filtration.",
         "systems": "Marine diesel engine air intake, fuel systems, lube oil circuits, hydraulic deck and steering systems across fishing vessels, cargo ships, offshore platforms, and work boats",
         "failure_impact": "Marine humidity → fuel tank water accumulation above 500 ppm → microbial growth (Hormoconis resinae) → filter-plugging biomass formation → fuel starvation → propulsion loss at sea | Salt-air intake without synthetic media → cellulose media moisture absorption → structural collapse → engine bypass → abrasive wear | Operational impact: injector replacement $800–$4,000/unit; 30–40% of marine fuel filter failures from microbial contamination.",
         "related_standards": "ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks",
-        "related_technologies": "SYNTAPORE: Salt-air resistant synthetic media for marine diesel engine intake filtration | TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments",
+        "related_technologies": "TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron lube polishing for bearing life extension in high-humidity marine environments",
         "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and TURBOCORE coalescing filtration the primary engineering controls for fleet reliability."
       },
       "relationships": {
@@ -345,7 +345,6 @@
           "HYDRAULIC_CONTAMINATION"
         ],
         "applicable_technologies": [
-          "SYNTAPORE",
           "NANOFORCE",
           "SYNTRAX",
           "TURBOCORE"
@@ -456,14 +455,14 @@
         "concept": "Oil & Gas Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:1d4967779bf29e78bd4533ee2ac3244fca29246105d69b6fe8ef507678bd5e76"
+        "content_hash": "sha256:9a70780951b1981ffa67e56af39e2ea456ab5eea2c2938d06cbe221fd3e1a086"
       },
       "canonical": {
         "definition": "Oil & Gas is an EXTREME contamination exposure industrial category for diesel and gas-powered drilling, compression, and pipeline equipment operating in remote locations where equipment failure costs $15,000–$50,000/day in downtime and compressor bearing failure costs $200,000+ per event — driven by desert silica dust in air intake, gas condensate in compressor lube oil, H₂S-accelerated oil acidification, and extended service intervals enforced by remote logistics constraints.",
         "systems": "Drilling rig diesel engine air intake and lube circuits, gas compressor lube oil systems, pump jack engine lube circuits, wellhead hydraulic systems, pipeline compressor station filtration",
         "failure_impact": "Drilling rig air intake bypass in desert environment → silica ingestion at several g/hour → piston ring and bore abrasive wear → compression loss and engine seizure | Compressor lube oil above ISO 4406 15/13/10 → bearing abrasive wear at high-cycle compression loads → bearing seizure → $200,000+ rebuild cost + production loss | Remote location → extended repair timeline 5–15× greater than onshore industrial sites.",
         "related_standards": "ISO 5011: Air filtration performance standard for drilling engine and compressor intake systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for drilling and compressor system element selection | ISO 4406: Fluid cleanliness code; compressor lube target 15/13/10; drilling hydraulic target 16/14/11",
-        "related_technologies": "MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service | SYNTAPORE: Synthetic media for gas compressor inlet air systems with condensate resistance",
+        "related_technologies": "MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service",
         "industrial_role": "Oil and gas filtration is uniquely high-stakes because the economic consequence of contamination-driven failure — measured in daily downtime costs and six-figure rebuild costs — dwarfs filter cost by 100–1,000×; maintaining ISO 4406 target codes in compressor lube circuits and high-efficiency air intake protection in drilling environments are the primary engineering controls preventing the unplanned failures that dominate oil and gas operational cost."
       },
       "relationships": {
@@ -475,8 +474,7 @@
         "applicable_technologies": [
           "MACROCORE",
           "NANOFORCE",
-          "SYNTRAX",
-          "SYNTAPORE"
+          "SYNTRAX"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -515,14 +513,14 @@
         "concept": "Power Generation Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:41a128db1487071781389aa33da7f9ac693b0881fea2793f92935869083b6afc"
+        "content_hash": "sha256:6d9cd1d33dc5856b0f14fe542c2b352be4c8c06d11aa0f51479f40b3204fada7"
       },
       "canonical": {
         "definition": "Power generation is a HIGH contamination exposure industrial category for stationary diesel generators, gas turbines, and CHP plants where contamination-driven failure during emergency activation has outage costs of $100,000–$1,000,000+ per event — driven by standby fuel water accumulation causing emergency startup failure, turbine compressor blade erosion from inlet air particles, and lube circuit contamination reducing generator MTBF from 20,000+ hours to 6,000–8,000 hours.",
         "systems": "Diesel generator engine air intake, fuel storage and delivery, lube oil circuits, gas turbine inlet air systems, CHP plant hydraulic control circuits",
         "failure_impact": "Standby generator fuel water accumulation above 500 ppm → filter plugging and microbial biomass → engine fuel starvation at emergency start → outage at the moment backup power is required | Gas turbine compressor blade erosion from inlet particles >5 µm → 1% blade efficiency loss per particle event cycle → 1.5–2% fuel consumption increase per MWh | Diesel generator lube oil at ISO 4406 19/17/14 → MTBF 6,000–8,000 hours vs. 20,000+ hours at 15/13/10.",
         "related_standards": "ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring",
-        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability | SYNTAPORE: Gas turbine inlet air filtration for compressor blade protection",
+        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability",
         "industrial_role": "Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector."
       },
       "relationships": {
@@ -535,8 +533,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE",
-          "SYNTAPORE"
+          "TURBOCORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -575,14 +572,14 @@
         "concept": "Railway Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:9c819685d5595b9599a2f003022fa3bef941944e112d40ac774da40c8a68f0ba"
+        "content_hash": "sha256:cf78d85867f4ac88a2e5239b4950875bd02311875530f1ddb8fa609d2adc8858"
       },
       "canonical": {
         "definition": "Railway is a HIGH contamination exposure industrial category for diesel locomotive and maintenance-of-way equipment, characterised by extended high-load duty cycles generating elevated lube oil soot, ballast silica dust exposure creating operator respiratory risk, and overhaul economics where locomotive engine failure costs $500,000–$2,000,000 per event making contamination control the primary reliability investment.",
         "systems": "Diesel locomotive engine lube and air intake systems, fuel circuits on extended-service-interval railway equipment, hydraulic systems on rail-mounted cranes and MoW equipment, cab air supply systems on ballast maintenance vehicles",
         "failure_impact": "Lube oil particle contamination above ISO 4406 19/17/14 in locomotive engines → bearing journal abrasive wear → crankshaft bearing seizure → unplanned engine overhaul | Particle contamination accounts for 35–45% of unplanned locomotive engine failures | Operational Impact: $500,000–$2,000,000 per engine overhaul event; MoW operator RCS exposure above 0.1 mg/m³ OEL triggers occupational health enforcement and worker compensation liability.",
         "related_standards": "ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection",
-        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTAPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
+        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection",
         "industrial_role": "Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations."
       },
       "relationships": {
@@ -593,7 +590,6 @@
         ],
         "applicable_technologies": [
           "MACROCORE",
-          "SYNTAPORE",
           "SYNTRAX",
           "INTEKCORE",
           "MICROKAPPA"

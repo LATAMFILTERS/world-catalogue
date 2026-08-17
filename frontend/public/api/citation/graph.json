@@ -1,5 +1,5 @@
 {
-  "edge_count": 562,
+  "edge_count": 554,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -530,11 +530,6 @@
     },
     {
       "from": "MARINE",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "MARINE",
       "to": "NANOFORCE",
       "relation": "applicable_technologies"
     },
@@ -735,11 +730,6 @@
     },
     {
       "from": "OIL_GAS",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "OIL_GAS",
       "to": "ISO_5011",
       "relation": "applicable_standards"
     },
@@ -820,11 +810,6 @@
     },
     {
       "from": "POWER_GENERATION",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "POWER_GENERATION",
       "to": "ISO_5011",
       "relation": "applicable_standards"
     },
@@ -886,11 +871,6 @@
     {
       "from": "RAILWAY",
       "to": "MACROCORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "RAILWAY",
-      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1181,11 +1161,6 @@
     {
       "from": "AIR_INTAKE_PROTECTION",
       "to": "INTEKCORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "AIR_INTAKE_PROTECTION",
-      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1700,11 +1675,6 @@
     },
     {
       "from": "ISO_5011",
-      "to": "SYNTAPORE",
-      "relation": "applicable_to_technologies"
-    },
-    {
-      "from": "ISO_5011",
       "to": "INTEKCORE",
       "relation": "applicable_to_technologies"
     },
@@ -1781,11 +1751,6 @@
     {
       "from": "SAE_J1539",
       "to": "MACROCORE",
-      "relation": "applicable_to_technologies"
-    },
-    {
-      "from": "SAE_J1539",
-      "to": "SYNTAPORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -1981,11 +1946,6 @@
     {
       "from": "DUST_INGESTION",
       "to": "MACROCORE",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "DUST_INGESTION",
-      "to": "SYNTAPORE",
       "relation": "resolved_by_technologies"
     },
     {

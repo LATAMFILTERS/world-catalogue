@@ -15,7 +15,7 @@
  *   MACROCORE   → Air Intake              (ISO 5011, SAE J726)
  *   SYNTRAX     → Engine Lube Oil         (ISO 16889, ISO 4406)
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
- *   SYNTAPORE   → Fuel HPCR               (ASTM D6304, ISO 12937)
+ *   SYNTAPORE   → Fuel HPCR               (application-specific — no universal certification standard)
  *   TURBOCORE   → Fuel Water Separation   (ASTM D6304)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
@@ -954,37 +954,30 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     technologyName: 'SYNTAPORE',
     commercialName: 'SYNTAPORE™',
     systemDomain: 'Fuel HPCR',
-    primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 19438'],
+    primaryStandards: [],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'SYNTAPORE is the fuel filtration technology for High-Pressure Common Rail (HPCR) injection systems, implementing absolute-rated synthetic media filtration to achieve sub-4 µm fuel cleanliness targets required by HPCR injector manufacturers. It addresses both particulate contamination and residual water contamination in the secondary fuel filtration stage — between the primary water separator and the high-pressure injection pump inlet.',
+      'SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection. It stages particulate-contamination control before fuel reaches pumps and injectors. It does not perform a water-separation function; applicable fuel-filter test methods and application requirements must be selected for the approved system, and the technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.',
 
     systemContext:
-      'Applies to the secondary fuel filtration position in HPCR diesel fuel systems operating at injection pressures of 1,600–2,500 bar. HPCR injector plunger-barrel clearances of 1–3 µm define the contamination sensitivity: particles above 4 µm cause immediate plunger scoring at the operating pressure. Critical in: Euro IV/V/VI trucks, Tier 4 Final agricultural engines, modern construction equipment with electronic injection management.',
+      'Applies to primary, secondary and cartridge fuel filtration positions in diesel fuel systems, including High-Pressure Common Rail (HPCR) applications operating at injection pressures of 1,600–2,500 bar, where HPCR injector plunger-barrel clearances of 1–3 µm define general contamination sensitivity for the fuel circuit. Critical in: Euro IV/V/VI trucks, Tier 4 Final agricultural engines, modern construction equipment with electronic injection management.',
 
     industrialRole:
-      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTAPORE maintains the sub-4 µm fuel cleanliness code (ISO 4406 equivalent: 12/10/7 or tighter) specified by HPCR injector manufacturers for rated injector service life of 10,000–15,000 hours.',
+      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTAPORE provides the staged particulate-contamination control layer supporting injector service life; efficiency, capacity, flow and pressure-drop performance must be matched to each approved fuel-filtration stage rather than assumed from the technology name.',
 
     protectionMedia: [
       {
-        type: 'Absolute-rated synthetic medium',
+        type: 'Synthetic particulate medium',
         description:
-          'Synthetic microfiber medium with absolute rating at 4 µm, providing consistent sub-micron cleanliness from installation through end of service life.',
-        micronRating: '4 µm absolute',
-        mediaConstruction: 'Synthetic polyester microfiber, wet-laid, absolute-rated',
-      },
-      {
-        type: 'Water-scavenging layer',
-        description:
-          'Integrated coalescing layer captures residual dissolved water below the primary water separator threshold, protecting against moisture-induced injector tip corrosion.',
-        micronRating: 'N/A — water scavenging',
-        mediaConstruction: 'Hydrophilic glass microfiber with water coalescence treatment',
+          'Synthetic microfiber medium providing staged particulate-contamination control for diesel fuel; efficiency and capacity are matched to the approved fuel-filtration stage rather than a universal rating.',
+        micronRating: 'Application-specific — no universal rating',
+        mediaConstruction: 'Synthetic polyester microfiber, wet-laid',
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-INS-001', 'EP-CHE-002'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-INS-001'],
 
     materials: [
       {
@@ -1009,18 +1002,11 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
     construction: [
       {
-        feature: 'Absolute-rated media construction',
+        feature: 'Synthetic media construction',
         description:
-          'Wet-laid synthetic fiber provides consistent absolute rating throughout service life, unlike depth media where effective rating changes as media loads.',
+          'Wet-laid synthetic fiber provides consistent filtration performance throughout service life, matched to the approved fuel-filtration stage rather than a universal rating.',
         engineeringBasis:
-          'HPCR injector damage is caused by individual particle events at the plunger-barrel interface. Nominal ratings that allow particles above the injector clearance to transit represent functional non-compliance with the injector manufacturer cleanliness specification.',
-      },
-      {
-        feature: 'Integrated water scavenging stage',
-        description:
-          'Secondary water scavenging after primary water separator catches residual dissolved water not removed by coalescence.',
-        engineeringBasis:
-          'Primary water separators (TURBOCORE) remove free and emulsified water. Dissolved water at 100–500 ppm passes through primary separation unchanged. SYNTAPORE integrated scavenging removes residual dissolved water phase, protecting injectors from the acid corrosion mechanism.',
+          'HPCR injector damage is caused by individual particle events at the plunger-barrel interface. Filtration performance must be specified for the approved application rather than assumed from the technology name alone.',
       },
     ],
 
@@ -1029,47 +1015,23 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         parameter: 'Rated fuel flow',
         value: 'Engine-specific',
         unit: 'L/h at maximum rated power',
-        standardRef: 'ISO 19438',
       },
       {
         parameter: 'Initial pressure drop (clean)',
-        value: '<0.1',
+        value: 'Application-specific',
         unit: 'bar at rated flow',
-        standardRef: 'ISO 19438',
       },
     ],
 
     captureMechanisms: [
       {
-        contaminantClass: 'Fuel particulate (>4 µm)',
-        mechanism: 'Absolute surface filtration on synthetic microfiber medium',
-        efficiency: 'β4(c) ≥ 200 (absolute rated)',
-        particleSizeRange: '>4 µm',
-      },
-      {
-        contaminantClass: 'Residual dissolved water',
-        mechanism: 'Coalescence in integrated water scavenging layer',
-        efficiency: '>70% dissolved water capture at rated flow',
-        particleSizeRange: 'Molecular / <1 µm',
+        contaminantClass: 'Fuel particulate',
+        mechanism: 'Surface filtration on synthetic microfiber medium',
+        particleSizeRange: 'Application-specific — no universal rating',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Absolute filtration rating',
-        value: '4',
-        unit: 'µm (absolute)',
-        evidenceSource: 'ISO 19438 fuel contamination multi-pass test with AC Ultra Fine test dust',
-        standardRef: 'ISO 19438',
-      },
-      {
-        metric: 'Achievable fuel cleanliness',
-        value: 'ISO 4406 12/10/7',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'Particle count measurement downstream of SYNTAPORE in HPCR fuel circuit',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
@@ -1077,7 +1039,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > 4 µm in HPCR fuel circuit → particle transits injector plunger-barrel clearance at 2,000 bar → micro-scoring of plunger surface → internal leakage increase → injection quantity drift → emissions non-compliance and power loss → injector replacement',
         measuredConsequence:
-          'HPCR injector service life at correct cleanliness (ISO 12/10/7): 10,000–15,000 hours. At uncontrolled cleanliness (ISO 18/16/13): 2,000–4,000 hours. Injector replacement cost: USD 400–2,000 per injector × 6 cylinders.',
+          'HPCR injector service life at correctly specified fuel cleanliness is materially longer than at uncontrolled cleanliness. Injector replacement cost: USD 400–2,000 per injector × 6 cylinders.',
         operationalImpact:
           'Premature injector failure in Tier 4 Final engines triggers emissions system non-compliance warnings, requiring immediate engine shutdown in regulated jurisdictions. Off-service time: 2–5 days. SYNTAPORE fuel cleanliness maintenance prevents this failure mode.',
         preventedByThisTechnology: true,
@@ -1590,7 +1552,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Kit assembly — application-matched elements',
         description:
-          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE or SYNTAPORE (hydraulic/fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
+          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTAPORE (fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
         micronRating: 'Defined by each element technology in the kit',
         mediaConstruction: 'Assembled kit with element compatibility verified against OEM service documentation',
       },

@@ -29,7 +29,6 @@ industry_frequency:
   - "[[AGRICULTURE]]"
 resolved_by_technologies:
   - "[[MACROCORE]]"
-  - "[[SYNTAPORE]]"
   - "[[INTEKCORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -77,7 +76,6 @@ Dust ingestion problems often go undetected until oil analysis reveals elevated 
 
 ### Solution Technologies
 - [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (primary solution)
-- [[SYNTAPORE|SYNTAPORE™ — All-Synthetic Intake]] (humid/marine variant)
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Housing]] (housing seal integrity)
 
 ### Governing Standards
@@ -96,7 +94,7 @@ DUST_INGESTION
     ↓ root_contamination
 PARTICLE_WEAR
     ↓ resolved_by
-MACROCORE (primary), SYNTAPORE (humid/marine), INTEKCORE (housing)
+MACROCORE (primary), INTEKCORE (housing)
     ↓ ProductFamily lookup
 AIRFILTER_PRIMARY
     ↓ Part Search API
@@ -132,8 +130,7 @@ SAE J1539: Air intake contamination classification defining acceptable limits
 
 RELATED_TECHNOLOGIES
 MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |
-INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |
-SYNTAPORE: All-synthetic element for humid environments where cellulose media degrades
+INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals
 
 INDUSTRIAL_ROLE
 Dust ingestion is the highest-frequency, highest-cost contamination event in mining and
