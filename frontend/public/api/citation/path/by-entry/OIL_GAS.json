@@ -1,9 +1,9 @@
 {
   "entry_key": "OIL_GAS",
-  "path_count": 7,
+  "path_count": 6,
   "paths": [
     {
-      "path_id": "PATH_B_OIL_GAS_059",
+      "path_id": "PATH_B_OIL_GAS_048",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_059.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_048.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_060",
-      "path_type": "B",
-      "entry_node": "OIL_GAS",
-      "entry_type": "industry",
-      "industry": "OIL_GAS",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_060.json"
-    },
-    {
-      "path_id": "PATH_B_OIL_GAS_061",
+      "path_id": "PATH_B_OIL_GAS_049",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_061.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_049.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_062",
+      "path_id": "PATH_B_OIL_GAS_050",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -48,10 +36,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_062.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_050.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_063",
+      "path_id": "PATH_B_OIL_GAS_051",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -60,10 +48,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_063.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_051.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_064",
+      "path_id": "PATH_B_OIL_GAS_052",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -72,10 +60,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_064.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_052.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_065",
+      "path_id": "PATH_B_OIL_GAS_053",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -84,7 +72,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_065.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_053.json"
     }
   ]
 }

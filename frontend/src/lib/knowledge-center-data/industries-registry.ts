@@ -225,7 +225,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
     sections: [
       {
         heading: 'Precision Manufacturing Requirements',
-        body: 'CNC machining centers, coordinate measuring machines, and industrial robots use hydraulic servo systems with clearances as small as 2–5 µm. At these tolerances, particles passing through conventional filters can cause servo position errors, hysteresis, and axis hunting. ISO 4406 15/13/10 target requires NANOFORCE™ precision-grade elements (β₄(c) ≥1000) and commissioning flush procedures.',
+        body: 'CNC machining centers, coordinate measuring machines, and industrial robots use hydraulic servo systems with clearances as small as 2–5 µm. At these tolerances, particles passing through conventional filters can cause servo position errors, hysteresis, and axis hunting. A tight ISO 4406 target of this kind requires NANOFORCE™ precision-grade elements rated to the Beta ratio specified for the approved application, along with commissioning flush procedures.',
       },
       {
         heading: 'Compressed Air Quality',

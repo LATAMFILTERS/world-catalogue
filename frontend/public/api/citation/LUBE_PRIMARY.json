@@ -18,14 +18,14 @@
     "concept": "Primary Lube Oil Protection Product Family",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:1931a3380ffd936108d9f401ddaf14fb080b500ad2a54a3b1bd288fa403d7050"
+    "content_hash": "sha256:7e2476130a5bd5beca696d2b467f43ffb4ec94e5f3ddb0eed3c317eef270e146"
   },
   "canonical": {
     "definition": "Primary Lube Oil Protection — the SYNTRAX™-technology lube oil filter element family\nfor full-flow engine and transmission oil filtration, covering approximately 110 SKUs\nselected to the ISO 4406 cleanliness target specified for the approved application across\nmining, agriculture, construction, transport, marine, and power generation applications.",
     "systems": "Lube oil filtration domain; belongs to OIL product-line system; implements SYNTRAX™\nactive synthetic media technology; full-flow primary filtration for engine, transmission,\nand final drive oil circuits",
     "failure_impact": "Incorrect element selection (wrong bypass valve setting, wrong dirt capacity for\nservice interval) or exceeding service interval → media loading causes premature bypass\nvalve opening → contaminated oil bypasses filter → particle concentration rises above\nISO 4406 19/17/14 → abrasive bearing wear accelerates → bearing clearance reduction →\nincreased friction → localized temperature spikes → bearing seizure; bearing life\ncompression from 15,000+ hours to 2,000–3,000 hours",
     "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements rated to the Beta ratio specified for\nthe approved application in full-flow lube circuits | ISO 4406: Particle cleanliness code\nclassification — target selected per the approved application for engine bearing protection",
-    "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals) | NANOFORCE: Supplementary kidney-loop polishing for\nultra-clean lube circuits requiring 15/13/10 cleanliness (separate family)",
+    "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals)",
     "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon failure mode in diesel engine maintenance — particle accumulation in lube oil\ncausing abrasive bearing wear. Correct element selection from this family, matched to\nthe ISO 4406 cleanliness target and service interval specified for the approved\napplication, is a primary factor in engine bearing service life."
   },
   "relationships": {

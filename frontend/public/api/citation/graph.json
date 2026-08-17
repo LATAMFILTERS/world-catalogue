@@ -1,5 +1,5 @@
 {
-  "edge_count": 549,
+  "edge_count": 544,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -181,11 +181,6 @@
     {
       "from": "AUTOMOTIVE",
       "to": "SYNTRAX",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "AUTOMOTIVE",
-      "to": "NANOFORCE",
       "relation": "applicable_technologies"
     },
     {
@@ -1400,11 +1395,6 @@
     },
     {
       "from": "LUBRICATION_PROTECTION",
-      "to": "NANOFORCE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "LUBRICATION_PROTECTION",
       "to": "ISO_16889",
       "relation": "applicable_standards"
     },
@@ -1830,22 +1820,12 @@
     },
     {
       "from": "PARTICLE_WEAR",
-      "to": "NANOFORCE",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "PARTICLE_WEAR",
       "to": "SYNTRAX",
       "relation": "resolved_by"
     },
     {
       "from": "ENGINE_BEARING_JOURNAL",
       "to": "SYNTRAX",
-      "relation": "protected_by_technologies"
-    },
-    {
-      "from": "ENGINE_BEARING_JOURNAL",
-      "to": "NANOFORCE",
       "relation": "protected_by_technologies"
     },
     {
@@ -1981,11 +1961,6 @@
     {
       "from": "ENGINE_OIL_CONTAMINATION",
       "to": "SYNTRAX",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "ENGINE_OIL_CONTAMINATION",
-      "to": "NANOFORCE",
       "relation": "resolved_by_technologies"
     },
     {

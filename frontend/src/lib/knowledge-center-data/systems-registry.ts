@@ -169,7 +169,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     keyMetrics: [
       { label: 'Proportional valve clearance', value: '5–10 µm' },
       { label: 'NFPA T2.14 minimum', value: 'ISO 18/16/13' },
-      { label: 'NANOFORCE™ β₁₀(c)', value: '≥200 (99.5%)' },
+      { label: 'NANOFORCE™ Beta ratio', value: 'Per approved application' },
       { label: 'Equipment availability impact', value: '–15–30% without control' },
     ],
     sections: [

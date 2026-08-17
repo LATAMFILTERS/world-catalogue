@@ -440,13 +440,13 @@
         "concept": "Primary Hydraulic Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:814bb4bf517ae2d356a7a21efd0b18a012a822371ee0be944c4d579a124cf198"
+        "content_hash": "sha256:fe00fbcfdca4d04319e4c5df8f9bca453e46f102e94e5cf3142c9f6aa73d2ec7"
       },
       "canonical": {
-        "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nBeta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness\nacross agriculture, construction, mining, oil/gas, and power generation applications.",
+        "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nper ISO 16889 and selected to the ISO 4406 cleanliness target specified for the approved\napplication across agriculture, construction, mining, oil/gas, and power generation\napplications.",
         "systems": "Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements\nNANOFORCE™ nanofibre-layered glass media technology",
         "failure_impact": "Incorrect element selection (wrong Beta ratio class or wrong collapse pressure rating)\nor extended service interval → particle contamination exceeds ISO 18/16/13 threshold →\nproportional valve spool erosion → valve stiction and position error → hydraulic\nactuator failure; pump bearing wear reduces service life from 10,000 hours to 2,000–3,000\nhours",
-        "related_standards": "ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥\n1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |\nNFPA T2.14: Collapse pressure rating standard for element structural integrity",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements in this family rated to the Beta ratio\nspecified for the approved application | ISO 4406: Cleanliness code classification used\nto define system targets | NFPA T2.14: Collapse pressure rating standard for element\nstructural integrity",
         "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio)",
         "industrial_role": "This product family is the principal contamination control implementation for hydraulic\nparticle contamination — the single largest cause of proportional valve and piston pump\nfailure in mobile construction, mining, and agricultural equipment operating precision\nhydraulic circuits above 200 bar."
       },
@@ -495,14 +495,14 @@
         "concept": "Primary Lube Oil Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:1931a3380ffd936108d9f401ddaf14fb080b500ad2a54a3b1bd288fa403d7050"
+        "content_hash": "sha256:7e2476130a5bd5beca696d2b467f43ffb4ec94e5f3ddb0eed3c317eef270e146"
       },
       "canonical": {
         "definition": "Primary Lube Oil Protection — the SYNTRAX™-technology lube oil filter element family\nfor full-flow engine and transmission oil filtration, covering approximately 110 SKUs\nselected to the ISO 4406 cleanliness target specified for the approved application across\nmining, agriculture, construction, transport, marine, and power generation applications.",
         "systems": "Lube oil filtration domain; belongs to OIL product-line system; implements SYNTRAX™\nactive synthetic media technology; full-flow primary filtration for engine, transmission,\nand final drive oil circuits",
         "failure_impact": "Incorrect element selection (wrong bypass valve setting, wrong dirt capacity for\nservice interval) or exceeding service interval → media loading causes premature bypass\nvalve opening → contaminated oil bypasses filter → particle concentration rises above\nISO 4406 19/17/14 → abrasive bearing wear accelerates → bearing clearance reduction →\nincreased friction → localized temperature spikes → bearing seizure; bearing life\ncompression from 15,000+ hours to 2,000–3,000 hours",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements rated to the Beta ratio specified for\nthe approved application in full-flow lube circuits | ISO 4406: Particle cleanliness code\nclassification — target selected per the approved application for engine bearing protection",
-        "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals) | NANOFORCE: Supplementary kidney-loop polishing for\nultra-clean lube circuits requiring 15/13/10 cleanliness (separate family)",
+        "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals)",
         "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon failure mode in diesel engine maintenance — particle accumulation in lube oil\ncausing abrasive bearing wear. Correct element selection from this family, matched to\nthe ISO 4406 cleanliness target and service interval specified for the approved\napplication, is a primary factor in engine bearing service life."
       },
       "relationships": {

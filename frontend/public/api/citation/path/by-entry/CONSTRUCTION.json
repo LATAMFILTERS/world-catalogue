@@ -1,7 +1,79 @@
 {
   "entry_key": "CONSTRUCTION",
-  "path_count": 9,
+  "path_count": 7,
   "paths": [
+    {
+      "path_id": "PATH_B_CONSTRUCTION_026",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_026.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_027",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_027.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_028",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_028.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_029",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_029.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_030",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_030.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_031",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_031.json"
+    },
     {
       "path_id": "PATH_B_CONSTRUCTION_032",
       "path_type": "B",
@@ -10,105 +82,9 @@
       "industry": "CONSTRUCTION",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_CONSTRUCTION_032.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_033",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_033.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_034",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_034.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_035",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_035.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_036",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_036.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_037",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_037.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_038",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_038.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_039",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_039.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_040",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_040.json"
     }
   ]
 }

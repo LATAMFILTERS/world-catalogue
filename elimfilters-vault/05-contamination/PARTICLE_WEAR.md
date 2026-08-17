@@ -24,7 +24,6 @@ impacts:
   equipment_availability: "−15–25%"
 resolved_by:
   - "[[MACROCORE]]"
-  - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
 related_standards:
   - "[[ISO_16889]]"
@@ -49,7 +48,6 @@ Root contamination ingress is highest in open-cab equipment operating in dust-la
 
 ### Resolved By Technologies
 - [[MACROCORE|MACROCORE — Primary particle capture, air intake and lube circuits, 18 µm absolute]]
-- [[NANOFORCE|NANOFORCE — Sub-micron particle removal, 1 µm efficiency, lube oil polishing]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code]]
 
 ### Governing Standards
@@ -101,7 +99,7 @@ RELATED_STANDARDS
 ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines
 
 RELATED_TECHNOLOGIES
-MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | NANOFORCE: Sub-micron particle removal at 1 µm efficiency for lube oil polishing | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code
+MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code
 
 INDUSTRIAL_ROLE
 Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours.

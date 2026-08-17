@@ -414,7 +414,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'NANOFORCE is the hydraulic system filtration technology implementing high-efficiency depth filtration with nanofiber-enhanced media to achieve ISO 17/15/12 or tighter cleanliness targets in hydraulic circuits. It protects proportional valves, servo valves, and hydraulic pump components that operate with bore clearances of 1–5 µm — clearances where individual particles above 5 µm cause immediate functional damage.',
+      'NANOFORCE is the hydraulic system filtration technology implementing high-efficiency depth filtration with nanofiber-enhanced media, selected to the ISO 4406 cleanliness target specified for the approved hydraulic circuit. It protects proportional valves, servo valves, and hydraulic pump components that operate with bore clearances of 1–5 µm — clearances where individual particles above 5 µm cause immediate functional damage.',
 
     systemContext:
       'Applies to high-pressure hydraulic systems in mobile machinery and industrial equipment: load-sensing proportional valve systems, electrohydraulic servo systems, variable-displacement axial piston pumps, and any hydraulic circuit controlling precision motion. Operating pressure: 150–450 bar. Oil temperature: 40–80°C operating range.',
@@ -427,7 +427,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Nanofiber-enhanced depth medium',
         description:
-          'Glass microfiber substrate with electrospun nanofiber layer achieving absolute filtration rating at 3–10 µm with β ratios >200.',
+          'Glass microfiber substrate with electrospun nanofiber layer, rated to the absolute filtration size and Beta ratio specified for the approved application.',
         micronRating: '3 µm absolute',
         mediaConstruction: 'Borosilicate glass microfiber + polyamide nanofiber overlay',
       },
@@ -517,13 +517,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Metallic particles (>3 µm)',
         mechanism: 'Nanofiber surface capture + depth interception',
-        efficiency: 'β3(c) ≥ 200 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '3–50 µm',
       },
       {
         contaminantClass: 'Silica ingress particles',
         mechanism: 'Depth filtration through glass microfiber matrix',
-        efficiency: 'β10(c) ≥ 1000 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '10–50 µm',
       },
       {
@@ -535,22 +535,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [
-      {
-        metric: 'Beta ratio at 3 µm (β3(c))',
-        value: '≥200',
-        unit: 'dimensionless',
-        evidenceSource: 'ISO 16889 multi-pass test',
-        standardRef: 'ISO 16889',
-      },
-      {
-        metric: 'Achievable system cleanliness',
-        value: 'ISO 17/15/12',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'System cleanliness measurement in mobile hydraulic application with kidney-loop NANOFORCE filtration',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -559,9 +544,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > ISO 4406 target → particles transit proportional valve bore clearance → micro-scoring of spool surface → internal leakage increase → position control error → valve seizure',
         measuredConsequence:
-          'ISO 4406 17/15/12 versus 19/17/14: proportional valve service life 3–8× longer at target cleanliness. Servo valve manufacturers specify rejection of systems operating above ISO 16/14/11.',
+          'Proportional valve service life is sensitive to sustained ISO 4406 cleanliness code; the specific life difference for a given cleanliness shortfall must be established from the approved application and OEM valve specification rather than assumed universally. Servo valve manufacturers specify a maximum acceptable operating cleanliness code for warranty and rated service life.',
         operationalImpact:
-          'Proportional valve replacement at USD 800–5,000 per valve. Multi-valve hydraulic systems experiencing uncontrolled contamination may require 3–5 valve replacements per machine per year. NANOFORCE-maintained cleanliness reduces valve replacement frequency to 0–1 events per machine per planned maintenance cycle.',
+          'Proportional valve replacement cost varies by valve class and application. Multi-valve hydraulic systems experiencing uncontrolled contamination face elevated valve replacement frequency; maintaining the cleanliness target specified for the approved application is a primary lever for reducing that frequency, with the specific reduction confirmed by field data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],

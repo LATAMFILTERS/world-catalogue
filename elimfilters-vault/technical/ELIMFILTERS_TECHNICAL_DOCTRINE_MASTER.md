@@ -1218,9 +1218,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 **Target contamination:** Hard particles (silica, metallic wear, hose cuttings) in hydraulic fluid. Primary threat: particles 5–15 µm causing proportional valve spool wear and stiction.
 
 **Performance targets:**
-- β₁₀(c) ≥ 200 (ISO 16889)
-- Element collapse pressure: ≥3,000 kPa
-- Bypass valve cracking pressure: per circuit specification (typically 210–700 kPa)
+- Beta ratio, collapse pressure rating, and bypass valve cracking pressure are selected per the ISO 16889/NFPA T2.14/ISO 4406 targets specified for the approved application; no universal Beta ratio or cleanliness code is implied by the NANOFORCE™ name alone.
 
 **Applicable standards:** ISO 16889, NFPA T2.14, ISO 4406
 

@@ -38,7 +38,6 @@ industry_frequency:
   - "[[AUTOMOTIVE]]"
 resolved_by_technologies:
   - "[[SYNTRAX]]"
-  - "[[NANOFORCE]]"
 applicable_standards:
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
@@ -91,7 +90,6 @@ ISO 4406 defines particle count per millilitre at three cut sizes (4µm, 6µm, 1
 
 ### Solution Technologies
 - [[SYNTRAX|SYNTRAX™ — Active Synthetic Lube Oil Protection]] (primary: full-flow filtration maintaining the ISO 4406 target specified for the approved application)
-- [[NANOFORCE|NANOFORCE™ — Sub-Micron Particle Removal]] (secondary: bypass kidney-loop polishing for sub-micron particle removal)
 
 ### Governing Standards
 - [[ISO_16889|ISO 16889]] — multi-pass filter efficiency test defining Beta ratio applicable to lube oil full-flow filters
@@ -109,7 +107,7 @@ ENGINE_OIL_CONTAMINATION
     ↓ root_contamination
 PARTICLE_WEAR
     ↓ resolved_by
-SYNTRAX (primary), NANOFORCE (secondary)
+SYNTRAX
     ↓ ProductFamily lookup
 LUBE_PRIMARY (via SYNTRAX)
     ↓ Part Search API
@@ -145,8 +143,7 @@ ISO 4406: Particle cleanliness code classification for lube oil circuits (target
 ISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |
-NANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil
+SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI
 
 INDUSTRIAL_ROLE
 Engine oil contamination is the primary measurable contamination problem in all diesel

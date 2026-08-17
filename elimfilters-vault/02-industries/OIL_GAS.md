@@ -55,7 +55,7 @@ Pump jack engines — small to medium diesel or gas engines cycling 5–20 times
 
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — High-efficiency air intake filtration for drilling rig engines operating in desert, arid, and dusty oilfield environments; high dirt-holding capacity for extended service intervals]]
-- [[NANOFORCE|NANOFORCE — Kidney-loop lube oil polishing for compressor and drilling engine lube circuits between extended remote service intervals]]
+- [[NANOFORCE|NANOFORCE — Kidney-loop hydraulic filtration for wellhead and drilling rig hydraulic circuits between extended remote service intervals]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for pump jack engines and drilling rig engines with high dirt-holding capacity for extended service cycles]]
 
 ### Applicable Standards
@@ -81,7 +81,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance standard for drilling engine and compressor intake systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for drilling and compressor system element selection | ISO 4406: Fluid cleanliness code; compressor lube target 15/13/10; drilling hydraulic target 16/14/11
 
 RELATED_TECHNOLOGIES
-MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop lube polishing maintaining cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service
+MACROCORE: High dirt-capacity air intake filtration for desert drilling environments with extended service intervals | NANOFORCE: Kidney-loop hydraulic filtration maintaining wellhead and drilling rig hydraulic cleanliness between remote quarterly service cycles | SYNTRAX: Full-flow lube protection with high dirt-holding capacity for pump jack extended service
 
 INDUSTRIAL_ROLE
 Oil and gas filtration is uniquely high-stakes because the economic consequence of contamination-driven failure — measured in daily downtime costs and six-figure rebuild costs — dwarfs filter cost by 100–1,000×; maintaining ISO 4406 target codes in compressor lube circuits and high-efficiency air intake protection in drilling environments are the primary engineering controls preventing the unplanned failures that dominate oil and gas operational cost.

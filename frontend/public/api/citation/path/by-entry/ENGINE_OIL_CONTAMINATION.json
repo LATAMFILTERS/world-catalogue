@@ -1,9 +1,9 @@
 {
   "entry_key": "ENGINE_OIL_CONTAMINATION",
-  "path_count": 3,
+  "path_count": 2,
   "paths": [
     {
-      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_004",
+      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_003",
       "path_type": "A",
       "entry_node": "ENGINE_OIL_CONTAMINATION",
       "entry_type": "problem",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_004.json"
+      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_003.json"
     },
     {
-      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_005",
-      "path_type": "A",
-      "entry_node": "ENGINE_OIL_CONTAMINATION",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_005.json"
-    },
-    {
-      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_006",
+      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_004",
       "path_type": "A",
       "entry_node": "ENGINE_OIL_CONTAMINATION",
       "entry_type": "problem",
@@ -36,7 +24,7 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_006.json"
+      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_004.json"
     }
   ]
 }

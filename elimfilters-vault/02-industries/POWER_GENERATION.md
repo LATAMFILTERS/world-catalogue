@@ -56,7 +56,7 @@ Gas turbines and CHP plants in continuous power generation applications face air
 
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — High-efficiency air intake filtration for diesel generator sets in industrial outdoor environments with elevated dust exposure]]
-- [[NANOFORCE|NANOFORCE — Kidney-loop lube oil polishing for generator engine lube circuits targeting 20,000+ hour MTBF through ISO 4406 15/13/10 cleanliness maintenance]]
+- [[NANOFORCE|NANOFORCE — Kidney-loop hydraulic filtration for generator governor control and CHP plant hydraulic circuits, maintaining the ISO 4406 cleanliness target specified for the approved application]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for diesel generator engine crankshaft bearing protection in continuous and standby operating modes]]
 - [[TURBOCORE|TURBOCORE — Fuel water separation for standby diesel generator day tank and main storage fuel polishing; prevents emergency failure from water-contaminated standby fuel]]
 
@@ -83,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop lube polishing to achieve 20,000+ hour MTBF at ISO 4406 15/13/10 | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability
+MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop hydraulic filtration for generator governor control and CHP hydraulic circuits at the ISO 4406 target specified for the approved application | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability
 
 INDUSTRIAL_ROLE
 Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector.

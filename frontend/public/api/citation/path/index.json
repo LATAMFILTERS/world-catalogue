@@ -1,6 +1,6 @@
 {
-  "path_count": 96,
-  "valid_count": 96,
+  "path_count": 80,
+  "valid_count": 80,
   "paths": [
     {
       "path_id": "PATH_A_DUST_INGESTION_001",
@@ -22,21 +22,21 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_A_DUST_INGESTION_002.json"
     },
     {
-      "path_id": "PATH_A_DUST_INGESTION_003",
+      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_003",
       "path_type": "A",
-      "entry_node": "DUST_INGESTION",
+      "entry_node": "ENGINE_OIL_CONTAMINATION",
       "entry_type": "problem",
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_DUST_INGESTION_003.json"
+      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_003.json"
     },
     {
       "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_004",
@@ -46,36 +46,12 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_004.json"
     },
     {
-      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_005",
-      "path_type": "A",
-      "entry_node": "ENGINE_OIL_CONTAMINATION",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_005.json"
-    },
-    {
-      "path_id": "PATH_A_ENGINE_OIL_CONTAMINATION_006",
-      "path_type": "A",
-      "entry_node": "ENGINE_OIL_CONTAMINATION",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_ENGINE_OIL_CONTAMINATION_006.json"
-    },
-    {
-      "path_id": "PATH_A_FUEL_FILTER_PLUGGING_007",
+      "path_id": "PATH_A_FUEL_FILTER_PLUGGING_005",
       "path_type": "A",
       "entry_node": "FUEL_FILTER_PLUGGING",
       "entry_type": "problem",
@@ -84,10 +60,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_007.json"
+      "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_005.json"
     },
     {
-      "path_id": "PATH_A_FUEL_FILTER_PLUGGING_008",
+      "path_id": "PATH_A_FUEL_FILTER_PLUGGING_006",
       "path_type": "A",
       "entry_node": "FUEL_FILTER_PLUGGING",
       "entry_type": "problem",
@@ -96,10 +72,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_008.json"
+      "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_006.json"
     },
     {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_009",
+      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_007",
       "path_type": "A",
       "entry_node": "HYDRAULIC_VALVE_FAILURE",
       "entry_type": "problem",
@@ -108,10 +84,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_009.json"
+      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_007.json"
     },
     {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_010",
+      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_008",
       "path_type": "A",
       "entry_node": "HYDRAULIC_VALVE_FAILURE",
       "entry_type": "problem",
@@ -120,10 +96,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_010.json"
+      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_008.json"
     },
     {
-      "path_id": "PATH_A_OPERATOR_DUST_EXPOSURE_011",
+      "path_id": "PATH_A_OPERATOR_DUST_EXPOSURE_009",
       "path_type": "A",
       "entry_node": "OPERATOR_DUST_EXPOSURE",
       "entry_type": "problem",
@@ -132,7 +108,31 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_OPERATOR_DUST_EXPOSURE_011.json"
+      "href": "/api/citation/path/PATH_A_OPERATOR_DUST_EXPOSURE_009.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_010",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_010.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_011",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_011.json"
     },
     {
       "path_id": "PATH_B_AGRICULTURE_012",
@@ -154,7 +154,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_013.json"
     },
@@ -166,7 +166,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_014.json"
     },
@@ -178,7 +178,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_015.json"
     },
@@ -202,7 +202,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_017.json"
     },
@@ -214,60 +214,12 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_018.json"
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_019",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_019.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_020",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_020.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_021",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_021.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_022",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_022.json"
-    },
-    {
-      "path_id": "PATH_B_AUTOMOTIVE_023",
+      "path_id": "PATH_B_AUTOMOTIVE_019",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -276,22 +228,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_023.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_019.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_024",
-      "path_type": "B",
-      "entry_node": "AUTOMOTIVE",
-      "entry_type": "industry",
-      "industry": "AUTOMOTIVE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_024.json"
-    },
-    {
-      "path_id": "PATH_B_AUTOMOTIVE_025",
+      "path_id": "PATH_B_AUTOMOTIVE_020",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -300,10 +240,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_025.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_020.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_026",
+      "path_id": "PATH_B_AUTOMOTIVE_021",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -312,10 +252,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_026.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_021.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_027",
+      "path_id": "PATH_B_AUTOMOTIVE_022",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -324,10 +264,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_027.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_022.json"
     },
     {
-      "path_id": "PATH_B_BUS_COACH_028",
+      "path_id": "PATH_B_BUS_COACH_023",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -336,22 +276,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_028.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_023.json"
     },
     {
-      "path_id": "PATH_B_BUS_COACH_029",
-      "path_type": "B",
-      "entry_node": "BUS_COACH",
-      "entry_type": "industry",
-      "industry": "BUS_COACH",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_029.json"
-    },
-    {
-      "path_id": "PATH_B_BUS_COACH_030",
+      "path_id": "PATH_B_BUS_COACH_024",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -360,10 +288,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_030.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_024.json"
     },
     {
-      "path_id": "PATH_B_BUS_COACH_031",
+      "path_id": "PATH_B_BUS_COACH_025",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -372,7 +300,79 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_031.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_025.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_026",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_026.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_027",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_027.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_028",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_028.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_029",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_029.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_030",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_030.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_031",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_031.json"
     },
     {
       "path_id": "PATH_B_CONSTRUCTION_032",
@@ -382,108 +382,12 @@
       "industry": "CONSTRUCTION",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_CONSTRUCTION_032.json"
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_033",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_033.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_034",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_034.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_035",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_035.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_036",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_036.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_037",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_037.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_038",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_038.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_039",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_039.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_040",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_040.json"
-    },
-    {
-      "path_id": "PATH_B_MARINE_041",
+      "path_id": "PATH_B_MARINE_033",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -492,22 +396,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_041.json"
+      "href": "/api/citation/path/PATH_B_MARINE_033.json"
     },
     {
-      "path_id": "PATH_B_MARINE_042",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MARINE_042.json"
-    },
-    {
-      "path_id": "PATH_B_MARINE_043",
+      "path_id": "PATH_B_MARINE_034",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -516,10 +408,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_043.json"
+      "href": "/api/citation/path/PATH_B_MARINE_034.json"
     },
     {
-      "path_id": "PATH_B_MARINE_044",
+      "path_id": "PATH_B_MARINE_035",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -528,10 +420,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_044.json"
+      "href": "/api/citation/path/PATH_B_MARINE_035.json"
     },
     {
-      "path_id": "PATH_B_MARINE_045",
+      "path_id": "PATH_B_MARINE_036",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -540,10 +432,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_045.json"
+      "href": "/api/citation/path/PATH_B_MARINE_036.json"
     },
     {
-      "path_id": "PATH_B_MARINE_046",
+      "path_id": "PATH_B_MARINE_037",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -552,10 +444,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_046.json"
+      "href": "/api/citation/path/PATH_B_MARINE_037.json"
     },
     {
-      "path_id": "PATH_B_MARINE_047",
+      "path_id": "PATH_B_MARINE_038",
       "path_type": "B",
       "entry_node": "MARINE",
       "entry_type": "industry",
@@ -564,10 +456,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MARINE_047.json"
+      "href": "/api/citation/path/PATH_B_MARINE_038.json"
     },
     {
-      "path_id": "PATH_B_MINING_048",
+      "path_id": "PATH_B_MINING_039",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -576,22 +468,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_048.json"
+      "href": "/api/citation/path/PATH_B_MINING_039.json"
     },
     {
-      "path_id": "PATH_B_MINING_049",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_049.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_050",
+      "path_id": "PATH_B_MINING_040",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -600,10 +480,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_050.json"
+      "href": "/api/citation/path/PATH_B_MINING_040.json"
     },
     {
-      "path_id": "PATH_B_MINING_051",
+      "path_id": "PATH_B_MINING_041",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -612,22 +492,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_051.json"
+      "href": "/api/citation/path/PATH_B_MINING_041.json"
     },
     {
-      "path_id": "PATH_B_MINING_052",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_052.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_053",
+      "path_id": "PATH_B_MINING_042",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -636,10 +504,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_053.json"
+      "href": "/api/citation/path/PATH_B_MINING_042.json"
     },
     {
-      "path_id": "PATH_B_MINING_054",
+      "path_id": "PATH_B_MINING_043",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -648,10 +516,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_054.json"
+      "href": "/api/citation/path/PATH_B_MINING_043.json"
     },
     {
-      "path_id": "PATH_B_MINING_055",
+      "path_id": "PATH_B_MINING_044",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -660,10 +528,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_055.json"
+      "href": "/api/citation/path/PATH_B_MINING_044.json"
     },
     {
-      "path_id": "PATH_B_MINING_056",
+      "path_id": "PATH_B_MINING_045",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -672,10 +540,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_056.json"
+      "href": "/api/citation/path/PATH_B_MINING_045.json"
     },
     {
-      "path_id": "PATH_B_MINING_057",
+      "path_id": "PATH_B_MINING_046",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -684,10 +552,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_057.json"
+      "href": "/api/citation/path/PATH_B_MINING_046.json"
     },
     {
-      "path_id": "PATH_B_MINING_058",
+      "path_id": "PATH_B_MINING_047",
       "path_type": "B",
       "entry_node": "MINING",
       "entry_type": "industry",
@@ -696,10 +564,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_058.json"
+      "href": "/api/citation/path/PATH_B_MINING_047.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_059",
+      "path_id": "PATH_B_OIL_GAS_048",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -708,22 +576,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_059.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_048.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_060",
-      "path_type": "B",
-      "entry_node": "OIL_GAS",
-      "entry_type": "industry",
-      "industry": "OIL_GAS",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_060.json"
-    },
-    {
-      "path_id": "PATH_B_OIL_GAS_061",
+      "path_id": "PATH_B_OIL_GAS_049",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -732,10 +588,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_061.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_049.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_062",
+      "path_id": "PATH_B_OIL_GAS_050",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -744,10 +600,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_062.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_050.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_063",
+      "path_id": "PATH_B_OIL_GAS_051",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -756,10 +612,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_063.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_051.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_064",
+      "path_id": "PATH_B_OIL_GAS_052",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -768,10 +624,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_064.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_052.json"
     },
     {
-      "path_id": "PATH_B_OIL_GAS_065",
+      "path_id": "PATH_B_OIL_GAS_053",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -780,10 +636,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_OIL_GAS_065.json"
+      "href": "/api/citation/path/PATH_B_OIL_GAS_053.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_066",
+      "path_id": "PATH_B_POWER_GENERATION_054",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -792,22 +648,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_066.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_054.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_067",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_067.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_068",
+      "path_id": "PATH_B_POWER_GENERATION_055",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -816,10 +660,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_068.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_055.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_069",
+      "path_id": "PATH_B_POWER_GENERATION_056",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -828,10 +672,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_069.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_056.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_070",
+      "path_id": "PATH_B_POWER_GENERATION_057",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -840,10 +684,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_070.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_057.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_071",
+      "path_id": "PATH_B_POWER_GENERATION_058",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -852,10 +696,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_071.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_058.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_072",
+      "path_id": "PATH_B_POWER_GENERATION_059",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -864,10 +708,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_072.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_059.json"
     },
     {
-      "path_id": "PATH_B_RAILWAY_073",
+      "path_id": "PATH_B_RAILWAY_060",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -876,22 +720,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_073.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_060.json"
     },
     {
-      "path_id": "PATH_B_RAILWAY_074",
-      "path_type": "B",
-      "entry_node": "RAILWAY",
-      "entry_type": "industry",
-      "industry": "RAILWAY",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_074.json"
-    },
-    {
-      "path_id": "PATH_B_RAILWAY_075",
+      "path_id": "PATH_B_RAILWAY_061",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -900,10 +732,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_075.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_061.json"
     },
     {
-      "path_id": "PATH_B_RAILWAY_076",
+      "path_id": "PATH_B_RAILWAY_062",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -912,10 +744,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_076.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_062.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_077",
+      "path_id": "PATH_B_TRUCKS_FLEETS_063",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -924,22 +756,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_077.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_063.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_078",
-      "path_type": "B",
-      "entry_node": "TRUCKS_FLEETS",
-      "entry_type": "industry",
-      "industry": "TRUCKS_FLEETS",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_078.json"
-    },
-    {
-      "path_id": "PATH_B_TRUCKS_FLEETS_079",
+      "path_id": "PATH_B_TRUCKS_FLEETS_064",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -948,10 +768,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_079.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_064.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_080",
+      "path_id": "PATH_B_TRUCKS_FLEETS_065",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -960,10 +780,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_080.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_065.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_081",
+      "path_id": "PATH_B_TRUCKS_FLEETS_066",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -972,10 +792,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_081.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_066.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_082",
+      "path_id": "PATH_B_TRUCKS_FLEETS_067",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -984,10 +804,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_082.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_067.json"
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_083",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_068",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -996,22 +816,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_083.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_068.json"
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_084",
-      "path_type": "B",
-      "entry_node": "WASTE_MUNICIPAL",
-      "entry_type": "industry",
-      "industry": "WASTE_MUNICIPAL",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_084.json"
-    },
-    {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_085",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_069",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -1020,10 +828,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_085.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_069.json"
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_086",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_070",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -1032,10 +840,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_086.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_070.json"
     },
     {
-      "path_id": "PATH_C_DRYCORE_087",
+      "path_id": "PATH_C_DRYCORE_071",
       "path_type": "C",
       "entry_node": "DRYCORE",
       "entry_type": "technology",
@@ -1044,10 +852,10 @@
       "terminal_product_families": [
         "COMPRESSED_AIR_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_DRYCORE_087.json"
+      "href": "/api/citation/path/PATH_C_DRYCORE_071.json"
     },
     {
-      "path_id": "PATH_C_HYDROCORE_088",
+      "path_id": "PATH_C_HYDROCORE_072",
       "path_type": "C",
       "entry_node": "HYDROCORE",
       "entry_type": "technology",
@@ -1056,10 +864,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_C_HYDROCORE_088.json"
+      "href": "/api/citation/path/PATH_C_HYDROCORE_072.json"
     },
     {
-      "path_id": "PATH_C_INTEKCORE_089",
+      "path_id": "PATH_C_INTEKCORE_073",
       "path_type": "C",
       "entry_node": "INTEKCORE",
       "entry_type": "technology",
@@ -1068,10 +876,10 @@
       "terminal_product_families": [
         "AIR_HOUSING"
       ],
-      "href": "/api/citation/path/PATH_C_INTEKCORE_089.json"
+      "href": "/api/citation/path/PATH_C_INTEKCORE_073.json"
     },
     {
-      "path_id": "PATH_C_MACROCORE_090",
+      "path_id": "PATH_C_MACROCORE_074",
       "path_type": "C",
       "entry_node": "MACROCORE",
       "entry_type": "technology",
@@ -1080,10 +888,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_MACROCORE_090.json"
+      "href": "/api/citation/path/PATH_C_MACROCORE_074.json"
     },
     {
-      "path_id": "PATH_C_MICROKAPPA_091",
+      "path_id": "PATH_C_MICROKAPPA_075",
       "path_type": "C",
       "entry_node": "MICROKAPPA",
       "entry_type": "technology",
@@ -1092,10 +900,10 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_MICROKAPPA_091.json"
+      "href": "/api/citation/path/PATH_C_MICROKAPPA_075.json"
     },
     {
-      "path_id": "PATH_C_NANOFORCE_092",
+      "path_id": "PATH_C_NANOFORCE_076",
       "path_type": "C",
       "entry_node": "NANOFORCE",
       "entry_type": "technology",
@@ -1104,10 +912,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_NANOFORCE_092.json"
+      "href": "/api/citation/path/PATH_C_NANOFORCE_076.json"
     },
     {
-      "path_id": "PATH_C_SYNTAPORE_093",
+      "path_id": "PATH_C_SYNTAPORE_077",
       "path_type": "C",
       "entry_node": "SYNTAPORE",
       "entry_type": "technology",
@@ -1116,10 +924,10 @@
       "terminal_product_families": [
         "FUEL_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_SYNTAPORE_093.json"
+      "href": "/api/citation/path/PATH_C_SYNTAPORE_077.json"
     },
     {
-      "path_id": "PATH_C_SYNTRAX_094",
+      "path_id": "PATH_C_SYNTRAX_078",
       "path_type": "C",
       "entry_node": "SYNTRAX",
       "entry_type": "technology",
@@ -1128,10 +936,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_SYNTRAX_094.json"
+      "href": "/api/citation/path/PATH_C_SYNTRAX_078.json"
     },
     {
-      "path_id": "PATH_C_THERMACORE_095",
+      "path_id": "PATH_C_THERMACORE_079",
       "path_type": "C",
       "entry_node": "THERMACORE",
       "entry_type": "technology",
@@ -1140,10 +948,10 @@
       "terminal_product_families": [
         "COOLING_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_C_THERMACORE_095.json"
+      "href": "/api/citation/path/PATH_C_THERMACORE_079.json"
     },
     {
-      "path_id": "PATH_C_TURBOCORE_096",
+      "path_id": "PATH_C_TURBOCORE_080",
       "path_type": "C",
       "entry_node": "TURBOCORE",
       "entry_type": "technology",
@@ -1152,7 +960,7 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_C_TURBOCORE_096.json"
+      "href": "/api/citation/path/PATH_C_TURBOCORE_080.json"
     }
   ]
 }

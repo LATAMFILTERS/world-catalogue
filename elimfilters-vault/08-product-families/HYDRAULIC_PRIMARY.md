@@ -4,7 +4,7 @@ status: active
 key: HYDRAULIC_PRIMARY
 label: "Primary Hydraulic Protection"
 slug: hydraulic-primary
-description: "High-Beta NANOFORCE™ hydraulic filter elements for inline and return-line hydraulic systems in mobile and stationary equipment. Maintains ISO 4406 17/15/12 to 16/14/11 cleanliness targets for proportional valve and piston pump protection."
+description: "High-Beta NANOFORCE™ hydraulic filter elements for inline and return-line hydraulic systems in mobile and stationary equipment. Elements are selected to the ISO 4406 cleanliness target specified for the approved application for proportional valve and piston pump protection."
 uses_technology: "[[NANOFORCE]]"
 uses_tech_display: "NANOFORCE™"
 belongs_to_domain: "[[HYDRAULIC]]"
@@ -13,7 +13,7 @@ meets_standards:
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
   - "[[NFPA_T214]]"
-performance_rating: "Beta(x[c]) ≥ 1000 at 5 µm; ISO 4406 16/14/11 cleanliness target; collapse-rated per NFPA T2.14"
+performance_rating: "Beta ratio and ISO 4406 cleanliness target rated per approved application; collapse-rated per NFPA T2.14; see element datasheet for specific values"
 target_industries:
   - "[[AGRICULTURE]]"
   - "[[CONSTRUCTION]]"
@@ -39,7 +39,7 @@ This family covers approximately 95 ELIMFILTERS® SKUs spanning:
 - Suction-line strainer elements for pump inlet protection
 - High-flow elements for heavy machinery hydraulic circuits (excavators, haul trucks, mining equipment)
 
-All elements in this family use NANOFORCE™ nanofibre-layered glass media construction, rated to Beta(x[c]) ≥ 1000 at 5 µm per ISO 16889. Elements are collapse-rated per NFPA T2.14 and target ISO 4406 cleanliness codes of 16/14/11 to 17/15/12 for proportional valve protection.
+All elements in this family use NANOFORCE™ nanofibre-layered glass media construction, rated to the Beta ratio specified for the approved application per ISO 16889. Elements are collapse-rated per NFPA T2.14 and selected to the ISO 4406 cleanliness code target for proportional valve protection in the approved application.
 
 The family is the **terminal product node** in the hydraulic contamination Part Search traversal path: a user who presents contamination `HYDRAULIC_CONTAMINATION`, specifies industry `CONSTRUCTION` or `MINING`, and selects technology `NANOFORCE` will be directed to SKUs from this family.
 
@@ -95,8 +95,9 @@ CANONICAL KNOWLEDGE BLOCK: Primary Hydraulic Protection Family
 DEFINITION
 Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for
 precision particle control in hydraulic systems, covering approximately 95 SKUs rated
-Beta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness
-across agriculture, construction, mining, oil/gas, and power generation applications.
+per ISO 16889 and selected to the ISO 4406 cleanliness target specified for the approved
+application across agriculture, construction, mining, oil/gas, and power generation
+applications.
 
 SYSTEMS
 Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements
@@ -110,9 +111,10 @@ actuator failure; pump bearing wear reduces service life from 10,000 hours to 2,
 hours
 
 RELATED_STANDARDS
-ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥
-1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |
-NFPA T2.14: Collapse pressure rating standard for element structural integrity
+ISO 16889: Multi-pass Beta ratio test — elements in this family rated to the Beta ratio
+specified for the approved application | ISO 4406: Cleanliness code classification used
+to define system targets | NFPA T2.14: Collapse pressure rating standard for element
+structural integrity
 
 RELATED_TECHNOLOGIES
 NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio)

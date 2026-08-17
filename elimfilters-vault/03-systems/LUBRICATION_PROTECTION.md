@@ -10,7 +10,6 @@ primary_contamination:
   - "[[PARTICLE_WEAR]]"
 applicable_technologies:
   - "[[SYNTRAX]]"
-  - "[[NANOFORCE]]"
 applicable_standards:
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
@@ -58,7 +57,7 @@ RELATED_STANDARDS
 ISO 16889: Multi-pass Beta ratio filtration performance testing | ISO 4406: Fluid cleanliness code for particle count targets in lube and hydraulic circuits.
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Full-flow lube oil protection technology | NANOFORCE: Sub-micron polishing and fine particle control supporting extended asset protection in severe-duty lube systems.
+SYNTRAX: Full-flow lube oil protection technology.
 
 INDUSTRIAL_ROLE
 Lubrication Systems transform oil filtration from a replacement part into a life-extension system for engines and rotating assets, especially where downtime, overhaul cost, and high-load duty cycles dominate total cost of ownership.

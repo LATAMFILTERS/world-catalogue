@@ -1821,7 +1821,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Collapse Prevention Engineering',
-        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ elements use steel inner and outer support cages with bonded end caps, achieving collapse load margins of 10–20× above typical bypass valve settings (3–6 bar).',
+        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ elements use steel inner and outer support cages with bonded end caps, providing a collapse load margin above the bypass valve setting specified for the approved application.',
       },
       {
         heading: 'Complementary Standards',
@@ -1857,7 +1857,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What safety margin above bypass valve opening pressure does ISO 3723 require?',
-        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ elements with steel inner and outer support cages achieve collapse pressure ratings of 30–60 bar for standard 3 bar bypass valve systems — providing 10–20× structural safety margin. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
+        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ elements with steel inner and outer support cages are qualified to a collapse pressure rating that provides an adequate structural margin above the bypass valve opening pressure specified for the approved application. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
       },
       {
         question: 'How does ISO 3723 differ from NFPA T2.14 and ISO 2941 for hydraulic filter element collapse testing?',
@@ -1865,7 +1865,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What design features determine filter element collapse resistance in ISO 3723 testing?',
-        answer: 'Four design features primarily determine ISO 3723 collapse resistance. (1) Inner support tube: a perforated steel tube inside the media prevents inward collapse — the tube must have sufficient wall thickness and perforation pattern to resist buckling under the axial collapse load. (2) Outer support tube or mesh: prevents outward deformation under burst conditions. (3) End cap bond: the adhesive joint between the media pack and end caps must withstand the combined axial and shear forces during collapse loading. (4) Media pleat geometry: pleat count, pleat depth, and media stiffness contribute to load distribution. NANOFORCE™ elements use 1.0 mm thick perforated steel inner tubes with 40% open area, providing collapse resistance optimized for both structural margin and flow capacity.',
+        answer: 'Four design features primarily determine ISO 3723 collapse resistance. (1) Inner support tube: a perforated steel tube inside the media prevents inward collapse — the tube must have sufficient wall thickness and perforation pattern to resist buckling under the axial collapse load. (2) Outer support tube or mesh: prevents outward deformation under burst conditions. (3) End cap bond: the adhesive joint between the media pack and end caps must withstand the combined axial and shear forces during collapse loading. (4) Media pleat geometry: pleat count, pleat depth, and media stiffness contribute to load distribution. NANOFORCE™ elements use perforated steel inner tubes sized to the wall thickness and open-area ratio specified for the approved application, providing collapse resistance optimized for both structural margin and flow capacity.',
       },
       {
         question: 'How is ISO 3723 used in incoming inspection of hydraulic filter elements?',

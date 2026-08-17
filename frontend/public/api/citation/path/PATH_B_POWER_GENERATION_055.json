@@ -1,0 +1,228 @@
+{
+  "path_id": "PATH_B_POWER_GENERATION_055",
+  "path_type": "B",
+  "entry_node": "POWER_GENERATION",
+  "entry_type": "industry",
+  "industry": "POWER_GENERATION",
+  "valid": true,
+  "steps": [
+    {
+      "key": "POWER_GENERATION",
+      "type": "industry",
+      "name": "Power Generation",
+      "citation_record": {
+        "key": "POWER_GENERATION",
+        "type": "industry",
+        "name": "Power Generation",
+        "slug": "power-generation",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "POWER_GENERATION",
+        "tags": [
+          "industry",
+          "active",
+          "power-generation",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
+          "concept": "Power Generation Industry Filtration Requirements",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:da5aaa4f2f54fcd64cf6b592ffc56401fabd2f4b67b24c06b36eb10dd5c2c346"
+        },
+        "canonical": {
+          "definition": "Power generation is a HIGH contamination exposure industrial category for stationary diesel generators, gas turbines, and CHP plants where contamination-driven failure during emergency activation has outage costs of $100,000–$1,000,000+ per event — driven by standby fuel water accumulation causing emergency startup failure, turbine compressor blade erosion from inlet air particles, and lube circuit contamination reducing generator MTBF from 20,000+ hours to 6,000–8,000 hours.",
+          "systems": "Diesel generator engine air intake, fuel storage and delivery, lube oil circuits, gas turbine inlet air systems, CHP plant hydraulic control circuits",
+          "failure_impact": "Standby generator fuel water accumulation above 500 ppm → filter plugging and microbial biomass → engine fuel starvation at emergency start → outage at the moment backup power is required | Gas turbine compressor blade erosion from inlet particles >5 µm → 1% blade efficiency loss per particle event cycle → 1.5–2% fuel consumption increase per MWh | Diesel generator lube oil at ISO 4406 19/17/14 → MTBF 6,000–8,000 hours vs. 20,000+ hours at 15/13/10.",
+          "related_standards": "ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring",
+          "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop hydraulic filtration for generator governor control and CHP hydraulic circuits at the ISO 4406 target specified for the approved application | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability",
+          "industrial_role": "Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector."
+        },
+        "relationships": {
+          "relevant_contamination": [
+            "PARTICLE_WEAR",
+            "DIESEL_WATER",
+            "HYDRAULIC_CONTAMINATION"
+          ],
+          "applicable_technologies": [
+            "MACROCORE",
+            "NANOFORCE",
+            "SYNTRAX",
+            "TURBOCORE"
+          ],
+          "applicable_standards": [
+            "ISO_5011",
+            "ISO_16889",
+            "ASTM_D6304"
+          ],
+          "common_problems": [
+            "ENGINE_OIL_CONTAMINATION",
+            "FUEL_FILTER_PLUGGING",
+            "HYDRAULIC_VALVE_FAILURE"
+          ],
+          "typical_product_families": [
+            "LUBE_PRIMARY",
+            "FUEL_PRIMARY",
+            "HYDRAULIC_PRIMARY"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\02-industries\\POWER_GENERATION.md"
+      }
+    },
+    {
+      "key": "ENGINE_OIL_CONTAMINATION",
+      "type": "problem",
+      "name": "Engine Oil Contamination",
+      "citation_record": {
+        "key": "ENGINE_OIL_CONTAMINATION",
+        "type": "problem",
+        "name": "Engine Oil Contamination",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "lube-oil",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-high"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Engine Oil Contamination — Lube Circuit Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:a3ea7be6df7e4004958da8a04281dd0ba429d4d22324d6dc5fab0d92cfdc4138"
+        },
+        "canonical": {
+          "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
+          "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
+          "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
+          "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
+          "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI",
+          "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ISO_16889",
+            "ISO_4406"
+          ],
+          "resolved_by_technologies": [
+            "SYNTRAX"
+          ],
+          "affects_components": [
+            "ENGINE_BEARING_JOURNAL",
+            "PISTON_RING_ASSEMBLY"
+          ],
+          "recommended_product_families": [
+            "LUBE_PRIMARY"
+          ],
+          "root_contamination": [
+            "PARTICLE_WEAR"
+          ],
+          "industry_frequency": [
+            "MINING",
+            "CONSTRUCTION",
+            "AGRICULTURE",
+            "TRUCKS_FLEETS",
+            "MARINE",
+            "OIL_GAS",
+            "POWER_GENERATION",
+            "RAILWAY",
+            "BUS_COACH",
+            "WASTE_MUNICIPAL",
+            "AUTOMOTIVE"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+      }
+    },
+    {
+      "key": "PARTICLE_WEAR",
+      "type": "contamination-mode",
+      "name": "Particle Wear in Engines",
+      "citation_record": {
+        "key": "PARTICLE_WEAR",
+        "type": "contamination-mode",
+        "name": "Particle Wear in Engines",
+        "slug": "particle-wear",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "PARTICLE_WEAR",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "air-intake",
+          "lube-oil",
+          "fuel",
+          "in-ud"
+        ],
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Particle Wear in Engines",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:1165fcc5f7b9ef7f0a561a0059cb7ca10bfcf6000cbe8e2933d19cf0f0c2c9af"
+        },
+        "canonical": {
+          "definition": "Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals, and fuel injector components — caused by hard particles (silica, metal oxides, combustion debris) entrained in oil, fuel, and air intake circuits through two-body, three-body, and adhesive wear mechanisms.",
+          "systems": "Engine lube circuits, air intake systems, fuel injection systems, turbocharger bearing circuits",
+          "failure_impact": "Hard particles enter oil circuit via intake ingestion or internal generation → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss → oil consumption +15–40%; engine blow-by +5–10%; fuel economy −5–12%; compression drop −10–25%; equipment availability −15–25% | Bearing seizure at ISO 4406 >19/17/14 vs. stable operation at 16/14/11 target.",
+          "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines",
+          "related_technologies": "MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code",
+          "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_16889",
+            "ISO_4406",
+            "SAE_J1539"
+          ],
+          "resolved_by": [
+            "MACROCORE",
+            "SYNTRAX"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+      }
+    },
+    {
+      "key": "SYNTRAX",
+      "type": "technology",
+      "name": "SYNTRAX™",
+      "citation_record": {
+        "key": "SYNTRAX",
+        "type": "technology",
+        "name": "SYNTRAX™",
+        "slug": "syntrax",
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
+        "citation": {
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
+          "concept": "SYNTRAX Lubrication Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:c97225eb00550ebe6f835f7ff3d4a41aaae47d9f5a1f309a105517d4b16800c6"
+        },
+        "canonical": {
+          "definition": "SYNTRAX is the ELIMFILTERS lubrication filtration architecture for controlling wear debris and lubricant contamination.",
+          "systems": "Lubrication Protection; approved engine and equipment lubricant filtration applications.",
+          "failure_impact": "Uncontrolled lubricant contamination can accelerate wear of bearings, journals and other lubricated components and can reduce the stability of the protected lubrication system across the service interval.",
+          "related_standards": "Applicable cleanliness and filter-performance standards must be selected for the approved lubricant system and application. The technology name alone does not imply a universal cleanliness code, Beta ratio, service-life extension or certification claim.",
+          "related_technologies": "NANOFORCE protects hydraulic fluid-power systems and must not be represented as an auxiliary or polishing stage of SYNTRAX unless an approved application explicitly establishes that relationship.",
+          "industrial_role": "SYNTRAX provides the lubricant-contamination control layer of ELIMFILTERS Lubrication Protection. Filtration performance and service interval are matched to engine duty, lubricant condition, contaminant load and the requirements of the protected components."
+        },
+        "relationships": {},
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "LUBE_PRIMARY"
+  ]
+}

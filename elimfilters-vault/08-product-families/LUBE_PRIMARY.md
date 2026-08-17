@@ -128,8 +128,7 @@ classification — target selected per the approved application for engine beari
 
 RELATED_TECHNOLOGIES
 SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,
-extended service intervals) | NANOFORCE: Supplementary kidney-loop polishing for
-ultra-clean lube circuits requiring 15/13/10 cleanliness (separate family)
+extended service intervals)
 
 INDUSTRIAL_ROLE
 This product family is the principal contamination control implementation for the most

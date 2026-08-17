@@ -19,14 +19,14 @@
     "concept": "Engine Oil Contamination — Lube Circuit Problem",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:4b8a3044d83f87619b563eb245228f6856be9b6690c8039108174307d6997b20"
+    "content_hash": "sha256:a3ea7be6df7e4004958da8a04281dd0ba429d4d22324d6dc5fab0d92cfdc4138"
   },
   "canonical": {
     "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
     "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
     "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
     "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
-    "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |\nNANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil",
+    "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI",
     "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
   },
   "relationships": {
@@ -35,8 +35,7 @@
       "ISO_4406"
     ],
     "resolved_by_technologies": [
-      "SYNTRAX",
-      "NANOFORCE"
+      "SYNTRAX"
     ],
     "affects_components": [
       "ENGINE_BEARING_JOURNAL",
@@ -81,11 +80,6 @@
         "key": "SYNTRAX",
         "relation": "resolved_by_technologies",
         "href": "/api/citation/SYNTRAX.json"
-      },
-      {
-        "key": "NANOFORCE",
-        "relation": "resolved_by_technologies",
-        "href": "/api/citation/NANOFORCE.json"
       },
       {
         "key": "ENGINE_BEARING_JOURNAL",
