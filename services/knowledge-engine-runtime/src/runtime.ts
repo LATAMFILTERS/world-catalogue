@@ -16,6 +16,72 @@ const maxRecords = Number(process.env.MAX_RETRIEVAL_RECORDS ?? 12);
 const minAnswer = Number(process.env.MIN_ANSWER_CONFIDENCE ?? 0.72);
 const minProduction = Number(process.env.MIN_PRODUCTION_CONFIDENCE ?? 0.85);
 
+/**
+ * Phase 6 is required by this service because every reasoning request writes an
+ * append-only trace. Older deployments only checked the Phase 2 schema in
+ * /health, which allowed Render to mark the service healthy even when the
+ * reasoning_traces table had never been installed. In that state every call to
+ * reason() ended as a generic HTTP 400 after retrieval.
+ *
+ * Keep the runtime migration idempotent so a fresh or partially migrated
+ * database can recover during deployment without requiring a manual SQL step.
+ */
+export async function ensureRuntimeSchema(): Promise<void> {
+  await pool.query('BEGIN');
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS knowledge_center.reasoning_traces (
+        id uuid PRIMARY KEY,
+        correlation_id uuid,
+        candidate_case_id uuid REFERENCES knowledge_center.candidate_cases(id),
+        audience text NOT NULL CHECK (audience IN ('TECHNICAL_SUPPORT','DISTRIBUTOR','CUSTOMER','INTERNAL_ENGINEERING')),
+        channel text NOT NULL,
+        query_text text NOT NULL,
+        action text NOT NULL CHECK (action IN ('ANSWER','VERIFY','ESCALATE','STOP')),
+        confidence numeric(5,4) NOT NULL CHECK (confidence >= 0 AND confidence <= 1),
+        retrieved_version_ids uuid[] NOT NULL DEFAULT '{}',
+        response_payload jsonb NOT NULL,
+        created_at timestamptz NOT NULL DEFAULT now()
+      )
+    `);
+    await pool.query('CREATE INDEX IF NOT EXISTS reasoning_traces_candidate_case_idx ON knowledge_center.reasoning_traces(candidate_case_id, created_at DESC)');
+    await pool.query('CREATE INDEX IF NOT EXISTS reasoning_traces_action_idx ON knowledge_center.reasoning_traces(action, created_at DESC)');
+    await pool.query('CREATE INDEX IF NOT EXISTS reasoning_traces_correlation_idx ON knowledge_center.reasoning_traces(correlation_id) WHERE correlation_id IS NOT NULL');
+    await pool.query(`
+      CREATE OR REPLACE FUNCTION knowledge_center.block_reasoning_trace_mutation()
+      RETURNS trigger LANGUAGE plpgsql AS $$
+      BEGIN
+        RAISE EXCEPTION 'reasoning traces are append-only';
+      END;
+      $$
+    `);
+    await pool.query(`
+      DO $$
+      BEGIN
+        IF NOT EXISTS (
+          SELECT 1 FROM pg_trigger
+          WHERE tgname = 'reasoning_traces_immutable'
+            AND tgrelid = 'knowledge_center.reasoning_traces'::regclass
+        ) THEN
+          CREATE TRIGGER reasoning_traces_immutable
+          BEFORE UPDATE OR DELETE ON knowledge_center.reasoning_traces
+          FOR EACH ROW EXECUTE FUNCTION knowledge_center.block_reasoning_trace_mutation();
+        END IF;
+      END;
+      $$
+    `);
+    await pool.query(`
+      INSERT INTO knowledge_center.schema_migrations(version, description)
+      VALUES ('6.0.0', 'Knowledge Engine Runtime reasoning traces')
+      ON CONFLICT (version) DO NOTHING
+    `);
+    await pool.query('COMMIT');
+  } catch (error) {
+    await pool.query('ROLLBACK');
+    throw error;
+  }
+}
+
 function tokens(text: string): string[] {
   return [...new Set(text.toLowerCase().replace(/[^a-z0-9áéíóúñü\s-]/gi, ' ').split(/\s+/).filter(x => x.length > 2))].slice(0, 24);
 }
@@ -85,5 +151,18 @@ export async function reason(request: ReasoningRequest): Promise<ReasoningRespon
 }
 
 export async function readiness(): Promise<void> {
-  await pool.query(`SELECT 1 FROM knowledge_center.schema_migrations WHERE version='2.0.0'`);
+  const result = await pool.query(`
+    SELECT
+      EXISTS (SELECT 1 FROM knowledge_center.schema_migrations WHERE version='2.0.0') AS phase2,
+      EXISTS (SELECT 1 FROM knowledge_center.schema_migrations WHERE version='6.0.0') AS phase6,
+      to_regclass('knowledge_center.knowledge_records') IS NOT NULL AS records_table,
+      to_regclass('knowledge_center.knowledge_record_versions') IS NOT NULL AS versions_table,
+      to_regclass('knowledge_center.record_sources') IS NOT NULL AS sources_table,
+      to_regclass('knowledge_center.reasoning_traces') IS NOT NULL AS traces_table
+  `);
+  const state = result.rows[0];
+  if (!state?.phase2 || !state?.phase6 || !state?.records_table || !state?.versions_table || !state?.sources_table || !state?.traces_table) {
+    throw new Error(`Knowledge Engine schema is incomplete: ${JSON.stringify(state || {})}`);
+  }
+  await pool.query('SELECT 1');
 }
