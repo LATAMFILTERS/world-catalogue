@@ -1,0 +1,274 @@
+#!/usr/bin/env node
+
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
+import { pathToFileURL } from 'node:url';
+import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
+
+const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
+const MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
+const MISSION_PATH = path.resolve(process.env.HERMES_MISSION_PATH || 'hermes/config/intelligence-mission.json');
+const BATCH_SIZE = Math.max(1, Number(process.env.HERMES_SWEEP_DOMAIN_BATCH || 3));
+const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 25000);
+const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
+
+const sha256 = (value) => crypto.createHash('sha256').update(String(value)).digest('hex');
+const plain = (html) => String(html).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/\s+/g, ' ').trim();
+const stripFence = (value) => String(value || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+const safeFragment = (value) => String(value || 'INDUSTRY').toUpperCase().replace(/[^A-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 48) || 'INDUSTRY';
+
+const DESTINATION_FOLDER = {
+  CATALOGUE: '09-products',
+  KNOWLEDGE_CENTER: '11-articles',
+  TECHNICAL_INTELLIGENCE: '14-intelligence',
+  TECHNOLOGY_WATCH: '17-technology-watch',
+  STANDARDS: '04-standards',
+  OEM_APPLICATION_INTELLIGENCE: '12-oems',
+  INTERNAL_ONLY: '14-intelligence'
+};
+
+const FINDING_CANDIDATE_TYPE = {
+  OEM: 'oem_update',
+  AFTERMARKET: 'application_update',
+  FILTER_MEDIA: 'filter_media_development',
+  MATERIALS_COMPONENTS: 'supplier_development',
+  STANDARD: 'standard_update',
+  TECHNICAL: 'technical_bulletin',
+  ENVIRONMENT: 'technical_bulletin',
+  EV_POWERTRAIN: 'technical_bulletin',
+  FUELS_LUBRICANTS: 'technical_bulletin',
+  INDUSTRY: 'technical_bulletin'
+};
+
+function loadMission() {
+  return JSON.parse(fs.readFileSync(MISSION_PATH, 'utf8'));
+}
+
+function chunks(items, size) {
+  const out = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
+}
+
+function validateFinding(finding, mission) {
+  const errors = [];
+  if (!finding || typeof finding !== 'object') return ['finding must be object'];
+  if (typeof finding.finding_title !== 'string' || finding.finding_title.trim().length < 8) errors.push('finding_title missing');
+  try { new URL(finding.evidence_url); } catch { errors.push('evidence_url invalid'); }
+  if (typeof finding.source_publisher !== 'string' || finding.source_publisher.trim().length < 2) errors.push('source_publisher missing');
+  if (!Array.isArray(finding.technical_facts) || finding.technical_facts.length === 0) errors.push('technical_facts missing');
+  if (!Array.isArray(finding.affected_entities) || finding.affected_entities.length === 0) errors.push('affected_entities missing');
+  if (!FINDING_CANDIDATE_TYPE[finding.finding_type]) errors.push('finding_type invalid');
+  if (!mission.content_destinations.includes(finding.destination)) errors.push('destination invalid');
+  if (!mission.knowledge_actions.includes(finding.knowledge_action)) errors.push('knowledge_action invalid');
+  if (typeof finding.relevance !== 'string' || finding.relevance.trim().length < 12) errors.push('relevance missing');
+  if (typeof finding.public_safe_fact !== 'string' || finding.public_safe_fact.trim().length < 12) errors.push('public_safe_fact missing');
+  if (typeof finding.proposed_action !== 'string' || finding.proposed_action.trim().length < 20) errors.push('proposed_action missing');
+  if (typeof finding.confidence !== 'number' || finding.confidence < 0.65 || finding.confidence > 1) errors.push('confidence must be >= 0.65');
+  return errors;
+}
+
+async function fetchEvidence(url, fetchImpl = globalThis.fetch) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetchImpl(url, { redirect: 'follow', signal: controller.signal, headers: { 'User-Agent': 'ELIMFILTERS-HERMES/2.0 (+industry-sweep)' } });
+    if (!res.ok) return { ok: false, status: res.status, error: `HTTP ${res.status}`, text: '' };
+    const text = plain(await res.text()).slice(0, MAX_EVIDENCE_CHARS);
+    return { ok: text.length >= 120, status: res.status, error: text.length >= 120 ? null : 'INSUFFICIENT_EVIDENCE_CONTENT', text };
+  } catch (error) {
+    return { ok: false, status: null, error: String(error?.message || error), text: '' };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function sweepPrompt(mission, domainBatch) {
+  const domains = domainBatch.map((d) => ({ id: d.id, label: d.label, topics: d.topics }));
+  return `You are HERMES, ELIMFILTERS' continuous industrial filtration intelligence system. Use Groq Compound live web search and website visiting. Your mission is not to follow a fixed list of companies; it is to sweep the complete ecosystem surrounding engine, vehicle, equipment and industrial filtration.
+
+MISSION
+${mission.mission}
+
+DOMAINS FOR THIS SEARCH BATCH
+${JSON.stringify(domains)}
+
+SEARCH REQUIREMENTS
+1. Search globally for material developments published or materially updated during the last ${mission.lookback_days} days. Search every domain in this batch; do not ignore a domain merely because the first query has few results.
+2. Cover OEMs, engine manufacturers, equipment manufacturers, aftermarket filtration, filter manufacturers, filter paper/media/material manufacturers, component suppliers, standards bodies, technical institutions and recognized technical publications.
+3. Capture developments involving filters, engines, applications, equipment, filter media, particle/solid mechanics, fluid mechanics, fuels, lubricants, coolants, hydraulic fluids, contamination, emissions/environment, electric/hybrid vehicles, fuel cells, thermal management, reliability and maintenance whenever relevant to ELIMFILTERS' asset-protection knowledge.
+4. Prefer primary official evidence. A secondary source is acceptable only when strong and technically verifiable.
+5. Ignore generic corporate publicity with no filtration/engine/fluid/material/application relevance.
+6. Never invent part numbers, cross references, specifications, compatibility, dates, standards or technical claims.
+7. For EACH technically relevant finding, also search ELIMFILTERS public Knowledge Center / knowledge-system pages. Decide whether the topic is absent (CREATE_NEW), already exists but the new evidence materially adds/corrects/refreshes it (UPDATE_REINFORCE), is already fully covered with no material addition (NO_MATERIAL_CHANGE), or should remain internal (INTERNAL_ONLY).
+8. Do not create duplicate knowledge merely because a new source reports the same established fact. Prefer UPDATE_REINFORCE when existing knowledge can be improved.
+9. Preserve source/competitor identity only as internal provenance. public_safe_fact and proposed_action must be neutral, non-proprietary ELIMFILTERS technical language without competitor promotion.
+10. Every finding must be independently useful: a concrete news item, technical development, catalogue/application addition, standard/regulation change, material/media development, engine/equipment change or validated industry development.
+
+Return strict JSON only with shape:
+{"findings":[{"domain_id":"one supplied domain id","finding_type":"OEM|AFTERMARKET|FILTER_MEDIA|MATERIALS_COMPONENTS|STANDARD|TECHNICAL|ENVIRONMENT|EV_POWERTRAIN|FUELS_LUBRICANTS|INDUSTRY","finding_title":"specific item","evidence_url":"absolute URL","source_publisher":"publisher","source_type":"PRIMARY|SECONDARY_VERIFIED","published_at":"ISO date or null","technical_facts":["specific verifiable fact"],"affected_entities":["entity"],"destination":"CATALOGUE|KNOWLEDGE_CENTER|TECHNICAL_INTELLIGENCE|TECHNOLOGY_WATCH|STANDARDS|OEM_APPLICATION_INTELLIGENCE|INTERNAL_ONLY","knowledge_action":"CREATE_NEW|UPDATE_REINFORCE|NO_MATERIAL_CHANGE|INTERNAL_ONLY","existing_elimfilters_url":"URL if found else null","relevance":"why this matters to ELIMFILTERS","public_safe_fact":"neutral reusable technical fact","proposed_action":"specific action Victor can approve/reject","content_channels":["BLOG|WEEKLY_PODCAST|NEWSLETTER|SOCIAL|CUSTOMER_EMAIL|SALES_INTELLIGENCE"],"confidence":0.0}]}
+
+Return no more than ${mission.max_findings_per_group * domainBatch.length} findings. If a domain has no material verified development, return none for that domain rather than inventing one.`;
+}
+
+async function searchBatch(mission, domainBatch, apiKey, fetchImpl = globalThis.fetch) {
+  const response = await fetchImpl(ENDPOINT, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Groq-Model-Version': 'latest' },
+    body: JSON.stringify({
+      model: MODEL,
+      temperature: 0,
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: sweepPrompt(mission, domainBatch) },
+        { role: 'user', content: 'Run the industry sweep now. Search all supplied domains and return only verified, material developments.' }
+      ]
+    })
+  });
+  if (!response.ok) throw new Error(`Groq HTTP ${response.status}: ${(await response.text()).slice(0, 400)}`);
+  const payload = await response.json();
+  const content = payload?.choices?.[0]?.message?.content;
+  if (!content) throw new Error('Groq returned no content');
+  const parsed = JSON.parse(stripFence(content));
+  return { findings: Array.isArray(parsed.findings) ? parsed.findings : [], tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0 };
+}
+
+function existingSignatures(dir) {
+  const urls = new Set();
+  const keys = new Set();
+  if (!fs.existsSync(dir)) return { urls, keys };
+  for (const name of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    try {
+      const candidate = JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8'));
+      if (candidate.source_url) urls.add(candidate.source_url);
+      if (candidate.deduplication_key) keys.add(candidate.deduplication_key);
+    } catch { /* ignore malformed legacy file here; validation handles it elsewhere */ }
+  }
+  return { urls, keys };
+}
+
+function candidateFromFinding(finding, evidence, now, toolCalls) {
+  const sourceHash = sha256(evidence.text);
+  const key = `industry-sweep-${sha256(`${finding.evidence_url}|${finding.finding_title}`).slice(0, 40)}`;
+  const idHash = sha256(key).slice(0, 12).toUpperCase();
+  const publishedAt = finding.published_at && !Number.isNaN(Date.parse(finding.published_at)) ? new Date(finding.published_at).toISOString() : null;
+  return {
+    entity_type: 'intelligence_candidate',
+    entity_code: `HERMES_REAL_SWEEP_${safeFragment(finding.domain_id)}_${idHash}`,
+    workflow_status: 'PENDING_REVIEW',
+    candidate_type: FINDING_CANDIDATE_TYPE[finding.finding_type],
+    source_type: 'groq_compound_web_search',
+    source_url: finding.evidence_url,
+    source_publisher: finding.source_publisher,
+    source_title: finding.finding_title,
+    published_at: publishedAt,
+    captured_at: now,
+    last_verified_at: now,
+    confidence: finding.confidence,
+    evidence_level: finding.source_type === 'PRIMARY' ? 'PRIMARY' : 'SECONDARY_VERIFIED',
+    claim_scope: 'SOURCE_REPORTED',
+    affected_entities: finding.affected_entities,
+    proposed_action: finding.proposed_action,
+    proposed_target_folder: DESTINATION_FOLDER[finding.destination] || '14-intelligence',
+    proposed_target_entity: null,
+    deduplication_key: key,
+    approval_required: true,
+    approved_by: null,
+    approved_at: null,
+    rejection_reason: null,
+    sync_status: 'NOT_READY',
+    sync_target: [],
+    source_hash: sourceHash,
+    category: `industry_sweep:${finding.domain_id}`,
+    research_resolution: {
+      status: 'VERIFIED',
+      engine: 'GROQ',
+      model: MODEL,
+      search_mode: 'MISSION_DRIVEN_INDUSTRY_SWEEP',
+      finding_type: finding.finding_type,
+      destination: finding.destination,
+      knowledge_action: finding.knowledge_action,
+      existing_elimfilters_url: finding.existing_elimfilters_url || null,
+      finding_title: finding.finding_title,
+      evidence_url: finding.evidence_url,
+      published_at: publishedAt,
+      technical_facts: finding.technical_facts,
+      relevance: finding.relevance,
+      public_safe_fact: finding.public_safe_fact,
+      content_channels: Array.isArray(finding.content_channels) ? finding.content_channels : [],
+      confidence: finding.confidence,
+      source_type: finding.source_type,
+      evidence_sha256: sourceHash,
+      evidence_chars_verified: evidence.text.length,
+      tool_calls: toolCalls,
+      resolved_at: now
+    }
+  };
+}
+
+function atomicWrite(file, value) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  const tmp = `${file}.tmp-${process.pid}`;
+  fs.writeFileSync(tmp, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+  fs.renameSync(tmp, file);
+}
+
+export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetchImpl = globalThis.fetch, outputDir = resolveRealCandidatesInputDir(), now = () => new Date() } = {}) {
+  const mission = loadMission();
+  const output = path.resolve(outputDir);
+  fs.mkdirSync(output, { recursive: true });
+  const signatures = existingSignatures(output);
+  const summary = { mission_version: mission.schema_version, model: MODEL, domains: mission.domains.length, batches: 0, findings_seen: 0, created: 0, duplicates: 0, no_material_change: 0, invalid: 0, failed_batches: 0, failures: [] };
+  if (!apiKey) return { ...summary, error: 'GROQ_API_KEY_MISSING' };
+
+  for (const domainBatch of chunks(mission.domains, BATCH_SIZE)) {
+    summary.batches += 1;
+    let search;
+    try {
+      search = await searchBatch(mission, domainBatch, apiKey, fetchImpl);
+    } catch (error) {
+      summary.failed_batches += 1;
+      summary.failures.push({ domains: domainBatch.map((d) => d.id), error: String(error?.message || error) });
+      continue;
+    }
+
+    for (const finding of search.findings) {
+      summary.findings_seen += 1;
+      const errors = validateFinding(finding, mission);
+      if (errors.length) { summary.invalid += 1; continue; }
+      if (finding.knowledge_action === 'NO_MATERIAL_CHANGE') { summary.no_material_change += 1; continue; }
+
+      const normalizedUrl = new URL(finding.evidence_url).toString();
+      const key = `industry-sweep-${sha256(`${normalizedUrl}|${finding.finding_title}`).slice(0, 40)}`;
+      if (signatures.urls.has(normalizedUrl) || signatures.keys.has(key)) { summary.duplicates += 1; continue; }
+
+      const evidence = await fetchEvidence(normalizedUrl, fetchImpl);
+      if (!evidence.ok) { summary.invalid += 1; continue; }
+      finding.evidence_url = normalizedUrl;
+      const stamp = now().toISOString();
+      const candidate = candidateFromFinding(finding, evidence, stamp, search.tool_calls);
+      const candidateErrors = validateCandidate(candidate);
+      if (candidateErrors.length) { summary.invalid += 1; continue; }
+
+      const file = path.join(output, `${candidate.entity_code.toLowerCase()}.json`);
+      atomicWrite(file, candidate);
+      signatures.urls.add(normalizedUrl);
+      signatures.keys.add(candidate.deduplication_key);
+      summary.created += 1;
+    }
+  }
+
+  const auditPath = path.resolve('hermes/industry-sweep/last-run.json');
+  atomicWrite(auditPath, { ...summary, generated_at: now().toISOString(), approval_authority: mission.public_governance.approval_authority, automatic_canonical_publication: false });
+  return summary;
+}
+
+const isCli = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isCli) {
+  const summary = await runIndustrySweep();
+  console.log(`[HERMES industry sweep] domains=${summary.domains} batches=${summary.batches} findings=${summary.findings_seen} created=${summary.created} duplicates=${summary.duplicates} no_material_change=${summary.no_material_change} invalid=${summary.invalid} failed_batches=${summary.failed_batches}`);
+  if (summary.error) console.error(`[HERMES industry sweep] ${summary.error}`);
+  if (summary.error) process.exitCode = 1;
+}

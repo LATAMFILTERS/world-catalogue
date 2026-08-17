@@ -78,8 +78,23 @@ test('NEEDS_RESEARCH remains a valid non-review operational state', () => {
   assert.deepEqual(validateCandidate(candidate), []);
 });
 
-test('Compound resolution schema rejects vague or low-confidence results', () => {
+test('Compound resolution schema requires knowledge action and rejects vague or low-confidence results', () => {
   const good = validateResolution({
+    status: 'VERIFIED',
+    finding_type: 'AFTERMARKET',
+    finding_title: 'Specific technical item',
+    evidence_url: 'https://example.com/news/item',
+    technical_facts: ['Fact'],
+    destination: 'CATALOGUE',
+    knowledge_action: 'UPDATE_REINFORCE',
+    existing_elimfilters_url: 'https://elimfilters.com/knowledge-center/example/',
+    relevance: 'Relevant technical intelligence for filtration systems.',
+    proposed_action: 'Reinforce the existing technical topic with this newly verified fact.',
+    confidence: 0.8
+  });
+  assert.deepEqual(good, []);
+
+  const missingKnowledgeAction = validateResolution({
     status: 'VERIFIED',
     finding_type: 'AFTERMARKET',
     finding_title: 'Specific technical item',
@@ -90,7 +105,7 @@ test('Compound resolution schema rejects vague or low-confidence results', () =>
     proposed_action: 'Review this specific technical finding for canonical relevance.',
     confidence: 0.8
   });
-  assert.deepEqual(good, []);
+  assert.ok(missingKnowledgeAction.includes('knowledge_action invalid'));
 
   const bad = validateResolution({
     status: 'VERIFIED',
@@ -101,5 +116,5 @@ test('Compound resolution schema rejects vague or low-confidence results', () =>
     proposed_action: 'investigate',
     confidence: 0.4
   });
-  assert.ok(bad.length >= 7);
+  assert.ok(bad.length >= 8);
 });
