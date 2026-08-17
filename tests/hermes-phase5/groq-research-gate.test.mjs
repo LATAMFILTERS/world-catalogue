@@ -38,8 +38,6 @@ function realCandidate(overrides = {}) {
 test('raw real HERMES source signals are not research-resolved', () => {
   const candidate = realCandidate();
   assert.equal(isResearchResolved(candidate), false);
-  // Collector compatibility is preserved: the raw signal is schema-valid,
-  // but generate-weekly-report never places it in Victor's review queue.
   assert.deepEqual(validateCandidate(candidate), []);
 });
 
@@ -83,9 +81,11 @@ test('NEEDS_RESEARCH remains a valid non-review operational state', () => {
 test('Compound resolution schema rejects vague or low-confidence results', () => {
   const good = validateResolution({
     status: 'VERIFIED',
+    finding_type: 'AFTERMARKET',
     finding_title: 'Specific technical item',
     evidence_url: 'https://example.com/news/item',
     technical_facts: ['Fact'],
+    destination: 'CATALOGUE',
     relevance: 'Relevant technical intelligence for filtration systems.',
     proposed_action: 'Review this specific technical finding for canonical relevance.',
     confidence: 0.8
@@ -101,5 +101,5 @@ test('Compound resolution schema rejects vague or low-confidence results', () =>
     proposed_action: 'investigate',
     confidence: 0.4
   });
-  assert.ok(bad.length >= 5);
+  assert.ok(bad.length >= 7);
 });

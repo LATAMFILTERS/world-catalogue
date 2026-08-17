@@ -11,6 +11,7 @@ const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 const MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
 const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 20000);
 const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
+const MAX_SEARCH_ATTEMPTS = Number(process.env.HERMES_RESEARCH_ATTEMPTS || 3);
 
 const hash = (v) => crypto.createHash('sha256').update(String(v)).digest('hex');
 const plain = (html) => String(html).replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/\s+/g,' ').trim();
@@ -26,6 +27,8 @@ export function validateResolution(r) {
   if (typeof r.relevance !== 'string' || r.relevance.trim().length < 12) e.push('relevance missing');
   if (typeof r.proposed_action !== 'string' || r.proposed_action.trim().length < 20) e.push('proposed_action missing');
   if (typeof r.confidence !== 'number' || r.confidence < 0.65 || r.confidence > 1) e.push('confidence must be >= 0.65');
+  if (!['OEM','AFTERMARKET','FILTER_MEDIA','STANDARD','TECHNICAL','SUPPLIER','INDUSTRY'].includes(r.finding_type)) e.push('finding_type invalid');
+  if (!['CATALOGUE','KNOWLEDGE_CENTER','TECHNICAL_INTELLIGENCE','TECHNOLOGY_WATCH','STANDARDS','OEM_APPLICATION_INTELLIGENCE','INTERNAL_ONLY'].includes(r.destination)) e.push('destination invalid');
   return e;
 }
 
@@ -33,7 +36,7 @@ async function fetchEvidence(url, fetchImpl = globalThis.fetch) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetchImpl(url, { redirect:'follow', signal:controller.signal, headers:{'User-Agent':'ELIMFILTERS-HERMES/1.2 (+groq-compound-research)'} });
+    const res = await fetchImpl(url, { redirect:'follow', signal:controller.signal, headers:{'User-Agent':'ELIMFILTERS-HERMES/1.3 (+groq-compound-research)'} });
     if (!res.ok) return { ok:false, error:`HTTP ${res.status}`, status:res.status, text:'' };
     const text = plain(await res.text()).slice(0, MAX_EVIDENCE_CHARS);
     return { ok:text.length >= 120, error:text.length >= 120 ? null : 'INSUFFICIENT_EVIDENCE_CONTENT', status:res.status, text };
@@ -42,14 +45,47 @@ async function fetchEvidence(url, fetchImpl = globalThis.fetch) {
   } finally { clearTimeout(timer); }
 }
 
-async function groqSearch(candidate, apiKey, fetchImpl = globalThis.fetch) {
-  const system = `You are HERMES, ELIMFILTERS industrial intelligence search resolver. You MUST actively use Groq Compound live web search and website visiting. A changed homepage/newsroom is only a signal, never a finding. Resolve it into the specific current article, bulletin, standard change, product/application update, filter-media development, OEM update, or concrete industry item. Search enough to determine what actually changed. Prefer official/primary evidence. Never invent facts, URLs, dates, standards, specifications, or claims. Competitor names and proprietary competitor technology are internal provenance only; write relevance and proposed actions in neutral ELIMFILTERS technical language. Return strict JSON only.`;
+function researchSystemPrompt(attempt) {
+  return `You are HERMES, the industrial filtration intelligence search resolver for ELIMFILTERS. You MUST actively use Groq Compound live web search and website visiting. This is search-and-resolution work, not generic summarization.
+
+NON-NEGOTIABLE OBJECTIVE
+A changed homepage, newsroom, catalogue page or manufacturer page is only a signal. You must find the specific current item behind that signal and return a concrete evidence-backed candidate. Do not tell a human to investigate something you can search yourself.
+
+WHAT ELIMFILTERS NEEDS YOU TO CAPTURE
+1. OEM intelligence: engines, engine families, vehicles, machines, equipment models, platforms, model years, new generations, technical changes, service applications and maintenance/filtration implications.
+2. AFTERMARKET intelligence — PRIORITY: new replacement-filter coverage, application additions, cross-reference relationships, supersessions, service-part additions, dimensional/specification revisions, new catalogue entries, new fitments and coverage expansions. Do not overlook aftermarket sources simply because they are not OEMs.
+3. Filtration families: air, cabin, coolant, fuel, fuel/water separator, turbine fuel separator, housings/intake systems, hydraulic, lube/oil, marine filtration and air dryer/desiccant filtration.
+4. Technical domains: filter media, efficiency, restriction, micron/beta performance when explicitly supported, contamination control, water separation, cleanliness, reliability, service intervals, standards and test methods.
+5. Equipment/industry relationships: Agriculture, Automotive, Bus & Coach, Construction, Manufacturing, Marine, Mining, Oil & Gas, Power Generation, Railway, Truck Fleets and Waste/Municipal.
+6. Catalogue intelligence: explicit part numbers, engine/equipment applications, model/year ranges, references, dimensions, specifications and relationships only when the source actually supports them.
+
+SEARCH PROCEDURE
+A. Start from the supplied source URL/publisher and identify the most recent or modified technical/product/catalogue/news item relevant to filtration, engines, equipment or applications.
+B. Search the publisher's own site first: newsroom, product pages, technical bulletins, catalogues, application guides, PDFs and service information.
+C. If the source is an OEM, look for engine/equipment/application changes and determine whether they create filtration/catalogue implications.
+D. If the source is aftermarket, actively look for new filter numbers, applications, cross references, supersessions and coverage updates.
+E. If the source is filter media/standards/technical press, extract the concrete technical development and its relevance to ELIMFILTERS systems or Knowledge Center.
+F. Cross-check the exact evidence URL by visiting it. Prefer primary evidence. Use a strong secondary technical source only when primary evidence is unavailable.
+G. Ignore unrelated corporate finance, investor relations, hiring, awards, sponsorships, lifestyle, ESG publicity or generic marketing unless it contains a concrete filtration/engine/application fact.
+H. Never invent facts, URLs, dates, standards, part numbers, cross references, dimensions, applications or compatibility.
+I. Competitor identity/technology may be retained only as INTERNAL provenance. proposed_action and public_safe_fact must use neutral ELIMFILTERS technical language and must not promote or copy proprietary competitor claims.
+J. Search attempt ${attempt} of ${MAX_SEARCH_ATTEMPTS}. ${attempt > 1 ? 'Previous search was not sufficient. Broaden the query, inspect deeper product/catalogue/application pages, and try alternate primary-source paths before returning UNRESOLVED.' : 'Search broadly enough on the first pass to identify the real item, not just the changed landing page.'}
+
+READY STANDARD
+Return VERIFIED only when you have: a specific item, a fetchable evidence URL, at least one verifiable technical/application fact, affected entities, clear ELIMFILTERS relevance, a destination and a specific action Victor can approve/reject.
+
+Return strict JSON only.`;
+}
+
+async function groqSearch(candidate, apiKey, attempt = 1, previousErrors = [], fetchImpl = globalThis.fetch) {
   const input = {
-    instruction:'Search the live web now and resolve this signal. Do not return generic wording telling a human to investigate.',
+    instruction:'Search the live web now and resolve this source-change signal into a concrete industrial filtration intelligence candidate. Do not return generic wording telling a human to investigate.',
+    search_attempt:attempt,
+    previous_validation_errors:previousErrors,
     signal:{entity_code:candidate.entity_code,publisher:candidate.source_publisher,source_url:candidate.source_url,source_title:candidate.source_title,candidate_type:candidate.candidate_type,category:candidate.category,captured_at:candidate.captured_at,snippet:candidate.extracted_snippet || null},
-    required_json:{status:'VERIFIED or UNRESOLVED',finding_title:'specific item',evidence_url:'absolute strongest evidence URL',published_at:'ISO date if supported else null',technical_facts:['specific fact'],affected_entities:['neutral technical entity'],relevance:'ELIMFILTERS relevance',proposed_action:'specific review proposal',confidence:'0..1',source_type:'PRIMARY or SECONDARY_VERIFIED'}
+    required_json:{status:'VERIFIED or UNRESOLVED',finding_type:'OEM | AFTERMARKET | FILTER_MEDIA | STANDARD | TECHNICAL | SUPPLIER | INDUSTRY',finding_title:'specific item',evidence_url:'absolute strongest evidence URL',published_at:'ISO date if supported else null',technical_facts:['specific verifiable fact'],affected_entities:['engine/equipment/filter/application/technical entity'],destination:'CATALOGUE | KNOWLEDGE_CENTER | TECHNICAL_INTELLIGENCE | TECHNOLOGY_WATCH | STANDARDS | OEM_APPLICATION_INTELLIGENCE | INTERNAL_ONLY',relevance:'ELIMFILTERS relevance',public_safe_fact:'neutral technical wording without competitor marketing',proposed_action:'specific review proposal for Victor',confidence:'0..1',source_type:'PRIMARY or SECONDARY_VERIFIED'}
   };
-  const res = await fetchImpl(ENDPOINT,{method:'POST',headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json','Groq-Model-Version':'latest'},body:JSON.stringify({model:MODEL,temperature:0,response_format:{type:'json_object'},messages:[{role:'system',content:system},{role:'user',content:JSON.stringify(input)}]})});
+  const res = await fetchImpl(ENDPOINT,{method:'POST',headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json','Groq-Model-Version':'latest'},body:JSON.stringify({model:MODEL,temperature:0,response_format:{type:'json_object'},messages:[{role:'system',content:researchSystemPrompt(attempt)},{role:'user',content:JSON.stringify(input)}]})});
   if (!res.ok) throw new Error(`Groq HTTP ${res.status}: ${(await res.text()).slice(0,400)}`);
   const payload = await res.json();
   const content = payload?.choices?.[0]?.message?.content;
@@ -61,16 +97,30 @@ async function resolveOne(candidate, apiKey, fetchImpl) {
   const started = new Date().toISOString();
   const unresolved = (reason, extra={}) => ({...candidate,workflow_status:'NEEDS_RESEARCH',research_resolution:{status:'UNRESOLVED',engine:'GROQ',model:MODEL,reason,...extra,started_at:started,resolved_at:new Date().toISOString()}});
   if (!apiKey) return {resolved:false,candidate:unresolved('GROQ_API_KEY_MISSING')};
-  let search;
-  try { search = await groqSearch(candidate,apiKey,fetchImpl); }
-  catch (err) { return {resolved:false,candidate:unresolved('GROQ_SEARCH_FAILED',{error:String(err?.message || err)})}; }
-  const errors = validateResolution(search.resolution);
-  if (errors.length) return {resolved:false,candidate:unresolved('GROQ_RESULT_NOT_VERIFIABLE',{validation_errors:errors,tool_calls:search.tool_calls})};
+
+  let search = null;
+  let errors = [];
+  let lastError = null;
+  for (let attempt = 1; attempt <= MAX_SEARCH_ATTEMPTS; attempt += 1) {
+    try {
+      search = await groqSearch(candidate, apiKey, attempt, errors, fetchImpl);
+      errors = validateResolution(search.resolution);
+      if (!errors.length) break;
+      lastError = `attempt ${attempt}: ${errors.join('; ')}`;
+    } catch (err) {
+      lastError = `attempt ${attempt}: ${String(err?.message || err)}`;
+      errors = [lastError];
+    }
+  }
+
+  if (!search) return {resolved:false,candidate:unresolved('GROQ_SEARCH_FAILED',{error:lastError})};
+  if (errors.length) return {resolved:false,candidate:unresolved('GROQ_RESULT_NOT_VERIFIABLE',{validation_errors:errors,last_error:lastError,tool_calls:search.tool_calls,attempts:MAX_SEARCH_ATTEMPTS})};
+
   const evidenceUrl = new URL(search.resolution.evidence_url).toString();
   const evidence = await fetchEvidence(evidenceUrl,fetchImpl);
   if (!evidence.ok) return {resolved:false,candidate:unresolved('EVIDENCE_FETCH_FAILED',{evidence_url:evidenceUrl,evidence_fetch_error:evidence.error,tool_calls:search.tool_calls})};
   const published = search.resolution.published_at && !Number.isNaN(Date.parse(search.resolution.published_at)) ? new Date(search.resolution.published_at).toISOString() : null;
-  const resolved = {...candidate,workflow_status:'PENDING_REVIEW',source_url:evidenceUrl,source_title:search.resolution.finding_title,published_at:published || candidate.published_at || null,last_verified_at:new Date().toISOString(),confidence:Math.min(1,Math.max(0.65,search.resolution.confidence)),evidence_level:search.resolution.source_type === 'PRIMARY' ? 'PRIMARY' : candidate.evidence_level,affected_entities:Array.isArray(search.resolution.affected_entities)&&search.resolution.affected_entities.length?search.resolution.affected_entities:candidate.affected_entities,proposed_action:search.resolution.proposed_action,change_classification:'RESEARCH_RESOLVED',research_resolution:{status:'VERIFIED',engine:'GROQ',model:MODEL,search_mode:'WEB_SEARCH_AND_VISIT_WEBSITE',finding_title:search.resolution.finding_title,evidence_url:evidenceUrl,published_at:published,technical_facts:search.resolution.technical_facts,relevance:search.resolution.relevance,confidence:search.resolution.confidence,source_type:search.resolution.source_type || null,evidence_sha256:hash(evidence.text),evidence_chars_verified:evidence.text.length,tool_calls:search.tool_calls,started_at:started,resolved_at:new Date().toISOString()}};
+  const resolved = {...candidate,workflow_status:'PENDING_REVIEW',source_url:evidenceUrl,source_title:search.resolution.finding_title,published_at:published || candidate.published_at || null,last_verified_at:new Date().toISOString(),confidence:Math.min(1,Math.max(0.65,search.resolution.confidence)),evidence_level:search.resolution.source_type === 'PRIMARY' ? 'PRIMARY' : candidate.evidence_level,affected_entities:Array.isArray(search.resolution.affected_entities)&&search.resolution.affected_entities.length?search.resolution.affected_entities:candidate.affected_entities,proposed_action:search.resolution.proposed_action,change_classification:'RESEARCH_RESOLVED',research_resolution:{status:'VERIFIED',engine:'GROQ',model:MODEL,search_mode:'WEB_SEARCH_AND_VISIT_WEBSITE',finding_type:search.resolution.finding_type,destination:search.resolution.destination,finding_title:search.resolution.finding_title,evidence_url:evidenceUrl,published_at:published,technical_facts:search.resolution.technical_facts,relevance:search.resolution.relevance,public_safe_fact:search.resolution.public_safe_fact || null,confidence:search.resolution.confidence,source_type:search.resolution.source_type || null,evidence_sha256:hash(evidence.text),evidence_chars_verified:evidence.text.length,tool_calls:search.tool_calls,attempts_used:MAX_SEARCH_ATTEMPTS,started_at:started,resolved_at:new Date().toISOString()}};
   const candidateErrors = validateCandidate(resolved);
   if (candidateErrors.length) return {resolved:false,candidate:{...resolved,workflow_status:'NEEDS_RESEARCH',research_resolution:{...resolved.research_resolution,status:'UNRESOLVED',reason:'CANDIDATE_VALIDATION_FAILED',validation_errors:candidateErrors}}};
   return {resolved:true,candidate:resolved};
