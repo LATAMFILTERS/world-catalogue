@@ -37,16 +37,21 @@ jobs:
           echo "Changed files:"
           cat changed-files.txt
 
-          FORBIDDEN_REGEX='^(frontend/out/|frontend/public/api/citation/|elimfilters-vault/00-meta/CITATION_INDEX\.json$|frontend/src/lib/jsonld-constants\.generated\.ts$)'
+          # Citation API artifacts and CITATION_INDEX.json are intentionally
+          # tracked under the canonical citation governance policy. They are
+          # validated by citation tracking/content/determinism gates and must
+          # remain visible in Git diffs. Only legacy build-only generated
+          # outputs remain forbidden here.
+          FORBIDDEN_REGEX='^(frontend/out/|frontend/src/lib/jsonld-constants\.generated\.ts$)'
 
           if grep -E "$FORBIDDEN_REGEX" changed-files.txt > forbidden-files.txt; then
-            echo "::error::This PR modifies generated artifacts that caused merge conflicts in the past. Do not commit generated output. Regenerate during build/deploy instead."
+            echo "::error::This PR modifies build-only generated artifacts that must not be committed."
             echo "Forbidden generated files:"
             cat forbidden-files.txt
             exit 1
           fi
 
-          echo "No forbidden generated artifacts changed."
+          echo "No forbidden build-only generated artifacts changed."
 
   verify-generation-determinism:
     name: Verify Citation API generation is deterministic
