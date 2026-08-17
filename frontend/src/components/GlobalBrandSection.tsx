@@ -2,11 +2,17 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ASSET_PROTECTION_INTELLIGENCE } from '@/lib/asset-protection-intelligence';
+
+const PLATFORM_NAME = 'Asset Protection Intelligence';
+const PLATFORM_MANTRA = ['Safety', 'Reliability', 'Efficiency'] as const;
+
+const PLATFORM_PILLARS = [
+  ['KNOWLEDGE CENTER', 'Technical knowledge base', 'Curated, reviewed technical knowledge for customers, distributors and engineers.'],
+  ['PRODUCT CATALOGUE', 'Product authority', 'Keeps SKU, applications and cross-references governed.'],
+  ['PART SEARCH', 'Product discovery', 'Turns validated catalogue data into fast part discovery.'],
+] as const;
 
 export function GlobalBrandSection() {
-  const architecture = ASSET_PROTECTION_INTELLIGENCE;
-
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
@@ -29,7 +35,7 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             marginBottom: '1.25rem',
           }}>
-            {`// ${architecture.platform}`}
+            {`// ${PLATFORM_NAME}`}
           </p>
 
           <h2 style={{
@@ -62,12 +68,7 @@ export function GlobalBrandSection() {
             gap: '0.9rem',
             marginBottom: '2.5rem',
           }}>
-            {[
-              ['HERMES', architecture.systems.hermes.role, 'Discovers and routes new technical evidence.'],
-              ['KNOWLEDGE', architecture.systems.obsidian.role, 'Preserves reviewed institutional and technical memory.'],
-              ['PRODUCT INTELLIGENCE', architecture.systems.catalogue.role, 'Keeps SKU, applications and cross-references governed.'],
-              ['PART SEARCH', architecture.systems.partSearch.role, 'Turns validated catalogue data into fast discovery.'],
-            ].map(([title, role, body]) => (
+            {PLATFORM_PILLARS.map(([title, role, body]) => (
               <div key={title} style={{
                 padding: '1.25rem',
                 background: 'rgba(255,255,255,0.025)',
@@ -92,7 +93,7 @@ export function GlobalBrandSection() {
             flexWrap: 'wrap',
             marginBottom: '2.5rem',
           }}>
-            {architecture.mantra.map((value) => (
+            {PLATFORM_MANTRA.map((value) => (
               <span key={value} style={{
                 border: '1px solid rgba(255,241,45,0.28)',
                 color: 'rgba(255,255,255,0.82)',

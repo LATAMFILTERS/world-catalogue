@@ -203,9 +203,9 @@
     "problemTag": "// OPERATIONAL RISK DIAGNOSIS",
     "problemH1": "WHAT YOU CAN'T SEE",
     "problemH2": "IS STOPPING YOUR OPERATION.",
-    "problemIntro": "80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.",
+    "problemIntro": "Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Of premature failures are caused by contamination.",
+    "problemBadgeDesc": "Of premature hydraulic component failures are caused by contamination.",
     "failModes": [
       {
         "title": "Injector Erosion",
