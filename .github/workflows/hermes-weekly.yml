@@ -189,6 +189,16 @@ jobs:
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
 
+      # A source hash change is only a signal. Groq Compound must resolve it
+      # through live web search / website evidence before review.
+      - name: Resolve detected changes with Groq
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:research
+
       - name: Validate real candidates
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:validate:real

@@ -60,9 +60,13 @@ test('hermes/config/.env.example only contains placeholder-shaped values (no ass
   }
 });
 
-test('none of the new operational docs assume or hardcode a specific sender email address', () => {
+test('operational docs never hardcode or guess the HERMES sender mailbox', () => {
   const checklist = fs.readFileSync(path.join(REPO_ROOT, 'hermes', 'OPERATIONAL-ACTIVATION-CHECKLIST.md'), 'utf8');
-  assert.match(checklist, /PENDING CONFIRMATION FROM VICTOR/);
+  assert.match(checklist, /sending mailbox must be a confirmed corporate ELIMFILTERS account/i);
+  assert.match(checklist, /supplied through `HERMES_SENDER_EMAIL`/);
+  assert.match(checklist, /repository does not record\s+or guess its address/i);
+
   const setup = fs.readFileSync(path.join(REPO_ROOT, 'hermes', 'MICROSOFT-GRAPH-SETUP.md'), 'utf8');
-  assert.match(setup, /PENDING CONFIRMATION FROM VICTOR/);
+  assert.match(setup, /No sender address is assumed anywhere in HERMES documentation or code/i);
+  assert.match(setup, /HERMES_SENDER_EMAIL/);
 });

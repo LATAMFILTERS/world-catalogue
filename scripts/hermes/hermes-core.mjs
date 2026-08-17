@@ -23,6 +23,24 @@ export function isDateTime(value) {
   return typeof value === 'string' && value.length > 0 && !Number.isNaN(Date.parse(value));
 }
 
+export function isRealHermesCandidate(candidate) {
+  return String(candidate?.entity_code || '').startsWith('HERMES_REAL_');
+}
+
+export function isResearchResolved(candidate) {
+  if (!isRealHermesCandidate(candidate)) return true;
+  const resolution = candidate?.research_resolution;
+  if (resolution?.status !== 'VERIFIED') return false;
+  if (resolution?.engine !== 'GROQ') return false;
+  if (typeof resolution?.finding_title !== 'string' || resolution.finding_title.trim().length < 8) return false;
+  if (typeof resolution?.evidence_url !== 'string') return false;
+  try { new URL(resolution.evidence_url); } catch { return false; }
+  if (!Array.isArray(resolution?.technical_facts) || resolution.technical_facts.length < 1) return false;
+  if (typeof resolution?.relevance !== 'string' || resolution.relevance.trim().length < 12) return false;
+  if (typeof resolution?.confidence !== 'number' || resolution.confidence < 0.65 || resolution.confidence > 1) return false;
+  return true;
+}
+
 // Single source of truth for "is DRY RUN currently active" — every HERMES
 // script that needs to know must call this instead of re-parsing
 // HERMES_COLLECTION_DRY_RUN itself, so the collector and the
@@ -71,6 +89,19 @@ export function validateCandidate(c) {
   if (c.workflow_status === 'REJECTED' && (!c.rejection_reason || c.rejection_reason.length < 3)) errors.push('rejection_reason required');
   if (c.evidence_level === 'SECONDARY_UNVERIFIED' && !['NEEDS_RESEARCH','CAPTURED','NORMALIZED'].includes(c.workflow_status)) errors.push('unverified secondary evidence cannot enter review or approval');
   if (['SOURCE_REPORTED','HERMES_INFERENCE'].includes(c.claim_scope) === false && c.candidate_type.startsWith('competitor_') && c.evidence_level !== 'PRIMARY') errors.push('competitor statements without primary evidence must remain SOURCE_REPORTED or HERMES_INFERENCE');
+
+  // Collection may still emit the historical PENDING_REVIEW shape before the
+  // mandatory research stage runs. That raw signal is never treated as
+  // review-ready by generate-weekly-report.mjs. The irreversible boundary is
+  // approval/sync: a real HERMES candidate cannot cross it without VERIFIED
+  // Groq evidence. This preserves collector compatibility while enforcing the
+  // research gate where it matters.
+  if (isRealHermesCandidate(c) && ['APPROVED','READY_TO_SYNC','SYNCED'].includes(c.workflow_status) && !isResearchResolved(c)) {
+    errors.push('real HERMES candidate requires VERIFIED Groq research_resolution before approval/sync');
+  }
+  if (isRealHermesCandidate(c) && c.workflow_status === 'PENDING_REVIEW' && isResearchResolved(c) && c.confidence < 0.65) {
+    errors.push('Groq-resolved real HERMES candidate confidence must be >= 0.65 before review');
+  }
   return errors;
 }
 
