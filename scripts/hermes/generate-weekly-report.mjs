@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { analyzeCandidates, loadCandidates, resolveRealCandidatesInputDir, isResearchResolved } from './hermes-core.mjs';
+import { analyzeCandidates, loadCandidates, resolveRealCandidatesInputDir, isResearchResolved, isRealHermesCandidate } from './hermes-core.mjs';
 
 const rawArg = process.argv[2];
 const input = rawArg === '--auto' ? resolveRealCandidatesInputDir() : (rawArg || 'hermes/test-candidates');
@@ -47,12 +47,12 @@ const duplicates = results.filter((r) => r.duplicateOf);
 const invalid = results.filter((r) => !r.valid && !r.duplicateOf);
 const valid = results.filter((r) => r.valid);
 
-// Only a candidate that has completed its research gate and is explicitly
-// PENDING_REVIEW is allowed into Victor's approval queue. Validity alone is
-// not synonymous with review readiness.
+// Real weekly HERMES candidates require a VERIFIED Groq resolution. Historical
+// HERMES_TEST_* fixtures keep their legacy behavior so Phase 1 CI remains a
+// useful format/contract smoke test without pretending they came from Groq.
 const reviewReady = valid.filter((r) => r.candidate.workflow_status === 'PENDING_REVIEW' && isResearchResolved(r.candidate));
-const needsResearch = results.filter((r) => r.candidate.workflow_status === 'NEEDS_RESEARCH' || (String(r.candidate.entity_code || '').startsWith('HERMES_REAL_') && !isResearchResolved(r.candidate)));
-const groqResolved = results.filter((r) => isResearchResolved(r.candidate) && String(r.candidate.entity_code || '').startsWith('HERMES_REAL_'));
+const needsResearch = results.filter((r) => r.candidate.workflow_status === 'NEEDS_RESEARCH' || (isRealHermesCandidate(r.candidate) && !isResearchResolved(r.candidate)));
+const groqResolved = results.filter((r) => isRealHermesCandidate(r.candidate) && isResearchResolved(r.candidate));
 
 const groups = {};
 for (const result of reviewReady) {
@@ -167,19 +167,33 @@ for (const [type, candidates] of Object.entries(groups).sort()) {
   lines.push(`## ${type.replaceAll('_', ' ')}`, '');
   for (const c of candidates) {
     const rr = c.research_resolution;
-    lines.push(`### ${c.entity_code}`, '',
-      `- Finding: ${rr.finding_title}`,
-      `- Source: ${c.source_publisher} — ${rr.evidence_url}`,
-      `- Published: ${c.published_at || 'not stated by source'}`,
-      `- Evidence: ${c.evidence_level}; confidence ${c.confidence}`,
-      `- Groq resolution: ${rr.model}; ${rr.technical_facts.length} technical fact(s) extracted`,
-      `- Technical facts: ${rr.technical_facts.join(' | ')}`,
-      `- Relevance: ${rr.relevance}`,
-      `- Affected entities: ${c.affected_entities.join(', ')}`,
-      `- Proposed target: ${c.proposed_target_folder}${c.proposed_target_entity ? ` / ${c.proposed_target_entity}` : ''}`,
-      `- Proposed action: ${c.proposed_action}`,
-      '- Recommendation: REVIEW FOR APPROVAL',
-      `- Source hash: ${c.source_hash}`, '')
+    if (rr?.status === 'VERIFIED') {
+      lines.push(`### ${c.entity_code}`, '',
+        `- Finding: ${rr.finding_title}`,
+        `- Source: ${c.source_publisher} — ${rr.evidence_url}`,
+        `- Published: ${c.published_at || 'not stated by source'}`,
+        `- Evidence: ${c.evidence_level}; confidence ${c.confidence}`,
+        `- Groq resolution: ${rr.model}; ${rr.technical_facts.length} technical fact(s) extracted`,
+        `- Technical facts: ${rr.technical_facts.join(' | ')}`,
+        `- Relevance: ${rr.relevance}`,
+        `- Affected entities: ${c.affected_entities.join(', ')}`,
+        `- Proposed target: ${c.proposed_target_folder}${c.proposed_target_entity ? ` / ${c.proposed_target_entity}` : ''}`,
+        `- Proposed action: ${c.proposed_action}`,
+        '- Recommendation: REVIEW FOR APPROVAL',
+        `- Source hash: ${c.source_hash}`, '');
+    } else {
+      // Legacy HERMES_TEST_* report rendering only. Real candidates cannot
+      // reach this branch because isResearchResolved() gates reviewReady.
+      lines.push(`### ${c.entity_code}`, '',
+        `- Source: ${c.source_publisher} — ${c.source_url}`,
+        `- Evidence: ${c.evidence_level}; confidence ${c.confidence}`,
+        `- Claim scope: ${c.claim_scope}`,
+        `- Affected entities: ${c.affected_entities.join(', ')}`,
+        `- Proposed target: ${c.proposed_target_folder}${c.proposed_target_entity ? ` / ${c.proposed_target_entity}` : ''}`,
+        `- Proposed action: ${c.proposed_action}`,
+        `- Recommendation: ${c.workflow_status === 'NEEDS_RESEARCH' ? 'RESEARCH' : 'REVIEW FOR APPROVAL'}`,
+        `- Source hash: ${c.source_hash}`, '');
+    }
   }
 }
 
