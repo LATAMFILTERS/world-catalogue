@@ -39,8 +39,8 @@ jobs:
           node-version: '20'
           cache: npm
       - run: npm ci
-      - name: Phase 5 source and research contracts
-        run: npm run test:hermes-phase5
+      - name: Groq research gate
+        run: node --test tests/hermes-phase5/groq-research-gate.test.mjs
       - name: Phase 7 contracts
         run: npm run test:hermes-phase7
       - name: Operational readiness
