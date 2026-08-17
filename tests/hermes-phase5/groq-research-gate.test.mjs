@@ -35,9 +35,22 @@ function realCandidate(overrides = {}) {
   };
 }
 
-test('real HERMES candidates cannot enter review before Groq resolution', () => {
-  const errors = validateCandidate(realCandidate());
-  assert.ok(errors.some((e) => e.includes('requires VERIFIED Groq research_resolution')));
+test('raw real HERMES source signals are not research-resolved', () => {
+  const candidate = realCandidate();
+  assert.equal(isResearchResolved(candidate), false);
+  // Collector compatibility is preserved: the raw signal is schema-valid,
+  // but generate-weekly-report never places it in Victor's review queue.
+  assert.deepEqual(validateCandidate(candidate), []);
+});
+
+test('unresolved real HERMES candidates cannot cross approval boundary', () => {
+  const candidate = realCandidate({
+    workflow_status: 'APPROVED',
+    approved_by: 'Victor Abreu',
+    approved_at: '2026-08-17T13:05:00.000Z'
+  });
+  const errors = validateCandidate(candidate);
+  assert.ok(errors.some((e) => e.includes('requires VERIFIED Groq research_resolution before approval/sync')));
 });
 
 test('Groq Compound verified real candidate passes the research gate', () => {
