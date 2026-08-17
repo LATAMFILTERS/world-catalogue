@@ -2225,10 +2225,9 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Mapping: Hydraulic System Protection',
-        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
+        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12.',
         callout: [
           { label: 'NANOFORCE™ rating', value: 'β₁₀(c) ≥ 1000; servo/proportional valve circuits' },
-          { label: 'MICROKAPPA™ application', value: 'Reservoir breather ingress prevention' },
         ],
       },
       {
@@ -5618,7 +5617,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Cabin Safety Application — ISO 11155',
-        body: 'ISO 11155-1 and -2 define the cabin air filtration system requirements for road vehicles and related equipment, referencing ISO 29463/EN 1822 filter efficiency classes. Minimum efficiency requirements for operator protection from fine particulate (PM₂.₅) in agricultural and construction environments: recirculation air filter: Class E11 (≥95% efficiency at MPPS); fresh air intake filter: Class E12 (≥99.5% efficiency at MPPS) where cabin is used for pesticide application protection; or Class H13 (≥99.95%) where carbon filter systems require high-efficiency pre-filter to prevent carbon bed bypass. PM₂.₅ penetrates deeply into alveolar lung tissue — particles 0.1–2.5 µm in diameter (which includes MPPS range) are the most damaging size range. A cabin pressurised with an E12-class filter at positive 10–30 Pa reduces operator PM₂.₅ exposure by ≥99.5% compared to ambient — the critical performance criterion for occupational health compliance. MICROKAPPA™ cabin filter architecture is designed to meet H13-class efficiency (≥99.95% at MPPS) for the highest-protection applications.',
+        body: 'ISO 11155-1 and -2 define the cabin air filtration system requirements for road vehicles and related equipment, referencing ISO 29463/EN 1822 filter efficiency classes. Minimum efficiency requirements for operator protection from fine particulate (PM₂.₅) in agricultural and construction environments: recirculation air filter: Class E11 (≥95% efficiency at MPPS); fresh air intake filter: Class E12 (≥99.5% efficiency at MPPS) where cabin is used for pesticide application protection; or Class H13 (≥99.95%) where carbon filter systems require high-efficiency pre-filter to prevent carbon bed bypass. PM₂.₅ penetrates deeply into alveolar lung tissue — particles 0.1–2.5 µm in diameter (which includes MPPS range) are the most damaging size range. A cabin pressurised with an E12-class filter at positive 10–30 Pa reduces operator PM₂.₅ exposure by ≥99.5% compared to ambient — the critical performance criterion for occupational health compliance. MICROKAPPA™ cabin filter architecture is designed to meet the efficiency class specified for the approved application, up to H13-class for the highest-protection applications.',
         callout: [
           { label: 'Minimum recirculation', value: 'E11 (≥95% at MPPS)' },
           { label: 'Pesticide protection', value: 'E12 (≥99.5% at MPPS)' },

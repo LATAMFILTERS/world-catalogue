@@ -57,7 +57,7 @@ Hydraulic systems on rail-mounted cranes and track maintenance equipment require
 - [[MACROCORE|MACROCORE — Heavy-duty air intake filtration for locomotive diesel engines operating in railway infrastructure dust environments with track ballast silica and urban particulate]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for locomotive diesel engine crankshaft bearing protection across extended high-load maintenance intervals]]
 - [[INTEKCORE|INTEKCORE — Zero-bypass air-cleaner housing and sealing for locomotive air intake systems in high-vibration railway operating environments]]
-- [[MICROKAPPA|MICROKAPPA — ISO 11155-certified cabin air filtration for MoW vehicle crew protection from respirable crystalline silica and diesel particulate matter in ballast and rail grinding operations]]
+- [[MICROKAPPA|MICROKAPPA — Cabin air filtration for MoW vehicle crew protection from respirable crystalline silica and diesel particulate matter in ballast and rail grinding operations, rated to the ISO 11155 target specified for the approved application]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test standard; governs locomotive engine air filter selection for railway applications]]
@@ -83,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at the ISO 4406 target specified for the approved application | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Zero-bypass air-cleaner housing and sealing for locomotive air intake systems
+SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at the ISO 4406 target specified for the approved application | MICROKAPPA: Cabin filtration for MoW vehicle crew RCS protection, rated to the ISO 11155 target specified for the approved application | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Zero-bypass air-cleaner housing and sealing for locomotive air intake systems
 
 INDUSTRIAL_ROLE
 Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations.

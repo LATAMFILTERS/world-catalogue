@@ -3,7 +3,7 @@
   "path_count": 1,
   "paths": [
     {
-      "path_id": "PATH_C_TURBOCORE_080",
+      "path_id": "PATH_C_TURBOCORE_073",
       "path_type": "C",
       "entry_node": "TURBOCORE",
       "entry_type": "technology",
@@ -12,7 +12,7 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_C_TURBOCORE_080.json"
+      "href": "/api/citation/path/PATH_C_TURBOCORE_073.json"
     }
   ]
 }

@@ -1145,9 +1145,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 **Target contamination:** PM₁₀, PM₂.₅, PM₁.₀ particulate; crystalline silica; coal dust; biological aerosols; VOCs; NO₂ in traffic tunnel environments.
 
 **Performance targets:**
-- PM₂.₅ efficiency: ≥95% (ISO 11155-1 equivalent)
-- Initial resistance: ≤50 Pa at rated HVAC flow
-- Chemical filtration: per ISO 11155-2 for selected compounds
+- PM2.5 efficiency, initial resistance, and chemical filtration performance are selected per the ISO 11155-1/ISO 11155-2 targets specified for the approved application; no universal certification or efficiency claim is implied by the MICROKAPPA™ name alone.
 
 **Applicable standards:** ISO 11155-1, ISO 11155-2, DIN 71220, ISO 16890
 

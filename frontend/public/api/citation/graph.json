@@ -1,5 +1,5 @@
 {
-  "edge_count": 544,
+  "edge_count": 543,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -1791,11 +1791,6 @@
     {
       "from": "HYDRAULIC_CONTAMINATION",
       "to": "NANOFORCE",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "HYDRAULIC_CONTAMINATION",
-      "to": "MICROKAPPA",
       "relation": "resolved_by"
     },
     {

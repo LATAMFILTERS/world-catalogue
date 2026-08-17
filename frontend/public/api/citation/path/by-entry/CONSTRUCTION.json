@@ -1,7 +1,31 @@
 {
   "entry_key": "CONSTRUCTION",
-  "path_count": 7,
+  "path_count": 6,
   "paths": [
+    {
+      "path_id": "PATH_B_CONSTRUCTION_024",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_024.json"
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_025",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_025.json"
+    },
     {
       "path_id": "PATH_B_CONSTRUCTION_026",
       "path_type": "B",
@@ -34,7 +58,7 @@
       "industry": "CONSTRUCTION",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_CONSTRUCTION_028.json"
     },
@@ -46,45 +70,9 @@
       "industry": "CONSTRUCTION",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_CONSTRUCTION_029.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_030",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_030.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_031",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_031.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_032",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_032.json"
     }
   ]
 }

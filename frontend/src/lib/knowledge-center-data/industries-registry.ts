@@ -56,7 +56,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       },
       {
         heading: 'Cabin Air Priority',
-        body: 'Operator silicosis risk in mining is classified as an occupational health emergency in most jurisdictions. Ambient respirable silica in active mining areas exceeds the OSHA PEL (0.025 mg/m³) by 100–1,000×. MICROKAPPA™ H13-class cabin filtration is mandatory from an occupational health standpoint — not optional equipment. Cab pressurization integrity must be verified at each major service to prevent unfiltered air ingress through door seals and cable penetrations.',
+        body: 'Operator silicosis risk in mining is classified as an occupational health emergency in most jurisdictions. Ambient respirable silica in active mining areas exceeds the OSHA PEL (0.025 mg/m³) by 100–1,000×. MICROKAPPA™ cabin filtration rated to the efficiency class specified for the approved application is mandatory from an occupational health standpoint — not optional equipment. Cab pressurization integrity must be verified at each major service to prevent unfiltered air ingress through door seals and cable penetrations.',
       },
     ],
   },

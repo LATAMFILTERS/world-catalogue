@@ -220,7 +220,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     targetCleanliness: 'Cabin air quality below OEL: respirable silica <0.025 mg/m³, PM₂.₅ <35 µg/m³ (8-hr TWA), total diesel particulate below relevant national limits.',
     keyMetrics: [
       { label: 'OSHA PEL — respirable silica', value: '0.025 mg/m³' },
-      { label: 'MICROKAPPA™ PM₂.₅ efficiency', value: '≥95%' },
+      { label: 'MICROKAPPA™ PM₂.₅ efficiency', value: 'Per approved application' },
       { label: 'Mining ambient silica vs OEL', value: '100–1,000× above limit' },
     ],
     sections: [
@@ -235,7 +235,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Cabin Filtration Design',
-        body: 'MICROKAPPA™ H13-class elements provide ≥95% PM₂.₅ efficiency and ≥99.95% efficiency at 0.3 µm (MPPS for HEPA-class media). The activated carbon layer adsorbs VOCs, NO₂, diesel exhaust gases, and agricultural chemicals. Proper cabin filtration requires positive pressurization of the cab relative to the exterior — air must flow outward through any gap, preventing unfiltered exterior air from entering through door seals, cable penetrations, or HVAC ducts.',
+        body: 'MICROKAPPA™ elements are rated to the PM₂.₅ efficiency class specified for the approved application, up to H13-class HEPA-equivalent media where required. The activated carbon layer adsorbs VOCs, NO₂, diesel exhaust gases, and agricultural chemicals. Proper cabin filtration requires positive pressurization of the cab relative to the exterior — air must flow outward through any gap, preventing unfiltered exterior air from entering through door seals, cable penetrations, or HVAC ducts.',
       },
       {
         heading: 'Filter Replacement Protocol',

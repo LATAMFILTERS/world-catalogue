@@ -111,7 +111,7 @@ export default function RegionalFleetStrategiesPage() {
                 region: 'Coastal/Marine (North Sea, Mediterranean, Pacific)',
                 challenges: 'Salt air corrosion; moisture intrusion; engine compartment spray exposure; cabin air quality for crew health',
                 waterRisk: 'Extreme (salt water spray, high humidity); corrosion of injectors, sensors, electrical connectors',
-                strategy: 'MARINECLEAN hydraulic/diesel filtration (salt-resistant media); MICROKAPPA cabin filtration (ISO 11155 Grade A for operator respiratory protection); extended drain intervals with premium synthetic oils',
+                strategy: 'MARINECLEAN hydraulic/diesel filtration (salt-resistant media); MICROKAPPA cabin filtration rated to the ISO 11155 target specified for the approved application for operator respiratory protection; extended drain intervals with premium synthetic oils',
               },
               {
                 region: 'Cold Climate (Northern Europe, Canada, Russia)',

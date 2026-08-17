@@ -976,7 +976,7 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Classification System',
-        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters targeting occupational health protection in mining and construction applications are classified to H13 minimum for PM2.5 protection.',
+        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters are classified to the ISO 29463 efficiency class specified for the approved application in occupational health protection use.',
       },
       {
         heading: 'MPPS Testing',
@@ -1078,7 +1078,7 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Particle Efficiency Testing',
-        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency, exceeding the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
+        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements are rated to the PM2.5 efficiency target specified for the approved application, selected to exceed the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
       },
       {
         heading: 'ISO 11155-2 Complement',
@@ -1092,7 +1092,7 @@ export const KC_STANDARDS: KCStandard[] = [
     keyParams: [
       { label: 'PM10 efficiency minimum', value: '>80%' },
       { label: 'PM2.5 efficiency minimum', value: '>60%' },
-      { label: 'MICROKAPPA™ PM2.5', value: '≥95%' },
+      { label: 'MICROKAPPA™ PM2.5', value: 'Per approved application' },
       { label: 'Parts', value: 'Part 1: particles; Part 2: gas phase' },
     ],
     applicableSystems: ['cabin-air-protection'],
@@ -1112,7 +1112,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What are the minimum particle filtration efficiency thresholds specified in ISO 11155-1?',
-        answer: 'ISO 11155-1 specifies minimum particle filtration efficiency thresholds for cabin air filters: ≥80% efficiency for PM10 particles and ≥60% efficiency for PM2.5 particles measured under standardized airflow conditions using synthetic test dust. These are minimum baseline thresholds — MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency and ≥98% PM10 efficiency under ISO 11155-1 test conditions, significantly exceeding the minimum, which is relevant for high-dust environments where even 40% PM2.5 pass-through at 500 µg/m³ ambient concentration produces unacceptable in-cab exposure.',
+        answer: 'ISO 11155-1 specifies minimum particle filtration efficiency thresholds for cabin air filters: ≥80% efficiency for PM10 particles and ≥60% efficiency for PM2.5 particles measured under standardized airflow conditions using synthetic test dust. These are minimum baseline thresholds — MICROKAPPA™ elements are selected to the PM2.5 and PM10 efficiency target specified for the approved application, exceeding the ISO 11155-1 minimum where the application requires it, which is relevant for high-dust environments where significant PM2.5 pass-through at elevated ambient concentration produces unacceptable in-cab exposure.',
       },
       {
         question: 'How does ISO 11155-2 complement ISO 11155-1 for complete cabin air protection?',
@@ -1214,7 +1214,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What filtration efficiency does DIN 71220 specify for cabin air particle filters?',
-        answer: 'DIN 71220 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71220 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements exceed the DIN 71220 minimum thresholds for both PM10 and PM2.5 efficiency, achieving ≥95% PM2.5 efficiency under both DIN 71220 and ISO 11155-1 test conditions.',
+        answer: 'DIN 71220 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71220 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements are selected to exceed the DIN 71220 minimum thresholds for both PM10 and PM2.5 efficiency, rated to the PM2.5 efficiency target specified for the approved application under both DIN 71220 and ISO 11155-1 test conditions.',
       },
       {
         question: 'Does DIN 71220 cover activated carbon layers for gaseous contaminant removal?',
@@ -1242,7 +1242,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the typical PM2.5 efficiency achievable with a DIN 71220-compliant cabin air filter for mining equipment?',
-        answer: 'Standard DIN 71220-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency under DIN 71220 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71220 minimum thresholds.',
+        answer: 'Standard DIN 71220-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements are selected to the PM2.5 efficiency target specified for the approved application under DIN 71220 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71220 minimum thresholds.',
       },
       {
         question: 'What activated carbon adsorption capacity does DIN 71220 require for combined particle/gas cabin air filters?',

@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-17T10:46:15.076Z",
+    "generated": "2026-08-17T11:10:16.585Z",
     "note_count": 67,
     "scanned_note_count": 81,
     "skipped_non_entity_count": 14,
@@ -472,14 +472,14 @@
         "concept": "Bus & Coach Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:e841fc603d3dc14966c4b9077e77c3eee946c2ed53c75c1edb87d7b8d519b882"
+        "content_hash": "sha256:078ddc4c81a8260d7627dfa5edf56510eb52a75018a5c0d9a69f237e47dc9c98"
       },
       "canonical": {
         "definition": "Bus & Coach is a MODERATE contamination exposure industrial category for public and passenger transport vehicle operations, with contamination risk driven by high-cycle urban stop-start engine soot loading, depot fuel tank condensation water accumulation, and passenger cabin PM2.5 exposure in traffic-congested urban corridors where ambient diesel particulate concentrations regularly exceed WHO 24-hour guidelines of 15 µg/m³.",
         "systems": "Urban transit bus diesel engine lube oil circuits, bulk depot fuel storage and vehicle fuel supply systems, bus and coach passenger compartment and driver cab HVAC filtration",
         "failure_impact": "Stop-start urban operation soot loading in bus lube oil above ISO 4406 19/17/14 → accelerated bearing journal wear → engine seizure → unplanned engine replacement | Engine replacement cost: $40,000–$80,000 per vehicle | Depot fuel condensation above 200 mg/kg total water → injector tip cavitation erosion across common-rail fleet → injector replacement $800–$4,000/unit across fleet size | Unfiltered passenger cabin PM2.5 at 50–150 µg/m³ urban ambient → 35–50% of routes expose passengers above WHO 15 µg/m³ guideline | Operational Impact: cumulative respiratory health liability and schedule disruption costs exceed filtration investment by order of magnitude in large transit fleets.",
         "related_standards": "ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification",
-        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection",
+        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application",
         "industrial_role": "Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory."
       },
       "relationships": {
@@ -903,14 +903,14 @@
         "concept": "Railway Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:9643c8372852ae4942abe9c872714bfe282d44fcf7dc5cd65592d4e2d5e4debe"
+        "content_hash": "sha256:2806eefeed8ff180b3a6480830ac2f9d0737f268db1c37073c4ddb20f4f92c57"
       },
       "canonical": {
         "definition": "Railway is a HIGH contamination exposure industrial category for diesel locomotive and maintenance-of-way equipment, characterised by extended high-load duty cycles generating elevated lube oil soot, ballast silica dust exposure creating operator respiratory risk, and overhaul economics where locomotive engine failure costs $500,000–$2,000,000 per event making contamination control the primary reliability investment.",
         "systems": "Diesel locomotive engine lube and air intake systems, fuel circuits on extended-service-interval railway equipment, hydraulic systems on rail-mounted cranes and MoW equipment, cab air supply systems on ballast maintenance vehicles",
         "failure_impact": "Lube oil particle contamination above ISO 4406 19/17/14 in locomotive engines → bearing journal abrasive wear → crankshaft bearing seizure → unplanned engine overhaul | Particle contamination accounts for 35–45% of unplanned locomotive engine failures | Operational Impact: $500,000–$2,000,000 per engine overhaul event; MoW operator RCS exposure above 0.1 mg/m³ OEL triggers occupational health enforcement and worker compensation liability.",
         "related_standards": "ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection",
-        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at the ISO 4406 target specified for the approved application | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Zero-bypass air-cleaner housing and sealing for locomotive air intake systems",
+        "related_technologies": "SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at the ISO 4406 target specified for the approved application | MICROKAPPA: Cabin filtration for MoW vehicle crew RCS protection, rated to the ISO 11155 target specified for the approved application | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Zero-bypass air-cleaner housing and sealing for locomotive air intake systems",
         "industrial_role": "Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations."
       },
       "relationships": {
@@ -1606,14 +1606,14 @@
         "concept": "ISO 11155 Cabin Air Filter Performance",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:47a7c2a7734236b9d3b66e3b802adc68a5366b9457cc72e4c4fb92f0068f3ce7"
+        "content_hash": "sha256:6e710ba4294cf3fc292e69334abefd505285560b9c1ca3dcf2165ce445ca33b0"
       },
       "canonical": {
         "definition": "ISO 11155 is the two-part international performance standard for road vehicle cabin air filters: ISO 11155-1 measures particle filtration efficiency (PM10, PM2.5) and airflow resistance; ISO 11155-2 measures activated carbon layer gaseous contaminant removal — together providing the measurement framework for classifying cabin filters by their capacity to protect operators from health-relevant particle and chemical contamination.",
         "systems": "Operator cab and passenger compartment air filtration on road vehicles, agricultural equipment, construction equipment, and public transport vehicles; HVAC system first-protection layer against ambient particle and gaseous contaminants",
         "failure_impact": "Cabin filter below ISO 11155-1 PM2.5 efficiency threshold → in-cab PM2.5 concentration above WHO 15 µg/m³ 24-hour guideline during high-dust operations → long-term operator respiratory disease accumulation | In mining and construction environments with ambient PM2.5 at 150–500 µg/m³, non-compliant cabin filtration leaves operators exposed to 10–30× WHO guideline concentrations | Operational Impact: occupational respiratory disease liability; regulatory enforcement under mine safety and construction site health standards; worker compensation claims from PM2.5-related illness in fleet operators.",
         "related_standards": "DIN 71220: German predecessor cabin air filter test standard; harmonised into ISO 11155 methodology; still referenced in European OEM cabin filter qualification specifications",
-        "related_technologies": "MICROKAPPA: Cabin air filtration technology certified to ISO 11155-1 particle efficiency and ISO 11155-2 gaseous contaminant removal for heavy industrial operator cabin applications",
+        "related_technologies": "MICROKAPPA: Cabin air filtration technology rated to the ISO 11155-1 particle efficiency and ISO 11155-2 gaseous contaminant removal target specified for the approved application in heavy industrial operator cabin applications",
         "industrial_role": "ISO 11155 is the enabling measurement standard for operator health protection in heavy industry cabins — the PM10 and PM2.5 efficiency ratings it defines are the only quantitative performance criteria available to fleet operators and occupational health engineers for selecting cabin filters that demonstrably reduce operator respiratory disease risk in dust-intensive operations."
       },
       "relationships": {
@@ -2032,14 +2032,14 @@
         "concept": "Hydraulic System Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:e93d2489c483dc283a1b0b4037b338adecdde1aead08bddf487f94564be267ec"
+        "content_hash": "sha256:06c096aba58d6c2502f3d6150897d9e54dcf7ebdfe8e5c75425ea7093a2f02b8"
       },
       "canonical": {
         "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
         "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
         "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | MICROKAPPA: Reservoir breather contamination prevention",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances",
         "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
       },
       "relationships": {
@@ -2049,8 +2049,7 @@
           "NFPA_T214"
         ],
         "resolved_by": [
-          "NANOFORCE",
-          "MICROKAPPA"
+          "NANOFORCE"
         ]
       },
       "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
@@ -2666,10 +2665,10 @@
         "concept": "Primary Cabin Air Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:ba3d01a8c6c6b7ebaf6a6e05198221da5522e3596e010cc9916947661559c8b8"
+        "content_hash": "sha256:7151a9ae6d97b9d81a7116c55dc6c6dda184cd91e8af11e64d80d864708800f8"
       },
       "canonical": {
-        "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, ISO 11155-1 certified to >95% PM10 and >85% PM2.5 efficiency.",
+        "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, rated to the PM10 and PM2.5 efficiency target specified for\nthe approved application per ISO 11155-1.",
         "systems": "Cabin air filtration domain; belongs to CABIN product-line system; implements MICROKAPPA™\nelectrostatically-charged synthetic media technology; activated carbon variants implement\ngas-phase contaminant removal per DIN 71220",
         "failure_impact": "Incorrect element selection (wrong dimensions, wrong efficiency class, omitting\nactivated carbon variant in chemical vapor environments) or exceeding service interval\n→ particulate bypass increases PM10 operator exposure above 4 mg/m³ threshold →\nchronic silicosis and occupational dust disease risk in mining and agricultural operators;\nin chemical vapor environments, omitting activated carbon → pesticide or H₂S exposure",
         "related_standards": "ISO 11155: Cabin air filter PM10/PM2.5 efficiency classification and certification\nstandard | DIN 71220: Gas-phase (activated carbon) cabin filter performance standard for\nchemical vapor removal",
@@ -4990,11 +4989,6 @@
       {
         "from": "HYDRAULIC_CONTAMINATION",
         "to": "NANOFORCE",
-        "relation": "resolved_by"
-      },
-      {
-        "from": "HYDRAULIC_CONTAMINATION",
-        "to": "MICROKAPPA",
         "relation": "resolved_by"
       },
       {

@@ -682,7 +682,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'MICROKAPPA is the cabin air filtration technology implementing multi-layer particulate and chemical filtration for operator health protection in industrial equipment cabs. It intercepts airborne PM10, PM2.5, and respirable crystalline silica (RCS) from the cab air supply, with optional activated carbon layer for chemical vapor protection. The governing design objective is operator respiratory health, not equipment protection.',
+      'MICROKAPPA is the cabin air filtration technology implementing multi-layer particulate and chemical filtration for operator health protection in industrial equipment cabs. It intercepts airborne PM10, PM2.5, and respirable crystalline silica (RCS) from the cab air supply, with optional activated carbon layer for chemical vapor protection. The governing design objective is operator respiratory health, not equipment protection. Applicable cabin-air test standards and occupational requirements must be matched to the approved application and filtration configuration; no universal certification or efficiency claim is implied by the technology name alone.',
 
     systemContext:
       'Applies to operator cabs in mining equipment, agricultural machinery, construction equipment, and any industrial vehicle where the operator is exposed to elevated ambient particulate concentrations. Regulatory context: occupational silica exposure limits (0.05 mg/m³ in most jurisdictions) are enforced at the operator breathing zone — the cab air supply post-filter is the enforcement point.',
@@ -766,13 +766,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'PM10 (≤10 µm aerodynamic diameter)',
         mechanism: 'Mechanical depth filtration + electrostatic attraction',
-        efficiency: '>95% at PM10 per ISO 11155-1',
+        efficiency: 'Rated per ISO 11155-1 for the approved application',
         particleSizeRange: '2.5–10 µm',
       },
       {
         contaminantClass: 'PM2.5 / Respirable crystalline silica (0.5–2.5 µm)',
         mechanism: 'Electrostatic capture + diffusion in melt-blown matrix',
-        efficiency: '>80% at 0.4 µm (Class E per ISO 11155-1)',
+        efficiency: 'Rated per ISO 11155-1 for the approved application',
         particleSizeRange: '0.1–2.5 µm',
       },
       {
@@ -783,22 +783,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Particulate efficiency at 0.4 µm',
-        value: '>80 (Class E)',
-        unit: '% per ISO 11155-1',
-        evidenceSource: 'ISO 11155-1 test protocol using DEHS aerosol at 0.4 µm',
-        standardRef: 'ISO 11155-1',
-      },
-      {
-        metric: 'Service interval',
-        value: '1,000–2,000',
-        unit: 'operating hours (environment dependent)',
-        evidenceSource: 'Field measurement of pressure drop vs. service hours in high-dust applications',
-        standardRef: 'ISO 11155-2',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {

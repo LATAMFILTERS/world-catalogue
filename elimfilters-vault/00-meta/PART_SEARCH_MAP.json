@@ -1,11 +1,11 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-17T10:46:15.190Z",
+    "generated": "2026-08-17T11:10:16.699Z",
     "source_index": "elimfilters-vault/00-meta/CITATION_INDEX.json",
     "source_index_version": "1.0",
-    "path_count": 80,
-    "valid_path_count": 80,
+    "path_count": 73,
+    "valid_path_count": 73,
     "product_family_count": 10,
     "coverage_summary": {
       "problems_with_complete_paths": "5/5",
@@ -214,35 +214,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_008",
-      "path_type": "A",
-      "entry_node": "HYDRAULIC_VALVE_FAILURE",
-      "entry_type": "problem",
-      "industry": null,
-      "steps": [
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_A_OPERATOR_DUST_EXPOSURE_009",
+      "path_id": "PATH_A_OPERATOR_DUST_EXPOSURE_008",
       "path_type": "A",
       "entry_node": "OPERATOR_DUST_EXPOSURE",
       "entry_type": "problem",
@@ -270,7 +242,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_010",
+      "path_id": "PATH_B_AGRICULTURE_009",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -303,7 +275,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_011",
+      "path_id": "PATH_B_AGRICULTURE_010",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -332,6 +304,39 @@
       ],
       "terminal_product_families": [
         "LUBE_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_011",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "steps": [
+        {
+          "key": "AGRICULTURE",
+          "type": "industry",
+          "name": "Agriculture"
+        },
+        {
+          "key": "ENGINE_OIL_CONTAMINATION",
+          "type": "problem",
+          "name": "Engine Oil Contamination"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
       ],
       "valid": true
     },
@@ -358,39 +363,6 @@
           "name": "Particle Wear in Engines"
         },
         {
-          "key": "MACROCORE",
-          "type": "technology",
-          "name": "MACROCORE™"
-        }
-      ],
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_013",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "steps": [
-        {
-          "key": "AGRICULTURE",
-          "type": "industry",
-          "name": "Agriculture"
-        },
-        {
-          "key": "ENGINE_OIL_CONTAMINATION",
-          "type": "problem",
-          "name": "Engine Oil Contamination"
-        },
-        {
-          "key": "PARTICLE_WEAR",
-          "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
-        },
-        {
           "key": "SYNTRAX",
           "type": "technology",
           "name": "SYNTRAX™"
@@ -402,7 +374,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_014",
+      "path_id": "PATH_B_AGRICULTURE_013",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -435,7 +407,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_015",
+      "path_id": "PATH_B_AGRICULTURE_014",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -468,7 +440,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_016",
+      "path_id": "PATH_B_AGRICULTURE_015",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -501,40 +473,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AGRICULTURE_017",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "steps": [
-        {
-          "key": "AGRICULTURE",
-          "type": "industry",
-          "name": "Agriculture"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_018",
+      "path_id": "PATH_B_AGRICULTURE_016",
       "path_type": "B",
       "entry_node": "AGRICULTURE",
       "entry_type": "industry",
@@ -567,7 +506,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_019",
+      "path_id": "PATH_B_AUTOMOTIVE_017",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -600,7 +539,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_020",
+      "path_id": "PATH_B_AUTOMOTIVE_018",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -633,7 +572,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_021",
+      "path_id": "PATH_B_AUTOMOTIVE_019",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -666,7 +605,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_022",
+      "path_id": "PATH_B_AUTOMOTIVE_020",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -699,7 +638,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_BUS_COACH_023",
+      "path_id": "PATH_B_BUS_COACH_021",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -732,7 +671,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_BUS_COACH_024",
+      "path_id": "PATH_B_BUS_COACH_022",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -765,7 +704,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_BUS_COACH_025",
+      "path_id": "PATH_B_BUS_COACH_023",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -798,7 +737,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_026",
+      "path_id": "PATH_B_CONSTRUCTION_024",
       "path_type": "B",
       "entry_node": "CONSTRUCTION",
       "entry_type": "industry",
@@ -813,6 +752,72 @@
           "key": "DUST_INGESTION",
           "type": "problem",
           "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_025",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "steps": [
+        {
+          "key": "CONSTRUCTION",
+          "type": "industry",
+          "name": "Construction"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX™"
+        }
+      ],
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_CONSTRUCTION_026",
+      "path_type": "B",
+      "entry_node": "CONSTRUCTION",
+      "entry_type": "industry",
+      "industry": "CONSTRUCTION",
+      "steps": [
+        {
+          "key": "CONSTRUCTION",
+          "type": "industry",
+          "name": "Construction"
+        },
+        {
+          "key": "ENGINE_OIL_CONTAMINATION",
+          "type": "problem",
+          "name": "Engine Oil Contamination"
         },
         {
           "key": "PARTICLE_WEAR",
@@ -843,9 +848,9 @@
           "name": "Construction"
         },
         {
-          "key": "DUST_INGESTION",
+          "key": "ENGINE_OIL_CONTAMINATION",
           "type": "problem",
-          "name": "Dust Ingestion"
+          "name": "Engine Oil Contamination"
         },
         {
           "key": "PARTICLE_WEAR",
@@ -876,23 +881,23 @@
           "name": "Construction"
         },
         {
-          "key": "ENGINE_OIL_CONTAMINATION",
+          "key": "HYDRAULIC_VALVE_FAILURE",
           "type": "problem",
-          "name": "Engine Oil Contamination"
+          "name": "Hydraulic Valve Failure"
         },
         {
-          "key": "PARTICLE_WEAR",
+          "key": "HYDRAULIC_CONTAMINATION",
           "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
+          "name": "Hydraulic System Contamination"
         },
         {
-          "key": "MACROCORE",
+          "key": "NANOFORCE",
           "type": "technology",
-          "name": "MACROCORE™"
+          "name": "NANOFORCE™"
         }
       ],
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "valid": true
     },
@@ -909,6 +914,72 @@
           "name": "Construction"
         },
         {
+          "key": "OPERATOR_DUST_EXPOSURE",
+          "type": "problem",
+          "name": "Operator Dust Exposure"
+        },
+        {
+          "key": "CABIN_AIR_CONTAMINATION",
+          "type": "contamination-mode",
+          "name": "Cabin Air Contamination"
+        },
+        {
+          "key": "MICROKAPPA",
+          "type": "technology",
+          "name": "MICROKAPPA™"
+        }
+      ],
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MARINE_030",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "steps": [
+        {
+          "key": "MARINE",
+          "type": "industry",
+          "name": "Marine"
+        },
+        {
+          "key": "ENGINE_OIL_CONTAMINATION",
+          "type": "problem",
+          "name": "Engine Oil Contamination"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MARINE_031",
+      "path_type": "B",
+      "entry_node": "MARINE",
+      "entry_type": "industry",
+      "industry": "MARINE",
+      "steps": [
+        {
+          "key": "MARINE",
+          "type": "industry",
+          "name": "Marine"
+        },
+        {
           "key": "ENGINE_OIL_CONTAMINATION",
           "type": "problem",
           "name": "Engine Oil Contamination"
@@ -930,101 +1001,35 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_030",
+      "path_id": "PATH_B_MARINE_032",
       "path_type": "B",
-      "entry_node": "CONSTRUCTION",
+      "entry_node": "MARINE",
       "entry_type": "industry",
-      "industry": "CONSTRUCTION",
+      "industry": "MARINE",
       "steps": [
         {
-          "key": "CONSTRUCTION",
+          "key": "MARINE",
           "type": "industry",
-          "name": "Construction"
+          "name": "Marine"
         },
         {
-          "key": "HYDRAULIC_VALVE_FAILURE",
+          "key": "FUEL_FILTER_PLUGGING",
           "type": "problem",
-          "name": "Hydraulic Valve Failure"
+          "name": "Fuel Filter Plugging"
         },
         {
-          "key": "HYDRAULIC_CONTAMINATION",
+          "key": "DIESEL_WATER",
           "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
+          "name": "Diesel Water Contamination"
         },
         {
-          "key": "NANOFORCE",
+          "key": "HYDROCORE",
           "type": "technology",
-          "name": "NANOFORCE™"
+          "name": "HYDROCORE™"
         }
       ],
       "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_031",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "steps": [
-        {
-          "key": "CONSTRUCTION",
-          "type": "industry",
-          "name": "Construction"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_032",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "steps": [
-        {
-          "key": "CONSTRUCTION",
-          "type": "industry",
-          "name": "Construction"
-        },
-        {
-          "key": "OPERATOR_DUST_EXPOSURE",
-          "type": "problem",
-          "name": "Operator Dust Exposure"
-        },
-        {
-          "key": "CABIN_AIR_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Cabin Air Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
     },
@@ -1041,23 +1046,23 @@
           "name": "Marine"
         },
         {
-          "key": "ENGINE_OIL_CONTAMINATION",
+          "key": "FUEL_FILTER_PLUGGING",
           "type": "problem",
-          "name": "Engine Oil Contamination"
+          "name": "Fuel Filter Plugging"
         },
         {
-          "key": "PARTICLE_WEAR",
+          "key": "DIESEL_WATER",
           "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
+          "name": "Diesel Water Contamination"
         },
         {
-          "key": "MACROCORE",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "MACROCORE™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "valid": true
     },
@@ -1074,105 +1079,6 @@
           "name": "Marine"
         },
         {
-          "key": "ENGINE_OIL_CONTAMINATION",
-          "type": "problem",
-          "name": "Engine Oil Contamination"
-        },
-        {
-          "key": "PARTICLE_WEAR",
-          "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
-        },
-        {
-          "key": "SYNTRAX",
-          "type": "technology",
-          "name": "SYNTRAX™"
-        }
-      ],
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MARINE_035",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "steps": [
-        {
-          "key": "MARINE",
-          "type": "industry",
-          "name": "Marine"
-        },
-        {
-          "key": "FUEL_FILTER_PLUGGING",
-          "type": "problem",
-          "name": "Fuel Filter Plugging"
-        },
-        {
-          "key": "DIESEL_WATER",
-          "type": "contamination-mode",
-          "name": "Diesel Water Contamination"
-        },
-        {
-          "key": "HYDROCORE",
-          "type": "technology",
-          "name": "HYDROCORE™"
-        }
-      ],
-      "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MARINE_036",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "steps": [
-        {
-          "key": "MARINE",
-          "type": "industry",
-          "name": "Marine"
-        },
-        {
-          "key": "FUEL_FILTER_PLUGGING",
-          "type": "problem",
-          "name": "Fuel Filter Plugging"
-        },
-        {
-          "key": "DIESEL_WATER",
-          "type": "contamination-mode",
-          "name": "Diesel Water Contamination"
-        },
-        {
-          "key": "TURBOCORE",
-          "type": "technology",
-          "name": "TURBOCORE™"
-        }
-      ],
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MARINE_037",
-      "path_type": "B",
-      "entry_node": "MARINE",
-      "entry_type": "industry",
-      "industry": "MARINE",
-      "steps": [
-        {
-          "key": "MARINE",
-          "type": "industry",
-          "name": "Marine"
-        },
-        {
           "key": "HYDRAULIC_VALVE_FAILURE",
           "type": "problem",
           "name": "Hydraulic Valve Failure"
@@ -1194,35 +1100,134 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_MARINE_038",
+      "path_id": "PATH_B_MINING_035",
       "path_type": "B",
-      "entry_node": "MARINE",
+      "entry_node": "MINING",
       "entry_type": "industry",
-      "industry": "MARINE",
+      "industry": "MINING",
       "steps": [
         {
-          "key": "MARINE",
+          "key": "MINING",
           "type": "industry",
-          "name": "Marine"
+          "name": "Mining"
         },
         {
-          "key": "HYDRAULIC_VALVE_FAILURE",
+          "key": "DUST_INGESTION",
           "type": "problem",
-          "name": "Hydraulic Valve Failure"
+          "name": "Dust Ingestion"
         },
         {
-          "key": "HYDRAULIC_CONTAMINATION",
+          "key": "PARTICLE_WEAR",
           "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
+          "name": "Particle Wear in Engines"
         },
         {
-          "key": "MICROKAPPA",
+          "key": "MACROCORE",
           "type": "technology",
-          "name": "MICROKAPPA™"
+          "name": "MACROCORE™"
         }
       ],
       "terminal_product_families": [
-        "CABIN_PRIMARY"
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MINING_036",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "DUST_INGESTION",
+          "type": "problem",
+          "name": "Dust Ingestion"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX™"
+        }
+      ],
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MINING_037",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "ENGINE_OIL_CONTAMINATION",
+          "type": "problem",
+          "name": "Engine Oil Contamination"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "MACROCORE",
+          "type": "technology",
+          "name": "MACROCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_B_MINING_038",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "steps": [
+        {
+          "key": "MINING",
+          "type": "industry",
+          "name": "Mining"
+        },
+        {
+          "key": "ENGINE_OIL_CONTAMINATION",
+          "type": "problem",
+          "name": "Engine Oil Contamination"
+        },
+        {
+          "key": "PARTICLE_WEAR",
+          "type": "contamination-mode",
+          "name": "Particle Wear in Engines"
+        },
+        {
+          "key": "SYNTRAX",
+          "type": "technology",
+          "name": "SYNTRAX™"
+        }
+      ],
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
       ],
       "valid": true
     },
@@ -1239,23 +1244,23 @@
           "name": "Mining"
         },
         {
-          "key": "DUST_INGESTION",
+          "key": "FUEL_FILTER_PLUGGING",
           "type": "problem",
-          "name": "Dust Ingestion"
+          "name": "Fuel Filter Plugging"
         },
         {
-          "key": "PARTICLE_WEAR",
+          "key": "DIESEL_WATER",
           "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
+          "name": "Diesel Water Contamination"
         },
         {
-          "key": "MACROCORE",
+          "key": "HYDROCORE",
           "type": "technology",
-          "name": "MACROCORE™"
+          "name": "HYDROCORE™"
         }
       ],
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
     },
@@ -1272,23 +1277,23 @@
           "name": "Mining"
         },
         {
-          "key": "DUST_INGESTION",
+          "key": "FUEL_FILTER_PLUGGING",
           "type": "problem",
-          "name": "Dust Ingestion"
+          "name": "Fuel Filter Plugging"
         },
         {
-          "key": "PARTICLE_WEAR",
+          "key": "DIESEL_WATER",
           "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
+          "name": "Diesel Water Contamination"
         },
         {
-          "key": "SYNTRAX",
+          "key": "TURBOCORE",
           "type": "technology",
-          "name": "SYNTRAX™"
+          "name": "TURBOCORE™"
         }
       ],
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "valid": true
     },
@@ -1305,23 +1310,23 @@
           "name": "Mining"
         },
         {
-          "key": "ENGINE_OIL_CONTAMINATION",
+          "key": "HYDRAULIC_VALVE_FAILURE",
           "type": "problem",
-          "name": "Engine Oil Contamination"
+          "name": "Hydraulic Valve Failure"
         },
         {
-          "key": "PARTICLE_WEAR",
+          "key": "HYDRAULIC_CONTAMINATION",
           "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
+          "name": "Hydraulic System Contamination"
         },
         {
-          "key": "MACROCORE",
+          "key": "NANOFORCE",
           "type": "technology",
-          "name": "MACROCORE™"
+          "name": "NANOFORCE™"
         }
       ],
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "valid": true
     },
@@ -1338,171 +1343,6 @@
           "name": "Mining"
         },
         {
-          "key": "ENGINE_OIL_CONTAMINATION",
-          "type": "problem",
-          "name": "Engine Oil Contamination"
-        },
-        {
-          "key": "PARTICLE_WEAR",
-          "type": "contamination-mode",
-          "name": "Particle Wear in Engines"
-        },
-        {
-          "key": "SYNTRAX",
-          "type": "technology",
-          "name": "SYNTRAX™"
-        }
-      ],
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MINING_043",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "steps": [
-        {
-          "key": "MINING",
-          "type": "industry",
-          "name": "Mining"
-        },
-        {
-          "key": "FUEL_FILTER_PLUGGING",
-          "type": "problem",
-          "name": "Fuel Filter Plugging"
-        },
-        {
-          "key": "DIESEL_WATER",
-          "type": "contamination-mode",
-          "name": "Diesel Water Contamination"
-        },
-        {
-          "key": "HYDROCORE",
-          "type": "technology",
-          "name": "HYDROCORE™"
-        }
-      ],
-      "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MINING_044",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "steps": [
-        {
-          "key": "MINING",
-          "type": "industry",
-          "name": "Mining"
-        },
-        {
-          "key": "FUEL_FILTER_PLUGGING",
-          "type": "problem",
-          "name": "Fuel Filter Plugging"
-        },
-        {
-          "key": "DIESEL_WATER",
-          "type": "contamination-mode",
-          "name": "Diesel Water Contamination"
-        },
-        {
-          "key": "TURBOCORE",
-          "type": "technology",
-          "name": "TURBOCORE™"
-        }
-      ],
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MINING_045",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "steps": [
-        {
-          "key": "MINING",
-          "type": "industry",
-          "name": "Mining"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "NANOFORCE",
-          "type": "technology",
-          "name": "NANOFORCE™"
-        }
-      ],
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MINING_046",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "steps": [
-        {
-          "key": "MINING",
-          "type": "industry",
-          "name": "Mining"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_MINING_047",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "steps": [
-        {
-          "key": "MINING",
-          "type": "industry",
-          "name": "Mining"
-        },
-        {
           "key": "OPERATOR_DUST_EXPOSURE",
           "type": "problem",
           "name": "Operator Dust Exposure"
@@ -1524,7 +1364,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_048",
+      "path_id": "PATH_B_OIL_GAS_043",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -1557,7 +1397,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_049",
+      "path_id": "PATH_B_OIL_GAS_044",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -1590,7 +1430,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_050",
+      "path_id": "PATH_B_OIL_GAS_045",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -1623,7 +1463,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_051",
+      "path_id": "PATH_B_OIL_GAS_046",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -1656,7 +1496,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_052",
+      "path_id": "PATH_B_OIL_GAS_047",
       "path_type": "B",
       "entry_node": "OIL_GAS",
       "entry_type": "industry",
@@ -1689,40 +1529,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_OIL_GAS_053",
-      "path_type": "B",
-      "entry_node": "OIL_GAS",
-      "entry_type": "industry",
-      "industry": "OIL_GAS",
-      "steps": [
-        {
-          "key": "OIL_GAS",
-          "type": "industry",
-          "name": "Oil & Gas"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_054",
+      "path_id": "PATH_B_POWER_GENERATION_048",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -1755,7 +1562,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_055",
+      "path_id": "PATH_B_POWER_GENERATION_049",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -1788,7 +1595,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_056",
+      "path_id": "PATH_B_POWER_GENERATION_050",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -1821,7 +1628,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_057",
+      "path_id": "PATH_B_POWER_GENERATION_051",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -1854,7 +1661,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_058",
+      "path_id": "PATH_B_POWER_GENERATION_052",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -1887,40 +1694,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_059",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "steps": [
-        {
-          "key": "POWER_GENERATION",
-          "type": "industry",
-          "name": "Power Generation"
-        },
-        {
-          "key": "HYDRAULIC_VALVE_FAILURE",
-          "type": "problem",
-          "name": "Hydraulic Valve Failure"
-        },
-        {
-          "key": "HYDRAULIC_CONTAMINATION",
-          "type": "contamination-mode",
-          "name": "Hydraulic System Contamination"
-        },
-        {
-          "key": "MICROKAPPA",
-          "type": "technology",
-          "name": "MICROKAPPA™"
-        }
-      ],
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "valid": true
-    },
-    {
-      "path_id": "PATH_B_RAILWAY_060",
+      "path_id": "PATH_B_RAILWAY_053",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -1953,7 +1727,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_RAILWAY_061",
+      "path_id": "PATH_B_RAILWAY_054",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -1986,7 +1760,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_RAILWAY_062",
+      "path_id": "PATH_B_RAILWAY_055",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -2019,7 +1793,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_063",
+      "path_id": "PATH_B_TRUCKS_FLEETS_056",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -2052,7 +1826,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_064",
+      "path_id": "PATH_B_TRUCKS_FLEETS_057",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -2085,7 +1859,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_065",
+      "path_id": "PATH_B_TRUCKS_FLEETS_058",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -2118,7 +1892,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_066",
+      "path_id": "PATH_B_TRUCKS_FLEETS_059",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -2151,7 +1925,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_067",
+      "path_id": "PATH_B_TRUCKS_FLEETS_060",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -2184,7 +1958,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_068",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_061",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -2217,7 +1991,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_069",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_062",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -2250,7 +2024,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_070",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_063",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -2283,7 +2057,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_DRYCORE_071",
+      "path_id": "PATH_C_DRYCORE_064",
       "path_type": "C",
       "entry_node": "DRYCORE",
       "entry_type": "technology",
@@ -2301,7 +2075,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_HYDROCORE_072",
+      "path_id": "PATH_C_HYDROCORE_065",
       "path_type": "C",
       "entry_node": "HYDROCORE",
       "entry_type": "technology",
@@ -2319,7 +2093,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_INTEKCORE_073",
+      "path_id": "PATH_C_INTEKCORE_066",
       "path_type": "C",
       "entry_node": "INTEKCORE",
       "entry_type": "technology",
@@ -2337,7 +2111,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_MACROCORE_074",
+      "path_id": "PATH_C_MACROCORE_067",
       "path_type": "C",
       "entry_node": "MACROCORE",
       "entry_type": "technology",
@@ -2355,7 +2129,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_MICROKAPPA_075",
+      "path_id": "PATH_C_MICROKAPPA_068",
       "path_type": "C",
       "entry_node": "MICROKAPPA",
       "entry_type": "technology",
@@ -2373,7 +2147,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_NANOFORCE_076",
+      "path_id": "PATH_C_NANOFORCE_069",
       "path_type": "C",
       "entry_node": "NANOFORCE",
       "entry_type": "technology",
@@ -2391,7 +2165,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_SYNTAPORE_077",
+      "path_id": "PATH_C_SYNTAPORE_070",
       "path_type": "C",
       "entry_node": "SYNTAPORE",
       "entry_type": "technology",
@@ -2409,7 +2183,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_SYNTRAX_078",
+      "path_id": "PATH_C_SYNTRAX_071",
       "path_type": "C",
       "entry_node": "SYNTRAX",
       "entry_type": "technology",
@@ -2427,7 +2201,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_THERMACORE_079",
+      "path_id": "PATH_C_THERMACORE_072",
       "path_type": "C",
       "entry_node": "THERMACORE",
       "entry_type": "technology",
@@ -2445,7 +2219,7 @@
       "valid": true
     },
     {
-      "path_id": "PATH_C_TURBOCORE_080",
+      "path_id": "PATH_C_TURBOCORE_073",
       "path_type": "C",
       "entry_node": "TURBOCORE",
       "entry_type": "technology",
@@ -2469,21 +2243,21 @@
       "reachable_via": [
         "PATH_A_DUST_INGESTION_001",
         "PATH_A_ENGINE_OIL_CONTAMINATION_003",
-        "PATH_B_AGRICULTURE_010",
-        "PATH_B_AGRICULTURE_012",
-        "PATH_B_AUTOMOTIVE_019",
-        "PATH_B_BUS_COACH_023",
+        "PATH_B_AGRICULTURE_009",
+        "PATH_B_AGRICULTURE_011",
+        "PATH_B_AUTOMOTIVE_017",
+        "PATH_B_BUS_COACH_021",
+        "PATH_B_CONSTRUCTION_024",
         "PATH_B_CONSTRUCTION_026",
-        "PATH_B_CONSTRUCTION_028",
-        "PATH_B_MARINE_033",
-        "PATH_B_MINING_039",
-        "PATH_B_MINING_041",
-        "PATH_B_OIL_GAS_048",
-        "PATH_B_POWER_GENERATION_054",
-        "PATH_B_RAILWAY_060",
-        "PATH_B_TRUCKS_FLEETS_063",
-        "PATH_B_WASTE_MUNICIPAL_068",
-        "PATH_C_MACROCORE_074"
+        "PATH_B_MARINE_030",
+        "PATH_B_MINING_035",
+        "PATH_B_MINING_037",
+        "PATH_B_OIL_GAS_043",
+        "PATH_B_POWER_GENERATION_048",
+        "PATH_B_RAILWAY_053",
+        "PATH_B_TRUCKS_FLEETS_056",
+        "PATH_B_WASTE_MUNICIPAL_061",
+        "PATH_C_MACROCORE_067"
       ],
       "entry_problems": [
         "DUST_INGESTION",
@@ -2521,7 +2295,7 @@
     "AIR_HOUSING": {
       "name": "Air Cleaner Housings",
       "reachable_via": [
-        "PATH_C_INTEKCORE_073"
+        "PATH_C_INTEKCORE_066"
       ],
       "entry_problems": [],
       "entry_industries": [],
@@ -2543,35 +2317,24 @@
     "CABIN_PRIMARY": {
       "name": "Primary Cabin Air Protection",
       "reachable_via": [
-        "PATH_A_HYDRAULIC_VALVE_FAILURE_008",
-        "PATH_A_OPERATOR_DUST_EXPOSURE_009",
-        "PATH_B_AGRICULTURE_017",
-        "PATH_B_AGRICULTURE_018",
-        "PATH_B_BUS_COACH_025",
-        "PATH_B_CONSTRUCTION_031",
-        "PATH_B_CONSTRUCTION_032",
-        "PATH_B_MARINE_038",
-        "PATH_B_MINING_046",
-        "PATH_B_MINING_047",
-        "PATH_B_OIL_GAS_053",
-        "PATH_B_POWER_GENERATION_059",
-        "PATH_B_RAILWAY_062",
-        "PATH_B_TRUCKS_FLEETS_067",
-        "PATH_B_WASTE_MUNICIPAL_070",
-        "PATH_C_MICROKAPPA_075"
+        "PATH_A_OPERATOR_DUST_EXPOSURE_008",
+        "PATH_B_AGRICULTURE_016",
+        "PATH_B_BUS_COACH_023",
+        "PATH_B_CONSTRUCTION_029",
+        "PATH_B_MINING_042",
+        "PATH_B_RAILWAY_055",
+        "PATH_B_TRUCKS_FLEETS_060",
+        "PATH_B_WASTE_MUNICIPAL_063",
+        "PATH_C_MICROKAPPA_068"
       ],
       "entry_problems": [
-        "HYDRAULIC_VALVE_FAILURE",
         "OPERATOR_DUST_EXPOSURE"
       ],
       "entry_industries": [
         "AGRICULTURE",
         "BUS_COACH",
         "CONSTRUCTION",
-        "MARINE",
         "MINING",
-        "OIL_GAS",
-        "POWER_GENERATION",
         "RAILWAY",
         "TRUCKS_FLEETS",
         "WASTE_MUNICIPAL"
@@ -2597,7 +2360,7 @@
     "COMPRESSED_AIR_PRIMARY": {
       "name": "Pneumatic Air Dryer Protection",
       "reachable_via": [
-        "PATH_C_DRYCORE_071"
+        "PATH_C_DRYCORE_064"
       ],
       "entry_problems": [],
       "entry_industries": [],
@@ -2615,7 +2378,7 @@
     "COOLING_PRIMARY": {
       "name": "Cooling System Protection",
       "reachable_via": [
-        "PATH_C_THERMACORE_079"
+        "PATH_C_THERMACORE_072"
       ],
       "entry_problems": [],
       "entry_industries": [],
@@ -2635,7 +2398,7 @@
     "FUEL_PRIMARY": {
       "name": "Primary Fuel Protection",
       "reachable_via": [
-        "PATH_C_SYNTAPORE_077"
+        "PATH_C_SYNTAPORE_070"
       ],
       "entry_problems": [],
       "entry_industries": [],
@@ -2657,14 +2420,14 @@
       "name": "Turbine Fuel Separation",
       "reachable_via": [
         "PATH_A_FUEL_FILTER_PLUGGING_006",
-        "PATH_B_AGRICULTURE_015",
-        "PATH_B_AUTOMOTIVE_022",
-        "PATH_B_MARINE_036",
-        "PATH_B_MINING_044",
-        "PATH_B_OIL_GAS_051",
-        "PATH_B_POWER_GENERATION_057",
-        "PATH_B_TRUCKS_FLEETS_066",
-        "PATH_C_TURBOCORE_080"
+        "PATH_B_AGRICULTURE_014",
+        "PATH_B_AUTOMOTIVE_020",
+        "PATH_B_MARINE_033",
+        "PATH_B_MINING_040",
+        "PATH_B_OIL_GAS_046",
+        "PATH_B_POWER_GENERATION_051",
+        "PATH_B_TRUCKS_FLEETS_059",
+        "PATH_C_TURBOCORE_073"
       ],
       "entry_problems": [
         "FUEL_FILTER_PLUGGING"
@@ -2699,14 +2462,14 @@
       "name": "Fuel Water Separation",
       "reachable_via": [
         "PATH_A_FUEL_FILTER_PLUGGING_005",
-        "PATH_B_AGRICULTURE_014",
-        "PATH_B_AUTOMOTIVE_021",
-        "PATH_B_MARINE_035",
-        "PATH_B_MINING_043",
-        "PATH_B_OIL_GAS_050",
-        "PATH_B_POWER_GENERATION_056",
-        "PATH_B_TRUCKS_FLEETS_065",
-        "PATH_C_HYDROCORE_072"
+        "PATH_B_AGRICULTURE_013",
+        "PATH_B_AUTOMOTIVE_019",
+        "PATH_B_MARINE_032",
+        "PATH_B_MINING_039",
+        "PATH_B_OIL_GAS_045",
+        "PATH_B_POWER_GENERATION_050",
+        "PATH_B_TRUCKS_FLEETS_058",
+        "PATH_C_HYDROCORE_065"
       ],
       "entry_problems": [
         "FUEL_FILTER_PLUGGING"
@@ -2738,13 +2501,13 @@
       "name": "Primary Hydraulic Protection",
       "reachable_via": [
         "PATH_A_HYDRAULIC_VALVE_FAILURE_007",
-        "PATH_B_AGRICULTURE_016",
-        "PATH_B_CONSTRUCTION_030",
-        "PATH_B_MARINE_037",
-        "PATH_B_MINING_045",
-        "PATH_B_OIL_GAS_052",
-        "PATH_B_POWER_GENERATION_058",
-        "PATH_C_NANOFORCE_076"
+        "PATH_B_AGRICULTURE_015",
+        "PATH_B_CONSTRUCTION_028",
+        "PATH_B_MARINE_034",
+        "PATH_B_MINING_041",
+        "PATH_B_OIL_GAS_047",
+        "PATH_B_POWER_GENERATION_052",
+        "PATH_C_NANOFORCE_069"
       ],
       "entry_problems": [
         "HYDRAULIC_VALVE_FAILURE"
@@ -2779,21 +2542,21 @@
       "reachable_via": [
         "PATH_A_DUST_INGESTION_002",
         "PATH_A_ENGINE_OIL_CONTAMINATION_004",
-        "PATH_B_AGRICULTURE_011",
-        "PATH_B_AGRICULTURE_013",
-        "PATH_B_AUTOMOTIVE_020",
-        "PATH_B_BUS_COACH_024",
+        "PATH_B_AGRICULTURE_010",
+        "PATH_B_AGRICULTURE_012",
+        "PATH_B_AUTOMOTIVE_018",
+        "PATH_B_BUS_COACH_022",
+        "PATH_B_CONSTRUCTION_025",
         "PATH_B_CONSTRUCTION_027",
-        "PATH_B_CONSTRUCTION_029",
-        "PATH_B_MARINE_034",
-        "PATH_B_MINING_040",
-        "PATH_B_MINING_042",
-        "PATH_B_OIL_GAS_049",
-        "PATH_B_POWER_GENERATION_055",
-        "PATH_B_RAILWAY_061",
-        "PATH_B_TRUCKS_FLEETS_064",
-        "PATH_B_WASTE_MUNICIPAL_069",
-        "PATH_C_SYNTRAX_078"
+        "PATH_B_MARINE_031",
+        "PATH_B_MINING_036",
+        "PATH_B_MINING_038",
+        "PATH_B_OIL_GAS_044",
+        "PATH_B_POWER_GENERATION_049",
+        "PATH_B_RAILWAY_054",
+        "PATH_B_TRUCKS_FLEETS_057",
+        "PATH_B_WASTE_MUNICIPAL_062",
+        "PATH_C_SYNTRAX_071"
       ],
       "entry_problems": [
         "DUST_INGESTION",

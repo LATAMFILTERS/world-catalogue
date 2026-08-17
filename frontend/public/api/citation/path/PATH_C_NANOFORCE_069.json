@@ -1,0 +1,50 @@
+{
+  "path_id": "PATH_C_NANOFORCE_069",
+  "path_type": "C",
+  "entry_node": "NANOFORCE",
+  "entry_type": "technology",
+  "industry": null,
+  "valid": true,
+  "steps": [
+    {
+      "key": "NANOFORCE",
+      "type": "technology",
+      "name": "NANOFORCE™",
+      "citation_record": {
+        "key": "NANOFORCE",
+        "type": "technology",
+        "name": "NANOFORCE™",
+        "slug": "nanoforce",
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
+        "citation": {
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/nanoforce/",
+          "concept": "NANOFORCE Hydraulic Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:43bb24050dd038584ac0ff20e0d482bfdb272cd55f45d15bfe01b9dec00b64f0"
+        },
+        "canonical": {
+          "definition": "NANOFORCE is the ELIMFILTERS hydraulic filtration architecture for contamination control in fluid-power systems.",
+          "systems": "Hydraulic Protection; approved hydraulic fluid-power filtration applications.",
+          "failure_impact": "Uncontrolled hydraulic-fluid contamination can accelerate wear, contribute to valve stiction and reduce the precision and reliability of fluid-power components.",
+          "related_standards": "ISO 16889 provides a recognized multi-pass test method for hydraulic filter performance. ISO 4406 provides a recognized fluid-cleanliness coding framework. Application-specific targets and performance values must be established from approved engineering requirements; the technology name alone does not imply a universal Beta ratio or cleanliness code.",
+          "related_technologies": "SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. TURBOCORE is a fuel-separation technology and must not be represented as a hydraulic technology.",
+          "industrial_role": "NANOFORCE provides the hydraulic-fluid contamination-control layer of ELIMFILTERS Hydraulic Protection. Selection is governed by the cleanliness requirement of the most sensitive component together with system flow, pressure, temperature, contaminant load and duty cycle."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_16889",
+            "ISO_4406"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "HYDRAULIC_PRIMARY"
+  ]
+}

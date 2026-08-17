@@ -23,7 +23,6 @@ impacts:
   downtime: "+25–35% unplanned"
 resolved_by:
   - "[[NANOFORCE]]"
-  - "[[MICROKAPPA]]"
 related_standards:
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
@@ -47,7 +46,6 @@ Varnish formation is a secondary contamination mechanism distinct from particula
 
 ### Resolved By Technologies
 - [[NANOFORCE|NANOFORCE — Sub-micron particle removal in hydraulic circuits at Beta(x[c]) ≥ 1000 at 5 µm absolute; protects proportional valve spools with 1–5 µm critical clearances]]
-- [[MICROKAPPA|MICROKAPPA — Hydraulic reservoir breather filtration; prevents ingress contamination at reservoir air exchange interface]]
 
 ### Governing Standards
 - [[ISO_16889|ISO 16889 — Multi-pass filter Beta ratio test; defines filter efficiency classification for hydraulic system element selection at specified cleanliness targets]]
@@ -92,7 +90,7 @@ RELATED_STANDARDS
 ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements
 
 RELATED_TECHNOLOGIES
-NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | MICROKAPPA: Reservoir breather contamination prevention
+NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances
 
 INDUSTRIAL_ROLE
 Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets.
