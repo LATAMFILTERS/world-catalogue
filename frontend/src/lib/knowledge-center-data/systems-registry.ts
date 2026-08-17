@@ -199,7 +199,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     targetCleanliness: 'SCA concentration 0.5–1.0 units per liter; pH 8.5–10.5; coolant change interval per ASTM D6210.',
     keyMetrics: [
       { label: 'SCA target concentration', value: '0.5–1.0 units/L' },
-      { label: 'THERMACORE™ particle capture', value: '>80% at 20 µm' },
+      { label: 'THERMACORE™ particle capture', value: 'Per approved application' },
       { label: 'Liner erosion mechanism', value: 'Cavitation from vapor bubble collapse' },
     ],
     sections: [
@@ -209,7 +209,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'SCA Management',
-        body: 'SCA concentration must remain within the 0.5–1.0 units/L range. Below 0.5, cavitation erosion protection is insufficient. Above 1.5, SCA precipitation can cause gel formation and clogging. THERMACORE™ releases SCA linearly across the service interval, maintaining concentration without overdose. SCA concentration is verified using test strips or refractometer measurement at each coolant service interval.',
+        body: 'SCA concentration must remain within the range specified for the coolant chemistry and approved application. Below the minimum, cavitation erosion protection is insufficient; above the maximum, SCA precipitation can cause gel formation and clogging. THERMACORE™ is engineered to release SCA at a controlled rate across the service interval to help maintain concentration within the specified range. SCA concentration is verified using test strips or refractometer measurement at each coolant service interval.',
       },
     ],
   },

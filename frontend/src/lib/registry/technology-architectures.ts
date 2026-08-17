@@ -956,7 +956,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       'Applies to diesel engine cooling circuits in heavy-duty engines where cavitation erosion of wet cylinder liners is a failure mode. Wet liner engines (common in large diesel: >300 kW) require active SCA management throughout the coolant service interval. The THERMACORE element releases SCA additives into the coolant at a controlled rate, replacing depleted inhibitors without requiring drain-and-refill coolant changes.',
 
     industrialRole:
-      'Cavitation erosion of wet cylinder liners is caused by collapse of vapor bubbles formed at liner surfaces during combustion pressure pulses. The liner surface experiences repeated micro-explosive implosion events that remove metal at a rate that can perforate a liner wall in 500–1,000 hours without SCA protection. THERMACORE SCA management maintains the nitrite and molybdate inhibitor concentrations that form protective surface layers on liner surfaces, preventing vapor bubble nucleation. Correct SCA maintenance extends liner service life from 500 hours (unprotected) to engine design life (15,000–20,000 hours).',
+      'Cavitation erosion of wet cylinder liners is caused by collapse of vapor bubbles formed at liner surfaces during combustion pressure pulses. The liner surface experiences repeated micro-explosive implosion events that remove metal at a rate that can perforate a liner wall in well under engine design life without SCA protection. THERMACORE SCA management maintains the nitrite and molybdate inhibitor concentrations that form protective surface layers on liner surfaces, preventing vapor bubble nucleation. Maintaining SCA concentration within the specified range is a primary lever for extending liner life toward engine design life; the specific hours achieved must be confirmed by coolant condition monitoring for the approved application.',
 
     protectionMedia: [
       {
@@ -1034,7 +1034,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Coolant corrosion products (rust, scale)',
         mechanism: 'Depth filtration through cellulose layer',
-        efficiency: '>80% at 10 µm',
+        efficiency: 'Rated per the approved application',
         particleSizeRange: '10–500 µm',
       },
       {
@@ -1045,22 +1045,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Coolant SCA concentration maintenance',
-        value: '0.5–1.0',
-        unit: 'SCA units/L at end of service interval',
-        evidenceSource: 'ASTM D6210 coolant chemistry analysis at end-of-service',
-        standardRef: 'ASTM D6210',
-      },
-      {
-        metric: 'Liner cavitation protection duration',
-        value: '500–1,000',
-        unit: 'hours per element (circuit volume dependent)',
-        evidenceSource: 'SAE J1941 liner pitting test — coolant with maintained SCA vs. depleted SCA',
-        standardRef: 'SAE J1941',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
@@ -1068,9 +1053,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'SCA depletion below protective threshold → nitrite/molybdate inhibitor concentration insufficient for liner surface passivation → vapor bubble nucleation at liner surface during combustion pressure pulses → cavitation erosion of liner wall → liner perforation → coolant-oil mixing → engine seizure',
         measuredConsequence:
-          'Liner perforation rate without SCA: 500–1,000 hours in high-load diesel. Cost: wet liner replacement USD 5,000–25,000 per engine, plus 3–7 day off-service for overhaul.',
+          'Liner perforation rate without SCA protection can occur well short of engine design life in high-load diesel applications. Cost: wet liner replacement USD 5,000–25,000 per engine, plus 3–7 day off-service for overhaul.',
         operationalImpact:
-          'Fleet operators without THERMACORE SCA management in wet-liner engine fleets report liner perforation as the leading cause of catastrophic engine failure in engines operating beyond 2,000 hours. Correct THERMACORE use eliminates this failure mode to designed engine overhaul intervals.',
+          'Fleet operators without SCA management in wet-liner engine fleets report liner perforation as a leading cause of catastrophic engine failure. Maintaining SCA concentration within the specified range via THERMACORE is a primary lever for reducing this failure mode; the specific reduction achieved must be confirmed by fleet data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],

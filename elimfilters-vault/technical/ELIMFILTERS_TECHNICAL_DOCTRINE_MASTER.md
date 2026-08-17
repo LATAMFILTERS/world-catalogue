@@ -1237,8 +1237,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 **SCA delivery rate:** Designed for OEM-specified cooling circuit flow rate. SCA charge sized for rated change interval.
 
 **Performance targets:**
-- SCA release rate: linear over specified service interval
-- Particulate removal: >80% at 20 µm
+- SCA release rate and particulate removal efficiency are selected per the ASTM D6210/ASTM D3306 targets specified for the approved application; no universal cleanliness code or removal efficiency is implied by the THERMACORE™ name alone.
 - Compatible with OAT, HOAT, and conventional coolant formulations
 
 **Applicable standards:** ASTM D6210, ASTM D3306
