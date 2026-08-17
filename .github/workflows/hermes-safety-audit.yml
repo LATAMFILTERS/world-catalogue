@@ -41,6 +41,8 @@ jobs:
       - run: npm ci
       - name: Groq research gate
         run: node --test tests/hermes-phase5/groq-research-gate.test.mjs
+      - name: Mission-driven industry sweep
+        run: node --test tests/hermes-phase5/industry-sweep.test.mjs
       - name: Phase 7 contracts
         run: npm run test:hermes-phase7
       - name: Operational readiness
