@@ -1596,15 +1596,15 @@ export const KC_STANDARDS: KCStandard[] = [
     revisionStatus: 'active',
     metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
     scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
-    engineeringPurpose: 'Establishes the compressed air purity classification system (Particle:Water:Oil classes) enabling specification of point-of-use air quality requirements for pneumatic equipment, instrumentation, and process applications — the primary framework for selecting and verifying DRYCORE™ compressed air treatment systems.',
+    engineeringPurpose: 'Establishes the compressed air purity classification system (Particle:Water:Oil classes) enabling specification of point-of-use air quality requirements for pneumatic equipment, instrumentation, and process applications. The water-class (pressure dewpoint) portion of this framework is relevant to DRYCORE™ pneumatic brake-system air-dryer selection.',
     sections: [
       {
         heading: 'Purity Class Structure',
-        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
+        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
       },
       {
         heading: 'Application Requirements',
-        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
+        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ pneumatic brake-system air-dryers are selected against the water-class (pressure dewpoint) target specified for the approved vehicle application.',
       },
       {
         heading: 'Treatment Stage Requirements',
@@ -1614,7 +1614,6 @@ export const KC_STANDARDS: KCStandard[] = [
     keyParams: [
       { label: 'Format', value: 'Particle:Water:Oil class numbers' },
       { label: 'Instrument air minimum', value: 'Class 2:4:1' },
-      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
       { label: 'Class 1 particles', value: '<20,000/m³ at ≥0.1 µm' },
     ],
     applicableSystems: [],
@@ -1639,7 +1638,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What do the ISO 8573-1 water classes represent in terms of pressure dewpoint?',
-        answer: 'ISO 8573-1 water classes are defined by pressure dewpoint (PDP) — the temperature at which water vapour in compressed air at system pressure would begin to condense. Class 1: PDP ≤−70°C (ultra-dry, cryogenic dryer required). Class 2: PDP ≤−40°C (membrane or pressure-swing adsorption dryer). Class 3: PDP ≤−20°C (regenerative adsorption dryer). Class 4: PDP ≤+3°C (refrigeration dryer). Class 5: PDP ≤+7°C (refrigeration dryer at higher dew point). Class 6: liquid water content ≤5 g/m³ (partially dried or partially treated). For instrument air and pneumatic controls in environments where ambient temperature exceeds +3°C, Class 4 (PDP ≤+3°C) prevents condensation in distribution pipework. DRYCORE™ refrigeration drying achieves Class 4 water purity as standard.',
+        answer: 'ISO 8573-1 water classes are defined by pressure dewpoint (PDP) — the temperature at which water vapour in compressed air at system pressure would begin to condense. Class 1: PDP ≤−70°C (ultra-dry, cryogenic dryer required). Class 2: PDP ≤−40°C (membrane or pressure-swing adsorption dryer). Class 3: PDP ≤−20°C (regenerative adsorption dryer). Class 4: PDP ≤+3°C (refrigeration dryer). Class 5: PDP ≤+7°C (refrigeration dryer at higher dew point). Class 6: liquid water content ≤5 g/m³ (partially dried or partially treated). For instrument air and pneumatic controls in environments where ambient temperature exceeds +3°C, Class 4 (PDP ≤+3°C) prevents condensation in distribution pipework. DRYCORE™ pneumatic brake-system air-dryers are sized to the water-class target specified for the approved vehicle application.',
       },
       {
         question: 'What are the ISO 8573-1 oil classes and what sources of oil contamination do they address?',
@@ -1647,7 +1646,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What compressed air treatment train is required to achieve ISO 8573-1 Class 1:4:1?',
-        answer: 'Achieving ISO 8573-1 Class 1:4:1 requires a four-to-five stage treatment train downstream of the air compressor. Stage 1: Bulk separator (removes liquid water and oil aerosol >10 µm). Stage 2: Pre-filter with coalescing element (removes oil aerosol to ≤1 mg/m³, particles >1 µm). Stage 3: Refrigeration dryer (achieves PDP ≤+3°C, satisfying water Class 4). Stage 4: High-efficiency coalescing filter (removes oil aerosol to ≤0.01 mg/m³, satisfying oil Class 1). Stage 5: Activated carbon adsorber (removes oil vapour to ≤0.003 mg/m³). An optional dust/carbon fines filter after the adsorber removes activated carbon particulate to satisfy particle Class 1. DRYCORE™ compressed air filtration and drying systems are designed for this treatment train architecture.',
+        answer: 'Achieving ISO 8573-1 Class 1:4:1 requires a four-to-five stage treatment train downstream of the air compressor. Stage 1: Bulk separator (removes liquid water and oil aerosol >10 µm). Stage 2: Pre-filter with coalescing element (removes oil aerosol to ≤1 mg/m³, particles >1 µm). Stage 3: Refrigeration dryer (achieves PDP ≤+3°C, satisfying water Class 4). Stage 4: High-efficiency coalescing filter (removes oil aerosol to ≤0.01 mg/m³, satisfying oil Class 1). Stage 5: Activated carbon adsorber (removes oil vapour to ≤0.003 mg/m³). An optional dust/carbon fines filter after the adsorber removes activated carbon particulate to satisfy particle Class 1.',
       },
       {
         question: 'How does ISO 8573-2 complement ISO 8573-1 for particle measurement?',
@@ -1674,7 +1673,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva',
-        relevance: 'Primary compressed air purity classification standard defining particle, water (pressure dewpoint), and oil content classes; the framework for specifying DRYCORE™ compressed air treatment system requirements.',
+        relevance: 'Primary compressed air purity classification standard defining particle, water (pressure dewpoint), and oil content classes; the water-class portion of this framework is relevant to specifying DRYCORE™ pneumatic brake-system air-dryer requirements.',
       },
       {
         category: 'standard',
@@ -2162,7 +2161,7 @@ export const KC_STANDARDS: KCStandard[] = [
     applicableSystems: [],
     relatedGlossaryTerms: ['TERM-COMPRESSED-AIR-PURITY', 'TERM-DEW-POINT', 'TERM-COALESCING'],
     relatedTopics: ['testing-and-validation', 'contamination-control'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
     parentStandard: 'STD-ISO-8573-1',
     commonMistakes: [
@@ -2220,7 +2219,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva',
-        relevance: 'Parent classification standard defining oil content classes verified by ISO 8573-2 measurement; the purity class system that DRYCORE™ compressed air treatment systems are designed and certified against.',
+        relevance: 'Parent classification standard defining oil content classes verified by ISO 8573-2 measurement.',
       },
       {
         category: 'standard',

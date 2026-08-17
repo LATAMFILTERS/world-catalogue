@@ -744,7 +744,7 @@ export const ERL_SECTIONS: ERLSection[] = [
     engineeringMetrics: [
       { label: 'Mining dust concentration', value: '0.1–5 mg/m³' },
       { label: 'Harvest dust concentration', value: '500–2,000 mg/m³ (combine proximity)' },
-      { label: 'DRYCORE™ instrument air class', value: 'ISO 8573-1 Class 1:4:1', standard: 'ISO 8573-1' },
+      { label: 'DRYCORE™ moisture control', value: 'Per approved pneumatic brake-system application', standard: 'ISO 8573-1' },
       { label: 'NA engine restriction limit', value: '25 mbar / 10 inH₂O', standard: 'ISO 5011' },
       { label: 'Silica Mohs hardness', value: '7 (vs steel 5–6.5)' },
     ],

@@ -223,7 +223,7 @@ export default function ContaminationControlStrategyPage() {
               { domain: 'Fuel Systems', sensitivity: 'HIGH', critical: 'HPCR injectors (0.1 mm orifice)', technology: 'SYNTAPORE + TURBOCORE', target: '<4 µm particles + water' },
               { domain: 'Lube Oil', sensitivity: 'MODERATE-HIGH', critical: 'Bearing life (4 µm particles)', technology: 'SYNTRAX', target: 'Per approved application + kidney-loop' },
               { domain: 'Hydraulic', sensitivity: 'CRITICAL', critical: 'Proportional valve (1–4 µm)', technology: 'NANOFORCE', target: 'Per approved application' },
-              { domain: 'Compressed Air', sensitivity: 'MODERATE', critical: 'Pneumatic valve efficiency', technology: 'DRYCORE', target: 'ISO 8573-1 class 2–3' },
+              { domain: 'Pneumatic Brake Air', sensitivity: 'MODERATE', critical: 'Valve and actuator moisture control', technology: 'DRYCORE', target: 'Per approved application' },
             ].map((item, i) => (
               <div key={i} style={{
                 background: 'rgba(255,241,45,0.06)',

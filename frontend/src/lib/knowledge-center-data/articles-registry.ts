@@ -217,7 +217,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Gasket temperature range (NBR)', value: '−40 to 150°C' },
     ],
     relatedStandards: ['ISO 16889'],
-    relatedTechnologies: ['SYNTRAX™', 'DRYCORE™'],
+    relatedTechnologies: ['SYNTRAX™'],
     relatedSystems: ['Lubrication Protection', 'Hydraulic Protection'],
     keywords: ['seal integrity', 'gasket', 'bypass valve', 'anti-drain back', 'filter seal'],
   },
@@ -2619,7 +2619,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Filtration System Design for Quality Classes',
-        body: 'A compressed air treatment train is designed in stages, each addressing one contamination category at the conditions produced by the upstream stage. After-cooler + condensate separator: removes bulk liquid water and coarse aerosols (Stages 4–5 moisture, particle Class 4–5). General purpose coalescing filter (1 µm coalescence element): removes liquid aerosol oil to 0.1 mg/m³ and particles ≥1 µm (particle Class 2–3, oil Class 2–3). High-efficiency coalescing filter (0.01 µm coalescence element): reduces oil aerosol to 0.01 mg/m³ (oil Class 1). Activated carbon adsorber: removes oil vapour below 0.003 mg/m³ (oil Class 1). Desiccant dryer: achieves PDP ≤ −40°C (moisture Class 2). Final particulate filter (PTFE membrane or borosilicate fiber): ensures sterile or classified air downstream of all treatment stages (particle Class 1 or 2). DRYCORE™ filtration systems provide integrated particulate and coalescing elements for compressed air applications, reducing system footprint and pressure drop budget.',
+        body: 'A compressed air treatment train is designed in stages, each addressing one contamination category at the conditions produced by the upstream stage. After-cooler + condensate separator: removes bulk liquid water and coarse aerosols (Stages 4–5 moisture, particle Class 4–5). General purpose coalescing filter (1 µm coalescence element): removes liquid aerosol oil to 0.1 mg/m³ and particles ≥1 µm (particle Class 2–3, oil Class 2–3). High-efficiency coalescing filter (0.01 µm coalescence element): reduces oil aerosol to 0.01 mg/m³ (oil Class 1). Activated carbon adsorber: removes oil vapour below 0.003 mg/m³ (oil Class 1). Desiccant dryer: achieves PDP ≤ −40°C (moisture Class 2). Final particulate filter (PTFE membrane or borosilicate fiber): ensures sterile or classified air downstream of all treatment stages (particle Class 1 or 2).',
         callout: [
           { label: 'Coalescing filter achieves', value: 'Oil Class 2 (0.1 mg/m³)' },
           { label: 'High-efficiency coalescer', value: 'Oil Class 1 (0.01 mg/m³)' },
@@ -2634,7 +2634,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Refrigerant dryer PDP', value: '+2°C to +10°C' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 29463'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Compressed Air Protection'],
     keywords: ['ISO 8573', 'compressed air purity', 'pressure dew point', 'oil aerosol', 'particle class', 'coalescing filter', 'desiccant dryer'],
     commonMistakes: [
@@ -5646,7 +5646,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'DEHS test aerosol', value: 'Di-ethyl-hexyl sebacate (ISO 29463-2)' },
     ],
     relatedStandards: ['ISO 29463', 'EN 1822', 'ISO 11155', 'ISO 14644', 'ISO 8573-1'],
-    relatedTechnologies: ['MICROKAPPA™', 'DRYCORE™'],
+    relatedTechnologies: ['MICROKAPPA™'],
     relatedSystems: ['Air Intake Protection'],
     keywords: [
       'ISO 29463', 'EN 1822', 'HEPA filter', 'ULPA filter', 'MPPS most penetrating particle size',
@@ -6584,7 +6584,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Pre-Filtration Requirements for Drying Systems',
-        body: 'All dryer types require upstream filtration to protect the dryer from oil and particulate contamination. Required pre-filtration sequence before a refrigeration or desiccant dryer: (1) bulk liquid separator (coalescing filter): removes bulk liquid water and oil droplets from compressor aftercooler discharge; rated efficiency ≥99.9% for liquid droplets at rated flow; (2) coalescing filter (pre-filter): removes oil aerosol to ISO 8573-1 Class 2 oil content (≤0.1 mg/m³) or better. After the dryer, post-filtration removes any desiccant particles (desiccant dryers) or downstream pipe contamination: (3) particulate filter: ISO 8573-1 Class 1 or 2 particle content. For point-of-use applications requiring oil-free air (pharmaceutical, food grade, electronics): (4) activated carbon filter: removes oil vapour to ≤0.003 mg/m³ (ISO 8573-1 Class 1 oil). DRYCORE™ filtration architecture addresses this pre- and post-dryer filtration requirement, combining high-efficiency coalescing (oil aerosol removal) with downstream particulate filtration in a single station design.',
+        body: 'All dryer types require upstream filtration to protect the dryer from oil and particulate contamination. Required pre-filtration sequence before a refrigeration or desiccant dryer: (1) bulk liquid separator (coalescing filter): removes bulk liquid water and oil droplets from compressor aftercooler discharge; rated efficiency ≥99.9% for liquid droplets at rated flow; (2) coalescing filter (pre-filter): removes oil aerosol to ISO 8573-1 Class 2 oil content (≤0.1 mg/m³) or better. After the dryer, post-filtration removes any desiccant particles (desiccant dryers) or downstream pipe contamination: (3) particulate filter: ISO 8573-1 Class 1 or 2 particle content. For point-of-use applications requiring oil-free air (pharmaceutical, food grade, electronics): (4) activated carbon filter: removes oil vapour to ≤0.003 mg/m³ (ISO 8573-1 Class 1 oil).',
       },
       {
         heading: 'Dew Point Monitoring — ISO 8573-3',
@@ -6603,7 +6603,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Chilled mirror dew point accuracy', value: '±0.1°C PDP (reference grade)' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 8573-3', 'ISO 8573-2', 'ISO 12500-1'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Air Intake Protection'],
     keywords: [
       'compressed air dryer', 'ISO 8573-1', 'pressure dew point', 'refrigeration dryer',
@@ -8274,7 +8274,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Solid Particle Min Sample', value: '≥1,000 L gravimetric (ISO 8573-4)' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-4', 'ISO 8573-7', 'ISO 11171'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Air Intake Protection'],
     keywords: ['compressed air quality', 'ISO 8573-4', 'ISO 8573-5', 'ISO 8573-7', 'ISO 8573-2', 'oil aerosol measurement', 'oil vapour GC-FID', 'microbiological contamination', 'CFU per cubic metre', 'isokinetic sampling', 'compressed air audit', 'ISO 8573-1 verification'],
     fieldDiagnostics: {
@@ -8656,7 +8656,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Element Replacement Interval', value: '1,000–2,000 operating hours' },
     ],
     relatedStandards: ['SAE J1243', 'ISO 29463', 'ISO 5011'],
-    relatedTechnologies: ['MACROCORE™', 'DRYCORE™'],
+    relatedTechnologies: ['MACROCORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection'],
     keywords: ['crankcase ventilation', 'blow-by filtration', 'CCV separator', 'SAE J1243', 'oil aerosol separator', 'coalescing media', 'MPPS', 'crankcase pressure', 'closed CCV', 'EPA 40 CFR Part 86', 'oil carryover', 'coalescing filter'],
     fieldDiagnostics: {

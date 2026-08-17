@@ -1085,153 +1085,85 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'DRYCORE is the compressed air filtration and drying technology implementing multi-stage purification of compressed air to achieve defined purity classes per ISO 8573-1. It removes solid particulate, liquid water aerosols, oil aerosols, and water vapor (dew point control) from compressed air supply lines feeding pneumatic actuators, air-operated tools, painting, food contact, and pharmaceutical process equipment.',
+      'DRYCORE is the ELIMFILTERS air-dryer filtration architecture for moisture control in pneumatic brake systems on heavy-duty commercial transport, construction, and mining equipment. It removes moisture from compressed air before condensation can affect pneumatic valves, actuators, and braking-system components. Applicable compressed-air and vehicle-system requirements must be selected for the approved application; the technology name alone does not imply a universal purity class or certification claim.',
 
     systemContext:
-      'Applies to compressed air distribution systems downstream of the air compressor. ISO 8573-1 defines purity classes for: solid particles (Class 1–9), water (dew point, Class 1–9), and oil content (Class 1–4). Application requirements define the target purity class, which determines the DRYCORE element configuration required. Critical applications: pneumatic valve actuators (Class 3/4/3), breathing air (ISO 8573-1 Class 1/2/1), painting (Class 2/4/2), food contact (Class 1/2/1).',
+      'Applies to pneumatic brake-system compressed-air circuits on heavy-duty commercial transport, construction, and mining equipment. Capacity, purge behavior, airflow, and replacement interval must be matched to compressor duty and ambient moisture exposure for the approved application.',
 
     industrialRole:
-      'Compressed air contamination is the primary cause of pneumatic valve actuator failure, paint defect generation, and compressed air line corrosion. Liquid water carryover in compressed air corrodes pneumatic actuator internals, washes lubricant from O-ring surfaces, and causes water hammer damage to downstream valves. Oil aerosol contamination in painting applications causes adhesion failure. DRYCORE maintains the compressed air purity class required for each downstream application, preventing contamination-induced process failures.',
+      'Inadequate moisture control in pneumatic brake-system compressed-air circuits allows condensation to affect valves, actuators, and other pneumatic components, reducing braking-system reliability. DRYCORE provides the moisture-control layer for pneumatic brake-system air within ELIMFILTERS Air Intake & Airflow Protection. Selection is governed by compressor duty, moisture exposure, airflow, purge behavior, capacity, and service interval specified for the approved application.',
 
     protectionMedia: [
       {
-        type: 'Coarse particulate pre-filter',
+        type: 'Air-dryer moisture-control media',
         description:
-          'First-stage removal of bulk liquid water, bulk oil droplets, and particles >5 µm. High dirt-holding capacity element protecting downstream precision stages from rapid loading.',
-        micronRating: '5 µm (nominal)',
-        mediaConstruction: 'Borosilicate glass microfiber, deep-bed construction',
-      },
-      {
-        type: 'Oil aerosol coalescing element',
-        description:
-          'Coalescing medium targeting oil aerosol droplets 0.01–5 µm and residual water aerosol. Achieves oil content <0.01 mg/m³ (ISO 8573-1 Class 1 oil).',
-        micronRating: '0.01 µm oil aerosol',
-        mediaConstruction: 'Borosilicate glass microfiber, fine fiber, horizontal coalescing orientation',
-      },
-      {
-        type: 'Activated carbon adsorber (oil vapor)',
-        description:
-          'Adsorption stage removing residual oil vapor and hydrocarbons not removed by coalescing. Required for food, pharmaceutical, and painting applications.',
-        micronRating: 'Molecular',
-        mediaConstruction: 'Activated carbon granules in annular cartridge',
-      },
-      {
-        type: 'Desiccant drying stage',
-        description:
-          'Pressure swing adsorption (PSA) or desiccant bed reducing pressure dew point to -40°C or -70°C for instrument air and breathing air applications.',
-        micronRating: 'N/A — vapor phase dew point control',
-        mediaConstruction: 'Silica gel or molecular sieve desiccant',
+          'Removes moisture from pneumatic brake-system compressed air before condensation can affect valves, actuators, and braking-system components. Media construction, capacity, and purge behavior are matched to compressor duty and ambient moisture exposure for the approved application.',
+        micronRating: 'N/A — moisture/vapor-phase control',
+        mediaConstruction: 'Desiccant media sized to the approved pneumatic brake-system application',
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001', 'EP-CHE-001'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001'],
 
     materials: [
       {
-        component: 'Coalescing filter body',
-        material: 'Anodized aluminum or stainless steel (food/pharma)',
+        component: 'Air-dryer cartridge body',
+        material: 'Steel or aluminum, rated to pneumatic brake-system circuit pressure',
         justification:
-          'Compressed air systems operate at 7–15 bar. Aluminum housings rated to 16 bar for standard applications; stainless steel for food and pharmaceutical applications requiring steam sterilization.',
+          'Pneumatic brake-system air circuits operate at pressures specified by the vehicle and compressor manufacturer; housing material and pressure rating are selected for the approved application.',
       },
       {
         component: 'Desiccant material',
-        material: 'Silica gel (dew point to -40°C) or molecular sieve (dew point to -70°C)',
+        material: 'Selected per the moisture-control target specified for the approved application',
         justification:
-          'Silica gel achieves -40°C dew point adequate for most industrial instrument air. Molecular sieve required for breathing air and cryogenic applications requiring -70°C dew point.',
+          'Desiccant type and capacity are matched to compressor duty cycle and ambient moisture exposure rather than assumed universally.',
       },
       {
-        component: 'Drain valve',
-        material: 'Brass or stainless steel with fluoropolymer seats',
+        component: 'Purge/drain valve',
+        material: 'Brass or stainless steel with elastomer seats compatible with brake-system air',
         justification:
-          'Automatic drain valve removes accumulated liquid from filter bowls. Fluoropolymer seat compatibility with both water and oil condensate.',
+          'Purge valve removes accumulated moisture from the cartridge on a duty-cycle-appropriate schedule.',
       },
     ],
 
     construction: [
       {
-        feature: 'Multi-stage series architecture',
+        feature: 'Air-dryer cartridge matched to compressor duty',
         description:
-          'Stages in series: pre-filter → coalescing → carbon adsorber → desiccant. Each stage prepares the air for the next stage.',
+          'Cartridge capacity and purge behavior are specified for the compressor duty cycle and ambient moisture exposure of the approved pneumatic brake-system application.',
         engineeringBasis:
-          'Bulk liquid carryover that reaches a coalescing element defeats the fine-fiber coalescing mechanism. Pre-filtration removes bulk liquid before the precision coalescing stage. Carbon adsorber before desiccant prevents oil vapor poisoning the desiccant bed.',
-      },
-      {
-        feature: 'Automatic condensate drain',
-        description:
-          'Electronic or pneumatically operated drain valve evacuates accumulated condensate from filter bowls on timed or float-actuated cycles.',
-        engineeringBasis:
-          'Accumulated liquid in filter bowl eventually re-entrains into the air stream under high-velocity flow conditions. Automatic drain prevents bowl level from reaching re-entrainment depth, ensuring continuous separation effectiveness.',
+          'Under-sized capacity or incorrect purge timing allows moisture carryover into the brake-system air circuit, risking valve and actuator condensation damage.',
       },
     ],
 
     flowDynamics: [
       {
         parameter: 'Rated compressed air flow',
-        value: 'Model-dependent',
-        unit: 'Nm³/h at 7 bar inlet pressure',
-        standardRef: 'ISO 8573-1',
-      },
-      {
-        parameter: 'Pressure drop across filter train',
-        value: '<0.2',
-        unit: 'bar total (clean, multi-stage)',
-        standardRef: 'ISO 8573-2',
+        value: 'Compressor and application-dependent',
+        unit: 'per approved application',
       },
     ],
 
     captureMechanisms: [
       {
-        contaminantClass: 'Liquid water (droplets)',
-        mechanism: 'Coalescing + gravitational settling with automatic drain',
-        efficiency: '>99.9% liquid water removal per ISO 8573-2',
-        particleSizeRange: '>0.1 µm droplets',
-      },
-      {
-        contaminantClass: 'Oil aerosol (0.01–5 µm)',
-        mechanism: 'Coalescing in glass microfiber medium + gravitational drainage',
-        efficiency: 'Residual oil <0.01 mg/m³ (ISO 8573-1 Class 1)',
-        particleSizeRange: '0.01–5 µm',
-      },
-      {
-        contaminantClass: 'Oil vapor and hydrocarbon gases',
-        mechanism: 'Adsorption on activated carbon',
-        efficiency: 'Total oil vapor content <0.003 mg/m³ with carbon stage',
-        particleSizeRange: 'Molecular',
-      },
-      {
-        contaminantClass: 'Water vapor (humidity)',
-        mechanism: 'Adsorption by desiccant — pressure swing or thermal regeneration',
-        efficiency: 'Pressure dew point to -40°C (silica) or -70°C (molecular sieve)',
+        contaminantClass: 'Moisture / water vapor in pneumatic brake-system air',
+        mechanism: 'Desiccant moisture control with duty-cycle purge',
+        efficiency: 'Rated per the approved application',
         particleSizeRange: 'Vapor phase',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Residual oil content (coalescing stage)',
-        value: '<0.01',
-        unit: 'mg/m³ (ISO 8573-1 Class 1)',
-        evidenceSource: 'ISO 8573-2 aerosol test — downstream oil measurement by photometric method',
-        standardRef: 'ISO 8573-2',
-      },
-      {
-        metric: 'Pressure dew point (desiccant stage)',
-        value: '-40 to -70',
-        unit: '°C pressure dew point',
-        evidenceSource: 'ISO 8573-3 dew point measurement at desiccant outlet',
-        standardRef: 'ISO 8573-3',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
-        id: 'FM-AIR-COMP-001',
+        id: 'FM-AIR-BRAKE-001',
         rootCauseChain:
-          'Liquid water carryover past failed coalescing element → water enters pneumatic actuator → O-ring lubricant washout → actuator seal failure → valve control loss → process shutdown',
+          'Moisture carryover in pneumatic brake-system compressed air → condensation in valves and actuators → corrosion and/or freezing of pneumatic components → braking-system reliability reduction',
         measuredConsequence:
-          'Pneumatic actuator O-ring replacement: USD 50–500 per actuator. Plant shutdown during actuator replacement on critical process line: USD 10,000–100,000 per event depending on process.',
+          'Pneumatic valve and actuator condition is degraded by uncontrolled moisture exposure; the specific consequence and cost must be established from the approved application and OEM specification rather than assumed universally.',
         operationalImpact:
-          'Industrial plants with unmanaged compressed air quality report 15–30% of pneumatic maintenance events attributable to liquid water carryover. DRYCORE multi-stage filtration maintained at correct service intervals eliminates water-induced actuator failures.',
+          'Maintaining moisture control within the target specified for the approved application is a primary lever for pneumatic brake-system reliability; the specific reliability improvement must be confirmed by fleet maintenance data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],

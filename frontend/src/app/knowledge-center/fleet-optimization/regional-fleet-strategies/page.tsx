@@ -105,7 +105,7 @@ export default function RegionalFleetStrategiesPage() {
                 region: 'Tropical Agriculture (Southeast Asia, Sub-Saharan Africa)',
                 challenges: 'High moisture 80%+ humidity; microbial growth in fuel/hydraulic; water ingress 200–500 ppm',
                 waterRisk: 'Critical (monsoons, high humidity); bacterial contamination in fuel tanks; hydraulic fluid oxidation',
-                strategy: 'TURBOCORE fuel water separator (maintains ≤100 ppm water); DRYCORE compressed air desiccant breather to prevent tank moisture; SYNTRAX kidney-loop to inhibit bacterial growth in oil',
+                strategy: 'TURBOCORE fuel water separator (maintains ≤100 ppm water); SYNTRAX kidney-loop to inhibit bacterial growth in oil',
               },
               {
                 region: 'Coastal/Marine (North Sea, Mediterranean, Pacific)',

@@ -1104,31 +1104,13 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 **Standards:** ISO 11155-1 (particulate), ISO 11155-2 (chemical), DIN 71220 (cabin air test), ISO 16890 (general air filter classification)
 
-### 15.7 Compressed Air Protection
+### 15.7 Pneumatic Brake System Air Protection
 
-**Contamination targets:** Water vapor, liquid water, oil aerosol, oil vapor, and solid particles in compressed air supply.
+**Contamination target:** Moisture (water vapor and condensation) in pneumatic brake-system compressed-air circuits on heavy-duty commercial transport, construction, and mining equipment.
 
-**ISO 8573-1 purity classes (three classes specified simultaneously: X:Y:Z):**
+**Engineering approach:** Air-dryer capacity, purge behavior, airflow, and replacement interval are matched to compressor duty and ambient moisture exposure for the approved application. Applicable compressed-air and vehicle-system requirements must be selected for the approved application; no universal purity class or certification claim is implied by the technology name alone.
 
-| Class | Solid particles (≥0.1 µm, per m³) | Liquid water content | Oil (aerosol + vapor, mg/m³) |
-|---|---|---|---|
-| 1 | 20,000 at ≥0.1 µm | Pressure dew point ≤ -70°C | 0.01 |
-| 2 | 400,000 at ≥0.1 µm | ≤ -40°C | 0.1 |
-| 3 | 6,000,000 at ≥0.5 µm | ≤ -20°C | 1 |
-| 4 | 90,000 per cm³ at ≥1 µm | ≤ +3°C | 5 |
-| 5 | — | ≤ +7°C | 25 |
-
-**Compressed air treatment stages:**
-1. **Pre-filter:** Removes bulk liquid and particles >3 µm
-2. **Refrigeration dryer:** Reduces water content to pressure dew point 2–5°C
-3. **Coalescing filter:** Removes oil aerosol to 0.01 mg/m³
-4. **Activated carbon:** Removes oil vapor to 0.005 mg/m³
-5. **Particulate (post-filter):** Removes carbon particles from activated carbon stage
-6. **Desiccant dryer (if required):** Achieves dew point ≤ -40°C
-
-**Technologies:** DRYCORE™ (compressed air treatment)
-
-**Standards:** ISO 8573-1/2/3/4/5/6/7/8/9, ISO 7183 (compressed air dryer test)
+**Technologies:** DRYCORE™ (pneumatic brake-system air-dryer filtration)
 
 ---
 
@@ -1267,20 +1249,18 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 ### DRYCORE™
 
-**Domain:** Compressed Air / Pneumatic Systems
+**Domain:** Pneumatic Brake System Air Protection
 
-**Engineering principle:** Coalescing and particulate filtration for compressed air treatment. Available in pre-filtration, coalescing, and activated carbon grades for multi-stage compressed air purity system design.
+**Engineering principle:** Air-dryer filtration for moisture control in pneumatic brake-system compressed-air circuits on heavy-duty commercial transport, construction, and mining equipment. Capacity, purge behavior, airflow, and replacement interval are matched to compressor duty and ambient moisture exposure for the approved application.
 
-**Target contamination:** Liquid water, oil aerosol (to 0.01 mg/m³), oil vapor (activated carbon stage), solid particles (post-filter stage).
+**Target contamination:** Moisture (water vapor and condensation) in pneumatic brake-system compressed air.
 
 **Performance targets:**
-- Per ISO 8573-1 class requirements for specified installation position
-- Coalescing stage: ≥99.9% liquid oil removal at rated flow
-- Pressure drop: per ISO 12500 test standard
+- Moisture-control capacity and purge behavior are selected per the approved pneumatic brake-system application; no universal purity class or certification claim is implied by the DRYCORE™ name alone.
 
-**Applicable standards:** ISO 8573-1/2/3, ISO 12500-1/2/3, ISO 7183
+**Applicable standards:** Applicable compressed-air and vehicle-system requirements must be selected for the approved application.
 
-**Systems covered:** Compressed Air Protection
+**Systems covered:** Air Intake & Airflow Protection
 
 ---
 
@@ -1375,8 +1355,6 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 **Priority systems:** Compressed air (critical for pneumatic controls, blow-off, spray finishing) + Hydraulic (precision axis control) + Industrial HVAC (clean room environments).
 
-**DRYCORE™ application:** Multi-stage compressed air treatment is the primary ELIMFILTERS® application in manufacturing. System design: pre-filter → refrigeration dryer → coalescing → activated carbon → post-filter to achieve target ISO 8573-1 purity class.
-
 ### 17.5 Marine
 
 **Asset profile:** Offshore supply vessels, tugs, ferries, fishing vessels, inland barges, port service vessels, small commercial craft.
@@ -1419,8 +1397,6 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 - Compressed air: critical for pneumatic valve actuation in process control; failure can cause HAZOP event
 
 **Seal material specification:** FKM (Viton®) seals mandatory for aromatic solvent contact, H₂S environments, and high-temperature service. NBR inadequate for sour-gas application.
-
-**Compressed air criticality in process control:** ISO 8573-1 Class 1 quality compressed air for instrument air supply. DRYCORE™ multi-stage with dedicated instrumentation air system. Single-point failure of instrument air can trigger process shutdown.
 
 **Hydraulic jack-up rig equipment:** Offshore jack-up rigs operate hydraulic systems in marine environment with active corrosion threat. NANOFORCE™ with corrosion-resistant housing materials and FKM seals.
 
