@@ -148,15 +148,15 @@ jobs:
         run: npm run hermes:collect
 
       # Mandatory resolution stage. Collection only detects that something
-      # changed. HERMES follows same-domain news/article/bulletin links and
-      # Groq must convert the signal into a concrete evidence-backed finding
+      # changed. Groq Compound searches the live web, visits evidence pages,
+      # and must resolve the signal into a concrete evidence-backed finding
       # before it can enter Victor's approval queue.
       - name: Resolve detected changes with Groq
         if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
         continue-on-error: true
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'llama-3.3-70b-versatile' }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
         run: npm run hermes:research
 
       - name: Validate real candidates
