@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validateCandidate, isResearchResolved } from '../../scripts/hermes/hermes-core.mjs';
-import { extractSameDomainLinks, linkScore, validateResolution } from '../../scripts/hermes/research-real-candidates.mjs';
+import { validateResolution } from '../../scripts/hermes/research-real-candidates-compound.mjs';
 
 function realCandidate(overrides = {}) {
   return {
@@ -40,12 +40,13 @@ test('real HERMES candidates cannot enter review before Groq resolution', () => 
   assert.ok(errors.some((e) => e.includes('requires VERIFIED Groq research_resolution')));
 });
 
-test('Groq-verified real candidate passes the research gate', () => {
+test('Groq Compound verified real candidate passes the research gate', () => {
   const candidate = realCandidate({
     research_resolution: {
       status: 'VERIFIED',
       engine: 'GROQ',
-      model: 'llama-3.3-70b-versatile',
+      model: 'groq/compound',
+      search_mode: 'WEB_SEARCH_AND_VISIT_WEBSITE',
       finding_title: 'New filtration technical bulletin',
       evidence_url: 'https://example.com/news/item',
       technical_facts: ['A concrete technical fact grounded in the source.'],
@@ -58,25 +59,15 @@ test('Groq-verified real candidate passes the research gate', () => {
 });
 
 test('NEEDS_RESEARCH remains a valid non-review operational state', () => {
-  const candidate = realCandidate({ workflow_status: 'NEEDS_RESEARCH', confidence: 0.4, research_resolution: { status: 'UNRESOLVED', reason: 'SOURCE_FETCH_FAILED' } });
+  const candidate = realCandidate({
+    workflow_status: 'NEEDS_RESEARCH',
+    confidence: 0.4,
+    research_resolution: { status: 'UNRESOLVED', engine: 'GROQ', model: 'groq/compound', reason: 'SOURCE_FETCH_FAILED' }
+  });
   assert.deepEqual(validateCandidate(candidate), []);
 });
 
-test('crawler keeps same-domain links and prioritizes news/article paths', () => {
-  const html = `
-    <a href="/about">About</a>
-    <a href="/news/2026/new-filter-media">New filter media technology announced</a>
-    <a href="https://other.example.org/news/x">External story</a>`;
-  const links = extractSameDomainLinks(html, 'https://example.com/');
-  assert.equal(links.length, 2);
-  const news = links.find((l) => l.url.includes('/news/2026/'));
-  const about = links.find((l) => l.url.includes('/about'));
-  assert.ok(news);
-  assert.ok(linkScore(news) > linkScore(about));
-});
-
-test('Groq resolution must point to evidence HERMES actually fetched', () => {
-  const pages = [{ url: 'https://example.com/news/item', title: 'Item', text: 'Evidence', published_at: null }];
+test('Compound resolution schema rejects vague or low-confidence results', () => {
   const good = validateResolution({
     status: 'VERIFIED',
     finding_title: 'Specific technical item',
@@ -85,17 +76,17 @@ test('Groq resolution must point to evidence HERMES actually fetched', () => {
     relevance: 'Relevant technical intelligence for filtration systems.',
     proposed_action: 'Review this specific technical finding for canonical relevance.',
     confidence: 0.8
-  }, pages);
+  });
   assert.deepEqual(good, []);
 
   const bad = validateResolution({
     status: 'VERIFIED',
-    finding_title: 'Specific technical item',
-    evidence_url: 'https://invented.example.net/fake',
-    technical_facts: ['Fact'],
-    relevance: 'Relevant technical intelligence for filtration systems.',
-    proposed_action: 'Review this specific technical finding for canonical relevance.',
-    confidence: 0.8
-  }, pages);
-  assert.ok(bad.includes('evidence_url was not fetched by HERMES'));
+    finding_title: 'Change',
+    evidence_url: 'not-a-url',
+    technical_facts: [],
+    relevance: 'maybe',
+    proposed_action: 'investigate',
+    confidence: 0.4
+  });
+  assert.ok(bad.length >= 5);
 });
