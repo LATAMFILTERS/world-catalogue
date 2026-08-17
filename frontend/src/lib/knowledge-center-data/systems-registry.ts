@@ -96,7 +96,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Pre-Cleaner Systems',
-        body: 'Centrifugal pre-cleaners installed upstream of the primary element remove 80–95% of coarse dust (>50 µm) before it reaches the filter media. INTEKCORE™ housings integrate pre-cleaner functionality, extending primary MACROCORE™ element life by 3–5× in high-dust environments. Pre-cleaners require automatic evacuation of the separated dust through a scavenging air ejector or manual drain.',
+        body: 'Centrifugal pre-cleaners installed upstream of the primary element remove a substantial fraction of coarse dust (>50 µm) before it reaches the filter media. INTEKCORE™ housings integrate pre-cleaner functionality, extending primary MACROCORE™ element life in high-dust environments; the specific extension must be confirmed by field service data for the approved application rather than assumed. Pre-cleaners require automatic evacuation of the separated dust through a scavenging air ejector or manual drain.',
       },
       {
         heading: 'Failure Analysis',

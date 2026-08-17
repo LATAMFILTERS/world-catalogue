@@ -1186,27 +1186,27 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     id: 'TECH-INTEKCORE',
     technologyName: 'INTEKCORE',
     commercialName: 'INTEKCORE™',
-    systemDomain: 'Filter Housing Systems',
-    primaryStandards: ['ISO 4021', 'ISO 23369', 'DIN 24550'],
+    systemDomain: 'Air Intake',
+    primaryStandards: ['ISO 5011'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'INTEKCORE is the filter housing systems technology providing the structural, hydraulic, and mechanical interface between filtration elements and equipment fluid circuits. It encompasses: high-pressure filter heads, modular filter housings, manifold assemblies, bypass valves, differential pressure indicators, and contamination monitoring integration points. INTEKCORE enables the installation, service, and monitoring of all ELIMFILTERS element technologies across fluid system applications.',
+      'INTEKCORE is the ELIMFILTERS air-cleaner housing and sealing architecture for controlled airflow and bypass prevention within Air Intake & Airflow Protection. Its engineering role is to preserve the protected intake boundary through housing geometry, structural integrity, element retention and seal loading. Housing sizing, inlet routing, restriction, element fit and sealing must be validated for the intended duty cycle; the technology name alone does not imply a universal performance or certification claim.',
 
     systemContext:
-      'Applies wherever a filtration element must interface with a fluid circuit at defined pressure, flow, and temperature conditions. INTEKCORE housings are the structural layer of the filtration system — the filter element performs the filtration; the housing holds the element in position, maintains seal integrity under operating pressure, routes fluid through the element, and provides service access for element replacement without system contamination.',
+      'Applies to engine air-cleaner housings on mobile and stationary diesel equipment. INTEKCORE governs the housing, retention, and sealing boundary for the air intake system — the air filter element (MACROCORE) performs the filtration; the housing holds the element in position, maintains seal integrity across the intake boundary, routes intake air through the element, and provides service access for element replacement without introducing an unfiltered-air bypass path.',
 
     industrialRole:
-      'A correctly specified filtration element installed in an incorrectly specified housing is functionally equivalent to no filtration: housing bypass valves calibrated incorrectly defeat element performance; housing seals rated below circuit temperature allow bypass leakage; housings without differential pressure indicators prevent condition-based maintenance. INTEKCORE housing specification is the mechanical prerequisite for element performance — it ensures the element operates within its design conditions and can be serviced without introducing contamination.',
+      'A correctly specified air filter element installed in an incorrectly specified housing is functionally equivalent to no filtration: housing seals loaded below spec allow unfiltered-air bypass at the element seating face, end caps, or housing joints — the single largest source of intake contamination ingress outside filter media failure. INTEKCORE housing specification is the mechanical prerequisite for air intake element performance; it ensures the element seats correctly, retains its seal under vibration and duty cycle, and can be serviced without introducing an ingress path.',
 
     protectionMedia: [
       {
         type: 'N/A — structural housing system',
         description:
-          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, SYNTAPORE).',
-        micronRating: 'Defined by installed element technology',
-        mediaConstruction: 'Cast aluminum, ductile iron, or stainless steel housing body',
+          'INTEKCORE is an air-cleaner housing and sealing system, not a filtration medium. It contains and interfaces the air filtration elements of MACROCORE.',
+        micronRating: 'Defined by installed MACROCORE element',
+        mediaConstruction: 'Cast aluminum, ductile iron, or engineered polymer housing body',
       },
     ],
 
@@ -1214,99 +1214,65 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
     materials: [
       {
-        component: 'Housing body (standard pressure)',
-        material: 'Anodized aluminum alloy or ductile cast iron',
+        component: 'Housing body',
+        material: 'Anodized aluminum alloy, engineered polymer, or ductile cast iron',
         justification:
-          'Aluminum: weight advantage for mobile applications (mining trucks, agricultural equipment) where housing mass is relevant. Cast iron: cost-effective for stationary industrial and high-pressure hydraulic applications.',
+          'Material selected per the approved application: aluminum or polymer for mobile applications (mining trucks, agricultural equipment) where housing mass is relevant; cast iron for stationary industrial applications.',
       },
       {
-        component: 'Housing body (high-pressure hydraulic)',
-        material: 'Billet aluminum or forged steel',
+        component: 'Element seal',
+        material: 'Radial or axial elastomer seal selected for the approved application',
         justification:
-          'Billet or forged construction for housings rated >420 bar (hydraulic line filter). Cast materials have porosity risk at extreme pressures that billet/forged materials do not.',
-      },
-      {
-        component: 'Bypass valve and differential pressure indicator',
-        material: 'Stainless steel spring, brass valve body, silicone or FKM O-ring',
-        justification:
-          'Bypass valve spring calibration is a safety-critical parameter — spring rate must be stable across the operating temperature range. Stainless steel spring provides temperature stability. FKM O-ring for compatibility across fluid types.',
+          'Seal geometry and material are matched to element retention design and duty-cycle vibration exposure to maintain the zero-bypass boundary across the service interval.',
       },
     ],
 
     construction: [
       {
-        feature: 'Calibrated bypass valve',
+        feature: 'Zero-bypass element retention and sealing',
         description:
-          'Spring-loaded bypass valve opens at defined differential pressure (typically 2–16 bar depending on application) to protect against element over-restriction.',
+          'Housing geometry, element seating face, end caps, and housing joints are engineered to eliminate unfiltered-air bypass paths around the element periphery.',
         engineeringBasis:
-          'Bypass valve opening pressure is the boundary between two failure modes: below opening pressure (filtration operating), above opening pressure (oil flow maintained but unfiltered). Calibration determines when the second failure mode activates — it must be set above normal operating differential pressure to avoid premature bypass.',
+          'Seal and gasket bypass at the element seating face is a leading source of intake contamination ingress outside filter media failure. Housing sizing, element fit, and seal loading must be validated for the intended duty cycle rather than assumed universally.',
       },
       {
-        feature: 'Differential pressure indicator',
+        feature: 'Service access for element replacement',
         description:
-          'Visual pop-up or electrical differential pressure switch indicating when element differential pressure has reached the service limit.',
+          'Housing design provides service access for element replacement without introducing contamination into the clean-air side of the housing.',
         engineeringBasis:
-          'Condition-based maintenance requires a signal at which maintenance is due. Calendar-based maintenance intervals cannot account for variable contamination loading rates. Differential pressure indication converts the filter housing into a condition-monitoring device.',
-      },
-      {
-        feature: 'Contamination sampling port',
-        description:
-          'Minimess or equivalent sampling valve port in housing body allows fluid sampling for particle count and cleanliness code analysis without opening the circuit.',
-        engineeringBasis:
-          'ISO 4406 cleanliness code verification requires fluid samples from the live system. Sampling ports allow representative samples without introducing contamination during the sampling procedure.',
+          'Element replacement is a recurring maintenance event; housing access design determines whether routine service introduces or prevents ingress contamination.',
       },
     ],
 
     flowDynamics: [
       {
-        parameter: 'Rated working pressure',
-        value: 'Application-specific (10–420 bar)',
-        unit: 'bar',
-        standardRef: 'ISO 23369',
-      },
-      {
-        parameter: 'Bypass valve calibration pressure',
-        value: 'Application-specific (2–16 bar)',
-        unit: 'bar differential',
-        standardRef: 'DIN 24550',
+        parameter: 'Rated intake airflow',
+        value: 'Application-specific',
+        unit: 'per approved application',
+        standardRef: 'ISO 5011',
       },
     ],
 
     captureMechanisms: [
       {
         contaminantClass: 'N/A — housing provides structural interface',
-        mechanism: 'Contamination capture performed by installed element technology',
-        efficiency: 'Defined by element technology (MACROCORE, SYNTRAX, NANOFORCE, etc.)',
-        particleSizeRange: 'Defined by element technology',
+        mechanism: 'Contamination capture performed by the installed MACROCORE element',
+        efficiency: 'Defined by the installed MACROCORE element technology',
+        particleSizeRange: 'Defined by the installed MACROCORE element technology',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Housing rated working pressure',
-        value: '10–420',
-        unit: 'bar (model dependent)',
-        evidenceSource: 'Hydrostatic pressure test per ISO 23369',
-        standardRef: 'ISO 23369',
-      },
-      {
-        metric: 'Bypass valve calibration accuracy',
-        value: '±10',
-        unit: '% of rated opening pressure',
-        evidenceSource: 'Differential pressure test per DIN 24550 at ambient temperature',
-        standardRef: 'DIN 24550',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
-        id: 'FM-HSG-001',
+        id: 'FM-HSG-AIR-001',
         rootCauseChain:
-          'Incorrect bypass valve calibration pressure (too low) → bypass opens at normal operating differential pressure → fluid bypasses element at normal flow → no filtration occurs despite element in place → cleanliness target not achieved → equipment component wear',
+          'Incorrect housing sizing, element fit, or seal loading → unfiltered-air bypass path at element seating face, end caps, or housing joints → airborne contamination reaches the intake manifold around the element periphery → abrasive wear downstream despite a correctly specified filter element',
         measuredConsequence:
-          'Incorrect bypass calibration is invisible in field inspection — filter appears installed correctly. Contamination damage accumulates at the rate equivalent to no filtration. Discovery occurs at component failure, not during routine inspection.',
+          'Housing bypass is invisible in field inspection — the filter element appears installed correctly. Contamination damage accumulates at a rate approaching unfiltered operation. Discovery typically occurs at downstream component wear, not during routine inspection.',
         operationalImpact:
-          'INTEKCORE housing specification includes bypass valve calibration verification as a commissioning step. Field-installed housings with incorrect bypass settings are a systemic contamination control failure with no external indicator until component damage occurs.',
+          'INTEKCORE housing specification and seal verification is a commissioning and service step for the approved application. Field-installed housings with bypass paths are a systemic contamination control failure with no external indicator until downstream component damage occurs.',
         preventedByThisTechnology: true,
       },
     ],
