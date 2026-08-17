@@ -3,57 +3,31 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { analyzeCandidates, loadCandidates, resolveRealCandidatesInputDir } from './hermes-core.mjs';
+import { analyzeCandidates, loadCandidates, resolveRealCandidatesInputDir, isResearchResolved } from './hermes-core.mjs';
 
-// '--auto' is an explicit request (used by hermes:report:real) to resolve
-// the real-candidates directory based on HERMES_COLLECTION_DRY_RUN — DRY
-// RUN reads hermes/real-candidates-previews, LIVE reads
-// hermes/real-candidates. A literal path argument still always wins, and
-// the bare default (no argument at all) is untouched.
 const rawArg = process.argv[2];
 const input = rawArg === '--auto' ? resolveRealCandidatesInputDir() : (rawArg || 'hermes/test-candidates');
 if (rawArg === '--auto') console.log(`[HERMES report] --auto resolved to ${input}`);
 const outputDir = path.resolve(process.argv[3] || 'hermes/reports');
 
-// Only the real-candidates pipeline (hermes:report:real, signaled by
-// '--auto') attaches the collector's own per-source stats (sources
-// checked/unchanged/changed/etc.) — the separate hermes/test-candidates
-// pipeline never had a real collector run behind it, so it never renders
-// this section, even if a stale collection audit happens to exist from an
-// unrelated earlier run.
 function loadLatestCollectionSummary() {
   const auditDir = path.resolve('elimfilters-vault/94-sync-log');
   if (!fs.existsSync(auditDir)) return null;
   const files = fs.readdirSync(auditDir).filter((f) => /^collection-\d+\.collection\.json$/.test(f)).sort();
   if (!files.length) return null;
-  try {
-    return JSON.parse(fs.readFileSync(path.join(auditDir, files.at(-1)), 'utf8'));
-  } catch {
-    return null;
-  }
+  try { return JSON.parse(fs.readFileSync(path.join(auditDir, files.at(-1)), 'utf8')); }
+  catch { return null; }
 }
 const collectionSummary = rawArg === '--auto' ? loadLatestCollectionSummary() : null;
 
-// Same restriction as the collection summary above — only ever attached to
-// the real-candidates pipeline. Read from the local, gitignored, ephemeral
-// handoff file promote-baseline.mjs writes in the same job — never from
-// elimfilters-vault (promotion no longer writes there at all; the durable
-// record of what was promoted lives on the hermes-state branch, not in this
-// checkout).
 function loadLatestPromotionSummary() {
   const localResultPath = path.resolve('hermes/baselines/promotion-result.local.json');
   if (!fs.existsSync(localResultPath)) return null;
-  try {
-    return JSON.parse(fs.readFileSync(localResultPath, 'utf8'));
-  } catch {
-    return null;
-  }
+  try { return JSON.parse(fs.readFileSync(localResultPath, 'utf8')); }
+  catch { return null; }
 }
 const promotionSummary = rawArg === '--auto' ? loadLatestPromotionSummary() : null;
 
-// One of the four required banners. A promotion record (if one exists at
-// all) always takes precedence over the generic "preview only" state, since
-// it is more specific, more recent evidence about what actually happened.
 function baselinePromotionBanner() {
   if (promotionSummary) {
     if (promotionSummary.status === 'PROMOTED') return 'BASELINE PROMOTED';
@@ -69,27 +43,43 @@ const end = now.toISOString();
 const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
 const results = analyzeCandidates(loadCandidates(input));
-const accepted = results.filter((r) => r.valid);
-const invalid = results.filter((r) => !r.valid && !r.duplicateOf);
 const duplicates = results.filter((r) => r.duplicateOf);
+const invalid = results.filter((r) => !r.valid && !r.duplicateOf);
+const valid = results.filter((r) => r.valid);
+
+// Only a candidate that has completed its research gate and is explicitly
+// PENDING_REVIEW is allowed into Victor's approval queue. Validity alone is
+// not synonymous with review readiness.
+const reviewReady = valid.filter((r) => r.candidate.workflow_status === 'PENDING_REVIEW' && isResearchResolved(r.candidate));
+const needsResearch = results.filter((r) => r.candidate.workflow_status === 'NEEDS_RESEARCH' || (String(r.candidate.entity_code || '').startsWith('HERMES_REAL_') && !isResearchResolved(r.candidate)));
+const groqResolved = results.filter((r) => isResearchResolved(r.candidate) && String(r.candidate.entity_code || '').startsWith('HERMES_REAL_'));
+
 const groups = {};
-for (const result of accepted) {
+for (const result of reviewReady) {
   const key = result.candidate.candidate_type;
   (groups[key] ||= []).push(result.candidate);
 }
 
 const packageData = {
-  schema_version: '1.0.0',
+  schema_version: '1.1.0',
   generated_at: end,
   reporting_period: { start, end },
   totals: {
     scanned: results.length,
-    review_ready: accepted.length,
+    source_changes_detected: collectionSummary?.changed ?? 0,
+    groq_resolved: groqResolved.length,
+    review_ready: reviewReady.length,
     duplicates_suppressed: duplicates.length,
     invalid: invalid.length,
-    needs_research: accepted.filter((r) => r.candidate.workflow_status === 'NEEDS_RESEARCH').length
+    needs_research: needsResearch.length
   },
   groups,
+  research_pending: needsResearch.map((r) => ({
+    entity_code: r.candidate.entity_code,
+    source_publisher: r.candidate.source_publisher,
+    source_url: r.candidate.source_url,
+    reason: r.candidate.research_resolution?.reason || 'RESEARCH_NOT_RESOLVED'
+  })),
   duplicates: duplicates.map((r) => ({ entity_code: r.candidate.entity_code, duplicate_of: r.duplicateOf })),
   invalid: invalid.map((r) => ({ entity_code: r.candidate.entity_code, errors: r.errors })),
   source_collection: collectionSummary ? {
@@ -102,6 +92,7 @@ const packageData = {
     failed: collectionSummary.failed ?? collectionSummary.fetch_errors ?? 0,
     baseline_required: collectionSummary.baseline_required ?? 0,
     candidates_created: collectionSummary.candidates_created ?? collectionSummary.created ?? 0,
+    candidates_previewed: collectionSummary.candidates_previewed ?? collectionSummary.previewed ?? 0,
     candidates_suppressed: collectionSummary.candidates_suppressed ?? collectionSummary.duplicates ?? 0
   } : null,
   baseline_promotion: promotionSummary ? {
@@ -121,25 +112,23 @@ const packageData = {
   approval_authority: 'Victor Abreu'
 };
 
-const lines = [
-  '# HERMES Weekly Intelligence Review', ''
-];
-if (packageData.source_collection?.baseline_mode) {
-  lines.push('**INITIAL BASELINE — NO INTELLIGENCE CANDIDATES GENERATED**', '');
-}
-if (packageData.baseline_promotion?.banner) {
-  lines.push(`**${packageData.baseline_promotion.banner}**`, '');
-}
+const lines = ['# HERMES Weekly Intelligence Review', ''];
+if (packageData.source_collection?.baseline_mode) lines.push('**INITIAL BASELINE — NO INTELLIGENCE CANDIDATES GENERATED**', '');
+if (packageData.baseline_promotion?.banner) lines.push(`**${packageData.baseline_promotion.banner}**`, '');
+
 lines.push(
   `Generated: ${end}`, `Reporting period: ${start} — ${end}`, '',
   '## Summary', '',
   `- Candidates scanned: ${packageData.totals.scanned}`,
-  `- Ready for review: ${packageData.totals.review_ready}`,
+  `- Source changes detected: ${packageData.totals.source_changes_detected}`,
+  `- Resolved by Groq: ${packageData.totals.groq_resolved}`,
+  `- Ready for Victor review: ${packageData.totals.review_ready}`,
+  `- Research unresolved: ${packageData.totals.needs_research}`,
   `- Duplicates suppressed: ${packageData.totals.duplicates_suppressed}`,
-  `- Invalid candidates: ${packageData.totals.invalid}`,
-  `- Needs additional research: ${packageData.totals.needs_research}`, '',
+  `- Invalid candidates: ${packageData.totals.invalid}`, '',
   '> This report is review-only. It performs no writes to Obsidian canonical folders, PostgreSQL, pgvector, Part Search, or legacy catalogue layer.ts.', ''
 );
+
 if (packageData.source_collection) {
   const sc = packageData.source_collection;
   lines.push(
@@ -152,9 +141,11 @@ if (packageData.source_collection) {
     `- Failed: ${sc.failed}`,
     `- Baseline required: ${sc.baseline_required}`,
     `- Candidates created: ${sc.candidates_created}`,
+    `- Candidates previewed: ${sc.candidates_previewed}`,
     `- Candidates suppressed: ${sc.candidates_suppressed}`, ''
   );
 }
+
 if (packageData.baseline_promotion) {
   const bp = packageData.baseline_promotion;
   lines.push(
@@ -171,20 +162,35 @@ if (packageData.baseline_promotion) {
     `- Writes outside the baseline file: ${bp.writes_outside_baseline}`, ''
   );
 }
+
 for (const [type, candidates] of Object.entries(groups).sort()) {
   lines.push(`## ${type.replaceAll('_', ' ')}`, '');
   for (const c of candidates) {
+    const rr = c.research_resolution;
     lines.push(`### ${c.entity_code}`, '',
-      `- Source: ${c.source_publisher} — ${c.source_url}`,
+      `- Finding: ${rr.finding_title}`,
+      `- Source: ${c.source_publisher} — ${rr.evidence_url}`,
+      `- Published: ${c.published_at || 'not stated by source'}`,
       `- Evidence: ${c.evidence_level}; confidence ${c.confidence}`,
-      `- Claim scope: ${c.claim_scope}`,
+      `- Groq resolution: ${rr.model}; ${rr.technical_facts.length} technical fact(s) extracted`,
+      `- Technical facts: ${rr.technical_facts.join(' | ')}`,
+      `- Relevance: ${rr.relevance}`,
       `- Affected entities: ${c.affected_entities.join(', ')}`,
       `- Proposed target: ${c.proposed_target_folder}${c.proposed_target_entity ? ` / ${c.proposed_target_entity}` : ''}`,
       `- Proposed action: ${c.proposed_action}`,
-      `- Recommendation: ${c.workflow_status === 'NEEDS_RESEARCH' ? 'RESEARCH' : 'REVIEW FOR APPROVAL'}`,
-      `- Source hash: ${c.source_hash}`, '');
+      '- Recommendation: REVIEW FOR APPROVAL',
+      `- Source hash: ${c.source_hash}`, '')
   }
 }
+
+if (needsResearch.length) {
+  lines.push('## Research unresolved', '', '> These items are not approval candidates and are shown only as an operational exception queue.', '');
+  for (const r of needsResearch) {
+    lines.push(`- ${r.candidate.entity_code}: ${r.candidate.research_resolution?.reason || 'RESEARCH_NOT_RESOLVED'} — ${r.candidate.source_url}`);
+  }
+  lines.push('');
+}
+
 if (duplicates.length) {
   lines.push('## Duplicates suppressed', '');
   for (const r of duplicates) lines.push(`- ${r.candidate.entity_code} duplicates ${r.duplicateOf}`);
