@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 # ELIMFILTERS PR Type Detector
-# Prevents PRs from mixing source code with generated artifacts.
+# Prevents PRs from mixing source code with build-only generated artifacts.
 #
-# PR Type A — Source only:
+# Governed Citation API artifacts are intentionally tracked in Git and may
+# accompany their canonical source changes in the same PR. They are protected
+# by citation tracking/content/determinism gates instead of this legacy split.
+#
+# Source / governed tracked content includes:
 #   frontend/src/**  scripts/**  elimfilters-vault/**
+#   frontend/public/api/citation/**
 #   package*.json  tsconfig*  next.config*  *.md  *.yml  *.sh
 #
-# PR Type B — Generated only:
-#   frontend/out/**  frontend/public/api/citation/**
-#   frontend/public/sitemap.xml  *.generated.ts
-#   CITATION_INDEX.json  elimfilters-vault/00-meta/CITATION_INDEX.json
+# Build-only generated output includes:
+#   frontend/out/**  frontend/public/sitemap.xml  *.generated.ts
 #
-# Exit 0 — PR is pure Type A or pure Type B.
-# Exit 1 — PR mixes source and generated (REJECT).
+# Exit 0 — PR does not mix normal changes with build-only generated output.
+# Exit 1 — PR mixes normal changes and build-only generated output (REJECT).
 # ─────────────────────────────────────────────────────────────────────────────
 set -uo pipefail
 
@@ -40,17 +43,14 @@ fi
 is_generated() {
   local f="$1"
   [[ "$f" == frontend/out/* ]] && return 0
-  [[ "$f" == frontend/public/api/citation/* ]] && return 0
   [[ "$f" == frontend/public/sitemap.xml ]] && return 0
   [[ "$f" == *.generated.ts ]] && return 0
-  [[ "$f" == CITATION_INDEX.json ]] && return 0
-  [[ "$f" == elimfilters-vault/00-meta/CITATION_INDEX.json ]] && return 0
   return 1
 }
 
 is_source() {
   local f="$1"
-  is_generated "$f" && return 1   # generated is never source
+  is_generated "$f" && return 1   # build-only generated is never source
   return 0
 }
 
@@ -75,28 +75,26 @@ done <<< "$CHANGED"
 echo ""
 echo "PR Type Detection"
 echo "─────────────────────────────────────────────────────────"
-echo "  Source files:    ${#SOURCE_FILES[@]}"
-echo "  Generated files: ${#GENERATED_FILES[@]}"
+echo "  Source/governed files: ${#SOURCE_FILES[@]}"
+echo "  Build-only generated:  ${#GENERATED_FILES[@]}"
 echo ""
 
 if [ "$HAS_SOURCE" -eq 1 ] && [ "$HAS_GENERATED" -eq 1 ]; then
-  echo "  ✗  MIXED PR — source and generated files in same PR."
+  echo "  ✗  MIXED PR — normal/governed files and build-only generated output in same PR."
   echo ""
-  echo "  Source examples:"
+  echo "  Source/governed examples:"
   for f in "${SOURCE_FILES[@]:0:5}"; do printf "    %s\n" "$f"; done
   echo ""
-  echo "  Generated examples:"
+  echo "  Build-only generated examples:"
   for f in "${GENERATED_FILES[@]:0:5}"; do printf "    %s\n" "$f"; done
   echo ""
-  echo "  Split into:"
-  echo "    PR Type A — source changes only"
-  echo "    PR Type B — generated artifacts only"
+  echo "  Remove build-only generated output before merging."
   echo ""
   exit 1
 elif [ "$HAS_GENERATED" -eq 1 ] && [ "$HAS_SOURCE" -eq 0 ]; then
-  echo "  ✓  Type B — Generated output only."
+  echo "  ✓  Build-only generated output only."
 elif [ "$HAS_SOURCE" -eq 1 ] && [ "$HAS_GENERATED" -eq 0 ]; then
-  echo "  ✓  Type A — Source only."
+  echo "  ✓  Source/governed changes only."
 else
   echo "  INFO: No classifiable files changed."
 fi
